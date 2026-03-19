@@ -41,7 +41,7 @@
 ;   CConsole g_CConsoleInstance
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81ca8
+;   undefined4 g_CGameInstance.profile_mode
 ;   undefined4 g_CGameInstance.block_auto_save
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   ... and 9 more
@@ -66,7 +66,7 @@ section .text
     PUSH EBP                            ; 0056fbd3
     SUB ESP,0x78                        ; 0056fbd4
     MOV EAX,[0x0067b654]                ; 0056fbd7 | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x20c],0x0     ; 0056fbdc | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x0     ; 0056fbdc | g_CGameInstance.profile_mode
     JNZ 0x0056fd2d                      ; 0056fbe3
         ;   XREF to: 0056fd2d (CONDITIONAL_JUMP)  ; LAB_0056fd2d
     MOV EBX,dword ptr [0x006703ec]      ; 0056fbe9 | g_CDemonRendererInstance | g_CDemonRendererPtr2
@@ -149,7 +149,7 @@ section .text
     XOR ECX,ECX                         ; 0056fcdd
     ADD EDX,0x4                         ; 0056fcdf
         ;   Label: LAB_0056fcdf
-    MOV EBX,dword ptr [ECX + 0x3342b50] ; 0056fce2 | g_SetDisplayListSortBuffer | DAT_03342b58
+    MOV EBX,dword ptr [ECX + 0x3342b50] ; 0056fce2 | g_SetDisplayListSortBuffer | g_SetDisplayListSortBuffer[1].actor
     INC EAX                             ; 0056fce8
     MOV dword ptr [EDX + 0x15f6e8],EBX  ; 0056fce9
     MOV EBX,dword ptr [0x03342b4c]      ; 0056fcef | g_SetDisplayListCount
@@ -165,7 +165,7 @@ section .text
     MOV dword ptr [EDX + 0x15f6e4],EAX  ; 0056fd0d
         ;   Label: LAB_0056fd0d
     MOV EAX,[0x0067b654]                ; 0056fd13 | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x20c],0x0     ; 0056fd18 | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x0     ; 0056fd18 | g_CGameInstance.profile_mode
     JNZ 0x0056ff81                      ; 0056fd1f
         ;   XREF to: 0056ff81 (CONDITIONAL_JUMP)  ; LAB_0056ff81
     ADD ESP,0x78                        ; 0056fd25
@@ -189,7 +189,7 @@ section .text
         ;   XREF to: 0056fc34 (UNCONDITIONAL_JUMP)  ; LAB_0056fc34
     MOV EAX,[0x0067d550]                ; 0056fd52 | g_CDemonMissionPtr
         ;   Label: LAB_0056fd52
-    CMP dword ptr [EAX + 0x4],0x0       ; 0056fd57 | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 0056fd57 | g_CDemonMissionInstance.is_in_editor
     JZ 0x0056fd6a                       ; 0056fd5b
         ;   XREF to: 0056fd6a (CONDITIONAL_JUMP)  ; LAB_0056fd6a
     CMP dword ptr [EBX + 0x148],0x0     ; 0056fd5d
@@ -275,7 +275,7 @@ section .text
     MOV dword ptr [EAX*0x8 + 0x3342b48],EBX ; 0056fe49 | g_SetDisplayListSortBuffer
     FADDP                               ; 0056fe50
     MOV [0x03342b4c],EAX                ; 0056fe52 | g_SetDisplayListCount
-    FSTP float ptr [EAX*0x8 + 0x3342b4c] ; 0056fe57 | DAT_03342b54
+    FSTP float ptr [EAX*0x8 + 0x3342b4c] ; 0056fe57 | g_SetDisplayListSortBuffer[0].distance_sq
     JMP 0x0056fc73                      ; 0056fe5e
         ;   XREF to: 0056fc73 (UNCONDITIONAL_JUMP)  ; LAB_0056fc73
     FLD float ptr [ESI + 0x4]           ; 0056fe63
@@ -378,7 +378,7 @@ section .text
     XOR EAX,EAX                         ; 0056ff43
     ADD EDX,0x4                         ; 0056ff45
         ;   Label: LAB_0056ff45
-    MOV ECX,dword ptr [EAX + 0x3342b50] ; 0056ff48 | g_SetDisplayListSortBuffer | DAT_03342b58
+    MOV ECX,dword ptr [EAX + 0x3342b50] ; 0056ff48 | g_SetDisplayListSortBuffer | g_SetDisplayListSortBuffer[1].actor
     INC EBX                             ; 0056ff4e
     MOV dword ptr [EDX + 0x15f6e4],ECX  ; 0056ff4f
     MOV ECX,dword ptr [0x03342b4c]      ; 0056ff55 | g_SetDisplayListCount

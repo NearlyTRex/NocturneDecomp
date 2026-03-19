@@ -15,13 +15,13 @@
 ;   TerminatedCString s_waveInClose_failed_0065243a
 ;   HWAVEIN g_WaveInHandle
 ;   HGLOBAL[20] g_WaveInHeaderHandles
-;   undefined4 DAT_03f6add4
+;   undefined4 g_WaveInHeaderHandles[1]
 ;   LPWAVEHDR[20] g_WaveInHeaders
-;   undefined4 DAT_03f6ae24
+;   undefined4 g_WaveInHeaders[1]
 ;   HGLOBAL[20] g_WaveInBufferHandles
-;   undefined4 DAT_03f6ae74
+;   undefined4 g_WaveInBufferHandles[1]
 ;   LPVOID[20] g_WaveInBuffers
-;   undefined4 DAT_03f6aec4
+;   undefined4 g_WaveInBuffers[1]
 ;
 ; Called Functions:
 ;   GlobalFree
@@ -49,7 +49,7 @@ section .text
     XOR EBX,EBX                         ; 005b0d8a
         ;   Label: LAB_005b0d8a
     XOR EDI,EDI                         ; 005b0d8c
-    MOV EDX,dword ptr [EBX + 0x3f6ae70] ; 005b0d8e | g_WaveInBufferHandles | DAT_03f6ae74
+    MOV EDX,dword ptr [EBX + 0x3f6ae70] ; 005b0d8e | g_WaveInBufferHandles | g_WaveInBufferHandles[1]
         ;   Label: LAB_005b0d8e
     CMP EDI,EDX                         ; 005b0d94
     JZ 0x005b0da6                       ; 005b0d96
@@ -57,9 +57,9 @@ section .text
     PUSH EDX                            ; 005b0d98
     CALL dword ptr CS:[0x6115d0]        ; 005b0d99 | g_GlobalFreeFunc
     MOV dword ptr [EBX + 0x3f6ae70],EDI ; 005b0da0 | g_WaveInBufferHandles
-    MOV EBP,dword ptr [EBX + 0x3f6add0] ; 005b0da6 | g_WaveInHeaderHandles | DAT_03f6add4
+    MOV EBP,dword ptr [EBX + 0x3f6add0] ; 005b0da6 | g_WaveInHeaderHandles | g_WaveInHeaderHandles[1]
         ;   Label: LAB_005b0da6
-    MOV dword ptr [EBX + 0x3f6aec0],EDI ; 005b0dac | g_WaveInBuffers | DAT_03f6aec4
+    MOV dword ptr [EBX + 0x3f6aec0],EDI ; 005b0dac | g_WaveInBuffers | g_WaveInBuffers[1]
     CMP EDI,EBP                         ; 005b0db2
     JZ 0x005b0dc4                       ; 005b0db4
         ;   XREF to: 005b0dc4 (CONDITIONAL_JUMP)  ; LAB_005b0dc4
@@ -68,7 +68,7 @@ section .text
     MOV dword ptr [EBX + 0x3f6add0],EDI ; 005b0dbe | g_WaveInHeaderHandles
     ADD EBX,0x4                         ; 005b0dc4
         ;   Label: LAB_005b0dc4
-    MOV dword ptr [EBX + 0x3f6ae1c],EDI ; 005b0dc7 | g_WaveInHeaders | DAT_03f6ae24
+    MOV dword ptr [EBX + 0x3f6ae1c],EDI ; 005b0dc7 | g_WaveInHeaders | g_WaveInHeaders[1]
     CMP EBX,0x50                        ; 005b0dcd
     JNZ 0x005b0d8e                      ; 005b0dd0
         ;   XREF to: 005b0d8e (CONDITIONAL_JUMP)  ; LAB_005b0d8e

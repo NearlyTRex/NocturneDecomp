@@ -17,18 +17,18 @@
 ;   TerminatedCString s_s_s_0063c881
 ;   TerminatedCString s_Edit_s_properties_0063c887
 ;   char[104] g_MsnEditLastSelectedPropertyName
-;   undefined4 DAT_0068090c
+;   undefined4 g_MsnEditLastSelectedPropertyName+4
 ;   char[1024] g_MsnEditPropertyValueBuffer
 ;   char[1024] g_MsnEditPropertyFormatBuffer
 ;   CActorPropertyList g_MsnEditPropertyList
 ;   undefined4 g_MsnEditPropertyList.count
-;   undefined4 DAT_02f7a02c
-;   undefined4 DAT_02f7a030
-;   undefined4 DAT_02f7a031
-;   undefined4 DAT_02f7a032
-;   undefined4 DAT_02f7a033
-;   undefined4 DAT_02f7a080
-;   undefined4 DAT_02f7a118
+;   undefined4 g_MsnEditPropertyList.properties[0].type
+;   undefined4 g_MsnEditPropertyList.properties[0].name[0]
+;   undefined4 g_MsnEditPropertyList.properties[0].name[1]
+;   undefined4 g_MsnEditPropertyList.properties[0].name[2]
+;   undefined4 g_MsnEditPropertyList.properties[0].name[3]
+;   undefined4 g_MsnEditPropertyList.properties[0].enabled_flag
+;   undefined4 g_MsnEditPropertyList.properties[1].type
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -63,7 +63,7 @@ section .text
     MOV ECX,0x19                        ; 0053c759
     LEA EDI,[ESP + 0x4dc]               ; 0053c75e
     MOV ESI,0x680908                    ; 0053c765 | g_MsnEditLastSelectedPropertyName
-    MOVSD.REP ES:EDI,ESI                ; 0053c76a | g_MsnEditLastSelectedPropertyName | DAT_0068090c
+    MOVSD.REP ES:EDI,ESI                ; 0053c76a | g_MsnEditLastSelectedPropertyName | g_MsnEditLastSelectedPropertyName+4
     MOV EBP,0x2f79820                   ; 0053c76c | g_MsnEditPropertyValueBuffer
     PUSH 0x2f7a024                      ; 0053c771 | g_MsnEditPropertyList
         ;   Label: LAB_0053c771
@@ -86,20 +86,20 @@ section .text
     TEST ECX,ECX                        ; 0053c7ab
     JLE 0x0053c807                      ; 0053c7ad
         ;   XREF to: 0053c807 (CONDITIONAL_JUMP)  ; LAB_0053c807
-    MOV EDI,0x2f7a02c                   ; 0053c7af | DAT_02f7a02c
+    MOV EDI,0x2f7a02c                   ; 0053c7af | g_MsnEditPropertyList.properties[0].type
     ADD EDI,0x4                         ; 0053c7b4
     PUSH EBP                            ; 0053c7b7 | g_MsnEditPropertyValueBuffer
         ;   Label: LAB_0053c7b7
     MOV EAX,dword ptr [EBX + 0x28]      ; 0053c7b8
     PUSH EAX                            ; 0053c7bb
     IMUL EAX,ESI,0xec                   ; 0053c7bc
-    ADD EAX,0x2f7a02c                   ; 0053c7c2 | DAT_02f7a118 | DAT_02f7a02c
-    PUSH EAX                            ; 0053c7c7 | DAT_02f7a02c | DAT_02f7a118
+    ADD EAX,0x2f7a02c                   ; 0053c7c2 | g_MsnEditPropertyList.properties[1].type | g_MsnEditPropertyList.properties[0].type
+    PUSH EAX                            ; 0053c7c7 | g_MsnEditPropertyList.properties[0].type | g_MsnEditPropertyList.properties[1].type
     CALL core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 ; 0053c7c8
         ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProperty * this_ptr, CDemonActor * actor, char * output_buffer)
     ADD ESP,0xc                         ; 0053c7cd
     PUSH EBP                            ; 0053c7d0 | g_MsnEditPropertyValueBuffer
-    PUSH EDI                            ; 0053c7d1 | DAT_02f7a030
+    PUSH EDI                            ; 0053c7d1 | g_MsnEditPropertyList.properties[0].name[0]
     PUSH 0x63c881                       ; 0053c7d2 | = "%s\t%s"
     PUSH 0x2f79c20                      ; 0053c7d7 | g_MsnEditPropertyFormatBuffer
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053c7dc
@@ -146,18 +146,18 @@ section .text
     JL 0x0053c8ae                       ; 0053c84f
         ;   XREF to: 0053c8ae (CONDITIONAL_JUMP)  ; LAB_0053c8ae
     IMUL ECX,EAX,0xec                   ; 0053c851
-    MOV EDX,0x2f7a02c                   ; 0053c857 | DAT_02f7a02c
+    MOV EDX,0x2f7a02c                   ; 0053c857 | g_MsnEditPropertyList.properties[0].type
     ADD EDX,ECX                         ; 0053c85c
     LEA EDI,[ESP + 0x4dc]               ; 0053c85e
     LEA ESI,[EDX + 0x4]                 ; 0053c865
     PUSH EDI                            ; 0053c868
-    MOV AL,byte ptr [ESI]               ; 0053c869 | DAT_02f7a030 | DAT_02f7a032
+    MOV AL,byte ptr [ESI]               ; 0053c869 | g_MsnEditPropertyList.properties[0].name[0] | g_MsnEditPropertyList.properties[0].name[2]
         ;   Label: LAB_0053c869
     MOV byte ptr [EDI],AL               ; 0053c86b
     CMP AL,0x0                          ; 0053c86d
     JZ 0x0053c881                       ; 0053c86f
         ;   XREF to: 0053c881 (CONDITIONAL_JUMP)  ; LAB_0053c881
-    MOV AL,byte ptr [ESI + 0x1]         ; 0053c871 | DAT_02f7a031 | DAT_02f7a033
+    MOV AL,byte ptr [ESI + 0x1]         ; 0053c871 | g_MsnEditPropertyList.properties[0].name[1] | g_MsnEditPropertyList.properties[0].name[3]
     ADD ESI,0x2                         ; 0053c874
     MOV byte ptr [EDI + 0x1],AL         ; 0053c877
     ADD EDI,0x2                         ; 0053c87a
@@ -166,7 +166,7 @@ section .text
         ;   XREF to: 0053c869 (CONDITIONAL_JUMP)  ; LAB_0053c869
     POP EDI                             ; 0053c881
         ;   Label: LAB_0053c881
-    CMP dword ptr [ECX + 0x2f7a080],0x0 ; 0053c882 | DAT_02f7a080
+    CMP dword ptr [ECX + 0x2f7a080],0x0 ; 0053c882 | g_MsnEditPropertyList.properties[0].enabled_flag
     JNZ 0x0053c89f                      ; 0053c889
         ;   XREF to: 0053c89f (CONDITIONAL_JUMP)  ; LAB_0053c89f
     PUSH 0x0                            ; 0053c88b

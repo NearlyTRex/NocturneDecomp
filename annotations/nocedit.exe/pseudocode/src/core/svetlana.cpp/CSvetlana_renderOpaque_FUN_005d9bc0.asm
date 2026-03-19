@@ -15,9 +15,9 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   float g_PerspectiveReciprocal
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81c90
+;   undefined4 g_CGameInstance.render_mode
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_0326f0fc
+;   undefined4 g_CDemonSetInstance.skip_normal_normalization
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -40,7 +40,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x88]      ; 005d9bc6
     MOV EAX,[0x006810c8]                ; 005d9bcd | g_CDemonSetInstance | g_CDemonSetPtr
     MOV EDX,ESI                         ; 005d9bd2
-    MOV dword ptr [EAX + 0x15ae84],0x1  ; 005d9bd4 | DAT_0326f0fc
+    MOV dword ptr [EAX + 0x15ae84],0x1  ; 005d9bd4 | g_CDemonSetInstance.skip_normal_normalization
     XOR EAX,EAX                         ; 005d9bde
     INC EAX                             ; 005d9be0
         ;   Label: LAB_005d9be0
@@ -83,8 +83,8 @@ section .text
     MOV dword ptr [ESI + EAX*0x4 + 0x2298],0x1 ; 005d9c5b
     MOV EAX,[0x0067b654]                ; 005d9c66 | g_CGameInstance | g_CGamePtr
     PUSH EBP                            ; 005d9c6b | g_CDemonRendererInstance
-    MOV EDI,dword ptr [EAX + 0x1f4]     ; 005d9c6c | DAT_02d81c90
-    MOV dword ptr [EAX + 0x1f4],0x2     ; 005d9c72 | DAT_02d81c90
+    MOV EDI,dword ptr [EAX + 0x1f4]     ; 005d9c6c | g_CGameInstance.render_mode
+    MOV dword ptr [EAX + 0x1f4],0x2     ; 005d9c72 | g_CGameInstance.render_mode
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 ; 005d9c7c
         ;   XREF to: 0048ca50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)
     ADD ESP,0x8                         ; 005d9c81
@@ -100,7 +100,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 005d9c9b | g_CGamePtr
         ;   Label: LAB_005d9c9b
     MOV EDX,ESI                         ; 005d9ca0
-    MOV dword ptr [EAX + 0x1f4],EDI     ; 005d9ca2 | DAT_02d81c90
+    MOV dword ptr [EAX + 0x1f4],EDI     ; 005d9ca2 | g_CGameInstance.render_mode
     XOR EAX,EAX                         ; 005d9ca8
     POP EDI                             ; 005d9caa
     ADD EDX,0x4                         ; 005d9cab
@@ -114,7 +114,7 @@ section .text
     LEA EAX,[EAX]                       ; 005d9cbd
     MOV EAX,[0x006810c8]                ; 005d9cc0 | g_CDemonSetPtr
         ;   Label: LAB_005d9cc0
-    MOV dword ptr [EAX + 0x15ae84],0x0  ; 005d9cc5 | DAT_0326f0fc
+    MOV dword ptr [EAX + 0x15ae84],0x0  ; 005d9cc5 | g_CDemonSetInstance.skip_normal_normalization
     TEST EBX,EBX                        ; 005d9ccf
     JNZ 0x005d9ce7                      ; 005d9cd1
         ;   XREF to: 005d9ce7 (CONDITIONAL_JUMP)  ; LAB_005d9ce7

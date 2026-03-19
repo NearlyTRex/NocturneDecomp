@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81ca0
+;   undefined4 g_CGameInstance.big_hat_cheat
 ;
 ; Called Functions:
 ;   core_weapon.cpp_CWeapon_canPickup_FUN_005ee340
@@ -21,7 +21,7 @@ section .text
 
     MOV EAX,[0x0067b654]                ; 005e3c70 | g_CGameInstance | g_CGamePtr
         ;   Label: core_turret.cpp_CTurret_canPickup_FUN_005e3c70
-    CMP dword ptr [EAX + 0x204],0x0     ; 005e3c75 | DAT_02d81ca0
+    CMP dword ptr [EAX + 0x204],0x0     ; 005e3c75 | g_CGameInstance.big_hat_cheat
     JNZ 0x005e3c81                      ; 005e3c7c
         ;   XREF to: 005e3c81 (CONDITIONAL_JUMP)  ; LAB_005e3c81
     XOR EAX,EAX                         ; 005e3c7e

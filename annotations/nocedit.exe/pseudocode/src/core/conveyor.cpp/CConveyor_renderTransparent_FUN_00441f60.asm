@@ -10,12 +10,12 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02d01f4e
-;   undefined4 DAT_02d01f4f
-;   undefined4 DAT_02d01f50
+;   undefined4 g_SourcePaletteData+6
+;   undefined4 g_SourcePaletteData+7
+;   undefined4 g_SourcePaletteData+8
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
-;   undefined4 DAT_02f33768
+;   undefined4 g_CDemonMissionInstance.is_in_editor
+;   undefined4 g_CDemonMissionInstance.selected_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0
@@ -34,7 +34,7 @@ section .text
     SUB ESP,0x18                        ; 00441f62
     MOV EBX,dword ptr [ESP + 0x24]      ; 00441f65
     MOV EAX,[0x0067d550]                ; 00441f69 | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 00441f6e | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 00441f6e | g_CDemonMissionInstance.is_in_editor
     JNZ 0x00441f7c                      ; 00441f72
         ;   XREF to: 00441f7c (CONDITIONAL_JUMP)  ; LAB_00441f7c
     XOR EAX,EAX                         ; 00441f74
@@ -76,7 +76,7 @@ section .text
         ;   XREF to: 00441f74 (CONDITIONAL_JUMP)  ; LAB_00441f74
     PUSH EDI                            ; 00441fc0
     MOV EAX,[0x0067d550]                ; 00441fc1 | g_CDemonMissionPtr
-    MOV EDI,dword ptr [EAX + 0x28]      ; 00441fc6 | DAT_02f33768
+    MOV EDI,dword ptr [EAX + 0x28]      ; 00441fc6 | g_CDemonMissionInstance.selected_actor
     MOV ESI,0x2                         ; 00441fc9
     CMP EBX,EDI                         ; 00441fce
     JNZ 0x00442012                      ; 00441fd0
@@ -86,11 +86,11 @@ section .text
         ;   Label: LAB_00441fd7
     LEA EAX,[ESI*0x4 + 0x0]             ; 00441fd8
     SUB EAX,ESI                         ; 00441fdf
-    MOVZX ESI,byte ptr [EAX + 0x2d01f4a] ; 00441fe1 | DAT_02d01f50
+    MOVZX ESI,byte ptr [EAX + 0x2d01f4a] ; 00441fe1 | g_SourcePaletteData+8
     PUSH ESI                            ; 00441fe8
-    MOVZX ESI,byte ptr [EAX + 0x2d01f49] ; 00441fe9 | DAT_02d01f4f
+    MOVZX ESI,byte ptr [EAX + 0x2d01f49] ; 00441fe9 | g_SourcePaletteData+7
     PUSH ESI                            ; 00441ff0
-    MOV AL,byte ptr [EAX + 0x2d01f48]   ; 00441ff1 | DAT_02d01f4e
+    MOV AL,byte ptr [EAX + 0x2d01f48]   ; 00441ff1 | g_SourcePaletteData+6
     AND EAX,0xff                        ; 00441ff7
     PUSH EAX                            ; 00441ffc
     PUSH EBX                            ; 00441ffd

@@ -15,8 +15,8 @@
 ;   char[256] g_ErrorMessageBuffer_02db8b70
 ;   int g_ItemDefinitionCount
 ;   SInventoryItemInfo[100] g_ItemDefinitionArray
-;   undefined4 DAT_02dbacc8
-;   undefined4 DAT_02dbadc8
+;   undefined4 g_ItemDefinitionArray[0].string3[0]
+;   undefined4 g_ItemDefinitionArray[1].string1[0]
 ;
 ; Called Functions:
 ;   core_inv.cpp_getItemModel_FUN_004fcda0
@@ -45,7 +45,7 @@ section .text
     TEST ECX,ECX                        ; 004fcf92
     JLE 0x004fcfb4                      ; 004fcf94
         ;   XREF to: 004fcfb4 (CONDITIONAL_JUMP)  ; LAB_004fcfb4
-    PUSH EBX                            ; 004fcf96 | g_ItemDefinitionArray | DAT_02dbadc8
+    PUSH EBX                            ; 004fcf96 | g_ItemDefinitionArray | g_ItemDefinitionArray[1].string1[0]
         ;   Label: LAB_004fcf96
     PUSH EDI                            ; 004fcf97
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 004fcf98
@@ -73,7 +73,7 @@ section .text
     POP ESI                             ; 004fcfce
     POP EBX                             ; 004fcfcf
     RET                                 ; 004fcfd0
-    LEA EAX,[EBX + 0x200]               ; 004fcfd1 | DAT_02dbacc8
+    LEA EAX,[EBX + 0x200]               ; 004fcfd1 | g_ItemDefinitionArray[0].string3[0]
         ;   Label: LAB_004fcfd1
     POP EBP                             ; 004fcfd7
     POP EDI                             ; 004fcfd8

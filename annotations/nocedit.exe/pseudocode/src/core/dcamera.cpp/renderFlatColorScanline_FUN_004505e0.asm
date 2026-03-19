@@ -18,7 +18,7 @@
 ;   _BIT_INTEGER32 g_CameraDownscaleIterations
 ;   SFogImagePlane g_CameraPlaneWorkBuffer
 ;   SFogImagePlane[16] g_CameraImageDecompressBuffer
-;   undefined4 DAT_013fff78
+;   undefined4 g_CameraImageDecompressBuffer[1].pixels[0][0]
 ;   int g_ImageBytesPerPixel
 ;   int g_FlatShadingLightLevel
 ;   uint*[1200] g_ZBufferScanlineArray
@@ -148,7 +148,7 @@ section .text
     ADD EAX,0x12c00                     ; 0045072d
         ;   Label: LAB_0045072d
     INC EDX                             ; 00450732
-    MOV byte ptr [EAX + 0x13da778],BL   ; 00450733 | g_CameraPlaneWorkBuffer | g_CameraImageDecompressBuffer | DAT_013fff78
+    MOV byte ptr [EAX + 0x13da778],BL   ; 00450733 | g_CameraPlaneWorkBuffer | g_CameraImageDecompressBuffer | g_CameraImageDecompressBuffer[1].pixels[0][0]
     CMP EDX,ESI                         ; 00450739
     JL 0x0045072d                       ; 0045073b
         ;   XREF to: 0045072d (CONDITIONAL_JUMP)  ; LAB_0045072d

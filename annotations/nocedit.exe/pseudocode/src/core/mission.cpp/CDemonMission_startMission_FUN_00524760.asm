@@ -26,8 +26,8 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;   CEventList g_CEventListInstance
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81cc4
-;   undefined4 DAT_02d81cd0
+;   undefined4 g_CGameInstance.letterbox_mode
+;   undefined4 g_CGameInstance.is_loading
 ;   int g_HeroCount
 ;   ... and 5 more
 ;
@@ -76,7 +76,7 @@ section .text
     CALL core_event.cpp_CEventList_reset_FUN_004aaa70 ; 005247ba
         ;   XREF to: 004aaa70 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_reset_FUN_004aaa70(CEventList * this_ptr)
     MOV EAX,[0x0067b654]                ; 005247bf | g_CGamePtr
-    MOV dword ptr [EAX + 0x228],0x0     ; 005247c4 | DAT_02d81cc4
+    MOV dword ptr [EAX + 0x228],0x0     ; 005247c4 | g_CGameInstance.letterbox_mode
     MOV EAX,[0x02db87d0]                ; 005247ce | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x2db87c0] ; 005247d3 | g_HeroActors
     ADD ESP,0x4                         ; 005247da
@@ -98,7 +98,7 @@ section .text
         ;   XREF to: 00504160 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_00504160(CLevelLoader * this_ptr, char * text, int clear_screen)
     MOV EAX,[0x0067b654]                ; 00524806 | g_CGameInstance | g_CGamePtr
     ADD ESP,0xc                         ; 0052480b
-    MOV EDX,dword ptr [EAX + 0x234]     ; 0052480e | DAT_02d81cd0
+    MOV EDX,dword ptr [EAX + 0x234]     ; 0052480e | g_CGameInstance.is_loading
     PUSH EDX                            ; 00524814
     PUSH EBX                            ; 00524815
     CALL core_mission.cpp_CDemonMission_loadScript_FUN_005235b0 ; 00524816

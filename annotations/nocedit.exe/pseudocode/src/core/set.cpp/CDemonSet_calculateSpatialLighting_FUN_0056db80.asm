@@ -25,16 +25,16 @@
 ;   CDemonCamera g_CDemonCameraInstance
 ;   int g_DynamicLightCount
 ;   CDemonLight*[4] g_DynamicLights
-;   undefined4 DAT_032776bc
+;   undefined4 g_DynamicLights[1]
 ;   int g_SecondaryDirectionalLightCount
 ;   CDemonLight*[32] g_SecondaryDirectionalLights
-;   undefined4 DAT_032c161c
+;   undefined4 g_SecondaryDirectionalLights[1]
 ;   int g_PrimaryDirectionalLightCount
 ;   CDemonLight*[4] g_PrimaryDirectionalLights
-;   undefined4 DAT_032c17a0
+;   undefined4 g_PrimaryDirectionalLights[1]
 ;   int g_GlobeLightCount
 ;   CDemonGlobe*[100] g_GlobeLights
-;   undefined4 DAT_032c17b4
+;   undefined4 g_GlobeLights[1]
 ;   int g_LightingSystemDirty
 ;   CVector3f g_LightingReferencePosition
 ;   ... and 4 more
@@ -87,7 +87,7 @@ section .text
     XOR EDI,EDI                         ; 0056dbca
     PUSH EBP                            ; 0056dbcc
         ;   Label: LAB_0056dbcc
-    MOV EDX,dword ptr [EDI + 0x32c179c] ; 0056dbcd | g_PrimaryDirectionalLights | DAT_032c17a0
+    MOV EDX,dword ptr [EDI + 0x32c179c] ; 0056dbcd | g_PrimaryDirectionalLights | g_PrimaryDirectionalLights[1]
     PUSH EDX                            ; 0056dbd3
     MOV ECX,dword ptr [ESP + 0x58]      ; 0056dbd4
     PUSH ECX                            ; 0056dbd8
@@ -114,7 +114,7 @@ section .text
     XOR ESI,ESI                         ; 0056dc0c
     PUSH EBP                            ; 0056dc0e
         ;   Label: LAB_0056dc0e
-    MOV ECX,dword ptr [ESI + 0x32c1618] ; 0056dc0f | g_SecondaryDirectionalLights | DAT_032c161c
+    MOV ECX,dword ptr [ESI + 0x32c1618] ; 0056dc0f | g_SecondaryDirectionalLights | g_SecondaryDirectionalLights[1]
     PUSH ECX                            ; 0056dc15
     MOV EAX,dword ptr [ESP + 0x58]      ; 0056dc16
     PUSH EAX                            ; 0056dc1a
@@ -142,7 +142,7 @@ section .text
         ;   Label: LAB_0056dc4e
     MOV EAX,dword ptr [ESP + 0x54]      ; 0056dc4f
     PUSH EAX                            ; 0056dc53
-    MOV EDX,dword ptr [ESI + 0x32c17b0] ; 0056dc54 | g_GlobeLights | DAT_032c17b4
+    MOV EDX,dword ptr [ESI + 0x32c17b0] ; 0056dc54 | g_GlobeLights | g_GlobeLights[1]
     PUSH EDX                            ; 0056dc5a
     ADD ESI,0x4                         ; 0056dc5b
     INC EDI                             ; 0056dc5e
@@ -198,7 +198,7 @@ section .text
         ;   XREF to: 0056dd98 (CONDITIONAL_JUMP)  ; LAB_0056dd98
     LEA EAX,[ESP + 0x24]                ; 0056dce5
     PUSH EAX                            ; 0056dce9
-    MOV EAX,dword ptr [ESI + 0x32776b8] ; 0056dcea | g_DynamicLights | DAT_032776bc
+    MOV EAX,dword ptr [ESI + 0x32776b8] ; 0056dcea | g_DynamicLights | g_DynamicLights[1]
     PUSH EAX                            ; 0056dcf0
     LEA EAX,[ESP + 0x8]                 ; 0056dcf1
         ;   Label: LAB_0056dcf1
@@ -265,7 +265,7 @@ section .text
         ;   XREF to: 0056dcd0 (UNCONDITIONAL_JUMP)  ; LAB_0056dcd0
     PUSH EBP                            ; 0056dd98
         ;   Label: LAB_0056dd98
-    MOV ECX,dword ptr [ESI + 0x32776b8] ; 0056dd99 | DAT_032776bc
+    MOV ECX,dword ptr [ESI + 0x32776b8] ; 0056dd99 | g_DynamicLights[1]
     PUSH ECX                            ; 0056dd9f
     JMP 0x0056dcf1                      ; 0056dda0
         ;   XREF to: 0056dcf1 (UNCONDITIONAL_JUMP)  ; LAB_0056dcf1

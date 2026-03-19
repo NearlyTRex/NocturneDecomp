@@ -13,8 +13,8 @@
 ;
 ; Referenced Globals:
 ;   SFontGlyph[224] g_FontTable
-;   undefined4 DAT_00666041
-;   undefined4 DAT_00666042
+;   undefined4 g_FontTable[0].bitmap[0]
+;   undefined4 g_FontTable[0].bitmap[1]
 ;   undefined4 g_FontTable[0].bitmap[0][2]
 ;   int g_BitsPerPixel = 0x8
 ;   void*[1200] g_ScreenBufferArray
@@ -79,7 +79,7 @@ section .text
     TEST ESI,ESI                        ; 00401bf2
     JLE 0x00401c0f                      ; 00401bf4
         ;   XREF to: 00401c0f (CONDITIONAL_JUMP)  ; LAB_00401c0f
-    MOV BL,byte ptr [EAX]               ; 00401bf6 | DAT_00666041 | DAT_00666042 | g_FontTable[0].bitmap[0][2]
+    MOV BL,byte ptr [EAX]               ; 00401bf6 | g_FontTable[0].bitmap[0] | g_FontTable[0].bitmap[1] | g_FontTable[0].bitmap[0][2]
         ;   Label: LAB_00401bf6
     TEST BL,BL                          ; 00401bf8
     JZ 0x00401c06                       ; 00401bfa
@@ -123,7 +123,7 @@ section .text
     TEST ESI,ESI                        ; 00401c3b
     JLE 0x00401c4e                      ; 00401c3d
         ;   XREF to: 00401c4e (CONDITIONAL_JUMP)  ; LAB_00401c4e
-    MOV BL,byte ptr [EAX]               ; 00401c3f | DAT_00666041 | DAT_00666042 | g_FontTable[0].bitmap[0][2]
+    MOV BL,byte ptr [EAX]               ; 00401c3f | g_FontTable[0].bitmap[0] | g_FontTable[0].bitmap[1] | g_FontTable[0].bitmap[0][2]
         ;   Label: LAB_00401c3f
     TEST BL,BL                          ; 00401c41
     JZ 0x00401c47                       ; 00401c43

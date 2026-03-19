@@ -18,10 +18,10 @@
 ;   double g_LatitudeOffset_1 = 90
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
-;   undefined4 DAT_01626418
-;   undefined4 DAT_0162641c
+;   undefined4 g_LoadedVertices[0].u
+;   undefined4 g_LoadedVertices[0].v
 ;
 ; *****************************************************************************
 
@@ -67,19 +67,19 @@ section .text
     MOV dword ptr [EDX + 0x162640c],EAX ; 0046875b | g_LoadedVertices
     IMUL EDX,dword ptr [0x01626408],0x14 ; 00468761 | g_VertexCount
     MOV EAX,dword ptr [EBP + -0x4]      ; 00468768
-    MOV dword ptr [EDX + 0x1626410],EAX ; 0046876b | DAT_01626410
+    MOV dword ptr [EDX + 0x1626410],EAX ; 0046876b | g_LoadedVertices[0].vertex.y
     IMUL EDX,dword ptr [0x01626408],0x14 ; 00468771 | g_VertexCount
     MOV EAX,dword ptr [EBP + -0xc]      ; 00468778
     MOV dword ptr [EDX + 0x1626414],EAX ; 0046877b | g_LoadedVertices[0].vertex.z
     FLD float ptr [EBP + 0x14]          ; 00468781
     FMUL double ptr [0x0061cdce]        ; 00468784 | g_UVScaleFactor_1
     IMUL EAX,dword ptr [0x01626408],0x14 ; 0046878a | g_VertexCount
-    FSTP float ptr [EAX + 0x1626418]    ; 00468791 | DAT_01626418
+    FSTP float ptr [EAX + 0x1626418]    ; 00468791 | g_LoadedVertices[0].u
     FLD float ptr [EBP + 0x18]          ; 00468797
     FADD double ptr [0x0061cdd6]        ; 0046879a | g_LatitudeOffset_1
     FMUL double ptr [0x0061cdbe]        ; 004687a0 | g_DegreesToRadiansVertexFactor
     IMUL EAX,dword ptr [0x01626408],0x14 ; 004687a6 | g_VertexCount
-    FSTP float ptr [EAX + 0x162641c]    ; 004687ad | DAT_0162641c
+    FSTP float ptr [EAX + 0x162641c]    ; 004687ad | g_LoadedVertices[0].v
     INC dword ptr [0x01626408]          ; 004687b3 | g_VertexCount
     MOV ESP,EBP                         ; 004687b9
     POP EBP                             ; 004687bb

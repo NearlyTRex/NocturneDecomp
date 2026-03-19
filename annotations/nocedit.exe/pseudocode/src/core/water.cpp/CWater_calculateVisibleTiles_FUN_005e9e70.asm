@@ -76,7 +76,7 @@ section .text
     ADD EDX,0x20                        ; 005e9e8b
     MOV CL,byte ptr [ESI + EAX*0x1 + 0x2cf901f] ; 005e9e8e | g_ColorCubeLookup | UCHAR_ARRAY_02cf9441
     ADD EBX,0x400                       ; 005e9e95
-    MOV byte ptr [EAX + 0x3f8f607],CL   ; 005e9e9b | g_WaterTileSamples | DAT_03f8f609
+    MOV byte ptr [EAX + 0x3f8f607],CL   ; 005e9e9b | g_WaterTileSamples | g_WaterTileSamples+1
     CMP EAX,0x20                        ; 005e9ea1
     JL 0x005e9e87                       ; 005e9ea4
         ;   XREF to: 005e9e87 (CONDITIONAL_JUMP)  ; LAB_005e9e87

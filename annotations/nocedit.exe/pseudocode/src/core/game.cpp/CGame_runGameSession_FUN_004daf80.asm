@@ -183,17 +183,17 @@ section .text
         ;   XREF to: 004727c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_init_FUN_004727c0(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 004db1b1
     MOV ESI,0x62b6c6                    ; 004db1b4 | = "Flashlight"
-    MOV EDI,0x2d7eb30                   ; 004db1b9 | DAT_02d7eb30
-    PUSH EDI                            ; 004db1be | DAT_02d7eb30
+    MOV EDI,0x2d7eb30                   ; 004db1b9 | g_CDemonLightInstance.base.camera_name[0]
+    PUSH EDI                            ; 004db1be | g_CDemonLightInstance.base.camera_name[0]
     MOV AL,byte ptr [ESI]               ; 004db1bf | = "Flashlight" | s_ashlight_0062b6c8
         ;   Label: LAB_004db1bf
-    MOV byte ptr [EDI],AL               ; 004db1c1 | DAT_02d7eb30 | DAT_02d7eb32
+    MOV byte ptr [EDI],AL               ; 004db1c1 | g_CDemonLightInstance.base.camera_name[0] | g_CDemonLightInstance.base.camera_name[2]
     CMP AL,0x0                          ; 004db1c3
     JZ 0x004db1d7                       ; 004db1c5
         ;   XREF to: 004db1d7 (CONDITIONAL_JUMP)  ; LAB_004db1d7
     MOV AL,byte ptr [ESI + 0x1]         ; 004db1c7 | s_lashlight_0062b6c7 | s_shlight_0062b6c9
     ADD ESI,0x2                         ; 004db1ca
-    MOV byte ptr [EDI + 0x1],AL         ; 004db1cd | DAT_02d7eb31 | DAT_02d7eb33
+    MOV byte ptr [EDI + 0x1],AL         ; 004db1cd | g_CDemonLightInstance.base.camera_name[1] | g_CDemonLightInstance.base.camera_name[3]
     ADD EDI,0x2                         ; 004db1d0
     CMP AL,0x0                          ; 004db1d3
     JNZ 0x004db1bf                      ; 004db1d5
@@ -251,7 +251,7 @@ section .text
         ;   XREF to: 004db5d6 (CONDITIONAL_JUMP)  ; LAB_004db5d6
     MOV EAX,[0x00680d50]                ; 004db280 | g_CScriptInstance | g_CScriptPtr
     PUSH 0x1                            ; 004db285
-    MOV EBX,dword ptr [EAX + 0xc]       ; 004db287 | DAT_0310f864
+    MOV EBX,dword ptr [EAX + 0xc]       ; 004db287 | g_CScriptInstance.focus_actor
     PUSH EBX                            ; 004db28a
     MOV ESI,dword ptr [0x006810c8]      ; 004db28b | g_CDemonSetPtr
     PUSH ESI                            ; 004db291 | g_CDemonSetInstance
@@ -288,7 +288,7 @@ section .text
         ;   XREF to: 004db434 (CONDITIONAL_JUMP)  ; LAB_004db434
     MOV EAX,[0x00680a00]                ; 004db2e1 | g_CNetGameInstance | g_CNetGamePtr
     PUSH EDI                            ; 004db2e6
-    MOV dword ptr [EAX + 0x4],0x3       ; 004db2e7 | DAT_02f7c744
+    MOV dword ptr [EAX + 0x4],0x3       ; 004db2e7 | g_CNetGameInstance.network_mode
     CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 004db2ee
         ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 004db2f3
@@ -563,7 +563,7 @@ section .text
         ;   XREF to: 004db369 (UNCONDITIONAL_JUMP)  ; LAB_004db369
     MOV EAX,[0x00680a00]                ; 004db605 | g_CNetGameInstance | g_CNetGamePtr
         ;   Label: LAB_004db605
-    CMP dword ptr [EAX + 0x168],0x0     ; 004db60a | DAT_02f7c8a8
+    CMP dword ptr [EAX + 0x168],0x0     ; 004db60a | g_CNetGameInstance.has_pending_sim_frame
     JNZ 0x004db3b7                      ; 004db611
         ;   XREF to: 004db3b7 (CONDITIONAL_JUMP)  ; LAB_004db3b7
     MOV EAX,dword ptr [EBP + 0x14]      ; 004db617
@@ -571,9 +571,9 @@ section .text
     JNZ 0x004db3b7                      ; 004db621
         ;   XREF to: 004db3b7 (CONDITIONAL_JUMP)  ; LAB_004db3b7
     MOV EAX,[0x00680d50]                ; 004db627 | g_CScriptPtr
-    MOV EBX,dword ptr [EAX + 0x10]      ; 004db62c | DAT_0310f868
+    MOV EBX,dword ptr [EAX + 0x10]      ; 004db62c | g_CScriptInstance.focus_actor_changed
     PUSH EBX                            ; 004db62f
-    MOV ESI,dword ptr [EAX + 0xc]       ; 004db630 | DAT_0310f864
+    MOV ESI,dword ptr [EAX + 0xc]       ; 004db630 | g_CScriptInstance.focus_actor
     PUSH ESI                            ; 004db633
     MOV EAX,[0x006810c8]                ; 004db634 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 004db639 | g_CDemonSetInstance
@@ -590,7 +590,7 @@ section .text
     ADD ESP,0x4                         ; 004db64f
     MOV EAX,[0x00680d50]                ; 004db652 | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_004db652
-    MOV dword ptr [EAX + 0x10],0x0      ; 004db657 | DAT_0310f868
+    MOV dword ptr [EAX + 0x10],0x0      ; 004db657 | g_CScriptInstance.focus_actor_changed
     JMP 0x004db3b7                      ; 004db65e
         ;   XREF to: 004db3b7 (UNCONDITIONAL_JUMP)  ; LAB_004db3b7
     MOV dword ptr [0x02d828d0],EBX      ; 004db663 | g_CheatSystemEnabled
@@ -971,7 +971,7 @@ section .text
         ;   XREF to: 004db431 (UNCONDITIONAL_JUMP)  ; LAB_004db431
     MOV EAX,[0x00680a00]                ; 004dba92 | g_CNetGameInstance | g_CNetGamePtr
         ;   Label: LAB_004dba92
-    CMP dword ptr [EAX + 0x168],0x0     ; 004dba97 | DAT_02f7c8a8
+    CMP dword ptr [EAX + 0x168],0x0     ; 004dba97 | g_CNetGameInstance.has_pending_sim_frame
     JNZ 0x004db679                      ; 004dba9e
         ;   XREF to: 004db679 (CONDITIONAL_JUMP)  ; LAB_004db679
     TEST EBX,EBX                        ; 004dbaa4

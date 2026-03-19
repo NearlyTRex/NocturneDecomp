@@ -26,7 +26,7 @@
 ;   int INT_02d7a7b8
 ;   int g_OmniLightCount
 ;   C3DSLight*[200] g_OmniLights
-;   undefined4 DAT_03277d88
+;   undefined4 g_OmniLights[1]
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
@@ -63,7 +63,7 @@ section .text
     JLE 0x0056e44d                      ; 0056e427
         ;   XREF to: 0056e44d (CONDITIONAL_JUMP)  ; LAB_0056e44d
     LEA EBX,[EAX*0x4 + 0x0]             ; 0056e429
-    MOV EDX,dword ptr [ECX + 0x3277d84] ; 0056e430 | g_OmniLights | DAT_03277d88
+    MOV EDX,dword ptr [ECX + 0x3277d84] ; 0056e430 | g_OmniLights | g_OmniLights[1]
         ;   Label: LAB_0056e430
     TEST dword ptr [EDX + 0x11d4],0x7fffffff ; 0056e436
     JNZ 0x0056e50d                      ; 0056e440

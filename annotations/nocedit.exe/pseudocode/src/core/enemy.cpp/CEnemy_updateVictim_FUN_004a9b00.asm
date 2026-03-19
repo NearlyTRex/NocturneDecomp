@@ -27,8 +27,8 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CEventList g_CEventListInstance
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81c70
-;   undefined4 DAT_02d81ccc
+;   undefined4 g_CGameInstance.freeze_enemies_enabled
+;   undefined4 g_CGameInstance.allow_enemy_attack_flag
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
@@ -73,10 +73,10 @@ section .text
         ;   XREF to: 004a9b34 (UNCONDITIONAL_JUMP)  ; LAB_004a9b34
     MOV EAX,[0x0067b654]                ; 004a9b57 | g_CGamePtr | g_CGameInstance
         ;   Label: LAB_004a9b57
-    CMP dword ptr [EAX + 0x1d4],0x0     ; 004a9b5c | DAT_02d81c70
+    CMP dword ptr [EAX + 0x1d4],0x0     ; 004a9b5c | g_CGameInstance.freeze_enemies_enabled
     JNZ 0x004a9b6e                      ; 004a9b63
         ;   XREF to: 004a9b6e (CONDITIONAL_JUMP)  ; LAB_004a9b6e
-    CMP dword ptr [EAX + 0x230],0x0     ; 004a9b65 | DAT_02d81ccc
+    CMP dword ptr [EAX + 0x230],0x0     ; 004a9b65 | g_CGameInstance.allow_enemy_attack_flag
     JNZ 0x004a9b93                      ; 004a9b6c
         ;   XREF to: 004a9b93 (CONDITIONAL_JUMP)  ; LAB_004a9b93
     MOV dword ptr [EDI + 0xbe30],0x0    ; 004a9b6e

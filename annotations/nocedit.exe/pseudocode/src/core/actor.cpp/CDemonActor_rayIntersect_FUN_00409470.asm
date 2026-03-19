@@ -34,7 +34,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_03273954
+;   undefined4 g_CDemonSetInstance.skip_exact_collisions
 ;   int g_DeformableModelRayHitPartIndex
 ;   CVector3f g_DeformableModelRayHitNormal
 ;   undefined4 g_DeformableModelRayHitNormal.y
@@ -264,7 +264,7 @@ section .text
     MOV dword ptr [EBX + 0x18],0xffffffff ; 004095ff
     MOV EAX,[0x006810c8]                ; 00409606 | g_CDemonSetPtr
     MOV dword ptr [EBX + 0xc],0xffffffff ; 0040960b
-    MOV EAX,dword ptr [EAX + 0x15f6dc]  ; 00409612 | DAT_03273954
+    MOV EAX,dword ptr [EAX + 0x15f6dc]  ; 00409612 | g_CDemonSetInstance.skip_exact_collisions
     TEST EAX,EAX                        ; 00409618
     JZ 0x004096f9                       ; 0040961a
         ;   XREF to: 004096f9 (CONDITIONAL_JUMP)  ; LAB_004096f9

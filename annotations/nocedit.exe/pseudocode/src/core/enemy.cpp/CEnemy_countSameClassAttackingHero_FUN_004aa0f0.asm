@@ -11,7 +11,7 @@
 ;   CHero*[4] g_HeroActors
 ;   int g_LocalHeroIndex
 ;   undefined4 g_CDemonSetInstance.enemy_count
-;   undefined4 DAT_03265258
+;   undefined4 g_CDemonSetInstance.enemies[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90
@@ -48,7 +48,7 @@ section .text
     POP ESI                             ; 004aa121
     POP EBX                             ; 004aa122
     RET                                 ; 004aa123
-    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x150fe0] ; 004aa124 | DAT_03265258
+    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x150fe0] ; 004aa124 | g_CDemonSetInstance.enemies[0]
         ;   Label: LAB_004aa124
     MOV EAX,dword ptr [ESP]             ; 004aa12b
     PUSH EAX                            ; 004aa12e

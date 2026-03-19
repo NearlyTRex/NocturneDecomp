@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   double[2][4] g_MpegSampleRateTable
-;   undefined4 DAT_0067e2d0
+;   undefined4 g_MpegBitrateTable[0][2][0]
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
@@ -37,7 +37,7 @@ section .text
     MOV EDX,EAX                         ; 00533c6e
     MOV EAX,dword ptr [ESP + 0x14]      ; 00533c70
     MOV EAX,dword ptr [EAX + 0xc]       ; 00533c74
-    MOV EDX,dword ptr [EDX + EAX*0x4 + 0x67e2d0] ; 00533c77 | DAT_0067e2d0
+    MOV EDX,dword ptr [EDX + EAX*0x4 + 0x67e2d0] ; 00533c77 | g_MpegBitrateTable[0][2][0]
     LEA EAX,[EDX*0x8 + 0x0]             ; 00533c7e
     ADD EAX,EDX                         ; 00533c85
     SHL EAX,0x4                         ; 00533c87

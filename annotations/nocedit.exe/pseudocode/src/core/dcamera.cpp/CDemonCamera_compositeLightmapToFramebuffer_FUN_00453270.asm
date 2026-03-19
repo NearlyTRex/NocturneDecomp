@@ -19,11 +19,11 @@
 ;   _BIT_INTEGER32 g_CameraDownscaleIterations
 ;   int g_CameraEdgeCount
 ;   int[10000] g_CameraEdgeDetectionResults
-;   undefined4 DAT_013bc26c
-;   undefined4 DAT_013bc270
-;   undefined4 DAT_013bc274
-;   undefined4 DAT_013bc278
-;   undefined4 DAT_013bc27c
+;   undefined4 g_CameraEdgeDetectionResults[1]
+;   undefined4 g_CameraEdgeDetectionResults[2]
+;   undefined4 g_CameraEdgeDetectionResults[3]
+;   undefined4 g_CameraEdgeDetectionResults[4]
+;   undefined4 g_CameraEdgeDetectionResults[5]
 ;   int g_CameraShakeOffsetX
 ;   ... and 11 more
 ;
@@ -227,15 +227,15 @@ section .text
     ADD ESP,0x14                        ; 0045348d
     JMP 0x004533fd                      ; 00453490
         ;   XREF to: 004533fd (UNCONDITIONAL_JUMP)  ; LAB_004533fd
-    MOV EDX,dword ptr [EBX + 0x13bc270] ; 00453495 | DAT_013bc270 | DAT_013bc27c
+    MOV EDX,dword ptr [EBX + 0x13bc270] ; 00453495 | g_CameraEdgeDetectionResults[2] | g_CameraEdgeDetectionResults[5]
         ;   Label: LAB_00453495
     CMP EBP,EDX                         ; 0045349b
     JNZ 0x0045340c                      ; 0045349d
         ;   XREF to: 0045340c (CONDITIONAL_JUMP)  ; LAB_0045340c
-    MOV ECX,dword ptr [EBX + 0x13bc268] ; 004534a3 | g_CameraEdgeDetectionResults | DAT_013bc274
+    MOV ECX,dword ptr [EBX + 0x13bc268] ; 004534a3 | g_CameraEdgeDetectionResults | g_CameraEdgeDetectionResults[3]
     PUSH ECX                            ; 004534a9
     PUSH EDX                            ; 004534aa
-    MOV EDX,dword ptr [EBX + 0x13bc26c] ; 004534ab | DAT_013bc26c | DAT_013bc278
+    MOV EDX,dword ptr [EBX + 0x13bc26c] ; 004534ab | g_CameraEdgeDetectionResults[1] | g_CameraEdgeDetectionResults[4]
     PUSH EDX                            ; 004534b1
     PUSH EDI                            ; 004534b2
     ADD EBX,0xc                         ; 004534b3
@@ -359,15 +359,15 @@ section .text
     ADD ESP,0x14                        ; 004535f3
     JMP 0x00453574                      ; 004535f6
         ;   XREF to: 00453574 (UNCONDITIONAL_JUMP)  ; LAB_00453574
-    MOV EDX,dword ptr [EBX + 0x13bc270] ; 004535fb | DAT_013bc270 | DAT_013bc27c
+    MOV EDX,dword ptr [EBX + 0x13bc270] ; 004535fb | g_CameraEdgeDetectionResults[2] | g_CameraEdgeDetectionResults[5]
         ;   Label: LAB_004535fb
     CMP EBP,EDX                         ; 00453601
     JNZ 0x00453583                      ; 00453603
         ;   XREF to: 00453583 (CONDITIONAL_JUMP)  ; LAB_00453583
-    MOV ECX,dword ptr [EBX + 0x13bc268] ; 00453609 | g_CameraEdgeDetectionResults | DAT_013bc274
+    MOV ECX,dword ptr [EBX + 0x13bc268] ; 00453609 | g_CameraEdgeDetectionResults | g_CameraEdgeDetectionResults[3]
     PUSH ECX                            ; 0045360f
     PUSH EDX                            ; 00453610
-    MOV EDX,dword ptr [EBX + 0x13bc26c] ; 00453611 | DAT_013bc26c | DAT_013bc278
+    MOV EDX,dword ptr [EBX + 0x13bc26c] ; 00453611 | g_CameraEdgeDetectionResults[1] | g_CameraEdgeDetectionResults[4]
     PUSH EDX                            ; 00453617
     PUSH EDI                            ; 00453618
     ADD EBX,0xc                         ; 00453619

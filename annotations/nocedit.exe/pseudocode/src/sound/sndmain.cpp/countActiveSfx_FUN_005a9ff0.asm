@@ -10,9 +10,9 @@
 ; Referenced Globals:
 ;   CSfxSlot[64] g_SfxSlots
 ;   undefined4 g_SfxSlots[0].field7_0x74
-;   undefined4 DAT_03f5db1c
-;   undefined4 DAT_03f5dc40
-;   undefined4 DAT_03f5dc44
+;   undefined4 g_SfxSlots[0].sample
+;   undefined4 g_SfxSlots[1].playback_state
+;   undefined4 g_SfxSlots[1].sample
 ;   int g_SfxLastSlot
 ;
 ; *****************************************************************************
@@ -23,11 +23,11 @@ section .text
         ;   Label: sound_sndmain.cpp_countActiveSfx_FUN_005a9ff0
     XOR EDX,EDX                         ; 005a9ff5
     LEA ECX,[EAX + 0x4a00]              ; 005a9ff7 | g_SfxLastSlot
-    CMP dword ptr [EAX + 0x78],0x0      ; 005a9ffd | DAT_03f5db1c | DAT_03f5dc44
+    CMP dword ptr [EAX + 0x78],0x0      ; 005a9ffd | g_SfxSlots[0].sample | g_SfxSlots[1].sample
         ;   Label: LAB_005a9ffd
     JZ 0x005aa00a                       ; 005aa001
         ;   XREF to: 005aa00a (CONDITIONAL_JUMP)  ; LAB_005aa00a
-    CMP dword ptr [EAX + 0x74],0x0      ; 005aa003 | g_SfxSlots[0].field7_0x74 | DAT_03f5dc40
+    CMP dword ptr [EAX + 0x74],0x0      ; 005aa003 | g_SfxSlots[0].field7_0x74 | g_SfxSlots[1].playback_state
     JZ 0x005aa00a                       ; 005aa007
         ;   XREF to: 005aa00a (CONDITIONAL_JUMP)  ; LAB_005aa00a
     INC EDX                             ; 005aa009

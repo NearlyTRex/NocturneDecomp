@@ -9,7 +9,7 @@
 ;   _FILE* g_StaticFilePoolStart = 00000000
 ;   int INT_00684ccc = 0x0
 ;   int INT_00684cd0 = 0x1
-;   undefined4 DAT_00684cea
+;   undefined4 g_StdoutLogFile._flag
 ;   undefined4 g_StderrLogFile._flag+1
 ;   FileListNode* g_AllocatedListHead
 ;   FileListNode* g_FreeListHeadPointer
@@ -73,7 +73,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x8]       ; 00608f97 | INT_00684ccc
     MOV dword ptr [EAX + 0xc],0x0       ; 00608f9a
     MOV dword ptr [0x03f9b200],ESI      ; 00608fa1 | g_AllocatedListHead
-    MOV ECX,dword ptr [EBX + 0x26]      ; 00608fa7 | DAT_00684cea
+    MOV ECX,dword ptr [EBX + 0x26]      ; 00608fa7 | g_StdoutLogFile._flag
     ADD EBX,0x1a                        ; 00608faa
     TEST ECX,ECX                        ; 00608fad
     JNZ 0x00608f4b                      ; 00608faf

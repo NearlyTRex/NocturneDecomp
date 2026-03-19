@@ -444,7 +444,7 @@ section .text
     JLE 0x004e3fe0                      ; 004e3f99
         ;   XREF to: 004e3fe0 (CONDITIONAL_JUMP)  ; LAB_004e3fe0
     MOV EBX,0x2d7d6f0                   ; 004e3f9b | g_ActStatsTextBuffer2
-    PUSH EBX                            ; 004e3fa0 | g_ActStatsTextBuffer2 | DAT_02d7d7f0
+    PUSH EBX                            ; 004e3fa0 | g_ActStatsTextBuffer2 | g_ActStatsTextBuffer2+0x100
         ;   Label: LAB_004e3fa0
     PUSH 0x0                            ; 004e3fa1
     PUSH 0xf8                           ; 004e3fa3
@@ -457,7 +457,7 @@ section .text
     CALL engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0 ; 004e3fbc
         ;   XREF to: 004cdee0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     ADD ESP,0x1c                        ; 004e3fc1
-    ADD EBX,0x100                       ; 004e3fc4 | DAT_02d7d7f0
+    ADD EBX,0x100                       ; 004e3fc4 | g_ActStatsTextBuffer2+0x100
     MOV EDX,dword ptr [ESP + 0x530]     ; 004e3fca
     MOV ECX,dword ptr [ESP + 0x52c]     ; 004e3fd1
     ADD ESI,EDX                         ; 004e3fd8

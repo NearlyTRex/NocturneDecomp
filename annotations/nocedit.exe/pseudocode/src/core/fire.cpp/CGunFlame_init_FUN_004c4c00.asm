@@ -18,10 +18,10 @@
 ;   double DOUBLE_00629f2b = 25
 ;   int g_CharactersOnFireCount
 ;   CCharacter*[50] g_CharactersOnFire
-;   undefined4 DAT_02d13ebc
+;   undefined4 g_CharactersOnFire[1]
 ;   int g_FlameCanCount
 ;   CFlameCan*[150] g_FlameCans
-;   undefined4 DAT_02d13f88
+;   undefined4 g_FlameCans[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_004c4c22
     MOV EBX,dword ptr [ESP + 0x20]      ; 004c4c25
     MOV EDX,dword ptr [EAX + 0x20]      ; 004c4c29
-    MOV EBX,dword ptr [EBX + 0x2d13eb8] ; 004c4c2c | g_CharactersOnFire | DAT_02d13ebc
+    MOV EBX,dword ptr [EBX + 0x2d13eb8] ; 004c4c2c | g_CharactersOnFire | g_CharactersOnFire[1]
     CMP EDX,0x2                         ; 004c4c32
     JZ 0x004c4cc3                       ; 004c4c35
         ;   XREF to: 004c4cc3 (CONDITIONAL_JUMP)  ; LAB_004c4cc3
@@ -79,7 +79,7 @@ section .text
     ADD EAX,0x4                         ; 004c4c6d
     XOR EDI,EDI                         ; 004c4c70
     MOV dword ptr [ESP + 0x1c],EAX      ; 004c4c72
-    MOV EDX,dword ptr [EDI + 0x2d13f84] ; 004c4c76 | g_FlameCans | DAT_02d13f88
+    MOV EDX,dword ptr [EDI + 0x2d13f84] ; 004c4c76 | g_FlameCans | g_FlameCans[1]
         ;   Label: LAB_004c4c76
     LEA EBX,[EDX + 0x20]                ; 004c4c7c
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004c4c7f

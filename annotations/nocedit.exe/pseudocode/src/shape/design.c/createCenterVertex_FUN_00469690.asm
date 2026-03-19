@@ -22,7 +22,7 @@
 ;   TerminatedCString s_New_vertex_created_d_Pre_0061cfc6
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; Called Functions:
@@ -148,7 +148,7 @@ section .text
     FSTP float ptr [EBP + -0x14]        ; 0046979a
     IMUL EAX,dword ptr [EBP + -0x1c],0x14 ; 0046979d
     FLD float ptr [EBP + -0x10]         ; 004697a1
-    FADD float ptr [EAX + 0x1626410]    ; 004697a4 | DAT_01626410
+    FADD float ptr [EAX + 0x1626410]    ; 004697a4 | g_LoadedVertices[0].vertex.y
     FSTP float ptr [EBP + -0x10]        ; 004697aa
     IMUL EAX,dword ptr [EBP + -0x1c],0x14 ; 004697ad
     FLD float ptr [EBP + -0xc]          ; 004697b1
@@ -165,7 +165,7 @@ section .text
     FILD dword ptr [EBP + -0x8]         ; 004697d9
     FDIVR float ptr [EBP + -0x10]       ; 004697dc
     IMUL EAX,dword ptr [0x01626408],0x14 ; 004697df | g_VertexCount
-    FSTP float ptr [EAX + 0x1626410]    ; 004697e6 | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 004697e6 | g_LoadedVertices[0].vertex.y
     FILD dword ptr [EBP + -0x8]         ; 004697ec
     FDIVR float ptr [EBP + -0xc]        ; 004697ef
     IMUL EAX,dword ptr [0x01626408],0x14 ; 004697f2 | g_VertexCount

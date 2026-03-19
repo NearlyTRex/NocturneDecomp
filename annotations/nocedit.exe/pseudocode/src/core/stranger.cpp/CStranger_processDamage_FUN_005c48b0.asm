@@ -19,9 +19,9 @@
 ;   CGore* g_CGorePtr = 02d83364
 ;   CConsole g_CConsoleInstance
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81b64
-;   undefined4 DAT_02d81c6c
-;   undefined4 DAT_02d81cc8
+;   undefined4 g_CGameInstance.auto_use_health
+;   undefined4 g_CGameInstance.god_mode_enabled
+;   undefined4 g_CGameInstance.allow_damage_flag
 ;   CGore g_CGoreInstance
 ;   ... and 1 more
 ;
@@ -55,12 +55,12 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 005c48b9
     MOV ESI,dword ptr [EBP + 0x18]      ; 005c48bc
     MOV EAX,[0x0067b654]                ; 005c48bf | g_CGamePtr
-    CMP dword ptr [EAX + 0x1d0],0x0     ; 005c48c4 | DAT_02d81c6c
+    CMP dword ptr [EAX + 0x1d0],0x0     ; 005c48c4 | g_CGameInstance.god_mode_enabled
     JNZ 0x005c4b0c                      ; 005c48cb
         ;   XREF to: 005c4b0c (CONDITIONAL_JUMP)  ; LAB_005c4b0c
     MOV EAX,[0x0067b654]                ; 005c48d1 | g_CGamePtr | g_CGameInstance
         ;   Label: LAB_005c48d1
-    MOV ECX,dword ptr [EAX + 0x22c]     ; 005c48d6 | DAT_02d81cc8
+    MOV ECX,dword ptr [EAX + 0x22c]     ; 005c48d6 | g_CGameInstance.allow_damage_flag
     TEST ECX,ECX                        ; 005c48dc
     JNZ 0x005c48e3                      ; 005c48de
         ;   XREF to: 005c48e3 (CONDITIONAL_JUMP)  ; LAB_005c48e3
@@ -98,7 +98,7 @@ section .text
     FSUBR float ptr [EBX + 0x243c]      ; 005c4933
     MOV EAX,[0x0067b654]                ; 005c4939 | g_CGamePtr
     FSTP float ptr [EBX + 0x243c]       ; 005c493e
-    CMP dword ptr [EAX + 0xc8],0x0      ; 005c4944 | DAT_02d81b64
+    CMP dword ptr [EAX + 0xc8],0x0      ; 005c4944 | g_CGameInstance.auto_use_health
     JZ 0x005c49ae                       ; 005c494b
         ;   XREF to: 005c49ae (CONDITIONAL_JUMP)  ; LAB_005c49ae
     CMP dword ptr [ESI + 0x30],0xb      ; 005c494d

@@ -88,7 +88,7 @@ section .text
         ;   XREF to: 004aa45a (CONDITIONAL_JUMP)  ; LAB_004aa45a
     MOV AL,byte ptr [ESI + 0x1]         ; 004aa44a | s_ust_specify_actor_name_0062444d | s_t_specify_actor_name_0062444f
     ADD ESI,0x2                         ; 004aa44d
-    MOV byte ptr [EDI + 0x1],AL         ; 004aa450 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004aa450 | g_EventErrorMessageBuffer+1 | g_EventErrorMessageBuffer+3
     ADD EDI,0x2                         ; 004aa453
     CMP AL,0x0                          ; 004aa456
     JNZ 0x004aa442                      ; 004aa458

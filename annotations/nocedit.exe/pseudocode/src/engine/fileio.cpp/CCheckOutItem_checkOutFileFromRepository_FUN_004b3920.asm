@@ -495,13 +495,13 @@ section .text
     MOV ESI,0x2d12bd0                   ; 004b3dc2 | g_VersionControlSession
     LEA EDI,[ESP + 0x2f8]               ; 004b3dc7
     PUSH EDI                            ; 004b3dce
-    MOV AL,byte ptr [ESI]               ; 004b3dcf | g_VersionControlSession | DAT_02d12bd2
+    MOV AL,byte ptr [ESI]               ; 004b3dcf | g_VersionControlSession | g_VersionControlSession.primary_username[2]
         ;   Label: LAB_004b3dcf
     MOV byte ptr [EDI],AL               ; 004b3dd1
     CMP AL,0x0                          ; 004b3dd3
     JZ 0x004b3de7                       ; 004b3dd5
         ;   XREF to: 004b3de7 (CONDITIONAL_JUMP)  ; LAB_004b3de7
-    MOV AL,byte ptr [ESI + 0x1]         ; 004b3dd7 | DAT_02d12bd1 | DAT_02d12bd3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004b3dd7 | g_VersionControlSession.primary_username[1] | g_VersionControlSession.primary_username[3]
     ADD ESI,0x2                         ; 004b3dda
     MOV byte ptr [EDI + 0x1],AL         ; 004b3ddd
     ADD EDI,0x2                         ; 004b3de0

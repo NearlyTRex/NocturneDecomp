@@ -22,7 +22,7 @@
 ;   int g_CurrentLineNumber
 ;   int g_DynamicLightCount
 ;   CDemonLight*[4] g_DynamicLights
-;   undefined4 DAT_032776bc
+;   undefined4 g_DynamicLights[1]
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -44,7 +44,7 @@ section .text
         ;   XREF to: 0056d0c1 (CONDITIONAL_JUMP)  ; LAB_0056d0c1
     LEA EDX,[ESI*0x4 + 0x0]             ; 0056d0a9
     XOR EAX,EAX                         ; 0056d0b0
-    CMP EBX,dword ptr [EAX + 0x32776b8] ; 0056d0b2 | g_DynamicLights | DAT_032776bc
+    CMP EBX,dword ptr [EAX + 0x32776b8] ; 0056d0b2 | g_DynamicLights | g_DynamicLights[1]
         ;   Label: LAB_0056d0b2
     JZ 0x0056d0da                       ; 0056d0b8
         ;   XREF to: 0056d0da (CONDITIONAL_JUMP)  ; LAB_0056d0da

@@ -5,23 +5,23 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5867 (90.5%)
-Failed: 617
+Successful: 5881 (90.7%)
+Failed: 603
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1273
-  format_error                     799
-  incompatible_types               214
-  undeclared_identifier            149
-  syntax_error                      42
+  other                           1226
+  format_error                     797
+  incompatible_types               212
+  undeclared_identifier            148
+  syntax_error                      41
   missing_member                    20
   type_error                        10
   pointer_arithmetic                 9
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1273 errors)
+CATEGORY: other (1226 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -304,10 +304,6 @@ CATEGORY: other (1273 errors)
     Line 48: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   sound_snddx.cpp_releaseSfxHardwareBuffers_FUN_005ae1c0
     Line 26: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
-  wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0
-    Line 46: indirection not permitted on operand of type 'void *'
-  wincore_wddvmem.cpp_videoRestore_FUN_005edc80
-    Line 20: indirection not permitted on operand of type 'void *'
   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426420
     Line 57: invalid suffix '._0_4_' on floating constant
   core_colonel.cpp_CColonel_process_FUN_0043fa00
@@ -624,23 +620,9 @@ CATEGORY: other (1273 errors)
     Line 28: too many arguments to function call, expected 0, have 2
   wincore_windll.cpp_loadExternalRenderer_FUN_005b6750
     Line 40: too many arguments to function call, expected 0, have 2
-  core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9
-    Line 37: use of undeclared label 'DAT_02d02584'
-  core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7
-    Line 43: use of undeclared label 'DAT_02d02584'
-  core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_0049169d
-    Line 46: use of undeclared label 'DAT_02d02584'
-  wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
-    Line 539: use of undeclared label 'DAT_02d02584'
-  wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
-    Line 479: use of undeclared label 'DAT_02d02584'
-  core_moon.cpp_CMoon_render_FUN_00529ed0
-    Line 73: use of undeclared label 'DAT_0326f0ec'
-  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
-    Line 1033: use of undeclared label 'DAT_032758e8'
 
 ====================================================================================================
-CATEGORY: format_error (799 errors)
+CATEGORY: format_error (797 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -1147,10 +1129,6 @@ CATEGORY: format_error (799 errors)
     Line 41: format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]
   core_menu.cpp_showJoystickCalibrationScreen_FUN_00510410
     Line 20: format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]
-  wincore_winvideo.cpp_openMovie_FUN_005f4700
-    Line 26: format specifies type 'int' but the argument has type 'HWND' (aka 'HWND__ *') [-Werror,-Wformat]
-  wincore_winvideo.cpp_playMovie_FUN_005f4a00
-    Line 44: format specifies type 'int' but the argument has type 'HWND' (aka 'HWND__ *') [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
     Line 591: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
   shape_memdbg.cpp_debugCalloc_FUN_0050f350
@@ -1181,7 +1159,7 @@ CATEGORY: format_error (799 errors)
     Line 40: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: incompatible_types (214 errors)
+CATEGORY: incompatible_types (212 errors)
 ====================================================================================================
 
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
@@ -1227,7 +1205,7 @@ CATEGORY: incompatible_types (214 errors)
   shape_superopt.cpp_CObj_removeVertex_FUN_005d3140
     Line 29: assigning to 'CVert *' from incompatible type 'void *'
   wincore_winrun.cpp_winMain_FUN_005f3680
-    Line 111: assigning to 'HBRUSH' (aka 'HBRUSH__ *') from incompatible type 'HGDIOBJ' (aka 'void *')
+    Line 111: assigning to 'HBRUSH' (aka 'HBRUSH__ *') from incompatible type 'LPVOID' (aka 'void *')
   shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500
     Line 117: assigning to 'SExpandedEdge *' from incompatible type 'void *'
   shape_memdbg.cpp_debugCalloc_FUN_0050f350
@@ -1270,8 +1248,6 @@ CATEGORY: incompatible_types (214 errors)
     Line 24: assigning to 'char *' from incompatible type 'void *'
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
     Line 182: assigning to 'char *' from incompatible type 'void *'
-  wincore_windll.cpp_clearScreen_FUN_005b3e70
-    Line 25: assigning to 'double *' from incompatible type 'void *'
   sound_sndmain.cpp_allocMixBuffers_FUN_005a5730
     Line 35: assigning to 'float *' from incompatible type 'void *'
   sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
@@ -1332,8 +1308,6 @@ CATEGORY: incompatible_types (214 errors)
     Line 146: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
     Line 55: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30
-    Line 23: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
     Line 1244: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
@@ -1426,7 +1400,7 @@ CATEGORY: incompatible_types (214 errors)
     Line 212: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (149 errors)
+CATEGORY: undeclared_identifier (148 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -1503,8 +1477,6 @@ CATEGORY: undeclared_identifier (149 errors)
     Line 83: use of undeclared identifier 'code'
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
     Line 123: use of undeclared identifier 'code'
-  wincore_winrun.cpp_mainWindowProc_FUN_005f3150
-    Line 24: use of undeclared identifier 'code'
   core_mmx.c_detectIntelProcessor_FUN_00524f4c
     Line 63: use of undeclared identifier 'register0x0000000c'
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
@@ -1589,7 +1561,7 @@ CATEGORY: undeclared_identifier (149 errors)
     Line 93: use of undeclared identifier 'uint3'
 
 ====================================================================================================
-CATEGORY: syntax_error (42 errors)
+CATEGORY: syntax_error (41 errors)
 ====================================================================================================
 
   core_curtain.cpp_CCurtain_process_FUN_0044a920
@@ -1652,8 +1624,6 @@ CATEGORY: syntax_error (42 errors)
     Line 83: expected expression
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
     Line 123: expected expression
-  wincore_winrun.cpp_mainWindowProc_FUN_005f3150
-    Line 24: expected expression
 
 ====================================================================================================
 CATEGORY: missing_member (20 errors)

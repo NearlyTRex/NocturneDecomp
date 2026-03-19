@@ -16,18 +16,18 @@
 ;
 ; Referenced Globals:
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
-;   undefined4 DAT_01626418
-;   undefined4 DAT_0162641c
+;   undefined4 g_LoadedVertices[0].u
+;   undefined4 g_LoadedVertices[0].v
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
-;   undefined4 DAT_016e9914
-;   undefined4 DAT_016e9a88
+;   undefined4 g_ModelPolygonData[0].texture_name[0]
+;   undefined4 g_ModelPolygonData[0].part_assignment
 ;   SModelPartName[500] g_ModelPartNames
-;   undefined4 DAT_01e50191
-;   undefined4 DAT_01e50192
-;   undefined4 DAT_01e50193
+;   undefined4 g_ModelPartNames[0].name[1]
+;   undefined4 g_ModelPartNames[0].name[2]
+;   undefined4 g_ModelPartNames[0].name[3]
 ;   int[5000] g_VertexIdRegistry
 ;
 ; Called Functions:
@@ -55,13 +55,13 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 0048f79d
     ADD EDI,0x1f20c8                    ; 0048f7a0
     PUSH EDI                            ; 0048f7a6
-    MOV AL,byte ptr [ESI]               ; 0048f7a7 | g_ModelPartNames | DAT_01e50192
+    MOV AL,byte ptr [ESI]               ; 0048f7a7 | g_ModelPartNames | g_ModelPartNames[0].name[2]
         ;   Label: LAB_0048f7a7
     MOV byte ptr [EDI],AL               ; 0048f7a9
     CMP AL,0x0                          ; 0048f7ab
     JZ 0x0048f7bf                       ; 0048f7ad
         ;   XREF to: 0048f7bf (CONDITIONAL_JUMP)  ; LAB_0048f7bf
-    MOV AL,byte ptr [ESI + 0x1]         ; 0048f7af | DAT_01e50191 | DAT_01e50193
+    MOV AL,byte ptr [ESI + 0x1]         ; 0048f7af | g_ModelPartNames[0].name[1] | g_ModelPartNames[0].name[3]
     ADD ESI,0x2                         ; 0048f7b2
     MOV byte ptr [EDI + 0x1],AL         ; 0048f7b5
     ADD EDI,0x2                         ; 0048f7b8
@@ -82,7 +82,7 @@ section .text
     JGE 0x0048f823                      ; 0048f7d8
         ;   XREF to: 0048f823 (CONDITIONAL_JUMP)  ; LAB_0048f823
     IMUL EAX,dword ptr [EBP + -0x8],0x184 ; 0048f7da
-    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 0048f7e1 | DAT_016e9a88
+    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 0048f7e1 | g_ModelPolygonData[0].part_assignment
     CMP EAX,dword ptr [EBP + 0x18]      ; 0048f7e7
     JZ 0x0048f7ee                       ; 0048f7ea
         ;   XREF to: 0048f7ee (CONDITIONAL_JUMP)  ; LAB_0048f7ee
@@ -96,7 +96,7 @@ section .text
     MOV ECX,0x61                        ; 0048f805
     LEA EDI,[EAX + 0x186a8]             ; 0048f80a
     LEA ESI,[ESI + 0x16e9910]           ; 0048f810 | g_ModelPolygonData
-    MOVSD.REP ES:EDI,ESI                ; 0048f816 | g_ModelPolygonData | DAT_016e9914
+    MOVSD.REP ES:EDI,ESI                ; 0048f816 | g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
     MOV EAX,dword ptr [EBP + 0x14]      ; 0048f818
     INC dword ptr [EAX + 0x186a4]       ; 0048f81b
     JMP 0x0048f7c9                      ; 0048f821
@@ -217,10 +217,10 @@ section .text
     LEA EDI,[EAX + 0x4]                 ; 0048f942
     LEA ESI,[ESI + 0x162640c]           ; 0048f945 | g_LoadedVertices
     MOVSD ES:EDI,ESI                    ; 0048f94b | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0048f94c | DAT_01626410
+    MOVSD ES:EDI,ESI                    ; 0048f94c | g_LoadedVertices[0].vertex.y
     MOVSD ES:EDI,ESI                    ; 0048f94d | g_LoadedVertices[0].vertex.z
-    MOVSD ES:EDI,ESI                    ; 0048f94e | DAT_01626418
-    MOVSD ES:EDI,ESI                    ; 0048f94f | DAT_0162641c
+    MOVSD ES:EDI,ESI                    ; 0048f94e | g_LoadedVertices[0].u
+    MOVSD ES:EDI,ESI                    ; 0048f94f | g_LoadedVertices[0].v
     JMP 0x0048f91e                      ; 0048f950
         ;   XREF to: 0048f91e (UNCONDITIONAL_JUMP)  ; LAB_0048f91e
     MOV ESP,EBP                         ; 0048f952

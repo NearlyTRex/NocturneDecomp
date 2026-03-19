@@ -21,8 +21,8 @@
 ;   double DOUBLE_006142c0 = -1
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_032613ac
-;   undefined4 DAT_032758e8
+;   undefined4 g_CDemonSetInstance.ground_type
+;   undefined4 g_CDemonCameraInstance.base.position
 ;   undefined4 g_CDemonCameraInstance.base.position+4
 ;   undefined4 g_CDemonCameraInstance.base.position+8
 ;
@@ -48,16 +48,16 @@ section .text
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 0040c903
         ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0040c908
-    MOV EAX,[0x032758e8]                ; 0040c90b | DAT_032758e8
+    MOV EAX,[0x032758e8]                ; 0040c90b | g_CDemonCameraInstance.base.position
     FLD float ptr [ESP]                 ; 0040c910
     MOV dword ptr [ESP + 0xc],EAX       ; 0040c913
-    MOV EAX,0x32758e8                   ; 0040c917 | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 0040c917 | g_CDemonCameraInstance.base.position
     FSUB float ptr [ESP + 0xc]          ; 0040c91c
     FMUL ST0                            ; 0040c920
     MOV EAX,dword ptr [EAX + 0x4]       ; 0040c922 | g_CDemonCameraInstance.base.position+4
     FLD float ptr [ESP + 0x4]           ; 0040c925
     MOV dword ptr [ESP + 0x10],EAX      ; 0040c929
-    MOV EAX,0x32758e8                   ; 0040c92d | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 0040c92d | g_CDemonCameraInstance.base.position
     FSUB float ptr [ESP + 0x10]         ; 0040c932
     FMUL ST0                            ; 0040c936
     MOV EAX,dword ptr [EAX + 0x8]       ; 0040c938 | g_CDemonCameraInstance.base.position+8
@@ -102,7 +102,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 0040c997 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 0040c99c | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x2c]         ; 0040c99d
-    MOV ESI,dword ptr [EAX + 0x14d134]  ; 0040c9a1 | DAT_032613ac
+    MOV ESI,dword ptr [EAX + 0x14d134]  ; 0040c9a1 | g_CDemonSetInstance.ground_type
     CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 ; 0040c9a7
         ;   XREF to: 005716b0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x40],EAX      ; 0040c9ac
@@ -123,7 +123,7 @@ section .text
     JNC 0x0040c9eb                      ; 0040c9dd
         ;   XREF to: 0040c9eb (CONDITIONAL_JUMP)  ; LAB_0040c9eb
     MOV ESI,dword ptr [0x006810c8]      ; 0040c9df | g_CDemonSetPtr
-    MOV ESI,dword ptr [ESI + 0x14d134]  ; 0040c9e5 | DAT_032613ac
+    MOV ESI,dword ptr [ESI + 0x14d134]  ; 0040c9e5 | g_CDemonSetInstance.ground_type
     PUSH dword ptr [ESP + 0x48]         ; 0040c9eb
         ;   Label: LAB_0040c9eb
     PUSH ESI                            ; 0040c9ef

@@ -81,7 +81,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0056c1a9
     MOV ESI,dword ptr [EBP + 0x18]      ; 0056c1ac
     MOV EAX,[0x0067b654]                ; 0056c1af | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x20c],0x0     ; 0056c1b4 | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x0     ; 0056c1b4 | g_CGameInstance.profile_mode
     JNZ 0x0056c80d                      ; 0056c1bb
         ;   XREF to: 0056c80d (CONDITIONAL_JUMP)  ; LAB_0056c80d
     TEST ESI,ESI                        ; 0056c1c1
@@ -140,7 +140,7 @@ section .text
     JLE 0x0056c283                      ; 0056c255
         ;   XREF to: 0056c283 (CONDITIONAL_JUMP)  ; LAB_0056c283
     XOR EDI,EDI                         ; 0056c257
-    MOV EAX,dword ptr [EDI + 0x3276f34] ; 0056c259 | g_SpotLightList | DAT_03276f38
+    MOV EAX,dword ptr [EDI + 0x3276f34] ; 0056c259 | g_SpotLightList | g_SpotLightList[1]
         ;   Label: LAB_0056c259
     CMP dword ptr [EAX + 0x1cb4],0x0    ; 0056c25f
     JZ 0x0056c276                       ; 0056c266
@@ -167,7 +167,7 @@ section .text
     MOV dword ptr [EBP + -0xc],EDX      ; 0056c296
     MOV EAX,dword ptr [EBP + -0xc]      ; 0056c299
         ;   Label: LAB_0056c299
-    MOV EAX,dword ptr [EAX + 0x32776b8] ; 0056c29c | g_DynamicLights | DAT_032776bc
+    MOV EAX,dword ptr [EAX + 0x32776b8] ; 0056c29c | g_DynamicLights | g_DynamicLights[1]
     CMP dword ptr [EAX + 0x1cb4],0x0    ; 0056c2a2
     JZ 0x0056c305                       ; 0056c2a9
         ;   XREF to: 0056c305 (CONDITIONAL_JUMP)  ; LAB_0056c305
@@ -229,7 +229,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x8]      ; 0056c339
         ;   Label: LAB_0056c339
     PUSH 0x0                            ; 0056c33c
-    MOV EDX,dword ptr [EAX + 0x32776cc] ; 0056c33e | g_CoronaGlobes | DAT_032776d0
+    MOV EDX,dword ptr [EAX + 0x32776cc] ; 0056c33e | g_CoronaGlobes | g_CoronaGlobes[1]
     PUSH EDX                            ; 0056c344
     PUSH 0x32758e4                      ; 0056c345 | g_CDemonCameraInstance
     XOR ESI,ESI                         ; 0056c34a
@@ -284,9 +284,9 @@ section .text
     JLE 0x0056c414                      ; 0056c3c4
         ;   XREF to: 0056c414 (CONDITIONAL_JUMP)  ; LAB_0056c414
     XOR ESI,ESI                         ; 0056c3c6
-    MOV EAX,dword ptr [ESI + 0x32779f0] ; 0056c3c8 | g_QueuedCoronaGlobeAlphaMasks | DAT_032779f4
+    MOV EAX,dword ptr [ESI + 0x32779f0] ; 0056c3c8 | g_QueuedCoronaGlobeAlphaMasks | g_QueuedCoronaGlobeAlphaMasks[1]
         ;   Label: LAB_0056c3c8
-    MOV EDI,dword ptr [ESI + 0x3277860] ; 0056c3ce | g_QueuedCoronaGlobes | DAT_03277864
+    MOV EDI,dword ptr [ESI + 0x3277860] ; 0056c3ce | g_QueuedCoronaGlobes | g_QueuedCoronaGlobes[1]
     TEST EAX,EAX                        ; 0056c3d4
     JNZ 0x0056c84a                      ; 0056c3d6
         ;   XREF to: 0056c84a (CONDITIONAL_JUMP)  ; LAB_0056c84a
@@ -314,7 +314,7 @@ section .text
     MOV dword ptr [0x0327785c],ECX      ; 0056c416 | g_QueuedCoronaGlobeCount
     MOV EAX,[0x0067b654]                ; 0056c41c | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_0056c41c
-    CMP dword ptr [EAX + 0x20c],0x0     ; 0056c421 | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x0     ; 0056c421 | g_CGameInstance.profile_mode
     JZ 0x0056c432                       ; 0056c428
         ;   XREF to: 0056c432 (CONDITIONAL_JUMP)  ; LAB_0056c432
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 0056c42a
@@ -325,7 +325,7 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0 ; 0056c437
         ;   XREF to: 004511c0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0(CDemonCamera * this_ptr)
     MOV EAX,[0x0067b654]                ; 0056c43c | g_CGameInstance | g_CGamePtr
-    MOV ESI,dword ptr [EAX + 0x20c]     ; 0056c441 | DAT_02d81ca8
+    MOV ESI,dword ptr [EAX + 0x20c]     ; 0056c441 | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 0056c447
     TEST ESI,ESI                        ; 0056c44a
     JZ 0x0056c456                       ; 0056c44c
@@ -458,7 +458,7 @@ section .text
     MOV dword ptr [EBP + -0x24],ECX     ; 0056c57e
     MOV EDI,dword ptr [EBP + -0x24]     ; 0056c581
         ;   Label: LAB_0056c581
-    MOV EDI,dword ptr [EDI + 0x32776b8] ; 0056c584 | g_DynamicLights | DAT_032776bc
+    MOV EDI,dword ptr [EDI + 0x32776b8] ; 0056c584 | g_DynamicLights | g_DynamicLights[1]
     CMP dword ptr [EDI + 0x1cb4],0x0    ; 0056c58a
     JNZ 0x0056c875                      ; 0056c591
         ;   XREF to: 0056c875 (CONDITIONAL_JUMP)  ; LAB_0056c875
@@ -547,7 +547,7 @@ section .text
     MOV dword ptr [EBP + -0x28],ECX     ; 0056c65b
     MOV EDI,dword ptr [EBP + -0x28]     ; 0056c65e
         ;   Label: LAB_0056c65e
-    MOV EDI,dword ptr [EDI + 0x32776b8] ; 0056c661 | g_DynamicLights | DAT_032776bc
+    MOV EDI,dword ptr [EDI + 0x32776b8] ; 0056c661 | g_DynamicLights | g_DynamicLights[1]
     CMP dword ptr [EDI + 0x1cb4],0x0    ; 0056c667
     JNZ 0x0056c8e8                      ; 0056c66e
         ;   XREF to: 0056c8e8 (CONDITIONAL_JUMP)  ; LAB_0056c8e8
@@ -570,7 +570,7 @@ section .text
     JZ 0x0056c6b0                       ; 0056c69e
         ;   XREF to: 0056c6b0 (CONDITIONAL_JUMP)  ; LAB_0056c6b0
     MOV EDX,dword ptr [0x0067d550]      ; 0056c6a0 | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EDX + 0x4],0x0       ; 0056c6a6 | DAT_02f33744
+    CMP dword ptr [EDX + 0x4],0x0       ; 0056c6a6 | g_CDemonMissionInstance.is_in_editor
     JZ 0x0056c95b                       ; 0056c6aa
         ;   XREF to: 0056c95b (CONDITIONAL_JUMP)  ; LAB_0056c95b
     PUSH 0x0                            ; 0056c6b0
@@ -585,7 +585,7 @@ section .text
     JLE 0x0056c6f0                      ; 0056c6c8
         ;   XREF to: 0056c6f0 (CONDITIONAL_JUMP)  ; LAB_0056c6f0
     XOR ESI,ESI                         ; 0056c6ca
-    MOV EDX,dword ptr [ESI + 0x3276f34] ; 0056c6cc | g_SpotLightList | DAT_03276f38
+    MOV EDX,dword ptr [ESI + 0x3276f34] ; 0056c6cc | g_SpotLightList | g_SpotLightList[1]
         ;   Label: LAB_0056c6cc
     PUSH EDX                            ; 0056c6d2
     ADD ESI,0x4                         ; 0056c6d3
@@ -601,7 +601,7 @@ section .text
     NOP                                 ; 0056c6ef
     MOV EAX,[0x0067b654]                ; 0056c6f0 | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_0056c6f0
-    CMP dword ptr [EAX + 0x20c],0x0     ; 0056c6f5 | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x0     ; 0056c6f5 | g_CGameInstance.profile_mode
     JZ 0x0056c79f                       ; 0056c6fc
         ;   XREF to: 0056c79f (CONDITIONAL_JUMP)  ; LAB_0056c79f
     MOV EDI,dword ptr [EBP + -0x2c]     ; 0056c702
@@ -663,7 +663,7 @@ section .text
     ADD ESP,0x20                        ; 0056c79c
     MOV EAX,[0x0067b654]                ; 0056c79f | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_0056c79f
-    CMP dword ptr [EAX + 0x1e8],0x0     ; 0056c7a4 | DAT_02d81c84
+    CMP dword ptr [EAX + 0x1e8],0x0     ; 0056c7a4 | g_CGameInstance.debug_toggle_flag
     JZ 0x0056c7b6                       ; 0056c7ab
         ;   XREF to: 0056c7b6 (CONDITIONAL_JUMP)  ; LAB_0056c7b6
     PUSH EBX                            ; 0056c7ad
@@ -734,7 +734,7 @@ section .text
     RET                                 ; 0056c835
     MOV EAX,[0x0067b654]                ; 0056c836 | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_0056c836
-    CMP dword ptr [EAX + 0x24],0x0      ; 0056c83b | DAT_02d81ac0
+    CMP dword ptr [EAX + 0x24],0x0      ; 0056c83b | g_CGameInstance.shadow_flag
     JNZ 0x0056c236                      ; 0056c83f
         ;   XREF to: 0056c236 (CONDITIONAL_JUMP)  ; LAB_0056c236
     JMP 0x0056c41c                      ; 0056c845

@@ -251,8 +251,8 @@ section .text
         ;   XREF to: 004fd4ed (CONDITIONAL_JUMP)  ; LAB_004fd4ed
     IMUL EAX,dword ptr [0x02dbaac0],0x300 ; 004fd498 | g_ItemDefinitionCount
     PUSH EBX                            ; 004fd4a2
-    ADD EAX,0x2dbaac8                   ; 004fd4a3 | DAT_02dbadc8 | g_ItemDefinitionArray
-    PUSH EAX                            ; 004fd4a8 | g_ItemDefinitionArray | DAT_02dbadc8
+    ADD EAX,0x2dbaac8                   ; 004fd4a3 | g_ItemDefinitionArray[1].string1[0]
+    PUSH EAX                            ; 004fd4a8 | g_ItemDefinitionArray | g_ItemDefinitionArray[1].string1[0]
     CALL core_inv.cpp_loadItem_FUN_004fcfe0 ; 004fd4a9
         ;   XREF to: 004fcfe0 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_loadItem_FUN_004fcfe0(SInventoryItemInfo * item_info, _FILE * file_handle)
     ADD ESP,0x8                         ; 004fd4ae

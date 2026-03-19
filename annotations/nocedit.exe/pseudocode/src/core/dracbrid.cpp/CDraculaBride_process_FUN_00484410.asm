@@ -647,7 +647,7 @@ section .text
     JGE 0x00484b1a                      ; 00484a8e
         ;   XREF to: 00484b1a (CONDITIONAL_JUMP)  ; LAB_00484b1a
     ADD EAX,dword ptr [EBP + 0x6e]      ; 00484a94
-    MOV ESI,dword ptr [EAX + 0x14f09c]  ; 00484a97 | g_CDemonSetInstance.characters[0] | DAT_03263318
+    MOV ESI,dword ptr [EAX + 0x14f09c]  ; 00484a97 | g_CDemonSetInstance.characters[0] | g_CDemonSetInstance.characters[1]
     TEST ESI,ESI                        ; 00484a9d
     JNZ 0x00484ab3                      ; 00484a9f
         ;   XREF to: 00484ab3 (CONDITIONAL_JUMP)  ; LAB_00484ab3
@@ -1650,7 +1650,7 @@ section .text
         ;   XREF to: 0048563d (CONDITIONAL_JUMP)  ; LAB_0048563d
     MOV ECX,dword ptr [0x02c6d09c]      ; 00485613 | g_CDraculaBrideClassInfo.name_hash
     PUSH ECX                            ; 00485619
-    MOV EDX,dword ptr [EDI + EAX*0x1 + 0x150fe0] ; 0048561a | DAT_03265258 | DAT_0326525c
+    MOV EDX,dword ptr [EDI + EAX*0x1 + 0x150fe0] ; 0048561a | g_CDemonSetInstance.enemies[0] | g_CDemonSetInstance.enemies[1]
     PUSH EDX                            ; 00485621
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00485622
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

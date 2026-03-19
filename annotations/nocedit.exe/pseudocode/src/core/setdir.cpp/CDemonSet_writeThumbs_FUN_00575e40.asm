@@ -27,9 +27,9 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CZThumb[1500] g_CZThumbPool
-;   undefined4 DAT_03347130
-;   undefined4 DAT_033471f8
-;   undefined4 DAT_033472e8
+;   undefined4 g_CZThumbPool[1].width
+;   undefined4 g_CZThumbPool[6].width
+;   undefined4 g_CZThumbPool[12].width
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -82,15 +82,15 @@ section .text
     TEST EDI,EDI                        ; 00575e9e
     JLE 0x00575eb7                      ; 00575ea0
         ;   XREF to: 00575eb7 (CONDITIONAL_JUMP)  ; LAB_00575eb7
-    MOV EBX,dword ptr [ESP]             ; 00575ea2 | g_CZThumbPool | DAT_033471f8
+    MOV EBX,dword ptr [ESP]             ; 00575ea2 | g_CZThumbPool | g_CZThumbPool[6].width
     PUSH EBP                            ; 00575ea5
         ;   Label: LAB_00575ea5
-    PUSH EBX                            ; 00575ea6 | g_CZThumbPool | DAT_03347130 | DAT_033471f8
+    PUSH EBX                            ; 00575ea6 | g_CZThumbPool | g_CZThumbPool[1].width | g_CZThumbPool[6].width
     INC ESI                             ; 00575ea7
     CALL core_setdir.cpp_CZThumb_write_FUN_00574b20 ; 00575ea8
         ;   XREF to: 00574b20 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CZThumb_write_FUN_00574b20(CZThumb * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 00575ead
-    ADD EBX,0x28                        ; 00575eb0 | DAT_03347130
+    ADD EBX,0x28                        ; 00575eb0 | g_CZThumbPool[1].width
     CMP ESI,EDI                         ; 00575eb3
     JL 0x00575ea5                       ; 00575eb5
         ;   XREF to: 00575ea5 (CONDITIONAL_JUMP)  ; LAB_00575ea5
@@ -100,7 +100,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x8]       ; 00575ebe
     ADD EBX,0xf0                        ; 00575ec2
     ADD ECX,0x1a4                       ; 00575ec8
-    MOV dword ptr [ESP],EBX             ; 00575ece | DAT_033471f8 | DAT_033472e8
+    MOV dword ptr [ESP],EBX             ; 00575ece | g_CZThumbPool[6].width | g_CZThumbPool[12].width
     MOV EBX,dword ptr [ESP + 0x20]      ; 00575ed1
     INC ESI                             ; 00575ed5
     MOV dword ptr [ESP + 0x4],ECX       ; 00575ed6

@@ -13,9 +13,9 @@
 ;
 ; Referenced Globals:
 ;   SFogImagePlane g_CameraPlaneWorkBuffer
-;   undefined4 DAT_013da8b8
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[1][0]
 ;   SFogImagePlane[16] g_CameraImageDecompressBuffer
-;   undefined4 DAT_013ed4b8
+;   undefined4 g_CameraImageDecompressBuffer[0].pixels[1][0]
 ;
 ; Called Functions:
 ;   core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00492e8a
@@ -88,15 +88,15 @@ section .text
     PUSH EAX                            ; 00453212
     MOV EDX,dword ptr [ESP + 0x28]      ; 00453213
     PUSH EDX                            ; 00453217
-    PUSH EBX                            ; 00453218 | g_CameraImageDecompressBuffer | DAT_013ed4b8
+    PUSH EBX                            ; 00453218 | g_CameraImageDecompressBuffer | g_CameraImageDecompressBuffer[0].pixels[1][0]
     PUSH EBP                            ; 00453219
-    PUSH ESI                            ; 0045321a | g_CameraPlaneWorkBuffer | DAT_013da8b8
+    PUSH ESI                            ; 0045321a | g_CameraPlaneWorkBuffer | g_CameraPlaneWorkBuffer.pixels[1][0]
     CALL core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00492e8a ; 0045321b
         ;   XREF to: 00492e8a (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00492e8a(uint * output_buffer, uint * source1_buffer, uint * source2_buffer, uint alpha1, ...)
     ADD ESP,0x18                        ; 00453220
     INC EDI                             ; 00453223
     MOV EAX,dword ptr [ESP + 0x18]      ; 00453224
-    ADD EBX,0x140                       ; 00453228 | DAT_013ed4b8
+    ADD EBX,0x140                       ; 00453228 | g_CameraImageDecompressBuffer[0].pixels[1][0]
     ADD EBP,0x140                       ; 0045322e
     MOV ECX,dword ptr [EAX + 0x154]     ; 00453234
     ADD ESI,0x140                       ; 0045323a

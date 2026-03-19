@@ -27,7 +27,7 @@
 ;   double DOUBLE_00640a28 = 0.0078125
 ;   double DOUBLE_00640a30 = 128
 ;   uchar[65536] g_RippleBuffer
-;   undefined4 DAT_030f6159
+;   undefined4 g_RippleBuffer+1
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
@@ -218,7 +218,7 @@ section .text
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x2c]        ; 00554851
     MOV AL,byte ptr [ESP + 0x2c]        ; 00554855
-    MOV byte ptr [ECX + 0x30f6158],AL   ; 00554859 | DAT_030f6159
+    MOV byte ptr [ECX + 0x30f6158],AL   ; 00554859 | g_RippleBuffer+1
     JMP 0x00554702                      ; 0055485f
         ;   XREF to: 00554702 (UNCONDITIONAL_JUMP)  ; LAB_00554702
     LEA EAX,[ESI + EDI*0x1]             ; 00554864

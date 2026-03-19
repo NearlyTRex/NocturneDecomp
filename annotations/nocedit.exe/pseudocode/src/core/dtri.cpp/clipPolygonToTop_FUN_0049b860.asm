@@ -11,7 +11,7 @@
 ;   void* PTR_caseD_3_0049b85c = 0049b8f1
 ;   int g_ClipInputVertexCount
 ;   CVector3f[16] g_ClipInputVertices
-;   undefined4 DAT_02cee5d4
+;   undefined4 g_ClipInputVertices[0].y
 ;   undefined4 g_ClipInputVertices[0].z
 ;   undefined4 g_ClipInputVertices[1].y
 ;   undefined4 g_ClipInputVertices[2].x
@@ -53,7 +53,7 @@ section .text
     IMUL ECX,ECX,0xc                    ; 0049b895
         ;   Label: LAB_0049b895
     MOV EAX,0x2cee5d0                   ; 0049b898 | g_ClipInputVertices
-    FLD float ptr [EDI + 0x4]           ; 0049b89d | DAT_02cee5d4 | g_ClipInputVertices[1].y
+    FLD float ptr [EDI + 0x4]           ; 0049b89d | g_ClipInputVertices[0].y | g_ClipInputVertices[1].y
     ADD EAX,ECX                         ; 0049b8a0
     MOV EDX,EDI                         ; 0049b8a2 | g_ClipInputVertices
     MOV dword ptr [ESP],EAX             ; 0049b8a4 | g_ClipInputVertices[2].x
@@ -66,7 +66,7 @@ section .text
     MOV ECX,0x1                         ; 0049b8b1
     MOV EAX,dword ptr [ESP]             ; 0049b8b6
         ;   Label: LAB_0049b8b6
-    FLD float ptr [EAX + 0x4]           ; 0049b8b9 | DAT_02cee5d4 | g_ClipInputVertices[2].y
+    FLD float ptr [EAX + 0x4]           ; 0049b8b9 | g_ClipInputVertices[0].y | g_ClipInputVertices[2].y
     FCOMP float ptr [EBP + 0x14]        ; 0049b8bc
     FNSTSW AX                           ; 0049b8bf
     SAHF                                ; 0049b8c1
@@ -87,7 +87,7 @@ section .text
         ;   XREF to: 0049b8f0 (CONDITIONAL_JUMP)  ; LAB_0049b8f0
     MOV EAX,dword ptr [EDX]             ; 0049b8e0 | g_ClipInputVertices
     MOV dword ptr [ECX],EAX             ; 0049b8e2 | g_ClipBuffer1Vertices
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0049b8e4 | DAT_02cee5d4
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0049b8e4 | g_ClipInputVertices[0].y
     MOV dword ptr [ECX + 0x4],EAX       ; 0049b8e7 | g_ClipBuffer1Vertices[0].y
     MOV EAX,dword ptr [EDX + 0x8]       ; 0049b8ea | g_ClipInputVertices[0].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0049b8ed | g_ClipBuffer1Vertices[0].z
@@ -140,7 +140,7 @@ section .text
         ;   XREF to: 0049b969 (CONDITIONAL_JUMP)  ; LAB_0049b969
     MOV EAX,dword ptr [EDX]             ; 0049b959 | g_ClipInputVertices
     MOV dword ptr [ECX],EAX             ; 0049b95b | g_ClipBuffer1Vertices
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0049b95d | DAT_02cee5d4
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0049b95d | g_ClipInputVertices[0].y
     MOV dword ptr [ECX + 0x4],EAX       ; 0049b960 | g_ClipBuffer1Vertices[0].y
     MOV EAX,dword ptr [EDX + 0x8]       ; 0049b963 | g_ClipInputVertices[0].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0049b966 | g_ClipBuffer1Vertices[0].z

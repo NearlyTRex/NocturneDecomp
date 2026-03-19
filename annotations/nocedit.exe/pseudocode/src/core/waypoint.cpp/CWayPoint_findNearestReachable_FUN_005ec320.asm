@@ -18,11 +18,11 @@
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_032690dc
-;   undefined4 DAT_032690e0
-;   undefined4 DAT_032690e4
+;   undefined4 g_CDemonSetInstance.waypoint_count
+;   undefined4 g_CDemonSetInstance.waypoints[0]
+;   undefined4 g_CDemonSetInstance.waypoints[1]
 ;   CWayPoint*[2000] g_WaypointSearchQueue
-;   undefined4 DAT_03f939a8
+;   undefined4 g_WaypointSearchQueue[1]
 ;
 ; Called Functions:
 ;   core_waypoint.cpp_CWayPoint_isReachable_FUN_005ebd40
@@ -66,10 +66,10 @@ section .text
     XOR ESI,ESI                         ; 005ec357
     MOV EDX,dword ptr [0x006810c8]      ; 005ec359 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_005ec359
-    CMP ESI,dword ptr [EDX + 0x154e64]  ; 005ec35f | DAT_032690dc
+    CMP ESI,dword ptr [EDX + 0x154e64]  ; 005ec35f | g_CDemonSetInstance.waypoint_count
     JGE 0x005ec386                      ; 005ec365
         ;   XREF to: 005ec386 (CONDITIONAL_JUMP)  ; LAB_005ec386
-    MOV EDX,dword ptr [EDX + EAX*0x1 + 0x154e68] ; 005ec367 | DAT_032690e0
+    MOV EDX,dword ptr [EDX + EAX*0x1 + 0x154e68] ; 005ec367 | g_CDemonSetInstance.waypoints[0]
     ADD EAX,0x4                         ; 005ec36e
     INC ESI                             ; 005ec371
     MOV dword ptr [EDX + 0x554],0x7149f2ca ; 005ec372
@@ -89,7 +89,7 @@ section .text
         ;   Label: LAB_005ec39b
     LEA EBX,[ESI*0x4 + 0x0]             ; 005ec39c
     PUSH EBX                            ; 005ec3a3
-    PUSH 0x3f939a8                      ; 005ec3a4 | DAT_03f939a8
+    PUSH 0x3f939a8                      ; 005ec3a4 | g_WaypointSearchQueue[1]
     MOV EAX,[0x03f939a4]                ; 005ec3a9 | g_WaypointSearchQueue
     PUSH 0x3f939a4                      ; 005ec3ae | g_WaypointSearchQueue
     MOV dword ptr [ESP + 0x18],EAX      ; 005ec3b3
@@ -124,7 +124,7 @@ section .text
         ;   XREF to: 005ec421 (CONDITIONAL_JUMP)  ; LAB_005ec421
     LEA EBX,[ESI*0x4 + 0x0]             ; 005ec410
     XOR EAX,EAX                         ; 005ec417
-    CMP ECX,dword ptr [EAX + 0x3f939a4] ; 005ec419 | g_WaypointSearchQueue | DAT_03f939a8
+    CMP ECX,dword ptr [EAX + 0x3f939a4] ; 005ec419 | g_WaypointSearchQueue | g_WaypointSearchQueue[1]
         ;   Label: LAB_005ec419
     JNZ 0x005ec489                      ; 005ec41f
         ;   XREF to: 005ec489 (CONDITIONAL_JUMP)  ; LAB_005ec489
@@ -134,7 +134,7 @@ section .text
         ;   XREF to: 005ec42f (CONDITIONAL_JUMP)  ; LAB_005ec42f
     ADD EBP,0x4                         ; 005ec425
     INC ESI                             ; 005ec428
-    MOV dword ptr [EBP + 0x3f939a0],ECX ; 005ec429 | g_WaypointSearchQueue | DAT_03f939a8
+    MOV dword ptr [EBP + 0x3f939a0],ECX ; 005ec429 | g_WaypointSearchQueue | g_WaypointSearchQueue[1]
     MOV ECX,dword ptr [ESP + 0x14]      ; 005ec42f
         ;   Label: LAB_005ec42f
     MOV EDX,dword ptr [ESP + 0xc]       ; 005ec433
@@ -156,10 +156,10 @@ section .text
     XOR ESI,ESI                         ; 005ec45e
     MOV EAX,[0x006810c8]                ; 005ec460 | g_CDemonSetPtr
         ;   Label: LAB_005ec460
-    CMP EDI,dword ptr [EAX + 0x154e64]  ; 005ec465 | DAT_032690dc
+    CMP EDI,dword ptr [EAX + 0x154e64]  ; 005ec465 | g_CDemonSetInstance.waypoint_count
     JGE 0x005ec4b8                      ; 005ec46b
         ;   XREF to: 005ec4b8 (CONDITIONAL_JUMP)  ; LAB_005ec4b8
-    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x154e68] ; 005ec46d | DAT_032690e0 | DAT_032690e4
+    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x154e68] ; 005ec46d | g_CDemonSetInstance.waypoints[0] | g_CDemonSetInstance.waypoints[1]
     FLD float ptr [EBX + 0x554]         ; 005ec474
     FCOMP float ptr [ESP + 0x8]         ; 005ec47a
     FNSTSW AX                           ; 005ec47e

@@ -140,8 +140,8 @@ section .text
         ;   Label: LAB_0056ca68
     PUSH EAX                            ; 0056ca6b
     MOV EAX,dword ptr [EBP + -0x4]      ; 0056ca6c
-    ADD EAX,0x10                        ; 0056ca6f | DAT_02d7eb00
-    PUSH EAX                            ; 0056ca72 | DAT_02d7eb00
+    ADD EAX,0x10                        ; 0056ca6f | g_CDemonLightInstance.base.base.rotation_matrix.m[0].x
+    PUSH EAX                            ; 0056ca72 | g_CDemonLightInstance.base.base.rotation_matrix.m[0].x
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 0056ca73
         ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0056ca78
@@ -154,18 +154,18 @@ section .text
         ;   XREF to: 004765e0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(CDemonLight * this_ptr, float intensity)
     LEA EAX,[EBP + -0x1c]               ; 0056ca9a
     ADD ESP,0x8                         ; 0056ca9d
-    CMP EAX,0x32758e8                   ; 0056caa0 | DAT_032758e8
+    CMP EAX,0x32758e8                   ; 0056caa0 | g_CDemonCameraInstance.base.position
     JZ 0x0056cabf                       ; 0056caa5
         ;   XREF to: 0056cabf (CONDITIONAL_JUMP)  ; LAB_0056cabf
     MOV EAX,dword ptr [EBP + -0x1c]     ; 0056caa7
-    MOV [0x032758e8],EAX                ; 0056caaa | DAT_032758e8
+    MOV [0x032758e8],EAX                ; 0056caaa | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EBP + -0x18]     ; 0056caaf
     MOV [0x032758ec],EAX                ; 0056cab2 | g_CDemonCameraInstance.base.position+4
     MOV EAX,dword ptr [EBP + -0x14]     ; 0056cab7
     MOV [0x032758f0],EAX                ; 0056caba | g_CDemonCameraInstance.base.position+8
     MOV EAX,[0x0067b654]                ; 0056cabf | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_0056cabf
-    MOV ECX,dword ptr [EAX + 0x218]     ; 0056cac4 | DAT_02d81cb4
+    MOV ECX,dword ptr [EAX + 0x218]     ; 0056cac4 | g_CGameInstance.geometry_debug_enabled
     TEST ECX,ECX                        ; 0056caca
     JNZ 0x0056cc95                      ; 0056cacc
         ;   XREF to: 0056cc95 (CONDITIONAL_JUMP)  ; LAB_0056cc95
@@ -287,7 +287,7 @@ section .text
     SHL EAX,0x7                         ; 0056cc01
     ADD ESI,EAX                         ; 0056cc04
     MOV EAX,[0x006848fc]                ; 0056cc06 | g_CWeatherPtr
-    MOV EAX,dword ptr [EAX + 0x24]      ; 0056cc0b | DAT_03f95de4
+    MOV EAX,dword ptr [EAX + 0x24]      ; 0056cc0b | g_CWeatherInstance.lightning_active
     SHL EAX,0xf                         ; 0056cc0e
     ADD ESI,EAX                         ; 0056cc11
     MOV EAX,[0x00679398]                ; 0056cc13 | g_WindowHeight
@@ -296,7 +296,7 @@ section .text
     JLE 0x0056cd17                      ; 0056cc20
         ;   XREF to: 0056cd17 (CONDITIONAL_JUMP)  ; LAB_0056cd17
     MOV EDX,dword ptr [EBP + -0x4]      ; 0056cc26
-    MOV EDX,dword ptr [EDX + 0x1cc0]    ; 0056cc29 | DAT_02d807b0
+    MOV EDX,dword ptr [EDX + 0x1cc0]    ; 0056cc29 | g_CDemonLightInstance.shadow_map_width
     MOV EAX,[0x00679394]                ; 0056cc2f | g_WindowWidth
     ADD EDX,EDX                         ; 0056cc34
     SUB EAX,EDX                         ; 0056cc36
@@ -306,7 +306,7 @@ section .text
     SAR EAX,0x1                         ; 0056cc3f
     MOV EDX,dword ptr [EBP + -0x4]      ; 0056cc41
     MOV EBX,EAX                         ; 0056cc44
-    MOV EDX,dword ptr [EDX + 0x1cc4]    ; 0056cc46 | DAT_02d807b4
+    MOV EDX,dword ptr [EDX + 0x1cc4]    ; 0056cc46 | g_CDemonLightInstance.shadow_map_height
     MOV EAX,[0x00679398]                ; 0056cc4c | g_WindowHeight
     ADD EDX,EDX                         ; 0056cc51
     SUB EAX,EDX                         ; 0056cc53
@@ -386,7 +386,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0056cd17
         ;   Label: LAB_0056cd17
     MOV EDX,dword ptr [0x00679394]      ; 0056cd1a | g_WindowWidth
-    MOV ECX,dword ptr [EAX + 0x1cc0]    ; 0056cd20 | DAT_02d807b0
+    MOV ECX,dword ptr [EAX + 0x1cc0]    ; 0056cd20 | g_CDemonLightInstance.shadow_map_width
     SUB EDX,ECX                         ; 0056cd26
     MOV EAX,EDX                         ; 0056cd28
     SAR EDX,0x1f                        ; 0056cd2a
@@ -395,7 +395,7 @@ section .text
     MOV EBX,EAX                         ; 0056cd31
     MOV EAX,dword ptr [EBP + -0x4]      ; 0056cd33
     MOV EDX,dword ptr [0x00679398]      ; 0056cd36 | g_WindowHeight
-    MOV EDI,dword ptr [EAX + 0x1cc4]    ; 0056cd3c | DAT_02d807b4
+    MOV EDI,dword ptr [EAX + 0x1cc4]    ; 0056cd3c | g_CDemonLightInstance.shadow_map_height
     SUB EDX,EDI                         ; 0056cd42
     MOV EAX,EDX                         ; 0056cd44
     JMP 0x0056cc57                      ; 0056cd46

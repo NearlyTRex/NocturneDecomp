@@ -17,7 +17,7 @@ void __cdecl wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20(void)
   }
   g_APIDLL_kill = (APIDLL_kill *)0x0;
   g_APIDLL_toggle = (APIDLL_toggle *)0x0;
-  g_APIDLL_setVideoMode = (void *)0x0;
+  g_APIDLL_setVideoMode = (APIDLL_unknown *)0x0;
   g_APIDLL_setVideoMode2 = (APIDLL_setVideoMode2 *)0x0;
   g_APIDLL_restoreVideoMode = (APIDLL_restoreVideoMode *)0x0;
   g_APIDLL_beginScene = (APIDLL_beginScene *)0x0;
@@ -42,8 +42,8 @@ void __cdecl wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20(void)
   g_APIDLL_clearZBuffer = (APIDLL_clearZBuffer *)0x0;
   g_APIDLL_clearZBox = (APIDLL_clearZBox *)0x0;
   g_APIDLL_setColorTable16 = (APIDLL_setColorTable16 *)0x0;
-  g_APIDLL_GetDisplayContext = (void *)0x0;
-  g_APIDLL_ReleaseDisplayContext = (void *)0x0;
+  g_APIDLL_GetDisplayContext = (APIDLL_unknown *)0x0;
+  g_APIDLL_ReleaseDisplayContext = (APIDLL_unknown *)0x0;
   g_APIDLL_masterZBuffer = (APIDLL_masterZBuffer *)0x0;
   g_APIDLL_restoreZBuffer = (APIDLL_restoreZBuffer *)0x0;
   g_APIDLL_getVideoMemory = (APIDLL_getVideoMemory *)0x0;
@@ -59,18 +59,18 @@ void __cdecl wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20(void)
   g_APIDLL_lockFrameX = (APIDLL_lockFrameX *)0x0;
   g_APIDLL_unlockFrameX = (APIDLL_unlockFrameX *)0x0;
   g_APIDLL_toggleX = (APIDLL_toggleX *)0x0;
-  g_APIDLL_setViewport = (void *)0x0;
-  g_APIDLL_setLightConstants = (void *)0x0;
-  g_APIDLL_setLightVector = (void *)0x0;
-  g_APIDLL_setAmbientLight = (void *)0x0;
-  g_APIDLL_setTransform = (void *)0x0;
-  g_APIDLL_polyList = (void *)0x0;
-  g_APIDLL_getTextureHandle = (void *)0x0;
-  g_APIDLL_selectTextureByHandle = (void *)0x0;
-  g_APIDLL_enableCulling = (void *)0x0;
-  g_APIDLL_enableClipping = (void *)0x0;
-  g_APIDLL_setTextureClamp = (void *)0x0;
-  g_APIDLL_setFog = (void *)0x0;
+  g_APIDLL_setViewport = (APIDLL_unknown *)0x0;
+  g_APIDLL_setLightConstants = (APIDLL_unknown *)0x0;
+  g_APIDLL_setLightVector = (APIDLL_unknown *)0x0;
+  g_APIDLL_setAmbientLight = (APIDLL_unknown *)0x0;
+  g_APIDLL_setTransform = (APIDLL_unknown *)0x0;
+  g_APIDLL_polyList = (APIDLL_unknown *)0x0;
+  g_APIDLL_getTextureHandle = (APIDLL_unknown *)0x0;
+  g_APIDLL_selectTextureByHandle = (APIDLL_unknown *)0x0;
+  g_APIDLL_enableCulling = (APIDLL_unknown *)0x0;
+  g_APIDLL_enableClipping = (APIDLL_unknown *)0x0;
+  g_APIDLL_setTextureClamp = (APIDLL_unknown *)0x0;
+  g_APIDLL_setFog = (APIDLL_unknown *)0x0;
   g_APIDLL_init = (APIDLL_init *)0x0;
   return;
 }

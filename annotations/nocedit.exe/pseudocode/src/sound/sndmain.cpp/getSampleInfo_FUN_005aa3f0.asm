@@ -64,7 +64,7 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_005abd30 ; 005aa401
         ;   XREF to: 005abd30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_005abd30()
     XOR ESI,ESI                         ; 005aa406
-    CMP dword ptr [ESI + 0x3f6293c],0x1 ; 005aa408 | DAT_03f6293c | DAT_03f62abc
+    CMP dword ptr [ESI + 0x3f6293c],0x1 ; 005aa408 | g_SfxSamples[0].sample_info.sample_count | g_SfxSamples[1].sample_info.sample_count
         ;   Label: LAB_005aa408
     JGE 0x005aa443                      ; 005aa40f
         ;   XREF to: 005aa443 (CONDITIONAL_JUMP)  ; LAB_005aa443
@@ -96,7 +96,7 @@ section .text
         ;   Label: LAB_005aa443
     PUSH EBP                            ; 005aa448
     ADD EBX,ESI                         ; 005aa449
-    PUSH EBX                            ; 005aa44b | DAT_03f629ac
+    PUSH EBX                            ; 005aa44b | g_SfxSamples[1].sample_info.name[0]
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005aa44c
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005aa451
@@ -106,7 +106,7 @@ section .text
     MOV ECX,0x54                        ; 005aa458
     MOV EDI,EBP                         ; 005aa45d
     MOV ESI,EBX                         ; 005aa45f
-    MOVSD.REP ES:EDI,ESI                ; 005aa461 | DAT_03f629ac | DAT_03f629b0
+    MOVSD.REP ES:EDI,ESI                ; 005aa461 | g_SfxSamples[1].sample_info.name[0] | g_SfxSamples[1].sample_info.name[4]
     CALL sound_sndmain.cpp_unlockSound_FUN_005abdc0 ; 005aa463
         ;   XREF to: 005abdc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_005abdc0()
     MOV EAX,0x1                         ; 005aa468

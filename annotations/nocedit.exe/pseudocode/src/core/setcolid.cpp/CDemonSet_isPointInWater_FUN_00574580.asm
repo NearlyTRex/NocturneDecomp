@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   float FLOAT_006463fa = -10
 ;   CWater* g_CWaterPtr = 03f875e0
-;   undefined4 DAT_03f875e4
+;   undefined4 g_CWaterInstance.water_level_y
 ;   undefined4 g_CWaterActorClassInfo.name_hash
 ;
 ; Called Functions:
@@ -36,12 +36,12 @@ section .text
     SUB ESP,0x24                        ; 00574584
     MOV EBP,dword ptr [ESP + 0x38]      ; 00574587
     MOV EAX,[0x006844f0]                ; 0057458b | g_CWaterPtr
-    TEST dword ptr [EAX + 0x4],0x7fffffff ; 00574590 | DAT_03f875e4
+    TEST dword ptr [EAX + 0x4],0x7fffffff ; 00574590 | g_CWaterInstance.water_level_y
     JZ 0x005745a8                       ; 00574597
         ;   XREF to: 005745a8 (CONDITIONAL_JUMP)  ; LAB_005745a8
     MOV EDX,dword ptr [ESP + 0x3c]      ; 00574599
     FLD float ptr [EDX + 0x4]           ; 0057459d
-    FCOMP float ptr [EAX + 0x4]         ; 005745a0 | DAT_03f875e4
+    FCOMP float ptr [EAX + 0x4]         ; 005745a0 | g_CWaterInstance.water_level_y
     FNSTSW AX                           ; 005745a3
     SAHF                                ; 005745a5
     JC 0x005745e9                       ; 005745a6

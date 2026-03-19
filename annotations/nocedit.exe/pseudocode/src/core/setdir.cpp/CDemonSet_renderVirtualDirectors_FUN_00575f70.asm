@@ -26,13 +26,13 @@
 ;   int g_WindowHeight = 0xc8
 ;   float[250] g_VDCameraScores
 ;   CZThumb[1500] g_CZThumbPool
-;   undefined4 DAT_0334710c
-;   undefined4 DAT_03347130
-;   undefined4 DAT_03347158
-;   undefined4 DAT_03347180
+;   undefined4 g_CZThumbPool[0].height
+;   undefined4 g_CZThumbPool[1].width
+;   undefined4 g_CZThumbPool[2].width
+;   undefined4 g_CZThumbPool[3].width
 ;   int[250] g_VDCameraSortIndices
-;   undefined4 DAT_033648fc
-;   undefined4 DAT_03364900
+;   undefined4 g_VDCameraSortIndices[1]
+;   undefined4 g_VDCameraSortIndices[2]
 ;
 ; Called Functions:
 ;   core_setdir.cpp_CZThumb_render_FUN_00574f20
@@ -56,7 +56,7 @@ section .text
     JLE 0x00575fa0                      ; 00575f87
         ;   XREF to: 00575fa0 (CONDITIONAL_JUMP)  ; LAB_00575fa0
     XOR EBP,EBP                         ; 00575f89
-    MOV dword ptr [EBP + 0x33648f8],EAX ; 00575f8b | g_VDCameraSortIndices | DAT_033648fc
+    MOV dword ptr [EBP + 0x33648f8],EAX ; 00575f8b | g_VDCameraSortIndices | g_VDCameraSortIndices[1]
         ;   Label: LAB_00575f8b
     INC EAX                             ; 00575f91
     MOV ECX,dword ptr [EDI]             ; 00575f92
@@ -81,19 +81,19 @@ section .text
         ;   XREF to: 00576000 (CONDITIONAL_JUMP)  ; LAB_00576000
     MOV EBX,dword ptr [ESP + 0x70]      ; 00575fb4
     LEA EDX,[ECX*0x4 + 0x0]             ; 00575fb8
-    MOV EAX,dword ptr [EBX + 0x33648f8] ; 00575fbf | g_VDCameraSortIndices | DAT_033648fc
+    MOV EAX,dword ptr [EBX + 0x33648f8] ; 00575fbf | g_VDCameraSortIndices | g_VDCameraSortIndices[1]
         ;   Label: LAB_00575fbf
-    MOV ESI,dword ptr [EDX + 0x33648f8] ; 00575fc5 | DAT_033648fc | DAT_03364900
+    MOV ESI,dword ptr [EDX + 0x33648f8] ; 00575fc5 | g_VDCameraSortIndices[1] | g_VDCameraSortIndices[2]
     FLD float ptr [EAX*0x4 + 0x3346d20] ; 00575fcb | g_VDCameraScores
     FCOMP float ptr [ESI*0x4 + 0x3346d20] ; 00575fd2 | g_VDCameraScores
     FNSTSW AX                           ; 00575fd9
     SAHF                                ; 00575fdb
     JNC 0x00575ff6                      ; 00575fdc
         ;   XREF to: 00575ff6 (CONDITIONAL_JUMP)  ; LAB_00575ff6
-    MOV EAX,dword ptr [EDX + 0x33648f8] ; 00575fde | DAT_033648fc | DAT_03364900
+    MOV EAX,dword ptr [EDX + 0x33648f8] ; 00575fde | g_VDCameraSortIndices[1] | g_VDCameraSortIndices[2]
     MOV ESI,dword ptr [EBX + 0x33648f8] ; 00575fe4 | g_VDCameraSortIndices
     MOV dword ptr [EBX + 0x33648f8],EAX ; 00575fea | g_VDCameraSortIndices
-    MOV dword ptr [EDX + 0x33648f8],ESI ; 00575ff0 | DAT_033648fc | DAT_03364900
+    MOV dword ptr [EDX + 0x33648f8],ESI ; 00575ff0 | g_VDCameraSortIndices[1] | g_VDCameraSortIndices[2]
     INC ECX                             ; 00575ff6
         ;   Label: LAB_00575ff6
     MOV EAX,dword ptr [EDI]             ; 00575ff7
@@ -134,7 +134,7 @@ section .text
     MOV dword ptr [ESP + 0x74],EAX      ; 00576055
     MOV EAX,dword ptr [ESP + 0x7c]      ; 00576059
         ;   Label: LAB_00576059
-    MOV EAX,dword ptr [EAX + 0x33648f8] ; 0057605d | g_VDCameraSortIndices | DAT_033648fc
+    MOV EAX,dword ptr [EAX + 0x33648f8] ; 0057605d | g_VDCameraSortIndices | g_VDCameraSortIndices[1]
     MOV ECX,EAX                         ; 00576063
     MOV dword ptr [ESP + 0x84],EAX      ; 00576065
     IMUL EAX,EAX,0x1a4                  ; 0057606c
@@ -169,7 +169,7 @@ section .text
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005760d9
     IMUL EAX,dword ptr [ESP + 0x84],0xf0 ; 005760dc
-    MOV EAX,dword ptr [EAX + 0x334710c] ; 005760e7 | DAT_0334710c
+    MOV EAX,dword ptr [EAX + 0x334710c] ; 005760e7 | g_CZThumbPool[0].height
     ADD EAX,ESI                         ; 005760ed
     PUSH EAX                            ; 005760ef
     MOV ECX,dword ptr [ESP + 0x70]      ; 005760f0
@@ -231,7 +231,7 @@ section .text
     PUSH EAX                            ; 0057618c
     CALL core_setdir.cpp_CZThumb_render_FUN_00574f20 ; 0057618d
         ;   XREF to: 00574f20 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CZThumb_render_FUN_00574f20(CZThumb * this_ptr, int screen_x, int screen_y)
-    MOV EAX,dword ptr [EBP + 0x3347180] ; 00576192 | DAT_03347180
+    MOV EAX,dword ptr [EBP + 0x3347180] ; 00576192 | g_CZThumbPool[3].width
     ADD ESP,0xc                         ; 00576198
     SUB EAX,0x2                         ; 0057619b
     PUSH ESI                            ; 0057619e
@@ -252,7 +252,7 @@ section .text
     PUSH EAX                            ; 005761c9
     CALL core_setdir.cpp_CZThumb_render_FUN_00574f20 ; 005761ca
         ;   XREF to: 00574f20 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CZThumb_render_FUN_00574f20(CZThumb * this_ptr, int screen_x, int screen_y)
-    MOV EAX,dword ptr [EBP + 0x3347158] ; 005761cf | DAT_03347158
+    MOV EAX,dword ptr [EBP + 0x3347158] ; 005761cf | g_CZThumbPool[2].width
     ADD ESP,0xc                         ; 005761d5
     SUB EAX,0x2                         ; 005761d8
     PUSH ESI                            ; 005761db
@@ -263,7 +263,7 @@ section .text
     PUSH EAX                            ; 005761e9
     CALL core_setdir.cpp_CZThumb_render_FUN_00574f20 ; 005761ea
         ;   XREF to: 00574f20 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CZThumb_render_FUN_00574f20(CZThumb * this_ptr, int screen_x, int screen_y)
-    MOV EAX,dword ptr [EBP + 0x3347130] ; 005761ef | DAT_03347130
+    MOV EAX,dword ptr [EBP + 0x3347130] ; 005761ef | g_CZThumbPool[1].width
     JMP 0x005760ae                      ; 005761f5
         ;   XREF to: 005760ae (UNCONDITIONAL_JUMP)  ; LAB_005760ae
 

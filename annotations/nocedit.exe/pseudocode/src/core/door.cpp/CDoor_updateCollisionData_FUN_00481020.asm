@@ -10,7 +10,7 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -25,7 +25,7 @@ section .text
         ;   Label: core_door.cpp_CDoor_updateCollisionData_FUN_00481020
     MOV EBX,dword ptr [ESP + 0x8]       ; 00481021
     MOV EAX,[0x0067d550]                ; 00481025 | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 0048102a | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 0048102a | g_CDemonMissionInstance.is_in_editor
     JNZ 0x00481039                      ; 0048102e
         ;   XREF to: 00481039 (CONDITIONAL_JUMP)  ; LAB_00481039
     CMP dword ptr [EBX + 0x2e0],0x0     ; 00481030

@@ -57,11 +57,11 @@ section .text
     MOV dword ptr [EBX + 0xc],EAX       ; 0055a57c
     MOV EAX,[0x0067b654]                ; 0055a57f | g_CGamePtr
     MOV dword ptr [EBX + 0x10],0x1      ; 0055a584
-    MOV dword ptr [EAX + 0x22c],0x1     ; 0055a58b | DAT_02d81cc8
+    MOV dword ptr [EAX + 0x22c],0x1     ; 0055a58b | g_CGameInstance.allow_damage_flag
     XOR EDX,EDX                         ; 0055a595
-    MOV dword ptr [EAX + 0x230],0x1     ; 0055a597 | DAT_02d81ccc
+    MOV dword ptr [EAX + 0x230],0x1     ; 0055a597 | g_CGameInstance.allow_enemy_attack_flag
     PUSH EDX                            ; 0055a5a1
-    MOV dword ptr [EAX + 0x228],EDX     ; 0055a5a2 | DAT_02d81cc4
+    MOV dword ptr [EAX + 0x228],EDX     ; 0055a5a2 | g_CGameInstance.letterbox_mode
     LEA EAX,[ESP + 0x4]                 ; 0055a5a8
     PUSH EAX                            ; 0055a5ac
     MOV dword ptr [0x0310f4a0],EDX      ; 0055a5ad | g_ScriptTimeScale
@@ -72,7 +72,7 @@ section .text
     PUSH EDX                            ; 0055a5cd
     ADD EAX,0x14d0f0                    ; 0055a5ce
     MOV dword ptr [EBX + 0x45c],EDX     ; 0055a5d3
-    PUSH EAX                            ; 0055a5d9 | DAT_03261368
+    PUSH EAX                            ; 0055a5d9 | g_CDemonSetInstance.geometry_filename[0]
     MOV dword ptr [0x0310f4a8],EDX      ; 0055a5da | g_ScriptLoopWarningShown
     MOV dword ptr [EBX + 0x14],EDX      ; 0055a5e0
     CALL crt_string.c_splitpath_FUN_005ff178 ; 0055a5e3

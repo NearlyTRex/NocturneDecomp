@@ -17,9 +17,9 @@
 ;
 ; Referenced Globals:
 ;   char[241][320] g_CoronaBlurOutputBuffer
-;   undefined4 DAT_00ba8db8
-;   undefined4 DAT_00ba8db9
-;   undefined4 DAT_00ba8ef8
+;   undefined4 g_CoronaBlurOutputBuffer[1][0]
+;   undefined4 g_CoronaBlurOutputBuffer[1][1]
+;   undefined4 g_CoronaBlurOutputBuffer[2][0]
 ;   char* g_CoronaLightingTextureData
 ;
 ; *****************************************************************************
@@ -68,7 +68,7 @@ section .text
     INC EAX                             ; 00450e98
     MOV ECX,dword ptr [EDX + 0x154]     ; 00450e99
     MOV dword ptr [EBP + -0x4],EBX      ; 00450e9f
-    MOV dword ptr [EBP + -0x10],ESI     ; 00450ea2 | DAT_00ba8db8 | DAT_00ba8ef8
+    MOV dword ptr [EBP + -0x10],ESI     ; 00450ea2 | g_CoronaBlurOutputBuffer[1][0] | g_CoronaBlurOutputBuffer[2][0]
     MOV dword ptr [EBP + -0x8],EDI      ; 00450ea5
     MOV dword ptr [EBP + -0xc],EAX      ; 00450ea8
     CMP EAX,ECX                         ; 00450eab
@@ -156,7 +156,7 @@ section .text
     MOV EBP,dword ptr [0x015c2eac]      ; 00450f99 | g_CoronaLightingTextureData
     ADD EBP,dword ptr [EDX]             ; 00450f9f
     MOV AL,byte ptr [EBP]               ; 00450fa1
-    ADD byte ptr [EDI],AL               ; 00450fa4 | DAT_00ba8db8 | DAT_00ba8db9
+    ADD byte ptr [EDI],AL               ; 00450fa4 | g_CoronaBlurOutputBuffer[1][0] | g_CoronaBlurOutputBuffer[1][1]
     ADD EBX,0x4                         ; 00450fa6
         ;   Label: LAB_00450fa6
     ADD ESI,0x4                         ; 00450fa9

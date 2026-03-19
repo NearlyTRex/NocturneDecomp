@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   void*[1200] g_ScreenBufferArray
-;   undefined4 DAT_02d02584
+;   undefined4 g_ReciprocalLookupTable[1]
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     ADD EBX,EAX                         ; 0049079f
     MOV EAX,dword ptr [EDI + 0x28]      ; 004907a1
     SUB EAX,dword ptr [ESI + 0x28]      ; 004907a4
-    IMUL dword ptr [ECX*0x4 + 0x2d02584] ; 004907a7 | DAT_02d02584
+    IMUL dword ptr [ECX*0x4 + 0x2d02584] ; 004907a7 | g_ReciprocalLookupTable[1]
     MOV ESI,dword ptr [ESI + 0x28]      ; 004907ae
     MOV EAX,ESI                         ; 004907b1
         ;   Label: LAB_004907b1

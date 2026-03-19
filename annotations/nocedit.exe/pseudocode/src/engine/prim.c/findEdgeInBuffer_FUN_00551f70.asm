@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   int g_SoftwareEdgeCount
 ;   SSoftwareEdge[16] g_SoftwareEdgeBuffer
-;   undefined4 DAT_030e5274
+;   undefined4 g_SoftwareEdgeBuffer[1].base.y_min
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     TEST EBX,EBX                        ; 00551f87
     JLE 0x00551f9b                      ; 00551f89
         ;   XREF to: 00551f9b (CONDITIONAL_JUMP)  ; LAB_00551f9b
-    CMP ECX,dword ptr [EAX]             ; 00551f8b | g_SoftwareEdgeBuffer | DAT_030e5274
+    CMP ECX,dword ptr [EAX]             ; 00551f8b | g_SoftwareEdgeBuffer | g_SoftwareEdgeBuffer[1].base.y_min
         ;   Label: LAB_00551f8b
     JNZ 0x00551f93                      ; 00551f8d
         ;   XREF to: 00551f93 (CONDITIONAL_JUMP)  ; LAB_00551f93
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 00551f9d (CONDITIONAL_JUMP)  ; LAB_00551f9d
     INC EDX                             ; 00551f93
         ;   Label: LAB_00551f93
-    ADD EAX,0x48                        ; 00551f94 | DAT_030e5274
+    ADD EAX,0x48                        ; 00551f94 | g_SoftwareEdgeBuffer[1].base.y_min
     CMP EDX,EBX                         ; 00551f97
     JL 0x00551f8b                       ; 00551f99
         ;   XREF to: 00551f8b (CONDITIONAL_JUMP)  ; LAB_00551f8b

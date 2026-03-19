@@ -12,7 +12,7 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;   UVector3 g_ZeroVector
 ;   undefined4 g_ZeroVector+4
 ;   undefined4 g_ZeroVector+8
@@ -103,7 +103,7 @@ section .text
     JL 0x0050915b                       ; 00509173
         ;   XREF to: 0050915b (CONDITIONAL_JUMP)  ; LAB_0050915b
     MOV EAX,[0x0067d550]                ; 00509175 | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 0050917a | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 0050917a | g_CDemonMissionInstance.is_in_editor
     JNZ 0x005091a4                      ; 0050917e
         ;   XREF to: 005091a4 (CONDITIONAL_JUMP)  ; LAB_005091a4
     XOR EBX,EBX                         ; 00509180

@@ -25,11 +25,11 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CVector3i[2000] g_MorphVertexBuffer
-;   undefined4 DAT_02f3dbb8
-;   undefined4 DAT_02f3dbbc
-;   undefined4 DAT_02f3dbc0
-;   undefined4 DAT_02f3dbc4
-;   undefined4 DAT_02f3dbc8
+;   undefined4 g_MorphVertexBuffer[0].y
+;   undefined4 g_MorphVertexBuffer[0].z
+;   undefined4 g_MorphVertexBuffer[1].x
+;   undefined4 g_MorphVertexBuffer[1].y
+;   undefined4 g_MorphVertexBuffer[1].z
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -97,7 +97,7 @@ section .text
     FMUL ST1                            ; 0052b008
     FSTP float ptr [ESP + 0x1c]         ; 0052b00a
     FMUL float ptr [EAX + EBP*0x1 + 0xc] ; 0052b00e
-    MOV EBX,ESI                         ; 0052b012 | g_MorphVertexBuffer | DAT_02f3dbc0
+    MOV EBX,ESI                         ; 0052b012 | g_MorphVertexBuffer | g_MorphVertexBuffer[1].x
     FLD float ptr [ESP + 0x18]          ; 0052b014
     FADD float ptr [ESP + 0xc]          ; 0052b018
     FLD float ptr [ESP + 0x1c]          ; 0052b01c
@@ -113,16 +113,16 @@ section .text
     FSTP float ptr [ESP + 0x8]          ; 0052b03b
     FLD float ptr [EAX]                 ; 0052b03f
     FMUL float ptr [0x00661b40]         ; 0052b041 | FLOAT_00661b40
-    FISTP dword ptr [EBX]               ; 0052b047 | g_MorphVertexBuffer | DAT_02f3dbc0
+    FISTP dword ptr [EBX]               ; 0052b047 | g_MorphVertexBuffer | g_MorphVertexBuffer[1].x
     FLD float ptr [EAX + 0x4]           ; 0052b049
     FMUL float ptr [0x00661b40]         ; 0052b04c | FLOAT_00661b40
-    FISTP dword ptr [EBX + 0x4]         ; 0052b052 | DAT_02f3dbb8 | DAT_02f3dbc4
+    FISTP dword ptr [EBX + 0x4]         ; 0052b052 | g_MorphVertexBuffer[0].y | g_MorphVertexBuffer[1].y
     FLD float ptr [EAX + 0x8]           ; 0052b055
     FMUL float ptr [0x00661b40]         ; 0052b058 | FLOAT_00661b40
-    FISTP dword ptr [EBX + 0x8]         ; 0052b05e | DAT_02f3dbbc | DAT_02f3dbc8
+    FISTP dword ptr [EBX + 0x8]         ; 0052b05e | g_MorphVertexBuffer[0].z | g_MorphVertexBuffer[1].z
     MOV EAX,[0x006703ec]                ; 0052b061 | g_CDemonRendererPtr2
     MOV EAX,dword ptr [EAX]             ; 0052b066 | g_CDemonRendererInstance
-    PUSH ESI                            ; 0052b068 | g_MorphVertexBuffer | DAT_02f3dbc0
+    PUSH ESI                            ; 0052b068 | g_MorphVertexBuffer | g_MorphVertexBuffer[1].x
     ADD EAX,EDI                         ; 0052b069
     PUSH EAX                            ; 0052b06b
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0052b06c

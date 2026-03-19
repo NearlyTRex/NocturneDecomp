@@ -131,10 +131,10 @@ section .text
     ADD ESP,0x8                         ; 0057a370
     MOV EAX,[0x006844f0]                ; 0057a373 | g_CWaterInstance | g_CWaterPtr
     SUB ESP,0x8                         ; 0057a378
-    FLD float ptr [EAX + 0x8]           ; 0057a37b | DAT_03f875e8
+    FLD float ptr [EAX + 0x8]           ; 0057a37b | g_CWaterInstance.tile_size
     FSTP double ptr [ESP]               ; 0057a37e
     SUB ESP,0x8                         ; 0057a381
-    FLD float ptr [EAX + 0x4]           ; 0057a384 | DAT_03f875e4
+    FLD float ptr [EAX + 0x4]           ; 0057a384 | g_CWaterInstance.water_level_y
     FSTP double ptr [ESP]               ; 0057a387
     PUSH 0x647493                       ; 0057a38a | = "%f,%f\n"
     PUSH ESI                            ; 0057a38f

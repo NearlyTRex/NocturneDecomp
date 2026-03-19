@@ -26,10 +26,10 @@
 ;   int g_CaptureTextureCount
 ;   SMRGLTextureBasic[100] g_CapturedTextureArray
 ;   undefined4 g_CapturedTextureArray[0].base.count
-;   undefined4 DAT_02c9951c
-;   undefined4 DAT_02c9951d
-;   undefined4 DAT_02c9951e
-;   undefined4 DAT_02c9951f
+;   undefined4 g_CapturedTextureArray[0].texture_name[0]
+;   undefined4 g_CapturedTextureArray[0].texture_name[1]
+;   undefined4 g_CapturedTextureArray[0].texture_name[2]
+;   undefined4 g_CapturedTextureArray[0].texture_name[3]
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -81,13 +81,13 @@ section .text
     PUSH EDI                            ; 0048dbf5
     MOV AL,byte ptr [ESI]               ; 0048dbf6
         ;   Label: LAB_0048dbf6
-    MOV byte ptr [EDI],AL               ; 0048dbf8 | DAT_02c9951c | DAT_02c9951e
+    MOV byte ptr [EDI],AL               ; 0048dbf8 | g_CapturedTextureArray[0].texture_name[0] | g_CapturedTextureArray[0].texture_name[2]
     CMP AL,0x0                          ; 0048dbfa
     JZ 0x0048dc0e                       ; 0048dbfc
         ;   XREF to: 0048dc0e (CONDITIONAL_JUMP)  ; LAB_0048dc0e
     MOV AL,byte ptr [ESI + 0x1]         ; 0048dbfe
     ADD ESI,0x2                         ; 0048dc01
-    MOV byte ptr [EDI + 0x1],AL         ; 0048dc04 | DAT_02c9951d | DAT_02c9951f
+    MOV byte ptr [EDI + 0x1],AL         ; 0048dc04 | g_CapturedTextureArray[0].texture_name[1] | g_CapturedTextureArray[0].texture_name[3]
     ADD EDI,0x2                         ; 0048dc07
     CMP AL,0x0                          ; 0048dc0a
     JNZ 0x0048dbf6                      ; 0048dc0c

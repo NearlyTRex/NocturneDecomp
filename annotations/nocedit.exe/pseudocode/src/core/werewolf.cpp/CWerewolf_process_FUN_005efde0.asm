@@ -1362,7 +1362,7 @@ section .text
         ;   XREF to: 005f0c92 (CONDITIONAL_JUMP)  ; LAB_005f0c92
     MOV ECX,dword ptr [0x03f96b94]      ; 005f0f8d | g_CWerewolfClassInfo.name_hash
     PUSH ECX                            ; 005f0f93
-    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x150fe0] ; 005f0f94 | DAT_03265258 | DAT_0326525c
+    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x150fe0] ; 005f0f94 | g_CDemonSetInstance.enemies[0] | g_CDemonSetInstance.enemies[1]
     PUSH EDX                            ; 005f0f9b
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005f0f9c
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

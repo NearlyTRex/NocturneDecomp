@@ -22,9 +22,9 @@
 ;   int g_WindowHeight = 0xc8
 ;   int g_ScanlineSpanCount
 ;   int[256] g_ScanlineSpanLeft
-;   undefined4 DAT_0151a3b4
+;   undefined4 g_ScanlineSpanLeft[1]
 ;   int[256] g_ScanlineSpanRight
-;   undefined4 DAT_0151a7b4
+;   undefined4 g_ScanlineSpanRight[1]
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   undefined4 g_ZBufferScanlineArray[1]
 ;   int g_UseExternalRenderer
@@ -167,7 +167,7 @@ section .text
     XOR EAX,EAX                         ; 0044c9a9
     MOV EBX,dword ptr [EDX + 0x4]       ; 0044c9ab
         ;   Label: LAB_0044c9ab
-    CMP EBX,dword ptr [EAX + 0x151a3b0] ; 0044c9ae | g_ScanlineSpanLeft | DAT_0151a3b4
+    CMP EBX,dword ptr [EAX + 0x151a3b0] ; 0044c9ae | g_ScanlineSpanLeft | g_ScanlineSpanLeft[1]
     JGE 0x0044cb1f                      ; 0044c9b4
         ;   XREF to: 0044cb1f (CONDITIONAL_JUMP)  ; LAB_0044cb1f
     ADD EAX,0x4                         ; 0044c9ba
@@ -180,12 +180,12 @@ section .text
     JNZ 0x0044c9e6                      ; 0044c9c3
         ;   XREF to: 0044c9e6 (CONDITIONAL_JUMP)  ; LAB_0044c9e6
     MOV EAX,dword ptr [EDX]             ; 0044c9c5
-    MOV dword ptr [EBP + 0x151a3b0],EAX ; 0044c9c7 | g_ScanlineSpanLeft | DAT_0151a3b4
+    MOV dword ptr [EBP + 0x151a3b0],EAX ; 0044c9c7 | g_ScanlineSpanLeft | g_ScanlineSpanLeft[1]
     MOV EAX,dword ptr [EDX + 0x4]       ; 0044c9cd
     MOV EDX,dword ptr [0x0151a3ac]      ; 0044c9d0 | g_ScanlineSpanCount
     ADD EBP,0x4                         ; 0044c9d6
     INC EDX                             ; 0044c9d9
-    MOV dword ptr [EBP + 0x151a7ac],EAX ; 0044c9da | g_ScanlineSpanRight | DAT_0151a7b4
+    MOV dword ptr [EBP + 0x151a7ac],EAX ; 0044c9da | g_ScanlineSpanRight | g_ScanlineSpanRight[1]
     MOV dword ptr [0x0151a3ac],EDX      ; 0044c9e0 | g_ScanlineSpanCount
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0044c9e6
         ;   Label: LAB_0044c9e6
@@ -205,7 +205,7 @@ section .text
         ;   XREF to: 0044ca78 (CONDITIONAL_JUMP)  ; LAB_0044ca78
     MOV EBP,dword ptr [ESP + 0x14]      ; 0044ca0c
     XOR ESI,ESI                         ; 0044ca10
-    MOV EAX,dword ptr [ESI + 0x151a3b0] ; 0044ca12 | g_ScanlineSpanLeft | DAT_0151a3b4
+    MOV EAX,dword ptr [ESI + 0x151a3b0] ; 0044ca12 | g_ScanlineSpanLeft | g_ScanlineSpanLeft[1]
         ;   Label: LAB_0044ca12
     MOV EDX,dword ptr [EBP + 0x2cf7d5c] ; 0044ca18 | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
     SHL EAX,0x2                         ; 0044ca1e
@@ -213,13 +213,13 @@ section .text
     MOV EDX,dword ptr [ESP + 0x38]      ; 0044ca24
     MOV EAX,dword ptr [ESP + 0x20]      ; 0044ca28
     IMUL EAX,dword ptr [EDX + 0x144]    ; 0044ca2c
-    ADD EAX,dword ptr [ESI + 0x151a3b0] ; 0044ca33 | g_ScanlineSpanLeft | DAT_0151a3b4
+    ADD EAX,dword ptr [ESI + 0x151a3b0] ; 0044ca33 | g_ScanlineSpanLeft | g_ScanlineSpanLeft[1]
     LEA EDX,[EAX*0x4 + 0x0]             ; 0044ca39
     MOV EAX,dword ptr [ESP + 0x38]      ; 0044ca40
     MOV EAX,dword ptr [EAX + 0x15c]     ; 0044ca44
-    MOV EBX,dword ptr [ESI + 0x151a3b0] ; 0044ca4a | g_ScanlineSpanLeft | DAT_0151a3b4
+    MOV EBX,dword ptr [ESI + 0x151a3b0] ; 0044ca4a | g_ScanlineSpanLeft | g_ScanlineSpanLeft[1]
     ADD EDX,EAX                         ; 0044ca50
-    MOV EAX,dword ptr [ESI + 0x151a7b0] ; 0044ca52 | g_ScanlineSpanRight | DAT_0151a7b4
+    MOV EAX,dword ptr [ESI + 0x151a7b0] ; 0044ca52 | g_ScanlineSpanRight | g_ScanlineSpanRight[1]
     SUB EAX,EBX                         ; 0044ca58
     SHL EAX,0x2                         ; 0044ca5a
     ADD EAX,0x4                         ; 0044ca5d
@@ -310,29 +310,29 @@ section .text
         ;   XREF to: 0044c8c2 (UNCONDITIONAL_JUMP)  ; LAB_0044c8c2
     MOV EBX,dword ptr [EDX]             ; 0044cb1f
         ;   Label: LAB_0044cb1f
-    CMP EBX,dword ptr [EAX + 0x151a7b0] ; 0044cb21 | DAT_0151a7b4
+    CMP EBX,dword ptr [EAX + 0x151a7b0] ; 0044cb21 | g_ScanlineSpanRight[1]
     JG 0x0044c9ba                       ; 0044cb27
         ;   XREF to: 0044c9ba (CONDITIONAL_JUMP)  ; LAB_0044c9ba
-    CMP EBX,dword ptr [EAX + 0x151a3b0] ; 0044cb2d | DAT_0151a3b4
+    CMP EBX,dword ptr [EAX + 0x151a3b0] ; 0044cb2d | g_ScanlineSpanLeft[1]
     JL 0x0044cb44                       ; 0044cb33
         ;   XREF to: 0044cb44 (CONDITIONAL_JUMP)  ; LAB_0044cb44
     MOV EBX,dword ptr [EDX + 0x4]       ; 0044cb35
-    CMP EBX,dword ptr [EAX + 0x151a7b0] ; 0044cb38 | DAT_0151a7b4
+    CMP EBX,dword ptr [EAX + 0x151a7b0] ; 0044cb38 | g_ScanlineSpanRight[1]
     JLE 0x0044c9e6                      ; 0044cb3e
         ;   XREF to: 0044c9e6 (CONDITIONAL_JUMP)  ; LAB_0044c9e6
     MOV EBX,dword ptr [EDX]             ; 0044cb44
         ;   Label: LAB_0044cb44
-    CMP EBX,dword ptr [EAX + 0x151a3b0] ; 0044cb46 | DAT_0151a3b4
+    CMP EBX,dword ptr [EAX + 0x151a3b0] ; 0044cb46 | g_ScanlineSpanLeft[1]
     JGE 0x0044cb59                      ; 0044cb4c
         ;   XREF to: 0044cb59 (CONDITIONAL_JUMP)  ; LAB_0044cb59
     MOV ECX,0x1                         ; 0044cb4e
-    MOV dword ptr [EAX + 0x151a3b0],EBX ; 0044cb53 | DAT_0151a3b4
+    MOV dword ptr [EAX + 0x151a3b0],EBX ; 0044cb53 | g_ScanlineSpanLeft[1]
     MOV EBX,dword ptr [EDX + 0x4]       ; 0044cb59
         ;   Label: LAB_0044cb59
-    CMP EBX,dword ptr [EAX + 0x151a7b0] ; 0044cb5c | DAT_0151a7b4
+    CMP EBX,dword ptr [EAX + 0x151a7b0] ; 0044cb5c | g_ScanlineSpanRight[1]
     JLE 0x0044cb6f                      ; 0044cb62
         ;   XREF to: 0044cb6f (CONDITIONAL_JUMP)  ; LAB_0044cb6f
-    MOV dword ptr [EAX + 0x151a7b0],EBX ; 0044cb64 | DAT_0151a7b4
+    MOV dword ptr [EAX + 0x151a7b0],EBX ; 0044cb64 | g_ScanlineSpanRight[1]
     JMP 0x0044c9e6                      ; 0044cb6a
         ;   XREF to: 0044c9e6 (UNCONDITIONAL_JUMP)  ; LAB_0044c9e6
     TEST ECX,ECX                        ; 0044cb6f

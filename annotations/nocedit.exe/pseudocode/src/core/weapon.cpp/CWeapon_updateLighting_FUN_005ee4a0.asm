@@ -19,7 +19,7 @@
 ;   undefined4 g_CDemonLightInstance.base.base.position
 ;   undefined4 g_CDemonLightInstance.base.base.position+4
 ;   undefined4 g_CDemonLightInstance.base.base.position+8
-;   undefined4 DAT_02d7eb00
+;   undefined4 g_CDemonLightInstance.base.base.rotation_matrix.m[0].x
 ;   undefined4 g_CDemonLightInstance.base.base.focal_length
 ;   undefined4 g_CDemonLightInstance.base.max_distance
 ;   undefined4 g_CDemonLightInstance.light_enabled_flag
@@ -89,7 +89,7 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 005ee52c
     PUSH EAX                            ; 005ee530
     FADD float ptr [0x00657b21]         ; 005ee531 | FLOAT_00657b21
-    PUSH 0x2d7eb00                      ; 005ee537 | DAT_02d7eb00
+    PUSH 0x2d7eb00                      ; 005ee537 | g_CDemonLightInstance.base.base.rotation_matrix.m[0].x
     FSTP float ptr [ESP + 0x14]         ; 005ee53c
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 005ee540
         ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)

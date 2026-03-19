@@ -19,15 +19,15 @@
 ;   int g_CurrentLineNumber
 ;   int g_RaytraceStateStackDepth
 ;   SRaytraceState[5] g_RaytraceStateStack
-;   undefined4 DAT_033469f4
-;   undefined4 DAT_033469f8
-;   undefined4 DAT_033469fc
-;   undefined4 DAT_03346a00
-;   undefined4 DAT_03346a04
-;   undefined4 DAT_03346a08
-;   undefined4 DAT_03346a0c
-;   undefined4 DAT_03346a10
-;   undefined4 DAT_03346a34
+;   undefined4 g_RaytraceStateStack[0].laser_type
+;   undefined4 g_RaytraceStateStack[0].laser_color.r
+;   undefined4 g_RaytraceStateStack[0].laser_color.g
+;   undefined4 g_RaytraceStateStack[0].laser_color.b
+;   undefined4 g_RaytraceStateStack[0].ignore_list_count
+;   undefined4 g_RaytraceStateStack[0].collision_flag
+;   undefined4 g_RaytraceStateStack[0].ignore_list[0]
+;   undefined4 g_RaytraceStateStack[0].ignore_list[1]
+;   undefined4 g_RaytraceStateStack[0].saved_ray_origin.x
 ;   ... and 22 more
 ;
 ; Called Functions:
@@ -56,15 +56,15 @@ section .text
     ADD EDI,EAX                         ; 00573ff2
     MOV EAX,dword ptr [EDI]             ; 00573ff4 | g_RaytraceStateStack
     MOV dword ptr [EBX + 0x15f680],EAX  ; 00573ff6
-    MOV EAX,dword ptr [EDI + 0x4]       ; 00573ffc | DAT_033469f4
+    MOV EAX,dword ptr [EDI + 0x4]       ; 00573ffc | g_RaytraceStateStack[0].laser_type
     MOV dword ptr [EBX + 0x15f684],EAX  ; 00573fff
-    MOV EAX,dword ptr [EDI + 0x8]       ; 00574005 | DAT_033469f8
+    MOV EAX,dword ptr [EDI + 0x8]       ; 00574005 | g_RaytraceStateStack[0].laser_color.r
     MOV dword ptr [EBX + 0x15f688],EAX  ; 00574008
-    MOV EAX,dword ptr [EDI + 0xc]       ; 0057400e | DAT_033469fc
+    MOV EAX,dword ptr [EDI + 0xc]       ; 0057400e | g_RaytraceStateStack[0].laser_color.g
     MOV dword ptr [EBX + 0x15f68c],EAX  ; 00574011
-    MOV EAX,dword ptr [EDI + 0x10]      ; 00574017 | DAT_03346a00
+    MOV EAX,dword ptr [EDI + 0x10]      ; 00574017 | g_RaytraceStateStack[0].laser_color.b
     MOV dword ptr [EBX + 0x15f690],EAX  ; 0057401a
-    MOV EAX,dword ptr [EDI + 0x14]      ; 00574020 | DAT_03346a04
+    MOV EAX,dword ptr [EDI + 0x14]      ; 00574020 | g_RaytraceStateStack[0].ignore_list_count
     XOR ECX,ECX                         ; 00574023
     MOV dword ptr [EBX + 0x15f694],EAX  ; 00574025
     TEST EAX,EAX                        ; 0057402b
@@ -74,7 +74,7 @@ section .text
     MOV EDX,EBX                         ; 00574031
     ADD EDX,0x4                         ; 00574033
         ;   Label: LAB_00574033
-    MOV ESI,dword ptr [EAX + 0x1c]      ; 00574036 | DAT_03346a0c | DAT_03346a10
+    MOV ESI,dword ptr [EAX + 0x1c]      ; 00574036 | g_RaytraceStateStack[0].ignore_list[0] | g_RaytraceStateStack[0].ignore_list[1]
     MOV dword ptr [EDX + 0x15f698],ESI  ; 00574039
     INC ECX                             ; 0057403f
     MOV ESI,dword ptr [EBX + 0x15f694]  ; 00574040
@@ -83,7 +83,7 @@ section .text
     JL 0x00574033                       ; 0057404b
         ;   XREF to: 00574033 (CONDITIONAL_JUMP)  ; LAB_00574033
     LEA EAX,[EAX]                       ; 0057404d
-    MOV EAX,dword ptr [EDI + 0x18]      ; 00574050 | DAT_03346a08
+    MOV EAX,dword ptr [EDI + 0x18]      ; 00574050 | g_RaytraceStateStack[0].collision_flag
         ;   Label: LAB_00574050
     LEA EDX,[EDI + 0x44]                ; 00574053
     MOV dword ptr [EBX + 0x15f698],EAX  ; 00574056
@@ -91,11 +91,11 @@ section .text
     CMP EAX,EDX                         ; 00574062
     JZ 0x00574076                       ; 00574064
         ;   XREF to: 00574076 (CONDITIONAL_JUMP)  ; LAB_00574076
-    MOV ECX,dword ptr [EDX]             ; 00574066 | DAT_03346a34
+    MOV ECX,dword ptr [EDX]             ; 00574066 | g_RaytraceStateStack[0].saved_ray_origin.x
     MOV dword ptr [EAX],ECX             ; 00574068
-    MOV ECX,dword ptr [EDX + 0x4]       ; 0057406a | DAT_03346a38
+    MOV ECX,dword ptr [EDX + 0x4]       ; 0057406a | g_RaytraceStateStack[0].saved_ray_origin.y
     MOV dword ptr [EAX + 0x4],ECX       ; 0057406d
-    MOV ECX,dword ptr [EDX + 0x8]       ; 00574070 | DAT_03346a3c
+    MOV ECX,dword ptr [EDX + 0x8]       ; 00574070 | g_RaytraceStateStack[0].saved_ray_origin.z
     MOV dword ptr [EAX + 0x8],ECX       ; 00574073
     LEA EDX,[EDI + 0x50]                ; 00574076
         ;   Label: LAB_00574076
@@ -103,29 +103,29 @@ section .text
     CMP EAX,EDX                         ; 0057407f
     JZ 0x00574093                       ; 00574081
         ;   XREF to: 00574093 (CONDITIONAL_JUMP)  ; LAB_00574093
-    MOV ECX,dword ptr [EDX]             ; 00574083 | DAT_03346a40
+    MOV ECX,dword ptr [EDX]             ; 00574083 | g_RaytraceStateStack[0].saved_ray_target.x
     MOV dword ptr [EAX],ECX             ; 00574085
-    MOV ECX,dword ptr [EDX + 0x4]       ; 00574087 | DAT_03346a44
+    MOV ECX,dword ptr [EDX + 0x4]       ; 00574087 | g_RaytraceStateStack[0].saved_ray_target.y
     MOV dword ptr [EAX + 0x4],ECX       ; 0057408a
-    MOV ECX,dword ptr [EDX + 0x8]       ; 0057408d | DAT_03346a48
+    MOV ECX,dword ptr [EDX + 0x8]       ; 0057408d | g_RaytraceStateStack[0].saved_ray_target.z
     MOV dword ptr [EAX + 0x8],ECX       ; 00574090
-    FLD float ptr [EDI + 0x5c]          ; 00574093 | DAT_03346a4c
+    FLD float ptr [EDI + 0x5c]          ; 00574093 | g_RaytraceStateStack[0].raycast_distance
         ;   Label: LAB_00574093
     LEA EAX,[EBX + 0x15f6cc]            ; 00574096
     LEA EDX,[EDI + 0x64]                ; 0057409c
     FSTP float ptr [EBX + 0x15f6c4]     ; 0057409f
-    MOV ECX,dword ptr [EDI + 0x60]      ; 005740a5 | DAT_03346a50
+    MOV ECX,dword ptr [EDI + 0x60]      ; 005740a5 | g_RaytraceStateStack[0].voxel_distance
     MOV dword ptr [EBX + 0x15f6c8],ECX  ; 005740a8
     CMP EAX,EDX                         ; 005740ae
     JZ 0x005740c2                       ; 005740b0
         ;   XREF to: 005740c2 (CONDITIONAL_JUMP)  ; LAB_005740c2
-    MOV ECX,dword ptr [EDX]             ; 005740b2 | DAT_03346a54
+    MOV ECX,dword ptr [EDX]             ; 005740b2 | g_RaytraceStateStack[0].voxel_hit_point.x
     MOV dword ptr [EAX],ECX             ; 005740b4
-    MOV ECX,dword ptr [EDX + 0x4]       ; 005740b6 | DAT_03346a58
+    MOV ECX,dword ptr [EDX + 0x4]       ; 005740b6 | g_RaytraceStateStack[0].voxel_hit_point.y
     MOV dword ptr [EAX + 0x4],ECX       ; 005740b9
-    MOV ECX,dword ptr [EDX + 0x8]       ; 005740bc | DAT_03346a5c
+    MOV ECX,dword ptr [EDX + 0x8]       ; 005740bc | g_RaytraceStateStack[0].voxel_hit_point.z
     MOV dword ptr [EAX + 0x8],ECX       ; 005740bf
-    MOV EAX,dword ptr [EDI + 0x70]      ; 005740c2 | DAT_03346a60
+    MOV EAX,dword ptr [EDI + 0x70]      ; 005740c2 | g_RaytraceStateStack[0].voxel_surface_type
         ;   Label: LAB_005740c2
     LEA EDX,[EDI + 0x78]                ; 005740c5
     MOV dword ptr [EBX + 0x15f6d8],EAX  ; 005740c8
@@ -133,13 +133,13 @@ section .text
     CMP EAX,EDX                         ; 005740d4
     JZ 0x005740e8                       ; 005740d6
         ;   XREF to: 005740e8 (CONDITIONAL_JUMP)  ; LAB_005740e8
-    MOV ECX,dword ptr [EDX]             ; 005740d8 | DAT_03346a68
+    MOV ECX,dword ptr [EDX]             ; 005740d8 | g_RaytraceStateStack[0].saved_collision_normal.x
     MOV dword ptr [EAX],ECX             ; 005740da
-    MOV ECX,dword ptr [EDX + 0x4]       ; 005740dc | DAT_03346a6c
+    MOV ECX,dword ptr [EDX + 0x4]       ; 005740dc | g_RaytraceStateStack[0].saved_collision_normal.y
     MOV dword ptr [EAX + 0x4],ECX       ; 005740df
-    MOV ECX,dword ptr [EDX + 0x8]       ; 005740e2 | DAT_03346a70
+    MOV ECX,dword ptr [EDX + 0x8]       ; 005740e2 | g_RaytraceStateStack[0].saved_collision_normal.z
     MOV dword ptr [EAX + 0x8],ECX       ; 005740e5
-    MOV EAX,dword ptr [EDI + 0x84]      ; 005740e8 | DAT_03346a74
+    MOV EAX,dword ptr [EDI + 0x84]      ; 005740e8 | g_RaytraceStateStack[0].saved_ground_type
         ;   Label: LAB_005740e8
     LEA EDX,[EBX + 0x14d138]            ; 005740ee
     MOV dword ptr [EBX + 0x14d134],EAX  ; 005740f4
@@ -147,14 +147,14 @@ section .text
     CMP EDX,EAX                         ; 00574100
     JNZ 0x0057415d                      ; 00574102
         ;   XREF to: 0057415d (CONDITIONAL_JUMP)  ; LAB_0057415d
-    MOV EAX,dword ptr [EDI + 0x94]      ; 00574104 | DAT_03346a84
+    MOV EAX,dword ptr [EDI + 0x94]      ; 00574104 | g_RaytraceStateStack[0].saved_collision_actor
         ;   Label: LAB_00574104
     MOV dword ptr [EBX + 0x14d144],EAX  ; 0057410a
-    MOV EAX,dword ptr [EDI + 0x98]      ; 00574110 | DAT_03346a88
+    MOV EAX,dword ptr [EDI + 0x98]      ; 00574110 | g_RaytraceStateStack[0].saved_collision_part_index
     MOV dword ptr [EBX + 0x14d148],EAX  ; 00574116
-    MOV EAX,dword ptr [EDI + 0x9c]      ; 0057411c | DAT_03346a8c
+    MOV EAX,dword ptr [EDI + 0x9c]      ; 0057411c | g_RaytraceStateStack[0].saved_collision_triangle_index
     MOV dword ptr [EBX + 0x14d14c],EAX  ; 00574122
-    MOV EAX,dword ptr [EDI + 0x74]      ; 00574128 | DAT_03346a64
+    MOV EAX,dword ptr [EDI + 0x74]      ; 00574128 | g_RaytraceStateStack[0].saved_skip_exact_collision
     MOV dword ptr [EBX + 0x15f6dc],EAX  ; 0057412b
     POP EDI                             ; 00574131
     POP ESI                             ; 00574132
@@ -171,12 +171,12 @@ section .text
     ADD ESP,0x4                         ; 00574155
     JMP 0x00573fd4                      ; 00574158
         ;   XREF to: 00573fd4 (UNCONDITIONAL_JUMP)  ; LAB_00573fd4
-    MOV ECX,dword ptr [EAX]             ; 0057415d | DAT_03346a78
+    MOV ECX,dword ptr [EAX]             ; 0057415d | g_RaytraceStateStack[0].saved_collision_point.x
         ;   Label: LAB_0057415d
     MOV dword ptr [EDX],ECX             ; 0057415f
-    MOV ECX,dword ptr [EAX + 0x4]       ; 00574161 | DAT_03346a7c
+    MOV ECX,dword ptr [EAX + 0x4]       ; 00574161 | g_RaytraceStateStack[0].saved_collision_point.y
     MOV dword ptr [EDX + 0x4],ECX       ; 00574164
-    MOV ECX,dword ptr [EAX + 0x8]       ; 00574167 | DAT_03346a80
+    MOV ECX,dword ptr [EAX + 0x8]       ; 00574167 | g_RaytraceStateStack[0].saved_collision_point.z
     MOV dword ptr [EDX + 0x8],ECX       ; 0057416a
     JMP 0x00574104                      ; 0057416d
         ;   XREF to: 00574104 (UNCONDITIONAL_JUMP)  ; LAB_00574104

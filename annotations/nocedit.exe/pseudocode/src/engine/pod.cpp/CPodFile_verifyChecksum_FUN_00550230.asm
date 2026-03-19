@@ -163,10 +163,10 @@ section .text
     XOR ESI,ESI                         ; 00550355
     XOR EDX,EDX                         ; 00550357
         ;   Label: LAB_00550357
-    MOV DL,byte ptr [EBX]               ; 00550359 | g_FileIOBuffer | DAT_030d5091
+    MOV DL,byte ptr [EBX]               ; 00550359 | g_FileIOBuffer | g_FileIOBuffer+1
     PUSH EDX                            ; 0055035b
     PUSH EAX                            ; 0055035c
-    INC EBX                             ; 0055035d | DAT_030d5091 | DAT_030d5092
+    INC EBX                             ; 0055035d | g_FileIOBuffer+1 | g_FileIOBuffer+2
     INC ESI                             ; 0055035e
     CALL engine_pod.cpp_crc32UpdateByte_FUN_0054f2e0 ; 0055035f
         ;   XREF to: 0054f2e0 (UNCONDITIONAL_CALL)  ; uint engine_pod.cpp_crc32UpdateByte_FUN_0054f2e0(uint current_crc, uchar data_byte)
@@ -197,10 +197,10 @@ section .text
     MOV EDI,dword ptr [ESP + 0x3b0]     ; 005503a4
     XOR EAX,EAX                         ; 005503ab
         ;   Label: LAB_005503ab
-    MOV AL,byte ptr [EBX]               ; 005503ad | g_FileIOBuffer | DAT_030d5091
+    MOV AL,byte ptr [EBX]               ; 005503ad | g_FileIOBuffer | g_FileIOBuffer+1
     PUSH EAX                            ; 005503af
     PUSH EBP                            ; 005503b0
-    INC EBX                             ; 005503b1 | DAT_030d5091 | DAT_030d5092
+    INC EBX                             ; 005503b1 | g_FileIOBuffer+1 | g_FileIOBuffer+2
     INC ESI                             ; 005503b2
     CALL engine_pod.cpp_crc32UpdateByte_FUN_0054f2e0 ; 005503b3
         ;   XREF to: 0054f2e0 (UNCONDITIONAL_CALL)  ; uint engine_pod.cpp_crc32UpdateByte_FUN_0054f2e0(uint current_crc, uchar data_byte)

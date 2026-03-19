@@ -237,13 +237,13 @@ section .text
     PUSH EDI                            ; 005136d8
     MOV AL,byte ptr [ESI]               ; 005136d9
         ;   Label: LAB_005136d9
-    MOV byte ptr [EDI],AL               ; 005136db | g_StringBuffers | DAT_02f297aa
+    MOV byte ptr [EDI],AL               ; 005136db | g_StringBuffers | g_StringBuffers[0][2]
     CMP AL,0x0                          ; 005136dd
     JZ 0x005136f1                       ; 005136df
         ;   XREF to: 005136f1 (CONDITIONAL_JUMP)  ; LAB_005136f1
     MOV AL,byte ptr [ESI + 0x1]         ; 005136e1
     ADD ESI,0x2                         ; 005136e4
-    MOV byte ptr [EDI + 0x1],AL         ; 005136e7 | DAT_02f297a9 | DAT_02f297ab
+    MOV byte ptr [EDI + 0x1],AL         ; 005136e7 | g_StringBuffers[0][1] | g_StringBuffers[0][3]
     ADD EDI,0x2                         ; 005136ea
     CMP AL,0x0                          ; 005136ed
     JNZ 0x005136d9                      ; 005136ef

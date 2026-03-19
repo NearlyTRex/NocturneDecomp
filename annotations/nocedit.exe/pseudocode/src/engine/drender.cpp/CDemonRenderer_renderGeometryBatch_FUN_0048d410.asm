@@ -23,7 +23,7 @@
 ;   SRenderVertex[16] g_ClippedVertexBuffer
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   undefined4 DAT_02d052a1
+;   undefined4 g_RenderStateFlags+1
 ;   int g_RenderStateFlag2
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -218,7 +218,7 @@ section .text
     CMP dword ptr [EAX + 0x10],0x0      ; 0048d5b3
     JZ 0x0048d663                       ; 0048d5b7
         ;   XREF to: 0048d663 (CONDITIONAL_JUMP)  ; LAB_0048d663
-    TEST byte ptr [0x02d052a1],0x2      ; 0048d5bd | DAT_02d052a1
+    TEST byte ptr [0x02d052a1],0x2      ; 0048d5bd | g_RenderStateFlags+1
     JZ 0x0048d655                       ; 0048d5c4
         ;   XREF to: 0048d655 (CONDITIONAL_JUMP)  ; LAB_0048d655
     MOV EAX,ESP                         ; 0048d5ca
@@ -304,7 +304,7 @@ section .text
         ;   Label: LAB_0048d672
     JZ 0x0048d689                       ; 0048d679
         ;   XREF to: 0048d689 (CONDITIONAL_JUMP)  ; LAB_0048d689
-    TEST byte ptr [0x02d052a1],0x2      ; 0048d67b | DAT_02d052a1
+    TEST byte ptr [0x02d052a1],0x2      ; 0048d67b | g_RenderStateFlags+1
     JZ 0x0048d655                       ; 0048d682
         ;   XREF to: 0048d655 (CONDITIONAL_JUMP)  ; LAB_0048d655
     JMP 0x0048d5ca                      ; 0048d684

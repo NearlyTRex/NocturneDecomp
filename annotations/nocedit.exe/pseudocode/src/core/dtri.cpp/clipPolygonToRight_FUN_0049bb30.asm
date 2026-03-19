@@ -13,8 +13,8 @@
 ;   CVector3f[16] g_ClipBuffer2Vertices
 ;   undefined4 g_ClipBuffer2Vertices[0].y
 ;   undefined4 g_ClipBuffer2Vertices[0].z
-;   undefined4 DAT_02cee764
-;   undefined4 DAT_02cee770
+;   undefined4 g_ClipBuffer2Vertices[1].x
+;   undefined4 g_ClipBuffer2Vertices[2].x
 ;   int g_ClipBuffer3VertexCount
 ;   CVector3f[16] g_ClipBuffer3Vertices
 ;   undefined4 g_ClipBuffer3Vertices[0].y
@@ -52,10 +52,10 @@ section .text
     IMUL ECX,ECX,0xc                    ; 0049bb65
         ;   Label: LAB_0049bb65
     MOV EAX,0x2cee758                   ; 0049bb68 | g_ClipBuffer2Vertices
-    FLD float ptr [EDI]                 ; 0049bb6d | g_ClipBuffer2Vertices | DAT_02cee764
+    FLD float ptr [EDI]                 ; 0049bb6d | g_ClipBuffer2Vertices | g_ClipBuffer2Vertices[1].x
     ADD EAX,ECX                         ; 0049bb6f
     MOV EDX,EDI                         ; 0049bb71 | g_ClipBuffer2Vertices
-    MOV dword ptr [ESP],EAX             ; 0049bb73 | DAT_02cee770
+    MOV dword ptr [ESP],EAX             ; 0049bb73 | g_ClipBuffer2Vertices[2].x
     XOR ECX,ECX                         ; 0049bb76
     FCOMP float ptr [EBP + 0x14]        ; 0049bb78
     FNSTSW AX                           ; 0049bb7b
@@ -65,7 +65,7 @@ section .text
     MOV ECX,0x1                         ; 0049bb80
     MOV EAX,dword ptr [ESP]             ; 0049bb85
         ;   Label: LAB_0049bb85
-    FLD float ptr [EAX]                 ; 0049bb88 | g_ClipBuffer2Vertices | DAT_02cee770
+    FLD float ptr [EAX]                 ; 0049bb88 | g_ClipBuffer2Vertices | g_ClipBuffer2Vertices[2].x
     FCOMP float ptr [EBP + 0x14]        ; 0049bb8a
     FNSTSW AX                           ; 0049bb8d
     SAHF                                ; 0049bb8f

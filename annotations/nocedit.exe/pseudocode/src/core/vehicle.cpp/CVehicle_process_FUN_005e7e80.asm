@@ -276,7 +276,7 @@ section .text
     MOV EAX,[0x02f37f30]                ; 005e814a | g_CMobsterClassInfo.name_hash
     ADD ESI,ECX                         ; 005e814f
     PUSH EAX                            ; 005e8151
-    MOV ESI,dword ptr [ESI + 0x14f09c]  ; 005e8152 | g_CDemonSetInstance.characters[0] | DAT_03263318
+    MOV ESI,dword ptr [ESI + 0x14f09c]  ; 005e8152 | g_CDemonSetInstance.characters[0] | g_CDemonSetInstance.characters[1]
     PUSH ESI                            ; 005e8158
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005e8159
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
@@ -662,7 +662,7 @@ section .text
     MOV EDX,dword ptr [0x02f37f30]      ; 005e85a9 | g_CMobsterClassInfo.name_hash
         ;   Label: LAB_005e85a9
     PUSH EDX                            ; 005e85af
-    MOV ECX,dword ptr [ESI + EAX*0x1 + 0x150fe0] ; 005e85b0 | DAT_03265258
+    MOV ECX,dword ptr [ESI + EAX*0x1 + 0x150fe0] ; 005e85b0 | g_CDemonSetInstance.enemies[0]
     PUSH ECX                            ; 005e85b7
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005e85b8
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

@@ -21,14 +21,14 @@
 ;   undefined4 g_RenderVertexBuffer[0].r
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;   SVertexData[20000] g_VertexNormals
-;   undefined4 DAT_01687e90
-;   undefined4 DAT_01687e94
+;   undefined4 g_VertexNormals[0].vertex.y
+;   undefined4 g_VertexNormals[0].vertex.z
 ;   int g_PolygonCount
-;   undefined4 DAT_016e99b4
-;   undefined4 DAT_016e99c8
+;   undefined4 g_ModelPolygonData[0].vertex_indices_count
+;   undefined4 g_ModelPolygonData[0].vertex_indices[0]
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -67,7 +67,7 @@ section .text
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [EBP + -0x18]       ; 0045d60b
     IMUL EAX,dword ptr [EBP + -0xc],0x14 ; 0045d60e
-    FLD float ptr [EAX + 0x1626410]     ; 0045d612 | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 0045d612 | g_LoadedVertices[0].vertex.y
     FMUL float ptr [0x0061b406]         ; 0045d618 | g_VertexScaleFactor
     CALL crt_math.c_round_FUN_005fe6b0  ; 0045d61e
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
@@ -147,13 +147,13 @@ section .text
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [EBP + -0x74]       ; 0045d70f
     IMUL EAX,dword ptr [EBP + -0xc],0x14 ; 0045d712
-    FLD float ptr [EAX + 0x1687e90]     ; 0045d716 | DAT_01687e90
+    FLD float ptr [EAX + 0x1687e90]     ; 0045d716 | g_VertexNormals[0].vertex.y
     FMUL double ptr [0x0061b40e]        ; 0045d71c | g_LightingScaleFactor
     CALL crt_math.c_round_FUN_005fe6b0  ; 0045d722
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [EBP + -0x70]       ; 0045d727
     IMUL EAX,dword ptr [EBP + -0xc],0x14 ; 0045d72a
-    FLD float ptr [EAX + 0x1687e94]     ; 0045d72e | DAT_01687e94
+    FLD float ptr [EAX + 0x1687e94]     ; 0045d72e | g_VertexNormals[0].vertex.z
     FMUL double ptr [0x0061b40e]        ; 0045d734 | g_LightingScaleFactor
     CALL crt_math.c_round_FUN_005fe6b0  ; 0045d73a
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
@@ -188,7 +188,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0xc]      ; 0045d786
     MOV dword ptr [EDX + 0x1e6615c],EAX ; 0045d789 | g_PolygonIndices
     IMUL EAX,dword ptr [EBP + -0xc],0x184 ; 0045d78f
-    IMUL EAX,dword ptr [EAX + 0x16e99c8],0x30 ; 0045d796 | DAT_016e99c8
+    IMUL EAX,dword ptr [EAX + 0x16e99c8],0x30 ; 0045d796 | g_ModelPolygonData[0].vertex_indices[0]
     MOV EDX,dword ptr [EBP + -0xc]      ; 0045d79d
     SHL EDX,0x2                         ; 0045d7a0
     MOV EAX,dword ptr [EAX + 0x68801c]  ; 0045d7a3 | g_RenderVertexBuffer[0].projected_vertex.transformed_z
@@ -202,14 +202,14 @@ section .text
     IMUL EDX,dword ptr [EBP + -0xc],0x184 ; 0045d7be
         ;   Label: LAB_0045d7be
     MOV EAX,dword ptr [EBP + -0x8]      ; 0045d7c5
-    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0045d7c8 | DAT_016e99b4
+    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0045d7c8 | g_ModelPolygonData[0].vertex_indices_count
     JGE 0x0045d811                      ; 0045d7ce
         ;   XREF to: 0045d811 (CONDITIONAL_JUMP)  ; LAB_0045d811
     IMUL EDX,dword ptr [EBP + -0xc],0x184 ; 0045d7d0
     MOV EAX,dword ptr [EBP + -0x8]      ; 0045d7d7
     SHL EAX,0x2                         ; 0045d7da
     ADD EAX,EDX                         ; 0045d7dd
-    IMUL EAX,dword ptr [EAX + 0x16e99c8],0x30 ; 0045d7df | DAT_016e99c8 | DAT_016e99cc | DAT_016e99d0
+    IMUL EAX,dword ptr [EAX + 0x16e99c8],0x30 ; 0045d7df | g_ModelPolygonData[0].vertex_indices[0] | g_ModelPolygonData[0].vertex_indices[1] | g_ModelPolygonData[0].vertex_indices[2]
     MOV EAX,dword ptr [EAX + 0x68801c]  ; 0045d7e6 | g_RenderVertexBuffer[0].projected_vertex.transformed_z
     MOV dword ptr [EBP + -0x4],EAX      ; 0045d7ec
     MOV EDX,dword ptr [EBP + -0xc]      ; 0045d7ef

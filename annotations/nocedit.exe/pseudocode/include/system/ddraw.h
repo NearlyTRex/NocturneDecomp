@@ -161,6 +161,9 @@ typedef HRESULT IDirectDrawSurface_GetBltStatus(struct IDirectDrawSurface* this_
 // Function Definition: IDirectDrawSurface_GetCaps
 typedef HRESULT IDirectDrawSurface_GetCaps(struct IDirectDrawSurface* this_ptr, struct DDSCAPS* caps);
 
+// Function Definition: IDirectDrawSurface_GetClipper
+typedef HRESULT IDirectDrawSurface_GetClipper(struct IDirectDrawSurface* this_ptr, struct IDirectDrawClipper** clipper);
+
 // Function Definition: IDirectDrawSurface_GetColorKey
 typedef HRESULT IDirectDrawSurface_GetColorKey(struct IDirectDrawSurface* this_ptr, DWORD flags, void* color_key);
 
@@ -172,6 +175,9 @@ typedef HRESULT IDirectDrawSurface_GetFlipStatus(struct IDirectDrawSurface* this
 
 // Function Definition: IDirectDrawSurface_GetOverlayPosition
 typedef HRESULT IDirectDrawSurface_GetOverlayPosition(struct IDirectDrawSurface* this_ptr, DWORD* x_pos, DWORD* y_pos);
+
+// Function Definition: IDirectDrawSurface_GetPalette
+typedef HRESULT IDirectDrawSurface_GetPalette(struct IDirectDrawSurface* this_ptr, struct IUnknown** palette);
 
 // Function Definition: IDirectDrawSurface_GetPixelFormat
 typedef HRESULT IDirectDrawSurface_GetPixelFormat(struct IDirectDrawSurface* this_ptr, void* pixel_format);
@@ -194,11 +200,17 @@ typedef HRESULT IDirectDrawSurface_ReleaseDC(struct IDirectDrawSurface* this_ptr
 // Function Definition: IDirectDrawSurface_Restore
 typedef HRESULT IDirectDrawSurface_Restore(struct IDirectDrawSurface* this_ptr);
 
+// Function Definition: IDirectDrawSurface_SetClipper
+typedef HRESULT IDirectDrawSurface_SetClipper(struct IDirectDrawSurface* this_ptr, struct IDirectDrawClipper* clipper);
+
 // Function Definition: IDirectDrawSurface_SetColorKey
 typedef HRESULT IDirectDrawSurface_SetColorKey(struct IDirectDrawSurface* this_ptr, DWORD flags, void* color_key);
 
 // Function Definition: IDirectDrawSurface_SetOverlayPosition
 typedef HRESULT IDirectDrawSurface_SetOverlayPosition(struct IDirectDrawSurface* this_ptr, DWORD x_pos, DWORD y_pos);
+
+// Function Definition: IDirectDrawSurface_SetPalette
+typedef HRESULT IDirectDrawSurface_SetPalette(struct IDirectDrawSurface* this_ptr, struct IUnknown* palette);
 
 // Function Definition: IDirectDrawSurface_Unlock
 typedef HRESULT IDirectDrawSurface_Unlock(struct IDirectDrawSurface* this_ptr, void* surface_ptr);
@@ -229,12 +241,12 @@ typedef struct IDirectDrawSurface_vtable {
     IDirectDrawSurface_GetAttachedSurface* GetAttachedSurface;
     IDirectDrawSurface_GetBltStatus* GetBltStatus;
     IDirectDrawSurface_GetCaps* GetCaps;
-    void* GetClipper;
+    IDirectDrawSurface_GetClipper* GetClipper;
     IDirectDrawSurface_GetColorKey* GetColorKey;
     IDirectDrawSurface_GetDC* GetDC;
     IDirectDrawSurface_GetFlipStatus* GetFlipStatus;
     IDirectDrawSurface_GetOverlayPosition* GetOverlayPosition;
-    void* GetPalette;
+    IDirectDrawSurface_GetPalette* GetPalette;
     IDirectDrawSurface_GetPixelFormat* GetPixelFormat;
     IDirectDrawSurface_GetSurfaceDesc* GetSurfaceDesc;
     IDirectDrawSurface_Initialize* Initialize;
@@ -242,10 +254,10 @@ typedef struct IDirectDrawSurface_vtable {
     IDirectDrawSurface_Lock* Lock;
     IDirectDrawSurface_ReleaseDC* ReleaseDC;
     IDirectDrawSurface_Restore* Restore;
-    void* SetClipper;
+    IDirectDrawSurface_SetClipper* SetClipper;
     IDirectDrawSurface_SetColorKey* SetColorKey;
     IDirectDrawSurface_SetOverlayPosition* SetOverlayPosition;
-    void* SetPalette;
+    IDirectDrawSurface_SetPalette* SetPalette;
     IDirectDrawSurface_Unlock* Unlock;
     IDirectDrawSurface_UpdateOverlay* UpdateOverlay;
     IDirectDrawSurface_UpdateOverlayDisplay* UpdateOverlayDisplay;

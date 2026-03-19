@@ -25,7 +25,7 @@
 ;   double g_YAxisScaleModifier = 0.5
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; Called Functions:
@@ -257,9 +257,9 @@ section .text
     FMUL float ptr [EBP + -0x1c]        ; 00469ea6
     FSTP float ptr [EAX + 0x162640c]    ; 00469ea9 | g_LoadedVertices
     IMUL EAX,dword ptr [EBP + -0x38],0x14 ; 00469eaf
-    FLD float ptr [EAX + 0x1626410]     ; 00469eb3 | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 00469eb3 | g_LoadedVertices[0].vertex.y
     FMUL float ptr [EBP + -0x14]        ; 00469eb9
-    FSTP float ptr [EAX + 0x1626410]    ; 00469ebc | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 00469ebc | g_LoadedVertices[0].vertex.y
     IMUL EAX,dword ptr [EBP + -0x38],0x14 ; 00469ec2
     FLD float ptr [EAX + 0x1626414]     ; 00469ec6 | g_LoadedVertices[0].vertex.z
     FMUL float ptr [EBP + -0x18]        ; 00469ecc

@@ -35,7 +35,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   int[4000] g_VertexRemapTable
-;   undefined4 DAT_03671300
+;   undefined4 g_VertexRemapTable[1]
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_0041af90
@@ -212,7 +212,7 @@ section .text
     CMP EAX,dword ptr [EDI + ESI*0x1 + 0x2c] ; 0059c7d1
     JGE 0x0059c811                      ; 0059c7d5
         ;   XREF to: 0059c811 (CONDITIONAL_JUMP)  ; LAB_0059c811
-    CMP dword ptr [EDX + 0x36712fc],0x0 ; 0059c7d7 | g_VertexRemapTable | DAT_03671300
+    CMP dword ptr [EDX + 0x36712fc],0x0 ; 0059c7d7 | g_VertexRemapTable | g_VertexRemapTable[1]
     JNZ 0x0059c80e                      ; 0059c7de
         ;   XREF to: 0059c80e (CONDITIONAL_JUMP)  ; LAB_0059c80e
     INC EAX                             ; 0059c7e0
@@ -270,11 +270,11 @@ section .text
     TEST EDI,EDI                        ; 0059c87a
     JLE 0x0059c8bc                      ; 0059c87c
         ;   XREF to: 0059c8bc (CONDITIONAL_JUMP)  ; LAB_0059c8bc
-    CMP dword ptr [EAX + 0x36712fc],0x0 ; 0059c87e | g_VertexRemapTable | DAT_03671300
+    CMP dword ptr [EAX + 0x36712fc],0x0 ; 0059c87e | g_VertexRemapTable | g_VertexRemapTable[1]
         ;   Label: LAB_0059c87e
     JZ 0x0059cb61                       ; 0059c885
         ;   XREF to: 0059cb61 (CONDITIONAL_JUMP)  ; LAB_0059cb61
-    MOV dword ptr [EAX + 0x36712fc],EBX ; 0059c88b | g_VertexRemapTable | DAT_03671300
+    MOV dword ptr [EAX + 0x36712fc],EBX ; 0059c88b | g_VertexRemapTable | g_VertexRemapTable[1]
     MOV EDI,dword ptr [EBP + 0x178]     ; 0059c891
     MOV ESI,EDX                         ; 0059c897
     ADD EDI,ECX                         ; 0059c899
@@ -508,7 +508,7 @@ section .text
     POP ESI                             ; 0059cb5e
     POP EBX                             ; 0059cb5f
     RET                                 ; 0059cb60
-    MOV dword ptr [EAX + 0x36712fc],0xffffffff ; 0059cb61 | DAT_03671300
+    MOV dword ptr [EAX + 0x36712fc],0xffffffff ; 0059cb61 | g_VertexRemapTable[1]
         ;   Label: LAB_0059cb61
     JMP 0x0059c8a2                      ; 0059cb6b
         ;   XREF to: 0059c8a2 (UNCONDITIONAL_JUMP)  ; LAB_0059c8a2

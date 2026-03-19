@@ -15,8 +15,8 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
-;   undefined4 DAT_02f33768
+;   undefined4 g_CDemonMissionInstance.is_in_editor
+;   undefined4 g_CDemonMissionInstance.selected_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -83,7 +83,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 005e4de3
         ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor * this_ptr)
     MOV EAX,[0x0067d550]                ; 005e4de8 | g_CDemonMissionInstance | g_CDemonMissionPtr
-    MOV ECX,dword ptr [EAX + 0x4]       ; 005e4ded | DAT_02f33744
+    MOV ECX,dword ptr [EAX + 0x4]       ; 005e4ded | g_CDemonMissionInstance.is_in_editor
     ADD ESP,0x4                         ; 005e4df0
     TEST ECX,ECX                        ; 005e4df3
     JZ 0x005e5040                       ; 005e4df5
@@ -97,7 +97,7 @@ section .text
     JNZ 0x005e5040                      ; 005e4e0c
         ;   XREF to: 005e5040 (CONDITIONAL_JUMP)  ; LAB_005e5040
     MOV EAX,[0x0067d550]                ; 005e4e12 | g_CDemonMissionPtr
-    MOV EDI,dword ptr [EAX + 0x28]      ; 005e4e17 | DAT_02f33768
+    MOV EDI,dword ptr [EAX + 0x28]      ; 005e4e17 | g_CDemonMissionInstance.selected_actor
     CMP ESI,EDI                         ; 005e4e1a
     JNZ 0x005e5040                      ; 005e4e1c
         ;   XREF to: 005e5040 (CONDITIONAL_JUMP)  ; LAB_005e5040

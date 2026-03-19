@@ -14,10 +14,10 @@
 ; Referenced Globals:
 ;   CAlphaBitmap g_MoonCloudTexture
 ;   CAlphaBitmap[30] g_MoonAnimTextures
-;   undefined4 DAT_02f37f98
+;   undefined4 g_MoonAnimTextures[1].raw
 ;   int g_MoonCloudScrollX
 ;   CCourse[3] g_MoonBatCourses
-;   undefined4 DAT_02f381f4
+;   undefined4 g_MoonBatCourses[1].len
 ;   SBat[30] g_MoonBats
 ;   CKeyFramedModel g_MoonBatModel
 ;
@@ -41,11 +41,11 @@ section .text
     MOV EBX,0x2f381e8                   ; 00529cec | g_MoonBatCourses
         ;   Label: LAB_00529cec
     LEA ESI,[EBX + 0x24]                ; 00529cf1 | g_MoonBats
-    PUSH EBX                            ; 00529cf4 | g_MoonBatCourses | DAT_02f381f4
+    PUSH EBX                            ; 00529cf4 | g_MoonBatCourses | g_MoonBatCourses[1].len
         ;   Label: LAB_00529cf4
     CALL core_course.cpp_CCourse_free_FUN_004426c0 ; 00529cf5
         ;   XREF to: 004426c0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_free_FUN_004426c0(CCourse * this_ptr)
-    ADD EBX,0xc                         ; 00529cfa | DAT_02f381f4
+    ADD EBX,0xc                         ; 00529cfa | g_MoonBatCourses[1].len
     ADD ESP,0x4                         ; 00529cfd
     CMP EBX,ESI                         ; 00529d00
     JNZ 0x00529cf4                      ; 00529d02
@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 00410560 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 00529d30
     LEA ESI,[EBX + 0x258]               ; 00529d33 | g_MoonCloudScrollX
-    PUSH EBX                            ; 00529d39 | g_MoonAnimTextures | DAT_02f37f98
+    PUSH EBX                            ; 00529d39 | g_MoonAnimTextures | g_MoonAnimTextures[1].raw
         ;   Label: LAB_00529d39
     CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560 ; 00529d3a
         ;   XREF to: 00410560 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560(CAlphaBitmap * this_ptr)

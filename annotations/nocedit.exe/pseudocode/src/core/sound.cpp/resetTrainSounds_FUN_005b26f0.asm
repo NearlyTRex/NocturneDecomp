@@ -6,9 +6,9 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 DAT_0326eed8
-;   undefined4 DAT_0326eedc
-;   undefined4 DAT_0326eee0
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.x
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.y
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.z
 ;   CVector3f g_TrainVelocityVector
 ;   undefined4 g_TrainVelocityVector.y
 ;   undefined4 g_TrainVelocityVector.z
@@ -21,13 +21,13 @@ section .text
     SUB ESP,0xc                         ; 005b26f0
         ;   Label: core_sound.cpp_resetTrainSounds_FUN_005b26f0
     MOV EAX,[0x006810c8]                ; 005b26f3 | g_CDemonSetPtr
-    FLD float ptr [EAX + 0x15ac60]      ; 005b26f8 | DAT_0326eed8
+    FLD float ptr [EAX + 0x15ac60]      ; 005b26f8 | g_CDemonSetInstance.active_fog.scroll.x
     FCHS                                ; 005b26fe
     FSTP float ptr [ESP]                ; 005b2700
-    FLD float ptr [EAX + 0x15ac64]      ; 005b2703 | DAT_0326eedc
+    FLD float ptr [EAX + 0x15ac64]      ; 005b2703 | g_CDemonSetInstance.active_fog.scroll.y
     FCHS                                ; 005b2709
     FSTP float ptr [ESP + 0x4]          ; 005b270b
-    FLD float ptr [EAX + 0x15ac68]      ; 005b270f | DAT_0326eee0
+    FLD float ptr [EAX + 0x15ac68]      ; 005b270f | g_CDemonSetInstance.active_fog.scroll.z
     FCHS                                ; 005b2715
     MOV EAX,ESP                         ; 005b2717
     FSTP float ptr [ESP + 0x8]          ; 005b2719

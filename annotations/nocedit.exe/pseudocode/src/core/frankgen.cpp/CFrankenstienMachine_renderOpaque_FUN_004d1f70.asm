@@ -19,7 +19,7 @@
 ;   float FLOAT_0062ab31 = -1800
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -44,7 +44,7 @@ section .text
     AND ESP,0xfffffff8                  ; 004d1f79
     MOV EBX,dword ptr [EBP + 0x14]      ; 004d1f7c
     MOV EAX,[0x0067d550]                ; 004d1f7f | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 004d1f84 | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 004d1f84 | g_CDemonMissionInstance.is_in_editor
     JZ 0x004d1fa4                       ; 004d1f88
         ;   XREF to: 004d1fa4 (CONDITIONAL_JUMP)  ; LAB_004d1fa4
     CALL core_frankgen.cpp_findLeader_FUN_004d2330 ; 004d1f8a

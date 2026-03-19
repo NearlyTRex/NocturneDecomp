@@ -16,9 +16,9 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CEventList g_CEventListInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_0326eed8
-;   undefined4 DAT_0326eedc
-;   undefined4 DAT_0326eee0
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.x
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.y
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.z
 ;   undefined4 g_CDemonSetInstance.player_on_train
 ;   CVector3f g_SoundListenerPrev
 ;   undefined4 g_SoundListenerPrev.y
@@ -144,13 +144,13 @@ section .text
     CMP dword ptr [EAX + 0x15aca8],0x0  ; 005b2edc | g_CDemonSetInstance.player_on_train
     JZ 0x005b2f39                       ; 005b2ee3
         ;   XREF to: 005b2f39 (CONDITIONAL_JUMP)  ; LAB_005b2f39
-    FLD float ptr [EAX + 0x15ac60]      ; 005b2ee5 | DAT_0326eed8
+    FLD float ptr [EAX + 0x15ac60]      ; 005b2ee5 | g_CDemonSetInstance.active_fog.scroll.x
     FCHS                                ; 005b2eeb
     FSTP float ptr [ESP + 0x8]          ; 005b2eed
-    FLD float ptr [EAX + 0x15ac64]      ; 005b2ef1 | DAT_0326eedc
+    FLD float ptr [EAX + 0x15ac64]      ; 005b2ef1 | g_CDemonSetInstance.active_fog.scroll.y
     FCHS                                ; 005b2ef7
     FSTP float ptr [ESP + 0xc]          ; 005b2ef9
-    FLD float ptr [EAX + 0x15ac68]      ; 005b2efd | DAT_0326eee0
+    FLD float ptr [EAX + 0x15ac68]      ; 005b2efd | g_CDemonSetInstance.active_fog.scroll.z
     FCHS                                ; 005b2f03
     LEA EAX,[ESP + 0x8]                 ; 005b2f05
     FSTP float ptr [ESP + 0x10]         ; 005b2f09

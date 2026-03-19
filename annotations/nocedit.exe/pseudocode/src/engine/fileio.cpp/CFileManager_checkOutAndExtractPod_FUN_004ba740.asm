@@ -562,13 +562,13 @@ section .text
     MOV ESI,0x2d12bd0                   ; 004bac79 | g_VersionControlSession
     LEA EDI,[ESP + 0x2f8]               ; 004bac7e
     PUSH EDI                            ; 004bac85
-    MOV AL,byte ptr [ESI]               ; 004bac86 | g_VersionControlSession | DAT_02d12bd2
+    MOV AL,byte ptr [ESI]               ; 004bac86 | g_VersionControlSession | g_VersionControlSession.primary_username[2]
         ;   Label: LAB_004bac86
     MOV byte ptr [EDI],AL               ; 004bac88
     CMP AL,0x0                          ; 004bac8a
     JZ 0x004bac9e                       ; 004bac8c
         ;   XREF to: 004bac9e (CONDITIONAL_JUMP)  ; LAB_004bac9e
-    MOV AL,byte ptr [ESI + 0x1]         ; 004bac8e | DAT_02d12bd1 | DAT_02d12bd3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004bac8e | g_VersionControlSession.primary_username[1] | g_VersionControlSession.primary_username[3]
     ADD ESI,0x2                         ; 004bac91
     MOV byte ptr [EDI + 0x1],AL         ; 004bac94
     ADD EDI,0x2                         ; 004bac97
@@ -772,7 +772,7 @@ section .text
     ADD ESP,0x4                         ; 004baebe
     MOV EAX,[0x00680cdc]                ; 004baec1 | g_CDemonPodPtr
     PUSH EAX                            ; 004baec6 | g_CDemonPodInstance
-    MOV EBX,dword ptr [EAX + 0x194]     ; 004baec7 | DAT_030e5224
+    MOV EBX,dword ptr [EAX + 0x194]     ; 004baec7 | g_CDemonPodInstance.vtable
     CALL dword ptr [EBX + 0x4]          ; 004baecd
     ADD ESP,0x4                         ; 004baed0
     PUSH 0x0                            ; 004baed3

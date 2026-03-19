@@ -24,8 +24,8 @@
 ;   int g_CurrentLineNumber
 ;   int g_LastSampleAccessIndex
 ;   CSfxSample[64] g_SfxSamples
-;   undefined4 DAT_03f6297c
-;   undefined4 DAT_03f629ac
+;   undefined4 g_SfxSamples[0].taken
+;   undefined4 g_SfxSamples[1].sample_info.name[0]
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -67,7 +67,7 @@ section .text
     MOV EBX,EBP                         ; 005a5221
     IMUL EAX,EBX,0x180                  ; 005a5223
         ;   Label: LAB_005a5223
-    MOV ECX,dword ptr [EAX + 0x3f6297c] ; 005a5229 | DAT_03f6297c | DAT_03f62afc
+    MOV ECX,dword ptr [EAX + 0x3f6297c] ; 005a5229 | g_SfxSamples[0].taken | g_SfxSamples[1].taken
     CMP EBP,ECX                         ; 005a522f
     JZ 0x005a5266                       ; 005a5231
         ;   XREF to: 005a5266 (CONDITIONAL_JUMP)  ; LAB_005a5266
@@ -92,13 +92,13 @@ section .text
     POP ESI                             ; 005a5263
     POP EBX                             ; 005a5264
     RET                                 ; 005a5265
-    CMP ECX,dword ptr [EAX + 0x3f62980] ; 005a5266 | DAT_03f62b00
+    CMP ECX,dword ptr [EAX + 0x3f62980] ; 005a5266 | g_SfxSamples[1].ref_count
         ;   Label: LAB_005a5266
     JNZ 0x005a5233                      ; 005a526c
         ;   XREF to: 005a5233 (CONDITIONAL_JUMP)  ; LAB_005a5233
     MOV EDX,0x3f6282c                   ; 005a526e | g_SfxSamples
     ADD EDX,EAX                         ; 005a5273
-    MOV dword ptr [ESP + 0x100],EDX     ; 005a5275 | DAT_03f629ac
+    MOV dword ptr [ESP + 0x100],EDX     ; 005a5275 | g_SfxSamples[1].sample_info.name[0]
     JMP 0x005a5242                      ; 005a527c
         ;   XREF to: 005a5242 (UNCONDITIONAL_JUMP)  ; LAB_005a5242
     MOV EAX,ESP                         ; 005a527e

@@ -34,15 +34,15 @@
 ;   undefined4 DAT_009e5d74
 ;   undefined4 DAT_009e6c74
 ;   CVector3f[76800] g_PrecomputedSurfaceNormals
-;   undefined4 DAT_00ac7c74
-;   undefined4 DAT_00ac7c78
-;   undefined4 DAT_00ac7c7c
-;   undefined4 DAT_00ac7c80
-;   undefined4 DAT_00ac7c84
-;   undefined4 DAT_00ac7c88
-;   undefined4 DAT_00ac8b74
+;   undefined4 g_PrecomputedSurfaceNormals[320].x
+;   undefined4 g_PrecomputedSurfaceNormals[320].y
+;   undefined4 g_PrecomputedSurfaceNormals[320].z
+;   undefined4 g_PrecomputedSurfaceNormals[321].x
+;   undefined4 g_PrecomputedSurfaceNormals[321].y
+;   undefined4 g_PrecomputedSurfaceNormals[321].z
+;   undefined4 g_PrecomputedSurfaceNormals[640].x
 ;   char[241][320] g_CoronaBlurOutputBuffer
-;   undefined4 DAT_00ba8db8
+;   undefined4 g_CoronaBlurOutputBuffer[1][0]
 ;   ... and 20 more
 ;
 ; Called Functions:
@@ -70,7 +70,7 @@ section .text
     LEA ESI,[ESI + 0x10]                ; 00450adb
     XOR EBX,EBX                         ; 00450ade
     MOV [0x013bc234],EAX                ; 00450ae0 | g_CurrentLightForCorona
-    MOVSD.REP ES:EDI,ESI                ; 00450ae5 | g_CoronaCameraRotationMatrix | DAT_013bc23c
+    MOVSD.REP ES:EDI,ESI                ; 00450ae5 | g_CoronaCameraRotationMatrix | g_CoronaCameraRotationMatrix.m[0].y
     ADD EBX,0x4                         ; 00450ae7
         ;   Label: LAB_00450ae7
     CALL crt_stdlib.c_rand_FUN_005feb5c ; 00450aea
@@ -91,9 +91,9 @@ section .text
         ;   Label: LAB_00450b13
     MOV ECX,dword ptr [ECX + 0x150]     ; 00450b16
     XOR EBX,EBX                         ; 00450b1c
-    MOV dword ptr [EAX + 0x1576fa8],ECX ; 00450b1e | g_CoronaLeftExtent | DAT_01576fac
+    MOV dword ptr [EAX + 0x1576fa8],ECX ; 00450b1e | g_CoronaLeftExtent | g_CoronaLeftExtent[1]
     MOV ECX,dword ptr [EBP + 0x14]      ; 00450b24
-    MOV dword ptr [EAX + 0x1577368],EBX ; 00450b27 | g_CoronaRightExtent | DAT_0157736c
+    MOV dword ptr [EAX + 0x1577368],EBX ; 00450b27 | g_CoronaRightExtent | g_CoronaRightExtent[1]
     INC EDX                             ; 00450b2d
     MOV ESI,dword ptr [ECX + 0x154]     ; 00450b2e
     ADD EAX,0x4                         ; 00450b34
@@ -147,7 +147,7 @@ section .text
         ;   Label: LAB_00450bce
     MOV EAX,dword ptr [ESP + 0x34]      ; 00450bd1
     MOV EBX,dword ptr [EDX + 0x150]     ; 00450bd5
-    CMP EBX,dword ptr [EAX + 0x1576fa8] ; 00450bdb | g_CoronaLeftExtent | DAT_01576fac
+    CMP EBX,dword ptr [EAX + 0x1576fa8] ; 00450bdb | g_CoronaLeftExtent | g_CoronaLeftExtent[1]
     JNZ 0x00450c4c                      ; 00450be1
         ;   XREF to: 00450c4c (CONDITIONAL_JUMP)  ; LAB_00450c4c
     MOV EBX,dword ptr [ESP + 0x34]      ; 00450be3
@@ -160,15 +160,15 @@ section .text
     ADD EBX,0x4                         ; 00450bfb
     ADD ESI,0xf00                       ; 00450bfe
     ADD EDI,0x500                       ; 00450c04
-    ADD EAX,0x140                       ; 00450c0a | DAT_00ba8db8
+    ADD EAX,0x140                       ; 00450c0a | g_CoronaBlurOutputBuffer[1][0]
     ADD EDX,0xf00                       ; 00450c0f
     INC ECX                             ; 00450c15
     MOV dword ptr [ESP + 0x34],EBX      ; 00450c16
-    MOV dword ptr [ESP + 0x28],ESI      ; 00450c1a | DAT_00ac7c74 | DAT_00ac8b74
+    MOV dword ptr [ESP + 0x28],ESI      ; 00450c1a | g_PrecomputedSurfaceNormals[320].x | g_PrecomputedSurfaceNormals[640].x
     MOV dword ptr [ESP + 0x2c],EDX      ; 00450c1e | DAT_009e5d74 | DAT_009e6c74
     MOV EDX,dword ptr [EBP + 0x14]      ; 00450c22
-    MOV dword ptr [ESP + 0x24],EDI      ; 00450c25 | DAT_01577c28 | DAT_01578128
-    MOV dword ptr [ESP + 0x20],EAX      ; 00450c29 | DAT_00ba8db8
+    MOV dword ptr [ESP + 0x24],EDI      ; 00450c25 | g_CoronaDepthBuffer[1][0] | g_CoronaDepthBuffer[2][0]
+    MOV dword ptr [ESP + 0x20],EAX      ; 00450c29 | g_CoronaBlurOutputBuffer[1][0]
     MOV EBX,dword ptr [EDX + 0x154]     ; 00450c2d
     MOV dword ptr [ESP + 0x30],ECX      ; 00450c33
     CMP ECX,EBX                         ; 00450c37
@@ -184,12 +184,12 @@ section .text
     RET                                 ; 00450c4b
     MOV EAX,dword ptr [ESP + 0x34]      ; 00450c4c
         ;   Label: LAB_00450c4c
-    MOV EAX,dword ptr [EAX + 0x1576fa8] ; 00450c50 | DAT_01576fac
+    MOV EAX,dword ptr [EAX + 0x1576fa8] ; 00450c50 | g_CoronaLeftExtent[1]
     MOV dword ptr [ESP + 0x48],EAX      ; 00450c56
     MOV ESI,dword ptr [ESP + 0x48]      ; 00450c5a
     IMUL EBX,ESI,0xc                    ; 00450c5e
     MOV EAX,dword ptr [ESP + 0x34]      ; 00450c61
-    MOV EAX,dword ptr [EAX + 0x1577368] ; 00450c65 | DAT_0157736c
+    MOV EAX,dword ptr [EAX + 0x1577368] ; 00450c65 | g_CoronaRightExtent[1]
     MOV dword ptr [ESP + 0x38],EAX      ; 00450c6b
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00450c6f
     ADD EAX,EBX                         ; 00450c73
@@ -219,16 +219,16 @@ section .text
         ;   Label: LAB_00450cc0
     MOV EDX,dword ptr [ESP + 0x3c]      ; 00450cc6
     MOV EAX,dword ptr [ESP + 0x40]      ; 00450cca
-    MOV ESI,dword ptr [EDX]             ; 00450cce | DAT_01577c28 | DAT_01577c2c
+    MOV ESI,dword ptr [EDX]             ; 00450cce | g_CoronaDepthBuffer[1][0] | g_CoronaDepthBuffer[1][1]
     CMP ESI,dword ptr [EAX]             ; 00450cd0
     JBE 0x00450dd8                      ; 00450cd2
         ;   XREF to: 00450dd8 (CONDITIONAL_JUMP)  ; LAB_00450dd8
-    FLD float ptr [EBX + 0x4]           ; 00450cd8 | DAT_00ac7c78 | DAT_00ac7c84
+    FLD float ptr [EBX + 0x4]           ; 00450cd8 | g_PrecomputedSurfaceNormals[320].y | g_PrecomputedSurfaceNormals[321].y
     FMUL float ptr [0x013bc24c]         ; 00450cdb | g_CoronaCameraRotationMatrix.m[1].z
-    FLD float ptr [EBX]                 ; 00450ce1 | DAT_00ac7c74 | DAT_00ac7c80
+    FLD float ptr [EBX]                 ; 00450ce1 | g_PrecomputedSurfaceNormals[320].x | g_PrecomputedSurfaceNormals[321].x
     FMUL float ptr [0x013bc240]         ; 00450ce3 | g_CoronaCameraRotationMatrix.m[0].z
     FADDP                               ; 00450ce9
-    FLD float ptr [EBX + 0x8]           ; 00450ceb | DAT_00ac7c7c | DAT_00ac7c88
+    FLD float ptr [EBX + 0x8]           ; 00450ceb | g_PrecomputedSurfaceNormals[320].z | g_PrecomputedSurfaceNormals[321].z
     FMUL float ptr [0x013bc258]         ; 00450cee | g_CoronaCameraRotationMatrix.m[2].z
     FADDP                               ; 00450cf4
     FLDZ                                ; 00450cf6
@@ -299,9 +299,9 @@ section .text
     SAR EDX,CL                          ; 00450dca
     MOV ECX,dword ptr [ESP + 0x4c]      ; 00450dcc
     XOR EAX,EAX                         ; 00450dd0
-    MOV AL,byte ptr [ECX]               ; 00450dd2 | DAT_00ba8db8
+    MOV AL,byte ptr [ECX]               ; 00450dd2 | g_CoronaBlurOutputBuffer[1][0]
     ADD EAX,EDX                         ; 00450dd4
-    MOV byte ptr [ECX],AL               ; 00450dd6 | DAT_00ba8db8
+    MOV byte ptr [ECX],AL               ; 00450dd6 | g_CoronaBlurOutputBuffer[1][0]
     MOV EAX,0x1                         ; 00450dd8
         ;   Label: LAB_00450dd8
     MOV ESI,dword ptr [ESP + 0x3c]      ; 00450ddd

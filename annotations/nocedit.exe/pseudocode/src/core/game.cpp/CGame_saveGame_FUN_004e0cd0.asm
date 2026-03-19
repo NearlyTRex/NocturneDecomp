@@ -105,13 +105,13 @@ section .text
         ;   Label: LAB_004e0d3a
     MOV EDI,ESP                         ; 004e0d3f
     PUSH EDI                            ; 004e0d41
-    MOV AL,byte ptr [ESI]               ; 004e0d42 | g_CurrentSaveFile | DAT_02d82c82
+    MOV AL,byte ptr [ESI]               ; 004e0d42 | g_CurrentSaveFile | g_CurrentSaveFile+2
         ;   Label: LAB_004e0d42
     MOV byte ptr [EDI],AL               ; 004e0d44
     CMP AL,0x0                          ; 004e0d46
     JZ 0x004e0d5a                       ; 004e0d48
         ;   XREF to: 004e0d5a (CONDITIONAL_JUMP)  ; LAB_004e0d5a
-    MOV AL,byte ptr [ESI + 0x1]         ; 004e0d4a | DAT_02d82c81 | DAT_02d82c83
+    MOV AL,byte ptr [ESI + 0x1]         ; 004e0d4a | g_CurrentSaveFile+1 | g_CurrentSaveFile+3
     ADD ESI,0x2                         ; 004e0d4d
     MOV byte ptr [EDI + 0x1],AL         ; 004e0d50
     ADD EDI,0x2                         ; 004e0d53
@@ -198,7 +198,7 @@ section .text
     JLE 0x004e0e50                      ; 004e0e1b
         ;   XREF to: 004e0e50 (CONDITIONAL_JUMP)  ; LAB_004e0e50
     XOR EBX,EBX                         ; 004e0e1d
-    MOV EAX,dword ptr [EBX + 0x2db87c0] ; 004e0e1f | g_HeroActors | DAT_02db87c4
+    MOV EAX,dword ptr [EBX + 0x2db87c0] ; 004e0e1f | g_HeroActors | g_HeroActors[1]
         ;   Label: LAB_004e0e1f
     PUSH EAX                            ; 004e0e25
     PUSH 0x62ca18                       ; 004e0e26 | = "%s\n"
@@ -258,7 +258,7 @@ section .text
     JL 0x004e0ef0                       ; 004e0ec3
         ;   XREF to: 004e0ef0 (CONDITIONAL_JUMP)  ; LAB_004e0ef0
     MOV ESI,0x4                         ; 004e0ec5
-    MOV EAX,dword ptr [ESI + 0x2d82d84] ; 004e0eca | DAT_02d82d88 | DAT_02d82d8c
+    MOV EAX,dword ptr [ESI + 0x2d82d84] ; 004e0eca | g_MasterLightStateSaveBuffer[1] | g_MasterLightStateSaveBuffer[2]
         ;   Label: LAB_004e0eca
     PUSH EAX                            ; 004e0ed0
     PUSH 0x62ca2d                       ; 004e0ed1 | = "%d\n"
@@ -449,13 +449,13 @@ section .text
     PUSH EDI                            ; 004e1125 | g_CurrentSaveFile
     MOV AL,byte ptr [ESI]               ; 004e1126
         ;   Label: LAB_004e1126
-    MOV byte ptr [EDI],AL               ; 004e1128 | g_CurrentSaveFile | DAT_02d82c82
+    MOV byte ptr [EDI],AL               ; 004e1128 | g_CurrentSaveFile | g_CurrentSaveFile+2
     CMP AL,0x0                          ; 004e112a
     JZ 0x004e113e                       ; 004e112c
         ;   XREF to: 004e113e (CONDITIONAL_JUMP)  ; LAB_004e113e
     MOV AL,byte ptr [ESI + 0x1]         ; 004e112e
     ADD ESI,0x2                         ; 004e1131
-    MOV byte ptr [EDI + 0x1],AL         ; 004e1134 | DAT_02d82c81 | DAT_02d82c83
+    MOV byte ptr [EDI + 0x1],AL         ; 004e1134 | g_CurrentSaveFile+1 | g_CurrentSaveFile+3
     ADD EDI,0x2                         ; 004e1137
     CMP AL,0x0                          ; 004e113a
     JNZ 0x004e1126                      ; 004e113c

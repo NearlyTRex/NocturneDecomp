@@ -447,7 +447,7 @@ section .text
         ;   XREF to: 004aaf58 (CONDITIONAL_JUMP)  ; LAB_004aaf58
     MOV AL,byte ptr [ESI + 0x1]         ; 004aaf48
     ADD ESI,0x2                         ; 004aaf4b
-    MOV byte ptr [EDI + 0x1],AL         ; 004aaf4e | g_EventErrorMessageBuffer+1 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004aaf4e | g_EventErrorMessageBuffer+1 | g_EventErrorMessageBuffer+3
     ADD EDI,0x2                         ; 004aaf51
     CMP AL,0x0                          ; 004aaf54
     JNZ 0x004aaf40                      ; 004aaf56
@@ -2648,7 +2648,7 @@ section .text
     LEA EDI,[EBP + 0xfffff57a]          ; 004ac3e7
     MOV ESI,0x6793d8                    ; 004ac3ed | g_DefaultSfxHandleName
     MOV EAX,dword ptr [EBP + -0x5e]     ; 004ac3f2
-    MOVSD.REP ES:EDI,ESI                ; 004ac3f5 | g_DefaultSfxHandleName | DAT_006793dc
+    MOVSD.REP ES:EDI,ESI                ; 004ac3f5 | g_DefaultSfxHandleName | g_DefaultSfxHandleName+4
     CMP byte ptr [EAX],0x2c             ; 004ac3f7
     JZ 0x004ac41f                       ; 004ac3fa
         ;   XREF to: 004ac41f (CONDITIONAL_JUMP)  ; LAB_004ac41f
@@ -4625,7 +4625,7 @@ section .text
     MOV ESI,0x6794a0                    ; 004ad660 | g_DefaultCommandArg
     MOV dword ptr [EBP + 0x72],ECX      ; 004ad665
     MOV ECX,0x19                        ; 004ad668
-    MOVSD.REP ES:EDI,ESI                ; 004ad66d | g_DefaultCommandArg | DAT_006794a4
+    MOVSD.REP ES:EDI,ESI                ; 004ad66d | g_DefaultCommandArg | g_DefaultCommandArg+4
     LEA ECX,[EBP + 0x72]                ; 004ad66f
     PUSH ECX                            ; 004ad672
     LEA ECX,[EBP + 0xfffffd4a]          ; 004ad673
@@ -5034,12 +5034,12 @@ section .text
     PUSH EBX                            ; 004ada35
     CALL dword ptr [ECX + 0x60]         ; 004ada36
     MOV EAX,[0x00680d50]                ; 004ada39 | g_CScriptPtr
-    MOV EDX,dword ptr [EAX + 0xc]       ; 004ada3e | DAT_0310f864
+    MOV EDX,dword ptr [EAX + 0xc]       ; 004ada3e | g_CScriptInstance.focus_actor
     ADD ESP,0xc                         ; 004ada41
     CMP EBX,EDX                         ; 004ada44
     JNZ 0x004aaf1d                      ; 004ada46
         ;   XREF to: 004aaf1d (CONDITIONAL_JUMP)  ; LAB_004aaf1d
-    MOV dword ptr [EAX + 0x10],0x1      ; 004ada4c | DAT_0310f868
+    MOV dword ptr [EAX + 0x10],0x1      ; 004ada4c | g_CScriptInstance.focus_actor_changed
     JMP 0x004aaf1d                      ; 004ada53
         ;   XREF to: 004aaf1d (UNCONDITIONAL_JUMP)  ; LAB_004aaf1d
     CMP dword ptr [EBP + -0x62],0x0     ; 004ada58

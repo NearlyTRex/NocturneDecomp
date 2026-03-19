@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Fire_state_0062a0c7
 ;   TerminatedCString s_s_1_0062a0d3
 ;   CCrater[20] g_CraterPool
-;   undefined4 DAT_02d6c714
+;   undefined4 g_CraterPool[1].active
 ;   int g_GunFlameAllocIndex
 ;
 ; Called Functions:
@@ -44,10 +44,10 @@ section .text
     ADD ESP,0x8                         ; 004c93ab
     PUSH ESI                            ; 004c93ae
         ;   Label: LAB_004c93ae
-    PUSH EBX                            ; 004c93af | g_CraterPool | DAT_02d6c714
+    PUSH EBX                            ; 004c93af | g_CraterPool | g_CraterPool[1].active
     CALL core_fire.cpp_CCrater_save_FUN_004c49c0 ; 004c93b0
         ;   XREF to: 004c49c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_save_FUN_004c49c0(CCrater * this_ptr, _FILE * file_handle)
-    ADD EBX,0x70                        ; 004c93b5 | DAT_02d6c714
+    ADD EBX,0x70                        ; 004c93b5 | g_CraterPool[1].active
     ADD ESP,0x8                         ; 004c93b8
     CMP EBX,EDI                         ; 004c93bb
     JNZ 0x004c93ae                      ; 004c93bd

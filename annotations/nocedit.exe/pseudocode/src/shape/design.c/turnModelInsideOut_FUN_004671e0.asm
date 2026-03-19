@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Model_turned_inside_out__0061c93c
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
-;   undefined4 DAT_016e99b4
+;   undefined4 g_ModelPolygonData[0].vertex_indices_count
 ;
 ; Called Functions:
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -47,7 +47,7 @@ section .text
     JGE 0x00467327                      ; 00467204
         ;   XREF to: 00467327 (CONDITIONAL_JUMP)  ; LAB_00467327
     IMUL EAX,dword ptr [EBP + -0xc],0x184 ; 0046720a
-    MOV EAX,dword ptr [EAX + 0x16e99b4] ; 00467211 | DAT_016e99b4
+    MOV EAX,dword ptr [EAX + 0x16e99b4] ; 00467211 | g_ModelPolygonData[0].vertex_indices_count
     MOV dword ptr [EBP + -0x4],EAX      ; 00467217
     MOV dword ptr [EBP + -0x8],0x0      ; 0046721a
     JMP 0x00467229                      ; 00467221

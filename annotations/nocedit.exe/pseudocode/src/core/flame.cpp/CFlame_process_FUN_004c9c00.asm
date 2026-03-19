@@ -322,7 +322,7 @@ section .text
         ;   XREF to: 004c9ef3 (UNCONDITIONAL_JUMP)  ; LAB_004c9ef3
     MOV EBX,dword ptr [ESI + 0x29c]     ; 004c9fe2
         ;   Label: LAB_004c9fe2
-    MOV EBX,dword ptr [EAX + EBX*0x4 + 0x150fe0] ; 004c9fe8 | DAT_03265258
+    MOV EBX,dword ptr [EAX + EBX*0x4 + 0x150fe0] ; 004c9fe8 | g_CDemonSetInstance.enemies[0]
     LEA EAX,[ESP + 0x9c]                ; 004c9fef
     PUSH EAX                            ; 004c9ff6
     CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0 ; 004c9ff7

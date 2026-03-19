@@ -121,7 +121,7 @@ section .text
     PUSH ESI                            ; 0057c677
     MOV EAX,dword ptr [ESP + 0xfc8]     ; 0057c678
     PUSH EBX                            ; 0057c67f
-    MOV EDX,dword ptr [EAX + 0x3276db0] ; 0057c680 | g_MasterLightList | DAT_03276db4
+    MOV EDX,dword ptr [EAX + 0x3276db0] ; 0057c680 | g_MasterLightList | g_MasterLightList[1]
     PUSH EDX                            ; 0057c686
     CALL core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390 ; 0057c687
         ;   XREF to: 00473390 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390(CDemonLight * this_ptr, int screen_x, int screen_y, int display_size)
@@ -229,7 +229,7 @@ section .text
     MOV dword ptr [ESP + 0xfb8],EBX     ; 0057c7c2
     MOV EAX,dword ptr [ESP + 0xfb8]     ; 0057c7c9
         ;   Label: LAB_0057c7c9
-    MOV EAX,dword ptr [EAX + 0x3276db0] ; 0057c7d0 | g_MasterLightList | DAT_03276db4
+    MOV EAX,dword ptr [EAX + 0x3276db0] ; 0057c7d0 | g_MasterLightList | g_MasterLightList[1]
     ADD EAX,0x40                        ; 0057c7d6
     PUSH EAX                            ; 0057c7d9
     PUSH EDI                            ; 0057c7da
@@ -479,7 +479,7 @@ section .text
     JLE 0x0057ca9d                      ; 0057ca71
         ;   XREF to: 0057ca9d (CONDITIONAL_JUMP)  ; LAB_0057ca9d
     XOR ESI,ESI                         ; 0057ca73
-    MOV EAX,dword ptr [ESI + 0x3276db0] ; 0057ca75 | g_MasterLightList | DAT_03276db4
+    MOV EAX,dword ptr [ESI + 0x3276db0] ; 0057ca75 | g_MasterLightList | g_MasterLightList[1]
         ;   Label: LAB_0057ca75
     ADD EAX,0x40                        ; 0057ca7b
     PUSH EAX                            ; 0057ca7e
@@ -609,7 +609,7 @@ section .text
     JLE 0x0057cbf0                      ; 0057cbc4
         ;   XREF to: 0057cbf0 (CONDITIONAL_JUMP)  ; LAB_0057cbf0
     XOR EBX,EBX                         ; 0057cbc6
-    MOV EAX,dword ptr [EBX + 0x3276db0] ; 0057cbc8 | g_MasterLightList | DAT_03276db4
+    MOV EAX,dword ptr [EBX + 0x3276db0] ; 0057cbc8 | g_MasterLightList | g_MasterLightList[1]
         ;   Label: LAB_0057cbc8
     ADD EAX,0x40                        ; 0057cbce
     PUSH EAX                            ; 0057cbd1
@@ -669,7 +669,7 @@ section .text
     JLE 0x0057cc7e                      ; 0057cc55
         ;   XREF to: 0057cc7e (CONDITIONAL_JUMP)  ; LAB_0057cc7e
     XOR EBX,EBX                         ; 0057cc57
-    MOV EAX,dword ptr [EBX + 0x3276db0] ; 0057cc59 | g_MasterLightList | DAT_03276db4
+    MOV EAX,dword ptr [EBX + 0x3276db0] ; 0057cc59 | g_MasterLightList | g_MasterLightList[1]
         ;   Label: LAB_0057cc59
     ADD EAX,0x40                        ; 0057cc5f
     PUSH EAX                            ; 0057cc62
@@ -819,7 +819,7 @@ section .text
     JLE 0x0057cdfd                      ; 0057cdd1
         ;   XREF to: 0057cdfd (CONDITIONAL_JUMP)  ; LAB_0057cdfd
     XOR EBX,EBX                         ; 0057cdd3
-    MOV EAX,dword ptr [EBX + 0x3276db0] ; 0057cdd5 | g_MasterLightList | DAT_03276db4
+    MOV EAX,dword ptr [EBX + 0x3276db0] ; 0057cdd5 | g_MasterLightList | g_MasterLightList[1]
         ;   Label: LAB_0057cdd5
     ADD EAX,0x40                        ; 0057cddb
     PUSH EAX                            ; 0057cdde

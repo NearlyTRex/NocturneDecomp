@@ -275,7 +275,7 @@ section .text
     JNZ 0x004291f0                      ; 004291de
         ;   XREF to: 004291f0 (CONDITIONAL_JUMP)  ; LAB_004291f0
     MOV EAX,[0x006810c8]                ; 004291e0 | g_CDemonSetPtr
-    MOV EAX,dword ptr [EAX + 0x14d144]  ; 004291e5 | DAT_032613bc
+    MOV EAX,dword ptr [EAX + 0x14d144]  ; 004291e5 | g_CDemonSetInstance.collision_actor
     MOV [0x00823c50],EAX                ; 004291eb | g_LastCollisionActor
     IMUL EAX,dword ptr [ESP + 0x98],0x24 ; 004291f0
         ;   Label: LAB_004291f0
@@ -323,15 +323,15 @@ section .text
     FLD double ptr [ESP]                ; 0042927e
     MOV EAX,[0x006810c8]                ; 00429281 | g_CDemonSetPtr
     FADD double ptr [0x0061708a]        ; 00429286 | DOUBLE_0061708a
-    FLD float ptr [EAX + 0x14d128]      ; 0042928c | DAT_032613a0
+    FLD float ptr [EAX + 0x14d128]      ; 0042928c | g_CDemonSetInstance.collision_normal.x
     FXCH                                ; 00429292
     FSTP float ptr [ESP + 0x90]         ; 00429294
     FMUL float ptr [ESP + 0x90]         ; 0042929b
     FSTP float ptr [ESP + 0x40]         ; 004292a2
-    FLD float ptr [EAX + 0x14d12c]      ; 004292a6 | DAT_032613a4
+    FLD float ptr [EAX + 0x14d12c]      ; 004292a6 | g_CDemonSetInstance.collision_normal.y
     FMUL float ptr [ESP + 0x90]         ; 004292ac
     FSTP float ptr [ESP + 0x44]         ; 004292b3
-    FLD float ptr [EAX + 0x14d130]      ; 004292b7 | DAT_032613a8
+    FLD float ptr [EAX + 0x14d130]      ; 004292b7 | g_CDemonSetInstance.collision_normal.z
     FMUL float ptr [ESP + 0x90]         ; 004292bd
     MOV EAX,dword ptr [ESP + 0xa0]      ; 004292c4
     FSTP float ptr [ESP + 0x48]         ; 004292cb
@@ -555,14 +555,14 @@ section .text
     FADD float ptr [ESP + 0x78]         ; 0042955c
     MOV EDX,dword ptr [0x006810c8]      ; 00429560 | g_CDemonSetPtr
     FSTP float ptr [EAX + 0x8]          ; 00429566
-    MOV EAX,dword ptr [EDX + 0x14d128]  ; 00429569 | DAT_032613a0
+    MOV EAX,dword ptr [EDX + 0x14d128]  ; 00429569 | g_CDemonSetInstance.collision_normal.x
     ADD EDX,0x14d128                    ; 0042956f
     MOV dword ptr [ESP + 0x58],EAX      ; 00429575
-    LEA EAX,[EDX + 0x4]                 ; 00429579 | DAT_032613a4
-    MOV EAX,dword ptr [EAX]             ; 0042957c | DAT_032613a4
+    LEA EAX,[EDX + 0x4]                 ; 00429579 | g_CDemonSetInstance.collision_normal.y
+    MOV EAX,dword ptr [EAX]             ; 0042957c | g_CDemonSetInstance.collision_normal.y
     MOV dword ptr [ESP + 0x5c],EAX      ; 0042957e
-    LEA EAX,[EDX + 0x8]                 ; 00429582 | DAT_032613a8
-    MOV EAX,dword ptr [EAX]             ; 00429585 | DAT_032613a8
+    LEA EAX,[EDX + 0x8]                 ; 00429582 | g_CDemonSetInstance.collision_normal.z
+    MOV EAX,dword ptr [EAX]             ; 00429585 | g_CDemonSetInstance.collision_normal.z
     MOV dword ptr [ESP + 0x60],EAX      ; 00429587
     LEA EAX,[ESP + 0x34]                ; 0042958b
     PUSH EAX                            ; 0042958f

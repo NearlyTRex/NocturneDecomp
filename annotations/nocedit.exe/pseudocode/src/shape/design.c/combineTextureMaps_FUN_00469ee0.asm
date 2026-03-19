@@ -204,13 +204,13 @@ section .text
     PUSH EDI                            ; 0046a06f
     MOV AL,byte ptr [ESI]               ; 0046a070
         ;   Label: LAB_0046a070
-    MOV byte ptr [EDI],AL               ; 0046a072 | DAT_016e9914 | DAT_016e9916
+    MOV byte ptr [EDI],AL               ; 0046a072 | g_ModelPolygonData[0].texture_name[0] | g_ModelPolygonData[0].texture_name[2]
     CMP AL,0x0                          ; 0046a074
     JZ 0x0046a088                       ; 0046a076
         ;   XREF to: 0046a088 (CONDITIONAL_JUMP)  ; LAB_0046a088
     MOV AL,byte ptr [ESI + 0x1]         ; 0046a078
     ADD ESI,0x2                         ; 0046a07b
-    MOV byte ptr [EDI + 0x1],AL         ; 0046a07e | DAT_016e9915 | DAT_016e9917
+    MOV byte ptr [EDI + 0x1],AL         ; 0046a07e | g_ModelPolygonData[0].texture_name[1] | g_ModelPolygonData[0].texture_name[3]
     ADD EDI,0x2                         ; 0046a081
     CMP AL,0x0                          ; 0046a084
     JNZ 0x0046a070                      ; 0046a086
@@ -231,14 +231,14 @@ section .text
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0046a0a9
     SHL EAX,0x2                         ; 0046a0ac
     ADD EAX,EDX                         ; 0046a0af
-    FLD float ptr [EAX + 0x16e9a08]     ; 0046a0b1 | DAT_016e9a08
+    FLD float ptr [EAX + 0x16e9a08]     ; 0046a0b1 | g_ModelPolygonData[0].uv_u[0]
     FMUL double ptr [0x0061d16e]        ; 0046a0b7 | g_ColorNormalizationFactor
     FSTP float ptr [EBP + 0xfffffed4]   ; 0046a0bd
     IMUL EDX,dword ptr [EBP + -0x24],0x184 ; 0046a0c3
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0046a0ca
     SHL EAX,0x2                         ; 0046a0cd
     ADD EAX,EDX                         ; 0046a0d0
-    FLD float ptr [EAX + 0x16e9a48]     ; 0046a0d2 | DAT_016e9a48
+    FLD float ptr [EAX + 0x16e9a48]     ; 0046a0d2 | g_ModelPolygonData[0].uv_v[0]
     FMUL double ptr [0x0061d16e]        ; 0046a0d8 | g_ColorNormalizationFactor
     FSTP float ptr [EBP + 0xfffffed8]   ; 0046a0de
     FLD float ptr [EBP + -0x8]          ; 0046a0e4
@@ -257,14 +257,14 @@ section .text
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0046a121
     SHL EAX,0x2                         ; 0046a124
     ADD EAX,EDX                         ; 0046a127
-    FSTP float ptr [EAX + 0x16e9a08]    ; 0046a129 | DAT_016e9a08
+    FSTP float ptr [EAX + 0x16e9a08]    ; 0046a129 | g_ModelPolygonData[0].uv_u[0]
     FLD float ptr [EBP + 0xfffffed8]    ; 0046a12f
     FMUL double ptr [0x0061d176]        ; 0046a135 | g_ColorScaleFactor
     IMUL EDX,dword ptr [EBP + -0x24],0x184 ; 0046a13b
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0046a142
     SHL EAX,0x2                         ; 0046a145
     ADD EAX,EDX                         ; 0046a148
-    FSTP float ptr [EAX + 0x16e9a48]    ; 0046a14a | DAT_016e9a48
+    FSTP float ptr [EAX + 0x16e9a48]    ; 0046a14a | g_ModelPolygonData[0].uv_v[0]
     JMP 0x0046a092                      ; 0046a150
         ;   XREF to: 0046a092 (UNCONDITIONAL_JUMP)  ; LAB_0046a092
     JMP 0x0046a01a                      ; 0046a155

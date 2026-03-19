@@ -15,7 +15,7 @@
 ;   undefined4 s_.RAW_0067c6e0
 ;   int g_SkeletonPoolCount
 ;   CSkeleton[40] g_SkeletonPool
-;   undefined4 DAT_038f60d0
+;   undefined4 g_SkeletonPool[1].motion_list.state_count
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CSkeleton_free_FUN_00599a50
@@ -32,11 +32,11 @@ section .text
     CALL core_skeleton.cpp_freeAllModels_FUN_005a1dc0 ; 005a1ea7
         ;   XREF to: 005a1dc0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_freeAllModels_FUN_005a1dc0()
     LEA ESI,[EBX + 0x67c6e0]            ; 005a1eac | s_.RAW_0067c6e0
-    PUSH EBX                            ; 005a1eb2 | g_SkeletonPool | DAT_038f60d0
+    PUSH EBX                            ; 005a1eb2 | g_SkeletonPool | g_SkeletonPool[1].motion_list.state_count
         ;   Label: LAB_005a1eb2
     CALL core_skeleton.cpp_CSkeleton_free_FUN_00599a50 ; 005a1eb3
         ;   XREF to: 00599a50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CSkeleton_free_FUN_00599a50(CSkeleton * this_ptr)
-    ADD EBX,0x2982c                     ; 005a1eb8 | DAT_038f60d0
+    ADD EBX,0x2982c                     ; 005a1eb8 | g_SkeletonPool[1].motion_list.state_count
     ADD ESP,0x4                         ; 005a1ebe
     CMP EBX,ESI                         ; 005a1ec1
     JNZ 0x005a1eb2                      ; 005a1ec3

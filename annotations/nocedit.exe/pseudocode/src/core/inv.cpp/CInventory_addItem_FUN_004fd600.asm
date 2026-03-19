@@ -114,7 +114,7 @@ section .text
     JZ 0x004fe1ea                       ; 004fd69f
         ;   XREF to: 004fe1ea (CONDITIONAL_JUMP)  ; LAB_004fe1ea
     MOV EAX,[0x0067b654]                ; 004fd6a5 | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x228],0x0     ; 004fd6aa | DAT_02d81cc4
+    CMP dword ptr [EAX + 0x228],0x0     ; 004fd6aa | g_CGameInstance.letterbox_mode
     JNZ 0x004fe1ea                      ; 004fd6b1
         ;   XREF to: 004fe1ea (CONDITIONAL_JUMP)  ; LAB_004fe1ea
     MOV ECX,dword ptr [ESP + 0x33c]     ; 004fd6b7

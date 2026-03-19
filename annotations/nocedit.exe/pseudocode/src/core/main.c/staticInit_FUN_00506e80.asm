@@ -12,7 +12,7 @@
 ;   WatcomStaticDestructorNode g_LoadingScreenBitmap3DestructorNode
 ;   WatcomStaticDestructorNode g_LoadingScreenBitmap4DestructorNode
 ;   CDemonFileManager g_CDemonFileManagerInstance
-;   undefined4 DAT_02f0c940
+;   undefined4 g_CDemonFileManagerInstance.base.vtable
 ;   CAlphaBitmap g_LoadingScreenBitmap1
 ;   CAlphaBitmap g_LoadingScreenBitmap2
 ;   CAlphaBitmap g_LoadingScreenBitmap3
@@ -34,7 +34,7 @@ section .text
     ADD ESP,0x4                         ; 00506e8a
     MOV EDX,0x660d24                    ; 00506e8d | g_CDemonFileManagerVTable
     PUSH 0x67d010                       ; 00506e92 | g_CDemonFileManagerDestructorNode
-    MOV dword ptr [0x02f0c940],EDX      ; 00506e97 | DAT_02f0c940
+    MOV dword ptr [0x02f0c940],EDX      ; 00506e97 | g_CDemonFileManagerInstance.base.vtable
     CALL crt_stdlib.c__atexit_FUN_005ff060 ; 00506e9d
         ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00506ea2

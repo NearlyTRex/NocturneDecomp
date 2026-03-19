@@ -16,7 +16,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02c6d590
+;   undefined4 g_CDemonRendererInstance.advanced_culling_enabled
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -71,7 +71,7 @@ section .text
     CALL core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0 ; 0048290f
         ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVerticies_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, CVector3i * input_vertices)
     MOV EAX,[0x006703ec]                ; 00482914 | g_CDemonRendererPtr2
-    MOV EDX,dword ptr [EAX + 0x18]      ; 00482919 | DAT_02c6d590
+    MOV EDX,dword ptr [EAX + 0x18]      ; 00482919 | g_CDemonRendererInstance.advanced_culling_enabled
     ADD ESP,0xc                         ; 0048291c
     TEST EDX,EDX                        ; 0048291f
     JNZ 0x00482976                      ; 00482921

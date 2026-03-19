@@ -18,9 +18,9 @@
 ;   int g_WindowHeight = 0xc8
 ;   int g_WindowStackCount
 ;   SWindow[5] g_WindowStack
-;   undefined4 DAT_02cf1ce4
-;   undefined4 DAT_02cf1ce8
-;   undefined4 DAT_02cf1cec
+;   undefined4 g_WindowStack[0].top
+;   undefined4 g_WindowStack[0].right
+;   undefined4 g_WindowStack[0].bottom
 ;   int g_WindowBorderHighlightColor
 ;   int g_WindowBorderShadowColor
 ;   int g_ClipTop
@@ -64,7 +64,7 @@ section .text
     MOV EBX,0x2cf1ce0                   ; 004a1273 | g_WindowStack
     SHL EAX,0x3                         ; 004a1278
     ADD EBX,EAX                         ; 004a127b
-    MOV EAX,dword ptr [EBX + 0x4]       ; 004a127d | DAT_02cf1ce4
+    MOV EAX,dword ptr [EBX + 0x4]       ; 004a127d | g_WindowStack[0].top
     MOV EDI,dword ptr [0x02d0255c]      ; 004a1280 | g_ClipTop
     MOV [0x02d0255c],EAX                ; 004a1286 | g_ClipTop
     MOV EAX,[0x00679398]                ; 004a128b | g_WindowHeight
@@ -83,12 +83,12 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 004a12b5
     INC EAX                             ; 004a12b9
     IMUL EAX,ESI                        ; 004a12ba
-    MOV ESI,dword ptr [EBX + 0xc]       ; 004a12bd | DAT_02cf1cec
+    MOV ESI,dword ptr [EBX + 0xc]       ; 004a12bd | g_WindowStack[0].bottom
     ADD EAX,EDX                         ; 004a12c0
     SUB ESI,EAX                         ; 004a12c2
     MOV EAX,[0x02cf2a7c]                ; 004a12c4 | g_WindowBorderHighlightColor
     MOV [0x02d02570],EAX                ; 004a12c9 | g_ActiveRenderColor
-    MOV EAX,dword ptr [EBX + 0x8]       ; 004a12ce | DAT_02cf1ce8
+    MOV EAX,dword ptr [EBX + 0x8]       ; 004a12ce | g_WindowStack[0].right
     SUB EAX,0x2                         ; 004a12d1
     PUSH EAX                            ; 004a12d4
     MOV EAX,dword ptr [EBX]             ; 004a12d5 | g_WindowStack
@@ -110,7 +110,7 @@ section .text
     POP ESI                             ; 004a12ff
     POP EBX                             ; 004a1300
     RET                                 ; 004a1301
-    MOV EAX,dword ptr [EBX + 0x8]       ; 004a1302 | DAT_02cf1ce8
+    MOV EAX,dword ptr [EBX + 0x8]       ; 004a1302 | g_WindowStack[0].right
         ;   Label: LAB_004a1302
     SUB EAX,0x2                         ; 004a1305
     PUSH EAX                            ; 004a1308

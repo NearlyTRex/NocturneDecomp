@@ -39,7 +39,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_032613bc
+;   undefined4 g_CDemonSetInstance.collision_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -276,7 +276,7 @@ section .text
     JC 0x004d62c9                       ; 004d64fe
         ;   XREF to: 004d62c9 (CONDITIONAL_JUMP)  ; LAB_004d62c9
     MOV EAX,[0x006810c8]                ; 004d6504 | g_CDemonSetPtr
-    CMP ESI,dword ptr [EAX + 0x14d144]  ; 004d6509 | DAT_032613bc
+    CMP ESI,dword ptr [EAX + 0x14d144]  ; 004d6509 | g_CDemonSetInstance.collision_actor
     JNZ 0x004d62c9                      ; 004d650f
         ;   XREF to: 004d62c9 (CONDITIONAL_JUMP)  ; LAB_004d62c9
     MOV EAX,dword ptr [ESP + 0xf0]      ; 004d6515

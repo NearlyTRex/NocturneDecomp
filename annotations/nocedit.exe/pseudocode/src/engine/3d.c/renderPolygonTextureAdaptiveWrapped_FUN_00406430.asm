@@ -16,7 +16,7 @@
 ;   int INT_00772a70
 ;   int g_TexturesDisabled
 ;   int[24] g_ProcessedVertexIndices
-;   undefined4 DAT_00772a9c
+;   undefined4 g_ProcessedVertexIndices[1]
 ;   int g_ActiveRenderColor
 ;   int g_CurrentLightingValue
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
@@ -82,7 +82,7 @@ section .text
         ;   XREF to: 00406694 (CONDITIONAL_JUMP)  ; LAB_00406694
     MOV EDX,dword ptr [EAX]             ; 004064c0
     ADD EDX,EBP                         ; 004064c2
-    MOV dword ptr [EBX],EDX             ; 004064c4 | g_ProcessedVertexIndices | DAT_00772a9c
+    MOV dword ptr [EBX],EDX             ; 004064c4 | g_ProcessedVertexIndices | g_ProcessedVertexIndices[1]
     MOV EDX,dword ptr [EAX]             ; 004064c6
     ADD EDX,EBP                         ; 004064c8
     IMUL ESI,EDX,0x30                   ; 004064ca
@@ -92,7 +92,7 @@ section .text
     ADD EDX,EBP                         ; 004064d8
     IMUL ESI,EDX,0x30                   ; 004064da
     ADD EAX,0xc                         ; 004064dd
-    ADD EBX,0x4                         ; 004064e0 | DAT_00772a9c
+    ADD EBX,0x4                         ; 004064e0 | g_ProcessedVertexIndices[1]
     MOV EDX,dword ptr [EAX + -0x4]      ; 004064e3
     ADD ECX,0x3                         ; 004064e6
     MOV dword ptr [ESI + 0x688030],EDX  ; 004064e9 | g_RenderVertexBuffer[0].v

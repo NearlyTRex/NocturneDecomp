@@ -28,7 +28,7 @@
 ;   int g_RenderStateFlag2
 ;   int g_SoftwareEdgeCount
 ;   SSoftwareEdge[16] g_SoftwareEdgeBuffer
-;   undefined4 DAT_030e5230
+;   undefined4 g_SoftwareEdgeBuffer[0].base.y_max
 ;   ... and 15 more
 ;
 ; Called Functions:
@@ -321,7 +321,7 @@ section .text
     ADD EBP,0x30e522c                   ; 0055279a | g_SoftwareEdgeBuffer
     MOV dword ptr [EBP],ECX             ; 005527a0 | g_SoftwareEdgeBuffer
     MOV EDX,dword ptr [0x030e56ac]      ; 005527a3 | g_SoftwareMinScanline
-    MOV dword ptr [EBP + 0x4],ESI       ; 005527a9 | DAT_030e5230
+    MOV dword ptr [EBP + 0x4],ESI       ; 005527a9 | g_SoftwareEdgeBuffer[0].base.y_max
     CMP ECX,EDX                         ; 005527ac
     JGE 0x005527b6                      ; 005527ae
         ;   XREF to: 005527b6 (CONDITIONAL_JUMP)  ; LAB_005527b6
@@ -351,7 +351,7 @@ section .text
     IMUL EDX                            ; 005527f3
     SHRD EAX,EDX,0x10                   ; 005527f5
     MOV EDX,EAX                         ; 005527f9
-    MOV dword ptr [EBP + 0xc],EAX       ; 005527fb | DAT_030e5238
+    MOV dword ptr [EBP + 0xc],EAX       ; 005527fb | g_SoftwareEdgeBuffer[0].base.x_gradient
     MOV EAX,ESI                         ; 005527fe
     IMUL EDX                            ; 00552800
     SHRD EAX,EDX,0x10                   ; 00552802
@@ -359,7 +359,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 00552809
     MOV EAX,dword ptr [EBX + 0x10]      ; 0055280c
     ADD EAX,EDX                         ; 0055280f
-    MOV dword ptr [EBP + 0x8],EAX       ; 00552811 | DAT_030e5234
+    MOV dword ptr [EBP + 0x8],EAX       ; 00552811 | g_SoftwareEdgeBuffer[0].base.x_current
     MOV EAX,dword ptr [EDI + 0x18]      ; 00552814
     MOV EDX,dword ptr [EBX + 0x18]      ; 00552817
     SUB EAX,EDX                         ; 0055281a
@@ -368,7 +368,7 @@ section .text
     IMUL EDX                            ; 00552820
     SHRD EAX,EDX,0x10                   ; 00552822
     MOV EDX,EAX                         ; 00552826
-    MOV dword ptr [EBP + 0x1c],EAX      ; 00552828 | DAT_030e5248
+    MOV dword ptr [EBP + 0x1c],EAX      ; 00552828 | g_SoftwareEdgeBuffer[0].base.u_gradient
     MOV EAX,ESI                         ; 0055282b
     IMUL EDX                            ; 0055282d
     SHRD EAX,EDX,0x10                   ; 0055282f
@@ -376,7 +376,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 00552836
     MOV EAX,dword ptr [EBX + 0x18]      ; 00552839
     ADD EAX,EDX                         ; 0055283c
-    MOV dword ptr [EBP + 0x18],EAX      ; 0055283e | DAT_030e5244
+    MOV dword ptr [EBP + 0x18],EAX      ; 0055283e | g_SoftwareEdgeBuffer[0].base.u_current
     MOV EAX,dword ptr [EDI + 0x1c]      ; 00552841
     MOV EDX,dword ptr [EBX + 0x1c]      ; 00552844
     SUB EAX,EDX                         ; 00552847
@@ -385,7 +385,7 @@ section .text
     IMUL EDX                            ; 0055284d
     SHRD EAX,EDX,0x10                   ; 0055284f
     MOV EDX,EAX                         ; 00552853
-    MOV dword ptr [EBP + 0x24],EAX      ; 00552855 | DAT_030e5250
+    MOV dword ptr [EBP + 0x24],EAX      ; 00552855 | g_SoftwareEdgeBuffer[0].base.v_gradient
     MOV EAX,ESI                         ; 00552858
     IMUL EDX                            ; 0055285a
     SHRD EAX,EDX,0x10                   ; 0055285c
@@ -393,7 +393,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 00552863
     MOV EAX,dword ptr [EBX + 0x1c]      ; 00552866
     ADD EAX,EDX                         ; 00552869
-    MOV dword ptr [EBP + 0x20],EAX      ; 0055286b | DAT_030e524c
+    MOV dword ptr [EBP + 0x20],EAX      ; 0055286b | g_SoftwareEdgeBuffer[0].base.v_current
     MOV EAX,dword ptr [EDI + 0x20]      ; 0055286e
     MOV EDX,dword ptr [EBX + 0x20]      ; 00552871
     SUB EAX,EDX                         ; 00552874
@@ -402,26 +402,26 @@ section .text
     IMUL EDX                            ; 0055287a
     SHRD EAX,EDX,0x10                   ; 0055287c
     MOV EDX,EAX                         ; 00552880
-    MOV dword ptr [EBP + 0x14],EAX      ; 00552882 | DAT_030e5240
+    MOV dword ptr [EBP + 0x14],EAX      ; 00552882 | g_SoftwareEdgeBuffer[0].base.z_gradient
     MOV EAX,ESI                         ; 00552885
     IMUL EDX                            ; 00552887
     SHRD EAX,EDX,0x10                   ; 00552889
     MOV EDX,dword ptr [EBX + 0x20]      ; 0055288d
     ADD EDX,EAX                         ; 00552890
-    MOV dword ptr [EBP + 0x10],EDX      ; 00552892 | DAT_030e523c
+    MOV dword ptr [EBP + 0x10],EDX      ; 00552892 | g_SoftwareEdgeBuffer[0].base.z_current
     MOV EDX,dword ptr [EDI + 0x2c]      ; 00552895
     SUB EDX,dword ptr [EBX + 0x2c]      ; 00552898
     MOV EAX,ECX                         ; 0055289b
     IMUL EDX                            ; 0055289d
     SHRD EAX,EDX,0x10                   ; 0055289f
     MOV EDX,EAX                         ; 005528a3
-    MOV dword ptr [EBP + 0x34],EAX      ; 005528a5 | DAT_030e5260
+    MOV dword ptr [EBP + 0x34],EAX      ; 005528a5 | g_SoftwareEdgeBuffer[0].base.fog_gradient
     MOV EAX,ESI                         ; 005528a8
     IMUL EDX                            ; 005528aa
     SHRD EAX,EDX,0x10                   ; 005528ac
     MOV EDX,dword ptr [EBX + 0x2c]      ; 005528b0
     ADD EDX,EAX                         ; 005528b3
-    MOV dword ptr [EBP + 0x30],EDX      ; 005528b5 | DAT_030e525c
+    MOV dword ptr [EBP + 0x30],EDX      ; 005528b5 | g_SoftwareEdgeBuffer[0].base.fog_current
     MOV EDX,dword ptr [EDI + 0x8]       ; 005528b8
     MOV EDI,dword ptr [EBX + 0x8]       ; 005528bb
     MOV EAX,ECX                         ; 005528be
@@ -429,13 +429,13 @@ section .text
     IMUL EDX                            ; 005528c2
     SHRD EAX,EDX,0x10                   ; 005528c4
     MOV EDX,EAX                         ; 005528c8
-    MOV dword ptr [EBP + 0x2c],EAX      ; 005528ca | DAT_030e5258
+    MOV dword ptr [EBP + 0x2c],EAX      ; 005528ca | g_SoftwareEdgeBuffer[0].base.w_gradient
     MOV EAX,ESI                         ; 005528cd
     IMUL EDX                            ; 005528cf
     SHRD EAX,EDX,0x10                   ; 005528d1
     MOV EDX,dword ptr [EBX + 0x8]       ; 005528d5
     ADD EDX,EAX                         ; 005528d8
-    MOV dword ptr [EBP + 0x28],EDX      ; 005528da | DAT_030e5254
+    MOV dword ptr [EBP + 0x28],EDX      ; 005528da | g_SoftwareEdgeBuffer[0].base.w_current
     INC dword ptr [0x030e5228]          ; 005528dd | g_SoftwareEdgeCount
     JMP 0x0055267f                      ; 005528e3
         ;   XREF to: 0055267f (UNCONDITIONAL_JUMP)  ; LAB_0055267f

@@ -33,10 +33,10 @@
 ;   SMRGLTextureBasic g_EnvMapTexture
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   float g_PerspectiveReciprocal
-;   undefined4 DAT_02d81c90
+;   undefined4 g_CGameInstance.render_mode
 ;   CVector3f[20000] g_VertexNormalArray
-;   undefined4 DAT_033081d0
-;   undefined4 DAT_033081d4
+;   undefined4 g_VertexNormalArray[0].y
+;   undefined4 g_VertexNormalArray[0].z
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -63,7 +63,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 0057005d
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     MOV EAX,[0x0067b654]                ; 00570062 | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0x1f4]     ; 00570067 | DAT_02d81c90
+    MOV ECX,dword ptr [EAX + 0x1f4]     ; 00570067 | g_CGameInstance.render_mode
     ADD ESP,0x8                         ; 0057006d
     CMP ECX,0x2                         ; 00570070
     JNZ 0x00570259                      ; 00570073
@@ -106,9 +106,9 @@ section .text
     INC ECX                             ; 005700e7
     FLD float ptr [EAX]                 ; 005700e8 | g_VertexNormalArray
     FISTP dword ptr [EBX]               ; 005700ea
-    FLD float ptr [EAX + 0x4]           ; 005700ec | DAT_033081d0
+    FLD float ptr [EAX + 0x4]           ; 005700ec | g_VertexNormalArray[0].y
     FISTP dword ptr [EBX + 0x4]         ; 005700ef
-    FLD float ptr [EAX + 0x8]           ; 005700f2 | DAT_033081d4
+    FLD float ptr [EAX + 0x8]           ; 005700f2 | g_VertexNormalArray[0].z
     FISTP dword ptr [EBX + 0x8]         ; 005700f5
     MOV EAX,dword ptr [ESP + 0xcc]      ; 005700f8
     MOV EBX,dword ptr [ESP + 0xc8]      ; 005700ff

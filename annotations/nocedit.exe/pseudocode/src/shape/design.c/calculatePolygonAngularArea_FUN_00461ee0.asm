@@ -31,10 +31,10 @@
 ; Referenced Globals:
 ;   double g_RadiansToDegrees2 = 57.2957795130800
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
-;   undefined4 DAT_01626418
-;   undefined4 DAT_0162641c
+;   undefined4 g_LoadedVertices[0].u
+;   undefined4 g_LoadedVertices[0].v
 ;
 ; Called Functions:
 ;   shape_design.c_clampedArccos_FUN_00461c50
@@ -77,10 +77,10 @@ section .text
     LEA EDI,[EBP + -0x40]               ; 00461f3a
     LEA ESI,[ESI + 0x162640c]           ; 00461f3d | g_LoadedVertices
     MOVSD ES:EDI,ESI                    ; 00461f43 | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 00461f44 | DAT_01626410
+    MOVSD ES:EDI,ESI                    ; 00461f44 | g_LoadedVertices[0].vertex.y
     MOVSD ES:EDI,ESI                    ; 00461f45 | g_LoadedVertices[0].vertex.z
-    MOVSD ES:EDI,ESI                    ; 00461f46 | DAT_01626418
-    MOVSD ES:EDI,ESI                    ; 00461f47 | DAT_0162641c
+    MOVSD ES:EDI,ESI                    ; 00461f46 | g_LoadedVertices[0].u
+    MOVSD ES:EDI,ESI                    ; 00461f47 | g_LoadedVertices[0].v
     MOV EDX,dword ptr [EBP + -0x8]      ; 00461f48
     INC EDX                             ; 00461f4b
     MOV EAX,EDX                         ; 00461f4c
@@ -92,10 +92,10 @@ section .text
     LEA EDI,[EBP + -0x2c]               ; 00461f61
     LEA ESI,[ESI + 0x162640c]           ; 00461f64 | g_LoadedVertices
     MOVSD ES:EDI,ESI                    ; 00461f6a | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 00461f6b | DAT_01626410
+    MOVSD ES:EDI,ESI                    ; 00461f6b | g_LoadedVertices[0].vertex.y
     MOVSD ES:EDI,ESI                    ; 00461f6c | g_LoadedVertices[0].vertex.z
-    MOVSD ES:EDI,ESI                    ; 00461f6d | DAT_01626418
-    MOVSD ES:EDI,ESI                    ; 00461f6e | DAT_0162641c
+    MOVSD ES:EDI,ESI                    ; 00461f6d | g_LoadedVertices[0].u
+    MOVSD ES:EDI,ESI                    ; 00461f6e | g_LoadedVertices[0].v
     MOV EDX,dword ptr [EBP + -0x8]      ; 00461f6f
     ADD EDX,0x2                         ; 00461f72
     MOV EAX,EDX                         ; 00461f75
@@ -107,10 +107,10 @@ section .text
     LEA EDI,[EBP + -0x54]               ; 00461f8a
     LEA ESI,[ESI + 0x162640c]           ; 00461f8d | g_LoadedVertices
     MOVSD ES:EDI,ESI                    ; 00461f93 | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 00461f94 | DAT_01626410
+    MOVSD ES:EDI,ESI                    ; 00461f94 | g_LoadedVertices[0].vertex.y
     MOVSD ES:EDI,ESI                    ; 00461f95 | g_LoadedVertices[0].vertex.z
-    MOVSD ES:EDI,ESI                    ; 00461f96 | DAT_01626418
-    MOVSD ES:EDI,ESI                    ; 00461f97 | DAT_0162641c
+    MOVSD ES:EDI,ESI                    ; 00461f96 | g_LoadedVertices[0].u
+    MOVSD ES:EDI,ESI                    ; 00461f97 | g_LoadedVertices[0].v
     FLD float ptr [EBP + -0x40]         ; 00461f98
     FSUB float ptr [EBP + -0x2c]        ; 00461f9b
     FSTP double ptr [EBP + 0xffffff7c]  ; 00461f9e

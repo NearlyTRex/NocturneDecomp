@@ -17,8 +17,8 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81c8c
-;   undefined4 DAT_02d81c90
+;   undefined4 g_CGameInstance.scripted_sequence_active
+;   undefined4 g_CGameInstance.render_mode
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0
@@ -33,10 +33,10 @@ section .text
         ;   Label: core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00570870
     PUSH EBP                            ; 00570871
     MOV EAX,[0x0067b654]                ; 00570872 | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x1f0],0x0     ; 00570877 | DAT_02d81c8c
+    CMP dword ptr [EAX + 0x1f0],0x0     ; 00570877 | g_CGameInstance.scripted_sequence_active
     JNZ 0x005708ba                      ; 0057087e
         ;   XREF to: 005708ba (CONDITIONAL_JUMP)  ; LAB_005708ba
-    CMP dword ptr [EAX + 0x1f4],0x0     ; 00570880 | DAT_02d81c90
+    CMP dword ptr [EAX + 0x1f4],0x0     ; 00570880 | g_CGameInstance.render_mode
     JZ 0x0057089c                       ; 00570887
         ;   XREF to: 0057089c (CONDITIONAL_JUMP)  ; LAB_0057089c
     MOV EBX,dword ptr [0x006703ec]      ; 00570889 | g_CDemonRendererInstance | g_CDemonRendererPtr2

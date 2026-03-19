@@ -26,8 +26,8 @@
 ;   int g_WindowWidth = 0x140
 ;   CBitFont* g_EditorFont
 ;   int g_WindowStackCount
-;   undefined4 DAT_02cf1ebc
-;   undefined4 DAT_02cf1ec0
+;   undefined4 g_WindowStack[0].progress_start_time
+;   undefined4 g_WindowStack[0].progress_percentage
 ;   int g_FontCharacterHeight
 ;   int g_FontCharacterWidth
 ;   char* g_CurrentFilename
@@ -109,9 +109,9 @@ section .text
     ADD EAX,EBX                         ; 004a04de
     PUSH 0x0                            ; 004a04e0
     MOV ECX,dword ptr [ESP + 0x1c]      ; 004a04e2
-    MOV dword ptr [EAX*0x8 + 0x2cf1ebc],ESI ; 004a04e6 | DAT_02cf1ebc
+    MOV dword ptr [EAX*0x8 + 0x2cf1ebc],ESI ; 004a04e6 | g_WindowStack[0].progress_start_time
     PUSH ECX                            ; 004a04ed
-    MOV dword ptr [EAX*0x8 + 0x2cf1ec0],EDX ; 004a04ee | DAT_02cf1ec0
+    MOV dword ptr [EAX*0x8 + 0x2cf1ec0],EDX ; 004a04ee | g_WindowStack[0].progress_percentage
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 004a04f5
         ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float current_progress, float total_progress)
     ADD ESP,0xc                         ; 004a04fa

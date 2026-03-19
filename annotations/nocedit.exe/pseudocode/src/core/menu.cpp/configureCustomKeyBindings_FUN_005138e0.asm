@@ -101,13 +101,13 @@ section .text
     PUSH EDI                            ; 00513970 | g_CustomKeyNames
     MOV AL,byte ptr [ESI]               ; 00513971
         ;   Label: LAB_00513971
-    MOV byte ptr [EDI],AL               ; 00513973 | g_CustomKeyNames | DAT_02f292f2
+    MOV byte ptr [EDI],AL               ; 00513973 | g_CustomKeyNames | g_CustomKeyNames[0][2]
     CMP AL,0x0                          ; 00513975
     JZ 0x00513989                       ; 00513977
         ;   XREF to: 00513989 (CONDITIONAL_JUMP)  ; LAB_00513989
     MOV AL,byte ptr [ESI + 0x1]         ; 00513979
     ADD ESI,0x2                         ; 0051397c
-    MOV byte ptr [EDI + 0x1],AL         ; 0051397f | DAT_02f292f1 | DAT_02f292f3
+    MOV byte ptr [EDI + 0x1],AL         ; 0051397f | g_CustomKeyNames[0][1] | g_CustomKeyNames[0][3]
     ADD EDI,0x2                         ; 00513982
     CMP AL,0x0                          ; 00513985
     JNZ 0x00513971                      ; 00513987
@@ -150,7 +150,7 @@ section .text
         ;   XREF to: 00513a0a (CONDITIONAL_JUMP)  ; LAB_00513a0a
     MOV AL,byte ptr [ESI + 0x1]         ; 005139fa
     ADD ESI,0x2                         ; 005139fd
-    MOV byte ptr [EDI + 0x1],AL         ; 00513a00 | g_CustomKeyNames[1][1] | DAT_02f2931b
+    MOV byte ptr [EDI + 0x1],AL         ; 00513a00 | g_CustomKeyNames[1][1] | g_CustomKeyNames[1][3]
     ADD EDI,0x2                         ; 00513a03
     CMP AL,0x0                          ; 00513a06
     JNZ 0x005139f2                      ; 00513a08
@@ -199,7 +199,7 @@ section .text
         ;   XREF to: 00513a9e (CONDITIONAL_JUMP)  ; LAB_00513a9e
     MOV AL,byte ptr [ESI + 0x1]         ; 00513a8e
     ADD ESI,0x2                         ; 00513a91
-    MOV byte ptr [EDI + 0x1],AL         ; 00513a94 | g_CustomKeyNames[2][1] | DAT_02f29343
+    MOV byte ptr [EDI + 0x1],AL         ; 00513a94 | g_CustomKeyNames[2][1] | g_CustomKeyNames[2][3]
     ADD EDI,0x2                         ; 00513a97
     CMP AL,0x0                          ; 00513a9a
     JNZ 0x00513a86                      ; 00513a9c
@@ -240,7 +240,7 @@ section .text
         ;   XREF to: 00513b18 (CONDITIONAL_JUMP)  ; LAB_00513b18
     MOV AL,byte ptr [ESI + 0x1]         ; 00513b08
     ADD ESI,0x2                         ; 00513b0b
-    MOV byte ptr [EDI + 0x1],AL         ; 00513b0e | g_CustomKeyNames[3][1] | DAT_02f2936b
+    MOV byte ptr [EDI + 0x1],AL         ; 00513b0e | g_CustomKeyNames[3][1] | g_CustomKeyNames[3][3]
     ADD EDI,0x2                         ; 00513b11
     CMP AL,0x0                          ; 00513b14
     JNZ 0x00513b00                      ; 00513b16
@@ -283,7 +283,7 @@ section .text
         ;   XREF to: 00513b99 (CONDITIONAL_JUMP)  ; LAB_00513b99
     MOV AL,byte ptr [ESI + 0x1]         ; 00513b89
     ADD ESI,0x2                         ; 00513b8c
-    MOV byte ptr [EDI + 0x1],AL         ; 00513b8f | g_CustomKeyNames[4][1] | DAT_02f29393
+    MOV byte ptr [EDI + 0x1],AL         ; 00513b8f | g_CustomKeyNames[4][1] | g_CustomKeyNames[4][3]
     ADD EDI,0x2                         ; 00513b92
     CMP AL,0x0                          ; 00513b95
     JNZ 0x00513b81                      ; 00513b97
@@ -326,7 +326,7 @@ section .text
         ;   XREF to: 00513c1a (CONDITIONAL_JUMP)  ; LAB_00513c1a
     MOV AL,byte ptr [ESI + 0x1]         ; 00513c0a
     ADD ESI,0x2                         ; 00513c0d
-    MOV byte ptr [EDI + 0x1],AL         ; 00513c10 | g_CustomKeyNames[5][1] | DAT_02f293bb
+    MOV byte ptr [EDI + 0x1],AL         ; 00513c10 | g_CustomKeyNames[5][1] | g_CustomKeyNames[5][3]
     ADD EDI,0x2                         ; 00513c13
     CMP AL,0x0                          ; 00513c16
     JNZ 0x00513c02                      ; 00513c18
@@ -369,7 +369,7 @@ section .text
         ;   XREF to: 00513c9b (CONDITIONAL_JUMP)  ; LAB_00513c9b
     MOV AL,byte ptr [ESI + 0x1]         ; 00513c8b
     ADD ESI,0x2                         ; 00513c8e
-    MOV byte ptr [EDI + 0x1],AL         ; 00513c91 | g_CustomKeyNames[6][1] | DAT_02f293e3
+    MOV byte ptr [EDI + 0x1],AL         ; 00513c91 | g_CustomKeyNames[6][1] | g_CustomKeyNames[6][3]
     ADD EDI,0x2                         ; 00513c94
     CMP AL,0x0                          ; 00513c97
     JNZ 0x00513c83                      ; 00513c99
@@ -412,7 +412,7 @@ section .text
         ;   XREF to: 00513d1c (CONDITIONAL_JUMP)  ; LAB_00513d1c
     MOV AL,byte ptr [ESI + 0x1]         ; 00513d0c
     ADD ESI,0x2                         ; 00513d0f
-    MOV byte ptr [EDI + 0x1],AL         ; 00513d12 | g_CustomKeyNames[7][1] | DAT_02f2940b
+    MOV byte ptr [EDI + 0x1],AL         ; 00513d12 | g_CustomKeyNames[7][1] | g_CustomKeyNames[7][3]
     ADD EDI,0x2                         ; 00513d15
     CMP AL,0x0                          ; 00513d18
     JNZ 0x00513d04                      ; 00513d1a
@@ -455,7 +455,7 @@ section .text
         ;   XREF to: 00513d9d (CONDITIONAL_JUMP)  ; LAB_00513d9d
     MOV AL,byte ptr [ESI + 0x1]         ; 00513d8d
     ADD ESI,0x2                         ; 00513d90
-    MOV byte ptr [EDI + 0x1],AL         ; 00513d93 | g_CustomKeyNames[8][1] | DAT_02f29433
+    MOV byte ptr [EDI + 0x1],AL         ; 00513d93 | g_CustomKeyNames[8][1] | g_CustomKeyNames[8][3]
     ADD EDI,0x2                         ; 00513d96
     CMP AL,0x0                          ; 00513d99
     JNZ 0x00513d85                      ; 00513d9b
@@ -498,7 +498,7 @@ section .text
         ;   XREF to: 00513e1e (CONDITIONAL_JUMP)  ; LAB_00513e1e
     MOV AL,byte ptr [ESI + 0x1]         ; 00513e0e
     ADD ESI,0x2                         ; 00513e11
-    MOV byte ptr [EDI + 0x1],AL         ; 00513e14 | g_CustomKeyNames[9][1] | DAT_02f2945b
+    MOV byte ptr [EDI + 0x1],AL         ; 00513e14 | g_CustomKeyNames[9][1] | g_CustomKeyNames[9][3]
     ADD EDI,0x2                         ; 00513e17
     CMP AL,0x0                          ; 00513e1a
     JNZ 0x00513e06                      ; 00513e1c
@@ -541,7 +541,7 @@ section .text
         ;   XREF to: 00513e9f (CONDITIONAL_JUMP)  ; LAB_00513e9f
     MOV AL,byte ptr [ESI + 0x1]         ; 00513e8f
     ADD ESI,0x2                         ; 00513e92
-    MOV byte ptr [EDI + 0x1],AL         ; 00513e95 | g_CustomKeyNames[10][1] | DAT_02f29483
+    MOV byte ptr [EDI + 0x1],AL         ; 00513e95 | g_CustomKeyNames[10][1] | g_CustomKeyNames[10][3]
     ADD EDI,0x2                         ; 00513e98
     CMP AL,0x0                          ; 00513e9b
     JNZ 0x00513e87                      ; 00513e9d
@@ -584,7 +584,7 @@ section .text
         ;   XREF to: 00513f20 (CONDITIONAL_JUMP)  ; LAB_00513f20
     MOV AL,byte ptr [ESI + 0x1]         ; 00513f10
     ADD ESI,0x2                         ; 00513f13
-    MOV byte ptr [EDI + 0x1],AL         ; 00513f16 | g_CustomKeyNames[11][1] | DAT_02f294ab
+    MOV byte ptr [EDI + 0x1],AL         ; 00513f16 | g_CustomKeyNames[11][1] | g_CustomKeyNames[11][3]
     ADD EDI,0x2                         ; 00513f19
     CMP AL,0x0                          ; 00513f1c
     JNZ 0x00513f08                      ; 00513f1e
@@ -627,7 +627,7 @@ section .text
         ;   XREF to: 00513fa1 (CONDITIONAL_JUMP)  ; LAB_00513fa1
     MOV AL,byte ptr [ESI + 0x1]         ; 00513f91
     ADD ESI,0x2                         ; 00513f94
-    MOV byte ptr [EDI + 0x1],AL         ; 00513f97 | g_CustomKeyNames[12][1] | DAT_02f294d3
+    MOV byte ptr [EDI + 0x1],AL         ; 00513f97 | g_CustomKeyNames[12][1] | g_CustomKeyNames[12][3]
     ADD EDI,0x2                         ; 00513f9a
     CMP AL,0x0                          ; 00513f9d
     JNZ 0x00513f89                      ; 00513f9f
@@ -670,7 +670,7 @@ section .text
         ;   XREF to: 00514022 (CONDITIONAL_JUMP)  ; LAB_00514022
     MOV AL,byte ptr [ESI + 0x1]         ; 00514012
     ADD ESI,0x2                         ; 00514015
-    MOV byte ptr [EDI + 0x1],AL         ; 00514018 | g_CustomKeyNames[13][1] | DAT_02f294fb
+    MOV byte ptr [EDI + 0x1],AL         ; 00514018 | g_CustomKeyNames[13][1] | g_CustomKeyNames[13][3]
     ADD EDI,0x2                         ; 0051401b
     CMP AL,0x0                          ; 0051401e
     JNZ 0x0051400a                      ; 00514020
@@ -713,7 +713,7 @@ section .text
         ;   XREF to: 005140a3 (CONDITIONAL_JUMP)  ; LAB_005140a3
     MOV AL,byte ptr [ESI + 0x1]         ; 00514093
     ADD ESI,0x2                         ; 00514096
-    MOV byte ptr [EDI + 0x1],AL         ; 00514099 | g_CustomKeyNames[14][1] | DAT_02f29523
+    MOV byte ptr [EDI + 0x1],AL         ; 00514099 | g_CustomKeyNames[14][1] | g_CustomKeyNames[14][3]
     ADD EDI,0x2                         ; 0051409c
     CMP AL,0x0                          ; 0051409f
     JNZ 0x0051408b                      ; 005140a1
@@ -756,7 +756,7 @@ section .text
         ;   XREF to: 00514124 (CONDITIONAL_JUMP)  ; LAB_00514124
     MOV AL,byte ptr [ESI + 0x1]         ; 00514114
     ADD ESI,0x2                         ; 00514117
-    MOV byte ptr [EDI + 0x1],AL         ; 0051411a | g_CustomKeyNames[15][1] | DAT_02f2954b
+    MOV byte ptr [EDI + 0x1],AL         ; 0051411a | g_CustomKeyNames[15][1] | g_CustomKeyNames[15][3]
     ADD EDI,0x2                         ; 0051411d
     CMP AL,0x0                          ; 00514120
     JNZ 0x0051410c                      ; 00514122
@@ -799,7 +799,7 @@ section .text
         ;   XREF to: 005141a5 (CONDITIONAL_JUMP)  ; LAB_005141a5
     MOV AL,byte ptr [ESI + 0x1]         ; 00514195
     ADD ESI,0x2                         ; 00514198
-    MOV byte ptr [EDI + 0x1],AL         ; 0051419b | g_CustomKeyNames[16][1] | DAT_02f29573
+    MOV byte ptr [EDI + 0x1],AL         ; 0051419b | g_CustomKeyNames[16][1] | g_CustomKeyNames[16][3]
     ADD EDI,0x2                         ; 0051419e
     CMP AL,0x0                          ; 005141a1
     JNZ 0x0051418d                      ; 005141a3
@@ -842,7 +842,7 @@ section .text
         ;   XREF to: 00514226 (CONDITIONAL_JUMP)  ; LAB_00514226
     MOV AL,byte ptr [ESI + 0x1]         ; 00514216
     ADD ESI,0x2                         ; 00514219
-    MOV byte ptr [EDI + 0x1],AL         ; 0051421c | g_CustomKeyNames[17][1] | DAT_02f2959b
+    MOV byte ptr [EDI + 0x1],AL         ; 0051421c | g_CustomKeyNames[17][1] | g_CustomKeyNames[17][3]
     ADD EDI,0x2                         ; 0051421f
     CMP AL,0x0                          ; 00514222
     JNZ 0x0051420e                      ; 00514224
@@ -885,7 +885,7 @@ section .text
         ;   XREF to: 005142a7 (CONDITIONAL_JUMP)  ; LAB_005142a7
     MOV AL,byte ptr [ESI + 0x1]         ; 00514297
     ADD ESI,0x2                         ; 0051429a
-    MOV byte ptr [EDI + 0x1],AL         ; 0051429d | g_CustomKeyNames[18][1] | DAT_02f295c3
+    MOV byte ptr [EDI + 0x1],AL         ; 0051429d | g_CustomKeyNames[18][1] | g_CustomKeyNames[18][3]
     ADD EDI,0x2                         ; 005142a0
     CMP AL,0x0                          ; 005142a3
     JNZ 0x0051428f                      ; 005142a5
@@ -928,7 +928,7 @@ section .text
         ;   XREF to: 00514328 (CONDITIONAL_JUMP)  ; LAB_00514328
     MOV AL,byte ptr [ESI + 0x1]         ; 00514318
     ADD ESI,0x2                         ; 0051431b
-    MOV byte ptr [EDI + 0x1],AL         ; 0051431e | g_CustomKeyNames[19][1] | DAT_02f295eb
+    MOV byte ptr [EDI + 0x1],AL         ; 0051431e | g_CustomKeyNames[19][1] | g_CustomKeyNames[19][3]
     ADD EDI,0x2                         ; 00514321
     CMP AL,0x0                          ; 00514324
     JNZ 0x00514310                      ; 00514326
@@ -971,7 +971,7 @@ section .text
         ;   XREF to: 005143a9 (CONDITIONAL_JUMP)  ; LAB_005143a9
     MOV AL,byte ptr [ESI + 0x1]         ; 00514399
     ADD ESI,0x2                         ; 0051439c
-    MOV byte ptr [EDI + 0x1],AL         ; 0051439f | g_CustomKeyNames[20][1] | DAT_02f29613
+    MOV byte ptr [EDI + 0x1],AL         ; 0051439f | g_CustomKeyNames[20][1] | g_CustomKeyNames[20][3]
     ADD EDI,0x2                         ; 005143a2
     CMP AL,0x0                          ; 005143a5
     JNZ 0x00514391                      ; 005143a7
@@ -1014,7 +1014,7 @@ section .text
         ;   XREF to: 0051442a (CONDITIONAL_JUMP)  ; LAB_0051442a
     MOV AL,byte ptr [ESI + 0x1]         ; 0051441a
     ADD ESI,0x2                         ; 0051441d
-    MOV byte ptr [EDI + 0x1],AL         ; 00514420 | g_CustomKeyNames[21][1] | DAT_02f2963b
+    MOV byte ptr [EDI + 0x1],AL         ; 00514420 | g_CustomKeyNames[21][1] | g_CustomKeyNames[21][3]
     ADD EDI,0x2                         ; 00514423
     CMP AL,0x0                          ; 00514426
     JNZ 0x00514412                      ; 00514428
@@ -1057,7 +1057,7 @@ section .text
         ;   XREF to: 005144ae (CONDITIONAL_JUMP)  ; LAB_005144ae
     MOV AL,byte ptr [ESI + 0x1]         ; 0051449e
     ADD ESI,0x2                         ; 005144a1
-    MOV byte ptr [EDI + 0x1],AL         ; 005144a4 | g_CustomKeyNames[22][1] | DAT_02f29663
+    MOV byte ptr [EDI + 0x1],AL         ; 005144a4 | g_CustomKeyNames[22][1] | g_CustomKeyNames[22][3]
     ADD EDI,0x2                         ; 005144a7
     CMP AL,0x0                          ; 005144aa
     JNZ 0x00514496                      ; 005144ac
@@ -1100,7 +1100,7 @@ section .text
         ;   XREF to: 00514532 (CONDITIONAL_JUMP)  ; LAB_00514532
     MOV AL,byte ptr [ESI + 0x1]         ; 00514522
     ADD ESI,0x2                         ; 00514525
-    MOV byte ptr [EDI + 0x1],AL         ; 00514528 | g_CustomKeyNames[23][1] | DAT_02f2968b
+    MOV byte ptr [EDI + 0x1],AL         ; 00514528 | g_CustomKeyNames[23][1] | g_CustomKeyNames[23][3]
     ADD EDI,0x2                         ; 0051452b
     CMP AL,0x0                          ; 0051452e
     JNZ 0x0051451a                      ; 00514530
@@ -1143,7 +1143,7 @@ section .text
         ;   XREF to: 005145b6 (CONDITIONAL_JUMP)  ; LAB_005145b6
     MOV AL,byte ptr [ESI + 0x1]         ; 005145a6
     ADD ESI,0x2                         ; 005145a9
-    MOV byte ptr [EDI + 0x1],AL         ; 005145ac | g_CustomKeyNames[24][1] | DAT_02f296b3
+    MOV byte ptr [EDI + 0x1],AL         ; 005145ac | g_CustomKeyNames[24][1] | g_CustomKeyNames[24][3]
     ADD EDI,0x2                         ; 005145af
     CMP AL,0x0                          ; 005145b2
     JNZ 0x0051459e                      ; 005145b4
@@ -1186,7 +1186,7 @@ section .text
         ;   XREF to: 0051463a (CONDITIONAL_JUMP)  ; LAB_0051463a
     MOV AL,byte ptr [ESI + 0x1]         ; 0051462a
     ADD ESI,0x2                         ; 0051462d
-    MOV byte ptr [EDI + 0x1],AL         ; 00514630 | g_CustomKeyNames[25][1] | DAT_02f296db
+    MOV byte ptr [EDI + 0x1],AL         ; 00514630 | g_CustomKeyNames[25][1] | g_CustomKeyNames[25][3]
     ADD EDI,0x2                         ; 00514633
     CMP AL,0x0                          ; 00514636
     JNZ 0x00514622                      ; 00514638
@@ -1229,7 +1229,7 @@ section .text
         ;   XREF to: 005146be (CONDITIONAL_JUMP)  ; LAB_005146be
     MOV AL,byte ptr [ESI + 0x1]         ; 005146ae
     ADD ESI,0x2                         ; 005146b1
-    MOV byte ptr [EDI + 0x1],AL         ; 005146b4 | g_CustomKeyNames[26][1] | DAT_02f29703
+    MOV byte ptr [EDI + 0x1],AL         ; 005146b4 | g_CustomKeyNames[26][1] | g_CustomKeyNames[26][3]
     ADD EDI,0x2                         ; 005146b7
     CMP AL,0x0                          ; 005146ba
     JNZ 0x005146a6                      ; 005146bc
@@ -1350,13 +1350,13 @@ section .text
     LEA EDI,[ESP + 0x7b0]               ; 005147df
     ADD ESI,0x2f292f0                   ; 005147e6 | g_CustomKeyNames
     PUSH EDI                            ; 005147ec
-    MOV AL,byte ptr [ESI]               ; 005147ed | g_CustomKeyNames | DAT_02f292f2
+    MOV AL,byte ptr [ESI]               ; 005147ed | g_CustomKeyNames | g_CustomKeyNames[0][2]
         ;   Label: LAB_005147ed
     MOV byte ptr [EDI],AL               ; 005147ef
     CMP AL,0x0                          ; 005147f1
     JZ 0x00514805                       ; 005147f3
         ;   XREF to: 00514805 (CONDITIONAL_JUMP)  ; LAB_00514805
-    MOV AL,byte ptr [ESI + 0x1]         ; 005147f5 | DAT_02f292f1 | DAT_02f292f3
+    MOV AL,byte ptr [ESI + 0x1]         ; 005147f5 | g_CustomKeyNames[0][1] | g_CustomKeyNames[0][3]
     ADD ESI,0x2                         ; 005147f8
     MOV byte ptr [EDI + 0x1],AL         ; 005147fb
     ADD EDI,0x2                         ; 005147fe
@@ -1413,13 +1413,13 @@ section .text
     LEA EDI,[ESP + 0x3b0]               ; 0051486c
     ADD ESI,0x2f292f0                   ; 00514873 | g_CustomKeyNames
     PUSH EDI                            ; 00514879
-    MOV AL,byte ptr [ESI]               ; 0051487a | g_CustomKeyNames | DAT_02f292f2
+    MOV AL,byte ptr [ESI]               ; 0051487a | g_CustomKeyNames | g_CustomKeyNames[0][2]
         ;   Label: LAB_0051487a
     MOV byte ptr [EDI],AL               ; 0051487c
     CMP AL,0x0                          ; 0051487e
     JZ 0x00514892                       ; 00514880
         ;   XREF to: 00514892 (CONDITIONAL_JUMP)  ; LAB_00514892
-    MOV AL,byte ptr [ESI + 0x1]         ; 00514882 | DAT_02f292f1 | DAT_02f292f3
+    MOV AL,byte ptr [ESI + 0x1]         ; 00514882 | g_CustomKeyNames[0][1] | g_CustomKeyNames[0][3]
     ADD ESI,0x2                         ; 00514885
     MOV byte ptr [EDI + 0x1],AL         ; 00514888
     ADD EDI,0x2                         ; 0051488b
@@ -1564,13 +1564,13 @@ section .text
     MOV AL,0x0                          ; 005149be
     SCASB.REPNE ES:EDI                  ; 005149c0
     DEC EDI                             ; 005149c2
-    MOV AL,byte ptr [ESI]               ; 005149c3 | g_CustomKeyNames | DAT_02f292f2
+    MOV AL,byte ptr [ESI]               ; 005149c3 | g_CustomKeyNames | g_CustomKeyNames[0][2]
         ;   Label: LAB_005149c3
     MOV byte ptr [EDI],AL               ; 005149c5
     CMP AL,0x0                          ; 005149c7
     JZ 0x005149db                       ; 005149c9
         ;   XREF to: 005149db (CONDITIONAL_JUMP)  ; LAB_005149db
-    MOV AL,byte ptr [ESI + 0x1]         ; 005149cb | DAT_02f292f1 | DAT_02f292f3
+    MOV AL,byte ptr [ESI + 0x1]         ; 005149cb | g_CustomKeyNames[0][1] | g_CustomKeyNames[0][3]
     ADD ESI,0x2                         ; 005149ce
     MOV byte ptr [EDI + 0x1],AL         ; 005149d1
     ADD EDI,0x2                         ; 005149d4

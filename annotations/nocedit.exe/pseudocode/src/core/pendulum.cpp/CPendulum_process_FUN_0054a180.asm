@@ -18,8 +18,8 @@
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.character_count
 ;   undefined4 g_CDemonSetInstance.characters[0]
-;   undefined4 DAT_03263318
-;   undefined4 DAT_0326331c
+;   undefined4 g_CDemonSetInstance.characters[1]
+;   undefined4 g_CDemonSetInstance.characters[2]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -93,7 +93,7 @@ section .text
     JGE 0x0054a286                      ; 0054a232
         ;   XREF to: 0054a286 (CONDITIONAL_JUMP)  ; LAB_0054a286
     MOV ECX,dword ptr [ESI + 0x428]     ; 0054a234
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 0054a23a | g_CDemonSetInstance.characters[0] | DAT_03263318 | DAT_0326331c
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 0054a23a | g_CDemonSetInstance.characters[0] | g_CDemonSetInstance.characters[1] | g_CDemonSetInstance.characters[2]
     TEST ECX,ECX                        ; 0054a241
     JNZ 0x0054a28b                      ; 0054a243
         ;   XREF to: 0054a28b (CONDITIONAL_JUMP)  ; LAB_0054a28b

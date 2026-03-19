@@ -32,17 +32,17 @@
 ;   double DOUBLE_0063b042 = 0.25
 ;   double DOUBLE_0063b04a = 1.33333333333333
 ;   double DOUBLE_0063b052 = 2
-;   undefined4 DAT_0067e180
-;   undefined4 DAT_0067e184
+;   undefined4 g_Layer3Pretab[3]
+;   undefined4 g_Layer3Pretab[4]
 ;   undefined4 g_Layer3BandIndex[0].l[1]
 ;   undefined4 g_Layer3BandIndex[0].l[2]
-;   undefined4 DAT_0067e6dc
-;   undefined4 DAT_0067e6e8
-;   undefined4 DAT_0067e728
-;   undefined4 DAT_0067e72c
-;   undefined4 DAT_0067e730
-;   undefined4 DAT_0067e734
-;   undefined4 DAT_0067e738
+;   undefined4 g_Layer3BandIndex[0].l[5]
+;   undefined4 g_Layer3BandIndex[0].l[8]
+;   undefined4 g_Layer3BandIndex[0].s[1]
+;   undefined4 g_Layer3BandIndex[0].s[2]
+;   undefined4 g_Layer3BandIndex[0].s[3]
+;   undefined4 g_Layer3BandIndex[0].s[4]
+;   undefined4 g_Layer3BandIndex[0].s[5]
 ;   int g_MpegRequantTablesInitialized
 ;   ... and 2 more
 ;
@@ -164,16 +164,16 @@ section .text
         ;   XREF to: 00532050 (CONDITIONAL_JUMP)  ; LAB_00532050
     MOV EDX,dword ptr [ESP + 0x54]      ; 00531e97
     MOV EAX,dword ptr [ESP + 0x58]      ; 00531e9b
-    CMP EAX,dword ptr [EDX + 0x67e6e8]  ; 00531e9f | DAT_0067e6e8
+    CMP EAX,dword ptr [EDX + 0x67e6e8]  ; 00531e9f | g_Layer3BandIndex[0].l[8]
     JNZ 0x0053203f                      ; 00531ea5
         ;   XREF to: 0053203f (CONDITIONAL_JUMP)  ; LAB_0053203f
-    MOV EAX,dword ptr [EDX + 0x67e734]  ; 00531eab | DAT_0067e734
+    MOV EAX,dword ptr [EDX + 0x67e734]  ; 00531eab | g_Layer3BandIndex[0].s[4]
     LEA EAX,[EAX + EAX*0x2]             ; 00531eb1
     MOV EDX,dword ptr [ESP + 0x38]      ; 00531eb4
     MOV dword ptr [ESP + 0x5c],EAX      ; 00531eb8
     MOV EAX,dword ptr [ESP + 0x38]      ; 00531ebc
-    MOV EBX,dword ptr [EDX + 0x67e724]  ; 00531ec0 | DAT_0067e730
-    MOV EAX,dword ptr [EAX + 0x67e728]  ; 00531ec6 | DAT_0067e734
+    MOV EBX,dword ptr [EDX + 0x67e724]  ; 00531ec0 | g_Layer3BandIndex[0].s[3]
+    MOV EAX,dword ptr [EAX + 0x67e728]  ; 00531ec6 | g_Layer3BandIndex[0].s[4]
     SUB EAX,EBX                         ; 00531ecc
     MOV ESI,0x3                         ; 00531ece
     MOV dword ptr [ESP + 0x50],EAX      ; 00531ed3
@@ -236,14 +236,14 @@ section .text
     POP ESI                             ; 00531f82
     POP EBX                             ; 00531f83
     RET                                 ; 00531f84
-    MOV EAX,dword ptr [EDX + 0x67e728]  ; 00531f85 | DAT_0067e728
+    MOV EAX,dword ptr [EDX + 0x67e728]  ; 00531f85 | g_Layer3BandIndex[0].s[1]
         ;   Label: LAB_00531f85
     MOV dword ptr [ESP + 0x64],EAX      ; 00531f8b
     MOV EBX,dword ptr [ESP + 0x64]      ; 00531f8f
     SHL EAX,0x2                         ; 00531f93
     SUB EAX,EBX                         ; 00531f96
     MOV dword ptr [ESP + 0x5c],EAX      ; 00531f98
-    MOV EAX,dword ptr [EDX + 0x67e728]  ; 00531f9c | DAT_0067e728
+    MOV EAX,dword ptr [EDX + 0x67e728]  ; 00531f9c | g_Layer3BandIndex[0].s[1]
     MOV dword ptr [ESP + 0x4c],ESI      ; 00531fa2
     MOV dword ptr [ESP + 0x50],EAX      ; 00531fa6
     JMP 0x00531db2                      ; 00531faa
@@ -304,12 +304,12 @@ section .text
     MOV dword ptr [ESP + 0x5c],EAX      ; 00532047
     JMP 0x00531ee0                      ; 0053204b
         ;   XREF to: 00531ee0 (UNCONDITIONAL_JUMP)  ; LAB_00531ee0
-    MOV EAX,dword ptr [EBX + 0x67e728]  ; 00532050 | DAT_0067e72c | DAT_0067e738
+    MOV EAX,dword ptr [EBX + 0x67e728]  ; 00532050 | g_Layer3BandIndex[0].s[2] | g_Layer3BandIndex[0].s[5]
         ;   Label: LAB_00532050
     LEA EAX,[EAX + EAX*0x2]             ; 00532056
-    MOV EDX,dword ptr [EBX + 0x67e724]  ; 00532059 | DAT_0067e728 | DAT_0067e734
+    MOV EDX,dword ptr [EBX + 0x67e724]  ; 00532059 | g_Layer3BandIndex[0].s[1] | g_Layer3BandIndex[0].s[4]
     MOV dword ptr [ESP + 0x5c],EAX      ; 0053205f
-    MOV EAX,dword ptr [EBX + 0x67e728]  ; 00532063 | DAT_0067e72c | DAT_0067e738
+    MOV EAX,dword ptr [EBX + 0x67e728]  ; 00532063 | g_Layer3BandIndex[0].s[2] | g_Layer3BandIndex[0].s[5]
     SUB EAX,EDX                         ; 00532069
     MOV dword ptr [ESP + 0x50],EAX      ; 0053206b
     LEA EAX,[EDX + EDX*0x2]             ; 0053206f
@@ -320,7 +320,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00532078
     LEA EAX,[ESI*0x4 + 0x0]             ; 0053207c
     ADD EAX,EDX                         ; 00532083
-    MOV EAX,dword ptr [EAX + 0x67e6cc]  ; 00532085 | g_Layer3BandIndex[0].l[2] | DAT_0067e6dc
+    MOV EAX,dword ptr [EAX + 0x67e6cc]  ; 00532085 | g_Layer3BandIndex[0].l[2] | g_Layer3BandIndex[0].l[5]
     MOV dword ptr [ESP + 0x5c],EAX      ; 0053208b
     JMP 0x00531ee0                      ; 0053208f
         ;   XREF to: 00531ee0 (UNCONDITIONAL_JUMP)  ; LAB_00531ee0
@@ -414,7 +414,7 @@ section .text
     MOV EDX,dword ptr [ECX + 0x3c]      ; 0053218e
         ;   Label: LAB_0053218e
     LEA EAX,[ESI*0x4 + 0x0]             ; 00532191
-    IMUL EDX,dword ptr [EAX + 0x67e174] ; 00532198 | DAT_0067e180 | DAT_0067e184
+    IMUL EDX,dword ptr [EAX + 0x67e174] ; 00532198 | g_Layer3Pretab[3] | g_Layer3Pretab[4]
     MOV dword ptr [ESP + 0x64],EDX      ; 0053219f
     ADD EAX,dword ptr [ESP + 0x18]      ; 005321a3
     MOV EDX,dword ptr [ESP + 0x64]      ; 005321a7

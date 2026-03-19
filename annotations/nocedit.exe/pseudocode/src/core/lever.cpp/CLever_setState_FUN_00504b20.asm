@@ -18,7 +18,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CEventList g_CEventListInstance
 ;   undefined4 g_CLeverClassInfo.name_hash
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
@@ -44,7 +44,7 @@ section .text
     JZ 0x00504ba5                       ; 00504b35
         ;   XREF to: 00504ba5 (CONDITIONAL_JUMP)  ; LAB_00504ba5
     MOV EAX,[0x0067d550]                ; 00504b37 | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 00504b3c | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 00504b3c | g_CDemonMissionInstance.is_in_editor
     JZ 0x00504baa                       ; 00504b40
         ;   XREF to: 00504baa (CONDITIONAL_JUMP)  ; LAB_00504baa
     FLDZ                                ; 00504b42

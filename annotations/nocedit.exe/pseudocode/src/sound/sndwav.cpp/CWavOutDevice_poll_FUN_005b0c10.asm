@@ -12,9 +12,9 @@
 ;   TerminatedCString s_WavOutDevice_poll_NULL_p_006523b7
 ;   TerminatedCString s_WavOutDevice_poll_sendWa_006523db
 ;   LPWAVEHDR[8] g_WaveOutHeaders
-;   undefined4 DAT_03f6ad5c
+;   undefined4 g_WaveOutHeaders[1]
 ;   LPVOID[8] g_WaveOutBuffers
-;   undefined4 DAT_03f6ad9c
+;   undefined4 g_WaveOutBuffers[1]
 ;   int g_WaveOutNumBuffers
 ;
 ; Called Functions:
@@ -37,12 +37,12 @@ section .text
     JLE 0x005b0c4e                      ; 005b0c23
         ;   XREF to: 005b0c4e (CONDITIONAL_JUMP)  ; LAB_005b0c4e
     XOR EBX,EBX                         ; 005b0c25
-    MOV EBP,dword ptr [EBX + 0x3f6ad58] ; 005b0c27 | g_WaveOutHeaders | DAT_03f6ad5c
+    MOV EBP,dword ptr [EBX + 0x3f6ad58] ; 005b0c27 | g_WaveOutHeaders | g_WaveOutHeaders[1]
         ;   Label: LAB_005b0c27
     TEST EBP,EBP                        ; 005b0c2d
     JZ 0x005b0c55                       ; 005b0c2f
         ;   XREF to: 005b0c55 (CONDITIONAL_JUMP)  ; LAB_005b0c55
-    CMP dword ptr [EBX + 0x3f6ad98],0x0 ; 005b0c31 | g_WaveOutBuffers | DAT_03f6ad9c
+    CMP dword ptr [EBX + 0x3f6ad98],0x0 ; 005b0c31 | g_WaveOutBuffers | g_WaveOutBuffers[1]
     JZ 0x005b0c55                       ; 005b0c38
         ;   XREF to: 005b0c55 (CONDITIONAL_JUMP)  ; LAB_005b0c55
     TEST byte ptr [EBP + 0x10],0x1      ; 005b0c3a

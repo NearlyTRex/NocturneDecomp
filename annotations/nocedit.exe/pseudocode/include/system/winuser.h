@@ -58,8 +58,8 @@ typedef struct HMENU__ {
 } HMENU__;
 
 // Typedef: HWND
-// pointer to HWND__
-typedef struct HWND__* HWND;
+// Signed Integer (compiler-specific size)
+typedef int HWND;
 
 // Structure: HWND__
 typedef struct HWND__ {

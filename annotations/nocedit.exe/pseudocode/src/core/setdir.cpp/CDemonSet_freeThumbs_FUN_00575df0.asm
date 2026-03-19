@@ -12,8 +12,8 @@
 ;
 ; Referenced Globals:
 ;   CZThumb[1500] g_CZThumbPool
-;   undefined4 DAT_03347130
-;   undefined4 DAT_033471f8
+;   undefined4 g_CZThumbPool[1].width
+;   undefined4 g_CZThumbPool[6].width
 ;
 ; Called Functions:
 ;   core_setdir.cpp_CZThumb_free_FUN_00574b50
@@ -33,12 +33,12 @@ section .text
     IMUL EBX,EDI,0xf0                   ; 00575e01
         ;   Label: LAB_00575e01
     MOV ESI,EBP                         ; 00575e07
-    ADD EBX,0x3347108                   ; 00575e09 | DAT_033471f8 | g_CZThumbPool
-    PUSH EBX                            ; 00575e0f | g_CZThumbPool | DAT_03347130 | DAT_033471f8
+    ADD EBX,0x3347108                   ; 00575e09 | g_CZThumbPool[6].width
+    PUSH EBX                            ; 00575e0f | g_CZThumbPool | g_CZThumbPool[1].width | g_CZThumbPool[6].width
         ;   Label: LAB_00575e0f
     CALL core_setdir.cpp_CZThumb_free_FUN_00574b50 ; 00575e10
         ;   XREF to: 00574b50 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CZThumb_free_FUN_00574b50(CZThumb * this_ptr)
-    ADD EBX,0x28                        ; 00575e15 | DAT_03347130
+    ADD EBX,0x28                        ; 00575e15 | g_CZThumbPool[1].width
     ADD ESP,0x4                         ; 00575e18
     CMP EBX,ESI                         ; 00575e1b
     JNZ 0x00575e0f                      ; 00575e1d

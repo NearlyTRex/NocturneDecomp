@@ -29,11 +29,11 @@
 ;
 ; Referenced Globals:
 ;   int[5] g_Layer3LongBandGroupCounts
-;   undefined4 DAT_0067e62c
-;   undefined4 DAT_0067e630
+;   undefined4 g_Layer3LongBandGroupCounts[1]
+;   undefined4 g_Layer3LongBandGroupCounts[2]
 ;   int[3] g_Layer3ShortBandGroupCounts
-;   undefined4 DAT_0067e640
-;   undefined4 DAT_0067e644
+;   undefined4 g_Layer3ShortBandGroupCounts[1]
+;   undefined4 g_Layer3ShortBandGroupCounts[2]
 ;   int[16] g_Layer3ScalefacLengths1
 ;   int[16] g_Layer3ScalefacLengths2
 ;
@@ -99,11 +99,11 @@ section .text
     MOV EDX,dword ptr [ESP + 0x24]      ; 00530db8
     MOV ECX,dword ptr [ESP + 0x4]       ; 00530dbc
     MOV dword ptr [ESP + 0x38],EAX      ; 00530dc0
-    MOV EBX,dword ptr [EBX + 0x67e628]  ; 00530dc4 | g_Layer3LongBandGroupCounts | DAT_0067e62c
+    MOV EBX,dword ptr [EBX + 0x67e628]  ; 00530dc4 | g_Layer3LongBandGroupCounts | g_Layer3LongBandGroupCounts[1]
     CMP EDX,0x2                         ; 00530dca
     SETGE byte ptr [ESP + 0x54]         ; 00530dcd
     LEA EBP,[EBX*0x4 + 0x0]             ; 00530dd2
-    MOV EDX,dword ptr [EAX + 0x67e62c]  ; 00530dd9 | DAT_0067e62c | DAT_0067e630
+    MOV EDX,dword ptr [EAX + 0x67e62c]  ; 00530dd9 | g_Layer3LongBandGroupCounts[1] | g_Layer3LongBandGroupCounts[2]
     ADD EBP,ECX                         ; 00530ddf
     CMP EBX,EDX                         ; 00530de1
     JGE 0x00530e19                      ; 00530de3
@@ -123,7 +123,7 @@ section .text
     MOV dword ptr [EBP],EAX             ; 00530e04
     MOV EAX,dword ptr [ESP + 0x38]      ; 00530e07
     INC EBX                             ; 00530e0b
-    MOV EDX,dword ptr [EAX + 0x67e62c]  ; 00530e0c | DAT_0067e62c
+    MOV EDX,dword ptr [EAX + 0x67e62c]  ; 00530e0c | g_Layer3LongBandGroupCounts[1]
     ADD EBP,0x4                         ; 00530e12
     CMP EBX,EDX                         ; 00530e15
     JL 0x00530de5                       ; 00530e17
@@ -295,8 +295,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x34]      ; 00530fdc
         ;   Label: LAB_00530fdc
     MOV EBP,dword ptr [ESP + 0x34]      ; 00530fe0
-    MOV EAX,dword ptr [EAX + 0x67e63c]  ; 00530fe4 | g_Layer3ShortBandGroupCounts | DAT_0067e640
-    MOV ECX,dword ptr [EBP + 0x67e640]  ; 00530fea | DAT_0067e640 | DAT_0067e644
+    MOV EAX,dword ptr [EAX + 0x67e63c]  ; 00530fe4 | g_Layer3ShortBandGroupCounts | g_Layer3ShortBandGroupCounts[1]
+    MOV ECX,dword ptr [EBP + 0x67e640]  ; 00530fea | g_Layer3ShortBandGroupCounts[1] | g_Layer3ShortBandGroupCounts[2]
     MOV dword ptr [ESP + 0x4c],EAX      ; 00530ff0
     MOV EAX,dword ptr [ESP + 0x20]      ; 00530ff4
     MOV EBX,dword ptr [ESP + 0x4c]      ; 00530ff8
@@ -340,7 +340,7 @@ section .text
     ADD EBX,0x4                         ; 00531069
     ADD EBP,0x4                         ; 0053106c
     INC EAX                             ; 0053106f
-    MOV ECX,dword ptr [EDX + 0x67e640]  ; 00531070 | DAT_0067e640
+    MOV ECX,dword ptr [EDX + 0x67e640]  ; 00531070 | g_Layer3ShortBandGroupCounts[1]
     MOV dword ptr [ESP + 0x44],EBX      ; 00531076
     MOV dword ptr [ESP + 0x48],EBP      ; 0053107a
     MOV dword ptr [ESP + 0x4c],EAX      ; 0053107e

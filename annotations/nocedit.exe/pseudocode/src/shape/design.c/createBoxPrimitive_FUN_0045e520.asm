@@ -24,7 +24,7 @@
 ;   float g_BoxScaleFactor = 0.5
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; Called Functions:
@@ -193,7 +193,7 @@ section .text
     FMUL float ptr [0x0061b5ba]         ; 0045e671 | g_BoxScaleFactor
     FSUBR float ptr [EBP + -0x10]       ; 0045e677
     IMUL EAX,dword ptr [EBP + -0x4],0x14 ; 0045e67a
-    FSTP float ptr [EAX + 0x1626410]    ; 0045e67e | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 0045e67e | g_LoadedVertices[0].vertex.y
     FLD float ptr [EBP + -0x18]         ; 0045e684
     FMUL float ptr [0x0061b5ba]         ; 0045e687 | g_BoxScaleFactor
     FADD float ptr [EBP + -0xc]         ; 0045e68d
@@ -212,7 +212,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e6bf
     INC EAX                             ; 0045e6c2
     IMUL EAX,EAX,0x14                   ; 0045e6c3
-    FSTP float ptr [EAX + 0x1626410]    ; 0045e6c6 | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 0045e6c6 | g_LoadedVertices[0].vertex.y
     FLD float ptr [EBP + -0x18]         ; 0045e6cc
     FMUL float ptr [0x0061b5ba]         ; 0045e6cf | g_BoxScaleFactor
     FADD float ptr [EBP + -0xc]         ; 0045e6d5
@@ -233,7 +233,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e70c
     ADD EAX,0x2                         ; 0045e70f
     IMUL EAX,EAX,0x14                   ; 0045e712
-    FSTP float ptr [EAX + 0x1626410]    ; 0045e715 | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 0045e715 | g_LoadedVertices[0].vertex.y
     FLD float ptr [EBP + -0x18]         ; 0045e71b
     FMUL float ptr [0x0061b5ba]         ; 0045e71e | g_BoxScaleFactor
     FSUBR float ptr [EBP + -0xc]        ; 0045e724
@@ -254,7 +254,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e75d
     ADD EAX,0x3                         ; 0045e760
     IMUL EAX,EAX,0x14                   ; 0045e763
-    FSTP float ptr [EAX + 0x1626410]    ; 0045e766 | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 0045e766 | g_LoadedVertices[0].vertex.y
     FLD float ptr [EBP + -0x18]         ; 0045e76c
     FMUL float ptr [0x0061b5ba]         ; 0045e76f | g_BoxScaleFactor
     FSUBR float ptr [EBP + -0xc]        ; 0045e775
@@ -275,7 +275,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e7ae
     ADD EAX,0x4                         ; 0045e7b1
     IMUL EAX,EAX,0x14                   ; 0045e7b4
-    FSTP float ptr [EAX + 0x1626410]    ; 0045e7b7 | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 0045e7b7 | g_LoadedVertices[0].vertex.y
     FLD float ptr [EBP + -0x18]         ; 0045e7bd
     FMUL float ptr [0x0061b5ba]         ; 0045e7c0 | g_BoxScaleFactor
     FADD float ptr [EBP + -0xc]         ; 0045e7c6
@@ -296,7 +296,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e7ff
     ADD EAX,0x5                         ; 0045e802
     IMUL EAX,EAX,0x14                   ; 0045e805
-    FSTP float ptr [EAX + 0x1626410]    ; 0045e808 | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 0045e808 | g_LoadedVertices[0].vertex.y
     FLD float ptr [EBP + -0x18]         ; 0045e80e
     FMUL float ptr [0x0061b5ba]         ; 0045e811 | g_BoxScaleFactor
     FADD float ptr [EBP + -0xc]         ; 0045e817
@@ -317,7 +317,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e850
     ADD EAX,0x6                         ; 0045e853
     IMUL EAX,EAX,0x14                   ; 0045e856
-    FSTP float ptr [EAX + 0x1626410]    ; 0045e859 | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 0045e859 | g_LoadedVertices[0].vertex.y
     FLD float ptr [EBP + -0x18]         ; 0045e85f
     FMUL float ptr [0x0061b5ba]         ; 0045e862 | g_BoxScaleFactor
     FSUBR float ptr [EBP + -0xc]        ; 0045e868
@@ -338,7 +338,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045e8a1
     ADD EAX,0x7                         ; 0045e8a4
     IMUL EAX,EAX,0x14                   ; 0045e8a7
-    FSTP float ptr [EAX + 0x1626410]    ; 0045e8aa | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 0045e8aa | g_LoadedVertices[0].vertex.y
     FLD float ptr [EBP + -0x18]         ; 0045e8b0
     FMUL float ptr [0x0061b5ba]         ; 0045e8b3 | g_BoxScaleFactor
     FSUBR float ptr [EBP + -0xc]        ; 0045e8b9

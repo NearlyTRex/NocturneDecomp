@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   int g_EdgeCount
 ;   SHardwareEdge[16] g_HardwareEdgeTable
-;   undefined4 DAT_02d7b464
+;   undefined4 g_HardwareEdgeTable[1].y_min
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
     TEST EBX,EBX                        ; 004d1317
     JLE 0x004d132b                      ; 004d1319
         ;   XREF to: 004d132b (CONDITIONAL_JUMP)  ; LAB_004d132b
-    CMP ECX,dword ptr [EAX]             ; 004d131b | g_HardwareEdgeTable | DAT_02d7b464
+    CMP ECX,dword ptr [EAX]             ; 004d131b | g_HardwareEdgeTable | g_HardwareEdgeTable[1].y_min
         ;   Label: LAB_004d131b
     JNZ 0x004d1323                      ; 004d131d
         ;   XREF to: 004d1323 (CONDITIONAL_JUMP)  ; LAB_004d1323
@@ -36,7 +36,7 @@ section .text
         ;   XREF to: 004d132d (CONDITIONAL_JUMP)  ; LAB_004d132d
     INC EDX                             ; 004d1323
         ;   Label: LAB_004d1323
-    ADD EAX,0x38                        ; 004d1324 | DAT_02d7b464
+    ADD EAX,0x38                        ; 004d1324 | g_HardwareEdgeTable[1].y_min
     CMP EDX,EBX                         ; 004d1327
     JL 0x004d131b                       ; 004d1329
         ;   XREF to: 004d131b (CONDITIONAL_JUMP)  ; LAB_004d131b

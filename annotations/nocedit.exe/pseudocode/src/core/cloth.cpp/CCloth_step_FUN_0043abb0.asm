@@ -107,9 +107,9 @@
 ;   double DOUBLE_006184b2 = -1
 ;   float FLOAT_0065bb3c = 256
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 DAT_0326eed8
-;   undefined4 DAT_0326eedc
-;   undefined4 DAT_0326eee0
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.x
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.y
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
@@ -350,18 +350,18 @@ section .text
     MOV EAX,dword ptr [ESP + 0x28]      ; 0043aeda
     MOV EDX,dword ptr [0x006810c8]      ; 0043aede | g_CDemonSetPtr
     MOV dword ptr [ESP + 0xd4],EAX      ; 0043aee4
-    MOV EAX,dword ptr [EDX + 0x15ac60]  ; 0043aeeb | DAT_0326eed8
-    ADD EDX,0x15ac60                    ; 0043aef1 | DAT_0326eed8
+    MOV EAX,dword ptr [EDX + 0x15ac60]  ; 0043aeeb | g_CDemonSetInstance.active_fog.scroll.x
+    ADD EDX,0x15ac60                    ; 0043aef1 | g_CDemonSetInstance.active_fog.scroll.x
     MOV dword ptr [ESP + 0x150],EAX     ; 0043aef7
-    LEA EAX,[EDX + 0x4]                 ; 0043aefe | DAT_0326eedc
-    MOV EAX,dword ptr [EAX]             ; 0043af01 | DAT_0326eedc
+    LEA EAX,[EDX + 0x4]                 ; 0043aefe | g_CDemonSetInstance.active_fog.scroll.y
+    MOV EAX,dword ptr [EAX]             ; 0043af01 | g_CDemonSetInstance.active_fog.scroll.y
     MOV dword ptr [ESP + 0x154],EAX     ; 0043af03
     FLD float ptr [ESP + 0x154]         ; 0043af0a
     FMUL ST0                            ; 0043af11
-    LEA EAX,[EDX + 0x8]                 ; 0043af13 | DAT_0326eee0
+    LEA EAX,[EDX + 0x8]                 ; 0043af13 | g_CDemonSetInstance.active_fog.scroll.z
     FLD float ptr [ESP + 0x150]         ; 0043af16
     FMUL ST0                            ; 0043af1d
-    MOV EAX,dword ptr [EAX]             ; 0043af1f | DAT_0326eee0
+    MOV EAX,dword ptr [EAX]             ; 0043af1f | g_CDemonSetInstance.active_fog.scroll.z
     FADDP                               ; 0043af21
     MOV dword ptr [ESP + 0x158],EAX     ; 0043af23
     FLD float ptr [ESP + 0x158]         ; 0043af2a
@@ -413,15 +413,15 @@ section .text
         ;   Label: LAB_0043afd1
     MOV EAX,[0x006810c8]                ; 0043afd4 | g_CDemonSetPtr
     FMUL double ptr [0x006184b2]        ; 0043afd9 | DOUBLE_006184b2
-    FLD float ptr [EAX + 0x15ac60]      ; 0043afdf | DAT_0326eed8
+    FLD float ptr [EAX + 0x15ac60]      ; 0043afdf | g_CDemonSetInstance.active_fog.scroll.x
     FXCH                                ; 0043afe5
     FSTP float ptr [ESP]                ; 0043afe7
     FMUL float ptr [ESP]                ; 0043afea
     FSTP float ptr [ESP + 0x108]        ; 0043afed
-    FLD float ptr [EAX + 0x15ac64]      ; 0043aff4 | DAT_0326eedc
+    FLD float ptr [EAX + 0x15ac64]      ; 0043aff4 | g_CDemonSetInstance.active_fog.scroll.y
     FMUL float ptr [ESP]                ; 0043affa
     FSTP float ptr [ESP + 0x10c]        ; 0043affd
-    FLD float ptr [EAX + 0x15ac68]      ; 0043b004 | DAT_0326eee0
+    FLD float ptr [EAX + 0x15ac68]      ; 0043b004 | g_CDemonSetInstance.active_fog.scroll.z
     LEA EAX,[ESP + 0x108]               ; 0043b00a
     FMUL float ptr [ESP]                ; 0043b011
     PUSH EAX                            ; 0043b014

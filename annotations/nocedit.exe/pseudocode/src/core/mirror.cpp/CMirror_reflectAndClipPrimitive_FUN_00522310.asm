@@ -21,15 +21,15 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_MirrorInputVertexCount
 ;   CVector3f[32] g_MirrorInputVertices
-;   undefined4 DAT_02f3340c
-;   undefined4 DAT_02f33410
-;   undefined4 DAT_02f33414
-;   undefined4 DAT_02f33418
-;   undefined4 DAT_02f3341c
+;   undefined4 g_MirrorInputVertices[0].y
+;   undefined4 g_MirrorInputVertices[0].z
+;   undefined4 g_MirrorInputVertices[1].x
+;   undefined4 g_MirrorInputVertices[1].y
+;   undefined4 g_MirrorInputVertices[1].z
 ;   int g_MirrorOutputVertexCount
 ;   CVector3f[32] g_MirrorOutputVertices
-;   undefined4 DAT_02f33590
-;   undefined4 DAT_02f33594
+;   undefined4 g_MirrorOutputVertices[0].y
+;   undefined4 g_MirrorOutputVertices[0].z
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -69,13 +69,13 @@ section .text
     ADD EAX,EDX                         ; 00522351
     FILD dword ptr [EAX]                ; 00522353
     FMUL float ptr [0x006616e8]         ; 00522355 | g_MirrorIntToFloat_Coarse
-    FSTP float ptr [EBX]                ; 0052235b | g_MirrorInputVertices | DAT_02f33414
+    FSTP float ptr [EBX]                ; 0052235b | g_MirrorInputVertices | g_MirrorInputVertices[1].x
     FILD dword ptr [EAX + 0x4]          ; 0052235d
     FMUL float ptr [0x006616e8]         ; 00522360 | g_MirrorIntToFloat_Coarse
-    FSTP float ptr [EBX + 0x4]          ; 00522366 | DAT_02f3340c | DAT_02f33418
+    FSTP float ptr [EBX + 0x4]          ; 00522366 | g_MirrorInputVertices[0].y | g_MirrorInputVertices[1].y
     FILD dword ptr [EAX + 0x8]          ; 00522369
     FMUL float ptr [0x006616e8]         ; 0052236c | g_MirrorIntToFloat_Coarse
-    FSTP float ptr [EBX + 0x8]          ; 00522372 | DAT_02f33410 | DAT_02f3341c
+    FSTP float ptr [EBX + 0x8]          ; 00522372 | g_MirrorInputVertices[0].z | g_MirrorInputVertices[1].z
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00522375
     ADD EBP,0x4                         ; 00522379
     INC EDI                             ; 0052237c
@@ -194,13 +194,13 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 005224e5 | g_CDemonRendererInstance
     MOV EAX,EDI                         ; 005224e7
     ADD EBX,EBP                         ; 005224e9
-    FLD float ptr [EAX]                 ; 005224eb | g_MirrorOutputVertices | DAT_02f33598
+    FLD float ptr [EAX]                 ; 005224eb | g_MirrorOutputVertices | g_MirrorOutputVertices[1].x
     FMUL float ptr [0x006616e0]         ; 005224ed | g_MirrorProjectionScale
     FISTP dword ptr [EBX]               ; 005224f3
-    FLD float ptr [EAX + 0x4]           ; 005224f5 | DAT_02f33590 | DAT_02f3359c
+    FLD float ptr [EAX + 0x4]           ; 005224f5 | g_MirrorOutputVertices[0].y | g_MirrorOutputVertices[1].y
     FMUL float ptr [0x006616e0]         ; 005224f8 | g_MirrorProjectionScale
     FISTP dword ptr [EBX + 0x4]         ; 005224fe
-    FLD float ptr [EAX + 0x8]           ; 00522501 | DAT_02f33594 | DAT_02f335a0
+    FLD float ptr [EAX + 0x8]           ; 00522501 | g_MirrorOutputVertices[0].z | g_MirrorOutputVertices[1].z
     FMUL float ptr [0x006616e0]         ; 00522504 | g_MirrorProjectionScale
     FISTP dword ptr [EBX + 0x8]         ; 0052250a
     MOV EAX,[0x006703ec]                ; 0052250d | g_CDemonRendererPtr2

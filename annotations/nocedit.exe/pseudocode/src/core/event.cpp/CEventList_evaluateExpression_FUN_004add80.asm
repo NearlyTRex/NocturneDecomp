@@ -21,7 +21,7 @@
 ;   char[256] g_EventErrorMessageBuffer
 ;   undefined4 g_EventErrorMessageBuffer+1
 ;   undefined4 g_EventErrorMessageBuffer+2
-;   undefined4 DAT_02d0a463
+;   undefined4 g_EventErrorMessageBuffer+3
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateLogicalExpr_FUN_004b0270
@@ -72,7 +72,7 @@ section .text
         ;   XREF to: 004adde1 (CONDITIONAL_JUMP)  ; LAB_004adde1
     MOV AL,byte ptr [ESI + 0x1]         ; 004addd1 | s_yntax_error_006252b8 | s_tax_error_006252ba
     ADD ESI,0x2                         ; 004addd4
-    MOV byte ptr [EDI + 0x1],AL         ; 004addd7 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004addd7 | g_EventErrorMessageBuffer+1 | g_EventErrorMessageBuffer+3
     ADD EDI,0x2                         ; 004addda
     CMP AL,0x0                          ; 004adddd
     JNZ 0x004addc9                      ; 004adddf

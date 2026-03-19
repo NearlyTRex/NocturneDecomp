@@ -17,7 +17,7 @@
 ;   double DOUBLE_0064606b = 0.0000152587890625
 ;   double DOUBLE_00646073 = 65536
 ;   CDemonCamera g_CDemonCameraInstance
-;   undefined4 DAT_0327d778
+;   undefined4 g_CKeyFramedModelInstance.dead
 ;   int[65536] g_IntensityToValueLookupTable
 ;
 ; Called Functions:
@@ -68,7 +68,7 @@ section .text
         ;   Label: LAB_00570dc9
     MOV EAX,dword ptr [ESP + 0x4]       ; 00570dcc
     INC EDX                             ; 00570dd0
-    MOV dword ptr [ECX + 0x327d778],EAX ; 00570dd1 | DAT_0327d778 | g_IntensityToValueLookupTable
+    MOV dword ptr [ECX + 0x327d778],EAX ; 00570dd1 | g_CKeyFramedModelInstance.dead | g_IntensityToValueLookupTable
     CMP EDX,0x10000                     ; 00570dd7
     JL 0x00570d98                       ; 00570ddd
         ;   XREF to: 00570d98 (CONDITIONAL_JUMP)  ; LAB_00570d98

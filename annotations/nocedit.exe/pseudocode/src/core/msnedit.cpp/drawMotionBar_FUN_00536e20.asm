@@ -61,7 +61,7 @@ section .text
     AND ESP,0xfffffff8                  ; 00536e2c
     MOV EDI,dword ptr [0x0067d550]      ; 00536e2f | g_CDemonMissionPtr
     XOR EDX,EDX                         ; 00536e35
-    MOV ECX,dword ptr [EDI + 0x28]      ; 00536e37 | DAT_02f33768
+    MOV ECX,dword ptr [EDI + 0x28]      ; 00536e37 | g_CDemonMissionInstance.selected_actor
     MOV dword ptr [0x02f7c538],EDX      ; 00536e3a | INT_02f7c538
     TEST ECX,ECX                        ; 00536e40
     JZ 0x005371ef                       ; 00536e42
@@ -79,20 +79,20 @@ section .text
     SHL EBX,0x2                         ; 00536e69
     SUB EBX,EAX                         ; 00536e6c
     SHL EBX,0x2                         ; 00536e6e
-    CMP dword ptr [EBX + 0x2f7a02c],0xd ; 00536e71 | DAT_02f7a02c
+    CMP dword ptr [EBX + 0x2f7a02c],0xd ; 00536e71 | g_MsnEditPropertyList.properties[0].type
     JNZ 0x005371ef                      ; 00536e78
         ;   XREF to: 005371ef (CONDITIONAL_JUMP)  ; LAB_005371ef
-    MOV ESI,dword ptr [EBX + 0x2f7a094] ; 00536e7e | DAT_02f7a094
+    MOV ESI,dword ptr [EBX + 0x2f7a094] ; 00536e7e | g_MsnEditPropertyList.properties[0].data
     TEST ESI,ESI                        ; 00536e84
     JZ 0x005371ef                       ; 00536e86
         ;   XREF to: 005371ef (CONDITIONAL_JUMP)  ; LAB_005371ef
     MOV ECX,0x9b                        ; 00536e8c
     MOV EDX,0x1                         ; 00536e91
-    MOV EAX,dword ptr [EDI + 0x20]      ; 00536e96 | DAT_02f33760
-    MOV EBX,dword ptr [EDI + 0x20]      ; 00536e99 | DAT_02f33760
+    MOV EAX,dword ptr [EDI + 0x20]      ; 00536e96 | g_CDemonMissionInstance.viewport.bottom
+    MOV EBX,dword ptr [EDI + 0x20]      ; 00536e99 | g_CDemonMissionInstance.viewport.bottom
     MOV dword ptr [ESP + 0xe4],ECX      ; 00536e9c
     SUB EBX,0x38                        ; 00536ea3
-    MOV EDI,dword ptr [EDI + 0x20]      ; 00536ea6 | DAT_02f33760
+    MOV EDI,dword ptr [EDI + 0x20]      ; 00536ea6 | g_CDemonMissionInstance.viewport.bottom
     SUB EAX,EDX                         ; 00536ea9
     SUB EDI,0x33                        ; 00536eab
     MOV ECX,0x4                         ; 00536eae
@@ -159,7 +159,7 @@ section .text
     JZ 0x00536f83                       ; 00536f55
         ;   XREF to: 00536f83 (CONDITIONAL_JUMP)  ; LAB_00536f83
     MOV EAX,[0x0067d550]                ; 00536f57 | g_CDemonMissionPtr
-    MOV EBX,dword ptr [EAX + 0x28]      ; 00536f5c | DAT_02f33768
+    MOV EBX,dword ptr [EAX + 0x28]      ; 00536f5c | g_CDemonMissionInstance.selected_actor
     MOV EAX,[0x02f7c52c]                ; 00536f5f | g_SelectedMotionPropertyIndex
     PUSH EBX                            ; 00536f64
     MOV EBX,EAX                         ; 00536f65
@@ -168,7 +168,7 @@ section .text
     SHL EBX,0x2                         ; 00536f6c
     SUB EBX,EAX                         ; 00536f6f
     SHL EBX,0x2                         ; 00536f71
-    ADD EBX,0x2f7a02c                   ; 00536f74 | DAT_02f7a02c
+    ADD EBX,0x2f7a02c                   ; 00536f74 | g_MsnEditPropertyList.properties[0].type
     PUSH EBX                            ; 00536f7a
     CALL core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 ; 00536f7b
         ;   XREF to: 0040eed0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorProperty * this_ptr, CDemonActor * actor)

@@ -16,10 +16,10 @@
 ;   TerminatedCString s_d_0062e464
 ;   int g_BloodSplatCount
 ;   CBloodSplat[2000] g_BloodSplats
-;   undefined4 DAT_02d87420
+;   undefined4 g_BloodSplats[1].expired
 ;   int g_BloodPoolCount
 ;   CBloodPool[32] g_BloodPools
-;   undefined4 DAT_02da874c
+;   undefined4 g_BloodPools[1].expired
 ;
 ; Called Functions:
 ;   core_gore.cpp_CBloodPool_save_FUN_004ed1c0
@@ -56,13 +56,13 @@ section .text
     MOV EBX,0x2da8724                   ; 004ee2c7 | g_BloodPools
     PUSH EDI                            ; 004ee2cc
         ;   Label: LAB_004ee2cc
-    PUSH EBX                            ; 004ee2cd | g_BloodPools | DAT_02da874c
+    PUSH EBX                            ; 004ee2cd | g_BloodPools | g_BloodPools[1].expired
     INC ESI                             ; 004ee2ce
     CALL core_gore.cpp_CBloodPool_save_FUN_004ed1c0 ; 004ee2cf
         ;   XREF to: 004ed1c0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CBloodPool_save_FUN_004ed1c0(CBloodPool * this_ptr, _FILE * file_handle)
     MOV EBP,dword ptr [0x02da8720]      ; 004ee2d4 | g_BloodPoolCount
     ADD ESP,0x8                         ; 004ee2da
-    ADD EBX,0x28                        ; 004ee2dd | DAT_02da874c
+    ADD EBX,0x28                        ; 004ee2dd | g_BloodPools[1].expired
     CMP ESI,EBP                         ; 004ee2e0
     JL 0x004ee2cc                       ; 004ee2e2
         ;   XREF to: 004ee2cc (CONDITIONAL_JUMP)  ; LAB_004ee2cc
@@ -84,7 +84,7 @@ section .text
     MOV ESI,0x2d873dc                   ; 004ee310 | g_BloodSplats
     PUSH EDI                            ; 004ee315
         ;   Label: LAB_004ee315
-    PUSH ESI                            ; 004ee316 | g_BloodSplats | DAT_02d87420
+    PUSH ESI                            ; 004ee316 | g_BloodSplats | g_BloodSplats[1].expired
     INC EBX                             ; 004ee317
     CALL core_gore.cpp_CBloodSplat_save_FUN_004ecb90 ; 004ee318
         ;   XREF to: 004ecb90 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CBloodSplat_save_FUN_004ecb90(CBloodSplat * this_ptr, _FILE * file_handle)

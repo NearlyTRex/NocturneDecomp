@@ -23,9 +23,9 @@
 ;   uchar[257] g_CharacterClassificationTable
 ;   CEditorTools g_CEditorToolsInstance
 ;   SVersionControlSession g_VersionControlSession
-;   undefined4 DAT_02d12bd1
-;   undefined4 DAT_02d12bd2
-;   undefined4 DAT_02d12bd3
+;   undefined4 g_VersionControlSession.primary_username[1]
+;   undefined4 g_VersionControlSession.primary_username[2]
+;   undefined4 g_VersionControlSession.primary_username[3]
 ;
 ; Called Functions:
 ;   crt_env.c_getenv_FUN_006013f0
@@ -86,7 +86,7 @@ section .text
     MOV ECX,0x1                         ; 004b1c7f
     JZ 0x004b1ca8                       ; 004b1c84
         ;   XREF to: 004b1ca8 (CONDITIONAL_JUMP)  ; LAB_004b1ca8
-    MOV DH,byte ptr [EAX]               ; 004b1c86 | g_VersionControlSession | DAT_02d12bd1
+    MOV DH,byte ptr [EAX]               ; 004b1c86 | g_VersionControlSession | g_VersionControlSession.primary_username[1]
         ;   Label: LAB_004b1c86
     CMP DH,0x5f                         ; 004b1c88
     JZ 0x004b1ca0                       ; 004b1c8b
@@ -97,9 +97,9 @@ section .text
     TEST byte ptr [EDX + 0x6849c4],0xe0 ; 004b1c97 | g_CharacterClassificationTable
     JZ 0x004b1cb0                       ; 004b1c9e
         ;   XREF to: 004b1cb0 (CONDITIONAL_JUMP)  ; LAB_004b1cb0
-    MOV DL,byte ptr [EAX + 0x1]         ; 004b1ca0 | DAT_02d12bd1 | DAT_02d12bd2
+    MOV DL,byte ptr [EAX + 0x1]         ; 004b1ca0 | g_VersionControlSession.primary_username[1] | g_VersionControlSession.primary_username[2]
         ;   Label: LAB_004b1ca0
-    INC EAX                             ; 004b1ca3 | DAT_02d12bd1
+    INC EAX                             ; 004b1ca3 | g_VersionControlSession.primary_username[1]
     TEST DL,DL                          ; 004b1ca4
     JNZ 0x004b1c86                      ; 004b1ca6
         ;   XREF to: 004b1c86 (CONDITIONAL_JUMP)  ; LAB_004b1c86
@@ -124,13 +124,13 @@ section .text
     PUSH EDI                            ; 004b1cd1 | g_VersionControlSession
     MOV AL,byte ptr [ESI]               ; 004b1cd2
         ;   Label: LAB_004b1cd2
-    MOV byte ptr [EDI],AL               ; 004b1cd4 | g_VersionControlSession | DAT_02d12bd2
+    MOV byte ptr [EDI],AL               ; 004b1cd4 | g_VersionControlSession | g_VersionControlSession.primary_username[2]
     CMP AL,0x0                          ; 004b1cd6
     JZ 0x004b1cea                       ; 004b1cd8
         ;   XREF to: 004b1cea (CONDITIONAL_JUMP)  ; LAB_004b1cea
     MOV AL,byte ptr [ESI + 0x1]         ; 004b1cda
     ADD ESI,0x2                         ; 004b1cdd
-    MOV byte ptr [EDI + 0x1],AL         ; 004b1ce0 | DAT_02d12bd1 | DAT_02d12bd3
+    MOV byte ptr [EDI + 0x1],AL         ; 004b1ce0 | g_VersionControlSession.primary_username[1] | g_VersionControlSession.primary_username[3]
     ADD EDI,0x2                         ; 004b1ce3
     CMP AL,0x0                          ; 004b1ce6
     JNZ 0x004b1cd2                      ; 004b1ce8

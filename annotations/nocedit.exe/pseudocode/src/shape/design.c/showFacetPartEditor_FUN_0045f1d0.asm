@@ -340,10 +340,10 @@ section .text
         ;   XREF to: 0045f5da (CONDITIONAL_JUMP)  ; LAB_0045f5da
     MOV byte ptr [0x02d03ea4],0x0       ; 0045f5b3 | CHAR_ARRAY_02d03ea4
     ADD dword ptr [0x006793c0],0x1000   ; 0045f5ba | g_ProjectionScale
-    CMP dword ptr [0x006793c0],0x1000000 ; 0045f5c4 | g_ProjectionScale | DAT_01000000
+    CMP dword ptr [0x006793c0],0x1000000 ; 0045f5c4 | g_ProjectionScale | g_LightBufferPool[13][93688]
     JLE 0x0045f5da                      ; 0045f5ce
         ;   XREF to: 0045f5da (CONDITIONAL_JUMP)  ; LAB_0045f5da
-    MOV dword ptr [0x006793c0],0x1000000 ; 0045f5d0 | g_ProjectionScale | DAT_01000000
+    MOV dword ptr [0x006793c0],0x1000000 ; 0045f5d0 | g_ProjectionScale | g_LightBufferPool[13][93688]
     CMP byte ptr [0x02d03ed0],0x0       ; 0045f5da | CHAR_ARRAY_02d03ed0
         ;   Label: LAB_0045f5da
     JZ 0x0045f5f3                       ; 0045f5e1
@@ -359,7 +359,7 @@ section .text
         ;   Label: LAB_0045f601
     JNZ 0x0045f6cc                      ; 0045f608
         ;   XREF to: 0045f6cc (CONDITIONAL_JUMP)  ; LAB_0045f6cc
-    CMP byte ptr [0x02d03ee3],0x0       ; 0045f60e | DAT_02d03ee3
+    CMP byte ptr [0x02d03ee3],0x0       ; 0045f60e | g_KeyboardState+0x4b
     JZ 0x0045f62b                       ; 0045f615
         ;   XREF to: 0045f62b (CONDITIONAL_JUMP)  ; LAB_0045f62b
     MOV EAX,[0x02cf6a80]                ; 0045f617 | g_GlobalDeltaTimeInt
@@ -440,7 +440,7 @@ section .text
     SAR EDX,0x1f                        ; 0045f6fd
     IDIV dword ptr [EBP + -0x20]        ; 0045f700
     SUB dword ptr [EBP + -0x48],EAX     ; 0045f703
-    CMP byte ptr [0x02d03ee3],0x0       ; 0045f706 | DAT_02d03ee3
+    CMP byte ptr [0x02d03ee3],0x0       ; 0045f706 | g_KeyboardState+0x4b
         ;   Label: LAB_0045f706
     JZ 0x0045f723                       ; 0045f70d
         ;   XREF to: 0045f723 (CONDITIONAL_JUMP)  ; LAB_0045f723
@@ -680,7 +680,7 @@ section .text
         ;   Label: LAB_0045f9da
     MOV EDX,0x1e50190                   ; 0045f9e1 | g_ModelPartNames
     ADD EAX,EDX                         ; 0045f9e6
-    PUSH EAX                            ; 0045f9e8 | DAT_01e5017c
+    PUSH EAX                            ; 0045f9e8 | g_ModelPolygonData[19999].uv_v[14]
     MOV EAX,0x61b79b                    ; 0045f9e9 | = "Current part : %s"
     PUSH EAX                            ; 0045f9ee | = "Current part : %s"
     LEA EAX,[EBP + 0xffffff58]          ; 0045f9ef
@@ -1201,13 +1201,13 @@ section .text
     XOR byte ptr [0x015c483c],0x1       ; 0046000f | g_ShowVertexCoordinates
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 00460016 | g_SelectedPolygonIndex
         ;   Label: LAB_00460016
-    PUSH dword ptr [EAX + 0x16e99b4]    ; 00460020 | DAT_016e9830
+    PUSH dword ptr [EAX + 0x16e99b4]    ; 00460020 | g_VertexNormals[19989].vertex.x
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 00460026 | g_SelectedPolygonIndex
-    PUSH dword ptr [EAX + 0x16e99d0]    ; 00460030 | DAT_016e984c
+    PUSH dword ptr [EAX + 0x16e99d0]    ; 00460030 | g_VertexNormals[19990].vertex.z
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 00460036 | g_SelectedPolygonIndex
-    PUSH dword ptr [EAX + 0x16e99cc]    ; 00460040 | DAT_016e9848
+    PUSH dword ptr [EAX + 0x16e99cc]    ; 00460040 | g_VertexNormals[19990].vertex.y
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 00460046 | g_SelectedPolygonIndex
-    PUSH dword ptr [EAX + 0x16e99c8]    ; 00460050 | DAT_016e9844
+    PUSH dword ptr [EAX + 0x16e99c8]    ; 00460050 | g_VertexNormals[19990].vertex.x
     MOV EAX,0x61b878                    ; 00460056 | = "V order : %3d %3d %3d   N : %d"
     PUSH EAX                            ; 0046005b | = "V order : %3d %3d %3d   N : %d"
     LEA EAX,[EBP + 0xffffff58]          ; 0046005c
@@ -1231,15 +1231,15 @@ section .text
         ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 00460096
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 00460099 | g_SelectedPolygonIndex
-    FLD float ptr [EAX + 0x16e99c0]     ; 004600a3 | DAT_016e983c
+    FLD float ptr [EAX + 0x16e99c0]     ; 004600a3 | g_VertexNormals[19989].u
     SUB ESP,0x8                         ; 004600a9
     FSTP double ptr [ESP]               ; 004600ac
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 004600af | g_SelectedPolygonIndex
-    FLD float ptr [EAX + 0x16e99bc]     ; 004600b9 | DAT_016e9838
+    FLD float ptr [EAX + 0x16e99bc]     ; 004600b9 | g_VertexNormals[19989].vertex.z
     SUB ESP,0x8                         ; 004600bf
     FSTP double ptr [ESP]               ; 004600c2
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 004600c5 | g_SelectedPolygonIndex
-    FLD float ptr [EAX + 0x16e99b8]     ; 004600cf | DAT_016e9834
+    FLD float ptr [EAX + 0x16e99b8]     ; 004600cf | g_VertexNormals[19989].vertex.y
     SUB ESP,0x8                         ; 004600d5
     FSTP double ptr [ESP]               ; 004600d8
     MOV EAX,0x61b897                    ; 004600db | = "Normal : %6.2f %6.2f %6.2f"
@@ -1267,7 +1267,7 @@ section .text
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 0046011e | g_SelectedPolygonIndex
     MOV EDX,0x16e9910                   ; 00460128 | g_ModelPolygonData
     ADD EAX,EDX                         ; 0046012d
-    PUSH EAX                            ; 0046012f | DAT_016e978c
+    PUSH EAX                            ; 0046012f | g_VertexNormals[19980].v
     CALL shape_design.c_calculatePolygonAngularArea_FUN_00461ee0 ; 00460130
         ;   XREF to: 00461ee0 (UNCONDITIONAL_CALL)  ; double shape_design.c_calculatePolygonAngularArea_FUN_00461ee0(SShapeEditorPolygon * polygon_ptr)
     MOV dword ptr [EBP + 0xffffff2c],EAX ; 00460135
@@ -1299,12 +1299,12 @@ section .text
         ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 00460190
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 00460193 | g_SelectedPolygonIndex
-    IMUL EAX,dword ptr [EAX + 0x16e9a88],0x14 ; 0046019d | DAT_016e9904
+    IMUL EAX,dword ptr [EAX + 0x16e9a88],0x14 ; 0046019d | g_VertexNormals[19999].u
     CMP byte ptr [EAX + 0x1e50190],0x0  ; 004601a4 | g_ModelPartNames
     JZ 0x004601cd                       ; 004601ab
         ;   XREF to: 004601cd (CONDITIONAL_JUMP)  ; LAB_004601cd
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 004601ad | g_SelectedPolygonIndex
-    IMUL EAX,dword ptr [EAX + 0x16e9a88],0x14 ; 004601b7 | DAT_016e9904
+    IMUL EAX,dword ptr [EAX + 0x16e9a88],0x14 ; 004601b7 | g_VertexNormals[19999].u
     MOV EDX,0x1e50190                   ; 004601be | g_ModelPartNames
     ADD EDX,EAX                         ; 004601c3
     MOV dword ptr [EBP + 0xffffff34],EDX ; 004601c5
@@ -1315,7 +1315,7 @@ section .text
     PUSH dword ptr [EBP + 0xffffff34]   ; 004601d7 | = "no name"
         ;   Label: LAB_004601d7
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 004601dd | g_SelectedPolygonIndex
-    PUSH dword ptr [EAX + 0x16e9a88]    ; 004601e7 | DAT_016e9904
+    PUSH dword ptr [EAX + 0x16e9a88]    ; 004601e7 | g_VertexNormals[19999].u
     MOV EAX,0x61b8ce                    ; 004601ed | = "Part number : %d (%s)"
     PUSH EAX                            ; 004601f2 | = "Part number : %d (%s)"
     LEA EAX,[EBP + 0xffffff58]          ; 004601f3
@@ -1339,19 +1339,19 @@ section .text
         ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0046022d
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 00460230 | g_SelectedPolygonIndex
-    CMP byte ptr [EAX + 0x16e9964],0x0  ; 0046023a | DAT_016e97e0
+    CMP byte ptr [EAX + 0x16e9964],0x0  ; 0046023a | g_VertexNormals[19985].vertex.x
     JZ 0x00460284                       ; 00460241
         ;   XREF to: 00460284 (CONDITIONAL_JUMP)  ; LAB_00460284
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 00460243 | g_SelectedPolygonIndex
     MOV EDX,0x16e9910                   ; 0046024d | g_ModelPolygonData
     ADD EAX,EDX                         ; 00460252
     ADD EAX,0x4                         ; 00460254
-    PUSH EAX                            ; 00460257 | DAT_016e9790
+    PUSH EAX                            ; 00460257 | g_VertexNormals[19981].vertex.x
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 00460258 | g_SelectedPolygonIndex
     MOV EDX,0x16e9910                   ; 00460262 | g_ModelPolygonData
     ADD EAX,EDX                         ; 00460267
     ADD EAX,0x54                        ; 00460269
-    PUSH EAX                            ; 0046026c | DAT_016e97e0
+    PUSH EAX                            ; 0046026c | g_VertexNormals[19985].vertex.x
     MOV EAX,0x61b8e4                    ; 0046026d | = "Texture : %s (%s)"
     PUSH EAX                            ; 00460272 | = "Texture : %s (%s)"
     LEA EAX,[EBP + 0xffffff58]          ; 00460273
@@ -1363,19 +1363,19 @@ section .text
         ;   XREF to: 004602d8 (UNCONDITIONAL_JUMP)  ; LAB_004602d8
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 00460284 | g_SelectedPolygonIndex
         ;   Label: LAB_00460284
-    CMP byte ptr [EAX + 0x16e9914],0x0  ; 0046028e | DAT_016e9790
+    CMP byte ptr [EAX + 0x16e9914],0x0  ; 0046028e | g_VertexNormals[19981].vertex.x
     JZ 0x004602b3                       ; 00460295
         ;   XREF to: 004602b3 (CONDITIONAL_JUMP)  ; LAB_004602b3
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 00460297 | g_SelectedPolygonIndex
     MOV EDX,0x16e9910                   ; 004602a1 | g_ModelPolygonData
     ADD EAX,EDX                         ; 004602a6
     ADD EAX,0x4                         ; 004602a8
-    MOV dword ptr [EBP + 0xffffff28],EAX ; 004602ab | DAT_016e9790
+    MOV dword ptr [EBP + 0xffffff28],EAX ; 004602ab | g_VertexNormals[19981].vertex.x
     JMP 0x004602bd                      ; 004602b1
         ;   XREF to: 004602bd (UNCONDITIONAL_JUMP)  ; LAB_004602bd
     MOV dword ptr [EBP + 0xffffff28],0x61b8f6 ; 004602b3 | = "none"
         ;   Label: LAB_004602b3
-    PUSH dword ptr [EBP + 0xffffff28]   ; 004602bd | DAT_016e9790 | = "none"
+    PUSH dword ptr [EBP + 0xffffff28]   ; 004602bd | g_VertexNormals[19981].vertex.x | = "none"
         ;   Label: LAB_004602bd
     MOV EAX,0x61b8fb                    ; 004602c3 | = "Texture : %s"
     PUSH EAX                            ; 004602c8 | = "Texture : %s"
@@ -1427,14 +1427,14 @@ section .text
     IMUL EDX,dword ptr [0x01e528b8],0x184 ; 00460351 | g_SelectedPolygonIndex
         ;   Label: LAB_00460351
     MOV EAX,dword ptr [EBP + -0x34]     ; 0046035b
-    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0046035e | DAT_016e9830
+    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0046035e | g_VertexNormals[19989].vertex.x
     JGE 0x0046045b                      ; 00460364
         ;   XREF to: 0046045b (CONDITIONAL_JUMP)  ; LAB_0046045b
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 0046036a | g_SelectedPolygonIndex
     MOV EDX,dword ptr [EBP + -0x34]     ; 00460374
     SHL EDX,0x2                         ; 00460377
     ADD EAX,EDX                         ; 0046037a
-    FLD float ptr [EAX + 0x16e9a48]     ; 0046037c | DAT_016e98c4
+    FLD float ptr [EAX + 0x16e9a48]     ; 0046037c | g_VertexNormals[19996].vertex.z
     FMUL double ptr [0x0061b936]        ; 00460382 | DOUBLE_0061b936
     SUB ESP,0x8                         ; 00460388
     FSTP double ptr [ESP]               ; 0046038b
@@ -1442,7 +1442,7 @@ section .text
     MOV EDX,dword ptr [EBP + -0x34]     ; 00460398
     SHL EDX,0x2                         ; 0046039b
     ADD EAX,EDX                         ; 0046039e
-    FLD float ptr [EAX + 0x16e9a08]     ; 004603a0 | DAT_016e9884
+    FLD float ptr [EAX + 0x16e9a08]     ; 004603a0 | g_VertexNormals[19993].vertex.y
     FMUL double ptr [0x0061b936]        ; 004603a6 | DOUBLE_0061b936
     SUB ESP,0x8                         ; 004603ac
     FSTP double ptr [ESP]               ; 004603af
@@ -1450,21 +1450,21 @@ section .text
     MOV EAX,dword ptr [EBP + -0x34]     ; 004603bc
     SHL EAX,0x2                         ; 004603bf
     ADD EAX,EDX                         ; 004603c2
-    FLD float ptr [EAX + 0x16e9a48]     ; 004603c4 | DAT_016e98c4
+    FLD float ptr [EAX + 0x16e9a48]     ; 004603c4 | g_VertexNormals[19996].vertex.z
     SUB ESP,0x8                         ; 004603ca
     FSTP double ptr [ESP]               ; 004603cd
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 004603d0 | g_SelectedPolygonIndex
     MOV EDX,dword ptr [EBP + -0x34]     ; 004603da
     SHL EDX,0x2                         ; 004603dd
     ADD EAX,EDX                         ; 004603e0
-    FLD float ptr [EAX + 0x16e9a08]     ; 004603e2 | DAT_016e9884
+    FLD float ptr [EAX + 0x16e9a08]     ; 004603e2 | g_VertexNormals[19993].vertex.y
     SUB ESP,0x8                         ; 004603e8
     FSTP double ptr [ESP]               ; 004603eb
     IMUL EDX,dword ptr [0x01e528b8],0x184 ; 004603ee | g_SelectedPolygonIndex
     MOV EAX,dword ptr [EBP + -0x34]     ; 004603f8
     SHL EAX,0x2                         ; 004603fb
     ADD EAX,EDX                         ; 004603fe
-    PUSH dword ptr [EAX + 0x16e99c8]    ; 00460400 | DAT_016e9844
+    PUSH dword ptr [EAX + 0x16e99c8]    ; 00460400 | g_VertexNormals[19990].vertex.x
     MOV EAX,0x61b90e                    ; 00460406 | = "%03d : %010.6f %010.6f / %08.6f %08.6f"
     PUSH EAX                            ; 0046040b | = "%03d : %010.6f %010.6f / %08.6f %08.6f"
     LEA EAX,[EBP + 0xffffff58]          ; 0046040c
@@ -1521,14 +1521,14 @@ section .text
     IMUL EDX,dword ptr [0x01e528b8],0x184 ; 004604a6 | g_SelectedPolygonIndex
         ;   Label: LAB_004604a6
     MOV EAX,dword ptr [EBP + -0x34]     ; 004604b0
-    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 004604b3 | DAT_016e9830
+    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 004604b3 | g_VertexNormals[19989].vertex.x
     JGE 0x0046059b                      ; 004604b9
         ;   XREF to: 0046059b (CONDITIONAL_JUMP)  ; LAB_0046059b
     IMUL EAX,dword ptr [0x01e528b8],0x184 ; 004604bf | g_SelectedPolygonIndex
     MOV EDX,dword ptr [EBP + -0x34]     ; 004604c9
     SHL EDX,0x2                         ; 004604cc
     ADD EAX,EDX                         ; 004604cf
-    IMUL EAX,dword ptr [EAX + 0x16e99c8],0x14 ; 004604d1 | DAT_016e9844 | DAT_016e99c8
+    IMUL EAX,dword ptr [EAX + 0x16e99c8],0x14 ; 004604d1 | g_VertexNormals[19990].vertex.x | g_ModelPolygonData[0].vertex_indices[0]
     FLD float ptr [EAX + 0x1626414]     ; 004604d8 | g_LoadedVertices[0].vertex.z
     SUB ESP,0x8                         ; 004604de
     FSTP double ptr [ESP]               ; 004604e1
@@ -1536,15 +1536,15 @@ section .text
     MOV EAX,dword ptr [EBP + -0x34]     ; 004604ee
     SHL EAX,0x2                         ; 004604f1
     ADD EAX,EDX                         ; 004604f4
-    IMUL EAX,dword ptr [EAX + 0x16e99c8],0x14 ; 004604f6 | DAT_016e9844 | DAT_016e99c8
-    FLD float ptr [EAX + 0x1626410]     ; 004604fd | DAT_01626410
+    IMUL EAX,dword ptr [EAX + 0x16e99c8],0x14 ; 004604f6 | g_VertexNormals[19990].vertex.x | g_ModelPolygonData[0].vertex_indices[0]
+    FLD float ptr [EAX + 0x1626410]     ; 004604fd | g_LoadedVertices[0].vertex.y
     SUB ESP,0x8                         ; 00460503
     FSTP double ptr [ESP]               ; 00460506
     IMUL EDX,dword ptr [0x01e528b8],0x184 ; 00460509 | g_SelectedPolygonIndex
     MOV EAX,dword ptr [EBP + -0x34]     ; 00460513
     SHL EAX,0x2                         ; 00460516
     ADD EAX,EDX                         ; 00460519
-    IMUL EAX,dword ptr [EAX + 0x16e99c8],0x14 ; 0046051b | DAT_016e9844 | DAT_016e99c8
+    IMUL EAX,dword ptr [EAX + 0x16e99c8],0x14 ; 0046051b | g_VertexNormals[19990].vertex.x | g_ModelPolygonData[0].vertex_indices[0]
     FLD float ptr [EAX + 0x162640c]     ; 00460522 | g_LoadedVertices
     SUB ESP,0x8                         ; 00460528
     FSTP double ptr [ESP]               ; 0046052b
@@ -1552,7 +1552,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x34]     ; 00460538
     SHL EAX,0x2                         ; 0046053b
     ADD EAX,EDX                         ; 0046053e
-    PUSH dword ptr [EAX + 0x16e99c8]    ; 00460540 | DAT_016e9844
+    PUSH dword ptr [EAX + 0x16e99c8]    ; 00460540 | g_VertexNormals[19990].vertex.x
     MOV EAX,0x61b949                    ; 00460546 | = "%03d : %+011.6f %+011.6f %+011.6f"
     PUSH EAX                            ; 0046054b | = "%03d : %+011.6f %+011.6f %+011.6f"
     LEA EAX,[EBP + 0xffffff58]          ; 0046054c
@@ -1595,10 +1595,10 @@ section .text
         ;   Label: LAB_004605af
     IMUL EDX,dword ptr [0x01e528b8],0x184 ; 004605b6 | g_SelectedPolygonIndex
     MOV EAX,[0x01626368]                ; 004605c0 | g_EditorColorIndex
-    MOV dword ptr [EDX + 0x16e9a8c],EAX ; 004605c5 | DAT_016e9908
+    MOV dword ptr [EDX + 0x16e9a8c],EAX ; 004605c5 | g_VertexNormals[19999].v
     IMUL EDX,dword ptr [0x01e528b8],0x184 ; 004605cb | g_SelectedPolygonIndex
     MOV EAX,[0x01e6614c]                ; 004605d5 | g_CurrentPartIndex
-    MOV dword ptr [EDX + 0x16e9a88],EAX ; 004605da | DAT_016e9904
+    MOV dword ptr [EDX + 0x16e9a88],EAX ; 004605da | g_VertexNormals[19999].u
     CMP byte ptr [0x02d03ec9],0x0       ; 004605e0 | CHAR_ARRAY_02d03ec9
         ;   Label: LAB_004605e0
     JZ 0x004605f2                       ; 004605e7
@@ -1615,10 +1615,10 @@ section .text
     IMUL EDI,dword ptr [0x016e990c],0x184 ; 00460608 | g_PolygonCount
     MOV ECX,0x61                        ; 00460612
     LEA EDI,[EDI + 0x16e9910]           ; 00460617 | g_ModelPolygonData
-    LEA ESI,[ESI + 0x16e9910]           ; 0046061d | DAT_016e978c
-    MOVSD.REP ES:EDI,ESI                ; 00460623 | DAT_016e978c | g_ModelPolygonData | DAT_016e9790
+    LEA ESI,[ESI + 0x16e9910]           ; 0046061d | g_VertexNormals[19980].v
+    MOVSD.REP ES:EDI,ESI                ; 00460623 | g_VertexNormals[19980].v | g_ModelPolygonData | g_VertexNormals[19981].vertex.x
     IMUL EAX,dword ptr [0x016e990c],0x184 ; 00460625 | g_PolygonCount
-    MOV EAX,dword ptr [EAX + 0x16e99b4] ; 0046062f | DAT_016e99b4
+    MOV EAX,dword ptr [EAX + 0x16e99b4] ; 0046062f | g_ModelPolygonData[0].vertex_indices_count
     MOV dword ptr [EBP + -0x40],EAX     ; 00460635
     MOV dword ptr [EBP + -0x34],0x0     ; 00460638
     JMP 0x00460647                      ; 0046063f
@@ -1640,8 +1640,8 @@ section .text
     MOV EAX,dword ptr [EBP + -0x34]     ; 00460673
     SHL EAX,0x2                         ; 00460676
     ADD EDX,EAX                         ; 00460679
-    MOV EAX,dword ptr [ECX + 0x16e99c4] ; 0046067b | DAT_016e9840
-    MOV dword ptr [EDX + 0x16e99c8],EAX ; 00460681 | DAT_016e99c8
+    MOV EAX,dword ptr [ECX + 0x16e99c4] ; 0046067b | g_VertexNormals[19989].v
+    MOV dword ptr [EDX + 0x16e99c8],EAX ; 00460681 | g_ModelPolygonData[0].vertex_indices[0]
     MOV EAX,dword ptr [EBP + -0x40]     ; 00460687
     SUB EAX,dword ptr [EBP + -0x34]     ; 0046068a
     SHL EAX,0x2                         ; 0046068d
@@ -1651,8 +1651,8 @@ section .text
     MOV EAX,dword ptr [EBP + -0x34]     ; 004606a7
     SHL EAX,0x2                         ; 004606aa
     ADD EAX,EDX                         ; 004606ad
-    FLD float ptr [ECX + 0x16e9a04]     ; 004606af | DAT_016e9880
-    FSTP float ptr [EAX + 0x16e9a08]    ; 004606b5 | DAT_016e9a08
+    FLD float ptr [ECX + 0x16e9a04]     ; 004606af | g_VertexNormals[19993].vertex.x
+    FSTP float ptr [EAX + 0x16e9a08]    ; 004606b5 | g_ModelPolygonData[0].uv_u[0]
     MOV EAX,dword ptr [EBP + -0x40]     ; 004606bb
     SUB EAX,dword ptr [EBP + -0x34]     ; 004606be
     SHL EAX,0x2                         ; 004606c1
@@ -1662,8 +1662,8 @@ section .text
     MOV EAX,dword ptr [EBP + -0x34]     ; 004606db
     SHL EAX,0x2                         ; 004606de
     ADD EAX,EDX                         ; 004606e1
-    FLD float ptr [ECX + 0x16e9a44]     ; 004606e3 | DAT_016e98c0
-    FSTP float ptr [EAX + 0x16e9a48]    ; 004606e9 | DAT_016e9a48
+    FLD float ptr [ECX + 0x16e9a44]     ; 004606e3 | g_VertexNormals[19996].vertex.y
+    FSTP float ptr [EAX + 0x16e9a48]    ; 004606e9 | g_ModelPolygonData[0].uv_v[0]
     JMP 0x00460641                      ; 004606ef
         ;   XREF to: 00460641 (UNCONDITIONAL_JUMP)  ; LAB_00460641
     INC dword ptr [0x016e990c]          ; 004606f4 | g_PolygonCount

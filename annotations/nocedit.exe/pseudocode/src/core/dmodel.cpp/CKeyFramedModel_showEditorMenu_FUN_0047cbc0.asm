@@ -212,12 +212,12 @@ section .text
     CALL engine_2d.c_fillRectColor_FUN_00403170 ; 0047cc6c
         ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
     MOV EAX,[0x006810c8]                ; 0047cc71 | g_CDemonSetPtr
-    MOV dword ptr [EAX + 0x15ae70],0x1  ; 0047cc76 | DAT_0326f0e8
-    MOV dword ptr [EAX + 0x15ae74],0xffffb7bc ; 0047cc80 | DAT_0326f0ec
-    MOV dword ptr [EAX + 0x15ae78],0xffffb7bc ; 0047cc8a | DAT_0326f0f0
-    MOV dword ptr [EAX + 0x15ae7c],0x4844 ; 0047cc94 | DAT_0326f0f4
+    MOV dword ptr [EAX + 0x15ae70],0x1  ; 0047cc76 | g_CDemonSetInstance.rendering_mode
+    MOV dword ptr [EAX + 0x15ae74],0xffffb7bc ; 0047cc80 | g_CDemonSetInstance.light_direction.x
+    MOV dword ptr [EAX + 0x15ae78],0xffffb7bc ; 0047cc8a | g_CDemonSetInstance.light_direction.y
+    MOV dword ptr [EAX + 0x15ae7c],0x4844 ; 0047cc94 | g_CDemonSetInstance.light_direction.z
     ADD ESP,0x14                        ; 0047cc9e
-    MOV dword ptr [EAX + 0x15ae80],0x7d00 ; 0047cca1 | DAT_0326f0f8
+    MOV dword ptr [EAX + 0x15ae80],0x7d00 ; 0047cca1 | g_CDemonSetInstance.ambient_base_quick
     CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0047ccab
         ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
     MOV EAX,[0x00679394]                ; 0047ccb0 | g_WindowWidth
@@ -1074,7 +1074,7 @@ section .text
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0047d6ea
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     MOV EAX,[0x006810c8]                ; 0047d6ef | g_CDemonSetPtr
-    MOV dword ptr [EAX + 0x15ae70],0x0  ; 0047d6f4 | DAT_0326f0e8
+    MOV dword ptr [EAX + 0x15ae70],0x0  ; 0047d6f4 | g_CDemonSetInstance.rendering_mode
     LEA ESP,[EBP + 0x7e]                ; 0047d6fe
     POP EBP                             ; 0047d701
     POP EDI                             ; 0047d702
@@ -2436,7 +2436,7 @@ section .text
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV ECX,0x19                        ; 0047e65d
     ADD ESP,0x54                        ; 0047e662
-    MOVSD.REP ES:EDI,ESI                ; 0047e665 | g_ModelLastScaleInput | DAT_00670214
+    MOVSD.REP ES:EDI,ESI                ; 0047e665 | g_ModelLastScaleInput | g_ModelLastScaleInput+4
     MOV EBX,0x1                         ; 0047e667
     PUSH EBX                            ; 0047e66c
         ;   Label: LAB_0047e66c

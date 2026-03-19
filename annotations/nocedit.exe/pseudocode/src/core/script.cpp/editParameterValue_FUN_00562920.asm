@@ -258,7 +258,7 @@ section .text
         ;   XREF to: 00562ae4 (CONDITIONAL_JUMP)  ; LAB_00562ae4
     MOV EDX,dword ptr [ESP + 0x3740]    ; 00562ac2
     PUSH EDX                            ; 00562ac9
-    MOV ECX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00562aca | g_CDemonSetInstance.actors[0] | DAT_032613d4
+    MOV ECX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00562aca | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     PUSH ECX                            ; 00562ad1
     CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 00562ad2
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
@@ -274,7 +274,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 00562ae4 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00562ae4
     PUSH 0x643ba7                       ; 00562ae9 | = "CHeroPlaceHolder"
-    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00562aee | g_CDemonSetInstance.actors[0] | DAT_032613d4
+    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00562aee | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     PUSH EDX                            ; 00562af5
     CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 00562af6
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
@@ -283,7 +283,7 @@ section .text
     JNZ 0x00562ade                      ; 00562b00
         ;   XREF to: 00562ade (CONDITIONAL_JUMP)  ; LAB_00562ade
     MOV EAX,[0x006810c8]                ; 00562b02 | g_CDemonSetPtr
-    MOV ECX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00562b07 | DAT_032613d4
+    MOV ECX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00562b07 | g_CDemonSetInstance.actors[1]
     PUSH ECX                            ; 00562b0e
     LEA EAX,[ESP + 0x758]               ; 00562b0f
     PUSH EAX                            ; 00562b16
@@ -517,7 +517,7 @@ section .text
         ;   XREF to: 00562d52 (CONDITIONAL_JUMP)  ; LAB_00562d52
     ADD EAX,0x4                         ; 00562d33
     ADD EAX,EDI                         ; 00562d36
-    PUSH EAX                            ; 00562d38 | DAT_0311427c | DAT_03114420
+    PUSH EAX                            ; 00562d38 | g_CDemonSetInstance.cameras[0].name[0] | g_CDemonSetInstance.cameras[1].name[0]
     LEA EAX,[ESP + 0x2be8]              ; 00562d39
     PUSH EAX                            ; 00562d40
     INC ESI                             ; 00562d41
@@ -1397,8 +1397,8 @@ section .text
     CMP EDI,dword ptr [EAX + 0x19a2c]   ; 005635aa | g_CDemonSetInstance.light_count
     JGE 0x005635e4                      ; 005635b0
         ;   XREF to: 005635e4 (CONDITIONAL_JUMP)  ; LAB_005635e4
-    LEA EBX,[EAX + ESI*0x1]             ; 005635b2 | g_CDemonSetInstance | DAT_03115b10
-    CMP dword ptr [EBX + 0x19a30],0x0   ; 005635b5 | g_CDemonSetInstance.lights[0].light_type | DAT_0312f540
+    LEA EBX,[EAX + ESI*0x1]             ; 005635b2 | g_CDemonSetInstance | g_CDemonSetInstance.cameras[14].vdir_zone
+    CMP dword ptr [EBX + 0x19a30],0x0   ; 005635b5 | g_CDemonSetInstance.lights[0].light_type | g_CDemonSetInstance.lights[1].light_type
     JZ 0x005635c7                       ; 005635bc
         ;   XREF to: 005635c7 (CONDITIONAL_JUMP)  ; LAB_005635c7
     INC EDI                             ; 005635be
@@ -1410,7 +1410,7 @@ section .text
         ;   Label: LAB_005635c7
     ADD EAX,ESI                         ; 005635cc
     ADD EAX,0x4                         ; 005635ce
-    PUSH EAX                            ; 005635d1 | DAT_0312f544
+    PUSH EAX                            ; 005635d1 | g_CDemonSetInstance.lights[1].name[0]
     LEA EAX,[ESP + 0x2498]              ; 005635d2
     PUSH EAX                            ; 005635d9
     CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 005635da
@@ -2026,7 +2026,7 @@ section .text
         ;   XREF to: 00563b80 (CONDITIONAL_JUMP)  ; LAB_00563b80
     MOV AL,byte ptr [ESI + 0x1]         ; 00563b70
     ADD ESI,0x2                         ; 00563b73
-    MOV byte ptr [EDI + 0x1],AL         ; 00563b76 | g_ScriptTempBuffer+1 | DAT_0310a9eb
+    MOV byte ptr [EDI + 0x1],AL         ; 00563b76 | g_ScriptTempBuffer+1 | g_ScriptTempBuffer+3
     ADD EDI,0x2                         ; 00563b79
     CMP AL,0x0                          ; 00563b7c
     JNZ 0x00563b68                      ; 00563b7e

@@ -40,7 +40,7 @@
 ;   CDemonMission g_CDemonMissionInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
-;   undefined4 DAT_032613d4
+;   undefined4 g_CDemonSetInstance.actors[1]
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -180,7 +180,7 @@ section .text
     CMP ESI,dword ptr [EAX + 0x14d154]  ; 0042f55a | g_CDemonSetInstance.actor_count
     JGE 0x0042f5eb                      ; 0042f560
         ;   XREF to: 0042f5eb (CONDITIONAL_JUMP)  ; LAB_0042f5eb
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 0042f566 | g_CDemonSetInstance.actors[0] | DAT_032613d4 | DAT_032613d8
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 0042f566 | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1] | g_CDemonSetInstance.actors[2]
     CMP EBX,EBP                         ; 0042f56d
     JNZ 0x0042f5ab                      ; 0042f56f
         ;   XREF to: 0042f5ab (CONDITIONAL_JUMP)  ; LAB_0042f5ab

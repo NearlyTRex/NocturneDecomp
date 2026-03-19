@@ -39,9 +39,9 @@
 ;   double DOUBLE_0061f14b = 0.00390625
 ;   double DOUBLE_0061f153 = 65536
 ;   float FLOAT_0065c900 = 256
-;   undefined4 DAT_0066fef0
+;   undefined4 g_LightTextures[1].base.type
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   undefined4 DAT_00f80000
+;   undefined4 g_LightBufferPool[11][183800]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   float g_PerspectiveReciprocal
 ;
@@ -327,15 +327,15 @@ section .text
     ADD ESP,0x8                         ; 00473dd5
     MOV EAX,[0x006703ec]                ; 00473dd8 | g_CDemonRendererPtr2
     MOV EBX,dword ptr [EAX]             ; 00473ddd | g_CDemonRendererInstance
-    MOV dword ptr [EBX + 0x18],0xf80000 ; 00473ddf | DAT_00f80000
+    MOV dword ptr [EBX + 0x18],0xf80000 ; 00473ddf | g_LightBufferPool[11][183800]
     MOV EBX,dword ptr [EAX]             ; 00473de6 | g_CDemonRendererInstance
-    MOV dword ptr [EBX + 0x1c],0xf80000 ; 00473de8 | DAT_00f80000
+    MOV dword ptr [EBX + 0x1c],0xf80000 ; 00473de8 | g_LightBufferPool[11][183800]
     MOV EBX,dword ptr [EAX]             ; 00473def | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x2c],ESI      ; 00473df1
     MOV EBX,dword ptr [EAX]             ; 00473df4 | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x48],0x80000  ; 00473df6
     MOV EBX,dword ptr [EAX]             ; 00473dfd | g_CDemonRendererInstance
-    MOV dword ptr [EBX + 0x4c],0xf80000 ; 00473dff | DAT_00f80000
+    MOV dword ptr [EBX + 0x4c],0xf80000 ; 00473dff | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 00473e06 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x5c],ESI      ; 00473e08
     MOV EDX,dword ptr [EAX]             ; 00473e0b | g_CDemonRendererInstance
@@ -345,7 +345,7 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 00473e1d | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x8c],ESI      ; 00473e1f
     MOV EBX,dword ptr [EAX]             ; 00473e25 | g_CDemonRendererInstance
-    MOV dword ptr [EBX + 0xa8],0xf80000 ; 00473e27 | DAT_00f80000
+    MOV dword ptr [EBX + 0xa8],0xf80000 ; 00473e27 | g_LightBufferPool[11][183800]
     MOV EBX,dword ptr [EAX]             ; 00473e31 | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0xac],0x80000  ; 00473e33
     MOV EDX,dword ptr [EAX]             ; 00473e3d | g_CDemonRendererInstance
@@ -372,7 +372,7 @@ section .text
     MOV dword ptr [EBX + 0xb0],0xffff   ; 00473ea1
     MOV EDX,dword ptr [EAX]             ; 00473eab | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0xb4],0xffff   ; 00473ead
-    PUSH 0x66fef0                       ; 00473eb7 | DAT_0066fef0
+    PUSH 0x66fef0                       ; 00473eb7 | g_LightTextures[1].base.type
     MOV EDX,dword ptr [EAX]             ; 00473ebc | g_CDemonRendererInstance
     PUSH EAX                            ; 00473ebe | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0xb8],0xffff   ; 00473ebf

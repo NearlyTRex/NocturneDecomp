@@ -15,7 +15,7 @@
 ;   int g_PVSDrawnCubeCount
 ;   CDemonCube*[20000] g_PVSCubePointers
 ;   CVector3f[20000] g_PVSCubePositions
-;   undefined4 DAT_02cb3c38
+;   undefined4 g_PVSCubePositions[1].x
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
@@ -47,7 +47,7 @@ section .text
     PUSH EBX                            ; 0049911d
     MOV EBX,0x2cb3c2c                   ; 0049911e | g_PVSCubePositions
     XOR EDI,EDI                         ; 00499123
-    PUSH EBX                            ; 00499125 | g_PVSCubePositions | DAT_02cb3c38
+    PUSH EBX                            ; 00499125 | g_PVSCubePositions | g_PVSCubePositions[1].x
         ;   Label: LAB_00499125
     MOV EBP,dword ptr [0x006703e8]      ; 00499126 | g_CDemonRendererPtr1
     PUSH EBP                            ; 0049912c | g_CDemonRendererInstance
@@ -65,7 +65,7 @@ section .text
     CALL wincore_windll.cpp_sync_FUN_005b7bc0 ; 0049914a
         ;   XREF to: 005b7bc0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_sync_FUN_005b7bc0()
     MOV EDX,dword ptr [0x02ca03a4]      ; 0049914f | g_PVSDrawnCubeCount
-    ADD EBX,0xc                         ; 00499155 | DAT_02cb3c38
+    ADD EBX,0xc                         ; 00499155 | g_PVSCubePositions[1].x
     CMP ESI,EDX                         ; 00499158
     JL 0x00499125                       ; 0049915a
         ;   XREF to: 00499125 (CONDITIONAL_JUMP)  ; LAB_00499125

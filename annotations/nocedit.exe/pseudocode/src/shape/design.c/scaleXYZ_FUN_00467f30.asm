@@ -18,7 +18,7 @@
 ;   TerminatedCString s_f_f_f_0061cbd0
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; Called Functions:
@@ -98,9 +98,9 @@ section .text
     FMUL float ptr [EBP + -0xc]         ; 00467fbc
     FSTP float ptr [EAX + 0x162640c]    ; 00467fbf | g_LoadedVertices
     IMUL EAX,dword ptr [EBP + -0x10],0x14 ; 00467fc5
-    FLD float ptr [EAX + 0x1626410]     ; 00467fc9 | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 00467fc9 | g_LoadedVertices[0].vertex.y
     FMUL float ptr [EBP + -0x8]         ; 00467fcf
-    FSTP float ptr [EAX + 0x1626410]    ; 00467fd2 | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 00467fd2 | g_LoadedVertices[0].vertex.y
     IMUL EAX,dword ptr [EBP + -0x10],0x14 ; 00467fd8
     FLD float ptr [EAX + 0x1626414]     ; 00467fdc | g_LoadedVertices[0].vertex.z
     FMUL float ptr [EBP + -0x4]         ; 00467fe2

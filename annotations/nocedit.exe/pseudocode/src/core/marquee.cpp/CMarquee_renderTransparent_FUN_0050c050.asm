@@ -29,7 +29,7 @@
 ;   SMRGLTextureBasic SMRGLTextureBasic_0067d150
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -79,7 +79,7 @@ section .text
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     MOV EDX,dword ptr [0x0067d550]      ; 0050c0ab | g_CDemonMissionPtr
     ADD ESP,0x8                         ; 0050c0b1
-    MOV EBP,dword ptr [EDX + 0x4]       ; 0050c0b4 | DAT_02f33744
+    MOV EBP,dword ptr [EDX + 0x4]       ; 0050c0b4 | g_CDemonMissionInstance.is_in_editor
     LEA EAX,[EBX + 0x1a4]               ; 0050c0b7
     TEST EBP,EBP                        ; 0050c0bd
     JZ 0x0050c16f                       ; 0050c0bf

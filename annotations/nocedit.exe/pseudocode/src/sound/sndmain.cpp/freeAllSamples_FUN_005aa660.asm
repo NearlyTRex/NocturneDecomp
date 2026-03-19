@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   CSfxSample[64] g_SfxSamples
-;   undefined4 DAT_03f629ac
+;   undefined4 g_SfxSamples[1].sample_info.name[0]
 ;   CSfxSample* g_SfxSamplesEnd
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     CALL sound_sndmain.cpp_killAllSfx_FUN_005a9cc0 ; 005aa66c
         ;   XREF to: 005a9cc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_killAllSfx_FUN_005a9cc0()
     LEA ESI,[EBX + 0x6000]              ; 005aa671 | g_SfxSamplesEnd
-    PUSH EBX                            ; 005aa677 | g_SfxSamples | DAT_03f629ac
+    PUSH EBX                            ; 005aa677 | g_SfxSamples | g_SfxSamples[1].sample_info.name[0]
         ;   Label: LAB_005aa677
     CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0 ; 005aa678
         ;   XREF to: 005a62c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0(CSfxSample * this_ptr)

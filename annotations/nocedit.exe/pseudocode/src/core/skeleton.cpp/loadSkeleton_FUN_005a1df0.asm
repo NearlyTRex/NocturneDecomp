@@ -16,8 +16,8 @@
 ;   int g_CurrentLineNumber
 ;   int g_SkeletonPoolCount
 ;   CSkeleton[40] g_SkeletonPool
-;   undefined4 DAT_038f4dac
-;   undefined4 DAT_0391e5d8
+;   undefined4 g_SkeletonPool[0].loaded_filename[0]
+;   undefined4 g_SkeletonPool[1].loaded_filename[0]
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -45,7 +45,7 @@ section .text
         ;   Label: LAB_005a1e0f
     PUSH EDI                            ; 005a1e15
     MOV EBP,0x38cc8a4                   ; 005a1e16 | g_SkeletonPool
-    PUSH ESI                            ; 005a1e1b | DAT_038f4dac | DAT_0391e5d8
+    PUSH ESI                            ; 005a1e1b | g_SkeletonPool[0].loaded_filename[0] | g_SkeletonPool[1].loaded_filename[0]
     ADD EBP,EAX                         ; 005a1e1c
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005a1e1e
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)

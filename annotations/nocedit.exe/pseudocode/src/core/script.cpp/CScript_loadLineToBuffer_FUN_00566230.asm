@@ -16,8 +16,8 @@
 ; Referenced Globals:
 ;   char s_EmptyChar_00643f94 = \x00
 ;   undefined4 g_CurrentLineBuffer
-;   undefined4 DAT_031101c1
-;   undefined4 DAT_031141bf
+;   undefined4 g_CurrentLineBuffer+2
+;   undefined4 g_CurrentLineBuffer+0x4000
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
@@ -73,10 +73,10 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 00566288 | g_CurrentLineBuffer
     MOV CL,AL                           ; 0056628a
     AND CL,0x3                          ; 0056628c
-    MOVSB.REP ES:EDI,ESI                ; 0056628f | g_CurrentLineBuffer | DAT_031101c1
+    MOVSB.REP ES:EDI,ESI                ; 0056628f | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     POP EDI                             ; 00566291
     XOR AH,AH                           ; 00566292
-    MOV byte ptr [EDX + 0x31101c0],AH   ; 00566294 | g_CurrentLineBuffer | DAT_031141bf
+    MOV byte ptr [EDX + 0x31101c0],AH   ; 00566294 | g_CurrentLineBuffer | g_CurrentLineBuffer+0x4000
     POP EDI                             ; 0056629a
     POP ESI                             ; 0056629b
     POP EBX                             ; 0056629c

@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81ca8
+;   undefined4 g_CGameInstance.profile_mode
 ;   int g_ProfileStartTime
 ;
 ; Called Functions:
@@ -19,7 +19,7 @@ section .text
 
     MOV EAX,[0x0067b654]                ; 004e30f0 | g_CGamePtr | g_CGameInstance
         ;   Label: core_game.cpp_beginProfileTimer_FUN_004e30f0
-    CMP dword ptr [EAX + 0x20c],0x1     ; 004e30f5 | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x1     ; 004e30f5 | g_CGameInstance.profile_mode
     JZ 0x004e30ff                       ; 004e30fc
         ;   XREF to: 004e30ff (CONDITIONAL_JUMP)  ; LAB_004e30ff
     RET                                 ; 004e30fe

@@ -15,7 +15,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   uint*[1200] g_ZBufferScanlineArrayBackup
-;   undefined4 DAT_03363630
+;   undefined4 g_ZBufferScanlineArrayBackup[1]
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -39,7 +39,7 @@ section .text
     XOR EAX,EAX                         ; 0057484a
     ADD EAX,0x4                         ; 0057484c
         ;   Label: LAB_0057484c
-    MOV EDX,dword ptr [EAX + 0x3363628] ; 0057484f | g_ZBufferScanlineArrayBackup | DAT_03363630
+    MOV EDX,dword ptr [EAX + 0x3363628] ; 0057484f | g_ZBufferScanlineArrayBackup | g_ZBufferScanlineArrayBackup[1]
     MOV dword ptr [EAX + 0x2cf7d58],EDX ; 00574855 | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
     CMP EAX,ECX                         ; 0057485b
     JL 0x0057484c                       ; 0057485d

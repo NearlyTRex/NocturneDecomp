@@ -12,8 +12,8 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
-;   undefined4 DAT_02f33768
+;   undefined4 g_CDemonMissionInstance.is_in_editor
+;   undefined4 g_CDemonMissionInstance.selected_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
@@ -27,7 +27,7 @@ section .text
     PUSH EBP                            ; 005da7d0
         ;   Label: core_teleport.cpp_CTeleportDest_renderOpaque_FUN_005da7d0
     MOV EAX,[0x0067d550]                ; 005da7d1 | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 005da7d6 | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 005da7d6 | g_CDemonMissionInstance.is_in_editor
     JNZ 0x005da7e0                      ; 005da7da
         ;   XREF to: 005da7e0 (CONDITIONAL_JUMP)  ; LAB_005da7e0
     XOR EAX,EAX                         ; 005da7dc
@@ -46,7 +46,7 @@ section .text
     PUSH ESI                            ; 005da7f3
     PUSH EBX                            ; 005da7f4
     MOV EAX,[0x0067d550]                ; 005da7f5 | g_CDemonMissionInstance | g_CDemonMissionPtr
-    MOV ESI,dword ptr [EAX + 0x28]      ; 005da7fa | DAT_02f33768
+    MOV ESI,dword ptr [EAX + 0x28]      ; 005da7fa | g_CDemonMissionInstance.selected_actor
     MOV EBX,0x1                         ; 005da7fd
     TEST ESI,ESI                        ; 005da802
     JZ 0x005da831                       ; 005da804
@@ -60,7 +60,7 @@ section .text
     JZ 0x005da831                       ; 005da816
         ;   XREF to: 005da831 (CONDITIONAL_JUMP)  ; LAB_005da831
     MOV EAX,[0x0067d550]                ; 005da818 | g_CDemonMissionPtr
-    MOV EAX,dword ptr [EAX + 0x28]      ; 005da81d | DAT_02f33768
+    MOV EAX,dword ptr [EAX + 0x28]      ; 005da81d | g_CDemonMissionInstance.selected_actor
     MOV EBP,dword ptr [ESP + 0x10]      ; 005da820
     CMP EBP,dword ptr [EAX + 0x164]     ; 005da824
     JNZ 0x005da831                      ; 005da82a

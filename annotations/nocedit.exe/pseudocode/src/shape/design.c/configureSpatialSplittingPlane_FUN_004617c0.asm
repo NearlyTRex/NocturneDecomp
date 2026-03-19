@@ -27,7 +27,7 @@
 ;   TerminatedCString s_d_d_d_0061bf5b
 ;   TerminatedCString s_Enter_in_point_number_0061bf64
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;   SModelPartName[500] g_ModelPartNames
 ;   int g_PartsCount
@@ -232,7 +232,7 @@ section .text
     MOV dword ptr [EBP + -0x2c],0x3f800000 ; 0046199f
         ;   Label: LAB_0046199f
     IMUL EAX,dword ptr [EBP + -0x4],0x14 ; 004619a6
-    MOV EAX,dword ptr [EAX + 0x1626410] ; 004619aa | DAT_01626410
+    MOV EAX,dword ptr [EAX + 0x1626410] ; 004619aa | g_LoadedVertices[0].vertex.y
     MOV dword ptr [EBP + -0x24],EAX     ; 004619b0
     JMP 0x004619f5                      ; 004619b3
         ;   XREF to: 004619f5 (UNCONDITIONAL_JUMP)  ; LAB_004619f5

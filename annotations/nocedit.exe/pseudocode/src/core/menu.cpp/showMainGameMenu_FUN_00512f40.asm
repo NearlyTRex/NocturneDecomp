@@ -71,7 +71,7 @@ section .text
     PUSH EBP                            ; 00512f71
     MOV EDI,dword ptr [EBX + 0x67d344]  ; 00512f72 | g_MenuBitmapFilenames | g_MenuBitmapFilenames[1]
     PUSH EDI                            ; 00512f78 | = "f0100" | s_f0300_0063730b
-    PUSH ESI                            ; 00512f79 | g_MenuBitmaps | DAT_02f21504
+    PUSH ESI                            ; 00512f79 | g_MenuBitmaps | g_MenuBitmaps[1].raw
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0 ; 00512f7a
         ;   XREF to: 004105d0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0(CAlphaBitmap * this_ptr, char * filename, int width, int height) | g_CGameInstance
     ADD ESP,0x10                        ; 00512f7f
@@ -157,7 +157,7 @@ section .text
         ;   XREF to: 00513077 (CONDITIONAL_JUMP)  ; LAB_00513077
     MOV AL,byte ptr [ESI + 0x1]         ; 00513067
     ADD ESI,0x2                         ; 0051306a
-    MOV byte ptr [EDI + 0x1],AL         ; 0051306d | g_MainMenuTextBuffers[0][1] | DAT_02f28e63
+    MOV byte ptr [EDI + 0x1],AL         ; 0051306d | g_MainMenuTextBuffers[0][1] | g_MainMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 00513070
     CMP AL,0x0                          ; 00513073
     JNZ 0x0051305f                      ; 00513075
@@ -179,7 +179,7 @@ section .text
         ;   XREF to: 005130a5 (CONDITIONAL_JUMP)  ; LAB_005130a5
     MOV AL,byte ptr [ESI + 0x1]         ; 00513095
     ADD ESI,0x2                         ; 00513098
-    MOV byte ptr [EDI + 0x1],AL         ; 0051309b | g_MainMenuTextBuffers[1][1] | DAT_02f28f63
+    MOV byte ptr [EDI + 0x1],AL         ; 0051309b | g_MainMenuTextBuffers[1][1] | g_MainMenuTextBuffers[1][3]
     ADD EDI,0x2                         ; 0051309e
     CMP AL,0x0                          ; 005130a1
     JNZ 0x0051308d                      ; 005130a3
@@ -201,7 +201,7 @@ section .text
         ;   XREF to: 005130d3 (CONDITIONAL_JUMP)  ; LAB_005130d3
     MOV AL,byte ptr [ESI + 0x1]         ; 005130c3
     ADD ESI,0x2                         ; 005130c6
-    MOV byte ptr [EDI + 0x1],AL         ; 005130c9 | g_MainMenuTextBuffers[2][1] | DAT_02f29063
+    MOV byte ptr [EDI + 0x1],AL         ; 005130c9 | g_MainMenuTextBuffers[2][1] | g_MainMenuTextBuffers[2][3]
     ADD EDI,0x2                         ; 005130cc
     CMP AL,0x0                          ; 005130cf
     JNZ 0x005130bb                      ; 005130d1
@@ -224,7 +224,7 @@ section .text
         ;   XREF to: 00513106 (CONDITIONAL_JUMP)  ; LAB_00513106
     MOV AL,byte ptr [ESI + 0x1]         ; 005130f6
     ADD ESI,0x2                         ; 005130f9
-    MOV byte ptr [EDI + 0x1],AL         ; 005130fc | g_MainMenuTextBuffers[3][1] | DAT_02f29163
+    MOV byte ptr [EDI + 0x1],AL         ; 005130fc | g_MainMenuTextBuffers[3][1] | g_MainMenuTextBuffers[3][3]
     ADD EDI,0x2                         ; 005130ff
     CMP AL,0x0                          ; 00513102
     JNZ 0x005130ee                      ; 00513104
@@ -232,7 +232,7 @@ section .text
     POP EDI                             ; 00513106
         ;   Label: LAB_00513106
     XOR EAX,EAX                         ; 00513107
-    MOV dword ptr [EAX + 0x2f29260],EDX ; 00513109 | g_MenuTextPointers | DAT_02f29264 | g_MainMenuTextBuffers
+    MOV dword ptr [EAX + 0x2f29260],EDX ; 00513109 | g_MenuTextPointers | g_MenuTextPointers[1] | g_MainMenuTextBuffers
         ;   Label: LAB_00513109
     ADD EAX,0x4                         ; 0051310f
     ADD EDX,0x100                       ; 00513112 | g_MainMenuTextBuffers[1][0] | g_MainMenuTextBuffers[2][0]

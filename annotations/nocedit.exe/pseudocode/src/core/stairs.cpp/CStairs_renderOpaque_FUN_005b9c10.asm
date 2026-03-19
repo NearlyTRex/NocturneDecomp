@@ -45,7 +45,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_ActiveRenderColor
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -65,7 +65,7 @@ section .text
         ;   Label: core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10
     SUB ESP,0xe0                        ; 005b9c11
     MOV EAX,[0x0067d550]                ; 005b9c17 | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 005b9c1c | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 005b9c1c | g_CDemonMissionInstance.is_in_editor
     JNZ 0x005b9c2c                      ; 005b9c20
         ;   XREF to: 005b9c2c (CONDITIONAL_JUMP)  ; LAB_005b9c2c
     XOR EAX,EAX                         ; 005b9c22

@@ -15,8 +15,8 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02c6d590
-;   undefined4 DAT_02d81c8c
+;   undefined4 g_CDemonRendererInstance.advanced_culling_enabled
+;   undefined4 g_CGameInstance.scripted_sequence_active
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560
@@ -35,11 +35,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 005708e8
     MOV EDI,dword ptr [ESP + 0x1c]      ; 005708ec
     MOV EBX,dword ptr [0x0067b654]      ; 005708f0 | g_CGamePtr
-    CMP dword ptr [EBX + 0x1f0],0x0     ; 005708f6 | DAT_02d81c8c
+    CMP dword ptr [EBX + 0x1f0],0x0     ; 005708f6 | g_CGameInstance.scripted_sequence_active
     JNZ 0x00570930                      ; 005708fd
         ;   XREF to: 00570930 (CONDITIONAL_JUMP)  ; LAB_00570930
     MOV EBX,dword ptr [0x006703ec]      ; 005708ff | g_CDemonRendererPtr2
-    MOV EBX,dword ptr [EBX + 0x18]      ; 00570905 | DAT_02c6d590
+    MOV EBX,dword ptr [EBX + 0x18]      ; 00570905 | g_CDemonRendererInstance.advanced_culling_enabled
     TEST EBX,EBX                        ; 00570908
     JZ 0x00570935                       ; 0057090a
         ;   XREF to: 00570935 (CONDITIONAL_JUMP)  ; LAB_00570935

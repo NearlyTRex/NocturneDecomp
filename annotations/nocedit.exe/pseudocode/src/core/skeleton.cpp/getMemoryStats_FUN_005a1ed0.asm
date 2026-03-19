@@ -13,10 +13,10 @@
 ;   TerminatedCString s_d_skeletons_d_bytes_d_mo_0064f0e6
 ;   int g_DeformableModelCount
 ;   CDeformableModel[64] g_DeformableModelPool
-;   undefined4 DAT_036958a0
+;   undefined4 g_DeformableModelPool[1].num_lods
 ;   int g_SkeletonPoolCount
 ;   CSkeleton[40] g_SkeletonPool
-;   undefined4 DAT_038f60d0
+;   undefined4 g_SkeletonPool[1].motion_list.state_count
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60
@@ -39,7 +39,7 @@ section .text
     JLE 0x005a1f10                      ; 005a1ee0
         ;   XREF to: 005a1f10 (CONDITIONAL_JUMP)  ; LAB_005a1f10
     MOV ESI,0x38cc8a4                   ; 005a1ee2 | g_SkeletonPool
-    PUSH ESI                            ; 005a1ee7 | g_SkeletonPool | DAT_038f60d0
+    PUSH ESI                            ; 005a1ee7 | g_SkeletonPool | g_SkeletonPool[1].motion_list.state_count
         ;   Label: LAB_005a1ee7
     CALL core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_0059a140 ; 005a1ee8
         ;   XREF to: 0059a140 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_0059a140(CSkeleton * this_ptr)
@@ -62,7 +62,7 @@ section .text
     JLE 0x005a1f40                      ; 005a1f1c
         ;   XREF to: 005a1f40 (CONDITIONAL_JUMP)  ; LAB_005a1f40
     MOV ESI,0x368c8a0                   ; 005a1f1e | g_DeformableModelPool
-    PUSH ESI                            ; 005a1f23 | g_DeformableModelPool | DAT_036958a0
+    PUSH ESI                            ; 005a1f23 | g_DeformableModelPool | g_DeformableModelPool[1].num_lods
         ;   Label: LAB_005a1f23
     CALL core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60 ; 005a1f24
         ;   XREF to: 0059dd60 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60(CDeformableModel * this_ptr)

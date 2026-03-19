@@ -44,6 +44,7 @@
 #include "types/funcdefs/APIDLL_sync.h"
 #include "types/funcdefs/APIDLL_toggle.h"
 #include "types/funcdefs/APIDLL_toggleX.h"
+#include "types/funcdefs/APIDLL_unknown.h"
 #include "types/funcdefs/APIDLL_unlockFrame.h"
 #include "types/funcdefs/APIDLL_unlockFrameX.h"
 #include "types/funcdefs/APIDLL_unlockHoldBuffer.h"

@@ -28,7 +28,7 @@
 ;   double g_AngleConstant90Degrees2 = 90
 ;   double g_AngleConstant90Degrees3 = 90
 ;   int[14] g_OctantRotationAngles
-;   undefined4 DAT_0066ef14
+;   undefined4 g_OctantRotationAngles[7]
 ;   int g_VertexCount
 ;   int g_PolygonCount
 ;
@@ -269,7 +269,7 @@ section .text
         ;   XREF to: 0046967c (CONDITIONAL_JUMP)  ; LAB_0046967c
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046965a
     SHL EAX,0x2                         ; 0046965d
-    PUSH dword ptr [EAX + 0x66ef14]     ; 00469660 | DAT_0066ef14
+    PUSH dword ptr [EAX + 0x66ef14]     ; 00469660 | g_OctantRotationAngles[7]
     PUSH 0x0                            ; 00469666
     MOV EAX,dword ptr [EBP + -0x4]      ; 00469668
     SHL EAX,0x2                         ; 0046966b

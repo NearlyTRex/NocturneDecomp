@@ -13,7 +13,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_0326ef00
+;   undefined4 g_CDemonSetInstance.disable_directional_lighting
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
@@ -57,7 +57,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 004194e7 | g_CDemonSetPtr
     MOV EBX,dword ptr [EBP + 0xcb0]     ; 004194ec
     PUSH EBP                            ; 004194f2
-    MOV dword ptr [EAX + 0x15ac88],EBX  ; 004194f3 | DAT_0326ef00
+    MOV dword ptr [EAX + 0x15ac88],EBX  ; 004194f3 | g_CDemonSetInstance.disable_directional_lighting
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 004194f9
         ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
     ADD ESP,0x4                         ; 004194fe

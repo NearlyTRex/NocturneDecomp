@@ -20,9 +20,9 @@
 ;   int g_CurrentEditingColumn
 ;   int g_CurrentEditingLine
 ;   char[1023] g_ScriptEditorStatusText
-;   undefined4 DAT_0310fdc1
-;   undefined4 DAT_0310fdc2
-;   undefined4 DAT_0310fdc3
+;   undefined4 g_ScriptEditorStatusText+1
+;   undefined4 g_ScriptEditorStatusText+2
+;   undefined4 g_ScriptEditorStatusText+3
 ;
 ; Called Functions:
 ;   core_script.cpp_clearSelections_FUN_005644e0
@@ -98,13 +98,13 @@ section .text
     PUSH EDI                            ; 0056610d | g_ScriptEditorStatusText
     MOV AL,byte ptr [ESI]               ; 0056610e | = "Syntax check OK." | s_ntax_check_OK._00643f4f
         ;   Label: LAB_0056610e
-    MOV byte ptr [EDI],AL               ; 00566110 | g_ScriptEditorStatusText | DAT_0310fdc2
+    MOV byte ptr [EDI],AL               ; 00566110 | g_ScriptEditorStatusText | g_ScriptEditorStatusText+2
     CMP AL,0x0                          ; 00566112
     JZ 0x00566126                       ; 00566114
         ;   XREF to: 00566126 (CONDITIONAL_JUMP)  ; LAB_00566126
     MOV AL,byte ptr [ESI + 0x1]         ; 00566116 | s_yntax_check_OK._00643f4e | s_tax_check_OK._00643f50
     ADD ESI,0x2                         ; 00566119
-    MOV byte ptr [EDI + 0x1],AL         ; 0056611c | DAT_0310fdc1 | DAT_0310fdc3
+    MOV byte ptr [EDI + 0x1],AL         ; 0056611c | g_ScriptEditorStatusText+1 | g_ScriptEditorStatusText+3
     ADD EDI,0x2                         ; 0056611f
     CMP AL,0x0                          ; 00566122
     JNZ 0x0056610e                      ; 00566124
@@ -135,13 +135,13 @@ section .text
     PUSH EDI                            ; 0056615a | g_ScriptEditorStatusText
     MOV AL,byte ptr [ESI]               ; 0056615b
         ;   Label: LAB_0056615b
-    MOV byte ptr [EDI],AL               ; 0056615d | g_ScriptEditorStatusText | DAT_0310fdc2
+    MOV byte ptr [EDI],AL               ; 0056615d | g_ScriptEditorStatusText | g_ScriptEditorStatusText+2
     CMP AL,0x0                          ; 0056615f
     JZ 0x00566173                       ; 00566161
         ;   XREF to: 00566173 (CONDITIONAL_JUMP)  ; LAB_00566173
     MOV AL,byte ptr [ESI + 0x1]         ; 00566163
     ADD ESI,0x2                         ; 00566166
-    MOV byte ptr [EDI + 0x1],AL         ; 00566169 | DAT_0310fdc1 | DAT_0310fdc3
+    MOV byte ptr [EDI + 0x1],AL         ; 00566169 | g_ScriptEditorStatusText+1 | g_ScriptEditorStatusText+3
     ADD EDI,0x2                         ; 0056616c
     CMP AL,0x0                          ; 0056616f
     JNZ 0x0056615b                      ; 00566171

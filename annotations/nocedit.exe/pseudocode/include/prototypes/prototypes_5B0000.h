@@ -129,7 +129,7 @@ int * __cdecl core_sound_cpp_assignInt_FUN_005b3e40(int *dest_ptr,int *src_ptr);
 STrainNoise * __cdecl core_sound_cpp_STrainNoise_arrdtor_FUN_005b3e50(STrainNoise *objs,uint flags);
 void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3e70(void);
 void __cdecl wincore_windll_cpp_clearZBuffer_FUN_005b3ed4(void);
-void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3f37(int color);
+void __cdecl wincore_windll_cpp_clearScreenRegion_FUN_005b3f37(int color);
 void __cdecl wincore_windll_cpp_fillDepthRegion_FUN_005b3fc2(int left,int right,int top,int bottom);
 void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031 (SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823 (SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);

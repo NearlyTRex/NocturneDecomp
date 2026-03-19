@@ -15,7 +15,7 @@
 ;   undefined4 g_RenderVertexBuffer[0].v
 ;   uint g_ProcessedVertexOffset
 ;   int[24] g_ProcessedVertexIndices
-;   undefined4 DAT_00772a9c
+;   undefined4 g_ProcessedVertexIndices[1]
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   float g_PerspectiveReciprocal
 ;   int g_MMXSupported
@@ -95,7 +95,7 @@ section .text
         ;   XREF to: 0040481b (CONDITIONAL_JUMP)  ; LAB_0040481b
     MOV EDX,dword ptr [EAX]             ; 00404773
     ADD EDX,EBP                         ; 00404775
-    MOV dword ptr [EBX],EDX             ; 00404777 | g_ProcessedVertexIndices | DAT_00772a9c
+    MOV dword ptr [EBX],EDX             ; 00404777 | g_ProcessedVertexIndices | g_ProcessedVertexIndices[1]
     MOV EDX,dword ptr [EAX]             ; 00404779
     ADD EDX,EBP                         ; 0040477b
     IMUL EDX,EDX,0x30                   ; 0040477d
@@ -105,7 +105,7 @@ section .text
     ADD EDX,EBP                         ; 0040478b
     IMUL ESI,EDX,0x30                   ; 0040478d
     ADD EAX,0xc                         ; 00404790
-    ADD EBX,0x4                         ; 00404793 | DAT_00772a9c
+    ADD EBX,0x4                         ; 00404793 | g_ProcessedVertexIndices[1]
     MOV EDX,dword ptr [EAX + -0x4]      ; 00404796
     ADD ECX,0x3                         ; 00404799
     MOV dword ptr [ESI + 0x688030],EDX  ; 0040479c | g_RenderVertexBuffer[0].v

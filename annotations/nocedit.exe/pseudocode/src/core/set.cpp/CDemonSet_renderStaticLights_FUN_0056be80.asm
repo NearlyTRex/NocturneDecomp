@@ -34,7 +34,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CFireEffect g_CFireEffectInstance
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81ac0
+;   undefined4 g_CGameInstance.shadow_flag
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -64,10 +64,10 @@ section .text
     SUB ESP,0x30                        ; 0056be84
     MOV ESI,dword ptr [ESP + 0x44]      ; 0056be87
     MOV EAX,[0x0067b654]                ; 0056be8b | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x24],0x0      ; 0056be90 | DAT_02d81ac0
+    CMP dword ptr [EAX + 0x24],0x0      ; 0056be90 | g_CGameInstance.shadow_flag
     JZ 0x0056bf5b                       ; 0056be94
         ;   XREF to: 0056bf5b (CONDITIONAL_JUMP)  ; LAB_0056bf5b
-    CMP dword ptr [EAX + 0x20c],0x0     ; 0056be9a | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x0     ; 0056be9a | g_CGameInstance.profile_mode
     JNZ 0x0056bf63                      ; 0056bea1
         ;   XREF to: 0056bf63 (CONDITIONAL_JUMP)  ; LAB_0056bf63
     XOR EBX,EBX                         ; 0056bea7
@@ -81,7 +81,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EBX      ; 0056bebd
     MOV EAX,dword ptr [ESP + 0x10]      ; 0056bec1
         ;   Label: LAB_0056bec1
-    MOV EAX,dword ptr [EAX + 0x32776b8] ; 0056bec5 | g_DynamicLights | DAT_032776bc
+    MOV EAX,dword ptr [EAX + 0x32776b8] ; 0056bec5 | g_DynamicLights | g_DynamicLights[1]
     MOV EDX,dword ptr [EAX + 0x1cb4]    ; 0056becb
     MOV dword ptr [ESP + 0x24],EAX      ; 0056bed1
     TEST EDX,EDX                        ; 0056bed5
@@ -108,7 +108,7 @@ section .text
     MOV dword ptr [ESP + 0x14],EBX      ; 0056bf0b
     MOV EAX,dword ptr [ESP + 0x14]      ; 0056bf0f
         ;   Label: LAB_0056bf0f
-    MOV EAX,dword ptr [EAX + 0x3276f34] ; 0056bf13 | g_SpotLightList | DAT_03276f38
+    MOV EAX,dword ptr [EAX + 0x3276f34] ; 0056bf13 | g_SpotLightList | g_SpotLightList[1]
     MOV EDX,dword ptr [EAX + 0x1cb4]    ; 0056bf19
     MOV dword ptr [ESP + 0x20],EAX      ; 0056bf1f
     TEST EDX,EDX                        ; 0056bf23
@@ -127,7 +127,7 @@ section .text
         ;   XREF to: 0056bf0f (CONDITIONAL_JUMP)  ; LAB_0056bf0f
     MOV EAX,[0x0067b654]                ; 0056bf49 | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_0056bf49
-    CMP dword ptr [EAX + 0x20c],0x0     ; 0056bf4e | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x0     ; 0056bf4e | g_CGameInstance.profile_mode
     JNZ 0x0056c147                      ; 0056bf55
         ;   XREF to: 0056c147 (CONDITIONAL_JUMP)  ; LAB_0056c147
     ADD ESP,0x30                        ; 0056bf5b

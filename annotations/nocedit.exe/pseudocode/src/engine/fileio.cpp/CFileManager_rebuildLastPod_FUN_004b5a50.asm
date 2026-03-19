@@ -246,15 +246,15 @@ section .text
     MOV ESI,0x2d12bd0                   ; 004b5bc0 | g_VersionControlSession
     MOV EDI,0x2d12990                   ; 004b5bc5 | g_WorkingDirectoryPath
     PUSH EDI                            ; 004b5bca | g_WorkingDirectoryPath
-    MOV AL,byte ptr [ESI]               ; 004b5bcb | g_VersionControlSession | DAT_02d12bd2
+    MOV AL,byte ptr [ESI]               ; 004b5bcb | g_VersionControlSession | g_VersionControlSession.primary_username[2]
         ;   Label: LAB_004b5bcb
-    MOV byte ptr [EDI],AL               ; 004b5bcd | g_WorkingDirectoryPath | DAT_02d12992
+    MOV byte ptr [EDI],AL               ; 004b5bcd | g_WorkingDirectoryPath | g_WorkingDirectoryPath+2
     CMP AL,0x0                          ; 004b5bcf
     JZ 0x004b5be3                       ; 004b5bd1
         ;   XREF to: 004b5be3 (CONDITIONAL_JUMP)  ; LAB_004b5be3
-    MOV AL,byte ptr [ESI + 0x1]         ; 004b5bd3 | DAT_02d12bd1 | DAT_02d12bd3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004b5bd3 | g_VersionControlSession.primary_username[1] | g_VersionControlSession.primary_username[3]
     ADD ESI,0x2                         ; 004b5bd6
-    MOV byte ptr [EDI + 0x1],AL         ; 004b5bd9 | DAT_02d12991 | DAT_02d12993
+    MOV byte ptr [EDI + 0x1],AL         ; 004b5bd9 | g_WorkingDirectoryPath+1 | g_WorkingDirectoryPath+3
     ADD EDI,0x2                         ; 004b5bdc
     CMP AL,0x0                          ; 004b5bdf
     JNZ 0x004b5bcb                      ; 004b5be1
@@ -454,13 +454,13 @@ section .text
     PUSH EDI                            ; 004b5e45 | g_CurrentFilenameBuffer
     MOV AL,byte ptr [ESI]               ; 004b5e46
         ;   Label: LAB_004b5e46
-    MOV byte ptr [EDI],AL               ; 004b5e48 | g_CurrentFilenameBuffer | DAT_02d129ba
+    MOV byte ptr [EDI],AL               ; 004b5e48 | g_CurrentFilenameBuffer | g_CurrentFilenameBuffer+2
     CMP AL,0x0                          ; 004b5e4a
     JZ 0x004b5e5e                       ; 004b5e4c
         ;   XREF to: 004b5e5e (CONDITIONAL_JUMP)  ; LAB_004b5e5e
     MOV AL,byte ptr [ESI + 0x1]         ; 004b5e4e
     ADD ESI,0x2                         ; 004b5e51
-    MOV byte ptr [EDI + 0x1],AL         ; 004b5e54 | DAT_02d129b9 | DAT_02d129bb
+    MOV byte ptr [EDI + 0x1],AL         ; 004b5e54 | g_CurrentFilenameBuffer+1 | g_CurrentFilenameBuffer+3
     ADD EDI,0x2                         ; 004b5e57
     CMP AL,0x0                          ; 004b5e5a
     JNZ 0x004b5e46                      ; 004b5e5c
@@ -477,7 +477,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x4]       ; 004b5e83
     MOV dword ptr [0x02d12ab8],EDX      ; 004b5e86 | g_CurrentFileTimestamp
     MOV [0x02d12abc],EAX                ; 004b5e8c | g_CurrentFileSize
-    MOVSD.REP ES:EDI,ESI                ; 004b5e91 | g_WorkingDirectoryPath | DAT_02d12994
+    MOVSD.REP ES:EDI,ESI                ; 004b5e91 | g_WorkingDirectoryPath | g_WorkingDirectoryPath+4
     MOV EDI,dword ptr [0x02d12d30]      ; 004b5e93 | g_AuditRecordCount
     INC EDI                             ; 004b5e99
     MOV dword ptr [0x02d12d30],EDI      ; 004b5e9a | g_AuditRecordCount
@@ -1085,13 +1085,13 @@ section .text
     PUSH EDI                            ; 004b663b | g_CurrentFilenameBuffer
     MOV AL,byte ptr [ESI]               ; 004b663c
         ;   Label: LAB_004b663c
-    MOV byte ptr [EDI],AL               ; 004b663e | g_CurrentFilenameBuffer | DAT_02d129ba
+    MOV byte ptr [EDI],AL               ; 004b663e | g_CurrentFilenameBuffer | g_CurrentFilenameBuffer+2
     CMP AL,0x0                          ; 004b6640
     JZ 0x004b6654                       ; 004b6642
         ;   XREF to: 004b6654 (CONDITIONAL_JUMP)  ; LAB_004b6654
     MOV AL,byte ptr [ESI + 0x1]         ; 004b6644
     ADD ESI,0x2                         ; 004b6647
-    MOV byte ptr [EDI + 0x1],AL         ; 004b664a | DAT_02d129b9 | DAT_02d129bb
+    MOV byte ptr [EDI + 0x1],AL         ; 004b664a | g_CurrentFilenameBuffer+1 | g_CurrentFilenameBuffer+3
     ADD EDI,0x2                         ; 004b664d
     CMP AL,0x0                          ; 004b6650
     JNZ 0x004b663c                      ; 004b6652
@@ -1137,7 +1137,7 @@ section .text
     MOV ECX,0x4e                        ; 004b66de
     MOV dword ptr [0x02d129b4],EBP      ; 004b66e3 | g_AuditOperationType
     PUSH EAX                            ; 004b66e9
-    MOVSD.REP ES:EDI,ESI                ; 004b66ea | g_WorkingDirectoryPath | DAT_02d12994
+    MOVSD.REP ES:EDI,ESI                ; 004b66ea | g_WorkingDirectoryPath | g_WorkingDirectoryPath+4
     CALL shape_memdbg.cpp_debugRealloc_FUN_0050f540 ; 004b66ec
         ;   XREF to: 0050f540 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
     ADD ESP,0x10                        ; 004b66f1
@@ -1212,7 +1212,7 @@ section .text
     MOV dword ptr [0x02d12abc],ESI      ; 004b67d2 | g_CurrentFileSize
     MOV ESI,0x2d12990                   ; 004b67d8 | g_WorkingDirectoryPath
     PUSH EAX                            ; 004b67dd
-    MOVSD.REP ES:EDI,ESI                ; 004b67de | g_WorkingDirectoryPath | DAT_02d12994
+    MOVSD.REP ES:EDI,ESI                ; 004b67de | g_WorkingDirectoryPath | g_WorkingDirectoryPath+4
     CALL shape_memdbg.cpp_debugRealloc_FUN_0050f540 ; 004b67e0
         ;   XREF to: 0050f540 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
     ADD ESP,0x10                        ; 004b67e5
@@ -1495,7 +1495,7 @@ section .text
     ADD ESP,0x4                         ; 004b6b6d
     MOV EAX,[0x00680cdc]                ; 004b6b70 | g_CDemonPodPtr
     PUSH EAX                            ; 004b6b75 | g_CDemonPodInstance
-    MOV EDX,dword ptr [EAX + 0x194]     ; 004b6b76 | DAT_030e5224
+    MOV EDX,dword ptr [EAX + 0x194]     ; 004b6b76 | g_CDemonPodInstance.vtable
     CALL dword ptr [EDX + 0x4]          ; 004b6b7c
     ADD ESP,0x4                         ; 004b6b7f
     JMP 0x004b6a42                      ; 004b6b82

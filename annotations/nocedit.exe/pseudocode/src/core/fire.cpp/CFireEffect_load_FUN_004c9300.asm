@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_d_0062a0c3
 ;   CCrater[20] g_CraterPool
-;   undefined4 DAT_02d6c714
+;   undefined4 g_CraterPool[1].active
 ;   int g_GunFlameAllocIndex
 ;
 ; Called Functions:
@@ -60,10 +60,10 @@ section .text
     ADD ESP,0xc                         ; 004c935a
     PUSH EDI                            ; 004c935d
         ;   Label: LAB_004c935d
-    PUSH EBX                            ; 004c935e | g_CraterPool | DAT_02d6c714
+    PUSH EBX                            ; 004c935e | g_CraterPool | g_CraterPool[1].active
     CALL core_fire.cpp_CCrater_load_FUN_004c4880 ; 004c935f
         ;   XREF to: 004c4880 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_load_FUN_004c4880(CCrater * this_ptr, _FILE * file_handle)
-    ADD EBX,0x70                        ; 004c9364 | DAT_02d6c714
+    ADD EBX,0x70                        ; 004c9364 | g_CraterPool[1].active
     ADD ESP,0x8                         ; 004c9367
     CMP EBX,ESI                         ; 004c936a
     JNZ 0x004c935d                      ; 004c936c

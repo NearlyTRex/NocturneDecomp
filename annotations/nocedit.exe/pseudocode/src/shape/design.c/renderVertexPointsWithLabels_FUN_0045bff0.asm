@@ -25,15 +25,15 @@
 ;   int g_WindowHeight = 0xc8
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_z
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_x
-;   undefined4 DAT_00688024+3
+;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_x+3
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_y
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;   int g_PolygonCount
-;   undefined4 DAT_016e99b4
-;   undefined4 DAT_016e99c8
+;   undefined4 g_ModelPolygonData[0].vertex_indices_count
+;   undefined4 g_ModelPolygonData[0].vertex_indices[0]
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -91,7 +91,7 @@ section .text
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [EBP + -0x28]       ; 0045c05b
     IMUL EAX,dword ptr [EBP + -0x14],0x14 ; 0045c05e
-    FLD float ptr [EAX + 0x1626410]     ; 0045c062 | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 0045c062 | g_LoadedVertices[0].vertex.y
     FMUL float ptr [0x0061b316]         ; 0045c068 | g_VertexDisplayScale
     CALL crt_math.c_round_FUN_005fe6b0  ; 0045c06e
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
@@ -211,7 +211,7 @@ section .text
     JGE 0x0045c205                      ; 0045c1ab
         ;   XREF to: 0045c205 (CONDITIONAL_JUMP)  ; LAB_0045c205
     IMUL EAX,dword ptr [EBP + -0x1c],0x184 ; 0045c1ad
-    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 0045c1b4 | DAT_016e9a88
+    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 0045c1b4 | g_ModelPolygonData[0].part_assignment
     CMP EAX,dword ptr [0x01e6614c]      ; 0045c1ba | g_CurrentPartIndex
     JZ 0x0045c1c4                       ; 0045c1c0
         ;   XREF to: 0045c1c4 (CONDITIONAL_JUMP)  ; LAB_0045c1c4
@@ -227,14 +227,14 @@ section .text
     IMUL EDX,dword ptr [EBP + -0x1c],0x184 ; 0045c1d3
         ;   Label: LAB_0045c1d3
     MOV EAX,dword ptr [EBP + -0x18]     ; 0045c1da
-    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0045c1dd | DAT_016e99b4
+    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0045c1dd | g_ModelPolygonData[0].vertex_indices_count
     JGE 0x0045c203                      ; 0045c1e3
         ;   XREF to: 0045c203 (CONDITIONAL_JUMP)  ; LAB_0045c203
     IMUL EDX,dword ptr [EBP + -0x1c],0x184 ; 0045c1e5
     MOV EAX,dword ptr [EBP + -0x18]     ; 0045c1ec
     SHL EAX,0x2                         ; 0045c1ef
     ADD EAX,EDX                         ; 0045c1f2
-    MOV EAX,dword ptr [EAX + 0x16e99c8] ; 0045c1f4 | DAT_016e99c8
+    MOV EAX,dword ptr [EAX + 0x16e99c8] ; 0045c1f4 | g_ModelPolygonData[0].vertex_indices[0]
     CMP EAX,dword ptr [EBP + -0x10]     ; 0045c1fa
     JNZ 0x0045c201                      ; 0045c1fd
         ;   XREF to: 0045c201 (CONDITIONAL_JUMP)  ; LAB_0045c201
@@ -260,7 +260,7 @@ section .text
     SAR EAX,0x10                        ; 0045c22e
     MOV dword ptr [EBP + -0x8],EAX      ; 0045c231
     IMUL EAX,dword ptr [EBP + -0x10],0x30 ; 0045c234
-    TEST byte ptr [EAX + 0x688027],0x80 ; 0045c238 | DAT_00688024+3
+    TEST byte ptr [EAX + 0x688027],0x80 ; 0045c238 | g_RenderVertexBuffer[0].projected_vertex.screen_x+3
     JZ 0x0045c246                       ; 0045c23f
         ;   XREF to: 0045c246 (CONDITIONAL_JUMP)  ; LAB_0045c246
     JMP 0x0045c2d6                      ; 0045c241

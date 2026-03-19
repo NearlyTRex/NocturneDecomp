@@ -15,9 +15,9 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
 ;   char[40] g_SoundAmbientSoundName
-;   undefined4 DAT_03f6b781
-;   undefined4 DAT_03f6b782
-;   undefined4 DAT_03f6b783
+;   undefined4 g_SoundAmbientSoundName+1
+;   undefined4 g_SoundAmbientSoundName+2
+;   undefined4 g_SoundAmbientSoundName+3
 ;   int g_SoundAmbientSfxHandle
 ;   int g_SoundAudioInitialized
 ;
@@ -44,13 +44,13 @@ section .text
     PUSH EDI                            ; 005b39cf | g_SoundAmbientSoundName
     MOV AL,byte ptr [ESI]               ; 005b39d0
         ;   Label: LAB_005b39d0
-    MOV byte ptr [EDI],AL               ; 005b39d2 | g_SoundAmbientSoundName | DAT_03f6b782
+    MOV byte ptr [EDI],AL               ; 005b39d2 | g_SoundAmbientSoundName | g_SoundAmbientSoundName+2
     CMP AL,0x0                          ; 005b39d4
     JZ 0x005b39e8                       ; 005b39d6
         ;   XREF to: 005b39e8 (CONDITIONAL_JUMP)  ; LAB_005b39e8
     MOV AL,byte ptr [ESI + 0x1]         ; 005b39d8
     ADD ESI,0x2                         ; 005b39db
-    MOV byte ptr [EDI + 0x1],AL         ; 005b39de | DAT_03f6b781 | DAT_03f6b783
+    MOV byte ptr [EDI + 0x1],AL         ; 005b39de | g_SoundAmbientSoundName+1 | g_SoundAmbientSoundName+3
     ADD EDI,0x2                         ; 005b39e1
     CMP AL,0x0                          ; 005b39e4
     JNZ 0x005b39d0                      ; 005b39e6

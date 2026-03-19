@@ -13,13 +13,13 @@
 ;   CVector3f[16] g_ClipBuffer5Vertices
 ;   undefined4 g_ClipBuffer5Vertices[0].y
 ;   undefined4 g_ClipBuffer5Vertices[0].z
-;   undefined4 DAT_02cee9b8
+;   undefined4 g_ClipBuffer5Vertices[1].z
 ;   undefined4 g_ClipBuffer5Vertices[2].x
-;   undefined4 DAT_02cee9c4
+;   undefined4 g_ClipBuffer5Vertices[2].z
 ;   int g_ClipOutputVertexCount
 ;   CVector3f[16] g_ClipOutputVertices
-;   undefined4 DAT_02ceea6c
-;   undefined4 DAT_02ceea70
+;   undefined4 g_ClipOutputVertices[0].y
+;   undefined4 g_ClipOutputVertices[0].z
 ;
 ; Called Functions:
 ;   core_dtri.cpp_clipLineToPlane_FUN_0049b6c0
@@ -55,7 +55,7 @@ section .text
     IMUL ECX,ECX,0xc                    ; 0049bf9b
         ;   Label: LAB_0049bf9b
     MOV EAX,0x2cee9a4                   ; 0049bf9e | g_ClipBuffer5Vertices
-    FLD float ptr [ESI + 0x8]           ; 0049bfa3 | g_ClipBuffer5Vertices[0].z | DAT_02cee9b8
+    FLD float ptr [ESI + 0x8]           ; 0049bfa3 | g_ClipBuffer5Vertices[0].z | g_ClipBuffer5Vertices[1].z
     ADD EAX,ECX                         ; 0049bfa6
     MOV EDX,ESI                         ; 0049bfa8 | g_ClipBuffer5Vertices
     MOV dword ptr [ESP + 0x4],EAX       ; 0049bfaa | g_ClipBuffer5Vertices[2].x
@@ -68,7 +68,7 @@ section .text
     MOV ECX,0x1                         ; 0049bfb8
     MOV EAX,dword ptr [ESP + 0x4]       ; 0049bfbd
         ;   Label: LAB_0049bfbd
-    FLD float ptr [EAX + 0x8]           ; 0049bfc1 | g_ClipBuffer5Vertices[0].z | DAT_02cee9c4
+    FLD float ptr [EAX + 0x8]           ; 0049bfc1 | g_ClipBuffer5Vertices[0].z | g_ClipBuffer5Vertices[2].z
     FCOMP float ptr [ESP]               ; 0049bfc4
     FNSTSW AX                           ; 0049bfc7
     SAHF                                ; 0049bfc9
@@ -90,9 +90,9 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0049bfe8 | g_ClipBuffer5Vertices
     MOV dword ptr [ECX],EAX             ; 0049bfea | g_ClipOutputVertices
     MOV EAX,dword ptr [EDX + 0x4]       ; 0049bfec | g_ClipBuffer5Vertices[0].y
-    MOV dword ptr [ECX + 0x4],EAX       ; 0049bfef | DAT_02ceea6c
+    MOV dword ptr [ECX + 0x4],EAX       ; 0049bfef | g_ClipOutputVertices[0].y
     MOV EAX,dword ptr [EDX + 0x8]       ; 0049bff2 | g_ClipBuffer5Vertices[0].z
-    MOV dword ptr [ECX + 0x8],EAX       ; 0049bff5 | DAT_02ceea70
+    MOV dword ptr [ECX + 0x8],EAX       ; 0049bff5 | g_ClipOutputVertices[0].z
     INC EBX                             ; 0049bff8
         ;   Label: LAB_0049bff8
     MOV ECX,dword ptr [0x02cee9a0]      ; 0049bff9 | g_ClipBuffer5VertexCount
@@ -142,9 +142,9 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0049c05f | g_ClipBuffer5Vertices
     MOV dword ptr [ECX],EAX             ; 0049c061 | g_ClipOutputVertices
     MOV EAX,dword ptr [EDX + 0x4]       ; 0049c063 | g_ClipBuffer5Vertices[0].y
-    MOV dword ptr [ECX + 0x4],EAX       ; 0049c066 | DAT_02ceea6c
+    MOV dword ptr [ECX + 0x4],EAX       ; 0049c066 | g_ClipOutputVertices[0].y
     MOV EAX,dword ptr [EDX + 0x8]       ; 0049c069 | g_ClipBuffer5Vertices[0].z
-    MOV dword ptr [ECX + 0x8],EAX       ; 0049c06c | DAT_02ceea70
+    MOV dword ptr [ECX + 0x8],EAX       ; 0049c06c | g_ClipOutputVertices[0].z
     INC EBX                             ; 0049c06f
         ;   Label: LAB_0049c06f
     IMUL ECX,EBX,0xc                    ; 0049c070

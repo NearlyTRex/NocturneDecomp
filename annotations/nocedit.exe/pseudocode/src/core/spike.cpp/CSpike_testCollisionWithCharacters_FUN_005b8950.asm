@@ -46,7 +46,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.character_count
 ;   undefined4 g_CDemonSetInstance.characters[0]
-;   undefined4 DAT_03263318
+;   undefined4 g_CDemonSetInstance.characters[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -221,7 +221,7 @@ section .text
     JGE 0x005b8e85                      ; 005b8b84
         ;   XREF to: 005b8e85 (CONDITIONAL_JUMP)  ; LAB_005b8e85
     ADD EAX,dword ptr [ESP + 0x1b4]     ; 005b8b8a
-    MOV EBX,dword ptr [EAX + 0x14f09c]  ; 005b8b91 | g_CDemonSetInstance.characters[0] | DAT_03263318
+    MOV EBX,dword ptr [EAX + 0x14f09c]  ; 005b8b91 | g_CDemonSetInstance.characters[0] | g_CDemonSetInstance.characters[1]
     MOV EAX,dword ptr [ESP + 0x1b8]     ; 005b8b97
     LEA EDI,[EBX + 0x20]                ; 005b8b9e
     FLD float ptr [EAX]                 ; 005b8ba1

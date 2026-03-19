@@ -360,10 +360,13 @@ def main():
                 if not dry_run:
                     if stats['removed'] > 0:
                         currentProgram.endTransaction(tx_id, True)
-                        print("Transaction committed.")
+                        currentProgram.save("Removed %d redundant DAT_ symbols" % stats['removed'], None)
+                        print("Changes saved to program database.")
                     else:
                         currentProgram.endTransaction(tx_id, False)
                         print("No changes — transaction rolled back.")
+
+        project.close()
 
     except Exception as e:
         print("ERROR: %s" % e)

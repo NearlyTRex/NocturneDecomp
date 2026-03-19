@@ -93,7 +93,7 @@ section .text
     TEST EDI,0x7                        ; 005f85b0
     JZ 0x005f85be                       ; 005f85b6
         ;   XREF to: 005f85be (CONDITIONAL_JUMP)  ; LAB_005f85be
-    MOVSD ES:EDI,ESI                    ; 005f85b8 | g_RenderVertexBuffer | DAT_00824e58
+    MOVSD ES:EDI,ESI                    ; 005f85b8 | g_RenderVertexBuffer | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     SUB ECX,0x4                         ; 005f85b9
     JLE 0x005f85db                      ; 005f85bc
         ;   XREF to: 005f85db (CONDITIONAL_JUMP)  ; LAB_005f85db
@@ -103,7 +103,7 @@ section .text
         ;   XREF to: 005f85cf (CONDITIONAL_JUMP)  ; LAB_005f85cf
     FILD qword ptr [ESI]                ; 005f85c3 | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_z | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     ADD ESI,0x8                         ; 005f85c5
-    FISTP qword ptr [EDI]               ; 005f85c8 | g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_z | DAT_00824e5c
+    FISTP qword ptr [EDI]               ; 005f85c8 | g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_z | g_ClippedVertexBuffer[1].projected_vertex.transformed_y
     ADD EDI,0x8                         ; 005f85ca
     JMP 0x005f85be                      ; 005f85cd
         ;   XREF to: 005f85be (UNCONDITIONAL_JUMP)  ; LAB_005f85be
@@ -115,7 +115,7 @@ section .text
     SUB ECX,0x4                         ; 005f85d5
     JLE 0x005f85db                      ; 005f85d8
         ;   XREF to: 005f85db (CONDITIONAL_JUMP)  ; LAB_005f85db
-    MOVSD ES:EDI,ESI                    ; 005f85da | g_RenderVertexBuffer[0].projected_vertex.inv_z | DAT_00824e34
+    MOVSD ES:EDI,ESI                    ; 005f85da | g_RenderVertexBuffer[0].projected_vertex.inv_z | g_ClippedVertexBuffer[0].projected_vertex.inv_z
     MOV EAX,dword ptr [ESP + 0x4]       ; 005f85db
         ;   Label: LAB_005f85db
     ADD EBX,0x4                         ; 005f85df
@@ -155,7 +155,7 @@ section .text
     TEST EDI,0x7                        ; 005f8639
     JZ 0x005f8647                       ; 005f863f
         ;   XREF to: 005f8647 (CONDITIONAL_JUMP)  ; LAB_005f8647
-    MOVSD ES:EDI,ESI                    ; 005f8641 | g_RenderVertexBuffer | DAT_03f99b50
+    MOVSD ES:EDI,ESI                    ; 005f8641 | g_RenderVertexBuffer | g_ClipVertexBufferStage1[1].projected_vertex.transformed_x
     SUB ECX,0x4                         ; 005f8642
     JLE 0x005f8664                      ; 005f8645
         ;   XREF to: 005f8664 (CONDITIONAL_JUMP)  ; LAB_005f8664
@@ -165,7 +165,7 @@ section .text
         ;   XREF to: 005f8658 (CONDITIONAL_JUMP)  ; LAB_005f8658
     FILD qword ptr [ESI]                ; 005f864c | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_z | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     ADD ESI,0x8                         ; 005f864e
-    FISTP qword ptr [EDI]               ; 005f8651 | g_ClipVertexBufferStage1 | DAT_03f99b28 | DAT_03f99b54
+    FISTP qword ptr [EDI]               ; 005f8651 | g_ClipVertexBufferStage1 | g_ClipVertexBufferStage1[0].projected_vertex.transformed_z | g_ClipVertexBufferStage1[1].projected_vertex.transformed_y
     ADD EDI,0x8                         ; 005f8653
     JMP 0x005f8647                      ; 005f8656
         ;   XREF to: 005f8647 (UNCONDITIONAL_JUMP)  ; LAB_005f8647
@@ -173,11 +173,11 @@ section .text
         ;   Label: LAB_005f8658
     JLE 0x005f8664                      ; 005f865b
         ;   XREF to: 005f8664 (CONDITIONAL_JUMP)  ; LAB_005f8664
-    MOVSD ES:EDI,ESI                    ; 005f865d | g_RenderVertexBuffer[0].projected_vertex.transformed_z | DAT_03f99b28
+    MOVSD ES:EDI,ESI                    ; 005f865d | g_RenderVertexBuffer[0].projected_vertex.transformed_z | g_ClipVertexBufferStage1[0].projected_vertex.transformed_z
     SUB ECX,0x4                         ; 005f865e
     JLE 0x005f8664                      ; 005f8661
         ;   XREF to: 005f8664 (CONDITIONAL_JUMP)  ; LAB_005f8664
-    MOVSD ES:EDI,ESI                    ; 005f8663 | g_RenderVertexBuffer[0].projected_vertex.inv_z | DAT_03f99b2c
+    MOVSD ES:EDI,ESI                    ; 005f8663 | g_RenderVertexBuffer[0].projected_vertex.inv_z | g_ClipVertexBufferStage1[0].projected_vertex.inv_z
     MOV EAX,dword ptr [ESP]             ; 005f8664
         ;   Label: LAB_005f8664
     INC EBX                             ; 005f8667
@@ -188,7 +188,7 @@ section .text
     JL 0x005f8626                       ; 005f8673
         ;   XREF to: 005f8626 (CONDITIONAL_JUMP)  ; LAB_005f8626
     LEA EAX,[EAX]                       ; 005f8675
-    LEA EDX,[EDX]                       ; 005f867b | DAT_03f99b50
+    LEA EDX,[EDX]                       ; 005f867b | g_ClipVertexBufferStage1[1].projected_vertex.transformed_x
     MOV EBX,EBX                         ; 005f867e
     XOR EDX,EDX                         ; 005f8680
         ;   Label: LAB_005f8680
@@ -209,16 +209,16 @@ section .text
     IMUL EAX,EAX,0x30                   ; 005f86aa
         ;   Label: LAB_005f86aa
     MOV EBP,0x3f99b20                   ; 005f86ad | g_ClipVertexBufferStage1
-    MOV EDX,EBX                         ; 005f86b2 | DAT_03f99b50
-    MOV ESI,dword ptr [EBX]             ; 005f86b4 | g_ClipVertexBufferStage1 | DAT_03f99b50
-    MOV EDI,dword ptr [EBX + 0x8]       ; 005f86b6 | DAT_03f99b28 | DAT_03f99b54+4
+    MOV EDX,EBX                         ; 005f86b2 | g_ClipVertexBufferStage1[1].projected_vertex.transformed_x
+    MOV ESI,dword ptr [EBX]             ; 005f86b4 | g_ClipVertexBufferStage1 | g_ClipVertexBufferStage1[1].projected_vertex.transformed_x
+    MOV EDI,dword ptr [EBX + 0x8]       ; 005f86b6 | g_ClipVertexBufferStage1[0].projected_vertex.transformed_z | g_ClipVertexBufferStage1[1].projected_vertex.transformed_z
     ADD EBP,EAX                         ; 005f86b9
     XOR EAX,EAX                         ; 005f86bb
     CMP ESI,EDI                         ; 005f86bd
     JL 0x005f86c6                       ; 005f86bf
         ;   XREF to: 005f86c6 (CONDITIONAL_JUMP)  ; LAB_005f86c6
     MOV EAX,0x1                         ; 005f86c1
-    MOV ECX,dword ptr [EBP + 0x8]       ; 005f86c6 | DAT_03f99b28
+    MOV ECX,dword ptr [EBP + 0x8]       ; 005f86c6 | g_ClipVertexBufferStage1[0].projected_vertex.transformed_z
         ;   Label: LAB_005f86c6
     CMP ECX,dword ptr [EBP]             ; 005f86c9 | g_ClipVertexBufferStage1
     JG 0x005f86d0                       ; 005f86cc
@@ -238,7 +238,7 @@ section .text
     TEST EDI,0x7                        ; 005f86f0
     JZ 0x005f86fe                       ; 005f86f6
         ;   XREF to: 005f86fe (CONDITIONAL_JUMP)  ; LAB_005f86fe
-    MOVSD ES:EDI,ESI                    ; 005f86f8 | DAT_03f99b50 | g_ClipVertexBufferStage2
+    MOVSD ES:EDI,ESI                    ; 005f86f8 | g_ClipVertexBufferStage1[1].projected_vertex.transformed_x | g_ClipVertexBufferStage2
     SUB ECX,0x4                         ; 005f86f9
     JLE 0x005f871b                      ; 005f86fc
         ;   XREF to: 005f871b (CONDITIONAL_JUMP)  ; LAB_005f871b
@@ -246,9 +246,9 @@ section .text
         ;   Label: LAB_005f86fe
     JL 0x005f870f                       ; 005f8701
         ;   XREF to: 005f870f (CONDITIONAL_JUMP)  ; LAB_005f870f
-    FILD qword ptr [ESI]                ; 005f8703 | DAT_03f99b50 | DAT_03f99b54+4
+    FILD qword ptr [ESI]                ; 005f8703 | g_ClipVertexBufferStage1[1].projected_vertex.transformed_x | g_ClipVertexBufferStage1[1].projected_vertex.transformed_z | g_ClipVertexBufferStage1[1].projected_vertex.transformed_y
     ADD ESI,0x8                         ; 005f8705
-    FISTP qword ptr [EDI]               ; 005f8708 | g_ClipVertexBufferStage2 | DAT_03f99528 | g_ClipVertexBufferStage2[0].projected_vertex.transformed_y
+    FISTP qword ptr [EDI]               ; 005f8708 | g_ClipVertexBufferStage2 | g_ClipVertexBufferStage2[0].projected_vertex.transformed_z | g_ClipVertexBufferStage2[0].projected_vertex.transformed_y
     ADD EDI,0x8                         ; 005f870a
     JMP 0x005f86fe                      ; 005f870d
         ;   XREF to: 005f86fe (UNCONDITIONAL_JUMP)  ; LAB_005f86fe
@@ -256,18 +256,18 @@ section .text
         ;   Label: LAB_005f870f
     JLE 0x005f871b                      ; 005f8712
         ;   XREF to: 005f871b (CONDITIONAL_JUMP)  ; LAB_005f871b
-    MOVSD ES:EDI,ESI                    ; 005f8714 | DAT_03f99b54+4 | DAT_03f99528
+    MOVSD ES:EDI,ESI                    ; 005f8714 | g_ClipVertexBufferStage1[1].projected_vertex.transformed_z | g_ClipVertexBufferStage2[0].projected_vertex.transformed_z
     SUB ECX,0x4                         ; 005f8715
     JLE 0x005f871b                      ; 005f8718
         ;   XREF to: 005f871b (CONDITIONAL_JUMP)  ; LAB_005f871b
-    MOVSD ES:EDI,ESI                    ; 005f871a | DAT_03f99b5c | DAT_03f9952c
+    MOVSD ES:EDI,ESI                    ; 005f871a | g_ClipVertexBufferStage1[1].projected_vertex.inv_z | g_ClipVertexBufferStage2[0].projected_vertex.inv_z
     INC dword ptr [0x03f99514]          ; 005f871b | g_ClipVertexCountStage2
         ;   Label: LAB_005f871b
     MOV ESI,dword ptr [ESP + 0x8]       ; 005f8721
         ;   Label: caseD_3
     MOV EDI,dword ptr [0x03f99510]      ; 005f8725 | g_ClipVertexCountStage1
     INC ESI                             ; 005f872b
-    ADD EBX,0x30                        ; 005f872c | DAT_03f99b50
+    ADD EBX,0x30                        ; 005f872c | g_ClipVertexBufferStage1[1].projected_vertex.transformed_x
     MOV dword ptr [ESP + 0x8],ESI       ; 005f872f
     CMP ESI,EDI                         ; 005f8733
     JL 0x005f8699                       ; 005f8735
@@ -295,8 +295,8 @@ section .text
         ;   Label: LAB_005f876e
     MOV EBP,0x3f99520                   ; 005f8771 | g_ClipVertexBufferStage2
     MOV EDX,EBX                         ; 005f8776 | g_ClipVertexBufferStage2
-    MOV ESI,dword ptr [EBX + 0x8]       ; 005f8778 | DAT_03f99528 | DAT_03f99558
-    MOV ECX,dword ptr [EBX]             ; 005f877b | g_ClipVertexBufferStage2 | DAT_03f99550
+    MOV ESI,dword ptr [EBX + 0x8]       ; 005f8778 | g_ClipVertexBufferStage2[0].projected_vertex.transformed_z | g_ClipVertexBufferStage2[1].projected_vertex.transformed_z
+    MOV ECX,dword ptr [EBX]             ; 005f877b | g_ClipVertexBufferStage2 | g_ClipVertexBufferStage2[1].projected_vertex.transformed_x
     NEG ESI                             ; 005f877d
     ADD EBP,EAX                         ; 005f877f
     XOR EAX,EAX                         ; 005f8781
@@ -304,7 +304,7 @@ section .text
     JL 0x005f878c                       ; 005f8785
         ;   XREF to: 005f878c (CONDITIONAL_JUMP)  ; LAB_005f878c
     MOV EAX,0x1                         ; 005f8787
-    MOV ESI,dword ptr [EBP + 0x8]       ; 005f878c | DAT_03f99528
+    MOV ESI,dword ptr [EBP + 0x8]       ; 005f878c | g_ClipVertexBufferStage2[0].projected_vertex.transformed_z
         ;   Label: LAB_005f878c
     MOV EDI,dword ptr [EBP]             ; 005f878f | g_ClipVertexBufferStage2
     NEG ESI                             ; 005f8792
@@ -334,9 +334,9 @@ section .text
         ;   Label: LAB_005f87c8
     JL 0x005f87d9                       ; 005f87cb
         ;   XREF to: 005f87d9 (CONDITIONAL_JUMP)  ; LAB_005f87d9
-    FILD qword ptr [ESI]                ; 005f87cd | g_ClipVertexBufferStage2 | DAT_03f99528 | g_ClipVertexBufferStage2[0].projected_vertex.transformed_y
+    FILD qword ptr [ESI]                ; 005f87cd | g_ClipVertexBufferStage2 | g_ClipVertexBufferStage2[0].projected_vertex.transformed_z | g_ClipVertexBufferStage2[0].projected_vertex.transformed_y
     ADD ESI,0x8                         ; 005f87cf
-    FISTP qword ptr [EDI]               ; 005f87d2 | g_ClipVertexBufferStage3 | DAT_03f9a128 | g_ClipVertexBufferStage3[0].projected_vertex.transformed_y
+    FISTP qword ptr [EDI]               ; 005f87d2 | g_ClipVertexBufferStage3 | g_ClipVertexBufferStage3[0].projected_vertex.transformed_z | g_ClipVertexBufferStage3[0].projected_vertex.transformed_y
     ADD EDI,0x8                         ; 005f87d4
     JMP 0x005f87c8                      ; 005f87d7
         ;   XREF to: 005f87c8 (UNCONDITIONAL_JUMP)  ; LAB_005f87c8
@@ -344,11 +344,11 @@ section .text
         ;   Label: LAB_005f87d9
     JLE 0x005f87e5                      ; 005f87dc
         ;   XREF to: 005f87e5 (CONDITIONAL_JUMP)  ; LAB_005f87e5
-    MOVSD ES:EDI,ESI                    ; 005f87de | DAT_03f99528 | DAT_03f9a128
+    MOVSD ES:EDI,ESI                    ; 005f87de | g_ClipVertexBufferStage2[0].projected_vertex.transformed_z | g_ClipVertexBufferStage3[0].projected_vertex.transformed_z
     SUB ECX,0x4                         ; 005f87df
     JLE 0x005f87e5                      ; 005f87e2
         ;   XREF to: 005f87e5 (CONDITIONAL_JUMP)  ; LAB_005f87e5
-    MOVSD ES:EDI,ESI                    ; 005f87e4 | DAT_03f9952c | DAT_03f9a12c
+    MOVSD ES:EDI,ESI                    ; 005f87e4 | g_ClipVertexBufferStage2[0].projected_vertex.inv_z | g_ClipVertexBufferStage3[0].projected_vertex.inv_z
     INC dword ptr [0x03f99518]          ; 005f87e5 | g_ClipVertexCountStage3
         ;   Label: LAB_005f87e5
     MOV ECX,dword ptr [ESP + 0x10]      ; 005f87eb
@@ -382,16 +382,16 @@ section .text
     IMUL EAX,EAX,0x30                   ; 005f8838
         ;   Label: LAB_005f8838
     MOV EBP,0x3f9a120                   ; 005f883b | g_ClipVertexBufferStage3
-    MOV EDX,EBX                         ; 005f8840 | DAT_03f9a150
-    MOV ESI,dword ptr [EBX + 0x4]       ; 005f8842 | g_ClipVertexBufferStage3[0].projected_vertex.transformed_y | DAT_03f9a154
-    MOV ECX,dword ptr [EBX + 0x8]       ; 005f8845 | DAT_03f9a128 | DAT_03f9a158
+    MOV EDX,EBX                         ; 005f8840 | g_ClipVertexBufferStage3[1].projected_vertex.transformed_x
+    MOV ESI,dword ptr [EBX + 0x4]       ; 005f8842 | g_ClipVertexBufferStage3[0].projected_vertex.transformed_y | g_ClipVertexBufferStage3[1].projected_vertex.transformed_y
+    MOV ECX,dword ptr [EBX + 0x8]       ; 005f8845 | g_ClipVertexBufferStage3[0].projected_vertex.transformed_z | g_ClipVertexBufferStage3[1].projected_vertex.transformed_z
     ADD EBP,EAX                         ; 005f8848
     XOR EAX,EAX                         ; 005f884a
     CMP ESI,ECX                         ; 005f884c
     JL 0x005f8855                       ; 005f884e
         ;   XREF to: 005f8855 (CONDITIONAL_JUMP)  ; LAB_005f8855
     MOV EAX,0x1                         ; 005f8850
-    MOV EDI,dword ptr [EBP + 0x8]       ; 005f8855 | DAT_03f9a128
+    MOV EDI,dword ptr [EBP + 0x8]       ; 005f8855 | g_ClipVertexBufferStage3[0].projected_vertex.transformed_z
         ;   Label: LAB_005f8855
     CMP EDI,dword ptr [EBP + 0x4]       ; 005f8858 | g_ClipVertexBufferStage3[0].projected_vertex.transformed_y
     JG 0x005f885f                       ; 005f885b
@@ -411,7 +411,7 @@ section .text
     TEST EDI,0x7                        ; 005f887f
     JZ 0x005f888d                       ; 005f8885
         ;   XREF to: 005f888d (CONDITIONAL_JUMP)  ; LAB_005f888d
-    MOVSD ES:EDI,ESI                    ; 005f8887 | DAT_03f9a150 | g_ClipVertexBufferStage4
+    MOVSD ES:EDI,ESI                    ; 005f8887 | g_ClipVertexBufferStage3[1].projected_vertex.transformed_x | g_ClipVertexBufferStage4
     SUB ECX,0x4                         ; 005f8888
     JLE 0x005f88aa                      ; 005f888b
         ;   XREF to: 005f88aa (CONDITIONAL_JUMP)  ; LAB_005f88aa
@@ -419,9 +419,9 @@ section .text
         ;   Label: LAB_005f888d
     JL 0x005f889e                       ; 005f8890
         ;   XREF to: 005f889e (CONDITIONAL_JUMP)  ; LAB_005f889e
-    FILD qword ptr [ESI]                ; 005f8892 | DAT_03f9a150 | DAT_03f9a158 | DAT_03f9a154
+    FILD qword ptr [ESI]                ; 005f8892 | g_ClipVertexBufferStage3[1].projected_vertex.transformed_x | g_ClipVertexBufferStage3[1].projected_vertex.transformed_z | g_ClipVertexBufferStage3[1].projected_vertex.transformed_y
     ADD ESI,0x8                         ; 005f8894
-    FISTP qword ptr [EDI]               ; 005f8897 | g_ClipVertexBufferStage4 | DAT_03f9a728 | g_ClipVertexBufferStage4[0].projected_vertex.transformed_y
+    FISTP qword ptr [EDI]               ; 005f8897 | g_ClipVertexBufferStage4 | g_ClipVertexBufferStage4[0].projected_vertex.transformed_z | g_ClipVertexBufferStage4[0].projected_vertex.transformed_y
     ADD EDI,0x8                         ; 005f8899
     JMP 0x005f888d                      ; 005f889c
         ;   XREF to: 005f888d (UNCONDITIONAL_JUMP)  ; LAB_005f888d
@@ -429,18 +429,18 @@ section .text
         ;   Label: LAB_005f889e
     JLE 0x005f88aa                      ; 005f88a1
         ;   XREF to: 005f88aa (CONDITIONAL_JUMP)  ; LAB_005f88aa
-    MOVSD ES:EDI,ESI                    ; 005f88a3 | DAT_03f9a158 | DAT_03f9a728
+    MOVSD ES:EDI,ESI                    ; 005f88a3 | g_ClipVertexBufferStage3[1].projected_vertex.transformed_z | g_ClipVertexBufferStage4[0].projected_vertex.transformed_z
     SUB ECX,0x4                         ; 005f88a4
     JLE 0x005f88aa                      ; 005f88a7
         ;   XREF to: 005f88aa (CONDITIONAL_JUMP)  ; LAB_005f88aa
-    MOVSD ES:EDI,ESI                    ; 005f88a9 | DAT_03f9a15c | DAT_03f9a72c
+    MOVSD ES:EDI,ESI                    ; 005f88a9 | g_ClipVertexBufferStage3[1].projected_vertex.inv_z | g_ClipVertexBufferStage4[0].projected_vertex.inv_z
     INC dword ptr [0x03f9951c]          ; 005f88aa | g_ClipVertexCountStage4
         ;   Label: LAB_005f88aa
     MOV EDX,dword ptr [ESP + 0x14]      ; 005f88b0
         ;   Label: caseD_3
     MOV ECX,dword ptr [0x03f99518]      ; 005f88b4 | g_ClipVertexCountStage3
     INC EDX                             ; 005f88ba
-    ADD EBX,0x30                        ; 005f88bb | DAT_03f9a150
+    ADD EBX,0x30                        ; 005f88bb | g_ClipVertexBufferStage3[1].projected_vertex.transformed_x
     MOV dword ptr [ESP + 0x14],EDX      ; 005f88be
     CMP EDX,ECX                         ; 005f88c2
     JL 0x005f8827                       ; 005f88c4
@@ -468,8 +468,8 @@ section .text
         ;   Label: LAB_005f88fd
     MOV EBP,0x3f9a720                   ; 005f8900 | g_ClipVertexBufferStage4
     MOV EDX,EBX                         ; 005f8905 | g_ClipVertexBufferStage4
-    MOV ESI,dword ptr [EBX + 0x8]       ; 005f8907 | DAT_03f9a728 | DAT_03f9a758
-    MOV ECX,dword ptr [EBX + 0x4]       ; 005f890a | g_ClipVertexBufferStage4[0].projected_vertex.transformed_y | DAT_03f9a754
+    MOV ESI,dword ptr [EBX + 0x8]       ; 005f8907 | g_ClipVertexBufferStage4[0].projected_vertex.transformed_z | g_ClipVertexBufferStage4[1].projected_vertex.transformed_z
+    MOV ECX,dword ptr [EBX + 0x4]       ; 005f890a | g_ClipVertexBufferStage4[0].projected_vertex.transformed_y | g_ClipVertexBufferStage4[1].projected_vertex.transformed_y
     NEG ESI                             ; 005f890d
     ADD EBP,EAX                         ; 005f890f
     XOR EAX,EAX                         ; 005f8911
@@ -477,7 +477,7 @@ section .text
     JL 0x005f891c                       ; 005f8915
         ;   XREF to: 005f891c (CONDITIONAL_JUMP)  ; LAB_005f891c
     MOV EAX,0x1                         ; 005f8917
-    MOV ESI,dword ptr [EBP + 0x8]       ; 005f891c | DAT_03f9a728
+    MOV ESI,dword ptr [EBP + 0x8]       ; 005f891c | g_ClipVertexBufferStage4[0].projected_vertex.transformed_z
         ;   Label: LAB_005f891c
     MOV EDI,dword ptr [EBP + 0x4]       ; 005f891f | g_ClipVertexBufferStage4[0].projected_vertex.transformed_y
     NEG ESI                             ; 005f8922
@@ -507,9 +507,9 @@ section .text
         ;   Label: LAB_005f8958
     JL 0x005f8969                       ; 005f895b
         ;   XREF to: 005f8969 (CONDITIONAL_JUMP)  ; LAB_005f8969
-    FILD qword ptr [ESI]                ; 005f895d | g_ClipVertexBufferStage4 | DAT_03f9a728 | g_ClipVertexBufferStage4[0].projected_vertex.transformed_y
+    FILD qword ptr [ESI]                ; 005f895d | g_ClipVertexBufferStage4 | g_ClipVertexBufferStage4[0].projected_vertex.transformed_z | g_ClipVertexBufferStage4[0].projected_vertex.transformed_y
     ADD ESI,0x8                         ; 005f895f
-    FISTP qword ptr [EDI]               ; 005f8962 | g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_z | DAT_00824e2c
+    FISTP qword ptr [EDI]               ; 005f8962 | g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_z | g_ClippedVertexBuffer[0].projected_vertex.transformed_y
     ADD EDI,0x8                         ; 005f8964
     JMP 0x005f8958                      ; 005f8967
         ;   XREF to: 005f8958 (UNCONDITIONAL_JUMP)  ; LAB_005f8958
@@ -517,11 +517,11 @@ section .text
         ;   Label: LAB_005f8969
     JLE 0x005f8975                      ; 005f896c
         ;   XREF to: 005f8975 (CONDITIONAL_JUMP)  ; LAB_005f8975
-    MOVSD ES:EDI,ESI                    ; 005f896e | DAT_03f9a728 | g_ClippedVertexBuffer[0].projected_vertex.transformed_z
+    MOVSD ES:EDI,ESI                    ; 005f896e | g_ClipVertexBufferStage4[0].projected_vertex.transformed_z | g_ClippedVertexBuffer[0].projected_vertex.transformed_z
     SUB ECX,0x4                         ; 005f896f
     JLE 0x005f8975                      ; 005f8972
         ;   XREF to: 005f8975 (CONDITIONAL_JUMP)  ; LAB_005f8975
-    MOVSD ES:EDI,ESI                    ; 005f8974 | DAT_03f9a72c | DAT_00824e34
+    MOVSD ES:EDI,ESI                    ; 005f8974 | g_ClipVertexBufferStage4[0].projected_vertex.inv_z | g_ClippedVertexBuffer[0].projected_vertex.inv_z
     INC dword ptr [0x00824e24]          ; 005f8975 | g_ClippedVertexCount
         ;   Label: LAB_005f8975
     MOV EDX,dword ptr [ESP + 0xc]       ; 005f897b
@@ -543,19 +543,19 @@ section .text
     TEST EBX,EBX                        ; 005f89ab
     JLE 0x005f85f0                      ; 005f89ad
         ;   XREF to: 005f85f0 (CONDITIONAL_JUMP)  ; LAB_005f85f0
-    MOV ECX,dword ptr [EAX + 0x8]       ; 005f89b3 | g_ClippedVertexBuffer[0].projected_vertex.transformed_z | DAT_00824e60
+    MOV ECX,dword ptr [EAX + 0x8]       ; 005f89b3 | g_ClippedVertexBuffer[0].projected_vertex.transformed_z | g_ClippedVertexBuffer[1].projected_vertex.transformed_z
         ;   Label: LAB_005f89b3
     TEST ECX,ECX                        ; 005f89b6
     JZ 0x005f8c44                       ; 005f89b8
         ;   XREF to: 005f8c44 (CONDITIONAL_JUMP)  ; LAB_005f8c44
-    CMP ECX,dword ptr [EAX]             ; 005f89be | g_ClippedVertexBuffer | DAT_00824e58
+    CMP ECX,dword ptr [EAX]             ; 005f89be | g_ClippedVertexBuffer | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     JGE 0x005f8c55                      ; 005f89c0
         ;   XREF to: 005f8c55 (CONDITIONAL_JUMP)  ; LAB_005f8c55
-    MOV dword ptr [EAX],ECX             ; 005f89c6 | g_ClippedVertexBuffer | DAT_00824e58
+    MOV dword ptr [EAX],ECX             ; 005f89c6 | g_ClippedVertexBuffer | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     MOV EDX,dword ptr [0x00824e24]      ; 005f89c8 | g_ClippedVertexCount
         ;   Label: LAB_005f89c8
     INC EBP                             ; 005f89ce
-    ADD EAX,0x30                        ; 005f89cf | DAT_00824e58
+    ADD EAX,0x30                        ; 005f89cf | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     CMP EBP,EDX                         ; 005f89d2
     JGE 0x005f85f0                      ; 005f89d4
         ;   XREF to: 005f85f0 (CONDITIONAL_JUMP)  ; LAB_005f85f0
@@ -565,7 +565,7 @@ section .text
         ;   Label: caseD_1
     ADD EAX,0x3f99520                   ; 005f89e3 | g_ClipVertexBufferStage2
     PUSH EAX                            ; 005f89e8 | g_ClipVertexBufferStage2
-    PUSH EDX                            ; 005f89e9 | DAT_03f99b50
+    PUSH EDX                            ; 005f89e9 | g_ClipVertexBufferStage1[1].projected_vertex.transformed_x
     PUSH EBP                            ; 005f89ea
     CALL core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0 ; 005f89eb
         ;   XREF to: 005f7bc0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
@@ -583,7 +583,7 @@ section .text
     TEST EDI,0x7                        ; 005f8a19
     JZ 0x005f8a27                       ; 005f8a1f
         ;   XREF to: 005f8a27 (CONDITIONAL_JUMP)  ; LAB_005f8a27
-    MOVSD ES:EDI,ESI                    ; 005f8a21 | DAT_03f99b50 | g_ClipVertexBufferStage2
+    MOVSD ES:EDI,ESI                    ; 005f8a21 | g_ClipVertexBufferStage1[1].projected_vertex.transformed_x | g_ClipVertexBufferStage2
     SUB ECX,0x4                         ; 005f8a22
     JLE 0x005f8a44                      ; 005f8a25
         ;   XREF to: 005f8a44 (CONDITIONAL_JUMP)  ; LAB_005f8a44
@@ -591,9 +591,9 @@ section .text
         ;   Label: LAB_005f8a27
     JL 0x005f8a38                       ; 005f8a2a
         ;   XREF to: 005f8a38 (CONDITIONAL_JUMP)  ; LAB_005f8a38
-    FILD qword ptr [ESI]                ; 005f8a2c | DAT_03f99b50 | DAT_03f99b54+4
+    FILD qword ptr [ESI]                ; 005f8a2c | g_ClipVertexBufferStage1[1].projected_vertex.transformed_x | g_ClipVertexBufferStage1[1].projected_vertex.transformed_z | g_ClipVertexBufferStage1[1].projected_vertex.transformed_y
     ADD ESI,0x8                         ; 005f8a2e
-    FISTP qword ptr [EDI]               ; 005f8a31 | g_ClipVertexBufferStage2 | DAT_03f99528 | g_ClipVertexBufferStage2[0].projected_vertex.transformed_y
+    FISTP qword ptr [EDI]               ; 005f8a31 | g_ClipVertexBufferStage2 | g_ClipVertexBufferStage2[0].projected_vertex.transformed_z | g_ClipVertexBufferStage2[0].projected_vertex.transformed_y
     ADD EDI,0x8                         ; 005f8a33
     JMP 0x005f8a27                      ; 005f8a36
         ;   XREF to: 005f8a27 (UNCONDITIONAL_JUMP)  ; LAB_005f8a27
@@ -601,20 +601,20 @@ section .text
         ;   Label: LAB_005f8a38
     JLE 0x005f8a44                      ; 005f8a3b
         ;   XREF to: 005f8a44 (CONDITIONAL_JUMP)  ; LAB_005f8a44
-    MOVSD ES:EDI,ESI                    ; 005f8a3d | DAT_03f99b54+4 | DAT_03f99528
+    MOVSD ES:EDI,ESI                    ; 005f8a3d | g_ClipVertexBufferStage1[1].projected_vertex.transformed_z | g_ClipVertexBufferStage2[0].projected_vertex.transformed_z
     SUB ECX,0x4                         ; 005f8a3e
     JLE 0x005f8a44                      ; 005f8a41
         ;   XREF to: 005f8a44 (CONDITIONAL_JUMP)  ; LAB_005f8a44
-    MOVSD ES:EDI,ESI                    ; 005f8a43 | DAT_03f99b5c | DAT_03f9952c
+    MOVSD ES:EDI,ESI                    ; 005f8a43 | g_ClipVertexBufferStage1[1].projected_vertex.inv_z | g_ClipVertexBufferStage2[0].projected_vertex.inv_z
     MOV EDI,dword ptr [0x03f99514]      ; 005f8a44 | g_ClipVertexCountStage2
         ;   Label: LAB_005f8a44
     INC EDI                             ; 005f8a4a
     MOV dword ptr [0x03f99514],EDI      ; 005f8a4b | g_ClipVertexCountStage2
     IMUL EAX,EDI,0x30                   ; 005f8a51
-    ADD EAX,0x3f99520                   ; 005f8a54 | DAT_03f99550 | g_ClipVertexBufferStage2
-    PUSH EAX                            ; 005f8a59 | DAT_03f99550
+    ADD EAX,0x3f99520                   ; 005f8a54 | g_ClipVertexBufferStage2[1].projected_vertex.transformed_x
+    PUSH EAX                            ; 005f8a59 | g_ClipVertexBufferStage2[1].projected_vertex.transformed_x
     PUSH EBP                            ; 005f8a5a
-    PUSH EDX                            ; 005f8a5b | DAT_03f99b50
+    PUSH EDX                            ; 005f8a5b | g_ClipVertexBufferStage1[1].projected_vertex.transformed_x
     CALL core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0 ; 005f8a5c
         ;   XREF to: 005f7bc0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV ESI,dword ptr [0x03f99514]      ; 005f8a61 | g_ClipVertexCountStage2
@@ -653,9 +653,9 @@ section .text
         ;   Label: LAB_005f8ac1
     JL 0x005f8ad2                       ; 005f8ac4
         ;   XREF to: 005f8ad2 (CONDITIONAL_JUMP)  ; LAB_005f8ad2
-    FILD qword ptr [ESI]                ; 005f8ac6 | g_ClipVertexBufferStage2 | DAT_03f99528 | g_ClipVertexBufferStage2[0].projected_vertex.transformed_y
+    FILD qword ptr [ESI]                ; 005f8ac6 | g_ClipVertexBufferStage2 | g_ClipVertexBufferStage2[0].projected_vertex.transformed_z | g_ClipVertexBufferStage2[0].projected_vertex.transformed_y
     ADD ESI,0x8                         ; 005f8ac8
-    FISTP qword ptr [EDI]               ; 005f8acb | g_ClipVertexBufferStage3 | DAT_03f9a128 | g_ClipVertexBufferStage3[0].projected_vertex.transformed_y
+    FISTP qword ptr [EDI]               ; 005f8acb | g_ClipVertexBufferStage3 | g_ClipVertexBufferStage3[0].projected_vertex.transformed_z | g_ClipVertexBufferStage3[0].projected_vertex.transformed_y
     ADD EDI,0x8                         ; 005f8acd
     JMP 0x005f8ac1                      ; 005f8ad0
         ;   XREF to: 005f8ac1 (UNCONDITIONAL_JUMP)  ; LAB_005f8ac1
@@ -663,18 +663,18 @@ section .text
         ;   Label: LAB_005f8ad2
     JLE 0x005f8ade                      ; 005f8ad5
         ;   XREF to: 005f8ade (CONDITIONAL_JUMP)  ; LAB_005f8ade
-    MOVSD ES:EDI,ESI                    ; 005f8ad7 | DAT_03f99528 | DAT_03f9a128
+    MOVSD ES:EDI,ESI                    ; 005f8ad7 | g_ClipVertexBufferStage2[0].projected_vertex.transformed_z | g_ClipVertexBufferStage3[0].projected_vertex.transformed_z
     SUB ECX,0x4                         ; 005f8ad8
     JLE 0x005f8ade                      ; 005f8adb
         ;   XREF to: 005f8ade (CONDITIONAL_JUMP)  ; LAB_005f8ade
-    MOVSD ES:EDI,ESI                    ; 005f8add | DAT_03f9952c | DAT_03f9a12c
+    MOVSD ES:EDI,ESI                    ; 005f8add | g_ClipVertexBufferStage2[0].projected_vertex.inv_z | g_ClipVertexBufferStage3[0].projected_vertex.inv_z
     MOV ECX,dword ptr [0x03f99518]      ; 005f8ade | g_ClipVertexCountStage3
         ;   Label: LAB_005f8ade
     INC ECX                             ; 005f8ae4
     MOV dword ptr [0x03f99518],ECX      ; 005f8ae5 | g_ClipVertexCountStage3
     IMUL EAX,ECX,0x30                   ; 005f8aeb
-    ADD EAX,0x3f9a120                   ; 005f8aee | DAT_03f9a150 | g_ClipVertexBufferStage3
-    PUSH EAX                            ; 005f8af3 | DAT_03f9a150
+    ADD EAX,0x3f9a120                   ; 005f8aee | g_ClipVertexBufferStage3[1].projected_vertex.transformed_x
+    PUSH EAX                            ; 005f8af3 | g_ClipVertexBufferStage3[1].projected_vertex.transformed_x
     PUSH EBP                            ; 005f8af4
     PUSH EDX                            ; 005f8af5 | g_ClipVertexBufferStage2
     CALL core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80 ; 005f8af6
@@ -689,7 +689,7 @@ section .text
         ;   Label: caseD_1
     ADD EAX,0x3f9a720                   ; 005f8b17 | g_ClipVertexBufferStage4
     PUSH EAX                            ; 005f8b1c | g_ClipVertexBufferStage4
-    PUSH EDX                            ; 005f8b1d | DAT_03f9a150
+    PUSH EDX                            ; 005f8b1d | g_ClipVertexBufferStage3[1].projected_vertex.transformed_x
     PUSH EBP                            ; 005f8b1e
     CALL core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40 ; 005f8b1f
         ;   XREF to: 005f7d40 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
@@ -707,7 +707,7 @@ section .text
     TEST EDI,0x7                        ; 005f8b4d
     JZ 0x005f8b5b                       ; 005f8b53
         ;   XREF to: 005f8b5b (CONDITIONAL_JUMP)  ; LAB_005f8b5b
-    MOVSD ES:EDI,ESI                    ; 005f8b55 | DAT_03f9a150 | g_ClipVertexBufferStage4
+    MOVSD ES:EDI,ESI                    ; 005f8b55 | g_ClipVertexBufferStage3[1].projected_vertex.transformed_x | g_ClipVertexBufferStage4
     SUB ECX,0x4                         ; 005f8b56
     JLE 0x005f8b78                      ; 005f8b59
         ;   XREF to: 005f8b78 (CONDITIONAL_JUMP)  ; LAB_005f8b78
@@ -715,9 +715,9 @@ section .text
         ;   Label: LAB_005f8b5b
     JL 0x005f8b6c                       ; 005f8b5e
         ;   XREF to: 005f8b6c (CONDITIONAL_JUMP)  ; LAB_005f8b6c
-    FILD qword ptr [ESI]                ; 005f8b60 | DAT_03f9a150 | DAT_03f9a158 | DAT_03f9a154
+    FILD qword ptr [ESI]                ; 005f8b60 | g_ClipVertexBufferStage3[1].projected_vertex.transformed_x | g_ClipVertexBufferStage3[1].projected_vertex.transformed_z | g_ClipVertexBufferStage3[1].projected_vertex.transformed_y
     ADD ESI,0x8                         ; 005f8b62
-    FISTP qword ptr [EDI]               ; 005f8b65 | g_ClipVertexBufferStage4 | DAT_03f9a728 | g_ClipVertexBufferStage4[0].projected_vertex.transformed_y
+    FISTP qword ptr [EDI]               ; 005f8b65 | g_ClipVertexBufferStage4 | g_ClipVertexBufferStage4[0].projected_vertex.transformed_z | g_ClipVertexBufferStage4[0].projected_vertex.transformed_y
     ADD EDI,0x8                         ; 005f8b67
     JMP 0x005f8b5b                      ; 005f8b6a
         ;   XREF to: 005f8b5b (UNCONDITIONAL_JUMP)  ; LAB_005f8b5b
@@ -725,20 +725,20 @@ section .text
         ;   Label: LAB_005f8b6c
     JLE 0x005f8b78                      ; 005f8b6f
         ;   XREF to: 005f8b78 (CONDITIONAL_JUMP)  ; LAB_005f8b78
-    MOVSD ES:EDI,ESI                    ; 005f8b71 | DAT_03f9a158 | DAT_03f9a728
+    MOVSD ES:EDI,ESI                    ; 005f8b71 | g_ClipVertexBufferStage3[1].projected_vertex.transformed_z | g_ClipVertexBufferStage4[0].projected_vertex.transformed_z
     SUB ECX,0x4                         ; 005f8b72
     JLE 0x005f8b78                      ; 005f8b75
         ;   XREF to: 005f8b78 (CONDITIONAL_JUMP)  ; LAB_005f8b78
-    MOVSD ES:EDI,ESI                    ; 005f8b77 | DAT_03f9a15c | DAT_03f9a72c
+    MOVSD ES:EDI,ESI                    ; 005f8b77 | g_ClipVertexBufferStage3[1].projected_vertex.inv_z | g_ClipVertexBufferStage4[0].projected_vertex.inv_z
     MOV ECX,dword ptr [0x03f9951c]      ; 005f8b78 | g_ClipVertexCountStage4
         ;   Label: LAB_005f8b78
     INC ECX                             ; 005f8b7e
     MOV dword ptr [0x03f9951c],ECX      ; 005f8b7f | g_ClipVertexCountStage4
     IMUL EAX,ECX,0x30                   ; 005f8b85
-    ADD EAX,0x3f9a720                   ; 005f8b88 | DAT_03f9a750 | g_ClipVertexBufferStage4
-    PUSH EAX                            ; 005f8b8d | DAT_03f9a750
+    ADD EAX,0x3f9a720                   ; 005f8b88 | g_ClipVertexBufferStage4[1].projected_vertex.transformed_x
+    PUSH EAX                            ; 005f8b8d | g_ClipVertexBufferStage4[1].projected_vertex.transformed_x
     PUSH EBP                            ; 005f8b8e
-    PUSH EDX                            ; 005f8b8f | DAT_03f9a150
+    PUSH EDX                            ; 005f8b8f | g_ClipVertexBufferStage3[1].projected_vertex.transformed_x
     CALL core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40 ; 005f8b90
         ;   XREF to: 005f7d40 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV EDI,dword ptr [0x03f9951c]      ; 005f8b95 | g_ClipVertexCountStage4
@@ -777,9 +777,9 @@ section .text
         ;   Label: LAB_005f8bf5
     JL 0x005f8c06                       ; 005f8bf8
         ;   XREF to: 005f8c06 (CONDITIONAL_JUMP)  ; LAB_005f8c06
-    FILD qword ptr [ESI]                ; 005f8bfa | g_ClipVertexBufferStage4 | DAT_03f9a728 | g_ClipVertexBufferStage4[0].projected_vertex.transformed_y
+    FILD qword ptr [ESI]                ; 005f8bfa | g_ClipVertexBufferStage4 | g_ClipVertexBufferStage4[0].projected_vertex.transformed_z | g_ClipVertexBufferStage4[0].projected_vertex.transformed_y
     ADD ESI,0x8                         ; 005f8bfc
-    FISTP qword ptr [EDI]               ; 005f8bff | g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_z | DAT_00824e2c
+    FISTP qword ptr [EDI]               ; 005f8bff | g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_z | g_ClippedVertexBuffer[0].projected_vertex.transformed_y
     ADD EDI,0x8                         ; 005f8c01
     JMP 0x005f8bf5                      ; 005f8c04
         ;   XREF to: 005f8bf5 (UNCONDITIONAL_JUMP)  ; LAB_005f8bf5
@@ -787,18 +787,18 @@ section .text
         ;   Label: LAB_005f8c06
     JLE 0x005f8c12                      ; 005f8c09
         ;   XREF to: 005f8c12 (CONDITIONAL_JUMP)  ; LAB_005f8c12
-    MOVSD ES:EDI,ESI                    ; 005f8c0b | DAT_03f9a728 | g_ClippedVertexBuffer[0].projected_vertex.transformed_z
+    MOVSD ES:EDI,ESI                    ; 005f8c0b | g_ClipVertexBufferStage4[0].projected_vertex.transformed_z | g_ClippedVertexBuffer[0].projected_vertex.transformed_z
     SUB ECX,0x4                         ; 005f8c0c
     JLE 0x005f8c12                      ; 005f8c0f
         ;   XREF to: 005f8c12 (CONDITIONAL_JUMP)  ; LAB_005f8c12
-    MOVSD ES:EDI,ESI                    ; 005f8c11 | DAT_03f9a72c | DAT_00824e34
+    MOVSD ES:EDI,ESI                    ; 005f8c11 | g_ClipVertexBufferStage4[0].projected_vertex.inv_z | g_ClippedVertexBuffer[0].projected_vertex.inv_z
     MOV ECX,dword ptr [0x00824e24]      ; 005f8c12 | g_ClippedVertexCount
         ;   Label: LAB_005f8c12
     INC ECX                             ; 005f8c18
     MOV dword ptr [0x00824e24],ECX      ; 005f8c19 | g_ClippedVertexCount
     IMUL EAX,ECX,0x30                   ; 005f8c1f
-    ADD EAX,0x824e28                    ; 005f8c22 | DAT_00824e58 | g_ClippedVertexBuffer
-    PUSH EAX                            ; 005f8c27 | DAT_00824e58
+    ADD EAX,0x824e28                    ; 005f8c22 | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
+    PUSH EAX                            ; 005f8c27 | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     PUSH EBP                            ; 005f8c28
     PUSH EDX                            ; 005f8c29 | g_ClipVertexBufferStage4
     CALL core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00 ; 005f8c2a
@@ -809,35 +809,35 @@ section .text
     MOV dword ptr [0x00824e24],EDI      ; 005f8c39 | g_ClippedVertexCount
     JMP 0x005f897b                      ; 005f8c3f
         ;   XREF to: 005f897b (UNCONDITIONAL_JUMP)  ; caseD_3
-    MOV dword ptr [EAX + 0x8],0x1       ; 005f8c44 | DAT_00824e60
+    MOV dword ptr [EAX + 0x8],0x1       ; 005f8c44 | g_ClippedVertexBuffer[1].projected_vertex.transformed_z
         ;   Label: LAB_005f8c44
-    MOV dword ptr [EAX],ECX             ; 005f8c4b | DAT_00824e58
-    MOV dword ptr [EAX + 0x4],ECX       ; 005f8c4d | DAT_00824e5c
+    MOV dword ptr [EAX],ECX             ; 005f8c4b | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
+    MOV dword ptr [EAX + 0x4],ECX       ; 005f8c4d | g_ClippedVertexBuffer[1].projected_vertex.transformed_y
     JMP 0x005f89c8                      ; 005f8c50
         ;   XREF to: 005f89c8 (UNCONDITIONAL_JUMP)  ; LAB_005f89c8
     MOV EDX,ECX                         ; 005f8c55
         ;   Label: LAB_005f8c55
-    MOV ESI,dword ptr [EAX]             ; 005f8c57 | DAT_00824e58
+    MOV ESI,dword ptr [EAX]             ; 005f8c57 | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     NEG EDX                             ; 005f8c59
     CMP EDX,ESI                         ; 005f8c5b
     JLE 0x005f8c66                      ; 005f8c5d
         ;   XREF to: 005f8c66 (CONDITIONAL_JUMP)  ; LAB_005f8c66
-    MOV dword ptr [EAX],EDX             ; 005f8c5f | DAT_00824e58
+    MOV dword ptr [EAX],EDX             ; 005f8c5f | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     JMP 0x005f89c8                      ; 005f8c61
         ;   XREF to: 005f89c8 (UNCONDITIONAL_JUMP)  ; LAB_005f89c8
-    MOV EBX,dword ptr [EAX + 0x4]       ; 005f8c66 | DAT_00824e5c
+    MOV EBX,dword ptr [EAX + 0x4]       ; 005f8c66 | g_ClippedVertexBuffer[1].projected_vertex.transformed_y
         ;   Label: LAB_005f8c66
     CMP EBX,ECX                         ; 005f8c69
     JLE 0x005f8c75                      ; 005f8c6b
         ;   XREF to: 005f8c75 (CONDITIONAL_JUMP)  ; LAB_005f8c75
-    MOV dword ptr [EAX + 0x4],ECX       ; 005f8c6d | DAT_00824e5c
+    MOV dword ptr [EAX + 0x4],ECX       ; 005f8c6d | g_ClippedVertexBuffer[1].projected_vertex.transformed_y
     JMP 0x005f89c8                      ; 005f8c70
         ;   XREF to: 005f89c8 (UNCONDITIONAL_JUMP)  ; LAB_005f89c8
     CMP EDX,EBX                         ; 005f8c75
         ;   Label: LAB_005f8c75
     JLE 0x005f89c8                      ; 005f8c77
         ;   XREF to: 005f89c8 (CONDITIONAL_JUMP)  ; LAB_005f89c8
-    MOV dword ptr [EAX + 0x4],EDX       ; 005f8c7d | DAT_00824e5c
+    MOV dword ptr [EAX + 0x4],EDX       ; 005f8c7d | g_ClippedVertexBuffer[1].projected_vertex.transformed_y
     JMP 0x005f89c8                      ; 005f8c80
         ;   XREF to: 005f89c8 (UNCONDITIONAL_JUMP)  ; LAB_005f89c8
 

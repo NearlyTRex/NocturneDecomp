@@ -10,7 +10,7 @@
 ;   CDemonPod* g_CDemonPodPtr = 030e5090
 ;   CEditorTools g_CEditorToolsInstance
 ;   CDemonPod g_CDemonPodInstance
-;   undefined4 DAT_030e5224
+;   undefined4 g_CDemonPodInstance.vtable
 ;
 ; Called Functions:
 ;   engine_pod.cpp_CPod_cleanup_FUN_00550c80
@@ -40,7 +40,7 @@ section .text
     ADD ESP,0x4                         ; 004b537b
     MOV EAX,[0x00680cdc]                ; 004b537e | g_CDemonPodPtr
     PUSH EAX                            ; 004b5383 | g_CDemonPodInstance
-    MOV EDX,dword ptr [EAX + 0x194]     ; 004b5384 | DAT_030e5224
+    MOV EDX,dword ptr [EAX + 0x194]     ; 004b5384 | g_CDemonPodInstance.vtable
     CALL dword ptr [EDX + 0x4]          ; 004b538a
     ADD ESP,0x4                         ; 004b538d
     POP EBX                             ; 004b5390

@@ -23,7 +23,7 @@
 ;   int g_CurrentRenderColor = 0xffffff
 ;   int g_CurrentAlphaValue = 0xff
 ;   int g_CurrentInvertedColor
-;   undefined4 DAT_00ffffff
+;   undefined4 g_LightBufferPool[13][93687]
 ;
 ; *****************************************************************************
 
@@ -48,7 +48,7 @@ section .text
     SHL EAX,0x10                        ; 00406da3
     OR ECX,EAX                          ; 00406da6
     MOV EAX,ECX                         ; 00406da8
-    XOR EAX,0xffffff                    ; 00406daa | DAT_00ffffff
+    XOR EAX,0xffffff                    ; 00406daa | g_LightBufferPool[13][93687]
     MOV dword ptr [0x0066df84],ECX      ; 00406daf | g_CurrentRenderColor
     MOV [0x00772a80],EAX                ; 00406db5 | g_CurrentInvertedColor
     MOV dword ptr [0x006793b4],EDX      ; 00406dba | g_CurrentAlphaValue

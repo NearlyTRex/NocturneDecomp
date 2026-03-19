@@ -20,9 +20,9 @@
 ;   SFace[5000] g_CapturedFaces
 ;   undefined4 g_CapturedFaces[0].render_flags
 ;   undefined4 g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0
-;   undefined4 DAT_02c6d614
+;   undefined4 g_CapturedFaces[1].texture_index
 ;   SFace*[5000] g_CapturedFacePointers
-;   undefined4 DAT_02c946f8
+;   undefined4 g_CapturedFacePointers[1]
 ;   SMRGLTextureBasic[100] g_CapturedTextureArray
 ;
 ; Called Functions:
@@ -51,10 +51,10 @@ section .text
     MOV EBX,0x2c6d5f4                   ; 0048da9c | g_CapturedFaces
     LEA ESI,[ECX*0x4 + 0x0]             ; 0048daa1
     XOR EAX,EAX                         ; 0048daa8
-    MOV dword ptr [EAX + 0x2c946f4],EBX ; 0048daaa | g_CapturedFacePointers | DAT_02c946f8 | g_CapturedFaces
+    MOV dword ptr [EAX + 0x2c946f4],EBX ; 0048daaa | g_CapturedFacePointers | g_CapturedFacePointers[1] | g_CapturedFaces
         ;   Label: LAB_0048daaa
     ADD EAX,0x4                         ; 0048dab0
-    ADD EBX,0x20                        ; 0048dab3 | DAT_02c6d614
+    ADD EBX,0x20                        ; 0048dab3 | g_CapturedFaces[1].texture_index
     CMP EAX,ESI                         ; 0048dab6
     JL 0x0048daaa                       ; 0048dab8
         ;   XREF to: 0048daaa (CONDITIONAL_JUMP)  ; LAB_0048daaa
@@ -90,7 +90,7 @@ section .text
     JLE 0x0048db55                      ; 0048db0d
         ;   XREF to: 0048db55 (CONDITIONAL_JUMP)  ; LAB_0048db55
     XOR EBX,EBX                         ; 0048db0f
-    MOV EAX,dword ptr [EBX + 0x2c946f4] ; 0048db11 | g_CapturedFacePointers | DAT_02c946f8
+    MOV EAX,dword ptr [EBX + 0x2c946f4] ; 0048db11 | g_CapturedFacePointers | g_CapturedFacePointers[1]
         ;   Label: LAB_0048db11
     MOV EDX,dword ptr [EAX]             ; 0048db17 | g_CapturedFaces
     CMP EDI,EDX                         ; 0048db19
@@ -104,7 +104,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 0048db29
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 0048db2e
-    MOV EAX,dword ptr [EBX + 0x2c946f4] ; 0048db31 | g_CapturedFacePointers | DAT_02c946f8
+    MOV EAX,dword ptr [EBX + 0x2c946f4] ; 0048db31 | g_CapturedFacePointers | g_CapturedFacePointers[1]
         ;   Label: LAB_0048db31
     MOV ECX,dword ptr [EAX + 0x4]       ; 0048db37 | g_CapturedFaces[0].render_flags
     PUSH ECX                            ; 0048db3a

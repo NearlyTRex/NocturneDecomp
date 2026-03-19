@@ -151,7 +151,7 @@ section .text
     MOV ECX,0x19                        ; 004b8037
     MOV EAX,dword ptr [ESP + 0xccc]     ; 004b803c
     MOV dword ptr [ESP + 0xcd0],EBP     ; 004b8043
-    MOVSD.REP ES:EDI,ESI                ; 004b804a | g_DefaultAuditPath | DAT_00679ee4
+    MOVSD.REP ES:EDI,ESI                ; 004b804a | g_DefaultAuditPath | g_DefaultAuditPath+4
     TEST EAX,EAX                        ; 004b804c
     JLE 0x004b818f                      ; 004b804e
         ;   XREF to: 004b818f (CONDITIONAL_JUMP)  ; LAB_004b818f

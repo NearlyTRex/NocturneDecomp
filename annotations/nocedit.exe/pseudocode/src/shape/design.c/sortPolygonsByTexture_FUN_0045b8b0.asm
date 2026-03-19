@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
-;   undefined4 DAT_016e9914
+;   undefined4 g_ModelPolygonData[0].texture_name[0]
 ;
 ; Called Functions:
 ;   shape_design.c_polygonTextureNameComparator_FUN_0045b850
@@ -72,7 +72,7 @@ section .text
     MOV ECX,0x61                        ; 0045b921
     LEA EDI,[EBP + 0xfffffe74]          ; 0045b926
     LEA ESI,[ESI + 0x16e9910]           ; 0045b92c | g_ModelPolygonData
-    MOVSD.REP ES:EDI,ESI                ; 0045b932 | g_ModelPolygonData | DAT_016e9914
+    MOVSD.REP ES:EDI,ESI                ; 0045b932 | g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
     MOV ESI,dword ptr [EBP + -0x4]      ; 0045b934
     INC ESI                             ; 0045b937
     IMUL ESI,ESI,0x184                  ; 0045b938
@@ -80,14 +80,14 @@ section .text
     MOV ECX,0x61                        ; 0045b945
     LEA EDI,[EDI + 0x16e9910]           ; 0045b94a | g_ModelPolygonData
     LEA ESI,[ESI + 0x16e9910]           ; 0045b950 | g_ModelPolygonData
-    MOVSD.REP ES:EDI,ESI                ; 0045b956 | g_ModelPolygonData | DAT_016e9914
+    MOVSD.REP ES:EDI,ESI                ; 0045b956 | g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
     MOV ESI,dword ptr [EBP + -0x4]      ; 0045b958
     INC ESI                             ; 0045b95b
     IMUL ESI,ESI,0x184                  ; 0045b95c
     MOV ECX,0x61                        ; 0045b962
     LEA EDI,[ESI + 0x16e9910]           ; 0045b967 | g_ModelPolygonData
     LEA ESI,[EBP + 0xfffffe74]          ; 0045b96d
-    MOVSD.REP ES:EDI,ESI                ; 0045b973 | g_ModelPolygonData | DAT_016e9914
+    MOVSD.REP ES:EDI,ESI                ; 0045b973 | g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
     JMP 0x0045b8de                      ; 0045b975
         ;   XREF to: 0045b8de (UNCONDITIONAL_JUMP)  ; LAB_0045b8de
         ;   Label: LAB_0045b975

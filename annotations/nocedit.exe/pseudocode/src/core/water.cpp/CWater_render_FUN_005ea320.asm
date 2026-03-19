@@ -129,10 +129,10 @@ section .text
     MOV dword ptr [ESP + 0x58],EDX      ; 005ea417
     MOV EDI,dword ptr [ESP + 0x58]      ; 005ea41b
         ;   Label: LAB_005ea41b
-    MOV EDI,dword ptr [EDI + 0x3f87608] ; 005ea41f | g_VisibleWaterTilesX | DAT_03f8760c
+    MOV EDI,dword ptr [EDI + 0x3f87608] ; 005ea41f | g_VisibleWaterTilesX | g_VisibleWaterTilesX[1]
     MOV EAX,dword ptr [ESP + 0x58]      ; 005ea425
     MOV dword ptr [ESP + 0x5c],EDI      ; 005ea429
-    MOV EAX,dword ptr [EAX + 0x3f8b608] ; 005ea42d | g_VisibleWaterTilesY | DAT_03f8b60c
+    MOV EAX,dword ptr [EAX + 0x3f8b608] ; 005ea42d | g_VisibleWaterTilesY | g_VisibleWaterTilesY[1]
     FILD dword ptr [ESP + 0x5c]         ; 005ea433
     FMUL float ptr [ESI + 0x8]          ; 005ea437
     MOV dword ptr [ESP],EAX             ; 005ea43a

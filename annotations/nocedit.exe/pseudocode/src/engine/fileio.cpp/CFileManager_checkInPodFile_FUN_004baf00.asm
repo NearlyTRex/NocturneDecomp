@@ -658,7 +658,7 @@ section .text
     ADD ESP,0x4                         ; 004bb531
     MOV EAX,[0x00680cdc]                ; 004bb534 | g_CDemonPodPtr
     PUSH EAX                            ; 004bb539 | g_CDemonPodInstance
-    MOV EBX,dword ptr [EAX + 0x194]     ; 004bb53a | DAT_030e5224
+    MOV EBX,dword ptr [EAX + 0x194]     ; 004bb53a | g_CDemonPodInstance.vtable
     CALL dword ptr [EBX + 0x4]          ; 004bb540
     ADD ESP,0x4                         ; 004bb543
     PUSH 0x0                            ; 004bb546

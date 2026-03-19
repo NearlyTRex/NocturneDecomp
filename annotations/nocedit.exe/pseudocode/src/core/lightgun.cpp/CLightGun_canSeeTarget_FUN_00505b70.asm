@@ -12,7 +12,7 @@
 ;   float FLOAT_006314ca = 0.5
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_032613bc
+;   undefined4 g_CDemonSetInstance.collision_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -88,7 +88,7 @@ section .text
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00572530 ; 00505c07
         ;   XREF to: 00572530 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00572530(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV EAX,[0x006810c8]                ; 00505c0c | g_CDemonSetInstance | g_CDemonSetPtr
-    MOV EDX,dword ptr [EAX + 0x14d144]  ; 00505c11 | DAT_032613bc
+    MOV EDX,dword ptr [EAX + 0x14d144]  ; 00505c11 | g_CDemonSetInstance.collision_actor
     ADD ESP,0xc                         ; 00505c17
     TEST EDX,EDX                        ; 00505c1a
     JZ 0x00505c4f                       ; 00505c1c
@@ -105,7 +105,7 @@ section .text
     JZ 0x00505c4f                       ; 00505c32
         ;   XREF to: 00505c4f (CONDITIONAL_JUMP)  ; LAB_00505c4f
     MOV EAX,[0x006810c8]                ; 00505c34 | g_CDemonSetInstance | g_CDemonSetPtr
-    MOV ECX,dword ptr [EAX + 0x14d144]  ; 00505c39 | DAT_032613bc
+    MOV ECX,dword ptr [EAX + 0x14d144]  ; 00505c39 | g_CDemonSetInstance.collision_actor
     PUSH ECX                            ; 00505c3f
     PUSH EAX                            ; 00505c40 | g_CDemonSetInstance
     INC EBX                             ; 00505c41

@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     IMUL EDX,dword ptr [EAX + 0xbc],0x14 ; 0045cad2
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045cad9
     IMUL EAX,dword ptr [EAX + 0xb8],0x14 ; 0045cadc
-    FLD float ptr [EDX + 0x1626410]     ; 0045cae3 | DAT_01626410
-    FSUB float ptr [EAX + 0x1626410]    ; 0045cae9 | DAT_01626410
+    FLD float ptr [EDX + 0x1626410]     ; 0045cae3 | g_LoadedVertices[0].vertex.y
+    FSUB float ptr [EAX + 0x1626410]    ; 0045cae9 | g_LoadedVertices[0].vertex.y
     FSTP double ptr [EBP + -0x40]       ; 0045caef
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045caf2
     IMUL EDX,dword ptr [EAX + 0xbc],0x14 ; 0045caf5
@@ -68,8 +68,8 @@ section .text
     IMUL EDX,dword ptr [EAX + 0xc0],0x14 ; 0045cb3b
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045cb42
     IMUL EAX,dword ptr [EAX + 0xbc],0x14 ; 0045cb45
-    FLD float ptr [EDX + 0x1626410]     ; 0045cb4c | DAT_01626410
-    FSUB float ptr [EAX + 0x1626410]    ; 0045cb52 | DAT_01626410
+    FLD float ptr [EDX + 0x1626410]     ; 0045cb4c | g_LoadedVertices[0].vertex.y
+    FSUB float ptr [EAX + 0x1626410]    ; 0045cb52 | g_LoadedVertices[0].vertex.y
     FSTP double ptr [EBP + -0x28]       ; 0045cb58
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045cb5b
     IMUL EDX,dword ptr [EAX + 0xc0],0x14 ; 0045cb5e
@@ -126,7 +126,7 @@ section .text
     FSTP double ptr [EBP + -0x58]       ; 0045cc01
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045cc04
     IMUL EAX,dword ptr [EAX + 0xb8],0x14 ; 0045cc07
-    FLD float ptr [EAX + 0x1626410]     ; 0045cc0e | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 0045cc0e | g_LoadedVertices[0].vertex.y
     FMUL double ptr [EBP + -0x8]        ; 0045cc14
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045cc17
     IMUL EAX,dword ptr [EAX + 0xb8],0x14 ; 0045cc1a

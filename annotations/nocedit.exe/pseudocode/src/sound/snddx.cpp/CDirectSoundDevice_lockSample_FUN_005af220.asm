@@ -18,7 +18,7 @@
 ;   int g_CurrentLineNumber
 ;   IDirectSoundBuffer*[25] g_DirectSoundSampleBuffers
 ;   IDirectSoundBufferMetadata[25] g_DirectSoundBufferMetadata
-;   undefined4 DAT_03f6ab40
+;   undefined4 g_DirectSoundBufferMetadata[0].field1_0x4
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -62,7 +62,7 @@ section .text
     ADD EBX,ESI                         ; 005af269
     SHL EBX,0x2                         ; 005af26b
     ADD EBX,0x3f6ab3c                   ; 005af26e | g_DirectSoundBufferMetadata
-    CMP dword ptr [EBX + 0x4],0x0       ; 005af274 | DAT_03f6ab40
+    CMP dword ptr [EBX + 0x4],0x0       ; 005af274 | g_DirectSoundBufferMetadata[0].field1_0x4
     JZ 0x005af29c                       ; 005af278
         ;   XREF to: 005af29c (CONDITIONAL_JUMP)  ; LAB_005af29c
     MOV EBP,0x651c9d                    ; 005af27a | = "..\\sound\\snddx.cpp"
@@ -97,7 +97,7 @@ section .text
     TEST EAX,EAX                        ; 005af2d3
     JNZ 0x005af2e4                      ; 005af2d5
         ;   XREF to: 005af2e4 (CONDITIONAL_JUMP)  ; LAB_005af2e4
-    MOV EAX,dword ptr [EBX + 0x4]       ; 005af2d7 | DAT_03f6ab40
+    MOV EAX,dword ptr [EBX + 0x4]       ; 005af2d7 | g_DirectSoundBufferMetadata[0].field1_0x4
     ADD ESP,0x190                       ; 005af2da
     POP EBP                             ; 005af2e0
     POP ESI                             ; 005af2e1

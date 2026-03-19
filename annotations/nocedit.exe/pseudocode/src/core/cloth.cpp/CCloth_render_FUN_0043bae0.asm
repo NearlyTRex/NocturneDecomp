@@ -25,16 +25,16 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   SMRGLPrimitiveQuad[1000] g_ClothBackfaceBuffer
-;   undefined4 DAT_00827504
-;   undefined4 DAT_00827518
-;   undefined4 DAT_0082751c
-;   undefined4 DAT_00827520
-;   undefined4 DAT_00827524
-;   undefined4 DAT_00827528
-;   undefined4 DAT_0082752c
-;   undefined4 DAT_00827548
-;   undefined4 DAT_0082754c
-;   undefined4 DAT_00827590
+;   undefined4 g_ClothBackfaceBuffer[0].base.base.count
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[0].vertex_index
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[0].texture_u
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[0].texture_v
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[1].vertex_index
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[1].texture_u
+;   undefined4 g_ClothBackfaceBuffer[0].vertices[1].texture_v
+;   undefined4 g_ClothBackfaceBuffer[1].base.base.type
+;   undefined4 g_ClothBackfaceBuffer[1].base.base.count
+;   undefined4 g_ClothBackfaceBuffer[2].base.base.type
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   ... and 1 more
 ;
@@ -372,7 +372,7 @@ section .text
     ADD EDX,EAX                         ; 0043be6a
     MOV ECX,dword ptr [ESP + 0x10]      ; 0043be6c
     MOV EAX,dword ptr [EDX + 0x4]       ; 0043be70
-    MOV dword ptr [ECX + 0x4],EAX       ; 0043be73 | DAT_00827504 | DAT_0082754c
+    MOV dword ptr [ECX + 0x4],EAX       ; 0043be73 | g_ClothBackfaceBuffer[0].base.base.count | g_ClothBackfaceBuffer[1].base.base.count
     MOV ECX,dword ptr [EDX + 0x4]       ; 0043be76
     XOR EAX,EAX                         ; 0043be79
     TEST ECX,ECX                        ; 0043be7b
@@ -385,11 +385,11 @@ section .text
     DEC EBX                             ; 0043be88
     IMUL EBX,EBX,0xc                    ; 0043be89
     LEA ESI,[EDX + EBX*0x1]             ; 0043be8c
-    LEA EDI,[ECX + 0x18]                ; 0043be8f | DAT_00827518
+    LEA EDI,[ECX + 0x18]                ; 0043be8f | g_ClothBackfaceBuffer[0].vertices[0].vertex_index
     LEA ESI,[ESI + 0x18]                ; 0043be92
-    MOVSD ES:EDI,ESI                    ; 0043be95 | DAT_00827518 | DAT_00827524
-    MOVSD ES:EDI,ESI                    ; 0043be96 | DAT_0082751c | DAT_00827528
-    MOVSD ES:EDI,ESI                    ; 0043be97 | DAT_00827520 | DAT_0082752c
+    MOVSD ES:EDI,ESI                    ; 0043be95 | g_ClothBackfaceBuffer[0].vertices[0].vertex_index | g_ClothBackfaceBuffer[0].vertices[1].vertex_index
+    MOVSD ES:EDI,ESI                    ; 0043be96 | g_ClothBackfaceBuffer[0].vertices[0].texture_u | g_ClothBackfaceBuffer[0].vertices[1].texture_u
+    MOVSD ES:EDI,ESI                    ; 0043be97 | g_ClothBackfaceBuffer[0].vertices[0].texture_v | g_ClothBackfaceBuffer[0].vertices[1].texture_v
     INC EAX                             ; 0043be98
     MOV EBX,dword ptr [EDX + 0x4]       ; 0043be99
     ADD ECX,0xc                         ; 0043be9c
@@ -402,7 +402,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 0043beab
     ADD ESI,0x48                        ; 0043beaf
     INC EDI                             ; 0043beb2
-    MOV dword ptr [ESP + 0x10],ESI      ; 0043beb3 | DAT_00827548 | DAT_00827590
+    MOV dword ptr [ESP + 0x10],ESI      ; 0043beb3 | g_ClothBackfaceBuffer[1].base.base.type | g_ClothBackfaceBuffer[2].base.base.type
     MOV dword ptr [ESP + 0xc],EDI       ; 0043beb7
     CMP EDI,EDX                         ; 0043bebb
     JL 0x0043be5f                       ; 0043bebd

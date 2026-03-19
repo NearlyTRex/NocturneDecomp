@@ -83,7 +83,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
             pcVar10 = pcVar10 + 2;
           } while (cVar2 != '\0');
           wincore_windll_cpp_kill_FUN_005b71e0();
-          wincore_windll_cpp_loadExternalRenderer_FUN_005b6750((HWND)0x0);
+          wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(0);
           iVar7 = g_FullscreenMode;
           if (g_FullscreenMode != 0) {
 LAB_00510e1f:
@@ -111,7 +111,7 @@ LAB_00510e1f:
             pcVar11 = pcVar11 + 2;
           } while (cVar2 != '\0');
           wincore_windll_cpp_kill_FUN_005b71e0();
-          wincore_windll_cpp_loadExternalRenderer_FUN_005b6750((HWND)0x0);
+          wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(0);
           if (g_FullscreenMode != 0) goto LAB_00510e1f;
           g_GraphicsCardCount = g_FullscreenMode;
           iVar7 = g_GraphicsCardCount;
@@ -552,7 +552,7 @@ LAB_005116c3:
           }
         }
         wincore_windll_cpp_kill_FUN_005b71e0();
-        wincore_windll_cpp_loadExternalRenderer_FUN_005b6750((HWND)0x0);
+        wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(0);
         iVar6 = g_GraphicsCardHandle;
         iVar3 = g_FullscreenMode;
         if (g_FullscreenMode != 0) {

@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   double g_ModelPolygonDegreesToRadiansConversion = 0.0174532925200000
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
-;   undefined4 DAT_016e99b4
-;   undefined4 DAT_016e9a88
+;   undefined4 g_ModelPolygonData[0].vertex_indices_count
+;   undefined4 g_ModelPolygonData[0].part_assignment
 ;
 ; Called Functions:
 ;   crt_string.c__strcmp_FUN_005fef20
@@ -58,9 +58,9 @@ section .text
     JZ 0x00465bdb                       ; 00465b8b
         ;   XREF to: 00465bdb (CONDITIONAL_JUMP)  ; LAB_00465bdb
     IMUL EAX,dword ptr [EBP + 0x18],0x184 ; 00465b8d
-    PUSH dword ptr [EAX + 0x16e99b4]    ; 00465b94 | DAT_016e99b4
+    PUSH dword ptr [EAX + 0x16e99b4]    ; 00465b94 | g_ModelPolygonData[0].vertex_indices_count
     IMUL EAX,dword ptr [EBP + 0x14],0x184 ; 00465b9a
-    PUSH dword ptr [EAX + 0x16e99b4]    ; 00465ba1 | DAT_016e99b4
+    PUSH dword ptr [EAX + 0x16e99b4]    ; 00465ba1 | g_ModelPolygonData[0].vertex_indices_count
     IMUL EAX,dword ptr [EBP + 0x18],0x184 ; 00465ba7
     MOV EDX,0x16e9910                   ; 00465bae | g_ModelPolygonData
     ADD EAX,EDX                         ; 00465bb3
@@ -106,8 +106,8 @@ section .text
         ;   XREF to: 00465c33 (CONDITIONAL_JUMP)  ; LAB_00465c33
     IMUL EAX,dword ptr [EBP + 0x14],0x184 ; 00465c15
     IMUL EDX,dword ptr [EBP + 0x18],0x184 ; 00465c1c
-    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 00465c23 | DAT_016e9a88
-    CMP EAX,dword ptr [EDX + 0x16e9a88] ; 00465c29 | DAT_016e9a88
+    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 00465c23 | g_ModelPolygonData[0].part_assignment
+    CMP EAX,dword ptr [EDX + 0x16e9a88] ; 00465c29 | g_ModelPolygonData[0].part_assignment
     JZ 0x00465c33                       ; 00465c2f
         ;   XREF to: 00465c33 (CONDITIONAL_JUMP)  ; LAB_00465c33
     JMP 0x00465c48                      ; 00465c31

@@ -32,9 +32,9 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_ActiveRenderColor
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
-;   undefined4 DAT_02f33768
-;   undefined4 DAT_02f33780
+;   undefined4 g_CDemonMissionInstance.is_in_editor
+;   undefined4 g_CDemonMissionInstance.selected_actor
+;   undefined4 g_CDemonMissionInstance.show_waypoint_coverage
 ;   undefined4 g_CWayPointClassInfo.name_hash
 ;
 ; Called Functions:
@@ -63,7 +63,7 @@ section .text
     SUB ESP,0x9c                        ; 005ebf74
     MOV ESI,dword ptr [ESP + 0xb0]      ; 005ebf7a
     MOV EAX,[0x0067d550]                ; 005ebf81 | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 005ebf86 | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 005ebf86 | g_CDemonMissionInstance.is_in_editor
     JNZ 0x005ebf99                      ; 005ebf8a
         ;   XREF to: 005ebf99 (CONDITIONAL_JUMP)  ; LAB_005ebf99
     XOR EAX,EAX                         ; 005ebf8c
@@ -87,7 +87,7 @@ section .text
     MOV EBX,dword ptr [0x03f9591c]      ; 005ebfac | g_CWayPointClassInfo.name_hash
     MOV EAX,[0x0067d550]                ; 005ebfb2 | g_CDemonMissionInstance | g_CDemonMissionPtr
     PUSH EBX                            ; 005ebfb7
-    MOV EDI,dword ptr [EAX + 0x28]      ; 005ebfb8 | DAT_02f33768
+    MOV EDI,dword ptr [EAX + 0x28]      ; 005ebfb8 | g_CDemonMissionInstance.selected_actor
     PUSH EDI                            ; 005ebfbb
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005ebfbc
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
@@ -182,7 +182,7 @@ section .text
     JZ 0x005ebf8c                       ; 005ec0b6
         ;   XREF to: 005ebf8c (CONDITIONAL_JUMP)  ; LAB_005ebf8c
     MOV EAX,[0x0067d550]                ; 005ec0bc | g_CDemonMissionInstance | g_CDemonMissionPtr
-    MOV ECX,dword ptr [EAX + 0x40]      ; 005ec0c1 | DAT_02f33780
+    MOV ECX,dword ptr [EAX + 0x40]      ; 005ec0c1 | g_CDemonMissionInstance.show_waypoint_coverage
     TEST ECX,ECX                        ; 005ec0c4
     JZ 0x005ebf8c                       ; 005ec0c6
         ;   XREF to: 005ebf8c (CONDITIONAL_JUMP)  ; LAB_005ebf8c

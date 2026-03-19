@@ -141,7 +141,7 @@ section .text
     JGE 0x0041d105                      ; 0041cd2d
         ;   XREF to: 0041d105 (CONDITIONAL_JUMP)  ; LAB_0041d105
     ADD EAX,dword ptr [ESP + 0xc0]      ; 0041cd33
-    MOV EBX,dword ptr [EAX + 0x14d158]  ; 0041cd3a | g_CDemonSetInstance.actors[0] | DAT_032613d4
+    MOV EBX,dword ptr [EAX + 0x14d158]  ; 0041cd3a | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     PUSH EBX                            ; 0041cd40
     MOV EAX,dword ptr [EBX + 0x154]     ; 0041cd41
     CALL dword ptr [EAX + 0x8c]         ; 0041cd47

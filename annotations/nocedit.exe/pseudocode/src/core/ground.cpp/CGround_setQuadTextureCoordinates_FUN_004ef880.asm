@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
-;   undefined4 DAT_00f80000
+;   undefined4 g_LightBufferPool[11][183800]
 ;
 ; Called Functions:
 ;   core_texlist.cpp_CTextureList_captureTexture_FUN_005dc270
@@ -44,13 +44,13 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 004ef8ae
     SUB EAX,EDX                         ; 004ef8b5
     SHL EAX,0x4                         ; 004ef8b7
-    MOV EDI,0xf80000                    ; 004ef8ba | DAT_00f80000
-    MOV dword ptr [EAX + 0x68802c],EDI  ; 004ef8bf | g_RenderVertexBuffer[0].u | DAT_00f80000
+    MOV EDI,0xf80000                    ; 004ef8ba | g_LightBufferPool[11][183800]
+    MOV dword ptr [EAX + 0x68802c],EDI  ; 004ef8bf | g_RenderVertexBuffer[0].u | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EBX + 0x50]      ; 004ef8c5
     LEA EAX,[EDX*0x4 + 0x0]             ; 004ef8c8
     SUB EAX,EDX                         ; 004ef8cf
     SHL EAX,0x4                         ; 004ef8d1
-    MOV dword ptr [EAX + 0x688030],EDI  ; 004ef8d4 | g_RenderVertexBuffer[0].v | DAT_00f80000
+    MOV dword ptr [EAX + 0x688030],EDI  ; 004ef8d4 | g_RenderVertexBuffer[0].v | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EBX + 0x4c]      ; 004ef8da
     LEA EAX,[EDX*0x4 + 0x0]             ; 004ef8dd
     SUB EAX,EDX                         ; 004ef8e4
@@ -60,7 +60,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 004ef8f6
     SUB EAX,EDX                         ; 004ef8fd
     SHL EAX,0x4                         ; 004ef8ff
-    MOV dword ptr [EAX + 0x688030],EDI  ; 004ef902 | g_RenderVertexBuffer[0].v | DAT_00f80000
+    MOV dword ptr [EAX + 0x688030],EDI  ; 004ef902 | g_RenderVertexBuffer[0].v | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EBX + 0x58]      ; 004ef908
     LEA EAX,[EDX*0x4 + 0x0]             ; 004ef90b
     SUB EAX,EDX                         ; 004ef912
@@ -76,7 +76,7 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 004ef93a
     SUB EAX,EDX                         ; 004ef941
     SHL EAX,0x4                         ; 004ef943
-    MOV dword ptr [EAX + 0x68802c],EDI  ; 004ef946 | g_RenderVertexBuffer[0].u | DAT_00f80000
+    MOV dword ptr [EAX + 0x68802c],EDI  ; 004ef946 | g_RenderVertexBuffer[0].u | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EBX + 0x54]      ; 004ef94c
     LEA EAX,[EDX*0x4 + 0x0]             ; 004ef94f
     SUB EAX,EDX                         ; 004ef956

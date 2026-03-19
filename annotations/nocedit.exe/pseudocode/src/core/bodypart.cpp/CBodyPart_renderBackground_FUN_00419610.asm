@@ -16,7 +16,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CConsole g_CConsoleInstance
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_0326ef00
+;   undefined4 g_CDemonSetInstance.disable_directional_lighting
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
@@ -67,7 +67,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 00419673 | g_CDemonSetPtr
     MOV EDX,dword ptr [EBX + 0xcb0]     ; 00419678
     ADD ESP,0x4                         ; 0041967e
-    MOV dword ptr [EAX + 0x15ac88],EDX  ; 00419681 | DAT_0326ef00
+    MOV dword ptr [EAX + 0x15ac88],EDX  ; 00419681 | g_CDemonSetInstance.disable_directional_lighting
     LEA EAX,[ESP + 0x4]                 ; 00419687
     PUSH EAX                            ; 0041968b
     MOV EDX,dword ptr [EBX + 0x154]     ; 0041968c

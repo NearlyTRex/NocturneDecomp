@@ -516,7 +516,7 @@ section .text
     MOV EDX,dword ptr [0x00680d50]      ; 004dc94a | g_CScriptInstance | g_CScriptPtr
         ;   Label: LAB_004dc94a
     PUSH 0x1                            ; 004dc950
-    MOV EBP,dword ptr [EDX + 0xc]       ; 004dc952 | DAT_0310f864
+    MOV EBP,dword ptr [EDX + 0xc]       ; 004dc952 | g_CScriptInstance.focus_actor
     PUSH EBP                            ; 004dc955
     MOV EAX,[0x006810c8]                ; 004dc956 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 004dc95b | g_CDemonSetInstance
@@ -524,7 +524,7 @@ section .text
     CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 ; 004dc962
         ;   XREF to: 005751d0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     MOV EAX,[0x00680d50]                ; 004dc967 | g_CScriptPtr
-    MOV dword ptr [EAX + 0x10],0x0      ; 004dc96c | DAT_0310f868
+    MOV dword ptr [EAX + 0x10],0x0      ; 004dc96c | g_CScriptInstance.focus_actor_changed
     MOV EAX,[0x006810c8]                ; 004dc973 | g_CDemonSetInstance | g_CDemonSetPtr
     MOV EDX,dword ptr [EAX + 0x15aea4]  ; 004dc978 | g_CDemonSetInstance.selected_camera_index
     ADD ESP,0xc                         ; 004dc97e

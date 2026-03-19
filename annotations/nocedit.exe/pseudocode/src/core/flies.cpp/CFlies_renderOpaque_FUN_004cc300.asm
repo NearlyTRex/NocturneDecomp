@@ -114,7 +114,7 @@ section .text
     PUSH 0x0                            ; 004cc3a3
     SUB ESP,0x4                         ; 004cc3a5
     FSTP float ptr [ESP]                ; 004cc3a8
-    PUSH ESI                            ; 004cc3ab | g_SplineBasisTable | DAT_02d7a828
+    PUSH ESI                            ; 004cc3ab | g_SplineBasisTable | g_SplineBasisTable[1][0]
     INC EBX                             ; 004cc3ac
     CALL core_spline.cpp_computeSplineBasis_FUN_005b90a0 ; 004cc3ad
         ;   XREF to: 005b90a0 (UNCONDITIONAL_CALL)  ; void core_spline.cpp_computeSplineBasis_FUN_005b90a0(float * out_basis, float t, float tension)
@@ -218,8 +218,8 @@ section .text
     PUSH EAX                            ; 004cc51e
     MOV EAX,dword ptr [ESP + 0x98]      ; 004cc51f
     SHL EAX,0x5                         ; 004cc526
-    ADD EAX,0x2d7a808                   ; 004cc529 | DAT_02d7afe8 | g_SplineBasisTable
-    PUSH EAX                            ; 004cc52e | DAT_02d7afe8
+    ADD EAX,0x2d7a808                   ; 004cc529 | g_SplineBasisTable[63][0]
+    PUSH EAX                            ; 004cc52e | g_SplineBasisTable[63][0]
     LEA EBX,[ESP + 0x84]                ; 004cc52f
     CALL core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0 ; 004cc536
         ;   XREF to: 005b92d0 (UNCONDITIONAL_CALL)  ; CVector3f * core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0(float * basis, CVector3f * out, CVector3f * p0, CVector3f * p1, ...)

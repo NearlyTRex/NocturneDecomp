@@ -28,9 +28,9 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CEditorTools g_CEditorToolsInstance
 ;   char[1024] g_FileTransferErrorMessage
-;   undefined4 DAT_02d0a591
-;   undefined4 DAT_02d0a592
-;   undefined4 DAT_02d0a593
+;   undefined4 g_FileTransferErrorMessage+1
+;   undefined4 g_FileTransferErrorMessage+2
+;   undefined4 g_FileTransferErrorMessage+3
 ;   char[32768] g_FileTransferBuffer
 ;
 ; Called Functions:
@@ -106,7 +106,7 @@ section .text
     PUSH 0x6260e7                       ; 004b20c1 | = "\n%s"
     MOV ESI,0x2d0a590                   ; 004b20c6 | g_FileTransferErrorMessage
     XOR DL,DL                           ; 004b20cb
-    MOV AL,byte ptr [ESI]               ; 004b20cd | g_FileTransferErrorMessage | DAT_02d0a592
+    MOV AL,byte ptr [ESI]               ; 004b20cd | g_FileTransferErrorMessage | g_FileTransferErrorMessage+2
         ;   Label: LAB_004b20cd
     CMP AL,DL                           ; 004b20cf
     JZ 0x004b20e5                       ; 004b20d1
@@ -115,7 +115,7 @@ section .text
     JZ 0x004b20e3                       ; 004b20d5
         ;   XREF to: 004b20e3 (CONDITIONAL_JUMP)  ; LAB_004b20e3
     INC ESI                             ; 004b20d7
-    MOV AL,byte ptr [ESI]               ; 004b20d8 | DAT_02d0a591 | DAT_02d0a593
+    MOV AL,byte ptr [ESI]               ; 004b20d8 | g_FileTransferErrorMessage+1 | g_FileTransferErrorMessage+3
     CMP AL,DL                           ; 004b20da
     JZ 0x004b20e5                       ; 004b20dc
         ;   XREF to: 004b20e5 (CONDITIONAL_JUMP)  ; LAB_004b20e5
@@ -125,7 +125,7 @@ section .text
         ;   XREF to: 004b20cd (CONDITIONAL_JUMP)  ; LAB_004b20cd
     SUB ESI,ESI                         ; 004b20e3
         ;   Label: LAB_004b20e3
-    PUSH ESI                            ; 004b20e5 | g_FileTransferErrorMessage | DAT_02d0a591 | DAT_02d0a593
+    PUSH ESI                            ; 004b20e5 | g_FileTransferErrorMessage | g_FileTransferErrorMessage+1 | g_FileTransferErrorMessage+3
         ;   Label: LAB_004b20e5
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b20e6
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)

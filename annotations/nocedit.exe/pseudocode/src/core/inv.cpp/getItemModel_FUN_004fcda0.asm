@@ -149,7 +149,7 @@ section .text
     PUSH ECX                            ; 004fcea4
     JMP 0x004fce71                      ; 004fcea5
         ;   XREF to: 004fce71 (UNCONDITIONAL_JUMP)  ; LAB_004fce71
-    MOV EDX,dword ptr [0x02db87b8]      ; 004fcea7 | DAT_02db8780.name_hash
+    MOV EDX,dword ptr [0x02db87b8]      ; 004fcea7 | g_CHealthItemClassInfo.name_hash
         ;   Label: LAB_004fcea7
     PUSH EDX                            ; 004fcead
     JMP 0x004fce71                      ; 004fceae

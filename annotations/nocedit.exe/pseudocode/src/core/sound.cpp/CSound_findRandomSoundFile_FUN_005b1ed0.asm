@@ -15,9 +15,9 @@
 ;   CStrList g_SoundFileList
 ;   int g_SoundMatchCount
 ;   char[40][40] g_SoundMatchedFilenames
-;   undefined4 DAT_03f6b141
-;   undefined4 DAT_03f6b142
-;   undefined4 DAT_03f6b143
+;   undefined4 g_SoundMatchedFilenames[0][1]
+;   undefined4 g_SoundMatchedFilenames[0][2]
+;   undefined4 g_SoundMatchedFilenames[0][3]
 ;
 ; Called Functions:
 ;   crt_stdlib.c_rand_FUN_005feb5c
@@ -83,13 +83,13 @@ section .text
     PUSH EDI                            ; 005b1f4b | g_SoundMatchedFilenames
     MOV AL,byte ptr [ESI]               ; 005b1f4c
         ;   Label: LAB_005b1f4c
-    MOV byte ptr [EDI],AL               ; 005b1f4e | g_SoundMatchedFilenames | DAT_03f6b142
+    MOV byte ptr [EDI],AL               ; 005b1f4e | g_SoundMatchedFilenames | g_SoundMatchedFilenames[0][2]
     CMP AL,0x0                          ; 005b1f50
     JZ 0x005b1f64                       ; 005b1f52
         ;   XREF to: 005b1f64 (CONDITIONAL_JUMP)  ; LAB_005b1f64
     MOV AL,byte ptr [ESI + 0x1]         ; 005b1f54
     ADD ESI,0x2                         ; 005b1f57
-    MOV byte ptr [EDI + 0x1],AL         ; 005b1f5a | DAT_03f6b141 | DAT_03f6b143
+    MOV byte ptr [EDI + 0x1],AL         ; 005b1f5a | g_SoundMatchedFilenames[0][1] | g_SoundMatchedFilenames[0][3]
     ADD EDI,0x2                         ; 005b1f5d
     CMP AL,0x0                          ; 005b1f60
     JNZ 0x005b1f4c                      ; 005b1f62
@@ -120,13 +120,13 @@ section .text
     MOV EDI,dword ptr [ESP + 0x18]      ; 005b1fa4
     ADD ESI,EAX                         ; 005b1fa8
     PUSH EDI                            ; 005b1faa
-    MOV AL,byte ptr [ESI]               ; 005b1fab | g_SoundMatchedFilenames | DAT_03f6b142
+    MOV AL,byte ptr [ESI]               ; 005b1fab | g_SoundMatchedFilenames | g_SoundMatchedFilenames[0][2]
         ;   Label: LAB_005b1fab
     MOV byte ptr [EDI],AL               ; 005b1fad
     CMP AL,0x0                          ; 005b1faf
     JZ 0x005b1fc3                       ; 005b1fb1
         ;   XREF to: 005b1fc3 (CONDITIONAL_JUMP)  ; LAB_005b1fc3
-    MOV AL,byte ptr [ESI + 0x1]         ; 005b1fb3 | DAT_03f6b141 | DAT_03f6b143
+    MOV AL,byte ptr [ESI + 0x1]         ; 005b1fb3 | g_SoundMatchedFilenames[0][1] | g_SoundMatchedFilenames[0][3]
     ADD ESI,0x2                         ; 005b1fb6
     MOV byte ptr [EDI + 0x1],AL         ; 005b1fb9
     ADD EDI,0x2                         ; 005b1fbc

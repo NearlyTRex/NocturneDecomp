@@ -533,16 +533,16 @@ section .text
     IMUL ESI,EAX,0x120                  ; 00540b22
         ;   Label: LAB_00540b22
     MOV ECX,dword ptr [EBP + 0x18]      ; 00540b28
-    MOV DX,word ptr [EBX + 0x4]         ; 00540b2b | DAT_02f7c8d4 | DAT_02f7c9f4
+    MOV DX,word ptr [EBX + 0x4]         ; 00540b2b | g_ChatHistory[0].sender_addr.port | g_ChatHistory[1].sender_addr.port
     CMP DX,word ptr [ECX + 0x4]         ; 00540b2f
     JNZ 0x00540bae                      ; 00540b33
         ;   XREF to: 00540bae (CONDITIONAL_JUMP)  ; LAB_00540bae
-    MOV EDX,dword ptr [EBX]             ; 00540b39 | g_ChatHistory | DAT_02f7c9f0
+    MOV EDX,dword ptr [EBX]             ; 00540b39 | g_ChatHistory | g_ChatHistory[1].sender_addr.ip_address
     CMP EDX,dword ptr [ECX]             ; 00540b3b
     JNZ 0x00540bae                      ; 00540b3d
         ;   XREF to: 00540bae (CONDITIONAL_JUMP)  ; LAB_00540bae
     MOV EDX,dword ptr [EDI + 0x5]       ; 00540b3f
-    CMP EDX,dword ptr [ESI + 0x2f7c8d8] ; 00540b42 | DAT_02f7c8d8 | DAT_02f7c9f8
+    CMP EDX,dword ptr [ESI + 0x2f7c8d8] ; 00540b42 | g_ChatHistory[0].message_id | g_ChatHistory[1].message_id
     JNZ 0x00540bae                      ; 00540b48
         ;   XREF to: 00540bae (CONDITIONAL_JUMP)  ; LAB_00540bae
     CMP EAX,dword ptr [0x02f7c8cc]      ; 00540b4a | g_ChatHistoryCount
@@ -618,7 +618,7 @@ section .text
     SHL EDI,0x2                         ; 00540c08
     MOV ECX,dword ptr [ESP + 0xd0]      ; 00540c0b
         ;   Label: LAB_00540c0b
-    MOV EDX,dword ptr [EAX + 0x2f98ad8] ; 00540c12 | DAT_02f98ad8 | DAT_02f98bec | DAT_02f98d00
+    MOV EDX,dword ptr [EAX + 0x2f98ad8] ; 00540c12 | g_ChatOutMessages[0].sequence_number | g_ChatOutMessages[1].sequence_number | g_ChatOutMessages[2].sequence_number
     CMP EDX,dword ptr [ECX + 0x5]       ; 00540c18
     JZ 0x00540c2d                       ; 00540c1b
         ;   XREF to: 00540c2d (CONDITIONAL_JUMP)  ; LAB_00540c2d
@@ -631,7 +631,7 @@ section .text
         ;   XREF to: 00540c0b (UNCONDITIONAL_JUMP)  ; LAB_00540c0b
     LEA EDX,[EAX + EBX*0x1]             ; 00540c2d
         ;   Label: LAB_00540c2d
-    MOV byte ptr [EDX + 0x2f98adc],0x1  ; 00540c30 | g_ChatOutMessages[0].ack_flags | DAT_02f98bf0
+    MOV byte ptr [EDX + 0x2f98adc],0x1  ; 00540c30 | g_ChatOutMessages[0].ack_flags | g_ChatOutMessages[1].ack_flags
     ADD EAX,0x114                       ; 00540c37
     INC ESI                             ; 00540c3c
     CMP EAX,EDI                         ; 00540c3d
@@ -1008,7 +1008,7 @@ section .text
     ADD EDX,ECX                         ; 00540ff5
     XOR EAX,EAX                         ; 00540ff7
     SHL EDX,0x2                         ; 00540ff9
-    CMP ESI,dword ptr [EAX + 0x2f9c0c4] ; 00540ffc | g_SimFrameHistory | DAT_02f9c128
+    CMP ESI,dword ptr [EAX + 0x2f9c0c4] ; 00540ffc | g_SimFrameHistory | g_SimFrameHistory[1].sequence_number
         ;   Label: LAB_00540ffc
     JNZ 0x005410ad                      ; 00541002
         ;   XREF to: 005410ad (CONDITIONAL_JUMP)  ; LAB_005410ad
@@ -1018,10 +1018,10 @@ section .text
     ADD EAX,0x2f9c0c4                   ; 00541010 | g_SimFrameHistory
     MOV EDX,dword ptr [EDI + 0x9]       ; 00541015
         ;   Label: LAB_00541015
-    MOV dword ptr [EAX + 0x4],EDX       ; 00541018 | DAT_02f9c0c8 | DAT_02f9c12c
-    MOV dword ptr [ESP + 0xcc],EAX      ; 0054101b | g_SimFrameHistory | DAT_02f9c128
+    MOV dword ptr [EAX + 0x4],EDX       ; 00541018 | g_SimFrameHistory[0].random_seed | g_SimFrameHistory[1].random_seed
+    MOV dword ptr [ESP + 0xcc],EAX      ; 0054101b | g_SimFrameHistory | g_SimFrameHistory[1].sequence_number
     MOV EDX,dword ptr [EDI + 0xd]       ; 00541022
-    MOV dword ptr [EAX + 0x8],EDX       ; 00541025 | DAT_02f9c0cc | DAT_02f9c130
+    MOV dword ptr [EAX + 0x8],EDX       ; 00541025 | g_SimFrameHistory[0].delta_time | g_SimFrameHistory[1].delta_time
     MOV EAX,dword ptr [EBP + 0x14]      ; 00541028
     MOV ECX,dword ptr [EAX + 0x1c]      ; 0054102b
     XOR EBX,EBX                         ; 0054102e
@@ -1050,14 +1050,14 @@ section .text
         ;   Label: LAB_0054106f
     ADD ESI,dword ptr [ESP + 0xcc]      ; 00541072
     MOV EAX,dword ptr [ESP + 0xd8]      ; 00541079
-    LEA EDI,[ESI + 0xc]                 ; 00541080 | DAT_02f9c0d0
+    LEA EDI,[ESI + 0xc]                 ; 00541080 | g_SimFrameHistory[0].player_controls[0].action_states[0]
     MOV ESI,dword ptr [ESP + 0xd8]      ; 00541083
     MOV ECX,0xb                         ; 0054108a
     ADD EAX,0x2c                        ; 0054108f
     LEA ESI,[ESI + 0x11]                ; 00541092
     MOV dword ptr [ESP + 0xd8],EAX      ; 00541095
     MOV EAX,dword ptr [EBP + 0x14]      ; 0054109c
-    MOVSD.REP ES:EDI,ESI                ; 0054109f | DAT_02f9c0d0 | DAT_02f9c0d4 | DAT_02f9c0fc
+    MOVSD.REP ES:EDI,ESI                ; 0054109f | g_SimFrameHistory[0].player_controls[0].action_states[0] | g_SimFrameHistory[0].player_controls[0].action_states[1] | g_SimFrameHistory[0].player_controls[1].action_states[0]
     INC EBX                             ; 005410a1
     CMP EBX,dword ptr [EAX + 0x1c]      ; 005410a2
     JGE 0x0054044c                      ; 005410a5

@@ -23,7 +23,7 @@
 ;   undefined4 g_PolygonScreenCache[19999].view_mode
 ;   int g_ZoomLevel
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;   ... and 13 more
 ;
@@ -139,7 +139,7 @@ section .text
     SUB ESP,0x8                         ; 0045c7da
     FSTP double ptr [ESP]               ; 0045c7dd
     IMUL EAX,dword ptr [0x01e528b4],0x14 ; 0045c7e0 | g_SelectedPointIndex
-    FLD float ptr [EAX + 0x1626410]     ; 0045c7e7 | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 0045c7e7 | g_LoadedVertices[0].vertex.y
     SUB ESP,0x8                         ; 0045c7ed
     FSTP double ptr [ESP]               ; 0045c7f0
     IMUL EAX,dword ptr [0x01e528b4],0x14 ; 0045c7f3 | g_SelectedPointIndex

@@ -24,9 +24,9 @@
 ;   undefined4 s_enough_context_to_show_usage._(T_00643ebe
 ;   char*[141] g_CommandTemplates
 ;   char[1023] g_ScriptEditorStatusText
-;   undefined4 DAT_0310fdc1
-;   undefined4 DAT_0310fdc2
-;   undefined4 DAT_0310fdc3
+;   undefined4 g_ScriptEditorStatusText+1
+;   undefined4 g_ScriptEditorStatusText+2
+;   undefined4 g_ScriptEditorStatusText+3
 ;
 ; Called Functions:
 ;   core_script.cpp_CCmdParse_bestParse_FUN_00561db0
@@ -131,13 +131,13 @@ section .text
     PUSH EDI                            ; 00565f3d | g_ScriptEditorStatusText
     MOV AL,byte ptr [ESI]               ; 00565f3e | = "Not enough context to show usage.  (T..." | s_t_enough_context_to_show_usage._(_00643ebd
         ;   Label: LAB_00565f3e
-    MOV byte ptr [EDI],AL               ; 00565f40 | g_ScriptEditorStatusText | DAT_0310fdc2
+    MOV byte ptr [EDI],AL               ; 00565f40 | g_ScriptEditorStatusText | g_ScriptEditorStatusText+2
     CMP AL,0x0                          ; 00565f42
     JZ 0x00565f56                       ; 00565f44
         ;   XREF to: 00565f56 (CONDITIONAL_JUMP)  ; LAB_00565f56
     MOV AL,byte ptr [ESI + 0x1]         ; 00565f46 | s_ot_enough_context_to_show_usage._00643ebc | s_enough_context_to_show_usage._(T_00643ebe
     ADD ESI,0x2                         ; 00565f49
-    MOV byte ptr [EDI + 0x1],AL         ; 00565f4c | DAT_0310fdc1 | DAT_0310fdc3
+    MOV byte ptr [EDI + 0x1],AL         ; 00565f4c | g_ScriptEditorStatusText+1 | g_ScriptEditorStatusText+3
     ADD EDI,0x2                         ; 00565f4f
     CMP AL,0x0                          ; 00565f52
     JNZ 0x00565f3e                      ; 00565f54

@@ -13,7 +13,7 @@
 ;   TerminatedCString s_rb_00640171
 ;   TerminatedCString s_engine_pod_cpp_00640174
 ;   char[65536] g_FileIOBuffer
-;   undefined4 DAT_030d5091
+;   undefined4 g_FileIOBuffer+1
 ;
 ; Called Functions:
 ;   crt_stdio.c_fread_FUN_005fd990
@@ -76,7 +76,7 @@ section .text
     XOR ESI,ESI                         ; 0054f508
     XOR EDX,EDX                         ; 0054f50a
         ;   Label: LAB_0054f50a
-    MOV DL,byte ptr [EBX]               ; 0054f50c | g_FileIOBuffer | DAT_030d5091
+    MOV DL,byte ptr [EBX]               ; 0054f50c | g_FileIOBuffer | g_FileIOBuffer+1
     PUSH EDX                            ; 0054f50e
     PUSH EAX                            ; 0054f50f
     INC EBX                             ; 0054f510
@@ -109,7 +109,7 @@ section .text
         ;   XREF to: 0054f570 (CONDITIONAL_JUMP)  ; LAB_0054f570
     XOR EAX,EAX                         ; 0054f554
         ;   Label: LAB_0054f554
-    MOV AL,byte ptr [EBX]               ; 0054f556 | g_FileIOBuffer | DAT_030d5091
+    MOV AL,byte ptr [EBX]               ; 0054f556 | g_FileIOBuffer | g_FileIOBuffer+1
     PUSH EAX                            ; 0054f558
     PUSH EBP                            ; 0054f559
     INC EBX                             ; 0054f55a

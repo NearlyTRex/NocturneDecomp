@@ -19,7 +19,7 @@
 ;   TerminatedCString s_art_0061306e
 ;   TerminatedCString s_engine_2d_c_00613072
 ;   SResolutionEntry[9] g_ResolutionTable
-;   undefined4 DAT_0066df30
+;   undefined4 g_ResolutionTable[0].height
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_RenderingMode
@@ -57,7 +57,7 @@ section .text
         ;   Label: LAB_00401030
     PUSH 0x8                            ; 00401035
     MOV ECX,dword ptr [EAX*0x8 + 0x66df2c] ; 00401037 | g_ResolutionTable
-    MOV EAX,dword ptr [EAX*0x8 + 0x66df30] ; 0040103e | DAT_0066df30
+    MOV EAX,dword ptr [EAX*0x8 + 0x66df30] ; 0040103e | g_ResolutionTable[0].height
     PUSH EAX                            ; 00401045
     PUSH ECX                            ; 00401046
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0 ; 00401047
@@ -87,7 +87,7 @@ section .text
     DIV ECX                             ; 0040109a
     ADD EBX,0x4                         ; 0040109c
     INC ECX                             ; 0040109f
-    MOV dword ptr [EBX + 0x2d0257c],EAX ; 004010a0 | DAT_02d02584 | DAT_02d02588
+    MOV dword ptr [EBX + 0x2d0257c],EAX ; 004010a0 | g_ReciprocalLookupTable[1] | g_ReciprocalLookupTable[2]
     CMP ECX,0x640                       ; 004010a6
     JC 0x00401093                       ; 004010ac
         ;   XREF to: 00401093 (CONDITIONAL_JUMP)  ; LAB_00401093

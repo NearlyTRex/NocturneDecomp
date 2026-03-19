@@ -13,7 +13,7 @@
 ;   int g_CurrentLineNumber
 ;   int g_SimFrameCount
 ;   SSimFrame[512] g_SimFrameHistory
-;   undefined4 DAT_02f9c128
+;   undefined4 g_SimFrameHistory[1].sequence_number
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -41,14 +41,14 @@ section .text
     XOR EAX,EAX                         ; 0053f5bf
     SHL ECX,0x2                         ; 0053f5c1
     POP ESI                             ; 0053f5c4
-    CMP EBX,dword ptr [EAX + 0x2f9c0c4] ; 0053f5c5 | g_SimFrameHistory | DAT_02f9c128
+    CMP EBX,dword ptr [EAX + 0x2f9c0c4] ; 0053f5c5 | g_SimFrameHistory | g_SimFrameHistory[1].sequence_number
         ;   Label: LAB_0053f5c5
     JNZ 0x0053f5d9                      ; 0053f5cb
         ;   XREF to: 0053f5d9 (CONDITIONAL_JUMP)  ; LAB_0053f5d9
     TEST EDX,EDX                        ; 0053f5cd
     JL 0x0053f5e1                       ; 0053f5cf
         ;   XREF to: 0053f5e1 (CONDITIONAL_JUMP)  ; LAB_0053f5e1
-    ADD EAX,0x2f9c0c4                   ; 0053f5d1 | g_SimFrameHistory | DAT_02f9c128
+    ADD EAX,0x2f9c0c4                   ; 0053f5d1 | g_SimFrameHistory | g_SimFrameHistory[1].sequence_number
     POP EBP                             ; 0053f5d6
     POP EBX                             ; 0053f5d7
     RET                                 ; 0053f5d8

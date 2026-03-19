@@ -13,7 +13,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_0326ef00
+;   undefined4 g_CDemonSetInstance.disable_directional_lighting
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
@@ -87,7 +87,7 @@ section .text
     JZ 0x00421f8f                       ; 00421f7e
         ;   XREF to: 00421f8f (CONDITIONAL_JUMP)  ; LAB_00421f8f
     MOV EAX,[0x006810c8]                ; 00421f80 | g_CDemonSetPtr
-    MOV dword ptr [EAX + 0x15ac88],0x1  ; 00421f85 | DAT_0326ef00
+    MOV dword ptr [EAX + 0x15ac88],0x1  ; 00421f85 | g_CDemonSetInstance.disable_directional_lighting
     TEST ESI,ESI                        ; 00421f8f
         ;   Label: LAB_00421f8f
     JZ 0x00421faa                       ; 00421f91
@@ -104,7 +104,7 @@ section .text
     JZ 0x00421fc2                       ; 00421fb1
         ;   XREF to: 00421fc2 (CONDITIONAL_JUMP)  ; LAB_00421fc2
     MOV EAX,[0x006810c8]                ; 00421fb3 | g_CDemonSetPtr
-    MOV dword ptr [EAX + 0x15ac88],0x0  ; 00421fb8 | DAT_0326ef00
+    MOV dword ptr [EAX + 0x15ac88],0x0  ; 00421fb8 | g_CDemonSetInstance.disable_directional_lighting
     MOV EDX,dword ptr [0x006703e8]      ; 00421fc2 | g_CDemonRendererPtr1
         ;   Label: LAB_00421fc2
     PUSH EDX                            ; 00421fc8 | g_CDemonRendererInstance

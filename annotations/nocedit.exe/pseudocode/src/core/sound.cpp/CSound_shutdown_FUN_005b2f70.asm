@@ -13,8 +13,8 @@
 ;
 ; Referenced Globals:
 ;   int g_SoundAudioInitialized
-;   undefined4 DAT_03f6b7c8
-;   undefined4 DAT_03f6b7d8
+;   undefined4 g_TrainNoiseArray[0].sfx_handle
+;   undefined4 g_TrainNoiseArray[1].sfx_handle
 ;   uint g_TrainRailNoiseHandle
 ;   uint g_TrainExteriorAmbientHandle
 ;
@@ -32,7 +32,7 @@ section .text
     XOR EDX,EDX                         ; 005b2f72
     XOR EBX,EBX                         ; 005b2f74
     MOV dword ptr [0x03f6b7ac],EDX      ; 005b2f76 | g_SoundAudioInitialized
-    MOV ECX,dword ptr [EBX + 0x3f6b7c8] ; 005b2f7c | DAT_03f6b7c8 | DAT_03f6b7d8
+    MOV ECX,dword ptr [EBX + 0x3f6b7c8] ; 005b2f7c | g_TrainNoiseArray[0].sfx_handle | g_TrainNoiseArray[1].sfx_handle
         ;   Label: LAB_005b2f7c
     PUSH ECX                            ; 005b2f82
     ADD EBX,0x10                        ; 005b2f83

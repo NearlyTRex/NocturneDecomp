@@ -86,8 +86,8 @@ section .text
     LEA EDX,[EBX + 0x80000]             ; 004bfb0b
     SHL EAX,0x16                        ; 004bfb11
     MOV dword ptr [0x0068802c],EDX      ; 004bfb14 | g_RenderVertexBuffer[0].u
-    ADD EBX,0x780000                    ; 004bfb1a | DAT_00780000
-    LEA EDX,[EAX + 0x780000]            ; 004bfb20 | DAT_00780000
+    ADD EBX,0x780000                    ; 004bfb1a | g_RenderBufferPool[194].texture_data[3]
+    LEA EDX,[EAX + 0x780000]            ; 004bfb20 | g_RenderBufferPool[194].texture_data[3]
     MOV dword ptr [0x0068805c],EBX      ; 004bfb26 | g_RenderVertexBuffer[1].u
     ADD EAX,0x80000                     ; 004bfb2c
     MOV dword ptr [0x0068808c],EBX      ; 004bfb31 | g_RenderVertexBuffer[2].u

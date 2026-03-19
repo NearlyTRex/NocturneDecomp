@@ -27,10 +27,10 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   SMRGLTextureBasic g_TempTextureDescriptor
-;   undefined4 DAT_02f31248
-;   undefined4 DAT_02f31249
-;   undefined4 DAT_02f3124a
-;   undefined4 DAT_02f3124b
+;   undefined4 g_TempTextureDescriptor.texture_name[0]
+;   undefined4 g_TempTextureDescriptor.texture_name[1]
+;   undefined4 g_TempTextureDescriptor.texture_name[2]
+;   undefined4 g_TempTextureDescriptor.texture_name[3]
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
@@ -176,18 +176,18 @@ section .text
     CALL shape_design.c_getTextureName_FUN_0046e060 ; 0051ec16
         ;   XREF to: 0046e060 (UNCONDITIONAL_CALL)  ; char * shape_design.c_getTextureName_FUN_0046e060(int texture_index)
     ADD ESP,0x4                         ; 0051ec1b
-    MOV EDI,0x2f31248                   ; 0051ec1e | DAT_02f31248
+    MOV EDI,0x2f31248                   ; 0051ec1e | g_TempTextureDescriptor.texture_name[0]
     MOV ESI,EAX                         ; 0051ec23
-    PUSH EDI                            ; 0051ec25 | DAT_02f31248
+    PUSH EDI                            ; 0051ec25 | g_TempTextureDescriptor.texture_name[0]
     MOV AL,byte ptr [ESI]               ; 0051ec26
         ;   Label: LAB_0051ec26
-    MOV byte ptr [EDI],AL               ; 0051ec28 | DAT_02f31248 | DAT_02f3124a
+    MOV byte ptr [EDI],AL               ; 0051ec28 | g_TempTextureDescriptor.texture_name[0] | g_TempTextureDescriptor.texture_name[2]
     CMP AL,0x0                          ; 0051ec2a
     JZ 0x0051ec3e                       ; 0051ec2c
         ;   XREF to: 0051ec3e (CONDITIONAL_JUMP)  ; LAB_0051ec3e
     MOV AL,byte ptr [ESI + 0x1]         ; 0051ec2e
     ADD ESI,0x2                         ; 0051ec31
-    MOV byte ptr [EDI + 0x1],AL         ; 0051ec34 | DAT_02f31249 | DAT_02f3124b
+    MOV byte ptr [EDI + 0x1],AL         ; 0051ec34 | g_TempTextureDescriptor.texture_name[1] | g_TempTextureDescriptor.texture_name[3]
     ADD EDI,0x2                         ; 0051ec37
     CMP AL,0x0                          ; 0051ec3a
     JNZ 0x0051ec26                      ; 0051ec3c

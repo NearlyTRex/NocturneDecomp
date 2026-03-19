@@ -225,18 +225,18 @@ section .text
     MOV ECX,0x30                        ; 0043858e
     ADD ESI,0x688014                    ; 00438593 | g_RenderVertexBuffer
     MOV EDI,EDX                         ; 00438599
-    PUSH EDI                            ; 0043859b | g_ClippedVertexBuffer | DAT_00824e58
+    PUSH EDI                            ; 0043859b | g_ClippedVertexBuffer | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     MOV EAX,ECX                         ; 0043859c
     SHR ECX,0x2                         ; 0043859e
-    MOVSD.REP ES:EDI,ESI                ; 004385a1 | g_ClippedVertexBuffer | DAT_00824e2c | DAT_00824e58
+    MOVSD.REP ES:EDI,ESI                ; 004385a1 | g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_y | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     MOV CL,AL                           ; 004385a3
     AND CL,0x3                          ; 004385a5
-    MOVSB.REP ES:EDI,ESI                ; 004385a8 | g_ClippedVertexBuffer | DAT_00824e2c | DAT_00824e58
+    MOVSB.REP ES:EDI,ESI                ; 004385a8 | g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_y | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     POP EDI                             ; 004385aa
     MOV EAX,dword ptr [ESP + 0x8]       ; 004385ab
     ADD EBX,0x4                         ; 004385af
     INC EAX                             ; 004385b2
-    ADD EDX,0x30                        ; 004385b3 | DAT_00824e58
+    ADD EDX,0x30                        ; 004385b3 | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     MOV dword ptr [ESP + 0x8],EAX       ; 004385b6
     CMP EBP,EAX                         ; 004385ba
     JG 0x0043858b                       ; 004385bc
@@ -279,10 +279,10 @@ section .text
     PUSH EDI                            ; 00438626 | g_ClipperInputBuffer | g_ClipperInputBuffer[1].projected_vertex.transformed_x
     MOV EAX,ECX                         ; 00438627
     SHR ECX,0x2                         ; 00438629
-    MOVSD.REP ES:EDI,ESI                ; 0043862c | g_ClipperInputBuffer | DAT_00826304 | g_ClipperInputBuffer[1].projected_vertex.transformed_x
+    MOVSD.REP ES:EDI,ESI                ; 0043862c | g_ClipperInputBuffer | g_ClipperInputBuffer[0].projected_vertex.transformed_y | g_ClipperInputBuffer[1].projected_vertex.transformed_x
     MOV CL,AL                           ; 0043862e
     AND CL,0x3                          ; 00438630
-    MOVSB.REP ES:EDI,ESI                ; 00438633 | g_ClipperInputBuffer | DAT_00826304 | g_ClipperInputBuffer[1].projected_vertex.transformed_x
+    MOVSB.REP ES:EDI,ESI                ; 00438633 | g_ClipperInputBuffer | g_ClipperInputBuffer[0].projected_vertex.transformed_y | g_ClipperInputBuffer[1].projected_vertex.transformed_x
     POP EDI                             ; 00438635
     MOV ECX,dword ptr [ESP + 0xc]       ; 00438636
     ADD EBX,0x4                         ; 0043863a
@@ -315,7 +315,7 @@ section .text
     MOV EBP,0x826300                    ; 0043867d | g_ClipperInputBuffer
     MOV EDX,EBX                         ; 00438682 | g_ClipperInputBuffer[1].projected_vertex.transformed_x
     MOV ECX,dword ptr [EBX]             ; 00438684 | g_ClipperInputBuffer | g_ClipperInputBuffer[1].projected_vertex.transformed_x
-    MOV ESI,dword ptr [EBX + 0x8]       ; 00438686 | g_ClipperInputBuffer[0].projected_vertex.transformed_z | DAT_00826338
+    MOV ESI,dword ptr [EBX + 0x8]       ; 00438686 | g_ClipperInputBuffer[0].projected_vertex.transformed_z | g_ClipperInputBuffer[1].projected_vertex.transformed_z
     ADD EBP,EAX                         ; 00438689
     XOR EAX,EAX                         ; 0043868b
     CMP ECX,ESI                         ; 0043868d
@@ -342,10 +342,10 @@ section .text
     PUSH EDI                            ; 004386c0 | g_ClipperOutputBuffer
     MOV EAX,ECX                         ; 004386c1
     SHR ECX,0x2                         ; 004386c3
-    MOVSD.REP ES:EDI,ESI                ; 004386c6 | g_ClipperOutputBuffer | DAT_00825d04 | g_ClipperInputBuffer
+    MOVSD.REP ES:EDI,ESI                ; 004386c6 | g_ClipperOutputBuffer | g_ClipperOutputBuffer[0].projected_vertex.transformed_y | g_ClipperInputBuffer
     MOV CL,AL                           ; 004386c8
     AND CL,0x3                          ; 004386ca
-    MOVSB.REP ES:EDI,ESI                ; 004386cd | g_ClipperOutputBuffer | DAT_00825d04 | g_ClipperInputBuffer
+    MOVSB.REP ES:EDI,ESI                ; 004386cd | g_ClipperOutputBuffer | g_ClipperOutputBuffer[0].projected_vertex.transformed_y | g_ClipperInputBuffer
     POP EDI                             ; 004386cf
     INC dword ptr [0x00825cf4]          ; 004386d0 | g_OutputVertexCount
     MOV EAX,dword ptr [ESP + 0x10]      ; 004386d6
@@ -380,7 +380,7 @@ section .text
         ;   Label: LAB_00438723
     MOV EBP,0x825d00                    ; 00438726 | g_ClipperOutputBuffer
     MOV EDX,EBX                         ; 0043872b | g_ClipperOutputBuffer
-    MOV ECX,dword ptr [EBX + 0x8]       ; 0043872d | g_ClipperOutputBuffer[0].projected_vertex.transformed_z | DAT_00825d38
+    MOV ECX,dword ptr [EBX + 0x8]       ; 0043872d | g_ClipperOutputBuffer[0].projected_vertex.transformed_z | g_ClipperOutputBuffer[1].projected_vertex.transformed_z
     MOV ESI,dword ptr [EBX]             ; 00438730 | g_ClipperOutputBuffer | g_ClipperOutputBuffer[1].projected_vertex.transformed_x
     NEG ECX                             ; 00438732
     ADD EBP,EAX                         ; 00438734
@@ -449,15 +449,15 @@ section .text
         ;   Label: LAB_004387d2
     MOV EBP,0x826900                    ; 004387d5 | g_ClipperWorkingBuffer
     MOV EDX,EBX                         ; 004387da | g_ClipperWorkingBuffer | g_ClipperWorkingBuffer[1].projected_vertex.transformed_x
-    MOV ECX,dword ptr [EBX + 0x4]       ; 004387dc | g_ClipperWorkingBuffer[0].projected_vertex.transformed_y | DAT_00826934
-    MOV ESI,dword ptr [EBX + 0x8]       ; 004387df | DAT_00826908 | DAT_00826938
+    MOV ECX,dword ptr [EBX + 0x4]       ; 004387dc | g_ClipperWorkingBuffer[0].projected_vertex.transformed_y | g_ClipperWorkingBuffer[1].projected_vertex.transformed_y
+    MOV ESI,dword ptr [EBX + 0x8]       ; 004387df | g_ClipperWorkingBuffer[0].projected_vertex.transformed_z | g_ClipperWorkingBuffer[1].projected_vertex.transformed_z
     ADD EBP,EAX                         ; 004387e2
     XOR EAX,EAX                         ; 004387e4
     CMP ECX,ESI                         ; 004387e6
     JL 0x004387ef                       ; 004387e8
         ;   XREF to: 004387ef (CONDITIONAL_JUMP)  ; LAB_004387ef
     MOV EAX,0x1                         ; 004387ea
-    MOV EDI,dword ptr [EBP + 0x8]       ; 004387ef | DAT_00826908
+    MOV EDI,dword ptr [EBP + 0x8]       ; 004387ef | g_ClipperWorkingBuffer[0].projected_vertex.transformed_z
         ;   Label: LAB_004387ef
     CMP EDI,dword ptr [EBP + 0x4]       ; 004387f2 | g_ClipperWorkingBuffer[0].projected_vertex.transformed_y
     JG 0x004387f9                       ; 004387f5
@@ -477,10 +477,10 @@ section .text
     PUSH EDI                            ; 00438819 | g_ClipperIntermediateBuffer
     MOV EAX,ECX                         ; 0043881a
     SHR ECX,0x2                         ; 0043881c
-    MOVSD.REP ES:EDI,ESI                ; 0043881f | g_ClipperIntermediateBuffer | DAT_00826f04 | g_ClipperWorkingBuffer
+    MOVSD.REP ES:EDI,ESI                ; 0043881f | g_ClipperIntermediateBuffer | g_ClipperIntermediateBuffer[0].projected_vertex.transformed_y | g_ClipperWorkingBuffer
     MOV CL,AL                           ; 00438821
     AND CL,0x3                          ; 00438823
-    MOVSB.REP ES:EDI,ESI                ; 00438826 | g_ClipperIntermediateBuffer | DAT_00826f04 | g_ClipperWorkingBuffer
+    MOVSB.REP ES:EDI,ESI                ; 00438826 | g_ClipperIntermediateBuffer | g_ClipperIntermediateBuffer[0].projected_vertex.transformed_y | g_ClipperWorkingBuffer
     POP EDI                             ; 00438828
     INC dword ptr [0x00825cfc]          ; 00438829 | g_IntermediateVertexCount
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0043882f
@@ -515,8 +515,8 @@ section .text
         ;   Label: LAB_0043887c
     MOV EBP,0x826f00                    ; 0043887f | g_ClipperIntermediateBuffer
     MOV EDX,EBX                         ; 00438884 | g_ClipperIntermediateBuffer
-    MOV ECX,dword ptr [EBX + 0x8]       ; 00438886 | g_ClipperIntermediateBuffer[0].projected_vertex.transformed_z | DAT_00826f38
-    MOV ESI,dword ptr [EBX + 0x4]       ; 00438889 | DAT_00826f04 | DAT_00826f34
+    MOV ECX,dword ptr [EBX + 0x8]       ; 00438886 | g_ClipperIntermediateBuffer[0].projected_vertex.transformed_z | g_ClipperIntermediateBuffer[1].projected_vertex.transformed_z
+    MOV ESI,dword ptr [EBX + 0x4]       ; 00438889 | g_ClipperIntermediateBuffer[0].projected_vertex.transformed_y | g_ClipperIntermediateBuffer[1].projected_vertex.transformed_y
     NEG ECX                             ; 0043888c
     ADD EBP,EAX                         ; 0043888e
     XOR EAX,EAX                         ; 00438890
@@ -526,7 +526,7 @@ section .text
     MOV EAX,0x1                         ; 00438896
     MOV ECX,dword ptr [EBP + 0x8]       ; 0043889b | g_ClipperIntermediateBuffer[0].projected_vertex.transformed_z
         ;   Label: LAB_0043889b
-    MOV EDI,dword ptr [EBP + 0x4]       ; 0043889e | DAT_00826f04
+    MOV EDI,dword ptr [EBP + 0x4]       ; 0043889e | g_ClipperIntermediateBuffer[0].projected_vertex.transformed_y
     NEG ECX                             ; 004388a1
     CMP ECX,EDI                         ; 004388a3
     JL 0x004388a9                       ; 004388a5
@@ -546,10 +546,10 @@ section .text
     PUSH EDI                            ; 004388c9 | g_ClippedVertexBuffer
     MOV EAX,ECX                         ; 004388ca
     SHR ECX,0x2                         ; 004388cc
-    MOVSD.REP ES:EDI,ESI                ; 004388cf | g_ClippedVertexBuffer | DAT_00824e2c | g_ClipperIntermediateBuffer
+    MOVSD.REP ES:EDI,ESI                ; 004388cf | g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_y | g_ClipperIntermediateBuffer
     MOV CL,AL                           ; 004388d1
     AND CL,0x3                          ; 004388d3
-    MOVSB.REP ES:EDI,ESI                ; 004388d6 | g_ClippedVertexBuffer | DAT_00824e2c | g_ClipperIntermediateBuffer
+    MOVSB.REP ES:EDI,ESI                ; 004388d6 | g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_y | g_ClipperIntermediateBuffer
     POP EDI                             ; 004388d8
     INC dword ptr [0x00824e24]          ; 004388d9 | g_ClippedVertexCount
     MOV EDX,dword ptr [ESP + 0x14]      ; 004388df
@@ -571,15 +571,15 @@ section .text
     TEST EBX,EBX                        ; 0043890f
     JLE 0x004385c0                      ; 00438911
         ;   XREF to: 004385c0 (CONDITIONAL_JUMP)  ; LAB_004385c0
-    MOV ECX,dword ptr [EAX + 0x8]       ; 00438917 | g_ClippedVertexBuffer[0].projected_vertex.transformed_z | DAT_00824e60
+    MOV ECX,dword ptr [EAX + 0x8]       ; 00438917 | g_ClippedVertexBuffer[0].projected_vertex.transformed_z | g_ClippedVertexBuffer[1].projected_vertex.transformed_z
         ;   Label: LAB_00438917
     TEST ECX,ECX                        ; 0043891a
     JZ 0x00438b3c                       ; 0043891c
         ;   XREF to: 00438b3c (CONDITIONAL_JUMP)  ; LAB_00438b3c
-    CMP ECX,dword ptr [EAX]             ; 00438922 | g_ClippedVertexBuffer | DAT_00824e58
+    CMP ECX,dword ptr [EAX]             ; 00438922 | g_ClippedVertexBuffer | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     JGE 0x00438b4d                      ; 00438924
         ;   XREF to: 00438b4d (CONDITIONAL_JUMP)  ; LAB_00438b4d
-    MOV dword ptr [EAX],ECX             ; 0043892a | g_ClippedVertexBuffer | DAT_00824e58
+    MOV dword ptr [EAX],ECX             ; 0043892a | g_ClippedVertexBuffer | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     MOV EDX,dword ptr [0x00824e24]      ; 0043892c | g_ClippedVertexCount
         ;   Label: LAB_0043892c
     INC EBP                             ; 00438932
@@ -611,10 +611,10 @@ section .text
     PUSH EDI                            ; 0043897d | g_ClipperOutputBuffer
     MOV EAX,ECX                         ; 0043897e
     SHR ECX,0x2                         ; 00438980
-    MOVSD.REP ES:EDI,ESI                ; 00438983 | g_ClipperOutputBuffer | DAT_00825d04 | g_ClipperInputBuffer
+    MOVSD.REP ES:EDI,ESI                ; 00438983 | g_ClipperOutputBuffer | g_ClipperOutputBuffer[0].projected_vertex.transformed_y | g_ClipperInputBuffer
     MOV CL,AL                           ; 00438985
     AND CL,0x3                          ; 00438987
-    MOVSB.REP ES:EDI,ESI                ; 0043898a | g_ClipperOutputBuffer | DAT_00825d04 | g_ClipperInputBuffer
+    MOVSB.REP ES:EDI,ESI                ; 0043898a | g_ClipperOutputBuffer | g_ClipperOutputBuffer[0].projected_vertex.transformed_y | g_ClipperInputBuffer
     POP EDI                             ; 0043898c
     MOV ECX,dword ptr [0x00825cf4]      ; 0043898d | g_OutputVertexCount
     INC ECX                             ; 00438993
@@ -697,17 +697,17 @@ section .text
     PUSH EDI                            ; 00438a7b | g_ClipperIntermediateBuffer
     MOV EAX,ECX                         ; 00438a7c
     SHR ECX,0x2                         ; 00438a7e
-    MOVSD.REP ES:EDI,ESI                ; 00438a81 | g_ClipperIntermediateBuffer | DAT_00826f04 | g_ClipperWorkingBuffer
+    MOVSD.REP ES:EDI,ESI                ; 00438a81 | g_ClipperIntermediateBuffer | g_ClipperIntermediateBuffer[0].projected_vertex.transformed_y | g_ClipperWorkingBuffer
     MOV CL,AL                           ; 00438a83
     AND CL,0x3                          ; 00438a85
-    MOVSB.REP ES:EDI,ESI                ; 00438a88 | g_ClipperIntermediateBuffer | DAT_00826f04 | g_ClipperWorkingBuffer
+    MOVSB.REP ES:EDI,ESI                ; 00438a88 | g_ClipperIntermediateBuffer | g_ClipperIntermediateBuffer[0].projected_vertex.transformed_y | g_ClipperWorkingBuffer
     POP EDI                             ; 00438a8a
     MOV ECX,dword ptr [0x00825cfc]      ; 00438a8b | g_IntermediateVertexCount
     INC ECX                             ; 00438a91
     MOV dword ptr [0x00825cfc],ECX      ; 00438a92 | g_IntermediateVertexCount
     IMUL EAX,ECX,0x30                   ; 00438a98
-    ADD EAX,0x826f00                    ; 00438a9b | DAT_00826f30 | g_ClipperIntermediateBuffer
-    PUSH EAX                            ; 00438aa0 | DAT_00826f30
+    ADD EAX,0x826f00                    ; 00438a9b | g_ClipperIntermediateBuffer[1].projected_vertex.transformed_x
+    PUSH EAX                            ; 00438aa0 | g_ClipperIntermediateBuffer[1].projected_vertex.transformed_x
     PUSH EBP                            ; 00438aa1
     PUSH EDX                            ; 00438aa2 | g_ClipperWorkingBuffer | g_ClipperWorkingBuffer[1].projected_vertex.transformed_x
     CALL engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490 ; 00438aa3
@@ -740,17 +740,17 @@ section .text
     PUSH EDI                            ; 00438afa | g_ClippedVertexBuffer
     MOV EAX,ECX                         ; 00438afb
     SHR ECX,0x2                         ; 00438afd
-    MOVSD.REP ES:EDI,ESI                ; 00438b00 | g_ClippedVertexBuffer | DAT_00824e2c | g_ClipperIntermediateBuffer
+    MOVSD.REP ES:EDI,ESI                ; 00438b00 | g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_y | g_ClipperIntermediateBuffer
     MOV CL,AL                           ; 00438b02
     AND CL,0x3                          ; 00438b04
-    MOVSB.REP ES:EDI,ESI                ; 00438b07 | g_ClippedVertexBuffer | DAT_00824e2c | g_ClipperIntermediateBuffer
+    MOVSB.REP ES:EDI,ESI                ; 00438b07 | g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_y | g_ClipperIntermediateBuffer
     POP EDI                             ; 00438b09
     MOV ECX,dword ptr [0x00824e24]      ; 00438b0a | g_ClippedVertexCount
     INC ECX                             ; 00438b10
     MOV dword ptr [0x00824e24],ECX      ; 00438b11 | g_ClippedVertexCount
     IMUL EAX,ECX,0x30                   ; 00438b17
-    ADD EAX,0x824e28                    ; 00438b1a | DAT_00824e58 | g_ClippedVertexBuffer
-    PUSH EAX                            ; 00438b1f | DAT_00824e58
+    ADD EAX,0x824e28                    ; 00438b1a | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
+    PUSH EAX                            ; 00438b1f | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     PUSH EBP                            ; 00438b20
     PUSH EDX                            ; 00438b21 | g_ClipperIntermediateBuffer
     CALL engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0 ; 00438b22
@@ -761,36 +761,36 @@ section .text
     MOV dword ptr [0x00824e24],EDI      ; 00438b31 | g_ClippedVertexCount
     JMP 0x004388df                      ; 00438b37
         ;   XREF to: 004388df (UNCONDITIONAL_JUMP)  ; caseD_3
-    MOV dword ptr [EAX + 0x8],0x1       ; 00438b3c | g_ClippedVertexBuffer[0].projected_vertex.transformed_z | DAT_00824e60
+    MOV dword ptr [EAX + 0x8],0x1       ; 00438b3c | g_ClippedVertexBuffer[0].projected_vertex.transformed_z | g_ClippedVertexBuffer[1].projected_vertex.transformed_z
         ;   Label: LAB_00438b3c
-    MOV dword ptr [EAX],ECX             ; 00438b43 | g_ClippedVertexBuffer | DAT_00824e58
-    MOV dword ptr [EAX + 0x4],ECX       ; 00438b45 | DAT_00824e2c | DAT_00824e5c
+    MOV dword ptr [EAX],ECX             ; 00438b43 | g_ClippedVertexBuffer | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
+    MOV dword ptr [EAX + 0x4],ECX       ; 00438b45 | g_ClippedVertexBuffer[0].projected_vertex.transformed_y | g_ClippedVertexBuffer[1].projected_vertex.transformed_y
     JMP 0x0043892c                      ; 00438b48
         ;   XREF to: 0043892c (UNCONDITIONAL_JUMP)  ; LAB_0043892c
     MOV EDX,ECX                         ; 00438b4d
         ;   Label: LAB_00438b4d
-    MOV ESI,dword ptr [EAX]             ; 00438b4f | g_ClippedVertexBuffer | DAT_00824e58
+    MOV ESI,dword ptr [EAX]             ; 00438b4f | g_ClippedVertexBuffer | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     NEG EDX                             ; 00438b51
     CMP EDX,ESI                         ; 00438b53
     JLE 0x00438b5e                      ; 00438b55
         ;   XREF to: 00438b5e (CONDITIONAL_JUMP)  ; LAB_00438b5e
-    MOV dword ptr [EAX],EDX             ; 00438b57 | g_ClippedVertexBuffer | DAT_00824e58
+    MOV dword ptr [EAX],EDX             ; 00438b57 | g_ClippedVertexBuffer | g_ClippedVertexBuffer[1].projected_vertex.transformed_x
     JMP 0x0043892c                      ; 00438b59
         ;   XREF to: 0043892c (UNCONDITIONAL_JUMP)  ; LAB_0043892c
-    MOV EDI,dword ptr [EAX + 0x8]       ; 00438b5e | g_ClippedVertexBuffer[0].projected_vertex.transformed_z | DAT_00824e60
+    MOV EDI,dword ptr [EAX + 0x8]       ; 00438b5e | g_ClippedVertexBuffer[0].projected_vertex.transformed_z | g_ClippedVertexBuffer[1].projected_vertex.transformed_z
         ;   Label: LAB_00438b5e
-    MOV ECX,dword ptr [EAX + 0x4]       ; 00438b61 | DAT_00824e2c | DAT_00824e5c
+    MOV ECX,dword ptr [EAX + 0x4]       ; 00438b61 | g_ClippedVertexBuffer[0].projected_vertex.transformed_y | g_ClippedVertexBuffer[1].projected_vertex.transformed_y
     CMP ECX,EDI                         ; 00438b64
     JLE 0x00438b70                      ; 00438b66
         ;   XREF to: 00438b70 (CONDITIONAL_JUMP)  ; LAB_00438b70
-    MOV dword ptr [EAX + 0x4],EDI       ; 00438b68 | DAT_00824e2c | DAT_00824e5c
+    MOV dword ptr [EAX + 0x4],EDI       ; 00438b68 | g_ClippedVertexBuffer[0].projected_vertex.transformed_y | g_ClippedVertexBuffer[1].projected_vertex.transformed_y
     JMP 0x0043892c                      ; 00438b6b
         ;   XREF to: 0043892c (UNCONDITIONAL_JUMP)  ; LAB_0043892c
     CMP EDX,ECX                         ; 00438b70
         ;   Label: LAB_00438b70
     JLE 0x0043892c                      ; 00438b72
         ;   XREF to: 0043892c (CONDITIONAL_JUMP)  ; LAB_0043892c
-    MOV dword ptr [EAX + 0x4],EDX       ; 00438b78 | DAT_00824e2c | DAT_00824e5c
+    MOV dword ptr [EAX + 0x4],EDX       ; 00438b78 | g_ClippedVertexBuffer[0].projected_vertex.transformed_y | g_ClippedVertexBuffer[1].projected_vertex.transformed_y
     JMP 0x0043892c                      ; 00438b7b
         ;   XREF to: 0043892c (UNCONDITIONAL_JUMP)  ; LAB_0043892c
 

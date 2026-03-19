@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   CMuzzleFlash[20] g_MuzzleFlashPool
-;   undefined4 DAT_02d58a60
-;   undefined4 DAT_02d58abc
+;   undefined4 g_MuzzleFlashPool[1].frames_remaining
+;   undefined4 g_MuzzleFlashPool[2].frames_remaining
 ;
 ; *****************************************************************************
 
@@ -29,7 +29,7 @@ section .text
     CMP EAX,0x730                       ; 004c93e0
     JGE 0x004c64b0                      ; 004c93e5
         ;   XREF to: 004c64b0 (CONDITIONAL_JUMP)
-    CMP dword ptr [EAX + 0x2d58a04],0x1 ; 004c93eb | DAT_02d58a60 | DAT_02d58abc
+    CMP dword ptr [EAX + 0x2d58a04],0x1 ; 004c93eb | g_MuzzleFlashPool[1].frames_remaining | g_MuzzleFlashPool[2].frames_remaining
     JNZ 0x004c93dd                      ; 004c93f2
         ;   XREF to: 004c93dd (CONDITIONAL_JUMP)  ; LAB_004c93dd
     MOV EAX,0x1                         ; 004c93f4

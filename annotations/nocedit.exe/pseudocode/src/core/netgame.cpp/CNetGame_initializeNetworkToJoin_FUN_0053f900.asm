@@ -38,7 +38,7 @@
 ;   int g_ForceMessagePump = 0x1
 ;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 g_CGameInstance.hero_number
-;   undefined4 DAT_02d81b60
+;   undefined4 g_CGameInstance.aim_mode
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -72,7 +72,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 0053f917 | g_CGamePtr
     MOV dword ptr [EBX + 0x1c],0x0      ; 0053f91c
     ADD ESP,0x8                         ; 0053f923
-    MOV EDX,dword ptr [EAX + 0xc4]      ; 0053f926 | DAT_02d81b60
+    MOV EDX,dword ptr [EAX + 0xc4]      ; 0053f926 | g_CGameInstance.aim_mode
     PUSH EDX                            ; 0053f92c
     MOV ECX,dword ptr [EAX + 0xc0]      ; 0053f92d | g_CGameInstance.hero_number
     PUSH ECX                            ; 0053f933

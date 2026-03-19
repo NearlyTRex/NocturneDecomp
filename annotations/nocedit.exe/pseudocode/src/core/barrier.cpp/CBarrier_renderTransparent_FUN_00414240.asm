@@ -13,8 +13,8 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
-;   undefined4 DAT_02f33768
+;   undefined4 g_CDemonMissionInstance.is_in_editor
+;   undefined4 g_CDemonMissionInstance.selected_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0
@@ -33,7 +33,7 @@ section .text
     SUB ESP,0x18                        ; 00414242
     MOV EBX,dword ptr [ESP + 0x24]      ; 00414245
     MOV EAX,[0x0067d550]                ; 00414249 | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 0041424e | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 0041424e | g_CDemonMissionInstance.is_in_editor
     JNZ 0x0041425c                      ; 00414252
         ;   XREF to: 0041425c (CONDITIONAL_JUMP)  ; LAB_0041425c
     XOR EAX,EAX                         ; 00414254
@@ -77,7 +77,7 @@ section .text
     JZ 0x004142cd                       ; 004142a4
         ;   XREF to: 004142cd (CONDITIONAL_JUMP)  ; LAB_004142cd
     MOV ESI,dword ptr [0x0067d550]      ; 004142a6 | g_CDemonMissionPtr
-    MOV EBP,dword ptr [ESI + 0x28]      ; 004142ac | DAT_02f33768
+    MOV EBP,dword ptr [ESI + 0x28]      ; 004142ac | g_CDemonMissionInstance.selected_actor
     MOV EAX,0x40                        ; 004142af
     CMP EBX,EBP                         ; 004142b4
     JNZ 0x004142bd                      ; 004142b6

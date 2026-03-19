@@ -13,7 +13,7 @@
 ;   _FILE* g_StaticFilePoolStart = 00000000
 ;   int INT_00684cd0 = 0x1
 ;   _FILE g_StdoutLogFile
-;   undefined4 DAT_00684cea
+;   undefined4 g_StdoutLogFile._flag
 ;   undefined4 g_StaticFilePoolEnd
 ;   ENTER_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ef8 = 00602434
 ;   EXIT_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684efc = 00602434
@@ -52,7 +52,7 @@ section .text
     CMP EBX,0x684ecc                    ; 00609321 | g_StaticFilePoolEnd
     JNC 0x00609351                      ; 00609327
         ;   XREF to: 00609351 (CONDITIONAL_JUMP)  ; LAB_00609351
-    TEST byte ptr [EBX + 0xc],0x3       ; 00609329 | INT_00684cd0 | DAT_00684cea
+    TEST byte ptr [EBX + 0xc],0x3       ; 00609329 | INT_00684cd0 | g_StdoutLogFile._flag
         ;   Label: LAB_00609329
     JNZ 0x00609346                      ; 0060932d
         ;   XREF to: 00609346 (CONDITIONAL_JUMP)  ; LAB_00609346

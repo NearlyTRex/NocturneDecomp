@@ -100,7 +100,7 @@ section .text
     LEA EAX,[EAX]                       ; 0056b85a
     MOV EAX,[0x0067b654]                ; 0056b860 | g_CGamePtr
         ;   Label: LAB_0056b860
-    CMP dword ptr [EAX + 0x20c],0x0     ; 0056b865 | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x0     ; 0056b865 | g_CGameInstance.profile_mode
     JNZ 0x0056b95e                      ; 0056b86c
         ;   XREF to: 0056b95e (CONDITIONAL_JUMP)  ; LAB_0056b95e
     XOR EBX,EBX                         ; 0056b872
@@ -208,7 +208,7 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 0056b9a1
     MOV dword ptr [ESP + 0x48],EAX      ; 0056b9a3
     MOV EAX,[0x0067b654]                ; 0056b9a7 | g_CGamePtr
-    CMP dword ptr [EAX + 0x20c],0x2     ; 0056b9ac | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x2     ; 0056b9ac | g_CGameInstance.profile_mode
     JNZ 0x0056b9be                      ; 0056b9b3
         ;   XREF to: 0056b9be (CONDITIONAL_JUMP)  ; LAB_0056b9be
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 0056b9b5
@@ -221,7 +221,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x154]     ; 0056b9c7
     CALL dword ptr [EDX + 0x4]          ; 0056b9cd
     MOV EAX,[0x0067b654]                ; 0056b9d0 | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0x20c]     ; 0056b9d5 | DAT_02d81ca8
+    MOV ECX,dword ptr [EAX + 0x20c]     ; 0056b9d5 | g_CGameInstance.profile_mode
     ADD ESP,0x8                         ; 0056b9db
     CMP ECX,0x2                         ; 0056b9de
     JNZ 0x0056b9ff                      ; 0056b9e1
@@ -235,7 +235,7 @@ section .text
     MOV dword ptr [EBX + 0x32bf6d4],EAX ; 0056b9f9 | g_ActorProfileActors
     MOV EAX,[0x0067b654]                ; 0056b9ff | g_CGamePtr
         ;   Label: LAB_0056b9ff
-    CMP dword ptr [EAX + 0x20c],0x0     ; 0056ba04 | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x0     ; 0056ba04 | g_CGameInstance.profile_mode
     JZ 0x0056ba1f                       ; 0056ba0b
         ;   XREF to: 0056ba1f (CONDITIONAL_JUMP)  ; LAB_0056ba1f
     MOV EAX,dword ptr [ESP + 0x88]      ; 0056ba0d
@@ -493,7 +493,7 @@ section .text
         ;   XREF to: 0056bad4 (CONDITIONAL_JUMP)  ; LAB_0056bad4
     MOV EAX,[0x0067b654]                ; 0056bca6 | g_CGamePtr
         ;   Label: LAB_0056bca6
-    MOV ECX,dword ptr [EAX + 0x20c]     ; 0056bcab | DAT_02d81ca8
+    MOV ECX,dword ptr [EAX + 0x20c]     ; 0056bcab | g_CGameInstance.profile_mode
     TEST ECX,ECX                        ; 0056bcb1
     JZ 0x0056be30                       ; 0056bcb3
         ;   XREF to: 0056be30 (CONDITIONAL_JUMP)  ; LAB_0056be30
@@ -522,15 +522,15 @@ section .text
     MOV ECX,dword ptr [ESP + 0x6c]      ; 0056bd04
     MOV EDX,dword ptr [ESP + 0x7c]      ; 0056bd08
     LEA EAX,[EBX*0x4 + 0x0]             ; 0056bd0c
-    MOV EDI,dword ptr [EAX + 0x32bd794] ; 0056bd13 | g_ActorProfileTimes | DAT_032bd798
+    MOV EDI,dword ptr [EAX + 0x32bd794] ; 0056bd13 | g_ActorProfileTimes | g_ActorProfileTimes[1]
         ;   Label: LAB_0056bd13
-    MOV ESI,dword ptr [EDX + 0x32bd794] ; 0056bd19 | g_ActorProfileTimes | DAT_032bd798
+    MOV ESI,dword ptr [EDX + 0x32bd794] ; 0056bd19 | g_ActorProfileTimes | g_ActorProfileTimes[1]
     CMP ESI,EDI                         ; 0056bd1f
     JGE 0x0056bd4f                      ; 0056bd21
         ;   XREF to: 0056bd4f (CONDITIONAL_JUMP)  ; LAB_0056bd4f
     MOV EDI,ESI                         ; 0056bd23
     MOV ESI,dword ptr [EAX + 0x32bd794] ; 0056bd25 | g_ActorProfileTimes
-    MOV dword ptr [EDX + 0x32bd794],ESI ; 0056bd2b | g_ActorProfileTimes | DAT_032bd798
+    MOV dword ptr [EDX + 0x32bd794],ESI ; 0056bd2b | g_ActorProfileTimes | g_ActorProfileTimes[1]
     MOV dword ptr [EAX + 0x32bd794],EDI ; 0056bd31 | g_ActorProfileTimes
     MOV EDI,dword ptr [EAX + 0x32bf6d4] ; 0056bd37 | g_ActorProfileActors
     MOV ESI,dword ptr [EDX + 0x32bf6d4] ; 0056bd3d | g_ActorProfileActors
@@ -566,7 +566,7 @@ section .text
     JLE 0x0056bde0                      ; 0056bd93
         ;   XREF to: 0056bde0 (CONDITIONAL_JUMP)  ; LAB_0056bde0
     XOR EBX,EBX                         ; 0056bd95
-    FILD dword ptr [EBX + 0x32bd794]    ; 0056bd97 | g_ActorProfileTimes | DAT_032bd798
+    FILD dword ptr [EBX + 0x32bd794]    ; 0056bd97 | g_ActorProfileTimes | g_ActorProfileTimes[1]
         ;   Label: LAB_0056bd97
     FMUL double ptr [0x00645d1b]        ; 0056bd9d | DOUBLE_00645d1b
     FMUL double ptr [0x00645d23]        ; 0056bda3 | DOUBLE_00645d23
@@ -574,7 +574,7 @@ section .text
     FDIV float ptr [ESP]                ; 0056bdaf
     SUB ESP,0x8                         ; 0056bdb2
     FSTP double ptr [ESP]               ; 0056bdb5
-    MOV ECX,dword ptr [EBX + 0x32bf6d4] ; 0056bdb8 | g_ActorProfileActors | DAT_032bf6d8
+    MOV ECX,dword ptr [EBX + 0x32bf6d4] ; 0056bdb8 | g_ActorProfileActors | g_ActorProfileActors[1]
     PUSH ECX                            ; 0056bdbe
     PUSH ESI                            ; 0056bdbf
     PUSH 0x645ccf                       ; 0056bdc0 | = "%d. %s : %3.2f ms\n"

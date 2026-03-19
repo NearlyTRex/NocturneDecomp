@@ -13,7 +13,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_0326ef00
+;   undefined4 g_CDemonSetInstance.disable_directional_lighting
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -72,7 +72,7 @@ section .text
     MOV EDI,dword ptr [0x006703ec]      ; 0041d20c | g_CDemonRendererPtr2
     MOV EAX,[0x006810c8]                ; 0041d212 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EDI                            ; 0041d217 | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0x15ac88],0x1  ; 0041d218 | DAT_0326ef00
+    MOV dword ptr [EAX + 0x15ac88],0x1  ; 0041d218 | g_CDemonSetInstance.disable_directional_lighting
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0041d222
         ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0041d227
@@ -83,7 +83,7 @@ section .text
     MOV EBP,dword ptr [0x006703ec]      ; 0041d233 | g_CDemonRendererPtr2
     MOV EAX,[0x006810c8]                ; 0041d239 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EBP                            ; 0041d23e | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0x15ac88],0x0  ; 0041d23f | DAT_0326ef00
+    MOV dword ptr [EAX + 0x15ac88],0x0  ; 0041d23f | g_CDemonSetInstance.disable_directional_lighting
     CALL engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80 ; 0041d249
         ;   XREF to: 0048da80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0041d24e

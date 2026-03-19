@@ -21,11 +21,11 @@
 ;   DWORD g_JoyXPos
 ;   DWORD g_JoyYPos
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_0326f0e8
-;   undefined4 DAT_0326f0ec
-;   undefined4 DAT_0326f0f0
-;   undefined4 DAT_0326f0f4
-;   undefined4 DAT_0326f0f8
+;   undefined4 g_CDemonSetInstance.rendering_mode
+;   undefined4 g_CDemonSetInstance.light_direction.x
+;   undefined4 g_CDemonSetInstance.light_direction.y
+;   undefined4 g_CDemonSetInstance.light_direction.z
+;   undefined4 g_CDemonSetInstance.ambient_base_quick
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
@@ -82,7 +82,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0052a32b
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     MOV EAX,[0x006810c8]                ; 0052a330 | g_CDemonSetPtr
-    MOV dword ptr [EAX + 0x15ae70],0x1  ; 0052a335 | DAT_0326f0e8
+    MOV dword ptr [EAX + 0x15ae70],0x1  ; 0052a335 | g_CDemonSetInstance.rendering_mode
     MOV EAX,[0x02d051f8]                ; 0052a33f | g_JoyXPos
     ADD ESP,0x8                         ; 0052a344
     ADD EAX,0xffff8000                  ; 0052a347
@@ -105,23 +105,23 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0052a382
     MOV EDX,dword ptr [0x006810c8]      ; 0052a383 | g_CDemonSetInstance | g_CDemonSetPtr
     MOV EAX,dword ptr [ESP + 0xc]       ; 0052a389
-    MOV dword ptr [EDX + 0x15ae74],EAX  ; 0052a38d | DAT_0326f0ec
+    MOV dword ptr [EDX + 0x15ae74],EAX  ; 0052a38d | g_CDemonSetInstance.light_direction.x
     MOV EAX,dword ptr [ESP + 0x10]      ; 0052a393
-    MOV dword ptr [EDX + 0x15ae78],EAX  ; 0052a397 | DAT_0326f0f0
+    MOV dword ptr [EDX + 0x15ae78],EAX  ; 0052a397 | g_CDemonSetInstance.light_direction.y
     PUSH 0x205                          ; 0052a39d
     MOV EAX,dword ptr [ESP + 0x18]      ; 0052a3a2
     PUSH 0x0                            ; 0052a3a6
-    MOV dword ptr [EDX + 0x15ae7c],EAX  ; 0052a3a8 | DAT_0326f0f4
+    MOV dword ptr [EDX + 0x15ae7c],EAX  ; 0052a3a8 | g_CDemonSetInstance.light_direction.z
     MOV EAX,dword ptr [ESP + 0x40]      ; 0052a3ae
     PUSH 0x0                            ; 0052a3b2
     ADD EAX,0x8                         ; 0052a3b4
     PUSH EAX                            ; 0052a3b7
-    MOV dword ptr [EDX + 0x15ae80],0x280 ; 0052a3b8 | DAT_0326f0f8
+    MOV dword ptr [EDX + 0x15ae80],0x280 ; 0052a3b8 | g_CDemonSetInstance.ambient_base_quick
     CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 0052a3c2
         ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, int frame_index, CKeyFramedModelInstance * instance, int render_flags)
     MOV EAX,[0x006810c8]                ; 0052a3c7 | g_CDemonSetInstance | g_CDemonSetPtr
     ADD ESP,0x10                        ; 0052a3cc
-    MOV dword ptr [EAX + 0x15ae70],0x0  ; 0052a3cf | DAT_0326f0e8
+    MOV dword ptr [EAX + 0x15ae70],0x0  ; 0052a3cf | g_CDemonSetInstance.rendering_mode
     ADD ESP,0x24                        ; 0052a3d9
     POP EBP                             ; 0052a3dc
     POP EDI                             ; 0052a3dd

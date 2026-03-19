@@ -18,10 +18,10 @@
 ;   TerminatedCString s_d_0062e44e
 ;   int g_BloodSplatCount
 ;   CBloodSplat[2000] g_BloodSplats
-;   undefined4 DAT_02d87420
+;   undefined4 g_BloodSplats[1].expired
 ;   int g_BloodPoolCount
 ;   CBloodPool[32] g_BloodPools
-;   undefined4 DAT_02da874c
+;   undefined4 g_BloodPools[1].expired
 ;
 ; Called Functions:
 ;   core_gore.cpp_CBloodPool_load_FUN_004ed160
@@ -61,13 +61,13 @@ section .text
     MOV EBX,0x2da8724                   ; 004ee223 | g_BloodPools
     PUSH EDI                            ; 004ee228
         ;   Label: LAB_004ee228
-    PUSH EBX                            ; 004ee229 | g_BloodPools | DAT_02da874c
+    PUSH EBX                            ; 004ee229 | g_BloodPools | g_BloodPools[1].expired
     INC ESI                             ; 004ee22a
     CALL core_gore.cpp_CBloodPool_load_FUN_004ed160 ; 004ee22b
         ;   XREF to: 004ed160 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CBloodPool_load_FUN_004ed160(CBloodPool * this_ptr, _FILE * file_handle)
     MOV ECX,dword ptr [0x02da8720]      ; 004ee230 | g_BloodPoolCount
     ADD ESP,0x8                         ; 004ee236
-    ADD EBX,0x28                        ; 004ee239 | DAT_02da874c
+    ADD EBX,0x28                        ; 004ee239 | g_BloodPools[1].expired
     CMP ESI,ECX                         ; 004ee23c
     JL 0x004ee228                       ; 004ee23e
         ;   XREF to: 004ee228 (CONDITIONAL_JUMP)  ; LAB_004ee228
@@ -86,13 +86,13 @@ section .text
     MOV EBX,0x2d873dc                   ; 004ee25f | g_BloodSplats
     PUSH EDI                            ; 004ee264
         ;   Label: LAB_004ee264
-    PUSH EBX                            ; 004ee265 | g_BloodSplats | DAT_02d87420
+    PUSH EBX                            ; 004ee265 | g_BloodSplats | g_BloodSplats[1].expired
     INC ESI                             ; 004ee266
     CALL core_gore.cpp_CBloodSplat_load_FUN_004ecb00 ; 004ee267
         ;   XREF to: 004ecb00 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CBloodSplat_load_FUN_004ecb00(CBloodSplat * this_ptr, _FILE * file_handle)
     MOV EBP,dword ptr [0x02d873d8]      ; 004ee26c | g_BloodSplatCount
     ADD ESP,0x8                         ; 004ee272
-    ADD EBX,0x44                        ; 004ee275 | DAT_02d87420
+    ADD EBX,0x44                        ; 004ee275 | g_BloodSplats[1].expired
     CMP ESI,EBP                         ; 004ee278
     JL 0x004ee264                       ; 004ee27a
         ;   XREF to: 004ee264 (CONDITIONAL_JUMP)  ; LAB_004ee264

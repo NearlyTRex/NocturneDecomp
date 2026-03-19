@@ -17,8 +17,8 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_BackgroundSceneNestingCount
 ;   void*[1200] g_SavedScreenBufferArray
-;   undefined4 DAT_026a5818
-;   undefined4 DAT_026a5819
+;   undefined4 g_SavedScreenBufferArray[1]
+;   undefined4 g_SavedScreenBufferArray[1]+1
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
@@ -57,10 +57,10 @@ section .text
     PUSH EDI                            ; 00472e7e | g_SavedScreenBufferArray
     MOV EAX,ECX                         ; 00472e7f
     SHR ECX,0x2                         ; 00472e81
-    MOVSD.REP ES:EDI,ESI                ; 00472e84 | g_SavedScreenBufferArray | DAT_026a5818 | g_ScreenBufferArray
+    MOVSD.REP ES:EDI,ESI                ; 00472e84 | g_SavedScreenBufferArray | g_SavedScreenBufferArray[1] | g_ScreenBufferArray
     MOV CL,AL                           ; 00472e86
     AND CL,0x3                          ; 00472e88
-    MOVSB.REP ES:EDI,ESI                ; 00472e8b | g_SavedScreenBufferArray | DAT_026a5818 | DAT_026a5819
+    MOVSB.REP ES:EDI,ESI                ; 00472e8b | g_SavedScreenBufferArray | g_SavedScreenBufferArray[1] | g_SavedScreenBufferArray[1]+1
     POP EDI                             ; 00472e8d
     CMP dword ptr [EBX + 0x2f9c],0x0    ; 00472e8e
     JNZ 0x00472eba                      ; 00472e95

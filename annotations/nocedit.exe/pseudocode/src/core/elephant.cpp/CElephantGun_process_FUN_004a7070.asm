@@ -17,7 +17,7 @@
 ;   undefined4 g_CDemonLightInstance.base.base.position
 ;   undefined4 g_CDemonLightInstance.base.base.position+4
 ;   undefined4 g_CDemonLightInstance.base.base.position+8
-;   undefined4 DAT_02d7eb00
+;   undefined4 g_CDemonLightInstance.base.base.rotation_matrix.m[0].x
 ;   undefined4 g_CDemonLightInstance.base.base.focal_length
 ;   undefined4 g_CDemonLightInstance.base.max_distance
 ;   undefined4 g_CDemonLightInstance.light_enabled_flag
@@ -89,7 +89,7 @@ section .text
     LEA EAX,[EBX + 0x30]                ; 004a70fe
         ;   Label: LAB_004a70fe
     PUSH EAX                            ; 004a7101
-    PUSH 0x2d7eb00                      ; 004a7102 | DAT_02d7eb00
+    PUSH 0x2d7eb00                      ; 004a7102 | g_CDemonLightInstance.base.base.rotation_matrix.m[0].x
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 004a7107
         ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004a710c

@@ -25,7 +25,7 @@
 ;   int g_RandToFloatFixedMultiplier = 0x33800001
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81cd8
+;   undefined4 g_CGameInstance.is_processing
 ;
 ; Called Functions:
 ;   core_actor.cpp_generateRandomValue_FUN_0040cba0
@@ -40,7 +40,7 @@ section .text
     FLD float ptr [ESP + 0x18]          ; 0040cc13
     MOV EAX,[0x0067b654]                ; 0040cc17 | g_CGameInstance | g_CGamePtr
     FSUB float ptr [ESP + 0x14]         ; 0040cc1c
-    MOV EDX,dword ptr [EAX + 0x23c]     ; 0040cc20 | DAT_02d81cd8
+    MOV EDX,dword ptr [EAX + 0x23c]     ; 0040cc20 | g_CGameInstance.is_processing
     FSTP float ptr [ESP + 0x4]          ; 0040cc26
     TEST EDX,EDX                        ; 0040cc2a
     JZ 0x0040cc5b                       ; 0040cc2c

@@ -15,9 +15,9 @@
 ;   int g_CustomKeyCount
 ;   int*[31] g_CustomKeyPointers
 ;   char[30][40] g_CustomKeyNames
-;   undefined4 DAT_02f292f1
-;   undefined4 DAT_02f292f2
-;   undefined4 DAT_02f292f3
+;   undefined4 g_CustomKeyNames[0][1]
+;   undefined4 g_CustomKeyNames[0][2]
+;   undefined4 g_CustomKeyNames[0][3]
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -46,13 +46,13 @@ section .text
     PUSH EDI                            ; 00513490
     MOV AL,byte ptr [ESI]               ; 00513491
         ;   Label: LAB_00513491
-    MOV byte ptr [EDI],AL               ; 00513493 | g_CustomKeyNames | DAT_02f292f2
+    MOV byte ptr [EDI],AL               ; 00513493 | g_CustomKeyNames | g_CustomKeyNames[0][2]
     CMP AL,0x0                          ; 00513495
     JZ 0x005134a9                       ; 00513497
         ;   XREF to: 005134a9 (CONDITIONAL_JUMP)  ; LAB_005134a9
     MOV AL,byte ptr [ESI + 0x1]         ; 00513499
     ADD ESI,0x2                         ; 0051349c
-    MOV byte ptr [EDI + 0x1],AL         ; 0051349f | DAT_02f292f1 | DAT_02f292f3
+    MOV byte ptr [EDI + 0x1],AL         ; 0051349f | g_CustomKeyNames[0][1] | g_CustomKeyNames[0][3]
     ADD EDI,0x2                         ; 005134a2
     CMP AL,0x0                          ; 005134a5
     JNZ 0x00513491                      ; 005134a7

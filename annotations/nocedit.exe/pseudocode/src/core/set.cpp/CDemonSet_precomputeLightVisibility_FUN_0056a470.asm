@@ -46,7 +46,7 @@
 ;   CDemonCamera g_CDemonCameraInstance
 ;   int g_MasterLightCount
 ;   CDemonLight*[96] g_MasterLightList
-;   undefined4 DAT_03276db4
+;   undefined4 g_MasterLightList[1]
 ;   int g_SpotLightCount
 ;   int g_DynamicLightCount
 ;   CDemonRaytrace g_CDemonRaytraceInstance
@@ -165,7 +165,7 @@ section .text
     ADD ESI,dword ptr [ESP + 0x140]     ; 0056a5f9
     LEA EDI,[ESI + 0x4]                 ; 0056a600
     XOR ESI,ESI                         ; 0056a603
-    MOV EAX,dword ptr [ESI + 0x3276db0] ; 0056a605 | g_MasterLightList | DAT_03276db4
+    MOV EAX,dword ptr [ESI + 0x3276db0] ; 0056a605 | g_MasterLightList | g_MasterLightList[1]
         ;   Label: LAB_0056a605
     PUSH EDI                            ; 0056a60b
     ADD EAX,0x40                        ; 0056a60c

@@ -26,7 +26,7 @@
 ;   undefined4 g_RenderVertexBuffer[0].r
 ;   undefined4 g_RenderVertexBuffer[0].g
 ;   undefined4 g_RenderVertexBuffer[0].b
-;   undefined4 DAT_00688044
+;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_x
 ;   undefined4 g_RenderVertexBuffer[1].u
 ;   undefined4 g_RenderVertexBuffer[1].v
 ;   undefined4 g_RenderVertexBuffer[1].r
@@ -103,7 +103,7 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 004c46be
     LEA EAX,[ESP + 0x48]                ; 004c46c1
     PUSH EAX                            ; 004c46c5
-    PUSH 0x688044                       ; 004c46c6 | DAT_00688044
+    PUSH 0x688044                       ; 004c46c6 | g_RenderVertexBuffer[1].projected_vertex.transformed_x
     CALL wincore_windll.cpp_transformPoint_FUN_005b5a25 ; 004c46cb
         ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004c46d0
@@ -120,7 +120,7 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 004c46f9
     LEA EAX,[ESP + 0x3c]                ; 004c46fc
     PUSH EAX                            ; 004c4700
-    PUSH 0x688074                       ; 004c4701 | DAT_00688074
+    PUSH 0x688074                       ; 004c4701 | g_RenderVertexBuffer[2].projected_vertex.transformed_x
     CALL wincore_windll.cpp_transformPoint_FUN_005b5a25 ; 004c4706
         ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 004c470b
@@ -137,13 +137,13 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 004c4734
     LEA EAX,[ESP + 0x60]                ; 004c4737
     PUSH EAX                            ; 004c473b
-    PUSH 0x6880a4                       ; 004c473c | DAT_006880a4
+    PUSH 0x6880a4                       ; 004c473c | g_RenderVertexBuffer[3].projected_vertex.transformed_x
     MOV ESI,0xffff                      ; 004c4741
     MOV EDI,0xffff                      ; 004c4746
     CALL wincore_windll.cpp_transformPoint_FUN_005b5a25 ; 004c474b
         ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
     MOV ECX,0x80000                     ; 004c4750
-    MOV EBX,0xf80000                    ; 004c4755 | DAT_00f80000
+    MOV EBX,0xf80000                    ; 004c4755 | g_LightBufferPool[11][183800]
     ADD ESP,0x8                         ; 004c475a
     MOV dword ptr [0x00688034],ESI      ; 004c475d | g_RenderVertexBuffer[0].r
     MOV dword ptr [0x00688038],ESI      ; 004c4763 | g_RenderVertexBuffer[0].g

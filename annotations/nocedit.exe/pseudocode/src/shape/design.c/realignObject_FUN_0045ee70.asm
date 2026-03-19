@@ -19,7 +19,7 @@
 ;   double g_AngleConversionFactor2 = 3.14159265350000
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;   int g_GouraudShadingEnabled
 ;
@@ -153,7 +153,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x162640c] ; 0045efe2 | g_LoadedVertices
     MOV dword ptr [EBP + -0x8],EAX      ; 0045efe8
     IMUL EAX,dword ptr [EBP + -0x3c],0x14 ; 0045efeb
-    MOV EAX,dword ptr [EAX + 0x1626410] ; 0045efef | DAT_01626410
+    MOV EAX,dword ptr [EAX + 0x1626410] ; 0045efef | g_LoadedVertices[0].vertex.y
     MOV dword ptr [EBP + -0x4],EAX      ; 0045eff5
     IMUL EAX,dword ptr [EBP + -0x3c],0x14 ; 0045eff8
     MOV EAX,dword ptr [EAX + 0x1626414] ; 0045effc | g_LoadedVertices[0].vertex.z
@@ -177,7 +177,7 @@ section .text
     FMUL float ptr [EBP + -0x14]        ; 0045f036
     FADDP                               ; 0045f039
     IMUL EAX,dword ptr [EBP + -0x3c],0x14 ; 0045f03b
-    FSTP float ptr [EAX + 0x1626410]    ; 0045f03f | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 0045f03f | g_LoadedVertices[0].vertex.y
     FLD float ptr [EBP + -0x8]          ; 0045f045
     FMUL float ptr [EBP + -0x48]        ; 0045f048
     FLD float ptr [EBP + -0x4]          ; 0045f04b

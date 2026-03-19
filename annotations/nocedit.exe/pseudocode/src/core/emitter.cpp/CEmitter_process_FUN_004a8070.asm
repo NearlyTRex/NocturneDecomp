@@ -42,7 +42,7 @@
 ;   CEventList g_CEventListInstance
 ;   CFireEffect g_CFireEffectInstance
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81ab8
+;   undefined4 g_CGameInstance.foul_language_flag
 ;   CHero*[4] g_HeroActors
 ;   ... and 2 more
 ;
@@ -122,7 +122,7 @@ section .text
     JZ 0x004a8115                       ; 004a80fe
         ;   XREF to: 004a8115 (CONDITIONAL_JUMP)  ; LAB_004a8115
     MOV EAX,[0x0067b654]                ; 004a8100 | g_CGamePtr | g_CGameInstance
-    MOV EDX,dword ptr [EAX + 0x1c]      ; 004a8105 | DAT_02d81ab8
+    MOV EDX,dword ptr [EAX + 0x1c]      ; 004a8105 | g_CGameInstance.foul_language_flag
     MOV ESI,0x1                         ; 004a8108
     TEST EDX,EDX                        ; 004a810d
     JZ 0x004a82b2                       ; 004a810f

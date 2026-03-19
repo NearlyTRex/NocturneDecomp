@@ -250,13 +250,13 @@ section .text
     PUSH EDI                            ; 0055a85b | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055a85c | = "(no error message provided)" | s_o_error_message_provided)_00641c40
         ;   Label: LAB_0055a85c
-    MOV byte ptr [EDI],AL               ; 0055a85e | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055a85e | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055a860
     JZ 0x0055a874                       ; 0055a862
         ;   XREF to: 0055a874 (CONDITIONAL_JUMP)  ; LAB_0055a874
     MOV AL,byte ptr [ESI + 0x1]         ; 0055a864 | s_no_error_message_provided)_00641c3f | s_error_message_provided)_00641c41
     ADD ESI,0x2                         ; 0055a867
-    MOV byte ptr [EDI + 0x1],AL         ; 0055a86a | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055a86a | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055a86d
     CMP AL,0x0                          ; 0055a870
     JNZ 0x0055a85c                      ; 0055a872
@@ -2077,13 +2077,13 @@ section .text
     PUSH EDI                            ; 0055bba4 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055bba5
         ;   Label: LAB_0055bba5
-    MOV byte ptr [EDI],AL               ; 0055bba7 | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055bba7 | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055bba9
     JZ 0x0055bbbd                       ; 0055bbab
         ;   XREF to: 0055bbbd (CONDITIONAL_JUMP)  ; LAB_0055bbbd
     MOV AL,byte ptr [ESI + 0x1]         ; 0055bbad
     ADD ESI,0x2                         ; 0055bbb0
-    MOV byte ptr [EDI + 0x1],AL         ; 0055bbb3 | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055bbb3 | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055bbb6
     CMP AL,0x0                          ; 0055bbb9
     JNZ 0x0055bba5                      ; 0055bbbb
@@ -2308,7 +2308,7 @@ section .text
         ;   XREF to: 004adca0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList * this_ptr, char * condition_expression)
     MOV EDX,dword ptr [0x0067b654]      ; 0055be74 | g_CGamePtr
     ADD ESP,0x8                         ; 0055be7a
-    MOV dword ptr [EDX + 0x230],EAX     ; 0055be7d | DAT_02d81ccc
+    MOV dword ptr [EDX + 0x230],EAX     ; 0055be7d | g_CGameInstance.allow_enemy_attack_flag
     JMP 0x0055a8bb                      ; 0055be83
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     ADD ESI,0x11                        ; 0055be88
@@ -2344,7 +2344,7 @@ section .text
     MOV DL,AL                           ; 0055bee6
     MOV EAX,[0x0067b654]                ; 0055bee8 | g_CGamePtr
     MOV dword ptr [0x0310f4a4],EDX      ; 0055beed | g_ScriptInputFlag
-    MOV dword ptr [EAX + 0x238],EDX     ; 0055bef3 | DAT_02d81cd4
+    MOV dword ptr [EAX + 0x238],EDX     ; 0055bef3 | g_CGameInstance.allow_hero_controls_flag
     JMP 0x0055a8bb                      ; 0055bef9
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     ADD ESI,0xf                         ; 0055befe
@@ -2375,7 +2375,7 @@ section .text
         ;   XREF to: 004adca0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList * this_ptr, char * condition_expression)
     MOV EDX,dword ptr [0x0067b654]      ; 0055bf52 | g_CGamePtr
     ADD ESP,0x8                         ; 0055bf58
-    MOV dword ptr [EDX + 0x22c],EAX     ; 0055bf5b | DAT_02d81cc8
+    MOV dword ptr [EDX + 0x22c],EAX     ; 0055bf5b | g_CGameInstance.allow_damage_flag
     JMP 0x0055a8bb                      ; 0055bf61
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     ADD ESI,0x15                        ; 0055bf66
@@ -2574,13 +2574,13 @@ section .text
     PUSH EDI                            ; 0055c1be | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055c1bf
         ;   Label: LAB_0055c1bf
-    MOV byte ptr [EDI],AL               ; 0055c1c1 | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055c1c1 | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055c1c3
     JZ 0x0055c1d7                       ; 0055c1c5
         ;   XREF to: 0055c1d7 (CONDITIONAL_JUMP)  ; LAB_0055c1d7
     MOV AL,byte ptr [ESI + 0x1]         ; 0055c1c7
     ADD ESI,0x2                         ; 0055c1ca
-    MOV byte ptr [EDI + 0x1],AL         ; 0055c1cd | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055c1cd | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055c1d0
     CMP AL,0x0                          ; 0055c1d3
     JNZ 0x0055c1bf                      ; 0055c1d5
@@ -2611,7 +2611,7 @@ section .text
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV ECX,dword ptr [0x00823c4c]      ; 0055c217 | g_CCharacterClassInfo.name_hash
     PUSH ECX                            ; 0055c21d
-    MOV EDX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 0055c21e | g_CDemonSetInstance.actors[0] | DAT_032613d4
+    MOV EDX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 0055c21e | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     PUSH EDX                            ; 0055c225
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 0055c226
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
@@ -2687,13 +2687,13 @@ section .text
     PUSH EDI                            ; 0055c2e5 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055c2e6
         ;   Label: LAB_0055c2e6
-    MOV byte ptr [EDI],AL               ; 0055c2e8 | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055c2e8 | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055c2ea
     JZ 0x0055c2fe                       ; 0055c2ec
         ;   XREF to: 0055c2fe (CONDITIONAL_JUMP)  ; LAB_0055c2fe
     MOV AL,byte ptr [ESI + 0x1]         ; 0055c2ee
     ADD ESI,0x2                         ; 0055c2f1
-    MOV byte ptr [EDI + 0x1],AL         ; 0055c2f4 | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055c2f4 | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055c2f7
     CMP AL,0x0                          ; 0055c2fa
     JNZ 0x0055c2e6                      ; 0055c2fc
@@ -2747,13 +2747,13 @@ section .text
     PUSH EDI                            ; 0055c385 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055c386
         ;   Label: LAB_0055c386
-    MOV byte ptr [EDI],AL               ; 0055c388 | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055c388 | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055c38a
     JZ 0x0055c39e                       ; 0055c38c
         ;   XREF to: 0055c39e (CONDITIONAL_JUMP)  ; LAB_0055c39e
     MOV AL,byte ptr [ESI + 0x1]         ; 0055c38e
     ADD ESI,0x2                         ; 0055c391
-    MOV byte ptr [EDI + 0x1],AL         ; 0055c394 | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055c394 | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055c397
     CMP AL,0x0                          ; 0055c39a
     JNZ 0x0055c386                      ; 0055c39c
@@ -3412,13 +3412,13 @@ section .text
     PUSH EDI                            ; 0055cc36 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055cc37
         ;   Label: LAB_0055cc37
-    MOV byte ptr [EDI],AL               ; 0055cc39 | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055cc39 | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055cc3b
     JZ 0x0055cc4f                       ; 0055cc3d
         ;   XREF to: 0055cc4f (CONDITIONAL_JUMP)  ; LAB_0055cc4f
     MOV AL,byte ptr [ESI + 0x1]         ; 0055cc3f
     ADD ESI,0x2                         ; 0055cc42
-    MOV byte ptr [EDI + 0x1],AL         ; 0055cc45 | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055cc45 | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055cc48
     CMP AL,0x0                          ; 0055cc4b
     JNZ 0x0055cc37                      ; 0055cc4d
@@ -3514,13 +3514,13 @@ section .text
     PUSH EDI                            ; 0055cd59 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055cd5a
         ;   Label: LAB_0055cd5a
-    MOV byte ptr [EDI],AL               ; 0055cd5c | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055cd5c | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055cd5e
     JZ 0x0055cd72                       ; 0055cd60
         ;   XREF to: 0055cd72 (CONDITIONAL_JUMP)  ; LAB_0055cd72
     MOV AL,byte ptr [ESI + 0x1]         ; 0055cd62
     ADD ESI,0x2                         ; 0055cd65
-    MOV byte ptr [EDI + 0x1],AL         ; 0055cd68 | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055cd68 | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055cd6b
     CMP AL,0x0                          ; 0055cd6e
     JNZ 0x0055cd5a                      ; 0055cd70
@@ -3716,7 +3716,7 @@ section .text
     MOV ESI,0x1                         ; 0055cf9e
     MOV EAX,[0x0067b654]                ; 0055cfa3 | g_CGamePtr
     MOV dword ptr [ESP + 0x3e94],ESI    ; 0055cfa8
-    MOV dword ptr [EAX + 0x22c],0x1     ; 0055cfaf | DAT_02d81cc8
+    MOV dword ptr [EAX + 0x22c],0x1     ; 0055cfaf | g_CGameInstance.allow_damage_flag
     JMP 0x0055a8bb                      ; 0055cfb9
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     ADD ESI,0x7                         ; 0055cfbe
@@ -3731,7 +3731,7 @@ section .text
     JNZ 0x0055a8bb                      ; 0055cfd8
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV EDX,dword ptr [0x0067b654]      ; 0055cfde | g_CGamePtr
-    MOV dword ptr [EDX + 0x22c],EAX     ; 0055cfe4 | DAT_02d81cc8
+    MOV dword ptr [EDX + 0x22c],EAX     ; 0055cfe4 | g_CGameInstance.allow_damage_flag
     MOV dword ptr [ESP + 0x3e94],EAX    ; 0055cfea
     FLD float ptr [EBX + 0x4c]          ; 0055cff1
     FLDZ                                ; 0055cff4
@@ -4298,13 +4298,13 @@ section .text
     PUSH EDI                            ; 0055d70f | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055d710
         ;   Label: LAB_0055d710
-    MOV byte ptr [EDI],AL               ; 0055d712 | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055d712 | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055d714
     JZ 0x0055d728                       ; 0055d716
         ;   XREF to: 0055d728 (CONDITIONAL_JUMP)  ; LAB_0055d728
     MOV AL,byte ptr [ESI + 0x1]         ; 0055d718
     ADD ESI,0x2                         ; 0055d71b
-    MOV byte ptr [EDI + 0x1],AL         ; 0055d71e | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055d71e | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055d721
     CMP AL,0x0                          ; 0055d724
     JNZ 0x0055d710                      ; 0055d726
@@ -4451,7 +4451,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 0055d8c1 | g_CGamePtr
     MOV dword ptr [EBX],0x1             ; 0055d8c6
     MOV dword ptr [ESP + 0x3e94],ECX    ; 0055d8cc
-    MOV dword ptr [EAX + 0x258],0x1     ; 0055d8d3 | DAT_02d81cf4
+    MOV dword ptr [EAX + 0x258],0x1     ; 0055d8d3 | g_CGameInstance.act_completion_state
     JMP 0x0055a8bb                      ; 0055d8dd
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH 0x64264c                       ; 0055d8e2 | = "Error parsing finishedAct command"
@@ -4518,18 +4518,18 @@ section .text
     JNZ 0x0055a8bb                      ; 0055d995
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV EAX,[0x0067b654]                ; 0055d99b | g_CGamePtr | g_CGameInstance
-    MOV dword ptr [EAX + 0x228],ESI     ; 0055d9a0 | DAT_02d81cc4
+    MOV dword ptr [EAX + 0x228],ESI     ; 0055d9a0 | g_CGameInstance.letterbox_mode
     TEST ESI,ESI                        ; 0055d9a6
     SETZ DL                             ; 0055d9a8
     AND EDX,0xff                        ; 0055d9ab
-    MOV ESI,dword ptr [EAX + 0x228]     ; 0055d9b1 | DAT_02d81cc4
-    MOV dword ptr [EAX + 0x22c],EDX     ; 0055d9b7 | DAT_02d81cc8
+    MOV ESI,dword ptr [EAX + 0x228]     ; 0055d9b1 | g_CGameInstance.letterbox_mode
+    MOV dword ptr [EAX + 0x22c],EDX     ; 0055d9b7 | g_CGameInstance.allow_damage_flag
     TEST ESI,ESI                        ; 0055d9bd
     SETZ DL                             ; 0055d9bf
     AND EDX,0xff                        ; 0055d9c2
-    MOV dword ptr [EAX + 0x230],EDX     ; 0055d9c8 | DAT_02d81ccc
-    MOV EDX,dword ptr [EAX + 0x228]     ; 0055d9ce | DAT_02d81cc4
-    MOV dword ptr [EAX + 0x238],EDX     ; 0055d9d4 | DAT_02d81cd4
+    MOV dword ptr [EAX + 0x230],EDX     ; 0055d9c8 | g_CGameInstance.allow_enemy_attack_flag
+    MOV EDX,dword ptr [EAX + 0x228]     ; 0055d9ce | g_CGameInstance.letterbox_mode
+    MOV dword ptr [EAX + 0x238],EDX     ; 0055d9d4 | g_CGameInstance.allow_hero_controls_flag
     MOV dword ptr [EBX + 0x458],0xffffffff ; 0055d9da
     MOV EDI,0x1                         ; 0055d9e4
     MOV EDX,dword ptr [EAX + 0x240]     ; 0055d9e9 | g_CGameInstance.block_auto_save
@@ -4537,7 +4537,7 @@ section .text
     TEST EDX,EDX                        ; 0055d9f5
     JZ 0x0055a8bb                       ; 0055d9f7
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
-    CMP dword ptr [EAX + 0x228],0x0     ; 0055d9fd | DAT_02d81cc4
+    CMP dword ptr [EAX + 0x228],0x0     ; 0055d9fd | g_CGameInstance.letterbox_mode
     JZ 0x0055a8bb                       ; 0055da04
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV ESI,dword ptr [0x006810c8]      ; 0055da0a | g_CDemonSetPtr
@@ -4549,7 +4549,7 @@ section .text
     MOV ESI,EAX                         ; 0055da23
     MOV EAX,[0x00680d50]                ; 0055da25 | g_CScriptPtr
     PUSH EDI                            ; 0055da2a
-    MOV EDI,dword ptr [EAX + 0xc]       ; 0055da2b | DAT_0310f864
+    MOV EDI,dword ptr [EAX + 0xc]       ; 0055da2b | g_CScriptInstance.focus_actor
     PUSH EDI                            ; 0055da2e
     MOV EAX,[0x006810c8]                ; 0055da2f | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH EAX                            ; 0055da34 | g_CDemonSetInstance
@@ -4559,7 +4559,7 @@ section .text
     MOV EDX,dword ptr [0x006810c8]      ; 0055da3d | g_CDemonSetPtr | g_CDemonSetInstance
     MOV EAX,[0x00680d50]                ; 0055da43 | g_CScriptPtr | g_CScriptInstance
     PUSH EDX                            ; 0055da48 | g_CDemonSetInstance
-    MOV dword ptr [EAX + 0x10],0x0      ; 0055da49 | DAT_0310f868
+    MOV dword ptr [EAX + 0x10],0x0      ; 0055da49 | g_CScriptInstance.focus_actor_changed
     CALL core_event.cpp_getSelectedCameraIndex_FUN_004b1970 ; 0055da50
         ;   XREF to: 004b1970 (UNCONDITIONAL_CALL)  ; int core_event.cpp_getSelectedCameraIndex_FUN_004b1970(CDemonSet * set_ptr)
     ADD ESP,0x4                         ; 0055da55
@@ -5111,13 +5111,13 @@ section .text
     PUSH EDI                            ; 0055e0ec | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055e0ed
         ;   Label: LAB_0055e0ed
-    MOV byte ptr [EDI],AL               ; 0055e0ef | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055e0ef | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055e0f1
     JZ 0x0055e105                       ; 0055e0f3
         ;   XREF to: 0055e105 (CONDITIONAL_JUMP)  ; LAB_0055e105
     MOV AL,byte ptr [ESI + 0x1]         ; 0055e0f5
     ADD ESI,0x2                         ; 0055e0f8
-    MOV byte ptr [EDI + 0x1],AL         ; 0055e0fb | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055e0fb | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055e0fe
     CMP AL,0x0                          ; 0055e101
     JNZ 0x0055e0ed                      ; 0055e103
@@ -5516,7 +5516,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 0055e5ea | g_CGamePtr
     MOV dword ptr [EBX],0x1             ; 0055e5ef
     MOV dword ptr [ESP + 0x3e94],ECX    ; 0055e5f5
-    MOV dword ptr [EAX + 0x258],0x2     ; 0055e5fc | DAT_02d81cf4
+    MOV dword ptr [EAX + 0x258],0x2     ; 0055e5fc | g_CGameInstance.act_completion_state
     JMP 0x0055a8bb                      ; 0055e606
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     PUSH 0x642a77                       ; 0055e60b | = "Error parsing rollCredits command"
@@ -5551,13 +5551,13 @@ section .text
     PUSH EDI                            ; 0055e65d | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055e65e
         ;   Label: LAB_0055e65e
-    MOV byte ptr [EDI],AL               ; 0055e660 | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055e660 | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055e662
     JZ 0x0055e676                       ; 0055e664
         ;   XREF to: 0055e676 (CONDITIONAL_JUMP)  ; LAB_0055e676
     MOV AL,byte ptr [ESI + 0x1]         ; 0055e666
     ADD ESI,0x2                         ; 0055e669
-    MOV byte ptr [EDI + 0x1],AL         ; 0055e66c | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055e66c | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055e66f
     CMP AL,0x0                          ; 0055e672
     JNZ 0x0055e65e                      ; 0055e674
@@ -5961,7 +5961,7 @@ section .text
     MOV EDX,dword ptr [0x006810c8]      ; 0055eb50 | g_CDemonSetPtr
     ADD EDX,EAX                         ; 0055eb56
     MOV EAX,dword ptr [ESP + 0x3f34]    ; 0055eb58
-    MOV dword ptr [EDX + 0x150],EAX     ; 0055eb5f | DAT_031143c8
+    MOV dword ptr [EDX + 0x150],EAX     ; 0055eb5f | g_CDemonSetInstance.cameras[0].camera_group
     JMP 0x0055a8bb                      ; 0055eb65
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     LEA EAX,[ESP + 0x14a4]              ; 0055eb6a
@@ -6062,13 +6062,13 @@ section .text
     PUSH EDI                            ; 0055eca0 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055eca1
         ;   Label: LAB_0055eca1
-    MOV byte ptr [EDI],AL               ; 0055eca3 | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055eca3 | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055eca5
     JZ 0x0055ecb9                       ; 0055eca7
         ;   XREF to: 0055ecb9 (CONDITIONAL_JUMP)  ; LAB_0055ecb9
     MOV AL,byte ptr [ESI + 0x1]         ; 0055eca9
     ADD ESI,0x2                         ; 0055ecac
-    MOV byte ptr [EDI + 0x1],AL         ; 0055ecaf | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055ecaf | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055ecb2
     CMP AL,0x0                          ; 0055ecb5
     JNZ 0x0055eca1                      ; 0055ecb7
@@ -6406,13 +6406,13 @@ section .text
     PUSH EDI                            ; 0055f0af | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055f0b0
         ;   Label: LAB_0055f0b0
-    MOV byte ptr [EDI],AL               ; 0055f0b2 | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055f0b2 | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055f0b4
     JZ 0x0055f0c8                       ; 0055f0b6
         ;   XREF to: 0055f0c8 (CONDITIONAL_JUMP)  ; LAB_0055f0c8
     MOV AL,byte ptr [ESI + 0x1]         ; 0055f0b8
     ADD ESI,0x2                         ; 0055f0bb
-    MOV byte ptr [EDI + 0x1],AL         ; 0055f0be | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055f0be | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055f0c1
     CMP AL,0x0                          ; 0055f0c4
     JNZ 0x0055f0b0                      ; 0055f0c6
@@ -6525,13 +6525,13 @@ section .text
     PUSH EDI                            ; 0055f1f7 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055f1f8
         ;   Label: LAB_0055f1f8
-    MOV byte ptr [EDI],AL               ; 0055f1fa | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055f1fa | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055f1fc
     JZ 0x0055f210                       ; 0055f1fe
         ;   XREF to: 0055f210 (CONDITIONAL_JUMP)  ; LAB_0055f210
     MOV AL,byte ptr [ESI + 0x1]         ; 0055f200
     ADD ESI,0x2                         ; 0055f203
-    MOV byte ptr [EDI + 0x1],AL         ; 0055f206 | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055f206 | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055f209
     CMP AL,0x0                          ; 0055f20c
     JNZ 0x0055f1f8                      ; 0055f20e
@@ -6570,7 +6570,7 @@ section .text
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV EDX,dword ptr [0x0067b654]      ; 0055f268 | g_CGamePtr
     MOV EAX,dword ptr [ESP + 0x38]      ; 0055f26e
-    MOV dword ptr [EDX + 0x1ec],EAX     ; 0055f272 | DAT_02d81c88
+    MOV dword ptr [EDX + 0x1ec],EAX     ; 0055f272 | g_CGameInstance.time_scale_factor
     JMP 0x0055a8bb                      ; 0055f278
         ;   XREF to: 0055a8bb (UNCONDITIONAL_JUMP)  ; LAB_0055a8bb
     LEA EAX,[ESP + 0x3c90]              ; 0055f27d
@@ -6861,13 +6861,13 @@ section .text
     PUSH EDI                            ; 0055f5f7 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055f5f8
         ;   Label: LAB_0055f5f8
-    MOV byte ptr [EDI],AL               ; 0055f5fa | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055f5fa | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055f5fc
     JZ 0x0055f610                       ; 0055f5fe
         ;   XREF to: 0055f610 (CONDITIONAL_JUMP)  ; LAB_0055f610
     MOV AL,byte ptr [ESI + 0x1]         ; 0055f600
     ADD ESI,0x2                         ; 0055f603
-    MOV byte ptr [EDI + 0x1],AL         ; 0055f606 | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055f606 | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055f609
     CMP AL,0x0                          ; 0055f60c
     JNZ 0x0055f5f8                      ; 0055f60e
@@ -6961,13 +6961,13 @@ section .text
     PUSH EDI                            ; 0055f720 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055f721
         ;   Label: LAB_0055f721
-    MOV byte ptr [EDI],AL               ; 0055f723 | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055f723 | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055f725
     JZ 0x0055f739                       ; 0055f727
         ;   XREF to: 0055f739 (CONDITIONAL_JUMP)  ; LAB_0055f739
     MOV AL,byte ptr [ESI + 0x1]         ; 0055f729
     ADD ESI,0x2                         ; 0055f72c
-    MOV byte ptr [EDI + 0x1],AL         ; 0055f72f | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055f72f | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055f732
     CMP AL,0x0                          ; 0055f735
     JNZ 0x0055f721                      ; 0055f737
@@ -7046,13 +7046,13 @@ section .text
     PUSH EDI                            ; 0055f7e4 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055f7e5 | = "Error parsing out camera name" | s_ror_parsing_out_camera_name_00642f5f
         ;   Label: LAB_0055f7e5
-    MOV byte ptr [EDI],AL               ; 0055f7e7 | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055f7e7 | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055f7e9
     JZ 0x0055f7fd                       ; 0055f7eb
         ;   XREF to: 0055f7fd (CONDITIONAL_JUMP)  ; LAB_0055f7fd
     MOV AL,byte ptr [ESI + 0x1]         ; 0055f7ed | s_rror_parsing_out_camera_name_00642f5e | s_or_parsing_out_camera_name_00642f60
     ADD ESI,0x2                         ; 0055f7f0
-    MOV byte ptr [EDI + 0x1],AL         ; 0055f7f3 | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055f7f3 | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055f7f6
     CMP AL,0x0                          ; 0055f7f9
     JNZ 0x0055f7e5                      ; 0055f7fb
@@ -7164,13 +7164,13 @@ section .text
     PUSH EDI                            ; 0055f923 | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 0055f924
         ;   Label: LAB_0055f924
-    MOV byte ptr [EDI],AL               ; 0055f926 | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 0055f926 | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 0055f928
     JZ 0x0055f93c                       ; 0055f92a
         ;   XREF to: 0055f93c (CONDITIONAL_JUMP)  ; LAB_0055f93c
     MOV AL,byte ptr [ESI + 0x1]         ; 0055f92c
     ADD ESI,0x2                         ; 0055f92f
-    MOV byte ptr [EDI + 0x1],AL         ; 0055f932 | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055f932 | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 0055f935
     CMP AL,0x0                          ; 0055f938
     JNZ 0x0055f924                      ; 0055f93a

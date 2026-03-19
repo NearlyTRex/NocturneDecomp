@@ -20,7 +20,7 @@
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_0326f118
+;   undefined4 g_CDemonSetInstance.camera_enabled_flag
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770
@@ -140,7 +140,7 @@ section .text
     MOV dword ptr [ESI + 0x1cb4],0x0    ; 00586e12
     MOV EAX,[0x006810c8]                ; 00586e1c | g_CDemonSetPtr
         ;   Label: LAB_00586e1c
-    MOV EAX,dword ptr [EAX + 0x15aea0]  ; 00586e21 | DAT_0326f118
+    MOV EAX,dword ptr [EAX + 0x15aea0]  ; 00586e21 | g_CDemonSetInstance.camera_enabled_flag
     TEST EAX,EAX                        ; 00586e27
     JZ 0x00586e64                       ; 00586e29
         ;   XREF to: 00586e64 (CONDITIONAL_JUMP)  ; LAB_00586e64

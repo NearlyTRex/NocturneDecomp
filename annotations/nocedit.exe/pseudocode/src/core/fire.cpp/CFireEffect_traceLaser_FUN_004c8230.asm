@@ -96,11 +96,11 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_032613a0
-;   undefined4 DAT_032613a4
-;   undefined4 DAT_032613a8
-;   undefined4 DAT_032613b0
-;   undefined4 DAT_032613bc
+;   undefined4 g_CDemonSetInstance.collision_normal.x
+;   undefined4 g_CDemonSetInstance.collision_normal.y
+;   undefined4 g_CDemonSetInstance.collision_normal.z
+;   undefined4 g_CDemonSetInstance.collision_impact_position.x
+;   undefined4 g_CDemonSetInstance.collision_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -251,16 +251,16 @@ section .text
     CMP EAX,EDI                         ; 004c83dc
     JZ 0x004c83f1                       ; 004c83de
         ;   XREF to: 004c83f1 (CONDITIONAL_JUMP)  ; LAB_004c83f1
-    MOV EAX,dword ptr [EDI]             ; 004c83e0 | DAT_032613a0
+    MOV EAX,dword ptr [EDI]             ; 004c83e0 | g_CDemonSetInstance.collision_normal.x
     MOV dword ptr [EBP + -0x26],EAX     ; 004c83e2
-    MOV EAX,dword ptr [EDI + 0x4]       ; 004c83e5 | DAT_032613a4
+    MOV EAX,dword ptr [EDI + 0x4]       ; 004c83e5 | g_CDemonSetInstance.collision_normal.y
     MOV dword ptr [EBP + -0x22],EAX     ; 004c83e8
-    MOV EAX,dword ptr [EDI + 0x8]       ; 004c83eb | DAT_032613a8
+    MOV EAX,dword ptr [EDI + 0x8]       ; 004c83eb | g_CDemonSetInstance.collision_normal.z
     MOV dword ptr [EBP + -0x1e],EAX     ; 004c83ee
         ;   Label: LAB_004c83ee
     MOV EDI,dword ptr [0x006810c8]      ; 004c83f1 | g_CDemonSetPtr
         ;   Label: LAB_004c83f1
-    MOV EDI,dword ptr [EDI + 0x14d144]  ; 004c83f7 | DAT_032613bc
+    MOV EDI,dword ptr [EDI + 0x14d144]  ; 004c83f7 | g_CDemonSetInstance.collision_actor
     MOV dword ptr [EBX + 0x48],0x0      ; 004c83fd
     MOV dword ptr [EBX + 0x4c],0x0      ; 004c8404
     MOV dword ptr [EBX + 0x50],0x0      ; 004c840b
@@ -288,7 +288,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 004c8445 | g_CDemonSetPtr
         ;   Label: LAB_004c8445
     ADD EAX,0x14d138                    ; 004c844a
-    PUSH EAX                            ; 004c844f | DAT_032613b0
+    PUSH EAX                            ; 004c844f | g_CDemonSetInstance.collision_impact_position.x
     LEA EAX,[EBP + -0x32]               ; 004c8450
     PUSH EAX                            ; 004c8453
     PUSH EDI                            ; 004c8454
@@ -308,7 +308,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 004c8474 | g_CDemonSetPtr
         ;   Label: LAB_004c8474
     ADD EAX,0x14d128                    ; 004c8479
-    PUSH EAX                            ; 004c847e | DAT_032613a0
+    PUSH EAX                            ; 004c847e | g_CDemonSetInstance.collision_normal.x
     LEA EAX,[EBP + 0xffffff62]          ; 004c847f
     PUSH EAX                            ; 004c8485
     PUSH EDI                            ; 004c8486

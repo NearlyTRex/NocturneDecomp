@@ -22,9 +22,9 @@
 ;
 ; Referenced Globals:
 ;   CSfxSlot[64] g_SfxSlots
-;   undefined4 DAT_03f5db14
+;   undefined4 g_SfxSlots[0].hardware_buffer_handle
 ;   undefined4 g_SfxSlots[0].field7_0x74
-;   undefined4 DAT_03f5db1c
+;   undefined4 g_SfxSlots[0].sample
 ;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
@@ -84,10 +84,10 @@ section .text
     CMP ESI,dword ptr [EBX + 0x74]      ; 005a5d57 | g_SfxSlots[0].field7_0x74
     JNZ 0x005a5d85                      ; 005a5d5a
         ;   XREF to: 005a5d85 (CONDITIONAL_JUMP)  ; LAB_005a5d85
-    CMP dword ptr [EBX + 0x78],0x0      ; 005a5d5c | DAT_03f5db1c
+    CMP dword ptr [EBX + 0x78],0x0      ; 005a5d5c | g_SfxSlots[0].sample
     JZ 0x005a5d85                       ; 005a5d60
         ;   XREF to: 005a5d85 (CONDITIONAL_JUMP)  ; LAB_005a5d85
-    CMP dword ptr [EBX + 0x70],0x0      ; 005a5d62 | DAT_03f5db14
+    CMP dword ptr [EBX + 0x70],0x0      ; 005a5d62 | g_SfxSlots[0].hardware_buffer_handle
     JZ 0x005a5d48                       ; 005a5d66
         ;   XREF to: 005a5d48 (CONDITIONAL_JUMP)  ; LAB_005a5d48
     MOV EDX,dword ptr [0x03f69268]      ; 005a5d68 | g_CSoundDevicePtr

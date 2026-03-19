@@ -66,7 +66,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x118]     ; 005a4c97
         ;   Label: LAB_005a4c97
     PUSH EDX                            ; 005a4c9e
-    PUSH ESI                            ; 005a4c9f | g_SfxSamples | DAT_03f629ac
+    PUSH ESI                            ; 005a4c9f | g_SfxSamples | g_SfxSamples[1].sample_info.name[0]
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005a4ca0
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005a4ca5
@@ -89,7 +89,7 @@ section .text
     MOV EBX,ECX                         ; 005a4ccc
     IMUL EAX,EBX,0x180                  ; 005a4cce
         ;   Label: LAB_005a4cce
-    MOV EDI,dword ptr [EAX + 0x3f6297c] ; 005a4cd4 | DAT_03f6297c | DAT_03f62afc
+    MOV EDI,dword ptr [EAX + 0x3f6297c] ; 005a4cd4 | g_SfxSamples[0].taken | g_SfxSamples[1].taken
     CMP ECX,EDI                         ; 005a4cda
     JZ 0x005a4f5e                       ; 005a4cdc
         ;   XREF to: 005a4f5e (CONDITIONAL_JUMP)  ; LAB_005a4f5e
@@ -104,7 +104,7 @@ section .text
     MOV dword ptr [0x03f62828],EBX      ; 005a4cec | g_LastSampleAccessIndex
     JZ 0x005a4f34                       ; 005a4cf2
         ;   XREF to: 005a4f34 (CONDITIONAL_JUMP)  ; LAB_005a4f34
-    PUSH EAX                            ; 005a4cf8 | DAT_03f629ac
+    PUSH EAX                            ; 005a4cf8 | g_SfxSamples[1].sample_info.name[0]
     CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0 ; 005a4cf9
         ;   XREF to: 005a62c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0(CSfxSample * this_ptr)
     MOV AH,byte ptr [0x03f51640]        ; 005a4cfe | g_GlobalMP3DecoderInitialized
@@ -315,7 +315,7 @@ section .text
     POP ESI                             ; 005a4f5b
     POP EBX                             ; 005a4f5c
     RET                                 ; 005a4f5d
-    CMP EDI,dword ptr [EAX + 0x3f62980] ; 005a4f5e | DAT_03f62b00
+    CMP EDI,dword ptr [EAX + 0x3f62980] ; 005a4f5e | g_SfxSamples[1].ref_count
         ;   Label: LAB_005a4f5e
     JNZ 0x005a4ce2                      ; 005a4f64
         ;   XREF to: 005a4ce2 (CONDITIONAL_JUMP)  ; LAB_005a4ce2

@@ -24,18 +24,18 @@
 ;   double g_CoronaRadiusScaleFactor = 0.00390625
 ;   float g_CoronaCoordinateScaleFactor = 256
 ;   CVector3i[62] g_CoronaVertexPositions
-;   undefined4 DAT_0066f018
-;   undefined4 DAT_0066f01c
-;   undefined4 DAT_0066f020
-;   undefined4 DAT_0066f024
-;   undefined4 DAT_0066f028
+;   undefined4 g_CoronaVertexPositions[0].y
+;   undefined4 g_CoronaVertexPositions[0].z
+;   undefined4 g_CoronaVertexPositions[1].x
+;   undefined4 g_CoronaVertexPositions[1].y
+;   undefined4 g_CoronaVertexPositions[1].z
 ;   SMRGLLightPrimitive[84] g_CoronaFacePrimitives
-;   undefined4 DAT_0066f300
-;   undefined4 DAT_0066f304
-;   undefined4 DAT_0066f308
-;   undefined4 DAT_0066f30c
-;   undefined4 DAT_0066f310
-;   undefined4 DAT_0066f314
+;   undefined4 g_CoronaFacePrimitives[0].normal.A
+;   undefined4 g_CoronaFacePrimitives[0].normal.B
+;   undefined4 g_CoronaFacePrimitives[0].normal.C
+;   undefined4 g_CoronaFacePrimitives[0].normal.D
+;   undefined4 g_CoronaFacePrimitives[0].vertices[0]
+;   undefined4 g_CoronaFacePrimitives[0].vertices[1]
 ;   ... and 14 more
 ;
 ; Called Functions:
@@ -106,12 +106,12 @@ section .text
     XOR EDI,EDI                         ; 00471491
     XOR ESI,ESI                         ; 00471493
     FSTP float ptr [ESP + 0x60]         ; 00471495
-    FILD dword ptr [ESI + 0x66f014]     ; 00471499 | g_CoronaVertexPositions | DAT_0066f020
+    FILD dword ptr [ESI + 0x66f014]     ; 00471499 | g_CoronaVertexPositions | g_CoronaVertexPositions[1].x
         ;   Label: LAB_00471499
     FMUL float ptr [ESP + 0x60]         ; 0047149f
-    FILD dword ptr [ESI + 0x66f018]     ; 004714a3 | DAT_0066f018 | DAT_0066f024
+    FILD dword ptr [ESI + 0x66f018]     ; 004714a3 | g_CoronaVertexPositions[0].y | g_CoronaVertexPositions[1].y
     FMUL float ptr [ESP + 0x60]         ; 004714a9
-    FILD dword ptr [ESI + 0x66f01c]     ; 004714ad | DAT_0066f01c | DAT_0066f028
+    FILD dword ptr [ESI + 0x66f01c]     ; 004714ad | g_CoronaVertexPositions[0].z | g_CoronaVertexPositions[1].z
     FMUL float ptr [ESP + 0x60]         ; 004714b3
     LEA EBX,[ESP + 0x3c]                ; 004714b7
     LEA EAX,[ESP + 0x30]                ; 004714bb
@@ -143,25 +143,25 @@ section .text
     JNZ 0x00471499                      ; 00471513
         ;   XREF to: 00471499 (CONDITIONAL_JUMP)  ; LAB_00471499
     XOR EBX,EBX                         ; 00471515
-    MOV EAX,dword ptr [EBX + 0x66f2fc]  ; 00471517 | g_CoronaFacePrimitives | DAT_0066f320
+    MOV EAX,dword ptr [EBX + 0x66f2fc]  ; 00471517 | g_CoronaFacePrimitives | g_CoronaFacePrimitives[1].base.type
         ;   Label: LAB_00471517
     MOV dword ptr [ESP + 0xc],EAX       ; 0047151d
-    MOV EAX,dword ptr [EBX + 0x66f300]  ; 00471521 | DAT_0066f300 | DAT_0066f324
+    MOV EAX,dword ptr [EBX + 0x66f300]  ; 00471521 | g_CoronaFacePrimitives[0].normal.A | g_CoronaFacePrimitives[1].normal.A
     MOV dword ptr [ESP + 0x10],EAX      ; 00471527
-    MOV EAX,dword ptr [EBX + 0x66f304]  ; 0047152b | DAT_0066f304 | DAT_0066f328
+    MOV EAX,dword ptr [EBX + 0x66f304]  ; 0047152b | g_CoronaFacePrimitives[0].normal.B | g_CoronaFacePrimitives[1].normal.B
     MOV dword ptr [ESP + 0x14],EAX      ; 00471531
-    MOV EAX,dword ptr [EBX + 0x66f308]  ; 00471535 | DAT_0066f308 | DAT_0066f32c
-    FILD dword ptr [EBX + 0x66f30c]     ; 0047153b | DAT_0066f30c | DAT_0066f330
+    MOV EAX,dword ptr [EBX + 0x66f308]  ; 00471535 | g_CoronaFacePrimitives[0].normal.C | g_CoronaFacePrimitives[1].normal.C
+    FILD dword ptr [EBX + 0x66f30c]     ; 0047153b | g_CoronaFacePrimitives[0].normal.D | g_CoronaFacePrimitives[1].normal.D
     MOV dword ptr [ESP + 0x18],EAX      ; 00471541
-    MOV EAX,dword ptr [EBX + 0x66f310]  ; 00471545 | DAT_0066f310 | DAT_0066f334
+    MOV EAX,dword ptr [EBX + 0x66f310]  ; 00471545 | g_CoronaFacePrimitives[0].vertices[0] | g_CoronaFacePrimitives[1].vertices[0]
     FMUL float ptr [EBP + 0x30]         ; 0047154b
     MOV dword ptr [ESP + 0x20],EAX      ; 0047154e
-    MOV EAX,dword ptr [EBX + 0x66f314]  ; 00471552 | DAT_0066f314 | DAT_0066f338
+    MOV EAX,dword ptr [EBX + 0x66f314]  ; 00471552 | g_CoronaFacePrimitives[0].vertices[1] | g_CoronaFacePrimitives[1].vertices[1]
     MOV dword ptr [ESP + 0x24],EAX      ; 00471558
-    MOV EAX,dword ptr [EBX + 0x66f318]  ; 0047155c | DAT_0066f318 | DAT_0066f33c
+    MOV EAX,dword ptr [EBX + 0x66f318]  ; 0047155c | g_CoronaFacePrimitives[0].vertices[2] | g_CoronaFacePrimitives[1].vertices[2]
     PUSH 0x450320                       ; 00471562
     MOV dword ptr [ESP + 0x2c],EAX      ; 00471567
-    MOV EAX,dword ptr [EBX + 0x66f31c]  ; 0047156b | DAT_0066f31c | DAT_0066f340
+    MOV EAX,dword ptr [EBX + 0x66f31c]  ; 0047156b | g_CoronaFacePrimitives[0].vertices[3] | g_CoronaFacePrimitives[1].vertices[3]
     MOV ESI,dword ptr [0x006703e8]      ; 00471571 | g_CDemonRendererPtr1
     MOV dword ptr [ESP + 0x30],EAX      ; 00471577
     LEA EAX,[ESP + 0xc]                 ; 0047157b

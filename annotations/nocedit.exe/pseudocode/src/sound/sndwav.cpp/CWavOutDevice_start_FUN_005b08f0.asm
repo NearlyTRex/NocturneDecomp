@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_00652387 = 0.333333333333333
 ;   LPWAVEHDR[8] g_WaveOutHeaders
-;   undefined4 DAT_03f6ad5c
+;   undefined4 g_WaveOutHeaders[1]
 ;   LPVOID[8] g_WaveOutBuffers
 ;   int g_WaveOutBitsPerSample
 ;   int g_WaveOutChannels
@@ -39,7 +39,7 @@ section .text
     PUSH 0x20                           ; 005b0901
         ;   Label: LAB_005b0901
     PUSH 0x0                            ; 005b0903
-    MOV EDI,dword ptr [EBX + 0x3f6ad58] ; 005b0905 | g_WaveOutHeaders | DAT_03f6ad5c
+    MOV EDI,dword ptr [EBX + 0x3f6ad58] ; 005b0905 | g_WaveOutHeaders | g_WaveOutHeaders[1]
     PUSH EDI                            ; 005b090b
     CALL crt_memory.c_memset_FUN_005fde40 ; 005b090c
         ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)

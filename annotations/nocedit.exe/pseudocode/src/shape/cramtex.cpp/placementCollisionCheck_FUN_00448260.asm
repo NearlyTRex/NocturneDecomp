@@ -14,11 +14,11 @@
 ; SCramRectangle * Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0083c1a0
-;   undefined4 DAT_0083c1ac
-;   undefined4 DAT_0083c1b0
-;   undefined4 DAT_0083c1b4
-;   undefined4 DAT_0083c1b8
+;   undefined4 g_CZombieCowClassInfo.class_name[4]
+;   undefined4 g_CZombieCowClassInfo.class_name[16]
+;   undefined4 g_CZombieCowClassInfo.class_name[20]
+;   undefined4 g_CZombieCowClassInfo.class_name[24]
+;   undefined4 g_CZombieCowClassInfo.class_name[28]
 ;   CCramTex[250] g_CramSortedTextureEntries
 ;   undefined4 g_CramSortedTextureEntries[0].assigned_map_number
 ;   undefined4 g_CramSortedTextureEntries[0].placement_bottom
@@ -26,9 +26,9 @@
 ;   undefined4 g_CramSortedTextureEntries[0].working_top
 ;   undefined4 g_CramSortedTextureEntries[0].working_width
 ;   SCramRectangle[50] g_CramRectangles
-;   undefined4 DAT_00840c18
-;   undefined4 DAT_00840c1c
-;   undefined4 DAT_00840c20
+;   undefined4 g_CramRectangles[0].start_x
+;   undefined4 g_CramRectangles[0].start_y
+;   undefined4 g_CramRectangles[0].end_x
 ;   ... and 11 more
 ;
 ; *****************************************************************************
@@ -53,14 +53,14 @@ section .text
     ADD EDX,ESI                         ; 00448282
     XOR EAX,EAX                         ; 00448284
     SHL EDX,0x3                         ; 00448286
-    CMP EDI,dword ptr [EAX + 0x840c14]  ; 00448289 | g_CramRectangles | DAT_00840c3c
+    CMP EDI,dword ptr [EAX + 0x840c14]  ; 00448289 | g_CramRectangles | g_CramRectangles[1].map_id
         ;   Label: LAB_00448289
     JNZ 0x004482a5                      ; 0044828f
         ;   XREF to: 004482a5 (CONDITIONAL_JUMP)  ; LAB_004482a5
-    CMP EBX,dword ptr [EAX + 0x840c18]  ; 00448291 | DAT_00840c18 | DAT_00840c40
+    CMP EBX,dword ptr [EAX + 0x840c18]  ; 00448291 | g_CramRectangles[0].start_x | g_CramRectangles[1].start_x
     JNZ 0x004482a5                      ; 00448297
         ;   XREF to: 004482a5 (CONDITIONAL_JUMP)  ; LAB_004482a5
-    CMP ECX,dword ptr [EAX + 0x840c1c]  ; 00448299 | DAT_00840c1c | DAT_00840c44
+    CMP ECX,dword ptr [EAX + 0x840c1c]  ; 00448299 | g_CramRectangles[0].start_y | g_CramRectangles[1].start_y
     JZ 0x00448322                       ; 0044829f
         ;   XREF to: 00448322 (CONDITIONAL_JUMP)  ; LAB_00448322
     ADD EAX,0x28                        ; 004482a5
@@ -93,21 +93,21 @@ section .text
         ;   XREF to: 00448312 (CONDITIONAL_JUMP)  ; LAB_00448312
     IMUL EAX,EDX,0x4c                   ; 004482ed
     ADD EAX,0x83c1dc                    ; 004482f0 | g_CramSortedTextureEntries
-    MOV EBP,dword ptr [EAX + 0x10]      ; 004482f5 | g_CramSortedTextureEntries[0].assigned_map_number | DAT_0083c1a0
+    MOV EBP,dword ptr [EAX + 0x10]      ; 004482f5 | g_CramSortedTextureEntries[0].assigned_map_number | g_CZombieCowClassInfo.class_name[4]
         ;   Label: LAB_004482f5
     CMP EBP,dword ptr [ESP + 0x1c]      ; 004482f8
     JNZ 0x00448338                      ; 004482fc
         ;   XREF to: 00448338 (CONDITIONAL_JUMP)  ; LAB_00448338
-    CMP EBX,dword ptr [EAX + 0x24]      ; 004482fe | g_CramSortedTextureEntries[0].working_top | DAT_0083c1b4
+    CMP EBX,dword ptr [EAX + 0x24]      ; 004482fe | g_CramSortedTextureEntries[0].working_top | g_CZombieCowClassInfo.class_name[24]
     JGE 0x00448338                      ; 00448301
         ;   XREF to: 00448338 (CONDITIONAL_JUMP)  ; LAB_00448338
-    CMP ECX,dword ptr [EAX + 0x28]      ; 00448303 | g_CramSortedTextureEntries[0].working_width | DAT_0083c1b8
+    CMP ECX,dword ptr [EAX + 0x28]      ; 00448303 | g_CramSortedTextureEntries[0].working_width | g_CZombieCowClassInfo.class_name[28]
     JGE 0x00448338                      ; 00448306
         ;   XREF to: 00448338 (CONDITIONAL_JUMP)  ; LAB_00448338
-    CMP EDI,dword ptr [EAX + 0x1c]      ; 00448308 | g_CramSortedTextureEntries[0].placement_bottom | DAT_0083c1ac
+    CMP EDI,dword ptr [EAX + 0x1c]      ; 00448308 | g_CramSortedTextureEntries[0].placement_bottom | g_CZombieCowClassInfo.class_name[16]
     JLE 0x00448338                      ; 0044830b
         ;   XREF to: 00448338 (CONDITIONAL_JUMP)  ; LAB_00448338
-    CMP ESI,dword ptr [EAX + 0x20]      ; 0044830d | g_CramSortedTextureEntries[0].working_right | DAT_0083c1b0
+    CMP ESI,dword ptr [EAX + 0x20]      ; 0044830d | g_CramSortedTextureEntries[0].working_right | g_CZombieCowClassInfo.class_name[20]
     JLE 0x00448338                      ; 00448310
         ;   XREF to: 00448338 (CONDITIONAL_JUMP)  ; LAB_00448338
     TEST EDX,EDX                        ; 00448312
@@ -143,17 +143,17 @@ section .text
         ;   XREF to: 00448312 (UNCONDITIONAL_JUMP)  ; LAB_00448312
     MOV EDX,dword ptr [ESP + 0x4]       ; 00448342
         ;   Label: LAB_00448342
-    MOV dword ptr [EDX + 0x18],0x0      ; 00448346 | DAT_00840c2c
+    MOV dword ptr [EDX + 0x18],0x0      ; 00448346 | g_CramRectangles[0].occupant
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0044834d
-    MOV dword ptr [EDX + 0x24],0x1      ; 00448351 | DAT_00840c38
+    MOV dword ptr [EDX + 0x24],0x1      ; 00448351 | g_CramRectangles[0].active_flag
     MOV dword ptr [EDX],EAX             ; 00448358 | g_CramRectangles
-    MOV dword ptr [EDX + 0x4],EBX       ; 0044835a | DAT_00840c18
-    MOV dword ptr [EDX + 0x8],ECX       ; 0044835d | DAT_00840c1c
-    MOV dword ptr [EDX + 0xc],EDI       ; 00448360 | DAT_00840c20
+    MOV dword ptr [EDX + 0x4],EBX       ; 0044835a | g_CramRectangles[0].start_x
+    MOV dword ptr [EDX + 0x8],ECX       ; 0044835d | g_CramRectangles[0].start_y
+    MOV dword ptr [EDX + 0xc],EDI       ; 00448360 | g_CramRectangles[0].end_x
     MOV EAX,dword ptr [ESP]             ; 00448363
-    MOV dword ptr [EDX + 0x14],EAX      ; 00448366 | DAT_00840c28
+    MOV dword ptr [EDX + 0x14],EAX      ; 00448366 | g_CramRectangles[0].orientation
     LEA EAX,[EDX + 0x28]                ; 00448369
-    MOV dword ptr [EDX + 0x10],ESI      ; 0044836c | DAT_00840c24
+    MOV dword ptr [EDX + 0x10],ESI      ; 0044836c | g_CramRectangles[0].end_y
     MOV EDX,dword ptr [0x0084a860]      ; 0044836f | g_CramRectangleCount
     INC EDX                             ; 00448375
     MOV dword ptr [ESP + 0x4],EAX       ; 00448376

@@ -21,7 +21,7 @@
 ;   int g_CurrentEditingLine
 ;   char[16385] g_CurrentLineBuffer
 ;   undefined4 g_CurrentLineBuffer
-;   undefined4 DAT_031101c1
+;   undefined4 g_CurrentLineBuffer+2
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_editorIndex2X_FUN_00566b30
@@ -69,7 +69,7 @@ section .text
     SUB ECX,ECX                         ; 005663e1
     DEC ECX                             ; 005663e3
     XOR EAX,EAX                         ; 005663e4
-    SCASB.REPNE ES:EDI                  ; 005663e6 | g_CurrentLineBuffer | DAT_031101c1
+    SCASB.REPNE ES:EDI                  ; 005663e6 | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     NOT ECX                             ; 005663e8
     DEC ECX                             ; 005663ea
     MOV EBX,ECX                         ; 005663eb
@@ -79,7 +79,7 @@ section .text
     MOV DH,0x20                         ; 005663f1
     INC EBX                             ; 005663f3
         ;   Label: LAB_005663f3
-    MOV byte ptr [EBX + 0x31101bf],DH   ; 005663f4 | g_CurrentLineBuffer | DAT_031101c1
+    MOV byte ptr [EBX + 0x31101bf],DH   ; 005663f4 | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     CMP EBX,EBP                         ; 005663fa
     JL 0x005663f3                       ; 005663fc
         ;   XREF to: 005663f3 (CONDITIONAL_JUMP)  ; LAB_005663f3
@@ -128,7 +128,7 @@ section .text
         ;   Label: LAB_0056644b
     XOR AL,AL                           ; 0056644f
     PUSH ECX                            ; 00566451
-    MOV byte ptr [EBX + 0x31101c0],AL   ; 00566452 | DAT_031101c1
+    MOV byte ptr [EBX + 0x31101c0],AL   ; 00566452 | g_CurrentLineBuffer+2
     MOV EBX,dword ptr [ESP + 0x20]      ; 00566458
     PUSH EBX                            ; 0056645c
     CALL core_script.cpp_CScript_editorPutLine_FUN_005662a0 ; 0056645d

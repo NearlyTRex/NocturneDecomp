@@ -543,7 +543,7 @@ section .text
     XOR EDI,EBP                         ; 0040eda7
     MOV EAX,dword ptr [EBX + 0x68]      ; 0040eda9
         ;   Label: LAB_0040eda9
-    MOV EDX,dword ptr [EDI + 0x66e30c]  ; 0040edac | g_PropertyFlagDefinitions | DAT_0066e314
+    MOV EDX,dword ptr [EDI + 0x66e30c]  ; 0040edac | g_PropertyFlagDefinitions | g_PropertyFlagDefinitions[1].mask
     TEST dword ptr [EAX],EDX            ; 0040edb2
     JZ 0x0040ede1                       ; 0040edb4
         ;   XREF to: 0040ede1 (CONDITIONAL_JUMP)  ; LAB_0040ede1

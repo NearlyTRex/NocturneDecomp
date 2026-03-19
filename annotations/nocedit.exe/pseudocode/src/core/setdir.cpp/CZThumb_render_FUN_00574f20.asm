@@ -19,7 +19,7 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_00ffffff
+;   undefined4 g_LightBufferPool[13][93687]
 ;   undefined4 g_ScreenBufferArray[1]
 ;   undefined4 g_ScreenBufferArray[2]
 ;   undefined4 UCHAR_ARRAY_02d0101f
@@ -117,7 +117,7 @@ section .text
     INC ECX                             ; 00575000
     ADD EDI,EAX                         ; 00575001
     ADD ESI,0x4                         ; 00575003
-    MOV dword ptr [EDX],EDI             ; 00575006 | DAT_00ffffff
+    MOV dword ptr [EDX],EDI             ; 00575006 | g_LightBufferPool[13][93687]
     JMP 0x00574fab                      ; 00575008
         ;   XREF to: 00574fab (UNCONDITIONAL_JUMP)  ; LAB_00574fab
     MOV EBP,0x1                         ; 0057500a

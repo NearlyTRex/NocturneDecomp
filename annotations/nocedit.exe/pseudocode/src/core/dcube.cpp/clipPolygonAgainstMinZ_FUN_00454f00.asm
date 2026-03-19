@@ -15,14 +15,14 @@
 ;   void* PTR_caseD_3_00454efc = 00454f99
 ;   uint g_CubeClipStage4Count
 ;   CVector3f[16] g_ClipStageMinXBuffer
-;   undefined4 DAT_015c45bc
-;   undefined4 DAT_015c45c0
-;   undefined4 DAT_015c45cc
-;   undefined4 DAT_015c45d0
-;   undefined4 DAT_015c45d8
+;   undefined4 g_ClipStageMinXBuffer[0].y
+;   undefined4 g_ClipStageMinXBuffer[0].z
+;   undefined4 g_ClipStageMinXBuffer[1].z
+;   undefined4 g_ClipStageMinXBuffer[2].x
+;   undefined4 g_ClipStageMinXBuffer[2].z
 ;   uint g_CubeClipStage5Count
 ;   CVector3f[16] g_ClipStageMinZBuffer
-;   undefined4 DAT_015c4680
+;   undefined4 g_ClipStageMinZBuffer[0].y
 ;   undefined4 g_ClipStageMinZBuffer[0].z
 ;
 ; Called Functions:
@@ -59,10 +59,10 @@ section .text
     IMUL ECX,ECX,0xc                    ; 00454f3b
         ;   Label: LAB_00454f3b
     MOV EAX,0x15c45b8                   ; 00454f3e | g_ClipStageMinXBuffer
-    FLD float ptr [ESI + 0x8]           ; 00454f43 | DAT_015c45c0 | DAT_015c45cc
+    FLD float ptr [ESI + 0x8]           ; 00454f43 | g_ClipStageMinXBuffer[0].z | g_ClipStageMinXBuffer[1].z
     ADD EAX,ECX                         ; 00454f46
     MOV EDX,ESI                         ; 00454f48 | g_ClipStageMinXBuffer
-    MOV dword ptr [ESP + 0x4],EAX       ; 00454f4a | DAT_015c45d0
+    MOV dword ptr [ESP + 0x4],EAX       ; 00454f4a | g_ClipStageMinXBuffer[2].x
     XOR ECX,ECX                         ; 00454f4e
     FCOMP float ptr [ESP]               ; 00454f50
     FNSTSW AX                           ; 00454f53
@@ -72,7 +72,7 @@ section .text
     MOV ECX,0x1                         ; 00454f58
     MOV EAX,dword ptr [ESP + 0x4]       ; 00454f5d
         ;   Label: LAB_00454f5d
-    FLD float ptr [EAX + 0x8]           ; 00454f61 | DAT_015c45c0 | DAT_015c45d8
+    FLD float ptr [EAX + 0x8]           ; 00454f61 | g_ClipStageMinXBuffer[0].z | g_ClipStageMinXBuffer[2].z
     FCOMP float ptr [ESP]               ; 00454f64
     FNSTSW AX                           ; 00454f67
     SAHF                                ; 00454f69
@@ -93,9 +93,9 @@ section .text
         ;   XREF to: 00454f98 (CONDITIONAL_JUMP)  ; LAB_00454f98
     MOV EAX,dword ptr [EDX]             ; 00454f88 | g_ClipStageMinXBuffer
     MOV dword ptr [ECX],EAX             ; 00454f8a | g_ClipStageMinZBuffer
-    MOV EAX,dword ptr [EDX + 0x4]       ; 00454f8c | DAT_015c45bc
-    MOV dword ptr [ECX + 0x4],EAX       ; 00454f8f | DAT_015c4680
-    MOV EAX,dword ptr [EDX + 0x8]       ; 00454f92 | DAT_015c45c0
+    MOV EAX,dword ptr [EDX + 0x4]       ; 00454f8c | g_ClipStageMinXBuffer[0].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 00454f8f | g_ClipStageMinZBuffer[0].y
+    MOV EAX,dword ptr [EDX + 0x8]       ; 00454f92 | g_ClipStageMinXBuffer[0].z
     MOV dword ptr [ECX + 0x8],EAX       ; 00454f95 | g_ClipStageMinZBuffer[0].z
     INC EBX                             ; 00454f98
         ;   Label: LAB_00454f98
@@ -145,9 +145,9 @@ section .text
         ;   XREF to: 0045500f (CONDITIONAL_JUMP)  ; LAB_0045500f
     MOV EAX,dword ptr [EDX]             ; 00454fff | g_ClipStageMinXBuffer
     MOV dword ptr [ECX],EAX             ; 00455001 | g_ClipStageMinZBuffer
-    MOV EAX,dword ptr [EDX + 0x4]       ; 00455003 | DAT_015c45bc
-    MOV dword ptr [ECX + 0x4],EAX       ; 00455006 | DAT_015c4680
-    MOV EAX,dword ptr [EDX + 0x8]       ; 00455009 | DAT_015c45c0
+    MOV EAX,dword ptr [EDX + 0x4]       ; 00455003 | g_ClipStageMinXBuffer[0].y
+    MOV dword ptr [ECX + 0x4],EAX       ; 00455006 | g_ClipStageMinZBuffer[0].y
+    MOV EAX,dword ptr [EDX + 0x8]       ; 00455009 | g_ClipStageMinXBuffer[0].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0045500c | g_ClipStageMinZBuffer[0].z
     INC EBX                             ; 0045500f
         ;   Label: LAB_0045500f

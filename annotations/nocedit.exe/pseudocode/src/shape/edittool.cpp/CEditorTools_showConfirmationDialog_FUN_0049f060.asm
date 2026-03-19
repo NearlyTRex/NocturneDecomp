@@ -26,7 +26,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Yes_I_know_what_I_m_doin_00623058
 ;   TerminatedCString s_No_please_I_didn_t_mean__00623097
-;   undefined4 DAT_02cf0130
+;   undefined4 g_ConfirmationMessageBuffer+0x400
 ;
 ; Called Functions:
 ;   crt_stdio.c__vsprintf_FUN_005fdba8
@@ -48,7 +48,7 @@ section .text
     PUSH EAX                            ; 0049f070
     MOV EDX,dword ptr [ESP + 0x24]      ; 0049f071
     PUSH EDX                            ; 0049f075
-    PUSH 0x2cf0130                      ; 0049f076 | DAT_02cf0130
+    PUSH 0x2cf0130                      ; 0049f076 | g_ConfirmationMessageBuffer+0x400
     CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 0049f07b
         ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049f080
@@ -74,7 +74,7 @@ section .text
     PUSH 0x1                            ; 0049f0b8
     LEA EAX,[ESP + 0x4]                 ; 0049f0ba
     PUSH EAX                            ; 0049f0be
-    PUSH 0x2cf0130                      ; 0049f0bf | DAT_02cf0130
+    PUSH 0x2cf0130                      ; 0049f0bf | g_ConfirmationMessageBuffer+0x400
     CALL shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0 ; 0049f0c4
         ;   XREF to: 0049e9d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList * str_list, char * dialog_title, int dialog_mode)
     ADD ESP,0xc                         ; 0049f0c9

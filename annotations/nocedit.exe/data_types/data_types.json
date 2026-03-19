@@ -149,6 +149,10 @@
       "type":"function_definition"
     },
     {
+      "name":"APIDLL_unknown",
+      "type":"function_definition"
+    },
+    {
       "name":"APIDLL_unlockFrame",
       "type":"function_definition"
     },
@@ -2605,10 +2609,6 @@
       "type":"function_definition"
     },
     {
-      "name":"GET_STOCK_OBJECT_FUNC",
-      "type":"function_definition"
-    },
-    {
       "name":"HGLOBAL",
       "type":"typedef"
     },
@@ -2697,10 +2697,6 @@
       "type":"typedef"
     },
     {
-      "name":"HWND__",
-      "type":"struct"
-    },
-    {
       "name":"HWND",
       "type":"typedef"
     },
@@ -2715,6 +2711,10 @@
     {
       "name":"GET_LAST_ACTIVE_POPUP_FUNC",
       "type":"function_definition"
+    },
+    {
+      "name":"HWND__",
+      "type":"struct"
     },
     {
       "name":"Heap",
@@ -2893,6 +2893,10 @@
       "type":"function_definition"
     },
     {
+      "name":"IDirectDrawSurface_GetClipper",
+      "type":"function_definition"
+    },
+    {
       "name":"IDirectDrawSurface_GetColorKey",
       "type":"function_definition"
     },
@@ -2906,6 +2910,10 @@
     },
     {
       "name":"IDirectDrawSurface_GetOverlayPosition",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectDrawSurface_GetPalette",
       "type":"function_definition"
     },
     {
@@ -2933,11 +2941,19 @@
       "type":"function_definition"
     },
     {
+      "name":"IDirectDrawSurface_SetClipper",
+      "type":"function_definition"
+    },
+    {
       "name":"IDirectDrawSurface_SetColorKey",
       "type":"function_definition"
     },
     {
       "name":"IDirectDrawSurface_SetOverlayPosition",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectDrawSurface_SetPalette",
       "type":"function_definition"
     },
     {
@@ -3427,6 +3443,10 @@
     {
       "name":"DDSURFACEDESC",
       "type":"struct"
+    },
+    {
+      "name":"GET_STOCK_OBJECT_FUNC",
+      "type":"function_definition"
     },
     {
       "name":"GLOBAL_LOCK_FUNC",
@@ -10953,6 +10973,15 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"APIDLL_unknown",
+      "parameters":[],
+      "return_type":"int",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"APIDLL_unlockFrame",
       "parameters":[],
       "return_type":"int",
@@ -18288,7 +18317,7 @@
           "type":"int"
         }
       ],
-      "return_type":"HGDIOBJ",
+      "return_type":"LPVOID",
       "type":"function_definition"
     },
     {
@@ -19099,6 +19128,24 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/ddraw.h",
       "importable":true,
+      "name":"IDirectDrawSurface_GetClipper",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectDrawSurface*"
+        },
+        {
+          "name":"clipper",
+          "type":"IDirectDrawClipper**"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__stdcall",
+      "cat":"/Nocturne/FunctionDefinition/System/ddraw.h",
+      "importable":true,
       "name":"IDirectDrawSurface_GetColorKey",
       "parameters":[
         {
@@ -19170,6 +19217,24 @@
         {
           "name":"y_pos",
           "type":"DWORD*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__stdcall",
+      "cat":"/Nocturne/FunctionDefinition/System/ddraw.h",
+      "importable":true,
+      "name":"IDirectDrawSurface_GetPalette",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectDrawSurface*"
+        },
+        {
+          "name":"palette",
+          "type":"IUnknown**"
         }
       ],
       "return_type":"HRESULT",
@@ -19313,6 +19378,24 @@
       "calling_convention":"__stdcall",
       "cat":"/Nocturne/FunctionDefinition/System/ddraw.h",
       "importable":true,
+      "name":"IDirectDrawSurface_SetClipper",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectDrawSurface*"
+        },
+        {
+          "name":"clipper",
+          "type":"IDirectDrawClipper*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__stdcall",
+      "cat":"/Nocturne/FunctionDefinition/System/ddraw.h",
+      "importable":true,
       "name":"IDirectDrawSurface_SetColorKey",
       "parameters":[
         {
@@ -19348,6 +19431,24 @@
         {
           "name":"y_pos",
           "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__stdcall",
+      "cat":"/Nocturne/FunctionDefinition/System/ddraw.h",
+      "importable":true,
+      "name":"IDirectDrawSurface_SetPalette",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectDrawSurface*"
+        },
+        {
+          "name":"palette",
+          "type":"IUnknown*"
         }
       ],
       "return_type":"HRESULT",
@@ -50421,7 +50522,7 @@
           "len":4,
           "name":"GetClipper",
           "offset":60,
-          "type":"void*"
+          "type":"IDirectDrawSurface_GetClipper*"
         },
         {
           "len":4,
@@ -50451,7 +50552,7 @@
           "len":4,
           "name":"GetPalette",
           "offset":80,
-          "type":"void*"
+          "type":"IDirectDrawSurface_GetPalette*"
         },
         {
           "len":4,
@@ -50499,7 +50600,7 @@
           "len":4,
           "name":"SetClipper",
           "offset":112,
-          "type":"void*"
+          "type":"IDirectDrawSurface_SetClipper*"
         },
         {
           "len":4,
@@ -50517,7 +50618,7 @@
           "len":4,
           "name":"SetPalette",
           "offset":124,
-          "type":"void*"
+          "type":"IDirectDrawSurface_SetPalette*"
         },
         {
           "len":4,
@@ -65647,7 +65748,7 @@
       "type":"typedef"
     },
     {
-      "base":"HWND__*",
+      "base":"int",
       "cat":"/Nocturne/Typedef/System/winuser.h",
       "importable":true,
       "name":"HWND",

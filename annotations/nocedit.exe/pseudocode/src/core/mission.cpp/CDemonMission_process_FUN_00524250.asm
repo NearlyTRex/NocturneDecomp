@@ -17,7 +17,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CHero*[4] g_HeroActors
 ;   int g_LocalHeroIndex
-;   undefined4 DAT_0310f868
+;   undefined4 g_CScriptInstance.focus_actor_changed
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -147,7 +147,7 @@ section .text
         ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet * this_ptr)
     MOV EBX,dword ptr [0x00680d50]      ; 00524388 | g_CScriptPtr
     ADD ESP,0x4                         ; 0052438e
-    MOV dword ptr [EBX + 0x10],0x2      ; 00524391 | DAT_0310f868
+    MOV dword ptr [EBX + 0x10],0x2      ; 00524391 | g_CScriptInstance.focus_actor_changed
     JMP 0x00524301                      ; 00524398
         ;   XREF to: 00524301 (UNCONDITIONAL_JUMP)  ; LAB_00524301
 

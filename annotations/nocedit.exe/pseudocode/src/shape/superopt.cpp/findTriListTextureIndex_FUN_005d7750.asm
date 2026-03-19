@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   int g_TriListTextureCount
 ;   char[50][80] g_TriListTextureNames
-;   undefined4 DAT_03f6bc40
+;   undefined4 g_TriListTextureNames[1][0]
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005fe7f0
@@ -31,7 +31,7 @@ section .text
     MOV ESI,0x3f6bbf0                   ; 005d7763 | g_TriListTextureNames
     PUSH EDI                            ; 005d7768
         ;   Label: LAB_005d7768
-    PUSH ESI                            ; 005d7769 | g_TriListTextureNames | DAT_03f6bc40
+    PUSH ESI                            ; 005d7769 | g_TriListTextureNames | g_TriListTextureNames[1][0]
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005d776a
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005d776f

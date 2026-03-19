@@ -18,9 +18,9 @@
 ;
 ; Referenced Globals:
 ;   char[256] g_CurrentMp3Filename
-;   undefined4 DAT_02f68189
-;   undefined4 DAT_02f6818a
-;   undefined4 DAT_02f6818b
+;   undefined4 g_CurrentMp3Filename+1
+;   undefined4 g_CurrentMp3Filename+2
+;   undefined4 g_CurrentMp3Filename+3
 ;
 ; Called Functions:
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
@@ -42,13 +42,13 @@ section .text
     PUSH EDI                            ; 00534a78 | g_CurrentMp3Filename
     MOV AL,byte ptr [ESI]               ; 00534a79
         ;   Label: LAB_00534a79
-    MOV byte ptr [EDI],AL               ; 00534a7b | g_CurrentMp3Filename | DAT_02f6818a
+    MOV byte ptr [EDI],AL               ; 00534a7b | g_CurrentMp3Filename | g_CurrentMp3Filename+2
     CMP AL,0x0                          ; 00534a7d
     JZ 0x00534a91                       ; 00534a7f
         ;   XREF to: 00534a91 (CONDITIONAL_JUMP)  ; LAB_00534a91
     MOV AL,byte ptr [ESI + 0x1]         ; 00534a81
     ADD ESI,0x2                         ; 00534a84
-    MOV byte ptr [EDI + 0x1],AL         ; 00534a87 | DAT_02f68189 | DAT_02f6818b
+    MOV byte ptr [EDI + 0x1],AL         ; 00534a87 | g_CurrentMp3Filename+1 | g_CurrentMp3Filename+3
     ADD EDI,0x2                         ; 00534a8a
     CMP AL,0x0                          ; 00534a8d
     JNZ 0x00534a79                      ; 00534a8f

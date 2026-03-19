@@ -33,7 +33,7 @@
 ;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonCameraInstance.corona_blend_factor
 ;   int[65536] g_IntensityToValueLookupTable
-;   undefined4 DAT_032bd778
+;   undefined4 g_IntensityToValueLookupTable[65535]
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -267,11 +267,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0056e010
         ;   Label: LAB_0056e010
     MOV EDX,dword ptr [ESP + 0x18]      ; 0056e014
-    MOV EAX,dword ptr [EAX*0x4 + 0x327d77c] ; 0056e018 | g_IntensityToValueLookupTable | DAT_032bd778
+    MOV EAX,dword ptr [EAX*0x4 + 0x327d77c] ; 0056e018 | g_IntensityToValueLookupTable | g_IntensityToValueLookupTable[65535]
     MOV dword ptr [EDX + 0x20],EAX      ; 0056e01f | g_RenderVertexBuffer[0].r
-    MOV EAX,dword ptr [EDI*0x4 + 0x327d77c] ; 0056e022 | g_IntensityToValueLookupTable | DAT_032bd778
+    MOV EAX,dword ptr [EDI*0x4 + 0x327d77c] ; 0056e022 | g_IntensityToValueLookupTable | g_IntensityToValueLookupTable[65535]
     MOV dword ptr [EDX + 0x24],EAX      ; 0056e029 | g_RenderVertexBuffer[0].g
-    MOV EAX,dword ptr [EBP*0x4 + 0x327d77c] ; 0056e02c | g_IntensityToValueLookupTable | DAT_032bd778
+    MOV EAX,dword ptr [EBP*0x4 + 0x327d77c] ; 0056e02c | g_IntensityToValueLookupTable | g_IntensityToValueLookupTable[65535]
     MOV dword ptr [EDX + 0x28],EAX      ; 0056e033 | g_RenderVertexBuffer[0].b
     ADD ESP,0x24                        ; 0056e036
     POP EBP                             ; 0056e039

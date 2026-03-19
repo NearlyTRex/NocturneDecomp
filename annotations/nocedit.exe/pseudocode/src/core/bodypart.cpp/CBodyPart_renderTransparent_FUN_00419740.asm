@@ -11,7 +11,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_0326ef00
+;   undefined4 g_CDemonSetInstance.disable_directional_lighting
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -45,7 +45,7 @@ section .text
     MOV EBX,dword ptr [0x006810c8]      ; 00419773 | g_CDemonSetInstance | g_CDemonSetPtr
     MOV EAX,dword ptr [EDI + 0xcb0]     ; 00419779
     PUSH EDI                            ; 0041977f
-    MOV dword ptr [EBX + 0x15ac88],EAX  ; 00419780 | DAT_0326ef00
+    MOV dword ptr [EBX + 0x15ac88],EAX  ; 00419780 | g_CDemonSetInstance.disable_directional_lighting
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 00419786
         ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
     ADD ESP,0x4                         ; 0041978b
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor * this_ptr)
     MOV EAX,[0x006810c8]                ; 004197b7 | g_CDemonSetInstance | g_CDemonSetPtr
     ADD ESP,0x4                         ; 004197bc
-    MOV dword ptr [EAX + 0x15ac88],0x0  ; 004197bf | DAT_0326ef00
+    MOV dword ptr [EAX + 0x15ac88],0x0  ; 004197bf | g_CDemonSetInstance.disable_directional_lighting
     MOV EDX,dword ptr [EDI + 0x74c]     ; 004197c9
         ;   Label: LAB_004197c9
     XOR EBX,EBX                         ; 004197cf

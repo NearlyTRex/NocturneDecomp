@@ -20,9 +20,9 @@
 ; Referenced Globals:
 ;   int g_SamplePointCount
 ;   CVector3f[400] g_SamplePointArray
-;   undefined4 DAT_02f313fc
+;   undefined4 g_SamplePointArray[1].x
 ;   double[400] g_SampleDistances
-;   undefined4 DAT_02f326b0+4
+;   undefined4 g_SampleDistances[0]+4
 ;   int g_LodGenerationStamp
 ;
 ; Called Functions:
@@ -105,8 +105,8 @@ section .text
     MOV EAX,dword ptr [EDI + 0xc]       ; 0051a0df
     ADD EAX,EDX                         ; 0051a0e2
     PUSH EAX                            ; 0051a0e4
-    MOV ECX,dword ptr [ESP + 0x20]      ; 0051a0e5 | g_SamplePointArray | DAT_02f313fc
-    PUSH ECX                            ; 0051a0e9 | g_SamplePointArray | DAT_02f313fc
+    MOV ECX,dword ptr [ESP + 0x20]      ; 0051a0e5 | g_SamplePointArray | g_SamplePointArray[1].x
+    PUSH ECX                            ; 0051a0e9 | g_SamplePointArray | g_SamplePointArray[1].x
     PUSH EDI                            ; 0051a0ea
     CALL shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400 ; 0051a0eb
         ;   XREF to: 0051a400 (UNCONDITIONAL_CALL)  ; double shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400(CLodMesh * this_ptr, SLodSamplePoint * sample_point, CLodFace * face)
@@ -123,7 +123,7 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 0051a10d
     MOV dword ptr [EBX + 0x2f326b0],EAX ; 0051a110 | g_SampleDistances
     MOV EAX,dword ptr [ESP + 0x4]       ; 0051a116
-    MOV dword ptr [EBX + 0x2f326b4],EAX ; 0051a11a | DAT_02f326b0+4
+    MOV dword ptr [EBX + 0x2f326b4],EAX ; 0051a11a | g_SampleDistances[0]+4
     MOV ECX,dword ptr [ESP + 0x1c]      ; 0051a120
         ;   Label: LAB_0051a120
     MOV EAX,dword ptr [ESP + 0x20]      ; 0051a124
@@ -131,7 +131,7 @@ section .text
     ADD EBX,0x8                         ; 0051a12e
     ADD ECX,0xc                         ; 0051a131
     INC EAX                             ; 0051a134
-    MOV dword ptr [ESP + 0x1c],ECX      ; 0051a135 | DAT_02f313fc
+    MOV dword ptr [ESP + 0x1c],ECX      ; 0051a135 | g_SamplePointArray[1].x
     MOV dword ptr [ESP + 0x20],EAX      ; 0051a139
     CMP EAX,EDX                         ; 0051a13d
     JGE 0x0051a09d                      ; 0051a13f

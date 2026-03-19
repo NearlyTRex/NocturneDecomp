@@ -104,7 +104,7 @@ section .text
     JNZ 0x004da152                      ; 004da13e
         ;   XREF to: 004da152 (CONDITIONAL_JUMP)  ; LAB_004da152
     MOV EAX,[0x00680a00]                ; 004da140 | g_CNetGameInstance | g_CNetGamePtr
-    CMP dword ptr [EAX + 0x168],0x0     ; 004da145 | DAT_02f7c8a8
+    CMP dword ptr [EAX + 0x168],0x0     ; 004da145 | g_CNetGameInstance.has_pending_sim_frame
     JZ 0x004da1cc                       ; 004da14c
         ;   XREF to: 004da1cc (CONDITIONAL_JUMP)  ; LAB_004da1cc
     MOV EDX,dword ptr [0x00680a00]      ; 004da152 | g_CNetGameInstance | g_CNetGamePtr
@@ -479,9 +479,9 @@ section .text
     MOV EAX,[0x006810c8]                ; 004da598 | g_CDemonSetPtr
     MOV EDX,dword ptr [EAX + 0x15aea4]  ; 004da59d | g_CDemonSetInstance.selected_camera_index
     IMUL EDX,EDX,0x1a4                  ; 004da5a3
-    MOV ECX,dword ptr [EDX + EAX*0x1 + 0x150] ; 004da5a9 | DAT_031143c8
+    MOV ECX,dword ptr [EDX + EAX*0x1 + 0x150] ; 004da5a9 | g_CDemonSetInstance.cameras[0].camera_group
     PUSH ECX                            ; 004da5b0
-    PUSH 0x3275924                      ; 004da5b1 | DAT_03275924
+    PUSH 0x3275924                      ; 004da5b1 | g_CDemonCameraInstance.camera_name[0]
     PUSH 0x62b492                       ; 004da5b6 | = "Camera: \"%s\" Group %d"
     LEA EAX,[EBP + 0xfffffcb2]          ; 004da5bb
     PUSH EAX                            ; 004da5c1

@@ -18,7 +18,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_ActiveRenderColor
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -63,7 +63,7 @@ section .text
     JZ 0x0050287f                       ; 0050265f
         ;   XREF to: 0050287f (CONDITIONAL_JUMP)  ; LAB_0050287f
     MOV EAX,[0x0067d550]                ; 00502665 | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 0050266a | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 0050266a | g_CDemonMissionInstance.is_in_editor
     JZ 0x0050287f                       ; 0050266e
         ;   XREF to: 0050287f (CONDITIONAL_JUMP)  ; LAB_0050287f
     MOV ESI,dword ptr [0x006703ec]      ; 00502674 | g_CDemonRendererPtr2

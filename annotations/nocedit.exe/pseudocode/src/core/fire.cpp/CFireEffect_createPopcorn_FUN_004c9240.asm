@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   int g_PopcornAllocIndex
 ;   CPopcorn[256] g_PopcornPool
-;   undefined4 DAT_02d736f4
+;   undefined4 g_PopcornPool[0].base.vtable
 ;
 ; *****************************************************************************
 
@@ -35,7 +35,7 @@ section .text
     PUSH EBX                            ; 004c925b
     ADD EAX,0x2d736c0                   ; 004c925c | g_PopcornPool
     PUSH EAX                            ; 004c9261
-    MOV EDX,dword ptr [EAX + 0x34]      ; 004c9262 | DAT_02d736f4
+    MOV EDX,dword ptr [EAX + 0x34]      ; 004c9262 | g_PopcornPool[0].base.vtable
     CALL dword ptr [EDX]                ; 004c9265
     MOV ESI,dword ptr [0x02d736bc]      ; 004c9267 | g_PopcornAllocIndex
     INC ESI                             ; 004c926d

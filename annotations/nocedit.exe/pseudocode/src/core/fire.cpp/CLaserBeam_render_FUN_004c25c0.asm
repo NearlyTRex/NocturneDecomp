@@ -324,7 +324,7 @@ section .text
     JNC 0x004c2d69                      ; 004c2840
         ;   XREF to: 004c2d69 (CONDITIONAL_JUMP)  ; LAB_004c2d69
     MOV EAX,[0x0067b654]                ; 004c2846 | g_CGamePtr
-    CMP dword ptr [EAX + 0xc],0x0       ; 004c284b | DAT_02d81aa8
+    CMP dword ptr [EAX + 0xc],0x0       ; 004c284b | g_CGameInstance.halo_mode
     JZ 0x004c2d69                       ; 004c284f
         ;   XREF to: 004c2d69 (CONDITIONAL_JUMP)  ; LAB_004c2d69
     FLD double ptr [ESP + 0x10]         ; 004c2855
@@ -618,19 +618,19 @@ section .text
     MOV EBX,dword ptr [EBX + 0x34]      ; 004c2ce7
     MOV dword ptr [EAX + 0xb8],EBX      ; 004c2cea
     MOV EAX,dword ptr [EDX]             ; 004c2cf0 | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0x18],0xf80000 ; 004c2cf2 | DAT_00f80000
+    MOV dword ptr [EAX + 0x18],0xf80000 ; 004c2cf2 | g_LightBufferPool[11][183800]
     MOV EAX,dword ptr [EDX]             ; 004c2cf9 | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0x1c],0xf80000 ; 004c2cfb | DAT_00f80000
+    MOV dword ptr [EAX + 0x1c],0xf80000 ; 004c2cfb | g_LightBufferPool[11][183800]
     MOV EAX,dword ptr [EDX]             ; 004c2d02 | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0x48],EDI      ; 004c2d04
     MOV EAX,dword ptr [EDX]             ; 004c2d07 | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0x4c],0xf80000 ; 004c2d09 | DAT_00f80000
+    MOV dword ptr [EAX + 0x4c],0xf80000 ; 004c2d09 | g_LightBufferPool[11][183800]
     MOV EAX,dword ptr [EDX]             ; 004c2d10 | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0x78],EDI      ; 004c2d12
     MOV EAX,dword ptr [EDX]             ; 004c2d15 | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0x7c],EDI      ; 004c2d17
     MOV EAX,dword ptr [EDX]             ; 004c2d1a | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0xa8],0xf80000 ; 004c2d1c | DAT_00f80000
+    MOV dword ptr [EAX + 0xa8],0xf80000 ; 004c2d1c | g_LightBufferPool[11][183800]
     MOV EAX,dword ptr [EDX]             ; 004c2d26 | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0xac],EDI      ; 004c2d28
     LEA EAX,[ESP + 0xc8]                ; 004c2d2e
@@ -1284,7 +1284,7 @@ section .text
     MOV EDX,0x4                         ; 004c36bf
     MOV EBX,0x3                         ; 004c36c4
     MOV ESI,0x80000                     ; 004c36c9
-    MOV EAX,0xf80000                    ; 004c36ce | DAT_00f80000
+    MOV EAX,0xf80000                    ; 004c36ce | g_LightBufferPool[11][183800]
     XOR ECX,ECX                         ; 004c36d3
     MOV dword ptr [ESP + 0x84],EDX      ; 004c36d5
     MOV dword ptr [ESP + 0x94],ECX      ; 004c36dc
@@ -1295,12 +1295,12 @@ section .text
     MOV dword ptr [ESP + 0xbc],EBX      ; 004c36ff
     MOV dword ptr [ESP + 0x9c],ESI      ; 004c3706
     MOV dword ptr [ESP + 0xa0],ESI      ; 004c370d
-    MOV dword ptr [ESP + 0xa8],EAX      ; 004c3714 | DAT_00f80000
+    MOV dword ptr [ESP + 0xa8],EAX      ; 004c3714 | g_LightBufferPool[11][183800]
     MOV dword ptr [ESP + 0xac],ESI      ; 004c371b
-    MOV dword ptr [ESP + 0xb4],EAX      ; 004c3722 | DAT_00f80000
-    MOV dword ptr [ESP + 0xb8],EAX      ; 004c3729 | DAT_00f80000
+    MOV dword ptr [ESP + 0xb4],EAX      ; 004c3722 | g_LightBufferPool[11][183800]
+    MOV dword ptr [ESP + 0xb8],EAX      ; 004c3729 | g_LightBufferPool[11][183800]
     MOV dword ptr [ESP + 0xc0],ESI      ; 004c3730
-    MOV dword ptr [ESP + 0xc4],EAX      ; 004c3737 | DAT_00f80000
+    MOV dword ptr [ESP + 0xc4],EAX      ; 004c3737 | g_LightBufferPool[11][183800]
     MOV EDX,0x1                         ; 004c373e
     MOV ECX,0x2                         ; 004c3743
     MOV EAX,[0x006703ec]                ; 004c3748 | g_CDemonRendererPtr2

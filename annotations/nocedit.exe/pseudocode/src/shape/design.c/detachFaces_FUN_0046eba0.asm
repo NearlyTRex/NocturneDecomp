@@ -15,13 +15,13 @@
 ;   TerminatedCString s_Faces_detached_0061e093
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
-;   undefined4 DAT_01626418
-;   undefined4 DAT_0162641c
+;   undefined4 g_LoadedVertices[0].u
+;   undefined4 g_LoadedVertices[0].v
 ;   int g_PolygonCount
-;   undefined4 DAT_016e99b4
-;   undefined4 DAT_016e99c8
+;   undefined4 g_ModelPolygonData[0].vertex_indices_count
+;   undefined4 g_ModelPolygonData[0].vertex_indices[0]
 ;
 ; Called Functions:
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
@@ -63,31 +63,31 @@ section .text
     IMUL EDX,dword ptr [EBP + -0x10],0x184 ; 0046ebe1
         ;   Label: LAB_0046ebe1
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046ebe8
-    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0046ebeb | DAT_016e99b4
+    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0046ebeb | g_ModelPolygonData[0].vertex_indices_count
     JGE 0x0046ec88                      ; 0046ebf1
         ;   XREF to: 0046ec88 (CONDITIONAL_JUMP)  ; LAB_0046ec88
     IMUL EDX,dword ptr [EBP + -0x10],0x184 ; 0046ebf7
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046ebfe
     SHL EAX,0x2                         ; 0046ec01
     ADD EAX,EDX                         ; 0046ec04
-    MOV EAX,dword ptr [EAX + 0x16e99c8] ; 0046ec06 | DAT_016e99c8
+    MOV EAX,dword ptr [EAX + 0x16e99c8] ; 0046ec06 | g_ModelPolygonData[0].vertex_indices[0]
     MOV dword ptr [EBP + -0x8],EAX      ; 0046ec0c
     IMUL ESI,dword ptr [EBP + -0x8],0x14 ; 0046ec0f
     IMUL EDI,dword ptr [0x01626408],0x14 ; 0046ec13 | g_VertexCount
     LEA EDI,[EDI + 0x162640c]           ; 0046ec1a | g_LoadedVertices
     LEA ESI,[ESI + 0x162640c]           ; 0046ec20 | g_LoadedVertices
     MOVSD ES:EDI,ESI                    ; 0046ec26 | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0046ec27 | DAT_01626410
+    MOVSD ES:EDI,ESI                    ; 0046ec27 | g_LoadedVertices[0].vertex.y
     MOVSD ES:EDI,ESI                    ; 0046ec28 | g_LoadedVertices[0].vertex.z
-    MOVSD ES:EDI,ESI                    ; 0046ec29 | DAT_01626418
-    MOVSD ES:EDI,ESI                    ; 0046ec2a | DAT_0162641c
+    MOVSD ES:EDI,ESI                    ; 0046ec29 | g_LoadedVertices[0].u
+    MOVSD ES:EDI,ESI                    ; 0046ec2a | g_LoadedVertices[0].v
     MOV ESI,dword ptr [0x01626408]      ; 0046ec2b | g_VertexCount
     SUB ESI,dword ptr [EBP + -0x4]      ; 0046ec31
     IMUL EDX,dword ptr [EBP + -0x10],0x184 ; 0046ec34
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046ec3b
     SHL EAX,0x2                         ; 0046ec3e
     ADD EAX,EDX                         ; 0046ec41
-    MOV dword ptr [EAX + 0x16e99c8],ESI ; 0046ec43 | DAT_016e99c8
+    MOV dword ptr [EAX + 0x16e99c8],ESI ; 0046ec43 | g_ModelPolygonData[0].vertex_indices[0]
     INC dword ptr [0x01626408]          ; 0046ec49 | g_VertexCount
     CMP dword ptr [0x01626408],0x4e20   ; 0046ec4f | g_VertexCount
     JLE 0x0046ec83                      ; 0046ec59
@@ -135,10 +135,10 @@ section .text
     LEA EDI,[EAX + 0x162640c]           ; 0046ecb3 | g_LoadedVertices
     LEA ESI,[ESI + 0x162640c]           ; 0046ecb9 | g_LoadedVertices
     MOVSD ES:EDI,ESI                    ; 0046ecbf | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0046ecc0 | DAT_01626410
+    MOVSD ES:EDI,ESI                    ; 0046ecc0 | g_LoadedVertices[0].vertex.y
     MOVSD ES:EDI,ESI                    ; 0046ecc1 | g_LoadedVertices[0].vertex.z
-    MOVSD ES:EDI,ESI                    ; 0046ecc2 | DAT_01626418
-    MOVSD ES:EDI,ESI                    ; 0046ecc3 | DAT_0162641c
+    MOVSD ES:EDI,ESI                    ; 0046ecc2 | g_LoadedVertices[0].u
+    MOVSD ES:EDI,ESI                    ; 0046ecc3 | g_LoadedVertices[0].v
     JMP 0x0046ec95                      ; 0046ecc4
         ;   XREF to: 0046ec95 (UNCONDITIONAL_JUMP)  ; LAB_0046ec95
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046ecc6

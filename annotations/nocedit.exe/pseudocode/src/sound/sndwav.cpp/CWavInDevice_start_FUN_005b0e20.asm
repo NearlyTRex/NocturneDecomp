@@ -11,7 +11,7 @@
 ;   TerminatedCString s_waveInStart_failed_0065244e
 ;   HWAVEIN g_WaveInHandle
 ;   LPWAVEHDR[20] g_WaveInHeaders
-;   undefined4 DAT_03f6ae24
+;   undefined4 g_WaveInHeaders[1]
 ;   LPVOID[20] g_WaveInBuffers
 ;   int g_WaveInBitsPerSample
 ;   int g_WaveInChannels
@@ -45,7 +45,7 @@ section .text
     PUSH 0x20                           ; 005b0e36
         ;   Label: LAB_005b0e36
     PUSH 0x0                            ; 005b0e38
-    MOV EBP,dword ptr [EBX + 0x3f6ae20] ; 005b0e3a | g_WaveInHeaders | DAT_03f6ae24
+    MOV EBP,dword ptr [EBX + 0x3f6ae20] ; 005b0e3a | g_WaveInHeaders | g_WaveInHeaders[1]
     PUSH EBP                            ; 005b0e40
     CALL crt_memory.c_memset_FUN_005fde40 ; 005b0e41
         ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)

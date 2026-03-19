@@ -14,7 +14,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   SRenderVertex[16] g_RenderVertexBuffer
-;   undefined4 DAT_00688044
+;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_x
 ;   SCameraViewportState g_BackgroundSavedCameraState
 ;   SCameraViewportState g_SavedCameraState
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -55,7 +55,7 @@ section .text
     ADD ESP,0x8                         ; 0045452a
     PUSH ESI                            ; 0045452d
         ;   Label: LAB_0045452d
-    PUSH EDI                            ; 0045452e | g_RenderVertexBuffer | DAT_00688044
+    PUSH EDI                            ; 0045452e | g_RenderVertexBuffer | g_RenderVertexBuffer[1].projected_vertex.transformed_x
     CALL wincore_windll.cpp_transformPoint_FUN_005b5a25 ; 0045452f
         ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)
     ADD ESI,0xc                         ; 00454534

@@ -36,7 +36,7 @@
 ;   undefined4 g_StaticColorVector.z
 ;   uchar g_ColorConstantsInitialized
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02c6d590
+;   undefined4 g_CDemonRendererInstance.advanced_culling_enabled
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   UVector3 g_ZeroVector
@@ -138,7 +138,7 @@ section .text
     JNZ 0x00457737                      ; 0045771f
         ;   XREF to: 00457737 (CONDITIONAL_JUMP)  ; LAB_00457737
     MOV EAX,[0x006703ec]                ; 00457721 | g_CDemonRendererPtr2
-    MOV EDX,dword ptr [EAX + 0x18]      ; 00457726 | DAT_02c6d590
+    MOV EDX,dword ptr [EAX + 0x18]      ; 00457726 | g_CDemonRendererInstance.advanced_culling_enabled
     TEST EDX,EDX                        ; 00457729
     JNZ 0x00457737                      ; 0045772b
         ;   XREF to: 00457737 (CONDITIONAL_JUMP)  ; LAB_00457737

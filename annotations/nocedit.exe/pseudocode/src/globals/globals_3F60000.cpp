@@ -118,6 +118,23 @@ APIDLL_toggle* g_APIDLL_toggle = {};
 // APIDLL_toggleX*
 APIDLL_toggleX* g_APIDLL_toggleX = {};
 
+// APIDLL_unknown*
+APIDLL_unknown* g_APIDLL_setVideoMode = {};
+APIDLL_unknown* g_APIDLL_GetDisplayContext = {};
+APIDLL_unknown* g_APIDLL_ReleaseDisplayContext = {};
+APIDLL_unknown* g_APIDLL_setViewport = {};
+APIDLL_unknown* g_APIDLL_setLightConstants = {};
+APIDLL_unknown* g_APIDLL_setLightVector = {};
+APIDLL_unknown* g_APIDLL_setAmbientLight = {};
+APIDLL_unknown* g_APIDLL_setTransform = {};
+APIDLL_unknown* g_APIDLL_polyList = {};
+APIDLL_unknown* g_APIDLL_getTextureHandle = {};
+APIDLL_unknown* g_APIDLL_selectTextureByHandle = {};
+APIDLL_unknown* g_APIDLL_enableCulling = {};
+APIDLL_unknown* g_APIDLL_enableClipping = {};
+APIDLL_unknown* g_APIDLL_setTextureClamp = {};
+APIDLL_unknown* g_APIDLL_setFog = {};
+
 // APIDLL_unlockFrame*
 APIDLL_unlockFrame* g_APIDLL_unlockFrame = {};
 
@@ -452,21 +469,6 @@ uint g_TrainExteriorAmbientHandle = {};
 // void*
 void* g_PrimaryMixBuffer = {};
 void* g_FrameBufferPtr = {};
-void* g_APIDLL_setVideoMode = {};
-void* g_APIDLL_GetDisplayContext = {};
-void* g_APIDLL_ReleaseDisplayContext = {};
-void* g_APIDLL_setViewport = {};
-void* g_APIDLL_setLightConstants = {};
-void* g_APIDLL_setLightVector = {};
-void* g_APIDLL_setAmbientLight = {};
-void* g_APIDLL_setTransform = {};
-void* g_APIDLL_polyList = {};
-void* g_APIDLL_getTextureHandle = {};
-void* g_APIDLL_selectTextureByHandle = {};
-void* g_APIDLL_enableCulling = {};
-void* g_APIDLL_enableClipping = {};
-void* g_APIDLL_setTextureClamp = {};
-void* g_APIDLL_setFog = {};
 
 // void*[8]
 void* g_ChannelPrimaryBuffers[8] = {};

@@ -122,13 +122,13 @@ section .text
         ;   Label: LAB_004e1329
     MOV EDI,ESP                         ; 004e132e
     PUSH EDI                            ; 004e1330
-    MOV AL,byte ptr [ESI]               ; 004e1331 | g_CurrentSaveFile | DAT_02d82c82
+    MOV AL,byte ptr [ESI]               ; 004e1331 | g_CurrentSaveFile | g_CurrentSaveFile+2
         ;   Label: LAB_004e1331
     MOV byte ptr [EDI],AL               ; 004e1333
     CMP AL,0x0                          ; 004e1335
     JZ 0x004e1349                       ; 004e1337
         ;   XREF to: 004e1349 (CONDITIONAL_JUMP)  ; LAB_004e1349
-    MOV AL,byte ptr [ESI + 0x1]         ; 004e1339 | DAT_02d82c81 | DAT_02d82c83
+    MOV AL,byte ptr [ESI + 0x1]         ; 004e1339 | g_CurrentSaveFile+1 | g_CurrentSaveFile+3
     ADD ESI,0x2                         ; 004e133c
     MOV byte ptr [EDI + 0x1],AL         ; 004e133f
     ADD EDI,0x2                         ; 004e1342
@@ -225,13 +225,13 @@ section .text
     PUSH EDI                            ; 004e145e | g_CurrentSaveFile
     MOV AL,byte ptr [ESI]               ; 004e145f
         ;   Label: LAB_004e145f
-    MOV byte ptr [EDI],AL               ; 004e1461 | g_CurrentSaveFile | DAT_02d82c82
+    MOV byte ptr [EDI],AL               ; 004e1461 | g_CurrentSaveFile | g_CurrentSaveFile+2
     CMP AL,0x0                          ; 004e1463
     JZ 0x004e1477                       ; 004e1465
         ;   XREF to: 004e1477 (CONDITIONAL_JUMP)  ; LAB_004e1477
     MOV AL,byte ptr [ESI + 0x1]         ; 004e1467
     ADD ESI,0x2                         ; 004e146a
-    MOV byte ptr [EDI + 0x1],AL         ; 004e146d | DAT_02d82c81 | DAT_02d82c83
+    MOV byte ptr [EDI + 0x1],AL         ; 004e146d | g_CurrentSaveFile+1 | g_CurrentSaveFile+3
     ADD EDI,0x2                         ; 004e1470
     CMP AL,0x0                          ; 004e1473
     JNZ 0x004e145f                      ; 004e1475
@@ -776,7 +776,7 @@ section .text
         ;   XREF to: 004e1ae6 (CONDITIONAL_JUMP)  ; LAB_004e1ae6
     MOV ESI,0x2d82d84                   ; 004e1ac2 | g_MasterLightStateSaveBuffer
     ADD ESI,0x4                         ; 004e1ac7
-    PUSH ESI                            ; 004e1aca | DAT_02d82d88 | DAT_02d82d8c
+    PUSH ESI                            ; 004e1aca | g_MasterLightStateSaveBuffer[1] | g_MasterLightStateSaveBuffer[2]
         ;   Label: LAB_004e1aca
     PUSH 0x62cc4f                       ; 004e1acb | = "%d\n"
     PUSH EBX                            ; 004e1ad0

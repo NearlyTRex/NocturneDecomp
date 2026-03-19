@@ -22,9 +22,9 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CEditorTools g_CEditorToolsInstance
 ;   char[256] g_CurrentSaveFile
-;   undefined4 DAT_02d82c81
-;   undefined4 DAT_02d82c82
-;   undefined4 DAT_02d82c83
+;   undefined4 g_CurrentSaveFile+1
+;   undefined4 g_CurrentSaveFile+2
+;   undefined4 g_CurrentSaveFile+3
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005fe7f0
@@ -75,13 +75,13 @@ section .text
         ;   Label: LAB_004e375e
     MOV EDI,ESP                         ; 004e3763
     PUSH EDI                            ; 004e3765
-    MOV AL,byte ptr [ESI]               ; 004e3766 | g_CurrentSaveFile | DAT_02d82c82
+    MOV AL,byte ptr [ESI]               ; 004e3766 | g_CurrentSaveFile | g_CurrentSaveFile+2
         ;   Label: LAB_004e3766
     MOV byte ptr [EDI],AL               ; 004e3768
     CMP AL,0x0                          ; 004e376a
     JZ 0x004e377e                       ; 004e376c
         ;   XREF to: 004e377e (CONDITIONAL_JUMP)  ; LAB_004e377e
-    MOV AL,byte ptr [ESI + 0x1]         ; 004e376e | DAT_02d82c81 | DAT_02d82c83
+    MOV AL,byte ptr [ESI + 0x1]         ; 004e376e | g_CurrentSaveFile+1 | g_CurrentSaveFile+3
     ADD ESI,0x2                         ; 004e3771
     MOV byte ptr [EDI + 0x1],AL         ; 004e3774
     ADD EDI,0x2                         ; 004e3777

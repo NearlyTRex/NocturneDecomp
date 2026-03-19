@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   int g_MasterLightCount
 ;   CDemonLight*[96] g_MasterLightList
-;   undefined4 DAT_03276db4
+;   undefined4 g_MasterLightList[1]
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
     JLE 0x00571161                      ; 00571145
         ;   XREF to: 00571161 (CONDITIONAL_JUMP)  ; LAB_00571161
     PUSH EBX                            ; 00571147
-    MOV EBX,dword ptr [EAX*0x4 + 0x3276db0] ; 00571148 | g_MasterLightList | DAT_03276db4
+    MOV EBX,dword ptr [EAX*0x4 + 0x3276db0] ; 00571148 | g_MasterLightList | g_MasterLightList[1]
         ;   Label: LAB_00571148
     MOV ECX,dword ptr [EDX + 0x4]       ; 0057114f
     ADD EDX,0x4                         ; 00571152

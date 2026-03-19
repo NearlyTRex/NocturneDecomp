@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   int g_HeroCount
 ;   CHero*[4] g_HeroActors
-;   undefined4 DAT_02db87c4
+;   undefined4 g_HeroActors[1]
 ;
 ; *****************************************************************************
 
@@ -40,7 +40,7 @@ section .text
     MOV EBX,dword ptr [0x02db87bc]      ; 004f22c6 | g_HeroCount
     XOR EDX,EDX                         ; 004f22cc
     SHL EBX,0x2                         ; 004f22ce
-    MOV ESI,dword ptr [EDX + 0x2db87c0] ; 004f22d1 | g_HeroActors | DAT_02db87c4
+    MOV ESI,dword ptr [EDX + 0x2db87c0] ; 004f22d1 | g_HeroActors | g_HeroActors[1]
         ;   Label: LAB_004f22d1
     TEST ESI,ESI                        ; 004f22d7
     JNZ 0x004f22ea                      ; 004f22d9

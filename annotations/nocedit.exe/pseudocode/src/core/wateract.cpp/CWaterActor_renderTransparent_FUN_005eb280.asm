@@ -15,11 +15,11 @@
 ;   CDemonSet g_CDemonSetInstance
 ;   UVector3 g_ZeroVector
 ;   CVector3i[1000] g_WaterActorTransformedVertices
-;   undefined4 DAT_03f90a8c
-;   undefined4 DAT_03f90a90
-;   undefined4 DAT_03f90a94
-;   undefined4 DAT_03f90a98
-;   undefined4 DAT_03f90a9c
+;   undefined4 g_WaterActorTransformedVertices[0].y
+;   undefined4 g_WaterActorTransformedVertices[0].z
+;   undefined4 g_WaterActorTransformedVertices[1].x
+;   undefined4 g_WaterActorTransformedVertices[1].y
+;   undefined4 g_WaterActorTransformedVertices[1].z
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -114,17 +114,17 @@ section .text
     MOV EAX,EDX                         ; 005eb33b
     FLD float ptr [EAX]                 ; 005eb33d
     FMUL float ptr [0x00665310]         ; 005eb33f | FLOAT_00665310
-    FISTP dword ptr [EBX]               ; 005eb345 | g_WaterActorTransformedVertices | DAT_03f90a94
+    FISTP dword ptr [EBX]               ; 005eb345 | g_WaterActorTransformedVertices | g_WaterActorTransformedVertices[1].x
     FLD float ptr [EAX + 0x4]           ; 005eb347
     FMUL float ptr [0x00665310]         ; 005eb34a | FLOAT_00665310
-    FISTP dword ptr [EBX + 0x4]         ; 005eb350 | DAT_03f90a8c | DAT_03f90a98
+    FISTP dword ptr [EBX + 0x4]         ; 005eb350 | g_WaterActorTransformedVertices[0].y | g_WaterActorTransformedVertices[1].y
     FLD float ptr [EAX + 0x8]           ; 005eb353
     FMUL float ptr [0x00665310]         ; 005eb356 | FLOAT_00665310
-    FISTP dword ptr [EBX + 0x8]         ; 005eb35c | DAT_03f90a90 | DAT_03f90a9c
+    FISTP dword ptr [EBX + 0x8]         ; 005eb35c | g_WaterActorTransformedVertices[0].z | g_WaterActorTransformedVertices[1].z
     INC EDI                             ; 005eb35f
     ADD EDX,0x20                        ; 005eb360
     MOV EBX,dword ptr [ESI + 0x298]     ; 005eb363
-    ADD ECX,0xc                         ; 005eb369 | DAT_03f90a94
+    ADD ECX,0xc                         ; 005eb369 | g_WaterActorTransformedVertices[1].x
     CMP EDI,EBX                         ; 005eb36c
     JL 0x005eb339                       ; 005eb36e
         ;   XREF to: 005eb339 (CONDITIONAL_JUMP)  ; LAB_005eb339

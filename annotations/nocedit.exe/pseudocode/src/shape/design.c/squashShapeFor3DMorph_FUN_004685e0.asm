@@ -13,7 +13,7 @@
 ;   TerminatedCString s_Enter_squash_axis_X_Y_or_0061cd9c
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; Called Functions:
@@ -92,7 +92,7 @@ section .text
     JGE 0x00468687                      ; 00468675
         ;   XREF to: 00468687 (CONDITIONAL_JUMP)  ; LAB_00468687
     IMUL EAX,dword ptr [EBP + -0xc],0x14 ; 00468677
-    MOV dword ptr [EAX + 0x1626410],0x0 ; 0046867b | DAT_01626410
+    MOV dword ptr [EAX + 0x1626410],0x0 ; 0046867b | g_LoadedVertices[0].vertex.y
     JMP 0x00468666                      ; 00468685
         ;   XREF to: 00468666 (UNCONDITIONAL_JUMP)  ; LAB_00468666
     JMP 0x004686d7                      ; 00468687

@@ -18,8 +18,8 @@
 ;   float g_WorldToScreenScale2 = 256
 ;   SRenderVertex[16] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_y
-;   undefined4 DAT_00688044
-;   undefined4 DAT_00688048
+;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_x
+;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_y
 ;
 ; Called Functions:
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407d70
@@ -99,11 +99,11 @@ section .text
     CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a2016
         ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
     ADD ESP,0x8                         ; 004a201b
-    MOV ESI,0x688044                    ; 004a201e | DAT_00688044
+    MOV ESI,0x688044                    ; 004a201e | g_RenderVertexBuffer[1].projected_vertex.transformed_x
     SUB ESP,0x30                        ; 004a2023
     MOV ECX,0xc                         ; 004a2026
     MOV EDI,ESP                         ; 004a202b
-    MOVSD.REP ES:EDI,ESI                ; 004a202d | DAT_00688044 | DAT_00688048
+    MOVSD.REP ES:EDI,ESI                ; 004a202d | g_RenderVertexBuffer[1].projected_vertex.transformed_x | g_RenderVertexBuffer[1].projected_vertex.transformed_y
     SUB ESP,0x30                        ; 004a202f
     MOV ECX,0xc                         ; 004a2032
     MOV ESI,0x688014                    ; 004a2037 | g_RenderVertexBuffer

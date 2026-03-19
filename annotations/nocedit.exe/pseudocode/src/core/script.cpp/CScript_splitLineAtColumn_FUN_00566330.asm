@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 g_CurrentLineBuffer
-;   undefined4 DAT_031101c1
+;   undefined4 g_CurrentLineBuffer+2
 ;
 ; Called Functions:
 ;   core_script.cpp_CScript_editorPutLine_FUN_005662a0
@@ -41,7 +41,7 @@ section .text
     SUB ECX,ECX                         ; 0056634f
     DEC ECX                             ; 00566351
     XOR EAX,EAX                         ; 00566352
-    SCASB.REPNE ES:EDI                  ; 00566354 | g_CurrentLineBuffer | DAT_031101c1
+    SCASB.REPNE ES:EDI                  ; 00566354 | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     NOT ECX                             ; 00566356
     DEC ECX                             ; 00566358
     CMP EBX,ECX                         ; 00566359
@@ -51,7 +51,7 @@ section .text
     MOV ECX,0x31101c0                   ; 0056635f | g_CurrentLineBuffer
         ;   Label: LAB_0056635f
     ADD ECX,EBX                         ; 00566364
-    PUSH ECX                            ; 00566366 | g_CurrentLineBuffer | DAT_031101c1
+    PUSH ECX                            ; 00566366 | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     LEA ECX,[EBP + 0x1]                 ; 00566367
     PUSH ECX                            ; 0056636a
     LEA ECX,[ESI + 0x38]                ; 0056636b

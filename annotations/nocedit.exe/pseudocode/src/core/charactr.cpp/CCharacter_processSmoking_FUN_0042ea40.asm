@@ -31,7 +31,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CFireEffect g_CFireEffectInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_0326eeec
+;   undefined4 g_CDemonSetInstance.active_fog.temperature
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -59,7 +59,7 @@ section .text
     JZ 0x0042ea6b                       ; 0042ea53
         ;   XREF to: 0042ea6b (CONDITIONAL_JUMP)  ; LAB_0042ea6b
     MOV EAX,[0x006810c8]                ; 0042ea55 | g_CDemonSetPtr
-    FLD float ptr [EAX + 0x15ac74]      ; 0042ea5a | DAT_0326eeec
+    FLD float ptr [EAX + 0x15ac74]      ; 0042ea5a | g_CDemonSetInstance.active_fog.temperature
     FCOMP double ptr [0x006175e2]       ; 0042ea60 | DOUBLE_006175e2
     FNSTSW AX                           ; 0042ea66
     SAHF                                ; 0042ea68

@@ -45,17 +45,17 @@
 ;   int INT_0066ed68 = -0x1
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CVector3i[15360] g_PrecomputedWorldPositions
-;   undefined4 DAT_00902f78
-;   undefined4 DAT_00902f7c
-;   undefined4 DAT_00902f80
-;   undefined4 DAT_00903e74
-;   undefined4 DAT_00903e78
-;   undefined4 DAT_00903e7c
-;   undefined4 DAT_00903e80
-;   undefined4 DAT_00904d74
+;   undefined4 g_PrecomputedWorldPositions[0].y
+;   undefined4 g_PrecomputedWorldPositions[0].z
+;   undefined4 g_PrecomputedWorldPositions[1].x
+;   undefined4 g_PrecomputedWorldPositions[320].x
+;   undefined4 g_PrecomputedWorldPositions[320].y
+;   undefined4 g_PrecomputedWorldPositions[320].z
+;   undefined4 g_PrecomputedWorldPositions[321].x
+;   undefined4 g_PrecomputedWorldPositions[640].x
 ;   char[241][320] g_CoronaBlurOutputBuffer
-;   undefined4 DAT_00ba8db8
-;   undefined4 DAT_00ba8ef8
+;   undefined4 g_CoronaBlurOutputBuffer[1][0]
+;   undefined4 g_CoronaBlurOutputBuffer[2][0]
 ;   int[76800] g_PrecomputedDepthBuffer
 ;   ... and 26 more
 ;
@@ -76,7 +76,7 @@ section .text
     SUB ESP,0x84                        ; 004518f4
     MOV EBX,dword ptr [ESP + 0xa0]      ; 004518fa
     MOV EAX,[0x0067b654]                ; 00451901 | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0xc],0x0       ; 00451906 | DAT_02d81aa8
+    CMP dword ptr [EAX + 0xc],0x0       ; 00451906 | g_CGameInstance.halo_mode
     JNZ 0x00451925                      ; 0045190a
         ;   XREF to: 00451925 (CONDITIONAL_JUMP)  ; LAB_00451925
     TEST EBX,EBX                        ; 0045190c
@@ -133,9 +133,9 @@ section .text
         ;   Label: LAB_004519b4
     MOV ECX,dword ptr [ECX + 0x144]     ; 004519bb
     XOR ESI,ESI                         ; 004519c1
-    MOV dword ptr [EAX + 0x1576fa8],ECX ; 004519c3 | g_CoronaLeftExtent | DAT_01576fac
+    MOV dword ptr [EAX + 0x1576fa8],ECX ; 004519c3 | g_CoronaLeftExtent | g_CoronaLeftExtent[1]
     MOV ECX,dword ptr [ESP + 0x98]      ; 004519c9
-    MOV dword ptr [EAX + 0x1577368],ESI ; 004519d0 | g_CoronaRightExtent | DAT_0157736c
+    MOV dword ptr [EAX + 0x1577368],ESI ; 004519d0 | g_CoronaRightExtent | g_CoronaRightExtent[1]
     INC EDX                             ; 004519d6
     MOV EDI,dword ptr [ECX + 0x154]     ; 004519d7
     ADD EAX,0x4                         ; 004519dd
@@ -164,11 +164,11 @@ section .text
     MOV ESI,dword ptr [ESP + 0x9c]      ; 00451a32
     XOR EAX,EAX                         ; 00451a39
     IMUL EDX,ECX,0x13384                ; 00451a3b
-    CMP ESI,dword ptr [EAX + 0x132220c] ; 00451a41 | DAT_0132220c | DAT_01335590
+    CMP ESI,dword ptr [EAX + 0x132220c] ; 00451a41 | g_LightBufferPool[24][4] | g_LightBufferPool[24][78728]
         ;   Label: LAB_00451a41
     JNZ 0x00451ab7                      ; 00451a47
         ;   XREF to: 00451ab7 (CONDITIONAL_JUMP)  ; LAB_00451ab7
-    MOV EDI,0x132220c                   ; 00451a4d | DAT_0132220c
+    MOV EDI,0x132220c                   ; 00451a4d | g_LightBufferPool[24][4]
     ADD EDI,EAX                         ; 00451a52
     MOV EAX,dword ptr [ESP + 0x98]      ; 00451a54
     MOV EBP,dword ptr [EAX + 0x154]     ; 00451a5b
@@ -179,7 +179,7 @@ section .text
     MOV EBX,EDI                         ; 00451a67
     MOV EDX,dword ptr [ESP + 0x98]      ; 00451a69
         ;   Label: LAB_00451a69
-    MOV EAX,dword ptr [EBX + 0x4]       ; 00451a70 | DAT_01322210 | DAT_01322214 | DAT_01335594
+    MOV EAX,dword ptr [EBX + 0x4]       ; 00451a70 | g_LightBufferPool[24][8] | g_LightBufferPool[24][12] | g_LightBufferPool[24][78732]
     CMP EAX,dword ptr [EDX + 0x144]     ; 00451a73
     JNZ 0x00451b8e                      ; 00451a79
         ;   XREF to: 00451b8e (CONDITIONAL_JUMP)  ; LAB_00451b8e
@@ -187,7 +187,7 @@ section .text
         ;   Label: LAB_00451a7f
     INC ESI                             ; 00451a86
     MOV EDX,dword ptr [EAX + 0x154]     ; 00451a87
-    ADD EBX,0x4                         ; 00451a8d | DAT_01322210
+    ADD EBX,0x4                         ; 00451a8d | g_LightBufferPool[24][8]
     CMP ESI,EDX                         ; 00451a90
     JL 0x00451a69                       ; 00451a92
         ;   XREF to: 00451a69 (CONDITIONAL_JUMP)  ; LAB_00451a69
@@ -243,7 +243,7 @@ section .text
         ;   Label: LAB_00451b1c
     MOV EAX,dword ptr [ESP + 0x3c]      ; 00451b23
     MOV ECX,dword ptr [EDX + 0x144]     ; 00451b27
-    CMP ECX,dword ptr [EAX + 0x1576fa8] ; 00451b2d | g_CoronaLeftExtent | DAT_01576fac
+    CMP ECX,dword ptr [EAX + 0x1576fa8] ; 00451b2d | g_CoronaLeftExtent | g_CoronaLeftExtent[1]
     JNZ 0x00451fd6                      ; 00451b33
         ;   XREF to: 00451fd6 (CONDITIONAL_JUMP)  ; LAB_00451fd6
     MOV ECX,dword ptr [ESP + 0x3c]      ; 00451b39
@@ -259,9 +259,9 @@ section .text
     ADD EDI,0xf00                       ; 00451b63
     INC EBP                             ; 00451b69
     MOV dword ptr [ESP + 0x3c],ECX      ; 00451b6a
-    MOV dword ptr [ESP + 0x1c],EBX      ; 00451b6e | DAT_01577c28 | DAT_01578128
-    MOV dword ptr [ESP + 0x18],ESI      ; 00451b72 | DAT_00ba8db8 | DAT_00ba8ef8
-    MOV dword ptr [ESP + 0x20],EDI      ; 00451b76 | DAT_00903e74 | DAT_00904d74
+    MOV dword ptr [ESP + 0x1c],EBX      ; 00451b6e | g_CoronaDepthBuffer[1][0] | g_CoronaDepthBuffer[2][0]
+    MOV dword ptr [ESP + 0x18],ESI      ; 00451b72 | g_CoronaBlurOutputBuffer[1][0] | g_CoronaBlurOutputBuffer[2][0]
+    MOV dword ptr [ESP + 0x20],EDI      ; 00451b76 | g_PrecomputedWorldPositions[320].x | g_PrecomputedWorldPositions[640].x
     MOV ECX,dword ptr [EDX + 0x154]     ; 00451b7a
     MOV dword ptr [ESP + 0x30],EBP      ; 00451b80
     CMP EBP,ECX                         ; 00451b84
@@ -269,9 +269,9 @@ section .text
         ;   XREF to: 00451a94 (CONDITIONAL_JUMP)  ; LAB_00451a94
     JMP 0x00451b1c                      ; 00451b8c
         ;   XREF to: 00451b1c (UNCONDITIONAL_JUMP)  ; LAB_00451b1c
-    PUSH EDI                            ; 00451b8e | DAT_0132220c
+    PUSH EDI                            ; 00451b8e | g_LightBufferPool[24][4]
         ;   Label: LAB_00451b8e
-    MOV EBP,dword ptr [EBX + 0x3c4]     ; 00451b8f | DAT_013225d4
+    MOV EBP,dword ptr [EBX + 0x3c4]     ; 00451b8f | g_LightBufferPool[24][972]
     PUSH EBP                            ; 00451b95
     PUSH EAX                            ; 00451b96
     PUSH ESI                            ; 00451b97
@@ -282,7 +282,7 @@ section .text
         ;   XREF to: 00451a7f (UNCONDITIONAL_JUMP)  ; LAB_00451a7f
     IMUL EAX,EAX,0x13384                ; 00451ba5
         ;   Label: LAB_00451ba5
-    MOV EDX,0x132220c                   ; 00451bab | DAT_0132220c
+    MOV EDX,0x132220c                   ; 00451bab | g_LightBufferPool[24][4]
     MOV ECX,dword ptr [ESP + 0x9c]      ; 00451bb0
     MOV EBX,dword ptr [0x01322208]      ; 00451bb7 | g_LightBufferPool[24][0]
     PUSH ECX                            ; 00451bbd
@@ -358,12 +358,12 @@ section .text
     MOV byte ptr [ESP + 0x80],DL        ; 00451cb5
     MOV EDX,dword ptr [ESP + 0x68]      ; 00451cbc
     MOV EAX,dword ptr [EAX]             ; 00451cc0
-    CMP EAX,dword ptr [EDX]             ; 00451cc2 | g_CoronaDepthBuffer | DAT_0157772c
+    CMP EAX,dword ptr [EDX]             ; 00451cc2 | g_CoronaDepthBuffer | g_CoronaDepthBuffer[0][1]
     JNC 0x00451d8b                      ; 00451cc4
         ;   XREF to: 00451d8b (CONDITIONAL_JUMP)  ; LAB_00451d8b
     MOV EAX,dword ptr [ESP + 0x74]      ; 00451cca
     MOV EDX,dword ptr [0x015c4170]      ; 00451cce | g_CurrentGlobe
-    MOV EAX,dword ptr [EAX]             ; 00451cd4 | g_PrecomputedWorldPositions | DAT_00902f80
+    MOV EAX,dword ptr [EAX]             ; 00451cd4 | g_PrecomputedWorldPositions | g_PrecomputedWorldPositions[1].x
     SUB EAX,dword ptr [EDX]             ; 00451cd6
     CDQ                                 ; 00451cd8
     XOR EAX,EDX                         ; 00451cd9
@@ -376,7 +376,7 @@ section .text
         ;   XREF to: 00451d8b (CONDITIONAL_JUMP)  ; LAB_00451d8b
     MOV EAX,dword ptr [ESP + 0x74]      ; 00451cf0
     MOV EDI,dword ptr [EDX + 0x4]       ; 00451cf4
-    MOV EAX,dword ptr [EAX + 0x4]       ; 00451cf7 | DAT_00902f78
+    MOV EAX,dword ptr [EAX + 0x4]       ; 00451cf7 | g_PrecomputedWorldPositions[0].y
     SUB EAX,EDI                         ; 00451cfa
     CDQ                                 ; 00451cfc
     XOR EAX,EDX                         ; 00451cfd
@@ -389,7 +389,7 @@ section .text
         ;   XREF to: 00451d8b (CONDITIONAL_JUMP)  ; LAB_00451d8b
     MOV EAX,dword ptr [ESP + 0x74]      ; 00451d14
     MOV ESI,dword ptr [EDX + 0x8]       ; 00451d18
-    MOV EAX,dword ptr [EAX + 0x8]       ; 00451d1b | DAT_00902f7c
+    MOV EAX,dword ptr [EAX + 0x8]       ; 00451d1b | g_PrecomputedWorldPositions[0].z
     SUB EAX,ESI                         ; 00451d1e
     CDQ                                 ; 00451d20
     XOR EAX,EDX                         ; 00451d21
@@ -515,27 +515,27 @@ section .text
     ADD EDI,0x500                       ; 00451e8f
     MOV EDX,dword ptr [EAX*0x4 + 0x1576fa8] ; 00451e95 | g_CoronaLeftExtent
     ADD EBP,0xf00                       ; 00451e9c
-    MOV dword ptr [ECX + 0x4],EDX       ; 00451ea2 | DAT_01322210 | DAT_01322214
+    MOV dword ptr [ECX + 0x4],EDX       ; 00451ea2 | g_LightBufferPool[24][8] | g_LightBufferPool[24][12]
     MOV EDX,dword ptr [ESP + 0x40]      ; 00451ea5
     MOV EAX,dword ptr [EAX*0x4 + 0x1577368] ; 00451ea9 | g_CoronaRightExtent
     INC EDX                             ; 00451eb0
-    MOV dword ptr [ECX + 0x3c4],EAX     ; 00451eb1 | DAT_013225d0
+    MOV dword ptr [ECX + 0x3c4],EAX     ; 00451eb1 | g_LightBufferPool[24][968]
     LEA EAX,[ECX + 0x4]                 ; 00451eb7
     MOV dword ptr [ESP + 0x40],EDX      ; 00451eba
     MOV dword ptr [ESP + 0x34],EAX      ; 00451ebe
     MOV EAX,EDX                         ; 00451ec2
     MOV EDX,dword ptr [ESP + 0x98]      ; 00451ec4
     MOV dword ptr [ESP + 0x28],ESI      ; 00451ecb
-    MOV dword ptr [ESP + 0x24],EDI      ; 00451ecf | DAT_01577c28
+    MOV dword ptr [ESP + 0x24],EDI      ; 00451ecf | g_CoronaDepthBuffer[1][0]
     MOV ECX,dword ptr [EDX + 0x154]     ; 00451ed3
-    MOV dword ptr [ESP + 0x2c],EBP      ; 00451ed9 | DAT_00903e74
+    MOV dword ptr [ESP + 0x2c],EBP      ; 00451ed9 | g_PrecomputedWorldPositions[320].x
     CMP EAX,ECX                         ; 00451edd
     JL 0x00451c15                       ; 00451edf
         ;   XREF to: 00451c15 (CONDITIONAL_JUMP)  ; LAB_00451c15
     MOV EAX,dword ptr [ESP + 0x14]      ; 00451ee5
         ;   Label: LAB_00451ee5
     MOV EDX,dword ptr [ESP + 0x9c]      ; 00451ee9
-    MOV dword ptr [EAX],EDX             ; 00451ef0 | DAT_0132220c
+    MOV dword ptr [EAX],EDX             ; 00451ef0 | g_LightBufferPool[24][4]
     ADD ESP,0x84                        ; 00451ef2
     POP EBP                             ; 00451ef8
     POP EDI                             ; 00451ef9
@@ -635,14 +635,14 @@ section .text
         ;   XREF to: 00451e3d (UNCONDITIONAL_JUMP)  ; LAB_00451e3d
     MOV EAX,dword ptr [ESP + 0x3c]      ; 00451fd6
         ;   Label: LAB_00451fd6
-    MOV EAX,dword ptr [EAX + 0x1576fa8] ; 00451fda | DAT_01576fac
+    MOV EAX,dword ptr [EAX + 0x1576fa8] ; 00451fda | g_CoronaLeftExtent[1]
     MOV dword ptr [ESP + 0x6c],EAX      ; 00451fe0
     MOV ESI,dword ptr [ESP + 0x6c]      ; 00451fe4
     IMUL EBX,ESI,0xc                    ; 00451fe8
     MOV EAX,dword ptr [ESP + 0x3c]      ; 00451feb
     MOV EDI,dword ptr [ESP + 0x20]      ; 00451fef
     MOV EBP,dword ptr [ESP + 0x18]      ; 00451ff3
-    MOV EAX,dword ptr [EAX + 0x1577368] ; 00451ff7 | DAT_0157736c
+    MOV EAX,dword ptr [EAX + 0x1577368] ; 00451ff7 | g_CoronaRightExtent[1]
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00451ffd
     MOV dword ptr [ESP + 0x48],EAX      ; 00452001
     ADD EBP,ESI                         ; 00452005
@@ -666,12 +666,12 @@ section .text
         ;   Label: LAB_0045203c
     MOV EDX,dword ptr [ESP + 0x60]      ; 00452042
     MOV EAX,dword ptr [ESP + 0x5c]      ; 00452046
-    MOV ECX,dword ptr [EDX]             ; 0045204a | DAT_01577c28 | DAT_01577c2c
+    MOV ECX,dword ptr [EDX]             ; 0045204a | g_CoronaDepthBuffer[1][0] | g_CoronaDepthBuffer[1][1]
     CMP ECX,dword ptr [EAX]             ; 0045204c
     JBE 0x004520d3                      ; 0045204e
         ;   XREF to: 004520d3 (CONDITIONAL_JUMP)  ; LAB_004520d3
     MOV ESI,dword ptr [0x015c4170]      ; 00452054 | g_CurrentGlobe
-    MOV ECX,dword ptr [EBX]             ; 0045205a | g_PrecomputedWorldPositions | DAT_00903e74 | DAT_00903e80
+    MOV ECX,dword ptr [EBX]             ; 0045205a | g_PrecomputedWorldPositions | g_PrecomputedWorldPositions[320].x | g_PrecomputedWorldPositions[321].x
     MOV EDI,dword ptr [ESI]             ; 0045205c
     SUB ECX,EDI                         ; 0045205e
     MOV EAX,ECX                         ; 00452060
@@ -682,7 +682,7 @@ section .text
     JGE 0x004520d3                      ; 0045206a
         ;   XREF to: 004520d3 (CONDITIONAL_JUMP)  ; LAB_004520d3
     MOV EDI,dword ptr [0x015c4170]      ; 0045206c | g_CurrentGlobe
-    MOV ESI,dword ptr [EBX + 0x4]       ; 00452072 | DAT_00902f78 | DAT_00903e78
+    MOV ESI,dword ptr [EBX + 0x4]       ; 00452072 | g_PrecomputedWorldPositions[0].y | g_PrecomputedWorldPositions[320].y
     MOV EAX,dword ptr [EDI + 0x4]       ; 00452075
     SUB ESI,EAX                         ; 00452078
     MOV EAX,ESI                         ; 0045207a
@@ -693,7 +693,7 @@ section .text
     JGE 0x004520d3                      ; 00452084
         ;   XREF to: 004520d3 (CONDITIONAL_JUMP)  ; LAB_004520d3
     MOV EAX,[0x015c4170]                ; 00452086 | g_CurrentGlobe
-    MOV EDI,dword ptr [EBX + 0x8]       ; 0045208b | DAT_00902f7c | DAT_00903e7c
+    MOV EDI,dword ptr [EBX + 0x8]       ; 0045208b | g_PrecomputedWorldPositions[0].z | g_PrecomputedWorldPositions[320].z
     SUB EDI,dword ptr [EAX + 0x8]       ; 0045208e
     MOV dword ptr [ESP + 0x10],EAX      ; 00452091
     MOV EAX,EDI                         ; 00452095
@@ -721,7 +721,7 @@ section .text
     MOV EAX,ECX                         ; 004520c8
     IMUL EDX                            ; 004520ca
     SHRD EAX,EDX,0x10                   ; 004520cc
-    ADD byte ptr [EBP],AL               ; 004520d0 | DAT_00ba8db8
+    ADD byte ptr [EBP],AL               ; 004520d0 | g_CoronaBlurOutputBuffer[1][0]
     MOV EAX,0x1                         ; 004520d3
         ;   Label: LAB_004520d3
     MOV ESI,dword ptr [ESP + 0x5c]      ; 004520d8

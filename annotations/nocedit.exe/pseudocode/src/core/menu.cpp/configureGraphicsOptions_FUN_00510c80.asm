@@ -67,7 +67,7 @@ section .text
     MOV EDX,0x2f26cd0                   ; 00510c9f | g_GraphicsMenuTextBuffers
     ADD ESP,0x4                         ; 00510ca4
     XOR EAX,EAX                         ; 00510ca7
-    MOV dword ptr [EAX + 0x2f275d0],EDX ; 00510ca9 | g_GraphicsMenuTextPointers | DAT_02f275d4 | g_GraphicsMenuTextBuffers
+    MOV dword ptr [EAX + 0x2f275d0],EDX ; 00510ca9 | g_GraphicsMenuTextPointers | g_GraphicsMenuTextPointers[1] | g_GraphicsMenuTextBuffers
         ;   Label: LAB_00510ca9
     ADD EAX,0x4                         ; 00510caf
     ADD EDX,0x100                       ; 00510cb2 | g_GraphicsMenuTextBuffers[2][0]
@@ -139,7 +139,7 @@ section .text
     JG 0x00511201                       ; 00510da6
         ;   XREF to: 00511201 (CONDITIONAL_JUMP)  ; LAB_00511201
     MOV EAX,[0x0067b654]                ; 00510dac | g_CGameInstance | g_CGamePtr
-    MOV dword ptr [EAX + 0x8],0x10      ; 00510db1 | DAT_02d81aa4
+    MOV dword ptr [EAX + 0x8],0x10      ; 00510db1 | g_CGameInstance.game_bpp
     PUSH 0x63679f                       ; 00510db8 | = "tri3dfx.dll"
     MOV dword ptr [EAX],0x280           ; 00510dbd | g_CGameInstance
     PUSH 0x684010                       ; 00510dc3 | = "trid3d.dll"
@@ -206,7 +206,7 @@ section .text
     JNZ 0x00510e99                      ; 00510e7e
         ;   XREF to: 00510e99 (CONDITIONAL_JUMP)  ; LAB_00510e99
     MOV EAX,[0x0067b654]                ; 00510e80 | g_CGamePtr
-    MOV dword ptr [EAX + 0x8],0x10      ; 00510e85 | DAT_02d81aa4
+    MOV dword ptr [EAX + 0x8],0x10      ; 00510e85 | g_CGameInstance.game_bpp
     MOV dword ptr [EAX],0x280           ; 00510e8c | g_CGameInstance
     MOV dword ptr [EAX + 0x4],0x1e0     ; 00510e92 | g_CGameInstance.game_pixy
     MOV EAX,[0x02f275f4]                ; 00510e99 | g_GraphicsCardHandle
@@ -219,7 +219,7 @@ section .text
     JNZ 0x00510ecf                      ; 00510eb4
         ;   XREF to: 00510ecf (CONDITIONAL_JUMP)  ; LAB_00510ecf
     MOV EAX,[0x0067b654]                ; 00510eb6 | g_CGamePtr
-    MOV dword ptr [EAX + 0x8],0x10      ; 00510ebb | DAT_02d81aa4
+    MOV dword ptr [EAX + 0x8],0x10      ; 00510ebb | g_CGameInstance.game_bpp
     MOV dword ptr [EAX],0x280           ; 00510ec2 | g_CGameInstance
     MOV dword ptr [EAX + 0x4],0x1e0     ; 00510ec8 | g_CGameInstance.game_pixy
     MOV EAX,[0x02f275f4]                ; 00510ecf | g_GraphicsCardHandle
@@ -232,7 +232,7 @@ section .text
     JNZ 0x00510f05                      ; 00510eea
         ;   XREF to: 00510f05 (CONDITIONAL_JUMP)  ; LAB_00510f05
     MOV EAX,[0x0067b654]                ; 00510eec | g_CGamePtr
-    MOV dword ptr [EAX + 0x8],0x10      ; 00510ef1 | DAT_02d81aa4
+    MOV dword ptr [EAX + 0x8],0x10      ; 00510ef1 | g_CGameInstance.game_bpp
     MOV dword ptr [EAX],0x280           ; 00510ef8 | g_CGameInstance
     MOV dword ptr [EAX + 0x4],0x1e0     ; 00510efe | g_CGameInstance.game_pixy
     CMP EBX,dword ptr [0x03f6b878]      ; 00510f05 | g_FullscreenMode
@@ -262,7 +262,7 @@ section .text
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00510f54
     MOV EAX,[0x0067b654]                ; 00510f57 | g_CGamePtr
-    MOV EAX,dword ptr [EAX + 0xc]       ; 00510f5c | DAT_02d81aa8
+    MOV EAX,dword ptr [EAX + 0xc]       ; 00510f5c | g_CGameInstance.halo_mode
     CMP EAX,0x1                         ; 00510f5f
     JNC 0x005112f0                      ; 00510f62
         ;   XREF to: 005112f0 (CONDITIONAL_JUMP)  ; LAB_005112f0
@@ -326,13 +326,13 @@ section .text
     PUSH EDI                            ; 0051100c | g_GraphicsMenuTextBuffers[5][0]
     MOV AL,byte ptr [ESI]               ; 0051100d
         ;   Label: LAB_0051100d
-    MOV byte ptr [EDI],AL               ; 0051100f | g_GraphicsMenuTextBuffers[5][0] | DAT_02f271d2
+    MOV byte ptr [EDI],AL               ; 0051100f | g_GraphicsMenuTextBuffers[5][0] | g_GraphicsMenuTextBuffers[5][2]
     CMP AL,0x0                          ; 00511011
     JZ 0x00511025                       ; 00511013
         ;   XREF to: 00511025 (CONDITIONAL_JUMP)  ; LAB_00511025
     MOV AL,byte ptr [ESI + 0x1]         ; 00511015
     ADD ESI,0x2                         ; 00511018
-    MOV byte ptr [EDI + 0x1],AL         ; 0051101b | DAT_02f271d1 | DAT_02f271d3
+    MOV byte ptr [EDI + 0x1],AL         ; 0051101b | g_GraphicsMenuTextBuffers[5][1] | g_GraphicsMenuTextBuffers[5][3]
     ADD EDI,0x2                         ; 0051101e
     CMP AL,0x0                          ; 00511021
     JNZ 0x0051100d                      ; 00511023
@@ -340,7 +340,7 @@ section .text
     POP EDI                             ; 00511025
         ;   Label: LAB_00511025
     MOV EAX,[0x0067b654]                ; 00511026 | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0x8]       ; 0051102b | DAT_02d81aa4
+    MOV EDX,dword ptr [EAX + 0x8]       ; 0051102b | g_CGameInstance.game_bpp
     PUSH EDX                            ; 0051102e
     PUSH 0x6369c0                       ; 0051102f | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 00511034
@@ -353,17 +353,17 @@ section .text
     SUB ECX,ECX                         ; 00511044
     DEC ECX                             ; 00511046
     MOV AL,0x0                          ; 00511047
-    SCASB.REPNE ES:EDI                  ; 00511049 | g_GraphicsMenuTextBuffers[5][0] | DAT_02f271d1
+    SCASB.REPNE ES:EDI                  ; 00511049 | g_GraphicsMenuTextBuffers[5][0] | g_GraphicsMenuTextBuffers[5][1]
     DEC EDI                             ; 0051104b
     MOV AL,byte ptr [ESI]               ; 0051104c
         ;   Label: LAB_0051104c
-    MOV byte ptr [EDI],AL               ; 0051104e | g_GraphicsMenuTextBuffers[5][0] | DAT_02f271d1 | DAT_02f271d2
+    MOV byte ptr [EDI],AL               ; 0051104e | g_GraphicsMenuTextBuffers[5][0] | g_GraphicsMenuTextBuffers[5][1] | g_GraphicsMenuTextBuffers[5][2]
     CMP AL,0x0                          ; 00511050
     JZ 0x00511064                       ; 00511052
         ;   XREF to: 00511064 (CONDITIONAL_JUMP)  ; LAB_00511064
     MOV AL,byte ptr [ESI + 0x1]         ; 00511054
     ADD ESI,0x2                         ; 00511057
-    MOV byte ptr [EDI + 0x1],AL         ; 0051105a | DAT_02f271d1 | DAT_02f271d2 | DAT_02f271d3
+    MOV byte ptr [EDI + 0x1],AL         ; 0051105a | g_GraphicsMenuTextBuffers[5][1] | g_GraphicsMenuTextBuffers[5][2] | g_GraphicsMenuTextBuffers[5][3]
     ADD EDI,0x2                         ; 0051105d
     CMP AL,0x0                          ; 00511060
     JNZ 0x0051104c                      ; 00511062
@@ -379,7 +379,7 @@ section .text
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00511078
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,[0x0067b654]                ; 0051107d | g_CGameInstance | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0x10]      ; 00511082 | DAT_02d81aac
+    MOV ECX,dword ptr [EAX + 0x10]      ; 00511082 | g_CGameInstance.subtitle_mode
     ADD ESP,0x8                         ; 00511085
     CMP EBX,ECX                         ; 00511088
     JZ 0x00511422                       ; 0051108a
@@ -394,13 +394,13 @@ section .text
     PUSH EDI                            ; 005110a4 | g_GraphicsMenuTextBuffers[7][0]
     MOV AL,byte ptr [ESI]               ; 005110a5
         ;   Label: LAB_005110a5
-    MOV byte ptr [EDI],AL               ; 005110a7 | g_GraphicsMenuTextBuffers[7][0] | DAT_02f273d2
+    MOV byte ptr [EDI],AL               ; 005110a7 | g_GraphicsMenuTextBuffers[7][0] | g_GraphicsMenuTextBuffers[7][2]
     CMP AL,0x0                          ; 005110a9
     JZ 0x005110bd                       ; 005110ab
         ;   XREF to: 005110bd (CONDITIONAL_JUMP)  ; LAB_005110bd
     MOV AL,byte ptr [ESI + 0x1]         ; 005110ad
     ADD ESI,0x2                         ; 005110b0
-    MOV byte ptr [EDI + 0x1],AL         ; 005110b3 | DAT_02f273d1 | DAT_02f273d3
+    MOV byte ptr [EDI + 0x1],AL         ; 005110b3 | g_GraphicsMenuTextBuffers[7][1] | g_GraphicsMenuTextBuffers[7][3]
     ADD EDI,0x2                         ; 005110b6
     CMP AL,0x0                          ; 005110b9
     JNZ 0x005110a5                      ; 005110bb
@@ -408,13 +408,13 @@ section .text
     POP EDI                             ; 005110bd
         ;   Label: LAB_005110bd
     MOV EAX,[0x0067b654]                ; 005110be | g_CGamePtr
-    MOV ESI,dword ptr [EAX + 0x20]      ; 005110c3 | DAT_02d81abc
+    MOV ESI,dword ptr [EAX + 0x20]      ; 005110c3 | g_CGameInstance.quimby_flag
     CMP EBX,ESI                         ; 005110c6
     JZ 0x0051142c                       ; 005110c8
         ;   XREF to: 0051142c (CONDITIONAL_JUMP)  ; LAB_0051142c
     MOV EAX,[0x0067b654]                ; 005110ce | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_005110ce
-    MOV EDX,dword ptr [EAX + 0x20]      ; 005110d3 | DAT_02d81abc
+    MOV EDX,dword ptr [EAX + 0x20]      ; 005110d3 | g_CGameInstance.quimby_flag
     MOV ESI,0x9                         ; 005110d6
     CMP EBX,EDX                         ; 005110db
     JZ 0x005110e4                       ; 005110dd
@@ -470,7 +470,7 @@ section .text
     CMP dword ptr [EDX + 0x4],0xf0      ; 00511170 | g_CGameInstance.game_pixy
     JNZ 0x0051118e                      ; 00511177
         ;   XREF to: 0051118e (CONDITIONAL_JUMP)  ; LAB_0051118e
-    CMP dword ptr [ESP + 0x124],0x16e3600 ; 00511179 | DAT_016e3600
+    CMP dword ptr [ESP + 0x124],0x16e3600 ; 00511179 | g_VertexNormals[18732].vertex.y
     JLE 0x0051118e                      ; 00511184
         ;   XREF to: 0051118e (CONDITIONAL_JUMP)  ; LAB_0051118e
     TEST EAX,EAX                        ; 00511186
@@ -481,7 +481,7 @@ section .text
     CMP dword ptr [EDX + 0x4],0xf0      ; 00511194 | g_CGameInstance.game_pixy
     JNZ 0x005111b2                      ; 0051119b
         ;   XREF to: 005111b2 (CONDITIONAL_JUMP)  ; LAB_005111b2
-    CMP dword ptr [ESP + 0x124],0xb71b00 ; 0051119d | DAT_00b71b00
+    CMP dword ptr [ESP + 0x124],0xb71b00 ; 0051119d | g_PrecomputedSurfaceNormals[58315].z
     JLE 0x005111b2                      ; 005111a8
         ;   XREF to: 005111b2 (CONDITIONAL_JUMP)  ; LAB_005111b2
     TEST EAX,EAX                        ; 005111aa
@@ -680,13 +680,13 @@ section .text
     PUSH EDI                            ; 0051138a | g_GraphicsMenuTextBuffers[4][0]
     MOV AL,byte ptr [ESI]               ; 0051138b
         ;   Label: LAB_0051138b
-    MOV byte ptr [EDI],AL               ; 0051138d | g_GraphicsMenuTextBuffers[4][0] | DAT_02f270d2
+    MOV byte ptr [EDI],AL               ; 0051138d | g_GraphicsMenuTextBuffers[4][0] | g_GraphicsMenuTextBuffers[4][2]
     CMP AL,0x0                          ; 0051138f
     JZ 0x005113a3                       ; 00511391
         ;   XREF to: 005113a3 (CONDITIONAL_JUMP)  ; LAB_005113a3
     MOV AL,byte ptr [ESI + 0x1]         ; 00511393
     ADD ESI,0x2                         ; 00511396
-    MOV byte ptr [EDI + 0x1],AL         ; 00511399 | DAT_02f270d1 | DAT_02f270d3
+    MOV byte ptr [EDI + 0x1],AL         ; 00511399 | g_GraphicsMenuTextBuffers[4][1] | g_GraphicsMenuTextBuffers[4][3]
     ADD EDI,0x2                         ; 0051139c
     CMP AL,0x0                          ; 0051139f
     JNZ 0x0051138b                      ; 005113a1
@@ -699,17 +699,17 @@ section .text
     SUB ECX,ECX                         ; 005113b2
     DEC ECX                             ; 005113b4
     MOV AL,0x0                          ; 005113b5
-    SCASB.REPNE ES:EDI                  ; 005113b7 | g_GraphicsMenuTextBuffers[4][0] | DAT_02f270d1
+    SCASB.REPNE ES:EDI                  ; 005113b7 | g_GraphicsMenuTextBuffers[4][0] | g_GraphicsMenuTextBuffers[4][1]
     DEC EDI                             ; 005113b9
     MOV AL,byte ptr [ESI]               ; 005113ba
         ;   Label: LAB_005113ba
-    MOV byte ptr [EDI],AL               ; 005113bc | g_GraphicsMenuTextBuffers[4][0] | DAT_02f270d1 | DAT_02f270d2
+    MOV byte ptr [EDI],AL               ; 005113bc | g_GraphicsMenuTextBuffers[4][0] | g_GraphicsMenuTextBuffers[4][1] | g_GraphicsMenuTextBuffers[4][2]
     CMP AL,0x0                          ; 005113be
     JZ 0x005113d2                       ; 005113c0
         ;   XREF to: 005113d2 (CONDITIONAL_JUMP)  ; LAB_005113d2
     MOV AL,byte ptr [ESI + 0x1]         ; 005113c2
     ADD ESI,0x2                         ; 005113c5
-    MOV byte ptr [EDI + 0x1],AL         ; 005113c8 | DAT_02f270d1 | DAT_02f270d2 | DAT_02f270d3
+    MOV byte ptr [EDI + 0x1],AL         ; 005113c8 | g_GraphicsMenuTextBuffers[4][1] | g_GraphicsMenuTextBuffers[4][2] | g_GraphicsMenuTextBuffers[4][3]
     ADD EDI,0x2                         ; 005113cb
     CMP AL,0x0                          ; 005113ce
     JNZ 0x005113ba                      ; 005113d0
@@ -730,17 +730,17 @@ section .text
     SUB ECX,ECX                         ; 005113fc
     DEC ECX                             ; 005113fe
     MOV AL,0x0                          ; 005113ff
-    SCASB.REPNE ES:EDI                  ; 00511401 | g_GraphicsMenuTextBuffers[4][0] | DAT_02f270d1
+    SCASB.REPNE ES:EDI                  ; 00511401 | g_GraphicsMenuTextBuffers[4][0] | g_GraphicsMenuTextBuffers[4][1]
     DEC EDI                             ; 00511403
     MOV AL,byte ptr [ESI]               ; 00511404
         ;   Label: LAB_00511404
-    MOV byte ptr [EDI],AL               ; 00511406 | g_GraphicsMenuTextBuffers[4][0] | DAT_02f270d1 | DAT_02f270d2
+    MOV byte ptr [EDI],AL               ; 00511406 | g_GraphicsMenuTextBuffers[4][0] | g_GraphicsMenuTextBuffers[4][1] | g_GraphicsMenuTextBuffers[4][2]
     CMP AL,0x0                          ; 00511408
     JZ 0x0051141c                       ; 0051140a
         ;   XREF to: 0051141c (CONDITIONAL_JUMP)  ; LAB_0051141c
     MOV AL,byte ptr [ESI + 0x1]         ; 0051140c
     ADD ESI,0x2                         ; 0051140f
-    MOV byte ptr [EDI + 0x1],AL         ; 00511412 | DAT_02f270d1 | DAT_02f270d2 | DAT_02f270d3
+    MOV byte ptr [EDI + 0x1],AL         ; 00511412 | g_GraphicsMenuTextBuffers[4][1] | g_GraphicsMenuTextBuffers[4][2] | g_GraphicsMenuTextBuffers[4][3]
     ADD EDI,0x2                         ; 00511415
     CMP AL,0x0                          ; 00511418
     JNZ 0x00511404                      ; 0051141a
@@ -766,13 +766,13 @@ section .text
     PUSH EDI                            ; 00511445 | g_GraphicsMenuTextBuffers[8][0]
     MOV AL,byte ptr [ESI]               ; 00511446
         ;   Label: LAB_00511446
-    MOV byte ptr [EDI],AL               ; 00511448 | g_GraphicsMenuTextBuffers[8][0] | DAT_02f274d2
+    MOV byte ptr [EDI],AL               ; 00511448 | g_GraphicsMenuTextBuffers[8][0] | g_GraphicsMenuTextBuffers[8][2]
     CMP AL,0x0                          ; 0051144a
     JZ 0x0051145e                       ; 0051144c
         ;   XREF to: 0051145e (CONDITIONAL_JUMP)  ; LAB_0051145e
     MOV AL,byte ptr [ESI + 0x1]         ; 0051144e
     ADD ESI,0x2                         ; 00511451
-    MOV byte ptr [EDI + 0x1],AL         ; 00511454 | DAT_02f274d1 | DAT_02f274d3
+    MOV byte ptr [EDI + 0x1],AL         ; 00511454 | g_GraphicsMenuTextBuffers[8][1] | g_GraphicsMenuTextBuffers[8][3]
     ADD EDI,0x2                         ; 00511457
     CMP AL,0x0                          ; 0051145a
     JNZ 0x00511446                      ; 0051145c
@@ -791,13 +791,13 @@ section .text
     PUSH EDI                            ; 00511478 | g_GraphicsMenuTextBuffers[8][0]
     MOV AL,byte ptr [ESI]               ; 00511479
         ;   Label: LAB_00511479
-    MOV byte ptr [EDI],AL               ; 0051147b | g_GraphicsMenuTextBuffers[8][0] | DAT_02f274d2
+    MOV byte ptr [EDI],AL               ; 0051147b | g_GraphicsMenuTextBuffers[8][0] | g_GraphicsMenuTextBuffers[8][2]
     CMP AL,0x0                          ; 0051147d
     JZ 0x00511491                       ; 0051147f
         ;   XREF to: 00511491 (CONDITIONAL_JUMP)  ; LAB_00511491
     MOV AL,byte ptr [ESI + 0x1]         ; 00511481
     ADD ESI,0x2                         ; 00511484
-    MOV byte ptr [EDI + 0x1],AL         ; 00511487 | DAT_02f274d1 | DAT_02f274d3
+    MOV byte ptr [EDI + 0x1],AL         ; 00511487 | g_GraphicsMenuTextBuffers[8][1] | g_GraphicsMenuTextBuffers[8][3]
     ADD EDI,0x2                         ; 0051148a
     CMP AL,0x0                          ; 0051148d
     JNZ 0x00511479                      ; 0051148f
@@ -878,7 +878,7 @@ section .text
     MOV dword ptr [EDX + 0x4],0x1e0     ; 0051157a | g_CGameInstance.game_pixy
     JMP 0x005111d3                      ; 00511581
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
-    CMP dword ptr [ESP + 0x124],0xb71b00 ; 00511586 | DAT_00b71b00
+    CMP dword ptr [ESP + 0x124],0xb71b00 ; 00511586 | g_PrecomputedSurfaceNormals[58315].z
         ;   Label: LAB_00511586
     JLE 0x005115a6                      ; 00511591
         ;   XREF to: 005115a6 (CONDITIONAL_JUMP)  ; LAB_005115a6
@@ -889,7 +889,7 @@ section .text
     TEST EAX,EAX                        ; 005115a2
     JZ 0x00511601                       ; 005115a4
         ;   XREF to: 00511601 (CONDITIONAL_JUMP)  ; LAB_00511601
-    CMP dword ptr [ESP + 0x124],0xb71b00 ; 005115a6 | DAT_00b71b00
+    CMP dword ptr [ESP + 0x124],0xb71b00 ; 005115a6 | g_PrecomputedSurfaceNormals[58315].z
         ;   Label: LAB_005115a6
     JLE 0x005115ca                      ; 005115b1
         ;   XREF to: 005115ca (CONDITIONAL_JUMP)  ; LAB_005115ca
@@ -900,7 +900,7 @@ section .text
     TEST EAX,EAX                        ; 005115c2
     JZ 0x005114a9                       ; 005115c4
         ;   XREF to: 005114a9 (CONDITIONAL_JUMP)  ; LAB_005114a9
-    CMP dword ptr [ESP + 0x124],0x16e3600 ; 005115ca | DAT_016e3600
+    CMP dword ptr [ESP + 0x124],0x16e3600 ; 005115ca | g_VertexNormals[18732].vertex.y
         ;   Label: LAB_005115ca
     JLE 0x005115ea                      ; 005115d5
         ;   XREF to: 005115ea (CONDITIONAL_JUMP)  ; LAB_005115ea
@@ -933,39 +933,39 @@ section .text
     JNZ 0x0051165c                      ; 0051162e
         ;   XREF to: 0051165c (CONDITIONAL_JUMP)  ; LAB_0051165c
     MOV EAX,[0x0067b654]                ; 00511630 | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0xc]       ; 00511635 | DAT_02d81aa8
+    MOV ECX,dword ptr [EAX + 0xc]       ; 00511635 | g_CGameInstance.halo_mode
     CMP EBX,ECX                         ; 00511638
     JNZ 0x00511648                      ; 0051163a
         ;   XREF to: 00511648 (CONDITIONAL_JUMP)  ; LAB_00511648
-    MOV dword ptr [EAX + 0xc],0x2       ; 0051163c | DAT_02d81aa8
+    MOV dword ptr [EAX + 0xc],0x2       ; 0051163c | g_CGameInstance.halo_mode
     JMP 0x005111d3                      ; 00511643
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
     CMP ECX,ESI                         ; 00511648
         ;   Label: LAB_00511648
     JNZ 0x00511654                      ; 0051164a
         ;   XREF to: 00511654 (CONDITIONAL_JUMP)  ; LAB_00511654
-    MOV dword ptr [EAX + 0xc],EBX       ; 0051164c | DAT_02d81aa8
+    MOV dword ptr [EAX + 0xc],EBX       ; 0051164c | g_CGameInstance.halo_mode
         ;   Label: LAB_0051164c
     JMP 0x005111d3                      ; 0051164f
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
-    MOV dword ptr [EAX + 0xc],ESI       ; 00511654 | DAT_02d81aa8
+    MOV dword ptr [EAX + 0xc],ESI       ; 00511654 | g_CGameInstance.halo_mode
         ;   Label: LAB_00511654
     JMP 0x005111d3                      ; 00511657
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
     MOV EAX,[0x0067b654]                ; 0051165c | g_CGamePtr
         ;   Label: LAB_0051165c
-    MOV EDI,dword ptr [EAX + 0xc]       ; 00511661 | DAT_02d81aa8
+    MOV EDI,dword ptr [EAX + 0xc]       ; 00511661 | g_CGameInstance.halo_mode
     CMP EBX,EDI                         ; 00511664
     JNZ 0x00511674                      ; 00511666
         ;   XREF to: 00511674 (CONDITIONAL_JUMP)  ; LAB_00511674
-    MOV dword ptr [EAX + 0xc],0x1       ; 00511668 | DAT_02d81aa8
+    MOV dword ptr [EAX + 0xc],0x1       ; 00511668 | g_CGameInstance.halo_mode
     JMP 0x005111d3                      ; 0051166f
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
     CMP EDI,0x1                         ; 00511674
         ;   Label: LAB_00511674
     JNZ 0x0051164c                      ; 00511677
         ;   XREF to: 0051164c (CONDITIONAL_JUMP)  ; LAB_0051164c
-    MOV dword ptr [EAX + 0xc],0x2       ; 00511679 | DAT_02d81aa8
+    MOV dword ptr [EAX + 0xc],0x2       ; 00511679 | g_CGameInstance.halo_mode
     JMP 0x005111d3                      ; 00511680
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
     MOV dword ptr [0x02f275f8],EBX      ; 00511685 | g_GraphicsCardCount
@@ -1101,13 +1101,13 @@ section .text
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
     MOV EAX,[0x0067b654]                ; 005117d5 | g_CGamePtr
         ;   Label: caseD_5
-    CMP dword ptr [EAX + 0x8],0x10      ; 005117da | DAT_02d81aa4
+    CMP dword ptr [EAX + 0x8],0x10      ; 005117da | g_CGameInstance.game_bpp
     JNZ 0x005117ec                      ; 005117de
         ;   XREF to: 005117ec (CONDITIONAL_JUMP)  ; LAB_005117ec
-    MOV dword ptr [EAX + 0x8],0x20      ; 005117e0 | DAT_02d81aa4
+    MOV dword ptr [EAX + 0x8],0x20      ; 005117e0 | g_CGameInstance.game_bpp
     JMP 0x005111d3                      ; 005117e7
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
-    MOV dword ptr [EAX + 0x8],0x10      ; 005117ec | DAT_02d81aa4
+    MOV dword ptr [EAX + 0x8],0x10      ; 005117ec | g_CGameInstance.game_bpp
         ;   Label: LAB_005117ec
     JMP 0x005111d3                      ; 005117f3
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
@@ -1118,10 +1118,10 @@ section .text
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
     MOV EAX,[0x0067b654]                ; 00511802 | g_CGamePtr
         ;   Label: caseD_7
-    CMP EBX,dword ptr [EAX + 0x10]      ; 00511807 | DAT_02d81aac
+    CMP EBX,dword ptr [EAX + 0x10]      ; 00511807 | g_CGameInstance.subtitle_mode
     SETZ DL                             ; 0051180a
     AND EDX,0xff                        ; 0051180d
-    MOV dword ptr [EAX + 0x10],EDX      ; 00511813 | DAT_02d81aac
+    MOV dword ptr [EAX + 0x10],EDX      ; 00511813 | g_CGameInstance.subtitle_mode
     JMP 0x005111d3                      ; 00511816
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
     MOV EAX,[0x0067b654]                ; 0051181b | g_CGamePtr
@@ -1131,7 +1131,7 @@ section .text
     AND EDX,0xff                        ; 00511826
     MOV dword ptr [EAX + 0x18],EDX      ; 0051182c | g_CGameInstance.nudity_flag
     MOV dword ptr [EAX + 0x14],EDX      ; 0051182f | g_CGameInstance.blood_flag
-    MOV dword ptr [EAX + 0x1c],EDX      ; 00511832 | DAT_02d81ab8
+    MOV dword ptr [EAX + 0x1c],EDX      ; 00511832 | g_CGameInstance.foul_language_flag
     JMP 0x005111d3                      ; 00511835
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
 

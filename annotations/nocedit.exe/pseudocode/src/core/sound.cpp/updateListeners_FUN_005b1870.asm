@@ -87,12 +87,12 @@ section .text
     CMP dword ptr [EAX + 0x240],0x0     ; 005b1884 | g_CGameInstance.block_auto_save
     JNZ 0x005b1b09                      ; 005b188b
         ;   XREF to: 005b1b09 (CONDITIONAL_JUMP)  ; LAB_005b1b09
-    MOV EAX,[0x032758e8]                ; 005b1891 | DAT_032758e8
+    MOV EAX,[0x032758e8]                ; 005b1891 | g_CDemonCameraInstance.base.position
     MOV dword ptr [ESP + 0x128],EAX     ; 005b1896
-    MOV EAX,0x32758e8                   ; 005b189d | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 005b189d | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EAX + 0x4]       ; 005b18a2 | g_CDemonCameraInstance.base.position+4
     MOV dword ptr [ESP + 0x12c],EAX     ; 005b18a5
-    MOV EAX,0x32758e8                   ; 005b18ac | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 005b18ac | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EAX + 0x8]       ; 005b18b1 | g_CDemonCameraInstance.base.position+8
     LEA EDX,[ESP + 0xa4]                ; 005b18b4
     MOV dword ptr [ESP + 0x130],EAX     ; 005b18bb
@@ -134,7 +134,7 @@ section .text
     MOV ECX,0xa                         ; 005b1965
     LEA EDI,[ESP + 0x64]                ; 005b196a
     MOV ESI,0x32758f4                   ; 005b196e | g_CDemonCameraInstance.base.rotation_matrix.m[0].x
-    MOVSD.REP ES:EDI,ESI                ; 005b1973 | g_CDemonCameraInstance.base.rotation_matrix.m[0].x | DAT_032758f8
+    MOVSD.REP ES:EDI,ESI                ; 005b1973 | g_CDemonCameraInstance.base.rotation_matrix.m[0].x | g_CDemonCameraInstance.base.rotation_matrix.m[0].y
     MOV ECX,0xa                         ; 005b1975
     LEA EDI,[ESP + 0x14]                ; 005b197a
     LEA ESI,[ESP + 0x64]                ; 005b197e
@@ -263,8 +263,8 @@ section .text
     MOV ECX,0xa                         ; 005b1b6f
         ;   Label: LAB_005b1b6f
     LEA EDI,[ESP + 0x3c]                ; 005b1b74
-    MOV ESI,0x2d7eb00                   ; 005b1b78 | DAT_02d7eb00
-    MOVSD.REP ES:EDI,ESI                ; 005b1b7d | DAT_02d7eb00 | DAT_02d7eb04
+    MOV ESI,0x2d7eb00                   ; 005b1b78 | g_CDemonLightInstance.base.base.rotation_matrix.m[0].x
+    MOVSD.REP ES:EDI,ESI                ; 005b1b7d | g_CDemonLightInstance.base.base.rotation_matrix.m[0].x | g_CDemonLightInstance.base.base.rotation_matrix.m[0].y
     MOV ECX,0xa                         ; 005b1b7f
     LEA EDI,[ESP + 0x14]                ; 005b1b84
     LEA ESI,[ESP + 0x3c]                ; 005b1b88
@@ -275,7 +275,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 005b1b93 | g_CDemonSetPtr
     PUSH 0x652506                       ; 005b1b98 | = "castle"
     ADD EAX,0x14d0f0                    ; 005b1b9d
-    PUSH EAX                            ; 005b1ba2 | DAT_03261368
+    PUSH EAX                            ; 005b1ba2 | g_CDemonSetInstance.geometry_filename[0]
     CALL crt_string.c__strnicmp_FUN_005ff070 ; 005b1ba3
         ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 005b1ba8

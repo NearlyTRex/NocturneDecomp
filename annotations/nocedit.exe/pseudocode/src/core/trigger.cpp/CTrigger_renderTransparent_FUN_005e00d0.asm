@@ -43,7 +43,7 @@
 ;   undefined4 DAT_00800000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -71,7 +71,7 @@ section .text
     SUB ESP,0xc4                        ; 005e00d6
     AND ESP,0xfffffff8                  ; 005e00dc
     MOV EAX,[0x0067d550]                ; 005e00df | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 005e00e4 | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 005e00e4 | g_CDemonMissionInstance.is_in_editor
     JNZ 0x005e00f3                      ; 005e00e8
         ;   XREF to: 005e00f3 (CONDITIONAL_JUMP)  ; LAB_005e00f3
     XOR EAX,EAX                         ; 005e00ea
@@ -131,7 +131,7 @@ section .text
     MOV EDX,dword ptr [0x0067d550]      ; 005e0162 | g_CDemonMissionPtr
         ;   Label: LAB_005e0162
     MOV ECX,dword ptr [EBP + 0x14]      ; 005e0168
-    CMP ECX,dword ptr [EDX + 0x28]      ; 005e016b | DAT_02f33768
+    CMP ECX,dword ptr [EDX + 0x28]      ; 005e016b | g_CDemonMissionInstance.selected_actor
     JNZ 0x005e05ff                      ; 005e016e
         ;   XREF to: 005e05ff (CONDITIONAL_JUMP)  ; LAB_005e05ff
     MOV EDI,0x80                        ; 005e0174

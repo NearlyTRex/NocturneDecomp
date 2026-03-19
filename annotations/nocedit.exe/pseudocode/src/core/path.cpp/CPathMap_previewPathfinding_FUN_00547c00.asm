@@ -20,8 +20,8 @@
 ;   int g_PathfindingDestX
 ;   int g_PathfindingDestZ
 ;   char[101][100] g_PathfindingVisited
-;   undefined4 DAT_030d2859
-;   undefined4 DAT_030d28bc
+;   undefined4 g_PathfindingVisited[0][1]
+;   undefined4 g_PathfindingVisited[1][0]
 ;
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
@@ -49,7 +49,7 @@ section .text
     MOV dword ptr [ESP + 0x100],EAX     ; 00547c31
     XOR EAX,EAX                         ; 00547c38
         ;   Label: LAB_00547c38
-    MOV AL,byte ptr [EDI + 0x30d2858]   ; 00547c3a | g_PathfindingVisited | DAT_030d2859 | DAT_030d28bc
+    MOV AL,byte ptr [EDI + 0x30d2858]   ; 00547c3a | g_PathfindingVisited | g_PathfindingVisited[0][1] | g_PathfindingVisited[1][0]
     MOV EDX,dword ptr [EAX*0x4 + 0x680c50] ; 00547c40 | g_DirectionCharacters
     PUSH EDX                            ; 00547c47
     PUSH 0x63ea24                       ; 00547c48 | = "%s"

@@ -11,6 +11,9 @@
 // Function Definition: CREATE_FONT_A_FUNC
 typedef HFONT CREATE_FONT_A_FUNC(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, DWORD bItalic, DWORD bUnderline, DWORD bStrikeOut, DWORD iCharSet, DWORD iOutPrecision, DWORD iClipPrecision, DWORD iQuality, DWORD iPitchAndFamily, LPCSTR pszFaceName);
 
+// Function Definition: GET_STOCK_OBJECT_FUNC
+typedef LPVOID GET_STOCK_OBJECT_FUNC(int i);
+
 // Typedef: HDC
 // pointer to HDC__
 typedef struct HDC__* HDC;
@@ -32,9 +35,6 @@ typedef void* HGDIOBJ;
 
 // Function Definition: DELETE_OBJECT_FUNC
 typedef BOOL DELETE_OBJECT_FUNC(HGDIOBJ ho);
-
-// Function Definition: GET_STOCK_OBJECT_FUNC
-typedef HGDIOBJ GET_STOCK_OBJECT_FUNC(int i);
 
 // Typedef: HGLOBAL
 // pointer to void

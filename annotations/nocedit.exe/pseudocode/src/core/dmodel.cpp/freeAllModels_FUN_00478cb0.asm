@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   int g_KeyframeModelCount
 ;   CKeyFramedModel[256] g_CKeyFramedModelPool
-;   undefined4 DAT_026acb5c
+;   undefined4 g_CKeyFramedModelPool[1].model_filename[0]
 ;   CKeyFramedModel* g_KeyFrameModelPoolEnd
 ;
 ; Called Functions:
@@ -29,11 +29,11 @@ section .text
     PUSH ESI                            ; 00478cb1
     MOV EBX,0x26a7484                   ; 00478cb2 | g_CKeyFramedModelPool
     LEA ESI,[EBX + 0x56d800]            ; 00478cb7 | g_KeyFrameModelPoolEnd
-    PUSH EBX                            ; 00478cbd | g_CKeyFramedModelPool | DAT_026acb5c
+    PUSH EBX                            ; 00478cbd | g_CKeyFramedModelPool | g_CKeyFramedModelPool[1].model_filename[0]
         ;   Label: LAB_00478cbd
     CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 ; 00478cbe
         ;   XREF to: 00477690 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690(CKeyFramedModel * this_ptr)
-    ADD EBX,0x56d8                      ; 00478cc3 | DAT_026acb5c
+    ADD EBX,0x56d8                      ; 00478cc3 | g_CKeyFramedModelPool[1].model_filename[0]
     ADD ESP,0x4                         ; 00478cc9
     CMP EBX,ESI                         ; 00478ccc
     JNZ 0x00478cbd                      ; 00478cce

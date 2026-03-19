@@ -17,7 +17,7 @@
 ;   int g_CurrentLineNumber
 ;   int g_PathMapCount
 ;   CPathMap*[200] g_PathMapList
-;   undefined4 DAT_030c3ac0
+;   undefined4 g_PathMapList[1]
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -37,7 +37,7 @@ section .text
     JLE 0x005485e9                      ; 0054859d
         ;   XREF to: 005485e9 (CONDITIONAL_JUMP)  ; LAB_005485e9
     XOR EBX,EBX                         ; 0054859f
-    CMP dword ptr [EBX + 0x30c3abc],0x0 ; 005485a1 | g_PathMapList | DAT_030c3ac0
+    CMP dword ptr [EBX + 0x30c3abc],0x0 ; 005485a1 | g_PathMapList | g_PathMapList[1]
         ;   Label: LAB_005485a1
     JNZ 0x005485cc                      ; 005485a8
         ;   XREF to: 005485cc (CONDITIONAL_JUMP)  ; LAB_005485cc
@@ -49,7 +49,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005485c4
         ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005485c9
-    MOV ECX,dword ptr [EBX + 0x30c3abc] ; 005485cc | g_PathMapList | DAT_030c3ac0
+    MOV ECX,dword ptr [EBX + 0x30c3abc] ; 005485cc | g_PathMapList | g_PathMapList[1]
         ;   Label: LAB_005485cc
     PUSH ECX                            ; 005485d2
     ADD EBX,0x4                         ; 005485d3

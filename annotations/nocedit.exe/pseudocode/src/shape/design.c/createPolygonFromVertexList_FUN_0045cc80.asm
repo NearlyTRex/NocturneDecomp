@@ -30,12 +30,12 @@
 ;   int g_EditorColorIndex
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
-;   undefined4 DAT_016e9914
-;   undefined4 DAT_016e99b4
-;   undefined4 DAT_016e99c8
-;   undefined4 DAT_016e9a88
-;   undefined4 DAT_016e9a8c
-;   undefined4 DAT_016e9a90
+;   undefined4 g_ModelPolygonData[0].texture_name[0]
+;   undefined4 g_ModelPolygonData[0].vertex_indices_count
+;   undefined4 g_ModelPolygonData[0].vertex_indices[0]
+;   undefined4 g_ModelPolygonData[0].part_assignment
+;   undefined4 g_ModelPolygonData[0].material_id
+;   undefined4 g_ModelPolygonData[0].material_id_backup
 ;   int g_CurrentPartIndex
 ;
 ; Called Functions:
@@ -123,20 +123,20 @@ section .text
     IMUL EDX,dword ptr [0x016e990c],0x184 ; 0045cd1e | g_PolygonCount
         ;   Label: LAB_0045cd1e
     MOV EAX,dword ptr [EBP + -0x8]      ; 0045cd28
-    MOV dword ptr [EDX + 0x16e99b4],EAX ; 0045cd2b | DAT_016e99b4
+    MOV dword ptr [EDX + 0x16e99b4],EAX ; 0045cd2b | g_ModelPolygonData[0].vertex_indices_count
     IMUL EAX,dword ptr [0x016e990c],0x184 ; 0045cd31 | g_PolygonCount
     MOV dword ptr [EAX + 0x16e9910],0x1 ; 0045cd3b | g_ModelPolygonData
     IMUL EAX,dword ptr [0x016e990c],0x184 ; 0045cd45 | g_PolygonCount
-    MOV byte ptr [EAX + 0x16e9914],0x0  ; 0045cd4f | DAT_016e9914
+    MOV byte ptr [EAX + 0x16e9914],0x0  ; 0045cd4f | g_ModelPolygonData[0].texture_name[0]
     IMUL EDX,dword ptr [0x016e990c],0x184 ; 0045cd56 | g_PolygonCount
     MOV EAX,[0x01e6614c]                ; 0045cd60 | g_CurrentPartIndex
-    MOV dword ptr [EDX + 0x16e9a88],EAX ; 0045cd65 | DAT_016e9a88
+    MOV dword ptr [EDX + 0x16e9a88],EAX ; 0045cd65 | g_ModelPolygonData[0].part_assignment
     IMUL EDX,dword ptr [0x016e990c],0x184 ; 0045cd6b | g_PolygonCount
     MOV EAX,[0x01626368]                ; 0045cd75 | g_EditorColorIndex
-    MOV dword ptr [EDX + 0x16e9a8c],EAX ; 0045cd7a | DAT_016e9a8c
+    MOV dword ptr [EDX + 0x16e9a8c],EAX ; 0045cd7a | g_ModelPolygonData[0].material_id
     IMUL EDX,dword ptr [0x016e990c],0x184 ; 0045cd80 | g_PolygonCount
     MOV EAX,[0x01626368]                ; 0045cd8a | g_EditorColorIndex
-    MOV dword ptr [EDX + 0x16e9a90],EAX ; 0045cd8f | DAT_016e9a90
+    MOV dword ptr [EDX + 0x16e9a90],EAX ; 0045cd8f | g_ModelPolygonData[0].material_id_backup
     MOV dword ptr [EBP + -0x4],0x0      ; 0045cd95
     JMP 0x0045cda4                      ; 0045cd9c
         ;   XREF to: 0045cda4 (UNCONDITIONAL_JUMP)  ; LAB_0045cda4
@@ -155,7 +155,7 @@ section .text
     SHL EAX,0x2                         ; 0045cdbf
     ADD EDX,EAX                         ; 0045cdc2
     MOV EAX,dword ptr [ECX + EBP*0x1 + -0x48] ; 0045cdc4
-    MOV dword ptr [EDX + 0x16e99c8],EAX ; 0045cdc8 | DAT_016e99c8
+    MOV dword ptr [EDX + 0x16e99c8],EAX ; 0045cdc8 | g_ModelPolygonData[0].vertex_indices[0]
     JMP 0x0045cd9e                      ; 0045cdce
         ;   XREF to: 0045cd9e (UNCONDITIONAL_JUMP)  ; LAB_0045cd9e
     IMUL EAX,dword ptr [0x016e990c],0x184 ; 0045cdd0 | g_PolygonCount

@@ -15,8 +15,8 @@
 ; Referenced Globals:
 ;   int g_BloodParticleIndex
 ;   CBloodParticle[256] g_BloodParticles
-;   undefined4 DAT_02d833ec
-;   undefined4 DAT_02d8342c
+;   undefined4 g_BloodParticles[0].base.lifetime_remaining
+;   undefined4 g_BloodParticles[1].base.lifetime_remaining
 ;   int g_BloodSplatIndex
 ;   int g_BloodSplatCount
 ;   int g_BloodPoolIndex
@@ -40,7 +40,7 @@ section .text
     LEA EDX,[EAX + 0x4000]              ; 004ed786 | g_BloodSplatIndex
     ADD EAX,0x40                        ; 004ed78c
         ;   Label: LAB_004ed78c
-    MOV dword ptr [EAX + -0x28],0x0     ; 004ed78f | DAT_02d833ec | DAT_02d8342c
+    MOV dword ptr [EAX + -0x28],0x0     ; 004ed78f | g_BloodParticles[0].base.lifetime_remaining | g_BloodParticles[1].base.lifetime_remaining
     CMP EAX,EDX                         ; 004ed796
     JNZ 0x004ed78c                      ; 004ed798
         ;   XREF to: 004ed78c (CONDITIONAL_JUMP)  ; LAB_004ed78c

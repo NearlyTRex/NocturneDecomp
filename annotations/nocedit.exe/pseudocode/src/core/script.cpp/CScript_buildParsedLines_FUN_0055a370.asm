@@ -24,9 +24,9 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   char[2048] g_ScriptLineBuffer
-;   undefined4 DAT_031091e9
-;   undefined4 DAT_031091ea
-;   undefined4 DAT_031091eb
+;   undefined4 g_ScriptLineBuffer+1
+;   undefined4 g_ScriptLineBuffer+2
+;   undefined4 g_ScriptLineBuffer+3
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -121,7 +121,7 @@ section .text
     SUB ECX,ECX                         ; 0055a434
     DEC ECX                             ; 0055a436
     XOR EAX,EAX                         ; 0055a437
-    SCASB.REPNE ES:EDI                  ; 0055a439 | g_ScriptLineBuffer | DAT_031091e9
+    SCASB.REPNE ES:EDI                  ; 0055a439 | g_ScriptLineBuffer | g_ScriptLineBuffer+1
     NOT ECX                             ; 0055a43b
     DEC ECX                             ; 0055a43d
     INC ECX                             ; 0055a43e
@@ -151,13 +151,13 @@ section .text
     MOV ESI,0x31091e8                   ; 0055a482 | g_ScriptLineBuffer
     MOV EDI,dword ptr [ECX + EAX*0x8 + 0x4] ; 0055a487
     PUSH EDI                            ; 0055a48b
-    MOV AL,byte ptr [ESI]               ; 0055a48c | g_ScriptLineBuffer | DAT_031091ea
+    MOV AL,byte ptr [ESI]               ; 0055a48c | g_ScriptLineBuffer | g_ScriptLineBuffer+2
         ;   Label: LAB_0055a48c
     MOV byte ptr [EDI],AL               ; 0055a48e
     CMP AL,0x0                          ; 0055a490
     JZ 0x0055a4a4                       ; 0055a492
         ;   XREF to: 0055a4a4 (CONDITIONAL_JUMP)  ; LAB_0055a4a4
-    MOV AL,byte ptr [ESI + 0x1]         ; 0055a494 | DAT_031091e9 | DAT_031091eb
+    MOV AL,byte ptr [ESI + 0x1]         ; 0055a494 | g_ScriptLineBuffer+1 | g_ScriptLineBuffer+3
     ADD ESI,0x2                         ; 0055a497
     MOV byte ptr [EDI + 0x1],AL         ; 0055a49a
     ADD EDI,0x2                         ; 0055a49d

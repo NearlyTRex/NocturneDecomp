@@ -10,9 +10,9 @@
 ;   CStrList g_SoundFileList
 ;   int g_SoundMatchCount
 ;   char[40][40] g_SoundMatchedFilenames
-;   undefined4 DAT_03f6b141
-;   undefined4 DAT_03f6b142
-;   undefined4 DAT_03f6b143
+;   undefined4 g_SoundMatchedFilenames[0][1]
+;   undefined4 g_SoundMatchedFilenames[0][2]
+;   undefined4 g_SoundMatchedFilenames[0][3]
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
@@ -67,13 +67,13 @@ section .text
     PUSH EDI                            ; 005b182b | g_SoundMatchedFilenames
     MOV AL,byte ptr [ESI]               ; 005b182c
         ;   Label: LAB_005b182c
-    MOV byte ptr [EDI],AL               ; 005b182e | g_SoundMatchedFilenames | DAT_03f6b142
+    MOV byte ptr [EDI],AL               ; 005b182e | g_SoundMatchedFilenames | g_SoundMatchedFilenames[0][2]
     CMP AL,0x0                          ; 005b1830
     JZ 0x005b1844                       ; 005b1832
         ;   XREF to: 005b1844 (CONDITIONAL_JUMP)  ; LAB_005b1844
     MOV AL,byte ptr [ESI + 0x1]         ; 005b1834
     ADD ESI,0x2                         ; 005b1837
-    MOV byte ptr [EDI + 0x1],AL         ; 005b183a | DAT_03f6b141 | DAT_03f6b143
+    MOV byte ptr [EDI + 0x1],AL         ; 005b183a | g_SoundMatchedFilenames[0][1] | g_SoundMatchedFilenames[0][3]
     ADD EDI,0x2                         ; 005b183d
     CMP AL,0x0                          ; 005b1840
     JNZ 0x005b182c                      ; 005b1842

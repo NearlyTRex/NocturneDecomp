@@ -257,19 +257,19 @@ section .text
         ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     MOV ECX,0x41000000                  ; 004e1f70
     ADD ESP,0xc                         ; 004e1f75
-    MOV EBX,dword ptr [EBP*0x4 + 0x67b854] ; 004e1f78 | DAT_0067b850 | g_ChapterDisplayTexts
+    MOV EBX,dword ptr [EBP*0x4 + 0x67b854] ; 004e1f78 | g_ChapterMissionFiles[4][12] | g_ChapterDisplayTexts
     MOV ESI,dword ptr [ESP + EBP*0x4 + 0x6ac] ; 004e1f7f
     MOV dword ptr [0x02d831a8],EBX      ; 004e1f86 | g_CurrentDisplayText
     PUSH EDI                            ; 004e1f8c | g_ChapterDisplayName
     MOV AL,byte ptr [ESI]               ; 004e1f8d
         ;   Label: LAB_004e1f8d
-    MOV byte ptr [EDI],AL               ; 004e1f8f | g_ChapterDisplayName | DAT_02d830aa
+    MOV byte ptr [EDI],AL               ; 004e1f8f | g_ChapterDisplayName | g_ChapterDisplayName+2
     CMP AL,0x0                          ; 004e1f91
     JZ 0x004e1fa5                       ; 004e1f93
         ;   XREF to: 004e1fa5 (CONDITIONAL_JUMP)  ; LAB_004e1fa5
     MOV AL,byte ptr [ESI + 0x1]         ; 004e1f95
     ADD ESI,0x2                         ; 004e1f98
-    MOV byte ptr [EDI + 0x1],AL         ; 004e1f9b | DAT_02d830a9 | DAT_02d830ab
+    MOV byte ptr [EDI + 0x1],AL         ; 004e1f9b | g_ChapterDisplayName+1 | g_ChapterDisplayName+3
     ADD EDI,0x2                         ; 004e1f9e
     CMP AL,0x0                          ; 004e1fa1
     JNZ 0x004e1f8d                      ; 004e1fa3
@@ -298,13 +298,13 @@ section .text
     PUSH EDI                            ; 004e1fe5 | g_CurrentSaveFile
     MOV AL,byte ptr [ESI]               ; 004e1fe6
         ;   Label: LAB_004e1fe6
-    MOV byte ptr [EDI],AL               ; 004e1fe8 | g_CurrentSaveFile | DAT_02d82c82
+    MOV byte ptr [EDI],AL               ; 004e1fe8 | g_CurrentSaveFile | g_CurrentSaveFile+2
     CMP AL,0x0                          ; 004e1fea
     JZ 0x004e1ffe                       ; 004e1fec
         ;   XREF to: 004e1ffe (CONDITIONAL_JUMP)  ; LAB_004e1ffe
     MOV AL,byte ptr [ESI + 0x1]         ; 004e1fee
     ADD ESI,0x2                         ; 004e1ff1
-    MOV byte ptr [EDI + 0x1],AL         ; 004e1ff4 | DAT_02d82c81 | DAT_02d82c83
+    MOV byte ptr [EDI + 0x1],AL         ; 004e1ff4 | g_CurrentSaveFile+1 | g_CurrentSaveFile+3
     ADD EDI,0x2                         ; 004e1ff7
     CMP AL,0x0                          ; 004e1ffa
     JNZ 0x004e1fe6                      ; 004e1ffc

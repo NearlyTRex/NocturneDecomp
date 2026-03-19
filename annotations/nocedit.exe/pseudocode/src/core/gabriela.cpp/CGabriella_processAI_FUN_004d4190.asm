@@ -62,7 +62,7 @@
 ;   CHero*[4] g_HeroActors
 ;   int g_LocalHeroIndex
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_032613bc
+;   undefined4 g_CDemonSetInstance.collision_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
@@ -422,7 +422,7 @@ section .text
     PUSH EDX                            ; 004d4640
     MOV EAX,[0x006810c8]                ; 004d4641 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH EAX                            ; 004d4646 | g_CDemonSetInstance
-    MOV dword ptr [EAX + 0x14d144],0x0  ; 004d4647 | DAT_032613bc
+    MOV dword ptr [EAX + 0x14d144],0x0  ; 004d4647 | g_CDemonSetInstance.collision_actor
     CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00572530 ; 004d4651
         ;   XREF to: 00572530 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00572530(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     ADD ESP,0xc                         ; 004d4656
@@ -431,7 +431,7 @@ section .text
     CALL core_setcolid.cpp_CDemonSet_init_FUN_00574180 ; 004d4660
         ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     MOV EAX,[0x006810c8]                ; 004d4665 | g_CDemonSetInstance | g_CDemonSetPtr
-    MOV EDX,dword ptr [EAX + 0x14d144]  ; 004d466a | DAT_032613bc
+    MOV EDX,dword ptr [EAX + 0x14d144]  ; 004d466a | g_CDemonSetInstance.collision_actor
     ADD ESP,0x4                         ; 004d4670
     CMP ESI,EDX                         ; 004d4673
     JNZ 0x004d4395                      ; 004d4675

@@ -11,7 +11,7 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
@@ -23,7 +23,7 @@ section .text
 
     MOV EAX,[0x0067d550]                ; 005dae10 | g_CDemonMissionInstance | g_CDemonMissionPtr
         ;   Label: core_teleport.cpp_CTeleport_renderOpaque_FUN_005dae10
-    CMP dword ptr [EAX + 0x4],0x0       ; 005dae15 | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 005dae15 | g_CDemonMissionInstance.is_in_editor
     JNZ 0x005dae1e                      ; 005dae19
         ;   XREF to: 005dae1e (CONDITIONAL_JUMP)  ; LAB_005dae1e
     XOR EAX,EAX                         ; 005dae1b

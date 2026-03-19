@@ -14,7 +14,7 @@
 ;   APIDLL_init* g_APIDLL_init
 ;   APIDLL_kill* g_APIDLL_kill
 ;   APIDLL_toggle* g_APIDLL_toggle
-;   void* g_APIDLL_setVideoMode
+;   APIDLL_unknown* g_APIDLL_setVideoMode
 ;   APIDLL_setVideoMode2* g_APIDLL_setVideoMode2
 ;   APIDLL_restoreVideoMode* g_APIDLL_restoreVideoMode
 ;   APIDLL_beginScene* g_APIDLL_beginScene

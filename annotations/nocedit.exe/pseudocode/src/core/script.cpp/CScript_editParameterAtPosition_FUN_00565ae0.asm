@@ -21,9 +21,9 @@
 ;   int g_CurrentEditingColumn
 ;   int g_CurrentEditingLine
 ;   undefined4 g_CurrentLineBuffer
-;   undefined4 DAT_031101c1
-;   undefined4 DAT_031101c2
-;   undefined4 DAT_031101c3
+;   undefined4 g_CurrentLineBuffer+2
+;   undefined4 g_CurrentLineBuffer+3
+;   undefined4 g_CurrentLineBuffer+4
 ;
 ; Called Functions:
 ;   core_script.cpp_clearSelections_FUN_005644e0
@@ -115,13 +115,13 @@ section .text
     PUSH EDI                            ; 00565b93 | g_CurrentLineBuffer
     MOV AL,byte ptr [ESI]               ; 00565b94
         ;   Label: LAB_00565b94
-    MOV byte ptr [EDI],AL               ; 00565b96 | g_CurrentLineBuffer | DAT_031101c2
+    MOV byte ptr [EDI],AL               ; 00565b96 | g_CurrentLineBuffer | g_CurrentLineBuffer+3
     CMP AL,0x0                          ; 00565b98
     JZ 0x00565bac                       ; 00565b9a
         ;   XREF to: 00565bac (CONDITIONAL_JUMP)  ; LAB_00565bac
     MOV AL,byte ptr [ESI + 0x1]         ; 00565b9c
     ADD ESI,0x2                         ; 00565b9f
-    MOV byte ptr [EDI + 0x1],AL         ; 00565ba2 | DAT_031101c1 | DAT_031101c3
+    MOV byte ptr [EDI + 0x1],AL         ; 00565ba2 | g_CurrentLineBuffer+2 | g_CurrentLineBuffer+4
     ADD EDI,0x2                         ; 00565ba5
     CMP AL,0x0                          ; 00565ba8
     JNZ 0x00565b94                      ; 00565baa
@@ -133,17 +133,17 @@ section .text
     SUB ECX,ECX                         ; 00565bb5
     DEC ECX                             ; 00565bb7
     MOV AL,0x0                          ; 00565bb8
-    SCASB.REPNE ES:EDI                  ; 00565bba | g_CurrentLineBuffer | DAT_031101c1
+    SCASB.REPNE ES:EDI                  ; 00565bba | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     DEC EDI                             ; 00565bbc
     MOV AL,byte ptr [ESI]               ; 00565bbd
         ;   Label: LAB_00565bbd
-    MOV byte ptr [EDI],AL               ; 00565bbf | g_CurrentLineBuffer | DAT_031101c1 | DAT_031101c2
+    MOV byte ptr [EDI],AL               ; 00565bbf | g_CurrentLineBuffer | g_CurrentLineBuffer+2 | g_CurrentLineBuffer+3
     CMP AL,0x0                          ; 00565bc1
     JZ 0x00565bd5                       ; 00565bc3
         ;   XREF to: 00565bd5 (CONDITIONAL_JUMP)  ; LAB_00565bd5
     MOV AL,byte ptr [ESI + 0x1]         ; 00565bc5
     ADD ESI,0x2                         ; 00565bc8
-    MOV byte ptr [EDI + 0x1],AL         ; 00565bcb | DAT_031101c1 | DAT_031101c2 | DAT_031101c3
+    MOV byte ptr [EDI + 0x1],AL         ; 00565bcb | g_CurrentLineBuffer+2 | g_CurrentLineBuffer+3 | g_CurrentLineBuffer+4
     ADD EDI,0x2                         ; 00565bce
     CMP AL,0x0                          ; 00565bd1
     JNZ 0x00565bbd                      ; 00565bd3
@@ -155,17 +155,17 @@ section .text
     SUB ECX,ECX                         ; 00565bde
     DEC ECX                             ; 00565be0
     MOV AL,0x0                          ; 00565be1
-    SCASB.REPNE ES:EDI                  ; 00565be3 | g_CurrentLineBuffer | DAT_031101c1
+    SCASB.REPNE ES:EDI                  ; 00565be3 | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     DEC EDI                             ; 00565be5
     MOV AL,byte ptr [ESI]               ; 00565be6
         ;   Label: LAB_00565be6
-    MOV byte ptr [EDI],AL               ; 00565be8 | g_CurrentLineBuffer | DAT_031101c1 | DAT_031101c2
+    MOV byte ptr [EDI],AL               ; 00565be8 | g_CurrentLineBuffer | g_CurrentLineBuffer+2 | g_CurrentLineBuffer+3
     CMP AL,0x0                          ; 00565bea
     JZ 0x00565bfe                       ; 00565bec
         ;   XREF to: 00565bfe (CONDITIONAL_JUMP)  ; LAB_00565bfe
     MOV AL,byte ptr [ESI + 0x1]         ; 00565bee
     ADD ESI,0x2                         ; 00565bf1
-    MOV byte ptr [EDI + 0x1],AL         ; 00565bf4 | DAT_031101c1 | DAT_031101c2 | DAT_031101c3
+    MOV byte ptr [EDI + 0x1],AL         ; 00565bf4 | g_CurrentLineBuffer+2 | g_CurrentLineBuffer+3 | g_CurrentLineBuffer+4
     ADD EDI,0x2                         ; 00565bf7
     CMP AL,0x0                          ; 00565bfa
     JNZ 0x00565be6                      ; 00565bfc

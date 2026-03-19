@@ -32,7 +32,7 @@
 ;   double DOUBLE_00616deb = 0.5
 ;   float FLOAT_0065b5c8 = 0.5
 ;   float[12][12] g_BugsGroundHeightGridTemp
-;   undefined4 DAT_00822d0c
+;   undefined4 g_BugsGroundHeightGridTemp[0][1]
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -175,10 +175,10 @@ section .text
     PUSH EDI                            ; 004259bb | g_BugsGroundHeightGridTemp
     MOV EAX,ECX                         ; 004259bc
     SHR ECX,0x2                         ; 004259be
-    MOVSD.REP ES:EDI,ESI                ; 004259c1 | g_BugsGroundHeightGridTemp | DAT_00822d0c
+    MOVSD.REP ES:EDI,ESI                ; 004259c1 | g_BugsGroundHeightGridTemp | g_BugsGroundHeightGridTemp[0][1]
     MOV CL,AL                           ; 004259c3
     AND CL,0x3                          ; 004259c5
-    MOVSB.REP ES:EDI,ESI                ; 004259c8 | g_BugsGroundHeightGridTemp | DAT_00822d0c
+    MOVSB.REP ES:EDI,ESI                ; 004259c8 | g_BugsGroundHeightGridTemp | g_BugsGroundHeightGridTemp[0][1]
     POP EDI                             ; 004259ca
     MOV EAX,dword ptr [EBX + 0x20]      ; 004259cb
     ADD EBX,0x20                        ; 004259ce
@@ -250,7 +250,7 @@ section .text
     CMP EBX,dword ptr [ESP + 0x64]      ; 00425aba
     JG 0x00425b26                       ; 00425abe
         ;   XREF to: 00425b26 (CONDITIONAL_JUMP)  ; LAB_00425b26
-    MOV EAX,dword ptr [EBP + 0x822d08]  ; 00425ac0 | g_BugsGroundHeightGridTemp | DAT_00822d0c
+    MOV EAX,dword ptr [EBP + 0x822d08]  ; 00425ac0 | g_BugsGroundHeightGridTemp | g_BugsGroundHeightGridTemp[0][1]
     MOV dword ptr [ESI + 0x128b8],EAX   ; 00425ac6
     ADD ESI,0x4                         ; 00425acc
         ;   Label: LAB_00425acc

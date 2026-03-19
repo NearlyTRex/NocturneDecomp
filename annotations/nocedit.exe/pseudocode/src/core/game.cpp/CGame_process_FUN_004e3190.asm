@@ -76,7 +76,7 @@ section .text
     CALL core_game.cpp_CGame_updateFadeTransition_FUN_004e09c0 ; 004e31cf
         ;   XREF to: 004e09c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateFadeTransition_FUN_004e09c0(CGame * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e31d4 | g_CGameInstance | g_CGamePtr
-    MOV EBP,dword ptr [EAX + 0x20c]     ; 004e31d9 | DAT_02d81ca8
+    MOV EBP,dword ptr [EAX + 0x20c]     ; 004e31d9 | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 004e31df
     CMP EBP,0x1                         ; 004e31e2
     JNZ 0x004e31f1                      ; 004e31e5
@@ -90,7 +90,7 @@ section .text
     CALL core_dfilter.cpp_CFilterFX_process_FUN_004708e0 ; 004e31f7
         ;   XREF to: 004708e0 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CFilterFX_process_FUN_004708e0(CFilterFx * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e31fc | g_CGameInstance | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0x20c]     ; 004e3201 | DAT_02d81ca8
+    MOV EDX,dword ptr [EAX + 0x20c]     ; 004e3201 | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 004e3207
     CMP EDX,0x1                         ; 004e320a
     JNZ 0x004e3264                      ; 004e320d
@@ -119,7 +119,7 @@ section .text
     ADD ESP,0x14                        ; 004e3261
     MOV EAX,[0x0067b654]                ; 004e3264 | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_004e3264
-    CMP dword ptr [EAX + 0x20c],0x1     ; 004e3269 | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x1     ; 004e3269 | g_CGameInstance.profile_mode
     JNZ 0x004e327c                      ; 004e3270
         ;   XREF to: 004e327c (CONDITIONAL_JUMP)  ; LAB_004e327c
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 004e3272
@@ -131,7 +131,7 @@ section .text
     CALL core_script.cpp_CScript_process_FUN_00559960 ; 004e3282
         ;   XREF to: 00559960 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_process_FUN_00559960(CScript * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e3287 | g_CGameInstance | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0x20c]     ; 004e328c | DAT_02d81ca8
+    MOV EDX,dword ptr [EAX + 0x20c]     ; 004e328c | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 004e3292
     CMP EDX,0x1                         ; 004e3295
     JNZ 0x004e32ef                      ; 004e3298
@@ -170,7 +170,7 @@ section .text
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     MOV EAX,[0x0067b654]                ; 004e330b | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_004e330b
-    CMP dword ptr [EAX + 0x20c],0x1     ; 004e3310 | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x1     ; 004e3310 | g_CGameInstance.profile_mode
     JNZ 0x004e3323                      ; 004e3317
         ;   XREF to: 004e3323 (CONDITIONAL_JUMP)  ; LAB_004e3323
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 004e3319
@@ -182,7 +182,7 @@ section .text
     CALL core_set.cpp_CDemonSet_process_FUN_0056f940 ; 004e3329
         ;   XREF to: 0056f940 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_process_FUN_0056f940(CDemonSet * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e332e | g_CGameInstance | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0x20c]     ; 004e3333 | DAT_02d81ca8
+    MOV EDX,dword ptr [EAX + 0x20c]     ; 004e3333 | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 004e3339
     CMP EDX,0x1                         ; 004e333c
     JNZ 0x004e3396                      ; 004e333f
@@ -211,7 +211,7 @@ section .text
     ADD ESP,0x14                        ; 004e3393
     MOV EAX,[0x0067b654]                ; 004e3396 | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_004e3396
-    CMP dword ptr [EAX + 0x20c],0x1     ; 004e339b | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x1     ; 004e339b | g_CGameInstance.profile_mode
     JNZ 0x004e33ae                      ; 004e33a2
         ;   XREF to: 004e33ae (CONDITIONAL_JUMP)  ; LAB_004e33ae
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 004e33a4
@@ -223,7 +223,7 @@ section .text
     CALL core_gore.cpp_CGore_process_FUN_004ed9e0 ; 004e33b4
         ;   XREF to: 004ed9e0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_process_FUN_004ed9e0(CGore * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e33b9 | g_CGameInstance | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0x20c]     ; 004e33be | DAT_02d81ca8
+    MOV EDX,dword ptr [EAX + 0x20c]     ; 004e33be | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 004e33c4
     CMP EDX,0x1                         ; 004e33c7
     JNZ 0x004e3421                      ; 004e33ca
@@ -256,7 +256,7 @@ section .text
     CALL core_water.cpp_CWater_process_FUN_005e9ed0 ; 004e3428
         ;   XREF to: 005e9ed0 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_process_FUN_005e9ed0(CWater * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e342d | g_CGameInstance | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0x20c]     ; 004e3432 | DAT_02d81ca8
+    MOV EDX,dword ptr [EAX + 0x20c]     ; 004e3432 | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 004e3438
     CMP EDX,0x1                         ; 004e343b
     JNZ 0x004e344a                      ; 004e343e
@@ -270,7 +270,7 @@ section .text
     CALL core_fire.cpp_CFireEffect_process_FUN_004c6ec0 ; 004e3451
         ;   XREF to: 004c6ec0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e3456 | g_CGameInstance | g_CGamePtr
-    MOV EDI,dword ptr [EAX + 0x20c]     ; 004e345b | DAT_02d81ca8
+    MOV EDI,dword ptr [EAX + 0x20c]     ; 004e345b | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 004e3461
     CMP EDI,0x1                         ; 004e3464
     JNZ 0x004e34bd                      ; 004e3467
@@ -299,7 +299,7 @@ section .text
     ADD ESP,0x14                        ; 004e34ba
     MOV EAX,[0x0067b654]                ; 004e34bd | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_004e34bd
-    CMP dword ptr [EAX + 0x20c],0x1     ; 004e34c2 | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x1     ; 004e34c2 | g_CGameInstance.profile_mode
     JNZ 0x004e34d5                      ; 004e34c9
         ;   XREF to: 004e34d5 (CONDITIONAL_JUMP)  ; LAB_004e34d5
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 004e34cb
@@ -311,7 +311,7 @@ section .text
     CALL core_event.cpp_CEventList_process_FUN_004aaac0 ; 004e34dc
         ;   XREF to: 004aaac0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_process_FUN_004aaac0(CEventList * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e34e1 | g_CGameInstance | g_CGamePtr
-    MOV EDI,dword ptr [EAX + 0x20c]     ; 004e34e6 | DAT_02d81ca8
+    MOV EDI,dword ptr [EAX + 0x20c]     ; 004e34e6 | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 004e34ec
     CMP EDI,0x1                         ; 004e34ef
     JNZ 0x004e3548                      ; 004e34f2
@@ -358,7 +358,7 @@ section .text
     CALL core_set.cpp_CDemonSet_processActors_FUN_0056b810 ; 004e3576
         ;   XREF to: 0056b810 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e357b | g_CGameInstance | g_CGamePtr
-    MOV EBP,dword ptr [EAX + 0x20c]     ; 004e3580 | DAT_02d81ca8
+    MOV EBP,dword ptr [EAX + 0x20c]     ; 004e3580 | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 004e3586
     CMP EBP,0x1                         ; 004e3589
     JNZ 0x004e3598                      ; 004e358c
@@ -372,7 +372,7 @@ section .text
     CALL core_mission.cpp_CDemonMission_process_FUN_00524250 ; 004e359e
         ;   XREF to: 00524250 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_process_FUN_00524250(CDemonMission * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e35a3 | g_CGameInstance | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0x20c]     ; 004e35a8 | DAT_02d81ca8
+    MOV EDX,dword ptr [EAX + 0x20c]     ; 004e35a8 | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 004e35ae
     CMP EDX,0x1                         ; 004e35b1
     JNZ 0x004e360b                      ; 004e35b4
@@ -402,7 +402,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004e360b | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_004e360b
     MOV dword ptr [EBX + 0x23c],0x0     ; 004e3610
-    CMP dword ptr [EAX + 0x20c],0x0     ; 004e361a | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x0     ; 004e361a | g_CGameInstance.profile_mode
     JNZ 0x004e369e                      ; 004e3621
         ;   XREF to: 004e369e (CONDITIONAL_JUMP)  ; LAB_004e369e
     FLD float ptr [EBX + 0x264]         ; 004e3623
@@ -421,7 +421,7 @@ section .text
     MOV ESI,EAX                         ; 004e3642
     JMP 0x004e31a8                      ; 004e3644
         ;   XREF to: 004e31a8 (UNCONDITIONAL_JUMP)  ; LAB_004e31a8
-    MOV EDI,dword ptr [EAX + 0x16c]     ; 004e3649 | DAT_02f7c8ac
+    MOV EDI,dword ptr [EAX + 0x16c]     ; 004e3649 | g_CNetGameInstance.random_seed
         ;   Label: LAB_004e3649
     PUSH EDI                            ; 004e364f
     JMP 0x004e31c6                      ; 004e3650
@@ -435,7 +435,7 @@ section .text
     ADD ESP,0x4                         ; 004e3667
     MOV EAX,[0x00680d50]                ; 004e366a | g_CScriptInstance | g_CScriptPtr
     PUSH 0x2                            ; 004e366f
-    MOV ECX,dword ptr [EAX + 0xc]       ; 004e3671 | DAT_0310f864
+    MOV ECX,dword ptr [EAX + 0xc]       ; 004e3671 | g_CScriptInstance.focus_actor
     PUSH ECX                            ; 004e3674
     MOV EDI,dword ptr [0x006810c8]      ; 004e3675 | g_CDemonSetPtr
     PUSH EDI                            ; 004e367b | g_CDemonSetInstance
@@ -447,7 +447,7 @@ section .text
         ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     MOV EAX,[0x00680d50]                ; 004e368a | g_CScriptPtr
     ADD ESP,0x4                         ; 004e368f
-    MOV dword ptr [EAX + 0x10],0x0      ; 004e3692 | DAT_0310f868
+    MOV dword ptr [EAX + 0x10],0x0      ; 004e3692 | g_CScriptInstance.focus_actor_changed
     JMP 0x004e330b                      ; 004e3699
         ;   XREF to: 004e330b (UNCONDITIONAL_JUMP)  ; LAB_004e330b
     CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 004e369e

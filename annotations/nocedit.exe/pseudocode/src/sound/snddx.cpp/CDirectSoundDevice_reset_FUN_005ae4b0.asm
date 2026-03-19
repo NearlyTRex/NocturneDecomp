@@ -21,7 +21,7 @@
 ;   IDirectSoundBuffer*[31] g_DirectSoundHardwareSfxBuffers
 ;   undefined4 g_DirectSoundHardwareSfxBuffers[1]
 ;   IDirectSound3DBuffer*[31] g_DirectSound3DBufferInterfaces
-;   undefined4 DAT_03f6aac4
+;   undefined4 g_DirectSound3DBufferInterfaces[1]
 ;
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
@@ -68,7 +68,7 @@ section .text
     LEA EDI,[EBP*0x4 + 0x0]             ; 005ae500
         ;   Label: LAB_005ae500
     ADD EDI,0x3f6aac0                   ; 005ae507 | g_DirectSound3DBufferInterfaces
-    MOV ECX,dword ptr [EDI]             ; 005ae50d | g_DirectSound3DBufferInterfaces | DAT_03f6aac4
+    MOV ECX,dword ptr [EDI]             ; 005ae50d | g_DirectSound3DBufferInterfaces | g_DirectSound3DBufferInterfaces[1]
     TEST ECX,ECX                        ; 005ae50f
     JZ 0x005ae51f                       ; 005ae511
         ;   XREF to: 005ae51f (CONDITIONAL_JUMP)  ; LAB_005ae51f

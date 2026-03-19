@@ -47,7 +47,7 @@
 ;   int INT_03106174
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
-;   undefined4 DAT_032613d4
+;   undefined4 g_CDemonSetInstance.actors[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -262,7 +262,7 @@ section .text
     CMP EBX,dword ptr [EAX + 0x14d154]  ; 005589f3 | g_CDemonSetInstance.actor_count
     JGE 0x00558a6f                      ; 005589f9
         ;   XREF to: 00558a6f (CONDITIONAL_JUMP)  ; LAB_00558a6f
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 005589ff | g_CDemonSetInstance.actors[0] | DAT_032613d4
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 005589ff | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     CMP EBX,dword ptr [ESI + 0x1fbf8]   ; 00558a06
     SETZ AL                             ; 00558a0c
     AND EAX,0xff                        ; 00558a0f

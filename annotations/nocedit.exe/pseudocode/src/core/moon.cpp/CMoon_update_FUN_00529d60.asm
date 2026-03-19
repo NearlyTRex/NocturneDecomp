@@ -29,7 +29,7 @@
 ;   float g_MoonAnimationTimer
 ;   CCourse[3] g_MoonBatCourses
 ;   SBat[30] g_MoonBats
-;   undefined4 DAT_02f38210
+;   undefined4 g_MoonBats[0].course_position
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -84,17 +84,17 @@ section .text
     JZ 0x00529e96                       ; 00529df8
         ;   XREF to: 00529e96 (CONDITIONAL_JUMP)  ; LAB_00529e96
     XOR EDX,EDX                         ; 00529dfe
-    MOV EAX,dword ptr [EDX + 0x2f3820c] ; 00529e00 | g_MoonBats | DAT_02f38224
+    MOV EAX,dword ptr [EDX + 0x2f3820c] ; 00529e00 | g_MoonBats | g_MoonBats[1].course_index
         ;   Label: LAB_00529e00
     IMUL EAX,EAX,0xc                    ; 00529e06
     FLD float ptr [ESP]                 ; 00529e09
     FMUL double ptr [0x00639f89]        ; 00529e0c | DOUBLE_00639f89
-    FADD float ptr [EDX + 0x2f38210]    ; 00529e12 | DAT_02f38210 | DAT_02f38228
+    FADD float ptr [EDX + 0x2f38210]    ; 00529e12 | g_MoonBats[0].course_position | g_MoonBats[1].course_position
     ADD EAX,0x2f381e8                   ; 00529e18 | g_MoonBatCourses
-    FSTP float ptr [EDX + 0x2f38210]    ; 00529e1d | DAT_02f38210 | DAT_02f38228
+    FSTP float ptr [EDX + 0x2f38210]    ; 00529e1d | g_MoonBats[0].course_position | g_MoonBats[1].course_position
     MOV EAX,dword ptr [EAX]             ; 00529e23 | g_MoonBatCourses
     MOV dword ptr [ESP + 0x14],EAX      ; 00529e25
-    FLD float ptr [EDX + 0x2f38210]     ; 00529e29 | DAT_02f38210 | DAT_02f38228
+    FLD float ptr [EDX + 0x2f38210]     ; 00529e29 | g_MoonBats[0].course_position | g_MoonBats[1].course_position
     FILD dword ptr [ESP + 0x14]         ; 00529e2f
     FSTP float ptr [ESP + 0x10]         ; 00529e33
     FCOMP float ptr [ESP + 0x10]        ; 00529e37
@@ -108,23 +108,23 @@ section .text
     MOV dword ptr [ESP + 0x14],EAX      ; 00529e48
     FMUL double ptr [0x00639f91]        ; 00529e4c | DOUBLE_00639f91
     FILD dword ptr [ESP + 0x14]         ; 00529e52
-    FLD float ptr [EDX + 0x2f38214]     ; 00529e56 | DAT_02f38214 | DAT_02f3822c
+    FLD float ptr [EDX + 0x2f38214]     ; 00529e56 | g_MoonBats[0].animation_frame | g_MoonBats[1].animation_frame
     FXCH ST2                            ; 00529e5c
     FADD ST0,ST2                        ; 00529e5e
     FXCH                                ; 00529e60
     FSTP float ptr [ESP + 0xc]          ; 00529e62
     FSTP ST1                            ; 00529e66
-    FST float ptr [EDX + 0x2f38214]     ; 00529e68 | DAT_02f38214 | DAT_02f3822c
+    FST float ptr [EDX + 0x2f38214]     ; 00529e68 | g_MoonBats[0].animation_frame | g_MoonBats[1].animation_frame
     FCOMP float ptr [ESP + 0xc]         ; 00529e6e
     FNSTSW AX                           ; 00529e72
     SAHF                                ; 00529e74
     JC 0x00529e87                       ; 00529e75
         ;   XREF to: 00529e87 (CONDITIONAL_JUMP)  ; LAB_00529e87
     MOV EAX,EDX                         ; 00529e77
-    LEA EAX,[EAX + 0x2f38214]           ; 00529e79 | DAT_02f38214
-    FLD float ptr [EAX]                 ; 00529e7f | DAT_02f38214
+    LEA EAX,[EAX + 0x2f38214]           ; 00529e79 | g_MoonBats[0].animation_frame
+    FLD float ptr [EAX]                 ; 00529e7f | g_MoonBats[0].animation_frame
     FSUB float ptr [ESP + 0xc]          ; 00529e81
-    FSTP float ptr [EAX]                ; 00529e85 | DAT_02f38214
+    FSTP float ptr [EAX]                ; 00529e85 | g_MoonBats[0].animation_frame
     ADD EDX,0x18                        ; 00529e87
         ;   Label: LAB_00529e87
     CMP EDX,0x2d0                       ; 00529e8a
@@ -143,10 +143,10 @@ section .text
         ;   XREF to: 00529d92 (UNCONDITIONAL_JUMP)  ; LAB_00529d92
     MOV EAX,EDX                         ; 00529eb2
         ;   Label: LAB_00529eb2
-    LEA EAX,[EAX + 0x2f38210]           ; 00529eb4 | DAT_02f38228
-    FLD float ptr [EAX]                 ; 00529eba | DAT_02f38228
+    LEA EAX,[EAX + 0x2f38210]           ; 00529eb4 | g_MoonBats[1].course_position
+    FLD float ptr [EAX]                 ; 00529eba | g_MoonBats[1].course_position
     FSUB float ptr [ESP + 0x10]         ; 00529ebc
-    FSTP float ptr [EAX]                ; 00529ec0 | DAT_02f38228
+    FSTP float ptr [EAX]                ; 00529ec0 | g_MoonBats[1].course_position
     JMP 0x00529e40                      ; 00529ec2
         ;   XREF to: 00529e40 (UNCONDITIONAL_JUMP)  ; LAB_00529e40
 

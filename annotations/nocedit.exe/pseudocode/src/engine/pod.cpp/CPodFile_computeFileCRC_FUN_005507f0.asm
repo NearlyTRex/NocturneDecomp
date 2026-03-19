@@ -22,8 +22,8 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   char[65536] g_FileIOBuffer
-;   undefined4 DAT_030d5091
-;   undefined4 DAT_030d5092
+;   undefined4 g_FileIOBuffer+1
+;   undefined4 g_FileIOBuffer+2
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -119,7 +119,7 @@ section .text
     MOV EAX,EBP                         ; 005508da
     XOR EDX,EDX                         ; 005508dc
         ;   Label: LAB_005508dc
-    MOV DL,byte ptr [ESI]               ; 005508de | g_FileIOBuffer | DAT_030d5091
+    MOV DL,byte ptr [ESI]               ; 005508de | g_FileIOBuffer | g_FileIOBuffer+1
     PUSH EDX                            ; 005508e0
     PUSH EAX                            ; 005508e1
     INC ESI                             ; 005508e2
@@ -153,10 +153,10 @@ section .text
     MOV EDI,dword ptr [ESP + 0x4]       ; 00550928
     XOR EAX,EAX                         ; 0055092c
         ;   Label: LAB_0055092c
-    MOV AL,byte ptr [EBX]               ; 0055092e | g_FileIOBuffer | DAT_030d5091
+    MOV AL,byte ptr [EBX]               ; 0055092e | g_FileIOBuffer | g_FileIOBuffer+1
     PUSH EAX                            ; 00550930
     PUSH EBP                            ; 00550931
-    INC EBX                             ; 00550932 | DAT_030d5091 | DAT_030d5092
+    INC EBX                             ; 00550932 | g_FileIOBuffer+1 | g_FileIOBuffer+2
     INC ESI                             ; 00550933
     CALL engine_pod.cpp_crc32UpdateByte_FUN_0054f2e0 ; 00550934
         ;   XREF to: 0054f2e0 (UNCONDITIONAL_CALL)  ; uint engine_pod.cpp_crc32UpdateByte_FUN_0054f2e0(uint current_crc, uchar data_byte)

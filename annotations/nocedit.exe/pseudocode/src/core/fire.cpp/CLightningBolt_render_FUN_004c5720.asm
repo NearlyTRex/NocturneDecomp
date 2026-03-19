@@ -119,7 +119,7 @@ section .text
     JZ 0x004c5a66                       ; 004c57b8
         ;   XREF to: 004c5a66 (CONDITIONAL_JUMP)  ; LAB_004c5a66
     MOV EDX,0x80000                     ; 004c57be
-    MOV EBX,0xf80000                    ; 004c57c3 | DAT_00f80000
+    MOV EBX,0xf80000                    ; 004c57c3 | g_LightBufferPool[11][183800]
     MOV dword ptr [0x00688030],EDX      ; 004c57c8 | g_RenderVertexBuffer[0].v
     MOV dword ptr [0x0068805c],EBX      ; 004c57ce | g_RenderVertexBuffer[1].u
     MOV dword ptr [0x00688060],EDX      ; 004c57d4 | g_RenderVertexBuffer[1].v
@@ -310,7 +310,7 @@ section .text
     RET                                 ; 004c5a65
     MOV EAX,0x80000                     ; 004c5a66
         ;   Label: LAB_004c5a66
-    MOV EDI,0xf80000                    ; 004c5a6b | DAT_00f80000
+    MOV EDI,0xf80000                    ; 004c5a6b | g_LightBufferPool[11][183800]
     MOV [0x00688030],EAX                ; 004c5a70 | g_RenderVertexBuffer[0].v
     MOV [0x0068805c],EAX                ; 004c5a75 | g_RenderVertexBuffer[1].u
     MOV [0x00688060],EAX                ; 004c5a7a | g_RenderVertexBuffer[1].v

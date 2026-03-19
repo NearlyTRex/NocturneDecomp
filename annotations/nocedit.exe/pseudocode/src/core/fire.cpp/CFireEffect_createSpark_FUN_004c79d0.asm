@@ -28,12 +28,12 @@
 ; Referenced Globals:
 ;   int g_SparkAllocIndex
 ;   CSpark[256] g_SparkPool
-;   undefined4 DAT_02d53e34
-;   undefined4 DAT_02d53e38
-;   undefined4 DAT_02d53e3c
-;   undefined4 DAT_02d53e40
-;   undefined4 DAT_02d53e44
-;   undefined4 DAT_02d53e48
+;   undefined4 g_SparkPool[0].base.vtable
+;   undefined4 g_SparkPool[0].intensity_current
+;   undefined4 g_SparkPool[0].intensity_target
+;   undefined4 g_SparkPool[0].first_update_flag
+;   undefined4 g_SparkPool[0].spark_type
+;   undefined4 g_SparkPool[0].fade_rate
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
@@ -68,7 +68,7 @@ section .text
     PUSH EDI                            ; 004c7a0e
     MOV EBP,dword ptr [ESP + 0x18]      ; 004c7a0f
     PUSH EBP                            ; 004c7a13
-    MOV EAX,dword ptr [EBX + 0x34]      ; 004c7a14 | DAT_02d53e34
+    MOV EAX,dword ptr [EBX + 0x34]      ; 004c7a14 | g_SparkPool[0].base.vtable
     PUSH EBX                            ; 004c7a17
     CALL dword ptr [EAX]                ; 004c7a18
     ADD ESP,0xc                         ; 004c7a1a
@@ -81,14 +81,14 @@ section .text
     MOV EAX,dword ptr [ESP + 0x20]      ; 004c7a31
     IMUL EDX                            ; 004c7a35
     SHRD EAX,EDX,0x10                   ; 004c7a37
-    MOV dword ptr [EBX + 0x40],0x0      ; 004c7a3b | DAT_02d53e40
-    MOV dword ptr [EBX + 0x38],EAX      ; 004c7a42 | DAT_02d53e38
+    MOV dword ptr [EBX + 0x40],0x0      ; 004c7a3b | g_SparkPool[0].first_update_flag
+    MOV dword ptr [EBX + 0x38],EAX      ; 004c7a42 | g_SparkPool[0].intensity_current
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004c7a45
-    MOV dword ptr [EBX + 0x3c],EAX      ; 004c7a49 | DAT_02d53e3c
+    MOV dword ptr [EBX + 0x3c],EAX      ; 004c7a49 | g_SparkPool[0].intensity_target
     MOV EAX,dword ptr [ESP + 0x24]      ; 004c7a4c
-    MOV dword ptr [EBX + 0x44],EAX      ; 004c7a50 | DAT_02d53e44
+    MOV dword ptr [EBX + 0x44],EAX      ; 004c7a50 | g_SparkPool[0].spark_type
     MOV EAX,dword ptr [ESP + 0x28]      ; 004c7a53
-    MOV dword ptr [EBX + 0x48],EAX      ; 004c7a57 | DAT_02d53e48
+    MOV dword ptr [EBX + 0x48],EAX      ; 004c7a57 | g_SparkPool[0].fade_rate
     POP EBP                             ; 004c7a5a
     POP EDI                             ; 004c7a5b
     POP EBX                             ; 004c7a5c

@@ -14,8 +14,8 @@
 ;
 ; Referenced Globals:
 ;   SFontGlyph[224] g_FontTable
-;   undefined4 DAT_00666041
-;   undefined4 DAT_00666042
+;   undefined4 g_FontTable[0].bitmap[0]
+;   undefined4 g_FontTable[0].bitmap[1]
 ;   undefined4 g_FontTable[0].bitmap[0][2]
 ;   int g_BitsPerPixel = 0x8
 ;   void*[1200] g_ScreenBufferArray
@@ -89,7 +89,7 @@ section .text
     TEST EDX,EDX                        ; 004016b4
     JLE 0x004016d0                      ; 004016b6
         ;   XREF to: 004016d0 (CONDITIONAL_JUMP)  ; LAB_004016d0
-    MOVZX ESI,byte ptr [EAX]            ; 004016b8 | DAT_00666041 | DAT_00666042 | g_FontTable[0].bitmap[0][2]
+    MOVZX ESI,byte ptr [EAX]            ; 004016b8 | g_FontTable[0].bitmap[0] | g_FontTable[0].bitmap[1] | g_FontTable[0].bitmap[0][2]
         ;   Label: LAB_004016b8
     INC EAX                             ; 004016bb
     ADD ECX,0x2                         ; 004016bc
@@ -131,7 +131,7 @@ section .text
         ;   XREF to: 00401711 (CONDITIONAL_JUMP)  ; LAB_00401711
     INC ECX                             ; 00401705
         ;   Label: LAB_00401705
-    MOV BL,byte ptr [EAX]               ; 00401706 | DAT_00666041 | DAT_00666042 | g_FontTable[0].bitmap[0][2]
+    MOV BL,byte ptr [EAX]               ; 00401706 | g_FontTable[0].bitmap[0] | g_FontTable[0].bitmap[1] | g_FontTable[0].bitmap[0][2]
     INC EAX                             ; 00401708
     INC ESI                             ; 00401709
     MOV byte ptr [ECX + -0x1],BL        ; 0040170a
@@ -159,7 +159,7 @@ section .text
     TEST EDX,EDX                        ; 0040173a
     JLE 0x00401754                      ; 0040173c
         ;   XREF to: 00401754 (CONDITIONAL_JUMP)  ; LAB_00401754
-    MOVZX ESI,byte ptr [EAX]            ; 0040173e | DAT_00666041 | DAT_00666042 | g_FontTable[0].bitmap[0][2]
+    MOVZX ESI,byte ptr [EAX]            ; 0040173e | g_FontTable[0].bitmap[0] | g_FontTable[0].bitmap[1] | g_FontTable[0].bitmap[0][2]
         ;   Label: LAB_0040173e
     INC EAX                             ; 00401741
     ADD ECX,0x4                         ; 00401742

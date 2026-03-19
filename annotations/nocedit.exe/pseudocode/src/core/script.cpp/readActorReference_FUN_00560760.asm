@@ -17,7 +17,7 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   TerminatedCString s_none_00680d58
 ;   char[200] g_ActorRefDefaultBuffer
-;   undefined4 DAT_00680d64
+;   undefined4 g_ActorRefDefaultBuffer+4
 ;   CDemonMission g_CDemonMissionInstance
 ;
 ; Called Functions:
@@ -41,7 +41,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xdc]      ; 00560779
     MOV ESI,0x680d60                    ; 00560780 | g_ActorRefDefaultBuffer
     PUSH EDX                            ; 00560785
-    MOVSD.REP ES:EDI,ESI                ; 00560786 | g_ActorRefDefaultBuffer | DAT_00680d64
+    MOVSD.REP ES:EDI,ESI                ; 00560786 | g_ActorRefDefaultBuffer | g_ActorRefDefaultBuffer+4
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00560788
         ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0056078d

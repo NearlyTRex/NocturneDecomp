@@ -20,11 +20,11 @@
 ;   uint g_CurrentGameTime
 ;   int g_ChatOutCount
 ;   SChatOutMessage[50] g_ChatOutMessages
-;   undefined4 DAT_02f98ad8
+;   undefined4 g_ChatOutMessages[0].sequence_number
 ;   undefined4 g_ChatOutMessages[0].ack_flags
-;   undefined4 DAT_02f98add
-;   undefined4 DAT_02f98ae0
-;   undefined4 DAT_02f98ae4
+;   undefined4 g_ChatOutMessages[0].ack_flags+1
+;   undefined4 g_ChatOutMessages[0].player_timestamps[0]
+;   undefined4 g_ChatOutMessages[0].player_timestamps[1]
 ;   int INT_02f9c0bc
 ;
 ; Called Functions:
@@ -86,7 +86,7 @@ section .text
     INC EAX                             ; 00541ec7
     PUSH 0x1                            ; 00541ec8
     MOV [0x02f9c0bc],EAX                ; 00541eca | INT_02f9c0bc
-    MOV dword ptr [EBP + 0x4],EAX       ; 00541ecf | DAT_02f98ad8
+    MOV dword ptr [EBP + 0x4],EAX       ; 00541ecf | g_ChatOutMessages[0].sequence_number
     LEA EAX,[EBP + 0x8]                 ; 00541ed2
     PUSH EAX                            ; 00541ed5
     MOV dword ptr [0x02f7c8b8],EDI      ; 00541ed6 | g_CurrentGameTime
@@ -126,7 +126,7 @@ section .text
     LEA EAX,[ESI + 0x8]                 ; 00541f48
     PUSH EAX                            ; 00541f4b
     MOV EAX,dword ptr [ESI + 0x114]     ; 00541f4c
-    MOV EDX,dword ptr [EBP + 0x4]       ; 00541f52 | DAT_02f98ad8
+    MOV EDX,dword ptr [EBP + 0x4]       ; 00541f52 | g_ChatOutMessages[0].sequence_number
     SHL EAX,0x3                         ; 00541f55
     PUSH EDX                            ; 00541f58
     MOV EDX,EAX                         ; 00541f59
@@ -174,8 +174,8 @@ section .text
     ADD ECX,0x4                         ; 00541fc5
         ;   Label: LAB_00541fc5
     LEA EBX,[EDI + 0xffc40000]          ; 00541fc8
-    MOV byte ptr [EDX + 0x8],0x0        ; 00541fce | g_ChatOutMessages[0].ack_flags | DAT_02f98add
-    MOV dword ptr [ECX + 0x8],EBX       ; 00541fd2 | DAT_02f98ae0 | DAT_02f98ae4
+    MOV byte ptr [EDX + 0x8],0x0        ; 00541fce | g_ChatOutMessages[0].ack_flags | g_ChatOutMessages[0].ack_flags+1
+    MOV dword ptr [ECX + 0x8],EBX       ; 00541fd2 | g_ChatOutMessages[0].player_timestamps[0] | g_ChatOutMessages[0].player_timestamps[1]
     INC EAX                             ; 00541fd5
     MOV EBX,dword ptr [ESI + 0x1c]      ; 00541fd6
     INC EDX                             ; 00541fd9

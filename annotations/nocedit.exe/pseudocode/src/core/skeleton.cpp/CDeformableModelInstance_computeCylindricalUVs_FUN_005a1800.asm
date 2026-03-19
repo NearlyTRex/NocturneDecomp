@@ -16,7 +16,7 @@
 ;   TerminatedCString s_CDeformableModelInstance_0064efe9
 ;   double DOUBLE_0064f030 = 2670176.85779676
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   undefined4 DAT_01000000
+;   undefined4 g_LightBufferPool[13][93688]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -104,7 +104,7 @@ section .text
         ;   Label: LAB_005a18a9
     MOV EBX,EBP                         ; 005a18ad
     MOV EAX,dword ptr [EDX + 0x4]       ; 005a18af
-    MOV EDX,0x1000000                   ; 005a18b2 | DAT_01000000
+    MOV EDX,0x1000000                   ; 005a18b2 | g_LightBufferPool[13][93688]
     SUB EAX,ESI                         ; 005a18b7
     IMUL EDX                            ; 005a18b9
     IDIV EBX                            ; 005a18bb

@@ -15,13 +15,13 @@
 ;   int g_MaximumSoundMemoryBudget = 0x400000
 ;   int g_LastSampleAccessIndex
 ;   CSfxSample[64] g_SfxSamples
-;   undefined4 DAT_03f6294c
-;   undefined4 DAT_03f6297c
-;   undefined4 DAT_03f62980
-;   undefined4 DAT_03f6298c
-;   undefined4 DAT_03f629ac
-;   undefined4 DAT_03f62acc
-;   undefined4 DAT_03f62b0c
+;   undefined4 g_SfxSamples[0].sample_data
+;   undefined4 g_SfxSamples[0].taken
+;   undefined4 g_SfxSamples[0].ref_count
+;   undefined4 g_SfxSamples[0].streaming_buffer_size
+;   undefined4 g_SfxSamples[1].sample_info.name[0]
+;   undefined4 g_SfxSamples[1].sample_data
+;   undefined4 g_SfxSamples[1].streaming_buffer_size
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0
@@ -39,7 +39,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x14]      ; 005a4454
     XOR EBX,EBX                         ; 005a4458
     XOR ESI,ESI                         ; 005a445a
-    CMP dword ptr [EBX + 0x3f6294c],0x0 ; 005a445c | DAT_03f6294c | DAT_03f62acc
+    CMP dword ptr [EBX + 0x3f6294c],0x0 ; 005a445c | g_SfxSamples[0].sample_data | g_SfxSamples[1].sample_data
         ;   Label: LAB_005a445c
     JNZ 0x005a44b6                      ; 005a4463
         ;   XREF to: 005a44b6 (CONDITIONAL_JUMP)  ; LAB_005a44b6
@@ -65,7 +65,7 @@ section .text
     MOV EDX,EDI                         ; 005a4494
     IMUL EAX,EDX,0x180                  ; 005a4496
         ;   Label: LAB_005a4496
-    CMP EDI,dword ptr [EAX + 0x3f6294c] ; 005a449c | DAT_03f6294c | DAT_03f62acc
+    CMP EDI,dword ptr [EAX + 0x3f6294c] ; 005a449c | g_SfxSamples[0].sample_data | g_SfxSamples[1].sample_data
     JNZ 0x005a44d1                      ; 005a44a2
         ;   XREF to: 005a44d1 (CONDITIONAL_JUMP)  ; LAB_005a44d1
     INC EBX                             ; 005a44a4
@@ -85,22 +85,22 @@ section .text
     MOV EDI,0x3f6282c                   ; 005a44b6 | g_SfxSamples
         ;   Label: LAB_005a44b6
     ADD EDI,EBX                         ; 005a44bb
-    PUSH EDI                            ; 005a44bd | DAT_03f629ac
+    PUSH EDI                            ; 005a44bd | g_SfxSamples[1].sample_info.name[0]
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550 ; 005a44be
         ;   XREF to: 005a8550 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(CSfxSample * this_ptr)
-    IMUL EAX,dword ptr [EDI + 0x160]    ; 005a44c3 | DAT_03f62b0c
+    IMUL EAX,dword ptr [EDI + 0x160]    ; 005a44c3 | g_SfxSamples[1].streaming_buffer_size
     ADD ESP,0x4                         ; 005a44ca
     ADD ESI,EAX                         ; 005a44cd
     JMP 0x005a4465                      ; 005a44cf
         ;   XREF to: 005a4465 (UNCONDITIONAL_JUMP)  ; LAB_005a4465
-    CMP dword ptr [EAX + 0x3f6298c],0x1 ; 005a44d1 | DAT_03f6298c
+    CMP dword ptr [EAX + 0x3f6298c],0x1 ; 005a44d1 | g_SfxSamples[0].streaming_buffer_size
         ;   Label: LAB_005a44d1
     JL 0x005a44a4                       ; 005a44d8
         ;   XREF to: 005a44a4 (CONDITIONAL_JUMP)  ; LAB_005a44a4
-    CMP EDI,dword ptr [EAX + 0x3f62980] ; 005a44da | DAT_03f62980
+    CMP EDI,dword ptr [EAX + 0x3f62980] ; 005a44da | g_SfxSamples[0].ref_count
     JNZ 0x005a44a4                      ; 005a44e0
         ;   XREF to: 005a44a4 (CONDITIONAL_JUMP)  ; LAB_005a44a4
-    CMP EDI,dword ptr [EAX + 0x3f6297c] ; 005a44e2 | DAT_03f6297c
+    CMP EDI,dword ptr [EAX + 0x3f6297c] ; 005a44e2 | g_SfxSamples[0].taken
     JNZ 0x005a44a4                      ; 005a44e8
         ;   XREF to: 005a44a4 (CONDITIONAL_JUMP)  ; LAB_005a44a4
     MOV EDI,0x3f6282c                   ; 005a44ea | g_SfxSamples
@@ -108,7 +108,7 @@ section .text
     PUSH EDI                            ; 005a44f1 | g_SfxSamples
     CALL sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550 ; 005a44f2
         ;   XREF to: 005a8550 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(CSfxSample * this_ptr)
-    IMUL EAX,dword ptr [EDI + 0x160]    ; 005a44f7 | DAT_03f6298c
+    IMUL EAX,dword ptr [EDI + 0x160]    ; 005a44f7 | g_SfxSamples[0].streaming_buffer_size
     ADD ESP,0x4                         ; 005a44fe
     PUSH EDI                            ; 005a4501 | g_SfxSamples
     SUB ESI,EAX                         ; 005a4502

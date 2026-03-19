@@ -18,8 +18,8 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CEditorTools g_CEditorToolsInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_032690dc
-;   undefined4 DAT_032690e0
+;   undefined4 g_CDemonSetInstance.waypoint_count
+;   undefined4 g_CDemonSetInstance.waypoints[0]
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60
@@ -78,7 +78,7 @@ section .text
     ADD ESP,0x4                         ; 0053d819
         ;   Label: LAB_0053d819
     MOV EAX,[0x006810c8]                ; 0053d81c | g_CDemonSetInstance | g_CDemonSetPtr
-    CMP ESI,dword ptr [EAX + 0x154e64]  ; 0053d821 | DAT_032690dc
+    CMP ESI,dword ptr [EAX + 0x154e64]  ; 0053d821 | g_CDemonSetInstance.waypoint_count
     JL 0x0053d848                       ; 0053d827
         ;   XREF to: 0053d848 (CONDITIONAL_JUMP)  ; LAB_0053d848
     MOV EBX,dword ptr [ESP]             ; 0053d829
@@ -96,7 +96,7 @@ section .text
     POP ESI                             ; 0053d845
     POP EBX                             ; 0053d846
     RET                                 ; 0053d847
-    MOV EDX,dword ptr [EBX + EAX*0x1 + 0x154e68] ; 0053d848 | DAT_032690e0
+    MOV EDX,dword ptr [EBX + EAX*0x1 + 0x154e68] ; 0053d848 | g_CDemonSetInstance.waypoints[0]
         ;   Label: LAB_0053d848
     PUSH EDX                            ; 0053d84f
     ADD EBX,0x4                         ; 0053d850

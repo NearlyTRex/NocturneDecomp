@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   int g_GroundTextureCount
 ;   char[500][40] g_GroundTextureNames
-;   undefined4 DAT_03654398
+;   undefined4 g_GroundTextureNames[1][0]
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005fe7f0
@@ -45,7 +45,7 @@ section .text
     MOV EAX,ESP                         ; 005781d5
         ;   Label: LAB_005781d5
     PUSH EAX                            ; 005781d7
-    PUSH ESI                            ; 005781d8 | g_GroundTextureNames | DAT_03654398
+    PUSH ESI                            ; 005781d8 | g_GroundTextureNames | g_GroundTextureNames[1][0]
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005781d9
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005781de

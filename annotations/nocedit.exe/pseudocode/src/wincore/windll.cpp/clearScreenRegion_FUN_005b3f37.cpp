@@ -1,12 +1,12 @@
-// Name: wincore_windll.cpp_clearScreen_FUN_005b3f37
+// Name: wincore_windll.cpp_clearScreenRegion_FUN_005b3f37
 // Address: 005b3f37
 // Address Range: [[005b3f37, 005b3fc1]]
 // Convention: __cdecl
-// Signature: void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3f37(int color)
+// Signature: void __cdecl wincore_windll_cpp_clearScreenRegion_FUN_005b3f37(int color)
 
 #include "nocturne.h"
 
-void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3f37(int color)
+void __cdecl wincore_windll_cpp_clearScreenRegion_FUN_005b3f37(int color)
 
 {
   int iVar1;

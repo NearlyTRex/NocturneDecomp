@@ -20,7 +20,7 @@
 ;   int g_InventoryWidth = 0xd0
 ;   int g_InventoryHeight = 0x60
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81cc4
+;   undefined4 g_CGameInstance.letterbox_mode
 ;   CHero*[4] g_HeroActors
 ;   int g_LocalHeroIndex
 ;   int g_InventoryScreenHeight
@@ -44,7 +44,7 @@ section .text
     SUB ESP,0x2c                        ; 00500374
     MOV EBX,dword ptr [ESP + 0x40]      ; 00500377
     MOV EAX,[0x0067b654]                ; 0050037b | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x228],0x0     ; 00500380 | DAT_02d81cc4
+    CMP dword ptr [EAX + 0x228],0x0     ; 00500380 | g_CGameInstance.letterbox_mode
     JNZ 0x005005e9                      ; 00500387
         ;   XREF to: 005005e9 (CONDITIONAL_JUMP)  ; LAB_005005e9
     MOV EDX,dword ptr [0x02db87d0]      ; 0050038d | g_LocalHeroIndex

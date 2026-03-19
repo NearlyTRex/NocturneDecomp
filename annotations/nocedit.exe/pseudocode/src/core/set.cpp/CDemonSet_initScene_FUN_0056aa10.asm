@@ -131,7 +131,7 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0 ; 0056aad9
         ;   XREF to: 004528e0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(CDemonCamera * this_ptr, float intensity)
     ADD ESP,0x8                         ; 0056aade
-    CMP dword ptr [ESI + 0x3276db0],0x0 ; 0056aae1 | g_MasterLightList | DAT_03276db4
+    CMP dword ptr [ESI + 0x3276db0],0x0 ; 0056aae1 | g_MasterLightList | g_MasterLightList[1]
         ;   Label: LAB_0056aae1
     JZ 0x0056ab07                       ; 0056aae8
         ;   XREF to: 0056ab07 (CONDITIONAL_JUMP)  ; LAB_0056ab07
@@ -178,7 +178,7 @@ section .text
     XOR EBP,EBP                         ; 0056ab60
     PUSH 0x0                            ; 0056ab62
         ;   Label: LAB_0056ab62
-    MOV ESI,dword ptr [EBP + 0x3276db0] ; 0056ab64 | g_MasterLightList | DAT_03276db4
+    MOV ESI,dword ptr [EBP + 0x3276db0] ; 0056ab64 | g_MasterLightList | g_MasterLightList[1]
     PUSH ESI                            ; 0056ab6a
     CALL core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80 ; 0056ab6b
         ;   XREF to: 00472a80 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight * this_ptr, int skip_clear_buffers)

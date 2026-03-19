@@ -168,9 +168,9 @@ section .text
     MOV ECX,dword ptr [EAX]             ; 0057d72d
     MOV dword ptr [EDX],ECX             ; 0057d72f | g_CSlewInstance
     MOV ECX,dword ptr [EAX + 0x4]       ; 0057d731
-    MOV dword ptr [EDX + 0x4],ECX       ; 0057d734 | DAT_03f48f88
+    MOV dword ptr [EDX + 0x4],ECX       ; 0057d734 | g_CSlewInstance.position.y
     MOV ECX,dword ptr [EAX + 0x8]       ; 0057d737
-    MOV dword ptr [EDX + 0x8],ECX       ; 0057d73a | DAT_03f48f8c
+    MOV dword ptr [EDX + 0x8],ECX       ; 0057d73a | g_CSlewInstance.position.z
     IMUL EAX,dword ptr [EBP + 0x18],0x1a4 ; 0057d73d
         ;   Label: LAB_0057d73d
     MOV EDX,dword ptr [EBP + 0x14]      ; 0057d744
@@ -183,11 +183,11 @@ section .text
     JZ 0x0057d76e                       ; 0057d75c
         ;   XREF to: 0057d76e (CONDITIONAL_JUMP)  ; LAB_0057d76e
     MOV ECX,dword ptr [EAX]             ; 0057d75e
-    MOV dword ptr [EDX],ECX             ; 0057d760 | DAT_03f48f90
+    MOV dword ptr [EDX],ECX             ; 0057d760 | g_CSlewInstance.pitch
     MOV ECX,dword ptr [EAX + 0x4]       ; 0057d762
-    MOV dword ptr [EDX + 0x4],ECX       ; 0057d765 | DAT_03f48f94
+    MOV dword ptr [EDX + 0x4],ECX       ; 0057d765 | g_CSlewInstance.yaw
     MOV ECX,dword ptr [EAX + 0x8]       ; 0057d768
-    MOV dword ptr [EDX + 0x8],ECX       ; 0057d76b | DAT_03f48f98
+    MOV dword ptr [EDX + 0x8],ECX       ; 0057d76b | g_CSlewInstance.roll
     IMUL EAX,dword ptr [EBP + 0x18],0x1a4 ; 0057d76e
         ;   Label: LAB_0057d76e
     MOV EDX,dword ptr [EBP + 0x14]      ; 0057d775
@@ -196,7 +196,7 @@ section .text
     ADD EAX,EDX                         ; 0057d782
     MOV ECX,dword ptr [0x00681ab8]      ; 0057d784 | g_CSlewPtr
     PUSH EAX                            ; 0057d78a
-    FSTP float ptr [ECX + 0x18]         ; 0057d78b | DAT_03f48f9c
+    FSTP float ptr [ECX + 0x18]         ; 0057d78b | g_CSlewInstance.slew_rate
     PUSH 0x647e16                       ; 0057d78e | = "%s.raw"
     LEA EAX,[ESP + 0x1098]              ; 0057d793
     XOR ECX,ECX                         ; 0057d79a
@@ -442,7 +442,7 @@ section .text
     MOV ECX,EDX                         ; 0057dae8
     OR ECX,EAX                          ; 0057daea
         ;   Label: LAB_0057daea
-    MOV dword ptr [EBX],ECX             ; 0057daec | DAT_00ffffff
+    MOV dword ptr [EBX],ECX             ; 0057daec | g_LightBufferPool[13][93687]
     ADD EBX,0x4                         ; 0057daee
     MOV ECX,dword ptr [ESP + 0x113c]    ; 0057daf1
     INC EDI                             ; 0057daf8
@@ -573,48 +573,48 @@ section .text
         ;   Label: LAB_0057dc6e
     MOV EAX,dword ptr [EDX]             ; 0057dc74 | g_CSlewInstance
     MOV dword ptr [ESP + 0x10e0],EAX    ; 0057dc76
-    LEA EAX,[EDX + 0x4]                 ; 0057dc7d | DAT_03f48f88
-    MOV EAX,dword ptr [EAX]             ; 0057dc80 | DAT_03f48f88
+    LEA EAX,[EDX + 0x4]                 ; 0057dc7d | g_CSlewInstance.position.y
+    MOV EAX,dword ptr [EAX]             ; 0057dc80 | g_CSlewInstance.position.y
     MOV dword ptr [ESP + 0x10e4],EAX    ; 0057dc82
-    LEA EAX,[EDX + 0x8]                 ; 0057dc89 | DAT_03f48f8c
-    MOV EAX,dword ptr [EAX]             ; 0057dc8c | DAT_03f48f8c
-    LEA ECX,[EDX + 0xc]                 ; 0057dc8e | DAT_03f48f90
+    LEA EAX,[EDX + 0x8]                 ; 0057dc89 | g_CSlewInstance.position.z
+    MOV EAX,dword ptr [EAX]             ; 0057dc8c | g_CSlewInstance.position.z
+    LEA ECX,[EDX + 0xc]                 ; 0057dc8e | g_CSlewInstance.pitch
     MOV dword ptr [ESP + 0x10e8],EAX    ; 0057dc91
-    MOV EAX,dword ptr [ECX]             ; 0057dc98 | DAT_03f48f90
+    MOV EAX,dword ptr [ECX]             ; 0057dc98 | g_CSlewInstance.pitch
     MOV dword ptr [ESP + 0x10ec],EAX    ; 0057dc9a
-    LEA EAX,[ECX + 0x4]                 ; 0057dca1 | DAT_03f48f94
-    MOV EAX,dword ptr [EAX]             ; 0057dca4 | DAT_03f48f94
+    LEA EAX,[ECX + 0x4]                 ; 0057dca1 | g_CSlewInstance.yaw
+    MOV EAX,dword ptr [EAX]             ; 0057dca4 | g_CSlewInstance.yaw
     MOV dword ptr [ESP + 0x10f0],EAX    ; 0057dca6
-    LEA EAX,[ECX + 0x8]                 ; 0057dcad | DAT_03f48f98
-    MOV EAX,dword ptr [EAX]             ; 0057dcb0 | DAT_03f48f98
+    LEA EAX,[ECX + 0x8]                 ; 0057dcad | g_CSlewInstance.roll
+    MOV EAX,dword ptr [EAX]             ; 0057dcb0 | g_CSlewInstance.roll
     MOV dword ptr [ESP + 0x10f4],EAX    ; 0057dcb2
-    MOV EAX,dword ptr [EDX + 0x18]      ; 0057dcb9 | DAT_03f48f9c
+    MOV EAX,dword ptr [EDX + 0x18]      ; 0057dcb9 | g_CSlewInstance.slew_rate
     PUSH EDX                            ; 0057dcbc | g_CSlewInstance
     MOV dword ptr [ESP + 0x10fc],EAX    ; 0057dcbd
     CALL core_slew.cpp_CSlew_processInput_FUN_005a20b0 ; 0057dcc4
         ;   XREF to: 005a20b0 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_processInput_FUN_005a20b0(CSlew * this_ptr)
     MOV EAX,[0x00681ab8]                ; 0057dcc9 | g_CSlewPtr
     ADD ESP,0x4                         ; 0057dcce
-    CMP EAX,0x32758e8                   ; 0057dcd1 | DAT_032758e8
+    CMP EAX,0x32758e8                   ; 0057dcd1 | g_CDemonCameraInstance.base.position
     JZ 0x0057dcf2                       ; 0057dcd6
         ;   XREF to: 0057dcf2 (CONDITIONAL_JUMP)  ; LAB_0057dcf2
     FLD float ptr [EAX]                 ; 0057dcd8 | g_CSlewInstance
-    FLD float ptr [EAX + 0x8]           ; 0057dcda | DAT_03f48f8c
-    MOV EDX,dword ptr [EAX + 0x4]       ; 0057dcdd | DAT_03f48f88
+    FLD float ptr [EAX + 0x8]           ; 0057dcda | g_CSlewInstance.position.z
+    MOV EDX,dword ptr [EAX + 0x4]       ; 0057dcdd | g_CSlewInstance.position.y
     MOV dword ptr [0x032758ec],EDX      ; 0057dce0 | g_CDemonCameraInstance.base.position+4
     FSTP float ptr [0x032758f0]         ; 0057dce6 | g_CDemonCameraInstance.base.position+8
-    FSTP float ptr [0x032758e8]         ; 0057dcec | DAT_032758e8
+    FSTP float ptr [0x032758e8]         ; 0057dcec | g_CDemonCameraInstance.base.position
     MOV EAX,[0x00681ab8]                ; 0057dcf2 | g_CSlewPtr
         ;   Label: LAB_0057dcf2
-    ADD EAX,0xc                         ; 0057dcf7 | DAT_03f48f90
-    PUSH EAX                            ; 0057dcfa | DAT_03f48f90
+    ADD EAX,0xc                         ; 0057dcf7 | g_CSlewInstance.pitch
+    PUSH EAX                            ; 0057dcfa | g_CSlewInstance.pitch
     PUSH 0x32758f4                      ; 0057dcfb | g_CDemonCameraInstance.base.rotation_matrix.m[0].x
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 0057dd00
         ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0057dd05
     MOV EAX,[0x00681ab8]                ; 0057dd08 | g_CSlewInstance | g_CSlewPtr
     PUSH 0x0                            ; 0057dd0d
-    FLD float ptr [EAX + 0x18]          ; 0057dd0f | DAT_03f48f9c
+    FLD float ptr [EAX + 0x18]          ; 0057dd0f | g_CSlewInstance.slew_rate
     PUSH 0x32758e4                      ; 0057dd12 | g_CDemonCameraInstance
     FSTP float ptr [0x0327591c]         ; 0057dd17 | g_CDemonCameraInstance.base.focal_length
     CALL core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430 ; 0057dd1d
@@ -662,9 +662,9 @@ section .text
         ;   XREF to: 0057ddb5 (CONDITIONAL_JUMP)  ; LAB_0057ddb5
     MOV ECX,dword ptr [EAX]             ; 0057dda5 | g_CSlewInstance
     MOV dword ptr [EDX],ECX             ; 0057dda7
-    MOV ECX,dword ptr [EAX + 0x4]       ; 0057dda9 | DAT_03f48f88
+    MOV ECX,dword ptr [EAX + 0x4]       ; 0057dda9 | g_CSlewInstance.position.y
     MOV dword ptr [EDX + 0x4],ECX       ; 0057ddac
-    MOV ECX,dword ptr [EAX + 0x8]       ; 0057ddaf | DAT_03f48f8c
+    MOV ECX,dword ptr [EAX + 0x8]       ; 0057ddaf | g_CSlewInstance.position.z
     MOV dword ptr [EDX + 0x8],ECX       ; 0057ddb2
     IMUL EDX,dword ptr [EBP + 0x18],0x1a4 ; 0057ddb5
         ;   Label: LAB_0057ddb5
@@ -677,19 +677,19 @@ section .text
     CMP EDX,EAX                         ; 0057ddd2
     JZ 0x0057dde6                       ; 0057ddd4
         ;   XREF to: 0057dde6 (CONDITIONAL_JUMP)  ; LAB_0057dde6
-    MOV ECX,dword ptr [EAX]             ; 0057ddd6 | DAT_03f48f90
+    MOV ECX,dword ptr [EAX]             ; 0057ddd6 | g_CSlewInstance.pitch
     MOV dword ptr [EDX],ECX             ; 0057ddd8
-    MOV ECX,dword ptr [EAX + 0x4]       ; 0057ddda | DAT_03f48f94
+    MOV ECX,dword ptr [EAX + 0x4]       ; 0057ddda | g_CSlewInstance.yaw
     MOV dword ptr [EDX + 0x4],ECX       ; 0057dddd
-    MOV ECX,dword ptr [EAX + 0x8]       ; 0057dde0 | DAT_03f48f98
+    MOV ECX,dword ptr [EAX + 0x8]       ; 0057dde0 | g_CSlewInstance.roll
     MOV dword ptr [EDX + 0x8],ECX       ; 0057dde3
     IMUL EBX,dword ptr [EBP + 0x18],0x1a4 ; 0057dde6
         ;   Label: LAB_0057dde6
     MOV EAX,[0x00681ab8]                ; 0057dded | g_CSlewPtr
     ADD EAX,0xc                         ; 0057ddf2
     MOV EDX,dword ptr [EBP + 0x14]      ; 0057ddf5
-    FLD float ptr [EAX + 0xc]           ; 0057ddf8 | DAT_03f48f9c
-    PUSH EAX                            ; 0057ddfb | DAT_03f48f90
+    FLD float ptr [EAX + 0xc]           ; 0057ddf8 | g_CSlewInstance.slew_rate
+    PUSH EAX                            ; 0057ddfb | g_CSlewInstance.pitch
     LEA EAX,[EDX + 0x4]                 ; 0057ddfc
     FSTP float ptr [EDX + EBX*0x1 + 0x148] ; 0057ddff
     ADD EBX,EAX                         ; 0057de06
@@ -894,10 +894,10 @@ section .text
         ;   XREF to: 0057e19c (CONDITIONAL_JUMP)  ; LAB_0057e19c
     MOV EAX,[0x00681ab8]                ; 0057e0ad | g_CSlewPtr
     SUB ESP,0x8                         ; 0057e0b2
-    FLD float ptr [EAX + 0x8]           ; 0057e0b5 | DAT_03f48f8c
+    FLD float ptr [EAX + 0x8]           ; 0057e0b5 | g_CSlewInstance.position.z
     FSTP double ptr [ESP]               ; 0057e0b8
     SUB ESP,0x8                         ; 0057e0bb
-    FLD float ptr [EAX + 0x4]           ; 0057e0be | DAT_03f48f88
+    FLD float ptr [EAX + 0x4]           ; 0057e0be | g_CSlewInstance.position.y
     FSTP double ptr [ESP]               ; 0057e0c1
     SUB ESP,0x8                         ; 0057e0c4
     FLD float ptr [EAX]                 ; 0057e0c7 | g_CSlewInstance
@@ -920,38 +920,38 @@ section .text
         ;   XREF to: 0057db22 (UNCONDITIONAL_JUMP)  ; LAB_0057db22
     FLD float ptr [ESP + 0x10e4]        ; 0057e0fa
         ;   Label: LAB_0057e0fa
-    FCOMP float ptr [EDX + 0x4]         ; 0057e101 | DAT_03f48f88
+    FCOMP float ptr [EDX + 0x4]         ; 0057e101 | g_CSlewInstance.position.y
     FNSTSW AX                           ; 0057e104
     SAHF                                ; 0057e106
     JNZ 0x0057df99                      ; 0057e107
         ;   XREF to: 0057df99 (CONDITIONAL_JUMP)  ; LAB_0057df99
     FLD float ptr [ESP + 0x10e8]        ; 0057e10d
-    FCOMP float ptr [EDX + 0x8]         ; 0057e114 | DAT_03f48f8c
+    FCOMP float ptr [EDX + 0x8]         ; 0057e114 | g_CSlewInstance.position.z
     FNSTSW AX                           ; 0057e117
     SAHF                                ; 0057e119
     JNZ 0x0057df99                      ; 0057e11a
         ;   XREF to: 0057df99 (CONDITIONAL_JUMP)  ; LAB_0057df99
-    LEA ECX,[EDX + 0xc]                 ; 0057e120 | DAT_03f48f90
+    LEA ECX,[EDX + 0xc]                 ; 0057e120 | g_CSlewInstance.pitch
     FLD float ptr [ESP + 0x10ec]        ; 0057e123
-    FCOMP float ptr [ECX]               ; 0057e12a | DAT_03f48f90
+    FCOMP float ptr [ECX]               ; 0057e12a | g_CSlewInstance.pitch
     FNSTSW AX                           ; 0057e12c
     SAHF                                ; 0057e12e
     JNZ 0x0057df99                      ; 0057e12f
         ;   XREF to: 0057df99 (CONDITIONAL_JUMP)  ; LAB_0057df99
     FLD float ptr [ESP + 0x10f0]        ; 0057e135
-    FCOMP float ptr [ECX + 0x4]         ; 0057e13c | DAT_03f48f94
+    FCOMP float ptr [ECX + 0x4]         ; 0057e13c | g_CSlewInstance.yaw
     FNSTSW AX                           ; 0057e13f
     SAHF                                ; 0057e141
     JNZ 0x0057df99                      ; 0057e142
         ;   XREF to: 0057df99 (CONDITIONAL_JUMP)  ; LAB_0057df99
     FLD float ptr [ESP + 0x10f4]        ; 0057e148
-    FCOMP float ptr [ECX + 0x8]         ; 0057e14f | DAT_03f48f98
+    FCOMP float ptr [ECX + 0x8]         ; 0057e14f | g_CSlewInstance.roll
     FNSTSW AX                           ; 0057e152
     SAHF                                ; 0057e154
     JNZ 0x0057df99                      ; 0057e155
         ;   XREF to: 0057df99 (CONDITIONAL_JUMP)  ; LAB_0057df99
     FLD float ptr [ESP + 0x10f8]        ; 0057e15b
-    FCOMP float ptr [EDX + 0x18]        ; 0057e162 | DAT_03f48f9c
+    FCOMP float ptr [EDX + 0x18]        ; 0057e162 | g_CSlewInstance.slew_rate
     FNSTSW AX                           ; 0057e165
     SAHF                                ; 0057e167
     JNZ 0x0057df99                      ; 0057e168
@@ -975,26 +975,26 @@ section .text
     MOV EAX,[0x00681ab8]                ; 0057e19c | g_CSlewPtr
         ;   Label: LAB_0057e19c
     SUB ESP,0x8                         ; 0057e1a1
-    FLD float ptr [EAX + 0x18]          ; 0057e1a4 | DAT_03f48f9c
+    FLD float ptr [EAX + 0x18]          ; 0057e1a4 | g_CSlewInstance.slew_rate
     FSTP double ptr [ESP]               ; 0057e1a7
     FLD double ptr [0x006480a5]         ; 0057e1aa | DOUBLE_006480a5
-    FLD float ptr [EAX + 0x10]          ; 0057e1b0 | DAT_03f48f94
+    FLD float ptr [EAX + 0x10]          ; 0057e1b0 | g_CSlewInstance.yaw
     FMUL ST1                            ; 0057e1b3
     FLD double ptr [0x006480ad]         ; 0057e1b5 | DOUBLE_006480ad
     FXCH                                ; 0057e1bb
     FMUL ST1                            ; 0057e1bd
     SUB ESP,0x8                         ; 0057e1bf
     FSTP double ptr [ESP]               ; 0057e1c2
-    FLD float ptr [EAX + 0xc]           ; 0057e1c5 | DAT_03f48f90
+    FLD float ptr [EAX + 0xc]           ; 0057e1c5 | g_CSlewInstance.pitch
     FMULP ST2                           ; 0057e1c8
     FMULP                               ; 0057e1ca
     SUB ESP,0x8                         ; 0057e1cc
     FSTP double ptr [ESP]               ; 0057e1cf
     SUB ESP,0x8                         ; 0057e1d2
-    FLD float ptr [EAX + 0x8]           ; 0057e1d5 | DAT_03f48f8c
+    FLD float ptr [EAX + 0x8]           ; 0057e1d5 | g_CSlewInstance.position.z
     FSTP double ptr [ESP]               ; 0057e1d8
     SUB ESP,0x8                         ; 0057e1db
-    FLD float ptr [EAX + 0x4]           ; 0057e1de | DAT_03f48f88
+    FLD float ptr [EAX + 0x4]           ; 0057e1de | g_CSlewInstance.position.y
     FSTP double ptr [ESP]               ; 0057e1e1
     SUB ESP,0x8                         ; 0057e1e4
     FLD float ptr [EAX]                 ; 0057e1e7 | g_CSlewInstance
@@ -1147,7 +1147,7 @@ section .text
     MOV EAX,[0x00681ab8]                ; 0057e39e | g_CSlewPtr
     PUSH EDI                            ; 0057e3a3
     ADD EAX,0x18                        ; 0057e3a4
-    PUSH EAX                            ; 0057e3a7 | DAT_03f48f9c
+    PUSH EAX                            ; 0057e3a7 | g_CSlewInstance.slew_rate
     PUSH 0x648054                       ; 0057e3a8 | = "Enter FOV"
     MOV EAX,[0x00678a60]                ; 0057e3ad | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 0057e3b2 | g_CEditorToolsInstance

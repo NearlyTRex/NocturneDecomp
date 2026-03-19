@@ -30,7 +30,7 @@
 ;   TerminatedCString s_Error_parsing_POD_INI_00628d24
 ;   TerminatedCString s_engine_fileio_cpp_00628d3a
 ;   char[264] g_FilenameBufferTemplate
-;   undefined4 DAT_0067a15c
+;   undefined4 g_FilenameBufferTemplate+4
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -93,7 +93,7 @@ section .text
     LEA EDI,[ESP + 0x14]                ; 004ba572
     MOV ESI,0x67a158                    ; 004ba576 | g_FilenameBufferTemplate
     PUSH EBP                            ; 004ba57b
-    MOVSD.REP ES:EDI,ESI                ; 004ba57c | g_FilenameBufferTemplate | DAT_0067a15c
+    MOVSD.REP ES:EDI,ESI                ; 004ba57c | g_FilenameBufferTemplate | g_FilenameBufferTemplate+4
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004ba57e
         ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004ba583

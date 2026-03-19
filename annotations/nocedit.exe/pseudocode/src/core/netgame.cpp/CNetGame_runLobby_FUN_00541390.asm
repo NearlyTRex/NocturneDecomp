@@ -196,7 +196,7 @@ section .text
     MOV ESI,dword ptr [0x00680a00]      ; 0054152b | g_CNetGamePtr
         ;   Label: LAB_0054152b
     MOV EAX,dword ptr [ESP + 0x118]     ; 00541531
-    CMP EAX,dword ptr [ESI + 0x1c]      ; 00541538 | DAT_02f7c75c
+    CMP EAX,dword ptr [ESI + 0x1c]      ; 00541538 | g_CNetGameInstance.player_count
     JGE 0x005417a8                      ; 0054153b
         ;   XREF to: 005417a8 (CONDITIONAL_JUMP)  ; LAB_005417a8
     PUSH EBX                            ; 00541541
@@ -244,7 +244,7 @@ section .text
     ADD ESP,0xc                         ; 005415ab
     MOV EAX,[0x00680a00]                ; 005415ae | g_CNetGamePtr
     MOV EDX,dword ptr [ESP + 0x118]     ; 005415b3
-    CMP EDX,dword ptr [EAX + 0x114]     ; 005415ba | DAT_02f7c854
+    CMP EDX,dword ptr [EAX + 0x114]     ; 005415ba | g_CNetGameInstance.local_player_index
     JNZ 0x00541711                      ; 005415c0
         ;   XREF to: 00541711 (CONDITIONAL_JUMP)  ; LAB_00541711
     MOV ESI,0x63da00                    ; 005415c6 | = "(Local)"
@@ -305,7 +305,7 @@ section .text
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00541640
     MOV EAX,dword ptr [ESP + 0x11c]     ; 00541643
-    MOV EDX,dword ptr [EAX + 0x14]      ; 0054164a | DAT_02f7c774
+    MOV EDX,dword ptr [EAX + 0x14]      ; 0054164a | g_CNetGameInstance.players[0].hero_number
     PUSH EDX                            ; 0054164d
     PUSH 0x63da1f                       ; 0054164e | = "%d"
     LEA EAX,[ESP + 0x10]                ; 00541653
@@ -451,7 +451,7 @@ section .text
     LEA EAX,[EDI + 0x20]                ; 005417d2
     ADD EAX,0x2f7c8d0                   ; 005417d5 | g_ChatHistory
     ADD EDI,0xc                         ; 005417da
-    MOV dword ptr [ESP + 0x110],EAX     ; 005417dd | DAT_02f7c8f0
+    MOV dword ptr [ESP + 0x110],EAX     ; 005417dd | g_ChatHistory[0].message[0]
     ADD EDI,0x2f7c8d0                   ; 005417e4 | g_ChatHistory
     CMP ESI,dword ptr [0x02f7c8cc]      ; 005417ea | g_ChatHistoryCount
         ;   Label: LAB_005417ea
@@ -459,7 +459,7 @@ section .text
         ;   XREF to: 00541835 (CONDITIONAL_JUMP)  ; LAB_00541835
     PUSH EBX                            ; 005417f2
     PUSH 0x0                            ; 005417f3
-    PUSH EDI                            ; 005417f5 | DAT_02f7c8dc
+    PUSH EDI                            ; 005417f5 | g_ChatHistory[0].sender_name[0]
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 005417f6
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005417fb
@@ -755,7 +755,7 @@ section .text
         ;   Label: LAB_00541b03
     MOV EAX,[0x00680a00]                ; 00541b05 | g_CNetGamePtr
         ;   Label: LAB_00541b05
-    CMP EBX,dword ptr [EAX + 0x1c]      ; 00541b0a | DAT_02f7c75c
+    CMP EBX,dword ptr [EAX + 0x1c]      ; 00541b0a | g_CNetGameInstance.player_count
     JGE 0x0054141d                      ; 00541b0d
         ;   XREF to: 0054141d (CONDITIONAL_JUMP)  ; LAB_0054141d
     PUSH 0x40000000                     ; 00541b13

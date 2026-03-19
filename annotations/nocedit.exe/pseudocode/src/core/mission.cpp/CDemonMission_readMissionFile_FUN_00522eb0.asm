@@ -556,7 +556,7 @@ section .text
     MOV ESI,0x67d5c0                    ; 00523405 | g_DefaultMissionActorClass
     PUSH EAX                            ; 0052340a
     LEA EAX,[ESP + 0xcc]                ; 0052340b
-    MOVSD.REP ES:EDI,ESI                ; 00523412 | g_DefaultMissionActorClass | DAT_0067d5c4
+    MOVSD.REP ES:EDI,ESI                ; 00523412 | g_DefaultMissionActorClass | g_DefaultMissionActorClass+4
     PUSH EAX                            ; 00523414
     MOV EBP,dword ptr [ESP + 0x168]     ; 00523415
     MOV ECX,0x19                        ; 0052341c
@@ -564,7 +564,7 @@ section .text
     LEA EDI,[ESP + 0x70]                ; 00523426
     MOV ESI,0x67d628                    ; 0052342a | g_DefaultMissionActorName
     PUSH EBP                            ; 0052342f
-    MOVSD.REP ES:EDI,ESI                ; 00523430 | g_DefaultMissionActorName | DAT_0067d62c
+    MOVSD.REP ES:EDI,ESI                ; 00523430 | g_DefaultMissionActorName | g_DefaultMissionActorName+4
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00523432
         ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 00523437

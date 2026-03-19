@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   double g_LuminanceScaleFactor = 0.577350270000000
 ;   float[256] g_PaletteLuminanceCache
-;   undefined4 DAT_0077263c
+;   undefined4 g_PaletteLuminanceCache[1]
 ;   uchar[32768] g_ColorCubeLookup
 ;   char[768] g_SourcePaletteData
 ;   undefined4 CHAR_ARRAY_02d01f49
@@ -59,7 +59,7 @@ section .text
     FMUL ST1                            ; 004028c1
     ADD ESI,0x4                         ; 004028c3
     ADD EBX,0x3                         ; 004028c6
-    FSTP float ptr [ESI + 0x772634]     ; 004028c9 | g_PaletteLuminanceCache | DAT_0077263c
+    FSTP float ptr [ESI + 0x772634]     ; 004028c9 | g_PaletteLuminanceCache | g_PaletteLuminanceCache[1]
     CMP ESI,0x400                       ; 004028cf
     JNZ 0x00402881                      ; 004028d5
         ;   XREF to: 00402881 (CONDITIONAL_JUMP)  ; LAB_00402881

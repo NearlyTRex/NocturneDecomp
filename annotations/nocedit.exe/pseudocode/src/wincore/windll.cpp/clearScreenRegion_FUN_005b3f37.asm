@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3f37(int color)
+; void __cdecl wincore_windll_cpp_clearScreenRegion_FUN_005b3f37(int color)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   color
@@ -23,7 +23,7 @@
 section .text
 
     PUSH EBP                            ; 005b3f37
-        ;   Label: wincore_windll.cpp_clearScreen_FUN_005b3f37
+        ;   Label: wincore_windll.cpp_clearScreenRegion_FUN_005b3f37
     MOV EBP,ESP                         ; 005b3f38
     PUSH ESI                            ; 005b3f3a
     PUSH EDI                            ; 005b3f3b

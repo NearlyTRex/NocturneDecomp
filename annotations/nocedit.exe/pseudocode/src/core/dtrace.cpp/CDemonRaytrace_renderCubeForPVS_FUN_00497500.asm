@@ -504,9 +504,9 @@ section .text
     MOV EAX,dword ptr [ESP + 0x88]      ; 00497b26
     MOV dword ptr [ESI],EAX             ; 00497b2d | g_PVSCubePositions
     MOV EAX,dword ptr [ESP + 0x8c]      ; 00497b2f
-    MOV dword ptr [ESI + 0x4],EAX       ; 00497b36 | DAT_02cb3c30
+    MOV dword ptr [ESI + 0x4],EAX       ; 00497b36 | g_PVSCubePositions[0].y
     MOV EAX,dword ptr [ESP + 0x90]      ; 00497b39
-    MOV dword ptr [ESI + 0x8],EAX       ; 00497b40 | DAT_02cb3c34
+    MOV dword ptr [ESI + 0x8],EAX       ; 00497b40 | g_PVSCubePositions[0].z
     MOV ECX,dword ptr [0x02ca03a4]      ; 00497b43 | g_PVSDrawnCubeCount
         ;   Label: LAB_00497b43
     INC ECX                             ; 00497b49

@@ -152,7 +152,7 @@ __asm {
         cmp EAX,0x32758e8
         jz LAB_005833c5
         mov EAX,dword ptr [EBP + 0xfffffe4a]
-        mov [DAT_032758e8],EAX
+        mov [g_CDemonCameraInstance.base.position],EAX
         mov EAX,dword ptr [EBP + 0xfffffe4e]
         mov [g_CDemonCameraInstance.base.position+4],EAX
         mov EAX,dword ptr [EBP + 0xfffffe52]
@@ -1030,7 +1030,7 @@ __asm {
         jz LAB_00583244
         test byte ptr [g_MouseButtonFlags],0x1
         jnz LAB_00583244
-        mov EAX,[DAT_032758e8]
+        mov EAX,[g_CDemonCameraInstance.base.position]
         mov dword ptr [EBP + 0xffffff06],EAX
         mov EAX,dword ptr [EBP + 0x22]
         mov EAX,dword ptr [EAX]

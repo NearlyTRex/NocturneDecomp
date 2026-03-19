@@ -242,7 +242,7 @@ section .text
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004bf707
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV ECX,0x80000                     ; 004bf70c
-    MOV EBX,0xf80000                    ; 004bf711 | DAT_00f80000
+    MOV EBX,0xf80000                    ; 004bf711 | g_LightBufferPool[11][183800]
     ADD ESP,0x8                         ; 004bf716
     MOV EAX,ESI                         ; 004bf719
     MOV dword ptr [0x0068802c],ECX      ; 004bf71b | g_RenderVertexBuffer[0].u

@@ -13,18 +13,18 @@
 ;
 ; Referenced Globals:
 ;   CBloodParticle[256] g_BloodParticles
-;   undefined4 DAT_02d833ec
-;   undefined4 DAT_02d83408
-;   undefined4 DAT_02d83414
-;   undefined4 DAT_02d8342c
-;   undefined4 DAT_02d83448
+;   undefined4 g_BloodParticles[0].base.lifetime_remaining
+;   undefined4 g_BloodParticles[0].base.vtable
+;   undefined4 g_BloodParticles[1].base.position.x
+;   undefined4 g_BloodParticles[1].base.lifetime_remaining
+;   undefined4 g_BloodParticles[1].base.vtable
 ;   int g_BloodSplatIndex
 ;   int g_BloodSplatCount
 ;   CBloodSplat[2000] g_BloodSplats
-;   undefined4 DAT_02d87420
+;   undefined4 g_BloodSplats[1].expired
 ;   int g_BloodPoolCount
 ;   CBloodPool[32] g_BloodPools
-;   undefined4 DAT_02da874c
+;   undefined4 g_BloodPools[1].expired
 ;
 ; Called Functions:
 ;   core_gore.cpp_CBloodPool_processAge_FUN_004ed0a0
@@ -44,7 +44,7 @@ section .text
     AND ESP,0xfffffff8                  ; 004ed9e6
     MOV EBX,0x2d833d4                   ; 004ed9e9 | g_BloodParticles
     LEA ESI,[EBX + 0x4000]              ; 004ed9ee | g_BloodSplatIndex
-    FLD float ptr [EBX + 0x18]          ; 004ed9f4 | DAT_02d833ec | DAT_02d8342c
+    FLD float ptr [EBX + 0x18]          ; 004ed9f4 | g_BloodParticles[0].base.lifetime_remaining | g_BloodParticles[1].base.lifetime_remaining
         ;   Label: LAB_004ed9f4
     FLDZ                                ; 004ed9f7
     FCOMPP                              ; 004ed9f9
@@ -63,7 +63,7 @@ section .text
     JLE 0x004eda40                      ; 004eda15
         ;   XREF to: 004eda40 (CONDITIONAL_JUMP)  ; LAB_004eda40
     MOV ESI,0x2d873dc                   ; 004eda17 | g_BloodSplats
-    PUSH ESI                            ; 004eda1c | g_BloodSplats | DAT_02d87420
+    PUSH ESI                            ; 004eda1c | g_BloodSplats | g_BloodSplats[1].expired
         ;   Label: LAB_004eda1c
     CALL core_gore.cpp_CBloodSplat_processAge_FUN_004ecad0 ; 004eda1d
         ;   XREF to: 004ecad0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_processAge_FUN_004ecad0(CBloodSplat * this_ptr)
@@ -88,14 +88,14 @@ section .text
     JLE 0x004eda80                      ; 004eda57
         ;   XREF to: 004eda80 (CONDITIONAL_JUMP)  ; LAB_004eda80
     MOV EBX,0x2da8724                   ; 004eda59 | g_BloodPools
-    PUSH EBX                            ; 004eda5e | g_BloodPools | DAT_02da874c
+    PUSH EBX                            ; 004eda5e | g_BloodPools | g_BloodPools[1].expired
         ;   Label: LAB_004eda5e
     CALL core_gore.cpp_CBloodPool_processAge_FUN_004ed0a0 ; 004eda5f
         ;   XREF to: 004ed0a0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_processAge_FUN_004ed0a0(CBloodPool * this_ptr)
     INC ESI                             ; 004eda64
     MOV EDI,dword ptr [0x02da8720]      ; 004eda65 | g_BloodPoolCount
     ADD ESP,0x4                         ; 004eda6b
-    ADD EBX,0x28                        ; 004eda6e | DAT_02da874c
+    ADD EBX,0x28                        ; 004eda6e | g_BloodPools[1].expired
     CMP ESI,EDI                         ; 004eda71
     JL 0x004eda5e                       ; 004eda73
         ;   XREF to: 004eda5e (CONDITIONAL_JUMP)  ; LAB_004eda5e
@@ -109,9 +109,9 @@ section .text
     POP ESI                             ; 004eda84
     POP EBX                             ; 004eda85
     RET                                 ; 004eda86
-    PUSH EBX                            ; 004eda87 | DAT_02d83414
+    PUSH EBX                            ; 004eda87 | g_BloodParticles[1].base.position.x
         ;   Label: LAB_004eda87
-    MOV EAX,dword ptr [EBX + 0x34]      ; 004eda88 | DAT_02d83408 | DAT_02d83448
+    MOV EAX,dword ptr [EBX + 0x34]      ; 004eda88 | g_BloodParticles[0].base.vtable | g_BloodParticles[1].base.vtable
     CALL dword ptr [EAX + 0x4]          ; 004eda8b
     ADD ESP,0x4                         ; 004eda8e
     JMP 0x004eda04                      ; 004eda91

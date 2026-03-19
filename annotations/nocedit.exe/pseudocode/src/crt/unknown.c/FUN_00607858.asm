@@ -10,7 +10,7 @@
 ;   crt_unknown.c_FUN_00607958 at 0060798a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00665f34+2
+;   undefined4 g_PositiveInfinity+6
 ;   short g_DaysInMonth_Normal = 0x0
 ;   undefined4 DAT_00665f50
 ;   short g_DaysInMonth_Leap = 0x0
@@ -51,7 +51,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x10]      ; 00607898
         ;   Label: LAB_00607898
     MOV ESI,dword ptr [EAX*0x2 + 0x665f38] ; 0060789b | g_DaysInMonth_Normal
-    MOV EAX,dword ptr [EAX*0x2 + 0x665f36] ; 006078a2 | DAT_00665f34+2
+    MOV EAX,dword ptr [EAX*0x2 + 0x665f36] ; 006078a2 | g_PositiveInfinity+6
     SAR ESI,0x10                        ; 006078a9
         ;   Label: LAB_006078a9
     SAR EAX,0x10                        ; 006078ac

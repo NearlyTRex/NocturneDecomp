@@ -64,8 +64,8 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   char[100][30] g_BoneNameBuffer
-;   undefined4 DAT_03659831
-;   undefined4 DAT_03659832
+;   undefined4 g_BoneNameBuffer[0][1]
+;   undefined4 g_BoneNameBuffer[0][2]
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -176,13 +176,13 @@ section .text
     PUSH EDI                            ; 0058a594 | g_BoneNameBuffer
     MOV AL,byte ptr [ESI]               ; 0058a595
         ;   Label: LAB_0058a595
-    MOV byte ptr [EDI],AL               ; 0058a597 | g_BoneNameBuffer | DAT_03659832
+    MOV byte ptr [EDI],AL               ; 0058a597 | g_BoneNameBuffer | g_BoneNameBuffer[0][2]
     CMP AL,0x0                          ; 0058a599
     JZ 0x0058a5ad                       ; 0058a59b
         ;   XREF to: 0058a5ad (CONDITIONAL_JUMP)  ; LAB_0058a5ad
     MOV AL,byte ptr [ESI + 0x1]         ; 0058a59d
     ADD ESI,0x2                         ; 0058a5a0
-    MOV byte ptr [EDI + 0x1],AL         ; 0058a5a3 | DAT_03659831 | DAT_03659833
+    MOV byte ptr [EDI + 0x1],AL         ; 0058a5a3 | g_BoneNameBuffer[0][1] | g_BoneNameBuffer[0][3]
     ADD EDI,0x2                         ; 0058a5a6
     CMP AL,0x0                          ; 0058a5a9
     JNZ 0x0058a595                      ; 0058a5ab
@@ -417,7 +417,7 @@ section .text
     MOV ESI,0x3659830                   ; 0058a8fc | g_BoneNameBuffer
     MOV EDI,dword ptr [ESP + 0x24c]     ; 0058a901
     MOV EBP,EAX                         ; 0058a908
-    PUSH ESI                            ; 0058a90a | g_BoneNameBuffer | DAT_0365984e
+    PUSH ESI                            ; 0058a90a | g_BoneNameBuffer | g_BoneNameBuffer[1][0]
         ;   Label: LAB_0058a90a
     PUSH EDI                            ; 0058a90b
     CALL core_skeledit.cpp_CBoneStructure_findBoneByName_FUN_0058ac30 ; 0058a90c

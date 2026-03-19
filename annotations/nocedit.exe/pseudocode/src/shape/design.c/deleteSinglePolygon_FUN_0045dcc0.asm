@@ -12,7 +12,7 @@
 ;   TerminatedCString s_Polygon_to_delete_0061b448
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
-;   undefined4 DAT_016e9914
+;   undefined4 g_ModelPolygonData[0].texture_name[0]
 ;
 ; Called Functions:
 ;   crt_stdlib.c_atoi_FUN_005ffef0
@@ -89,7 +89,7 @@ section .text
     MOV ECX,0x61                        ; 0045dd46
     LEA EDI,[ESI + 0x16e9910]           ; 0045dd4b | g_ModelPolygonData
     LEA ESI,[EAX + 0x16e9910]           ; 0045dd51 | g_ModelPolygonData
-    MOVSD.REP ES:EDI,ESI                ; 0045dd57 | g_ModelPolygonData | DAT_016e9914
+    MOVSD.REP ES:EDI,ESI                ; 0045dd57 | g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
     JMP 0x0045dd24                      ; 0045dd59
         ;   XREF to: 0045dd24 (UNCONDITIONAL_JUMP)  ; LAB_0045dd24
     DEC dword ptr [0x016e990c]          ; 0045dd5b | g_PolygonCount

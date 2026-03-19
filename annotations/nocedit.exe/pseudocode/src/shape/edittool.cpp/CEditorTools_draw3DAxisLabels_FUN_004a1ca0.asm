@@ -31,12 +31,12 @@
 ;   double g_AxisScaleMultiplier = 256
 ;   SRenderVertex[16] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_y
-;   undefined4 DAT_00688044
-;   undefined4 DAT_00688048
+;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_x
+;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_y
 ;   undefined4 g_RenderVertexBuffer[1].projected_vertex.screen_x
-;   undefined4 DAT_00688054+3
-;   undefined4 DAT_00688058
-;   undefined4 DAT_00688074
+;   undefined4 g_RenderVertexBuffer[1].projected_vertex.screen_x+3
+;   undefined4 g_RenderVertexBuffer[1].projected_vertex.screen_y
+;   undefined4 g_RenderVertexBuffer[2].projected_vertex.transformed_x
 ;   undefined4 g_RenderVertexBuffer[2].projected_vertex.transformed_y
 ;   ... and 12 more
 ;
@@ -100,11 +100,11 @@ section .text
     CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a1d24
         ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
     ADD ESP,0x8                         ; 004a1d29
-    MOV ESI,0x688044                    ; 004a1d2c | DAT_00688044
+    MOV ESI,0x688044                    ; 004a1d2c | g_RenderVertexBuffer[1].projected_vertex.transformed_x
     SUB ESP,0x30                        ; 004a1d31
     MOV ECX,0xc                         ; 004a1d34
     MOV EDI,ESP                         ; 004a1d39
-    MOVSD.REP ES:EDI,ESI                ; 004a1d3b | DAT_00688044 | DAT_00688048
+    MOVSD.REP ES:EDI,ESI                ; 004a1d3b | g_RenderVertexBuffer[1].projected_vertex.transformed_x | g_RenderVertexBuffer[1].projected_vertex.transformed_y
     SUB ESP,0x30                        ; 004a1d3d
     MOV ECX,0xc                         ; 004a1d40
     MOV ESI,0x688014                    ; 004a1d45 | g_RenderVertexBuffer
@@ -124,11 +124,11 @@ section .text
     CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a1d6f
         ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
     ADD ESP,0x8                         ; 004a1d74
-    MOV ESI,0x688074                    ; 004a1d77 | DAT_00688074
+    MOV ESI,0x688074                    ; 004a1d77 | g_RenderVertexBuffer[2].projected_vertex.transformed_x
     SUB ESP,0x30                        ; 004a1d7c
     MOV ECX,0xc                         ; 004a1d7f
     MOV EDI,ESP                         ; 004a1d84
-    MOVSD.REP ES:EDI,ESI                ; 004a1d86 | DAT_00688074 | g_RenderVertexBuffer[2].projected_vertex.transformed_y
+    MOVSD.REP ES:EDI,ESI                ; 004a1d86 | g_RenderVertexBuffer[2].projected_vertex.transformed_x | g_RenderVertexBuffer[2].projected_vertex.transformed_y
     SUB ESP,0x30                        ; 004a1d88
     MOV ECX,0xc                         ; 004a1d8b
     MOV ESI,0x688014                    ; 004a1d90 | g_RenderVertexBuffer
@@ -149,29 +149,29 @@ section .text
     CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a1dbc
         ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
     ADD ESP,0x8                         ; 004a1dc1
-    MOV ESI,0x6880a4                    ; 004a1dc4 | DAT_006880a4
+    MOV ESI,0x6880a4                    ; 004a1dc4 | g_RenderVertexBuffer[3].projected_vertex.transformed_x
     SUB ESP,0x30                        ; 004a1dc9
     MOV ECX,0xc                         ; 004a1dcc
     MOV EDI,ESP                         ; 004a1dd1
     MOV EBX,0x688014                    ; 004a1dd3 | g_RenderVertexBuffer
-    MOVSD.REP ES:EDI,ESI                ; 004a1dd8 | DAT_006880a4 | g_RenderVertexBuffer[3].projected_vertex.transformed_y
+    MOVSD.REP ES:EDI,ESI                ; 004a1dd8 | g_RenderVertexBuffer[3].projected_vertex.transformed_x | g_RenderVertexBuffer[3].projected_vertex.transformed_y
     SUB ESP,0x30                        ; 004a1dda
     MOV ECX,0xc                         ; 004a1ddd
     MOV ESI,0x688014                    ; 004a1de2 | g_RenderVertexBuffer
     MOV EDI,ESP                         ; 004a1de7
-    ADD EBX,0x30                        ; 004a1de9 | DAT_00688044
+    ADD EBX,0x30                        ; 004a1de9 | g_RenderVertexBuffer[1].projected_vertex.transformed_x
     MOVSD.REP ES:EDI,ESI                ; 004a1dec | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 004a1dee
         ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004a1df3
     XOR ESI,ESI                         ; 004a1df6
-    TEST byte ptr [EBX + 0x13],0x80     ; 004a1df8 | DAT_00688054+3 | DAT_00688084+3
+    TEST byte ptr [EBX + 0x13],0x80     ; 004a1df8 | g_RenderVertexBuffer[1].projected_vertex.screen_x+3 | g_RenderVertexBuffer[2].projected_vertex.screen_x+3
         ;   Label: LAB_004a1df8
     JZ 0x004a1e37                       ; 004a1dfc
         ;   XREF to: 004a1e37 (CONDITIONAL_JUMP)  ; LAB_004a1e37
     INC ESI                             ; 004a1dfe
         ;   Label: LAB_004a1dfe
-    ADD EBX,0x30                        ; 004a1dff | DAT_00688074
+    ADD EBX,0x30                        ; 004a1dff | g_RenderVertexBuffer[2].projected_vertex.transformed_x
     CMP ESI,0x3                         ; 004a1e02
     JL 0x004a1df8                       ; 004a1e05
         ;   XREF to: 004a1df8 (CONDITIONAL_JUMP)  ; LAB_004a1df8
@@ -200,7 +200,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004a1e45
     PUSH EAX                            ; 004a1e49
     MOV EBP,dword ptr [EBX + 0x10]      ; 004a1e4a | g_RenderVertexBuffer[1].projected_vertex.screen_x | g_RenderVertexBuffer[2].projected_vertex.screen_x
-    MOV EDI,dword ptr [EBX + 0x14]      ; 004a1e4d | DAT_00688058 | g_RenderVertexBuffer[2].projected_vertex.screen_y
+    MOV EDI,dword ptr [EBX + 0x14]      ; 004a1e4d | g_RenderVertexBuffer[1].projected_vertex.screen_y | g_RenderVertexBuffer[2].projected_vertex.screen_y
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004a1e50
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004a1e55

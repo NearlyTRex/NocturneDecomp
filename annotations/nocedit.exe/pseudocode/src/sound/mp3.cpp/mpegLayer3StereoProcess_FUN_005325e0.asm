@@ -86,13 +86,13 @@
 ;   undefined4 g_Layer3BandIndex[0].l[1]
 ;   undefined4 g_Layer3BandIndex[0].l[2]
 ;   undefined4 g_Layer3BandIndex[0].l[3]
-;   undefined4 DAT_0067e6f8
-;   undefined4 DAT_0067e6fc
-;   undefined4 DAT_0067e718
-;   undefined4 DAT_0067e71c
-;   undefined4 DAT_0067e750
-;   undefined4 DAT_0067e754
-;   undefined4 DAT_0067e758
+;   undefined4 g_Layer3BandIndex[0].l[12]
+;   undefined4 g_Layer3BandIndex[0].l[13]
+;   undefined4 g_Layer3BandIndex[0].l[20]
+;   undefined4 g_Layer3BandIndex[0].l[21]
+;   undefined4 g_Layer3BandIndex[0].s[11]
+;   undefined4 g_Layer3BandIndex[0].s[12]
+;   undefined4 g_Layer3BandIndex[0].s[13]
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -425,10 +425,10 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1fec]    ; 00532a5b
         ;   Label: LAB_00532a5b
     MOV EDI,0x240                       ; 00532a62
-    MOV ECX,dword ptr [EAX + 0x67e71c]  ; 00532a67 | DAT_0067e71c
+    MOV ECX,dword ptr [EAX + 0x67e71c]  ; 00532a67 | g_Layer3BandIndex[0].l[21]
     MOV EDX,dword ptr [ESP + 0x1fec]    ; 00532a6d
     SUB EDI,ECX                         ; 00532a74
-    MOV EDX,dword ptr [EDX + 0x67e718]  ; 00532a76 | DAT_0067e718
+    MOV EDX,dword ptr [EDX + 0x67e718]  ; 00532a76 | g_Layer3BandIndex[0].l[20]
     TEST EDI,EDI                        ; 00532a7c
     JLE 0x005326c0                      ; 00532a7e
         ;   XREF to: 005326c0 (CONDITIONAL_JUMP)  ; LAB_005326c0
@@ -491,8 +491,8 @@ section .text
         ;   Label: LAB_00532b70
     LEA EAX,[ESI*0x4 + 0x0]             ; 00532b77
     ADD EAX,EDI                         ; 00532b7e
-    MOV EBX,dword ptr [EAX + 0x67e728]  ; 00532b80 | DAT_0067e6fc | DAT_0067e758
-    MOV EDX,dword ptr [EAX + 0x67e724]  ; 00532b86 | DAT_0067e6f8 | DAT_0067e754
+    MOV EBX,dword ptr [EAX + 0x67e728]  ; 00532b80 | g_Layer3BandIndex[0].l[13] | g_Layer3BandIndex[0].s[13]
+    MOV EDX,dword ptr [EAX + 0x67e724]  ; 00532b86 | g_Layer3BandIndex[0].l[12] | g_Layer3BandIndex[0].s[12]
     MOV EAX,dword ptr [ESP + 0x1fb0]    ; 00532b8c
     SUB EBX,EDX                         ; 00532b93
     IMUL EAX,EBX                        ; 00532b95
@@ -556,8 +556,8 @@ section .text
     LEA EDX,[ESI*0x4 + 0x0]             ; 00532c54
     MOV EAX,dword ptr [ESP + 0x2014]    ; 00532c5b
     MOV ESI,dword ptr [ESP + 0x2014]    ; 00532c62
-    MOV EDI,dword ptr [EAX + 0x67e724]  ; 00532c69 | DAT_0067e758
-    MOV ESI,dword ptr [ESI + 0x67e728]  ; 00532c6f | DAT_0067e75c
+    MOV EDI,dword ptr [EAX + 0x67e724]  ; 00532c69 | g_Layer3BandIndex[0].s[13]
+    MOV ESI,dword ptr [ESI + 0x67e728]  ; 00532c6f | g_Layer3BandIndex[1].l[0]
     MOV EAX,dword ptr [ESP + 0x205c]    ; 00532c75
     SUB ESI,EDI                         ; 00532c7c
     IMUL EAX,ESI                        ; 00532c7e
@@ -760,15 +760,15 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1fe8]    ; 00532f55
         ;   Label: LAB_00532f55
     MOV ESI,dword ptr [ESP + 0x1fe8]    ; 00532f5c
-    MOV EDI,dword ptr [EAX + 0x67e750]  ; 00532f63 | DAT_0067e750
-    MOV ESI,dword ptr [ESI + 0x67e754]  ; 00532f69 | DAT_0067e754
+    MOV EDI,dword ptr [EAX + 0x67e750]  ; 00532f63 | g_Layer3BandIndex[0].s[11]
+    MOV ESI,dword ptr [ESI + 0x67e754]  ; 00532f69 | g_Layer3BandIndex[0].s[12]
     MOV EDX,dword ptr [ESP + 0x205c]    ; 00532f6f
     SUB ESI,EDI                         ; 00532f76
     IMUL EDX,ESI                        ; 00532f78
     MOV ECX,dword ptr [ESP + 0x1fe8]    ; 00532f7b
     MOV ESI,dword ptr [ESP + 0x1fe8]    ; 00532f82
-    MOV EBX,dword ptr [ECX + 0x67e754]  ; 00532f89 | DAT_0067e754
-    MOV ESI,dword ptr [ESI + 0x67e758]  ; 00532f8f | DAT_0067e758
+    MOV EBX,dword ptr [ECX + 0x67e754]  ; 00532f89 | g_Layer3BandIndex[0].s[12]
+    MOV ESI,dword ptr [ESI + 0x67e758]  ; 00532f8f | g_Layer3BandIndex[0].s[13]
     MOV ECX,dword ptr [ESP + 0x205c]    ; 00532f95
     SUB ESI,EBX                         ; 00532f9c
     IMUL ECX,ESI                        ; 00532f9e
@@ -844,8 +844,8 @@ section .text
         ;   Label: LAB_00533098
     LEA EAX,[ESI*0x4 + 0x0]             ; 0053309f
     ADD EAX,EBX                         ; 005330a6
-    MOV EBX,dword ptr [EAX + 0x67e728]  ; 005330a8 | DAT_0067e6fc | DAT_0067e758
-    MOV EDI,dword ptr [EAX + 0x67e724]  ; 005330ae | DAT_0067e6f8 | DAT_0067e754
+    MOV EBX,dword ptr [EAX + 0x67e728]  ; 005330a8 | g_Layer3BandIndex[0].l[13] | g_Layer3BandIndex[0].s[13]
+    MOV EDI,dword ptr [EAX + 0x67e724]  ; 005330ae | g_Layer3BandIndex[0].l[12] | g_Layer3BandIndex[0].s[12]
     MOV EDX,dword ptr [ESP + 0x1fc8]    ; 005330b4
     SUB EBX,EDI                         ; 005330bb
     IMUL EDX,EBX                        ; 005330bd
@@ -903,8 +903,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x2004]    ; 00533171
         ;   Label: LAB_00533171
     MOV ESI,dword ptr [ESP + 0x2004]    ; 00533178
-    MOV EDI,dword ptr [EAX + 0x67e724]  ; 0053317f | DAT_0067e758 | DAT_0067e75c
-    MOV ESI,dword ptr [ESI + 0x67e728]  ; 00533185 | DAT_0067e75c | DAT_0067e760
+    MOV EDI,dword ptr [EAX + 0x67e724]  ; 0053317f | g_Layer3BandIndex[0].s[13] | g_Layer3BandIndex[1].l[0]
+    MOV ESI,dword ptr [ESI + 0x67e728]  ; 00533185 | g_Layer3BandIndex[1].l[0] | g_Layer3BandIndex[1].l[1]
     MOV EAX,dword ptr [ESP + 0x1f9c]    ; 0053318b
     SUB ESI,EDI                         ; 00533192
     IMUL EAX,ESI                        ; 00533194
@@ -968,15 +968,15 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1fe4]    ; 0053326b
         ;   Label: LAB_0053326b
     MOV ESI,dword ptr [ESP + 0x1fe4]    ; 00533272
-    MOV EDI,dword ptr [EAX + 0x67e750]  ; 00533279 | DAT_0067e750
-    MOV ESI,dword ptr [ESI + 0x67e754]  ; 0053327f | DAT_0067e754
+    MOV EDI,dword ptr [EAX + 0x67e750]  ; 00533279 | g_Layer3BandIndex[0].s[11]
+    MOV ESI,dword ptr [ESI + 0x67e754]  ; 0053327f | g_Layer3BandIndex[0].s[12]
     MOV ECX,dword ptr [ESP + 0x1f9c]    ; 00533285
     SUB ESI,EDI                         ; 0053328c
     IMUL ECX,ESI                        ; 0053328e
     MOV EDX,dword ptr [ESP + 0x1fe4]    ; 00533291
     MOV ESI,dword ptr [ESP + 0x1fe4]    ; 00533298
-    MOV EBX,dword ptr [EDX + 0x67e754]  ; 0053329f | DAT_0067e754
-    MOV ESI,dword ptr [ESI + 0x67e758]  ; 005332a5 | DAT_0067e758
+    MOV EBX,dword ptr [EDX + 0x67e754]  ; 0053329f | g_Layer3BandIndex[0].s[12]
+    MOV ESI,dword ptr [ESI + 0x67e758]  ; 005332a5 | g_Layer3BandIndex[0].s[13]
     MOV EDX,dword ptr [ESP + 0x1f9c]    ; 005332ab
     SUB ESI,EBX                         ; 005332b2
     IMUL EDX,ESI                        ; 005332b4

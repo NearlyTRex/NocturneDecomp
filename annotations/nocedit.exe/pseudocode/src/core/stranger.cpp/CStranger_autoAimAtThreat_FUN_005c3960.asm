@@ -61,7 +61,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_03267198
+;   undefined4 g_CDemonSetInstance.threat_count
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -326,14 +326,14 @@ section .text
     MOV EAX,[0x006810c8]                ; 005c3cc9 | g_CDemonSetPtr
         ;   Label: LAB_005c3cc9
     MOV EDX,dword ptr [ESP + 0x178]     ; 005c3cce
-    CMP EDX,dword ptr [EAX + 0x152f20]  ; 005c3cd5 | DAT_03267198
+    CMP EDX,dword ptr [EAX + 0x152f20]  ; 005c3cd5 | g_CDemonSetInstance.threat_count
     JGE 0x005c4151                      ; 005c3cdb
         ;   XREF to: 005c4151 (CONDITIONAL_JUMP)  ; LAB_005c4151
     MOV ESI,dword ptr [ESP + 0x17c]     ; 005c3ce1
     MOV EBX,dword ptr [0x00823c4c]      ; 005c3ce8 | g_CCharacterClassInfo.name_hash
     ADD EAX,ESI                         ; 005c3cee
     PUSH EBX                            ; 005c3cf0
-    MOV EDI,dword ptr [EAX + 0x152f24]  ; 005c3cf1 | DAT_0326719c | DAT_032671a0
+    MOV EDI,dword ptr [EAX + 0x152f24]  ; 005c3cf1 | g_CDemonSetInstance.threats[0] | g_CDemonSetInstance.threats[1]
     PUSH EDI                            ; 005c3cf7
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005c3cf8
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
@@ -443,7 +443,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 005c3e59 | g_CDemonSetPtr
     ADD EAX,EDX                         ; 005c3e5e
     PUSH 0x6598c0                       ; 005c3e60 | g_CVectorTypeInfo
-    MOV EAX,dword ptr [EAX + 0x152f24]  ; 005c3e65 | DAT_0326719c
+    MOV EAX,dword ptr [EAX + 0x152f24]  ; 005c3e65 | g_CDemonSetInstance.threats[0]
     PUSH 0xa                            ; 005c3e6b
     MOV dword ptr [ESP + 0x1a4],EAX     ; 005c3e6d
     LEA EAX,[ESP + 0x20]                ; 005c3e74

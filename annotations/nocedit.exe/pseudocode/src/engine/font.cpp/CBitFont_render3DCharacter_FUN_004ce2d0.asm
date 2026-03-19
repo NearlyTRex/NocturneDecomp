@@ -30,15 +30,15 @@
 ; Referenced Globals:
 ;   SMRGLTextureBasic g_FontTextureInfo
 ;   undefined4 g_TempFilenameBuffer
-;   undefined4 DAT_0067b559
-;   undefined4 DAT_0067b55a
-;   undefined4 DAT_0067b55b
+;   undefined4 g_FontTextureInfo.texture_name[1]
+;   undefined4 g_FontTextureInfo.texture_name[2]
+;   undefined4 g_FontTextureInfo.texture_name[3]
 ;   SRenderVertex g_QuadVertex0
 ;   undefined4 g_QuadVertex0_Y
 ;   undefined4 g_QuadVertex0_U
 ;   undefined4 g_QuadVertex0_V
-;   undefined4 DAT_0077256c
-;   undefined4 DAT_00772570
+;   undefined4 g_QuadVertex0.u
+;   undefined4 g_QuadVertex0.v
 ;   undefined4 g_CurrentRenderColorRed
 ;   undefined4 g_CurrentRenderColorGreen
 ;   undefined4 g_CurrentRenderColorBlue
@@ -76,13 +76,13 @@ section .text
     PUSH EDI                            ; 004ce304 | g_TempFilenameBuffer
     MOV AL,byte ptr [ESI]               ; 004ce305
         ;   Label: LAB_004ce305
-    MOV byte ptr [EDI],AL               ; 004ce307 | g_TempFilenameBuffer | DAT_0067b55a
+    MOV byte ptr [EDI],AL               ; 004ce307 | g_TempFilenameBuffer | g_FontTextureInfo.texture_name[2]
     CMP AL,0x0                          ; 004ce309
     JZ 0x004ce31d                       ; 004ce30b
         ;   XREF to: 004ce31d (CONDITIONAL_JUMP)  ; LAB_004ce31d
     MOV AL,byte ptr [ESI + 0x1]         ; 004ce30d
     ADD ESI,0x2                         ; 004ce310
-    MOV byte ptr [EDI + 0x1],AL         ; 004ce313 | DAT_0067b559 | DAT_0067b55b
+    MOV byte ptr [EDI + 0x1],AL         ; 004ce313 | g_FontTextureInfo.texture_name[1] | g_FontTextureInfo.texture_name[3]
     ADD EDI,0x2                         ; 004ce316
     CMP AL,0x0                          ; 004ce319
     JNZ 0x004ce305                      ; 004ce31b
@@ -322,16 +322,16 @@ section .text
     SHL ECX,0x2                         ; 004ce670
     SUB ECX,EDI                         ; 004ce673
     SHL ECX,0x4                         ; 004ce675
-    MOV dword ptr [ECX + 0x68802c],EBX  ; 004ce678 | DAT_0077256c
-    MOV dword ptr [ECX + 0x688030],EDX  ; 004ce67e | DAT_00772570
+    MOV dword ptr [ECX + 0x68802c],EBX  ; 004ce678 | g_QuadVertex0.u
+    MOV dword ptr [ECX + 0x688030],EDX  ; 004ce67e | g_QuadVertex0.v
     MOV ECX,dword ptr [ESP + 0x40]      ; 004ce684
     MOV dword ptr [ESP + 0x2c],ECX      ; 004ce688
     MOV EDI,dword ptr [ESP + 0x2c]      ; 004ce68c
     SHL ECX,0x2                         ; 004ce690
     SUB ECX,EDI                         ; 004ce693
     SHL ECX,0x4                         ; 004ce695
-    MOV dword ptr [ECX + 0x68802c],EAX  ; 004ce698 | DAT_0077259c
-    MOV dword ptr [ECX + 0x688030],EDX  ; 004ce69e | DAT_007725a0
+    MOV dword ptr [ECX + 0x68802c],EAX  ; 004ce698 | g_QuadVertex1.u
+    MOV dword ptr [ECX + 0x688030],EDX  ; 004ce69e | g_QuadVertex1.v
     MOV EDX,EBP                         ; 004ce6a4
     LEA ECX,[EBP*0x4 + 0x0]             ; 004ce6a6
     SUB ECX,EBP                         ; 004ce6ad
@@ -347,9 +347,9 @@ section .text
     MOV dword ptr [ESP + 0x18],EDX      ; 004ce6d6
     SHL ECX,0x4                         ; 004ce6da
     MOV EAX,0x4                         ; 004ce6dd
-    MOV dword ptr [ECX + 0x68802c],EBX  ; 004ce6e2 | DAT_007725fc
+    MOV dword ptr [ECX + 0x68802c],EBX  ; 004ce6e2 | g_QuadVertex3.u
     MOV dword ptr [ESP + 0x8],EAX       ; 004ce6e8
-    MOV dword ptr [ECX + 0x688030],ESI  ; 004ce6ec | DAT_00772600
+    MOV dword ptr [ECX + 0x688030],ESI  ; 004ce6ec | g_QuadVertex3.v
     XOR ECX,ECX                         ; 004ce6f2
     MOV EAX,dword ptr [ESP + 0x40]      ; 004ce6f4
     MOV dword ptr [ESP + 0x14],ECX      ; 004ce6f8

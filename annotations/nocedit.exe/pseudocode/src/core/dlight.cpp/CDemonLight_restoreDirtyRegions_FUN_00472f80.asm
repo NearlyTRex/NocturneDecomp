@@ -22,9 +22,9 @@
 ;   TerminatedCString s_CDemonLight_blitZBuffer__0061f0ee
 ;   int g_DirtySpanCount
 ;   int[256] g_DirtySpanStarts
-;   undefined4 DAT_026a6adc
+;   undefined4 g_DirtySpanStarts[1]
 ;   int[256] g_DirtySpanEnds
-;   undefined4 DAT_026a6edc
+;   undefined4 g_DirtySpanEnds[1]
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -161,7 +161,7 @@ section .text
     XOR EAX,EAX                         ; 004730b4
     MOV EBX,dword ptr [EDX + 0x4]       ; 004730b6
         ;   Label: LAB_004730b6
-    CMP EBX,dword ptr [EAX + 0x26a6ad8] ; 004730b9 | g_DirtySpanStarts | DAT_026a6adc
+    CMP EBX,dword ptr [EAX + 0x26a6ad8] ; 004730b9 | g_DirtySpanStarts | g_DirtySpanStarts[1]
     JGE 0x00473210                      ; 004730bf
         ;   XREF to: 00473210 (CONDITIONAL_JUMP)  ; LAB_00473210
     ADD EAX,0x4                         ; 004730c5
@@ -175,10 +175,10 @@ section .text
         ;   XREF to: 004730f9 (CONDITIONAL_JUMP)  ; LAB_004730f9
     MOV ECX,dword ptr [ESP + 0x20]      ; 004730d0
     MOV EAX,dword ptr [EDX]             ; 004730d4
-    MOV dword ptr [ECX + 0x26a6ad8],EAX ; 004730d6 | g_DirtySpanStarts | DAT_026a6adc
+    MOV dword ptr [ECX + 0x26a6ad8],EAX ; 004730d6 | g_DirtySpanStarts | g_DirtySpanStarts[1]
     MOV EAX,dword ptr [EDX + 0x4]       ; 004730dc
     LEA EDX,[ECX + 0x4]                 ; 004730df
-    MOV dword ptr [ECX + 0x26a6ed8],EAX ; 004730e2 | g_DirtySpanEnds | DAT_026a6edc
+    MOV dword ptr [ECX + 0x26a6ed8],EAX ; 004730e2 | g_DirtySpanEnds | g_DirtySpanEnds[1]
     MOV ECX,dword ptr [0x026a6ad4]      ; 004730e8 | g_DirtySpanCount
     INC ECX                             ; 004730ee
     MOV dword ptr [ESP + 0x20],EDX      ; 004730ef
@@ -202,15 +202,15 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0047311d
         ;   Label: LAB_0047311d
     IMUL EAX,dword ptr [EBP + 0x1cc0]   ; 00473121
-    MOV ECX,dword ptr [ESI + 0x26a6ad8] ; 00473128 | g_DirtySpanStarts | DAT_026a6adc
-    MOV EBX,dword ptr [ESI + 0x26a6ad8] ; 0047312e | g_DirtySpanStarts | DAT_026a6adc
+    MOV ECX,dword ptr [ESI + 0x26a6ad8] ; 00473128 | g_DirtySpanStarts | g_DirtySpanStarts[1]
+    MOV EBX,dword ptr [ESI + 0x26a6ad8] ; 0047312e | g_DirtySpanStarts | g_DirtySpanStarts[1]
     ADD EAX,ECX                         ; 00473134
     MOV EDX,dword ptr [EBP + 0x2f94]    ; 00473136
     ADD EAX,EAX                         ; 0047313c
     MOV ECX,dword ptr [EBP + 0x2f9c]    ; 0047313e
     ADD EDX,EAX                         ; 00473144
     ADD ECX,EAX                         ; 00473146
-    MOV EAX,dword ptr [ESI + 0x26a6ed8] ; 00473148 | g_DirtySpanEnds | DAT_026a6edc
+    MOV EAX,dword ptr [ESI + 0x26a6ed8] ; 00473148 | g_DirtySpanEnds | g_DirtySpanEnds[1]
     SUB EAX,EBX                         ; 0047314e
     ADD EAX,EAX                         ; 00473150
     ADD EAX,0x2                         ; 00473152
@@ -286,29 +286,29 @@ section .text
         ;   XREF to: 00472fee (UNCONDITIONAL_JUMP)  ; LAB_00472fee
     MOV EBX,dword ptr [EDX]             ; 00473210
         ;   Label: LAB_00473210
-    CMP EBX,dword ptr [EAX + 0x26a6ed8] ; 00473212 | DAT_026a6edc
+    CMP EBX,dword ptr [EAX + 0x26a6ed8] ; 00473212 | g_DirtySpanEnds[1]
     JG 0x004730c5                       ; 00473218
         ;   XREF to: 004730c5 (CONDITIONAL_JUMP)  ; LAB_004730c5
-    CMP EBX,dword ptr [EAX + 0x26a6ad8] ; 0047321e | DAT_026a6adc
+    CMP EBX,dword ptr [EAX + 0x26a6ad8] ; 0047321e | g_DirtySpanStarts[1]
     JL 0x00473235                       ; 00473224
         ;   XREF to: 00473235 (CONDITIONAL_JUMP)  ; LAB_00473235
     MOV EBX,dword ptr [EDX + 0x4]       ; 00473226
-    CMP EBX,dword ptr [EAX + 0x26a6ed8] ; 00473229 | DAT_026a6edc
+    CMP EBX,dword ptr [EAX + 0x26a6ed8] ; 00473229 | g_DirtySpanEnds[1]
     JLE 0x004730f9                      ; 0047322f
         ;   XREF to: 004730f9 (CONDITIONAL_JUMP)  ; LAB_004730f9
     MOV EBX,dword ptr [EDX]             ; 00473235
         ;   Label: LAB_00473235
-    CMP EBX,dword ptr [EAX + 0x26a6ad8] ; 00473237 | DAT_026a6adc
+    CMP EBX,dword ptr [EAX + 0x26a6ad8] ; 00473237 | g_DirtySpanStarts[1]
     JGE 0x0047324a                      ; 0047323d
         ;   XREF to: 0047324a (CONDITIONAL_JUMP)  ; LAB_0047324a
     MOV ECX,0x1                         ; 0047323f
-    MOV dword ptr [EAX + 0x26a6ad8],EBX ; 00473244 | DAT_026a6adc
+    MOV dword ptr [EAX + 0x26a6ad8],EBX ; 00473244 | g_DirtySpanStarts[1]
     MOV EBX,dword ptr [EDX + 0x4]       ; 0047324a
         ;   Label: LAB_0047324a
-    CMP EBX,dword ptr [EAX + 0x26a6ed8] ; 0047324d | DAT_026a6edc
+    CMP EBX,dword ptr [EAX + 0x26a6ed8] ; 0047324d | g_DirtySpanEnds[1]
     JLE 0x00473260                      ; 00473253
         ;   XREF to: 00473260 (CONDITIONAL_JUMP)  ; LAB_00473260
-    MOV dword ptr [EAX + 0x26a6ed8],EBX ; 00473255 | DAT_026a6edc
+    MOV dword ptr [EAX + 0x26a6ed8],EBX ; 00473255 | g_DirtySpanEnds[1]
     JMP 0x004730f9                      ; 0047325b
         ;   XREF to: 004730f9 (UNCONDITIONAL_JUMP)  ; LAB_004730f9
     TEST ECX,ECX                        ; 00473260

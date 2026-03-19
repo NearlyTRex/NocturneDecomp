@@ -26,7 +26,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CEventList g_CEventListInstance
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81c70
+;   undefined4 g_CGameInstance.freeze_enemies_enabled
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050
@@ -40,7 +40,7 @@ section .text
         ;   Label: core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004a9fd1
     MOV EAX,[0x0067b654]                ; 004a9fd5 | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x1d4],0x0     ; 004a9fda | DAT_02d81c70
+    CMP dword ptr [EAX + 0x1d4],0x0     ; 004a9fda | g_CGameInstance.freeze_enemies_enabled
     JNZ 0x004a9ffb                      ; 004a9fe1
         ;   XREF to: 004a9ffb (CONDITIONAL_JUMP)  ; LAB_004a9ffb
     PUSH 0x6243da                       ; 004a9fe3 | = "Capture"

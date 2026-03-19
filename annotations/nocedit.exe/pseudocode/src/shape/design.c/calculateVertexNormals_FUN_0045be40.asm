@@ -28,14 +28,14 @@
 ;   double g_NormalizeThreshold = 0.00100000000000000
 ;   int g_VertexCount
 ;   SVertexData[20000] g_VertexNormals
-;   undefined4 DAT_01687e90
-;   undefined4 DAT_01687e94
+;   undefined4 g_VertexNormals[0].vertex.y
+;   undefined4 g_VertexNormals[0].vertex.z
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
-;   undefined4 DAT_016e99b4
-;   undefined4 DAT_016e99b8
-;   undefined4 DAT_016e99bc
-;   undefined4 DAT_016e99c0
+;   undefined4 g_ModelPolygonData[0].vertex_indices_count
+;   undefined4 g_ModelPolygonData[0].normal.x
+;   undefined4 g_ModelPolygonData[0].normal.y
+;   undefined4 g_ModelPolygonData[0].normal.z
 ;
 ; Called Functions:
 ;   shape_design.c_calculatePolygonNormal_FUN_0045caa0
@@ -111,7 +111,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x28]     ; 0045bef7
         ;   Label: LAB_0045bef7
     MOV EDX,dword ptr [EBP + -0x20]     ; 0045befa
-    CMP EAX,dword ptr [EDX + 0xa4]      ; 0045befd | DAT_016e99b4
+    CMP EAX,dword ptr [EDX + 0xa4]      ; 0045befd | g_ModelPolygonData[0].vertex_indices_count
     JGE 0x0045bf4e                      ; 0045bf03
         ;   XREF to: 0045bf4e (CONDITIONAL_JUMP)  ; LAB_0045bf4e
     MOV EAX,dword ptr [EBP + -0x28]     ; 0045bf05
@@ -125,15 +125,15 @@ section .text
     INC dword ptr [EBP + -0x24]         ; 0045bf1c
     MOV EAX,dword ptr [EBP + -0x20]     ; 0045bf1f
     FLD float ptr [EBP + -0x10]         ; 0045bf22
-    FADD float ptr [EAX + 0xa8]         ; 0045bf25 | DAT_016e99b8
+    FADD float ptr [EAX + 0xa8]         ; 0045bf25 | g_ModelPolygonData[0].normal.x
     FSTP float ptr [EBP + -0x10]        ; 0045bf2b
     MOV EAX,dword ptr [EBP + -0x20]     ; 0045bf2e
     FLD float ptr [EBP + -0xc]          ; 0045bf31
-    FADD float ptr [EAX + 0xac]         ; 0045bf34 | DAT_016e99bc
+    FADD float ptr [EAX + 0xac]         ; 0045bf34 | g_ModelPolygonData[0].normal.y
     FSTP float ptr [EBP + -0xc]         ; 0045bf3a
     MOV EAX,dword ptr [EBP + -0x20]     ; 0045bf3d
     FLD float ptr [EBP + -0x8]          ; 0045bf40
-    FADD float ptr [EAX + 0xb0]         ; 0045bf43 | DAT_016e99c0
+    FADD float ptr [EAX + 0xb0]         ; 0045bf43 | g_ModelPolygonData[0].normal.z
     FSTP float ptr [EBP + -0x8]         ; 0045bf49
     JMP 0x0045bef1                      ; 0045bf4c
         ;   XREF to: 0045bef1 (UNCONDITIONAL_JUMP)  ; LAB_0045bef1
@@ -184,10 +184,10 @@ section .text
     MOV dword ptr [EDX + 0x1687e8c],EAX ; 0045bfbd | g_VertexNormals
     IMUL EDX,dword ptr [EBP + -0x30],0x14 ; 0045bfc3
     MOV EAX,dword ptr [EBP + -0xc]      ; 0045bfc7
-    MOV dword ptr [EDX + 0x1687e90],EAX ; 0045bfca | DAT_01687e90
+    MOV dword ptr [EDX + 0x1687e90],EAX ; 0045bfca | g_VertexNormals[0].vertex.y
     IMUL EDX,dword ptr [EBP + -0x30],0x14 ; 0045bfd0
     MOV EAX,dword ptr [EBP + -0x8]      ; 0045bfd4
-    MOV dword ptr [EDX + 0x1687e94],EAX ; 0045bfd7 | DAT_01687e94
+    MOV dword ptr [EDX + 0x1687e94],EAX ; 0045bfd7 | g_VertexNormals[0].vertex.z
     JMP 0x0045be88                      ; 0045bfdd
         ;   XREF to: 0045be88 (UNCONDITIONAL_JUMP)  ; LAB_0045be88
         ;   Label: LAB_0045bfdd

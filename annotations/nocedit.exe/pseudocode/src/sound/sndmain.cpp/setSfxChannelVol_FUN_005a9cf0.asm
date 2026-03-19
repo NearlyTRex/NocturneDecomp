@@ -22,11 +22,11 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CSfxSlot[64] g_SfxSlots
-;   undefined4 DAT_03f5db14
+;   undefined4 g_SfxSlots[0].hardware_buffer_handle
 ;   undefined4 g_SfxSlots[0].field7_0x74
 ;   undefined4 g_SfxSlots[1].status
 ;   undefined4 g_SfxSlots[1].dsound_buffer
-;   undefined4 DAT_03f5dc40
+;   undefined4 g_SfxSlots[1].playback_state
 ;   int g_SfxLastSlot
 ;   float[32] g_SfxChannelVolumes
 ;   CSoundDevice* g_CSoundDevicePtr
@@ -83,7 +83,7 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_005abd30 ; 005a9d4a
         ;   XREF to: 005abd30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_005abd30()
     LEA EDI,[EBX + 0x4a00]              ; 005a9d4f | g_SfxLastSlot
-    CMP dword ptr [EBX + 0x74],0x0      ; 005a9d55 | g_SfxSlots[0].field7_0x74 | DAT_03f5dc40
+    CMP dword ptr [EBX + 0x74],0x0      ; 005a9d55 | g_SfxSlots[0].field7_0x74 | g_SfxSlots[1].playback_state
         ;   Label: LAB_005a9d55
     JNZ 0x005a9d6e                      ; 005a9d59
         ;   XREF to: 005a9d6e (CONDITIONAL_JUMP)  ; LAB_005a9d6e
@@ -98,7 +98,7 @@ section .text
     POP ESI                             ; 005a9d6b
     POP EBX                             ; 005a9d6c
     RET                                 ; 005a9d6d
-    CMP dword ptr [EBX + 0x70],0x0      ; 005a9d6e | DAT_03f5db14 | g_SfxSlots[1].dsound_buffer
+    CMP dword ptr [EBX + 0x70],0x0      ; 005a9d6e | g_SfxSlots[0].hardware_buffer_handle | g_SfxSlots[1].dsound_buffer
         ;   Label: LAB_005a9d6e
     JZ 0x005a9d5b                       ; 005a9d72
         ;   XREF to: 005a9d5b (CONDITIONAL_JUMP)  ; LAB_005a9d5b

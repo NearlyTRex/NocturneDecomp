@@ -23,10 +23,10 @@
 ;   undefined4 g_CapturedFaces[0].render_flags
 ;   undefined4 g_CapturedFaces[0].depth
 ;   undefined4 g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0
-;   undefined4 DAT_02c6d604
-;   undefined4 DAT_02c6d608
-;   undefined4 DAT_02c6d60c
-;   undefined4 DAT_02c6d610
+;   undefined4 g_CapturedFaces[0].face_data.vertex_indices.vertex_index_2
+;   undefined4 g_CapturedFaces[0].face_data.u_coord_1
+;   undefined4 g_CapturedFaces[0].face_data.v_coord_0
+;   undefined4 g_CapturedFaces[0].face_data.v_coord_2
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -96,10 +96,10 @@ section .text
     LEA EDI,[EDX + 0x2c6d600]           ; 0048d94a | g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0
     MOV EAX,[0x02c6d5f0]                ; 0048d950 | g_CaptureTextureCount
     MOVSD ES:EDI,ESI                    ; 0048d955 | g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0
-    MOVSD ES:EDI,ESI                    ; 0048d956 | DAT_02c6d604
-    MOVSD ES:EDI,ESI                    ; 0048d957 | DAT_02c6d608
-    MOVSD ES:EDI,ESI                    ; 0048d958 | DAT_02c6d60c
-    MOVSW ES:EDI,ESI                    ; 0048d959 | DAT_02c6d610
+    MOVSD ES:EDI,ESI                    ; 0048d956 | g_CapturedFaces[0].face_data.vertex_indices.vertex_index_2
+    MOVSD ES:EDI,ESI                    ; 0048d957 | g_CapturedFaces[0].face_data.u_coord_1
+    MOVSD ES:EDI,ESI                    ; 0048d958 | g_CapturedFaces[0].face_data.v_coord_0
+    MOVSW ES:EDI,ESI                    ; 0048d959 | g_CapturedFaces[0].face_data.v_coord_2
     MOV dword ptr [EDX + 0x2c6d5f4],EAX ; 0048d95b | g_CapturedFaces
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0048d961
     XOR ECX,ECX                         ; 0048d965

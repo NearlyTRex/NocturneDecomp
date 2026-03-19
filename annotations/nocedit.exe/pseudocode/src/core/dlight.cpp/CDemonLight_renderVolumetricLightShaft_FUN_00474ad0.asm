@@ -53,14 +53,14 @@
 ;   double DOUBLE_0061f203 = 8192
 ;   float FLOAT_0065c900 = 256
 ;   float FLOAT_0065c908 = 0.00390625
-;   undefined4 DAT_0066fef0
+;   undefined4 g_LightTextures[1].base.type
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
-;   undefined4 DAT_00f80000
+;   undefined4 g_LightBufferPool[11][183800]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   float g_PerspectiveReciprocal
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81aa8
+;   undefined4 g_CGameInstance.halo_mode
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
@@ -94,7 +94,7 @@ section .text
     JZ 0x00474af6                       ; 00474ae9
         ;   XREF to: 00474af6 (CONDITIONAL_JUMP)  ; LAB_00474af6
     MOV EAX,[0x0067b654]                ; 00474aeb | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0xc],0x2       ; 00474af0 | DAT_02d81aa8
+    CMP dword ptr [EAX + 0xc],0x2       ; 00474af0 | g_CGameInstance.halo_mode
     JZ 0x00474afd                       ; 00474af4
         ;   XREF to: 00474afd (CONDITIONAL_JUMP)  ; LAB_00474afd
     MOV ESP,EBP                         ; 00474af6
@@ -450,7 +450,7 @@ section .text
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0047504a
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0047504f
-    PUSH 0x66fef0                       ; 00475052 | DAT_0066fef0
+    PUSH 0x66fef0                       ; 00475052 | g_LightTextures[1].base.type
     MOV EDX,dword ptr [0x006703ec]      ; 00475057 | g_CDemonRendererPtr2
     PUSH EDX                            ; 0047505d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 0047505e
@@ -516,19 +516,19 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00475175 | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0xb8],0xffff   ; 00475177
     MOV EAX,dword ptr [EDX]             ; 00475181 | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0x18],0xf80000 ; 00475183 | DAT_00f80000
+    MOV dword ptr [EAX + 0x18],0xf80000 ; 00475183 | g_LightBufferPool[11][183800]
     MOV EAX,dword ptr [EDX]             ; 0047518a | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0x1c],0xf80000 ; 0047518c | DAT_00f80000
+    MOV dword ptr [EAX + 0x1c],0xf80000 ; 0047518c | g_LightBufferPool[11][183800]
     MOV EAX,dword ptr [EDX]             ; 00475193 | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0x48],0x80000  ; 00475195
     MOV EAX,dword ptr [EDX]             ; 0047519c | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0x4c],0xf80000 ; 0047519e | DAT_00f80000
+    MOV dword ptr [EAX + 0x4c],0xf80000 ; 0047519e | g_LightBufferPool[11][183800]
     MOV EAX,dword ptr [EDX]             ; 004751a5 | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0x78],0x80000  ; 004751a7
     MOV EAX,dword ptr [EDX]             ; 004751ae | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0x7c],0x80000  ; 004751b0
     MOV EAX,dword ptr [EDX]             ; 004751b7 | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0xa8],0xf80000 ; 004751b9 | DAT_00f80000
+    MOV dword ptr [EAX + 0xa8],0xf80000 ; 004751b9 | g_LightBufferPool[11][183800]
     MOV EAX,dword ptr [EDX]             ; 004751c3 | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0xac],0x80000  ; 004751c5
     LEA EAX,[ESP + 0xc]                 ; 004751cf

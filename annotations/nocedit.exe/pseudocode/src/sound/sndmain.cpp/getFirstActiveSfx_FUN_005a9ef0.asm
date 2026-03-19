@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   undefined4 g_SfxSlots[0].field7_0x74
-;   undefined4 DAT_03f5db1c
-;   undefined4 DAT_03f5dc40
-;   undefined4 DAT_03f5dc44
+;   undefined4 g_SfxSlots[0].sample
+;   undefined4 g_SfxSlots[1].playback_state
+;   undefined4 g_SfxSlots[1].sample
 ;
 ; *****************************************************************************
 
@@ -22,11 +22,11 @@ section .text
     XOR EAX,EAX                         ; 005a9ef1
     XOR EDX,EDX                         ; 005a9ef3
     XOR ECX,ECX                         ; 005a9ef5
-    CMP ECX,dword ptr [EAX + 0x3f5db1c] ; 005a9ef7 | DAT_03f5db1c | DAT_03f5dc44
+    CMP ECX,dword ptr [EAX + 0x3f5db1c] ; 005a9ef7 | g_SfxSlots[0].sample | g_SfxSlots[1].sample
         ;   Label: LAB_005a9ef7
     JZ 0x005a9f09                       ; 005a9efd
         ;   XREF to: 005a9f09 (CONDITIONAL_JUMP)  ; LAB_005a9f09
-    MOV ESI,dword ptr [EAX + 0x3f5db18] ; 005a9eff | g_SfxSlots[0].field7_0x74 | DAT_03f5dc40
+    MOV ESI,dword ptr [EAX + 0x3f5db18] ; 005a9eff | g_SfxSlots[0].field7_0x74 | g_SfxSlots[1].playback_state
     CMP ECX,ESI                         ; 005a9f05
     JNZ 0x005a9f1a                      ; 005a9f07
         ;   XREF to: 005a9f1a (CONDITIONAL_JUMP)  ; LAB_005a9f1a

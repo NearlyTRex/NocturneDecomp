@@ -12,7 +12,7 @@
 ;   TerminatedCString s_waveOutReset_failed_0065238f
 ;   HWAVEOUT g_WaveOutHandle
 ;   LPWAVEHDR[8] g_WaveOutHeaders
-;   undefined4 DAT_03f6ad5c
+;   undefined4 g_WaveOutHeaders[1]
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_killSoundThread_FUN_005abcb0
@@ -35,7 +35,7 @@ section .text
         ;   XREF to: 005b0a05 (CONDITIONAL_JUMP)  ; LAB_005b0a05
     XOR EBX,EBX                         ; 005b09d2
         ;   Label: LAB_005b09d2
-    MOV EDI,dword ptr [EBX + 0x3f6ad58] ; 005b09d4 | g_WaveOutHeaders | DAT_03f6ad5c
+    MOV EDI,dword ptr [EBX + 0x3f6ad58] ; 005b09d4 | g_WaveOutHeaders | g_WaveOutHeaders[1]
         ;   Label: LAB_005b09d4
     TEST EDI,EDI                        ; 005b09da
     JZ 0x005b09ee                       ; 005b09dc

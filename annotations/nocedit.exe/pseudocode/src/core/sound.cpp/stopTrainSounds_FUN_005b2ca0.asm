@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_03f6b7c8
-;   undefined4 DAT_03f6b7d8
+;   undefined4 g_TrainNoiseArray[0].sfx_handle
+;   undefined4 g_TrainNoiseArray[1].sfx_handle
 ;   uint g_TrainRailNoiseHandle
 ;   uint g_TrainExteriorAmbientHandle
 ;
@@ -20,7 +20,7 @@ section .text
     PUSH EBX                            ; 005b2ca0
         ;   Label: core_sound.cpp_stopTrainSounds_FUN_005b2ca0
     XOR EBX,EBX                         ; 005b2ca1
-    MOV EDX,dword ptr [EBX + 0x3f6b7c8] ; 005b2ca3 | DAT_03f6b7c8 | DAT_03f6b7d8
+    MOV EDX,dword ptr [EBX + 0x3f6b7c8] ; 005b2ca3 | g_TrainNoiseArray[0].sfx_handle | g_TrainNoiseArray[1].sfx_handle
         ;   Label: LAB_005b2ca3
     PUSH EDX                            ; 005b2ca9
     ADD EBX,0x10                        ; 005b2caa

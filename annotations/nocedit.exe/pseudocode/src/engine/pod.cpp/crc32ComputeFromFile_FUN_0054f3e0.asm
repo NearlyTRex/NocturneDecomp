@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   char[65536] g_FileIOBuffer
-;   undefined4 DAT_030d5091
+;   undefined4 g_FileIOBuffer+1
 ;
 ; Called Functions:
 ;   crt_stdio.c_fread_FUN_005fd990
@@ -44,7 +44,7 @@ section .text
     MOV EAX,EBP                         ; 0054f418
     XOR EDX,EDX                         ; 0054f41a
         ;   Label: LAB_0054f41a
-    MOV DL,byte ptr [ESI]               ; 0054f41c | g_FileIOBuffer | DAT_030d5091
+    MOV DL,byte ptr [ESI]               ; 0054f41c | g_FileIOBuffer | g_FileIOBuffer+1
     PUSH EDX                            ; 0054f41e
     PUSH EAX                            ; 0054f41f
     INC ESI                             ; 0054f420
@@ -79,7 +79,7 @@ section .text
     MOV EDI,dword ptr [ESP]             ; 0054f467
     XOR EDX,EDX                         ; 0054f46a
         ;   Label: LAB_0054f46a
-    MOV DL,byte ptr [EBX]               ; 0054f46c | g_FileIOBuffer | DAT_030d5091
+    MOV DL,byte ptr [EBX]               ; 0054f46c | g_FileIOBuffer | g_FileIOBuffer+1
     PUSH EDX                            ; 0054f46e
     PUSH EAX                            ; 0054f46f
     INC EBX                             ; 0054f470

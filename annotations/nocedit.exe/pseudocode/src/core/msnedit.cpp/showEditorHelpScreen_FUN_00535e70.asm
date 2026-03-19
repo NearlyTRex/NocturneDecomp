@@ -851,7 +851,7 @@ section .text
     ADD ECX,0x16                        ; 00536937
     MOV EBX,dword ptr [0x0067d550]      ; 0053693a | g_CDemonMissionPtr
     MOV dword ptr [ESP + 0xfc],ECX      ; 00536940
-    MOV EBX,dword ptr [EBX + 0x28]      ; 00536947 | DAT_02f33768
+    MOV EBX,dword ptr [EBX + 0x28]      ; 00536947 | g_CDemonMissionInstance.selected_actor
     TEST EBX,EBX                        ; 0053694a
     JZ 0x00536a03                       ; 0053694c
         ;   XREF to: 00536a03 (CONDITIONAL_JUMP)  ; LAB_00536a03

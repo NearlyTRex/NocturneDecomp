@@ -36,11 +36,11 @@
 ;   double DOUBLE_0063b0da = 0.0000100000000000000
 ;   int g_Mp3SynthesisTablesInitialized = 0x1
 ;   double[4][36] g_Mp3WindowTables
-;   undefined4 DAT_02f46690
+;   undefined4 g_Mp3WindowTables[0][1]
 ;   undefined4 g_Mp3WindowTables[1][0]
-;   undefined4 DAT_02f467b0
-;   undefined4 DAT_02f46838
-;   undefined4 DAT_02f4683c
+;   undefined4 g_Mp3WindowTables[1][1]
+;   undefined4 g_Mp3WindowTables[1][18]
+;   undefined4 g_Mp3WindowTables[1][18]+4
 ;   ... and 40 more
 ;
 ; Called Functions:
@@ -72,7 +72,7 @@ section .text
     FSIN                                ; 005336c3
     ADD ECX,0x8                         ; 005336c5
     INC EDX                             ; 005336c8
-    FSTP double ptr [ECX + 0x2f46680]   ; 005336c9 | g_Mp3WindowTables | DAT_02f46690
+    FSTP double ptr [ECX + 0x2f46680]   ; 005336c9 | g_Mp3WindowTables | g_Mp3WindowTables[0][1]
     CMP EDX,0x24                        ; 005336cf
     JL 0x005336b9                       ; 005336d2
         ;   XREF to: 005336b9 (CONDITIONAL_JUMP)  ; LAB_005336b9
@@ -90,7 +90,7 @@ section .text
     FSIN                                ; 005336f2
     ADD ECX,0x8                         ; 005336f4
     INC EDX                             ; 005336f7
-    FSTP double ptr [ECX + 0x2f467a0]   ; 005336f8 | g_Mp3WindowTables[1][0] | DAT_02f467b0
+    FSTP double ptr [ECX + 0x2f467a0]   ; 005336f8 | g_Mp3WindowTables[1][0] | g_Mp3WindowTables[1][1]
     CMP EDX,0x12                        ; 005336fe
     JL 0x005336e8                       ; 00533701
         ;   XREF to: 005336e8 (CONDITIONAL_JUMP)  ; LAB_005336e8
@@ -101,8 +101,8 @@ section .text
     ADD EAX,0x8                         ; 00533711
         ;   Label: LAB_00533711
     XOR ECX,ECX                         ; 00533714
-    MOV dword ptr [EAX + 0x2f467a4],EBX ; 00533716 | DAT_02f4683c | DAT_02f46844
-    MOV dword ptr [EAX + 0x2f467a0],ECX ; 0053371c | DAT_02f46838 | DAT_02f46840
+    MOV dword ptr [EAX + 0x2f467a4],EBX ; 00533716 | g_Mp3WindowTables[1][18]+4 | g_Mp3WindowTables[1][19]+4
+    MOV dword ptr [EAX + 0x2f467a0],ECX ; 0053371c | g_Mp3WindowTables[1][18] | g_Mp3WindowTables[1][19]
     CMP EAX,0xc0                        ; 00533722
     JNZ 0x00533711                      ; 00533727
         ;   XREF to: 00533711 (CONDITIONAL_JUMP)  ; LAB_00533711
@@ -120,7 +120,7 @@ section .text
     FSIN                                ; 0053374e
     ADD ECX,0x8                         ; 00533750
     INC EDX                             ; 00533753
-    FSTP double ptr [ECX + 0x2f467a0]   ; 00533754 | DAT_02f46840 | DAT_02f46848 | DAT_02f46850
+    FSTP double ptr [ECX + 0x2f467a0]   ; 00533754 | g_Mp3WindowTables[1][19] | g_Mp3WindowTables[1][20] | g_Mp3WindowTables[1][21]
     CMP EDX,0x1e                        ; 0053375a
     JL 0x00533742                       ; 0053375d
         ;   XREF to: 00533742 (CONDITIONAL_JUMP)  ; LAB_00533742
@@ -131,8 +131,8 @@ section .text
     ADD EAX,0x8                         ; 0053376a
         ;   Label: LAB_0053376a
     XOR ESI,ESI                         ; 0053376d
-    MOV dword ptr [EAX + 0x2f467a0],ESI ; 0053376f | DAT_02f46898 | DAT_02f468a0
-    MOV dword ptr [EAX + 0x2f467a4],ESI ; 00533775 | DAT_02f4689c | DAT_02f468a4
+    MOV dword ptr [EAX + 0x2f467a0],ESI ; 0053376f | g_Mp3WindowTables[1][30] | g_Mp3WindowTables[1][31]
+    MOV dword ptr [EAX + 0x2f467a4],ESI ; 00533775 | g_Mp3WindowTables[1][30]+4 | g_Mp3WindowTables[1][31]+4
     CMP EAX,0x120                       ; 0053377b
     JNZ 0x0053376a                      ; 00533780
         ;   XREF to: 0053376a (CONDITIONAL_JUMP)  ; LAB_0053376a
@@ -140,8 +140,8 @@ section .text
     ADD EAX,0x8                         ; 00533784
         ;   Label: LAB_00533784
     XOR EDX,EDX                         ; 00533787
-    MOV dword ptr [EAX + 0x2f469e0],EDX ; 00533789 | g_Mp3WindowTables[3][0] | DAT_02f469f0
-    MOV dword ptr [EAX + 0x2f469e4],EDX ; 0053378f | DAT_02f469ec | DAT_02f469f4
+    MOV dword ptr [EAX + 0x2f469e0],EDX ; 00533789 | g_Mp3WindowTables[3][0] | g_Mp3WindowTables[3][1]
+    MOV dword ptr [EAX + 0x2f469e4],EDX ; 0053378f | g_Mp3WindowTables[3][0]+4 | g_Mp3WindowTables[3][1]+4
     CMP EAX,0x30                        ; 00533795
     JNZ 0x00533784                      ; 00533798
         ;   XREF to: 00533784 (CONDITIONAL_JUMP)  ; LAB_00533784
@@ -159,7 +159,7 @@ section .text
     FSIN                                ; 005337bf
     ADD ECX,0x8                         ; 005337c1
     INC EDX                             ; 005337c4
-    FSTP double ptr [ECX + 0x2f469e0]   ; 005337c5 | DAT_02f469f8 | DAT_02f46a00
+    FSTP double ptr [ECX + 0x2f469e0]   ; 005337c5 | g_Mp3WindowTables[3][2] | g_Mp3WindowTables[3][3]
     CMP EDX,0xc                         ; 005337cb
     JL 0x005337b3                       ; 005337ce
         ;   XREF to: 005337b3 (CONDITIONAL_JUMP)  ; LAB_005337b3
@@ -171,8 +171,8 @@ section .text
     ADD EAX,0x8                         ; 005337e0
         ;   Label: LAB_005337e0
     XOR EBX,EBX                         ; 005337e3
-    MOV dword ptr [EAX + 0x2f469e4],ESI ; 005337e5 | DAT_02f46a4c | DAT_02f46a54
-    MOV dword ptr [EAX + 0x2f469e0],EBX ; 005337eb | DAT_02f46a48 | DAT_02f46a50
+    MOV dword ptr [EAX + 0x2f469e4],ESI ; 005337e5 | g_Mp3WindowTables[3][12]+4 | g_Mp3WindowTables[3][13]+4
+    MOV dword ptr [EAX + 0x2f469e0],EBX ; 005337eb | g_Mp3WindowTables[3][12] | g_Mp3WindowTables[3][13]
     CMP EAX,0x90                        ; 005337f1
     JNZ 0x005337e0                      ; 005337f6
         ;   XREF to: 005337e0 (CONDITIONAL_JUMP)  ; LAB_005337e0
@@ -188,7 +188,7 @@ section .text
     FSIN                                ; 00533815
     ADD ECX,0x8                         ; 00533817
     INC EDX                             ; 0053381a
-    FSTP double ptr [ECX + 0x2f469e0]   ; 0053381b | DAT_02f46a50 | DAT_02f46a58 | DAT_02f46a60
+    FSTP double ptr [ECX + 0x2f469e0]   ; 0053381b | g_Mp3WindowTables[3][13] | g_Mp3WindowTables[3][14] | g_Mp3WindowTables[3][15]
     CMP EDX,0x24                        ; 00533821
     JL 0x0053380b                       ; 00533824
         ;   XREF to: 0053380b (CONDITIONAL_JUMP)  ; LAB_0053380b
@@ -206,7 +206,7 @@ section .text
     FSIN                                ; 00533844
     ADD ECX,0x8                         ; 00533846
     INC EDX                             ; 00533849
-    FSTP double ptr [ECX + 0x2f468c0]   ; 0053384a | g_Mp3WindowTables[2][0] | DAT_02f468d0
+    FSTP double ptr [ECX + 0x2f468c0]   ; 0053384a | g_Mp3WindowTables[2][0] | g_Mp3WindowTables[2][1]
     CMP EDX,0xc                         ; 00533850
     JL 0x0053383a                       ; 00533853
         ;   XREF to: 0053383a (CONDITIONAL_JUMP)  ; LAB_0053383a
@@ -216,8 +216,8 @@ section .text
     ADD EAX,0x8                         ; 0053385e
         ;   Label: LAB_0053385e
     XOR EDI,EDI                         ; 00533861
-    MOV dword ptr [EAX + 0x2f468c0],EDI ; 00533863 | DAT_02f46928 | DAT_02f46930
-    MOV dword ptr [EAX + 0x2f468c4],EDI ; 00533869 | DAT_02f4692c | DAT_02f46934
+    MOV dword ptr [EAX + 0x2f468c0],EDI ; 00533863 | g_Mp3WindowTables[2][12] | g_Mp3WindowTables[2][13]
+    MOV dword ptr [EAX + 0x2f468c4],EDI ; 00533869 | g_Mp3WindowTables[2][12]+4 | g_Mp3WindowTables[2][13]+4
     CMP EAX,0x120                       ; 0053386f
     JNZ 0x0053385e                      ; 00533874
         ;   XREF to: 0053385e (CONDITIONAL_JUMP)  ; LAB_0053385e
@@ -245,7 +245,7 @@ section .text
     FCOS                                ; 005338b0
     ADD EBX,0x8                         ; 005338b2
     ADD ECX,0x2                         ; 005338b5
-    FSTP double ptr [EBX + 0x2f46b00]   ; 005338b8 | g_Mp3DctMatrix | DAT_02f46b10
+    FSTP double ptr [EBX + 0x2f46b00]   ; 005338b8 | g_Mp3DctMatrix | g_Mp3DctMatrix[0][1]
     CMP ECX,EDX                         ; 005338be
     JL 0x005338a0                       ; 005338c0
         ;   XREF to: 005338a0 (CONDITIONAL_JUMP)  ; LAB_005338a0
@@ -286,7 +286,7 @@ section .text
     FCOS                                ; 00533923
     ADD EBX,0x8                         ; 00533925
     ADD ECX,ESI                         ; 00533928
-    FSTP double ptr [EBX + 0x2f46d40]   ; 0053392a | g_Mp3PolyCoefficients | DAT_02f46d50
+    FSTP double ptr [EBX + 0x2f46d40]   ; 0053392a | g_Mp3PolyCoefficients | g_Mp3PolyCoefficients[0][1]
     CMP EBX,EDI                         ; 00533930
     JNZ 0x0053390a                      ; 00533932
         ;   XREF to: 0053390a (CONDITIONAL_JUMP)  ; LAB_0053390a
@@ -402,21 +402,21 @@ section .text
     XOR EAX,EAX                         ; 00533a5a
     FLD float ptr [EBX + 0xc]           ; 00533a5c
         ;   Label: LAB_00533a5c
-    FMUL double ptr [EAX + 0x2f46b10]   ; 00533a5f | DAT_02f46b10 | DAT_02f46b40
+    FMUL double ptr [EAX + 0x2f46b10]   ; 00533a5f | g_Mp3DctMatrix[0][1] | g_Mp3DctMatrix[1][1]
     FLD float ptr [EBX]                 ; 00533a65
-    FMUL double ptr [EAX + 0x2f46b08]   ; 00533a67 | g_Mp3DctMatrix | DAT_02f46b38
+    FMUL double ptr [EAX + 0x2f46b08]   ; 00533a67 | g_Mp3DctMatrix | g_Mp3DctMatrix[1][0]
     FADDP                               ; 00533a6d
     FLD float ptr [EBX + 0x18]          ; 00533a6f
-    FMUL double ptr [EAX + 0x2f46b18]   ; 00533a72 | DAT_02f46b18 | DAT_02f46b48
+    FMUL double ptr [EAX + 0x2f46b18]   ; 00533a72 | g_Mp3DctMatrix[0][2] | g_Mp3DctMatrix[1][2]
     FADDP                               ; 00533a78
     FLD float ptr [EBX + 0x24]          ; 00533a7a
-    FMUL double ptr [EAX + 0x2f46b20]   ; 00533a7d | DAT_02f46b20 | DAT_02f46b50
+    FMUL double ptr [EAX + 0x2f46b20]   ; 00533a7d | g_Mp3DctMatrix[0][3] | g_Mp3DctMatrix[1][3]
     FADDP                               ; 00533a83
     FLD float ptr [EBX + 0x30]          ; 00533a85
-    FMUL double ptr [EAX + 0x2f46b28]   ; 00533a88 | DAT_02f46b28 | DAT_02f46b58
+    FMUL double ptr [EAX + 0x2f46b28]   ; 00533a88 | g_Mp3DctMatrix[0][4] | g_Mp3DctMatrix[1][4]
     FADDP                               ; 00533a8e
     FLD float ptr [EBX + 0x3c]          ; 00533a90
-    FMUL double ptr [EAX + 0x2f46b30]   ; 00533a93 | DAT_02f46b30 | DAT_02f46b60
+    FMUL double ptr [EAX + 0x2f46b30]   ; 00533a93 | g_Mp3DctMatrix[0][5] | g_Mp3DctMatrix[1][5]
     FADDP                               ; 00533a99
     FMUL double ptr [ECX + 0x2f468c8]   ; 00533a9b | g_Mp3WindowTables[2][0]
     ADD EDX,0x4                         ; 00533aa1
@@ -436,21 +436,21 @@ section .text
     XOR EDX,EDX                         ; 00533ac3
     FLD float ptr [EBX + 0x10]          ; 00533ac5
         ;   Label: LAB_00533ac5
-    FMUL double ptr [EAX + 0x2f46b10]   ; 00533ac8 | DAT_02f46b10 | DAT_02f46b40
+    FMUL double ptr [EAX + 0x2f46b10]   ; 00533ac8 | g_Mp3DctMatrix[0][1] | g_Mp3DctMatrix[1][1]
     FLD float ptr [EBX + 0x4]           ; 00533ace
-    FMUL double ptr [EAX + 0x2f46b08]   ; 00533ad1 | g_Mp3DctMatrix | DAT_02f46b38
+    FMUL double ptr [EAX + 0x2f46b08]   ; 00533ad1 | g_Mp3DctMatrix | g_Mp3DctMatrix[1][0]
     FADDP                               ; 00533ad7
     FLD float ptr [EBX + 0x1c]          ; 00533ad9
-    FMUL double ptr [EAX + 0x2f46b18]   ; 00533adc | DAT_02f46b18 | DAT_02f46b48
+    FMUL double ptr [EAX + 0x2f46b18]   ; 00533adc | g_Mp3DctMatrix[0][2] | g_Mp3DctMatrix[1][2]
     FADDP                               ; 00533ae2
     FLD float ptr [EBX + 0x28]          ; 00533ae4
-    FMUL double ptr [EAX + 0x2f46b20]   ; 00533ae7 | DAT_02f46b20 | DAT_02f46b50
+    FMUL double ptr [EAX + 0x2f46b20]   ; 00533ae7 | g_Mp3DctMatrix[0][3] | g_Mp3DctMatrix[1][3]
     FADDP                               ; 00533aed
     FLD float ptr [EBX + 0x34]          ; 00533aef
-    FMUL double ptr [EAX + 0x2f46b28]   ; 00533af2 | DAT_02f46b28 | DAT_02f46b58
+    FMUL double ptr [EAX + 0x2f46b28]   ; 00533af2 | g_Mp3DctMatrix[0][4] | g_Mp3DctMatrix[1][4]
     FADDP                               ; 00533af8
     FLD float ptr [EBX + 0x40]          ; 00533afa
-    FMUL double ptr [EAX + 0x2f46b30]   ; 00533afd | DAT_02f46b30 | DAT_02f46b60
+    FMUL double ptr [EAX + 0x2f46b30]   ; 00533afd | g_Mp3DctMatrix[0][5] | g_Mp3DctMatrix[1][5]
     FADDP                               ; 00533b03
     FMUL double ptr [EDX + 0x2f468c8]   ; 00533b05 | g_Mp3WindowTables[2][0]
     ADD ECX,0x4                         ; 00533b0b
@@ -470,21 +470,21 @@ section .text
     XOR EDX,EDX                         ; 00533b2d
     FLD float ptr [EBX + 0x14]          ; 00533b2f
         ;   Label: LAB_00533b2f
-    FMUL double ptr [EAX + 0x2f46b10]   ; 00533b32 | DAT_02f46b10 | DAT_02f46b40
+    FMUL double ptr [EAX + 0x2f46b10]   ; 00533b32 | g_Mp3DctMatrix[0][1] | g_Mp3DctMatrix[1][1]
     FLD float ptr [EBX + 0x8]           ; 00533b38
-    FMUL double ptr [EAX + 0x2f46b08]   ; 00533b3b | g_Mp3DctMatrix | DAT_02f46b38
+    FMUL double ptr [EAX + 0x2f46b08]   ; 00533b3b | g_Mp3DctMatrix | g_Mp3DctMatrix[1][0]
     FADDP                               ; 00533b41
     FLD float ptr [EBX + 0x20]          ; 00533b43
-    FMUL double ptr [EAX + 0x2f46b18]   ; 00533b46 | DAT_02f46b18 | DAT_02f46b48
+    FMUL double ptr [EAX + 0x2f46b18]   ; 00533b46 | g_Mp3DctMatrix[0][2] | g_Mp3DctMatrix[1][2]
     FADDP                               ; 00533b4c
     FLD float ptr [EBX + 0x2c]          ; 00533b4e
-    FMUL double ptr [EAX + 0x2f46b20]   ; 00533b51 | DAT_02f46b20 | DAT_02f46b50
+    FMUL double ptr [EAX + 0x2f46b20]   ; 00533b51 | g_Mp3DctMatrix[0][3] | g_Mp3DctMatrix[1][3]
     FADDP                               ; 00533b57
     FLD float ptr [EBX + 0x38]          ; 00533b59
-    FMUL double ptr [EAX + 0x2f46b28]   ; 00533b5c | DAT_02f46b28 | DAT_02f46b58
+    FMUL double ptr [EAX + 0x2f46b28]   ; 00533b5c | g_Mp3DctMatrix[0][4] | g_Mp3DctMatrix[1][4]
     FADDP                               ; 00533b62
     FLD float ptr [EBX + 0x44]          ; 00533b64
-    FMUL double ptr [EAX + 0x2f46b30]   ; 00533b67 | DAT_02f46b30 | DAT_02f46b60
+    FMUL double ptr [EAX + 0x2f46b30]   ; 00533b67 | g_Mp3DctMatrix[0][5] | g_Mp3DctMatrix[1][5]
     FADDP                               ; 00533b6d
     FMUL double ptr [EDX + 0x2f468c8]   ; 00533b6f | g_Mp3WindowTables[2][0]
     ADD ECX,0x4                         ; 00533b75

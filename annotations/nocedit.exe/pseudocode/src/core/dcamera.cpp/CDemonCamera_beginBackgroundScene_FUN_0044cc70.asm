@@ -20,7 +20,7 @@
 ;   int g_BackgroundSavedBitsPerPixel
 ;   int g_BackgroundSavedUseExternalRenderer
 ;   void*[1200] g_BackgroundSavedScreenBufferArray
-;   undefined4 DAT_0151abc0
+;   undefined4 g_BackgroundSavedScreenBufferArray[1]
 ;   int g_BackgroundSavedRedBitPosition
 ;   int g_BackgroundSavedGreenBitPosition
 ;   int g_BackgroundSavedBlueBitPosition
@@ -65,10 +65,10 @@ section .text
     PUSH EDI                            ; 0044ccc7 | g_BackgroundSavedScreenBufferArray
     MOV EAX,ECX                         ; 0044ccc8
     SHR ECX,0x2                         ; 0044ccca
-    MOVSD.REP ES:EDI,ESI                ; 0044cccd | g_BackgroundSavedScreenBufferArray | DAT_0151abc0 | g_ScreenBufferArray
+    MOVSD.REP ES:EDI,ESI                ; 0044cccd | g_BackgroundSavedScreenBufferArray | g_BackgroundSavedScreenBufferArray[1] | g_ScreenBufferArray
     MOV CL,AL                           ; 0044cccf
     AND CL,0x3                          ; 0044ccd1
-    MOVSB.REP ES:EDI,ESI                ; 0044ccd4 | g_BackgroundSavedScreenBufferArray | DAT_0151abc0 | g_ScreenBufferArray
+    MOVSB.REP ES:EDI,ESI                ; 0044ccd4 | g_BackgroundSavedScreenBufferArray | g_BackgroundSavedScreenBufferArray[1] | g_ScreenBufferArray
     POP EDI                             ; 0044ccd6
     MOV ESI,0x20                        ; 0044ccd7
     MOV EAX,[0x02d01f24]                ; 0044ccdc | g_RedBitPosition

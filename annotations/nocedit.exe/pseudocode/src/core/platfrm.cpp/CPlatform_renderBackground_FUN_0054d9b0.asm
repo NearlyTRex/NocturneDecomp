@@ -20,7 +20,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CEventList g_CEventListInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_0326eef0
+;   undefined4 g_CDemonSetInstance.per_pixel_lighting_enabled
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -138,7 +138,7 @@ section .text
         ;   XREF to: 0054db47 (CONDITIONAL_JUMP)  ; LAB_0054db47
     MOV EAX,[0x006810c8]                ; 0054dab3 | g_CDemonSetPtr
     LEA EBX,[ESP + 0x1c]                ; 0054dab8
-    MOV dword ptr [EAX + 0x15ac78],0x1  ; 0054dabc | DAT_0326eef0
+    MOV dword ptr [EAX + 0x15ac78],0x1  ; 0054dabc | g_CDemonSetInstance.per_pixel_lighting_enabled
     LEA EAX,[ESI + 0x20]                ; 0054dac6
     FLD float ptr [EAX]                 ; 0054dac9
     FMUL float ptr [0x00662280]         ; 0054dacb | FLOAT_00662280
@@ -166,7 +166,7 @@ section .text
         ;   XREF to: 00478d20 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     MOV EAX,[0x006810c8]                ; 0054db16 | g_CDemonSetInstance | g_CDemonSetPtr
     ADD ESP,0xc                         ; 0054db1b
-    MOV dword ptr [EAX + 0x15ac78],0x0  ; 0054db1e | DAT_0326eef0
+    MOV dword ptr [EAX + 0x15ac78],0x0  ; 0054db1e | g_CDemonSetInstance.per_pixel_lighting_enabled
     PUSH ESI                            ; 0054db28
         ;   Label: LAB_0054db28
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 0054db29

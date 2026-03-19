@@ -917,7 +917,7 @@ section .text
     SUB ECX,ECX                         ; 0056599d
     DEC ECX                             ; 0056599f
     XOR EAX,EAX                         ; 005659a0
-    SCASB.REPNE ES:EDI                  ; 005659a2 | g_CurrentLineBuffer | DAT_031101c1
+    SCASB.REPNE ES:EDI                  ; 005659a2 | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     NOT ECX                             ; 005659a4
     DEC ECX                             ; 005659a6
     MOV EAX,[0x0310fd44]                ; 005659a7 | g_CurrentEditingColumn
@@ -936,7 +936,7 @@ section .text
     MOV DL,0x20                         ; 005659c5
     INC ESI                             ; 005659c7
         ;   Label: LAB_005659c7
-    MOV byte ptr [ESI + 0x31101bf],DL   ; 005659c8 | g_CurrentLineBuffer | DAT_031101c1
+    MOV byte ptr [ESI + 0x31101bf],DL   ; 005659c8 | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     CMP ESI,EAX                         ; 005659ce
     JL 0x005659c7                       ; 005659d0
         ;   XREF to: 005659c7 (CONDITIONAL_JUMP)  ; LAB_005659c7
@@ -953,7 +953,7 @@ section .text
     PUSH ECX                            ; 005659e5
     XOR DH,DH                           ; 005659e6
     PUSH EBP                            ; 005659e8
-    MOV byte ptr [ESI + 0x31101c0],DH   ; 005659e9 | DAT_031101c1 | DAT_031101c2 | DAT_031101c3
+    MOV byte ptr [ESI + 0x31101c0],DH   ; 005659e9 | g_CurrentLineBuffer+2 | g_CurrentLineBuffer+3 | g_CurrentLineBuffer+4
     CALL core_script.cpp_CScript_editorIndex2X_FUN_00566b30 ; 005659ef
         ;   XREF to: 00566b30 (UNCONDITIONAL_CALL)  ; uint core_script.cpp_CScript_editorIndex2X_FUN_00566b30(CScript * this_ptr, int line_number, uint buffer_index)
     ADD ESP,0xc                         ; 005659f4

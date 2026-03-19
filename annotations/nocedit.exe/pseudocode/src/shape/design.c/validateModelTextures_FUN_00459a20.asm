@@ -37,9 +37,9 @@
 ;   TerminatedCString s_Hit_a_key_0061ad73
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
-;   undefined4 DAT_016e9914
-;   undefined4 DAT_016e9915
-;   undefined4 DAT_016e9916
+;   undefined4 g_ModelPolygonData[0].texture_name[0]
+;   undefined4 g_ModelPolygonData[0].texture_name[1]
+;   undefined4 g_ModelPolygonData[0].texture_name[2]
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -120,13 +120,13 @@ section .text
     ADD ESI,0x4                         ; 00459abb
     LEA EDI,[EBP + -0x74]               ; 00459abe
     PUSH EDI                            ; 00459ac1
-    MOV AL,byte ptr [ESI]               ; 00459ac2 | DAT_016e9914 | DAT_016e9916
+    MOV AL,byte ptr [ESI]               ; 00459ac2 | g_ModelPolygonData[0].texture_name[0] | g_ModelPolygonData[0].texture_name[2]
         ;   Label: LAB_00459ac2
     MOV byte ptr [EDI],AL               ; 00459ac4
     CMP AL,0x0                          ; 00459ac6
     JZ 0x00459ada                       ; 00459ac8
         ;   XREF to: 00459ada (CONDITIONAL_JUMP)  ; LAB_00459ada
-    MOV AL,byte ptr [ESI + 0x1]         ; 00459aca | DAT_016e9915 | DAT_016e9917
+    MOV AL,byte ptr [ESI + 0x1]         ; 00459aca | g_ModelPolygonData[0].texture_name[1] | g_ModelPolygonData[0].texture_name[3]
     ADD ESI,0x2                         ; 00459acd
     MOV byte ptr [EDI + 0x1],AL         ; 00459ad0
     ADD EDI,0x2                         ; 00459ad3
@@ -436,7 +436,7 @@ section .text
     ADD ESP,0xc                         ; 00459d8a
     IMUL EAX,dword ptr [EBP + -0xc],0x184 ; 00459d8d
         ;   Label: LAB_00459d8d
-    MOV byte ptr [EAX + 0x16e9914],0x0  ; 00459d94 | DAT_016e9914
+    MOV byte ptr [EAX + 0x16e9914],0x0  ; 00459d94 | g_ModelPolygonData[0].texture_name[0]
     JMP 0x00459a98                      ; 00459d9b
         ;   XREF to: 00459a98 (UNCONDITIONAL_JUMP)  ; LAB_00459a98
         ;   Label: LAB_00459d9b

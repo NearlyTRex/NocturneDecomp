@@ -29,10 +29,10 @@
 ;   DWORD g_JoyButtons
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.x_center
-;   undefined4 DAT_02d81b44
-;   undefined4 DAT_02d81b48
-;   undefined4 DAT_02d81b4c
-;   undefined4 DAT_02d81b50
+;   undefined4 g_CGameInstance.y_center
+;   undefined4 g_CGameInstance.x_stick_min
+;   undefined4 g_CGameInstance.x_stick_max
+;   undefined4 g_CGameInstance.y_stick_min
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -288,13 +288,13 @@ section .text
         ;   Label: LAB_00510769
     MOV EDX,dword ptr [ESP + 0x208]     ; 0051076e
     MOV dword ptr [EAX + 0xa4],EDX      ; 00510775 | g_CGameInstance.x_center
-    MOV dword ptr [EAX + 0xac],ESI      ; 0051077b | DAT_02d81b48
-    MOV dword ptr [EAX + 0xb0],EBP      ; 00510781 | DAT_02d81b4c
-    MOV dword ptr [EAX + 0xb8],EDI      ; 00510787 | DAT_02d81b54
+    MOV dword ptr [EAX + 0xac],ESI      ; 0051077b | g_CGameInstance.x_stick_min
+    MOV dword ptr [EAX + 0xb0],EBP      ; 00510781 | g_CGameInstance.x_stick_max
+    MOV dword ptr [EAX + 0xb8],EDI      ; 00510787 | g_CGameInstance.y_stick_max
     MOV EDX,dword ptr [ESP + 0x20c]     ; 0051078d
-    MOV dword ptr [EAX + 0xa8],EDX      ; 00510794 | DAT_02d81b44
+    MOV dword ptr [EAX + 0xa8],EDX      ; 00510794 | g_CGameInstance.y_center
     MOV EDX,dword ptr [ESP + 0x210]     ; 0051079a
-    MOV dword ptr [EAX + 0xb4],EDX      ; 005107a1 | DAT_02d81b50
+    MOV dword ptr [EAX + 0xb4],EDX      ; 005107a1 | g_CGameInstance.y_stick_min
     MOV EAX,0x1                         ; 005107a7
     ADD ESP,0x214                       ; 005107ac
     POP EBP                             ; 005107b2

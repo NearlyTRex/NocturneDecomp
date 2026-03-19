@@ -1537,7 +1537,7 @@ section .text
     JGE 0x005fa18b                      ; 005fa50e
         ;   XREF to: 005fa18b (CONDITIONAL_JUMP)  ; LAB_005fa18b
     PUSH EBX                            ; 005fa514
-    MOV ESI,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 005fa515 | g_CDemonSetInstance.characters[0] | DAT_03263318
+    MOV ESI,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 005fa515 | g_CDemonSetInstance.characters[0] | g_CDemonSetInstance.characters[1]
     PUSH ESI                            ; 005fa51c
     MOV EAX,dword ptr [ESI + 0x154]     ; 005fa51d
     CALL dword ptr [EAX + 0xf8]         ; 005fa523
@@ -1744,7 +1744,7 @@ section .text
     JZ 0x005fa18b                       ; 005fa763
         ;   XREF to: 005fa18b (CONDITIONAL_JUMP)  ; LAB_005fa18b
     MOV EAX,[0x0067b654]                ; 005fa769 | g_CGamePtr
-    MOV dword ptr [EAX + 0x220],0x1     ; 005fa76e | DAT_02d81cbc
+    MOV dword ptr [EAX + 0x220],0x1     ; 005fa76e | g_CGameInstance.player_hit_flag
     MOV EAX,[0x02db87d0]                ; 005fa778 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x2db87c0] ; 005fa77d | g_HeroActors
     MOV dword ptr [EBX + 0xbe3c],EAX    ; 005fa784
@@ -1783,7 +1783,7 @@ section .text
     JZ 0x005fa819                       ; 005fa7f6
         ;   XREF to: 005fa819 (CONDITIONAL_JUMP)  ; LAB_005fa819
     MOV EAX,[0x0067b654]                ; 005fa7f8 | g_CGamePtr
-    MOV dword ptr [EAX + 0x220],0x1     ; 005fa7fd | DAT_02d81cbc
+    MOV dword ptr [EAX + 0x220],0x1     ; 005fa7fd | g_CGameInstance.player_hit_flag
     MOV EAX,[0x02db87d0]                ; 005fa807 | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x2db87c0] ; 005fa80c | g_HeroActors
     MOV dword ptr [EBX + 0xbe3c],EAX    ; 005fa813

@@ -24,7 +24,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CBitFont* g_ThemeFont
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81cf4
+;   undefined4 g_CGameInstance.act_completion_state
 ;   int g_HeroCount
 ;   CHero*[4] g_HeroActors
 ;   int g_LocalHeroIndex
@@ -127,7 +127,7 @@ section .text
     ADD ESP,0xc                         ; 005244eb
     MOV EAX,[0x0067b654]                ; 005244ee | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_005244ee
-    CMP dword ptr [EAX + 0x258],0x0     ; 005244f3 | DAT_02d81cf4
+    CMP dword ptr [EAX + 0x258],0x0     ; 005244f3 | g_CGameInstance.act_completion_state
     JNZ 0x00524616                      ; 005244fa
         ;   XREF to: 00524616 (CONDITIONAL_JUMP)  ; LAB_00524616
     POP EBP                             ; 00524500
@@ -150,7 +150,7 @@ section .text
         ;   Label: LAB_0052452d
     PUSH 0x63931a                       ; 00524532 | = "hq.geo"
     ADD EAX,0x14d0f0                    ; 00524537
-    PUSH EAX                            ; 0052453c | DAT_03261368
+    PUSH EAX                            ; 0052453c | g_CDemonSetInstance.geometry_filename[0]
     XOR EDI,EDI                         ; 0052453d
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0052453f
         ;   XREF to: 006020fc (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)

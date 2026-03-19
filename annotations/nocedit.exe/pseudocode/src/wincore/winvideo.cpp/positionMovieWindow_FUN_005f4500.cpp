@@ -21,7 +21,7 @@ void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_005f4500(HWND parent_w
     return;
   }
   (*g_GetClientRectFunc)(parent_window,&local_24);
-  (*g_mciSendStringAFunc)("where mov source",(LPSTR)&bStack_a4,0x80,(HWND)0x0);
+  (*g_mciSendStringAFunc)("where mov source",(LPSTR)&bStack_a4,0x80,0);
   (*g_SetRectEmptyFunc)(&tStack_14);
   pbVar3 = &bStack_a4;
   while (bStack_a4 == 0x20) {

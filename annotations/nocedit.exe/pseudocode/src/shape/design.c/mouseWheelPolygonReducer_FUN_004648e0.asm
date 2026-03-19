@@ -137,13 +137,13 @@ section .text
     PUSH EDI                            ; 00464a0c | g_BackupModelName
     MOV AL,byte ptr [ESI]               ; 00464a0d | g_LoadedModelName | g_LoadedModelName+2
         ;   Label: LAB_00464a0d
-    MOV byte ptr [EDI],AL               ; 00464a0f | g_BackupModelName | DAT_015c485a
+    MOV byte ptr [EDI],AL               ; 00464a0f | g_BackupModelName | g_BackupModelName+2
     CMP AL,0x0                          ; 00464a11
     JZ 0x00464a25                       ; 00464a13
         ;   XREF to: 00464a25 (CONDITIONAL_JUMP)  ; LAB_00464a25
-    MOV AL,byte ptr [ESI + 0x1]         ; 00464a15 | g_LoadedModelName+1 | DAT_0066edab
+    MOV AL,byte ptr [ESI + 0x1]         ; 00464a15 | g_LoadedModelName+1 | g_LoadedModelName+3
     ADD ESI,0x2                         ; 00464a18
-    MOV byte ptr [EDI + 0x1],AL         ; 00464a1b | DAT_015c4859 | DAT_015c485b
+    MOV byte ptr [EDI + 0x1],AL         ; 00464a1b | g_BackupModelName+1 | g_BackupModelName+3
     ADD EDI,0x2                         ; 00464a1e
     CMP AL,0x0                          ; 00464a21
     JNZ 0x00464a0d                      ; 00464a23
@@ -275,10 +275,10 @@ section .text
     PUSH EDI                            ; 00464b94
     MOV EAX,ECX                         ; 00464b95
     SHR ECX,0x2                         ; 00464b97
-    MOVSD.REP ES:EDI,ESI                ; 00464b9a | g_LoadedVertices | DAT_01626410
+    MOVSD.REP ES:EDI,ESI                ; 00464b9a | g_LoadedVertices | g_LoadedVertices[0].vertex.y
     MOV CL,AL                           ; 00464b9c
     AND CL,0x3                          ; 00464b9e
-    MOVSB.REP ES:EDI,ESI                ; 00464ba1 | g_LoadedVertices | DAT_01626410 | DAT_01626410+1
+    MOVSB.REP ES:EDI,ESI                ; 00464ba1 | g_LoadedVertices | g_LoadedVertices[0].vertex.y | g_LoadedVertices[0].vertex.y+1
     POP EDI                             ; 00464ba3
     IMUL ECX,dword ptr [0x016e990c],0x184 ; 00464ba4 | g_PolygonCount
     MOV ESI,0x16e9910                   ; 00464bae | g_ModelPolygonData
@@ -286,10 +286,10 @@ section .text
     PUSH EDI                            ; 00464bb9
     MOV EAX,ECX                         ; 00464bba
     SHR ECX,0x2                         ; 00464bbc
-    MOVSD.REP ES:EDI,ESI                ; 00464bbf | g_ModelPolygonData | DAT_016e9914
+    MOVSD.REP ES:EDI,ESI                ; 00464bbf | g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
     MOV CL,AL                           ; 00464bc1
     AND CL,0x3                          ; 00464bc3
-    MOVSB.REP ES:EDI,ESI                ; 00464bc6 | g_ModelPolygonData | DAT_016e9914 | DAT_016e9915
+    MOVSB.REP ES:EDI,ESI                ; 00464bc6 | g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0] | g_ModelPolygonData[0].texture_name[1]
     POP EDI                             ; 00464bc8
     MOV EAX,[0x01626408]                ; 00464bc9 | g_VertexCount
     MOV [0x015c4850],EAX                ; 00464bce | g_BackupVertexCount
@@ -322,10 +322,10 @@ section .text
     PUSH EDI                            ; 00464c27 | g_LoadedVertices
     MOV EAX,ECX                         ; 00464c28
     SHR ECX,0x2                         ; 00464c2a
-    MOVSD.REP ES:EDI,ESI                ; 00464c2d | g_LoadedVertices | DAT_01626410
+    MOVSD.REP ES:EDI,ESI                ; 00464c2d | g_LoadedVertices | g_LoadedVertices[0].vertex.y
     MOV CL,AL                           ; 00464c2f
     AND CL,0x3                          ; 00464c31
-    MOVSB.REP ES:EDI,ESI                ; 00464c34 | g_LoadedVertices | DAT_01626410 | DAT_01626410+1
+    MOVSB.REP ES:EDI,ESI                ; 00464c34 | g_LoadedVertices | g_LoadedVertices[0].vertex.y | g_LoadedVertices[0].vertex.y+1
     POP EDI                             ; 00464c36
     IMUL ECX,dword ptr [0x015c4854],0x184 ; 00464c37 | g_BackupPolygonCount
     MOV ESI,dword ptr [0x015c484c]      ; 00464c41 | g_BackupPolygons
@@ -333,10 +333,10 @@ section .text
     PUSH EDI                            ; 00464c4c | g_ModelPolygonData
     MOV EAX,ECX                         ; 00464c4d
     SHR ECX,0x2                         ; 00464c4f
-    MOVSD.REP ES:EDI,ESI                ; 00464c52 | g_ModelPolygonData | DAT_016e9914
+    MOVSD.REP ES:EDI,ESI                ; 00464c52 | g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
     MOV CL,AL                           ; 00464c54
     AND CL,0x3                          ; 00464c56
-    MOVSB.REP ES:EDI,ESI                ; 00464c59 | g_ModelPolygonData | DAT_016e9914 | DAT_016e9915
+    MOVSB.REP ES:EDI,ESI                ; 00464c59 | g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0] | g_ModelPolygonData[0].texture_name[1]
     POP EDI                             ; 00464c5b
     MOV ECX,dword ptr [0x015c4850]      ; 00464c5c | g_BackupVertexCount
     MOV dword ptr [0x01626408],ECX      ; 00464c62 | g_VertexCount

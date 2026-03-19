@@ -30,7 +30,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CMobsterClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.enemy_count
-;   undefined4 DAT_03265258
+;   undefined4 g_CDemonSetInstance.enemies[0]
 ;   undefined4 g_CVehicleClassInfo.name_hash
 ;
 ; Called Functions:
@@ -73,7 +73,7 @@ section .text
     POP ESI                             ; 004f39b8
     POP EBX                             ; 004f39b9
     RET                                 ; 004f39ba
-    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x150fe0] ; 004f39bb | DAT_03265258
+    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x150fe0] ; 004f39bb | g_CDemonSetInstance.enemies[0]
         ;   Label: LAB_004f39bb
     MOV EAX,[0x03f8759c]                ; 004f39c2 | g_CVehicleClassInfo.name_hash
     PUSH EAX                            ; 004f39c7

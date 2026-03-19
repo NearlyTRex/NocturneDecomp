@@ -14,11 +14,11 @@
 ;   int g_BitsPerPixel = 0x8
 ;   int g_WindowStackCount
 ;   SWindow[5] g_WindowStack
-;   undefined4 DAT_02cf1ea8
-;   undefined4 DAT_02cf1eac
-;   undefined4 DAT_02cf1eb0
-;   undefined4 DAT_02cf1eb4
-;   undefined4 DAT_02cf1eb8
+;   undefined4 g_WindowStack[0].screen_backup_buffer
+;   undefined4 g_WindowStack[0].backup_x_offset
+;   undefined4 g_WindowStack[0].backup_y_offset
+;   undefined4 g_WindowStack[0].backup_width
+;   undefined4 g_WindowStack[0].backup_height
 ;   void*[1200] g_ScreenBufferArray
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -50,13 +50,13 @@ section .text
     MOV EDX,0x2cf1ce0                   ; 0049e5b7 | g_WindowStack
     SHL EAX,0x3                         ; 0049e5bc
     ADD EDX,EAX                         ; 0049e5bf
-    MOV EBX,dword ptr [EDX + 0x1c8]     ; 0049e5c1 | DAT_02cf1ea8
+    MOV EBX,dword ptr [EDX + 0x1c8]     ; 0049e5c1 | g_WindowStack[0].screen_backup_buffer
     MOV dword ptr [ESP + 0x4],EDX       ; 0049e5c7
     TEST EBX,EBX                        ; 0049e5cb
     JZ 0x0049e670                       ; 0049e5cd
         ;   XREF to: 0049e670 (CONDITIONAL_JUMP)  ; LAB_0049e670
     MOV ESI,dword ptr [0x0067939c]      ; 0049e5d3 | g_BitsPerPixel
-    MOV EDX,dword ptr [EDX + 0x1d4]     ; 0049e5d9 | DAT_02cf1eb4
+    MOV EDX,dword ptr [EDX + 0x1d4]     ; 0049e5d9 | g_WindowStack[0].backup_width
     IMUL EDX,ESI                        ; 0049e5df
     MOV EAX,EDX                         ; 0049e5e2
     SAR EDX,0x1f                        ; 0049e5e4
@@ -65,18 +65,18 @@ section .text
     SAR EAX,0x3                         ; 0049e5ec
     MOV dword ptr [ESP],EAX             ; 0049e5ef
     MOV EAX,dword ptr [ESP + 0x4]       ; 0049e5f2
-    MOV EDI,dword ptr [EAX + 0x1d8]     ; 0049e5f6 | DAT_02cf1eb8
+    MOV EDI,dword ptr [EAX + 0x1d8]     ; 0049e5f6 | g_WindowStack[0].backup_height
     XOR EBP,EBP                         ; 0049e5fc
     TEST EDI,EDI                        ; 0049e5fe
     JLE 0x0049e670                      ; 0049e600
         ;   XREF to: 0049e670 (CONDITIONAL_JUMP)  ; LAB_0049e670
     MOV EAX,dword ptr [ESP + 0x4]       ; 0049e602
         ;   Label: LAB_0049e602
-    MOV EAX,dword ptr [EAX + 0x1d0]     ; 0049e606 | DAT_02cf1eb0
+    MOV EAX,dword ptr [EAX + 0x1d0]     ; 0049e606 | g_WindowStack[0].backup_y_offset
     ADD EAX,EBP                         ; 0049e60c
     MOV EDX,dword ptr [ESP + 0x4]       ; 0049e60e
     LEA EDI,[EAX*0x4 + 0x0]             ; 0049e612
-    MOV EDX,dword ptr [EDX + 0x1cc]     ; 0049e619 | DAT_02cf1eac
+    MOV EDX,dword ptr [EDX + 0x1cc]     ; 0049e619 | g_WindowStack[0].backup_x_offset
     MOV EAX,[0x0067939c]                ; 0049e61f | g_BitsPerPixel
     IMUL EDX,EAX                        ; 0049e624
     MOV EAX,EDX                         ; 0049e627
@@ -99,7 +99,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 0049e651
     INC EBP                             ; 0049e655
     MOV EDX,dword ptr [ESP]             ; 0049e656
-    MOV ECX,dword ptr [EAX + 0x1d8]     ; 0049e659 | DAT_02cf1eb8
+    MOV ECX,dword ptr [EAX + 0x1d8]     ; 0049e659 | g_WindowStack[0].backup_height
     ADD EBX,EDX                         ; 0049e65f
     CMP EBP,ECX                         ; 0049e661
     JL 0x0049e602                       ; 0049e663

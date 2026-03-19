@@ -35,11 +35,11 @@
 ;   double DOUBLE_0063ae82 = 0.5
 ;   double DOUBLE_0063ae8a = 0.0000100000000000000
 ;   float[16][32] g_MpegSynthesisWindow
-;   undefined4 DAT_0067d9f0
+;   undefined4 g_MpegSynthesisWindow[1][0]
 ;   int g_MpegSynthesisTableInitialized = 0x1
 ;   float[64][32] g_MpegSynthesisDctTable
-;   undefined4 DAT_02f43984
-;   undefined4 DAT_02f43a00
+;   undefined4 g_MpegSynthesisDctTable[0][1]
+;   undefined4 g_MpegSynthesisDctTable[1][0]
 ;
 ; Called Functions:
 ;   crt_math.c_modf_FUN_00602102
@@ -165,7 +165,7 @@ section .text
     AND EDX,0x3ff                       ; 00530645
     FMUL float ptr [ESI + EDX*0x4]      ; 0053064b
     ADD EDX,0x60                        ; 0053064e
-    FLD float ptr [EBX*0x4 + 0x67d9f0]  ; 00530651 | DAT_0067d9f0
+    FLD float ptr [EBX*0x4 + 0x67d9f0]  ; 00530651 | g_MpegSynthesisWindow[1][0]
     AND EDX,0x3ff                       ; 00530658
     FMUL float ptr [ESI + EDX*0x4]      ; 0053065e
     ADD EBX,0x40                        ; 00530661
@@ -225,8 +225,8 @@ section .text
     FMUL double ptr [0x0063ae62]        ; 005306f4 | DOUBLE_0063ae62
     FLDZ                                ; 005306fa
     FXCH                                ; 005306fc
-    FSTP float ptr [EBX]                ; 005306fe | g_MpegSynthesisDctTable | DAT_02f43984 | DAT_02f43a00
-    FCOMP float ptr [EBX]               ; 00530700 | g_MpegSynthesisDctTable | DAT_02f43984 | DAT_02f43a00
+    FSTP float ptr [EBX]                ; 005306fe | g_MpegSynthesisDctTable | g_MpegSynthesisDctTable[0][1] | g_MpegSynthesisDctTable[1][0]
+    FCOMP float ptr [EBX]               ; 00530700 | g_MpegSynthesisDctTable | g_MpegSynthesisDctTable[0][1] | g_MpegSynthesisDctTable[1][0]
     FNSTSW AX                           ; 00530702
     SAHF                                ; 00530704
     JA 0x00530771                       ; 00530705
@@ -244,15 +244,15 @@ section .text
     FLD double ptr [EBP + -0x54]        ; 00530723
     ADD ESP,0xc                         ; 00530726
         ;   Label: LAB_00530726
-    FSTP float ptr [EBX]                ; 00530729 | g_MpegSynthesisDctTable | DAT_02f43984
-    FLD float ptr [ESI]                 ; 0053072b | g_MpegSynthesisDctTable | DAT_02f43984
+    FSTP float ptr [EBX]                ; 00530729 | g_MpegSynthesisDctTable | g_MpegSynthesisDctTable[0][1]
+    FLD float ptr [ESI]                 ; 0053072b | g_MpegSynthesisDctTable | g_MpegSynthesisDctTable[0][1]
     FLD ST0                             ; 0053072d
     FMUL double ptr [0x0063ae6a]        ; 0053072f | DOUBLE_0063ae6a
     ADD EBX,0x4                         ; 00530735
     ADD EDI,0x2                         ; 00530738
     ADD ESI,0x4                         ; 0053073b
     FSTP ST1                            ; 0053073e
-    FSTP float ptr [ESI + -0x4]         ; 00530740 | g_MpegSynthesisDctTable | DAT_02f43984
+    FSTP float ptr [ESI + -0x4]         ; 00530740 | g_MpegSynthesisDctTable | g_MpegSynthesisDctTable[0][1]
     CMP EDI,0x41                        ; 00530743
     JNZ 0x005306d5                      ; 00530746
         ;   XREF to: 005306d5 (CONDITIONAL_JUMP)  ; LAB_005306d5
@@ -261,7 +261,7 @@ section .text
     INC EDI                             ; 0053074e
     ADD ESI,0x80                        ; 0053074f
     MOV dword ptr [EBP + -0xc],EDI      ; 00530755
-    MOV dword ptr [EBP + -0x14],ESI     ; 00530758 | DAT_02f43a00
+    MOV dword ptr [EBP + -0x14],ESI     ; 00530758 | g_MpegSynthesisDctTable[1][0]
     CMP EDI,0x40                        ; 0053075b
     JL 0x005306cb                       ; 0053075e
         ;   XREF to: 005306cb (CONDITIONAL_JUMP)  ; LAB_005306cb
@@ -269,11 +269,11 @@ section .text
     MOV dword ptr [0x0067e170],EDX      ; 00530766 | g_MpegSynthesisTableInitialized
     JMP 0x00530509                      ; 0053076c
         ;   XREF to: 00530509 (UNCONDITIONAL_JUMP)  ; LAB_00530509
-    FLD float ptr [EBX]                 ; 00530771 | g_MpegSynthesisDctTable | DAT_02f43984
+    FLD float ptr [EBX]                 ; 00530771 | g_MpegSynthesisDctTable | g_MpegSynthesisDctTable[0][1]
         ;   Label: LAB_00530771
     LEA EAX,[EBP + -0x4c]               ; 00530773
     FSTP double ptr [EBP + -0x4c]       ; 00530776
-    FLD float ptr [EBX]                 ; 00530779 | g_MpegSynthesisDctTable | DAT_02f43984
+    FLD float ptr [EBX]                 ; 00530779 | g_MpegSynthesisDctTable | g_MpegSynthesisDctTable[0][1]
     PUSH EAX                            ; 0053077b
     FADD double ptr [0x0063ae7a]        ; 0053077c | DOUBLE_0063ae7a
     SUB ESP,0x8                         ; 00530782

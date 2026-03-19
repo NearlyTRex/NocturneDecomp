@@ -20,14 +20,14 @@
 ;   int g_WindowHeight = 0xc8
 ;   int g_EdgeCount
 ;   SHardwareEdge[16] g_HardwareEdgeTable
-;   undefined4 DAT_02d7b430
-;   undefined4 DAT_02d7b434
-;   undefined4 DAT_02d7b438
-;   undefined4 DAT_02d7b444
-;   undefined4 DAT_02d7b448
-;   undefined4 DAT_02d7b44c
-;   undefined4 DAT_02d7b450
-;   undefined4 DAT_02d7b464
+;   undefined4 g_HardwareEdgeTable[0].y_max
+;   undefined4 g_HardwareEdgeTable[0].x_current
+;   undefined4 g_HardwareEdgeTable[0].x_gradient
+;   undefined4 g_HardwareEdgeTable[0].u_current
+;   undefined4 g_HardwareEdgeTable[0].u_gradient
+;   undefined4 g_HardwareEdgeTable[0].v_current
+;   undefined4 g_HardwareEdgeTable[0].v_gradient
+;   undefined4 g_HardwareEdgeTable[1].y_min
 ;   int g_EdgeListMinY
 ;   int g_EdgeListMaxY
 ;
@@ -96,14 +96,14 @@ section .text
     TEST EBP,EBP                        ; 004d13c8
     JLE 0x004d15f3                      ; 004d13ca
         ;   XREF to: 004d15f3 (CONDITIONAL_JUMP)  ; LAB_004d15f3
-    CMP ECX,dword ptr [EAX]             ; 004d13d0 | g_HardwareEdgeTable | DAT_02d7b464
+    CMP ECX,dword ptr [EAX]             ; 004d13d0 | g_HardwareEdgeTable | g_HardwareEdgeTable[1].y_min
         ;   Label: LAB_004d13d0
     JNZ 0x004d15e7                      ; 004d13d2
         ;   XREF to: 004d15e7 (CONDITIONAL_JUMP)  ; LAB_004d15e7
     TEST EAX,EAX                        ; 004d13d8
     JZ 0x004d15e7                       ; 004d13da
         ;   XREF to: 004d15e7 (CONDITIONAL_JUMP)  ; LAB_004d15e7
-    MOV dword ptr [ESP + 0xc],EAX       ; 004d13e0 | g_HardwareEdgeTable | DAT_02d7b464
+    MOV dword ptr [ESP + 0xc],EAX       ; 004d13e0 | g_HardwareEdgeTable | g_HardwareEdgeTable[1].y_min
         ;   Label: LAB_004d13e0
     MOV dword ptr [0x02d7b428],EBP      ; 004d13e4 | g_EdgeCount
     TEST EAX,EAX                        ; 004d13ea
@@ -116,14 +116,14 @@ section .text
     TEST EBP,EBP                        ; 004d1401
     JLE 0x004d1606                      ; 004d1403
         ;   XREF to: 004d1606 (CONDITIONAL_JUMP)  ; LAB_004d1606
-    CMP EBX,dword ptr [EAX]             ; 004d1409 | g_HardwareEdgeTable | DAT_02d7b464
+    CMP EBX,dword ptr [EAX]             ; 004d1409 | g_HardwareEdgeTable | g_HardwareEdgeTable[1].y_min
         ;   Label: LAB_004d1409
     JNZ 0x004d15fa                      ; 004d140b
         ;   XREF to: 004d15fa (CONDITIONAL_JUMP)  ; LAB_004d15fa
     CMP EAX,ECX                         ; 004d1411
     JZ 0x004d15fa                       ; 004d1413
         ;   XREF to: 004d15fa (CONDITIONAL_JUMP)  ; LAB_004d15fa
-    MOV dword ptr [ESP + 0x10],EAX      ; 004d1419 | g_HardwareEdgeTable | DAT_02d7b464
+    MOV dword ptr [ESP + 0x10],EAX      ; 004d1419 | g_HardwareEdgeTable | g_HardwareEdgeTable[1].y_min
         ;   Label: LAB_004d1419
     MOV dword ptr [0x02d7b428],EBP      ; 004d141d | g_EdgeCount
     TEST EAX,EAX                        ; 004d1423
@@ -134,7 +134,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004d1434
         ;   Label: LAB_004d1434
     MOV EAX,dword ptr [ESP + 0x8]       ; 004d1438
-    CMP EAX,dword ptr [EDX + 0x4]       ; 004d143c | DAT_02d7b430
+    CMP EAX,dword ptr [EDX + 0x4]       ; 004d143c | g_HardwareEdgeTable[0].y_max
     JL 0x004d1480                       ; 004d143f
         ;   XREF to: 004d1480 (CONDITIONAL_JUMP)  ; LAB_004d1480
     MOV ECX,dword ptr [ESP + 0x10]      ; 004d1441
@@ -146,14 +146,14 @@ section .text
     TEST EBP,EBP                        ; 004d145a
     JLE 0x004d1619                      ; 004d145c
         ;   XREF to: 004d1619 (CONDITIONAL_JUMP)  ; LAB_004d1619
-    CMP EBX,dword ptr [EAX]             ; 004d1462 | g_HardwareEdgeTable | DAT_02d7b464
+    CMP EBX,dword ptr [EAX]             ; 004d1462 | g_HardwareEdgeTable | g_HardwareEdgeTable[1].y_min
         ;   Label: LAB_004d1462
     JNZ 0x004d160d                      ; 004d1464
         ;   XREF to: 004d160d (CONDITIONAL_JUMP)  ; LAB_004d160d
     CMP EAX,ECX                         ; 004d146a
     JZ 0x004d160d                       ; 004d146c
         ;   XREF to: 004d160d (CONDITIONAL_JUMP)  ; LAB_004d160d
-    MOV dword ptr [ESP + 0xc],EAX       ; 004d1472 | g_HardwareEdgeTable | DAT_02d7b464
+    MOV dword ptr [ESP + 0xc],EAX       ; 004d1472 | g_HardwareEdgeTable | g_HardwareEdgeTable[1].y_min
         ;   Label: LAB_004d1472
     MOV dword ptr [0x02d7b428],EBP      ; 004d1476 | g_EdgeCount
     TEST EAX,EAX                        ; 004d147c
@@ -162,7 +162,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 004d1480 | g_HardwareEdgeTable
         ;   Label: LAB_004d1480
     MOV EAX,dword ptr [ESP + 0x8]       ; 004d1484
-    CMP EAX,dword ptr [EDX + 0x4]       ; 004d1488 | DAT_02d7b430
+    CMP EAX,dword ptr [EDX + 0x4]       ; 004d1488 | g_HardwareEdgeTable[0].y_max
     JL 0x004d1633                       ; 004d148b
         ;   XREF to: 004d1633 (CONDITIONAL_JUMP)  ; LAB_004d1633
     MOV ECX,dword ptr [ESP + 0xc]       ; 004d1491
@@ -174,14 +174,14 @@ section .text
     TEST EBP,EBP                        ; 004d14aa
     JLE 0x004d162c                      ; 004d14ac
         ;   XREF to: 004d162c (CONDITIONAL_JUMP)  ; LAB_004d162c
-    CMP EBX,dword ptr [EAX]             ; 004d14b2 | g_HardwareEdgeTable | DAT_02d7b464
+    CMP EBX,dword ptr [EAX]             ; 004d14b2 | g_HardwareEdgeTable | g_HardwareEdgeTable[1].y_min
         ;   Label: LAB_004d14b2
     JNZ 0x004d1620                      ; 004d14b4
         ;   XREF to: 004d1620 (CONDITIONAL_JUMP)  ; LAB_004d1620
     CMP EAX,ECX                         ; 004d14ba
     JZ 0x004d1620                       ; 004d14bc
         ;   XREF to: 004d1620 (CONDITIONAL_JUMP)  ; LAB_004d1620
-    MOV dword ptr [ESP + 0x10],EAX      ; 004d14c2 | g_HardwareEdgeTable | DAT_02d7b464
+    MOV dword ptr [ESP + 0x10],EAX      ; 004d14c2 | g_HardwareEdgeTable | g_HardwareEdgeTable[1].y_min
         ;   Label: LAB_004d14c2
     MOV dword ptr [0x02d7b428],EBP      ; 004d14c6 | g_EdgeCount
     TEST EAX,EAX                        ; 004d14cc
@@ -211,7 +211,7 @@ section .text
     ADD ECX,0x2d7b42c                   ; 004d14f9 | g_HardwareEdgeTable
     MOV dword ptr [ECX],EDX             ; 004d14ff | g_HardwareEdgeTable
     MOV ESI,dword ptr [0x02d7b7ac]      ; 004d1501 | g_EdgeListMinY
-    MOV dword ptr [ECX + 0x4],EAX       ; 004d1507 | DAT_02d7b430
+    MOV dword ptr [ECX + 0x4],EAX       ; 004d1507 | g_HardwareEdgeTable[0].y_max
     CMP EDX,ESI                         ; 004d150a
     JGE 0x004d1514                      ; 004d150c
         ;   XREF to: 004d1514 (CONDITIONAL_JUMP)  ; LAB_004d1514
@@ -223,11 +223,11 @@ section .text
     MOV [0x02d7b7b0],EAX                ; 004d151c | g_EdgeListMaxY
     MOV EAX,dword ptr [EBX + 0x10]      ; 004d1521
         ;   Label: LAB_004d1521
-    MOV dword ptr [ECX + 0x8],EAX       ; 004d1524 | DAT_02d7b434
+    MOV dword ptr [ECX + 0x8],EAX       ; 004d1524 | g_HardwareEdgeTable[0].x_current
     MOV EAX,dword ptr [EBX + 0x18]      ; 004d1527
-    MOV dword ptr [ECX + 0x18],EAX      ; 004d152a | DAT_02d7b444
+    MOV dword ptr [ECX + 0x18],EAX      ; 004d152a | g_HardwareEdgeTable[0].u_current
     MOV EAX,dword ptr [EBX + 0x1c]      ; 004d152d
-    MOV dword ptr [ECX + 0x20],EAX      ; 004d1530 | DAT_02d7b44c
+    MOV dword ptr [ECX + 0x20],EAX      ; 004d1530 | g_HardwareEdgeTable[0].v_current
     MOV ESI,dword ptr [EDI + 0x14]      ; 004d1533
     SUB ESI,dword ptr [EBX + 0x14]      ; 004d1536
     CMP ESI,0x10000                     ; 004d1539
@@ -243,7 +243,7 @@ section .text
     MOV dword ptr [0x02d7b428],EBP      ; 004d1553 | g_EdgeCount
     IMUL EDX                            ; 004d1559
     SHRD EAX,EDX,0x10                   ; 004d155b
-    MOV dword ptr [ECX + 0xc],EAX       ; 004d155f | DAT_02d7b438
+    MOV dword ptr [ECX + 0xc],EAX       ; 004d155f | g_HardwareEdgeTable[0].x_gradient
     MOV EAX,dword ptr [EDI + 0x18]      ; 004d1562
     MOV EDX,dword ptr [EBX + 0x18]      ; 004d1565
     SUB EAX,EDX                         ; 004d1568
@@ -251,38 +251,38 @@ section .text
     MOV EAX,ESI                         ; 004d156c
     IMUL EDX                            ; 004d156e
     SHRD EAX,EDX,0x10                   ; 004d1570
-    MOV dword ptr [ECX + 0x1c],EAX      ; 004d1574 | DAT_02d7b448
+    MOV dword ptr [ECX + 0x1c],EAX      ; 004d1574 | g_HardwareEdgeTable[0].u_gradient
     MOV EDX,dword ptr [EDI + 0x1c]      ; 004d1577
     MOV EDI,dword ptr [EBX + 0x1c]      ; 004d157a
     MOV EAX,ESI                         ; 004d157d
     SUB EDX,EDI                         ; 004d157f
     IMUL EDX                            ; 004d1581
     SHRD EAX,EDX,0x10                   ; 004d1583
-    MOV dword ptr [ECX + 0x24],EAX      ; 004d1587 | DAT_02d7b450
+    MOV dword ptr [ECX + 0x24],EAX      ; 004d1587 | g_HardwareEdgeTable[0].v_gradient
     MOV EBX,dword ptr [EBX + 0x14]      ; 004d158a
     AND EBX,0xffff                      ; 004d158d
     XOR BX,0xffff                       ; 004d1593
-    MOV EDX,dword ptr [ECX + 0xc]       ; 004d1597 | DAT_02d7b438
+    MOV EDX,dword ptr [ECX + 0xc]       ; 004d1597 | g_HardwareEdgeTable[0].x_gradient
     MOV EAX,EBX                         ; 004d159a
     IMUL EDX                            ; 004d159c
     SHRD EAX,EDX,0x10                   ; 004d159e
-    ADD dword ptr [ECX + 0x8],EAX       ; 004d15a2 | DAT_02d7b434
+    ADD dword ptr [ECX + 0x8],EAX       ; 004d15a2 | g_HardwareEdgeTable[0].x_current
     MOV EAX,EBX                         ; 004d15a5
-    MOV EDX,dword ptr [ECX + 0x1c]      ; 004d15a7 | DAT_02d7b448
+    MOV EDX,dword ptr [ECX + 0x1c]      ; 004d15a7 | g_HardwareEdgeTable[0].u_gradient
     IMUL EDX                            ; 004d15aa
     SHRD EAX,EDX,0x10                   ; 004d15ac
-    MOV ESI,dword ptr [ECX + 0x18]      ; 004d15b0 | DAT_02d7b444
-    MOV EDX,dword ptr [ECX + 0x24]      ; 004d15b3 | DAT_02d7b450
+    MOV ESI,dword ptr [ECX + 0x18]      ; 004d15b0 | g_HardwareEdgeTable[0].u_current
+    MOV EDX,dword ptr [ECX + 0x24]      ; 004d15b3 | g_HardwareEdgeTable[0].v_gradient
     ADD ESI,EAX                         ; 004d15b6
     MOV EAX,EBX                         ; 004d15b8
-    MOV dword ptr [ECX + 0x18],ESI      ; 004d15ba | DAT_02d7b444
+    MOV dword ptr [ECX + 0x18],ESI      ; 004d15ba | g_HardwareEdgeTable[0].u_current
     IMUL EDX                            ; 004d15bd
     SHRD EAX,EDX,0x10                   ; 004d15bf
-    MOV EDI,dword ptr [ECX + 0x20]      ; 004d15c3 | DAT_02d7b44c
+    MOV EDI,dword ptr [ECX + 0x20]      ; 004d15c3 | g_HardwareEdgeTable[0].v_current
     MOV EBP,dword ptr [0x02d7b428]      ; 004d15c6 | g_EdgeCount
     ADD EDI,EAX                         ; 004d15cc
     INC EBP                             ; 004d15ce
-    MOV dword ptr [ECX + 0x20],EDI      ; 004d15cf | DAT_02d7b44c
+    MOV dword ptr [ECX + 0x20],EDI      ; 004d15cf | g_HardwareEdgeTable[0].v_current
     JMP 0x004d13a1                      ; 004d15d2
         ;   XREF to: 004d13a1 (UNCONDITIONAL_JUMP)  ; LAB_004d13a1
     MOV EAX,0xffffffff                  ; 004d15d7
@@ -324,7 +324,7 @@ section .text
         ;   XREF to: 004d1472 (UNCONDITIONAL_JUMP)  ; LAB_004d1472
     INC EDX                             ; 004d1620
         ;   Label: LAB_004d1620
-    ADD EAX,0x38                        ; 004d1621 | DAT_02d7b464
+    ADD EAX,0x38                        ; 004d1621 | g_HardwareEdgeTable[1].y_min
     CMP EDX,EBP                         ; 004d1624
     JL 0x004d14b2                       ; 004d1626
         ;   XREF to: 004d14b2 (CONDITIONAL_JUMP)  ; LAB_004d14b2

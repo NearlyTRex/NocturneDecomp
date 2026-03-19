@@ -31,11 +31,11 @@
 ;   TerminatedCString s_m_d_y_I_M_S_p_006239bb
 ;   TerminatedCString s_s_s_d_s_s_006239d0
 ;   char[512] g_Field1ParseBuffer
-;   undefined4 DAT_00678d8c
+;   undefined4 g_Field1ParseBuffer+4
 ;   char[512] g_Field2ParseBuffer
-;   undefined4 DAT_00678f8c
+;   undefined4 g_Field2ParseBuffer+4
 ;   char[260] g_FilePathBuffer
-;   undefined4 DAT_0067918c
+;   undefined4 g_FilePathBuffer+4
 ;
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
@@ -79,7 +79,7 @@ section .text
     MOV ESI,0x678d88                    ; 004a33a4 | g_Field1ParseBuffer
     MOV EBX,EAX                         ; 004a33a9
     MOV EAX,ESP                         ; 004a33ab
-    MOVSD.REP ES:EDI,ESI                ; 004a33ad | g_Field1ParseBuffer | DAT_00678d8c
+    MOVSD.REP ES:EDI,ESI                ; 004a33ad | g_Field1ParseBuffer | g_Field1ParseBuffer+4
     PUSH EAX                            ; 004a33af
     LEA EAX,[ESP + 0x204]               ; 004a33b0
     MOV ECX,0x80                        ; 004a33b7
@@ -87,7 +87,7 @@ section .text
     LEA EDI,[ESP + 0x8]                 ; 004a33bd
     MOV ESI,0x678f88                    ; 004a33c1 | g_Field2ParseBuffer
     PUSH 0x6239af                       ; 004a33c6 | = "%[^\t]\t%[^\t]"
-    MOVSD.REP ES:EDI,ESI                ; 004a33cb | g_Field2ParseBuffer | DAT_00678f8c
+    MOVSD.REP ES:EDI,ESI                ; 004a33cb | g_Field2ParseBuffer | g_Field2ParseBuffer+4
     PUSH EBX                            ; 004a33cd
     MOV ESI,dword ptr [ESP + 0xb18]     ; 004a33ce
     PUSH ESI                            ; 004a33d5
@@ -145,7 +145,7 @@ section .text
     ADD ESP,0x10                        ; 004a3472
     MOV ECX,0x41                        ; 004a3475
     MOV EBX,dword ptr [ESP + 0xb10]     ; 004a347a
-    MOVSD.REP ES:EDI,ESI                ; 004a3481 | g_FilePathBuffer | DAT_0067918c
+    MOVSD.REP ES:EDI,ESI                ; 004a3481 | g_FilePathBuffer | g_FilePathBuffer+4
     TEST EBX,EBX                        ; 004a3483
     JZ 0x004a34c8                       ; 004a3485
         ;   XREF to: 004a34c8 (CONDITIONAL_JUMP)  ; LAB_004a34c8

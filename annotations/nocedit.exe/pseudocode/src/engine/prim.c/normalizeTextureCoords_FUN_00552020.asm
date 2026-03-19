@@ -14,7 +14,7 @@
 ;   engine_prim.c_renderScanlinePolygon_FUN_00553470 at 0055378a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01000000
+;   undefined4 g_LightBufferPool[13][93688]
 ;
 ; *****************************************************************************
 
@@ -78,7 +78,7 @@ section .text
     MOV EAX,dword ptr [ECX + 0x1c]      ; 00552077
     IMUL EDX                            ; 0055207a
     IDIV EBX                            ; 0055207c
-    MOV EDX,0x1000000                   ; 0055207e | DAT_01000000
+    MOV EDX,0x1000000                   ; 0055207e | g_LightBufferPool[13][93688]
     MOV EBX,dword ptr [ECX + 0x8]       ; 00552083
     MOV dword ptr [ECX + 0x1c],EAX      ; 00552086
     MOV EAX,ESI                         ; 00552089

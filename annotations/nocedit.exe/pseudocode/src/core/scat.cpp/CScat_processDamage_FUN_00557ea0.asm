@@ -13,8 +13,8 @@
 ;   float FLOAT_00662458 = 0.5
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGore* g_CGorePtr = 02d83364
-;   undefined4 DAT_02d81c6c
-;   undefined4 DAT_02d81cc8
+;   undefined4 g_CGameInstance.god_mode_enabled
+;   undefined4 g_CGameInstance.allow_damage_flag
 ;   CGore g_CGoreInstance
 ;
 ; Called Functions:
@@ -40,13 +40,13 @@ section .text
         ;   XREF to: 00557f24 (CONDITIONAL_JUMP)  ; LAB_00557f24
     MOV EAX,[0x0067b654]                ; 00557eb8 | g_CGamePtr
         ;   Label: LAB_00557eb8
-    CMP dword ptr [EAX + 0x1d0],0x0     ; 00557ebd | DAT_02d81c6c
+    CMP dword ptr [EAX + 0x1d0],0x0     ; 00557ebd | g_CGameInstance.god_mode_enabled
     JZ 0x00557ecd                       ; 00557ec4
         ;   XREF to: 00557ecd (CONDITIONAL_JUMP)  ; LAB_00557ecd
     MOV dword ptr [EDI + 0x4],0x0       ; 00557ec6
     MOV EAX,[0x0067b654]                ; 00557ecd | g_CGamePtr
         ;   Label: LAB_00557ecd
-    MOV ESI,dword ptr [EAX + 0x22c]     ; 00557ed2 | DAT_02d81cc8
+    MOV ESI,dword ptr [EAX + 0x22c]     ; 00557ed2 | g_CGameInstance.allow_damage_flag
     TEST ESI,ESI                        ; 00557ed8
     JZ 0x00557f2d                       ; 00557eda
         ;   XREF to: 00557f2d (CONDITIONAL_JUMP)  ; LAB_00557f2d

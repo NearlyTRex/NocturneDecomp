@@ -35,7 +35,7 @@
 ;   double DOUBLE_0062a043 = -0.200000000000000
 ;   double DOUBLE_0062a04b = 0.0578000000000000
 ;   char[60] g_DefaultRicochetSound
-;   undefined4 DAT_0067aebc
+;   undefined4 g_DefaultRicochetSound+4
 ;   CSound* g_CSoundPtr = 03f6af64
 ;   int g_SmokeParticleAllocIndex
 ;   CSmokeParticle[2048] g_SmokeParticlePool
@@ -106,14 +106,14 @@ section .text
         ;   XREF to: 004c7847 (CONDITIONAL_JUMP)  ; LAB_004c7847
     FLD float ptr [EBX]                 ; 004c7720
         ;   Label: LAB_004c7720
-    FSUB float ptr [ESI]                ; 004c7722 | g_BulletHolePool | DAT_02d2a230
+    FSUB float ptr [ESI]                ; 004c7722 | g_BulletHolePool | g_BulletHolePool[1].position.x
     FSTP float ptr [ESP + 0x48]         ; 004c7724
     FLD float ptr [EBX + 0x4]           ; 004c7728
-    FSUB float ptr [ESI + 0x4]          ; 004c772b | DAT_02d2a1f8 | DAT_02d2a234
+    FSUB float ptr [ESI + 0x4]          ; 004c772b | g_BulletHolePool[0].position.y | g_BulletHolePool[1].position.y
     LEA ECX,[ESP + 0x48]                ; 004c772e
     FSTP float ptr [ESP + 0x4c]         ; 004c7732
     FLD float ptr [EBX + 0x8]           ; 004c7736
-    FSUB float ptr [ESI + 0x8]          ; 004c7739 | g_BulletHolePool[0].position.z | DAT_02d2a238
+    FSUB float ptr [ESI + 0x8]          ; 004c7739 | g_BulletHolePool[0].position.z | g_BulletHolePool[1].position.z
     LEA EAX,[ESP + 0x3c]                ; 004c773c
     FSTP float ptr [ESP + 0x50]         ; 004c7740
     CMP EAX,ECX                         ; 004c7744
@@ -185,8 +185,8 @@ section .text
         ;   Label: caseD_9
     LEA EDI,[ESP + 0x8]                 ; 004c7805
     MOV ESI,0x67aeb8                    ; 004c7809 | g_DefaultRicochetSound
-    MOVSD.REP ES:EDI,ESI                ; 004c780e | g_DefaultRicochetSound | DAT_0067aebc
-    MOVSW ES:EDI,ESI                    ; 004c7810 | g_DefaultRicochetSound | DAT_0067aebc
+    MOVSD.REP ES:EDI,ESI                ; 004c780e | g_DefaultRicochetSound | g_DefaultRicochetSound+4
+    MOVSW ES:EDI,ESI                    ; 004c7810 | g_DefaultRicochetSound | g_DefaultRicochetSound+4
     MOV EDI,dword ptr [EBP + 0x20]      ; 004c7812
     CMP EDI,0x9                         ; 004c7815
     JA 0x004c7823                       ; 004c7818

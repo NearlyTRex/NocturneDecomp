@@ -19,10 +19,10 @@
 ;   int g_PVSDrawnCubeCount
 ;   int g_PVSReadyFlag
 ;   CDemonCube*[20000] g_PVSCubePointers
-;   undefined4 DAT_02ca03b0
+;   undefined4 g_PVSCubePointers[1]
 ;   CVector3f[20000] g_PVSCubePositions
-;   undefined4 DAT_02cb3c30
-;   undefined4 DAT_02cb3c34
+;   undefined4 g_PVSCubePositions[0].y
+;   undefined4 g_PVSCubePositions[0].z
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -69,7 +69,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x50]      ; 00498eb1
     ADD EAX,EDX                         ; 00498eb4
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00498eb6
-    MOV dword ptr [EDX + 0x2ca03ac],EAX ; 00498eba | g_PVSCubePointers | DAT_02ca03b0
+    MOV dword ptr [EDX + 0x2ca03ac],EAX ; 00498eba | g_PVSCubePointers | g_PVSCubePointers[1]
     MOV EDX,ECX                         ; 00498ec0
     MOV EAX,ECX                         ; 00498ec2
     SAR EDX,0x1f                        ; 00498ec4
@@ -116,9 +116,9 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 00498f3e
     MOV dword ptr [ESI],EAX             ; 00498f42 | g_PVSCubePositions
     MOV EAX,dword ptr [ESP + 0xc]       ; 00498f44
-    MOV dword ptr [ESI + 0x4],EAX       ; 00498f48 | DAT_02cb3c30
+    MOV dword ptr [ESI + 0x4],EAX       ; 00498f48 | g_PVSCubePositions[0].y
     MOV EAX,dword ptr [ESP + 0x10]      ; 00498f4b
-    MOV dword ptr [ESI + 0x8],EAX       ; 00498f4f | DAT_02cb3c34
+    MOV dword ptr [ESI + 0x8],EAX       ; 00498f4f | g_PVSCubePositions[0].z
     MOV EDX,dword ptr [0x02ca03a4]      ; 00498f52 | g_PVSDrawnCubeCount
         ;   Label: LAB_00498f52
     ADD ESI,0xc                         ; 00498f58

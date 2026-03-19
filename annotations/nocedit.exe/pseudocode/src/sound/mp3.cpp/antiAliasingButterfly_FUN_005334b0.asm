@@ -25,13 +25,13 @@
 ; Referenced Globals:
 ;   int g_Mp3AntiAliasInitialized = 0x1
 ;   double[8] g_Mp3AntiAliasCSSource
-;   undefined4 DAT_0067e1d8
+;   undefined4 g_Mp3AntiAliasCSSource[1]
 ;   double[8] g_Mp3AntiAliasCS
-;   undefined4 DAT_02f46610
+;   undefined4 g_Mp3AntiAliasCS[1]
 ;   double[8] g_Mp3AntiAliasCA
-;   undefined4 DAT_02f46648+4
-;   undefined4 DAT_02f46650
-;   undefined4 DAT_02f46650+4
+;   undefined4 g_Mp3AntiAliasCA[0]+4
+;   undefined4 g_Mp3AntiAliasCA[1]
+;   undefined4 g_Mp3AntiAliasCA[1]+4
 ;
 ; *****************************************************************************
 
@@ -50,7 +50,7 @@ section .text
     JZ 0x00533513                       ; 005334c6
         ;   XREF to: 00533513 (CONDITIONAL_JUMP)  ; LAB_00533513
     XOR EDX,EDX                         ; 005334c8
-    FLD double ptr [EDX + 0x67e1d0]     ; 005334ca | g_Mp3AntiAliasCSSource | DAT_0067e1d8
+    FLD double ptr [EDX + 0x67e1d0]     ; 005334ca | g_Mp3AntiAliasCSSource | g_Mp3AntiAliasCSSource[1]
         ;   Label: LAB_005334ca
     FMUL ST0                            ; 005334d0
     FLD1                                ; 005334d2
@@ -58,16 +58,16 @@ section .text
     FSQRT                               ; 005334d6
     FLD1                                ; 005334d8
     FDIVRP                              ; 005334da
-    FLD double ptr [EDX + 0x67e1d0]     ; 005334dc | g_Mp3AntiAliasCSSource | DAT_0067e1d8
+    FLD double ptr [EDX + 0x67e1d0]     ; 005334dc | g_Mp3AntiAliasCSSource | g_Mp3AntiAliasCSSource[1]
     ADD EDX,0x8                         ; 005334e2
     FXCH                                ; 005334e5
     FSTP double ptr [ESP]               ; 005334e7
     MOV EAX,dword ptr [ESP]             ; 005334ea
     FMUL double ptr [ESP]               ; 005334ed
-    MOV dword ptr [EDX + 0x2f46640],EAX ; 005334f0 | g_Mp3AntiAliasCA | DAT_02f46650
+    MOV dword ptr [EDX + 0x2f46640],EAX ; 005334f0 | g_Mp3AntiAliasCA | g_Mp3AntiAliasCA[1]
     MOV EAX,dword ptr [ESP + 0x4]       ; 005334f6
-    FSTP double ptr [EDX + 0x2f46600]   ; 005334fa | g_Mp3AntiAliasCS | DAT_02f46610
-    MOV dword ptr [EDX + 0x2f46644],EAX ; 00533500 | DAT_02f46648+4 | DAT_02f46650+4
+    FSTP double ptr [EDX + 0x2f46600]   ; 005334fa | g_Mp3AntiAliasCS | g_Mp3AntiAliasCS[1]
+    MOV dword ptr [EDX + 0x2f46644],EAX ; 00533500 | g_Mp3AntiAliasCA[0]+4 | g_Mp3AntiAliasCA[1]+4
     CMP EDX,0x40                        ; 00533506
     JNZ 0x005334ca                      ; 00533509
         ;   XREF to: 005334ca (CONDITIONAL_JUMP)  ; LAB_005334ca
@@ -156,16 +156,16 @@ section .text
     FLD float ptr [ECX]                 ; 005335f0
         ;   Label: LAB_005335f0
     FLD ST0                             ; 005335f2
-    FMUL double ptr [EAX + 0x2f46648]   ; 005335f4 | g_Mp3AntiAliasCA | DAT_02f46650
+    FMUL double ptr [EAX + 0x2f46648]   ; 005335f4 | g_Mp3AntiAliasCA | g_Mp3AntiAliasCA[1]
     FLD float ptr [ESI]                 ; 005335fa
     FLD ST0                             ; 005335fc
-    FMUL double ptr [EAX + 0x2f46608]   ; 005335fe | g_Mp3AntiAliasCS | DAT_02f46610
+    FMUL double ptr [EAX + 0x2f46608]   ; 005335fe | g_Mp3AntiAliasCS | g_Mp3AntiAliasCS[1]
     FSUBP ST2,ST0                       ; 00533604
     FXCH                                ; 00533606
     FSTP float ptr [EBX]                ; 00533608
-    FMUL double ptr [EAX + 0x2f46648]   ; 0053360a | g_Mp3AntiAliasCA | DAT_02f46650
+    FMUL double ptr [EAX + 0x2f46648]   ; 0053360a | g_Mp3AntiAliasCA | g_Mp3AntiAliasCA[1]
     FXCH                                ; 00533610
-    FMUL double ptr [EAX + 0x2f46608]   ; 00533612 | g_Mp3AntiAliasCS | DAT_02f46610
+    FMUL double ptr [EAX + 0x2f46608]   ; 00533612 | g_Mp3AntiAliasCS | g_Mp3AntiAliasCS[1]
     ADD EDX,0x4                         ; 00533618
     SUB EBX,0x4                         ; 0053361b
     ADD EAX,0x8                         ; 0053361e

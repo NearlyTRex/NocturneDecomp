@@ -17,10 +17,10 @@
 ;   double g_UvCoordinateScale = 0.0111111111111111
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
-;   undefined4 DAT_01626418
-;   undefined4 DAT_0162641c
+;   undefined4 g_LoadedVertices[0].u
+;   undefined4 g_LoadedVertices[0].v
 ;
 ; *****************************************************************************
 
@@ -66,18 +66,18 @@ section .text
     MOV dword ptr [EDX + 0x162640c],EAX ; 004691bb | g_LoadedVertices
     IMUL EDX,dword ptr [0x01626408],0x14 ; 004691c1 | g_VertexCount
     MOV EAX,dword ptr [EBP + -0x8]      ; 004691c8
-    MOV dword ptr [EDX + 0x1626410],EAX ; 004691cb | DAT_01626410
+    MOV dword ptr [EDX + 0x1626410],EAX ; 004691cb | g_LoadedVertices[0].vertex.y
     IMUL EDX,dword ptr [0x01626408],0x14 ; 004691d1 | g_VertexCount
     MOV EAX,dword ptr [EBP + -0x4]      ; 004691d8
     MOV dword ptr [EDX + 0x1626414],EAX ; 004691db | g_LoadedVertices[0].vertex.z
     FLD float ptr [EBP + 0x14]          ; 004691e1
     FMUL double ptr [0x0061cf0e]        ; 004691e4 | g_UvCoordinateScale
     IMUL EAX,dword ptr [0x01626408],0x14 ; 004691ea | g_VertexCount
-    FSTP float ptr [EAX + 0x1626418]    ; 004691f1 | DAT_01626418
+    FSTP float ptr [EAX + 0x1626418]    ; 004691f1 | g_LoadedVertices[0].u
     FLD float ptr [EBP + 0x18]          ; 004691f7
     FMUL double ptr [0x0061cf0e]        ; 004691fa | g_UvCoordinateScale
     IMUL EAX,dword ptr [0x01626408],0x14 ; 00469200 | g_VertexCount
-    FSTP float ptr [EAX + 0x162641c]    ; 00469207 | DAT_0162641c
+    FSTP float ptr [EAX + 0x162641c]    ; 00469207 | g_LoadedVertices[0].v
     INC dword ptr [0x01626408]          ; 0046920d | g_VertexCount
     MOV ESP,EBP                         ; 00469213
     POP EBP                             ; 00469215

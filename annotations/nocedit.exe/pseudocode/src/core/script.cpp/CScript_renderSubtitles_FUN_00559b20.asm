@@ -20,8 +20,8 @@
 ;   CBitFont* g_MicroFont
 ;   int g_ClipTop
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81aac
-;   undefined4 DAT_02d81cc4
+;   undefined4 g_CGameInstance.subtitle_mode
+;   undefined4 g_CGameInstance.letterbox_mode
 ;   int g_MessageCount
 ;   int g_PreviousLetterboxMode
 ;   char[10][1024] g_ScriptSubtitleLines
@@ -49,7 +49,7 @@ section .text
     SUB ESP,0x20                        ; 00559b24
     MOV EDI,dword ptr [ESP + 0x34]      ; 00559b27
     MOV EAX,[0x0067b654]                ; 00559b2b | g_CGameInstance | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0x228]     ; 00559b30 | DAT_02d81cc4
+    MOV EDX,dword ptr [EAX + 0x228]     ; 00559b30 | g_CGameInstance.letterbox_mode
     TEST EDX,EDX                        ; 00559b36
     JNZ 0x00559d41                      ; 00559b38
         ;   XREF to: 00559d41 (CONDITIONAL_JUMP)  ; LAB_00559d41
@@ -134,7 +134,7 @@ section .text
     JZ 0x00559d30                       ; 00559c06
         ;   XREF to: 00559d30 (CONDITIONAL_JUMP)  ; LAB_00559d30
     MOV EAX,[0x0067b654]                ; 00559c0c | g_CGamePtr
-    CMP dword ptr [EAX + 0x10],0x0      ; 00559c11 | DAT_02d81aac
+    CMP dword ptr [EAX + 0x10],0x0      ; 00559c11 | g_CGameInstance.subtitle_mode
     JZ 0x00559d30                       ; 00559c15
         ;   XREF to: 00559d30 (CONDITIONAL_JUMP)  ; LAB_00559d30
     MOV ECX,dword ptr [0x00679398]      ; 00559c1b | g_WindowHeight
@@ -206,7 +206,7 @@ section .text
     ADD EAX,dword ptr [ESP + 0xc]       ; 00559cd7
     MOV EBX,0x31061e8                   ; 00559cdb | g_ScriptSubtitleLines
     MOV dword ptr [ESP + 0x10],EAX      ; 00559ce0
-    PUSH EBX                            ; 00559ce4 | g_ScriptSubtitleLines | DAT_031065e8
+    PUSH EBX                            ; 00559ce4 | g_ScriptSubtitleLines | g_ScriptSubtitleLines[1][0]
         ;   Label: LAB_00559ce4
     PUSH EBP                            ; 00559ce5
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80 ; 00559ce6

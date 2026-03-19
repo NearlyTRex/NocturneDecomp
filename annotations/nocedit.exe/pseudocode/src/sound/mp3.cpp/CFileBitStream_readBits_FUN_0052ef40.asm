@@ -26,7 +26,7 @@
 ;   TerminatedCString s_sound_mp3_cpp_0063ad3e
 ;   TerminatedCString s_Cannot_read_or_write_mor_0063ad4f
 ;   uint[18] g_MpegBitMaskTableMultiBit
-;   undefined4 DAT_0067e600
+;   undefined4 g_MpegBitMaskTableMultiBit[8]
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   char[256] g_CurrentMp3Filename
@@ -75,7 +75,7 @@ section .text
     MOV BL,byte ptr [EDX]               ; 0052ef81
     MOV EDX,dword ptr [EDI + 0x14]      ; 0052ef83
     SUB EBP,EAX                         ; 0052ef86
-    MOV ESI,dword ptr [EDX*0x4 + 0x67e5e0] ; 0052ef88 | g_MpegBitMaskTableMultiBit | DAT_0067e600
+    MOV ESI,dword ptr [EDX*0x4 + 0x67e5e0] ; 0052ef88 | g_MpegBitMaskTableMultiBit | g_MpegBitMaskTableMultiBit[8]
     SUB EDX,EAX                         ; 0052ef8f
     AND EBX,ESI                         ; 0052ef91
     MOV CL,DL                           ; 0052ef93

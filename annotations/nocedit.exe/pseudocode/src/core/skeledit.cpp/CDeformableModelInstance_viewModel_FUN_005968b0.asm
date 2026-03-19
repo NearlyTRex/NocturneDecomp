@@ -1199,17 +1199,17 @@ section .text
     ADD EAX,0x90                        ; 00597468
     PUSH EAX                            ; 0059746d
     MOV EDI,0x4                         ; 0059746e
-    MOV ESI,0xfe0000                    ; 00597473 | DAT_00fe0000
+    MOV ESI,0xfe0000                    ; 00597473 | g_LightBufferPool[12][269816]
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 00597478
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EDX,0x3                         ; 0059747d
     MOV ECX,0x20000                     ; 00597482
     ADD ESP,0x8                         ; 00597487
     MOV dword ptr [EBP + 0xfffffcee],EDI ; 0059748a
-    MOV dword ptr [EBP + 0xfffffd12],ESI ; 00597490 | DAT_00fe0000
-    MOV dword ptr [EBP + 0xfffffd1e],ESI ; 00597496 | DAT_00fe0000
-    MOV dword ptr [EBP + 0xfffffd22],ESI ; 0059749c | DAT_00fe0000
-    MOV dword ptr [EBP + 0xfffffd2e],ESI ; 005974a2 | DAT_00fe0000
+    MOV dword ptr [EBP + 0xfffffd12],ESI ; 00597490 | g_LightBufferPool[12][269816]
+    MOV dword ptr [EBP + 0xfffffd1e],ESI ; 00597496 | g_LightBufferPool[12][269816]
+    MOV dword ptr [EBP + 0xfffffd22],ESI ; 0059749c | g_LightBufferPool[12][269816]
+    MOV dword ptr [EBP + 0xfffffd2e],ESI ; 005974a2 | g_LightBufferPool[12][269816]
     XOR EAX,EAX                         ; 005974a8
     MOV EDI,0x1                         ; 005974aa
     PUSH 0x6819e4                       ; 005974af | SMRGLTextureBasic_006819e4

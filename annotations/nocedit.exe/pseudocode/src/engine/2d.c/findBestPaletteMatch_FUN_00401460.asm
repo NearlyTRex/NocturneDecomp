@@ -22,7 +22,7 @@
 ;   double g_BlueComponentWeight = 0.110000000000000
 ;   double g_LuminanceDifferenceWeight = 0.150000000000000
 ;   float[256] g_PaletteLuminanceCache
-;   undefined4 DAT_0077263c
+;   undefined4 g_PaletteLuminanceCache[1]
 ;   char[768] g_SourcePaletteData
 ;   undefined4 CHAR_ARRAY_02d01f49
 ;   undefined4 CHAR_ARRAY_02d01f4a
@@ -101,7 +101,7 @@ section .text
     XOR EAX,EDX                         ; 00401515
     SUB EAX,EDX                         ; 00401517
     FLD float ptr [ESP + 0x1c]          ; 00401519
-    FSUB float ptr [ESI + 0x772638]     ; 0040151d | g_PaletteLuminanceCache | DAT_0077263c
+    FSUB float ptr [ESI + 0x772638]     ; 0040151d | g_PaletteLuminanceCache | g_PaletteLuminanceCache[1]
     MOV dword ptr [ESP + 0x2c],EAX      ; 00401523
     FABS                                ; 00401527
     FLD float ptr [ESP + 0x8]           ; 00401529

@@ -115,7 +115,7 @@ section .text
     TEST EAX,EAX                        ; 004ff8a4
     JZ 0x004ffa16                       ; 004ff8a6
         ;   XREF to: 004ffa16 (CONDITIONAL_JUMP)  ; LAB_004ffa16
-    MOV EAX,[0x02db87b8]                ; 004ff8ac | DAT_02db8780.name_hash
+    MOV EAX,[0x02db87b8]                ; 004ff8ac | g_CHealthItemClassInfo.name_hash
     PUSH EAX                            ; 004ff8b1
     PUSH EBX                            ; 004ff8b2
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004ff8b3

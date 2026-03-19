@@ -76,7 +76,7 @@ section .text
     MOV ECX,0x41                        ; 004b9f51
     LEA EDI,[ESP + 0x3a8]               ; 004b9f56
     MOV ESI,0x67a050                    ; 004b9f5d | g_DirectoryBufferTemplate
-    MOVSD.REP ES:EDI,ESI                ; 004b9f62 | g_DirectoryBufferTemplate | DAT_0067a054
+    MOVSD.REP ES:EDI,ESI                ; 004b9f62 | g_DirectoryBufferTemplate | g_DirectoryBufferTemplate+4
     TEST EAX,EAX                        ; 004b9f64
     JZ 0x004b9fbd                       ; 004b9f66
         ;   XREF to: 004b9fbd (CONDITIONAL_JUMP)  ; LAB_004b9fbd

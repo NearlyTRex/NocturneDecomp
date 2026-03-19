@@ -18,7 +18,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
-;   undefined4 DAT_032613d4
+;   undefined4 g_CDemonSetInstance.actors[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -90,7 +90,7 @@ section .text
         ;   XREF to: 00504aa4 (CONDITIONAL_JUMP)  ; LAB_00504aa4
     MOV EBP,dword ptr [0x02dd3090]      ; 005049d8 | g_CLeverClassInfo.name_hash
     PUSH EBP                            ; 005049de
-    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 005049df | g_CDemonSetInstance.actors[0] | DAT_032613d4
+    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 005049df | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     PUSH EDX                            ; 005049e6
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005049e7
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

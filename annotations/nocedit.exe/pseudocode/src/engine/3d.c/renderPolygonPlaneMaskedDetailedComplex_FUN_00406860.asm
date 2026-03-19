@@ -13,9 +13,9 @@
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
 ;   int[24] g_ProcessedVertexIndices
-;   undefined4 DAT_00772a9c
-;   undefined4 DAT_00fbffff
-;   undefined4 DAT_00feffff
+;   undefined4 g_ProcessedVertexIndices[1]
+;   undefined4 g_LightBufferPool[12][138743]
+;   undefined4 g_LightBufferPool[13][28151]
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
@@ -80,7 +80,7 @@ section .text
     JGE 0x004069e2                      ; 004068f0
         ;   XREF to: 004069e2 (CONDITIONAL_JUMP)  ; LAB_004069e2
     MOV EAX,dword ptr [ECX]             ; 004068f6
-    MOV dword ptr [ESI + 0x772a98],EAX  ; 004068f8 | g_ProcessedVertexIndices | DAT_00772a9c
+    MOV dword ptr [ESI + 0x772a98],EAX  ; 004068f8 | g_ProcessedVertexIndices | g_ProcessedVertexIndices[1]
     MOV EBP,dword ptr [0x006793a4]      ; 004068fe | g_CurrentTextureDimension
     MOV EAX,dword ptr [ECX + 0x4]       ; 00406904
     MOV EDX,dword ptr [ECX + 0x8]       ; 00406907
@@ -96,24 +96,24 @@ section .text
     JGE 0x0040692c                      ; 00406925
         ;   XREF to: 0040692c (CONDITIONAL_JUMP)  ; LAB_0040692c
     MOV EDX,0x40000                     ; 00406927
-    CMP EAX,0xfbffff                    ; 0040692c | DAT_00fbffff
+    CMP EAX,0xfbffff                    ; 0040692c | g_LightBufferPool[12][138743]
         ;   Label: LAB_0040692c
     JLE 0x00406938                      ; 00406931
         ;   XREF to: 00406938 (CONDITIONAL_JUMP)  ; LAB_00406938
-    MOV EAX,0xfbffff                    ; 00406933 | DAT_00fbffff
-    CMP EDX,0xfbffff                    ; 00406938 | DAT_00fbffff
+    MOV EAX,0xfbffff                    ; 00406933 | g_LightBufferPool[12][138743]
+    CMP EDX,0xfbffff                    ; 00406938 | g_LightBufferPool[12][138743]
         ;   Label: LAB_00406938
     JG 0x004069a0                       ; 0040693e
         ;   XREF to: 004069a0 (CONDITIONAL_JUMP)  ; LAB_004069a0
     IMUL EBP,dword ptr [ECX],0x30       ; 00406940
         ;   Label: LAB_00406940
-    MOV dword ptr [EBP + 0x68802c],EAX  ; 00406943 | g_RenderVertexBuffer[0].u | DAT_00fbffff
+    MOV dword ptr [EBP + 0x68802c],EAX  ; 00406943 | g_RenderVertexBuffer[0].u | g_LightBufferPool[12][138743]
     IMUL EAX,dword ptr [ECX],0x30       ; 00406949
     ADD ESI,0x4                         ; 0040694c
     INC EDI                             ; 0040694f
     ADD EBX,0x3                         ; 00406950
     ADD ECX,0xc                         ; 00406953
-    MOV dword ptr [EAX + 0x688030],EDX  ; 00406956 | g_RenderVertexBuffer[0].v | DAT_00fbffff | DAT_00feffff
+    MOV dword ptr [EAX + 0x688030],EDX  ; 00406956 | g_RenderVertexBuffer[0].v | g_LightBufferPool[12][138743] | g_LightBufferPool[13][28151]
     JMP 0x004068e4                      ; 0040695c
         ;   XREF to: 004068e4 (UNCONDITIONAL_JUMP)  ; LAB_004068e4
     MOV dword ptr [0x02d0257c],0x5b5322 ; 0040695e | g_ScanlineRenderFunc
@@ -135,7 +135,7 @@ section .text
         ;   Label: LAB_00406994
     JMP 0x004068d1                      ; 0040699b
         ;   XREF to: 004068d1 (UNCONDITIONAL_JUMP)  ; LAB_004068d1
-    MOV EDX,0xfbffff                    ; 004069a0 | DAT_00fbffff
+    MOV EDX,0xfbffff                    ; 004069a0 | g_LightBufferPool[12][138743]
         ;   Label: LAB_004069a0
     JMP 0x00406940                      ; 004069a5
         ;   XREF to: 00406940 (UNCONDITIONAL_JUMP)  ; LAB_00406940
@@ -149,16 +149,16 @@ section .text
     JGE 0x004069c0                      ; 004069b9
         ;   XREF to: 004069c0 (CONDITIONAL_JUMP)  ; LAB_004069c0
     MOV EDX,0x10000                     ; 004069bb
-    CMP EAX,0xfeffff                    ; 004069c0 | DAT_00feffff
+    CMP EAX,0xfeffff                    ; 004069c0 | g_LightBufferPool[13][28151]
         ;   Label: LAB_004069c0
     JLE 0x004069cc                      ; 004069c5
         ;   XREF to: 004069cc (CONDITIONAL_JUMP)  ; LAB_004069cc
-    MOV EAX,0xfeffff                    ; 004069c7 | DAT_00feffff
-    CMP EDX,0xfeffff                    ; 004069cc | DAT_00feffff
+    MOV EAX,0xfeffff                    ; 004069c7 | g_LightBufferPool[13][28151]
+    CMP EDX,0xfeffff                    ; 004069cc | g_LightBufferPool[13][28151]
         ;   Label: LAB_004069cc
     JLE 0x00406940                      ; 004069d2
         ;   XREF to: 00406940 (CONDITIONAL_JUMP)  ; LAB_00406940
-    MOV EDX,0xfeffff                    ; 004069d8 | DAT_00feffff
+    MOV EDX,0xfeffff                    ; 004069d8 | g_LightBufferPool[13][28151]
     JMP 0x00406940                      ; 004069dd
         ;   XREF to: 00406940 (UNCONDITIONAL_JUMP)  ; LAB_00406940
     PUSH 0x772a98                       ; 004069e2 | g_ProcessedVertexIndices

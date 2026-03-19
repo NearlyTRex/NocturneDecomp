@@ -566,7 +566,7 @@ section .text
     JZ 0x005e5f88                       ; 005e5f74
         ;   XREF to: 005e5f88 (CONDITIONAL_JUMP)  ; LAB_005e5f88
     MOV EAX,[0x0067b654]                ; 005e5f76 | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x228],0x0     ; 005e5f7b | DAT_02d81cc4
+    CMP dword ptr [EAX + 0x228],0x0     ; 005e5f7b | g_CGameInstance.letterbox_mode
     JZ 0x005e6b4e                       ; 005e5f82
         ;   XREF to: 005e6b4e (CONDITIONAL_JUMP)  ; LAB_005e6b4e
     MOV ESP,EBP                         ; 005e5f88
@@ -1075,7 +1075,7 @@ section .text
     FMUL float ptr [EBP + 0x18]         ; 005e651f
     MOV EAX,[0x0067b654]                ; 005e6522 | g_CGameInstance | g_CGamePtr
     FSTP float ptr [EBX + 0x2438]       ; 005e6527
-    CMP dword ptr [EAX + 0x228],0x0     ; 005e652d | DAT_02d81cc4
+    CMP dword ptr [EAX + 0x228],0x0     ; 005e652d | g_CGameInstance.letterbox_mode
     JZ 0x005e6ad3                       ; 005e6534
         ;   XREF to: 005e6ad3 (CONDITIONAL_JUMP)  ; LAB_005e6ad3
     PUSH 0x656b67                       ; 005e653a | = "morphToBat"
@@ -1096,7 +1096,7 @@ section .text
         ;   Label: LAB_005e6566
     MOV EAX,[0x0067b654]                ; 005e6569 | g_CGamePtr
         ;   Label: caseD_9
-    CMP dword ptr [EAX + 0x228],0x0     ; 005e656e | DAT_02d81cc4
+    CMP dword ptr [EAX + 0x228],0x0     ; 005e656e | g_CGameInstance.letterbox_mode
     JNZ 0x005e65e3                      ; 005e6575
         ;   XREF to: 005e65e3 (CONDITIONAL_JUMP)  ; LAB_005e65e3
     CMP EDI,0x2                         ; 005e6577
@@ -1235,7 +1235,7 @@ section .text
         ;   XREF to: 005e649b (CONDITIONAL_JUMP)  ; LAB_005e649b
     MOV ESI,dword ptr [0x03f87518]      ; 005e6722 | g_CTVBatClassInfo.name_hash
     PUSH ESI                            ; 005e6728
-    MOV EDX,dword ptr [EDI + EAX*0x1 + 0x150fe0] ; 005e6729 | DAT_03265258 | DAT_0326525c
+    MOV EDX,dword ptr [EDI + EAX*0x1 + 0x150fe0] ; 005e6729 | g_CDemonSetInstance.enemies[0] | g_CDemonSetInstance.enemies[1]
     PUSH EDX                            ; 005e6730
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005e6731
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

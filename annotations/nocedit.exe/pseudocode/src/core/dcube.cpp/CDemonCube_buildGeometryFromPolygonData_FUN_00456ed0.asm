@@ -18,19 +18,19 @@
 ; Referenced Globals:
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
-;   undefined4 DAT_01626420
-;   undefined4 DAT_01626424
-;   undefined4 DAT_01626428
+;   undefined4 g_LoadedVertices[1].vertex.x
+;   undefined4 g_LoadedVertices[1].vertex.y
+;   undefined4 g_LoadedVertices[1].vertex.z
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
-;   undefined4 DAT_016e9914
-;   undefined4 DAT_016e99b4
-;   undefined4 DAT_016e99c8
-;   undefined4 DAT_016e99cc
-;   undefined4 DAT_016e99d0
-;   undefined4 DAT_016e99d4
+;   undefined4 g_ModelPolygonData[0].texture_name[0]
+;   undefined4 g_ModelPolygonData[0].vertex_indices_count
+;   undefined4 g_ModelPolygonData[0].vertex_indices[0]
+;   undefined4 g_ModelPolygonData[0].vertex_indices[1]
+;   undefined4 g_ModelPolygonData[0].vertex_indices[2]
+;   undefined4 g_ModelPolygonData[0].vertex_indices[3]
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -63,7 +63,7 @@ section .text
     JLE 0x00456f30                      ; 00456f00
         ;   XREF to: 00456f30 (CONDITIONAL_JUMP)  ; LAB_00456f30
     XOR EDX,EDX                         ; 00456f02
-    MOV EBX,dword ptr [EDX + 0x16e99b4] ; 00456f04 | DAT_016e99b4 | DAT_016e9b38
+    MOV EBX,dword ptr [EDX + 0x16e99b4] ; 00456f04 | g_ModelPolygonData[0].vertex_indices_count | g_ModelPolygonData[1].vertex_indices_count
         ;   Label: LAB_00456f04
     ADD EDX,0x184                       ; 00456f0a
     MOV ECX,dword ptr [ESI + 0x28]      ; 00456f10
@@ -108,14 +108,14 @@ section .text
     ADD EAX,0xc                         ; 00456f68
         ;   Label: LAB_00456f68
     MOV EBX,dword ptr [ESI + 0x24]      ; 00456f6b
-    FLD float ptr [EDI + 0x162640c]     ; 00456f6e | g_LoadedVertices | DAT_01626420
+    FLD float ptr [EDI + 0x162640c]     ; 00456f6e | g_LoadedVertices | g_LoadedVertices[1].vertex.x
     INC EDX                             ; 00456f74
     FSTP float ptr [EBX + EAX*0x1 + -0xc] ; 00456f75
     MOV EBX,dword ptr [ESI + 0x24]      ; 00456f79
-    MOV ECX,dword ptr [EDI + 0x1626410] ; 00456f7c | DAT_01626410 | DAT_01626424
+    MOV ECX,dword ptr [EDI + 0x1626410] ; 00456f7c | g_LoadedVertices[0].vertex.y | g_LoadedVertices[1].vertex.y
     MOV dword ptr [EBX + EAX*0x1 + -0x8],ECX ; 00456f82
     MOV EBX,dword ptr [ESI + 0x24]      ; 00456f86
-    MOV ECX,dword ptr [EDI + 0x1626414] ; 00456f89 | g_LoadedVertices[0].vertex.z | DAT_01626428
+    MOV ECX,dword ptr [EDI + 0x1626414] ; 00456f89 | g_LoadedVertices[0].vertex.z | g_LoadedVertices[1].vertex.z
     MOV dword ptr [EBX + EAX*0x1 + -0x4],ECX ; 00456f8f
     MOV ECX,dword ptr [ESI + 0x20]      ; 00456f93
     ADD EDI,0x14                        ; 00456f96
@@ -133,10 +133,10 @@ section .text
     MOV EAX,0x16e9910                   ; 00456fb4 | g_ModelPolygonData
     ADD EAX,0x4                         ; 00456fb9
     MOV dword ptr [ESP + 0xc],EDI       ; 00456fbc
-    MOV dword ptr [ESP + 0x4],EAX       ; 00456fc0 | DAT_016e9914
-    MOV EAX,dword ptr [ESP + 0x4]       ; 00456fc4 | DAT_016e9914 | DAT_016e9a98
+    MOV dword ptr [ESP + 0x4],EAX       ; 00456fc0 | g_ModelPolygonData[0].texture_name[0]
+    MOV EAX,dword ptr [ESP + 0x4]       ; 00456fc4 | g_ModelPolygonData[0].texture_name[0] | g_ModelPolygonData[1].texture_name[0]
         ;   Label: LAB_00456fc4
-    PUSH EAX                            ; 00456fc8 | DAT_016e9914 | DAT_016e9a98
+    PUSH EAX                            ; 00456fc8 | g_ModelPolygonData[0].texture_name[0] | g_ModelPolygonData[1].texture_name[0]
     CALL crt_stdlib.c_atoi_FUN_005ffef0 ; 00456fc9
         ;   XREF to: 005ffef0 (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_atoi_FUN_005ffef0(char * string_ptr)
     ADD ESP,0x4                         ; 00456fce
@@ -149,22 +149,22 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 00456fe6
     MOV EBP,0x2                         ; 00456fea
     MOV EBX,dword ptr [ESP + 0xc]       ; 00456fef
-    MOV EDX,dword ptr [EAX + 0x16e99b4] ; 00456ff3 | DAT_016e99b4
+    MOV EDX,dword ptr [EAX + 0x16e99b4] ; 00456ff3 | g_ModelPolygonData[0].vertex_indices_count
     ADD EBX,0x8                         ; 00456ff9
     CMP EDX,EBP                         ; 00456ffc
     JLE 0x0045705b                      ; 00456ffe
         ;   XREF to: 0045705b (CONDITIONAL_JUMP)  ; LAB_0045705b
-    IMUL EDX,dword ptr [EBX + 0x16e99c8],0xc ; 00457000 | DAT_016e99c8 | DAT_016e99d0 | DAT_016e99d4
+    IMUL EDX,dword ptr [EBX + 0x16e99c8],0xc ; 00457000 | g_ModelPolygonData[0].vertex_indices[0] | g_ModelPolygonData[0].vertex_indices[2] | g_ModelPolygonData[0].vertex_indices[3]
         ;   Label: LAB_00457000
     MOV EAX,dword ptr [ESI + 0x24]      ; 00457007
     ADD EDX,EAX                         ; 0045700a
-    MOV ECX,dword ptr [EBX + 0x16e99c4] ; 0045700c | DAT_016e99cc | DAT_016e99d0
+    MOV ECX,dword ptr [EBX + 0x16e99c4] ; 0045700c | g_ModelPolygonData[0].vertex_indices[1] | g_ModelPolygonData[0].vertex_indices[2]
     PUSH EDX                            ; 00457012
     IMUL EDX,ECX,0xc                    ; 00457013
     ADD EDX,EAX                         ; 00457016
     PUSH EDX                            ; 00457018
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00457019
-    IMUL EDX,dword ptr [EDX + 0x16e99c8],0xc ; 0045701d | DAT_016e99c8
+    IMUL EDX,dword ptr [EDX + 0x16e99c8],0xc ; 0045701d | g_ModelPolygonData[0].vertex_indices[0]
     ADD EAX,EDX                         ; 00457024
     MOV ECX,dword ptr [ESP + 0x20]      ; 00457026
     PUSH EAX                            ; 0045702a
@@ -181,7 +181,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 00457048
     INC EDI                             ; 0045704c
     INC EBP                             ; 0045704d
-    MOV EDX,dword ptr [EAX + 0x16e99b4] ; 0045704e | DAT_016e99b4
+    MOV EDX,dword ptr [EAX + 0x16e99b4] ; 0045704e | g_ModelPolygonData[0].vertex_indices_count
     ADD EBX,0x4                         ; 00457054
     CMP EBP,EDX                         ; 00457057
     JL 0x00457000                       ; 00457059
@@ -192,10 +192,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 00457063
     MOV EBX,dword ptr [0x016e990c]      ; 00457067 | g_PolygonCount
     ADD EAX,0x184                       ; 0045706d
-    ADD EDX,0x184                       ; 00457072 | DAT_016e9a98
+    ADD EDX,0x184                       ; 00457072 | g_ModelPolygonData[1].texture_name[0]
     INC ECX                             ; 00457078
     MOV dword ptr [ESP + 0xc],EAX       ; 00457079
-    MOV dword ptr [ESP + 0x4],EDX       ; 0045707d | DAT_016e9a98
+    MOV dword ptr [ESP + 0x4],EDX       ; 0045707d | g_ModelPolygonData[1].texture_name[0]
     MOV dword ptr [ESP + 0x8],ECX       ; 00457081
     CMP ECX,EBX                         ; 00457085
     JL 0x00456fc4                       ; 00457087

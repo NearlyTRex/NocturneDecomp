@@ -17,11 +17,11 @@
 ;   TerminatedCString s_skeledit_ini_00681868
 ;   CEditorTools g_CEditorToolsInstance
 ;   char[264] g_SkeleditLastPOSImported
-;   undefined4 DAT_03670849
+;   undefined4 g_SkeleditLastPOSImported+1
 ;   char[264] g_SkeleditLastMOTImported
-;   undefined4 DAT_03670951
+;   undefined4 g_SkeleditLastMOTImported+1
 ;   char[260] g_SkeleditLastTestSkeletonDir
-;   undefined4 DAT_03670a59
+;   undefined4 g_SkeleditLastTestSkeletonDir+1
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgetc_FUN_005fe840
@@ -302,7 +302,7 @@ section .text
     INC EBX                             ; 005899cc
         ;   Label: LAB_005899cc
     MOV byte ptr [EBX + -0x1],DL        ; 005899cd | g_SkeleditLastPOSImported
-    MOV byte ptr [EBX],0x0              ; 005899d0 | DAT_03670849
+    MOV byte ptr [EBX],0x0              ; 005899d0 | g_SkeleditLastPOSImported+1
     JMP 0x00589986                      ; 005899d3
         ;   XREF to: 00589986 (UNCONDITIONAL_JUMP)  ; LAB_00589986
     CMP EAX,0x22                        ; 005899d5
@@ -345,11 +345,11 @@ section .text
     INC EBX                             ; 00589a24
         ;   Label: LAB_00589a24
     MOV byte ptr [EBX + -0x1],DL        ; 00589a25 | g_SkeleditLastMOTImported
-    MOV byte ptr [EBX],0x0              ; 00589a28 | DAT_03670951
+    MOV byte ptr [EBX],0x0              ; 00589a28 | g_SkeleditLastMOTImported+1
     JMP 0x005899de                      ; 00589a2b
         ;   XREF to: 005899de (UNCONDITIONAL_JUMP)  ; LAB_005899de
     INC EBX                             ; 00589a2d
         ;   Label: LAB_00589a2d
     MOV byte ptr [EBX + -0x1],DL        ; 00589a2e | g_SkeleditLastTestSkeletonDir
-    MOV byte ptr [EBX],0x0              ; 00589a31 | DAT_03670a59
+    MOV byte ptr [EBX],0x0              ; 00589a31 | g_SkeleditLastTestSkeletonDir+1
 

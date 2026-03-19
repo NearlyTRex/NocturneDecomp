@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -28,7 +28,7 @@ section .text
     SUB ESP,0x18                        ; 004128d1
     MOV EBX,dword ptr [ESP + 0x20]      ; 004128d4
     MOV EAX,[0x0067d550]                ; 004128d8 | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 004128dd | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 004128dd | g_CDemonMissionInstance.is_in_editor
     JNZ 0x004128ea                      ; 004128e1
         ;   XREF to: 004128ea (CONDITIONAL_JUMP)  ; LAB_004128ea
     XOR EAX,EAX                         ; 004128e3

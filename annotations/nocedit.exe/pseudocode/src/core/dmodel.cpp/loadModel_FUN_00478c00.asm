@@ -16,7 +16,7 @@
 ;   TerminatedCString s_Can_t_load_s_because_key_0061f937
 ;   int g_KeyframeModelCount
 ;   CKeyFramedModel[256] g_CKeyFramedModelPool
-;   undefined4 DAT_026acb5c
+;   undefined4 g_CKeyFramedModelPool[1].model_filename[0]
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -45,7 +45,7 @@ section .text
     MOV EBX,0x26a7484                   ; 00478c15 | g_CKeyFramedModelPool
     PUSH EDI                            ; 00478c1a
         ;   Label: LAB_00478c1a
-    PUSH EBX                            ; 00478c1b | g_CKeyFramedModelPool | DAT_026acb5c
+    PUSH EBX                            ; 00478c1b | g_CKeyFramedModelPool | g_CKeyFramedModelPool[1].model_filename[0]
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00478c1c
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00478c21

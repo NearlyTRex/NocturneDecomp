@@ -60,6 +60,7 @@
 #include "types/funcdefs/APIDLL_sync.h"
 #include "types/funcdefs/APIDLL_toggle.h"
 #include "types/funcdefs/APIDLL_toggleX.h"
+#include "types/funcdefs/APIDLL_unknown.h"
 #include "types/funcdefs/APIDLL_unlockFrame.h"
 #include "types/funcdefs/APIDLL_unlockFrameX.h"
 #include "types/funcdefs/APIDLL_unlockHoldBuffer.h"
@@ -188,6 +189,23 @@ extern APIDLL_toggle* g_APIDLL_toggle;
 
 // APIDLL_toggleX*
 extern APIDLL_toggleX* g_APIDLL_toggleX;
+
+// APIDLL_unknown*
+extern APIDLL_unknown* g_APIDLL_setVideoMode;
+extern APIDLL_unknown* g_APIDLL_GetDisplayContext;
+extern APIDLL_unknown* g_APIDLL_ReleaseDisplayContext;
+extern APIDLL_unknown* g_APIDLL_setViewport;
+extern APIDLL_unknown* g_APIDLL_setLightConstants;
+extern APIDLL_unknown* g_APIDLL_setLightVector;
+extern APIDLL_unknown* g_APIDLL_setAmbientLight;
+extern APIDLL_unknown* g_APIDLL_setTransform;
+extern APIDLL_unknown* g_APIDLL_polyList;
+extern APIDLL_unknown* g_APIDLL_getTextureHandle;
+extern APIDLL_unknown* g_APIDLL_selectTextureByHandle;
+extern APIDLL_unknown* g_APIDLL_enableCulling;
+extern APIDLL_unknown* g_APIDLL_enableClipping;
+extern APIDLL_unknown* g_APIDLL_setTextureClamp;
+extern APIDLL_unknown* g_APIDLL_setFog;
 
 // APIDLL_unlockFrame*
 extern APIDLL_unlockFrame* g_APIDLL_unlockFrame;
@@ -523,21 +541,6 @@ extern uint g_TrainExteriorAmbientHandle;
 // void*
 extern void* g_PrimaryMixBuffer;
 extern void* g_FrameBufferPtr;
-extern void* g_APIDLL_setVideoMode;
-extern void* g_APIDLL_GetDisplayContext;
-extern void* g_APIDLL_ReleaseDisplayContext;
-extern void* g_APIDLL_setViewport;
-extern void* g_APIDLL_setLightConstants;
-extern void* g_APIDLL_setLightVector;
-extern void* g_APIDLL_setAmbientLight;
-extern void* g_APIDLL_setTransform;
-extern void* g_APIDLL_polyList;
-extern void* g_APIDLL_getTextureHandle;
-extern void* g_APIDLL_selectTextureByHandle;
-extern void* g_APIDLL_enableCulling;
-extern void* g_APIDLL_enableClipping;
-extern void* g_APIDLL_setTextureClamp;
-extern void* g_APIDLL_setFog;
 
 // void*[8]
 extern void* g_ChannelPrimaryBuffers[8];

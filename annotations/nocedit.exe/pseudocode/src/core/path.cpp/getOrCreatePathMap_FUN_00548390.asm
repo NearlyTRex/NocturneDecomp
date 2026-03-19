@@ -19,14 +19,14 @@
 ;   WatcomTypeInfo g_CPathMapTypeInfo
 ;   WatcomStaticDestructorNode g_PathMapCacheDestructorNode
 ;   int[12] g_PathMapLRUCounters
-;   undefined4 DAT_00680bdc
+;   undefined4 g_PathMapLRUCounters[1]
 ;   CPathMap[12] g_PathMapCache
-;   undefined4 DAT_02fec910
-;   undefined4 DAT_02fec914
-;   undefined4 DAT_02fec918
-;   undefined4 DAT_030001ec
-;   undefined4 DAT_030001f0
-;   undefined4 DAT_030001f4
+;   undefined4 g_PathMapCache[0].cached_voxel_coords.x
+;   undefined4 g_PathMapCache[0].cached_voxel_coords.y
+;   undefined4 g_PathMapCache[0].cached_voxel_coords.z
+;   undefined4 g_PathMapCache[1].cached_voxel_coords.x
+;   undefined4 g_PathMapCache[1].cached_voxel_coords.y
+;   undefined4 g_PathMapCache[1].cached_voxel_coords.z
 ;   uchar g_PathMapCacheInitFlag
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
@@ -75,29 +75,29 @@ section .text
     XOR ESI,ESI                         ; 005483e3
     MOV EDI,dword ptr [ESP + 0x18]      ; 005483e5
         ;   Label: LAB_005483e5
-    CMP EDI,dword ptr [EDX + 0x2fec910] ; 005483e9 | DAT_02fec910 | DAT_030001ec
+    CMP EDI,dword ptr [EDX + 0x2fec910] ; 005483e9 | g_PathMapCache[0].cached_voxel_coords.x | g_PathMapCache[1].cached_voxel_coords.x
     JNZ 0x005484d2                      ; 005483ef
         ;   XREF to: 005484d2 (CONDITIONAL_JUMP)  ; LAB_005484d2
     MOV EDI,dword ptr [ESP + 0x1c]      ; 005483f5
-    CMP EDI,dword ptr [EDX + 0x2fec914] ; 005483f9 | DAT_02fec914 | DAT_030001f0
+    CMP EDI,dword ptr [EDX + 0x2fec914] ; 005483f9 | g_PathMapCache[0].cached_voxel_coords.y | g_PathMapCache[1].cached_voxel_coords.y
     JNZ 0x005484d2                      ; 005483ff
         ;   XREF to: 005484d2 (CONDITIONAL_JUMP)  ; LAB_005484d2
     MOV EDI,dword ptr [ESP + 0x20]      ; 00548405
-    CMP EDI,dword ptr [EDX + 0x2fec918] ; 00548409 | DAT_02fec918 | DAT_030001f4
+    CMP EDI,dword ptr [EDX + 0x2fec918] ; 00548409 | g_PathMapCache[0].cached_voxel_coords.z | g_PathMapCache[1].cached_voxel_coords.z
     JNZ 0x005484d2                      ; 0054840f
         ;   XREF to: 005484d2 (CONDITIONAL_JUMP)  ; LAB_005484d2
     MOV ESI,ECX                         ; 00548415
     LEA ECX,[ESI*0x4 + 0x0]             ; 00548417
         ;   Label: LAB_00548417
     XOR EAX,EAX                         ; 0054841e
-    MOV EBX,dword ptr [ECX + 0x680bd8]  ; 00548420 | g_PathMapLRUCounters | DAT_00680bdc
+    MOV EBX,dword ptr [ECX + 0x680bd8]  ; 00548420 | g_PathMapLRUCounters | g_PathMapLRUCounters[1]
         ;   Label: LAB_00548420
-    MOV EDX,dword ptr [EAX + 0x680bd8]  ; 00548426 | g_PathMapLRUCounters | DAT_00680bdc
+    MOV EDX,dword ptr [EAX + 0x680bd8]  ; 00548426 | g_PathMapLRUCounters | g_PathMapLRUCounters[1]
     CMP EDX,EBX                         ; 0054842c
     JGE 0x00548439                      ; 0054842e
         ;   XREF to: 00548439 (CONDITIONAL_JUMP)  ; LAB_00548439
     LEA EDI,[EDX + 0x1]                 ; 00548430
-    MOV dword ptr [EAX + 0x680bd8],EDI  ; 00548433 | g_PathMapLRUCounters | DAT_00680bdc
+    MOV dword ptr [EAX + 0x680bd8],EDI  ; 00548433 | g_PathMapLRUCounters | g_PathMapLRUCounters[1]
     ADD EAX,0x4                         ; 00548439
         ;   Label: LAB_00548439
     CMP EAX,0x30                        ; 0054843c
@@ -148,7 +148,7 @@ section .text
     XOR EDX,EDX                         ; 005484ba
         ;   Label: LAB_005484ba
     XOR EAX,EAX                         ; 005484bc
-    MOV dword ptr [EDX + 0x680bd8],EAX  ; 005484be | g_PathMapLRUCounters | DAT_00680bdc
+    MOV dword ptr [EDX + 0x680bd8],EAX  ; 005484be | g_PathMapLRUCounters | g_PathMapLRUCounters[1]
         ;   Label: LAB_005484be
     INC EAX                             ; 005484c4
     ADD EDX,0x4                         ; 005484c5
@@ -157,7 +157,7 @@ section .text
         ;   XREF to: 005484be (CONDITIONAL_JUMP)  ; LAB_005484be
     JMP 0x005483c0                      ; 005484cd
         ;   XREF to: 005483c0 (UNCONDITIONAL_JUMP)  ; LAB_005483c0
-    MOV EAX,dword ptr [EBX + 0x680bd8]  ; 005484d2 | g_PathMapLRUCounters | DAT_00680bdc
+    MOV EAX,dword ptr [EBX + 0x680bd8]  ; 005484d2 | g_PathMapLRUCounters | g_PathMapLRUCounters[1]
         ;   Label: LAB_005484d2
     CMP EAX,dword ptr [ESI*0x4 + 0x680bd8] ; 005484d8 | g_PathMapLRUCounters
     JLE 0x005484e3                      ; 005484df

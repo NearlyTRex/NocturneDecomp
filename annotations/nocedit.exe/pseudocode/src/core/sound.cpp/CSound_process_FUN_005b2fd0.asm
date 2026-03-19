@@ -151,7 +151,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 005b30d4 | g_CDemonSetPtr
     PUSH 0x65278b                       ; 005b30d9 | = "NDUN"
     ADD EAX,0x14d0f0                    ; 005b30de
-    PUSH EAX                            ; 005b30e3 | DAT_03261368
+    PUSH EAX                            ; 005b30e3 | g_CDemonSetInstance.geometry_filename[0]
     CALL crt_string.c__strnicmp_FUN_005ff070 ; 005b30e4
         ;   XREF to: 005ff070 (UNCONDITIONAL_CALL)  ; int crt_string.c__strnicmp_FUN_005ff070(char * str1, char * str2, int count)
     ADD ESP,0xc                         ; 005b30e9
@@ -393,7 +393,7 @@ section .text
     MOV EDI,ESI                         ; 005b343c
         ;   Label: LAB_005b343c
     SHL EDI,0x4                         ; 005b343e
-    MOV EAX,dword ptr [EDI + 0x3f6b7c8] ; 005b3441 | DAT_03f6b7c8 | DAT_03f6b7d8
+    MOV EAX,dword ptr [EDI + 0x3f6b7c8] ; 005b3441 | g_TrainNoiseArray[0].sfx_handle | g_TrainNoiseArray[1].sfx_handle
     PUSH EAX                            ; 005b3447
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660 ; 005b3448
         ;   XREF to: 005a9660 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005a9660(uint sfx_handle)
@@ -430,14 +430,14 @@ section .text
     SAHF                                ; 005b34c7
     JBE 0x005b34d9                      ; 005b34c8
         ;   XREF to: 005b34d9 (CONDITIONAL_JUMP)  ; LAB_005b34d9
-    MOV EDX,dword ptr [EDI + 0x3f6b7c8] ; 005b34ca | DAT_03f6b7c8
+    MOV EDX,dword ptr [EDI + 0x3f6b7c8] ; 005b34ca | g_TrainNoiseArray[0].sfx_handle
     PUSH EDX                            ; 005b34d0
     CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 005b34d1
         ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
     ADD ESP,0x4                         ; 005b34d6
     INC ESI                             ; 005b34d9
         ;   Label: LAB_005b34d9
-    ADD EBX,0x10                        ; 005b34da | DAT_03f6b7cc
+    ADD EBX,0x10                        ; 005b34da | g_TrainNoiseArray[1].position.x
     CMP ESI,0xa                         ; 005b34dd
     JL 0x005b343c                       ; 005b34e0
         ;   XREF to: 005b343c (CONDITIONAL_JUMP)  ; LAB_005b343c
@@ -698,7 +698,7 @@ section .text
     ADD ESP,0x8                         ; 005b37f1
     FSTP float ptr [0x03f6b868]         ; 005b37f4 | g_TrainNoiseCooldown
     MOV dword ptr [ESP + 0x114],EBX     ; 005b37fa
-    MOVSD.REP ES:EDI,ESI                ; 005b3801 | g_TrainSoundFilenameTemplate | DAT_0068211c
+    MOVSD.REP ES:EDI,ESI                ; 005b3801 | g_TrainSoundFilenameTemplate | g_TrainSoundFilenameTemplate+4
     CALL crt_stdlib.c_rand_FUN_005feb5c ; 005b3803
         ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005feb5c()
     MOV EDX,EAX                         ; 005b3808

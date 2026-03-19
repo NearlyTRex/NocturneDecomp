@@ -177,7 +177,7 @@ section .text
     MOV ECX,0x19                        ; 0053ce61
     MOV dword ptr [EBP + 0x3c],0x0      ; 0053ce66
     MOV dword ptr [0x0067d550],EBP      ; 0053ce6d | g_CDemonMissionPtr
-    MOVSD.REP ES:EDI,ESI                ; 0053ce73 | g_MsnEditImportWildcardPattern | DAT_00680974
+    MOVSD.REP ES:EDI,ESI                ; 0053ce73 | g_MsnEditImportWildcardPattern | g_MsnEditImportWildcardPattern+4
     MOV EBX,dword ptr [ESP + 0x43c]     ; 0053ce75
         ;   Label: LAB_0053ce75
     PUSH EBX                            ; 0053ce7c

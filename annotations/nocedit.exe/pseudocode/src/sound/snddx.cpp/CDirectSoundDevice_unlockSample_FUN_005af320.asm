@@ -16,10 +16,10 @@
 ;   int g_CurrentLineNumber
 ;   IDirectSoundBuffer*[25] g_DirectSoundSampleBuffers
 ;   IDirectSoundBufferMetadata[25] g_DirectSoundBufferMetadata
-;   undefined4 DAT_03f6ab40
-;   undefined4 DAT_03f6ab44
-;   undefined4 DAT_03f6ab48
-;   undefined4 DAT_03f6ab4c
+;   undefined4 g_DirectSoundBufferMetadata[0].field1_0x4
+;   undefined4 g_DirectSoundBufferMetadata[0].field2_0x8
+;   undefined4 g_DirectSoundBufferMetadata[0].field3_0xc
+;   undefined4 g_DirectSoundBufferMetadata[0].ref_count
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -60,15 +60,15 @@ section .text
     MOV EBX,0x3f6ab3c                   ; 005af36b | g_DirectSoundBufferMetadata
     SHL EAX,0x2                         ; 005af370
     ADD EBX,EAX                         ; 005af373
-    MOV EBP,dword ptr [EBX + 0x4]       ; 005af375 | DAT_03f6ab40
+    MOV EBP,dword ptr [EBX + 0x4]       ; 005af375 | g_DirectSoundBufferMetadata[0].field1_0x4
     TEST EBP,EBP                        ; 005af378
     JZ 0x005af3cd                       ; 005af37a
         ;   XREF to: 005af3cd (CONDITIONAL_JUMP)  ; LAB_005af3cd
-    MOV EDX,dword ptr [EBX + 0x10]      ; 005af37c | DAT_03f6ab4c
+    MOV EDX,dword ptr [EBX + 0x10]      ; 005af37c | g_DirectSoundBufferMetadata[0].ref_count
     PUSH EDX                            ; 005af37f
-    MOV ECX,dword ptr [EBX + 0x8]       ; 005af380 | DAT_03f6ab44
+    MOV ECX,dword ptr [EBX + 0x8]       ; 005af380 | g_DirectSoundBufferMetadata[0].field2_0x8
     PUSH ECX                            ; 005af383
-    MOV EDI,dword ptr [EBX + 0xc]       ; 005af384 | DAT_03f6ab48
+    MOV EDI,dword ptr [EBX + 0xc]       ; 005af384 | g_DirectSoundBufferMetadata[0].field3_0xc
     PUSH EDI                            ; 005af387
     MOV EAX,dword ptr [ESI*0x4 + 0x3f6a9e0] ; 005af388 | g_DirectSoundSampleBuffers
     PUSH EBP                            ; 005af38f
@@ -95,7 +95,7 @@ section .text
     CALL sound_sndmain.cpp_logSoundError_FUN_005adba0 ; 005af3be
         ;   XREF to: 005adba0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005adba0(char * format)
     ADD ESP,0x4                         ; 005af3c3
-    MOV dword ptr [EBX + 0x4],0x0       ; 005af3c6 | DAT_03f6ab40
+    MOV dword ptr [EBX + 0x4],0x0       ; 005af3c6 | g_DirectSoundBufferMetadata[0].field1_0x4
         ;   Label: LAB_005af3c6
     ADD ESP,0x190                       ; 005af3cd
         ;   Label: LAB_005af3cd

@@ -11,8 +11,8 @@
 ;   float FLOAT_006142b8 = 10000
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_032613ac
-;   undefined4 DAT_032758e8
+;   undefined4 g_CDemonSetInstance.ground_type
+;   undefined4 g_CDemonCameraInstance.base.position
 ;   undefined4 g_CDemonCameraInstance.base.position+4
 ;   undefined4 g_CDemonCameraInstance.base.position+8
 ;
@@ -31,12 +31,12 @@ section .text
     PUSH EBP                            ; 0040c832
     SUB ESP,0x18                        ; 0040c833
     MOV ESI,dword ptr [ESP + 0x28]      ; 0040c836
-    MOV EAX,[0x032758e8]                ; 0040c83a | DAT_032758e8
+    MOV EAX,[0x032758e8]                ; 0040c83a | g_CDemonCameraInstance.base.position
     MOV dword ptr [ESP],EAX             ; 0040c83f
-    MOV EAX,0x32758e8                   ; 0040c842 | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 0040c842 | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EAX + 0x4]       ; 0040c847 | g_CDemonCameraInstance.base.position+4
     MOV dword ptr [ESP + 0x4],EAX       ; 0040c84a
-    MOV EAX,0x32758e8                   ; 0040c84e | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 0040c84e | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EAX + 0x8]       ; 0040c853 | g_CDemonCameraInstance.base.position+8
     LEA EBX,[ESI + 0x20]                ; 0040c856
     MOV dword ptr [ESP + 0x8],EAX       ; 0040c859
@@ -84,7 +84,7 @@ section .text
         ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_init_FUN_00574180(CDemonSet * this_ptr)
     MOV EAX,[0x006810c8]                ; 0040c8bf | g_CDemonSetPtr
     ADD ESP,0x4                         ; 0040c8c4
-    MOV EBP,dword ptr [EAX + 0x14d134]  ; 0040c8c7 | DAT_032613ac
+    MOV EBP,dword ptr [EAX + 0x14d134]  ; 0040c8c7 | g_CDemonSetInstance.ground_type
     PUSH dword ptr [ESP + 0x30]         ; 0040c8cd
     PUSH EBP                            ; 0040c8d1
     PUSH EBX                            ; 0040c8d2

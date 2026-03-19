@@ -190,7 +190,7 @@ section .text
     JGE 0x0040a6d0                      ; 0040a3c2
         ;   XREF to: 0040a6d0 (CONDITIONAL_JUMP)  ; LAB_0040a6d0
     ADD EAX,dword ptr [ESP + 0x270]     ; 0040a3c8
-    MOV EAX,dword ptr [EAX + 0x14d158]  ; 0040a3cf | g_CDemonSetInstance.actors[0] | DAT_032613d4
+    MOV EAX,dword ptr [EAX + 0x14d158]  ; 0040a3cf | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     MOV dword ptr [ESP + 0x27c],EAX     ; 0040a3d5
     CMP EBX,EAX                         ; 0040a3dc
     JNZ 0x0040a402                      ; 0040a3de
@@ -519,7 +519,7 @@ section .text
     MOV ECX,dword ptr [0x00823c4c]      ; 0040a779 | g_CCharacterClassInfo.name_hash
     MOV EAX,[0x006810c8]                ; 0040a77f | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 0040a784
-    MOV EDI,dword ptr [EAX + 0x14d144]  ; 0040a785 | DAT_032613bc
+    MOV EDI,dword ptr [EAX + 0x14d144]  ; 0040a785 | g_CDemonSetInstance.collision_actor
     PUSH EDI                            ; 0040a78b
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 0040a78c
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
@@ -540,7 +540,7 @@ section .text
         ;   Label: LAB_0040a7b0
     PUSH EAX                            ; 0040a7b5
     MOV EAX,[0x006810c8]                ; 0040a7b6 | g_CDemonSetInstance | g_CDemonSetPtr
-    MOV EDX,dword ptr [EAX + 0x14d144]  ; 0040a7bb | DAT_032613bc
+    MOV EDX,dword ptr [EAX + 0x14d144]  ; 0040a7bb | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 0040a7c1
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 0040a7c2
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
@@ -549,7 +549,7 @@ section .text
     MOV ECX,dword ptr [0x03f87490]      ; 0040a7d1 | g_CTriggerClassInfo.name_hash
     MOV EAX,[0x006810c8]                ; 0040a7d7 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 0040a7dc
-    MOV EDX,dword ptr [EAX + 0x14d144]  ; 0040a7dd | DAT_032613bc
+    MOV EDX,dword ptr [EAX + 0x14d144]  ; 0040a7dd | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 0040a7e3
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 0040a7e4
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
@@ -559,7 +559,7 @@ section .text
     MOV dword ptr [ESP + 0x260],EAX     ; 0040a7f9
     MOV EAX,[0x006810c8]                ; 0040a800 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 0040a805
-    MOV EDX,dword ptr [EAX + 0x14d144]  ; 0040a806 | DAT_032613bc
+    MOV EDX,dword ptr [EAX + 0x14d144]  ; 0040a806 | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 0040a80c
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 0040a80d
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
@@ -568,7 +568,7 @@ section .text
     MOV ECX,dword ptr [0x02d7a738]      ; 0040a81c | g_CFlameCanClassInfo.name_hash
     MOV EAX,[0x006810c8]                ; 0040a822 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 0040a827
-    MOV EDX,dword ptr [EAX + 0x14d144]  ; 0040a828 | DAT_032613bc
+    MOV EDX,dword ptr [EAX + 0x14d144]  ; 0040a828 | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 0040a82e
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 0040a82f
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
@@ -625,7 +625,7 @@ section .text
         ;   XREF to: 00427db0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo * this_ptr)
     MOV EAX,[0x006810c8]                ; 0040a8b9 | g_CDemonSetPtr
     ADD ESP,0x4                         ; 0040a8be
-    MOV EAX,dword ptr [EAX + 0x14d148]  ; 0040a8c1 | DAT_032613c0
+    MOV EAX,dword ptr [EAX + 0x14d148]  ; 0040a8c1 | g_CDemonSetInstance.collision_part_index
     PUSH EDI                            ; 0040a8c7
     MOV dword ptr [ESP + 0x8c],EAX      ; 0040a8c8
     LEA EAX,[ESP + 0x8c]                ; 0040a8cf
@@ -635,19 +635,19 @@ section .text
     PUSH EBX                            ; 0040a8de
     CALL dword ptr [EDX + 0x74]         ; 0040a8df
     MOV EDX,dword ptr [0x006810c8]      ; 0040a8e2 | g_CDemonSetPtr
-    LEA EAX,[EDX + 0x14d11c]            ; 0040a8e8 | DAT_03261394
-    FLD float ptr [EAX]                 ; 0040a8ee | DAT_03261394
-    FSUB float ptr [EDX + 0x14d110]     ; 0040a8f0 | DAT_03261388
+    LEA EAX,[EDX + 0x14d11c]            ; 0040a8e8 | g_CDemonSetInstance.ray_target.x
+    FLD float ptr [EAX]                 ; 0040a8ee | g_CDemonSetInstance.ray_target.x
+    FSUB float ptr [EDX + 0x14d110]     ; 0040a8f0 | g_CDemonSetInstance.ray_origin.x
     ADD ESP,0x10                        ; 0040a8f6
     FSTP float ptr [ESP + 0x214]        ; 0040a8f9
-    FLD float ptr [EAX + 0x4]           ; 0040a900 | DAT_03261398
-    FSUB float ptr [EDX + 0x14d114]     ; 0040a903 | DAT_0326138c
+    FLD float ptr [EAX + 0x4]           ; 0040a900 | g_CDemonSetInstance.ray_target.y
+    FSUB float ptr [EDX + 0x14d114]     ; 0040a903 | g_CDemonSetInstance.ray_origin.y
     FST float ptr [ESP + 0x218]         ; 0040a909
     FMUL float ptr [ESP + 0x218]        ; 0040a910
     FLD float ptr [ESP + 0x214]         ; 0040a917
     FMUL ST0                            ; 0040a91e
-    FLD float ptr [EAX + 0x8]           ; 0040a920 | DAT_0326139c
-    FSUB float ptr [EDX + 0x14d118]     ; 0040a923 | DAT_03261390
+    FLD float ptr [EAX + 0x8]           ; 0040a920 | g_CDemonSetInstance.ray_target.z
+    FSUB float ptr [EDX + 0x14d118]     ; 0040a923 | g_CDemonSetInstance.ray_origin.z
     FXCH                                ; 0040a929
     FADDP ST2,ST0                       ; 0040a92b
     FST float ptr [ESP + 0x21c]         ; 0040a92d
@@ -681,7 +681,7 @@ section .text
     MOV EAX,[0x006810c8]                ; 0040a9cb | g_CDemonSetPtr
         ;   Label: LAB_0040a9cb
     ADD EAX,0x14d138                    ; 0040a9d0
-    PUSH EAX                            ; 0040a9d5 | DAT_032613b0
+    PUSH EAX                            ; 0040a9d5 | g_CDemonSetInstance.collision_impact_position.x
     LEA EAX,[ESP + 0x254]               ; 0040a9d6
     PUSH EAX                            ; 0040a9dd
     PUSH EDI                            ; 0040a9de
@@ -715,7 +715,7 @@ section .text
     CALL dword ptr [EAX + 0x78]         ; 0040aa3a
     MOV EAX,[0x006810c8]                ; 0040aa3d | g_CDemonSetInstance | g_CDemonSetPtr
     ADD ESP,0x10                        ; 0040aa42
-    MOV ECX,dword ptr [EAX + 0x14d144]  ; 0040aa45 | DAT_032613bc
+    MOV ECX,dword ptr [EAX + 0x14d144]  ; 0040aa45 | g_CDemonSetInstance.collision_actor
     PUSH ECX                            ; 0040aa4b
     PUSH EAX                            ; 0040aa4c | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0 ; 0040aa4d
@@ -775,8 +775,8 @@ section .text
     JZ 0x0040a6dc                       ; 0040aae8
         ;   XREF to: 0040a6dc (CONDITIONAL_JUMP)  ; LAB_0040a6dc
     MOV EAX,[0x006810c8]                ; 0040aaee | g_CDemonSetPtr
-    ADD EAX,0x14d138                    ; 0040aaf3 | DAT_032613b0
-    PUSH EAX                            ; 0040aaf8 | DAT_032613b0
+    ADD EAX,0x14d138                    ; 0040aaf3 | g_CDemonSetInstance.collision_impact_position.x
+    PUSH EAX                            ; 0040aaf8 | g_CDemonSetInstance.collision_impact_position.x
     PUSH EDI                            ; 0040aaf9
     CALL core_glass.cpp_CGlass_shatter_FUN_004eaef0 ; 0040aafa
         ;   XREF to: 004eaef0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004eaef0(CGlass * this_ptr, CVector3f * location)

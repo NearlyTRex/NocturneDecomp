@@ -30,7 +30,7 @@
 ;   double g_CenteringFactor = 0.5
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; Called Functions:
@@ -80,7 +80,7 @@ section .text
     FLD float ptr [EAX + 0x162640c]     ; 00466692 | g_LoadedVertices
     FSTP double ptr [EBP + -0x38]       ; 00466698
     IMUL EAX,dword ptr [EBP + -0xc],0x14 ; 0046669b
-    FLD float ptr [EAX + 0x1626410]     ; 0046669f | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 0046669f | g_LoadedVertices[0].vertex.y
     FSTP double ptr [EBP + -0x30]       ; 004666a5
     IMUL EAX,dword ptr [EBP + -0xc],0x14 ; 004666a8
     FLD float ptr [EAX + 0x1626414]     ; 004666ac | g_LoadedVertices[0].vertex.z
@@ -275,10 +275,10 @@ section .text
         ;   XREF to: 004668bf (UNCONDITIONAL_JUMP)  ; LAB_004668bf
     IMUL EAX,dword ptr [EBP + -0x10],0x14 ; 0046685d
         ;   Label: LAB_0046685d
-    FLD float ptr [EAX + 0x1626410]     ; 00466861 | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 00466861 | g_LoadedVertices[0].vertex.y
     FSTP double ptr [EBP + -0x20]       ; 00466867
     IMUL EAX,dword ptr [EBP + -0x4],0x14 ; 0046686a
-    FLD float ptr [EAX + 0x1626410]     ; 0046686e | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 0046686e | g_LoadedVertices[0].vertex.y
     FSTP double ptr [EBP + -0x50]       ; 00466874
     JMP 0x004668bf                      ; 00466877
         ;   XREF to: 004668bf (UNCONDITIONAL_JUMP)  ; LAB_004668bf
@@ -335,7 +335,7 @@ section .text
     FADD double ptr [EBP + -0x38]       ; 0046690d
     FSTP double ptr [EBP + -0x38]       ; 00466910
     IMUL EAX,dword ptr [EBP + -0xc],0x14 ; 00466913
-    FLD float ptr [EAX + 0x1626410]     ; 00466917 | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 00466917 | g_LoadedVertices[0].vertex.y
     FADD double ptr [EBP + -0x30]       ; 0046691d
     FSTP double ptr [EBP + -0x30]       ; 00466920
     IMUL EAX,dword ptr [EBP + -0xc],0x14 ; 00466923
@@ -381,12 +381,12 @@ section .text
     FSUB double ptr [EBP + -0x50]       ; 004669b5
     FMUL double ptr [0x0061c79e]        ; 004669b8 | g_CenteringFactor
     FADD double ptr [EBP + -0x50]       ; 004669be
-    FLD float ptr [EAX + 0x1626410]     ; 004669c1 | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 004669c1 | g_LoadedVertices[0].vertex.y
     FSTP double ptr [EBP + 0xffffff4c]  ; 004669c7
     FSUBR double ptr [EBP + 0xffffff4c] ; 004669cd
     FSTP double ptr [EBP + 0xffffff4c]  ; 004669d3
     FLD double ptr [EBP + 0xffffff4c]   ; 004669d9
-    FSTP float ptr [EAX + 0x1626410]    ; 004669df | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 004669df | g_LoadedVertices[0].vertex.y
     IMUL EAX,dword ptr [EBP + -0xc],0x14 ; 004669e5
     FLD double ptr [EBP + -0x18]        ; 004669e9
     FSUB double ptr [EBP + -0x48]       ; 004669ec

@@ -241,9 +241,9 @@ section .text
     MOV dword ptr [ESP + 0x9c],EAX      ; 004c6a7a
     FILD dword ptr [ESP + 0x9c]         ; 004c6a81
     FMULP                               ; 004c6a88
-    MOV ESI,0xd00000                    ; 004c6a8a | DAT_00d00000
+    MOV ESI,0xd00000                    ; 004c6a8a | g_LightBufferPool[3][19960]
     MOV ECX,0x800000                    ; 004c6a8f | DAT_00800000
-    MOV EBX,0xdc0000                    ; 004c6a94 | DAT_00dc0000
+    MOV EBX,0xdc0000                    ; 004c6a94 | g_LightBufferPool[5][191992]
     MOV dword ptr [0x0068805c],ESI      ; 004c6a99 | g_RenderVertexBuffer[1].u
     MOV dword ptr [0x0068802c],ECX      ; 004c6a9f | g_RenderVertexBuffer[0].u
     MOV dword ptr [0x00688030],EBX      ; 004c6aa5 | g_RenderVertexBuffer[0].v

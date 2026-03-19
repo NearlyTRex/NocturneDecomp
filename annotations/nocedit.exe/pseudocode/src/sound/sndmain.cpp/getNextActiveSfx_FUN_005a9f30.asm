@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   undefined4 g_SfxSlots[0].field7_0x74
-;   undefined4 DAT_03f5db1c
-;   undefined4 DAT_03f5dc40
-;   undefined4 DAT_03f5dc44
+;   undefined4 g_SfxSlots[0].sample
+;   undefined4 g_SfxSlots[1].playback_state
+;   undefined4 g_SfxSlots[1].sample
 ;
 ; *****************************************************************************
 
@@ -32,11 +32,11 @@ section .text
     SHL EAX,0x2                         ; 005a9f47
     ADD EAX,EDX                         ; 005a9f4a
     SHL EAX,0x3                         ; 005a9f4c
-    CMP dword ptr [EAX + 0x3f5db1c],0x0 ; 005a9f4f | DAT_03f5db1c | DAT_03f5dc44
+    CMP dword ptr [EAX + 0x3f5db1c],0x0 ; 005a9f4f | g_SfxSlots[0].sample | g_SfxSlots[1].sample
         ;   Label: LAB_005a9f4f
     JZ 0x005a9f62                       ; 005a9f56
         ;   XREF to: 005a9f62 (CONDITIONAL_JUMP)  ; LAB_005a9f62
-    MOV EBX,dword ptr [EAX + 0x3f5db18] ; 005a9f58 | g_SfxSlots[0].field7_0x74 | DAT_03f5dc40
+    MOV EBX,dword ptr [EAX + 0x3f5db18] ; 005a9f58 | g_SfxSlots[0].field7_0x74 | g_SfxSlots[1].playback_state
     TEST EBX,EBX                        ; 005a9f5e
     JNZ 0x005a9f73                      ; 005a9f60
         ;   XREF to: 005a9f73 (CONDITIONAL_JUMP)  ; LAB_005a9f73

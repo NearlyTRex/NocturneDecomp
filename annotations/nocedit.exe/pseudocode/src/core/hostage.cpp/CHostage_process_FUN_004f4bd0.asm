@@ -248,7 +248,7 @@ section .text
         ;   XREF to: 004f4e6f (CONDITIONAL_JUMP)  ; LAB_004f4e6f
     MOV EDX,dword ptr [0x02c14d14]      ; 004f4db5 | g_CDoorClassInfo.name_hash
     PUSH EDX                            ; 004f4dbb
-    MOV ECX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 004f4dbc | g_CDemonSetInstance.actors[0] | DAT_032613d4
+    MOV ECX,dword ptr [EDI + EAX*0x1 + 0x14d158] ; 004f4dbc | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     PUSH ECX                            ; 004f4dc3
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004f4dc4
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

@@ -110,7 +110,7 @@ section .text
     JLE 0x0056aed0                      ; 0056aea7
         ;   XREF to: 0056aed0 (CONDITIONAL_JUMP)  ; LAB_0056aed0
     XOR ESI,ESI                         ; 0056aea9
-    MOV EAX,dword ptr [ESI + 0x32776b8] ; 0056aeab | g_DynamicLights | DAT_032776bc
+    MOV EAX,dword ptr [ESI + 0x32776b8] ; 0056aeab | g_DynamicLights | g_DynamicLights[1]
         ;   Label: LAB_0056aeab
     PUSH EAX                            ; 0056aeb1
     ADD ESI,0x4                         ; 0056aeb2
@@ -131,7 +131,7 @@ section .text
     JLE 0x0056af00                      ; 0056aeda
         ;   XREF to: 0056af00 (CONDITIONAL_JUMP)  ; LAB_0056af00
     XOR ESI,ESI                         ; 0056aedc
-    MOV EDI,dword ptr [ESI + 0x3276f34] ; 0056aede | g_SpotLightList | DAT_03276f38
+    MOV EDI,dword ptr [ESI + 0x3276f34] ; 0056aede | g_SpotLightList | g_SpotLightList[1]
         ;   Label: LAB_0056aede
     PUSH EDI                            ; 0056aee4
     ADD ESI,0x4                         ; 0056aee5
@@ -152,7 +152,7 @@ section .text
     JLE 0x0056af30                      ; 0056af09
         ;   XREF to: 0056af30 (CONDITIONAL_JUMP)  ; LAB_0056af30
     XOR ESI,ESI                         ; 0056af0b
-    MOV EDX,dword ptr [ESI + 0x3276f34] ; 0056af0d | g_SpotLightList | DAT_03276f38
+    MOV EDX,dword ptr [ESI + 0x3276f34] ; 0056af0d | g_SpotLightList | g_SpotLightList[1]
         ;   Label: LAB_0056af0d
     PUSH EDX                            ; 0056af13
     ADD ESI,0x4                         ; 0056af14
@@ -246,12 +246,12 @@ section .text
         ;   XREF to: 005b3cc0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0(CSound * this_ptr, int index)
         ;   Label: LAB_0056b082
     ADD ESP,0x8                         ; 0056b087
-    MOV EAX,[0x032758e8]                ; 0056b08a | DAT_032758e8
+    MOV EAX,[0x032758e8]                ; 0056b08a | g_CDemonCameraInstance.base.position
     MOV dword ptr [ESP + 0x154],EAX     ; 0056b08f
-    MOV EAX,0x32758e8                   ; 0056b096 | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 0056b096 | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EAX + 0x4]       ; 0056b09b | g_CDemonCameraInstance.base.position+4
     MOV dword ptr [ESP + 0x158],EAX     ; 0056b09e
-    MOV EAX,0x32758e8                   ; 0056b0a5 | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 0056b0a5 | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EAX + 0x8]       ; 0056b0aa | g_CDemonCameraInstance.base.position+8
     LEA EDX,[ESP + 0x13c]               ; 0056b0ad
     MOV dword ptr [ESP + 0x15c],EAX     ; 0056b0b4
@@ -270,7 +270,7 @@ section .text
     LEA EDI,[ESP + 0xb0]                ; 0056b0f5
     MOV ESI,0x32758f4                   ; 0056b0fc | g_CDemonCameraInstance.base.rotation_matrix.m[0].x
     LEA EAX,[ESP + 0x124]               ; 0056b101
-    MOVSD.REP ES:EDI,ESI                ; 0056b108 | g_CDemonCameraInstance.base.rotation_matrix.m[0].x | DAT_032758f8
+    MOVSD.REP ES:EDI,ESI                ; 0056b108 | g_CDemonCameraInstance.base.rotation_matrix.m[0].x | g_CDemonCameraInstance.base.rotation_matrix.m[0].y
     PUSH EAX                            ; 0056b10a
     MOV ECX,0xa                         ; 0056b10b
     LEA EDI,[ESP + 0xdc]                ; 0056b110
@@ -600,7 +600,7 @@ section .text
     LEA ECX,[EAX + 0x1]                 ; 0056b52c
     ADD EDI,EDX                         ; 0056b52f
     MOV dword ptr [0x03277d80],ECX      ; 0056b531 | g_OmniLightCount
-    MOV dword ptr [EAX*0x4 + 0x3277d84],EDI ; 0056b537 | g_OmniLights | DAT_03277d88
+    MOV dword ptr [EAX*0x4 + 0x3277d84],EDI ; 0056b537 | g_OmniLights | g_OmniLights[1]
     CMP ECX,0xc8                        ; 0056b53e
     JL 0x0056b568                       ; 0056b544
         ;   XREF to: 0056b568 (CONDITIONAL_JUMP)  ; LAB_0056b568
@@ -641,7 +641,7 @@ section .text
     ADD EDX,EAX                         ; 0056b5c8
     XOR EBX,EBX                         ; 0056b5ca
     MOV dword ptr [ESP + 0x168],EDX     ; 0056b5cc
-    MOV ESI,dword ptr [EBX + 0x3276f34] ; 0056b5d3 | g_SpotLightList | DAT_03276f38
+    MOV ESI,dword ptr [EBX + 0x3276f34] ; 0056b5d3 | g_SpotLightList | g_SpotLightList[1]
         ;   Label: LAB_0056b5d3
     PUSH ESI                            ; 0056b5d9
     CALL core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0 ; 0056b5da
@@ -708,9 +708,9 @@ section .text
     LEA EDI,[EDI + 0x32770b4]           ; 0056b685 | g_SpotLightBounds
     LEA ESI,[ESI + EBP*0x1 + 0x19c54]   ; 0056b68b
     MOVSD ES:EDI,ESI                    ; 0056b692 | g_SpotLightBounds
-    MOVSD ES:EDI,ESI                    ; 0056b693 | DAT_032770b8
-    MOVSD ES:EDI,ESI                    ; 0056b694 | DAT_032770bc
-    MOVSD ES:EDI,ESI                    ; 0056b695 | DAT_032770c0
+    MOVSD ES:EDI,ESI                    ; 0056b693 | g_SpotLightBounds[0].top
+    MOVSD ES:EDI,ESI                    ; 0056b694 | g_SpotLightBounds[0].right
+    MOVSD ES:EDI,ESI                    ; 0056b695 | g_SpotLightBounds[0].bottom
     MOV EDI,dword ptr [0x03276f30]      ; 0056b696 | g_SpotLightCount
     INC EDI                             ; 0056b69c
     MOV ESI,EAX                         ; 0056b69d

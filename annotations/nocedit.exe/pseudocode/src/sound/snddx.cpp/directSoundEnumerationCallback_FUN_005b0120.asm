@@ -22,13 +22,13 @@
 ;   TerminatedCString s_create_DirectSound_objec_00652271
 ;   TerminatedCString s_Querry_DirectSound_capab_0065228b
 ;   int g_DirectSoundDeviceCount = -0x1
-;   undefined4 DAT_03f69b44
-;   undefined4 DAT_03f69b48
-;   undefined4 DAT_03f69b4c
-;   undefined4 DAT_03f69b50
-;   undefined4 DAT_03f69b54
-;   undefined4 DAT_03f69b58
-;   undefined4 DAT_03f69b59
+;   undefined4 g_RecordingDevices[6].api_type
+;   undefined4 g_RecordingDevices[6].device_id
+;   undefined4 g_RecordingDevices[7].device_name[0]
+;   undefined4 g_RecordingDevices[7].device_name[4]
+;   undefined4 g_RecordingDevices[7].device_name[8]
+;   undefined4 g_RecordingDevices[7].device_name[12]
+;   undefined4 g_RecordingDevices[7].device_name[13]
 ;   undefined4 g_RecordingDevices[7].device_name[14]
 ;   undefined4 g_RecordingDevices[7].device_name[15]
 ;   int isRecordingStarted
@@ -155,12 +155,12 @@ section .text
         ;   XREF to: 005b0330 (CONDITIONAL_JUMP)  ; LAB_005b0330
     PUSH EBX                            ; 005b0255
     XOR EBX,EBX                         ; 005b0256
-    LEA EDI,[EAX + 0x3f69c64]           ; 005b0258 | DAT_03f69b48
-    MOV dword ptr [EAX + 0x3f69c60],EBX ; 005b025e | DAT_03f69b44
-    MOVSD ES:EDI,ESI                    ; 005b0264 | DAT_03f69b48
-    MOVSD ES:EDI,ESI                    ; 005b0265 | DAT_03f69b4c
-    MOVSD ES:EDI,ESI                    ; 005b0266 | DAT_03f69b50
-    MOVSD ES:EDI,ESI                    ; 005b0267 | DAT_03f69b54
+    LEA EDI,[EAX + 0x3f69c64]           ; 005b0258 | g_RecordingDevices[6].device_id
+    MOV dword ptr [EAX + 0x3f69c60],EBX ; 005b025e | g_RecordingDevices[6].api_type
+    MOVSD ES:EDI,ESI                    ; 005b0264 | g_RecordingDevices[6].device_id
+    MOVSD ES:EDI,ESI                    ; 005b0265 | g_RecordingDevices[7].device_name[0]
+    MOVSD ES:EDI,ESI                    ; 005b0266 | g_RecordingDevices[7].device_name[4]
+    MOVSD ES:EDI,ESI                    ; 005b0267 | g_RecordingDevices[7].device_name[8]
     POP EBX                             ; 005b0268
     TEST byte ptr [ESP + 0x324],0x20    ; 005b0269
         ;   Label: LAB_005b0269
@@ -185,17 +185,17 @@ section .text
     MOV dword ptr [EAX + 0x3f69d78],ESI ; 005b02b7 | g_RecordingSamplesSigned
     ADD EAX,0x3f69c60                   ; 005b02bd | g_DirectSoundDevices
     MOV ESI,dword ptr [ESP + 0x398]     ; 005b02c2
-    LEA EDI,[EAX + 0x14]                ; 005b02c9 | DAT_03f69b58
-    PUSH EDI                            ; 005b02cc | DAT_03f69b58
+    LEA EDI,[EAX + 0x14]                ; 005b02c9 | g_RecordingDevices[7].device_name[12]
+    PUSH EDI                            ; 005b02cc | g_RecordingDevices[7].device_name[12]
     MOV AL,byte ptr [ESI]               ; 005b02cd
         ;   Label: LAB_005b02cd
-    MOV byte ptr [EDI],AL               ; 005b02cf | DAT_03f69b58 | g_RecordingDevices[7].device_name[14]
+    MOV byte ptr [EDI],AL               ; 005b02cf | g_RecordingDevices[7].device_name[12] | g_RecordingDevices[7].device_name[14]
     CMP AL,0x0                          ; 005b02d1
     JZ 0x005b02e5                       ; 005b02d3
         ;   XREF to: 005b02e5 (CONDITIONAL_JUMP)  ; LAB_005b02e5
     MOV AL,byte ptr [ESI + 0x1]         ; 005b02d5
     ADD ESI,0x2                         ; 005b02d8
-    MOV byte ptr [EDI + 0x1],AL         ; 005b02db | DAT_03f69b59 | g_RecordingDevices[7].device_name[15]
+    MOV byte ptr [EDI + 0x1],AL         ; 005b02db | g_RecordingDevices[7].device_name[13] | g_RecordingDevices[7].device_name[15]
     ADD EDI,0x2                         ; 005b02de
     CMP AL,0x0                          ; 005b02e1
     JNZ 0x005b02cd                      ; 005b02e3
@@ -230,7 +230,7 @@ section .text
     XOR EAX,EAX                         ; 005b0329
     JMP 0x005b020b                      ; 005b032b
         ;   XREF to: 005b020b (UNCONDITIONAL_JUMP)  ; LAB_005b020b
-    MOV dword ptr [EAX + 0x3f69c60],0x1 ; 005b0330 | DAT_03f69b44
+    MOV dword ptr [EAX + 0x3f69c60],0x1 ; 005b0330 | g_RecordingDevices[6].api_type
         ;   Label: LAB_005b0330
     JMP 0x005b0269                      ; 005b033a
         ;   XREF to: 005b0269 (UNCONDITIONAL_JUMP)  ; LAB_005b0269

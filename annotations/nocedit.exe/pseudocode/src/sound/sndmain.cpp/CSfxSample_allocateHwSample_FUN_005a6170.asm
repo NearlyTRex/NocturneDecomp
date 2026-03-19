@@ -16,11 +16,11 @@
 ;   TerminatedCString s_sound_sndmain_cpp_0064fcbf
 ;   int g_LastSampleAccessIndex
 ;   CSfxSample[64] g_SfxSamples
-;   undefined4 DAT_03f62980
-;   undefined4 DAT_03f629ac
-;   undefined4 DAT_03f62afc
-;   undefined4 DAT_03f62b00
-;   undefined4 DAT_03f62b04
+;   undefined4 g_SfxSamples[0].ref_count
+;   undefined4 g_SfxSamples[1].sample_info.name[0]
+;   undefined4 g_SfxSamples[1].taken
+;   undefined4 g_SfxSamples[1].ref_count
+;   undefined4 g_SfxSamples[1].buffer_id
 ;   CSoundDevice* g_CSoundDevicePtr
 ;
 ; Called Functions:
@@ -95,7 +95,7 @@ section .text
     XOR EAX,EAX                         ; 005a61fa
     IMUL EDX,EAX,0x180                  ; 005a61fc
         ;   Label: LAB_005a61fc
-    CMP dword ptr [EDX + 0x3f62980],0x0 ; 005a6202 | DAT_03f62980 | DAT_03f62b00
+    CMP dword ptr [EDX + 0x3f62980],0x0 ; 005a6202 | g_SfxSamples[0].ref_count | g_SfxSamples[1].ref_count
     JZ 0x005a623f                       ; 005a6209
         ;   XREF to: 005a623f (CONDITIONAL_JUMP)  ; LAB_005a623f
     INC EBX                             ; 005a620b
@@ -126,15 +126,15 @@ section .text
     POP ESI                             ; 005a623c
     POP EBX                             ; 005a623d
     RET                                 ; 005a623e
-    CMP dword ptr [EDX + 0x3f62984],0x0 ; 005a623f | DAT_03f62b04
+    CMP dword ptr [EDX + 0x3f62984],0x0 ; 005a623f | g_SfxSamples[1].buffer_id
         ;   Label: LAB_005a623f
     JZ 0x005a620b                       ; 005a6246
         ;   XREF to: 005a620b (CONDITIONAL_JUMP)  ; LAB_005a620b
-    CMP dword ptr [EDX + 0x3f6297c],0x0 ; 005a6248 | DAT_03f62afc
+    CMP dword ptr [EDX + 0x3f6297c],0x0 ; 005a6248 | g_SfxSamples[1].taken
     JNZ 0x005a620b                      ; 005a624f
         ;   XREF to: 005a620b (CONDITIONAL_JUMP)  ; LAB_005a620b
     ADD EDX,0x3f6282c                   ; 005a6251 | g_SfxSamples
-    PUSH EDX                            ; 005a6257 | DAT_03f629ac
+    PUSH EDX                            ; 005a6257 | g_SfxSamples[1].sample_info.name[0]
     CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0 ; 005a6258
         ;   XREF to: 005a62c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 005a625d

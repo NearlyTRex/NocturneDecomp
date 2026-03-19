@@ -42,7 +42,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.character_count
 ;   undefined4 g_CDemonSetInstance.characters[0]
-;   undefined4 DAT_03263318
+;   undefined4 g_CDemonSetInstance.characters[1]
 ;   int INT_03f6bad0
 ;   int INT_03f6bad4
 ;
@@ -88,7 +88,7 @@ section .text
     CMP ESI,dword ptr [EAX + 0x14f098]  ; 005c4c56 | g_CDemonSetInstance.character_count
     JGE 0x005c4d62                      ; 005c4c5c
         ;   XREF to: 005c4d62 (CONDITIONAL_JUMP)  ; LAB_005c4d62
-    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 005c4c62 | g_CDemonSetInstance.characters[0] | DAT_03263318
+    MOV EBX,dword ptr [EDI + EAX*0x1 + 0x14f09c] ; 005c4c62 | g_CDemonSetInstance.characters[0] | g_CDemonSetInstance.characters[1]
     LEA EAX,[EBX + 0x20]                ; 005c4c69
     PUSH EAX                            ; 005c4c6c
     LEA EAX,[ESP + 0xac]                ; 005c4c6d

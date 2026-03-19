@@ -41,13 +41,13 @@
 ;   int INT_02d7a7b8
 ;   int g_SpotLightCount
 ;   CDemonLight*[96] g_SpotLightList
-;   undefined4 DAT_03276f38
+;   undefined4 g_SpotLightList[1]
 ;   int g_DynamicLightCount
 ;   CDemonLight*[4] g_DynamicLights
-;   undefined4 DAT_032776bc
+;   undefined4 g_DynamicLights[1]
 ;   int g_CoronaGlobeCount
 ;   CDemonGlobe*[100] g_CoronaGlobes
-;   undefined4 DAT_032776d0
+;   undefined4 g_CoronaGlobes[1]
 ;   int g_VisibleCoronaGlobeCount
 ;   CDemonGlobe*[100] g_VisibleCoronaGlobes
 ;   ... and 19 more
@@ -83,7 +83,7 @@ section .text
     LEA ESI,[EDI*0x4 + 0x0]             ; 0056d4cd
     XOR EDX,EDX                         ; 0056d4d4
     XOR EAX,EAX                         ; 0056d4d6
-    MOV EBX,dword ptr [EAX + 0x32776b8] ; 0056d4d8 | g_DynamicLights | DAT_032776bc
+    MOV EBX,dword ptr [EAX + 0x32776b8] ; 0056d4d8 | g_DynamicLights | g_DynamicLights[1]
         ;   Label: LAB_0056d4d8
     CMP dword ptr [EBX + 0x1cb4],0x0    ; 0056d4de
     JZ 0x0056d4fd                       ; 0056d4e5
@@ -91,7 +91,7 @@ section .text
     MOV ECX,dword ptr [0x032c1798]      ; 0056d4e7 | g_PrimaryDirectionalLightCount
     ADD EDX,0x4                         ; 0056d4ed
     INC ECX                             ; 0056d4f0
-    MOV dword ptr [EDX + 0x32c1798],EBX ; 0056d4f1 | g_PrimaryDirectionalLights | DAT_032c17a0
+    MOV dword ptr [EDX + 0x32c1798],EBX ; 0056d4f1 | g_PrimaryDirectionalLights | g_PrimaryDirectionalLights[1]
     MOV dword ptr [0x032c1798],ECX      ; 0056d4f7 | g_PrimaryDirectionalLightCount
     ADD EAX,0x4                         ; 0056d4fd
         ;   Label: LAB_0056d4fd
@@ -108,7 +108,7 @@ section .text
     SHL ESI,0x2                         ; 0056d516
     XOR EDX,EDX                         ; 0056d519
     XOR EAX,EAX                         ; 0056d51b
-    MOV EBX,dword ptr [EAX + 0x3276f34] ; 0056d51d | g_SpotLightList | DAT_03276f38
+    MOV EBX,dword ptr [EAX + 0x3276f34] ; 0056d51d | g_SpotLightList | g_SpotLightList[1]
         ;   Label: LAB_0056d51d
     CMP dword ptr [EBX + 0x1cb4],0x0    ; 0056d523
     JZ 0x0056d542                       ; 0056d52a
@@ -116,7 +116,7 @@ section .text
     MOV ECX,dword ptr [0x032c1614]      ; 0056d52c | g_SecondaryDirectionalLightCount
     ADD EDX,0x4                         ; 0056d532
     INC ECX                             ; 0056d535
-    MOV dword ptr [EDX + 0x32c1614],EBX ; 0056d536 | g_SecondaryDirectionalLights | DAT_032c161c
+    MOV dword ptr [EDX + 0x32c1614],EBX ; 0056d536 | g_SecondaryDirectionalLights | g_SecondaryDirectionalLights[1]
     MOV dword ptr [0x032c1614],ECX      ; 0056d53c | g_SecondaryDirectionalLightCount
     ADD EAX,0x4                         ; 0056d542
         ;   Label: LAB_0056d542
@@ -134,8 +134,8 @@ section .text
     SHL EBX,0x2                         ; 0056d55f
     ADD EAX,0x4                         ; 0056d562
         ;   Label: LAB_0056d562
-    MOV EDX,dword ptr [EAX + 0x32776c8] ; 0056d565 | g_CoronaGlobes | DAT_032776d0
-    MOV dword ptr [EAX + 0x32c17ac],EDX ; 0056d56b | g_GlobeLights | DAT_032c17b4
+    MOV EDX,dword ptr [EAX + 0x32776c8] ; 0056d565 | g_CoronaGlobes | g_CoronaGlobes[1]
+    MOV dword ptr [EAX + 0x32c17ac],EDX ; 0056d56b | g_GlobeLights | g_GlobeLights[1]
     CMP EAX,EBX                         ; 0056d571
     JL 0x0056d562                       ; 0056d573
         ;   XREF to: 0056d562 (CONDITIONAL_JUMP)  ; LAB_0056d562
@@ -153,8 +153,8 @@ section .text
     SHL EBX,0x2                         ; 0056d596
     ADD EAX,0x4                         ; 0056d599
         ;   Label: LAB_0056d599
-    MOV EDX,dword ptr [EAX + 0x3277d80] ; 0056d59c | g_OmniLights | DAT_03277d88
-    MOV dword ptr [EAX + 0x32c1940],EDX ; 0056d5a2 | g_VisibleOmniLights | DAT_032c1948
+    MOV EDX,dword ptr [EAX + 0x3277d80] ; 0056d59c | g_OmniLights | g_OmniLights[1]
+    MOV dword ptr [EAX + 0x32c1940],EDX ; 0056d5a2 | g_VisibleOmniLights | g_VisibleOmniLights[1]
     CMP EAX,EBX                         ; 0056d5a8
     JL 0x0056d599                       ; 0056d5aa
         ;   XREF to: 0056d599 (CONDITIONAL_JUMP)  ; LAB_0056d599
@@ -175,7 +175,7 @@ section .text
     JLE 0x0056d630                      ; 0056d5ce
         ;   XREF to: 0056d630 (CONDITIONAL_JUMP)  ; LAB_0056d630
     XOR EBX,EBX                         ; 0056d5d0
-    MOV EAX,dword ptr [EBX + 0x32776b8] ; 0056d5d2 | g_DynamicLights | DAT_032776bc
+    MOV EAX,dword ptr [EBX + 0x32776b8] ; 0056d5d2 | g_DynamicLights | g_DynamicLights[1]
         ;   Label: LAB_0056d5d2
     CMP dword ptr [EAX + 0x1cb4],0x0    ; 0056d5d8
     JZ 0x0056d614                       ; 0056d5df
@@ -216,7 +216,7 @@ section .text
     JLE 0x0056d6a7                      ; 0056d646
         ;   XREF to: 0056d6a7 (CONDITIONAL_JUMP)  ; LAB_0056d6a7
     XOR EBX,EBX                         ; 0056d648
-    MOV EAX,dword ptr [EBX + 0x3276f34] ; 0056d64a | g_SpotLightList | DAT_03276f38
+    MOV EAX,dword ptr [EBX + 0x3276f34] ; 0056d64a | g_SpotLightList | g_SpotLightList[1]
         ;   Label: LAB_0056d64a
     CMP dword ptr [EAX + 0x1cb4],0x0    ; 0056d650
     JZ 0x0056d68b                       ; 0056d657
@@ -259,7 +259,7 @@ section .text
     MOV dword ptr [ESP + 0x8c],ECX      ; 0056d6c3
     MOV EBX,dword ptr [ESP + 0x8c]      ; 0056d6ca
         ;   Label: LAB_0056d6ca
-    MOV EBX,dword ptr [EBX + 0x3277d84] ; 0056d6d1 | g_OmniLights | DAT_03277d88
+    MOV EBX,dword ptr [EBX + 0x3277d84] ; 0056d6d1 | g_OmniLights | g_OmniLights[1]
     LEA EAX,[EBX + 0x104]               ; 0056d6d7
     FLD float ptr [EAX]                 ; 0056d6dd
     FSUB float ptr [ESI]                ; 0056d6df
@@ -326,7 +326,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x28]      ; 0056d792
     PUSH EDX                            ; 0056d795
     PUSH ESI                            ; 0056d796
-    MOV ECX,dword ptr [EBX + 0x32776cc] ; 0056d797 | g_CoronaGlobes | DAT_032776d0
+    MOV ECX,dword ptr [EBX + 0x32776cc] ; 0056d797 | g_CoronaGlobes | g_CoronaGlobes[1]
     PUSH ECX                            ; 0056d79d
     CALL core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_00471770 ; 0056d79e
         ;   XREF to: 00471770 (UNCONDITIONAL_CALL)  ; int core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_00471770(CDemonGlobe * this_ptr, CVector3f * reference_position, CMatrix3x3f * rotation_matrix, CVector3f * aabb_min, ...)
@@ -363,7 +363,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x28]      ; 0056d7fb
     PUSH ECX                            ; 0056d7fe
     PUSH ESI                            ; 0056d7ff
-    MOV EAX,dword ptr [EBX + 0x3277b84] ; 0056d800 | g_VisibleCoronaGlobes | DAT_03277b88
+    MOV EAX,dword ptr [EBX + 0x3277b84] ; 0056d800 | g_VisibleCoronaGlobes | g_VisibleCoronaGlobes[1]
     PUSH EAX                            ; 0056d806
     CALL core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_00471770 ; 0056d807
         ;   XREF to: 00471770 (UNCONDITIONAL_CALL)  ; int core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_00471770(CDemonGlobe * this_ptr, CVector3f * reference_position, CMatrix3x3f * rotation_matrix, CVector3f * aabb_min, ...)
@@ -374,7 +374,7 @@ section .text
     MOV EDX,dword ptr [0x032c17ac]      ; 0056d813 | g_GlobeLightCount
     INC EDX                             ; 0056d819
     MOV EAX,dword ptr [EBX + 0x3277b84] ; 0056d81a | g_VisibleCoronaGlobes
-    MOV dword ptr [EDX*0x4 + 0x32c17ac],EAX ; 0056d820 | DAT_032c17b4
+    MOV dword ptr [EDX*0x4 + 0x32c17ac],EAX ; 0056d820 | g_GlobeLights[1]
     MOV dword ptr [0x032c17ac],EDX      ; 0056d827 | g_GlobeLightCount
     MOV EDX,dword ptr [ESP + 0xa0]      ; 0056d82d
         ;   Label: LAB_0056d82d
@@ -431,7 +431,7 @@ section .text
         ;   XREF to: 0056d95d (CONDITIONAL_JUMP)  ; LAB_0056d95d
     LEA EDI,[EAX*0x4 + 0x0]             ; 0056d8cf
     XOR EBX,EBX                         ; 0056d8d6
-    MOV EDX,dword ptr [EBX + 0x32c1944] ; 0056d8d8 | g_VisibleOmniLights | DAT_032c1948
+    MOV EDX,dword ptr [EBX + 0x32c1944] ; 0056d8d8 | g_VisibleOmniLights | g_VisibleOmniLights[1]
         ;   Label: LAB_0056d8d8
     TEST dword ptr [EDX + 0x11d4],0x7fffffff ; 0056d8de
     JZ 0x0056dabe                       ; 0056d8e8

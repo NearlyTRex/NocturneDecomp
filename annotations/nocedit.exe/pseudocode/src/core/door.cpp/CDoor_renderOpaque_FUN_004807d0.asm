@@ -19,8 +19,8 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;   int g_ActiveRenderColor
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
-;   undefined4 DAT_02f33768
+;   undefined4 g_CDemonMissionInstance.is_in_editor
+;   undefined4 g_CDemonMissionInstance.selected_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
@@ -106,7 +106,7 @@ section .text
     JZ 0x004809bc                       ; 00480865
         ;   XREF to: 004809bc (CONDITIONAL_JUMP)  ; LAB_004809bc
     MOV EAX,[0x0067d550]                ; 0048086b | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 00480870 | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 00480870 | g_CDemonMissionInstance.is_in_editor
     JZ 0x004809bc                       ; 00480874
         ;   XREF to: 004809bc (CONDITIONAL_JUMP)  ; LAB_004809bc
     MOV ECX,dword ptr [0x006703ec]      ; 0048087a | g_CDemonRendererInstance | g_CDemonRendererPtr2
@@ -118,7 +118,7 @@ section .text
     JNZ 0x004809bc                      ; 0048088b
         ;   XREF to: 004809bc (CONDITIONAL_JUMP)  ; LAB_004809bc
     MOV EAX,[0x0067d550]                ; 00480891 | g_CDemonMissionPtr
-    MOV ESI,dword ptr [EAX + 0x28]      ; 00480896 | DAT_02f33768
+    MOV ESI,dword ptr [EAX + 0x28]      ; 00480896 | g_CDemonMissionInstance.selected_actor
     CMP EBX,ESI                         ; 00480899
     JNZ 0x004809bc                      ; 0048089b
         ;   XREF to: 004809bc (CONDITIONAL_JUMP)  ; LAB_004809bc

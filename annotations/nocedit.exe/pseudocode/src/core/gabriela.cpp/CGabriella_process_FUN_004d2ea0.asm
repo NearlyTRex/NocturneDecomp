@@ -310,7 +310,7 @@ section .text
     FXCH                                ; 004d30f6
     FSTP float ptr [EBX + 0x2438]       ; 004d30f8
     FADD float ptr [EBP + 0x6a]         ; 004d30fe
-    MOV EDI,dword ptr [EAX + 0x228]     ; 004d3101 | DAT_02d81cc4
+    MOV EDI,dword ptr [EAX + 0x228]     ; 004d3101 | g_CGameInstance.letterbox_mode
     FSTP float ptr [EBP + 0x6a]         ; 004d3107
     TEST EDI,EDI                        ; 004d310a
     JZ 0x004d3120                       ; 004d310c

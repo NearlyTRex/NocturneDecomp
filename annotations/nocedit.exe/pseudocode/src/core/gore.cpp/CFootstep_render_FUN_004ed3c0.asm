@@ -22,7 +22,7 @@
 ;   undefined4 g_RenderVertexBuffer[0].r
 ;   undefined4 g_RenderVertexBuffer[0].g
 ;   undefined4 g_RenderVertexBuffer[0].b
-;   undefined4 DAT_00688044
+;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_x
 ;   undefined4 g_RenderVertexBuffer[1].u
 ;   undefined4 g_RenderVertexBuffer[1].v
 ;   undefined4 g_RenderVertexBuffer[1].r
@@ -59,7 +59,7 @@ section .text
     MOV dword ptr [0x02d833cc],EDI      ; 004ed3fa | g_FootstepPrimitive.vertices[3]
     MOV dword ptr [0x0068802c],EBP      ; 004ed400 | g_RenderVertexBuffer[0].u
     MOV dword ptr [0x00688030],EBP      ; 004ed406 | g_RenderVertexBuffer[0].v
-    MOV EDX,0xf80000                    ; 004ed40c | DAT_00f80000
+    MOV EDX,0xf80000                    ; 004ed40c | g_LightBufferPool[11][183800]
     MOV EBX,dword ptr [ESP + 0x20]      ; 004ed411
     MOV dword ptr [0x0068805c],EDX      ; 004ed415 | g_RenderVertexBuffer[1].u
     MOV dword ptr [0x0068808c],EDX      ; 004ed41b | g_RenderVertexBuffer[2].u
@@ -103,7 +103,7 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 004ed4aa
     MOV EBX,ESP                         ; 004ed4ad
     PUSH EBX                            ; 004ed4af
-    PUSH EDI                            ; 004ed4b0 | g_RenderVertexBuffer | DAT_00688044
+    PUSH EDI                            ; 004ed4b0 | g_RenderVertexBuffer | g_RenderVertexBuffer[1].projected_vertex.transformed_x
     ADD ESI,0xc                         ; 004ed4b1
     CALL wincore_windll.cpp_transformPoint_FUN_005b5a25 ; 004ed4b4
         ;   XREF to: 005b5a25 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)

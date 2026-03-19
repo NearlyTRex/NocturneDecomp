@@ -7,15 +7,15 @@
 ; Referenced Globals:
 ;   double g_CramPercentMultiplier = 100
 ;   CCramTex[250] g_CramSortedTextureEntries
-;   undefined4 DAT_0083c20c
-;   undefined4 DAT_0083c210
-;   undefined4 DAT_0083c214
-;   undefined4 DAT_0083c218
-;   undefined4 DAT_0083c228
-;   undefined4 DAT_0083c258
-;   undefined4 DAT_0083c25c
-;   undefined4 DAT_0083c260
-;   undefined4 DAT_0083c264
+;   undefined4 g_CramSortedTextureEntries[0].final_left
+;   undefined4 g_CramSortedTextureEntries[0].final_top
+;   undefined4 g_CramSortedTextureEntries[0].final_right
+;   undefined4 g_CramSortedTextureEntries[0].final_bottom
+;   undefined4 g_CramSortedTextureEntries[1].width
+;   undefined4 g_CramSortedTextureEntries[1].final_left
+;   undefined4 g_CramSortedTextureEntries[1].final_top
+;   undefined4 g_CramSortedTextureEntries[1].final_right
+;   undefined4 g_CramSortedTextureEntries[1].final_bottom
 ;   int g_CramTextureCount
 ;   int g_CramTotalMaps
 ;   int g_CramPaddingCalculation
@@ -50,14 +50,14 @@ section .text
     JLE 0x00447ee0                      ; 00447ea2
         ;   XREF to: 00447ee0 (CONDITIONAL_JUMP)  ; LAB_00447ee0
     MOV EAX,0x83c1dc                    ; 00447ea4 | g_CramSortedTextureEntries
-    MOV EDX,dword ptr [EAX + 0x38]      ; 00447ea9 | DAT_0083c214 | DAT_0083c260
+    MOV EDX,dword ptr [EAX + 0x38]      ; 00447ea9 | g_CramSortedTextureEntries[0].final_right | g_CramSortedTextureEntries[1].final_right
         ;   Label: LAB_00447ea9
-    SUB EDX,dword ptr [EAX + 0x30]      ; 00447eac | DAT_0083c20c | DAT_0083c258
+    SUB EDX,dword ptr [EAX + 0x30]      ; 00447eac | g_CramSortedTextureEntries[0].final_left | g_CramSortedTextureEntries[1].final_left
     MOV EDI,dword ptr [0x0084a880]      ; 00447eaf | g_CramPaddingCalculation
     MOV ESI,EDX                         ; 00447eb5
-    MOV EDX,dword ptr [EAX + 0x3c]      ; 00447eb7 | DAT_0083c218 | DAT_0083c264
+    MOV EDX,dword ptr [EAX + 0x3c]      ; 00447eb7 | g_CramSortedTextureEntries[0].final_bottom | g_CramSortedTextureEntries[1].final_bottom
     SUB ESI,EDI                         ; 00447eba
-    SUB EDX,dword ptr [EAX + 0x34]      ; 00447ebc | DAT_0083c210 | DAT_0083c25c
+    SUB EDX,dword ptr [EAX + 0x34]      ; 00447ebc | g_CramSortedTextureEntries[0].final_top | g_CramSortedTextureEntries[1].final_top
     SUB EDX,dword ptr [0x0084a880]      ; 00447ebf | g_CramPaddingCalculation
     IMUL EDX,ESI                        ; 00447ec5
     INC ECX                             ; 00447ec8
@@ -67,7 +67,7 @@ section .text
     CMP ECX,EDX                         ; 00447ed4
     JL 0x00447ea9                       ; 00447ed6
         ;   XREF to: 00447ea9 (CONDITIONAL_JUMP)  ; LAB_00447ea9
-    LEA EAX,[EAX]                       ; 00447ed8 | DAT_0083c228
+    LEA EAX,[EAX]                       ; 00447ed8 | g_CramSortedTextureEntries[1].width
     MOV EDX,EDX                         ; 00447ede
     MOV EAX,[0x0084a884]                ; 00447ee0 | g_CramCurrentAcceptableSize
         ;   Label: LAB_00447ee0

@@ -346,7 +346,7 @@ section .text
     JLE 0x004e3b60                      ; 004e3b1b
         ;   XREF to: 004e3b60 (CONDITIONAL_JUMP)  ; LAB_004e3b60
     MOV EDI,0x2d7c2f0                   ; 004e3b1d | g_ActStatsTextBuffer1
-    PUSH EDI                            ; 004e3b22 | g_ActStatsTextBuffer1 | DAT_02d7c3f0
+    PUSH EDI                            ; 004e3b22 | g_ActStatsTextBuffer1 | g_ActStatsTextBuffer1+0x100
         ;   Label: LAB_004e3b22
     PUSH 0x0                            ; 004e3b23
     PUSH 0xf8                           ; 004e3b25

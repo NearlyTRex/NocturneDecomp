@@ -11,9 +11,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Part_name_0061b4a2
 ;   SModelPartName[500] g_ModelPartNames
-;   undefined4 DAT_01e50191
-;   undefined4 DAT_01e50192
-;   undefined4 DAT_01e50193
+;   undefined4 g_ModelPartNames[0].name[1]
+;   undefined4 g_ModelPartNames[0].name[2]
+;   undefined4 g_ModelPartNames[0].name[3]
 ;   int g_PartsCount
 ;   int g_CurrentPartIndex
 ;
@@ -99,13 +99,13 @@ section .text
     PUSH EDI                            ; 0045df21
     MOV AL,byte ptr [ESI]               ; 0045df22
         ;   Label: LAB_0045df22
-    MOV byte ptr [EDI],AL               ; 0045df24 | g_ModelPartNames | DAT_01e50192
+    MOV byte ptr [EDI],AL               ; 0045df24 | g_ModelPartNames | g_ModelPartNames[0].name[2]
     CMP AL,0x0                          ; 0045df26
     JZ 0x0045df3a                       ; 0045df28
         ;   XREF to: 0045df3a (CONDITIONAL_JUMP)  ; LAB_0045df3a
     MOV AL,byte ptr [ESI + 0x1]         ; 0045df2a
     ADD ESI,0x2                         ; 0045df2d
-    MOV byte ptr [EDI + 0x1],AL         ; 0045df30 | DAT_01e50191 | DAT_01e50193
+    MOV byte ptr [EDI + 0x1],AL         ; 0045df30 | g_ModelPartNames[0].name[1] | g_ModelPartNames[0].name[3]
     ADD EDI,0x2                         ; 0045df33
     CMP AL,0x0                          ; 0045df36
     JNZ 0x0045df22                      ; 0045df38

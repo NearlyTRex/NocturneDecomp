@@ -1035,7 +1035,7 @@ section .text
     LEA EAX,[ESP + 0x1fd8]              ; 005797f3
         ;   Label: LAB_005797f3
     PUSH EAX                            ; 005797fa
-    PUSH ESI                            ; 005797fb | g_GroundTextureNames | DAT_03654398
+    PUSH ESI                            ; 005797fb | g_GroundTextureNames | g_GroundTextureNames[1][0]
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005797fc
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00579801

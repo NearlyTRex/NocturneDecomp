@@ -46,7 +46,7 @@
 ;   float FLOAT_0065c900 = 256
 ;   SMRGLTextureBasic[20] g_LightTextures
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   undefined4 DAT_00f80000
+;   undefined4 g_LightBufferPool[11][183800]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -421,9 +421,9 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0047570f | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0x20],0xffff   ; 00475711
     MOV EAX,dword ptr [EDX]             ; 00475718 | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0x18],0xf80000 ; 0047571a | DAT_00f80000
+    MOV dword ptr [EAX + 0x18],0xf80000 ; 0047571a | g_LightBufferPool[11][183800]
     MOV EAX,dword ptr [EDX]             ; 00475721 | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0x1c],0xf80000 ; 00475723 | DAT_00f80000
+    MOV dword ptr [EAX + 0x1c],0xf80000 ; 00475723 | g_LightBufferPool[11][183800]
     MOV EBX,dword ptr [EDX]             ; 0047572a | g_CDemonRendererInstance
     MOV EAX,dword ptr [ESP + 0xb4]      ; 0047572c
     MOV dword ptr [EBX + 0x5c],EAX      ; 00475733
@@ -436,7 +436,7 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00475751 | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0x48],0x80000  ; 00475753
     MOV EAX,dword ptr [EDX]             ; 0047575a | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0x4c],0xf80000 ; 0047575c | DAT_00f80000
+    MOV dword ptr [EAX + 0x4c],0xf80000 ; 0047575c | g_LightBufferPool[11][183800]
     MOV EBX,dword ptr [EDX]             ; 00475763 | g_CDemonRendererInstance
     MOV EAX,dword ptr [ESP + 0xb8]      ; 00475765
     MOV dword ptr [EBX + 0x8c],EAX      ; 0047576c
@@ -460,7 +460,7 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004757cf | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0xb0],0xffff   ; 004757d1
     MOV EAX,dword ptr [EDX]             ; 004757db | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0xa8],0xf80000 ; 004757dd | DAT_00f80000
+    MOV dword ptr [EAX + 0xa8],0xf80000 ; 004757dd | g_LightBufferPool[11][183800]
     INC ESI                             ; 004757e7
     MOV EAX,dword ptr [EDX]             ; 004757e8 | g_CDemonRendererInstance
     XOR ECX,ECX                         ; 004757ea

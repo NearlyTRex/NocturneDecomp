@@ -38,7 +38,7 @@
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_02d81cc4
+;   undefined4 g_CGameInstance.letterbox_mode
 ;   int INT_02db8700
 ;
 ; Called Functions:
@@ -88,7 +88,7 @@ section .text
     FMUL double ptr [0x0062e923]        ; 004f0e73 | DOUBLE_0062e923
     MOV EAX,[0x0067b654]                ; 004f0e79 | g_CGamePtr
     FSTP float ptr [EBX + 0x2438]       ; 004f0e7e
-    CMP dword ptr [EAX + 0x228],0x0     ; 004f0e84 | DAT_02d81cc4
+    CMP dword ptr [EAX + 0x228],0x0     ; 004f0e84 | g_CGameInstance.letterbox_mode
     JZ 0x004f0e9f                       ; 004f0e8b
         ;   XREF to: 004f0e9f (CONDITIONAL_JUMP)  ; LAB_004f0e9f
     FLD float ptr [EBX + 0x2438]        ; 004f0e8d

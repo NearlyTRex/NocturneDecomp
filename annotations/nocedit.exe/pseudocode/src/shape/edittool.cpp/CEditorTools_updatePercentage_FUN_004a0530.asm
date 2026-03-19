@@ -34,9 +34,9 @@
 ;   double g_TimeDisplayThreshold = 5
 ;   CBitFont* g_EditorFont
 ;   int g_WindowStackCount
-;   undefined4 DAT_02cf1ebc
-;   undefined4 DAT_02cf1ec0
-;   undefined4 DAT_02cf1ec4
+;   undefined4 g_WindowStack[0].progress_start_time
+;   undefined4 g_WindowStack[0].progress_percentage
+;   undefined4 g_WindowStack[0].progress_timestamp
 ;   int g_FontCharacterWidth
 ;   int g_WindowStatusTextColor
 ;   ... and 11 more
@@ -120,10 +120,10 @@ section .text
     ADD ESI,EAX                         ; 004a05ba
     SHL ESI,0x3                         ; 004a05bc
     MOV EAX,dword ptr [ESP + 0x24]      ; 004a05bf
-    CMP EAX,dword ptr [ESI + 0x2cf1ec0] ; 004a05c3 | DAT_02cf1ec0
+    CMP EAX,dword ptr [ESI + 0x2cf1ec0] ; 004a05c3 | g_WindowStack[0].progress_percentage
     JNZ 0x004a05dd                      ; 004a05c9
         ;   XREF to: 004a05dd (CONDITIONAL_JUMP)  ; LAB_004a05dd
-    SUB EBX,dword ptr [ESI + 0x2cf1ec4] ; 004a05cb | DAT_02cf1ec4
+    SUB EBX,dword ptr [ESI + 0x2cf1ec4] ; 004a05cb | g_WindowStack[0].progress_timestamp
     CMP EBX,0x480000                    ; 004a05d1 | LAB_0047fffc+4
     JL 0x004a085e                       ; 004a05d7
         ;   XREF to: 004a085e (CONDITIONAL_JUMP)  ; LAB_004a085e
@@ -248,7 +248,7 @@ section .text
     SHL EAX,0x2                         ; 004a072c
     ADD EAX,EBX                         ; 004a072f
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004a0731
-    MOV ESI,dword ptr [EAX*0x8 + 0x2cf1ebc] ; 004a0735 | DAT_02cf1ebc
+    MOV ESI,dword ptr [EAX*0x8 + 0x2cf1ebc] ; 004a0735 | g_WindowStack[0].progress_start_time
     MOV EAX,EBX                         ; 004a073c
     SUB EAX,ESI                         ; 004a073e
     MOV dword ptr [ESP + 0x2c],EAX      ; 004a0740
@@ -340,9 +340,9 @@ section .text
     ADD EBX,EAX                         ; 004a0845
     SHL EBX,0x3                         ; 004a0847
     MOV EAX,dword ptr [ESP + 0x24]      ; 004a084a
-    MOV dword ptr [EBX + 0x2cf1ec0],EAX ; 004a084e | DAT_02cf1ec0
+    MOV dword ptr [EBX + 0x2cf1ec0],EAX ; 004a084e | g_WindowStack[0].progress_percentage
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004a0854
-    MOV dword ptr [EBX + 0x2cf1ec4],EAX ; 004a0858 | DAT_02cf1ec4
+    MOV dword ptr [EBX + 0x2cf1ec4],EAX ; 004a0858 | g_WindowStack[0].progress_timestamp
     MOV ESP,EBP                         ; 004a085e
         ;   Label: LAB_004a085e
     POP EBP                             ; 004a0860

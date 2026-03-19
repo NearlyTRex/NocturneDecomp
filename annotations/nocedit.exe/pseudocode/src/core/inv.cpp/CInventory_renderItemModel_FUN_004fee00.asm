@@ -83,11 +83,11 @@ section .text
     RET                                 ; 004fee16
     MOV EAX,[0x006810c8]                ; 004fee17 | g_CDemonSetPtr
         ;   Label: LAB_004fee17
-    MOV dword ptr [EAX + 0x15ae70],0x1  ; 004fee1c | DAT_0326f0e8
-    MOV dword ptr [EAX + 0x15ae74],0xffffb7d5 ; 004fee26 | DAT_0326f0ec
-    MOV dword ptr [EAX + 0x15ae78],0xffffb7d5 ; 004fee30 | DAT_0326f0f0
-    MOV dword ptr [EAX + 0x15ae7c],0x482b ; 004fee3a | DAT_0326f0f4
-    MOV dword ptr [EAX + 0x15ae80],0x7d00 ; 004fee44 | DAT_0326f0f8
+    MOV dword ptr [EAX + 0x15ae70],0x1  ; 004fee1c | g_CDemonSetInstance.rendering_mode
+    MOV dword ptr [EAX + 0x15ae74],0xffffb7d5 ; 004fee26 | g_CDemonSetInstance.light_direction.x
+    MOV dword ptr [EAX + 0x15ae78],0xffffb7d5 ; 004fee30 | g_CDemonSetInstance.light_direction.y
+    MOV dword ptr [EAX + 0x15ae7c],0x482b ; 004fee3a | g_CDemonSetInstance.light_direction.z
+    MOV dword ptr [EAX + 0x15ae80],0x7d00 ; 004fee44 | g_CDemonSetInstance.ambient_base_quick
     MOV EAX,[0x02cf6a80]                ; 004fee4e | g_GlobalDeltaTimeInt
     MOV EDX,EAX                         ; 004fee53
     SAR EDX,0x1f                        ; 004fee55
@@ -113,13 +113,13 @@ section .text
     IMUL EDX                            ; 004fee91
     SHRD EAX,EDX,0x10                   ; 004fee93
     MOV EDX,dword ptr [0x006810c8]      ; 004fee97 | g_CDemonSetPtr
-    MOV dword ptr [EDX + 0x15ae74],EAX  ; 004fee9d | DAT_0326f0ec
+    MOV dword ptr [EDX + 0x15ae74],EAX  ; 004fee9d | g_CDemonSetInstance.light_direction.x
     MOV EDX,0x482b                      ; 004feea3
     MOV EAX,ECX                         ; 004feea8
     IMUL EDX                            ; 004feeaa
     SHRD EAX,EDX,0x10                   ; 004feeac
     MOV EDX,dword ptr [0x006810c8]      ; 004feeb0 | g_CDemonSetPtr
-    MOV dword ptr [EDX + 0x15ae7c],EAX  ; 004feeb6 | DAT_0326f0f4
+    MOV dword ptr [EDX + 0x15ae7c],EAX  ; 004feeb6 | g_CDemonSetInstance.light_direction.z
     MOV EAX,dword ptr [EBP + 0x24]      ; 004feebc
     PUSH EAX                            ; 004feebf
     PUSH EAX                            ; 004feec0

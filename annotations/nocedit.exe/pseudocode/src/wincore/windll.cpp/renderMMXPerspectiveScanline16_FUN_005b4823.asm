@@ -84,7 +84,7 @@ section .text
     SHL EAX,0x18                        ; 005b48a4
     IDIV EBX                            ; 005b48a7
     SUB EAX,dword ptr [0x006821e0]      ; 005b48a9 | g_StartTextureU
-    IMUL dword ptr [ECX + 0x2d02584]    ; 005b48af | DAT_02d02584
+    IMUL dword ptr [ECX + 0x2d02584]    ; 005b48af | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x00682610],EDX      ; 005b48b5 | g_DeltaTextureU
     MOV EAX,dword ptr [ESI + 0x20]      ; 005b48bb
     MOV EBX,dword ptr [ESI + 0x28]      ; 005b48be
@@ -100,7 +100,7 @@ section .text
     SHL EAX,0x18                        ; 005b48db
     IDIV EBX                            ; 005b48de
     SUB EAX,dword ptr [0x006821e4]      ; 005b48e0 | g_StartTextureV
-    IMUL dword ptr [ECX + 0x2d02584]    ; 005b48e6 | DAT_02d02584
+    IMUL dword ptr [ECX + 0x2d02584]    ; 005b48e6 | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x00682614],EDX      ; 005b48ec | g_DeltaTextureV
     JMP 0x005b4928                      ; 005b48f2
         ;   XREF to: 005b4928 (UNCONDITIONAL_JUMP)  ; LAB_005b4928
@@ -108,26 +108,26 @@ section .text
         ;   Label: LAB_005b48f4
     MOV EBX,dword ptr [ESI + 0x18]      ; 005b48f7
     SUB EAX,EBX                         ; 005b48fa
-    IMUL dword ptr [ECX + 0x2d02584]    ; 005b48fc | DAT_02d02584
+    IMUL dword ptr [ECX + 0x2d02584]    ; 005b48fc | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006821e0],EBX      ; 005b4902 | g_StartTextureU
     MOV dword ptr [0x00682610],EDX      ; 005b4908 | g_DeltaTextureU
     MOV EAX,dword ptr [EDI + 0x20]      ; 005b490e
     MOV EBX,dword ptr [ESI + 0x20]      ; 005b4911
     SUB EAX,EBX                         ; 005b4914
-    IMUL dword ptr [ECX + 0x2d02584]    ; 005b4916 | DAT_02d02584
+    IMUL dword ptr [ECX + 0x2d02584]    ; 005b4916 | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006821e4],EBX      ; 005b491c | g_StartTextureV
     MOV dword ptr [0x00682614],EDX      ; 005b4922 | g_DeltaTextureV
     MOV EAX,dword ptr [EDI + 0x28]      ; 005b4928
         ;   Label: LAB_005b4928
     MOV EBX,dword ptr [ESI + 0x28]      ; 005b492b
     SUB EAX,EBX                         ; 005b492e
-    IMUL dword ptr [ECX + 0x2d02584]    ; 005b4930 | DAT_02d02584
+    IMUL dword ptr [ECX + 0x2d02584]    ; 005b4930 | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006821ec],EBX      ; 005b4936 | g_StartDepthW
     MOV dword ptr [0x00682618],EDX      ; 005b493c | g_DeltaDepthW
     MOV EAX,dword ptr [EDI + 0x30]      ; 005b4942
     MOV EBX,dword ptr [ESI + 0x30]      ; 005b4945
     SUB EAX,EBX                         ; 005b4948
-    IMUL dword ptr [ECX + 0x2d02584]    ; 005b494a | DAT_02d02584
+    IMUL dword ptr [ECX + 0x2d02584]    ; 005b494a | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006826d0],EBX      ; 005b4950 | g_VertexAlphaStart
     MOV dword ptr [0x006826d8],EDX      ; 005b4956 | g_VertexAlphaDelta
     MOV EBP,dword ptr [0x006826d0]      ; 005b495c | g_VertexAlphaStart
@@ -152,7 +152,7 @@ section .text
     SHR EAX,0x1                         ; 005b49aa
     SHR EBX,0x1                         ; 005b49ac
     SUB EAX,EBX                         ; 005b49ae
-    IMUL dword ptr [ECX + 0x2d02584]    ; 005b49b0 | DAT_02d02584
+    IMUL dword ptr [ECX + 0x2d02584]    ; 005b49b0 | g_ReciprocalLookupTable[1]
     AND EBX,0xffff                      ; 005b49b6
     AND EDX,0xffff                      ; 005b49bc
     MOV dword ptr [0x00682690],EBX      ; 005b49c2 | g_VertexRedStart
@@ -162,7 +162,7 @@ section .text
     SHR EAX,0x1                         ; 005b49d4
     SHR EBX,0x1                         ; 005b49d6
     SUB EAX,EBX                         ; 005b49d8
-    IMUL dword ptr [ECX + 0x2d02584]    ; 005b49da | DAT_02d02584
+    IMUL dword ptr [ECX + 0x2d02584]    ; 005b49da | g_ReciprocalLookupTable[1]
     AND EBX,0xffff                      ; 005b49e0
     AND EDX,0xffff                      ; 005b49e6
     MOV dword ptr [0x00682698],EBX      ; 005b49ec | g_VertexGreenStart
@@ -172,7 +172,7 @@ section .text
     SHR EAX,0x1                         ; 005b49fe
     SHR EBX,0x1                         ; 005b4a00
     SUB EAX,EBX                         ; 005b4a02
-    IMUL dword ptr [ECX + 0x2d02584]    ; 005b4a04 | DAT_02d02584
+    IMUL dword ptr [ECX + 0x2d02584]    ; 005b4a04 | g_ReciprocalLookupTable[1]
     AND EBX,0xffff                      ; 005b4a0a
     AND EDX,0xffff                      ; 005b4a10
     MOV dword ptr [0x006826a0],EBX      ; 005b4a16 | g_VertexBlueStart
@@ -207,7 +207,7 @@ section .text
         ;   Label: LAB_005b4a8b
     SHL EBX,0x3                         ; 005b4a8e
     SUB EAX,EBX                         ; 005b4a91
-    IMUL dword ptr [ECX + 0x2d02584]    ; 005b4a93 | DAT_02d02584
+    IMUL dword ptr [ECX + 0x2d02584]    ; 005b4a93 | g_ReciprocalLookupTable[1]
     AND EBX,0xffff                      ; 005b4a99
     AND EDX,0xffff                      ; 005b4a9f
     MOV dword ptr [0x00682690],EBX      ; 005b4aa5 | g_VertexRedStart
@@ -620,7 +620,7 @@ section .text
         ;   Label: LAB_005b50a9
     MOV EBX,dword ptr [ESI + 0x28]      ; 005b50ac
     SUB EAX,EBX                         ; 005b50af
-    IMUL dword ptr [ECX + 0x2d02584]    ; 005b50b1 | DAT_02d02584
+    IMUL dword ptr [ECX + 0x2d02584]    ; 005b50b1 | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006821ec],EBX      ; 005b50b7 | g_StartDepthW
     MOV dword ptr [0x00682618],EDX      ; 005b50bd | g_DeltaDepthW
     MOV EAX,[0x006821ec]                ; 005b50c3 | g_StartDepthW

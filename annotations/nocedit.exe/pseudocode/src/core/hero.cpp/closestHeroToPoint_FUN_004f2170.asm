@@ -17,7 +17,7 @@
 ;   TerminatedCString s_closestHeroToPoint_no_he_0062ea8e
 ;   int g_HeroCount
 ;   CHero*[4] g_HeroActors
-;   undefined4 DAT_02db87c4
+;   undefined4 g_HeroActors[1]
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -44,7 +44,7 @@ section .text
         ;   XREF to: 004f21aa (CONDITIONAL_JUMP)  ; LAB_004f21aa
     LEA EDI,[ECX*0x4 + 0x0]             ; 004f2190
     XOR EDX,EDX                         ; 004f2197
-    MOV EBP,dword ptr [EDX + 0x2db87c0] ; 004f2199 | g_HeroActors | DAT_02db87c4
+    MOV EBP,dword ptr [EDX + 0x2db87c0] ; 004f2199 | g_HeroActors | g_HeroActors[1]
         ;   Label: LAB_004f2199
     TEST EBP,EBP                        ; 004f219f
     JNZ 0x004f21b8                      ; 004f21a1

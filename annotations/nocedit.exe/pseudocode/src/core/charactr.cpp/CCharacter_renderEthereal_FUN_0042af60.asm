@@ -19,7 +19,7 @@
 ;   int INT_00823a90
 ;   int INT_00823a94
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02c6d598
+;   undefined4 g_CDemonRendererInstance.skip_uv_extraction
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   CHero*[4] g_HeroActors
@@ -86,7 +86,7 @@ section .text
     IDIV ECX                            ; 0042afd9
     MOV EAX,[0x006703ec]                ; 0042afdb | g_CDemonRendererPtr2
     MOV dword ptr [0x00823a94],EDX      ; 0042afe0 | INT_00823a94
-    MOV dword ptr [EAX + 0x20],0x1      ; 0042afe6 | DAT_02c6d598
+    MOV dword ptr [EAX + 0x20],0x1      ; 0042afe6 | g_CDemonRendererInstance.skip_uv_extraction
     LEA EAX,[EDX*0x4 + 0x0]             ; 0042afed
     SUB EAX,EDX                         ; 0042aff4
     SHL EAX,0x3                         ; 0042aff6
@@ -157,7 +157,7 @@ section .text
         ;   XREF to: 005a0340 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(CDeformableModelInstance * this_ptr, int render_flags, int skip_texture_capture)
     MOV EAX,[0x006703ec]                ; 0042b0aa | g_CDemonRendererPtr2
     ADD ESP,0xc                         ; 0042b0af
-    MOV dword ptr [EAX + 0x20],0x0      ; 0042b0b2 | DAT_02c6d598
+    MOV dword ptr [EAX + 0x20],0x0      ; 0042b0b2 | g_CDemonRendererInstance.skip_uv_extraction
     MOV EAX,ESP                         ; 0042b0b9
     PUSH EAX                            ; 0042b0bb
     PUSH EBX                            ; 0042b0bc

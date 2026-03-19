@@ -14,14 +14,14 @@
 ;   int g_RenderBufferEnabled
 ;   int g_RenderBufferCount
 ;   SRenderBufferEntry[256] g_RenderBufferPool
-;   undefined4 DAT_00772b04
-;   undefined4 DAT_00772b08
-;   undefined4 DAT_00772b0c
-;   undefined4 DAT_00772b34
-;   undefined4 DAT_00772bc4
-;   undefined4 DAT_00772bc8
-;   undefined4 DAT_00772c0c
-;   undefined4 DAT_00772c10
+;   undefined4 g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_x
+;   undefined4 g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_y
+;   undefined4 g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_z
+;   undefined4 g_RenderBufferPool[0].vertices[1].projected_vertex.transformed_x
+;   undefined4 g_RenderBufferPool[0].texture_data[0]
+;   undefined4 g_RenderBufferPool[0].texture_data[1]
+;   undefined4 g_RenderBufferPool[0].alpha_value
+;   undefined4 g_RenderBufferPool[0].blend_mode
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -101,8 +101,8 @@ section .text
     MOV ECX,0xc                         ; 00407547
     LEA EDI,[EAX + 0x4]                 ; 0040754c
     LEA ESI,[ESI + 0x688014]            ; 0040754f | g_RenderVertexBuffer
-    MOVSD.REP ES:EDI,ESI                ; 00407555 | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y | DAT_00772b04
-    MOV ECX,dword ptr [EAX + 0xc]       ; 00407557 | DAT_00772b0c
+    MOVSD.REP ES:EDI,ESI                ; 00407555 | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y | g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_x
+    MOV ECX,dword ptr [EAX + 0xc]       ; 00407557 | g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_z
     CMP EBP,ECX                         ; 0040755a
     JLE 0x00407560                      ; 0040755c
         ;   XREF to: 00407560 (CONDITIONAL_JUMP)  ; LAB_00407560
@@ -125,11 +125,11 @@ section .text
     LEA EDI,[EDI + 0xc4]                ; 00407581
     MOV EDX,dword ptr [ESP]             ; 00407587
     MOV EAX,[0x006793b4]                ; 0040758a | g_CurrentAlphaValue
-    MOVSD.REP ES:EDI,ESI                ; 0040758f | DAT_00772bc4 | DAT_00772bc8
-    MOV dword ptr [EDX + 0x10c],EAX     ; 00407591 | DAT_00772c0c
-    MOV dword ptr [EDX + 0x114],EBP     ; 00407597 | DAT_00772c14
+    MOVSD.REP ES:EDI,ESI                ; 0040758f | g_RenderBufferPool[0].texture_data[0] | g_RenderBufferPool[0].texture_data[1]
+    MOV dword ptr [EDX + 0x10c],EAX     ; 00407591 | g_RenderBufferPool[0].alpha_value
+    MOV dword ptr [EDX + 0x114],EBP     ; 00407597 | g_RenderBufferPool[0].min_z_value
     MOV EAX,[0x02d05298]                ; 0040759d | g_BlendMode
-    MOV dword ptr [EDX + 0x110],EAX     ; 004075a2 | DAT_00772c10
+    MOV dword ptr [EDX + 0x110],EAX     ; 004075a2 | g_RenderBufferPool[0].blend_mode
     MOV EDX,dword ptr [ESP + 0x18]      ; 004075a8
         ;   Label: LAB_004075a8
     MOV EDX,dword ptr [EDX + 0x4]       ; 004075ac

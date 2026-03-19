@@ -188,7 +188,7 @@ section .text
     MOV EDI,ESI                         ; 005b2941
         ;   Label: LAB_005b2941
     SHL EDI,0x4                         ; 005b2943
-    MOV ECX,dword ptr [EDI + 0x3f6b7c8] ; 005b2946 | DAT_03f6b7c8 | DAT_03f6b7d8
+    MOV ECX,dword ptr [EDI + 0x3f6b7c8] ; 005b2946 | g_TrainNoiseArray[0].sfx_handle | g_TrainNoiseArray[1].sfx_handle
     PUSH ECX                            ; 005b294c
     CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660 ; 005b294d
         ;   XREF to: 005a9660 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005a9660(uint sfx_handle)
@@ -225,14 +225,14 @@ section .text
     SAHF                                ; 005b29cc
     JBE 0x005b29de                      ; 005b29cd
         ;   XREF to: 005b29de (CONDITIONAL_JUMP)  ; LAB_005b29de
-    MOV EAX,dword ptr [EDI + 0x3f6b7c8] ; 005b29cf | DAT_03f6b7c8
+    MOV EAX,dword ptr [EDI + 0x3f6b7c8] ; 005b29cf | g_TrainNoiseArray[0].sfx_handle
     PUSH EAX                            ; 005b29d5
     CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 005b29d6
         ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
     ADD ESP,0x4                         ; 005b29db
     INC ESI                             ; 005b29de
         ;   Label: LAB_005b29de
-    ADD EBX,0x10                        ; 005b29df | DAT_03f6b7cc
+    ADD EBX,0x10                        ; 005b29df | g_TrainNoiseArray[1].position.x
     CMP ESI,0xa                         ; 005b29e2
     JL 0x005b2941                       ; 005b29e5
         ;   XREF to: 005b2941 (CONDITIONAL_JUMP)  ; LAB_005b2941
@@ -439,7 +439,7 @@ section .text
     MOV ECX,0x19                        ; 005b2c62
     FSTP float ptr [0x03f6b868]         ; 005b2c67 | g_TrainNoiseCooldown
     MOV dword ptr [ESP + 0x4],EBX       ; 005b2c6d
-    MOVSD.REP ES:EDI,ESI                ; 005b2c71 | g_TrainSoundFilenameTemplate | DAT_0068211c
+    MOVSD.REP ES:EDI,ESI                ; 005b2c71 | g_TrainSoundFilenameTemplate | g_TrainSoundFilenameTemplate+4
     CALL crt_stdlib.c_rand_FUN_005feb5c ; 005b2c73
         ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005feb5c()
     MOV EDX,EAX                         ; 005b2c78

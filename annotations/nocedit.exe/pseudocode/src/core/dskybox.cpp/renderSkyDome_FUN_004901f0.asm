@@ -48,7 +48,7 @@
 ;   double DOUBLE_00622582 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   float g_SkyDomeVertexScale = 5
-;   undefined4 DAT_01000000
+;   undefined4 g_LightBufferPool[13][93688]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CVector3i CVector3i_02ca0388
 ;   undefined4 CVector3i_02ca0388.y
@@ -348,7 +348,7 @@ section .text
     SHL EDX,0x2                         ; 0049056a
     SBB EAX,EDX                         ; 0049056d
     SAR EAX,0x2                         ; 0049056f
-    MOV ESI,0x1000000                   ; 00490572 | DAT_01000000
+    MOV ESI,0x1000000                   ; 00490572 | g_LightBufferPool[13][93688]
     AND EAX,0xffffff                    ; 00490577
     XOR EBX,EBX                         ; 0049057c
     MOV dword ptr [ESP + 0xa0],EAX      ; 0049057e
@@ -387,7 +387,7 @@ section .text
     INC EDI                             ; 004905f4
     MOV dword ptr [ESP + 0x2c],ECX      ; 004905f5
     MOV ECX,dword ptr [ESP + 0x7c]      ; 004905f9
-    ADD EBX,0x1000000                   ; 004905fd | DAT_01000000
+    ADD EBX,0x1000000                   ; 004905fd | g_LightBufferPool[13][93688]
     MOV dword ptr [ESP + 0x34],ECX      ; 00490603
     MOV ECX,dword ptr [ESP + 0xa0]      ; 00490607
     XOR EAX,0xffffff                    ; 0049060e
@@ -404,7 +404,7 @@ section .text
     MOV dword ptr [ESP + 0x28],EBP      ; 0049063e
     PUSH EAX                            ; 00490642 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x50],EBP      ; 00490643
-    ADD ESI,0x1000000                   ; 00490647 | DAT_01000000
+    ADD ESI,0x1000000                   ; 00490647 | g_LightBufferPool[13][93688]
     CALL engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 ; 0049064d
         ;   XREF to: 0048aeb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, int render_flags)
     ADD ESP,0xc                         ; 00490652

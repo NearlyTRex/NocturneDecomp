@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81c90
+;   undefined4 g_CGameInstance.render_mode
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -29,7 +29,7 @@ section .text
     ADD ESP,0x4                         ; 0050b18b
     MOV EAX,[0x0067b654]                ; 0050b18e | g_CGamePtr
     PUSH -0x1                           ; 0050b193
-    MOV dword ptr [EAX + 0x1f4],0x1     ; 0050b195 | DAT_02d81c90
+    MOV dword ptr [EAX + 0x1f4],0x1     ; 0050b195 | g_CGameInstance.render_mode
     LEA EAX,[EBX + 0x158]               ; 0050b19f
     PUSH 0x0                            ; 0050b1a5
     PUSH EAX                            ; 0050b1a7
@@ -38,7 +38,7 @@ section .text
     ADD ESP,0xc                         ; 0050b1ad
     MOV EAX,[0x0067b654]                ; 0050b1b0 | g_CGameInstance | g_CGamePtr
     PUSH EBX                            ; 0050b1b5
-    MOV dword ptr [EAX + 0x1f4],0x0     ; 0050b1b6 | DAT_02d81c90
+    MOV dword ptr [EAX + 0x1f4],0x0     ; 0050b1b6 | g_CGameInstance.render_mode
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 0050b1c0
         ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor * this_ptr)
     MOV EAX,0x1                         ; 0050b1c5

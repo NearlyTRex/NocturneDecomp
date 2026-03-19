@@ -25,11 +25,11 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 at 00535953
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0067e728
-;   undefined4 DAT_0067e72c
-;   undefined4 DAT_0067e730
-;   undefined4 DAT_0067e734
-;   undefined4 DAT_0067e738
+;   undefined4 g_Layer3BandIndex[0].s[1]
+;   undefined4 g_Layer3BandIndex[0].s[2]
+;   undefined4 g_Layer3BandIndex[0].s[3]
+;   undefined4 g_Layer3BandIndex[0].s[4]
+;   undefined4 g_Layer3BandIndex[0].s[5]
 ;
 ; *****************************************************************************
 
@@ -146,8 +146,8 @@ section .text
     SHL EAX,0x2                         ; 005322fb
     ADD EAX,EDX                         ; 005322fe
     SHL EAX,0x2                         ; 00532300
-    MOV EDX,dword ptr [EAX + 0x67e730]  ; 00532303 | DAT_0067e730
-    MOV ECX,dword ptr [EAX + 0x67e734]  ; 00532309 | DAT_0067e734
+    MOV EDX,dword ptr [EAX + 0x67e730]  ; 00532303 | g_Layer3BandIndex[0].s[3]
+    MOV ECX,dword ptr [EAX + 0x67e734]  ; 00532309 | g_Layer3BandIndex[0].s[4]
     SUB ECX,EDX                         ; 0053230f
     MOV dword ptr [ESP + 0x34],ECX      ; 00532311
     LEA ECX,[EAX + 0xc]                 ; 00532315
@@ -225,8 +225,8 @@ section .text
         ;   XREF to: 0053233c (CONDITIONAL_JUMP)  ; LAB_0053233c
     MOV EBX,dword ptr [ESP + 0x18]      ; 005323ed
     MOV EBP,dword ptr [ESP + 0x4]       ; 005323f1
-    MOV EDX,dword ptr [EBX + 0x67e728]  ; 005323f5 | DAT_0067e734
-    MOV EAX,dword ptr [EBX + 0x67e72c]  ; 005323fb | DAT_0067e738
+    MOV EDX,dword ptr [EBX + 0x67e728]  ; 005323f5 | g_Layer3BandIndex[0].s[4]
+    MOV EAX,dword ptr [EBX + 0x67e72c]  ; 005323fb | g_Layer3BandIndex[0].s[5]
     ADD EBX,0x4                         ; 00532401
     SUB EAX,EDX                         ; 00532404
     MOV dword ptr [ESP + 0x18],EBX      ; 00532406
@@ -245,7 +245,7 @@ section .text
     SHL EAX,0x2                         ; 0053242c
     XOR EDX,EDX                         ; 0053242f
     MOV dword ptr [ESP + 0x1c],EAX      ; 00532431
-    MOV ECX,dword ptr [EAX + 0x67e728]  ; 00532435 | DAT_0067e728
+    MOV ECX,dword ptr [EAX + 0x67e728]  ; 00532435 | g_Layer3BandIndex[0].s[1]
     ADD EAX,0x34                        ; 0053243b
     MOV dword ptr [ESP + 0x30],ECX      ; 0053243e
     MOV dword ptr [ESP + 0x8],EAX       ; 00532442
@@ -320,8 +320,8 @@ section .text
         ;   XREF to: 0053245f (CONDITIONAL_JUMP)  ; LAB_0053245f
     MOV EBP,dword ptr [ESP + 0x1c]      ; 00532510
     MOV ECX,dword ptr [ESP + 0x8]       ; 00532514
-    MOV EDX,dword ptr [EBP + 0x67e728]  ; 00532518 | DAT_0067e728
-    MOV EAX,dword ptr [EBP + 0x67e72c]  ; 0053251e | DAT_0067e72c
+    MOV EDX,dword ptr [EBP + 0x67e728]  ; 00532518 | g_Layer3BandIndex[0].s[1]
+    MOV EAX,dword ptr [EBP + 0x67e72c]  ; 0053251e | g_Layer3BandIndex[0].s[2]
     ADD EBP,0x4                         ; 00532524
     SUB EAX,EDX                         ; 00532527
     MOV dword ptr [ESP + 0x1c],EBP      ; 00532529

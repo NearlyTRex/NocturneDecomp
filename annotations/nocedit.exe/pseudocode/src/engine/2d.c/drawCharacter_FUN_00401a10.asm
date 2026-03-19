@@ -16,8 +16,8 @@
 ;
 ; Referenced Globals:
 ;   SFontGlyph[224] g_FontTable
-;   undefined4 DAT_00666041
-;   undefined4 DAT_00666042
+;   undefined4 g_FontTable[0].bitmap[0]
+;   undefined4 g_FontTable[0].bitmap[1]
 ;   undefined4 g_FontTable[0].bitmap[0][2]
 ;   int g_BitsPerPixel = 0x8
 ;   void*[1200] g_ScreenBufferArray
@@ -85,7 +85,7 @@ section .text
     TEST EDX,EDX                        ; 00401a97
     JLE 0x00401aae                      ; 00401a99
         ;   XREF to: 00401aae (CONDITIONAL_JUMP)  ; LAB_00401aae
-    MOV BL,byte ptr [EAX]               ; 00401a9b | DAT_00666041 | DAT_00666042 | g_FontTable[0].bitmap[0][2]
+    MOV BL,byte ptr [EAX]               ; 00401a9b | g_FontTable[0].bitmap[0] | g_FontTable[0].bitmap[1] | g_FontTable[0].bitmap[0][2]
         ;   Label: LAB_00401a9b
     TEST BL,BL                          ; 00401a9d
     JZ 0x00401aa7                       ; 00401a9f
@@ -136,7 +136,7 @@ section .text
     TEST EDX,EDX                        ; 00401aed
     JLE 0x00401b0a                      ; 00401aef
         ;   XREF to: 00401b0a (CONDITIONAL_JUMP)  ; LAB_00401b0a
-    MOV BL,byte ptr [EAX]               ; 00401af1 | DAT_00666041 | DAT_00666042 | g_FontTable[0].bitmap[0][2]
+    MOV BL,byte ptr [EAX]               ; 00401af1 | g_FontTable[0].bitmap[0] | g_FontTable[0].bitmap[1] | g_FontTable[0].bitmap[0][2]
         ;   Label: LAB_00401af1
     TEST BL,BL                          ; 00401af3
     JZ 0x00401b01                       ; 00401af5
@@ -173,7 +173,7 @@ section .text
     TEST EDX,EDX                        ; 00401b3b
     JLE 0x00401b56                      ; 00401b3d
         ;   XREF to: 00401b56 (CONDITIONAL_JUMP)  ; LAB_00401b56
-    MOV BL,byte ptr [EAX]               ; 00401b3f | DAT_00666041 | DAT_00666042 | g_FontTable[0].bitmap[0][2]
+    MOV BL,byte ptr [EAX]               ; 00401b3f | g_FontTable[0].bitmap[0] | g_FontTable[0].bitmap[1] | g_FontTable[0].bitmap[0][2]
         ;   Label: LAB_00401b3f
     TEST BL,BL                          ; 00401b41
     JZ 0x00401b4d                       ; 00401b43

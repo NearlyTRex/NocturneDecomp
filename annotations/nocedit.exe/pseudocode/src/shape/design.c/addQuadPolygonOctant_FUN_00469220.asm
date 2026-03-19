@@ -19,19 +19,19 @@
 ; Referenced Globals:
 ;   TerminatedCString s_rustplat_raw_0061cf16
 ;   double g_UvScaleConstant256 = 256
-;   undefined4 DAT_01626418
-;   undefined4 DAT_0162641c
+;   undefined4 g_LoadedVertices[0].u
+;   undefined4 g_LoadedVertices[0].v
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
-;   undefined4 DAT_016e99b4
-;   undefined4 DAT_016e99c8
-;   undefined4 DAT_016e99cc
-;   undefined4 DAT_016e99d0
-;   undefined4 DAT_016e99d4
-;   undefined4 DAT_016e9a08
-;   undefined4 DAT_016e9a0c
-;   undefined4 DAT_016e9a10
-;   undefined4 DAT_016e9a14
+;   undefined4 g_ModelPolygonData[0].vertex_indices_count
+;   undefined4 g_ModelPolygonData[0].vertex_indices[0]
+;   undefined4 g_ModelPolygonData[0].vertex_indices[1]
+;   undefined4 g_ModelPolygonData[0].vertex_indices[2]
+;   undefined4 g_ModelPolygonData[0].vertex_indices[3]
+;   undefined4 g_ModelPolygonData[0].uv_u[0]
+;   undefined4 g_ModelPolygonData[0].uv_u[1]
+;   undefined4 g_ModelPolygonData[0].uv_u[2]
+;   undefined4 g_ModelPolygonData[0].uv_u[3]
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -64,59 +64,59 @@ section .text
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00469261
     MOV EAX,dword ptr [EBP + -0x4]      ; 00469264
-    MOV dword ptr [EAX + 0xa4],0x4      ; 00469267 | DAT_016e99b4
+    MOV dword ptr [EAX + 0xa4],0x4      ; 00469267 | g_ModelPolygonData[0].vertex_indices_count
     MOV EAX,dword ptr [EBP + 0x14]      ; 00469271
     MOV EDX,dword ptr [EBP + -0x4]      ; 00469274
-    MOV dword ptr [EDX + 0xb8],EAX      ; 00469277 | DAT_016e99c8
+    MOV dword ptr [EDX + 0xb8],EAX      ; 00469277 | g_ModelPolygonData[0].vertex_indices[0]
     MOV EAX,dword ptr [EBP + 0x18]      ; 0046927d
     MOV EDX,dword ptr [EBP + -0x4]      ; 00469280
-    MOV dword ptr [EDX + 0xbc],EAX      ; 00469283 | DAT_016e99cc
+    MOV dword ptr [EDX + 0xbc],EAX      ; 00469283 | g_ModelPolygonData[0].vertex_indices[1]
     MOV EAX,dword ptr [EBP + 0x1c]      ; 00469289
     MOV EDX,dword ptr [EBP + -0x4]      ; 0046928c
-    MOV dword ptr [EDX + 0xc0],EAX      ; 0046928f | DAT_016e99d0
+    MOV dword ptr [EDX + 0xc0],EAX      ; 0046928f | g_ModelPolygonData[0].vertex_indices[2]
     MOV EAX,dword ptr [EBP + 0x20]      ; 00469295
     MOV EDX,dword ptr [EBP + -0x4]      ; 00469298
-    MOV dword ptr [EDX + 0xc4],EAX      ; 0046929b | DAT_016e99d4
+    MOV dword ptr [EDX + 0xc4],EAX      ; 0046929b | g_ModelPolygonData[0].vertex_indices[3]
     IMUL EAX,dword ptr [EBP + 0x14],0x14 ; 004692a1
-    FLD float ptr [EAX + 0x1626418]     ; 004692a5 | DAT_01626418
+    FLD float ptr [EAX + 0x1626418]     ; 004692a5 | g_LoadedVertices[0].u
     FMUL double ptr [0x0061cf26]        ; 004692ab | g_UvScaleConstant256
     MOV EAX,dword ptr [EBP + -0x4]      ; 004692b1
-    FSTP float ptr [EAX + 0xf8]         ; 004692b4 | DAT_016e9a08
+    FSTP float ptr [EAX + 0xf8]         ; 004692b4 | g_ModelPolygonData[0].uv_u[0]
     IMUL EAX,dword ptr [EBP + 0x14],0x14 ; 004692ba
-    FLD float ptr [EAX + 0x162641c]     ; 004692be | DAT_0162641c
+    FLD float ptr [EAX + 0x162641c]     ; 004692be | g_LoadedVertices[0].v
     FMUL double ptr [0x0061cf26]        ; 004692c4 | g_UvScaleConstant256
     MOV EAX,dword ptr [EBP + -0x4]      ; 004692ca
-    FSTP float ptr [EAX + 0x138]        ; 004692cd | DAT_016e9a48
+    FSTP float ptr [EAX + 0x138]        ; 004692cd | g_ModelPolygonData[0].uv_v[0]
     IMUL EAX,dword ptr [EBP + 0x18],0x14 ; 004692d3
-    FLD float ptr [EAX + 0x1626418]     ; 004692d7 | DAT_01626418
+    FLD float ptr [EAX + 0x1626418]     ; 004692d7 | g_LoadedVertices[0].u
     FMUL double ptr [0x0061cf26]        ; 004692dd | g_UvScaleConstant256
     MOV EAX,dword ptr [EBP + -0x4]      ; 004692e3
-    FSTP float ptr [EAX + 0xfc]         ; 004692e6 | DAT_016e9a0c
+    FSTP float ptr [EAX + 0xfc]         ; 004692e6 | g_ModelPolygonData[0].uv_u[1]
     IMUL EAX,dword ptr [EBP + 0x18],0x14 ; 004692ec
-    FLD float ptr [EAX + 0x162641c]     ; 004692f0 | DAT_0162641c
+    FLD float ptr [EAX + 0x162641c]     ; 004692f0 | g_LoadedVertices[0].v
     FMUL double ptr [0x0061cf26]        ; 004692f6 | g_UvScaleConstant256
     MOV EAX,dword ptr [EBP + -0x4]      ; 004692fc
-    FSTP float ptr [EAX + 0x13c]        ; 004692ff | DAT_016e9a4c
+    FSTP float ptr [EAX + 0x13c]        ; 004692ff | g_ModelPolygonData[0].uv_v[1]
     IMUL EAX,dword ptr [EBP + 0x1c],0x14 ; 00469305
-    FLD float ptr [EAX + 0x1626418]     ; 00469309 | DAT_01626418
+    FLD float ptr [EAX + 0x1626418]     ; 00469309 | g_LoadedVertices[0].u
     FMUL double ptr [0x0061cf26]        ; 0046930f | g_UvScaleConstant256
     MOV EAX,dword ptr [EBP + -0x4]      ; 00469315
-    FSTP float ptr [EAX + 0x100]        ; 00469318 | DAT_016e9a10
+    FSTP float ptr [EAX + 0x100]        ; 00469318 | g_ModelPolygonData[0].uv_u[2]
     IMUL EAX,dword ptr [EBP + 0x1c],0x14 ; 0046931e
-    FLD float ptr [EAX + 0x162641c]     ; 00469322 | DAT_0162641c
+    FLD float ptr [EAX + 0x162641c]     ; 00469322 | g_LoadedVertices[0].v
     FMUL double ptr [0x0061cf26]        ; 00469328 | g_UvScaleConstant256
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046932e
-    FSTP float ptr [EAX + 0x140]        ; 00469331 | DAT_016e9a50
+    FSTP float ptr [EAX + 0x140]        ; 00469331 | g_ModelPolygonData[0].uv_v[2]
     IMUL EAX,dword ptr [EBP + 0x20],0x14 ; 00469337
-    FLD float ptr [EAX + 0x1626418]     ; 0046933b | DAT_01626418
+    FLD float ptr [EAX + 0x1626418]     ; 0046933b | g_LoadedVertices[0].u
     FMUL double ptr [0x0061cf26]        ; 00469341 | g_UvScaleConstant256
     MOV EAX,dword ptr [EBP + -0x4]      ; 00469347
-    FSTP float ptr [EAX + 0x104]        ; 0046934a | DAT_016e9a14
+    FSTP float ptr [EAX + 0x104]        ; 0046934a | g_ModelPolygonData[0].uv_u[3]
     IMUL EAX,dword ptr [EBP + 0x20],0x14 ; 00469350
-    FLD float ptr [EAX + 0x162641c]     ; 00469354 | DAT_0162641c
+    FLD float ptr [EAX + 0x162641c]     ; 00469354 | g_LoadedVertices[0].v
     FMUL double ptr [0x0061cf26]        ; 0046935a | g_UvScaleConstant256
     MOV EAX,dword ptr [EBP + -0x4]      ; 00469360
-    FSTP float ptr [EAX + 0x144]        ; 00469363 | DAT_016e9a54
+    FSTP float ptr [EAX + 0x144]        ; 00469363 | g_ModelPolygonData[0].uv_v[3]
     MOV dword ptr [EBP + -0x8],0x0      ; 00469369
     JMP 0x00469378                      ; 00469370
         ;   XREF to: 00469378 (UNCONDITIONAL_JUMP)  ; LAB_00469378

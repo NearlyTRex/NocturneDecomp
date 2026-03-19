@@ -111,7 +111,7 @@ section .text
     SUB ECX,ECX                         ; 005648a9
     DEC ECX                             ; 005648ab
     XOR EAX,EAX                         ; 005648ac
-    SCASB.REPNE ES:EDI                  ; 005648ae | g_CurrentLineBuffer | DAT_031101c1
+    SCASB.REPNE ES:EDI                  ; 005648ae | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     NOT ECX                             ; 005648b0
     DEC ECX                             ; 005648b2
     CMP EBX,ECX                         ; 005648b3
@@ -319,7 +319,7 @@ section .text
     SUB ECX,ECX                         ; 00564a99
     DEC ECX                             ; 00564a9b
     XOR EAX,EAX                         ; 00564a9c
-    SCASB.REPNE ES:EDI                  ; 00564a9e | g_CurrentLineBuffer | DAT_031101c1
+    SCASB.REPNE ES:EDI                  ; 00564a9e | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     NOT ECX                             ; 00564aa0
     DEC ECX                             ; 00564aa2
     CMP dword ptr [ESP],0x0             ; 00564aa3
@@ -369,10 +369,10 @@ section .text
     PUSH EDI                            ; 00564b21
     MOV EAX,ECX                         ; 00564b22
     SHR ECX,0x2                         ; 00564b24
-    MOVSD.REP ES:EDI,ESI                ; 00564b27 | g_CurrentLineBuffer | DAT_031101c4
+    MOVSD.REP ES:EDI,ESI                ; 00564b27 | g_CurrentLineBuffer | g_CurrentLineBuffer+5
     MOV CL,AL                           ; 00564b29
     AND CL,0x3                          ; 00564b2b
-    MOVSB.REP ES:EDI,ESI                ; 00564b2e | g_CurrentLineBuffer | DAT_031101c4 | DAT_031101c5
+    MOVSB.REP ES:EDI,ESI                ; 00564b2e | g_CurrentLineBuffer | g_CurrentLineBuffer+5 | g_CurrentLineBuffer+6
     POP EDI                             ; 00564b30
     MOV ESI,dword ptr [ESP + 0xc]       ; 00564b31
     MOV EAX,dword ptr [ESP + 0x18]      ; 00564b35
@@ -482,7 +482,7 @@ section .text
     SUB ECX,ECX                         ; 00564c3e
     DEC ECX                             ; 00564c40
     XOR EAX,EAX                         ; 00564c41
-    SCASB.REPNE ES:EDI                  ; 00564c43 | g_CurrentLineBuffer | DAT_031101c1
+    SCASB.REPNE ES:EDI                  ; 00564c43 | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     NOT ECX                             ; 00564c45
     DEC ECX                             ; 00564c47
     MOV EDI,dword ptr [0x031141c0]      ; 00564c48 | g_SelectionStartColumn
@@ -494,7 +494,7 @@ section .text
     MOV EBX,dword ptr [0x031141c0]      ; 00564c56 | g_SelectionStartColumn
     INC EAX                             ; 00564c5c
         ;   Label: LAB_00564c5c
-    MOV byte ptr [EAX + 0x31101bf],DL   ; 00564c5d | g_CurrentLineBuffer | DAT_031101c1
+    MOV byte ptr [EAX + 0x31101bf],DL   ; 00564c5d | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     CMP EAX,EBX                         ; 00564c63
     JL 0x00564c5c                       ; 00564c65
         ;   XREF to: 00564c5c (CONDITIONAL_JUMP)  ; LAB_00564c5c
@@ -614,7 +614,7 @@ section .text
     SUB ECX,ECX                         ; 00564d81
     DEC ECX                             ; 00564d83
     XOR EAX,EAX                         ; 00564d84
-    SCASB.REPNE ES:EDI                  ; 00564d86 | g_CurrentLineBuffer | DAT_031101c1
+    SCASB.REPNE ES:EDI                  ; 00564d86 | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     NOT ECX                             ; 00564d88
     DEC ECX                             ; 00564d8a
     MOV EAX,dword ptr [ESP + 0x14]      ; 00564d8b
@@ -661,7 +661,7 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 00564def | g_CurrentLineBuffer
     MOV CL,AL                           ; 00564df1
     AND CL,0x3                          ; 00564df3
-    MOVSB.REP ES:EDI,ESI                ; 00564df6 | g_CurrentLineBuffer | DAT_031101c1
+    MOVSB.REP ES:EDI,ESI                ; 00564df6 | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     POP EDI                             ; 00564df8
     XOR AH,AH                           ; 00564df9
     MOV byte ptr [EDX + EBX*0x1 + 0x31101c0],AH ; 00564dfb | g_CurrentLineBuffer
@@ -724,7 +724,7 @@ section .text
     SUB ECX,ECX                         ; 00564e96
     DEC ECX                             ; 00564e98
     XOR EAX,EAX                         ; 00564e99
-    SCASB.REPNE ES:EDI                  ; 00564e9b | g_CurrentLineBuffer | DAT_031101c1
+    SCASB.REPNE ES:EDI                  ; 00564e9b | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     NOT ECX                             ; 00564e9d
     DEC ECX                             ; 00564e9f
     CMP EBX,ECX                         ; 00564ea0
@@ -777,7 +777,7 @@ section .text
     SUB ECX,ECX                         ; 00564f14
     DEC ECX                             ; 00564f16
     XOR EAX,EAX                         ; 00564f17
-    SCASB.REPNE ES:EDI                  ; 00564f19 | g_CurrentLineBuffer | DAT_031101c1
+    SCASB.REPNE ES:EDI                  ; 00564f19 | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     NOT ECX                             ; 00564f1b
     DEC ECX                             ; 00564f1d
     MOV ESI,dword ptr [0x0310fd44]      ; 00564f1e | g_CurrentEditingColumn
@@ -800,7 +800,7 @@ section .text
     JGE 0x00564f51                      ; 00564f46
         ;   XREF to: 00564f51 (CONDITIONAL_JUMP)  ; LAB_00564f51
     INC EDI                             ; 00564f48
-    MOV byte ptr [EDI + 0x31101bf],CH   ; 00564f49 | g_CurrentLineBuffer | DAT_031101c1
+    MOV byte ptr [EDI + 0x31101bf],CH   ; 00564f49 | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     JMP 0x00564f44                      ; 00564f4f
         ;   XREF to: 00564f44 (UNCONDITIONAL_JUMP)  ; LAB_00564f44
     MOV EAX,[0x0310fd48]                ; 00564f51 | g_CurrentEditingLine
@@ -827,16 +827,16 @@ section .text
     MOV ESI,EAX                         ; 00564f84
     ADD EDI,0x31101c0                   ; 00564f86 | g_CurrentLineBuffer
         ;   Label: LAB_00564f86
-    PUSH EDI                            ; 00564f8c | g_CurrentLineBuffer | DAT_031101c1
+    PUSH EDI                            ; 00564f8c | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     MOV AL,byte ptr [ESI]               ; 00564f8d | s_EmptyChar_00643e07
         ;   Label: LAB_00564f8d
-    MOV byte ptr [EDI],AL               ; 00564f8f | g_CurrentLineBuffer | DAT_031101c1 | DAT_031101c3
+    MOV byte ptr [EDI],AL               ; 00564f8f | g_CurrentLineBuffer | g_CurrentLineBuffer+2 | g_CurrentLineBuffer+4
     CMP AL,0x0                          ; 00564f91
     JZ 0x00564fa5                       ; 00564f93
         ;   XREF to: 00564fa5 (CONDITIONAL_JUMP)  ; LAB_00564fa5
     MOV AL,byte ptr [ESI + 0x1]         ; 00564f95 | s_EmptyChar_00643e08
     ADD ESI,0x2                         ; 00564f98
-    MOV byte ptr [EDI + 0x1],AL         ; 00564f9b | DAT_031101c2 | DAT_031101c4
+    MOV byte ptr [EDI + 0x1],AL         ; 00564f9b | g_CurrentLineBuffer+3 | g_CurrentLineBuffer+5
     ADD EDI,0x2                         ; 00564f9e
     CMP AL,0x0                          ; 00564fa1
     JNZ 0x00564f8d                      ; 00564fa3
@@ -934,7 +934,7 @@ section .text
     SUB ECX,ECX                         ; 0056507b
     DEC ECX                             ; 0056507d
     XOR EAX,EAX                         ; 0056507e
-    SCASB.REPNE ES:EDI                  ; 00565080 | g_CurrentLineBuffer | DAT_031101c1
+    SCASB.REPNE ES:EDI                  ; 00565080 | g_CurrentLineBuffer | g_CurrentLineBuffer+2
     NOT ECX                             ; 00565082
     DEC ECX                             ; 00565084
     MOV EBX,dword ptr [0x0310fd44]      ; 00565085 | g_CurrentEditingColumn

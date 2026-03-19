@@ -171,7 +171,7 @@ section .text
         ;   Label: LAB_005b2081
     LEA EDI,[ESP + 0xd0]                ; 005b2086
     MOV ESI,0x6820b0                    ; 005b208d | g_SoundResultBufferTemplate
-    MOVSD.REP ES:EDI,ESI                ; 005b2092 | g_SoundResultBufferTemplate | DAT_006820b4
+    MOVSD.REP ES:EDI,ESI                ; 005b2092 | g_SoundResultBufferTemplate | g_SoundResultBufferTemplate+4
     MOV DL,0x21                         ; 005b2094
     LEA ESI,[ESP + 0x6c]                ; 005b2096
     MOV AL,byte ptr [ESI]               ; 005b209a

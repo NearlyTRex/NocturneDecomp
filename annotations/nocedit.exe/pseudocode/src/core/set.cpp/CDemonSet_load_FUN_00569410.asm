@@ -231,10 +231,10 @@ section .text
         ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, _FILE * stream)
     MOV EAX,[0x006844f0]                ; 005695d8 | g_CWaterPtr
     ADD ESP,0xc                         ; 005695dd
-    LEA ESI,[EAX + 0x8]                 ; 005695e0 | DAT_03f875e8
-    PUSH ESI                            ; 005695e3 | DAT_03f875e8
-    ADD EAX,0x4                         ; 005695e4 | DAT_03f875e4
-    PUSH EAX                            ; 005695e7 | DAT_03f875e4
+    LEA ESI,[EAX + 0x8]                 ; 005695e0 | g_CWaterInstance.tile_size
+    PUSH ESI                            ; 005695e3 | g_CWaterInstance.tile_size
+    ADD EAX,0x4                         ; 005695e4 | g_CWaterInstance.water_level_y
+    PUSH EAX                            ; 005695e7 | g_CWaterInstance.water_level_y
     PUSH 0x64596c                       ; 005695e8 | = "%f,%f\n"
     PUSH EBX                            ; 005695ed
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005695ee

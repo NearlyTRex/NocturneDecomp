@@ -22,10 +22,10 @@
 ;   CNetGame* g_CNetGamePtr = 02f7c740
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.hero_number
-;   undefined4 DAT_02d81b60
+;   undefined4 g_CGameInstance.aim_mode
 ;   int g_HeroCount
 ;   CHero*[4] g_HeroActors
-;   undefined4 DAT_02db87c4
+;   undefined4 g_HeroActors[1]
 ;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -53,7 +53,7 @@ section .text
     ADD EBX,0x4                         ; 00524a8a
         ;   Label: LAB_00524a8a
     XOR EDX,EDX                         ; 00524a8d
-    MOV dword ptr [EBX + 0x2db87bc],EDX ; 00524a8f | g_HeroActors | DAT_02db87c4
+    MOV dword ptr [EBX + 0x2db87bc],EDX ; 00524a8f | g_HeroActors | g_HeroActors[1]
     CMP EBX,0x10                        ; 00524a95
     JNZ 0x00524a8a                      ; 00524a98
         ;   XREF to: 00524a8a (CONDITIONAL_JUMP)  ; LAB_00524a8a
@@ -62,7 +62,7 @@ section .text
     TEST ECX,ECX                        ; 00524aa1
     JZ 0x00524b8d                       ; 00524aa3
         ;   XREF to: 00524b8d (CONDITIONAL_JUMP)  ; LAB_00524b8d
-    MOV EAX,dword ptr [EAX + 0x1c]      ; 00524aa9 | DAT_02f7c75c
+    MOV EAX,dword ptr [EAX + 0x1c]      ; 00524aa9 | g_CNetGameInstance.player_count
     MOV [0x02db87bc],EAX                ; 00524aac | g_HeroCount
     CMP EAX,0x4                         ; 00524ab1
     JGE 0x00524be0                      ; 00524ab4
@@ -78,7 +78,7 @@ section .text
     MOV EAX,[0x00680a00]                ; 00524ac9 | g_CNetGameInstance | g_CNetGamePtr
         ;   Label: LAB_00524ac9
     PUSH 0x0                            ; 00524ace
-    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x34] ; 00524ad0 | DAT_02f7c774 | DAT_02f7c7ec
+    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x34] ; 00524ad0 | g_CNetGameInstance.players[0].hero_number | g_CNetGameInstance.players[1].hero_number
     PUSH EDX                            ; 00524ad4
     PUSH EDI                            ; 00524ad5
     PUSH EBP                            ; 00524ad6
@@ -94,7 +94,7 @@ section .text
     ADD EBX,0x4                         ; 00524afc
     LEA EDX,[EAX + ESI*0x1]             ; 00524aff | g_CNetGameInstance
     MOV EAX,dword ptr [EBX + 0x2db87bc] ; 00524b02 | g_HeroActors
-    MOV EDX,dword ptr [EDX + 0x38]      ; 00524b08 | DAT_02f7c778
+    MOV EDX,dword ptr [EDX + 0x38]      ; 00524b08 | g_CNetGameInstance.players[0].aim_mode
     INC EDI                             ; 00524b0b
     MOV dword ptr [EAX + 0x1f734],EDX   ; 00524b0c
     MOV EAX,[0x02db87bc]                ; 00524b12 | g_HeroCount
@@ -104,7 +104,7 @@ section .text
         ;   XREF to: 00524ac9 (CONDITIONAL_JUMP)  ; LAB_00524ac9
     MOV EAX,[0x00680a00]                ; 00524b1e | g_CNetGamePtr
         ;   Label: LAB_00524b1e
-    MOV EAX,dword ptr [EAX + 0x114]     ; 00524b23 | DAT_02f7c854
+    MOV EAX,dword ptr [EAX + 0x114]     ; 00524b23 | g_CNetGameInstance.local_player_index
     MOV [0x02db87d0],EAX                ; 00524b29 | g_LocalHeroIndex
     MOV EAX,[0x02db87d0]                ; 00524b2e | g_LocalHeroIndex
         ;   Label: LAB_00524b2e
@@ -166,7 +166,7 @@ section .text
     MOV EAX,[0x02db87d0]                ; 00524bbd | g_LocalHeroIndex
     MOV EDX,dword ptr [0x0067b654]      ; 00524bc2 | g_CGamePtr
     MOV EBX,dword ptr [EAX*0x4 + 0x2db87c0] ; 00524bc8 | g_HeroActors
-    MOV EAX,dword ptr [EDX + 0xc4]      ; 00524bcf | DAT_02d81b60
+    MOV EAX,dword ptr [EDX + 0xc4]      ; 00524bcf | g_CGameInstance.aim_mode
     MOV dword ptr [EBX + 0x1f734],EAX   ; 00524bd5
     JMP 0x00524b2e                      ; 00524bdb
         ;   XREF to: 00524b2e (UNCONDITIONAL_JUMP)  ; LAB_00524b2e

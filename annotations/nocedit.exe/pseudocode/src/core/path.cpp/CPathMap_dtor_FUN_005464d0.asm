@@ -20,8 +20,8 @@
 ; Referenced Globals:
 ;   int g_PathMapCount
 ;   CPathMap*[200] g_PathMapList
-;   undefined4 DAT_030c3ac0
-;   undefined4 DAT_030c3ac4
+;   undefined4 g_PathMapList[1]
+;   undefined4 g_PathMapList[2]
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005fe5e0
@@ -43,7 +43,7 @@ section .text
         ;   XREF to: 00546501 (CONDITIONAL_JUMP)  ; LAB_00546501
     LEA EBX,[EDI*0x4 + 0x0]             ; 005464e4
     XOR EAX,EAX                         ; 005464eb
-    MOV EBP,dword ptr [EAX + 0x30c3abc] ; 005464ed | g_PathMapList | DAT_030c3ac0
+    MOV EBP,dword ptr [EAX + 0x30c3abc] ; 005464ed | g_PathMapList | g_PathMapList[1]
         ;   Label: LAB_005464ed
     LEA EDX,[EAX + 0x4]                 ; 005464f3
     CMP ESI,EBP                         ; 005464f6
@@ -69,9 +69,9 @@ section .text
     LEA ECX,[EBX*0x4 + 0x0]             ; 00546513
     PUSH ECX                            ; 0054651a
     ADD EDX,0x30c3abc                   ; 0054651b | g_PathMapList
-    PUSH EDX                            ; 00546521 | DAT_030c3ac4
+    PUSH EDX                            ; 00546521 | g_PathMapList[2]
     ADD EAX,0x30c3abc                   ; 00546522 | g_PathMapList
-    PUSH EAX                            ; 00546527 | DAT_030c3ac0
+    PUSH EAX                            ; 00546527 | g_PathMapList[1]
     MOV dword ptr [0x030c3ab8],EDI      ; 00546528 | g_PathMapCount
     CALL crt_string.c_memmove_FUN_005fe5e0 ; 0054652e
         ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)

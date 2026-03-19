@@ -15,7 +15,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CConsole g_CConsoleInstance
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81ca8
+;   undefined4 g_CGameInstance.profile_mode
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   int g_ProfileStartTime
 ;
@@ -30,7 +30,7 @@ section .text
     SUB ESP,0xc                         ; 004e3110
         ;   Label: core_game.cpp_endProfileTimer_FUN_004e3110
     MOV EAX,[0x0067b654]                ; 004e3113 | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0x20c],0x1     ; 004e3118 | DAT_02d81ca8
+    CMP dword ptr [EAX + 0x20c],0x1     ; 004e3118 | g_CGameInstance.profile_mode
     JZ 0x004e3125                       ; 004e311f
         ;   XREF to: 004e3125 (CONDITIONAL_JUMP)  ; LAB_004e3125
     ADD ESP,0xc                         ; 004e3121

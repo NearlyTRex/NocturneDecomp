@@ -22,7 +22,7 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CBitFont* g_ThemeFont
 ;   CBitFont* g_EditorFont
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;
 ; Called Functions:
 ;   engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0
@@ -59,7 +59,7 @@ section .text
     ADD ESP,0xc                         ; 004daf00
     MOV EAX,[0x0067d550]                ; 004daf03 | g_CDemonMissionPtr
         ;   Label: LAB_004daf03
-    CMP dword ptr [EAX + 0x4],0x0       ; 004daf08 | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 004daf08 | g_CDemonMissionInstance.is_in_editor
     JZ 0x004daf69                       ; 004daf0c
         ;   XREF to: 004daf69 (CONDITIONAL_JUMP)  ; LAB_004daf69
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004daf0e

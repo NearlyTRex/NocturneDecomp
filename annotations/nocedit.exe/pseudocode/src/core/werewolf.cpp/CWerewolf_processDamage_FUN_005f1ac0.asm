@@ -19,7 +19,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CFireEffect g_CFireEffectInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_0326f0c0
+;   undefined4 g_CDemonSetInstance.last_switch_area_invalid
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -94,7 +94,7 @@ section .text
     JNZ 0x005f1b8b                      ; 005f1b5f
         ;   XREF to: 005f1b8b (CONDITIONAL_JUMP)  ; LAB_005f1b8b
     MOV EAX,[0x006810c8]                ; 005f1b61 | g_CDemonSetInstance | g_CDemonSetPtr
-    CMP dword ptr [EAX + 0x15ae48],0x0  ; 005f1b66 | DAT_0326f0c0
+    CMP dword ptr [EAX + 0x15ae48],0x0  ; 005f1b66 | g_CDemonSetInstance.last_switch_area_invalid
     JZ 0x005f1b8b                       ; 005f1b6d
         ;   XREF to: 005f1b8b (CONDITIONAL_JUMP)  ; LAB_005f1b8b
     FLD float ptr [ESI + 0x20]          ; 005f1b6f

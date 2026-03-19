@@ -21,10 +21,10 @@
 ;   IDirectSound* g_DirectSound
 ;   IDirectSoundBuffer*[25] g_DirectSoundSampleBuffers
 ;   undefined4 g_DirectSoundSampleBuffers[1]
-;   undefined4 DAT_03f6a9e8
-;   undefined4 DAT_03f6a9ec
-;   undefined4 DAT_03f6ab64
-;   undefined4 DAT_03f6ab68
+;   undefined4 g_DirectSoundSampleBuffers[2]
+;   undefined4 g_DirectSoundSampleBuffers[3]
+;   undefined4 g_DirectSoundBufferMetadata[2].field0_0x0
+;   undefined4 g_DirectSoundBufferMetadata[2].field1_0x4
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005fde40
@@ -58,7 +58,7 @@ section .text
     CMP EAX,0x64                        ; 005aef72
     JGE 0x005aef80                      ; 005aef75
         ;   XREF to: 005aef80 (CONDITIONAL_JUMP)  ; LAB_005aef80
-    CMP dword ptr [EAX + 0x3f6a9e0],0x0 ; 005aef77 | DAT_03f6a9e8 | DAT_03f6a9ec
+    CMP dword ptr [EAX + 0x3f6a9e0],0x0 ; 005aef77 | g_DirectSoundSampleBuffers[2] | g_DirectSoundSampleBuffers[3]
     JNZ 0x005aef6e                      ; 005aef7e
         ;   XREF to: 005aef6e (CONDITIONAL_JUMP)  ; LAB_005aef6e
     CMP EBX,0x19                        ; 005aef80
@@ -126,7 +126,7 @@ section .text
     PUSH 0x0                            ; 005af073
     ADD EDX,EDI                         ; 005af075
     MOV EAX,[0x03f6a9b0]                ; 005af077 | g_DirectSound
-    PUSH EDX                            ; 005af07c | DAT_03f6a9e8
+    PUSH EDX                            ; 005af07c | g_DirectSoundSampleBuffers[2]
     LEA EDX,[ESP + 0x198]               ; 005af07d
     MOV dword ptr [ESP + 0x19c],EBP     ; 005af084
     PUSH EDX                            ; 005af08b
@@ -136,7 +136,7 @@ section .text
     TEST EAX,EAX                        ; 005af092
     JNZ 0x005af0ee                      ; 005af094
         ;   XREF to: 005af0ee (CONDITIONAL_JUMP)  ; LAB_005af0ee
-    CMP dword ptr [EDI + 0x3f6a9e0],0x0 ; 005af096 | DAT_03f6a9e8
+    CMP dword ptr [EDI + 0x3f6a9e0],0x0 ; 005af096 | g_DirectSoundSampleBuffers[2]
     JNZ 0x005af11c                      ; 005af09d
         ;   XREF to: 005af11c (CONDITIONAL_JUMP)  ; LAB_005af11c
     LEA ESI,[EBX*0x4 + 0x0]             ; 005af0a3
@@ -145,7 +145,7 @@ section .text
     ADD ESI,0x3f6a9e0                   ; 005af0af | g_DirectSoundSampleBuffers
     CALL sound_sndmain.cpp_logSoundError_FUN_005adba0 ; 005af0b5
         ;   XREF to: 005adba0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005adba0(char * format)
-    MOV ECX,dword ptr [ESI]             ; 005af0ba | DAT_03f6a9e8
+    MOV ECX,dword ptr [ESI]             ; 005af0ba | g_DirectSoundSampleBuffers[2]
     ADD ESP,0x4                         ; 005af0bc
     TEST ECX,ECX                        ; 005af0bf
     JZ 0x005af0cf                       ; 005af0c1
@@ -153,12 +153,12 @@ section .text
     PUSH ECX                            ; 005af0c3
     MOV EDI,dword ptr [ECX]             ; 005af0c4
     CALL dword ptr [EDI + 0x8]          ; 005af0c6
-    MOV dword ptr [ESI],0x0             ; 005af0c9 | DAT_03f6a9e8
+    MOV dword ptr [ESI],0x0             ; 005af0c9 | g_DirectSoundSampleBuffers[2]
     LEA EAX,[EBX*0x4 + 0x0]             ; 005af0cf
         ;   Label: LAB_005af0cf
     ADD EAX,EBX                         ; 005af0d6
     XOR EBX,EBX                         ; 005af0d8
-    MOV dword ptr [EAX*0x4 + 0x3f6ab3c],EBX ; 005af0da | DAT_03f6ab64
+    MOV dword ptr [EAX*0x4 + 0x3f6ab3c],EBX ; 005af0da | g_DirectSoundBufferMetadata[2].field0_0x0
     XOR EAX,EAX                         ; 005af0e1
     ADD ESP,0x1b8                       ; 005af0e3
     POP EBP                             ; 005af0e9
@@ -192,8 +192,8 @@ section .text
     LEA EAX,[EBX*0x4 + 0x0]             ; 005af126
     ADD EAX,EBX                         ; 005af12d
     XOR EDX,EDX                         ; 005af12f
-    MOV dword ptr [EAX*0x4 + 0x3f6ab40],EDX ; 005af131 | DAT_03f6ab68
-    MOV dword ptr [EAX*0x4 + 0x3f6ab3c],EDI ; 005af138 | DAT_03f6ab64
+    MOV dword ptr [EAX*0x4 + 0x3f6ab40],EDX ; 005af131 | g_DirectSoundBufferMetadata[2].field1_0x4
+    MOV dword ptr [EAX*0x4 + 0x3f6ab3c],EDI ; 005af138 | g_DirectSoundBufferMetadata[2].field0_0x0
     MOV EAX,EBX                         ; 005af13f
     ADD ESP,0x1b8                       ; 005af141
     POP EBP                             ; 005af147

@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0062a0b3 = 0.000100000000000000
 ;   CToss[20] g_TossPool
-;   undefined4 DAT_02d67cb0
+;   undefined4 g_TossPool[0].sfx_handle
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_allocateToss_FUN_004c8e40
@@ -55,12 +55,12 @@ section .text
     IMUL EAX,EAX,0x3e4                  ; 004c8e0a
     ADD ESP,0x18                        ; 004c8e10
     MOV EDX,dword ptr [ESP + 0x28]      ; 004c8e13
-    MOV dword ptr [EAX + 0x2d67cb0],EDX ; 004c8e17 | DAT_02d67cb0
+    MOV dword ptr [EAX + 0x2d67cb0],EDX ; 004c8e17 | g_TossPool[0].sfx_handle
     MOV EDX,0x2d678d0                   ; 004c8e1d | g_TossPool
     ADD EDX,EAX                         ; 004c8e22
     ADD EDX,0x180                       ; 004c8e24
     PUSH EDX                            ; 004c8e2a
-    MOV EBP,dword ptr [EAX + 0x2d67cb0] ; 004c8e2b | DAT_02d67cb0
+    MOV EBP,dword ptr [EAX + 0x2d67cb0] ; 004c8e2b | g_TossPool[0].sfx_handle
     PUSH EBP                            ; 004c8e31
     CALL sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0 ; 004c8e32
         ;   XREF to: 005a98b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0(uint sfx_handle, CVector3f * position_source_ptr)

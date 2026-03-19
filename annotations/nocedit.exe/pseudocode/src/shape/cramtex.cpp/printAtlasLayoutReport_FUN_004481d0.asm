@@ -10,18 +10,18 @@
 ;   TerminatedCString s_s_2d_5dx_5d_Page_d_5d_5d_00619753
 ;   TerminatedCString s_ux_u_square_found_using__00619790
 ;   CCramTex[250] g_CramSortedTextureEntries
-;   undefined4 DAT_0083c1e0
-;   undefined4 DAT_0083c208
-;   undefined4 DAT_0083c20c
-;   undefined4 DAT_0083c210
-;   undefined4 DAT_0083c214
-;   undefined4 DAT_0083c218
-;   undefined4 DAT_0083c220
-;   undefined4 DAT_0083c228
-;   undefined4 DAT_0083c22c
-;   undefined4 DAT_0083c254
-;   undefined4 DAT_0083c258
-;   undefined4 DAT_0083c25c
+;   undefined4 g_CramSortedTextureEntries[0].height
+;   undefined4 g_CramSortedTextureEntries[0].working_map_id
+;   undefined4 g_CramSortedTextureEntries[0].final_left
+;   undefined4 g_CramSortedTextureEntries[0].final_top
+;   undefined4 g_CramSortedTextureEntries[0].final_right
+;   undefined4 g_CramSortedTextureEntries[0].final_bottom
+;   undefined4 g_CramSortedTextureEntries[0].rotation_applied
+;   undefined4 g_CramSortedTextureEntries[1].width
+;   undefined4 g_CramSortedTextureEntries[1].height
+;   undefined4 g_CramSortedTextureEntries[1].working_map_id
+;   undefined4 g_CramSortedTextureEntries[1].final_left
+;   undefined4 g_CramSortedTextureEntries[1].final_top
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -53,22 +53,22 @@ section .text
     JLE 0x00448230                      ; 004481ec
         ;   XREF to: 00448230 (CONDITIONAL_JUMP)  ; LAB_00448230
     MOV EBX,0x83c1dc                    ; 004481ee | g_CramSortedTextureEntries
-    MOV ECX,dword ptr [EBX + 0x44]      ; 004481f3 | DAT_0083c220 | DAT_0083c26c
+    MOV ECX,dword ptr [EBX + 0x44]      ; 004481f3 | g_CramSortedTextureEntries[0].rotation_applied | g_CramSortedTextureEntries[1].rotation_applied
         ;   Label: LAB_004481f3
     PUSH ECX                            ; 004481f6
-    MOV EBP,dword ptr [EBX + 0x3c]      ; 004481f7 | DAT_0083c218 | DAT_0083c264
+    MOV EBP,dword ptr [EBX + 0x3c]      ; 004481f7 | g_CramSortedTextureEntries[0].final_bottom | g_CramSortedTextureEntries[1].final_bottom
     PUSH EBP                            ; 004481fa
-    MOV EAX,dword ptr [EBX + 0x38]      ; 004481fb | DAT_0083c214 | DAT_0083c260
+    MOV EAX,dword ptr [EBX + 0x38]      ; 004481fb | g_CramSortedTextureEntries[0].final_right | g_CramSortedTextureEntries[1].final_right
     PUSH EAX                            ; 004481fe
-    MOV EDX,dword ptr [EBX + 0x34]      ; 004481ff | DAT_0083c210 | DAT_0083c25c
+    MOV EDX,dword ptr [EBX + 0x34]      ; 004481ff | g_CramSortedTextureEntries[0].final_top | g_CramSortedTextureEntries[1].final_top
     PUSH EDX                            ; 00448202
-    MOV ECX,dword ptr [EBX + 0x30]      ; 00448203 | DAT_0083c20c | DAT_0083c258
+    MOV ECX,dword ptr [EBX + 0x30]      ; 00448203 | g_CramSortedTextureEntries[0].final_left | g_CramSortedTextureEntries[1].final_left
     PUSH ECX                            ; 00448206
-    MOV EBP,dword ptr [EBX + 0x2c]      ; 00448207 | DAT_0083c208 | DAT_0083c254
+    MOV EBP,dword ptr [EBX + 0x2c]      ; 00448207 | g_CramSortedTextureEntries[0].working_map_id | g_CramSortedTextureEntries[1].working_map_id
     PUSH EBP                            ; 0044820a
-    MOV EAX,dword ptr [EBX + 0x4]       ; 0044820b | DAT_0083c1e0 | DAT_0083c22c
+    MOV EAX,dword ptr [EBX + 0x4]       ; 0044820b | g_CramSortedTextureEntries[0].height | g_CramSortedTextureEntries[1].height
     PUSH EAX                            ; 0044820e
-    MOV EDX,dword ptr [EBX]             ; 0044820f | g_CramSortedTextureEntries | DAT_0083c228
+    MOV EDX,dword ptr [EBX]             ; 0044820f | g_CramSortedTextureEntries | g_CramSortedTextureEntries[1].width
     PUSH EDX                            ; 00448211
     PUSH ESI                            ; 00448212
     PUSH 0x619753                       ; 00448213 | = "%2d: %5dx%-5d  Page %d (%5d,%-5d)-(%5..."

@@ -15,11 +15,11 @@
 ;   void* PTR_caseD_3_00455060 = 00455109
 ;   uint g_CubeClipStage5Count
 ;   CVector3f[16] g_ClipStageMinZBuffer
-;   undefined4 DAT_015c4680
+;   undefined4 g_ClipStageMinZBuffer[0].y
 ;   undefined4 g_ClipStageMinZBuffer[0].z
-;   undefined4 DAT_015c4690
-;   undefined4 DAT_015c4694
-;   undefined4 DAT_015c469c
+;   undefined4 g_ClipStageMinZBuffer[1].z
+;   undefined4 g_ClipStageMinZBuffer[2].x
+;   undefined4 g_ClipStageMinZBuffer[2].z
 ;   uint g_CubeClippedTriangleCount
 ;   CVector3f[16] g_CubeClippedTriangleBuffer
 ;   undefined4 g_CubeClippedTriangleBuffer[0].y
@@ -59,10 +59,10 @@ section .text
     IMUL ECX,ECX,0xc                    ; 004550ab
         ;   Label: LAB_004550ab
     MOV EAX,0x15c467c                   ; 004550ae | g_ClipStageMinZBuffer
-    FLD float ptr [ESI + 0x8]           ; 004550b3 | g_ClipStageMinZBuffer[0].z | DAT_015c4690
+    FLD float ptr [ESI + 0x8]           ; 004550b3 | g_ClipStageMinZBuffer[0].z | g_ClipStageMinZBuffer[1].z
     ADD EAX,ECX                         ; 004550b6
     MOV EDX,ESI                         ; 004550b8 | g_ClipStageMinZBuffer
-    MOV dword ptr [ESP + 0x4],EAX       ; 004550ba | DAT_015c4694
+    MOV dword ptr [ESP + 0x4],EAX       ; 004550ba | g_ClipStageMinZBuffer[2].x
     XOR ECX,ECX                         ; 004550be
     FCOMP float ptr [ESP]               ; 004550c0
     FNSTSW AX                           ; 004550c3
@@ -72,7 +72,7 @@ section .text
     MOV ECX,0x1                         ; 004550c8
     MOV EAX,dword ptr [ESP + 0x4]       ; 004550cd
         ;   Label: LAB_004550cd
-    FLD float ptr [EAX + 0x8]           ; 004550d1 | g_ClipStageMinZBuffer[0].z | DAT_015c469c
+    FLD float ptr [EAX + 0x8]           ; 004550d1 | g_ClipStageMinZBuffer[0].z | g_ClipStageMinZBuffer[2].z
     FCOMP float ptr [ESP]               ; 004550d4
     FNSTSW AX                           ; 004550d7
     SAHF                                ; 004550d9
@@ -93,7 +93,7 @@ section .text
         ;   XREF to: 00455108 (CONDITIONAL_JUMP)  ; LAB_00455108
     MOV EAX,dword ptr [EDX]             ; 004550f8 | g_ClipStageMinZBuffer
     MOV dword ptr [ECX],EAX             ; 004550fa | g_CubeClippedTriangleBuffer
-    MOV EAX,dword ptr [EDX + 0x4]       ; 004550fc | DAT_015c4680
+    MOV EAX,dword ptr [EDX + 0x4]       ; 004550fc | g_ClipStageMinZBuffer[0].y
     MOV dword ptr [ECX + 0x4],EAX       ; 004550ff | g_CubeClippedTriangleBuffer[0].y
     MOV EAX,dword ptr [EDX + 0x8]       ; 00455102 | g_ClipStageMinZBuffer[0].z
     MOV dword ptr [ECX + 0x8],EAX       ; 00455105 | g_CubeClippedTriangleBuffer[0].z
@@ -145,7 +145,7 @@ section .text
         ;   XREF to: 0045517f (CONDITIONAL_JUMP)  ; LAB_0045517f
     MOV EAX,dword ptr [EDX]             ; 0045516f | g_ClipStageMinZBuffer
     MOV dword ptr [ECX],EAX             ; 00455171 | g_CubeClippedTriangleBuffer
-    MOV EAX,dword ptr [EDX + 0x4]       ; 00455173 | DAT_015c4680
+    MOV EAX,dword ptr [EDX + 0x4]       ; 00455173 | g_ClipStageMinZBuffer[0].y
     MOV dword ptr [ECX + 0x4],EAX       ; 00455176 | g_CubeClippedTriangleBuffer[0].y
     MOV EAX,dword ptr [EDX + 0x8]       ; 00455179 | g_ClipStageMinZBuffer[0].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0045517c | g_CubeClippedTriangleBuffer[0].z

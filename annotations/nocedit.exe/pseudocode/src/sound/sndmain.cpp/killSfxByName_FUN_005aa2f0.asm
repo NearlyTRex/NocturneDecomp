@@ -11,9 +11,9 @@
 ;
 ; Referenced Globals:
 ;   CSfxSlot[64] g_SfxSlots
-;   undefined4 DAT_03f5db1c
+;   undefined4 g_SfxSlots[0].sample
 ;   undefined4 g_SfxSlots[1].status
-;   undefined4 DAT_03f5dc44
+;   undefined4 g_SfxSlots[1].sample
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005fe7f0
@@ -32,7 +32,7 @@ section .text
     CALL sound_sndmain.cpp_lockSound_FUN_005abd30 ; 005aa2f6
         ;   XREF to: 005abd30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_005abd30()
     XOR EBX,EBX                         ; 005aa2fb
-    MOV EAX,dword ptr [EBX + 0x3f5db1c] ; 005aa2fd | DAT_03f5db1c | DAT_03f5dc44
+    MOV EAX,dword ptr [EBX + 0x3f5db1c] ; 005aa2fd | g_SfxSlots[0].sample | g_SfxSlots[1].sample
         ;   Label: LAB_005aa2fd
     TEST EAX,EAX                        ; 005aa303
     JNZ 0x005aa31d                      ; 005aa305

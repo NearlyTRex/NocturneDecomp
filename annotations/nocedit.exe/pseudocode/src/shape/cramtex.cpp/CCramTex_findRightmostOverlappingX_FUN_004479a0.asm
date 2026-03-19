@@ -13,13 +13,13 @@
 ; Referenced Globals:
 ;   CCramTex[250] g_CramSortedTextureEntries
 ;   undefined4 g_CramSortedTextureEntries[0].assigned_map_number
-;   undefined4 DAT_0083c210
-;   undefined4 DAT_0083c214
-;   undefined4 DAT_0083c218
-;   undefined4 DAT_0083c238
-;   undefined4 DAT_0083c25c
-;   undefined4 DAT_0083c260
-;   undefined4 DAT_0083c264
+;   undefined4 g_CramSortedTextureEntries[0].final_top
+;   undefined4 g_CramSortedTextureEntries[0].final_right
+;   undefined4 g_CramSortedTextureEntries[0].final_bottom
+;   undefined4 g_CramSortedTextureEntries[1].assigned_map_number
+;   undefined4 g_CramSortedTextureEntries[1].final_top
+;   undefined4 g_CramSortedTextureEntries[1].final_right
+;   undefined4 g_CramSortedTextureEntries[1].final_bottom
 ;   int g_CramTextureCount
 ;
 ; *****************************************************************************
@@ -51,10 +51,10 @@ section .text
     MOV EAX,0x83c1dc                    ; 004479c0 | g_CramSortedTextureEntries
     MOV EBP,dword ptr [EDX + 0x10]      ; 004479c5
         ;   Label: LAB_004479c5
-    CMP EBP,dword ptr [EAX + 0x10]      ; 004479c8 | g_CramSortedTextureEntries[0].assigned_map_number | DAT_0083c238
+    CMP EBP,dword ptr [EAX + 0x10]      ; 004479c8 | g_CramSortedTextureEntries[0].assigned_map_number | g_CramSortedTextureEntries[1].assigned_map_number
     JNZ 0x004479ec                      ; 004479cb
         ;   XREF to: 004479ec (CONDITIONAL_JUMP)  ; LAB_004479ec
-    MOV ESI,dword ptr [EAX + 0x38]      ; 004479cd | DAT_0083c214 | DAT_0083c260
+    MOV ESI,dword ptr [EAX + 0x38]      ; 004479cd | g_CramSortedTextureEntries[0].final_right | g_CramSortedTextureEntries[1].final_right
     CMP EBX,ESI                         ; 004479d0
     JGE 0x004479ec                      ; 004479d2
         ;   XREF to: 004479ec (CONDITIONAL_JUMP)  ; LAB_004479ec
@@ -62,14 +62,14 @@ section .text
     JG 0x004479ec                       ; 004479d7
         ;   XREF to: 004479ec (CONDITIONAL_JUMP)  ; LAB_004479ec
     MOV EBP,dword ptr [EDX + 0x3c]      ; 004479d9
-    CMP EBP,dword ptr [EAX + 0x34]      ; 004479dc | DAT_0083c210 | DAT_0083c25c
+    CMP EBP,dword ptr [EAX + 0x34]      ; 004479dc | g_CramSortedTextureEntries[0].final_top | g_CramSortedTextureEntries[1].final_top
     JLE 0x004479ec                      ; 004479df
         ;   XREF to: 004479ec (CONDITIONAL_JUMP)  ; LAB_004479ec
     MOV EBP,dword ptr [EDX + 0x34]      ; 004479e1
-    CMP EBP,dword ptr [EAX + 0x3c]      ; 004479e4 | DAT_0083c218 | DAT_0083c264
+    CMP EBP,dword ptr [EAX + 0x3c]      ; 004479e4 | g_CramSortedTextureEntries[0].final_bottom | g_CramSortedTextureEntries[1].final_bottom
     JGE 0x004479ec                      ; 004479e7
         ;   XREF to: 004479ec (CONDITIONAL_JUMP)  ; LAB_004479ec
-    MOV EBX,dword ptr [EAX + 0x38]      ; 004479e9 | DAT_0083c214 | DAT_0083c260
+    MOV EBX,dword ptr [EAX + 0x38]      ; 004479e9 | g_CramSortedTextureEntries[0].final_right | g_CramSortedTextureEntries[1].final_right
     INC ECX                             ; 004479ec
         ;   Label: LAB_004479ec
     ADD EAX,0x4c                        ; 004479ed

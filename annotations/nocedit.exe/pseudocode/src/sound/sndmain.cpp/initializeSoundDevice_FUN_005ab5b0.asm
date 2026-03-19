@@ -10,8 +10,8 @@
 ;
 ; Referenced Globals:
 ;   int g_CurrentSoundDevice = -0x1
-;   undefined4 DAT_03f68990
-;   undefined4 DAT_03f68994
+;   undefined4 g_SfxChannelEnabled[26]
+;   undefined4 g_SfxChannelEnabled[27]
 ;   CSoundDevice* g_CSoundDevicePtr
 ;   int g_HasHardware3DSound
 ;
@@ -49,11 +49,11 @@ section .text
     SHL EAX,0x2                         ; 005ab5de
     SUB EAX,ECX                         ; 005ab5e1
     SHL EAX,0x3                         ; 005ab5e3
-    CMP dword ptr [EAX + 0x3f68aa8],0x0 ; 005ab5e6 | DAT_03f68990
+    CMP dword ptr [EAX + 0x3f68aa8],0x0 ; 005ab5e6 | g_SfxChannelEnabled[26]
     JNZ 0x005ab605                      ; 005ab5ed
         ;   XREF to: 005ab605 (CONDITIONAL_JUMP)  ; LAB_005ab605
     PUSH ESI                            ; 005ab5ef
-    MOV ESI,dword ptr [EAX + 0x3f68aac] ; 005ab5f0 | DAT_03f68994
+    MOV ESI,dword ptr [EAX + 0x3f68aac] ; 005ab5f0 | g_SfxChannelEnabled[27]
     PUSH ESI                            ; 005ab5f6
     CALL sound_sndwav.cpp_getWavOutDevice_FUN_005b1510 ; 005ab5f7
         ;   XREF to: 005b1510 (UNCONDITIONAL_CALL)  ; CWavOutDevice * sound_sndwav.cpp_getWavOutDevice_FUN_005b1510(UINT device_id)
@@ -67,10 +67,10 @@ section .text
     SHL EAX,0x2                         ; 005ab614
     SUB EAX,EDX                         ; 005ab617
     SHL EAX,0x3                         ; 005ab619
-    CMP dword ptr [EAX + 0x3f68aa8],0x1 ; 005ab61c | DAT_03f68990
+    CMP dword ptr [EAX + 0x3f68aa8],0x1 ; 005ab61c | g_SfxChannelEnabled[26]
     JNZ 0x005ab639                      ; 005ab623
         ;   XREF to: 005ab639 (CONDITIONAL_JUMP)  ; LAB_005ab639
-    MOV EBP,dword ptr [EAX + 0x3f68aac] ; 005ab625 | DAT_03f68994
+    MOV EBP,dword ptr [EAX + 0x3f68aac] ; 005ab625 | g_SfxChannelEnabled[27]
     PUSH EBP                            ; 005ab62b
     CALL sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440 ; 005ab62c
         ;   XREF to: 005b0440 (UNCONDITIONAL_CALL)  ; CDirectSoundDevice * sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440(UINT device_id)

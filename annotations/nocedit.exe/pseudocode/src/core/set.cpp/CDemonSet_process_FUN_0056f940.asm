@@ -23,7 +23,7 @@
 ;   CDemonLight*[96] g_MasterLightList
 ;   int g_SpotLightCount
 ;   CDemonLight*[96] g_SpotLightList
-;   undefined4 DAT_03276f38
+;   undefined4 g_SpotLightList[1]
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
@@ -82,7 +82,7 @@ section .text
     JLE 0x0056f9d5                      ; 0056f9b5
         ;   XREF to: 0056f9d5 (CONDITIONAL_JUMP)  ; LAB_0056f9d5
     LEA EDX,[ECX*0x4 + 0x0]             ; 0056f9b7
-    CMP EBX,dword ptr [EAX + 0x3276f34] ; 0056f9be | g_SpotLightList | DAT_03276f38
+    CMP EBX,dword ptr [EAX + 0x3276f34] ; 0056f9be | g_SpotLightList | g_SpotLightList[1]
         ;   Label: LAB_0056f9be
     JNZ 0x0056fa91                      ; 0056f9c4
         ;   XREF to: 0056fa91 (CONDITIONAL_JUMP)  ; LAB_0056fa91

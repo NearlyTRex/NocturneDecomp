@@ -99,7 +99,7 @@ section .text
     JLE 0x005dfb58                      ; 005dfb24
         ;   XREF to: 005dfb58 (CONDITIONAL_JUMP)  ; default
     XOR EBX,EBX                         ; 005dfb26
-    MOV EDX,dword ptr [EBX + 0x2db87c0] ; 005dfb28 | g_HeroActors | DAT_02db87c4
+    MOV EDX,dword ptr [EBX + 0x2db87c0] ; 005dfb28 | g_HeroActors | g_HeroActors[1]
         ;   Label: LAB_005dfb28
     PUSH EDX                            ; 005dfb2e
     PUSH ESI                            ; 005dfb2f
@@ -405,7 +405,7 @@ section .text
     JGE 0x005dfb58                      ; 005dfebf
         ;   XREF to: 005dfb58 (CONDITIONAL_JUMP)  ; default
     ADD EAX,dword ptr [ESP + 0x98]      ; 005dfec5
-    MOV EBX,dword ptr [EAX + 0x14d158]  ; 005dfecc | g_CDemonSetInstance.actors[0] | DAT_032613d4
+    MOV EBX,dword ptr [EAX + 0x14d158]  ; 005dfecc | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     PUSH EBX                            ; 005dfed2
     MOV EAX,dword ptr [EBX + 0x154]     ; 005dfed3
     CALL dword ptr [EAX + 0x54]         ; 005dfed9
@@ -457,7 +457,7 @@ section .text
     JGE 0x005dfb58                      ; 005dff6b
         ;   XREF to: 005dfb58 (CONDITIONAL_JUMP)  ; default
     ADD EAX,dword ptr [ESP + 0x9c]      ; 005dff71
-    MOV EBX,dword ptr [EAX + 0x14d158]  ; 005dff78 | g_CDemonSetInstance.actors[0] | DAT_032613d4
+    MOV EBX,dword ptr [EAX + 0x14d158]  ; 005dff78 | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     LEA EAX,[EBX + 0x20]                ; 005dff7e
     MOV EDX,dword ptr [ESP + 0xa0]      ; 005dff81
     FLD float ptr [EAX]                 ; 005dff88

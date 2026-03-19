@@ -24,7 +24,7 @@
 ;   uint g_CubeClipStage1Count
 ;   CVector3f[16] g_ClipStageMaxYBuffer
 ;   undefined4 g_ClipStageMaxYBuffer[0].y
-;   undefined4 DAT_015c4374
+;   undefined4 g_ClipStageMaxYBuffer[0].z
 ;
 ; Called Functions:
 ;   core_dcube.cpp_clipEdgeToPlane_FUN_004547d0
@@ -95,7 +95,7 @@ section .text
     MOV EAX,dword ptr [EDX + 0x4]       ; 004549f4 | g_CubeInputTriangleBuffer[0].y
     MOV dword ptr [ECX + 0x4],EAX       ; 004549f7 | g_ClipStageMaxYBuffer[0].y
     MOV EAX,dword ptr [EDX + 0x8]       ; 004549fa | g_CubeInputTriangleBuffer[0].z
-    MOV dword ptr [ECX + 0x8],EAX       ; 004549fd | DAT_015c4374
+    MOV dword ptr [ECX + 0x8],EAX       ; 004549fd | g_ClipStageMaxYBuffer[0].z
     INC EBX                             ; 00454a00
         ;   Label: LAB_00454a00
     MOV ECX,dword ptr [0x015c42a4]      ; 00454a01 | g_CubeInputTriangleCount
@@ -148,7 +148,7 @@ section .text
     MOV EAX,dword ptr [EDX + 0x4]       ; 00454a6d | g_CubeInputTriangleBuffer[0].y
     MOV dword ptr [ECX + 0x4],EAX       ; 00454a70 | g_ClipStageMaxYBuffer[0].y
     MOV EAX,dword ptr [EDX + 0x8]       ; 00454a73 | g_CubeInputTriangleBuffer[0].z
-    MOV dword ptr [ECX + 0x8],EAX       ; 00454a76 | DAT_015c4374
+    MOV dword ptr [ECX + 0x8],EAX       ; 00454a76 | g_ClipStageMaxYBuffer[0].z
     INC EBX                             ; 00454a79
         ;   Label: LAB_00454a79
     IMUL ECX,EBX,0xc                    ; 00454a7a

@@ -145,7 +145,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 00528dd1 | g_CGameInstance | g_CGamePtr
     FSTP float ptr [EBX + 0x2434]       ; 00528dd6
     FSTP float ptr [EBX + 0x2438]       ; 00528ddc
-    CMP dword ptr [EAX + 0x228],0x0     ; 00528de2 | DAT_02d81cc4
+    CMP dword ptr [EAX + 0x228],0x0     ; 00528de2 | g_CGameInstance.letterbox_mode
     JZ 0x00528dfd                       ; 00528de9
         ;   XREF to: 00528dfd (CONDITIONAL_JUMP)  ; LAB_00528dfd
     FLD float ptr [EBX + 0x2438]        ; 00528deb

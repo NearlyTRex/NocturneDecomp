@@ -45,10 +45,10 @@
 ;   CVector3f[400] g_SamplePointArray
 ;   undefined4 g_SamplePointArray[0].y
 ;   undefined4 g_SamplePointArray[0].z
-;   undefined4 DAT_02f313fc
-;   undefined4 DAT_02f31400
+;   undefined4 g_SamplePointArray[1].x
+;   undefined4 g_SamplePointArray[1].y
 ;   double[400] g_SampleDistances
-;   undefined4 DAT_02f326b0+4
+;   undefined4 g_SampleDistances[0]+4
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -106,13 +106,13 @@ section .text
         ;   Label: LAB_00519bc8
     ADD EBX,0x8                         ; 00519bcd
     XOR EAX,EAX                         ; 00519bd0
-    PUSH ESI                            ; 00519bd2 | g_SamplePointArray | DAT_02f313fc
-    MOV dword ptr [EBX + 0x2f326a8],EAX ; 00519bd3 | g_SampleDistances | DAT_02f326b8
+    PUSH ESI                            ; 00519bd2 | g_SamplePointArray | g_SamplePointArray[1].x
+    MOV dword ptr [EBX + 0x2f326a8],EAX ; 00519bd3 | g_SampleDistances | g_SampleDistances[1]
     LEA EAX,[ESP + 0x4]                 ; 00519bd9
     INC EDI                             ; 00519bdd
     PUSH EAX                            ; 00519bde
     ADD ESI,0xc                         ; 00519bdf
-    MOV dword ptr [EBX + 0x2f326ac],EDX ; 00519be2 | DAT_02f326b0+4 | DAT_02f326b8+4
+    MOV dword ptr [EBX + 0x2f326ac],EDX ; 00519be2 | g_SampleDistances[0]+4 | g_SampleDistances[1]+4
     CALL core_box.cpp_CBoundingBox3D_expand_FUN_00420240 ; 00519be8
         ;   XREF to: 00420240 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_00420240(CBoundingBox3D * this_ptr, CVector3f * point)
     MOV ECX,dword ptr [0x02f313ec]      ; 00519bed | g_SamplePointCount
@@ -304,22 +304,22 @@ section .text
         ;   XREF to: 00519e7f (CONDITIONAL_JUMP)  ; LAB_00519e7f
     MOV EBX,0x2f313f0                   ; 00519de6 | g_SamplePointArray
     XOR ESI,ESI                         ; 00519deb
-    FLD double ptr [ESI + 0x2f326b0]    ; 00519ded | g_SampleDistances | DAT_02f326b8
+    FLD double ptr [ESI + 0x2f326b0]    ; 00519ded | g_SampleDistances | g_SampleDistances[1]
         ;   Label: LAB_00519ded
     FSQRT                               ; 00519df3
-    ADD EBX,0xc                         ; 00519df5 | DAT_02f313fc
+    ADD EBX,0xc                         ; 00519df5 | g_SamplePointArray[1].x
     FSTP float ptr [ESP + 0x2c]         ; 00519df8
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00519dfc
     ADD ESI,0x8                         ; 00519e00
     MOV dword ptr [ESP + 0x28],EAX      ; 00519e03
     MOV dword ptr [ESP + 0x24],EAX      ; 00519e07
     INC EDI                             ; 00519e0b
-    FLD float ptr [EBX + -0xc]          ; 00519e0c | g_SamplePointArray | DAT_02f313fc
+    FLD float ptr [EBX + -0xc]          ; 00519e0c | g_SamplePointArray | g_SamplePointArray[1].x
     LEA EAX,[ESP + 0x48]                ; 00519e0f
     FSUB float ptr [ESP + 0x2c]         ; 00519e13
     PUSH EAX                            ; 00519e17
     FSTP float ptr [ESP + 0x4c]         ; 00519e18
-    FLD float ptr [EBX + -0x8]          ; 00519e1c | g_SamplePointArray[0].y | DAT_02f31400
+    FLD float ptr [EBX + -0x8]          ; 00519e1c | g_SamplePointArray[0].y | g_SamplePointArray[1].y
     FSUB float ptr [ESP + 0x30]         ; 00519e1f
     LEA EAX,[ESP + 0x4]                 ; 00519e23
     FSTP float ptr [ESP + 0x50]         ; 00519e27

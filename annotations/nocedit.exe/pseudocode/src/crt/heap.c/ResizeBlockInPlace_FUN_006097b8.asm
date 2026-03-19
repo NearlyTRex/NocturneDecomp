@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   Heap* g_MainHeap = 00000000
-;   undefined4 DAT_03f9b851
+;   undefined4 CHAR_ARRAY_03f9b850+1
 ;
 ; Called Functions:
 ;   crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0
@@ -129,7 +129,7 @@ section .text
     DEC ECX                             ; 0060989f
     XOR DL,DL                           ; 006098a0
     MOV dword ptr [EBX + 0x1c],ECX      ; 006098a2
-    MOV byte ptr [0x03f9b851],DL        ; 006098a5 | DAT_03f9b851
+    MOV byte ptr [0x03f9b851],DL        ; 006098a5 | CHAR_ARRAY_03f9b850+1
     MOV EDX,dword ptr [EAX]             ; 006098ab
     CMP EDI,EDX                         ; 006098ad
     JC 0x006098ef                       ; 006098af
@@ -153,7 +153,7 @@ section .text
     ADD EDI,EAX                         ; 006098de
     XOR AH,AH                           ; 006098e0
     MOV dword ptr [EDX],EDI             ; 006098e2
-    MOV byte ptr [0x03f9b851],AH        ; 006098e4 | DAT_03f9b851
+    MOV byte ptr [0x03f9b851],AH        ; 006098e4 | CHAR_ARRAY_03f9b850+1
     JMP 0x00609968                      ; 006098ea
         ;   XREF to: 00609968 (UNCONDITIONAL_JUMP)  ; LAB_00609968
     MOV ECX,EDX                         ; 006098ef

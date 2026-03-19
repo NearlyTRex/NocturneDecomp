@@ -14,8 +14,8 @@
 ;   void* PTR_DAT_006852cc = 006590a8
 ;   undefined1 DAT_006852db
 ;   char[260] g_TempDirectoryBuffer
-;   undefined4 DAT_006852dd
-;   undefined4 DAT_006852de
+;   undefined4 g_TempDirectoryBuffer+1
+;   undefined4 g_TempDirectoryBuffer+2
 ;   undefined4 s__006852df
 ;
 ; Called Functions:
@@ -89,13 +89,13 @@ section .text
     PUSH EDI                            ; 00609b77 | g_TempDirectoryBuffer
     MOV AL,byte ptr [ESI]               ; 00609b78
         ;   Label: LAB_00609b78
-    MOV byte ptr [EDI],AL               ; 00609b7a | g_TempDirectoryBuffer | DAT_006852de
+    MOV byte ptr [EDI],AL               ; 00609b7a | g_TempDirectoryBuffer | g_TempDirectoryBuffer+2
     CMP AL,0x0                          ; 00609b7c
     JZ 0x00609b90                       ; 00609b7e
         ;   XREF to: 00609b90 (CONDITIONAL_JUMP)  ; LAB_00609b90
     MOV AL,byte ptr [ESI + 0x1]         ; 00609b80
     ADD ESI,0x2                         ; 00609b83
-    MOV byte ptr [EDI + 0x1],AL         ; 00609b86 | DAT_006852dd | s__006852df
+    MOV byte ptr [EDI + 0x1],AL         ; 00609b86 | g_TempDirectoryBuffer+1 | s__006852df
     ADD EDI,0x2                         ; 00609b89
     CMP AL,0x0                          ; 00609b8c
     JNZ 0x00609b78                      ; 00609b8e
@@ -110,7 +110,7 @@ section .text
     SUB ECX,ECX                         ; 00609b9b
     DEC ECX                             ; 00609b9d
     XOR EAX,EAX                         ; 00609b9e
-    SCASB.REPNE ES:EDI                  ; 00609ba0 | g_TempDirectoryBuffer | DAT_006852dd
+    SCASB.REPNE ES:EDI                  ; 00609ba0 | g_TempDirectoryBuffer | g_TempDirectoryBuffer+1
     NOT ECX                             ; 00609ba2
     DEC ECX                             ; 00609ba4
     POP ES                              ; 00609ba5
@@ -124,9 +124,9 @@ section .text
     JZ 0x00609bc1                       ; 00609bb7
         ;   XREF to: 00609bc1 (CONDITIONAL_JUMP)  ; LAB_00609bc1
     INC EDX                             ; 00609bb9
-    MOV byte ptr [EDX],0x5c             ; 00609bba | g_TempDirectoryBuffer | DAT_006852dd
+    MOV byte ptr [EDX],0x5c             ; 00609bba | g_TempDirectoryBuffer | g_TempDirectoryBuffer+1
     INC EDX                             ; 00609bbd
-    MOV byte ptr [EDX],0x0              ; 00609bbe | DAT_006852dd | DAT_006852de
+    MOV byte ptr [EDX],0x0              ; 00609bbe | g_TempDirectoryBuffer+1 | g_TempDirectoryBuffer+2
     MOV EAX,0x6852dc                    ; 00609bc1 | g_TempDirectoryBuffer
         ;   Label: LAB_00609bc1
     POP EDI                             ; 00609bc6

@@ -24,7 +24,7 @@
 ;   int INT_0061430c = 0x33800001
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81cd8
+;   undefined4 g_CGameInstance.is_processing
 ;
 ; Called Functions:
 ;   core_actor.cpp_generateRandomValue_FUN_0040cba0
@@ -37,7 +37,7 @@ section .text
     SUB ESP,0x8                         ; 0040cd10
         ;   Label: core_actor.cpp_randomChance_FUN_0040cd10
     MOV EAX,[0x0067b654]                ; 0040cd13 | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x23c],0x0     ; 0040cd18 | DAT_02d81cd8
+    CMP dword ptr [EAX + 0x23c],0x0     ; 0040cd18 | g_CGameInstance.is_processing
     JZ 0x0040cd4d                       ; 0040cd1f
         ;   XREF to: 0040cd4d (CONDITIONAL_JUMP)  ; LAB_0040cd4d
     CALL core_actor.cpp_generateRandomValue_FUN_0040cba0 ; 0040cd21

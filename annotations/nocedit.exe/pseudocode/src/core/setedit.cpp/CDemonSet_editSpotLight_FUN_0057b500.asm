@@ -17,7 +17,7 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;   int g_MasterLightCount
 ;   CDemonLight*[96] g_MasterLightList
-;   undefined4 DAT_03276db4
+;   undefined4 g_MasterLightList[1]
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0
@@ -63,7 +63,7 @@ section .text
     MOV EBP,dword ptr [ESP]             ; 0057b544
     XOR EBX,EBX                         ; 0057b547
     ADD EBP,0x4                         ; 0057b549
-    MOV EDI,dword ptr [EBX + 0x3276db0] ; 0057b54c | g_MasterLightList | DAT_03276db4
+    MOV EDI,dword ptr [EBX + 0x3276db0] ; 0057b54c | g_MasterLightList | g_MasterLightList[1]
         ;   Label: LAB_0057b54c
     LEA EAX,[EDI + 0x40]                ; 0057b552
     PUSH EAX                            ; 0057b555

@@ -28,8 +28,8 @@
 ;   undefined4 s_it_a_key..._0061c5aa
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
-;   undefined4 DAT_016e99b4
-;   undefined4 DAT_016e9a88
+;   undefined4 g_ModelPolygonData[0].vertex_indices_count
+;   undefined4 g_ModelPolygonData[0].part_assignment
 ;   int g_PolygonOptimizationPasses
 ;
 ; Called Functions:
@@ -170,14 +170,14 @@ section .text
     INC EAX                             ; 0046566e
     MOV dword ptr [EBP + -0x14],EAX     ; 0046566f
     IMUL EAX,dword ptr [EBP + -0x8],0x184 ; 00465672
-    CMP dword ptr [EAX + 0x16e99b4],0x3 ; 00465679 | DAT_016e99b4
+    CMP dword ptr [EAX + 0x16e99b4],0x3 ; 00465679 | g_ModelPolygonData[0].vertex_indices_count
     JZ 0x00465687                       ; 00465680
         ;   XREF to: 00465687 (CONDITIONAL_JUMP)  ; LAB_00465687
     JMP 0x0046576f                      ; 00465682
         ;   XREF to: 0046576f (UNCONDITIONAL_JUMP)  ; LAB_0046576f
     IMUL EAX,dword ptr [EBP + -0x14],0x184 ; 00465687
         ;   Label: LAB_00465687
-    CMP dword ptr [EAX + 0x16e99b4],0x3 ; 0046568e | DAT_016e99b4
+    CMP dword ptr [EAX + 0x16e99b4],0x3 ; 0046568e | g_ModelPolygonData[0].vertex_indices_count
     JZ 0x0046569c                       ; 00465695
         ;   XREF to: 0046569c (CONDITIONAL_JUMP)  ; LAB_0046569c
     JMP 0x0046576f                      ; 00465697
@@ -247,8 +247,8 @@ section .text
         ;   XREF to: 0046575f (CONDITIONAL_JUMP)  ; LAB_0046575f
     IMUL EAX,dword ptr [EBP + -0x8],0x184 ; 00465741
     IMUL EDX,dword ptr [EBP + -0x14],0x184 ; 00465748
-    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 0046574f | DAT_016e9a88
-    CMP EAX,dword ptr [EDX + 0x16e9a88] ; 00465755 | DAT_016e9a88
+    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 0046574f | g_ModelPolygonData[0].part_assignment
+    CMP EAX,dword ptr [EDX + 0x16e9a88] ; 00465755 | g_ModelPolygonData[0].part_assignment
     JZ 0x0046575f                       ; 0046575b
         ;   XREF to: 0046575f (CONDITIONAL_JUMP)  ; LAB_0046575f
     JMP 0x0046576f                      ; 0046575d

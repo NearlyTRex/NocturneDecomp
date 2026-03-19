@@ -29,13 +29,13 @@
 ;   TerminatedCString s_shape_design_c_0061d27d
 ;   int g_TextureProcessedCount
 ;   STextureAtlasEntry[250] g_TextureAtlasEntries
-;   undefined4 DAT_01e8d265
-;   undefined4 DAT_01e8d266
-;   undefined4 DAT_01e8d267
-;   undefined4 DAT_01e8d364
-;   undefined4 DAT_01e8d365
-;   undefined4 DAT_01e8d366
-;   undefined4 DAT_01e8d367
+;   undefined4 g_TextureAtlasEntries[0].tga_filename[1]
+;   undefined4 g_TextureAtlasEntries[0].tga_filename[2]
+;   undefined4 g_TextureAtlasEntries[0].tga_filename[3]
+;   undefined4 g_TextureAtlasEntries[0].original_filename[0]
+;   undefined4 g_TextureAtlasEntries[0].original_filename[1]
+;   undefined4 g_TextureAtlasEntries[0].original_filename[2]
+;   undefined4 g_TextureAtlasEntries[0].original_filename[3]
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -165,39 +165,39 @@ section .text
         ;   XREF to: 0046aae1 (CONDITIONAL_JUMP)  ; LAB_0046aae1
     IMUL EDX,dword ptr [EBP + -0x4],0x250 ; 0046aa54
     MOV EAX,dword ptr [EBP + 0x18]      ; 0046aa5b
-    CMP EAX,dword ptr [EDX + 0x1e8d4a4] ; 0046aa5e | DAT_01e8d4a4
+    CMP EAX,dword ptr [EDX + 0x1e8d4a4] ; 0046aa5e | g_TextureAtlasEntries[0].min_u
     JGE 0x0046aa76                      ; 0046aa64
         ;   XREF to: 0046aa76 (CONDITIONAL_JUMP)  ; LAB_0046aa76
     IMUL EDX,dword ptr [EBP + -0x4],0x250 ; 0046aa66
     MOV EAX,dword ptr [EBP + 0x18]      ; 0046aa6d
-    MOV dword ptr [EDX + 0x1e8d4a4],EAX ; 0046aa70 | DAT_01e8d4a4
+    MOV dword ptr [EDX + 0x1e8d4a4],EAX ; 0046aa70 | g_TextureAtlasEntries[0].min_u
     IMUL EDX,dword ptr [EBP + -0x4],0x250 ; 0046aa76
         ;   Label: LAB_0046aa76
     MOV EAX,dword ptr [EBP + 0x20]      ; 0046aa7d
-    CMP EAX,dword ptr [EDX + 0x1e8d4ac] ; 0046aa80 | DAT_01e8d4ac
+    CMP EAX,dword ptr [EDX + 0x1e8d4ac] ; 0046aa80 | g_TextureAtlasEntries[0].max_u
     JLE 0x0046aa98                      ; 0046aa86
         ;   XREF to: 0046aa98 (CONDITIONAL_JUMP)  ; LAB_0046aa98
     IMUL EDX,dword ptr [EBP + -0x4],0x250 ; 0046aa88
     MOV EAX,dword ptr [EBP + 0x20]      ; 0046aa8f
-    MOV dword ptr [EDX + 0x1e8d4ac],EAX ; 0046aa92 | DAT_01e8d4ac
+    MOV dword ptr [EDX + 0x1e8d4ac],EAX ; 0046aa92 | g_TextureAtlasEntries[0].max_u
     IMUL EDX,dword ptr [EBP + -0x4],0x250 ; 0046aa98
         ;   Label: LAB_0046aa98
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0046aa9f
-    CMP EAX,dword ptr [EDX + 0x1e8d4a8] ; 0046aaa2 | DAT_01e8d4a8
+    CMP EAX,dword ptr [EDX + 0x1e8d4a8] ; 0046aaa2 | g_TextureAtlasEntries[0].min_v
     JGE 0x0046aaba                      ; 0046aaa8
         ;   XREF to: 0046aaba (CONDITIONAL_JUMP)  ; LAB_0046aaba
     IMUL EDX,dword ptr [EBP + -0x4],0x250 ; 0046aaaa
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0046aab1
-    MOV dword ptr [EDX + 0x1e8d4a8],EAX ; 0046aab4 | DAT_01e8d4a8
+    MOV dword ptr [EDX + 0x1e8d4a8],EAX ; 0046aab4 | g_TextureAtlasEntries[0].min_v
     IMUL EDX,dword ptr [EBP + -0x4],0x250 ; 0046aaba
         ;   Label: LAB_0046aaba
     MOV EAX,dword ptr [EBP + 0x24]      ; 0046aac1
-    CMP EAX,dword ptr [EDX + 0x1e8d4b0] ; 0046aac4 | DAT_01e8d4b0
+    CMP EAX,dword ptr [EDX + 0x1e8d4b0] ; 0046aac4 | g_TextureAtlasEntries[0].max_v
     JLE 0x0046aadc                      ; 0046aaca
         ;   XREF to: 0046aadc (CONDITIONAL_JUMP)  ; LAB_0046aadc
     IMUL EDX,dword ptr [EBP + -0x4],0x250 ; 0046aacc
     MOV EAX,dword ptr [EBP + 0x24]      ; 0046aad3
-    MOV dword ptr [EDX + 0x1e8d4b0],EAX ; 0046aad6 | DAT_01e8d4b0
+    MOV dword ptr [EDX + 0x1e8d4b0],EAX ; 0046aad6 | g_TextureAtlasEntries[0].max_v
     JMP 0x0046abe6                      ; 0046aadc
         ;   XREF to: 0046abe6 (UNCONDITIONAL_JUMP)  ; LAB_0046abe6
         ;   Label: LAB_0046aadc
@@ -231,13 +231,13 @@ section .text
     PUSH EDI                            ; 0046ab46
     MOV AL,byte ptr [ESI]               ; 0046ab47
         ;   Label: LAB_0046ab47
-    MOV byte ptr [EDI],AL               ; 0046ab49 | g_TextureAtlasEntries | DAT_01e8d266
+    MOV byte ptr [EDI],AL               ; 0046ab49 | g_TextureAtlasEntries | g_TextureAtlasEntries[0].tga_filename[2]
     CMP AL,0x0                          ; 0046ab4b
     JZ 0x0046ab5f                       ; 0046ab4d
         ;   XREF to: 0046ab5f (CONDITIONAL_JUMP)  ; LAB_0046ab5f
     MOV AL,byte ptr [ESI + 0x1]         ; 0046ab4f
     ADD ESI,0x2                         ; 0046ab52
-    MOV byte ptr [EDI + 0x1],AL         ; 0046ab55 | DAT_01e8d265 | DAT_01e8d267
+    MOV byte ptr [EDI + 0x1],AL         ; 0046ab55 | g_TextureAtlasEntries[0].tga_filename[1] | g_TextureAtlasEntries[0].tga_filename[3]
     ADD EDI,0x2                         ; 0046ab58
     CMP AL,0x0                          ; 0046ab5b
     JNZ 0x0046ab47                      ; 0046ab5d
@@ -252,13 +252,13 @@ section .text
     PUSH EDI                            ; 0046ab7a
     MOV AL,byte ptr [ESI]               ; 0046ab7b
         ;   Label: LAB_0046ab7b
-    MOV byte ptr [EDI],AL               ; 0046ab7d | DAT_01e8d364 | DAT_01e8d366
+    MOV byte ptr [EDI],AL               ; 0046ab7d | g_TextureAtlasEntries[0].original_filename[0] | g_TextureAtlasEntries[0].original_filename[2]
     CMP AL,0x0                          ; 0046ab7f
     JZ 0x0046ab93                       ; 0046ab81
         ;   XREF to: 0046ab93 (CONDITIONAL_JUMP)  ; LAB_0046ab93
     MOV AL,byte ptr [ESI + 0x1]         ; 0046ab83
     ADD ESI,0x2                         ; 0046ab86
-    MOV byte ptr [EDI + 0x1],AL         ; 0046ab89 | DAT_01e8d365 | DAT_01e8d367
+    MOV byte ptr [EDI + 0x1],AL         ; 0046ab89 | g_TextureAtlasEntries[0].original_filename[1] | g_TextureAtlasEntries[0].original_filename[3]
     ADD EDI,0x2                         ; 0046ab8c
     CMP AL,0x0                          ; 0046ab8f
     JNZ 0x0046ab7b                      ; 0046ab91
@@ -267,16 +267,16 @@ section .text
         ;   Label: LAB_0046ab93
     IMUL ESI,dword ptr [0x01e8d260],0x250 ; 0046ab94 | g_TextureProcessedCount
     MOV EAX,dword ptr [EBP + 0x18]      ; 0046ab9e
-    MOV dword ptr [ESI + 0x1e8d4a4],EAX ; 0046aba1 | DAT_01e8d4a4
+    MOV dword ptr [ESI + 0x1e8d4a4],EAX ; 0046aba1 | g_TextureAtlasEntries[0].min_u
     IMUL ESI,dword ptr [0x01e8d260],0x250 ; 0046aba7 | g_TextureProcessedCount
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0046abb1
-    MOV dword ptr [ESI + 0x1e8d4a8],EAX ; 0046abb4 | DAT_01e8d4a8
+    MOV dword ptr [ESI + 0x1e8d4a8],EAX ; 0046abb4 | g_TextureAtlasEntries[0].min_v
     IMUL ESI,dword ptr [0x01e8d260],0x250 ; 0046abba | g_TextureProcessedCount
     MOV EAX,dword ptr [EBP + 0x20]      ; 0046abc4
-    MOV dword ptr [ESI + 0x1e8d4ac],EAX ; 0046abc7 | DAT_01e8d4ac
+    MOV dword ptr [ESI + 0x1e8d4ac],EAX ; 0046abc7 | g_TextureAtlasEntries[0].max_u
     IMUL ESI,dword ptr [0x01e8d260],0x250 ; 0046abcd | g_TextureProcessedCount
     MOV EAX,dword ptr [EBP + 0x24]      ; 0046abd7
-    MOV dword ptr [ESI + 0x1e8d4b0],EAX ; 0046abda | DAT_01e8d4b0
+    MOV dword ptr [ESI + 0x1e8d4b0],EAX ; 0046abda | g_TextureAtlasEntries[0].max_v
     INC dword ptr [0x01e8d260]          ; 0046abe0 | g_TextureProcessedCount
     MOV ESP,EBP                         ; 0046abe6
         ;   Label: LAB_0046abe6

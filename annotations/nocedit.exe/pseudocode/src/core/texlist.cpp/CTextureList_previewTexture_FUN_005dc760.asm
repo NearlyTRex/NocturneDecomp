@@ -20,9 +20,9 @@
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_x
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
-;   undefined4 DAT_00688044
-;   undefined4 DAT_00688048
-;   undefined4 DAT_0068804c
+;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_x
+;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_y
+;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_z
 ;   undefined4 g_RenderVertexBuffer[1].projected_vertex.screen_x
 ;   undefined4 g_RenderVertexBuffer[1].u
 ;   ... and 25 more
@@ -111,7 +111,7 @@ section .text
     PUSH 0x0                            ; 005dc836
     PUSH 0x0                            ; 005dc838
     MOV EDI,0x80000000                  ; 005dc83a
-    MOV EBP,0xf80000                    ; 005dc83f | DAT_00f80000
+    MOV EBP,0xf80000                    ; 005dc83f | g_LightBufferPool[11][183800]
     CALL engine_light.cpp_setDirectionalLightVector_FUN_005054d0 ; 005dc844
         ;   XREF to: 005054d0 (UNCONDITIONAL_CALL)  ; void engine_light.cpp_setDirectionalLightVector_FUN_005054d0(int dir_x, int dir_y, int dir_z)
     MOV EDX,0xa00                       ; 005dc849
@@ -134,18 +134,18 @@ section .text
     MOV [0x00688060],EAX                ; 005dc8a0 | g_RenderVertexBuffer[1].v
     XOR EDI,EDI                         ; 005dc8a5
     MOV EDX,0xfffff600                  ; 005dc8a7
-    MOV dword ptr [0x00688048],ECX      ; 005dc8ac | DAT_00688048
-    MOV dword ptr [0x0068804c],ECX      ; 005dc8b2 | DAT_0068804c
+    MOV dword ptr [0x00688048],ECX      ; 005dc8ac | g_RenderVertexBuffer[1].projected_vertex.transformed_y
+    MOV dword ptr [0x0068804c],ECX      ; 005dc8b2 | g_RenderVertexBuffer[1].projected_vertex.transformed_z
     MOV dword ptr [0x0068807c],ESI      ; 005dc8b8 | g_RenderVertexBuffer[2].projected_vertex.transformed_z
     MOV dword ptr [ESP + 0x2c],EDI      ; 005dc8be
-    MOV dword ptr [0x00688044],EDX      ; 005dc8c2 | DAT_00688044
-    MOV dword ptr [0x00688074],EDX      ; 005dc8c8 | DAT_00688074
+    MOV dword ptr [0x00688044],EDX      ; 005dc8c2 | g_RenderVertexBuffer[1].projected_vertex.transformed_x
+    MOV dword ptr [0x00688074],EDX      ; 005dc8c8 | g_RenderVertexBuffer[2].projected_vertex.transformed_x
     MOV ECX,EDX                         ; 005dc8ce
     MOV dword ptr [0x00688078],EDX      ; 005dc8d0 | g_RenderVertexBuffer[2].projected_vertex.transformed_y
     MOV EDX,ESI                         ; 005dc8d6
     MOV dword ptr [0x006880a8],ECX      ; 005dc8d8 | g_RenderVertexBuffer[3].projected_vertex.transformed_y
     MOV ESI,0x3                         ; 005dc8de
-    MOV dword ptr [0x006880a4],EDX      ; 005dc8e3 | DAT_006880a4
+    MOV dword ptr [0x006880a4],EDX      ; 005dc8e3 | g_RenderVertexBuffer[3].projected_vertex.transformed_x
     MOV dword ptr [0x006880ac],EDX      ; 005dc8e9 | g_RenderVertexBuffer[3].projected_vertex.transformed_z
     XOR ECX,ECX                         ; 005dc8ef
     MOV EDX,0x4                         ; 005dc8f1

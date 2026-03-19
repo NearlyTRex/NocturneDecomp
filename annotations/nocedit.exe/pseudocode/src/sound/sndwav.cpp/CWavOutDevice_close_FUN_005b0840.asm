@@ -15,13 +15,13 @@
 ;   TerminatedCString s_waveOutClose_failed_00652370
 ;   HWAVEOUT g_WaveOutHandle
 ;   HGLOBAL[8] g_WaveOutHeaderHandles
-;   undefined4 DAT_03f6ad3c
+;   undefined4 g_WaveOutHeaderHandles[1]
 ;   LPWAVEHDR[8] g_WaveOutHeaders
-;   undefined4 DAT_03f6ad5c
+;   undefined4 g_WaveOutHeaders[1]
 ;   HGLOBAL[8] g_WaveOutBufferHandles
-;   undefined4 DAT_03f6ad7c
+;   undefined4 g_WaveOutBufferHandles[1]
 ;   LPVOID[8] g_WaveOutBuffers
-;   undefined4 DAT_03f6ad9c
+;   undefined4 g_WaveOutBuffers[1]
 ;
 ; Called Functions:
 ;   GlobalFree
@@ -49,7 +49,7 @@ section .text
     XOR EBX,EBX                         ; 005b085a
         ;   Label: LAB_005b085a
     XOR EDI,EDI                         ; 005b085c
-    MOV EDX,dword ptr [EBX + 0x3f6ad78] ; 005b085e | g_WaveOutBufferHandles | DAT_03f6ad7c
+    MOV EDX,dword ptr [EBX + 0x3f6ad78] ; 005b085e | g_WaveOutBufferHandles | g_WaveOutBufferHandles[1]
         ;   Label: LAB_005b085e
     CMP EDI,EDX                         ; 005b0864
     JZ 0x005b0876                       ; 005b0866
@@ -57,9 +57,9 @@ section .text
     PUSH EDX                            ; 005b0868
     CALL dword ptr CS:[0x6115d0]        ; 005b0869 | g_GlobalFreeFunc
     MOV dword ptr [EBX + 0x3f6ad78],EDI ; 005b0870 | g_WaveOutBufferHandles
-    MOV EBP,dword ptr [EBX + 0x3f6ad38] ; 005b0876 | g_WaveOutHeaderHandles | DAT_03f6ad3c
+    MOV EBP,dword ptr [EBX + 0x3f6ad38] ; 005b0876 | g_WaveOutHeaderHandles | g_WaveOutHeaderHandles[1]
         ;   Label: LAB_005b0876
-    MOV dword ptr [EBX + 0x3f6ad98],EDI ; 005b087c | g_WaveOutBuffers | DAT_03f6ad9c
+    MOV dword ptr [EBX + 0x3f6ad98],EDI ; 005b087c | g_WaveOutBuffers | g_WaveOutBuffers[1]
     CMP EDI,EBP                         ; 005b0882
     JZ 0x005b0894                       ; 005b0884
         ;   XREF to: 005b0894 (CONDITIONAL_JUMP)  ; LAB_005b0894
@@ -68,7 +68,7 @@ section .text
     MOV dword ptr [EBX + 0x3f6ad38],EDI ; 005b088e | g_WaveOutHeaderHandles
     ADD EBX,0x4                         ; 005b0894
         ;   Label: LAB_005b0894
-    MOV dword ptr [EBX + 0x3f6ad54],EDI ; 005b0897 | g_WaveOutHeaders | DAT_03f6ad5c
+    MOV dword ptr [EBX + 0x3f6ad54],EDI ; 005b0897 | g_WaveOutHeaders | g_WaveOutHeaders[1]
     CMP EBX,0x20                        ; 005b089d
     JNZ 0x005b085e                      ; 005b08a0
         ;   XREF to: 005b085e (CONDITIONAL_JUMP)  ; LAB_005b085e

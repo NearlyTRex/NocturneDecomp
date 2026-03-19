@@ -268,7 +268,7 @@ section .text
     JNZ 0x0051fdb4                      ; 0051feb5
         ;   XREF to: 0051fdb4 (CONDITIONAL_JUMP)  ; LAB_0051fdb4
     MOV EAX,[0x0067b654]                ; 0051febb | g_CGamePtr
-    CMP dword ptr [EAX + 0x1d4],0x0     ; 0051fec0 | DAT_02d81c70
+    CMP dword ptr [EAX + 0x1d4],0x0     ; 0051fec0 | g_CGameInstance.freeze_enemies_enabled
     JNZ 0x0051fdb4                      ; 0051fec7
         ;   XREF to: 0051fdb4 (CONDITIONAL_JUMP)  ; LAB_0051fdb4
     MOV EAX,[0x02db87d0]                ; 0051fecd | g_LocalHeroIndex
@@ -378,7 +378,7 @@ section .text
         ;   XREF to: 0051fdb4 (UNCONDITIONAL_JUMP)  ; LAB_0051fdb4
     MOV EAX,[0x0067b654]                ; 0051fff9 | g_CGamePtr
         ;   Label: LAB_0051fff9
-    CMP dword ptr [EAX + 0x1d4],0x0     ; 0051fffe | DAT_02d81c70
+    CMP dword ptr [EAX + 0x1d4],0x0     ; 0051fffe | g_CGameInstance.freeze_enemies_enabled
     JNZ 0x0051fda1                      ; 00520005
         ;   XREF to: 0051fda1 (CONDITIONAL_JUMP)  ; LAB_0051fda1
     LEA EAX,[EBX + 0x20]                ; 0052000b

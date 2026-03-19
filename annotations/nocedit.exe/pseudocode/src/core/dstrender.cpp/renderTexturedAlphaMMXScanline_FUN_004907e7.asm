@@ -25,7 +25,7 @@
 ;   _MMX_INTEGER g_TextureMask1
 ;   _MMX_INTEGER g_TextureMask2
 ;   void*[1200] g_ScreenBufferArray
-;   undefined4 DAT_02d02584
+;   undefined4 g_ReciprocalLookupTable[1]
 ;   void* g_CurrentTextureData
 ;   ... and 1 more
 ;
@@ -58,19 +58,19 @@ section .text
     MOV EAX,dword ptr [EDI + 0x18]      ; 0049081e
     MOV EBX,dword ptr [ESI + 0x18]      ; 00490821
     SUB EAX,EBX                         ; 00490824
-    IMUL dword ptr [ECX*0x2 + 0x2d02584] ; 00490826 | DAT_02d02584
+    IMUL dword ptr [ECX*0x2 + 0x2d02584] ; 00490826 | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006723a8],EBX      ; 0049082d | g_PerspectiveNextU
     MOV dword ptr [0x006723c4],EDX      ; 00490833 | g_DeltaTextureU
     MOV EAX,dword ptr [EDI + 0x20]      ; 00490839
     MOV EBX,dword ptr [ESI + 0x20]      ; 0049083c
     SUB EAX,EBX                         ; 0049083f
-    IMUL dword ptr [ECX*0x2 + 0x2d02584] ; 00490841 | DAT_02d02584
+    IMUL dword ptr [ECX*0x2 + 0x2d02584] ; 00490841 | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006723ac],EBX      ; 00490848 | g_PerspectiveNextV
     MOV dword ptr [0x006723c8],EDX      ; 0049084e | g_DeltaTextureV
     MOV EAX,dword ptr [EDI + 0x28]      ; 00490854
     MOV EBX,dword ptr [ESI + 0x28]      ; 00490857
     SUB EAX,EBX                         ; 0049085a
-    IMUL dword ptr [ECX*0x2 + 0x2d02584] ; 0049085c | DAT_02d02584
+    IMUL dword ptr [ECX*0x2 + 0x2d02584] ; 0049085c | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006723b4],EBX      ; 00490863 | g_StartDepthZ
     MOV dword ptr [0x006723cc],EDX      ; 00490869 | g_DeltaDepthZ
     MOV ECX,dword ptr [0x006723a8]      ; 0049086f | g_PerspectiveNextU

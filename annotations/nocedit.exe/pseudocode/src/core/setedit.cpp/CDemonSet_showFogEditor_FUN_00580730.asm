@@ -290,7 +290,7 @@ section .text
     XOR ECX,ECX                         ; 00580a10
     MOV EDX,dword ptr [EAX + 0x154]     ; 00580a12
         ;   Label: LAB_00580a12
-    MOV dword ptr [ECX + 0x3659388],EDX ; 00580a18 | g_CameraFogEnabledFlags | DAT_0365938c
+    MOV dword ptr [ECX + 0x3659388],EDX ; 00580a18 | g_CameraFogEnabledFlags | g_CameraFogEnabledFlags[1]
     MOV EDX,dword ptr [EBP + 0x14]      ; 00580a1e
     ADD ECX,0x4                         ; 00580a21
     INC EDI                             ; 00580a24

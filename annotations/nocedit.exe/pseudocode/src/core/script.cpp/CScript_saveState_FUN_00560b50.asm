@@ -61,7 +61,7 @@ section .text
         ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EAX,[0x0067b654]                ; 00560b85 | g_CGameInstance | g_CGamePtr
     ADD ESP,0x8                         ; 00560b8a
-    MOV EDX,dword ptr [EAX + 0x228]     ; 00560b8d | DAT_02d81cc4
+    MOV EDX,dword ptr [EAX + 0x228]     ; 00560b8d | g_CGameInstance.letterbox_mode
     PUSH EDX                            ; 00560b93
     PUSH 0x643532                       ; 00560b94 | = "%d\n"
     PUSH EDI                            ; 00560b99
@@ -74,7 +74,7 @@ section .text
         ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EAX,[0x0067b654]                ; 00560bad | g_CGameInstance | g_CGamePtr
     ADD ESP,0x8                         ; 00560bb2
-    MOV ECX,dword ptr [EAX + 0x22c]     ; 00560bb5 | DAT_02d81cc8
+    MOV ECX,dword ptr [EAX + 0x22c]     ; 00560bb5 | g_CGameInstance.allow_damage_flag
     PUSH ECX                            ; 00560bbb
     PUSH 0x643551                       ; 00560bbc | = "%d\n"
     PUSH EDI                            ; 00560bc1
@@ -87,7 +87,7 @@ section .text
         ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     MOV EAX,[0x0067b654]                ; 00560bd5 | g_CGameInstance | g_CGamePtr
     ADD ESP,0x8                         ; 00560bda
-    MOV EBX,dword ptr [EAX + 0x230]     ; 00560bdd | DAT_02d81ccc
+    MOV EBX,dword ptr [EAX + 0x230]     ; 00560bdd | g_CGameInstance.allow_enemy_attack_flag
     PUSH EBX                            ; 00560be3
     PUSH 0x643575                       ; 00560be4 | = "%d\n"
     PUSH EDI                            ; 00560be9

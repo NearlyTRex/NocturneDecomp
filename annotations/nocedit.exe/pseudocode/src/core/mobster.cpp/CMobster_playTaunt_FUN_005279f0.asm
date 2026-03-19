@@ -21,12 +21,12 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CSound* g_CSoundPtr = 03f6af64
-;   undefined4 DAT_02d81ab8
+;   undefined4 g_CGameInstance.foul_language_flag
 ;   int[5] g_MobsterTauntCounters
 ;   undefined4 g_CMobsterClassInfo.name_hash
 ;   undefined4 g_CDemonSetInstance.enemy_count
-;   undefined4 DAT_03265258
-;   undefined4 DAT_0326525c
+;   undefined4 g_CDemonSetInstance.enemies[0]
+;   undefined4 g_CDemonSetInstance.enemies[1]
 ;   CSound g_CSoundInstance
 ;
 ; Called Functions:
@@ -66,7 +66,7 @@ section .text
     INC EDX                             ; 00527a26
     MOV EAX,[0x0067b654]                ; 00527a27 | g_CGamePtr
     MOV dword ptr [EBX + 0x2f37eb4],EDX ; 00527a2c | g_MobsterTauntCounters
-    CMP dword ptr [EAX + 0x1c],0x0      ; 00527a32 | DAT_02d81ab8
+    CMP dword ptr [EAX + 0x1c],0x0      ; 00527a32 | g_CGameInstance.foul_language_flag
     JNZ 0x00527a5f                      ; 00527a36
         ;   XREF to: 00527a5f (CONDITIONAL_JUMP)  ; LAB_00527a5f
     CMP dword ptr [EBP + 0x18],0x1      ; 00527a38
@@ -154,7 +154,7 @@ section .text
     MOV ECX,dword ptr [0x02f37f30]      ; 00527b01 | g_CMobsterClassInfo.name_hash
     ADD EAX,EDX                         ; 00527b07
     PUSH ECX                            ; 00527b09
-    MOV ECX,dword ptr [EAX + 0x150fe0]  ; 00527b0a | DAT_03265258 | DAT_0326525c
+    MOV ECX,dword ptr [EAX + 0x150fe0]  ; 00527b0a | g_CDemonSetInstance.enemies[0] | g_CDemonSetInstance.enemies[1]
     PUSH ECX                            ; 00527b10
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00527b11
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

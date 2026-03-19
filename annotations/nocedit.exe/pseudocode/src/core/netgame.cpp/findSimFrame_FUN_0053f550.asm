@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   int g_SimFrameCount
 ;   SSimFrame[512] g_SimFrameHistory
-;   undefined4 DAT_02f9c128
+;   undefined4 g_SimFrameHistory[1].sequence_number
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
     XOR EAX,EAX                         ; 0053f56e
     SHL ECX,0x2                         ; 0053f570
     POP ESI                             ; 0053f573
-    CMP EBX,dword ptr [EAX + 0x2f9c0c4] ; 0053f574 | g_SimFrameHistory | DAT_02f9c128
+    CMP EBX,dword ptr [EAX + 0x2f9c0c4] ; 0053f574 | g_SimFrameHistory | g_SimFrameHistory[1].sequence_number
         ;   Label: LAB_0053f574
     JZ 0x0053f58d                       ; 0053f57a
         ;   XREF to: 0053f58d (CONDITIONAL_JUMP)  ; LAB_0053f58d

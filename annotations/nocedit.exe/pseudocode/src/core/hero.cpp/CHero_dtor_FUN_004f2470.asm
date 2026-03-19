@@ -21,7 +21,7 @@
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CHeroVTable
 ;   CHero*[4] g_HeroActors
-;   undefined4 DAT_02db87c4
+;   undefined4 g_HeroActors[1]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408a30
@@ -42,7 +42,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 004f2471
     MOV dword ptr [EDX + 0x154],0x65f6d4 ; 004f2475 | g_CHeroVTable
     XOR EAX,EAX                         ; 004f247f
-    CMP EDX,dword ptr [EAX + 0x2db87c0] ; 004f2481 | g_HeroActors | DAT_02db87c4
+    CMP EDX,dword ptr [EAX + 0x2db87c0] ; 004f2481 | g_HeroActors | g_HeroActors[1]
         ;   Label: LAB_004f2481
     JZ 0x004f2529                       ; 004f2487
         ;   XREF to: 004f2529 (CONDITIONAL_JUMP)  ; LAB_004f2529
@@ -109,7 +109,7 @@ section .text
     RET                                 ; 004f2528
     XOR EBX,EBX                         ; 004f2529
         ;   Label: LAB_004f2529
-    MOV dword ptr [EAX + 0x2db87c0],EBX ; 004f252b | DAT_02db87c4
+    MOV dword ptr [EAX + 0x2db87c0],EBX ; 004f252b | g_HeroActors[1]
     JMP 0x004f248d                      ; 004f2531
         ;   XREF to: 004f248d (UNCONDITIONAL_JUMP)  ; LAB_004f248d
 

@@ -16,7 +16,7 @@
 ;   TerminatedCString s_Which_axis_to_use_X_Y_or_0061b69b
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; Called Functions:
@@ -189,9 +189,9 @@ section .text
     JGE 0x0045ee06                      ; 0045edef
         ;   XREF to: 0045ee06 (CONDITIONAL_JUMP)  ; LAB_0045ee06
     IMUL EAX,dword ptr [EBP + -0x4],0x14 ; 0045edf1
-    FLD float ptr [EAX + 0x1626410]     ; 0045edf5 | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 0045edf5 | g_LoadedVertices[0].vertex.y
     FADD float ptr [EBP + -0xc]         ; 0045edfb
-    FSTP float ptr [EAX + 0x1626410]    ; 0045edfe | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 0045edfe | g_LoadedVertices[0].vertex.y
     JMP 0x0045ede0                      ; 0045ee04
         ;   XREF to: 0045ede0 (UNCONDITIONAL_JUMP)  ; LAB_0045ede0
     JMP 0x0045ee5b                      ; 0045ee06

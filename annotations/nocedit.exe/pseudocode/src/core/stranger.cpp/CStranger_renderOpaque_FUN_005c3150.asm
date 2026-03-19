@@ -40,7 +40,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CFireEffect g_CFireEffectInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_032613a0
+;   undefined4 g_CDemonSetInstance.collision_normal.x
 ;   int INT_03f6bacc
 ;   int INT_03f6bb04
 ;   int INT_03f6bb24
@@ -185,7 +185,7 @@ section .text
     PUSH 0xff                           ; 005c3279
     ADD EAX,0x14d128                    ; 005c327e
     PUSH dword ptr [EBP + 0x76]         ; 005c3283
-    PUSH EAX                            ; 005c3286 | DAT_032613a0
+    PUSH EAX                            ; 005c3286 | g_CDemonSetInstance.collision_normal.x
     PUSH 0x3f800000                     ; 005c3287
     LEA EAX,[EBP + 0x12]                ; 005c328c
     PUSH 0x3f800000                     ; 005c328f

@@ -53,11 +53,11 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CVector3f[3000] g_ShatterVertexArray
-;   undefined4 DAT_03683be4
-;   undefined4 DAT_03683be8
-;   undefined4 DAT_03683bec
-;   undefined4 DAT_03683bf0
-;   undefined4 DAT_03683bf4
+;   undefined4 g_ShatterVertexArray[0].y
+;   undefined4 g_ShatterVertexArray[0].z
+;   undefined4 g_ShatterVertexArray[1].x
+;   undefined4 g_ShatterVertexArray[1].y
+;   undefined4 g_ShatterVertexArray[1].z
 ;   uchar g_ShatterVertexArrayInitialized
 ;
 ; Called Functions:
@@ -121,17 +121,17 @@ section .text
         ;   XREF to: 0059cffd (CONDITIONAL_JUMP)  ; LAB_0059cffd
     MOV EAX,EDI                         ; 0059cf6c
         ;   Label: LAB_0059cf6c
-    MOV EBX,ESI                         ; 0059cf6e | g_ShatterVertexArray | DAT_03683bec
+    MOV EBX,ESI                         ; 0059cf6e | g_ShatterVertexArray | g_ShatterVertexArray[1].x
     FILD dword ptr [EAX]                ; 0059cf70
     FMUL float ptr [0x00662ea0]         ; 0059cf72 | FLOAT_00662ea0
-    FSTP float ptr [EBX]                ; 0059cf78 | g_ShatterVertexArray | DAT_03683bec
+    FSTP float ptr [EBX]                ; 0059cf78 | g_ShatterVertexArray | g_ShatterVertexArray[1].x
     FILD dword ptr [EAX + 0x4]          ; 0059cf7a
     FMUL float ptr [0x00662ea0]         ; 0059cf7d | FLOAT_00662ea0
-    FSTP float ptr [EBX + 0x4]          ; 0059cf83 | DAT_03683be4 | DAT_03683bf0
+    FSTP float ptr [EBX + 0x4]          ; 0059cf83 | g_ShatterVertexArray[0].y | g_ShatterVertexArray[1].y
     FILD dword ptr [EAX + 0x8]          ; 0059cf86
     FMUL float ptr [0x00662ea0]         ; 0059cf89 | FLOAT_00662ea0
-    FSTP float ptr [EBX + 0x8]          ; 0059cf8f | DAT_03683be8 | DAT_03683bf4
-    PUSH ESI                            ; 0059cf92 | g_ShatterVertexArray | DAT_03683bec
+    FSTP float ptr [EBX + 0x8]          ; 0059cf8f | g_ShatterVertexArray[0].z | g_ShatterVertexArray[1].z
+    PUSH ESI                            ; 0059cf92 | g_ShatterVertexArray | g_ShatterVertexArray[1].x
     LEA EAX,[ESP + 0x74]                ; 0059cf93
     PUSH EAX                            ; 0059cf97
     LEA EAX,[ESP + 0x8]                 ; 0059cf98
@@ -156,9 +156,9 @@ section .text
     MOV EAX,dword ptr [ESP + 0x64]      ; 0059cfd0
     MOV dword ptr [ESI],EAX             ; 0059cfd4 | g_ShatterVertexArray
     MOV EAX,dword ptr [ESP + 0x68]      ; 0059cfd6
-    MOV dword ptr [ESI + 0x4],EAX       ; 0059cfda | DAT_03683be4
+    MOV dword ptr [ESI + 0x4],EAX       ; 0059cfda | g_ShatterVertexArray[0].y
     MOV EAX,dword ptr [ESP + 0x6c]      ; 0059cfdd
-    MOV dword ptr [ESI + 0x8],EAX       ; 0059cfe1 | DAT_03683be8
+    MOV dword ptr [ESI + 0x8],EAX       ; 0059cfe1 | g_ShatterVertexArray[0].z
     MOV EAX,dword ptr [ESP + 0x84]      ; 0059cfe4
         ;   Label: LAB_0059cfe4
     ADD ESI,0xc                         ; 0059cfeb
@@ -238,9 +238,9 @@ section .text
         ;   XREF to: 0059d131 (CONDITIONAL_JUMP)  ; LAB_0059d131
     MOV EBP,dword ptr [EBX]             ; 0059d121 | g_ShatterVertexArray
     MOV dword ptr [EAX],EBP             ; 0059d123
-    MOV EBP,dword ptr [EBX + 0x4]       ; 0059d125 | DAT_03683be4
+    MOV EBP,dword ptr [EBX + 0x4]       ; 0059d125 | g_ShatterVertexArray[0].y
     MOV dword ptr [EAX + 0x4],EBP       ; 0059d128
-    MOV EBP,dword ptr [EBX + 0x8]       ; 0059d12b | DAT_03683be8
+    MOV EBP,dword ptr [EBX + 0x8]       ; 0059d12b | g_ShatterVertexArray[0].z
     MOV dword ptr [EAX + 0x8],EBP       ; 0059d12e
     XOR EBX,EBX                         ; 0059d131
         ;   Label: LAB_0059d131
@@ -411,9 +411,9 @@ section .text
         ;   XREF to: 0059d3bd (CONDITIONAL_JUMP)  ; LAB_0059d3bd
     MOV EBP,dword ptr [EBX]             ; 0059d3ad | g_ShatterVertexArray
     MOV dword ptr [EAX],EBP             ; 0059d3af
-    MOV EBP,dword ptr [EBX + 0x4]       ; 0059d3b1 | DAT_03683be4
+    MOV EBP,dword ptr [EBX + 0x4]       ; 0059d3b1 | g_ShatterVertexArray[0].y
     MOV dword ptr [EAX + 0x4],EBP       ; 0059d3b4
-    MOV EBP,dword ptr [EBX + 0x8]       ; 0059d3b7 | DAT_03683be8
+    MOV EBP,dword ptr [EBX + 0x8]       ; 0059d3b7 | g_ShatterVertexArray[0].z
     MOV dword ptr [EAX + 0x8],EBP       ; 0059d3ba
     XOR EBX,EBX                         ; 0059d3bd
         ;   Label: LAB_0059d3bd

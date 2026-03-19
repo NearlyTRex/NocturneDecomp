@@ -42,12 +42,12 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,cha
     wincore_winvideo_cpp_closeMovie_FUN_005f46b0(g_MainWindowHandle);
   }
   _sprintf(local_1f8,"open \"%s\" alias mov style child parent %d",local_74,hWnd);
-  MVar3 = (*g_mciSendStringAFunc)(local_1f8,(LPSTR)0x0,0,(HWND)0x0);
+  MVar3 = (*g_mciSendStringAFunc)(local_1f8,(LPSTR)0x0,0,0);
   if (MVar3 == 0) {
     g_MoviePlaying = 1;
-    mcierr = (*g_mciSendStringAFunc)("status mov window handle",local_1f8,0x104,(HWND)0x0);
+    mcierr = (*g_mciSendStringAFunc)("status mov window handle",local_1f8,0x104,0);
     if (mcierr == 0) {
-      g_MovieWindowHandle = (HWND)atoi(local_1f8);
+      g_MovieWindowHandle = atoi(local_1f8);
     }
     else {
       (*g_mciGetErrorStringAFunc)(mcierr,local_1f8,0x104);
@@ -55,7 +55,7 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,cha
     }
     if ((g_FullscreenMovie == 0) && (g_MoviePlaying != 0)) {
       (*g_GetClientRectFunc)(hWnd,&tStack_14);
-      (*g_mciSendStringAFunc)("where mov source",(LPSTR)&bStack_f4,0x80,(HWND)0x0);
+      (*g_mciSendStringAFunc)("where mov source",(LPSTR)&bStack_f4,0x80,0);
       (*g_SetRectEmptyFunc)(&tStack_24);
       pbVar4 = &bStack_f4;
       while (bStack_f4 == 0x20) {
@@ -104,7 +104,7 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,cha
     }
   }
   else {
-    pHVar7 = (HWND)0x0;
+    pHVar7 = 0;
     lpstrCommand = "pause mov";
   }
   (*g_mciSendStringAFunc)(lpstrCommand,(LPSTR)0x0,0,pHVar7);

@@ -10,13 +10,13 @@
 ;   SMRGLTextureBasic g_CameraBackdropTexture
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SRGBColorPalette g_CameraImagePaletteData
-;   undefined4 DAT_00c196fc
-;   undefined4 DAT_00c196fd
+;   undefined4 g_CameraImagePaletteData.colors[1].g
+;   undefined4 g_CameraImagePaletteData.colors[1].b
 ;   char[307200] g_CameraIndexedImageData
 ;   uint[16384] g_CameraTextureWorkBuffer
-;   undefined4 DAT_01566fa8+1
-;   undefined4 DAT_01566fac
-;   undefined4 DAT_01566fad
+;   undefined4 g_CameraTextureWorkBuffer[0]+1
+;   undefined4 g_CameraTextureWorkBuffer[1]
+;   undefined4 g_CameraTextureWorkBuffer[1]+1
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   byte* g_CurrentPalette
 ;   void* g_CurrentTextureData
@@ -56,7 +56,7 @@ section .text
     INC EBX                             ; 0044f340
     MOV AL,byte ptr [ESI + EAX*0x1 + 0x151bfa8] ; 0044f341 | g_CameraIndexedImageData
     ADD ECX,0x280                       ; 0044f348
-    MOV byte ptr [EBX + 0x1566fa7],AL   ; 0044f34e | g_CameraTextureWorkBuffer | DAT_01566fa8+1
+    MOV byte ptr [EBX + 0x1566fa7],AL   ; 0044f34e | g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[0]+1
     CMP ECX,0x28000                     ; 0044f354
     JNZ 0x0044f331                      ; 0044f35a
         ;   XREF to: 0044f331 (CONDITIONAL_JUMP)  ; LAB_0044f331
@@ -77,10 +77,10 @@ section .text
     PUSH EDI                            ; 0044f391
     MOV EAX,ECX                         ; 0044f392
     SHR ECX,0x2                         ; 0044f394
-    MOVSD.REP ES:EDI,ESI                ; 0044f397 | g_CameraTextureWorkBuffer | DAT_01566fac
+    MOVSD.REP ES:EDI,ESI                ; 0044f397 | g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[1]
     MOV CL,AL                           ; 0044f399
     AND CL,0x3                          ; 0044f39b
-    MOVSB.REP ES:EDI,ESI                ; 0044f39e | DAT_01566fac | DAT_01566fad
+    MOVSB.REP ES:EDI,ESI                ; 0044f39e | g_CameraTextureWorkBuffer[1] | g_CameraTextureWorkBuffer[1]+1
     POP EDI                             ; 0044f3a0
     MOV ECX,0x300                       ; 0044f3a1
     MOV ESI,0xc196f8                    ; 0044f3a6 | g_CameraImagePaletteData
@@ -88,10 +88,10 @@ section .text
     PUSH EDI                            ; 0044f3b1
     MOV EAX,ECX                         ; 0044f3b2
     SHR ECX,0x2                         ; 0044f3b4
-    MOVSD.REP ES:EDI,ESI                ; 0044f3b7 | g_CameraImagePaletteData | DAT_00c196fc
+    MOVSD.REP ES:EDI,ESI                ; 0044f3b7 | g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].g
     MOV CL,AL                           ; 0044f3b9
     AND CL,0x3                          ; 0044f3bb
-    MOVSB.REP ES:EDI,ESI                ; 0044f3be | DAT_00c196fc | DAT_00c196fd
+    MOVSB.REP ES:EDI,ESI                ; 0044f3be | g_CameraImagePaletteData.colors[1].g | g_CameraImagePaletteData.colors[1].b
     POP EDI                             ; 0044f3c0
     PUSH 0xc196f8                       ; 0044f3c1 | g_CameraImagePaletteData
     PUSH 0x66ed50                       ; 0044f3c6 | g_CameraBackdropTexture

@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   int g_RenderTriangleEdgeCount
 ;   SSoftwareEdge[16] g_EdgeInterpolationArray
-;   undefined4 DAT_02c6cbbc
+;   undefined4 g_EdgeInterpolationArray[1].base.y_min
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
     TEST EBX,EBX                        ; 00483347
     JLE 0x0048335b                      ; 00483349
         ;   XREF to: 0048335b (CONDITIONAL_JUMP)  ; LAB_0048335b
-    CMP ECX,dword ptr [EAX]             ; 0048334b | g_EdgeInterpolationArray | DAT_02c6cbbc
+    CMP ECX,dword ptr [EAX]             ; 0048334b | g_EdgeInterpolationArray | g_EdgeInterpolationArray[1].base.y_min
         ;   Label: LAB_0048334b
     JNZ 0x00483353                      ; 0048334d
         ;   XREF to: 00483353 (CONDITIONAL_JUMP)  ; LAB_00483353
@@ -36,7 +36,7 @@ section .text
         ;   XREF to: 0048335d (CONDITIONAL_JUMP)  ; LAB_0048335d
     INC EDX                             ; 00483353
         ;   Label: LAB_00483353
-    ADD EAX,0x48                        ; 00483354 | DAT_02c6cbbc
+    ADD EAX,0x48                        ; 00483354 | g_EdgeInterpolationArray[1].base.y_min
     CMP EDX,EBX                         ; 00483357
     JL 0x0048334b                       ; 00483359
         ;   XREF to: 0048334b (CONDITIONAL_JUMP)  ; LAB_0048334b

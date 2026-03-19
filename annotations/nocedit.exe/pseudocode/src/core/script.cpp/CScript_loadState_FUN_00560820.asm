@@ -79,7 +79,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 0056087f | g_CGamePtr
     ADD ESP,0xc                         ; 00560884
     ADD EAX,0x228                       ; 00560887
-    PUSH EAX                            ; 0056088c | DAT_02d81cc4
+    PUSH EAX                            ; 0056088c | g_CGameInstance.letterbox_mode
     PUSH 0x64343e                       ; 0056088d | = "%d\n"
     PUSH EDI                            ; 00560892
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00560893
@@ -97,7 +97,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 005608b5 | g_CGamePtr
     ADD ESP,0xc                         ; 005608ba
     ADD EAX,0x22c                       ; 005608bd
-    PUSH EAX                            ; 005608c2 | DAT_02d81cc8
+    PUSH EAX                            ; 005608c2 | g_CGameInstance.allow_damage_flag
     PUSH 0x643442                       ; 005608c3 | = "%d\n"
     PUSH EDI                            ; 005608c8
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005608c9
@@ -116,7 +116,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 005608eb | g_CGamePtr
     ADD ESP,0xc                         ; 005608f0
     ADD EAX,0x230                       ; 005608f3
-    PUSH EAX                            ; 005608f8 | DAT_02d81ccc
+    PUSH EAX                            ; 005608f8 | g_CGameInstance.allow_enemy_attack_flag
     PUSH 0x643446                       ; 005608f9 | = "%d\n"
     PUSH EDI                            ; 005608fe
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005608ff

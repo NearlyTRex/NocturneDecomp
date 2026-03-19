@@ -92,7 +92,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fbe0b | g_CGamePtr
     ADD ESP,0xc                         ; 004fbe10
     ADD EAX,0x8                         ; 004fbe13
-    PUSH EAX                            ; 004fbe16 | DAT_02d81aa4
+    PUSH EAX                            ; 004fbe16 | g_CGameInstance.game_bpp
     PUSH 0x62fdde                       ; 004fbe17 | = "gameBPP"
     LEA EAX,[ESP + 0x14]                ; 004fbe1c
     PUSH EAX                            ; 004fbe20
@@ -123,7 +123,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fbe70 | g_CGamePtr
     ADD ESP,0x10                        ; 004fbe75
     ADD EAX,0x224                       ; 004fbe78
-    PUSH EAX                            ; 004fbe7d | DAT_02d81cc0
+    PUSH EAX                            ; 004fbe7d | g_CGameInstance.gamma
     PUSH 0x62fe0d                       ; 004fbe7e | = "gamma"
     LEA EAX,[ESP + 0x14]                ; 004fbe83
     PUSH EAX                            ; 004fbe87
@@ -142,7 +142,7 @@ section .text
     POP EBX                             ; 004fbead
     MOV EAX,[0x0067b654]                ; 004fbeae | g_CGamePtr
     ADD EAX,0xc                         ; 004fbeb3
-    PUSH EAX                            ; 004fbeb6 | DAT_02d81aa8
+    PUSH EAX                            ; 004fbeb6 | g_CGameInstance.halo_mode
     PUSH 0x62fe1e                       ; 004fbeb7 | = "haloMode"
     LEA EAX,[ESP + 0x10]                ; 004fbebc
     PUSH EAX                            ; 004fbec0
@@ -158,7 +158,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fbedd | g_CGamePtr
     ADD ESP,0xc                         ; 004fbee2
     ADD EAX,0x10                        ; 004fbee5
-    PUSH EAX                            ; 004fbee8 | DAT_02d81aac
+    PUSH EAX                            ; 004fbee8 | g_CGameInstance.subtitle_mode
     PUSH 0x62fe35                       ; 004fbee9 | = "subtitleMode"
     LEA EAX,[ESP + 0x10]                ; 004fbeee
     PUSH EAX                            ; 004fbef2
@@ -185,7 +185,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fbf2e | g_CGamePtr
     ADD ESP,0xc                         ; 004fbf33
     ADD EAX,0x1c                        ; 004fbf36
-    PUSH EAX                            ; 004fbf39 | DAT_02d81ab8
+    PUSH EAX                            ; 004fbf39 | g_CGameInstance.foul_language_flag
     PUSH 0x62fe57                       ; 004fbf3a | = "foulLanguageFlag"
     LEA EAX,[ESP + 0x10]                ; 004fbf3f
     PUSH EAX                            ; 004fbf43
@@ -194,7 +194,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fbf49 | g_CGamePtr
     ADD ESP,0xc                         ; 004fbf4e
     ADD EAX,0x24                        ; 004fbf51
-    PUSH EAX                            ; 004fbf54 | DAT_02d81ac0
+    PUSH EAX                            ; 004fbf54 | g_CGameInstance.shadow_flag
     PUSH 0x62fe68                       ; 004fbf55 | = "shadowFlag"
     LEA EAX,[ESP + 0x10]                ; 004fbf5a
     PUSH EAX                            ; 004fbf5e
@@ -203,20 +203,20 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fbf64 | g_CGamePtr
     ADD ESP,0xc                         ; 004fbf69
     ADD EAX,0x20                        ; 004fbf6c
-    PUSH EAX                            ; 004fbf6f | DAT_02d81abc
+    PUSH EAX                            ; 004fbf6f | g_CGameInstance.quimby_flag
     PUSH 0x62fe73                       ; 004fbf70 | = "quimbyFlag"
     LEA EAX,[ESP + 0x10]                ; 004fbf75
     PUSH EAX                            ; 004fbf79
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30 ; 004fbf7a
         ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     MOV EAX,[0x0067b654]                ; 004fbf7f | g_CGamePtr
-    MOV ESI,dword ptr [EAX + 0x20]      ; 004fbf84 | DAT_02d81abc
+    MOV ESI,dword ptr [EAX + 0x20]      ; 004fbf84 | g_CGameInstance.quimby_flag
     ADD ESP,0xc                         ; 004fbf87
     TEST ESI,ESI                        ; 004fbf8a
     JZ 0x004fbfa3                       ; 004fbf8c
         ;   XREF to: 004fbfa3 (CONDITIONAL_JUMP)  ; LAB_004fbfa3
     MOV dword ptr [EAX + 0x18],0x0      ; 004fbf8e | g_CGameInstance.nudity_flag
-    MOV dword ptr [EAX + 0x1c],0x0      ; 004fbf95 | DAT_02d81ab8
+    MOV dword ptr [EAX + 0x1c],0x0      ; 004fbf95 | g_CGameInstance.foul_language_flag
     MOV dword ptr [EAX + 0x14],0x0      ; 004fbf9c | g_CGameInstance.blood_flag
     PUSH 0x2f275f4                      ; 004fbfa3 | g_GraphicsCardHandle
         ;   Label: LAB_004fbfa3
@@ -506,7 +506,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fc301 | g_CGamePtr
     ADD ESP,0xc                         ; 004fc306
     ADD EAX,0x94                        ; 004fc309
-    PUSH EAX                            ; 004fc30e | DAT_02d81b30
+    PUSH EAX                            ; 004fc30e | g_CGameInstance.invert_mouse_y_axis
     PUSH 0x62ffbb                       ; 004fc30f | = "invertMouseYAxis"
     LEA EAX,[ESP + 0x8]                 ; 004fc314
     PUSH EAX                            ; 004fc318
@@ -524,7 +524,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fc33b | g_CGamePtr
     ADD ESP,0xc                         ; 004fc340
     ADD EAX,0x9c                        ; 004fc343
-    PUSH EAX                            ; 004fc348 | DAT_02d81b38
+    PUSH EAX                            ; 004fc348 | g_CGameInstance.x_mouse_sensitivity
     PUSH 0x62ffd6                       ; 004fc349 | = "xMouseSensitivity"
     LEA EAX,[ESP + 0x8]                 ; 004fc34e
     PUSH EAX                            ; 004fc352
@@ -533,7 +533,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fc358 | g_CGamePtr
     ADD ESP,0xc                         ; 004fc35d
     ADD EAX,0xa0                        ; 004fc360
-    PUSH EAX                            ; 004fc365 | DAT_02d81b3c
+    PUSH EAX                            ; 004fc365 | g_CGameInstance.y_mouse_sensitivity
     PUSH 0x62ffe8                       ; 004fc366 | = "yMouseSensitivity"
     LEA EAX,[ESP + 0x8]                 ; 004fc36b
     PUSH EAX                            ; 004fc36f
@@ -551,7 +551,7 @@ section .text
     ADD ESP,0xc                         ; 004fc392
     MOV EAX,[0x0067b654]                ; 004fc395 | g_CGamePtr
     ADD EAX,0xa8                        ; 004fc39a
-    PUSH EAX                            ; 004fc39f | DAT_02d81b44
+    PUSH EAX                            ; 004fc39f | g_CGameInstance.y_center
     PUSH 0x630002                       ; 004fc3a0 | = "yCenter"
     LEA EAX,[ESP + 0x8]                 ; 004fc3a5
     PUSH EAX                            ; 004fc3a9
@@ -560,7 +560,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fc3af | g_CGamePtr
     ADD ESP,0xc                         ; 004fc3b4
     ADD EAX,0xac                        ; 004fc3b7
-    PUSH EAX                            ; 004fc3bc | DAT_02d81b48
+    PUSH EAX                            ; 004fc3bc | g_CGameInstance.x_stick_min
     PUSH 0x63000a                       ; 004fc3bd | = "xStickMin"
     LEA EAX,[ESP + 0x8]                 ; 004fc3c2
     PUSH EAX                            ; 004fc3c6
@@ -569,7 +569,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fc3cc | g_CGamePtr
     ADD ESP,0xc                         ; 004fc3d1
     ADD EAX,0xb0                        ; 004fc3d4
-    PUSH EAX                            ; 004fc3d9 | DAT_02d81b4c
+    PUSH EAX                            ; 004fc3d9 | g_CGameInstance.x_stick_max
     PUSH 0x630014                       ; 004fc3da | = "xStickMax"
     LEA EAX,[ESP + 0x8]                 ; 004fc3df
     PUSH EAX                            ; 004fc3e3
@@ -578,7 +578,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fc3e9 | g_CGamePtr
     ADD ESP,0xc                         ; 004fc3ee
     ADD EAX,0xb4                        ; 004fc3f1
-    PUSH EAX                            ; 004fc3f6 | DAT_02d81b50
+    PUSH EAX                            ; 004fc3f6 | g_CGameInstance.y_stick_min
     PUSH 0x63001e                       ; 004fc3f7 | = "yStickMin"
     LEA EAX,[ESP + 0x8]                 ; 004fc3fc
     PUSH EAX                            ; 004fc400
@@ -587,7 +587,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fc406 | g_CGamePtr
     ADD ESP,0xc                         ; 004fc40b
     ADD EAX,0xb8                        ; 004fc40e
-    PUSH EAX                            ; 004fc413 | DAT_02d81b54
+    PUSH EAX                            ; 004fc413 | g_CGameInstance.y_stick_max
     PUSH 0x630028                       ; 004fc414 | = "yStickMax"
     LEA EAX,[ESP + 0x8]                 ; 004fc419
     PUSH EAX                            ; 004fc41d
@@ -596,7 +596,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fc423 | g_CGamePtr
     ADD ESP,0xc                         ; 004fc428
     ADD EAX,0xc4                        ; 004fc42b
-    PUSH EAX                            ; 004fc430 | DAT_02d81b60
+    PUSH EAX                            ; 004fc430 | g_CGameInstance.aim_mode
     PUSH 0x630032                       ; 004fc431 | = "aimMode"
     LEA EAX,[ESP + 0x8]                 ; 004fc436
     PUSH EAX                            ; 004fc43a
@@ -605,7 +605,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 004fc440 | g_CGamePtr
     ADD ESP,0xc                         ; 004fc445
     ADD EAX,0xc8                        ; 004fc448
-    PUSH EAX                            ; 004fc44d | DAT_02d81b64
+    PUSH EAX                            ; 004fc44d | g_CGameInstance.auto_use_health
     PUSH 0x63003a                       ; 004fc44e | = "autoUseHealth"
     LEA EAX,[ESP + 0x8]                 ; 004fc453
     PUSH EAX                            ; 004fc457
@@ -628,7 +628,7 @@ section .text
     ADD ESP,0xc                         ; 004fc487
     MOV EAX,[0x0067b654]                ; 004fc48a | g_CGamePtr
     ADD EAX,0x214                       ; 004fc48f
-    PUSH EAX                            ; 004fc494 | DAT_02d81cb0
+    PUSH EAX                            ; 004fc494 | g_CGameInstance.head_of_horror_cheat
     PUSH 0x630057                       ; 004fc495 | = "headOfHorrorCheat"
     LEA EAX,[ESP + 0x8]                 ; 004fc49a
     PUSH EAX                            ; 004fc49e

@@ -17,19 +17,19 @@
 ; Referenced Globals:
 ;   int g_BulletHoleActiveCount
 ;   CBulletHole[256] g_BulletHolePool
-;   undefined4 DAT_02d2a200
-;   undefined4 DAT_02d2a204
-;   undefined4 DAT_02d2a230
-;   undefined4 DAT_02d2a23c
-;   undefined4 DAT_02d2a240
+;   undefined4 g_BulletHolePool[0].active
+;   undefined4 g_BulletHolePool[0].actor_ptr
+;   undefined4 g_BulletHolePool[1].position.x
+;   undefined4 g_BulletHolePool[1].active
+;   undefined4 g_BulletHolePool[1].actor_ptr
 ;   int g_StakeActiveCount
 ;   CStake[256] g_StakePool
-;   undefined4 DAT_02d2e054
-;   undefined4 DAT_02d2e05c
-;   undefined4 DAT_02d2e2b4
+;   undefined4 g_StakePool[0].physics_box.is_valid
+;   undefined4 g_StakePool[1].active
+;   undefined4 g_StakePool[1].physics_box.is_valid
 ;   CCrater[20] g_CraterPool
-;   undefined4 DAT_02d6c6a8
-;   undefined4 DAT_02d6c714
+;   undefined4 g_CraterPool[0].has_smoke
+;   undefined4 g_CraterPool[1].active
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -61,13 +61,13 @@ section .text
     JLE 0x004c74f4                      ; 004c74ca
         ;   XREF to: 004c74f4 (CONDITIONAL_JUMP)  ; LAB_004c74f4
     XOR EBX,EBX                         ; 004c74cc
-    CMP dword ptr [EBX + 0x2d2a204],0x0 ; 004c74ce | DAT_02d2a204 | DAT_02d2a240
+    CMP dword ptr [EBX + 0x2d2a204],0x0 ; 004c74ce | g_BulletHolePool[0].actor_ptr | g_BulletHolePool[1].actor_ptr
         ;   Label: LAB_004c74ce
     JNZ 0x004c74e7                      ; 004c74d5
         ;   XREF to: 004c74e7 (CONDITIONAL_JUMP)  ; LAB_004c74e7
     MOV EAX,0x2d2a1f4                   ; 004c74d7 | g_BulletHolePool
-    ADD EAX,EBX                         ; 004c74dc | g_BulletHolePool | DAT_02d2a230
-    PUSH EAX                            ; 004c74de | g_BulletHolePool | DAT_02d2a230
+    ADD EAX,EBX                         ; 004c74dc | g_BulletHolePool | g_BulletHolePool[1].position.x
+    PUSH EAX                            ; 004c74de | g_BulletHolePool | g_BulletHolePool[1].position.x
     CALL core_fire.cpp_CBulletHole_render_FUN_004bfac0 ; 004c74df
         ;   XREF to: 004bfac0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_render_FUN_004bfac0(CBulletHole * this_ptr)
     ADD ESP,0x4                         ; 004c74e4
@@ -89,18 +89,18 @@ section .text
         ;   XREF to: 004c754c (CONDITIONAL_JUMP)  ; LAB_004c754c
     MOV EDI,0x2d2ddfc                   ; 004c7507 | g_StakePool
     XOR EBX,EBX                         ; 004c750c
-    MOV EAX,dword ptr [EDI + 0x258]     ; 004c750e | DAT_02d2e054 | DAT_02d2e2b4
+    MOV EAX,dword ptr [EDI + 0x258]     ; 004c750e | g_StakePool[0].physics_box.is_valid | g_StakePool[1].physics_box.is_valid
         ;   Label: LAB_004c750e
     TEST EAX,EAX                        ; 004c7514
     JZ 0x004c75d7                       ; 004c7516
         ;   XREF to: 004c75d7 (CONDITIONAL_JUMP)  ; LAB_004c75d7
-    CMP dword ptr [EBX + 0x2d2ddfc],0x0 ; 004c751c | g_StakePool | DAT_02d2e05c
+    CMP dword ptr [EBX + 0x2d2ddfc],0x0 ; 004c751c | g_StakePool | g_StakePool[1].active
     JZ 0x004c7535                       ; 004c7523
         ;   XREF to: 004c7535 (CONDITIONAL_JUMP)  ; LAB_004c7535
     MOV EAX,0x2d2ddfc                   ; 004c7525 | g_StakePool
         ;   Label: LAB_004c7525
-    ADD EAX,EBX                         ; 004c752a | g_StakePool | DAT_02d2e05c
-    PUSH EAX                            ; 004c752c | g_StakePool | DAT_02d2e05c
+    ADD EAX,EBX                         ; 004c752a | g_StakePool | g_StakePool[1].active
+    PUSH EAX                            ; 004c752c | g_StakePool | g_StakePool[1].active
     CALL core_fire.cpp_CStake_render_FUN_004c0140 ; 004c752d
         ;   XREF to: 004c0140 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_render_FUN_004c0140(CStake * this_ptr)
     ADD ESP,0x4                         ; 004c7532
@@ -119,11 +119,11 @@ section .text
         ;   XREF to: 004c75e6 (CONDITIONAL_JUMP)  ; LAB_004c75e6
     MOV EBX,0x2d6c6a4                   ; 004c7558 | g_CraterPool
     LEA ESI,[EBX + 0x8c0]               ; 004c755d | g_GunFlameAllocIndex
-    PUSH EBX                            ; 004c7563 | g_CraterPool | DAT_02d6c714
+    PUSH EBX                            ; 004c7563 | g_CraterPool | g_CraterPool[1].active
         ;   Label: LAB_004c7563
     CALL core_fire.cpp_CCrater_render_FUN_004c4620 ; 004c7564
         ;   XREF to: 004c4620 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_render_FUN_004c4620(CCrater * this_ptr)
-    ADD EBX,0x70                        ; 004c7569 | DAT_02d6c714
+    ADD EBX,0x70                        ; 004c7569 | g_CraterPool[1].active
     ADD ESP,0x4                         ; 004c756c
     CMP EBX,ESI                         ; 004c756f
     JNZ 0x004c7563                      ; 004c7571
@@ -145,23 +145,23 @@ section .text
         ;   XREF to: 004c74f4 (CONDITIONAL_JUMP)  ; LAB_004c74f4
     XOR EBX,EBX                         ; 004c7595
     XOR EDI,EDI                         ; 004c7597
-    CMP EDI,dword ptr [EBX + 0x2d2a200] ; 004c7599 | DAT_02d2a200 | DAT_02d2a23c
+    CMP EDI,dword ptr [EBX + 0x2d2a200] ; 004c7599 | g_BulletHolePool[0].active | g_BulletHolePool[1].active
         ;   Label: LAB_004c7599
     JZ 0x004c75c3                       ; 004c759f
         ;   XREF to: 004c75c3 (CONDITIONAL_JUMP)  ; LAB_004c75c3
-    CMP EDI,dword ptr [EBX + 0x2d2a204] ; 004c75a1 | DAT_02d2a204 | DAT_02d2a240
+    CMP EDI,dword ptr [EBX + 0x2d2a204] ; 004c75a1 | g_BulletHolePool[0].actor_ptr | g_BulletHolePool[1].actor_ptr
     JNZ 0x004c75c3                      ; 004c75a7
         ;   XREF to: 004c75c3 (CONDITIONAL_JUMP)  ; LAB_004c75c3
     MOV EAX,0x2d2a1f4                   ; 004c75a9 | g_BulletHolePool
-    ADD EAX,EBX                         ; 004c75ae | g_BulletHolePool | DAT_02d2a230
-    PUSH EAX                            ; 004c75b0 | g_BulletHolePool | DAT_02d2a230
+    ADD EAX,EBX                         ; 004c75ae | g_BulletHolePool | g_BulletHolePool[1].position.x
+    PUSH EAX                            ; 004c75b0 | g_BulletHolePool | g_BulletHolePool[1].position.x
     CALL core_fire.cpp_CBulletHole_render_FUN_004bfac0 ; 004c75b1
         ;   XREF to: 004bfac0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CBulletHole_render_FUN_004bfac0(CBulletHole * this_ptr)
     ADD ESP,0x4                         ; 004c75b6
     TEST EBP,EBP                        ; 004c75b9
     JZ 0x004c75c3                       ; 004c75bb
         ;   XREF to: 004c75c3 (CONDITIONAL_JUMP)  ; LAB_004c75c3
-    MOV dword ptr [EBX + 0x2d2a200],EDI ; 004c75bd | DAT_02d2a200
+    MOV dword ptr [EBX + 0x2d2a200],EDI ; 004c75bd | g_BulletHolePool[0].active
     MOV ECX,dword ptr [0x02d2a1ec]      ; 004c75c3 | g_BulletHoleActiveCount
         ;   Label: LAB_004c75c3
     INC ESI                             ; 004c75c9
@@ -171,13 +171,13 @@ section .text
         ;   XREF to: 004c74f4 (CONDITIONAL_JUMP)  ; LAB_004c74f4
     JMP 0x004c7599                      ; 004c75d5
         ;   XREF to: 004c7599 (UNCONDITIONAL_JUMP)  ; LAB_004c7599
-    MOV dword ptr [EBX + 0x2d2ddfc],0x1 ; 004c75d7 | DAT_02d2e05c
+    MOV dword ptr [EBX + 0x2d2ddfc],0x1 ; 004c75d7 | g_StakePool[1].active
         ;   Label: LAB_004c75d7
     JMP 0x004c7525                      ; 004c75e1
         ;   XREF to: 004c7525 (UNCONDITIONAL_JUMP)  ; LAB_004c7525
     XOR EDI,EDI                         ; 004c75e6
         ;   Label: LAB_004c75e6
-    CMP EDI,dword ptr [EBX + 0x2d6c6a8] ; 004c75e8 | DAT_02d6c6a8 | DAT_02d6c718
+    CMP EDI,dword ptr [EBX + 0x2d6c6a8] ; 004c75e8 | g_CraterPool[0].has_smoke | g_CraterPool[1].has_smoke
         ;   Label: LAB_004c75e8
     JZ 0x004c760a                       ; 004c75ee
         ;   XREF to: 004c760a (CONDITIONAL_JUMP)  ; LAB_004c760a
@@ -190,7 +190,7 @@ section .text
     TEST EBP,EBP                        ; 004c7600
     JZ 0x004c760a                       ; 004c7602
         ;   XREF to: 004c760a (CONDITIONAL_JUMP)  ; LAB_004c760a
-    MOV dword ptr [EBX + 0x2d6c6a8],EDI ; 004c7604 | DAT_02d6c6a8
+    MOV dword ptr [EBX + 0x2d6c6a8],EDI ; 004c7604 | g_CraterPool[0].has_smoke
     ADD EBX,0x70                        ; 004c760a
         ;   Label: LAB_004c760a
     CMP EBX,0x8c0                       ; 004c760d

@@ -103,7 +103,7 @@ section .text
     JGE 0x005e4276                      ; 005e4243
         ;   XREF to: 005e4276 (CONDITIONAL_JUMP)  ; LAB_005e4276
     PUSH 0x65692e                       ; 005e4245 | = "CVampireBoss"
-    MOV ECX,dword ptr [ESI + EAX*0x1 + 0x150fe0] ; 005e424a | DAT_03265258 | DAT_0326525c
+    MOV ECX,dword ptr [ESI + EAX*0x1 + 0x150fe0] ; 005e424a | g_CDemonSetInstance.enemies[0] | g_CDemonSetInstance.enemies[1]
     PUSH ECX                            ; 005e4251
     CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 005e4252
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
@@ -117,7 +117,7 @@ section .text
         ;   XREF to: 005e4238 (UNCONDITIONAL_JUMP)  ; LAB_005e4238
     MOV EAX,[0x006810c8]                ; 005e4264 | g_CDemonSetPtr
         ;   Label: LAB_005e4264
-    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x150fe0] ; 005e4269 | DAT_03265258
+    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x150fe0] ; 005e4269 | g_CDemonSetInstance.enemies[0]
     MOV dword ptr [EBX + 0xc0f0],EAX    ; 005e4270
     CMP dword ptr [EBX + 0xc064],0x0    ; 005e4276
         ;   Label: LAB_005e4276

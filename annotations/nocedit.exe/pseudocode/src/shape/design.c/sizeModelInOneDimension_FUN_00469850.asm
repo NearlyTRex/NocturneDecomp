@@ -32,7 +32,7 @@
 ;   TerminatedCString s_Invalid_point_0061d081
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; Called Functions:
@@ -96,7 +96,7 @@ section .text
     MOV dword ptr [EBP + -0x28],EAX     ; 004698d0
     IMUL EAX,dword ptr [EBP + -0x44],0x14 ; 004698d3
         ;   Label: LAB_004698d3
-    MOV EAX,dword ptr [EAX + 0x1626410] ; 004698d7 | DAT_01626410
+    MOV EAX,dword ptr [EAX + 0x1626410] ; 004698d7 | g_LoadedVertices[0].vertex.y
     MOV dword ptr [EBP + -0x30],EAX     ; 004698dd
     FLD float ptr [EBP + -0x30]         ; 004698e0
     FCOMP float ptr [EBP + -0x18]       ; 004698e3
@@ -291,10 +291,10 @@ section .text
         ;   XREF to: 00469af4 (UNCONDITIONAL_JUMP)  ; LAB_00469af4
     IMUL EAX,dword ptr [EBP + -0x40],0x14 ; 00469a92
         ;   Label: LAB_00469a92
-    MOV EAX,dword ptr [EAX + 0x1626410] ; 00469a96 | DAT_01626410
+    MOV EAX,dword ptr [EAX + 0x1626410] ; 00469a96 | g_LoadedVertices[0].vertex.y
     MOV dword ptr [EBP + -0x18],EAX     ; 00469a9c
     IMUL EAX,dword ptr [EBP + -0x3c],0x14 ; 00469a9f
-    MOV EAX,dword ptr [EAX + 0x1626410] ; 00469aa3 | DAT_01626410
+    MOV EAX,dword ptr [EAX + 0x1626410] ; 00469aa3 | g_LoadedVertices[0].vertex.y
     MOV dword ptr [EBP + -0x24],EAX     ; 00469aa9
     JMP 0x00469af4                      ; 00469aac
         ;   XREF to: 00469af4 (UNCONDITIONAL_JUMP)  ; LAB_00469af4
@@ -366,10 +366,10 @@ section .text
         ;   XREF to: 00469bb6 (UNCONDITIONAL_JUMP)  ; LAB_00469bb6
     IMUL EAX,dword ptr [EBP + -0x44],0x14 ; 00469b5a
         ;   Label: LAB_00469b5a
-    FLD float ptr [EAX + 0x1626410]     ; 00469b5e | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 00469b5e | g_LoadedVertices[0].vertex.y
     FMUL float ptr [EBP + -0x8]         ; 00469b64
     IMUL EAX,dword ptr [EBP + -0x44],0x14 ; 00469b67
-    FSTP float ptr [EAX + 0x1626410]    ; 00469b6b | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 00469b6b | g_LoadedVertices[0].vertex.y
     JMP 0x00469bb6                      ; 00469b71
         ;   XREF to: 00469bb6 (UNCONDITIONAL_JUMP)  ; LAB_00469bb6
     IMUL EAX,dword ptr [EBP + -0x44],0x14 ; 00469b73

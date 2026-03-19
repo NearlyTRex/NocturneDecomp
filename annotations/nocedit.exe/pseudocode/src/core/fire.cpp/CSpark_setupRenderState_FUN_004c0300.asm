@@ -28,7 +28,7 @@
 ;   undefined4 g_RenderVertexBuffer[3].u
 ;   undefined4 g_RenderVertexBuffer[3].v
 ;   CDemonCamera* g_CurrentSceneCamera
-;   undefined4 DAT_00f80000
+;   undefined4 g_LightBufferPool[11][183800]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CVector3i g_BillboardCameraRight
 ;   undefined4 g_BillboardCameraRight.y
@@ -50,7 +50,7 @@ section .text
     MOV EDX,0x4                         ; 004c0306
     MOV EAX,0x1                         ; 004c030b
     MOV EBX,0x80000                     ; 004c0310
-    MOV ESI,0xf80000                    ; 004c0315 | DAT_00f80000
+    MOV ESI,0xf80000                    ; 004c0315 | g_LightBufferPool[11][183800]
     MOV EDI,0x2d12db4                   ; 004c031a | g_BillboardCameraRight
     XOR ECX,ECX                         ; 004c031f
     MOV dword ptr [0x02d12dd0],EDX      ; 004c0321 | g_BillboardPrimitive.base.base.count
@@ -81,7 +81,7 @@ section .text
     ADD ESP,0x4                         ; 004c03a4
     MOVSD ES:EDI,ESI                    ; 004c03a7 | g_BillboardCameraRight
     MOVSD ES:EDI,ESI                    ; 004c03a8 | g_BillboardCameraRight.y
-    MOVSD ES:EDI,ESI                    ; 004c03a9 | DAT_02d12dbc
+    MOVSD ES:EDI,ESI                    ; 004c03a9 | g_BillboardCameraRight.z
     MOV ESI,dword ptr [0x00823a74]      ; 004c03aa | g_CurrentSceneCamera
     MOV ECX,0xa                         ; 004c03b0
     XOR EDI,EDI                         ; 004c03b5

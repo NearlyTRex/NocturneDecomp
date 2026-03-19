@@ -25,7 +25,7 @@
 ;   TerminatedCString s_shape_design_c_0061af2c
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -90,7 +90,7 @@ section .text
     SUB ESP,0x8                         ; 0045a69d
     FSTP double ptr [ESP]               ; 0045a6a0
     IMUL EAX,dword ptr [EBP + -0xc],0x14 ; 0045a6a3
-    FLD float ptr [EAX + 0x1626410]     ; 0045a6a7 | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 0045a6a7 | g_LoadedVertices[0].vertex.y
     SUB ESP,0x8                         ; 0045a6ad
     FSTP double ptr [ESP]               ; 0045a6b0
     IMUL EAX,dword ptr [EBP + -0xc],0x14 ; 0045a6b3
@@ -127,7 +127,7 @@ section .text
     JGE 0x0045a78d                      ; 0045a707
         ;   XREF to: 0045a78d (CONDITIONAL_JUMP)  ; LAB_0045a78d
     IMUL EAX,dword ptr [EBP + -0xc],0x184 ; 0045a70d
-    PUSH dword ptr [EAX + 0x16e99b4]    ; 0045a714 | DAT_016e99b4
+    PUSH dword ptr [EAX + 0x16e99b4]    ; 0045a714 | g_ModelPolygonData[0].vertex_indices_count
     MOV EAX,0x61af23                    ; 0045a71a | = "%d"
     PUSH EAX                            ; 0045a71f | = "%d"
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045a720
@@ -144,14 +144,14 @@ section .text
     IMUL EDX,dword ptr [EBP + -0xc],0x184 ; 0045a73b
         ;   Label: LAB_0045a73b
     MOV EAX,dword ptr [EBP + -0x8]      ; 0045a742
-    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0045a745 | DAT_016e99b4
+    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0045a745 | g_ModelPolygonData[0].vertex_indices_count
     JGE 0x0045a776                      ; 0045a74b
         ;   XREF to: 0045a776 (CONDITIONAL_JUMP)  ; LAB_0045a776
     IMUL EDX,dword ptr [EBP + -0xc],0x184 ; 0045a74d
     MOV EAX,dword ptr [EBP + -0x8]      ; 0045a754
     SHL EAX,0x2                         ; 0045a757
     ADD EAX,EDX                         ; 0045a75a
-    PUSH dword ptr [EAX + 0x16e99c8]    ; 0045a75c | DAT_016e99c8
+    PUSH dword ptr [EAX + 0x16e99c8]    ; 0045a75c | g_ModelPolygonData[0].vertex_indices[0]
     MOV EAX,0x61af26                    ; 0045a762 | = ",%d"
     PUSH EAX                            ; 0045a767 | = ",%d"
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045a768

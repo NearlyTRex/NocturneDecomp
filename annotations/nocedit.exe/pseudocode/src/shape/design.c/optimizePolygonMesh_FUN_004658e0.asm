@@ -29,8 +29,8 @@
 ;   undefined4 s_it_a_key..._0061c652
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
-;   undefined4 DAT_016e99b4
-;   undefined4 DAT_016e9a88
+;   undefined4 g_ModelPolygonData[0].vertex_indices_count
+;   undefined4 g_ModelPolygonData[0].part_assignment
 ;   int g_PolygonOptimizationPasses
 ;
 ; Called Functions:
@@ -102,7 +102,7 @@ section .text
     JLE 0x00465a94                      ; 00465955
         ;   XREF to: 00465a94 (CONDITIONAL_JUMP)  ; LAB_00465a94
     IMUL EAX,dword ptr [EBP + -0x10],0x184 ; 0046595b
-    CMP dword ptr [EAX + 0x16e99b4],0x3 ; 00465962 | DAT_016e99b4
+    CMP dword ptr [EAX + 0x16e99b4],0x3 ; 00465962 | g_ModelPolygonData[0].vertex_indices_count
     JZ 0x00465970                       ; 00465969
         ;   XREF to: 00465970 (CONDITIONAL_JUMP)  ; LAB_00465970
     JMP 0x00465a8f                      ; 0046596b
@@ -122,14 +122,14 @@ section .text
     JGE 0x00465a8f                      ; 00465988
         ;   XREF to: 00465a8f (CONDITIONAL_JUMP)  ; LAB_00465a8f
     IMUL EAX,dword ptr [EBP + -0x10],0x184 ; 0046598e
-    CMP dword ptr [EAX + 0x16e99b4],0x3 ; 00465995 | DAT_016e99b4
+    CMP dword ptr [EAX + 0x16e99b4],0x3 ; 00465995 | g_ModelPolygonData[0].vertex_indices_count
     JZ 0x004659a3                       ; 0046599c
         ;   XREF to: 004659a3 (CONDITIONAL_JUMP)  ; LAB_004659a3
     JMP 0x00465a8f                      ; 0046599e
         ;   XREF to: 00465a8f (UNCONDITIONAL_JUMP)  ; LAB_00465a8f
     IMUL EAX,dword ptr [EBP + -0xc],0x184 ; 004659a3
         ;   Label: LAB_004659a3
-    CMP dword ptr [EAX + 0x16e99b4],0x3 ; 004659aa | DAT_016e99b4
+    CMP dword ptr [EAX + 0x16e99b4],0x3 ; 004659aa | g_ModelPolygonData[0].vertex_indices_count
     JNZ 0x00465a8a                      ; 004659b1
         ;   XREF to: 00465a8a (CONDITIONAL_JUMP)  ; LAB_00465a8a
     FLD float ptr [EBP + 0x14]          ; 004659b7
@@ -196,8 +196,8 @@ section .text
         ;   XREF to: 00465a7a (CONDITIONAL_JUMP)  ; LAB_00465a7a
     IMUL EAX,dword ptr [EBP + -0x10],0x184 ; 00465a5c
     IMUL EDX,dword ptr [EBP + -0xc],0x184 ; 00465a63
-    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 00465a6a | DAT_016e9a88
-    CMP EAX,dword ptr [EDX + 0x16e9a88] ; 00465a70 | DAT_016e9a88
+    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 00465a6a | g_ModelPolygonData[0].part_assignment
+    CMP EAX,dword ptr [EDX + 0x16e9a88] ; 00465a70 | g_ModelPolygonData[0].part_assignment
     JZ 0x00465a7a                       ; 00465a76
         ;   XREF to: 00465a7a (CONDITIONAL_JUMP)  ; LAB_00465a7a
     JMP 0x00465a8a                      ; 00465a78

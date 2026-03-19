@@ -25,11 +25,11 @@
 ;   int g_CurrentLineNumber
 ;   int g_GroundTextureCount
 ;   char[500][40] g_GroundTextureNames
-;   undefined4 DAT_03654371
-;   undefined4 DAT_03654372
-;   undefined4 DAT_03654373
-;   undefined4 DAT_03654398
-;   undefined4 DAT_0365918f
+;   undefined4 g_GroundTextureNames[0][1]
+;   undefined4 g_GroundTextureNames[0][2]
+;   undefined4 g_GroundTextureNames[0][3]
+;   undefined4 g_GroundTextureNames[1][0]
+;   undefined4 g_GroundTextureNames[499][39]
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -65,7 +65,7 @@ section .text
     MOV EAX,ESP                         ; 005782c5
         ;   Label: LAB_005782c5
     PUSH EAX                            ; 005782c7
-    PUSH ESI                            ; 005782c8 | g_GroundTextureNames | DAT_03654398
+    PUSH ESI                            ; 005782c8 | g_GroundTextureNames | g_GroundTextureNames[1][0]
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005782c9
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005782ce
@@ -150,13 +150,13 @@ section .text
     PUSH EDI                            ; 005783b1
     MOV AL,byte ptr [ESI]               ; 005783b2
         ;   Label: LAB_005783b2
-    MOV byte ptr [EDI],AL               ; 005783b4 | g_GroundTextureNames | DAT_03654372
+    MOV byte ptr [EDI],AL               ; 005783b4 | g_GroundTextureNames | g_GroundTextureNames[0][2]
     CMP AL,0x0                          ; 005783b6
     JZ 0x005783ca                       ; 005783b8
         ;   XREF to: 005783ca (CONDITIONAL_JUMP)  ; LAB_005783ca
     MOV AL,byte ptr [ESI + 0x1]         ; 005783ba
     ADD ESI,0x2                         ; 005783bd
-    MOV byte ptr [EDI + 0x1],AL         ; 005783c0 | DAT_03654371 | DAT_03654373
+    MOV byte ptr [EDI + 0x1],AL         ; 005783c0 | g_GroundTextureNames[0][1] | g_GroundTextureNames[0][3]
     ADD EDI,0x2                         ; 005783c3
     CMP AL,0x0                          ; 005783c6
     JNZ 0x005783b2                      ; 005783c8
@@ -166,7 +166,7 @@ section .text
     MOV EAX,[0x03654368]                ; 005783cb | g_GroundTextureCount
     INC EAX                             ; 005783d0
     MOV BL,byte ptr [ESP + 0x218]       ; 005783d1
-    MOV byte ptr [EAX + 0x365918f],BL   ; 005783d8 | DAT_0365918f | g_GroundTextureTypes
+    MOV byte ptr [EAX + 0x365918f],BL   ; 005783d8 | g_GroundTextureNames[499][39] | g_GroundTextureTypes
     MOV [0x03654368],EAX                ; 005783de | g_GroundTextureCount
     POP EDI                             ; 005783e3
     ADD ESP,0x200                       ; 005783e4

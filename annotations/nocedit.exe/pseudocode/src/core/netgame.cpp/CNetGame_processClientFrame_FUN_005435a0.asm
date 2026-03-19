@@ -24,8 +24,8 @@
 ;   uint UINT_02f7c8c8
 ;   int g_SimFrameCount
 ;   SSimFrame[512] g_SimFrameHistory
-;   undefined4 DAT_02f9c128
-;   undefined4 DAT_02f9c18c
+;   undefined4 g_SimFrameHistory[1].sequence_number
+;   undefined4 g_SimFrameHistory[2].sequence_number
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -86,15 +86,15 @@ section .text
         ;   XREF to: 0054375a (CONDITIONAL_JUMP)  ; LAB_0054375a
     XOR EAX,EAX                         ; 00543620
     IMUL ECX,ECX,0x64                   ; 00543622
-    CMP EBX,dword ptr [EAX + 0x2f9c0c4] ; 00543625 | g_SimFrameHistory | DAT_02f9c128
+    CMP EBX,dword ptr [EAX + 0x2f9c0c4] ; 00543625 | g_SimFrameHistory | g_SimFrameHistory[1].sequence_number
         ;   Label: LAB_00543625
     JNZ 0x0054374e                      ; 0054362b
         ;   XREF to: 0054374e (CONDITIONAL_JUMP)  ; LAB_0054374e
     TEST EDX,EDX                        ; 00543631
     JL 0x0054375a                       ; 00543633
         ;   XREF to: 0054375a (CONDITIONAL_JUMP)  ; LAB_0054375a
-    ADD EAX,0x2f9c0c4                   ; 00543639 | DAT_02f9c128 | g_SimFrameHistory
-    PUSH EAX                            ; 0054363e | g_SimFrameHistory | DAT_02f9c128
+    ADD EAX,0x2f9c0c4                   ; 00543639 | g_SimFrameHistory[1].sequence_number
+    PUSH EAX                            ; 0054363e | g_SimFrameHistory | g_SimFrameHistory[1].sequence_number
     PUSH ESI                            ; 0054363f
     CALL core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800 ; 00543640
         ;   XREF to: 00543800 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame * this_ptr, SSimFrame * sim_frame)
@@ -118,7 +118,7 @@ section .text
     MOV EAX,0x2f9c0c4                   ; 00543675 | g_SimFrameHistory
     ADD EAX,0x64                        ; 0054367a
     XOR EBX,EBX                         ; 0054367d
-    MOV dword ptr [ESP + 0x8],EAX       ; 0054367f | DAT_02f9c128
+    MOV dword ptr [ESP + 0x8],EAX       ; 0054367f | g_SimFrameHistory[1].sequence_number
     MOV ECX,dword ptr [ESP + 0x4]       ; 00543683
         ;   Label: LAB_00543683
     CMP ECX,dword ptr [EBX + 0x2f9c0c4] ; 00543687 | g_SimFrameHistory
@@ -132,7 +132,7 @@ section .text
     PUSH EAX                            ; 005436a1
     MOV ECX,dword ptr [ESP + 0xc]       ; 005436a2
     MOV EAX,0x2f9c0c4                   ; 005436a6 | g_SimFrameHistory
-    PUSH ECX                            ; 005436ab | DAT_02f9c128
+    PUSH ECX                            ; 005436ab | g_SimFrameHistory[1].sequence_number
     ADD EAX,EBX                         ; 005436ac
     PUSH EAX                            ; 005436ae | g_SimFrameHistory
     MOV dword ptr [0x02f9c0c0],EDX      ; 005436af | g_SimFrameCount
@@ -164,7 +164,7 @@ section .text
     ADD EDX,EDI                         ; 005436ff
     XOR EAX,EAX                         ; 00543701
     SHL EDX,0x2                         ; 00543703
-    CMP ECX,dword ptr [EAX + 0x2f9c0c4] ; 00543706 | g_SimFrameHistory | DAT_02f9c128
+    CMP ECX,dword ptr [EAX + 0x2f9c0c4] ; 00543706 | g_SimFrameHistory | g_SimFrameHistory[1].sequence_number
         ;   Label: LAB_00543706
     JNZ 0x005437df                      ; 0054370c
         ;   XREF to: 005437df (CONDITIONAL_JUMP)  ; LAB_005437df
@@ -246,7 +246,7 @@ section .text
     INC EDI                             ; 005437cf
     ADD EAX,0x64                        ; 005437d0
     ADD EBX,0x64                        ; 005437d3
-    MOV dword ptr [ESP + 0x8],EAX       ; 005437d6 | DAT_02f9c18c
+    MOV dword ptr [ESP + 0x8],EAX       ; 005437d6 | g_SimFrameHistory[2].sequence_number
     JMP 0x005436bd                      ; 005437da
         ;   XREF to: 005436bd (UNCONDITIONAL_JUMP)  ; LAB_005436bd
     ADD EAX,0x64                        ; 005437df

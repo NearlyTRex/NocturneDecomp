@@ -26,7 +26,7 @@
 ;   float[2][4] g_FootstepCornerMultipliers
 ;   undefined4 g_FootstepCornerMultipliers[0][1]
 ;   undefined4 g_FootstepCornerMultipliers[1][0]
-;   undefined4 DAT_0067cb1c
+;   undefined4 g_FootstepCornerMultipliers[1][1]
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -67,10 +67,10 @@ section .text
     FCHS                                ; 004ed27f
     FMUL float ptr [EBX + 0x67cb08]     ; 004ed281 | g_FootstepCornerMultipliers | g_FootstepCornerMultipliers[0][1]
     FXCH ST2                            ; 004ed287
-    FMUL float ptr [EBX + 0x67cb18]     ; 004ed289 | g_FootstepCornerMultipliers[1][0] | DAT_0067cb1c
+    FMUL float ptr [EBX + 0x67cb18]     ; 004ed289 | g_FootstepCornerMultipliers[1][0] | g_FootstepCornerMultipliers[1][1]
     XOR EDX,EDX                         ; 004ed28f
     FXCH ST3                            ; 004ed291
-    FMUL float ptr [EBX + 0x67cb18]     ; 004ed293 | g_FootstepCornerMultipliers[1][0] | DAT_0067cb1c
+    FMUL float ptr [EBX + 0x67cb18]     ; 004ed293 | g_FootstepCornerMultipliers[1][0] | g_FootstepCornerMultipliers[1][1]
     MOV dword ptr [ESP + 0x4],EDX       ; 004ed299
     FXCH ST3                            ; 004ed29d
     FADDP                               ; 004ed29f

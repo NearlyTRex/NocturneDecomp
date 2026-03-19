@@ -18,10 +18,10 @@
 ; Referenced Globals:
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
-;   undefined4 DAT_016e9914
-;   undefined4 DAT_016e99b4
-;   undefined4 DAT_016e99c8
-;   undefined4 DAT_016e9a88
+;   undefined4 g_ModelPolygonData[0].texture_name[0]
+;   undefined4 g_ModelPolygonData[0].vertex_indices_count
+;   undefined4 g_ModelPolygonData[0].vertex_indices[0]
+;   undefined4 g_ModelPolygonData[0].part_assignment
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
         ;   XREF to: 004652fe (CONDITIONAL_JUMP)  ; LAB_004652fe
     IMUL EAX,dword ptr [EBP + -0x10],0x184 ; 004651f0
     IMUL EDX,dword ptr [EBP + -0x14],0x184 ; 004651f7
-    MOV EAX,dword ptr [EAX + 0x16e99b4] ; 004651fe | DAT_016e99b4
-    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 00465204 | DAT_016e99b4
+    MOV EAX,dword ptr [EAX + 0x16e99b4] ; 004651fe | g_ModelPolygonData[0].vertex_indices_count
+    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 00465204 | g_ModelPolygonData[0].vertex_indices_count
     JZ 0x00465214                       ; 0046520a
         ;   XREF to: 00465214 (CONDITIONAL_JUMP)  ; LAB_00465214
     INC dword ptr [EBP + -0x14]         ; 0046520c
@@ -68,8 +68,8 @@ section .text
         ;   XREF to: 00465236 (CONDITIONAL_JUMP)  ; LAB_00465236
     IMUL EAX,dword ptr [EBP + -0x10],0x184 ; 0046521a
     IMUL EDX,dword ptr [EBP + -0x14],0x184 ; 00465221
-    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 00465228 | DAT_016e9a88
-    CMP EAX,dword ptr [EDX + 0x16e9a88] ; 0046522e | DAT_016e9a88
+    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 00465228 | g_ModelPolygonData[0].part_assignment
+    CMP EAX,dword ptr [EDX + 0x16e9a88] ; 0046522e | g_ModelPolygonData[0].part_assignment
     JNZ 0x00465238                      ; 00465234
         ;   XREF to: 00465238 (CONDITIONAL_JUMP)  ; LAB_00465238
     JMP 0x00465240                      ; 00465236
@@ -90,7 +90,7 @@ section .text
     IMUL EDX,dword ptr [EBP + -0x10],0x184 ; 00465256
         ;   Label: LAB_00465256
     MOV EAX,dword ptr [EBP + -0x8]      ; 0046525d
-    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 00465260 | DAT_016e99b4
+    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 00465260 | g_ModelPolygonData[0].vertex_indices_count
     JGE 0x0046529d                      ; 00465266
         ;   XREF to: 0046529d (CONDITIONAL_JUMP)  ; LAB_0046529d
     IMUL EDX,dword ptr [EBP + -0x10],0x184 ; 00465268
@@ -101,8 +101,8 @@ section .text
     MOV EAX,dword ptr [EBP + -0x8]      ; 0046527f
     SHL EAX,0x2                         ; 00465282
     ADD EDX,EAX                         ; 00465285
-    MOV EAX,dword ptr [ECX + 0x16e99c8] ; 00465287 | DAT_016e99c8
-    CMP EAX,dword ptr [EDX + 0x16e99c8] ; 0046528d | DAT_016e99c8
+    MOV EAX,dword ptr [ECX + 0x16e99c8] ; 00465287 | g_ModelPolygonData[0].vertex_indices[0]
+    CMP EAX,dword ptr [EDX + 0x16e99c8] ; 0046528d | g_ModelPolygonData[0].vertex_indices[0]
     JNZ 0x0046529b                      ; 00465293
         ;   XREF to: 0046529b (CONDITIONAL_JUMP)  ; LAB_0046529b
     MOV EAX,dword ptr [EBP + -0x4]      ; 00465295
@@ -113,7 +113,7 @@ section .text
     IMUL EDX,dword ptr [EBP + -0x10],0x184 ; 0046529d
         ;   Label: LAB_0046529d
     MOV EAX,dword ptr [EBP + -0x4]      ; 004652a4
-    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 004652a7 | DAT_016e99b4
+    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 004652a7 | g_ModelPolygonData[0].vertex_indices_count
     JNZ 0x004652f6                      ; 004652ad
         ;   XREF to: 004652f6 (CONDITIONAL_JUMP)  ; LAB_004652f6
     MOV EAX,dword ptr [EBP + -0x14]     ; 004652af
@@ -136,7 +136,7 @@ section .text
     MOV ECX,0x61                        ; 004652d9
     LEA EDI,[ESI + 0x16e9910]           ; 004652de | g_ModelPolygonData
     LEA ESI,[EAX + 0x16e9910]           ; 004652e4 | g_ModelPolygonData
-    MOVSD.REP ES:EDI,ESI                ; 004652ea | g_ModelPolygonData | DAT_016e9914
+    MOVSD.REP ES:EDI,ESI                ; 004652ea | g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
     JMP 0x004652b7                      ; 004652ec
         ;   XREF to: 004652b7 (UNCONDITIONAL_JUMP)  ; LAB_004652b7
     DEC dword ptr [0x016e990c]          ; 004652ee | g_PolygonCount

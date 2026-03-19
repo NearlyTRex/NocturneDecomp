@@ -23,7 +23,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CVector3i g_BillboardCameraRight
 ;   undefined4 g_BillboardCameraRight.y
-;   undefined4 DAT_02d12dbc
+;   undefined4 g_BillboardCameraRight.z
 ;   CVector3i g_BillboardCameraUp
 ;   undefined4 g_BillboardCameraUp.y
 ;   undefined4 g_BillboardCameraUp.z
@@ -71,7 +71,7 @@ section .text
     ADD ESP,0x4                         ; 004c0dea
     MOVSD ES:EDI,ESI                    ; 004c0ded | g_BillboardCameraRight
     MOVSD ES:EDI,ESI                    ; 004c0dee | g_BillboardCameraRight.y
-    MOVSD ES:EDI,ESI                    ; 004c0def | DAT_02d12dbc
+    MOVSD ES:EDI,ESI                    ; 004c0def | g_BillboardCameraRight.z
     XOR ESI,ESI                         ; 004c0df0
     MOV dword ptr [0x02d12db8],ESI      ; 004c0df2 | g_BillboardCameraRight.y
     MOV ESI,dword ptr [0x00823a74]      ; 004c0df8 | g_CurrentSceneCamera

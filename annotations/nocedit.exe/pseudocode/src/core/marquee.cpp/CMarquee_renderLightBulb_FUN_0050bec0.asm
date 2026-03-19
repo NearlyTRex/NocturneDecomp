@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   float FLOAT_00661020 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   undefined4 DAT_00f80000
+;   undefined4 g_LightBufferPool[11][183800]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -91,13 +91,13 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 0050bfa4 | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x18],0x80000  ; 0050bfa6
     MOV EBX,dword ptr [EAX]             ; 0050bfad | g_CDemonRendererInstance
-    MOV dword ptr [EBX + 0x1c],0xf80000 ; 0050bfaf | DAT_00f80000
+    MOV dword ptr [EBX + 0x1c],0xf80000 ; 0050bfaf | g_LightBufferPool[11][183800]
     MOV EBX,dword ptr [EAX]             ; 0050bfb6 | g_CDemonRendererInstance
-    MOV dword ptr [EBX + 0x48],0xf80000 ; 0050bfb8 | DAT_00f80000
+    MOV dword ptr [EBX + 0x48],0xf80000 ; 0050bfb8 | g_LightBufferPool[11][183800]
     MOV EBX,dword ptr [EAX]             ; 0050bfbf | g_CDemonRendererInstance
-    MOV dword ptr [EBX + 0x4c],0xf80000 ; 0050bfc1 | DAT_00f80000
+    MOV dword ptr [EBX + 0x4c],0xf80000 ; 0050bfc1 | g_LightBufferPool[11][183800]
     MOV EBX,dword ptr [EAX]             ; 0050bfc8 | g_CDemonRendererInstance
-    MOV dword ptr [EBX + 0x78],0xf80000 ; 0050bfca | DAT_00f80000
+    MOV dword ptr [EBX + 0x78],0xf80000 ; 0050bfca | g_LightBufferPool[11][183800]
     MOV EBX,dword ptr [EAX]             ; 0050bfd1 | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x7c],0x80000  ; 0050bfd3
     ADD ESP,0x8                         ; 0050bfda

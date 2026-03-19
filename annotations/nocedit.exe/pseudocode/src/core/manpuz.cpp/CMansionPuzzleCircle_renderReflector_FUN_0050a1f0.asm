@@ -14,7 +14,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
@@ -40,7 +40,7 @@ section .text
     LEA EBX,[ESI + 0x1340]              ; 0050a20a
     ADD EBX,EAX                         ; 0050a210
     MOV EAX,[0x0067d550]                ; 0050a212 | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 0050a217 | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 0050a217 | g_CDemonMissionInstance.is_in_editor
     JNZ 0x0050a22f                      ; 0050a21b
         ;   XREF to: 0050a22f (CONDITIONAL_JUMP)  ; LAB_0050a22f
     FLD float ptr [EBX + 0x18]          ; 0050a21d

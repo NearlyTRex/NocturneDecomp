@@ -24,17 +24,17 @@
 ;   double DOUBLE_0062a0a3 = 0.5
 ;   float FLOAT_0062a0ab = 40
 ;   CExplosion[10] g_ExplosionPool
-;   undefined4 DAT_02d677b8
-;   undefined4 DAT_02d677bc
-;   undefined4 DAT_02d677c0
-;   undefined4 DAT_02d677c4
-;   undefined4 DAT_02d677c8
-;   undefined4 DAT_02d677d0
-;   undefined4 DAT_02d677d4
-;   undefined4 DAT_02d677d8
-;   undefined4 DAT_02d677dc
-;   undefined4 DAT_02d677e0
-;   undefined4 DAT_02d677e4
+;   undefined4 g_ExplosionPool[0].position.y
+;   undefined4 g_ExplosionPool[0].position.z
+;   undefined4 g_ExplosionPool[0].lifetime
+;   undefined4 g_ExplosionPool[0].scale
+;   undefined4 g_ExplosionPool[0].gore_multiplier
+;   undefined4 g_ExplosionPool[1].position.x
+;   undefined4 g_ExplosionPool[1].position.y
+;   undefined4 g_ExplosionPool[1].position.z
+;   undefined4 g_ExplosionPool[1].lifetime
+;   undefined4 g_ExplosionPool[1].scale
+;   undefined4 g_ExplosionPool[1].gore_multiplier
 ;
 ; *****************************************************************************
 
@@ -53,7 +53,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 004c8ca2
     MOV EDX,0x2d677b4                   ; 004c8ca6 | g_ExplosionPool
     XOR ECX,ECX                         ; 004c8cab
-    FLD float ptr [EDX + 0xc]           ; 004c8cad | DAT_02d677c0 | DAT_02d677dc
+    FLD float ptr [EDX + 0xc]           ; 004c8cad | g_ExplosionPool[0].lifetime | g_ExplosionPool[1].lifetime
         ;   Label: LAB_004c8cad
     MOV ESI,EDX                         ; 004c8cb0
     FCOMP double ptr [0x0062a0a3]       ; 004c8cb2 | DOUBLE_0062a0a3
@@ -76,14 +76,14 @@ section .text
     RET                                 ; 004c8cce
     FLD float ptr [EBX]                 ; 004c8ccf
         ;   Label: LAB_004c8ccf
-    FSUB float ptr [EDX]                ; 004c8cd1 | g_ExplosionPool | DAT_02d677d0
+    FSUB float ptr [EDX]                ; 004c8cd1 | g_ExplosionPool | g_ExplosionPool[1].position.x
     FSTP float ptr [ESP + 0x2c]         ; 004c8cd3
     FLD float ptr [EBX + 0x4]           ; 004c8cd7
-    FSUB float ptr [EDX + 0x4]          ; 004c8cda | DAT_02d677b8 | DAT_02d677d4
+    FSUB float ptr [EDX + 0x4]          ; 004c8cda | g_ExplosionPool[0].position.y | g_ExplosionPool[1].position.y
     LEA EDI,[ESP + 0x2c]                ; 004c8cdd
     FSTP float ptr [ESP + 0x30]         ; 004c8ce1
     FLD float ptr [EBX + 0x8]           ; 004c8ce5
-    FSUB float ptr [EDX + 0x8]          ; 004c8ce8 | DAT_02d677bc | DAT_02d677d8
+    FSUB float ptr [EDX + 0x8]          ; 004c8ce8 | g_ExplosionPool[0].position.z | g_ExplosionPool[1].position.z
     LEA EAX,[ESP + 0x8]                 ; 004c8ceb
     FSTP float ptr [ESP + 0x34]         ; 004c8cef
     CMP EAX,EDI                         ; 004c8cf3
@@ -105,7 +105,7 @@ section .text
     FMUL ST0                            ; 004c8d21
     FADDP                               ; 004c8d23
     FSQRT                               ; 004c8d25
-    FLD float ptr [ESI + 0x10]          ; 004c8d27 | DAT_02d677c4 | DAT_02d677e0
+    FLD float ptr [ESI + 0x10]          ; 004c8d27 | g_ExplosionPool[0].scale | g_ExplosionPool[1].scale
     FMUL double ptr [0x0062a0a3]        ; 004c8d2a | DOUBLE_0062a0a3
     FADD float ptr [ESP + 0x4]          ; 004c8d30
     FXCH                                ; 004c8d34
@@ -160,7 +160,7 @@ section .text
     TEST EBX,EBX                        ; 004c8db5
     JZ 0x004c8dbe                       ; 004c8db7
         ;   XREF to: 004c8dbe (CONDITIONAL_JUMP)  ; LAB_004c8dbe
-    MOV EAX,dword ptr [ESI + 0x14]      ; 004c8db9 | DAT_02d677c8 | DAT_02d677e4
+    MOV EAX,dword ptr [ESI + 0x14]      ; 004c8db9 | g_ExplosionPool[0].gore_multiplier | g_ExplosionPool[1].gore_multiplier
     MOV dword ptr [EBX],EAX             ; 004c8dbc
     MOV EAX,0x1                         ; 004c8dbe
         ;   Label: LAB_004c8dbe

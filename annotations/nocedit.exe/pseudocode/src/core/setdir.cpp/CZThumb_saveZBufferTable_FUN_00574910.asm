@@ -143,7 +143,7 @@ section .text
     ADD EAX,0x4                         ; 00574a10
         ;   Label: LAB_00574a10
     MOV EDX,dword ptr [EAX + 0x2cf7d58] ; 00574a13 | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
-    MOV dword ptr [EAX + 0x3363628],EDX ; 00574a19 | g_ZBufferScanlineArrayBackup | DAT_03363630
+    MOV dword ptr [EAX + 0x3363628],EDX ; 00574a19 | g_ZBufferScanlineArrayBackup | g_ZBufferScanlineArrayBackup[1]
     CMP EAX,ECX                         ; 00574a1f
     JL 0x00574a10                       ; 00574a21
         ;   XREF to: 00574a10 (CONDITIONAL_JUMP)  ; LAB_00574a10
@@ -199,7 +199,7 @@ section .text
     XOR EAX,EAX                         ; 00574ab4
     ADD EAX,0x4                         ; 00574ab6
         ;   Label: LAB_00574ab6
-    MOV EDX,dword ptr [EAX + 0x3363628] ; 00574ab9 | g_ZBufferScanlineArrayBackup | DAT_03363630
+    MOV EDX,dword ptr [EAX + 0x3363628] ; 00574ab9 | g_ZBufferScanlineArrayBackup | g_ZBufferScanlineArrayBackup[1]
     MOV dword ptr [EAX + 0x2cf7d58],EDX ; 00574abf | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
     CMP EAX,ECX                         ; 00574ac5
     JL 0x00574ab6                       ; 00574ac7

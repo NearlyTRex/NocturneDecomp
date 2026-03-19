@@ -15,7 +15,7 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;   int g_QueuedCoronaGlobeCount
 ;   CDemonGlobe*[100] g_QueuedCoronaGlobes
 ;   int[100] g_QueuedCoronaGlobeAlphaMasks
@@ -29,7 +29,7 @@ section .text
 
     MOV EAX,[0x0067d550]                ; 0056d140 | g_CDemonMissionInstance | g_CDemonMissionPtr
         ;   Label: core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0056d140
-    CMP dword ptr [EAX + 0x4],0x0       ; 0056d145 | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 0056d145 | g_CDemonMissionInstance.is_in_editor
     JNZ 0x0056d156                      ; 0056d149
         ;   XREF to: 0056d156 (CONDITIONAL_JUMP)  ; LAB_0056d156
     MOV ECX,dword ptr [0x0327785c]      ; 0056d14b | g_QueuedCoronaGlobeCount

@@ -20,11 +20,11 @@
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.blood_flag
 ;   CBloodParticle[256] g_BloodParticles
-;   undefined4 DAT_02d833ec
-;   undefined4 DAT_02d83408
-;   undefined4 DAT_02d83414
-;   undefined4 DAT_02d8342c
-;   undefined4 DAT_02d83448
+;   undefined4 g_BloodParticles[0].base.lifetime_remaining
+;   undefined4 g_BloodParticles[0].base.vtable
+;   undefined4 g_BloodParticles[1].base.position.x
+;   undefined4 g_BloodParticles[1].base.lifetime_remaining
+;   undefined4 g_BloodParticles[1].base.vtable
 ;   int g_BloodSplatIndex
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -78,7 +78,7 @@ section .text
         ;   XREF to: 004eb9d0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0(CBloodParticle * this_ptr)
     LEA ESI,[EBX + 0x4000]              ; 004ed7ff | g_BloodSplatIndex
     ADD ESP,0x4                         ; 004ed805
-    FLD float ptr [EBX + 0x18]          ; 004ed808 | DAT_02d833ec | DAT_02d8342c
+    FLD float ptr [EBX + 0x18]          ; 004ed808 | g_BloodParticles[0].base.lifetime_remaining | g_BloodParticles[1].base.lifetime_remaining
         ;   Label: LAB_004ed808
     FLDZ                                ; 004ed80b
     FCOMPP                              ; 004ed80d
@@ -86,8 +86,8 @@ section .text
     SAHF                                ; 004ed811
     JNC 0x004ed81e                      ; 004ed812
         ;   XREF to: 004ed81e (CONDITIONAL_JUMP)  ; LAB_004ed81e
-    PUSH EBX                            ; 004ed814 | g_BloodParticles | DAT_02d83414
-    MOV EAX,dword ptr [EBX + 0x34]      ; 004ed815 | DAT_02d83408 | DAT_02d83448
+    PUSH EBX                            ; 004ed814 | g_BloodParticles | g_BloodParticles[1].base.position.x
+    MOV EAX,dword ptr [EBX + 0x34]      ; 004ed815 | g_BloodParticles[0].base.vtable | g_BloodParticles[1].base.vtable
     CALL dword ptr [EAX + 0x8]          ; 004ed818
     ADD ESP,0x4                         ; 004ed81b
     ADD EBX,0x40                        ; 004ed81e

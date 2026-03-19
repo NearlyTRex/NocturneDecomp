@@ -136,7 +136,7 @@ section .text
     MOV dword ptr [ESP + 0x38],EBP      ; 004a0a75
     XOR EAX,EAX                         ; 004a0a79
         ;   Label: LAB_004a0a79
-    MOV byte ptr [EBX + 0x38],0x0       ; 004a0a7b | DAT_02cf1d18
+    MOV byte ptr [EBX + 0x38],0x0       ; 004a0a7b | g_WindowStack[0].text_buffer[0]
     MOV dword ptr [ESP + 0x4],EAX       ; 004a0a7f
     TEST EDI,EDI                        ; 004a0a83
     JZ 0x004a0b64                       ; 004a0a85
@@ -188,7 +188,7 @@ section .text
     MOV ECX,dword ptr [0x02cf1cd0]      ; 004a0afb | g_EditorFont
     DEC EBP                             ; 004a0b01
     PUSH ECX                            ; 004a0b02
-    MOV byte ptr [EBP],0x0              ; 004a0b03 | DAT_02cf1d17
+    MOV byte ptr [EBP],0x0              ; 004a0b03 | g_WindowStack[0].saved_viewport_height+3
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40 ; 004a0b07
         ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 004a0b0c
@@ -245,12 +245,12 @@ section .text
     ADD ESP,0x4                         ; 004a0b9f
     MOV EAX,[0x00679394]                ; 004a0ba2 | g_WindowWidth
         ;   Label: LAB_004a0ba2
-    MOV dword ptr [EBX + 0x1d4],EAX     ; 004a0ba7 | DAT_02cf1eb4
+    MOV dword ptr [EBX + 0x1d4],EAX     ; 004a0ba7 | g_WindowStack[0].backup_width
     MOV ECX,dword ptr [0x0067939c]      ; 004a0bad | g_BitsPerPixel
-    MOV EDX,dword ptr [EBX + 0x1d4]     ; 004a0bb3 | DAT_02cf1eb4
+    MOV EDX,dword ptr [EBX + 0x1d4]     ; 004a0bb3 | g_WindowStack[0].backup_width
     IMUL EDX,ECX                        ; 004a0bb9
     MOV EAX,[0x00679398]                ; 004a0bbc | g_WindowHeight
-    MOV dword ptr [EBX + 0x1d8],EAX     ; 004a0bc1 | DAT_02cf1eb8
+    MOV dword ptr [EBX + 0x1d8],EAX     ; 004a0bc1 | g_WindowStack[0].backup_height
     MOV EAX,EDX                         ; 004a0bc7
     SAR EDX,0x1f                        ; 004a0bc9
     SHL EDX,0x3                         ; 004a0bcc
@@ -258,17 +258,17 @@ section .text
     SAR EAX,0x3                         ; 004a0bd1
     MOV dword ptr [ESP + 0x10],EAX      ; 004a0bd4
     MOV ESI,dword ptr [ESP + 0x10]      ; 004a0bd8
-    MOV EAX,dword ptr [EBX + 0x1d8]     ; 004a0bdc | DAT_02cf1eb8
+    MOV EAX,dword ptr [EBX + 0x1d8]     ; 004a0bdc | g_WindowStack[0].backup_height
     IMUL EAX,ESI                        ; 004a0be2
     PUSH 0x807                          ; 004a0be5
     PUSH 0x6233d5                       ; 004a0bea | = "..\\shape\\edittool.cpp"
-    MOV dword ptr [EBX + 0x1cc],0x0     ; 004a0bef | DAT_02cf1eac
+    MOV dword ptr [EBX + 0x1cc],0x0     ; 004a0bef | g_WindowStack[0].backup_x_offset
     PUSH EAX                            ; 004a0bf9
-    MOV dword ptr [EBX + 0x1d0],0x0     ; 004a0bfa | DAT_02cf1eb0
+    MOV dword ptr [EBX + 0x1d0],0x0     ; 004a0bfa | g_WindowStack[0].backup_y_offset
     CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 004a0c04
         ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004a0c09
-    MOV dword ptr [EBX + 0x1c8],EAX     ; 004a0c0c | DAT_02cf1ea8
+    MOV dword ptr [EBX + 0x1c8],EAX     ; 004a0c0c | g_WindowStack[0].screen_backup_buffer
     TEST EAX,EAX                        ; 004a0c12
     JNZ 0x004a0c38                      ; 004a0c14
         ;   XREF to: 004a0c38 (CONDITIONAL_JUMP)  ; LAB_004a0c38
@@ -280,9 +280,9 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a0c30
         ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004a0c35
-    MOV EAX,dword ptr [EBX + 0x1c8]     ; 004a0c38 | DAT_02cf1ea8
+    MOV EAX,dword ptr [EBX + 0x1c8]     ; 004a0c38 | g_WindowStack[0].screen_backup_buffer
         ;   Label: LAB_004a0c38
-    MOV EDX,dword ptr [EBX + 0x1d8]     ; 004a0c3e | DAT_02cf1eb8
+    MOV EDX,dword ptr [EBX + 0x1d8]     ; 004a0c3e | g_WindowStack[0].backup_height
     XOR EBP,EBP                         ; 004a0c44
     MOV dword ptr [ESP + 0x14],EAX      ; 004a0c46
     TEST EDX,EDX                        ; 004a0c4a
@@ -290,9 +290,9 @@ section .text
         ;   XREF to: 004a0cb0 (CONDITIONAL_JUMP)  ; LAB_004a0cb0
     MOV ECX,dword ptr [0x0067939c]      ; 004a0c4e | g_BitsPerPixel
         ;   Label: LAB_004a0c4e
-    MOV EDX,dword ptr [EBX + 0x1cc]     ; 004a0c54 | DAT_02cf1eac
+    MOV EDX,dword ptr [EBX + 0x1cc]     ; 004a0c54 | g_WindowStack[0].backup_x_offset
     IMUL EDX,ECX                        ; 004a0c5a
-    MOV EAX,dword ptr [EBX + 0x1d0]     ; 004a0c5d | DAT_02cf1eb0
+    MOV EAX,dword ptr [EBX + 0x1d0]     ; 004a0c5d | g_WindowStack[0].backup_y_offset
     ADD EAX,EBP                         ; 004a0c63
     LEA ESI,[EAX*0x4 + 0x0]             ; 004a0c65
     MOV EAX,EDX                         ; 004a0c6c
@@ -315,7 +315,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 004a0c99
     LEA ESI,[EDI + EAX*0x1]             ; 004a0c9d
     INC EBP                             ; 004a0ca0
-    MOV EDI,dword ptr [EBX + 0x1d8]     ; 004a0ca1 | DAT_02cf1eb8
+    MOV EDI,dword ptr [EBX + 0x1d8]     ; 004a0ca1 | g_WindowStack[0].backup_height
     MOV dword ptr [ESP + 0x14],ESI      ; 004a0ca7
     CMP EBP,EDI                         ; 004a0cab
     JL 0x004a0c4e                       ; 004a0cad
@@ -323,34 +323,34 @@ section .text
     NOP                                 ; 004a0caf
     MOV EAX,[0x02d02558]                ; 004a0cb0 | g_ClipLeft
         ;   Label: LAB_004a0cb0
-    MOV dword ptr [EBX + 0x10],EAX      ; 004a0cb5 | DAT_02cf1cf0
+    MOV dword ptr [EBX + 0x10],EAX      ; 004a0cb5 | g_WindowStack[0].saved_clip_left
     MOV EAX,[0x02d0255c]                ; 004a0cb8 | g_ClipTop
-    MOV dword ptr [EBX + 0x14],EAX      ; 004a0cbd | DAT_02cf1cf4
+    MOV dword ptr [EBX + 0x14],EAX      ; 004a0cbd | g_WindowStack[0].saved_clip_top
     MOV EAX,[0x02d02560]                ; 004a0cc0 | g_ClipRight
-    MOV dword ptr [EBX + 0x18],EAX      ; 004a0cc5 | DAT_02cf1cf8
+    MOV dword ptr [EBX + 0x18],EAX      ; 004a0cc5 | g_WindowStack[0].saved_clip_right
     MOV EAX,[0x02d02564]                ; 004a0cc8 | g_ClipBottom
-    MOV dword ptr [EBX + 0x1c],EAX      ; 004a0ccd | DAT_02cf1cfc
+    MOV dword ptr [EBX + 0x1c],EAX      ; 004a0ccd | g_WindowStack[0].saved_clip_bottom
     MOV EAX,[0x02d02548]                ; 004a0cd0 | g_ViewportCenterXFixed
-    MOV dword ptr [EBX + 0x20],EAX      ; 004a0cd5 | DAT_02cf1d00
+    MOV dword ptr [EBX + 0x20],EAX      ; 004a0cd5 | g_WindowStack[0].saved_viewport_center_x
     MOV EAX,[0x02d0254c]                ; 004a0cd8 | g_ViewportCenterYFixed
-    MOV dword ptr [EBX + 0x24],EAX      ; 004a0cdd | DAT_02cf1d04
+    MOV dword ptr [EBX + 0x24],EAX      ; 004a0cdd | g_WindowStack[0].saved_viewport_center_y
     MOV EAX,[0x02d02550]                ; 004a0ce0 | g_ViewportRightFixed
-    MOV dword ptr [EBX + 0x28],EAX      ; 004a0ce5 | DAT_02cf1d08
+    MOV dword ptr [EBX + 0x28],EAX      ; 004a0ce5 | g_WindowStack[0].saved_viewport_right
     MOV EAX,[0x02d02554]                ; 004a0ce8 | g_ViewportBottomFixed
-    MOV dword ptr [EBX + 0x2c],EAX      ; 004a0ced | DAT_02cf1d0c
+    MOV dword ptr [EBX + 0x2c],EAX      ; 004a0ced | g_WindowStack[0].saved_viewport_bottom
     MOV EAX,[0x02d02568]                ; 004a0cf0 | g_ViewportWidth
-    MOV dword ptr [EBX + 0x30],EAX      ; 004a0cf5 | DAT_02cf1d10
+    MOV dword ptr [EBX + 0x30],EAX      ; 004a0cf5 | g_WindowStack[0].saved_viewport_width
     MOV EAX,[0x02d0256c]                ; 004a0cf8 | g_ViewportHeight
-    MOV dword ptr [EBX + 0x34],EAX      ; 004a0cfd | DAT_02cf1d14
+    MOV dword ptr [EBX + 0x34],EAX      ; 004a0cfd | g_WindowStack[0].saved_viewport_height
     MOV EAX,dword ptr [ESP + 0x30]      ; 004a0d00
     MOV dword ptr [EBX],EAX             ; 004a0d04 | g_WindowStack
     MOV EAX,dword ptr [ESP + 0x34]      ; 004a0d06
-    MOV dword ptr [EBX + 0x4],EAX       ; 004a0d0a | DAT_02cf1ce4
+    MOV dword ptr [EBX + 0x4],EAX       ; 004a0d0a | g_WindowStack[0].top
     MOV EAX,dword ptr [ESP + 0x38]      ; 004a0d0d
-    MOV dword ptr [EBX + 0x8],EAX       ; 004a0d11 | DAT_02cf1ce8
+    MOV dword ptr [EBX + 0x8],EAX       ; 004a0d11 | g_WindowStack[0].right
     MOV EAX,dword ptr [ESP + 0x3c]      ; 004a0d14
     MOV EBP,dword ptr [ESP + 0x30]      ; 004a0d18
-    MOV dword ptr [EBX + 0xc],EAX       ; 004a0d1c | DAT_02cf1cec
+    MOV dword ptr [EBX + 0xc],EAX       ; 004a0d1c | g_WindowStack[0].bottom
     MOV EAX,dword ptr [ESP + 0x8]       ; 004a0d1f
     MOV EDX,dword ptr [ESP + 0x34]      ; 004a0d23
     ADD EBP,EAX                         ; 004a0d27
@@ -405,7 +405,7 @@ section .text
     MOV dword ptr [ESP + 0x34],EDI      ; 004a0dab
     JMP 0x004a0b6f                      ; 004a0daf
         ;   XREF to: 004a0b6f (UNCONDITIONAL_JUMP)  ; LAB_004a0b6f
-    MOV dword ptr [EBX + 0x1c8],0x0     ; 004a0db4 | DAT_02cf1ea8
+    MOV dword ptr [EBX + 0x1c8],0x0     ; 004a0db4 | g_WindowStack[0].screen_backup_buffer
         ;   Label: LAB_004a0db4
     JMP 0x004a0cb0                      ; 004a0dbe
         ;   XREF to: 004a0cb0 (UNCONDITIONAL_JUMP)  ; LAB_004a0cb0

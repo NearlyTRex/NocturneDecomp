@@ -23,7 +23,7 @@
 ;   int g_CurrentLineNumber
 ;   int g_PathMapCount
 ;   CPathMap*[200] g_PathMapList
-;   undefined4 DAT_030c3ac0
+;   undefined4 g_PathMapList[1]
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -60,11 +60,11 @@ section .text
     JLE 0x005486e3                      ; 005486b6
         ;   XREF to: 005486e3 (CONDITIONAL_JUMP)  ; LAB_005486e3
     XOR EBX,EBX                         ; 005486b8
-    CMP dword ptr [EBX + 0x30c3abc],0x0 ; 005486ba | g_PathMapList | DAT_030c3ac0
+    CMP dword ptr [EBX + 0x30c3abc],0x0 ; 005486ba | g_PathMapList | g_PathMapList[1]
         ;   Label: LAB_005486ba
     JZ 0x005486eb                       ; 005486c1
         ;   XREF to: 005486eb (CONDITIONAL_JUMP)  ; LAB_005486eb
-    MOV EDX,dword ptr [EBX + 0x30c3abc] ; 005486c3 | g_PathMapList | DAT_030c3ac0
+    MOV EDX,dword ptr [EBX + 0x30c3abc] ; 005486c3 | g_PathMapList | g_PathMapList[1]
         ;   Label: LAB_005486c3
     CMP dword ptr [EDX + 0x138c0],0x461c3c00 ; 005486c9
     JLE 0x00548710                      ; 005486d3

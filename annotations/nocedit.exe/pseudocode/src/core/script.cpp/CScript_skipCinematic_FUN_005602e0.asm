@@ -18,7 +18,7 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CEditorTools g_CEditorToolsInstance
-;   undefined4 DAT_02d81cc4
+;   undefined4 g_CGameInstance.letterbox_mode
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   char[2048] g_ScriptErrorBuffer
@@ -58,7 +58,7 @@ section .text
     MOV dword ptr [EBX + 0x48],EAX      ; 0056030d
     MOV EAX,[0x0067b654]                ; 00560310 | g_CGamePtr
         ;   Label: LAB_00560310
-    CMP dword ptr [EAX + 0x228],0x0     ; 00560315 | DAT_02d81cc4
+    CMP dword ptr [EAX + 0x228],0x0     ; 00560315 | g_CGameInstance.letterbox_mode
     JZ 0x005603a7                       ; 0056031c
         ;   XREF to: 005603a7 (CONDITIONAL_JUMP)  ; LAB_005603a7
     CMP dword ptr [EBX],0x0             ; 00560322

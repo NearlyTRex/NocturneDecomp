@@ -13,7 +13,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic g_BloodParticleTexture
 ;   SMRGLTextureBasic[4] g_BloodSplatTextures
-;   undefined4 DAT_0067b9e0
+;   undefined4 g_BloodSplatTextures[1].base.type
 ;   SMRGLTextureBasic[64] g_BloodSplatAnimTextures
 ;   undefined4 g_BloodSplatAnimTextures[1].base.type
 ;   undefined4 g_BloodSplatAnimTextures[16].base.type
@@ -43,13 +43,13 @@ section .text
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     LEA ESI,[EBX + 0x60]                ; 004ede7a | g_BloodSplatAnimTextures
     ADD ESP,0x8                         ; 004ede7d
-    PUSH EBX                            ; 004ede80 | g_BloodSplatTextures | DAT_0067b9e0
+    PUSH EBX                            ; 004ede80 | g_BloodSplatTextures | g_BloodSplatTextures[1].base.type
         ;   Label: LAB_004ede80
     MOV ECX,dword ptr [0x006703ec]      ; 004ede81 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 004ede87 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004ede88
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
-    ADD EBX,0x18                        ; 004ede8d | DAT_0067b9e0
+    ADD EBX,0x18                        ; 004ede8d | g_BloodSplatTextures[1].base.type
     ADD ESP,0x8                         ; 004ede90
     CMP EBX,ESI                         ; 004ede93
     JNZ 0x004ede80                      ; 004ede95

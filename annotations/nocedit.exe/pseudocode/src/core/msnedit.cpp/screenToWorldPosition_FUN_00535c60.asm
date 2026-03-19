@@ -22,7 +22,7 @@
 ;   float FLOAT_0063b2ec = 10000
 ;   float FLOAT_00661c30 = 0.00390625
 ;   CDemonCamera g_CDemonCameraInstance
-;   undefined4 DAT_032758e8
+;   undefined4 g_CDemonCameraInstance.base.position
 ;   undefined4 g_CDemonCameraInstance.base.position+4
 ;   undefined4 g_CDemonCameraInstance.base.position+8
 ;
@@ -92,12 +92,12 @@ section .text
     SAHF                                ; 00535cf7
     JBE 0x00535dc0                      ; 00535cf8
         ;   XREF to: 00535dc0 (CONDITIONAL_JUMP)  ; LAB_00535dc0
-    MOV EAX,[0x032758e8]                ; 00535cfe | DAT_032758e8
+    MOV EAX,[0x032758e8]                ; 00535cfe | g_CDemonCameraInstance.base.position
     MOV dword ptr [ESP + 0xc],EAX       ; 00535d03
-    MOV EAX,0x32758e8                   ; 00535d07 | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 00535d07 | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EAX + 0x4]       ; 00535d0c | g_CDemonCameraInstance.base.position+4
     MOV dword ptr [ESP + 0x10],EAX      ; 00535d0f
-    MOV EAX,0x32758e8                   ; 00535d13 | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 00535d13 | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EAX + 0x8]       ; 00535d18 | g_CDemonCameraInstance.base.position+8
     MOV dword ptr [ESP + 0x14],EAX      ; 00535d1b
     FLD float ptr [EBP]                 ; 00535d1f

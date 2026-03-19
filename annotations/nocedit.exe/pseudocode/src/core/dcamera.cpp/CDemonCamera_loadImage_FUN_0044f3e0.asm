@@ -412,7 +412,7 @@ section .text
     XOR EBX,EBX                         ; 0044f780
     LEA EAX,[EDX + EBP*0x1]             ; 0044f782
         ;   Label: LAB_0044f782
-    MOV EAX,dword ptr [EAX + 0x13ed375] ; 0044f785 | DAT_013ed375 | DAT_013ed376
+    MOV EAX,dword ptr [EAX + 0x13ed375] ; 0044f785 | g_CameraPlaneWorkBuffer.pixels[239][317] | g_CameraPlaneWorkBuffer.pixels[239][318]
     SAR EAX,0x18                        ; 0044f78b
     ADD EAX,EBX                         ; 0044f78e
     MOV ESI,dword ptr [ESP + 0xa0]      ; 0044f790
@@ -422,12 +422,12 @@ section .text
     JLE 0x0044f7ac                      ; 0044f79e
         ;   XREF to: 0044f7ac (CONDITIONAL_JUMP)  ; LAB_0044f7ac
     LEA ESI,[EDI + EDX*0x1]             ; 0044f7a0
-    MOVZX ESI,byte ptr [ESI + 0x13ed378] ; 0044f7a3 | g_CameraPlaneWorkBuffer | DAT_013da779 | DAT_013da8b8
+    MOVZX ESI,byte ptr [ESI + 0x13ed378] ; 0044f7a3 | g_CameraPlaneWorkBuffer | g_CameraPlaneWorkBuffer.pixels[0][1] | g_CameraPlaneWorkBuffer.pixels[1][0]
     ADD EAX,ESI                         ; 0044f7aa
     INC ECX                             ; 0044f7ac
         ;   Label: LAB_0044f7ac
     INC EDX                             ; 0044f7ad
-    MOV byte ptr [ECX + 0x13ed377],AL   ; 0044f7ae | DAT_013ed377 | g_CameraImageDecompressBuffer | DAT_013ed379
+    MOV byte ptr [ECX + 0x13ed377],AL   ; 0044f7ae | g_CameraPlaneWorkBuffer.pixels[239][319] | g_CameraImageDecompressBuffer | g_CameraImageDecompressBuffer[0].pixels[0][1]
     CMP EDX,0x140                       ; 0044f7b4
     JL 0x0044f782                       ; 0044f7ba
         ;   XREF to: 0044f782 (CONDITIONAL_JUMP)  ; LAB_0044f782
@@ -485,10 +485,10 @@ section .text
     XOR EAX,EAX                         ; 0044f89e
     MOV ECX,dword ptr [0x0067939c]      ; 0044f8a0 | g_BitsPerPixel
         ;   Label: LAB_0044f8a0
-    MOVZX ESI,byte ptr [EAX + 0xc196fa] ; 0044f8a6 | DAT_00c196fa | DAT_00c196fd
+    MOVZX ESI,byte ptr [EAX + 0xc196fa] ; 0044f8a6 | g_CameraImagePaletteData.colors[0].b | g_CameraImagePaletteData.colors[1].b
     XOR EBX,EBX                         ; 0044f8ad
-    MOVZX EDI,byte ptr [EAX + 0xc196f8] ; 0044f8af | g_CameraImagePaletteData | DAT_00c196fb
-    MOV BL,byte ptr [EAX + 0xc196f9]    ; 0044f8b6 | DAT_00c196f9 | DAT_00c196fc
+    MOVZX EDI,byte ptr [EAX + 0xc196f8] ; 0044f8af | g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].r
+    MOV BL,byte ptr [EAX + 0xc196f9]    ; 0044f8b6 | g_CameraImagePaletteData.colors[0].g | g_CameraImagePaletteData.colors[1].g
     CMP ECX,0x20                        ; 0044f8bc
     JNZ 0x0044fc9d                      ; 0044f8bf
         ;   XREF to: 0044fc9d (CONDITIONAL_JUMP)  ; LAB_0044fc9d
@@ -504,7 +504,7 @@ section .text
     ADD EDX,0x4                         ; 0044f8e3
         ;   Label: LAB_0044f8e3
     ADD EAX,0x3                         ; 0044f8e6
-    MOV dword ptr [EDX + 0xc199f8],ECX  ; 0044f8e9 | g_CameraConvertedPalette | DAT_00c19a00
+    MOV dword ptr [EDX + 0xc199f8],ECX  ; 0044f8e9 | g_CameraConvertedPalette | g_CameraConvertedPalette[1]
     CMP EDX,0x400                       ; 0044f8ef
     JNZ 0x0044f8a0                      ; 0044f8f5
         ;   XREF to: 0044f8a0 (CONDITIONAL_JUMP)  ; LAB_0044f8a0
@@ -540,23 +540,23 @@ section .text
     ADD EDI,ECX                         ; 0044f96f
     ADD EDI,0x4                         ; 0044f971
         ;   Label: LAB_0044f971
-    MOVZX ESI,byte ptr [EAX + 0x1]      ; 0044f974 | DAT_0151bfa9 | DAT_0151bfab | DAT_0151c4a9
+    MOVZX ESI,byte ptr [EAX + 0x1]      ; 0044f974 | g_CameraIndexedImageData+1 | g_CameraIndexedImageData+3 | g_CameraIndexedImageData+0x501
     ADD EAX,0x2                         ; 0044f978
     XOR EDX,EDX                         ; 0044f97b
     XOR EBX,EBX                         ; 0044f97d
     XOR ECX,ECX                         ; 0044f97f
     MOV ESI,dword ptr [ESI*0x4 + 0xc199fc] ; 0044f981 | g_CameraConvertedPalette
-    MOV DL,byte ptr [EAX + -0x2]        ; 0044f988 | g_CameraIndexedImageData | DAT_0151bfaa | DAT_0151c4a8
-    MOV BL,byte ptr [EAX + 0x27e]       ; 0044f98b | DAT_0151c228 | DAT_0151c22a | DAT_0151c728
-    MOV CL,byte ptr [EAX + 0x27f]       ; 0044f991 | DAT_0151c229 | DAT_0151c22b
-    AND ESI,0xfcfcfc                    ; 0044f997 | DAT_00fcfcfc
+    MOV DL,byte ptr [EAX + -0x2]        ; 0044f988 | g_CameraIndexedImageData | g_CameraIndexedImageData+2 | g_CameraIndexedImageData+0x500
+    MOV BL,byte ptr [EAX + 0x27e]       ; 0044f98b | g_CameraIndexedImageData+0x280 | g_CameraIndexedImageData+0x282 | g_CameraIndexedImageData+0x780
+    MOV CL,byte ptr [EAX + 0x27f]       ; 0044f991 | g_CameraIndexedImageData+0x281 | g_CameraIndexedImageData+0x283
+    AND ESI,0xfcfcfc                    ; 0044f997 | g_LightBufferPool[12][203508]
     MOV EDX,dword ptr [EDX*0x4 + 0xc199fc] ; 0044f99d | g_CameraConvertedPalette
     MOV EBX,dword ptr [EBX*0x4 + 0xc199fc] ; 0044f9a4 | g_CameraConvertedPalette
     MOV ECX,dword ptr [ECX*0x4 + 0xc199fc] ; 0044f9ab | g_CameraConvertedPalette
-    AND EDX,0xfcfcfc                    ; 0044f9b2 | DAT_00fcfcfc
+    AND EDX,0xfcfcfc                    ; 0044f9b2 | g_LightBufferPool[12][203508]
     SHR ESI,0x2                         ; 0044f9b8
-    AND EBX,0xfcfcfc                    ; 0044f9bb | DAT_00fcfcfc
-    AND ECX,0xfcfcfc                    ; 0044f9c1 | DAT_00fcfcfc
+    AND EBX,0xfcfcfc                    ; 0044f9bb | g_LightBufferPool[12][203508]
+    AND ECX,0xfcfcfc                    ; 0044f9c1 | g_LightBufferPool[12][203508]
     SHR EDX,0x2                         ; 0044f9c7
     SHR EBX,0x2                         ; 0044f9ca
     SHR ECX,0x2                         ; 0044f9cd
@@ -599,7 +599,7 @@ section .text
     INC EBX                             ; 0044fa3c
     MOV AL,byte ptr [ESI + EAX*0x1 + 0x151bfa8] ; 0044fa3d | g_CameraIndexedImageData
     ADD ECX,0x280                       ; 0044fa44
-    MOV byte ptr [EBX + 0x1566fa7],AL   ; 0044fa4a | g_CameraTextureWorkBuffer | DAT_01566fa8+1
+    MOV byte ptr [EBX + 0x1566fa7],AL   ; 0044fa4a | g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[0]+1
     CMP ECX,0x28000                     ; 0044fa50
     JNZ 0x0044fa2d                      ; 0044fa56
         ;   XREF to: 0044fa2d (CONDITIONAL_JUMP)  ; LAB_0044fa2d
@@ -620,10 +620,10 @@ section .text
     PUSH EDI                            ; 0044fa8d
     MOV EAX,ECX                         ; 0044fa8e
     SHR ECX,0x2                         ; 0044fa90
-    MOVSD.REP ES:EDI,ESI                ; 0044fa93 | g_CameraTextureWorkBuffer | DAT_01566fac
+    MOVSD.REP ES:EDI,ESI                ; 0044fa93 | g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[1]
     MOV CL,AL                           ; 0044fa95
     AND CL,0x3                          ; 0044fa97
-    MOVSB.REP ES:EDI,ESI                ; 0044fa9a | g_CameraTextureWorkBuffer | DAT_01566fac | DAT_01566fad
+    MOVSB.REP ES:EDI,ESI                ; 0044fa9a | g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[1] | g_CameraTextureWorkBuffer[1]+1
     POP EDI                             ; 0044fa9c
     MOV ECX,0x300                       ; 0044fa9d
     MOV ESI,0xc196f8                    ; 0044faa2 | g_CameraImagePaletteData
@@ -631,10 +631,10 @@ section .text
     PUSH EDI                            ; 0044faad
     MOV EAX,ECX                         ; 0044faae
     SHR ECX,0x2                         ; 0044fab0
-    MOVSD.REP ES:EDI,ESI                ; 0044fab3 | g_CameraImagePaletteData | DAT_00c196fc
+    MOVSD.REP ES:EDI,ESI                ; 0044fab3 | g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].g
     MOV CL,AL                           ; 0044fab5
     AND CL,0x3                          ; 0044fab7
-    MOVSB.REP ES:EDI,ESI                ; 0044faba | g_CameraImagePaletteData | DAT_00c196fc | DAT_00c196fd
+    MOVSB.REP ES:EDI,ESI                ; 0044faba | g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].g | g_CameraImagePaletteData.colors[1].b
     POP EDI                             ; 0044fabc
     PUSH 0xc196f8                       ; 0044fabd | g_CameraImagePaletteData
     PUSH 0x66ed50                       ; 0044fac2 | g_CameraBackdropTexture
@@ -683,9 +683,9 @@ section .text
     ADD EDX,EDI                         ; 0044fb59
     ADD EDX,0x12c00                     ; 0044fb5b
         ;   Label: LAB_0044fb5b
-    MOV BL,byte ptr [ECX + 0x13ed378]   ; 0044fb61 | g_CameraImageDecompressBuffer | DAT_013fff78
+    MOV BL,byte ptr [ECX + 0x13ed378]   ; 0044fb61 | g_CameraImageDecompressBuffer | g_CameraImageDecompressBuffer[1].pixels[0][0]
     INC EAX                             ; 0044fb67
-    MOV byte ptr [EDX + 0x13da778],BL   ; 0044fb68 | g_CameraPlaneWorkBuffer | g_CameraImageDecompressBuffer | DAT_013fff78
+    MOV byte ptr [EDX + 0x13da778],BL   ; 0044fb68 | g_CameraPlaneWorkBuffer | g_CameraImageDecompressBuffer | g_CameraImageDecompressBuffer[1].pixels[0][0]
     MOV EBX,dword ptr [0x01519380]      ; 0044fb6e | g_ImageBytesPerPixel
     ADD ECX,0x12c00                     ; 0044fb74
     CMP EAX,EBX                         ; 0044fb7a
@@ -806,7 +806,7 @@ section .text
     MOV ECX,dword ptr [ECX + 0x158]     ; 0044fcc4
     XOR EBX,EBX                         ; 0044fcca
         ;   Label: LAB_0044fcca
-    MOV BL,byte ptr [EAX]               ; 0044fccc | g_CameraIndexedImageData | DAT_0151bfa9
+    MOV BL,byte ptr [EAX]               ; 0044fccc | g_CameraIndexedImageData | g_CameraIndexedImageData+1
     INC EAX                             ; 0044fcce
     ADD ECX,0x4                         ; 0044fccf
     MOV EBX,dword ptr [EBX*0x4 + 0xc199fc] ; 0044fcd2 | g_CameraConvertedPalette
@@ -1143,7 +1143,7 @@ section .text
     OR ECX,EBX                          ; 00450261
     MOV EBX,dword ptr [ESP + 0x118]     ; 00450263
     INC ESI                             ; 0045026a
-    MOV dword ptr [EAX],ECX             ; 0045026b | DAT_00ffffff
+    MOV dword ptr [EAX],ECX             ; 0045026b | g_LightBufferPool[13][93687]
     LEA ECX,[EAX + 0x4]                 ; 0045026d
     ADD EBX,0x28000                     ; 00450270
     MOV dword ptr [ESP + 0xc4],ESI      ; 00450276

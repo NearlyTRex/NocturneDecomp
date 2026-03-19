@@ -18,7 +18,7 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380
@@ -38,7 +38,7 @@ section .text
     SUB ESP,0x30                        ; 0056aca4
     MOV ESI,dword ptr [ESP + 0x44]      ; 0056aca7
     MOV EAX,[0x0067d550]                ; 0056acab | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 0056acb0 | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 0056acb0 | g_CDemonMissionInstance.is_in_editor
     JNZ 0x0056adb6                      ; 0056acb4
         ;   XREF to: 0056adb6 (CONDITIONAL_JUMP)  ; LAB_0056adb6
     MOV EBX,dword ptr [ESI + 0x15f6e4]  ; 0056acba

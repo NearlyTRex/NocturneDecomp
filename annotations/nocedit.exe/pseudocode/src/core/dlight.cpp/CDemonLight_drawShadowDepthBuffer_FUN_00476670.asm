@@ -27,7 +27,7 @@
 ;   int g_BitsPerPixel = 0x8
 ;   int g_NoiseTableIndex
 ;   int[100] g_NoiseTable
-;   undefined4 DAT_026a72ec
+;   undefined4 g_NoiseTable[1]
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   _BIT_INTEGER32 g_RedBitPosition
@@ -61,7 +61,7 @@ section .text
     AND EAX,0x1f                        ; 0047668a
     ADD EBX,0x4                         ; 0047668d
     SUB EAX,0x10                        ; 00476690
-    MOV dword ptr [EBX + 0x26a72e4],EAX ; 00476693 | g_NoiseTable | DAT_026a72ec
+    MOV dword ptr [EBX + 0x26a72e4],EAX ; 00476693 | g_NoiseTable | g_NoiseTable[1]
     CMP EBX,0x190                       ; 00476699
     JNZ 0x00476685                      ; 0047669f
         ;   XREF to: 00476685 (CONDITIONAL_JUMP)  ; LAB_00476685
@@ -176,7 +176,7 @@ section .text
     JZ 0x00476854                       ; 004767ca
         ;   XREF to: 00476854 (CONDITIONAL_JUMP)  ; LAB_00476854
     SHR EBX,0x6                         ; 004767d0
-    MOV EAX,dword ptr [ESI*0x4 + 0x26a72e8] ; 004767d3 | g_NoiseTable | DAT_026a72ec
+    MOV EAX,dword ptr [ESI*0x4 + 0x26a72e8] ; 004767d3 | g_NoiseTable | g_NoiseTable[1]
     INC ESI                             ; 004767da
     ADD EBX,EAX                         ; 004767db
     CMP ESI,0x64                        ; 004767dd
@@ -328,7 +328,7 @@ section .text
     JZ 0x00476a1e                       ; 0047695f
         ;   XREF to: 00476a1e (CONDITIONAL_JUMP)  ; LAB_00476a1e
     SHR EBX,0x6                         ; 00476965
-    MOV EAX,dword ptr [ESI*0x4 + 0x26a72e8] ; 00476968 | g_NoiseTable | DAT_026a72ec
+    MOV EAX,dword ptr [ESI*0x4 + 0x26a72e8] ; 00476968 | g_NoiseTable | g_NoiseTable[1]
     INC ESI                             ; 0047696f
     ADD EBX,EAX                         ; 00476970
     CMP ESI,0x64                        ; 00476972

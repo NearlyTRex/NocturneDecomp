@@ -231,7 +231,7 @@ section .text
     CALL dword ptr [EBX + 0x4]          ; 004c66f1
     MOV EAX,0xffff                      ; 004c66f4
     MOV ECX,0x80000                     ; 004c66f9
-    MOV EBX,0xf80000                    ; 004c66fe | DAT_00f80000
+    MOV EBX,0xf80000                    ; 004c66fe | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [0x02d051f4]      ; 004c6703 | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 004c6709
     MOV dword ptr [0x0068802c],ECX      ; 004c670c | g_RenderVertexBuffer[0].u

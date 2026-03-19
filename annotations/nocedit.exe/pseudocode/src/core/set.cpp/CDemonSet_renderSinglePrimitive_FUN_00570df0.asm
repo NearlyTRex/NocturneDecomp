@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02c6d590
+;   undefined4 g_CDemonRendererInstance.advanced_culling_enabled
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0
@@ -27,7 +27,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 00570df0
         ;   Label: core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0
     MOV EAX,[0x006703ec]                ; 00570df4 | g_CDemonRendererInstance | g_CDemonRendererPtr2
-    MOV EDX,dword ptr [EAX + 0x18]      ; 00570df9 | DAT_02c6d590
+    MOV EDX,dword ptr [EAX + 0x18]      ; 00570df9 | g_CDemonRendererInstance.advanced_culling_enabled
     TEST EDX,EDX                        ; 00570dfc
     JZ 0x00570e15                       ; 00570dfe
         ;   XREF to: 00570e15 (CONDITIONAL_JUMP)  ; LAB_00570e15

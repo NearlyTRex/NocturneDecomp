@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
@@ -33,7 +33,7 @@ section .text
     JNZ 0x005fbe52                      ; 005fbe3a
         ;   XREF to: 005fbe52 (CONDITIONAL_JUMP)  ; LAB_005fbe52
     MOV EAX,[0x0067d550]                ; 005fbe3c | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 005fbe41 | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 005fbe41 | g_CDemonMissionInstance.is_in_editor
     JZ 0x005fbe5d                       ; 005fbe45
         ;   XREF to: 005fbe5d (CONDITIONAL_JUMP)  ; LAB_005fbe5d
     PUSH 0x3                            ; 005fbe47

@@ -33,7 +33,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
-;   undefined4 DAT_032613d4
+;   undefined4 g_CDemonSetInstance.actors[1]
 ;   undefined4 g_CDemonSetInstance.character_count
 ;   undefined4 g_CDemonSetInstance.characters[0]
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
@@ -278,7 +278,7 @@ section .text
     JGE 0x0054d675                      ; 0054ceb3
         ;   XREF to: 0054d675 (CONDITIONAL_JUMP)  ; LAB_0054d675
     ADD EAX,dword ptr [ESP + 0x30c]     ; 0054ceb9
-    MOV EBX,dword ptr [EAX + 0x14d158]  ; 0054cec0 | g_CDemonSetInstance.actors[0] | DAT_032613d4
+    MOV EBX,dword ptr [EAX + 0x14d158]  ; 0054cec0 | g_CDemonSetInstance.actors[0] | g_CDemonSetInstance.actors[1]
     MOV EDI,dword ptr [EBP + 0x14]      ; 0054cec6
     CMP EDI,dword ptr [EBX + 0xdc]      ; 0054cec9
     JZ 0x0054d4fc                       ; 0054cecf

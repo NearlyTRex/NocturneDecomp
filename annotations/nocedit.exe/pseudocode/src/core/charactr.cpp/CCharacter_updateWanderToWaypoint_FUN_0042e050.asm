@@ -23,9 +23,9 @@
 ;   double DOUBLE_006174d2 = 4
 ;   float FLOAT_006174da = 20
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 DAT_032690dc
-;   undefined4 DAT_032690e0
-;   undefined4 DAT_032690e4
+;   undefined4 g_CDemonSetInstance.waypoint_count
+;   undefined4 g_CDemonSetInstance.waypoints[0]
+;   undefined4 g_CDemonSetInstance.waypoints[1]
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
@@ -102,12 +102,12 @@ section .text
     MOV ESI,dword ptr [0x006810c8]      ; 0042e11d | g_CDemonSetPtr
         ;   Label: LAB_0042e11d
     MOV EAX,dword ptr [ESP + 0x1f60]    ; 0042e123
-    CMP EAX,dword ptr [ESI + 0x154e64]  ; 0042e12a | DAT_032690dc
+    CMP EAX,dword ptr [ESI + 0x154e64]  ; 0042e12a | g_CDemonSetInstance.waypoint_count
     JGE 0x0042e279                      ; 0042e130
         ;   XREF to: 0042e279 (CONDITIONAL_JUMP)  ; LAB_0042e279
     ADD ESI,dword ptr [ESP + 0x1f5c]    ; 0042e136
     PUSH 0x0                            ; 0042e13d
-    MOV ESI,dword ptr [ESI + 0x154e68]  ; 0042e13f | DAT_032690e0 | DAT_032690e4
+    MOV ESI,dword ptr [ESI + 0x154e68]  ; 0042e13f | g_CDemonSetInstance.waypoints[0] | g_CDemonSetInstance.waypoints[1]
     PUSH ESI                            ; 0042e145
     MOV EDX,dword ptr [ESP + 0x1f94]    ; 0042e146
     PUSH EDX                            ; 0042e14d

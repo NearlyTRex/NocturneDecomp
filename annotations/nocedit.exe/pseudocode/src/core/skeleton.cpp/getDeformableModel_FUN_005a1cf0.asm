@@ -17,8 +17,8 @@
 ;   int g_CurrentLineNumber
 ;   int g_DeformableModelCount
 ;   CDeformableModel[64] g_DeformableModelPool
-;   undefined4 DAT_03695850
-;   undefined4 DAT_0369e850
+;   undefined4 g_DeformableModelPool[0].model_filename[0]
+;   undefined4 g_DeformableModelPool[1].model_filename[0]
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -48,7 +48,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 005a1d13
     PUSH EDI                            ; 005a1d16
     MOV EDI,0x368c8a0                   ; 005a1d17 | g_DeformableModelPool
-    PUSH ESI                            ; 005a1d1c | DAT_03695850 | DAT_0369e850
+    PUSH ESI                            ; 005a1d1c | g_DeformableModelPool[0].model_filename[0] | g_DeformableModelPool[1].model_filename[0]
     ADD EDI,EAX                         ; 005a1d1d
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005a1d1f
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)

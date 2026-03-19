@@ -15,7 +15,7 @@
 ;   TerminatedCString s_Reloading_keyframed_mode_0063c5bc
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CEditorTools g_CEditorToolsInstance
-;   undefined4 DAT_02f7a02c
+;   undefined4 g_MsnEditPropertyList.properties[0].type
 ;   int g_SelectedMotionPropertyIndex
 ;   int g_MotionPropertyEditState
 ;
@@ -138,7 +138,7 @@ section .text
     RET                                 ; 0053b007
     MOV EDX,EAX                         ; 0053b008
         ;   Label: LAB_0053b008
-    SUB EDX,0x2f7a02c                   ; 0053b00a | DAT_02f7a02c
+    SUB EDX,0x2f7a02c                   ; 0053b00a | g_MsnEditPropertyList.properties[0].type
     MOV EBX,0xec                        ; 0053b010
     MOV EAX,EDX                         ; 0053b015
     SAR EDX,0x1f                        ; 0053b017

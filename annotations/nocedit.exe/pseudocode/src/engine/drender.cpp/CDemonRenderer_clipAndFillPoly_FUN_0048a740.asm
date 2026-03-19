@@ -27,7 +27,7 @@
 ;   int g_ClippedVertexCount
 ;   SRenderVertex[16] g_ClippedVertexBuffer
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   undefined4 DAT_02d052a1
+;   undefined4 g_RenderStateFlags+1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -111,7 +111,7 @@ section .text
         ;   Label: LAB_0048a7c0
     JZ 0x0048a7e1                       ; 0048a7c7
         ;   XREF to: 0048a7e1 (CONDITIONAL_JUMP)  ; LAB_0048a7e1
-    TEST byte ptr [0x02d052a1],0x2      ; 0048a7c9 | DAT_02d052a1
+    TEST byte ptr [0x02d052a1],0x2      ; 0048a7c9 | g_RenderStateFlags+1
     JZ 0x0048a809                       ; 0048a7d0
         ;   XREF to: 0048a809 (CONDITIONAL_JUMP)  ; LAB_0048a809
     PUSH ESI                            ; 0048a7d2

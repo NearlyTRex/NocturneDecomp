@@ -17,7 +17,7 @@
 ;   TerminatedCString s_Object_grounded_Hit_a_ke_0061c7a6
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; Called Functions:
@@ -64,7 +64,7 @@ section .text
     FLD float ptr [EAX + 0x162640c]     ; 00466ab2 | g_LoadedVertices
     FSTP double ptr [EBP + -0x44]       ; 00466ab8
     IMUL EAX,dword ptr [EBP + -0x4],0x14 ; 00466abb
-    FLD float ptr [EAX + 0x1626410]     ; 00466abf | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 00466abf | g_LoadedVertices[0].vertex.y
     FSTP double ptr [EBP + -0x3c]       ; 00466ac5
     IMUL EAX,dword ptr [EBP + -0x4],0x14 ; 00466ac8
     FLD float ptr [EAX + 0x1626414]     ; 00466acc | g_LoadedVertices[0].vertex.z
@@ -160,7 +160,7 @@ section .text
     FADD double ptr [EBP + -0x44]       ; 00466bb2
     FSTP double ptr [EBP + -0x44]       ; 00466bb5
     IMUL EAX,dword ptr [EBP + -0x4],0x14 ; 00466bb8
-    FLD float ptr [EAX + 0x1626410]     ; 00466bbc | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 00466bbc | g_LoadedVertices[0].vertex.y
     FADD double ptr [EBP + -0x3c]       ; 00466bc2
     FSTP double ptr [EBP + -0x3c]       ; 00466bc5
     IMUL EAX,dword ptr [EBP + -0x4],0x14 ; 00466bc8
@@ -191,13 +191,13 @@ section .text
     JGE 0x00466c39                      ; 00466c16
         ;   XREF to: 00466c39 (CONDITIONAL_JUMP)  ; LAB_00466c39
     IMUL EAX,dword ptr [EBP + -0x4],0x14 ; 00466c18
-    FLD float ptr [EAX + 0x1626410]     ; 00466c1c | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 00466c1c | g_LoadedVertices[0].vertex.y
     FSTP double ptr [EBP + -0x54]       ; 00466c22
     FLD double ptr [EBP + -0x54]        ; 00466c25
     FSUB double ptr [EBP + -0x4c]       ; 00466c28
     FSTP double ptr [EBP + -0x54]       ; 00466c2b
     FLD double ptr [EBP + -0x54]        ; 00466c2e
-    FSTP float ptr [EAX + 0x1626410]    ; 00466c31 | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 00466c31 | g_LoadedVertices[0].vertex.y
     JMP 0x00466c07                      ; 00466c37
         ;   XREF to: 00466c07 (UNCONDITIONAL_JUMP)  ; LAB_00466c07
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00466c39

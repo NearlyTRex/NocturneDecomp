@@ -13,7 +13,7 @@
 ;   shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 at 0051ec0d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01e8d474
+;   undefined4 g_TextureAtlasEntries[0].atlas_map_index
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
     MOV EBP,ESP                         ; 0046e034
     SUB ESP,0x4                         ; 0046e036
     IMUL EAX,dword ptr [EBP + 0x14],0x250 ; 0046e03c
-    MOV EAX,dword ptr [EAX + 0x1e8d474] ; 0046e043 | DAT_01e8d474
+    MOV EAX,dword ptr [EAX + 0x1e8d474] ; 0046e043 | g_TextureAtlasEntries[0].atlas_map_index
     MOV dword ptr [EBP + -0x4],EAX      ; 0046e049
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e04c
     MOV ESP,EBP                         ; 0046e04f

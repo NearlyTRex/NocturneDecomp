@@ -10,12 +10,12 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.lighting_quality_mode
-;   undefined4 DAT_0326f100
-;   undefined4 DAT_0326f104
-;   undefined4 DAT_0326f108
+;   undefined4 g_CDemonSetInstance.light_scale_factor
+;   undefined4 g_CDemonSetInstance.color_scale_factor
+;   undefined4 g_CDemonSetInstance.fog_scale_factor
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
@@ -27,7 +27,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004e53f0
         ;   Label: core_gargoyle.cpp_CGargoyle_renderOpaque_FUN_004e53f0
     MOV EAX,[0x0067d550]                ; 004e53f4 | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 004e53f9 | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 004e53f9 | g_CDemonMissionInstance.is_in_editor
     JZ 0x004e5459                       ; 004e53fd
         ;   XREF to: 004e5459 (CONDITIONAL_JUMP)  ; LAB_004e5459
     PUSH EBX                            ; 004e53ff
@@ -36,14 +36,14 @@ section .text
     MOV dword ptr [EAX + 0x15ac80],0x3  ; 004e540b | g_CDemonSetInstance.lighting_quality_mode
     MOV ECX,dword ptr [EDX + 0xbeec]    ; 004e5415
     SHL ECX,0x8                         ; 004e541b
-    MOV dword ptr [EAX + 0x15ae88],ECX  ; 004e541e | DAT_0326f100
+    MOV dword ptr [EAX + 0x15ae88],ECX  ; 004e541e | g_CDemonSetInstance.light_scale_factor
     MOV ECX,dword ptr [EDX + 0xbef0]    ; 004e5424
     SHL ECX,0x8                         ; 004e542a
-    MOV dword ptr [EAX + 0x15ae8c],ECX  ; 004e542d | DAT_0326f104
+    MOV dword ptr [EAX + 0x15ae8c],ECX  ; 004e542d | g_CDemonSetInstance.color_scale_factor
     MOV ECX,dword ptr [EDX + 0xbef4]    ; 004e5433
     SHL ECX,0x8                         ; 004e5439
     PUSH EDX                            ; 004e543c
-    MOV dword ptr [EAX + 0x15ae90],ECX  ; 004e543d | DAT_0326f108
+    MOV dword ptr [EAX + 0x15ae90],ECX  ; 004e543d | g_CDemonSetInstance.fog_scale_factor
     CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0 ; 004e5443
         ;   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter * this_ptr)
     MOV EDX,dword ptr [0x006810c8]      ; 004e5448 | g_CDemonSetPtr

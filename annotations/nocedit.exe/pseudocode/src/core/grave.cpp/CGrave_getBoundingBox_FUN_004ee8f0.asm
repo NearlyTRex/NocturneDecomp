@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
@@ -27,7 +27,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 004ee8f5
     MOV EBX,dword ptr [ESP + 0x14]      ; 004ee8f9
     MOV EDX,dword ptr [0x0067d550]      ; 004ee8fd | g_CDemonMissionInstance | g_CDemonMissionPtr
-    MOV ESI,dword ptr [EDX + 0x4]       ; 004ee903 | DAT_02f33744
+    MOV ESI,dword ptr [EDX + 0x4]       ; 004ee903 | g_CDemonMissionInstance.is_in_editor
     LEA EAX,[ECX + 0x158]               ; 004ee906
     TEST ESI,ESI                        ; 004ee90c
     JZ 0x004ee95a                       ; 004ee90e

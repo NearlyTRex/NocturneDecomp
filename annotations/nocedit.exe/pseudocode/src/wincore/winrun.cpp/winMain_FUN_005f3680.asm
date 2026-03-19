@@ -119,13 +119,13 @@ section .text
     PUSH EDI                            ; 005f3714 | g_CommandLineBuffer
     MOV AL,byte ptr [ESI]               ; 005f3715
         ;   Label: LAB_005f3715
-    MOV byte ptr [EDI],AL               ; 005f3717 | g_CommandLineBuffer | DAT_03f98ff2
+    MOV byte ptr [EDI],AL               ; 005f3717 | g_CommandLineBuffer | g_CommandLineBuffer+2
     CMP AL,0x0                          ; 005f3719
     JZ 0x005f372d                       ; 005f371b
         ;   XREF to: 005f372d (CONDITIONAL_JUMP)  ; LAB_005f372d
     MOV AL,byte ptr [ESI + 0x1]         ; 005f371d
     ADD ESI,0x2                         ; 005f3720
-    MOV byte ptr [EDI + 0x1],AL         ; 005f3723 | DAT_03f98ff1 | DAT_03f98ff3
+    MOV byte ptr [EDI + 0x1],AL         ; 005f3723 | g_CommandLineBuffer+1 | g_CommandLineBuffer+3
     ADD EDI,0x2                         ; 005f3726
     CMP AL,0x0                          ; 005f3729
     JNZ 0x005f3715                      ; 005f372b
@@ -139,9 +139,9 @@ section .text
         ;   XREF to: 005f3784 (CONDITIONAL_JUMP)  ; LAB_005f3784
     MOV ECX,dword ptr [0x03f990f0]      ; 005f373a | g_ArgCount
     SHL ECX,0x2                         ; 005f3740
-    MOV BL,byte ptr [EAX]               ; 005f3743 | g_CommandLineBuffer | DAT_03f98ff1 | DAT_03f98ff2
+    MOV BL,byte ptr [EAX]               ; 005f3743 | g_CommandLineBuffer | g_CommandLineBuffer+1 | g_CommandLineBuffer+2
         ;   Label: LAB_005f3743
-    LEA EDX,[EAX + 0x1]                 ; 005f3745 | DAT_03f98ff1
+    LEA EDX,[EAX + 0x1]                 ; 005f3745 | g_CommandLineBuffer+1
     CMP BL,0x20                         ; 005f3748
     JBE 0x005f3751                      ; 005f374b
         ;   XREF to: 005f3751 (CONDITIONAL_JUMP)  ; LAB_005f3751
@@ -151,22 +151,22 @@ section .text
     MOV EBX,dword ptr [0x03f990f0]      ; 005f3751 | g_ArgCount
         ;   Label: LAB_005f3751
     ADD ECX,0x4                         ; 005f3757
-    MOV byte ptr [EAX],0x0              ; 005f375a | g_CommandLineBuffer | DAT_03f98ff1
+    MOV byte ptr [EAX],0x0              ; 005f375a | g_CommandLineBuffer | g_CommandLineBuffer+1
     INC EBX                             ; 005f375d
     MOV dword ptr [ECX + 0x3f990f0],EDI ; 005f375e | g_ArgCount | g_CommandLineBuffer | g_ArgVector
     MOV dword ptr [0x03f990f0],EBX      ; 005f3764 | g_ArgCount
-    MOV BH,byte ptr [EDX]               ; 005f376a | DAT_03f98ff1 | DAT_03f98ff2
+    MOV BH,byte ptr [EDX]               ; 005f376a | g_CommandLineBuffer+1 | g_CommandLineBuffer+2
     MOV EAX,EDX                         ; 005f376c
     CMP BH,0x20                         ; 005f376e
     JNZ 0x005f377c                      ; 005f3771
         ;   XREF to: 005f377c (CONDITIONAL_JUMP)  ; LAB_005f377c
-    MOV DL,byte ptr [EAX + 0x1]         ; 005f3773 | DAT_03f98ff2 | DAT_03f98ff3 | DAT_03f98ff4
+    MOV DL,byte ptr [EAX + 0x1]         ; 005f3773 | g_CommandLineBuffer+2 | g_CommandLineBuffer+3 | g_CommandLineBuffer+4
         ;   Label: LAB_005f3773
-    INC EAX                             ; 005f3776 | DAT_03f98ff2
+    INC EAX                             ; 005f3776 | g_CommandLineBuffer+2
     CMP DL,0x20                         ; 005f3777
     JZ 0x005f3773                       ; 005f377a
         ;   XREF to: 005f3773 (CONDITIONAL_JUMP)  ; LAB_005f3773
-    MOV DH,byte ptr [EAX]               ; 005f377c | DAT_03f98ff1 | DAT_03f98ff2 | DAT_03f98ff3
+    MOV DH,byte ptr [EAX]               ; 005f377c | g_CommandLineBuffer+1 | g_CommandLineBuffer+2 | g_CommandLineBuffer+3
         ;   Label: LAB_005f377c
     MOV EDI,EAX                         ; 005f377e
     TEST DH,DH                          ; 005f3780

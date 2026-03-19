@@ -66,9 +66,9 @@
 ;   float FLOAT_0065e7b4 = 0.6400000
 ;   float FLOAT_0065e7b8 = 0.8200000
 ;   CQuaternion4f g_GabriellaWeaponAimRotation
-;   undefined4 DAT_02d7b7f8
-;   undefined4 DAT_02d7b7fc
-;   undefined4 DAT_02d7b800
+;   undefined4 g_GabriellaWeaponAimRotation.x
+;   undefined4 g_GabriellaWeaponAimRotation.y
+;   undefined4 g_GabriellaWeaponAimRotation.z
 ;   ... and 15 more
 ;
 ; Called Functions:
@@ -535,9 +535,9 @@ section .text
     LEA ESI,[EBP + 0xfffffeaa]          ; 004d5276
     ADD ESP,0x8                         ; 004d527c
     MOVSD ES:EDI,ESI                    ; 004d527f | g_GabriellaWeaponAimRotation
-    MOVSD ES:EDI,ESI                    ; 004d5280 | DAT_02d7b7f8
-    MOVSD ES:EDI,ESI                    ; 004d5281 | DAT_02d7b7fc
-    MOVSD ES:EDI,ESI                    ; 004d5282 | DAT_02d7b800
+    MOVSD ES:EDI,ESI                    ; 004d5280 | g_GabriellaWeaponAimRotation.x
+    MOVSD ES:EDI,ESI                    ; 004d5281 | g_GabriellaWeaponAimRotation.y
+    MOVSD ES:EDI,ESI                    ; 004d5282 | g_GabriellaWeaponAimRotation.z
     JMP 0x004d5150                      ; 004d5283
         ;   XREF to: 004d5150 (UNCONDITIONAL_JUMP)  ; LAB_004d5150
     FLD float ptr [EBP + 0x66]          ; 004d5288

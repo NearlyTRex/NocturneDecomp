@@ -11,9 +11,9 @@ void __cdecl clearScreen(void);
 // Address: 005b3ed4
 void __cdecl clearZBuffer(void);
 
-// Original: wincore_windll.cpp_clearScreen_FUN_005b3f37
+// Original: wincore_windll.cpp_clearScreenRegion_FUN_005b3f37
 // Address: 005b3f37
-void __cdecl clearScreen(int color);
+void __cdecl clearScreenRegion(int color);
 
 // Original: wincore_windll.cpp_fillDepthRegion_FUN_005b3fc2
 // Address: 005b3fc2

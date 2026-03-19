@@ -9,12 +9,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sfx_slot_d_s_pos_7_1f_7__00650b33
 ;   CSfxSlot[64] g_SfxSlots
-;   undefined4 DAT_03f5db1c
+;   undefined4 g_SfxSlots[0].sample
 ;   undefined4 g_SfxSlots[1].status
 ;   undefined4 g_SfxSlots[1].options.trigger_time
 ;   undefined4 g_SfxSlots[1].options.trigger_time+4
-;   undefined4 DAT_03f5dc40
-;   undefined4 DAT_03f5dc44
+;   undefined4 g_SfxSlots[1].playback_state
+;   undefined4 g_SfxSlots[1].sample
 ;
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
@@ -36,7 +36,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 005a9f89
     MOV EBX,0x3f5daa4                   ; 005a9f8d | g_SfxSlots
     XOR ESI,ESI                         ; 005a9f92
-    CMP dword ptr [EBX + 0x78],0x0      ; 005a9f94 | DAT_03f5db1c | DAT_03f5dc44
+    CMP dword ptr [EBX + 0x78],0x0      ; 005a9f94 | g_SfxSlots[0].sample | g_SfxSlots[1].sample
         ;   Label: LAB_005a9f94
     JNZ 0x005a9fb3                      ; 005a9f98
         ;   XREF to: 005a9fb3 (CONDITIONAL_JUMP)  ; LAB_005a9fb3
@@ -54,7 +54,7 @@ section .text
     POP ESI                             ; 005a9fb0
     POP EBX                             ; 005a9fb1
     RET                                 ; 005a9fb2
-    CMP dword ptr [EBX + 0x74],0x0      ; 005a9fb3 | DAT_03f5dc40
+    CMP dword ptr [EBX + 0x74],0x0      ; 005a9fb3 | g_SfxSlots[1].playback_state
         ;   Label: LAB_005a9fb3
     JZ 0x005a9f9a                       ; 005a9fb7
         ;   XREF to: 005a9f9a (CONDITIONAL_JUMP)  ; LAB_005a9f9a
@@ -62,7 +62,7 @@ section .text
     CALL sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0 ; 005a9fba
         ;   XREF to: 005a80e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 005a9fbf
-    MOV EAX,dword ptr [EBX + 0x78]      ; 005a9fc2 | DAT_03f5dc44
+    MOV EAX,dword ptr [EBX + 0x78]      ; 005a9fc2 | g_SfxSlots[1].sample
     SUB ESP,0x8                         ; 005a9fc5
     FILD dword ptr [EAX + 0x110]        ; 005a9fc8
     FSTP double ptr [ESP]               ; 005a9fce

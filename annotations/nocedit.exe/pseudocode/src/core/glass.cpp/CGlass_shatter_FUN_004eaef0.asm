@@ -49,8 +49,8 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_CurrentTextureDimension = 0x100
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 DAT_00f80000
-;   undefined4 DAT_00fe0000
+;   undefined4 g_LightBufferPool[11][183800]
+;   undefined4 g_LightBufferPool[12][269816]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -235,15 +235,15 @@ section .text
     CMP ECX,0x40                        ; 004eb14d
     JNZ 0x004eb204                      ; 004eb150
         ;   XREF to: 004eb204 (CONDITIONAL_JUMP)  ; LAB_004eb204
-    MOV EAX,0xf80000                    ; 004eb156 | DAT_00f80000
+    MOV EAX,0xf80000                    ; 004eb156 | g_LightBufferPool[11][183800]
     MOV EBP,0x80000                     ; 004eb15b
-    MOV dword ptr [ESP + 0x40],EAX      ; 004eb160 | DAT_00f80000
+    MOV dword ptr [ESP + 0x40],EAX      ; 004eb160 | g_LightBufferPool[11][183800]
     MOV dword ptr [ESP + 0x34],EBP      ; 004eb164
     MOV dword ptr [ESP + 0x44],EBP      ; 004eb168
-    MOV dword ptr [ESP + 0x38],EAX      ; 004eb16c | DAT_00f80000
+    MOV dword ptr [ESP + 0x38],EAX      ; 004eb16c | g_LightBufferPool[11][183800]
     MOV dword ptr [ESP + 0x48],EBP      ; 004eb170
-    MOV dword ptr [ESP + 0x3c],EAX      ; 004eb174 | DAT_00f80000
-    MOV dword ptr [ESP + 0x4c],EAX      ; 004eb178 | DAT_00f80000
+    MOV dword ptr [ESP + 0x3c],EAX      ; 004eb174 | g_LightBufferPool[11][183800]
+    MOV dword ptr [ESP + 0x4c],EAX      ; 004eb178 | g_LightBufferPool[11][183800]
     MOV dword ptr [ESP + 0x30],EBP      ; 004eb17c
     PUSH 0x0                            ; 004eb180
         ;   Label: LAB_004eb180
@@ -300,16 +300,16 @@ section .text
     ADD ESP,0x4                         ; 004eb1fc
     JMP 0x004eaf26                      ; 004eb1ff
         ;   XREF to: 004eaf26 (UNCONDITIONAL_JUMP)  ; LAB_004eaf26
-    MOV EDI,0xfe0000                    ; 004eb204 | DAT_00fe0000
+    MOV EDI,0xfe0000                    ; 004eb204 | g_LightBufferPool[12][269816]
         ;   Label: LAB_004eb204
     MOV ESI,0x20000                     ; 004eb209
-    MOV dword ptr [ESP + 0x40],EDI      ; 004eb20e | DAT_00fe0000
+    MOV dword ptr [ESP + 0x40],EDI      ; 004eb20e | g_LightBufferPool[12][269816]
     MOV dword ptr [ESP + 0x34],ESI      ; 004eb212
     MOV dword ptr [ESP + 0x44],ESI      ; 004eb216
-    MOV dword ptr [ESP + 0x38],EDI      ; 004eb21a | DAT_00fe0000
+    MOV dword ptr [ESP + 0x38],EDI      ; 004eb21a | g_LightBufferPool[12][269816]
     MOV dword ptr [ESP + 0x48],ESI      ; 004eb21e
-    MOV dword ptr [ESP + 0x3c],EDI      ; 004eb222 | DAT_00fe0000
-    MOV dword ptr [ESP + 0x4c],EDI      ; 004eb226 | DAT_00fe0000
+    MOV dword ptr [ESP + 0x3c],EDI      ; 004eb222 | g_LightBufferPool[12][269816]
+    MOV dword ptr [ESP + 0x4c],EDI      ; 004eb226 | g_LightBufferPool[12][269816]
     MOV dword ptr [ESP + 0x30],ESI      ; 004eb22a
     JMP 0x004eb180                      ; 004eb22e
         ;   XREF to: 004eb180 (UNCONDITIONAL_JUMP)  ; LAB_004eb180

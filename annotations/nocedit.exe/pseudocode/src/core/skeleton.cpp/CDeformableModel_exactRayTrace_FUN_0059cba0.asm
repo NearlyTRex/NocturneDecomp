@@ -33,11 +33,11 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CVector3f[5000] g_FloatVertexArray
-;   undefined4 DAT_03675180
-;   undefined4 DAT_03675184
-;   undefined4 DAT_03675188
-;   undefined4 DAT_0367518c
-;   undefined4 DAT_03675190
+;   undefined4 g_FloatVertexArray[0].y
+;   undefined4 g_FloatVertexArray[0].z
+;   undefined4 g_FloatVertexArray[1].x
+;   undefined4 g_FloatVertexArray[1].y
+;   undefined4 g_FloatVertexArray[1].z
 ;   uchar g_FloatVertexArrayInitialized
 ;   int g_DeformableModelRayHitPartIndex
 ;   CVector3f g_DeformableModelRayHitNormal
@@ -98,13 +98,13 @@ section .text
     MOV EBX,ECX                         ; 0059cc10
     FILD dword ptr [EAX]                ; 0059cc12
     FMUL float ptr [0x00662ea0]         ; 0059cc14 | FLOAT_00662ea0
-    FSTP float ptr [EBX]                ; 0059cc1a | g_FloatVertexArray | DAT_03675188
+    FSTP float ptr [EBX]                ; 0059cc1a | g_FloatVertexArray | g_FloatVertexArray[1].x
     FILD dword ptr [EAX + 0x4]          ; 0059cc1c
     FMUL float ptr [0x00662ea0]         ; 0059cc1f | FLOAT_00662ea0
-    FSTP float ptr [EBX + 0x4]          ; 0059cc25 | DAT_03675180 | DAT_0367518c
+    FSTP float ptr [EBX + 0x4]          ; 0059cc25 | g_FloatVertexArray[0].y | g_FloatVertexArray[1].y
     FILD dword ptr [EAX + 0x8]          ; 0059cc28
     FMUL float ptr [0x00662ea0]         ; 0059cc2b | FLOAT_00662ea0
-    FSTP float ptr [EBX + 0x8]          ; 0059cc31 | DAT_03675184 | DAT_03675190
+    FSTP float ptr [EBX + 0x8]          ; 0059cc31 | g_FloatVertexArray[0].z | g_FloatVertexArray[1].z
     INC ESI                             ; 0059cc34
     ADD ECX,0xc                         ; 0059cc35
     MOV EAX,dword ptr [EDI + 0x2c]      ; 0059cc38

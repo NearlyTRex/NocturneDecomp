@@ -67,9 +67,9 @@
 ;   double DOUBLE_006204bb = 6.27445866074028
 ;   double DOUBLE_006204c3 = 6.29191195325972
 ;   int[3] g_TriangleMatchTableA
-;   undefined4 DAT_006700f4
+;   undefined4 g_TriangleMatchTableA[1]
 ;   int[3] g_TriangleMatchTableB
-;   undefined4 DAT_00670100
+;   undefined4 g_TriangleMatchTableB[1]
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
@@ -423,9 +423,9 @@ section .text
     JNZ 0x0047ba77                      ; 0047b66d
         ;   XREF to: 0047ba77 (CONDITIONAL_JUMP)  ; LAB_0047ba77
     MOV EAX,dword ptr [ESP + 0xe4]      ; 0047b673
-    IMUL ESI,dword ptr [EAX + 0x6700f0],0xc ; 0047b67a | g_TriangleMatchTableA | DAT_006700f4
+    IMUL ESI,dword ptr [EAX + 0x6700f0],0xc ; 0047b67a | g_TriangleMatchTableA | g_TriangleMatchTableA[1]
     MOV EAX,dword ptr [ESP + 0xdc]      ; 0047b681
-    MOV EDI,dword ptr [EDX + 0x6700fc]  ; 0047b688 | g_TriangleMatchTableB | DAT_00670100
+    MOV EDI,dword ptr [EDX + 0x6700fc]  ; 0047b688 | g_TriangleMatchTableB | g_TriangleMatchTableB[1]
     ADD EAX,ESI                         ; 0047b68e
     IMUL ESI,EDI,0xc                    ; 0047b690
     MOV EDI,dword ptr [ESP + 0xe8]      ; 0047b693

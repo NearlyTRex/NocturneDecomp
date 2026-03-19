@@ -145,7 +145,7 @@ section .text
     JGE 0x0042d9ea                      ; 0042d6aa
         ;   XREF to: 0042d9ea (CONDITIONAL_JUMP)  ; LAB_0042d9ea
     ADD EAX,dword ptr [ESP + 0xe8]      ; 0042d6b0
-    MOV EBX,dword ptr [EAX + 0x14f09c]  ; 0042d6b7 | g_CDemonSetInstance.characters[0] | DAT_03263318
+    MOV EBX,dword ptr [EAX + 0x14f09c]  ; 0042d6b7 | g_CDemonSetInstance.characters[0] | g_CDemonSetInstance.characters[1]
     CMP EBX,ESI                         ; 0042d6bd
     JNZ 0x0042d6d5                      ; 0042d6bf
         ;   XREF to: 0042d6d5 (CONDITIONAL_JUMP)  ; LAB_0042d6d5

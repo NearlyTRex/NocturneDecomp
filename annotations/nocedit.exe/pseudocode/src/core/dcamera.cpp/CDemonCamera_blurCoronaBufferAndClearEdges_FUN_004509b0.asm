@@ -11,13 +11,13 @@
 ;
 ; Referenced Globals:
 ;   char[241][320] g_CoronaBlurOutputBuffer
-;   undefined4 DAT_00ba8db8
-;   undefined4 DAT_00bbb9b7
+;   undefined4 g_CoronaBlurOutputBuffer[1][0]
+;   undefined4 g_CoronaBlurOutputBuffer[240][319]
 ;   char[241][320] g_CoronaBlurWorkBuffer
-;   undefined4 DAT_00bbb9b9
-;   undefined4 DAT_00bbbaf7
-;   undefined4 DAT_00bbbaf8
-;   undefined4 DAT_00bbbc38
+;   undefined4 g_CoronaBlurWorkBuffer[0][1]
+;   undefined4 g_CoronaBlurWorkBuffer[0][319]
+;   undefined4 g_CoronaBlurWorkBuffer[1][0]
+;   undefined4 g_CoronaBlurWorkBuffer[2][0]
 ;
 ; Called Functions:
 ;   core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042
@@ -39,7 +39,7 @@ section .text
     ADD EAX,0x140                       ; 004509ca
         ;   Label: LAB_004509ca
     ADD EBP,0x140                       ; 004509cf
-    MOV dword ptr [ESP],EAX             ; 004509d5 | DAT_00bbbaf8 | DAT_00bbbc38
+    MOV dword ptr [ESP],EAX             ; 004509d5 | g_CoronaBlurWorkBuffer[1][0] | g_CoronaBlurWorkBuffer[2][0]
     MOV EAX,dword ptr [ESI + 0x154]     ; 004509d8
     DEC EAX                             ; 004509de
     CMP EDI,EAX                         ; 004509df
@@ -53,9 +53,9 @@ section .text
     XOR EAX,EAX                         ; 004509f3
     XOR BL,BL                           ; 004509f5
         ;   Label: LAB_004509f5
-    MOV byte ptr [EAX + 0xbbb9b8],BL    ; 004509f7 | g_CoronaBlurWorkBuffer | DAT_00bbbaf8
+    MOV byte ptr [EAX + 0xbbb9b8],BL    ; 004509f7 | g_CoronaBlurWorkBuffer | g_CoronaBlurWorkBuffer[1][0]
     MOV EDI,dword ptr [ESI + 0x150]     ; 004509fd
-    MOV byte ptr [EDI + EAX*0x1 + 0xbbb9b7],BL ; 00450a03 | DAT_00bbb9b7 | DAT_00bbbaf7
+    MOV byte ptr [EDI + EAX*0x1 + 0xbbb9b7],BL ; 00450a03 | g_CoronaBlurOutputBuffer[240][319] | g_CoronaBlurWorkBuffer[0][319]
     INC EDX                             ; 00450a0a
     MOV ECX,dword ptr [ESI + 0x154]     ; 00450a0b
     ADD EAX,0x140                       ; 00450a11
@@ -71,11 +71,11 @@ section .text
         ;   XREF to: 00450a60 (CONDITIONAL_JUMP)  ; LAB_00450a60
     XOR CL,CL                           ; 00450a2c
         ;   Label: LAB_00450a2c
-    MOV byte ptr [EAX + 0xbbb9b8],CL    ; 00450a2e | g_CoronaBlurWorkBuffer | DAT_00bbb9b9
+    MOV byte ptr [EAX + 0xbbb9b8],CL    ; 00450a2e | g_CoronaBlurWorkBuffer | g_CoronaBlurWorkBuffer[0][1]
     MOV EDX,dword ptr [ESI + 0x154]     ; 00450a34
     DEC EDX                             ; 00450a3a
     IMUL EDX,EDX,0x140                  ; 00450a3b
-    MOV byte ptr [EDX + EAX*0x1 + 0xbbb9b8],CL ; 00450a41 | g_CoronaBlurWorkBuffer | DAT_00bbb9b9
+    MOV byte ptr [EDX + EAX*0x1 + 0xbbb9b8],CL ; 00450a41 | g_CoronaBlurWorkBuffer | g_CoronaBlurWorkBuffer[0][1]
     INC EAX                             ; 00450a48
     CMP EAX,dword ptr [ESI + 0x150]     ; 00450a49
     JL 0x00450a2c                       ; 00450a4f
@@ -93,9 +93,9 @@ section .text
     MOV EAX,dword ptr [ESI + 0x150]     ; 00450a68
         ;   Label: LAB_00450a68
     PUSH EAX                            ; 00450a6e
-    PUSH EBP                            ; 00450a6f | DAT_00ba8db8
-    MOV EBX,dword ptr [ESP + 0x8]       ; 00450a70 | DAT_00bbbaf8
-    PUSH EBX                            ; 00450a74 | DAT_00bbbaf8
+    PUSH EBP                            ; 00450a6f | g_CoronaBlurOutputBuffer[1][0]
+    MOV EBX,dword ptr [ESP + 0x8]       ; 00450a70 | g_CoronaBlurWorkBuffer[1][0]
+    PUSH EBX                            ; 00450a74 | g_CoronaBlurWorkBuffer[1][0]
     CALL core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042 ; 00450a75
         ;   XREF to: 00492042 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042(ulonglong * output_buffer, ulonglong * input_buffer, int pixel_count)
     ADD ESP,0xc                         ; 00450a7a

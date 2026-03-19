@@ -20,7 +20,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -45,7 +45,7 @@ section .text
     SUB ESP,0x30                        ; 0046fb73
     MOV EBX,dword ptr [ESP + 0x40]      ; 0046fb76
     MOV EAX,[0x0067d550]                ; 0046fb7a | g_CDemonMissionInstance | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 0046fb7f | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 0046fb7f | g_CDemonMissionInstance.is_in_editor
     JNZ 0x0046fb8e                      ; 0046fb83
         ;   XREF to: 0046fb8e (CONDITIONAL_JUMP)  ; LAB_0046fb8e
     XOR EAX,EAX                         ; 0046fb85

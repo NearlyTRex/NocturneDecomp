@@ -10,7 +10,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 g_SfxSlots[0].field7_0x74
-;   undefined4 DAT_03f5dc40
+;   undefined4 g_SfxSlots[1].playback_state
 ;   undefined4 g_SfxSlots[2].field_116
 ;   int g_SoundLockCount
 ;
@@ -39,7 +39,7 @@ section .text
     CMP EAX,0x4a00                      ; 005a43be
     JGE 0x005a43f9                      ; 005a43c3
         ;   XREF to: 005a43f9 (CONDITIONAL_JUMP)  ; LAB_005a43f9
-    CMP dword ptr [EAX + 0x3f5db18],0x0 ; 005a43c5 | DAT_03f5dc40 | g_SfxSlots[2].field_116
+    CMP dword ptr [EAX + 0x3f5db18],0x0 ; 005a43c5 | g_SfxSlots[1].playback_state | g_SfxSlots[2].field_116
     JNZ 0x005a43b8                      ; 005a43cc
         ;   XREF to: 005a43b8 (CONDITIONAL_JUMP)  ; LAB_005a43b8
     MOV EAX,EDX                         ; 005a43ce

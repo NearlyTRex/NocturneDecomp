@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   int g_WindowHeight = 0xc8
 ;   char[4096] g_CameraLookupTable
-;   undefined4 DAT_013d9759
+;   undefined4 g_CameraLookupTable+1
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_004529a0
@@ -72,7 +72,7 @@ section .text
     SAR EAX,0x2                         ; 0044c158
     INC EBX                             ; 0044c15b
     ADD ECX,ESI                         ; 0044c15c
-    MOV byte ptr [EBX + 0x13d9757],AL   ; 0044c15e | g_CameraLookupTable | DAT_013d9759
+    MOV byte ptr [EBX + 0x13d9757],AL   ; 0044c15e | g_CameraLookupTable | g_CameraLookupTable+1
     CMP EBX,EDI                         ; 0044c164
     JNZ 0x0044c13f                      ; 0044c166
         ;   XREF to: 0044c13f (CONDITIONAL_JUMP)  ; LAB_0044c13f

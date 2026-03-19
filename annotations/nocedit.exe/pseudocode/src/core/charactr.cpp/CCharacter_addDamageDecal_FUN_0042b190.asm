@@ -36,14 +36,14 @@
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_03261388
-;   undefined4 DAT_0326138c
-;   undefined4 DAT_03261390
-;   undefined4 DAT_03261394
-;   undefined4 DAT_03261398
-;   undefined4 DAT_0326139c
-;   undefined4 DAT_032613c0
-;   undefined4 DAT_032613c4
+;   undefined4 g_CDemonSetInstance.ray_origin.x
+;   undefined4 g_CDemonSetInstance.ray_origin.y
+;   undefined4 g_CDemonSetInstance.ray_origin.z
+;   undefined4 g_CDemonSetInstance.ray_target.x
+;   undefined4 g_CDemonSetInstance.ray_target.y
+;   undefined4 g_CDemonSetInstance.ray_target.z
+;   undefined4 g_CDemonSetInstance.collision_part_index
+;   undefined4 g_CDemonSetInstance.collision_triangle_index
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10
@@ -66,7 +66,7 @@ section .text
     JGE 0x0042b566                      ; 0042b1ab
         ;   XREF to: 0042b566 (CONDITIONAL_JUMP)  ; LAB_0042b566
     MOV ECX,dword ptr [0x006810c8]      ; 0042b1b1 | g_CDemonSetPtr | g_CDemonSetInstance
-    CMP dword ptr [ECX + 0x14d148],0x0  ; 0042b1b7 | DAT_032613c0
+    CMP dword ptr [ECX + 0x14d148],0x0  ; 0042b1b7 | g_CDemonSetInstance.collision_part_index
     JL 0x0042b566                       ; 0042b1be
         ;   XREF to: 0042b566 (CONDITIONAL_JUMP)  ; LAB_0042b566
     LEA EAX,[EDX*0x8 + 0x0]             ; 0042b1c4
@@ -78,9 +78,9 @@ section .text
     LEA EDX,[EBX + 0x2df8]              ; 0042b1d9
     MOV dword ptr [EBX + 0x2df4],EDI    ; 0042b1df
     ADD EDX,EAX                         ; 0042b1e5
-    MOV EAX,dword ptr [ECX + 0x14d148]  ; 0042b1e7 | DAT_032613c0
+    MOV EAX,dword ptr [ECX + 0x14d148]  ; 0042b1e7 | g_CDemonSetInstance.collision_part_index
     MOV dword ptr [EDX],EAX             ; 0042b1ed
-    MOV EAX,dword ptr [ECX + 0x14d14c]  ; 0042b1ef | DAT_032613c4
+    MOV EAX,dword ptr [ECX + 0x14d14c]  ; 0042b1ef | g_CDemonSetInstance.collision_triangle_index
     MOV dword ptr [ESP + 0x2d8],EDX     ; 0042b1f5
     MOV dword ptr [EDX + 0x4],EAX       ; 0042b1fc
     TEST EAX,EAX                        ; 0042b1ff
@@ -88,16 +88,16 @@ section .text
         ;   XREF to: 0042b56d (CONDITIONAL_JUMP)  ; LAB_0042b56d
     MOV EDX,dword ptr [0x006810c8]      ; 0042b207 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_0042b207
-    LEA EAX,[EDX + 0x14d11c]            ; 0042b20d | DAT_03261394
-    FLD float ptr [EAX]                 ; 0042b213 | DAT_03261394
-    FSUB float ptr [EDX + 0x14d110]     ; 0042b215 | DAT_03261388
+    LEA EAX,[EDX + 0x14d11c]            ; 0042b20d | g_CDemonSetInstance.ray_target.x
+    FLD float ptr [EAX]                 ; 0042b213 | g_CDemonSetInstance.ray_target.x
+    FSUB float ptr [EDX + 0x14d110]     ; 0042b215 | g_CDemonSetInstance.ray_origin.x
     FSTP float ptr [ESP + 0x2a4]        ; 0042b21b
-    FLD float ptr [EAX + 0x4]           ; 0042b222 | DAT_03261398
-    FSUB float ptr [EDX + 0x14d114]     ; 0042b225 | DAT_0326138c
+    FLD float ptr [EAX + 0x4]           ; 0042b222 | g_CDemonSetInstance.ray_target.y
+    FSUB float ptr [EDX + 0x14d114]     ; 0042b225 | g_CDemonSetInstance.ray_origin.y
     FSTP float ptr [ESP + 0x2a8]        ; 0042b22b
-    FLD float ptr [EAX + 0x8]           ; 0042b232 | DAT_0326139c
+    FLD float ptr [EAX + 0x8]           ; 0042b232 | g_CDemonSetInstance.ray_target.z
     MOV EAX,dword ptr [ESP + 0x2a4]     ; 0042b235
-    FSUB float ptr [EDX + 0x14d118]     ; 0042b23c | DAT_03261390
+    FSUB float ptr [EDX + 0x14d118]     ; 0042b23c | g_CDemonSetInstance.ray_origin.z
     MOV dword ptr [ESP + 0x2bc],EAX     ; 0042b242
     MOV EAX,dword ptr [ESP + 0x2a8]     ; 0042b249
     MOV dword ptr [ESP + 0x2c0],EAX     ; 0042b250

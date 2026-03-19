@@ -450,7 +450,7 @@ section .text
     ADD EDX,ESI                         ; 00577f78
     MOV EBP,dword ptr [ESP + 0x6c]      ; 00577f7a
     INC EDX                             ; 00577f7e
-    MOV EAX,dword ptr [EBX + 0x3365cc0] ; 00577f7f | g_ThumbnailImageBuffer | DAT_03365cc4 | DAT_03365dc0
+    MOV EAX,dword ptr [EBX + 0x3365cc0] ; 00577f7f | g_ThumbnailImageBuffer | g_ThumbnailImageBuffer[0][1] | g_ThumbnailImageBuffer[0][64]
         ;   Label: LAB_00577f7f
     MOV EDI,EAX                         ; 00577f85
     MOV ESI,EAX                         ; 00577f87
@@ -508,7 +508,7 @@ section .text
     ADD EAX,EBP                         ; 00578046
     MOV EDI,dword ptr [ESP + 0x78]      ; 00578048
     LEA ESI,[EAX + 0x2]                 ; 0057804c
-    MOV EAX,dword ptr [EBX + 0x3365cc0] ; 0057804f | g_ThumbnailImageBuffer | DAT_03365cc4 | DAT_03365dc0
+    MOV EAX,dword ptr [EBX + 0x3365cc0] ; 0057804f | g_ThumbnailImageBuffer | g_ThumbnailImageBuffer[0][1] | g_ThumbnailImageBuffer[0][64]
         ;   Label: LAB_0057804f
     MOV ECX,EAX                         ; 00578055
     MOV EDX,EAX                         ; 00578057
@@ -562,7 +562,7 @@ section .text
     ADD EAX,EDX                         ; 00578102
     MOV EDI,dword ptr [ESP + 0x70]      ; 00578104
     LEA ESI,[EAX + 0x4]                 ; 00578108
-    MOV EAX,dword ptr [EBX + 0x3365cc0] ; 0057810b | g_ThumbnailImageBuffer | DAT_03365cc4 | DAT_03365dc0
+    MOV EAX,dword ptr [EBX + 0x3365cc0] ; 0057810b | g_ThumbnailImageBuffer | g_ThumbnailImageBuffer[0][1] | g_ThumbnailImageBuffer[0][64]
         ;   Label: LAB_0057810b
     MOV EDX,EAX                         ; 00578111
     MOV ECX,EAX                         ; 00578113

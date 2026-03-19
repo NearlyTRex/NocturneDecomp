@@ -91,7 +91,7 @@ section .text
     JNZ 0x004ca140                      ; 004ca127
         ;   XREF to: 004ca140 (CONDITIONAL_JUMP)  ; LAB_004ca140
     MOV EAX,[0x0067d550]                ; 004ca129 | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 004ca12e | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 004ca12e | g_CDemonMissionInstance.is_in_editor
     JNZ 0x004ca140                      ; 004ca132
         ;   XREF to: 004ca140 (CONDITIONAL_JUMP)  ; LAB_004ca140
     XOR EAX,EAX                         ; 004ca134
@@ -111,10 +111,10 @@ section .text
     JNZ 0x004ca134                      ; 004ca151
         ;   XREF to: 004ca134 (CONDITIONAL_JUMP)  ; LAB_004ca134
     MOV EAX,[0x0067d550]                ; 004ca153 | g_CDemonMissionPtr
-    CMP dword ptr [EAX + 0x4],0x0       ; 004ca158 | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 004ca158 | g_CDemonMissionInstance.is_in_editor
     JZ 0x004ca174                       ; 004ca15c
         ;   XREF to: 004ca174 (CONDITIONAL_JUMP)  ; LAB_004ca174
-    MOV EDI,dword ptr [EAX + 0x28]      ; 004ca15e | DAT_02f33768
+    MOV EDI,dword ptr [EAX + 0x28]      ; 004ca15e | g_CDemonMissionInstance.selected_actor
     CMP EBP,EDI                         ; 004ca161
     JNZ 0x004ca174                      ; 004ca163
         ;   XREF to: 004ca174 (CONDITIONAL_JUMP)  ; LAB_004ca174
@@ -390,7 +390,7 @@ section .text
     CMP dword ptr [EBP + 0x294],0x0     ; 004ca51d
     JNZ 0x004caa37                      ; 004ca524
         ;   XREF to: 004caa37 (CONDITIONAL_JUMP)  ; LAB_004caa37
-    MOV EBX,0xf80000                    ; 004ca52a | DAT_00f80000
+    MOV EBX,0xf80000                    ; 004ca52a | g_LightBufferPool[11][183800]
     MOV ECX,0x80000                     ; 004ca52f
     MOV dword ptr [0x00688030],EBX      ; 004ca534 | g_RenderVertexBuffer[0].v
     MOV dword ptr [0x0068805c],ECX      ; 004ca53a | g_RenderVertexBuffer[1].u
@@ -520,7 +520,7 @@ section .text
         ;   XREF to: 004ca2b7 (CONDITIONAL_JUMP)  ; LAB_004ca2b7
     JMP 0x004ca2c2                      ; 004caa32
         ;   XREF to: 004ca2c2 (UNCONDITIONAL_JUMP)  ; LAB_004ca2c2
-    MOV ECX,0xf80000                    ; 004caa37 | DAT_00f80000
+    MOV ECX,0xf80000                    ; 004caa37 | g_LightBufferPool[11][183800]
         ;   Label: LAB_004caa37
     MOV EDX,0x80000                     ; 004caa3c
     MOV dword ptr [0x00688030],ECX      ; 004caa41 | g_RenderVertexBuffer[0].v

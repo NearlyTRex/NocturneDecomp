@@ -20,7 +20,7 @@
 ;   undefined4 g_RenderVertexBuffer[2].v
 ;   undefined4 g_RenderVertexBuffer[3].u
 ;   undefined4 g_RenderVertexBuffer[3].v
-;   undefined4 DAT_00f80000
+;   undefined4 g_LightBufferPool[11][183800]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   undefined4 g_GoreQuadPrimitive.base.base.count
 ;   undefined4 g_GoreQuadPrimitive.base.surface_normal.A
@@ -45,7 +45,7 @@ section .text
     MOV ESI,0x2                         ; 004ecc4e
     MOV EDI,0x3                         ; 004ecc53
     MOV EBP,0x80000                     ; 004ecc58
-    MOV EAX,0xf80000                    ; 004ecc5d | DAT_00f80000
+    MOV EAX,0xf80000                    ; 004ecc5d | g_LightBufferPool[11][183800]
     XOR ECX,ECX                         ; 004ecc62
     MOV dword ptr [0x02d8336c],EDX      ; 004ecc64 | g_GoreQuadPrimitive.base.base.count
     MOV dword ptr [0x02d83380],ECX      ; 004ecc6a | g_GoreQuadPrimitive.vertices[0]

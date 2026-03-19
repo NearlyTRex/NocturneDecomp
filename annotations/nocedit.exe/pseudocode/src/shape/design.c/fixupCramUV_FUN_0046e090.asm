@@ -31,12 +31,12 @@
 ;   double DOUBLE_0061de56 = 255.999741000000
 ;   double DOUBLE_0061de5e = 255.999741000000
 ;   STextureAtlasEntry[250] g_TextureAtlasEntries
-;   undefined4 DAT_01e8d478
-;   undefined4 DAT_01e8d48c
-;   undefined4 DAT_01e8d490
-;   undefined4 DAT_01e8d494
-;   undefined4 DAT_01e8d498
-;   undefined4 DAT_01e8d4a4
+;   undefined4 g_TextureAtlasEntries[0].rotation_flag
+;   undefined4 g_TextureAtlasEntries[0].packed_offset_x
+;   undefined4 g_TextureAtlasEntries[0].packed_offset_y
+;   undefined4 g_TextureAtlasEntries[0].packed_width
+;   undefined4 g_TextureAtlasEntries[0].packed_height
+;   undefined4 g_TextureAtlasEntries[0].min_u
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -67,88 +67,88 @@ section .text
     FMUL double ptr [0x0061ddfe]        ; 0046e0c0 | DOUBLE_0061ddfe
     FSTP double ptr [EBP + -0xc]        ; 0046e0c6
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e0c9
-    FILD dword ptr [EAX + 0x240]        ; 0046e0cc | DAT_01e8d4a4
+    FILD dword ptr [EAX + 0x240]        ; 0046e0cc | g_TextureAtlasEntries[0].min_u
     FCOMP double ptr [EBP + -0x14]      ; 0046e0d2
     FNSTSW AX                           ; 0046e0d5
     SAHF                                ; 0046e0d7
     JBE 0x0046e0e6                      ; 0046e0d8
         ;   XREF to: 0046e0e6 (CONDITIONAL_JUMP)  ; LAB_0046e0e6
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e0da
-    FILD dword ptr [EAX + 0x240]        ; 0046e0dd | DAT_01e8d4a4
+    FILD dword ptr [EAX + 0x240]        ; 0046e0dd | g_TextureAtlasEntries[0].min_u
     FSTP double ptr [EBP + -0x14]       ; 0046e0e3
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e0e6
         ;   Label: LAB_0046e0e6
-    FILD dword ptr [EAX + 0x248]        ; 0046e0e9 | DAT_01e8d4ac
+    FILD dword ptr [EAX + 0x248]        ; 0046e0e9 | g_TextureAtlasEntries[0].max_u
     FCOMP double ptr [EBP + -0x14]      ; 0046e0ef
     FNSTSW AX                           ; 0046e0f2
     SAHF                                ; 0046e0f4
     JNC 0x0046e103                      ; 0046e0f5
         ;   XREF to: 0046e103 (CONDITIONAL_JUMP)  ; LAB_0046e103
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e0f7
-    FILD dword ptr [EAX + 0x248]        ; 0046e0fa | DAT_01e8d4ac
+    FILD dword ptr [EAX + 0x248]        ; 0046e0fa | g_TextureAtlasEntries[0].max_u
     FSTP double ptr [EBP + -0x14]       ; 0046e100
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e103
         ;   Label: LAB_0046e103
-    FILD dword ptr [EAX + 0x244]        ; 0046e106 | DAT_01e8d4a8
+    FILD dword ptr [EAX + 0x244]        ; 0046e106 | g_TextureAtlasEntries[0].min_v
     FCOMP double ptr [EBP + -0xc]       ; 0046e10c
     FNSTSW AX                           ; 0046e10f
     SAHF                                ; 0046e111
     JBE 0x0046e120                      ; 0046e112
         ;   XREF to: 0046e120 (CONDITIONAL_JUMP)  ; LAB_0046e120
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e114
-    FILD dword ptr [EAX + 0x244]        ; 0046e117 | DAT_01e8d4a8
+    FILD dword ptr [EAX + 0x244]        ; 0046e117 | g_TextureAtlasEntries[0].min_v
     FSTP double ptr [EBP + -0xc]        ; 0046e11d
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e120
         ;   Label: LAB_0046e120
-    FILD dword ptr [EAX + 0x24c]        ; 0046e123 | DAT_01e8d4b0
+    FILD dword ptr [EAX + 0x24c]        ; 0046e123 | g_TextureAtlasEntries[0].max_v
     FCOMP double ptr [EBP + -0xc]       ; 0046e129
     FNSTSW AX                           ; 0046e12c
     SAHF                                ; 0046e12e
     JNC 0x0046e13d                      ; 0046e12f
         ;   XREF to: 0046e13d (CONDITIONAL_JUMP)  ; LAB_0046e13d
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e131
-    FILD dword ptr [EAX + 0x24c]        ; 0046e134 | DAT_01e8d4b0
+    FILD dword ptr [EAX + 0x24c]        ; 0046e134 | g_TextureAtlasEntries[0].max_v
     FSTP double ptr [EBP + -0xc]        ; 0046e13a
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e13d
         ;   Label: LAB_0046e13d
-    MOV EAX,dword ptr [EAX + 0x248]     ; 0046e140 | DAT_01e8d4ac
+    MOV EAX,dword ptr [EAX + 0x248]     ; 0046e140 | g_TextureAtlasEntries[0].max_u
     MOV EDX,dword ptr [EBP + -0x4]      ; 0046e146
-    SUB EAX,dword ptr [EDX + 0x240]     ; 0046e149 | DAT_01e8d4a4
+    SUB EAX,dword ptr [EDX + 0x240]     ; 0046e149 | g_TextureAtlasEntries[0].min_u
     MOV dword ptr [EBP + -0x18],EAX     ; 0046e14f
     FILD dword ptr [EBP + -0x18]        ; 0046e152
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e155
-    FILD dword ptr [EAX + 0x240]        ; 0046e158 | DAT_01e8d4a4
+    FILD dword ptr [EAX + 0x240]        ; 0046e158 | g_TextureAtlasEntries[0].min_u
     FSUBR double ptr [EBP + -0x14]      ; 0046e15e
     FDIVRP                              ; 0046e161
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e163
-    FILD dword ptr [EAX + 0x230]        ; 0046e166 | DAT_01e8d494
+    FILD dword ptr [EAX + 0x230]        ; 0046e166 | g_TextureAtlasEntries[0].packed_width
     FMULP                               ; 0046e16c
     FSTP double ptr [EBP + -0x14]       ; 0046e16e
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e171
-    MOV EAX,dword ptr [EAX + 0x24c]     ; 0046e174 | DAT_01e8d4b0
+    MOV EAX,dword ptr [EAX + 0x24c]     ; 0046e174 | g_TextureAtlasEntries[0].max_v
     MOV EDX,dword ptr [EBP + -0x4]      ; 0046e17a
-    SUB EAX,dword ptr [EDX + 0x244]     ; 0046e17d | DAT_01e8d4a8
+    SUB EAX,dword ptr [EDX + 0x244]     ; 0046e17d | g_TextureAtlasEntries[0].min_v
     MOV dword ptr [EBP + -0x18],EAX     ; 0046e183
     FILD dword ptr [EBP + -0x18]        ; 0046e186
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e189
-    FILD dword ptr [EAX + 0x244]        ; 0046e18c | DAT_01e8d4a8
+    FILD dword ptr [EAX + 0x244]        ; 0046e18c | g_TextureAtlasEntries[0].min_v
     FSUBR double ptr [EBP + -0xc]       ; 0046e192
     FDIVRP                              ; 0046e195
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e197
-    FILD dword ptr [EAX + 0x234]        ; 0046e19a | DAT_01e8d498
+    FILD dword ptr [EAX + 0x234]        ; 0046e19a | g_TextureAtlasEntries[0].packed_height
     FMULP                               ; 0046e1a0
     FSTP double ptr [EBP + -0xc]        ; 0046e1a2
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e1a5
-    CMP dword ptr [EAX + 0x214],0x0     ; 0046e1a8 | DAT_01e8d478
+    CMP dword ptr [EAX + 0x214],0x0     ; 0046e1a8 | g_TextureAtlasEntries[0].rotation_flag
     JNZ 0x0046e1d5                      ; 0046e1af
         ;   XREF to: 0046e1d5 (CONDITIONAL_JUMP)  ; LAB_0046e1d5
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e1b1
-    FILD dword ptr [EAX + 0x228]        ; 0046e1b4 | DAT_01e8d48c
+    FILD dword ptr [EAX + 0x228]        ; 0046e1b4 | g_TextureAtlasEntries[0].packed_offset_x
     FADD double ptr [EBP + -0x14]       ; 0046e1ba
     MOV EAX,dword ptr [EBP + 0x18]      ; 0046e1bd
     FSTP float ptr [EAX]                ; 0046e1c0
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e1c2
-    FILD dword ptr [EAX + 0x22c]        ; 0046e1c5 | DAT_01e8d490
+    FILD dword ptr [EAX + 0x22c]        ; 0046e1c5 | g_TextureAtlasEntries[0].packed_offset_y
     FADD double ptr [EBP + -0xc]        ; 0046e1cb
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0046e1ce
     FSTP float ptr [EAX]                ; 0046e1d1
@@ -156,15 +156,15 @@ section .text
         ;   XREF to: 0046e202 (UNCONDITIONAL_JUMP)  ; LAB_0046e202
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e1d5
         ;   Label: LAB_0046e1d5
-    FILD dword ptr [EAX + 0x234]        ; 0046e1d8 | DAT_01e8d498
+    FILD dword ptr [EAX + 0x234]        ; 0046e1d8 | g_TextureAtlasEntries[0].packed_height
     FSUB double ptr [EBP + -0xc]        ; 0046e1de
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e1e1
-    FILD dword ptr [EAX + 0x228]        ; 0046e1e4 | DAT_01e8d48c
+    FILD dword ptr [EAX + 0x228]        ; 0046e1e4 | g_TextureAtlasEntries[0].packed_offset_x
     FADDP                               ; 0046e1ea
     MOV EAX,dword ptr [EBP + 0x18]      ; 0046e1ec
     FSTP float ptr [EAX]                ; 0046e1ef
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e1f1
-    FILD dword ptr [EAX + 0x22c]        ; 0046e1f4 | DAT_01e8d490
+    FILD dword ptr [EAX + 0x22c]        ; 0046e1f4 | g_TextureAtlasEntries[0].packed_offset_y
     FADD double ptr [EBP + -0x14]       ; 0046e1fa
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0046e1fd
     FSTP float ptr [EAX]                ; 0046e200

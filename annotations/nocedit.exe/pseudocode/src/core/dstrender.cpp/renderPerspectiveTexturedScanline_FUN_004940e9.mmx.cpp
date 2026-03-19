@@ -28,13 +28,13 @@ __asm {
         mov EAX,dword ptr [EDI + 0x18]
         mov EBX,dword ptr [ESI + 0x18]
         sub EAX,EBX
-        imul dword ptr [DAT_02d02584 + ECX]
+        imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_PerspectiveNextU],EBX
         mov dword ptr [g_DeltaTextureU],EDX
         mov EAX,dword ptr [EDI + 0x20]
         mov EBX,dword ptr [ESI + 0x20]
         sub EAX,EBX
-        imul dword ptr [DAT_02d02584 + ECX]
+        imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_PerspectiveNextV],EBX
         mov dword ptr [g_DeltaTextureV],EDX
         mov ECX,dword ptr [g_PerspectiveNextU]

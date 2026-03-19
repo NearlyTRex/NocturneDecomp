@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   uint*[1200] g_ZBufferScanlineArray
-;   undefined4 DAT_02d02584
+;   undefined4 g_ReciprocalLookupTable[1]
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     ADD EBX,EAX                         ; 0049070c
     MOV EAX,dword ptr [EDI + 0x28]      ; 0049070e
     SUB EAX,dword ptr [ESI + 0x28]      ; 00490711
-    IMUL dword ptr [ECX*0x4 + 0x2d02584] ; 00490714 | DAT_02d02584
+    IMUL dword ptr [ECX*0x4 + 0x2d02584] ; 00490714 | g_ReciprocalLookupTable[1]
     MOV ESI,dword ptr [ESI + 0x28]      ; 0049071b
     CMP ESI,dword ptr [EBX]             ; 0049071e
         ;   Label: LAB_0049071e

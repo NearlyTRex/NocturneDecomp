@@ -10,9 +10,9 @@
 ;
 ; Referenced Globals:
 ;   int[240] g_CoronaLeftExtent
-;   undefined4 DAT_01576fac
+;   undefined4 g_CoronaLeftExtent[1]
 ;   int[240] g_CoronaRightExtent
-;   undefined4 DAT_0157736c
+;   undefined4 g_CoronaRightExtent[1]
 ;   int[240][320] g_CoronaDepthBuffer
 ;
 ; Called Functions:
@@ -34,8 +34,8 @@ section .text
     ADD EAX,0x4                         ; 004502fb
         ;   Label: LAB_004502fb
     XOR EDX,EDX                         ; 004502fe
-    MOV dword ptr [EAX + 0x1577364],ECX ; 00450300 | g_CoronaRightExtent | DAT_0157736c
-    MOV dword ptr [EAX + 0x1576fa4],EDX ; 00450306 | g_CoronaLeftExtent | DAT_01576fac
+    MOV dword ptr [EAX + 0x1577364],ECX ; 00450300 | g_CoronaRightExtent | g_CoronaRightExtent[1]
+    MOV dword ptr [EAX + 0x1576fa4],EDX ; 00450306 | g_CoronaLeftExtent | g_CoronaLeftExtent[1]
     CMP EAX,0x3c0                       ; 0045030c
     JNZ 0x004502fb                      ; 00450311
         ;   XREF to: 004502fb (CONDITIONAL_JUMP)  ; LAB_004502fb

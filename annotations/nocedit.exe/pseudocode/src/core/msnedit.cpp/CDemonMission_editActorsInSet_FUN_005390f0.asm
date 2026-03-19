@@ -286,12 +286,12 @@ section .text
     ADD EAX,0x44                        ; 00539312
     MOV dword ptr [EBP + 0x66],EDX      ; 00539315
     MOV dword ptr [EBP + 0x42],EAX      ; 00539318
-    MOV EAX,0x32758e8                   ; 0053931b | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 0053931b | g_CDemonCameraInstance.base.position
     MOV dword ptr [EBP + 0x6a],EDX      ; 00539320
     ADD EAX,0x4                         ; 00539323
     MOV dword ptr [EBP + 0x2e],ECX      ; 00539326
     MOV dword ptr [EBP + 0x3a],EAX      ; 00539329 | g_CDemonCameraInstance.base.position+4
-    MOV EAX,0x32758e8                   ; 0053932c | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 0053932c | g_CDemonCameraInstance.base.position
     MOV EDX,0x60ad78ec                  ; 00539331
     ADD EAX,0x8                         ; 00539336
     MOV dword ptr [0x00680818],EDX      ; 00539339 | FLOAT_00680818
@@ -317,7 +317,7 @@ section .text
     LEA EDI,[EBP + 0xfffffdde]          ; 00539380
     MOV ESI,0x680830                    ; 00539386 | g_MsnEditCameraStatusBuffer
     MOV EAX,[0x02f7c53c]                ; 0053938b | INT_02f7c53c
-    MOVSD.REP ES:EDI,ESI                ; 00539390 | g_MsnEditCameraStatusBuffer | DAT_00680834
+    MOVSD.REP ES:EDI,ESI                ; 00539390 | g_MsnEditCameraStatusBuffer | g_MsnEditCameraStatusBuffer+4
     CMP EAX,0x4                         ; 00539392
     JA 0x0053a292                       ; 00539395
         ;   XREF to: 0053a292 (CONDITIONAL_JUMP)  ; default
@@ -339,14 +339,14 @@ section .text
     CALL core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 ; 005393c6
         ;   XREF to: 005751d0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(CDemonSet * this_ptr, CDemonActor * actor, int force_evaluation_mode)
     ADD ESP,0xc                         ; 005393cb
-    PUSH 0x3275924                      ; 005393ce | DAT_03275924
+    PUSH 0x3275924                      ; 005393ce | g_CDemonCameraInstance.camera_name[0]
         ;   Label: LAB_005393ce
     PUSH 0x63c38a                       ; 005393d3 | = "Static cam: %s"
     LEA EAX,[EBP + 0xfffffdde]          ; 005393d8
     PUSH EAX                            ; 005393de
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005393df
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
-    MOV EAX,[0x032758e8]                ; 005393e4 | DAT_032758e8
+    MOV EAX,[0x032758e8]                ; 005393e4 | g_CDemonCameraInstance.base.position
     MOV dword ptr [EBP + -0x7e],EAX     ; 005393e9
     MOV EAX,dword ptr [EBP + 0x3a]      ; 005393ec
     MOV EAX,dword ptr [EAX]             ; 005393ef | g_CDemonCameraInstance.base.position+4
@@ -371,7 +371,7 @@ section .text
     LEA EDI,[EBP + 0xfffffea6]          ; 0053942c
     MOV ESI,0x32758f4                   ; 00539432 | g_CDemonCameraInstance.base.rotation_matrix.m[0].x
     LEA EAX,[EBP + -0x4e]               ; 00539437
-    MOVSD.REP ES:EDI,ESI                ; 0053943a | g_CDemonCameraInstance.base.rotation_matrix.m[0].x | DAT_032758f8
+    MOVSD.REP ES:EDI,ESI                ; 0053943a | g_CDemonCameraInstance.base.rotation_matrix.m[0].x | g_CDemonCameraInstance.base.rotation_matrix.m[0].y
     PUSH EAX                            ; 0053943c
     MOV ECX,0xa                         ; 0053943d
     LEA EDI,[EBP + 0xfffffece]          ; 00539442
@@ -1363,11 +1363,11 @@ section .text
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     LEA EAX,[EBP + 0xffffff1e]          ; 00539eb9
     ADD ESP,0x8                         ; 00539ebf
-    CMP EAX,0x32758e8                   ; 00539ec2 | DAT_032758e8
+    CMP EAX,0x32758e8                   ; 00539ec2 | g_CDemonCameraInstance.base.position
     JZ 0x00539eea                       ; 00539ec7
         ;   XREF to: 00539eea (CONDITIONAL_JUMP)  ; LAB_00539eea
     MOV EAX,dword ptr [EBP + 0xffffff1e] ; 00539ec9
-    MOV [0x032758e8],EAX                ; 00539ecf | DAT_032758e8
+    MOV [0x032758e8],EAX                ; 00539ecf | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EBP + 0xffffff22] ; 00539ed4
     MOV [0x032758ec],EAX                ; 00539eda | g_CDemonCameraInstance.base.position+4
     MOV EAX,dword ptr [EBP + 0xffffff26] ; 00539edf
@@ -1391,11 +1391,11 @@ section .text
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     LEA EAX,[EBP + 0xffffff1e]          ; 00539f1f
     ADD ESP,0x8                         ; 00539f25
-    CMP EAX,0x32758e8                   ; 00539f28 | DAT_032758e8
+    CMP EAX,0x32758e8                   ; 00539f28 | g_CDemonCameraInstance.base.position
     JZ 0x00539f50                       ; 00539f2d
         ;   XREF to: 00539f50 (CONDITIONAL_JUMP)  ; LAB_00539f50
     MOV EAX,dword ptr [EBP + 0xffffff1e] ; 00539f2f
-    MOV [0x032758e8],EAX                ; 00539f35 | DAT_032758e8
+    MOV [0x032758e8],EAX                ; 00539f35 | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EBP + 0xffffff22] ; 00539f3a
     MOV [0x032758ec],EAX                ; 00539f40 | g_CDemonCameraInstance.base.position+4
     MOV EAX,dword ptr [EBP + 0xffffff26] ; 00539f45
@@ -1493,11 +1493,11 @@ section .text
         ;   Label: LAB_0053a068
     LEA EAX,[EBP + 0xffffff1e]          ; 0053a072
         ;   Label: LAB_0053a072
-    CMP EAX,0x32758e8                   ; 0053a078 | DAT_032758e8
+    CMP EAX,0x32758e8                   ; 0053a078 | g_CDemonCameraInstance.base.position
     JZ 0x0053a0a0                       ; 0053a07d
         ;   XREF to: 0053a0a0 (CONDITIONAL_JUMP)  ; LAB_0053a0a0
     MOV EAX,dword ptr [EBP + 0xffffff1e] ; 0053a07f
-    MOV [0x032758e8],EAX                ; 0053a085 | DAT_032758e8
+    MOV [0x032758e8],EAX                ; 0053a085 | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EBP + 0xffffff22] ; 0053a08a
     MOV [0x032758ec],EAX                ; 0053a090 | g_CDemonCameraInstance.base.position+4
     MOV EAX,dword ptr [EBP + 0xffffff26] ; 0053a095
@@ -1637,11 +1637,11 @@ section .text
         ;   Label: LAB_0053a236
     LEA EAX,[EBP + 0xffffff1e]          ; 0053a240
         ;   Label: LAB_0053a240
-    CMP EAX,0x32758e8                   ; 0053a246 | DAT_032758e8
+    CMP EAX,0x32758e8                   ; 0053a246 | g_CDemonCameraInstance.base.position
     JZ 0x0053a26e                       ; 0053a24b
         ;   XREF to: 0053a26e (CONDITIONAL_JUMP)  ; LAB_0053a26e
     MOV EAX,dword ptr [EBP + 0xffffff1e] ; 0053a24d
-    MOV [0x032758e8],EAX                ; 0053a253 | DAT_032758e8
+    MOV [0x032758e8],EAX                ; 0053a253 | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EBP + 0xffffff22] ; 0053a258
     MOV [0x032758ec],EAX                ; 0053a25e | g_CDemonCameraInstance.base.position+4
     MOV EAX,dword ptr [EBP + 0xffffff26] ; 0053a263
@@ -2657,7 +2657,7 @@ section .text
     MOV EAX,[0x0067cf44]                ; 0053ad4b | g_CKeysPtr
     PUSH EAX                            ; 0053ad50 | g_CKeysInstance
     MOV ESI,dword ptr [EAX]             ; 0053ad51 | g_CKeysInstance
-    ADD EBX,0x2f7a02c                   ; 0053ad53 | DAT_02f7a02c
+    ADD EBX,0x2f7a02c                   ; 0053ad53 | g_MsnEditPropertyList.properties[0].type
     CALL dword ptr [ESI]                ; 0053ad59
     ADD ESP,0x8                         ; 0053ad5b
     TEST EAX,EAX                        ; 0053ad5e
@@ -2715,7 +2715,7 @@ section .text
     TEST EAX,EAX                        ; 0053adea
     JNZ 0x0053ae24                      ; 0053adec
         ;   XREF to: 0053ae24 (CONDITIONAL_JUMP)  ; LAB_0053ae24
-    CMP dword ptr [EBX + 0x54],0x0      ; 0053adee | DAT_02f7a080
+    CMP dword ptr [EBX + 0x54],0x0      ; 0053adee | g_MsnEditPropertyList.properties[0].enabled_flag
     JZ 0x0053ad72                       ; 0053adf2
         ;   XREF to: 0053ad72 (CONDITIONAL_JUMP)  ; LAB_0053ad72
     MOV EAX,dword ptr [EBP + 0x92]      ; 0053adf8

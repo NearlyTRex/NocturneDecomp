@@ -35,15 +35,15 @@
 ;   int g_WindowHeight = 0xc8
 ;   SMRGLTextureBasic g_LoadingMoonGlowTexture
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 DAT_01000000
+;   undefined4 g_LightBufferPool[13][93688]
 ;   CBitFont* g_ThemeFont
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CKeyFramedModel g_LoadingMoonModel
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_0326f0e8
-;   undefined4 DAT_0326f0ec
-;   undefined4 DAT_0326f0f0
-;   undefined4 DAT_0326f0f4
+;   undefined4 g_CDemonSetInstance.rendering_mode
+;   undefined4 g_CDemonSetInstance.light_direction.x
+;   undefined4 g_CDemonSetInstance.light_direction.y
+;   undefined4 g_CDemonSetInstance.light_direction.z
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -137,7 +137,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0050422e
         ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     MOV EAX,[0x006810c8]                ; 00504233 | g_CDemonSetPtr
-    MOV dword ptr [EAX + 0x15ae70],0x1  ; 00504238 | DAT_0326f0e8
+    MOV dword ptr [EAX + 0x15ae70],0x1  ; 00504238 | g_CDemonSetInstance.rendering_mode
     MOV EDX,dword ptr [ESI]             ; 00504242
     SHL EDX,0xf                         ; 00504244
     MOV ECX,dword ptr [ESI + 0x4]       ; 00504247
@@ -157,9 +157,9 @@ section .text
     SHRD EAX,EDX,0x10                   ; 0050426d
     MOV EDX,EAX                         ; 00504271
     MOV EAX,[0x006810c8]                ; 00504273 | g_CDemonSetInstance | g_CDemonSetPtr
-    MOV dword ptr [EAX + 0x15ae78],0xffff6f78 ; 00504278 | DAT_0326f0f0
+    MOV dword ptr [EAX + 0x15ae78],0xffff6f78 ; 00504278 | g_CDemonSetInstance.light_direction.y
     PUSH EBX                            ; 00504282
-    MOV dword ptr [EAX + 0x15ae74],EDX  ; 00504283 | DAT_0326f0ec
+    MOV dword ptr [EAX + 0x15ae74],EDX  ; 00504283 | g_CDemonSetInstance.light_direction.x
     CALL engine_matrix.c_interpolatedCos_FUN_0050c600 ; 00504289
         ;   XREF to: 0050c600 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_interpolatedCos_FUN_0050c600(int angle)
     ADD ESP,0x4                         ; 0050428e
@@ -169,8 +169,8 @@ section .text
     SHRD EAX,EDX,0x10                   ; 0050429a
     MOV EDX,EAX                         ; 0050429e
     MOV EAX,[0x006810c8]                ; 005042a0 | g_CDemonSetInstance | g_CDemonSetPtr
-    MOV dword ptr [EAX + 0x15ae80],0x280 ; 005042a5 | DAT_0326f0f8
-    MOV dword ptr [EAX + 0x15ae7c],EDX  ; 005042af | DAT_0326f0f4
+    MOV dword ptr [EAX + 0x15ae80],0x280 ; 005042a5 | g_CDemonSetInstance.ambient_base_quick
+    MOV dword ptr [EAX + 0x15ae7c],EDX  ; 005042af | g_CDemonSetInstance.light_direction.z
     MOV EDX,dword ptr [ESI + 0x12c]     ; 005042b5
     SHL EDX,0x8                         ; 005042bb
     PUSH EDX                            ; 005042be
@@ -278,7 +278,7 @@ section .text
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x006703ec]                ; 00504418 | g_CDemonRendererPtr2
     MOV EDX,dword ptr [EAX]             ; 0050441d | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x18],0x1000000 ; 0050441f | DAT_01000000
+    MOV dword ptr [EDX + 0x18],0x1000000 ; 0050441f | g_LightBufferPool[13][93688]
     MOV EDX,dword ptr [EAX]             ; 00504426 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x1c],EBP      ; 00504428
     MOV EDX,dword ptr [EAX]             ; 0050442b | g_CDemonRendererInstance
@@ -288,11 +288,11 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 00504435 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x78],EBP      ; 00504437
     MOV EDX,dword ptr [EAX]             ; 0050443a | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x7c],0x1000000 ; 0050443c | DAT_01000000
+    MOV dword ptr [EDX + 0x7c],0x1000000 ; 0050443c | g_LightBufferPool[13][93688]
     MOV EDX,dword ptr [EAX]             ; 00504443 | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0xa8],0x1000000 ; 00504445 | DAT_01000000
+    MOV dword ptr [EDX + 0xa8],0x1000000 ; 00504445 | g_LightBufferPool[13][93688]
     MOV EAX,dword ptr [EAX]             ; 0050444f | g_CDemonRendererInstance
-    MOV dword ptr [EAX + 0xac],0x1000000 ; 00504451 | DAT_01000000
+    MOV dword ptr [EAX + 0xac],0x1000000 ; 00504451 | g_LightBufferPool[13][93688]
     MOV EDX,dword ptr [ESI]             ; 0050445b
     MOV EAX,EDX                         ; 0050445d
     SHL EAX,0x8                         ; 0050445f
@@ -396,7 +396,7 @@ section .text
     ADD ESP,0x4                         ; 0050459e
     MOV EAX,[0x006810c8]                ; 005045a1 | g_CDemonSetPtr
         ;   Label: LAB_005045a1
-    MOV dword ptr [EAX + 0x15ae70],0x0  ; 005045a6 | DAT_0326f0e8
+    MOV dword ptr [EAX + 0x15ae70],0x0  ; 005045a6 | g_CDemonSetInstance.rendering_mode
     MOV EAX,[0x020a5720]                ; 005045b0 | g_ThemeFont
     MOV EDX,dword ptr [0x00679394]      ; 005045b5 | g_WindowWidth
     MOV dword ptr [ESP + 0x7c],EAX      ; 005045bb

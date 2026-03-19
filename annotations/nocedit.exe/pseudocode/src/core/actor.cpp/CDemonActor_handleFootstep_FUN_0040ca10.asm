@@ -22,7 +22,7 @@
 ;   CSound* g_CSoundPtr = 03f6af64
 ;   CGore g_CGoreInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_032758e8
+;   undefined4 g_CDemonCameraInstance.base.position
 ;   undefined4 g_CDemonCameraInstance.base.position+4
 ;   undefined4 g_CDemonCameraInstance.base.position+8
 ;   CSound g_CSoundInstance
@@ -48,12 +48,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x90]      ; 0040ca17
     MOV ESI,dword ptr [ESP + 0x94]      ; 0040ca1e
     MOV EDI,dword ptr [ESP + 0x98]      ; 0040ca25
-    MOV EAX,[0x032758e8]                ; 0040ca2c | DAT_032758e8
+    MOV EAX,[0x032758e8]                ; 0040ca2c | g_CDemonCameraInstance.base.position
     MOV dword ptr [ESP + 0x64],EAX      ; 0040ca31
-    MOV EAX,0x32758e8                   ; 0040ca35 | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 0040ca35 | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EAX + 0x4]       ; 0040ca3a | g_CDemonCameraInstance.base.position+4
     MOV dword ptr [ESP + 0x68],EAX      ; 0040ca3d
-    MOV EAX,0x32758e8                   ; 0040ca41 | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 0040ca41 | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EAX + 0x8]       ; 0040ca46 | g_CDemonCameraInstance.base.position+8
     MOV dword ptr [ESP + 0x6c],EAX      ; 0040ca49
     FLD float ptr [ESI]                 ; 0040ca4d

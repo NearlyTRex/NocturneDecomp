@@ -41,7 +41,7 @@
 ;   double g_Pi_0061b546 = 3.14159265350000
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; Called Functions:
@@ -216,8 +216,8 @@ section .text
     SHL EAX,0x2                         ; 0045e1f9
     IMUL EDX,dword ptr [EAX + EBP*0x1 + -0x64],0x14 ; 0045e1fc
     IMUL EAX,dword ptr [EBP + -0x64],0x14 ; 0045e201
-    FLD float ptr [EDX + 0x1626410]     ; 0045e205 | DAT_01626410
-    FSUB float ptr [EAX + 0x1626410]    ; 0045e20b | DAT_01626410
+    FLD float ptr [EDX + 0x1626410]     ; 0045e205 | g_LoadedVertices[0].vertex.y
+    FSUB float ptr [EAX + 0x1626410]    ; 0045e20b | g_LoadedVertices[0].vertex.y
     FSTP float ptr [EBP + -0x10]        ; 0045e211
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0045e214
     SHL EAX,0x2                         ; 0045e217
@@ -241,7 +241,7 @@ section .text
     IMUL EAX,dword ptr [EBP + -0x64],0x14 ; 0045e259
     FLD float ptr [EBP + -0x24]         ; 0045e25d
     FMUL float ptr [EBP + -0x8]         ; 0045e260
-    FADD float ptr [EAX + 0x1626410]    ; 0045e263 | DAT_01626410
+    FADD float ptr [EAX + 0x1626410]    ; 0045e263 | g_LoadedVertices[0].vertex.y
     FSTP float ptr [EBP + -0x18]        ; 0045e269
     IMUL EAX,dword ptr [EBP + -0x64],0x14 ; 0045e26c
     FLD float ptr [EBP + -0x20]         ; 0045e270
@@ -283,7 +283,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0045e2f0
     SHL EAX,0x2                         ; 0045e2f3
     IMUL EAX,dword ptr [EAX + EBP*0x1 + -0x64],0x14 ; 0045e2f6
-    MOV EAX,dword ptr [EAX + 0x1626410] ; 0045e2fb | DAT_01626410
+    MOV EAX,dword ptr [EAX + 0x1626410] ; 0045e2fb | g_LoadedVertices[0].vertex.y
     MOV dword ptr [EBP + -0x18],EAX     ; 0045e301
     IMUL EAX,dword ptr [EBP + -0x64],0x14 ; 0045e304
     FLD float ptr [EBP + -0x24]         ; 0045e308
@@ -304,8 +304,8 @@ section .text
     SHL EAX,0x2                         ; 0045e33d
     IMUL EDX,dword ptr [EAX + EBP*0x1 + -0x64],0x14 ; 0045e340
     IMUL EAX,dword ptr [EBP + -0x64],0x14 ; 0045e345
-    FLD float ptr [EDX + 0x1626410]     ; 0045e349 | DAT_01626410
-    FSUB float ptr [EAX + 0x1626410]    ; 0045e34f | DAT_01626410
+    FLD float ptr [EDX + 0x1626410]     ; 0045e349 | g_LoadedVertices[0].vertex.y
+    FSUB float ptr [EAX + 0x1626410]    ; 0045e34f | g_LoadedVertices[0].vertex.y
     FSTP float ptr [EBP + -0xc]         ; 0045e355
     FLD float ptr [EBP + -0x10]         ; 0045e358
     FMUL float ptr [EBP + -0x10]        ; 0045e35b
@@ -322,7 +322,7 @@ section .text
     IMUL EAX,dword ptr [EBP + -0x64],0x14 ; 0045e37e
     FLD float ptr [EBP + -0x24]         ; 0045e382
     FMUL float ptr [EBP + -0x8]         ; 0045e385
-    FADD float ptr [EAX + 0x1626410]    ; 0045e388 | DAT_01626410
+    FADD float ptr [EAX + 0x1626410]    ; 0045e388 | g_LoadedVertices[0].vertex.y
     FSTP float ptr [EBP + -0x18]        ; 0045e38e
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0045e391
     SHL EAX,0x2                         ; 0045e394
@@ -335,7 +335,7 @@ section .text
     MOV dword ptr [EDX + 0x162640c],EAX ; 0045e3af | g_LoadedVertices
     IMUL EDX,dword ptr [0x01626408],0x14 ; 0045e3b5 | g_VertexCount
     MOV EAX,dword ptr [EBP + -0x18]     ; 0045e3bc
-    MOV dword ptr [EDX + 0x1626410],EAX ; 0045e3bf | DAT_01626410
+    MOV dword ptr [EDX + 0x1626410],EAX ; 0045e3bf | g_LoadedVertices[0].vertex.y
     IMUL EDX,dword ptr [0x01626408],0x14 ; 0045e3c5 | g_VertexCount
     MOV EAX,dword ptr [EBP + -0x14]     ; 0045e3cc
     MOV dword ptr [EDX + 0x1626414],EAX ; 0045e3cf | g_LoadedVertices[0].vertex.z

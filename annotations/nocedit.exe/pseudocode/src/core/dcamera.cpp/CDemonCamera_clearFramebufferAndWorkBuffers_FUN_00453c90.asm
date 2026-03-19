@@ -12,11 +12,11 @@
 ;
 ; Referenced Globals:
 ;   SFogImagePlane g_CameraPlaneWorkBuffer
-;   undefined4 DAT_013da779
-;   undefined4 DAT_013da8b8
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[0][1]
+;   undefined4 g_CameraPlaneWorkBuffer.pixels[1][0]
 ;   SFogImagePlane[16] g_CameraImageDecompressBuffer
-;   undefined4 DAT_013ed379
-;   undefined4 DAT_013ed4b8
+;   undefined4 g_CameraImageDecompressBuffer[0].pixels[0][1]
+;   undefined4 g_CameraImageDecompressBuffer[0].pixels[1][0]
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     IMUL EAX,ECX,0x140                  ; 00453ce5
     INC EAX                             ; 00453ceb
         ;   Label: LAB_00453ceb
-    MOV byte ptr [EAX + 0x13ed377],BL   ; 00453cec | g_CameraImageDecompressBuffer | DAT_013ed379 | DAT_013ed4b8
-    MOV byte ptr [EAX + 0x13da777],BL   ; 00453cf2 | g_CameraPlaneWorkBuffer | DAT_013da779 | DAT_013da8b8
+    MOV byte ptr [EAX + 0x13ed377],BL   ; 00453cec | g_CameraImageDecompressBuffer | g_CameraImageDecompressBuffer[0].pixels[0][1] | g_CameraImageDecompressBuffer[0].pixels[1][0]
+    MOV byte ptr [EAX + 0x13da777],BL   ; 00453cf2 | g_CameraPlaneWorkBuffer | g_CameraPlaneWorkBuffer.pixels[0][1] | g_CameraPlaneWorkBuffer.pixels[1][0]
     CMP EAX,EDX                         ; 00453cf8
     JNZ 0x00453ceb                      ; 00453cfa
         ;   XREF to: 00453ceb (CONDITIONAL_JUMP)  ; LAB_00453ceb

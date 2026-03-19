@@ -13,11 +13,11 @@
 ; Referenced Globals:
 ;   char*[141] g_CommandTemplates
 ;   CCmdParse CCmdParse_0310cb74
-;   undefined4 DAT_0310cc44
-;   undefined4 DAT_0310cca8
-;   undefined4 DAT_0310cca9
-;   undefined4 DAT_0310ccaa
-;   undefined4 DAT_0310ccab
+;   undefined4 CCmdParse_0310cb74.params[0].prefix_text[0]
+;   undefined4 CCmdParse_0310cb74.params[0].parsed_value[0]
+;   undefined4 CCmdParse_0310cb74.params[0].parsed_value[1]
+;   undefined4 CCmdParse_0310cb74.params[0].parsed_value[2]
+;   undefined4 CCmdParse_0310cb74.params[0].parsed_value[3]
 ;   int g_CurrentEditingColumn
 ;   int g_CurrentEditingLine
 ;   undefined4 g_CurrentLineBuffer
@@ -92,18 +92,18 @@ section .text
     JL 0x0056606b                       ; 00565fdb
         ;   XREF to: 0056606b (CONDITIONAL_JUMP)  ; LAB_0056606b
     IMUL EAX,EAX,0x328                  ; 00565fe1
-    ADD EAX,0x310cc44                   ; 00565fe7 | DAT_0310cc44
+    ADD EAX,0x310cc44                   ; 00565fe7 | CCmdParse_0310cb74.params[0].prefix_text[0]
     LEA EDI,[EAX + 0x64]                ; 00565fec
     PUSH EDI                            ; 00565fef
     MOV AL,byte ptr [ESI]               ; 00565ff0
         ;   Label: LAB_00565ff0
-    MOV byte ptr [EDI],AL               ; 00565ff2 | DAT_0310cca8 | DAT_0310ccaa
+    MOV byte ptr [EDI],AL               ; 00565ff2 | CCmdParse_0310cb74.params[0].parsed_value[0] | CCmdParse_0310cb74.params[0].parsed_value[2]
     CMP AL,0x0                          ; 00565ff4
     JZ 0x00566008                       ; 00565ff6
         ;   XREF to: 00566008 (CONDITIONAL_JUMP)  ; LAB_00566008
     MOV AL,byte ptr [ESI + 0x1]         ; 00565ff8
     ADD ESI,0x2                         ; 00565ffb
-    MOV byte ptr [EDI + 0x1],AL         ; 00565ffe | DAT_0310cca9 | DAT_0310ccab
+    MOV byte ptr [EDI + 0x1],AL         ; 00565ffe | CCmdParse_0310cb74.params[0].parsed_value[1] | CCmdParse_0310cb74.params[0].parsed_value[3]
     ADD EDI,0x2                         ; 00566001
     CMP AL,0x0                          ; 00566004
     JNZ 0x00565ff0                      ; 00566006

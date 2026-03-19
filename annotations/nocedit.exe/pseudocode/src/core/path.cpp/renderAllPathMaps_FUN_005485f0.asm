@@ -16,7 +16,7 @@
 ;   int g_CurrentLineNumber
 ;   int g_PathMapCount
 ;   CPathMap*[200] g_PathMapList
-;   undefined4 DAT_030c3ac0
+;   undefined4 g_PathMapList[1]
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -39,11 +39,11 @@ section .text
     JLE 0x00548633                      ; 00548606
         ;   XREF to: 00548633 (CONDITIONAL_JUMP)  ; LAB_00548633
     XOR EBX,EBX                         ; 00548608
-    CMP dword ptr [EBX + 0x30c3abc],0x0 ; 0054860a | g_PathMapList | DAT_030c3ac0
+    CMP dword ptr [EBX + 0x30c3abc],0x0 ; 0054860a | g_PathMapList | g_PathMapList[1]
         ;   Label: LAB_0054860a
     JZ 0x00548638                       ; 00548611
         ;   XREF to: 00548638 (CONDITIONAL_JUMP)  ; LAB_00548638
-    MOV EDX,dword ptr [EBX + 0x30c3abc] ; 00548613 | g_PathMapList | DAT_030c3ac0
+    MOV EDX,dword ptr [EBX + 0x30c3abc] ; 00548613 | g_PathMapList | g_PathMapList[1]
         ;   Label: LAB_00548613
     CMP dword ptr [EDX + 0x138c0],0x461c3c00 ; 00548619
     JLE 0x0054865d                      ; 00548623

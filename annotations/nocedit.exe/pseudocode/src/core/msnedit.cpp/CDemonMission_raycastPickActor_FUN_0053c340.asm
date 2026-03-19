@@ -25,7 +25,7 @@
 ;   double DOUBLE_0063c86c = 1000
 ;   int g_DisableMouseHitOnBarrier
 ;   CDemonCamera g_CDemonCameraInstance
-;   undefined4 DAT_032758e8
+;   undefined4 g_CDemonCameraInstance.base.position
 ;   undefined4 g_CDemonCameraInstance.base.position+4
 ;   undefined4 g_CDemonCameraInstance.base.position+8
 ;
@@ -75,13 +75,13 @@ section .text
     POP ESI                             ; 0053c375
     POP EBX                             ; 0053c376
     RET                                 ; 0053c377
-    MOV EAX,[0x032758e8]                ; 0053c378 | DAT_032758e8
+    MOV EAX,[0x032758e8]                ; 0053c378 | g_CDemonCameraInstance.base.position
         ;   Label: LAB_0053c378
     MOV dword ptr [ESP + 0x48],EAX      ; 0053c37d
-    MOV EAX,0x32758e8                   ; 0053c381 | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 0053c381 | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EAX + 0x4]       ; 0053c386 | g_CDemonCameraInstance.base.position+4
     MOV dword ptr [ESP + 0x4c],EAX      ; 0053c389
-    MOV EAX,0x32758e8                   ; 0053c38d | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 0053c38d | g_CDemonCameraInstance.base.position
     PUSH EDX                            ; 0053c392
     MOV EAX,dword ptr [EAX + 0x8]       ; 0053c393 | g_CDemonCameraInstance.base.position+8
     PUSH EBX                            ; 0053c396

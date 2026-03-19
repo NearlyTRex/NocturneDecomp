@@ -19,7 +19,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CEditorTools g_CEditorToolsInstance
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81b68
+;   undefined4 g_CGameInstance.cutscene_skippable
 ;   int g_ScriptEventsEnabled
 ;   char[2048] g_ScriptErrorBuffer
 ;   int g_ScriptInputFlag
@@ -55,7 +55,7 @@ section .text
     JZ 0x005599fe                       ; 00559987
         ;   XREF to: 005599fe (CONDITIONAL_JUMP)  ; LAB_005599fe
     MOV EAX,[0x0067b654]                ; 0055998d | g_CGamePtr
-    CMP dword ptr [EAX + 0xcc],0x0      ; 00559992 | DAT_02d81b68
+    CMP dword ptr [EAX + 0xcc],0x0      ; 00559992 | g_CGameInstance.cutscene_skippable
     JZ 0x0055999e                       ; 00559999
         ;   XREF to: 0055999e (CONDITIONAL_JUMP)  ; LAB_0055999e
     MOV dword ptr [EBX + 0x18],EDX      ; 0055999b

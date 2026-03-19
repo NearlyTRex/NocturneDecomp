@@ -15,17 +15,17 @@
 ;   TerminatedCString s_d_omni_lights_00645dec
 ;   TerminatedCString s_d_spot_lights_00645dfb
 ;   int[96] g_LightDebugScreenX
-;   undefined4 DAT_006810e0
-;   undefined4 DAT_006810e4
+;   undefined4 g_LightDebugScreenX[1]
+;   undefined4 g_LightDebugScreenX[2]
 ;   int[96] g_LightDebugScreenY
-;   undefined4 DAT_00681260
-;   undefined4 DAT_00681264
+;   undefined4 g_LightDebugScreenY[1]
+;   undefined4 g_LightDebugScreenY[2]
 ;   int g_SpotLightCount
 ;   CDemonLight*[96] g_SpotLightList
-;   undefined4 DAT_03276f38
+;   undefined4 g_SpotLightList[1]
 ;   int g_DynamicLightCount
 ;   CDemonLight*[4] g_DynamicLights
-;   undefined4 DAT_032776bc
+;   undefined4 g_DynamicLights[1]
 ;   int g_OmniLightCount
 ;
 ; Called Functions:
@@ -51,11 +51,11 @@ section .text
     XOR EBX,EBX                         ; 0056d1a6
     PUSH 0x80                           ; 0056d1a8
         ;   Label: LAB_0056d1a8
-    MOV ECX,dword ptr [EBX + 0x68125c]  ; 0056d1ad | g_LightDebugScreenY | DAT_00681260
+    MOV ECX,dword ptr [EBX + 0x68125c]  ; 0056d1ad | g_LightDebugScreenY | g_LightDebugScreenY[1]
     PUSH ECX                            ; 0056d1b3
-    MOV EDI,dword ptr [EBX + 0x6810dc]  ; 0056d1b4 | g_LightDebugScreenX | DAT_006810e0
+    MOV EDI,dword ptr [EBX + 0x6810dc]  ; 0056d1b4 | g_LightDebugScreenX | g_LightDebugScreenX[1]
     PUSH EDI                            ; 0056d1ba
-    MOV EBP,dword ptr [EBX + 0x3276f34] ; 0056d1bb | g_SpotLightList | DAT_03276f38
+    MOV EBP,dword ptr [EBX + 0x3276f34] ; 0056d1bb | g_SpotLightList | g_SpotLightList[1]
     PUSH EBP                            ; 0056d1c1
     ADD EBX,0x4                         ; 0056d1c2
     INC ESI                             ; 0056d1c5
@@ -78,11 +78,11 @@ section .text
     XOR EDI,EDI                         ; 0056d1f3
     PUSH 0x80                           ; 0056d1f5
         ;   Label: LAB_0056d1f5
-    MOV ECX,dword ptr [EBX + 0x68125c]  ; 0056d1fa | g_LightDebugScreenY | DAT_00681260 | DAT_00681264
+    MOV ECX,dword ptr [EBX + 0x68125c]  ; 0056d1fa | g_LightDebugScreenY | g_LightDebugScreenY[1] | g_LightDebugScreenY[2]
     PUSH ECX                            ; 0056d200
-    MOV ESI,dword ptr [EBX + 0x6810dc]  ; 0056d201 | g_LightDebugScreenX | DAT_006810e0 | DAT_006810e4
+    MOV ESI,dword ptr [EBX + 0x6810dc]  ; 0056d201 | g_LightDebugScreenX | g_LightDebugScreenX[1] | g_LightDebugScreenX[2]
     PUSH ESI                            ; 0056d207
-    MOV EAX,dword ptr [EDI + 0x32776b8] ; 0056d208 | g_DynamicLights | DAT_032776bc
+    MOV EAX,dword ptr [EDI + 0x32776b8] ; 0056d208 | g_DynamicLights | g_DynamicLights[1]
     ADD EDI,0x4                         ; 0056d20e
     PUSH EAX                            ; 0056d211
     ADD EBX,0x4                         ; 0056d212

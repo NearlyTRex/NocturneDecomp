@@ -252,12 +252,12 @@ section .text
     JZ 0x004ddb77                       ; 004ddb25
         ;   XREF to: 004ddb77 (CONDITIONAL_JUMP)  ; LAB_004ddb77
     MOV EAX,[0x0067b654]                ; 004ddb27 | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x214],0x29a   ; 004ddb2c | DAT_02d81cb0
+    CMP dword ptr [EAX + 0x214],0x29a   ; 004ddb2c | g_CGameInstance.head_of_horror_cheat
     JZ 0x004ddb77                       ; 004ddb36
         ;   XREF to: 004ddb77 (CONDITIONAL_JUMP)  ; LAB_004ddb77
     PUSH 0x40a00000                     ; 004ddb38
     PUSH 0x62b9f6                       ; 004ddb3d | = "The horror has been unleashed."
-    MOV dword ptr [EAX + 0x214],0x29a   ; 004ddb42 | DAT_02d81cb0
+    MOV dword ptr [EAX + 0x214],0x29a   ; 004ddb42 | g_CGameInstance.head_of_horror_cheat
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 004ddb4c
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
     ADD ESP,0x4                         ; 004ddb51
@@ -2508,7 +2508,7 @@ section .text
     JGE 0x004df592                      ; 004df4ba
         ;   XREF to: 004df592 (CONDITIONAL_JUMP)  ; LAB_004df592
     ADD EAX,dword ptr [ESP + 0x3ec]     ; 004df4c0
-    MOV EBX,dword ptr [EAX + 0x150fe0]  ; 004df4c7 | DAT_03265258 | DAT_0326525c
+    MOV EBX,dword ptr [EAX + 0x150fe0]  ; 004df4c7 | g_CDemonSetInstance.enemies[0] | g_CDemonSetInstance.enemies[1]
     MOV EAX,[0x02db87d0]                ; 004df4cd | g_LocalHeroIndex
     MOV EAX,dword ptr [EAX*0x4 + 0x2db87c0] ; 004df4d2 | g_HeroActors
     LEA ESI,[EBX + 0x20]                ; 004df4d9
@@ -3048,7 +3048,7 @@ section .text
     XOR DL,DL                           ; 004dfacd
     PUSH 0x32758e4                      ; 004dfacf | g_CDemonCameraInstance
     MOV byte ptr [0x02d831d8],DL        ; 004dfad4 | g_InputHistory+1
-    MOV dword ptr [EAX + 0x14d150],0x0  ; 004dfada | DAT_032613c8
+    MOV dword ptr [EAX + 0x14d150],0x0  ; 004dfada | g_CDemonSetInstance.min_ambient_value
     CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0 ; 004dfae4
         ;   XREF to: 004528e0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(CDemonCamera * this_ptr, float intensity)
     ADD ESP,0x8                         ; 004dfae9
@@ -3392,7 +3392,7 @@ section .text
     JGE 0x004e0193                      ; 004dfeab
         ;   XREF to: 004e0193 (CONDITIONAL_JUMP)  ; LAB_004e0193
     ADD EAX,dword ptr [ESP + 0x420]     ; 004dfeb1
-    MOV EAX,dword ptr [EAX + 0x14f09c]  ; 004dfeb8 | g_CDemonSetInstance.characters[0] | DAT_03263318
+    MOV EAX,dword ptr [EAX + 0x14f09c]  ; 004dfeb8 | g_CDemonSetInstance.characters[0] | g_CDemonSetInstance.characters[1]
     LEA ECX,[EAX + 0x158]               ; 004dfebe
     MOV DL,byte ptr [EAX + 0x23b8]      ; 004dfec4
     MOV dword ptr [ESP + 0x320],ECX     ; 004dfeca

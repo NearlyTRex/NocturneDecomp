@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   int g_PolygonCount
-;   undefined4 DAT_016e9a88
+;   undefined4 g_ModelPolygonData[0].part_assignment
 ;
 ; Called Functions:
 ;   shape_design.c_renderSinglePolygon_FUN_0045ce20
@@ -41,7 +41,7 @@ section .text
     JGE 0x004616e6                      ; 004616c4
         ;   XREF to: 004616e6 (CONDITIONAL_JUMP)  ; LAB_004616e6
     IMUL EAX,dword ptr [EBP + -0x4],0x184 ; 004616c6
-    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 004616cd | DAT_016e9a88
+    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 004616cd | g_ModelPolygonData[0].part_assignment
     CMP EAX,dword ptr [EBP + 0x14]      ; 004616d3
     JNZ 0x004616e4                      ; 004616d6
         ;   XREF to: 004616e4 (CONDITIONAL_JUMP)  ; LAB_004616e4

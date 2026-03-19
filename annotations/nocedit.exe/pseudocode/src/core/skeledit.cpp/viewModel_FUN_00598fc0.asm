@@ -415,10 +415,10 @@ section .text
         ;   XREF to: 005992fc (CONDITIONAL_JUMP)  ; LAB_005992fc
     JMP 0x00599080                      ; 00599317
         ;   XREF to: 00599080 (UNCONDITIONAL_JUMP)  ; LAB_00599080
-    INC EBX                             ; 0059931c | DAT_03670849
+    INC EBX                             ; 0059931c | g_SkeleditLastPOSImported+1
         ;   Label: LAB_0059931c
     MOV byte ptr [EBX + -0x1],DL        ; 0059931d | g_SkeleditLastPOSImported
-    MOV byte ptr [EBX],0x0              ; 00599320 | DAT_03670849
+    MOV byte ptr [EBX],0x0              ; 00599320 | g_SkeleditLastPOSImported+1
     JMP 0x005992d6                      ; 00599323
         ;   XREF to: 005992d6 (UNCONDITIONAL_JUMP)  ; LAB_005992d6
     CMP EAX,0x22                        ; 00599325
@@ -458,10 +458,10 @@ section .text
         ;   XREF to: 00599354 (CONDITIONAL_JUMP)  ; LAB_00599354
     JMP 0x005990c3                      ; 0059936f
         ;   XREF to: 005990c3 (UNCONDITIONAL_JUMP)  ; LAB_005990c3
-    INC EBX                             ; 00599374 | DAT_03670951
+    INC EBX                             ; 00599374 | g_SkeleditLastMOTImported+1
         ;   Label: LAB_00599374
     MOV byte ptr [EBX + -0x1],DL        ; 00599375 | g_SkeleditLastMOTImported
-    MOV byte ptr [EBX],0x0              ; 00599378 | DAT_03670951
+    MOV byte ptr [EBX],0x0              ; 00599378 | g_SkeleditLastMOTImported+1
     JMP 0x0059932e                      ; 0059937b
         ;   XREF to: 0059932e (UNCONDITIONAL_JUMP)  ; LAB_0059932e
     CMP EAX,0x22                        ; 0059937d
@@ -501,10 +501,10 @@ section .text
         ;   XREF to: 005993ac (CONDITIONAL_JUMP)  ; LAB_005993ac
     JMP 0x00599106                      ; 005993c7
         ;   XREF to: 00599106 (UNCONDITIONAL_JUMP)  ; LAB_00599106
-    INC EBX                             ; 005993cc | DAT_03670a59
+    INC EBX                             ; 005993cc | g_SkeleditLastTestSkeletonDir+1
         ;   Label: LAB_005993cc
     MOV byte ptr [EBX + -0x1],DL        ; 005993cd | g_SkeleditLastTestSkeletonDir
-    MOV byte ptr [EBX],0x0              ; 005993d0 | DAT_03670a59
+    MOV byte ptr [EBX],0x0              ; 005993d0 | g_SkeleditLastTestSkeletonDir+1
     JMP 0x00599386                      ; 005993d3
         ;   XREF to: 00599386 (UNCONDITIONAL_JUMP)  ; LAB_00599386
     PUSH 0x649d7e                       ; 005993d5 | = "// version\n"

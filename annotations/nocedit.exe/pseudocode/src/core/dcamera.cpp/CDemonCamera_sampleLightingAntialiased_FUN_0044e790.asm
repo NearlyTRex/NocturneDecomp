@@ -17,9 +17,9 @@
 ; Referenced Globals:
 ;   double g_LightScaleFactor = 0.00390625
 ;   CVector3i g_CameraOutOfBoundsCoord
-;   undefined4 DAT_0151bf9a
+;   undefined4 g_CameraOutOfBoundsCoord.x+2
 ;   undefined4 g_CameraOutOfBoundsY
-;   undefined4 DAT_0151bf9e
+;   undefined4 g_CameraOutOfBoundsCoord.y+2
 ;   undefined4 g_CameraOutOfBoundsZ
 ;   CVector3i g_TempProjectedCoord
 ;   undefined4 g_TempProjectedCoord.y
@@ -276,7 +276,7 @@ section .text
     CMP EDX,ECX                         ; 0044ea87
     JG 0x0044ed9b                       ; 0044ea89
         ;   XREF to: 0044ed9b (CONDITIONAL_JUMP)  ; LAB_0044ed9b
-    INC word ptr [EBX + 0x2]            ; 0044ea8f | DAT_0151bf9a
+    INC word ptr [EBX + 0x2]            ; 0044ea8f | g_CameraOutOfBoundsCoord.x+2
         ;   Label: LAB_0044ea8f
     MOV EAX,dword ptr [EBX]             ; 0044ea93 | g_CameraOutOfBoundsCoord
     MOV EDX,dword ptr [ESI + 0x1cc0]    ; 0044ea95
@@ -364,13 +364,13 @@ section .text
     ADD EDI,EAX                         ; 0044eba7
     INC dword ptr [EBP + -0x8]          ; 0044eba9
         ;   Label: LAB_0044eba9
-    MOV AX,word ptr [EBX + 0x6]         ; 0044ebac | DAT_0151bf9e
+    MOV AX,word ptr [EBX + 0x6]         ; 0044ebac | g_CameraOutOfBoundsCoord.y+2
         ;   Label: LAB_0044ebac
-    MOV CX,word ptr [EBX + 0x2]         ; 0044ebb0 | DAT_0151bf9a
+    MOV CX,word ptr [EBX + 0x2]         ; 0044ebb0 | g_CameraOutOfBoundsCoord.x+2
     INC EAX                             ; 0044ebb4
     INC ECX                             ; 0044ebb5
-    MOV word ptr [EBX + 0x6],AX         ; 0044ebb6 | DAT_0151bf9e
-    MOV word ptr [EBX + 0x2],CX         ; 0044ebba | DAT_0151bf9a
+    MOV word ptr [EBX + 0x6],AX         ; 0044ebb6 | g_CameraOutOfBoundsCoord.y+2
+    MOV word ptr [EBX + 0x2],CX         ; 0044ebba | g_CameraOutOfBoundsCoord.x+2
     MOV EAX,dword ptr [EBX + 0x4]       ; 0044ebbe | g_CameraOutOfBoundsY
     MOV EDX,dword ptr [ESI + 0x1cc4]    ; 0044ebc1
     SAR EAX,0x10                        ; 0044ebc7

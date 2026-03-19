@@ -22,7 +22,7 @@
 ;   float FLOAT_0065b9e0 = 256
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 DAT_00f80000
+;   undefined4 g_LightBufferPool[11][183800]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -245,13 +245,13 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 00430b85 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x48],0x80000  ; 00430b87
     MOV EDX,dword ptr [EAX]             ; 00430b8e | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x4c],0xf80000 ; 00430b90 | DAT_00f80000
+    MOV dword ptr [EDX + 0x4c],0xf80000 ; 00430b90 | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 00430b97 | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x78],0xf80000 ; 00430b99 | DAT_00f80000
+    MOV dword ptr [EDX + 0x78],0xf80000 ; 00430b99 | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 00430ba0 | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x7c],0xf80000 ; 00430ba2 | DAT_00f80000
+    MOV dword ptr [EDX + 0x7c],0xf80000 ; 00430ba2 | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 00430ba9 | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0xa8],0xf80000 ; 00430bab | DAT_00f80000
+    MOV dword ptr [EDX + 0xa8],0xf80000 ; 00430bab | g_LightBufferPool[11][183800]
     MOV EAX,dword ptr [EAX]             ; 00430bb5 | g_CDemonRendererInstance
     ADD ESP,0x8                         ; 00430bb7
     LEA EBX,[ESP + 0x50]                ; 00430bba
@@ -406,13 +406,13 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 00430dbd | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x48],0x80000  ; 00430dbf
     MOV EDX,dword ptr [EAX]             ; 00430dc6 | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x4c],0xf80000 ; 00430dc8 | DAT_00f80000
+    MOV dword ptr [EDX + 0x4c],0xf80000 ; 00430dc8 | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 00430dcf | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x78],0xf80000 ; 00430dd1 | DAT_00f80000
+    MOV dword ptr [EDX + 0x78],0xf80000 ; 00430dd1 | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 00430dd8 | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x7c],0xf80000 ; 00430dda | DAT_00f80000
+    MOV dword ptr [EDX + 0x7c],0xf80000 ; 00430dda | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 00430de1 | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0xa8],0xf80000 ; 00430de3 | DAT_00f80000
+    MOV dword ptr [EDX + 0xa8],0xf80000 ; 00430de3 | g_LightBufferPool[11][183800]
     MOV EAX,dword ptr [EAX]             ; 00430ded | g_CDemonRendererInstance
     ADD ESP,0x8                         ; 00430def
     LEA EBX,[ESP + 0x50]                ; 00430df2

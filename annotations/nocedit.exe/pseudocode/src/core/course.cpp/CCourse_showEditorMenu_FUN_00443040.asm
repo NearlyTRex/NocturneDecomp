@@ -77,7 +77,7 @@ section .text
     MOV ECX,0x41                        ; 00443051
     LEA EDI,[ESP + 0x30c]               ; 00443056
     MOV ESI,0x66e940                    ; 0044305d | g_CourseLastPthPath
-    MOVSD.REP ES:EDI,ESI                ; 00443062 | g_CourseLastPthPath | DAT_0066e944
+    MOVSD.REP ES:EDI,ESI                ; 00443062 | g_CourseLastPthPath | g_CourseLastPthPath+4
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00443064
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00443064
@@ -256,7 +256,7 @@ section .text
         ;   Label: LAB_0044323e
     MOV EDI,ESP                         ; 00443243
     MOV ESI,0x66ea48                    ; 00443245 | g_CourseLastCrsPath
-    MOVSD.REP ES:EDI,ESI                ; 0044324a | g_CourseLastCrsPath | DAT_0066ea4c
+    MOVSD.REP ES:EDI,ESI                ; 0044324a | g_CourseLastCrsPath | g_CourseLastCrsPath+4
     PUSH 0x1                            ; 0044324c
         ;   Label: LAB_0044324c
     LEA EAX,[ESP + 0x4]                 ; 0044324e
@@ -610,7 +610,7 @@ section .text
     MOV ECX,0x41                        ; 00443626
     LEA EDI,[ESP + 0x104]               ; 0044362b
     MOV ESI,0x66eb50                    ; 00443632 | g_CourseLastBonPath
-    MOVSD.REP ES:EDI,ESI                ; 00443637 | g_CourseLastBonPath | DAT_0066eb54
+    MOVSD.REP ES:EDI,ESI                ; 00443637 | g_CourseLastBonPath | g_CourseLastBonPath+4
     PUSH 0x1                            ; 00443639
         ;   Label: LAB_00443639
     LEA EAX,[ESP + 0x108]               ; 0044363b

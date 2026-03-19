@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   CSfxSample[64] g_SfxSamples
-;   undefined4 DAT_03f62980
-;   undefined4 DAT_03f629ac
-;   undefined4 DAT_03f62b00
+;   undefined4 g_SfxSamples[0].ref_count
+;   undefined4 g_SfxSamples[1].sample_info.name[0]
+;   undefined4 g_SfxSamples[1].ref_count
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005fe7f0
@@ -36,14 +36,14 @@ section .text
         ;   XREF to: 005aa3b3 (CONDITIONAL_JUMP)  ; LAB_005aa3b3
     XOR EBX,EBX                         ; 005aa373
         ;   Label: LAB_005aa373
-    CMP dword ptr [EBX + 0x3f62980],0x0 ; 005aa375 | DAT_03f62980 | DAT_03f62b00
+    CMP dword ptr [EBX + 0x3f62980],0x0 ; 005aa375 | g_SfxSamples[0].ref_count | g_SfxSamples[1].ref_count
         ;   Label: LAB_005aa375
     JNZ 0x005aa39c                      ; 005aa37c
         ;   XREF to: 005aa39c (CONDITIONAL_JUMP)  ; LAB_005aa39c
     MOV ESI,0x3f6282c                   ; 005aa37e | g_SfxSamples
     PUSH EDI                            ; 005aa383
     ADD ESI,EBX                         ; 005aa384
-    PUSH ESI                            ; 005aa386 | g_SfxSamples | DAT_03f629ac
+    PUSH ESI                            ; 005aa386 | g_SfxSamples | g_SfxSamples[1].sample_info.name[0]
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005aa387
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005aa38c

@@ -18,7 +18,7 @@
 ;   double DOUBLE_006510a7 = -0.200000000000000
 ;   float FLOAT_00663164 = 2
 ;   CSfxSample[64] g_SfxSamples
-;   undefined4 DAT_03f629ac
+;   undefined4 g_SfxSamples[1].sample_info.name[0]
 ;   CSfxSample* g_SfxSamplesEnd
 ;
 ; Called Functions:
@@ -58,10 +58,10 @@ section .text
     PUSH dword ptr [ESP + 0x8]          ; 005aced5
         ;   Label: LAB_005aced5
     PUSH dword ptr [ESP + 0x10]         ; 005aced9
-    PUSH EBX                            ; 005acedd | g_SfxSamples | DAT_03f629ac
+    PUSH EBX                            ; 005acedd | g_SfxSamples | g_SfxSamples[1].sample_info.name[0]
     CALL sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730 ; 005acede
         ;   XREF to: 005a6730 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730(CSfxSample * this_ptr, float time_window, float update_interval)
-    ADD EBX,0x180                       ; 005acee3 | DAT_03f629ac
+    ADD EBX,0x180                       ; 005acee3 | g_SfxSamples[1].sample_info.name[0]
     ADD ESP,0xc                         ; 005acee9
     CMP EBX,ESI                         ; 005aceec
     JNZ 0x005aced5                      ; 005aceee

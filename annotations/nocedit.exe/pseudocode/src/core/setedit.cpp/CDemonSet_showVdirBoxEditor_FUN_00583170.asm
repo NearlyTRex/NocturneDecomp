@@ -203,10 +203,10 @@ section .text
     MOV EAX,dword ptr [EBP + 0x92]      ; 00583216
     ADD EAX,0x4                         ; 0058321c
     MOV dword ptr [EBP + 0x2a],EAX      ; 0058321f
-    MOV EAX,0x32758e8                   ; 00583222 | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 00583222 | g_CDemonCameraInstance.base.position
     ADD EAX,0x4                         ; 00583227
     MOV dword ptr [EBP + 0x22],EAX      ; 0058322a | g_CDemonCameraInstance.base.position+4
-    MOV EAX,0x32758e8                   ; 0058322d | DAT_032758e8
+    MOV EAX,0x32758e8                   ; 0058322d | g_CDemonCameraInstance.base.position
     ADD EAX,0x8                         ; 00583232
     MOV dword ptr [EBP + 0x76],EBX      ; 00583235
     MOV dword ptr [EBP + 0x1e],EAX      ; 00583238 | g_CDemonCameraInstance.base.position+8
@@ -317,11 +317,11 @@ section .text
         ;   Label: LAB_0058338c
     LEA EAX,[EBP + 0xfffffe4a]          ; 00583391
     MOV dword ptr [EBP + 0xfffffe62],EDX ; 00583397
-    CMP EAX,0x32758e8                   ; 0058339d | DAT_032758e8
+    CMP EAX,0x32758e8                   ; 0058339d | g_CDemonCameraInstance.base.position
     JZ 0x005833c5                       ; 005833a2
         ;   XREF to: 005833c5 (CONDITIONAL_JUMP)  ; LAB_005833c5
     MOV EAX,dword ptr [EBP + 0xfffffe4a] ; 005833a4
-    MOV [0x032758e8],EAX                ; 005833aa | DAT_032758e8
+    MOV [0x032758e8],EAX                ; 005833aa | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EBP + 0xfffffe4e] ; 005833af
     MOV [0x032758ec],EAX                ; 005833b5 | g_CDemonCameraInstance.base.position+4
     MOV EAX,dword ptr [EBP + 0xfffffe52] ; 005833ba
@@ -1303,7 +1303,7 @@ section .text
     TEST byte ptr [0x02cf6a94],0x1      ; 00583f62 | g_MouseButtonFlags
     JNZ 0x00583244                      ; 00583f69
         ;   XREF to: 00583244 (CONDITIONAL_JUMP)  ; LAB_00583244
-    MOV EAX,[0x032758e8]                ; 00583f6f | DAT_032758e8
+    MOV EAX,[0x032758e8]                ; 00583f6f | g_CDemonCameraInstance.base.position
     MOV dword ptr [EBP + 0xffffff06],EAX ; 00583f74
     MOV EAX,dword ptr [EBP + 0x22]      ; 00583f7a
     MOV EAX,dword ptr [EAX]             ; 00583f7d | g_CDemonCameraInstance.base.position+4

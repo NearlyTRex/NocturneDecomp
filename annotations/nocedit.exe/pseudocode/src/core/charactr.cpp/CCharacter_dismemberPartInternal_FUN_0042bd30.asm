@@ -32,7 +32,7 @@
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00823b10
+;   undefined4 CKeyFramedModelInstance_00823a98.model_name[0]
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0
@@ -197,7 +197,7 @@ section .text
     MOV dword ptr [EBP + 0x4e],EAX      ; 0042bece
     LEA EAX,[EBP + 0x46]                ; 0042bed1
     PUSH EAX                            ; 0042bed4
-    PUSH 0x823b10                       ; 0042bed5 | DAT_00823b10
+    PUSH 0x823b10                       ; 0042bed5 | CKeyFramedModelInstance_00823a98.model_name[0]
     MOV EDI,dword ptr [EBP + 0x8a]      ; 0042beda
     PUSH EDI                            ; 0042bee0
     CALL core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0 ; 0042bee1

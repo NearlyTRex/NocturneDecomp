@@ -235,11 +235,11 @@ section .text
         ;   Label: LAB_00581c45
     LEA EAX,[EBP + -0x7a]               ; 00581c4a
     MOV dword ptr [EBP + -0x62],EDI     ; 00581c4d
-    CMP EAX,0x32758e8                   ; 00581c50 | DAT_032758e8
+    CMP EAX,0x32758e8                   ; 00581c50 | g_CDemonCameraInstance.base.position
     JZ 0x00581c6f                       ; 00581c55
         ;   XREF to: 00581c6f (CONDITIONAL_JUMP)  ; LAB_00581c6f
     MOV EAX,dword ptr [EBP + -0x7a]     ; 00581c57
-    MOV [0x032758e8],EAX                ; 00581c5a | DAT_032758e8
+    MOV [0x032758e8],EAX                ; 00581c5a | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EBP + -0x76]     ; 00581c5f
     MOV [0x032758ec],EAX                ; 00581c62 | g_CDemonCameraInstance.base.position+4
     MOV EAX,dword ptr [EBP + -0x72]     ; 00581c67

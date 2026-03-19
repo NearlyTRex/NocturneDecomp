@@ -191,7 +191,7 @@ section .text
     CALL core_dfont.cpp_initFonts_FUN_004709a0 ; 00507c1d
         ;   XREF to: 004709a0 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_initFonts_FUN_004709a0()
         ;   Label: LAB_00507c1d
-    CMP dword ptr [0x03f98474],0x3c00000 ; 00507c22 | g_TotalPhysicalMemory | DAT_03c00000
+    CMP dword ptr [0x03f98474],0x3c00000 ; 00507c22 | g_TotalPhysicalMemory | g_SkeletonPool[19].motion_list.motions[91].transitions[2].tween_time
     JGE 0x00507ea0                      ; 00507c2c
         ;   XREF to: 00507ea0 (CONDITIONAL_JUMP)  ; LAB_00507ea0
     PUSH 0x6353fb                       ; 00507c32 | = "Windows is reporting "
@@ -793,7 +793,7 @@ section .text
     FMUL double ptr [0x006355de]        ; 00508180 | DOUBLE_006355de
     MOV EAX,dword ptr [EBX + 0x66efbc]  ; 00508186 | g_PlayerFilters | DAT_0066efc0
     PUSH 0x0                            ; 0050818c
-    MOV dword ptr [EAX + 0x4],EDI       ; 0050818e | DAT_020a487c | DAT_020a48c8
+    MOV dword ptr [EAX + 0x4],EDI       ; 0050818e | CDemonFilter_ARRAY_020a4878[0].count | CDemonFilter_ARRAY_020a4878[1].count
     FADD double ptr [0x006355de]        ; 00508191 | DOUBLE_006355de
     SUB ESP,0x4                         ; 00508197
     FSTP float ptr [ESP]                ; 0050819a
@@ -846,7 +846,7 @@ section .text
     MOV dword ptr [0x02db8a64],EDI      ; 00508221 | g_SkipIntroVideo
     MOV dword ptr [EAX + 0x4],0x1e0     ; 00508227 | g_CGameInstance.game_pixy
     MOV dword ptr [0x03f6b878],EDI      ; 0050822e | g_FullscreenMode
-    MOV dword ptr [EAX + 0x8],0x20      ; 00508234 | DAT_02d81aa4
+    MOV dword ptr [EAX + 0x8],0x20      ; 00508234 | g_CGameInstance.game_bpp
     CALL core_menu.cpp_showCalibrationTest_FUN_00510ba0 ; 0050823b
         ;   XREF to: 00510ba0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_showCalibrationTest_FUN_00510ba0()
     JMP 0x00508037                      ; 00508240

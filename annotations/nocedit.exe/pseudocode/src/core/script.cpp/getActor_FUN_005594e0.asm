@@ -80,13 +80,13 @@ section .text
     PUSH EDI                            ; 0055951f | g_ScriptErrorBuffer
     MOV AL,byte ptr [ESI]               ; 00559520 | = "Must specify actor name" | s_st_specify_actor_name_00641568
         ;   Label: LAB_00559520
-    MOV byte ptr [EDI],AL               ; 00559522 | g_ScriptErrorBuffer | DAT_0310eca2
+    MOV byte ptr [EDI],AL               ; 00559522 | g_ScriptErrorBuffer | g_ScriptErrorBuffer+2
     CMP AL,0x0                          ; 00559524
     JZ 0x00559538                       ; 00559526
         ;   XREF to: 00559538 (CONDITIONAL_JUMP)  ; LAB_00559538
     MOV AL,byte ptr [ESI + 0x1]         ; 00559528 | s_ust_specify_actor_name_00641567 | s_t_specify_actor_name_00641569
     ADD ESI,0x2                         ; 0055952b
-    MOV byte ptr [EDI + 0x1],AL         ; 0055952e | DAT_0310eca1 | DAT_0310eca3
+    MOV byte ptr [EDI + 0x1],AL         ; 0055952e | g_ScriptErrorBuffer+1 | g_ScriptErrorBuffer+3
     ADD EDI,0x2                         ; 00559531
     CMP AL,0x0                          ; 00559534
     JNZ 0x00559520                      ; 00559536

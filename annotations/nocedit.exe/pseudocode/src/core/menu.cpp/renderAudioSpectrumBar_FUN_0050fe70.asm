@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic[8] g_AudioSpectrumTextures
-;   undefined4 DAT_00f80000
+;   undefined4 g_LightBufferPool[11][183800]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_AudioVisualizationCounter
 ;
@@ -73,13 +73,13 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 0050feda | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x18],0x80000  ; 0050fedc
     MOV EDX,dword ptr [EAX]             ; 0050fee3 | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x1c],0xf80000 ; 0050fee5 | DAT_00f80000
+    MOV dword ptr [EDX + 0x1c],0xf80000 ; 0050fee5 | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 0050feec | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x48],0xf80000 ; 0050feee | DAT_00f80000
+    MOV dword ptr [EDX + 0x48],0xf80000 ; 0050feee | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 0050fef5 | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x4c],0xf80000 ; 0050fef7 | DAT_00f80000
+    MOV dword ptr [EDX + 0x4c],0xf80000 ; 0050fef7 | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 0050fefe | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x78],0xf80000 ; 0050ff00 | DAT_00f80000
+    MOV dword ptr [EDX + 0x78],0xf80000 ; 0050ff00 | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 0050ff07 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x7c],0x80000  ; 0050ff09
     MOV EDX,dword ptr [EAX]             ; 0050ff10 | g_CDemonRendererInstance

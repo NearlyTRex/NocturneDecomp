@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   CScript* g_CScriptPtr = 0310f858
 ;   CScript g_CScriptInstance
-;   undefined4 DAT_0310f864
+;   undefined4 g_CScriptInstance.focus_actor
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
     PUSH EDI                            ; 004e09a2
     SUB ESP,0x60                        ; 004e09a3
     MOV EAX,[0x00680d50]                ; 004e09a6 | g_CScriptInstance | g_CScriptPtr
-    MOV EDX,dword ptr [EAX + 0xc]       ; 004e09ab | DAT_0310f864
+    MOV EDX,dword ptr [EAX + 0xc]       ; 004e09ab | g_CScriptInstance.focus_actor
     TEST EDX,EDX                        ; 004e09ae
     JNZ 0x004e07d5                      ; 004e09b0
         ;   XREF to: 004e07d5 (CONDITIONAL_JUMP)  ; LAB_004e07d5

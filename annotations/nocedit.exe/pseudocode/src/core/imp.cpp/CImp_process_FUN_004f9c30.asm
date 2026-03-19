@@ -697,7 +697,7 @@ section .text
         ;   XREF to: 004f9fef (CONDITIONAL_JUMP)  ; caseD_6
     MOV ECX,dword ptr [0x02db8a5c]      ; 004fa2dc | g_CImpClassInfo.name_hash
     PUSH ECX                            ; 004fa2e2
-    MOV EDX,dword ptr [EDI + EAX*0x1 + 0x150fe0] ; 004fa2e3 | DAT_03265258 | DAT_0326525c
+    MOV EDX,dword ptr [EDI + EAX*0x1 + 0x150fe0] ; 004fa2e3 | g_CDemonSetInstance.enemies[0] | g_CDemonSetInstance.enemies[1]
     PUSH EDX                            ; 004fa2ea
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004fa2eb
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

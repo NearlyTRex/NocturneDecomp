@@ -102,9 +102,9 @@ section .text
     CMP AL,0x0                          ; 00464d12
     JZ 0x00464d26                       ; 00464d14
         ;   XREF to: 00464d26 (CONDITIONAL_JUMP)  ; LAB_00464d26
-    MOV AL,byte ptr [ESI + 0x1]         ; 00464d16 | g_LoadedModelName+1 | DAT_0066edab
+    MOV AL,byte ptr [ESI + 0x1]         ; 00464d16 | g_LoadedModelName+1 | g_LoadedModelName+3
     ADD ESI,0x2                         ; 00464d19
-    MOV byte ptr [EDI + 0x1],AL         ; 00464d1c | g_SavedModelName+1 | DAT_015c4893
+    MOV byte ptr [EDI + 0x1],AL         ; 00464d1c | g_SavedModelName+1 | g_SavedModelName+3
     ADD EDI,0x2                         ; 00464d1f
     CMP AL,0x0                          ; 00464d22
     JNZ 0x00464d0e                      ; 00464d24

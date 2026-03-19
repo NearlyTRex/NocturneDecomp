@@ -32,13 +32,13 @@
 ;   SMRGLTextureBasic g_EnvMapTexture
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   float g_PerspectiveReciprocal
-;   undefined4 DAT_02d81c90
+;   undefined4 g_CGameInstance.render_mode
 ;   CVector3f g_LightingReferencePosition
 ;   undefined4 g_LightingReferencePosition.y
 ;   undefined4 g_LightingReferencePosition.z
 ;   CVector3i[20000] g_TransformedVertexArray
-;   undefined4 DAT_032cd850
-;   undefined4 DAT_032cd854
+;   undefined4 g_TransformedVertexArray[0].y
+;   undefined4 g_TransformedVertexArray[0].z
 ;   CVector3f[20000] g_VertexNormalArray
 ;   ... and 2 more
 ;
@@ -70,7 +70,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 005702cb
         ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     MOV EAX,[0x0067b654]                ; 005702d0 | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0x1f4]     ; 005702d5 | DAT_02d81c90
+    MOV ECX,dword ptr [EAX + 0x1f4]     ; 005702d5 | g_CGameInstance.render_mode
     ADD ESP,0x8                         ; 005702db
     CMP ECX,0x2                         ; 005702de
     JNZ 0x00570672                      ; 005702e1
@@ -165,7 +165,7 @@ section .text
     SAHF                                ; 00570407
     JBE 0x005706c3                      ; 00570408
         ;   XREF to: 005706c3 (CONDITIONAL_JUMP)  ; LAB_005706c3
-    FLD float ptr [EDX + 0x4]           ; 0057040e | DAT_033081d0
+    FLD float ptr [EDX + 0x4]           ; 0057040e | g_VertexNormalArray[0].y
     FABS                                ; 00570411
     FLD1                                ; 00570413
     FCOMPP                              ; 00570415
@@ -173,7 +173,7 @@ section .text
     SAHF                                ; 00570419
     JBE 0x005706c3                      ; 0057041a
         ;   XREF to: 005706c3 (CONDITIONAL_JUMP)  ; LAB_005706c3
-    FLD float ptr [EDX + 0x8]           ; 00570420 | DAT_033081d4
+    FLD float ptr [EDX + 0x8]           ; 00570420 | g_VertexNormalArray[0].z
     FABS                                ; 00570423
     FLD1                                ; 00570425
     FCOMPP                              ; 00570427
@@ -197,10 +197,10 @@ section .text
     MOV EAX,dword ptr [ECX + 0x32cd84c] ; 0057046e | g_TransformedVertexArray
     MOV EDX,dword ptr [ESP + 0xd0]      ; 00570474
     SUB ESI,EAX                         ; 0057047b
-    MOV EAX,dword ptr [ECX + 0x32cd850] ; 0057047d | DAT_032cd850
+    MOV EAX,dword ptr [ECX + 0x32cd850] ; 0057047d | g_TransformedVertexArray[0].y
     MOV dword ptr [ESP + 0xc8],ESI      ; 00570483
     SUB EDI,EAX                         ; 0057048a
-    MOV EAX,dword ptr [ECX + 0x32cd854] ; 0057048c | DAT_032cd854
+    MOV EAX,dword ptr [ECX + 0x32cd854] ; 0057048c | g_TransformedVertexArray[0].z
     LEA ESI,[ESP + 0xe0]                ; 00570492
     SUB EDX,EAX                         ; 00570499
     LEA EAX,[ESP + 0xc8]                ; 0057049b
@@ -381,9 +381,9 @@ section .text
     MOV EAX,EDX                         ; 005706ca
     FLD float ptr [EAX]                 ; 005706cc | g_VertexNormalArray
     FISTP dword ptr [EBX]               ; 005706ce
-    FLD float ptr [EAX + 0x4]           ; 005706d0 | DAT_033081d0
+    FLD float ptr [EAX + 0x4]           ; 005706d0 | g_VertexNormalArray[0].y
     FISTP dword ptr [EBX + 0x4]         ; 005706d3
-    FLD float ptr [EAX + 0x8]           ; 005706d6 | DAT_033081d4
+    FLD float ptr [EAX + 0x8]           ; 005706d6 | g_VertexNormalArray[0].z
     FISTP dword ptr [EBX + 0x8]         ; 005706d9
     JMP 0x005704ca                      ; 005706dc
         ;   XREF to: 005704ca (UNCONDITIONAL_JUMP)  ; LAB_005704ca

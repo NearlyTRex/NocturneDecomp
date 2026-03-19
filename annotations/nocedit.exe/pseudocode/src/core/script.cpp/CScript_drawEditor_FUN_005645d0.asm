@@ -18,7 +18,7 @@
 ;   CEdScrollBar g_ScriptEditorVScrollBar
 ;   undefined4 g_ScriptEditorVScrollBar.max_value
 ;   CEdScrollBar g_ScriptEditorHScrollBar
-;   undefined4 DAT_0310fd40+1
+;   undefined4 g_CursorBlinkTimer+1
 ;   int g_CurrentEditingColumn
 ;   int g_CurrentEditingLine
 ;   char[1023] g_ScriptEditorStatusText
@@ -127,7 +127,7 @@ section .text
     CMP EBX,EAX                         ; 005646b0
     JLE 0x005647a9                      ; 005646b2
         ;   XREF to: 005647a9 (CONDITIONAL_JUMP)  ; LAB_005647a9
-    TEST byte ptr [0x0310fd41],0x40     ; 005646b8 | DAT_0310fd40+1
+    TEST byte ptr [0x0310fd41],0x40     ; 005646b8 | g_CursorBlinkTimer+1
     JNZ 0x00564725                      ; 005646bf
         ;   XREF to: 00564725 (CONDITIONAL_JUMP)  ; LAB_00564725
     MOV EBX,dword ptr [0x0310fd0c]      ; 005646c1 | g_ScriptEditorHScrollBar

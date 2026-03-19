@@ -22,7 +22,7 @@
 ;   TerminatedCString s_Invalid_point_0061c92d
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; Called Functions:
@@ -145,10 +145,10 @@ section .text
         ;   XREF to: 004671ca (UNCONDITIONAL_JUMP)  ; LAB_004671ca
     IMUL EAX,dword ptr [EBP + -0x18],0x14 ; 004670f6
         ;   Label: LAB_004670f6
-    MOV EAX,dword ptr [EAX + 0x1626410] ; 004670fa | DAT_01626410
+    MOV EAX,dword ptr [EAX + 0x1626410] ; 004670fa | g_LoadedVertices[0].vertex.y
     MOV dword ptr [EBP + -0x4],EAX      ; 00467100
     IMUL EAX,dword ptr [EBP + -0x14],0x14 ; 00467103
-    MOV EAX,dword ptr [EAX + 0x1626410] ; 00467107 | DAT_01626410
+    MOV EAX,dword ptr [EAX + 0x1626410] ; 00467107 | g_LoadedVertices[0].vertex.y
     MOV dword ptr [EBP + -0x8],EAX      ; 0046710d
     JMP 0x0046715d                      ; 00467110
         ;   XREF to: 0046715d (UNCONDITIONAL_JUMP)  ; LAB_0046715d
@@ -165,7 +165,7 @@ section .text
     JGE 0x0046715d                      ; 0046712a
         ;   XREF to: 0046715d (CONDITIONAL_JUMP)  ; LAB_0046715d
     IMUL EAX,dword ptr [EBP + -0x1c],0x14 ; 0046712c
-    MOV EAX,dword ptr [EAX + 0x1626410] ; 00467130 | DAT_01626410
+    MOV EAX,dword ptr [EAX + 0x1626410] ; 00467130 | g_LoadedVertices[0].vertex.y
     MOV dword ptr [EBP + -0xc],EAX      ; 00467136
     FLD float ptr [EBP + -0xc]          ; 00467139
     FCOMP float ptr [EBP + -0x4]        ; 0046713c
@@ -209,10 +209,10 @@ section .text
     IMUL EAX,dword ptr [EBP + -0x1c],0x14 ; 00467190
     FSTP float ptr [EAX + 0x162640c]    ; 00467194 | g_LoadedVertices
     IMUL EAX,dword ptr [EBP + -0x1c],0x14 ; 0046719a
-    FLD float ptr [EAX + 0x1626410]     ; 0046719e | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 0046719e | g_LoadedVertices[0].vertex.y
     FMUL float ptr [EBP + -0x10]        ; 004671a4
     IMUL EAX,dword ptr [EBP + -0x1c],0x14 ; 004671a7
-    FSTP float ptr [EAX + 0x1626410]    ; 004671ab | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 004671ab | g_LoadedVertices[0].vertex.y
     IMUL EAX,dword ptr [EBP + -0x1c],0x14 ; 004671b1
     FLD float ptr [EAX + 0x1626414]     ; 004671b5 | g_LoadedVertices[0].vertex.z
     FMUL float ptr [EBP + -0x10]        ; 004671bb

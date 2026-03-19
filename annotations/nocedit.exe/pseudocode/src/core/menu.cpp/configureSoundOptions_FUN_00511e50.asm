@@ -89,7 +89,7 @@ section .text
     MOV EDX,0x2f28028                   ; 00511e74 | g_SoundMenuTextBuffers
     ADD ESP,0x4                         ; 00511e79
     XOR EAX,EAX                         ; 00511e7c
-    MOV dword ptr [EAX + 0x2f28a28],EDX ; 00511e7e | g_SoundOptionsMenuPointers | DAT_02f28a2c | g_SoundMenuTextBuffers
+    MOV dword ptr [EAX + 0x2f28a28],EDX ; 00511e7e | g_SoundOptionsMenuPointers | g_SoundOptionsMenuPointers[1] | g_SoundMenuTextBuffers
         ;   Label: LAB_00511e7e
     ADD EAX,0x4                         ; 00511e84
     ADD EDX,0x100                       ; 00511e87 | g_SoundMenuTextDialog
@@ -125,13 +125,13 @@ section .text
     PUSH EDI                            ; 00511ee9 | g_SoundMenuTextBuffers
     MOV AL,byte ptr [ESI]               ; 00511eea
         ;   Label: LAB_00511eea
-    MOV byte ptr [EDI],AL               ; 00511eec | g_SoundMenuTextBuffers | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 00511eec | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 00511eee
     JZ 0x00511f02                       ; 00511ef0
         ;   XREF to: 00511f02 (CONDITIONAL_JUMP)  ; LAB_00511f02
     MOV AL,byte ptr [ESI + 0x1]         ; 00511ef2
     ADD ESI,0x2                         ; 00511ef5
-    MOV byte ptr [EDI + 0x1],AL         ; 00511ef8 | DAT_02f28029 | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 00511ef8 | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 00511efb
     CMP AL,0x0                          ; 00511efe
     JNZ 0x00511eea                      ; 00511f00
@@ -153,17 +153,17 @@ section .text
     SUB ECX,ECX                         ; 00511f20
     DEC ECX                             ; 00511f22
     MOV AL,0x0                          ; 00511f23
-    SCASB.REPNE ES:EDI                  ; 00511f25 | g_SoundMenuTextBuffers | DAT_02f28029
+    SCASB.REPNE ES:EDI                  ; 00511f25 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1]
     DEC EDI                             ; 00511f27
     MOV AL,byte ptr [ESI]               ; 00511f28
         ;   Label: LAB_00511f28
-    MOV byte ptr [EDI],AL               ; 00511f2a | g_SoundMenuTextBuffers | DAT_02f28029 | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 00511f2a | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 00511f2c
     JZ 0x00511f40                       ; 00511f2e
         ;   XREF to: 00511f40 (CONDITIONAL_JUMP)  ; LAB_00511f40
     MOV AL,byte ptr [ESI + 0x1]         ; 00511f30
     ADD ESI,0x2                         ; 00511f33
-    MOV byte ptr [EDI + 0x1],AL         ; 00511f36 | DAT_02f28029 | DAT_02f2802a | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 00511f36 | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 00511f39
     CMP AL,0x0                          ; 00511f3c
     JNZ 0x00511f28                      ; 00511f3e
@@ -220,17 +220,17 @@ section .text
     SUB ECX,ECX                         ; 00511feb
     DEC ECX                             ; 00511fed
     MOV AL,0x0                          ; 00511fee
-    SCASB.REPNE ES:EDI                  ; 00511ff0 | g_SoundMenuTextBuffers | DAT_02f28029
+    SCASB.REPNE ES:EDI                  ; 00511ff0 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1]
     DEC EDI                             ; 00511ff2
     MOV AL,byte ptr [ESI]               ; 00511ff3
         ;   Label: LAB_00511ff3
-    MOV byte ptr [EDI],AL               ; 00511ff5 | g_SoundMenuTextBuffers | DAT_02f28029 | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 00511ff5 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 00511ff7
     JZ 0x0051200b                       ; 00511ff9
         ;   XREF to: 0051200b (CONDITIONAL_JUMP)  ; LAB_0051200b
     MOV AL,byte ptr [ESI + 0x1]         ; 00511ffb
     ADD ESI,0x2                         ; 00511ffe
-    MOV byte ptr [EDI + 0x1],AL         ; 00512001 | DAT_02f28029 | DAT_02f2802a | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 00512001 | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 00512004
     CMP AL,0x0                          ; 00512007
     JNZ 0x00511ff3                      ; 00512009
@@ -246,17 +246,17 @@ section .text
     SUB ECX,ECX                         ; 0051201c
     DEC ECX                             ; 0051201e
     MOV AL,0x0                          ; 0051201f
-    SCASB.REPNE ES:EDI                  ; 00512021 | g_SoundMenuTextBuffers | DAT_02f28029
+    SCASB.REPNE ES:EDI                  ; 00512021 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1]
     DEC EDI                             ; 00512023
     MOV AL,byte ptr [ESI]               ; 00512024
         ;   Label: LAB_00512024
-    MOV byte ptr [EDI],AL               ; 00512026 | g_SoundMenuTextBuffers | DAT_02f28029 | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 00512026 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 00512028
     JZ 0x0051203c                       ; 0051202a
         ;   XREF to: 0051203c (CONDITIONAL_JUMP)  ; LAB_0051203c
     MOV AL,byte ptr [ESI + 0x1]         ; 0051202c
     ADD ESI,0x2                         ; 0051202f
-    MOV byte ptr [EDI + 0x1],AL         ; 00512032 | DAT_02f28029 | DAT_02f2802a | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 00512032 | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 00512035
     CMP AL,0x0                          ; 00512038
     JNZ 0x00512024                      ; 0051203a
@@ -286,13 +286,13 @@ section .text
     PUSH EDI                            ; 0051207a
     MOV AL,byte ptr [ESI]               ; 0051207b
         ;   Label: LAB_0051207b
-    MOV byte ptr [EDI],AL               ; 0051207d | g_SoundMenuTextBuffers | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 0051207d | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 0051207f
     JZ 0x00512093                       ; 00512081
         ;   XREF to: 00512093 (CONDITIONAL_JUMP)  ; LAB_00512093
     MOV AL,byte ptr [ESI + 0x1]         ; 00512083
     ADD ESI,0x2                         ; 00512086
-    MOV byte ptr [EDI + 0x1],AL         ; 00512089 | DAT_02f28029 | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 00512089 | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 0051208c
     CMP AL,0x0                          ; 0051208f
     JNZ 0x0051207b                      ; 00512091
@@ -324,17 +324,17 @@ section .text
     SUB ECX,ECX                         ; 005120ef
     DEC ECX                             ; 005120f1
     MOV AL,0x0                          ; 005120f2
-    SCASB.REPNE ES:EDI                  ; 005120f4 | g_SoundMenuTextBuffers | DAT_02f28029
+    SCASB.REPNE ES:EDI                  ; 005120f4 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1]
     DEC EDI                             ; 005120f6
     MOV AL,byte ptr [ESI]               ; 005120f7
         ;   Label: LAB_005120f7
-    MOV byte ptr [EDI],AL               ; 005120f9 | g_SoundMenuTextBuffers | DAT_02f28029 | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 005120f9 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 005120fb
     JZ 0x0051210f                       ; 005120fd
         ;   XREF to: 0051210f (CONDITIONAL_JUMP)  ; LAB_0051210f
     MOV AL,byte ptr [ESI + 0x1]         ; 005120ff
     ADD ESI,0x2                         ; 00512102
-    MOV byte ptr [EDI + 0x1],AL         ; 00512105 | DAT_02f28029 | DAT_02f2802a | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 00512105 | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 00512108
     CMP AL,0x0                          ; 0051210b
     JNZ 0x005120f7                      ; 0051210d
@@ -350,17 +350,17 @@ section .text
     SUB ECX,ECX                         ; 00512120
     DEC ECX                             ; 00512122
     MOV AL,0x0                          ; 00512123
-    SCASB.REPNE ES:EDI                  ; 00512125 | g_SoundMenuTextBuffers | DAT_02f28029
+    SCASB.REPNE ES:EDI                  ; 00512125 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1]
     DEC EDI                             ; 00512127
     MOV AL,byte ptr [ESI]               ; 00512128
         ;   Label: LAB_00512128
-    MOV byte ptr [EDI],AL               ; 0051212a | g_SoundMenuTextBuffers | DAT_02f28029 | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 0051212a | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 0051212c
     JZ 0x00512140                       ; 0051212e
         ;   XREF to: 00512140 (CONDITIONAL_JUMP)  ; LAB_00512140
     MOV AL,byte ptr [ESI + 0x1]         ; 00512130
     ADD ESI,0x2                         ; 00512133
-    MOV byte ptr [EDI + 0x1],AL         ; 00512136 | DAT_02f28029 | DAT_02f2802a | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 00512136 | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 00512139
     CMP AL,0x0                          ; 0051213c
     JNZ 0x00512128                      ; 0051213e
@@ -390,13 +390,13 @@ section .text
     PUSH EDI                            ; 0051217e
     MOV AL,byte ptr [ESI]               ; 0051217f
         ;   Label: LAB_0051217f
-    MOV byte ptr [EDI],AL               ; 00512181 | g_SoundMenuTextBuffers | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 00512181 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 00512183
     JZ 0x00512197                       ; 00512185
         ;   XREF to: 00512197 (CONDITIONAL_JUMP)  ; LAB_00512197
     MOV AL,byte ptr [ESI + 0x1]         ; 00512187
     ADD ESI,0x2                         ; 0051218a
-    MOV byte ptr [EDI + 0x1],AL         ; 0051218d | DAT_02f28029 | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 0051218d | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 00512190
     CMP AL,0x0                          ; 00512193
     JNZ 0x0051217f                      ; 00512195
@@ -428,17 +428,17 @@ section .text
     SUB ECX,ECX                         ; 005121f3
     DEC ECX                             ; 005121f5
     MOV AL,0x0                          ; 005121f6
-    SCASB.REPNE ES:EDI                  ; 005121f8 | g_SoundMenuTextBuffers | DAT_02f28029
+    SCASB.REPNE ES:EDI                  ; 005121f8 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1]
     DEC EDI                             ; 005121fa
     MOV AL,byte ptr [ESI]               ; 005121fb
         ;   Label: LAB_005121fb
-    MOV byte ptr [EDI],AL               ; 005121fd | g_SoundMenuTextBuffers | DAT_02f28029 | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 005121fd | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 005121ff
     JZ 0x00512213                       ; 00512201
         ;   XREF to: 00512213 (CONDITIONAL_JUMP)  ; LAB_00512213
     MOV AL,byte ptr [ESI + 0x1]         ; 00512203
     ADD ESI,0x2                         ; 00512206
-    MOV byte ptr [EDI + 0x1],AL         ; 00512209 | DAT_02f28029 | DAT_02f2802a | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 00512209 | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 0051220c
     CMP AL,0x0                          ; 0051220f
     JNZ 0x005121fb                      ; 00512211
@@ -454,17 +454,17 @@ section .text
     SUB ECX,ECX                         ; 00512224
     DEC ECX                             ; 00512226
     MOV AL,0x0                          ; 00512227
-    SCASB.REPNE ES:EDI                  ; 00512229 | g_SoundMenuTextBuffers | DAT_02f28029
+    SCASB.REPNE ES:EDI                  ; 00512229 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1]
     DEC EDI                             ; 0051222b
     MOV AL,byte ptr [ESI]               ; 0051222c
         ;   Label: LAB_0051222c
-    MOV byte ptr [EDI],AL               ; 0051222e | g_SoundMenuTextBuffers | DAT_02f28029 | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 0051222e | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 00512230
     JZ 0x00512244                       ; 00512232
         ;   XREF to: 00512244 (CONDITIONAL_JUMP)  ; LAB_00512244
     MOV AL,byte ptr [ESI + 0x1]         ; 00512234
     ADD ESI,0x2                         ; 00512237
-    MOV byte ptr [EDI + 0x1],AL         ; 0051223a | DAT_02f28029 | DAT_02f2802a | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 0051223a | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 0051223d
     CMP AL,0x0                          ; 00512240
     JNZ 0x0051222c                      ; 00512242
@@ -485,13 +485,13 @@ section .text
     PUSH EDI                            ; 00512272
     MOV AL,byte ptr [ESI]               ; 00512273
         ;   Label: LAB_00512273
-    MOV byte ptr [EDI],AL               ; 00512275 | g_SoundMenuTextBuffers | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 00512275 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 00512277
     JZ 0x0051228b                       ; 00512279
         ;   XREF to: 0051228b (CONDITIONAL_JUMP)  ; LAB_0051228b
     MOV AL,byte ptr [ESI + 0x1]         ; 0051227b
     ADD ESI,0x2                         ; 0051227e
-    MOV byte ptr [EDI + 0x1],AL         ; 00512281 | DAT_02f28029 | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 00512281 | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 00512284
     CMP AL,0x0                          ; 00512287
     JNZ 0x00512273                      ; 00512289
@@ -512,17 +512,17 @@ section .text
     SUB ECX,ECX                         ; 005122af
     DEC ECX                             ; 005122b1
     MOV AL,0x0                          ; 005122b2
-    SCASB.REPNE ES:EDI                  ; 005122b4 | g_SoundMenuTextBuffers | DAT_02f28029
+    SCASB.REPNE ES:EDI                  ; 005122b4 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1]
     DEC EDI                             ; 005122b6
     MOV AL,byte ptr [ESI]               ; 005122b7
         ;   Label: LAB_005122b7
-    MOV byte ptr [EDI],AL               ; 005122b9 | g_SoundMenuTextBuffers | DAT_02f28029 | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 005122b9 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 005122bb
     JZ 0x005122cf                       ; 005122bd
         ;   XREF to: 005122cf (CONDITIONAL_JUMP)  ; LAB_005122cf
     MOV AL,byte ptr [ESI + 0x1]         ; 005122bf
     ADD ESI,0x2                         ; 005122c2
-    MOV byte ptr [EDI + 0x1],AL         ; 005122c5 | DAT_02f28029 | DAT_02f2802a | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 005122c5 | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 005122c8
     CMP AL,0x0                          ; 005122cb
     JNZ 0x005122b7                      ; 005122cd
@@ -538,17 +538,17 @@ section .text
     SUB ECX,ECX                         ; 005122e0
     DEC ECX                             ; 005122e2
     MOV AL,0x0                          ; 005122e3
-    SCASB.REPNE ES:EDI                  ; 005122e5 | g_SoundMenuTextBuffers | DAT_02f28029
+    SCASB.REPNE ES:EDI                  ; 005122e5 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1]
     DEC EDI                             ; 005122e7
     MOV AL,byte ptr [ESI]               ; 005122e8
         ;   Label: LAB_005122e8
-    MOV byte ptr [EDI],AL               ; 005122ea | g_SoundMenuTextBuffers | DAT_02f28029 | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 005122ea | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 005122ec
     JZ 0x00512300                       ; 005122ee
         ;   XREF to: 00512300 (CONDITIONAL_JUMP)  ; LAB_00512300
     MOV AL,byte ptr [ESI + 0x1]         ; 005122f0
     ADD ESI,0x2                         ; 005122f3
-    MOV byte ptr [EDI + 0x1],AL         ; 005122f6 | DAT_02f28029 | DAT_02f2802a | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 005122f6 | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 005122f9
     CMP AL,0x0                          ; 005122fc
     JNZ 0x005122e8                      ; 005122fe
@@ -569,13 +569,13 @@ section .text
     PUSH EDI                            ; 0051232a
     MOV AL,byte ptr [ESI]               ; 0051232b
         ;   Label: LAB_0051232b
-    MOV byte ptr [EDI],AL               ; 0051232d | g_SoundMenuTextBuffers | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 0051232d | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 0051232f
     JZ 0x00512343                       ; 00512331
         ;   XREF to: 00512343 (CONDITIONAL_JUMP)  ; LAB_00512343
     MOV AL,byte ptr [ESI + 0x1]         ; 00512333
     ADD ESI,0x2                         ; 00512336
-    MOV byte ptr [EDI + 0x1],AL         ; 00512339 | DAT_02f28029 | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 00512339 | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 0051233c
     CMP AL,0x0                          ; 0051233f
     JNZ 0x0051232b                      ; 00512341
@@ -596,17 +596,17 @@ section .text
     SUB ECX,ECX                         ; 00512367
     DEC ECX                             ; 00512369
     MOV AL,0x0                          ; 0051236a
-    SCASB.REPNE ES:EDI                  ; 0051236c | g_SoundMenuTextBuffers | DAT_02f28029
+    SCASB.REPNE ES:EDI                  ; 0051236c | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1]
     DEC EDI                             ; 0051236e
     MOV AL,byte ptr [ESI]               ; 0051236f
         ;   Label: LAB_0051236f
-    MOV byte ptr [EDI],AL               ; 00512371 | g_SoundMenuTextBuffers | DAT_02f28029 | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 00512371 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 00512373
     JZ 0x00512387                       ; 00512375
         ;   XREF to: 00512387 (CONDITIONAL_JUMP)  ; LAB_00512387
     MOV AL,byte ptr [ESI + 0x1]         ; 00512377
     ADD ESI,0x2                         ; 0051237a
-    MOV byte ptr [EDI + 0x1],AL         ; 0051237d | DAT_02f28029 | DAT_02f2802a | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 0051237d | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 00512380
     CMP AL,0x0                          ; 00512383
     JNZ 0x0051236f                      ; 00512385
@@ -622,17 +622,17 @@ section .text
     SUB ECX,ECX                         ; 00512398
     DEC ECX                             ; 0051239a
     MOV AL,0x0                          ; 0051239b
-    SCASB.REPNE ES:EDI                  ; 0051239d | g_SoundMenuTextBuffers | DAT_02f28029
+    SCASB.REPNE ES:EDI                  ; 0051239d | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1]
     DEC EDI                             ; 0051239f
     MOV AL,byte ptr [ESI]               ; 005123a0
         ;   Label: LAB_005123a0
-    MOV byte ptr [EDI],AL               ; 005123a2 | g_SoundMenuTextBuffers | DAT_02f28029 | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 005123a2 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 005123a4
     JZ 0x005123b8                       ; 005123a6
         ;   XREF to: 005123b8 (CONDITIONAL_JUMP)  ; LAB_005123b8
     MOV AL,byte ptr [ESI + 0x1]         ; 005123a8
     ADD ESI,0x2                         ; 005123ab
-    MOV byte ptr [EDI + 0x1],AL         ; 005123ae | DAT_02f28029 | DAT_02f2802a | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 005123ae | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 005123b1
     CMP AL,0x0                          ; 005123b4
     JNZ 0x005123a0                      ; 005123b6
@@ -692,13 +692,13 @@ section .text
     PUSH EDI                            ; 00512456
     MOV AL,byte ptr [ESI]               ; 00512457
         ;   Label: LAB_00512457
-    MOV byte ptr [EDI],AL               ; 00512459 | g_SoundMenuTextBuffers | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 00512459 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 0051245b
     JZ 0x0051246f                       ; 0051245d
         ;   XREF to: 0051246f (CONDITIONAL_JUMP)  ; LAB_0051246f
     MOV AL,byte ptr [ESI + 0x1]         ; 0051245f
     ADD ESI,0x2                         ; 00512462
-    MOV byte ptr [EDI + 0x1],AL         ; 00512465 | DAT_02f28029 | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 00512465 | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 00512468
     CMP AL,0x0                          ; 0051246b
     JNZ 0x00512457                      ; 0051246d
@@ -711,17 +711,17 @@ section .text
     SUB ECX,ECX                         ; 00512479
     DEC ECX                             ; 0051247b
     MOV AL,0x0                          ; 0051247c
-    SCASB.REPNE ES:EDI                  ; 0051247e | g_SoundMenuTextBuffers | DAT_02f28029
+    SCASB.REPNE ES:EDI                  ; 0051247e | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1]
     DEC EDI                             ; 00512480
     MOV AL,byte ptr [ESI]               ; 00512481
         ;   Label: LAB_00512481
-    MOV byte ptr [EDI],AL               ; 00512483 | g_SoundMenuTextBuffers | DAT_02f28029 | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 00512483 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 00512485
     JZ 0x00512499                       ; 00512487
         ;   XREF to: 00512499 (CONDITIONAL_JUMP)  ; LAB_00512499
     MOV AL,byte ptr [ESI + 0x1]         ; 00512489
     ADD ESI,0x2                         ; 0051248c
-    MOV byte ptr [EDI + 0x1],AL         ; 0051248f | DAT_02f28029 | DAT_02f2802a | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 0051248f | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][2] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 00512492
     CMP AL,0x0                          ; 00512495
     JNZ 0x00512481                      ; 00512497
@@ -750,13 +750,13 @@ section .text
     PUSH EDI                            ; 005124d3
     MOV AL,byte ptr [ESI]               ; 005124d4
         ;   Label: LAB_005124d4
-    MOV byte ptr [EDI],AL               ; 005124d6 | g_SoundMenuTextBuffers | DAT_02f2802a
+    MOV byte ptr [EDI],AL               ; 005124d6 | g_SoundMenuTextBuffers | g_SoundMenuTextBuffers[0][2]
     CMP AL,0x0                          ; 005124d8
     JZ 0x005124ec                       ; 005124da
         ;   XREF to: 005124ec (CONDITIONAL_JUMP)  ; LAB_005124ec
     MOV AL,byte ptr [ESI + 0x1]         ; 005124dc
     ADD ESI,0x2                         ; 005124df
-    MOV byte ptr [EDI + 0x1],AL         ; 005124e2 | DAT_02f28029 | DAT_02f2802b
+    MOV byte ptr [EDI + 0x1],AL         ; 005124e2 | g_SoundMenuTextBuffers[0][1] | g_SoundMenuTextBuffers[0][3]
     ADD EDI,0x2                         ; 005124e5
     CMP AL,0x0                          ; 005124e8
     JNZ 0x005124d4                      ; 005124ea

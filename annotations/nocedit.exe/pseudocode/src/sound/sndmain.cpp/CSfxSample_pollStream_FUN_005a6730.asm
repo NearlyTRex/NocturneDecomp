@@ -110,7 +110,7 @@ section .text
     ADD ESP,0x8                         ; 005a67d6
     MOV EAX,dword ptr [ESP + 0x18]      ; 005a67d9
         ;   Label: LAB_005a67d9
-    CMP dword ptr [EAX + 0x70],0x0      ; 005a67dd | DAT_03f5db14
+    CMP dword ptr [EAX + 0x70],0x0      ; 005a67dd | g_SfxSlots[0].hardware_buffer_handle
     JZ 0x005a6820                       ; 005a67e1
         ;   XREF to: 005a6820 (CONDITIONAL_JUMP)  ; LAB_005a6820
     PUSH EAX                            ; 005a67e3
@@ -245,7 +245,7 @@ section .text
     JG 0x005a6a92                       ; 005a694f
         ;   XREF to: 005a6a92 (CONDITIONAL_JUMP)  ; LAB_005a6a92
     MOV EAX,dword ptr [ESP + 0x18]      ; 005a6955
-    MOV ECX,dword ptr [EAX + 0x78]      ; 005a6959 | DAT_03f5db1c
+    MOV ECX,dword ptr [EAX + 0x78]      ; 005a6959 | g_SfxSlots[0].sample
     PUSH ECX                            ; 005a695c
     CALL sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_005a87d0 ; 005a695d
         ;   XREF to: 005a87d0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_005a87d0(CSfxSample * this_ptr)
@@ -254,7 +254,7 @@ section .text
     JZ 0x005a6a7b                       ; 005a6967
         ;   XREF to: 005a6a7b (CONDITIONAL_JUMP)  ; LAB_005a6a7b
     MOV EAX,dword ptr [ESP + 0x18]      ; 005a696d
-    MOV EAX,dword ptr [EAX + 0x78]      ; 005a6971 | DAT_03f5db1c
+    MOV EAX,dword ptr [EAX + 0x78]      ; 005a6971 | g_SfxSlots[0].sample
     MOV ECX,dword ptr [EAX + 0x110]     ; 005a6974
     CMP ECX,dword ptr [EAX + 0x160]     ; 005a697a
     JZ 0x005a6a7b                       ; 005a6980
@@ -329,7 +329,7 @@ section .text
     POP ESI                             ; 005a6a34
     POP EBX                             ; 005a6a35
     RET                                 ; 005a6a36
-    CMP EBX,dword ptr [ECX + 0x78]      ; 005a6a37 | DAT_03f5db1c
+    CMP EBX,dword ptr [ECX + 0x78]      ; 005a6a37 | g_SfxSlots[0].sample
         ;   Label: LAB_005a6a37
     JNZ 0x005a677d                      ; 005a6a3a
         ;   XREF to: 005a677d (CONDITIONAL_JUMP)  ; LAB_005a677d
@@ -382,7 +382,7 @@ section .text
     JZ 0x005a6c32                       ; 005a6aba
         ;   XREF to: 005a6c32 (CONDITIONAL_JUMP)  ; LAB_005a6c32
     MOV EAX,dword ptr [ESP + 0x18]      ; 005a6ac0
-    MOV EAX,dword ptr [EAX + 0x78]      ; 005a6ac4 | DAT_03f5db1c
+    MOV EAX,dword ptr [EAX + 0x78]      ; 005a6ac4 | g_SfxSlots[0].sample
     MOV ECX,dword ptr [EAX + 0x108]     ; 005a6ac7
     IMUL ECX,EBP                        ; 005a6acd
     MOV EAX,dword ptr [EAX + 0x104]     ; 005a6ad0
@@ -429,10 +429,10 @@ section .text
     PUSH EDI                            ; 005a6b4d
     MOV EAX,ECX                         ; 005a6b4e
     SHR ECX,0x2                         ; 005a6b50
-    MOVSD.REP ES:EDI,ESI                ; 005a6b53 | g_SfxStreamReadBuffer | DAT_03f5164c
+    MOVSD.REP ES:EDI,ESI                ; 005a6b53 | g_SfxStreamReadBuffer | g_SfxStreamReadBuffer+4
     MOV CL,AL                           ; 005a6b55
     AND CL,0x3                          ; 005a6b57
-    MOVSB.REP ES:EDI,ESI                ; 005a6b5a | g_SfxStreamReadBuffer | DAT_03f5164c | DAT_03f5164d
+    MOVSB.REP ES:EDI,ESI                ; 005a6b5a | g_SfxStreamReadBuffer | g_SfxStreamReadBuffer+4 | g_SfxStreamReadBuffer+5
     POP EDI                             ; 005a6b5c
     PUSH EBX                            ; 005a6b5d
         ;   Label: LAB_005a6b5d

@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   CSfxSample[64] g_SfxSamples
-;   undefined4 DAT_03f629ac
+;   undefined4 g_SfxSamples[1].sample_info.name[0]
 ;   CSfxSample* g_SfxSamplesEnd
 ;   CSoundDevice* g_CSoundDevicePtr
 ;   int g_HasHardware3DSound
@@ -35,7 +35,7 @@ section .text
         ;   XREF to: 005ab698 (CONDITIONAL_JUMP)  ; LAB_005ab698
     MOV EBX,0x3f6282c                   ; 005ab66b | g_SfxSamples
     LEA ESI,[EBX + 0x6000]              ; 005ab670 | g_SfxSamplesEnd
-    PUSH EBX                            ; 005ab676 | g_SfxSamples | DAT_03f629ac
+    PUSH EBX                            ; 005ab676 | g_SfxSamples | g_SfxSamples[1].sample_info.name[0]
         ;   Label: LAB_005ab676
     CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0 ; 005ab677
         ;   XREF to: 005a62c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0(CSfxSample * this_ptr)

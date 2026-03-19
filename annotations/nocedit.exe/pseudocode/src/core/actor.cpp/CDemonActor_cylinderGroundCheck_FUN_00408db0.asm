@@ -13,10 +13,10 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CPlatformClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_032613a0
-;   undefined4 DAT_032613a4
-;   undefined4 DAT_032613a8
-;   undefined4 DAT_032613bc
+;   undefined4 g_CDemonSetInstance.collision_normal.x
+;   undefined4 g_CDemonSetInstance.collision_normal.y
+;   undefined4 g_CDemonSetInstance.collision_normal.z
+;   undefined4 g_CDemonSetInstance.collision_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -74,7 +74,7 @@ section .text
     MOV EAX,[0x030d508c]                ; 00408e1f | g_CPlatformClassInfo.name_hash
     PUSH EAX                            ; 00408e24
     MOV EAX,[0x006810c8]                ; 00408e25 | g_CDemonSetInstance | g_CDemonSetPtr
-    MOV EDX,dword ptr [EAX + 0x14d144]  ; 00408e2a | DAT_032613bc
+    MOV EDX,dword ptr [EAX + 0x14d144]  ; 00408e2a | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 00408e30
     FSTP float ptr [ESP + 0x8]          ; 00408e31
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00408e35
@@ -85,15 +85,15 @@ section .text
     JZ 0x00408e65                       ; 00408e45
         ;   XREF to: 00408e65 (CONDITIONAL_JUMP)  ; LAB_00408e65
     MOV EAX,[0x006810c8]                ; 00408e47 | g_CDemonSetPtr
-    ADD EAX,0x14d128                    ; 00408e4c | DAT_032613a0
+    ADD EAX,0x14d128                    ; 00408e4c | g_CDemonSetInstance.collision_normal.x
     CMP EBX,EAX                         ; 00408e51
     JZ 0x00408e65                       ; 00408e53
         ;   XREF to: 00408e65 (CONDITIONAL_JUMP)  ; LAB_00408e65
-    MOV EDX,dword ptr [EAX]             ; 00408e55 | DAT_032613a0
+    MOV EDX,dword ptr [EAX]             ; 00408e55 | g_CDemonSetInstance.collision_normal.x
     MOV dword ptr [EBX],EDX             ; 00408e57
-    MOV EDX,dword ptr [EAX + 0x4]       ; 00408e59 | DAT_032613a4
+    MOV EDX,dword ptr [EAX + 0x4]       ; 00408e59 | g_CDemonSetInstance.collision_normal.y
     MOV dword ptr [EBX + 0x4],EDX       ; 00408e5c
-    MOV EDX,dword ptr [EAX + 0x8]       ; 00408e5f | DAT_032613a8
+    MOV EDX,dword ptr [EAX + 0x8]       ; 00408e5f | g_CDemonSetInstance.collision_normal.z
     MOV dword ptr [EBX + 0x8],EDX       ; 00408e62
     MOV ECX,dword ptr [0x006810c8]      ; 00408e65 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00408e65

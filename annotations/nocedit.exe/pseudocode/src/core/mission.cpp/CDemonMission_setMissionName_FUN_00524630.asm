@@ -12,9 +12,9 @@
 ;
 ; Referenced Globals:
 ;   char[8100] g_PendingMissionName
-;   undefined4 DAT_02f35f11
-;   undefined4 DAT_02f35f12
-;   undefined4 DAT_02f35f13
+;   undefined4 g_PendingMissionName+1
+;   undefined4 g_PendingMissionName+2
+;   undefined4 g_PendingMissionName+3
 ;
 ; *****************************************************************************
 
@@ -28,13 +28,13 @@ section .text
     PUSH EDI                            ; 0052463b | g_PendingMissionName
     MOV AL,byte ptr [ESI]               ; 0052463c
         ;   Label: LAB_0052463c
-    MOV byte ptr [EDI],AL               ; 0052463e | g_PendingMissionName | DAT_02f35f12
+    MOV byte ptr [EDI],AL               ; 0052463e | g_PendingMissionName | g_PendingMissionName+2
     CMP AL,0x0                          ; 00524640
     JZ 0x00524654                       ; 00524642
         ;   XREF to: 00524654 (CONDITIONAL_JUMP)  ; LAB_00524654
     MOV AL,byte ptr [ESI + 0x1]         ; 00524644
     ADD ESI,0x2                         ; 00524647
-    MOV byte ptr [EDI + 0x1],AL         ; 0052464a | DAT_02f35f11 | DAT_02f35f13
+    MOV byte ptr [EDI + 0x1],AL         ; 0052464a | g_PendingMissionName+1 | g_PendingMissionName+3
     ADD EDI,0x2                         ; 0052464d
     CMP AL,0x0                          ; 00524650
     JNZ 0x0052463c                      ; 00524652

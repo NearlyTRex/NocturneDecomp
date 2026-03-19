@@ -20,13 +20,13 @@
 ;   undefined4 g_RenderVertexBuffer[0].v
 ;   uint g_ProcessedVertexOffset
 ;   int[24] g_ProcessedVertexIndices
-;   undefined4 DAT_00772a9c
+;   undefined4 g_ProcessedVertexIndices[1]
 ;   int g_RenderBufferEnabled
 ;   int g_RenderBufferCount
 ;   SRenderBufferEntry[256] g_RenderBufferPool
-;   undefined4 DAT_00772b04
-;   undefined4 DAT_00772b08
-;   undefined4 DAT_00772b0c
+;   undefined4 g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_x
+;   undefined4 g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_y
+;   undefined4 g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_z
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -78,7 +78,7 @@ section .text
     MOV ESI,dword ptr [0x00772a60]      ; 004072fb | g_ProcessedVertexOffset
     MOV EDX,dword ptr [EAX]             ; 00407301
     ADD EDX,ESI                         ; 00407303
-    MOV dword ptr [ECX],EDX             ; 00407305 | g_ProcessedVertexIndices | DAT_00772a9c
+    MOV dword ptr [ECX],EDX             ; 00407305 | g_ProcessedVertexIndices | g_ProcessedVertexIndices[1]
     MOV EDX,dword ptr [EAX]             ; 00407307
     ADD EDX,ESI                         ; 00407309
     MOV EDI,ESI                         ; 0040730b
@@ -90,7 +90,7 @@ section .text
     ADD EDX,ESI                         ; 0040731d
     IMUL ESI,EDX,0x30                   ; 0040731f
     ADD EAX,0xc                         ; 00407322
-    ADD ECX,0x4                         ; 00407325 | DAT_00772a9c
+    ADD ECX,0x4                         ; 00407325 | g_ProcessedVertexIndices[1]
     MOV EDX,dword ptr [EAX + -0x4]      ; 00407328
     ADD EBX,0x3                         ; 0040732b
     MOV dword ptr [ESI + 0x688030],EDX  ; 0040732e | g_RenderVertexBuffer[0].v
@@ -143,14 +143,14 @@ section .text
         ;   XREF to: 00407405 (CONDITIONAL_JUMP)  ; LAB_00407405
     MOV EAX,EDX                         ; 004073cd
     XOR EDX,EDX                         ; 004073cf
-    IMUL ESI,dword ptr [EDX + 0x772a98],0x30 ; 004073d1 | g_ProcessedVertexIndices | DAT_00772a9c
+    IMUL ESI,dword ptr [EDX + 0x772a98],0x30 ; 004073d1 | g_ProcessedVertexIndices | g_ProcessedVertexIndices[1]
         ;   Label: LAB_004073d1
     LEA EDI,[EAX + 0x4]                 ; 004073d8
     MOV ECX,0xc                         ; 004073db
     LEA ESI,[ESI + 0x688014]            ; 004073e0 | g_RenderVertexBuffer
-    MOVSD.REP ES:EDI,ESI                ; 004073e6 | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y | DAT_00772b04
+    MOVSD.REP ES:EDI,ESI                ; 004073e6 | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y | g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_x
     MOV ESI,dword ptr [ESP + 0x4]       ; 004073e8
-    MOV ECX,dword ptr [EAX + 0xc]       ; 004073ec | DAT_00772b0c | DAT_00772b3c
+    MOV ECX,dword ptr [EAX + 0xc]       ; 004073ec | g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_z | g_RenderBufferPool[0].vertices[1].projected_vertex.transformed_z
     CMP ECX,ESI                         ; 004073ef
     JGE 0x004073f7                      ; 004073f1
         ;   XREF to: 004073f7 (CONDITIONAL_JUMP)  ; LAB_004073f7
@@ -172,12 +172,12 @@ section .text
     LEA EDI,[EDI + 0xc4]                ; 00407414
     MOV EDX,dword ptr [ESP]             ; 0040741a
     MOV EAX,[0x006793b4]                ; 0040741d | g_CurrentAlphaValue
-    MOVSD.REP ES:EDI,ESI                ; 00407422 | DAT_00772bc4 | DAT_00772bc8
-    MOV dword ptr [EDX + 0x10c],EAX     ; 00407424 | DAT_00772c0c
+    MOVSD.REP ES:EDI,ESI                ; 00407422 | g_RenderBufferPool[0].texture_data[0] | g_RenderBufferPool[0].texture_data[1]
+    MOV dword ptr [EDX + 0x10c],EAX     ; 00407424 | g_RenderBufferPool[0].alpha_value
     MOV EAX,[0x02d05298]                ; 0040742a | g_BlendMode
-    MOV dword ptr [EDX + 0x110],EAX     ; 0040742f | DAT_00772c10
+    MOV dword ptr [EDX + 0x110],EAX     ; 0040742f | g_RenderBufferPool[0].blend_mode
     MOV EAX,dword ptr [ESP + 0x4]       ; 00407435
-    MOV dword ptr [EDX + 0x114],EAX     ; 00407439 | DAT_00772c14
+    MOV dword ptr [EDX + 0x114],EAX     ; 00407439 | g_RenderBufferPool[0].min_z_value
     MOV EDX,dword ptr [EBP + 0x4]       ; 0040743f
         ;   Label: LAB_0040743f
     LEA EAX,[EDX*0x4 + 0x0]             ; 00407442

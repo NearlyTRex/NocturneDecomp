@@ -19,7 +19,7 @@
 ;   TerminatedCString s_Which_axis_to_use_X_Y_or_0061b610
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;
 ; Called Functions:
@@ -145,7 +145,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x162640c] ; 0045eb74 | g_LoadedVertices
     MOV dword ptr [EBP + -0x18],EAX     ; 0045eb7a
     IMUL EAX,dword ptr [EBP + -0x1c],0x14 ; 0045eb7d
-    MOV EAX,dword ptr [EAX + 0x1626410] ; 0045eb81 | DAT_01626410
+    MOV EAX,dword ptr [EAX + 0x1626410] ; 0045eb81 | g_LoadedVertices[0].vertex.y
     MOV dword ptr [EBP + -0x14],EAX     ; 0045eb87
     IMUL EAX,dword ptr [EBP + -0x1c],0x14 ; 0045eb8a
     MOV EAX,dword ptr [EAX + 0x1626414] ; 0045eb8e | g_LoadedVertices[0].vertex.z
@@ -206,9 +206,9 @@ section .text
     JGE 0x0045ec32                      ; 0045ec1b
         ;   XREF to: 0045ec32 (CONDITIONAL_JUMP)  ; LAB_0045ec32
     IMUL EAX,dword ptr [EBP + -0x4],0x14 ; 0045ec1d
-    FLD float ptr [EAX + 0x1626410]     ; 0045ec21 | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 0045ec21 | g_LoadedVertices[0].vertex.y
     FSUB float ptr [EBP + -0x14]        ; 0045ec27
-    FSTP float ptr [EAX + 0x1626410]    ; 0045ec2a | DAT_01626410
+    FSTP float ptr [EAX + 0x1626410]    ; 0045ec2a | g_LoadedVertices[0].vertex.y
     JMP 0x0045ec0c                      ; 0045ec30
         ;   XREF to: 0045ec0c (UNCONDITIONAL_JUMP)  ; LAB_0045ec0c
     JMP 0x0045ec87                      ; 0045ec32

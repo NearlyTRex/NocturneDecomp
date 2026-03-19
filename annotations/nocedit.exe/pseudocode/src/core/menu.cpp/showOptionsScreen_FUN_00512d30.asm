@@ -73,10 +73,10 @@ section .text
     ADD ESP,0x4                         ; 00512d59
     XOR EAX,EAX                         ; 00512d5c
     POP ESI                             ; 00512d5e
-    MOV dword ptr [EAX + 0x2f28e50],EBX ; 00512d5f | g_OptionsMenuPointers | DAT_02f28e54 | g_OptionsMenuTextBuffers
+    MOV dword ptr [EAX + 0x2f28e50],EBX ; 00512d5f | g_OptionsMenuPointers | g_OptionsMenuPointers[1] | g_OptionsMenuTextBuffers
         ;   Label: LAB_00512d5f
     ADD EAX,0x4                         ; 00512d65
-    ADD EBX,0x100                       ; 00512d68 | DAT_02f28c50
+    ADD EBX,0x100                       ; 00512d68 | g_OptionsMenuTextBuffers[2][0]
     CMP EAX,0x10                        ; 00512d6e
     JNZ 0x00512d5f                      ; 00512d71
         ;   XREF to: 00512d5f (CONDITIONAL_JUMP)  ; LAB_00512d5f
@@ -111,7 +111,7 @@ section .text
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
     ADD ESP,0x4                         ; 00512dcd
     PUSH EAX                            ; 00512dd0
-    PUSH 0x2f28b50                      ; 00512dd1 | DAT_02f28b50
+    PUSH 0x2f28b50                      ; 00512dd1 | g_OptionsMenuTextBuffers[1][0]
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00512dd6
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00512ddb
@@ -120,7 +120,7 @@ section .text
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
     ADD ESP,0x4                         ; 00512de8
     PUSH EAX                            ; 00512deb
-    PUSH 0x2f28c50                      ; 00512dec | DAT_02f28c50
+    PUSH 0x2f28c50                      ; 00512dec | g_OptionsMenuTextBuffers[2][0]
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00512df1
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00512df6
@@ -129,7 +129,7 @@ section .text
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
     ADD ESP,0x4                         ; 00512e03
     PUSH EAX                            ; 00512e06
-    PUSH 0x2f28d50                      ; 00512e07 | DAT_02f28d50
+    PUSH 0x2f28d50                      ; 00512e07 | g_OptionsMenuTextBuffers[3][0]
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00512e0c
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00512e11

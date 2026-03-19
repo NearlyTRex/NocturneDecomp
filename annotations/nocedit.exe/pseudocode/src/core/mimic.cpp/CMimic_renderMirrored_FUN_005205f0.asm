@@ -24,7 +24,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 DAT_02c6d590
+;   undefined4 g_CDemonRendererInstance.advanced_culling_enabled
 ;   int g_RelativeX
 ;   int g_LightDirectionX
 ;   CMatrix3x3i g_TransformMatrix
@@ -124,7 +124,7 @@ section .text
     RET                                 ; 00520679
     MOV EAX,[0x006703ec]                ; 0052067a | g_CDemonRendererPtr2
         ;   Label: LAB_0052067a
-    MOV EAX,dword ptr [EAX + 0x18]      ; 0052067f | DAT_02c6d590
+    MOV EAX,dword ptr [EAX + 0x18]      ; 0052067f | g_CDemonRendererInstance.advanced_culling_enabled
     MOV dword ptr [EBP + 0x76],EAX      ; 00520682
     TEST EAX,EAX                        ; 00520685
     SETZ AL                             ; 00520687

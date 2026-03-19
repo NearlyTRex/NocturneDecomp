@@ -5,23 +5,23 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5867 (90.5%)
-Failed: 617
+Successful: 5881 (90.7%)
+Failed: 603
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1273
-  format_error                     799
-  incompatible_types               214
-  undeclared_identifier            149
-  syntax_error                      42
+  other                           1226
+  format_error                     797
+  incompatible_types               212
+  undeclared_identifier            148
+  syntax_error                      41
   missing_member                    20
   type_error                        10
   pointer_arithmetic                 9
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1273 errors)
+CATEGORY: other (1226 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -85,10 +85,10 @@ CATEGORY: other (1273 errors)
   core_stairs.cpp_CStairs_customGetFloorHeight_FUN_005ba6a0
     Line 21: cannot cast from type 'float' to pointer type 'CVector3f *'...
 
-  ... and 277 more errors
+  ... and 268 more errors
 
 ====================================================================================================
-CATEGORY: format_error (799 errors)
+CATEGORY: format_error (797 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -152,10 +152,10 @@ CATEGORY: format_error (799 errors)
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
     Line 35: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Wer...
 
-  ... and 238 more errors
+  ... and 236 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (214 errors)
+CATEGORY: incompatible_types (212 errors)
 ====================================================================================================
 
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
@@ -201,7 +201,7 @@ CATEGORY: incompatible_types (214 errors)
   shape_superopt.cpp_CObj_removeVertex_FUN_005d3140
     Line 29: assigning to 'CVert *' from incompatible type 'void *'...
   wincore_winrun.cpp_winMain_FUN_005f3680
-    Line 111: assigning to 'HBRUSH' (aka 'HBRUSH__ *') from incompatible type 'HGDIOBJ' (aka '...
+    Line 111: assigning to 'HBRUSH' (aka 'HBRUSH__ *') from incompatible type 'LPVOID' (aka 'v...
   shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500
     Line 117: assigning to 'SExpandedEdge *' from incompatible type 'void *'...
   shape_memdbg.cpp_debugCalloc_FUN_0050f350
@@ -219,10 +219,10 @@ CATEGORY: incompatible_types (214 errors)
   core_colonel.cpp_CColonel_process_FUN_0043fa00
     Line 245: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int...
 
-  ... and 90 more errors
+  ... and 88 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (149 errors)
+CATEGORY: undeclared_identifier (148 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -286,10 +286,10 @@ CATEGORY: undeclared_identifier (149 errors)
   shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0
     Line 28: use of undeclared identifier 'code'...
 
-  ... and 49 more errors
+  ... and 48 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (42 errors)
+CATEGORY: syntax_error (41 errors)
 ====================================================================================================
 
   core_curtain.cpp_CCurtain_process_FUN_0044a920
@@ -353,8 +353,6 @@ CATEGORY: syntax_error (42 errors)
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
     Line 123: expected expression...
 
-  ... and 1 more errors
-
 ====================================================================================================
 CATEGORY: missing_member (20 errors)
 ====================================================================================================
@@ -415,8 +413,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.80
-Average suspects in failed compilations: 8.78
+Average suspects in successfully compiled functions: 1.91
+Average suspects in failed compilations: 7.88
 
-Functions that compile but have suspect patterns: 1441
+Functions that compile but have suspect patterns: 1450
 (These may have runtime issues even though syntax is valid)

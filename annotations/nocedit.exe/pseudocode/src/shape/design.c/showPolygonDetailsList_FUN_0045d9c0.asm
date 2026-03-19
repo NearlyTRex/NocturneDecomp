@@ -19,10 +19,10 @@
 ;   TerminatedCString s_Color_d_0061b42f
 ;   int g_WindowHeight = 0xc8
 ;   int g_PolygonCount
-;   undefined4 DAT_016e99b4
-;   undefined4 DAT_016e99c8
-;   undefined4 DAT_016e9a88
-;   undefined4 DAT_016e9a8c
+;   undefined4 g_ModelPolygonData[0].vertex_indices_count
+;   undefined4 g_ModelPolygonData[0].vertex_indices[0]
+;   undefined4 g_ModelPolygonData[0].part_assignment
+;   undefined4 g_ModelPolygonData[0].material_id
 ;   SModelPartName[500] g_ModelPartNames
 ;   int g_CurrentPartIndex
 ;   int g_WireframeMode
@@ -94,7 +94,7 @@ section .text
         ;   Label: LAB_0045da4e
     IMUL EAX,dword ptr [EBP + -0x8],0x184 ; 0045da50
         ;   Label: LAB_0045da50
-    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 0045da57 | DAT_016e9a88
+    MOV EAX,dword ptr [EAX + 0x16e9a88] ; 0045da57 | g_ModelPolygonData[0].part_assignment
     CMP EAX,dword ptr [0x01e6614c]      ; 0045da5d | g_CurrentPartIndex
     JZ 0x0045da6a                       ; 0045da63
         ;   XREF to: 0045da6a (CONDITIONAL_JUMP)  ; LAB_0045da6a
@@ -123,14 +123,14 @@ section .text
     IMUL EDX,dword ptr [EBP + -0x8],0x184 ; 0045daa1
         ;   Label: LAB_0045daa1
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045daa8
-    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0045daab | DAT_016e99b4
+    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0045daab | g_ModelPolygonData[0].vertex_indices_count
     JGE 0x0045db07                      ; 0045dab1
         ;   XREF to: 0045db07 (CONDITIONAL_JUMP)  ; LAB_0045db07
     IMUL ESI,dword ptr [EBP + -0x8],0x184 ; 0045dab3
     MOV EDI,dword ptr [EBP + -0x4]      ; 0045daba
     SHL EDI,0x2                         ; 0045dabd
     ADD ESI,EDI                         ; 0045dac0
-    PUSH dword ptr [ESI + 0x16e99c8]    ; 0045dac2 | DAT_016e99c8
+    PUSH dword ptr [ESI + 0x16e99c8]    ; 0045dac2 | g_ModelPolygonData[0].vertex_indices[0]
     MOV ESI,0x61b420                    ; 0045dac8 | = " %d"
     PUSH ESI                            ; 0045dacd | = " %d"
     LEA ESI,[EBP + -0x1c]               ; 0045dace
@@ -165,7 +165,7 @@ section .text
         ;   XREF to: 0045da9b (UNCONDITIONAL_JUMP)  ; LAB_0045da9b
     IMUL ESI,dword ptr [EBP + -0x8],0x184 ; 0045db07
         ;   Label: LAB_0045db07
-    IMUL ESI,dword ptr [ESI + 0x16e9a88],0x14 ; 0045db0e | DAT_016e9a88
+    IMUL ESI,dword ptr [ESI + 0x16e9a88],0x14 ; 0045db0e | g_ModelPolygonData[0].part_assignment
     MOV EDI,0x1e50190                   ; 0045db15 | g_ModelPartNames
     ADD ESI,EDI                         ; 0045db1a
     PUSH ESI                            ; 0045db1c
@@ -200,7 +200,7 @@ section .text
     POP EDI                             ; 0045db59
         ;   Label: LAB_0045db59
     IMUL ESI,dword ptr [EBP + -0x8],0x184 ; 0045db5a
-    PUSH dword ptr [ESI + 0x16e9a8c]    ; 0045db61 | DAT_016e9a8c
+    PUSH dword ptr [ESI + 0x16e9a8c]    ; 0045db61 | g_ModelPolygonData[0].material_id
     MOV ESI,0x61b42f                    ; 0045db67 | = " Color : %d"
     PUSH ESI                            ; 0045db6c | = " Color : %d"
     LEA ESI,[EBP + -0x6c]               ; 0045db6d

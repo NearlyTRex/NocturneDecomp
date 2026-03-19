@@ -164,9 +164,9 @@ section .text
     MOV EDX,0x2fb9680                   ; 00543f74 | g_MessageTextStorage
     SHL EBX,0x2                         ; 00543f79
     XOR EAX,EAX                         ; 00543f7c
-    MOV dword ptr [EAX + 0x2fa8cdc],EBP ; 00543f7e | g_MessageKeys | DAT_02fa8ce0 | g_MessageKeyStorage
+    MOV dword ptr [EAX + 0x2fa8cdc],EBP ; 00543f7e | g_MessageKeys | g_MessageKeys[1] | g_MessageKeyStorage
         ;   Label: LAB_00543f7e
-    MOV dword ptr [EAX + 0x2fa94ac],EDX ; 00543f84 | g_MessageTexts | DAT_02fa94b0 | g_MessageTextStorage
+    MOV dword ptr [EAX + 0x2fa94ac],EDX ; 00543f84 | g_MessageTexts | g_MessageTexts[1] | g_MessageTextStorage
     ADD EAX,0x4                         ; 00543f8a
     ADD EDX,0x100                       ; 00543f8d
     ADD EBP,0x80                        ; 00543f93
@@ -190,10 +190,10 @@ section .text
         ;   XREF to: 00544029 (CONDITIONAL_JUMP)  ; LAB_00544029
     MOV ESI,dword ptr [ESP + 0x308]     ; 00543fc3
     LEA EBX,[EDI*0x4 + 0x0]             ; 00543fca
-    MOV EAX,dword ptr [EBX + 0x2fa8cdc] ; 00543fd1 | DAT_02fa8ce0 | DAT_02fa8ce4
+    MOV EAX,dword ptr [EBX + 0x2fa8cdc] ; 00543fd1 | g_MessageKeys[1] | g_MessageKeys[2]
         ;   Label: LAB_00543fd1
     PUSH EAX                            ; 00543fd7
-    MOV EDX,dword ptr [ESI + 0x2fa8cdc] ; 00543fd8 | g_MessageKeys | DAT_02fa8ce0
+    MOV EDX,dword ptr [ESI + 0x2fa8cdc] ; 00543fd8 | g_MessageKeys | g_MessageKeys[1]
     PUSH EDX                            ; 00543fde
     CALL crt_string.c__strcmp_FUN_005fef20 ; 00543fdf
         ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c__strcmp_FUN_005fef20(char * str1, char * str2)
@@ -201,14 +201,14 @@ section .text
     TEST EAX,EAX                        ; 00543fe7
     JLE 0x0054401b                      ; 00543fe9
         ;   XREF to: 0054401b (CONDITIONAL_JUMP)  ; LAB_0054401b
-    MOV EDX,dword ptr [EBX + 0x2fa8cdc] ; 00543feb | DAT_02fa8ce0
+    MOV EDX,dword ptr [EBX + 0x2fa8cdc] ; 00543feb | g_MessageKeys[1]
     MOV EAX,dword ptr [ESI + 0x2fa8cdc] ; 00543ff1 | g_MessageKeys
     MOV dword ptr [ESI + 0x2fa8cdc],EDX ; 00543ff7 | g_MessageKeys
-    MOV EDX,dword ptr [EBX + 0x2fa94ac] ; 00543ffd | DAT_02fa94b0
-    MOV dword ptr [EBX + 0x2fa8cdc],EAX ; 00544003 | DAT_02fa8ce0
+    MOV EDX,dword ptr [EBX + 0x2fa94ac] ; 00543ffd | g_MessageTexts[1]
+    MOV dword ptr [EBX + 0x2fa8cdc],EAX ; 00544003 | g_MessageKeys[1]
     MOV EAX,dword ptr [ESI + 0x2fa94ac] ; 00544009 | g_MessageTexts
     MOV dword ptr [ESI + 0x2fa94ac],EDX ; 0054400f | g_MessageTexts
-    MOV dword ptr [EBX + 0x2fa94ac],EAX ; 00544015 | DAT_02fa94b0
+    MOV dword ptr [EBX + 0x2fa94ac],EAX ; 00544015 | g_MessageTexts[1]
     MOV EDX,dword ptr [0x02fa8cd8]      ; 0054401b | g_LocalizedStringCount
         ;   Label: LAB_0054401b
     INC EDI                             ; 00544021

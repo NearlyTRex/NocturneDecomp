@@ -26,7 +26,7 @@
 ;   CDemonCamera g_CDemonCameraInstance
 ;   int g_MasterLightCount
 ;   CDemonLight*[96] g_MasterLightList
-;   undefined4 DAT_03276db4
+;   undefined4 g_MasterLightList[1]
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_0044c360
@@ -52,7 +52,7 @@ section .text
     MOV EBP,0xa0a                       ; 0056d2e6
         ;   Label: LAB_0056d2e6
     MOV ECX,0x645e0a                    ; 0056d2eb | = "..\\core\\set.cpp"
-    MOV EAX,dword ptr [EBX + 0x3276db0] ; 0056d2f0 | g_MasterLightList | DAT_03276db4
+    MOV EAX,dword ptr [EBX + 0x3276db0] ; 0056d2f0 | g_MasterLightList | g_MasterLightList[1]
     MOV dword ptr [0x02f0d944],EBP      ; 0056d2f6 | g_CurrentDebugLine
     MOV dword ptr [0x0067d20c],ECX      ; 0056d2fc | g_CurrentDebugFilename
     TEST EAX,EAX                        ; 0056d302
@@ -63,7 +63,7 @@ section .text
     ADD EBX,0x4                         ; 0056d30c
     XOR ECX,ECX                         ; 0056d30f
     INC ESI                             ; 0056d311
-    MOV dword ptr [EBX + 0x3276dac],ECX ; 0056d312 | g_MasterLightList | DAT_03276db4
+    MOV dword ptr [EBX + 0x3276dac],ECX ; 0056d312 | g_MasterLightList | g_MasterLightList[1]
     CMP ESI,EBP                         ; 0056d318
     JL 0x0056d2e6                       ; 0056d31a
         ;   XREF to: 0056d2e6 (CONDITIONAL_JUMP)  ; LAB_0056d2e6

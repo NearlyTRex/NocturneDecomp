@@ -9,19 +9,19 @@
 int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
 
 {
-  HWND pHVar1;
+  HWND HVar1;
   FARPROC pFVar2;
   int iVar3;
   void *pvStack_3c2c;
   byte auStack_1e64 [7624];
   CExternalRendererBridge CStack_9c;
   
-  pHVar1 = window_handle;
-  if (window_handle == (HWND)0x0) {
-    pHVar1 = g_StoredWindowHandle;
+  HVar1 = window_handle;
+  if (window_handle == 0) {
+    HVar1 = g_StoredWindowHandle;
   }
-  g_StoredWindowHandle = pHVar1;
-  pHVar1 = g_StoredWindowHandle;
+  g_StoredWindowHandle = HVar1;
+  HVar1 = g_StoredWindowHandle;
   if (g_FullscreenMode == 0) {
     return 0;
   }
@@ -63,9 +63,10 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
       g_DLLFunctionsMissing = 1;
     }
     g_APIDLL_setVideoMode =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLsetVideoMode");
-    if (g_APIDLL_setVideoMode == (FARPROC)0x0) {
+    if (g_APIDLL_setVideoMode == (APIDLL_unknown *)0x0) {
       g_DLLFunctionsMissing = 1;
     }
     g_APIDLL_setVideoMode2 =
@@ -235,15 +236,17 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
       g_DLLFunctionsMissing = 1;
     }
     g_APIDLL_GetDisplayContext =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLGetDisplayContext");
-    if (g_APIDLL_GetDisplayContext == (FARPROC)0x0) {
+    if (g_APIDLL_GetDisplayContext == (APIDLL_unknown *)0x0) {
       g_DLLFunctionsMissing = 1;
     }
     g_APIDLL_ReleaseDisplayContext =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLReleaseDisplayContext");
-    if (g_APIDLL_ReleaseDisplayContext == (FARPROC)0x0) {
+    if (g_APIDLL_ReleaseDisplayContext == (APIDLL_unknown *)0x0) {
       g_DLLFunctionsMissing = 1;
     }
     g_APIDLL_masterZBuffer =
@@ -325,39 +328,51 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLtoggleX");
     g_APIDLL_setViewport =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLsetViewport");
     g_APIDLL_setLightConstants =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLsetLightConstants");
     g_APIDLL_setLightVector =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLsetLightVector");
     g_APIDLL_setAmbientLight =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLsetAmbientLight");
     g_APIDLL_setTransform =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLsetTransform");
     g_APIDLL_polyList =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLpolyList");
     g_APIDLL_getTextureHandle =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLgetTextureHandle");
     g_APIDLL_selectTextureByHandle =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLselectTextureByHandle");
     g_APIDLL_enableCulling =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLenableCulling");
     g_APIDLL_enableClipping =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLenableClipping");
     g_APIDLL_setTextureClamp =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLsetTextureClamp");
     g_APIDLL_setFog =
+         (APIDLL_unknown *)
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLsetFog");
     if (g_DLLFunctionsMissing == 0) {
@@ -398,7 +413,7 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
       CStack_9c.sizeof5 = 0x20;
       CStack_9c.sizeof6 = 0x24;
       CStack_9c.sizeof7 = 0x28;
-      iVar3 = (*g_APIDLL_init)(pHVar1,&CStack_9c);
+      iVar3 = (*g_APIDLL_init)(HVar1,&CStack_9c);
       if (iVar3 != 0) {
         pvStack_3c2c = (void *)0x5b71c5;
         wincore_windll_cpp_selectCard_FUN_005b7d90(g_RendererHandle);

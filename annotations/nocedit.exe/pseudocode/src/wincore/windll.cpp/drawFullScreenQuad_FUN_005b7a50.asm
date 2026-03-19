@@ -19,7 +19,7 @@
 ;
 ; XREF[2]:
 ;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 0045f3de
-;   wincore_windll.cpp_clearScreen_FUN_005b3f37 at 005b3f48
+;   wincore_windll.cpp_clearScreenRegion_FUN_005b3f37 at 005b3f48
 ;
 ; Referenced Globals:
 ;   int g_SystemMemorySize = 0x3c000

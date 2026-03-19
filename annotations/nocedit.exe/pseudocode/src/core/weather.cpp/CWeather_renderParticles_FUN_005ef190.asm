@@ -41,15 +41,15 @@
 ;   SMRGLTextureBasic g_RainDropTexture
 ;   SMRGLTextureBasic g_RainSplashTexture
 ;   SMRGLTextureBasic g_SnowflakeTexture
-;   undefined4 DAT_00780000
-;   undefined4 DAT_00f80000
+;   undefined4 g_RenderBufferPool[194].texture_data[3]
+;   undefined4 g_LightBufferPool[11][183800]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonSet g_CDemonSetInstance
 ;   CVector3f[200] g_WeatherParticlePositions
-;   undefined4 DAT_03f95dfc
-;   undefined4 DAT_03f95e00
-;   undefined4 DAT_03f95e04
-;   undefined4 DAT_03f95e08
+;   undefined4 g_WeatherParticlePositions[0].y
+;   undefined4 g_WeatherParticlePositions[0].z
+;   undefined4 g_WeatherParticlePositions[1].x
+;   undefined4 g_WeatherParticlePositions[1].y
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -115,18 +115,18 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 005ef203 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x1c],0x80000  ; 005ef205
     MOV EDX,dword ptr [EAX]             ; 005ef20c | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x48],0x780000 ; 005ef20e | DAT_00780000
+    MOV dword ptr [EDX + 0x48],0x780000 ; 005ef20e | g_RenderBufferPool[194].texture_data[3]
     MOV EDX,dword ptr [EAX]             ; 005ef215 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x4c],0x80000  ; 005ef217
     MOV EDX,dword ptr [EAX]             ; 005ef21e | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x78],0x780000 ; 005ef220 | DAT_00780000
+    MOV dword ptr [EDX + 0x78],0x780000 ; 005ef220 | g_RenderBufferPool[194].texture_data[3]
     MOV EDX,dword ptr [EAX]             ; 005ef227 | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x7c],0xf80000 ; 005ef229 | DAT_00f80000
+    MOV dword ptr [EDX + 0x7c],0xf80000 ; 005ef229 | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 005ef230 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0xa8],0x80000  ; 005ef232
     MOV EAX,dword ptr [EAX]             ; 005ef23c | g_CDemonRendererInstance
     ADD ESP,0x8                         ; 005ef23e
-    MOV dword ptr [EAX + 0xac],0xf80000 ; 005ef241 | DAT_00f80000
+    MOV dword ptr [EAX + 0xac],0xf80000 ; 005ef241 | g_LightBufferPool[11][183800]
     PUSH 0x0                            ; 005ef24b
         ;   Label: LAB_005ef24b
     PUSH 0x0                            ; 005ef24d
@@ -181,13 +181,13 @@ section .text
     LEA EBX,[ESP + 0xa4]                ; 005ef2f5
     MOV EAX,ESI                         ; 005ef2fc
     MOV EBP,dword ptr [EBP]             ; 005ef2fe | g_CDemonRendererInstance
-    FLD float ptr [EAX]                 ; 005ef301 | g_WeatherParticlePositions | DAT_03f95e04
+    FLD float ptr [EAX]                 ; 005ef301 | g_WeatherParticlePositions | g_WeatherParticlePositions[1].x
     FMUL float ptr [0x00665700]         ; 005ef303 | FLOAT_00665700
     FISTP dword ptr [EBX]               ; 005ef309
-    FLD float ptr [EAX + 0x4]           ; 005ef30b | DAT_03f95dfc | DAT_03f95e08
+    FLD float ptr [EAX + 0x4]           ; 005ef30b | g_WeatherParticlePositions[0].y | g_WeatherParticlePositions[1].y
     FMUL float ptr [0x00665700]         ; 005ef30e | FLOAT_00665700
     FISTP dword ptr [EBX + 0x4]         ; 005ef314
-    FLD float ptr [EAX + 0x8]           ; 005ef317 | DAT_03f95e00 | DAT_03f95e0c
+    FLD float ptr [EAX + 0x8]           ; 005ef317 | g_WeatherParticlePositions[0].z | g_WeatherParticlePositions[1].z
     FMUL float ptr [0x00665700]         ; 005ef31a | FLOAT_00665700
     FISTP dword ptr [EBX + 0x8]         ; 005ef320
     LEA EAX,[ESP + 0xa4]                ; 005ef323
@@ -224,10 +224,10 @@ section .text
     FLD float ptr [EAX]                 ; 005ef377 | g_WeatherParticlePositions
     FMUL float ptr [0x00665700]         ; 005ef379 | FLOAT_00665700
     FISTP dword ptr [EBX]               ; 005ef37f
-    FLD float ptr [EAX + 0x4]           ; 005ef381 | DAT_03f95dfc
+    FLD float ptr [EAX + 0x4]           ; 005ef381 | g_WeatherParticlePositions[0].y
     FMUL float ptr [0x00665700]         ; 005ef384 | FLOAT_00665700
     FISTP dword ptr [EBX + 0x4]         ; 005ef38a
-    FLD float ptr [EAX + 0x8]           ; 005ef38d | DAT_03f95e00
+    FLD float ptr [EAX + 0x8]           ; 005ef38d | g_WeatherParticlePositions[0].z
     FMUL float ptr [0x00665700]         ; 005ef390 | FLOAT_00665700
     FISTP dword ptr [EBX + 0x8]         ; 005ef396
     PUSH 0x4                            ; 005ef399
@@ -407,13 +407,13 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 005ef633 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x1c],0x80000  ; 005ef635
     MOV EDX,dword ptr [EAX]             ; 005ef63c | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x48],0x780000 ; 005ef63e | DAT_00780000
+    MOV dword ptr [EDX + 0x48],0x780000 ; 005ef63e | g_RenderBufferPool[194].texture_data[3]
     MOV EDX,dword ptr [EAX]             ; 005ef645 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x4c],0x80000  ; 005ef647
     MOV EDX,dword ptr [EAX]             ; 005ef64e | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x78],0x780000 ; 005ef650 | DAT_00780000
+    MOV dword ptr [EDX + 0x78],0x780000 ; 005ef650 | g_RenderBufferPool[194].texture_data[3]
     MOV EDX,dword ptr [EAX]             ; 005ef657 | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x7c],0xf80000 ; 005ef659 | DAT_00f80000
+    MOV dword ptr [EDX + 0x7c],0xf80000 ; 005ef659 | g_LightBufferPool[11][183800]
     MOV EDX,dword ptr [EAX]             ; 005ef660 | g_CDemonRendererInstance
     MOV EDI,0x3f95df8                   ; 005ef662 | g_WeatherParticlePositions
     XOR ESI,ESI                         ; 005ef667
@@ -422,8 +422,8 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 005ef675 | g_CDemonRendererInstance
     ADD EDI,0x4                         ; 005ef677
     ADD ESP,0x8                         ; 005ef67a
-    MOV dword ptr [EAX + 0xac],0xf80000 ; 005ef67d | DAT_00f80000
-    CMP byte ptr [ESI + 0x3f96a78],0x0  ; 005ef687 | g_WeatherParticleHitGround | DAT_03f96a79
+    MOV dword ptr [EAX + 0xac],0xf80000 ; 005ef67d | g_LightBufferPool[11][183800]
+    CMP byte ptr [ESI + 0x3f96a78],0x0  ; 005ef687 | g_WeatherParticleHitGround | g_WeatherParticleHitGround+1
         ;   Label: LAB_005ef687
     JNZ 0x005ef6f1                      ; 005ef68e
         ;   XREF to: 005ef6f1 (CONDITIONAL_JUMP)  ; LAB_005ef6f1
@@ -466,13 +466,13 @@ section .text
     IMUL EAX,ESI,0xc                    ; 005ef6f1
         ;   Label: LAB_005ef6f1
     ADD EAX,0x3f95df8                   ; 005ef6f4 | g_WeatherParticlePositions
-    MOV EAX,dword ptr [EAX]             ; 005ef6f9 | DAT_03f95e04
+    MOV EAX,dword ptr [EAX]             ; 005ef6f9 | g_WeatherParticlePositions[1].x
     MOV dword ptr [ESP + 0xc8],EAX      ; 005ef6fb
-    MOV EAX,dword ptr [EDI]             ; 005ef702 | DAT_03f95e08
+    MOV EAX,dword ptr [EDI]             ; 005ef702 | g_WeatherParticlePositions[1].y
     MOV dword ptr [ESP + 0xcc],EAX      ; 005ef704
-    MOV EAX,dword ptr [EDI + 0x4]       ; 005ef70b | DAT_03f95e0c
+    MOV EAX,dword ptr [EDI + 0x4]       ; 005ef70b | g_WeatherParticlePositions[1].z
     MOV dword ptr [ESP + 0xd0],EAX      ; 005ef70e
-    MOV EAX,dword ptr [EBP + 0x3f96758] ; 005ef715 | DAT_03f9675c
+    MOV EAX,dword ptr [EBP + 0x3f96758] ; 005ef715 | g_WeatherParticleGroundHeights[1]
     MOV dword ptr [ESP + 0xcc],EAX      ; 005ef71b
     LEA EAX,[ESP + 0xc8]                ; 005ef722
     PUSH EAX                            ; 005ef729

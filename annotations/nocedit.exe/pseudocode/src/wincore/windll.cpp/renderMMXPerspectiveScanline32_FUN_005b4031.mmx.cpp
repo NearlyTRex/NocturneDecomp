@@ -48,7 +48,7 @@ __asm {
         shl EAX,0x18
         idiv EBX
         sub EAX,dword ptr [g_StartTextureU]
-        imul dword ptr [DAT_02d02584 + ECX]
+        imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_DeltaTextureU],EDX
         mov EAX,dword ptr [ESI + 0x20]
         mov EBX,dword ptr [ESI + 0x28]
@@ -64,33 +64,33 @@ __asm {
         shl EAX,0x18
         idiv EBX
         sub EAX,dword ptr [g_StartTextureV]
-        imul dword ptr [DAT_02d02584 + ECX]
+        imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_DeltaTextureV],EDX
         jmp LAB_005b4136
     LAB_005b4102:
         mov EAX,dword ptr [EDI + 0x18]
         mov EBX,dword ptr [ESI + 0x18]
         sub EAX,EBX
-        imul dword ptr [DAT_02d02584 + ECX]
+        imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_StartTextureU],EBX
         mov dword ptr [g_DeltaTextureU],EDX
         mov EAX,dword ptr [EDI + 0x20]
         mov EBX,dword ptr [ESI + 0x20]
         sub EAX,EBX
-        imul dword ptr [DAT_02d02584 + ECX]
+        imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_StartTextureV],EBX
         mov dword ptr [g_DeltaTextureV],EDX
     LAB_005b4136:
         mov EAX,dword ptr [EDI + 0x28]
         mov EBX,dword ptr [ESI + 0x28]
         sub EAX,EBX
-        imul dword ptr [DAT_02d02584 + ECX]
+        imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_StartDepthW],EBX
         mov dword ptr [g_DeltaDepthW],EDX
         mov EAX,dword ptr [EDI + 0x30]
         mov EBX,dword ptr [ESI + 0x30]
         sub EAX,EBX
-        imul dword ptr [DAT_02d02584 + ECX]
+        imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_VertexAlphaStart],EBX
         mov dword ptr [g_VertexAlphaDelta],EDX
         mov EBP,dword ptr [g_VertexAlphaStart]
@@ -111,7 +111,7 @@ __asm {
         shr EAX,0x1
         shr EBX,0x1
         sub EAX,EBX
-        imul dword ptr [DAT_02d02584 + ECX]
+        imul dword ptr [ECX + 0x2d02584]
         and EBX,0xffff
         and EDX,0xffff
         mov dword ptr [g_VertexRedStart],EBX
@@ -121,7 +121,7 @@ __asm {
         shr EAX,0x1
         shr EBX,0x1
         sub EAX,EBX
-        imul dword ptr [DAT_02d02584 + ECX]
+        imul dword ptr [ECX + 0x2d02584]
         and EBX,0xffff
         and EDX,0xffff
         mov dword ptr [g_VertexGreenStart],EBX
@@ -131,7 +131,7 @@ __asm {
         shr EAX,0x1
         shr EBX,0x1
         sub EAX,EBX
-        imul dword ptr [DAT_02d02584 + ECX]
+        imul dword ptr [ECX + 0x2d02584]
         and EBX,0xffff
         and EDX,0xffff
         mov dword ptr [g_VertexBlueStart],EBX
@@ -163,7 +163,7 @@ __asm {
         shl EAX,0x3
         shl EBX,0x3
         sub EAX,EBX
-        imul dword ptr [DAT_02d02584 + ECX]
+        imul dword ptr [ECX + 0x2d02584]
         and EBX,0xffff
         and EDX,0xffff
         mov dword ptr [g_VertexRedStart],EBX
@@ -476,7 +476,7 @@ __asm {
         mov EAX,dword ptr [EDI + 0x28]
         mov EBX,dword ptr [ESI + 0x28]
         sub EAX,EBX
-        imul dword ptr [DAT_02d02584 + ECX]
+        imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_StartDepthW],EBX
         mov dword ptr [g_DeltaDepthW],EDX
         mov EAX,[g_StartDepthW]

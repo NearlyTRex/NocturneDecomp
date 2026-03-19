@@ -162,7 +162,7 @@ section .text
     FMULP ST3                           ; 0043d695
     MOV EDX,dword ptr [0x0068416c]      ; 0043d697 | g_CSpotViewPtr
     LEA EAX,[ESP + 0x2c]                ; 0043d69d
-    ADD EDX,0x18                        ; 0043d6a1 | DAT_03f6b9f8
+    ADD EDX,0x18                        ; 0043d6a1 | g_CSpotViewInstance.loat_at.x
     FXCH                                ; 0043d6a4
     FSTP float ptr [ESP + 0x2c]         ; 0043d6a6
     FSTP float ptr [ESP + 0x30]         ; 0043d6aa
@@ -578,11 +578,11 @@ section .text
         ;   XREF to: 0043d606 (UNCONDITIONAL_JUMP)  ; LAB_0043d606
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0043daf2
         ;   Label: LAB_0043daf2
-    MOV dword ptr [EDX],EAX             ; 0043daf6 | DAT_03f6b9f8
+    MOV dword ptr [EDX],EAX             ; 0043daf6 | g_CSpotViewInstance.loat_at.x
     MOV EAX,dword ptr [ESP + 0x30]      ; 0043daf8
-    MOV dword ptr [EDX + 0x4],EAX       ; 0043dafc | DAT_03f6b9fc
+    MOV dword ptr [EDX + 0x4],EAX       ; 0043dafc | g_CSpotViewInstance.loat_at.y
     MOV EAX,dword ptr [ESP + 0x34]      ; 0043daff
-    MOV dword ptr [EDX + 0x8],EAX       ; 0043db03 | DAT_03f6ba00
+    MOV dword ptr [EDX + 0x8],EAX       ; 0043db03 | g_CSpotViewInstance.loat_at.z
     JMP 0x0043d6ba                      ; 0043db06
         ;   XREF to: 0043d6ba (UNCONDITIONAL_JUMP)  ; LAB_0043d6ba
     MOV EDI,0xfffffc19                  ; 0043db0b
@@ -713,12 +713,12 @@ section .text
     CALL shape_spotview.cpp_CSpotView_reset_FUN_005b9620 ; 0043dc90
         ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_reset_FUN_005b9620(CSpotView * this_ptr, uint control_flags)
     MOV EAX,[0x0068416c]                ; 0043dc95 | g_CSpotViewPtr
-    MOV dword ptr [EAX + 0x20],0x0      ; 0043dc9a | DAT_03f6ba00
+    MOV dword ptr [EAX + 0x20],0x0      ; 0043dc9a | g_CSpotViewInstance.loat_at.z
     ADD ESP,0x8                         ; 0043dca1
-    MOV EDX,dword ptr [EAX + 0x20]      ; 0043dca4 | DAT_03f6ba00
-    MOV dword ptr [EAX + 0x1c],EDX      ; 0043dca7 | DAT_03f6b9fc
-    MOV EDX,dword ptr [EAX + 0x1c]      ; 0043dcaa | DAT_03f6b9fc
-    MOV dword ptr [EAX + 0x18],EDX      ; 0043dcad | DAT_03f6b9f8
+    MOV EDX,dword ptr [EAX + 0x20]      ; 0043dca4 | g_CSpotViewInstance.loat_at.z
+    MOV dword ptr [EAX + 0x1c],EDX      ; 0043dca7 | g_CSpotViewInstance.loat_at.y
+    MOV EDX,dword ptr [EAX + 0x1c]      ; 0043dcaa | g_CSpotViewInstance.loat_at.y
+    MOV dword ptr [EAX + 0x18],EDX      ; 0043dcad | g_CSpotViewInstance.loat_at.x
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0043dcb0
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     ADD ESP,0x74                        ; 0043dcb5

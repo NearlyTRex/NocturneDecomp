@@ -21,8 +21,8 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonMission g_CDemonMissionInstance
-;   undefined4 DAT_02f33744
-;   undefined4 DAT_02f33768
+;   undefined4 g_CDemonMissionInstance.is_in_editor
+;   undefined4 g_CDemonMissionInstance.selected_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
@@ -64,7 +64,7 @@ section .text
     JZ 0x0054d79c                       ; 0054d75e
         ;   XREF to: 0054d79c (CONDITIONAL_JUMP)  ; LAB_0054d79c
     MOV EAX,[0x0067d550]                ; 0054d760 | g_CDemonMissionPtr
-    MOV EAX,dword ptr [EAX + 0x4]       ; 0054d765 | DAT_02f33744
+    MOV EAX,dword ptr [EAX + 0x4]       ; 0054d765 | g_CDemonMissionInstance.is_in_editor
     TEST EAX,EAX                        ; 0054d768
     JNZ 0x0054d79c                      ; 0054d76a
         ;   XREF to: 0054d79c (CONDITIONAL_JUMP)  ; LAB_0054d79c
@@ -131,7 +131,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 0054d803
         ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor * this_ptr)
     MOV EAX,[0x0067d550]                ; 0054d808 | g_CDemonMissionInstance | g_CDemonMissionPtr
-    MOV EDX,dword ptr [EAX + 0x4]       ; 0054d80d | DAT_02f33744
+    MOV EDX,dword ptr [EAX + 0x4]       ; 0054d80d | g_CDemonMissionInstance.is_in_editor
     ADD ESP,0x4                         ; 0054d810
     TEST EDX,EDX                        ; 0054d813
     JZ 0x0054d95a                       ; 0054d815
@@ -145,7 +145,7 @@ section .text
     JNZ 0x0054d95a                      ; 0054d82c
         ;   XREF to: 0054d95a (CONDITIONAL_JUMP)  ; LAB_0054d95a
     MOV EAX,[0x0067d550]                ; 0054d832 | g_CDemonMissionPtr
-    MOV ESI,dword ptr [EAX + 0x28]      ; 0054d837 | DAT_02f33768
+    MOV ESI,dword ptr [EAX + 0x28]      ; 0054d837 | g_CDemonMissionInstance.selected_actor
     CMP EBX,ESI                         ; 0054d83a
     JNZ 0x0054d95a                      ; 0054d83c
         ;   XREF to: 0054d95a (CONDITIONAL_JUMP)  ; LAB_0054d95a

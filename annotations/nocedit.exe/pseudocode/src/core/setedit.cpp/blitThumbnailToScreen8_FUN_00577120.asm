@@ -17,7 +17,7 @@
 ;   undefined4 g_ScreenBufferArray[1]
 ;   uchar[32768] g_ColorCubeLookup
 ;   uint[250][3072] g_ThumbnailImageBuffer
-;   undefined4 DAT_03365cc4
+;   undefined4 g_ThumbnailImageBuffer[0][1]
 ;
 ; *****************************************************************************
 
@@ -52,7 +52,7 @@ section .text
     ADD ECX,EBX                         ; 00577170
     ADD EAX,ESI                         ; 00577172
     INC ECX                             ; 00577174
-    MOV EDX,dword ptr [EAX + 0x3365cc0] ; 00577175 | g_ThumbnailImageBuffer | DAT_03365cc4
+    MOV EDX,dword ptr [EAX + 0x3365cc0] ; 00577175 | g_ThumbnailImageBuffer | g_ThumbnailImageBuffer[0][1]
         ;   Label: LAB_00577175
     MOV ESI,EDX                         ; 0057717b
     MOV EBX,EDX                         ; 0057717d

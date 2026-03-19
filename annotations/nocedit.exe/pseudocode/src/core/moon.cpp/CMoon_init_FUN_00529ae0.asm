@@ -23,7 +23,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   char*[30] g_MoonNocStrings
 ;   undefined4 PTR_s_noc00001_0067d75c
-;   undefined4 DAT_02d81cb0
+;   undefined4 g_CGameInstance.head_of_horror_cheat
 ;   CAlphaBitmap g_MoonCloudTexture
 ;   CAlphaBitmap[30] g_MoonAnimTextures
 ;   ... and 7 more
@@ -59,7 +59,7 @@ section .text
     MOV EDX,EAX                         ; 00529b07
     SAR EDX,0x1f                        ; 00529b09
     IDIV ESI                            ; 00529b0c
-    MOV dword ptr [EBX + 0x2f3820c],EDX ; 00529b0e | g_MoonBats | DAT_02f38224
+    MOV dword ptr [EBX + 0x2f3820c],EDX ; 00529b0e | g_MoonBats | g_MoonBats[1].course_index
     IMUL EDX,EDX,0xc                    ; 00529b14
     ADD EDX,0x2f381e8                   ; 00529b17 | g_MoonBatCourses
     MOV EDX,dword ptr [EDX]             ; 00529b1d | g_MoonBatCourses
@@ -72,7 +72,7 @@ section .text
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
     MOV EDX,dword ptr [0x0067b654]      ; 00529bf0 | g_CGamePtr
         ;   Label: LAB_00529bf0
-    MOV ECX,dword ptr [EDX + 0x214]     ; 00529bf6 | DAT_02d81cb0
+    MOV ECX,dword ptr [EDX + 0x214]     ; 00529bf6 | g_CGameInstance.head_of_horror_cheat
     LEA EAX,[EDI + 0x8]                 ; 00529bfc
     CMP ECX,0x29a                       ; 00529bff
     JNZ 0x00529cc3                      ; 00529c05
@@ -83,7 +83,7 @@ section .text
         ;   XREF to: 00476db0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0(CKeyFramedModel * this_ptr, char * filename)
     MOV EAX,[0x0067b654]                ; 00529c16 | g_CGamePtr
     ADD ESP,0x8                         ; 00529c1b
-    MOV dword ptr [EAX + 0x214],0x0     ; 00529c1e | DAT_02d81cb0
+    MOV dword ptr [EAX + 0x214],0x0     ; 00529c1e | g_CGameInstance.head_of_horror_cheat
     PUSH 0x639f2a                       ; 00529c28 | = "menubat.kfm"
         ;   Label: LAB_00529c28
     PUSH 0x2f384dc                      ; 00529c2d | g_MoonBatModel
@@ -104,7 +104,7 @@ section .text
     PUSH 0x280                          ; 00529c62
     MOV EBP,dword ptr [EBX + 0x67d758]  ; 00529c67 | g_MoonNocStrings | PTR_s_noc00001_0067d75c
     PUSH EBP                            ; 00529c6d | = "noc00000" | s_noc00001_00639fda
-    PUSH ESI                            ; 00529c6e | g_MoonAnimTextures | DAT_02f37f98
+    PUSH ESI                            ; 00529c6e | g_MoonAnimTextures | g_MoonAnimTextures[1].raw
     ADD EBX,0x4                         ; 00529c6f
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0 ; 00529c72
         ;   XREF to: 004105d0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0(CAlphaBitmap * this_ptr, char * filename, int width, int height)
@@ -120,12 +120,12 @@ section .text
         ;   XREF to: 00442580 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_load_FUN_00442580(CCourse * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00529c97
     PUSH 0x639f49                       ; 00529c9a | = "menu2.pth"
-    PUSH 0x2f381f4                      ; 00529c9f | DAT_02f381f4
+    PUSH 0x2f381f4                      ; 00529c9f | g_MoonBatCourses[1].len
     CALL core_course.cpp_CCourse_load_FUN_00442580 ; 00529ca4
         ;   XREF to: 00442580 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_load_FUN_00442580(CCourse * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00529ca9
     PUSH 0x639f53                       ; 00529cac | = "menu3.pth"
-    PUSH 0x2f38200                      ; 00529cb1 | DAT_02f38200
+    PUSH 0x2f38200                      ; 00529cb1 | g_MoonBatCourses[2].len
     CALL core_course.cpp_CCourse_load_FUN_00442580 ; 00529cb6
         ;   XREF to: 00442580 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_load_FUN_00442580(CCourse * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00529cbb

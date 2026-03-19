@@ -26,7 +26,7 @@
 ;   int INT_00614304 = 0x33800001
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGame g_CGameInstance
-;   undefined4 DAT_02d81cd8
+;   undefined4 g_CGameInstance.is_processing
 ;
 ; Called Functions:
 ;   core_actor.cpp_generateRandomValue_FUN_0040cba0
@@ -52,7 +52,7 @@ section .text
     FILD dword ptr [ESP + 0x10]         ; 0040cc89
     MOV EAX,[0x0067b654]                ; 0040cc8d | g_CGameInstance | g_CGamePtr
     FADD double ptr [0x006142f8]        ; 0040cc92 | DOUBLE_006142f8
-    MOV EDX,dword ptr [EAX + 0x23c]     ; 0040cc98 | DAT_02d81cd8
+    MOV EDX,dword ptr [EAX + 0x23c]     ; 0040cc98 | g_CGameInstance.is_processing
     FSTP double ptr [ESP]               ; 0040cc9e
     TEST EDX,EDX                        ; 0040cca1
     JNZ 0x0040ccea                      ; 0040cca3

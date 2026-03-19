@@ -19,7 +19,7 @@
 ;   SMRGLTextureBasic SMRGLTextureBasic_0066e784
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   float[100] g_BoneBurnIntensity
-;   undefined4 DAT_00823c58
+;   undefined4 g_BoneBurnIntensity[1]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -87,7 +87,7 @@ section .text
     XOR EDX,EDX                         ; 0042ad80
     XOR ECX,ECX                         ; 0042ad82
         ;   Label: LAB_0042ad82
-    MOV dword ptr [EDX + 0x823c54],ECX  ; 0042ad84 | g_BoneBurnIntensity | DAT_00823c58
+    MOV dword ptr [EDX + 0x823c54],ECX  ; 0042ad84 | g_BoneBurnIntensity | g_BoneBurnIntensity[1]
     INC EAX                             ; 0042ad8a
     MOV ESI,dword ptr [EBX + 0x28558]   ; 0042ad8b
     ADD EDX,0x4                         ; 0042ad91
@@ -132,7 +132,7 @@ section .text
     JLE 0x0042ae31                      ; 0042ae00
         ;   XREF to: 0042ae31 (CONDITIONAL_JUMP)  ; LAB_0042ae31
     MOV EDI,dword ptr [ESP + 0x10]      ; 0042ae02
-    FLD float ptr [ECX*0x4 + 0x823c54]  ; 0042ae06 | g_BoneBurnIntensity | DAT_00823c58
+    FLD float ptr [ECX*0x4 + 0x823c54]  ; 0042ae06 | g_BoneBurnIntensity | g_BoneBurnIntensity[1]
         ;   Label: LAB_0042ae06
     FCOMP double ptr [0x00617132]       ; 0042ae0d | DOUBLE_00617132
     FNSTSW AX                           ; 0042ae13

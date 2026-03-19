@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   int g_PolygonCount
-;   undefined4 DAT_016e9914
+;   undefined4 g_ModelPolygonData[0].texture_name[0]
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
     JGE 0x0046e6e6                      ; 0046e6d4
         ;   XREF to: 0046e6e6 (CONDITIONAL_JUMP)  ; LAB_0046e6e6
     IMUL EAX,dword ptr [EBP + -0x4],0x184 ; 0046e6d6
-    MOV byte ptr [EAX + 0x16e9914],0x0  ; 0046e6dd | DAT_016e9914
+    MOV byte ptr [EAX + 0x16e9914],0x0  ; 0046e6dd | g_ModelPolygonData[0].texture_name[0]
     JMP 0x0046e6c5                      ; 0046e6e4
         ;   XREF to: 0046e6c5 (UNCONDITIONAL_JUMP)  ; LAB_0046e6c5
     MOV ESP,EBP                         ; 0046e6e6

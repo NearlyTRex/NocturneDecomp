@@ -59,7 +59,7 @@ section .text
     MOV dword ptr [0x00672370],EBX      ; 00490f0b | g_PerspectiveLeftU
     MOV [0x00672388],EAX                ; 00490f11 | g_PerspectiveRightU
     SUB EAX,EBX                         ; 00490f16
-    IMUL dword ptr [ECX*0x4 + 0x2d02584] ; 00490f18 | DAT_02d02584
+    IMUL dword ptr [ECX*0x4 + 0x2d02584] ; 00490f18 | g_ReciprocalLookupTable[1]
     SHL EDX,0x4                         ; 00490f1f
     MOV dword ptr [0x00672394],EDX      ; 00490f22 | g_PerspectiveSubdivDeltaU
     MOV EBX,dword ptr [ESI + 0x20]      ; 00490f28
@@ -67,7 +67,7 @@ section .text
     MOV dword ptr [0x00672374],EBX      ; 00490f2e | g_PerspectiveLeftV
     MOV [0x0067238c],EAX                ; 00490f34 | g_PerspectiveRightV
     SUB EAX,EBX                         ; 00490f39
-    IMUL dword ptr [ECX*0x4 + 0x2d02584] ; 00490f3b | DAT_02d02584
+    IMUL dword ptr [ECX*0x4 + 0x2d02584] ; 00490f3b | g_ReciprocalLookupTable[1]
     SHL EDX,0x4                         ; 00490f42
     MOV dword ptr [0x00672398],EDX      ; 00490f45 | g_PerspectiveSubdivDeltaV
     MOV EBX,dword ptr [ESI + 0x28]      ; 00490f4b
@@ -75,7 +75,7 @@ section .text
     MOV dword ptr [0x00672378],EBX      ; 00490f51 | g_PerspectiveLeftZ
     MOV [0x00672390],EAX                ; 00490f57 | g_PerspectiveRightZ
     SUB EAX,EBX                         ; 00490f5c
-    IMUL dword ptr [ECX*0x4 + 0x2d02584] ; 00490f5e | DAT_02d02584
+    IMUL dword ptr [ECX*0x4 + 0x2d02584] ; 00490f5e | g_ReciprocalLookupTable[1]
     SHL EDX,0x4                         ; 00490f65
     MOV dword ptr [0x0067239c],EDX      ; 00490f68 | g_PerspectiveSubdivDeltaZ
     MOV EAX,[0x00672370]                ; 00490f6e | g_PerspectiveLeftU
@@ -311,12 +311,12 @@ section .text
     MOV [0x006723ac],EAX                ; 004912c7 | g_PerspectiveNextV
     MOV EAX,[0x006723a8]                ; 004912cc | g_PerspectiveNextU
     SUB EAX,dword ptr [0x006723a0]      ; 004912d1 | g_PerspectiveCurrentU
-    IMUL dword ptr [ECX*0x4 + 0x2d02584] ; 004912d7 | DAT_02d02584
+    IMUL dword ptr [ECX*0x4 + 0x2d02584] ; 004912d7 | g_ReciprocalLookupTable[1]
     SAR EDX,0x8                         ; 004912de
     MOV ESI,EDX                         ; 004912e1
     MOV EAX,[0x006723ac]                ; 004912e3 | g_PerspectiveNextV
     SUB EAX,dword ptr [0x006723a4]      ; 004912e8 | g_PerspectiveCurrentV
-    IMUL dword ptr [ECX*0x4 + 0x2d02584] ; 004912ee | DAT_02d02584
+    IMUL dword ptr [ECX*0x4 + 0x2d02584] ; 004912ee | g_ReciprocalLookupTable[1]
     SAR EDX,0x8                         ; 004912f5
     MOV EBP,EDX                         ; 004912f8
     MOV EBX,dword ptr [0x02d03e80]      ; 004912fa | g_CurrentTextureData

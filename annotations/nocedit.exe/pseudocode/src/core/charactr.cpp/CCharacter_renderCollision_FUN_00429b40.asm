@@ -49,10 +49,10 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 DAT_00800000
 ;   SMRGLTextureBasic g_CollisionTexture
-;   undefined4 DAT_00823a80
-;   undefined4 DAT_00823a81
-;   undefined4 DAT_00823a82
-;   undefined4 DAT_00823a83
+;   undefined4 g_CollisionTexture.texture_name[0]
+;   undefined4 g_CollisionTexture.texture_name[1]
+;   undefined4 g_CollisionTexture.texture_name[2]
+;   undefined4 g_CollisionTexture.texture_name[3]
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -91,21 +91,21 @@ section .text
     RET                                 ; 00429b68
     MOV ESI,0x61709a                    ; 00429b69 | = "headlite.raw"
         ;   Label: LAB_00429b69
-    MOV EDI,0x823a80                    ; 00429b6e | DAT_00823a80
+    MOV EDI,0x823a80                    ; 00429b6e | g_CollisionTexture.texture_name[0]
     MOV dword ptr [ESP + 0x24],EAX      ; 00429b73
     MOV dword ptr [ESP + 0x20],EAX      ; 00429b77
     MOV dword ptr [ESP + 0x1c],EAX      ; 00429b7b
     MOV dword ptr [ESP + 0x18],EAX      ; 00429b7f
-    PUSH EDI                            ; 00429b83 | DAT_00823a80
+    PUSH EDI                            ; 00429b83 | g_CollisionTexture.texture_name[0]
     MOV AL,byte ptr [ESI]               ; 00429b84 | = "headlite.raw" | s_adlite.raw_0061709c
         ;   Label: LAB_00429b84
-    MOV byte ptr [EDI],AL               ; 00429b86 | DAT_00823a80 | DAT_00823a82
+    MOV byte ptr [EDI],AL               ; 00429b86 | g_CollisionTexture.texture_name[0] | g_CollisionTexture.texture_name[2]
     CMP AL,0x0                          ; 00429b88
     JZ 0x00429b9c                       ; 00429b8a
         ;   XREF to: 00429b9c (CONDITIONAL_JUMP)  ; LAB_00429b9c
     MOV AL,byte ptr [ESI + 0x1]         ; 00429b8c | s_eadlite.raw_0061709b | s_dlite.raw_0061709d
     ADD ESI,0x2                         ; 00429b8f
-    MOV byte ptr [EDI + 0x1],AL         ; 00429b92 | DAT_00823a81 | DAT_00823a83
+    MOV byte ptr [EDI + 0x1],AL         ; 00429b92 | g_CollisionTexture.texture_name[1] | g_CollisionTexture.texture_name[3]
     ADD EDI,0x2                         ; 00429b95
     CMP AL,0x0                          ; 00429b98
     JNZ 0x00429b84                      ; 00429b9a

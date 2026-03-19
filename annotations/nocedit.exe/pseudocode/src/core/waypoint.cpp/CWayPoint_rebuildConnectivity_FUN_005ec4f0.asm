@@ -15,9 +15,9 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonMission g_CDemonMissionInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_032690dc
-;   undefined4 DAT_032690e0
-;   undefined4 DAT_032690e4
+;   undefined4 g_CDemonSetInstance.waypoint_count
+;   undefined4 g_CDemonSetInstance.waypoints[0]
+;   undefined4 g_CDemonSetInstance.waypoints[1]
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60
@@ -73,10 +73,10 @@ section .text
     MOV dword ptr [ESP],EAX             ; 005ec54f
     MOV EAX,[0x006810c8]                ; 005ec552 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_005ec552
-    CMP EDI,dword ptr [EAX + 0x154e64]  ; 005ec557 | DAT_032690dc
+    CMP EDI,dword ptr [EAX + 0x154e64]  ; 005ec557 | g_CDemonSetInstance.waypoint_count
     JGE 0x005ec5cf                      ; 005ec55d
         ;   XREF to: 005ec5cf (CONDITIONAL_JUMP)  ; LAB_005ec5cf
-    MOV ESI,dword ptr [EAX + EBP*0x1 + 0x154e68] ; 005ec563 | DAT_032690e0 | DAT_032690e4
+    MOV ESI,dword ptr [EAX + EBP*0x1 + 0x154e68] ; 005ec563 | g_CDemonSetInstance.waypoints[0] | g_CDemonSetInstance.waypoints[1]
     CMP ESI,EBX                         ; 005ec56a
     JNZ 0x005ec574                      ; 005ec56c
         ;   XREF to: 005ec574 (CONDITIONAL_JUMP)  ; LAB_005ec574

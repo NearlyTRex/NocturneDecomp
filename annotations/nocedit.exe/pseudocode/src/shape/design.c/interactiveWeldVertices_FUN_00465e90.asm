@@ -23,10 +23,10 @@
 ;   TerminatedCString s_Point_not_on_polygon_0061c6d0
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;   undefined4 g_LoadedVertices[0].vertex.z
-;   undefined4 DAT_016e99b4
-;   undefined4 DAT_016e99c8
+;   undefined4 g_ModelPolygonData[0].vertex_indices_count
+;   undefined4 g_ModelPolygonData[0].vertex_indices[0]
 ;
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_0060013c
@@ -140,7 +140,7 @@ section .text
     IMUL EDX,dword ptr [EBP + 0x14],0x184 ; 00465f54
         ;   Label: LAB_00465f54
     MOV EAX,dword ptr [EBP + -0x8]      ; 00465f5b
-    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 00465f5e | DAT_016e99b4
+    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 00465f5e | g_ModelPolygonData[0].vertex_indices_count
     JGE 0x00465f8a                      ; 00465f64
         ;   XREF to: 00465f8a (CONDITIONAL_JUMP)  ; LAB_00465f8a
     IMUL EDX,dword ptr [EBP + 0x14],0x184 ; 00465f66
@@ -148,7 +148,7 @@ section .text
     SHL EAX,0x2                         ; 00465f70
     ADD EDX,EAX                         ; 00465f73
     MOV EAX,dword ptr [EBP + -0x10]     ; 00465f75
-    CMP EAX,dword ptr [EDX + 0x16e99c8] ; 00465f78 | DAT_016e99c8
+    CMP EAX,dword ptr [EDX + 0x16e99c8] ; 00465f78 | g_ModelPolygonData[0].vertex_indices[0]
     JNZ 0x00465f88                      ; 00465f7e
         ;   XREF to: 00465f88 (CONDITIONAL_JUMP)  ; LAB_00465f88
     MOV EAX,dword ptr [EBP + -0x8]      ; 00465f80
@@ -189,8 +189,8 @@ section .text
         ;   XREF to: 00465ff1 (CONDITIONAL_JUMP)  ; LAB_00465ff1
     IMUL EDX,dword ptr [EBP + -0x10],0x14 ; 00465fd1
     IMUL EAX,dword ptr [EBP + -0xc],0x14 ; 00465fd5
-    FLD float ptr [EDX + 0x1626410]     ; 00465fd9 | DAT_01626410
-    FSUB float ptr [EAX + 0x1626410]    ; 00465fdf | DAT_01626410
+    FLD float ptr [EDX + 0x1626410]     ; 00465fd9 | g_LoadedVertices[0].vertex.y
+    FSUB float ptr [EAX + 0x1626410]    ; 00465fdf | g_LoadedVertices[0].vertex.y
     FABS                                ; 00465fe5
     FLD float ptr [EBP + 0x18]          ; 00465fe7
     FCOMPP                              ; 00465fea
@@ -222,7 +222,7 @@ section .text
     SHL EAX,0x2                         ; 0046601f
     ADD EDX,EAX                         ; 00466022
     MOV EAX,dword ptr [EBP + -0xc]      ; 00466024
-    MOV dword ptr [EDX + 0x16e99c8],EAX ; 00466027 | DAT_016e99c8
+    MOV dword ptr [EDX + 0x16e99c8],EAX ; 00466027 | g_ModelPolygonData[0].vertex_indices[0]
     CALL shape_design.c_removeUnusedVertices_FUN_00463830 ; 0046602d
         ;   XREF to: 00463830 (UNCONDITIONAL_CALL)  ; void shape_design.c_removeUnusedVertices_FUN_00463830()
     MOV ESP,EBP                         ; 00466032

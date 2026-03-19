@@ -32,11 +32,11 @@
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 DAT_01000000
+;   undefined4 g_LightBufferPool[13][93688]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CEditorTools g_CEditorToolsInstance
 ;   int g_MansionPuzzleSlewType
-;   undefined4 DAT_02f33744
+;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -82,7 +82,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 00509d90
         ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     MOV EAX,[0x0067d550]                ; 00509d95 | g_CDemonMissionPtr
-    MOV ECX,dword ptr [EAX + 0x4]       ; 00509d9a | DAT_02f33744
+    MOV ECX,dword ptr [EAX + 0x4]       ; 00509d9a | g_CDemonMissionInstance.is_in_editor
     ADD ESP,0xc                         ; 00509d9d
     TEST ECX,ECX                        ; 00509da0
     JZ 0x00509dea                       ; 00509da2
@@ -278,14 +278,14 @@ section .text
     MOV dword ptr [ESP + 0x24],EAX      ; 0050a00b
     MOV dword ptr [ESP + 0x2c],ECX      ; 0050a00f
     MOV dword ptr [ESP + 0x30],EBX      ; 0050a013
-    MOV EDX,0x1000000                   ; 0050a017 | DAT_01000000
+    MOV EDX,0x1000000                   ; 0050a017 | g_LightBufferPool[13][93688]
     MOV dword ptr [ESP + 0x40],ECX      ; 0050a01c
-    MOV dword ptr [ESP + 0x28],EDX      ; 0050a020 | DAT_01000000
+    MOV dword ptr [ESP + 0x28],EDX      ; 0050a020 | g_LightBufferPool[13][93688]
     MOV EBP,EDX                         ; 0050a024
-    MOV dword ptr [ESP + 0x34],EDX      ; 0050a026 | DAT_01000000
-    MOV dword ptr [ESP + 0x38],EDX      ; 0050a02a | DAT_01000000
+    MOV dword ptr [ESP + 0x34],EDX      ; 0050a026 | g_LightBufferPool[13][93688]
+    MOV dword ptr [ESP + 0x38],EDX      ; 0050a02a | g_LightBufferPool[13][93688]
     MOV EDX,0x3                         ; 0050a02e
-    MOV dword ptr [ESP + 0x44],EBP      ; 0050a033 | DAT_01000000
+    MOV dword ptr [ESP + 0x44],EBP      ; 0050a033 | g_LightBufferPool[13][93688]
     MOV dword ptr [ESP + 0x3c],EDX      ; 0050a037
     FLD float ptr [0x0063570d]          ; 0050a03b | FLOAT_0063570d
     FLD float ptr [ESI + 0xc]           ; 0050a041

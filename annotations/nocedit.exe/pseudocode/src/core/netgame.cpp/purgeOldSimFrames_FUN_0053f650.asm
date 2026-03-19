@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   int g_SimFrameCount
 ;   SSimFrame[512] g_SimFrameHistory
-;   undefined4 DAT_02f9c128
-;   undefined4 DAT_02f9c18c
+;   undefined4 g_SimFrameHistory[1].sequence_number
+;   undefined4 g_SimFrameHistory[2].sequence_number
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005fe5e0
@@ -34,7 +34,7 @@ section .text
     ADD EDI,0x64                        ; 0053f667
     MOV EDX,dword ptr [ESP + 0x14]      ; 0053f66a
         ;   Label: LAB_0053f66a
-    CMP EDX,dword ptr [ESI + 0x2f9c0c4] ; 0053f66e | g_SimFrameHistory | DAT_02f9c128
+    CMP EDX,dword ptr [ESI + 0x2f9c0c4] ; 0053f66e | g_SimFrameHistory | g_SimFrameHistory[1].sequence_number
     JG 0x0053f68c                       ; 0053f674
         ;   XREF to: 0053f68c (CONDITIONAL_JUMP)  ; LAB_0053f68c
     ADD EDI,0x64                        ; 0053f676
@@ -57,9 +57,9 @@ section .text
     IMUL EAX,EAX,0x64                   ; 0053f691
     PUSH EAX                            ; 0053f694
     MOV EAX,0x2f9c0c4                   ; 0053f695 | g_SimFrameHistory
-    PUSH EDI                            ; 0053f69a | DAT_02f9c18c
+    PUSH EDI                            ; 0053f69a | g_SimFrameHistory[2].sequence_number
     ADD EAX,ESI                         ; 0053f69b
-    PUSH EAX                            ; 0053f69d | DAT_02f9c128
+    PUSH EAX                            ; 0053f69d | g_SimFrameHistory[1].sequence_number
     MOV dword ptr [0x02f9c0c0],EBP      ; 0053f69e | g_SimFrameCount
     CALL crt_string.c_memmove_FUN_005fe5e0 ; 0053f6a4
         ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)

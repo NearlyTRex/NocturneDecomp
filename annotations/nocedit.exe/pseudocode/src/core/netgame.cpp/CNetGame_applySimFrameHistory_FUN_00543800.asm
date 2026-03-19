@@ -17,7 +17,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGame g_CGameInstance
 ;   CHero*[4] g_HeroActors
-;   undefined4 DAT_02db87c4
+;   undefined4 g_HeroActors[1]
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -56,7 +56,7 @@ section .text
         ;   XREF to: 00543870 (CONDITIONAL_JUMP)  ; LAB_00543870
     MOV EAX,dword ptr [ESP + 0x18]      ; 00543841
     XOR EBX,EBX                         ; 00543845
-    MOV ESI,dword ptr [EBX + 0x2db87c0] ; 00543847 | g_HeroActors | DAT_02db87c4
+    MOV ESI,dword ptr [EBX + 0x2db87c0] ; 00543847 | g_HeroActors | g_HeroActors[1]
         ;   Label: LAB_00543847
     MOV ECX,0xb                         ; 0054384d
     LEA EDI,[ESI + 0xbe2c]              ; 00543852

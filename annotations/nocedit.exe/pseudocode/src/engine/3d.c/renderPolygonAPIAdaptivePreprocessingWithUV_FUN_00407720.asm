@@ -13,7 +13,7 @@
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
 ;   int[24] g_ProcessedVertexIndices
-;   undefined4 DAT_00772a9c
+;   undefined4 g_ProcessedVertexIndices[1]
 ;   int g_CurrentLightingValue
 ;   int g_AdvancedClippingEnabled
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
@@ -84,7 +84,7 @@ section .text
     XOR EDX,EDX                         ; 004077a9
     MOV EBX,dword ptr [EAX + 0x18]      ; 004077ab
         ;   Label: LAB_004077ab
-    MOV dword ptr [EDX + 0x772a98],EBX  ; 004077ae | g_ProcessedVertexIndices | DAT_00772a9c
+    MOV dword ptr [EDX + 0x772a98],EBX  ; 004077ae | g_ProcessedVertexIndices | g_ProcessedVertexIndices[1]
     IMUL EBX,EBX,0x30                   ; 004077b4
     MOV ESI,dword ptr [EAX + 0x1c]      ; 004077b7
     MOV dword ptr [EBX + 0x68802c],ESI  ; 004077ba | g_RenderVertexBuffer[0].u

@@ -63,7 +63,7 @@
 ;   float FLOAT_00665770 = 0.2000000
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic SMRGLTextureBasic_0068495c
-;   undefined4 DAT_00f80000
+;   undefined4 g_LightBufferPool[11][183800]
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
@@ -371,14 +371,14 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 005f1745 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x18],0x80000  ; 005f1747
     MOV EBX,dword ptr [EAX]             ; 005f174e | g_CDemonRendererInstance
-    MOV dword ptr [EBX + 0x1c],0xf80000 ; 005f1750 | DAT_00f80000
+    MOV dword ptr [EBX + 0x1c],0xf80000 ; 005f1750 | g_LightBufferPool[11][183800]
     MOV EBX,dword ptr [EAX]             ; 005f1757 | g_CDemonRendererInstance
     ADD ESP,0x8                         ; 005f1759
-    MOV dword ptr [EBX + 0x48],0xf80000 ; 005f175c | DAT_00f80000
+    MOV dword ptr [EBX + 0x48],0xf80000 ; 005f175c | g_LightBufferPool[11][183800]
     MOV EBX,dword ptr [EAX]             ; 005f1763 | g_CDemonRendererInstance
-    MOV dword ptr [EBX + 0x4c],0xf80000 ; 005f1765 | DAT_00f80000
+    MOV dword ptr [EBX + 0x4c],0xf80000 ; 005f1765 | g_LightBufferPool[11][183800]
     MOV EBX,dword ptr [EAX]             ; 005f176c | g_CDemonRendererInstance
-    MOV dword ptr [EBX + 0x78],0xf80000 ; 005f176e | DAT_00f80000
+    MOV dword ptr [EBX + 0x78],0xf80000 ; 005f176e | g_LightBufferPool[11][183800]
     MOV EBX,dword ptr [EAX]             ; 005f1775 | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x7c],0x80000  ; 005f1777
     MOV EBX,dword ptr [EAX]             ; 005f177e | g_CDemonRendererInstance

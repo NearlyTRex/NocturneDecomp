@@ -1915,7 +1915,7 @@ section .text
     MOV EBX,0x1                         ; 00593938
     SHL ECX,0x4                         ; 0059393d
     XOR EAX,EAX                         ; 00593940
-    MOV EDX,dword ptr [EAX + 0x3670b60] ; 00593942 | g_SkeleditBiasEntries | DAT_03670b70
+    MOV EDX,dword ptr [EAX + 0x3670b60] ; 00593942 | g_SkeleditBiasEntries | g_SkeleditBiasEntries[1].motion_index
         ;   Label: LAB_00593942
     ADD EAX,0x10                        ; 00593948
     MOV dword ptr [EBP + EDX*0x4 + 0xffffdb4a],EBX ; 0059394b
@@ -1939,11 +1939,11 @@ section .text
     MOV ESI,dword ptr [0x03670b5c]      ; 0059397b | g_SkeleditBiasEntryCount
     XOR EAX,EAX                         ; 00593981
     SHL ESI,0x4                         ; 00593983
-    CMP dword ptr [EAX + 0x3670b60],0x0 ; 00593986 | g_SkeleditBiasEntries | DAT_03670b70
+    CMP dword ptr [EAX + 0x3670b60],0x0 ; 00593986 | g_SkeleditBiasEntries | g_SkeleditBiasEntries[1].motion_index
         ;   Label: LAB_00593986
     JL 0x0059399f                       ; 0059398d
         ;   XREF to: 0059399f (CONDITIONAL_JUMP)  ; LAB_0059399f
-    MOV EDX,dword ptr [EAX + 0x3670b68] ; 0059398f | DAT_03670b78 | DAT_03670b68
+    MOV EDX,dword ptr [EAX + 0x3670b68] ; 0059398f | g_SkeleditBiasEntries[1].ref_motion_index | g_SkeleditBiasEntries[0].ref_motion_index
     CMP dword ptr [EBP + EDX*0x4 + 0xffffdb4a],0x0 ; 00593995
     JZ 0x005939a7                       ; 0059399d
         ;   XREF to: 005939a7 (CONDITIONAL_JUMP)  ; LAB_005939a7
@@ -1963,8 +1963,8 @@ section .text
     MOV EDX,dword ptr [ESI]             ; 005939bd | g_SkeleditBiasEntries
     IMUL EDX,EDX,0x54c                  ; 005939bf
     ADD EDX,dword ptr [EBP + 0x8e]      ; 005939c5
-    IMUL EAX,dword ptr [ESI + 0x8],0x54c ; 005939cb | DAT_03670b68
-    MOV EBX,dword ptr [ESI + 0x4]       ; 005939d2 | DAT_03670b64
+    IMUL EAX,dword ptr [ESI + 0x8],0x54c ; 005939cb | g_SkeleditBiasEntries[0].ref_motion_index
+    MOV EBX,dword ptr [ESI + 0x4]       ; 005939d2 | g_SkeleditBiasEntries[0].source_frame
     MOV EDX,dword ptr [EDX + 0x9c8]     ; 005939d5
     ADD EDX,EBX                         ; 005939db
     MOV EBX,dword ptr [EBP + 0x8e]      ; 005939dd
@@ -3579,8 +3579,8 @@ section .text
     PUSH 0x0                            ; 00594aad
     MOV EDI,dword ptr [EAX + 0x64]      ; 00594aaf
     PUSH EDI                            ; 00594ab2
-    LEA EAX,[EBX + 0x4]                 ; 00594ab3 | DAT_03670b64
-    PUSH EAX                            ; 00594ab6 | DAT_03670b64
+    LEA EAX,[EBX + 0x4]                 ; 00594ab3 | g_SkeleditBiasEntries[0].source_frame
+    PUSH EAX                            ; 00594ab6 | g_SkeleditBiasEntries[0].source_frame
     LEA EAX,[EBP + 0xfffffb5a]          ; 00594ab7
     PUSH EAX                            ; 00594abd
     CALL core_skeledit.cpp_parseBoneParentToken_FUN_00592520 ; 00594abe
@@ -3597,7 +3597,7 @@ section .text
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 00594ada
         ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00594adf
-    MOV dword ptr [EBX + 0x8],EAX       ; 00594ae2 | DAT_03670b68
+    MOV dword ptr [EBX + 0x8],EAX       ; 00594ae2 | g_SkeleditBiasEntries[0].ref_motion_index
     TEST EAX,EAX                        ; 00594ae5
     JL 0x00594b6d                       ; 00594ae7
         ;   XREF to: 00594b6d (CONDITIONAL_JUMP)  ; LAB_00594b6d

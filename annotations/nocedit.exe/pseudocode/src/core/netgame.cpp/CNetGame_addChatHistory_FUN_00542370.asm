@@ -19,17 +19,17 @@
 ;   CGame g_CGameInstance
 ;   int g_ChatHistoryCount
 ;   SChatHistory[400] g_ChatHistory
-;   undefined4 DAT_02f7c8d4
-;   undefined4 DAT_02f7c8d8
-;   undefined4 DAT_02f7c8dc
-;   undefined4 DAT_02f7c8dd
-;   undefined4 DAT_02f7c8de
-;   undefined4 DAT_02f7c8df
-;   undefined4 DAT_02f7c8f0
-;   undefined4 DAT_02f7c8f1
-;   undefined4 DAT_02f7c8f2
-;   undefined4 DAT_02f7c8f3
-;   undefined4 DAT_02f7c9f0
+;   undefined4 g_ChatHistory[0].sender_addr.port
+;   undefined4 g_ChatHistory[0].message_id
+;   undefined4 g_ChatHistory[0].sender_name[0]
+;   undefined4 g_ChatHistory[0].sender_name[1]
+;   undefined4 g_ChatHistory[0].sender_name[2]
+;   undefined4 g_ChatHistory[0].sender_name[3]
+;   undefined4 g_ChatHistory[0].message[0]
+;   undefined4 g_ChatHistory[0].message[1]
+;   undefined4 g_ChatHistory[0].message[2]
+;   undefined4 g_ChatHistory[0].message[3]
+;   undefined4 g_ChatHistory[1].sender_addr.ip_address
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_displayMessage_FUN_004d7f20
@@ -57,21 +57,21 @@ section .text
     LEA EDI,[EAX + 0x2f7c8d0]           ; 0054239f | g_ChatHistory
     MOV EDX,dword ptr [ESP + 0x18]      ; 005423a5
     MOVSD ES:EDI,ESI                    ; 005423a9 | g_ChatHistory
-    MOVSD ES:EDI,ESI                    ; 005423aa | DAT_02f7c8d4
-    MOV dword ptr [EAX + 0x2f7c8d8],EDX ; 005423ab | DAT_02f7c8d8
+    MOVSD ES:EDI,ESI                    ; 005423aa | g_ChatHistory[0].sender_addr.port
+    MOV dword ptr [EAX + 0x2f7c8d8],EDX ; 005423ab | g_ChatHistory[0].message_id
     ADD EAX,0x2f7c8d0                   ; 005423b1 | g_ChatHistory
     MOV ESI,dword ptr [ESP + 0x1c]      ; 005423b6
     LEA EDI,[EAX + 0xc]                 ; 005423ba
     PUSH EDI                            ; 005423bd
     MOV AL,byte ptr [ESI]               ; 005423be
         ;   Label: LAB_005423be
-    MOV byte ptr [EDI],AL               ; 005423c0 | DAT_02f7c8dc | DAT_02f7c8de
+    MOV byte ptr [EDI],AL               ; 005423c0 | g_ChatHistory[0].sender_name[0] | g_ChatHistory[0].sender_name[2]
     CMP AL,0x0                          ; 005423c2
     JZ 0x005423d6                       ; 005423c4
         ;   XREF to: 005423d6 (CONDITIONAL_JUMP)  ; LAB_005423d6
     MOV AL,byte ptr [ESI + 0x1]         ; 005423c6
     ADD ESI,0x2                         ; 005423c9
-    MOV byte ptr [EDI + 0x1],AL         ; 005423cc | DAT_02f7c8dd | DAT_02f7c8df
+    MOV byte ptr [EDI + 0x1],AL         ; 005423cc | g_ChatHistory[0].sender_name[1] | g_ChatHistory[0].sender_name[3]
     ADD EDI,0x2                         ; 005423cf
     CMP AL,0x0                          ; 005423d2
     JNZ 0x005423be                      ; 005423d4
@@ -89,13 +89,13 @@ section .text
     PUSH EDI                            ; 005423f5
     MOV AL,byte ptr [ESI]               ; 005423f6
         ;   Label: LAB_005423f6
-    MOV byte ptr [EDI],AL               ; 005423f8 | DAT_02f7c8f0 | DAT_02f7c8f2
+    MOV byte ptr [EDI],AL               ; 005423f8 | g_ChatHistory[0].message[0] | g_ChatHistory[0].message[2]
     CMP AL,0x0                          ; 005423fa
     JZ 0x0054240e                       ; 005423fc
         ;   XREF to: 0054240e (CONDITIONAL_JUMP)  ; LAB_0054240e
     MOV AL,byte ptr [ESI + 0x1]         ; 005423fe
     ADD ESI,0x2                         ; 00542401
-    MOV byte ptr [EDI + 0x1],AL         ; 00542404 | DAT_02f7c8f1 | DAT_02f7c8f3
+    MOV byte ptr [EDI + 0x1],AL         ; 00542404 | g_ChatHistory[0].message[1] | g_ChatHistory[0].message[3]
     ADD EDI,0x2                         ; 00542407
     CMP AL,0x0                          ; 0054240a
     JNZ 0x005423f6                      ; 0054240c
@@ -123,7 +123,7 @@ section .text
     ADD EAX,ECX                         ; 00542445
     SHL EAX,0x5                         ; 00542447
     PUSH EAX                            ; 0054244a
-    PUSH 0x2f7c9f0                      ; 0054244b | DAT_02f7c9f0
+    PUSH 0x2f7c9f0                      ; 0054244b | g_ChatHistory[1].sender_addr.ip_address
     PUSH 0x2f7c8d0                      ; 00542450 | g_ChatHistory
     CALL crt_string.c_memmove_FUN_005fe5e0 ; 00542455
         ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)

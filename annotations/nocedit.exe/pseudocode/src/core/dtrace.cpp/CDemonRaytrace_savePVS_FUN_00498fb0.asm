@@ -24,7 +24,7 @@
 ;   int g_PVSDrawnCubeCount
 ;   int g_PVSReadyFlag
 ;   CDemonCube*[20000] g_PVSCubePointers
-;   undefined4 DAT_02ca03b0
+;   undefined4 g_PVSCubePointers[1]
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -114,7 +114,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 0049908b
     MOV EDX,EDI                         ; 0049908f
     MOV EAX,dword ptr [EAX + 0x50]      ; 00499091
-    CMP EAX,dword ptr [EDX + 0x2ca03ac] ; 00499094 | g_PVSCubePointers | DAT_02ca03b0
+    CMP EAX,dword ptr [EDX + 0x2ca03ac] ; 00499094 | g_PVSCubePointers | g_PVSCubePointers[1]
         ;   Label: LAB_00499094
     JNZ 0x004990df                      ; 0049909a
         ;   XREF to: 004990df (CONDITIONAL_JUMP)  ; LAB_004990df

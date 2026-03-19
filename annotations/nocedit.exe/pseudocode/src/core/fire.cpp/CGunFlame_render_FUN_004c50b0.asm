@@ -340,7 +340,7 @@ section .text
     FLD float ptr [0x00629fab]          ; 004c5416 | FLOAT_00629fab
     FXCH                                ; 004c541c
     FMUL ST1                            ; 004c541e
-    MOV dword ptr [EAX + 0x48],0xfe0000 ; 004c5420 | DAT_00fe0000
+    MOV dword ptr [EAX + 0x48],0xfe0000 ; 004c5420 | g_LightBufferPool[12][269816]
     FXCH ST2                            ; 004c5427
     FADD ST0,ST3                        ; 004c5429
     MOV EAX,dword ptr [EDX]             ; 004c542b | g_CDemonRendererInstance
@@ -350,12 +350,12 @@ section .text
     FADDP ST3,ST0                       ; 004c5438
     MOV EAX,dword ptr [EDX]             ; 004c543a | g_CDemonRendererInstance
     FMULP ST2                           ; 004c543c
-    MOV dword ptr [EAX + 0x78],0xfe0000 ; 004c543e | DAT_00fe0000
+    MOV dword ptr [EAX + 0x78],0xfe0000 ; 004c543e | g_LightBufferPool[12][269816]
     MOV EAX,dword ptr [EDX]             ; 004c5445 | g_CDemonRendererInstance
     FXCH ST2                            ; 004c5447
     CALL crt_math.c_round_FUN_005fe6b0  ; 004c5449
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
-    MOV dword ptr [EAX + 0x7c],0xfe0000 ; 004c544e | DAT_00fe0000
+    MOV dword ptr [EAX + 0x7c],0xfe0000 ; 004c544e | g_LightBufferPool[12][269816]
     FXCH ST2                            ; 004c5455
     CALL crt_math.c_round_FUN_005fe6b0  ; 004c5457
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
@@ -370,7 +370,7 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004c5476 | g_CDemonRendererInstance
     FXCH ST3                            ; 004c5478
     FISTP dword ptr [ESP + 0xb8]        ; 004c547a
-    MOV dword ptr [EAX + 0xac],0xfe0000 ; 004c5481 | DAT_00fe0000
+    MOV dword ptr [EAX + 0xac],0xfe0000 ; 004c5481 | g_LightBufferPool[12][269816]
     MOV EAX,dword ptr [ESP + 0xb8]      ; 004c548b
     MOV EBX,dword ptr [EDX]             ; 004c5492 | g_CDemonRendererInstance
     FISTP dword ptr [ESP + 0xb4]        ; 004c5494

@@ -25,7 +25,7 @@ void __cdecl wincore_winvideo_cpp_toggleMoviePlayback_FUN_005f4990(HWND notify_w
     lpstrCommand = "play mov fullscreen notify";
     goto LAB_005f49ca;
   }
-  notify_window = (HWND)0x0;
+  notify_window = 0;
   lpstrCommand = "pause mov";
 LAB_005f49ca:
   (*g_mciSendStringAFunc)(lpstrCommand,(LPSTR)0x0,0,notify_window);

@@ -188,7 +188,7 @@ section .text
     ADD EDX,dword ptr [EBX + 0x314]     ; 0053d51f
     ADD ESP,0x8                         ; 0053d525
     MOV dword ptr [EBP + -0xc],EDX      ; 0053d528
-    MOV ECX,dword ptr [0x02db87b8]      ; 0053d52b | DAT_02db8780.name_hash
+    MOV ECX,dword ptr [0x02db87b8]      ; 0053d52b | g_CHealthItemClassInfo.name_hash
         ;   Label: LAB_0053d52b
     PUSH ECX                            ; 0053d531
     PUSH ESI                            ; 0053d532

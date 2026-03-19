@@ -2019,7 +2019,7 @@ section .text
     ADD ESP,0x4                         ; 004101c1
     MOV EAX,dword ptr [EBX + 0x68]      ; 004101c4
         ;   Label: LAB_004101c4
-    MOV EDX,dword ptr [EDI + 0x66e30c]  ; 004101c7 | g_PropertyFlagDefinitions | DAT_0066e314
+    MOV EDX,dword ptr [EDI + 0x66e30c]  ; 004101c7 | g_PropertyFlagDefinitions | g_PropertyFlagDefinitions[1].mask
     TEST dword ptr [EAX],EDX            ; 004101cd
     JZ 0x00410265                       ; 004101cf
         ;   XREF to: 00410265 (CONDITIONAL_JUMP)  ; LAB_00410265

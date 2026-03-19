@@ -72,7 +72,7 @@
 ;   string s_Enter_new_path_0062316a
 ;   TerminatedCString s_Can_t_change_to_s_00623179
 ;   char[264] g_BrowserLastSelectedFile
-;   undefined4 DAT_00678a74
+;   undefined4 g_BrowserLastSelectedFile+4
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -117,7 +117,7 @@ section .text
     LEA EDI,[ESP + 0xc08]               ; 0049f453
     MOV ESI,0x678a70                    ; 0049f45a | g_BrowserLastSelectedFile
     MOV AH,byte ptr [ESP + 0x1ee4]      ; 0049f45f
-    MOVSD.REP ES:EDI,ESI                ; 0049f466 | g_BrowserLastSelectedFile | DAT_00678a74
+    MOVSD.REP ES:EDI,ESI                ; 0049f466 | g_BrowserLastSelectedFile | g_BrowserLastSelectedFile+4
     TEST AH,0x1                         ; 0049f468
     JNZ 0x0049f734                      ; 0049f46b
         ;   XREF to: 0049f734 (CONDITIONAL_JUMP)  ; LAB_0049f734
@@ -323,7 +323,7 @@ section .text
     MOV ECX,0x41                        ; 0049f6bd
     LEA EDI,[ESP + 0x7f8]               ; 0049f6c2
     MOV ESI,0x678c80                    ; 0049f6c9 | g_BrowserLastEnteredPath
-    MOVSD.REP ES:EDI,ESI                ; 0049f6ce | g_BrowserLastEnteredPath | DAT_00678c84
+    MOVSD.REP ES:EDI,ESI                ; 0049f6ce | g_BrowserLastEnteredPath | g_BrowserLastEnteredPath+4
     PUSH 0x1                            ; 0049f6d0
         ;   Label: LAB_0049f6d0
     PUSH 0x104                          ; 0049f6d2

@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   uint[8] g_MpegBitMaskTableSingleBit
-;   undefined4 DAT_0067e5dc
+;   undefined4 g_MpegBitMaskTableSingleBit[7]
 ;
 ; Called Functions:
 ;   crt_stdio.c_fread_FUN_005fd990
@@ -118,7 +118,7 @@ section .text
     XOR EBX,EBX                         ; 0052ef07
     DEC EDX                             ; 0052ef09
     MOV BL,byte ptr [EAX]               ; 0052ef0a
-    MOV EAX,dword ptr [EDX*0x4 + 0x67e5c0] ; 0052ef0c | g_MpegBitMaskTableSingleBit | DAT_0067e5dc
+    MOV EAX,dword ptr [EDX*0x4 + 0x67e5c0] ; 0052ef0c | g_MpegBitMaskTableSingleBit | g_MpegBitMaskTableSingleBit[7]
     MOV CL,DL                           ; 0052ef13
     AND EAX,EBX                         ; 0052ef15
     MOV dword ptr [EDI + 0x14],EDX      ; 0052ef17

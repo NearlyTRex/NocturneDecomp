@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * this_ptr)
     ADD ESP,0x4                         ; 005118b4
     XOR EAX,EAX                         ; 005118b7
-    MOV dword ptr [EAX + 0x2f28000],EBX ; 005118b9 | g_ControlOptionsMenuPointers | DAT_02f28004 | g_ControlsMenuTextBuffers
+    MOV dword ptr [EAX + 0x2f28000],EBX ; 005118b9 | g_ControlOptionsMenuPointers | g_ControlOptionsMenuPointers[1] | g_ControlsMenuTextBuffers
         ;   Label: LAB_005118b9
     ADD EAX,0x4                         ; 005118bf
     ADD EBX,0x100                       ; 005118c2
@@ -138,14 +138,14 @@ section .text
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00511994
     MOV EAX,[0x0067b654]                ; 00511997 | g_CGamePtr
-    MOV EAX,dword ptr [EAX + 0xc4]      ; 0051199c | DAT_02d81b60
+    MOV EAX,dword ptr [EAX + 0xc4]      ; 0051199c | g_CGameInstance.aim_mode
     CMP EAX,0x1                         ; 005119a2
     JNC 0x00511c72                      ; 005119a5
         ;   XREF to: 00511c72 (CONDITIONAL_JUMP)  ; LAB_00511c72
     MOV EAX,[0x0067b654]                ; 005119ab | g_CGamePtr
         ;   Label: LAB_005119ab
     PUSH 0x636af4                       ; 005119b0 | = "Aiming : Auto"
-    MOV dword ptr [EAX + 0xc4],0x0      ; 005119b5 | DAT_02d81b60
+    MOV dword ptr [EAX + 0xc4],0x0      ; 005119b5 | g_CGameInstance.aim_mode
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 005119bf
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
     ADD ESP,0x4                         ; 005119c4
@@ -161,7 +161,7 @@ section .text
     INC EBX                             ; 005119db
     MOV EAX,[0x0067b654]                ; 005119dc | g_CGamePtr
     MOV ESI,EBX                         ; 005119e1
-    MOV EBP,dword ptr [EAX + 0xc8]      ; 005119e3 | DAT_02d81b64
+    MOV EBP,dword ptr [EAX + 0xc8]      ; 005119e3 | g_CGameInstance.auto_use_health
     SHL ESI,0x8                         ; 005119e9
     INC EBX                             ; 005119ec
     ADD ESI,0x2f27700                   ; 005119ed | g_ControlsMenuTextBuffers
@@ -189,13 +189,13 @@ section .text
     PUSH EDI                            ; 00511a2c | g_ControlsMenuTextBuffers[5][0]
     MOV AL,byte ptr [ESI]               ; 00511a2d
         ;   Label: LAB_00511a2d
-    MOV byte ptr [EDI],AL               ; 00511a2f | g_ControlsMenuTextBuffers[5][0] | DAT_02f27c02
+    MOV byte ptr [EDI],AL               ; 00511a2f | g_ControlsMenuTextBuffers[5][0] | g_ControlsMenuTextBuffers[5][2]
     CMP AL,0x0                          ; 00511a31
     JZ 0x00511a45                       ; 00511a33
         ;   XREF to: 00511a45 (CONDITIONAL_JUMP)  ; LAB_00511a45
     MOV AL,byte ptr [ESI + 0x1]         ; 00511a35
     ADD ESI,0x2                         ; 00511a38
-    MOV byte ptr [EDI + 0x1],AL         ; 00511a3b | DAT_02f27c01 | DAT_02f27c03
+    MOV byte ptr [EDI + 0x1],AL         ; 00511a3b | g_ControlsMenuTextBuffers[5][1] | g_ControlsMenuTextBuffers[5][3]
     ADD EDI,0x2                         ; 00511a3e
     CMP AL,0x0                          ; 00511a41
     JNZ 0x00511a2d                      ; 00511a43
@@ -203,7 +203,7 @@ section .text
     POP EDI                             ; 00511a45
         ;   Label: LAB_00511a45
     MOV EAX,[0x0067b654]                ; 00511a46 | g_CGamePtr
-    FILD dword ptr [EAX + 0x9c]         ; 00511a4b | DAT_02d81b38
+    FILD dword ptr [EAX + 0x9c]         ; 00511a4b | g_CGameInstance.x_mouse_sensitivity
     FMUL double ptr [0x00636bff]        ; 00511a51 | DOUBLE_00636bff
     SUB ESP,0x8                         ; 00511a57
     FSTP double ptr [ESP]               ; 00511a5a
@@ -218,17 +218,17 @@ section .text
     SUB ECX,ECX                         ; 00511a72
     DEC ECX                             ; 00511a74
     MOV AL,0x0                          ; 00511a75
-    SCASB.REPNE ES:EDI                  ; 00511a77 | g_ControlsMenuTextBuffers[5][0] | DAT_02f27c01
+    SCASB.REPNE ES:EDI                  ; 00511a77 | g_ControlsMenuTextBuffers[5][0] | g_ControlsMenuTextBuffers[5][1]
     DEC EDI                             ; 00511a79
     MOV AL,byte ptr [ESI]               ; 00511a7a
         ;   Label: LAB_00511a7a
-    MOV byte ptr [EDI],AL               ; 00511a7c | g_ControlsMenuTextBuffers[5][0] | DAT_02f27c01 | DAT_02f27c02
+    MOV byte ptr [EDI],AL               ; 00511a7c | g_ControlsMenuTextBuffers[5][0] | g_ControlsMenuTextBuffers[5][1] | g_ControlsMenuTextBuffers[5][2]
     CMP AL,0x0                          ; 00511a7e
     JZ 0x00511a92                       ; 00511a80
         ;   XREF to: 00511a92 (CONDITIONAL_JUMP)  ; LAB_00511a92
     MOV AL,byte ptr [ESI + 0x1]         ; 00511a82
     ADD ESI,0x2                         ; 00511a85
-    MOV byte ptr [EDI + 0x1],AL         ; 00511a88 | DAT_02f27c01 | DAT_02f27c02 | DAT_02f27c03
+    MOV byte ptr [EDI + 0x1],AL         ; 00511a88 | g_ControlsMenuTextBuffers[5][1] | g_ControlsMenuTextBuffers[5][2] | g_ControlsMenuTextBuffers[5][3]
     ADD EDI,0x2                         ; 00511a8b
     CMP AL,0x0                          ; 00511a8e
     JNZ 0x00511a7a                      ; 00511a90
@@ -247,13 +247,13 @@ section .text
     PUSH EDI                            ; 00511aae | g_ControlsMenuTextBuffers[6][0]
     MOV AL,byte ptr [ESI]               ; 00511aaf
         ;   Label: LAB_00511aaf
-    MOV byte ptr [EDI],AL               ; 00511ab1 | g_ControlsMenuTextBuffers[6][0] | DAT_02f27d02
+    MOV byte ptr [EDI],AL               ; 00511ab1 | g_ControlsMenuTextBuffers[6][0] | g_ControlsMenuTextBuffers[6][2]
     CMP AL,0x0                          ; 00511ab3
     JZ 0x00511ac7                       ; 00511ab5
         ;   XREF to: 00511ac7 (CONDITIONAL_JUMP)  ; LAB_00511ac7
     MOV AL,byte ptr [ESI + 0x1]         ; 00511ab7
     ADD ESI,0x2                         ; 00511aba
-    MOV byte ptr [EDI + 0x1],AL         ; 00511abd | DAT_02f27d01 | DAT_02f27d03
+    MOV byte ptr [EDI + 0x1],AL         ; 00511abd | g_ControlsMenuTextBuffers[6][1] | g_ControlsMenuTextBuffers[6][3]
     ADD EDI,0x2                         ; 00511ac0
     CMP AL,0x0                          ; 00511ac3
     JNZ 0x00511aaf                      ; 00511ac5
@@ -261,7 +261,7 @@ section .text
     POP EDI                             ; 00511ac7
         ;   Label: LAB_00511ac7
     MOV EAX,[0x0067b654]                ; 00511ac8 | g_CGamePtr
-    FILD dword ptr [EAX + 0xa0]         ; 00511acd | DAT_02d81b3c
+    FILD dword ptr [EAX + 0xa0]         ; 00511acd | g_CGameInstance.y_mouse_sensitivity
     FMUL double ptr [0x00636bff]        ; 00511ad3 | DOUBLE_00636bff
     SUB ESP,0x8                         ; 00511ad9
     FSTP double ptr [ESP]               ; 00511adc
@@ -279,17 +279,17 @@ section .text
     SUB ECX,ECX                         ; 00511afc
     DEC ECX                             ; 00511afe
     MOV AL,0x0                          ; 00511aff
-    SCASB.REPNE ES:EDI                  ; 00511b01 | g_ControlsMenuTextBuffers[6][0] | DAT_02f27d01
+    SCASB.REPNE ES:EDI                  ; 00511b01 | g_ControlsMenuTextBuffers[6][0] | g_ControlsMenuTextBuffers[6][1]
     DEC EDI                             ; 00511b03
     MOV AL,byte ptr [ESI]               ; 00511b04
         ;   Label: LAB_00511b04
-    MOV byte ptr [EDI],AL               ; 00511b06 | g_ControlsMenuTextBuffers[6][0] | DAT_02f27d01 | DAT_02f27d02
+    MOV byte ptr [EDI],AL               ; 00511b06 | g_ControlsMenuTextBuffers[6][0] | g_ControlsMenuTextBuffers[6][1] | g_ControlsMenuTextBuffers[6][2]
     CMP AL,0x0                          ; 00511b08
     JZ 0x00511b1c                       ; 00511b0a
         ;   XREF to: 00511b1c (CONDITIONAL_JUMP)  ; LAB_00511b1c
     MOV AL,byte ptr [ESI + 0x1]         ; 00511b0c
     ADD ESI,0x2                         ; 00511b0f
-    MOV byte ptr [EDI + 0x1],AL         ; 00511b12 | DAT_02f27d01 | DAT_02f27d02 | DAT_02f27d03
+    MOV byte ptr [EDI + 0x1],AL         ; 00511b12 | g_ControlsMenuTextBuffers[6][1] | g_ControlsMenuTextBuffers[6][2] | g_ControlsMenuTextBuffers[6][3]
     ADD EDI,0x2                         ; 00511b15
     CMP AL,0x0                          ; 00511b18
     JNZ 0x00511b04                      ; 00511b1a
@@ -303,7 +303,7 @@ section .text
     CMP EDX,0x1                         ; 00511b31
     JNZ 0x00511ca0                      ; 00511b34
         ;   XREF to: 00511ca0 (CONDITIONAL_JUMP)  ; LAB_00511ca0
-    CMP dword ptr [EAX + 0x94],0x0      ; 00511b3a | DAT_02d81b30
+    CMP dword ptr [EAX + 0x94],0x0      ; 00511b3a | g_CGameInstance.invert_mouse_y_axis
     JZ 0x00511c96                       ; 00511b41
         ;   XREF to: 00511c96 (CONDITIONAL_JUMP)  ; LAB_00511c96
     PUSH 0x636b8a                       ; 00511b47 | = "Invert Y Axis : ON"
@@ -476,22 +476,22 @@ section .text
         ;   XREF to: 00511bc6 (UNCONDITIONAL_JUMP)  ; default
     MOV EAX,[0x0067b654]                ; 00511d16 | g_CGamePtr
         ;   Label: caseD_3
-    CMP dword ptr [EAX + 0xc4],0x0      ; 00511d1b | DAT_02d81b60
+    CMP dword ptr [EAX + 0xc4],0x0      ; 00511d1b | g_CGameInstance.aim_mode
     JNZ 0x00511d33                      ; 00511d22
         ;   XREF to: 00511d33 (CONDITIONAL_JUMP)  ; LAB_00511d33
-    MOV dword ptr [EAX + 0xc4],0x2      ; 00511d24 | DAT_02d81b60
+    MOV dword ptr [EAX + 0xc4],0x2      ; 00511d24 | g_CGameInstance.aim_mode
     JMP 0x00511bc6                      ; 00511d2e
         ;   XREF to: 00511bc6 (UNCONDITIONAL_JUMP)  ; default
-    MOV dword ptr [EAX + 0xc4],0x0      ; 00511d33 | DAT_02d81b60
+    MOV dword ptr [EAX + 0xc4],0x0      ; 00511d33 | g_CGameInstance.aim_mode
         ;   Label: LAB_00511d33
     JMP 0x00511bc6                      ; 00511d3d
         ;   XREF to: 00511bc6 (UNCONDITIONAL_JUMP)  ; default
     MOV EAX,[0x0067b654]                ; 00511d42 | g_CGamePtr
         ;   Label: caseD_4
-    CMP dword ptr [EAX + 0xc8],0x0      ; 00511d47 | DAT_02d81b64
+    CMP dword ptr [EAX + 0xc8],0x0      ; 00511d47 | g_CGameInstance.auto_use_health
     SETZ BL                             ; 00511d4e
     AND EBX,0xff                        ; 00511d51
-    MOV dword ptr [EAX + 0xc8],EBX      ; 00511d57 | DAT_02d81b64
+    MOV dword ptr [EAX + 0xc8],EBX      ; 00511d57 | g_CGameInstance.auto_use_health
     JMP 0x00511bc6                      ; 00511d5d
         ;   XREF to: 00511bc6 (UNCONDITIONAL_JUMP)  ; default
     PUSH 0x636bcb                       ; 00511d62 | = "Adjust X-Axis sensitivity"
@@ -501,8 +501,8 @@ section .text
     ADD ESP,0x4                         ; 00511d6c
     PUSH EAX                            ; 00511d6f
     MOV EAX,[0x0067b654]                ; 00511d70 | g_CGamePtr
-    ADD EAX,0x9c                        ; 00511d75 | DAT_02d81b38
-    PUSH EAX                            ; 00511d7a | DAT_02d81b38
+    ADD EAX,0x9c                        ; 00511d75 | g_CGameInstance.x_mouse_sensitivity
+    PUSH EAX                            ; 00511d7a | g_CGameInstance.x_mouse_sensitivity
     CALL core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 ; 00511d7b
         ;   XREF to: 005107c0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_adjustMouseSensitivity_FUN_005107c0(int * sensitivity_value_ptr, char * window_title)
     ADD ESP,0x8                         ; 00511d80
@@ -515,8 +515,8 @@ section .text
     ADD ESP,0x4                         ; 00511d92
     PUSH EAX                            ; 00511d95
     MOV EAX,[0x0067b654]                ; 00511d96 | g_CGamePtr
-    ADD EAX,0xa0                        ; 00511d9b | DAT_02d81b3c
-    PUSH EAX                            ; 00511da0 | DAT_02d81b3c
+    ADD EAX,0xa0                        ; 00511d9b | g_CGameInstance.y_mouse_sensitivity
+    PUSH EAX                            ; 00511da0 | g_CGameInstance.y_mouse_sensitivity
     CALL core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 ; 00511da1
         ;   XREF to: 005107c0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_adjustMouseSensitivity_FUN_005107c0(int * sensitivity_value_ptr, char * window_title)
     ADD ESP,0x8                         ; 00511da6
@@ -528,10 +528,10 @@ section .text
     CMP ESI,0x1                         ; 00511db9
     JNZ 0x00511dd9                      ; 00511dbc
         ;   XREF to: 00511dd9 (CONDITIONAL_JUMP)  ; LAB_00511dd9
-    CMP dword ptr [EAX + 0x94],0x0      ; 00511dbe | DAT_02d81b30
+    CMP dword ptr [EAX + 0x94],0x0      ; 00511dbe | g_CGameInstance.invert_mouse_y_axis
     SETZ BL                             ; 00511dc5
     AND EBX,0xff                        ; 00511dc8
-    MOV dword ptr [EAX + 0x94],EBX      ; 00511dce | DAT_02d81b30
+    MOV dword ptr [EAX + 0x94],EBX      ; 00511dce | g_CGameInstance.invert_mouse_y_axis
     JMP 0x00511bc6                      ; 00511dd4
         ;   XREF to: 00511bc6 (UNCONDITIONAL_JUMP)  ; default
     CMP ESI,0x2                         ; 00511dd9

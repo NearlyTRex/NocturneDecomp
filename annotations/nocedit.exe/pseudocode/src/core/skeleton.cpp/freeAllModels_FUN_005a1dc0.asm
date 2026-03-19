@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   int g_DeformableModelCount
 ;   CDeformableModel[64] g_DeformableModelPool
-;   undefined4 DAT_036958a0
+;   undefined4 g_DeformableModelPool[1].num_lods
 ;   int g_SkeletonPoolCount
 ;
 ; Called Functions:
@@ -30,11 +30,11 @@ section .text
     PUSH ESI                            ; 005a1dc1
     MOV EBX,0x368c8a0                   ; 005a1dc2 | g_DeformableModelPool
     LEA ESI,[EBX + 0x240000]            ; 005a1dc7 | g_SkeletonPoolCount
-    PUSH EBX                            ; 005a1dcd | g_DeformableModelPool | DAT_036958a0
+    PUSH EBX                            ; 005a1dcd | g_DeformableModelPool | g_DeformableModelPool[1].num_lods
         ;   Label: LAB_005a1dcd
     CALL core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0 ; 005a1dce
         ;   XREF to: 0059a2b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0(CDeformableModel * this_ptr)
-    ADD EBX,0x9000                      ; 005a1dd3 | DAT_036958a0
+    ADD EBX,0x9000                      ; 005a1dd3 | g_DeformableModelPool[1].num_lods
     ADD ESP,0x4                         ; 005a1dd9
     CMP EBX,ESI                         ; 005a1ddc
     JNZ 0x005a1dcd                      ; 005a1dde

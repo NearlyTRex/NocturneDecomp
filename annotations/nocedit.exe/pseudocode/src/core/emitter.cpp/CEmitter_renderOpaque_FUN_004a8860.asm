@@ -24,8 +24,8 @@
 ;   UOrientationVector g_EmitterEditorOrientation
 ;   CEmitter* g_EditorSelectedEmitter
 ;   CFireEffect g_CFireEffectInstance
-;   undefined4 DAT_02f33744
-;   undefined4 DAT_02f33768
+;   undefined4 g_CDemonMissionInstance.is_in_editor
+;   undefined4 g_CDemonMissionInstance.selected_actor
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -68,7 +68,7 @@ section .text
         ;   XREF to: 004a88b3 (CONDITIONAL_JUMP)  ; LAB_004a88b3
     MOV EAX,[0x0067d550]                ; 004a889a | g_CDemonMissionPtr
         ;   Label: LAB_004a889a
-    CMP dword ptr [EAX + 0x4],0x0       ; 004a889f | DAT_02f33744
+    CMP dword ptr [EAX + 0x4],0x0       ; 004a889f | g_CDemonMissionInstance.is_in_editor
     JNZ 0x004a89df                      ; 004a88a3
         ;   XREF to: 004a89df (CONDITIONAL_JUMP)  ; LAB_004a89df
     XOR EAX,EAX                         ; 004a88a9
@@ -211,7 +211,7 @@ section .text
     JNZ 0x004a88a9                      ; 004a8a27
         ;   XREF to: 004a88a9 (CONDITIONAL_JUMP)  ; LAB_004a88a9
     MOV EAX,[0x0067d550]                ; 004a8a2d | g_CDemonMissionPtr
-    CMP ESI,dword ptr [EAX + 0x28]      ; 004a8a32 | DAT_02f33768
+    CMP ESI,dword ptr [EAX + 0x28]      ; 004a8a32 | g_CDemonMissionInstance.selected_actor
     JNZ 0x004a88a9                      ; 004a8a35
         ;   XREF to: 004a88a9 (CONDITIONAL_JUMP)  ; LAB_004a88a9
     PUSH 0x2cf2b6c                      ; 004a8a3b | g_EmitterEditorOrientation

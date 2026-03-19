@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Model_crushed_Hit_a_key_0061d090
 ;   int g_VertexCount
-;   undefined4 DAT_01626410
+;   undefined4 g_LoadedVertices[0].vertex.y
 ;
 ; Called Functions:
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -45,14 +45,14 @@ section .text
     JGE 0x00469c1e                      ; 00469bfb
         ;   XREF to: 00469c1e (CONDITIONAL_JUMP)  ; LAB_00469c1e
     IMUL EAX,dword ptr [EBP + -0x8],0x14 ; 00469bfd
-    FLD float ptr [EAX + 0x1626410]     ; 00469c01 | DAT_01626410
+    FLD float ptr [EAX + 0x1626410]     ; 00469c01 | g_LoadedVertices[0].vertex.y
     FCOMP float ptr [EBP + -0x4]        ; 00469c07
     FNSTSW AX                           ; 00469c0a
     SAHF                                ; 00469c0c
     JNC 0x00469c1c                      ; 00469c0d
         ;   XREF to: 00469c1c (CONDITIONAL_JUMP)  ; LAB_00469c1c
     IMUL EAX,dword ptr [EBP + -0x8],0x14 ; 00469c0f
-    MOV EAX,dword ptr [EAX + 0x1626410] ; 00469c13 | DAT_01626410
+    MOV EAX,dword ptr [EAX + 0x1626410] ; 00469c13 | g_LoadedVertices[0].vertex.y
     MOV dword ptr [EBP + -0x4],EAX      ; 00469c19
     JMP 0x00469bec                      ; 00469c1c
         ;   XREF to: 00469bec (UNCONDITIONAL_JUMP)  ; LAB_00469bec
@@ -71,7 +71,7 @@ section .text
         ;   XREF to: 00469c47 (CONDITIONAL_JUMP)  ; LAB_00469c47
     IMUL EDX,dword ptr [EBP + -0x8],0x14 ; 00469c38
     MOV EAX,dword ptr [EBP + -0x4]      ; 00469c3c
-    MOV dword ptr [EDX + 0x1626410],EAX ; 00469c3f | DAT_01626410
+    MOV dword ptr [EDX + 0x1626410],EAX ; 00469c3f | g_LoadedVertices[0].vertex.y
     JMP 0x00469c27                      ; 00469c45
         ;   XREF to: 00469c27 (UNCONDITIONAL_JUMP)  ; LAB_00469c27
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00469c47

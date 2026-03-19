@@ -16,7 +16,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.enemy_count
-;   undefined4 DAT_03265258
+;   undefined4 g_CDemonSetInstance.enemies[0]
 ;   undefined4 g_CWerewolfClassInfo.name_hash
 ;
 ; Called Functions:
@@ -85,7 +85,7 @@ section .text
     MOV EDX,dword ptr [0x03f96b94]      ; 005de7f9 | g_CWerewolfClassInfo.name_hash
         ;   Label: LAB_005de7f9
     PUSH EDX                            ; 005de7ff
-    MOV ECX,dword ptr [EDI + EBX*0x1 + 0x150fe0] ; 005de800 | DAT_03265258
+    MOV ECX,dword ptr [EDI + EBX*0x1 + 0x150fe0] ; 005de800 | g_CDemonSetInstance.enemies[0]
     PUSH ECX                            ; 005de807
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005de808
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

@@ -21,13 +21,13 @@
 ;   UINT g_WaveOutDeviceID = 0xffffffff
 ;   UINT g_WaveInDeviceID = 0xffffffff
 ;   SAudioFormatDescriptor[12] g_WaveInFormatTable
-;   undefined4 DAT_00681e10
-;   undefined4 DAT_00681e14
-;   undefined4 DAT_00681e18
-;   undefined4 DAT_00681e1c
-;   undefined4 DAT_00681e20
-;   undefined4 DAT_00681e24
-;   undefined4 DAT_00681e28
+;   undefined4 g_WaveInFormatTable[0].bits_per_sample
+;   undefined4 g_WaveInFormatTable[0].channels
+;   undefined4 g_WaveInFormatTable[0].sample_rate
+;   undefined4 g_WaveInFormatTable[1].format_flags
+;   undefined4 g_WaveInFormatTable[1].bits_per_sample
+;   undefined4 g_WaveInFormatTable[1].channels
+;   undefined4 g_WaveInFormatTable[1].sample_rate
 ;   ... and 15 more
 ;
 ; Called Functions:
@@ -95,40 +95,40 @@ section .text
     MOV dword ptr [ESP + 0x44],EAX      ; 005b0ffc
     MOV ECX,dword ptr [ESP + 0x40]      ; 005b1000
         ;   Label: LAB_005b1000
-    TEST dword ptr [EBX + 0x681e0c],ECX ; 005b1004 | g_WaveInFormatTable | DAT_00681e1c
+    TEST dword ptr [EBX + 0x681e0c],ECX ; 005b1004 | g_WaveInFormatTable | g_WaveInFormatTable[1].format_flags
     JZ 0x005b1072                       ; 005b100a
         ;   XREF to: 005b1072 (CONDITIONAL_JUMP)  ; LAB_005b1072
-    MOV ECX,dword ptr [EBX + 0x681e10]  ; 005b1010 | DAT_00681e10 | DAT_00681e20
+    MOV ECX,dword ptr [EBX + 0x681e10]  ; 005b1010 | g_WaveInFormatTable[0].bits_per_sample | g_WaveInFormatTable[1].bits_per_sample
     XOR EAX,EAX                         ; 005b1016
     CMP ECX,EBP                         ; 005b1018
     JLE 0x005b1021                      ; 005b101a
         ;   XREF to: 005b1021 (CONDITIONAL_JUMP)  ; LAB_005b1021
     MOV EAX,0x1                         ; 005b101c
-    MOV ECX,dword ptr [EBX + 0x681e10]  ; 005b1021 | DAT_00681e10 | DAT_00681e20
+    MOV ECX,dword ptr [EBX + 0x681e10]  ; 005b1021 | g_WaveInFormatTable[0].bits_per_sample | g_WaveInFormatTable[1].bits_per_sample
         ;   Label: LAB_005b1021
     CMP ECX,EBP                         ; 005b1027
     JGE 0x005b102e                      ; 005b1029
         ;   XREF to: 005b102e (CONDITIONAL_JUMP)  ; LAB_005b102e
     ADD EAX,0x2                         ; 005b102b
-    MOV ECX,dword ptr [EBX + 0x681e18]  ; 005b102e | DAT_00681e18 | DAT_00681e28
+    MOV ECX,dword ptr [EBX + 0x681e18]  ; 005b102e | g_WaveInFormatTable[0].sample_rate | g_WaveInFormatTable[1].sample_rate
         ;   Label: LAB_005b102e
     CMP ECX,dword ptr [0x03f6af30]      ; 005b1034 | g_WaveInRequestedSampleRate
     JLE 0x005b103d                      ; 005b103a
         ;   XREF to: 005b103d (CONDITIONAL_JUMP)  ; LAB_005b103d
     INC EAX                             ; 005b103c
-    MOV ECX,dword ptr [EBX + 0x681e18]  ; 005b103d | DAT_00681e18 | DAT_00681e28
+    MOV ECX,dword ptr [EBX + 0x681e18]  ; 005b103d | g_WaveInFormatTable[0].sample_rate | g_WaveInFormatTable[1].sample_rate
         ;   Label: LAB_005b103d
     CMP ECX,dword ptr [0x03f6af30]      ; 005b1043 | g_WaveInRequestedSampleRate
     JGE 0x005b104e                      ; 005b1049
         ;   XREF to: 005b104e (CONDITIONAL_JUMP)  ; LAB_005b104e
     ADD EAX,0x2                         ; 005b104b
-    MOV ECX,dword ptr [EBX + 0x681e14]  ; 005b104e | DAT_00681e14 | DAT_00681e24
+    MOV ECX,dword ptr [EBX + 0x681e14]  ; 005b104e | g_WaveInFormatTable[0].channels | g_WaveInFormatTable[1].channels
         ;   Label: LAB_005b104e
     CMP ECX,EDI                         ; 005b1054
     JLE 0x005b105b                      ; 005b1056
         ;   XREF to: 005b105b (CONDITIONAL_JUMP)  ; LAB_005b105b
     ADD EAX,0x2                         ; 005b1058
-    MOV ECX,dword ptr [EBX + 0x681e14]  ; 005b105b | DAT_00681e14 | DAT_00681e24
+    MOV ECX,dword ptr [EBX + 0x681e14]  ; 005b105b | g_WaveInFormatTable[0].channels | g_WaveInFormatTable[1].channels
         ;   Label: LAB_005b105b
     CMP ECX,EDI                         ; 005b1061
     JGE 0x005b1068                      ; 005b1063
@@ -154,11 +154,11 @@ section .text
         ;   XREF to: 005b11c0 (CONDITIONAL_JUMP)  ; LAB_005b11c0
     MOV EAX,EBX                         ; 005b1093
     SHL EAX,0x4                         ; 005b1095
-    MOV EDX,dword ptr [EAX + 0x681e10]  ; 005b1098 | DAT_00681e10
+    MOV EDX,dword ptr [EAX + 0x681e10]  ; 005b1098 | g_WaveInFormatTable[0].bits_per_sample
     MOV dword ptr [0x03f6af10],EDX      ; 005b109e | g_WaveInBitsPerSample
     MOV ESI,dword ptr [0x03f6af10]      ; 005b10a4 | g_WaveInBitsPerSample
-    MOV EDX,dword ptr [EAX + 0x681e14]  ; 005b10aa | DAT_00681e14
-    MOV EAX,dword ptr [EAX + 0x681e18]  ; 005b10b0 | DAT_00681e18
+    MOV EDX,dword ptr [EAX + 0x681e14]  ; 005b10aa | g_WaveInFormatTable[0].channels
+    MOV EAX,dword ptr [EAX + 0x681e18]  ; 005b10b0 | g_WaveInFormatTable[0].sample_rate
     MOV dword ptr [0x03f6af14],EDX      ; 005b10b6 | g_WaveInChannels
     MOV [0x03f6af18],EAX                ; 005b10bc | g_WaveInSampleRate
     CMP ESI,0x8                         ; 005b10c1

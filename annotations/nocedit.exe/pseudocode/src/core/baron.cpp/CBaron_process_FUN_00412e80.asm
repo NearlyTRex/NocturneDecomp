@@ -143,7 +143,7 @@ section .text
     FMUL double ptr [0x00615029]        ; 00412f48 | DOUBLE_00615029
     MOV EAX,[0x0067b654]                ; 00412f4e | g_CGamePtr
     FSTP float ptr [EBP + 0x2438]       ; 00412f53
-    CMP dword ptr [EAX + 0x228],0x0     ; 00412f59 | DAT_02d81cc4
+    CMP dword ptr [EAX + 0x228],0x0     ; 00412f59 | g_CGameInstance.letterbox_mode
     JZ 0x00412f74                       ; 00412f60
         ;   XREF to: 00412f74 (CONDITIONAL_JUMP)  ; LAB_00412f74
     FLD float ptr [EBP + 0x2438]        ; 00412f62

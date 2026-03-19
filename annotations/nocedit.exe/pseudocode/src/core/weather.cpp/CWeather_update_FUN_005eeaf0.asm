@@ -75,21 +75,21 @@ section .text
     XOR EBX,EBX                         ; 005eeb2c
     XOR AH,AH                           ; 005eeb2e
         ;   Label: LAB_005eeb2e
-    MOV byte ptr [ESI + 0x3f96a78],AH   ; 005eeb30 | g_WeatherParticleHitGround | DAT_03f96a79
+    MOV byte ptr [ESI + 0x3f96a78],AH   ; 005eeb30 | g_WeatherParticleHitGround | g_WeatherParticleHitGround+1
     MOV EAX,dword ptr [EBP + 0x14]      ; 005eeb36
     FLD float ptr [EAX + 0x4]           ; 005eeb39
     FMUL float ptr [ESP + 0x8]          ; 005eeb3c
-    FSUBR float ptr [EBX + 0x3f95dfc]   ; 005eeb40 | DAT_03f95dfc | DAT_03f95e08
-    FST float ptr [EBX + 0x3f95dfc]     ; 005eeb46 | DAT_03f95dfc | DAT_03f95e08
-    FCOMP float ptr [EDI + 0x3f96758]   ; 005eeb4c | g_WeatherParticleGroundHeights | DAT_03f9675c
+    FSUBR float ptr [EBX + 0x3f95dfc]   ; 005eeb40 | g_WeatherParticlePositions[0].y | g_WeatherParticlePositions[1].y
+    FST float ptr [EBX + 0x3f95dfc]     ; 005eeb46 | g_WeatherParticlePositions[0].y | g_WeatherParticlePositions[1].y
+    FCOMP float ptr [EDI + 0x3f96758]   ; 005eeb4c | g_WeatherParticleGroundHeights | g_WeatherParticleGroundHeights[1]
     FNSTSW AX                           ; 005eeb52
     SAHF                                ; 005eeb54
     JNC 0x005eebf9                      ; 005eeb55
         ;   XREF to: 005eebf9 (CONDITIONAL_JUMP)  ; LAB_005eebf9
-    FLD float ptr [EBX + 0x3f95dfc]     ; 005eeb5b | DAT_03f95dfc | DAT_03f95e08
+    FLD float ptr [EBX + 0x3f95dfc]     ; 005eeb5b | g_WeatherParticlePositions[0].y | g_WeatherParticlePositions[1].y
     FADD float ptr [0x00657bd4]         ; 005eeb61 | FLOAT_00657bd4
     MOV EAX,dword ptr [EBP + 0x14]      ; 005eeb67
-    FSTP float ptr [EBX + 0x3f95dfc]    ; 005eeb6a | DAT_03f95dfc | DAT_03f95e08
+    FSTP float ptr [EBX + 0x3f95dfc]    ; 005eeb6a | g_WeatherParticlePositions[0].y | g_WeatherParticlePositions[1].y
     CMP dword ptr [EAX],0x1             ; 005eeb70
     JNZ 0x005eebf9                      ; 005eeb73
         ;   XREF to: 005eebf9 (CONDITIONAL_JUMP)  ; LAB_005eebf9
@@ -97,11 +97,11 @@ section .text
     ADD EDX,EBX                         ; 005eeb7e | g_WeatherParticlePositions
     MOV EAX,dword ptr [EDX]             ; 005eeb80 | g_WeatherParticlePositions
     MOV dword ptr [ESP + 0x10],EAX      ; 005eeb82
-    LEA EAX,[EDX + 0x4]                 ; 005eeb86 | DAT_03f95dfc
-    MOV EAX,dword ptr [EAX]             ; 005eeb89 | DAT_03f95dfc
+    LEA EAX,[EDX + 0x4]                 ; 005eeb86 | g_WeatherParticlePositions[0].y
+    MOV EAX,dword ptr [EAX]             ; 005eeb89 | g_WeatherParticlePositions[0].y
     MOV dword ptr [ESP + 0x14],EAX      ; 005eeb8b
-    LEA EAX,[EDX + 0x8]                 ; 005eeb8f | DAT_03f95e00
-    MOV EAX,dword ptr [EAX]             ; 005eeb92 | DAT_03f95e00
+    LEA EAX,[EDX + 0x8]                 ; 005eeb8f | g_WeatherParticlePositions[0].z
+    MOV EAX,dword ptr [EAX]             ; 005eeb92 | g_WeatherParticlePositions[0].z
     MOV dword ptr [ESP + 0x18],EAX      ; 005eeb94
     MOV EAX,dword ptr [EDI + 0x3f96758] ; 005eeb98 | g_WeatherParticleGroundHeights
     PUSH 0x0                            ; 005eeb9e

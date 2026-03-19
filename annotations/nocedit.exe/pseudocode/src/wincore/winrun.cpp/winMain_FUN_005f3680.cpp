@@ -30,9 +30,9 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTA
   bVar10 = 0;
   existingWindow = (*g_FindWindowAFunc)(g_ApplicationTitle,(LPCSTR)0x0);
   stackProbe = &windowClass;
-  if (existingWindow != (HWND)0x0) {
+  if (existingWindow != 0) {
     activePopup = (*g_GetLastActivePopupFunc)(existingWindow);
-    if (activePopup != (HWND)0x0) {
+    if (activePopup != 0) {
       existingWindow = activePopup;
     }
     (*g_BringWindowToTopFunc)(existingWindow);
@@ -114,9 +114,9 @@ LAB_005f37d1:
   (*g_RegisterClassAFunc)(&windowClass);
   g_MainWindowHandle =
        (*g_CreateWindowExAFunc)
-                 (0x40000,g_ApplicationTitle,g_ApplicationTimerTitle,0x80000000,0,0,0,0,(HWND)0x0,
-                  (HMENU)0x0,hInstance,(LPVOID)0x0);
-  if (g_MainWindowHandle == (HWND)0x0) {
+                 (0x40000,g_ApplicationTitle,g_ApplicationTimerTitle,0x80000000,0,0,0,0,0,(HMENU)0x0
+                  ,hInstance,(LPVOID)0x0);
+  if (g_MainWindowHandle == 0) {
     return 0;
   }
   (*g_ShowWindowFunc)(g_MainWindowHandle,nCmdShow1);

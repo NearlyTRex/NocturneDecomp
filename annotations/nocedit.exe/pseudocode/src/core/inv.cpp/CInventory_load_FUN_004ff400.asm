@@ -24,9 +24,9 @@
 ;   TerminatedCString s_core_inv_cpp_00630967
 ;   TerminatedCString s_CInventory_load_Can_t_fi_00630977
 ;   char[104] g_DefaultInventoryKey
-;   undefined4 DAT_0067ce4c
+;   undefined4 g_DefaultInventoryKey+4
 ;   char[100] g_DefaultInventoryValue
-;   undefined4 DAT_0067ceb4
+;   undefined4 g_DefaultInventoryValue+4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -144,7 +144,7 @@ section .text
     MOV ESI,0x67ce48                    ; 004ff51e | g_DefaultInventoryKey
     PUSH EAX                            ; 004ff523
     LEA EAX,[ESP + 0x104]               ; 004ff524
-    MOVSD.REP ES:EDI,ESI                ; 004ff52b | g_DefaultInventoryKey | DAT_0067ce4c
+    MOVSD.REP ES:EDI,ESI                ; 004ff52b | g_DefaultInventoryKey | g_DefaultInventoryKey+4
     PUSH EAX                            ; 004ff52d
     MOV ECX,0x19                        ; 004ff52e
     LEA EDI,[ESP + 0x16c]               ; 004ff533
@@ -152,11 +152,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1f0]     ; 004ff53f
     MOV ESI,0x67ceb0                    ; 004ff546 | g_DefaultInventoryValue
     PUSH EAX                            ; 004ff54b
-    MOVSD.REP ES:EDI,ESI                ; 004ff54c | g_DefaultInventoryValue | DAT_0067ceb4
+    MOVSD.REP ES:EDI,ESI                ; 004ff54c | g_DefaultInventoryValue | g_DefaultInventoryValue+4
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004ff54e
         ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     MOV ESI,dword ptr [0x0067d550]      ; 004ff553 | g_CDemonMissionPtr
-    MOV EDX,dword ptr [ESI + 0xc]       ; 004ff559 | DAT_02f3374c
+    MOV EDX,dword ptr [ESI + 0xc]       ; 004ff559 | g_CDemonMissionInstance.has_inventory_actors
     ADD ESP,0x10                        ; 004ff55c
     TEST EDX,EDX                        ; 004ff55f
     JZ 0x004ff69d                       ; 004ff561
@@ -226,7 +226,7 @@ section .text
     MOV EAX,[0x0067d550]                ; 004ff61a | g_CDemonMissionPtr
         ;   Label: LAB_004ff61a
     MOV EDX,dword ptr [ESP + 0x1e0]     ; 004ff61f
-    MOV EAX,dword ptr [EAX + 0xc]       ; 004ff626 | DAT_02f3374c
+    MOV EAX,dword ptr [EAX + 0xc]       ; 004ff626 | g_CDemonMissionInstance.has_inventory_actors
     MOV dword ptr [EDX + 0x330],0x0     ; 004ff629
     MOV dword ptr [EDX + 0x450],EAX     ; 004ff633
     MOV EBX,dword ptr [ESP + 0x1c8]     ; 004ff639

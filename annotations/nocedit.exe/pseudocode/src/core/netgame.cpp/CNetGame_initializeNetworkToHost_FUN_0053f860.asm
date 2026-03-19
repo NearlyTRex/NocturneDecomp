@@ -17,7 +17,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CEditorTools g_CEditorToolsInstance
 ;   undefined4 g_CGameInstance.hero_number
-;   undefined4 DAT_02d81b60
+;   undefined4 g_CGameInstance.aim_mode
 ;   uchar[4] g_AnyAddressIP
 ;
 ; Called Functions:
@@ -49,7 +49,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 0053f885 | g_CGamePtr
     MOV dword ptr [EBX + 0x1c],0x0      ; 0053f88a
     ADD ESP,0x8                         ; 0053f891
-    MOV ECX,dword ptr [EAX + 0xc4]      ; 0053f894 | DAT_02d81b60
+    MOV ECX,dword ptr [EAX + 0xc4]      ; 0053f894 | g_CGameInstance.aim_mode
     PUSH ECX                            ; 0053f89a
     MOV ESI,dword ptr [EAX + 0xc0]      ; 0053f89b | g_CGameInstance.hero_number
     PUSH ESI                            ; 0053f8a1

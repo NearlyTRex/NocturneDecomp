@@ -103,7 +103,7 @@ section .text
         ;   XREF to: 0046a1e0 (CONDITIONAL_JUMP)  ; LAB_0046a1e0
     MOV AL,byte ptr [ESI + 0x1]         ; 0046a1d0 | DAT_0061d195 | s_rt_0061d197
     ADD ESI,0x2                         ; 0046a1d3
-    MOV byte ptr [EDI + 0x1],AL         ; 0046a1d6 | g_LoadedModelName+1 | DAT_0066edab
+    MOV byte ptr [EDI + 0x1],AL         ; 0046a1d6 | g_LoadedModelName+1 | g_LoadedModelName+3
     ADD EDI,0x2                         ; 0046a1d9
     CMP AL,0x0                          ; 0046a1dc
     JNZ 0x0046a1c8                      ; 0046a1de
@@ -160,20 +160,20 @@ section .text
         ;   XREF to: 0046a465 (CONDITIONAL_JUMP)  ; LAB_0046a465
     MOV dword ptr [EBP + 0xfffffe60],0x0 ; 0046a255
     IMUL EAX,dword ptr [EBP + -0x4],0x184 ; 0046a25f
-    CMP byte ptr [EAX + 0x16e9914],0x0  ; 0046a266 | DAT_016e9914
+    CMP byte ptr [EAX + 0x16e9914],0x0  ; 0046a266 | g_ModelPolygonData[0].texture_name[0]
     JZ 0x0046a460                       ; 0046a26d
         ;   XREF to: 0046a460 (CONDITIONAL_JUMP)  ; LAB_0046a460
     IMUL EAX,dword ptr [EBP + -0x4],0x184 ; 0046a273
-    MOV EAX,dword ptr [EAX + 0x16e9a08] ; 0046a27a | DAT_016e9a08
+    MOV EAX,dword ptr [EAX + 0x16e9a08] ; 0046a27a | g_ModelPolygonData[0].uv_u[0]
     MOV dword ptr [EBP + 0xfffffe5c],EAX ; 0046a280
     IMUL EAX,dword ptr [EBP + -0x4],0x184 ; 0046a286
-    MOV EAX,dword ptr [EAX + 0x16e9a48] ; 0046a28d | DAT_016e9a48
+    MOV EAX,dword ptr [EAX + 0x16e9a48] ; 0046a28d | g_ModelPolygonData[0].uv_v[0]
     MOV dword ptr [EBP + 0xfffffe58],EAX ; 0046a293
     IMUL EAX,dword ptr [EBP + -0x4],0x184 ; 0046a299
-    MOV EAX,dword ptr [EAX + 0x16e9a08] ; 0046a2a0 | DAT_016e9a08
+    MOV EAX,dword ptr [EAX + 0x16e9a08] ; 0046a2a0 | g_ModelPolygonData[0].uv_u[0]
     MOV dword ptr [EBP + 0xfffffe54],EAX ; 0046a2a6
     IMUL EAX,dword ptr [EBP + -0x4],0x184 ; 0046a2ac
-    MOV EAX,dword ptr [EAX + 0x16e9a48] ; 0046a2b3 | DAT_016e9a48
+    MOV EAX,dword ptr [EAX + 0x16e9a48] ; 0046a2b3 | g_ModelPolygonData[0].uv_v[0]
     MOV dword ptr [EBP + 0xfffffe50],EAX ; 0046a2b9
     MOV dword ptr [EBP + -0xc],0x1      ; 0046a2bf
     JMP 0x0046a2cb                      ; 0046a2c6
@@ -183,14 +183,14 @@ section .text
     IMUL EDX,dword ptr [EBP + -0x4],0x184 ; 0046a2cb
         ;   Label: LAB_0046a2cb
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046a2d2
-    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0046a2d5 | DAT_016e99b4
+    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0046a2d5 | g_ModelPolygonData[0].vertex_indices_count
     JGE 0x0046a3d2                      ; 0046a2db
         ;   XREF to: 0046a3d2 (CONDITIONAL_JUMP)  ; LAB_0046a3d2
     IMUL EDX,dword ptr [EBP + -0x4],0x184 ; 0046a2e1
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046a2e8
     SHL EAX,0x2                         ; 0046a2eb
     ADD EAX,EDX                         ; 0046a2ee
-    FLD float ptr [EAX + 0x16e9a08]     ; 0046a2f0 | DAT_016e9a0c | DAT_016e9a10
+    FLD float ptr [EAX + 0x16e9a08]     ; 0046a2f0 | g_ModelPolygonData[0].uv_u[1] | g_ModelPolygonData[0].uv_u[2]
     FCOMP float ptr [EBP + 0xfffffe5c]  ; 0046a2f6
     FNSTSW AX                           ; 0046a2fc
     SAHF                                ; 0046a2fe
@@ -200,14 +200,14 @@ section .text
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046a308
     SHL EAX,0x2                         ; 0046a30b
     ADD EAX,EDX                         ; 0046a30e
-    MOV EAX,dword ptr [EAX + 0x16e9a08] ; 0046a310 | DAT_016e9a0c
+    MOV EAX,dword ptr [EAX + 0x16e9a08] ; 0046a310 | g_ModelPolygonData[0].uv_u[1]
     MOV dword ptr [EBP + 0xfffffe5c],EAX ; 0046a316
     IMUL EDX,dword ptr [EBP + -0x4],0x184 ; 0046a31c
         ;   Label: LAB_0046a31c
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046a323
     SHL EAX,0x2                         ; 0046a326
     ADD EAX,EDX                         ; 0046a329
-    FLD float ptr [EAX + 0x16e9a48]     ; 0046a32b | DAT_016e9a4c | DAT_016e9a50
+    FLD float ptr [EAX + 0x16e9a48]     ; 0046a32b | g_ModelPolygonData[0].uv_v[1] | g_ModelPolygonData[0].uv_v[2]
     FCOMP float ptr [EBP + 0xfffffe58]  ; 0046a331
     FNSTSW AX                           ; 0046a337
     SAHF                                ; 0046a339
@@ -217,14 +217,14 @@ section .text
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046a343
     SHL EAX,0x2                         ; 0046a346
     ADD EAX,EDX                         ; 0046a349
-    MOV EAX,dword ptr [EAX + 0x16e9a48] ; 0046a34b | DAT_016e9a4c
+    MOV EAX,dword ptr [EAX + 0x16e9a48] ; 0046a34b | g_ModelPolygonData[0].uv_v[1]
     MOV dword ptr [EBP + 0xfffffe58],EAX ; 0046a351
     IMUL EDX,dword ptr [EBP + -0x4],0x184 ; 0046a357
         ;   Label: LAB_0046a357
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046a35e
     SHL EAX,0x2                         ; 0046a361
     ADD EAX,EDX                         ; 0046a364
-    FLD float ptr [EAX + 0x16e9a08]     ; 0046a366 | DAT_016e9a0c
+    FLD float ptr [EAX + 0x16e9a08]     ; 0046a366 | g_ModelPolygonData[0].uv_u[1]
     FCOMP float ptr [EBP + 0xfffffe54]  ; 0046a36c
     FNSTSW AX                           ; 0046a372
     SAHF                                ; 0046a374
@@ -234,14 +234,14 @@ section .text
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046a37e
     SHL EAX,0x2                         ; 0046a381
     ADD EAX,EDX                         ; 0046a384
-    MOV EAX,dword ptr [EAX + 0x16e9a08] ; 0046a386 | DAT_016e9a0c
+    MOV EAX,dword ptr [EAX + 0x16e9a08] ; 0046a386 | g_ModelPolygonData[0].uv_u[1]
     MOV dword ptr [EBP + 0xfffffe54],EAX ; 0046a38c
     IMUL EDX,dword ptr [EBP + -0x4],0x184 ; 0046a392
         ;   Label: LAB_0046a392
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046a399
     SHL EAX,0x2                         ; 0046a39c
     ADD EAX,EDX                         ; 0046a39f
-    FLD float ptr [EAX + 0x16e9a48]     ; 0046a3a1 | DAT_016e9a4c
+    FLD float ptr [EAX + 0x16e9a48]     ; 0046a3a1 | g_ModelPolygonData[0].uv_v[1]
     FCOMP float ptr [EBP + 0xfffffe50]  ; 0046a3a7
     FNSTSW AX                           ; 0046a3ad
     SAHF                                ; 0046a3af
@@ -251,7 +251,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046a3b9
     SHL EAX,0x2                         ; 0046a3bc
     ADD EAX,EDX                         ; 0046a3bf
-    MOV EAX,dword ptr [EAX + 0x16e9a48] ; 0046a3c1 | DAT_016e9a4c
+    MOV EAX,dword ptr [EAX + 0x16e9a48] ; 0046a3c1 | g_ModelPolygonData[0].uv_v[1]
     MOV dword ptr [EBP + 0xfffffe50],EAX ; 0046a3c7
     JMP 0x0046a2c8                      ; 0046a3cd
         ;   XREF to: 0046a2c8 (UNCONDITIONAL_JUMP)  ; LAB_0046a2c8
@@ -373,7 +373,7 @@ section .text
     IMUL EDX,dword ptr [EBP + -0x4],0x184 ; 0046a526
         ;   Label: LAB_0046a526
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046a52d
-    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0046a530 | DAT_016e99b4
+    CMP EAX,dword ptr [EDX + 0x16e99b4] ; 0046a530 | g_ModelPolygonData[0].vertex_indices_count
     JGE 0x0046a581                      ; 0046a536
         ;   XREF to: 0046a581 (CONDITIONAL_JUMP)  ; LAB_0046a581
     IMUL EAX,dword ptr [EBP + -0x4],0x184 ; 0046a538
@@ -409,15 +409,15 @@ section .text
     ADD EAX,EDI                         ; 0046a59e
     LEA EDI,[EAX + 0x54]                ; 0046a5a0
     PUSH EDI                            ; 0046a5a3
-    MOV AL,byte ptr [ESI]               ; 0046a5a4 | DAT_016e9914 | DAT_016e9916
+    MOV AL,byte ptr [ESI]               ; 0046a5a4 | g_ModelPolygonData[0].texture_name[0] | g_ModelPolygonData[0].texture_name[2]
         ;   Label: LAB_0046a5a4
-    MOV byte ptr [EDI],AL               ; 0046a5a6 | DAT_016e9964 | DAT_016e9966
+    MOV byte ptr [EDI],AL               ; 0046a5a6 | g_ModelPolygonData[0].lightmap_name[0] | g_ModelPolygonData[0].lightmap_name[2]
     CMP AL,0x0                          ; 0046a5a8
     JZ 0x0046a5bc                       ; 0046a5aa
         ;   XREF to: 0046a5bc (CONDITIONAL_JUMP)  ; LAB_0046a5bc
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046a5ac | DAT_016e9915 | DAT_016e9917
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046a5ac | g_ModelPolygonData[0].texture_name[1] | g_ModelPolygonData[0].texture_name[3]
     ADD ESI,0x2                         ; 0046a5af
-    MOV byte ptr [EDI + 0x1],AL         ; 0046a5b2 | DAT_016e9965 | DAT_016e9967
+    MOV byte ptr [EDI + 0x1],AL         ; 0046a5b2 | g_ModelPolygonData[0].lightmap_name[1] | g_ModelPolygonData[0].lightmap_name[3]
     ADD EDI,0x2                         ; 0046a5b5
     CMP AL,0x0                          ; 0046a5b8
     JNZ 0x0046a5a4                      ; 0046a5ba
@@ -441,13 +441,13 @@ section .text
     PUSH EDI                            ; 0046a5e8
     MOV AL,byte ptr [ESI]               ; 0046a5e9
         ;   Label: LAB_0046a5e9
-    MOV byte ptr [EDI],AL               ; 0046a5eb | DAT_016e9914 | DAT_016e9916
+    MOV byte ptr [EDI],AL               ; 0046a5eb | g_ModelPolygonData[0].texture_name[0] | g_ModelPolygonData[0].texture_name[2]
     CMP AL,0x0                          ; 0046a5ed
     JZ 0x0046a601                       ; 0046a5ef
         ;   XREF to: 0046a601 (CONDITIONAL_JUMP)  ; LAB_0046a601
     MOV AL,byte ptr [ESI + 0x1]         ; 0046a5f1
     ADD ESI,0x2                         ; 0046a5f4
-    MOV byte ptr [EDI + 0x1],AL         ; 0046a5f7 | DAT_016e9915 | DAT_016e9917
+    MOV byte ptr [EDI + 0x1],AL         ; 0046a5f7 | g_ModelPolygonData[0].texture_name[1] | g_ModelPolygonData[0].texture_name[3]
     ADD EDI,0x2                         ; 0046a5fa
     CMP AL,0x0                          ; 0046a5fd
     JNZ 0x0046a5e9                      ; 0046a5ff
@@ -472,7 +472,7 @@ section .text
         ;   XREF to: 0046a62e (CONDITIONAL_JUMP)  ; LAB_0046a62e
     MOV AL,byte ptr [ESI + 0x1]         ; 0046a61e
     ADD ESI,0x2                         ; 0046a621
-    MOV byte ptr [EDI + 0x1],AL         ; 0046a624 | g_LoadedModelName+1 | DAT_0066edab
+    MOV byte ptr [EDI + 0x1],AL         ; 0046a624 | g_LoadedModelName+1 | g_LoadedModelName+3
     ADD EDI,0x2                         ; 0046a627
     CMP AL,0x0                          ; 0046a62a
     JNZ 0x0046a616                      ; 0046a62c
@@ -495,7 +495,7 @@ section .text
         ;   XREF to: 0046a65a (CONDITIONAL_JUMP)  ; LAB_0046a65a
     MOV AL,byte ptr [ESI + 0x1]         ; 0046a64a | DAT_0061d22a | DAT_0061d22c
     ADD ESI,0x2                         ; 0046a64d
-    MOV byte ptr [EDI + 0x1],AL         ; 0046a650 | g_LoadedModelName+1 | g_LoadedModelName+2 | DAT_0066edab
+    MOV byte ptr [EDI + 0x1],AL         ; 0046a650 | g_LoadedModelName+1 | g_LoadedModelName+2 | g_LoadedModelName+3
     ADD EDI,0x2                         ; 0046a653
     CMP AL,0x0                          ; 0046a656
     JNZ 0x0046a642                      ; 0046a658
@@ -510,13 +510,13 @@ section .text
     MOV ESI,0x1eb1768                   ; 0046a665 | g_CurrentModelFilename
     LEA EDI,[EBP + 0xffffff2c]          ; 0046a66a
     PUSH EDI                            ; 0046a670
-    MOV AL,byte ptr [ESI]               ; 0046a671 | g_CurrentModelFilename | DAT_01eb176a
+    MOV AL,byte ptr [ESI]               ; 0046a671 | g_CurrentModelFilename | g_CurrentModelFilename+2
         ;   Label: LAB_0046a671
     MOV byte ptr [EDI],AL               ; 0046a673
     CMP AL,0x0                          ; 0046a675
     JZ 0x0046a689                       ; 0046a677
         ;   XREF to: 0046a689 (CONDITIONAL_JUMP)  ; LAB_0046a689
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046a679 | DAT_01eb1769 | DAT_01eb176b
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046a679 | g_CurrentModelFilename+1 | g_CurrentModelFilename+3
     ADD ESI,0x2                         ; 0046a67c
     MOV byte ptr [EDI + 0x1],AL         ; 0046a67f
     ADD EDI,0x2                         ; 0046a682
@@ -597,7 +597,7 @@ section .text
         ;   XREF to: 0046a73c (CONDITIONAL_JUMP)  ; LAB_0046a73c
     MOV AL,byte ptr [ESI + 0x1]         ; 0046a72c
     ADD ESI,0x2                         ; 0046a72f
-    MOV byte ptr [EDI + 0x1],AL         ; 0046a732 | g_LoadedModelName+1 | DAT_0066edab
+    MOV byte ptr [EDI + 0x1],AL         ; 0046a732 | g_LoadedModelName+1 | g_LoadedModelName+3
     ADD EDI,0x2                         ; 0046a735
     CMP AL,0x0                          ; 0046a738
     JNZ 0x0046a724                      ; 0046a73a
@@ -616,7 +616,7 @@ section .text
     JZ 0x0046a75d                       ; 0046a74f
         ;   XREF to: 0046a75d (CONDITIONAL_JUMP)  ; LAB_0046a75d
     INC ESI                             ; 0046a751
-    MOV AL,byte ptr [ESI]               ; 0046a752 | g_LoadedModelName+1 | DAT_0066edab
+    MOV AL,byte ptr [ESI]               ; 0046a752 | g_LoadedModelName+1 | g_LoadedModelName+3
     CMP AL,DL                           ; 0046a754
     JZ 0x0046a75f                       ; 0046a756
         ;   XREF to: 0046a75f (CONDITIONAL_JUMP)  ; LAB_0046a75f
@@ -660,7 +660,7 @@ section .text
         ;   XREF to: 0046a7a4 (CONDITIONAL_JUMP)  ; LAB_0046a7a4
     MOV AL,byte ptr [ESI + 0x1]         ; 0046a794 | DAT_0061d24a | DAT_0061d24c
     ADD ESI,0x2                         ; 0046a797
-    MOV byte ptr [EDI + 0x1],AL         ; 0046a79a | g_LoadedModelName+1 | g_LoadedModelName+2 | DAT_0066edab
+    MOV byte ptr [EDI + 0x1],AL         ; 0046a79a | g_LoadedModelName+1 | g_LoadedModelName+2 | g_LoadedModelName+3
     ADD EDI,0x2                         ; 0046a79d
     CMP AL,0x0                          ; 0046a7a0
     JNZ 0x0046a78c                      ; 0046a7a2
@@ -687,7 +687,7 @@ section .text
         ;   XREF to: 0046a7dc (CONDITIONAL_JUMP)  ; LAB_0046a7dc
     MOV AL,byte ptr [ESI + 0x1]         ; 0046a7cc
     ADD ESI,0x2                         ; 0046a7cf
-    MOV byte ptr [EDI + 0x1],AL         ; 0046a7d2 | g_LoadedModelName+1 | DAT_0066edab
+    MOV byte ptr [EDI + 0x1],AL         ; 0046a7d2 | g_LoadedModelName+1 | g_LoadedModelName+3
     ADD EDI,0x2                         ; 0046a7d5
     CMP AL,0x0                          ; 0046a7d8
     JNZ 0x0046a7c4                      ; 0046a7da
@@ -705,7 +705,7 @@ section .text
     JZ 0x0046a7fd                       ; 0046a7ef
         ;   XREF to: 0046a7fd (CONDITIONAL_JUMP)  ; LAB_0046a7fd
     INC ESI                             ; 0046a7f1
-    MOV AL,byte ptr [ESI]               ; 0046a7f2 | g_LoadedModelName+1 | DAT_0066edab
+    MOV AL,byte ptr [ESI]               ; 0046a7f2 | g_LoadedModelName+1 | g_LoadedModelName+3
     CMP AL,DL                           ; 0046a7f4
     JZ 0x0046a7ff                       ; 0046a7f6
         ;   XREF to: 0046a7ff (CONDITIONAL_JUMP)  ; LAB_0046a7ff
@@ -749,7 +749,7 @@ section .text
         ;   XREF to: 0046a844 (CONDITIONAL_JUMP)  ; LAB_0046a844
     MOV AL,byte ptr [ESI + 0x1]         ; 0046a834 | DAT_0061d24f | DAT_0061d251
     ADD ESI,0x2                         ; 0046a837
-    MOV byte ptr [EDI + 0x1],AL         ; 0046a83a | g_LoadedModelName+1 | g_LoadedModelName+2 | DAT_0066edab
+    MOV byte ptr [EDI + 0x1],AL         ; 0046a83a | g_LoadedModelName+1 | g_LoadedModelName+2 | g_LoadedModelName+3
     ADD EDI,0x2                         ; 0046a83d
     CMP AL,0x0                          ; 0046a840
     JNZ 0x0046a82c                      ; 0046a842

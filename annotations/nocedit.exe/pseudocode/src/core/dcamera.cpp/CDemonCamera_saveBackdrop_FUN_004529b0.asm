@@ -236,20 +236,20 @@ section .text
     ADD EDI,EBX                         ; 00452c0a
     MOV EBX,0xbce6f8                    ; 00452c0c | g_PrecomputedDepthBuffer
     MOV EBP,dword ptr [ESP + 0x238]     ; 00452c11
-    ADD EBX,EAX                         ; 00452c18 | DAT_00bcebf8
+    ADD EBX,EAX                         ; 00452c18 | g_PrecomputedDepthBuffer[320]
     MOV EAX,dword ptr [ESP + 0x278]     ; 00452c1a
     ADD ESI,EBP                         ; 00452c21
     MOV EBP,0x1                         ; 00452c23
     CMP EBP,dword ptr [EAX + 0x150]     ; 00452c28
     JGE 0x00452c84                      ; 00452c2e
         ;   XREF to: 00452c84 (CONDITIONAL_JUMP)  ; LAB_00452c84
-    MOV EAX,dword ptr [EBX]             ; 00452c30 | DAT_00bcebf8 | DAT_00bcebfc | DAT_00bcf0f8
+    MOV EAX,dword ptr [EBX]             ; 00452c30 | g_PrecomputedDepthBuffer[320] | g_PrecomputedDepthBuffer[321] | g_PrecomputedDepthBuffer[640]
         ;   Label: LAB_00452c30
     CMP EAX,0x7fffffff                  ; 00452c32
     JZ 0x00452f98                       ; 00452c37
         ;   XREF to: 00452f98 (CONDITIONAL_JUMP)  ; LAB_00452f98
     PUSH EAX                            ; 00452c3d
-    PUSH EDI                            ; 00452c3e | DAT_00903e74 | DAT_00904d80
+    PUSH EDI                            ; 00452c3e | g_PrecomputedWorldPositions[320].x | g_PrecomputedWorldPositions[641].x
     LEA EAX,[ESP + 0x220]               ; 00452c3f
     PUSH EAX                            ; 00452c46
     PUSH 0x1519384                      ; 00452c47 | g_CameraFogGrid
@@ -262,7 +262,7 @@ section .text
     JBE 0x00452c69                      ; 00452c62
         ;   XREF to: 00452c69 (CONDITIONAL_JUMP)  ; LAB_00452c69
     MOV EAX,0xff                        ; 00452c64
-    MOV byte ptr [ESI],AL               ; 00452c69 | DAT_013da8b8
+    MOV byte ptr [ESI],AL               ; 00452c69 | g_CameraPlaneWorkBuffer.pixels[1][0]
         ;   Label: LAB_00452c69
     MOV EAX,dword ptr [ESP + 0x278]     ; 00452c6b
         ;   Label: LAB_00452c6b
@@ -270,7 +270,7 @@ section .text
     INC ESI                             ; 00452c75
     INC EBP                             ; 00452c76
     MOV ECX,dword ptr [EAX + 0x150]     ; 00452c77
-    ADD EBX,0x4                         ; 00452c7d | DAT_00bcf0fc
+    ADD EBX,0x4                         ; 00452c7d | g_PrecomputedDepthBuffer[641]
     CMP EBP,ECX                         ; 00452c80
     JL 0x00452c30                       ; 00452c82
         ;   XREF to: 00452c30 (CONDITIONAL_JUMP)  ; LAB_00452c30
@@ -328,7 +328,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x254]     ; 00452d74
         ;   Label: LAB_00452d74
     ADD EAX,dword ptr [ESP + 0x260]     ; 00452d7b
-    MOV AL,byte ptr [EDX + EAX*0x1 + 0x13ed378] ; 00452d82 | g_CameraImageDecompressBuffer | DAT_013ed379
+    MOV AL,byte ptr [EDX + EAX*0x1 + 0x13ed378] ; 00452d82 | g_CameraImageDecompressBuffer | g_CameraImageDecompressBuffer[0].pixels[0][1]
     MOV EBP,dword ptr [ESP + 0x25c]     ; 00452d89
     AND EAX,0xff                        ; 00452d90
     TEST EBP,EBP                        ; 00452d95
@@ -336,7 +336,7 @@ section .text
         ;   XREF to: 00452db1 (CONDITIONAL_JUMP)  ; LAB_00452db1
     MOV EBP,dword ptr [ESP + 0x258]     ; 00452d99
     ADD EBP,dword ptr [ESP + 0x260]     ; 00452da0
-    MOVZX EBP,byte ptr [EDX + EBP*0x1 + 0x13ed378] ; 00452da7 | g_CameraImageDecompressBuffer | DAT_013ed379
+    MOVZX EBP,byte ptr [EDX + EBP*0x1 + 0x13ed378] ; 00452da7 | g_CameraImageDecompressBuffer | g_CameraImageDecompressBuffer[0].pixels[0][1]
     SUB EAX,EBP                         ; 00452daf
     SAR EAX,0x2                         ; 00452db1
         ;   Label: LAB_00452db1
@@ -345,7 +345,7 @@ section .text
     JGE 0x00452fa0                      ; 00452db9
         ;   XREF to: 00452fa0 (CONDITIONAL_JUMP)  ; LAB_00452fa0
     MOV EAX,0xffffffe0                  ; 00452dbf
-    MOV byte ptr [ESI + 0x13da778],AL   ; 00452dc4 | g_CameraPlaneWorkBuffer | DAT_013da779
+    MOV byte ptr [ESI + 0x13da778],AL   ; 00452dc4 | g_CameraPlaneWorkBuffer | g_CameraPlaneWorkBuffer.pixels[0][1]
         ;   Label: LAB_00452dc4
     ADD EAX,EBX                         ; 00452dca
     MOV EBP,dword ptr [ESP + 0x25c]     ; 00452dcc
@@ -355,9 +355,9 @@ section .text
         ;   XREF to: 00452df1 (CONDITIONAL_JUMP)  ; LAB_00452df1
     MOV EBP,dword ptr [ESP + 0x22c]     ; 00452dde
     ADD EBP,ECX                         ; 00452de5
-    MOVZX EBP,byte ptr [EDX + EBP*0x1 + 0x13ed378] ; 00452de7 | g_CameraImageDecompressBuffer | DAT_013ed379
+    MOVZX EBP,byte ptr [EDX + EBP*0x1 + 0x13ed378] ; 00452de7 | g_CameraImageDecompressBuffer | g_CameraImageDecompressBuffer[0].pixels[0][1]
     ADD EBX,EBP                         ; 00452def
-    MOV byte ptr [EDI + 0x13ed378],BL   ; 00452df1 | g_CameraImageDecompressBuffer | DAT_013ed379
+    MOV byte ptr [EDI + 0x13ed378],BL   ; 00452df1 | g_CameraImageDecompressBuffer | g_CameraImageDecompressBuffer[0].pixels[0][1]
         ;   Label: LAB_00452df1
     MOV EBX,EAX                         ; 00452df7
     MOV EAX,dword ptr [ESP + 0x278]     ; 00452df9
@@ -482,7 +482,7 @@ section .text
         ;   Label: LAB_00452f95
     JMP 0x00452f5c                      ; 00452f96
         ;   XREF to: 00452f5c (UNCONDITIONAL_JUMP)  ; LAB_00452f5c
-    MOV byte ptr [ESI],0xff             ; 00452f98 | DAT_013da8b8 | DAT_013da9f8
+    MOV byte ptr [ESI],0xff             ; 00452f98 | g_CameraPlaneWorkBuffer.pixels[1][0] | g_CameraPlaneWorkBuffer.pixels[2][0]
         ;   Label: LAB_00452f98
     JMP 0x00452c6b                      ; 00452f9b
         ;   XREF to: 00452c6b (UNCONDITIONAL_JUMP)  ; LAB_00452c6b

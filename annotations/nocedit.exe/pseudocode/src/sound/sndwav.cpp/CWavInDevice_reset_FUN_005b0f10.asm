@@ -12,7 +12,7 @@
 ;   TerminatedCString s_waveInReset_failed_00652462
 ;   HWAVEIN g_WaveInHandle
 ;   LPWAVEHDR[20] g_WaveInHeaders
-;   undefined4 DAT_03f6ae24
+;   undefined4 g_WaveInHeaders[1]
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_logSoundError_FUN_005adba0
@@ -34,7 +34,7 @@ section .text
         ;   XREF to: 005b0f4c (CONDITIONAL_JUMP)  ; LAB_005b0f4c
     XOR EBX,EBX                         ; 005b0f22
         ;   Label: LAB_005b0f22
-    MOV EDI,dword ptr [EBX + 0x3f6ae20] ; 005b0f24 | g_WaveInHeaders | DAT_03f6ae24
+    MOV EDI,dword ptr [EBX + 0x3f6ae20] ; 005b0f24 | g_WaveInHeaders | g_WaveInHeaders[1]
         ;   Label: LAB_005b0f24
     TEST EDI,EDI                        ; 005b0f2a
     JZ 0x005b0f3e                       ; 005b0f2c

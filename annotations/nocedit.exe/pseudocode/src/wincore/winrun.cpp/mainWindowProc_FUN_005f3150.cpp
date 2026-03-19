@@ -105,7 +105,7 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT 
               }
               goto LAB_005f31de;
             }
-            if (hWnd == (HWND)wParam) goto LAB_005f31de;
+            if (hWnd == wParam) goto LAB_005f31de;
           }
           wincore_wddvmem_cpp_stubFunction_FUN_005edd80();
         }

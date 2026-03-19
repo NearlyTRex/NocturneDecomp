@@ -396,7 +396,7 @@ section .text
     JGE 0x00416c66                      ; 00416bec
         ;   XREF to: 00416c66 (CONDITIONAL_JUMP)  ; LAB_00416c66
     ADD EAX,dword ptr [EBP + 0x6e]      ; 00416bf2
-    MOV ESI,dword ptr [EAX + 0x14f09c]  ; 00416bf5 | g_CDemonSetInstance.characters[0] | DAT_03263318
+    MOV ESI,dword ptr [EAX + 0x14f09c]  ; 00416bf5 | g_CDemonSetInstance.characters[0] | g_CDemonSetInstance.characters[1]
     TEST ESI,ESI                        ; 00416bfb
     JNZ 0x00416c11                      ; 00416bfd
         ;   XREF to: 00416c11 (CONDITIONAL_JUMP)  ; LAB_00416c11
@@ -858,7 +858,7 @@ section .text
         ;   XREF to: 00417111 (CONDITIONAL_JUMP)  ; LAB_00417111
     MOV EDX,dword ptr [0x00822820]      ; 004170e7 | g_CBatmanClassInfo.name_hash
     PUSH EDX                            ; 004170ed
-    MOV ECX,dword ptr [EDI + EAX*0x1 + 0x150fe0] ; 004170ee | DAT_03265258 | DAT_0326525c
+    MOV ECX,dword ptr [EDI + EAX*0x1 + 0x150fe0] ; 004170ee | g_CDemonSetInstance.enemies[0] | g_CDemonSetInstance.enemies[1]
     PUSH ECX                            ; 004170f5
     CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004170f6
         ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)

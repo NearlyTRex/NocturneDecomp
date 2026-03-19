@@ -17,7 +17,7 @@
 ;   undefined4 g_CDemonLightInstance.base.base.position
 ;   undefined4 g_CDemonLightInstance.base.base.position+4
 ;   undefined4 g_CDemonLightInstance.base.base.position+8
-;   undefined4 DAT_02d7eb00
+;   undefined4 g_CDemonLightInstance.base.base.rotation_matrix.m[0].x
 ;   undefined4 g_CDemonLightInstance.base.base.focal_length
 ;   undefined4 g_CDemonLightInstance.base.max_distance
 ;   undefined4 g_CDemonLightInstance.light_enabled_flag
@@ -69,7 +69,7 @@ section .text
     ADD EBX,0x30                        ; 00505b24
         ;   Label: LAB_00505b24
     PUSH EBX                            ; 00505b27
-    PUSH 0x2d7eb00                      ; 00505b28 | DAT_02d7eb00
+    PUSH 0x2d7eb00                      ; 00505b28 | g_CDemonLightInstance.base.base.rotation_matrix.m[0].x
     MOV ESI,0x1                         ; 00505b2d
     MOV EBX,0x42000000                  ; 00505b32
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 00505b37

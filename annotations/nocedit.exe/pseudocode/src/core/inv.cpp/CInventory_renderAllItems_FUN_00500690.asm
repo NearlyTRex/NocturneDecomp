@@ -93,7 +93,7 @@ section .text
     SUB ESP,0x678                       ; 00500696
     AND ESP,0xfffffff8                  ; 0050069c
     MOV EAX,[0x0067b654]                ; 0050069f | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x228],0x0     ; 005006a4 | DAT_02d81cc4
+    CMP dword ptr [EAX + 0x228],0x0     ; 005006a4 | g_CGameInstance.letterbox_mode
     JNZ 0x00500fec                      ; 005006ab
         ;   XREF to: 00500fec (CONDITIONAL_JUMP)  ; LAB_00500fec
     MOV EAX,dword ptr [EBP + 0x14]      ; 005006b1
@@ -306,7 +306,7 @@ section .text
     PUSH EBX                            ; 00500983
     MOV EAX,dword ptr [ESP + 0x668]     ; 00500984
     PUSH EAX                            ; 0050098b
-    PUSH ESI                            ; 0050098c | g_InventoryWrappedTextLines | DAT_02db8d70
+    PUSH ESI                            ; 0050098c | g_InventoryWrappedTextLines | g_InventoryWrappedTextLines[1][0]
     MOV EDX,dword ptr [ESP + 0x674]     ; 0050098d
     PUSH EDX                            ; 00500994
     INC EDI                             ; 00500995
@@ -348,7 +348,7 @@ section .text
     CMP dword ptr [EAX + 0x44c],0x0     ; 00500a18
     JZ 0x00501366                       ; 00500a1f
         ;   XREF to: 00501366 (CONDITIONAL_JUMP)  ; LAB_00501366
-    MOV EAX,[0x02db87b8]                ; 00500a25 | DAT_02db8780.name_hash
+    MOV EAX,[0x02db87b8]                ; 00500a25 | g_CHealthItemClassInfo.name_hash
         ;   Label: LAB_00500a25
     PUSH EAX                            ; 00500a2a
     MOV EAX,dword ptr [EBP + 0x14]      ; 00500a2b
@@ -527,14 +527,14 @@ section .text
     PUSH EDI                            ; 00500c69
     MOV ECX,dword ptr [ESP + 0x65c]     ; 00500c6a
     PUSH ECX                            ; 00500c71
-    PUSH EBX                            ; 00500c72 | g_InventoryWrappedTextLines2 | DAT_02db9770
+    PUSH EBX                            ; 00500c72 | g_InventoryWrappedTextLines2 | g_InventoryWrappedTextLines2[1][0]
     MOV EAX,dword ptr [ESP + 0x678]     ; 00500c73
     PUSH EAX                            ; 00500c7a
     INC ESI                             ; 00500c7b
     CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 00500c7c
         ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 00500c81
-    ADD EBX,0x100                       ; 00500c84 | DAT_02db9770
+    ADD EBX,0x100                       ; 00500c84 | g_InventoryWrappedTextLines2[1][0]
     MOV EDX,dword ptr [ESP + 0x64c]     ; 00500c8a
     MOV ECX,dword ptr [ESP + 0x648]     ; 00500c91
     ADD EDI,EDX                         ; 00500c98
@@ -786,7 +786,7 @@ section .text
     PUSH 0xf8                           ; 00500fa4
     PUSH EDI                            ; 00500fa9
     PUSH 0x4                            ; 00500faa
-    PUSH ESI                            ; 00500fac | g_InventoryWrappedTextLines3 | DAT_02dba170
+    PUSH ESI                            ; 00500fac | g_InventoryWrappedTextLines3 | g_InventoryWrappedTextLines3[1][0]
     MOV EAX,dword ptr [ESP + 0x684]     ; 00500fad
     PUSH EAX                            ; 00500fb4
     INC EBX                             ; 00500fb5

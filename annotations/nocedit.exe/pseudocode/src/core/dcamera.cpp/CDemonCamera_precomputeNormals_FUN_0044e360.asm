@@ -35,18 +35,18 @@
 ;   double g_PrecomputePackedNormalToFloat = 0.00390625
 ;   double g_PrecomputeFixedPointToFloat = 0.00787401574803150
 ;   int[8] g_CameraEdgeOffsetX
-;   undefined4 DAT_0066ed14
+;   undefined4 g_CameraEdgeOffsetX[1]
 ;   int[8] g_CameraEdgeOffsetY
-;   undefined4 DAT_0066ed34
-;   undefined4 DAT_00903e80
-;   undefined4 DAT_00903e84
-;   undefined4 DAT_00903e88
+;   undefined4 g_CameraEdgeOffsetY[1]
+;   undefined4 g_PrecomputedWorldPositions[321].x
+;   undefined4 g_PrecomputedWorldPositions[321].y
+;   undefined4 g_PrecomputedWorldPositions[321].z
 ;   undefined4 DAT_009e5d80
 ;   undefined4 DAT_009e5d84
 ;   undefined4 DAT_009e5d88
-;   undefined4 DAT_00ac7c80
-;   undefined4 DAT_00ac7c84
-;   undefined4 DAT_00ac7c88
+;   undefined4 g_PrecomputedSurfaceNormals[321].x
+;   undefined4 g_PrecomputedSurfaceNormals[321].y
+;   undefined4 g_PrecomputedSurfaceNormals[321].z
 ;   ... and 11 more
 ;
 ; Called Functions:
@@ -173,13 +173,13 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0044e49c
     LEA ESI,[ESP + 0x1c]                ; 0044e49d
         ;   Label: LAB_0044e49d
-    LEA EDI,[EBX + 0x902f74]            ; 0044e4a1 | DAT_00903e80
-    MOVSD ES:EDI,ESI                    ; 0044e4a7 | DAT_00903e80
-    MOVSD ES:EDI,ESI                    ; 0044e4a8 | DAT_00903e84
-    MOVSD ES:EDI,ESI                    ; 0044e4a9 | DAT_00903e88
+    LEA EDI,[EBX + 0x902f74]            ; 0044e4a1 | g_PrecomputedWorldPositions[321].x
+    MOVSD ES:EDI,ESI                    ; 0044e4a7 | g_PrecomputedWorldPositions[321].x
+    MOVSD ES:EDI,ESI                    ; 0044e4a8 | g_PrecomputedWorldPositions[321].y
+    MOVSD ES:EDI,ESI                    ; 0044e4a9 | g_PrecomputedWorldPositions[321].z
     MOV EDX,dword ptr [ESP + 0x5c]      ; 0044e4aa
     MOV EAX,dword ptr [ESP + 0x30]      ; 0044e4ae
-    MOV dword ptr [EDX + 0xbce6f8],EAX  ; 0044e4b2 | DAT_00bcebfc
+    MOV dword ptr [EDX + 0xbce6f8],EAX  ; 0044e4b2 | g_PrecomputedDepthBuffer[321]
     MOV EAX,dword ptr [ESP + 0x64]      ; 0044e4b8
     MOV ESI,dword ptr [ESP + 0x64]      ; 0044e4bc
     MOV EAX,dword ptr [EAX]             ; 0044e4c0
@@ -214,10 +214,10 @@ section .text
     MOV dword ptr [ESP + 0x60],EDI      ; 0044e522
     ADD ESI,0x4                         ; 0044e526
     FXCH                                ; 0044e529
-    FSTP float ptr [EBX + 0xac6d68]     ; 0044e52b | DAT_00ac7c80
+    FSTP float ptr [EBX + 0xac6d68]     ; 0044e52b | g_PrecomputedSurfaceNormals[321].x
     MOV EDX,dword ptr [EBP + 0x14]      ; 0044e531
-    FSTP float ptr [EBX + 0xac6d6c]     ; 0044e534 | DAT_00ac7c84
-    FSTP float ptr [EBX + 0xac6d70]     ; 0044e53a | DAT_00ac7c88
+    FSTP float ptr [EBX + 0xac6d6c]     ; 0044e534 | g_PrecomputedSurfaceNormals[321].y
+    FSTP float ptr [EBX + 0xac6d70]     ; 0044e53a | g_PrecomputedSurfaceNormals[321].z
     MOV ECX,dword ptr [EDX + 0x150]     ; 0044e540
     MOV dword ptr [ESP + 0x5c],ESI      ; 0044e546
     CMP EDI,ECX                         ; 0044e54a
@@ -337,12 +337,12 @@ section .text
         ;   Label: LAB_0044e6c5
     MOV CL,byte ptr [0x013bc260]        ; 0044e6c9 | g_CameraDownscaleIterations
     SAR EAX,CL                          ; 0044e6cf
-    ADD EAX,dword ptr [EBX + 0x66ed30]  ; 0044e6d1 | g_CameraEdgeOffsetY | DAT_0066ed34
+    ADD EAX,dword ptr [EBX + 0x66ed30]  ; 0044e6d1 | g_CameraEdgeOffsetY | g_CameraEdgeOffsetY[1]
     IMUL EDX,EAX,0x500                  ; 0044e6d7
     MOV CL,byte ptr [0x013bc260]        ; 0044e6dd | g_CameraDownscaleIterations
     MOV EAX,EDI                         ; 0044e6e3
     SAR EAX,CL                          ; 0044e6e5
-    ADD EAX,dword ptr [EBX + 0x66ed10]  ; 0044e6e7 | g_CameraEdgeOffsetX | DAT_0066ed14
+    ADD EAX,dword ptr [EBX + 0x66ed10]  ; 0044e6e7 | g_CameraEdgeOffsetX | g_CameraEdgeOffsetX[1]
     MOV EAX,dword ptr [EDX + EAX*0x4 + 0xbce6f8] ; 0044e6ed | g_PrecomputedDepthBuffer
     MOV EDX,dword ptr [ESP + 0x68]      ; 0044e6f4
     SUB EDX,EAX                         ; 0044e6f8
@@ -372,8 +372,8 @@ section .text
     JZ 0x0044e769                       ; 0044e742
         ;   XREF to: 0044e769 (CONDITIONAL_JUMP)  ; LAB_0044e769
     MOV EDX,dword ptr [ESP + 0x6c]      ; 0044e744
-    MOV dword ptr [EAX + 0x13bc26c],EDI ; 0044e748 | DAT_013bc26c
-    MOV dword ptr [EAX + 0x13bc270],EDX ; 0044e74e | DAT_013bc270
+    MOV dword ptr [EAX + 0x13bc26c],EDI ; 0044e748 | g_CameraEdgeDetectionResults[1]
+    MOV dword ptr [EAX + 0x13bc270],EDX ; 0044e74e | g_CameraEdgeDetectionResults[2]
     LEA EAX,[EBX + 0x1]                 ; 0044e754
     MOV [0x013bc264],EAX                ; 0044e757 | g_CameraEdgeCount
     JMP 0x0044e769                      ; 0044e75c

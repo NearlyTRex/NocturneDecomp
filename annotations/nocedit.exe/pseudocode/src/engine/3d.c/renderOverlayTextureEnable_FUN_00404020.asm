@@ -12,7 +12,7 @@
 ;   undefined4 g_RenderVertexBuffer[0].v
 ;   uint g_ProcessedVertexOffset
 ;   int[24] g_ProcessedVertexIndices
-;   undefined4 DAT_00772a9c
+;   undefined4 g_ProcessedVertexIndices[1]
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
@@ -63,7 +63,7 @@ section .text
         ;   XREF to: 004040ea (CONDITIONAL_JUMP)  ; LAB_004040ea
     MOV EDX,dword ptr [EAX]             ; 00404086
     ADD EDX,EBP                         ; 00404088
-    MOV dword ptr [ECX],EDX             ; 0040408a | g_ProcessedVertexIndices | DAT_00772a9c
+    MOV dword ptr [ECX],EDX             ; 0040408a | g_ProcessedVertexIndices | g_ProcessedVertexIndices[1]
     MOV EDX,dword ptr [EAX]             ; 0040408c
     ADD EDX,EBP                         ; 0040408e
     IMUL EDX,EDX,0x30                   ; 00404090
