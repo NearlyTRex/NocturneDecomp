@@ -689,7 +689,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0041c633
     ADD ESP,0x8                         ; 0041c636
     LEA EAX,[EBP + 0xffffff0a]          ; 0041c639
-    MOV EDX,dword ptr [0x00822944]      ; 0041c63f | INT_00822944
+    MOV EDX,dword ptr [0x00822944]      ; 0041c63f | g_BoneGuyIndices
     PUSH EAX                            ; 0041c645
     LEA EAX,[EDX*0x4 + 0x0]             ; 0041c646
     MOV dword ptr [EBP + 0xffffff3e],EBX ; 0041c64d

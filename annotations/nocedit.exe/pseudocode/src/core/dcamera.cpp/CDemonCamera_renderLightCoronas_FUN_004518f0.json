@@ -14,51 +14,21 @@
         "message": "no matching function for call to 'core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0'"
       },
       {
-        "category": "other",
-        "column": 34,
-        "line": 103,
-        "message": "member reference base type 'char[307200]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 124,
-        "message": "member reference base type 'char[307200]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 126,
-        "message": "member reference base type 'char[307200]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 127,
-        "message": "member reference base type 'char[307200]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 128,
-        "message": "member reference base type 'char[307200]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 128,
-        "message": "member reference base type 'char[307200]' is not a structure or union"
-      },
-      {
         "category": "incompatible_types",
         "column": 9,
-        "line": 130,
+        "line": 131,
         "message": "no matching function for call to 'core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400'"
       },
       {
         "category": "incompatible_types",
+        "column": 39,
+        "line": 221,
+        "message": "assigning to 'struct CDemonGlobe *' from incompatible type 'void *'"
+      },
+      {
+        "category": "incompatible_types",
         "column": 5,
-        "line": 225,
+        "line": 226,
         "message": "no matching function for call to 'core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400'"
       }
     ],
@@ -67,20 +37,19 @@
   },
   "complexity": {
     "assembly_lines": 674,
-    "complexity_score": 480,
+    "complexity_score": 416,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 41,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 270,
-    "suspect_count": 19,
+    "pseudocode_lines": 271,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_alignment_array",
-      "unknown_field"
+      "stack_alignment_array"
     ],
-    "total_lines": 944
+    "total_lines": 945
   },
   "cross_references": [
     {
@@ -135,7 +104,7 @@
     {
       "addr": "00902f74",
       "name": "g_PrecomputedWorldPositions",
-      "type": "CVector3i[15360]",
+      "type": "CVector3i[15499]",
       "value": null
     },
     {
@@ -212,49 +181,49 @@
     },
     {
       "addr": "01322208",
-      "name": "g_LightBufferPool[24][0]",
-      "type": "undefined4",
+      "name": "g_CoronaLightCache",
+      "type": "SCoronaLightCache",
       "value": null
     },
     {
       "addr": "0132220c",
-      "name": "g_LightBufferPool[24][4]",
+      "name": "g_CoronaLightCache.entries[0].globe",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01322210",
-      "name": "g_LightBufferPool[24][8]",
+      "name": "g_CoronaLightCache.entries[0].left_extents[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01322214",
-      "name": "g_LightBufferPool[24][12]",
+      "name": "g_CoronaLightCache.entries[0].left_extents[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "013225d0",
-      "name": "g_LightBufferPool[24][968]",
+      "name": "g_CoronaLightCache.entries[0].right_extents[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "013225d4",
-      "name": "g_LightBufferPool[24][972]",
+      "name": "g_CoronaLightCache.entries[0].right_extents[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01335590",
-      "name": "g_LightBufferPool[24][78728]",
+      "name": "g_CoronaLightCache.entries[1].globe",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01335594",
-      "name": "g_LightBufferPool[24][78732]",
+      "name": "g_CoronaLightCache.entries[1].left_extents[0]",
       "type": "undefined4",
       "value": null
     },
@@ -715,7 +684,7 @@
       "line": 69,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(&g_CoronaTargetY)[(uint)bVar20 * -2] = *(int *)((int)&local_94 + (uint)bVar20 * -8 + 4);",
+      "text": "(&g_CoronaTargetY)[(uint)bVar21 * -2] = *(int *)((int)&local_94 + (uint)bVar21 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -723,7 +692,7 @@
       "line": 71,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&local_94 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);",
+      "text": "*(int *)((int)&local_94 + (uint)bVar21 * -8 + (uint)bVar21 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -752,7 +721,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 95,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (((p2 == 0) && (*(int *)((int)p1 + 0x20) != 0)) &&",
@@ -760,66 +729,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 96,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(INT_0066ed68 = -1, *(int *)((int)p1 + 0x20) == 2)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 96,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if (g_LightBufferPool[0x18]._0_4_ != 0) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 117,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "} while (iVar1 < g_LightBufferPool[0x18]._0_4_ * 0x13384);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 119,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if ((uint)g_LightBufferPool[0x18]._0_4_ < 8) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 120,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "iVar1 = g_LightBufferPool[0x18]._0_4_ * 0x13384;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 121,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "g_LightBufferPool[0x18]._0_4_ = g_LightBufferPool[0x18]._0_4_ + 1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 121,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "g_LightBufferPool[0x18]._0_4_ = g_LightBufferPool[0x18]._0_4_ + 1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 226,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (this_ptr->framebuffer_width != *(int *)((int)g_CoronaLeftExtent + local_58)) {",
       "type": "pointer_cast"
     },
     {
@@ -827,7 +740,7 @@
       "line": 227,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "local_28 = *(int *)((int)g_CoronaLeftExtent + local_58);",
+      "text": "if (this_ptr->framebuffer_width != *(int *)((int)g_CoronaLeftExtent + local_58)) {",
       "type": "pointer_cast"
     },
     {
@@ -835,15 +748,23 @@
       "line": 228,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar1 = *(int *)((int)g_CoronaRightExtent + local_58);",
+      "text": "local_28 = *(int *)((int)g_CoronaLeftExtent + local_58);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 229,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar13 = *(int *)((int)g_CoronaRightExtent + local_58);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 236,
+      "line": 237,
       "match": "SBORROW4",
       "severity": "mild",
-      "text": "while (SBORROW4(local_28,iVar1) != iVar17 < 0) {",
+      "text": "while (SBORROW4(local_28,iVar13) != iVar1 < 0) {",
       "type": "decompiler_intrinsic"
     }
   ]

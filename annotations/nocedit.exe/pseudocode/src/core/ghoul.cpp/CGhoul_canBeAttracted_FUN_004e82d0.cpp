@@ -47,16 +47,16 @@ int __cdecl core_ghoul_cpp_CGhoul_canBeAttracted_FUN_004e82d0(CGhoul *this_ptr,C
     return 0;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (this_ptr_00,&local_40,INT_02d83300);
+                     (this_ptr_00,&local_40,g_GhoulIndices[1]);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (this_ptr_00,&local_88,INT_02d83308);
+                     (this_ptr_00,&local_88,g_GhoulIndices[3]);
   fVar3 = (pCVar2->x + pCVar1->x) * 0.5f;
   fVar1 = (pCVar2->y + pCVar1->y) * 0.5f;
   fVar2 = (pCVar2->z + pCVar1->z) * 0.5f;
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (this_ptr_00,&local_94,INT_02d83304);
+                     (this_ptr_00,&local_94,g_GhoulIndices[2]);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (this_ptr_00,&local_4c,INT_02d8330c);
+                     (this_ptr_00,&local_4c,g_GhoulIndices[4]);
   local_70.x = (fVar3 + (pCVar5->x + pCVar4->x) * 0.5f) * 0.5f;
   local_70.y = (fVar1 + (pCVar5->y + pCVar4->y) * 0.5f) * 0.5f;
   local_70.z = (fVar2 + (pCVar5->z + pCVar4->z) * 0.5f) * 0.5f;

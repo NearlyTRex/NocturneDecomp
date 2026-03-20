@@ -438,7 +438,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 005a2be3
     ADD ESP,0x8                         ; 005a2be6
     LEA EAX,[EBP + 0xfffffefa]          ; 005a2be9
-    MOV EDX,dword ptr [0x03f48fa8]      ; 005a2bef | INT_03f48fa8
+    MOV EDX,dword ptr [0x03f48fa8]      ; 005a2bef | g_SmileyIndices[2]
     PUSH EAX                            ; 005a2bf5
     LEA EAX,[EDX*0x4 + 0x0]             ; 005a2bf6
     MOV dword ptr [EBP + 0xffffff2e],EBX ; 005a2bfd
@@ -524,7 +524,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 005a2cd5
     ADD ESP,0x8                         ; 005a2cd8
     LEA EAX,[EBP + 0xffffff36]          ; 005a2cdb
-    MOV EDX,dword ptr [0x03f48fa8]      ; 005a2ce1 | INT_03f48fa8
+    MOV EDX,dword ptr [0x03f48fa8]      ; 005a2ce1 | g_SmileyIndices[2]
     PUSH EAX                            ; 005a2ce7
     LEA EAX,[EDX*0x4 + 0x0]             ; 005a2ce8
     SUB EAX,EDX                         ; 005a2cef

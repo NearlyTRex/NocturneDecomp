@@ -18,14 +18,14 @@
 ;   undefined4 s_LE_INFO=_00659794
 ;   undefined4 s_NFO=_00659798
 ;   undefined4 s__0065979c
-;   char g_ColonChar = :
-;   undefined1 DAT_006597a1
-;   undefined1 DAT_006597a2
-;   undefined1 DAT_006597a3
-;   char g_AsteriskChar = *
-;   undefined1 DAT_006597a5
-;   undefined1 DAT_006597a6
-;   undefined1 DAT_006597a7
+;   char[8] g_ProcessFileInfoStr
+;   undefined4 DAT_006597a1
+;   undefined4 DAT_006597a2
+;   undefined4 DAT_006597a3
+;   undefined4 g_ProcessFileInfoStr+4
+;   undefined4 DAT_006597a5
+;   undefined4 DAT_006597a6
+;   undefined4 DAT_006597a7
 ;   uint g_MaxHandleCount = 0x14
 ;
 ; Called Functions:
@@ -138,7 +138,7 @@ section .text
     POP EDI                             ; 0061009f
         ;   Label: LAB_0061009f
     POP ES                              ; 006100a0
-    MOV ESI,0x6597a0                    ; 006100a1 | g_ColonChar
+    MOV ESI,0x6597a0                    ; 006100a1 | g_ProcessFileInfoStr
     MOV EDI,ESP                         ; 006100a6
     PUSH ES                             ; 006100a8
     PUSH DS                             ; 006100a9
@@ -149,7 +149,7 @@ section .text
     MOV AL,0x0                          ; 006100af
     SCASB.REPNE ES:EDI                  ; 006100b1
     DEC EDI                             ; 006100b3
-    MOV AL,byte ptr [ESI]               ; 006100b4 | g_ColonChar | DAT_006597a2
+    MOV AL,byte ptr [ESI]               ; 006100b4 | g_ProcessFileInfoStr | DAT_006597a2
         ;   Label: LAB_006100b4
     MOV byte ptr [EDI],AL               ; 006100b6
     CMP AL,0x0                          ; 006100b8
@@ -200,7 +200,7 @@ section .text
     POP EDI                             ; 0061010c
         ;   Label: LAB_0061010c
     POP ES                              ; 0061010d
-    MOV ESI,0x6597a0                    ; 0061010e | g_ColonChar
+    MOV ESI,0x6597a0                    ; 0061010e | g_ProcessFileInfoStr
     MOV EDI,ESP                         ; 00610113
     PUSH ES                             ; 00610115
     PUSH DS                             ; 00610116
@@ -211,7 +211,7 @@ section .text
     MOV AL,0x0                          ; 0061011c
     SCASB.REPNE ES:EDI                  ; 0061011e
     DEC EDI                             ; 00610120
-    MOV AL,byte ptr [ESI]               ; 00610121 | g_ColonChar | DAT_006597a2
+    MOV AL,byte ptr [ESI]               ; 00610121 | g_ProcessFileInfoStr | DAT_006597a2
         ;   Label: LAB_00610121
     MOV byte ptr [EDI],AL               ; 00610123
     CMP AL,0x0                          ; 00610125
@@ -261,7 +261,7 @@ section .text
     POP EDI                             ; 00610175
         ;   Label: LAB_00610175
     POP ES                              ; 00610176
-    MOV ESI,0x6597a4                    ; 00610177 | g_AsteriskChar
+    MOV ESI,0x6597a4                    ; 00610177 | g_ProcessFileInfoStr+4
     MOV EDI,ESP                         ; 0061017c
     PUSH ES                             ; 0061017e
     PUSH DS                             ; 0061017f
@@ -272,7 +272,7 @@ section .text
     MOV AL,0x0                          ; 00610185
     SCASB.REPNE ES:EDI                  ; 00610187
     DEC EDI                             ; 00610189
-    MOV AL,byte ptr [ESI]               ; 0061018a | g_AsteriskChar | DAT_006597a6
+    MOV AL,byte ptr [ESI]               ; 0061018a | g_ProcessFileInfoStr+4 | DAT_006597a6
         ;   Label: LAB_0061018a
     MOV byte ptr [EDI],AL               ; 0061018c
     CMP AL,0x0                          ; 0061018e

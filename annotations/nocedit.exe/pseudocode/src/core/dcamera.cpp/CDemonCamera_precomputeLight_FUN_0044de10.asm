@@ -41,11 +41,11 @@
 ;   TerminatedCString s_movscrn_raw_0061a0aa
 ;   TerminatedCString s_core_dcamera_cpp_0061a0b6
 ;   TerminatedCString s_CDemonCamera_precomputeL_0061a0ca
-;   CVector3i[15360] g_PrecomputedWorldPositions
-;   CVector3f[76800] g_PrecomputedSurfaceNormals
+;   CVector3i[15499] g_PrecomputedWorldPositions
+;   CVector3f[241][320] g_PrecomputedSurfaceNormals
 ;   int g_LightBufferPoolIndex
-;   char[25][307200] g_LightBufferPool
-;   undefined4 g_LightBufferPool[24][0]
+;   char[24][307200] g_LightBufferPool
+;   SCoronaLightCache g_CoronaLightCache
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -87,7 +87,7 @@ section .text
     TEST EAX,EAX                        ; 0044de4d
     JNZ 0x0044de5b                      ; 0044de4f
         ;   XREF to: 0044de5b (CONDITIONAL_JUMP)  ; LAB_0044de5b
-    MOV [0x01322208],EAX                ; 0044de51 | g_LightBufferPool[24][0]
+    MOV [0x01322208],EAX                ; 0044de51 | g_CoronaLightCache
     MOV [0x00c1a204],EAX                ; 0044de56 | g_LightBufferPoolIndex
     MOV ESI,dword ptr [0x00c1a204]      ; 0044de5b | g_LightBufferPoolIndex
         ;   Label: LAB_0044de5b

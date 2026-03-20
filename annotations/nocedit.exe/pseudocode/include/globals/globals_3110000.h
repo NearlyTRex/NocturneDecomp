@@ -41,16 +41,7 @@ extern int g_ScriptStatusBarRight;
 extern int g_ScriptStatusBarBottom;
 extern int g_ScriptEditorCharWidth;
 extern int g_ScriptEditorLineHeight;
-extern int INT_0311420c;
-extern int INT_03114210;
-extern int INT_03114214;
-extern int INT_03114218;
-extern int INT_0311421c;
-extern int INT_03114220;
-extern int INT_03114224;
-extern int INT_03114228;
-extern int INT_0311422c;
-extern int INT_03114230;
-extern int INT_03114234;
-extern int INT_03114238;
+
+// int[12]
+extern int g_SentinelIndices[12];
 

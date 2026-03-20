@@ -9,15 +9,15 @@
 ;   WatcomTypeInfo g_SFreakyTypeInfo
 ;   WatcomStaticDestructorNode WatcomStaticDestructorNode_006703a0
 ;   int g_CDraculaBrideClassVersion = 0x9
-;   float FLOAT_02c6d040
-;   float FLOAT_02c6d044
-;   float FLOAT_02c6d048
-;   float FLOAT_02c6d04c
-;   float FLOAT_02c6d050
-;   float FLOAT_02c6d054
-;   float FLOAT_02c6d058
-;   float FLOAT_02c6d05c
-;   float FLOAT_02c6d060
+;   CVector3f CVector3f_02c6d040
+;   undefined4 CVector3f_02c6d040.y
+;   undefined4 CVector3f_02c6d040.z
+;   CVector3f CVector3f_02c6d04c
+;   undefined4 CVector3f_02c6d04c.y
+;   undefined4 CVector3f_02c6d04c.z
+;   CVector3f CVector3f_02c6d058
+;   undefined4 CVector3f_02c6d058.y
+;   undefined4 CVector3f_02c6d058.z
 ;   CDemonActorType g_CDraculaBrideClassInfo
 ;   SFreaky[6] SFreaky_ARRAY_02c6d0c0
 ;   ... and 1 more
@@ -39,19 +39,19 @@ section .text
     XOR EDX,EDX                         ; 00483f00
     PUSH 0x9                            ; 00483f02
     MOV EAX,0x3f19999a                  ; 00483f04
-    MOV dword ptr [0x02c6d040],EDX      ; 00483f09 | FLOAT_02c6d040
+    MOV dword ptr [0x02c6d040],EDX      ; 00483f09 | CVector3f_02c6d040
     PUSH 0x6703b0                       ; 00483f0f | g_CDraculaBrideClassVersion
-    MOV dword ptr [0x02c6d044],ECX      ; 00483f14 | FLOAT_02c6d044
-    MOV dword ptr [0x02c6d048],EDX      ; 00483f1a | FLOAT_02c6d048
+    MOV dword ptr [0x02c6d044],ECX      ; 00483f14 | CVector3f_02c6d040.y
+    MOV dword ptr [0x02c6d048],EDX      ; 00483f1a | CVector3f_02c6d040.z
     PUSH 0x483f80                       ; 00483f20
-    MOV dword ptr [0x02c6d04c],ESI      ; 00483f25 | FLOAT_02c6d04c
-    MOV dword ptr [0x02c6d050],EDX      ; 00483f2b | FLOAT_02c6d050
+    MOV dword ptr [0x02c6d04c],ESI      ; 00483f25 | CVector3f_02c6d04c
+    MOV dword ptr [0x02c6d050],EDX      ; 00483f2b | CVector3f_02c6d04c.y
     PUSH 0x621846                       ; 00483f31 | = "CDraculaBride"
-    MOV dword ptr [0x02c6d054],EDX      ; 00483f36 | FLOAT_02c6d054
-    MOV [0x02c6d058],EAX                ; 00483f3c | FLOAT_02c6d058
+    MOV dword ptr [0x02c6d054],EDX      ; 00483f36 | CVector3f_02c6d04c.z
+    MOV [0x02c6d058],EAX                ; 00483f3c | CVector3f_02c6d058
     PUSH 0x2c6d064                      ; 00483f41 | g_CDraculaBrideClassInfo
-    MOV dword ptr [0x02c6d05c],EDX      ; 00483f46 | FLOAT_02c6d05c
-    MOV dword ptr [0x02c6d060],EDX      ; 00483f4c | FLOAT_02c6d060
+    MOV dword ptr [0x02c6d05c],EDX      ; 00483f46 | CVector3f_02c6d058.y
+    MOV dword ptr [0x02c6d060],EDX      ; 00483f4c | CVector3f_02c6d058.z
     CALL core_actor.cpp_registerActorClass_FUN_0040c2e0 ; 00483f52
         ;   XREF to: 0040c2e0 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c2e0(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factor_func, int * max_version, ...)
     ADD ESP,0x18                        ; 00483f57

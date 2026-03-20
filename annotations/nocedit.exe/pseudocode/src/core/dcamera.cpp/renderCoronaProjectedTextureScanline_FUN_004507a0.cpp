@@ -11,11 +11,11 @@ void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0(
 {
   int iVar1;
   char *pcVar2;
-  CVector3i *input_ptr;
   uint *puVar3;
   uint uVar1;
   CVector3f *pCVar2;
   int *piVar4;
+  CVector3i *input_ptr;
   byte bVar3;
   int aiStackY_1028 [1016];
   int local_40;
@@ -29,12 +29,12 @@ void __cdecl core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0(
   char *local_18;
   
   bVar3 = 0;
-  input_ptr = g_TempWorldPositionRow + scanline_y * 0x140 + x_start;
+  input_ptr = g_TempWorldPositions[scanline_y] + x_start;
   pcVar2 = g_CoronaBlurOutputBuffer[scanline_y] + x_start;
   piVar4 = g_CoronaDepthBuffer[scanline_y] + x_start;
   puVar3 = g_ZBufferScanlineArray[scanline_y << (g_CameraDownscaleIterations.bytes[0] & 0x1f)] +
            (x_start << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
-  pCVar2 = g_PrecomputedSurfaceNormals + scanline_y * 0x140 + x_start;
+  pCVar2 = g_PrecomputedSurfaceNormals[scanline_y] + x_start;
   for (; x_start < x_end; x_start = x_start + 1) {
     if ((*puVar3 < (uint)*piVar4) &&
        (0.0 <= pCVar2->z * (float)g_CoronaCameraRotationMatrix.m[2].z +

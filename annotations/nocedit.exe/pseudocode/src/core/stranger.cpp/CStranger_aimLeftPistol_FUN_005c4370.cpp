@@ -42,7 +42,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *t
   }
   (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).canWalk)
             ((CCharacter *)this_ptr->weapon);
-  bone_index = INT_03f6bad8;
+  bone_index = g_StrangerIndices[3];
   fStack_24 = -1.3089969;
   fStack_2c = 0.5235988;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

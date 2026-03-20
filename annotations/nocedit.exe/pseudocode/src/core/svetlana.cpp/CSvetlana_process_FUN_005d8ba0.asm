@@ -41,7 +41,7 @@
 ;   double DOUBLE_00654ac2 = 3.14159265350000
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CConsole g_CConsoleInstance
-;   int INT_03f6cb90
+;   int[19] g_SvetlanaBoneIndices
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
@@ -318,7 +318,7 @@ section .text
     JNZ 0x005d8ea0                      ; 005d8e58
         ;   XREF to: 005d8ea0 (CONDITIONAL_JUMP)  ; LAB_005d8ea0
     PUSH 0x59ddb0                       ; 005d8e5a
-    MOV ESI,dword ptr [0x03f6cb90]      ; 005d8e5f | INT_03f6cb90
+    MOV ESI,dword ptr [0x03f6cb90]      ; 005d8e5f | g_SvetlanaBoneIndices
     PUSH ESI                            ; 005d8e65
     LEA EAX,[EBX + 0x9f8c0]             ; 005d8e66
     PUSH dword ptr [EBX + 0x9f8cc]      ; 005d8e6c

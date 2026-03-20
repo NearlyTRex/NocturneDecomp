@@ -10,13 +10,13 @@
       {
         "category": "incompatible_types",
         "column": 65,
-        "line": 196,
+        "line": 200,
         "message": "incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 293,
+        "line": 297,
         "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'"
       }
     ],
@@ -25,12 +25,12 @@
   },
   "complexity": {
     "assembly_lines": 685,
-    "complexity_score": 857,
+    "complexity_score": 861,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 337,
+    "pseudocode_lines": 341,
     "suspect_count": 50,
     "suspect_types": [
       "pointer_cast",
@@ -38,7 +38,7 @@
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 1022
+    "total_lines": 1026
   },
   "cross_references": [
     {
@@ -261,62 +261,62 @@
     },
     {
       "addr": "02d7b848",
-      "name": "INT_02d7b848",
-      "type": "int",
+      "name": "g_GabriellaIndices",
+      "type": "int[20]",
       "value": null
     },
     {
       "addr": "02d7b84c",
-      "name": "INT_02d7b84c",
-      "type": "int",
+      "name": "g_GabriellaIndices[1]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d7b858",
-      "name": "INT_02d7b858",
-      "type": "int",
+      "name": "g_GabriellaIndices[4]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d7b860",
-      "name": "INT_02d7b860",
-      "type": "int",
+      "name": "g_GabriellaIndices[6]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d7b87c",
-      "name": "INT_02d7b87c",
-      "type": "int",
+      "name": "g_GabriellaIndices[13]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d7b880",
-      "name": "INT_02d7b880",
-      "type": "int",
+      "name": "g_GabriellaIndices[14]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d7b884",
-      "name": "INT_02d7b884",
-      "type": "int",
+      "name": "g_GabriellaIndices[15]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d7b88c",
-      "name": "INT_02d7b88c",
-      "type": "int",
+      "name": "g_GabriellaIndices[17]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d7b890",
-      "name": "INT_02d7b890",
-      "type": "int",
+      "name": "g_GabriellaIndices[18]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d7b894",
-      "name": "INT_02d7b894",
-      "type": "int",
+      "name": "g_GabriellaIndices[19]",
+      "type": "undefined4",
       "value": null
     }
   ],
@@ -820,7 +820,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 168,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "pfVar4 = (float *)((int)&local_1b4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -828,7 +828,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 167,
+      "line": 169,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*pfVar8 = *(float *)((int)&local_1b4 + (uint)bVar6 * -8 + 4);",
@@ -836,7 +836,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 190,
+      "line": 194,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)&local_1c4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -844,7 +844,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 191,
+      "line": 195,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "pfVar4[(uint)bVar6 * -2 + 1] = *(float *)((int)&local_1c4 + (uint)bVar6 * -8 + 4);",
@@ -852,7 +852,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 220,
+      "line": 224,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_a4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -860,7 +860,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 221,
+      "line": 225,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)&local_e4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -868,7 +868,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 222,
+      "line": 226,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_a4 + (uint)bVar6 * -8 + 4) =",
@@ -876,7 +876,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 223,
+      "line": 227,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_e4 + (uint)bVar6 * -8 + 4);",
@@ -884,7 +884,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 228,
+      "line": 232,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_b4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -892,7 +892,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 229,
+      "line": 233,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)&local_1f4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -900,7 +900,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 230,
+      "line": 234,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_b4 + (uint)bVar6 * -8 + 4) =",
@@ -908,7 +908,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 231,
+      "line": 235,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_1f4 + (uint)bVar6 * -8 + 4);",
@@ -916,7 +916,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 237,
+      "line": 241,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)&local_1e4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -924,7 +924,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 238,
+      "line": 242,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&g_GabriellaWeaponAimRotation + (uint)bVar6 * -8 + 4) =",
@@ -932,7 +932,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 239,
+      "line": 243,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_1e4 + (uint)bVar6 * -8 + 4);",
@@ -940,7 +940,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 249,
+      "line": 253,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_114 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -948,7 +948,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 250,
+      "line": 254,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)&local_1d4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -956,7 +956,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 251,
+      "line": 255,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_114 + (uint)bVar6 * -8 + 4) =",
@@ -964,7 +964,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 252,
+      "line": 256,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_1d4 + (uint)bVar6 * -8 + 4);",
@@ -972,7 +972,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 293,
+      "line": 297,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_194 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -980,7 +980,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 294,
+      "line": 298,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)&local_c4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -988,7 +988,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 295,
+      "line": 299,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_194 + (uint)bVar6 * -8 + 4) =",
@@ -996,7 +996,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 296,
+      "line": 300,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_c4 + (uint)bVar6 * -8 + 4);",
@@ -1004,7 +1004,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 314,
+      "line": 318,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_154 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -1012,7 +1012,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 315,
+      "line": 319,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)&local_d4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -1020,7 +1020,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 316,
+      "line": 320,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_154 + (uint)bVar6 * -8 + 4) =",
@@ -1028,7 +1028,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 317,
+      "line": 321,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_d4 + (uint)bVar6 * -8 + 4);",
@@ -1036,7 +1036,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 322,
+      "line": 326,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_164 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -1044,7 +1044,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 323,
+      "line": 327,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)&local_134 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -1052,7 +1052,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 324,
+      "line": 328,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_164 + (uint)bVar6 * -8 + 4) =",
@@ -1060,7 +1060,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 325,
+      "line": 329,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_134 + (uint)bVar6 * -8 + 4);",
@@ -1068,7 +1068,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 332,
+      "line": 336,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_144 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -1076,7 +1076,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 333,
+      "line": 337,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)&local_94 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
@@ -1084,7 +1084,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 334,
+      "line": 338,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_144 + (uint)bVar6 * -8 + 4) =",
@@ -1092,7 +1092,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 335,
+      "line": 339,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_94 + (uint)bVar6 * -8 + 4);",

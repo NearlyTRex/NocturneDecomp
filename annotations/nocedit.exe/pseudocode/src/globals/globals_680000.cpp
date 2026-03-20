@@ -3935,7 +3935,8 @@ int INT_00684cd0 = 0x1;
 int INT_00684ed0 = 0x100;
 int INT_00684edc = 0x0;
 int g_SpecialExitHandler = 0x0;
-int DAT_00684f30 = 0x0;
+int INT_00684f30 = 0x0;
+int INT_00684f34 = 0x2D;
 int INT_00684fd0 = 0x0;
 int g_ConsoleInitializationFlag = 0x0;
 int g_DstTransitionSecond = 0x0;
@@ -4004,6 +4005,7 @@ int g_PathfindingDeltaZ[9] = {
 };
 
 // short
+short SHORT_00684f38 = 0x4002;
 short g_PureVirtualCallFlag = 0x0;
 
 // uint

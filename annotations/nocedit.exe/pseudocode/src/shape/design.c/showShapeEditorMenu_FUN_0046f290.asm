@@ -93,21 +93,21 @@ section .text
         ;   XREF to: 005ed8f0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0()
     MOV dword ptr [0x01626400],0x8      ; 0046f2f3 | g_ModelCount
     MOV dword ptr [0x016263c0],0x0      ; 0046f2fd | g_EditorBackgroundColors
-    MOV dword ptr [0x016263c4],0xff     ; 0046f307 | INT_016263c4
-    MOV dword ptr [0x016263c8],0xf8     ; 0046f311 | INT_016263c8
-    MOV dword ptr [0x016263cc],0x3      ; 0046f31b | INT_016263cc
-    MOV dword ptr [0x016263d0],0x2      ; 0046f325 | INT_016263d0
-    MOV dword ptr [0x016263d4],0xfc     ; 0046f32f | INT_016263d4
-    MOV dword ptr [0x016263d8],0x4      ; 0046f339 | INT_016263d8
-    MOV dword ptr [0x016263dc],0x1      ; 0046f343 | INT_016263dc
+    MOV dword ptr [0x016263c4],0xff     ; 0046f307 | g_EditorBackgroundColors[1]
+    MOV dword ptr [0x016263c8],0xf8     ; 0046f311 | g_EditorBackgroundColors[2]
+    MOV dword ptr [0x016263cc],0x3      ; 0046f31b | g_EditorBackgroundColors[3]
+    MOV dword ptr [0x016263d0],0x2      ; 0046f325 | g_EditorBackgroundColors[4]
+    MOV dword ptr [0x016263d4],0xfc     ; 0046f32f | g_EditorBackgroundColors[5]
+    MOV dword ptr [0x016263d8],0x4      ; 0046f339 | g_EditorBackgroundColors[6]
+    MOV dword ptr [0x016263dc],0x1      ; 0046f343 | g_EditorBackgroundColors[7]
     MOV dword ptr [0x016263e0],0x7      ; 0046f34d | g_EditorColorIndices
-    MOV dword ptr [0x016263e4],0xf8     ; 0046f357 | INT_016263e4
-    MOV dword ptr [0x016263e8],0xff     ; 0046f361 | INT_016263e8
-    MOV dword ptr [0x016263ec],0xff     ; 0046f36b | INT_016263ec
-    MOV dword ptr [0x016263f0],0xff     ; 0046f375 | INT_016263f0
-    MOV dword ptr [0x016263f4],0xff     ; 0046f37f | INT_016263f4
-    MOV dword ptr [0x016263f8],0x7      ; 0046f389 | INT_016263f8
-    MOV dword ptr [0x016263fc],0x7      ; 0046f393 | INT_016263fc
+    MOV dword ptr [0x016263e4],0xf8     ; 0046f357 | g_EditorColorIndices[1]
+    MOV dword ptr [0x016263e8],0xff     ; 0046f361 | g_EditorColorIndices[2]
+    MOV dword ptr [0x016263ec],0xff     ; 0046f36b | g_EditorColorIndices[3]
+    MOV dword ptr [0x016263f0],0xff     ; 0046f375 | g_EditorColorIndices[4]
+    MOV dword ptr [0x016263f4],0xff     ; 0046f37f | g_EditorColorIndices[5]
+    MOV dword ptr [0x016263f8],0x7      ; 0046f389 | g_EditorColorIndices[6]
+    MOV dword ptr [0x016263fc],0x7      ; 0046f393 | g_EditorColorIndices[7]
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046f39d
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0046f3a2

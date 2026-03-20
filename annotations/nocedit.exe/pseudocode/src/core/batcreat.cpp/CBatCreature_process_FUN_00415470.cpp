@@ -284,7 +284,7 @@ LAB_004158fb:
       pCVar6 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_ac,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                          INT_00822754);
+                          g_BatCreatureIndices[2]);
       pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          ((CDemonActor *)this_ptr,&local_40,pCVar6);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar6,fVar9,damage_info);

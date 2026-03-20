@@ -12,9 +12,9 @@
 ; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; Referenced Globals:
-;   int INT_02c6d0a0
-;   int INT_02c6d0b4
-;   int INT_02c6d0bc
+;   int[8] g_DraculaBrideIndices
+;   undefined4 g_DraculaBrideIndices[5]
+;   undefined4 g_DraculaBrideIndices[7]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
@@ -41,7 +41,7 @@ section .text
     RET                                 ; 0048637f
     PUSH EDI                            ; 00486380
         ;   Label: LAB_00486380
-    MOV ECX,dword ptr [0x02c6d0a0]      ; 00486381 | INT_02c6d0a0
+    MOV ECX,dword ptr [0x02c6d0a0]      ; 00486381 | g_DraculaBrideIndices
     PUSH ECX                            ; 00486387
     LEA EAX,[ESP + 0x14]                ; 00486388
     PUSH EAX                            ; 0048638c
@@ -60,7 +60,7 @@ section .text
     MOV dword ptr [EBX + 0x4],EDX       ; 004863ac
     MOV EDX,dword ptr [EAX + 0x8]       ; 004863af
     MOV dword ptr [EBX + 0x8],EDX       ; 004863b2
-    MOV EBP,dword ptr [0x02c6d0b4]      ; 004863b5 | INT_02c6d0b4
+    MOV EBP,dword ptr [0x02c6d0b4]      ; 004863b5 | g_DraculaBrideIndices[5]
         ;   Label: LAB_004863b5
     PUSH EBP                            ; 004863bb
     LEA EAX,[ESP + 0x20]                ; 004863bc
@@ -80,7 +80,7 @@ section .text
     MOV dword ptr [EDX + 0x4],ECX       ; 004863de
     MOV ECX,dword ptr [EAX + 0x8]       ; 004863e1
     MOV dword ptr [EDX + 0x8],ECX       ; 004863e4
-    MOV EAX,[0x02c6d0bc]                ; 004863e7 | INT_02c6d0bc
+    MOV EAX,[0x02c6d0bc]                ; 004863e7 | g_DraculaBrideIndices[7]
         ;   Label: LAB_004863e7
     PUSH EAX                            ; 004863ec
     LEA EAX,[ESP + 0x8]                 ; 004863ed

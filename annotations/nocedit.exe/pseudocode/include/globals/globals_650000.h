@@ -346,17 +346,7 @@ extern WatcomTypeInfo g_CHighPriestOfGardathTypeInfo;
 
 // char
 extern char g_SpaceCharacter;
-extern char g_ColonChar;
-extern char g_AsteriskChar;
 
 // int
 extern int g_CramInvalidMarker;
-
-// undefined1
-extern undefined1 DAT_006597a1;
-extern undefined1 DAT_006597a2;
-extern undefined1 DAT_006597a3;
-extern undefined1 DAT_006597a5;
-extern undefined1 DAT_006597a6;
-extern undefined1 DAT_006597a7;
 

@@ -34,6 +34,3 @@ extern int g_ChannelFFTTimestamps[8];
 extern uchar g_GlobalMP3DecoderInitialized;
 extern uchar g_GlobalMP3DecoderInitializedOther;
 
-// undefined4
-extern undefined4 DAT_03f5d97c;
-

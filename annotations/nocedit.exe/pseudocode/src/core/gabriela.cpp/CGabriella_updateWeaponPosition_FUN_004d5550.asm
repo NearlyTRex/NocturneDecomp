@@ -40,8 +40,8 @@
 ;   UVector3 UNION_UVector3_02d7b814
 ;   UVector3 UNION_UVector3_02d7b820
 ;   UVector3 UNION_UVector3_02d7b82c
-;   int INT_02d7b870
-;   int INT_02d7b88c
+;   undefined4 g_GabriellaIndices[10]
+;   undefined4 g_GabriellaIndices[17]
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
@@ -104,7 +104,7 @@ section .text
     PUSH EAX                            ; 004d55da
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 004d55db
         ;   XREF to: 005f54c0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV EDX,dword ptr [0x02d7b88c]      ; 004d55e0 | INT_02d7b88c
+    MOV EDX,dword ptr [0x02d7b88c]      ; 004d55e0 | g_GabriellaIndices[17]
     LEA EAX,[EDX*0x4 + 0x0]             ; 004d55e6
     SUB EAX,EDX                         ; 004d55ed
     SHL EAX,0x4                         ; 004d55ef
@@ -280,7 +280,7 @@ section .text
         ;   XREF to: 005f54c0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 004d5803
     LEA EAX,[EBP + 0xfffffd42]          ; 004d5806
-    MOV EDX,dword ptr [0x02d7b870]      ; 004d580c | INT_02d7b870
+    MOV EDX,dword ptr [0x02d7b870]      ; 004d580c | g_GabriellaIndices[10]
     PUSH EAX                            ; 004d5812
     LEA EAX,[EDX*0x4 + 0x0]             ; 004d5813
     SUB EAX,EDX                         ; 004d581a

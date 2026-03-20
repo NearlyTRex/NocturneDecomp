@@ -81,39 +81,16 @@ extern int g_SamplePointCount;
 extern int g_LodReplayMode;
 extern int g_LodGenerationStamp;
 extern int g_LodTempFaceStamp;
-extern int INT_02f33378;
-extern int INT_02f3337c;
-extern int INT_02f33380;
-extern int INT_02f33384;
-extern int INT_02f33388;
-extern int INT_02f3338c;
-extern int INT_02f33390;
-extern int INT_02f33394;
-extern int INT_02f33398;
-extern int INT_02f3339c;
-extern int INT_02f333a0;
-extern int INT_02f333a4;
-extern int INT_02f333a8;
-extern int INT_02f333b8;
-extern int INT_02f333bc;
-extern int INT_02f333c0;
-extern int INT_02f333c4;
 extern int g_MirrorInputVertexCount;
 extern int g_MirrorOutputVertexCount;
-extern int INT_02f37ec8;
-extern int INT_02f37ecc;
-extern int INT_02f37ed0;
-extern int INT_02f37ed4;
-extern int INT_02f37ed8;
-extern int INT_02f37edc;
-extern int INT_02f37ee0;
-extern int INT_02f37ee4;
-extern int INT_02f37ee8;
-extern int INT_02f37eec;
-extern int INT_02f37ef0;
-extern int INT_02f37ef4;
 extern int g_MoonCloudScrollX;
 extern int g_MoonCloudScrollY;
+
+// int[12]
+extern int g_MobsterIndices[12];
+
+// int[20]
+extern int g_MimicIndices[20];
 
 // int[5]
 extern int g_MobsterTauntCounters[5];

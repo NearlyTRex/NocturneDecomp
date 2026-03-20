@@ -585,7 +585,7 @@ section .text
     JZ 0x00525e54                       ; 00525dfd
         ;   XREF to: 00525e54 (CONDITIONAL_JUMP)  ; LAB_00525e54
     LEA EAX,[EBP + 0xffffff2a]          ; 00525dff
-    MOV EDX,dword ptr [0x02f37ecc]      ; 00525e05 | INT_02f37ecc
+    MOV EDX,dword ptr [0x02f37ecc]      ; 00525e05 | g_MobsterIndices[1]
     PUSH EAX                            ; 00525e0b
     LEA EAX,[EDX*0x4 + 0x0]             ; 00525e0c
     SUB EAX,EDX                         ; 00525e13
@@ -628,7 +628,7 @@ section .text
     JZ 0x00525b97                       ; 00525e81
         ;   XREF to: 00525b97 (CONDITIONAL_JUMP)  ; caseD_4
     LEA EAX,[EBP + 0xffffff2a]          ; 00525e87
-    MOV EDX,dword ptr [0x02f37ed0]      ; 00525e8d | INT_02f37ed0
+    MOV EDX,dword ptr [0x02f37ed0]      ; 00525e8d | g_MobsterIndices[2]
     PUSH EAX                            ; 00525e93
     LEA EAX,[EDX*0x4 + 0x0]             ; 00525e94
     SUB EAX,EDX                         ; 00525e9b

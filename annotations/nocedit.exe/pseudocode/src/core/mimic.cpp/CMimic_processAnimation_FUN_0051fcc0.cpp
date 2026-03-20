@@ -101,7 +101,7 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_pt
             (1.0 - ABS(fVar6) * (float)0.63661977238577705) * (float)25 +
             (float)30) {
           core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
-                    (pCVar1,INT_02f33378,&local_1a8);
+                    (pCVar1,g_MimicIndices[0],&local_1a8);
           local_4c.y = 0.7;
           pCVar9 = &local_1a8;
           pCVar10 = &local_178;
@@ -198,7 +198,7 @@ LAB_0051fd7d:
             if (1.0 <= fVar6) {
               fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
               core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                        (pCVar1,&local_ac,INT_02f33398);
+                        (pCVar1,&local_ac,g_MimicIndices[8]);
               local_ac.x._3_1_ = local_ac.x._3_1_ ^ 0x80;
               core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1e4);
               damage_info = &local_1e4;
@@ -265,7 +265,7 @@ LAB_0051fdb4:
       if (uVar7 < 2) {
         if ((this_ptr->base).base.is_on_ground != 0) {
           core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                    (pCVar1,&local_c4,INT_02f33394);
+                    (pCVar1,&local_c4,g_MimicIndices[7]);
           local_c4.x._3_1_ = local_c4.x._3_1_ ^ 0x80;
           (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                     ((CDemonActor *)this_ptr,&local_c4,1.0);
@@ -273,7 +273,7 @@ LAB_0051fdb4:
       }
       else if ((uVar7 == 7) && ((this_ptr->base).base.is_on_ground != 0)) {
         core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                  (pCVar1,&local_100,INT_02f33398);
+                  (pCVar1,&local_100,g_MimicIndices[8]);
         local_100.x._3_1_ = local_100.x._3_1_ ^ 0x80;
         (*((this_ptr->base).base.base.vtable._ub)->processFootstepAtOffset)
                   ((CDemonActor *)this_ptr,&local_100,1.0);

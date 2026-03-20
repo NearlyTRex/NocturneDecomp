@@ -35,22 +35,8 @@ extern char g_ClothBoneScreenshotFilename[20];
 
 // int
 extern int g_ClothBoneScreenshotCounter;
-extern int INT_0083b124;
-extern int INT_0083b128;
-extern int INT_0083b12c;
-extern int INT_0083b130;
-extern int INT_0083b134;
-extern int INT_0083b138;
-extern int INT_0083b13c;
-extern int INT_0083b140;
-extern int INT_0083b144;
-extern int INT_0083b148;
-extern int INT_0083b14c;
-extern int INT_0083b150;
-extern int INT_0083b154;
-extern int INT_0083b158;
-extern int INT_0083b15c;
-extern int INT_0083b160;
-extern int INT_0083b164;
 extern int g_CramVisualizationUpdateCounter;
+
+// int[17]
+extern int g_ColonelIndices[17];
 

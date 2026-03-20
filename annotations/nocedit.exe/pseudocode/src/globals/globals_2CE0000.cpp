@@ -28,17 +28,13 @@ CVector3f g_ClipOutputVertices[16] = {};
 byte g_FloorCacheValid = {};
 
 // char[1024]
+char g_MessageFormatBuffer[1024] = {};
 char g_DialogMessageBuffer_02cef130[1024] = {};
+char g_ErrorMessageBuffer_02cef530[1024] = {};
 char g_StatusMessageBuffer[1024] = {};
 
 // char[2048]
 char g_ConfirmationMessageBuffer[2048] = {};
-
-// char[256]
-char g_ErrorMessageBuffer_02cef530[256] = {};
-
-// char[512]
-char g_MessageFormatBuffer[512] = {};
 
 // int
 int INT_02cee5ac = {};

@@ -23,7 +23,7 @@
 ;   undefined4 g_CapturedFaces[1].texture_index
 ;   SFace*[5000] g_CapturedFacePointers
 ;   undefined4 g_CapturedFacePointers[1]
-;   SMRGLTextureBasic[100] g_CapturedTextureArray
+;   SMRGLTextureBasic[300] g_CapturedTextureArray
 ;
 ; Called Functions:
 ;   crt_stdlib.c__qsort_FUN_005fdf38

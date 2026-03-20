@@ -29,7 +29,7 @@
 ;   CTerrain* g_CTerrainPtr = 03f8749c
 ;   CWater* g_CWaterPtr = 03f875e0
 ;   CDemonRenderer g_CDemonRendererInstance
-;   SMRGLTextureBasic g_SkyDomeTextureData
+;   SMRGLTextureBasic[24] g_SkyDomeTextureData
 ;   int g_UseExternalRenderer
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;   CKeyFramedModel g_CKeyFramedModelInstance

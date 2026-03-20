@@ -49,24 +49,6 @@ float g_ScriptTimeScale = {};
 
 // int
 int g_QuantizeCurrentLineNumber = {};
-int INT_0310615c = {};
-int INT_03106160 = {};
-int INT_03106164 = {};
-int INT_03106168 = {};
-int INT_0310616c = {};
-int INT_03106170 = {};
-int INT_03106174 = {};
-int INT_03106178 = {};
-int INT_0310617c = {};
-int INT_03106180 = {};
-int INT_03106184 = {};
-int INT_03106188 = {};
-int INT_0310618c = {};
-int INT_03106190 = {};
-int INT_03106194 = {};
-int INT_03106198 = {};
-int INT_0310619c = {};
-int INT_031061a0 = {};
 int g_PreviousLetterboxMode = {};
 int g_ScriptEventsEnabled = {};
 int g_ScriptInputFlag = {};
@@ -76,4 +58,7 @@ int g_CurrentEditingColumn = {};
 int g_CurrentEditingLine = {};
 int g_SelectionAnchorColumn = {};
 int g_SelectionAnchorLine = {};
+
+// int[18]
+int g_ScatIndices[18] = {};
 

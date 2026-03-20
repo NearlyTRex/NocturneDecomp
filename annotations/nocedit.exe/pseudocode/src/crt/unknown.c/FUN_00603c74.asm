@@ -8,9 +8,9 @@
 ;   crt_unknown.c_CondCallDoNothing_FUN_00603ccc at 00603d3a
 ;
 ; Referenced Globals:
-;   int DAT_00684f30 = 0x0
-;   int DAT_00684f34 = -0x60000000
-;   undefined2 DAT_00684f38
+;   int INT_00684f30 = 0x0
+;   int INT_00684f34 = -0x60000000
+;   short SHORT_00684f38 = 0x4002
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_0060445e
@@ -31,7 +31,7 @@ section .text
     JL 0x00603c8d                       ; 00603c86
         ;   XREF to: 00603c8d (CONDITIONAL_JUMP)  ; LAB_00603c8d
     MOV EDI,0x2000                      ; 00603c88
-    MOV ESI,0x684f30                    ; 00603c8d | DAT_00684f30
+    MOV ESI,0x684f30                    ; 00603c8d | INT_00684f30
         ;   Label: LAB_00603c8d
     JMP 0x00603cc3                      ; 00603c92
         ;   XREF to: 00603cc3 (UNCONDITIONAL_JUMP)  ; LAB_00603cc3
@@ -39,12 +39,12 @@ section .text
         ;   Label: LAB_00603c94
     JZ 0x00603cbe                       ; 00603c99
         ;   XREF to: 00603cbe (CONDITIONAL_JUMP)  ; LAB_00603cbe
-    MOV AX,word ptr [ESI + 0x8]         ; 00603c9b | DAT_00684f38
+    MOV AX,word ptr [ESI + 0x8]         ; 00603c9b | SHORT_00684f38
     MOV word ptr [EBP + -0x10],AX       ; 00603c9f
-    MOV EAX,dword ptr [ESI + 0x4]       ; 00603ca3 | DAT_00684f34
+    MOV EAX,dword ptr [ESI + 0x4]       ; 00603ca3 | INT_00684f34
     MOV dword ptr [EBP + -0x14],EAX     ; 00603ca6
     MOV EBX,dword ptr [EBP + 0x8]       ; 00603ca9
-    MOV EAX,dword ptr [ESI]             ; 00603cac | DAT_00684f30
+    MOV EAX,dword ptr [ESI]             ; 00603cac | INT_00684f30
     LEA EDX,[EBP + -0x18]               ; 00603cae
     MOV dword ptr [EBP + -0x18],EAX     ; 00603cb1
     MOV EAX,EBX                         ; 00603cb4

@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00641444 = 0.000100000000000000
-;   int INT_0310619c
+;   undefined4 g_ScatIndices[16]
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
@@ -167,7 +167,7 @@ section .text
     FLD float ptr [ESP + 0x28]          ; 0055843a
     ADD ESP,0xc                         ; 0055843e
     PUSH 0x59ddb0                       ; 00558441
-    MOV EDX,dword ptr [0x0310619c]      ; 00558446 | INT_0310619c
+    MOV EDX,dword ptr [0x0310619c]      ; 00558446 | g_ScatIndices[16]
     PUSH EDX                            ; 0055844c
     PUSH dword ptr [ESP + 0x10]         ; 0055844d
     FSTP float ptr [ESP + 0x20]         ; 00558451

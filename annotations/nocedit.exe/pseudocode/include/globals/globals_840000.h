@@ -11,8 +11,8 @@
 // SCramRectangle*[62500]
 extern SCramRectangle* g_CramCandidateRectangles[62500];
 
-// SCramRectangle[50]
-extern SCramRectangle g_CramRectangles[50];
+// SCramRectangle[1000]
+extern SCramRectangle g_CramRectangles[1000];
 
 // int
 extern int g_CramTextureCount;

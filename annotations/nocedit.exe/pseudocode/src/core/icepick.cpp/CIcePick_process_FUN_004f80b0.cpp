@@ -315,7 +315,7 @@ LAB_004f82f8:
   if (EVar6 == DEATH_STATE_ALIVE) {
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
     fVar13 = this_ptr->head_look_blend_weight;
-    iVar10 = INT_02db8970;
+    iVar10 = g_IcePickIndices[0];
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_look_euler,&CStack_94);
     CStack_84.w = CStack_94.w;
     puVar11 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);

@@ -17,8 +17,8 @@
 ;   float FLOAT_00645882 = 0.5
 ;   float FLOAT_00645886 = -0.5
 ;   float FLOAT_0064588a = -4
-;   int INT_03114210
-;   int INT_03114214
+;   undefined4 g_SentinelIndices[1]
+;   undefined4 g_SentinelIndices[2]
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
@@ -43,7 +43,7 @@ section .text
     PUSH ESI                            ; 00568b83
         ;   Label: LAB_00568b83
     PUSH EBX                            ; 00568b84
-    MOV EDX,dword ptr [0x03114210]      ; 00568b85 | INT_03114210
+    MOV EDX,dword ptr [0x03114210]      ; 00568b85 | g_SentinelIndices[1]
     LEA EAX,[EDX*0x4 + 0x0]             ; 00568b8b
     MOV ESI,dword ptr [ESP + 0x4c]      ; 00568b92
     SUB EAX,EDX                         ; 00568b96
@@ -56,7 +56,7 @@ section .text
     PUSH EAX                            ; 00568bad
     CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 00568bae
         ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
-    MOV EDX,dword ptr [0x03114214]      ; 00568bb3 | INT_03114214
+    MOV EDX,dword ptr [0x03114214]      ; 00568bb3 | g_SentinelIndices[2]
     MOV EBX,EAX                         ; 00568bb9
     LEA EAX,[EDX*0x4 + 0x0]             ; 00568bbb
     SUB EAX,EDX                         ; 00568bc2

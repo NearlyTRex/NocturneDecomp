@@ -344,7 +344,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00415757
     ADD ESP,0x8                         ; 0041575a
     LEA EAX,[EBP + 0xffffff4e]          ; 0041575d
-    MOV EDX,dword ptr [0x00822754]      ; 00415763 | INT_00822754
+    MOV EDX,dword ptr [0x00822754]      ; 00415763 | g_BatCreatureIndices[2]
     PUSH EAX                            ; 00415769
     LEA EAX,[EDX*0x4 + 0x0]             ; 0041576a
     MOV dword ptr [EBP + -0x7e],EBX     ; 00415771

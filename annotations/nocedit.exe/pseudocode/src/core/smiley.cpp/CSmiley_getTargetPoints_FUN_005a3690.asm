@@ -14,11 +14,11 @@
 ; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; Referenced Globals:
-;   int INT_03f48fa0
-;   int INT_03f48fb4
-;   int INT_03f48fb8
-;   int INT_03f48fc4
-;   int INT_03f48fcc
+;   int[12] g_SmileyIndices
+;   undefined4 g_SmileyIndices[5]
+;   undefined4 g_SmileyIndices[6]
+;   undefined4 g_SmileyIndices[9]
+;   undefined4 g_SmileyIndices[11]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
@@ -45,7 +45,7 @@ section .text
     RET                                 ; 005a36af
     PUSH EBX                            ; 005a36b0
         ;   Label: LAB_005a36b0
-    MOV ECX,dword ptr [0x03f48fa0]      ; 005a36b1 | INT_03f48fa0
+    MOV ECX,dword ptr [0x03f48fa0]      ; 005a36b1 | g_SmileyIndices
     PUSH ECX                            ; 005a36b7
     LEA EAX,[ESP + 0x20]                ; 005a36b8
     PUSH EAX                            ; 005a36bc
@@ -64,7 +64,7 @@ section .text
     MOV dword ptr [ESI + 0x4],EDX       ; 005a36dc
     MOV EDX,dword ptr [EAX + 0x8]       ; 005a36df
     MOV dword ptr [ESI + 0x8],EDX       ; 005a36e2
-    MOV EBP,dword ptr [0x03f48fb4]      ; 005a36e5 | INT_03f48fb4
+    MOV EBP,dword ptr [0x03f48fb4]      ; 005a36e5 | g_SmileyIndices[5]
         ;   Label: LAB_005a36e5
     PUSH EBP                            ; 005a36eb
     LEA EAX,[ESP + 0x2c]                ; 005a36ec
@@ -88,7 +88,7 @@ section .text
     MOV dword ptr [EAX + 0x4],ECX       ; 005a371b
     MOV ECX,dword ptr [EDX + 0x8]       ; 005a371e
     MOV dword ptr [EAX + 0x8],ECX       ; 005a3721
-    MOV EAX,[0x03f48fb8]                ; 005a3724 | INT_03f48fb8
+    MOV EAX,[0x03f48fb8]                ; 005a3724 | g_SmileyIndices[6]
         ;   Label: LAB_005a3724
     PUSH EAX                            ; 005a3729
     LEA EAX,[ESP + 0x8]                 ; 005a372a
@@ -113,7 +113,7 @@ section .text
     MOV dword ptr [EAX + 0x4],ECX       ; 005a375a
     MOV ECX,dword ptr [EDX + 0x8]       ; 005a375d
     MOV dword ptr [EAX + 0x8],ECX       ; 005a3760
-    MOV EDX,dword ptr [0x03f48fc4]      ; 005a3763 | INT_03f48fc4
+    MOV EDX,dword ptr [0x03f48fc4]      ; 005a3763 | g_SmileyIndices[9]
         ;   Label: LAB_005a3763
     PUSH EDX                            ; 005a3769
     LEA EAX,[ESP + 0x14]                ; 005a376a
@@ -138,7 +138,7 @@ section .text
     MOV dword ptr [EAX + 0x4],ECX       ; 005a379a
     MOV ECX,dword ptr [EDX + 0x8]       ; 005a379d
     MOV dword ptr [EAX + 0x8],ECX       ; 005a37a0
-    MOV ECX,dword ptr [0x03f48fcc]      ; 005a37a3 | INT_03f48fcc
+    MOV ECX,dword ptr [0x03f48fcc]      ; 005a37a3 | g_SmileyIndices[11]
         ;   Label: LAB_005a37a3
     PUSH ECX                            ; 005a37a9
     LEA EAX,[ESP + 0x38]                ; 005a37aa

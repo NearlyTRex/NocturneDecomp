@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   SMRGLTextureBasic g_SkyDomeTextureData
+;   SMRGLTextureBasic[24] g_SkyDomeTextureData
 ;   CVector3i CVector3i_02ca0388
 ;   undefined4 CVector3i_02ca0388.y
 ;   undefined4 CVector3i_02ca0388.z

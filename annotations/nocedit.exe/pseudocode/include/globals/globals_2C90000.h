@@ -21,8 +21,8 @@ extern CKeyFramedModelInstance CKeyFramedModelInstance_02c9b170;
 // SFace*[5000]
 extern SFace* g_CapturedFacePointers[5000];
 
-// SMRGLTextureBasic[100]
-extern SMRGLTextureBasic g_CapturedTextureArray[100];
+// SMRGLTextureBasic[300]
+extern SMRGLTextureBasic g_CapturedTextureArray[300];
 
 // int[5000]
 extern int g_VertexIdRegistry[5000];

@@ -5,6 +5,7 @@
 #include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonRenderer.h"
+#include "types/classes/CVector3f.h"
 #include "types/structs/SEdgeTableEntry.h"
 #include "types/structs/SFace.h"
 #include "types/structs/SFreaky.h"
@@ -23,6 +24,11 @@ extern CDemonActorType g_CDraculaBrideClassInfo;
 // CDemonRenderer
 extern CDemonRenderer g_CDemonRendererInstance;
 
+// CVector3f
+extern CVector3f CVector3f_02c6d040;
+extern CVector3f CVector3f_02c6d04c;
+extern CVector3f CVector3f_02c6d058;
+
 // SEdgeTableEntry[40]
 extern SEdgeTableEntry g_GlobalEdgeTable[40];
 
@@ -36,15 +42,6 @@ extern SFreaky SFreaky_ARRAY_02c6d0c0[6];
 extern SSoftwareEdge g_EdgeInterpolationArray[16];
 
 // float
-extern float FLOAT_02c6d040;
-extern float FLOAT_02c6d044;
-extern float FLOAT_02c6d048;
-extern float FLOAT_02c6d04c;
-extern float FLOAT_02c6d050;
-extern float FLOAT_02c6d054;
-extern float FLOAT_02c6d058;
-extern float FLOAT_02c6d05c;
-extern float FLOAT_02c6d060;
 extern float g_DashAnimationAccumulator;
 extern float g_DashAnimationOffset;
 extern float g_DashAnimationAccumulatorOther;
@@ -55,14 +52,6 @@ extern int g_RenderTriangleEdgeCount;
 extern int g_RenderTriangleMinScanlineY;
 extern int g_RenderTriangleMaxScanlineY;
 extern int g_RasterizerDepthBias;
-extern int INT_02c6d0a0;
-extern int INT_02c6d0a4;
-extern int INT_02c6d0a8;
-extern int INT_02c6d0ac;
-extern int INT_02c6d0b0;
-extern int INT_02c6d0b4;
-extern int INT_02c6d0b8;
-extern int INT_02c6d0bc;
 extern int g_DashAnimationLastFrame;
 extern int g_LastAnimationTimerValue;
 extern int g_CurrentDrawColor;
@@ -81,4 +70,7 @@ extern int g_CaptureTextureCount;
 
 // int[16]
 extern int g_VertexIndexBuffer[16];
+
+// int[8]
+extern int g_DraculaBrideIndices[8];
 

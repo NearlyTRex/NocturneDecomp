@@ -24,7 +24,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Error_00623018
-;   char[256] g_ErrorMessageBuffer_02cef530
+;   char[1024] g_ErrorMessageBuffer_02cef530
 ;   int g_ErrorTextColor
 ;
 ; Called Functions:

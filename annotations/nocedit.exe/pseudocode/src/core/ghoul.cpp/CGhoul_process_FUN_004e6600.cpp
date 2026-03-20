@@ -271,9 +271,9 @@ LAB_004e6a5f:
     case 0xc:
       core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
                 ((CDeformableModelInstance *)local_18);
-      iVar9 = INT_02d83300;
+      iVar9 = g_GhoulIndices[1];
       if (iVar7 == 0xc) {
-        iVar9 = INT_02d83304;
+        iVar9 = g_GhoulIndices[2];
       }
       pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                           ((CDeformableModelInstance *)local_18,&local_1e0,iVar9);
@@ -290,7 +290,7 @@ LAB_004e6a5f:
       core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
                 ((CDeformableModelInstance *)pCVar11);
       pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                          ((CDeformableModelInstance *)pCVar11,&local_1b0,INT_02d832fc);
+                          ((CDeformableModelInstance *)pCVar11,&local_1b0,g_GhoulIndices[0]);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_228,pCVar12);
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
@@ -308,7 +308,7 @@ LAB_004e6a5f:
       core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
                 ((CDeformableModelInstance *)pCVar11);
       pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                          ((CDeformableModelInstance *)pCVar11,&local_1ec,INT_02d832fc);
+                          ((CDeformableModelInstance *)pCVar11,&local_1ec,g_GhoulIndices[0]);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_15c,pCVar12);
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
@@ -665,7 +665,7 @@ LAB_004e7576:
                                   (&local_114,(CVector3f *)&INT_02d832b4,
                                    (CMatrix3x4f *)
                                    (this_ptr->base).base.model.bone_transform.bone_world_matrices
-                                   [INT_02d83304].m);
+                                   [g_GhoulIndices[2]].m);
               pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                                   ((CDemonActor *)this_ptr,&local_1bc,pCVar12);
               iVar9 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880
@@ -852,7 +852,7 @@ LAB_004e7d9a:
                                 (local_210,(CVector3f *)&INT_02d832a8,
                                  (CMatrix3x4f *)
                                  (this_ptr->base).base.model.bone_transform.bone_world_matrices
-                                 [INT_02d83300].m);
+                                 [g_GhoulIndices[1]].m);
             pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                                 ((CDemonActor *)this_ptr,&local_21c,pCVar12);
             iVar9 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880
@@ -984,7 +984,7 @@ LAB_004e6754:
     local_5c = 1.0 - fVar23 * fVar23 * fVar23;
     local_14 = local_60;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-              (this_ptr_00,this_ptr->flinch_motion_index,local_60,local_5c,INT_02d83320,
+              (this_ptr_00,this_ptr->flinch_motion_index,local_60,local_5c,g_GhoulIndices[9],
                core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
     fVar23 = this_ptr->flinch_blend_weight - delta_time / 0.7f;
     this_ptr->flinch_blend_weight = fVar23;
@@ -1013,24 +1013,24 @@ LAB_004e6754:
     if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[9]] == 0) {
       fVar23 = 0.5;
       iVar9 = this_ptr->part_indices[9];
-      bone_index = INT_02d83324;
+      bone_index = g_GhoulIndices[10];
     }
     else {
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                ((CCharacter *)this_ptr,this_ptr->part_indices[0],INT_02d83310,0.2);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[0],g_GhoulIndices[5],0.2);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],INT_02d83308,0.2);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],g_GhoulIndices[3],0.2);
       }
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                ((CCharacter *)this_ptr,this_ptr->part_indices[2],INT_02d83314,0.2);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[2],g_GhoulIndices[6],0.2);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_0042b760
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],INT_02d8330c,0.2);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],g_GhoulIndices[4],0.2);
       }
       fVar23 = 0.7;
       iVar9 = this_ptr->part_indices[10];
-      bone_index = INT_02d832fc;
+      bone_index = g_GhoulIndices[0];
     }
     core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_0042b810
               ((CCharacter *)this_ptr,iVar9,bone_index,fVar23);

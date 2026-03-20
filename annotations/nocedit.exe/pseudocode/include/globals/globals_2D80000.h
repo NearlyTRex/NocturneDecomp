@@ -76,35 +76,12 @@ extern int g_IrisFadeType;
 extern int g_IrisFadeCenterX;
 extern int g_IrisFadeCenterY;
 extern int g_ProfileStartTime;
-extern int INT_02d83200;
-extern int INT_02d83204;
-extern int INT_02d83208;
-extern int INT_02d8320c;
-extern int INT_02d83210;
-extern int INT_02d83214;
-extern int INT_02d83218;
-extern int INT_02d8321c;
-extern int INT_02d83220;
-extern int INT_02d83224;
-extern int INT_02d83228;
-extern int INT_02d8322c;
 extern int INT_02d832a8;
 extern int INT_02d832ac;
 extern int INT_02d832b0;
 extern int INT_02d832b4;
 extern int INT_02d832b8;
 extern int INT_02d832bc;
-extern int INT_02d832fc;
-extern int INT_02d83300;
-extern int INT_02d83304;
-extern int INT_02d83308;
-extern int INT_02d8330c;
-extern int INT_02d83310;
-extern int INT_02d83314;
-extern int INT_02d83318;
-extern int INT_02d8331c;
-extern int INT_02d83320;
-extern int INT_02d83324;
 extern int g_ParticleCameraRotation;
 extern int INT_02d83394;
 extern int INT_02d83398;
@@ -115,10 +92,12 @@ extern int g_BloodParticleIndex;
 extern int g_BloodSplatIndex;
 extern int g_BloodSplatCount;
 
+// int[11]
+extern int g_GhoulIndices[11];
+
+// int[12]
+extern int g_GargoyleIndices[12];
+
 // int[201]
 extern int g_MasterLightStateSaveBuffer[201];
-
-// undefined1
-extern undefined1 DAT_02d831d6;
-extern undefined1 DAT_02d831eb;
 

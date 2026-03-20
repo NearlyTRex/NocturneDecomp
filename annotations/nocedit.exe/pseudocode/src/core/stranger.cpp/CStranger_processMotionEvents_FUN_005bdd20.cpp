@@ -45,9 +45,9 @@ void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005bdd20(CStran
         if (bone_index < 2) {
           if (bone_index == 1) {
 LAB_005bdd85:
-            iVar5 = INT_03f6bae8;
+            iVar5 = g_StrangerIndices[7];
             if (bone_index == 7) {
-              iVar5 = INT_03f6baec;
+              iVar5 = g_StrangerIndices[8];
             }
             core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                       (this_ptr_04,&local_5c,iVar5);
@@ -177,7 +177,7 @@ LAB_005bde44:
         local_18 = this_ptr_03;
         if (this_ptr_03 != (CEnemy *)0x0) {
           pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                             (this_ptr_04,&local_44,INT_03f6bafc);
+                             (this_ptr_04,&local_44,g_StrangerIndices[0xc]);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,local_38,pCVar4);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_b0);

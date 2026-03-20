@@ -24,7 +24,7 @@
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   ushort[256] g_ColorTable16
-;   uint[256] g_ColorTable32
+;   uint[448] g_ColorTable32
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight

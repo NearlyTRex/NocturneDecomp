@@ -41,9 +41,9 @@
 ;   CFireEffect g_CFireEffectInstance
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.collision_normal.x
-;   int INT_03f6bacc
-;   int INT_03f6bb04
-;   int INT_03f6bb24
+;   int[23] g_StrangerIndices
+;   undefined4 g_StrangerIndices[14]
+;   undefined4 g_StrangerIndices[22]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
@@ -83,7 +83,7 @@ section .text
     TEST EAX,EAX                        ; 005c316e
     JZ 0x005c3547                       ; 005c3170
         ;   XREF to: 005c3547 (CONDITIONAL_JUMP)  ; LAB_005c3547
-    MOV EAX,[0x03f6bb24]                ; 005c3176 | INT_03f6bb24
+    MOV EAX,[0x03f6bb24]                ; 005c3176 | g_StrangerIndices[22]
     CMP dword ptr [EBX + EAX*0x4 + 0x2298],0x0 ; 005c317b
     JNZ 0x005c354f                      ; 005c3183
         ;   XREF to: 005c354f (CONDITIONAL_JUMP)  ; LAB_005c354f
@@ -212,7 +212,7 @@ section .text
     CMP EAX,dword ptr [EBX + 0x24f8]    ; 005c32ce
     JZ 0x005c33d7                       ; 005c32d4
         ;   XREF to: 005c33d7 (CONDITIONAL_JUMP)  ; LAB_005c33d7
-    MOV EAX,[0x03f6bb24]                ; 005c32da | INT_03f6bb24
+    MOV EAX,[0x03f6bb24]                ; 005c32da | g_StrangerIndices[22]
     CMP dword ptr [EBX + EAX*0x4 + 0x2298],0x0 ; 005c32df
     JZ 0x005c33d7                       ; 005c32e7
         ;   XREF to: 005c33d7 (CONDITIONAL_JUMP)  ; LAB_005c33d7
@@ -297,7 +297,7 @@ section .text
         ;   Label: LAB_005c33d7
     JZ 0x005c3508                       ; 005c33de
         ;   XREF to: 005c3508 (CONDITIONAL_JUMP)  ; LAB_005c3508
-    MOV EAX,[0x03f6bb24]                ; 005c33e4 | INT_03f6bb24
+    MOV EAX,[0x03f6bb24]                ; 005c33e4 | g_StrangerIndices[22]
     CMP dword ptr [EBX + EAX*0x4 + 0x2298],0x0 ; 005c33e9
     JZ 0x005c3508                       ; 005c33f1
         ;   XREF to: 005c3508 (CONDITIONAL_JUMP)  ; LAB_005c3508
@@ -336,7 +336,7 @@ section .text
     MOV dword ptr [EBP + 0x2e],ESI      ; 005c3465
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 005c3468
         ;   XREF to: 005f54c0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV ESI,dword ptr [0x03f6bacc]      ; 005c346d | INT_03f6bacc
+    MOV ESI,dword ptr [0x03f6bacc]      ; 005c346d | g_StrangerIndices
     LEA EAX,[ESI*0x4 + 0x0]             ; 005c3473
     SUB EAX,ESI                         ; 005c347a
     SHL EAX,0x4                         ; 005c347c
@@ -394,7 +394,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 005c3500
         ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005c3505
-    MOV EAX,[0x03f6bb24]                ; 005c3508 | INT_03f6bb24
+    MOV EAX,[0x03f6bb24]                ; 005c3508 | g_StrangerIndices[22]
         ;   Label: LAB_005c3508
     CMP dword ptr [EBX + EAX*0x4 + 0x2298],0x0 ; 005c350d
     JNZ 0x005c3542                      ; 005c3515
@@ -447,7 +447,7 @@ section .text
     MOV dword ptr [EBP + -0xa],ECX      ; 005c3587
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 005c358a
         ;   XREF to: 005f54c0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV ESI,dword ptr [0x03f6bacc]      ; 005c358f | INT_03f6bacc
+    MOV ESI,dword ptr [0x03f6bacc]      ; 005c358f | g_StrangerIndices
     LEA EAX,[ESI*0x4 + 0x0]             ; 005c3595
     SUB EAX,ESI                         ; 005c359c
     MOV ESI,EAX                         ; 005c359e
@@ -554,7 +554,7 @@ section .text
     MOV dword ptr [EBP + 0x3e],ECX      ; 005c36bc
     CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 005c36bf
         ;   XREF to: 005f54c0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-    MOV ESI,dword ptr [0x03f6bb04]      ; 005c36c4 | INT_03f6bb04
+    MOV ESI,dword ptr [0x03f6bb04]      ; 005c36c4 | g_StrangerIndices[14]
     LEA EAX,[ESI*0x4 + 0x0]             ; 005c36ca
     SUB EAX,ESI                         ; 005c36d1
     SHL EAX,0x4                         ; 005c36d3

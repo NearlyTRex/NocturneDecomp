@@ -2,18 +2,17 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 278
-Filtered out (inside named data): 223
+Total DAT_ globals found: 275
+Filtered out (inside named data): 241
 Immediate constants (not real globals): 2
-Real globals remaining: 53
+Real globals remaining: 32
 
 Current type breakdown:
-  undefined4                     41
-  undefined1                     8
-  int                            2
-  undefined2                     2
+  undefined4                     30
+  undefined1                     1
+  undefined2                     1
 
-DAT_ globals with type hints: 12 / 53
+DAT_ globals with type hints: 9 / 32
 
 --------------------------------------------------------------------------------
 HIGH CONFIDENCE INFERENCES (4)
@@ -23,20 +22,14 @@ HIGH CONFIDENCE INFERENCES (4)
     nearby: g_SpecialDeviceCleanupFunc (SPECIAL_DEVICE_CLEANUP_FUNC*) at offset +4
   DAT_006874d4                    addr=006874d4    current=undefined4      likely=double          refs=1
     nearby: PTR_FUN_006874e4 (void*) at offset -16
-  DAT_02d831d6                    addr=02d831d6    current=undefined1      likely=byte            refs=3
+  DAT_02d831d6                    addr=02d831d6    current=undefined4      likely=byte            refs=3
     nearby: g_InputHistory (char[20]) at offset -1
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE INFERENCES (8)
+MEDIUM CONFIDENCE INFERENCES (5)
 --------------------------------------------------------------------------------
-  DAT_006597a1                    addr=006597a1    current=undefined1      likely=byte            refs=1
-    nearby: g_ColonChar (char) at offset +1
-  DAT_006597a5                    addr=006597a5    current=undefined1      likely=byte            refs=1
-    nearby: g_AsteriskChar (char) at offset +1
   DAT_00665f28                    addr=00665f28    current=undefined4      likely=byte            refs=2
     nearby: g_PositiveInfinity (double) at offset -8
-  DAT_00684f38                    addr=00684f38    current=undefined2      likely=short           refs=1
-    nearby: g_SpecialExitHandler (int) at offset +12
   DAT_00685030                    addr=00685030    current=undefined4      likely=byte            refs=2
     nearby: PTR_FUN_0068502b (void*) at offset +5
   DAT_006852db                    addr=006852db    current=undefined1      likely=byte            refs=1
@@ -51,21 +44,15 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (41)
+NO TYPE HINTS (23)
 --------------------------------------------------------------------------------
   DAT_00412b41                    addr=00412b41    type=undefined4      refs=1
   DAT_0051a3f4                    addr=0051a3f4    type=undefined4      refs=1  nearby: PTR_caseD_5_0051a3ec at +8
-  DAT_006597a2                    addr=006597a2    type=undefined1      refs=1  nearby: g_ColonChar at +2
-  DAT_006597a3                    addr=006597a3    type=undefined1      refs=1  nearby: g_AsteriskChar at -1
-  DAT_006597a6                    addr=006597a6    type=undefined1      refs=1  nearby: g_AsteriskChar at +2
-  DAT_006597a7                    addr=006597a7    type=undefined1      refs=1  nearby: g_AsteriskChar at +3
   DAT_00665f3a                    addr=00665f3a    type=undefined4      refs=1  nearby: g_DaysInMonth_Normal at +2
   DAT_00665f50                    addr=00665f50    type=undefined4      refs=2  nearby: g_DaysInMonth_Leap at -2
   DAT_00679d50                    addr=00679d50    type=undefined4      refs=1  nearby: switchdataD_00679d54 at -4
   DAT_00679d94                    addr=00679d94    type=undefined4      refs=1  nearby: g_PodFileActionNames at -12
   DAT_0067b718                    addr=0067b718    type=undefined4      refs=1  nearby: g_ChapterMissionFiles at -56
-  DAT_00684f30                    addr=00684f30    type=int             refs=1  nearby: g_SpecialExitHandler at +4
-  DAT_00684f34                    addr=00684f34    type=int             refs=1  nearby: g_SpecialExitHandler at +8
   DAT_00685094                    addr=00685094    type=undefined4      refs=1  nearby: g_DstStartRule.rule_type at +4
   DAT_006850a4                    addr=006850a4    type=undefined4      refs=1  nearby: g_DstTransitionHour at +4
   DAT_006850a8                    addr=006850a8    type=undefined4      refs=1  nearby: g_DstTransitionHour at +8
@@ -79,18 +66,6 @@ NO TYPE HINTS (41)
   DAT_006e6f69                    addr=006e6f69    type=undefined4      refs=1
   DAT_00747874                    addr=00747874    type=undefined4      refs=1
   DAT_00800000                    addr=00800000    type=undefined4      refs=12
-  DAT_009e5d74                    addr=009e5d74    type=undefined4      refs=1
-  DAT_009e5d80                    addr=009e5d80    type=undefined4      refs=1
-  DAT_009e5d84                    addr=009e5d84    type=undefined4      refs=1
-  DAT_009e5d88                    addr=009e5d88    type=undefined4      refs=1
-  DAT_009e6c74                    addr=009e6c74    type=undefined4      refs=1
-  DAT_02c14d80                    addr=02c14d80    type=undefined4      refs=1  nearby: g_PolyDataConversionBuffer+0x3c at +20
-  DAT_02c14d84                    addr=02c14d84    type=undefined4      refs=1  nearby: g_PolyDataConversionBuffer+0x3c at +24
-  DAT_02c14d88                    addr=02c14d88    type=undefined4      refs=1  nearby: g_PolyDataConversionBuffer+0x3c at +28
-  DAT_02c14d8c                    addr=02c14d8c    type=undefined4      refs=1  nearby: g_PolyDataConversionBuffer+0x3c at +32
-  DAT_02c14d90                    addr=02c14d90    type=undefined4      refs=1  nearby: g_PolyDataConversionBuffer+0x3c at +36
-  DAT_02cf0df8                    addr=02cf0df8    type=undefined4      refs=1  nearby: g_TextWrapBuffer at +200
-  DAT_02d7b9e0                    addr=02d7b9e0    type=undefined4      refs=1  nearby: g_WrappedTextBuffer at +256
   DAT_03f5d97c                    addr=03f5d97c    type=undefined4      refs=1  nearby: g_SoundTestErrorBuffer at +220
   DAT_03f9b8d0                    addr=03f9b8d0    type=undefined4      refs=1  nearby: g_TlsDataBase at +16
   DAT_54524143                    addr=54524143    type=undefined4      refs=1
@@ -100,34 +75,17 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
 --------------------------------------------------------------------------------
   DAT_00002424                    addr=00002424    refs=21    type=undefined4      likely=float
   DAT_00800000                    addr=00800000    refs=12    type=undefined4    
-  DAT_02d831d6                    addr=02d831d6    refs=3     type=undefined1      likely=byte  nearby: g_InputHistory(-1)
+  DAT_02d831d6                    addr=02d831d6    refs=3     type=undefined4      likely=byte  nearby: g_InputHistory(-1)
   DAT_00685030                    addr=00685030    refs=2     type=undefined4      likely=byte  nearby: PTR_FUN_0068502b(+5)
   DAT_00665f28                    addr=00665f28    refs=2     type=undefined4      likely=byte  nearby: g_PositiveInfinity(-8)
   DAT_00665f50                    addr=00665f50    refs=2     type=undefined4      nearby: g_DaysInMonth_Leap(-2)
   DAT_00412b41                    addr=00412b41    refs=1     type=undefined4    
   DAT_006e6f69                    addr=006e6f69    refs=1     type=undefined4    
-  DAT_009e5d80                    addr=009e5d80    refs=1     type=undefined4    
-  DAT_009e5d84                    addr=009e5d84    refs=1     type=undefined4    
-  DAT_009e5d88                    addr=009e5d88    refs=1     type=undefined4    
-  DAT_009e5d74                    addr=009e5d74    refs=1     type=undefined4    
-  DAT_009e6c74                    addr=009e6c74    refs=1     type=undefined4    
-  DAT_02c14d80                    addr=02c14d80    refs=1     type=undefined4      nearby: g_PolyDataConversionBuffer+0x3c(+20)
-  DAT_02c14d84                    addr=02c14d84    refs=1     type=undefined4      nearby: g_PolyDataConversionBuffer+0x3c(+24)
-  DAT_02c14d88                    addr=02c14d88    refs=1     type=undefined4      nearby: g_PolyDataConversionBuffer+0x3c(+28)
-  DAT_02c14d8c                    addr=02c14d8c    refs=1     type=undefined4      nearby: g_PolyDataConversionBuffer+0x3c(+32)
-  DAT_02c14d90                    addr=02c14d90    refs=1     type=undefined4      nearby: g_PolyDataConversionBuffer+0x3c(+36)
-  DAT_02d7b9e0                    addr=02d7b9e0    refs=1     type=undefined4      nearby: g_WrappedTextBuffer(+256)
   DAT_0067b718                    addr=0067b718    refs=1     type=undefined4      nearby: g_ChapterMissionFiles(-56)
   DAT_00747874                    addr=00747874    refs=1     type=undefined4    
   DAT_00685210                    addr=00685210    refs=1     type=undefined4      nearby: g_MaxHandleCount(-4)
   DAT_006852db                    addr=006852db    refs=1     type=undefined1      likely=byte  nearby: g_TempDirectoryBuffer(-1)
   DAT_006874d4                    addr=006874d4    refs=1     type=undefined4      likely=double  nearby: PTR_FUN_006874e4(-16)
-  DAT_006597a1                    addr=006597a1    refs=1     type=undefined1      likely=byte  nearby: g_ColonChar(+1)
-  DAT_006597a2                    addr=006597a2    refs=1     type=undefined1      nearby: g_ColonChar(+2)
-  DAT_006597a3                    addr=006597a3    refs=1     type=undefined1      nearby: g_AsteriskChar(-1)
-  DAT_006597a5                    addr=006597a5    refs=1     type=undefined1      likely=byte  nearby: g_AsteriskChar(+1)
-  DAT_006597a6                    addr=006597a6    refs=1     type=undefined1      nearby: g_AsteriskChar(+2)
-  DAT_006597a7                    addr=006597a7    refs=1     type=undefined1      nearby: g_AsteriskChar(+3)
   DAT_03f9c030                    addr=03f9c030    refs=1     type=undefined4      likely=byte  nearby: g_LeadByteTable(-1)
   DAT_0068528c                    addr=0068528c    refs=1     type=undefined4      likely=function_ptr  nearby: g_SpecialDeviceCleanupFunc(+4)
   DAT_006e6f63                    addr=006e6f63    refs=1     type=undefined4    
@@ -139,15 +97,14 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_006850b0                    addr=006850b0    refs=1     type=undefined4      nearby: s_EST_006850bc(-12)
   DAT_006850b4                    addr=006850b4    refs=1     type=undefined4      nearby: s_EST_006850bc(-8)
   DAT_006850b8                    addr=006850b8    refs=1     type=undefined4      nearby: s_EST_006850bc(-4)
-  DAT_00684f30                    addr=00684f30    refs=1     type=int             nearby: g_SpecialExitHandler(+4)
-  DAT_00684f34                    addr=00684f34    refs=1     type=int             nearby: g_SpecialExitHandler(+8)
-  DAT_00684f38                    addr=00684f38    refs=1     type=undefined2      likely=short  nearby: g_SpecialExitHandler(+12)
   DAT_0068546c                    addr=0068546c    refs=1     type=undefined2      nearby: PTR_crt_thread.c_ExitCriticalSection_FUN_0060b180_00685468(+4)
   DAT_03f9b8d0                    addr=03f9b8d0    refs=1     type=undefined4      nearby: g_TlsDataBase(+16)
   DAT_03f9b874                    addr=03f9b874    refs=1     type=undefined4      likely=byte  nearby: g_EnvironInitialized(+12)
   DAT_00679d94                    addr=00679d94    refs=1     type=undefined4      nearby: g_PodFileActionNames(-12)
   DAT_00679d50                    addr=00679d50    refs=1     type=undefined4      nearby: switchdataD_00679d54(-4)
   DAT_54524143                    addr=54524143    refs=1     type=undefined4    
+  DAT_0051a3f4                    addr=0051a3f4    refs=1     type=undefined4      nearby: PTR_caseD_5_0051a3ec(+8)
+  DAT_03f5d97c                    addr=03f5d97c    refs=1     type=undefined4      nearby: g_SoundTestErrorBuffer(+220)
 
 --------------------------------------------------------------------------------
 IMMEDIATE CONSTANTS - NOT REAL GLOBALS (2)
@@ -159,7 +116,7 @@ They appear only as inline constant values.
   DAT_00766880                    value=0x766880        refs=1
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (223)
+FILTERED OUT - INSIDE NAMED DATA (241)
 --------------------------------------------------------------------------------
 These DAT_ globals fall within the address range of a named
 string, array, or struct and are not standalone globals.
@@ -379,6 +336,12 @@ string, array, or struct and are not standalone globals.
   DAT_006590a8                    inside s_con_006590a0
   DAT_00659788                    inside s_bgnthd_00659784
   DAT_0065978c                    inside s_bgnthd_00659784
+  DAT_006597a1                    inside g_ProcessFileInfoStr
+  DAT_006597a2                    inside g_ProcessFileInfoStr
+  DAT_006597a3                    inside g_ProcessFileInfoStr
+  DAT_006597a5                    inside g_ProcessFileInfoStr+4
+  DAT_006597a6                    inside g_ProcessFileInfoStr+4
+  DAT_006597a7                    inside g_ProcessFileInfoStr+4
   DAT_0066efa0                    inside g_GlobalFilters
   DAT_0066efc0                    inside g_PlayerFilters
   DAT_0067b685                    inside s_EFD_0067b684
@@ -387,4 +350,16 @@ string, array, or struct and are not standalone globals.
   DAT_006851bd                    inside s_EDT_0068513d
   DAT_00685219                    inside g_FileDescriptorTable
   DAT_0068755c                    inside FLOAT10_00687552
+  DAT_009e5d74                    inside g_TempWorldPositions
+  DAT_009e5d80                    inside g_TempWorldPositions
+  DAT_009e5d84                    inside g_TempWorldPositions
+  DAT_009e5d88                    inside g_TempWorldPositions
+  DAT_009e6c74                    inside g_TempWorldPositions
+  DAT_02c14d80                    inside g_FaceConversionBuffer
+  DAT_02c14d84                    inside g_FaceConversionBuffer
+  DAT_02c14d88                    inside g_FaceConversionBuffer
+  DAT_02c14d8c                    inside g_FaceConversionBuffer
+  DAT_02c14d90                    inside g_FaceConversionBuffer
+  DAT_02cf0df8                    inside g_TextWrapBuffer
+  DAT_02d7b9e0                    inside g_WrappedTextBuffer
 

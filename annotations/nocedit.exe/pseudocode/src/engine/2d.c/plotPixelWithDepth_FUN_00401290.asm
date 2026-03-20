@@ -18,7 +18,7 @@
 ;   void*[1200] g_ScreenBufferArray
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   ushort[256] g_ColorTable16
-;   uint[256] g_ColorTable32
+;   uint[448] g_ColorTable32
 ;   int g_ActiveRenderColor
 ;
 ; *****************************************************************************

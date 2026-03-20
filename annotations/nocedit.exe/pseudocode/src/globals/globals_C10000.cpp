@@ -7,8 +7,8 @@
 // SRGBColorPalette
 SRGBColorPalette g_CameraImagePaletteData = {};
 
-// char[25][307200]
-char g_LightBufferPool[25][307200] = {};
+// char[24][307200]
+char g_LightBufferPool[24][307200] = {};
 
 // int
 int INT_00c199f8 = {};

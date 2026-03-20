@@ -25,7 +25,7 @@
 ;   undefined4 g_CramSortedTextureEntries[0].working_right
 ;   undefined4 g_CramSortedTextureEntries[0].working_top
 ;   undefined4 g_CramSortedTextureEntries[0].working_width
-;   SCramRectangle[50] g_CramRectangles
+;   SCramRectangle[1000] g_CramRectangles
 ;   undefined4 g_CramRectangles[0].start_x
 ;   undefined4 g_CramRectangles[0].start_y
 ;   undefined4 g_CramRectangles[0].end_x

@@ -54,7 +54,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
   if (iVar4 == 0) {
     return 0;
   }
-  if ((this_ptr->base).base.model.part_data.visibility_flags[INT_03f6bb24] != 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] != 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     local_34.y = 3.1415927;
     local_34.x = 0.0;
@@ -66,8 +66,8 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
               (&local_16c,&local_a0,&local_34);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_16c,
-               (this_ptr->base).base.model.bone_transform.bone_world_matrices + INT_03f6bacc,
-               &local_22c);
+               (this_ptr->base).base.model.bone_transform.bone_world_matrices + g_StrangerIndices[0]
+               ,&local_22c);
     pCVar7 = &local_22c;
     pCVar8 = &local_13c;
     for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -120,7 +120,8 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
   if ((((pCVar2 == (CWeapon *)0x0) ||
        (pCVar2 == (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor)) ||
       (pCVar2 == (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor)) ||
-     ((this_ptr->base).base.model.part_data.visibility_flags[INT_03f6bb24] == 0)) goto LAB_005c33d7;
+     ((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] == 0))
+  goto LAB_005c33d7;
   (*((this_ptr->weapon->base).vtable._ub)->renderOpaque)(&this_ptr->weapon->base);
   if (this_ptr->weapon == (CWeapon *)0x0) {
 switchD_005c331f_caseD_3:
@@ -168,7 +169,7 @@ LAB_005c336f:
   core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005c06b0(this_ptr,0);
 LAB_005c33d7:
   if ((((this_ptr->base).is_wearing_gas_mask != 0) &&
-      ((this_ptr->base).base.model.part_data.visibility_flags[INT_03f6bb24] != 0)) &&
+      ((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] != 0)) &&
      (pCVar3 = (this_ptr->base).inventory.light_gun_ptr, pCVar3 != (CLightGun *)0x0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     if ((this_ptr->base).is_wearing_gas_mask == 2) {
@@ -182,8 +183,8 @@ LAB_005c33d7:
                 (&local_1cc,&local_64,&local_88);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&local_1cc,
-                 (this_ptr->base).base.model.bone_transform.bone_world_matrices + INT_03f6bacc,
-                 &local_10c);
+                 (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                 g_StrangerIndices[0],&local_10c);
       pCVar5 = &local_10c;
     }
     else {
@@ -197,8 +198,8 @@ LAB_005c33d7:
                 (&local_1fc,&local_58,&local_28);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&local_1fc,
-                 (this_ptr->base).base.model.bone_transform.bone_world_matrices + INT_03f6bb04,
-                 &local_19c);
+                 (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                 g_StrangerIndices[0xe],&local_19c);
       pCVar5 = &local_19c;
     }
     pCVar6 = &local_dc;
@@ -218,7 +219,7 @@ LAB_005c33d7:
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   }
-  if ((((this_ptr->base).base.model.part_data.visibility_flags[INT_03f6bb24] == 0) &&
+  if ((((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] == 0) &&
       (iVar5 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
       iVar5 == 0)) && (0 < (this_ptr->base).base.cloth_list.count)) {
     core_cloth_cpp_CClothList_reset_FUN_0043c070(&(this_ptr->base).base.cloth_list);

@@ -260,7 +260,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       pCVar14 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_104,&g_ZeroVector.f,
                            (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                           INT_008227c0);
+                           g_BatmanIndices[2]);
       pCVar14 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                           ((CDemonActor *)this_ptr,&local_f8,pCVar14);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880

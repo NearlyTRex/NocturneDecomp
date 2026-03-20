@@ -33,9 +33,9 @@
 ;   CGore* g_CGorePtr = 02d83364
 ;   undefined4 g_CLightActorClassInfo.name_hash
 ;   undefined4 g_CEnemyClassInfo.name_hash
-;   int INT_02d7b864
-;   int INT_02d7b868
-;   int INT_02d7b878
+;   undefined4 g_GabriellaIndices[7]
+;   undefined4 g_GabriellaIndices[8]
+;   undefined4 g_GabriellaIndices[12]
 ;   CGore g_CGoreInstance
 ;
 ; Called Functions:
@@ -88,7 +88,7 @@ section .text
         ;   Label: caseD_1
     JNZ 0x004d49c5                      ; 004d48cb
         ;   XREF to: 004d49c5 (CONDITIONAL_JUMP)  ; LAB_004d49c5
-    MOV EAX,[0x02d7b868]                ; 004d48d1 | INT_02d7b868
+    MOV EAX,[0x02d7b868]                ; 004d48d1 | g_GabriellaIndices[8]
     PUSH EAX                            ; 004d48d6
         ;   Label: LAB_004d48d6
     LEA EAX,[ESP + 0x54]                ; 004d48d7
@@ -190,7 +190,7 @@ section .text
     ADD ESP,0x8                         ; 004d49bd
     JMP 0x004d4927                      ; 004d49c0
         ;   XREF to: 004d4927 (UNCONDITIONAL_JUMP)  ; caseD_12
-    MOV EAX,[0x02d7b864]                ; 004d49c5 | INT_02d7b864
+    MOV EAX,[0x02d7b864]                ; 004d49c5 | g_GabriellaIndices[7]
         ;   Label: LAB_004d49c5
     JMP 0x004d48d6                      ; 004d49ca
         ;   XREF to: 004d48d6 (UNCONDITIONAL_JUMP)  ; LAB_004d48d6
@@ -280,7 +280,7 @@ section .text
         ;   Label: LAB_004d4ac3
     JMP 0x004d4927                      ; 004d4acd
         ;   XREF to: 004d4927 (UNCONDITIONAL_JUMP)  ; caseD_12
-    MOV EAX,[0x02d7b878]                ; 004d4ad2 | INT_02d7b878
+    MOV EAX,[0x02d7b878]                ; 004d4ad2 | g_GabriellaIndices[12]
         ;   Label: LAB_004d4ad2
     PUSH EAX                            ; 004d4ad7
     LEA EAX,[ESP + 0x6c]                ; 004d4ad8

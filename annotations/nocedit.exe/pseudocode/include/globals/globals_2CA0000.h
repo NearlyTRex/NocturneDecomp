@@ -16,8 +16,8 @@ extern CDemonCube* g_PVSCubePointers[20000];
 // CVector3i
 extern CVector3i CVector3i_02ca0388;
 
-// SMRGLTextureBasic
-extern SMRGLTextureBasic g_SkyDomeTextureData;
+// SMRGLTextureBasic[24]
+extern SMRGLTextureBasic g_SkyDomeTextureData[24];
 
 // int
 extern int g_CubesTestedCount;

@@ -30,17 +30,17 @@
 ; Referenced Globals:
 ;   double g_FixedPointScale256 = 256
 ;   double g_LogarithmicConstant210 = 3.32192809489000
-;   CVector3i[320] g_TempWorldPositionRow
+;   CVector3i[241][320] g_TempWorldPositions
 ;   undefined4 DAT_009e5d74
 ;   undefined4 DAT_009e6c74
-;   CVector3f[76800] g_PrecomputedSurfaceNormals
-;   undefined4 g_PrecomputedSurfaceNormals[320].x
-;   undefined4 g_PrecomputedSurfaceNormals[320].y
-;   undefined4 g_PrecomputedSurfaceNormals[320].z
-;   undefined4 g_PrecomputedSurfaceNormals[321].x
-;   undefined4 g_PrecomputedSurfaceNormals[321].y
-;   undefined4 g_PrecomputedSurfaceNormals[321].z
-;   undefined4 g_PrecomputedSurfaceNormals[640].x
+;   CVector3f[241][320] g_PrecomputedSurfaceNormals
+;   undefined4 g_PrecomputedSurfaceNormals[1][0].x
+;   undefined4 g_PrecomputedSurfaceNormals[1][0].y
+;   undefined4 g_PrecomputedSurfaceNormals[1][0].z
+;   undefined4 g_PrecomputedSurfaceNormals[1][1].x
+;   undefined4 g_PrecomputedSurfaceNormals[1][1].y
+;   undefined4 g_PrecomputedSurfaceNormals[1][1].z
+;   undefined4 g_PrecomputedSurfaceNormals[2][0].x
 ;   char[241][320] g_CoronaBlurOutputBuffer
 ;   undefined4 g_CoronaBlurOutputBuffer[1][0]
 ;   ... and 20 more
@@ -137,12 +137,12 @@ section .text
     MOV EAX,0x1577728                   ; 00450ba9 | g_CoronaDepthBuffer
     MOV EDX,0xba8c78                    ; 00450bae | g_CoronaBlurOutputBuffer
     XOR ESI,ESI                         ; 00450bb3
-    MOV ECX,0x9e4e74                    ; 00450bb5 | g_TempWorldPositionRow
+    MOV ECX,0x9e4e74                    ; 00450bb5 | g_TempWorldPositions
     MOV dword ptr [ESP + 0x34],ESI      ; 00450bba
     MOV dword ptr [ESP + 0x28],EDI      ; 00450bbe | g_PrecomputedSurfaceNormals
     MOV dword ptr [ESP + 0x24],EAX      ; 00450bc2 | g_CoronaDepthBuffer
     MOV dword ptr [ESP + 0x20],EDX      ; 00450bc6 | g_CoronaBlurOutputBuffer
-    MOV dword ptr [ESP + 0x2c],ECX      ; 00450bca | g_TempWorldPositionRow
+    MOV dword ptr [ESP + 0x2c],ECX      ; 00450bca | g_TempWorldPositions
     MOV EDX,dword ptr [EBP + 0x14]      ; 00450bce
         ;   Label: LAB_00450bce
     MOV EAX,dword ptr [ESP + 0x34]      ; 00450bd1
@@ -164,7 +164,7 @@ section .text
     ADD EDX,0xf00                       ; 00450c0f
     INC ECX                             ; 00450c15
     MOV dword ptr [ESP + 0x34],EBX      ; 00450c16
-    MOV dword ptr [ESP + 0x28],ESI      ; 00450c1a | g_PrecomputedSurfaceNormals[320].x | g_PrecomputedSurfaceNormals[640].x
+    MOV dword ptr [ESP + 0x28],ESI      ; 00450c1a | g_PrecomputedSurfaceNormals[1][0].x | g_PrecomputedSurfaceNormals[2][0].x
     MOV dword ptr [ESP + 0x2c],EDX      ; 00450c1e | DAT_009e5d74 | DAT_009e6c74
     MOV EDX,dword ptr [EBP + 0x14]      ; 00450c22
     MOV dword ptr [ESP + 0x24],EDI      ; 00450c25 | g_CoronaDepthBuffer[1][0] | g_CoronaDepthBuffer[2][0]
@@ -223,12 +223,12 @@ section .text
     CMP ESI,dword ptr [EAX]             ; 00450cd0
     JBE 0x00450dd8                      ; 00450cd2
         ;   XREF to: 00450dd8 (CONDITIONAL_JUMP)  ; LAB_00450dd8
-    FLD float ptr [EBX + 0x4]           ; 00450cd8 | g_PrecomputedSurfaceNormals[320].y | g_PrecomputedSurfaceNormals[321].y
+    FLD float ptr [EBX + 0x4]           ; 00450cd8 | g_PrecomputedSurfaceNormals[1][0].y | g_PrecomputedSurfaceNormals[1][1].y
     FMUL float ptr [0x013bc24c]         ; 00450cdb | g_CoronaCameraRotationMatrix.m[1].z
-    FLD float ptr [EBX]                 ; 00450ce1 | g_PrecomputedSurfaceNormals[320].x | g_PrecomputedSurfaceNormals[321].x
+    FLD float ptr [EBX]                 ; 00450ce1 | g_PrecomputedSurfaceNormals[1][0].x | g_PrecomputedSurfaceNormals[1][1].x
     FMUL float ptr [0x013bc240]         ; 00450ce3 | g_CoronaCameraRotationMatrix.m[0].z
     FADDP                               ; 00450ce9
-    FLD float ptr [EBX + 0x8]           ; 00450ceb | g_PrecomputedSurfaceNormals[320].z | g_PrecomputedSurfaceNormals[321].z
+    FLD float ptr [EBX + 0x8]           ; 00450ceb | g_PrecomputedSurfaceNormals[1][0].z | g_PrecomputedSurfaceNormals[1][1].z
     FMUL float ptr [0x013bc258]         ; 00450cee | g_CoronaCameraRotationMatrix.m[2].z
     FADDP                               ; 00450cf4
     FLDZ                                ; 00450cf6

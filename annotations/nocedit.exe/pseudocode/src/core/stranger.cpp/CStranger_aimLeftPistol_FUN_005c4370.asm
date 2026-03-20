@@ -21,7 +21,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CDemonSet g_CDemonSetInstance
-;   int INT_03f6bad8
+;   undefined4 g_StrangerIndices[3]
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -70,7 +70,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1fc2c]   ; 005c43c0
     MOV EDX,0x3f060a92                  ; 005c43c6
     PUSH ECX                            ; 005c43cb
-    MOV EDI,dword ptr [0x03f6bad8]      ; 005c43cc | INT_03f6bad8
+    MOV EDI,dword ptr [0x03f6bad8]      ; 005c43cc | g_StrangerIndices[3]
     MOV dword ptr [ESP + 0xc8],EDX      ; 005c43d2
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005c43d9
         ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)

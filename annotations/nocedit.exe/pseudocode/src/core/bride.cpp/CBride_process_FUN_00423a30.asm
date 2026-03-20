@@ -49,11 +49,11 @@
 ;   double DOUBLE_00616c3d = 32
 ;   float FLOAT_0065b40c = 2.5
 ;   CGore* g_CGorePtr = 02d83364
-;   int INT_00822cdc
-;   int INT_00822ce8
-;   int INT_00822cec
-;   int INT_00822cf0
-;   int INT_00822cf4
+;   int[11] g_BrideIndices
+;   undefined4 g_BrideIndices[3]
+;   undefined4 g_BrideIndices[4]
+;   undefined4 g_BrideIndices[5]
+;   undefined4 g_BrideIndices[6]
 ;   CGore g_CGoreInstance
 ;
 ; Called Functions:
@@ -635,7 +635,7 @@ section .text
     TEST EDX,EDX                        ; 00424495
     JNZ 0x00424552                      ; 00424497
         ;   XREF to: 00424552 (CONDITIONAL_JUMP)  ; LAB_00424552
-    MOV ECX,dword ptr [0x00822cf0]      ; 0042449d | INT_00822cf0
+    MOV ECX,dword ptr [0x00822cf0]      ; 0042449d | g_BrideIndices[5]
     PUSH 0x3e4ccccd                     ; 004244a3
     PUSH ECX                            ; 004244a8
     MOV ESI,dword ptr [EBX + 0xbebc]    ; 004244a9
@@ -649,7 +649,7 @@ section .text
     TEST EDI,EDI                        ; 004244c6
     JZ 0x004244e5                       ; 004244c8
         ;   XREF to: 004244e5 (CONDITIONAL_JUMP)  ; LAB_004244e5
-    MOV EAX,[0x00822ce8]                ; 004244ca | INT_00822ce8
+    MOV EAX,[0x00822ce8]                ; 004244ca | g_BrideIndices[3]
     PUSH 0x3e4ccccd                     ; 004244cf
     PUSH EAX                            ; 004244d4
     MOV EDX,dword ptr [EBX + 0xbec0]    ; 004244d5
@@ -658,7 +658,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_0042b760 ; 004244dd
         ;   XREF to: 0042b760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_0042b760(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 004244e2
-    MOV ECX,dword ptr [0x00822cf4]      ; 004244e5 | INT_00822cf4
+    MOV ECX,dword ptr [0x00822cf4]      ; 004244e5 | g_BrideIndices[6]
         ;   Label: LAB_004244e5
     PUSH 0x3e4ccccd                     ; 004244eb
     PUSH ECX                            ; 004244f0
@@ -673,7 +673,7 @@ section .text
     TEST EDI,EDI                        ; 0042450e
     JZ 0x0042452d                       ; 00424510
         ;   XREF to: 0042452d (CONDITIONAL_JUMP)  ; LAB_0042452d
-    MOV EAX,[0x00822cec]                ; 00424512 | INT_00822cec
+    MOV EAX,[0x00822cec]                ; 00424512 | g_BrideIndices[4]
     PUSH 0x3e4ccccd                     ; 00424517
     PUSH EAX                            ; 0042451c
     MOV EDX,dword ptr [EBX + 0xbec8]    ; 0042451d
@@ -682,7 +682,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_0042b760 ; 00424525
         ;   XREF to: 0042b760 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_0042b760(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 0042452a
-    MOV ECX,dword ptr [0x00822cdc]      ; 0042452d | INT_00822cdc
+    MOV ECX,dword ptr [0x00822cdc]      ; 0042452d | g_BrideIndices
         ;   Label: LAB_0042452d
     PUSH 0x3f333333                     ; 00424533
     PUSH ECX                            ; 00424538

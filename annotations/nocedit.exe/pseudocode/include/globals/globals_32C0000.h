@@ -19,11 +19,11 @@ extern C3DSLight* g_VisibleOmniLights[200];
 // CDemonGlobe*[100]
 extern CDemonGlobe* g_GlobeLights[100];
 
-// CDemonLight*[32]
-extern CDemonLight* g_SecondaryDirectionalLights[32];
-
 // CDemonLight*[4]
 extern CDemonLight* g_PrimaryDirectionalLights[4];
+
+// CDemonLight*[96]
+extern CDemonLight* g_SecondaryDirectionalLights[96];
 
 // CMatrix3x3f
 extern CMatrix3x3f g_LightingRotationMatrix;

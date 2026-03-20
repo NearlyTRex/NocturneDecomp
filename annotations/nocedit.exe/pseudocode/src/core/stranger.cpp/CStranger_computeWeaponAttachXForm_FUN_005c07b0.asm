@@ -141,8 +141,8 @@
 ;   int g_CurrentLineNumber
 ;   CVector3f CVector3f_03f6bab0
 ;   CVector3f CVector3f_03f6babc
-;   int INT_03f6bb00
-;   int INT_03f6bb04
+;   undefined4 g_StrangerIndices[13]
+;   undefined4 g_StrangerIndices[14]
 ;   UVector3 g_ZeroVector
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
@@ -984,7 +984,7 @@ section .text
     FSTP float ptr [EBP + 0xfffff656]   ; 005c132e
     JMP 0x005c0946                      ; 005c1334
         ;   XREF to: 005c0946 (UNCONDITIONAL_JUMP)  ; LAB_005c0946
-    MOV EDX,dword ptr [0x03f6bb04]      ; 005c1339 | INT_03f6bb04
+    MOV EDX,dword ptr [0x03f6bb04]      ; 005c1339 | g_StrangerIndices[14]
         ;   Label: LAB_005c1339
     LEA EAX,[EDX*0x4 + 0x0]             ; 005c133f
     SUB EAX,EDX                         ; 005c1346
@@ -996,7 +996,7 @@ section .text
     PUSH EAX                            ; 005c1356
     CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 005c1357
         ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
-    MOV EDX,dword ptr [0x03f6bb00]      ; 005c135c | INT_03f6bb00
+    MOV EDX,dword ptr [0x03f6bb00]      ; 005c135c | g_StrangerIndices[13]
     MOV ESI,EAX                         ; 005c1362
     LEA EAX,[EDX*0x4 + 0x0]             ; 005c1364
     SUB EAX,EDX                         ; 005c136b

@@ -26,7 +26,7 @@ int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004e8bc0(CGhoul *this_ptr,
   int bone_index;
   
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-            (&(this_ptr->base).base.model,&local_30,INT_02d83320);
+            (&(this_ptr->base).base.model,&local_30,g_GhoulIndices[9]);
   if (&local_30 != out_points_array) {
     out_points_array->x = local_30.x;
     out_points_array->y = local_30.y;
@@ -40,7 +40,7 @@ int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004e8bc0(CGhoul *this_ptr,
     case 0:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
         pCVar3 = &local_24;
-        bone_index = INT_02d83310;
+        bone_index = g_GhoulIndices[5];
 LAB_004e8c4c:
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                            (this_ptr_00,pCVar3,bone_index);
@@ -64,14 +64,14 @@ LAB_004e8cce:
     case 1:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
         pCVar3 = &local_54;
-        bone_index = INT_02d83314;
+        bone_index = g_GhoulIndices[6];
         goto LAB_004e8c4c;
       }
       break;
     case 2:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] != 0) {
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                           (this_ptr_00,&local_3c,INT_02d832fc);
+                           (this_ptr_00,&local_3c,g_GhoulIndices[0]);
         pCVar2 = out_points_array + iVar3;
         if (pCVar2 != pCVar3) {
           pCVar2->x = pCVar3->x;
@@ -84,7 +84,7 @@ LAB_004e8cce:
     case 3:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[9]] != 0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                           (this_ptr_00,&local_60,INT_02d83324);
+                           (this_ptr_00,&local_60,g_GhoulIndices[10]);
         pCVar3 = out_points_array + iVar3;
         if (pCVar3 != pCVar1) {
           pCVar3->x = pCVar1->x;

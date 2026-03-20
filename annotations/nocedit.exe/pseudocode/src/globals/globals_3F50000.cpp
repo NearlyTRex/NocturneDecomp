@@ -29,6 +29,3 @@ int g_ChannelFFTTimestamps[8] = {};
 uchar g_GlobalMP3DecoderInitialized = {};
 uchar g_GlobalMP3DecoderInitializedOther = {};
 
-// undefined4
-undefined4 DAT_03f5d97c = {};
-

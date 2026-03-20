@@ -53,8 +53,8 @@ extern char g_YesNoDialogBuffer[1024];
 extern char g_DialogMessageBuffer_02cf0930[1024];
 extern char g_TempStringBuffer[1024];
 
-// char[200]
-extern char g_TextWrapBuffer[200];
+// char[4000]
+extern char g_TextWrapBuffer[4000];
 
 // float[2000]
 extern float g_EnemyVictimCandidateDistances[2000];

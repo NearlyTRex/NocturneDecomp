@@ -66,35 +66,12 @@ int g_IrisFadeType = {};
 int g_IrisFadeCenterX = {};
 int g_IrisFadeCenterY = {};
 int g_ProfileStartTime = {};
-int INT_02d83200 = {};
-int INT_02d83204 = {};
-int INT_02d83208 = {};
-int INT_02d8320c = {};
-int INT_02d83210 = {};
-int INT_02d83214 = {};
-int INT_02d83218 = {};
-int INT_02d8321c = {};
-int INT_02d83220 = {};
-int INT_02d83224 = {};
-int INT_02d83228 = {};
-int INT_02d8322c = {};
 int INT_02d832a8 = {};
 int INT_02d832ac = {};
 int INT_02d832b0 = {};
 int INT_02d832b4 = {};
 int INT_02d832b8 = {};
 int INT_02d832bc = {};
-int INT_02d832fc = {};
-int INT_02d83300 = {};
-int INT_02d83304 = {};
-int INT_02d83308 = {};
-int INT_02d8330c = {};
-int INT_02d83310 = {};
-int INT_02d83314 = {};
-int INT_02d83318 = {};
-int INT_02d8331c = {};
-int INT_02d83320 = {};
-int INT_02d83324 = {};
 int g_ParticleCameraRotation = {};
 int INT_02d83394 = {};
 int INT_02d83398 = {};
@@ -105,10 +82,12 @@ int g_BloodParticleIndex = {};
 int g_BloodSplatIndex = {};
 int g_BloodSplatCount = {};
 
+// int[11]
+int g_GhoulIndices[11] = {};
+
+// int[12]
+int g_GargoyleIndices[12] = {};
+
 // int[201]
 int g_MasterLightStateSaveBuffer[201] = {};
-
-// undefined1
-undefined1 DAT_02d831d6 = {};
-undefined1 DAT_02d831eb = {};
 

@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   CCramTex[250] g_CramSortedTextureEntries
 ;   undefined4 g_CramSortedTextureEntries[1].width
-;   SCramRectangle[50] g_CramRectangles
+;   SCramRectangle[1000] g_CramRectangles
 ;   undefined4 g_CramRectangles[0].start_x
 ;   undefined4 g_CramRectangles[0].start_y
 ;   undefined4 g_CramRectangles[0].active_flag

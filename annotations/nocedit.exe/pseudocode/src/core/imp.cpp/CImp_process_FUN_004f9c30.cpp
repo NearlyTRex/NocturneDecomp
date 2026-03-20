@@ -146,7 +146,7 @@ LAB_004f9c99:
       }
       else {
         pCVar9 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                           (pCVar5,&local_104,INT_02db89f4);
+                           (pCVar5,&local_104,g_ImpIndices[0]);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_8c,pCVar9);
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_164);
@@ -394,7 +394,7 @@ LAB_004f9c99:
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_b0,&g_ZeroVector.f,
                            (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                           INT_02db89fc);
+                           g_ImpIndices[2]);
       pCVar10 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                           ((CDemonActor *)this_ptr,&local_5c,pCVar10);
       iVar18 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880

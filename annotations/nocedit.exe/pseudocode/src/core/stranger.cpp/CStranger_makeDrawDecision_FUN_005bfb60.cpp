@@ -152,14 +152,16 @@ LAB_005bfd3a:
                          (&pCVar15->motion_controller,local_20,fVar1);
   }
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-            (&(this_ptr->base).base.model,local_20,local_24,local_f8,INT_03f6bb10,
+            (&(this_ptr->base).base.model,local_20,local_24,local_f8,g_StrangerIndices[0x11],
              core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
   if ((this_ptr->base).base.layer_action_index == 0) {
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
-              ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + INT_03f6bb04,
-               (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + INT_03f6bae4,
-               (this_ptr->base).base.layer_action_t,&local_c0);
-    pfVar10 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[INT_03f6bb04].w;
+              ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
+               g_StrangerIndices[0xe],
+               (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
+               g_StrangerIndices[6],(this_ptr->base).base.layer_action_t,&local_c0);
+    pfVar10 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+               [g_StrangerIndices[0xe]].w;
     *pfVar10 = local_c0.w;
     puVar7 = pfVar10 + (uint)bVar9 * -2 + 1 + (uint)bVar9 * -2 + 1;
     puVar9 = (uint *)((int)&local_c0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
@@ -167,10 +169,12 @@ LAB_005bfd3a:
     *puVar7 = *puVar9;
     puVar7[(uint)bVar9 * -2 + 1] = puVar9[(uint)bVar9 * -2 + 1];
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
-              ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + INT_03f6bb00,
-               (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + INT_03f6bae0,
-               (this_ptr->base).base.layer_action_t,&local_f0);
-    pfVar10 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[INT_03f6bb00].w;
+              ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
+               g_StrangerIndices[0xd],
+               (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
+               g_StrangerIndices[5],(this_ptr->base).base.layer_action_t,&local_f0);
+    pfVar10 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+               [g_StrangerIndices[0xd]].w;
     pfVar12 = pfVar10 + (uint)bVar9 * -2 + 1;
     *pfVar10 = local_f0.w;
     pfVar10 = (float *)((int)&local_f0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
@@ -193,7 +197,7 @@ LAB_005bfd3a:
     fVar3 = (1.0 - fVar3) * local_f8 * local_100;
     if (0.0 < fVar3) {
       pcVar16 = core_stranger_cpp_blendWeightCallback_FUN_005baee0;
-      iVar17 = INT_03f6bb10;
+      iVar17 = g_StrangerIndices[0x11];
       core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(fVar1,&local_90);
       pCVar13 = &local_70;
       pCVar11 = &(this_ptr->base).base.model;
@@ -209,8 +213,10 @@ LAB_005bfd3a:
     }
     core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(this_ptr,0);
     core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(this_ptr,1);
-    puVar9 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[INT_03f6bb04].w;
-    puVar13 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[INT_03f6bae4].w;
+    puVar9 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+              [g_StrangerIndices[0xe]].w;
+    puVar13 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+               [g_StrangerIndices[6]].w;
     puVar5 = puVar13 + (uint)bVar9 * -2 + 1;
     *puVar9 = *puVar13;
     puVar8 = puVar9 + (uint)bVar9 * -2 + 1 + (uint)bVar9 * -2 + 1;
@@ -218,8 +224,10 @@ LAB_005bfd3a:
     puVar9[(uint)bVar9 * -2 + 1] = *puVar5;
     *puVar8 = *puVar6;
     puVar8[(uint)bVar9 * -2 + 1] = puVar6[(uint)bVar9 * -2 + 1];
-    puVar9 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[INT_03f6bb00].w;
-    puVar13 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[INT_03f6bae0].w;
+    puVar9 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+              [g_StrangerIndices[0xd]].w;
+    puVar13 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+               [g_StrangerIndices[5]].w;
     puVar14 = puVar9 + (uint)bVar9 * -2 + 1;
     puVar11 = puVar13 + (uint)bVar9 * -2 + 1;
     *puVar9 = *puVar13;
@@ -246,7 +254,7 @@ LAB_005bfd3a:
          *(uint *)((int)&local_80 + (uint)bVar9 * -8 + 4);
     pCVar12 = pCVar15;
     fVar3 = fVar1;
-    iVar17 = INT_03f6bb10;
+    iVar17 = g_StrangerIndices[0x11];
     *puVar13 = *puVar9;
     puVar13[(uint)bVar9 * -2 + 1] = puVar9[(uint)bVar9 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
@@ -261,7 +269,7 @@ LAB_005bfd3a:
     *puVar13 = *puVar9;
     puVar13[(uint)bVar9 * -2 + 1] = puVar9[(uint)bVar9 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
-              (pCVar15,&local_50,fVar1,INT_03f6bb10,
+              (pCVar15,&local_50,fVar1,g_StrangerIndices[0x11],
                core_stranger_cpp_blendWeightCallback_FUN_005baee0);
     if ((this_ptr->base).base.layer_action_index != 0xe) {
       return;
@@ -283,7 +291,7 @@ LAB_005bfd3a:
   *(uint *)((int)&local_a0 + (uint)bVar9 * -8 + 4) =
        *(uint *)((int)&local_d0 + (uint)bVar9 * -8 + 4);
   pCVar15 = this_ptr_01;
-  iVar17 = INT_03f6badc;
+  iVar17 = g_StrangerIndices[4];
   *puVar13 = *puVar9;
   puVar13[(uint)bVar9 * -2 + 1] = puVar9[(uint)bVar9 * -2 + 1];
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
@@ -297,7 +305,7 @@ LAB_005bfd3a:
   puVar9 = (uint *)((int)&local_b0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
   *(uint *)((int)&local_a0 + (uint)bVar9 * -8 + 4) =
        *(uint *)((int)&local_b0 + (uint)bVar9 * -8 + 4);
-  iVar17 = INT_03f6bad8;
+  iVar17 = g_StrangerIndices[3];
   *puVar13 = *puVar9;
   pcVar18 = pcVar20;
   puVar13[(uint)bVar9 * -2 + 1] = puVar9[(uint)bVar9 * -2 + 1];

@@ -50,7 +50,7 @@
 ;   CSound* g_CSoundPtr = 03f6af64
 ;   CWater* g_CWaterPtr = 03f875e0
 ;   CWeather* g_CWeatherPtr = 03f95dc0
-;   SMRGLTextureBasic g_SkyDomeTextureData
+;   SMRGLTextureBasic[24] g_SkyDomeTextureData
 ;   int g_UseExternalRenderer
 ;   float g_PerspectiveReciprocal
 ;   ... and 32 more

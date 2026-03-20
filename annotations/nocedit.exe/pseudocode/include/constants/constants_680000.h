@@ -402,9 +402,6 @@ static float10 FLOAT10_0068753e = 0.11111111f;
 static float10 FLOAT10_00687548 = -0.090907585f;
 static float10 FLOAT10_00687552 = 0.076416908f;
 
-// int constants
-static int DAT_00684f34 = 0x2D;
-
 // uchar[257] constants
 static uchar g_CharacterClassificationTable[257] = {
     0x00, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x03, 0x03, 0x03, 0x03, 0x03, 0x01,
@@ -427,7 +424,6 @@ static uchar g_CharacterClassificationTable[257] = {
 };
 
 // undefined2 constants
-static undefined2 DAT_00684f38 = 0x4002;
 static undefined2 DAT_0068546c = 0x127F;
 
 // undefined4 constants

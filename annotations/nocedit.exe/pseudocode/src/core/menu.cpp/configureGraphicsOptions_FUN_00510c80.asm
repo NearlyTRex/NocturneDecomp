@@ -481,7 +481,7 @@ section .text
     CMP dword ptr [EDX + 0x4],0xf0      ; 00511194 | g_CGameInstance.game_pixy
     JNZ 0x005111b2                      ; 0051119b
         ;   XREF to: 005111b2 (CONDITIONAL_JUMP)  ; LAB_005111b2
-    CMP dword ptr [ESP + 0x124],0xb71b00 ; 0051119d | g_PrecomputedSurfaceNormals[58315].z
+    CMP dword ptr [ESP + 0x124],0xb71b00 ; 0051119d | g_PrecomputedSurfaceNormals[182][75].z
     JLE 0x005111b2                      ; 005111a8
         ;   XREF to: 005111b2 (CONDITIONAL_JUMP)  ; LAB_005111b2
     TEST EAX,EAX                        ; 005111aa
@@ -878,7 +878,7 @@ section .text
     MOV dword ptr [EDX + 0x4],0x1e0     ; 0051157a | g_CGameInstance.game_pixy
     JMP 0x005111d3                      ; 00511581
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
-    CMP dword ptr [ESP + 0x124],0xb71b00 ; 00511586 | g_PrecomputedSurfaceNormals[58315].z
+    CMP dword ptr [ESP + 0x124],0xb71b00 ; 00511586 | g_PrecomputedSurfaceNormals[182][75].z
         ;   Label: LAB_00511586
     JLE 0x005115a6                      ; 00511591
         ;   XREF to: 005115a6 (CONDITIONAL_JUMP)  ; LAB_005115a6
@@ -889,7 +889,7 @@ section .text
     TEST EAX,EAX                        ; 005115a2
     JZ 0x00511601                       ; 005115a4
         ;   XREF to: 00511601 (CONDITIONAL_JUMP)  ; LAB_00511601
-    CMP dword ptr [ESP + 0x124],0xb71b00 ; 005115a6 | g_PrecomputedSurfaceNormals[58315].z
+    CMP dword ptr [ESP + 0x124],0xb71b00 ; 005115a6 | g_PrecomputedSurfaceNormals[182][75].z
         ;   Label: LAB_005115a6
     JLE 0x005115ca                      ; 005115b1
         ;   XREF to: 005115ca (CONDITIONAL_JUMP)  ; LAB_005115ca

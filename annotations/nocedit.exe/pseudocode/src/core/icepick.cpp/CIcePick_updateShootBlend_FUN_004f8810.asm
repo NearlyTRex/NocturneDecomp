@@ -20,7 +20,7 @@
 ;   double DOUBLE_0062f73b = 3.14159265350000
 ;   double DOUBLE_0062f743 = 0.785398163375000
 ;   double DOUBLE_0062f74b = -0.785398163375000
-;   int INT_02db89b0
+;   undefined4 g_IcePickIndices[16]
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
@@ -71,7 +71,7 @@ section .text
         ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004f8877
     PUSH 0x59ddb0                       ; 004f887a
-    MOV EDI,dword ptr [0x02db89b0]      ; 004f887f | INT_02db89b0
+    MOV EDI,dword ptr [0x02db89b0]      ; 004f887f | g_IcePickIndices[16]
     PUSH EDI                            ; 004f8885
     PUSH dword ptr [EBX + 0x1fbfc]      ; 004f8886
     PUSH 0x0                            ; 004f888c
@@ -108,7 +108,7 @@ section .text
     ADD ESP,0x4                         ; 004f88f9
     LEA EDI,[ESP + 0x18]                ; 004f88fc
     PUSH 0x59ddb0                       ; 004f8900
-    MOV EBP,dword ptr [0x02db89b0]      ; 004f8905 | INT_02db89b0
+    MOV EBP,dword ptr [0x02db89b0]      ; 004f8905 | g_IcePickIndices[16]
     LEA ESI,[ESP + 0xc]                 ; 004f890b
     PUSH EBP                            ; 004f890f
     MOVSD ES:EDI,ESI                    ; 004f8910

@@ -152,36 +152,36 @@
     {
       "addr": "013bc268",
       "name": "g_CameraEdgeDetectionResults",
-      "type": "int[10000]",
+      "type": "SCameraEdge[10000]",
       "value": null
     },
     {
       "addr": "013bc26c",
-      "name": "g_CameraEdgeDetectionResults[1]",
+      "name": "g_CameraEdgeDetectionResults[0].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "013bc270",
-      "name": "g_CameraEdgeDetectionResults[2]",
+      "name": "g_CameraEdgeDetectionResults[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "013bc274",
-      "name": "g_CameraEdgeDetectionResults[3]",
+      "name": "g_CameraEdgeDetectionResults[1].v",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "013bc278",
-      "name": "g_CameraEdgeDetectionResults[4]",
+      "name": "g_CameraEdgeDetectionResults[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "013bc27c",
-      "name": "g_CameraEdgeDetectionResults[5]",
+      "name": "g_CameraEdgeDetectionResults[1].y",
       "type": "undefined4",
       "value": null
     },
@@ -333,7 +333,7 @@
       "line": 86,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar2 = *(uint *)((int)g_CameraEdgeDetectionResults + iVar6 + 8);",
+      "text": "uVar2 = *(uint *)((int)&g_CameraEdgeDetectionResults[0].y + iVar5);",
       "type": "pointer_cast"
     },
     {
@@ -341,15 +341,15 @@
       "line": 88,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar2 = (int *)((int)g_CameraEdgeDetectionResults + iVar6);",
+      "text": "piVar2 = (int *)((int)&g_CameraEdgeDetectionResults[0].v + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 89,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(this_ptr,*(int *)((int)g_CameraEdgeDetectionResults + iVar3),uVar2,*piVar2);",
+      "text": "piVar3 = (int *)((int)&g_CameraEdgeDetectionResults[0].x + iVar5);",
       "type": "pointer_cast"
     },
     {
@@ -357,7 +357,7 @@
       "line": 142,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "screen_y = *(uint *)((int)g_CameraEdgeDetectionResults + iVar6 + 8);",
+      "text": "screen_y = *(uint *)((int)&g_CameraEdgeDetectionResults[0].y + iVar5);",
       "type": "pointer_cast"
     },
     {
@@ -365,15 +365,15 @@
       "line": 144,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)g_CameraEdgeDetectionResults + iVar6);",
+      "text": "piVar1 = (int *)((int)&g_CameraEdgeDetectionResults[0].v + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 145,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(this_ptr,*(int *)((int)g_CameraEdgeDetectionResults + iVar5),screen_y,*piVar1);",
+      "text": "piVar2 = (int *)((int)&g_CameraEdgeDetectionResults[0].x + iVar5);",
       "type": "pointer_cast"
     }
   ]

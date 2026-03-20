@@ -73,10 +73,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemo
   g_CoronaDepthShift = g_CoronaDepthShift + -1;
   if (0 < this_ptr->display_height) {
     local_2c = 0;
-    local_38 = g_PrecomputedSurfaceNormals;
+    local_38 = g_PrecomputedSurfaceNormals[0];
     local_3c = g_CoronaDepthBuffer;
     local_40 = g_CoronaBlurOutputBuffer;
-    local_34 = g_TempWorldPositionRow;
+    local_34 = g_TempWorldPositions[0];
     do {
       if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_2c)) {
         local_18 = *(int *)((int)g_CoronaLeftExtent + local_2c);

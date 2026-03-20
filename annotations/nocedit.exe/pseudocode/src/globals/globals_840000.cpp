@@ -7,8 +7,8 @@
 // SCramRectangle*[62500]
 SCramRectangle* g_CramCandidateRectangles[62500] = {};
 
-// SCramRectangle[50]
-SCramRectangle g_CramRectangles[50] = {};
+// SCramRectangle[1000]
+SCramRectangle g_CramRectangles[1000] = {};
 
 // int
 int g_CramTextureCount = {};

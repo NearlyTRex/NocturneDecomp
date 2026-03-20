@@ -85,7 +85,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
     local_40 = -0x10000;
     g_ProjectionScale = 0x10000;
     color = engine_2d_c_getTextColor_FUN_00402830();
-    engine_2d_c_setTextColor_FUN_00402840((int)(&g_EditorColorIndices)[g_CurrentModelIndex]);
+    engine_2d_c_setTextColor_FUN_00402840(g_EditorColorIndices[g_CurrentModelIndex]);
     g_CurrentPartIndex = -1;
     g_SelectedPolygonIndex = -1;
     g_SecondaryPolygonIndex = -1;
@@ -112,7 +112,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       if (g_UseExternalRenderer == 0) {
         engine_2d_c_fillRectColor_FUN_00403170
                   (0,0,g_WindowWidth + -1,g_WindowHeight + -1,
-                   (int)(&g_EditorBackgroundColors)[g_CurrentModelIndex]);
+                   g_EditorBackgroundColors[g_CurrentModelIndex]);
       }
       else {
         g_ClipLeft = 0;
@@ -120,7 +120,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
         g_ClipRight = g_WindowWidth + -1;
         g_ClipBottom = g_WindowHeight + -1;
         wincore_windll_cpp_drawFullScreenQuad_FUN_005b7a50
-                  ((int)(&g_EditorBackgroundColors)[g_CurrentModelIndex]);
+                  (g_EditorBackgroundColors[g_CurrentModelIndex]);
         g_ClipLeft = iVar12;
         g_ClipTop = iVar13;
         g_ClipRight = iVar2;
@@ -335,7 +335,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       if ((g_KeyboardState[0x2e] != '\0') && (g_KeyboardState[0x1d] != '\0')) {
         g_KeyboardState[0x2e] = '\0';
         g_CurrentModelIndex = (g_CurrentModelIndex + 1) % g_ModelCount;
-        engine_2d_c_setTextColor_FUN_00402840((int)(&g_EditorColorIndices)[g_CurrentModelIndex]);
+        engine_2d_c_setTextColor_FUN_00402840(g_EditorColorIndices[g_CurrentModelIndex]);
       }
       if (g_KeyboardState[0x2e] != '\0') {
         g_KeyboardState[0x2e] = '\0';

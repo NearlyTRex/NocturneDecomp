@@ -2535,7 +2535,6 @@ annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CLodMeshPrecomputeEntry
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/makeAbsolutePathFromReference_FUN_00589530.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/createMeshPrecomputeFile_FUN_00589bb0.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_renderOpaque_FUN_005db840.cpp
-annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_setup_FUN_005dafc0.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_ctor_FUN_005daf60.cpp
 annotations/nocedit.exe/pseudocode/src/core/ammo.cpp/CAmmo_getBoundingBox_FUN_00410ef0.cpp
 annotations/nocedit.exe/pseudocode/src/core/weapon.cpp/CWeapon_getBoundingBox_FUN_005ee0c0.cpp
@@ -2948,6 +2947,7 @@ annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CLightningBolt_activateDire
 annotations/nocedit.exe/pseudocode/src/core/werewolf.cpp/CWerewolf_propertyActionCallback_FUN_005f2070.cpp
 annotations/nocedit.exe/pseudocode/src/core/sentinel.cpp/CSentinel_ctor_FUN_00567db0.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0.cpp
+annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_setup_FUN_005dafc0.cpp
 annotations/nocedit.exe/pseudocode/src/core/stone.cpp/CTempleStone_canPickup_FUN_005bad70.cpp
 annotations/nocedit.exe/pseudocode/src/core/battery.cpp/CBattery_renderOpaque_FUN_00417f80.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_calculateMemorySize_FUN_0059dd60.cpp
@@ -3838,7 +3838,6 @@ annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_renderOpaque
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_backupModel_FUN_00479260.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/copyTextureFiles_FUN_0047ca50.cpp
 annotations/nocedit.exe/pseudocode/src/core/boxactor.cpp/CBoxActor_constrainToExtents_FUN_00422590.cpp
-annotations/nocedit.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_advanceMotion_FUN_005d9970.cpp
 annotations/nocedit.exe/pseudocode/src/core/wateract.cpp/CWaterActor_updateWorldPositions_FUN_005eafa0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dtrace.cpp/CDemonRaytrace_freeTriList_FUN_00494690.cpp
 annotations/nocedit.exe/pseudocode/src/core/game.cpp/CGame_updateFadeTransition_FUN_004e09c0.cpp
@@ -3930,6 +3929,7 @@ annotations/nocedit.exe/pseudocode/src/core/crossbow.cpp/CCrossbow_dtor_FUN_0044
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_getPropertyList_FUN_0042f730.cpp
 annotations/nocedit.exe/pseudocode/src/core/stairs.cpp/CStairs_dtor_FUN_005bac10.cpp
 annotations/nocedit.exe/pseudocode/src/core/teleport.cpp/CTeleportDest_processInEditor_FUN_005da870.cpp
+annotations/nocedit.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_advanceMotion_FUN_005d9970.cpp
 annotations/nocedit.exe/pseudocode/src/core/main.c/waitWithSkip_FUN_005082a0.c
 annotations/nocedit.exe/pseudocode/src/core/wateract.cpp/CWaterActor_dtor_FUN_005ebc60.cpp
 annotations/nocedit.exe/pseudocode/src/core/platfrm.cpp/CPlatform_propertyDisplaySlewCallback_FUN_0054e400.cpp
@@ -4130,7 +4130,6 @@ annotations/nocedit.exe/pseudocode/src/core/sound.cpp/CSound_configure_FUN_005b3
 annotations/nocedit.exe/pseudocode/src/core/sound.cpp/filterSoundFilesByPattern_FUN_005b17d0.cpp
 annotations/nocedit.exe/pseudocode/src/core/flame.cpp/CFlame_processInEditor_FUN_004caf60.cpp
 annotations/nocedit.exe/pseudocode/src/core/dstrender.cpp/memcpyMMX_FUN_00492001.keep.cpp
-annotations/nocedit.exe/pseudocode/src/core/smiley.cpp/CSmiley_attractActorToward_FUN_005a3160.cpp
 annotations/nocedit.exe/pseudocode/src/core/conveyor.cpp/CConveyor_ctor_FUN_00441ca0.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/copyBoneData_FUN_00599480.cpp
 annotations/nocedit.exe/pseudocode/src/core/weapon.cpp/CWeapon_process_FUN_005ee110.cpp
@@ -4171,6 +4170,7 @@ annotations/nocedit.exe/pseudocode/src/core/fire.cpp/staticInit_FUN_004bef20.cpp
 annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_buildScriptCrossReferences_FUN_0053ea30.cpp
 annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_playSound_FUN_0053eb40.cpp
 annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_pasteActorProperty_FUN_0053af50.cpp
+annotations/nocedit.exe/pseudocode/src/core/smiley.cpp/CSmiley_attractActorToward_FUN_005a3160.cpp
 annotations/nocedit.exe/pseudocode/src/core/conveyor.cpp/CConveyor_processInEditor_FUN_004421c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/stranger.cpp/CStranger_archive_FUN_005c2fe0.cpp
 annotations/nocedit.exe/pseudocode/src/core/enemy.cpp/CEnemy_archive_FUN_004a9660.cpp
@@ -4913,7 +4913,6 @@ annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CShell_render_FUN_004c6200.
 annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_selectLOD_FUN_0059ce40.cpp
 annotations/nocedit.exe/pseudocode/src/core/frankgen.cpp/CFrankenstienMachine_accumulateParticles_FUN_004d1ec0.cpp
 annotations/nocedit.exe/pseudocode/src/core/chain.cpp/CChain_setup_FUN_0042fd20.cpp
-annotations/nocedit.exe/pseudocode/src/core/gabriela.cpp/CGabriella_setup_FUN_004d2c40.cpp
 annotations/nocedit.exe/pseudocode/src/shape/design.c/sizeModelToYFeet_FUN_00467010.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/sizeModelToXFeet_FUN_00466e40.c
 annotations/nocedit.exe/pseudocode/src/shape/design.c/sizeModelToZFeet_FUN_00466c70.c
@@ -4961,6 +4960,7 @@ annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_findMi
 annotations/nocedit.exe/pseudocode/src/core/dfont.cpp/freeFonts_FUN_004710a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/tvbat.cpp/CTVBat_processInEditor_FUN_005e5260.cpp
 annotations/nocedit.exe/pseudocode/src/core/gabriela.cpp/CGabriella_updateClavicleCollisionAvoidance_FUN_004d6d40.cpp
+annotations/nocedit.exe/pseudocode/src/core/gabriela.cpp/CGabriella_setup_FUN_004d2c40.cpp
 annotations/nocedit.exe/pseudocode/src/core/bodypart.cpp/CBodyPart_addFire_FUN_0041ae50.cpp
 annotations/nocedit.exe/pseudocode/src/shape/quantize.cpp/displayProgressBar_FUN_005568f0.cpp
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CObj_restoreVertexPositionsWithFlag_FUN_005d38b0.cpp
@@ -5032,7 +5032,6 @@ annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_init
 annotations/nocedit.exe/pseudocode/src/core/mobster.cpp/CMobster_processDamage_FUN_00527740.cpp
 annotations/nocedit.exe/pseudocode/src/core/flame.cpp/CFlame_renderBackground_FUN_004caa80.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/distancePointToLineSegment_FUN_005996e0.cpp
-annotations/nocedit.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_setup_FUN_005d88e0.cpp
 annotations/nocedit.exe/pseudocode/src/core/platfrm.cpp/CPlatform_showEditorHelp_FUN_0054f060.cpp
 annotations/nocedit.exe/pseudocode/src/core/emitter.cpp/CEmitter_renderOpaque_FUN_004a8860.cpp
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CComplexPolygon_processEdgeSubLoops_FUN_005c91e0.cpp
@@ -5041,6 +5040,7 @@ annotations/nocedit.exe/pseudocode/src/engine/model.c/getMRGLSize_FUN_00528700.c
 annotations/nocedit.exe/pseudocode/src/core/icepick.cpp/CIcePick_processDamage_FUN_004f95b0.cpp
 annotations/nocedit.exe/pseudocode/src/core/script.cpp/CScript_checkSyntax_FUN_00566080.cpp
 annotations/nocedit.exe/pseudocode/src/core/motion.cpp/CMotionController_markerPositionToFrame_FUN_0052e3a0.cpp
+annotations/nocedit.exe/pseudocode/src/core/svetlana.cpp/CSvetlana_setup_FUN_005d88e0.cpp
 annotations/nocedit.exe/pseudocode/src/shape/design.c/deletePolygonRange_FUN_0045dd70.c
 annotations/nocedit.exe/pseudocode/src/support/codec.cpp/CLZWDictionary_initTable_FUN_0043eef0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/buildColorLookupTable_FUN_00402870.c
@@ -5396,7 +5396,6 @@ annotations/nocedit.exe/pseudocode/src/sound/mp3.cpp/calculateMpegFrame_FUN_0052
 annotations/nocedit.exe/pseudocode/src/core/setutil.cpp/generateSphereVertex_FUN_00587a40.cpp
 annotations/nocedit.exe/pseudocode/src/core/xform.cpp/buildMatrixFromEulerAndPositionDirect_FUN_005f54c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/vessel.cpp/CCryptVessel_renderTransparent_FUN_005e98b0.cpp
-annotations/nocedit.exe/pseudocode/src/core/stranger.cpp/CStranger_setup_FUN_005bb4b0.cpp
 annotations/nocedit.exe/pseudocode/src/core/stranger.cpp/CStranger_extractTurnPose_FUN_005bf720.cpp
 annotations/nocedit.exe/pseudocode/src/core/boxactor.cpp/CLightActor_process_FUN_00422a50.cpp
 annotations/nocedit.exe/pseudocode/src/engine/matrix.c/buildRotationMatrix_FUN_0050c920.c
@@ -5421,6 +5420,7 @@ annotations/nocedit.exe/pseudocode/src/core/dracbrid.cpp/CDraculaBride_updateFre
 annotations/nocedit.exe/pseudocode/src/core/vehicle.cpp/CVehicle_setup_FUN_005e7b90.cpp
 annotations/nocedit.exe/pseudocode/src/core/script.cpp/CScript_initRuntime_FUN_0055a540.cpp
 annotations/nocedit.exe/pseudocode/src/core/dstrender.cpp/renderTexturedDecalMMXScanline_FUN_0049169d.mmx.cpp
+annotations/nocedit.exe/pseudocode/src/core/stranger.cpp/CStranger_setup_FUN_005bb4b0.cpp
 annotations/nocedit.exe/pseudocode/src/core/path.cpp/CPathMap_isLineWalkable_FUN_00546c40.cpp
 annotations/nocedit.exe/pseudocode/src/shape/design.c/optimizePolygonMesh_FUN_004658e0.c
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/drawCharacter_FUN_00401a10.c
@@ -6173,9 +6173,8 @@ annotations/nocedit.exe/pseudocode/src/core/dpart.cpp/CDemonPart_processAndFinal
 annotations/nocedit.exe/pseudocode/src/core/stranger.cpp/CStranger_autoAimAtThreat_FUN_005c3960.cpp
 annotations/nocedit.exe/pseudocode/src/engine/clipper.c/clipPolygonNearPlane_FUN_00436420.c
 annotations/nocedit.exe/pseudocode/src/core/level.cpp/CLevelLoader_update_FUN_00504160.cpp
-annotations/nocedit.exe/pseudocode/src/core/gabriela.cpp/CGabriella_updateWeaponPosition_FUN_004d5550.cpp
 annotations/nocedit.exe/pseudocode/src/core/zombie.cpp/CZombie_processPickup_FUN_005fb530.cpp
-annotations/nocedit.exe/pseudocode/src/core/dpart.cpp/CDemonPart_loadFromFile_FUN_004825c0.cpp
+annotations/nocedit.exe/pseudocode/src/core/gabriela.cpp/CGabriella_updateWeaponPosition_FUN_004d5550.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeledit.cpp/CBoneStructure_readBONheader_FUN_0058a4a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/water.cpp/CWater_calculateVisibleTiles_FUN_005e9e70.cpp
 annotations/nocedit.exe/pseudocode/src/core/curtain.cpp/CCurtain_ctor_FUN_004496a0.cpp
@@ -6219,6 +6218,7 @@ annotations/nocedit.exe/pseudocode/src/core/turret.cpp/CTurret_process_FUN_005e2
 annotations/nocedit.exe/pseudocode/src/core/water.cpp/CWater_render_FUN_005ea320.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_dismember_FUN_0059c5e0.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/winrun.cpp/getKeyName_FUN_005f3980.cpp
+annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_precomputeLight_FUN_0044de10.cpp
 annotations/nocedit.exe/pseudocode/src/core/script.cpp/parseCommandWithTemplates_FUN_00561690.cpp
 annotations/nocedit.exe/pseudocode/src/core/dlight.cpp/CDemonLight_renderLightBloomQuad_FUN_00473a20.cpp
 annotations/nocedit.exe/pseudocode/src/core/script.cpp/CScript_processEditorInput_FUN_00565130.cpp
@@ -6235,7 +6235,6 @@ annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_rend
 annotations/nocedit.exe/pseudocode/src/core/succubus.cpp/CSuccubus_process_FUN_005c6e90.cpp
 annotations/nocedit.exe/pseudocode/src/core/game.cpp/CGame_runGameSession_FUN_004daf80.cpp
 annotations/nocedit.exe/pseudocode/src/engine/3d.c/clipAndDrawLine2D_FUN_00407d70.c
-annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_precomputeLight_FUN_0044de10.cpp
 annotations/nocedit.exe/pseudocode/src/core/curtain.cpp/CCurtain_solveConstraints_FUN_00449fc0.cpp
 annotations/nocedit.exe/pseudocode/src/core/boneguy.cpp/CBoneGuy_ctor_FUN_0041bbc0.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/windll.cpp/initializeExternalRenderer_FUN_005b5ec0.cpp
@@ -6287,20 +6286,22 @@ annotations/nocedit.exe/pseudocode/src/core/bride.cpp/CBride_process_FUN_00423a3
 annotations/nocedit.exe/pseudocode/src/wincore/windll.cpp/renderAlphaRow32_FUN_005b555c.mmx.cpp
 annotations/nocedit.exe/pseudocode/src/cockpit/drawsurf.cpp/CDrawSurface_fillPoly_FUN_00488cd0.cpp
 annotations/nocedit.exe/pseudocode/src/shape/meshlod.cpp/CLodMesh_computeMeshCRC32_FUN_0051c6f0.cpp
+annotations/nocedit.exe/pseudocode/src/core/dpart.cpp/CDemonPart_loadFromFile_FUN_004825c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_editGore_FUN_0053e220.cpp
 annotations/nocedit.exe/pseudocode/src/core/door.cpp/CDoor_ctor_FUN_0047fad0.cpp
 annotations/nocedit.exe/pseudocode/src/core/set.cpp/CDemonSet_setCameraView_FUN_0056ae50.cpp
 annotations/nocedit.exe/pseudocode/src/core/game.cpp/CGame_showChapterSelect_FUN_004e1cb0.cpp
 annotations/nocedit.exe/pseudocode/src/core/course.cpp/renderCourseGizmo_FUN_00443760.cpp
 annotations/nocedit.exe/pseudocode/src/core/mimic.cpp/CMimic_updatePose_FUN_0051f930.cpp
+annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_renderLightCoronas_FUN_004518f0.cpp
 annotations/nocedit.exe/pseudocode/src/shape/meshlod.cpp/CLodMesh_chooseLodsInteractive_FUN_0051d990.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/windll.cpp/loadExternalRenderer_FUN_005b6750.cpp
 annotations/nocedit.exe/pseudocode/src/core/skeleton.cpp/CDeformableModel_renderSkeleton_FUN_0059b640.cpp
 annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CGunFlame_render_FUN_004c50b0.cpp
+annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_precomputeNormals_FUN_0044e360.cpp
 annotations/nocedit.exe/pseudocode/src/shape/design.c/complexPolygonReduction_FUN_00463b30.c
 annotations/nocedit.exe/pseudocode/src/core/xform.cpp/matrixToEulerAnglesZYX_FUN_005f5bd0.cpp
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CPoly_transform_FUN_005ccc30.cpp
-annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_precomputeNormals_FUN_0044e360.cpp
 annotations/nocedit.exe/pseudocode/src/engine/colquant.c/computeBoxStatistics_FUN_00441260.c
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_process_FUN_005db050.cpp
 annotations/nocedit.exe/pseudocode/src/shape/design.c/tileTextureMaps_FUN_0046a180.c
@@ -6335,7 +6336,6 @@ annotations/nocedit.exe/pseudocode/src/core/setedit.cpp/CDemonSet_editCameraPosi
 annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_setup_FUN_00439710.cpp
 annotations/nocedit.exe/pseudocode/src/core/dstrender.cpp/blendLightmapToTextureMMX_FUN_00493dc4.mmx.cpp
 annotations/nocedit.exe/pseudocode/src/core/set.cpp/CDemonSet_processActors_FUN_0056b810.cpp
-annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_renderLightCoronas_FUN_004518f0.cpp
 annotations/nocedit.exe/pseudocode/src/core/mimic.cpp/CMimic_processAnimation_FUN_0051fcc0.cpp
 annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_step_FUN_0043abb0.cpp
 annotations/nocedit.exe/pseudocode/src/core/gargoyle.cpp/CGargoyle_process_FUN_004e4a00.cpp
@@ -6383,9 +6383,9 @@ annotations/nocedit.exe/pseudocode/src/shape/meshlod.cpp/CLodMesh_computeEdgeCol
 annotations/nocedit.exe/pseudocode/src/core/dtrace.cpp/CDemonRaytrace_renderCubeForPVS_FUN_00497500.cpp
 annotations/nocedit.exe/pseudocode/src/core/scat.cpp/CScat_blendAimBones_FUN_005584a0.cpp
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CPoly_scale_FUN_005cc7c0.cpp
-annotations/nocedit.exe/pseudocode/src/core/stranger.cpp/CStranger_makeDrawDecision_FUN_005bfb60.cpp
 annotations/nocedit.exe/pseudocode/src/core/dmodel.cpp/CKeyFramedModel_importFromS3D_FUN_00479330.cpp
 annotations/nocedit.exe/pseudocode/src/core/menu.cpp/configureGraphicsOptions_FUN_00510c80.cpp
+annotations/nocedit.exe/pseudocode/src/core/stranger.cpp/CStranger_makeDrawDecision_FUN_005bfb60.cpp
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/closestPointOnSegment3D_FUN_005d6020.cpp
 annotations/nocedit.exe/pseudocode/src/core/vehicle.cpp/CVehicle_ctor_FUN_005e7940.cpp
 annotations/nocedit.exe/pseudocode/src/core/set.cpp/CDemonSet_ctor_FUN_005690c0.cpp

@@ -54,32 +54,31 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *thi
   }
   else {
     iVar5 = 0;
-    _fread(g_PolyDataConversionBuffer,0x48,this_ptr->face_count,file_handle)
-    ;
+    _fread(g_FaceConversionBuffer,0x48,this_ptr->face_count,file_handle);
     if (0 < this_ptr->face_count) {
       iVar9 = 0;
       iVar8 = 0;
       do {
         *(uint *)((int)&(this_ptr->face_data->plane).A + iVar8) =
-             *(uint *)(g_PolyDataConversionBuffer + iVar9 + 8);
+             *(uint *)((int)g_FaceConversionBuffer[0].vertices + iVar9 + -0x10);
         *(uint *)((int)&(this_ptr->face_data->plane).B + iVar8) =
-             *(uint *)(g_PolyDataConversionBuffer + iVar9 + 0xc);
+             *(uint *)((int)(g_FaceConversionBuffer[0].vertices + -1) + iVar9);
         *(uint *)((int)&(this_ptr->face_data->plane).C + iVar8) =
-             *(uint *)(g_PolyDataConversionBuffer + iVar9 + 0x10);
+             *(uint *)((int)g_FaceConversionBuffer[0].vertices + iVar9 + -8);
         *(uint *)((int)&(this_ptr->face_data->plane).D + iVar8) =
-             *(uint *)(g_PolyDataConversionBuffer + iVar9 + 0x14);
+             *(uint *)((int)g_FaceConversionBuffer[0].vertices + iVar9 + -4);
         *(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar8) =
-             *(uint *)(g_PolyDataConversionBuffer + iVar9 + 0x18);
+             *(uint *)((int)&g_FaceConversionBuffer[0].vertices[0].vertex_index + iVar9);
         *(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar8) =
-             *(uint *)(g_PolyDataConversionBuffer + iVar9 + 0x24);
+             *(uint *)((int)&g_FaceConversionBuffer[0].vertices[1].vertex_index + iVar9);
         *(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar8) =
-             *(uint *)(g_PolyDataConversionBuffer + iVar9 + 0x30);
-        if (*(int *)(g_PolyDataConversionBuffer + iVar9 + 4) == 3) {
+             *(uint *)((int)&g_FaceConversionBuffer[0].vertices[2].vertex_index + iVar9);
+        if (*(int *)((int)g_FaceConversionBuffer[0].vertices + iVar9 + -0x14) == 3) {
           *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar8) = 0xffffffff;
         }
         else {
           *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar8) =
-               *(uint *)(g_PolyDataConversionBuffer + iVar9 + 0x3c);
+               *(uint *)((int)&g_FaceConversionBuffer[0].vertices[3].vertex_index + iVar9);
         }
         iVar8 = iVar8 + 0x20;
         iVar5 = iVar5 + 1;

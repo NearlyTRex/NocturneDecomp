@@ -26,7 +26,7 @@
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
 ;   int g_NoiseTableIndex
-;   int[100] g_NoiseTable
+;   int[102] g_NoiseTable
 ;   undefined4 g_NoiseTable[1]
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]

@@ -24,7 +24,7 @@
 ;   int g_BitsPerPixel = 0x8
 ;   void*[1200] g_ScreenBufferArray
 ;   ushort[256] g_ColorTable16
-;   uint[256] g_ColorTable32
+;   uint[448] g_ColorTable32
 ;   int g_ActiveRenderColor
 ;
 ; *****************************************************************************

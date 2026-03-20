@@ -91,12 +91,12 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
     }
     local_30 = -1.3089969;
     local_2c = 0.5235988;
-    iVar2 = INT_03f6bb00;
-    iVar4 = INT_03f6bad8;
+    iVar2 = g_StrangerIndices[0xd];
+    iVar4 = g_StrangerIndices[3];
   }
   else {
-    iVar2 = INT_03f6bb04;
-    iVar4 = INT_03f6badc;
+    iVar2 = g_StrangerIndices[0xe];
+    iVar4 = g_StrangerIndices[4];
     if (local_48 == 0) {
       local_2c = 1.3089969;
       local_30 = -0.5235988;

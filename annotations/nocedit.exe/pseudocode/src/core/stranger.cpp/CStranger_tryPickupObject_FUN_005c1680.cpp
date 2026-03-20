@@ -227,9 +227,9 @@ LAB_005c17d2:
       }
       else {
         core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                  (pCVar2,&CStack_b8,INT_03f6bb04);
+                  (pCVar2,&CStack_b8,g_StrangerIndices[0xe]);
         core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                  (pCVar2,&CStack_ac,INT_03f6badc);
+                  (pCVar2,&CStack_ac,g_StrangerIndices[4]);
         fVar8 = CStack_ac.x - (this_ptr->carry_object_world_center).x;
         fVar6 = CStack_ac.y - (this_ptr->carry_object_world_center).y;
         fVar7 = CStack_ac.z - (this_ptr->carry_object_world_center).z;

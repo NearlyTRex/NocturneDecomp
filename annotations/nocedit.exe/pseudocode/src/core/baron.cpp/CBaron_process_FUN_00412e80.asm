@@ -36,9 +36,9 @@
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CGame* g_CGamePtr = 02d81a9c
-;   int INT_00822498
-;   int INT_008224cc
-;   int INT_008224d0
+;   int[17] g_BaronIndices
+;   undefined4 g_BaronIndices[13]
+;   undefined4 g_BaronIndices[14]
 ;   float FLOAT_008224dc
 ;   CConsole g_CConsoleInstance
 ;   ... and 4 more
@@ -260,7 +260,7 @@ section .text
         ;   XREF to: 0059e020 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004130d9
     PUSH 0x59ddb0                       ; 004130dc
-    MOV ESI,dword ptr [0x00822498]      ; 004130e1 | INT_00822498
+    MOV ESI,dword ptr [0x00822498]      ; 004130e1 | g_BaronIndices
     PUSH ESI                            ; 004130e7
     LEA EAX,[EBP + 0x1fc9c]             ; 004130e8
     PUSH dword ptr [EBP + 0x1fca8]      ; 004130ee
@@ -382,7 +382,7 @@ section .text
     LEA EAX,[EBP + 0x158]               ; 0041323b
     JMP 0x0041300b                      ; 00413241
         ;   XREF to: 0041300b (UNCONDITIONAL_JUMP)  ; LAB_0041300b
-    MOV EBX,dword ptr [0x008224cc]      ; 00413246 | INT_008224cc
+    MOV EBX,dword ptr [0x008224cc]      ; 00413246 | g_BaronIndices[13]
         ;   Label: caseD_4
     LEA EAX,[EBX*0x4 + 0x0]             ; 0041324c
     SUB EAX,EBX                         ; 00413253
@@ -414,7 +414,7 @@ section .text
     MOV dword ptr [ESP + 0x7c],EAX      ; 00413298
     MOV EAX,dword ptr [EBX + 0x8]       ; 0041329c
     MOV dword ptr [ESP + 0x80],EAX      ; 0041329f
-    MOV EBX,dword ptr [0x008224d0]      ; 004132a6 | INT_008224d0
+    MOV EBX,dword ptr [0x008224d0]      ; 004132a6 | g_BaronIndices[14]
         ;   Label: LAB_004132a6
     LEA EAX,[EBX*0x4 + 0x0]             ; 004132ac
     SUB EAX,EBX                         ; 004132b3

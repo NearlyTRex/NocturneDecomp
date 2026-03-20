@@ -6076,17 +6076,7 @@ WatcomTypeInfo g_CHighPriestOfGardathTypeInfo = {
 
 // char
 char g_SpaceCharacter = ' ';
-char g_ColonChar = ':';
-char g_AsteriskChar = '*';
 
 // int
 int g_CramInvalidMarker = 0x2D;
-
-// undefined1
-undefined1 DAT_006597a1 = 0;
-undefined1 DAT_006597a2 = 0;
-undefined1 DAT_006597a3 = 0;
-undefined1 DAT_006597a5 = 0;
-undefined1 DAT_006597a6 = 0;
-undefined1 DAT_006597a7 = 0;
 

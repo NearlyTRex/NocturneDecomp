@@ -34,17 +34,13 @@ extern CVector3f g_ClipOutputVertices[16];
 extern byte g_FloorCacheValid;
 
 // char[1024]
+extern char g_MessageFormatBuffer[1024];
 extern char g_DialogMessageBuffer_02cef130[1024];
+extern char g_ErrorMessageBuffer_02cef530[1024];
 extern char g_StatusMessageBuffer[1024];
 
 // char[2048]
 extern char g_ConfirmationMessageBuffer[2048];
-
-// char[256]
-extern char g_ErrorMessageBuffer_02cef530[256];
-
-// char[512]
-extern char g_MessageFormatBuffer[512];
 
 // int
 extern int INT_02cee5ac;

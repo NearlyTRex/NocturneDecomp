@@ -50,7 +50,7 @@
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CConsole g_CConsoleInstance
 ;   int g_GlobalDeltaTimeInt
-;   int INT_02d83208
+;   undefined4 g_GargoyleIndices[2]
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -385,7 +385,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004e4d7b
     ADD ESP,0x8                         ; 004e4d7e
     LEA EAX,[EBP + -0x7a]               ; 004e4d81
-    MOV EDX,dword ptr [0x02d83208]      ; 004e4d84 | INT_02d83208
+    MOV EDX,dword ptr [0x02d83208]      ; 004e4d84 | g_GargoyleIndices[2]
     PUSH EAX                            ; 004e4d8a
     LEA EAX,[EDX*0x4 + 0x0]             ; 004e4d8b
     MOV dword ptr [EBP + -0x46],EBX     ; 004e4d92

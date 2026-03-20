@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   WatcomStaticDestructorNode g_CLZWDecompressDestructorNode
-;   CVector3f[76800] g_PrecomputedSurfaceNormals
+;   CVector3f[241][320] g_PrecomputedSurfaceNormals
 ;   CLZWDecompress g_CLZWDecompressInstance
 ;
 ; Called Functions:

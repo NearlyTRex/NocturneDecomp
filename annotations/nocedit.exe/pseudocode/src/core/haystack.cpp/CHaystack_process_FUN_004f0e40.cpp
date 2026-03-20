@@ -269,7 +269,7 @@ LAB_004f1054:
                          (&pCVar10->motion_controller), pSVar8->state_index != 0x13)) {
     blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
     fVar15 = this_ptr->head_look_blend_weight;
-    iVar6 = INT_02db8700;
+    iVar6 = g_HaystackIndices[0];
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_look_euler,&CStack_8c);
     source_quaternions = &CStack_7c;
     CStack_7c.w = CStack_8c.w;

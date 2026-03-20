@@ -11,8 +11,8 @@
 ; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; Referenced Globals:
-;   int INT_00822cdc
-;   int INT_00822d00
+;   int[11] g_BrideIndices
+;   undefined4 g_BrideIndices[9]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
@@ -34,7 +34,7 @@ section .text
     JZ 0x00424a6c                       ; 00424a35
         ;   XREF to: 00424a6c (CONDITIONAL_JUMP)  ; LAB_00424a6c
     PUSH ESI                            ; 00424a37
-    MOV ESI,dword ptr [0x00822cdc]      ; 00424a38 | INT_00822cdc
+    MOV ESI,dword ptr [0x00822cdc]      ; 00424a38 | g_BrideIndices
     PUSH ESI                            ; 00424a3e
     LEA EDX,[ESP + 0x14]                ; 00424a3f
     PUSH EDX                            ; 00424a43
@@ -57,7 +57,7 @@ section .text
     ADD ESP,0x18                        ; 00424a67
     POP EBX                             ; 00424a6a
     RET                                 ; 00424a6b
-    MOV ECX,dword ptr [0x00822d00]      ; 00424a6c | INT_00822d00
+    MOV ECX,dword ptr [0x00822d00]      ; 00424a6c | g_BrideIndices[9]
         ;   Label: LAB_00424a6c
     PUSH ECX                            ; 00424a72
     LEA EDX,[ESP + 0x4]                 ; 00424a73

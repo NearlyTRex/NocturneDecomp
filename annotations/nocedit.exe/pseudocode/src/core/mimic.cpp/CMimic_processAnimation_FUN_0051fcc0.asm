@@ -204,7 +204,7 @@ section .text
     CMP dword ptr [EBX + 0x2410],0x0    ; 0051fe01
     JZ 0x0051fdd9                       ; 0051fe08
         ;   XREF to: 0051fdd9 (CONDITIONAL_JUMP)  ; LAB_0051fdd9
-    MOV EDX,dword ptr [0x02f33394]      ; 0051fe0a | INT_02f33394
+    MOV EDX,dword ptr [0x02f33394]      ; 0051fe0a | g_MimicIndices[7]
     PUSH EDX                            ; 0051fe10
     LEA EAX,[EBP + -0x3a]               ; 0051fe11
     PUSH EAX                            ; 0051fe14
@@ -316,7 +316,7 @@ section .text
     SAHF                                ; 0051ff46
     JNC 0x0051fdb4                      ; 0051ff47
         ;   XREF to: 0051fdb4 (CONDITIONAL_JUMP)  ; LAB_0051fdb4
-    MOV ECX,dword ptr [0x02f33378]      ; 0051ff4d | INT_02f33378
+    MOV ECX,dword ptr [0x02f33378]      ; 0051ff4d | g_MimicIndices
     PUSH ECX                            ; 0051ff53
     MOV ESI,dword ptr [EBP + 0x72]      ; 0051ff54
     PUSH ESI                            ; 0051ff57
@@ -625,7 +625,7 @@ section .text
         ;   Label: LAB_00520349
     JZ 0x0051fdd9                       ; 00520350
         ;   XREF to: 0051fdd9 (CONDITIONAL_JUMP)  ; LAB_0051fdd9
-    MOV EDI,dword ptr [0x02f33398]      ; 00520356 | INT_02f33398
+    MOV EDI,dword ptr [0x02f33398]      ; 00520356 | g_MimicIndices[8]
     PUSH EDI                            ; 0052035c
     LEA EAX,[EBP + -0x76]               ; 0052035d
     PUSH EAX                            ; 00520360

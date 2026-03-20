@@ -403,11 +403,11 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                        (&local_d8,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                        INT_03f6bb04);
+                        g_StrangerIndices[0xe]);
     pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                        (&local_90,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                        INT_03f6bb00);
+                        g_StrangerIndices[0xd]);
     fVar3 = (pCVar4->x + pCVar5->x) * 0.5f;
     fVar1 = (pCVar4->y + pCVar5->y) * 0.5f;
     fVar2 = (pCVar4->z + pCVar5->z) * 0.5f;

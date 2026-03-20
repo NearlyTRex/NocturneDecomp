@@ -57,8 +57,8 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
       local_2c.x = -((pCVar3->max).z - (pCVar3->min).z);
     }
     core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
-              (this_ptr,delta_time,&this_ptr->left_clavicle_blend,INT_02d7b888,INT_02d7b84c,
-               &local_2c);
+              (this_ptr,delta_time,&this_ptr->left_clavicle_blend,g_GabriellaIndices[0x10],
+               g_GabriellaIndices[1],&local_2c);
     pCVar2 = (this_ptr->base).base.carry_hands[1].carry_actor;
     if (pCVar2 == (CDemonActor *)0x0) {
       local_2c.x = 0.5;
@@ -68,17 +68,17 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
       local_2c.x = (pCVar4->max).z - (pCVar4->min).z;
     }
     core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
-              (this_ptr,delta_time,&this_ptr->right_clavicle_blend,INT_02d7b88c,INT_02d7b850,
-               &local_2c);
+              (this_ptr,delta_time,&this_ptr->right_clavicle_blend,g_GabriellaIndices[0x11],
+               g_GabriellaIndices[2],&local_2c);
     core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
     return;
   }
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-            (this_ptr_00,0,0.0,this_ptr->left_clavicle_blend,INT_02d7b84c,
+            (this_ptr_00,0,0.0,this_ptr->left_clavicle_blend,g_GabriellaIndices[1],
              core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-            (this_ptr_00,0,0.0,this_ptr->right_clavicle_blend,INT_02d7b850,
+            (this_ptr_00,0,0.0,this_ptr->right_clavicle_blend,g_GabriellaIndices[2],
              core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
   return;
 }

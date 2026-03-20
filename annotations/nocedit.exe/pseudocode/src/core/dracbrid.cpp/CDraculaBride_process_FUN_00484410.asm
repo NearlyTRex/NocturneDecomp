@@ -835,7 +835,7 @@ section .text
         ;   Label: caseD_7
     JNZ 0x004846e0                      ; 00484cba
         ;   XREF to: 004846e0 (CONDITIONAL_JUMP)  ; default
-    MOV ESI,dword ptr [0x02c6d0bc]      ; 00484cc0 | INT_02c6d0bc
+    MOV ESI,dword ptr [0x02c6d0bc]      ; 00484cc0 | g_DraculaBrideIndices[7]
     PUSH ESI                            ; 00484cc6
     LEA EAX,[EBP + -0x46]               ; 00484cc7
     PUSH EAX                            ; 00484cca
@@ -900,7 +900,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00484d64
     ADD ESP,0x8                         ; 00484d67
     LEA EAX,[EBP + 0xfffffdfe]          ; 00484d6a
-    MOV ESI,dword ptr [0x02c6d0a0]      ; 00484d70 | INT_02c6d0a0
+    MOV ESI,dword ptr [0x02c6d0a0]      ; 00484d70 | g_DraculaBrideIndices
     PUSH EAX                            ; 00484d76
     LEA EAX,[ESI*0x4 + 0x0]             ; 00484d77
     MOV dword ptr [EBP + 0xfffffe32],EBX ; 00484d7e
@@ -948,7 +948,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00484dfd
     ADD ESP,0x8                         ; 00484e00
     LEA EAX,[EBP + 0xfffffdc2]          ; 00484e03
-    MOV ESI,dword ptr [0x02c6d0a0]      ; 00484e09 | INT_02c6d0a0
+    MOV ESI,dword ptr [0x02c6d0a0]      ; 00484e09 | g_DraculaBrideIndices
     PUSH EAX                            ; 00484e0f
     LEA EAX,[ESI*0x4 + 0x0]             ; 00484e10
     MOV dword ptr [EBP + 0xfffffdf6],EBX ; 00484e17
@@ -995,7 +995,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00484e98
     ADD ESP,0x8                         ; 00484e9b
     LEA EAX,[EBP + 0xfffffe76]          ; 00484e9e
-    MOV ESI,dword ptr [0x02c6d0a0]      ; 00484ea4 | INT_02c6d0a0
+    MOV ESI,dword ptr [0x02c6d0a0]      ; 00484ea4 | g_DraculaBrideIndices
     PUSH EAX                            ; 00484eaa
     LEA EAX,[ESI*0x4 + 0x0]             ; 00484eab
     SUB EAX,ESI                         ; 00484eb2
@@ -1043,7 +1043,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00484f35
     ADD ESP,0x8                         ; 00484f38
     LEA EAX,[EBP + 0xfffffe3a]          ; 00484f3b
-    MOV ESI,dword ptr [0x02c6d0a8]      ; 00484f41 | INT_02c6d0a8
+    MOV ESI,dword ptr [0x02c6d0a8]      ; 00484f41 | g_DraculaBrideIndices[2]
     PUSH EAX                            ; 00484f47
     LEA EAX,[ESI*0x4 + 0x0]             ; 00484f48
     SUB EAX,ESI                         ; 00484f4f
@@ -1536,7 +1536,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004854c7
     ADD ESP,0x8                         ; 004854ca
     LEA EAX,[EBP + 0xfffffd86]          ; 004854cd
-    MOV ESI,dword ptr [0x02c6d0a0]      ; 004854d3 | INT_02c6d0a0
+    MOV ESI,dword ptr [0x02c6d0a0]      ; 004854d3 | g_DraculaBrideIndices
     PUSH EAX                            ; 004854d9
     LEA EAX,[ESI*0x4 + 0x0]             ; 004854da
     MOV dword ptr [EBP + 0xfffffdba],EBX ; 004854e1

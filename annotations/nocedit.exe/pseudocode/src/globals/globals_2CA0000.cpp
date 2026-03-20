@@ -10,8 +10,8 @@ CDemonCube* g_PVSCubePointers[20000] = {};
 // CVector3i
 CVector3i CVector3i_02ca0388 = {};
 
-// SMRGLTextureBasic
-SMRGLTextureBasic g_SkyDomeTextureData = {};
+// SMRGLTextureBasic[24]
+SMRGLTextureBasic g_SkyDomeTextureData[24] = {};
 
 // int
 int g_CubesTestedCount = {};

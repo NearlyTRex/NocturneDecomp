@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0064f322 = -4
-;   int INT_03f48fa8
+;   undefined4 g_SmileyIndices[2]
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
@@ -52,7 +52,7 @@ section .text
     POP ESI                             ; 005a31a5
     POP EBX                             ; 005a31a6
     RET                                 ; 005a31a7
-    MOV EDX,dword ptr [0x03f48fa8]      ; 005a31a8 | INT_03f48fa8
+    MOV EDX,dword ptr [0x03f48fa8]      ; 005a31a8 | g_SmileyIndices[2]
         ;   Label: LAB_005a31a8
     LEA EAX,[EDX*0x4 + 0x0]             ; 005a31ae
     SUB EAX,EDX                         ; 005a31b5

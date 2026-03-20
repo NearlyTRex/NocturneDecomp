@@ -20,7 +20,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_advanceMotion_FUN_005d9970(CSvetlana *t
     }
     else {
       if (bone_index < 0x65) {
-        core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_005d9a10(this_ptr,INT_03f6cbd4);
+        core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_005d9a10
+                  (this_ptr,g_SvetlanaBoneIndices[0x11]);
         iVar1 = this_ptr->attack_hand;
       }
       else {
@@ -29,7 +30,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_advanceMotion_FUN_005d9970(CSvetlana *t
           ;
           goto LAB_005d99be;
         }
-        core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_005d9a10(this_ptr,INT_03f6cbd8);
+        core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_005d9a10
+                  (this_ptr,g_SvetlanaBoneIndices[0x12]);
         iVar1 = this_ptr->attack_hand;
       }
       this_ptr->attack_hand = (uint)(iVar1 == 0);

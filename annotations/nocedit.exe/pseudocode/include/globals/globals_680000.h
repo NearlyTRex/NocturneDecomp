@@ -449,7 +449,8 @@ extern int INT_00684cd0;
 extern int INT_00684ed0;
 extern int INT_00684edc;
 extern int g_SpecialExitHandler;
-extern int DAT_00684f30;
+extern int INT_00684f30;
+extern int INT_00684f34;
 extern int INT_00684fd0;
 extern int g_ConsoleInitializationFlag;
 extern int g_DstTransitionSecond;
@@ -483,6 +484,7 @@ extern int g_PathfindingDeltaX[9];
 extern int g_PathfindingDeltaZ[9];
 
 // short
+extern short SHORT_00684f38;
 extern short g_PureVirtualCallFlag;
 
 // uint

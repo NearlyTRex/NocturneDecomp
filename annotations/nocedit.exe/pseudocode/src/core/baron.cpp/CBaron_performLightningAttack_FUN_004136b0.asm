@@ -31,8 +31,8 @@
 ;   double DOUBLE_00615061 = 0.785398163375000
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
-;   int INT_008224cc
-;   int INT_008224d0
+;   undefined4 g_BaronIndices[13]
+;   undefined4 g_BaronIndices[14]
 ;   CFireEffect g_CFireEffectInstance
 ;   UVector3 g_ZeroVector
 ;
@@ -249,7 +249,7 @@ section .text
     MOV dword ptr [ESP + 0x108],EAX     ; 004138fd
     MOV EAX,dword ptr [EDX + 0x8]       ; 00413904
     MOV dword ptr [ESP + 0x10c],EAX     ; 00413907
-    MOV EDX,dword ptr [0x008224cc]      ; 0041390e | INT_008224cc
+    MOV EDX,dword ptr [0x008224cc]      ; 0041390e | g_BaronIndices[13]
         ;   Label: LAB_0041390e
     LEA EAX,[EDX*0x4 + 0x0]             ; 00413914
     SUB EAX,EDX                         ; 0041391b
@@ -269,7 +269,7 @@ section .text
     PUSH EBX                            ; 00413947
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 00413948
         ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-    MOV EDX,dword ptr [0x008224d0]      ; 0041394d | INT_008224d0
+    MOV EDX,dword ptr [0x008224d0]      ; 0041394d | g_BaronIndices[14]
     LEA EAX,[EDX*0x4 + 0x0]             ; 00413953
     SUB EAX,EDX                         ; 0041395a
     SHL EAX,0x4                         ; 0041395c

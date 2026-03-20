@@ -117,9 +117,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
         }
         pCVar9 = &(this_ptr->base).base.model;
         fVar2 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                          (&pCVar9->motion_controller,INT_02d7b87c,local_24);
+                          (&pCVar9->motion_controller,g_GabriellaIndices[0xd],local_24);
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-                  (pCVar9,INT_02d7b87c,fVar2,local_28,INT_02d7b858,
+                  (pCVar9,g_GabriellaIndices[0xd],fVar2,local_28,g_GabriellaIndices[4],
                    core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
         if (0.82f <= this_ptr->draw_blend) {
           local_2c = ((this_ptr->draw_blend - 0.82f) / (1.0 - 0.82f)) *
@@ -134,8 +134,8 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
             }
             pCVar9 = &(this_ptr->base).base.model;
             core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-                      (pCVar9,INT_02d7b880,local_34,local_2c * (float)0.90000000000000002,INT_02d7b890,
-                       core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
+                      (pCVar9,g_GabriellaIndices[0xe],local_34,local_2c * (float)0.90000000000000002,
+                       g_GabriellaIndices[0x12],core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
             local_6c.x = (FLOAT_02d7b838 * 3.141593f) / 180.0f;
             local_6c.y = FLOAT_02d7b83c * 3.141593f * 0.005555556f;
             local_6c.z = FLOAT_02d7b840 * 3.141593f * 0.005555556f;
@@ -155,7 +155,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
             puVar6 = (uint *)((int)&local_f4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
             *(uint *)((int)&local_104 + (uint)bVar6 * -8 + 4) =
                  *(uint *)((int)&local_f4 + (uint)bVar6 * -8 + 4);
-            iVar11 = INT_02d7b894;
+            iVar11 = g_GabriellaIndices[0x13];
             *puVar7 = *puVar6;
             puVar7[(uint)bVar6 * -2 + 1] = puVar6[(uint)bVar6 * -2 + 1];
             core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
@@ -164,17 +164,19 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
         }
       }
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + INT_02d7b88c,
-                 (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + INT_02d7b860,
-                 this_ptr->draw_blend / 0.64f,&local_1b4);
-      pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[INT_02d7b88c].w;
+                ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
+                 g_GabriellaIndices[0x11],
+                 (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
+                 g_GabriellaIndices[6],this_ptr->draw_blend / 0.64f,&local_1b4);
+      pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+                [g_GabriellaIndices[0x11]].w;
       pfVar8 = pfVar4 + (uint)bVar6 * -2 + 1;
       *pfVar4 = local_1b4.w;
       pfVar4 = (float *)((int)&local_1b4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       *pfVar8 = *(float *)((int)&local_1b4 + (uint)bVar6 * -8 + 4);
       pfVar8[(uint)bVar6 * -2 + 1] = *pfVar4;
       (pfVar8 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1] = pfVar4[(uint)bVar6 * -2 + 1];
-      iVar11 = INT_02d7b880;
+      iVar11 = g_GabriellaIndices[0xe];
       if (0.0 < this_ptr->fire_cooldown_timer) {
         fVar2 = this_ptr->fire_cooldown_timer;
         pCVar9 = &(this_ptr->base).base.model;
@@ -182,16 +184,18 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
         fVar2 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
                           (&pCVar9->motion_controller,iVar11,fVar2);
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
-                  (pCVar9,INT_02d7b880,fVar2,0);
+                  (pCVar9,g_GabriellaIndices[0xe],fVar2,0);
         (this_ptr->base).base.model.bone_update_mode = 0;
       }
     }
     else {
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + INT_02d7b88c,
-                 (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + INT_02d7b860,
-                 this_ptr->draw_blend / 0.64f,&local_1c4);
-      pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[INT_02d7b88c].w;
+                ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
+                 g_GabriellaIndices[0x11],
+                 (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
+                 g_GabriellaIndices[6],this_ptr->draw_blend / 0.64f,&local_1c4);
+      pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+                [g_GabriellaIndices[0x11]].w;
       *pfVar4 = local_1c4.w;
       puVar4 = pfVar4 + (uint)bVar6 * -2 + 1 + (uint)bVar6 * -2 + 1;
       puVar6 = (uint *)((int)&local_1c4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
@@ -212,9 +216,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
         }
         pCVar9 = &(this_ptr->base).base.model;
         fVar2 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                          (&pCVar9->motion_controller,INT_02d7b87c,local_20);
+                          (&pCVar9->motion_controller,g_GabriellaIndices[0xd],local_20);
         core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-                  (pCVar9,INT_02d7b87c,fVar2,local_28,INT_02d7b858,
+                  (pCVar9,g_GabriellaIndices[0xd],fVar2,local_28,g_GabriellaIndices[4],
                    core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
         if ((0.82f <= this_ptr->draw_blend) &&
            (fVar2 = ((this_ptr->draw_blend - 0.82f) / (1.0 - 0.82f)) *
@@ -257,7 +261,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
           puVar6 = (uint *)((int)&local_1d4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
           *(uint *)((int)&local_114 + (uint)bVar6 * -8 + 4) =
                *(uint *)((int)&local_1d4 + (uint)bVar6 * -8 + 4);
-          iVar11 = INT_02d7b858;
+          iVar11 = g_GabriellaIndices[4];
           *puVar7 = *puVar6;
           pcVar11 = pcVar13;
           puVar7[(uint)bVar6 * -2 + 1] = puVar6[(uint)bVar6 * -2 + 1];
@@ -271,9 +275,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
         (this_ptr->base).base.model.bone_update_mode = 2;
         pCVar9 = &(this_ptr->base).base.model;
         fVar2 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                          (&pCVar9->motion_controller,INT_02d7b884,1.0 - fVar2 * fVar1);
+                          (&pCVar9->motion_controller,g_GabriellaIndices[0xf],1.0 - fVar2 * fVar1);
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
-                  (pCVar9,INT_02d7b884,fVar2,INT_02d7b860);
+                  (pCVar9,g_GabriellaIndices[0xf],fVar2,g_GabriellaIndices[6]);
         (this_ptr->base).base.model.bone_update_mode = 0;
       }
     }
@@ -292,7 +296,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
   }
   pcVar12 = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
   fVar9 = this_ptr->aim_blend * this_ptr->aim_weight;
-  iVar11 = INT_02d7b848;
+  iVar11 = g_GabriellaIndices[0];
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_78,&local_c4);
   pCVar10 = &local_194;
   pCVar7 = &(this_ptr->base).base.model;
@@ -314,7 +318,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
   }
   pcVar13 = core_gabriela_cpp_flashlightBlendWeightCallback_FUN_004d2a30;
   fVar2 = this_ptr->light_aim_blend;
-  iVar11 = INT_02d7b84c;
+  iVar11 = g_GabriellaIndices[1];
   core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(this_ptr->flashlight_angle,&local_d4);
   pCVar8 = &local_154;
   local_154.w = local_d4.w;

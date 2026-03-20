@@ -310,7 +310,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
       pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_94,&g_ZeroVector.f,
                            (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                           INT_00822944);
+                           g_BoneGuyIndices[0]);
       pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                           ((CDemonActor *)this_ptr,&local_e8,pCVar12);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880

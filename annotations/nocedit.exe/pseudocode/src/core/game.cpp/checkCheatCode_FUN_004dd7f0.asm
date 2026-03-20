@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   cheat_string
 ;
 ; Referenced Globals:
-;   undefined1 DAT_02d831d6
+;   undefined4 DAT_02d831d6
 ;   char[20] g_InputHistory
 ;   undefined4 g_InputHistory+1
 ;

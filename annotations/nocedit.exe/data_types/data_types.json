@@ -3697,6 +3697,10 @@
       "type":"struct"
     },
     {
+      "name":"SCameraEdge",
+      "type":"struct"
+    },
+    {
       "name":"SCameraViewportState",
       "type":"struct"
     },
@@ -4514,6 +4518,10 @@
     },
     {
       "name":"SPoint2i",
+      "type":"struct"
+    },
+    {
+      "name":"SPolyDataFileRecord",
       "type":"struct"
     },
     {
@@ -5926,6 +5934,14 @@
     },
     {
       "name":"SCorona",
+      "type":"struct"
+    },
+    {
+      "name":"SCoronaLightEntry",
+      "type":"struct"
+    },
+    {
+      "name":"SCoronaLightCache",
       "type":"struct"
     },
     {
@@ -53277,6 +53293,36 @@
       "fields":[
         {
           "len":4,
+          "name":"v",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"x",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"y",
+          "offset":8,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":12,
+      "name":"SCameraEdge",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"viewport_center_x",
           "offset":0,
           "type":"int"
@@ -54311,6 +54357,66 @@
       "importable":true,
       "len":78724,
       "name":"SCorona",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"count",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":629792,
+          "name":"entries",
+          "offset":4,
+          "type":"SCoronaLightEntry[8]"
+        }
+      ],
+      "importable":true,
+      "len":629796,
+      "name":"SCoronaLightCache",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"globe",
+          "offset":0,
+          "type":"CDemonGlobe*"
+        },
+        {
+          "len":960,
+          "name":"left_extents",
+          "offset":4,
+          "type":"int[240]"
+        },
+        {
+          "len":960,
+          "name":"right_extents",
+          "offset":964,
+          "type":"int[240]"
+        },
+        {
+          "len":76800,
+          "name":"lightmap",
+          "offset":1924,
+          "type":"char[240][320]"
+        }
+      ],
+      "importable":true,
+      "len":78724,
+      "name":"SCoronaLightEntry",
       "pack":false,
       "type":"struct"
     },
@@ -58457,6 +58563,30 @@
       "importable":true,
       "len":8,
       "name":"SPoint2i",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"field_0",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"vertex_count",
+          "offset":4,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"SPolyDataFileRecord",
       "pack":false,
       "type":"struct"
     },

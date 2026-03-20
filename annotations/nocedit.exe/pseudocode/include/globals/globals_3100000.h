@@ -58,24 +58,6 @@ extern float g_ScriptTimeScale;
 
 // int
 extern int g_QuantizeCurrentLineNumber;
-extern int INT_0310615c;
-extern int INT_03106160;
-extern int INT_03106164;
-extern int INT_03106168;
-extern int INT_0310616c;
-extern int INT_03106170;
-extern int INT_03106174;
-extern int INT_03106178;
-extern int INT_0310617c;
-extern int INT_03106180;
-extern int INT_03106184;
-extern int INT_03106188;
-extern int INT_0310618c;
-extern int INT_03106190;
-extern int INT_03106194;
-extern int INT_03106198;
-extern int INT_0310619c;
-extern int INT_031061a0;
 extern int g_PreviousLetterboxMode;
 extern int g_ScriptEventsEnabled;
 extern int g_ScriptInputFlag;
@@ -85,4 +67,7 @@ extern int g_CurrentEditingColumn;
 extern int g_CurrentEditingLine;
 extern int g_SelectionAnchorColumn;
 extern int g_SelectionAnchorLine;
+
+// int[18]
+extern int g_ScatIndices[18];
 

@@ -24,7 +24,7 @@
 ;   TerminatedCString s_engine_drender_cpp_006221bf
 ;   TerminatedCString s_CDR_texture_Too_many_cap_006221d5
 ;   int g_CaptureTextureCount
-;   SMRGLTextureBasic[100] g_CapturedTextureArray
+;   SMRGLTextureBasic[300] g_CapturedTextureArray
 ;   undefined4 g_CapturedTextureArray[0].base.count
 ;   undefined4 g_CapturedTextureArray[0].texture_name[0]
 ;   undefined4 g_CapturedTextureArray[0].texture_name[1]

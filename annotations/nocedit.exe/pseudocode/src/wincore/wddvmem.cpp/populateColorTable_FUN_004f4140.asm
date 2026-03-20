@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   uint[256] g_ColorTable32
+;   uint[448] g_ColorTable32
 ;   undefined4 g_ColorTable32[1]
 ;   _BIT_INTEGER32 g_RedBitPosition
 ;   _BIT_INTEGER32 g_GreenBitPosition

@@ -41,8 +41,8 @@ char g_YesNoDialogBuffer[1024] = {};
 char g_DialogMessageBuffer_02cf0930[1024] = {};
 char g_TempStringBuffer[1024] = {};
 
-// char[200]
-char g_TextWrapBuffer[200] = {};
+// char[4000]
+char g_TextWrapBuffer[4000] = {};
 
 // float[2000]
 float g_EnemyVictimCandidateDistances[2000] = {};

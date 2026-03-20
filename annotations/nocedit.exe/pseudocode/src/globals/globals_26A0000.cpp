@@ -7,10 +7,8 @@
 // CKeyFramedModel[256]
 CKeyFramedModel g_CKeyFramedModelPool[256] = {};
 
-// float
-float FLOAT_026a72d8 = {};
-float FLOAT_026a72dc = {};
-float FLOAT_026a72e0 = {};
+// CVector3f
+CVector3f CVector3f_026a72d8 = {};
 
 // int
 int g_BackgroundSceneNestingCount = {};
@@ -18,8 +16,8 @@ int g_DirtySpanCount = {};
 int g_NoiseTableIndex = {};
 int g_KeyframeModelCount = {};
 
-// int[100]
-int g_NoiseTable[100] = {};
+// int[102]
+int g_NoiseTable[102] = {};
 
 // int[256]
 int g_DirtySpanStarts[256] = {};

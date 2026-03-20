@@ -13,7 +13,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CSound* g_CSoundPtr = 03f6af64
 ;   CGame g_CGameInstance
-;   undefined1 DAT_02d831d6
+;   undefined4 DAT_02d831d6
 ;   char[20] g_InputHistory
 ;   undefined4 g_InputHistory+1
 ;   CSound g_CSoundInstance

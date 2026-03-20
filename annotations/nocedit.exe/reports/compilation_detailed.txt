@@ -10,9 +10,9 @@ Failed: 603
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1226
+  other                           1219
   format_error                     797
-  incompatible_types               212
+  incompatible_types               213
   undeclared_identifier            148
   syntax_error                      41
   missing_member                    20
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1226 errors)
+CATEGORY: other (1219 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -110,6 +110,8 @@ CATEGORY: other (1226 errors)
     Line 47: cast from pointer to smaller type 'char' loses information
   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
     Line 47: cast from pointer to smaller type 'char' loses information
+  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
+    Line 172: cast from pointer to smaller type 'uchar' (aka 'unsigned char') loses information
   shape_superopt.cpp_CObj_removePolygonsAtVertex_FUN_005d3050
     Line 28: comparison of distinct pointer types ('CP2D *' and 'int *')
   shape_superopt.cpp_CObj_updatePolyFlagsFromVerts_FUN_005d36b0
@@ -340,10 +342,6 @@ CATEGORY: other (1226 errors)
     Line 147: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0
     Line 18: member reference base type 'char[16]' is not a structure or union
-  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
-    Line 58: member reference base type 'char[307200]' is not a structure or union
-  core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
-    Line 103: member reference base type 'char[307200]' is not a structure or union
   core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
     Line 41: member reference base type 'const char[13]' is not a structure or union
   core_dcube.cpp_clipEdgeToPlane_FUN_004547d0
@@ -1159,7 +1157,7 @@ CATEGORY: format_error (797 errors)
     Line 40: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: incompatible_types (212 errors)
+CATEGORY: incompatible_types (213 errors)
 ====================================================================================================
 
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
@@ -1351,13 +1349,13 @@ CATEGORY: incompatible_types (212 errors)
   shape_memdbg.cpp_openFile_FUN_0050f7a0
     Line 33: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
-    Line 196: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
+    Line 200: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
   core_scat.cpp_CScat_blendAimBones_FUN_005584a0
     Line 138: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
     Line 97: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
   core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
-    Line 164: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
+    Line 166: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
   core_frankgen.cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500
     Line 17: invalid conversion specifier '.' [-Werror,-Wformat-invalid-specifier]
   shape_superopt.cpp_CObj_weldVertices_FUN_005d4160

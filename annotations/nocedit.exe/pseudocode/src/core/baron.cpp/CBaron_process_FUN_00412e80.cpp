@@ -131,7 +131,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
       pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_84,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                          INT_008224cc);
+                          g_BaronIndices[0xd]);
       pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          ((CDemonActor *)this_ptr,&local_48,pCVar4);
       if (&local_30 != pCVar5) {
@@ -142,7 +142,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
       pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_24,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                          INT_008224d0);
+                          g_BaronIndices[0xe]);
       pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          ((CDemonActor *)this_ptr,&local_78,pCVar5);
       if (&local_54 != pCVar5) {
@@ -207,7 +207,7 @@ switchD_0041345d_default:
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar9);
   blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
   fVar10 = this_ptr->head_blend_weight;
-  iVar2 = INT_00822498;
+  iVar2 = g_BaronIndices[0];
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_rotation,&local_a4);
   source_quaternions = &local_94;
   local_94.w = local_a4.w;

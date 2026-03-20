@@ -22,7 +22,7 @@
 ;   _MMX_INTEGER g_GreenBlueBits
 ;   _MMX_INTEGER g_BlueBitShift
 ;   ushort[256] g_ColorTable16
-;   uint[256] g_ColorTable32
+;   uint[448] g_ColorTable32
 ;   undefined4 g_ColorTable32[1]
 ;   _BIT_INTEGER32 g_RedBitPosition
 ;   int g_RedScaleFactor

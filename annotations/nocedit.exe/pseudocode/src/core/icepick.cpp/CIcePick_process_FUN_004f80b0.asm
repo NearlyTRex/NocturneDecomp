@@ -40,7 +40,7 @@
 ;   double DOUBLE_0062f723 = 3.14159265350000
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CConsole g_CConsoleInstance
-;   int INT_02db8970
+;   int[18] g_IcePickIndices
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
@@ -305,7 +305,7 @@ section .text
     JNZ 0x004f83b3                      ; 004f836b
         ;   XREF to: 004f83b3 (CONDITIONAL_JUMP)  ; LAB_004f83b3
     PUSH 0x59ddb0                       ; 004f836d
-    MOV ECX,dword ptr [0x02db8970]      ; 004f8372 | INT_02db8970
+    MOV ECX,dword ptr [0x02db8970]      ; 004f8372 | g_IcePickIndices
     PUSH ECX                            ; 004f8378
     LEA EAX,[EBX + 0x1fbe4]             ; 004f8379
     PUSH dword ptr [EBX + 0x1fbf0]      ; 004f837f

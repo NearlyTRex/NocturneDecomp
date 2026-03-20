@@ -19,11 +19,11 @@ void __cdecl core_haystack_cpp_CHaystack_advanceMotion_FUN_004f1970(CHaystack *t
                       (&(this_ptr->base).base.model.motion_controller,&delta_time);
     switch(iVar1) {
     case 0x65:
-      core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004f1ab0(this_ptr,INT_02db8734);
+      core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004f1ab0(this_ptr,g_HaystackIndices[0xd]);
       iVar2 = this_ptr->attack_side;
       goto LAB_004f19bc;
     case 0x66:
-      core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004f1ab0(this_ptr,INT_02db8738);
+      core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004f1ab0(this_ptr,g_HaystackIndices[0xe]);
       iVar2 = this_ptr->attack_side;
 LAB_004f19bc:
       this_ptr->attack_side = (uint)(iVar2 == 0);

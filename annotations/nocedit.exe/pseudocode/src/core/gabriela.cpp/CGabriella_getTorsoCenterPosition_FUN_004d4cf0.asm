@@ -15,8 +15,8 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0062af6d = 0.5
-;   int INT_02d7b888
-;   int INT_02d7b88c
+;   undefined4 g_GabriellaIndices[16]
+;   undefined4 g_GabriellaIndices[17]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
@@ -31,7 +31,7 @@ section .text
     PUSH EDI                            ; 004d4cf2
     SUB ESP,0x24                        ; 004d4cf3
     MOV ESI,dword ptr [ESP + 0x38]      ; 004d4cf6
-    MOV EDX,dword ptr [0x02d7b88c]      ; 004d4cfa | INT_02d7b88c
+    MOV EDX,dword ptr [0x02d7b88c]      ; 004d4cfa | g_GabriellaIndices[17]
     PUSH EDX                            ; 004d4d00
     LEA EAX,[ESP + 0x4]                 ; 004d4d01
     MOV EDI,dword ptr [ESP + 0x38]      ; 004d4d05
@@ -41,7 +41,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20 ; 004d4d11
         ;   XREF to: 0059fa20 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 004d4d16
-    MOV ECX,dword ptr [0x02d7b888]      ; 004d4d19 | INT_02d7b888
+    MOV ECX,dword ptr [0x02d7b888]      ; 004d4d19 | g_GabriellaIndices[16]
     PUSH ECX                            ; 004d4d1f
     MOV EBX,EAX                         ; 004d4d20
     LEA EAX,[ESP + 0x1c]                ; 004d4d22

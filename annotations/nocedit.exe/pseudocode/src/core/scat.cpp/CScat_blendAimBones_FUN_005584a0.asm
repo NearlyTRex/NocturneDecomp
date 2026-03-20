@@ -37,10 +37,10 @@
 ;
 ; Referenced Globals:
 ;   CQuaternion4f CQuaternion4f_00665998
-;   int INT_03106168
-;   int INT_0310616c
-;   int INT_03106170
-;   int INT_03106174
+;   undefined4 g_ScatIndices[3]
+;   undefined4 g_ScatIndices[4]
+;   undefined4 g_ScatIndices[5]
+;   undefined4 g_ScatIndices[6]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
@@ -66,9 +66,9 @@ section .text
     CMP dword ptr [EBP + 0x18],0x0      ; 005584b2
     JZ 0x00558538                       ; 005584b6
         ;   XREF to: 00558538 (CONDITIONAL_JUMP)  ; LAB_00558538
-    MOV ESI,dword ptr [0x0310616c]      ; 005584bc | INT_0310616c
+    MOV ESI,dword ptr [0x0310616c]      ; 005584bc | g_ScatIndices[4]
     MOV dword ptr [ESP + 0x144],ESI     ; 005584c2
-    MOV ESI,dword ptr [0x03106174]      ; 005584c9 | INT_03106174
+    MOV ESI,dword ptr [0x03106174]      ; 005584c9 | g_ScatIndices[6]
     PUSH 0xbfc90fdb                     ; 005584cf
     MOV dword ptr [ESP + 0x14c],ESI     ; 005584d4
     LEA ESI,[ESP + 0xb8]                ; 005584db
@@ -108,10 +108,10 @@ section .text
     POP ESI                             ; 00558535
     POP EBX                             ; 00558536
     RET                                 ; 00558537
-    MOV ESI,dword ptr [0x03106168]      ; 00558538 | INT_03106168
+    MOV ESI,dword ptr [0x03106168]      ; 00558538 | g_ScatIndices[3]
         ;   Label: LAB_00558538
     MOV dword ptr [ESP + 0x144],ESI     ; 0055853e
-    MOV ESI,dword ptr [0x03106170]      ; 00558545 | INT_03106170
+    MOV ESI,dword ptr [0x03106170]      ; 00558545 | g_ScatIndices[5]
     PUSH 0x3fc90fdb                     ; 0055854b
     MOV dword ptr [ESP + 0x14c],ESI     ; 00558550
     LEA ESI,[ESP + 0x98]                ; 00558557

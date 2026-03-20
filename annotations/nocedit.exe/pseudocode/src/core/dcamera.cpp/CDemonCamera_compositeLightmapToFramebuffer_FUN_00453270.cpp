@@ -10,20 +10,20 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
 
 {
   int *piVar2;
+  int *piVar3;
   uint screen_y;
-  int iVar5;
   int iVar4;
   char (*pacVar5) [320];
   char (*lightmap_indices) [320];
   ulonglong *puVar6;
   ulonglong *puVar7;
   char (*pacVar8) [320];
-  int iVar6;
+  int iVar5;
   ulonglong *output_buffer;
   ulonglong *texture_buffer;
   char (*texture_indices) [320];
   uint uVar9;
-  uint uVar7;
+  uint uVar6;
   int iVar10;
   int iVar3;
   uint uVar2;
@@ -87,17 +87,17 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
                      this_ptr->framebuffer_width);
         }
       }
-      iVar6 = iVar10 * 0xc;
+      iVar5 = iVar10 * 0xc;
       if (iVar10 < g_CameraEdgeCount) {
         do {
-          uVar2 = *(uint *)((int)g_CameraEdgeDetectionResults + iVar6 + 8);
+          uVar2 = *(uint *)((int)&g_CameraEdgeDetectionResults[0].y + iVar5);
           if (uVar9 != uVar2) goto LAB_0045340c;
-          piVar2 = (int *)((int)g_CameraEdgeDetectionResults + iVar6);
-          iVar3 = iVar6 + 4;
-          iVar6 = iVar6 + 0xc;
+          piVar2 = (int *)((int)&g_CameraEdgeDetectionResults[0].v + iVar5);
+          piVar3 = (int *)((int)&g_CameraEdgeDetectionResults[0].x + iVar5);
+          iVar5 = iVar5 + 0xc;
           iVar10 = iVar10 + 1;
           core_dcamera_cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0
-                    (this_ptr,*(int *)((int)g_CameraEdgeDetectionResults + iVar3),uVar2,*piVar2);
+                    (this_ptr,*piVar3,uVar2,*piVar2);
         } while (iVar10 < g_CameraEdgeCount);
         uVar9 = uVar9 + 1;
       }
@@ -108,18 +108,18 @@ LAB_0045340c:
     }
   }
   else {
-    uVar7 = 1;
-    while ((int)uVar7 < this_ptr->framebuffer_height + -1) {
+    uVar6 = 1;
+    while ((int)uVar6 < this_ptr->framebuffer_height + -1) {
       output_buffer =
            (ulonglong *)
-           ((int)g_ScreenBufferArray[uVar7 - g_CameraShakeOffsetY] + g_CameraShakeOffsetX * 4);
+           ((int)g_ScreenBufferArray[uVar6 - g_CameraShakeOffsetY] + g_CameraShakeOffsetX * 4);
       texture_buffer =
            (ulonglong *)
-           ((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * uVar7 * 4);
-      iVar6 = (int)uVar7 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
-      lightmap_indices = g_CameraPlaneWorkBuffer.pixels + iVar6;
-      texture_indices = g_CoronaBlurWorkBuffer + iVar6;
-      if ((uVar7 & 1) == 0) {
+           ((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * uVar6 * 4);
+      iVar5 = (int)uVar6 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
+      lightmap_indices = g_CameraPlaneWorkBuffer.pixels + iVar5;
+      texture_indices = g_CoronaBlurWorkBuffer + iVar5;
+      if ((uVar6 & 1) == 0) {
         if (this_ptr->scale_factor == 1) {
           core_dstrender_cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1
                     ((uint *)output_buffer,(uint *)texture_buffer,(byte *)texture_indices,
@@ -143,23 +143,23 @@ LAB_0045340c:
                      this_ptr->framebuffer_width);
         }
       }
-      iVar6 = iVar10 * 0xc;
+      iVar5 = iVar10 * 0xc;
       if (iVar10 < g_CameraEdgeCount) {
         do {
-          screen_y = *(uint *)((int)g_CameraEdgeDetectionResults + iVar6 + 8);
-          if (uVar7 != screen_y) goto LAB_00453583;
-          piVar1 = (int *)((int)g_CameraEdgeDetectionResults + iVar6);
-          iVar5 = iVar6 + 4;
-          iVar6 = iVar6 + 0xc;
+          screen_y = *(uint *)((int)&g_CameraEdgeDetectionResults[0].y + iVar5);
+          if (uVar6 != screen_y) goto LAB_00453583;
+          piVar1 = (int *)((int)&g_CameraEdgeDetectionResults[0].v + iVar5);
+          piVar2 = (int *)((int)&g_CameraEdgeDetectionResults[0].x + iVar5);
+          iVar5 = iVar5 + 0xc;
           iVar10 = iVar10 + 1;
           core_dcamera_cpp_CDemonCamera_blendLightmapPixel32_FUN_00453d10
-                    (this_ptr,*(int *)((int)g_CameraEdgeDetectionResults + iVar5),screen_y,*piVar1);
+                    (this_ptr,*piVar2,screen_y,*piVar1);
         } while (iVar10 < g_CameraEdgeCount);
-        uVar7 = uVar7 + 1;
+        uVar6 = uVar6 + 1;
       }
       else {
 LAB_00453583:
-        uVar7 = uVar7 + 1;
+        uVar6 = uVar6 + 1;
       }
     }
   }

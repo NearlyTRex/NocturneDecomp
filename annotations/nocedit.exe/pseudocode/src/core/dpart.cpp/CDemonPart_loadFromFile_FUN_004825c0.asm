@@ -15,16 +15,16 @@
 ;   TerminatedCString s_newformat_006217ef
 ;   double g_WorldToVertexScale = 256
 ;   double g_VertexToWorldScale = 0.00390625
-;   char[72] g_PolyDataConversionBuffer
-;   undefined4 g_PolyDataConversionBuffer+4
-;   undefined4 g_PolyDataConversionBuffer+8
-;   undefined4 g_PolyDataConversionBuffer+0xc
-;   undefined4 g_PolyDataConversionBuffer+0x10
-;   undefined4 g_PolyDataConversionBuffer+0x14
-;   undefined4 g_PolyDataConversionBuffer+0x18
-;   undefined4 g_PolyDataConversionBuffer+0x24
-;   undefined4 g_PolyDataConversionBuffer+0x30
-;   undefined4 g_PolyDataConversionBuffer+0x3c
+;   SMRGLPrimitiveQuad[5000] g_FaceConversionBuffer
+;   undefined4 g_FaceConversionBuffer[0].base.base.count
+;   undefined4 g_FaceConversionBuffer[0].base.surface_normal.A
+;   undefined4 g_FaceConversionBuffer[0].base.surface_normal.B
+;   undefined4 g_FaceConversionBuffer[0].base.surface_normal.C
+;   undefined4 g_FaceConversionBuffer[0].base.surface_normal.D
+;   undefined4 g_FaceConversionBuffer[0].vertices[0].vertex_index
+;   undefined4 g_FaceConversionBuffer[0].vertices[1].vertex_index
+;   undefined4 g_FaceConversionBuffer[0].vertices[2].vertex_index
+;   undefined4 g_FaceConversionBuffer[0].vertices[3].vertex_index
 ;   undefined4 DAT_02c14d80
 ;   undefined4 DAT_02c14d84
 ;   ... and 3 more
@@ -175,7 +175,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x24]      ; 004826de
     PUSH EDI                            ; 004826e1
     PUSH 0x48                           ; 004826e2
-    PUSH 0x2c14d30                      ; 004826e4 | g_PolyDataConversionBuffer
+    PUSH 0x2c14d30                      ; 004826e4 | g_FaceConversionBuffer
     XOR EDI,EDI                         ; 004826e9
     CALL crt_stdio.c_fread_FUN_005fd990 ; 004826eb
         ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
@@ -189,28 +189,28 @@ section .text
     MOV ESI,dword ptr [EBX + 0x34]      ; 00482702
         ;   Label: LAB_00482702
     LEA ECX,[ESI + EAX*0x1]             ; 00482705
-    MOV ESI,dword ptr [EDX + 0x2c14d38] ; 00482708 | g_PolyDataConversionBuffer+8 | DAT_02c14d80
+    MOV ESI,dword ptr [EDX + 0x2c14d38] ; 00482708 | g_FaceConversionBuffer[0].base.surface_normal.A | DAT_02c14d80
     MOV dword ptr [ECX],ESI             ; 0048270e
     MOV ESI,dword ptr [EBX + 0x34]      ; 00482710
     LEA ECX,[ESI + EAX*0x1]             ; 00482713
-    MOV ESI,dword ptr [EDX + 0x2c14d3c] ; 00482716 | g_PolyDataConversionBuffer+0xc | DAT_02c14d84
+    MOV ESI,dword ptr [EDX + 0x2c14d3c] ; 00482716 | g_FaceConversionBuffer[0].base.surface_normal.B | DAT_02c14d84
     MOV dword ptr [ECX + 0x4],ESI       ; 0048271c
     MOV ECX,dword ptr [EBX + 0x34]      ; 0048271f
-    MOV ESI,dword ptr [EDX + 0x2c14d40] ; 00482722 | g_PolyDataConversionBuffer+0x10 | DAT_02c14d88
+    MOV ESI,dword ptr [EDX + 0x2c14d40] ; 00482722 | g_FaceConversionBuffer[0].base.surface_normal.C | DAT_02c14d88
     MOV dword ptr [ECX + EAX*0x1 + 0x8],ESI ; 00482728
     MOV ECX,dword ptr [EBX + 0x34]      ; 0048272c
-    MOV ESI,dword ptr [EDX + 0x2c14d44] ; 0048272f | g_PolyDataConversionBuffer+0x14 | DAT_02c14d8c
+    MOV ESI,dword ptr [EDX + 0x2c14d44] ; 0048272f | g_FaceConversionBuffer[0].base.surface_normal.D | DAT_02c14d8c
     MOV dword ptr [ECX + EAX*0x1 + 0xc],ESI ; 00482735
     MOV ECX,dword ptr [EBX + 0x34]      ; 00482739
-    MOV ESI,dword ptr [EDX + 0x2c14d48] ; 0048273c | g_PolyDataConversionBuffer+0x18 | DAT_02c14d90
+    MOV ESI,dword ptr [EDX + 0x2c14d48] ; 0048273c | g_FaceConversionBuffer[0].vertices[0].vertex_index | DAT_02c14d90
     MOV dword ptr [ECX + EAX*0x1 + 0x10],ESI ; 00482742
     MOV ECX,dword ptr [EBX + 0x34]      ; 00482746
-    MOV ESI,dword ptr [EDX + 0x2c14d54] ; 00482749 | g_PolyDataConversionBuffer+0x24
+    MOV ESI,dword ptr [EDX + 0x2c14d54] ; 00482749 | g_FaceConversionBuffer[0].vertices[1].vertex_index
     MOV dword ptr [ECX + EAX*0x1 + 0x14],ESI ; 0048274f
     MOV ECX,dword ptr [EBX + 0x34]      ; 00482753
-    MOV ESI,dword ptr [EDX + 0x2c14d60] ; 00482756 | g_PolyDataConversionBuffer+0x30
+    MOV ESI,dword ptr [EDX + 0x2c14d60] ; 00482756 | g_FaceConversionBuffer[0].vertices[2].vertex_index
     MOV dword ptr [ECX + EAX*0x1 + 0x18],ESI ; 0048275c
-    CMP dword ptr [EDX + 0x2c14d34],0x3 ; 00482760 | g_PolyDataConversionBuffer+4
+    CMP dword ptr [EDX + 0x2c14d34],0x3 ; 00482760 | g_FaceConversionBuffer[0].base.base.count
     JNZ 0x0048287f                      ; 00482767
         ;   XREF to: 0048287f (CONDITIONAL_JUMP)  ; LAB_0048287f
     MOV ESI,dword ptr [EBX + 0x34]      ; 0048276d
@@ -309,7 +309,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x34]      ; 0048287f
         ;   Label: LAB_0048287f
     LEA ECX,[ESI + EAX*0x1]             ; 00482882
-    MOV ESI,dword ptr [EDX + 0x2c14d6c] ; 00482885 | g_PolyDataConversionBuffer+0x3c
+    MOV ESI,dword ptr [EDX + 0x2c14d6c] ; 00482885 | g_FaceConversionBuffer[0].vertices[3].vertex_index
     MOV dword ptr [ECX + 0x1c],ESI      ; 0048288b
     JMP 0x00482778                      ; 0048288e
         ;   XREF to: 00482778 (UNCONDITIONAL_JUMP)  ; LAB_00482778

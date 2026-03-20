@@ -3,12 +3,6 @@
     "errors": [
       {
         "category": "other",
-        "column": 28,
-        "line": 58,
-        "message": "member reference base type 'char[307200]' is not a structure or union"
-      },
-      {
-        "category": "other",
         "column": 72,
         "line": 172,
         "message": "cast from pointer to smaller type 'uchar' (aka 'unsigned char') loses information"
@@ -25,17 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 432,
-    "complexity_score": 364,
+    "complexity_score": 349,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 199,
-    "suspect_count": 15,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array",
-      "unknown_field"
+      "stack_alignment_array"
     ],
     "total_lines": 631
   },
@@ -115,13 +108,13 @@
     {
       "addr": "00902f74",
       "name": "g_PrecomputedWorldPositions",
-      "type": "CVector3i[15360]",
+      "type": "CVector3i[15499]",
       "value": null
     },
     {
       "addr": "00ac6d74",
       "name": "g_PrecomputedSurfaceNormals",
-      "type": "CVector3f[76800]",
+      "type": "CVector3f[241][320]",
       "value": null
     },
     {
@@ -133,13 +126,13 @@
     {
       "addr": "00c1a208",
       "name": "g_LightBufferPool",
-      "type": "char[25][307200]",
+      "type": "char[24][307200]",
       "value": null
     },
     {
       "addr": "01322208",
-      "name": "g_LightBufferPool[24][0]",
-      "type": "undefined4",
+      "name": "g_CoronaLightCache",
+      "type": "SCoronaLightCache",
       "value": null
     },
     {
@@ -460,14 +453,6 @@
       "severity": "moderate",
       "text": "void *apvStackY_185c [1523];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 51,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "g_LightBufferPool[0x18]._0_4_ = rect;",
-      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",

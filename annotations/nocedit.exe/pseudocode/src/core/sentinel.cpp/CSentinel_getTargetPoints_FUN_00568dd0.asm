@@ -14,11 +14,11 @@
 ; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; Referenced Globals:
-;   int INT_0311420c
-;   int INT_03114220
-;   int INT_03114224
-;   int INT_03114230
-;   int INT_03114238
+;   int[12] g_SentinelIndices
+;   undefined4 g_SentinelIndices[5]
+;   undefined4 g_SentinelIndices[6]
+;   undefined4 g_SentinelIndices[9]
+;   undefined4 g_SentinelIndices[11]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
@@ -35,7 +35,7 @@ section .text
     SUB ESP,0x3c                        ; 00568dd4
     MOV ESI,dword ptr [ESP + 0x50]      ; 00568dd7
     MOV EBX,dword ptr [ESP + 0x54]      ; 00568ddb
-    MOV EDX,dword ptr [0x0311420c]      ; 00568ddf | INT_0311420c
+    MOV EDX,dword ptr [0x0311420c]      ; 00568ddf | g_SentinelIndices
     PUSH EDX                            ; 00568de5
     LEA EAX,[ESP + 0x1c]                ; 00568de6
     PUSH EAX                            ; 00568dea
@@ -54,7 +54,7 @@ section .text
     MOV dword ptr [EBX + 0x4],EDX       ; 00568e0a
     MOV EDX,dword ptr [EAX + 0x8]       ; 00568e0d
     MOV dword ptr [EBX + 0x8],EDX       ; 00568e10
-    MOV ECX,dword ptr [0x03114220]      ; 00568e13 | INT_03114220
+    MOV ECX,dword ptr [0x03114220]      ; 00568e13 | g_SentinelIndices[5]
         ;   Label: LAB_00568e13
     PUSH ECX                            ; 00568e19
     LEA EAX,[ESP + 0x28]                ; 00568e1a
@@ -74,7 +74,7 @@ section .text
     MOV dword ptr [EDX + 0x4],ECX       ; 00568e3c
     MOV ECX,dword ptr [EAX + 0x8]       ; 00568e3f
     MOV dword ptr [EDX + 0x8],ECX       ; 00568e42
-    MOV EBP,dword ptr [0x03114224]      ; 00568e45 | INT_03114224
+    MOV EBP,dword ptr [0x03114224]      ; 00568e45 | g_SentinelIndices[6]
         ;   Label: LAB_00568e45
     PUSH EBP                            ; 00568e4b
     LEA EAX,[ESP + 0x34]                ; 00568e4c
@@ -94,7 +94,7 @@ section .text
     MOV dword ptr [EDX + 0x4],ECX       ; 00568e6e
     MOV ECX,dword ptr [EAX + 0x8]       ; 00568e71
     MOV dword ptr [EDX + 0x8],ECX       ; 00568e74
-    MOV EAX,[0x03114230]                ; 00568e77 | INT_03114230
+    MOV EAX,[0x03114230]                ; 00568e77 | g_SentinelIndices[9]
         ;   Label: LAB_00568e77
     PUSH EAX                            ; 00568e7c
     LEA EAX,[ESP + 0x10]                ; 00568e7d
@@ -114,7 +114,7 @@ section .text
     MOV dword ptr [EDX + 0x4],ECX       ; 00568e9f
     MOV ECX,dword ptr [EAX + 0x8]       ; 00568ea2
     MOV dword ptr [EDX + 0x8],ECX       ; 00568ea5
-    MOV EDX,dword ptr [0x03114238]      ; 00568ea8 | INT_03114238
+    MOV EDX,dword ptr [0x03114238]      ; 00568ea8 | g_SentinelIndices[11]
         ;   Label: LAB_00568ea8
     PUSH EDX                            ; 00568eae
     LEA EAX,[ESP + 0x4]                 ; 00568eaf

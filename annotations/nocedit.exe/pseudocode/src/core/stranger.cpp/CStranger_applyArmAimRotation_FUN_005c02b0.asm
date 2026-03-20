@@ -50,10 +50,10 @@
 ; Referenced Globals:
 ;   double DOUBLE_00653944 = 0.000100000000000000
 ;   CQuaternion4f CQuaternion4f_00665998
-;   int INT_03f6bad8
-;   int INT_03f6badc
-;   int INT_03f6bae0
-;   int INT_03f6bae4
+;   undefined4 g_StrangerIndices[3]
+;   undefined4 g_StrangerIndices[4]
+;   undefined4 g_StrangerIndices[5]
+;   undefined4 g_StrangerIndices[6]
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
@@ -84,10 +84,10 @@ section .text
     JZ 0x005c05ad                       ; 005c02c6
         ;   XREF to: 005c05ad (CONDITIONAL_JUMP)  ; LAB_005c05ad
     PUSH 0xbfc90fdb                     ; 005c02cc
-    MOV EAX,[0x03f6badc]                ; 005c02d1 | INT_03f6badc
+    MOV EAX,[0x03f6badc]                ; 005c02d1 | g_StrangerIndices[4]
     LEA ESI,[ESP + 0x8]                 ; 005c02d6
     MOV dword ptr [ESP + 0x1c0],EAX     ; 005c02da
-    MOV EAX,[0x03f6bae4]                ; 005c02e1 | INT_03f6bae4
+    MOV EAX,[0x03f6bae4]                ; 005c02e1 | g_StrangerIndices[6]
     LEA EDI,[ESP + 0x18]                ; 005c02e6
     MOV dword ptr [ESP + 0x1bc],EAX     ; 005c02ea
     CALL core_xform.cpp_quaternionFromAngleY_FUN_005f79f0 ; 005c02f1
@@ -314,10 +314,10 @@ section .text
     RET                                 ; 005c05ac
     PUSH 0x3fc90fdb                     ; 005c05ad
         ;   Label: LAB_005c05ad
-    MOV EAX,[0x03f6bad8]                ; 005c05b2 | INT_03f6bad8
+    MOV EAX,[0x03f6bad8]                ; 005c05b2 | g_StrangerIndices[3]
     LEA ESI,[ESP + 0xc8]                ; 005c05b7
     MOV dword ptr [ESP + 0x1c0],EAX     ; 005c05be
-    MOV EAX,[0x03f6bae0]                ; 005c05c5 | INT_03f6bae0
+    MOV EAX,[0x03f6bae0]                ; 005c05c5 | g_StrangerIndices[5]
     LEA EDI,[ESP + 0x18]                ; 005c05ca
     MOV dword ptr [ESP + 0x1bc],EAX     ; 005c05ce
     CALL core_xform.cpp_quaternionFromAngleY_FUN_005f79f0 ; 005c05d5

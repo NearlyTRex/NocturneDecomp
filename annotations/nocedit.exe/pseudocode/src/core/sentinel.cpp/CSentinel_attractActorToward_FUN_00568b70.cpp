@@ -23,12 +23,12 @@ int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_00568b70(CSentine
   }
   pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                      (&local_10,&g_ZeroVector.f,
-                      (this_ptr->base).base.model.bone_transform.bone_world_matrices + INT_03114210)
-  ;
+                      (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                      g_SentinelIndices[1]);
   pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                      (&local_34,&g_ZeroVector.f,
-                      (this_ptr->base).base.model.bone_transform.bone_world_matrices + INT_03114214)
-  ;
+                      (this_ptr->base).base.model.bone_transform.bone_world_matrices +
+                      g_SentinelIndices[2]);
   local_1c.x = (pCVar2->x + pCVar1->x) * 0.5f;
   local_1c.y = (pCVar2->y + pCVar1->y) * 0.5f;
   local_1c.z = (pCVar2->z + pCVar1->z) * 0.5f + -0.5f;

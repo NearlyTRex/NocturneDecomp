@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   column_end
 ;
 ; Referenced Globals:
-;   CVector3i[15360] g_PrecomputedWorldPositions
+;   CVector3i[15499] g_PrecomputedWorldPositions
 ;   char[241][320] g_CoronaBlurOutputBuffer
 ;   _BIT_INTEGER32 g_CameraDownscaleIterations
 ;   int[240][320] g_CoronaDepthBuffer

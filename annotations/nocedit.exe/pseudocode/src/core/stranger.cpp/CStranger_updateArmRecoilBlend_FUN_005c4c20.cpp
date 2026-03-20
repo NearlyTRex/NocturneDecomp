@@ -109,7 +109,7 @@ LAB_005c4d62:
     local_8c.z = pCVar4->z;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                     (&(this_ptr->base).base.model,&local_bc,INT_03f6bad0);
+                     (&(this_ptr->base).base.model,&local_bc,g_StrangerIndices[1]);
   pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((CDemonActor *)this_ptr,&local_80,pCVar1);
   if (&local_5c != pCVar1) {
@@ -131,7 +131,7 @@ LAB_005c4d62:
     local_f8 = fVar1;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                     (&(this_ptr->base).base.model,&local_50,INT_03f6bad4);
+                     (&(this_ptr->base).base.model,&local_50,g_StrangerIndices[2]);
   pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((CDemonActor *)this_ptr,&local_44,pCVar1);
   if (&local_5c != pCVar1) {

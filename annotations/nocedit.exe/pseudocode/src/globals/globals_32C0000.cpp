@@ -10,11 +10,11 @@ C3DSLight* g_VisibleOmniLights[200] = {};
 // CDemonGlobe*[100]
 CDemonGlobe* g_GlobeLights[100] = {};
 
-// CDemonLight*[32]
-CDemonLight* g_SecondaryDirectionalLights[32] = {};
-
 // CDemonLight*[4]
 CDemonLight* g_PrimaryDirectionalLights[4] = {};
+
+// CDemonLight*[96]
+CDemonLight* g_SecondaryDirectionalLights[96] = {};
 
 // CMatrix3x3f
 CMatrix3x3f g_LightingRotationMatrix = {};

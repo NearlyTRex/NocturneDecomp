@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   int g_EditorCurrentTexture = 0x2
-;   int INT_016263c8
+;   undefined4 g_EditorBackgroundColors[2]
 ;   int g_PolygonCount
 ;   int g_AntiAliasingEnabled
 ;   int g_EditorTextureMode
@@ -52,7 +52,7 @@ section .text
         ;   XREF to: 0045d974 (CONDITIONAL_JUMP)  ; LAB_0045d974
     MOV EAX,[0x0066edfc]                ; 0045d952 | g_EditorCurrentTexture
     SHL EAX,0x2                         ; 0045d957
-    MOV EAX,dword ptr [EAX + 0x16263c0] ; 0045d95a | INT_016263c8
+    MOV EAX,dword ptr [EAX + 0x16263c0] ; 0045d95a | g_EditorBackgroundColors[2]
     MOV dword ptr [EBP + -0xc],EAX      ; 0045d960
     NEG dword ptr [EBP + -0xc]          ; 0045d963
     LEA EAX,[EBP + -0x10]               ; 0045d966
@@ -65,7 +65,7 @@ section .text
     MOV EAX,[0x0066edfc]                ; 0045d974 | g_EditorCurrentTexture
         ;   Label: LAB_0045d974
     SHL EAX,0x2                         ; 0045d979
-    MOV EAX,dword ptr [EAX + 0x16263c0] ; 0045d97c | INT_016263c8
+    MOV EAX,dword ptr [EAX + 0x16263c0] ; 0045d97c | g_EditorBackgroundColors[2]
     MOV dword ptr [EBP + -0x4],EAX      ; 0045d982
     MOV dword ptr [EBP + -0x8],0x0      ; 0045d985
         ;   Label: LAB_0045d985

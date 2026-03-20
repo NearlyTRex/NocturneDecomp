@@ -122,8 +122,10 @@ uchar g_DefaultPalette[768] = {};
 uint g_ReciprocalLookupTable[1600] = {};
 
 // uint[256]
-uint g_ColorTable32[256] = {};
 uint g_Hardware32BitPalette[256] = {};
+
+// uint[448]
+uint g_ColorTable32[448] = {};
 
 // ulong
 ulong g_SolidColorMode = {};

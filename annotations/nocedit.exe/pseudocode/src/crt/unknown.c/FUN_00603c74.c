@@ -16,7 +16,7 @@ void __cdecl FUN_00603c74(void)
   if (0x1fff < (int)in_stack_00000008) {
     in_stack_00000008 = 0x2000;
   }
-  piVar1 = &DAT_00684f30;
+  piVar1 = &INT_00684f30;
   for (; 0 < (int)in_stack_00000008; in_stack_00000008 = (int)in_stack_00000008 >> 1) {
     if ((in_stack_00000008 & 1) != 0) {
       *in_stack_00000004 = *(float10 *)piVar1 * *in_stack_00000004;

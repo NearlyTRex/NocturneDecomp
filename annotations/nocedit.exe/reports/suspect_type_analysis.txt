@@ -5,8 +5,8 @@ SUSPECT TYPE ANALYSIS
 SUSPECT TYPE COUNTS
 --------------------------------------------------
   decompiler_intrinsic            7087 ( 36.4%)
-  pointer_cast                    5701 ( 29.3%)
-  unknown_field                   1438 (  7.4%)
+  pointer_cast                    5710 ( 29.3%)
+  unknown_field                   1431 (  7.4%)
   stack_param                      929 (  4.8%)
   unnamed_param                    698 (  3.6%)
   special_crt_function             636 (  3.3%)
@@ -28,7 +28,7 @@ SUSPECT TYPE COUNTS
   suspect_float                     50 (  0.3%)
   extra_output                      46 (  0.2%)
   mmx_assembly                      34 (  0.2%)
-  undefined_data                    31 (  0.2%)
+  undefined_data                    30 (  0.2%)
   special_math_intrinsic            24 (  0.1%)
   format_string_mismatch            24 (  0.1%)
   undefined_ram                     24 (  0.1%)
@@ -98,12 +98,12 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5701 occurrences)
+TYPE: pointer_cast (5710 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2159x  (uint *)((int)
-  1293x  (int *)((int)
+  2167x  (uint *)((int)
+  1294x  (int *)((int)
    325x  (SRenderVertex *)((int)
    301x  (float *)((int)
    289x  (CMatrix3x4f *)((int)
@@ -136,11 +136,11 @@ Example functions:
     piVar2 = (int *)((int)g_ScreenBufferArray + iVar8);...
 
 ====================================================================================================
-TYPE: unknown_field (1438 occurrences)
+TYPE: unknown_field (1431 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   446x  ._0_4_
+   439x  ._0_4_
    384x  ._4_4_
     82x  ._8_4_
     68x  ._12_4_
@@ -1263,7 +1263,7 @@ Example functions:
     Function uses MMX instructions...
 
 ====================================================================================================
-TYPE: undefined_data (31 occurrences)
+TYPE: undefined_data (30 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1283,7 +1283,6 @@ Unique patterns:
      1x  DAT_00658c04
      1x  DAT_00658c08
      1x  DAT_00658c0c
-     1x  DAT_00684f30
      1x  DAT_00684d12
      1x  DAT_80000010
 
@@ -1304,8 +1303,6 @@ Example functions:
     pacVar6 = (char (*) [4])&DAT_00658bf4;...
   crt_time.c_determine_dst_status_FUN_006079b4
     iVar1 = *(int *)(&DAT_00665f50 + iVar9 * 2);...
-  crt_unknown.c_FUN_00603c74
-    piVar1 = &DAT_00684f30;...
   crt_unknown.c_FUN_00607858
     iVar2 = *(int *)(&DAT_00665f50 + *(int *)(param_1 + 0x10) * 2);...
   crt_unknown.c_staticInit_FUN_0060240e
@@ -1322,6 +1319,8 @@ Example functions:
     if ((((&DAT_00685030)[character & 7] & abStack_40[(int)character >> 3]) == 0) !=...
   crt_stdio.c_CreateFileImpl_FUN_006090a0
     if ((DAT_0068528c == (code *)0x0) ||...
+  engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
+    point->screen_x = (int)&DAT_80000010;...
 
 ====================================================================================================
 TYPE: special_math_intrinsic (24 occurrences)

@@ -25,7 +25,7 @@
 ;
 ; Referenced Globals:
 ;   uchar[257] g_CharacterClassificationTable
-;   char[256] g_TempTextBuffer
+;   char[1024] g_TempTextBuffer
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005fde40

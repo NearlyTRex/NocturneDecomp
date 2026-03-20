@@ -556,7 +556,7 @@ crt_unknown.c_FUN_00600990,00600990,crt/unknown.c,58,5,param_count_too_few|point
 crt_unknown.c_FUN_0060411c,0060411c,crt/unknown.c,12,32,special_crt_function|unaffected_reg|unnamed_param,347
 crt_unknown.c_FUN_00600a64,00600a64,crt/unknown.c,21,9,param_count_too_few|special_crt_function|unnamed_param|warning_unreachable,131
 crt_unknown.c_CondCallDoNothing_FUN_00603ccc,00603ccc,crt/unknown.c,18,12,decompiler_intrinsic|param_count_too_few|special_crt_function|stack_param,158
-crt_unknown.c_FUN_00603c74,00603c74,crt/unknown.c,18,14,param_count_too_few|pointer_cast|special_crt_function|stack_param|undefined_data,183
+crt_unknown.c_FUN_00603c74,00603c74,crt/unknown.c,18,13,param_count_too_few|pointer_cast|special_crt_function|stack_param,168
 crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94,00601a94,crt/unknown.c,32,7,param_count_too_few|special_crt_function|unnamed_param,117
 crt_unknown.c_FUN_00607858,00607858,crt/unknown.c,43,21,param_count_too_few|pointer_cast|special_crt_function|undefined_data|unnamed_param,278
 crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0,0060e5d0,crt/unknown.c,21,11,param_count_too_few|special_crt_function|stack_param|stack_ref|unnamed_param,156
@@ -2076,7 +2076,7 @@ core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044f290,0044f29
 core_dcamera.cpp_resetFogSamplingOffset_FUN_0044bb70,0044bb70,core/dcamera.cpp,7,0,,7
 core_dcamera.cpp_generateFogGrid_FUN_0044bba0,0044bba0,core/dcamera.cpp,84,0,,84
 core_dcamera.cpp_CDemonCamera_ctor_FUN_0044c030,0044c030,core/dcamera.cpp,14,0,,14
-core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10,0044de10,core/dcamera.cpp,199,15,pointer_cast|stack_alignment_array|unknown_field,364
+core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10,0044de10,core/dcamera.cpp,199,14,pointer_cast|stack_alignment_array,349
 core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70,00453a70,core/dcamera.cpp,44,1,param_count_too_many,59
 core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0,004528e0,core/dcamera.cpp,7,3,decompiler_intrinsic|warning_inlined_function,47
 core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600,0044d600,core/dcamera.cpp,76,2,pointer_cast|stack_alignment_array,106
@@ -2104,7 +2104,7 @@ core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0,0044d1c0,core
 core_dcamera.cpp_renderCoronaDepthScanline_FUN_00450320,00450320,core/dcamera.cpp,48,0,,48
 core_dcamera.cpp_initializeCoronaBuffers_FUN_004502e0,004502e0,core/dcamera.cpp,14,3,param_count_too_few|pointer_cast,54
 core_dcamera.cpp_renderCoronaScanlineSegment_FUN_00451340,00451340,core/dcamera.cpp,41,0,,41
-core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0,004518f0,core/dcamera.cpp,270,19,decompiler_intrinsic|pointer_cast|stack_alignment_array|unknown_field,480
+core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0,004518f0,core/dcamera.cpp,271,13,decompiler_intrinsic|pointer_cast|stack_alignment_array,416
 core_dcamera.cpp_CDemonCamera_blendLightmapPixel32_FUN_00453d10,00453d10,core/dcamera.cpp,14,2,pointer_cast,39
 core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20,0044cf20,core/dcamera.cpp,45,19,decompiler_intrinsic|warning_inlined_function,245
 core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860,0044c860,core/dcamera.cpp,134,15,pointer_cast,289
@@ -2135,7 +2135,7 @@ core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090,00451090,cor
 core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0,00453fc0,core/dcamera.cpp,20,9,decompiler_intrinsic|warning_inlined_function,120
 core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790,0044e790,core/dcamera.cpp,211,6,decompiler_intrinsic|pointer_cast,281
 core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0,0044dbd0,core/dcamera.cpp,78,3,pointer_cast|stack_alignment_array,118
-core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360,0044e360,core/dcamera.cpp,178,24,pointer_cast|stack_alignment_array,428
+core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360,0044e360,core/dcamera.cpp,175,24,pointer_cast|stack_alignment_array,425
 core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_00453950,00453950,core/dcamera.cpp,38,2,pointer_cast,63
 core_dcamera.cpp_log2Custom_FUN_00450a90,00450a90,core/dcamera.cpp,4,0,,4
 core_dcamera.cpp_CDemonCamera_allocLight_FUN_0044dde0,0044dde0,core/dcamera.cpp,10,0,,10
@@ -2454,7 +2454,7 @@ core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030,00472030,core/
 core_dirmat.cpp_CMatrix3x3f_invert_FUN_00471e10,00471e10,core/dirmat.cpp,86,1,decompiler_intrinsic,101
 core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160,00472160,core/dirmat.cpp,134,10,decompiler_intrinsic|sub84_truncation,244
 core_dpart.cpp_CDemonPart_free_FUN_004822b0,004822b0,core/dpart.cpp,18,0,,18
-core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0,004825c0,core/dpart.cpp,112,19,decompiler_intrinsic|pointer_cast|warning_inlined_function,317
+core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0,004825c0,core/dpart.cpp,111,28,decompiler_intrinsic|pointer_cast|warning_inlined_function,406
 core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40,00482e40,core/dpart.cpp,69,23,decompiler_intrinsic|pointer_cast|warning_inlined_function,314
 core_dpart.cpp_CDemonPart_save_FUN_004824c0,004824c0,core/dpart.cpp,7,0,,7
 core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0,004824f0,core/dpart.cpp,31,11,pointer_cast,146
@@ -4154,7 +4154,7 @@ core_smiley.cpp_CSmiley_getCollisionType_FUN_005a37f0,005a37f0,core/smiley.cpp,7
 core_smiley.cpp_CSmiley_setup_FUN_005a24d0,005a24d0,core/smiley.cpp,95,0,,95
 core_smiley.cpp_factorFunc_FUN_005a23f0,005a23f0,core/smiley.cpp,10,0,,10
 core_smiley.cpp_CSmiley_getPropertyList_FUN_005a3810,005a3810,core/smiley.cpp,10,0,,10
-core_smiley.cpp_CSmiley_attractActorToward_FUN_005a3160,005a3160,core/smiley.cpp,25,1,warning_type_propagation,40
+core_smiley.cpp_CSmiley_attractActorToward_FUN_005a3160,005a3160,core/smiley.cpp,26,1,warning_type_propagation,41
 core_smiley.cpp_CSmiley_processDismemberment_FUN_005a32a0,005a32a0,core/smiley.cpp,108,1,warning_type_propagation,123
 core_elephant.cpp_CElephantGun_process_FUN_004a7070,004a7070,core/elephant.cpp,31,0,,31
 core_elephant.cpp_CElephantGun_fire_FUN_004a7160,004a7160,core/elephant.cpp,213,4,decompiler_intrinsic,258
@@ -4463,8 +4463,8 @@ core_stranger.cpp_getScaleY_FUN_005c695e,005c695e,core/stranger.cpp,4,0,,4
 core_stranger.cpp_CStranger_tryThrowDynamite_FUN_005c5e80,005c5e80,core/stranger.cpp,17,0,,17
 core_stranger.cpp_CStranger_reset_FUN_005c6750,005c6750,core/stranger.cpp,16,0,,16
 core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960,005c3960,core/stranger.cpp,269,4,decompiler_intrinsic,314
-core_stranger.cpp_CStranger_setup_FUN_005bb4b0,005bb4b0,core/stranger.cpp,107,0,,107
-core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520,005be520,core/stranger.cpp,637,77,decompiler_intrinsic|pointer_cast|unresolved_funcptr|warning_inlined_function,1427
+core_stranger.cpp_CStranger_setup_FUN_005bb4b0,005bb4b0,core/stranger.cpp,110,0,,110
+core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520,005be520,core/stranger.cpp,638,77,decompiler_intrinsic|pointer_cast|unresolved_funcptr|warning_inlined_function,1428
 core_stranger.cpp_CStranger_updateTurnBlending_FUN_005bf800,005bf800,core/stranger.cpp,91,2,decompiler_intrinsic,116
 core_stranger.cpp_CStranger_getHandsMidpoint_FUN_005be490,005be490,core/stranger.cpp,27,0,,27
 core_stranger.cpp_staticInit_FUN_005bae80,005bae80,core/stranger.cpp,13,0,,13
@@ -4473,7 +4473,7 @@ core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0,005c07b0,core/
 core_stranger.cpp_CStranger_dropRightHandObject_FUN_005c1f80,005c1f80,core/stranger.cpp,14,0,,14
 core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720,005bf720,core/stranger.cpp,47,5,pointer_cast|warning_type_propagation,107
 core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0,005c1fe0,core/stranger.cpp,130,5,decompiler_intrinsic|warning_type_propagation,190
-core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60,005bfb60,core/stranger.cpp,296,28,decompiler_intrinsic|pointer_cast|stack_alignment_array|unresolved_funcptr|warning_type_propagation,601
+core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60,005bfb60,core/stranger.cpp,304,28,decompiler_intrinsic|pointer_cast|stack_alignment_array|unresolved_funcptr|warning_type_propagation,609
 core_stranger.cpp_setWindVelocity_FUN_005c6970,005c6970,core/stranger.cpp,10,0,,10
 core_stranger.cpp_setMatrixTranslation_FUN_005c6930,005c6930,core/stranger.cpp,7,0,,7
 core_stranger.cpp_calculateAimAnglesWithOffset_FUN_005c37e0,005c37e0,core/stranger.cpp,46,3,decompiler_intrinsic,81
@@ -4499,7 +4499,7 @@ core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_005bb010,005bb010,core/stra
 core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170,005c5170,core/stranger.cpp,19,2,pointer_cast,44
 core_stranger.cpp_factoryFunc_FUN_005bb0e0,005bb0e0,core/stranger.cpp,10,0,,10
 core_stranger.cpp_CStranger_setPositionAndOrientation_FUN_005bfb10,005bfb10,core/stranger.cpp,10,0,,10
-core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150,005c3150,core/stranger.cpp,216,5,pointer_cast|warning_type_propagation,276
+core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150,005c3150,core/stranger.cpp,217,5,pointer_cast|warning_type_propagation,277
 core_stranger.cpp_CStranger_archive_FUN_005c2fe0,005c2fe0,core/stranger.cpp,41,0,,41
 core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850,005c2850,core/stranger.cpp,259,9,decompiler_intrinsic|stack_param,359
 core_stranger.cpp_CStranger_getThrowDirection_FUN_005c51c0,005c51c0,core/stranger.cpp,15,0,,15
@@ -4586,7 +4586,7 @@ core_tentacle.cpp_CTentacle_renderOpaque_FUN_005db840,005db840,core/tentacle.cpp
 core_tentacle.cpp_CTentacle_addFilesToExtract_FUN_005dbcc0,005dbcc0,core/tentacle.cpp,7,0,,7
 core_tentacle.cpp_CTentacle_getActorType_FUN_005daf50,005daf50,core/tentacle.cpp,4,0,,4
 core_tentacle.cpp_staticInit_FUN_005daef0,005daef0,core/tentacle.cpp,7,0,,7
-core_tentacle.cpp_CTentacle_setup_FUN_005dafc0,005dafc0,core/tentacle.cpp,14,0,,14
+core_tentacle.cpp_CTentacle_setup_FUN_005dafc0,005dafc0,core/tentacle.cpp,18,0,,18
 core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70,005dbb70,core/tentacle.cpp,50,8,param_count_too_many|pointer_cast|warning_type_propagation,145
 core_tentacle.cpp_CTentacle_ctor_FUN_005daf60,005daf60,core/tentacle.cpp,14,0,,14
 core_tentacle.cpp_CTentacle_archive_FUN_005db880,005db880,core/tentacle.cpp,17,0,,17
@@ -5666,7 +5666,7 @@ core_menu.cpp_showOptionsScreen_FUN_00512d30,00512d30,core/menu.cpp,68,0,,68
 core_menu.cpp_showMainGameMenu_FUN_00512f40,00512f40,core/menu.cpp,200,1,pointer_cast,215
 core_menu.cpp_configureGraphicsOptions_FUN_00510c80,00510c80,core/menu.cpp,607,0,,607
 core_menu.cpp_configureCustomKeys_FUN_00511890,00511890,core/menu.cpp,250,0,,250
-core_svetlana.cpp_CSvetlana_setup_FUN_005d88e0,005d88e0,core/svetlana.cpp,79,0,,79
+core_svetlana.cpp_CSvetlana_setup_FUN_005d88e0,005d88e0,core/svetlana.cpp,80,0,,80
 core_svetlana.cpp_staticInit_FUN_005d87e0,005d87e0,core/svetlana.cpp,7,0,,7
 core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0,005d8ba0,core/svetlana.cpp,304,6,pointer_cast|stack_alignment_array|warning_type_propagation,379
 core_svetlana.cpp_CSvetlana_isWeaponDrawn_FUN_005d9ed0,005d9ed0,core/svetlana.cpp,4,0,,4
@@ -5674,7 +5674,7 @@ core_svetlana.cpp_CSvetlana_processDamage_FUN_005d9d30,005d9d30,core/svetlana.cp
 core_svetlana.cpp_CSvetlana_getGrabbed_FUN_005d9ec0,005d9ec0,core/svetlana.cpp,4,0,,4
 core_svetlana.cpp_CSvetlana_dtor_FUN_005d9f50,005d9f50,core/svetlana.cpp,20,2,decompiler_intrinsic,45
 core_svetlana.cpp_CSvetlana_performBladeAttack_FUN_005d9a10,005d9a10,core/svetlana.cpp,86,0,,86
-core_svetlana.cpp_CSvetlana_advanceMotion_FUN_005d9970,005d9970,core/svetlana.cpp,32,0,,32
+core_svetlana.cpp_CSvetlana_advanceMotion_FUN_005d9970,005d9970,core/svetlana.cpp,34,0,,34
 core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260,005d9260,core/svetlana.cpp,243,3,decompiler_intrinsic|warning_type_propagation,283
 core_svetlana.cpp_CSvetlana_getPropertyList_FUN_005d9f10,005d9f10,core/svetlana.cpp,5,0,,5
 core_svetlana.cpp_CSVetlana_archive_FUN_005d9bb0,005d9bb0,core/svetlana.cpp,5,0,,5
@@ -6074,7 +6074,7 @@ core_gabriela.cpp_CGabriella_processAI_FUN_004d4190,004d4190,core/gabriela.cpp,2
 core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_004d4c90,004d4c90,core/gabriela.cpp,14,0,,14
 core_gabriela.cpp_CGabriella_dtor_FUN_004d7660,004d7660,core/gabriela.cpp,18,1,decompiler_intrinsic,33
 core_gabriela.cpp_CGabriella_processDamage_FUN_004d6b30,004d6b30,core/gabriela.cpp,69,1,decompiler_intrinsic,84
-core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80,004d4d80,core/gabriela.cpp,337,50,pointer_cast|stack_alignment_array|unresolved_funcptr|warning_type_propagation,857
+core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80,004d4d80,core/gabriela.cpp,341,50,pointer_cast|stack_alignment_array|unresolved_funcptr|warning_type_propagation,861
 core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60,004d5c60,core/gabriela.cpp,113,7,decompiler_intrinsic|warning_type_propagation,193
 core_gabriela.cpp_CGabriella_process_FUN_004d2ea0,004d2ea0,core/gabriela.cpp,688,4,decompiler_intrinsic|pointer_cast|warning_type_propagation,743
 core_gabriela.cpp_flashlightBlendWeightCallback_FUN_004d2a30,004d2a30,core/gabriela.cpp,12,0,,12
@@ -6083,7 +6083,7 @@ core_gabriela.cpp_CGabriella_getFlashlightMaxAngle_FUN_004d4ce0,004d4ce0,core/ga
 core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540,004d6540,core/gabriela.cpp,160,0,,160
 core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_004d5fe0,004d5fe0,core/gabriela.cpp,14,0,,14
 core_gabriela.cpp_aimRotationBlendWeightCallback_FUN_004d2a80,004d2a80,core/gabriela.cpp,20,0,,20
-core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550,004d5550,core/gabriela.cpp,156,15,pointer_cast|warning_type_propagation,316
+core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550,004d5550,core/gabriela.cpp,157,15,pointer_cast|warning_type_propagation,317
 core_gabriela.cpp_CGabriella_onActorDeleted_FUN_004d75e0,004d75e0,core/gabriela.cpp,9,0,,9
 core_gabriela.cpp_factoryFunc_FUN_004d2ae0,004d2ae0,core/gabriela.cpp,10,0,,10
 core_gabriela.cpp_CGabriella_canFireWeapon_FUN_004d5f70,004d5f70,core/gabriela.cpp,14,0,,14
@@ -6100,7 +6100,7 @@ core_gabriela.cpp_CGabriella_getPropertyList_FUN_004d7610,004d7610,core/gabriela
 core_gabriela.cpp_CGabriella_tryThrowObject_FUN_004d6050,004d6050,core/gabriela.cpp,12,0,,12
 core_gabriela.cpp_CGabriella_addFilesToExtract_FUN_004d7630,004d7630,core/gabriela.cpp,5,0,,5
 core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20,004d2b20,core/gabriela.cpp,32,23,decompiler_intrinsic,267
-core_gabriela.cpp_CGabriella_setup_FUN_004d2c40,004d2c40,core/gabriela.cpp,71,0,,71
+core_gabriela.cpp_CGabriella_setup_FUN_004d2c40,004d2c40,core/gabriela.cpp,74,0,,74
 core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004d6260,004d6260,core/gabriela.cpp,84,2,decompiler_intrinsic|warning_type_propagation,114
 core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870,004d5870,core/gabriela.cpp,142,3,decompiler_intrinsic|warning_type_propagation,182
 core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80,004d6f80,core/gabriela.cpp,70,2,pointer_cast,95

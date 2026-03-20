@@ -62,7 +62,7 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_005582c0(CScat *this_ptr)
          core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
                    (&pCVar2->motion_controller,motion_index,(this_ptr->base).base.layer_action_t);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-              (pCVar2,motion_index,target_frame_number,local_28,INT_0310619c,
+              (pCVar2,motion_index,target_frame_number,local_28,g_ScatIndices[0x10],
                core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
     if ((this_ptr->base).base.layer_action_index == 1) {
       core_scat_cpp_CScat_blendAimBones_FUN_005584a0(this_ptr,1);

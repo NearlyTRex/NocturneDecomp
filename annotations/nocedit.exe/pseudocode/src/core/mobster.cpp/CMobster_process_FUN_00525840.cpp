@@ -490,7 +490,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
         pCVar13 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                             (&local_118,&g_ZeroVector.f,
                              (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                             INT_02f37ecc);
+                             g_MobsterIndices[1]);
         pCVar18 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                             ((CDemonActor *)this_ptr,&local_100,pCVar13);
         core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar18,fVar16,pSVar17);
@@ -503,7 +503,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
         pCVar18 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                             (&local_94,&g_ZeroVector.f,
                              (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                             INT_02f37ed0);
+                             g_MobsterIndices[2]);
         pCVar18 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                             ((CDemonActor *)this_ptr,&local_dc,pCVar18);
         core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880

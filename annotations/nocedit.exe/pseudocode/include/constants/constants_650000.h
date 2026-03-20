@@ -1818,6 +1818,9 @@ static char g_EmptyStringBuffer[36] = {
     (char)0xFF, (char)0xFF, (char)0xEF, (char)0xC7, (char)0x9B, (char)0x63, (char)0x0A, (char)0x00, (char)0x00, (char)0x00, (char)0x10, (char)0xB8
 };
 
+// char[8] constants
+static char g_ProcessFileInfoStr[8] = {(char)0x3A, (char)0x00, (char)0x00, (char)0x00, (char)0x2A, (char)0x00, (char)0x00, (char)0x00};
+
 // double constants
 static double DOUBLE_006501df = 0.050000000000000003;
 static double DOUBLE_0065064f = 0.001;

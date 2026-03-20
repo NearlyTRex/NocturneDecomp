@@ -2,18 +2,15 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 55
-Filtered out (inside named data): 223
+Total DAT_ globals found: 34
+Filtered out (inside named data): 241
 Immediate constants (not real globals): 2
-Real globals remaining: 53
-Clusters detected: 9
-DAT_ globals in clusters: 37
+Real globals remaining: 32
+Clusters detected: 6
+DAT_ globals in clusters: 19
 
 Classification summary:
   unknown              5 clusters
-  vector_groups        1 clusters
-  byte_blob            1 clusters
-  array                1 clusters
   struct               1 clusters
 
 --------------------------------------------------------------------------------
@@ -32,61 +29,22 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x766880                       ; 004597f7 | DAT_00766880
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE (3 clusters)
---------------------------------------------------------------------------------
-
-  0x00684f30 - 0x006850b8  (10 items, 392 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 4 functions
-     near: g_SpecialExitHandler (int) at +4
-      0x00684f30  DAT_00684f30  int
-      0x00684f34  DAT_00684f34  int
-      0x00684f38  DAT_00684f38  undefined2 [short]
-      0x00685030  DAT_00685030  undefined4 [byte]
-      0x00685094  DAT_00685094  undefined4
-      0x006850a4  DAT_006850a4  undefined4
-      ... +4 more
-
-  0x006597a1 - 0x006597a7  (6 items, 6 bytes span)
-    Classification: byte_blob
-    Likely type: char[] or byte[]
-    Reason: 4/5 strides are 1 byte
-    Referenced by: 1 functions
-     near: g_ColonChar (char) at +1
-      0x006597a1  DAT_006597a1  undefined1 [byte]
-      0x006597a2  DAT_006597a2  undefined1
-      0x006597a3  DAT_006597a3  undefined1
-      0x006597a5  DAT_006597a5  undefined1 [byte]
-      0x006597a6  DAT_006597a6  undefined1
-      0x006597a7  DAT_006597a7  undefined1
-
-  0x02c14d80 - 0x02c14d90  (5 items, 16 bytes span)
-    Classification: array
-    Likely type: int[5]
-    Reason: 5 elements at stride 4
-    Referenced by: 1 functions
-     near: g_PolyDataConversionBuffer+0x3c (undefined4) at +20
-      0x02c14d80  DAT_02c14d80  undefined4
-      0x02c14d84  DAT_02c14d84  undefined4
-      0x02c14d88  DAT_02c14d88  undefined4
-      0x02c14d8c  DAT_02c14d8c  undefined4
-      0x02c14d90  DAT_02c14d90  undefined4
-
---------------------------------------------------------------------------------
 LOW CONFIDENCE (6 clusters)
 --------------------------------------------------------------------------------
 
-  0x009e5d74 - 0x009e5d88  (4 items, 20 bytes span)
+  0x00685030 - 0x006850b8  (7 items, 136 bytes span)
     Classification: struct
-    Likely type: struct (20 bytes span, 4 fields)
-    Reason: mixed strides, shared by 2 functions
-    Referenced by: 2 functions
-      0x009e5d74  DAT_009e5d74  undefined4
-      0x009e5d80  DAT_009e5d80  undefined4
-      0x009e5d84  DAT_009e5d84  undefined4
-      0x009e5d88  DAT_009e5d88  undefined4
+    Likely type: struct (136 bytes span, 7 fields)
+    Reason: mixed strides, shared by 3 functions
+    Referenced by: 3 functions
+     near: PTR_FUN_0068502b (void*) at +5
+      0x00685030  DAT_00685030  undefined4 [byte]
+      0x00685094  DAT_00685094  undefined4
+      0x006850a4  DAT_006850a4  undefined4
+      0x006850a8  DAT_006850a8  undefined4
+      0x006850b0  DAT_006850b0  undefined4
+      0x006850b4  DAT_006850b4  undefined4
+      ... +1 more
 
   0x00665f28 - 0x00665f50  (3 items, 40 bytes span)
     Classification: unknown
@@ -135,14 +93,12 @@ LOW CONFIDENCE (6 clusters)
       0x03f9b8d0  DAT_03f9b8d0  undefined4
 
 --------------------------------------------------------------------------------
-ISOLATED DAT_ GLOBALS (16 - not part of any cluster)
+ISOLATED DAT_ GLOBALS (13 - not part of any cluster)
 --------------------------------------------------------------------------------
   DAT_00002424                    addr=00002424    type=undefined4      refs=21 [likely float]
   DAT_00800000                    addr=00800000    type=undefined4      refs=12
-  DAT_02d831d6                    addr=02d831d6    type=undefined1      refs=3 [likely byte]  near: g_InputHistory(-1)
+  DAT_02d831d6                    addr=02d831d6    type=undefined4      refs=3 [likely byte]  near: g_InputHistory(-1)
   DAT_00412b41                    addr=00412b41    type=undefined4      refs=1
-  DAT_009e6c74                    addr=009e6c74    type=undefined4      refs=1
-  DAT_02d7b9e0                    addr=02d7b9e0    type=undefined4      refs=1  near: g_WrappedTextBuffer(+256)
   DAT_0067b718                    addr=0067b718    type=undefined4      refs=1  near: g_ChapterMissionFiles(-56)
   DAT_00747874                    addr=00747874    type=undefined4      refs=1
   DAT_006874d4                    addr=006874d4    type=undefined4      refs=1 [likely double]  near: PTR_FUN_006874e4(-16)
@@ -150,12 +106,11 @@ ISOLATED DAT_ GLOBALS (16 - not part of any cluster)
   DAT_006855d8                    addr=006855d8    type=undefined4      refs=1  near: PTR_unk_ReturnZero6_FUN_0060e850_0068559c(+60)
   DAT_0068546c                    addr=0068546c    type=undefined2      refs=1  near: PTR_crt_thread.c_ExitCriticalSection_FUN_0060b180_00685468(+4)
   DAT_54524143                    addr=54524143    type=undefined4      refs=1
-  DAT_02cf0df8                    addr=02cf0df8    type=undefined4      refs=1  near: g_TextWrapBuffer(+200)
   DAT_0051a3f4                    addr=0051a3f4    type=undefined4      refs=1  near: PTR_caseD_5_0051a3ec(+8)
   DAT_03f5d97c                    addr=03f5d97c    type=undefined4      refs=1  near: g_SoundTestErrorBuffer(+220)
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (223)
+FILTERED OUT - INSIDE NAMED DATA (241)
 --------------------------------------------------------------------------------
   DAT_00613579                    inside s_none_00613578
   DAT_0061357a                    inside s_none_00613578
@@ -372,6 +327,12 @@ FILTERED OUT - INSIDE NAMED DATA (223)
   DAT_006590a8                    inside s_con_006590a0
   DAT_00659788                    inside s_bgnthd_00659784
   DAT_0065978c                    inside s_bgnthd_00659784
+  DAT_006597a1                    inside g_ProcessFileInfoStr
+  DAT_006597a2                    inside g_ProcessFileInfoStr
+  DAT_006597a3                    inside g_ProcessFileInfoStr
+  DAT_006597a5                    inside g_ProcessFileInfoStr+4
+  DAT_006597a6                    inside g_ProcessFileInfoStr+4
+  DAT_006597a7                    inside g_ProcessFileInfoStr+4
   DAT_0066efa0                    inside g_GlobalFilters
   DAT_0066efc0                    inside g_PlayerFilters
   DAT_0067b685                    inside s_EFD_0067b684
@@ -380,4 +341,16 @@ FILTERED OUT - INSIDE NAMED DATA (223)
   DAT_006851bd                    inside s_EDT_0068513d
   DAT_00685219                    inside g_FileDescriptorTable
   DAT_0068755c                    inside FLOAT10_00687552
+  DAT_009e5d74                    inside g_TempWorldPositions
+  DAT_009e5d80                    inside g_TempWorldPositions
+  DAT_009e5d84                    inside g_TempWorldPositions
+  DAT_009e5d88                    inside g_TempWorldPositions
+  DAT_009e6c74                    inside g_TempWorldPositions
+  DAT_02c14d80                    inside g_FaceConversionBuffer
+  DAT_02c14d84                    inside g_FaceConversionBuffer
+  DAT_02c14d88                    inside g_FaceConversionBuffer
+  DAT_02c14d8c                    inside g_FaceConversionBuffer
+  DAT_02c14d90                    inside g_FaceConversionBuffer
+  DAT_02cf0df8                    inside g_TextWrapBuffer
+  DAT_02d7b9e0                    inside g_WrappedTextBuffer
 

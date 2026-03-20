@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 248,
-    "complexity_score": 316,
+    "complexity_score": 317,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 156,
+    "pseudocode_lines": 157,
     "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 404
+    "total_lines": 405
   },
   "cross_references": [
     {
@@ -120,14 +120,14 @@
     },
     {
       "addr": "02d7b870",
-      "name": "INT_02d7b870",
-      "type": "int",
+      "name": "g_GabriellaIndices[10]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d7b88c",
-      "name": "INT_02d7b88c",
-      "type": "int",
+      "name": "g_GabriellaIndices[17]",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -408,7 +408,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 88,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -416,7 +416,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 89,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -424,7 +424,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 95,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar10 * -8 + 4);",
@@ -432,7 +432,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 96,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar10 * -8 + 4);",
@@ -440,7 +440,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 105,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar10 * -8 + 4);",
@@ -448,18 +448,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 108,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar10 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 114,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -467,15 +459,15 @@
       "line": 115,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 122,
+      "line": 116,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -483,12 +475,20 @@
       "line": 123,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
+      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 141,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -496,7 +496,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 142,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar10 * -2 + 1) * 4);",

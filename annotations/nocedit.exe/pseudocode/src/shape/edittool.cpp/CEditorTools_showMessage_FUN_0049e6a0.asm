@@ -24,7 +24,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Message_00623008
-;   char[512] g_MessageFormatBuffer
+;   char[1024] g_MessageFormatBuffer
 ;   int g_WindowFontColor
 ;
 ; Called Functions:

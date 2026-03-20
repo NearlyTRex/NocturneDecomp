@@ -9,8 +9,8 @@
 void __cdecl core_dlight_cpp_staticInit_FUN_00472680(void)
 
 {
-  FLOAT_026a72dc = 0.0;
-  FLOAT_026a72e0 = 0.0;
-  FLOAT_026a72d8 = 0.0;
+  CVector3f_026a72d8.y = 0.0;
+  CVector3f_026a72d8.z = 0.0;
+  CVector3f_026a72d8.x = 0.0;
   return;
 }

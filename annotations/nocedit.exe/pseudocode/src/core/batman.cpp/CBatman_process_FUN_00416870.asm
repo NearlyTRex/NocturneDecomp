@@ -711,7 +711,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00416f53
     ADD ESP,0x8                         ; 00416f56
     LEA EAX,[EBP + 0xffffff02]          ; 00416f59
-    MOV ESI,dword ptr [0x008227c0]      ; 00416f5f | INT_008227c0
+    MOV ESI,dword ptr [0x008227c0]      ; 00416f5f | g_BatmanIndices[2]
     PUSH EAX                            ; 00416f65
     LEA EAX,[ESI*0x4 + 0x0]             ; 00416f66
     MOV dword ptr [EBP + 0xffffff36],EBX ; 00416f6d

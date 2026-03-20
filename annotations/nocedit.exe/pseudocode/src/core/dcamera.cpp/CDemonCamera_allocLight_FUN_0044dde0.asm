@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   int g_LightBufferPoolIndex
-;   char[25][307200] g_LightBufferPool
+;   char[24][307200] g_LightBufferPool
 ;
 ; *****************************************************************************
 

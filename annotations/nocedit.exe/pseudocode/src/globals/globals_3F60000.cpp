@@ -391,71 +391,24 @@ int g_DLLFunctionsMissing = {};
 int g_SavedBitsPerPixel = {};
 int g_ExternalFrameLocked = {};
 int g_VideoModeXBPP = {};
-int INT_03f6bacc = {};
-int INT_03f6bad0 = {};
-int INT_03f6bad4 = {};
-int INT_03f6bad8 = {};
-int INT_03f6badc = {};
-int INT_03f6bae0 = {};
-int INT_03f6bae4 = {};
-int INT_03f6bae8 = {};
-int INT_03f6baec = {};
-int INT_03f6baf0 = {};
-int INT_03f6baf4 = {};
-int INT_03f6baf8 = {};
-int INT_03f6bafc = {};
-int INT_03f6bb00 = {};
-int INT_03f6bb04 = {};
-int INT_03f6bb08 = {};
-int INT_03f6bb0c = {};
-int INT_03f6bb10 = {};
-int INT_03f6bb14 = {};
-int INT_03f6bb18 = {};
-int INT_03f6bb1c = {};
-int INT_03f6bb20 = {};
-int INT_03f6bb24 = {};
-int INT_03f6bb64 = {};
-int INT_03f6bb68 = {};
-int INT_03f6bb6c = {};
-int INT_03f6bb70 = {};
-int INT_03f6bb74 = {};
-int INT_03f6bb78 = {};
-int INT_03f6bb7c = {};
-int INT_03f6bb80 = {};
-int INT_03f6bb84 = {};
-int INT_03f6bb88 = {};
-int INT_03f6bb8c = {};
-int INT_03f6bb90 = {};
-int INT_03f6bb94 = {};
 int g_LogInitialized = {};
 int INT_03f6bbe4 = {};
 int g_TriListTextureCount = {};
-int INT_03f6cb90 = {};
-int INT_03f6cb94 = {};
-int INT_03f6cb98 = {};
-int INT_03f6cb9c = {};
-int INT_03f6cba0 = {};
-int INT_03f6cba4 = {};
-int INT_03f6cba8 = {};
-int INT_03f6cbac = {};
-int INT_03f6cbb0 = {};
-int INT_03f6cbb4 = {};
-int INT_03f6cbb8 = {};
-int INT_03f6cbbc = {};
-int INT_03f6cbc0 = {};
-int INT_03f6cbc4 = {};
-int INT_03f6cbc8 = {};
-int INT_03f6cbcc = {};
-int INT_03f6cbd0 = {};
-int INT_03f6cbd4 = {};
-int INT_03f6cbd8 = {};
-int INT_03f6cd08 = {};
-int INT_03f6cd0c = {};
-int INT_03f6cd10 = {};
-int INT_03f6cd14 = {};
+
+// int[13]
+int g_SuccubusIndices[13] = {};
+
+// int[19]
+int g_SvetlanaBoneIndices[19] = {};
+
+// int[23]
+int g_StrangerIndices[23] = {};
 
 // int[32]
 int g_SfxChannelEnabled[32] = {};
+
+// int[4]
+int g_TentacleIndices[4] = {};
 
 // uchar
 uchar g_MissingSoundsInitFlag = {};

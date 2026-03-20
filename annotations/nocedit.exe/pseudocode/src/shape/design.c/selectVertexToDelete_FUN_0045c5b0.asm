@@ -14,8 +14,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Point_to_delete_0061b336
-;   int INT_016263f8
-;   int INT_016263fc
+;   undefined4 g_EditorColorIndices[6]
+;   undefined4 g_EditorColorIndices[7]
 ;   int g_ModelCount
 ;   int g_CurrentModelIndex
 ;   int g_VertexCount
@@ -99,10 +99,10 @@ section .text
     INC EAX                             ; 0045c62a
     IMUL EAX,EAX,0x14                   ; 0045c62b
     IMUL ESI,dword ptr [EBP + -0x4],0x14 ; 0045c62e
-    LEA EDI,[ESI + 0x162640c]           ; 0045c632 | INT_016263f8
+    LEA EDI,[ESI + 0x162640c]           ; 0045c632 | g_EditorColorIndices[6]
     LEA ESI,[EAX + 0x162640c]           ; 0045c638 | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0045c63e | INT_016263f8 | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0045c63f | INT_016263fc | g_LoadedVertices[0].vertex.y
+    MOVSD ES:EDI,ESI                    ; 0045c63e | g_EditorColorIndices[6] | g_LoadedVertices
+    MOVSD ES:EDI,ESI                    ; 0045c63f | g_EditorColorIndices[7] | g_LoadedVertices[0].vertex.y
     MOVSD ES:EDI,ESI                    ; 0045c640 | g_ModelCount | g_LoadedVertices[0].vertex.z
     MOVSD ES:EDI,ESI                    ; 0045c641 | g_CurrentModelIndex | g_LoadedVertices[0].u
     MOVSD ES:EDI,ESI                    ; 0045c642 | g_VertexCount | g_LoadedVertices[0].v

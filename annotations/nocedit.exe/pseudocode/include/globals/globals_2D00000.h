@@ -130,8 +130,10 @@ extern uchar g_DefaultPalette[768];
 extern uint g_ReciprocalLookupTable[1600];
 
 // uint[256]
-extern uint g_ColorTable32[256];
 extern uint g_Hardware32BitPalette[256];
+
+// uint[448]
+extern uint g_ColorTable32[448];
 
 // ulong
 extern ulong g_SolidColorMode;

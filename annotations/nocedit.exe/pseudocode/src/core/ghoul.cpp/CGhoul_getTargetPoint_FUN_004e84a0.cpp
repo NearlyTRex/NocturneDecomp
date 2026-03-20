@@ -19,7 +19,7 @@ CVector3f * __cdecl core_ghoul_cpp_CGhoul_getTargetPoint_FUN_004e84a0(CGhoul *th
   
   bVar4 = 0;
   core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
-            (&(this_ptr->base).base.model,INT_02d832fc,&local_4c);
+            (&(this_ptr->base).base.model,g_GhoulIndices[0],&local_4c);
   pCVar2 = &local_4c;
   pCVar3 = &local_7c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

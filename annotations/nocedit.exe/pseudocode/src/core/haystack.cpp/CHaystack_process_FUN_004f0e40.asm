@@ -39,7 +39,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CGameInstance.letterbox_mode
-;   int INT_02db8700
+;   int[17] g_HaystackIndices
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
@@ -283,7 +283,7 @@ section .text
     JZ 0x004f10dc                       ; 004f1097
         ;   XREF to: 004f10dc (CONDITIONAL_JUMP)  ; LAB_004f10dc
     PUSH 0x59ddb0                       ; 004f1099
-    MOV EDI,dword ptr [0x02db8700]      ; 004f109e | INT_02db8700
+    MOV EDI,dword ptr [0x02db8700]      ; 004f109e | g_HaystackIndices
     PUSH EDI                            ; 004f10a4
     LEA EAX,[EBX + 0x1fbdc]             ; 004f10a5
     PUSH dword ptr [EBX + 0x1fbe8]      ; 004f10ab

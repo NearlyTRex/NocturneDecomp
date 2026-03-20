@@ -44,7 +44,7 @@
 ;   double DOUBLE_0064146c = 0.0200000000000000
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   int INT_03106174
+;   undefined4 g_ScatIndices[6]
 ;   undefined4 g_CDemonSetInstance.actor_count
 ;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 g_CDemonSetInstance.actors[1]
@@ -355,7 +355,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10 ; 00558b1b
         ;   XREF to: 00408f10 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 00558b20
-    MOV ECX,dword ptr [0x03106174]      ; 00558b23 | INT_03106174
+    MOV ECX,dword ptr [0x03106174]      ; 00558b23 | g_ScatIndices[6]
     PUSH ECX                            ; 00558b29
     LEA EAX,[ESP + 0x9c]                ; 00558b2a
     PUSH EAX                            ; 00558b31

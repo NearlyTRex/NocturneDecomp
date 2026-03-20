@@ -44,7 +44,7 @@
 ;   CBitFont* g_TinyFont
 ;   CBitFont* g_ThemeFont
 ;   CBitFont* g_SmallEditorFont
-;   char* g_WrappedTextBuffer
+;   char[10][256] g_WrappedTextBuffer
 ;   undefined4 DAT_02d7b9e0
 ;   char[256] g_ChapterDisplayName
 ;   char* g_CurrentDisplayText

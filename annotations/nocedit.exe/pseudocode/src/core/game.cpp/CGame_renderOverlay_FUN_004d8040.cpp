@@ -64,7 +64,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
       local_38 = g_SmallEditorFont;
     }
     iVar8 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
-                      (local_38,this_ptr->message_text,(char *)&g_WrappedTextBuffer,10,0x100,
+                      (local_38,this_ptr->message_text,g_WrappedTextBuffer[0],10,0x100,
                        (g_CDemonCameraInstance.framebuffer_width * 9) / 10);
     iVar2 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_38,0x58);
     iVar10 = g_WindowHeight - iVar8 * iVar2;
@@ -76,7 +76,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
     iVar11 = 0;
     iVar6 = g_WindowWidth + -1;
     if (0 < iVar8) {
-      text = &g_WrappedTextBuffer;
+      text = (char **)g_WrappedTextBuffer;
       do {
         iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(local_38,(char *)text);
         iVar11 = iVar11 + 1;

@@ -55,7 +55,7 @@ void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemon
     local_40 = 0x100;
   }
   if (rect == (CRect *)0x0) {
-    g_LightBufferPool[0x18]._0_4_ = rect;
+    g_CoronaLightCache.count = (int)rect;
     g_LightBufferPoolIndex = (int)rect;
   }
   uVar6 = g_LightBufferPoolIndex + 1;
@@ -129,7 +129,7 @@ void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemon
     iVar3 = local_80 * 4;
     local_44 = (int)local_78 * 0x500;
     local_50 = g_PrecomputedWorldPositions + (int)local_78 * 0x140;
-    local_54 = g_PrecomputedSurfaceNormals + (int)local_78 * 0x140;
+    local_54 = g_PrecomputedSurfaceNormals[(int)local_78];
     local_48 = (void *)((int)(light_source->base).base.rotation_matrix.m + (int)local_78 * 4 + -0x10
                        );
     do {

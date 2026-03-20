@@ -71,8 +71,8 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
   
   bVar6 = 0;
   if (arm_side == 0) {
-    local_24 = INT_03f6bad8;
-    local_28 = INT_03f6bae0;
+    local_24 = g_StrangerIndices[3];
+    local_28 = g_StrangerIndices[5];
     core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(1.5707964,&local_11c);
     local_1cc.w = local_11c.w;
     puVar6 = (uint *)((int)&local_1cc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
@@ -86,8 +86,8 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
     pCVar1 = &local_1ac;
   }
   else {
-    local_24 = INT_03f6badc;
-    local_28 = INT_03f6bae4;
+    local_24 = g_StrangerIndices[4];
+    local_28 = g_StrangerIndices[6];
     core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(-1.5707964,&local_1dc);
     local_1cc.w = local_1dc.w;
     puVar6 = (uint *)((int)&local_1cc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);

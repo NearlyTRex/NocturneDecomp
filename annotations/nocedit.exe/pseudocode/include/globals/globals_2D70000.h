@@ -55,11 +55,11 @@ extern UVector3 UNION_UVector3_02d7b814;
 extern UVector3 UNION_UVector3_02d7b820;
 extern UVector3 UNION_UVector3_02d7b82c;
 
-// char*
-extern char* g_WrappedTextBuffer;
+// char[1024]
+extern char g_TempTextBuffer[1024];
 
-// char[256]
-extern char g_TempTextBuffer[256];
+// char[10][256]
+extern char g_WrappedTextBuffer[10][256];
 
 // char[5120]
 extern char g_ActStatsTextBuffer1[5120];
@@ -100,26 +100,9 @@ extern int g_DefaultTextColor;
 extern int g_EdgeCount;
 extern int g_EdgeListMinY;
 extern int g_EdgeListMaxY;
-extern int INT_02d7b848;
-extern int INT_02d7b84c;
-extern int INT_02d7b850;
-extern int INT_02d7b854;
-extern int INT_02d7b858;
-extern int INT_02d7b85c;
-extern int INT_02d7b860;
-extern int INT_02d7b864;
-extern int INT_02d7b868;
-extern int INT_02d7b86c;
-extern int INT_02d7b870;
-extern int INT_02d7b874;
-extern int INT_02d7b878;
-extern int INT_02d7b87c;
-extern int INT_02d7b880;
-extern int INT_02d7b884;
-extern int INT_02d7b888;
-extern int INT_02d7b88c;
-extern int INT_02d7b890;
-extern int INT_02d7b894;
+
+// int[20]
+extern int g_GabriellaIndices[20];
 
 // uchar
 extern uchar g_ShadowColor8;

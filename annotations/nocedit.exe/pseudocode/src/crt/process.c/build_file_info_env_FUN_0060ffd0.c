@@ -82,7 +82,7 @@ char * __cdecl build_file_info_env(void)
             pcVar8[1] = cVar2;
             pcVar8 = pcVar8 + 2;
           } while (cVar2 != '\0');
-          pcVar4 = &g_ColonChar;
+          pcVar4 = g_ProcessFileInfoStr;
           iVar6 = -1;
           pcVar7 = local_44;
           do {
@@ -125,7 +125,7 @@ char * __cdecl build_file_info_env(void)
             pcVar9[1] = cVar2;
             pcVar9 = pcVar9 + 2;
           } while (cVar2 != '\0');
-          pcVar8 = &g_ColonChar;
+          pcVar8 = g_ProcessFileInfoStr;
           iVar5 = -1;
           pcVar7 = local_44;
           do {
@@ -168,7 +168,7 @@ char * __cdecl build_file_info_env(void)
             pcVar9[1] = cVar2;
             pcVar9 = pcVar9 + 2;
           } while (cVar2 != '\0');
-          pcVar8 = &g_AsteriskChar;
+          pcVar8 = g_ProcessFileInfoStr + 4;
           iVar5 = -1;
           pcVar7 = local_44;
           do {

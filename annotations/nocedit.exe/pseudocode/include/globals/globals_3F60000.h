@@ -463,71 +463,24 @@ extern int g_DLLFunctionsMissing;
 extern int g_SavedBitsPerPixel;
 extern int g_ExternalFrameLocked;
 extern int g_VideoModeXBPP;
-extern int INT_03f6bacc;
-extern int INT_03f6bad0;
-extern int INT_03f6bad4;
-extern int INT_03f6bad8;
-extern int INT_03f6badc;
-extern int INT_03f6bae0;
-extern int INT_03f6bae4;
-extern int INT_03f6bae8;
-extern int INT_03f6baec;
-extern int INT_03f6baf0;
-extern int INT_03f6baf4;
-extern int INT_03f6baf8;
-extern int INT_03f6bafc;
-extern int INT_03f6bb00;
-extern int INT_03f6bb04;
-extern int INT_03f6bb08;
-extern int INT_03f6bb0c;
-extern int INT_03f6bb10;
-extern int INT_03f6bb14;
-extern int INT_03f6bb18;
-extern int INT_03f6bb1c;
-extern int INT_03f6bb20;
-extern int INT_03f6bb24;
-extern int INT_03f6bb64;
-extern int INT_03f6bb68;
-extern int INT_03f6bb6c;
-extern int INT_03f6bb70;
-extern int INT_03f6bb74;
-extern int INT_03f6bb78;
-extern int INT_03f6bb7c;
-extern int INT_03f6bb80;
-extern int INT_03f6bb84;
-extern int INT_03f6bb88;
-extern int INT_03f6bb8c;
-extern int INT_03f6bb90;
-extern int INT_03f6bb94;
 extern int g_LogInitialized;
 extern int INT_03f6bbe4;
 extern int g_TriListTextureCount;
-extern int INT_03f6cb90;
-extern int INT_03f6cb94;
-extern int INT_03f6cb98;
-extern int INT_03f6cb9c;
-extern int INT_03f6cba0;
-extern int INT_03f6cba4;
-extern int INT_03f6cba8;
-extern int INT_03f6cbac;
-extern int INT_03f6cbb0;
-extern int INT_03f6cbb4;
-extern int INT_03f6cbb8;
-extern int INT_03f6cbbc;
-extern int INT_03f6cbc0;
-extern int INT_03f6cbc4;
-extern int INT_03f6cbc8;
-extern int INT_03f6cbcc;
-extern int INT_03f6cbd0;
-extern int INT_03f6cbd4;
-extern int INT_03f6cbd8;
-extern int INT_03f6cd08;
-extern int INT_03f6cd0c;
-extern int INT_03f6cd10;
-extern int INT_03f6cd14;
+
+// int[13]
+extern int g_SuccubusIndices[13];
+
+// int[19]
+extern int g_SvetlanaBoneIndices[19];
+
+// int[23]
+extern int g_StrangerIndices[23];
 
 // int[32]
 extern int g_SfxChannelEnabled[32];
+
+// int[4]
+extern int g_TentacleIndices[4];
 
 // uchar
 extern uchar g_MissingSoundsInitFlag;

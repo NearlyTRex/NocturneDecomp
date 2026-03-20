@@ -35,16 +35,7 @@ int g_ScriptStatusBarRight = {};
 int g_ScriptStatusBarBottom = {};
 int g_ScriptEditorCharWidth = {};
 int g_ScriptEditorLineHeight = {};
-int INT_0311420c = {};
-int INT_03114210 = {};
-int INT_03114214 = {};
-int INT_03114218 = {};
-int INT_0311421c = {};
-int INT_03114220 = {};
-int INT_03114224 = {};
-int INT_03114228 = {};
-int INT_0311422c = {};
-int INT_03114230 = {};
-int INT_03114234 = {};
-int INT_03114238 = {};
+
+// int[12]
+int g_SentinelIndices[12] = {};
 

@@ -70,7 +70,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
       pCVar3 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_50,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                          INT_02f37ed0);
+                          g_MobsterIndices[2]);
       pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          ((CDemonActor *)this_ptr,&local_44,pCVar3);
       pCVar5 = (this_ptr->base).victim;
@@ -124,7 +124,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
         iVar10 = 6;
       }
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-                (&(this_ptr->base).base.model,iVar10,6.0,fVar7,INT_02f37ef0,
+                (&(this_ptr->base).base.model,iVar10,6.0,fVar7,g_MobsterIndices[10],
                  core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
       core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(local_2c.x,&local_60);
       local_80.w = local_60.w;
@@ -136,7 +136,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
       puVar5[(uint)bVar6 * -2 + 1] = puVar4[(uint)bVar6 * -2 + 1];
       this_ptr_00 = &(this_ptr->base).base.model;
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
-                (this_ptr_00,&local_80,this_ptr->firing_blend,INT_02f37ef0,
+                (this_ptr_00,&local_80,this_ptr->firing_blend,g_MobsterIndices[10],
                  core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
       core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_2c.y,&local_70);
       blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
@@ -145,7 +145,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
       puVar8 = (uint *)((int)&local_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       *(uint *)((int)&local_80 + (uint)bVar6 * -8 + 4) =
            *(uint *)((int)&local_70 + (uint)bVar6 * -8 + 4);
-      iVar10 = INT_02f37ef0;
+      iVar10 = g_MobsterIndices[10];
       *puVar9 = *puVar8;
       puVar9[(uint)bVar6 * -2 + 1] = puVar8[(uint)bVar6 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20

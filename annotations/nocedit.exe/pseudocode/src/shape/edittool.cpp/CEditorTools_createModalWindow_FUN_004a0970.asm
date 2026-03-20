@@ -31,7 +31,7 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
-;   char[200] g_TextWrapBuffer
+;   char[4000] g_TextWrapBuffer
 ;   undefined4 DAT_02cf0df8
 ;   CBitFont* g_EditorFont
 ;   ... and 37 more

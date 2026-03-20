@@ -27,7 +27,7 @@
 ;   CDemonLight*[4] g_DynamicLights
 ;   undefined4 g_DynamicLights[1]
 ;   int g_SecondaryDirectionalLightCount
-;   CDemonLight*[32] g_SecondaryDirectionalLights
+;   CDemonLight*[96] g_SecondaryDirectionalLights
 ;   undefined4 g_SecondaryDirectionalLights[1]
 ;   int g_PrimaryDirectionalLightCount
 ;   CDemonLight*[4] g_PrimaryDirectionalLights

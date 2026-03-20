@@ -112,70 +112,7 @@ extern int g_RenderFaceCount;
 extern int g_ActorReadingMode;
 extern int g_IncludeCommentsWhenWriting;
 extern int g_NumActorClassTypes;
-extern int INT_00822498;
-extern int INT_0082249c;
-extern int INT_008224a0;
-extern int INT_008224a4;
-extern int INT_008224a8;
-extern int INT_008224ac;
-extern int INT_008224b0;
-extern int INT_008224b4;
-extern int INT_008224b8;
-extern int INT_008224bc;
-extern int INT_008224c0;
-extern int INT_008224c4;
-extern int INT_008224c8;
-extern int INT_008224cc;
-extern int INT_008224d0;
-extern int INT_008224d4;
-extern int INT_008224d8;
-extern int INT_0082274c;
-extern int INT_00822750;
-extern int INT_00822754;
-extern int INT_00822758;
-extern int INT_0082275c;
-extern int INT_00822760;
-extern int INT_00822764;
-extern int INT_00822768;
-extern int INT_0082276c;
-extern int INT_00822770;
-extern int INT_00822774;
-extern int INT_00822778;
-extern int INT_008227b8;
-extern int INT_008227bc;
-extern int INT_008227c0;
-extern int INT_008227c4;
-extern int INT_008227c8;
-extern int INT_008227cc;
-extern int INT_008227d0;
-extern int INT_008227d4;
-extern int INT_008227d8;
-extern int INT_008227dc;
-extern int INT_008227e0;
-extern int INT_008227e4;
-extern int INT_00822944;
-extern int INT_00822948;
-extern int INT_0082294c;
-extern int INT_00822950;
-extern int INT_00822954;
-extern int INT_00822958;
-extern int INT_0082295c;
-extern int INT_00822960;
-extern int INT_00822964;
-extern int INT_00822968;
-extern int INT_0082296c;
 extern int INT_008229ac;
-extern int INT_00822cdc;
-extern int INT_00822ce0;
-extern int INT_00822ce4;
-extern int INT_00822ce8;
-extern int INT_00822cec;
-extern int INT_00822cf0;
-extern int INT_00822cf4;
-extern int INT_00822cf8;
-extern int INT_00822cfc;
-extern int INT_00822d00;
-extern int INT_00822d04;
 extern int INT_00823a90;
 extern int INT_00823a94;
 extern int g_LineBlendingDisabled;
@@ -186,6 +123,17 @@ extern int g_InputVertexCount;
 extern int g_OutputVertexCount;
 extern int g_TempVertexCount;
 extern int g_IntermediateVertexCount;
+
+// int[11]
+extern int g_BoneGuyIndices[11];
+extern int g_BrideIndices[11];
+
+// int[12]
+extern int g_BatCreatureIndices[12];
+extern int g_BatmanIndices[12];
+
+// int[17]
+extern int g_BaronIndices[17];
 
 // int[700]
 extern int g_BugsSortedVertexIndices[700];

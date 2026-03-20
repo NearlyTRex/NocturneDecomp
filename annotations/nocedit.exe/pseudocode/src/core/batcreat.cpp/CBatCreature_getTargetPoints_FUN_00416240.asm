@@ -10,7 +10,7 @@
 ; CVector3f        Stack[-0x14]:12  local_14
 ;
 ; Referenced Globals:
-;   int INT_0082274c
+;   int[12] g_BatCreatureIndices
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
@@ -24,7 +24,7 @@ section .text
     PUSH ESI                            ; 00416241
     SUB ESP,0xc                         ; 00416242
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00416245
-    MOV EDX,dword ptr [0x0082274c]      ; 00416249 | INT_0082274c
+    MOV EDX,dword ptr [0x0082274c]      ; 00416249 | g_BatCreatureIndices
     PUSH EDX                            ; 0041624f
     LEA EAX,[ESP + 0x4]                 ; 00416250
     PUSH EAX                            ; 00416254

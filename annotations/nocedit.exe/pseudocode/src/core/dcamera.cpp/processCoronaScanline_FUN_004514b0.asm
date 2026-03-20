@@ -12,7 +12,7 @@
 ; char             Stack[-0x14]:1  local_14
 ;
 ; Referenced Globals:
-;   CVector3i[15360] g_PrecomputedWorldPositions
+;   CVector3i[15499] g_PrecomputedWorldPositions
 ;   int[76800] g_PrecomputedDepthBuffer
 ;   _BIT_INTEGER32 g_CameraDownscaleIterations
 ;   int[240][320] g_CoronaDepthBuffer

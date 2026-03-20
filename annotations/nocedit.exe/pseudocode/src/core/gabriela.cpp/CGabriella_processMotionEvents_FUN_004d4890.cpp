@@ -36,9 +36,9 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
     switch(iVar2) {
     case 1:
     case 7:
-      bone_index = INT_02d7b864;
+      bone_index = g_GabriellaIndices[7];
       if (iVar2 == 7) {
-        bone_index = INT_02d7b868;
+        bone_index = g_GabriellaIndices[8];
       }
       core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                 (this_ptr_03,local_58,bone_index);
@@ -107,7 +107,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
       local_1c = this_ptr_02;
       if (this_ptr_02 != (CEnemy *)0x0) {
         pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                           (this_ptr_03,&local_40,INT_02d7b878);
+                           (this_ptr_03,&local_40,g_GabriellaIndices[0xc]);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_64,pCVar5);
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_a0);

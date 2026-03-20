@@ -7,6 +7,6 @@
 // CDemonCamera*
 CDemonCamera* g_SkipClearBuffersSceneCamera = {};
 
-// CVector3i[15360]
-CVector3i g_PrecomputedWorldPositions[15360] = {};
+// CVector3i[15499]
+CVector3i g_PrecomputedWorldPositions[15499] = {};
 

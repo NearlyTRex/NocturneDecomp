@@ -67,39 +67,16 @@ int g_SamplePointCount = {};
 int g_LodReplayMode = {};
 int g_LodGenerationStamp = {};
 int g_LodTempFaceStamp = {};
-int INT_02f33378 = {};
-int INT_02f3337c = {};
-int INT_02f33380 = {};
-int INT_02f33384 = {};
-int INT_02f33388 = {};
-int INT_02f3338c = {};
-int INT_02f33390 = {};
-int INT_02f33394 = {};
-int INT_02f33398 = {};
-int INT_02f3339c = {};
-int INT_02f333a0 = {};
-int INT_02f333a4 = {};
-int INT_02f333a8 = {};
-int INT_02f333b8 = {};
-int INT_02f333bc = {};
-int INT_02f333c0 = {};
-int INT_02f333c4 = {};
 int g_MirrorInputVertexCount = {};
 int g_MirrorOutputVertexCount = {};
-int INT_02f37ec8 = {};
-int INT_02f37ecc = {};
-int INT_02f37ed0 = {};
-int INT_02f37ed4 = {};
-int INT_02f37ed8 = {};
-int INT_02f37edc = {};
-int INT_02f37ee0 = {};
-int INT_02f37ee4 = {};
-int INT_02f37ee8 = {};
-int INT_02f37eec = {};
-int INT_02f37ef0 = {};
-int INT_02f37ef4 = {};
 int g_MoonCloudScrollX = {};
 int g_MoonCloudScrollY = {};
+
+// int[12]
+int g_MobsterIndices[12] = {};
+
+// int[20]
+int g_MimicIndices[20] = {};
 
 // int[5]
 int g_MobsterTauntCounters[5] = {};

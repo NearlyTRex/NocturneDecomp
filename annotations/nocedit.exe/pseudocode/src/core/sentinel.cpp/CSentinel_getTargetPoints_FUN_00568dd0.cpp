@@ -18,35 +18,35 @@ int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00568dd0(CSentinel *
   CVector3f local_1c;
   
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (&(this_ptr->base).base.model,&local_34,INT_0311420c);
+                     (&(this_ptr->base).base.model,&local_34,g_SentinelIndices[0]);
   if (out_points_array != pCVar1) {
     out_points_array->x = pCVar1->x;
     out_points_array->y = pCVar1->y;
     out_points_array->z = pCVar1->z;
   }
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (&(this_ptr->base).base.model,&local_28,INT_03114220);
+                     (&(this_ptr->base).base.model,&local_28,g_SentinelIndices[5]);
   if (out_points_array + 1 != pCVar2) {
     out_points_array[1].x = pCVar2->x;
     out_points_array[1].y = pCVar2->y;
     out_points_array[1].z = pCVar2->z;
   }
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (&(this_ptr->base).base.model,&local_1c,INT_03114224);
+                     (&(this_ptr->base).base.model,&local_1c,g_SentinelIndices[6]);
   if (out_points_array + 2 != pCVar2) {
     out_points_array[2].x = pCVar2->x;
     out_points_array[2].y = pCVar2->y;
     out_points_array[2].z = pCVar2->z;
   }
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (&(this_ptr->base).base.model,&local_40,INT_03114230);
+                     (&(this_ptr->base).base.model,&local_40,g_SentinelIndices[9]);
   if (out_points_array + 3 != pCVar2) {
     out_points_array[3].x = pCVar2->x;
     out_points_array[3].y = pCVar2->y;
     out_points_array[3].z = pCVar2->z;
   }
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (&(this_ptr->base).base.model,&local_4c,INT_03114238);
+                     (&(this_ptr->base).base.model,&local_4c,g_SentinelIndices[0xb]);
   if (out_points_array + 4 == pCVar2) {
     return 5;
   }

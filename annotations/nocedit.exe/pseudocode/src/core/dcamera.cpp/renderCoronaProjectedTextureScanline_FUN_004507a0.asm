@@ -20,8 +20,8 @@
 ; char *           Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
-;   CVector3i[320] g_TempWorldPositionRow
-;   CVector3f[76800] g_PrecomputedSurfaceNormals
+;   CVector3i[241][320] g_TempWorldPositions
+;   CVector3f[241][320] g_PrecomputedSurfaceNormals
 ;   char[241][320] g_CoronaBlurOutputBuffer
 ;   int g_CoronaMaxDepth
 ;   int g_CoronaDepthShift
@@ -51,7 +51,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 004507ac
     MOV EAX,EDI                         ; 004507af
     SHL EAX,0x8                         ; 004507b1
-    MOV ECX,0x9e4e74                    ; 004507b4 | g_TempWorldPositionRow
+    MOV ECX,0x9e4e74                    ; 004507b4 | g_TempWorldPositions
     MOV ESI,EAX                         ; 004507b9
     MOV EDX,dword ptr [EBP + 0x18]      ; 004507bb
     SHL ESI,0x4                         ; 004507be
