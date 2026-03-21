@@ -4,9 +4,6 @@
 ; BOOL crt_unknown_c_FUN_006107f0(LPCWSTR param_1,LPWSTR param_2)
 ;
 ;
-; XREF[1]:
-;   crt_unknown.c_FUN_0060fb40 at 0060fc24
-;
 ; Referenced Globals:
 ;   SET_ENVIRONMENT_VARIABLE_A_FUNC* g_SetEnvironmentVariableAFunc = 00212160
 ;   SET_ENVIRONMENT_VARIABLE_W_FUNC* g_SetEnvironmentVariableWFunc = 0021217a

@@ -6,7 +6,7 @@
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr
 ;
-; XREF[30]:
+; XREF[29]:
 ;   crt_env.c_findEnvVar_FUN_0060f1f0 at 0060f27d
 ;   crt_env.c_putenv_internal_FUN_0060ee80 at 0060ef40
 ;   crt_environ.c_staticFinal_FUN_0060c73c at 0060c769
@@ -17,7 +17,7 @@
 ;   crt_stdio.c__fclose_FUN_00601fd0 at 00602055
 ;   crt_stdlib.c__fullpath_FUN_00601140 at 006011b1
 ;   crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8 at 0060a310
-;   ... and 20 more
+;   ... and 19 more
 ;
 ; Called Functions:
 ;   crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0

@@ -6,14 +6,13 @@
 ; Parameters:
 ; DWORD            Stack[0x4]:4   windows_error
 ;
-; XREF[7]:
+; XREF[6]:
 ;   crt_env.c_putenv_internal_FUN_0060ee80 at 0060effc
 ;   crt_errno.c___set_errno_FUN_006083fc at 00608404
 ;   crt_io.c__findfirst_FUN_006021f0 at 00602233
 ;   crt_io.c__findnext_FUN_00602300 at 00602344
 ;   crt_io.c_access_FUN_0060c9f0 at 0060ca12
 ;   crt_process.c_spawn_FUN_006105a0 at 00610634
-;   crt_unknown.c_FUN_0060fb40 at 0060fca0
 ;
 ; Referenced Globals:
 ;   undefined4 g_LookupTableStruct

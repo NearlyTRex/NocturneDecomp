@@ -4,9 +4,6 @@
 ; void crt_unknown_c_FUN_00610900(void)
 ;
 ;
-; XREF[1]:
-;   crt_unknown.c_FUN_0060fb40 at 0060fc5e
-;
 ; Referenced Globals:
 ;   char** g_EnvironmentBlock
 ;

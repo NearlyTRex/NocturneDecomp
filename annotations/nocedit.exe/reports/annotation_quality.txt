@@ -14,14 +14,14 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,484
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        233 ( 3.6%)
+  Functions with type issues:        232 ( 3.6%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
-    Wrong calling convention:          5
+    Wrong calling convention:          4
     Undefined types in variables:      221
     Unresolved stack params:           14
 
@@ -69,14 +69,8 @@ Missing register parameters (likely wrong calling convention) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (5)
+Wrong calling convention (unaffected register usage) (4)
 --------------------------------------------------------------------------------
-
-  CDemonSet_showScenePreview
-    Address: 0x0057a940  File: core/setedit.cpp
-    Evidence: unaff_EBP, unaff_EBP
-    Signature: void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet *this_ptr)
-    Suggested: Calling convention may be wrong (preserved registers being used)
 
   CSkeleton_getBoneAngleInterpolated
     Address: 0x0059a070  File: core/skeleton.cpp
@@ -1612,15 +1606,15 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00450ac0  (CDemonCamera *this_ptr,CDemonLight *light_source)
     0x004518f0  (CDemonCamera *this_ptr,void *p1,int p2)
 
-  core_dlight.cpp_copyFloat  (3 functions)
-    0x00476c20  (float *dst,float *src)
-    0x00476c30  (float *dst,float *src)
-    0x00476c40  (float *dst,float *src)
+  core_dlight.cpp_assignInt  (3 functions)
+    0x00476c20  (int *dst,int *src)
+    0x00476c30  (int *dst,int *src)
+    0x00476c40  (int *dst,int *src)
 
-  core_dmodel.cpp_copyFloat  (3 functions)
-    0x0047ef90  (float *dst,float *src)
-    0x0047efa0  (float *dst,float *src)
-    0x0047efb0  (float *dst,float *src)
+  core_dmodel.cpp_assignInt  (3 functions)
+    0x0047ef90  (int *dst,int *src)
+    0x0047efa0  (int *dst,int *src)
+    0x0047efb0  (int *dst,int *src)
 
   core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput  (2 functions)
     0x004917bc  (ulonglong *output_buffer,ulonglong *texture_buffer,byte *...)
@@ -1639,7 +1633,7 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004be670  (void)
     0x004bea00  (void)
 
-  core_game.cpp_copyInt  (3 functions)
+  core_game.cpp_assignInt  (3 functions)
     0x004e4440  (int *dest,int *src)
     0x004e4450  (int *dest,int *src)
     0x004e4460  (int *dest,int *src)
@@ -1660,12 +1654,12 @@ Some are legitimate overloads, others may need disambiguating names.
     0x005747d0  (CZThumb *this_ptr,int count)
     0x00574910  (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_a...)
 
-  core_setdir.cpp_copySet  (3 functions)
-    0x005768c0  (CDemonSet **set1,CDemonSet **set2)
-    0x005768d0  (CDemonSet **set1,CDemonSet **set2)
-    0x005768e0  (CDemonSet **set1,CDemonSet **set2)
+  core_setdir.cpp_assignInt  (3 functions)
+    0x005768c0  (int *a,int *b)
+    0x005768d0  (int *a,int *b)
+    0x005768e0  (int *a,int *b)
 
-  core_skeledit.cpp_copyInt  (2 functions)
+  core_skeledit.cpp_assignInt  (2 functions)
     0x00599630  (int *dest,int *src)
     0x00599650  (int *dest,int *src)
 

@@ -4,9 +4,8 @@
 ; undefined4 crt_unknown_c_FUN_0060fcf4(short *param_1)
 ;
 ;
-; XREF[3]:
+; XREF[2]:
 ;   crt_env.c_putenv_internal_FUN_0060ee80 at 0060f03c
-;   crt_unknown.c_FUN_0060fb40 at 0060fc64
 ;   crt_unknown.c_FUN_00610900 at 0061094a
 ;
 ; Referenced Globals:

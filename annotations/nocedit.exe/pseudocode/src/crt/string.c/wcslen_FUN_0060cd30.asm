@@ -6,10 +6,9 @@
 ; Parameters:
 ; LPWSTR           Stack[0x4]:4   str
 ;
-; XREF[4]:
+; XREF[3]:
 ;   crt_startup.c_GetModuleFileNameCompat_FUN_0060a560 at 0060a5f7
 ;   crt_string.c_wcsdup_FUN_0060a660 at 0060a667
-;   crt_unknown.c_FUN_0060fb40 at 0060fbc8
 ;   crt_unknown.c_FUN_006107f0 at 0061081a
 ;
 ; *****************************************************************************

@@ -37,8 +37,8 @@ SBoneData * __cdecl core_skeledit_cpp_copyBoneData_FUN_00599480(SBoneData *dest,
 CLodVert * __cdecl core_skeledit_cpp_CLodVert_copy_FUN_00599550(CLodVert *this_ptr,CLodVert *other);
 CLodVert * __cdecl core_skeledit_cpp_CLodVert_dtor_FUN_005995c0(CLodVert *this_ptr,uint flags);
 CMatrix3x4f * __cdecl core_skeledit_cpp_copyMatrix_FUN_005995d0(CMatrix3x4f *dst,CMatrix3x4f *src);
-int * __cdecl core_skeledit_cpp_copyInt_FUN_00599630(int *dest,int *src);
-int * __cdecl core_skeledit_cpp_copyInt_FUN_00599650(int *dest,int *src);
+int * __cdecl core_skeledit_cpp_assignInt_FUN_00599630(int *dest,int *src);
+int * __cdecl core_skeledit_cpp_assignInt_FUN_00599650(int *dest,int *src);
 void __cdecl core_skeleton_cpp_staticInit_FUN_00599670(void);
 void __cdecl core_skeleton_cpp_skipToEndOfLine_FUN_005996c0(_FILE *file_ptr);
 float __cdecl core_skeleton_cpp_distancePointToLineSegment_FUN_005996e0(CVector3f *line_start,CVector3f *line_end,CVector3f *test_point);

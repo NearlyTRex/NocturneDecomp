@@ -10,9 +10,8 @@
 ; Local Variables:
 ; char[4]          Stack[-0x14]:4  local_14
 ;
-; XREF[3]:
+; XREF[2]:
 ;   crt_time.c_tzset_FUN_006072f8 at 006072a0
-;   crt_unknown.c_FUN_0060fb40 at 0060fcbd
 ;   crt_unknown.c_FUN_006107f0 at 00610878
 ;
 ; Called Functions:

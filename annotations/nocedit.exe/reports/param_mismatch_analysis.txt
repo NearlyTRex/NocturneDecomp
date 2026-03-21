@@ -14,28 +14,18 @@ Mismatches may indicate:
 SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 6953
-Functions with no callers: 3246
-Parameter mismatches detected: 131
+Functions with no callers: 3248
+Parameter mismatches detected: 129
 Signature accuracy rate: 96.5%
 
 Mismatches by confidence:
-  High confidence:   2 (multiple call sites agree)
-  Medium confidence: 33 (some agreement)
-  Low confidence:    96 (limited data)
+  High confidence:   1 (multiple call sites agree)
+  Medium confidence: 34 (some agreement)
+  Low confidence:    94 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
 ====================================================================================================
-
-  crt_unknown.c_FUN_0060fcf4
-    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
-    Call sites: 3, Confidence: high
-    File: crt/unknown.c
-    Signature: undefined4 crt_unknown_c_FUN_0060fcf4(short *param_1)
-    Sample call sites:
-      crt_env.c_putenv_internal_FUN_ at 0060f03c: 0 reg [], 1 stack (4 bytes, via add_esp)
-      crt_unknown.c_FUN_0060fb40 at 0060fc64: 0 reg [], 1 stack (4 bytes, via add_esp)
-      crt_unknown.c_FUN_00610900 at 0061094a: 0 reg [], 1 stack (4 bytes, via add_esp)
 
   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480
     Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
@@ -84,12 +74,13 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_stdio.c_CreateFileVariadic_FUN_00609074        declared:3 est:4 (+1) [2 calls]
   crt_sync.c_criticalSectionStub_FUN_00609f20        declared:0 est:1 (+1) [7 calls]
   crt_thread.c_noop_lock_FUN_0060b180                declared:0 est:1 (+1) [2 calls]
+  crt_unknown.c_FUN_0060fcf4                         declared:0 est:1 (+1) [2 calls]
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  96 functions with low-confidence mismatches
+  94 functions with low-confidence mismatches
   Sample:
     cockpit_ckptutil.c_isLineClippingDisabled_FUN declared:0 est:4 (+4)
     crt_io.c_CheckFileHandleAvailability_FUN_0060 declared:0 est:4 (+4)
@@ -109,7 +100,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 13
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 118
+Functions where declaration has FEWER params than estimated: 116
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -120,8 +111,8 @@ Distribution of differences (estimated - declared):
   -1 params: 9 functions
   +1 params: 51 functions
   +2 params: 23 functions
-  +3 params: 16 functions
-  +4 params: 15 functions
+  +3 params: 15 functions
+  +4 params: 14 functions
   +5 params: 4 functions
   +6 params: 2 functions
   +7 params: 2 functions

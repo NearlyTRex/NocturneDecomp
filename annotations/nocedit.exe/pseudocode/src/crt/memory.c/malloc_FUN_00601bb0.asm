@@ -6,7 +6,7 @@
 ; Parameters:
 ; ulong            Stack[0x4]:4   size
 ;
-; XREF[25]:
+; XREF[24]:
 ;   crt_env.c_putenv_internal_FUN_0060ee80 at 0060efec
 ;   crt_env.c_updateEnvironTable_FUN_0060f04c at 0060f126
 ;   crt_ioinit.c_staticInit_FUN_00608f20 at 00608f5b
@@ -17,7 +17,7 @@
 ;   crt_process.c_spawnvp_FUN_0060f39c at 0060f3fd
 ;   crt_startup.c_GetModuleFileNameCompat_FUN_0060a560 at 0060a599
 ;   crt_stdio.c_InitializeFileBuffer_FUN_006027e0 at 00602820
-;   ... and 15 more
+;   ... and 14 more
 ;
 ; Called Functions:
 ;   crt_heap.c_InternalHeapAlloc_FUN_00601bc0

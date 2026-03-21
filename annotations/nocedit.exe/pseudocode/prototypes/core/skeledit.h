@@ -291,10 +291,10 @@ CLodVert * __cdecl CLodVert::dtor(CLodVert *this_ptr,uint flags);
 // Address: 005995d0
 CMatrix3x4f * __cdecl copyMatrix(CMatrix3x4f *dst,CMatrix3x4f *src);
 
-// Original: core_skeledit.cpp_copyInt_FUN_00599630
+// Original: core_skeledit.cpp_assignInt_FUN_00599630
 // Address: 00599630
-int * __cdecl copyInt(int *dest,int *src);
+int * __cdecl assignInt(int *dest,int *src);
 
-// Original: core_skeledit.cpp_copyInt_FUN_00599650
+// Original: core_skeledit.cpp_assignInt_FUN_00599650
 // Address: 00599650
-int * __cdecl copyInt(int *dest,int *src);
+int * __cdecl assignInt(int *dest,int *src);

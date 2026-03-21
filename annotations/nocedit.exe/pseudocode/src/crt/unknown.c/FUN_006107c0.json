@@ -1,28 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 140,
-    "cross_reference_count": 1,
+    "complexity_score": 125,
+    "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 15,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
-      "param_count_too_few",
       "special_crt_function",
       "unnamed_param"
     ],
     "total_lines": 43
   },
-  "cross_references": [
-    {
-      "addr": "0060fb40",
-      "from_addr": "0060fb5b",
-      "name": "crt_unknown.c_FUN_0060fb40",
-      "type": "UNCONDITIONAL_CALL"
-    }
-  ],
+  "cross_references": [],
   "function": {
     "address": "006107c0",
     "address_range": [
@@ -38,26 +30,12 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 1,
-    "call_sites": [
-      {
-        "call_addr": "0060fb5b",
-        "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_0060fb40",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
-        "stack_bytes": 8,
-        "stack_params": 2
-      }
-    ],
-    "confidence": "low",
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 3
+    "estimated_params": 0
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.05,
@@ -163,17 +141,6 @@
       "severity": "mild",
       "text": "sVar1 = *param_1;",
       "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     },
     {
       "address": "006107c0",

@@ -4,37 +4,37 @@
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 43,
+        "line": 40,
         "message": "use of undeclared identifier 'stack0xffffffd4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 14,
-        "line": 44,
+        "line": 41,
         "message": "use of undeclared identifier 'stack0xffffffd8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 12,
-        "line": 46,
+        "line": 43,
         "message": "use of undeclared identifier 'stack0xffffffd8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 51,
+        "line": 48,
         "message": "use of undeclared identifier 'stack0xffffffd4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 24,
-        "line": 52,
+        "line": 49,
         "message": "use of undeclared identifier 'stack0xffffffd8'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 55,
+        "line": 52,
         "message": "use of undeclared identifier 'stack0xffffffd8'"
       }
     ],
@@ -43,12 +43,12 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 198,
+    "complexity_score": 195,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 48,
+    "pseudocode_lines": 45,
     "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
@@ -56,7 +56,7 @@
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 129
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -345,7 +345,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
+      "line": 12,
       "match": "auStackY_180c",
       "severity": "moderate",
       "text": "uint auStackY_180c [1520];",
@@ -353,7 +353,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 30,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)pCVar2 + (uint)bVar5 * -8 + 4);",
@@ -361,7 +361,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 36,
+      "line": 33,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8) = *puVar3;",
@@ -369,7 +369,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 37,
+      "line": 34,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) = *puVar4;",
@@ -377,7 +377,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 39,
+      "line": 36,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
       "text": "((int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4) =",
@@ -385,23 +385,23 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 41,
+      "line": 38,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
+      "text": "puVar3 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 38,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar1 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
+      "text": "puVar3 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 42,
+      "line": 39,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI->w = fVar1;",
@@ -409,10 +409,18 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 44,
+      "line": 41,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
-      "text": "*puVar1 = *(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8);",
+      "text": "*puVar3 = *(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 42,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "*puVar4 = *(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
       "type": "stack_ref"
     },
     {
@@ -420,20 +428,12 @@
       "line": 45,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
-      "text": "*puVar2 = *(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 48,
-      "match": "&stack0xffffffd8",
-      "severity": "moderate",
       "text": "((int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 50,
+      "line": 47,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",

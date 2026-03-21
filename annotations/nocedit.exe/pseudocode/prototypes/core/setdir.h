@@ -127,17 +127,17 @@ int __cdecl CDemonSet::findVdirBoxRoot(CDemonSet *this_ptr,int box_index);
 // Address: 00576870
 int __cdecl CDemonSet::findVdirBoxAtPosition(CDemonSet *this_ptr,CVector3f *position);
 
-// Original: core_setdir.cpp_copySet_FUN_005768c0
+// Original: core_setdir.cpp_assignInt_FUN_005768c0
 // Address: 005768c0
-CDemonSet * __cdecl copySet(CDemonSet **set1,CDemonSet **set2);
+int * __cdecl assignInt(int *a,int *b);
 
-// Original: core_setdir.cpp_copySet_FUN_005768d0
+// Original: core_setdir.cpp_assignInt_FUN_005768d0
 // Address: 005768d0
-CDemonSet * __cdecl copySet(CDemonSet **set1,CDemonSet **set2);
+int * __cdecl assignInt(int *a,int *b);
 
-// Original: core_setdir.cpp_copySet_FUN_005768e0
+// Original: core_setdir.cpp_assignInt_FUN_005768e0
 // Address: 005768e0
-CDemonSet * __cdecl copySet(CDemonSet **set1,CDemonSet **set2);
+int * __cdecl assignInt(int *a,int *b);
 
 // Original: core_setdir.cpp_CBoundingBox3D_arrdtor_FUN_005768f0
 // Address: 005768f0

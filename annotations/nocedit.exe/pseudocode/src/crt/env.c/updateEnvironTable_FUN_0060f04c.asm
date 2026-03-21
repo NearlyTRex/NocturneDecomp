@@ -6,9 +6,8 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   envstr
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_env.c_putenv_internal_FUN_0060ee80 at 0060efb6
-;   crt_unknown.c_FUN_0060fb40 at 0060fce1
 ;
 ; Referenced Globals:
 ;   char** g_EnvironStringArea

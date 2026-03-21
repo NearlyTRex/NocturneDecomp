@@ -573,7 +573,6 @@ void __cdecl crt_unknown_c_FUN_0060fa80(void);
 int __watcallRegister crt_operation_c_always_zero_FUN_0060fa8b(void);
 int crt_unknown_c_FUN_0060fa90(char *param_1);
 int crt_unknown_c_FUN_0060fac0(wchar_t *param_1,char *param_2,int param_3);
-int crt_unknown_c_FUN_0060fb40(LPWSTR param_1);
 undefined4 crt_unknown_c_FUN_0060fcf4(short *param_1);
 int crt_unknown_c_FUN_0060fe94(short *param_1,int param_2);
 wchar_t __watcallStack crt_locale_c_fullwidth_toupper_FUN_0060ffb0(wchar_t character);

@@ -3550,6 +3550,108 @@ def generate_double_usage_report(functions, output_path):
     return report_text
 
 
+def generate_code_cave_report(annotations_dir, output_path):
+    """Generate code cave analysis report from code_caves.json.
+
+    Args:
+        annotations_dir: Path to annotations/nocedit.exe directory
+        output_path: Directory to write the report
+    """
+    if not annotations_dir:
+        log_info("Skipping code cave report: annotations dir not found")
+        return
+
+    caves_path = os.path.join(annotations_dir, 'code_caves.json')
+    if not os.path.isfile(caves_path):
+        log_info("Skipping code cave report: %s not found" % caves_path)
+        return
+
+    try:
+        with open(caves_path) as f:
+            data = json.load(f)
+    except Exception as e:
+        log_info("Failed to load code_caves.json: %s" % e)
+        return
+
+    caves = data.get('caves', [])
+    if not caves:
+        log_info("No code caves found in code_caves.json")
+        return
+
+    total_size = sum(c.get('total_size', 0) for c in caves)
+    total_free = sum(
+        c.get('total_size', 0) - c.get('free_offset', 0) for c in caves)
+    total_allocs = sum(len(c.get('allocations', [])) for c in caves)
+
+    lines = []
+    lines.append("=" * 100)
+    lines.append("CODE CAVE ANALYSIS")
+    lines.append("=" * 100)
+    lines.append("")
+    lines.append("Caves are created by zeroing out dead functions using the")
+    lines.append("CreateCodeCave Ghidra script (Shift+Z). Patching scripts")
+    lines.append("allocate space within caves for injected code (thunks, helpers).")
+    lines.append("")
+    lines.append("Total caves:        %d" % len(caves))
+    lines.append("Total bytes:        %s" % fmt_num(total_size))
+    lines.append("Total free:         %s" % fmt_num(total_free))
+    lines.append("Total allocations:  %d" % total_allocs)
+    lines.append("")
+
+    lines.append("-" * 100)
+    lines.append("CAVES")
+    lines.append("-" * 100)
+    for cave in sorted(caves, key=lambda c: c.get('start', '')):
+        name = cave.get('name', '?')
+        start = cave.get('start', '?')
+        total = cave.get('total_size', 0)
+        free_off = cave.get('free_offset', 0)
+        free_bytes = total - free_off
+        allocs = cave.get('allocations', [])
+        removed = cave.get('removed_functions', [])
+
+        status = "FREE" if free_off == 0 else (
+            "FULL" if free_bytes == 0 else "%d/%d used" % (free_off, total))
+
+        lines.append("")
+        lines.append("  %-30s  %s  %5d bytes  [%s]" % (
+            name, start, total, status))
+
+        if removed:
+            for func_name in removed:
+                lines.append("    removed: %s" % func_name)
+
+        if allocs:
+            lines.append("    Allocations:")
+            for alloc in allocs:
+                alloc_name = alloc.get('name', '?')
+                alloc_offset = alloc.get('offset', 0)
+                alloc_size = alloc.get('size', 0)
+                used_by = alloc.get('used_by', [])
+                desc = alloc.get('description', '')
+                lines.append("      +0x%04x  %3d bytes  %-25s  %s" % (
+                    alloc_offset, alloc_size, alloc_name,
+                    ', '.join(used_by) if used_by else ''))
+                if desc:
+                    lines.append("               %s" % desc)
+
+            lines.append("    Free space: %d bytes (offset 0x%04x - 0x%04x)" % (
+                free_bytes, free_off, total))
+        else:
+            lines.append("    (entirely free — no allocations)")
+
+    lines.append("")
+
+    report_path = os.path.join(output_path, 'code_cave_analysis.txt')
+    try:
+        with open(report_path, 'w') as f:
+            f.write('\n'.join(lines) + '\n')
+        log_info("Wrote code cave report: %s (%d caves)" % (
+            report_path, len(caves)))
+    except Exception as e:
+        log_info("Failed to write code cave report: %s" % e)
+
+
 def generate_analysis_report(pseudocode_src_dir, output_path):
     """Generate all analysis reports from exported function JSON files.
 
@@ -3604,6 +3706,10 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
             log_info("Skipping struct report: %s not found" % data_types_path)
     else:
         log_info("Skipping struct report: could not locate pseudocode base dir")
+
+    # Generate code cave report
+    log_info("Generating code cave report...")
+    generate_code_cave_report(exe_dir if annotations_base else None, output_path)
 
     # Generate SVG graphs for README
     log_info("Generating SVG graphs...")

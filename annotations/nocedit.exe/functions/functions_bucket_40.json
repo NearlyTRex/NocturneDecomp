@@ -25003,8 +25003,8 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dlight.cpp_copyFloat_FUN_00476c40",
-    "ret":"float*",
+    "name":"core_dlight.cpp_assignInt_FUN_00476c40",
+    "ret":"int*",
     "vars":{
       "params":[
         {
@@ -25021,7 +25021,7 @@
               }
             ]
           },
-          "type":"float*"
+          "type":"int*"
         },
         {
           "name":"src",
@@ -25037,7 +25037,7 @@
               }
             ]
           },
-          "type":"float*"
+          "type":"int*"
         }
       ],
       "ret_storage":{
@@ -48798,7 +48798,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_game.cpp_copyInt_FUN_004e4440",
+    "name":"core_game.cpp_assignInt_FUN_004e4440",
     "ret":"int*",
     "vars":{
       "params":[
@@ -79653,12 +79653,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setdir.cpp_copySet_FUN_005768c0",
-    "ret":"CDemonSet*",
+    "name":"core_setdir.cpp_assignInt_FUN_005768c0",
+    "ret":"int*",
     "vars":{
       "params":[
         {
-          "name":"set1",
+          "name":"a",
           "storage":{
             "offset":4,
             "size":4,
@@ -79671,10 +79671,10 @@
               }
             ]
           },
-          "type":"CDemonSet**"
+          "type":"int*"
         },
         {
-          "name":"set2",
+          "name":"b",
           "storage":{
             "offset":8,
             "size":4,
@@ -79687,7 +79687,7 @@
               }
             ]
           },
-          "type":"CDemonSet**"
+          "type":"int*"
         }
       ],
       "ret_storage":{
@@ -79848,69 +79848,6 @@
     "ret":"void",
     "vars":{
       "locals":[
-        {
-          "name":"unaff_EBP",
-          "storage":{
-            "reg":"EBP",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000014",
-                "offset":20,
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":-1
-        },
-        {
-          "name":"iVar2",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":524
-        },
-        {
-          "name":"y",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":536
-        },
-        {
-          "name":"iVar3",
-          "storage":{
-            "reg":"EBX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000000c",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":548
-        },
         {
           "name":"pCStack_14",
           "storage":{
@@ -80086,38 +80023,6 @@
             ]
           },
           "type":"char[256]"
-        },
-        {
-          "name":"this_ptr_00",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:3f0deb2995",
-                "offset":270816455061,
-                "size":4
-              }
-            ]
-          },
-          "type":"CSlew*",
-          "use":35
-        },
-        {
-          "name":"piVar1",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:41c76e5bb8",
-                "offset":282518772664,
-                "size":4
-              }
-            ]
-          },
-          "type":"int*",
-          "use":550
         }
       ],
       "params":[
@@ -109125,133 +109030,6 @@
     "name":"crt_unknown.c_FUN_0060fac0",
     "ret":"undefined1",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"0060fb40",
-    "body":[
-      {
-        "end":"0060fcf0",
-        "size":433,
-        "start":"0060fb40"
-      }
-    ],
-    "custom_storage":true,
-    "importable":true,
-    "name":"crt_unknown.c_FUN_0060fb40",
-    "ret":"undefined1",
-    "vars":{
-      "locals":[
-        {
-          "name":"pWVar2",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"LPWSTR",
-          "use":27
-        },
-        {
-          "name":"iVar3",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":41
-        },
-        {
-          "name":"dest",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"void*",
-          "use":80
-        },
-        {
-          "name":"uVar4",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"ulong",
-          "use":136
-        },
-        {
-          "name":"dest_00",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"void*",
-          "use":158
-        },
-        {
-          "name":"dest_01",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"char*",
-          "use":336
-        },
-        {
-          "name":"SVar1",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:41f70397e3f",
-                "offset":4533073313343,
-                "size":4
-              }
-            ]
-          },
-          "type":"SIZE_T",
-          "use":74
-        }
-      ],
       "ret_storage":{
         "invalid":true
       }

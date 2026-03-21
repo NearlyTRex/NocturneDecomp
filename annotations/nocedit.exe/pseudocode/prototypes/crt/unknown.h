@@ -327,10 +327,6 @@ int FUN_0060fa90(char *param_1);
 // Address: 0060fac0
 int FUN_0060fac0(wchar_t *param_1,char *param_2,int param_3);
 
-// Original: crt_unknown.c_FUN_0060fb40
-// Address: 0060fb40
-int FUN_0060fb40(LPWSTR param_1);
-
 // Original: crt_unknown.c_FUN_0060fcf4
 // Address: 0060fcf4
 undefined4 FUN_0060fcf4(short *param_1);
