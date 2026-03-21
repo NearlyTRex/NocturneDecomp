@@ -6,7 +6,7 @@
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file
 ;
-; XREF[66]:
+; XREF[65]:
 ;   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690 at 004346fb
 ;   core_actor.cpp_archiveBox_FUN_0040bd70 at 0040bd8b
 ;   core_actor.cpp_archiveClothList_FUN_0040be60 at 0040be80
@@ -15,9 +15,9 @@
 ;   core_actor.cpp_archivePartStatus_FUN_0040bae0 at 0040bb03
 ;   core_actor.cpp_archiveRules_FUN_0040c000 at 0040c0c2
 ;   core_actor.cpp_archiveString_FUN_0040b5c0 at 0040b5e0
-;   core_conveyor.cpp_skipToNewline_FUN_004424a0 at 004424a6
 ;   core_course.cpp_CCourse_importBON_FUN_00442bc0 at 00442c22
-;   ... and 56 more
+;   core_course.cpp_CCourse_importCRS_FUN_00442d70 at 00442da8
+;   ... and 55 more
 ;
 ; Referenced Globals:
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434

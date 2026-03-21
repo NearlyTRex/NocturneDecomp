@@ -70,15 +70,3 @@ CConveyor * __cdecl CConveyor::dtor(CConveyor *this_ptr,uint flags);
 // Original: core_conveyor.cpp_CPlatform_dtor_FUN_00442380
 // Address: 00442380
 CPlatform * __cdecl CPlatform::dtor(CPlatform *this_ptr,uint flags);
-
-// Original: core_conveyor.cpp_assignInt_FUN_004423f0
-// Address: 004423f0
-int * __cdecl assignInt(int *dest,int *src);
-
-// Original: core_conveyor.cpp_floatModulo_FUN_00442400
-// Address: 00442400
-float __cdecl floatModulo(float value,float divisor);
-
-// Original: core_conveyor.cpp_skipToNewline_FUN_004424a0
-// Address: 004424a0
-void __cdecl skipToNewline(_FILE *file_handle);

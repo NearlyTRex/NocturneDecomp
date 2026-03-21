@@ -266,15 +266,3 @@ void __cdecl CGame::finishAct(CGame *this_ptr);
 // Original: core_game.cpp_CGame_rollCredits_FUN_004e4010
 // Address: 004e4010
 void __cdecl CGame::rollCredits(CGame *this_ptr);
-
-// Original: core_game.cpp_assignInt_FUN_004e4440
-// Address: 004e4440
-int * __cdecl assignInt(int *dest,int *src);
-
-// Original: core_game.cpp_assignInt_FUN_004e4450
-// Address: 004e4450
-int * __cdecl assignInt(int *dest,int *src);
-
-// Original: core_game.cpp_assignInt_FUN_004e4460
-// Address: 004e4460
-int * __cdecl assignInt(int *dest,int *src);

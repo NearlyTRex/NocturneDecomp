@@ -144,11 +144,6 @@ int __cdecl shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(CStrList *this
 int __cdecl shape_edittool_cpp_getFontMaxCharHeight_FUN_004a6ee0(CBitFont *font_ptr);
 int __cdecl shape_edittool_cpp_getFontMaxCharWidth_FUN_004a6ef0(CBitFont *font_ptr);
 int __cdecl shape_edittool_cpp_getFontCharSpacing_FUN_004a6f00(CBitFont *font_ptr);
-int __cdecl shape_edittool_cpp_getFontSpaceCharWidth_FUN_004a6f10(CBitFont *font_ptr);
-int * __cdecl shape_edittool_cpp_assignInt_FUN_004a6f20(int *dst,int *src);
-int * __cdecl shape_edittool_cpp_assignInt_FUN_004a6f30(int *dst,int *src);
-int * __cdecl shape_edittool_cpp_assignInt_FUN_004a6f40(int *dst,int *src);
-CVector3f * __cdecl shape_edittool_cpp_CVector3f_arrdtor_FUN_004a6f50(CVector3f *objs,uint flags);
 void __cdecl core_elephant_cpp_staticInit_FUN_004a6f70(void);
 CElephantGun * __cdecl core_elephant_cpp_factoryFunc_FUN_004a6fa0(void);
 CDemonActorType * __cdecl core_elephant_cpp_CElephantGun_getActorType_FUN_004a6fd0(CElephantGun *this_ptr);

@@ -275,10 +275,6 @@ void __cdecl previewModel(char *model_name);
 // Address: 00598fc0
 void __cdecl viewModel(void);
 
-// Original: core_skeledit.cpp_copyBoneData_FUN_00599480
-// Address: 00599480
-SBoneData * __cdecl copyBoneData(SBoneData *dest,SBoneData *src);
-
 // Original: core_skeledit.cpp_CLodVert_copy_FUN_00599550
 // Address: 00599550
 CLodVert * __cdecl CLodVert::copy(CLodVert *this_ptr,CLodVert *other);
@@ -286,15 +282,3 @@ CLodVert * __cdecl CLodVert::copy(CLodVert *this_ptr,CLodVert *other);
 // Original: core_skeledit.cpp_CLodVert_dtor_FUN_005995c0
 // Address: 005995c0
 CLodVert * __cdecl CLodVert::dtor(CLodVert *this_ptr,uint flags);
-
-// Original: core_skeledit.cpp_copyMatrix_FUN_005995d0
-// Address: 005995d0
-CMatrix3x4f * __cdecl copyMatrix(CMatrix3x4f *dst,CMatrix3x4f *src);
-
-// Original: core_skeledit.cpp_assignInt_FUN_00599630
-// Address: 00599630
-int * __cdecl assignInt(int *dest,int *src);
-
-// Original: core_skeledit.cpp_assignInt_FUN_00599650
-// Address: 00599650
-int * __cdecl assignInt(int *dest,int *src);

@@ -8,18 +8,18 @@
 ; Local Variables:
 ; double[2]        Stack[-0x18]:16  local_18
 ;
-; XREF[39]:
+; XREF[38]:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 at 0040cdf8
 ;   core_bat.cpp_CBat_updateCoursePosition_FUN_00414ce0 at 00414d2c
 ;   core_bat.cpp_fmodfPositive_FUN_004146f0 at 00414719
 ;   core_boneguy.cpp_hsvToRgb_FUN_0041ba10 at 0041bb27
 ;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 at 00421a1f
 ;   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0 at 004258c4
-;   core_conveyor.cpp_floatModulo_FUN_00442400 at 00442429
 ;   core_course.cpp_CCourse_interpolate_FUN_004427a0 at 004429b3
 ;   core_course.cpp_CCourse_preview_FUN_00443bc0 at 00443c51
 ;   core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370 at 0047c3c4
-;   ... and 29 more
+;   core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0 at 0047c30c
+;   ... and 28 more
 ;
 ; Referenced Globals:
 ;   double g_MathDomainAdjustment = -1

@@ -606,23 +606,3 @@ int __cdecl getFontMaxCharWidth(CBitFont *font_ptr);
 // Original: shape_edittool.cpp_getFontCharSpacing_FUN_004a6f00
 // Address: 004a6f00
 int __cdecl getFontCharSpacing(CBitFont *font_ptr);
-
-// Original: shape_edittool.cpp_getFontSpaceCharWidth_FUN_004a6f10
-// Address: 004a6f10
-int __cdecl getFontSpaceCharWidth(CBitFont *font_ptr);
-
-// Original: shape_edittool.cpp_assignInt_FUN_004a6f20
-// Address: 004a6f20
-int * __cdecl assignInt(int *dst,int *src);
-
-// Original: shape_edittool.cpp_assignInt_FUN_004a6f30
-// Address: 004a6f30
-int * __cdecl assignInt(int *dst,int *src);
-
-// Original: shape_edittool.cpp_assignInt_FUN_004a6f40
-// Address: 004a6f40
-int * __cdecl assignInt(int *dst,int *src);
-
-// Original: shape_edittool.cpp_CVector3f_arrdtor_FUN_004a6f50
-// Address: 004a6f50
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);

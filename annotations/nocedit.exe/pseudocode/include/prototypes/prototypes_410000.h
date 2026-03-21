@@ -224,9 +224,6 @@ void __cdecl core_bat_cpp_CBat_addFilesToExtract_FUN_00414ec0(CBat *this_ptr,_FI
 void __cdecl core_bat_cpp_CBat_processInEditor_FUN_00414f00(CBat *this_ptr);
 void __cdecl core_bat_cpp_CBat_showEditorHelp_FUN_00414fb0(CBat *this_ptr,int *y_pos);
 CBat * __cdecl core_bat_cpp_CBat_dtor_FUN_00414fe0(CBat *this_ptr,uint flags);
-int * __cdecl core_bat_cpp_assignInt_FUN_00415050(int *dst,int *src);
-int * __cdecl core_bat_cpp_assignInt_FUN_00415060(int *dst,int *src);
-int * __cdecl core_bat_cpp_assignInt_FUN_00415070(int *dst,int *src);
 void __cdecl core_batcreat_cpp_staticInit_FUN_00415080(void);
 CBatCreature * __cdecl core_batcreat_cpp_factoryFunc_FUN_004150b0(void);
 CDemonActorType * __cdecl core_batcreat_cpp_CBatCreature_getActorType_FUN_004150e0(CBatCreature *this_ptr);

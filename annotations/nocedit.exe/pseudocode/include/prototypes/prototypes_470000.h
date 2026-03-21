@@ -100,9 +100,6 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *pos
 void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(CDemonLight *this_ptr,float intensity);
 void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670(CDemonLight *this_ptr,int screen_x,int screen_y,int brightness_offset);
 int __cdecl core_dlight_cpp_CDemonLight_testVisibility_FUN_00476a60(CDemonLight *this_ptr,CVector3i *corners);
-int * __cdecl core_dlight_cpp_assignInt_FUN_00476c20(int *dst,int *src);
-int * __cdecl core_dlight_cpp_assignInt_FUN_00476c30(int *dst,int *src);
-int * __cdecl core_dlight_cpp_assignInt_FUN_00476c40(int *dst,int *src);
 void __cdecl core_dmodel_cpp_staticInit_FUN_00476c50(void);
 void __cdecl core_dmodel_cpp_skipLines_FUN_00476c80(_FILE *file_handle,int line_count);
 void __cdecl core_dmodel_cpp_clampTextureCoordinate_FUN_00476cb0(float *value);
@@ -168,9 +165,6 @@ CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_ctor_FUN_0047eef0(CDemon
 CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_dtor_FUN_0047ef00(CDemonTriangle *this_ptr,uint flags);
 int __cdecl core_dmodel_cpp_CDemonTriangle_copy_FUN_0047ef10(CDemonTriangle *this_ptr,CDemonTriangle *other);
 void __cdecl core_dmodel_cpp_SRA4HQPoint_copy_FUN_0047ef60(SRA4HQPoint *this_ptr,SRA4HQPoint *other);
-int * __cdecl core_dmodel_cpp_assignInt_FUN_0047ef90(int *dst,int *src);
-int * __cdecl core_dmodel_cpp_assignInt_FUN_0047efa0(int *dst,int *src);
-int * __cdecl core_dmodel_cpp_assignInt_FUN_0047efb0(int *dst,int *src);
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor_FUN_0047efc0(CKeyFramedModel *objs,uint flags);
 void __cdecl core_dog_cpp_staticInit_FUN_0047efe0(void);
 CZombieDog * __cdecl core_dog_cpp_factoryFunc_FUN_0047f010(void);

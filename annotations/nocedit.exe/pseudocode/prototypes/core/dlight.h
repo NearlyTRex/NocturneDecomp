@@ -138,15 +138,3 @@ void __cdecl CDemonLight::drawShadowDepthBuffer(CDemonLight *this_ptr,int screen
 // Original: core_dlight.cpp_CDemonLight_testVisibility_FUN_00476a60
 // Address: 00476a60
 int __cdecl CDemonLight::testVisibility(CDemonLight *this_ptr,CVector3i *corners);
-
-// Original: core_dlight.cpp_assignInt_FUN_00476c20
-// Address: 00476c20
-int * __cdecl assignInt(int *dst,int *src);
-
-// Original: core_dlight.cpp_assignInt_FUN_00476c30
-// Address: 00476c30
-int * __cdecl assignInt(int *dst,int *src);
-
-// Original: core_dlight.cpp_assignInt_FUN_00476c40
-// Address: 00476c40
-int * __cdecl assignInt(int *dst,int *src);

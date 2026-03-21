@@ -143,10 +143,6 @@ int __cdecl core_setdir_cpp_testOBBIntersection_FUN_005763a0(SVDBox *obb_a,SVDBo
 int __cdecl core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710(CDemonSet *this_ptr);
 int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00576820(CDemonSet *this_ptr,int box_index);
 int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00576870(CDemonSet *this_ptr,CVector3f *position);
-int * __cdecl core_setdir_cpp_assignInt_FUN_005768c0(int *a,int *b);
-int * __cdecl core_setdir_cpp_assignInt_FUN_005768d0(int *a,int *b);
-int * __cdecl core_setdir_cpp_assignInt_FUN_005768e0(int *a,int *b);
-CBoundingBox3D * __cdecl core_setdir_cpp_CBoundingBox3D_arrdtor_FUN_005768f0(CBoundingBox3D *objs,uint flags);
 CZThumb * __cdecl core_setdir_cpp_CZThumb_arrdtor_FUN_00576910(CZThumb *objs,uint flags);
 void __cdecl core_setedit_cpp_staticInit_FUN_00576930(void);
 void __cdecl core_setedit_cpp_incrementTrailingNumber_FUN_00576950(char *name);

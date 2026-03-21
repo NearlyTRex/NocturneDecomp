@@ -11,7 +11,7 @@ manual annotation work.
 SUMMARY STATISTICS
 ====================================================================================================
 
-  Total functions analyzed:          6,484
+  Total functions analyzed:          6,452
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
   Functions with type issues:        232 ( 3.6%)
@@ -1539,7 +1539,7 @@ These were likely renamed or moved and the name suffix was not updated.
     FUN_ says: 0x005aaeb0   actual: 0x005b2d60   file: core/sound.cpp
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (72 groups)
+DUPLICATE FUNCTION NAMES (64 groups)
 ====================================================================================================
 
 Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
@@ -1574,11 +1574,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00412b80  (void)
     0x00413d00  (void)
 
-  core_bat.cpp_assignInt  (3 functions)
-    0x00415050  (int *dst,int *src)
-    0x00415060  (int *dst,int *src)
-    0x00415070  (int *dst,int *src)
-
   core_boxactor.cpp_factoryFunc  (2 functions)
     0x004216c0  (void)
     0x00422950  (void)
@@ -1600,16 +1595,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00450ac0  (CDemonCamera *this_ptr,CDemonLight *light_source)
     0x004518f0  (CDemonCamera *this_ptr,void *p1,int p2)
 
-  core_dlight.cpp_assignInt  (3 functions)
-    0x00476c20  (int *dst,int *src)
-    0x00476c30  (int *dst,int *src)
-    0x00476c40  (int *dst,int *src)
-
-  core_dmodel.cpp_assignInt  (3 functions)
-    0x0047ef90  (int *dst,int *src)
-    0x0047efa0  (int *dst,int *src)
-    0x0047efb0  (int *dst,int *src)
-
   core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput  (2 functions)
     0x004917bc  (ulonglong *output_buffer,ulonglong *texture_buffer,byte *...)
     0x00491c9a  (ulonglong *output_buffer,ulonglong *texture_buffer,byte *...)
@@ -1627,11 +1612,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x004be670  (void)
     0x004bea00  (void)
 
-  core_game.cpp_assignInt  (3 functions)
-    0x004e4440  (int *dest,int *src)
-    0x004e4450  (int *dest,int *src)
-    0x004e4460  (int *dest,int *src)
-
   core_manpuz.cpp_factoryFunc  (2 functions)
     0x005088e0  (void)
     0x0050b0d0  (void)
@@ -1648,15 +1628,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x005747d0  (CZThumb *this_ptr,int count)
     0x00574910  (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_a...)
 
-  core_setdir.cpp_assignInt  (3 functions)
-    0x005768c0  (int *a,int *b)
-    0x005768d0  (int *a,int *b)
-    0x005768e0  (int *a,int *b)
-
-  core_skeledit.cpp_assignInt  (2 functions)
-    0x00599630  (int *dest,int *src)
-    0x00599650  (int *dest,int *src)
-
   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox  (2 functions)
     0x005a05e0  (CDeformableModelInstance *this_ptr)
     0x005a16c0  (CDeformableModelInstance *this_ptr,CBoundingBox3D *output...)
@@ -1664,11 +1635,6 @@ Some are legitimate overloads, others may need disambiguating names.
   core_skeleton.cpp_CVector3f_arrdtor  (2 functions)
     0x005a1ff0  (CVector3f *objs,uint flags)
     0x005a2010  (CVector3f *objs,uint flags)
-
-  core_sound.cpp_assignInt  (3 functions)
-    0x005b3e20  (int *dest_ptr,int *src_ptr)
-    0x005b3e30  (int *dest_ptr,int *src_ptr)
-    0x005b3e40  (int *dest_ptr,int *src_ptr)
 
   core_tbplayer.cpp_factoryFunc  (2 functions)
     0x005da020  (void)
@@ -1776,11 +1742,6 @@ Some are legitimate overloads, others may need disambiguating names.
   shape_edittool.cpp_CStrList_sort  (2 functions)
     0x004a2ec0  (CStrList *this_ptr)
     0x004a2f00  (CStrList *this_ptr,int sort_type,int sort_order)
-
-  shape_edittool.cpp_assignInt  (3 functions)
-    0x004a6f20  (int *dst,int *src)
-    0x004a6f30  (int *dst,int *src)
-    0x004a6f40  (int *dst,int *src)
 
   shape_memdbg.cpp_debugAlloc  (3 functions)
     0x0050f1b0  (int size,char *filename,int line_number)

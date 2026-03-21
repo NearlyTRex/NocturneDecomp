@@ -10,7 +10,7 @@
 ; Local Variables:
 ; WatcomTypeArrayInfo Stack[-0xc]:12  local_destroy_info
 ;
-; XREF[90]:
+; XREF[87]:
 ;   core_actor.cpp_CVector3f_arrdtor_FUN_00410500 at 0041050c
 ;   core_armour.cpp_CFlame_arrdtor_FUN_00412720 at 0041272c
 ;   core_armour.cpp_CVector3f_arrdtor_FUN_004126e0 at 004126ec
@@ -21,7 +21,7 @@
 ;   core_box.cpp_SScrape_arrdtor_FUN_00420220 at 0042022c
 ;   core_boxactor.cpp_CDemonFilter_arrdtor_FUN_004236e0 at 004236ec
 ;   core_bugs.cpp_SBug_arrdtor_FUN_00427cc0 at 00427ccf
-;   ... and 80 more
+;   ... and 77 more
 ;
 ; Called Functions:
 ;   crt_memory.c___arrdtor_FUN_005feeaf

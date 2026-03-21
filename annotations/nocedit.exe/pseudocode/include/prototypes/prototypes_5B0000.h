@@ -123,10 +123,6 @@ void __cdecl core_sound_cpp_CSound_setVolumeFade_FUN_005b3dc0(CSound *this_ptr,f
 int __cdecl core_sound_cpp_editSoundName_FUN_005b3de0(char *prompt_text,char *output_buffer);
 STrainNoise * __cdecl core_sound_cpp_STrainNoise_ctor_FUN_005b3e00(STrainNoise *this_ptr);
 STrainNoise * __cdecl core_sound_cpp_STrainNoise_dtor_FUN_005b3e10(STrainNoise *this_ptr,uint flags);
-int * __cdecl core_sound_cpp_assignInt_FUN_005b3e20(int *dest_ptr,int *src_ptr);
-int * __cdecl core_sound_cpp_assignInt_FUN_005b3e30(int *dest_ptr,int *src_ptr);
-int * __cdecl core_sound_cpp_assignInt_FUN_005b3e40(int *dest_ptr,int *src_ptr);
-STrainNoise * __cdecl core_sound_cpp_STrainNoise_arrdtor_FUN_005b3e50(STrainNoise *objs,uint flags);
 void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3e70(void);
 void __cdecl wincore_windll_cpp_clearZBuffer_FUN_005b3ed4(void);
 void __cdecl wincore_windll_cpp_clearScreenRegion_FUN_005b3f37(int color);

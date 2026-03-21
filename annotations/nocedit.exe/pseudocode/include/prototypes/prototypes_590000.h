@@ -15,7 +15,6 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/funcdefs/CDeformableModel_MotionBlendWeightFunc.h"
-#include "types/structs/SBoneData.h"
 #include "types/structs/SPart.h"
 #include "types/structs/SPoseData.h"
 
@@ -33,12 +32,8 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
 void __cdecl core_skeledit_cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0(CDeformableModelInstance *this_ptr,char *filename);
 void __cdecl core_skeledit_cpp_previewModel_FUN_00598f10(char *model_name);
 void __cdecl core_skeledit_cpp_viewModel_FUN_00598fc0(void);
-SBoneData * __cdecl core_skeledit_cpp_copyBoneData_FUN_00599480(SBoneData *dest,SBoneData *src);
 CLodVert * __cdecl core_skeledit_cpp_CLodVert_copy_FUN_00599550(CLodVert *this_ptr,CLodVert *other);
 CLodVert * __cdecl core_skeledit_cpp_CLodVert_dtor_FUN_005995c0(CLodVert *this_ptr,uint flags);
-CMatrix3x4f * __cdecl core_skeledit_cpp_copyMatrix_FUN_005995d0(CMatrix3x4f *dst,CMatrix3x4f *src);
-int * __cdecl core_skeledit_cpp_assignInt_FUN_00599630(int *dest,int *src);
-int * __cdecl core_skeledit_cpp_assignInt_FUN_00599650(int *dest,int *src);
 void __cdecl core_skeleton_cpp_staticInit_FUN_00599670(void);
 void __cdecl core_skeleton_cpp_skipToEndOfLine_FUN_005996c0(_FILE *file_ptr);
 float __cdecl core_skeleton_cpp_distancePointToLineSegment_FUN_005996e0(CVector3f *line_start,CVector3f *line_end,CVector3f *test_point);
