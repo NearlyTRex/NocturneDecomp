@@ -38,7 +38,7 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 005d64b8
     LEA EDI,[ESP + 0x1c]                ; 005d64bc
     CALL shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020 ; 005d64c0
-        ;   XREF to: 005d6020 (UNCONDITIONAL_CALL)  ; CVector2d * shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020(CVector3d * segment_start, CVector3d * segment_end, CVector3d * query_point)
+        ;   XREF to: 005d6020 (UNCONDITIONAL_CALL)  ; CVector2d * shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020(CVector3d * segment_start, CVector3d * segment_end, CVector3d * query_point, CVector2d * out_point)
     LEA ESI,[ESP + 0xc]                 ; 005d64c5
     ADD ESP,0xc                         ; 005d64c9
     MOVSD ES:EDI,ESI                    ; 005d64cc

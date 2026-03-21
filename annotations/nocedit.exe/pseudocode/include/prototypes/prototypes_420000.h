@@ -36,6 +36,7 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SFire.h"
+#include "types/structs/SInputFace.h"
 #include "types/structs/SPose.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SScrape.h"
@@ -140,7 +141,7 @@ void __cdecl core_bugs_cpp_CBugs_archive_FUN_004254f0(CBugs *this_ptr);
 ECollisionType __cdecl core_bugs_cpp_CBugs_getCollisionType_FUN_00425610(CBugs *this_ptr,SCollisionInfo *collision_info);
 EDeathState __cdecl core_bugs_cpp_CBugs_getDeathState_FUN_00425620(CBugs *this_ptr);
 void __cdecl core_bugs_cpp_CBugs_processDamage_FUN_00425640(CBugs *this_ptr,SDamageInfo *damage_info);
-void __cdecl core_bugs_cpp_CBugs_initializeSwarmGraph_FUN_00425660(CBugs *this_ptr,int edge_count);
+void __cdecl core_bugs_cpp_CBugs_initializeSwarmGraph_FUN_00425660(CBugs *this_ptr,int tri_count,SInputFace *triangles);
 void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425740(CBugs *this_ptr,int vertex_index,int neighbor_index,int first_edge_data);
 void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_004257f0(CBugs *this_ptr);
 float __cdecl core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00425b70(CBugs *this_ptr,float x,float z);

@@ -12,21 +12,21 @@ void __cdecl core_ladder_cpp_CLadder_processInEditor_FUN_00502d00(CLadder *this_
   float fVar1;
   int iVar2;
   double dVar3;
-  float local_res8;
-  float local_res10;
-  
+  float edit_speed;
+
   iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
   if (iVar2 == 0) {
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   }
   else {
+    edit_speed = g_CGameInstance.delta_time_float * 4.0f;
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
     if (iVar2 != 0) {
-      (this_ptr->ladder_size).x = (this_ptr->ladder_size).x - local_res8;
+      (this_ptr->ladder_size).x = (this_ptr->ladder_size).x - edit_speed;
     }
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
     if (iVar2 != 0) {
-      (this_ptr->ladder_size).x = (this_ptr->ladder_size).x + local_res10;
+      (this_ptr->ladder_size).x = (this_ptr->ladder_size).x + edit_speed;
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_A);
     if (iVar2 != 0) {

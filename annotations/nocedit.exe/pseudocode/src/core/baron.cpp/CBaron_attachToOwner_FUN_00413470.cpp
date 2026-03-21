@@ -1,14 +1,14 @@
-// Name: core_baron.cpp_CBaron_engageTarget_FUN_00413470
+// Name: core_baron.cpp_CBaron_attachToOwner_FUN_00413470
 // Address: 00413470
 // Address Range: [[00413470, 0041359b]]
 // Convention: __cdecl
-// Signature: void __cdecl core_baron_cpp_CBaron_engageTarget_FUN_00413470(CBaron *this_ptr,CDemonActor *target)
+// Signature: void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00413470(CBaron *this_ptr,CDemonActor *target)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __cdecl core_baron_cpp_CBaron_engageTarget_FUN_00413470(CBaron *this_ptr,CDemonActor *target)
+void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00413470(CBaron *this_ptr,CDemonActor *target)
 
 {
   float fVar1;

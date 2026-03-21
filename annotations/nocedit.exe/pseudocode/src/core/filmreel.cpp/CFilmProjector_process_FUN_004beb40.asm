@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40(CFilmProjector *this_ptr)
+; void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_004beb40(CFilmProjector *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CFilmProjector * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_35_loop_wav_00629b58
@@ -35,7 +36,7 @@
 section .text
 
     PUSH EBX                            ; 004beb40
-        ;   Label: core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40
+        ;   Label: core_filmreel.cpp_CFilmProjector_process_FUN_004beb40
     PUSH ESI                            ; 004beb41
     PUSH EDI                            ; 004beb42
     PUSH EBP                            ; 004beb43

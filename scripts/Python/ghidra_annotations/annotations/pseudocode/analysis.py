@@ -2573,6 +2573,30 @@ def generate_annotation_quality_report(functions, output_path):
     undefined_types = []         # undefined4/2/1 in variables
     missing_params_stack = []    # in_stack_*
 
+    # Separate lists for functions with .keep/.mmx/by-value struct overrides
+    wrong_convention_keep = []
+    wrong_convention_mmx = []
+    wrong_convention_byvalue = []
+    missing_params_stack_keep = []
+    missing_params_stack_mmx = []
+    missing_params_stack_byvalue = []
+    undefined_types_keep = []
+    undefined_types_mmx = []
+    undefined_types_byvalue = []
+
+    def _classify_func(func):
+        """Return 'keep', 'mmx', 'byvalue', or None based on function overrides."""
+        cpp_path = func.get('_cpp_path', '')
+        if '.keep.' in cpp_path:
+            return 'keep'
+        if '.mmx.' in cpp_path:
+            return 'mmx'
+        suspects = func.get('suspects', [])
+        for s in suspects:
+            if s.get('type', '') in ('mmx_assembly', 'byvalue_struct_passing'):
+                return 'byvalue' if s['type'] == 'byvalue_struct_passing' else 'mmx'
+        return None
+
     for func in non_crt:
         func_info = func.get('function', {})
         suspects = func.get('suspects', [])
@@ -2640,7 +2664,7 @@ def generate_annotation_quality_report(functions, output_path):
         # Wrong calling convention: unaff_*
         if 'unaffected_reg' in suspect_types:
             matches = suspect_types['unaffected_reg']
-            wrong_convention.append({
+            entry = {
                 'name': func_info.get('name', ''),
                 'display_name': display_name,
                 'addr': addr,
@@ -2648,12 +2672,21 @@ def generate_annotation_quality_report(functions, output_path):
                 'matches': matches,
                 'signature': sig,
                 'suggested': 'Calling convention may be wrong (preserved registers being used)',
-            })
+            }
+            cls = _classify_func(func)
+            if cls == 'keep':
+                wrong_convention_keep.append(entry)
+            elif cls == 'mmx':
+                wrong_convention_mmx.append(entry)
+            elif cls == 'byvalue':
+                wrong_convention_byvalue.append(entry)
+            else:
+                wrong_convention.append(entry)
 
         # Missing stack params: in_stack_*
         if 'stack_param' in suspect_types:
             matches = suspect_types['stack_param']
-            missing_params_stack.append({
+            entry = {
                 'name': func_info.get('name', ''),
                 'display_name': display_name,
                 'addr': addr,
@@ -2661,7 +2694,16 @@ def generate_annotation_quality_report(functions, output_path):
                 'matches': matches,
                 'signature': sig,
                 'suggested': 'Signature is missing stack parameters entirely',
-            })
+            }
+            cls = _classify_func(func)
+            if cls == 'keep':
+                missing_params_stack_keep.append(entry)
+            elif cls == 'mmx':
+                missing_params_stack_mmx.append(entry)
+            elif cls == 'byvalue':
+                missing_params_stack_byvalue.append(entry)
+            else:
+                missing_params_stack.append(entry)
 
         # Undefined types in stack variables
         sf = func.get('stack_frame', {})
@@ -2673,7 +2715,7 @@ def generate_annotation_quality_report(functions, output_path):
         if undef_vars:
             param_undefs = [(n, t) for n, t, ip in undef_vars if ip]
             local_undefs = [(n, t) for n, t, ip in undef_vars if not ip]
-            undefined_types.append({
+            entry = {
                 'name': func_info.get('name', ''),
                 'display_name': display_name,
                 'addr': addr,
@@ -2681,7 +2723,16 @@ def generate_annotation_quality_report(functions, output_path):
                 'param_undefs': param_undefs,
                 'local_undefs': local_undefs,
                 'total_undefs': len(undef_vars),
-            })
+            }
+            cls = _classify_func(func)
+            if cls == 'keep':
+                undefined_types_keep.append(entry)
+            elif cls == 'mmx':
+                undefined_types_mmx.append(entry)
+            elif cls == 'byvalue':
+                undefined_types_byvalue.append(entry)
+            else:
+                undefined_types.append(entry)
 
     # Count functions with any type issue (deduplicate by address)
     type_issue_addrs = set()
@@ -2726,6 +2777,14 @@ def generate_annotation_quality_report(functions, output_path):
         type_issue_count * 100.0 / total if total else 0))
     lines.append("  (Name/address mismatches and duplicate names are reported at the end)")
     lines.append("")
+    excluded_count = len(set(
+        e['addr'] for lst in [
+            wrong_convention_keep, wrong_convention_mmx, wrong_convention_byvalue,
+            missing_params_stack_keep, missing_params_stack_mmx, missing_params_stack_byvalue,
+            undefined_types_keep, undefined_types_mmx, undefined_types_byvalue,
+        ] for e in lst
+    ))
+
     lines.append("  Type issue breakdown:")
     lines.append("    Wrong return type (void):          %d" % len(wrong_return_void))
     lines.append("    Wrong return type (wide/64-bit):   %d" % len(wrong_return_wide))
@@ -2733,6 +2792,14 @@ def generate_annotation_quality_report(functions, output_path):
     lines.append("    Wrong calling convention:          %d" % len(wrong_convention))
     lines.append("    Undefined types in variables:      %d" % len(undefined_types))
     lines.append("    Unresolved stack params:           %d" % len(missing_params_stack))
+    lines.append("")
+    lines.append("  Excluded (.keep / MMX / by-value):   %d functions" % excluded_count)
+    lines.append("    Wrong calling convention:          %d" % (
+        len(wrong_convention_keep) + len(wrong_convention_mmx) + len(wrong_convention_byvalue)))
+    lines.append("    Undefined types in variables:      %d" % (
+        len(undefined_types_keep) + len(undefined_types_mmx) + len(undefined_types_byvalue)))
+    lines.append("    Unresolved stack params:           %d" % (
+        len(missing_params_stack_keep) + len(missing_params_stack_mmx) + len(missing_params_stack_byvalue)))
     lines.append("")
 
     # ---- Section 2: Unnamed Functions ----
@@ -2833,18 +2900,17 @@ def generate_annotation_quality_report(functions, output_path):
         "Unresolved stack parameters (missing from signature)",
         missing_params_stack, lines)
 
-    # Undefined types section is slightly different (no matches/signature)
-    lines.append("-" * 80)
-    lines.append("Undefined types in variables (%d)" % len(undefined_types))
-    lines.append("-" * 80)
-    lines.append("")
-
-    if not undefined_types:
-        lines.append("  (none)")
+    def _write_undefined_types_section(title, entries, lines):
+        lines.append("-" * 80)
+        lines.append("%s (%d)" % (title, len(entries)))
+        lines.append("-" * 80)
         lines.append("")
-    else:
-        undefined_types.sort(key=lambda e: (-e['total_undefs'], e['name']))
-        for entry in undefined_types:
+        if not entries:
+            lines.append("  (none)")
+            lines.append("")
+            return
+        entries.sort(key=lambda e: (-e['total_undefs'], e['name']))
+        for entry in entries:
             lines.append("  %s" % entry['display_name'])
             lines.append("    Address: 0x%s  File: %s" % (entry['addr'], entry['vfile']))
             if entry['param_undefs']:
@@ -2855,6 +2921,61 @@ def generate_annotation_quality_report(functions, output_path):
                     '%s (%s)' % (n, t) for n, t in entry['local_undefs']))
             lines.append("    Suggested: Resolve undefined types to concrete types")
             lines.append("")
+
+    _write_undefined_types_section(
+        "Undefined types in variables", undefined_types, lines)
+
+    # =========================================================================
+    # Section: Excluded from counts (MMX / .keep / by-value struct overrides)
+    # =========================================================================
+    has_overrides = any([
+        wrong_convention_keep, wrong_convention_mmx, wrong_convention_byvalue,
+        missing_params_stack_keep, missing_params_stack_mmx, missing_params_stack_byvalue,
+        undefined_types_keep, undefined_types_mmx, undefined_types_byvalue,
+    ])
+
+    if has_overrides:
+        lines.append("=" * 100)
+        lines.append("EXCLUDED: FUNCTIONS WITH .keep / MMX / BY-VALUE STRUCT OVERRIDES")
+        lines.append("=" * 100)
+        lines.append("")
+        lines.append("These functions have known decompiler limitations that are handled by")
+        lines.append("manual .keep.cpp files, MMX inline assembly transforms, or by-value struct")
+        lines.append("passing patterns. Issues here are expected and not actionable.")
+        lines.append("")
+
+        if wrong_convention_keep or wrong_convention_mmx or wrong_convention_byvalue:
+            _write_type_issue_section(
+                "Wrong calling convention - .keep overrides",
+                wrong_convention_keep, lines)
+            _write_type_issue_section(
+                "Wrong calling convention - MMX functions",
+                wrong_convention_mmx, lines)
+            _write_type_issue_section(
+                "Wrong calling convention - by-value struct passing",
+                wrong_convention_byvalue, lines)
+
+        if missing_params_stack_keep or missing_params_stack_mmx or missing_params_stack_byvalue:
+            _write_type_issue_section(
+                "Unresolved stack params - .keep overrides",
+                missing_params_stack_keep, lines)
+            _write_type_issue_section(
+                "Unresolved stack params - MMX functions",
+                missing_params_stack_mmx, lines)
+            _write_type_issue_section(
+                "Unresolved stack params - by-value struct passing",
+                missing_params_stack_byvalue, lines)
+
+        if undefined_types_keep or undefined_types_mmx or undefined_types_byvalue:
+            _write_undefined_types_section(
+                "Undefined types - .keep overrides",
+                undefined_types_keep, lines)
+            _write_undefined_types_section(
+                "Undefined types - MMX functions",
+                undefined_types_mmx, lines)
+            _write_undefined_types_section(
+                "Undefined types - by-value struct passing",
+                undefined_types_byvalue, lines)
 
     # =========================================================================
     # Section: Function Name / Address Mismatches

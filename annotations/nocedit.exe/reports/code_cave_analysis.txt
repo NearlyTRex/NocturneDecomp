@@ -1,0 +1,277 @@
+==========================================================================================
+CODE CAVE ANALYSIS
+==========================================================================================
+
+Total code caves:          6620
+Total cave bytes:          110,661
+
+------------------------------------------------------------------------------------------
+CAVE SIZE DISTRIBUTION
+------------------------------------------------------------------------------------------
+  1-15 bytes (too small for thunks)              6185 caves    49,709 bytes
+  16-31 bytes                                     148 caves     3,542 bytes
+  32-63 bytes (small thunks)                      116 caves     5,111 bytes
+  64-127 bytes (most thunks)                       73 caves     6,529 bytes
+  128-255 bytes                                    46 caves     8,246 bytes
+  256-511 bytes                                    25 caves     8,580 bytes
+  512-1023 bytes                                   19 caves    13,763 bytes
+  1024+ bytes                                       8 caves    15,181 bytes
+
+------------------------------------------------------------------------------------------
+LARGEST CAVES (top 30)
+------------------------------------------------------------------------------------------
+   3,729 bytes  0x0041efff - 0x0041fe90
+    after:  core_box.cpp_CBox_processPhysics_FUN_0041e350
+    before: core_box.cpp_CBox_loadFromFile_FUN_0041fe90
+   2,004 bytes  0x005ded2a - 0x005df4fe
+    after:  core_trash.cpp_CTrash_process_FUN_005decf0
+    before: core_trash.cpp_CTrash_process_FUN_005decf0
+   1,864 bytes  0x004e9198 - 0x004e98e0
+    after:  core_glass.cpp_CGlass_setup_FUN_004e9180
+    before: core_glass.cpp_CGlass_process_FUN_004e98e0
+   1,771 bytes  0x004c0fa5 - 0x004c1690
+    after:  core_fire.cpp_CFireball_render_FUN_004c0e70
+    before: core_fire.cpp_CFireball_onCollision_FUN_004c1690
+   1,599 bytes  0x00508a91 - 0x005090d0
+    after:  core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
+    before: core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0
+   1,563 bytes  0x00449825 - 0x00449e40
+    after:  core_curtain.cpp_CCurtain_setup_FUN_00449810
+    before: core_curtain.cpp_CCurtain_updateWorldPositions_FUN_00449e40
+   1,435 bytes  0x005eaa05 - 0x005eafa0
+    after:  core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
+    before: core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005eafa0
+   1,216 bytes  0x004864e0 - 0x004869a0
+    after:  core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0
+    before: core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0
+   1,019 bytes  0x004a74a5 - 0x004a78a0
+    after:  core_elephant.cpp_CElephantGun_fire_FUN_004a7160
+    before: core_elephant.cpp_CElephantGun_onFired_FUN_004a78a0
+   1,015 bytes  0x00610ad7 - 0x00610ece
+    after:  crt_iostream.cpp_streambuf_sync_FUN_00610ab6
+    before: crt_ddraw.c_DirectDrawCreate
+     997 bytes  0x005883bb - 0x005887a0
+    after:  core_shotgun.cpp_CShotgun_fire_FUN_00588060
+    before: core_shotgun.cpp_CShotgun_onFired_FUN_005887a0
+     991 bytes  0x004ebe5d - 0x004ec23c
+    after:  core_gore.cpp_CBloodParticle_render_FUN_004ebac0
+    before: core_gore.cpp_CBloodParticle_render_FUN_004ebac0
+     874 bytes  0x004c0579 - 0x004c08e3
+    after:  core_fire.cpp_CSpark_render_FUN_004c0420
+    before: core_fire.cpp_CSpark_render_FUN_004c0420
+     777 bytes  0x004ca70c - 0x004caa15
+    after:  core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
+    before: core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
+     739 bytes  0x00460725 - 0x00460a08
+    after:  shape_design.c_showFacetPartEditor_FUN_0045f1d0
+    before: shape_design.c_showFacetPartEditor_FUN_0045f1d0
+     735 bytes  0x005e7ba1 - 0x005e7e80
+    after:  core_vehicle.cpp_CVehicle_setup_FUN_005e7b90
+    before: core_vehicle.cpp_CVehicle_process_FUN_005e7e80
+     713 bytes  0x004a9c27 - 0x004a9ef0
+    after:  core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00
+    before: core_enemy.cpp_CEnemy_setVictim_FUN_004a9ef0
+     712 bytes  0x004c4288 - 0x004c4550
+    after:  core_fire.cpp_CCrater_activate_FUN_004c4200
+    before: core_fire.cpp_CCrater_process_FUN_004c4550
+     708 bytes  0x00585d2c - 0x00585ff0
+    after:  core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
+    before: core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0
+     637 bytes  0x0042b2e9 - 0x0042b566
+    after:  core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190
+    before: core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190
+     624 bytes  0x005eeed0 - 0x005ef140
+    after:  core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0
+    before: core_weather.cpp_CWeather_createThunder_FUN_005ef140
+     591 bytes  0x00428151 - 0x004283a0
+    after:  core_charactr.cpp_CCharacter_setup_FUN_00428140
+    before: core_charactr.cpp_CCharacter_archive_FUN_004283a0
+     536 bytes  0x0042409b - 0x004242b3
+    after:  core_bride.cpp_CBride_process_FUN_00423a30
+    before: core_bride.cpp_CBride_process_FUN_00423a30
+     527 bytes  0x004cc841 - 0x004cca50
+    after:  core_flies.cpp_CFlies_generateRandomPoint_FUN_004cc820
+    before: core_flies.cpp_findFliesByFollowActor_FUN_004cca50
+     525 bytes  0x004c1ce3 - 0x004c1ef0
+    after:  core_fire.cpp_CGlassParticle_init_FUN_004c1c00
+    before: core_fire.cpp_CGlassParticle_render_FUN_004c1ef0
+     525 bytes  0x005880fd - 0x0058830a
+    after:  core_shotgun.cpp_CShotgun_fire_FUN_00588060
+    before: core_shotgun.cpp_CShotgun_fire_FUN_00588060
+     518 bytes  0x004a7200 - 0x004a7406
+    after:  core_elephant.cpp_CElephantGun_fire_FUN_004a7160
+    before: core_elephant.cpp_CElephantGun_fire_FUN_004a7160
+     496 bytes  0x00575c00 - 0x00575df0
+    after:  core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0
+    before: core_setdir.cpp_CDemonSet_freeThumbs_FUN_00575df0
+     492 bytes  0x004e6414 - 0x004e6600
+    after:  core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0
+    before: core_ghoul.cpp_CGhoul_process_FUN_004e6600
+     454 bytes  0x00423e84 - 0x0042404a
+    after:  core_bride.cpp_CBride_process_FUN_00423a30
+    before: core_bride.cpp_CBride_process_FUN_00423a30
+
+==========================================================================================
+PASS-BY-VALUE THUNK FEASIBILITY
+==========================================================================================
+
+Strategy: write a pointer-accepting wrapper in a code cave that copies
+structs onto the stack and calls the original function. Then patch callers
+to pass pointers to the thunk instead of doing inline REP MOVSD copies.
+
+------------------------------------------------------------------------------------------
+TARGET: engine_3d.c_clipAndDrawLine2D_FUN_00407d70
+  By-value params:    SRenderVertex(48), SRenderVertex(48)
+  Total by-val bytes: 96 (0x60)
+  Thunk size needed:  ~48 bytes
+  Call sites:         56
+  Function address:   0x00407d70
+
+  NEARBY caves (within 64KB, size >= 48):
+    0x0040e9ff    81 bytes  (dist: 27,791)
+    0x0040ee83    77 bytes  (dist: 28,947)
+    0x00416827    73 bytes  (dist: 60,087)
+    0x00412b40    64 bytes  (dist: 44,496)
+    0x004148d3    61 bytes  (dist: 52,067)
+
+  Callers affected (17 unique):
+    core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940  (3 call sites)
+    core_actor.cpp_draw3DLineSegment_FUN_0040d330  (1 call sites)
+    core_actor.cpp_drawBoundingBox_FUN_0040d470  (3 call sites)
+    core_course.cpp_CCourse_preview_FUN_00443bc0  (1 call sites)
+    core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  (3 call sites)
+    core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170  (12 call sites)
+    core_setedit.cpp_drawCameraFrustum_FUN_00582930  (12 call sites)
+    core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640  (1 call sites)
+    core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  (7 call sites)
+    engine_3d.c_drawLine2DFromIndices_FUN_00407cf0  (1 call sites)
+    engine_3d.c_drawLineStrip2D_FUN_00404570  (1 call sites)
+    shape_design.c_renderPolygonWireframe_FUN_0045d300  (2 call sites)
+    shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0  (3 call sites)
+    shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050  (3 call sites)
+    shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40  (1 call sites)
+    shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830  (1 call sites)
+    shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770  (1 call sites)
+
+------------------------------------------------------------------------------------------
+TARGET: crt_stdio.c_fwrite_FUN_005fdc00
+  By-value params:    ?struct_8(8)
+  Total by-val bytes: 8 (0x8)
+  Thunk size needed:  ~32 bytes
+  Call sites:         2
+  Function address:   0x005fdc00
+
+  NEARBY caves (within 64KB, size >= 32):
+    0x005eeed0   624 bytes  (dist: 60,720)
+    0x005ef99c   392 bytes  (dist: 57,956)
+    0x005f02e5   369 bytes  (dist: 55,579)
+    0x006099c8   308 bytes  (dist: 48,584)
+    0x005f0600   260 bytes  (dist: 54,784)
+
+  Callers affected (2 unique):
+    cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0  (1 call sites)
+    cockpit_pkbitmap.cpp_writePBGHeader_FUN_0054b930  (1 call sites)
+
+------------------------------------------------------------------------------------------
+TARGET: engine_3d.c_clipAndDrawLine3D_FUN_00408070
+  By-value params:    SRenderVertex(48), SRenderVertex(48)
+  Total by-val bytes: 96 (0x60)
+  Thunk size needed:  ~48 bytes
+  Call sites:         2
+  Function address:   0x00408070
+
+  NEARBY caves (within 64KB, size >= 48):
+    0x0040e9ff    81 bytes  (dist: 27,023)
+    0x0040ee83    77 bytes  (dist: 28,179)
+    0x00416827    73 bytes  (dist: 59,319)
+    0x00412b40    64 bytes  (dist: 43,728)
+    0x004148d3    61 bytes  (dist: 51,299)
+
+  Callers affected (2 unique):
+    engine_3d.c_drawLine3DFromIndices_FUN_00407ff0  (1 call sites)
+    engine_3d.c_drawLineStrip3D_FUN_00404600  (1 call sites)
+
+------------------------------------------------------------------------------------------
+TARGET: sound_mp3.cpp_calculateMainDataSize_FUN_00533c50
+  By-value params:    ?struct_28(28)
+  Total by-val bytes: 28 (0x1c)
+  Thunk size needed:  ~32 bytes
+  Call sites:         2
+  Function address:   0x00533c50
+
+  NEARBY caves (within 64KB, size >= 32):
+    0x00527d29   279 bytes  (dist: 48,935)
+    0x005285eb   277 bytes  (dist: 46,693)
+    0x00529b32   190 bytes  (dist: 41,246)
+    0x00537d00    95 bytes  (dist: 16,560)
+    0x0053e9da    86 bytes  (dist: 44,426)
+
+  Callers affected (1 unique):
+    sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40  (2 call sites)
+
+------------------------------------------------------------------------------------------
+TARGET: sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
+  By-value params:    ?struct_44(44)
+  Total by-val bytes: 44 (0x2c)
+  Thunk size needed:  ~32 bytes
+  Call sites:         1
+  Function address:   0x005a75e0
+
+  NEARBY caves (within 64KB, size >= 32):
+    0x005a5a5a   239 bytes  (dist: 7,046)
+    0x005a27d0    48 bytes  (dist: 19,984)
+
+  Callers affected (1 unique):
+    sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90  (1 call sites)
+
+------------------------------------------------------------------------------------------
+TARGET: core_actor.cpp_archiveString_FUN_0040b5c0
+  By-value params:    ?struct_300(300)
+  Total by-val bytes: 300 (0x12c)
+  Thunk size needed:  ~36 bytes
+  Call sites:         1
+  Function address:   0x0040b5c0
+
+  NEARBY caves (within 64KB, size >= 36):
+    0x00418f35   109 bytes  (dist: 55,669)
+    0x0041a5ab   106 bytes  (dist: 61,419)
+    0x0041981d    99 bytes  (dist: 57,949)
+    0x00419dba    86 bytes  (dist: 59,386)
+    0x0040e9ff    81 bytes  (dist: 13,375)
+
+  Callers affected (1 unique):
+    core_actor.cpp_archiveLocalizedString_FUN_0040b6e0  (1 call sites)
+
+==========================================================================================
+CALLER FRAME EXPANSION FEASIBILITY
+==========================================================================================
+
+Each caller that does pass-by-value needs its SUB ESP enlarged to cover
+the struct copies. This requires the instruction to have room to grow
+(or the function to be followed by a code cave for the extra bytes).
+
+  core_actor.cpp_archiveLocalizedString_FUN_0040b6e0      +0x12c bytes  TIGHT (trailing cave: 10 bytes, need 300)
+  core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d9 +0x60 bytes  TIGHT (trailing cave: 5 bytes, need 96)
+  core_actor.cpp_draw3DLineSegment_FUN_0040d330           +0x60 bytes  TIGHT (trailing cave: 6 bytes, need 96)
+  core_actor.cpp_drawBoundingBox_FUN_0040d470             +0x60 bytes  TIGHT (trailing cave: 9 bytes, need 96)
+  core_course.cpp_CCourse_preview_FUN_00443bc0            +0x60 bytes  TIGHT (trailing cave: 6 bytes, need 96)
+  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620       +0x60 bytes  TIGHT (trailing cave: 12 bytes, need 96)
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_005831 +0x60 bytes  TIGHT (trailing cave: 14 bytes, need 96)
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930         +0x60 bytes  TIGHT (trailing cave: 12 bytes, need 96)
+  core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0 +0x60 bytes  TIGHT (trailing cave: 8 bytes, need 96)
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10       +0x60 bytes  TIGHT (trailing cave: 9 bytes, need 96)
+  engine_3d.c_drawLine2DFromIndices_FUN_00407cf0          +0x60 bytes  TIGHT (trailing cave: 13 bytes, need 96)
+  engine_3d.c_drawLine3DFromIndices_FUN_00407ff0          +0x60 bytes  TIGHT (trailing cave: 13 bytes, need 96)
+  engine_3d.c_drawLineStrip2D_FUN_00404570                +0x60 bytes  NO trailing cave
+  engine_3d.c_drawLineStrip3D_FUN_00404600                +0x60 bytes  NO trailing cave
+  shape_design.c_renderPolygonWireframe_FUN_0045d300      +0x60 bytes  TIGHT (trailing cave: 13 bytes, need 96)
+  shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_00 +0x60 bytes  TIGHT (trailing cave: 2 bytes, need 96)
+  shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN +0x60 bytes  TIGHT (trailing cave: 5 bytes, need 96)
+  shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40  +0x60 bytes  TIGHT (trailing cave: 1 bytes, need 96)
+  shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_00 +0x60 bytes  TIGHT (trailing cave: 12 bytes, need 96)
+  shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770 +0x60 bytes  TIGHT (trailing cave: 9 bytes, need 96)
+  sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90            +0x2c bytes  TIGHT (trailing cave: 13 bytes, need 44)
+  cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_005 +0x1c bytes  TIGHT (trailing cave: 3 bytes, need 28)
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40      +0x1c bytes  TIGHT (trailing cave: 15 bytes, need 28)
+  cockpit_pkbitmap.cpp_writePBGHeader_FUN_0054b930        +0x8 bytes  TIGHT (trailing cave: 6 bytes, need 8)
+

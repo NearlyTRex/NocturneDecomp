@@ -73,7 +73,7 @@ int __cdecl CDoor::allowBulletHoles(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20
 // Address: 00480e20
-float * __cdecl CDoor::getOpenStandPos(CDoor *this_ptr);
+CVector3f * __cdecl CDoor::getOpenStandPos(CDoor *this_ptr,CVector3f *out_pos,CVector3f *direction,CVector3f *actor_pos);
 
 // Original: core_door.cpp_CDoor_updateCollisionData_FUN_00481020
 // Address: 00481020

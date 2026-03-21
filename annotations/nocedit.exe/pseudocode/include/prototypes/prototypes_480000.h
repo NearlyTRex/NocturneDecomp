@@ -62,7 +62,7 @@ EGroundType __cdecl core_door_cpp_CDoor_getGroundType_FUN_00480dd0(CDoor *this_p
 void __cdecl core_door_cpp_CDoor_setSwingRange_FUN_00480de0(CDoor *this_ptr,float swing_range);
 int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00480df0(CDoor *this_ptr);
 int __cdecl core_door_cpp_CDoor_allowBulletHoles_FUN_00480e00(CDoor *this_ptr);
-float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr);
+CVector3f * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr,CVector3f *out_pos,CVector3f *direction,CVector3f *actor_pos);
 void __cdecl core_door_cpp_CDoor_updateCollisionData_FUN_00481020(CDoor *this_ptr);
 int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr,CDemonActor *opener);
 uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00481210(CDoor *this_ptr);

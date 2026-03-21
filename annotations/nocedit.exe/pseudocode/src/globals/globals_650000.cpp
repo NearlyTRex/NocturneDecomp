@@ -3210,7 +3210,7 @@ CDemonActor_vtable g_CFilmReelVTable = {
 };
 CDemonActor_vtable g_CFilmProjectorVTable = {
     .setup = (CDemonActor_setup *)core_filmreel_cpp_CFilmProjector_setup_FUN_004beb00,
-    .process = (CDemonActor_process *)core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40,
+    .process = (CDemonActor_process *)core_filmreel_cpp_CFilmProjector_process_FUN_004beb40,
     .renderOpaque = (CDemonActor_renderOpaque *)core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004bed00,
     .renderTransparent = (CDemonActor_renderTransparent *)core_dest_cpp_CActorDestination_renderTransparent_FUN_0046fb70,
     .renderBackground = (CDemonActor_renderBackground *)core_actor_cpp_CDemonActor_renderBackground_FUN_00408ae0,

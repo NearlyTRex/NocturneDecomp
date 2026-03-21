@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
-;   core_baron.cpp_CBaron_releaseTarget_FUN_004135a0
+;   core_baron.cpp_CBaron_detachFromOwner_FUN_004135a0
 ;
 ; *****************************************************************************
 
@@ -97,8 +97,8 @@ section .text
     MOV EDI,dword ptr [EBX + 0x1fcac]   ; 0041368c
     PUSH EDI                            ; 00413692
     PUSH EBX                            ; 00413693
-    CALL core_baron.cpp_CBaron_releaseTarget_FUN_004135a0 ; 00413694
-        ;   XREF to: 004135a0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_releaseTarget_FUN_004135a0(CBaron * this_ptr, CDemonActor * target)
+    CALL core_baron.cpp_CBaron_detachFromOwner_FUN_004135a0 ; 00413694
+        ;   XREF to: 004135a0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_detachFromOwner_FUN_004135a0(CBaron * this_ptr, CDemonActor * target)
     ADD ESP,0x8                         ; 00413699
     MOV ESP,EBP                         ; 0041369c
     POP EBP                             ; 0041369e

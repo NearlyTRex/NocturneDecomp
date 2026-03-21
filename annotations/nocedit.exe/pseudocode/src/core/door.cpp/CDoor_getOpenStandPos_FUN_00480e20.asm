@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr)
+; CVector3f * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr,CVector3f *out_pos,CVector3f *direction,CVector3f *actor_pos)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr
-; float *          Stack[0x8]:4   in_stack_00000008
-; float *          Stack[0xc]:4   in_stack_0000000c
-; CVector3f *      Stack[0x10]:4   in_stack_00000010
+; CVector3f *      Stack[0x8]:4   out_pos
+; CVector3f *      Stack[0xc]:4   direction
+; CVector3f *      Stack[0x10]:4   actor_pos
 ; Local Variables:
 ; CVector3f        Stack[-0x68]:12  local_68
 ; CVector3f        Stack[-0x5c]:12  local_5c

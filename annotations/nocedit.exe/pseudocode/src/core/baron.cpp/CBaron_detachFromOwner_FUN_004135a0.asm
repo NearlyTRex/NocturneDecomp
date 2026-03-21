@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_baron_cpp_CBaron_releaseTarget_FUN_004135a0(CBaron *this_ptr,CDemonActor *target)
+; void __cdecl core_baron_cpp_CBaron_detachFromOwner_FUN_004135a0(CBaron *this_ptr,CDemonActor *target)
 ;
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr
@@ -19,7 +19,7 @@
 section .text
 
     PUSH EBX                            ; 004135a0
-        ;   Label: core_baron.cpp_CBaron_releaseTarget_FUN_004135a0
+        ;   Label: core_baron.cpp_CBaron_detachFromOwner_FUN_004135a0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004135a1
     MOV EAX,dword ptr [ESP + 0xc]       ; 004135a5
     MOV EDX,dword ptr [EBX + 0x1fcac]   ; 004135a9

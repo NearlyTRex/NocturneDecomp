@@ -87,9 +87,9 @@ CFilmProjector * __cdecl CFilmProjector::ctor(CFilmProjector *this_ptr);
 // Address: 004beb00
 void __cdecl CFilmProjector::setup(CFilmProjector *this_ptr);
 
-// Original: core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40
+// Original: core_filmreel.cpp_CFilmProjector_process_FUN_004beb40
 // Address: 004beb40
-void __cdecl CFilmProjector::archive(CFilmProjector *this_ptr);
+void __cdecl CFilmProjector::process(CFilmProjector *this_ptr,float delta_time);
 
 // Original: core_filmreel.cpp_CFilmProjector_getBoundingBox_FUN_004becd0
 // Address: 004becd0

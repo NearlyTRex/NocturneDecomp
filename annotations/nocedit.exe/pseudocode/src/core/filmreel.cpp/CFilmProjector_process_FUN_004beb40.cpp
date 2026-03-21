@@ -1,19 +1,18 @@
-// Name: core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40
+// Name: core_filmreel.cpp_CFilmProjector_process_FUN_004beb40
 // Address: 004beb40
 // Address Range: [[004beb40, 004beccc]]
 // Convention: __cdecl
-// Signature: void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40(CFilmProjector *this_ptr)
+// Signature: void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_004beb40(CFilmProjector *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40(CFilmProjector *this_ptr)
+void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_004beb40(CFilmProjector *this_ptr,float delta_time)
 
 {
   float fVar1;
   int iVar2;
   CDemonActor *pCVar3;
   uint uVar4;
-  float in_stack_00000008;
   
   if ((this_ptr->base).triggered == 0) {
     if (this_ptr->prev_dest_state != 0) {
@@ -27,8 +26,8 @@ void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40(CFilmProjecto
   else {
     pCVar3 = (this_ptr->base).dest_actor;
     fVar1 = (float)3.1415926535000001;
-    (pCVar3->orient).vec.z = (pCVar3->orient).vec.z - in_stack_00000008 * fVar1;
-    this_ptr->reel_rotation = this_ptr->reel_rotation - in_stack_00000008 * fVar1;
+    (pCVar3->orient).vec.z = (pCVar3->orient).vec.z - delta_time * fVar1;
+    this_ptr->reel_rotation = this_ptr->reel_rotation - delta_time * fVar1;
     if (this_ptr->prev_dest_state == 0) {
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                          ((this_ptr->base).dest_actor,g_CFilmReelClassInfo.name_hash);
@@ -57,6 +56,6 @@ void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40(CFilmProjecto
     }
   }
   this_ptr->prev_dest_state = (this_ptr->base).triggered;
-  core_dest_cpp_CActorDestination_process_FUN_0046f9b0(&this_ptr->base,in_stack_00000008);
+  core_dest_cpp_CActorDestination_process_FUN_0046f9b0(&this_ptr->base,delta_time);
   return;
 }

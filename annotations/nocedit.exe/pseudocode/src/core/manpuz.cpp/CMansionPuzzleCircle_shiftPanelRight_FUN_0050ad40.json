@@ -6,19 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 96,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 21,
-    "suspect_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "param_count_too_few",
-      "stack_param"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 89
+    "total_lines": 87
   },
   "cross_references": [
     {
@@ -38,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40",
-    "signature": "void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(CMansionPuzzleCircle *this_ptr)"
+    "signature": "void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(CMansionPuzzleCircle *this_ptr,int panel_index)"
   },
   "function_calls": [
     {
@@ -119,9 +117,9 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
-    "declared_stack_bytes": 4,
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -155,10 +153,10 @@
     "pcode_op_count": 406
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -167,37 +165,20 @@
         "offset": 4,
         "size": 4,
         "type": "CMansionPuzzleCircle *"
+      },
+      {
+        "is_param": true,
+        "name": "panel_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "pSVar1 = this_ptr->panels + in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 11,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "(this_ptr,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS(pSVar1->anim_progress) != 0.0)) || (ABS(pSVar1->anim_speed) != 0.0)) {",
@@ -205,22 +186,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
+      "line": 11,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS(pSVar1->anim_progress) != 0.0)) || (ABS(pSVar1->anim_speed) != 0.0)) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

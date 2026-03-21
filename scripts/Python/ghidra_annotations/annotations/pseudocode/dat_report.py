@@ -1285,3 +1285,212 @@ def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
     log_info("Wrote struct/array detection report: %s" % report_path)
 
     return len(classified)
+
+
+def generate_globals_gap_report(pseudocode_src_dir, reports_dir):
+    """Generate a report documenting gaps between consecutive global variables.
+
+    Gaps are regions of the address space between the end of one global and the
+    start of the next that are not covered by any known variable.  These may
+    indicate unnamed data, padding, or Ghidra analysis misses.
+    """
+    import json
+    import glob
+
+    log_info("Generating globals gap report...")
+
+    # Build struct size cache so estimate_global_size can resolve struct types
+    build_struct_size_cache(pseudocode_src_dir)
+
+    # Collect all globals from function JSONs (same pattern as other reports)
+    all_globals = {}
+
+    json_pattern = os.path.join(pseudocode_src_dir, '**', '*.json')
+    for json_path in sorted(glob.glob(json_pattern, recursive=True)):
+        if os.path.isdir(json_path):
+            continue
+        try:
+            with open(json_path) as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, IOError):
+            continue
+
+        for g in data.get('globals', []):
+            name = g.get('name', '')
+            addr = g.get('addr', '')
+            gtype = g.get('type', 'unknown')
+
+            existing = all_globals.get(name)
+            if existing is None:
+                all_globals[name] = {'addr': addr, 'type': gtype}
+
+    log_info("Collected %d unique globals for gap analysis" % len(all_globals))
+
+    # Build sorted address map (filters to top-level named globals, skips DAT_)
+    addr_map = build_global_address_map(all_globals)
+
+    if len(addr_map) < 2:
+        log_info("Not enough globals to compute gaps")
+        return
+
+    # Also include DAT_ globals so they can fill gaps
+    dat_entries = []
+    for name, info in all_globals.items():
+        if not name.startswith('DAT_'):
+            continue
+        try:
+            addr = int(info['addr'], 16)
+        except (ValueError, KeyError):
+            continue
+        gtype = info.get('type', '')
+        size, is_exact = estimate_global_size(gtype)
+        dat_entries.append((addr, name, gtype, size, is_exact))
+
+    # Merge named globals and DAT_ globals into one sorted list
+    all_entries = sorted(addr_map + dat_entries)
+
+    # Deduplicate by address (keep first occurrence = named over DAT_)
+    seen_addrs = set()
+    deduped = []
+    for entry in all_entries:
+        if entry[0] not in seen_addrs:
+            seen_addrs.add(entry[0])
+            deduped.append(entry)
+    all_entries = deduped
+
+    # Compute gaps between consecutive globals
+    gaps = []
+    for i in range(len(all_entries) - 1):
+        addr_a, name_a, type_a, size_a, exact_a = all_entries[i]
+        addr_b, name_b, type_b, size_b, exact_b = all_entries[i + 1]
+
+        if size_a <= 0:
+            # Can't determine end of this global, use minimum 1
+            end_a = addr_a + 1
+            exact_end = False
+        else:
+            end_a = addr_a + size_a
+            exact_end = exact_a
+
+        gap_size = addr_b - end_a
+        if gap_size < 0:
+            # Overlap — the next global starts inside this one
+            gap_size = 0
+
+        gaps.append({
+            'before_name': name_a,
+            'before_addr': addr_a,
+            'before_type': type_a,
+            'before_size': size_a,
+            'before_exact': exact_a,
+            'after_name': name_b,
+            'after_addr': addr_b,
+            'after_type': type_b,
+            'gap_start': end_a,
+            'gap_size': gap_size,
+            'exact_end': exact_end,
+        })
+
+    # Separate into categories
+    nonzero_gaps = [g for g in gaps if g['gap_size'] > 0]
+    overlaps = [g for g in gaps if g['gap_size'] == 0 and
+                g['before_addr'] + max(g['before_size'], 1) > g['after_addr']]
+    exact_gaps = [g for g in nonzero_gaps if g['exact_end']]
+    estimated_gaps = [g for g in nonzero_gaps if not g['exact_end']]
+
+    # Sort by gap size descending
+    nonzero_gaps_sorted = sorted(nonzero_gaps, key=lambda g: g['gap_size'], reverse=True)
+    exact_gaps_sorted = sorted(exact_gaps, key=lambda g: g['gap_size'], reverse=True)
+
+    total_gap_bytes = sum(g['gap_size'] for g in nonzero_gaps)
+    exact_gap_bytes = sum(g['gap_size'] for g in exact_gaps)
+
+    # Build report
+    lines = []
+    lines.append("=" * 80)
+    lines.append("GLOBALS GAP ANALYSIS REPORT")
+    lines.append("=" * 80)
+    lines.append("")
+    lines.append("Total globals analyzed:      %d" % len(all_entries))
+    lines.append("  Named globals:             %d" % len(addr_map))
+    lines.append("  DAT_ globals:              %d" % len(dat_entries))
+    lines.append("Gaps found:                  %d" % len(nonzero_gaps))
+    lines.append("  With exact size bounds:    %d" % len(exact_gaps))
+    lines.append("  With estimated bounds:     %d" % len(estimated_gaps))
+    lines.append("Total gap bytes:             %s" % '{:,}'.format(total_gap_bytes))
+    lines.append("  Exact gap bytes:           %s" % '{:,}'.format(exact_gap_bytes))
+    lines.append("Overlaps (size <= 0):        %d" % len(overlaps))
+    lines.append("")
+
+    # Size distribution
+    size_buckets = [
+        (1, 4, "1-4 bytes (likely padding/alignment)"),
+        (5, 16, "5-16 bytes (small vars)"),
+        (17, 64, "17-64 bytes (structs/small arrays)"),
+        (65, 256, "65-256 bytes (medium data)"),
+        (257, 1024, "257-1024 bytes (large structs/arrays)"),
+        (1025, 4096, "1-4 KB"),
+        (4097, 65536, "4-64 KB"),
+        (65537, None, "64+ KB"),
+    ]
+
+    lines.append("-" * 80)
+    lines.append("GAP SIZE DISTRIBUTION")
+    lines.append("-" * 80)
+    for low, high, label in size_buckets:
+        if high is None:
+            count = sum(1 for g in nonzero_gaps if g['gap_size'] >= low)
+        else:
+            count = sum(1 for g in nonzero_gaps if low <= g['gap_size'] <= high)
+        if count > 0:
+            lines.append("  %-45s %d" % (label, count))
+    lines.append("")
+
+    # Largest gaps (top 50)
+    lines.append("-" * 80)
+    lines.append("LARGEST GAPS (top 50)")
+    lines.append("-" * 80)
+    for g in nonzero_gaps_sorted[:50]:
+        exact_marker = "" if g['exact_end'] else " ~"
+        lines.append("  %s bytes%s  at 0x%08x" % (
+            '{:>10,}'.format(g['gap_size']), exact_marker, g['gap_start']))
+        lines.append("    after: %-40s %-20s at 0x%08x  size=%s" % (
+            g['before_name'][:40], g['before_type'][:20], g['before_addr'],
+            '{:,}'.format(g['before_size']) if g['before_size'] > 0 else '?'))
+        lines.append("    before: %-40s %-20s at 0x%08x" % (
+            g['after_name'][:40], g['after_type'][:20], g['after_addr']))
+    lines.append("")
+
+    # All exact gaps (these are the most reliable)
+    if exact_gaps_sorted:
+        lines.append("-" * 80)
+        lines.append("ALL EXACT GAPS (%d) - size bounds are known precisely" % len(exact_gaps))
+        lines.append("-" * 80)
+        for g in exact_gaps_sorted:
+            lines.append("  %s bytes  at 0x%08x  between %-30s and %s" % (
+                '{:>10,}'.format(g['gap_size']), g['gap_start'],
+                g['before_name'][:30], g['after_name'][:30]))
+        lines.append("")
+
+    # Overlaps (potential issues)
+    if overlaps:
+        lines.append("-" * 80)
+        lines.append("OVERLAPS (%d) - next global starts inside previous" % len(overlaps))
+        lines.append("-" * 80)
+        for g in overlaps:
+            overlap_bytes = (g['before_addr'] + max(g['before_size'], 1)) - g['after_addr']
+            exact_marker = "" if g['before_exact'] else " ~"
+            lines.append("  %d bytes overlap%s" % (overlap_bytes, exact_marker))
+            lines.append("    %-40s %-20s at 0x%08x  size=%s" % (
+                g['before_name'][:40], g['before_type'][:20], g['before_addr'],
+                '{:,}'.format(g['before_size']) if g['before_size'] > 0 else '?'))
+            lines.append("    %-40s %-20s at 0x%08x" % (
+                g['after_name'][:40], g['after_type'][:20], g['after_addr']))
+        lines.append("")
+
+    # Write report
+    report_path = os.path.join(reports_dir, "globals_gap_analysis.txt")
+    with open(report_path, 'w') as f:
+        f.write('\n'.join(lines) + '\n')
+    log_info("Wrote globals gap report: %s (%d gaps, %s bytes total)" % (
+        report_path, len(nonzero_gaps), '{:,}'.format(total_gap_bytes)))

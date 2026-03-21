@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_baron_cpp_CBaron_engageTarget_FUN_00413470(CBaron *this_ptr,CDemonActor *target)
+; void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00413470(CBaron *this_ptr,CDemonActor *target)
 ;
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr
@@ -30,7 +30,7 @@
 section .text
 
     PUSH EBX                            ; 00413470
-        ;   Label: core_baron.cpp_CBaron_engageTarget_FUN_00413470
+        ;   Label: core_baron.cpp_CBaron_attachToOwner_FUN_00413470
     PUSH ESI                            ; 00413471
     PUSH EDI                            ; 00413472
     PUSH EBP                            ; 00413473

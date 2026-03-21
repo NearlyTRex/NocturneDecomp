@@ -57,7 +57,7 @@ void __cdecl CBugs::processDamage(CBugs *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00425660
 // Address: 00425660
-void __cdecl CBugs::initializeSwarmGraph(CBugs *this_ptr,int edge_count);
+void __cdecl CBugs::initializeSwarmGraph(CBugs *this_ptr,int tri_count,SInputFace *triangles);
 
 // Original: core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00425740
 // Address: 00425740

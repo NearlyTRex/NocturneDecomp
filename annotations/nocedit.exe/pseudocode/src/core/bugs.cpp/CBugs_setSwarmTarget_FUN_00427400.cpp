@@ -56,7 +56,8 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00427400(CBugs *this_ptr,CDe
         pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                            ((CDeformableModelInstance *)this_ptr->deformable_model_ptr);
         core_bugs_cpp_CBugs_initializeSwarmGraph_FUN_00425660
-                  (this_ptr,pCVar6->tri_count[this_ptr->lod_index]);
+                  (this_ptr,pCVar6->tri_count[this_ptr->lod_index],
+                   pCVar6->tri_data_ptr[this_ptr->lod_index]);
         core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
                   ((CDeformableModelInstance *)this_ptr->deformable_model_ptr,this_ptr->lod_index);
         iVar6 = 0;

@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6484
-Clean functions: 5041 (77.7%)
-Files at 100%: 45
-Files at 90%+: 82
+Clean functions: 5049 (77.9%)
+Files at 100%: 47
+Files at 90%+: 83
 Files at 50%+: 202
 
 ====================================================================================================
@@ -27,9 +27,11 @@ FILES AT 100% (COMPLETE)
   core/crate.cpp: 20 functions, 309 lines
   core/crossbow.cpp: 12 functions, 311 lines
   core/dfont.cpp: 3 functions, 279 lines
+  core/dimage.cpp: 6 functions, 131 lines
   core/dynamite.cpp: 12 functions, 162 lines
   core/elephant.cpp: 10 functions, 407 lines
   core/fileman.cpp: 12 functions, 575 lines
+  core/filmreel.cpp: 28 functions, 377 lines
   core/flamecan.cpp: 16 functions, 260 lines
   core/flashlit.cpp: 7 functions, 65 lines
   core/flattn.cpp: 2 functions, 11 lines
@@ -60,7 +62,7 @@ FILES AT 100% (COMPLETE)
   shape/spotview.cpp: 6 functions, 215 lines
   wincore/winvideo.cpp: 5 functions, 263 lines
 
-Total: 45 files
+Total: 47 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -69,9 +71,9 @@ FILES AT 90-99% (ALMOST COMPLETE)
          39/40 clean, 1 remaining
            - core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0 (38 lines) [pointer_cast]
 
-   96.4% | core/filmreel.cpp
+   96.4% | core/door.cpp
          27/28 clean, 1 remaining
-           - core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40 (52 lines) [stack_param]
+           - core_door.cpp_CDoor_process_FUN_004800c0 (194 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr]
 
    96.3% | core/weapon.cpp
          26/27 clean, 1 remaining
@@ -119,6 +121,13 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 (24 lines) [pointer_cast]
            - core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0 (24 lines) [decompiler_intrinsic, pointer_cast]
 
+   93.7% | core/manpuz.cpp
+         59/63 clean, 4 remaining
+           - core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330 (123 lines) [pointer_cast]
+           - core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70 (247 lines) [decompiler_intrinsic, pointer_cast]
+           - core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50 (102 lines) [decompiler_intrinsic, warning_inlined_function]
+           - core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 (56 lines) [pointer_cast]
+
    93.5% | core/boxactor.cpp
          43/46 clean, 3 remaining
            - core_boxactor.cpp_CLightActor_process_FUN_00422a50 (82 lines) [pointer_cast]
@@ -136,11 +145,6 @@ FILES AT 90-99% (ALMOST COMPLETE)
    93.3% | core/trash.cpp
          14/15 clean, 1 remaining
            - core_trash.cpp_CTrash_process_FUN_005decf0 (272 lines) [decompiler_intrinsic, pointer_cast]
-
-   92.9% | core/door.cpp
-         26/28 clean, 2 remaining
-           - core_door.cpp_CDoor_process_FUN_004800c0 (194 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr]
-           - core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20 (91 lines) [param_count_too_few, stack_param]
 
    92.9% | core/hotdemon.cpp
          13/14 clean, 1 remaining
@@ -164,7 +168,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
 
    92.3% | core/larva.cpp
          12/13 clean, 1 remaining
-           - core_larva.cpp_CLarva_process_FUN_00503080 (342 lines) [decompiler_intrinsic, stack_param, stack_ref, unknown_type, warning_inlined_function, warning_unreachable]
+           - core_larva.cpp_CLarva_process_FUN_00503080 (333 lines) [decompiler_intrinsic, stack_param, stack_ref, unknown_type, warning_inlined_function, warning_unreachable]
 
    92.0% | core/dracbrid.cpp
          23/25 clean, 2 remaining
@@ -205,15 +209,6 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_inv.cpp_CInventory_updateInventory_FUN_004ffad0 (108 lines) [suspect_float]
            - core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (364 lines) [decompiler_intrinsic, warning_inlined_function]
 
-   90.5% | core/manpuz.cpp
-         57/63 clean, 6 remaining
-           - core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40 (21 lines) [decompiler_intrinsic, param_count_too_few, stack_param]
-           - core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330 (123 lines) [pointer_cast]
-           - core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290 (70 lines) [param_count_too_few, stack_param]
-           - core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70 (247 lines) [decompiler_intrinsic, pointer_cast]
-           - core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50 (102 lines) [decompiler_intrinsic, warning_inlined_function]
-           - core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 (56 lines) [pointer_cast]
-
    90.2% | core/mission.cpp
          37/41 clean, 4 remaining
            - core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (101 lines) [pointer_cast]
@@ -249,7 +244,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
          9/10 clean, 1 remaining
            - engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060 (60 lines) [pointer_cast]
 
-Total: 37 files
+Total: 36 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -381,6 +376,13 @@ FILES AT 50-89%
            - core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_005f1e40 (58 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_werewolf.cpp_CWerewolf_process_FUN_005efde0 (712 lines) [decompiler_intrinsic, format_string_mismatch, stack_param, stack_ref, sub84_truncation, unknown_field, warning_inlined_function]
            - core_werewolf.cpp_CWerewolf_renderTransparent_FUN_005f1820 (49 lines) [pointer_cast, warning_type_propagation]
+   85.3% | core/baron.cpp
+         29/34 clean, 5 remaining
+           - core_baron.cpp_CBaron_process_FUN_00412e80 (227 lines) [pointer_cast, stack_alignment_array, warning_type_propagation]
+           - core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 (99 lines) [warning_type_propagation]
+           - core_baron.cpp_CBaron_attachToOwner_FUN_00413470 (56 lines) [warning_type_propagation]
+           - core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 (75 lines) [decompiler_intrinsic, warning_inlined_function]
+           - core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0 (37 lines) [param_count_too_few]
    85.0% | core/tvbat.cpp
          17/20 clean, 3 remaining
            - core_tvbat.cpp_CTVBat_process_FUN_005e4210 (333 lines) [decompiler_intrinsic, warning_inlined_function, warning_type_propagation]
@@ -420,6 +422,11 @@ FILES AT 50-89%
            - core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00 (148 lines) [decompiler_intrinsic, pointer_cast]
            - core_enemy.cpp_CEnemy_testAttackLine_FUN_004a9930 (20 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 (23 lines) [decompiler_intrinsic, warning_inlined_function]
+   84.2% | core/ladder.cpp
+         16/19 clean, 3 remaining
+           - core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_00502a70 (49 lines) [pointer_cast]
+           - core_ladder.cpp_CLadder_cacheRelativePosition_FUN_00502b80 (50 lines) [pointer_cast]
+           - core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 (166 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
    84.2% | core/svetlana.cpp
          16/19 clean, 3 remaining
            - core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0 (304 lines) [pointer_cast, stack_alignment_array, warning_type_propagation]
@@ -497,9 +504,6 @@ FILES AT 50-89%
            - core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190 (149 lines) [decompiler_intrinsic, pointer_cast]
            - core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 (128 lines) [pointer_cast, stack_param, unaffected_reg]
            - core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042e670 (83 lines) [pointer_cast]
-   83.3% | core/dimage.cpp
-         5/6 clean, 1 remaining
-           - core_dimage.cpp_CDemonImage_load_FUN_00471ad0 (97 lines) [stack_param]
    83.3% | core/frankgen.cpp
          20/24 clean, 4 remaining
            - core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70 (55 lines) [stack_ref]
@@ -551,14 +555,6 @@ FILES AT 50-89%
            - core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 (26 lines) [pointer_cast]
            - core_script.cpp_CScript_addEventXRef_FUN_00567510 (24 lines) [pointer_cast]
            - core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0 (44 lines) [pointer_cast]
-   82.4% | core/baron.cpp
-         28/34 clean, 6 remaining
-           - core_baron.cpp_CBaron_process_FUN_00412e80 (227 lines) [pointer_cast, stack_alignment_array, warning_type_propagation]
-           - core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 (99 lines) [warning_type_propagation]
-           - core_baron.cpp_CBaron_engageTarget_FUN_00413470 (56 lines) [warning_type_propagation]
-           - core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 (75 lines) [decompiler_intrinsic, warning_inlined_function]
-           - core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00413e90 (21 lines) [stack_param]
-           - core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0 (37 lines) [param_count_too_few]
    82.4% | core/flame.cpp
          14/17 clean, 3 remaining
            - core_flame.cpp_CFlame_updateGlobe_FUN_004cad90 (27 lines) [decompiler_intrinsic, warning_inlined_function]
@@ -653,12 +649,6 @@ FILES AT 50-89%
    80.0% | engine/boss.c
          4/5 clean, 1 remaining
            - engine_boss.c_modelStructNotSupported_FUN_0041dbe0 (19 lines) [param_count_too_few, pointer_cast]
-   78.9% | core/ladder.cpp
-         15/19 clean, 4 remaining
-           - core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_00502a70 (49 lines) [pointer_cast]
-           - core_ladder.cpp_CLadder_cacheRelativePosition_FUN_00502b80 (50 lines) [pointer_cast]
-           - core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 (166 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
-           - core_ladder.cpp_CLadder_processInEditor_FUN_00502d00 (42 lines) [stack_param]
    78.5% | cockpit/drawsurf.cpp
          73/93 clean, 20 remaining
            - cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010 (53 lines) [warning_unreachable]
@@ -965,6 +955,20 @@ FILES AT 50-89%
            - engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40 (175 lines) [pointer_cast]
            - engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (642 lines) [pointer_cast]
            - engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 (223 lines) [pointer_cast]
+   72.7% | core/bugs.cpp
+         32/44 clean, 12 remaining
+           - core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc0 (109 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426420 (142 lines) [decompiler_intrinsic, unknown_field]
+           - core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0 (58 lines) [warning_type_propagation]
+           - core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0 (112 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function, warning_type_propagation]
+           - core_bugs.cpp_CBugs_updateBoundingBox_FUN_00426410 (5 lines) [param_count_too_few]
+           - core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0 (164 lines) [decompiler_intrinsic, pointer_cast, warning_type_propagation]
+           - core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004270f0 (91 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
+           - core_bugs.cpp_CBugs_setup_FUN_00424e50 (92 lines) [negative_offset]
+           - core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0 (61 lines) [pointer_cast, warning_type_propagation]
+           - core_bugs.cpp_CBugs_processInEditor_FUN_004278d0 (45 lines) [warning_type_propagation]
+           - core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00425b70 (44 lines) [decompiler_intrinsic, warning_inlined_function]
+           - core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400 (108 lines) [decompiler_intrinsic, pointer_cast, warning_type_propagation]
    71.9% | core/zombie.cpp
          23/32 clean, 9 remaining
            - core_zombie.cpp_CZombie_processDismemberment_FUN_005fc220 (106 lines) [warning_type_propagation]
@@ -1015,21 +1019,6 @@ FILES AT 50-89%
            - core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170 (19 lines) [pointer_cast]
            - core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150 (217 lines) [pointer_cast, warning_type_propagation]
            - core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850 (259 lines) [decompiler_intrinsic, stack_param]
-   70.5% | core/bugs.cpp
-         31/44 clean, 13 remaining
-           - core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc0 (109 lines) [decompiler_intrinsic, warning_type_propagation]
-           - core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426420 (142 lines) [decompiler_intrinsic, unknown_field]
-           - core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0 (58 lines) [warning_type_propagation]
-           - core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0 (112 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function, warning_type_propagation]
-           - core_bugs.cpp_CBugs_updateBoundingBox_FUN_00426410 (5 lines) [param_count_too_few]
-           - core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0 (164 lines) [decompiler_intrinsic, pointer_cast, warning_type_propagation]
-           - core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004270f0 (91 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
-           - core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00425660 (33 lines) [param_count_too_few, stack_param]
-           - core_bugs.cpp_CBugs_setup_FUN_00424e50 (92 lines) [negative_offset]
-           - core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0 (61 lines) [pointer_cast, warning_type_propagation]
-           - core_bugs.cpp_CBugs_processInEditor_FUN_004278d0 (45 lines) [warning_type_propagation]
-           - core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00425b70 (44 lines) [decompiler_intrinsic, warning_inlined_function]
-           - core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400 (107 lines) [decompiler_intrinsic, pointer_cast, warning_type_propagation]
    70.2% | engine/3d.c
          73/104 clean, 31 remaining
            - engine_3d.c_drawLineStrip3D_FUN_00404600 (70 lines) [byvalue_struct_passing, pointer_cast, stack_param, stack_ref, unknown_field]
@@ -1525,7 +1514,7 @@ FILES AT 50-89%
            - shape_superopt.cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0 (71 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
            - shape_superopt.cpp_CObj_removeVertex_FUN_005d3140 (51 lines) [pointer_cast]
            - shape_superopt.cpp_CP3D_add_FUN_005d8520 (20 lines) [pointer_cast]
-           - shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020 (175 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, unaffected_reg, unknown_field]
+           - shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020 (170 lines) [decompiler_intrinsic, param_count_too_many, pointer_cast, sub84_truncation, unknown_field]
            - shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40 (17 lines) [unresolved_funcptr]
            - shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0 (85 lines) [pointer_cast]
            - shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70 (119 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation]
@@ -1533,7 +1522,7 @@ FILES AT 50-89%
            - shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_005d4110 (20 lines) [unresolved_funcptr]
            - shape_superopt.cpp_CP2D_copy_FUN_005d8330 (8 lines) [pointer_cast]
            - shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (509 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation]
-           - shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (46 lines) [decompiler_intrinsic, pointer_cast, unaffected_reg]
+           - shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (45 lines) [decompiler_intrinsic, param_count_too_many, pointer_cast]
            - shape_superopt.cpp_CP3D_subtract_FUN_005d84d0 (20 lines) [pointer_cast]
            - shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60 (80 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation]
            - shape_superopt.cpp_CObj_transform_FUN_005d2c40 (83 lines) [pointer_cast]
@@ -1556,7 +1545,7 @@ FILES AT 50-89%
            - shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50 (140 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation]
            - shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10 (131 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
            - shape_superopt.cpp_CObj_weldVertices_FUN_005d4160 (132 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation]
-           - shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0 (25 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array, stack_ref]
+           - shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0 (24 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array, unknown_field]
            - shape_superopt.cpp_CObj_saveVertexPositions_FUN_005d3760 (22 lines) [pointer_cast]
            - shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500 (272 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
            - shape_superopt.cpp_SExpandedEdge_copy_FUN_005d8710 (30 lines) [pointer_cast]
@@ -1570,7 +1559,7 @@ FILES AT 50-89%
            - shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30 (63 lines) [pointer_cast]
            - shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0 (44 lines) [pointer_cast, unresolved_funcptr]
            - shape_superopt.cpp_CPoly_transform_FUN_005ccc30 (181 lines) [pointer_cast]
-           - shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800 (164 lines) [pointer_cast, warning_unreachable]
+           - shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800 (165 lines) [pointer_cast, warning_unreachable]
            - shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00 (165 lines) [pointer_cast]
            - shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960 (157 lines) [pointer_cast]
            - shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500 (18 lines) [param_count_too_few]
@@ -1644,7 +1633,7 @@ FILES AT 50-89%
            - engine_pcx.c_writePCXScanline_FUN_00548c50 (50 lines) [pointer_cast]
            - engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 (106 lines) [pointer_cast]
 
-Total: 120 files
+Total: 119 files
 
 ====================================================================================================
 FILES BELOW 50%

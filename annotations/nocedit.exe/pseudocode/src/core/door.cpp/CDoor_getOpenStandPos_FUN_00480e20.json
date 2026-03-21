@@ -6,18 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 401,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 91,
-    "suspect_count": 30,
-    "suspect_types": [
-      "param_count_too_few",
-      "stack_param"
-    ],
-    "total_lines": 290
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 83,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 282
   },
   "cross_references": [
     {
@@ -38,7 +35,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20",
-    "signature": "float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr)"
+    "signature": "CVector3f * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr,CVector3f *out_pos,CVector3f *direction,CVector3f *actor_pos)"
   },
   "function_calls": [
     {
@@ -104,9 +101,9 @@
         "stack_params": 4
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
-    "declared_stack_bytes": 4,
+    "confidence": "medium",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
     "estimated_params": 4
   },
   "pcode_summary": {
@@ -150,10 +147,10 @@
     "pcode_op_count": 917
   },
   "stack_frame": {
-    "frame_size": 108,
+    "frame_size": 124,
     "local_size": 108,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -214,21 +211,21 @@
       },
       {
         "is_param": true,
-        "name": "in_stack_00000008",
+        "name": "out_pos",
         "offset": 8,
         "size": 4,
-        "type": "float *"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "in_stack_0000000c",
+        "name": "direction",
         "offset": 12,
         "size": 4,
-        "type": "float *"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "in_stack_00000010",
+        "name": "actor_pos",
         "offset": 16,
         "size": 4,
         "type": "CVector3f *"
@@ -252,249 +249,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "float *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "float *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "CVector3f *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "local_5c.x = *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "local_5c.y = in_stack_0000000c[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "local_5c.z = in_stack_0000000c[2];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "(&this_ptr->base,&local_2c,in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "if (in_stack_00000008 != local_50) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*in_stack_00000008 = (this_ptr->open_position).x - pCVar9->x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008[1] = fVar5 - fVar6;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008[2] = fVar7 - fVar8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008[1] = (this_ptr->base).location.position.y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "return in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "if (in_stack_00000008 != local_44) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 68,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*in_stack_00000008 = (this_ptr->open_position).x + pCVar9->x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008[1] = fVar1 + fVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008[2] = fVar3 + fVar4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 71,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008[1] = (this_ptr->base).location.position.y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 72,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "return in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 77,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "if ((CVector3f *)in_stack_00000008 != &this_ptr->open_position) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "*in_stack_00000008 = (this_ptr->open_position).x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008[1] = (this_ptr->open_position).y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 80,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008[2] = (this_ptr->open_position).z;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 81,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008[1] = (this_ptr->base).location.position.y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "return in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 89,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008[1] = (this_ptr->base).location.position.y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 90,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "return in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 92,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "in_stack_00000008[1] = (this_ptr->base).location.position.y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 93,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "return in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:4",
-      "param_delta": 3,
-      "text": "Function declares 1 params but call sites push 4 (3 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

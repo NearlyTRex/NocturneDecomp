@@ -120,7 +120,7 @@ section .text
     PUSH EBX                            ; 00427517
     PUSH EBP                            ; 00427518
     CALL core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00425660 ; 00427519
-        ;   XREF to: 00425660 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00425660(CBugs * this_ptr, int edge_count)
+        ;   XREF to: 00425660 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00425660(CBugs * this_ptr, int tri_count, SInputFace * triangles)
     ADD ESP,0xc                         ; 0042751e
     MOV EDI,dword ptr [EBP + 0x12b30]   ; 00427521
     PUSH EDI                            ; 00427527

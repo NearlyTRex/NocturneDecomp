@@ -4,27 +4,27 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            7087 ( 36.4%)
-  pointer_cast                    5710 ( 29.3%)
-  unknown_field                   1431 (  7.4%)
-  stack_param                      929 (  4.8%)
+  decompiler_intrinsic            7087 ( 36.6%)
+  pointer_cast                    5712 ( 29.5%)
+  unknown_field                   1432 (  7.4%)
+  stack_param                      861 (  4.4%)
   unnamed_param                    698 (  3.6%)
   special_crt_function             636 (  3.3%)
   fpu_register_input               327 (  1.7%)
-  stack_ref                        282 (  1.4%)
+  stack_ref                        279 (  1.4%)
   nonstandard_int                  270 (  1.4%)
   warning_inlined_function         264 (  1.4%)
   register_param                   252 (  1.3%)
-  unaffected_reg                   239 (  1.2%)
+  unaffected_reg                   230 (  1.2%)
   unresolved_funcptr               171 (  0.9%)
-  param_count_too_few              157 (  0.8%)
+  param_count_too_few              153 (  0.8%)
   stack_alignment_array            137 (  0.7%)
   warning_type_propagation         133 (  0.7%)
-  sub84_truncation                 107 (  0.5%)
+  sub84_truncation                 107 (  0.6%)
   negative_offset                   85 (  0.4%)
   warning_unreachable               84 (  0.4%)
+  param_count_too_many              53 (  0.3%)
   unknown_type                      52 (  0.3%)
-  param_count_too_many              51 (  0.3%)
   suspect_float                     50 (  0.3%)
   extra_output                      46 (  0.2%)
   mmx_assembly                      34 (  0.2%)
@@ -98,11 +98,11 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5710 occurrences)
+TYPE: pointer_cast (5712 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2167x  (uint *)((int)
+  2169x  (uint *)((int)
   1294x  (int *)((int)
    325x  (SRenderVertex *)((int)
    301x  (float *)((int)
@@ -136,11 +136,11 @@ Example functions:
     piVar2 = (int *)((int)g_ScreenBufferArray + iVar8);...
 
 ====================================================================================================
-TYPE: unknown_field (1431 occurrences)
+TYPE: unknown_field (1432 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   439x  ._0_4_
+   440x  ._0_4_
    384x  ._4_4_
     82x  ._8_4_
     68x  ._12_4_
@@ -182,18 +182,18 @@ Example functions:
     local_14._0_1_ = '\0';...
 
 ====================================================================================================
-TYPE: stack_param (929 occurrences)
+TYPE: stack_param (861 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   102x  in_stack_00000008
-    74x  in_stack_0000000c
+    65x  in_stack_00000008
     61x  in_stack_fffffd64
+    50x  in_stack_0000000c
     46x  in_stack_00000004
     46x  in_stack_fffffc88
     39x  in_stack_ffffff54
-    30x  in_stack_00000010
     25x  in_stack_fffffd80
+    23x  in_stack_00000010
     19x  in_stack_fffffd7c
     16x  in_stack_fffffd78
     16x  in_stack_ffffff9c
@@ -367,7 +367,7 @@ Example functions:
     float10 in_ST0;...
 
 ====================================================================================================
-TYPE: stack_ref (282 occurrences)
+TYPE: stack_ref (279 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -390,7 +390,7 @@ Unique patterns:
      5x  &stack0xffffff28
      4x  &stack0xffffffe0
      4x  &stack0xfffffffc
-     4x  &stack0xffffffc0
+     4x  &stack0xffffff60
 
 Example functions:
   crt_io.c_write_FUN_006084ec
@@ -538,13 +538,13 @@ Example functions:
     ushort *in_ECX;...
 
 ====================================================================================================
-TYPE: unaffected_reg (239 occurrences)
+TYPE: unaffected_reg (230 occurrences)
 ====================================================================================================
 
 Unique patterns:
     69x  unaff_EBX
-    66x  unaff_ESI
     60x  unaff_EBP
+    57x  unaff_ESI
     40x  unaff_EDI
      4x  unaff_EAX
 
@@ -601,15 +601,15 @@ Example functions:
     code *pcVar1;...
 
 ====================================================================================================
-TYPE: param_count_too_few (157 occurrences)
+TYPE: param_count_too_few (153 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    23x  declared:1 vs estimated:2
+    22x  declared:1 vs estimated:2
     18x  declared:0 vs estimated:2
     15x  declared:0 vs estimated:4
     14x  declared:0 vs estimated:1
-    12x  declared:2 vs estimated:3
+    11x  declared:2 vs estimated:3
     10x  declared:0 vs estimated:3
      8x  declared:4 vs estimated:5
      6x  declared:3 vs estimated:4
@@ -617,14 +617,14 @@ Unique patterns:
      5x  declared:2 vs estimated:4
      4x  declared:4 vs estimated:7
      4x  declared:0 vs estimated:5
-     3x  declared:1 vs estimated:4
      2x  declared:6 vs estimated:7
      2x  declared:5 vs estimated:6
-     2x  declared:1 vs estimated:3
      2x  declared:0 vs estimated:6
+     2x  declared:1 vs estimated:4
      2x  declared:2 vs estimated:24
      2x  declared:6 vs estimated:8
      2x  declared:7 vs estimated:11
+     1x  declared:1 vs estimated:3
 
 Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
@@ -984,45 +984,13 @@ Example functions:
     /* WARNING: Removing unreachable block (ram,0x004fd155) */...
 
 ====================================================================================================
-TYPE: unknown_type (52 occurrences)
-====================================================================================================
-
-Unique patterns:
-    31x  unkuint10
-    21x  unkbyte10
-
-Example functions:
-  crt_math.c_fdiv_thunk_FUN_00606d6b
-    unkbyte10 in_ST0;...
-  crt_math.c_fdiv_thunk_FUN_00606bb3
-    unkbyte10 in_ST0;...
-  crt_math.c_fdiv_FUN_00606960
-    in_stack_00000008 = (uint)((unkuint10)fVar2 >> 0x20);...
-  crt_math.c_fdiv_thunk_FUN_00606aeb
-    unkbyte10 in_ST0;...
-  crt_math.c_fdiv_thunk_FUN_00606e0f
-    unkbyte10 in_ST0;...
-  crt_math.c_fdiv_thunk_FUN_00606b7f
-    unkbyte10 in_ST0;...
-  crt_math.c_fdiv_thunk_FUN_00606cc7
-    unkbyte10 in_ST0;...
-  crt_math.c_atan2_FUN_0060c440
-    uStack_20 = (uint)((unkuint10)y >> 0x20);...
-  crt_math.c_fdiv_thunk_FUN_00606ee7
-    unkbyte10 in_ST0;...
-  crt_math.c_fdiv_thunk_FUN_00606d9f
-    unkbyte10 in_ST0;...
-  crt_math.c_fdiv_thunk_FUN_00606b17
-    unkbyte10 in_ST0;...
-
-====================================================================================================
-TYPE: param_count_too_many (51 occurrences)
+TYPE: param_count_too_many (53 occurrences)
 ====================================================================================================
 
 Unique patterns:
     23x  declared:2 vs estimated:1
     15x  declared:3 vs estimated:2
-     6x  declared:4 vs estimated:3
+     8x  declared:4 vs estimated:3
      1x  declared:6 vs estimated:3
      1x  declared:8 vs estimated:7
      1x  declared:6 vs estimated:5
@@ -1092,6 +1060,38 @@ Example functions:
     Function declares 2 params but call sites push 1 (1 extra)...
   core_xform.cpp_negateFirstComponent_FUN_005f75e0
     Function declares 2 params but call sites push 1 (1 extra)...
+
+====================================================================================================
+TYPE: unknown_type (52 occurrences)
+====================================================================================================
+
+Unique patterns:
+    31x  unkuint10
+    21x  unkbyte10
+
+Example functions:
+  crt_math.c_fdiv_thunk_FUN_00606d6b
+    unkbyte10 in_ST0;...
+  crt_math.c_fdiv_thunk_FUN_00606bb3
+    unkbyte10 in_ST0;...
+  crt_math.c_fdiv_FUN_00606960
+    in_stack_00000008 = (uint)((unkuint10)fVar2 >> 0x20);...
+  crt_math.c_fdiv_thunk_FUN_00606aeb
+    unkbyte10 in_ST0;...
+  crt_math.c_fdiv_thunk_FUN_00606e0f
+    unkbyte10 in_ST0;...
+  crt_math.c_fdiv_thunk_FUN_00606b7f
+    unkbyte10 in_ST0;...
+  crt_math.c_fdiv_thunk_FUN_00606cc7
+    unkbyte10 in_ST0;...
+  crt_math.c_atan2_FUN_0060c440
+    uStack_20 = (uint)((unkuint10)y >> 0x20);...
+  crt_math.c_fdiv_thunk_FUN_00606ee7
+    unkbyte10 in_ST0;...
+  crt_math.c_fdiv_thunk_FUN_00606d9f
+    unkbyte10 in_ST0;...
+  crt_math.c_fdiv_thunk_FUN_00606b17
+    unkbyte10 in_ST0;...
 
 ====================================================================================================
 TYPE: suspect_float (50 occurrences)

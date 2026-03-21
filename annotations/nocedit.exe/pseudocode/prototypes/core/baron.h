@@ -27,13 +27,13 @@ void __cdecl CBaron::setup(CBaron *this_ptr);
 // Address: 00412e80
 void __cdecl CBaron::process(CBaron *this_ptr,float delta_time);
 
-// Original: core_baron.cpp_CBaron_engageTarget_FUN_00413470
+// Original: core_baron.cpp_CBaron_attachToOwner_FUN_00413470
 // Address: 00413470
-void __cdecl CBaron::engageTarget(CBaron *this_ptr,CDemonActor *target);
+void __cdecl CBaron::attachToOwner(CBaron *this_ptr,CDemonActor *target);
 
-// Original: core_baron.cpp_CBaron_releaseTarget_FUN_004135a0
+// Original: core_baron.cpp_CBaron_detachFromOwner_FUN_004135a0
 // Address: 004135a0
-void __cdecl CBaron::releaseTarget(CBaron *this_ptr,CDemonActor *target);
+void __cdecl CBaron::detachFromOwner(CBaron *this_ptr,CDemonActor *target);
 
 // Original: core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0
 // Address: 004135e0
@@ -105,7 +105,7 @@ void __cdecl CBaronWeapon::fireProjectile(CBaronWeapon *this_ptr);
 
 // Original: core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00413e90
 // Address: 00413e90
-void __cdecl CBaronWeapon::setWeaponState(CBaronWeapon *this_ptr);
+void __cdecl CBaronWeapon::setWeaponState(CBaronWeapon *this_ptr,int weapon_state);
 
 // Original: core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20
 // Address: 00413f20

@@ -2,23 +2,21 @@
 // Address: 0050a290
 // Address Range: [[0050a290, 0050a41c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMansionPuzzleCircle *this_ptr)
+// Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMansionPuzzleCircle *this_ptr)
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time)
 
 {
   float fVar1;
   int iVar2;
   SPanel *pSVar3;
   SPanel *pSVar4;
-  int in_stack_00000008;
-  float in_stack_0000000c;
   
-  pSVar3 = this_ptr->panels + in_stack_00000008;
+  pSVar3 = this_ptr->panels + panel_index;
   if (pSVar3->exists != 0) {
-    fVar1 = (pSVar3->anim_speed * in_stack_0000000c) / 2.0f + pSVar3->anim_progress;
+    fVar1 = (pSVar3->anim_speed * delta_time) / 2.0f + pSVar3->anim_progress;
     pSVar3->anim_progress = fVar1;
     if (fVar1 < 0.0) {
       pSVar3->anim_speed = 0.0;
@@ -26,7 +24,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMan
     }
     if (1.0 <= pSVar3->anim_progress) {
       iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_0050aee0
-                        (this_ptr,in_stack_00000008);
+                        (this_ptr,panel_index);
       pSVar4 = this_ptr->panels + iVar2;
       if (pSVar4->exists != 0) {
         g_CurrentFilename = "..\\core\\manpuz.cpp";

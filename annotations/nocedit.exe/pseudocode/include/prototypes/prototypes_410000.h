@@ -166,8 +166,8 @@ CDemonActorType * __cdecl core_baron_cpp_CBaron_getActorType_FUN_00412bb0(CBaron
 CBaron * __cdecl core_baron_cpp_CBaron_ctor_FUN_00412bc0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_setup_FUN_00412cb0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float delta_time);
-void __cdecl core_baron_cpp_CBaron_engageTarget_FUN_00413470(CBaron *this_ptr,CDemonActor *target);
-void __cdecl core_baron_cpp_CBaron_releaseTarget_FUN_004135a0(CBaron *this_ptr,CDemonActor *target);
+void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00413470(CBaron *this_ptr,CDemonActor *target);
+void __cdecl core_baron_cpp_CBaron_detachFromOwner_FUN_004135a0(CBaron *this_ptr,CDemonActor *target);
 void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_004136b0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_advanceMotion_FUN_00413a00(CBaron *this_ptr,float delta_time);
@@ -185,7 +185,7 @@ void __cdecl core_baron_cpp_CBaronWeapon_renderOpaque_FUN_00413de0(CBaronWeapon 
 int __cdecl core_baron_cpp_CBaronWeapon_fire_FUN_00413df0(CBaronWeapon *this_ptr);
 int __cdecl core_baron_cpp_CBaronWeapon_isReadyToFire_FUN_00413e30(CBaronWeapon *this_ptr);
 void __cdecl core_baron_cpp_CBaronWeapon_fireProjectile_FUN_00413e60(CBaronWeapon *this_ptr);
-void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00413e90(CBaronWeapon *this_ptr);
+void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00413e90(CBaronWeapon *this_ptr,int weapon_state);
 void __cdecl core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20(CBaronWeapon *this_ptr);
 void __cdecl core_baron_cpp_CBaron_onActorDeleted_FUN_00413ff0(CBaron *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_baron_cpp_CBaron_getPropertyList_FUN_00414010(CBaron *this_ptr,CActorPropertyList *property_list);

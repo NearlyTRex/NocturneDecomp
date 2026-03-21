@@ -31,7 +31,7 @@ int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_
   uint local_4c;
   uint local_48;
   uint local_44;
-  uint local_40 [6];
+  CVector3d local_40;
   int local_28;
   CP3D *local_24;
   uint local_20;
@@ -77,8 +77,9 @@ LAB_005d59af:
           local_14 = &search_polygon->normal;
           shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0
                     (&point_00->position,
-                     &this_ptr->vertex_data[search_polygon->vertex_idx_0].position,&local_14->impl);
-          puVar6 = local_40;
+                     &this_ptr->vertex_data[search_polygon->vertex_idx_0].position,&local_14->impl,
+                     &local_40);
+          puVar6 = (uint *)&local_40;
           puVar8 = &local_58;
           for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
             puVar8 = puVar8 + (uint)bVar9 * -2 + 1;

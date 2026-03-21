@@ -5,15 +5,15 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5881 (90.7%)
-Failed: 603
+Successful: 5883 (90.7%)
+Failed: 601
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1219
+  other                           1218
   format_error                     797
   incompatible_types               213
-  undeclared_identifier            148
+  undeclared_identifier            145
   syntax_error                      41
   missing_member                    20
   type_error                        10
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1219 errors)
+CATEGORY: other (1218 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -85,7 +85,7 @@ CATEGORY: other (1219 errors)
   core_stairs.cpp_CStairs_customGetFloorHeight_FUN_005ba6a0
     Line 21: cannot cast from type 'float' to pointer type 'CVector3f *'...
 
-  ... and 267 more errors
+  ... and 266 more errors
 
 ====================================================================================================
 CATEGORY: format_error (797 errors)
@@ -140,7 +140,7 @@ CATEGORY: format_error (797 errors)
   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
     Line 150: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
-    Line 69: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
+    Line 70: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   core_charactr.cpp_CCharacter_setup_FUN_00428140
     Line 54: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   core_lightgun.cpp_CLightGun_fire_FUN_00505c70
@@ -222,7 +222,7 @@ CATEGORY: incompatible_types (213 errors)
   ... and 88 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (148 errors)
+CATEGORY: undeclared_identifier (145 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -286,7 +286,7 @@ CATEGORY: undeclared_identifier (148 errors)
   shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0
     Line 28: use of undeclared identifier 'code'...
 
-  ... and 48 more errors
+  ... and 47 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (41 errors)
@@ -413,8 +413,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.91
-Average suspects in failed compilations: 7.87
+Average suspects in successfully compiled functions: 1.90
+Average suspects in failed compilations: 7.82
 
-Functions that compile but have suspect patterns: 1450
+Functions that compile but have suspect patterns: 1445
 (These may have runtime issues even though syntax is valid)

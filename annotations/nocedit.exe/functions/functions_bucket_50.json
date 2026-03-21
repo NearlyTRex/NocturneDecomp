@@ -22765,148 +22765,6 @@
     "vars":{
       "locals":[
         {
-          "name":"pcVar8",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*",
-          "use":44
-        },
-        {
-          "name":"p_Var4",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"_FILE*",
-          "use":67
-        },
-        {
-          "name":"pcVar6",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*",
-          "use":189
-        },
-        {
-          "name":"pCVar5",
-          "storage":{
-            "reg":"EBX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000000c",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonImage*",
-          "use":372
-        },
-        {
-          "name":"pCVar7",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonImage*",
-          "use":372
-        },
-        {
-          "name":"pCVar9",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonImage*",
-          "use":372
-        },
-        {
-          "name":"uVar3",
-          "storage":{
-            "reg":"AX",
-            "size":2,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":2
-              }
-            ]
-          },
-          "type":"ushort",
-          "use":427
-        },
-        {
-          "name":"in_stack_00000010",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"SIZE_T"
-        },
-        {
-          "name":"in_stack_0000000c",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"SIZE_T"
-        },
-        {
           "name":"local_14",
           "storage":{
             "offset":-20,
@@ -22969,38 +22827,6 @@
             ]
           },
           "type":"char[256]"
-        },
-        {
-          "name":"cVar1",
-          "storage":{
-            "size":1,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5f8cf42cd8",
-                "offset":410386705624,
-                "size":1
-              }
-            ]
-          },
-          "type":"char",
-          "use":27
-        },
-        {
-          "name":"bVar2",
-          "storage":{
-            "size":1,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5fd1f061bf",
-                "offset":411544084927,
-                "size":1
-              }
-            ]
-          },
-          "type":"byte",
-          "use":396
         }
       ],
       "params":[
@@ -23035,6 +22861,38 @@
             ]
           },
           "type":"char*"
+        },
+        {
+          "name":"width",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"height",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -90905,75 +90763,12 @@
         "start":"005d63d0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__stack3_esi",
     "importable":true,
     "name":"shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0",
     "ret":"CVector3d*",
     "vars":{
       "locals":[
-        {
-          "name":"bVar7",
-          "storage":{
-            "reg":"DF",
-            "size":1,
-            "varnodes":[
-              {
-                "addr":"register:0000020a",
-                "offset":522,
-                "size":1
-              }
-            ]
-          },
-          "type":"byte"
-        },
-        {
-          "name":"iVar4",
-          "storage":{
-            "reg":"ECX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000004",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":130
-        },
-        {
-          "name":"pdVar5",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"double*",
-          "use":184
-        },
-        {
-          "name":"pCVar6",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3d*",
-          "use":184
-        },
         {
           "name":"local_18",
           "storage":{
@@ -91101,54 +90896,6 @@
             ]
           },
           "type":"CVector3d"
-        },
-        {
-          "name":"dVar1",
-          "storage":{
-            "size":8,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:67f4e6294f8",
-                "offset":7143845696760,
-                "size":8
-              }
-            ]
-          },
-          "type":"double",
-          "use":57
-        },
-        {
-          "name":"dVar2",
-          "storage":{
-            "size":8,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:67f6a46555d",
-                "offset":7144313607517,
-                "size":8
-              }
-            ]
-          },
-          "type":"double",
-          "use":65
-        },
-        {
-          "name":"dVar3",
-          "storage":{
-            "size":8,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:67f58058970",
-                "offset":7144007371120,
-                "size":8
-              }
-            ]
-          },
-          "type":"double",
-          "use":81
         }
       ],
       "params":[
@@ -91194,6 +90941,21 @@
               {
                 "addr":"Stack[0xc]",
                 "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3d*"
+        },
+        {
+          "name":"out_point",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]

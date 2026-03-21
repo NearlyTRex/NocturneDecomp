@@ -2,22 +2,18 @@
 // Address: 00480e20
 // Address Range: [[00480e20, 00481014]]
 // Convention: __cdecl
-// Signature: float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr)
+// Signature: CVector3f * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr,CVector3f *out_pos,CVector3f *direction,CVector3f *actor_pos)
 
 #include "nocturne.h"
 
-float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr)
+CVector3f * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr,CVector3f *out_pos,CVector3f *direction,CVector3f *actor_pos)
 
 {
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
   CVector3f *pCVar5;
-  CVector3f *pCVar9;
-  float *in_stack_00000008;
-  float *in_stack_0000000c;
-  CVector3f *in_stack_00000010;
   CVector3f local_68;
   CVector3f local_5c;
   float local_50 [3];
@@ -25,14 +21,10 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
   CVector3f local_38;
   CVector3f local_2c;
   CVector3f local_20;
-  float fVar3;
-  float fVar4;
-  float fVar1;
-  float fVar2;
   
-  local_5c.x = *in_stack_0000000c;
-  local_5c.y = in_stack_0000000c[1];
-  local_5c.z = in_stack_0000000c[2];
+  local_5c.x = direction->x;
+  local_5c.y = direction->y;
+  local_5c.z = direction->z;
   if (local_5c.z < 0.0) {
     local_38.x = -local_5c.x;
     local_38.y = -local_5c.y;
@@ -48,54 +40,54 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
   case DOOR_TYPE_VERTICAL:
   case DOOR_TYPE_SLIDE:
     pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                       (&this_ptr->base,&local_2c,in_stack_00000010);
+                       (&this_ptr->base,&local_2c,actor_pos);
     if (pCVar5->z <= 0.0) {
-      pCVar9 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+      pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                          (&this_ptr->base,&local_20,&local_5c);
-      fVar5 = (this_ptr->open_position).y;
-      fVar6 = pCVar9->y;
-      fVar7 = (this_ptr->open_position).z;
-      fVar8 = pCVar9->z;
-      if (in_stack_00000008 != local_50) {
-        *in_stack_00000008 = (this_ptr->open_position).x - pCVar9->x;
-        in_stack_00000008[1] = fVar5 - fVar6;
-        in_stack_00000008[2] = fVar7 - fVar8;
-        in_stack_00000008[1] = (this_ptr->base).location.position.y;
-        return in_stack_00000008;
+      fVar1 = (this_ptr->open_position).y;
+      fVar2 = pCVar5->y;
+      fVar3 = (this_ptr->open_position).z;
+      fVar4 = pCVar5->z;
+      if (out_pos != (CVector3f *)local_50) {
+        out_pos->x = (this_ptr->open_position).x - pCVar5->x;
+        out_pos->y = fVar1 - fVar2;
+        out_pos->z = fVar3 - fVar4;
+        out_pos->y = (this_ptr->base).location.position.y;
+        return out_pos;
       }
     }
     else {
-      pCVar9 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+      pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                          (&this_ptr->base,&local_68,&local_5c);
       fVar1 = (this_ptr->open_position).y;
-      fVar2 = pCVar9->y;
+      fVar2 = pCVar5->y;
       fVar3 = (this_ptr->open_position).z;
-      fVar4 = pCVar9->z;
-      if (in_stack_00000008 != local_44) {
-        *in_stack_00000008 = (this_ptr->open_position).x + pCVar9->x;
-        in_stack_00000008[1] = fVar1 + fVar2;
-        in_stack_00000008[2] = fVar3 + fVar4;
-        in_stack_00000008[1] = (this_ptr->base).location.position.y;
-        return in_stack_00000008;
+      fVar4 = pCVar5->z;
+      if (out_pos != (CVector3f *)local_44) {
+        out_pos->x = (this_ptr->open_position).x + pCVar5->x;
+        out_pos->y = fVar1 + fVar2;
+        out_pos->z = fVar3 + fVar4;
+        out_pos->y = (this_ptr->base).location.position.y;
+        return out_pos;
       }
     }
     break;
   case DOOR_TYPE_TILT:
-    if ((CVector3f *)in_stack_00000008 != &this_ptr->open_position) {
-      *in_stack_00000008 = (this_ptr->open_position).x;
-      in_stack_00000008[1] = (this_ptr->open_position).y;
-      in_stack_00000008[2] = (this_ptr->open_position).z;
-      in_stack_00000008[1] = (this_ptr->base).location.position.y;
-      return in_stack_00000008;
+    if (out_pos != &this_ptr->open_position) {
+      out_pos->x = (this_ptr->open_position).x;
+      out_pos->y = (this_ptr->open_position).y;
+      out_pos->z = (this_ptr->open_position).z;
+      out_pos->y = (this_ptr->base).location.position.y;
+      return out_pos;
     }
     break;
   default:
     g_CurrentFilename = "..\\core\\door.cpp";
     g_CurrentLineNumber = 0x340;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDoor::getOpenStandPos - invalid doorType");
-    in_stack_00000008[1] = (this_ptr->base).location.position.y;
-    return in_stack_00000008;
+    out_pos->y = (this_ptr->base).location.position.y;
+    return out_pos;
   }
-  in_stack_00000008[1] = (this_ptr->base).location.position.y;
-  return in_stack_00000008;
+  out_pos->y = (this_ptr->base).location.position.y;
+  return out_pos;
 }

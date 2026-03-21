@@ -1,21 +1,20 @@
 // Name: shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020
 // Address: 005d6020
 // Address Range: [[005d6020, 005d63cb]]
-// Convention: __cdecl
-// Signature: CVector2d * __cdecl shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point)
+// Convention: __stack3_esi
+// Signature: CVector2d * __stack3_esi shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point,CVector2d *out_point)
 
 #include "nocturne.h"
 
-CVector2d * __cdecl shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point)
+CVector2d * __stack3_esi shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point,CVector2d *out_point)
 
 {
-  double dVar1;
+  uint uVar1;
+  uint uVar2;
+  double dVar3;
+  double dVar4;
   int iVar5;
-  int iVar2;
-  CVector2d *unaff_ESI;
-  double *pdVar3;
   double *pdVar6;
-  uint *puVar4;
   uint *puVar7;
   uint local_168;
   uint uStack_164;
@@ -74,10 +73,6 @@ CVector2d * __cdecl shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(CVec
   uint uStack_1c;
   uint local_18;
   uint uStack_14;
-  double dVar4;
-  double dVar3;
-  uint uVar1;
-  uint uVar2;
   
   local_18 = *(uint *)&segment_start->x;
   uStack_14 = *(uint *)((int)&segment_start->x + 4);
@@ -101,15 +96,15 @@ CVector2d * __cdecl shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(CVec
   local_40 = *(uint *)&query_point->y;
   local_d8 = segment_end->y - segment_start->y;
   uVar2 = *(uint *)((int)&query_point->y + 4);
-  pdVar3 = &local_e0;
-  puVar4 = local_80;
+  pdVar6 = &local_e0;
+  puVar7 = local_80;
   for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar4 = *(uint *)pdVar3;
-    pdVar3 = (double *)((int)pdVar3 + 4);
-    puVar4 = puVar4 + 1;
+    *puVar7 = *(uint *)pdVar6;
+    pdVar6 = (double *)((int)pdVar6 + 4);
+    puVar7 = puVar7 + 1;
   }
   dVar4 = __BITCAST_DOUBLE(CONCAT44(local_80[3],local_80[2]));
-  dVar1 = __BITCAST_DOUBLE(CONCAT44(local_80[1],local_80[0]));
+  dVar3 = __BITCAST_DOUBLE(CONCAT44(local_80[1],local_80[0]));
   uStack_3c = uVar2;
   local_f8 = local_80[0];
   local_110 = __BITCAST_DOUBLE(CONCAT44(uStack_24,local_28)) - __BITCAST_DOUBLE(CONCAT44(uStack_14,local_18));
@@ -121,16 +116,16 @@ CVector2d * __cdecl shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(CVec
   local_100 = 0;
   local_fc = 0;
   local_108 = __BITCAST_DOUBLE(CONCAT44(uVar2,local_40)) - __BITCAST_DOUBLE(CONCAT44(uStack_34,local_38));
-  pdVar3 = &local_110;
-  puVar4 = local_128;
-  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = *(uint *)pdVar3;
-    pdVar3 = (double *)((int)pdVar3 + 4);
-    puVar4 = puVar4 + 1;
+  pdVar6 = &local_110;
+  puVar7 = local_128;
+  for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *puVar7 = *(uint *)pdVar6;
+    pdVar6 = (double *)((int)pdVar6 + 4);
+    puVar7 = puVar7 + 1;
   }
   local_60 = uVar1;
   dVar3 = __BITCAST_DOUBLE(CONCAT44(uStack_6c,local_70)) * __BITCAST_DOUBLE(CONCAT44(uStack_6c,local_70)) +
-          dVar1 * dVar1 + dVar4 * dVar4;
+          dVar3 * dVar3 + dVar4 * dVar4;
   local_b0 = local_128[0];
   local_ac = local_128[1];
   local_a8 = local_128[2];
@@ -163,23 +158,23 @@ CVector2d * __cdecl shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(CVec
     local_168 = 0;
     uStack_164 = 0x3ff00000;
   }
-  dVar1 = __BITCAST_DOUBLE(CONCAT44(uStack_164,local_168));
-  local_c8 = __BITCAST_DOUBLE(CONCAT44(uStack_f4,local_f8)) * dVar1;
-  local_c0 = __BITCAST_DOUBLE(CONCAT44(uStack_ec,local_f0)) * dVar1;
-  local_b8 = __BITCAST_DOUBLE(CONCAT44(uStack_e4,local_e8)) * dVar1;
+  dVar3 = __BITCAST_DOUBLE(CONCAT44(uStack_164,local_168));
+  local_c8 = __BITCAST_DOUBLE(CONCAT44(uStack_f4,local_f8)) * dVar3;
+  local_c0 = __BITCAST_DOUBLE(CONCAT44(uStack_ec,local_f0)) * dVar3;
+  local_b8 = __BITCAST_DOUBLE(CONCAT44(uStack_e4,local_e8)) * dVar3;
   local_140 = __BITCAST_DOUBLE(CONCAT44(uStack_64,local_68)) + local_c8;
   local_138 = __BITCAST_DOUBLE(CONCAT44(uStack_5c,uVar1)) + local_c0;
   local_130 = __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58)) + local_b8;
   pdVar6 = &local_140;
   puVar7 = local_98;
-  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+  for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
     *puVar7 = *(uint *)pdVar6;
     pdVar6 = (double *)((int)pdVar6 + 4);
     puVar7 = puVar7 + 1;
   }
-  *(uint *)&unaff_ESI->x = local_98[0];
-  *(uint *)((int)&unaff_ESI->x + 4) = local_98[1];
-  *(uint *)&unaff_ESI->y = local_98[2];
-  *(uint *)((int)&unaff_ESI->y + 4) = local_98[3];
-  return unaff_ESI;
+  *(uint *)&out_point->x = local_98[0];
+  *(uint *)((int)&out_point->x + 4) = local_98[1];
+  *(uint *)&out_point->y = local_98[2];
+  *(uint *)((int)&out_point->y + 4) = local_98[3];
+  return out_point;
 }

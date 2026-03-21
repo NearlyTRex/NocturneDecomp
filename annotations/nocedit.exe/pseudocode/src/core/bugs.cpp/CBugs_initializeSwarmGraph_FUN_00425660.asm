@@ -1,11 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bugs_cpp_CBugs_initializeSwarmGraph_FUN_00425660(CBugs *this_ptr,int edge_count)
+; void __cdecl core_bugs_cpp_CBugs_initializeSwarmGraph_FUN_00425660(CBugs *this_ptr,int tri_count,SInputFace *triangles)
 ;
 ; Parameters:
 ; CBugs *          Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   edge_count
+; int              Stack[0x8]:4   tri_count
+; SInputFace *     Stack[0xc]:4   triangles
 ;
 ; XREF[1]:
 ;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400 at 00427519

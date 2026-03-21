@@ -389,11 +389,13 @@ annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaronWeapon_getActorType_
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaronWeapon_isReadyToFire_FUN_00413e30.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaronWeapon_process_FUN_00413dc0.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaronWeapon_renderOpaque_FUN_00413de0.cpp
+annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaronWeapon_setWeaponState_FUN_00413e90.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaronWeapon_setup_FUN_00413da0.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_addFilesToExtract_FUN_00414070.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_advanceMotion_FUN_00413a00.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_archive_FUN_00413a70.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_ctor_FUN_00412bc0.cpp
+annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_detachFromOwner_FUN_004135a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_drawWeapon_FUN_00413cf0.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_dtor_FUN_00414100.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_getActorType_FUN_00412bb0.cpp
@@ -401,7 +403,6 @@ annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_getCollisionType_FU
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_getPropertyList_FUN_00414010.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_onActorDeleted_FUN_00413ff0.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_processDamage_FUN_00413cd0.cpp
-annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_releaseTarget_FUN_004135a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_renderOpaque_FUN_00413ad0.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/CBaron_setup_FUN_00412cb0.cpp
 annotations/nocedit.exe/pseudocode/src/core/baron.cpp/factoryFunc_FUN_00412b80.cpp
@@ -657,6 +658,7 @@ annotations/nocedit.exe/pseudocode/src/core/bugs.cpp/CBugs_getBoundingBox_FUN_00
 annotations/nocedit.exe/pseudocode/src/core/bugs.cpp/CBugs_getCollisionType_FUN_00425610.cpp
 annotations/nocedit.exe/pseudocode/src/core/bugs.cpp/CBugs_getDeathState_FUN_00425620.cpp
 annotations/nocedit.exe/pseudocode/src/core/bugs.cpp/CBugs_getPropertyList_FUN_004277e0.cpp
+annotations/nocedit.exe/pseudocode/src/core/bugs.cpp/CBugs_initializeSwarmGraph_FUN_00425660.cpp
 annotations/nocedit.exe/pseudocode/src/core/bugs.cpp/CBugs_processDamage_FUN_00425640.cpp
 annotations/nocedit.exe/pseudocode/src/core/bugs.cpp/CBugs_process_FUN_004250f0.cpp
 annotations/nocedit.exe/pseudocode/src/core/bugs.cpp/CBugs_recalculateBoundingBox_FUN_004272f0.cpp
@@ -1056,6 +1058,7 @@ annotations/nocedit.exe/pseudocode/src/core/dimage.cpp/CDemonImage_allocMemory_F
 annotations/nocedit.exe/pseudocode/src/core/dimage.cpp/CDemonImage_ctor_FUN_004719b0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dimage.cpp/CDemonImage_dtor_FUN_004719c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dimage.cpp/CDemonImage_freeMemory_FUN_00471a40.cpp
+annotations/nocedit.exe/pseudocode/src/core/dimage.cpp/CDemonImage_load_FUN_00471ad0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dimage.cpp/CDemonImage_packColor_FUN_00471a70.cpp
 annotations/nocedit.exe/pseudocode/src/core/dirmat.cpp/CMatrix3x3f_buildRotationMatrix_FUN_00471d30.cpp
 annotations/nocedit.exe/pseudocode/src/core/dirmat.cpp/CMatrix3x3f_invert_FUN_00471e10.cpp
@@ -1150,6 +1153,7 @@ annotations/nocedit.exe/pseudocode/src/core/door.cpp/CDoor_getBoundingBox_FUN_00
 annotations/nocedit.exe/pseudocode/src/core/door.cpp/CDoor_getCollisionType_FUN_00480d90.cpp
 annotations/nocedit.exe/pseudocode/src/core/door.cpp/CDoor_getGroundType_FUN_00480dd0.cpp
 annotations/nocedit.exe/pseudocode/src/core/door.cpp/CDoor_getMoveType_FUN_00481070.cpp
+annotations/nocedit.exe/pseudocode/src/core/door.cpp/CDoor_getOpenStandPos_FUN_00480e20.cpp
 annotations/nocedit.exe/pseudocode/src/core/door.cpp/CDoor_getPropertyList_FUN_00481320.cpp
 annotations/nocedit.exe/pseudocode/src/core/door.cpp/CDoor_onLocked_FUN_00481210.cpp
 annotations/nocedit.exe/pseudocode/src/core/door.cpp/CDoor_onOpened_FUN_0047fcf0.cpp
@@ -1408,6 +1412,7 @@ annotations/nocedit.exe/pseudocode/src/core/filmreel.cpp/CFilmProjector_dtor_FUN
 annotations/nocedit.exe/pseudocode/src/core/filmreel.cpp/CFilmProjector_getActorType_FUN_004bea30.cpp
 annotations/nocedit.exe/pseudocode/src/core/filmreel.cpp/CFilmProjector_getBoundingBox_FUN_004becd0.cpp
 annotations/nocedit.exe/pseudocode/src/core/filmreel.cpp/CFilmProjector_getPropertyList_FUN_004bee30.cpp
+annotations/nocedit.exe/pseudocode/src/core/filmreel.cpp/CFilmProjector_process_FUN_004beb40.cpp
 annotations/nocedit.exe/pseudocode/src/core/filmreel.cpp/CFilmProjector_renderOpaque_FUN_004bed00.cpp
 annotations/nocedit.exe/pseudocode/src/core/filmreel.cpp/CFilmProjector_setup_FUN_004beb00.cpp
 annotations/nocedit.exe/pseudocode/src/core/filmreel.cpp/CFilmReel_addFilesToExtract_FUN_004be9b0.cpp
@@ -2120,6 +2125,7 @@ annotations/nocedit.exe/pseudocode/src/core/ladder.cpp/CLadder_getCollisionType_
 annotations/nocedit.exe/pseudocode/src/core/ladder.cpp/CLadder_getGroundType_FUN_00502c90.cpp
 annotations/nocedit.exe/pseudocode/src/core/ladder.cpp/CLadder_getPropertyList_FUN_00502ca0.cpp
 annotations/nocedit.exe/pseudocode/src/core/ladder.cpp/CLadder_onActorDeleted_FUN_00502e90.cpp
+annotations/nocedit.exe/pseudocode/src/core/ladder.cpp/CLadder_processInEditor_FUN_00502d00.keep.cpp
 annotations/nocedit.exe/pseudocode/src/core/ladder.cpp/CLadder_process_FUN_00502610.cpp
 annotations/nocedit.exe/pseudocode/src/core/ladder.cpp/CLadder_setup_FUN_005025f0.cpp
 annotations/nocedit.exe/pseudocode/src/core/ladder.cpp/CLadder_showEditorHelp_FUN_00502e50.cpp
@@ -2210,11 +2216,13 @@ annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_init
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_onLaserHit_FUN_005097e0.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_panelOccupied_FUN_0050b040.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_processInEditor_FUN_0050b440.cpp
+annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_processPanel_FUN_0050a290.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_renderEmitter_FUN_00509c60.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_renderOpaque_FUN_005090d0.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_renderPanel_FUN_00509bf0.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_renderReflector_FUN_0050a1f0.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0.cpp
+annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_updateGem_FUN_0050a610.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_updateLaser_FUN_0050a8d0.cpp
 annotations/nocedit.exe/pseudocode/src/core/manpuz.cpp/CMansionPuzzleCircle_updatePanelTransform_FUN_00509b20.cpp

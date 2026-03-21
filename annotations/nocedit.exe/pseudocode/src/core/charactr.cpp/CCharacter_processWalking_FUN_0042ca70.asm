@@ -140,7 +140,7 @@ section .text
     PUSH EAX                            ; 0042cb62
     PUSH ESI                            ; 0042cb63
     CALL core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20 ; 0042cb64
-        ;   XREF to: 00480e20 (UNCONDITIONAL_CALL)  ; float * core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor * this_ptr)
+        ;   XREF to: 00480e20 (UNCONDITIONAL_CALL)  ; CVector3f * core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor * this_ptr, CVector3f * out_pos, CVector3f * direction, CVector3f * actor_pos)
     ADD ESP,0x10                        ; 0042cb69
     PUSH 0x0                            ; 0042cb6c
     MOV EAX,dword ptr [EBX + 0x25b4]    ; 0042cb6e

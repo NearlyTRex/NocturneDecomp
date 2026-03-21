@@ -81,7 +81,7 @@ void __cdecl CMansionPuzzleCircle::renderReflector(CMansionPuzzleCircle *this_pt
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290
 // Address: 0050a290
-void __cdecl CMansionPuzzleCircle::processPanel(CMansionPuzzleCircle *this_ptr);
+void __cdecl CMansionPuzzleCircle::processPanel(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_0050a420
 // Address: 0050a420
@@ -109,7 +109,7 @@ void __cdecl CMansionPuzzleCircle::shiftPanelLeft(CMansionPuzzleCircle *this_ptr
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40
 // Address: 0050ad40
-void __cdecl CMansionPuzzleCircle::shiftPanelRight(CMansionPuzzleCircle *this_ptr);
+void __cdecl CMansionPuzzleCircle::shiftPanelRight(CMansionPuzzleCircle *this_ptr,int panel_index);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_archive_FUN_0050adf0
 // Address: 0050adf0

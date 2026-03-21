@@ -5,6 +5,8 @@
 ;
 ; Parameters:
 ; CLadder *        Stack[0x4]:4   this_ptr
+; undefined4       Stack[0x8]:4   local_res8
+; undefined4       Stack[0x10]:4   local_res10
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00630e80 = 4

@@ -2,20 +2,18 @@
 // Address: 0050ad40
 // Address Range: [[0050ad40, 0050adee]]
 // Convention: __cdecl
-// Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(CMansionPuzzleCircle *this_ptr)
+// Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(CMansionPuzzleCircle *this_ptr,int panel_index)
 
 #include "nocturne.h"
 
-void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(CMansionPuzzleCircle *this_ptr)
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(CMansionPuzzleCircle *this_ptr,int panel_index)
 
 {
   SPanel *pSVar1;
   int iVar2;
-  int in_stack_00000008;
   
-  pSVar1 = this_ptr->panels + in_stack_00000008;
-  iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_0050aee0
-                    (this_ptr,in_stack_00000008);
+  pSVar1 = this_ptr->panels + panel_index;
+  iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_0050aee0(this_ptr,panel_index);
   if ((((pSVar1->exists == 0) || (this_ptr->panels[iVar2].exists != 0)) ||
       (ABS(pSVar1->anim_progress) != 0.0)) || (ABS(pSVar1->anim_speed) != 0.0)) {
     g_CurrentFilename = "..\\core\\manpuz.cpp";

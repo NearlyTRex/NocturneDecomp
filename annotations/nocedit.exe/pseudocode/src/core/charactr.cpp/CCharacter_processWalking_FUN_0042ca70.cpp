@@ -9,6 +9,7 @@
 int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter *this_ptr,float delta_time)
 
 {
+  CLocation *this_ptr_00;
   float fVar1;
   CDemonActor *pCVar6;
   CPathMap *path_map;
@@ -55,6 +56,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter 
     }
     return 1;
   }
+  this_ptr_00 = &(this_ptr->base).location;
   if (this_ptr->door_target == (CDoor *)0x0) {
     actor_ptr = (CWayPoint *)this_ptr->walk_to_target;
     if (((0.0 <= this_ptr->walk_min_distance) &&
@@ -63,8 +65,7 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter 
                             ((CDemonActor *)actor_ptr,g_CWayPointClassInfo.name_hash),
         pCVar4 != (CWayPoint *)0x0)) &&
        (actor_ptr = core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_005ec320
-                              ((CWayPoint *)&(this_ptr->base).location,pCVar4),
-       actor_ptr == (CWayPoint *)0x0)) {
+                              ((CWayPoint *)this_ptr_00,pCVar4), actor_ptr == (CWayPoint *)0x0)) {
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"%s can't figure out next waypoint trying to reach %s\n",this_ptr,this_ptr->walk_to_target
                 );
@@ -75,7 +76,8 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter 
                this_ptr->walk_max_distance,&this_ptr->is_walking);
     return 1;
   }
-  core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(this_ptr->door_target);
+  core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20
+            (this_ptr->door_target,&local_3c,&this_ptr->look_offset,&this_ptr_00->position);
   fVar7 = 0.0;
   fVar6 = 0.0;
   direction = &g_ZeroVector;

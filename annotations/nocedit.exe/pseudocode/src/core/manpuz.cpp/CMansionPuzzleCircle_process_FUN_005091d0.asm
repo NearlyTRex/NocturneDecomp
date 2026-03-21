@@ -45,7 +45,7 @@ section .text
     PUSH ESI                            ; 005091f5
     PUSH EBX                            ; 005091f6
     CALL core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290 ; 005091f7
-        ;   XREF to: 0050a290 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMansionPuzzleCircle * this_ptr)
+        ;   XREF to: 0050a290 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMansionPuzzleCircle * this_ptr, int panel_index, float delta_time)
     INC ESI                             ; 005091fc
     ADD ESP,0xc                         ; 005091fd
     CMP ESI,0xc                         ; 00509200

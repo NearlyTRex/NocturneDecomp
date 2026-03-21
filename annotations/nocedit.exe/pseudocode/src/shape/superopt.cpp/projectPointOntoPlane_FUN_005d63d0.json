@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 121,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 45,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "unaffected_reg"
+      "param_count_too_many",
+      "pointer_cast"
     ],
-    "total_lines": 128
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -36,10 +36,10 @@
         "005d6492"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack3_esi",
     "is_ebp_frame": true,
     "name": "shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0",
-    "signature": "CVector3d * __cdecl shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0(CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal)"
+    "signature": "CVector3d * __stack3_esi shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0(CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal,CVector3d *out_point)"
   },
   "function_calls": [
     {
@@ -65,7 +65,7 @@
       }
     ],
     "confidence": "medium",
-    "declared_params": 3,
+    "declared_params": 4,
     "declared_stack_bytes": 12,
     "estimated_params": 3
   },
@@ -189,52 +189,39 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "CVector3d *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 33,
       "match": "SQRT",
       "severity": "mild",
-      "text": "dVar4 = local_18 / SQRT(dVar3 * dVar3 + dVar1 * dVar1 + dVar2 * dVar2);",
+      "text": "dVar3 = local_18 / SQRT(dVar4 * dVar4 + dVar1 * dVar1 + dVar2 * dVar2);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 40,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "pCVar6 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(CVector3d *)((int)",
-      "severity": "mild",
-      "text": "pCVar6 = (CVector3d *)((int)pCVar6 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
+      "line": 44,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar5 = (double *)((int)pdVar5 + (uint)bVar7 * -8 + 4);",
+      "text": "pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(CVector3d *)((int)",
+      "severity": "mild",
+      "text": "pCVar7 = (CVector3d *)((int)pCVar7 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 4,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 3,
+      "fix_type": "remove_params",
+      "match": "declared:4 vs estimated:3",
+      "param_delta": -1,
+      "text": "Function declares 4 params but call sites push 3 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

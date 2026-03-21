@@ -115,7 +115,7 @@ LAB_0050a7a0:
     iVar3 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_0050aee0(this_ptr,gem_index);
     iVar3 = core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040(this_ptr,iVar3);
     if (iVar3 == 0) {
-      core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(this_ptr);
+      core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(this_ptr,gem_index);
       return;
     }
   }

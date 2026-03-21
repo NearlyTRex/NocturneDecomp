@@ -116,8 +116,8 @@ int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_
 int __cdecl shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d *point_a,CVector2d *point_b,CVector2d *point_c,CVector2d *point_d);
 int __cdecl shape_superopt_cpp_segmentIntersectsPolygon2D_FUN_005d5de0(CVector2d *polyVerts,uint vertCount,CVector2d *segStart,CVector2d *segEnd, CVector2d *segStart2);
 int __cdecl shape_superopt_cpp_pointInPolygon2D_FUN_005d5e60(CVector2d *vertices,uint vertex_count,CVector2d *test_point);
-CVector2d * __cdecl shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point);
-CVector3d * __cdecl shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0(CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal);
+CVector2d * __stack3_esi shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020 (CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point, CVector2d *out_point);
+CVector3d * __stack3_esi shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0 (CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal,CVector3d *out_point);
 double __cdecl shape_superopt_cpp_distancePointToSegmentXY_FUN_005d64a0(CVector3d *segStart,CVector3d *segEnd,CVector3d *point);
 double __cdecl shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500(CVector3d *ray_origin,CVector3d *ray_dir,CVector3d *plane_point, CVector3d *plane_normal);
 double __cdecl shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d *p1,CVector2d *p2,CVector2d *p3);

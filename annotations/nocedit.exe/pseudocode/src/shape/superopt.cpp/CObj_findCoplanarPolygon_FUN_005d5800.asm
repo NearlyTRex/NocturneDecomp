@@ -248,7 +248,7 @@ section .text
     LEA ESI,[ESP + 0x2c]                ; 005d59f1
     LEA EDI,[ESP + 0x14]                ; 005d59f5
     CALL shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 ; 005d59f9
-        ;   XREF to: 005d63d0 (UNCONDITIONAL_CALL)  ; CVector3d * shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0(CVector3d * point, CVector3d * plane_point, CVector3d * plane_normal)
+        ;   XREF to: 005d63d0 (UNCONDITIONAL_CALL)  ; CVector3d * shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0(CVector3d * point, CVector3d * plane_point, CVector3d * plane_normal, CVector3d * out_point)
     MOV ECX,0x6                         ; 005d59fe
     LEA ESI,[ESP + 0x2c]                ; 005d5a03
     ADD ESP,0xc                         ; 005d5a07

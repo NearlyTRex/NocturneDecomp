@@ -38,7 +38,7 @@ void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron *th
     if (this_ptr_00 != (CCharacter *)0x0) {
       EVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
       if (EVar4 == DEATH_STATE_DEAD) {
-        core_baron_cpp_CBaron_releaseTarget_FUN_004135a0(this_ptr,this_ptr->target_actor);
+        core_baron_cpp_CBaron_detachFromOwner_FUN_004135a0(this_ptr,this_ptr->target_actor);
         return;
       }
     }

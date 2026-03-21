@@ -15,13 +15,13 @@ SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 6953
 Functions with no callers: 3246
-Parameter mismatches detected: 135
-Signature accuracy rate: 96.4%
+Parameter mismatches detected: 131
+Signature accuracy rate: 96.5%
 
 Mismatches by confidence:
   High confidence:   2 (multiple call sites agree)
   Medium confidence: 33 (some agreement)
-  Low confidence:    100 (limited data)
+  Low confidence:    96 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -89,7 +89,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  100 functions with low-confidence mismatches
+  96 functions with low-confidence mismatches
   Sample:
     cockpit_ckptutil.c_isLineClippingDisabled_FUN declared:0 est:4 (+4)
     crt_io.c_CheckFileHandleAvailability_FUN_0060 declared:0 est:4 (+4)
@@ -109,7 +109,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 13
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 122
+Functions where declaration has FEWER params than estimated: 118
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -118,9 +118,9 @@ Distribution of differences (estimated - declared):
   -3 params: 1 functions
   -2 params: 1 functions
   -1 params: 9 functions
-  +1 params: 53 functions
-  +2 params: 24 functions
-  +3 params: 17 functions
+  +1 params: 51 functions
+  +2 params: 23 functions
+  +3 params: 16 functions
   +4 params: 15 functions
   +5 params: 4 functions
   +6 params: 2 functions

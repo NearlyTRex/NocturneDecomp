@@ -58,7 +58,7 @@ CDemonImage * __cdecl core_dimage_cpp_CDemonImage_dtor_FUN_004719c0(CDemonImage 
 void __cdecl core_dimage_cpp_CDemonImage_allocMemory_FUN_004719e0(CDemonImage *this_ptr);
 void __cdecl core_dimage_cpp_CDemonImage_freeMemory_FUN_00471a40(CDemonImage *this_ptr);
 ushort __cdecl core_dimage_cpp_CDemonImage_packColor_FUN_00471a70(CDemonImage *this_ptr,uint red,uint green,uint blue);
-void __cdecl core_dimage_cpp_CDemonImage_load_FUN_00471ad0(CDemonImage *this_ptr,char *filename);
+void __cdecl core_dimage_cpp_CDemonImage_load_FUN_00471ad0(CDemonImage *this_ptr,char *filename,int width,int height);
 void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
 void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_00471e10(CMatrix3x3f *this_ptr);
 CVector3f * __cdecl core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f *this_ptr,CVector3f *output,CVector3f *input);

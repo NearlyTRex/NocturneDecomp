@@ -509,11 +509,11 @@ int __cdecl pointInPolygon2D(CVector2d *vertices,uint vertex_count,CVector2d *te
 
 // Original: shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020
 // Address: 005d6020
-CVector2d * __cdecl closestPointOnSegment3D(CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point);
+CVector2d * __stack3_esi closestPointOnSegment3D(CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point,CVector2d *out_point);
 
 // Original: shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 // Address: 005d63d0
-CVector3d * __cdecl projectPointOntoPlane(CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal);
+CVector3d * __stack3_esi projectPointOntoPlane(CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal,CVector3d *out_point);
 
 // Original: shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0
 // Address: 005d64a0

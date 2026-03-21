@@ -16,7 +16,7 @@
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0 at 0054bcf7
 ;   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 at 0040ad90
 ;   core_actor.cpp_copyToActorDebugBuffer_FUN_0040ac30 at 0040ac3e
-;   core_baron.cpp_CBaron_engageTarget_FUN_00413470 at 00413548
+;   core_baron.cpp_CBaron_attachToOwner_FUN_00413470 at 00413548
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_0041af90 at 0041b018
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 at 0041a3fe
 ;   ... and 128 more

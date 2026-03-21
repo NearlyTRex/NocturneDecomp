@@ -50,13 +50,9 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
       Suspects: decompiler_intrinsic, sub84_truncation, decompiler_intrinsic, sub84_truncation, decompiler_intrinsic, sub84_truncation, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
 
-  core/filmreel.cpp (1 remaining of 28)
-    - core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40
-      Suspects: stack_param, stack_param, stack_param, stack_param
-
-  core/dimage.cpp (1 remaining of 6)
-    - core_dimage.cpp_CDemonImage_load_FUN_00471ad0
-      Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param
+  core/door.cpp (1 remaining of 28)
+    - core_door.cpp_CDoor_process_FUN_004800c0
+      Suspects: pointer_cast, unresolved_funcptr, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
 
   core/bat.cpp (1 remaining of 19)
     - core_bat.cpp_CBat_getBoundingBox_FUN_00414c60
@@ -177,12 +173,6 @@ PRIORITY 1: Files with 1-2 functions remaining
       Suspects: warning_type_propagation
     - core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
       Suspects: warning_inlined_function, warning_type_propagation, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
-
-  core/door.cpp (2 remaining of 28)
-    - core_door.cpp_CDoor_process_FUN_004800c0
-      Suspects: pointer_cast, unresolved_funcptr, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
-    - core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20
-      Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, param_count_too_few
 
   core/vehicle.cpp (2 remaining of 20)
     - core_vehicle.cpp_CVehicle_process_FUN_005e7e80
@@ -533,10 +523,10 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0 (38 lines)
         Types: ['pointer_cast']
 
-  core/filmreel.cpp (96.4% complete)
+  core/door.cpp (96.4% complete)
     1 functions remaining:
-      core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40 (52 lines)
-        Types: ['stack_param']
+      core_door.cpp_CDoor_process_FUN_004800c0 (194 lines)
+        Types: ['decompiler_intrinsic', 'pointer_cast', 'unresolved_funcptr']
 
   core/weapon.cpp (96.3% complete)
     1 functions remaining:
@@ -597,6 +587,17 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0 (24 lines)
         Types: ['decompiler_intrinsic', 'pointer_cast']
 
+  core/manpuz.cpp (93.7% complete)
+    4 functions remaining:
+      core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330 (123 lines)
+        Types: ['pointer_cast']
+      core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70 (247 lines)
+        Types: ['decompiler_intrinsic', 'pointer_cast']
+      core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50 (102 lines)
+        Types: ['decompiler_intrinsic', 'warning_inlined_function']
+      core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 (56 lines)
+        Types: ['pointer_cast']
+
   core/boxactor.cpp (93.5% complete)
     3 functions remaining:
       core_boxactor.cpp_CLightActor_process_FUN_00422a50 (82 lines)
@@ -621,13 +622,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_trash.cpp_CTrash_process_FUN_005decf0 (272 lines)
         Types: ['decompiler_intrinsic', 'pointer_cast']
 
-  core/door.cpp (92.9% complete)
-    2 functions remaining:
-      core_door.cpp_CDoor_process_FUN_004800c0 (194 lines)
-        Types: ['decompiler_intrinsic', 'pointer_cast', 'unresolved_funcptr']
-      core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20 (91 lines)
-        Types: ['param_count_too_few', 'stack_param']
-
   core/hotdemon.cpp (92.9% complete)
     1 functions remaining:
       core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20 (315 lines)
@@ -650,7 +644,7 @@ PRIORITY 3: Files at 90%+ (finish them off!)
 
   core/larva.cpp (92.3% complete)
     1 functions remaining:
-      core_larva.cpp_CLarva_process_FUN_00503080 (342 lines)
+      core_larva.cpp_CLarva_process_FUN_00503080 (333 lines)
         Types: ['decompiler_intrinsic', 'stack_param', 'stack_ref', 'unknown_type', 'warning_inlined_function', 'warning_unreachable']
 
   core/dest.cpp (92.3% complete)
@@ -721,21 +715,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (364 lines)
         Types: ['decompiler_intrinsic', 'warning_inlined_function']
 
-  core/manpuz.cpp (90.5% complete)
-    6 functions remaining:
-      core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40 (21 lines)
-        Types: ['decompiler_intrinsic', 'param_count_too_few', 'stack_param']
-      core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330 (123 lines)
-        Types: ['pointer_cast']
-      core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290 (70 lines)
-        Types: ['param_count_too_few', 'stack_param']
-      core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70 (247 lines)
-        Types: ['decompiler_intrinsic', 'pointer_cast']
-      core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50 (102 lines)
-        Types: ['decompiler_intrinsic', 'warning_inlined_function']
-      core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 (56 lines)
-        Types: ['pointer_cast']
-
   core/mission.cpp (90.2% complete)
     4 functions remaining:
       core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (101 lines)
@@ -799,11 +778,13 @@ ALL REMAINING FILES
   engine/texture.cpp                                            86.4%  (19/22 clean, 3 remaining)
   core/flies.cpp                                                86.4%  (19/22 clean, 3 remaining)
   core/werewolf.cpp                                             85.7%  (18/21 clean, 3 remaining)
+  core/baron.cpp                                                85.3%  (29/34 clean, 5 remaining)
   support/codec.cpp                                             85.0%  (34/40 clean, 6 remaining)
   core/tvbat.cpp                                                85.0%  (17/20 clean, 3 remaining)
   core/motion.cpp                                               84.8%  (28/33 clean, 5 remaining)
   core/bodypart.cpp                                             84.4%  (38/45 clean, 7 remaining)
   core/dfilter.cpp                                              84.2%  (16/19 clean, 3 remaining)
+  core/ladder.cpp                                               84.2%  (16/19 clean, 3 remaining)
   core/enemy.cpp                                                84.2%  (16/19 clean, 3 remaining)
   core/svetlana.cpp                                             84.2%  (16/19 clean, 3 remaining)
   core/actor.cpp                                                84.2%  (154/183 clean, 29 remaining)
@@ -816,7 +797,6 @@ ALL REMAINING FILES
   core/frankgen.cpp                                             83.3%  (20/24 clean, 4 remaining)
   core/hostage.cpp                                              83.3%  (15/18 clean, 3 remaining)
   engine/pod.cpp                                                82.4%  (28/34 clean, 6 remaining)
-  core/baron.cpp                                                82.4%  (28/34 clean, 6 remaining)
   core/imp.cpp                                                  82.4%  (14/17 clean, 3 remaining)
   core/flame.cpp                                                82.4%  (14/17 clean, 3 remaining)
   core/dtri.cpp                                                 82.1%  (23/28 clean, 5 remaining)
@@ -826,7 +806,6 @@ ALL REMAINING FILES
   core/setutil.cpp                                              80.5%  (33/41 clean, 8 remaining)
   core/sound.cpp                                                80.5%  (33/41 clean, 8 remaining)
   engine/2d.c                                                   80.3%  (61/76 clean, 15 remaining)
-  core/ladder.cpp                                               78.9%  (15/19 clean, 4 remaining)
   cockpit/drawsurf.cpp                                          78.5%  (73/93 clean, 20 remaining)
   core/icepick.cpp                                              78.3%  (18/23 clean, 5 remaining)
   sound/snddx.cpp                                               78.1%  (25/32 clean, 7 remaining)
@@ -849,11 +828,11 @@ ALL REMAINING FILES
   core/netgame.cpp                                              73.4%  (47/64 clean, 17 remaining)
   core/tentacle.cpp                                             73.3%  (11/15 clean, 4 remaining)
   engine/fileio.cpp                                             73.2%  (52/71 clean, 19 remaining)
+  core/bugs.cpp                                                 72.7%  (32/44 clean, 12 remaining)
   core/zombie.cpp                                               71.9%  (23/32 clean, 9 remaining)
   core/dcube.cpp                                                71.8%  (28/39 clean, 11 remaining)
   core/moon.cpp                                                 71.4%  (10/14 clean, 4 remaining)
   core/stranger.cpp                                             71.4%  (45/63 clean, 18 remaining)
-  core/bugs.cpp                                                 70.5%  (31/44 clean, 13 remaining)
   engine/3d.c                                                   70.2%  (73/104 clean, 31 remaining)
   core/weather.cpp                                              70.0%  (7/10 clean, 3 remaining)
   sound/sndmain.cpp                                             69.4%  (134/193 clean, 59 remaining)

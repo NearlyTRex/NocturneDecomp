@@ -179,7 +179,7 @@ CFilmProjector * __cdecl core_filmreel_cpp_factoryFunc_FUN_004bea00(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmProjector_getActorType_FUN_004bea30(CFilmProjector *this_ptr);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_004bea40(CFilmProjector *this_ptr);
 void __cdecl core_filmreel_cpp_CFilmProjector_setup_FUN_004beb00(CFilmProjector *this_ptr);
-void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40(CFilmProjector *this_ptr);
+void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_004beb40(CFilmProjector *this_ptr,float delta_time);
 CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004becd0(CFilmProjector *this_ptr,CBoundingBox3D *out_box);
 int __cdecl core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004bed00(CFilmProjector *this_ptr);
 void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004bede0(CFilmProjector *this_ptr);

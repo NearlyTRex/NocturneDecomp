@@ -312,7 +312,7 @@ section .text
     PUSH EDI                            ; 0050a8a1
     PUSH ESI                            ; 0050a8a2
     CALL core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40 ; 0050a8a3
-        ;   XREF to: 0050ad40 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(CMansionPuzzleCircle * this_ptr)
+        ;   XREF to: 0050ad40 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(CMansionPuzzleCircle * this_ptr, int panel_index)
     ADD ESP,0x8                         ; 0050a8a8
     ADD ESP,0x2c                        ; 0050a8ab
     POP EBP                             ; 0050a8ae

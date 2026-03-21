@@ -8013,7 +8013,7 @@
           "type":"CBugs*"
         },
         {
-          "name":"edge_count",
+          "name":"tri_count",
           "storage":{
             "offset":8,
             "size":4,
@@ -8027,6 +8027,22 @@
             ]
           },
           "type":"int"
+        },
+        {
+          "name":"triangles",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"SInputFace*"
         }
       ]
     }

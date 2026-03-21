@@ -19,19 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 202,
+    "complexity_score": 203,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 107,
+    "pseudocode_lines": 108,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 345
+    "total_lines": 346
   },
   "cross_references": [
     {
@@ -227,7 +227,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 61,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_BugsSortedVertexIndices + iVar9) = iVar6;",
@@ -235,7 +235,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 70,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)(*(int *)((int)g_BugsSortedVertexIndices + iVar11 + 4) * 0xc + 4 + iVar2)",
@@ -243,7 +243,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 71,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "< *(int *)(*(int *)((int)g_BugsSortedVertexIndices + iVar11) * 0xc + 4 + iVar2)) {",
@@ -251,7 +251,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 72,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar8 = (uint *)((int)g_BugsSortedVertexIndices + iVar11 + 4);",
@@ -259,7 +259,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 73,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar2 = *(uint *)((int)g_BugsSortedVertexIndices + iVar11);",
@@ -267,7 +267,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 74,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_BugsSortedVertexIndices + iVar11) = *puVar8;",
@@ -275,7 +275,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 92,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "(0,(int)(CONCAT44(this_ptr->swarm_vertex_count >> 0x1f,",

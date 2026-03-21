@@ -14,16 +14,21 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,484
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        267 ( 4.1%)
+  Functions with type issues:        233 ( 3.6%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
-    Wrong calling convention:          7
-    Undefined types in variables:      228
-    Unresolved stack params:           43
+    Wrong calling convention:          5
+    Undefined types in variables:      221
+    Unresolved stack params:           14
+
+  Excluded (.keep / MMX / by-value):   26 functions
+    Wrong calling convention:          0
+    Undefined types in variables:      8
+    Unresolved stack params:           21
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -64,7 +69,7 @@ Missing register parameters (likely wrong calling convention) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (7)
+Wrong calling convention (unaffected register usage) (5)
 --------------------------------------------------------------------------------
 
   CDemonSet_showScenePreview
@@ -97,56 +102,14 @@ Wrong calling convention (unaffected register usage) (7)
     Signature: int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,int width,int height ,uint bit_depth,int line_number,int show_progress)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  closestPointOnSegment3D
-    Address: 0x005d6020  File: shape/superopt.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: CVector2d * __cdecl shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  projectPointOntoPlane
-    Address: 0x005d63d0  File: shape/superopt.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: CVector3d * __cdecl shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0(CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (43)
+Unresolved stack parameters (missing from signature) (14)
 --------------------------------------------------------------------------------
 
   CWinFont_setColorAndDrawText
     Address: 0x005f2440  File: engine/winfont.cpp
     Evidence: in_stack_0000002c, in_stack_0000002c
     Signature: void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,char *text_string,int x_position,int y_position,int foreground_color,int background_color)
-    Suggested: Signature is missing stack parameters entirely
-
-  drawLineStrip3D
-    Address: 0x00404600  File: engine/3d.c
-    Evidence: in_stack_ffffff30, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff30
-    Signature: void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
-    Suggested: Signature is missing stack parameters entirely
-
-  drawLine2DFromIndices
-    Address: 0x00407cf0  File: engine/3d.c
-    Evidence: in_stack_ffffff38, in_stack_ffffff68, in_stack_ffffff38, in_stack_ffffff68
-    Signature: void __cdecl engine_3d_c_drawLine2DFromIndices_FUN_00407cf0(int vertex_index1,int vertex_index2)
-    Suggested: Signature is missing stack parameters entirely
-
-  drawLineStrip2D
-    Address: 0x00404570  File: engine/3d.c
-    Evidence: in_stack_ffffff30, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff30
-    Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404570(SLineStrip *line_strip)
-    Suggested: Signature is missing stack parameters entirely
-
-  drawLine3DFromIndices
-    Address: 0x00407ff0  File: engine/3d.c
-    Evidence: in_stack_ffffff38, in_stack_ffffff68, in_stack_ffffff38, in_stack_ffffff68
-    Signature: void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407ff0(int vertex_index1,int vertex_index2)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMP3Decoder_decodeFrame
-    Address: 0x00534d40  File: sound/mp3.cpp
-    Evidence: in_stack_ffff9f14, in_stack_ffff9f18, in_stack_ffff9f18, in_stack_ffff9f14, in_stack_ffff9f18, in_stack_ffff9f14
-    Signature: int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this_ptr,short *pcm_output)
     Suggested: Signature is missing stack parameters entirely
 
   CWavInDevice_setMode
@@ -161,12 +124,6 @@ Unresolved stack parameters (missing from signature) (43)
     Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)
     Suggested: Signature is missing stack parameters entirely
 
-  pollAndMixSfx
-    Address: 0x005aca90  File: sound/sndmain.cpp
-    Evidence: in_stack_ffffff68, in_stack_ffffff7c, in_stack_ffffff80, in_stack_ffffff84, in_stack_ffffff84, in_stack_ffffff7c, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff80, in_stack_ffffff84, in_stack_ffffff84, in_stack_ffffff80, in_stack_ffffff7c, in_stack_ffffff80, in_stack_ffffff84
-    Signature: void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90(LPVOID *channel_buffers,int bits_per_sample,int num_channels,int samples_per_sec,int samples_per_block,int block_align)
-    Suggested: Signature is missing stack parameters entirely
-
   nextMixingBuffer
     Address: 0x005a59c0  File: sound/sndmain.cpp
     Evidence: in_stack_ffffff94, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94
@@ -179,82 +136,10 @@ Unresolved stack parameters (missing from signature) (43)
     Signature: void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CBugs_initializeSwarmGraph
-    Address: 0x00425660  File: core/bugs.cpp
-    Evidence: in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl core_bugs_cpp_CBugs_initializeSwarmGraph_FUN_00425660(CBugs *this_ptr,int edge_count)
-    Suggested: Signature is missing stack parameters entirely
-
-  CBaronWeapon_setWeaponState
-    Address: 0x00413e90  File: core/baron.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00413e90(CBaronWeapon *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDoor_getOpenStandPos
-    Address: 0x00480e20  File: core/door.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000010, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CFilmProjector_archive
-    Address: 0x004beb40  File: core/filmreel.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004beb40(CFilmProjector *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle_shiftPanelRight
-    Address: 0x0050ad40  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CMansionPuzzleCircle_processPanel
-    Address: 0x0050a290  File: core/manpuz.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_00000008
-    Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_0050a290(CMansionPuzzleCircle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonImage_load
-    Address: 0x00471ad0  File: core/dimage.cpp
-    Evidence: in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000010, in_stack_0000000c, in_stack_00000010
-    Signature: void __cdecl core_dimage_cpp_CDemonImage_load_FUN_00471ad0(CDemonImage *this_ptr,char *filename)
-    Suggested: Signature is missing stack parameters entirely
-
-  drawCameraFrustum
-    Address: 0x00582930  File: core/setedit.cpp
-    Evidence: in_stack_ffffff24, in_stack_ffffff54, in_stack_ffffff74, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24
-    Signature: void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3d_lines)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonSet_showVdirBoxEditor
-    Address: 0x00583170  File: core/setedit.cpp
-    Evidence: in_stack_fffffd34, in_stack_fffffd64, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffd7c, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc
-    Signature: void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CDemonActor_processMeleeHit
     Address: 0x0040a210  File: core/actor.cpp
     Evidence: in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70
     Signature: int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,int hit_type)
-    Suggested: Signature is missing stack parameters entirely
-
-  draw3DLineSegment
-    Address: 0x0040d330  File: core/actor.cpp
-    Evidence: in_stack_ffffff4c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff4c
-    Signature: void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonActor_renderBoundingBox
-    Address: 0x0040d940  File: core/actor.cpp
-    Evidence: in_stack_0000000c, in_stack_00000010, in_stack_fffffe5c, in_stack_fffffe8c, in_stack_00000010, in_stack_fffffe8c, in_stack_fffffe8c, in_stack_fffffe5c, in_stack_fffffe8c, in_stack_fffffe8c, in_stack_fffffe5c, in_stack_fffffe8c, in_stack_fffffe8c, in_stack_fffffe5c, in_stack_0000000c
-    Signature: void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,uint32_t color)
-    Suggested: Signature is missing stack parameters entirely
-
-  drawBoundingBox
-    Address: 0x0040d470  File: core/actor.cpp
-    Evidence: in_stack_fffffe70, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffe70, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffe70, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffe70
-    Signature: void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,int line_color)
     Suggested: Signature is missing stack parameters entirely
 
   CWerewolf_process
@@ -293,40 +178,10 @@ Unresolved stack parameters (missing from signature) (43)
     Signature: void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
-  CLadder_renderOpaque
-    Address: 0x00502620  File: core/ladder.cpp
-    Evidence: in_stack_ffffff28, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff28, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff28, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff28
-    Signature: int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CLadder_processInEditor
-    Address: 0x00502d00  File: core/ladder.cpp
-    Evidence: in_stack_00000008, in_stack_00000010, in_stack_00000008, in_stack_00000010
-    Signature: void __cdecl core_ladder_cpp_CLadder_processInEditor_FUN_00502d00(CLadder *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDeformableModel_renderSkeleton
-    Address: 0x0059b640  File: core/skeleton.cpp
-    Evidence: in_stack_ffffff54, in_stack_ffffff84, in_stack_ffffffa4, in_stack_ffffffa8, in_stack_ffffffa8, in_stack_ffffffa4, in_stack_ffffff84, in_stack_ffffff84, in_stack_ffffff84, in_stack_ffffffa8, in_stack_ffffff54
-    Signature: void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDeformableModel *this_ptr,int color,CMatrix3x4f *bone_matrices,int render_flags)
-    Suggested: Signature is missing stack parameters entirely
-
   CCharacter_updateCarriedObjects
     Address: 0x0042d090  File: core/charactr.cpp
     Evidence: in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80
     Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStairs_renderOpaque
-    Address: 0x005b9c10  File: core/stairs.cpp
-    Evidence: in_stack_0000000c, in_stack_fffffeb8, in_stack_fffffee8, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CCourse_preview
-    Address: 0x00443bc0  File: core/course.cpp
-    Evidence: in_stack_fffffe70, in_stack_fffffe8c, in_stack_fffffe90, in_stack_fffffe94, in_stack_fffffe98, in_stack_fffffea0, in_stack_fffffea8, in_stack_fffffeb0, in_stack_fffffeb8, in_stack_fffffe8c, in_stack_fffffe70, in_stack_fffffe70, in_stack_fffffe90, in_stack_fffffe94, in_stack_fffffe98, in_stack_fffffea8, in_stack_fffffea0, in_stack_fffffeb0, in_stack_fffffeb8, in_stack_fffffeb0, in_stack_fffffea8, in_stack_fffffea0, in_stack_fffffe98, in_stack_fffffe94, in_stack_fffffe90, in_stack_fffffe8c, in_stack_fffffe90, in_stack_fffffeb8, in_stack_fffffeb8
-    Signature: void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *model_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   dampControlAxis
@@ -335,44 +190,8 @@ Unresolved stack parameters (missing from signature) (43)
     Signature: void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(float *axis_value,float damp_time,float damp_rate)
     Suggested: Signature is missing stack parameters entirely
 
-  CLodMesh_renderWireframe
-    Address: 0x0051e770  File: shape/meshlod.cpp
-    Evidence: in_stack_ffffff84, in_stack_ffffffb4, in_stack_ffffff84, in_stack_ffffffb4
-    Signature: void __cdecl shape_meshlod_cpp_CLodMesh_renderWireframe_FUN_0051e770(CLodMesh *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CLodMesh_renderColorCodedEdges
-    Address: 0x0051e830  File: shape/meshlod.cpp
-    Evidence: in_stack_ffffffdc, in_stack_ffffffe0, in_stack_ffffffe4, in_stack_ffffff88, in_stack_ffffffb8, in_stack_ffffffd8, in_stack_ffffffe4, in_stack_ffffffe0, in_stack_ffffffdc, in_stack_ffffffd8, in_stack_ffffffdc, in_stack_ffffffe0, in_stack_ffffffe4, in_stack_ffffffd8, in_stack_ffffffb8, in_stack_ffffffb8, in_stack_ffffffb8, in_stack_ffffffdc, in_stack_ffffffe0, in_stack_ffffffe4, in_stack_ffffff88
-    Signature: void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodMesh *this_ptr,int backface_culling_enabled)
-    Suggested: Signature is missing stack parameters entirely
-
-  renderPolygonWireframe
-    Address: 0x0045d300  File: shape/design.c
-    Evidence: in_stack_fffffef8, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_fffffef8, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_fffffef8
-    Signature: void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimitive *polygon_data)
-    Suggested: Signature is missing stack parameters entirely
-
-  CEditorTools_draw3DAxisLabels
-    Address: 0x004a1ca0  File: shape/edittool.cpp
-    Evidence: in_stack_ffffff6c, in_stack_ffffff9c, in_stack_ffffffb0, in_stack_ffffffb4, in_stack_ffffffb8, in_stack_ffffffb0, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffffb4, in_stack_ffffffb8, in_stack_ffffff6c, in_stack_ffffffb0, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffffb4, in_stack_ffffffb8, in_stack_ffffff6c, in_stack_ffffffb0, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffffb4, in_stack_ffffffb8, in_stack_ffffff6c
-    Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEditorTools *this_ptr,float scale_factor,int text_color)
-    Suggested: Signature is missing stack parameters entirely
-
-  draw3DInterpolatedLine
-    Address: 0x004a1f40  File: shape/edittool.cpp
-    Evidence: in_stack_ffffff64, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff64
-    Signature: void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f *start_point,CVector3f *end_point)
-    Suggested: Signature is missing stack parameters entirely
-
-  CEditorTools_draw3DWireframeCube
-    Address: 0x004a2050  File: shape/edittool.cpp
-    Evidence: in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90
-    Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)
-    Suggested: Signature is missing stack parameters entirely
-
 --------------------------------------------------------------------------------
-Undefined types in variables (228)
+Undefined types in variables (221)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -388,11 +207,6 @@ Undefined types in variables (228)
   CGhoul_process
     Address: 0x004e6600  File: core/ghoul.cpp
     Locals:  local_380 (undefined4), local_37c (undefined4), local_378 (undefined1), local_314 (undefined1), local_310 (undefined4), local_2e0 (undefined4), local_2dc (undefined4), local_2d8 (undefined1), local_2d4 (undefined4), local_2a4 (undefined4), local_2a0 (undefined4), local_29c (undefined1), local_298 (undefined4), local_280 (undefined4), local_27c (undefined4), local_278 (undefined4), local_268 (undefined4), local_264 (undefined4), local_260 (undefined1), local_25f (undefined1), local_240 (undefined1), local_23c (undefined4), local_230 (undefined4), local_228 (undefined1), local_21c (undefined1), local_210 (undefined1), local_204 (undefined4), local_200 (undefined4), local_1fc (undefined4), local_1f8 (undefined4), local_1f4 (undefined4), local_1f0 (undefined4), local_1ec (undefined1), local_1e0 (undefined1), local_1d4 (undefined1), local_1c8 (undefined4), local_1c4 (undefined4), local_1c0 (undefined4), local_1bc (undefined1), local_1b0 (undefined1), local_1a4 (undefined1), local_198 (undefined1), local_18c (undefined4), local_188 (undefined4), local_184 (undefined4), local_180 (undefined4), local_17c (undefined4), local_178 (undefined4), local_174 (undefined4), local_170 (undefined4), local_16c (undefined4), local_168 (undefined4), local_164 (undefined4), local_160 (undefined4), local_15c (undefined1), local_150 (undefined1), local_144 (undefined1), local_138 (undefined4), local_134 (undefined4), local_130 (undefined4), local_12c (undefined1), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined1), local_108 (undefined1), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined1), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined8), local_ac (undefined8), local_a4 (undefined8), local_9c (undefined8), local_8c (undefined8), local_84 (undefined4), local_7c (undefined4), local_78 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonSet_showVdirBoxEditor
-    Address: 0x00583170  File: core/setedit.cpp
-    Locals:  local_244 (undefined4), local_240 (undefined4), local_23c (undefined4), local_234 (undefined4), local_228 (undefined4), local_224 (undefined4), local_220 (undefined4), local_200 (undefined4), local_1dc (undefined), local_1d0 (undefined4), local_1cc (undefined4), local_1c8 (undefined4), local_1c4 (undefined4), local_1c0 (undefined4), local_1bc (undefined4), local_1b8 (undefined4), local_1b4 (undefined4), local_1b0 (undefined4), local_1ac (undefined4), local_1a8 (undefined4), local_1a4 (undefined4), local_1a0 (undefined4), local_19c (undefined4), local_198 (undefined4), local_194 (undefined), local_188 (undefined4), local_184 (undefined4), local_180 (undefined4), local_17c (undefined), local_170 (undefined4), local_16c (undefined4), local_168 (undefined4), local_164 (undefined4), local_160 (undefined4), local_15c (undefined4), local_158 (undefined4), local_154 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined4), local_144 (undefined4), local_140 (undefined4), local_13c (undefined4), local_138 (undefined4), local_134 (undefined), local_128 (undefined4), local_124 (undefined4), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined4), local_110 (undefined), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_78 (undefined8), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CPoly_intersectPoly
@@ -413,11 +227,6 @@ Undefined types in variables (228)
   CFileManager_managePodFiles
     Address: 0x004b86b0  File: engine/fileio.cpp
     Locals:  local_2338 (undefined), local_2337 (undefined1), local_1b38 (undefined), local_1728 (undefined4), local_1724 (undefined4), local_170c (undefined4), local_1364 (undefined), local_fbc (undefined), local_fbb (undefined1), local_db8 (undefined4), local_db0 (undefined4), local_da8 (undefined), local_da7 (undefined1), local_ba4 (undefined4), local_b9c (undefined4), local_b94 (undefined), local_b93 (undefined1), local_990 (undefined4), local_988 (undefined4), local_980 (undefined), local_78c (undefined), local_598 (undefined), local_597 (undefined1), local_494 (undefined), local_394 (undefined), local_294 (undefined), local_194 (undefined), local_193 (undefined1), local_94 (undefined4), local_84 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined)
-    Suggested: Resolve undefined types to concrete types
-
-  closestPointOnSegment3D
-    Address: 0x005d6020  File: shape/superopt.cpp
-    Locals:  local_168 (undefined4), uStack_164 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined8), local_128 (undefined4[4]), local_118 (undefined4), uStack_114 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), uStack_f4 (undefined4), local_f0 (undefined4), uStack_ec (undefined4), local_e8 (undefined4), uStack_e4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4[6]), local_80 (undefined4[4]), local_70 (undefined4), uStack_6c (undefined4), local_68 (undefined4), uStack_64 (undefined4), local_60 (undefined4), uStack_5c (undefined4), local_58 (undefined4), uStack_54 (undefined4), local_40 (undefined4), uStack_3c (undefined4), local_38 (undefined4), uStack_34 (undefined4), local_30 (undefined4), uStack_2c (undefined4), local_28 (undefined4), uStack_24 (undefined4), local_20 (undefined4), uStack_1c (undefined4), local_18 (undefined4), uStack_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CPathMap_findPathToDestination
@@ -558,11 +367,6 @@ Undefined types in variables (228)
   CPoly_transform
     Address: 0x005ccc30  File: shape/superopt.cpp
     Locals:  local_1a0 (undefined4[4]), local_190 (undefined4), local_18c (undefined4), local_128 (undefined4[4]), local_118 (undefined4), local_114 (undefined4), local_e0 (undefined4[4]), local_d0 (undefined4), local_cc (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  pollAndMixSfx
-    Address: 0x005aca90  File: sound/sndmain.cpp
-    Locals:  local_6c (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CStranger_processFrame
@@ -753,11 +557,6 @@ Undefined types in variables (228)
   CPoly_computeNormal
     Address: 0x005cd7d0  File: shape/superopt.cpp
     Locals:  local_2f0 (undefined4), uStack_2ec (undefined4), local_2e8 (undefined8), local_2d8 (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
-  distancePointToSegmentXY
-    Address: 0x005d64a0  File: shape/superopt.cpp
-    Locals:  auStackY_1824 (undefined4[1524]), local_48 (undefined4), local_38 (undefined4), uStack_34 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   mpegLayer3StereoProcess
@@ -963,11 +762,6 @@ Undefined types in variables (228)
   CSfxSlot_compute
     Address: 0x005a7100  File: sound/sndmain.cpp
     Locals:  local_60 (undefined8), local_38 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  swapBuffers
-    Address: 0x005eda20  File: wincore/wddvmem.cpp
-    Locals:  local_20 (undefined8 *), local_18 (undefined8 *)
     Suggested: Resolve undefined types to concrete types
 
   winMain
@@ -1200,11 +994,6 @@ Undefined types in variables (228)
     Locals:  local_30 (undefined4[3])
     Suggested: Resolve undefined types to concrete types
 
-  CMoon_render
-    Address: 0x00529ed0  File: core/moon.cpp
-    Locals:  local_20 (undefined8 *)
-    Suggested: Resolve undefined types to concrete types
-
   CDemonMission_editGore
     Address: 0x0053e220  File: core/msnedit.cpp
     Locals:  auStack_94 (undefined1[16])
@@ -1308,11 +1097,6 @@ Undefined types in variables (228)
   CSkeleton_getBoneAngleInterpolated
     Address: 0x0059a070  File: core/skeleton.cpp
     Locals:  auStackY_180c (undefined4[1520])
-    Suggested: Resolve undefined types to concrete types
-
-  CStairs_renderOpaque
-    Address: 0x005b9c10  File: core/stairs.cpp
-    Locals:  auStack_60 (undefined1[16])
     Suggested: Resolve undefined types to concrete types
 
   CStranger_aimLeftPistol
@@ -1516,6 +1300,208 @@ Undefined types in variables (228)
     Suggested: Resolve undefined types to concrete types
 
 ====================================================================================================
+EXCLUDED: FUNCTIONS WITH .keep / MMX / BY-VALUE STRUCT OVERRIDES
+====================================================================================================
+
+These functions have known decompiler limitations that are handled by
+manual .keep.cpp files, MMX inline assembly transforms, or by-value struct
+passing patterns. Issues here are expected and not actionable.
+
+--------------------------------------------------------------------------------
+Unresolved stack params - .keep overrides (0)
+--------------------------------------------------------------------------------
+
+  (none)
+
+--------------------------------------------------------------------------------
+Unresolved stack params - MMX functions (0)
+--------------------------------------------------------------------------------
+
+  (none)
+
+--------------------------------------------------------------------------------
+Unresolved stack params - by-value struct passing (21)
+--------------------------------------------------------------------------------
+
+  drawLineStrip3D
+    Address: 0x00404600  File: engine/3d.c
+    Evidence: in_stack_ffffff30, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff30
+    Signature: void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
+    Suggested: Signature is missing stack parameters entirely
+
+  drawLine2DFromIndices
+    Address: 0x00407cf0  File: engine/3d.c
+    Evidence: in_stack_ffffff38, in_stack_ffffff68, in_stack_ffffff38, in_stack_ffffff68
+    Signature: void __cdecl engine_3d_c_drawLine2DFromIndices_FUN_00407cf0(int vertex_index1,int vertex_index2)
+    Suggested: Signature is missing stack parameters entirely
+
+  drawLineStrip2D
+    Address: 0x00404570  File: engine/3d.c
+    Evidence: in_stack_ffffff30, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff60, in_stack_ffffff30
+    Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404570(SLineStrip *line_strip)
+    Suggested: Signature is missing stack parameters entirely
+
+  drawLine3DFromIndices
+    Address: 0x00407ff0  File: engine/3d.c
+    Evidence: in_stack_ffffff38, in_stack_ffffff68, in_stack_ffffff38, in_stack_ffffff68
+    Signature: void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407ff0(int vertex_index1,int vertex_index2)
+    Suggested: Signature is missing stack parameters entirely
+
+  CMP3Decoder_decodeFrame
+    Address: 0x00534d40  File: sound/mp3.cpp
+    Evidence: in_stack_ffff9f14, in_stack_ffff9f18, in_stack_ffff9f18, in_stack_ffff9f14, in_stack_ffff9f18, in_stack_ffff9f14
+    Signature: int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this_ptr,short *pcm_output)
+    Suggested: Signature is missing stack parameters entirely
+
+  pollAndMixSfx
+    Address: 0x005aca90  File: sound/sndmain.cpp
+    Evidence: in_stack_ffffff68, in_stack_ffffff7c, in_stack_ffffff80, in_stack_ffffff84, in_stack_ffffff84, in_stack_ffffff7c, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff68, in_stack_ffffff80, in_stack_ffffff84, in_stack_ffffff84, in_stack_ffffff80, in_stack_ffffff7c, in_stack_ffffff80, in_stack_ffffff84
+    Signature: void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90(LPVOID *channel_buffers,int bits_per_sample,int num_channels,int samples_per_sec,int samples_per_block,int block_align)
+    Suggested: Signature is missing stack parameters entirely
+
+  drawCameraFrustum
+    Address: 0x00582930  File: core/setedit.cpp
+    Evidence: in_stack_ffffff24, in_stack_ffffff54, in_stack_ffffff74, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24
+    Signature: void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3d_lines)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDemonSet_showVdirBoxEditor
+    Address: 0x00583170  File: core/setedit.cpp
+    Evidence: in_stack_fffffd34, in_stack_fffffd64, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffd7c, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd78, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffd78, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd64, in_stack_fffffd7c, in_stack_fffffd80, in_stack_fffffd34, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc
+    Signature: void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
+  draw3DLineSegment
+    Address: 0x0040d330  File: core/actor.cpp
+    Evidence: in_stack_ffffff4c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff4c
+    Signature: void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDemonActor_renderBoundingBox
+    Address: 0x0040d940  File: core/actor.cpp
+    Evidence: in_stack_0000000c, in_stack_00000010, in_stack_fffffe5c, in_stack_fffffe8c, in_stack_00000010, in_stack_fffffe8c, in_stack_fffffe8c, in_stack_fffffe5c, in_stack_fffffe8c, in_stack_fffffe8c, in_stack_fffffe5c, in_stack_fffffe8c, in_stack_fffffe8c, in_stack_fffffe5c, in_stack_0000000c
+    Signature: void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,uint32_t color)
+    Suggested: Signature is missing stack parameters entirely
+
+  drawBoundingBox
+    Address: 0x0040d470  File: core/actor.cpp
+    Evidence: in_stack_fffffe70, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffe70, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffe70, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffe70
+    Signature: void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,int line_color)
+    Suggested: Signature is missing stack parameters entirely
+
+  CLadder_renderOpaque
+    Address: 0x00502620  File: core/ladder.cpp
+    Evidence: in_stack_ffffff28, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff28, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff28, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff28
+    Signature: int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDeformableModel_renderSkeleton
+    Address: 0x0059b640  File: core/skeleton.cpp
+    Evidence: in_stack_ffffff54, in_stack_ffffff84, in_stack_ffffffa4, in_stack_ffffffa8, in_stack_ffffffa8, in_stack_ffffffa4, in_stack_ffffff84, in_stack_ffffff84, in_stack_ffffff84, in_stack_ffffffa8, in_stack_ffffff54
+    Signature: void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDeformableModel *this_ptr,int color,CMatrix3x4f *bone_matrices,int render_flags)
+    Suggested: Signature is missing stack parameters entirely
+
+  CStairs_renderOpaque
+    Address: 0x005b9c10  File: core/stairs.cpp
+    Evidence: in_stack_0000000c, in_stack_fffffeb8, in_stack_fffffee8, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_fffffee8, in_stack_fffffee8, in_stack_fffffeb8, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
+    Signature: int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
+  CCourse_preview
+    Address: 0x00443bc0  File: core/course.cpp
+    Evidence: in_stack_fffffe70, in_stack_fffffe8c, in_stack_fffffe90, in_stack_fffffe94, in_stack_fffffe98, in_stack_fffffea0, in_stack_fffffea8, in_stack_fffffeb0, in_stack_fffffeb8, in_stack_fffffe8c, in_stack_fffffe70, in_stack_fffffe70, in_stack_fffffe90, in_stack_fffffe94, in_stack_fffffe98, in_stack_fffffea8, in_stack_fffffea0, in_stack_fffffeb0, in_stack_fffffeb8, in_stack_fffffeb0, in_stack_fffffea8, in_stack_fffffea0, in_stack_fffffe98, in_stack_fffffe94, in_stack_fffffe90, in_stack_fffffe8c, in_stack_fffffe90, in_stack_fffffeb8, in_stack_fffffeb8
+    Signature: void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *model_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
+  CLodMesh_renderWireframe
+    Address: 0x0051e770  File: shape/meshlod.cpp
+    Evidence: in_stack_ffffff84, in_stack_ffffffb4, in_stack_ffffff84, in_stack_ffffffb4
+    Signature: void __cdecl shape_meshlod_cpp_CLodMesh_renderWireframe_FUN_0051e770(CLodMesh *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
+  CLodMesh_renderColorCodedEdges
+    Address: 0x0051e830  File: shape/meshlod.cpp
+    Evidence: in_stack_ffffffdc, in_stack_ffffffe0, in_stack_ffffffe4, in_stack_ffffff88, in_stack_ffffffb8, in_stack_ffffffd8, in_stack_ffffffe4, in_stack_ffffffe0, in_stack_ffffffdc, in_stack_ffffffd8, in_stack_ffffffdc, in_stack_ffffffe0, in_stack_ffffffe4, in_stack_ffffffd8, in_stack_ffffffb8, in_stack_ffffffb8, in_stack_ffffffb8, in_stack_ffffffdc, in_stack_ffffffe0, in_stack_ffffffe4, in_stack_ffffff88
+    Signature: void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodMesh *this_ptr,int backface_culling_enabled)
+    Suggested: Signature is missing stack parameters entirely
+
+  renderPolygonWireframe
+    Address: 0x0045d300  File: shape/design.c
+    Evidence: in_stack_fffffef8, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_fffffef8, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_ffffff28, in_stack_fffffef8
+    Signature: void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimitive *polygon_data)
+    Suggested: Signature is missing stack parameters entirely
+
+  CEditorTools_draw3DAxisLabels
+    Address: 0x004a1ca0  File: shape/edittool.cpp
+    Evidence: in_stack_ffffff6c, in_stack_ffffff9c, in_stack_ffffffb0, in_stack_ffffffb4, in_stack_ffffffb8, in_stack_ffffffb0, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffffb4, in_stack_ffffffb8, in_stack_ffffff6c, in_stack_ffffffb0, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffffb4, in_stack_ffffffb8, in_stack_ffffff6c, in_stack_ffffffb0, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffff9c, in_stack_ffffffb4, in_stack_ffffffb8, in_stack_ffffff6c
+    Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEditorTools *this_ptr,float scale_factor,int text_color)
+    Suggested: Signature is missing stack parameters entirely
+
+  draw3DInterpolatedLine
+    Address: 0x004a1f40  File: shape/edittool.cpp
+    Evidence: in_stack_ffffff64, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff64
+    Signature: void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f *start_point,CVector3f *end_point)
+    Suggested: Signature is missing stack parameters entirely
+
+  CEditorTools_draw3DWireframeCube
+    Address: 0x004a2050  File: shape/edittool.cpp
+    Evidence: in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffec0, in_stack_fffffe90
+    Signature: void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools *this_ptr,CVector3f *corner1,CVector3f *corner2,int color_value)
+    Suggested: Signature is missing stack parameters entirely
+
+--------------------------------------------------------------------------------
+Undefined types - .keep overrides (4)
+--------------------------------------------------------------------------------
+
+  closestPointOnSegment3D
+    Address: 0x005d6020  File: shape/superopt.cpp
+    Locals:  local_168 (undefined4), uStack_164 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined8), local_128 (undefined4[4]), local_118 (undefined4), uStack_114 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), uStack_f4 (undefined4), local_f0 (undefined4), uStack_ec (undefined4), local_e8 (undefined4), uStack_e4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4[6]), local_80 (undefined4[4]), local_70 (undefined4), uStack_6c (undefined4), local_68 (undefined4), uStack_64 (undefined4), local_60 (undefined4), uStack_5c (undefined4), local_58 (undefined4), uStack_54 (undefined4), local_40 (undefined4), uStack_3c (undefined4), local_38 (undefined4), uStack_34 (undefined4), local_30 (undefined4), uStack_2c (undefined4), local_28 (undefined4), uStack_24 (undefined4), local_20 (undefined4), uStack_1c (undefined4), local_18 (undefined4), uStack_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  distancePointToSegmentXY
+    Address: 0x005d64a0  File: shape/superopt.cpp
+    Locals:  auStackY_1824 (undefined4[1524]), local_48 (undefined4), local_38 (undefined4), uStack_34 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CLadder_processInEditor
+    Address: 0x00502d00  File: core/ladder.cpp
+    Params:  local_res8 (undefined4), local_res10 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  swapBuffers
+    Address: 0x005eda20  File: wincore/wddvmem.cpp
+    Locals:  local_20 (undefined8 *), local_18 (undefined8 *)
+    Suggested: Resolve undefined types to concrete types
+
+--------------------------------------------------------------------------------
+Undefined types - MMX functions (1)
+--------------------------------------------------------------------------------
+
+  CMoon_render
+    Address: 0x00529ed0  File: core/moon.cpp
+    Locals:  local_20 (undefined8 *)
+    Suggested: Resolve undefined types to concrete types
+
+--------------------------------------------------------------------------------
+Undefined types - by-value struct passing (3)
+--------------------------------------------------------------------------------
+
+  CDemonSet_showVdirBoxEditor
+    Address: 0x00583170  File: core/setedit.cpp
+    Locals:  local_244 (undefined4), local_240 (undefined4), local_23c (undefined4), local_234 (undefined4), local_228 (undefined4), local_224 (undefined4), local_220 (undefined4), local_200 (undefined4), local_1dc (undefined), local_1d0 (undefined4), local_1cc (undefined4), local_1c8 (undefined4), local_1c4 (undefined4), local_1c0 (undefined4), local_1bc (undefined4), local_1b8 (undefined4), local_1b4 (undefined4), local_1b0 (undefined4), local_1ac (undefined4), local_1a8 (undefined4), local_1a4 (undefined4), local_1a0 (undefined4), local_19c (undefined4), local_198 (undefined4), local_194 (undefined), local_188 (undefined4), local_184 (undefined4), local_180 (undefined4), local_17c (undefined), local_170 (undefined4), local_16c (undefined4), local_168 (undefined4), local_164 (undefined4), local_160 (undefined4), local_15c (undefined4), local_158 (undefined4), local_154 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined4), local_144 (undefined4), local_140 (undefined4), local_13c (undefined4), local_138 (undefined4), local_134 (undefined), local_128 (undefined4), local_124 (undefined4), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined4), local_110 (undefined), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_78 (undefined8), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  pollAndMixSfx
+    Address: 0x005aca90  File: sound/sndmain.cpp
+    Locals:  local_6c (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CStairs_renderOpaque
+    Address: 0x005b9c10  File: core/stairs.cpp
+    Locals:  auStack_60 (undefined1[16])
+    Suggested: Resolve undefined types to concrete types
+
+====================================================================================================
 FUNCTION NAME / ADDRESS MISMATCHES (14)
 ====================================================================================================
 
@@ -1565,7 +1551,7 @@ These were likely renamed or moved and the name suffix was not updated.
     FUN_ says: 0x005aaeb0   actual: 0x005b2d60   file: core/sound.cpp
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (73 groups)
+DUPLICATE FUNCTION NAMES (72 groups)
 ====================================================================================================
 
 Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
@@ -1648,10 +1634,6 @@ Some are legitimate overloads, others may need disambiguating names.
   core_dstrender.cpp_blendLightmapToTextureMMX  (2 functions)
     0x00492f03  (uint *output_buffer,ulonglong *texture_buffer,byte *textu...)
     0x00493dc4  (ulonglong *output_buffer,ulonglong *texture_buffer,byte *...)
-
-  core_filmreel.cpp_CFilmProjector_archive  (2 functions)
-    0x004beb40  (CFilmProjector *this_ptr)
-    0x004bede0  (CFilmProjector *this_ptr)
 
   core_filmreel.cpp_factoryFunc  (2 functions)
     0x004be670  (void)
