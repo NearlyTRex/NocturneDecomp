@@ -155,13 +155,4 @@ section .text
     FLD extended double ptr [ECX + 0x68755c] ; 0060c591 | DAT_0068755c
     FADDP                               ; 0060c597
     JMP dword ptr [EDX*0x4 + 0x6874e4]  ; 0060c599 | PTR_FUN_006874e4
-    FLD extended double ptr [ESP]       ; 0060c630
-        ;   Label: LAB_0060c630
-    FLD extended double ptr [ESP + 0xc] ; 0060c633
-    FPATAN                              ; 0060c637
-    ADD ESP,0x24                        ; 0060c639
-    POP EDX                             ; 0060c63c
-    POP ECX                             ; 0060c63d
-    POP EAX                             ; 0060c63e
-    RET                                 ; 0060c63f
 

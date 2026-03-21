@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 96,
     "complexity_score": 71,
-    "cross_reference_count": 2,
+    "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -18,12 +18,6 @@
       "addr": "006072f8",
       "from_addr": "006072a0",
       "name": "crt_time.c_tzset_FUN_006072f8",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "006107f0",
-      "from_addr": "00610878",
-      "name": "crt_unknown.c_FUN_006107f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,7 +42,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 4,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "006072a0",
@@ -65,28 +59,6 @@
         "call_addr": "006072ce",
         "call_type": "direct",
         "caller": "crt_time.c_tzset_FUN_006072f8",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
-        "call_addr": "00610878",
-        "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_006107f0",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
-        "call_addr": "006108ad",
-        "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_006107f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

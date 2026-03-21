@@ -6,9 +6,6 @@
 ; Parameters:
 ; double           Stack[0x4]:8   param1
 ;
-; XREF[1]:
-;   crt_unknown.c_FUN_0060dcf6 at 0060dd29
-;
 ; Called Functions:
 ;   crt_math.c_pentiumFdivpWorkaround_FUN_00606f13
 ;

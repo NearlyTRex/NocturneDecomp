@@ -4,9 +4,6 @@
 ; void crt_unknown_c_FUN_0060a394(void)
 ;
 ;
-; XREF[1]:
-;   crt_unknown.c_staticFinal_FUN_0060a4cc at 0060a552
-;
 ; Referenced Globals:
 ;   TLS_FREE_FUNC* g_TlsFreeFunc = 00212254
 ;   DWORD g_TLSIndex = 0xffffffff

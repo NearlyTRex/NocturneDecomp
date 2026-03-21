@@ -6,9 +6,8 @@
 ; Parameters:
 ; SIZE_T           Stack[0x4]:4   required_bytes
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_io.c_write_FUN_006084ec at 0060866f
-;   crt_stack.c_check_stack_target_FUN_005ffa03 at 005ffa06
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Stack_Overflow_00684b24

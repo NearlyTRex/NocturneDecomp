@@ -289,9 +289,9 @@ extern _MMX_INTEGER g_GreenBlueBits;
 extern _MMX_INTEGER g_BlueBitShift;
 
 // byte
-extern byte BYTE_00684acc;
+extern byte DAT_00684ACC;
 extern byte BYTE_00684acd;
-extern byte BYTE_0068500c;
+extern byte DAT_0068500C;
 extern byte g_WindowsMajorVersion;
 extern byte g_UseSoftwareMath;
 extern byte g_TimezoneInitFlags;
@@ -444,7 +444,7 @@ extern int g_ForceMessagePump;
 extern int g_PreviousActiveState;
 extern int g_CZombieClassVersion;
 extern int g_MaxErrnoValue;
-extern int INT_00684ccc;
+extern int DAT_00684CCC;
 extern int INT_00684cd0;
 extern int INT_00684ed0;
 extern int INT_00684edc;

@@ -4,9 +4,6 @@
 ; void crt_unknown_c_FUN_00609fc8(void)
 ;
 ;
-; XREF[1]:
-;   crt_unknown.c_staticFinal_FUN_0060a4cc at 0060a54d
-;
 ; Referenced Globals:
 ;   DELETE_CRITICAL_SECTION_FUNC* g_DeleteCriticalSectionFunc = 00211caa
 ;   CRITICAL_SECTION[64] g_StaticCriticalSectionArray

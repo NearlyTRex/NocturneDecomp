@@ -363,49 +363,9 @@ double __mathinternal handle::math_error(void);
 // Address: 0060c440
 float10 __fpustack atan2(float10 y,float10 x);
 
-// Original: crt_math.c_atan2_epilogue_FUN_0060c5a0
-// Address: 0060c5a0
-float10 __watcallRegister atan2::epilogue(void);
-
-// Original: crt_math.c_atan2_negate_epilogue_FUN_0060c5ab
-// Address: 0060c5ab
-float10 __watcallRegister atan2::negate_epilogue(void);
-
-// Original: crt_math.c_atan2_pi_minus_epilogue_FUN_0060c5b8
-// Address: 0060c5b8
-float10 __watcallRegister atan2::pi_minus_epilogue(void);
-
-// Original: crt_math.c_atan2_minus_pi_epilogue_FUN_0060c5cb
-// Address: 0060c5cb
-float10 __watcallRegister atan2::minus_pi_epilogue(void);
-
-// Original: crt_math.c_atan2_pi_half_minus_epilogue_FUN_0060c5e0
-// Address: 0060c5e0
-float10 __watcallRegister atan2::pi_half_minus_epilogue(void);
-
-// Original: crt_math.c_atan2_minus_pi_half_epilogue_FUN_0060c5f3
-// Address: 0060c5f3
-float10 __watcallRegister atan2::minus_pi_half_epilogue(void);
-
-// Original: crt_math.c_atan2_pi_half_plus_epilogue_FUN_0060c608
-// Address: 0060c608
-float10 __watcallRegister atan2::pi_half_plus_epilogue(void);
-
-// Original: crt_math.c_atan2_minus_pi_half_minus_epilogue_FUN_0060c61b
-// Address: 0060c61b
-float10 __watcallRegister atan2::minus_pi_half_minus_epilogue(void);
-
 // Original: crt_math.c_udivmod64_FUN_0060d3ed
 // Address: 0060d3ed
 ulonglong __watcallRegister udivmod64(ulonglong dividend,ulonglong divisor);
-
-// Original: crt_math.c_dadd_FUN_0060defc
-// Address: 0060defc
-double __watcallRegister dadd(double a,double b);
-
-// Original: crt_math.c_dmul_FUN_0060e0b9
-// Address: 0060e0b9
-double __watcallRegister dmul(double a,double b);
 
 // Original: crt_math.c_print_error_message_FUN_0060e298
 // Address: 0060e298

@@ -4,7 +4,7 @@
 ; ThreadData * __cdecl crt_thread_c_GetTLS_FUN_0060242c(void)
 ;
 ;
-; XREF[21]:
+; XREF[19]:
 ;   crt_errno.c_SetWindowsError_FUN_006027c8 at 006027c8
 ;   crt_errno.c__errno_FUN_00601450 at 00601450
 ;   crt_errno.c_setErrno_FUN_00602790 at 00602790
@@ -15,7 +15,7 @@
 ;   crt_process.c_spawnvp_with_path_search_FUN_0060e6a0 at 0060e6e7
 ;   crt_signal.c_getSignalHandler_FUN_0060ceb4 at 0060cecc
 ;   crt_signal.c_setSignalHandler_FUN_0060ce60 at 0060ce93
-;   ... and 11 more
+;   ... and 9 more
 ;
 ; Referenced Globals:
 ;   void* g_CurrentThreadTlsBlock

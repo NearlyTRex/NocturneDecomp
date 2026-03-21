@@ -4,9 +4,6 @@
 ; undefined4 crt_unknown_c_FUN_0060b07a(int *param_1)
 ;
 ;
-; XREF[1]:
-;   crt_unknown.c_FUN_00603dc8 at 00603e45
-;
 ; *****************************************************************************
 
 section .text

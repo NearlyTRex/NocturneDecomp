@@ -23,6 +23,6 @@ void __cdecl FUN_00603c74(void)
     }
     piVar1 = (int *)((int)piVar1 + 10);
   }
-  FUN_0060445e();
+  func_0x0060445e();
   return;
 }

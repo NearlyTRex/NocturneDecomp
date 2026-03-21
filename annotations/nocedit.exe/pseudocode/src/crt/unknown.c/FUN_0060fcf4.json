@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 190,
     "complexity_score": 246,
-    "cross_reference_count": 2,
+    "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "mild",
@@ -21,12 +21,6 @@
       "addr": "0060ee80",
       "from_addr": "0060f03c",
       "name": "crt_env.c_putenv_internal_FUN_0060ee80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00610900",
-      "from_addr": "0061094a",
-      "name": "crt_unknown.c_FUN_00610900",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -89,7 +83,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 1,
     "call_sites": [
       {
         "call_addr": "0060f03c",
@@ -101,20 +95,9 @@
         "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
-      },
-      {
-        "call_addr": "0061094a",
-        "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_00610900",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
       }
     ],
-    "confidence": "medium",
+    "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
     "estimated_params": 1
@@ -266,7 +249,7 @@
       "type": "unnamed_param"
     },
     {
-      "call_site_count": 2,
+      "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 1,

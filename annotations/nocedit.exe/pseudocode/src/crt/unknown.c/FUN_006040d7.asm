@@ -15,9 +15,6 @@
 ; undefined4       Stack[0x24]:4   param_9
 ; char *           Stack[0x28]:4   param_10
 ;
-; XREF[1]:
-;   crt_unknown.c_FUN_0060403f at 006040d0
-;
 ; Called Functions:
 ;   crt_unknown.c_FUN_006040ed
 ;

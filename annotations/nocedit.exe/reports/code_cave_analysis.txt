@@ -6,10 +6,10 @@ Caves are created by zeroing out dead functions using the
 CreateCodeCave Ghidra script (Shift+Z). Patching scripts
 allocate space within caves for injected code (thunks, helpers).
 
-Total caves:        11
-Total bytes:        1,557
-Total free:         1,494
-Total allocations:  0
+Total caves:        21
+Total bytes:        5,329
+Total free:         5,182
+Total allocations:  1
 
 ----------------------------------------------------------------------------------------------------
 CAVES
@@ -18,8 +18,11 @@ CAVES
   cave_00415045                   00415045     59 bytes  [FREE]
     (entirely free — no allocations)
 
-  cave_00415045                   004423e5    219 bytes  [FREE]
-    (entirely free — no allocations)
+  cave_00415045                   004423e5    219 bytes  [84/219 used]
+    Allocations:
+      +0x0000   84 bytes  movsd_005acc71             0x005acc71
+               4x MOVSD replacement for pollAndMixSfx_FUN_005aca90
+    Free space: 135 bytes (offset 0x0054 - 0x00db)
 
   cave_00415045                   00476c14     60 bytes  [FREE]
     (entirely free — no allocations)
@@ -28,6 +31,15 @@ CAVES
     (entirely free — no allocations)
 
   cave_00415045                   004a6f0b    101 bytes  [FREE]
+    (entirely free — no allocations)
+
+  cave_005fde92                   004b199c     52 bytes  [FREE]
+    (entirely free — no allocations)
+
+  cave_005fde92                   004b1a3f     57 bytes  [FREE]
+    (entirely free — no allocations)
+
+  cave_005fde92                   004b1b14    236 bytes  [FREE]
     (entirely free — no allocations)
 
   cave_00415045                   004e443d     51 bytes  [FREE]
@@ -45,6 +57,27 @@ CAVES
   cave_00415045                   005b3e15     91 bytes  [FREE]
     (entirely free — no allocations)
 
+  cave_005fde92                   0060d067    145 bytes  [FREE]
+    (entirely free — no allocations)
+
+  cave_005fde92                   0060d1a5    584 bytes  [FREE]
+    (entirely free — no allocations)
+
+  cave_005fde92                   0060dcf5   1443 bytes  [FREE]
+    (entirely free — no allocations)
+
+  cave_005fde92                   0060e3af    481 bytes  [FREE]
+    (entirely free — no allocations)
+
+  cave_005fde92                   0060e850    224 bytes  [FREE]
+    (entirely free — no allocations)
+
+  cave_005fde92                   0060eb39    103 bytes  [FREE]
+    (entirely free — no allocations)
+
   cave_0060fb3a                   0060fb3a    448 bytes  [63/448 used]
+    (entirely free — no allocations)
+
+  cave_005fde92                   006107b1    447 bytes  [FREE]
     (entirely free — no allocations)
 

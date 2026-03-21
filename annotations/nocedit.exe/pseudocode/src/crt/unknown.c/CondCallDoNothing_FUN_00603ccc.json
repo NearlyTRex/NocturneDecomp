@@ -1,29 +1,22 @@
 {
   "complexity": {
-    "assembly_lines": 70,
+    "assembly_lines": 69,
     "complexity_score": 158,
-    "cross_reference_count": 1,
-    "function_call_count": 2,
-    "global_count": 0,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_few",
       "special_crt_function",
-      "stack_param"
+      "stack_param",
+      "warning_unreachable"
     ],
-    "total_lines": 88
+    "total_lines": 87
   },
-  "cross_references": [
-    {
-      "addr": "00603d60",
-      "from_addr": "00603da5",
-      "name": "crt_unknown.c_FUN_00603d60",
-      "type": "UNCONDITIONAL_CALL"
-    }
-  ],
+  "cross_references": [],
   "function": {
     "address": "00603ccc",
     "address_range": [
@@ -42,44 +35,23 @@
       "addr": "00603c74",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_00603c74"
-    },
-    {
-      "addr": "0060445e",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_0060445e"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "0060445e",
+      "name": "SUB_0060445e",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "param_estimates": {
-    "call_site_count": 2,
-    "call_sites": [
-      {
-        "call_addr": "00603da5",
-        "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_00603d60",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "00603d98",
-        "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_00603d60",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      }
-    ],
-    "confidence": "medium",
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 2
+    "estimated_params": 0
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.383333333333334,
@@ -135,8 +107,16 @@
   },
   "suspects": [
     {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00603d5b) */",
+      "type": "warning_unreachable"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 5,
+      "line": 8,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "float10 *in_stack_00000004;",
@@ -144,7 +124,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 6,
+      "line": 9,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "int in_stack_00000008;",
@@ -152,7 +132,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 11,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "if (in_stack_00000008 != 0) {",
@@ -160,7 +140,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 12,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "if (in_stack_00000008 < 0) {",
@@ -168,7 +148,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 14,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "*in_stack_00000004 = *in_stack_00000004 / (float10)CONCAT28(0x3fff,0x8000000000000000);",
@@ -176,7 +156,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 14,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "*in_stack_00000004 = *in_stack_00000004 / (float10)CONCAT28(0x3fff,0x8000000000000000);",
@@ -184,7 +164,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
+      "line": 14,
       "match": "CONCAT28",
       "severity": "mild",
       "text": "*in_stack_00000004 = *in_stack_00000004 / (float10)CONCAT28(0x3fff,0x8000000000000000);",
@@ -192,7 +172,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 18,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "*in_stack_00000004 = (float10)CONCAT28(0x3fff,0x8000000000000000) * *in_stack_00000004;",
@@ -200,7 +180,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 18,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "*in_stack_00000004 = (float10)CONCAT28(0x3fff,0x8000000000000000) * *in_stack_00000004;",
@@ -208,22 +188,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
+      "line": 18,
       "match": "CONCAT28",
       "severity": "mild",
       "text": "*in_stack_00000004 = (float10)CONCAT28(0x3fff,0x8000000000000000) * *in_stack_00000004;",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     },
     {
       "address": "00603ccc",

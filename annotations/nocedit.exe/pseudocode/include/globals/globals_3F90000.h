@@ -210,7 +210,7 @@ extern int g_MultibyteLocaleActive;
 extern int g_BufferedCharacter;
 extern int g_BufferedVirtualKey;
 extern int g_BufferedRepeatCount;
-extern int INT_03f9c150;
+extern int DAT_03F9C150;
 
 // int[20]
 extern int g_InputBuffer[20];

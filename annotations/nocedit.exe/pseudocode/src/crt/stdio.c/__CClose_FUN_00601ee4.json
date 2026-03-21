@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 18,
     "complexity_score": 22,
-    "cross_reference_count": 2,
+    "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -18,12 +18,6 @@
       "addr": "00601ea0",
       "from_addr": "00601ed7",
       "name": "crt_stdio.c_fclose_FUN_00601ea0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00608fdc",
-      "from_addr": "0060902c",
-      "name": "crt_unknown.c_FUN_00608fdc",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -53,19 +47,8 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 1,
     "call_sites": [
-      {
-        "call_addr": "0060902c",
-        "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_00608fdc",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
       {
         "call_addr": "00601ed7",
         "call_type": "direct",
@@ -78,7 +61,7 @@
         "stack_params": 2
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "declared_params": 2,
     "declared_stack_bytes": 8,
     "estimated_params": 2

@@ -4,10 +4,6 @@
 ; void __cdecl crt_thread_c_exit_thread_FUN_0060fa58(void)
 ;
 ;
-; XREF[2]:
-;   crt_unknown.c_FUN_0060e890 at 0060e8c2
-;   crt_unknown.c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878 at 0060e878
-;
 ; Referenced Globals:
 ;   EXIT_THREAD_FUNC* g_ExitThreadFunc = 00211d20
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_00602458_00684f28 = 00602458

@@ -47,6 +47,6 @@ void __cdecl threadStartupWrapper(ThreadStartupInfo *info)
   (*PTR_crt_sync_c_CriticalSectionStub_FUN_00602458_00684f24)();
   aiStackY_34[1] = 0x60f949;
   (*pcVar1)();
-  SomethingThatCallsExitThreadAfterCommunicate();
+  func_0x0060e878();
   return;
 }

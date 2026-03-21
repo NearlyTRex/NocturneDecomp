@@ -206,9 +206,6 @@ int __cdecl crt_stdio_c__vsprintf_FUN_005fdba8(char *buffer,char *format,va_list
 int __cdecl crt_stdio_c__sprintf_FUN_005fdbd0(char *buffer,char *format,...) __attribute__((format(printf, 2, 3)));
 SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T count,_FILE *file);
 void * __cdecl crt_memory_c_memset_FUN_005fde40(void *dest,int value,ulong count);
-void __cdecl crt_fltused_c_staticInit_FUN_005fde60(void);
-void __cdecl crt_stub_c_staticInit_FUN_005fde92(void);
-void __cdecl crt_stub_c_staticFinal_FUN_005fde93(void);
 template<typename T_func0>
 inline void * crt_stdlib_c_median_of_3_FUN_005fdea0(void *a,void *b,void *c,T_func0 compar) {
     (void)a; (void)b; (void)c; (void)compar; return (void *)0;
@@ -275,9 +272,6 @@ ifstream * __cdecl crt_fstream_cpp_ifstream_ctor_FUN_005ff8f0(void *this_ptr,int
 ofstream * __cdecl crt_fstream_cpp_ofstream_ctor_FUN_005ff95c(void *this_ptr,int c1);
 int __watcallStack crt_stdio_c_remove_FUN_005ff9d0(char *filename);
 int __cdecl crt_ctype_c_toupper_FUN_005ff9e0(int c);
-void __cdecl crt_stub_c_staticInit_FUN_005ff9f2(void);
-void __stk_probe crt_stack_c___STK_FUN_005ff9f3(void);
-void __stk_probe crt_stack_c_check_stack_target_FUN_005ffa03(void);
 void __watcallStack crt_stack_c_stack_overflow_handler_FUN_005ffa22(SIZE_T required_bytes);
 void __stdcall crt_stack_c_ProbeStackSpace_FUN_005ffa2f(uint size);
 int __cdecl crt_stdio_c_seek_within_buffer_FUN_005ffa70(int offset,_FILE *file);

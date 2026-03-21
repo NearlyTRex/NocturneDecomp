@@ -8,8 +8,7 @@
 ; Local Variables:
 ; Heap *           Stack[-0x24]:4  local_24
 ;
-; XREF[5]:
-;   crt_ioinit.c_staticInit_FUN_00608f20 at 00608f4d
+; XREF[4]:
 ;   crt_memory.c_malloc_FUN_00601bb0 at 00601bb5
 ;   crt_memory.c_realloc__FUN_00601e08 at 00601e56
 ;   crt_process.c_build_cmdline_FUN_00610258 at 006102c8

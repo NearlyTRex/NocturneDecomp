@@ -4,9 +4,8 @@
 ; int crt_unknown_c_FUN_0060fac0(wchar_t *param_1,char *param_2,int param_3)
 ;
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_env.c_putenv_internal_FUN_0060ee80 at 0060f018
-;   crt_unknown.c_FUN_00610900 at 0061093c
 ;
 ; Called Functions:
 ;   crt_locale.c_mbtowc_FUN_0060b1c0

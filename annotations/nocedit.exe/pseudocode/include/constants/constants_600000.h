@@ -8,13 +8,6 @@
 // =============================================================================
 
 // void* constants
-static void* DAT_00603DB8 = (void*)0x00603E9D; // caseD_1
-static void* DAT_00603DBC = (void*)0x00603E6F; // caseD_2
-static void* DAT_00603DC0 = (void*)0x00603E8D; // caseD_3
-static void* DAT_00603DC4 = (void*)0x00603E5E; // caseD_0
-static void* DAT_0060446C = (void*)0x00604653; // caseD_1
-static void* DAT_00604470 = (void*)0x0060465E; // caseD_2
-static void* DAT_00604474 = (void*)0x00604669; // caseD_3
 static void* DAT_006071C2 = (void*)&g_TimezoneInitFlags;
 static void* DAT_006071C7 = (void*)&g_TimezoneInitFlags;
 static void* DAT_006071CD = (void*)&g_ModelPolygonData[19241].vertex_indices[4];

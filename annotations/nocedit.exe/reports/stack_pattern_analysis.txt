@@ -7,11 +7,11 @@ These patterns cause Ghidra to hallucinate parameters or misidentify locals.
 
 SUMMARY
 --------------------------------------------------
-Functions with stack patterns: 708 / 7112
+Functions with stack patterns: 707 / 7038
 
 Pattern type counts:
   stack_alignment                  533
-  alt_frame_pointer                449
+  alt_frame_pointer                446
   dynamic_alloca                     6
   pushf                              3
 
@@ -118,12 +118,6 @@ MEDIUM SEVERITY - May cause decompiler artifacts
   crt_time.c_asctimeFormat_FUN_00601678
     File: crt/time.c, Suspects: 1
     - [alt_frame_pointer] at 00601729: MOV ESI,ESP
-
-  crt_unknown.c_SomethingFPUControlWord_FUN_0060e8e0
-    File: crt/unknown.c, Suspects: 8
-    - [alt_frame_pointer] at 0060e8f8: MOV EDI,ESP
-    - [alt_frame_pointer] at 0060e913: MOV EDI,ESP
-    - [alt_frame_pointer] at 0060e91c: MOV EDI,ESP
 
   crt_unknown.c_FUN_0060ade0
     File: crt/unknown.c, Suspects: 12
@@ -286,7 +280,12 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0048c808: AND ESP,0xfffffff8
     - [alt_frame_pointer] at 0048c80e: MOV ESI,ESP
 
-  ... and 653 more functions
+  engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
+    File: engine/drender.cpp, Suspects: 4
+    - [alt_frame_pointer] at 0048c7e7: MOV ESI,ESP
+    - [alt_frame_pointer] at 0048c7f0: MOV ESI,ESP
+
+  ... and 652 more functions
 
 ====================================================================================================
 CORRELATION: Stack patterns vs suspect counts
@@ -295,4 +294,4 @@ CORRELATION: Stack patterns vs suspect counts
 Functions with stack patterns tend to have more suspects:
 
   With stack patterns:    avg 9.4 suspects/function
-  Without stack patterns: avg 2.0 suspects/function
+  Without stack patterns: avg 1.9 suspects/function

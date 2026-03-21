@@ -35,10 +35,6 @@ void * __cdecl GetOrCreateThreadData(void *pThreadData);
 // Address: 0060a560
 DWORD __cdecl GetModuleFileNameCompat(HMODULE hModule,LPWSTR lpFilename,DWORD nSize);
 
-// Original: crt_startup.c_staticInit_FUN_0060aef4
-// Address: 0060aef4
-void __cdecl staticInit(void);
-
 // Original: crt_startup.c_ExitApplication_FUN_0060b534
 // Address: 0060b534
 void __cdecl ExitApplication(int exit_code);
@@ -46,7 +42,3 @@ void __cdecl ExitApplication(int exit_code);
 // Original: crt_startup.c_PlaceholderStub_FUN_0060ca80
 // Address: 0060ca80
 void __cdecl PlaceholderStub(void);
-
-// Original: crt_startup.c_FUN_0060d230
-// Address: 0060d230
-int __cdecl FUN_0060d230(UINT cp);

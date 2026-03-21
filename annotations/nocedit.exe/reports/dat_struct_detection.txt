@@ -2,34 +2,30 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 34
+Total DAT_ globals found: 30
 Filtered out (inside named data): 241
-Immediate constants (not real globals): 2
-Real globals remaining: 32
-Clusters detected: 6
-DAT_ globals in clusters: 19
+Immediate constants (not real globals): 1
+Real globals remaining: 29
+Clusters detected: 5
+DAT_ globals in clusters: 17
 
 Classification summary:
-  unknown              5 clusters
+  unknown              4 clusters
   struct               1 clusters
 
 --------------------------------------------------------------------------------
-LIKELY IMMEDIATE CONSTANTS (2)
+LIKELY IMMEDIATE CONSTANTS (1)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values (e.g. MOV EDX,0xf80000).
 Consider removing the Ghidra label and leaving the raw number.
-
-  DAT_00684d12  value=0x684D12 (6835474)  refs=1
-    FUN_00608fdc
-      CMP EAX,0x684d12                    ; 00609020 | DAT_00684d12
 
   DAT_00766880  value=0x766880 (7760000)  refs=1
     loadS3DModelFile
       PUSH 0x766880                       ; 004597f7 | DAT_00766880
 
 --------------------------------------------------------------------------------
-LOW CONFIDENCE (6 clusters)
+LOW CONFIDENCE (5 clusters)
 --------------------------------------------------------------------------------
 
   0x00685030 - 0x006850b8  (7 items, 136 bytes span)
@@ -83,17 +79,8 @@ LOW CONFIDENCE (6 clusters)
       0x006e6f63  DAT_006e6f63  undefined4
       0x006e6f69  DAT_006e6f69  undefined4
 
-  0x03f9b874 - 0x03f9b8d0  (2 items, 92 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 2 items, span=92 bytes
-    Referenced by: 2 functions
-     near: g_EnvironInitialized (int) at +12
-      0x03f9b874  DAT_03f9b874  undefined4 [byte]
-      0x03f9b8d0  DAT_03f9b8d0  undefined4
-
 --------------------------------------------------------------------------------
-ISOLATED DAT_ GLOBALS (13 - not part of any cluster)
+ISOLATED DAT_ GLOBALS (12 - not part of any cluster)
 --------------------------------------------------------------------------------
   DAT_00002424                    addr=00002424    type=undefined4      refs=21 [likely float]
   DAT_00800000                    addr=00800000    type=undefined4      refs=12
@@ -102,8 +89,7 @@ ISOLATED DAT_ GLOBALS (13 - not part of any cluster)
   DAT_0067b718                    addr=0067b718    type=undefined4      refs=1  near: g_ChapterMissionFiles(-56)
   DAT_00747874                    addr=00747874    type=undefined4      refs=1
   DAT_006874d4                    addr=006874d4    type=undefined4      refs=1 [likely double]  near: PTR_FUN_006874e4(-16)
-  DAT_03f9c030                    addr=03f9c030    type=undefined4      refs=1 [likely byte]  near: g_LeadByteTable(-1)
-  DAT_006855d8                    addr=006855d8    type=undefined4      refs=1  near: PTR_unk_ReturnZero6_FUN_0060e850_0068559c(+60)
+  DAT_006855d8                    addr=006855d8    type=undefined4      refs=1  near: PTR_crt_math.c_check_error_context_FUN_0060fa8b_00685590(+72)
   DAT_0068546c                    addr=0068546c    type=undefined2      refs=1  near: PTR_crt_thread.c_ExitCriticalSection_FUN_0060b180_00685468(+4)
   DAT_54524143                    addr=54524143    type=undefined4      refs=1
   DAT_0051a3f4                    addr=0051a3f4    type=undefined4      refs=1  near: PTR_caseD_5_0051a3ec(+8)

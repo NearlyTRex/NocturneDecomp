@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 6920
-Functions with no callers: 3216
-Parameter mismatches detected: 129
-Signature accuracy rate: 96.5%
+Functions with parameter estimates: 6855
+Functions with no callers: 3182
+Parameter mismatches detected: 113
+Signature accuracy rate: 96.9%
 
 Mismatches by confidence:
   High confidence:   1 (multiple call sites agree)
-  Medium confidence: 34 (some agreement)
-  Low confidence:    94 (limited data)
+  Medium confidence: 29 (some agreement)
+  Low confidence:    83 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -45,13 +45,10 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_0060d480                         declared:0 est:5 (+5) [2 calls]
   crt_unknown.c_FUN_00607c88                         declared:0 est:4 (+4) [2 calls]
   shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  declared:0 est:4 (+4) [2 calls]
-  crt_unknown.c_FUN_00603dc8                         declared:0 est:3 (+3) [2 calls]
   crt_unknown.c_FUN_00607858                         declared:0 est:3 (+3) [2 calls]
   engine_matrix.c_getCameraOrigin_FUN_0050e2c0       declared:1 est:4 (+3) [4 calls]
   engine_matrix.c_getCameraRotation_FUN_0050e2f0     declared:1 est:4 (+3) [2 calls]
-  crt_unknown.c_CondCallDoNothing_FUN_00603ccc       declared:0 est:2 (+2) [2 calls]
   crt_unknown.c_FUN_00603c74                         declared:0 est:2 (+2) [2 calls]
-  crt_unknown.c_FUN_00603d60                         declared:0 est:2 (+2) [2 calls]
   crt_unknown.c_FUN_0060b133                         declared:0 est:2 (+2) [1 calls]
   crt_unknown.c_SomethingWithUppercaseCharacterConve declared:0 est:2 (+2) [2 calls]
   engine_2d.c_drawTextRightAlignedColorFormatted_FUN declared:3 est:5 (+2) [2 calls]
@@ -72,15 +69,13 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_iostream.cpp_streambuf_destructor_FUN_0060d64f declared:1 est:2 (+1) [2 calls]
   crt_process.c_set_shell_execute_flag_FUN_00609c80  declared:1 est:2 (+1) [2 calls]
   crt_stdio.c_CreateFileVariadic_FUN_00609074        declared:3 est:4 (+1) [2 calls]
-  crt_sync.c_criticalSectionStub_FUN_00609f20        declared:0 est:1 (+1) [7 calls]
   crt_thread.c_noop_lock_FUN_0060b180                declared:0 est:1 (+1) [2 calls]
-  crt_unknown.c_FUN_0060fcf4                         declared:0 est:1 (+1) [2 calls]
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  94 functions with low-confidence mismatches
+  83 functions with low-confidence mismatches
   Sample:
     cockpit_ckptutil.c_isLineClippingDisabled_FUN declared:0 est:4 (+4)
     crt_io.c_CheckFileHandleAvailability_FUN_0060 declared:0 est:4 (+4)
@@ -97,25 +92,24 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 13
+Functions where declaration has MORE params than estimated: 12
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 116
+Functions where declaration has FEWER params than estimated: 101
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
-  -11 params: 1 functions
   -4 params: 1 functions
   -3 params: 1 functions
   -2 params: 1 functions
   -1 params: 9 functions
-  +1 params: 51 functions
-  +2 params: 23 functions
-  +3 params: 15 functions
-  +4 params: 14 functions
+  +1 params: 48 functions
+  +2 params: 16 functions
+  +3 params: 14 functions
+  +4 params: 12 functions
   +5 params: 4 functions
-  +6 params: 2 functions
-  +7 params: 2 functions
+  +6 params: 1 functions
+  +7 params: 1 functions
   +9 params: 1 functions
   +18 params: 1 functions
   +23 params: 1 functions

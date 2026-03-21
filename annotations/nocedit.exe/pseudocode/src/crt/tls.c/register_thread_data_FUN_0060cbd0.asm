@@ -12,6 +12,7 @@
 ;   crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4 at 0060a49f
 ;
 ; Referenced Globals:
+;   undefined4 SUB_0060e880
 ;   ENTER_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f10 = 00602434
 ;   EXIT_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f14 = 00602434
 ;   ThreadRegistryEntry* g_ThreadDataRegistryList
@@ -20,7 +21,6 @@
 ;   crt_memory.c_calloc_FUN_0060ca90
 ;   crt_memory.c_free_FUN_00601cd0
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
-;   crt_unknown.c_CallReturnZero6_FUN_0060e880
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     JZ 0x0060cc2e                       ; 0060cbf1
         ;   XREF to: 0060cc2e (CONDITIONAL_JUMP)  ; LAB_0060cc2e
     PUSH EDI                            ; 0060cbf3
-    CALL crt_unknown.c_CallReturnZero6_FUN_0060e880 ; 0060cbf4
-        ;   XREF to: 0060e880 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_CallReturnZero6_FUN_0060e880()
+    CALL 0x0060e880                     ; 0060cbf4
+        ;   XREF to: 0060e880 (UNCONDITIONAL_CALL)  ; SUB_0060e880
     ADD ESP,0x4                         ; 0060cbf9
     TEST EAX,EAX                        ; 0060cbfc
     JZ 0x0060cc0d                       ; 0060cbfe

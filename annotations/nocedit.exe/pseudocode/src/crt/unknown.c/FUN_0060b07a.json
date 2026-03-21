@@ -1,28 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 121,
-    "cross_reference_count": 1,
+    "complexity_score": 106,
+    "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
-      "param_count_too_few",
       "special_crt_function",
       "unnamed_param"
     ],
     "total_lines": 52
   },
-  "cross_references": [
-    {
-      "addr": "00603dc8",
-      "from_addr": "00603e45",
-      "name": "crt_unknown.c_FUN_00603dc8",
-      "type": "UNCONDITIONAL_CALL"
-    }
-  ],
+  "cross_references": [],
   "function": {
     "address": "0060b07a",
     "address_range": [
@@ -38,28 +30,12 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 1,
-    "call_sites": [
-      {
-        "call_addr": "00603e45",
-        "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_00603dc8",
-        "estimated_params": 4,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX",
-          "EDX"
-        ],
-        "stack_bytes": 4,
-        "stack_params": 1
-      }
-    ],
-    "confidence": "low",
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 4
+    "estimated_params": 0
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.88,
@@ -146,17 +122,6 @@
       "severity": "mild",
       "text": "if ((param_1[1] == 0) && (*param_1 == 0)) {",
       "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
     },
     {
       "address": "0060b07a",

@@ -4,10 +4,6 @@
 ; void __cdecl crt_unknown_c_FUN_0060fa80(void)
 ;
 ;
-; XREF[2]:
-;   crt_unknown.c_FUN_0060eb4b at 0060eb50
-;   crt_unknown.c_FUN_0060eb57 at 0060eb62
-;
 ; Referenced Globals:
 ;   void* PTR_FUN_0068502b = 00604824
 ;

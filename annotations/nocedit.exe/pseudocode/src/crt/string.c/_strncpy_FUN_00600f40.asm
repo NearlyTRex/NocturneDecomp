@@ -8,18 +8,17 @@
 ; char *           Stack[0x8]:4   src
 ; SIZE_T           Stack[0xc]:4   count
 ;
-; XREF[11]:
+; XREF[10]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0054a990 at 0054a99c
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_0054c6f0 at 0054c6ff
 ;   core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 at 00541f3f
 ;   crt_io.c_getFileStat_FUN_00607e64 at 0060814b
-;   crt_io.c_parseFileInfo_FUN_0060e3b0 at 0060e449
 ;   engine_dosio.c_CFileFinder_convertStruct_FUN_00481dc0 at 00481deb
 ;   engine_fileio.cpp_establishUserIdentity_FUN_004b1c00 at 004b1d02
 ;   engine_pod.cpp_findFilesByExtension_FUN_00550ce0 at 00550e4a
 ;   shape_edittool.cpp_CInputString_init_FUN_0049d3d0 at 0049d43c
 ;   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 at 0055635d
-;   ... and 1 more
+;   shape_quantize.cpp_copyString_FUN_00556d70 at 00556d7c
 ;
 ; *****************************************************************************
 

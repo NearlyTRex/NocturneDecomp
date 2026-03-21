@@ -8,12 +8,10 @@
 ;   crt_unknown.c_CondCallDoNothing_FUN_00603ccc at 00603d3a
 ;
 ; Referenced Globals:
+;   undefined4 SUB_0060445e
 ;   int INT_00684f30 = 0x0
 ;   int INT_00684f34 = -0x60000000
 ;   short SHORT_00684f38 = 0x4002
-;
-; Called Functions:
-;   crt_unknown.c_FUN_0060445e
 ;
 ; *****************************************************************************
 
@@ -60,5 +58,5 @@ section .text
     JG 0x00603c94                       ; 00603cc5
         ;   XREF to: 00603c94 (CONDITIONAL_JUMP)  ; LAB_00603c94
     JMP 0x0060445e                      ; 00603cc7
-        ;   XREF to: 0060445e (UNCONDITIONAL_CALL)
+        ;   XREF to: 0060445e (UNCONDITIONAL_CALL)  ; SUB_0060445e
 

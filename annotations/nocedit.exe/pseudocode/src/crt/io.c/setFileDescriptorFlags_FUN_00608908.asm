@@ -7,10 +7,9 @@
 ; int              Stack[0x4]:4   file_handle_index
 ; uint             Stack[0x8]:4   flags
 ;
-; XREF[5]:
+; XREF[4]:
 ;   crt_io.c_close_FUN_00609bd0 at 00609c62
 ;   crt_io.c_extend_file_for_append_FUN_00608410 at 00608462
-;   crt_io.c_parseFileInfo_FUN_0060e3b0 at 0060e4ca
 ;   crt_stdio.c_CreateFileImpl_FUN_006090a0 at 006092cf
 ;   crt_stdio.c_lseek_FUN_00606690 at 006066d9
 ;

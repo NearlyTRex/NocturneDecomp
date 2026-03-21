@@ -15,6 +15,7 @@
 ;   crt_thread.c_create_thread_with_sync_FUN_0060f960 at 0060f9fa
 ;
 ; Referenced Globals:
+;   undefined4 SUB_0060e878
 ;   SET_EVENT_FUNC* g_SetEventFunc = 00212194
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_00602458_00684f24 = 00602458
@@ -26,7 +27,6 @@
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_sync.c_CriticalSectionStub_FUN_00602458
 ;   crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8
-;   crt_unknown.c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878
 ;   SetEvent
 ;
 ; *****************************************************************************
@@ -88,8 +88,8 @@ section .text
     PUSH EDI                            ; 0060f945
     CALL dword ptr [EBP + -0x4]         ; 0060f946
     ADD ESP,0x4                         ; 0060f949
-    CALL crt_unknown.c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878 ; 0060f94c
-        ;   XREF to: 0060e878 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878()
+    CALL 0x0060e878                     ; 0060f94c
+        ;   XREF to: 0060e878 (UNCONDITIONAL_CALL)  ; SUB_0060e878
     MOV ESP,EBP                         ; 0060f951
         ;   Label: LAB_0060f951
     POP EBP                             ; 0060f953

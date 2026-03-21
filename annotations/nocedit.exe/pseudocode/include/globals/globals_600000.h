@@ -8,8 +8,6 @@
 // =============================================================================
 
 // void*
-extern void* switchdataD_00603db4;
-extern void* switchdataD_00604468;
 extern void* switchdataD_0060d0f8;
 
 // void*[7]

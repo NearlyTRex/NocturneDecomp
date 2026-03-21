@@ -4,9 +4,6 @@
 ; SIGNAL_HANDLER_TYPE crt_unknown_c_FUN_0060ced8(int param_1)
 ;
 ;
-; XREF[1]:
-;   crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068 at 0060d0a5
-;
 ; Referenced Globals:
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;   undefined4 g_GlobalSignalHandlers[1]

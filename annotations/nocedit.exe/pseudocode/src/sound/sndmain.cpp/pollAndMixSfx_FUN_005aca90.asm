@@ -56,6 +56,36 @@
 
 section .text
 
+    SUB ESP,0x2c                        ; 004423e5
+        ;   Label: CAVE_cave_00415045
+    MOV EDI,ESP                         ; 004423e8
+    MOV ECX,0xb                         ; 004423ea
+    LEA ESI,[ESP + 0x2c]                ; 004423ef
+    PUSH EBX                            ; 004423f3
+    MOV ECX,dword ptr [ESI]             ; 004423f4
+    MOV dword ptr [EDI],ECX             ; 004423f6
+    MOV ECX,dword ptr [ESI + 0x4]       ; 004423f8
+    MOV dword ptr [EDI + 0x4],ECX       ; 004423fb
+    MOV ECX,dword ptr [ESI + 0x8]       ; 004423fe
+    MOV dword ptr [EDI + 0x8],ECX       ; 00442401
+    MOV ECX,dword ptr [ESI + 0xc]       ; 00442404
+    MOV dword ptr [EDI + 0xc],ECX       ; 00442407
+    MOV ECX,dword ptr [ESI + 0x10]      ; 0044240a
+    MOV dword ptr [EDI + 0x10],ECX      ; 0044240d
+    MOV ECX,dword ptr [ESI + 0x14]      ; 00442410
+    MOV dword ptr [EDI + 0x14],ECX      ; 00442413
+    MOV ECX,dword ptr [ESI + 0x18]      ; 00442416
+    MOV dword ptr [EDI + 0x18],ECX      ; 00442419
+    MOV ECX,dword ptr [ESI + 0x1c]      ; 0044241c
+    MOV dword ptr [EDI + 0x1c],ECX      ; 0044241f
+    MOV ECX,dword ptr [ESI + 0x20]      ; 00442422
+    MOV dword ptr [EDI + 0x20],ECX      ; 00442425
+    MOV ECX,dword ptr [ESI + 0x24]      ; 00442428
+    MOV dword ptr [EDI + 0x24],ECX      ; 0044242b
+    MOV ECX,dword ptr [ESI + 0x28]      ; 0044242e
+    MOV dword ptr [EDI + 0x28],ECX      ; 00442431
+    JMP 0x005acc80                      ; 00442434
+        ;   XREF to: 005acc80 (UNCONDITIONAL_JUMP)  ; LAB_005acc80
     PUSH EBX                            ; 005aca90
         ;   Label: sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
     PUSH ESI                            ; 005aca91
@@ -221,13 +251,11 @@ section .text
     JNZ 0x005acc55                      ; 005acc6a
         ;   XREF to: 005acc55 (CONDITIONAL_JUMP)  ; LAB_005acc55
     MOV EBX,0x3f5daa4                   ; 005acc6c | g_SfxSlots
-    SUB ESP,0x2c                        ; 005acc71
+    JMP 0x004423e5                      ; 005acc71
+        ;   XREF to: 004423e5 (UNCONDITIONAL_JUMP)  ; CAVE_cave_00415045
         ;   Label: LAB_005acc71
-    MOV EDI,ESP                         ; 005acc74
-    MOV ECX,0xb                         ; 005acc76
-    LEA ESI,[ESP + 0x2c]                ; 005acc7b
-    PUSH EBX                            ; 005acc7f | g_SfxSlots | g_SfxSlots[1].status
     MOVSD.REP ES:EDI,ESI                ; 005acc80
+        ;   Label: LAB_005acc80
     CALL sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 ; 005acc82
         ;   XREF to: 005a75e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot * this_ptr, SMixBuffer mix_buffer)
     ADD ESP,0x30                        ; 005acc87

@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   name
 ;
-; XREF[16]:
+; XREF[15]:
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004dab63
 ;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dd623
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db18e
@@ -15,9 +15,9 @@
 ;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 005933d6
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0 at 005b250e
 ;   crt_io.c_getTempDirectory_FUN_00609afc at 00609b14
-;   crt_io.c_parseFileInfo_FUN_0060e3b0 at 0060e3bc
 ;   crt_process.c_spawnvp_FUN_0060f39c at 0060f7f4
-;   ... and 6 more
+;   crt_process.c_spawnvp_with_path_search_FUN_0060e6a0 at 0060e726
+;   ... and 5 more
 ;
 ; Referenced Globals:
 ;   char** g_EnvironmentBlock

@@ -14,9 +14,8 @@
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined8       Stack[-0x18]:8  local_18
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_string.c__strtod_FUN_005ff0f3 at 005ff0ff
-;   crt_unknown.c_FUN_00603bc9 at 00603bd5
 ;
 ; Referenced Globals:
 ;   double g_PositiveInfinity = +Infinity

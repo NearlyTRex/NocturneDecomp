@@ -2,7 +2,7 @@
 PASS-BY-VALUE STRUCT ARGUMENTS REPORT
 ====================================================================================================
 
-6 functions with pass-by-value parameters (779 MOVSD.REP scanned, 122 are pass-by-value)
+5 functions with pass-by-value parameters (773 MOVSD.REP scanned, 121 are pass-by-value)
 
 ====================================================================================================
 
@@ -92,13 +92,6 @@ sound_mp3.cpp_calculateMainDataSize_FUN_00533c50
 
 --------------------------------------------------------------------------------
 
-sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
-  Params: arg1=?struct_44 (0x2c)
-  Call sites (1):
-    sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 @ 0x005acc82   1x ?struct_44 (0x2c)
-
---------------------------------------------------------------------------------
-
 core_actor.cpp_archiveString_FUN_0040b5c0
   Params: arg1=?struct_300 (0x12c)
   Call sites (1):
@@ -133,7 +126,6 @@ the dynamic stack allocations for pass-by-value arguments.
   shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40 current: 0x30  required: 0x90  (+0x60 for by-value args)
   shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830 current: 0x8  required: 0x68  (+0x60 for by-value args)
   shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770 current: 0xc  required: 0x6c  (+0x60 for by-value args)
-  sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90       current: 0x5c  required: 0x88  (+0x2c for by-value args)
   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 current: 0x1c  required: 0x38  (+0x1c for by-value args)
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 current: 0x60c0  required: 0x60dc  (+0x1c for by-value args)
   cockpit_pkbitmap.cpp_writePBGHeader_FUN_0054b930   current: 0x8  required: 0x10  (+0x8 for by-value args)

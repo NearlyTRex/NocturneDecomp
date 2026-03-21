@@ -23,10 +23,6 @@
 ; undefined4 *     Stack[-0x1c]:4  puStack_1c
 ; DWORD            Stack[-0x18]:4  DStack_18
 ;
-; XREF[2]:
-;   crt_unknown.c_FUN_0060e854 at 0060e86a
-;   crt_unknown.c_FUN_0060e890 at 0060e8af
-;
 ; Referenced Globals:
 ;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
 ;   CREATE_EVENT_A_FUNC* g_CreateEventAFunc = 00211c5a

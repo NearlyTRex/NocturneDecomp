@@ -7,12 +7,11 @@
 ; float10 *        Stack[0x4]:4   in_stack_00000004
 ; int              Stack[0x8]:4   in_stack_00000008
 ;
-; XREF[1]:
-;   crt_unknown.c_FUN_00603d60 at 00603da5
+; Referenced Globals:
+;   undefined4 SUB_0060445e
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_00603c74
-;   crt_unknown.c_FUN_0060445e
 ;
 ; *****************************************************************************
 
@@ -29,7 +28,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0xc]       ; 00603cd8
     TEST EBX,EBX                        ; 00603cdb
     JZ 0x0060445e                       ; 00603cdd
-        ;   XREF to: 0060445e (CONDITIONAL_JUMP)
+        ;   XREF to: 0060445e (CONDITIONAL_JUMP)  ; SUB_0060445e
     PUSH 0x0                            ; 00603ce3
     FSTCW word ptr [ESP]                ; 00603ce5
     POP EAX                             ; 00603ce9
@@ -83,9 +82,8 @@ section .text
         ;   Label: LAB_00603d51
     MOV AX,DI                           ; 00603d53
     PUSH EAX                            ; 00603d56
-        ;   Label: LAB_00603d56
     FLDCW word ptr [ESP]                ; 00603d57
     POP EAX                             ; 00603d5a
     JMP 0x0060445e                      ; 00603d5b
-        ;   XREF to: 0060445e (UNCONDITIONAL_CALL)
+        ;   XREF to: 0060445e (UNCONDITIONAL_CALL)  ; SUB_0060445e
 

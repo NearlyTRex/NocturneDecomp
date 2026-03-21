@@ -7,9 +7,8 @@
 ; _FILE *          Stack[0x4]:4   file_handle
 ; int              Stack[0x8]:4   close_flags
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_stdio.c_fclose_FUN_00601ea0 at 00601ed7
-;   crt_unknown.c_FUN_00608fdc at 0060902c
 ;
 ; Called Functions:
 ;   crt_stdio.c___freefp_FUN_006093b0

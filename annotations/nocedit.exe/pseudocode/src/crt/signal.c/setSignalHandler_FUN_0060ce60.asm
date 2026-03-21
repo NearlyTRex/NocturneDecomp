@@ -7,11 +7,9 @@
 ; int              Stack[0x4]:4   signal_number
 ; SIGNAL_HANDLER_TYPE Stack[0x8]:4   new_handler_type
 ;
-; XREF[4]:
+; XREF[2]:
 ;   crt_signal.c_processSignal_FUN_0060d128 at 0060d177
 ;   crt_signal.c_raiseFPE_FUN_0060d028 at 0060d048
-;   crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068 at 0060d0d2
-;   crt_unknown.c_FUN_0060d1ec at 0060d20a
 ;
 ; Referenced Globals:
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c

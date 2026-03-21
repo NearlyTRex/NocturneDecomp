@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_unknown_c_FUN_0060d48c(void)
+; undefined4 crt_unknown_c_FUN_0060d48c(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,undefined4 *param_5,int param_6,undefined4 in_stack_0000001c)
 ;
 ; Parameters:
 ; undefined4 *     Stack[0x10]:4   in_stack_00000010
@@ -15,8 +15,8 @@
 ;   crt_unknown.c_FUN_0060b106 at 0060b128
 ;   crt_unknown.c_FUN_0060b142 at 0060b164
 ;
-; Called Functions:
-;   crt_unknown.c_FUN_00603dc8
+; Referenced Globals:
+;   undefined4 SUB_00603dc8
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     PUSH EAX                            ; 0060d4e8
     LEA EAX,[EBP + -0x20]               ; 0060d4e9
     PUSH EAX                            ; 0060d4ec
-    CALL crt_unknown.c_FUN_00603dc8     ; 0060d4ed
-        ;   XREF to: 00603dc8 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_00603dc8()
+    CALL 0x00603dc8                     ; 0060d4ed
+        ;   XREF to: 00603dc8 (UNCONDITIONAL_CALL)  ; SUB_00603dc8
     MOV EDX,dword ptr [EBP + 0x14]      ; 0060d4f2
     MOV EAX,dword ptr [EBP + -0x34]     ; 0060d4f5
     MOV dword ptr [EDX],EAX             ; 0060d4f8

@@ -4,9 +4,6 @@
 ; void crt_unknown_c_DeleteCritcalSectionsMaybe_FUN_00609ff4(void)
 ;
 ;
-; XREF[1]:
-;   crt_unknown.c_staticFinal_FUN_0060a4cc at 0060a506
-;
 ; Referenced Globals:
 ;   DELETE_CRITICAL_SECTION_FUNC* g_DeleteCriticalSectionFunc = 00211caa
 ;   DWORD g_DynamicCriticalSectionCounter

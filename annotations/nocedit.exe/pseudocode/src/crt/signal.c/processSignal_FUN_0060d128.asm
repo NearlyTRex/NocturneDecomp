@@ -6,9 +6,8 @@
 ; Parameters:
 ; int              Stack[0x4]:4   signal_number
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_signal.c_consoleCtrlHandler_FUN_0060cf20 at 0060cf42
-;   crt_unknown.c_FUN_0060d1a8 at 0060d1d6
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0060d0f8 = 0060d15b

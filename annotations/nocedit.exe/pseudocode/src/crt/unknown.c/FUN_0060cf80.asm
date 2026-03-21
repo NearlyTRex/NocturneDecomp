@@ -4,10 +4,8 @@
 ; undefined4 crt_unknown_c_FUN_0060cf80(void)
 ;
 ;
-; XREF[3]:
+; XREF[1]:
 ;   crt_signal.c_processSignal_FUN_0060d128 at 0060d185
-;   crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068 at 0060d0da
-;   crt_unknown.c_FUN_0060d1ec at 0060d1ec
 ;
 ; Called Functions:
 ;   crt_signal.c_getSignalHandler_FUN_0060ceb4

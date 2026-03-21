@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 7,
     "complexity_score": 21,
-    "cross_reference_count": 24,
+    "cross_reference_count": 19,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -24,12 +24,6 @@
       "addr": "0060f04c",
       "from_addr": "0060f126",
       "name": "crt_env.c_updateEnvironTable_FUN_0060f04c",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00608f20",
-      "from_addr": "00608f5b",
-      "name": "crt_ioinit.c_staticInit_FUN_00608f20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -99,33 +93,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0060c640",
-      "from_addr": "0060c645",
-      "name": "crt_unknown.c_FUN_0060c640",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0060e4f0",
-      "from_addr": "0060e547",
-      "name": "crt_unknown.c_FUN_0060e4f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0060fcf4",
       "from_addr": "0060fd67",
       "name": "crt_unknown.c_FUN_0060fcf4",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "006107f0",
-      "from_addr": "00610828",
-      "name": "crt_unknown.c_FUN_006107f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00610900",
-      "from_addr": "0061092b",
-      "name": "crt_unknown.c_FUN_00610900",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -180,7 +150,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 30,
+    "call_site_count": 24,
     "call_sites": [
       {
         "call_addr": "00602820",
@@ -227,17 +197,6 @@
         "stack_params": 1
       },
       {
-        "call_addr": "0060c645",
-        "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_0060c640",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
         "call_addr": "00610005",
         "call_type": "direct",
         "caller": "crt_process.c_build_file_info_env_FUN_0060ffd0",
@@ -260,17 +219,6 @@
         "stack_params": 1
       },
       {
-        "call_addr": "0060e547",
-        "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_0060e4f0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
         "call_addr": "0060fd67",
         "call_type": "direct",
         "caller": "crt_unknown.c_FUN_0060fcf4",
@@ -285,6 +233,28 @@
         "call_addr": "0050f3ab",
         "call_type": "direct",
         "caller": "shape_memdbg.cpp_debugCalloc_FUN_0050f350",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0060efec",
+        "call_type": "direct",
+        "caller": "crt_env.c_putenv_internal_FUN_0060ee80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0060a62d",
+        "call_type": "direct",
+        "caller": "crt_string.c_strdup_FUN_0060a610",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

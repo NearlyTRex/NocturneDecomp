@@ -4,9 +4,6 @@
 ; BOOL __watcallRegister crt_signal_c_registerConsoleHandler_FUN_0060cfb8(void)
 ;
 ;
-; XREF[1]:
-;   crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068 at 0060d0e3
-;
 ; Referenced Globals:
 ;   SET_CONSOLE_CTRL_HANDLER_FUNC* g_SetConsoleCtrlHandlerFunc = 0021210e
 ;   byte g_ConsoleHandlerRegistered = 0x0

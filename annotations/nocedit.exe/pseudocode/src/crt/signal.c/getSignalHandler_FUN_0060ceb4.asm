@@ -6,11 +6,10 @@
 ; Parameters:
 ; int              Stack[0x4]:4   signal_number
 ;
-; XREF[5]:
+; XREF[4]:
 ;   crt_signal.c_consoleCtrlHandler_FUN_0060cf20 at 0060cf4e
 ;   crt_signal.c_processSignal_FUN_0060d128 at 0060d12f
 ;   crt_signal.c_raiseFPE_FUN_0060d028 at 0060d02b
-;   crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068 at 0060d0c6
 ;   crt_unknown.c_FUN_0060cf80 at 0060cf83
 ;
 ; Referenced Globals:

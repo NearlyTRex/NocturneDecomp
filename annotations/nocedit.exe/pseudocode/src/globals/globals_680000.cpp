@@ -93,7 +93,7 @@ IS_SPECIAL_DEVICE_FUNC* g_IsSpecialDeviceFuncPtr = nullptr;
 
 // RUNTIME_HANDLER_FUNC*
 RUNTIME_HANDLER_FUNC* g_FirstInitHandler = (RUNTIME_HANDLER_FUNC*)core_actor_cpp_staticInit_FUN_00408320;
-RUNTIME_HANDLER_FUNC* g_FirstExitHandler = (RUNTIME_HANDLER_FUNC*)crt_stub_c_staticFinal_FUN_005fde93;
+RUNTIME_HANDLER_FUNC* g_FirstExitHandler = (RUNTIME_HANDLER_FUNC*)0x005FDE93; // DAT_005fde93
 
 // RuntimeHandlerEntry
 RuntimeHandlerEntry g_ExitHandlerTableEnd = {};
@@ -878,57 +878,57 @@ RuntimeHandlerEntry g_InitHandlers[166] = {
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_strtod_c_staticInit_FUN_00603bb0
+        .func = (RUNTIME_HANDLER_FUNC *)0x00603BB0
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_fltused_c_staticInit_FUN_005fde60
+        .func = (RUNTIME_HANDLER_FUNC *)0x005FDE60
     },
     {
         .status = 0x00,
         .priority = 0x01,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_stub_c_staticInit_FUN_005fde92
+        .func = (RUNTIME_HANDLER_FUNC *)0x005FDE92
     },
     {
         .status = 0x00,
         .priority = 0x02,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_fpu_c_staticInit_FUN_006047e0
+        .func = (RUNTIME_HANDLER_FUNC *)0x006047E0
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_stub_c_staticInit_FUN_005ff9f2
+        .func = (RUNTIME_HANDLER_FUNC *)0x005FF9F2
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_ioinit_c_staticInit_FUN_00608f20
+        .func = (RUNTIME_HANDLER_FUNC *)0x00608F20
     },
     {
         .status = 0x00,
         .priority = 0x0B,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_staticInit_FUN_0060240e
+        .func = (RUNTIME_HANDLER_FUNC *)0x0060240E
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_environ_c_staticInit_FUN_0060c650
+        .func = (RUNTIME_HANDLER_FUNC *)0x0060C650
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_startup_c_staticInit_FUN_0060aef4
+        .func = (RUNTIME_HANDLER_FUNC *)0x0060AEF4
     },
     {
         .status = 0x00,
         .priority = 0x03,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_fpemu_c_staticInit_FUN_0060be80
+        .func = (RUNTIME_HANDLER_FUNC *)0x0060BE80
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_thread_c_staticInit_FUN_0060d214
+        .func = (RUNTIME_HANDLER_FUNC *)0x0060D214
     }
 };
 
@@ -937,32 +937,32 @@ RuntimeHandlerEntry g_ExitHandlers[6] = {
     {
         .status = 0x00,
         .priority = 0x28,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_staticFinal_FUN_00605b62
+        .func = (RUNTIME_HANDLER_FUNC *)0x00605B62
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_staticFinal_FUN_00608fc0
+        .func = (RUNTIME_HANDLER_FUNC *)0x00608FC0
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_staticFinal_FUN_00602748
+        .func = (RUNTIME_HANDLER_FUNC *)0x00602748
     },
     {
         .status = 0x00,
         .priority = 0x1F,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_staticFinal_FUN_00608bb0
+        .func = (RUNTIME_HANDLER_FUNC *)0x00608BB0
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_environ_c_staticFinal_FUN_0060c73c
+        .func = (RUNTIME_HANDLER_FUNC *)0x0060C73C
     },
     {
         .status = 0x00,
         .priority = 0x0A,
-        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_staticFinal_FUN_0060a4cc
+        .func = (RUNTIME_HANDLER_FUNC *)0x0060A4CC
     }
 };
 
@@ -3766,9 +3766,9 @@ _MMX_INTEGER g_GreenBlueBits = {0x0000000000000005ULL};
 _MMX_INTEGER g_BlueBitShift = {0x0000000000000003ULL};
 
 // byte
-byte BYTE_00684acc = 0x0;
+byte DAT_00684ACC = 0x0;
 byte BYTE_00684acd = 0x0;
-byte BYTE_0068500c = 0x0;
+byte DAT_0068500C = 0x0;
 byte g_WindowsMajorVersion = 0x0;
 byte g_UseSoftwareMath = 0x0;
 byte g_TimezoneInitFlags = 0x1;
@@ -3930,7 +3930,7 @@ int g_ForceMessagePump = 0x1;
 int g_PreviousActiveState = 0x2D;
 int g_CZombieClassVersion = 0xb;
 int g_MaxErrnoValue = 0x28;
-int INT_00684ccc = 0x0;
+int DAT_00684CCC = 0x0;
 int INT_00684cd0 = 0x1;
 int INT_00684ed0 = 0x100;
 int INT_00684edc = 0x0;

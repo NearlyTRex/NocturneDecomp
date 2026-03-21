@@ -135,10 +135,6 @@ void __cdecl ConvertCreationDisposition(DWORD mode_flags,DWORD *creation_disposi
 // Address: 0060c9f0
 int __watcallStack access(char *filename,int access_mode);
 
-// Original: crt_io.c_parseFileInfo_FUN_0060e3b0
-// Address: 0060e3b0
-void __cdecl parseFileInfo(void);
-
 // Original: crt_io.c_exists_FUN_0060f380
 // Address: 0060f380
 BOOL __watcallStack exists(char *filename);

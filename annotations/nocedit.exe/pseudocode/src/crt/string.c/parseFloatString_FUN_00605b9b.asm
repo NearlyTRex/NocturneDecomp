@@ -17,8 +17,10 @@
 ; XREF[1]:
 ;   crt_string.c_strtod_main_FUN_00605d5d at 00605d72
 ;
+; Referenced Globals:
+;   undefined4 SUB_00603d60
+;
 ; Called Functions:
-;   crt_unknown.c_FUN_00603d60
 ;   crt_unknown.c_FUN_0060b586
 ;
 ; *****************************************************************************
@@ -233,8 +235,8 @@ section .text
     PUSH ESI                            ; 00605d04
     LEA EAX,[EBP + -0x28]               ; 00605d05
     PUSH EAX                            ; 00605d08
-    CALL crt_unknown.c_FUN_00603d60     ; 00605d09
-        ;   XREF to: 00603d60 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_00603d60()
+    CALL 0x00603d60                     ; 00605d09
+        ;   XREF to: 00603d60 (UNCONDITIONAL_CALL)  ; SUB_00603d60
     ADD ESP,0x8                         ; 00605d0e
     TEST byte ptr [EBP + -0x10],0x1     ; 00605d11
         ;   Label: LAB_00605d11

@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 37,
     "complexity_score": 30,
-    "cross_reference_count": 11,
+    "cross_reference_count": 10,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -36,12 +36,6 @@
       "addr": "00607e64",
       "from_addr": "0060814b",
       "name": "crt_io.c_getFileStat_FUN_00607e64",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0060e3b0",
-      "from_addr": "0060e449",
-      "name": "crt_io.c_parseFileInfo_FUN_0060e3b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -96,23 +90,12 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 13,
+    "call_site_count": 10,
     "call_sites": [
       {
         "call_addr": "004b1d02",
         "call_type": "direct",
         "caller": "engine_fileio.cpp_establishUserIdentity_FUN_004b1c00",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
-        "call_addr": "0060e449",
-        "call_type": "direct",
-        "caller": "crt_io.c_parseFileInfo_FUN_0060e3b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -135,17 +118,6 @@
         "call_addr": "0060814b",
         "call_type": "direct",
         "caller": "crt_io.c_getFileStat_FUN_00607e64",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
-        "call_addr": "0060e496",
-        "call_type": "direct",
-        "caller": "crt_io.c_parseFileInfo_FUN_0060e3b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -187,9 +159,9 @@
         "stack_params": 3
       },
       {
-        "call_addr": "0060e3fe",
+        "call_addr": "00541f3f",
         "call_type": "direct",
-        "caller": "crt_io.c_parseFileInfo_FUN_0060e3b0",
+        "caller": "core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -198,9 +170,31 @@
         "stack_params": 3
       },
       {
-        "call_addr": "00541f3f",
+        "call_addr": "0054c6ff",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_0054c6f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00550e4a",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_findFilesByExtension_FUN_00550ce0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00556d7c",
+        "call_type": "direct",
+        "caller": "shape_quantize.cpp_copyString_FUN_00556d70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

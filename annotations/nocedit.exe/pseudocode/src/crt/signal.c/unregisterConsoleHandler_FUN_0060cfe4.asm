@@ -4,10 +4,8 @@
 ; bool crt_signal_c_unregisterConsoleHandler_FUN_0060cfe4(void)
 ;
 ;
-; XREF[3]:
+; XREF[1]:
 ;   crt_signal.c_processSignal_FUN_0060d128 at 0060d18e
-;   crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068 at 0060d0ea
-;   crt_unknown.c_FUN_0060d1ec at 0060d1f5
 ;
 ; Referenced Globals:
 ;   SET_CONSOLE_CTRL_HANDLER_FUNC* g_SetConsoleCtrlHandlerFunc = 0021210e

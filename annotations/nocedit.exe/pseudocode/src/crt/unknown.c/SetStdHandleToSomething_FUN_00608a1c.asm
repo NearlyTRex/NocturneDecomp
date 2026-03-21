@@ -4,9 +4,6 @@
 ; void crt_unknown_c_SetStdHandleToSomething_FUN_00608a1c(HANDLE param_1,uint param_2)
 ;
 ;
-; XREF[1]:
-;   crt_io.c_parseFileInfo_FUN_0060e3b0 at 0060e4bd
-;
 ; Referenced Globals:
 ;   SET_STD_HANDLE_FUNC* g_SetStdHandleFunc = 002121e6
 ;   ENTER_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f18 = 00602434

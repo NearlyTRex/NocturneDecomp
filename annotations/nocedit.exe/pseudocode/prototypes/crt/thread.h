@@ -15,10 +15,6 @@ void __cdecl noop::lock(void);
 // Address: 0060ccf0
 void __cdecl InitializeThreadContext(ThreadData *pThreadData);
 
-// Original: crt_thread.c_staticInit_FUN_0060d214
-// Address: 0060d214
-void __cdecl staticInit(void);
-
 // Original: crt_thread.c_threadStartupWrapper_FUN_0060f8c0
 // Address: 0060f8c0
 void __cdecl threadStartupWrapper(ThreadStartupInfo *info);

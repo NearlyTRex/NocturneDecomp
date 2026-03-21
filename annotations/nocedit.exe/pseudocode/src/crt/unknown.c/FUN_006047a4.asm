@@ -4,9 +4,6 @@
 ; void crt_unknown_c_FUN_006047a4(void)
 ;
 ;
-; XREF[1]:
-;   crt_fpu.c_staticInit_FUN_006047e0 at 00604804
-;
 ; Referenced Globals:
 ;   byte BYTE_00684acd = 0x0
 ;   ENTER_CRITICAL_SECTION_FUNC* PTR_crt_thread.c_EnterCriticalSection_FUN_0060b180_00685464 = 0060b180

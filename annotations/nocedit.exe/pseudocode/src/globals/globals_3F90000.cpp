@@ -190,7 +190,7 @@ int g_MultibyteLocaleActive = {};
 int g_BufferedCharacter = {};
 int g_BufferedVirtualKey = {};
 int g_BufferedRepeatCount = {};
-int INT_03f9c150 = {};
+int DAT_03F9C150 = {};
 
 // int[20]
 int g_InputBuffer[20] = {};

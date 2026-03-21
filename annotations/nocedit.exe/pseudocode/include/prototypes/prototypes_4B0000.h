@@ -63,18 +63,8 @@ int __cdecl core_event_cpp_CRuleList_evaluateAndRun_FUN_004b18e0(CRuleList *this
 float __cdecl core_event_cpp_getVectorDistance_FUN_004b1930(CVector3f *a,CVector3f *b);
 int __cdecl core_event_cpp_getSelectedCameraIndex_FUN_004b1970(CDemonSet *set_ptr);
 int __cdecl core_event_cpp_isCharacterSpeaking_FUN_004b1980(CCharacter *char_ptr);
-void __cdecl crt_watcom_c_FUN_004b19a1(int *param_1);
-void __cdecl crt_watcom_c_FUN_004b19b1(int *param_1);
-void __cdecl crt_watcom_c_FUN_004b19c1(int *param_1);
 void __fastcall crt_watcom_c__memset_FUN_004b19d0(void *dest,int fill_byte,uint size);
-void __cdecl crt_watcom_c_FUN_004b1a49(void);
-char __cdecl crt_watcom_c_FUN_004b1a59(void);
 void __fastcall crt_watcom_c__memcpy_FUN_004b1a78(void *dest,void *src,uint size);
-void __cdecl crt_watcom_c_FUN_004b1b1c(void);
-void __cdecl crt_watcom_c_FUN_004b1b31(void);
-void __cdecl crt_watcom_c_FUN_004b1b41(void);
-void __cdecl crt_watcom_c_FUN_004b1b54(void);
-void __cdecl crt_watcom_c__strcpy_FUN_004b1b5c(char *dest,char *src);
 int __cdecl engine_fileio_cpp_establishUserIdentity_FUN_004b1c00(void);
 void __cdecl engine_fileio_cpp_trimWhitespace_FUN_004b1d40(char *string);
 void __cdecl engine_fileio_cpp_safeCloseFile_FUN_004b1db0(_FILE **file_ptr);

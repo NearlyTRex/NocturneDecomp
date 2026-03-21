@@ -4,9 +4,8 @@
 ; int crt_unknown_c_FUN_0060fa90(char *param_1)
 ;
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_env.c_putenv_internal_FUN_0060ee80 at 0060efd9
-;   crt_unknown.c_FUN_00610900 at 00610918
 ;
 ; Called Functions:
 ;   crt_string.c_mbstring_termination_check_FUN_0060b630

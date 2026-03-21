@@ -4,9 +4,8 @@
 ; void __cdecl crt_heap_c_CompactHeapBlocks_FUN_0060c920(void)
 ;
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_heap.c_SystemAllocWrapper_FUN_00609718 at 00609718
-;   crt_unknown.c_staticFinal_FUN_0060a4cc at 0060a510
 ;
 ; Referenced Globals:
 ;   Heap* g_MainHeap = 00000000

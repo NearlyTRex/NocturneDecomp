@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 107,
     "complexity_score": 265,
-    "cross_reference_count": 2,
+    "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
@@ -20,12 +20,6 @@
       "addr": "005ff0f3",
       "from_addr": "005ff0ff",
       "name": "crt_string.c__strtod_FUN_005ff0f3",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00603bc9",
-      "from_addr": "00603bd5",
-      "name": "crt_unknown.c_FUN_00603bc9",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -69,19 +63,8 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 1,
     "call_sites": [
-      {
-        "call_addr": "00603bd5",
-        "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_00603bc9",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
       {
         "call_addr": "005ff0ff",
         "call_type": "direct",
@@ -94,7 +77,7 @@
         "stack_params": 2
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "declared_params": 2,
     "declared_stack_bytes": 8,
     "estimated_params": 2

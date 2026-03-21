@@ -1,6 +1,6 @@
 // Name: sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
 // Address: 005aca90
-// Address Range: [[005aca90, 005acda2]]
+// Address Range: [[004423e5, 00442438] [005aca90, 005acda2]]
 // Convention: __cdecl
 // Signature: void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90(LPVOID *channel_buffers,int bits_per_sample,int num_channels,int samples_per_sec,int samples_per_block,int block_align)
 
@@ -9,6 +9,38 @@
 void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90(LPVOID *channel_buffers,int bits_per_sample,int num_channels,int samples_per_sec,int samples_per_block,int block_align)
 {
 __asm {
+        mov EDI,ESP
+        mov ECX,0xb
+        lea ESI,[ESP + 0x2c]
+        push EBX
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        jmp LAB_005acc80
+        push EBX
+        push ESI
+        push EDI
+        push EBP
+        sub ESP,0x5c
         cmp dword ptr [g_SoundLockCount],0x0
         jle LAB_005acd4b
     LAB_005acaa4:
@@ -146,11 +178,8 @@ __asm {
         jnz LAB_005acc55
         mov EBX,0x3f5daa4
     LAB_005acc71:
-        sub ESP,0x2c
-        mov EDI,ESP
-        mov ECX,0xb
-        lea ESI,[ESP + 0x2c]
-        push EBX
+        jmp 0x004423e5
+    LAB_005acc80:
         rep movsd
         call sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0
         add ESP,0x30

@@ -4,9 +4,6 @@
 ; void crt_unknown_c_FUN_0060b142(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
 ;
 ;
-; XREF[1]:
-;   crt_unknown.c_thunk_FUN_0060b142 at 0060477a
-;
 ; Called Functions:
 ;   crt_unknown.c_FUN_0060b133
 ;   crt_unknown.c_FUN_0060d480

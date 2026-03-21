@@ -8,9 +8,6 @@
 ; char * *         Stack[0x8]:4   endptr
 ; int              Stack[0xc]:4   base
 ;
-; XREF[1]:
-;   crt_io.c_parseFileInfo_FUN_0060e3b0 at 0060e463
-;
 ; Called Functions:
 ;   crt_stdlib.c_strtol_internal_FUN_0060ec70
 ;
