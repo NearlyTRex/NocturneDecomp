@@ -7,9 +7,9 @@ from ghidra.program.model.listing import CodeUnit
 # Marker prefix set by CreateCodeCave.java
 MARKER_PREFIX = "CODE_CAVE"
 
-# Pattern: CODE_CAVE <name> <total_size>
+# Pattern: CODE_CAVE <name> <total_size> [<free_offset>]
 MARKER_PATTERN = re.compile(
-    r'^CODE_CAVE\s+(\S+)\s+(\d+)$'
+    r'^CODE_CAVE\s+(\S+)\s+(\d+)(?:\s+(\d+))?$'
 )
 
 
@@ -33,13 +33,14 @@ def scan_code_caves_worker(start_addr, end_addr, listing):
 
             cave_name = m.group(1)
             total_size = int(m.group(2))
+            free_offset = int(m.group(3)) if m.group(3) else 0
             start = str(cu.getMinAddress())
 
             caves.append({
                 "name": cave_name,
                 "start": start,
                 "total_size": total_size,
-                "free_offset": 0,
+                "free_offset": free_offset,
                 "allocations": [],
             })
     except Exception:
@@ -50,7 +51,7 @@ def scan_code_caves_worker(start_addr, end_addr, listing):
 def export_code_caves(currentProgram, path):
     """Export code cave markers to code_caves.json."""
 
-    # Load existing cave data to preserve allocation info
+    # Load existing cave data to preserve allocation details
     existing_caves = {}
     json_path = os.path.join(path, "code_caves.json")
     if os.path.isfile(json_path):
@@ -75,11 +76,11 @@ def export_code_caves(currentProgram, path):
         log_info("No code caves found, skipping export")
         return
 
-    # Merge with existing data (preserve allocations and free_offset)
+    # Merge: marker is authoritative for name, start, total_size, free_offset.
+    # Allocations come from the existing JSON (populated by patching scripts).
     for cave in caves:
         existing = existing_caves.get(cave["start"])
         if existing:
-            cave["free_offset"] = existing.get("free_offset", 0)
             cave["allocations"] = existing.get("allocations", [])
 
     # Sort by address

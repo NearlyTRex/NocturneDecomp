@@ -7,10 +7,10 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6484
-Clean functions: 5049 (77.9%)
-Functions with suspects: 1435 (22.1%)
+Clean functions: 5050 (77.9%)
+Functions with suspects: 1434 (22.1%)
 
-Total suspect patterns: 15890
+Total suspect patterns: 15873
 Average suspects per function: 2.45
 
 Virtual files: 214 total, 47 at 100%, 83 at 90%+
@@ -23,20 +23,20 @@ Average complexity score: 74.4
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6484
-Successful: 5883 (90.7%)
-Failed: 601
+Successful: 5882 (90.7%)
+Failed: 602
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   decompiler_intrinsic      6814
-  pointer_cast              5398
+  pointer_cast              5392
   unknown_field             1297
   stack_param               640
   nonstandard_int           267
   warning_inlined_function  261
-  stack_ref                 226
+  stack_ref                 220
   warning_type_propagation  132
-  stack_alignment_array     121
+  stack_alignment_array     120
   unresolved_funcptr        99
   sub84_truncation          95
   param_count_too_few       81
@@ -49,8 +49,8 @@ SUSPECT PATTERN BREAKDOWN
   format_string_mismatch    24
   undefined_ram             24
   byvalue_struct_passing    21
-  unaffected_reg            17
   extra_output              16
+  unaffected_reg            13
   fnstsw_flag_artifact      7
   displaced_global_access   6
   unresolved_register       5
@@ -123,7 +123,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
   005b1680: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680 (4 lines)
   005b1660: sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660 (4 lines)
-  ... and 4999 more
+  ... and 5000 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -152,8 +152,8 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 1341, suspects: 23, lines: 1086)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 1301, suspects: 52, lines: 761)
   0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (score: 1301, suspects: 42, lines: 856)
-  0059e0a0: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (score: 1282, suspects: 80, lines: 472)
   005325e0: sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (score: 1281, suspects: 73, lines: 541)
+  0059e0a0: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (score: 1253, suspects: 77, lines: 473)
   005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470 (score: 1249, suspects: 19, lines: 1029)
   004922c8: core_dstrender.cpp_verticalBlur3TapMMXStride128_FUN_004922c8 (score: 1211, suspects: 104, lines: 156)
   00492185: core_dstrender.cpp_verticalBlur3TapMMXStride256_FUN_00492185 (score: 1211, suspects: 104, lines: 156)
@@ -174,7 +174,7 @@ FUNCTIONS BY SUSPECT TYPE
     0043f2d0: support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0
     ... and 904 more
 
-  pointer_cast (920 functions):
+  pointer_cast (919 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     004874d0: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
     00487630: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
@@ -185,7 +185,7 @@ FUNCTIONS BY SUSPECT TYPE
     0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    ... and 910 more
+    ... and 909 more
 
   unknown_field (111 functions):
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
@@ -239,7 +239,7 @@ FUNCTIONS BY SUSPECT TYPE
     0050e5b0: engine_matrix.c_projectToScreen_FUN_0050e5b0
     ... and 248 more
 
-  stack_ref (59 functions):
+  stack_ref (58 functions):
     004027a0: engine_2d.c_getStringWidthFormatted_FUN_004027a0
     00404600: engine_3d.c_drawLineStrip3D_FUN_00404600
     00407cf0: engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
@@ -250,7 +250,7 @@ FUNCTIONS BY SUSPECT TYPE
     004b5950: engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     00534d40: sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
     005aca90: sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
-    ... and 49 more
+    ... and 48 more
 
   warning_type_propagation (132 functions):
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
@@ -265,7 +265,7 @@ FUNCTIONS BY SUSPECT TYPE
     0048ec70: core_drone.cpp_CDrone_process_FUN_0048ec70
     ... and 122 more
 
-  stack_alignment_array (119 functions):
+  stack_alignment_array (118 functions):
     00488cd0: cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
     005e1ca0: support_trisock.cpp_performSocketOperation_FUN_005e1ca0
     005e1bd0: support_trisock.cpp_connectSocket_FUN_005e1bd0
@@ -276,7 +276,7 @@ FUNCTIONS BY SUSPECT TYPE
     004055b0: engine_3d.c_renderPolygonPerspectiveNormalized_FUN_004055b0
     00405430: engine_3d.c_renderPolygonUVTextureNormalized_FUN_00405430
     00405350: engine_3d.c_renderPolygonUVTextureEnable_FUN_00405350
-    ... and 109 more
+    ... and 108 more
 
   unresolved_funcptr (51 functions):
     0043eef0: support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0
@@ -425,14 +425,13 @@ FUNCTIONS BY SUSPECT TYPE
     0040d940: core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
     ... and 11 more
 
-  unaffected_reg (4 functions):
-    0059a070: core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
+  extra_output (1 functions):
+    005f8550: core_xform.cpp_transformAndClipGeometry_FUN_005f8550
+
+  unaffected_reg (3 functions):
     0042d090: core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
     005556f0: shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
-
-  extra_output (1 functions):
-    005f8550: core_xform.cpp_transformAndClipGeometry_FUN_005f8550
 
   fnstsw_flag_artifact (5 functions):
     0056b810: core_set.cpp_CDemonSet_processActors_FUN_0056b810

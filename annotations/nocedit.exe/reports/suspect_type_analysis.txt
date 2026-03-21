@@ -5,20 +5,20 @@ SUSPECT TYPE ANALYSIS
 SUSPECT TYPE COUNTS
 --------------------------------------------------
   decompiler_intrinsic            7087 ( 36.6%)
-  pointer_cast                    5710 ( 29.5%)
+  pointer_cast                    5704 ( 29.5%)
   unknown_field                   1434 (  7.4%)
   stack_param                      861 (  4.4%)
   unnamed_param                    690 (  3.6%)
   special_crt_function             635 (  3.3%)
   fpu_register_input               327 (  1.7%)
-  stack_ref                        279 (  1.4%)
+  stack_ref                        273 (  1.4%)
   nonstandard_int                  270 (  1.4%)
   warning_inlined_function         264 (  1.4%)
   register_param                   252 (  1.3%)
-  unaffected_reg                   228 (  1.2%)
+  unaffected_reg                   224 (  1.2%)
   unresolved_funcptr               171 (  0.9%)
   param_count_too_few              151 (  0.8%)
-  stack_alignment_array            137 (  0.7%)
+  stack_alignment_array            136 (  0.7%)
   warning_type_propagation         133 (  0.7%)
   sub84_truncation                 107 (  0.6%)
   negative_offset                   85 (  0.4%)
@@ -98,11 +98,11 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5710 occurrences)
+TYPE: pointer_cast (5704 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2169x  (uint *)((int)
+  2163x  (uint *)((int)
   1294x  (int *)((int)
    325x  (SRenderVertex *)((int)
    301x  (float *)((int)
@@ -367,7 +367,7 @@ Example functions:
     float10 in_ST0;...
 
 ====================================================================================================
-TYPE: stack_ref (279 occurrences)
+TYPE: stack_ref (273 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -383,14 +383,14 @@ Unique patterns:
      7x  &stack0xfffffee8
      7x  &stack0xfffffeb8
      6x  &stack0xffffffdc
-     6x  &stack0xffffffd4
      6x  &stack0x00000008
      6x  &stack0xfffff17c
-     5x  &stack0xffffffd8
      5x  &stack0xffffff28
      4x  &stack0xffffffe0
      4x  &stack0xfffffffc
+     4x  &stack0xffffffd4
      4x  &stack0xffffff60
+     4x  &stack0xfffffac4
 
 Example functions:
   crt_io.c_write_FUN_006084ec
@@ -538,13 +538,13 @@ Example functions:
     ushort *in_ECX;...
 
 ====================================================================================================
-TYPE: unaffected_reg (228 occurrences)
+TYPE: unaffected_reg (224 occurrences)
 ====================================================================================================
 
 Unique patterns:
     69x  unaff_EBX
     58x  unaff_EBP
-    57x  unaff_ESI
+    53x  unaff_ESI
     40x  unaff_EDI
      4x  unaff_EAX
 
@@ -689,7 +689,7 @@ Example functions:
     Function declares 1 params but call sites push 2 (1 missing)...
 
 ====================================================================================================
-TYPE: stack_alignment_array (137 occurrences)
+TYPE: stack_alignment_array (136 occurrences)
 ====================================================================================================
 
 Unique patterns:

@@ -66,6 +66,40 @@ def load_patches(json_path, group_filter=None):
     return patches
 
 
+def load_cave_comments(json_path):
+    """Load cave comment updates from the patches JSON.
+
+    Returns list of {'address': int, 'comment': str} dicts.
+    """
+    with open(json_path, 'r') as f:
+        data = json.load(f)
+    return [
+        {'address': int(c['address'], 16), 'comment': c['comment']}
+        for c in data.get('cave_comments', [])
+    ]
+
+
+def load_function_body_extensions(json_path):
+    """Load function body extensions from the patches JSON.
+
+    When cave code is placed outside a function's address range, the cave
+    range needs to be added to the function's body so Ghidra's decompiler
+    follows the JMP and the .asm/.pcode exporters include the cave code.
+
+    Returns list of {'function': int, 'cave_start': int, 'cave_size': int}.
+    """
+    with open(json_path, 'r') as f:
+        data = json.load(f)
+    return [
+        {
+            'function': int(e['function'], 16),
+            'cave_start': int(e['cave_start'], 16),
+            'cave_size': e['cave_size'],
+        }
+        for e in data.get('function_body_extensions', [])
+    ]
+
+
 def list_groups(json_path):
     """Print available patch groups."""
     with open(json_path, 'r') as f:
@@ -181,54 +215,78 @@ def count_artifacts(code):
 
 
 def run_test_mode(prog, patches):
-    """Test mode: apply each patch in a transaction, decompile, roll back."""
-    # Group patches by containing function to batch them
+    """Test mode: apply ALL patches in one transaction, then decompile each affected function."""
     from collections import OrderedDict
-    func_patches = OrderedDict()
     fm = prog.getFunctionManager()
     space = prog.getAddressFactory().getDefaultAddressSpace()
+
+    # Find all unique functions affected by patches (for before/after comparison)
+    # Skip patches that target non-function areas (e.g. code caves) — they're
+    # infrastructure for patches that DO target functions
+    func_addrs = OrderedDict()  # func_entry_offset -> (func, [patches])
+    non_func_patches = []
 
     for patch in patches:
         addr = space.getAddress(patch['address'])
         func = fm.getFunctionContaining(addr)
-        func_key = func.getEntryPoint().getOffset() if func else patch['address']
-        if func_key not in func_patches:
-            func_patches[func_key] = []
-        func_patches[func_key].append(patch)
+        if func:
+            key = func.getEntryPoint().getOffset()
+            if key not in func_addrs:
+                func_addrs[key] = (func, [])
+            func_addrs[key][1].append(patch)
+        else:
+            non_func_patches.append(patch)
 
-    for func_addr, func_patch_list in func_patches.items():
-        print("=" * 70)
-        func = fm.getFunctionContaining(space.getAddress(func_addr))
-        func_name = func.getName() if func else "0x%x" % func_addr
-        print("Function: %s" % func_name)
-        for p in func_patch_list:
-            print("  Patch: %s (0x%x)" % (p['name'], p['address']))
-            print("    %s" % p['description'])
-        print("=" * 70)
+    # Print all patches
+    print("=" * 70)
+    for p in patches:
+        print("  Patch: %s (0x%x)" % (p['name'], p['address']))
+        print("    %s" % p['description'])
+    print("=" * 70)
 
-        # Decompile before
-        before_code = decompile_function_at(prog, func_addr)
+    # Decompile all affected functions BEFORE
+    before_data = OrderedDict()
+    for func_offset, (func, _) in func_addrs.items():
+        before_code = decompile_function_at(prog, func_offset)
         before_arts = count_artifacts(before_code)
+        before_data[func_offset] = (func.getName(), before_code, before_arts)
 
-        # Apply all patches for this function in one transaction, decompile, roll back
-        tx_id = prog.startTransaction("Test: %s" % func_name)
-        try:
-            all_ok = True
-            for p in func_patch_list:
-                ok, msg = apply_patch(prog, p, dry_run=False)
-                if not ok:
-                    print("  SKIP %s: %s" % (p['name'], msg))
-                    all_ok = False
+    # Apply ALL patches in one transaction
+    tx_id = prog.startTransaction("Test all patches")
+    try:
+        all_ok = True
+        for p in patches:
+            ok, msg = apply_patch(prog, p, dry_run=False)
+            if not ok:
+                print("  SKIP %s: %s" % (p['name'], msg))
+                all_ok = False
+
+        # Decompile all affected functions AFTER
+        after_data = OrderedDict()
+        for func_offset, (func, _) in func_addrs.items():
             if all_ok:
-                after_code = decompile_function_at(prog, func_addr)
+                after_code = decompile_function_at(prog, func_offset)
                 after_arts = count_artifacts(after_code)
             else:
-                after_code = before_code
-                after_arts = before_arts
-        finally:
-            prog.endTransaction(tx_id, False)
+                after_code = before_data[func_offset][1]
+                after_arts = before_data[func_offset][2]
+            after_data[func_offset] = (func.getName(), after_code, after_arts)
+    finally:
+        prog.endTransaction(tx_id, False)
 
-        # Show results
+    # Show results per function
+    for func_offset in func_addrs:
+        func_name, before_code, before_arts = before_data[func_offset]
+        _, after_code, after_arts = after_data[func_offset]
+
+        print()
+        print("=" * 70)
+        print("Function: %s" % func_name)
+        func_patches = func_addrs[func_offset][1]
+        for p in func_patches:
+            print("  Patch: %s (0x%x)" % (p['name'], p['address']))
+        print("=" * 70)
+
         print("\nArtifacts BEFORE: undefined=%d CONCAT=%d BITCAST=%d SUB=%d extraout=%d (total=%d)" % (
             before_arts['undefined'], before_arts['CONCAT'],
             before_arts['BITCAST'], before_arts['SUB_'],
@@ -262,7 +320,62 @@ def run_test_mode(prog, patches):
         print()
 
 
-def run_apply_or_dry(prog, patches, dry_run):
+def apply_cave_comments(prog, cave_comments):
+    """Update cave plate comments in the Ghidra program."""
+    from ghidra.program.model.listing import CodeUnit
+    listing = prog.getListing()
+    space = prog.getAddressFactory().getDefaultAddressSpace()
+
+    for cc in cave_comments:
+        addr = space.getAddress(cc['address'])
+        cu = listing.getCodeUnitAt(addr)
+        if cu is None:
+            cu = listing.getCodeUnitContaining(addr)
+        if cu is not None:
+            cu.setComment(CodeUnit.PLATE_COMMENT, cc['comment'])
+            print("  Updated cave comment at 0x%x: %s" % (cc['address'], cc['comment']))
+        else:
+            print("  WARNING: No code unit at 0x%x for cave comment" % cc['address'])
+
+
+def apply_function_body_extensions(prog, extensions):
+    """Add cave address ranges to function bodies.
+
+    This tells Ghidra that the cave code is part of the function, so the
+    decompiler follows JMPs into caves and the .asm/.pcode exporters
+    include the cave code in the function's output.
+    """
+    from ghidra.program.model.address import AddressSet
+    fm = prog.getFunctionManager()
+    space = prog.getAddressFactory().getDefaultAddressSpace()
+
+    for ext in extensions:
+        func_addr = space.getAddress(ext['function'])
+        func = fm.getFunctionAt(func_addr)
+        if func is None:
+            func = fm.getFunctionContaining(func_addr)
+        if func is None:
+            print("  WARNING: No function at 0x%x for body extension" % ext['function'])
+            continue
+
+        cave_start = space.getAddress(ext['cave_start'])
+        cave_end = cave_start.add(ext['cave_size'] - 1)
+
+        # Check if already part of the function body
+        if func.getBody().contains(cave_start):
+            print("  Cave 0x%x already in %s body, skipping" % (
+                ext['cave_start'], func.getName()))
+            continue
+
+        new_range = AddressSet(cave_start, cave_end)
+        func.setBody(func.getBody().union(new_range))
+        print("  Extended %s body: added 0x%x-0x%x (%d bytes)" % (
+            func.getName(), ext['cave_start'],
+            ext['cave_start'] + ext['cave_size'] - 1, ext['cave_size']))
+
+
+def run_apply_or_dry(prog, patches, dry_run, cave_comments=None,
+                     body_extensions=None):
     """Apply or dry-run all patches."""
     if not dry_run:
         tx_id = prog.startTransaction("Apply byte patches")
@@ -278,6 +391,14 @@ def run_apply_or_dry(prog, patches, dry_run):
             print(msg)
             if not ok:
                 print("    WARNING: %s" % msg)
+
+        # Apply cave comment updates
+        if not dry_run and cave_comments:
+            apply_cave_comments(prog, cave_comments)
+
+        # Extend function bodies to include cave ranges
+        if not dry_run and body_extensions:
+            apply_function_body_extensions(prog, body_extensions)
     finally:
         if not dry_run:
             prog.endTransaction(tx_id, True)
@@ -352,6 +473,9 @@ def main():
     print("=" * 70)
     print("%d patch(es) loaded\n" % len(patches))
 
+    cave_comments = load_cave_comments(json_path)
+    body_extensions = load_function_body_extensions(json_path)
+
     exit_code = 0
     try:
         project = pyghidra.open_project(project_path, args.project_name)
@@ -359,7 +483,9 @@ def main():
             if args.test:
                 run_test_mode(prog, patches)
             else:
-                run_apply_or_dry(prog, patches, dry_run=not args.apply)
+                run_apply_or_dry(prog, patches, dry_run=not args.apply,
+                                 cave_comments=cave_comments,
+                                 body_extensions=body_extensions)
         project.close()
     except Exception as e:
         print("ERROR: %s" % str(e))

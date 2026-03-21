@@ -5,15 +5,15 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5883 (90.7%)
-Failed: 601
+Successful: 5882 (90.7%)
+Failed: 602
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1220
+  other                           1224
   format_error                     797
   incompatible_types               213
-  undeclared_identifier            145
+  undeclared_identifier            139
   syntax_error                      41
   missing_member                    20
   type_error                        10
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1220 errors)
+CATEGORY: other (1224 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -56,6 +56,10 @@ CATEGORY: other (1220 errors)
     Line 180: C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
     Line 76: C-style cast from 'uint' (aka 'unsigned int') to 'uchar[4]' (aka 'unsigned char[4]') is not allowed
+  core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
+    Line 138: array type 'byte[4]' (aka 'unsigned char[4]') is not assignable
+  core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
+    Line 183: array type 'byte[4]' (aka 'unsigned char[4]') is not assignable
   core_mmx.c_detectIntelProcessor_FUN_00524f4c
     Line 67: assigning to 'char *' from 'const char *' discards qualifiers
   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
@@ -1396,7 +1400,7 @@ CATEGORY: incompatible_types (213 errors)
     Line 212: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (145 errors)
+CATEGORY: undeclared_identifier (139 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -1543,8 +1547,6 @@ CATEGORY: undeclared_identifier (145 errors)
     Line 85: use of undeclared identifier 'stack0xffffff94'; did you mean 'in_stack_ffffff94'?
   core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70
     Line 28: use of undeclared identifier 'stack0xffffffcc'
-  core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
-    Line 40: use of undeclared identifier 'stack0xffffffd4'
   shape_design.c_renderSinglePolygon_FUN_0045ce20
     Line 85: use of undeclared identifier 'stack0xffffffdc'
   shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920

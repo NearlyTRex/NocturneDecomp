@@ -49,7 +49,7 @@ CQuaternion4f * __cdecl CSkeleton::getBoneAngleAtFrame(CSkeleton *this_ptr,int b
 
 // Original: core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
 // Address: 0059a070
-CQuaternion4f * __cdecl CSkeleton::getBoneAngleInterpolated(CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2,float interpolation);
+CQuaternion4f * __stack5_esi CSkeleton::getBoneAngleInterpolated(CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2,float interpolation,CQuaternion4f *result_out);
 
 // Original: core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100
 // Address: 0059a100

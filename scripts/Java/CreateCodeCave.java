@@ -127,9 +127,10 @@ public class CreateCodeCave extends GhidraScript {
         }
 
         // Step 4: Add marker plate comment
-        // Format: CODE_CAVE <name> <size>
-        // The export pipeline parses this to build code_caves.json
-        String marker = String.format("%s %s %d", MARKER_PREFIX, caveName, bytesFilled);
+        // Format: CODE_CAVE <name> <total_size> <free_offset>
+        // The export pipeline parses this to build code_caves.json.
+        // Patching scripts update <free_offset> when allocating space.
+        String marker = String.format("%s %s %d 0", MARKER_PREFIX, caveName, bytesFilled);
         listing.setComment(minAddr, CodeUnit.PLATE_COMMENT, marker);
 
         // Step 5: Add a label at the cave start

@@ -5,15 +5,15 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5883 (90.7%)
-Failed: 601
+Successful: 5882 (90.7%)
+Failed: 602
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1220
+  other                           1224
   format_error                     797
   incompatible_types               213
-  undeclared_identifier            145
+  undeclared_identifier            139
   syntax_error                      41
   missing_member                    20
   type_error                        10
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1220 errors)
+CATEGORY: other (1224 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -56,6 +56,10 @@ CATEGORY: other (1220 errors)
     Line 180: C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed...
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
     Line 76: C-style cast from 'uint' (aka 'unsigned int') to 'uchar[4]' (aka 'unsigned char[...
+  core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
+    Line 138: array type 'byte[4]' (aka 'unsigned char[4]') is not assignable...
+  core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
+    Line 183: array type 'byte[4]' (aka 'unsigned char[4]') is not assignable...
   core_mmx.c_detectIntelProcessor_FUN_00524f4c
     Line 67: assigning to 'char *' from 'const char *' discards qualifiers...
   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
@@ -80,12 +84,8 @@ CATEGORY: other (1220 errors)
     Line 69: cannot cast from type 'float' to pointer type 'CPathMap *'...
   core_platfrm.cpp_CPlatform_process_FUN_0054cc30
     Line 276: cannot cast from type 'float' to pointer type 'CVector3f *'...
-  core_setcolid.cpp_rayTestQuadFloor_FUN_005715d0
-    Line 19: cannot cast from type 'float' to pointer type 'CVector3f *'...
-  core_stairs.cpp_CStairs_customGetFloorHeight_FUN_005ba6a0
-    Line 21: cannot cast from type 'float' to pointer type 'CVector3f *'...
 
-  ... and 266 more errors
+  ... and 268 more errors
 
 ====================================================================================================
 CATEGORY: format_error (797 errors)
@@ -222,7 +222,7 @@ CATEGORY: incompatible_types (213 errors)
   ... and 88 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (145 errors)
+CATEGORY: undeclared_identifier (139 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -286,7 +286,7 @@ CATEGORY: undeclared_identifier (145 errors)
   shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0
     Line 28: use of undeclared identifier 'code'...
 
-  ... and 47 more errors
+  ... and 46 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (41 errors)
@@ -413,8 +413,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.90
-Average suspects in failed compilations: 7.82
+Average suspects in successfully compiled functions: 1.88
+Average suspects in failed compilations: 7.95
 
-Functions that compile but have suspect patterns: 1445
+Functions that compile but have suspect patterns: 1443
 (These may have runtime issues even though syntax is valid)

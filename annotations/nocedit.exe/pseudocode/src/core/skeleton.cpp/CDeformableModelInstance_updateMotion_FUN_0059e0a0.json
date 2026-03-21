@@ -1,23 +1,42 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 60,
+        "line": 183,
+        "message": "array type 'byte[4]' (aka 'unsigned char[4]') is not assignable"
+      },
+      {
+        "category": "other",
+        "column": 61,
+        "line": 284,
+        "message": "array type 'byte[4]' (aka 'unsigned char[4]') is not assignable"
+      },
+      {
+        "category": "other",
+        "column": 57,
+        "line": 313,
+        "message": "array type 'byte[4]' (aka 'unsigned char[4]') is not assignable"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 751,
-    "complexity_score": 1282,
+    "complexity_score": 1253,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 472,
-    "suspect_count": 80,
+    "pseudocode_lines": 473,
+    "suspect_count": 77,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 1223
+    "total_lines": 1224
   },
   "cross_references": [
     {
@@ -792,14 +811,6 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 176,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_bec[0].w + local_54) = local_cc;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 192,
       "match": "(float *)((int)",
       "severity": "mild",
@@ -952,14 +963,6 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 277,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_186c[0].w + local_44) = local_16c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 294,
       "match": "(uint *)((int)",
       "severity": "mild",
@@ -980,14 +983,6 @@
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "pfVar19 = (float *)((int)local_186c + (uint)bVar19 * -8 + local_80 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 306,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_186c[0].w + local_80) = local_22c;",
       "type": "pointer_cast"
     },
     {
@@ -1392,7 +1387,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 462,
+      "line": 463,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "pfVar18 = (float *)((int)local_60 + (uint)bVar19 * -8 + 0x6b4);",

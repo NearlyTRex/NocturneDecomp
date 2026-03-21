@@ -1,61 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 40,
-        "message": "use of undeclared identifier 'stack0xffffffd4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 41,
-        "message": "use of undeclared identifier 'stack0xffffffd8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 43,
-        "message": "use of undeclared identifier 'stack0xffffffd8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 48,
-        "message": "use of undeclared identifier 'stack0xffffffd4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 49,
-        "message": "use of undeclared identifier 'stack0xffffffd8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 52,
-        "message": "use of undeclared identifier 'stack0xffffffd8'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 81,
-    "complexity_score": 195,
+    "assembly_lines": 95,
+    "complexity_score": 31,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
-    "suspect_count": 13,
-    "suspect_types": [
-      "pointer_cast",
-      "stack_alignment_array",
-      "stack_ref",
-      "unaffected_reg"
-    ],
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 126
   },
   "cross_references": [
@@ -84,12 +42,16 @@
       [
         "0059a070",
         "0059a0ff"
+      ],
+      [
+        "0060fb40",
+        "0060fb78"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack5_esi",
     "is_ebp_frame": true,
     "name": "core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070",
-    "signature": "CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2,float interpolation)"
+    "signature": "CQuaternion4f * __stack5_esi core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2,float interpolation,CQuaternion4f *result_out)"
   },
   "function_calls": [
     {
@@ -104,160 +66,40 @@
     }
   ],
   "globals": [],
-  "param_estimates": {
-    "call_site_count": 10,
-    "call_sites": [
-      {
-        "call_addr": "0059e1c0",
-        "call_type": "direct",
-        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0",
-        "estimated_params": 5,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 20,
-        "stack_params": 5
-      },
-      {
-        "call_addr": "0059e489",
-        "call_type": "direct",
-        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0",
-        "estimated_params": 5,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 20,
-        "stack_params": 5
-      },
-      {
-        "call_addr": "0059e6ec",
-        "call_type": "direct",
-        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0",
-        "estimated_params": 5,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 20,
-        "stack_params": 5
-      },
-      {
-        "call_addr": "0059f12e",
-        "call_type": "direct",
-        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50",
-        "estimated_params": 5,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 20,
-        "stack_params": 5
-      },
-      {
-        "call_addr": "0059ec50",
-        "call_type": "direct",
-        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50",
-        "estimated_params": 5,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 20,
-        "stack_params": 5
-      },
-      {
-        "call_addr": "0059e3f1",
-        "call_type": "direct",
-        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0",
-        "estimated_params": 5,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 20,
-        "stack_params": 5
-      },
-      {
-        "call_addr": "0059e7b9",
-        "call_type": "direct",
-        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0",
-        "estimated_params": 5,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 20,
-        "stack_params": 5
-      },
-      {
-        "call_addr": "005a0b3c",
-        "call_type": "direct",
-        "caller": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0",
-        "estimated_params": 5,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 20,
-        "stack_params": 5
-      },
-      {
-        "call_addr": "0059eb1f",
-        "call_type": "direct",
-        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0",
-        "estimated_params": 5,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 20,
-        "stack_params": 5
-      },
-      {
-        "call_addr": "0059efbf",
-        "call_type": "direct",
-        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50",
-        "estimated_params": 5,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 20,
-        "stack_params": 5
-      }
-    ],
-    "confidence": "high",
-    "declared_params": 5,
-    "declared_stack_bytes": 20,
-    "estimated_params": 5
-  },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.75,
-    "instruction_count": 68,
+    "avg_pcode_per_instr": 4.269230769230769,
+    "instruction_count": 78,
     "opcode_distribution": {
       "BOOL_NEGATE": 2,
       "BOOL_OR": 3,
-      "BRANCH": 2,
+      "BRANCH": 4,
       "CALL": 4,
       "CBRANCH": 2,
-      "COPY": 124,
+      "COPY": 116,
       "FLOAT2FLOAT": 4,
       "FLOAT_EQUAL": 2,
       "FLOAT_LESS": 2,
       "FLOAT_NAN": 4,
       "INT2FLOAT": 2,
-      "INT_ADD": 35,
+      "INT_ADD": 31,
       "INT_AND": 21,
       "INT_CARRY": 3,
       "INT_EQUAL": 10,
       "INT_LEFT": 8,
       "INT_LESS": 1,
-      "INT_MULT": 16,
       "INT_NOTEQUAL": 10,
       "INT_OR": 10,
       "INT_SBORROW": 1,
       "INT_SCARRY": 3,
       "INT_SLESS": 5,
-      "INT_SUB": 37,
-      "INT_ZEXT": 24,
+      "INT_SUB": 21,
+      "INT_ZEXT": 8,
       "LOAD": 21,
       "POPCOUNT": 5,
       "RETURN": 1,
       "STORE": 29
     },
-    "pcode_op_count": 391
+    "pcode_op_count": 333
   },
   "stack_frame": {
     "frame_size": 6180,
@@ -334,110 +176,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "CQuaternion4f *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 12,
-      "match": "auStackY_180c",
-      "severity": "moderate",
-      "text": "uint auStackY_180c [1520];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar3 = (uint *)((int)pCVar2 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0xffffffd4",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8) = *puVar3;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 34,
-      "match": "&stack0xffffffd8",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) = *puVar4;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 36,
-      "match": "&stack0xffffffd8",
-      "severity": "moderate",
-      "text": "((int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 38,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar3 = (uint *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 39,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI->w = fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xffffffd4",
-      "severity": "moderate",
-      "text": "*puVar3 = *(uint *)(&stack0xffffffd4 + (uint)bVar5 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 42,
-      "match": "&stack0xffffffd8",
-      "severity": "moderate",
-      "text": "*puVar4 = *(uint *)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xffffffd8",
-      "severity": "moderate",
-      "text": "((int)(&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 47,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "return unaff_ESI;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

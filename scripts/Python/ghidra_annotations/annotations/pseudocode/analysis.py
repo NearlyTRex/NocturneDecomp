@@ -22,6 +22,7 @@ import os
 import json
 import csv
 import math
+import re
 from collections import defaultdict
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations.pseudocode.suspects import has_only_safe_suspects
@@ -3652,6 +3653,165 @@ def generate_code_cave_report(annotations_dir, output_path):
         log_info("Failed to write code cave report: %s" % e)
 
 
+def generate_movsd_report(pseudocode_src_dir, output_path):
+    """Generate a report of 4x MOVSD struct copy sites that could be fixed with code caves.
+
+    Scans all .asm files for groups of 4 consecutive MOVSD instructions (16-byte
+    struct copies) and checks whether each site has enough adjacent borrowable
+    instructions to fit a 5-byte JMP for a code cave patch.
+    """
+    import glob as _glob
+
+    RE_ASM_INSN = re.compile(
+        r'^\s+(\S.*?)\s*;\s*([0-9a-fA-F]+)(?:\s*\|.*)?$')
+    RE_ASM_COMMENT = re.compile(r'^\s*;')
+    RE_ASM_SECTION = re.compile(r'^section\s')
+    RE_MOVSD = re.compile(r'^MOVSD\s+ES:', re.IGNORECASE)
+    # Instructions unsafe to relocate into a cave
+    RE_UNSAFE = re.compile(
+        r'^(PUSH|POP|SUB\s+ESP|ADD\s+ESP|CALL|RET|'
+        r'JMP|JZ|JNZ|JE|JNE|JL|JG|JLE|JGE|JA|JB|JAE|JBE|JC|JNC)\b',
+        re.IGNORECASE)
+
+    # Rough instruction size estimate (no assembler needed)
+    # Most x86 MOV/LEA/INC/DEC are 1-7 bytes. We use a conservative estimate.
+    def estimate_insn_size(text, addr, next_addr):
+        """Estimate instruction size from address gap to next instruction."""
+        if next_addr is not None:
+            return next_addr - addr
+        return 0  # unknown, can't use
+
+    asm_pattern = os.path.join(pseudocode_src_dir, '**', '*.asm')
+    all_files = sorted(_glob.glob(asm_pattern, recursive=True))
+
+    fixable_sites = []   # (func_name, addr, site_size, cave_bytes_needed)
+    unfixable_sites = [] # (func_name, addr, reason)
+    total_cave_needed = 0
+
+    for asm_path in all_files:
+        # Parse instructions
+        instructions = []
+        with open(asm_path, 'r') as f:
+            for line in f:
+                if RE_ASM_COMMENT.match(line) or RE_ASM_SECTION.match(line) or not line.strip():
+                    continue
+                m = RE_ASM_INSN.match(line)
+                if m:
+                    instructions.append((int(m.group(2), 16), m.group(1).strip()))
+
+        if len(instructions) < 4:
+            continue
+
+        func_name = os.path.basename(asm_path).replace('.asm', '')
+
+        # Find 4x MOVSD groups
+        i = 0
+        while i < len(instructions) - 3:
+            if (RE_MOVSD.match(instructions[i][1]) and
+                RE_MOVSD.match(instructions[i+1][1]) and
+                RE_MOVSD.match(instructions[i+2][1]) and
+                RE_MOVSD.match(instructions[i+3][1]) and
+                instructions[i+1][0] == instructions[i][0] + 1 and
+                instructions[i+2][0] == instructions[i][0] + 2 and
+                instructions[i+3][0] == instructions[i][0] + 3):
+
+                group_addr = instructions[i][0]
+                total_size = 4  # 4 bytes of MOVSD
+
+                # Try borrowing after
+                after_idx = i + 4
+                while total_size < 5 and after_idx < len(instructions):
+                    addr, text = instructions[after_idx]
+                    if RE_UNSAFE.match(text):
+                        break
+                    next_addr = instructions[after_idx + 1][0] if after_idx + 1 < len(instructions) else None
+                    sz = estimate_insn_size(text, addr, next_addr)
+                    if sz == 0:
+                        break
+                    total_size += sz
+                    after_idx += 1
+
+                # Try borrowing before if needed
+                before_idx = i - 1
+                while total_size < 5 and before_idx >= 0:
+                    addr, text = instructions[before_idx]
+                    if RE_UNSAFE.match(text):
+                        break
+                    next_addr = instructions[before_idx + 1][0]
+                    sz = estimate_insn_size(text, addr, next_addr)
+                    if sz == 0:
+                        break
+                    total_size += sz
+                    before_idx -= 1
+
+                if total_size >= 5:
+                    # ~37 bytes per cave entry (22 copy + 6 esi/edi adj + ~4 borrowed + 5 jmp)
+                    cave_est = 37
+                    fixable_sites.append((func_name, group_addr, total_size, cave_est))
+                    total_cave_needed += cave_est
+                else:
+                    unfixable_sites.append((func_name, group_addr,
+                                           'only %d bytes available (need 5)' % total_size))
+
+                i += 4
+            else:
+                i += 1
+
+    # Build report
+    lines = []
+    lines.append("=" * 100)
+    lines.append("MOVSD STRUCT COPY ANALYSIS")
+    lines.append("=" * 100)
+    lines.append("")
+    lines.append("4x MOVSD patterns copy 16-byte structs (quaternions, vectors) but Ghidra's")
+    lines.append("decompiler cannot analyze them, producing garbled bVar*-8 pointer arithmetic.")
+    lines.append("These can be fixed by replacing them with explicit MOV instructions in code caves.")
+    lines.append("")
+    lines.append("Fixable sites:       %d" % len(fixable_sites))
+    lines.append("Unfixable sites:     %d" % len(unfixable_sites))
+    lines.append("Total sites:         %d" % (len(fixable_sites) + len(unfixable_sites)))
+    lines.append("Est. cave space:     ~%d bytes" % total_cave_needed)
+    lines.append("")
+
+    # Group by function
+    from collections import OrderedDict
+    by_func = OrderedDict()
+    for func_name, addr, site_size, cave_est in fixable_sites:
+        if func_name not in by_func:
+            by_func[func_name] = []
+        by_func[func_name].append((addr, site_size, cave_est))
+
+    if fixable_sites:
+        lines.append("-" * 100)
+        lines.append("FIXABLE SITES (by function, sorted by site count)")
+        lines.append("-" * 100)
+        for func_name, sites in sorted(by_func.items(),
+                                        key=lambda x: len(x[1]), reverse=True):
+            cave_total = sum(c for _, _, c in sites)
+            lines.append("  %-65s  %2d sites  ~%d bytes" % (
+                func_name[:65], len(sites), cave_total))
+            for addr, site_size, cave_est in sites:
+                lines.append("    0x%08x  (%d bytes borrowable)" % (addr, site_size))
+        lines.append("")
+
+    if unfixable_sites:
+        lines.append("-" * 100)
+        lines.append("UNFIXABLE SITES (cannot borrow enough bytes for JMP)")
+        lines.append("-" * 100)
+        for func_name, addr, reason in unfixable_sites:
+            lines.append("  0x%08x  %-55s  %s" % (addr, func_name[:55], reason))
+        lines.append("")
+
+    report_path = os.path.join(output_path, 'movsd_analysis.txt')
+    try:
+        with open(report_path, 'w') as f:
+            f.write('\n'.join(lines) + '\n')
+        log_info("Wrote MOVSD analysis: %s (%d fixable, %d unfixable)" % (
+            report_path, len(fixable_sites), len(unfixable_sites)))
+    except Exception as e:
+        log_info("Failed to write MOVSD analysis: %s" % e)
+
+
 def generate_analysis_report(pseudocode_src_dir, output_path):
     """Generate all analysis reports from exported function JSON files.
 
@@ -3710,6 +3870,10 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     # Generate code cave report
     log_info("Generating code cave report...")
     generate_code_cave_report(exe_dir if annotations_base else None, output_path)
+
+    # Generate MOVSD analysis
+    log_info("Generating MOVSD analysis...")
+    generate_movsd_report(pseudocode_src_dir, output_path)
 
     # Generate SVG graphs for README
     log_info("Generating SVG graphs...")

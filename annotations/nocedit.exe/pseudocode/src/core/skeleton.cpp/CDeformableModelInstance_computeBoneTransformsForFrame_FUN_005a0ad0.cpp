@@ -42,7 +42,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
     local_18 = output_bone_data;
     do {
       core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
-                (pCVar8,bone_index,(int)local_28,(int)local_24[0],local_60);
+                (pCVar8,bone_index,(int)local_28,(int)local_24[0],local_60,
+                 (CQuaternion4f *)&local_5c);
       bone_index = bone_index + 1;
       puVar9 = (uint *)((int)local_18 + (uint)bVar11 * -8 + 0x10);
       (local_18->pose_data).bone_rotations[0].w = local_5c;

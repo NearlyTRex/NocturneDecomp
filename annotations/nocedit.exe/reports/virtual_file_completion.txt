@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6484
-Clean functions: 5049 (77.9%)
+Clean functions: 5050 (77.9%)
 Files at 100%: 47
 Files at 90%+: 83
 Files at 50%+: 202
@@ -819,6 +819,38 @@ FILES AT 50-89%
            - support_trisock.cpp_buildSockaddrIn_FUN_005e19d0 (23 lines) [param_count_too_many, pointer_cast, stack_alignment_array]
            - support_trisock.cpp_getSocketName_FUN_005e1df0 (22 lines) [pointer_cast]
            - support_trisock.cpp_bindSocketWrapper_FUN_005e1af0 (5 lines) [param_count_too_few]
+   74.4% | core/skeleton.cpp
+         87/117 clean, 30 remaining
+           - core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0 (71 lines) [pointer_cast, stack_alignment_array]
+           - core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (245 lines) [pointer_cast, stack_alignment_array]
+           - core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0 (91 lines) [pointer_cast, stack_alignment_array]
+           - core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40 (90 lines) [pointer_cast]
+           - core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90 (16 lines) [param_count_too_few, pointer_cast]
+           - core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (473 lines) [pointer_cast, stack_alignment_array]
+           - core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0 (33 lines) [pointer_cast]
+           - core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750 (47 lines) [pointer_cast, stack_alignment_array]
+           - core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0 (49 lines) [pointer_cast]
+           - core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0 (68 lines) [pointer_cast]
+           - core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0 (27 lines) [pointer_cast]
+           - core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 (111 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
+           - core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10 (66 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
+           - core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20 (92 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
+           - core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 (87 lines) [param_count_too_many, pointer_cast]
+           - core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 (72 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
+           - core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950 (78 lines) [pointer_cast]
+           - core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0 (70 lines) [pointer_cast, stack_alignment_array]
+           - core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70 (66 lines) [pointer_cast, stack_alignment_array]
+           - core_skeleton.cpp_CSkeleton_free_FUN_00599a50 (22 lines) [negative_offset]
+           - core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0 (179 lines) [pointer_cast]
+           - core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260 (159 lines) [pointer_cast, stack_alignment_array]
+           - core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20 (41 lines) [pointer_cast]
+           - core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (201 lines) [pointer_cast]
+           - core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510 (69 lines) [pointer_cast]
+           - core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0 (86 lines) [pointer_cast, stack_ref]
+           - core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 (199 lines) [decompiler_intrinsic, pointer_cast]
+           - core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880 (58 lines) [decompiler_intrinsic, param_count_too_few, pointer_cast]
+           - core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40 (31 lines) [decompiler_intrinsic, warning_inlined_function]
+           - core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (254 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
    73.9% | core/game.cpp
          51/69 clean, 18 remaining
            - core_game.cpp_CGame_processHotkeys_FUN_004dcee0 (249 lines) [stack_ref]
@@ -876,39 +908,6 @@ FILES AT 50-89%
            - core_set.cpp_transformToWorldSpace_FUN_0056e890 (38 lines) [param_count_too_many]
            - core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 (310 lines) [decompiler_intrinsic, pointer_cast]
            - core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60 (72 lines) [negative_offset]
-   73.5% | core/skeleton.cpp
-         86/117 clean, 31 remaining
-           - core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0 (71 lines) [pointer_cast, stack_alignment_array]
-           - core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (242 lines) [pointer_cast, stack_alignment_array]
-           - core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 (45 lines) [pointer_cast, stack_alignment_array, stack_ref, unaffected_reg]
-           - core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0 (91 lines) [pointer_cast, stack_alignment_array]
-           - core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40 (90 lines) [pointer_cast]
-           - core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90 (16 lines) [param_count_too_few, pointer_cast]
-           - core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (472 lines) [pointer_cast, stack_alignment_array]
-           - core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0 (33 lines) [pointer_cast]
-           - core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750 (47 lines) [pointer_cast, stack_alignment_array]
-           - core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0 (49 lines) [pointer_cast]
-           - core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0 (68 lines) [pointer_cast]
-           - core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0 (27 lines) [pointer_cast]
-           - core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 (111 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
-           - core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10 (66 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
-           - core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20 (92 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
-           - core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 (87 lines) [param_count_too_many, pointer_cast]
-           - core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 (72 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
-           - core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950 (78 lines) [pointer_cast]
-           - core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0 (69 lines) [pointer_cast, stack_alignment_array]
-           - core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70 (66 lines) [pointer_cast, stack_alignment_array]
-           - core_skeleton.cpp_CSkeleton_free_FUN_00599a50 (22 lines) [negative_offset]
-           - core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0 (179 lines) [pointer_cast]
-           - core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260 (159 lines) [pointer_cast, stack_alignment_array]
-           - core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20 (41 lines) [pointer_cast]
-           - core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (201 lines) [pointer_cast]
-           - core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510 (69 lines) [pointer_cast]
-           - core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0 (86 lines) [pointer_cast, stack_ref]
-           - core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 (199 lines) [decompiler_intrinsic, pointer_cast]
-           - core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880 (58 lines) [decompiler_intrinsic, param_count_too_few, pointer_cast]
-           - core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40 (31 lines) [decompiler_intrinsic, warning_inlined_function]
-           - core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (254 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
    73.4% | core/netgame.cpp
          47/64 clean, 17 remaining
            - core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 (60 lines) [pointer_cast]

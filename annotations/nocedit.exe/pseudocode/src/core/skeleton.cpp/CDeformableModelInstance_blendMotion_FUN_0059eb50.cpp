@@ -38,7 +38,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
   CQuaternion4f CStack_154;
   CQuaternion4f CStack_144;
   CQuaternion4f local_134;
-  uint local_124;
+  byte local_124 [4];
   float afStack_120 [3];
   CQuaternion4f local_114;
   CQuaternion4f local_104;
@@ -97,8 +97,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
           if (-1 < hierarchy_distance) {
             fVar13 = (*callback_func)(local_1c,bone_index,blend_weight,hierarchy_distance,this_ptr);
             core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
-                      (this_ptr_00,local_1c,local_58[0],local_5c,local_938);
+                      (this_ptr_00,local_1c,local_58[0],local_5c,local_938,
+                       (CQuaternion4f *)&fStack_164);
             pCVar8 = &CStack_144;
+            CStack_144.w = fStack_164;
             pfVar18 = (float *)((int)&CStack_144 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 8);
             *(float *)((int)&CStack_144 + (uint)bVar22 * -8 + 4) = afStack_160[(uint)bVar22 * -2];
             *pfVar18 = afStack_160[(uint)bVar22 * -2 + (uint)bVar22 * -2 + 1];
@@ -130,9 +132,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
           *(int *)((int)aiStack_2f4 + local_28) = iVar14;
           if (-1 < iVar14) {
             core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
-                      (this_ptr_00,local_20,local_58[0],local_5c,local_938);
+                      (this_ptr_00,local_20,local_58[0],local_5c,local_938,
+                       (CQuaternion4f *)local_124);
             pfVar4 = (float *)((int)local_934 + (uint)bVar22 * -8 + local_44 + 4);
-            *(uint *)((int)&local_934[0].w + local_44) = local_124;
+            *(byte (*) [4])((int)&local_934[0].w + local_44) = local_124;
             pfVar7 = pfVar4 + (uint)bVar22 * -2 + 1;
             *pfVar4 = afStack_120[(uint)bVar22 * -2];
             *pfVar7 = afStack_120[(uint)bVar22 * -2 + (uint)bVar22 * -2 + 1];
@@ -147,7 +150,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
       iVar2 = this_ptr_00->bone_list[bone_index].parent_index;
       if (-1 < iVar2) {
         core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
-                  (this_ptr_00,iVar2,local_58[0],local_5c,local_938);
+                  (this_ptr_00,iVar2,local_58[0],local_5c,local_938,(CQuaternion4f *)&local_f4);
         pfVar4 = (float *)((int)local_934 + (uint)bVar22 * -8 + iVar2 * 0x10 + 4);
         local_934[iVar2].w = local_f4;
         pfVar21 = pfVar4 + (uint)bVar22 * -2 + 1;

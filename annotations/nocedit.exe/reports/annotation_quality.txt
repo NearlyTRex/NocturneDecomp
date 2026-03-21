@@ -21,7 +21,7 @@ SUMMARY STATISTICS
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
-    Wrong calling convention:          4
+    Wrong calling convention:          3
     Undefined types in variables:      221
     Unresolved stack params:           14
 
@@ -69,14 +69,8 @@ Missing register parameters (likely wrong calling convention) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (4)
+Wrong calling convention (unaffected register usage) (3)
 --------------------------------------------------------------------------------
-
-  CSkeleton_getBoneAngleInterpolated
-    Address: 0x0059a070  File: core/skeleton.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2,float interpolation)
-    Suggested: Calling convention may be wrong (preserved registers being used)
 
   CCharacter_updateCarriedObjects
     Address: 0x0042d090  File: core/charactr.cpp
