@@ -5,21 +5,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 77,
-    "complexity_score": 173,
+    "assembly_lines": 137,
+    "complexity_score": 193,
     "cross_reference_count": 1,
     "function_call_count": 1,
-    "global_count": 2,
+    "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 63,
-    "suspect_count": 9,
+    "pseudocode_lines": 128,
+    "suspect_count": 5,
     "suspect_types": [
       "byvalue_struct_passing",
       "pointer_cast",
-      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 140
+    "total_lines": 265
   },
   "cross_references": [
     {
@@ -35,6 +34,10 @@
       [
         "0051e770",
         "0051e826"
+      ],
+      [
+        "0060de5d",
+        "0060df10"
       ]
     ],
     "convention": "__cdecl",
@@ -54,12 +57,6 @@
       "name": "g_CDemonRendererPtr2",
       "type": "CDemonRenderer*",
       "value": "02c6d578"
-    },
-    {
-      "addr": "02c6d578",
-      "name": "g_CDemonRendererInstance",
-      "type": "CDemonRenderer",
-      "value": null
     }
   ],
   "param_estimates": {
@@ -83,16 +80,16 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.876923076923077,
-    "instruction_count": 65,
+    "avg_pcode_per_instr": 4.495726495726496,
+    "instruction_count": 117,
     "opcode_distribution": {
       "BOOL_NEGATE": 6,
       "BOOL_OR": 1,
-      "BRANCH": 2,
+      "BRANCH": 6,
       "CALL": 1,
       "CBRANCH": 7,
-      "COPY": 58,
-      "INT_ADD": 35,
+      "COPY": 106,
+      "INT_ADD": 79,
       "INT_AND": 57,
       "INT_CARRY": 8,
       "INT_EQUAL": 47,
@@ -108,13 +105,13 @@
       "INT_SUB": 18,
       "INT_XOR": 4,
       "INT_ZEXT": 4,
-      "LOAD": 22,
+      "LOAD": 46,
       "POPCOUNT": 22,
       "RETURN": 1,
-      "STORE": 12,
+      "STORE": 36,
       "SUBPIECE": 4
     },
-    "pcode_op_count": 382
+    "pcode_op_count": 526
   },
   "stack_frame": {
     "frame_size": 36,
@@ -154,14 +151,14 @@
     ],
     "patterns": [
       {
-        "address": "0051e7d2",
+        "address": "0060de67",
         "description": "Alternative frame pointer (EDI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV EDI,ESP",
         "pattern_id": "alt_frame_pointer"
       },
       {
-        "address": "0051e7e4",
+        "address": "0060debe",
         "description": "Alternative frame pointer (EDI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV EDI,ESP",
@@ -172,68 +169,36 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_ffffff84",
-      "severity": "moderate",
-      "text": "SRenderVertex in_stack_ffffff84;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_ffffffb4",
-      "severity": "moderate",
-      "text": "SRenderVertex in_stack_ffffffb4;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 39,
+      "line": 70,
       "match": "&stack0xffffffb4",
       "severity": "moderate",
-      "text": "piVar7 = (int *)&stack0xffffffb4;",
+      "text": "piVar9 = (int *)&stack0xffffffb4;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 74,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar9 * -8 + 4);",
+      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 49,
+      "line": 92,
       "match": "&stack0xffffff84",
       "severity": "moderate",
-      "text": "piVar8 = (int *)&stack0xffffff84;",
+      "text": "piVar9 = (int *)&stack0xffffff84;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 96,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + (uint)bVar9 * -8 + 4);",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_ffffff84",
-      "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff84,in_stack_ffffffb4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_ffffffb4",
-      "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff84,in_stack_ffffffb4);",
-      "type": "stack_param"
     },
     {
       "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",

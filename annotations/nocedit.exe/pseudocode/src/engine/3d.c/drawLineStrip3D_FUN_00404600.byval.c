@@ -1,6 +1,6 @@
 // Name: engine_3d.c_drawLineStrip3D_FUN_00404600
 // Address: 00404600
-// Address Range: [[00404600, 0040468f]]
+// Address Range: [[00404600, 0040468f] [00599474, 0059952c]]
 // Convention: __cdecl
 // Signature: void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
 
@@ -41,20 +41,75 @@ __asm {
         mov ECX,0xc
         lea ESI,[g_RenderVertexBuffer + ESI]
         rep movsd
+        jmp 0x00599474
+    LAB_0040466d:
+        rep movsd
+        jmp LAB_005994cd
+    LAB_00404684:
+        rep movsd
+        call engine_3d_c_clipAndDrawLine3D_FUN_00408070
+        add ESP,0x60
+        jmp LAB_00404615
         mov ECX,0xc
         sub ESP,0x30
         lea ESI,[ESP + 0x30]
         mov EDI,ESP
-        rep movsd
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        jmp LAB_0040466d
+    LAB_005994cd:
         mov ECX,0xc
         sub ESP,0x30
         lea ESI,[ESP + 0x90]
         mov EDI,ESP
         add EBX,0x4
         inc EBP
-        rep movsd
-        call engine_3d_c_clipAndDrawLine3D_FUN_00408070
-        add ESP,0x60
-        jmp LAB_00404615
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        jmp LAB_00404684
 }
 }

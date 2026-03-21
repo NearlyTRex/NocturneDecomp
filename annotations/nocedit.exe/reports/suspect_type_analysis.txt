@@ -4,10 +4,10 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6979 ( 37.8%)
-  pointer_cast                    5681 ( 30.8%)
-  unknown_field                   1415 (  7.7%)
-  stack_param                      769 (  4.2%)
+  decompiler_intrinsic            6974 ( 38.2%)
+  pointer_cast                    5681 ( 31.1%)
+  unknown_field                   1324 (  7.3%)
+  stack_param                      651 (  3.6%)
   special_crt_function             569 (  3.1%)
   unnamed_param                    398 (  2.2%)
   fpu_register_input               311 (  1.7%)
@@ -16,11 +16,11 @@ SUSPECT TYPE COUNTS
   warning_inlined_function         264 (  1.4%)
   unresolved_funcptr               171 (  0.9%)
   unaffected_reg                   148 (  0.8%)
-  param_count_too_few              137 (  0.7%)
+  param_count_too_few              137 (  0.8%)
   warning_type_propagation         133 (  0.7%)
   stack_alignment_array            132 (  0.7%)
   register_param                   116 (  0.6%)
-  sub84_truncation                 102 (  0.6%)
+  sub84_truncation                 100 (  0.5%)
   warning_unreachable               85 (  0.5%)
   negative_offset                   85 (  0.5%)
   param_count_too_many              52 (  0.3%)
@@ -56,7 +56,7 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (6979 occurrences)
+TYPE: decompiler_intrinsic (6974 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -69,9 +69,9 @@ Unique patterns:
    122x  CARRY4
    106x  fcos
    105x  fsin
-   102x  SUB84
+   100x  SUB84
     96x  CONCAT12
-    90x  CONCAT22
+    89x  CONCAT22
     82x  CONCAT14
     67x  CONCAT21
     64x  CONCAT13
@@ -136,30 +136,30 @@ Example functions:
     piVar2 = (int *)((int)g_ScreenBufferArray + iVar8);...
 
 ====================================================================================================
-TYPE: unknown_field (1415 occurrences)
+TYPE: unknown_field (1324 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   439x  ._0_4_
-   383x  ._4_4_
-    81x  ._8_4_
-    67x  ._12_4_
-    65x  ._16_4_
+   430x  ._0_4_
+   374x  ._4_4_
+    72x  ._8_4_
+    58x  ._12_4_
+    56x  ._16_4_
     49x  ._0_2_
-    47x  ._24_4_
-    43x  ._20_4_
     42x  ._2_2_
-    40x  ._0_24_
-    30x  ._28_4_
+    38x  ._24_4_
+    34x  ._20_4_
+    31x  ._0_24_
     25x  ._0_1_
+    22x  ._28_4_
     18x  ._1_1_
     16x  ._3_1_
     13x  ._2_1_
     11x  ._30_2_
-    10x  ._32_4_
-     6x  ._36_4_
-     5x  ._40_4_
+     7x  ._32_4_
      4x  ._44_4_
+     4x  ._36_4_
+     3x  ._40_4_
 
 Example functions:
   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
@@ -182,14 +182,14 @@ Example functions:
     uVar6._0_2_ = CONCAT11(bStack_2b,uStack_2c) & 0x7fff;...
 
 ====================================================================================================
-TYPE: stack_param (769 occurrences)
+TYPE: stack_param (651 occurrences)
 ====================================================================================================
 
 Unique patterns:
     61x  in_stack_fffffd64
     46x  in_stack_fffffc88
     42x  in_stack_0000000c
-    39x  in_stack_ffffff54
+    37x  in_stack_ffffff54
     33x  in_stack_00000004
     28x  in_stack_00000008
     25x  in_stack_fffffd80
@@ -199,13 +199,13 @@ Unique patterns:
     16x  in_stack_ffffff9c
     15x  in_stack_ffffff28
     15x  in_stack_fffffee8
-    14x  in_stack_ffffff60
     14x  in_stack_fffffd14
     13x  in_stack_0000001c
     13x  in_stack_0000000a
-    13x  in_stack_ffffff94
     13x  in_stack_ffffff24
     13x  in_stack_ffffff74
+    13x  in_stack_fffffd34
+    12x  in_stack_fffffd10
 
 Example functions:
   crt_process.c_spawnvp_FUN_0060f39c
@@ -813,11 +813,11 @@ Example functions:
     char in_AL;...
 
 ====================================================================================================
-TYPE: sub84_truncation (102 occurrences)
+TYPE: sub84_truncation (100 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   102x  SUB84(
+   100x  SUB84(
 
 Example functions:
   crt_math.c_handle_math_error_FUN_0060c02b

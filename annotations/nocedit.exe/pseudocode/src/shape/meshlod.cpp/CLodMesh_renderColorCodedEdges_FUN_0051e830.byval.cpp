@@ -1,6 +1,6 @@
 // Name: shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
 // Address: 0051e830
-// Address Range: [[0051e830, 0051e983]]
+// Address Range: [[0051e830, 0051e983] [0060df11, 0060dfc0]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830(CLodMesh *this_ptr,int backface_culling_enabled)
 
@@ -88,17 +88,12 @@ __asm {
     LAB_0051e8fc:
         imul ESI,dword ptr [EBP + 0x4],0x30
         mov EAX,[g_CDemonRendererPtr2]
-        mov ECX,0xc
-        sub ESP,0x30
-        mov EAX,dword ptr [EAX]
-        mov EDI,ESP
-        add ESI,EAX
+        jmp LAB_0060df11
+    LAB_0051e913:
         rep movsd
         imul ESI,dword ptr [EBP],0x30
-        sub ESP,0x30
-        mov ECX,0xc
-        mov EDI,ESP
-        add ESI,EAX
+        jmp LAB_0060df6a
+    LAB_0051e925:
         rep movsd
         call engine_3d_c_clipAndDrawLine2D_FUN_00407d70
         add ESP,0x60
@@ -124,5 +119,66 @@ __asm {
     LAB_0051e975:
         mov dword ptr [g_ActiveRenderColor],0x1
         jmp LAB_0051e8fc
+    LAB_0060df11:
+        mov ECX,0xc
+        sub ESP,0x30
+        mov EAX,dword ptr [EAX]
+        mov EDI,ESP
+        add ESI,EAX
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        jmp LAB_0051e913
+    LAB_0060df6a:
+        sub ESP,0x30
+        mov ECX,0xc
+        mov EDI,ESP
+        add ESI,EAX
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        jmp LAB_0051e925
 }
 }

@@ -1,6 +1,6 @@
 // Name: shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40
 // Address: 004a1f40
-// Address Range: [[004a1f40, 004a204e]]
+// Address Range: [[004a1f40, 004a204e] [0060dda9, 0060de5c]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_edittool_cpp_draw3DInterpolatedLine_FUN_004a1f40(CVector3f *start_point,CVector3f *end_point)
 
@@ -72,18 +72,78 @@ __asm {
         push 0x1
         call engine_matrix_c_transformToCache_FUN_0050cd70
         add ESP,0x8
-        mov ESI,0x688044
-        sub ESP,0x30
-        mov ECX,0xc
-        mov EDI,ESP
+        jmp LAB_0060dda9
+    LAB_004a202d:
         rep movsd
-        sub ESP,0x30
-        mov ECX,0xc
-        mov ESI,0x688014
-        mov EDI,ESP
+        jmp LAB_0060de03
+    LAB_004a203e:
         rep movsd
         call engine_3d_c_clipAndDrawLine2D_FUN_00407d70
         add ESP,0x60
         add ESP,0x30
+        pop EDI
+        pop ESI
+        pop EBX
+        ret
+    LAB_0060dda9:
+        mov ESI,0x688044
+        sub ESP,0x30
+        mov ECX,0xc
+        mov EDI,ESP
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        jmp LAB_004a202d
+    LAB_0060de03:
+        sub ESP,0x30
+        mov ECX,0xc
+        mov ESI,0x688014
+        mov EDI,ESP
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        jmp LAB_004a203e
 }
 }

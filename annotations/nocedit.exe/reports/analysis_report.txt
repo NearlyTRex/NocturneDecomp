@@ -10,15 +10,15 @@ Total functions: 6452
 Clean functions: 5018 (77.8%)
 Functions with suspects: 1434 (22.2%)
 
-Total suspect patterns: 15850
-Average suspects per function: 2.46
+Total suspect patterns: 15634
+Average suspects per function: 2.42
 
 Virtual files: 214 total, 47 at 100%, 83 at 90%+
 
 Pseudocode lines:
-  Min: 4, Max: 3411, Average: 47.8
+  Min: 4, Max: 3411, Average: 47.9
 
-Average complexity score: 74.7
+Average complexity score: 74.4
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,17 +28,17 @@ Failed: 602
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  decompiler_intrinsic      6814
+  decompiler_intrinsic      6809
   pointer_cast              5392
-  unknown_field             1292
-  stack_param               622
+  unknown_field             1201
+  stack_param               504
   nonstandard_int           267
   warning_inlined_function  261
   stack_ref                 220
   warning_type_propagation  132
   stack_alignment_array     120
   unresolved_funcptr        99
-  sub84_truncation          95
+  sub84_truncation          93
   param_count_too_few       81
   warning_unreachable       74
   unnamed_param             64
@@ -187,7 +187,7 @@ FUNCTIONS BY SUSPECT TYPE
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
     ... and 909 more
 
-  unknown_field (110 functions):
+  unknown_field (103 functions):
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     0043e530: support_codec.cpp_readBitsFromStream_FUN_0043e530
     00441040: engine_colquant.c_computeWeightedColorDistance_FUN_00441040
@@ -198,20 +198,20 @@ FUNCTIONS BY SUSPECT TYPE
     00440c80: engine_colquant.c_partitionByGreen_FUN_00440c80
     00441790: engine_colquant.c_doubleMax_FUN_00441790
     00552a40: engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
-    ... and 100 more
+    ... and 93 more
 
-  stack_param (34 functions):
+  stack_param (23 functions):
     005f2440: engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
-    00404600: engine_3d.c_drawLineStrip3D_FUN_00404600
-    00407cf0: engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
-    00404570: engine_3d.c_drawLineStrip2D_FUN_00404570
-    00407ff0: engine_3d.c_drawLine3DFromIndices_FUN_00407ff0
-    00534d40: sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
     005b0f70: sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
     005b0a30: sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30
     005a59c0: sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
     0043c880: core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
-    ... and 24 more
+    00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930
+    00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
+    0040a210: core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
+    0040d330: core_actor.cpp_draw3DLineSegment_FUN_0040d330
+    0040d940: core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
+    ... and 13 more
 
   nonstandard_int (22 functions):
     004ce240: engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240
@@ -291,7 +291,7 @@ FUNCTIONS BY SUSPECT TYPE
     005ade70: sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
     ... and 41 more
 
-  sub84_truncation (51 functions):
+  sub84_truncation (50 functions):
     0050d9f0: engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0
     00441260: engine_colquant.c_computeBoxStatistics_FUN_00441260
     005334b0: sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0
@@ -302,7 +302,7 @@ FUNCTIONS BY SUSPECT TYPE
     004547d0: core_dcube.cpp_clipEdgeToPlane_FUN_004547d0
     00472160: core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
     004ed1c0: core_gore.cpp_CBloodPool_save_FUN_004ed1c0
-    ... and 41 more
+    ... and 40 more
 
   param_count_too_few (81 functions):
     00489520: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520

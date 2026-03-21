@@ -1,6 +1,6 @@
 // Name: core_course.cpp_CCourse_preview_FUN_00443bc0
 // Address: 00443bc0
-// Address Range: [[00443bc0, 004440c9]]
+// Address Range: [[00443bc0, 004440c9] [0060dcf5, 0060dda8]]
 // Convention: __cdecl
 // Signature: void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *model_ptr)
 
@@ -204,17 +204,11 @@ __asm {
         call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         mov EAX,[g_CDemonRendererPtr2]
-        sub ESP,0x30
-        mov EAX,dword ptr [EAX]
-        mov ECX,0xc
-        mov EDI,ESP
-        lea ESI,[EAX + 0x30]
+        jmp 0x0060dcf5
+    LAB_00443e38:
         rep movsd
-        sub ESP,0x30
-        mov ECX,0xc
-        mov EDI,ESP
-        mov ESI,EAX
-        lea EBX,[EBP + -0x2]
+        jmp LAB_0060dd4f
+    LAB_00443e49:
         rep movsd
         call engine_3d_c_clipAndDrawLine2D_FUN_00407d70
         lea EAX,[EBP + 0x22]
@@ -429,5 +423,71 @@ __asm {
         mov dword ptr [g_CDemonRaytraceInstance],ESI
         mov dword ptr [EAX + 0x15ac80],0x0
         lea ESP,[EBP + 0x7a]
+        pop EBP
+        pop EDI
+        pop ESI
+        pop EBX
+        ret
+        sub ESP,0x30
+        mov EAX,dword ptr [EAX]
+        mov ECX,0xc
+        mov EDI,ESP
+        lea ESI,[EAX + 0x30]
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        jmp LAB_00443e38
+    LAB_0060dd4f:
+        sub ESP,0x30
+        mov ECX,0xc
+        mov EDI,ESP
+        mov ESI,EAX
+        lea EBX,[EBP + -0x2]
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        jmp LAB_00443e49
 }
 }

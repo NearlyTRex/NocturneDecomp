@@ -1,6 +1,6 @@
 // Name: engine_3d.c_drawLineStrip3D_FUN_00404600
 // Address: 00404600
-// Address Range: [[00404600, 0040468f]]
+// Address Range: [[00404600, 0040468f] [00599474, 0059952c]]
 // Convention: __cdecl
 // Signature: void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
 
@@ -9,6 +9,7 @@
 void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
 
 {
+  SRenderVertex vertex1;
   SRenderVertex vertex2;
   int iVar1;
   SLineStrip *pSVar2;
@@ -18,15 +19,34 @@ void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
   uint *puVar6;
   int *piVar7;
   byte bVar8;
-  SRenderVertex in_stack_ffffff30;
-  byte auVar9 [24];
-  byte in_stack_ffffff60 [44];
+  int iVar9;
   int iVar10;
+  int iVar11;
+  int iVar12;
+  int iVar13;
+  int iVar14;
+  int iVar15;
+  int iVar16;
+  int iVar17;
+  int iVar18;
+  int iVar19;
+  int iVar20;
+  int iVar21;
+  int iVar22;
+  int iVar23;
+  int iVar24;
+  int iVar25;
+  int iVar26;
+  int iVar27;
+  int iVar28;
+  int iVar29;
+  int iVar30;
+  int iVar31;
+  int iVar32;
   SRenderVertex local_70;
   SRenderVertex local_40;
   
   bVar8 = 0;
-  iVar10 = 0x40460c;
   engine_3d_c_setActiveRenderColor_FUN_00404540();
   iVar3 = 0;
   pSVar2 = line_strip + 1;
@@ -47,7 +67,19 @@ void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
     }
     pSVar4 = &local_70;
     puVar6 = (uint *)&stack0xffffff60;
-    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    iVar21 = local_70.projected_vertex.transformed_x;
+    iVar22 = local_70.projected_vertex.transformed_y;
+    iVar23 = local_70.projected_vertex.transformed_z;
+    iVar24 = local_70.projected_vertex.inv_z;
+    iVar25 = local_70.projected_vertex.screen_x;
+    iVar26 = local_70.projected_vertex.screen_y;
+    iVar27 = local_70.u;
+    iVar28 = local_70.v;
+    iVar29 = local_70.r;
+    iVar30 = local_70.g;
+    iVar31 = local_70.b;
+    iVar32 = local_70.a;
+    for (iVar1 = local_70.a; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar6 = *(uint *)pSVar4;
       pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar8 * -2 + 1) * 4);
       puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
@@ -56,25 +88,48 @@ void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
     iVar3 = iVar3 + 1;
     pSVar4 = &local_40;
     piVar7 = (int *)&stack0xffffff30;
-    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    iVar9 = local_40.projected_vertex.transformed_x;
+    iVar10 = local_40.projected_vertex.transformed_y;
+    iVar11 = local_40.projected_vertex.transformed_z;
+    iVar12 = local_40.projected_vertex.inv_z;
+    iVar13 = local_40.projected_vertex.screen_x;
+    iVar14 = local_40.projected_vertex.screen_y;
+    iVar15 = local_40.u;
+    iVar16 = local_40.v;
+    iVar17 = local_40.r;
+    iVar18 = local_40.g;
+    iVar19 = local_40.b;
+    iVar20 = local_40.a;
+    for (iVar1 = local_40.a; iVar1 != 0; iVar1 = iVar1 + -1) {
       *piVar7 = (pSVar4->projected_vertex).transformed_x;
       pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar8 * -8 + 4);
       piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
     }
-    vertex2.a = iVar10;
-    auVar9 = in_stack_ffffff60._0_24_;
-    vertex2.projected_vertex.transformed_x = auVar9._0_4_;
-    vertex2.projected_vertex.transformed_y = auVar9._4_4_;
-    vertex2.projected_vertex.transformed_z = auVar9._8_4_;
-    vertex2.projected_vertex.inv_z = auVar9._12_4_;
-    vertex2.projected_vertex.screen_x = auVar9._16_4_;
-    vertex2.projected_vertex.screen_y = auVar9._20_4_;
-    vertex2.u = in_stack_ffffff60._24_4_;
-    vertex2.v = in_stack_ffffff60._28_4_;
-    vertex2.r = in_stack_ffffff60._32_4_;
-    vertex2.g = in_stack_ffffff60._36_4_;
-    vertex2.b = in_stack_ffffff60._40_4_;
-    engine_3d_c_clipAndDrawLine3D_FUN_00408070(in_stack_ffffff30,vertex2);
+    vertex1.projected_vertex.transformed_y = iVar10;
+    vertex1.projected_vertex.transformed_x = iVar9;
+    vertex1.projected_vertex.transformed_z = iVar11;
+    vertex1.projected_vertex.inv_z = iVar12;
+    vertex1.projected_vertex.screen_x = iVar13;
+    vertex1.projected_vertex.screen_y = iVar14;
+    vertex1.u = iVar15;
+    vertex1.v = iVar16;
+    vertex1.r = iVar17;
+    vertex1.g = iVar18;
+    vertex1.b = iVar19;
+    vertex1.a = iVar20;
+    vertex2.projected_vertex.transformed_y = iVar22;
+    vertex2.projected_vertex.transformed_x = iVar21;
+    vertex2.projected_vertex.transformed_z = iVar23;
+    vertex2.projected_vertex.inv_z = iVar24;
+    vertex2.projected_vertex.screen_x = iVar25;
+    vertex2.projected_vertex.screen_y = iVar26;
+    vertex2.u = iVar27;
+    vertex2.v = iVar28;
+    vertex2.r = iVar29;
+    vertex2.g = iVar30;
+    vertex2.b = iVar31;
+    vertex2.a = iVar32;
+    engine_3d_c_clipAndDrawLine3D_FUN_00408070(vertex1,vertex2);
   }
   return;
 }

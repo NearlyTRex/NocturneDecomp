@@ -1,6 +1,6 @@
 // Name: sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
 // Address: 00534d40
-// Address Range: [[00534d40, 00535c20]]
+// Address Range: [[00442439, 004424b4] [00534d40, 00535c20]]
 // Convention: __cdecl
 // Signature: int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this_ptr,short *pcm_output)
 
@@ -12,6 +12,50 @@
 int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this_ptr,short *pcm_output)
 {
 __asm {
+    LAB_00442439:
+        lea ESI,[ESP + 0x5ff0]
+        sub ESP,0x1c
+        mov ECX,0x7
+        mov EDI,ESP
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        jmp LAB_00535625
+    LAB_00442477:
+        mov ECX,0x7
+        sub ESP,0x1c
+        lea ESI,[ESP + 0x600c]
+        mov EDI,ESP
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        jmp LAB_005356ee
+        push EBX
+        push ESI
+        push EDI
+        push EBP
         mov EBP,ESP
         sub ESP,0x60c0
         and ESP,0xfffffff8
@@ -595,10 +639,8 @@ __asm {
         mov dword ptr [ESP + 0x6074],EAX
         call sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0
         add ESP,0x10
-        lea ESI,[ESP + 0x5ff0]
-        sub ESP,0x1c
-        mov ECX,0x7
-        mov EDI,ESP
+        jmp LAB_00442439
+    LAB_00535625:
         rep movsd
         call sound_mp3_cpp_calculateMainDataSize_FUN_00533c50
         add ESP,0x1c
@@ -663,10 +705,8 @@ __asm {
         call sound_mp3_cpp_CMP3Decoder_rewindBytes_FUN_0052f320
         add ESP,0x8
     LAB_005356dd:
-        mov ECX,0x7
-        sub ESP,0x1c
-        lea ESI,[ESP + 0x600c]
-        mov EDI,ESP
+        jmp LAB_00442477
+    LAB_005356ee:
         rep movsd
         call sound_mp3_cpp_calculateMainDataSize_FUN_00533c50
         add ESP,0x1c

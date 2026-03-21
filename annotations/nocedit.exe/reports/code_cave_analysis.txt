@@ -8,8 +8,8 @@ allocate space within caves for injected code (thunks, helpers).
 
 Total caves:        21
 Total bytes:        5,329
-Total free:         5,182
-Total allocations:  1
+Total free:         2,907
+Total allocations:  27
 
 ----------------------------------------------------------------------------------------------------
 CAVES
@@ -18,11 +18,15 @@ CAVES
   cave_00415045                   00415045     59 bytes  [FREE]
     (entirely free — no allocations)
 
-  cave_00415045                   004423e5    219 bytes  [84/219 used]
+  cave_00415045                   004423e5    219 bytes  [208/219 used]
     Allocations:
       +0x0000   84 bytes  movsd_005acc71             0x005acc71
                4x MOVSD replacement for pollAndMixSfx_FUN_005aca90
-    Free space: 135 bytes (offset 0x0054 - 0x00db)
+      +0x0054   62 bytes  movsd_00535614             0x00535614
+               4x MOVSD replacement for CMP3Decoder_decodeFrame_FUN_00534d40
+      +0x0092   62 bytes  movsd_005356dd             0x005356dd
+               4x MOVSD replacement for CMP3Decoder_decodeFrame_FUN_00534d40
+    Free space: 11 bytes (offset 0x00d0 - 0x00db)
 
   cave_00415045                   00476c14     60 bytes  [FREE]
     (entirely free — no allocations)
@@ -39,8 +43,13 @@ CAVES
   cave_005fde92                   004b1a3f     57 bytes  [FREE]
     (entirely free — no allocations)
 
-  cave_005fde92                   004b1b14    236 bytes  [FREE]
-    (entirely free — no allocations)
+  cave_005fde92                   004b1b14    236 bytes  [178/236 used]
+    Allocations:
+      +0x0000   89 bytes  movsd_00408035             0x00408035
+               4x MOVSD replacement for drawLine3DFromIndices_FUN_00407ff0
+      +0x0059   89 bytes  movsd_00408045             0x00408045
+               4x MOVSD replacement for drawLine3DFromIndices_FUN_00407ff0
+    Free space: 58 bytes (offset 0x00b2 - 0x00ec)
 
   cave_00415045                   004e443d     51 bytes  [FREE]
     (entirely free — no allocations)
@@ -48,8 +57,13 @@ CAVES
   cave_00415045                   005768b6     90 bytes  [FREE]
     (entirely free — no allocations)
 
-  cave_00415045                   00599474    220 bytes  [FREE]
-    (entirely free — no allocations)
+  cave_00415045                   00599474    220 bytes  [185/220 used]
+    Allocations:
+      +0x0000   89 bytes  movsd_0040465f             0x0040465f
+               4x MOVSD replacement for drawLineStrip3D_FUN_00404600
+      +0x0059   96 bytes  movsd_0040466f             0x0040466f
+               4x MOVSD replacement for drawLineStrip3D_FUN_00404600
+    Free space: 35 bytes (offset 0x00b9 - 0x00dc)
 
   cave_00415045                   005995cf    161 bytes  [FREE]
     (entirely free — no allocations)
@@ -60,17 +74,60 @@ CAVES
   cave_005fde92                   0060d067    145 bytes  [FREE]
     (entirely free — no allocations)
 
-  cave_005fde92                   0060d1a5    584 bytes  [FREE]
-    (entirely free — no allocations)
+  cave_005fde92                   0060d1a5    584 bytes  [532/584 used]
+    Allocations:
+      +0x0000   90 bytes  movsd_0040d5df             0x0040d5df
+               4x MOVSD replacement for drawBoundingBox_FUN_0040d470
+      +0x005a   87 bytes  movsd_0040d5f0             0x0040d5f0
+               4x MOVSD replacement for drawBoundingBox_FUN_0040d470
+      +0x00b1   90 bytes  movsd_0040d76c             0x0040d76c
+               4x MOVSD replacement for drawBoundingBox_FUN_0040d470
+      +0x010b   87 bytes  movsd_0040d77d             0x0040d77d
+               4x MOVSD replacement for drawBoundingBox_FUN_0040d470
+      +0x0162   90 bytes  movsd_0040d8fb             0x0040d8fb
+               4x MOVSD replacement for drawBoundingBox_FUN_0040d470
+      +0x01bc   88 bytes  movsd_0040d90c             0x0040d90c
+               4x MOVSD replacement for drawBoundingBox_FUN_0040d470
+    Free space: 52 bytes (offset 0x0214 - 0x0248)
 
-  cave_005fde92                   0060dcf5   1443 bytes  [FREE]
-    (entirely free — no allocations)
+  cave_005fde92                   0060dcf5   1443 bytes  [1078/1443 used]
+    Allocations:
+      +0x0000   90 bytes  movsd_00443e29             0x00443e29
+               4x MOVSD replacement for CCourse_preview_FUN_00443bc0
+      +0x005a   90 bytes  movsd_00443e3a             0x00443e3a
+               4x MOVSD replacement for CCourse_preview_FUN_00443bc0
+      +0x00b4   90 bytes  movsd_004a201e             0x004a201e
+               4x MOVSD replacement for draw3DInterpolatedLine_FUN_004a1f40
+      +0x010e   90 bytes  movsd_004a202f             0x004a202f
+               4x MOVSD replacement for draw3DInterpolatedLine_FUN_004a1f40
+      +0x0168   89 bytes  movsd_0051e7c8             0x0051e7c8
+               4x MOVSD replacement for CLodMesh_renderWireframe_FUN_0051e770
+      +0x01c1   91 bytes  movsd_0051e7dc             0x0051e7dc
+               4x MOVSD replacement for CLodMesh_renderWireframe_FUN_0051e770
+      +0x021c   89 bytes  movsd_0051e905             0x0051e905
+               4x MOVSD replacement for CLodMesh_renderColorCodedEdges_FUN_0051e830
+      +0x0275   87 bytes  movsd_0051e919             0x0051e919
+               4x MOVSD replacement for CLodMesh_renderColorCodedEdges_FUN_0051e830
+      +0x02cc   89 bytes  movsd_0059b715             0x0059b715
+               4x MOVSD replacement for CDeformableModel_renderSkeleton_FUN_0059b640
+      +0x0325   88 bytes  movsd_0059b725             0x0059b725
+               4x MOVSD replacement for CDeformableModel_renderSkeleton_FUN_0059b640
+      +0x037d   89 bytes  movsd_004045cf             0x004045cf
+               4x MOVSD replacement for drawLineStrip2D_FUN_00404570
+      +0x03d6   96 bytes  movsd_004045df             0x004045df
+               4x MOVSD replacement for drawLineStrip2D_FUN_00404570
+    Free space: 365 bytes (offset 0x0436 - 0x05a3)
 
   cave_005fde92                   0060e3af    481 bytes  [FREE]
     (entirely free — no allocations)
 
-  cave_005fde92                   0060e850    224 bytes  [FREE]
-    (entirely free — no allocations)
+  cave_005fde92                   0060e850    224 bytes  [178/224 used]
+    Allocations:
+      +0x0000   89 bytes  movsd_00407d35             0x00407d35
+               4x MOVSD replacement for drawLine2DFromIndices_FUN_00407cf0
+      +0x0059   89 bytes  movsd_00407d45             0x00407d45
+               4x MOVSD replacement for drawLine2DFromIndices_FUN_00407cf0
+    Free space: 46 bytes (offset 0x00b2 - 0x00e0)
 
   cave_005fde92                   0060eb39    103 bytes  [FREE]
     (entirely free — no allocations)

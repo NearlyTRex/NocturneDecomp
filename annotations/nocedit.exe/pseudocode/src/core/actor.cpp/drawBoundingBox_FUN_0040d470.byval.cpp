@@ -1,6 +1,6 @@
 // Name: core_actor.cpp_drawBoundingBox_FUN_0040d470
 // Address: 0040d470
-// Address Range: [[0040d470, 0040d936]]
+// Address Range: [[0040d470, 0040d936] [0060d1a5, 0060d3b8]]
 // Convention: __cdecl
 // Signature: void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,int line_color)
 
@@ -106,16 +106,11 @@ __asm {
         call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         mov EAX,[g_CDemonRendererPtr1]
-        sub ESP,0x30
-        mov EAX,dword ptr [EAX]
-        mov ECX,0xc
-        mov EDI,ESP
-        lea ESI,[EAX + 0x30]
+        jmp 0x0060d1a5
+    LAB_0040d5ee:
         rep movsd
-        sub ESP,0x30
-        mov ECX,0xc
-        mov EDI,ESP
-        mov ESI,EAX
+        jmp LAB_0060d1ff
+    LAB_0040d5fc:
         rep movsd
         call engine_3d_c_clipAndDrawLine2D_FUN_00407d70
         mov EAX,EBP
@@ -212,16 +207,11 @@ __asm {
         call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         mov EAX,[g_CDemonRendererPtr1]
-        sub ESP,0x30
-        mov EAX,dword ptr [EAX]
-        mov ECX,0xc
-        mov EDI,ESP
-        lea ESI,[EAX + 0x30]
+        jmp LAB_0060d256
+    LAB_0040d77b:
         rep movsd
-        sub ESP,0x30
-        mov ECX,0xc
-        mov EDI,ESP
-        mov ESI,EAX
+        jmp LAB_0060d2b0
+    LAB_0040d789:
         rep movsd
         call engine_3d_c_clipAndDrawLine2D_FUN_00407d70
         mov EAX,EBP
@@ -317,22 +307,204 @@ __asm {
         call wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
         add ESP,0x8
         mov EAX,[g_CDemonRendererPtr1]
-        sub ESP,0x30
-        mov EAX,dword ptr [EAX]
-        mov ECX,0xc
-        mov EDI,ESP
-        lea ESI,[EAX + 0x30]
+        jmp LAB_0060d307
+    LAB_0040d90a:
         rep movsd
-        sub ESP,0x30
-        mov ECX,0xc
-        mov EDI,ESP
-        mov ESI,EAX
-        inc EBP
+        jmp LAB_0060d361
+    LAB_0040d919:
         rep movsd
         call engine_3d_c_clipAndDrawLine2D_FUN_00407d70
         add ESP,0x60
         cmp EBP,0x8
         jl LAB_0040d488
         add ESP,0x120
+        pop EBP
+        pop EDI
+        pop ESI
+        pop EBX
+        ret
+        sub ESP,0x30
+        mov EAX,dword ptr [EAX]
+        mov ECX,0xc
+        mov EDI,ESP
+        lea ESI,[EAX + 0x30]
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        jmp LAB_0040d5ee
+    LAB_0060d1ff:
+        sub ESP,0x30
+        mov ECX,0xc
+        mov EDI,ESP
+        mov ESI,EAX
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        jmp LAB_0040d5fc
+    LAB_0060d256:
+        sub ESP,0x30
+        mov EAX,dword ptr [EAX]
+        mov ECX,0xc
+        mov EDI,ESP
+        lea ESI,[EAX + 0x30]
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        jmp LAB_0040d77b
+    LAB_0060d2b0:
+        sub ESP,0x30
+        mov ECX,0xc
+        mov EDI,ESP
+        mov ESI,EAX
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        jmp LAB_0040d789
+    LAB_0060d307:
+        sub ESP,0x30
+        mov EAX,dword ptr [EAX]
+        mov ECX,0xc
+        mov EDI,ESP
+        lea ESI,[EAX + 0x30]
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        jmp LAB_0040d90a
+    LAB_0060d361:
+        sub ESP,0x30
+        mov ECX,0xc
+        mov EDI,ESP
+        mov ESI,EAX
+        inc EBP
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        jmp LAB_0040d919
 }
 }

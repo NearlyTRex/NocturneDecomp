@@ -5,21 +5,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 37,
-    "complexity_score": 141,
+    "assembly_lines": 98,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
-    "suspect_count": 8,
+    "pseudocode_lines": 89,
+    "suspect_count": 4,
     "suspect_types": [
       "byvalue_struct_passing",
       "pointer_cast",
-      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 78
+    "total_lines": 187
   },
   "cross_references": [
     {
@@ -35,6 +34,10 @@
       [
         "00407cf0",
         "00407d62"
+      ],
+      [
+        "0060e850",
+        "0060e901"
       ]
     ],
     "convention": "__cdecl",
@@ -83,15 +86,15 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 7.257142857142857,
-    "instruction_count": 35,
+    "avg_pcode_per_instr": 4.574712643678161,
+    "instruction_count": 87,
     "opcode_distribution": {
       "BOOL_NEGATE": 10,
-      "BRANCH": 4,
+      "BRANCH": 8,
       "CALL": 1,
       "CBRANCH": 4,
-      "COPY": 36,
-      "INT_ADD": 22,
+      "COPY": 84,
+      "INT_ADD": 66,
       "INT_AND": 40,
       "INT_CARRY": 2,
       "INT_EQUAL": 24,
@@ -106,12 +109,12 @@
       "INT_SUB": 22,
       "INT_XOR": 2,
       "INT_ZEXT": 8,
-      "LOAD": 9,
+      "LOAD": 33,
       "POPCOUNT": 9,
       "RETURN": 1,
-      "STORE": 7
+      "STORE": 31
     },
-    "pcode_op_count": 254
+    "pcode_op_count": 398
   },
   "stack_frame": {
     "frame_size": 116,
@@ -165,14 +168,14 @@
         "pattern_id": "alt_frame_pointer"
       },
       {
-        "address": "00407d41",
+        "address": "0060e85c",
         "description": "Alternative frame pointer (EDI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV EDI,ESP",
         "pattern_id": "alt_frame_pointer"
       },
       {
-        "address": "00407d51",
+        "address": "0060e8b5",
         "description": "Alternative frame pointer (EDI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV EDI,ESP",
@@ -183,24 +186,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_ffffff38",
-      "severity": "moderate",
-      "text": "SRenderVertex in_stack_ffffff38;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_ffffff68",
-      "severity": "moderate",
-      "text": "SRenderVertex in_stack_ffffff68;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 31,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + 4);",
@@ -208,7 +195,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 29,
+      "line": 41,
       "match": "&stack0xffffff68",
       "severity": "moderate",
       "text": "piVar4 = (int *)&stack0xffffff68;",
@@ -216,27 +203,11 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 36,
+      "line": 60,
       "match": "&stack0xffffff38",
       "severity": "moderate",
       "text": "piVar4 = (int *)&stack0xffffff38;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_ffffff38",
-      "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff38,in_stack_ffffff68);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_ffffff68",
-      "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff38,in_stack_ffffff68);",
-      "type": "stack_param"
     },
     {
       "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",

@@ -2,21 +2,17 @@
 PASS-BY-VALUE STRUCT ARGUMENTS REPORT
 ====================================================================================================
 
-5 functions with pass-by-value parameters (773 MOVSD.REP scanned, 121 are pass-by-value)
+4 functions with pass-by-value parameters (773 MOVSD.REP scanned, 97 are pass-by-value)
 
 ====================================================================================================
 
 engine_3d.c_clipAndDrawLine2D_FUN_00407d70
   Params: arg1=SRenderVertex (0x30), arg2=SRenderVertex (0x30)
-  Call sites (56):
+  Call sites (47):
     core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 @ 0x0040db30   2x SRenderVertex
     core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 @ 0x0040dcef   2x SRenderVertex
     core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 @ 0x0040de8f   2x SRenderVertex
     core_actor.cpp_draw3DLineSegment_FUN_0040d330 @ 0x0040d45b   2x SRenderVertex
-    core_actor.cpp_drawBoundingBox_FUN_0040d470 @ 0x0040d5fe   2x SRenderVertex
-    core_actor.cpp_drawBoundingBox_FUN_0040d470 @ 0x0040d78b   2x SRenderVertex
-    core_actor.cpp_drawBoundingBox_FUN_0040d470 @ 0x0040d91b   2x SRenderVertex
-    core_course.cpp_CCourse_preview_FUN_00443bc0 @ 0x00443e4b   2x SRenderVertex
     core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 @ 0x005027b1   2x SRenderVertex
     core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 @ 0x00502845   2x SRenderVertex
     core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 @ 0x00502872   2x SRenderVertex
@@ -44,7 +40,6 @@ engine_3d.c_clipAndDrawLine2D_FUN_00407d70
     core_setedit.cpp_drawCameraFrustum_FUN_00582930 @ 0x00582eb1   2x SRenderVertex
     core_setedit.cpp_drawCameraFrustum_FUN_00582930 @ 0x00582ee1   2x SRenderVertex
     core_setedit.cpp_drawCameraFrustum_FUN_00582930 @ 0x00582f14   2x SRenderVertex
-    core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 @ 0x0059b734   2x SRenderVertex
     core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 @ 0x005b9f51   2x SRenderVertex
     core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 @ 0x005b9f7e   2x SRenderVertex
     core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 @ 0x005b9fb1   2x SRenderVertex
@@ -52,8 +47,7 @@ engine_3d.c_clipAndDrawLine2D_FUN_00407d70
     core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 @ 0x005ba017   2x SRenderVertex
     core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 @ 0x005ba050   2x SRenderVertex
     core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 @ 0x005ba148   2x SRenderVertex
-    engine_3d.c_drawLine2DFromIndices_FUN_00407cf0 @ 0x00407d55   2x SRenderVertex
-    engine_3d.c_drawLineStrip2D_FUN_00404570 @ 0x004045f6   2x SRenderVertex
+    engine_3d.c_drawLine2DFromIndices_FUN_00407cf0 @ 0x00407d55   1x ?struct_96 (0x60)
     shape_design.c_renderPolygonWireframe_FUN_0045d300 @ 0x0045d3cd   2x SRenderVertex
     shape_design.c_renderPolygonWireframe_FUN_0045d300 @ 0x0045d454   2x SRenderVertex
     shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 @ 0x004a1d4e   2x SRenderVertex
@@ -62,9 +56,6 @@ engine_3d.c_clipAndDrawLine2D_FUN_00407d70
     shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 @ 0x004a2240   2x SRenderVertex
     shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 @ 0x004a2380   2x SRenderVertex
     shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 @ 0x004a24b7   2x SRenderVertex
-    shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40 @ 0x004a2040   2x SRenderVertex
-    shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830 @ 0x0051e927   2x SRenderVertex
-    shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770 @ 0x0051e7ee   2x SRenderVertex
 
 --------------------------------------------------------------------------------
 
@@ -77,18 +68,9 @@ crt_stdio.c_fwrite_FUN_005fdc00
 --------------------------------------------------------------------------------
 
 engine_3d.c_clipAndDrawLine3D_FUN_00408070
-  Params: arg1=SRenderVertex (0x30), arg2=SRenderVertex (0x30)
-  Call sites (2):
-    engine_3d.c_drawLine3DFromIndices_FUN_00407ff0 @ 0x00408055   2x SRenderVertex
-    engine_3d.c_drawLineStrip3D_FUN_00404600 @ 0x00404686   2x SRenderVertex
-
---------------------------------------------------------------------------------
-
-sound_mp3.cpp_calculateMainDataSize_FUN_00533c50
-  Params: arg1=?struct_28 (0x1c)
-  Call sites (2):
-    sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 @ 0x00535627   1x ?struct_28 (0x1c)
-    sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 @ 0x005356f0   1x ?struct_28 (0x1c)
+  Params: arg1=?struct_96 (0x60)
+  Call sites (1):
+    engine_3d.c_drawLine3DFromIndices_FUN_00407ff0 @ 0x00408055   1x ?struct_96 (0x60)
 
 --------------------------------------------------------------------------------
 
@@ -109,23 +91,14 @@ the dynamic stack allocations for pass-by-value arguments.
   core_actor.cpp_archiveLocalizedString_FUN_0040b6e0 current: 0x12c  required: 0x258  (+0x12c for by-value args)
   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 current: 0x13c  required: 0x19c  (+0x60 for by-value args)
   core_actor.cpp_draw3DLineSegment_FUN_0040d330      current: 0x48  required: 0xa8  (+0x60 for by-value args)
-  core_actor.cpp_drawBoundingBox_FUN_0040d470        current: 0x120  required: 0x180  (+0x60 for by-value args)
-  core_course.cpp_CCourse_preview_FUN_00443bc0       current: 0x120  required: 0x180  (+0x60 for by-value args)
   core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  current: 0x70  required: 0xd0  (+0x60 for by-value args)
   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 current: 0x25c  required: 0x2bc  (+0x60 for by-value args)
   core_setedit.cpp_drawCameraFrustum_FUN_00582930    current: 0x6c  required: 0xcc  (+0x60 for by-value args)
-  core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 current: 0x3c  required: 0x9c  (+0x60 for by-value args)
   core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  current: 0xe0  required: 0x140  (+0x60 for by-value args)
   engine_3d.c_drawLine2DFromIndices_FUN_00407cf0     current: 0x60  required: 0xc0  (+0x60 for by-value args)
   engine_3d.c_drawLine3DFromIndices_FUN_00407ff0     current: 0x60  required: 0xc0  (+0x60 for by-value args)
-  engine_3d.c_drawLineStrip2D_FUN_00404570           current: 0x60  required: 0xc0  (+0x60 for by-value args)
-  engine_3d.c_drawLineStrip3D_FUN_00404600           current: 0x60  required: 0xc0  (+0x60 for by-value args)
   shape_design.c_renderPolygonWireframe_FUN_0045d300 current: 0x98  required: 0xf8  (+0x60 for by-value args)
   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 current: 0x24  required: 0x84  (+0x60 for by-value args)
   shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 current: 0x100  required: 0x160  (+0x60 for by-value args)
-  shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40 current: 0x30  required: 0x90  (+0x60 for by-value args)
-  shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830 current: 0x8  required: 0x68  (+0x60 for by-value args)
-  shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770 current: 0xc  required: 0x6c  (+0x60 for by-value args)
   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 current: 0x1c  required: 0x38  (+0x1c for by-value args)
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 current: 0x60c0  required: 0x60dc  (+0x1c for by-value args)
   cockpit_pkbitmap.cpp_writePBGHeader_FUN_0054b930   current: 0x8  required: 0x10  (+0x8 for by-value args)

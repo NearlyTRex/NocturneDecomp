@@ -109,6 +109,48 @@
 
 section .text
 
+    LEA ESI,[ESP + 0x5ff0]              ; 00442439
+        ;   Label: LAB_00442439
+    SUB ESP,0x1c                        ; 00442440
+    MOV ECX,0x7                         ; 00442443
+    MOV EDI,ESP                         ; 00442448
+    MOV ECX,dword ptr [ESI]             ; 0044244a
+    MOV dword ptr [EDI],ECX             ; 0044244c
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0044244e
+    MOV dword ptr [EDI + 0x4],ECX       ; 00442451
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00442454
+    MOV dword ptr [EDI + 0x8],ECX       ; 00442457
+    MOV ECX,dword ptr [ESI + 0xc]       ; 0044245a
+    MOV dword ptr [EDI + 0xc],ECX       ; 0044245d
+    MOV ECX,dword ptr [ESI + 0x10]      ; 00442460
+    MOV dword ptr [EDI + 0x10],ECX      ; 00442463
+    MOV ECX,dword ptr [ESI + 0x14]      ; 00442466
+    MOV dword ptr [EDI + 0x14],ECX      ; 00442469
+    MOV ECX,dword ptr [ESI + 0x18]      ; 0044246c
+    MOV dword ptr [EDI + 0x18],ECX      ; 0044246f
+    JMP 0x00535625                      ; 00442472
+        ;   XREF to: 00535625 (UNCONDITIONAL_JUMP)  ; LAB_00535625
+    MOV ECX,0x7                         ; 00442477
+        ;   Label: LAB_00442477
+    SUB ESP,0x1c                        ; 0044247c
+    LEA ESI,[ESP + 0x600c]              ; 0044247f
+    MOV EDI,ESP                         ; 00442486
+    MOV ECX,dword ptr [ESI]             ; 00442488
+    MOV dword ptr [EDI],ECX             ; 0044248a
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0044248c
+    MOV dword ptr [EDI + 0x4],ECX       ; 0044248f
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00442492
+    MOV dword ptr [EDI + 0x8],ECX       ; 00442495
+    MOV ECX,dword ptr [ESI + 0xc]       ; 00442498
+    MOV dword ptr [EDI + 0xc],ECX       ; 0044249b
+    MOV ECX,dword ptr [ESI + 0x10]      ; 0044249e
+    MOV dword ptr [EDI + 0x10],ECX      ; 004424a1
+    MOV ECX,dword ptr [ESI + 0x14]      ; 004424a4
+    MOV dword ptr [EDI + 0x14],ECX      ; 004424a7
+    MOV ECX,dword ptr [ESI + 0x18]      ; 004424aa
+    MOV dword ptr [EDI + 0x18],ECX      ; 004424ad
+    JMP 0x005356ee                      ; 004424b0
+        ;   XREF to: 005356ee (UNCONDITIONAL_JUMP)  ; LAB_005356ee
     PUSH EBX                            ; 00534d40
         ;   Label: sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
     PUSH ESI                            ; 00534d41
@@ -772,11 +814,10 @@ section .text
     CALL sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0 ; 0053560c
         ;   XREF to: 005307a0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0(CMP3Decoder * this_ptr, CFileBitStream * bit_stream, SMpegLayer3SideInfo * side_info_array, SMpegFrame * frame)
     ADD ESP,0x10                        ; 00535611
-    LEA ESI,[ESP + 0x5ff0]              ; 00535614
-    SUB ESP,0x1c                        ; 0053561b
-    MOV ECX,0x7                         ; 0053561e
-    MOV EDI,ESP                         ; 00535623
+    JMP 0x00442439                      ; 00535614
+        ;   XREF to: 00442439 (UNCONDITIONAL_JUMP)  ; LAB_00442439
     MOVSD.REP ES:EDI,ESI                ; 00535625
+        ;   Label: LAB_00535625
     CALL sound_mp3.cpp_calculateMainDataSize_FUN_00533c50 ; 00535627
         ;   XREF to: 00533c50 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_calculateMainDataSize_FUN_00533c50(SMpegFrame frame_info)
     ADD ESP,0x1c                        ; 0053562c
@@ -850,12 +891,11 @@ section .text
     CALL sound_mp3.cpp_CMP3Decoder_rewindBytes_FUN_0052f320 ; 005356d5
         ;   XREF to: 0052f320 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_rewindBytes_FUN_0052f320(CMP3Decoder * this_ptr, int num_bytes)
     ADD ESP,0x8                         ; 005356da
-    MOV ECX,0x7                         ; 005356dd
+    JMP 0x00442477                      ; 005356dd
+        ;   XREF to: 00442477 (UNCONDITIONAL_JUMP)  ; LAB_00442477
         ;   Label: LAB_005356dd
-    SUB ESP,0x1c                        ; 005356e2
-    LEA ESI,[ESP + 0x600c]              ; 005356e5
-    MOV EDI,ESP                         ; 005356ec
     MOVSD.REP ES:EDI,ESI                ; 005356ee
+        ;   Label: LAB_005356ee
     CALL sound_mp3.cpp_calculateMainDataSize_FUN_00533c50 ; 005356f0
         ;   XREF to: 00533c50 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_calculateMainDataSize_FUN_00533c50(SMpegFrame frame_info)
     ADD ESP,0x1c                        ; 005356f5
