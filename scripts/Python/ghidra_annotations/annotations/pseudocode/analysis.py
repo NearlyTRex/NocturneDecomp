@@ -3669,9 +3669,13 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
     RE_MOVSD = re.compile(r'^MOVSD\s+ES:', re.IGNORECASE)
     # Instructions unsafe to relocate into a cave
     RE_UNSAFE = re.compile(
-        r'^(PUSH|POP|SUB\s+ESP|ADD\s+ESP|CALL|RET|'
+        r'^(CALL|RET|'
         r'JMP|JZ|JNZ|JE|JNE|JL|JG|JLE|JGE|JA|JB|JAE|JBE|JC|JNC)\b',
         re.IGNORECASE)
+    # ESP-modifying instructions — safe to borrow for MOVSD since it uses
+    # ESI/EDI, not ESP.  Executing them in the cave preserves order.
+    RE_ESP_MODIFY = re.compile(
+        r'^(PUSH|POP|SUB\s+ESP|ADD\s+ESP)\b', re.IGNORECASE)
 
     # Rough instruction size estimate (no assembler needed)
     # Most x86 MOV/LEA/INC/DEC are 1-7 bytes. We use a conservative estimate.
@@ -3756,8 +3760,9 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
 
                 if total_size >= 5:
                     # Check for jump targets landing inside the patch range
-                    site_start = group_addr
-                    site_end = group_addr + total_size
+                    # site_start accounts for instructions borrowed before
+                    site_start = instructions[before_idx + 1][0] if before_idx + 1 < i else group_addr
+                    site_end = site_start + total_size
                     has_internal_target = any(
                         site_start < t < site_end for t in jump_targets)
                     if has_internal_target:

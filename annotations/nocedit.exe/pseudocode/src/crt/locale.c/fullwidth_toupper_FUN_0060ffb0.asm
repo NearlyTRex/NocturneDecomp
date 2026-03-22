@@ -6,9 +6,6 @@
 ; Parameters:
 ; wchar_t          Stack[0x4]:2   character
 ;
-; XREF[1]:
-;   crt_locale.c_toupper_multibyte_FUN_0060f300 at 0060f355
-;
 ; Called Functions:
 ;   crt_locale.c_islower_multibyte_FUN_00610990
 ;

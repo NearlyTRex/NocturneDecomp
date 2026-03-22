@@ -6,9 +6,9 @@ Caves are created by zeroing out dead functions using the
 CreateCodeCave Ghidra script (Shift+Z). Patching scripts
 allocate space within caves for injected code (thunks, helpers).
 
-Total caves:        22
-Total bytes:        18,129
-Total free:         2,134
+Total caves:        23
+Total bytes:        20,235
+Total free:         4,240
 Total allocations:  259
 
 ----------------------------------------------------------------------------------------------------
@@ -603,6 +603,9 @@ CAVES
     Free space: 46 bytes (offset 0x00b2 - 0x00e0)
 
   cave_005fde92                   0060eb39    103 bytes  [FREE]
+    (entirely free — no allocations)
+
+  cave_0060f300                   0060f300   2106 bytes  [FREE]
     (entirely free — no allocations)
 
   cave_0060fb3a                   0060fb3a    448 bytes  [63/448 used]

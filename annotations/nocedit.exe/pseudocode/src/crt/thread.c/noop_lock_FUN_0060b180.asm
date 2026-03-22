@@ -4,9 +4,6 @@
 ; void __cdecl crt_thread_c_noop_lock_FUN_0060b180(void)
 ;
 ;
-; XREF[1]:
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f58f
-;
 ; *****************************************************************************
 
 section .text

@@ -4,9 +4,6 @@
 ; BOOL __cdecl crt_tls_c_allocate_tls_index_FUN_0060a27c(void)
 ;
 ;
-; XREF[1]:
-;   crt_thread.c_create_thread_with_sync_FUN_0060f960 at 0060f975
-;
 ; Referenced Globals:
 ;   TLS_ALLOC_FUNC* g_TlsAllocFunc = 00212248
 ;   DWORD g_TLSIndex = 0xffffffff

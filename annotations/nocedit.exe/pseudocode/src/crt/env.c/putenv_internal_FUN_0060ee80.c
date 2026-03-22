@@ -55,7 +55,7 @@ int __cdecl putenv_internal(char *envstr)
       pCVar7 = pCVar7;
     }
     lpName[uVar3] = '\0';
-    uVar2 = FUN_0060fa90(pcVar1 + 1);
+    uVar2 = func_0x0060fa90(pcVar1 + 1);
     if (uVar2 == 0) {
       local_18 = (LPCSTR)0x0;
     }
@@ -92,13 +92,13 @@ int __cdecl putenv_internal(char *envstr)
     }
     iVar2 = 0;
     if (g_EnvironInitialized != 0) {
-      iVar1 = FUN_0060fa90(envstr);
+      iVar1 = func_0x0060fa90(envstr);
       ptr = malloc((iVar1 + 1) * 2);
       if (ptr == (void *)0x0) {
         convertWindowsErrorToErrno(5);
         return -1;
       }
-      iVar1 = FUN_0060fac0(ptr,envstr,iVar1 + 1);
+      iVar1 = func_0x0060fac0(ptr,envstr,iVar1 + 1);
       if (iVar1 == -1) {
         free(ptr);
         return -1;

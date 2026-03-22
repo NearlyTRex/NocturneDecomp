@@ -6,18 +6,18 @@
 ; Parameters:
 ; ulong            Stack[0x4]:4   size
 ;
-; XREF[18]:
+; XREF[17]:
 ;   crt_env.c_putenv_internal_FUN_0060ee80 at 0060efec
 ;   crt_env.c_updateEnvironTable_FUN_0060f04c at 0060f126
 ;   crt_iostream.cpp_streambuf_allocBuffer_FUN_0060d790 at 0060d795
 ;   crt_memory.c_calloc_FUN_0060ca90 at 0060ca9b
 ;   crt_process.c_build_cmdline_FUN_00610258 at 006102d5
 ;   crt_process.c_build_file_info_env_FUN_0060ffd0 at 00610005
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f3fd
 ;   crt_startup.c_GetModuleFileNameCompat_FUN_0060a560 at 0060a599
 ;   crt_stdio.c___allocfp_FUN_006092f0 at 00609331
 ;   crt_stdlib.c__fullpath_FUN_00601140 at 0060115d
-;   ... and 8 more
+;   crt_string.c_strdup_FUN_0060a610 at 0060a62d
+;   ... and 7 more
 ;
 ; Called Functions:
 ;   crt_heap.c_InternalHeapAlloc_FUN_00601bc0

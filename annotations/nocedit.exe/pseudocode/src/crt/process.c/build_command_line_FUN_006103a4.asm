@@ -9,9 +9,8 @@
 ; char *           Stack[0xc]:4   buffer
 ; int              Stack[0x10]:4   skip_program_name
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_process.c_spawn_FUN_006105a0 at 006105be
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f7bc
 ;
 ; Called Functions:
 ;   crt_string.c_strcpy_advance_FUN_00610240

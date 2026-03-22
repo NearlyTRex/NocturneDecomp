@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 156,
+    "complexity_score": 85,
     "cross_reference_count": 1,
-    "function_call_count": 7,
-    "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 21,
-    "suspect_count": 11,
+    "function_call_count": 6,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
       "special_crt_function",
-      "stack_param",
-      "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 75
+    "total_lines": 74
   },
   "cross_references": [
     {
@@ -44,11 +42,6 @@
       "name": "crt_locale.c_mblen_FUN_00605a40"
     },
     {
-      "addr": "0060f300",
-      "is_variadic": false,
-      "name": "crt_locale.c_toupper_multibyte_FUN_0060f300"
-    },
-    {
       "addr": "00605a20",
       "is_variadic": false,
       "name": "crt_locale.c_wchar_to_bytes_FUN_00605a20"
@@ -74,7 +67,14 @@
       "name": "crt_string.c_mbtowc_peek_FUN_006059e0"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "0060f300",
+      "name": "CAVE_cave_0060f300",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 2,
     "call_sites": [
@@ -155,64 +155,16 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_fffffff4",
-      "severity": "moderate",
-      "text": "char *in_stack_fffffff4;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "str = param_1;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_fffffff4",
-      "severity": "moderate",
-      "text": "character = toupper_multibyte(mb_char,in_stack_fffffff4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xfffffff4",
-      "severity": "moderate",
-      "text": "wchar_to_bytes(character,&stack0xfffffff4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 18,
-      "match": "&stack0xfffffff4",
-      "severity": "moderate",
-      "text": "iVar1 = mblen(&stack0xfffffff4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xfffffff4",
-      "severity": "moderate",
-      "text": "(&stack0xfffffff4)[iVar1] = 0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xfffffff4",
-      "severity": "moderate",
-      "text": "copyMbChar(str,&stack0xfffffff4);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "return param_1;",

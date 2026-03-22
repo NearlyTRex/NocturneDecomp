@@ -8,8 +8,7 @@
 ; void *           Stack[0x8]:4   src
 ; SIZE_T           Stack[0xc]:4   count
 ;
-; XREF[4]:
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f411
+; XREF[3]:
 ;   crt_process.c_spawnvp_with_path_search_FUN_0060e6a0 at 0060e7c1
 ;   crt_string.c_wcsdup_FUN_0060a660 at 0060a68d
 ;   crt_unknown.c_FUN_0060fcf4 at 0060fe05

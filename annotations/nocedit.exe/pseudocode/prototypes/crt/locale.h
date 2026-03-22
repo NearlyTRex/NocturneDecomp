@@ -15,10 +15,6 @@ int __watcallStack mblen(char *mb_string);
 // Address: 0060b1c0
 int __watcallStack mbtowc(wchar_t *wide_char,char *mb_string,SIZE_T max_bytes);
 
-// Original: crt_locale.c_toupper_multibyte_FUN_0060f300
-// Address: 0060f300
-wchar_t __watcallStack toupper::multibyte(char *mb_char,char *output_buffer);
-
 // Original: crt_locale.c_fullwidth_toupper_FUN_0060ffb0
 // Address: 0060ffb0
 wchar_t __watcallStack fullwidth::toupper(wchar_t character);

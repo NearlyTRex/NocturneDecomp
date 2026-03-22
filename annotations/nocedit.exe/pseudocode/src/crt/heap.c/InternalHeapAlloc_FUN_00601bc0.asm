@@ -8,11 +8,10 @@
 ; Local Variables:
 ; Heap *           Stack[-0x24]:4  local_24
 ;
-; XREF[4]:
+; XREF[3]:
 ;   crt_memory.c_malloc_FUN_00601bb0 at 00601bb5
 ;   crt_memory.c_realloc__FUN_00601e08 at 00601e56
 ;   crt_process.c_build_cmdline_FUN_00610258 at 006102c8
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f4f3
 ;
 ; Referenced Globals:
 ;   Heap* g_MainHeap = 00000000

@@ -7,9 +7,6 @@
 ; char *           Stack[0x4]:4   filename
 ; int              Stack[0x8]:4   access_mode
 ;
-; XREF[1]:
-;   crt_io.c_exists_FUN_0060f380 at 0060f387
-;
 ; Referenced Globals:
 ;   GET_FILE_ATTRIBUTES_A_FUNC* g_GetFileAttributesAFunc = 00211edc
 ;

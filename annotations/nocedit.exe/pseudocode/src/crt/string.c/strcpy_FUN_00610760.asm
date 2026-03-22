@@ -7,9 +7,8 @@
 ; char *           Stack[0x4]:4   dest
 ; char *           Stack[0x8]:4   src
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_process.c_build_cmdline_FUN_00610258 at 0061035c
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f788
 ;
 ; *****************************************************************************
 

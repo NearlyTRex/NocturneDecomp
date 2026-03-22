@@ -6,8 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer
 ;
-; XREF[2]:
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f7d2
+; XREF[1]:
 ;   crt_stdlib.c_system_FUN_00602130 at 00602180
 ;
 ; *****************************************************************************

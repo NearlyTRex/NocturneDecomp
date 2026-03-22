@@ -6,8 +6,7 @@
 ; Parameters:
 ; void *           Stack[0x4]:4   init_param
 ;
-; XREF[2]:
-;   crt_thread.c_threadStartupWrapper_FUN_0060f8c0 at 0060f90e
+; XREF[1]:
 ;   crt_tls.c_create_thread_local_data_FUN_0060cac0 at 0060cac4
 ;
 ; Referenced Globals:

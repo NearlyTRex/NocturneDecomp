@@ -11,41 +11,41 @@ int __cdecl spawnvp_with_path_search(int mode,char *program,char **argv,char **e
 {
   int iVar1;
   ThreadData *pTVar2;
-  char *str;
+  char *src;
   int iVar3;
   char *pcVar4;
-  char *dest;
+  byte *dest;
   uint count;
-  char acStack_11c [260];
+  byte auStack_11c [260];
   uint uStack_18;
   SIZE_T SStack_14;
   
-  iVar1 = spawnvp(mode,program,argv,envp);
+  iVar1 = func_0x0060f39c(mode,program,argv,envp);
   if (((iVar1 == -1) &&
       ((((pTVar2 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(), pTVar2->errno_value == 1 ||
          (pTVar2 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(), pTVar2->errno_value == 9)) &&
         (*program != '\\')) && ((*program != '\0' && (program[1] != ':')))))) &&
-     (str = getenv("PATH"), str != (char *)0x0)) {
-    iVar3 = strlen(program);
+     (src = getenv("PATH"), src != (char *)0x0)) {
+    iVar3 = func_0x0060f870(program);
     SStack_14 = iVar3 + 1;
-    if (*str != '\0') {
+    if (*src != '\0') {
       uStack_18 = 0x104 - SStack_14;
       while( true ) {
-        pcVar4 = strchr(str,0x3b);
+        pcVar4 = (char *)func_0x0060f890(src,0x3b);
         if (pcVar4 == (char *)0x0) {
-          iVar1 = strlen(str);
-          pcVar4 = str + iVar1;
+          iVar1 = func_0x0060f870(src);
+          pcVar4 = src + iVar1;
         }
-        count = (int)pcVar4 - (int)str;
+        count = (int)pcVar4 - (int)src;
         if (uStack_18 < count) break;
-        dest = acStack_11c + count;
-        memcpy(acStack_11c,str,count);
-        if (acStack_11c[count - 1] != '\\') {
-          *dest = '\\';
-          dest = acStack_11c + count + 1;
+        dest = auStack_11c + count;
+        memcpy(auStack_11c,src,count);
+        if (auStack_11c[count - 1] != '\\') {
+          *dest = 0x5c;
+          dest = auStack_11c + count + 1;
         }
         memcpy(dest,program,SStack_14);
-        iVar1 = spawnvp(mode,acStack_11c,argv,envp);
+        iVar1 = func_0x0060f39c(mode,auStack_11c,argv,envp);
         if (iVar1 != -1) {
           return iVar1;
         }
@@ -58,8 +58,8 @@ int __cdecl spawnvp_with_path_search(int mode,char *program,char **argv,char **e
         if (*pcVar4 != ';') {
           return -1;
         }
-        str = pcVar4 + 1;
-        if (*str == '\0') {
+        src = pcVar4 + 1;
+        if (*src == '\0') {
           return -1;
         }
       }

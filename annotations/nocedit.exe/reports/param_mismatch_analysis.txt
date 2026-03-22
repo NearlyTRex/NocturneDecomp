@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 6822
-Functions with no callers: 3184
-Parameter mismatches detected: 104
-Signature accuracy rate: 97.1%
+Functions with parameter estimates: 6817
+Functions with no callers: 3191
+Parameter mismatches detected: 98
+Signature accuracy rate: 97.3%
 
 Mismatches by confidence:
   High confidence:   1 (multiple call sites agree)
-  Medium confidence: 28 (some agreement)
-  Low confidence:    75 (limited data)
+  Medium confidence: 26 (some agreement)
+  Low confidence:    71 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -66,45 +66,43 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0    declared:3 est:2 (-1) [1 calls]
   crt_init.c_ProcessInitTermHandlers_FUN_0060ac30    declared:1 est:0 (-1) [3 calls]
   crt_iostream.cpp_streambuf_destructor_FUN_0060d64f declared:1 est:2 (+1) [2 calls]
-  crt_process.c_set_shell_execute_flag_FUN_00609c80  declared:1 est:2 (+1) [2 calls]
   crt_stdio.c_CreateFileVariadic_FUN_00609074        declared:3 est:4 (+1) [2 calls]
-  crt_thread.c_noop_lock_FUN_0060b180                declared:0 est:1 (+1) [2 calls]
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  75 functions with low-confidence mismatches
+  71 functions with low-confidence mismatches
   Sample:
     cockpit_ckptutil.c_isLineClippingDisabled_FUN declared:0 est:4 (+4)
     crt_io.c_CheckFileHandleAvailability_FUN_0060 declared:0 est:4 (+4)
     crt_windows.c_has_active_window_FUN_0060a710  declared:0 est:4 (+4)
     crt_process.c_spawnCommand_FUN_00609c90       declared:6 est:3 (-3)
-    crt_process.c_build_cmdline_FUN_00610258      declared:8 est:7 (-1)
+    crt_process.c_set_shell_execute_flag_FUN_0060 declared:1 est:2 (+1)
     crt_process.c_spawnvp_FUN_0060ca20            declared:3 est:4 (+1)
-    crt_process.c_execvp_FUN_00610790             declared:4 est:7 (+3)
     crt_process.c_getpid_FUN_006099c0             declared:0 est:4 (+4)
     crt_startup.cpp_InitializeWinAppRuntime_FUN_0 declared:1 est:3 (+2)
     crt_locale.c_islower_multibyte_FUN_00610990   declared:1 est:2 (+1)
+    crt_locale.c_ismultibyte_FUN_00610a20         declared:1 est:2 (+1)
 
 ====================================================================================================
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 12
+Functions where declaration has MORE params than estimated: 10
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 92
+Functions where declaration has FEWER params than estimated: 88
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
   -4 params: 1 functions
   -3 params: 1 functions
   -2 params: 1 functions
-  -1 params: 9 functions
-  +1 params: 43 functions
+  -1 params: 7 functions
+  +1 params: 41 functions
   +2 params: 13 functions
-  +3 params: 14 functions
+  +3 params: 12 functions
   +4 params: 12 functions
   +5 params: 3 functions
   +6 params: 1 functions

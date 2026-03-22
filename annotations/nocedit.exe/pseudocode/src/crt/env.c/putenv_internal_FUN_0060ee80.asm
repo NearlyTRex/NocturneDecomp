@@ -9,6 +9,8 @@
 ; LPCSTR           Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
+;   undefined4 SUB_0060fa90
+;   undefined4 SUB_0060fac0
 ;   SET_ENVIRONMENT_VARIABLE_A_FUNC* g_SetEnvironmentVariableAFunc = 00212160
 ;   int g_EnvironInitialized
 ;
@@ -18,8 +20,6 @@
 ;   crt_memory.c_free_FUN_00601cd0
 ;   crt_memory.c_malloc_FUN_00601bb0
 ;   crt_string.c_char_in_set_FUN_0060e340
-;   crt_unknown.c_FUN_0060fa90
-;   crt_unknown.c_FUN_0060fac0
 ;   crt_unknown.c_FUN_0060fcf4
 ;
 ; *****************************************************************************
@@ -100,8 +100,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 0060ef14
     PUSH ESI                            ; 0060ef18
     MOV byte ptr [EBX + EAX*0x1],0x0    ; 0060ef19
-    CALL crt_unknown.c_FUN_0060fa90     ; 0060ef1d
-        ;   XREF to: 0060fa90 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0060fa90()
+    CALL 0x0060fa90                     ; 0060ef1d
+        ;   XREF to: 0060fa90 (UNCONDITIONAL_CALL)  ; SUB_0060fa90
     MOV EBP,EAX                         ; 0060ef22
     ADD ESP,0x4                         ; 0060ef24
     TEST EAX,EAX                        ; 0060ef27
@@ -191,8 +191,8 @@ section .text
     JZ 0x0060f044                       ; 0060efd6
         ;   XREF to: 0060f044 (CONDITIONAL_JUMP)  ; LAB_0060f044
     PUSH EDI                            ; 0060efd8
-    CALL crt_unknown.c_FUN_0060fa90     ; 0060efd9
-        ;   XREF to: 0060fa90 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0060fa90()
+    CALL 0x0060fa90                     ; 0060efd9
+        ;   XREF to: 0060fa90 (UNCONDITIONAL_CALL)  ; SUB_0060fa90
     ADD ESP,0x4                         ; 0060efde
     LEA ESI,[EAX + 0x1]                 ; 0060efe1
     MOV EAX,dword ptr [ESP + 0x4]       ; 0060efe4
@@ -221,8 +221,8 @@ section .text
     PUSH ESI                            ; 0060f015
     PUSH EDI                            ; 0060f016
     PUSH EAX                            ; 0060f017
-    CALL crt_unknown.c_FUN_0060fac0     ; 0060f018
-        ;   XREF to: 0060fac0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0060fac0()
+    CALL 0x0060fac0                     ; 0060f018
+        ;   XREF to: 0060fac0 (UNCONDITIONAL_CALL)  ; SUB_0060fac0
     ADD ESP,0xc                         ; 0060f01d
     CMP EAX,-0x1                        ; 0060f020
     JNZ 0x0060f03b                      ; 0060f023

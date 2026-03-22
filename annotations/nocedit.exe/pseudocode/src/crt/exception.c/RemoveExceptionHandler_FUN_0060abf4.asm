@@ -4,9 +4,8 @@
 ; void __cdecl crt_exception_c_RemoveExceptionHandler_FUN_0060abf4(void)
 ;
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_exit.c_ExitProcess_FUN_00602700 at 00602724
-;   crt_thread.c_exit_thread_FUN_0060fa58 at 0060fa5e
 ;
 ; Referenced Globals:
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c

@@ -254,15 +254,27 @@ EXPLICIT_COPY_ASM = make_explicit_copy_asm(4)
 RE_ESP_MODIFY = re.compile(
     r'^(PUSH|POP|SUB\s+ESP|ADD\s+ESP|CALL|RET)\b', re.IGNORECASE)
 
+# ESP-modifying instructions that are safe to borrow adjacent to MOVSD.
+# MOVSD uses ESI/EDI, not ESP, so PUSH/POP/ADD ESP/SUB ESP can be
+# relocated into the cave as long as they execute in the same order.
+RE_ESP_SAFE_FOR_MOVSD = re.compile(
+    r'^(PUSH\b|POP\b|ADD\s+ESP|SUB\s+ESP)', re.IGNORECASE)
+
 # Instructions with relative offsets (unsafe to relocate)
 RE_RELATIVE = re.compile(
     r'^(JMP|JZ|JNZ|JE|JNE|JL|JG|JLE|JGE|JA|JB|JAE|JBE|JC|JNC|JS|JNS|'
     r'JO|JNO|JP|JNP|JCXZ|JECXZ|LOOP|LOOPE|LOOPNE|CALL)\b', re.IGNORECASE)
 
 
-def can_borrow(text):
-    """Check if an instruction is safe to relocate into a cave."""
+def can_borrow(text, for_movsd=False):
+    """Check if an instruction is safe to relocate into a cave.
+
+    If for_movsd=True, allows PUSH/POP/ADD ESP/SUB ESP since MOVSD
+    uses ESI/EDI and doesn't interact with the stack pointer.
+    """
     if RE_ESP_MODIFY.match(text):
+        if for_movsd and RE_ESP_SAFE_FOR_MOVSD.match(text):
+            return True
         return False
     if RE_RELATIVE.match(text):
         return False
@@ -320,7 +332,7 @@ def build_site_patch(ks, instructions, group_idx, group_addr, jump_targets=None)
         if addr != movsd_end + sum(
                 get_insn_size(ks, t, a) for a, t in after_insns):
             break
-        if not can_borrow(text):
+        if not can_borrow(text, for_movsd=True):
             break
         insn_size = get_insn_size(ks, text, addr)
         if insn_size == 0:
@@ -333,7 +345,7 @@ def build_site_patch(ks, instructions, group_idx, group_addr, jump_targets=None)
     before_idx = group_idx - 1
     while total_size < 5 and before_idx >= 0:
         addr, text = instructions[before_idx]
-        if not can_borrow(text):
+        if not can_borrow(text, for_movsd=True):
             break
         insn_size = get_insn_size(ks, text, addr)
         if insn_size == 0:

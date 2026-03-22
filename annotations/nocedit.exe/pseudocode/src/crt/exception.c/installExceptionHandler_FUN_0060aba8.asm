@@ -4,9 +4,8 @@
 ; void __cdecl crt_exception_c_installExceptionHandler_FUN_0060aba8(ExceptionFrame *pExceptionFrame)
 ;
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8 at 006026db
-;   crt_thread.c_threadStartupWrapper_FUN_0060f8c0 at 0060f937
 ;
 ; Referenced Globals:
 ;   SET_UNHANDLED_EXCEPTION_FILTER_FUNC* g_SetUnhandledExceptionFilterFunc = 0021220a

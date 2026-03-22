@@ -13,10 +13,8 @@
 ; int *            Stack[0x1c]:4   out_bufsize
 ; int              Stack[0x20]:4   copy_program_flag
 ;
-; XREF[1]:
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f4a4
-;
 ; Referenced Globals:
+;   undefined4 SUB_0060f870
 ;   int g_HeapFlags = 0x10000
 ;   char** g_EnvironmentBlock
 ;
@@ -27,7 +25,6 @@
 ;   crt_memory.c_malloc_FUN_00601bb0
 ;   crt_string.c_strcpy_advance_FUN_00610240
 ;   crt_string.c_strcpy_FUN_00610760
-;   crt_string.c_strlen_FUN_0060f870
 ;
 ; *****************************************************************************
 
@@ -58,8 +55,8 @@ section .text
     MOV ECX,dword ptr [EBX]             ; 00610280
         ;   Label: LAB_00610280
     PUSH ECX                            ; 00610282
-    CALL crt_string.c_strlen_FUN_0060f870 ; 00610283
-        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; int crt_string.c_strlen_FUN_0060f870(char * str)
+    CALL 0x0060f870                     ; 00610283
+        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; SUB_0060f870
     INC EAX                             ; 00610288
     ADD EBX,0x4                         ; 00610289
     ADD EDI,EAX                         ; 0061028c
@@ -76,8 +73,8 @@ section .text
         ;   XREF to: 006102b0 (CONDITIONAL_JUMP)  ; LAB_006102b0
     MOV EBX,dword ptr [ESI]             ; 006102a0
     PUSH EBX                            ; 006102a2
-    CALL crt_string.c_strlen_FUN_0060f870 ; 006102a3
-        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; int crt_string.c_strlen_FUN_0060f870(char * str)
+    CALL 0x0060f870                     ; 006102a3
+        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; SUB_0060f870
     ADD EAX,0x3                         ; 006102a8
     ADD ESP,0x4                         ; 006102ab
     ADD EDI,EAX                         ; 006102ae
@@ -174,8 +171,8 @@ section .text
     INC EBX                             ; 00610375
     PUSH EAX                            ; 00610376
         ;   Label: LAB_00610376
-    CALL crt_string.c_strlen_FUN_0060f870 ; 00610377
-        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; int crt_string.c_strlen_FUN_0060f870(char * str)
+    CALL 0x0060f870                     ; 00610377
+        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; SUB_0060f870
     ADD ESI,0x4                         ; 0061037c
     ADD ESP,0x4                         ; 0061037f
     ADD EBX,EAX                         ; 00610382

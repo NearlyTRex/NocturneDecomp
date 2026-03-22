@@ -4,9 +4,6 @@
 ; void __cdecl crt_tls_c_initialize_tls_infrastructure_FUN_0060a3b4(void)
 ;
 ;
-; XREF[1]:
-;   crt_thread.c_create_thread_with_sync_FUN_0060f960 at 0060f982
-;
 ; Referenced Globals:
 ;   TLS_SET_VALUE_FUNC* g_TlsSetValueFunc = 0021226c
 ;   DWORD g_TLSIndex = 0xffffffff

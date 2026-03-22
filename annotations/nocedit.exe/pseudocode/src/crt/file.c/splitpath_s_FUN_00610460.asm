@@ -11,9 +11,6 @@
 ; char *           Stack[0x14]:4   fname
 ; char *           Stack[0x18]:4   ext
 ;
-; XREF[1]:
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f583
-;
 ; Called Functions:
 ;   crt_file.c_extract_path_component_FUN_00610400
 ;   crt_string.c_mbtowc_next_FUN_00605a70

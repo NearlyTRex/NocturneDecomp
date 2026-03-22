@@ -4,9 +4,8 @@
 ; int __cdecl crt_stack_c_GetStackUsage_FUN_0060c260(void)
 ;
 ;
-; XREF[3]:
+; XREF[2]:
 ;   crt_io.c_write_FUN_006084ec at 00608660
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f50b
 ;   crt_startup.cpp_WinMainBootstrap_FUN_00609e70 at 00609ec5
 ;
 ; Referenced Globals:

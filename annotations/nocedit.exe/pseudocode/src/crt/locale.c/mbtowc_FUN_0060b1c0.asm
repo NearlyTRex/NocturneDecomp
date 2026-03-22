@@ -10,9 +10,6 @@
 ; Local Variables:
 ; wchar_t[2]       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
-;   crt_unknown.c_FUN_0060fac0 at 0060fae3
-;
 ; Referenced Globals:
 ;   MULTI_BYTE_TO_WIDE_CHAR_FUNC* g_MultiByteToWideCharFunc = 00212092
 ;   uint g_CodePage = 0x1

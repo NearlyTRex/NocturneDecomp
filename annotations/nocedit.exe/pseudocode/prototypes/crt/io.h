@@ -135,10 +135,6 @@ void __cdecl ConvertCreationDisposition(DWORD mode_flags,DWORD *creation_disposi
 // Address: 0060c9f0
 int __watcallStack access(char *filename,int access_mode);
 
-// Original: crt_io.c_exists_FUN_0060f380
-// Address: 0060f380
-BOOL __watcallStack exists(char *filename);
-
 // Original: crt_io.c_get_handle_FUN_006109f0
 // Address: 006109f0
 HANDLE __cdecl get::handle(int fd);

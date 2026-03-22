@@ -6,8 +6,7 @@
 ; Parameters:
 ; uint             Stack[0x4]:4   size
 ;
-; XREF[2]:
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f5c9
+; XREF[1]:
 ;   crt_startup.cpp_WinMainBootstrap_FUN_00609e70 at 00609ecf
 ;
 ; *****************************************************************************

@@ -131,18 +131,6 @@ char * SomethingWithUppercaseCharacterConvert(char *param_1);
 // Address: 0060e930
 uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3,undefined4 param_4,undefined4 param_5,int param_6);
 
-// Original: crt_unknown.c_FUN_0060fa80
-// Address: 0060fa80
-void __cdecl FUN_0060fa80(void);
-
-// Original: crt_unknown.c_FUN_0060fa90
-// Address: 0060fa90
-int FUN_0060fa90(char *param_1);
-
-// Original: crt_unknown.c_FUN_0060fac0
-// Address: 0060fac0
-int FUN_0060fac0(wchar_t *param_1,char *param_2,int param_3);
-
 // Original: crt_unknown.c_FUN_0060fcf4
 // Address: 0060fcf4
 undefined4 FUN_0060fcf4(short *param_1);

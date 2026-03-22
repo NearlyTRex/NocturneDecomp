@@ -13,7 +13,7 @@
 ; uint             Stack[-0x18]:4  local_18
 ; char *           Stack[-0x14]:4  local_14
 ;
-; XREF[23]:
+; XREF[22]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f412
 ;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 0047976e
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047db3f
@@ -24,7 +24,7 @@
 ;   core_msnedit.cpp_CDemonMission_saveMissionAndScript_FUN_0053d190 at 0053d1dd
 ;   core_script.cpp_editParameterValue_FUN_00562920 at 00563546
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005988df
-;   ... and 13 more
+;   ... and 12 more
 ;
 ; Called Functions:
 ;   crt_file.c_normalize_path_separator_FUN_005febe0

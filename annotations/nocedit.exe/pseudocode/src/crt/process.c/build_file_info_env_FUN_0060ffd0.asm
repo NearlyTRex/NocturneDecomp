@@ -9,9 +9,6 @@
 ; int              Stack[-0x1c]:4  local_1c
 ; char *           Stack[-0x18]:4  local_18
 ;
-; XREF[1]:
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f3d0
-;
 ; Referenced Globals:
 ;   TerminatedCString s_C_FILE_INFO_00659790
 ;   undefined4 s__FILE_INFO=_00659791

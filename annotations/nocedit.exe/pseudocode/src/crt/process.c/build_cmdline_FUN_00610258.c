@@ -28,7 +28,7 @@ int __cdecl build_cmdline(int argc,char **argv,char *program,char **out_cmdline,
     pcVar4 = *argv;
     ppcVar4 = argv;
     while (pcVar4 != (char *)0x0) {
-      iVar2 = strlen(*ppcVar4);
+      iVar2 = func_0x0060f870(*ppcVar4);
       ppcVar4 = ppcVar4 + 1;
       iVar5 = iVar5 + iVar2 + 1;
       pcVar4 = *ppcVar4;
@@ -36,7 +36,7 @@ int __cdecl build_cmdline(int argc,char **argv,char *program,char **out_cmdline,
   }
   iVar6 = iVar5 + 1;
   if (out_bufsize != (int *)0x0) {
-    iVar1 = strlen(*(char **)argc);
+    iVar1 = func_0x0060f870(*(uint *)argc);
     iVar6 = iVar6 + iVar1 + 3;
   }
   iVar1 = g_HeapFlags;
@@ -73,11 +73,11 @@ int __cdecl build_cmdline(int argc,char **argv,char *program,char **out_cmdline,
     if (*(int *)argc != 0) {
       while( true ) {
         argc = argc + 4;
-        if (*(char **)argc == (char *)0x0) break;
+        if (*(int *)argc == 0) break;
         if (iVar6 != 0) {
           iVar6 = iVar6 + 1;
         }
-        iVar1 = strlen(*(char **)argc);
+        iVar1 = func_0x0060f870(*(int *)argc);
         iVar6 = iVar6 + iVar1;
       }
     }

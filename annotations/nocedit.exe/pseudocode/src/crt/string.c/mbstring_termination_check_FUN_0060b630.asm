@@ -6,13 +6,12 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   str
 ;
-; XREF[7]:
+; XREF[6]:
 ;   crt_string.c__mbstrnicmp_FUN_00608e50 at 00608e67
 ;   crt_string.c_char_in_set_FUN_0060e340 at 0060e369
 ;   crt_string.c_mbstrnbytes_FUN_00605ec0 at 00605ece
 ;   crt_string.c_mbstrnlen_FUN_00605e50 at 00605e5e
 ;   crt_string.c_strpbrk_FUN_0060c190 at 0060c19b
-;   crt_unknown.c_FUN_0060fa90 at 0060fa99
 ;   crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0 at 0060e5dc
 ;
 ; Referenced Globals:

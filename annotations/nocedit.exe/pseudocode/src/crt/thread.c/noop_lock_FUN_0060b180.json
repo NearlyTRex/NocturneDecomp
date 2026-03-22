@@ -1,27 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 2,
-    "complexity_score": 34,
-    "cross_reference_count": 1,
+    "complexity_score": 19,
+    "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 4,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
       "special_crt_function"
     ],
     "total_lines": 6
   },
-  "cross_references": [
-    {
-      "addr": "0060f39c",
-      "from_addr": "0060f58f",
-      "name": "crt_process.c_spawnvp_FUN_0060f39c",
-      "type": "COMPUTED_CALL"
-    }
-  ],
+  "cross_references": [],
   "function": {
     "address": "0060b180",
     "address_range": [
@@ -37,35 +29,12 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 2,
-    "call_sites": [
-      {
-        "call_addr": "0060f58f",
-        "call_type": "direct",
-        "caller": "crt_process.c_spawnvp_FUN_0060f39c",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0060f851",
-        "call_type": "direct",
-        "caller": "crt_process.c_spawnvp_FUN_0060f39c",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      }
-    ],
-    "confidence": "medium",
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 1
+    "estimated_params": 0
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.0,
@@ -86,17 +55,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
-    },
     {
       "address": "0060b180",
       "crt_type": "runtime support",

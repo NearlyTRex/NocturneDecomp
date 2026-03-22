@@ -6,8 +6,7 @@
 ; Parameters:
 ; int              Stack[0x4]:4   shutdownMode
 ;
-; XREF[2]:
-;   crt_thread.c_exit_thread_FUN_0060fa58 at 0060fa6e
+; XREF[1]:
 ;   crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388 at 0060a38a
 ;
 ; Referenced Globals:

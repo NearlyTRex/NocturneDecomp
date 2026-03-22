@@ -11,20 +11,19 @@ char * SomethingWithUppercaseCharacterConvert(char *param_1)
 {
   wchar_t character;
   int iVar1;
-  char *mb_char;
   char *str;
-  char *in_stack_fffffff4;
+  char acStack_c [4];
   
   str = param_1;
   while( true ) {
     iVar1 = mbstring_termination_check(str);
     if (iVar1 != 0) break;
-    mb_char = (char *)mbtowc_peek(str);
-    character = toupper_multibyte(mb_char,in_stack_fffffff4);
-    wchar_to_bytes(character,&stack0xfffffff4);
-    iVar1 = mblen(&stack0xfffffff4);
-    (&stack0xfffffff4)[iVar1] = 0;
-    copyMbChar(str,&stack0xfffffff4);
+    iVar1 = mbtowc_peek(str);
+    character = func_0x0060f300(iVar1);
+    wchar_to_bytes(character,acStack_c);
+    iVar1 = mblen(acStack_c);
+    acStack_c[iVar1] = '\0';
+    copyMbChar(str,acStack_c);
     str = mbtowc_next(str);
   }
   return param_1;

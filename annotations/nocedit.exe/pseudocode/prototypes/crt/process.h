@@ -23,10 +23,6 @@ int __watcallStack spawnvp(int mode,char *cmdname,char **argv);
 // Address: 0060e6a0
 int __cdecl spawnvp::with_path_search(int mode,char *program,char **argv,char **envp);
 
-// Original: crt_process.c_spawnvp_FUN_0060f39c
-// Address: 0060f39c
-int __cdecl spawnvp(int mode,char *cmdname,char **argv,char **envp);
-
 // Original: crt_process.c_build_file_info_env_FUN_0060ffd0
 // Address: 0060ffd0
 char * __cdecl build::file_info_env(void);

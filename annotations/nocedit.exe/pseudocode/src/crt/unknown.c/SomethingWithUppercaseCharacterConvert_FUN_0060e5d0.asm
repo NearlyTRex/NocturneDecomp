@@ -7,9 +7,11 @@
 ; XREF[1]:
 ;   crt_string.c_compare_mb_chars_ci_FUN_0060c790 at 0060c7e3
 ;
+; Referenced Globals:
+;   undefined4 CAVE_cave_0060f300
+;
 ; Called Functions:
 ;   crt_locale.c_mblen_FUN_00605a40
-;   crt_locale.c_toupper_multibyte_FUN_0060f300
 ;   crt_locale.c_wchar_to_bytes_FUN_00605a20
 ;   crt_mbstring.c_copyMbChar_FUN_0060e590
 ;   crt_string.c_mbstring_termination_check_FUN_0060b630
@@ -39,8 +41,8 @@ section .text
         ;   XREF to: 006059e0 (UNCONDITIONAL_CALL)  ; int crt_string.c_mbtowc_peek_FUN_006059e0(char * str)
     ADD ESP,0x4                         ; 0060e5ee
     PUSH EAX                            ; 0060e5f1
-    CALL crt_locale.c_toupper_multibyte_FUN_0060f300 ; 0060e5f2
-        ;   XREF to: 0060f300 (UNCONDITIONAL_CALL)  ; wchar_t crt_locale.c_toupper_multibyte_FUN_0060f300(char * mb_char, char * output_buffer)
+    CALL 0x0060f300                     ; 0060e5f2
+        ;   XREF to: 0060f300 (UNCONDITIONAL_CALL)  ; CAVE_cave_0060f300
     ADD ESP,0x4                         ; 0060e5f7
     MOV EDX,ESP                         ; 0060e5fa
     PUSH EDX                            ; 0060e5fc

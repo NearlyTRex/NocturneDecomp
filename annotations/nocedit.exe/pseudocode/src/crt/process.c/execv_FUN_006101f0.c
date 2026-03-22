@@ -13,7 +13,7 @@ int __cdecl execv(int argc,char *program,char **argv)
   ThreadData *pTVar1;
   int iVar2;
   
-  uExitCode = spawnvp(1,(char *)argc,(char **)program,argv);
+  uExitCode = func_0x0060f39c(1,argc,program,argv);
   pTVar1 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
   if (pTVar1->errno_value != 0) {
     return -1;

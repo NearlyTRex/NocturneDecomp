@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 61,
     "complexity_score": 43,
-    "cross_reference_count": 15,
+    "cross_reference_count": 14,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
@@ -60,12 +60,6 @@
       "addr": "00609afc",
       "from_addr": "00609b14",
       "name": "crt_io.c_getTempDirectory_FUN_00609afc",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0060f39c",
-      "from_addr": "0060f7f4",
-      "name": "crt_process.c_spawnvp_FUN_0060f39c",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -133,7 +127,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 20,
+    "call_site_count": 19,
     "call_sites": [
       {
         "call_addr": "004dab63",
@@ -224,9 +218,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "0060f7f4",
+        "call_addr": "0053f816",
         "call_type": "direct",
-        "caller": "crt_process.c_spawnvp_FUN_0060f39c",
+        "caller": "core_netgame.cpp_CNetGame_init_FUN_0053f780",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -235,9 +229,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "0053f816",
+        "call_addr": "004b1c37",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_CNetGame_init_FUN_0053f780",
+        "caller": "engine_fileio.cpp_establishUserIdentity_FUN_004b1c00",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

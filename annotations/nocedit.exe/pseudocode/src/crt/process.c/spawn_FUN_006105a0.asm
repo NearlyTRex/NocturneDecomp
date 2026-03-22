@@ -15,9 +15,6 @@
 ; HANDLE           Stack[-0x18]:4  pvStack_18
 ; HANDLE           Stack[-0x14]:4  pvStack_14
 ;
-; XREF[1]:
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f74f
-;
 ; Referenced Globals:
 ;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
 ;   CREATE_PROCESS_A_FUNC* g_CreateProcessAFunc = 00211c88

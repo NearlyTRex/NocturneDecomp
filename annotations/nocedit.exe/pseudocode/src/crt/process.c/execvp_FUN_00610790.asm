@@ -9,14 +9,9 @@
 ; char *           Stack[0xc]:4   arg1
 ; char *           Stack[0x10]:4   arg2
 ;
-; XREF[1]:
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f804
-;
 ; Referenced Globals:
+;   undefined4 SUB_0060f39c
 ;   char** g_EnvironmentBlock
-;
-; Called Functions:
-;   crt_process.c_spawnvp_FUN_0060f39c
 ;
 ; *****************************************************************************
 
@@ -32,8 +27,8 @@ section .text
     PUSH EBX                            ; 006107a1
     MOV ECX,dword ptr [ESP + 0x14]      ; 006107a2
     PUSH ECX                            ; 006107a6
-    CALL crt_process.c_spawnvp_FUN_0060f39c ; 006107a7
-        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_FUN_0060f39c(int mode, char * cmdname, char * * argv, char * * envp)
+    CALL 0x0060f39c                     ; 006107a7
+        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; SUB_0060f39c
     ADD ESP,0x10                        ; 006107ac
     POP EBX                             ; 006107af
     RET                                 ; 006107b0

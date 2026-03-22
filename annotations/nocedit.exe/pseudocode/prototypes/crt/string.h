@@ -143,14 +143,6 @@ char * __cdecl char::in_set(char *charset,wchar_t wc);
 // Address: 0060e640
 int __cdecl mbcmp(char *str1,char *str2);
 
-// Original: crt_string.c_strlen_FUN_0060f870
-// Address: 0060f870
-int __cdecl strlen(char *str);
-
-// Original: crt_string.c_strchr_FUN_0060f890
-// Address: 0060f890
-char * __cdecl strchr(char *str,int ch);
-
 // Original: crt_string.c_strcpy_advance_FUN_00610240
 // Address: 00610240
 char * __cdecl strcpy::advance(char *dest,char *src);

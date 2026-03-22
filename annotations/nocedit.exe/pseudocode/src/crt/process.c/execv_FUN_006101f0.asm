@@ -8,17 +8,14 @@
 ; char *           Stack[0x8]:4   program
 ; char * *         Stack[0xc]:4   argv
 ;
-; XREF[1]:
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f45d
-;
 ; Referenced Globals:
+;   undefined4 SUB_0060f39c
 ;   EXIT_PROCESS_FUNC* g_ExitProcessFunc = 00211d12
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;   void* PTR_crt_exit.c_ExitHookStub_FUN_0060b530_00685478 = 0060b530
 ;
 ; Called Functions:
 ;   crt_exit.c_ExitHookStub_FUN_0060b530
-;   crt_process.c_spawnvp_FUN_0060f39c
 ;   crt_thread.c_GetTLS_FUN_0060242c
 ;   ExitProcess
 ;
@@ -35,8 +32,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 006101fb
     PUSH ECX                            ; 006101ff
     PUSH 0x1                            ; 00610200
-    CALL crt_process.c_spawnvp_FUN_0060f39c ; 00610202
-        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_FUN_0060f39c(int mode, char * cmdname, char * * argv, char * * envp)
+    CALL 0x0060f39c                     ; 00610202
+        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; SUB_0060f39c
     ADD ESP,0x10                        ; 00610207
     MOV EBX,EAX                         ; 0061020a
     CALL dword ptr [0x00684ee4]         ; 0061020c | PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4

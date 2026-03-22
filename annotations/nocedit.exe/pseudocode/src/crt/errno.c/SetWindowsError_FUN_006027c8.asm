@@ -6,10 +6,9 @@
 ; Parameters:
 ; DWORD            Stack[0x4]:4   windows_error_code
 ;
-; XREF[4]:
+; XREF[3]:
 ;   crt_errno.c_convertWindowsErrorToErrno_FUN_00608390 at 00608396
 ;   crt_process.c_build_cmdline_FUN_00610258 at 006102ed
-;   crt_process.c_spawnvp_FUN_0060f39c at 0060f5f6
 ;   crt_process.c_spawnvp_with_path_search_FUN_0060e6a0 at 0060e7a2
 ;
 ; Referenced Globals:

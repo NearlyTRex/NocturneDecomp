@@ -13,6 +13,9 @@
 ;   crt_process.c_spawnvp_FUN_0060ca20 at 0060ca38
 ;
 ; Referenced Globals:
+;   undefined4 SUB_0060f39c
+;   undefined4 SUB_0060f870
+;   undefined4 SUB_0060f890
 ;   TerminatedCString s_PATH_00659750
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;
@@ -20,10 +23,7 @@
 ;   crt_env.c_getenv_FUN_006013f0
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_errno.c_SetWindowsError_FUN_006027c8
-;   crt_process.c_spawnvp_FUN_0060f39c
 ;   crt_string.c_memcpy_FUN_0060cd60
-;   crt_string.c_strchr_FUN_0060f890
-;   crt_string.c_strlen_FUN_0060f870
 ;   crt_thread.c_GetTLS_FUN_0060242c
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     PUSH EBP                            ; 0060e6cb
     MOV ECX,dword ptr [ESP + 0x12c]     ; 0060e6cc
     PUSH ECX                            ; 0060e6d3
-    CALL crt_process.c_spawnvp_FUN_0060f39c ; 0060e6d4
-        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_FUN_0060f39c(int mode, char * cmdname, char * * argv, char * * envp)
+    CALL 0x0060f39c                     ; 0060e6d4
+        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; SUB_0060f39c
     ADD ESP,0x10                        ; 0060e6d9
     MOV EDI,EAX                         ; 0060e6dc
     CMP EAX,-0x1                        ; 0060e6de
@@ -90,8 +90,8 @@ section .text
     JZ 0x0060e83b                       ; 0060e734
         ;   XREF to: 0060e83b (CONDITIONAL_JUMP)  ; LAB_0060e83b
     PUSH EBP                            ; 0060e73a
-    CALL crt_string.c_strlen_FUN_0060f870 ; 0060e73b
-        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; int crt_string.c_strlen_FUN_0060f870(char * str)
+    CALL 0x0060f870                     ; 0060e73b
+        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; SUB_0060f870
     ADD ESP,0x4                         ; 0060e740
     INC EAX                             ; 0060e743
     MOV CL,byte ptr [ESI]               ; 0060e744
@@ -106,16 +106,16 @@ section .text
     PUSH 0x3b                           ; 0060e76a
         ;   Label: LAB_0060e76a
     PUSH EBX                            ; 0060e76c
-    CALL crt_string.c_strchr_FUN_0060f890 ; 0060e76d
-        ;   XREF to: 0060f890 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strchr_FUN_0060f890(char * str, int ch)
+    CALL 0x0060f890                     ; 0060e76d
+        ;   XREF to: 0060f890 (UNCONDITIONAL_CALL)  ; SUB_0060f890
     ADD ESP,0x8                         ; 0060e772
     MOV ESI,EAX                         ; 0060e775
     TEST EAX,EAX                        ; 0060e777
     JNZ 0x0060e787                      ; 0060e779
         ;   XREF to: 0060e787 (CONDITIONAL_JUMP)  ; LAB_0060e787
     PUSH EBX                            ; 0060e77b
-    CALL crt_string.c_strlen_FUN_0060f870 ; 0060e77c
-        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; int crt_string.c_strlen_FUN_0060f870(char * str)
+    CALL 0x0060f870                     ; 0060e77c
+        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; SUB_0060f870
     ADD ESP,0x4                         ; 0060e781
     LEA ESI,[EBX + EAX*0x1]             ; 0060e784
     MOV EDI,ESI                         ; 0060e787
@@ -168,8 +168,8 @@ section .text
     PUSH EAX                            ; 0060e7fa
     MOV EDI,dword ptr [ESP + 0x12c]     ; 0060e7fb
     PUSH EDI                            ; 0060e802
-    CALL crt_process.c_spawnvp_FUN_0060f39c ; 0060e803
-        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_FUN_0060f39c(int mode, char * cmdname, char * * argv, char * * envp)
+    CALL 0x0060f39c                     ; 0060e803
+        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; SUB_0060f39c
     ADD ESP,0x10                        ; 0060e808
     MOV EDI,EAX                         ; 0060e80b
     CMP EAX,-0x1                        ; 0060e80d
