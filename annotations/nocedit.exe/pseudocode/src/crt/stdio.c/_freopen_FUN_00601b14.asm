@@ -12,6 +12,7 @@
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507b2e
 ;
 ; Referenced Globals:
+;   undefined4 SUB_00601a94
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   SPECIAL_DEVICE_CLEANUP_FUNC* g_SpecialDeviceCleanupFunc = 00000000
@@ -20,7 +21,6 @@
 ;   crt_stdio.c_OpenFileAndInitialize_FUN_0060190c
 ;   crt_stdio.c_OpenModeStringParser_FUN_006017d0
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
-;   crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94
 ;
 ; *****************************************************************************
 
@@ -57,8 +57,8 @@ section .text
     ADD ESP,0x4                         ; 00601b53
     PUSH ESI                            ; 00601b56
         ;   Label: LAB_00601b56
-    CALL crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94 ; 00601b57
-        ;   XREF to: 00601a94 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94()
+    CALL 0x00601a94                     ; 00601b57
+        ;   XREF to: 00601a94 (UNCONDITIONAL_CALL)  ; SUB_00601a94
     ADD ESP,0x4                         ; 00601b5c
     MOV ESI,EAX                         ; 00601b5f
     TEST EAX,EAX                        ; 00601b61

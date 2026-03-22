@@ -8,9 +8,6 @@
 ; Local Variables:
 ; undefined1[4]    Stack[-0x8]:4  local_8
 ;
-; XREF[1]:
-;   crt_stdio.c_SetupConsoleInputMode_FUN_006059b0 at 006059c9
-;
 ; Referenced Globals:
 ;   WRITE_CONSOLE_A_FUNC* g_WriteConsoleAFunc = 002122f0
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434

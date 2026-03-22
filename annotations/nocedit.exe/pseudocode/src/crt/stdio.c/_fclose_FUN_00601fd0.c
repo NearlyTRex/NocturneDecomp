@@ -20,7 +20,7 @@ int __cdecl _fclose(_FILE *file_handle,int force_close_flag)
   else {
     uVar1 = 0;
     if ((file_handle->_flag & 0x1000) != 0) {
-      uVar1 = fflushInternal(file_handle);
+      uVar1 = func_0x006039d0(file_handle);
     }
     (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file_handle->_handle);
     distance_to_move = _ftell(file_handle);

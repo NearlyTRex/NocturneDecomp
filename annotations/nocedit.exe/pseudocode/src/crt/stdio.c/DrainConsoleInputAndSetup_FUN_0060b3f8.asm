@@ -4,9 +4,6 @@
 ; int crt_stdio_c_DrainConsoleInputAndSetup_FUN_0060b3f8(void)
 ;
 ;
-; XREF[1]:
-;   crt_stdio.c_SetupConsoleInputMode_FUN_006059b0 at 006059b8
-;
 ; Referenced Globals:
 ;   GET_CONSOLE_MODE_FUNC* g_GetConsoleModeFunc = 00211e30
 ;   SET_CONSOLE_MODE_FUNC* g_SetConsoleModeFunc = 00212126

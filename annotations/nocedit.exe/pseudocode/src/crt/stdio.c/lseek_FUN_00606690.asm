@@ -8,7 +8,7 @@
 ; long             Stack[0x8]:4   distance_to_move
 ; int              Stack[0xc]:4   move_method
 ;
-; XREF[11]:
+; XREF[10]:
 ;   crt_fstream.cpp_filebuf_overflow_FUN_0060d881 at 0060d9e4
 ;   crt_fstream.cpp_filebuf_pbackfail_FUN_0060d7ae at 0060d85e
 ;   crt_fstream.cpp_filebuf_seekoff_FUN_0060dbe8 at 0060dc1f
@@ -16,10 +16,9 @@
 ;   crt_io.c_chsize_FUN_00600cf0 at 00600d3a
 ;   crt_io.c_extend_file_for_append_FUN_00608410 at 00608425
 ;   crt_stdio.c__fclose_FUN_00601fd0 at 00602028
-;   crt_stdio.c_fflushInternal_FUN_006039d0 at 00603a99
 ;   crt_stdio.c_fseek_FUN_005ffacc at 005ffb57
 ;   crt_unknown.c_FUN_00600c80 at 00600ca2
-;   ... and 1 more
+;   crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930 at 0060eae3
 ;
 ; Referenced Globals:
 ;   SET_FILE_POINTER_FUNC* g_SetFilePointerFunc = 002121b6

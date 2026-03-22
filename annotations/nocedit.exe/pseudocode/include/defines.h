@@ -88,10 +88,8 @@
 #define SYSTEM_STD_ERROR_HANDLE                   0xFFFFFFF6  // 4294967286
 #define SYSTEM_STD_INPUT_HANDLE                   0xFFFFFFF4  // 4294967284
 #define SYSTEM_STD_OUTPUT_HANDLE                  0xFFFFFFF5  // 4294967285
-#define SYSTEM_WATCOM_EBADF                       4
-#define SYSTEM_WATCOM_ENOMEM                      12  // 0xC
 #define SYSTEM_WINDOWS_NT_4_0                     0x8000  // 32768
 
-// Total equates: 78
-// Total references: 275
+// Total equates: 76
+// Total references: 273
 

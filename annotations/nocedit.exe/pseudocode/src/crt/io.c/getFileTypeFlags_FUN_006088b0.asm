@@ -6,12 +6,11 @@
 ; Parameters:
 ; int              Stack[0x4]:4   file_handle_index
 ;
-; XREF[6]:
+; XREF[5]:
 ;   crt_io.c_extend_file_for_append_FUN_00608410 at 00608455
 ;   crt_io.c_write_FUN_006084ec at 00608522
 ;   crt_process.c_build_file_info_env_FUN_0060ffd0 at 0061003c
 ;   crt_stdio.c_lseek_FUN_00606690 at 006066c1
-;   crt_stdio.c_write_FUN_006038c0 at 00603903
 ;   crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930 at 0060e970
 ;
 ; Referenced Globals:

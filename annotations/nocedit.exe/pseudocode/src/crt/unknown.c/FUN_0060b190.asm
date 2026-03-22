@@ -4,9 +4,6 @@
 ; ushort crt_unknown_c_FUN_0060b190(void)
 ;
 ;
-; XREF[1]:
-;   crt_unknown.c_FUN_006047a4 at 006047cc
-;
 ; *****************************************************************************
 
 section .text

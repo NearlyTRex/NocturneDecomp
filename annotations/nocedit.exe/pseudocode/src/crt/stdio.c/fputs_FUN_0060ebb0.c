@@ -17,7 +17,7 @@ int __cdecl _fputs(char *str,_FILE *file)
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file->_handle);
   if (file->_link->__reserve_end == (char *)0x0) {
-    InitializeFileBuffer(file);
+    func_0x006027e0(file);
   }
   bVar2 = *(byte *)((int)&file->_flag + 1);
   bVar5 = (bVar2 & 4) != 0;
@@ -41,7 +41,7 @@ LAB_0060ec1d:
     *(byte *)((int)&file->_flag + 1) = bVar2;
     *(byte *)((int)&file->_flag + 1) = bVar2 | 4;
     if (iVar4 == 0) {
-      iVar4 = fflushInternal(file);
+      iVar4 = func_0x006039d0(file);
     }
   }
   if (iVar4 == 0) {

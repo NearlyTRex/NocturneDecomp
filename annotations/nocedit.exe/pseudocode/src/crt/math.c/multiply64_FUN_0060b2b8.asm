@@ -4,9 +4,6 @@
 ; ulonglong __watcallRegister crt_math_c_multiply64_FUN_0060b2b8(ulonglong a,ulonglong b)
 ;
 ;
-; XREF[1]:
-;   crt_stdio.c_scanf_integer_FUN_0060547c at 00605643
-;
 ; *****************************************************************************
 
 section .text

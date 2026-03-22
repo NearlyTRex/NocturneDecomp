@@ -21,8 +21,8 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0 at 004896ec
 ;   ... and 28 more
 ;
-; Called Functions:
-;   crt_stdio.c_FormatEngine_FUN_00602950
+; Referenced Globals:
+;   undefined4 SUB_00602950
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH EBX                            ; 005fdbb7
     MOV ECX,dword ptr [ESP + 0x14]      ; 005fdbb8
     PUSH ECX                            ; 005fdbbc
-    CALL crt_stdio.c_FormatEngine_FUN_00602950 ; 005fdbbd
-        ;   XREF to: 00602950 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FormatEngine_FUN_00602950(void * output_context, char * format, va_list_t args, OUTPUT_CALLBACK callback)
+    CALL 0x00602950                     ; 005fdbbd
+        ;   XREF to: 00602950 (UNCONDITIONAL_CALL)  ; SUB_00602950
     ADD ESP,0x10                        ; 005fdbc2
     MOV EDX,dword ptr [ESP + 0x8]       ; 005fdbc5
     MOV byte ptr [EDX + EAX*0x1],0x0    ; 005fdbc9

@@ -2,9 +2,9 @@
   "complexity": {
     "assembly_lines": 104,
     "complexity_score": 53,
-    "cross_reference_count": 2,
-    "function_call_count": 9,
-    "global_count": 3,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 38,
     "suspect_count": 1,
@@ -18,12 +18,6 @@
       "addr": "00601ee4",
       "from_addr": "00601eef",
       "name": "crt_stdio.c___CClose_FUN_00601ee4",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00601a94",
-      "from_addr": "00601ab8",
-      "name": "crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -61,11 +55,6 @@
       "name": "crt_memory.c_free_FUN_00601cd0"
     },
     {
-      "addr": "006039d0",
-      "is_variadic": false,
-      "name": "crt_stdio.c_fflushInternal_FUN_006039d0"
-    },
-    {
       "addr": "00601560",
       "is_variadic": false,
       "name": "crt_stdio.c_ftell_FUN_00601560"
@@ -88,6 +77,12 @@
   ],
   "globals": [
     {
+      "addr": "006039d0",
+      "name": "SUB_006039d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "00684ee8",
       "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8",
       "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*",
@@ -107,7 +102,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 1,
     "call_sites": [
       {
         "call_addr": "00601eef",
@@ -119,20 +114,9 @@
         "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
-      },
-      {
-        "call_addr": "00601ab8",
-        "call_type": "direct",
-        "caller": "crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "declared_params": 2,
     "declared_stack_bytes": 8,
     "estimated_params": 2

@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 6855
-Functions with no callers: 3182
-Parameter mismatches detected: 113
-Signature accuracy rate: 96.9%
+Functions with parameter estimates: 6822
+Functions with no callers: 3184
+Parameter mismatches detected: 104
+Signature accuracy rate: 97.1%
 
 Mismatches by confidence:
   High confidence:   1 (multiple call sites agree)
-  Medium confidence: 29 (some agreement)
-  Low confidence:    83 (limited data)
+  Medium confidence: 28 (some agreement)
+  Low confidence:    75 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -48,7 +48,6 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_00607858                         declared:0 est:3 (+3) [2 calls]
   engine_matrix.c_getCameraOrigin_FUN_0050e2c0       declared:1 est:4 (+3) [4 calls]
   engine_matrix.c_getCameraRotation_FUN_0050e2f0     declared:1 est:4 (+3) [2 calls]
-  crt_unknown.c_FUN_00603c74                         declared:0 est:2 (+2) [2 calls]
   crt_unknown.c_FUN_0060b133                         declared:0 est:2 (+2) [1 calls]
   crt_unknown.c_SomethingWithUppercaseCharacterConve declared:0 est:2 (+2) [2 calls]
   engine_2d.c_drawTextRightAlignedColorFormatted_FUN declared:3 est:5 (+2) [2 calls]
@@ -75,7 +74,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  83 functions with low-confidence mismatches
+  75 functions with low-confidence mismatches
   Sample:
     cockpit_ckptutil.c_isLineClippingDisabled_FUN declared:0 est:4 (+4)
     crt_io.c_CheckFileHandleAvailability_FUN_0060 declared:0 est:4 (+4)
@@ -95,7 +94,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 12
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 101
+Functions where declaration has FEWER params than estimated: 92
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -103,11 +102,11 @@ Distribution of differences (estimated - declared):
   -3 params: 1 functions
   -2 params: 1 functions
   -1 params: 9 functions
-  +1 params: 48 functions
-  +2 params: 16 functions
+  +1 params: 43 functions
+  +2 params: 13 functions
   +3 params: 14 functions
   +4 params: 12 functions
-  +5 params: 4 functions
+  +5 params: 3 functions
   +6 params: 1 functions
   +7 params: 1 functions
   +9 params: 1 functions

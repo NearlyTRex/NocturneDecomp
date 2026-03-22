@@ -23,14 +23,14 @@
 ;   ... and 41 more
 ;
 ; Referenced Globals:
+;   undefined4 CAVE_cave_006027e0
+;   undefined4 SUB_00602880
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_stdio.c_FillInputBuffer_FUN_005fe940
-;   crt_stdio.c_InitializeFileBuffer_FUN_006027e0
-;   crt_stdio.c_ReadFileWithDeviceAbstraction_FUN_00602880
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
     JNZ 0x005fda08                      ; 005fd9fd
         ;   XREF to: 005fda08 (CONDITIONAL_JUMP)  ; LAB_005fda08
     PUSH EBX                            ; 005fd9ff
-    CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 005fda00
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(_FILE * file)
+    CALL 0x006027e0                     ; 005fda00
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; CAVE_cave_006027e0
     ADD ESP,0x4                         ; 005fda05
     XOR EBP,EBP                         ; 005fda08
         ;   Label: LAB_005fda08
@@ -167,8 +167,8 @@ section .text
     PUSH EDI                            ; 005fdaa4
     MOV EAX,dword ptr [EBX + 0x10]      ; 005fdaa5
     PUSH EAX                            ; 005fdaa8
-    CALL crt_stdio.c_ReadFileWithDeviceAbstraction_FUN_00602880 ; 005fdaa9
-        ;   XREF to: 00602880 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ReadFileWithDeviceAbstraction_FUN_00602880(int file_handle_index, void * buffer, int bytes_to_read)
+    CALL 0x00602880                     ; 005fdaa9
+        ;   XREF to: 00602880 (UNCONDITIONAL_CALL)  ; SUB_00602880
     ADD ESP,0xc                         ; 005fdaae
     CMP EAX,-0x1                        ; 005fdab1
     JNZ 0x005fdabf                      ; 005fdab4

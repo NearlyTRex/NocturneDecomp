@@ -1,29 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 142,
-    "cross_reference_count": 1,
+    "complexity_score": 127,
+    "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_few",
       "special_crt_function",
       "sub84_truncation"
     ],
     "total_lines": 59
   },
-  "cross_references": [
-    {
-      "addr": "00605178",
-      "from_addr": "00605468",
-      "name": "crt_stdio.c_scanf_float_FUN_00605178",
-      "type": "UNCONDITIONAL_CALL"
-    }
-  ],
+  "cross_references": [],
   "function": {
     "address": "0060b26c",
     "address_range": [
@@ -39,27 +31,12 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 1,
-    "call_sites": [
-      {
-        "call_addr": "00605468",
-        "call_type": "direct",
-        "caller": "crt_stdio.c_scanf_float_FUN_00605178",
-        "estimated_params": 2,
-        "instructions_analyzed": 3,
-        "method": "push_count",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
-        "stack_bytes": 0,
-        "stack_params": 0
-      }
-    ],
-    "confidence": "low",
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
     "declared_params": 1,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.033333333333333,
@@ -164,17 +141,6 @@
       "severity": "mild",
       "text": "(uint)CARRY4(uVar2 * 2,uVar2 * 2) | uVar1);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
     },
     {
       "address": "0060b26c",

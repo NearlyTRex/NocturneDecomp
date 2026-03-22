@@ -10,9 +10,7 @@
 ; Local Variables:
 ; wchar_t[2]       Stack[-0x14]:4  local_14
 ;
-; XREF[3]:
-;   crt_stdio.c_scanf_char_FUN_00604d54 at 00604e13
-;   crt_stdio.c_scanf_string_FUN_00604e4c at 00604f3a
+; XREF[1]:
 ;   crt_unknown.c_FUN_0060fac0 at 0060fae3
 ;
 ; Referenced Globals:

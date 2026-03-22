@@ -4,41 +4,40 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6974 ( 38.2%)
-  pointer_cast                    5681 ( 31.1%)
-  unknown_field                   1324 (  7.3%)
-  stack_param                      651 (  3.6%)
-  special_crt_function             569 (  3.1%)
-  unnamed_param                    398 (  2.2%)
+  decompiler_intrinsic            6954 ( 38.9%)
+  pointer_cast                    5651 ( 31.6%)
+  unknown_field                   1239 (  6.9%)
+  stack_param                      624 (  3.5%)
+  special_crt_function             522 (  2.9%)
+  unnamed_param                    362 (  2.0%)
   fpu_register_input               311 (  1.7%)
-  stack_ref                        269 (  1.5%)
-  nonstandard_int                  269 (  1.5%)
-  warning_inlined_function         264 (  1.4%)
-  unresolved_funcptr               171 (  0.9%)
-  unaffected_reg                   148 (  0.8%)
-  param_count_too_few              137 (  0.8%)
-  warning_type_propagation         133 (  0.7%)
+  stack_ref                        267 (  1.5%)
+  nonstandard_int                  267 (  1.5%)
+  warning_inlined_function         264 (  1.5%)
+  unresolved_funcptr               171 (  1.0%)
   stack_alignment_array            132 (  0.7%)
-  register_param                   116 (  0.6%)
-  sub84_truncation                 100 (  0.5%)
-  warning_unreachable               85 (  0.5%)
+  warning_type_propagation         132 (  0.7%)
+  param_count_too_few              127 (  0.7%)
+  unaffected_reg                   106 (  0.6%)
+  sub84_truncation                 100 (  0.6%)
   negative_offset                   85 (  0.5%)
+  warning_unreachable               84 (  0.5%)
+  register_param                    69 (  0.4%)
   param_count_too_many              52 (  0.3%)
   suspect_float                     50 (  0.3%)
   unknown_type                      44 (  0.2%)
-  extra_output                      42 (  0.2%)
+  extra_output                      37 (  0.2%)
   mmx_assembly                      34 (  0.2%)
-  undefined_data                    24 (  0.1%)
   format_string_mismatch            24 (  0.1%)
   undefined_ram                     24 (  0.1%)
+  undefined_data                    22 (  0.1%)
   byvalue_struct_passing            21 (  0.1%)
   special_math_intrinsic            16 (  0.1%)
   undefined_type                    15 (  0.1%)
   warning_jumptable                 10 (  0.1%)
   warning_indirect_jump             10 (  0.1%)
-  nan_function_artifact              9 (  0.0%)
+  nan_function_artifact              9 (  0.1%)
   fnstsw_flag_artifact               8 (  0.0%)
-  undefined_ptr_cast                 6 (  0.0%)
   displaced_global_access            6 (  0.0%)
   unresolved_register                5 (  0.0%)
   warning_noreturn                   4 (  0.0%)
@@ -56,24 +55,24 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (6974 occurrences)
+TYPE: decompiler_intrinsic (6954 occurrences)
 ====================================================================================================
 
 Unique patterns:
   2626x  ROUND
   1548x  ADJ
-   455x  CONCAT44
+   450x  CONCAT44
    427x  SQRT
    325x  ABS
-   145x  CONCAT11
-   122x  CARRY4
+   142x  CONCAT11
+   120x  CARRY4
    106x  fcos
    105x  fsin
    100x  SUB84
-    96x  CONCAT12
-    89x  CONCAT22
+    95x  CONCAT12
+    86x  CONCAT22
     82x  CONCAT14
-    67x  CONCAT21
+    66x  CONCAT21
     64x  CONCAT13
     63x  CONCAT26
     63x  CONCAT24
@@ -98,20 +97,20 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5681 occurrences)
+TYPE: pointer_cast (5651 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2151x  (uint *)((int)
-  1293x  (int *)((int)
+  2143x  (uint *)((int)
+  1292x  (int *)((int)
    325x  (SRenderVertex *)((int)
    301x  (float *)((int)
    289x  (CMatrix3x4f *)((int)
    208x  (double *)((int)
-   192x  (void *)((int)
-   182x  (byte *)((int)
+   189x  (void *)((int)
+   171x  (byte *)((int)
     82x  (ushort *)((int)
-    76x  (char *)((int)
+    72x  (char *)((int)
     61x  (short *)((int)
     34x  (SShapeEditorPolygon *)((int)
     26x  (CMatrix3x3f *)((int)
@@ -136,30 +135,30 @@ Example functions:
     piVar2 = (int *)((int)g_ScreenBufferArray + iVar8);...
 
 ====================================================================================================
-TYPE: unknown_field (1324 occurrences)
+TYPE: unknown_field (1239 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   430x  ._0_4_
-   374x  ._4_4_
+   424x  ._0_4_
+   361x  ._4_4_
     72x  ._8_4_
     58x  ._12_4_
-    56x  ._16_4_
-    49x  ._0_2_
-    42x  ._2_2_
+    50x  ._16_4_
+    47x  ._0_2_
     38x  ._24_4_
+    36x  ._2_2_
     34x  ._20_4_
     31x  ._0_24_
-    25x  ._0_1_
     22x  ._28_4_
-    18x  ._1_1_
-    16x  ._3_1_
-    13x  ._2_1_
-    11x  ._30_2_
+    14x  ._0_1_
+     9x  ._1_1_
+     7x  ._3_1_
      7x  ._32_4_
      4x  ._44_4_
      4x  ._36_4_
      3x  ._40_4_
+     3x  ._48_4_
+     3x  ._13604_4_
 
 Example functions:
   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
@@ -182,7 +181,7 @@ Example functions:
     uVar6._0_2_ = CONCAT11(bStack_2b,uStack_2c) & 0x7fff;...
 
 ====================================================================================================
-TYPE: stack_param (651 occurrences)
+TYPE: stack_param (624 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -190,11 +189,11 @@ Unique patterns:
     46x  in_stack_fffffc88
     42x  in_stack_0000000c
     37x  in_stack_ffffff54
-    33x  in_stack_00000004
-    28x  in_stack_00000008
+    25x  in_stack_00000004
     25x  in_stack_fffffd80
-    23x  in_stack_00000010
     19x  in_stack_fffffd7c
+    18x  in_stack_00000008
+    17x  in_stack_00000010
     16x  in_stack_fffffd78
     16x  in_stack_ffffff9c
     15x  in_stack_ffffff28
@@ -226,11 +225,11 @@ Example functions:
     int in_stack_00000004;...
 
 ====================================================================================================
-TYPE: special_crt_function (569 occurrences)
+TYPE: special_crt_function (522 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   569x  crt_
+   522x  crt_
 
 Example functions:
   crt_io.c_invalidate_handle_wrapper_FUN_0060a154
@@ -295,25 +294,21 @@ Example functions:
     CRT function (runtime support) at 00608908...
 
 ====================================================================================================
-TYPE: unnamed_param (398 occurrences)
+TYPE: unnamed_param (362 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   140x  param_1
-    99x  param_2
+   124x  param_1
+    90x  param_2
     47x  param1
-    34x  param_3
-    18x  param_4
+    32x  param_3
     17x  param0
-    11x  param_6
+    16x  param_4
+    10x  param_6
     10x  param2
-     8x  param_5
+     6x  param_5
      6x  param3
      4x  param4
-     1x  param_7
-     1x  param_8
-     1x  param_9
-     1x  param_10
 
 Example functions:
   crt_memory.c___arrcopy_FUN_00600bc2
@@ -358,7 +353,7 @@ Example functions:
     float10 in_ST0;...
 
 ====================================================================================================
-TYPE: stack_ref (269 occurrences)
+TYPE: stack_ref (267 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -368,8 +363,8 @@ Unique patterns:
     12x  &stack0xfffffd64
     12x  &stack0xfffffd34
     11x  &stack0xfffffff0
-     9x  &stack0xfffffff4
      8x  &stack0xffffff58
+     7x  &stack0xfffffff4
      7x  &stack0xfffffe90
      7x  &stack0xfffffee8
      7x  &stack0xfffffeb8
@@ -404,23 +399,19 @@ Example functions:
     *(DWORD *)(&stack0xffffffd4 + iVar1) = g_RuntimeBufferSize;...
 
 ====================================================================================================
-TYPE: nonstandard_int (269 occurrences)
+TYPE: nonstandard_int (267 occurrences)
 ====================================================================================================
 
 Unique patterns:
    133x  uint7
     70x  uint5
-    52x  int3
+    50x  int3
      8x  int5
      3x  uint3
      2x  uint6
      1x  int6
 
 Example functions:
-  crt_unknown.c_FUN_006040d7
-    uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));...
-  crt_unknown.c_FUN_006040ed
-    uVar1 = (ushort)CONCAT31((int3)in_EAX,(char)(in_EAX >> 8));...
   engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240
     uint5 uVar11;...
   core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0
@@ -542,183 +533,6 @@ Example functions:
     code *pcVar1;...
 
 ====================================================================================================
-TYPE: unaffected_reg (148 occurrences)
-====================================================================================================
-
-Unique patterns:
-    53x  unaff_EBX
-    38x  unaff_EDI
-    38x  unaff_ESI
-    19x  unaff_EBP
-
-Example functions:
-  crt_io.c_chsize_FUN_00600cf0
-    HANDLE unaff_EBP;...
-  crt_io.c_close_FUN_00609bd0
-    HANDLE unaff_ESI;...
-  crt_stdlib.c_memory_swap_FUN_005fdf10
-    uint *unaff_ESI;...
-  crt_stdlib.c__fullpath_FUN_00601140
-    char (*unaff_EBP) [4];...
-
-====================================================================================================
-TYPE: param_count_too_few (137 occurrences)
-====================================================================================================
-
-Unique patterns:
-    22x  declared:1 vs estimated:2
-    12x  declared:0 vs estimated:4
-    12x  declared:0 vs estimated:1
-    12x  declared:0 vs estimated:2
-    11x  declared:2 vs estimated:3
-     8x  declared:4 vs estimated:5
-     8x  declared:0 vs estimated:3
-     6x  declared:3 vs estimated:4
-     5x  declared:3 vs estimated:6
-     4x  declared:4 vs estimated:7
-     4x  declared:0 vs estimated:5
-     4x  declared:2 vs estimated:4
-     2x  declared:6 vs estimated:7
-     2x  declared:5 vs estimated:6
-     2x  declared:1 vs estimated:4
-     2x  declared:2 vs estimated:24
-     2x  declared:6 vs estimated:8
-     2x  declared:7 vs estimated:11
-     1x  declared:1 vs estimated:3
-     1x  declared:2 vs estimated:9
-
-Example functions:
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
-    Function declares 4 params but call sites push 5 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
-    Function declares 2 params but call sites push 3 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
-    Function declares 6 params but call sites push 7 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860
-    Function declares 5 params but call sites push 6 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
-    Function declares 4 params but call sites push 5 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0
-    Function declares 4 params but call sites push 5 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
-    Function declares 4 params but call sites push 5 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790
-    Function declares 4 params but call sites push 5 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
-    Function declares 5 params but call sites push 6 (1 missing)...
-  cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660
-    Function declares 0 params but call sites push 4 (4 missing)...
-  crt_io.c_CheckFileHandleAvailability_FUN_00608940
-    Function declares 0 params but call sites push 4 (4 missing)...
-  crt_windows.c_has_active_window_FUN_0060a710
-    Function declares 0 params but call sites push 4 (4 missing)...
-  crt_process.c_set_shell_execute_flag_FUN_00609c80
-    Function declares 1 params but call sites push 2 (1 missing)...
-  crt_process.c_spawnvp_FUN_0060ca20
-    Function declares 3 params but call sites push 4 (1 missing)...
-  crt_process.c_execvp_FUN_00610790
-    Function declares 4 params but call sites push 7 (3 missing)...
-  crt_process.c_getpid_FUN_006099c0
-    Function declares 0 params but call sites push 4 (4 missing)...
-  crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8
-    Function declares 1 params but call sites push 3 (2 missing)...
-  crt_locale.c_islower_multibyte_FUN_00610990
-    Function declares 1 params but call sites push 2 (1 missing)...
-  crt_locale.c_ismultibyte_FUN_00610a20
-    Function declares 1 params but call sites push 2 (1 missing)...
-  crt_memory.c___memfill_FUN_00603b00
-    Function declares 3 params but call sites push 4 (1 missing)...
-  crt_watcom.c__heapchk_FUN_00600ad0
-    Function declares 0 params but call sites push 4 (4 missing)...
-  crt_watcom.c__memset_FUN_004b19d0
-    Function declares 3 params but call sites push 6 (3 missing)...
-  crt_watcom.c_memavl_FUN_006008f0
-    Function declares 0 params but call sites push 5 (5 missing)...
-  crt_math.c_floor_FUN_005feb90
-    Function declares 1 params but call sites push 2 (1 missing)...
-  crt_math.c_ldexp_FUN_00600002
-    Function declares 2 params but call sites push 3 (1 missing)...
-  crt_math.c_modf_FUN_00602102
-    Function declares 2 params but call sites push 3 (1 missing)...
-  crt_math.c_udivmod64_FUN_0060d3ed
-    Function declares 2 params but call sites push 9 (7 missing)...
-  crt_math.c_ceil_FUN_006001b2
-    Function declares 1 params but call sites push 2 (1 missing)...
-  crt_math.c_doubleToFloat_FUN_0060b26c
-    Function declares 1 params but call sites push 2 (1 missing)...
-  crt_thread.c_noop_lock_FUN_0060b180
-    Function declares 0 params but call sites push 1 (1 missing)...
-
-====================================================================================================
-TYPE: warning_type_propagation (133 occurrences)
-====================================================================================================
-
-Unique patterns:
-   133x  WARNING: Type propagation algorithm not settling
-
-Example functions:
-  crt_stdio.c_FormatEngine_FUN_00602950
-    /* WARNING: Type propagation algorithm not settling */...
-  engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
-    /* WARNING: Type propagation algorithm not settling */...
-  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
-    /* WARNING: Type propagation algorithm not settling */...
-  core_trap.cpp_CTrap_process_FUN_005de770
-    /* WARNING: Type propagation algorithm not settling */...
-  core_anvil.cpp_CAnvil_process_FUN_00411d90
-    /* WARNING: Type propagation algorithm not settling */...
-  core_dog.cpp_CZombieDog_process_FUN_0047f140
-    /* WARNING: Type propagation algorithm not settling */...
-  core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0
-    /* WARNING: Type propagation algorithm not settling */...
-  core_batcreat.cpp_CBatCreature_process_FUN_00415470
-    /* WARNING: Type propagation algorithm not settling */...
-  core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20
-    /* WARNING: Type propagation algorithm not settling */...
-  core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
-    /* WARNING: Type propagation algorithm not settling */...
-  core_drone.cpp_CDrone_process_FUN_0048ec70
-    /* WARNING: Type propagation algorithm not settling */...
-  core_zombie.cpp_CZombie_processDismemberment_FUN_005fc220
-    /* WARNING: Type propagation algorithm not settling */...
-  core_zombie.cpp_CZombie_process_FUN_005f9470
-    /* WARNING: Type propagation algorithm not settling */...
-  core_zombie.cpp_CZombie_setup_FUN_005f9140
-    /* WARNING: Type propagation algorithm not settling */...
-  core_zombie.cpp_CZombie_getTargetPoints_FUN_005fc720
-    /* WARNING: Type propagation algorithm not settling */...
-  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0
-    /* WARNING: Type propagation algorithm not settling */...
-  core_zombie.cpp_CZombie_canPickupWithHand_FUN_005fbda0
-    /* WARNING: Type propagation algorithm not settling */...
-  core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0
-    /* WARNING: Type propagation algorithm not settling */...
-  core_zombie.cpp_CZombie_processPickup_FUN_005fb530
-    /* WARNING: Type propagation algorithm not settling */...
-  core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970
-    /* WARNING: Type propagation algorithm not settling */...
-  core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20
-    /* WARNING: Type propagation algorithm not settling */...
-  core_icepick.cpp_CIcePick_processAI_FUN_004f8c70
-    /* WARNING: Type propagation algorithm not settling */...
-  core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc0
-    /* WARNING: Type propagation algorithm not settling */...
-  core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0
-    /* WARNING: Type propagation algorithm not settling */...
-  core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0
-    /* WARNING: Type propagation algorithm not settling */...
-  core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0
-    /* WARNING: Type propagation algorithm not settling */...
-  core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0
-    /* WARNING: Type propagation algorithm not settling */...
-  core_bugs.cpp_CBugs_processInEditor_FUN_004278d0
-    /* WARNING: Type propagation algorithm not settling */...
-  core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
-    /* WARNING: Type propagation algorithm not settling */...
-  core_baron.cpp_CBaron_process_FUN_00412e80
-    /* WARNING: Type propagation algorithm not settling */...
-
-====================================================================================================
 TYPE: stack_alignment_array (132 occurrences)
 ====================================================================================================
 
@@ -787,30 +601,181 @@ Example functions:
     int aiStackY_1028 [1016];...
 
 ====================================================================================================
-TYPE: register_param (116 occurrences)
+TYPE: warning_type_propagation (132 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    50x  in_EAX
-    30x  in_ECX
-    16x  in_DS
-    14x  in_AX
-     4x  in_EDX
-     2x  in_AL
+   132x  WARNING: Type propagation algorithm not settling
 
 Example functions:
+  engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
+    /* WARNING: Type propagation algorithm not settling */...
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
+    /* WARNING: Type propagation algorithm not settling */...
+  core_trap.cpp_CTrap_process_FUN_005de770
+    /* WARNING: Type propagation algorithm not settling */...
+  core_anvil.cpp_CAnvil_process_FUN_00411d90
+    /* WARNING: Type propagation algorithm not settling */...
+  core_dog.cpp_CZombieDog_process_FUN_0047f140
+    /* WARNING: Type propagation algorithm not settling */...
+  core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0
+    /* WARNING: Type propagation algorithm not settling */...
+  core_batcreat.cpp_CBatCreature_process_FUN_00415470
+    /* WARNING: Type propagation algorithm not settling */...
+  core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20
+    /* WARNING: Type propagation algorithm not settling */...
+  core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
+    /* WARNING: Type propagation algorithm not settling */...
+  core_drone.cpp_CDrone_process_FUN_0048ec70
+    /* WARNING: Type propagation algorithm not settling */...
+  core_zombie.cpp_CZombie_processDismemberment_FUN_005fc220
+    /* WARNING: Type propagation algorithm not settling */...
+  core_zombie.cpp_CZombie_process_FUN_005f9470
+    /* WARNING: Type propagation algorithm not settling */...
+  core_zombie.cpp_CZombie_setup_FUN_005f9140
+    /* WARNING: Type propagation algorithm not settling */...
+  core_zombie.cpp_CZombie_getTargetPoints_FUN_005fc720
+    /* WARNING: Type propagation algorithm not settling */...
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0
+    /* WARNING: Type propagation algorithm not settling */...
+  core_zombie.cpp_CZombie_canPickupWithHand_FUN_005fbda0
+    /* WARNING: Type propagation algorithm not settling */...
+  core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0
+    /* WARNING: Type propagation algorithm not settling */...
+  core_zombie.cpp_CZombie_processPickup_FUN_005fb530
+    /* WARNING: Type propagation algorithm not settling */...
+  core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970
+    /* WARNING: Type propagation algorithm not settling */...
+  core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20
+    /* WARNING: Type propagation algorithm not settling */...
+  core_icepick.cpp_CIcePick_processAI_FUN_004f8c70
+    /* WARNING: Type propagation algorithm not settling */...
+  core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc0
+    /* WARNING: Type propagation algorithm not settling */...
+  core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0
+    /* WARNING: Type propagation algorithm not settling */...
+  core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0
+    /* WARNING: Type propagation algorithm not settling */...
+  core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0
+    /* WARNING: Type propagation algorithm not settling */...
+  core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0
+    /* WARNING: Type propagation algorithm not settling */...
+  core_bugs.cpp_CBugs_processInEditor_FUN_004278d0
+    /* WARNING: Type propagation algorithm not settling */...
+  core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
+    /* WARNING: Type propagation algorithm not settling */...
+  core_baron.cpp_CBaron_process_FUN_00412e80
+    /* WARNING: Type propagation algorithm not settling */...
+  core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0
+    /* WARNING: Type propagation algorithm not settling */...
+
+====================================================================================================
+TYPE: param_count_too_few (127 occurrences)
+====================================================================================================
+
+Unique patterns:
+    21x  declared:1 vs estimated:2
+    12x  declared:0 vs estimated:4
+    11x  declared:2 vs estimated:3
+    10x  declared:0 vs estimated:1
+     9x  declared:0 vs estimated:2
+     8x  declared:4 vs estimated:5
+     8x  declared:0 vs estimated:3
+     5x  declared:3 vs estimated:6
+     4x  declared:4 vs estimated:7
+     4x  declared:2 vs estimated:4
+     3x  declared:3 vs estimated:4
+     3x  declared:0 vs estimated:5
+     2x  declared:6 vs estimated:7
+     2x  declared:5 vs estimated:6
+     2x  declared:1 vs estimated:4
+     2x  declared:2 vs estimated:24
+     2x  declared:6 vs estimated:8
+     2x  declared:7 vs estimated:11
+     1x  declared:1 vs estimated:3
+     1x  declared:2 vs estimated:9
+
+Example functions:
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
+    Function declares 4 params but call sites push 5 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
+    Function declares 2 params but call sites push 3 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
+    Function declares 6 params but call sites push 7 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860
+    Function declares 5 params but call sites push 6 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
+    Function declares 4 params but call sites push 5 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0
+    Function declares 4 params but call sites push 5 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
+    Function declares 4 params but call sites push 5 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790
+    Function declares 4 params but call sites push 5 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
+    Function declares 5 params but call sites push 6 (1 missing)...
+  cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660
+    Function declares 0 params but call sites push 4 (4 missing)...
+  crt_io.c_CheckFileHandleAvailability_FUN_00608940
+    Function declares 0 params but call sites push 4 (4 missing)...
+  crt_windows.c_has_active_window_FUN_0060a710
+    Function declares 0 params but call sites push 4 (4 missing)...
+  crt_process.c_set_shell_execute_flag_FUN_00609c80
+    Function declares 1 params but call sites push 2 (1 missing)...
+  crt_process.c_spawnvp_FUN_0060ca20
+    Function declares 3 params but call sites push 4 (1 missing)...
+  crt_process.c_execvp_FUN_00610790
+    Function declares 4 params but call sites push 7 (3 missing)...
+  crt_process.c_getpid_FUN_006099c0
+    Function declares 0 params but call sites push 4 (4 missing)...
+  crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8
+    Function declares 1 params but call sites push 3 (2 missing)...
+  crt_locale.c_islower_multibyte_FUN_00610990
+    Function declares 1 params but call sites push 2 (1 missing)...
+  crt_locale.c_ismultibyte_FUN_00610a20
+    Function declares 1 params but call sites push 2 (1 missing)...
+  crt_watcom.c__heapchk_FUN_00600ad0
+    Function declares 0 params but call sites push 4 (4 missing)...
+  crt_watcom.c__memset_FUN_004b19d0
+    Function declares 3 params but call sites push 6 (3 missing)...
+  crt_watcom.c_memavl_FUN_006008f0
+    Function declares 0 params but call sites push 5 (5 missing)...
+  crt_math.c_floor_FUN_005feb90
+    Function declares 1 params but call sites push 2 (1 missing)...
+  crt_math.c_ldexp_FUN_00600002
+    Function declares 2 params but call sites push 3 (1 missing)...
+  crt_math.c_modf_FUN_00602102
+    Function declares 2 params but call sites push 3 (1 missing)...
+  crt_math.c_udivmod64_FUN_0060d3ed
+    Function declares 2 params but call sites push 9 (7 missing)...
+  crt_math.c_ceil_FUN_006001b2
+    Function declares 1 params but call sites push 2 (1 missing)...
+  crt_thread.c_noop_lock_FUN_0060b180
+    Function declares 0 params but call sites push 1 (1 missing)...
+  crt_time.c_get_local_time_FUN_00607150
+    Function declares 1 params but call sites push 2 (1 missing)...
+  crt_unknown.c_FUN_00600990
+    Function declares 0 params but call sites push 2 (2 missing)...
+
+====================================================================================================
+TYPE: unaffected_reg (106 occurrences)
+====================================================================================================
+
+Unique patterns:
+    37x  unaff_EBX
+    26x  unaff_EDI
+    24x  unaff_ESI
+    19x  unaff_EBP
+
+Example functions:
+  crt_io.c_chsize_FUN_00600cf0
+    HANDLE unaff_EBP;...
+  crt_io.c_close_FUN_00609bd0
+    HANDLE unaff_ESI;...
   crt_stdlib.c_memory_swap_FUN_005fdf10
-    uint in_ECX;...
-  crt_cpp.c_reportPureVirtualError_FUN_00605b23
-    ushort in_DS;...
-  crt_memory.c___stosd_FUN_00603b37
-    uint in_ECX;...
-  crt_memory.c___memfill_FUN_00603b00
-    uint in_ECX;...
-  crt_math.c_integer_power_FUN_005ffeb2
-    ushort in_AX;...
-  crt_math.c_exp_FUN_006068e2
-    char in_AL;...
+    uint *unaff_ESI;...
+  crt_stdlib.c__fullpath_FUN_00601140
+    char (*unaff_EBP) [4];...
 
 ====================================================================================================
 TYPE: sub84_truncation (100 occurrences)
@@ -852,63 +817,6 @@ Example functions:
     SUB84(__BITCAST_UINT64(dVar1),0),...
   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
     local_98 = SUB84(__BITCAST_UINT64(dVar10),0);...
-
-====================================================================================================
-TYPE: warning_unreachable (85 occurrences)
-====================================================================================================
-
-Unique patterns:
-    85x  WARNING: Removing unreachable block
-
-Example functions:
-  cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
-    /* WARNING: Removing unreachable block (ram,0x004871be) */...
-  cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220
-    /* WARNING: Removing unreachable block (ram,0x00487331) */...
-  cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
-    /* WARNING: Removing unreachable block (ram,0x00431c6d) */...
-  crt_stdlib.c__qsort_FUN_005fdf38
-    /* WARNING: Removing unreachable block (ram,0x005fe232) */...
-  crt_math.c_udivmod64_FUN_0060d3ed
-    /* WARNING: Removing unreachable block (ram,0x0060d441) */...
-  crt_math.c_asin_FUN_00600b94
-    /* WARNING: Removing unreachable block (ram,0x00600ba7) */...
-  crt_math.c_acos_FUN_00600162
-    /* WARNING: Removing unreachable block (ram,0x0060018d) */...
-  crt_math.c_pow_FUN_005ffd76
-    /* WARNING: Removing unreachable block (ram,0x005ffe9d) */...
-  crt_unknown.c_FUN_00600a64
-    /* WARNING: Removing unreachable block (ram,0x00600ac1) */...
-  crt_unknown.c_CondCallDoNothing_FUN_00603ccc
-    /* WARNING: Removing unreachable block (ram,0x00603d5b) */...
-  crt_exception.c_ExceptionHandler_FUN_0060a9d8
-    /* WARNING: Removing unreachable block (ram,0x0060aa79) */...
-  crt_stdio.c_fseek_FUN_005ffacc
-    /* WARNING: Removing unreachable block (ram,0x005ffb98) */...
-  engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
-    /* WARNING: Removing unreachable block (ram,0x005dd2de) */...
-  engine_font.cpp_setShadowColor_FUN_004ce0f0
-    /* WARNING: Removing unreachable block (ram,0x004ce1d7) */...
-  engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0
-    /* WARNING: Removing unreachable block (ram,0x004d0425) */...
-  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
-    /* WARNING: Removing unreachable block (ram,0x0043711f) */...
-  engine_clipper.c_clipPolygonNearPlane_FUN_00436420
-    /* WARNING: Removing unreachable block (ram,0x004365c2) */...
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-    /* WARNING: Removing unreachable block (ram,0x004bbc51) */...
-  engine_fileio.cpp_CCheckOutList_load_FUN_004b2890
-    /* WARNING: Removing unreachable block (ram,0x004b29c8) */...
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-    /* WARNING: Removing unreachable block (ram,0x004b4aea) */...
-  sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
-    /* WARNING: Removing unreachable block (ram,0x005ac957) */...
-  sound_sndmain.cpp_computeFFT_FUN_005a3c90
-    /* WARNING: Removing unreachable block (ram,0x005a3fc6) */...
-  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
-    /* WARNING: Removing unreachable block (ram,0x0054104d) */...
-  core_drip.cpp_CDrip_propertyDisplayCallback_FUN_0048e830
-    /* WARNING: Removing unreachable block (ram,0x0048e859) */...
 
 ====================================================================================================
 TYPE: negative_offset (85 occurrences)
@@ -971,6 +879,89 @@ Example functions:
     ppHVar1 = &in_stack_00000008[-1].next_heap_block;...
   crt_iostream.cpp_istream_destructor_thunk_from_ios_FUN_006063c9
     ((_istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
+
+====================================================================================================
+TYPE: warning_unreachable (84 occurrences)
+====================================================================================================
+
+Unique patterns:
+    84x  WARNING: Removing unreachable block
+
+Example functions:
+  cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
+    /* WARNING: Removing unreachable block (ram,0x004871be) */...
+  cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220
+    /* WARNING: Removing unreachable block (ram,0x00487331) */...
+  cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
+    /* WARNING: Removing unreachable block (ram,0x00431c6d) */...
+  crt_stdlib.c__qsort_FUN_005fdf38
+    /* WARNING: Removing unreachable block (ram,0x005fe232) */...
+  crt_math.c_udivmod64_FUN_0060d3ed
+    /* WARNING: Removing unreachable block (ram,0x0060d441) */...
+  crt_math.c_asin_FUN_00600b94
+    /* WARNING: Removing unreachable block (ram,0x00600ba7) */...
+  crt_math.c_acos_FUN_00600162
+    /* WARNING: Removing unreachable block (ram,0x0060018d) */...
+  crt_math.c_pow_FUN_005ffd76
+    /* WARNING: Removing unreachable block (ram,0x005ffe9d) */...
+  crt_unknown.c_FUN_00600a64
+    /* WARNING: Removing unreachable block (ram,0x00600ac1) */...
+  crt_exception.c_ExceptionHandler_FUN_0060a9d8
+    /* WARNING: Removing unreachable block (ram,0x0060aa79) */...
+  crt_stdio.c_fseek_FUN_005ffacc
+    /* WARNING: Removing unreachable block (ram,0x005ffb98) */...
+  engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
+    /* WARNING: Removing unreachable block (ram,0x005dd2de) */...
+  engine_font.cpp_setShadowColor_FUN_004ce0f0
+    /* WARNING: Removing unreachable block (ram,0x004ce1d7) */...
+  engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0
+    /* WARNING: Removing unreachable block (ram,0x004d0425) */...
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
+    /* WARNING: Removing unreachable block (ram,0x0043711f) */...
+  engine_clipper.c_clipPolygonNearPlane_FUN_00436420
+    /* WARNING: Removing unreachable block (ram,0x004365c2) */...
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+    /* WARNING: Removing unreachable block (ram,0x004bbc51) */...
+  engine_fileio.cpp_CCheckOutList_load_FUN_004b2890
+    /* WARNING: Removing unreachable block (ram,0x004b29c8) */...
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
+    /* WARNING: Removing unreachable block (ram,0x004b4aea) */...
+  sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
+    /* WARNING: Removing unreachable block (ram,0x005ac957) */...
+  sound_sndmain.cpp_computeFFT_FUN_005a3c90
+    /* WARNING: Removing unreachable block (ram,0x005a3fc6) */...
+  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
+    /* WARNING: Removing unreachable block (ram,0x0054104d) */...
+  core_drip.cpp_CDrip_propertyDisplayCallback_FUN_0048e830
+    /* WARNING: Removing unreachable block (ram,0x0048e859) */...
+  core_inv.cpp_CInventory_clear_FUN_004fd0e0
+    /* WARNING: Removing unreachable block (ram,0x004fd155) */...
+
+====================================================================================================
+TYPE: register_param (69 occurrences)
+====================================================================================================
+
+Unique patterns:
+    22x  in_EAX
+    16x  in_ECX
+    16x  in_DS
+     9x  in_AX
+     4x  in_EDX
+     2x  in_AL
+
+Example functions:
+  crt_stdlib.c_memory_swap_FUN_005fdf10
+    uint in_ECX;...
+  crt_cpp.c_reportPureVirtualError_FUN_00605b23
+    ushort in_DS;...
+  crt_math.c_integer_power_FUN_005ffeb2
+    ushort in_AX;...
+  crt_math.c_exp_FUN_006068e2
+    char in_AL;...
+  crt_startup.c_HandleRuntimeError_FUN_00606660
+    ushort in_DS;...
+  crt_unknown.c_FUN_0060b586
+    byte *in_EAX;...
 
 ====================================================================================================
 TYPE: param_count_too_many (52 occurrences)
@@ -1133,11 +1124,11 @@ Example functions:
     unkbyte10 in_ST0;...
 
 ====================================================================================================
-TYPE: extra_output (42 occurrences)
+TYPE: extra_output (37 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    17x  extraout_EAX
+    12x  extraout_EAX
      6x  extraout_ST0_00
      4x  extraout_EAX_00
      3x  extraout_ST0
@@ -1157,8 +1148,6 @@ Example functions:
     int extraout_EAX;...
   crt_fstream.cpp_ofstream_ctor_FUN_005ff710
     int extraout_EAX;...
-  crt_memory.c___memfill_FUN_00603b00
-    byte *extraout_EAX;...
   crt_math.c_atan2_FUN_0060c440
     float10 extraout_ST0;...
   crt_unknown.c_FUN_0060b586
@@ -1248,57 +1237,6 @@ Example functions:
     Function uses MMX instructions...
 
 ====================================================================================================
-TYPE: undefined_data (24 occurrences)
-====================================================================================================
-
-Unique patterns:
-     5x  DAT_00679d94
-     3x  DAT_00665f28
-     2x  DAT_00665f50
-     2x  DAT_00685030
-     2x  DAT_0068528c
-     1x  DAT_006852db
-     1x  DAT_00679d50
-     1x  DAT_0068755c
-     1x  DAT_0068513c
-     1x  DAT_006851bd
-     1x  DAT_00658bf4
-     1x  DAT_00658c04
-     1x  DAT_00658c08
-     1x  DAT_00658c0c
-     1x  DAT_80000010
-
-Example functions:
-  crt_io.c_getTempDirectory_FUN_00609afc
-    (&DAT_006852db)[uVar3] = 0x5c;...
-  crt_watcom.c__memset_FUN_004b19d0
-    (**(code **)(&DAT_00679d50 + uVar3 * 4))();...
-  crt_watcom.c__memcpy_FUN_004b1a78
-    (**(code **)(&DAT_00679d94 + uVar2 * 4))();...
-  crt_math.c_atan2_FUN_0060c440
-    fVar1 = *(float10 *)(&DAT_0068755c + iVar1) +...
-  crt_time.c_tzset_FUN_006072f8
-    DAT_0068513c = 0;...
-  crt_time.c__strftime_FUN_006002d4
-    pacVar6 = (char (*) [4])&DAT_00658bf4;...
-  crt_time.c_determine_dst_status_FUN_006079b4
-    iVar1 = *(int *)(&DAT_00665f50 + iVar9 * 2);...
-  crt_unknown.c_FUN_00607858
-    iVar2 = *(int *)(&DAT_00665f50 + *(int *)(param_1 + 0x10) * 2);...
-  crt_unknown.c_FUN_00607080
-    *(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) | (&DAT_00665f28)[bVar1 & 7];...
-  crt_unknown.c_FUN_0060501c
-    *pbVar1 = *pbVar1 | (&DAT_00685030)[uVar2 & 7];...
-  crt_string.c_strtok_FUN_005fff50
-    while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVa...
-  crt_stdio.c_scanf_scanset_FUN_00605064
-    if ((((&DAT_00685030)[character & 7] & abStack_40[(int)character >> 3]) == 0) !=...
-  crt_stdio.c_CreateFileImpl_FUN_006090a0
-    if ((DAT_0068528c == (code *)0x0) ||...
-  engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
-    point->screen_x = (int)&DAT_80000010;...
-
-====================================================================================================
 TYPE: format_string_mismatch (24 occurrences)
 ====================================================================================================
 
@@ -1365,6 +1303,52 @@ Example functions:
     uVar39 = ((CONCAT44(uRam00682694,uVar9) & 0xffffffff0000ffff) << 0x10 |...
   wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
     uVar38 = ((CONCAT44(uRam00682694,uVar8) & 0xffffffff0000ffff) << 0x10 |...
+
+====================================================================================================
+TYPE: undefined_data (22 occurrences)
+====================================================================================================
+
+Unique patterns:
+     5x  DAT_00679d94
+     3x  DAT_00665f28
+     2x  DAT_00665f50
+     2x  DAT_0068528c
+     1x  DAT_006852db
+     1x  DAT_00679d50
+     1x  DAT_0068755c
+     1x  DAT_0068513c
+     1x  DAT_006851bd
+     1x  DAT_00658bf4
+     1x  DAT_00658c04
+     1x  DAT_00658c08
+     1x  DAT_00658c0c
+     1x  DAT_80000010
+
+Example functions:
+  crt_io.c_getTempDirectory_FUN_00609afc
+    (&DAT_006852db)[uVar3] = 0x5c;...
+  crt_watcom.c__memset_FUN_004b19d0
+    (**(code **)(&DAT_00679d50 + uVar3 * 4))();...
+  crt_watcom.c__memcpy_FUN_004b1a78
+    (**(code **)(&DAT_00679d94 + uVar2 * 4))();...
+  crt_math.c_atan2_FUN_0060c440
+    fVar1 = *(float10 *)(&DAT_0068755c + iVar1) +...
+  crt_time.c_tzset_FUN_006072f8
+    DAT_0068513c = 0;...
+  crt_time.c__strftime_FUN_006002d4
+    pacVar6 = (char (*) [4])&DAT_00658bf4;...
+  crt_time.c_determine_dst_status_FUN_006079b4
+    iVar1 = *(int *)(&DAT_00665f50 + iVar9 * 2);...
+  crt_unknown.c_FUN_00607858
+    iVar2 = *(int *)(&DAT_00665f50 + *(int *)(param_1 + 0x10) * 2);...
+  crt_unknown.c_FUN_00607080
+    *(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) | (&DAT_00665f28)[bVar1 & 7];...
+  crt_string.c_strtok_FUN_005fff50
+    while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVa...
+  crt_stdio.c_CreateFileImpl_FUN_006090a0
+    if ((DAT_0068528c == (code *)0x0) ||...
+  engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
+    point->screen_x = (int)&DAT_80000010;...
 
 ====================================================================================================
 TYPE: byvalue_struct_passing (21 occurrences)
@@ -1600,27 +1584,6 @@ Example functions:
     CONCAT22((short)uVar8 * (short)(uVar39 >> 0x10)...
   wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
     CONCAT22((short)uVar7 * (short)(uVar38 >> 0x10)...
-
-====================================================================================================
-TYPE: undefined_ptr_cast (6 occurrences)
-====================================================================================================
-
-Unique patterns:
-     6x  (undefined6 *)
-
-Example functions:
-  crt_stdio.c_scanf_integer_FUN_0060547c
-    piVar6 = (int *)*(undefined6 *)pcVar4;...
-  crt_stdio.c_scanf_scanset_FUN_00605064
-    unaff_ESI = (byte *)*(undefined6 *)pcVar1;...
-  crt_stdio.c_store_count_FUN_00604fb0
-    piVar3 = (int *)*(undefined6 *)pcVar2;...
-  crt_stdio.c_scanf_char_FUN_00604d54
-    unaff_EBX = (char *)*(undefined6 *)pcVar2;...
-  crt_stdio.c_scanf_float_FUN_00605178
-    pfVar6 = (float *)*(undefined6 *)pcVar2;...
-  crt_stdio.c_scanf_string_FUN_00604e4c
-    unaff_EDI = (char *)*(undefined6 *)pcVar2;...
 
 ====================================================================================================
 TYPE: displaced_global_access (6 occurrences)

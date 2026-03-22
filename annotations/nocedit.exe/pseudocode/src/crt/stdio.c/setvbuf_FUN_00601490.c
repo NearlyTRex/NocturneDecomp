@@ -40,7 +40,7 @@ LAB_006014da:
   stream_ptr->_ptr = buffer_ptr;
   stream_ptr->_flag = stream_ptr->_flag | buffer_mode;
   if (buffer_ptr == (char *)0x0) {
-    InitializeFileBuffer(stream_ptr);
+    func_0x006027e0(stream_ptr);
   }
   (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(stream_ptr->_handle);
   return 0;

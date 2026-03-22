@@ -19,50 +19,6 @@ uint FUN_00600a64(byte *param_1);
 // Address: 00600c80
 void __cdecl FUN_00600c80(int param_1,int param_2,SIZE_T param_3);
 
-// Original: crt_unknown.c_AnotherFunctorCall2_FUN_00601258
-// Address: 00601258
-void AnotherFunctorCall2(void *param_1,int param_2,WatcomTypeInfo *param_3);
-
-// Original: crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94
-// Address: 00601a94
-_FILE * MultipleDoNothingCalls(_FILE *param_1);
-
-// Original: crt_unknown.c_FUN_00603c74
-// Address: 00603c74
-void __cdecl FUN_00603c74(void);
-
-// Original: crt_unknown.c_CondCallDoNothing_FUN_00603ccc
-// Address: 00603ccc
-void __cdecl CondCallDoNothing(void);
-
-// Original: crt_unknown.c_FUN_006040d7
-// Address: 006040d7
-void __cdecl FUN_006040d7(uint param_1,undefined4 param_2,char *unaff_EBX,undefined4 param_4,char *param_5,undefined4 param_6,char *param_7,uint param_8,undefined4 param_9,char *param_10);
-
-// Original: crt_unknown.c_FUN_006040ed
-// Address: 006040ed
-void __cdecl FUN_006040ed(uint param_1,undefined4 param_2,char *unaff_EBX,undefined4 param_4,char *param_5);
-
-// Original: crt_unknown.c_FUN_00604104
-// Address: 00604104
-void __cdecl FUN_00604104(ushort param_1,undefined4 param_2,char *unaff_EBX);
-
-// Original: crt_unknown.c_FUN_006047a4
-// Address: 006047a4
-void FUN_006047a4(void);
-
-// Original: crt_unknown.c_FUN_00604824
-// Address: 00604824
-void FUN_00604824(void);
-
-// Original: crt_unknown.c_FUN_0060501c
-// Address: 0060501c
-byte * FUN_0060501c(byte *param_1,void *param_2);
-
-// Original: crt_unknown.c_FUN_00605950
-// Address: 00605950
-void FUN_00605950(void);
-
 // Original: crt_unknown.c_FUN_00607080
 // Address: 00607080
 void FUN_00607080(void *param_1,byte *param_2);

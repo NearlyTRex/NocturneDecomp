@@ -38,7 +38,7 @@ SIZE_T __cdecl _fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
       return 0;
     }
     if (file->_link->__reserve_end == (char *)0x0) {
-      InitializeFileBuffer(file);
+      func_0x006027e0(file);
     }
     uVar2 = file->_flag;
     bVar1 = (byte)file->_flag;
@@ -66,7 +66,7 @@ SIZE_T __cdecl _fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
         bVar7 = *(byte *)((int)&file->_flag + 1) & 0xfa;
         *(byte *)((int)&file->_flag + 1) = bVar7;
         *(byte *)((int)&file->_flag + 1) = bVar7 | 4;
-        fflushInternal(file);
+        func_0x006039d0(file);
       }
     }
     else {
@@ -77,7 +77,7 @@ SIZE_T __cdecl _fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
           if (uVar4 == 0) {
             uVar6 = uVar9;
           }
-          uVar4 = write(file->_handle,(void *)size,uVar6);
+          uVar4 = func_0x006038c0(file->_handle,size,uVar6);
           if (uVar4 != 0xffffffff) {
             if (uVar4 != 0) goto LAB_005fdd50;
             pTVar5 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
@@ -107,7 +107,7 @@ SIZE_T __cdecl _fwrite(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
           file->_cnt = file->_cnt + uVar4;
           *(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;
           if ((file->_cnt == file->_bufsize) || ((file->_flag & 0x400) != 0)) {
-            fflushInternal(file);
+            func_0x006039d0(file);
           }
         }
 LAB_005fdd50:

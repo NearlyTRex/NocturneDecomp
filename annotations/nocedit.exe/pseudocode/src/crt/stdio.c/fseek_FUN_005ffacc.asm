@@ -22,13 +22,13 @@
 ;   ... and 23 more
 ;
 ; Referenced Globals:
+;   undefined4 SUB_006039d0
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_io.c_tell_FUN_00606720
-;   crt_stdio.c_fflushInternal_FUN_006039d0
 ;   crt_stdio.c_lseek_FUN_00606690
 ;   crt_stdio.c_seek_within_buffer_FUN_005ffa70
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
@@ -57,8 +57,8 @@ section .text
     JZ 0x005ffb31                       ; 005ffaf9
         ;   XREF to: 005ffb31 (CONDITIONAL_JUMP)  ; LAB_005ffb31
     PUSH EBX                            ; 005ffafb
-    CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 005ffafc
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
+    CALL 0x006039d0                     ; 005ffafc
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
     ADD ESP,0x4                         ; 005ffb01
     TEST EAX,EAX                        ; 005ffb04
     JZ 0x005ffb48                       ; 005ffb06

@@ -33,7 +33,7 @@ LAB_005fea85:
     return -1;
   }
   if (stream->_link->__reserve_end == (char *)0x0) {
-    InitializeFileBuffer(stream);
+    func_0x006027e0(stream);
   }
   if (stream->_cnt == 0) {
     stream->_cnt = 1;

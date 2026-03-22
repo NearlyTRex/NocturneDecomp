@@ -23,7 +23,7 @@ _FILE * __cdecl _freopen(char *filename,char *mode,_FILE *stream)
     if (g_SpecialDeviceCleanupFunc != (SPECIAL_DEVICE_CLEANUP_FUNC *)0x0) {
       (*g_SpecialDeviceCleanupFunc)(file_index);
     }
-    file_struct = (_FILE *)MultipleDoNothingCalls(stream);
+    file_struct = (_FILE *)func_0x00601a94(stream);
     p_Var1 = (_FILE *)0x0;
     if (file_struct != (_FILE *)0x0) {
       file_struct->_flag = file_struct->_flag & 0x4000;

@@ -6,8 +6,7 @@
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file
 ;
-; XREF[3]:
-;   crt_stdio.c_InitializeFileBuffer_FUN_006027e0 at 006027e7
+; XREF[2]:
 ;   crt_stdio.c_OpenFileAndInitialize_FUN_0060190c at 00601a0f
 ;   crt_stdio.c_setvbuf_FUN_00601490 at 006014fa
 ;

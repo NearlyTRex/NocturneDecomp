@@ -29,7 +29,7 @@ int __cdecl _fseek(_FILE *file,long offset,int whence)
       file->_ptr = pcVar2;
     }
     else {
-      iVar3 = fflushInternal(file);
+      iVar3 = func_0x006039d0(file);
       if (iVar3 != 0) {
         if ((whence == 0) && (offset < 0)) {
           setErrno(9);

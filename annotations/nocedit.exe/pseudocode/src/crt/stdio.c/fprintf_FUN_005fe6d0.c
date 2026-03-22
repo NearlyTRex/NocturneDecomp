@@ -13,6 +13,6 @@ int __cdecl _fprintf(_FILE *file,char *format,...)
   byte *local_8;
   
   local_8 = &stack0x0000000c;
-  iVar1 = vfprintf(file,format,(va_list_t)&local_8);
+  iVar1 = func_0x00604850(file,format,&local_8);
   return iVar1;
 }

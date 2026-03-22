@@ -23,16 +23,16 @@
 ;   ... and 13 more
 ;
 ; Referenced Globals:
+;   undefined4 CAVE_cave_006027e0
+;   undefined4 SUB_006038c0
+;   undefined4 SUB_006039d0
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00602790
-;   crt_stdio.c_fflushInternal_FUN_006039d0
 ;   crt_stdio.c_fputc_FUN_006007a0
-;   crt_stdio.c_InitializeFileBuffer_FUN_006027e0
-;   crt_stdio.c_write_FUN_006038c0
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;   crt_thread.c_GetTLS_FUN_0060242c
 ;
@@ -92,8 +92,8 @@ section .text
     JNZ 0x005fdc7d                      ; 005fdc72
         ;   XREF to: 005fdc7d (CONDITIONAL_JUMP)  ; LAB_005fdc7d
     PUSH EBX                            ; 005fdc74
-    CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 005fdc75
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(_FILE * file)
+    CALL 0x006027e0                     ; 005fdc75
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; CAVE_cave_006027e0
     ADD ESP,0x4                         ; 005fdc7a
     MOV EAX,dword ptr [EBX + 0xc]       ; 005fdc7d
         ;   Label: LAB_005fdc7d
@@ -128,8 +128,8 @@ section .text
     PUSH ESI                            ; 005fdcc3
     MOV EDI,dword ptr [EBX + 0x10]      ; 005fdcc4
     PUSH EDI                            ; 005fdcc7
-    CALL crt_stdio.c_write_FUN_006038c0 ; 005fdcc8
-        ;   XREF to: 006038c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_write_FUN_006038c0(int file_handle_index, void * buffer, int bytes_to_write)
+    CALL 0x006038c0                     ; 005fdcc8
+        ;   XREF to: 006038c0 (UNCONDITIONAL_CALL)  ; SUB_006038c0
     ADD ESP,0xc                         ; 005fdccd
     MOV EBP,EAX                         ; 005fdcd0
     CMP EAX,-0x1                        ; 005fdcd2
@@ -187,8 +187,8 @@ section .text
         ;   XREF to: 005fdd50 (CONDITIONAL_JUMP)  ; LAB_005fdd50
     PUSH EBX                            ; 005fdd47
         ;   Label: LAB_005fdd47
-    CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 005fdd48
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
+    CALL 0x006039d0                     ; 005fdd48
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
     ADD ESP,0x4                         ; 005fdd4d
     MOV EAX,dword ptr [ESP + 0x24]      ; 005fdd50
         ;   Label: LAB_005fdd50
@@ -259,8 +259,8 @@ section .text
     OR CL,0x4                           ; 005fddf4
     PUSH EBX                            ; 005fddf7
     MOV byte ptr [EBX + 0xd],CL         ; 005fddf8
-    CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 005fddfb
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
+    CALL 0x006039d0                     ; 005fddfb
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
     ADD ESP,0x4                         ; 005fde00
     TEST byte ptr [EBX + 0xc],0x20      ; 005fde03
         ;   Label: LAB_005fde03

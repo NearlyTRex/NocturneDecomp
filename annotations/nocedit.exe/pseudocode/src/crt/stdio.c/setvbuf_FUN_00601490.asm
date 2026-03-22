@@ -22,12 +22,12 @@
 ;   engine_fileio.cpp_openFileWithRetry_FUN_004b2200 at 004b2257
 ;
 ; Referenced Globals:
+;   undefined4 CAVE_cave_006027e0
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;
 ; Called Functions:
 ;   crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0
-;   crt_stdio.c_InitializeFileBuffer_FUN_006027e0
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;
 ; *****************************************************************************
@@ -110,8 +110,8 @@ section .text
     JNZ 0x0060152a                      ; 0060151f
         ;   XREF to: 0060152a (CONDITIONAL_JUMP)  ; LAB_0060152a
     PUSH EBX                            ; 00601521
-    CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 00601522
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(_FILE * file)
+    CALL 0x006027e0                     ; 00601522
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; CAVE_cave_006027e0
     ADD ESP,0x4                         ; 00601527
     MOV ESI,dword ptr [EBX + 0x10]      ; 0060152a
         ;   Label: LAB_0060152a

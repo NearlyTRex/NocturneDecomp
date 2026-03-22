@@ -2,9 +2,9 @@
   "complexity": {
     "assembly_lines": 153,
     "complexity_score": 116,
-    "cross_reference_count": 25,
-    "function_call_count": 4,
-    "global_count": 2,
+    "cross_reference_count": 24,
+    "function_call_count": 2,
+    "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 56,
     "suspect_count": 5,
@@ -94,12 +94,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00604830",
-      "from_addr": "0060483e",
-      "name": "crt_stdio.c_OutputCallback_FUN_00604830",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0060ebb0",
       "from_addr": "0060ec0e",
       "name": "crt_stdio.c_fputs_FUN_0060ebb0",
@@ -185,22 +179,24 @@
       "name": "crt_errno.c_setErrno_FUN_00602790"
     },
     {
-      "addr": "006039d0",
-      "is_variadic": false,
-      "name": "crt_stdio.c_fflushInternal_FUN_006039d0"
-    },
-    {
-      "addr": "006027e0",
-      "is_variadic": false,
-      "name": "crt_stdio.c_InitializeFileBuffer_FUN_006027e0"
-    },
-    {
       "addr": "00602434",
       "is_variadic": false,
       "name": "crt_sync.c_CriticalSectionStub_FUN_00602434"
     }
   ],
   "globals": [
+    {
+      "addr": "006027e0",
+      "name": "CAVE_cave_006027e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006039d0",
+      "name": "SUB_006039d0",
+      "type": "undefined4",
+      "value": null
+    },
     {
       "addr": "00684ee8",
       "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8",
@@ -215,7 +211,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 43,
+    "call_site_count": 42,
     "call_sites": [
       {
         "call_addr": "00479a02",

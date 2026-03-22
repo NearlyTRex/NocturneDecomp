@@ -5,26 +5,26 @@ FUNCTION SUSPECT BREAKDOWN
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
   0 suspects: 4642 functions
-  1 suspects: 735 functions
-  2 suspects: 322 functions
-  3 suspects: 234 functions
+  1 suspects: 716 functions
+  2 suspects: 319 functions
+  3 suspects: 232 functions
   4 suspects: 162 functions
-  5 suspects: 145 functions
-  6 suspects: 115 functions
-  7 suspects: 97 functions
-  8 suspects: 57 functions
-  9 suspects: 62 functions
-  10 suspects: 23 functions
-  11 suspects: 40 functions
-  12 suspects: 37 functions
-  13 suspects: 28 functions
-  14 suspects: 38 functions
+  5 suspects: 143 functions
+  6 suspects: 114 functions
+  7 suspects: 95 functions
+  8 suspects: 56 functions
+  9 suspects: 61 functions
+  10 suspects: 21 functions
+  11 suspects: 39 functions
+  12 suspects: 35 functions
+  13 suspects: 26 functions
+  14 suspects: 35 functions
   15 suspects: 29 functions
-  16 suspects: 21 functions
-  17 suspects: 16 functions
+  16 suspects: 20 functions
+  17 suspects: 14 functions
   18 suspects: 14 functions
   19 suspects: 18 functions
-  20 suspects: 20 functions
+  20 suspects: 19 functions
   21 suspects: 12 functions
   22 suspects: 7 functions
   23 suspects: 11 functions
@@ -36,7 +36,7 @@ SUSPECT COUNT DISTRIBUTION
   29 suspects: 11 functions
   30 suspects: 3 functions
   31 suspects: 3 functions
-  32 suspects: 6 functions
+  32 suspects: 5 functions
   33 suspects: 3 functions
   34 suspects: 1 functions
   35 suspects: 4 functions
@@ -60,7 +60,6 @@ SUSPECT COUNT DISTRIBUTION
   54 suspects: 2 functions
   55 suspects: 4 functions
   56 suspects: 2 functions
-  60 suspects: 1 functions
   62 suspects: 1 functions
   66 suspects: 1 functions
   70 suspects: 2 functions
@@ -92,7 +91,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [special_crt_function] (277 functions)
+  [special_crt_function] (258 functions)
   ------------------------------------------------------------
     crt_sync.c_criticalSectionStub_FUN_00609f20        (  4 lines)
       CRT function (runtime support) at 00609f20...
@@ -134,7 +133,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       CRT function (runtime support) at 0060a1bc...
     crt_sync.c_enter_global_critical_section_FUN_0060a (  5 lines)
       CRT function (runtime support) at 0060a0ec...
-    ... and 257 more
+    ... and 238 more
 
   [pointer_cast] (137 functions)
   ------------------------------------------------------------
@@ -538,8 +537,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
 ========================================================================================================================
   crt_thread.c_noop_lock_FUN_0060b180
     File: crt/thread.c, Lines: 4, Types: ['param_count_too_few', 'special_crt_function']
-  crt_unknown.c_FUN_00604824
-    File: crt/unknown.c, Lines: 4, Types: ['param_count_too_few', 'special_crt_function']
   crt_heap.c_GetBlockSize_FUN_00609790
     File: crt/heap.c, Lines: 4, Types: ['pointer_cast', 'special_crt_function']
   shape_design.c_qsortCompareByField4_FUN_004661d0
@@ -554,8 +551,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: crt/unknown.c, Lines: 5, Types: ['param_count_too_few', 'special_crt_function']
   crt_stdio.c_string_ungetc_FUN_006000f8
     File: crt/stdio.c, Lines: 5, Types: ['pointer_cast', 'special_crt_function']
-  crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30
-    File: crt/stdio.c, Lines: 5, Types: ['param_count_too_few', 'special_crt_function']
   crt_iostream.cpp_streambuf_seekoff_FUN_0060bb5f
     File: crt/iostream.cpp, Lines: 5, Types: ['special_crt_function', 'unresolved_funcptr']
   crt_strstream.cpp_istrstream_destructor_thunk_from_istream_F
@@ -636,5 +631,9 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: crt/tls.c, Lines: 15, Types: ['pointer_cast', 'special_crt_function']
   crt_stack.c_ProbeStackSpace_FUN_005ffa2f
     File: crt/stack.c, Lines: 15, Types: ['special_crt_function', 'stack_ref']
+  crt_stdio.c_WideCharToSingleByte_FUN_0060acf0
+    File: crt/stdio.c, Lines: 15, Types: ['special_crt_function', 'stack_param']
+  cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_00431730
+    File: cockpit/ckptutil.c, Lines: 16, Types: ['pointer_cast']
 
-  ... and 506 more
+  ... and 501 more

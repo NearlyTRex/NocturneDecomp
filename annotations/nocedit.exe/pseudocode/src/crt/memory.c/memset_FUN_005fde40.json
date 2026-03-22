@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 84,
-    "cross_reference_count": 135,
-    "function_call_count": 1,
-    "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 9,
-    "suspect_count": 6,
+    "complexity_score": 20,
+    "cross_reference_count": 134,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "special_crt_function",
-      "unaffected_reg"
+      "special_crt_function"
     ],
-    "total_lines": 23
+    "total_lines": 19
   },
   "cross_references": [
     {
@@ -425,12 +423,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0060501c",
-      "from_addr": "0060502c",
-      "name": "crt_unknown.c_FUN_0060501c",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00607080",
       "from_addr": "0060708f",
       "name": "crt_unknown.c_FUN_00607080",
@@ -839,14 +831,15 @@
     "name": "crt_memory.c_memset_FUN_005fde40",
     "signature": "void * __cdecl crt_memory_c_memset_FUN_005fde40(void *dest,int value,ulong count)"
   },
-  "function_calls": [
+  "function_calls": [],
+  "globals": [
     {
       "addr": "00603b00",
-      "is_variadic": false,
-      "name": "crt_memory.c___memfill_FUN_00603b00"
+      "name": "SUB_00603b00",
+      "type": "undefined4",
+      "value": null
     }
   ],
-  "globals": [],
   "param_estimates": {
     "call_site_count": 50,
     "call_sites": [
@@ -1020,46 +1013,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "uint unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "(dest,CONCAT31(CONCAT21(CONCAT11(uVar1,uVar1),uVar1),uVar1),unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 10,
-      "match": "CONCAT31",
-      "severity": "mild",
-      "text": "(dest,CONCAT31(CONCAT21(CONCAT11(uVar1,uVar1),uVar1),uVar1),unaff_EBX);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 10,
-      "match": "CONCAT21",
-      "severity": "mild",
-      "text": "(dest,CONCAT31(CONCAT21(CONCAT11(uVar1,uVar1),uVar1),uVar1),unaff_EBX);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 10,
-      "match": "CONCAT11",
-      "severity": "mild",
-      "text": "(dest,CONCAT31(CONCAT21(CONCAT11(uVar1,uVar1),uVar1),uVar1),unaff_EBX);",
-      "type": "decompiler_intrinsic"
-    },
     {
       "address": "005fde40",
       "crt_type": "runtime support",

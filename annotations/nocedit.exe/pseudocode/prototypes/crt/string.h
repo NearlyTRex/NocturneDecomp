@@ -59,14 +59,6 @@ char __watcallStack hexDigitToChar(int digit);
 // Address: 006020fc
 int __cdecl ::stricmp(char *str1,char *str2);
 
-// Original: crt_string.c_strlen_far_FUN_00602f4c
-// Address: 00602f4c
-int __cdecl strlen::far(char *string_offset,ushort segment,int max_length);
-
-// Original: crt_string.c_strupr_FUN_0060389c
-// Address: 0060389c
-char * __cdecl strupr(char *string);
-
 // Original: crt_string.c_mbtowc_peek_FUN_006059e0
 // Address: 006059e0
 int __watcallStack mbtowc::peek(char *str);

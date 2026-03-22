@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   character
 ; _FILE *          Stack[0x8]:4   file
 ;
-; XREF[25]:
+; XREF[24]:
 ;   core_dfilter.cpp_CDemonFilter_save_FUN_00470510 at 00470591
 ;   core_dmodel.cpp_CKeyFramedModel_backupModel_FUN_00479260 at 004792c0
 ;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 00479a02
@@ -18,16 +18,16 @@
 ;   core_msnedit.cpp_copyFile_FUN_00537dd0 at 00537e59
 ;   core_procedur.cpp_CProceduralTexture_createWaterFrames_FUN_005542b0 at 00554524
 ;   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 at 0057fc44
-;   ... and 15 more
+;   ... and 14 more
 ;
 ; Referenced Globals:
+;   undefined4 CAVE_cave_006027e0
+;   undefined4 SUB_006039d0
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00602790
-;   crt_stdio.c_fflushInternal_FUN_006039d0
-;   crt_stdio.c_InitializeFileBuffer_FUN_006027e0
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;
 ; *****************************************************************************
@@ -91,8 +91,8 @@ section .text
     JNZ 0x00600824                      ; 00600819
         ;   XREF to: 00600824 (CONDITIONAL_JUMP)  ; LAB_00600824
     PUSH EBX                            ; 0060081b
-    CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 0060081c
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(_FILE * file)
+    CALL 0x006027e0                     ; 0060081c
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; CAVE_cave_006027e0
     ADD ESP,0x4                         ; 00600821
     MOV EAX,dword ptr [ESP + 0x14]      ; 00600824
         ;   Label: LAB_00600824
@@ -121,8 +121,8 @@ section .text
     JNZ 0x00600884                      ; 0060085e
         ;   XREF to: 00600884 (CONDITIONAL_JUMP)  ; LAB_00600884
     PUSH EBX                            ; 00600860
-    CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 00600861
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
+    CALL 0x006039d0                     ; 00600861
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
     ADD ESP,0x4                         ; 00600866
     TEST EAX,EAX                        ; 00600869
     JZ 0x00600884                       ; 0060086b
@@ -159,8 +159,8 @@ section .text
         ;   XREF to: 006008d1 (CONDITIONAL_JUMP)  ; LAB_006008d1
     PUSH EBX                            ; 006008ad
         ;   Label: LAB_006008ad
-    CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 006008ae
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
+    CALL 0x006039d0                     ; 006008ae
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
     ADD ESP,0x4                         ; 006008b3
     TEST EAX,EAX                        ; 006008b6
     JZ 0x006008d1                       ; 006008b8

@@ -17,9 +17,9 @@ BOOL __cdecl prepare_stream_for_write(_FILE *stream)
   }
   if ((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 0x4000) != 0) {
     p_Var1 = get_standard_file_handle(1);
-    fflushInternal(p_Var1);
+    func_0x006039d0(p_Var1);
     p_Var1 = get_standard_file_handle(2);
-    fflushInternal(p_Var1);
+    func_0x006039d0(p_Var1);
   }
   return (uint)(*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0);
 }

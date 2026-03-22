@@ -30,7 +30,7 @@ int __cdecl _fputc(int character,_FILE *file)
     return -1;
   }
   if (file->_link->__reserve_end == (char *)0x0) {
-    InitializeFileBuffer(file);
+    func_0x006027e0(file);
   }
   uVar4 = 0x400;
   if ((character == 10) && (uVar4 = 0x600, (file->_flag & 0x40) == 0)) {
@@ -41,7 +41,7 @@ int __cdecl _fputc(int character,_FILE *file)
     uVar3 = file->_cnt + 1;
     file->_cnt = uVar3;
     if (uVar3 == file->_bufsize) {
-      iVar2 = fflushInternal(file);
+      iVar2 = func_0x006039d0(file);
       if (iVar2 != 0) {
         (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
         return -1;
@@ -55,7 +55,7 @@ int __cdecl _fputc(int character,_FILE *file)
   uVar3 = file->_cnt + 1;
   file->_cnt = uVar3;
   if (((uVar4 & file->_flag) != 0) || (uVar3 == file->_bufsize)) {
-    iVar2 = fflushInternal(file);
+    iVar2 = func_0x006039d0(file);
     if (iVar2 != 0) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
       return -1;

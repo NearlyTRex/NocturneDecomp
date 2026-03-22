@@ -7,11 +7,11 @@ These patterns cause Ghidra to hallucinate parameters or misidentify locals.
 
 SUMMARY
 --------------------------------------------------
-Functions with stack patterns: 707 / 7038
+Functions with stack patterns: 704 / 6991
 
 Pattern type counts:
   stack_alignment                  533
-  alt_frame_pointer                446
+  alt_frame_pointer                438
   dynamic_alloca                     6
   pushf                              3
 
@@ -126,23 +126,6 @@ MEDIUM SEVERITY - May cause decompiler artifacts
   crt_string.c_wcstombs_FUN_0060c0c0
     File: crt/string.c, Suspects: 1
     - [alt_frame_pointer] at 0060c11b: MOV ESI,ESP
-
-  crt_stdio.c_scanf_integer_FUN_0060547c
-    File: crt/stdio.c, Suspects: 17
-    - [alt_frame_pointer] at 00605637: MOV ESI,ESP
-    - [alt_frame_pointer] at 0060564d: MOV ESI,ESP
-    - [alt_frame_pointer] at 006056ca: MOV ESI,ESP
-    - [alt_frame_pointer] at 006056f0: MOV ESI,ESP
-    - [alt_frame_pointer] at 00605820: MOV ESI,ESP
-    - [alt_frame_pointer] at 0060583b: MOV ESI,ESP
-
-  crt_stdio.c_scanf_float_FUN_00605178
-    File: crt/stdio.c, Suspects: 17
-    - [alt_frame_pointer] at 00605189: MOV ESI,ESP
-
-  crt_stdio.c_FormatWideString_FUN_006031c0
-    File: crt/stdio.c, Suspects: 1
-    - [alt_frame_pointer] at 006031ff: MOV EDI,ESP
 
   support_trisock.cpp_connectSocket_FUN_005e1bd0
     File: support/trisock.cpp, Suspects: 5
@@ -285,7 +268,21 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0048c7e7: MOV ESI,ESP
     - [alt_frame_pointer] at 0048c7f0: MOV ESI,ESP
 
-  ... and 652 more functions
+  engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
+    File: engine/drender.cpp, Suspects: 25
+    - [stack_alignment] at 0048c209: AND ESP,0xfffffff8
+
+  engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+    File: engine/drender.cpp, Suspects: 0
+    - [stack_alignment] at 0048c788: AND ESP,0xfffffff8
+    - [alt_frame_pointer] at 0048c78e: MOV ESI,ESP
+
+  engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
+    File: engine/drender.cpp, Suspects: 21
+    - [alt_frame_pointer] at 0048cb49: MOV EDI,ESP
+    - [alt_frame_pointer] at 0048cd73: MOV ESI,ESP
+
+  ... and 649 more functions
 
 ====================================================================================================
 CORRELATION: Stack patterns vs suspect counts
@@ -293,5 +290,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 9.1 suspects/function
-  Without stack patterns: avg 1.9 suspects/function
+  With stack patterns:    avg 9.0 suspects/function
+  Without stack patterns: avg 1.8 suspects/function

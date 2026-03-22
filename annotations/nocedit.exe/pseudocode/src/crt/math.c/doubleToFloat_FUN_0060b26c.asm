@@ -4,9 +4,6 @@
 ; float __watcallRegister crt_math_c_doubleToFloat_FUN_0060b26c(double val)
 ;
 ;
-; XREF[1]:
-;   crt_stdio.c_scanf_float_FUN_00605178 at 00605468
-;
 ; *****************************************************************************
 
 section .text

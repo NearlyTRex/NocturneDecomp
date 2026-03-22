@@ -5,10 +5,8 @@
 ;
 ;
 ; Referenced Globals:
+;   undefined4 SUB_00604824
 ;   void* PTR_FUN_0068502b = 00604824
-;
-; Called Functions:
-;   crt_unknown.c_FUN_00604824
 ;
 ; *****************************************************************************
 
@@ -16,7 +14,7 @@ section .text
 
     PUSH EAX                            ; 0060fa80
         ;   Label: crt_unknown.c_FUN_0060fa80
-    CALL dword ptr [0x0068502b]         ; 0060fa81 | PTR_FUN_0068502b
+    CALL dword ptr [0x0068502b]         ; 0060fa81 | SUB_00604824 | PTR_FUN_0068502b
     ADD ESP,0x4                         ; 0060fa87
     RET                                 ; 0060fa8a
 

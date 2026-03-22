@@ -3767,7 +3767,7 @@ _MMX_INTEGER g_BlueBitShift = {0x0000000000000003ULL};
 
 // byte
 byte DAT_00684ACC = 0x0;
-byte BYTE_00684acd = 0x0;
+byte DAT_00684ACD = 0x0;
 byte DAT_0068500C = 0x0;
 byte g_WindowsMajorVersion = 0x0;
 byte g_UseSoftwareMath = 0x0;
@@ -3935,8 +3935,7 @@ int INT_00684cd0 = 0x1;
 int INT_00684ed0 = 0x100;
 int INT_00684edc = 0x0;
 int g_SpecialExitHandler = 0x0;
-int INT_00684f30 = 0x0;
-int INT_00684f34 = 0x2D;
+int DAT_00684F30 = 0x0;
 int INT_00684fd0 = 0x0;
 int g_ConsoleInitializationFlag = 0x0;
 int g_DstTransitionSecond = 0x0;
@@ -4005,7 +4004,6 @@ int g_PathfindingDeltaZ[9] = {
 };
 
 // short
-short SHORT_00684f38 = 0x4002;
 short g_PureVirtualCallFlag = 0x0;
 
 // uint

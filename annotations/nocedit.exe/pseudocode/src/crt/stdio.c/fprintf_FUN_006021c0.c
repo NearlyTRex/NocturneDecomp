@@ -9,8 +9,8 @@
 void __cdecl _fprintf(_FILE *stream,char *format,...)
 
 {
-  va_list_t in_stack_0000000c;
+  uint in_stack_0000000c;
   
-  vfprintf(stream,format,in_stack_0000000c);
+  func_0x00604850(stream,format,in_stack_0000000c);
   return;
 }

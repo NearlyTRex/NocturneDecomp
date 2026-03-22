@@ -27,8 +27,7 @@ int __cdecl vfscanf(_FILE *file,char *format,va_list_t args)
   pcStack_20 = ungetc_helper;
   p_Stack_1c = file;
   pcStack_24 = getc_helper;
-  iVar2 = doscan
-                    ((scanf_state_t *)&pcStack_24,(char **)format,(va_list_t *)args.value[0]);
+  iVar2 = func_0x00604950(&pcStack_24,format,args.value[0]);
   (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
   return iVar2;
 }

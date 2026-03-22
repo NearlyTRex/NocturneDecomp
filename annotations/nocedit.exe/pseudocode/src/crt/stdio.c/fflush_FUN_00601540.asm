@@ -13,9 +13,9 @@
 ;   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 at 004bbf8d
 ;   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 at 004bd69a
 ;
-; Called Functions:
-;   crt_stdio.c_fflushInternal_FUN_006039d0
-;   crt_unknown.c_FUN_00605950
+; Referenced Globals:
+;   undefined4 SUB_006039d0
+;   undefined4 SUB_00605950
 ;
 ; *****************************************************************************
 
@@ -26,14 +26,14 @@ section .text
     TEST EAX,EAX                        ; 00601544
     JNZ 0x00601550                      ; 00601546
         ;   XREF to: 00601550 (CONDITIONAL_JUMP)  ; LAB_00601550
-    CALL crt_unknown.c_FUN_00605950     ; 00601548
-        ;   XREF to: 00605950 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00605950()
+    CALL 0x00605950                     ; 00601548
+        ;   XREF to: 00605950 (UNCONDITIONAL_CALL)  ; SUB_00605950
     XOR EAX,EAX                         ; 0060154d
     RET                                 ; 0060154f
     PUSH EAX                            ; 00601550
         ;   Label: LAB_00601550
-    CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 00601551
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
+    CALL 0x006039d0                     ; 00601551
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
     ADD ESP,0x4                         ; 00601556
     RET                                 ; 00601559
 

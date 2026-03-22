@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 25,
     "complexity_score": 45,
-    "cross_reference_count": 4,
+    "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
@@ -15,24 +15,6 @@
     "total_lines": 40
   },
   "cross_references": [
-    {
-      "addr": "00603238",
-      "from_addr": "00603843",
-      "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "006031c0",
-      "from_addr": "006031eb",
-      "name": "crt_stdio.c_FormatWideString_FUN_006031c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00602f7c",
-      "from_addr": "00602fa9",
-      "name": "crt_stdio.c_WideStringToMultiByteLen_FUN_00602f7c",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0060c0c0",
       "from_addr": "0060c163",
@@ -74,19 +56,8 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 7,
+    "call_site_count": 2,
     "call_sites": [
-      {
-        "call_addr": "00603843",
-        "call_type": "direct",
-        "caller": "crt_stdio.c_ConvertFormatSpec_FUN_00603238",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
       {
         "call_addr": "0060c163",
         "call_type": "direct",
@@ -99,53 +70,9 @@
         "stack_params": 2
       },
       {
-        "call_addr": "00602fa9",
-        "call_type": "direct",
-        "caller": "crt_stdio.c_WideStringToMultiByteLen_FUN_00602f7c",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "006031eb",
-        "call_type": "direct",
-        "caller": "crt_stdio.c_FormatWideString_FUN_006031c0",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "00602fd5",
-        "call_type": "direct",
-        "caller": "crt_stdio.c_WideStringToMultiByteLen_FUN_00602f7c",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
         "call_addr": "0060c0f7",
         "call_type": "direct",
         "caller": "crt_string.c_wcstombs_FUN_0060c0c0",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "006037bf",
-        "call_type": "direct",
-        "caller": "crt_stdio.c_ConvertFormatSpec_FUN_00603238",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

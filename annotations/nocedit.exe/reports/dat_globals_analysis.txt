@@ -2,17 +2,16 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 271
+Total DAT_ globals found: 269
 Filtered out (inside named data): 241
 Immediate constants (not real globals): 1
-Real globals remaining: 29
+Real globals remaining: 27
 
 Current type breakdown:
-  undefined4                     27
+  undefined4                     26
   undefined1                     1
-  undefined2                     1
 
-DAT_ globals with type hints: 7 / 29
+DAT_ globals with type hints: 6 / 27
 
 --------------------------------------------------------------------------------
 HIGH CONFIDENCE INFERENCES (4)
@@ -26,12 +25,10 @@ HIGH CONFIDENCE INFERENCES (4)
     nearby: g_InputHistory (char[20]) at offset -1
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE INFERENCES (3)
+MEDIUM CONFIDENCE INFERENCES (2)
 --------------------------------------------------------------------------------
   DAT_00665f28                    addr=00665f28    current=undefined4      likely=byte            refs=2
     nearby: g_PositiveInfinity (double) at offset -8
-  DAT_00685030                    addr=00685030    current=undefined4      likely=byte            refs=2
-    nearby: PTR_FUN_0068502b (void*) at offset +5
   DAT_006852db                    addr=006852db    current=undefined1      likely=byte            refs=1
     nearby: g_TempDirectoryBuffer (char[260]) at offset -1
 
@@ -40,7 +37,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (22)
+NO TYPE HINTS (21)
 --------------------------------------------------------------------------------
   DAT_00412b41                    addr=00412b41    type=undefined4      refs=1
   DAT_0051a3f4                    addr=0051a3f4    type=undefined4      refs=1  nearby: PTR_caseD_5_0051a3ec at +8
@@ -56,7 +53,6 @@ NO TYPE HINTS (22)
   DAT_006850b4                    addr=006850b4    type=undefined4      refs=1  nearby: s_EST_006850bc at -8
   DAT_006850b8                    addr=006850b8    type=undefined4      refs=1  nearby: s_EST_006850bc at -4
   DAT_00685210                    addr=00685210    type=undefined4      refs=1  nearby: g_MaxHandleCount at -4
-  DAT_0068546c                    addr=0068546c    type=undefined2      refs=1  nearby: PTR_crt_thread.c_ExitCriticalSection_FUN_0060b180_00685468 at +4
   DAT_006855d8                    addr=006855d8    type=undefined4      refs=1  nearby: PTR_crt_math.c_check_error_context_FUN_0060fa8b_00685590 at +72
   DAT_006e6f63                    addr=006e6f63    type=undefined4      refs=1
   DAT_006e6f69                    addr=006e6f69    type=undefined4      refs=1
@@ -71,7 +67,6 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_00002424                    addr=00002424    refs=21    type=undefined4      likely=float
   DAT_00800000                    addr=00800000    refs=12    type=undefined4    
   DAT_02d831d6                    addr=02d831d6    refs=3     type=undefined4      likely=byte  nearby: g_InputHistory(-1)
-  DAT_00685030                    addr=00685030    refs=2     type=undefined4      likely=byte  nearby: PTR_FUN_0068502b(+5)
   DAT_00665f28                    addr=00665f28    refs=2     type=undefined4      likely=byte  nearby: g_PositiveInfinity(-8)
   DAT_00665f50                    addr=00665f50    refs=2     type=undefined4      nearby: g_DaysInMonth_Leap(-2)
   DAT_00412b41                    addr=00412b41    refs=1     type=undefined4    
@@ -91,7 +86,6 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_006850b0                    addr=006850b0    refs=1     type=undefined4      nearby: s_EST_006850bc(-12)
   DAT_006850b4                    addr=006850b4    refs=1     type=undefined4      nearby: s_EST_006850bc(-8)
   DAT_006850b8                    addr=006850b8    refs=1     type=undefined4      nearby: s_EST_006850bc(-4)
-  DAT_0068546c                    addr=0068546c    refs=1     type=undefined2      nearby: PTR_crt_thread.c_ExitCriticalSection_FUN_0060b180_00685468(+4)
   DAT_00679d94                    addr=00679d94    refs=1     type=undefined4      nearby: g_PodFileActionNames(-12)
   DAT_00679d50                    addr=00679d50    refs=1     type=undefined4      nearby: switchdataD_00679d54(-4)
   DAT_54524143                    addr=54524143    refs=1     type=undefined4    

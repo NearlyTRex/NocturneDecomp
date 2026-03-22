@@ -10,9 +10,6 @@
 ; Local Variables:
 ; char[39]         Stack[-0x37]:39  local_37
 ;
-; XREF[1]:
-;   crt_stdio.c_ConvertFormatSpec_FUN_00603238 at 006036a1
-;
 ; Referenced Globals:
 ;   char[36] g_AlphaNumericCharacters2
 ;

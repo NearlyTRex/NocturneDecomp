@@ -11,8 +11,8 @@ int __cdecl _vsprintf(char *buffer,char *format,va_list_t args)
 {
   int iVar1;
   
-  iVar1 = FormatEngine
-                    (buffer,format,args,StringBufferCallback);
+  iVar1 = func_0x00602950(buffer,format,args.value[0],StringBufferCallback)
+  ;
   buffer[iVar1] = '\0';
   return iVar1;
 }

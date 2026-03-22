@@ -6,9 +6,6 @@
 ; Parameters:
 ; int              Stack[0x4]:4   file_handle_index
 ;
-; XREF[1]:
-;   crt_stdio.c_fflushInternal_FUN_006039d0 at 00603ad1
-;
 ; Referenced Globals:
 ;   FLUSH_FILE_BUFFERS_FUNC* g_FlushFileBuffersFunc = 00211da6
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434

@@ -3,8 +3,8 @@
     "assembly_lines": 13,
     "complexity_score": 61,
     "cross_reference_count": 1,
-    "function_call_count": 1,
-    "global_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 6,
     "suspect_count": 4,
@@ -35,14 +35,15 @@
     "name": "crt_stdio.c_fprintf_FUN_006021c0",
     "signature": "void __cdecl crt_stdio_c_fprintf_FUN_006021c0(_FILE *stream,char *format,...)"
   },
-  "function_calls": [
+  "function_calls": [],
+  "globals": [
     {
       "addr": "00604850",
-      "is_variadic": false,
-      "name": "crt_stdio.c_vfprintf_FUN_00604850"
+      "name": "SUB_00604850",
+      "type": "undefined4",
+      "value": null
     }
   ],
-  "globals": [],
   "param_estimates": {
     "call_site_count": 1,
     "call_sites": [
@@ -112,7 +113,7 @@
       "line": 5,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "va_list_t in_stack_0000000c;",
+      "text": "uint in_stack_0000000c;",
       "type": "stack_param"
     },
     {
@@ -120,7 +121,7 @@
       "line": 7,
       "match": "in_stack_0000000c",
       "severity": "moderate",
-      "text": "vfprintf(stream,format,in_stack_0000000c);",
+      "text": "func_0x00604850(stream,format,in_stack_0000000c);",
       "type": "stack_param"
     },
     {

@@ -7,11 +7,11 @@
 ; _FILE *          Stack[0x4]:4   file_handle
 ; int              Stack[0x8]:4   force_close_flag
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_stdio.c___CClose_FUN_00601ee4 at 00601eef
-;   crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94 at 00601ab8
 ;
 ; Referenced Globals:
+;   undefined4 SUB_006039d0
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;   INVALIDATE_HANDLE_FUNC* PTR_crt_sync.c_InvalidateHandle_FUN_00602448_00684ef4 = 00602448
@@ -21,7 +21,6 @@
 ;   crt_io.c_close_FUN_00609bd0
 ;   crt_io.c_invalidate_handle_wrapper_FUN_00602448
 ;   crt_memory.c_free_FUN_00601cd0
-;   crt_stdio.c_fflushInternal_FUN_006039d0
 ;   crt_stdio.c_ftell_FUN_00601560
 ;   crt_stdio.c_lseek_FUN_00606690
 ;   crt_stdio.c_remove_FUN_005ff9d0
@@ -51,8 +50,8 @@ section .text
     JZ 0x00602006                       ; 00601ff9
         ;   XREF to: 00602006 (CONDITIONAL_JUMP)  ; LAB_00602006
     PUSH EBX                            ; 00601ffb
-    CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 00601ffc
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
+    CALL 0x006039d0                     ; 00601ffc
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
     ADD ESP,0x4                         ; 00602001
     MOV ESI,EAX                         ; 00602004
     MOV ECX,dword ptr [EBX + 0x10]      ; 00602006

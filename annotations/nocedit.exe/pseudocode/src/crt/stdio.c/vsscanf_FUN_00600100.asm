@@ -15,8 +15,8 @@
 ; XREF[1]:
 ;   crt_stdio.c_sscanf_FUN_0060013c at 00600154
 ;
-; Called Functions:
-;   crt_stdio.c_doscan_FUN_00604950
+; Referenced Globals:
+;   undefined4 SUB_00604950
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH EAX                            ; 00600125
     MOV dword ptr [ESP + 0xc],EDX       ; 00600126
     MOV dword ptr [ESP + 0x10],EBX      ; 0060012a
-    CALL crt_stdio.c_doscan_FUN_00604950 ; 0060012e
-        ;   XREF to: 00604950 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_doscan_FUN_00604950(scanf_state_t * state, char * * format_ptr, va_list_t * args)
+    CALL 0x00604950                     ; 0060012e
+        ;   XREF to: 00604950 (UNCONDITIONAL_CALL)  ; SUB_00604950
     ADD ESP,0xc                         ; 00600133
     ADD ESP,0x14                        ; 00600136
     POP ESI                             ; 00600139

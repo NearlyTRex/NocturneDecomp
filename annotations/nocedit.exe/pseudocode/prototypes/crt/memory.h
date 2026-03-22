@@ -59,14 +59,6 @@ void * __cdecl realloc::(void *ptr,ulong new_size);
 // Address: 006020c2
 void * __cdecl ::_arr_op(void *dest,void *source,int count,int element_size,void *copy_func);
 
-// Original: crt_memory.c___memfill_FUN_00603b00
-// Address: 00603b00
-void * __watcallRegister ::_memfill(void *dest,uint replicated_value,uint count);
-
-// Original: crt_memory.c___stosd_FUN_00603b37
-// Address: 00603b37
-void __watcallRegister ::_stosd(void *dest,uint replicated_value,uint dword_count);
-
 // Original: crt_memory.c___arrinit__FUN_00608dc8
 // Address: 00608dc8
 void * __cdecl ::_arrinit_(void *array_start,int element_count,WatcomTypeInfo *type_info);

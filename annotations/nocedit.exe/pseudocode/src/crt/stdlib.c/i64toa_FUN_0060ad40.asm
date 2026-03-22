@@ -14,8 +14,7 @@
 ; undefined8       Stack[-0x20]:8  local_20
 ; char *           Stack[-0x18]:4  local_18
 ;
-; XREF[2]:
-;   crt_stdio.c_ConvertFormatSpec_FUN_00603238 at 00603668
+; XREF[1]:
 ;   crt_unknown.c_FUN_0060ade0 at 0060ae3c
 ;
 ; Referenced Globals:

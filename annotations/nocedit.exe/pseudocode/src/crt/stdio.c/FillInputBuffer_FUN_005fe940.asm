@@ -10,11 +10,11 @@
 ;   crt_stdio.c_FillBufferAndGetChar_FUN_005fe910 at 005fe916
 ;   crt_stdio.c_fread_FUN_005fd990 at 005fdae3
 ;
-; Called Functions:
-;   crt_stdio.c_FlushFilesByMask_FUN_0060595c
-;   crt_stdio.c_InitializeFileBuffer_FUN_006027e0
-;   crt_stdio.c_ReadFileWithDeviceAbstraction_FUN_00602880
-;   crt_stdio.c_SetupConsoleInputMode_FUN_006059b0
+; Referenced Globals:
+;   undefined4 CAVE_cave_006027e0
+;   undefined4 SUB_00602880
+;   undefined4 SUB_0060595c
+;   undefined4 SUB_006059b0
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     JNZ 0x005fe95a                      ; 005fe94f
         ;   XREF to: 005fe95a (CONDITIONAL_JUMP)  ; LAB_005fe95a
     PUSH EBX                            ; 005fe951
-    CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 005fe952
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(_FILE * file)
+    CALL 0x006027e0                     ; 005fe952
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; CAVE_cave_006027e0
     ADD ESP,0x4                         ; 005fe957
     MOV AH,byte ptr [EBX + 0xd]         ; 005fe95a
         ;   Label: LAB_005fe95a
@@ -43,8 +43,8 @@ section .text
     JZ 0x005fe974                       ; 005fe965
         ;   XREF to: 005fe974 (CONDITIONAL_JUMP)  ; LAB_005fe974
     PUSH 0x2000                         ; 005fe967
-    CALL crt_stdio.c_FlushFilesByMask_FUN_0060595c ; 005fe96c
-        ;   XREF to: 0060595c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FlushFilesByMask_FUN_0060595c(uint file_mode_mask)
+    CALL 0x0060595c                     ; 005fe96c
+        ;   XREF to: 0060595c (UNCONDITIONAL_CALL)  ; SUB_0060595c
     ADD ESP,0x4                         ; 005fe971
     MOV DH,byte ptr [EBX + 0xc]         ; 005fe974
         ;   Label: LAB_005fe974
@@ -63,8 +63,8 @@ section .text
     JNZ 0x005fe9b7                      ; 005fe999
         ;   XREF to: 005fe9b7 (CONDITIONAL_JUMP)  ; LAB_005fe9b7
     MOV dword ptr [EBX + 0x4],ECX       ; 005fe99b
-    CALL crt_stdio.c_SetupConsoleInputMode_FUN_006059b0 ; 005fe99e
-        ;   XREF to: 006059b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_SetupConsoleInputMode_FUN_006059b0()
+    CALL 0x006059b0                     ; 005fe99e
+        ;   XREF to: 006059b0 (UNCONDITIONAL_CALL)  ; SUB_006059b0
     MOV EDX,EAX                         ; 005fe9a3
     CMP EAX,-0x1                        ; 005fe9a5
     JZ 0x005fe9da                       ; 005fe9a8
@@ -89,8 +89,8 @@ section .text
     PUSH ESI                            ; 005fe9ca
     MOV EDI,dword ptr [EBX + 0x10]      ; 005fe9cb
     PUSH EDI                            ; 005fe9ce
-    CALL crt_stdio.c_ReadFileWithDeviceAbstraction_FUN_00602880 ; 005fe9cf
-        ;   XREF to: 00602880 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ReadFileWithDeviceAbstraction_FUN_00602880(int file_handle_index, void * buffer, int bytes_to_read)
+    CALL 0x00602880                     ; 005fe9cf
+        ;   XREF to: 00602880 (UNCONDITIONAL_CALL)  ; SUB_00602880
     ADD ESP,0xc                         ; 005fe9d4
     MOV dword ptr [EBX + 0x4],EAX       ; 005fe9d7
     MOV EBP,dword ptr [EBX + 0x4]       ; 005fe9da

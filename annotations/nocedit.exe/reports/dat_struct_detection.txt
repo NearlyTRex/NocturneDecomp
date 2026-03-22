@@ -2,12 +2,12 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 30
+Total DAT_ globals found: 28
 Filtered out (inside named data): 241
 Immediate constants (not real globals): 1
-Real globals remaining: 29
+Real globals remaining: 27
 Clusters detected: 5
-DAT_ globals in clusters: 17
+DAT_ globals in clusters: 16
 
 Classification summary:
   unknown              4 clusters
@@ -28,19 +28,18 @@ Consider removing the Ghidra label and leaving the raw number.
 LOW CONFIDENCE (5 clusters)
 --------------------------------------------------------------------------------
 
-  0x00685030 - 0x006850b8  (7 items, 136 bytes span)
+  0x00685094 - 0x006850b8  (6 items, 36 bytes span)
     Classification: struct
-    Likely type: struct (136 bytes span, 7 fields)
-    Reason: mixed strides, shared by 3 functions
-    Referenced by: 3 functions
-     near: PTR_FUN_0068502b (void*) at +5
-      0x00685030  DAT_00685030  undefined4 [byte]
+    Likely type: struct (36 bytes span, 6 fields)
+    Reason: mixed strides, shared by 1 functions
+    Referenced by: 1 functions
+     near: g_DstStartRule.rule_type (undefined4) at +4
       0x00685094  DAT_00685094  undefined4
       0x006850a4  DAT_006850a4  undefined4
       0x006850a8  DAT_006850a8  undefined4
       0x006850b0  DAT_006850b0  undefined4
       0x006850b4  DAT_006850b4  undefined4
-      ... +1 more
+      0x006850b8  DAT_006850b8  undefined4
 
   0x00665f28 - 0x00665f50  (3 items, 40 bytes span)
     Classification: unknown
@@ -80,7 +79,7 @@ LOW CONFIDENCE (5 clusters)
       0x006e6f69  DAT_006e6f69  undefined4
 
 --------------------------------------------------------------------------------
-ISOLATED DAT_ GLOBALS (12 - not part of any cluster)
+ISOLATED DAT_ GLOBALS (11 - not part of any cluster)
 --------------------------------------------------------------------------------
   DAT_00002424                    addr=00002424    type=undefined4      refs=21 [likely float]
   DAT_00800000                    addr=00800000    type=undefined4      refs=12
@@ -90,7 +89,6 @@ ISOLATED DAT_ GLOBALS (12 - not part of any cluster)
   DAT_00747874                    addr=00747874    type=undefined4      refs=1
   DAT_006874d4                    addr=006874d4    type=undefined4      refs=1 [likely double]  near: PTR_FUN_006874e4(-16)
   DAT_006855d8                    addr=006855d8    type=undefined4      refs=1  near: PTR_crt_math.c_check_error_context_FUN_0060fa8b_00685590(+72)
-  DAT_0068546c                    addr=0068546c    type=undefined2      refs=1  near: PTR_crt_thread.c_ExitCriticalSection_FUN_0060b180_00685468(+4)
   DAT_54524143                    addr=54524143    type=undefined4      refs=1
   DAT_0051a3f4                    addr=0051a3f4    type=undefined4      refs=1  near: PTR_caseD_5_0051a3ec(+8)
   DAT_03f5d97c                    addr=03f5d97c    type=undefined4      refs=1  near: g_SoundTestErrorBuffer(+220)

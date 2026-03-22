@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 66,
     "complexity_score": 72,
-    "cross_reference_count": 2,
+    "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
@@ -15,12 +15,6 @@
     "total_lines": 98
   },
   "cross_references": [
-    {
-      "addr": "00603238",
-      "from_addr": "00603668",
-      "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0060ade0",
       "from_addr": "0060ae3c",
@@ -56,19 +50,8 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 1,
     "call_sites": [
-      {
-        "call_addr": "00603668",
-        "call_type": "direct",
-        "caller": "crt_stdio.c_ConvertFormatSpec_FUN_00603238",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
       {
         "call_addr": "0060ae3c",
         "call_type": "direct",
@@ -81,7 +64,7 @@
         "stack_params": 3
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "declared_params": 3,
     "declared_stack_bytes": 12,
     "estimated_params": 3

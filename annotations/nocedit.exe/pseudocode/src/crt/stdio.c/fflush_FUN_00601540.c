@@ -12,9 +12,9 @@ int __cdecl _fflush(_FILE *stream)
   int iVar1;
   
   if (stream == (_FILE *)0x0) {
-    FUN_00605950();
+    func_0x00605950();
     return 0;
   }
-  iVar1 = fflushInternal(stream);
+  iVar1 = func_0x006039d0(stream);
   return iVar1;
 }

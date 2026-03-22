@@ -8,9 +8,8 @@
 ; int              Stack[0x8]:4   element_count
 ; WatcomTypeInfo * Stack[0xc]:4   type_info
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_memory.c___vec_new_FUN_00601232 at 0060124f
-;   crt_unknown.c_AnotherFunctorCall2_FUN_00601258 at 00601268
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit__FUN_00608dc8

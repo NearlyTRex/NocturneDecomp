@@ -12,10 +12,8 @@
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0 at 00433411
 ;
 ; Referenced Globals:
+;   undefined4 SUB_00604850
 ;   _FILE g_StdoutLogFile
-;
-; Called Functions:
-;   crt_stdio.c_vfprintf_FUN_00604850
 ;
 ; *****************************************************************************
 
@@ -30,8 +28,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 005ff0dd
     PUSH EDX                            ; 005ff0e1
     PUSH 0x684cde                       ; 005ff0e2 | g_StdoutLogFile
-    CALL crt_stdio.c_vfprintf_FUN_00604850 ; 005ff0e7
-        ;   XREF to: 00604850 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vfprintf_FUN_00604850(_FILE * file, char * format, va_list_t args)
+    CALL 0x00604850                     ; 005ff0e7
+        ;   XREF to: 00604850 (UNCONDITIONAL_CALL)  ; SUB_00604850
     ADD ESP,0xc                         ; 005ff0ec
     ADD ESP,0x4                         ; 005ff0ef
     RET                                 ; 005ff0f2

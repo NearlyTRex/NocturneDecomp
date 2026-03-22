@@ -105,11 +105,6 @@
     "importable":true
   },
   {
-    "addr":"00603238",
-    "importable":true,
-    "plate":"NOTE: Ghidra decompilation artifacts in this function:\n\nFLAG LOGIC INVERSION: Ghidra shows complex inverted flag tests like:\nif ((spec_info->flags & LONG_MODIFIER) == ~(FAR_PTR|NEAR_PTR|...))\nThese should be read as simple negated tests:\nif (!(spec_info->flags & LONG_MODIFIER))\nESP REGISTER CONFUSION: Ghidra incorrectly treats ESP as a user variable\n(in_ESP, BADSPACEBASE) causing decompiler uncertainty.\nVARIABLE MAPPING WARNINGS: \"Variable defined which should be unmapped\"\nwarnings for value_64bit and mb_char_buffer - these can be ignored.\n\nThe actual function signatures, variable types, and structure layout are\ncorrect. This is a printf format specifier conversion function that handles\nintegers, strings, characters, and pointers with proper 64-bit support.\nAssembly analysis confirms the logic is straightforward despite the\ndecompiler display issues."
-  },
-  {
     "addr":"00607d98",
     "eol":"HANDLE hTemplateFile for CreateFileA",
     "importable":true

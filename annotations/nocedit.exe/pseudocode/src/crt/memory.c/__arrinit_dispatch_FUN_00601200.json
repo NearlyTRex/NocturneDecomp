@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 27,
     "complexity_score": 46,
-    "cross_reference_count": 2,
+    "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -19,12 +19,6 @@
       "addr": "00601232",
       "from_addr": "0060124f",
       "name": "crt_memory.c___vec_new_FUN_00601232",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00601258",
-      "from_addr": "00601268",
-      "name": "crt_unknown.c_AnotherFunctorCall2_FUN_00601258",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,19 +48,8 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 1,
     "call_sites": [
-      {
-        "call_addr": "00601268",
-        "call_type": "direct",
-        "caller": "crt_unknown.c_AnotherFunctorCall2_FUN_00601258",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
       {
         "call_addr": "0060124f",
         "call_type": "direct",
@@ -79,7 +62,7 @@
         "stack_params": 3
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "declared_params": 3,
     "declared_stack_bytes": 12,
     "estimated_params": 3

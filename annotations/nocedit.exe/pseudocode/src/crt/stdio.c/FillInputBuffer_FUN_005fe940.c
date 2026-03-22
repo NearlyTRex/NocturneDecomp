@@ -10,19 +10,19 @@ int __watcallStack FillInputBuffer(_FILE *file)
 
 {
   int iVar1;
-  uint bytes_to_read;
+  uint uVar2;
   
   if (file->_link->__reserve_end == (char *)0x0) {
-    InitializeFileBuffer(file);
+    func_0x006027e0(file);
   }
   if (((file->_flag & 0x2000) != 0) && ((file->_flag & 0x600) != 0)) {
-    FlushFilesByMask(0x2000);
+    func_0x0060595c(0x2000);
   }
   *(byte *)&file->_flag = (byte)file->_flag & 0xfb;
   file->_ptr = file->_link->__reserve_end;
   if (((file->_flag & 0x2400) == 0x2400) && (file->_handle == 0)) {
     file->_cnt = 0;
-    iVar1 = SetupConsoleInputMode();
+    iVar1 = func_0x006059b0();
     if (iVar1 != -1) {
       *file->_ptr = (char)iVar1;
       file->_cnt = 1;
@@ -31,13 +31,12 @@ int __watcallStack FillInputBuffer(_FILE *file)
   }
   else {
     if ((file->_flag & 0x400) == 0) {
-      bytes_to_read = file->_bufsize;
+      uVar2 = file->_bufsize;
     }
     else {
-      bytes_to_read = 1;
+      uVar2 = 1;
     }
-    iVar1 = ReadFileWithDeviceAbstraction
-                      (file->_handle,file->_ptr,bytes_to_read);
+    iVar1 = func_0x00602880(file->_handle,file->_ptr,uVar2);
     file->_cnt = iVar1;
   }
   if (file->_cnt < 1) {

@@ -22,8 +22,8 @@
 ;   core_actor.cpp_archiveMotionState_FUN_0040b9f0 at 0040ba89
 ;   ... and 107 more
 ;
-; Called Functions:
-;   crt_stdio.c_vfprintf_FUN_00604850
+; Referenced Globals:
+;   undefined4 SUB_00604850
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     PUSH EDX                            ; 005fe6e2
     MOV EBX,dword ptr [ESP + 0x14]      ; 005fe6e3
     PUSH EBX                            ; 005fe6e7
-    CALL crt_stdio.c_vfprintf_FUN_00604850 ; 005fe6e8
-        ;   XREF to: 00604850 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vfprintf_FUN_00604850(_FILE * file, char * format, va_list_t args)
+    CALL 0x00604850                     ; 005fe6e8
+        ;   XREF to: 00604850 (UNCONDITIONAL_CALL)  ; SUB_00604850
     ADD ESP,0xc                         ; 005fe6ed
     ADD ESP,0x4                         ; 005fe6f0
     POP EBX                             ; 005fe6f3

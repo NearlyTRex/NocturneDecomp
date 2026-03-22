@@ -14,11 +14,11 @@
 ;   crt_stdio.c_ungetc_helper_FUN_005fe720 at 005fe72e
 ;
 ; Referenced Globals:
+;   undefined4 CAVE_cave_006027e0
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;
 ; Called Functions:
-;   crt_stdio.c_InitializeFileBuffer_FUN_006027e0
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;
 ; *****************************************************************************
@@ -101,8 +101,8 @@ section .text
     JNZ 0x005feaae                      ; 005feaa3
         ;   XREF to: 005feaae (CONDITIONAL_JUMP)  ; LAB_005feaae
     PUSH EBX                            ; 005feaa5
-    CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 005feaa6
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(_FILE * file)
+    CALL 0x006027e0                     ; 005feaa6
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; CAVE_cave_006027e0
     ADD ESP,0x4                         ; 005feaab
     MOV ECX,dword ptr [EBX + 0x4]       ; 005feaae
         ;   Label: LAB_005feaae

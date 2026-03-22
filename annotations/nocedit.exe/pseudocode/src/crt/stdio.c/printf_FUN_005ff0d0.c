@@ -13,6 +13,6 @@ int __cdecl printf(char *format,...)
   byte *local_4;
   
   local_4 = &stack0x00000008;
-  iVar1 = vfprintf(&g_StdoutLogFile,format,(va_list_t)&local_4);
+  iVar1 = func_0x00604850(&g_StdoutLogFile,format,&local_4);
   return iVar1;
 }

@@ -9,11 +9,6 @@
 void * __cdecl memset(void *dest,int value,ulong count)
 
 {
-  byte uVar1;
-  uint unaff_EBX;
-  
-  uVar1 = (byte)value;
-  __memfill
-            (dest,CONCAT31(CONCAT21(CONCAT11(uVar1,uVar1),uVar1),uVar1),unaff_EBX);
+  func_0x00603b00();
   return dest;
 }

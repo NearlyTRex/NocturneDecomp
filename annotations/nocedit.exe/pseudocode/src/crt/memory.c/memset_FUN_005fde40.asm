@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   value
 ; ulong            Stack[0xc]:4   count
 ;
-; XREF[135]:
+; XREF[134]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00488110 at 0048818c
 ;   cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0 at 00488b7a
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_0054a820 at 0054a833
@@ -19,10 +19,10 @@
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_00413470 at 00413548
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_0041af90 at 0041b018
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 at 0041a3fe
-;   ... and 125 more
+;   ... and 124 more
 ;
-; Called Functions:
-;   crt_memory.c___memfill_FUN_00603b00
+; Referenced Globals:
+;   undefined4 SUB_00603b00
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     MOV DL,DH                           ; 005fde52
     SHL EDX,0x8                         ; 005fde54
     MOV DL,DH                           ; 005fde57
-    CALL crt_memory.c___memfill_FUN_00603b00 ; 005fde59
-        ;   XREF to: 00603b00 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___memfill_FUN_00603b00(void * dest, uint replicated_value, uint count)
+    CALL 0x00603b00                     ; 005fde59
+        ;   XREF to: 00603b00 (UNCONDITIONAL_CALL)  ; SUB_00603b00
     POP EAX                             ; 005fde5e
     RET                                 ; 005fde5f
 

@@ -8,10 +8,8 @@
 ; char *           Stack[0x8]:4   buffer
 ; int              Stack[0xc]:4   base
 ;
-; XREF[5]:
+; XREF[3]:
 ;   crt_process.c_build_file_info_env_FUN_0060ffd0 at 00610143
-;   crt_stdio.c_FormatFixedPoint_FUN_0060305c at 00603099
-;   crt_stdio.c_FormatHexWithPadding_FUN_00602ff8 at 00603008
 ;   crt_thread.c_create_thread_with_sync_FUN_0060f960 at 0060f9d2
 ;   crt_time.c__strftime_FUN_006002d4 at 00600534
 ;

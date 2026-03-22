@@ -11,13 +11,13 @@
 ;   crt_math.c_print_error_message_FUN_0060e298 at 0060e2c2
 ;
 ; Referenced Globals:
+;   undefined4 CAVE_cave_006027e0
+;   undefined4 SUB_006039d0
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;
 ; Called Functions:
-;   crt_stdio.c_fflushInternal_FUN_006039d0
 ;   crt_stdio.c_fputc_FUN_006007a0
-;   crt_stdio.c_InitializeFileBuffer_FUN_006027e0
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;
 ; *****************************************************************************
@@ -42,8 +42,8 @@ section .text
     JNZ 0x0060ebdf                      ; 0060ebd4
         ;   XREF to: 0060ebdf (CONDITIONAL_JUMP)  ; LAB_0060ebdf
     PUSH ESI                            ; 0060ebd6
-    CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 0060ebd7
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(_FILE * file)
+    CALL 0x006027e0                     ; 0060ebd7
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; CAVE_cave_006027e0
     ADD ESP,0x4                         ; 0060ebdc
     MOV AH,byte ptr [ESI + 0xd]         ; 0060ebdf
         ;   Label: LAB_0060ebdf
@@ -91,8 +91,8 @@ section .text
     JNZ 0x0060ec41                      ; 0060ec34
         ;   XREF to: 0060ec41 (CONDITIONAL_JUMP)  ; LAB_0060ec41
     PUSH ESI                            ; 0060ec36
-    CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 0060ec37
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(_FILE * file_handle)
+    CALL 0x006039d0                     ; 0060ec37
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
     ADD ESP,0x4                         ; 0060ec3c
     MOV EDI,EAX                         ; 0060ec3f
     TEST EDI,EDI                        ; 0060ec41

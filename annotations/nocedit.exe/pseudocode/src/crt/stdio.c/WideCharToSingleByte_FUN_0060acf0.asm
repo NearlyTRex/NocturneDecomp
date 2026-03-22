@@ -7,10 +7,7 @@
 ; wchar_t          Stack[0x4]:2   wide_char
 ; char *           Stack[0x8]:4   output_buffer
 ;
-; XREF[4]:
-;   crt_stdio.c_ConvertFormatSpec_FUN_00603238 at 00603843
-;   crt_stdio.c_FormatWideString_FUN_006031c0 at 006031eb
-;   crt_stdio.c_WideStringToMultiByteLen_FUN_00602f7c at 00602fa9
+; XREF[1]:
 ;   crt_string.c_wcstombs_FUN_0060c0c0 at 0060c163
 ;
 ; Referenced Globals:

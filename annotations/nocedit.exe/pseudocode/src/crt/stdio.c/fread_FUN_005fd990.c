@@ -35,7 +35,7 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
       return 0;
     }
     if (file->_link->__reserve_end == (char *)0x0) {
-      InitializeFileBuffer(file);
+      func_0x006027e0(file);
     }
     uStack_14 = 0;
     if ((file->_flag & 0x40) == 0) {
@@ -99,8 +99,7 @@ SIZE_T __cdecl _fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
           if (((file->_flag & 0x400) == 0) && (0x200 < uVar8)) {
             uVar3 = (uVar8 >> 8 & 0xfffffe) << 8;
           }
-          iVar4 = ReadFileWithDeviceAbstraction(file->_handle,buffer,uVar3)
-          ;
+          iVar4 = func_0x00602880(file->_handle,buffer,uVar3);
           if (iVar4 == -1) {
             *(byte *)&file->_flag = (byte)file->_flag | 0x20;
             goto LAB_005fdb69;

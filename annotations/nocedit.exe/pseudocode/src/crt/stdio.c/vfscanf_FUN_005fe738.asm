@@ -12,11 +12,11 @@
 ;   crt_stdio.c_fscanf_FUN_005fe7c0 at 005fe7d8
 ;
 ; Referenced Globals:
+;   undefined4 SUB_00604950
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;
 ; Called Functions:
-;   crt_stdio.c_doscan_FUN_00604950
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;
 ; *****************************************************************************
@@ -63,8 +63,8 @@ section .text
     PUSH EAX                            ; 005fe793
     MOV dword ptr [ESP + 0x14],EBX      ; 005fe794
     MOV dword ptr [ESP + 0xc],EBP       ; 005fe798
-    CALL crt_stdio.c_doscan_FUN_00604950 ; 005fe79c
-        ;   XREF to: 00604950 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_doscan_FUN_00604950(scanf_state_t * state, char * * format_ptr, va_list_t * args)
+    CALL 0x00604950                     ; 005fe79c
+        ;   XREF to: 00604950 (UNCONDITIONAL_CALL)  ; SUB_00604950
     ADD ESP,0xc                         ; 005fe7a1
     MOV EDI,dword ptr [EBX + 0x10]      ; 005fe7a4
     PUSH EDI                            ; 005fe7a7

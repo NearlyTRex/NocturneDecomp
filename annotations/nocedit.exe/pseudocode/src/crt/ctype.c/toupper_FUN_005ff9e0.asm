@@ -6,7 +6,7 @@
 ; Parameters:
 ; int              Stack[0x4]:4   c
 ;
-; XREF[38]:
+; XREF[37]:
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 00443157
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004aae5c
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be3ca
@@ -17,7 +17,7 @@
 ;   core_script.cpp_CCmdParse_parse_FUN_00561fd0 at 00562181
 ;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 00594994
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc392
-;   ... and 28 more
+;   ... and 27 more
 ;
 ; *****************************************************************************
 

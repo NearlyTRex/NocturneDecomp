@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 11,
     "complexity_score": 22,
-    "cross_reference_count": 10,
+    "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -57,12 +57,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "006058e8",
-      "from_addr": "006058fb",
-      "name": "crt_stdio.c_char_to_digit_FUN_006058e8",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0060ee18",
       "from_addr": "0060ee33",
       "name": "crt_stdlib.c_charToDigit_FUN_0060ee18",
@@ -90,7 +84,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 11,
+    "call_site_count": 10,
     "call_sites": [
       {
         "call_addr": "004a6ea7",
@@ -181,9 +175,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "006058fb",
+        "call_addr": "0040c265",
         "call_type": "direct",
-        "caller": "crt_stdio.c_char_to_digit_FUN_006058e8",
+        "caller": "core_actor.cpp_updateClassNameHash_FUN_0040c260",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -192,9 +186,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "0040c265",
+        "call_addr": "0040c2b5",
         "call_type": "direct",
-        "caller": "core_actor.cpp_updateClassNameHash_FUN_0040c260",
+        "caller": "core_actor.cpp_hashClassName_FUN_0040c290",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
