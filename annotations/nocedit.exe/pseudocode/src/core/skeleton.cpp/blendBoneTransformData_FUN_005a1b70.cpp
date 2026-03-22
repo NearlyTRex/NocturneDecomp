@@ -1,6 +1,6 @@
 // Name: core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70
 // Address: 005a1b70
-// Address Range: [[005a1b70, 005a1ce4]]
+// Address Range: [[005a1b70, 005a1ce4] [00604bac, 00604bcf]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *result_root_pos,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)
 
@@ -31,7 +31,6 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *re
   CQuaternion4f *local_18;
   CQuaternion4f *local_14;
   
-  bVar6 = 0;
   if (blend_weight < 0.0) {
     blend_weight = 0.0;
   }
@@ -58,13 +57,10 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *re
     pCVar1 = result_root_pos;
     do {
       core_xform_cpp_slerpQuaternion_FUN_005f77e0(local_14,local_18,blend_weight,&local_54);
-      puVar4 = (uint *)((int)pCVar1 + (uint)bVar6 * -8 + 0x10);
       pCVar1[1].x = local_54.w;
-      puVar5 = puVar4 + (uint)bVar6 * -2 + 1;
-      puVar3 = (uint *)((int)&local_54 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-      *puVar4 = *(uint *)((int)&local_54 + (uint)bVar6 * -8 + 4);
-      *puVar5 = *puVar3;
-      puVar5[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
+      pCVar1[1].y = local_54.x;
+      pCVar1[1].z = local_54.y;
+      pCVar1[2].x = local_54.z;
       local_18 = local_18 + 1;
       iVar2 = iVar2 + 1;
       local_14 = local_14 + 1;

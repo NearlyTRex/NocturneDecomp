@@ -1,6 +1,6 @@
 // Name: core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
 // Address: 00542470
-// Address Range: [[00542470, 00542af1]]
+// Address Range: [[00542470, 00542af1] [006049a4, 006049c6]]
 // Convention: __cdecl
 // Signature: int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame *this_ptr,UNetPacket *packet)
 
@@ -224,15 +224,11 @@ LAB_005429ed:
             *(uint *)((int)local_44 + local_44[4]) = *puVar7;
             *puVar7 = uVar2;
             pSVar16 = this_ptr->players + local_14;
-            pEVar8 = (EHeroType *)((int)pSVar16 + (uint)bVar17 * -8 + 4);
             local_bc = *(uint *)pSVar16->name;
-            pEVar15 = aEStack_b8 + (uint)bVar17 * -2 + (uint)bVar17 * -2 + 1;
-            pEVar9 = pEVar8 + (uint)bVar17 * -2 + 1;
-            aEStack_b8[(uint)bVar17 * -2] = *pEVar8;
-            *pEVar15 = *pEVar9;
-            pEVar15[(uint)bVar17 * -2 + 1] = pEVar9[(uint)bVar17 * -2 + 1];
-            (pEVar15 + (uint)bVar17 * -2 + 1)[(uint)bVar17 * -2 + 1] =
-                 (pEVar9 + (uint)bVar17 * -2 + 1)[(uint)bVar17 * -2 + 1];
+            aEStack_b8[0] = *(EHeroType *)(pSVar16->name + 4);
+            aEStack_b8[1] = *(EHeroType *)(pSVar16->name + 8);
+            aEStack_b8[2] = *(EHeroType *)(pSVar16->name + 0xc);
+            aEStack_b8[3] = *(EHeroType *)(pSVar16->name + 0x10);
             core_netgame_cpp_copyInteger_FUN_00543e20(&local_a0,(int *)local_18);
             local_9c = local_18->port;
             local_98 = pSVar16->last_arrival_time;

@@ -1,6 +1,6 @@
 // Name: core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910
 // Address: 0057b910
-// Address Range: [[0057b910, 0057bbac]]
+// Address Range: [[0057b910, 0057bbac] [00604aa5, 00604acb]]
 // Convention: __cdecl
 // Signature: void __cdecl core_setedit_cpp_CDemonSet_deleteLight_FUN_0057b910(CDemonSet *this_ptr,int light_index)
 

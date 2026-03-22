@@ -1,6 +1,6 @@
 // Name: core_setedit.cpp_CDemonSet_deleteCamera_FUN_0057e430
 // Address: 0057e430
-// Address Range: [[0057e430, 0057e77b]]
+// Address Range: [[0057e430, 0057e77b] [00604a83, 00604aa4]]
 // Convention: __cdecl
 // Signature: void __cdecl core_setedit_cpp_CDemonSet_deleteCamera_FUN_0057e430(CDemonSet *this_ptr,int camera_index)
 
@@ -9,9 +9,10 @@
 void __cdecl core_setedit_cpp_CDemonSet_deleteCamera_FUN_0057e430(CDemonSet *this_ptr,int camera_index)
 
 {
+  int iVar1;
+  int *piVar2;
   char *pcVar3;
   int iVar4;
-  int iVar1;
   char *pcVar5;
   C3DSCamera *pCVar6;
   C3DSCamera *pCVar7;
@@ -95,7 +96,6 @@ void __cdecl core_setedit_cpp_CDemonSet_deleteCamera_FUN_0057e430(CDemonSet *thi
         local_20->pvs_list = local_c->pvs_list;
         local_20->vdir_zone = local_c->vdir_zone;
         local_20->enabled = local_c->enabled;
-        iVar1 = 0;
         if (0 < this_ptr->light_count) {
           pcVar5 = this_ptr->lights[0].name + local_8 + -4;
           pcVar3 = this_ptr->lights[0].name + local_10 + -4;
@@ -104,11 +104,11 @@ void __cdecl core_setedit_cpp_CDemonSet_deleteCamera_FUN_0057e430(CDemonSet *thi
             *(uint *)(pcVar3 + 0x224) = *(uint *)(pcVar3 + 0x234);
             *(uint *)(pcVar3 + 0x228) = *(uint *)(pcVar3 + 0x238);
             *(uint *)(pcVar3 + 0x22c) = *(uint *)(pcVar3 + 0x23c);
-            *(uint *)(pcVar3 + 0x230) = *(uint *)(pcVar3 + 0x240);
-            iVar1 = iVar1 + 1;
+            piVar2 = (int *)(pcVar3 + 0x240);
+            *(int *)(pcVar3 + 0x230) = *piVar2;
             pcVar5 = pcVar5 + 0x1898;
             pcVar3 = pcVar3 + 0x1898;
-          } while (iVar1 < this_ptr->light_count);
+          } while (*piVar2 + 1 < this_ptr->light_count);
         }
         local_1c = local_1c + 0x23;
         local_18 = local_18 + 0x23;

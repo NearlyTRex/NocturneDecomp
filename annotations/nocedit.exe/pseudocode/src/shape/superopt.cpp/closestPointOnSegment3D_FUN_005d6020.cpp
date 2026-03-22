@@ -1,6 +1,6 @@
 // Name: shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020
 // Address: 005d6020
-// Address Range: [[005d6020, 005d63cb]]
+// Address Range: [[005d6020, 005d63cb] [00604eeb, 00604f0d]]
 // Convention: __stack3_esi
 // Signature: CVector2d * __stack3_esi shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point,CVector2d *out_point)
 

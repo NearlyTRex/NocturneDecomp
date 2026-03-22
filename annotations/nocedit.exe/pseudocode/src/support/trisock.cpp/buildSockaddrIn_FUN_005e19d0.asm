@@ -52,13 +52,25 @@ section .text
     CALL crt_memory.c_memset_FUN_005fde40 ; 005e1a13
         ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 005e1a18
-    MOVSD ES:EDI,ESI                    ; 005e1a1b
-    MOVSD ES:EDI,ESI                    ; 005e1a1c
-    MOVSD ES:EDI,ESI                    ; 005e1a1d
-    MOVSD ES:EDI,ESI                    ; 005e1a1e
-    MOV EAX,EBX                         ; 005e1a1f
+    JMP 0x00604f58                      ; 005e1a1b
+        ;   XREF to: 00604f58 (UNCONDITIONAL_JUMP)  ; LAB_00604f58
     ADD ESP,0x10                        ; 005e1a21
+        ;   Label: LAB_005e1a21
     POP EDI                             ; 005e1a24
     POP EBX                             ; 005e1a25
     RET                                 ; 005e1a26
+    MOV ECX,dword ptr [ESI]             ; 00604f58
+        ;   Label: LAB_00604f58
+    MOV dword ptr [EDI],ECX             ; 00604f5a
+    MOV ECX,dword ptr [ESI + 0x4]       ; 00604f5c
+    MOV dword ptr [EDI + 0x4],ECX       ; 00604f5f
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00604f62
+    MOV dword ptr [EDI + 0x8],ECX       ; 00604f65
+    MOV ECX,dword ptr [ESI + 0xc]       ; 00604f68
+    MOV dword ptr [EDI + 0xc],ECX       ; 00604f6b
+    ADD ESI,0x10                        ; 00604f6e
+    ADD EDI,0x10                        ; 00604f71
+    MOV EAX,EBX                         ; 00604f74
+    JMP 0x005e1a21                      ; 00604f76
+        ;   XREF to: 005e1a21 (UNCONDITIONAL_JUMP)  ; LAB_005e1a21
 

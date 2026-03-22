@@ -1,6 +1,6 @@
 // Name: shape_design.c_selectVertexToDelete_FUN_0045c5b0
 // Address: 0045c5b0
-// Address Range: [[0045c5b0, 0045c6bf]]
+// Address Range: [[0045c5b0, 0045c6bf] [00604da4, 00604dca]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_design_c_selectVertexToDelete_FUN_0045c5b0(void)
 
@@ -9,6 +9,7 @@
 void __cdecl shape_design_c_selectVertexToDelete_FUN_0045c5b0(void)
 
 {
+  int iVar1;
   int iVar2;
   uint *puVar3;
   uint *puVar4;
@@ -39,16 +40,12 @@ void __cdecl shape_design_c_selectVertexToDelete_FUN_0045c5b0(void)
   }
   if ((-1 < local_18) && (local_18 < g_VertexCount)) {
     for (local_14 = local_18; local_14 < g_VertexCount + -1; local_14 = local_14 + 1) {
-      puVar6 = (uint *)(local_14 * 0x14 + 0x1626410 + (uint)bVar8 * -8);
-      puVar3 = (uint *)((local_14 + 1) * 0x14 + 0x1626410 + (uint)bVar8 * -8);
-      g_LoadedVertices[local_14].vertex.x = g_LoadedVertices[local_14 + 1].vertex.x;
-      puVar7 = puVar6 + (uint)bVar8 * -2 + 1;
-      puVar4 = puVar3 + (uint)bVar8 * -2 + 1;
-      *puVar6 = *puVar3;
-      *puVar7 = *puVar4;
-      puVar7[(uint)bVar8 * -2 + 1] = puVar4[(uint)bVar8 * -2 + 1];
-      (puVar7 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1] =
-           (puVar4 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1];
+      iVar1 = local_14 + 1;
+      g_LoadedVertices[local_14].vertex.x = g_LoadedVertices[iVar1].vertex.x;
+      g_LoadedVertices[local_14].vertex.y = g_LoadedVertices[iVar1].vertex.y;
+      g_LoadedVertices[local_14].vertex.z = g_LoadedVertices[iVar1].vertex.z;
+      g_LoadedVertices[local_14].u = g_LoadedVertices[iVar1].u;
+      g_LoadedVertices[local_14].v = g_LoadedVertices[iVar1].v;
     }
     g_VertexCount = g_VertexCount + -1;
   }

@@ -1,6 +1,6 @@
 // Name: core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
 // Address: 005267a0
-// Address Range: [[005267a0, 00526afd]]
+// Address Range: [[005267a0, 00526afd] [0060497f, 006049a3]]
 // Convention: __cdecl
 // Signature: void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_ptr,float delta_time)
 
@@ -20,12 +20,10 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
   CVector3f *pCVar7;
   CHero *pCVar4;
   uint *puVar4;
-  uint *puVar8;
   uint *puVar5;
-  uint *puVar9;
   byte bVar6;
   float afStackY_185c [1519];
-  int iVar10;
+  int target_motion_index;
   float local_88;
   float local_84;
   CQuaternion4f local_80;
@@ -117,14 +115,14 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
       }
       if ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0) {
         fVar7 = this_ptr->firing_blend;
-        iVar10 = 2;
+        target_motion_index = 2;
       }
       else {
         fVar7 = this_ptr->firing_blend;
-        iVar10 = 6;
+        target_motion_index = 6;
       }
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-                (&(this_ptr->base).base.model,iVar10,6.0,fVar7,g_MobsterIndices[10],
+                (&(this_ptr->base).base.model,target_motion_index,6.0,fVar7,g_MobsterIndices[10],
                  core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
       core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(local_2c.x,&local_60);
       local_80.w = local_60.w;
@@ -139,17 +137,9 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
                 (this_ptr_00,&local_80,this_ptr->firing_blend,g_MobsterIndices[10],
                  core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
       core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_2c.y,&local_70);
-      blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
-      local_80.w = local_70.w;
-      puVar9 = (uint *)((int)&local_80 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-      puVar8 = (uint *)((int)&local_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-      *(uint *)((int)&local_80 + (uint)bVar6 * -8 + 4) =
-           *(uint *)((int)&local_70 + (uint)bVar6 * -8 + 4);
-      iVar10 = g_MobsterIndices[10];
-      *puVar9 = *puVar8;
-      puVar9[(uint)bVar6 * -2 + 1] = puVar8[(uint)bVar6 * -2 + 1];
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
-                (this_ptr_00,&local_80,this_ptr->firing_blend,iVar10,blend_callback);
+                (this_ptr_00,&local_80,this_ptr->firing_blend,g_MobsterIndices[10],
+                 core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
       return;
     }
     this_ptr->firing_blend = 0.0;

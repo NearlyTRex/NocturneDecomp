@@ -1,6 +1,6 @@
 // Name: shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20
 // Address: 0051ef20
-// Address Range: [[0051ef20, 0051efb8]]
+// Address Range: [[0051ef20, 0051efb8] [00604e3a, 00604e5d]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_meshlod_cpp_CLodFace_copy_FUN_0051ef20(CLodFace *this_ptr,CLodFace *other)
 

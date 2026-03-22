@@ -42,12 +42,24 @@ section .text
     FXCH                                ; 005f7a16
     FSTP float ptr [ESP]                ; 005f7a18
     FSTP float ptr [ESP + 0x8]          ; 005f7a1b
-    MOVSD ES:EDI,ESI                    ; 005f7a1f
-    MOVSD ES:EDI,ESI                    ; 005f7a20
-    MOVSD ES:EDI,ESI                    ; 005f7a21
-    MOVSD ES:EDI,ESI                    ; 005f7a22
-    MOV EAX,EDX                         ; 005f7a23
+    JMP 0x00604cc7                      ; 005f7a1f
+        ;   XREF to: 00604cc7 (UNCONDITIONAL_JUMP)  ; LAB_00604cc7
     ADD ESP,0x18                        ; 005f7a25
+        ;   Label: LAB_005f7a25
     POP EDI                             ; 005f7a28
     RET                                 ; 005f7a29
+    MOV ECX,dword ptr [ESI]             ; 00604cc7
+        ;   Label: LAB_00604cc7
+    MOV dword ptr [EDI],ECX             ; 00604cc9
+    MOV ECX,dword ptr [ESI + 0x4]       ; 00604ccb
+    MOV dword ptr [EDI + 0x4],ECX       ; 00604cce
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00604cd1
+    MOV dword ptr [EDI + 0x8],ECX       ; 00604cd4
+    MOV ECX,dword ptr [ESI + 0xc]       ; 00604cd7
+    MOV dword ptr [EDI + 0xc],ECX       ; 00604cda
+    ADD ESI,0x10                        ; 00604cdd
+    ADD EDI,0x10                        ; 00604ce0
+    MOV EAX,EDX                         ; 00604ce3
+    JMP 0x005f7a25                      ; 00604ce5
+        ;   XREF to: 005f7a25 (UNCONDITIONAL_JUMP)  ; LAB_005f7a25
 

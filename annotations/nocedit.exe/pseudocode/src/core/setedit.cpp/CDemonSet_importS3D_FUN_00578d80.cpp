@@ -1,6 +1,6 @@
 // Name: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
 // Address: 00578d80
-// Address Range: [[00578d80, 0057a0b4]]
+// Address Range: [[00578d80, 0057a0b4] [00604acc, 00604af3]]
 // Convention: __cdecl
 // Signature: void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr,_FILE *file_handle)
 
@@ -502,14 +502,10 @@ LAB_00579173:
             pcVar12 = pcVar12 + (uint)bVar22 * -8 + 4;
           }
           *(ushort *)pcVar12 = *(ushort *)pcVar13;
-          puVar16 = (uint *)((int)pCVar10 + (uint)bVar22 * -8 + 0x228);
           pCVar10->camera_light_bounds[0].left = local_2478.camera_light_bounds[0].left;
-          puVar17 = puVar16 + (uint)bVar22 * -2 + 1;
-          puVar13 = (uint *)((int)&local_2478 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 0x22c)
-          ;
-          *puVar16 = *(uint *)((int)&local_2478 + (uint)bVar22 * -8 + 0x228);
-          *puVar17 = *puVar13;
-          puVar17[(uint)bVar22 * -2 + 1] = puVar13[(uint)bVar22 * -2 + 1];
+          pCVar10->camera_light_bounds[0].top = local_2478.camera_light_bounds[0].top;
+          pCVar10->camera_light_bounds[0].right = local_2478.camera_light_bounds[0].right;
+          pCVar10->camera_light_bounds[0].bottom = local_2478.camera_light_bounds[0].bottom;
           (pCVar10->color).r = local_2478.color.r;
           (pCVar10->color).g = local_2478.color.g;
           (pCVar10->color).b = local_2478.color.b;

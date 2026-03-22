@@ -23,9 +23,6 @@
 ;   undefined4 g_CapturedFaces[0].render_flags
 ;   undefined4 g_CapturedFaces[0].depth
 ;   undefined4 g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0
-;   undefined4 g_CapturedFaces[0].face_data.vertex_indices.vertex_index_2
-;   undefined4 g_CapturedFaces[0].face_data.u_coord_1
-;   undefined4 g_CapturedFaces[0].face_data.v_coord_0
 ;   undefined4 g_CapturedFaces[0].face_data.v_coord_2
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -94,12 +91,10 @@ section .text
     SHL EDX,0x5                         ; 0048d945
     MOV ESI,EBX                         ; 0048d948
     LEA EDI,[EDX + 0x2c6d600]           ; 0048d94a | g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0
-    MOV EAX,[0x02c6d5f0]                ; 0048d950 | g_CaptureTextureCount
-    MOVSD ES:EDI,ESI                    ; 0048d955 | g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0
-    MOVSD ES:EDI,ESI                    ; 0048d956 | g_CapturedFaces[0].face_data.vertex_indices.vertex_index_2
-    MOVSD ES:EDI,ESI                    ; 0048d957 | g_CapturedFaces[0].face_data.u_coord_1
-    MOVSD ES:EDI,ESI                    ; 0048d958 | g_CapturedFaces[0].face_data.v_coord_0
+    JMP 0x00604d30                      ; 0048d950
+        ;   XREF to: 00604d30 (UNCONDITIONAL_JUMP)  ; LAB_00604d30
     MOVSW ES:EDI,ESI                    ; 0048d959 | g_CapturedFaces[0].face_data.v_coord_2
+        ;   Label: LAB_0048d959
     MOV dword ptr [EDX + 0x2c6d5f4],EAX ; 0048d95b | g_CapturedFaces
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0048d961
     XOR ECX,ECX                         ; 0048d965
@@ -170,4 +165,18 @@ section .text
     POP ESI                             ; 0048da0f
     POP EBX                             ; 0048da10
     RET                                 ; 0048da11
+    MOV EAX,[0x02c6d5f0]                ; 00604d30 | g_CaptureTextureCount
+        ;   Label: LAB_00604d30
+    MOV ECX,dword ptr [ESI]             ; 00604d35
+    MOV dword ptr [EDI],ECX             ; 00604d37
+    MOV ECX,dword ptr [ESI + 0x4]       ; 00604d39
+    MOV dword ptr [EDI + 0x4],ECX       ; 00604d3c
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00604d3f
+    MOV dword ptr [EDI + 0x8],ECX       ; 00604d42
+    MOV ECX,dword ptr [ESI + 0xc]       ; 00604d45
+    MOV dword ptr [EDI + 0xc],ECX       ; 00604d48
+    ADD ESI,0x10                        ; 00604d4b
+    ADD EDI,0x10                        ; 00604d4e
+    JMP 0x0048d959                      ; 00604d51
+        ;   XREF to: 0048d959 (UNCONDITIONAL_JUMP)  ; LAB_0048d959
 

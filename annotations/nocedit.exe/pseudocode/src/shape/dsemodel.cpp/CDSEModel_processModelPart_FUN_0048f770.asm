@@ -15,10 +15,6 @@
 ;   shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70 at 0053ef12
 ;
 ; Referenced Globals:
-;   SVertexData[20000] g_LoadedVertices
-;   undefined4 g_LoadedVertices[0].vertex.y
-;   undefined4 g_LoadedVertices[0].vertex.z
-;   undefined4 g_LoadedVertices[0].u
 ;   undefined4 g_LoadedVertices[0].v
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
@@ -215,12 +211,10 @@ section .text
     IMUL EAX,dword ptr [EBP + -0x8],0x14 ; 0048f93b
     ADD EAX,dword ptr [EBP + 0x14]      ; 0048f93f
     LEA EDI,[EAX + 0x4]                 ; 0048f942
-    LEA ESI,[ESI + 0x162640c]           ; 0048f945 | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0048f94b | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0048f94c | g_LoadedVertices[0].vertex.y
-    MOVSD ES:EDI,ESI                    ; 0048f94d | g_LoadedVertices[0].vertex.z
-    MOVSD ES:EDI,ESI                    ; 0048f94e | g_LoadedVertices[0].u
+    JMP 0x00604def                      ; 0048f945
+        ;   XREF to: 00604def (UNCONDITIONAL_JUMP)  ; LAB_00604def
     MOVSD ES:EDI,ESI                    ; 0048f94f | g_LoadedVertices[0].v
+        ;   Label: LAB_0048f94f
     JMP 0x0048f91e                      ; 0048f950
         ;   XREF to: 0048f91e (UNCONDITIONAL_JUMP)  ; LAB_0048f91e
     MOV ESP,EBP                         ; 0048f952
@@ -230,4 +224,18 @@ section .text
     POP ESI                             ; 0048f956
     POP EBX                             ; 0048f957
     RET                                 ; 0048f958
+    LEA ESI,[ESI + 0x162640c]           ; 00604def
+        ;   Label: LAB_00604def
+    MOV ECX,dword ptr [ESI]             ; 00604df5
+    MOV dword ptr [EDI],ECX             ; 00604df7
+    MOV ECX,dword ptr [ESI + 0x4]       ; 00604df9
+    MOV dword ptr [EDI + 0x4],ECX       ; 00604dfc
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00604dff
+    MOV dword ptr [EDI + 0x8],ECX       ; 00604e02
+    MOV ECX,dword ptr [ESI + 0xc]       ; 00604e05
+    MOV dword ptr [EDI + 0xc],ECX       ; 00604e08
+    ADD ESI,0x10                        ; 00604e0b
+    ADD EDI,0x10                        ; 00604e0e
+    JMP 0x0048f94f                      ; 00604e11
+        ;   XREF to: 0048f94f (UNCONDITIONAL_JUMP)  ; LAB_0048f94f
 

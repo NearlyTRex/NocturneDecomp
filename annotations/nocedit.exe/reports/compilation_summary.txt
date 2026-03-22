@@ -5,15 +5,15 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6452
-Successful: 5850 (90.7%)
-Failed: 602
+Successful: 5849 (90.7%)
+Failed: 603
 
 ERROR CATEGORIES
 --------------------------------------------------
   other                           1224
-  format_error                     797
+  format_error                     793
   incompatible_types               213
-  undeclared_identifier            139
+  undeclared_identifier            140
   syntax_error                      41
   missing_member                    20
   type_error                        10
@@ -82,13 +82,13 @@ CATEGORY: other (1224 errors)
     Line 1382: cannot cast from type 'float' to pointer type 'CDemonActor *'...
   core_set.cpp_CDemonSet_processActors_FUN_0056b810
     Line 69: cannot cast from type 'float' to pointer type 'CPathMap *'...
-  core_platfrm.cpp_CPlatform_process_FUN_0054cc30
-    Line 276: cannot cast from type 'float' to pointer type 'CVector3f *'...
+  core_xform.cpp_multiplyQuaternion_FUN_005f7640
+    Line 62: cannot cast from type 'float' to pointer type 'CQuaternion4f *'...
 
   ... and 268 more errors
 
 ====================================================================================================
-CATEGORY: format_error (797 errors)
+CATEGORY: format_error (793 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -152,7 +152,7 @@ CATEGORY: format_error (797 errors)
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
     Line 35: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Wer...
 
-  ... and 236 more errors
+  ... and 235 more errors
 
 ====================================================================================================
 CATEGORY: incompatible_types (213 errors)
@@ -222,7 +222,7 @@ CATEGORY: incompatible_types (213 errors)
   ... and 88 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (139 errors)
+CATEGORY: undeclared_identifier (140 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -286,7 +286,7 @@ CATEGORY: undeclared_identifier (139 errors)
   shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0
     Line 28: use of undeclared identifier 'code'...
 
-  ... and 46 more errors
+  ... and 47 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (41 errors)
@@ -413,8 +413,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.75
-Average suspects in failed compilations: 7.95
+Average suspects in successfully compiled functions: 1.74
+Average suspects in failed compilations: 7.90
 
-Functions that compile but have suspect patterns: 1443
+Functions that compile but have suspect patterns: 1438
 (These may have runtime issues even though syntax is valid)

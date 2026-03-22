@@ -15,9 +15,6 @@
 ; XREF[1]:
 ;   crt_stdio.c_sscanf_FUN_0060013c at 00600154
 ;
-; Referenced Globals:
-;   undefined4 SUB_00604950
-;
 ; *****************************************************************************
 
 section .text
@@ -39,7 +36,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EDX       ; 00600126
     MOV dword ptr [ESP + 0x10],EBX      ; 0060012a
     CALL 0x00604950                     ; 0060012e
-        ;   XREF to: 00604950 (UNCONDITIONAL_CALL)  ; SUB_00604950
+        ;   XREF to: 00604950 (UNCONDITIONAL_CALL)  ; LAB_0060494f+1
     ADD ESP,0xc                         ; 00600133
     ADD ESP,0x14                        ; 00600136
     POP ESI                             ; 00600139

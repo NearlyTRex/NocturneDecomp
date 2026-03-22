@@ -3704,6 +3704,16 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
 
         func_name = os.path.basename(asm_path).replace('.asm', '')
 
+        # Collect branch targets for safety validation
+        RE_BRANCH_TGT = re.compile(
+            r'^(?:JMP|JZ|JNZ|JE|JNE|JL|JG|JLE|JGE|JA|JB|JAE|JBE|JC|JNC|JS|JNS|'
+            r'JO|JNO|JP|JNP)\s+(?:.*\s)?0x([0-9a-fA-F]+)', re.IGNORECASE)
+        jump_targets = set()
+        for _, text in instructions:
+            m = RE_BRANCH_TGT.match(text)
+            if m:
+                jump_targets.add(int(m.group(1), 16))
+
         # Find 4x MOVSD groups
         i = 0
         while i < len(instructions) - 3:
@@ -3745,10 +3755,19 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                     before_idx -= 1
 
                 if total_size >= 5:
-                    # ~37 bytes per cave entry (22 copy + 6 esi/edi adj + ~4 borrowed + 5 jmp)
-                    cave_est = 37
-                    fixable_sites.append((func_name, group_addr, total_size, cave_est))
-                    total_cave_needed += cave_est
+                    # Check for jump targets landing inside the patch range
+                    site_start = group_addr
+                    site_end = group_addr + total_size
+                    has_internal_target = any(
+                        site_start < t < site_end for t in jump_targets)
+                    if has_internal_target:
+                        unfixable_sites.append((func_name, group_addr,
+                                               'branch target inside patch range'))
+                    else:
+                        # ~37 bytes per cave entry (22 copy + 6 esi/edi adj + ~4 borrowed + 5 jmp)
+                        cave_est = 37
+                        fixable_sites.append((func_name, group_addr, total_size, cave_est))
+                        total_cave_needed += cave_est
                 else:
                     unfixable_sites.append((func_name, group_addr,
                                            'only %d bytes available (need 5)' % total_size))

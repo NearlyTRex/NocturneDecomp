@@ -752,9 +752,9 @@ support_trisock.cpp_bindSocket_FUN_005e1b80,005e1b80,support/trisock.cpp,10,0,,1
 support_trisock.cpp_parseIPComponents_FUN_005e1800,005e1800,support/trisock.cpp,18,0,,18
 support_trisock.cpp_formatSocketAddress_FUN_005e1a30,005e1a30,support/trisock.cpp,21,2,pointer_cast,46
 support_trisock.cpp_staticInit_FUN_005e16b0,005e16b0,support/trisock.cpp,6,0,,6
-support_trisock.cpp_connectSocket_FUN_005e1bd0,005e1bd0,support/trisock.cpp,26,5,pointer_cast|stack_alignment_array,86
+support_trisock.cpp_connectSocket_FUN_005e1bd0,005e1bd0,support/trisock.cpp,13,0,,13
 support_trisock.cpp_buildIPAddressOrDie_FUN_005e1750,005e1750,support/trisock.cpp,13,0,,13
-support_trisock.cpp_buildSockaddrIn_FUN_005e19d0,005e19d0,support/trisock.cpp,23,3,param_count_too_many|pointer_cast|stack_alignment_array,68
+support_trisock.cpp_buildSockaddrIn_FUN_005e19d0,005e19d0,support/trisock.cpp,20,1,param_count_too_many,35
 support_trisock.cpp_copyIPAddress_FUN_005e16f0,005e16f0,support/trisock.cpp,5,0,,5
 support_trisock.cpp_shouldNeverBeCalled_FUN_005e1a80,005e1a80,support/trisock.cpp,7,0,,7
 support_trisock.cpp_convertSockAddr_FUN_005e1960,005e1960,support/trisock.cpp,16,0,,16
@@ -1382,7 +1382,7 @@ engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0,0048c8d0,eng
 engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50,0048dc50,engine/drender.cpp,23,1,pointer_cast,38
 engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970,0048b970,engine/drender.cpp,61,2,pointer_cast,86
 engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50,0048ab50,engine/drender.cpp,34,0,,34
-engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0,0048d8a0,engine/drender.cpp,71,1,pointer_cast,86
+engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0,0048d8a0,engine/drender.cpp,65,0,,65
 engine_drender.cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420,0048b420,engine/drender.cpp,57,2,pointer_cast,82
 engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960,0048c960,engine/drender.cpp,5,0,,5
 engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0,0048caf0,engine/drender.cpp,166,21,pointer_cast,381
@@ -1502,7 +1502,7 @@ sound_snddx.cpp_staticInit_FUN_005ade60,005ade60,sound/snddx.cpp,5,0,,5
 sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440,005b0440,sound/snddx.cpp,79,0,,79
 sound_snddx.cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_005aef10,005aef10,sound/snddx.cpp,10,0,,10
 sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830,005ae830,sound/snddx.cpp,152,6,decompiler_intrinsic|unresolved_funcptr|warning_inlined_function|warning_max_restarts,232
-sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120,005b0120,sound/snddx.cpp,87,2,pointer_cast|warning_max_restarts,117
+sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120,005b0120,sound/snddx.cpp,87,1,warning_max_restarts,102
 sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50,005aed50,sound/snddx.cpp,45,0,,45
 sound_snddx.cpp_fillStreamBuffer_FUN_005adff0,005adff0,sound/snddx.cpp,62,1,pointer_cast,77
 sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60,005afd60,sound/snddx.cpp,30,0,,30
@@ -1850,7 +1850,7 @@ core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00,0053fd00,core/netgame.cpp,183,
 core_netgame.cpp_CNetGame_init_FUN_0053f780,0053f780,core/netgame.cpp,33,0,,33
 core_netgame.cpp_matchPacketHeader_FUN_00543ad0,00543ad0,core/netgame.cpp,7,0,,7
 core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0,005412b0,core/netgame.cpp,47,1,pointer_cast,62
-core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470,00542470,core/netgame.cpp,276,16,pointer_cast|stack_alignment_array,446
+core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470,00542470,core/netgame.cpp,272,15,pointer_cast|stack_alignment_array,432
 core_netgame.cpp_CNetGame_processPacket_FUN_005406a0,005406a0,core/netgame.cpp,422,11,pointer_cast|warning_unreachable,542
 core_netgame.cpp_CNetGame_setMode12_FUN_00543b90,00543b90,core/netgame.cpp,6,0,,6
 core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0053f860,0053f860,core/netgame.cpp,30,0,,30
@@ -1954,7 +1954,7 @@ core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044f290,0044f29
 core_dcamera.cpp_resetFogSamplingOffset_FUN_0044bb70,0044bb70,core/dcamera.cpp,7,0,,7
 core_dcamera.cpp_generateFogGrid_FUN_0044bba0,0044bba0,core/dcamera.cpp,84,0,,84
 core_dcamera.cpp_CDemonCamera_ctor_FUN_0044c030,0044c030,core/dcamera.cpp,14,0,,14
-core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10,0044de10,core/dcamera.cpp,199,14,pointer_cast|stack_alignment_array,349
+core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10,0044de10,core/dcamera.cpp,198,13,pointer_cast|stack_alignment_array,338
 core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70,00453a70,core/dcamera.cpp,44,1,param_count_too_many,59
 core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0,004528e0,core/dcamera.cpp,7,3,decompiler_intrinsic|warning_inlined_function,47
 core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600,0044d600,core/dcamera.cpp,76,2,pointer_cast|stack_alignment_array,106
@@ -2259,12 +2259,12 @@ core_zombie.cpp_CZombie_resetChaseState_FUN_005fca10,005fca10,core/zombie.cpp,31
 core_zombie.cpp_staticInit_FUN_005f8c90,005f8c90,core/zombie.cpp,7,0,,7
 core_icepick.cpp_factoryFunc_FUN_004f7db0,004f7db0,core/icepick.cpp,10,0,,10
 core_icepick.cpp_CIcePick_isWeaponDrawn_FUN_004f9760,004f9760,core/icepick.cpp,4,0,,4
-core_icepick.cpp_CIcePick_process_FUN_004f80b0,004f80b0,core/icepick.cpp,323,6,pointer_cast|stack_alignment_array|warning_unreachable,398
+core_icepick.cpp_CIcePick_process_FUN_004f80b0,004f80b0,core/icepick.cpp,315,2,stack_alignment_array|warning_unreachable,345
 core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970,004f8970,core/icepick.cpp,54,2,decompiler_intrinsic|warning_type_propagation,84
 core_icepick.cpp_staticInit_FUN_004f7d80,004f7d80,core/icepick.cpp,7,0,,7
 core_icepick.cpp_CIcePick_ctor_FUN_004f7df0,004f7df0,core/icepick.cpp,18,0,,18
 core_icepick.cpp_CIcePick_getActorType_FUN_004f7de0,004f7de0,core/icepick.cpp,4,0,,4
-core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810,004f8810,core/icepick.cpp,67,5,pointer_cast|stack_alignment_array,127
+core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810,004f8810,core/icepick.cpp,58,1,stack_alignment_array,73
 core_icepick.cpp_CIcePick_getPropertyList_FUN_004f97a0,004f97a0,core/icepick.cpp,5,0,,5
 core_icepick.cpp_CIcePick_performMeleeAttack_FUN_004f9490,004f9490,core/icepick.cpp,51,0,,51
 core_icepick.cpp_CIcePick_renderOpaque_FUN_004f95a0,004f95a0,core/icepick.cpp,5,0,,5
@@ -2686,7 +2686,7 @@ core_setedit.cpp_CDemonSet_deleteCamera_FUN_0057e430,0057e430,core/setedit.cpp,1
 core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0,005801b0,core/setedit.cpp,48,1,pointer_cast,63
 core_setedit.cpp_showVdirBoxEditorHelp_FUN_00582f30,00582f30,core/setedit.cpp,25,0,,25
 core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0,00576da0,core/setedit.cpp,175,0,,175
-core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80,00578d80,core/setedit.cpp,677,6,pointer_cast|stack_alignment_array,747
+core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80,00578d80,core/setedit.cpp,673,3,pointer_cast|stack_alignment_array,713
 core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0,005800d0,core/setedit.cpp,53,9,pointer_cast|stack_alignment_array,153
 core_setedit.cpp_loadGroundTypes_FUN_00578420,00578420,core/setedit.cpp,91,0,,91
 core_setedit.cpp_blitThumbnailToScreen_FUN_00577430,00577430,core/setedit.cpp,98,6,pointer_cast,163
@@ -2735,7 +2735,7 @@ core_setedit.cpp_pickRoomSize_FUN_00581450,00581450,core/setedit.cpp,20,0,,20
 core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00,0057fd00,core/setedit.cpp,113,8,pointer_cast|stack_alignment_array,203
 core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0,00577af0,core/setedit.cpp,211,6,pointer_cast,276
 core_setedit.cpp_findGroundTextureIndex_FUN_005781a0,005781a0,core/setedit.cpp,21,0,,21
-core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600,0057b600,core/setedit.cpp,135,0,,135
+core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600,0057b600,core/setedit.cpp,136,0,,136
 core_script.cpp_CScript_initEditorLayout_FUN_00566660,00566660,core/script.cpp,47,0,,47
 core_script.cpp_getActor_FUN_005594e0,005594e0,core/script.cpp,72,0,,72
 core_script.cpp_CScript_findLabelIndex_FUN_00560160,00560160,core/script.cpp,26,0,,26
@@ -2904,7 +2904,7 @@ core_xform.cpp_determinant_FUN_005f61c0,005f61c0,core/xform.cpp,9,0,,9
 core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00,005f7e00,core/xform.cpp,47,4,decompiler_intrinsic,92
 core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690,005f6690,core/xform.cpp,122,6,decompiler_intrinsic,187
 core_xform.cpp_clipPolygonStage1_FUN_005f7ed0,005f7ed0,core/xform.cpp,94,14,decompiler_intrinsic|pointer_cast|unknown_field|warning_unreachable,254
-core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700,005f7700,core/xform.cpp,19,4,pointer_cast|stack_alignment_array,69
+core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700,005f7700,core/xform.cpp,15,1,stack_alignment_array,30
 core_xform.cpp_inverseInPlace_FUN_005f6190,005f6190,core/xform.cpp,17,2,pointer_cast,42
 core_xform.cpp_quaternionFromAngleY_FUN_005f79f0,005f79f0,core/xform.cpp,12,3,decompiler_intrinsic|param_count_too_many,52
 core_xform.cpp_buildRotationY_FUN_005f6cc0,005f6cc0,core/xform.cpp,31,2,decompiler_intrinsic,56
@@ -2912,7 +2912,7 @@ core_xform.cpp_computeOrthogonalityError_FUN_005f6460,005f6460,core/xform.cpp,54
 core_xform.cpp_setRotationScaleIdentity_FUN_005f5190,005f5190,core/xform.cpp,13,0,,13
 core_xform.cpp_matrixToEulerAngles_FUN_005f5690,005f5690,core/xform.cpp,172,25,decompiler_intrinsic|sub84_truncation,432
 core_xform.cpp_buildRotationX_FUN_005f6c40,005f6c40,core/xform.cpp,30,3,decompiler_intrinsic|param_count_too_many,70
-core_xform.cpp_negateFirstComponent_FUN_005f75e0,005f75e0,core/xform.cpp,14,1,param_count_too_many,29
+core_xform.cpp_negateFirstComponent_FUN_005f75e0,005f75e0,core/xform.cpp,17,1,param_count_too_many,32
 core_xform.cpp_buildRotationZ_FUN_005f6d40,005f6d40,core/xform.cpp,27,2,decompiler_intrinsic,52
 core_xform.cpp_transformVector3x3_FUN_005f4eb0,005f4eb0,core/xform.cpp,13,0,,13
 core_xform.cpp_setIdentityMatrix3x4_FUN_005f5100,005f5100,core/xform.cpp,16,0,,16
@@ -2933,13 +2933,13 @@ core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0,005f6fa0,core/xform.cpp,27,1,param_
 core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70,005f7a70,core/xform.cpp,18,3,decompiler_intrinsic|param_count_too_many,58
 core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0,005f5bd0,core/xform.cpp,166,25,decompiler_intrinsic|sub84_truncation,426
 core_xform.cpp_slerpQuaternion_FUN_005f77e0,005f77e0,core/xform.cpp,67,6,decompiler_intrinsic|param_count_too_many|warning_inlined_function,142
-core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70,005f7b70,core/xform.cpp,25,4,pointer_cast|stack_alignment_array,75
+core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70,005f7b70,core/xform.cpp,20,0,,20
 core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10,005f4f10,core/xform.cpp,32,1,param_count_too_many,47
 core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0,005f7ac0,core/xform.cpp,7,0,,7
 core_xform.cpp_buildTranslationMatrix_FUN_005f6dc0,005f6dc0,core/xform.cpp,21,0,,21
 core_xform.cpp_multiplyMatrix3x4InPlace_FUN_005f50c0,005f50c0,core/xform.cpp,20,2,pointer_cast,45
 core_xform.cpp_somebodyWriteMe_FUN_005f5160,005f5160,core/xform.cpp,7,0,,7
-core_xform.cpp_multiplyQuaternion_FUN_005f7640,005f7640,core/xform.cpp,57,1,param_count_too_many,72
+core_xform.cpp_multiplyQuaternion_FUN_005f7640,005f7640,core/xform.cpp,59,1,param_count_too_many,74
 core_xform.cpp_clipPolygonStage4_FUN_005f8330,005f8330,core/xform.cpp,95,14,decompiler_intrinsic|pointer_cast|unknown_field|warning_unreachable,255
 core_xform.cpp_clampClippedVertices_FUN_005f84a0,005f84a0,core/xform.cpp,46,0,,46
 core_xform.cpp_clipPolygonStage2_FUN_005f8040,005f8040,core/xform.cpp,94,14,decompiler_intrinsic|pointer_cast|unknown_field|warning_unreachable,254
@@ -2948,7 +2948,7 @@ core_xform.cpp_hasNegativeDeterminant_FUN_005f6be0,005f6be0,core/xform.cpp,8,0,,
 core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280,005f7280,core/xform.cpp,33,0,,33
 core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40,005f7d40,core/xform.cpp,47,4,decompiler_intrinsic,92
 core_xform.cpp_quaternionToAxisAngle_FUN_005f7730,005f7730,core/xform.cpp,36,1,decompiler_intrinsic,51
-core_xform.cpp_eulerToQuaternion_FUN_005f7b20,005f7b20,core/xform.cpp,26,5,param_count_too_many|pointer_cast|stack_alignment_array,91
+core_xform.cpp_eulerToQuaternion_FUN_005f7b20,005f7b20,core/xform.cpp,21,1,param_count_too_many,36
 core_xform.cpp_quaternionFromAngleX_FUN_005f79b0,005f79b0,core/xform.cpp,12,3,decompiler_intrinsic|param_count_too_many,52
 core_barrier.cpp_CBarrier_dtor_FUN_00414670,00414670,core/barrier.cpp,16,0,,16
 core_barrier.cpp_CBarrier_ctor_FUN_004141c0,004141c0,core/barrier.cpp,12,0,,12
@@ -3072,7 +3072,7 @@ core_mobster.cpp_staticInit_FUN_00525070,00525070,core/mobster.cpp,7,0,,7
 core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_00526b20,00526b20,core/mobster.cpp,93,3,pointer_cast|warning_type_propagation,133
 core_mobster.cpp_CMobster_playTaunt_FUN_005279f0,005279f0,core/mobster.cpp,61,0,,61
 core_mobster.cpp_getObjectGrabPointWorld_FUN_00525110,00525110,core/mobster.cpp,17,0,,17
-core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0,005267a0,core/mobster.cpp,147,12,decompiler_intrinsic|pointer_cast|stack_alignment_array|warning_type_propagation,287
+core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0,005267a0,core/mobster.cpp,137,8,decompiler_intrinsic|pointer_cast|stack_alignment_array|warning_type_propagation,237
 core_mobster.cpp_CMobster_dtor_FUN_00527c70,00527c70,core/mobster.cpp,35,6,decompiler_intrinsic,100
 core_mobster.cpp_CMobster_processDismemberment_FUN_00527380,00527380,core/mobster.cpp,132,1,warning_type_propagation,147
 core_mobster.cpp_getObjectGrabPointLocal_FUN_005250a0,005250a0,core/mobster.cpp,11,0,,11
@@ -3365,7 +3365,7 @@ core_actor.cpp_crc32ProcessInt_FUN_0040cf50,0040cf50,core/actor.cpp,5,0,,5
 core_actor.cpp_CActorPropertyList_addFlags_FUN_0040e6a0,0040e6a0,core/actor.cpp,8,0,,8
 core_actor.cpp_matchClassExpression_FUN_0040c610,0040c610,core/actor.cpp,53,0,,53
 core_actor.cpp_CActorPropertyList_addRuleList_FUN_0040e5a0,0040e5a0,core/actor.cpp,26,1,unnamed_param,41
-core_actor.cpp_draw3DLineSegment_FUN_0040d330,0040d330,core/actor.cpp,83,28,byvalue_struct_passing|decompiler_intrinsic|pointer_cast|stack_param|stack_ref|unknown_field,393
+core_actor.cpp_draw3DLineSegment_FUN_0040d330,0040d330,core/actor.cpp,137,11,byvalue_struct_passing|decompiler_intrinsic|pointer_cast|stack_ref,267
 core_actor.cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408fd0,00408fd0,core/actor.cpp,7,0,,7
 core_actor.cpp_CDemonActor_allowBulletHoles_FUN_004098a0,004098a0,core/actor.cpp,6,0,,6
 core_actor.cpp_crc32ProcessByte_FUN_0040ce30,0040ce30,core/actor.cpp,61,0,,61
@@ -3956,7 +3956,7 @@ core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190,0056a190,core/set.cpp,10
 core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_00570c60,00570c60,core/set.cpp,5,0,,5
 core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0,0056e3e0,core/set.cpp,53,8,decompiler_intrinsic|pointer_cast|warning_inlined_function,148
 core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0,0056d4a0,core/set.cpp,261,19,decompiler_intrinsic|displaced_global_access|pointer_cast,466
-core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470,0056a470,core/set.cpp,166,6,pointer_cast|stack_alignment_array,236
+core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470,0056a470,core/set.cpp,161,3,pointer_cast,196
 core_set.cpp_CDemonSet_buildMirrorList_FUN_00570b70,00570b70,core/set.cpp,39,0,,39
 core_set.cpp_CDemonSet_saveStateInfo_FUN_005711b0,005711b0,core/set.cpp,19,0,,19
 core_set.cpp_CDemonSet_loadMasterLightStates_FUN_00571130,00571130,core/set.cpp,16,0,,16
@@ -3969,7 +3969,7 @@ core_set.cpp_qsortByDisplayListEntry_FUN_0056fba0,0056fba0,core/set.cpp,10,0,,10
 core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0,0056e5d0,core/set.cpp,93,0,,93
 core_set.cpp_computeTriangleNormal_FUN_0056e180,0056e180,core/set.cpp,34,0,,34
 core_set.cpp_CVector3f_equals_FUN_00571410,00571410,core/set.cpp,7,0,,7
-core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50,0056ae50,core/set.cpp,310,9,decompiler_intrinsic|pointer_cast,410
+core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50,0056ae50,core/set.cpp,307,8,decompiler_intrinsic|pointer_cast,397
 core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0,005708e0,core/set.cpp,30,0,,30
 core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20,00570e20,core/set.cpp,9,0,,9
 core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00570e60,00570e60,core/set.cpp,17,0,,17
@@ -4041,7 +4041,7 @@ core_conveyor.cpp_factoryFunc_FUN_00441c60,00441c60,core/conveyor.cpp,10,0,,10
 core_conveyor.cpp_CConveyor_archive_FUN_00442020,00442020,core/conveyor.cpp,14,0,,14
 core_conveyor.cpp_CConveyor_getPropertyList_FUN_00442130,00442130,core/conveyor.cpp,17,0,,17
 core_conveyor.cpp_CConveyor_dtor_FUN_00442310,00442310,core/conveyor.cpp,18,1,decompiler_intrinsic,33
-core_conveyor.cpp_CConveyor_setup_FUN_00441d60,00441d60,core/conveyor.cpp,45,6,pointer_cast|stack_alignment_array,115
+core_conveyor.cpp_CConveyor_setup_FUN_00441d60,00441d60,core/conveyor.cpp,42,3,pointer_cast|stack_alignment_array,82
 core_conveyor.cpp_CPlatform_dtor_FUN_00442380,00442380,core/conveyor.cpp,18,1,decompiler_intrinsic,33
 core_conveyor.cpp_CConveyor_processInEditor_FUN_004421c0,004421c0,core/conveyor.cpp,41,0,,41
 core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0,00441ca0,core/conveyor.cpp,40,0,,40
@@ -4724,11 +4724,11 @@ core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0,0059e0a0,co
 core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210,005a0210,core/skeleton.cpp,12,0,,12
 core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0,0059f6e0,core/skeleton.cpp,33,2,pointer_cast,58
 core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0,005a10e0,core/skeleton.cpp,24,0,,24
-core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750,0059f750,core/skeleton.cpp,47,4,pointer_cast|stack_alignment_array,97
+core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750,0059f750,core/skeleton.cpp,43,1,stack_alignment_array,58
 core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0,0059dca0,core/skeleton.cpp,49,2,pointer_cast,74
 core_skeleton.cpp_CDeformableModelInstance_renderSkeleton_FUN_005a17b0,005a17b0,core/skeleton.cpp,10,0,,10
 core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450,005a0450,core/skeleton.cpp,7,0,,7
-core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0,005a15e0,core/skeleton.cpp,68,4,pointer_cast,113
+core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0,005a15e0,core/skeleton.cpp,68,2,pointer_cast,93
 core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780,0059a780,core/skeleton.cpp,29,0,,29
 core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0,0059b5a0,core/skeleton.cpp,27,6,pointer_cast,92
 core_skeleton.cpp_CDeformableModel_renderBones_FUN_0059b800,0059b800,core/skeleton.cpp,33,3,decompiler_intrinsic,68
@@ -4766,11 +4766,11 @@ core_skeleton.cpp_staticInit_FUN_00599670,00599670,core/skeleton.cpp,8,0,,8
 core_skeleton.cpp_CVector3f_arrdtor_FUN_005a1ff0,005a1ff0,core/skeleton.cpp,6,0,,6
 core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950,005a1950,core/skeleton.cpp,78,4,pointer_cast,123
 core_skeleton.cpp_CDeformableModel_computeFarthestChildBones_FUN_0059dbe0,0059dbe0,core/skeleton.cpp,39,1,decompiler_intrinsic,54
-core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0,005a0ad0,core/skeleton.cpp,70,2,pointer_cast|stack_alignment_array,100
+core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0,005a0ad0,core/skeleton.cpp,68,2,stack_alignment_array|stack_ref,98
 core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_0059a140,0059a140,core/skeleton.cpp,4,0,,4
 core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160,005a1160,core/skeleton.cpp,87,2,decompiler_intrinsic,112
 core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510,0059a510,core/skeleton.cpp,67,0,,67
-core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70,005a1b70,core/skeleton.cpp,66,4,pointer_cast|stack_alignment_array,116
+core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70,005a1b70,core/skeleton.cpp,62,1,stack_alignment_array,77
 core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250,005a0250,core/skeleton.cpp,15,0,,15
 core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0059ab20,0059ab20,core/skeleton.cpp,6,0,,6
 core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0,005a16c0,core/skeleton.cpp,47,0,,47
@@ -4800,7 +4800,7 @@ core_skeleton.cpp_CVector3f_arrdtor_FUN_005a2010,005a2010,core/skeleton.cpp,6,0,
 core_skeleton.cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0,005a03b0,core/skeleton.cpp,14,0,,14
 core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040,005a1040,core/skeleton.cpp,25,0,,25
 core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00,0059aa00,core/skeleton.cpp,47,0,,47
-core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510,005a1510,core/skeleton.cpp,69,4,pointer_cast,114
+core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510,005a1510,core/skeleton.cpp,68,2,pointer_cast,93
 core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0,0059cba0,core/skeleton.cpp,86,4,pointer_cast|stack_ref,136
 core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0,0059ddc0,core/skeleton.cpp,19,13,decompiler_intrinsic,154
 core_skeleton.cpp_CDeformableModel_getBonePart_FUN_0059c2d0,0059c2d0,core/skeleton.cpp,7,0,,7
@@ -5017,7 +5017,7 @@ core_boneguy.cpp_CBoneGuy_getPropertyList_FUN_0041d990,0041d990,core/boneguy.cpp
 core_boneguy.cpp_rgbToHsv_FUN_0041b860,0041b860,core/boneguy.cpp,58,0,,58
 core_boneguy.cpp_SBoneGuyBox_dtor_FUN_0041db20,0041db20,core/boneguy.cpp,4,0,,4
 core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40,0041ca40,core/boneguy.cpp,84,5,pointer_cast|warning_type_propagation,144
-core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041d8a0,0041d8a0,core/boneguy.cpp,48,5,pointer_cast|stack_alignment_array|warning_type_propagation,113
+core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041d8a0,0041d8a0,core/boneguy.cpp,44,2,stack_alignment_array|warning_type_propagation,74
 core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90,0041bf90,core/boneguy.cpp,443,7,decompiler_intrinsic|pointer_cast|stack_alignment_array|warning_type_propagation,533
 core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_0041b770,0041b770,core/boneguy.cpp,17,0,,17
 core_boneguy.cpp_SBoneGuyBox_arrdtor_FUN_0041db30,0041db30,core/boneguy.cpp,6,0,,6
@@ -5397,7 +5397,7 @@ core_course.cpp_CCourse_free_FUN_004426c0,004426c0,core/course.cpp,14,1,negative
 core_course.cpp_renderCoursePoint_FUN_004436d0,004436d0,core/course.cpp,28,0,,28
 core_course.cpp_CCourse_showEditorMenu_FUN_00443040,00443040,core/course.cpp,296,15,pointer_cast|stack_alignment_array,456
 core_course.cpp_CCourse_ctor_FUN_004424c0,004424c0,core/course.cpp,7,0,,7
-core_course.cpp_CCourse_importMatrices_FUN_00442ea0,00442ea0,core/course.cpp,70,4,pointer_cast|stack_alignment_array,120
+core_course.cpp_CCourse_importMatrices_FUN_00442ea0,00442ea0,core/course.cpp,61,0,,61
 core_course.cpp_CCourse_importCRS_FUN_00442d70,00442d70,core/course.cpp,37,0,,37
 core_course.cpp_CCourse_evaluate_FUN_00442710,00442710,core/course.cpp,34,2,pointer_cast,59
 core_course.cpp_CCourse_save_FUN_00442a90,00442a90,core/course.cpp,45,7,pointer_cast,120
@@ -5522,7 +5522,7 @@ core_menu.cpp_configureGraphicsOptions_FUN_00510c80,00510c80,core/menu.cpp,607,0
 core_menu.cpp_configureCustomKeys_FUN_00511890,00511890,core/menu.cpp,250,0,,250
 core_svetlana.cpp_CSvetlana_setup_FUN_005d88e0,005d88e0,core/svetlana.cpp,80,0,,80
 core_svetlana.cpp_staticInit_FUN_005d87e0,005d87e0,core/svetlana.cpp,7,0,,7
-core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0,005d8ba0,core/svetlana.cpp,304,6,pointer_cast|stack_alignment_array|warning_type_propagation,379
+core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0,005d8ba0,core/svetlana.cpp,296,2,stack_alignment_array|warning_type_propagation,326
 core_svetlana.cpp_CSvetlana_isWeaponDrawn_FUN_005d9ed0,005d9ed0,core/svetlana.cpp,4,0,,4
 core_svetlana.cpp_CSvetlana_processDamage_FUN_005d9d30,005d9d30,core/svetlana.cpp,63,1,decompiler_intrinsic,78
 core_svetlana.cpp_CSvetlana_getGrabbed_FUN_005d9ec0,005d9ec0,core/svetlana.cpp,4,0,,4
@@ -5885,7 +5885,7 @@ core_mimic.cpp_factoryFunc_FUN_0051f190,0051f190,core/mimic.cpp,10,0,,10
 core_mimic.cpp_CMimic_dtor_FUN_0051f2c0,0051f2c0,core/mimic.cpp,48,8,decompiler_intrinsic,133
 core_mimic.cpp_CMimic_process_FUN_0051f780,0051f780,core/mimic.cpp,65,0,,65
 core_mimic.cpp_CMimic_onActorDeleted_FUN_00520da0,00520da0,core/mimic.cpp,8,0,,8
-core_mimic.cpp_CMimic_updatePose_FUN_0051f930,0051f930,core/mimic.cpp,195,21,pointer_cast|warning_type_propagation,415
+core_mimic.cpp_CMimic_updatePose_FUN_0051f930,0051f930,core/mimic.cpp,192,19,pointer_cast|warning_type_propagation,392
 core_mimic.cpp_CMimic_getPropertyList_FUN_00520d10,00520d10,core/mimic.cpp,18,0,,18
 core_mimic.cpp_CMimic_getCollisionType_FUN_00520a00,00520a00,core/mimic.cpp,23,1,warning_type_propagation,38
 core_mimic.cpp_mirrorXTransform_FUN_0051f130,0051f130,core/mimic.cpp,10,0,,10
@@ -6327,7 +6327,7 @@ shape_meshlod.cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420,005164
 shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870,0051b870,shape/meshlod.cpp,10,0,,10
 shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030,0051a030,shape/meshlod.cpp,47,5,decompiler_intrinsic|pointer_cast|sub84_truncation,112
 shape_meshlod.cpp_getPreviousTriangleVertexIndex_FUN_0051eec0,0051eec0,shape/meshlod.cpp,7,0,,7
-shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570,0051b570,shape/meshlod.cpp,97,6,pointer_cast,162
+shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570,0051b570,shape/meshlod.cpp,92,6,pointer_cast,157
 shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0,0051bcc0,shape/meshlod.cpp,26,3,pointer_cast,61
 shape_design.c_scaleXYZ_FUN_00467f30,00467f30,shape/design.c,35,0,,35
 shape_design.c_qsortByOriginalIndex_FUN_004677c0,004677c0,shape/design.c,20,0,,20
@@ -6399,8 +6399,8 @@ shape_design.c_polygonReducer_FUN_004654e0,004654e0,shape/design.c,36,0,,36
 shape_design.c_calculateVertexNormals_FUN_0045be40,0045be40,shape/design.c,48,1,decompiler_intrinsic,63
 shape_design.c_mergePolygonsWithValidation_FUN_00465b40,00465b40,shape/design.c,28,1,decompiler_intrinsic,43
 shape_design.c_qsortCompareByField4Wrapper_FUN_00466210,00466210,shape/design.c,6,0,,6
-shape_design.c_duplicateSharedVertices_FUN_00465d50,00465d50,shape/design.c,57,0,,57
-shape_design.c_removeUnusedVertices_FUN_00463830,00463830,shape/design.c,66,2,pointer_cast,91
+shape_design.c_duplicateSharedVertices_FUN_00465d50,00465d50,shape/design.c,54,0,,54
+shape_design.c_removeUnusedVertices_FUN_00463830,00463830,shape/design.c,61,2,pointer_cast,86
 shape_design.c_showFacetPartEditorHelp_FUN_00460ac0,00460ac0,shape/design.c,121,0,,121
 shape_design.c_parseSpatialTreeFromFile_FUN_004580a0,004580a0,shape/design.c,37,3,decompiler_intrinsic|warning_inlined_function,77
 shape_design.c_getVertexCountFromModel_FUN_00468080,00468080,shape/design.c,14,1,pointer_cast,29
@@ -6432,7 +6432,7 @@ shape_design.c_weldNearbyVertices_FUN_00465c50,00465c50,shape/design.c,21,3,deco
 shape_design.c_scaleModel_FUN_00467e70,00467e70,shape/design.c,35,0,,35
 shape_design.c_showHelpFile_FUN_00457f00,00457f00,shape/design.c,30,0,,30
 shape_design.c_polygonTextureNameComparator_FUN_0045b850,0045b850,shape/design.c,14,0,,14
-shape_design.c_selectVertexToDelete_FUN_0045c5b0,0045c5b0,shape/design.c,55,0,,55
+shape_design.c_selectVertexToDelete_FUN_0045c5b0,0045c5b0,shape/design.c,52,0,,52
 shape_design.c_centerVerticesAroundPoint_FUN_0045ea90,0045ea90,shape/design.c,87,0,,87
 shape_design.c_sizeForStadium_FUN_00469c70,00469c70,shape/design.c,109,0,,109
 shape_design.c_writeBinaryTreeNode_FUN_00457fd0,00457fd0,shape/design.c,15,0,,15
@@ -6499,7 +6499,7 @@ shape_spotview.cpp_CSpotView_ctor_FUN_005b95c0,005b95c0,shape/spotview.cpp,22,0,
 shape_spotview.cpp_CSpotView_reset_FUN_005b9620,005b9620,shape/spotview.cpp,21,0,,21
 shape_spotview.cpp_CSpotView_handleInput_FUN_005b9670,005b9670,shape/spotview.cpp,109,0,,109
 shape_dsemodel.cpp_CDSEModel_convertVertex_FUN_0048f6f0,0048f6f0,shape/dsemodel.cpp,16,0,,16
-shape_dsemodel.cpp_CDSEModel_processModelPart_FUN_0048f770,0048f770,shape/dsemodel.cpp,72,1,pointer_cast,87
+shape_dsemodel.cpp_CDSEModel_processModelPart_FUN_0048f770,0048f770,shape/dsemodel.cpp,68,0,,68
 shape_dsemodel.cpp_CDSEModel_centerModel_FUN_0048fa50,0048fa50,shape/dsemodel.cpp,64,5,decompiler_intrinsic|sub84_truncation,124
 shape_dsemodel.cpp_CDSEModel_scaleX_FUN_0048fd70,0048fd70,shape/dsemodel.cpp,23,0,,23
 shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0,0048fed0,shape/dsemodel.cpp,61,1,pointer_cast,76
@@ -6775,7 +6775,7 @@ shape_superopt.cpp_CObj_weldVertices_FUN_005d4160,005d4160,shape/superopt.cpp,13
 shape_superopt.cpp_CObj_removeInvalidPolygons_FUN_005d46f0,005d46f0,shape/superopt.cpp,38,0,,38
 shape_superopt.cpp_CP2D_subtract_FUN_005d8350,005d8350,shape/superopt.cpp,10,0,,10
 shape_superopt.cpp_CP3D_isEqual_FUN_005d8670,005d8670,shape/superopt.cpp,8,0,,8
-shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0,005d64a0,shape/superopt.cpp,24,8,decompiler_intrinsic|pointer_cast|stack_alignment_array|unknown_field,124
+shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0,005d64a0,shape/superopt.cpp,11,7,decompiler_intrinsic|unknown_field,91
 shape_superopt.cpp_CPoly_hasSharedEdge_FUN_005d0e20,005d0e20,shape/superopt.cpp,20,0,,20
 shape_superopt.cpp_CObj_saveVertexPositions_FUN_005d3760,005d3760,shape/superopt.cpp,22,1,pointer_cast,37
 shape_superopt.cpp_CObj_setStateFlagIfCondition_FUN_005d34d0,005d34d0,shape/superopt.cpp,45,0,,45

@@ -1,6 +1,6 @@
 // Name: core_course.cpp_CCourse_importMatrices_FUN_00442ea0
 // Address: 00442ea0
-// Address Range: [[00442ea0, 0044303c]]
+// Address Range: [[00442ea0, 0044303c] [0060487f, 006048a0]]
 // Convention: __cdecl
 // Signature: void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_ptr,_FILE *file_handle,int count)
 
@@ -14,12 +14,7 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_p
   CCourseFrame *pCVar3;
   int iVar4;
   float local_e1;
-  uint *puVar5;
   float local_e2;
-  uint *puVar6;
-  uint *puVar7;
-  byte bVar8;
-  uint auStackY_1804 [1508];
   CMatrix3x3f local_58;
   float local_34;
   float local_30;
@@ -28,7 +23,6 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_p
   CVector3f local_18;
   float local_c;
   
-  bVar8 = 0;
   iVar4 = 0;
   core_course_cpp_CCourse_allocMemory_FUN_00442500(this_ptr,count);
   if (this_ptr->len < 1) {
@@ -68,13 +62,10 @@ LAB_00442f35:
     core_xform_cpp_matrixToQuaternion_FUN_005f7420(&local_58,&local_28);
     pCVar1 = &this_ptr->frames[iVar4].orient;
     iVar4 = iVar4 + 1;
-    puVar6 = (uint *)((int)pCVar1 + ((uint)bVar8 * -2 + 1) * 4);
     pCVar1->w = local_28.w;
-    puVar7 = puVar6 + (uint)bVar8 * -2 + 1;
-    puVar5 = (uint *)((int)&local_28 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-    *puVar6 = *(uint *)((int)&local_28 + (uint)bVar8 * -8 + 4);
-    *puVar7 = *puVar5;
-    puVar7[(uint)bVar8 * -2 + 1] = puVar5[(uint)bVar8 * -2 + 1];
+    pCVar1->x = local_28.x;
+    pCVar1->y = local_28.y;
+    pCVar1->z = local_28.z;
   } while (iVar4 < this_ptr->len);
   return;
 }

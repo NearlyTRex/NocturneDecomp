@@ -12,7 +12,6 @@
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0 at 00433411
 ;
 ; Referenced Globals:
-;   undefined4 SUB_00604850
 ;   _FILE g_StdoutLogFile
 ;
 ; *****************************************************************************
@@ -29,7 +28,7 @@ section .text
     PUSH EDX                            ; 005ff0e1
     PUSH 0x684cde                       ; 005ff0e2 | g_StdoutLogFile
     CALL 0x00604850                     ; 005ff0e7
-        ;   XREF to: 00604850 (UNCONDITIONAL_CALL)  ; SUB_00604850
+        ;   XREF to: 00604850 (UNCONDITIONAL_CALL)  ; LAB_0060484d+3
     ADD ESP,0xc                         ; 005ff0ec
     ADD ESP,0x4                         ; 005ff0ef
     RET                                 ; 005ff0f2

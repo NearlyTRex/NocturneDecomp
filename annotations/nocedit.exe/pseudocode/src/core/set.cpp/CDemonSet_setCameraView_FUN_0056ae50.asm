@@ -53,7 +53,7 @@
 ;   SMRGLTextureBasic[24] g_SkyDomeTextureData
 ;   int g_UseExternalRenderer
 ;   float g_PerspectiveReciprocal
-;   ... and 32 more
+;   ... and 29 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -707,12 +707,10 @@ section .text
     MOV ESI,dword ptr [ESP + 0x164]     ; 0056b67e
     LEA EDI,[EDI + 0x32770b4]           ; 0056b685 | g_SpotLightBounds
     LEA ESI,[ESI + EBP*0x1 + 0x19c54]   ; 0056b68b
-    MOVSD ES:EDI,ESI                    ; 0056b692 | g_SpotLightBounds
-    MOVSD ES:EDI,ESI                    ; 0056b693 | g_SpotLightBounds[0].top
-    MOVSD ES:EDI,ESI                    ; 0056b694 | g_SpotLightBounds[0].right
-    MOVSD ES:EDI,ESI                    ; 0056b695 | g_SpotLightBounds[0].bottom
-    MOV EDI,dword ptr [0x03276f30]      ; 0056b696 | g_SpotLightCount
+    JMP 0x00604a35                      ; 0056b692
+        ;   XREF to: 00604a35 (UNCONDITIONAL_JUMP)  ; LAB_00604a35
     INC EDI                             ; 0056b69c
+        ;   Label: LAB_0056b69c
     MOV ESI,EAX                         ; 0056b69d
     MOV dword ptr [0x03276f30],EDI      ; 0056b69f | g_SpotLightCount
     JMP 0x0056b575                      ; 0056b6a5
@@ -801,4 +799,18 @@ section .text
     PUSH EDI                            ; 0056b784 | g_CSoundInstance
     JMP 0x0056b082                      ; 0056b785
         ;   XREF to: 0056b082 (UNCONDITIONAL_JUMP)  ; LAB_0056b082
+    MOV ECX,dword ptr [ESI]             ; 00604a35
+        ;   Label: LAB_00604a35
+    MOV dword ptr [EDI],ECX             ; 00604a37
+    MOV ECX,dword ptr [ESI + 0x4]       ; 00604a39
+    MOV dword ptr [EDI + 0x4],ECX       ; 00604a3c
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00604a3f
+    MOV dword ptr [EDI + 0x8],ECX       ; 00604a42
+    MOV ECX,dword ptr [ESI + 0xc]       ; 00604a45
+    MOV dword ptr [EDI + 0xc],ECX       ; 00604a48
+    ADD ESI,0x10                        ; 00604a4b
+    ADD EDI,0x10                        ; 00604a4e
+    MOV EDI,dword ptr [0x03276f30]      ; 00604a51 | g_SpotLightCount
+    JMP 0x0056b69c                      ; 00604a57
+        ;   XREF to: 0056b69c (UNCONDITIONAL_JUMP)  ; LAB_0056b69c
 

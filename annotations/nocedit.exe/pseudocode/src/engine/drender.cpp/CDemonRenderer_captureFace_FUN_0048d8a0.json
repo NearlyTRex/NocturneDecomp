@@ -5,18 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 132,
-    "complexity_score": 86,
+    "assembly_lines": 144,
+    "complexity_score": 65,
     "cross_reference_count": 4,
     "function_call_count": 2,
-    "global_count": 14,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 71,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 203
+    "global_count": 11,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 65,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 209
   },
   "cross_references": [
     {
@@ -50,6 +48,10 @@
       [
         "0048d8a0",
         "0048da11"
+      ],
+      [
+        "00604d30",
+        "00604d55"
       ]
     ],
     "convention": "__cdecl",
@@ -114,24 +116,6 @@
     {
       "addr": "02c6d600",
       "name": "g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "02c6d604",
-      "name": "g_CapturedFaces[0].face_data.vertex_indices.vertex_index_2",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "02c6d608",
-      "name": "g_CapturedFaces[0].face_data.u_coord_1",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "02c6d60c",
-      "name": "g_CapturedFaces[0].face_data.v_coord_0",
       "type": "undefined4",
       "value": null
     },
@@ -219,34 +203,35 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 7.156521739130435,
-    "instruction_count": 115,
+    "avg_pcode_per_instr": 6.609756097560975,
+    "instruction_count": 123,
     "opcode_distribution": {
       "BOOL_NEGATE": 42,
+      "BRANCH": 2,
       "CALL": 2,
       "CBRANCH": 8,
-      "COPY": 126,
+      "COPY": 122,
       "INT_ADD": 66,
-      "INT_AND": 164,
-      "INT_CARRY": 2,
-      "INT_EQUAL": 81,
+      "INT_AND": 168,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 85,
       "INT_LEFT": 16,
       "INT_LESS": 11,
-      "INT_MULT": 22,
+      "INT_MULT": 14,
       "INT_NOTEQUAL": 17,
       "INT_OR": 40,
       "INT_SBORROW": 11,
-      "INT_SCARRY": 5,
-      "INT_SLESS": 51,
-      "INT_SUB": 37,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 53,
+      "INT_SUB": 29,
       "INT_XOR": 13,
-      "INT_ZEXT": 10,
+      "INT_ZEXT": 2,
       "LOAD": 42,
-      "POPCOUNT": 35,
+      "POPCOUNT": 37,
       "RETURN": 4,
       "STORE": 18
     },
-    "pcode_op_count": 823
+    "pcode_op_count": 813
   },
   "stack_frame": {
     "frame_size": 16,
@@ -278,14 +263,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar9 = (uint *)((int)triangle_indices + (uint)bVar13 * -8 + 4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

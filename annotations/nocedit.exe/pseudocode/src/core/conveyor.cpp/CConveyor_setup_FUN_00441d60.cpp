@@ -1,6 +1,6 @@
 // Name: core_conveyor.cpp_CConveyor_setup_FUN_00441d60
 // Address: 00441d60
-// Address Range: [[00441d60, 00441dec]]
+// Address Range: [[00441d60, 00441dec] [00604858, 0060487e]]
 // Convention: __cdecl
 // Signature: void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_00441d60(CConveyor *this_ptr)
 
@@ -9,7 +9,6 @@
 void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_00441d60(CConveyor *this_ptr)
 
 {
-  uint *puVar1;
   uint *puVar4;
   uint *puVar5;
   uint *puVar6;
@@ -36,12 +35,10 @@ void __cdecl core_conveyor_cpp_CConveyor_setup_FUN_00441d60(CConveyor *this_ptr)
     (this_ptr->base).start_pos.z = (this_ptr->base).end_pos.z;
   }
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&(this_ptr->base).base.orient.vec,&local_1c);
-  puVar5 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x348);
   (this_ptr->base).end_orient.w = local_1c.w;
-  puVar1 = (uint *)((int)&local_1c + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-  *puVar5 = *(uint *)((int)&local_1c + (uint)bVar8 * -8 + 4);
-  puVar5[(uint)bVar8 * -2 + 1] = *puVar1;
-  (puVar5 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1] = puVar1[(uint)bVar8 * -2 + 1];
+  (this_ptr->base).end_orient.x = local_1c.x;
+  (this_ptr->base).end_orient.y = local_1c.y;
+  (this_ptr->base).end_orient.z = local_1c.z;
   puVar6 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x338);
   puVar4 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x348);
   (this_ptr->base).orig_orient.w = (this_ptr->base).end_orient.w;

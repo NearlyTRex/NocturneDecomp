@@ -1,6 +1,6 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
 // Address: 005a15e0
-// Address Range: [[005a15e0, 005a16bc]]
+// Address Range: [[005a15e0, 005a16bc] [00604b88, 00604bab]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance *this_ptr,SPose *bone_transform)
 
@@ -12,6 +12,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005
   CSkeleton *pCVar2;
   CDeformableModelInstance *pCVar3;
   int iVar4;
+  float fVar1;
   int iVar5;
   CDeformableModelInstance *pCVar6;
   uint *puVar7;
@@ -45,21 +46,20 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005
     pCVar3 = this_ptr;
     pCVar6 = this_ptr;
     do {
-      puVar10 = (uint *)((int)pCVar6 + (uint)bVar13 * -8 + 0x6b4);
-      puVar7 = (uint *)((int)local_14 + (uint)bVar13 * -8 + 0x10);
       (pCVar6->bone_transform).pose_data.bone_rotations[0].w =
            (local_14->pose_data).bone_rotations[0].w;
-      puVar11 = puVar10 + (uint)bVar13 * -2 + 1;
-      puVar8 = puVar7 + (uint)bVar13 * -2 + 1;
-      *puVar10 = *puVar7;
-      *puVar11 = *puVar8;
-      puVar11[(uint)bVar13 * -2 + 1] = puVar8[(uint)bVar13 * -2 + 1];
+      (pCVar6->bone_transform).pose_data.bone_rotations[0].x =
+           (local_14->pose_data).bone_rotations[0].x;
+      (pCVar6->bone_transform).pose_data.bone_rotations[0].y =
+           (local_14->pose_data).bone_rotations[0].y;
+      fVar1 = (local_14->pose_data).bone_rotations[0].z;
+      (pCVar6->bone_transform).pose_data.bone_rotations[0].z = fVar1;
       (local_c->bone_transform).bone_scales[0] = bone_transform->bone_scales[0];
       bone_transform = (SPose *)&(bone_transform->pose_data).root_position.y;
       pCVar6 = (CDeformableModelInstance *)&(pCVar6->motion_controller).tween_speed;
       pCVar9 = local_10->bone_world_matrices;
       pCVar12 = (pCVar3->bone_transform).bone_world_matrices;
-      for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
+      for (; fVar1 != 0.0; fVar1 = (float)((int)fVar1 + -1)) {
         pCVar12 = (CMatrix3x4f *)((int)pCVar12 + (uint)bVar13 * -8 + 4);
         pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar13 * -8 + 4);
         pCVar12->m[0].w = pCVar9->m[0].w;

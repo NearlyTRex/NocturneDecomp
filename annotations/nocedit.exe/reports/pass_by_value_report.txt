@@ -2,24 +2,23 @@
 PASS-BY-VALUE STRUCT ARGUMENTS REPORT
 ====================================================================================================
 
-4 functions with pass-by-value parameters (773 MOVSD.REP scanned, 8 are pass-by-value)
+4 functions with pass-by-value parameters (773 MOVSD.REP scanned, 6 are pass-by-value)
 
 ====================================================================================================
-
-engine_3d.c_clipAndDrawLine2D_FUN_00407d70
-  Params: arg1=?struct_96 (0x60)
-  Call sites (3):
-    core_actor.cpp_draw3DLineSegment_FUN_0040d330 @ 0x0040d45b   2x SRenderVertex
-    core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 @ 0x005ba148   1x SRenderVertex
-    engine_3d.c_drawLine2DFromIndices_FUN_00407cf0 @ 0x00407d55   1x ?struct_96 (0x60)
-
---------------------------------------------------------------------------------
 
 crt_stdio.c_fwrite_FUN_005fdc00
   Params: arg1=?struct_8 (0x8)
   Call sites (2):
     cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 @ 0x0054b61d   1x ?struct_28 (0x1c)
     cockpit_pkbitmap.cpp_writePBGHeader_FUN_0054b930 @ 0x0054b967   1x ?struct_8 (0x8)
+
+--------------------------------------------------------------------------------
+
+engine_3d.c_clipAndDrawLine2D_FUN_00407d70
+  Params: arg1=?struct_96 (0x60)
+  Call sites (2):
+    core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 @ 0x005ba148   1x SRenderVertex
+    engine_3d.c_drawLine2DFromIndices_FUN_00407cf0 @ 0x00407d55   1x ?struct_96 (0x60)
 
 --------------------------------------------------------------------------------
 
@@ -45,7 +44,6 @@ These callers need their local frame size (SUB ESP) increased to cover
 the dynamic stack allocations for pass-by-value arguments.
 
   core_actor.cpp_archiveLocalizedString_FUN_0040b6e0 current: 0x12c  required: 0x258  (+0x12c for by-value args)
-  core_actor.cpp_draw3DLineSegment_FUN_0040d330      current: 0x48  required: 0xa8  (+0x60 for by-value args)
   engine_3d.c_drawLine2DFromIndices_FUN_00407cf0     current: 0x60  required: 0xc0  (+0x60 for by-value args)
   engine_3d.c_drawLine3DFromIndices_FUN_00407ff0     current: 0x60  required: 0xc0  (+0x60 for by-value args)
   core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  current: 0xe0  required: 0x110  (+0x30 for by-value args)

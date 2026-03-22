@@ -111,12 +111,10 @@ section .text
     MOV EBP,dword ptr [0x02db89b0]      ; 004f8905 | g_IcePickIndices[16]
     LEA ESI,[ESP + 0xc]                 ; 004f890b
     PUSH EBP                            ; 004f890f
-    MOVSD ES:EDI,ESI                    ; 004f8910
-    MOVSD ES:EDI,ESI                    ; 004f8911
-    MOVSD ES:EDI,ESI                    ; 004f8912
-    MOVSD ES:EDI,ESI                    ; 004f8913
-    LEA EAX,[ESP + 0x20]                ; 004f8914
+    JMP 0x00604936                      ; 004f8910
+        ;   XREF to: 00604936 (UNCONDITIONAL_JUMP)  ; LAB_00604936
     PUSH dword ptr [EBX + 0x1fbfc]      ; 004f8918
+        ;   Label: LAB_004f8918
     PUSH EAX                            ; 004f891e
     ADD EBX,0x158                       ; 004f891f
     PUSH EBX                            ; 004f8925
@@ -144,4 +142,18 @@ section .text
     MOV dword ptr [EBX + 0x1fbfc],0x3f800000 ; 004f8959
     JMP 0x004f8859                      ; 004f8963
         ;   XREF to: 004f8859 (UNCONDITIONAL_JUMP)  ; LAB_004f8859
+    MOV ECX,dword ptr [ESI]             ; 00604936
+        ;   Label: LAB_00604936
+    MOV dword ptr [EDI],ECX             ; 00604938
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060493a
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060493d
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00604940
+    MOV dword ptr [EDI + 0x8],ECX       ; 00604943
+    MOV ECX,dword ptr [ESI + 0xc]       ; 00604946
+    MOV dword ptr [EDI + 0xc],ECX       ; 00604949
+    ADD ESI,0x10                        ; 0060494c
+    ADD EDI,0x10                        ; 0060494f
+    LEA EAX,[ESP + 0x20]                ; 00604952
+    JMP 0x004f8918                      ; 00604956
+        ;   XREF to: 004f8918 (UNCONDITIONAL_JUMP)  ; LAB_004f8918
 

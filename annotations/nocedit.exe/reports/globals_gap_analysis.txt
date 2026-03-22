@@ -2,14 +2,14 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19496
-  Named globals:             19227
+Total globals analyzed:      19493
+  Named globals:             19224
   DAT_ globals:              269
-Gaps found:                  1864
-  With exact size bounds:    1761
+Gaps found:                  1861
+  With exact size bounds:    1758
   With estimated bounds:     103
-Total gap bytes:             1,362,553,449
-  Exact gap bytes:           14,709,975
+Total gap bytes:             1,362,553,461
+  Exact gap bytes:           14,709,987
 Overlaps (size <= 0):        13301
 
 --------------------------------------------------------------------------------
@@ -17,11 +17,11 @@ GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
   1-4 bytes (likely padding/alignment)          485
   5-16 bytes (small vars)                       494
-  17-64 bytes (structs/small arrays)            417
-  65-256 bytes (medium data)                    178
+  17-64 bytes (structs/small arrays)            416
+  65-256 bytes (medium data)                    177
   257-1024 bytes (large structs/arrays)         89
-  1-4 KB                                        72
-  4-64 KB                                       108
+  1-4 KB                                        70
+  4-64 KB                                       109
   64+ KB                                        21
 
 --------------------------------------------------------------------------------
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: switchdataD_00546554                     void*                at 0x00546554
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1761) - size bounds are known precisely
+ALL EXACT GAPS (1758) - size bounds are known precisely
 --------------------------------------------------------------------------------
    4,185,048 bytes  at 0x00002428  between DAT_00002424                   and IMAGE_DOS_HEADER_00400000
    3,350,789 bytes  at 0x00ff0103  between g_ColorMagenta                 and g_CoronaLightCache
@@ -274,6 +274,7 @@ ALL EXACT GAPS (1761) - size bounds are known precisely
        8,008 bytes  at 0x004e65bc  between switchdataD_004e65b8           and switchdataD_004e8504
        7,748 bytes  at 0x005390e0  between switchdataD_005390dc           and switchdataD_0053af24
        7,180 bytes  at 0x0043ddd8  between switchdataD_0043ddd4           and switchdataD_0043f9e4
+       7,044 bytes  at 0x00603dcc  between SUB_00603dc8                   and SUB_00605950
        6,992 bytes  at 0x00525814  between switchdataD_00525810           and switchdataD_00527364
        6,904 bytes  at 0x00565c74  between switchdataD_00565c70           and switchdataD_0056776c
        6,840 bytes  at 0x005c1670  between switchdataD_005c166c           and switchdataD_005c3128
@@ -308,7 +309,6 @@ ALL EXACT GAPS (1761) - size bounds are known precisely
        4,257 bytes  at 0x00411aa0  between switchdataD_00411a9c           and DAT_00412b41
        4,196 bytes  at 0x004e551c  between switchdataD_004e5518           and switchdataD_004e6580
        4,108 bytes  at 0x004366dc  between PTR_caseD_3_004366d8           and switchdataD_004376e8
-       4,092 bytes  at 0x00604954  between SUB_00604950                   and SUB_00605950
        4,091 bytes  at 0x013d975d  between g_CameraLookupTable+1          and g_CameraShakeSustainTimer
        4,077 bytes  at 0x00823e33  between g_TracedEdgeBuffer[1].y1+1     and g_LineBlendingDisabled
        4,064 bytes  at 0x0046e7dc  between switchdataD_0046e7d8           and switchdataD_0046f7bc
@@ -334,7 +334,6 @@ ALL EXACT GAPS (1761) - size bounds are known precisely
        2,736 bytes  at 0x005a27d4  between switchdataD_005a27d0           and switchdataD_005a3284
        2,736 bytes  at 0x00687560  between DAT_0068755c                   and g_BackBuffer
        2,668 bytes  at 0x00415dbc  between switchdataD_00415db8           and switchdataD_00416828
-       2,648 bytes  at 0x00603dcc  between SUB_00603dc8                   and SUB_00604824
        2,616 bytes  at 0x004f7660  between switchdataD_004f765c           and switchdataD_004f8098
        2,508 bytes  at 0x00527368  between switchdataD_00527364           and switchdataD_00527d34
        2,452 bytes  at 0x00512f2c  between switchdataD_00512f28           and switchdataD_005138c0
@@ -474,7 +473,6 @@ ALL EXACT GAPS (1761) - size bounds are known precisely
          256 bytes  at 0x0067a160  between g_FilenameBufferTemplate+4     and g_DefaultAuditRecordPath
          255 bytes  at 0x03670a5d  between g_SkeleditLastTestSkeletonDir+ and g_SkeleditBiasEntryCount
          253 bytes  at 0x006852e3  between s__006852df                    and g_ProcessSpawnEnabled
-         252 bytes  at 0x00604854  between SUB_00604850                   and SUB_00604950
          252 bytes  at 0x0066eb58  between g_CourseLastBonPath+4          and g_CourseAxisLabels[1]
          252 bytes  at 0x006818e8  between s_file_error_006818e0+4        and SMRGLTextureBasic_006819e4
          252 bytes  at 0x006873d8  between PTR_FUN_006873d4               and DAT_006874d4
@@ -741,7 +739,6 @@ ALL EXACT GAPS (1761) - size bounds are known precisely
           42 bytes  at 0x00575d04  between caseD_3                        and caseD_4
           42 bytes  at 0x0063542f  between s_octurne_requires_at_least_64 and s_anon_00635459
           42 bytes  at 0x006567b0  between DOUBLE_006567a8                and s_State_006567da
-          40 bytes  at 0x00604828  between SUB_00604824                   and SUB_00604850
           40 bytes  at 0x006254b5  between s_'t_use_hasKeyMask_condition_ and s_d_n_006254dd
           40 bytes  at 0x00629fcb  between DOUBLE_00629fc3                and DOUBLE_00629ff3
           40 bytes  at 0x0063550e  between s_octurne_runs_best_with_at_le and s_anon_00635536

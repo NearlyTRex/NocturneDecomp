@@ -41,12 +41,10 @@ section .text
         ;   XREF to: 005d6020 (UNCONDITIONAL_CALL)  ; CVector2d * shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020(CVector3d * segment_start, CVector3d * segment_end, CVector3d * query_point, CVector2d * out_point)
     LEA ESI,[ESP + 0xc]                 ; 005d64c5
     ADD ESP,0xc                         ; 005d64c9
-    MOVSD ES:EDI,ESI                    ; 005d64cc
-    MOVSD ES:EDI,ESI                    ; 005d64cd
-    MOVSD ES:EDI,ESI                    ; 005d64ce
-    MOVSD ES:EDI,ESI                    ; 005d64cf
-    FLD double ptr [EBX]                ; 005d64d0
+    JMP 0x00604f0e                      ; 005d64cc
+        ;   XREF to: 00604f0e (UNCONDITIONAL_JUMP)  ; LAB_00604f0e
     FSUB double ptr [ESP + 0x10]        ; 005d64d2
+        ;   Label: LAB_005d64d2
     FMUL ST0                            ; 005d64d6
     FLD double ptr [EBX + 0x8]          ; 005d64d8
     FSUB double ptr [ESP + 0x18]        ; 005d64db
@@ -62,4 +60,18 @@ section .text
     POP ESI                             ; 005d64f5
     POP EBX                             ; 005d64f6
     RET                                 ; 005d64f7
+    MOV ECX,dword ptr [ESI]             ; 00604f0e
+        ;   Label: LAB_00604f0e
+    MOV dword ptr [EDI],ECX             ; 00604f10
+    MOV ECX,dword ptr [ESI + 0x4]       ; 00604f12
+    MOV dword ptr [EDI + 0x4],ECX       ; 00604f15
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00604f18
+    MOV dword ptr [EDI + 0x8],ECX       ; 00604f1b
+    MOV ECX,dword ptr [ESI + 0xc]       ; 00604f1e
+    MOV dword ptr [EDI + 0xc],ECX       ; 00604f21
+    ADD ESI,0x10                        ; 00604f24
+    ADD EDI,0x10                        ; 00604f27
+    FLD double ptr [EBX]                ; 00604f2a
+    JMP 0x005d64d2                      ; 00604f2c
+        ;   XREF to: 005d64d2 (UNCONDITIONAL_JUMP)  ; LAB_005d64d2
 

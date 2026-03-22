@@ -1,6 +1,6 @@
 // Name: core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041d8a0
 // Address: 0041d8a0
-// Address Range: [[0041d8a0, 0041d96d]]
+// Address Range: [[0041d8a0, 0041d96d] [00604831, 00604857]]
 // Convention: __cdecl
 // Signature: void __cdecl core_boneguy_cpp_CBoneGuy_beginRecombine_FUN_0041d8a0(CBoneGuy *this_ptr)
 
@@ -23,7 +23,6 @@ void __cdecl core_boneguy_cpp_CBoneGuy_beginRecombine_FUN_0041d8a0(CBoneGuy *thi
   int local_14;
   CBodyPart *pCVar1;
   
-  bVar8 = 0;
   local_14 = 0;
   if (0 < this_ptr->box_count) {
     pCVar4 = &this_ptr->boxes[0].source_pos;
@@ -31,13 +30,10 @@ void __cdecl core_boneguy_cpp_CBoneGuy_beginRecombine_FUN_0041d8a0(CBoneGuy *thi
     do {
       core_xform_cpp_eulerToQuaternion_FUN_005f7b20
                 (&((pCVar3->boxes[0].body_part)->base).orient.vec,&local_24);
-      puVar6 = (uint *)((int)pCVar3 + (uint)bVar8 * -8 + 0xbf58);
       pCVar3->boxes[0].dest_orient.w = local_24.w;
-      puVar7 = puVar6 + (uint)bVar8 * -2 + 1;
-      puVar5 = (uint *)((int)&local_24 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-      *puVar6 = *(uint *)((int)&local_24 + (uint)bVar8 * -8 + 4);
-      *puVar7 = *puVar5;
-      puVar7[(uint)bVar8 * -2 + 1] = puVar5[(uint)bVar8 * -2 + 1];
+      pCVar3->boxes[0].dest_orient.x = local_24.x;
+      pCVar3->boxes[0].dest_orient.y = local_24.y;
+      pCVar3->boxes[0].dest_orient.z = local_24.z;
       ((pCVar3->boxes[0].body_part)->physics_box).is_valid = 0;
       pCVar1 = pCVar3->boxes[0].body_part;
       pCVar2 = &(pCVar1->base).location;

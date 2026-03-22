@@ -35,12 +35,10 @@ section .text
     LEA ESI,[ESP + 0x14]                ; 005e1bee
     PUSH EAX                            ; 005e1bf2
     MOV EAX,dword ptr [ESP + 0x34]      ; 005e1bf3
-    MOVSD ES:EDI,ESI                    ; 005e1bf7
-    MOVSD ES:EDI,ESI                    ; 005e1bf8
-    MOVSD ES:EDI,ESI                    ; 005e1bf9
-    MOVSD ES:EDI,ESI                    ; 005e1bfa
-    MOV ECX,dword ptr [EAX]             ; 005e1bfb
+    JMP 0x00604f7b                      ; 005e1bf7
+        ;   XREF to: 00604f7b (UNCONDITIONAL_JUMP)  ; LAB_00604f7b
     PUSH ECX                            ; 005e1bfd
+        ;   Label: LAB_005e1bfd
     CALL crt_wsock32.c_connect          ; 005e1bfe
         ;   XREF to: 00610f1c (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_connect(_SOCKET s, SOCKADDR * name, int namelen)
     TEST EAX,EAX                        ; 005e1c03
@@ -50,4 +48,18 @@ section .text
     POP EDI                             ; 005e1c10
     POP ESI                             ; 005e1c11
     RET                                 ; 005e1c12
+    MOV ECX,dword ptr [ESI]             ; 00604f7b
+        ;   Label: LAB_00604f7b
+    MOV dword ptr [EDI],ECX             ; 00604f7d
+    MOV ECX,dword ptr [ESI + 0x4]       ; 00604f7f
+    MOV dword ptr [EDI + 0x4],ECX       ; 00604f82
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00604f85
+    MOV dword ptr [EDI + 0x8],ECX       ; 00604f88
+    MOV ECX,dword ptr [ESI + 0xc]       ; 00604f8b
+    MOV dword ptr [EDI + 0xc],ECX       ; 00604f8e
+    ADD ESI,0x10                        ; 00604f91
+    ADD EDI,0x10                        ; 00604f94
+    MOV ECX,dword ptr [EAX]             ; 00604f97
+    JMP 0x005e1bfd                      ; 00604f99
+        ;   XREF to: 005e1bfd (UNCONDITIONAL_JUMP)  ; LAB_005e1bfd
 

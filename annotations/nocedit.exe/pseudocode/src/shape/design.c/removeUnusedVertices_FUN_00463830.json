@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 199,
-    "complexity_score": 91,
+    "assembly_lines": 211,
+    "complexity_score": 86,
     "cross_reference_count": 8,
     "function_call_count": 7,
-    "global_count": 14,
+    "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 61,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 265
+    "total_lines": 272
   },
   "cross_references": [
     {
@@ -74,6 +74,10 @@
       [
         "00463830",
         "00463a1f"
+      ],
+      [
+        "00604d7d",
+        "00604da3"
       ]
     ],
     "convention": "__cdecl",
@@ -150,38 +154,8 @@
       "value": null
     },
     {
-      "addr": "01626410",
-      "name": "g_LoadedVertices[0].vertex.y",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "01626414",
-      "name": "g_LoadedVertices[0].vertex.z",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "01626418",
-      "name": "g_LoadedVertices[0].u",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "0162641c",
       "name": "g_LoadedVertices[0].v",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "01626420",
-      "name": "g_LoadedVertices[1].vertex.x",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "01626424",
-      "name": "g_LoadedVertices[1].vertex.y",
       "type": "undefined4",
       "value": null
     },
@@ -302,37 +276,37 @@
     "estimated_params": 0
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 7.054054054054054,
-    "instruction_count": 148,
+    "avg_pcode_per_instr": 6.628205128205129,
+    "instruction_count": 156,
     "opcode_distribution": {
       "BOOL_NEGATE": 51,
-      "BRANCH": 13,
+      "BRANCH": 15,
       "CALL": 7,
       "CBRANCH": 9,
-      "COPY": 111,
+      "COPY": 107,
       "INT_ADD": 85,
-      "INT_AND": 190,
-      "INT_CARRY": 14,
-      "INT_EQUAL": 96,
+      "INT_AND": 194,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 100,
       "INT_LEFT": 20,
       "INT_LESS": 10,
-      "INT_MULT": 14,
+      "INT_MULT": 6,
       "INT_NOTEQUAL": 24,
       "INT_OR": 50,
       "INT_SBORROW": 10,
-      "INT_SCARRY": 20,
+      "INT_SCARRY": 22,
       "INT_SEXT": 12,
-      "INT_SLESS": 60,
-      "INT_SUB": 53,
+      "INT_SLESS": 62,
+      "INT_SUB": 45,
       "INT_XOR": 10,
-      "INT_ZEXT": 10,
+      "INT_ZEXT": 2,
       "LOAD": 80,
-      "POPCOUNT": 40,
+      "POPCOUNT": 42,
       "RETURN": 1,
       "STORE": 46,
       "SUBPIECE": 8
     },
-    "pcode_op_count": 1044
+    "pcode_op_count": 1034
   },
   "stack_frame": {
     "frame_size": 48,
@@ -367,7 +341,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 49,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)dest + local_1c * 4) = g_VertexCount;",
@@ -375,7 +349,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 57,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)dest + g_ModelPolygonData[local_1c].vertex_indices[local_2c] * 4);",

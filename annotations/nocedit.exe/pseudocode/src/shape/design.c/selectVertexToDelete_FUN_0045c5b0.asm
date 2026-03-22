@@ -15,14 +15,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Point_to_delete_0061b336
 ;   undefined4 g_EditorColorIndices[6]
-;   undefined4 g_EditorColorIndices[7]
-;   int g_ModelCount
-;   int g_CurrentModelIndex
 ;   int g_VertexCount
-;   SVertexData[20000] g_LoadedVertices
-;   undefined4 g_LoadedVertices[0].vertex.y
-;   undefined4 g_LoadedVertices[0].vertex.z
-;   undefined4 g_LoadedVertices[0].u
 ;   undefined4 g_LoadedVertices[0].v
 ;   int g_PolygonCount
 ;   undefined4 g_ModelPolygonData[0].vertex_indices_count
@@ -100,12 +93,10 @@ section .text
     IMUL EAX,EAX,0x14                   ; 0045c62b
     IMUL ESI,dword ptr [EBP + -0x4],0x14 ; 0045c62e
     LEA EDI,[ESI + 0x162640c]           ; 0045c632 | g_EditorColorIndices[6]
-    LEA ESI,[EAX + 0x162640c]           ; 0045c638 | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0045c63e | g_EditorColorIndices[6] | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0045c63f | g_EditorColorIndices[7] | g_LoadedVertices[0].vertex.y
-    MOVSD ES:EDI,ESI                    ; 0045c640 | g_ModelCount | g_LoadedVertices[0].vertex.z
-    MOVSD ES:EDI,ESI                    ; 0045c641 | g_CurrentModelIndex | g_LoadedVertices[0].u
+    JMP 0x00604da4                      ; 0045c638
+        ;   XREF to: 00604da4 (UNCONDITIONAL_JUMP)  ; LAB_00604da4
     MOVSD ES:EDI,ESI                    ; 0045c642 | g_VertexCount | g_LoadedVertices[0].v
+        ;   Label: LAB_0045c642
     JMP 0x0045c616                      ; 0045c643
         ;   XREF to: 0045c616 (UNCONDITIONAL_JUMP)  ; LAB_0045c616
     DEC dword ptr [0x01626408]          ; 0045c645 | g_VertexCount
@@ -160,4 +151,18 @@ section .text
     POP ESI                             ; 0045c6bd
     POP EBX                             ; 0045c6be
     RET                                 ; 0045c6bf
+    LEA ESI,[EAX + 0x162640c]           ; 00604da4
+        ;   Label: LAB_00604da4
+    MOV ECX,dword ptr [ESI]             ; 00604daa
+    MOV dword ptr [EDI],ECX             ; 00604dac
+    MOV ECX,dword ptr [ESI + 0x4]       ; 00604dae
+    MOV dword ptr [EDI + 0x4],ECX       ; 00604db1
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00604db4
+    MOV dword ptr [EDI + 0x8],ECX       ; 00604db7
+    MOV ECX,dword ptr [ESI + 0xc]       ; 00604dba
+    MOV dword ptr [EDI + 0xc],ECX       ; 00604dbd
+    ADD ESI,0x10                        ; 00604dc0
+    ADD EDI,0x10                        ; 00604dc3
+    JMP 0x0045c642                      ; 00604dc6
+        ;   XREF to: 0045c642 (UNCONDITIONAL_JUMP)  ; LAB_0045c642
 

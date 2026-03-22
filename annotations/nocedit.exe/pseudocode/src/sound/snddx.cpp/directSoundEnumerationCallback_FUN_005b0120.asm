@@ -24,16 +24,13 @@
 ;   int g_DirectSoundDeviceCount = -0x1
 ;   undefined4 g_RecordingDevices[6].api_type
 ;   undefined4 g_RecordingDevices[6].device_id
-;   undefined4 g_RecordingDevices[7].device_name[0]
-;   undefined4 g_RecordingDevices[7].device_name[4]
-;   undefined4 g_RecordingDevices[7].device_name[8]
 ;   undefined4 g_RecordingDevices[7].device_name[12]
 ;   undefined4 g_RecordingDevices[7].device_name[13]
 ;   undefined4 g_RecordingDevices[7].device_name[14]
 ;   undefined4 g_RecordingDevices[7].device_name[15]
 ;   int isRecordingStarted
 ;   int g_RecordingSamplesSigned
-;   ... and 1 more
+;   SDirectSoundDeviceInfo[8] g_DirectSoundDevices
 ;
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundCreate
@@ -156,12 +153,10 @@ section .text
     PUSH EBX                            ; 005b0255
     XOR EBX,EBX                         ; 005b0256
     LEA EDI,[EAX + 0x3f69c64]           ; 005b0258 | g_RecordingDevices[6].device_id
-    MOV dword ptr [EAX + 0x3f69c60],EBX ; 005b025e | g_RecordingDevices[6].api_type
-    MOVSD ES:EDI,ESI                    ; 005b0264 | g_RecordingDevices[6].device_id
-    MOVSD ES:EDI,ESI                    ; 005b0265 | g_RecordingDevices[7].device_name[0]
-    MOVSD ES:EDI,ESI                    ; 005b0266 | g_RecordingDevices[7].device_name[4]
-    MOVSD ES:EDI,ESI                    ; 005b0267 | g_RecordingDevices[7].device_name[8]
+    JMP 0x00604f31                      ; 005b025e
+        ;   XREF to: 00604f31 (UNCONDITIONAL_JUMP)  ; LAB_00604f31
     POP EBX                             ; 005b0268
+        ;   Label: LAB_005b0268
     TEST byte ptr [ESP + 0x324],0x20    ; 005b0269
         ;   Label: LAB_005b0269
     SETNZ AL                            ; 005b0271
@@ -234,4 +229,18 @@ section .text
         ;   Label: LAB_005b0330
     JMP 0x005b0269                      ; 005b033a
         ;   XREF to: 005b0269 (UNCONDITIONAL_JUMP)  ; LAB_005b0269
+    MOV dword ptr [EAX + 0x3f69c60],EBX ; 00604f31
+        ;   Label: LAB_00604f31
+    MOV ECX,dword ptr [ESI]             ; 00604f37
+    MOV dword ptr [EDI],ECX             ; 00604f39
+    MOV ECX,dword ptr [ESI + 0x4]       ; 00604f3b
+    MOV dword ptr [EDI + 0x4],ECX       ; 00604f3e
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00604f41
+    MOV dword ptr [EDI + 0x8],ECX       ; 00604f44
+    MOV ECX,dword ptr [ESI + 0xc]       ; 00604f47
+    MOV dword ptr [EDI + 0xc],ECX       ; 00604f4a
+    ADD ESI,0x10                        ; 00604f4d
+    ADD EDI,0x10                        ; 00604f50
+    JMP 0x005b0268                      ; 00604f53
+        ;   XREF to: 005b0268 (UNCONDITIONAL_JUMP)  ; LAB_005b0268
 

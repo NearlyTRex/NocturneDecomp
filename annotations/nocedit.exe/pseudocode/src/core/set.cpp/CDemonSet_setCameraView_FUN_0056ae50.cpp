@@ -1,6 +1,6 @@
 // Name: core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
 // Address: 0056ae50
-// Address Range: [[0056ae50, 0056b789]]
+// Address Range: [[0056ae50, 0056b789] [00604a35, 00604a5b]]
 // Convention: __cdecl
 // Signature: void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_ptr,int index)
 
@@ -179,19 +179,16 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
             core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::setCameraView - Too many omni lights");
           }
         }
-        iVar4 = g_SpotLightCount;
+        iVar1 = g_SpotLightCount;
         iVar12 = iVar5;
         if ((pCVar7->lights[0].light_type == 0) &&
            (iVar12 = iVar5 + 1, pCVar7->lights[0].visible_flags[index] != '\0')) {
           g_SpotLightList[g_SpotLightCount] = g_MasterLightList[iVar5];
           pCVar3 = pCVar7->lights[0].camera_light_bounds + index;
-          piVar15 = (int *)(iVar4 * 0x10 + 0x32770b8 + (uint)bVar16 * -8);
-          piVar13 = (int *)((int)pCVar3 + ((uint)bVar16 * -2 + 1) * 4);
-          g_SpotLightBounds[iVar4].left = pCVar3->left;
-          *piVar15 = *piVar13;
-          piVar15[(uint)bVar16 * -2 + 1] = piVar13[(uint)bVar16 * -2 + 1];
-          (piVar15 + (uint)bVar16 * -2 + 1)[(uint)bVar16 * -2 + 1] =
-               (piVar13 + (uint)bVar16 * -2 + 1)[(uint)bVar16 * -2 + 1];
+          g_SpotLightBounds[iVar1].left = pCVar3->left;
+          g_SpotLightBounds[iVar1].top = pCVar3->top;
+          g_SpotLightBounds[iVar1].right = pCVar3->right;
+          g_SpotLightBounds[iVar1].bottom = pCVar3->bottom;
           g_SpotLightCount = g_SpotLightCount + 1;
         }
         iVar7 = iVar7 + 1;

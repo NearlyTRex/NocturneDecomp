@@ -1,6 +1,6 @@
 // Name: core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
 // Address: 00451090
-// Address Range: [[00451090, 00451122]]
+// Address Range: [[00451090, 00451122] [006048a1, 006048c3]]
 // Convention: __stack2_esi
 // Signature: CRect * __stack2_esi core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090(CDemonCamera *this_ptr,CDemonLight *light,CRect *out_bounds)
 

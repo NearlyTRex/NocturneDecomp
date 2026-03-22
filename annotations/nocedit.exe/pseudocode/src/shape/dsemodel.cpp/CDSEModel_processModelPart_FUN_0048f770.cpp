@@ -1,6 +1,6 @@
 // Name: shape_dsemodel.cpp_CDSEModel_processModelPart_FUN_0048f770
 // Address: 0048f770
-// Address Range: [[0048f770, 0048f958]]
+// Address Range: [[0048f770, 0048f958] [00604def, 00604e15]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_dsemodel_cpp_CDSEModel_processModelPart_FUN_0048f770(CDSEModel *this_ptr,uint part_index)
 
@@ -10,6 +10,7 @@ void __cdecl shape_dsemodel_cpp_CDSEModel_processModelPart_FUN_0048f770(CDSEMode
 
 {
   char cVar2;
+  int iVar4;
   uint uVar2;
   int iVar3;
   char *pcVar4;
@@ -25,7 +26,6 @@ void __cdecl shape_dsemodel_cpp_CDSEModel_processModelPart_FUN_0048f770(CDSEMode
   int local_14;
   char cVar1;
   
-  bVar12 = 0;
   this_ptr->vertex_count = 0;
   this_ptr->polygon_count = 0;
   pcVar4 = g_ModelPartNames[part_index].name;
@@ -67,16 +67,12 @@ void __cdecl shape_dsemodel_cpp_CDSEModel_processModelPart_FUN_0048f770(CDSEMode
     }
   }
   for (local_18 = 0; local_18 < this_ptr->vertex_count; local_18 = local_18 + 1) {
-    puVar10 = (uint *)((int)this_ptr + (uint)bVar12 * -8 + local_18 * 0x14 + 8);
-    puVar6 = (uint *)(g_VertexIdRegistry[local_18] * 0x14 + 0x1626410 + (uint)bVar12 * -8);
-    this_ptr->vertices[local_18].vertex.x = g_LoadedVertices[g_VertexIdRegistry[local_18]].vertex.x;
-    puVar11 = puVar10 + (uint)bVar12 * -2 + 1;
-    puVar7 = puVar6 + (uint)bVar12 * -2 + 1;
-    *puVar10 = *puVar6;
-    *puVar11 = *puVar7;
-    puVar11[(uint)bVar12 * -2 + 1] = puVar7[(uint)bVar12 * -2 + 1];
-    (puVar11 + (uint)bVar12 * -2 + 1)[(uint)bVar12 * -2 + 1] =
-         (puVar7 + (uint)bVar12 * -2 + 1)[(uint)bVar12 * -2 + 1];
+    iVar4 = g_VertexIdRegistry[local_18];
+    this_ptr->vertices[local_18].vertex.x = g_LoadedVertices[iVar4].vertex.x;
+    this_ptr->vertices[local_18].vertex.y = g_LoadedVertices[iVar4].vertex.y;
+    this_ptr->vertices[local_18].vertex.z = g_LoadedVertices[iVar4].vertex.z;
+    this_ptr->vertices[local_18].u = g_LoadedVertices[iVar4].u;
+    this_ptr->vertices[local_18].v = g_LoadedVertices[iVar4].v;
   }
   return;
 }

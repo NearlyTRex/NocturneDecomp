@@ -1,6 +1,6 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
 // Address: 0059f750
-// Address Range: [[0059f750, 0059f81b]]
+// Address Range: [[0059f750, 0059f81b] [00604af4, 00604b1a]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750(CDeformableModelInstance *this_ptr,CQuaternion4f *source_quaternions,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
@@ -24,7 +24,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
   CDeformableModelInstance *local_18;
   float fStack_14;
   
-  bVar4 = 0;
   if ((float)0.001 < blend_weight) {
     start_bone_index = 0;
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
@@ -39,13 +38,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
           t = (*blend_callback)(start_bone_index,bone_index,blend_weight,hierarchy_distance,this_ptr
                                );
           core_xform_cpp_slerpQuaternion_FUN_005f77e0(quat1_in,source_quaternions,t,&CStack_2c);
-          puVar2 = (uint *)((int)local_18 + (uint)bVar4 * -8 + 0x6b4);
           (local_18->bone_transform).pose_data.bone_rotations[0].w = CStack_2c.w;
-          puVar3 = puVar2 + (uint)bVar4 * -2 + 1;
-          puVar1 = (uint *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-          *puVar2 = *(uint *)((int)&CStack_2c + (uint)bVar4 * -8 + 4);
-          *puVar3 = *puVar1;
-          puVar3[(uint)bVar4 * -2 + 1] = puVar1[(uint)bVar4 * -2 + 1];
+          (local_18->bone_transform).pose_data.bone_rotations[0].x = CStack_2c.x;
+          (local_18->bone_transform).pose_data.bone_rotations[0].y = CStack_2c.y;
+          (local_18->bone_transform).pose_data.bone_rotations[0].z = CStack_2c.z;
         }
         quat1_in = quat1_in + 1;
         start_bone_index = start_bone_index + 1;

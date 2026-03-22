@@ -5,21 +5,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 41,
-    "complexity_score": 124,
+    "assembly_lines": 53,
+    "complexity_score": 91,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "stack_alignment_array",
       "unknown_field"
     ],
-    "total_lines": 65
+    "total_lines": 64
   },
   "cross_references": [],
   "function": {
@@ -28,6 +26,10 @@
       [
         "005d64a0",
         "005d64f7"
+      ],
+      [
+        "00604f0e",
+        "00604f30"
       ]
     ],
     "convention": "__cdecl",
@@ -52,33 +54,32 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.282051282051282,
-    "instruction_count": 39,
+    "avg_pcode_per_instr": 4.170212765957447,
+    "instruction_count": 47,
     "opcode_distribution": {
+      "BRANCH": 2,
       "CALL": 1,
-      "COPY": 80,
+      "COPY": 76,
       "FLOAT2FLOAT": 5,
       "FLOAT_ADD": 1,
       "FLOAT_MULT": 2,
       "FLOAT_SQRT": 1,
       "FLOAT_SUB": 2,
       "INT_ADD": 26,
-      "INT_AND": 7,
-      "INT_CARRY": 1,
-      "INT_EQUAL": 6,
+      "INT_AND": 11,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
       "INT_LESS": 1,
-      "INT_MULT": 8,
       "INT_SBORROW": 1,
-      "INT_SCARRY": 1,
-      "INT_SLESS": 3,
-      "INT_SUB": 17,
-      "INT_ZEXT": 8,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 9,
       "LOAD": 18,
-      "POPCOUNT": 3,
+      "POPCOUNT": 5,
       "RETURN": 1,
       "STORE": 13
     },
-    "pcode_op_count": 206
+    "pcode_op_count": 196
   },
   "stack_frame": {
     "frame_size": 6196,
@@ -164,64 +165,56 @@
   },
   "suspects": [
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 9,
-      "match": "auStackY_1824",
-      "severity": "moderate",
-      "text": "uint auStackY_1824 [1524];",
-      "type": "stack_alignment_array"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 17,
-      "match": "._0_4_",
+      "line": 11,
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "local_38 = local_48.x._0_4_;",
+      "text": "dVar1 = point->x - __BITCAST_DOUBLE(CONCAT44(local_48.x._4_4_,local_48.x._0_4_));",
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(uint *)((int)",
+      "description": "Unknown/mangled field access",
+      "line": 11,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "puVar3 = (uint *)((int)&local_48 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)local_30 + (uint)bVar4 * -8 + -4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_48 + (uint)bVar4 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)(local_30 + (-(uint)bVar4 - (uint)bVar4)) + ((uint)bVar4 * -2 + 1) * 4) =",
-      "type": "pointer_cast"
+      "text": "dVar1 = point->x - __BITCAST_DOUBLE(CONCAT44(local_48.x._4_4_,local_48.x._0_4_));",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 11,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar1 = point->x - __BITCAST_DOUBLE(CONCAT44(uStack_34,local_38));",
+      "text": "dVar1 = point->x - __BITCAST_DOUBLE(CONCAT44(local_48.x._4_4_,local_48.x._0_4_));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 12,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "dVar2 = point->y - __BITCAST_DOUBLE(CONCAT44(local_48.y._4_4_,local_48.y._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 12,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "dVar2 = point->y - __BITCAST_DOUBLE(CONCAT44(local_48.y._4_4_,local_48.y._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "dVar2 = point->y - __BITCAST_DOUBLE(CONCAT44(local_48.y._4_4_,local_48.y._0_4_));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 13,
       "match": "SQRT",
       "severity": "mild",
       "text": "return SQRT(dVar2 * dVar2 + dVar1 * dVar1);",

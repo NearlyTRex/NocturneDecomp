@@ -9,9 +9,9 @@
 int __cdecl core_gore_cpp_CBloodPool_save_FUN_004ed1c0(CBloodPool *this_ptr,_FILE *file_handle)
 
 {
-  int iVar3;
-  double dVar2;
   double dVar1;
+  double dVar2;
+  int iVar3;
   
   dVar1 = (double)(this_ptr->position).y;
   dVar2 = (double)(this_ptr->position).x;

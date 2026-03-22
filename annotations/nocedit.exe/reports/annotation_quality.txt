@@ -25,10 +25,10 @@ SUMMARY STATISTICS
     Undefined types in variables:      221
     Unresolved stack params:           14
 
-  Excluded (.keep / MMX / by-value):   11 functions
+  Excluded (.keep / MMX / by-value):   10 functions
     Wrong calling convention:          0
     Undefined types in variables:      8
-    Unresolved stack params:           5
+    Unresolved stack params:           4
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -1308,19 +1308,13 @@ Unresolved stack params - MMX functions (0)
   (none)
 
 --------------------------------------------------------------------------------
-Unresolved stack params - by-value struct passing (5)
+Unresolved stack params - by-value struct passing (4)
 --------------------------------------------------------------------------------
 
   CDemonSet_showVdirBoxEditor
     Address: 0x00583170  File: core/setedit.cpp
     Evidence: in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc
     Signature: void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  draw3DLineSegment
-    Address: 0x0040d330  File: core/actor.cpp
-    Evidence: in_stack_ffffff4c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff7c, in_stack_ffffff4c
-    Signature: void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonActor_renderBoundingBox

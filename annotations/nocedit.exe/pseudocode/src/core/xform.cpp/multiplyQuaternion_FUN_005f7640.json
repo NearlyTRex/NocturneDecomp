@@ -1,22 +1,35 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 12,
+        "line": 62,
+        "message": "cannot cast from type 'float' to pointer type 'CQuaternion4f *'"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 67,
+        "message": "C-style cast from 'CQuaternion4f *' to 'float' is not allowed"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 75,
-    "complexity_score": 72,
+    "assembly_lines": 87,
+    "complexity_score": 74,
     "cross_reference_count": 11,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 59,
     "suspect_count": 1,
     "suspect_types": [
       "param_count_too_many"
     ],
-    "total_lines": 132
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -92,6 +105,10 @@
       [
         "005f7640",
         "005f76f1"
+      ],
+      [
+        "00604c5e",
+        "00604c80"
       ]
     ],
     "convention": "__stack2_esi",
@@ -220,31 +237,30 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 7.635135135135135,
-    "instruction_count": 74,
+    "avg_pcode_per_instr": 6.7682926829268295,
+    "instruction_count": 82,
     "opcode_distribution": {
-      "COPY": 369,
+      "BRANCH": 2,
+      "COPY": 365,
       "FLOAT2FLOAT": 36,
       "FLOAT_ADD": 8,
       "FLOAT_MULT": 16,
       "FLOAT_SUB": 4,
       "INT_ADD": 40,
-      "INT_AND": 4,
-      "INT_CARRY": 1,
-      "INT_EQUAL": 4,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
       "INT_LESS": 1,
-      "INT_MULT": 8,
       "INT_SBORROW": 1,
-      "INT_SCARRY": 1,
-      "INT_SLESS": 2,
-      "INT_SUB": 10,
-      "INT_ZEXT": 8,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 2,
       "LOAD": 40,
-      "POPCOUNT": 2,
+      "POPCOUNT": 4,
       "RETURN": 1,
       "STORE": 9
     },
-    "pcode_op_count": 565
+    "pcode_op_count": 555
   },
   "stack_frame": {
     "frame_size": 12,

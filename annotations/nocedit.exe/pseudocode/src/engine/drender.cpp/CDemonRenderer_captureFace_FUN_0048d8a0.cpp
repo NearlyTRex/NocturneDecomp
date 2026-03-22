@@ -1,6 +1,6 @@
 // Name: engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0
 // Address: 0048d8a0
-// Address Range: [[0048d8a0, 0048da11]]
+// Address Range: [[0048d8a0, 0048da11] [00604d30, 00604d55]]
 // Convention: __cdecl
 // Signature: void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_0048d8a0(CDemonRenderer *this_ptr,STrianglePackedIndices *triangle_indices,int render_flags)
 
@@ -17,13 +17,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_0048d8a0(CDemonRe
   int iVar6;
   uint uVar7;
   int iVar8;
-  uint *puVar9;
-  uint *puVar10;
-  uint *puVar11;
-  uint *puVar12;
-  byte bVar13;
   
-  bVar13 = 0;
   if (this_ptr->face_capture_enabled == 0) {
     iVar8 = engine_prim_c_getTriangleWindingFromPackedIndices_FUN_005523f0(triangle_indices);
     if (iVar8 == 0) {
@@ -47,18 +41,18 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_0048d8a0(CDemonRe
   iVar8 = g_CaptureTextureCount;
   iVar6 = g_CaptureFaceCount;
   pSVar4 = g_CapturedFaces + g_CaptureFaceCount;
-  puVar11 = (uint *)(g_CaptureFaceCount * 0x20 + 0x2c6d604 + (uint)bVar13 * -8);
-  puVar9 = (uint *)((int)triangle_indices + (uint)bVar13 * -8 + 4);
   uVar5 = triangle_indices->vertex_index_1;
   (pSVar4->face_data).vertex_indices.vertex_index_0 = triangle_indices->vertex_index_0;
   (pSVar4->face_data).vertex_indices.vertex_index_1 = uVar5;
-  puVar12 = puVar11 + (uint)bVar13 * -2 + 1;
-  puVar10 = puVar9 + (uint)bVar13 * -2 + 1;
-  *puVar11 = *puVar9;
-  *puVar12 = *puVar10;
-  puVar12[(uint)bVar13 * -2 + 1] = puVar10[(uint)bVar13 * -2 + 1];
-  *(ushort *)(puVar12 + (uint)bVar13 * -2 + 1 + (uint)bVar13 * -2 + 1) =
-       *(ushort *)(puVar10 + (uint)bVar13 * -2 + 1 + (uint)bVar13 * -2 + 1);
+  *(uint *)&g_CapturedFaces[iVar6].face_data.vertex_indices.vertex_index_2 =
+       *(uint *)&triangle_indices->vertex_index_2;
+  uVar5 = triangle_indices[1].vertex_index_2;
+  g_CapturedFaces[iVar6].face_data.u_coord_1 = triangle_indices[1].vertex_index_1;
+  g_CapturedFaces[iVar6].face_data.u_coord_2 = uVar5;
+  uVar5 = triangle_indices[2].vertex_index_1;
+  g_CapturedFaces[iVar6].face_data.v_coord_0 = triangle_indices[2].vertex_index_0;
+  g_CapturedFaces[iVar6].face_data.v_coord_1 = uVar5;
+  g_CapturedFaces[iVar6].face_data.v_coord_2 = triangle_indices[2].vertex_index_2;
   g_CapturedFaces[iVar6].texture_index = iVar8;
   g_CapturedFaces[iVar6].render_flags = render_flags;
   pSVar1 = this_ptr->vertex_buffer_ptr;

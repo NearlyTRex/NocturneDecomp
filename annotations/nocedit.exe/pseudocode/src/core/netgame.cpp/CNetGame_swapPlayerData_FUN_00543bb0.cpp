@@ -1,6 +1,6 @@
 // Name: core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0
 // Address: 00543bb0
-// Address Range: [[00543bb0, 00543ca8]]
+// Address Range: [[00543bb0, 00543ca8] [006049c7, 006049e9]]
 // Convention: __cdecl
 // Signature: void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_00543bb0(CNetGame *this_ptr,SNetPlayer *other)
 

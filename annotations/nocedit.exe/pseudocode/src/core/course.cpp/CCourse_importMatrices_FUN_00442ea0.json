@@ -4,37 +4,37 @@
       {
         "category": "format_error",
         "column": 46,
-        "line": 40,
+        "line": 34,
         "message": "format specifies type 'float *' but the argument has type 'CMatrix3x3f *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 41,
+        "line": 35,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 40,
-        "line": 51,
+        "line": 45,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "format_error",
         "column": 67,
-        "line": 53,
+        "line": 47,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 54,
+        "line": 48,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "format_error",
         "column": 48,
-        "line": 56,
+        "line": 50,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       }
     ],
@@ -42,19 +42,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 160,
-    "complexity_score": 120,
+    "assembly_lines": 172,
+    "complexity_score": 61,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 70,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "stack_alignment_array"
-    ],
-    "total_lines": 230
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 61,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 233
   },
   "cross_references": [
     {
@@ -76,6 +73,10 @@
       [
         "00442ea0",
         "0044303c"
+      ],
+      [
+        "0060487f",
+        "006048a0"
       ]
     ],
     "convention": "__cdecl",
@@ -208,36 +209,36 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.9496402877697845,
-    "instruction_count": 139,
+    "avg_pcode_per_instr": 4.612244897959184,
+    "instruction_count": 147,
     "opcode_distribution": {
       "BOOL_NEGATE": 13,
+      "BRANCH": 2,
       "CALL": 9,
       "CBRANCH": 7,
-      "COPY": 150,
+      "COPY": 146,
       "FLOAT2FLOAT": 2,
       "INT2FLOAT": 2,
       "INT_ADD": 70,
-      "INT_AND": 78,
-      "INT_CARRY": 12,
-      "INT_EQUAL": 58,
+      "INT_AND": 82,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 62,
       "INT_LEFT": 4,
       "INT_LESS": 12,
-      "INT_MULT": 11,
+      "INT_MULT": 3,
       "INT_NOTEQUAL": 6,
       "INT_OR": 10,
       "INT_SBORROW": 12,
-      "INT_SCARRY": 13,
-      "INT_SLESS": 32,
-      "INT_SUB": 63,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 34,
+      "INT_SUB": 55,
       "INT_XOR": 3,
-      "INT_ZEXT": 8,
       "LOAD": 29,
-      "POPCOUNT": 28,
+      "POPCOUNT": 30,
       "RETURN": 2,
       "STORE": 54
     },
-    "pcode_op_count": 688
+    "pcode_op_count": 678
   },
   "stack_frame": {
     "frame_size": 104,
@@ -318,38 +319,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
-      "match": "auStackY_1804",
-      "severity": "moderate",
-      "text": "uint auStackY_1804 [1508];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar6 = (uint *)((int)pCVar1 + ((uint)bVar8 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar5 = (uint *)((int)&local_28 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*puVar6 = *(uint *)((int)&local_28 + (uint)bVar8 * -8 + 4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

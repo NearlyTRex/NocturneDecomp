@@ -8,8 +8,8 @@ allocate space within caves for injected code (thunks, helpers).
 
 Total caves:        22
 Total bytes:        18,129
-Total free:         7,611
-Total allocations:  116
+Total free:         5,533
+Total allocations:  170
 
 ----------------------------------------------------------------------------------------------------
 CAVES
@@ -71,7 +71,7 @@ CAVES
   cave_00415045                   005b3e15     91 bytes  [FREE]
     (entirely free — no allocations)
 
-  cave_006027e0                   006027e0  12800 bytes  [8096/12800 used]
+  cave_006027e0                   006027e0  12800 bytes  [10174/12800 used]
     Allocations:
       +0x0000   90 bytes  movsd_0040db11             0x0040db11
                4x MOVSD replacement for CDemonActor_renderBoundingBox_FUN_0040d940
@@ -251,7 +251,115 @@ CAVES
                4x MOVSD replacement for CDemonSet_showVdirBoxEditor_FUN_00583170
       +0x1f45   91 bytes  movsd_0058438c             0x0058438c
                4x MOVSD replacement for CDemonSet_showVdirBoxEditor_FUN_00583170
-    Free space: 4704 bytes (offset 0x1fa0 - 0x3200)
+      +0x1fa0   90 bytes  movsd_0040d43c             0x0040d43c
+               4x MOVSD replacement for draw3DLineSegment_FUN_0040d330
+      +0x1ffa   87 bytes  movsd_0040d44d             0x0040d44d
+               4x MOVSD replacement for draw3DLineSegment_FUN_0040d330
+      +0x2051   39 bytes  movsd_0041d8e7             0x0041d8e7
+               4x MOVSD replacement for CBoneGuy_beginRecombine_FUN_0041d8a0
+      +0x2078   39 bytes  movsd_00441dad             0x00441dad
+               4x MOVSD replacement for CConveyor_setup_FUN_00441d60
+      +0x209f   34 bytes  movsd_00443028             0x00443028
+               4x MOVSD replacement for CCourse_importMatrices_FUN_00442ea0
+      +0x20c1   35 bytes  movsd_00451116             0x00451116
+               4x MOVSD replacement for CDemonCamera_computeLightExtentBounds_FUN_00451090
+      +0x20e4   37 bytes  movsd_0044e18f             0x0044e18f
+               4x MOVSD replacement for CDemonCamera_precomputeLight_FUN_0044de10
+      +0x2109   40 bytes  movsd_0044c769             0x0044c769
+               4x MOVSD replacement for CDemonCamera_pushRect_FUN_0044c740
+      +0x2131   37 bytes  movsd_004f839e             0x004f839e
+               4x MOVSD replacement for CIcePick_process_FUN_004f80b0
+      +0x2156   37 bytes  movsd_004f8910             0x004f8910
+               4x MOVSD replacement for CIcePick_updateShootBlend_FUN_004f8810
+      +0x217b   36 bytes  movsd_0051fa4f             0x0051fa4f
+               4x MOVSD replacement for CMimic_updatePose_FUN_0051f930
+      +0x219f   37 bytes  movsd_00526a66             0x00526a66
+               4x MOVSD replacement for CMobster_aimTommyGun_FUN_005267a0
+      +0x21c4   35 bytes  movsd_005427a1             0x005427a1
+               4x MOVSD replacement for CNetGame_applyNewGameSettings_FUN_00542470
+      +0x21e7   35 bytes  movsd_00543bc9             0x00543bc9
+               4x MOVSD replacement for CNetGame_swapPlayerData_FUN_00543bb0
+      +0x220a   35 bytes  movsd_00543cff             0x00543cff
+               4x MOVSD replacement for SNetPlayer_copy_FUN_00543cf0
+      +0x222d   40 bytes  movsd_0056a8df             0x0056a8df
+               4x MOVSD replacement for CDemonSet_precomputeLightVisibility_FUN_0056a470
+      +0x2255   39 bytes  movsd_0056b692             0x0056b692
+               4x MOVSD replacement for CDemonSet_setCameraView_FUN_0056ae50
+      +0x227c   39 bytes  movsd_0057b6c3             0x0057b6c3
+               4x MOVSD replacement for CDemonSet_cloneLight_FUN_0057b600
+      +0x22a3   34 bytes  movsd_0057e6be             0x0057e6be
+               4x MOVSD replacement for CDemonSet_deleteCamera_FUN_0057e430
+      +0x22c5   39 bytes  movsd_0057b9f6             0x0057b9f6
+               4x MOVSD replacement for CDemonSet_deleteLight_FUN_0057b910
+      +0x22ec   40 bytes  movsd_00579e27             0x00579e27
+               4x MOVSD replacement for CDemonSet_importS3D_FUN_00578d80
+      +0x2314   39 bytes  movsd_0059f816             0x0059f816
+               4x MOVSD replacement for CDeformableModelInstance_blendBoneRotations_FUN_0059f750
+      +0x233b   37 bytes  movsd_005a0b50             0x005a0b50
+               4x MOVSD replacement for CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
+      +0x2360   36 bytes  movsd_0059f724             0x0059f724
+               4x MOVSD replacement for CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0
+      +0x2384   36 bytes  movsd_005a1573             0x005a1573
+               4x MOVSD replacement for CDeformableModelInstance_getBoneTransform_FUN_005a1510
+      +0x23a8   36 bytes  movsd_005a164e             0x005a164e
+               4x MOVSD replacement for CDeformableModelInstance_setBoneTransform_FUN_005a15e0
+      +0x23cc   36 bytes  movsd_005a1c8c             0x005a1c8c
+               4x MOVSD replacement for blendBoneTransformData_FUN_005a1b70
+      +0x23f0   37 bytes  movsd_005d8e8b             0x005d8e8b
+               4x MOVSD replacement for CSvetlana_process_FUN_005d8ba0
+      +0x2415   35 bytes  movsd_005f7bad             0x005f7bad
+               4x MOVSD replacement for eulerToQuaternionIndirect_FUN_005f7b70
+      +0x2438   35 bytes  movsd_005f7b5d             0x005f7b5d
+               4x MOVSD replacement for eulerToQuaternion_FUN_005f7b20
+      +0x245b   35 bytes  movsd_005f7724             0x005f7724
+               4x MOVSD replacement for multiplyQuaternionInPlace_FUN_005f7700
+      +0x247e   35 bytes  movsd_005f76e7             0x005f76e7
+               4x MOVSD replacement for multiplyQuaternion_FUN_005f7640
+      +0x24a1   35 bytes  movsd_005f760a             0x005f760a
+               4x MOVSD replacement for negateFirstComponent_FUN_005f75e0
+      +0x24c4   35 bytes  movsd_005f79df             0x005f79df
+               4x MOVSD replacement for quaternionFromAngleX_FUN_005f79b0
+      +0x24e7   35 bytes  movsd_005f7a1f             0x005f7a1f
+               4x MOVSD replacement for quaternionFromAngleY_FUN_005f79f0
+      +0x250a   35 bytes  movsd_005f7a5f             0x005f7a5f
+               4x MOVSD replacement for quaternionFromAngleZ_FUN_005f7a30
+      +0x252d   35 bytes  movsd_005f7aaf             0x005f7aaf
+               4x MOVSD replacement for quaternionFromAxisAngle_FUN_005f7a70
+      +0x2550   38 bytes  movsd_0048d955             0x0048d955
+               4x MOVSD replacement for CDemonRenderer_captureFace_FUN_0048d8a0
+      +0x2576   39 bytes  movsd_00465e5e             0x00465e5e
+               4x MOVSD replacement for duplicateSharedVertices_FUN_00465d50
+      +0x259d   39 bytes  movsd_00463962             0x00463962
+               4x MOVSD replacement for removeUnusedVertices_FUN_00463830
+      +0x25c4   39 bytes  movsd_0045c63e             0x0045c63e
+               4x MOVSD replacement for selectVertexToDelete_FUN_0045c5b0
+      +0x25eb   36 bytes  movsd_0048f9d6             0x0048f9d6
+               4x MOVSD replacement for CDSEModel_load_FUN_0048f960
+      +0x260f   39 bytes  movsd_0048f94b             0x0048f94b
+               4x MOVSD replacement for CDSEModel_processModelPart_FUN_0048f770
+      +0x2636   36 bytes  movsd_0051eff0             0x0051eff0
+               4x MOVSD replacement for CLodFace_copy2_FUN_0051efe0
+      +0x265a   36 bytes  movsd_0051ef2f             0x0051ef2f
+               4x MOVSD replacement for CLodFace_copy_FUN_0051ef20
+      +0x267e   36 bytes  movsd_0051b663             0x0051b663
+               4x MOVSD replacement for CLodMesh_compactFaces_FUN_0051b570
+      +0x26a2   35 bytes  movsd_005d83bb             0x005d83bb
+               4x MOVSD replacement for CP2D_add_FUN_005d8390
+      +0x26c5   35 bytes  movsd_005d83f8             0x005d83f8
+               4x MOVSD replacement for CP2D_scale_FUN_005d83d0
+      +0x26e8   35 bytes  movsd_005d837b             0x005d837b
+               4x MOVSD replacement for CP2D_subtract_FUN_005d8350
+      +0x270b   35 bytes  movsd_005d6378             0x005d6378
+               4x MOVSD replacement for closestPointOnSegment3D_FUN_005d6020
+      +0x272e   35 bytes  movsd_005d64cc             0x005d64cc
+               4x MOVSD replacement for distancePointToSegmentXY_FUN_005d64a0
+      +0x2751   39 bytes  movsd_005b0264             0x005b0264
+               4x MOVSD replacement for directSoundEnumerationCallback_FUN_005b0120
+      +0x2778   35 bytes  movsd_005e1a1b             0x005e1a1b
+               4x MOVSD replacement for buildSockaddrIn_FUN_005e19d0
+      +0x279b   35 bytes  movsd_005e1bf7             0x005e1bf7
+               4x MOVSD replacement for connectSocket_FUN_005e1bd0
+    Free space: 2626 bytes (offset 0x27be - 0x3200)
 
   cave_005fde92                   0060d067    145 bytes  [FREE]
     (entirely free — no allocations)

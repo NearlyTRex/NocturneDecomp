@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 81,
-        "line": 234,
+        "line": 233,
         "message": "format specifies type 'char *' but the argument has type 'CIcePick *' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 316,
+        "line": 315,
         "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'"
       }
     ],
@@ -18,20 +18,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 682,
-    "complexity_score": 398,
+    "assembly_lines": 694,
+    "complexity_score": 345,
     "cross_reference_count": 0,
     "function_call_count": 30,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 323,
-    "suspect_count": 6,
+    "pseudocode_lines": 315,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
       "stack_alignment_array",
       "warning_unreachable"
     ],
-    "total_lines": 1005
+    "total_lines": 1009
   },
   "cross_references": [],
   "function": {
@@ -40,6 +39,10 @@
       [
         "004f80b0",
         "004f8807"
+      ],
+      [
+        "00604911",
+        "00604935"
       ]
     ],
     "convention": "__cdecl",
@@ -294,17 +297,17 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.195652173913044,
-    "instruction_count": 506,
+    "avg_pcode_per_instr": 5.095330739299611,
+    "instruction_count": 514,
     "opcode_distribution": {
       "BOOL_NEGATE": 19,
       "BOOL_OR": 17,
-      "BRANCH": 23,
+      "BRANCH": 25,
       "BRANCHIND": 1,
       "CALL": 35,
       "CALLIND": 5,
       "CBRANCH": 62,
-      "COPY": 812,
+      "COPY": 808,
       "FLOAT2FLOAT": 60,
       "FLOAT_ADD": 9,
       "FLOAT_EQUAL": 5,
@@ -315,26 +318,26 @@
       "FLOAT_SUB": 2,
       "INT2FLOAT": 1,
       "INT_ADD": 200,
-      "INT_AND": 247,
-      "INT_CARRY": 39,
-      "INT_EQUAL": 200,
+      "INT_AND": 251,
+      "INT_CARRY": 41,
+      "INT_EQUAL": 204,
       "INT_LEFT": 20,
       "INT_LESS": 36,
-      "INT_MULT": 9,
+      "INT_MULT": 1,
       "INT_NOTEQUAL": 25,
       "INT_OR": 25,
       "INT_SBORROW": 36,
-      "INT_SCARRY": 39,
-      "INT_SLESS": 100,
-      "INT_SUB": 168,
+      "INT_SCARRY": 41,
+      "INT_SLESS": 102,
+      "INT_SUB": 160,
       "INT_XOR": 3,
-      "INT_ZEXT": 28,
+      "INT_ZEXT": 20,
       "LOAD": 105,
-      "POPCOUNT": 100,
+      "POPCOUNT": 102,
       "RETURN": 1,
       "STORE": 174
     },
-    "pcode_op_count": 2629
+    "pcode_op_count": 2619
   },
   "stack_frame": {
     "frame_size": 6268,
@@ -520,43 +523,11 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 29,
+      "line": 28,
       "match": "afStackY_1870",
       "severity": "moderate",
       "text": "float afStackY_1870 [1521];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 314,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar11 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 315,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar10 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 316,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 317,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4);",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

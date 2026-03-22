@@ -1,6 +1,6 @@
 // Name: shape_dsemodel.cpp_CDSEModel_load_FUN_0048f960
 // Address: 0048f960
-// Address Range: [[0048f960, 0048fa4a]]
+// Address Range: [[0048f960, 0048fa4a] [00604dcb, 00604dee]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_dsemodel_cpp_CDSEModel_load_FUN_0048f960(CDSEModel *this_ptr)
 

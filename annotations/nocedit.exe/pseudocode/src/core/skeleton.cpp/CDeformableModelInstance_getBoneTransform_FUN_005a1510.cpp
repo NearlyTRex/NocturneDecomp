@@ -1,6 +1,6 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
 // Address: 005a1510
-// Address Range: [[005a1510, 005a15d8]]
+// Address Range: [[005a1510, 005a15d8] [00604b64, 00604b87]]
 // Convention: __cdecl
 // Signature: SPose * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance *this_ptr,SPose *bone_transform)
 
@@ -46,15 +46,14 @@ SPose * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_
     local_14 = this_ptr;
     pSVar3 = bone_transform;
     do {
-      puVar9 = (uint *)((int)bone_transform + (uint)bVar12 * -8 + 0x10);
-      puVar6 = (uint *)((int)local_14 + (uint)bVar12 * -8 + 0x6b4);
       (bone_transform->pose_data).bone_rotations[0].w =
            (local_14->bone_transform).pose_data.bone_rotations[0].w;
-      puVar10 = puVar9 + (uint)bVar12 * -2 + 1;
-      puVar7 = puVar6 + (uint)bVar12 * -2 + 1;
-      *puVar9 = *puVar6;
-      *puVar10 = *puVar7;
-      puVar10[(uint)bVar12 * -2 + 1] = puVar7[(uint)bVar12 * -2 + 1];
+      (bone_transform->pose_data).bone_rotations[0].x =
+           (local_14->bone_transform).pose_data.bone_rotations[0].x;
+      (bone_transform->pose_data).bone_rotations[0].y =
+           (local_14->bone_transform).pose_data.bone_rotations[0].y;
+      (bone_transform->pose_data).bone_rotations[0].z =
+           (local_14->bone_transform).pose_data.bone_rotations[0].z;
       pSVar2 = (SPose *)&(pSVar3->pose_data).bone_rotations[2].x;
       local_c->bone_scales[0] = (this_ptr->bone_transform).bone_scales[0];
       this_ptr = (CDeformableModelInstance *)&(this_ptr->motion_controller).current_motion_index;

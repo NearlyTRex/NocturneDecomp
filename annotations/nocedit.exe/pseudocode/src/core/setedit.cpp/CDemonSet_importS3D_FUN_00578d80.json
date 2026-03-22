@@ -22,49 +22,49 @@
       {
         "category": "format_error",
         "column": 94,
-        "line": 616,
+        "line": 612,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 28,
-        "line": 617,
+        "line": 613,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 47,
-        "line": 617,
+        "line": 613,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 56,
-        "line": 617,
+        "line": 613,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 75,
-        "line": 617,
+        "line": 613,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 84,
-        "line": 617,
+        "line": 613,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 47,
-        "line": 662,
+        "line": 658,
         "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 47,
-        "line": 664,
+        "line": 660,
         "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       }
     ],
@@ -72,19 +72,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 1595,
-    "complexity_score": 747,
+    "assembly_lines": 1607,
+    "complexity_score": 713,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 77,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 677,
-    "suspect_count": 6,
+    "pseudocode_lines": 673,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 2272
+    "total_lines": 2280
   },
   "cross_references": [
     {
@@ -100,6 +100,10 @@
       [
         "00578d80",
         "0057a0b4"
+      ],
+      [
+        "00604acc",
+        "00604af3"
       ]
     ],
     "convention": "__cdecl",
@@ -798,38 +802,38 @@
     }
   ],
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.387202625102543,
-    "instruction_count": 1219,
+    "avg_pcode_per_instr": 4.350448247758761,
+    "instruction_count": 1227,
     "opcode_distribution": {
       "BOOL_NEGATE": 44,
       "BOOL_OR": 16,
-      "BRANCH": 27,
+      "BRANCH": 29,
       "CALL": 104,
       "CBRANCH": 133,
-      "COPY": 921,
+      "COPY": 917,
       "INT_ADD": 497,
-      "INT_AND": 676,
-      "INT_CARRY": 133,
-      "INT_EQUAL": 623,
+      "INT_AND": 680,
+      "INT_CARRY": 135,
+      "INT_EQUAL": 627,
       "INT_LEFT": 2,
       "INT_LESS": 75,
-      "INT_MULT": 30,
+      "INT_MULT": 22,
       "INT_NOTEQUAL": 60,
       "INT_OR": 5,
       "INT_SBORROW": 76,
-      "INT_SCARRY": 152,
+      "INT_SCARRY": 154,
       "INT_SEXT": 18,
-      "INT_SLESS": 307,
-      "INT_SUB": 450,
+      "INT_SLESS": 309,
+      "INT_SUB": 442,
       "INT_XOR": 22,
-      "INT_ZEXT": 22,
+      "INT_ZEXT": 14,
       "LOAD": 214,
-      "POPCOUNT": 305,
+      "POPCOUNT": 307,
       "RETURN": 6,
       "STORE": 418,
       "SUBPIECE": 12
     },
-    "pcode_op_count": 5348
+    "pcode_op_count": 5338
   },
   "stack_frame": {
     "frame_size": 14908,
@@ -1199,30 +1203,6 @@
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 498,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar16 = (uint *)((int)pCVar10 + (uint)bVar22 * -8 + 0x228);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 501,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar13 = (uint *)((int)&local_2478 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 0x22c)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 503,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*puVar16 = *(uint *)((int)&local_2478 + (uint)bVar22 * -8 + 0x228);",
       "type": "pointer_cast"
     }
   ]

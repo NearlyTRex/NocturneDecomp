@@ -269,7 +269,28 @@ def can_borrow(text):
     return True
 
 
-def build_site_patch(ks, instructions, group_idx, group_addr):
+# Pattern to extract jump/branch targets from instructions
+RE_BRANCH_TARGET = re.compile(
+    r'^(?:JMP|JZ|JNZ|JE|JNE|JL|JG|JLE|JGE|JA|JB|JAE|JBE|JC|JNC|JS|JNS|'
+    r'JO|JNO|JP|JNP|JCXZ|JECXZ|LOOP|LOOPE|LOOPNE)\s+'
+    r'(?:.*\s)?0x([0-9a-fA-F]+)',
+    re.IGNORECASE)
+
+
+def collect_jump_targets(instructions):
+    """Collect all branch target addresses in the function.
+
+    Returns a set of addresses that are jumped/branched to.
+    """
+    targets = set()
+    for addr, text in instructions:
+        m = RE_BRANCH_TARGET.match(text)
+        if m:
+            targets.add(int(m.group(1), 16))
+    return targets
+
+
+def build_site_patch(ks, instructions, group_idx, group_addr, jump_targets=None):
     """Build a site patch by borrowing adjacent instructions.
 
     Returns:
@@ -279,6 +300,9 @@ def build_site_patch(ks, instructions, group_idx, group_addr):
       after_insns: [(addr, text)] borrowed from after the MOVSDs
       return_addr: address to JMP back to from the cave
     """
+    if jump_targets is None:
+        jump_targets = set()
+
     movsd_start = group_addr
     movsd_end = group_addr + 4  # 4 bytes of MOVSD
     movsd_size = 4
@@ -337,6 +361,14 @@ def build_site_patch(ks, instructions, group_idx, group_addr):
         return_addr = group_addr + 4  # right after MOVSDs
 
     site_size = return_addr - site_start
+
+    # Safety check: verify no jump targets land INSIDE our patch range.
+    # A jump to site_start is OK (it hits our JMP), but a jump to any
+    # address in (site_start, return_addr) would land in the middle of
+    # our JMP or NOP padding — corrupting control flow.
+    for target in jump_targets:
+        if site_start < target < return_addr:
+            return None  # Unsafe — a branch lands inside our patch
 
     return {
         'site_start': site_start,
@@ -436,6 +468,9 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
     instructions = parse_asm_file(asm_path)
 
     # Find both pattern types
+    # Collect all branch targets for safety validation
+    jump_targets = collect_jump_targets(instructions)
+
     movsd4_groups = find_movsd_groups(instructions)
     rep_groups = find_rep_movsd_groups(instructions)
 
@@ -474,7 +509,8 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
             print("\n  %s group %d at 0x%08x" % (gtype, group_num + 1, group_addr))
 
         if gtype == 'movsd4':
-            site_info = build_site_patch(ks, instructions, group_idx, group_addr)
+            site_info = build_site_patch(ks, instructions, group_idx, group_addr,
+                                        jump_targets=jump_targets)
             if site_info is None:
                 if verbose:
                     print("    SKIP: cannot borrow enough bytes for JMP")

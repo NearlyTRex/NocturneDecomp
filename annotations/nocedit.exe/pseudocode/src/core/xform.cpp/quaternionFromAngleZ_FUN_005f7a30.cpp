@@ -1,6 +1,6 @@
 // Name: core_xform.cpp_quaternionFromAngleZ_FUN_005f7a30
 // Address: 005f7a30
-// Address Range: [[005f7a30, 005f7a69]]
+// Address Range: [[005f7a30, 005f7a69] [00604cea, 00604d0c]]
 // Convention: __stack_esi
 // Signature: CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30(float angle_radians,CQuaternion4f *quat_out)
 

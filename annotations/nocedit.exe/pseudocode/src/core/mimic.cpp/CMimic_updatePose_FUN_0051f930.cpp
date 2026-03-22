@@ -1,6 +1,6 @@
 // Name: core_mimic.cpp_CMimic_updatePose_FUN_0051f930
 // Address: 0051f930
-// Address Range: [[0051f930, 0051fcb8]]
+// Address Range: [[0051f930, 0051fcb8] [0060495b, 0060497e]]
 // Convention: __cdecl
 // Signature: void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
 
@@ -11,12 +11,13 @@
 void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
 
 {
+  float *pfVar1;
   CSkeleton *pCVar6;
   int iVar7;
   SPose *pSVar8;
   CVector3f *pCVar9;
   uint uVar10;
-  int iVar1;
+  int iVar2;
   int iVar11;
   CVector3f *pCVar12;
   CVector3f *pCVar5;
@@ -67,21 +68,17 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
   bVar26 = 0;
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                      (&(this_ptr->base).base.model);
-  iVar1 = pCVar6->bone_count;
+  iVar2 = pCVar6->bone_count;
   pCVar5 = (this_ptr->base).base.model.transformed_vertices;
   local_14 = this_ptr;
   pCVar15 = this_ptr;
-  for (iVar7 = 0; iVar5 = g_LocalHeroIndex, iVar7 < iVar1; iVar7 = iVar7 + 1) {
-    pCVar1 = (g_HeroActors[g_LocalHeroIndex]->base).model.bone_transform.pose_data.bone_rotations +
-             iVar7;
-    puVar23 = (uint *)((int)pCVar15 + (uint)bVar26 * -8 + 0x80c);
-    puVar17 = (uint *)((int)pCVar1 + ((uint)bVar26 * -2 + 1) * 4);
-    (pCVar15->base).base.model.bone_transform.pose_data.bone_rotations[0].w = pCVar1->w;
-    puVar24 = puVar23 + (uint)bVar26 * -2 + 1;
-    puVar18 = puVar17 + (uint)bVar26 * -2 + 1;
-    *puVar23 = *puVar17;
-    *puVar24 = *puVar18;
-    puVar24[(uint)bVar26 * -2 + 1] = puVar18[(uint)bVar26 * -2 + 1];
+  for (iVar7 = 0; iVar5 = g_LocalHeroIndex, iVar7 < iVar2; iVar7 = iVar7 + 1) {
+    pfVar1 = &(g_HeroActors[g_LocalHeroIndex]->base).model.bone_transform.pose_data.bone_rotations
+              [iVar7].w;
+    (pCVar15->base).base.model.bone_transform.pose_data.bone_rotations[0].w = *pfVar1;
+    (pCVar15->base).base.model.bone_transform.pose_data.bone_rotations[0].x = pfVar1[1];
+    (pCVar15->base).base.model.bone_transform.pose_data.bone_rotations[0].y = pfVar1[2];
+    (pCVar15->base).base.model.bone_transform.pose_data.bone_rotations[0].z = pfVar1[3];
     pCVar8 = (g_HeroActors[iVar5]->base).model.bone_transform.bone_world_matrices + iVar7;
     pCVar10 = (local_14->base).base.model.bone_transform.bone_world_matrices;
     for (iVar11 = 0xc; iVar11 != 0; iVar11 = iVar11 + -1) {
@@ -118,7 +115,7 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
     pCVar16 = (CVector3i *)((int)pCVar16 + (uint)bVar26 * -8 + 4);
     pCVar22 = (CVector3i *)((int)pCVar22 + (uint)bVar26 * -8 + 4);
   }
-  for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
+  for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
     pCVar22 = (CVector3i *)((int)pCVar22 + (uint)bVar26 * -2 + 1);
     pCVar16 = (CVector3i *)((int)pCVar16 + (uint)bVar26 * -2 + 1);
     *(char *)&pCVar22->x = (char)pCVar16->x;
@@ -140,7 +137,7 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
     pCVar8 = &local_2a0;
     pCVar7 = &local_90;
     pCVar11 = &local_2a0;
-    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
       pCVar11->m[0].w = pCVar7->m[0].w;
       pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar26 * -2 + 1) * 4);
       pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar26 * -2 + 1) * 4);
@@ -148,7 +145,7 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_f0,&local_120,&local_210);
     pCVar19 = &local_210;
     pCVar25 = &local_2d0;
-    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
       pCVar25 = (CMatrix3x4f *)((int)pCVar25 + (uint)bVar26 * -8 + 4);
       pCVar19 = (CMatrix3x4f *)((int)pCVar19 + (uint)bVar26 * -8 + 4);
       pCVar25->m[0].w = pCVar19->m[0].w;
@@ -158,7 +155,7 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_2d0,pCVar8,&local_1e0);
     pCVar8 = &local_1e0;
     pCVar7 = &local_270;
-    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
       pCVar7->m[0].w = pCVar8->m[0].w;
       pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar26 * -2 + 1) * 4);
       pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar26 * -2 + 1) * 4);
@@ -167,7 +164,7 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
     pCVar8 = &local_60;
     pCVar10 = &local_1b0;
     pCVar7 = &local_60;
-    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
       pCVar7->m[0].w = pCVar10->m[0].w;
       pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar26 * -2 + 1) * 4);
       pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar26 * -2 + 1) * 4);
@@ -175,7 +172,7 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
     core_xform_cpp_buildXFlipMatrix_FUN_005f6ee0(0.0,&local_180);
     pCVar20 = &local_180;
     pCVar10 = &local_240;
-    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
       pCVar20 = (CMatrix3x4f *)((int)pCVar20 + (uint)bVar26 * -8 + 4);
       pCVar10->m[0].w = pCVar20->m[0].w;
       pCVar20 = pCVar20;
@@ -184,7 +181,7 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_240,pCVar8,&local_150);
     pCVar21 = &local_150;
     pCVar8 = &local_60;
-    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
       pCVar21 = (CMatrix3x4f *)((int)pCVar21 + (uint)bVar26 * -8 + 4);
       pCVar8->m[0].w = pCVar21->m[0].w;
       pCVar21 = pCVar21;

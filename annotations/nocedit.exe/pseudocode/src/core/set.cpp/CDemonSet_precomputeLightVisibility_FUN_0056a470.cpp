@@ -1,6 +1,6 @@
 // Name: core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
 // Address: 0056a470
-// Address Range: [[0056a470, 0056aa00]]
+// Address Range: [[0056a470, 0056aa00] [00604a0d, 00604a34]]
 // Convention: __cdecl
 // Signature: void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr,int light_index)
 
@@ -21,7 +21,6 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
   uint *puVar9;
   bool bVar10;
   byte bVar11;
-  uint auStackY_1838 [1443];
   char local_174 [256];
   CVector3f local_74 [2];
   CRect local_5c;
@@ -43,7 +42,6 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
   CDemonLight *light_source;
   C3DSLight *pCVar1;
   
-  bVar11 = 0;
   bVar10 = g_MasterLightCount == 0;
   if (bVar10) {
     core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
@@ -122,13 +120,10 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
               *(char *)(local_18 + 0x19b58) = (char)iVar1;
               core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
                         (&g_CDemonCameraInstance,light_source,&local_5c);
-              puVar8 = (uint *)(iVar5 + 0x19c58 + (uint)bVar11 * -8);
               *(int *)(iVar5 + 0x19c54) = local_5c.left;
-              puVar9 = puVar8 + (uint)bVar11 * -2 + 1;
-              puVar7 = (uint *)((int)&local_5c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-              *puVar8 = *(uint *)((int)&local_5c + (uint)bVar11 * -8 + 4);
-              *puVar9 = *puVar7;
-              puVar9[(uint)bVar11 * -2 + 1] = puVar7[(uint)bVar11 * -2 + 1];
+              *(int *)(iVar5 + 0x19c58) = local_5c.top;
+              *(int *)(iVar5 + 0x19c5c) = local_5c.right;
+              *(int *)(iVar5 + 0x19c60) = local_5c.bottom;
               if (*(char *)(local_18 + 0x19b58) != '\0') {
                 _sprintf(local_174,"Light %d, Box : %d,%d,%d,%d");
                 engine_2d_c_drawText_FUN_00401fd0(local_174,0,local_1c);

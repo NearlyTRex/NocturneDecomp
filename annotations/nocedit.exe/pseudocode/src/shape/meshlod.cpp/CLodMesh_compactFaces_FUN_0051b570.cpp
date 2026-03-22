@@ -1,6 +1,6 @@
 // Name: shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570
 // Address: 0051b570
-// Address Range: [[0051b570, 0051b6ee]]
+// Address Range: [[0051b570, 0051b6ee] [00604e5e, 00604e81]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_meshlod_cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh *this_ptr)
 
@@ -14,9 +14,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh *this
   int iVar3;
   uint *puVar4;
   int iVar5;
-  uint *puVar3;
   uint *puVar6;
-  uint *puVar5;
   uint *puVar7;
   byte bVar8;
   int local_24;
@@ -54,13 +52,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh *this
       if (-1 < (int)puVar2[0x10]) {
         if (local_20 < local_14) {
           puVar4 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_18);
-          puVar5 = puVar4 + (uint)bVar8 * -2 + 1;
-          puVar3 = puVar2 + (uint)bVar8 * -2 + 1;
           *puVar4 = *puVar2;
-          *puVar5 = *puVar3;
-          puVar5[(uint)bVar8 * -2 + 1] = puVar3[(uint)bVar8 * -2 + 1];
-          (puVar5 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1] =
-               (puVar3 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1];
+          puVar4[1] = puVar2[1];
+          puVar4[2] = puVar2[2];
+          puVar4[3] = puVar2[3];
           puVar4[4] = puVar2[4];
           puVar4[(uint)bVar8 * -2 + 5] = puVar2[(uint)bVar8 * -2 + 5];
           (puVar4 + (uint)bVar8 * -2 + 5)[(uint)bVar8 * -2 + 1] =

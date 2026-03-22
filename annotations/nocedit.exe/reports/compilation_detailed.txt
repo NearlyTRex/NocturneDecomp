@@ -5,15 +5,15 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6452
-Successful: 5850 (90.7%)
-Failed: 602
+Successful: 5849 (90.7%)
+Failed: 603
 
 ERROR CATEGORIES
 --------------------------------------------------
   other                           1224
-  format_error                     797
+  format_error                     793
   incompatible_types               213
-  undeclared_identifier            139
+  undeclared_identifier            140
   syntax_error                      41
   missing_member                    20
   type_error                        10
@@ -82,6 +82,8 @@ CATEGORY: other (1224 errors)
     Line 1382: cannot cast from type 'float' to pointer type 'CDemonActor *'
   core_set.cpp_CDemonSet_processActors_FUN_0056b810
     Line 69: cannot cast from type 'float' to pointer type 'CPathMap *'
+  core_xform.cpp_multiplyQuaternion_FUN_005f7640
+    Line 62: cannot cast from type 'float' to pointer type 'CQuaternion4f *'
   core_platfrm.cpp_CPlatform_process_FUN_0054cc30
     Line 276: cannot cast from type 'float' to pointer type 'CVector3f *'
   core_setcolid.cpp_rayTestQuadFloor_FUN_005715d0
@@ -129,7 +131,7 @@ CATEGORY: other (1224 errors)
   cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
     Line 37: comparison of distinct pointer types ('ushort *' (aka 'unsigned short *') and 'char *')
   core_course.cpp_CCourse_importMatrices_FUN_00442ea0
-    Line 41: data argument not used by format string [-Werror,-Wformat-extra-args]
+    Line 35: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30
     Line 111: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0
@@ -140,8 +142,6 @@ CATEGORY: other (1224 errors)
     Line 334: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_game.cpp_CGame_processFrame_FUN_004da100
     Line 158: data argument not used by format string [-Werror,-Wformat-extra-args]
-  core_gore.cpp_CBloodPool_save_FUN_004ed1c0
-    Line 19: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_script.cpp_CScript_loadState_FUN_00560820
     Line 44: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400
@@ -507,7 +507,7 @@ CATEGORY: other (1224 errors)
   core_script.cpp_editParameterValue_FUN_00562920
     Line 66: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
-    Line 133: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 128: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
     Line 298: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_setedit.cpp_CDemonSet_save_FUN_0057a2a0
@@ -622,7 +622,7 @@ CATEGORY: other (1224 errors)
     Line 40: too many arguments to function call, expected 0, have 2
 
 ====================================================================================================
-CATEGORY: format_error (797 errors)
+CATEGORY: format_error (793 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -756,7 +756,7 @@ CATEGORY: format_error (797 errors)
   core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20
     Line 107: format specifies type 'char *' but the argument has type 'CHotDemon *' [-Werror,-Wformat]
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
-    Line 234: format specifies type 'char *' but the argument has type 'CIcePick *' [-Werror,-Wformat]
+    Line 233: format specifies type 'char *' but the argument has type 'CIcePick *' [-Werror,-Wformat]
   core_imp.cpp_CImp_process_FUN_004f9c30
     Line 477: format specifies type 'char *' but the argument has type 'CImp *' [-Werror,-Wformat]
   core_anvil.cpp_CAnvil_addFilesToExtract_FUN_00412090
@@ -836,7 +836,7 @@ CATEGORY: format_error (797 errors)
   core_succubus.cpp_CSuccubus_process_FUN_005c6e90
     Line 195: format specifies type 'char *' but the argument has type 'CSuccubus *' [-Werror,-Wformat]
   core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0
-    Line 198: format specifies type 'char *' but the argument has type 'CSvetlana *' [-Werror,-Wformat]
+    Line 197: format specifies type 'char *' but the argument has type 'CSvetlana *' [-Werror,-Wformat]
   core_teleport.cpp_CTeleportDest_processInEditor_FUN_005da870
     Line 26: format specifies type 'char *' but the argument has type 'CTeleportDest *' [-Werror,-Wformat]
   core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00
@@ -1017,8 +1017,6 @@ CATEGORY: format_error (797 errors)
     Line 82: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   core_game.cpp_CGame_processFrame_FUN_004da100
     Line 157: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
-  core_gore.cpp_CBloodPool_save_FUN_004ed1c0
-    Line 18: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
     Line 143: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100
@@ -1028,7 +1026,7 @@ CATEGORY: format_error (797 errors)
   core_inv.cpp_CInventory_load_FUN_004ff400
     Line 45: format specifies type 'float *' but the argument has type 'CInventory *' [-Werror,-Wformat]
   core_course.cpp_CCourse_importMatrices_FUN_00442ea0
-    Line 40: format specifies type 'float *' but the argument has type 'CMatrix3x3f *' [-Werror,-Wformat]
+    Line 34: format specifies type 'float *' but the argument has type 'CMatrix3x3f *' [-Werror,-Wformat]
   core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
     Line 22: format specifies type 'float *' but the argument has type 'CMatrix3x4f *' [-Werror,-Wformat]
   core_actor.cpp_archiveQuaternion_FUN_0040b520
@@ -1225,13 +1223,13 @@ CATEGORY: incompatible_types (213 errors)
   core_haystack.cpp_CHaystack_process_FUN_004f0e40
     Line 270: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
-    Line 316: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
+    Line 315: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_scat.cpp_CScat_process_FUN_005571f0
     Line 310: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720
     Line 39: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0
-    Line 289: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
+    Line 288: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
     Line 37: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
@@ -1400,7 +1398,7 @@ CATEGORY: incompatible_types (213 errors)
     Line 212: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (139 errors)
+CATEGORY: undeclared_identifier (140 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -1545,6 +1543,8 @@ CATEGORY: undeclared_identifier (139 errors)
     Line 111: use of undeclared identifier 'stack0xffffff78'
   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
     Line 85: use of undeclared identifier 'stack0xffffff94'; did you mean 'in_stack_ffffff94'?
+  core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
+    Line 65: use of undeclared identifier 'stack0xffffffc0'
   core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70
     Line 28: use of undeclared identifier 'stack0xffffffcc'
   shape_design.c_renderSinglePolygon_FUN_0045ce20

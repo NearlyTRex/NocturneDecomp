@@ -1,6 +1,6 @@
 // Name: shape_design.c_removeUnusedVertices_FUN_00463830
 // Address: 00463830
-// Address Range: [[00463830, 00463a1f]]
+// Address Range: [[00463830, 00463a1f] [00604d7d, 00604da3]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_design_c_removeUnusedVertices_FUN_00463830(void)
 
@@ -9,6 +9,7 @@
 void __cdecl shape_design_c_removeUnusedVertices_FUN_00463830(void)
 
 {
+  int iVar2;
   void *dest;
   uint *puVar2;
   uint *puVar3;
@@ -20,7 +21,6 @@ void __cdecl shape_design_c_removeUnusedVertices_FUN_00463830(void)
   int local_1c;
   int iVar1;
   
-  bVar6 = 0;
   if (0 < g_VertexCount) {
     dest = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                      (g_VertexCount << 2,"..\\shape\\design.c",0x189a);
@@ -41,22 +41,17 @@ void __cdecl shape_design_c_removeUnusedVertices_FUN_00463830(void)
         }
       }
       g_VertexCount = 0;
-      for (local_1c = 0; local_1c < iVar1; local_1c = local_1c + 1) {
+      for (local_1c = 0; iVar2 = g_VertexCount, local_1c < iVar1; local_1c = local_1c + 1) {
         if (*(int *)(local_1c * 4 + (int)dest) == 0) {
           *(uint *)(local_1c * 4 + (int)dest) = 0xffffffff;
         }
         else {
           if (g_VertexCount != local_1c) {
-            puVar4 = (uint *)(g_VertexCount * 0x14 + 0x1626410 + (uint)bVar6 * -8);
-            puVar2 = (uint *)(local_1c * 0x14 + 0x1626410 + (uint)bVar6 * -8);
             g_LoadedVertices[g_VertexCount].vertex.x = g_LoadedVertices[local_1c].vertex.x;
-            puVar5 = puVar4 + (uint)bVar6 * -2 + 1;
-            puVar3 = puVar2 + (uint)bVar6 * -2 + 1;
-            *puVar4 = *puVar2;
-            *puVar5 = *puVar3;
-            puVar5[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
-            (puVar5 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1] =
-                 (puVar3 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
+            g_LoadedVertices[iVar2].vertex.y = g_LoadedVertices[local_1c].vertex.y;
+            g_LoadedVertices[iVar2].vertex.z = g_LoadedVertices[local_1c].vertex.z;
+            g_LoadedVertices[iVar2].u = g_LoadedVertices[local_1c].u;
+            g_LoadedVertices[iVar2].v = g_LoadedVertices[local_1c].v;
           }
           *(int *)((int)dest + local_1c * 4) = g_VertexCount;
           g_VertexCount = g_VertexCount + 1;

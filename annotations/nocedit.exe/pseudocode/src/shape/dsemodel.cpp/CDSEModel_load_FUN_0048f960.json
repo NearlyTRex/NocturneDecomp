@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 90,
+    "assembly_lines": 102,
     "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 1,
-    "global_count": 15,
+    "global_count": 12,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 44,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 134
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -32,6 +32,10 @@
       [
         "0048f960",
         "0048fa4a"
+      ],
+      [
+        "00604dcb",
+        "00604dee"
       ]
     ],
     "convention": "__cdecl",
@@ -57,24 +61,6 @@
       "addr": "0162640c",
       "name": "g_LoadedVertices",
       "type": "SVertexData[20000]",
-      "value": null
-    },
-    {
-      "addr": "01626410",
-      "name": "g_LoadedVertices[0].vertex.y",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "01626414",
-      "name": "g_LoadedVertices[0].vertex.z",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "01626418",
-      "name": "g_LoadedVertices[0].u",
-      "type": "undefined4",
       "value": null
     },
     {
@@ -170,34 +156,34 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.319444444444445,
-    "instruction_count": 72,
+    "avg_pcode_per_instr": 4.6625,
+    "instruction_count": 80,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
-      "BRANCH": 5,
+      "BRANCH": 7,
       "CALL": 1,
       "CBRANCH": 5,
-      "COPY": 69,
+      "COPY": 65,
       "INT_ADD": 54,
-      "INT_AND": 24,
-      "INT_CARRY": 5,
-      "INT_EQUAL": 27,
+      "INT_AND": 28,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 31,
       "INT_LESS": 5,
-      "INT_MULT": 17,
+      "INT_MULT": 9,
       "INT_NOTEQUAL": 5,
       "INT_SBORROW": 5,
-      "INT_SCARRY": 7,
+      "INT_SCARRY": 9,
       "INT_SEXT": 15,
-      "INT_SLESS": 12,
-      "INT_SUB": 24,
-      "INT_ZEXT": 12,
+      "INT_SLESS": 14,
+      "INT_SUB": 16,
+      "INT_ZEXT": 4,
       "LOAD": 48,
-      "POPCOUNT": 12,
+      "POPCOUNT": 14,
       "RETURN": 1,
       "STORE": 19,
       "SUBPIECE": 10
     },
-    "pcode_op_count": 383
+    "pcode_op_count": 373
   },
   "stack_frame": {
     "frame_size": 28,

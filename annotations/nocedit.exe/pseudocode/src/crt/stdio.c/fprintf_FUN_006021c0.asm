@@ -10,9 +10,6 @@
 ; XREF[1]:
 ;   shape_superopt.cpp_logToFile_FUN_005c7910 at 005c7970
 ;
-; Referenced Globals:
-;   undefined4 SUB_00604850
-;
 ; *****************************************************************************
 
 section .text
@@ -26,7 +23,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 006021cb
     PUSH ECX                            ; 006021cf
     CALL 0x00604850                     ; 006021d0
-        ;   XREF to: 00604850 (UNCONDITIONAL_CALL)  ; SUB_00604850
+        ;   XREF to: 00604850 (UNCONDITIONAL_CALL)  ; LAB_0060484d+3
     ADD ESP,0xc                         ; 006021d5
     POP EBX                             ; 006021d8
     RET                                 ; 006021d9
