@@ -23,8 +23,8 @@ int __cdecl extend_file_for_append(int fd)
   if ((distance_to_move != -1) && (iVar1 = lseek(fd,0,2), iVar1 != -1)) {
     if (iVar1 < distance_to_move) {
       SVar3 = distance_to_move - iVar1;
-      uVar2 = getFileTypeFlags(fd);
-      setFileDescriptorFlags(fd,uVar2 & 0xffff7fff);
+      uVar2 = func_0x006088b0(fd);
+      func_0x00608908(fd,uVar2 & 0xffff7fff);
       if (0 < (int)SVar3) {
         memset(local_20c,0,0x200);
         do {
@@ -42,8 +42,8 @@ int __cdecl extend_file_for_append(int fd)
     }
     else {
       iVar2 = lseek(fd,distance_to_move,0);
-      uVar3 = getFileTypeFlags(fd);
-      setFileDescriptorFlags(fd,uVar3 & 0xffff7fff);
+      uVar3 = func_0x006088b0(fd);
+      func_0x00608908(fd,uVar3 & 0xffff7fff);
       if (iVar2 == -1) {
         return -1;
       }

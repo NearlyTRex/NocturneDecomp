@@ -6,10 +6,10 @@ MOVSD STRUCT COPY ANALYSIS
 decompiler cannot analyze them, producing garbled bVar*-8 pointer arithmetic.
 These can be fixed by replacing them with explicit MOV instructions in code caves.
 
-Fixable sites:       20
-Unfixable sites:     16
-Total sites:         36
-Est. cave space:     ~740 bytes
+Fixable sites:       24
+Unfixable sites:     4
+Total sites:         28
+Est. cave space:     ~888 bytes
 
 ----------------------------------------------------------------------------------------------------
 FIXABLE SITES (by function, sorted by site count)
@@ -22,6 +22,11 @@ FIXABLE SITES (by function, sorted by site count)
     0x005bf5a6  (5 bytes borrowable)
     0x005bf634  (5 bytes borrowable)
     0x005bf683  (5 bytes borrowable)
+  CDeformableModelInstance_updateMotion_FUN_0059e0a0                  4 sites  ~148 bytes
+    0x0059e40e  (11 bytes borrowable)
+    0x0059e4a2  (11 bytes borrowable)
+    0x0059e706  (8 bytes borrowable)
+    0x0059e7d3  (8 bytes borrowable)
   calculateVertexAngle_FUN_00462050                                   3 sites  ~111 bytes
     0x00462069  (5 bytes borrowable)
     0x0046207b  (5 bytes borrowable)
@@ -44,20 +49,8 @@ FIXABLE SITES (by function, sorted by site count)
 ----------------------------------------------------------------------------------------------------
 UNFIXABLE SITES (cannot borrow enough bytes for JMP)
 ----------------------------------------------------------------------------------------------------
-  0x00488df1  CDrawSurface_fillPoly_FUN_00488cd0                       branch target inside patch range
-  0x0059ec96  CDeformableModelInstance_blendMotion_FUN_0059eb50        branch target inside patch range
-  0x0059efd5  CDeformableModelInstance_blendMotion_FUN_0059eb50        branch target inside patch range
-  0x0059f0a1  CDeformableModelInstance_blendMotion_FUN_0059eb50        branch target inside patch range
-  0x0059f35f  CDeformableModelInstance_blendWithQuaternions_FUN_0059f  branch target inside patch range
-  0x0059f5de  CDeformableModelInstance_blendWithQuaternions_FUN_0059f  branch target inside patch range
-  0x0059f724  CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0  branch target inside patch range
-  0x0059e40e  CDeformableModelInstance_updateMotion_FUN_0059e0a0       branch target inside patch range
-  0x0059e4a2  CDeformableModelInstance_updateMotion_FUN_0059e0a0       branch target inside patch range
-  0x0059e52b  CDeformableModelInstance_updateMotion_FUN_0059e0a0       branch target inside patch range
-  0x0059e706  CDeformableModelInstance_updateMotion_FUN_0059e0a0       branch target inside patch range
-  0x0059e7d3  CDeformableModelInstance_updateMotion_FUN_0059e0a0       branch target inside patch range
-  0x0059e964  CDeformableModelInstance_updateMotion_FUN_0059e0a0       branch target inside patch range
-  0x005bff1d  CStranger_makeDrawDecision_FUN_005bfb60                  branch target inside patch range
-  0x005c0090  CStranger_makeDrawDecision_FUN_005bfb60                  branch target inside patch range
+  0x00488df1  CDrawSurface_fillPoly_FUN_00488cd0                       only 4 bytes available (need 5)
+  0x0059e52b  CDeformableModelInstance_updateMotion_FUN_0059e0a0       only 4 bytes available (need 5)
+  0x0059e964  CDeformableModelInstance_updateMotion_FUN_0059e0a0       only 4 bytes available (need 5)
   0x005be795  CStranger_updateProceduralAnimation_FUN_005be520         branch target inside patch range
 

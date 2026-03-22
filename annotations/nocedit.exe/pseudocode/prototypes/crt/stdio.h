@@ -195,10 +195,6 @@ int __watcallStack lseek(int file_handle_index,long distance_to_move,int move_me
 // Address: 00607d18
 char * __cdecl IntegerToString(int value,char *buffer,int base);
 
-// Original: crt_stdio.c_stream_valid_FUN_00608cd1
-// Address: 00608cd1
-int __watcallStack stream::valid(_FILE *stream,int operation_type);
-
 // Original: crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0
 // Address: 00608ee0
 void __cdecl DetectDeviceAndSetBuffering(_FILE *file);

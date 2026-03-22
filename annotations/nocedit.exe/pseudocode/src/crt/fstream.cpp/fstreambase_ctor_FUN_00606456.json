@@ -3,8 +3,8 @@
     "assembly_lines": 69,
     "complexity_score": 82,
     "cross_reference_count": 2,
-    "function_call_count": 5,
-    "global_count": 3,
+    "function_call_count": 4,
+    "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 27,
     "suspect_count": 4,
@@ -48,11 +48,6 @@
       "name": "crt_fstream.cpp_filebuf_ctor_FUN_0060bddd"
     },
     {
-      "addr": "00608c15",
-      "is_variadic": false,
-      "name": "crt_fstream.cpp_filebuf_open_FUN_00608c15"
-    },
-    {
       "addr": "006061fc",
       "is_variadic": false,
       "name": "crt_iostream.cpp_ios_ctor_FUN_006061fc"
@@ -69,6 +64,12 @@
     }
   ],
   "globals": [
+    {
+      "addr": "00608c15",
+      "name": "SUB_00608c15",
+      "type": "undefined4",
+      "value": null
+    },
     {
       "addr": "00665ec8",
       "name": "g_FStreamBase_VirtualBaseLayout",
@@ -206,9 +207,9 @@
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 16,
-      "match": "this_ptr_00[-1].",
+      "match": "buffer_ptr[-1].",
       "severity": "mild",
-      "text": "pcVar1 = this_ptr_00[-1].__unbuffered_get_area + 4;",
+      "text": "pcVar1 = buffer_ptr[-1].__unbuffered_get_area + 4;",
       "type": "negative_offset"
     },
     {

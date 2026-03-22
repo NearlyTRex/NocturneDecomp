@@ -4,19 +4,19 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6939 ( 41.6%)
-  pointer_cast                    5147 ( 30.8%)
+  decompiler_intrinsic            6939 ( 41.7%)
+  pointer_cast                    5123 ( 30.8%)
   unknown_field                    933 (  5.6%)
-  special_crt_function             510 (  3.1%)
+  special_crt_function             499 (  3.0%)
   stack_param                      343 (  2.1%)
-  unnamed_param                    339 (  2.0%)
+  unnamed_param                    323 (  1.9%)
   fpu_register_input               311 (  1.9%)
   nonstandard_int                  267 (  1.6%)
   warning_inlined_function         264 (  1.6%)
   stack_ref                        250 (  1.5%)
   unresolved_funcptr               169 (  1.0%)
   warning_type_propagation         132 (  0.8%)
-  param_count_too_few              123 (  0.7%)
+  param_count_too_few              121 (  0.7%)
   stack_alignment_array            108 (  0.6%)
   unaffected_reg                   106 (  0.6%)
   sub84_truncation                 101 (  0.6%)
@@ -96,15 +96,15 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5147 occurrences)
+TYPE: pointer_cast (5123 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1657x  (uint *)((int)
-  1295x  (int *)((int)
+  1641x  (uint *)((int)
+  1291x  (int *)((int)
    325x  (SRenderVertex *)((int)
    289x  (CMatrix3x4f *)((int)
-   287x  (float *)((int)
+   284x  (float *)((int)
    208x  (double *)((int)
    189x  (void *)((int)
    171x  (byte *)((int)
@@ -178,17 +178,15 @@ Example functions:
     uVar6._0_2_ = CONCAT11(bStack_2b,uStack_2c) & 0x7fff;...
 
 ====================================================================================================
-TYPE: special_crt_function (510 occurrences)
+TYPE: special_crt_function (499 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   510x  crt_
+   499x  crt_
 
 Example functions:
   crt_io.c_invalidate_handle_wrapper_FUN_0060a154
     CRT function (runtime support) at 0060a154...
-  crt_io.c_getFileTypeFlags_FUN_006088b0
-    CRT function (runtime support) at 006088b0...
   crt_io.c_tell_FUN_00606720
     CRT function (runtime support) at 00606720...
   crt_io.c_get_handle_FUN_006109f0
@@ -229,22 +227,24 @@ Example functions:
     CRT function (runtime support) at 00602300...
   crt_io.c__findclose_FUN_00602380
     CRT function (runtime support) at 00602380...
-  crt_io.c_invalidate_handle_FUN_00608af4
-    CRT function (runtime support) at 00608af4...
   crt_io.c__utime_FUN_00608160
     CRT function (runtime support) at 00608160...
   crt_io.c_getFileStat_FUN_00607e64
     CRT function (runtime support) at 00607e64...
-  crt_io.c_CheckFileHandleAvailability_FUN_00608940
-    CRT function (runtime support) at 00608940...
   crt_io.c_write_FUN_006084ec
     CRT function (runtime support) at 006084ec...
-  crt_io.c_register_handle_FUN_00608990
-    CRT function (runtime support) at 00608990...
-  crt_io.c_setFileDescriptorFlags_FUN_00608908
-    CRT function (runtime support) at 00608908...
   crt_io.c_getTempDirectory_FUN_00609afc
     CRT function (runtime support) at 00609afc...
+  crt_io.c_register_handler_wrapper_FUN_00602438
+    CRT function (runtime support) at 00602438...
+  crt_io.c_findNextWithAttributes_FUN_00609d5c
+    CRT function (runtime support) at 00609d5c...
+  crt_io.c__utime_00600c1e
+    CRT function (runtime support) at 00600c1e...
+  crt_windows.c_has_active_window_FUN_0060a710
+    CRT function (runtime support) at 0060a710...
+  crt_process.c_spawnCommand_FUN_00609c90
+    CRT function (runtime support) at 00609c90...
 
 ====================================================================================================
 TYPE: stack_param (343 occurrences)
@@ -289,12 +289,12 @@ Example functions:
     int in_stack_00000004;...
 
 ====================================================================================================
-TYPE: unnamed_param (339 occurrences)
+TYPE: unnamed_param (323 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   114x  param_1
-    81x  param_2
+   110x  param_1
+    69x  param_2
     47x  param1
     28x  param_3
     17x  param0
@@ -603,22 +603,22 @@ Example functions:
     /* WARNING: Type propagation algorithm not settling */...
 
 ====================================================================================================
-TYPE: param_count_too_few (123 occurrences)
+TYPE: param_count_too_few (121 occurrences)
 ====================================================================================================
 
 Unique patterns:
     21x  declared:1 vs estimated:2
-    12x  declared:0 vs estimated:4
     11x  declared:2 vs estimated:3
+    11x  declared:0 vs estimated:4
      9x  declared:0 vs estimated:2
      8x  declared:4 vs estimated:5
      8x  declared:0 vs estimated:1
      7x  declared:0 vs estimated:3
      5x  declared:3 vs estimated:6
-     4x  declared:2 vs estimated:4
      3x  declared:3 vs estimated:4
      3x  declared:0 vs estimated:5
      3x  declared:4 vs estimated:7
+     3x  declared:2 vs estimated:4
      2x  declared:6 vs estimated:7
      2x  declared:5 vs estimated:6
      2x  declared:1 vs estimated:4
@@ -648,8 +648,6 @@ Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
     Function declares 5 params but call sites push 6 (1 missing)...
   cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660
-    Function declares 0 params but call sites push 4 (4 missing)...
-  crt_io.c_CheckFileHandleAvailability_FUN_00608940
     Function declares 0 params but call sites push 4 (4 missing)...
   crt_windows.c_has_active_window_FUN_0060a710
     Function declares 0 params but call sites push 4 (4 missing)...
@@ -689,6 +687,8 @@ Example functions:
     Function declares 0 params but call sites push 3 (3 missing)...
   crt_unknown.c_FUN_00607858
     Function declares 0 params but call sites push 3 (3 missing)...
+  crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0
+    Function declares 0 params but call sites push 2 (2 missing)...
 
 ====================================================================================================
 TYPE: stack_alignment_array (108 occurrences)
@@ -857,13 +857,13 @@ Unique patterns:
      3x  collision_triangle_list[-1].
      2x  p_Var2[-2].
      2x  p_Var2[-1].
-     2x  this_ptr_00[-1].
+     2x  buffer_ptr[-1].
      2x  piVar5[-2].
      2x  pSVar6[-1].
      2x  local_14[-1].
      2x  local_188[-1].
      2x  pCVar12[-1].
-     1x  buffer_ptr[-1].
+     1x  pfVar2[-1].
 
 Example functions:
   crt_fstream.cpp_ifstream_ctor_FUN_005ff664
@@ -1364,7 +1364,7 @@ Example functions:
   crt_string.c_strtok_FUN_005fff50
     while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVa...
   crt_stdio.c_CreateFileImpl_FUN_006090a0
-    if ((DAT_0068528c == (code *)0x0) ||...
+    if ((DAT_0068528c != (code *)0x0) &&...
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
     point->screen_x = (int)&DAT_80000010;...
 

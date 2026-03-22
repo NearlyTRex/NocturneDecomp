@@ -85,11 +85,8 @@
 #define SYSTEM_GENERIC_WRITE                      0x40000000  // 1073741824
 #define SYSTEM_IO_ERROR                           5
 #define SYSTEM_MAX_STATIC_CRITICAL_SECTIONS       64  // 0x40
-#define SYSTEM_STD_ERROR_HANDLE                   0xFFFFFFF6  // 4294967286
-#define SYSTEM_STD_INPUT_HANDLE                   0xFFFFFFF4  // 4294967284
-#define SYSTEM_STD_OUTPUT_HANDLE                  0xFFFFFFF5  // 4294967285
 #define SYSTEM_WINDOWS_NT_4_0                     0x8000  // 32768
 
-// Total equates: 76
-// Total references: 273
+// Total equates: 73
+// Total references: 270
 

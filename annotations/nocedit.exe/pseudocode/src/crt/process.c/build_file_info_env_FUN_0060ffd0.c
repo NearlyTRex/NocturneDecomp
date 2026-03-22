@@ -56,7 +56,7 @@ char * __cdecl build_file_info_env(void)
          [((uint)bVar7 * -2 + 1) * 4];
     if (uVar4 != 0) {
       do {
-        uVar4 = getFileTypeFlags(file_handle_index);
+        uVar4 = func_0x006088b0(file_handle_index);
         if ((uVar4 & 0x4000) != 0) {
           iVar5 = get_handle(file_handle_index);
           local_44[0] = '\0';
@@ -189,26 +189,26 @@ char * __cdecl build_file_info_env(void)
             pcVar9[1] = cVar2;
             pcVar9 = pcVar9 + 2;
           } while (cVar2 != '\0');
+          pcVar8 = local_44;
           iVar5 = -1;
           pcVar7 = pcVar3;
           do {
-            pcVar8 = pcVar7;
+            pcVar9 = pcVar7;
             if (iVar5 == 0) break;
             iVar5 = iVar5 + -1;
-            pcVar8 = pcVar7 + (uint)bVar7 * -2 + 1;
+            pcVar9 = pcVar7 + (uint)bVar7 * -2 + 1;
             cVar2 = *pcVar7;
-            pcVar7 = pcVar8;
+            pcVar7 = pcVar9;
           } while (cVar2 != '\0');
-          pcVar8 = pcVar8 + -1;
-          pcVar7 = local_44;
+          pcVar9 = pcVar9 + -1;
           do {
-            cVar2 = *pcVar7;
-            *pcVar8 = cVar2;
+            cVar2 = *pcVar8;
+            *pcVar9 = cVar2;
             if (cVar2 == '\0') break;
-            cVar2 = pcVar7[1];
-            pcVar7 = pcVar7 + 2;
-            pcVar8[1] = cVar2;
+            cVar2 = pcVar8[1];
             pcVar8 = pcVar8 + 2;
+            pcVar9[1] = cVar2;
+            pcVar9 = pcVar9 + 2;
           } while (cVar2 != '\0');
         }
         file_handle_index = file_handle_index + 1;

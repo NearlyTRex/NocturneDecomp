@@ -4,25 +4,25 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4649 functions
-  1 suspects: 722 functions
-  2 suspects: 325 functions
+  0 suspects: 4650 functions
+  1 suspects: 716 functions
+  2 suspects: 323 functions
   3 suspects: 238 functions
   4 suspects: 157 functions
-  5 suspects: 137 functions
-  6 suspects: 107 functions
-  7 suspects: 95 functions
+  5 suspects: 135 functions
+  6 suspects: 108 functions
+  7 suspects: 94 functions
   8 suspects: 55 functions
   9 suspects: 60 functions
   10 suspects: 21 functions
   11 suspects: 38 functions
   12 suspects: 34 functions
   13 suspects: 27 functions
-  14 suspects: 34 functions
+  14 suspects: 33 functions
   15 suspects: 27 functions
   16 suspects: 18 functions
   17 suspects: 11 functions
-  18 suspects: 15 functions
+  18 suspects: 14 functions
   19 suspects: 18 functions
   20 suspects: 20 functions
   21 suspects: 11 functions
@@ -85,7 +85,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [special_crt_function] (255 functions)
+  [special_crt_function] (248 functions)
   ------------------------------------------------------------
     crt_sync.c_criticalSectionStub_FUN_00609f20        (  4 lines)
       CRT function (runtime support) at 00609f20...
@@ -127,7 +127,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       CRT function (runtime support) at 0060a1bc...
     crt_sync.c_enter_global_critical_section_FUN_0060a (  5 lines)
       CRT function (runtime support) at 0060a0ec...
-    ... and 235 more
+    ... and 228 more
 
   [pointer_cast] (135 functions)
   ------------------------------------------------------------
@@ -369,6 +369,31 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_stranger.cpp_CStranger_updateWeaponLayerActio (378 lines)
       /* WARNING: Removing unreachable block (ram,0x005c5793) */...
 
+  [stack_alignment_array] (11 functions)
+  ------------------------------------------------------------
+    core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7 ( 15 lines)
+      float afStackY_17f8 [1525];...
+    core_conveyor.cpp_CConveyor_setup_FUN_00441d60     ( 38 lines)
+      float afStackY_17f8 [1526];...
+    core_skeleton.cpp_CDeformableModelInstance_aimBone ( 40 lines)
+      float afStackY_1888 [1521];...
+    core_skeleton.cpp_CDeformableModelInstance_blendBo ( 43 lines)
+      float afStackY_1808 [1522];...
+    shape_design.c_calculatePolygonAngularArea_FUN_004 ( 57 lines)
+      float afStackY_2034 [2020];...
+    core_icepick.cpp_CIcePick_updateShootBlend_FUN_004 ( 58 lines)
+      float afStackY_180c [1519];...
+    core_skeleton.cpp_blendBoneTransformData_FUN_005a1 ( 62 lines)
+      float afStackY_1830 [1524];...
+    core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00 ( 71 lines)
+      float afStackY_1844 [1523];...
+    core_skeleton.cpp_CDeformableModelInstance_blendWi (131 lines)
+      float afStackY_18c4 [1522];...
+    core_main.c_showDeveloperToolsMenu_FUN_005073a0    (216 lines)
+      int aiStackY_1008 [690];...
+    core_haystack.cpp_CHaystack_process_FUN_004f0e40   (270 lines)
+      float afStackY_1868 [1521];...
+
   [unresolved_funcptr] (11 functions)
   ------------------------------------------------------------
     shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_00 ( 17 lines)
@@ -393,29 +418,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       ("Illegal Huffman code in data.  File: %s",g_CurrentMp3Filen...
     wincore_winrun.cpp_mainWindowProc_FUN_005f3150     (172 lines)
       iVar1 = (**(code **)((int)g_WindowMessageHandlers + iVar5))(...
-
-  [stack_alignment_array] (10 functions)
-  ------------------------------------------------------------
-    core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7 ( 15 lines)
-      float afStackY_17f8 [1525];...
-    core_conveyor.cpp_CConveyor_setup_FUN_00441d60     ( 38 lines)
-      float afStackY_17f8 [1526];...
-    core_skeleton.cpp_CDeformableModelInstance_aimBone ( 40 lines)
-      float afStackY_1888 [1521];...
-    core_skeleton.cpp_CDeformableModelInstance_blendBo ( 43 lines)
-      float afStackY_1808 [1522];...
-    shape_design.c_calculatePolygonAngularArea_FUN_004 ( 57 lines)
-      float afStackY_2034 [2020];...
-    core_icepick.cpp_CIcePick_updateShootBlend_FUN_004 ( 58 lines)
-      float afStackY_180c [1519];...
-    core_skeleton.cpp_blendBoneTransformData_FUN_005a1 ( 62 lines)
-      float afStackY_1830 [1524];...
-    core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00 ( 71 lines)
-      float afStackY_1844 [1523];...
-    core_main.c_showDeveloperToolsMenu_FUN_005073a0    (216 lines)
-      int aiStackY_1008 [690];...
-    core_haystack.cpp_CHaystack_process_FUN_004f0e40   (270 lines)
-      float afStackY_1868 [1521];...
 
   [unnamed_param] (9 functions)
   ------------------------------------------------------------
@@ -653,4 +655,4 @@ FUNCTIONS WITH 2-3 SUSPECTS
   crt_memory.c___arrinit_dispatch_FUN_00601200
     File: crt/memory.c, Lines: 16, Types: ['special_crt_function', 'unresolved_funcptr']
 
-  ... and 513 more
+  ... and 511 more

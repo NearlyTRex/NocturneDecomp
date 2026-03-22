@@ -32,7 +32,7 @@ int __cdecl close(int fd)
       (*g_SpecialDeviceCleanupFunc)(fd);
       (*g_SpecialDeviceCloseFunc)(cleanup_result);
     }
-    setFileDescriptorFlags(fd,0);
+    func_0x00608908(fd,0);
   }
   return iVar1;
 }

@@ -1,13 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 197,
+    "complexity_score": 187,
     "cross_reference_count": 1,
-    "function_call_count": 2,
-    "global_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -35,21 +35,23 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_0060d576",
-    "signature": "uint crt_unknown_c_FUN_0060d576(_FILE *param_1)"
+    "signature": "uint crt_unknown_c_FUN_0060d576(int *param_1)"
   },
   "function_calls": [
     {
       "addr": "00606020",
       "is_variadic": false,
       "name": "crt_stdio.c_reportStreamError_FUN_00606020"
-    },
-    {
-      "addr": "00608cd1",
-      "is_variadic": false,
-      "name": "crt_stdio.c_stream_valid_FUN_00608cd1"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "00608cd1",
+      "name": "SUB_00608cd1",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 1,
     "call_sites": [
@@ -111,7 +113,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint FUN_0060d576(_FILE *param_1)",
+      "text": "uint FUN_0060d576(int *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -119,7 +121,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = stream_valid(param_1,1);",
+      "text": "iVar2 = func_0x00608cd1(param_1,1);",
       "type": "unnamed_param"
     },
     {
@@ -127,7 +129,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->_cnt = 0;",
+      "text": "param_1[1] = 0;",
       "type": "unnamed_param"
     },
     {
@@ -135,7 +137,7 @@
       "line": 15,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar2 = *(int *)((int)&param_1->_cnt + *(int *)(param_1->_ptr + 4));",
+      "text": "iVar2 = *(int *)((int)param_1 + *(int *)(*param_1 + 4) + 4);",
       "type": "pointer_cast"
     },
     {
@@ -143,7 +145,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)((int)&param_1->_cnt + *(int *)(param_1->_ptr + 4));",
+      "text": "iVar2 = *(int *)((int)param_1 + *(int *)(*param_1 + 4) + 4);",
       "type": "unnamed_param"
     },
     {
@@ -151,7 +153,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)((int)&param_1->_cnt + *(int *)(param_1->_ptr + 4));",
+      "text": "iVar2 = *(int *)((int)param_1 + *(int *)(*param_1 + 4) + 4);",
       "type": "unnamed_param"
     },
     {
@@ -167,23 +169,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->_cnt = 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(FileEmbeddedData *)((int)",
-      "severity": "mild",
-      "text": "((FileEmbeddedData *)((int)&param_1->_ptr + *(int *)(param_1->_ptr + 4)),4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((FileEmbeddedData *)((int)&param_1->_ptr + *(int *)(param_1->_ptr + 4)),4);",
+      "text": "param_1[1] = 1;",
       "type": "unnamed_param"
     },
     {
@@ -191,7 +177,15 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "((FileEmbeddedData *)((int)&param_1->_ptr + *(int *)(param_1->_ptr + 4)),4);",
+      "text": "((FileEmbeddedData *)(*(int *)(*param_1 + 4) + (int)param_1),4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((FileEmbeddedData *)(*(int *)(*param_1 + 4) + (int)param_1),4);",
       "type": "unnamed_param"
     },
     {
@@ -199,7 +193,7 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1->_cnt = 0;",
+      "text": "param_1[1] = 0;",
       "type": "unnamed_param"
     },
     {

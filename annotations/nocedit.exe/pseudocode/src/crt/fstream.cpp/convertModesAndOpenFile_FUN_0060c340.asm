@@ -8,9 +8,6 @@
 ; int *            Stack[0x8]:4   iostream_mode
 ; int              Stack[0xc]:4   permissions
 ;
-; XREF[1]:
-;   crt_fstream.cpp_filebuf_open_FUN_00608c15 at 00608c75
-;
 ; Called Functions:
 ;   crt_io.c_getFileStat_FUN_00607e64
 ;   crt_stdio.c_CreateFileVariadic_FUN_00609074

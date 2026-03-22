@@ -252,17 +252,6 @@ int __cdecl crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(DWORD windows_er
 DWORD __cdecl crt_errno_c___set_errno_FUN_006083fc(void);
 int __cdecl crt_io_c_extend_file_for_append_FUN_00608410(int fd);
 int __cdecl crt_io_c_write_FUN_006084ec(int fd,void *buffer,SIZE_T count);
-uint __watcallStack crt_io_c_getFileTypeFlags_FUN_006088b0(int file_handle_index);
-void __watcallStack crt_io_c_setFileDescriptorFlags_FUN_00608908(int file_handle_index,uint flags);
-int __cdecl crt_io_c_CheckFileHandleAvailability_FUN_00608940(void);
-int __cdecl crt_io_c_register_handle_FUN_00608990(HANDLE handle);
-void crt_unknown_c_SetStdHandleToSomething_FUN_00608a1c(HANDLE param_1,uint param_2);
-void __cdecl crt_io_c_invalidate_handle_FUN_00608af4(int handle_index);
-int __cdecl crt_io_c_InitializeStandardHandles_FUN_00608b20(void);
-HANDLE __cdecl crt_io_c_CreateFallbackHandle_FUN_00608b88(void);
-filebuf * __watcallStack crt_fstream_cpp_filebuf_close_FUN_00608bcc(filebuf *this_ptr);
-int __cdecl crt_fstream_cpp_filebuf_open_FUN_00608c15(filebuf *this_ptr,char *filename,int mode,int permissions);
-int __watcallStack crt_stdio_c_stream_valid_FUN_00608cd1(_FILE *stream,int operation_type);
 char * __cdecl crt_watcom_c_getcwd_FUN_00608d20(char *buffer,SIZE_T size);
 void * __cdecl crt_memory_c___arrinit__FUN_00608dc8(void *array_start,int element_count,WatcomTypeInfo *type_info);
 float10 __fpustack crt_math_c_atan2_FUN_00608e14(float10 y,float10 x);
@@ -428,7 +417,7 @@ ulonglong __watcallRegister crt_math_c_udivmod64_FUN_0060d3ed(ulonglong dividend
 undefined1 * crt_unknown_c_FUN_0060d480(void);
 undefined4 crt_unknown_c_FUN_0060d48c (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4, undefined4 *param_5,int param_6,undefined4 in_stack_0000001c);
 int __watcallStack crt_stdio_c_fgetc_buffered_FUN_0060d510(_FILE *stream);
-uint crt_unknown_c_FUN_0060d576(_FILE *param_1);
+uint crt_unknown_c_FUN_0060d576(int *param_1);
 streambuf * __watcallStack crt_iostream_cpp_streambuf_setbuf_FUN_0060d5ff (streambuf *this_ptr,void *buffer_start,int buffer_size);
 streambuf * __watcallStack crt_iostream_cpp_streambuf_destructor_FUN_0060d64f(streambuf *this_ptr);
 int __watcallStack crt_iostream_cpp_doallocate_FUN_0060d677(streambuf *this_ptr);

@@ -26,7 +26,7 @@ void __cdecl initialize_runtime(HMODULE hModule,void *pThreadParam,int unused)
     }
   }
   else {
-    InitializeStandardHandles();
+    func_0x00608b20();
     g_EnvironmentStrings = (*g_GetEnvironmentStringsFunc)();
     g_EnvironmentBlock = (char **)0x0;
     DVar3 = (*g_GetVersionFunc)();

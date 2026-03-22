@@ -16,13 +16,13 @@
 ;   crt_fstream.cpp_ofstream_ctor_FUN_005ff710 at 005ff730
 ;
 ; Referenced Globals:
+;   undefined4 SUB_00608c15
 ;   WatcomVirtualBaseDescriptor g_FStreamBase_VirtualBaseLayout
 ;   void* g_FStreamBase_Destructor = 00606509
 ;   void* g_FStreamBase_IOSDestructor = 006064f1
 ;
 ; Called Functions:
 ;   crt_fstream.cpp_filebuf_ctor_FUN_0060bddd
-;   crt_fstream.cpp_filebuf_open_FUN_00608c15
 ;   crt_iostream.cpp_ios_ctor_FUN_006061fc
 ;   crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815
 ;   crt_stdio.c_reportStreamError_FUN_00606020
@@ -77,8 +77,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 006064c5
     PUSH EDI                            ; 006064c9
     PUSH ESI                            ; 006064ca
-    CALL crt_fstream.cpp_filebuf_open_FUN_00608c15 ; 006064cb
-        ;   XREF to: 00608c15 (UNCONDITIONAL_CALL)  ; int crt_fstream.cpp_filebuf_open_FUN_00608c15(filebuf * this_ptr, char * filename, int mode, int permissions)
+    CALL 0x00608c15                     ; 006064cb
+        ;   XREF to: 00608c15 (UNCONDITIONAL_CALL)  ; SUB_00608c15
     ADD ESP,0x10                        ; 006064d0
     TEST EAX,EAX                        ; 006064d3
     JZ 0x006064dd                       ; 006064d5

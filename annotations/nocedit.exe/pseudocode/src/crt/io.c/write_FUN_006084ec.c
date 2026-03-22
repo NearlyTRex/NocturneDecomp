@@ -28,7 +28,7 @@ int __cdecl write(int fd,void *buffer,SIZE_T count)
   }
   else {
     hFile = g_IOControlBlock->standard_handles[fd];
-    uVar1 = getFileTypeFlags(fd);
+    uVar1 = func_0x006088b0(fd);
     if (uVar1 == 0) {
       setErrno(4);
       return -1;

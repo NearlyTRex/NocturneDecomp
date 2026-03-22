@@ -9,13 +9,13 @@
 void __cdecl _fflush(_FILE *stream)
 
 {
-  filebuf *pfVar1;
+  int iVar1;
   FileEmbeddedData *embedded_data;
   
   embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));
-  if ((filebuf *)embedded_data->stream != (filebuf *)0x0) {
-    pfVar1 = crt_fstream_cpp_filebuf_close_FUN_00608bcc((filebuf *)embedded_data->stream);
-    if (pfVar1 != (filebuf *)0x0) {
+  if (embedded_data->stream != (_FILE *)0x0) {
+    iVar1 = func_0x00608bcc(embedded_data->stream);
+    if (iVar1 != 0) {
       return;
     }
     embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));

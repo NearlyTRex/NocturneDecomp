@@ -7,18 +7,18 @@
 ; void *           Stack[0x4]:4   ptr
 ; ulong            Stack[0x8]:4   new_size
 ;
-; XREF[15]:
+; XREF[13]:
 ;   crt_env.c_updateEnvironTable_FUN_0060f04c at 0060f182
-;   crt_io.c_register_handle_FUN_00608990 at 006089e2
 ;   crt_sync.c_allocate_critical_section_FUN_00609f24 at 00609f82
 ;   crt_tls.c_getThreadLocalData_FUN_0060caf8 at 0060cb2f
 ;   crt_unknown.c_FUN_0060fcf4 at 0060fe29
-;   crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c at 00608a90
 ;   shape_memdbg.cpp_debugRealloc_FUN_0050f540 at 0050f5ec
 ;   shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90 at 005c7ae9
 ;   shape_superopt.cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20 at 005cbe46
 ;   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410 at 005d243c
-;   ... and 5 more
+;   shape_superopt.cpp_CObj_addVertices_FUN_005d2580 at 005d259d
+;   shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50 at 005d2f8d
+;   ... and 3 more
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc__FUN_00601e08

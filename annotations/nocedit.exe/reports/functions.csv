@@ -202,7 +202,6 @@ cockpit_ckptutil.c_drawClippedEdges_FUN_004335f0,004335f0,cockpit/ckptutil.c,46,
 cockpit_ckptutil.c_isLineBlendingDisabled_FUN_00434650,00434650,cockpit/ckptutil.c,4,0,,4
 cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690,00434690,cockpit/ckptutil.c,60,1,unknown_field,75
 crt_io.c_invalidate_handle_wrapper_FUN_0060a154,0060a154,crt/io.c,7,1,special_crt_function,22
-crt_io.c_getFileTypeFlags_FUN_006088b0,006088b0,crt/io.c,19,1,special_crt_function,34
 crt_io.c_tell_FUN_00606720,00606720,crt/io.c,17,1,special_crt_function,32
 crt_io.c_get_handle_FUN_006109f0,006109f0,crt/io.c,8,1,special_crt_function,23
 crt_io.c_register_handle_wrapper_FUN_0060a144,0060a144,crt/io.c,6,1,special_crt_function,21
@@ -223,18 +222,12 @@ crt_io.c_access_FUN_0060c9f0,0060c9f0,crt/io.c,16,1,special_crt_function,31
 crt_io.c_close_FUN_00609bd0,00609bd0,crt/io.c,28,3,special_crt_function|unaffected_reg,68
 crt_io.c__findnext_FUN_00602300,00602300,crt/io.c,21,1,special_crt_function,36
 crt_io.c__findclose_FUN_00602380,00602380,crt/io.c,6,1,special_crt_function,21
-crt_io.c_invalidate_handle_FUN_00608af4,00608af4,crt/io.c,9,1,special_crt_function,24
 crt_io.c__utime_FUN_00608160,00608160,crt/io.c,59,1,special_crt_function,74
 crt_io.c_getFileStat_FUN_00607e64,00607e64,crt/io.c,110,1,special_crt_function,125
-crt_io.c_CheckFileHandleAvailability_FUN_00608940,00608940,crt/io.c,20,3,param_count_too_few|pointer_cast|special_crt_function,65
 crt_io.c_write_FUN_006084ec,006084ec,crt/io.c,168,20,pointer_cast|special_crt_function|stack_ref|warning_noreturn,388
-crt_io.c_register_handle_FUN_00608990,00608990,crt/io.c,29,2,pointer_cast|special_crt_function,59
-crt_io.c_setFileDescriptorFlags_FUN_00608908,00608908,crt/io.c,14,1,special_crt_function,29
 crt_io.c_getTempDirectory_FUN_00609afc,00609afc,crt/io.c,56,2,special_crt_function|undefined_data,86
 crt_io.c_register_handler_wrapper_FUN_00602438,00602438,crt/io.c,6,1,special_crt_function,21
-crt_io.c_InitializeStandardHandles_FUN_00608b20,00608b20,crt/io.c,21,1,special_crt_function,36
 crt_io.c_findNextWithAttributes_FUN_00609d5c,00609d5c,crt/io.c,15,1,special_crt_function,30
-crt_io.c_CreateFallbackHandle_FUN_00608b88,00608b88,crt/io.c,10,1,special_crt_function,25
 crt_io.c__utime_00600c1e,00600c1e,crt/io.c/utime,6,1,special_crt_function,21
 crt_windows.c_has_active_window_FUN_0060a710,0060a710,crt/windows.c,16,3,param_count_too_few|special_crt_function|warning_max_restarts,61
 crt_process.c_spawnCommand_FUN_00609c90,00609c90,crt/process.c,6,2,param_count_too_many|special_crt_function,36
@@ -271,12 +264,10 @@ crt_stdlib.c_strtol_FUN_0060edfc,0060edfc,crt/stdlib.c,6,1,special_crt_function,
 crt_stdlib.c__atexit_FUN_005ff060,005ff060,crt/stdlib.c,5,1,special_crt_function,20
 crt_stdlib.c_strtol_internal_FUN_0060ec70,0060ec70,crt/stdlib.c,79,2,pointer_cast|special_crt_function,109
 crt_fstream.cpp_filebuf_seekoff_FUN_0060dbe8,0060dbe8,crt/fstream.cpp,26,1,special_crt_function,41
-crt_fstream.cpp_filebuf_open_FUN_00608c15,00608c15,crt/fstream.cpp,27,1,special_crt_function,42
 crt_fstream.cpp_ifstream_ctor_FUN_005ff664,005ff664,crt/fstream.cpp,26,11,extra_output|negative_offset|pointer_cast|special_crt_function,156
 crt_fstream.cpp_fstreambase_ctor_FUN_00606456,00606456,crt/fstream.cpp,27,4,negative_offset|param_count_too_many|special_crt_function,82
 crt_fstream.cpp_istream_seekg_FUN_00600ee4,00600ee4,crt/fstream.cpp,15,3,pointer_cast|special_crt_function|unresolved_funcptr,60
 crt_fstream.cpp_filebuf_pbackfail_FUN_0060d7ae,0060d7ae,crt/fstream.cpp,54,1,special_crt_function,69
-crt_fstream.cpp_filebuf_close_FUN_00608bcc,00608bcc,crt/fstream.cpp,16,1,special_crt_function,31
 crt_fstream.cpp_filebuf_overflow_FUN_0060d881,0060d881,crt/fstream.cpp,97,5,special_crt_function|unaffected_reg,157
 crt_fstream.cpp_filebuf_sync_FUN_0060dc5e,0060dc5e,crt/fstream.cpp,37,1,special_crt_function,52
 crt_fstream.cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e,005ff78e,crt/fstream.cpp,5,2,negative_offset|special_crt_function,35
@@ -290,7 +281,7 @@ crt_fstream.cpp_ofstream_ctor_FUN_005ff710,005ff710,crt/fstream.cpp,25,7,extra_o
 crt_fstream.cpp_ofstream_ctor_FUN_005ff95c,005ff95c,crt/fstream.cpp,23,5,negative_offset|pointer_cast|special_crt_function,88
 crt_fstream.cpp_filebuf_setbuf_FUN_0060db8c,0060db8c,crt/fstream.cpp,20,1,special_crt_function,35
 crt_fstream.cpp_filebuf_dtor_FUN_0060bdf9,0060bdf9,crt/fstream.cpp,25,1,special_crt_function,40
-crt_fstream.cpp_openFile_FUN_00600e85,00600e85,crt/fstream.cpp,18,3,pointer_cast|special_crt_function,58
+crt_fstream.cpp_openFile_FUN_00600e85,00600e85,crt/fstream.cpp,17,3,pointer_cast|special_crt_function,57
 crt_fstream.cpp_fstreambase_ctor_FUN_0060658f,0060658f,crt/fstream.cpp,26,6,negative_offset|pointer_cast|special_crt_function,101
 crt_fstream.cpp_filebuf_ctor_FUN_0060bddd,0060bddd,crt/fstream.cpp,8,1,special_crt_function,23
 crt_fstream.cpp_ifstream_dtor_FUN_005ff856,005ff856,crt/fstream.cpp,28,5,negative_offset|pointer_cast|special_crt_function,93
@@ -530,7 +521,7 @@ crt_unknown.c_FUN_0060a394,0060a394,crt/unknown.c,8,1,special_crt_function,23
 crt_unknown.c_FUN_0060b07a,0060b07a,crt/unknown.c,16,8,special_crt_function|unnamed_param,106
 crt_unknown.c_FUN_0060cf80,0060cf80,crt/unknown.c,11,1,special_crt_function,26
 crt_unknown.c_FUN_0060b190,0060b190,crt/unknown.c,18,10,decompiler_intrinsic|nan_function_artifact|special_crt_function|unknown_field,138
-crt_unknown.c_FUN_0060d576,0060d576,crt/unknown.c,32,14,param_count_too_few|pointer_cast|special_crt_function|unnamed_param|unresolved_funcptr,197
+crt_unknown.c_FUN_0060d576,0060d576,crt/unknown.c,32,13,param_count_too_few|pointer_cast|special_crt_function|unnamed_param|unresolved_funcptr,187
 crt_unknown.c_FUN_00607080,00607080,crt/unknown.c,16,12,param_count_too_few|special_crt_function|undefined_data|unnamed_param,156
 crt_unknown.c_FUN_00609fc8,00609fc8,crt/unknown.c,15,1,special_crt_function,30
 crt_unknown.c_FUN_0060b586,0060b586,crt/unknown.c,51,31,decompiler_intrinsic|extra_output|param_count_too_many|register_param|special_crt_function|unnamed_param,391
@@ -538,7 +529,6 @@ crt_unknown.c_BaseStart_FUN_00401000,00401000,crt/unknown.c,7,3,special_crt_func
 crt_unknown.c_FUN_0060ccb4,0060ccb4,crt/unknown.c,15,1,special_crt_function,30
 crt_unknown.c_FUN_0060d48c,0060d48c,crt/unknown.c,32,24,decompiler_intrinsic|param_count_too_few|special_crt_function|stack_param|unnamed_param,297
 crt_unknown.c_FUN_0060b142,0060b142,crt/unknown.c,8,11,special_crt_function|unnamed_param,128
-crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c,00608a1c,crt/unknown.c,38,18,pointer_cast|special_crt_function|unnamed_param,233
 crt_unknown.c_FUN_0060fcf4,0060fcf4,crt/unknown.c,76,15,param_count_too_few|register_param|special_crt_function|unnamed_param,246
 crt_unknown.c_FUN_00607958,00607958,crt/unknown.c,19,15,param_count_too_few|special_crt_function|unnamed_param,184
 crt_string.c_char_in_set_FUN_0060e340,0060e340,crt/string.c,21,2,special_crt_function|stack_param,51
@@ -624,7 +614,7 @@ crt_stdio.c___allocfp_FUN_006092f0,006092f0,crt/stdio.c,43,1,special_crt_functio
 crt_stdio.c_formatTwoDigits_FUN_006002a0,006002a0,crt/stdio.c,7,1,special_crt_function,22
 crt_stdio.c_OpenModeStringParser_FUN_006017d0,006017d0,crt/stdio.c,104,1,special_crt_function,119
 crt_stdio.c_IsRelevantKeyEvent_FUN_0060cd90,0060cd90,crt/stdio.c,9,1,special_crt_function,24
-crt_stdio.c_CreateFileImpl_FUN_006090a0,006090a0,crt/stdio.c,115,10,special_crt_function|stack_ref|unaffected_reg|undefined_data|unresolved_funcptr,240
+crt_stdio.c_CreateFileImpl_FUN_006090a0,006090a0,crt/stdio.c,92,10,special_crt_function|stack_ref|unaffected_reg|undefined_data|unresolved_funcptr,217
 crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30,0060ad30,crt/stdio.c,5,1,special_crt_function,20
 crt_stdio.c_stream_setup_FUN_00605f20,00605f20,crt/stdio.c,26,8,pointer_cast|special_crt_function|unaffected_reg,121
 crt_stdio.c_remove_FUN_005ff9d0,005ff9d0,crt/stdio.c,6,1,special_crt_function,21
@@ -633,7 +623,6 @@ crt_stdio.c_fprintf_FUN_005fe6d0,005fe6d0,crt/stdio.c,8,2,special_crt_function|s
 crt_stdio.c_reportStreamError_FUN_00606020,00606020,crt/stdio.c,14,1,special_crt_function,29
 crt_stdio.c_fread_FUN_005fd990,005fd990,crt/stdio.c,113,3,pointer_cast|special_crt_function,153
 crt_stdio.c_fgetcInternal_FUN_00605fad,00605fad,crt/stdio.c,28,4,pointer_cast|special_crt_function|unresolved_funcptr,83
-crt_stdio.c_stream_valid_FUN_00608cd1,00608cd1,crt/stdio.c,12,5,param_count_too_few|pointer_cast|special_crt_function,77
 crt_stdio.c_DrainConsoleInputAndSetup_FUN_0060b3f8,0060b3f8,crt/stdio.c,26,4,special_crt_function|stack_ref|unaffected_reg,81
 crt_stdio.c_ungetc_helper_FUN_005fe720,005fe720,crt/stdio.c,6,1,special_crt_function,21
 crt_stdio.c_WriteConsoleChar_FUN_0060b490,0060b490,crt/stdio.c,18,2,special_crt_function|stack_ref,48
@@ -4326,7 +4315,7 @@ core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0,005c07b0,core/
 core_stranger.cpp_CStranger_dropRightHandObject_FUN_005c1f80,005c1f80,core/stranger.cpp,14,0,,14
 core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720,005bf720,core/stranger.cpp,39,1,warning_type_propagation,54
 core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0,005c1fe0,core/stranger.cpp,130,5,decompiler_intrinsic|warning_type_propagation,190
-core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60,005bfb60,core/stranger.cpp,247,5,decompiler_intrinsic|pointer_cast|stack_alignment_array|warning_type_propagation,317
+core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60,005bfb60,core/stranger.cpp,238,3,decompiler_intrinsic|stack_alignment_array|warning_type_propagation,283
 core_stranger.cpp_setWindVelocity_FUN_005c6970,005c6970,core/stranger.cpp,10,0,,10
 core_stranger.cpp_setMatrixTranslation_FUN_005c6930,005c6930,core/stranger.cpp,7,0,,7
 core_stranger.cpp_calculateAimAnglesWithOffset_FUN_005c37e0,005c37e0,core/stranger.cpp,46,3,decompiler_intrinsic,81
@@ -4699,7 +4688,7 @@ core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0,0059deb0,
 core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0,005a01d0,core/skeleton.cpp,15,0,,15
 core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840,005a0840,core/skeleton.cpp,20,0,,20
 core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0,0059d9e0,core/skeleton.cpp,96,0,,96
-core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50,0059eb50,core/skeleton.cpp,213,13,pointer_cast|stack_alignment_array,353
+core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50,0059eb50,core/skeleton.cpp,199,6,pointer_cast|stack_alignment_array,269
 core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070,0059a070,core/skeleton.cpp,31,0,,31
 core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0,005a05e0,core/skeleton.cpp,91,2,pointer_cast|stack_alignment_array,121
 core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90,005a0c90,core/skeleton.cpp,18,0,,18
@@ -4710,7 +4699,7 @@ core_skeleton.cpp_distancePointToLineSegment_FUN_005996e0,005996e0,core/skeleton
 core_skeleton.cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860,0059a860,core/skeleton.cpp,4,0,,4
 core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0,0059e0a0,core/skeleton.cpp,382,21,pointer_cast|stack_alignment_array,602
 core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210,005a0210,core/skeleton.cpp,12,0,,12
-core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0,0059f6e0,core/skeleton.cpp,33,2,pointer_cast,58
+core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0,0059f6e0,core/skeleton.cpp,28,0,,28
 core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0,005a10e0,core/skeleton.cpp,24,0,,24
 core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750,0059f750,core/skeleton.cpp,43,1,stack_alignment_array,58
 core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0,0059dca0,core/skeleton.cpp,49,2,pointer_cast,74
@@ -4770,7 +4759,7 @@ core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0,0059c2f0
 core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0,005a07a0,core/skeleton.cpp,16,0,,16
 core_skeleton.cpp_getDeformableModel_FUN_005a1cf0,005a1cf0,core/skeleton.cpp,30,0,,30
 core_skeleton.cpp_CSkeleton_dtor_FUN_005998e0,005998e0,core/skeleton.cpp,8,1,decompiler_intrinsic,23
-core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260,0059f260,core/skeleton.cpp,141,7,pointer_cast|stack_alignment_array,221
+core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260,0059f260,core/skeleton.cpp,131,1,stack_alignment_array,146
 core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020,0059e020,core/skeleton.cpp,15,0,,15
 core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100,0059a100,core/skeleton.cpp,16,0,,16
 core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000,0059e000,core/skeleton.cpp,6,0,,6

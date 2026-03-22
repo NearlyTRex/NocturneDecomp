@@ -328,6 +328,10 @@ def build_site_patch(ks, instructions, group_idx, group_addr, jump_targets=None)
     after_idx = group_idx + 4
     while total_size < 5 and after_idx < len(instructions):
         addr, text = instructions[after_idx]
+        # Don't borrow an instruction that is a branch target — other
+        # code jumps here and must keep landing on this instruction.
+        if addr in jump_targets:
+            break
         # Make sure it's contiguous
         if addr != movsd_end + sum(
                 get_insn_size(ks, t, a) for a, t in after_insns):
@@ -345,6 +349,9 @@ def build_site_patch(ks, instructions, group_idx, group_addr, jump_targets=None)
     before_idx = group_idx - 1
     while total_size < 5 and before_idx >= 0:
         addr, text = instructions[before_idx]
+        # Don't borrow an instruction that is a branch target
+        if addr in jump_targets:
+            break
         if not can_borrow(text, for_movsd=True):
             break
         insn_size = get_insn_size(ks, text, addr)

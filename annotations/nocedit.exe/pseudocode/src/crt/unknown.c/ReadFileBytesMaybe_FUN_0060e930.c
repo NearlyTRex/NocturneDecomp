@@ -30,7 +30,7 @@ uint ReadFileBytesMaybe(uint param_1,char *param_2,DWORD param_3,uint param_4,ui
     uVar2 = 0xffffffff;
   }
   else {
-    uVar1 = getFileTypeFlags(param_1);
+    uVar1 = func_0x006088b0(param_1);
     if (uVar1 == 0) {
       setErrno(4);
       return 0xffffffff;

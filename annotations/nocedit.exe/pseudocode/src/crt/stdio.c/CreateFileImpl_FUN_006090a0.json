@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 240,
+    "complexity_score": 217,
     "cross_reference_count": 1,
-    "function_call_count": 12,
-    "global_count": 8,
+    "function_call_count": 9,
+    "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 115,
+    "pseudocode_lines": 92,
     "suspect_count": 10,
     "suspect_types": [
       "special_crt_function",
@@ -15,7 +15,7 @@
       "undefined_data",
       "unresolved_funcptr"
     ],
-    "total_lines": 373
+    "total_lines": 350
   },
   "cross_references": [
     {
@@ -59,11 +59,6 @@
       "name": "crt_errno.c_setErrno_FUN_00602790"
     },
     {
-      "addr": "00608940",
-      "is_variadic": false,
-      "name": "crt_io.c_CheckFileHandleAvailability_FUN_00608940"
-    },
-    {
       "addr": "0060c850",
       "is_variadic": false,
       "name": "crt_io.c_ConvertAccessMode_FUN_0060c850"
@@ -72,11 +67,6 @@
       "addr": "0060c894",
       "is_variadic": false,
       "name": "crt_io.c_ConvertCreationDisposition_FUN_0060c894"
-    },
-    {
-      "addr": "00608b88",
-      "is_variadic": false,
-      "name": "crt_io.c_CreateFallbackHandle_FUN_00608b88"
     },
     {
       "addr": "0060c270",
@@ -89,17 +79,30 @@
       "name": "crt_io.c_register_handler_wrapper_FUN_00602438"
     },
     {
-      "addr": "00608908",
-      "is_variadic": false,
-      "name": "crt_io.c_setFileDescriptorFlags_FUN_00608908"
-    },
-    {
       "addr": "005fe7f0",
       "is_variadic": false,
       "name": "crt_string.c__stricmp_FUN_005fe7f0"
     }
   ],
   "globals": [
+    {
+      "addr": "00608908",
+      "name": "SUB_00608908",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00608940",
+      "name": "SUB_00608940",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00608b88",
+      "name": "SUB_00608b88",
+      "type": "undefined4",
+      "value": null
+    },
     {
       "addr": "00611504",
       "name": "g_CloseHandleFunc",
@@ -284,7 +287,7 @@
       "line": 32,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((DAT_0068528c == (code *)0x0) ||",
+      "text": "if ((DAT_0068528c != (code *)0x0) &&",
       "type": "unresolved_funcptr"
     },
     {
@@ -292,12 +295,20 @@
       "line": 32,
       "match": "DAT_0068528c",
       "severity": "mild",
-      "text": "if ((DAT_0068528c == (code *)0x0) ||",
+      "text": "if ((DAT_0068528c != (code *)0x0) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_0068528c",
+      "severity": "mild",
+      "text": "(*DAT_0068528c)(0,handle_index);",
       "type": "undefined_data"
     },
     {
       "description": "Unaffected register variable",
-      "line": 54,
+      "line": 59,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = 4;",
@@ -305,7 +316,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 57,
+      "line": 62,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = 2;",
@@ -313,7 +324,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 61,
+      "line": 66,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = 1;",
@@ -321,7 +332,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 67,
+      "line": 72,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
       "text": "(LPSECURITY_ATTRIBUTES)&stack0xffffffd8,dwCreationDisposition,",
@@ -329,19 +340,11 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 73,
+      "line": 78,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX,dwFlagsAndAttributes,(HANDLE)0x0);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_0068528c",
-      "severity": "mild",
-      "text": "(*DAT_0068528c)(0,handle_index);",
-      "type": "undefined_data"
     },
     {
       "address": "006090a0",

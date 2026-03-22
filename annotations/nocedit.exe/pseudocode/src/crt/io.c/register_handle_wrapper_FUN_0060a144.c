@@ -11,6 +11,6 @@ int __cdecl register_handle_wrapper(HANDLE handle)
 {
   int iVar1;
   
-  iVar1 = register_handle(handle);
+  iVar1 = func_0x00608990(handle);
   return iVar1;
 }

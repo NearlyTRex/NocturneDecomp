@@ -4,7 +4,7 @@
 ; void __cdecl crt_sync_c_CriticalSectionStub_FUN_00602434(void)
 ;
 ;
-; XREF[41]:
+; XREF[38]:
 ;   crt_exit.c_ExitProcess_FUN_00602700 at 00602735
 ;   crt_heap.c_CompactHeapBlocks_FUN_0060c920 at 0060c922
 ;   crt_heap.c_InternalHeapAlloc_FUN_00601bc0 at 00601bf6
@@ -14,8 +14,8 @@
 ;   crt_io.c_IsSpecialDevice_FUN_0060c270 at 0060c2cf
 ;   crt_io.c_chsize_FUN_00600cf0 at 00600d2c
 ;   crt_io.c_close_handle_safe_FUN_0060c2e0 at 0060c305
-;   crt_io.c_invalidate_handle_FUN_00608af4 at 00608b18
-;   ... and 31 more
+;   crt_io.c_tell_FUN_00606720 at 00606768
+;   ... and 28 more
 ;
 ; *****************************************************************************
 

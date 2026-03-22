@@ -20,6 +20,7 @@
 ;   crt_unknown.c_FUN_00600c80 at 00600cd4
 ;
 ; Referenced Globals:
+;   undefined4 CAVE_cave_006088b0
 ;   SET_FILE_POINTER_FUNC* g_SetFilePointerFunc = 002121b6
 ;   WRITE_FILE_FUNC* g_WriteFileFunc = 00212300
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
@@ -33,7 +34,6 @@
 ;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_io.c_extend_file_for_append_FUN_00608410
-;   crt_io.c_getFileTypeFlags_FUN_006088b0
 ;   crt_stack.c_GetStackUsage_FUN_0060c260
 ;   crt_stack.c_stack_overflow_handler_FUN_005ffa22
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
@@ -70,8 +70,8 @@ section .text
     MOV EAX,dword ptr [EDX + EDI*0x4]   ; 0060851b
     PUSH EDI                            ; 0060851e
     MOV dword ptr [EBP + -0x8],EAX      ; 0060851f
-    CALL crt_io.c_getFileTypeFlags_FUN_006088b0 ; 00608522
-        ;   XREF to: 006088b0 (UNCONDITIONAL_CALL)  ; uint crt_io.c_getFileTypeFlags_FUN_006088b0(int file_handle_index)
+    CALL 0x006088b0                     ; 00608522
+        ;   XREF to: 006088b0 (UNCONDITIONAL_CALL)  ; CAVE_cave_006088b0
     MOV EBX,EAX                         ; 00608527
     ADD ESP,0x4                         ; 00608529
     MOV dword ptr [EBP + -0x4],EAX      ; 0060852c

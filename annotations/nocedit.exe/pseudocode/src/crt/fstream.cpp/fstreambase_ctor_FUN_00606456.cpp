@@ -11,7 +11,7 @@ void __cdecl crt_fstream_cpp_fstreambase_ctor_FUN_00606456(fstreambase *this_ptr
 {
   char *pcVar1;
   ios *piVar2;
-  filebuf *this_ptr_00;
+  filebuf *buffer_ptr;
   int iVar3;
   
   if ((ctor_flags & 1U) == 0) {
@@ -19,16 +19,16 @@ void __cdecl crt_fstream_cpp_fstreambase_ctor_FUN_00606456(fstreambase *this_ptr
     piVar2 = crt_iostream_cpp_ios_ctor_FUN_006061fc(&this_ptr->ios_base);
     this_ptr = (fstreambase *)&piVar2[-2].__enabled_exceptions;
   }
-  this_ptr_00 = crt_fstream_cpp_filebuf_ctor_FUN_0060bddd(&(this_ptr->base)._filebuf);
-  pcVar1 = this_ptr_00[-1].__unbuffered_get_area + 4;
+  buffer_ptr = crt_fstream_cpp_filebuf_ctor_FUN_0060bddd(&(this_ptr->base)._filebuf);
+  pcVar1 = buffer_ptr[-1].__unbuffered_get_area + 4;
   *(int *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4) + -4) = *(int *)(*(int *)pcVar1 + 4);
   iVar3 = *(int *)pcVar1;
-  this_ptr_00[1]._streambuf.__b_lock = &g_FStreamBase_Destructor;
-  *(void ***)(this_ptr_00->__unbuffered_get_area + *(int *)(iVar3 + 4) + -0x10) =
+  buffer_ptr[1]._streambuf.__b_lock = &g_FStreamBase_Destructor;
+  *(void ***)(buffer_ptr->__unbuffered_get_area + *(int *)(iVar3 + 4) + -0x10) =
        &g_FStreamBase_IOSDestructor;
   crt_iostream_cpp_streambuf_initBuffer_FUN_0060b815
-            ((streambuf *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),(char *)this_ptr_00);
-  iVar3 = crt_fstream_cpp_filebuf_open_FUN_00608c15(this_ptr_00,(char *)fd,mode,(int)buffer);
+            ((streambuf *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),(char *)buffer_ptr);
+  iVar3 = func_0x00608c15(buffer_ptr,fd,mode,buffer);
   if (iVar3 == 0) {
     reportStreamError
               ((FileEmbeddedData *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),3);

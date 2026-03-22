@@ -146,6 +146,46 @@ def clear_and_disassemble(program, addr_int, length):
     cmd.applyTo(program)
 
 
+def _diagnose_mismatch(addr, original, patched, current):
+    """Produce a human-readable diagnosis for a byte mismatch."""
+    # Check if the site has a JMP (E9) at the start — likely a previous cave patch
+    if len(current) >= 5 and current[0] == 0xe9:
+        import struct as _struct
+        jmp_rel = _struct.unpack_from('<i', bytes(current), 1)[0]
+        jmp_target = addr + 5 + jmp_rel
+        return ("already patched (different cave) — site has JMP to 0x%x" % jmp_target)
+
+    # Check if all bytes are 0xCC (INT3) — expected cave area, still empty
+    if all(b == 0xcc for b in current):
+        return "cave area is empty (all 0xCC) — expected original code"
+
+    # Check if the area contains non-INT3 code where we expected an empty cave
+    if all(b == 0xcc for b in original):
+        # We expected an empty cave but found code
+        non_cc = next((i for i, b in enumerate(current) if b != 0xcc), 0)
+        return ("cave area occupied at offset %d (0x%x) — "
+                "another patch or function already uses this space" % (
+                    non_cc, addr + non_cc))
+
+    # Check if it's partially patched (starts with original but diverges)
+    match_len = 0
+    for o, c in zip(original, current):
+        if o == c:
+            match_len += 1
+        else:
+            break
+    if match_len > 0 and match_len < len(original):
+        return ("partial mismatch at 0x%x — first %d bytes match, "
+                "diverges at offset %d" % (addr, match_len, match_len))
+
+    # Generic mismatch
+    return ("byte mismatch at 0x%x (expected %s, got %s)" % (
+        addr,
+        ' '.join('%02x' % b for b in original[:20]),
+        ' '.join('%02x' % b for b in current[:20]),
+    ))
+
+
 def apply_patch(program, patch, dry_run=True):
     """Apply a single patch. Returns (success, message)."""
     addr = patch['address']
@@ -156,11 +196,7 @@ def apply_patch(program, patch, dry_run=True):
     if current == patched:
         return True, "already patched"
     if current != original:
-        return False, "byte mismatch at 0x%x (expected %s, got %s)" % (
-            addr,
-            ' '.join('%02x' % b for b in original),
-            ' '.join('%02x' % b for b in current),
-        )
+        return False, _diagnose_mismatch(addr, original, patched, current)
 
     if not dry_run:
         space = program.getAddressFactory().getDefaultAddressSpace()

@@ -3,8 +3,8 @@
     "assembly_lines": 238,
     "complexity_score": 598,
     "cross_reference_count": 1,
-    "function_call_count": 7,
-    "global_count": 8,
+    "function_call_count": 6,
+    "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 103,
     "suspect_count": 47,
@@ -49,11 +49,6 @@
       "name": "crt_errno.c_setErrno_FUN_00602790"
     },
     {
-      "addr": "006088b0",
-      "is_variadic": false,
-      "name": "crt_io.c_getFileTypeFlags_FUN_006088b0"
-    },
-    {
       "addr": "00606690",
       "is_variadic": false,
       "name": "crt_stdio.c_lseek_FUN_00606690"
@@ -75,6 +70,12 @@
     }
   ],
   "globals": [
+    {
+      "addr": "006088b0",
+      "name": "CAVE_cave_006088b0",
+      "type": "undefined4",
+      "value": null
+    },
     {
       "addr": "006115a4",
       "name": "g_GetLastErrorFunc",
@@ -292,7 +293,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = getFileTypeFlags(param_1);",
+      "text": "uVar1 = func_0x006088b0(param_1);",
       "type": "unnamed_param"
     },
     {

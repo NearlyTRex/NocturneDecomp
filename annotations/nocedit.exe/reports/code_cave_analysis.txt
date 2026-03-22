@@ -6,10 +6,10 @@ Caves are created by zeroing out dead functions using the
 CreateCodeCave Ghidra script (Shift+Z). Patching scripts
 allocate space within caves for injected code (thunks, helpers).
 
-Total caves:        23
-Total bytes:        20,235
-Total free:         1,649
-Total allocations:  332
+Total caves:        24
+Total bytes:        21,371
+Total free:         2,481
+Total allocations:  340
 
 ----------------------------------------------------------------------------------------------------
 CAVES
@@ -519,6 +519,9 @@ CAVES
                4x MOVSD replacement for CPoly_intersectPoly_FUN_005ce580
     Free space: 31 bytes (offset 0x31e1 - 0x3200)
 
+  cave_006088b0                   006088b0   1136 bytes  [FREE]
+    (entirely free — no allocations)
+
   cave_005fde92                   0060d067    145 bytes  [116/145 used]
     Allocations:
       +0x0000   39 bytes  movsd_005c032d             0x005c032d
@@ -757,8 +760,25 @@ CAVES
                4x MOVSD replacement for CStranger_updateProceduralAnimation_FUN_005be520
     Free space: 30 bytes (offset 0x081c - 0x083a)
 
-  cave_0060fb3a                   0060fb3a    448 bytes  [63/448 used]
-    (entirely free — no allocations)
+  cave_0060fb3a                   0060fb3a    448 bytes  [367/448 used]
+    Allocations:
+      +0x003f   39 bytes  movsd_0059f724             0x0059f724
+               4x MOVSD replacement for CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0
+      +0x0066   36 bytes  movsd_005bff1d             0x005bff1d
+               4x MOVSD replacement for CStranger_makeDrawDecision_FUN_005bfb60
+      +0x008a   36 bytes  movsd_005c0090             0x005c0090
+               4x MOVSD replacement for CStranger_makeDrawDecision_FUN_005bfb60
+      +0x00ae   39 bytes  movsd_0059f35f             0x0059f35f
+               4x MOVSD replacement for CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
+      +0x00d5   39 bytes  movsd_0059f5de             0x0059f5de
+               4x MOVSD replacement for CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
+      +0x00fc   39 bytes  movsd_0059ec96             0x0059ec96
+               4x MOVSD replacement for CDeformableModelInstance_blendMotion_FUN_0059eb50
+      +0x0123   37 bytes  movsd_0059efd5             0x0059efd5
+               4x MOVSD replacement for CDeformableModelInstance_blendMotion_FUN_0059eb50
+      +0x0148   39 bytes  movsd_0059f0a1             0x0059f0a1
+               4x MOVSD replacement for CDeformableModelInstance_blendMotion_FUN_0059eb50
+    Free space: 81 bytes (offset 0x016f - 0x01c0)
 
   cave_005fde92                   006107b1    447 bytes  [FREE]
     (entirely free — no allocations)

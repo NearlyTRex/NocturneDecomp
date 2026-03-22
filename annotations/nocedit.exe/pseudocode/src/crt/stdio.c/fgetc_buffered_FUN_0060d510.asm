@@ -9,9 +9,11 @@
 ; XREF[1]:
 ;   crt_string.c_mbstrncpy_core_FUN_0060b670 at 0060b6dd
 ;
+; Referenced Globals:
+;   undefined4 SUB_00608cd1
+;
 ; Called Functions:
 ;   crt_stdio.c_reportStreamError_FUN_00606020
-;   crt_stdio.c_stream_valid_FUN_00608cd1
 ;
 ; *****************************************************************************
 
@@ -23,8 +25,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 0060d512
     PUSH 0x1                            ; 0060d516
     PUSH EBX                            ; 0060d518
-    CALL crt_stdio.c_stream_valid_FUN_00608cd1 ; 0060d519
-        ;   XREF to: 00608cd1 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_stream_valid_FUN_00608cd1(_FILE * stream, int operation_type)
+    CALL 0x00608cd1                     ; 0060d519
+        ;   XREF to: 00608cd1 (UNCONDITIONAL_CALL)  ; SUB_00608cd1
     ADD ESP,0x8                         ; 0060d51e
     TEST EAX,EAX                        ; 0060d521
     JZ 0x0060d56c                       ; 0060d523

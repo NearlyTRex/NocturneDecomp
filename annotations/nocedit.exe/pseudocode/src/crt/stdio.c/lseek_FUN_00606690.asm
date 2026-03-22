@@ -21,6 +21,8 @@
 ;   crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930 at 0060eae3
 ;
 ; Referenced Globals:
+;   undefined4 CAVE_cave_006088b0
+;   undefined4 SUB_00608908
 ;   SET_FILE_POINTER_FUNC* g_SetFilePointerFunc = 002121b6
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
@@ -30,8 +32,6 @@
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
-;   crt_io.c_getFileTypeFlags_FUN_006088b0
-;   crt_io.c_setFileDescriptorFlags_FUN_00608908
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;   SetFilePointer
 ;
@@ -65,8 +65,8 @@ section .text
     CALL dword ptr [0x00684ee8]         ; 006066b7 | PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8
     ADD ESP,0x4                         ; 006066bd
     PUSH EBX                            ; 006066c0
-    CALL crt_io.c_getFileTypeFlags_FUN_006088b0 ; 006066c1
-        ;   XREF to: 006088b0 (UNCONDITIONAL_CALL)  ; uint crt_io.c_getFileTypeFlags_FUN_006088b0(int file_handle_index)
+    CALL 0x006088b0                     ; 006066c1
+        ;   XREF to: 006088b0 (UNCONDITIONAL_CALL)  ; CAVE_cave_006088b0
     ADD ESP,0x4                         ; 006066c6
     CMP dword ptr [ESP + 0x14],0x0      ; 006066c9
     JLE 0x006066e1                      ; 006066ce
@@ -77,8 +77,8 @@ section .text
     OR AH,0x80                          ; 006066d4
     PUSH EAX                            ; 006066d7
     PUSH EBX                            ; 006066d8
-    CALL crt_io.c_setFileDescriptorFlags_FUN_00608908 ; 006066d9
-        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; void crt_io.c_setFileDescriptorFlags_FUN_00608908(int file_handle_index, uint flags)
+    CALL 0x00608908                     ; 006066d9
+        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; SUB_00608908
     ADD ESP,0x8                         ; 006066de
     MOV ESI,dword ptr [0x0068526c]      ; 006066e1 | g_IOControlBlock
         ;   Label: LAB_006066e1

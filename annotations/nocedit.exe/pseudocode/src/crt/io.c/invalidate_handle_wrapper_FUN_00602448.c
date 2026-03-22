@@ -9,6 +9,6 @@
 void __cdecl invalidate_handle_wrapper(int handle_index)
 
 {
-  invalidate_handle(handle_index);
+  func_0x00608af4(handle_index);
   return;
 }

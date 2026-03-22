@@ -35,10 +35,6 @@ undefined4 FUN_00607958(int param_1,int param_2,undefined4 param_3);
 // Address: 00607c88
 undefined4 FUN_00607c88(int *param_1,int *param_2);
 
-// Original: crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c
-// Address: 00608a1c
-void SetStdHandleToSomething(HANDLE param_1,uint param_2);
-
 // Original: crt_unknown.c_FUN_00609fc8
 // Address: 00609fc8
 void FUN_00609fc8(void);
@@ -121,7 +117,7 @@ undefined4 FUN_0060d48c(undefined4 param_1,undefined4 param_2,undefined4 param_3
 
 // Original: crt_unknown.c_FUN_0060d576
 // Address: 0060d576
-uint FUN_0060d576(_FILE *param_1);
+uint FUN_0060d576(int *param_1);
 
 // Original: crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0
 // Address: 0060e5d0

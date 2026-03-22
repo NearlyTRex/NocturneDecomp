@@ -6,8 +6,7 @@
 ; Parameters:
 ; int              Stack[0x4]:4   handle_index
 ;
-; XREF[3]:
-;   crt_io.c_getFileTypeFlags_FUN_006088b0 at 006088e7
+; XREF[2]:
 ;   crt_stdio.c_CreateFileImpl_FUN_006090a0 at 00609275
 ;   crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0 at 00608eef
 ;

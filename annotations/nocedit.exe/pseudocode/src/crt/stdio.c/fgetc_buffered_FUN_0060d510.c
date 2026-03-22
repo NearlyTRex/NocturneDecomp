@@ -12,7 +12,7 @@ int __watcallStack fgetc_buffered(_FILE *stream)
   int iVar1;
   uint uVar2;
   
-  iVar1 = stream_valid(stream,1);
+  iVar1 = func_0x00608cd1(stream,1);
   if (iVar1 == 0) {
     return -1;
   }

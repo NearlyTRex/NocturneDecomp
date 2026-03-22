@@ -10,6 +10,7 @@
 ; char *           Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
+;   undefined4 CAVE_cave_006088b0
 ;   TerminatedCString s_C_FILE_INFO_00659790
 ;   undefined4 s__FILE_INFO=_00659791
 ;   undefined4 s_LE_INFO=_00659794
@@ -27,7 +28,6 @@
 ;
 ; Called Functions:
 ;   crt_io.c_get_handle_FUN_006109f0
-;   crt_io.c_getFileTypeFlags_FUN_006088b0
 ;   crt_memory.c_malloc_FUN_00601bb0
 ;   crt_stdio.c_IntegerToString_FUN_00607d18
 ;
@@ -87,8 +87,8 @@ section .text
         ;   XREF to: 006101df (CONDITIONAL_JUMP)  ; LAB_006101df
     PUSH EBX                            ; 0061003b
         ;   Label: LAB_0061003b
-    CALL crt_io.c_getFileTypeFlags_FUN_006088b0 ; 0061003c
-        ;   XREF to: 006088b0 (UNCONDITIONAL_CALL)  ; uint crt_io.c_getFileTypeFlags_FUN_006088b0(int file_handle_index)
+    CALL 0x006088b0                     ; 0061003c
+        ;   XREF to: 006088b0 (UNCONDITIONAL_CALL)  ; CAVE_cave_006088b0
     MOV EBP,EAX                         ; 00610041
     ADD ESP,0x4                         ; 00610043
     TEST EBP,0x4000                     ; 00610046

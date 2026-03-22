@@ -11,6 +11,6 @@ void __cdecl invalidate_handle_wrapper(int handle_index)
 {
   reset_reentrant_critical_section_state
             ((ReentrantCriticalSection *)(&g_TlsDataBase + (handle_index & 0xfU) * 4));
-  invalidate_handle(handle_index);
+  func_0x00608af4(handle_index);
   return;
 }

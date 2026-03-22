@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 11,
     "complexity_score": 21,
-    "cross_reference_count": 15,
+    "cross_reference_count": 13,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -21,12 +21,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00608990",
-      "from_addr": "006089e2",
-      "name": "crt_io.c_register_handle_FUN_00608990",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00609f24",
       "from_addr": "00609f82",
       "name": "crt_sync.c_allocate_critical_section_FUN_00609f24",
@@ -42,12 +36,6 @@
       "addr": "0060fcf4",
       "from_addr": "0060fe29",
       "name": "crt_unknown.c_FUN_0060fcf4",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00608a1c",
-      "from_addr": "00608a90",
-      "name": "crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -126,19 +114,8 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 15,
+    "call_site_count": 13,
     "call_sites": [
-      {
-        "call_addr": "006089e2",
-        "call_type": "direct",
-        "caller": "crt_io.c_register_handle_FUN_00608990",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
       {
         "call_addr": "00609f82",
         "call_type": "direct",
@@ -228,9 +205,20 @@
         "stack_params": 2
       },
       {
-        "call_addr": "00608a90",
+        "call_addr": "005d76f2",
         "call_type": "direct",
-        "caller": "crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c",
+        "caller": "shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005d46b4",
+        "call_type": "direct",
+        "caller": "shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

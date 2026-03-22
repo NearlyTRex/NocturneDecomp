@@ -11,11 +11,11 @@
 ;   crt_fstream.cpp_fstreambase_dtor_FUN_00606509 at 0060653a
 ;
 ; Referenced Globals:
+;   undefined4 SUB_00608bcc
 ;   filebuf_vtable g_FilebufVTable
 ;   WatcomTypeInfo g_FilebufTypeInfo
 ;
 ; Called Functions:
-;   crt_fstream.cpp_filebuf_close_FUN_00608bcc
 ;   crt_fstream.cpp_filebuf_sync_FUN_0060dc5e
 ;   crt_iostream.cpp_streambuf_destructor_FUN_0060d64f
 ;   crt_memory.c___vec_delete_FUN_005fe632
@@ -50,8 +50,8 @@ section .text
     JNZ 0x0060be34                      ; 0060be29
         ;   XREF to: 0060be34 (CONDITIONAL_JUMP)  ; LAB_0060be34
     PUSH EBX                            ; 0060be2b
-    CALL crt_fstream.cpp_filebuf_close_FUN_00608bcc ; 0060be2c
-        ;   XREF to: 00608bcc (UNCONDITIONAL_CALL)  ; filebuf * crt_fstream.cpp_filebuf_close_FUN_00608bcc(filebuf * this_ptr)
+    CALL 0x00608bcc                     ; 0060be2c
+        ;   XREF to: 00608bcc (UNCONDITIONAL_CALL)  ; SUB_00608bcc
     ADD ESP,0x4                         ; 0060be31
     PUSH 0x1                            ; 0060be34
         ;   Label: LAB_0060be34

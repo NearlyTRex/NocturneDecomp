@@ -67,34 +67,6 @@ int __cdecl extend::file_for_append(int fd);
 // Address: 006084ec
 int __cdecl write(int fd,void *buffer,SIZE_T count);
 
-// Original: crt_io.c_getFileTypeFlags_FUN_006088b0
-// Address: 006088b0
-uint __watcallStack getFileTypeFlags(int file_handle_index);
-
-// Original: crt_io.c_setFileDescriptorFlags_FUN_00608908
-// Address: 00608908
-void __watcallStack setFileDescriptorFlags(int file_handle_index,uint flags);
-
-// Original: crt_io.c_CheckFileHandleAvailability_FUN_00608940
-// Address: 00608940
-int __cdecl CheckFileHandleAvailability(void);
-
-// Original: crt_io.c_register_handle_FUN_00608990
-// Address: 00608990
-int __cdecl register::handle(HANDLE handle);
-
-// Original: crt_io.c_invalidate_handle_FUN_00608af4
-// Address: 00608af4
-void __cdecl invalidate::handle(int handle_index);
-
-// Original: crt_io.c_InitializeStandardHandles_FUN_00608b20
-// Address: 00608b20
-int __cdecl InitializeStandardHandles(void);
-
-// Original: crt_io.c_CreateFallbackHandle_FUN_00608b88
-// Address: 00608b88
-HANDLE __cdecl CreateFallbackHandle(void);
-
 // Original: crt_io.c_getTempDirectory_FUN_00609afc
 // Address: 00609afc
 char * __cdecl getTempDirectory(void);

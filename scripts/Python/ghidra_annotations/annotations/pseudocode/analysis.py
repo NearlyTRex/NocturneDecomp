@@ -3736,6 +3736,9 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                 after_idx = i + 4
                 while total_size < 5 and after_idx < len(instructions):
                     addr, text = instructions[after_idx]
+                    # Don't borrow a branch target — other code jumps here
+                    if addr in jump_targets:
+                        break
                     if RE_UNSAFE.match(text):
                         break
                     next_addr = instructions[after_idx + 1][0] if after_idx + 1 < len(instructions) else None
@@ -3749,6 +3752,9 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                 before_idx = i - 1
                 while total_size < 5 and before_idx >= 0:
                     addr, text = instructions[before_idx]
+                    # Don't borrow a branch target
+                    if addr in jump_targets:
+                        break
                     if RE_UNSAFE.match(text):
                         break
                     next_addr = instructions[before_idx + 1][0]

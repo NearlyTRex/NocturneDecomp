@@ -11,9 +11,11 @@
 ; XREF[1]:
 ;   crt_io.c_write_FUN_006084ec at 006085a3
 ;
+; Referenced Globals:
+;   undefined4 CAVE_cave_006088b0
+;   undefined4 SUB_00608908
+;
 ; Called Functions:
-;   crt_io.c_getFileTypeFlags_FUN_006088b0
-;   crt_io.c_setFileDescriptorFlags_FUN_00608908
 ;   crt_io.c_write_FUN_006084ec
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_stdio.c_lseek_FUN_00606690
@@ -52,14 +54,14 @@ section .text
         ;   XREF to: 006084b0 (CONDITIONAL_JUMP)  ; LAB_006084b0
     PUSH EDI                            ; 00608452
     SUB EBX,EAX                         ; 00608453
-    CALL crt_io.c_getFileTypeFlags_FUN_006088b0 ; 00608455
-        ;   XREF to: 006088b0 (UNCONDITIONAL_CALL)  ; uint crt_io.c_getFileTypeFlags_FUN_006088b0(int file_handle_index)
+    CALL 0x006088b0                     ; 00608455
+        ;   XREF to: 006088b0 (UNCONDITIONAL_CALL)  ; CAVE_cave_006088b0
     ADD ESP,0x4                         ; 0060845a
     AND AH,0x7f                         ; 0060845d
     PUSH EAX                            ; 00608460
     PUSH EDI                            ; 00608461
-    CALL crt_io.c_setFileDescriptorFlags_FUN_00608908 ; 00608462
-        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; void crt_io.c_setFileDescriptorFlags_FUN_00608908(int file_handle_index, uint flags)
+    CALL 0x00608908                     ; 00608462
+        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; SUB_00608908
     ADD ESP,0x8                         ; 00608467
     TEST EBX,EBX                        ; 0060846a
     JLE 0x006084dd                      ; 0060846c
@@ -105,14 +107,14 @@ section .text
     ADD ESP,0xc                         ; 006084b9
     PUSH EDI                            ; 006084bc
     MOV EBX,EAX                         ; 006084bd
-    CALL crt_io.c_getFileTypeFlags_FUN_006088b0 ; 006084bf
-        ;   XREF to: 006088b0 (UNCONDITIONAL_CALL)  ; uint crt_io.c_getFileTypeFlags_FUN_006088b0(int file_handle_index)
+    CALL 0x006088b0                     ; 006084bf
+        ;   XREF to: 006088b0 (UNCONDITIONAL_CALL)  ; CAVE_cave_006088b0
     ADD ESP,0x4                         ; 006084c4
     AND AH,0x7f                         ; 006084c7
     PUSH EAX                            ; 006084ca
     PUSH EDI                            ; 006084cb
-    CALL crt_io.c_setFileDescriptorFlags_FUN_00608908 ; 006084cc
-        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; void crt_io.c_setFileDescriptorFlags_FUN_00608908(int file_handle_index, uint flags)
+    CALL 0x00608908                     ; 006084cc
+        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; SUB_00608908
     ADD ESP,0x8                         ; 006084d1
     CMP EBX,-0x1                        ; 006084d4
     JNZ 0x006084dd                      ; 006084d7

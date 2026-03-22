@@ -8,6 +8,7 @@
 ;   crt_fstream.cpp_filebuf_underflow_FUN_0060da87 at 0060db7a
 ;
 ; Referenced Globals:
+;   undefined4 CAVE_cave_006088b0
 ;   GET_LAST_ERROR_FUNC* g_GetLastErrorFunc = 00211f22
 ;   READ_FILE_FUNC* g_ReadFileFunc = 002120f2
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
@@ -20,7 +21,6 @@
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
-;   crt_io.c_getFileTypeFlags_FUN_006088b0
 ;   crt_stdio.c_lseek_FUN_00606690
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;   GetLastError
@@ -58,8 +58,8 @@ section .text
     MOV EAX,dword ptr [EAX + EDX*0x4]   ; 0060e968
     PUSH EDX                            ; 0060e96b
     MOV dword ptr [ESP + 0x10],EAX      ; 0060e96c
-    CALL crt_io.c_getFileTypeFlags_FUN_006088b0 ; 0060e970
-        ;   XREF to: 006088b0 (UNCONDITIONAL_CALL)  ; uint crt_io.c_getFileTypeFlags_FUN_006088b0(int file_handle_index)
+    CALL 0x006088b0                     ; 0060e970
+        ;   XREF to: 006088b0 (UNCONDITIONAL_CALL)  ; CAVE_cave_006088b0
     ADD ESP,0x4                         ; 0060e975
     MOV EBX,EAX                         ; 0060e978
     MOV dword ptr [ESP + 0x8],EAX       ; 0060e97a

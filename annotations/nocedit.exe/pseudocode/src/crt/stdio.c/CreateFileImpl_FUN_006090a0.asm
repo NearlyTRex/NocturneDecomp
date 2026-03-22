@@ -19,6 +19,9 @@
 ;   crt_stdio.c_CreateFileVariadic_FUN_00609074 at 00609091
 ;
 ; Referenced Globals:
+;   undefined4 SUB_00608908
+;   undefined4 SUB_00608940
+;   undefined4 SUB_00608b88
 ;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
 ;   CREATE_FILE_A_FUNC* g_CreateFileAFunc = 00211c6a
 ;   TerminatedCString s_con_006590a0
@@ -33,13 +36,10 @@
 ;   CreateFileA
 ;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
-;   crt_io.c_CheckFileHandleAvailability_FUN_00608940
 ;   crt_io.c_ConvertAccessMode_FUN_0060c850
 ;   crt_io.c_ConvertCreationDisposition_FUN_0060c894
-;   crt_io.c_CreateFallbackHandle_FUN_00608b88
 ;   crt_io.c_IsSpecialDevice_FUN_0060c270
 ;   crt_io.c_register_handler_wrapper_FUN_00602438
-;   crt_io.c_setFileDescriptorFlags_FUN_00608908
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
@@ -53,8 +53,8 @@ section .text
     PUSH EBP                            ; 006090a3
     SUB ESP,0x18                        ; 006090a4
     MOV EDI,dword ptr [ESP + 0x38]      ; 006090a7
-    CALL crt_io.c_CheckFileHandleAvailability_FUN_00608940 ; 006090ab
-        ;   XREF to: 00608940 (UNCONDITIONAL_CALL)  ; int crt_io.c_CheckFileHandleAvailability_FUN_00608940()
+    CALL 0x00608940                     ; 006090ab
+        ;   XREF to: 00608940 (UNCONDITIONAL_CALL)  ; SUB_00608940
     TEST EAX,EAX                        ; 006090b0
     JZ 0x006090c8                       ; 006090b2
         ;   XREF to: 006090c8 (CONDITIONAL_JUMP)  ; LAB_006090c8
@@ -106,8 +106,8 @@ section .text
     TEST EAX,EAX                        ; 00609137
     JNZ 0x00609164                      ; 00609139
         ;   XREF to: 00609164 (CONDITIONAL_JUMP)  ; LAB_00609164
-    CALL crt_io.c_CreateFallbackHandle_FUN_00608b88 ; 0060913b
-        ;   XREF to: 00608b88 (UNCONDITIONAL_CALL)  ; HANDLE crt_io.c_CreateFallbackHandle_FUN_00608b88()
+    CALL 0x00608b88                     ; 0060913b
+        ;   XREF to: 00608b88 (UNCONDITIONAL_CALL)  ; SUB_00608b88
     PUSH EAX                            ; 00609140
     CALL dword ptr [0x00684ef0]         ; 00609141 | PTR_crt_sync.c_RegisterHandle_FUN_00602438_00684ef0
     ADD ESP,0x4                         ; 00609147
@@ -293,8 +293,8 @@ section .text
     PUSH EBX                            ; 006092cd
         ;   Label: LAB_006092cd
     PUSH EBP                            ; 006092ce
-    CALL crt_io.c_setFileDescriptorFlags_FUN_00608908 ; 006092cf
-        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; void crt_io.c_setFileDescriptorFlags_FUN_00608908(int file_handle_index, uint flags)
+    CALL 0x00608908                     ; 006092cf
+        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; SUB_00608908
     ADD ESP,0x8                         ; 006092d4
     MOV EAX,EBP                         ; 006092d7
     ADD ESP,0x18                        ; 006092d9

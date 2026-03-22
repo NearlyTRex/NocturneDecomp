@@ -15,9 +15,9 @@ int __watcallStack lseek(int file_handle_index,long distance_to_move,int move_me
   
   if ((-1 < file_handle_index) && ((uint)file_handle_index <= g_MaxHandleCount)) {
     (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file_handle_index);
-    uVar1 = getFileTypeFlags(file_handle_index);
+    uVar1 = func_0x006088b0(file_handle_index);
     if ((0 < move_method) && ((uVar1 & 0x80) == 0)) {
-      setFileDescriptorFlags(file_handle_index,uVar1 | 0x8000);
+      func_0x00608908(file_handle_index,uVar1 | 0x8000);
     }
     DVar2 = (*g_SetFilePointerFunc)
                       (g_IOControlBlock->standard_handles[file_handle_index],move_method,(PLONG)0x0,

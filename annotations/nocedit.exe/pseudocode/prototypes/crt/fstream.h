@@ -71,14 +71,6 @@ fstreambase * __cdecl fstreambase::dtor(fstreambase *this_ptr,uint flags);
 // Address: 0060658f
 fstreambase * __cdecl fstreambase::ctor(fstreambase *this_ptr,uint c1);
 
-// Original: crt_fstream.cpp_filebuf_close_FUN_00608bcc
-// Address: 00608bcc
-filebuf * __watcallStack filebuf::close(filebuf *this_ptr);
-
-// Original: crt_fstream.cpp_filebuf_open_FUN_00608c15
-// Address: 00608c15
-int __cdecl filebuf::open(filebuf *this_ptr,char *filename,int mode,int permissions);
-
 // Original: crt_fstream.cpp_filebuf_ctor_FUN_0060bddd
 // Address: 0060bddd
 filebuf * __cdecl filebuf::ctor(filebuf *this_ptr);

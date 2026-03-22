@@ -6,9 +6,6 @@
 ; Parameters:
 ; int              Stack[0x4]:4   handle_index
 ;
-; XREF[1]:
-;   crt_fstream.cpp_filebuf_close_FUN_00608bcc at 00608bff
-;
 ; Referenced Globals:
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434

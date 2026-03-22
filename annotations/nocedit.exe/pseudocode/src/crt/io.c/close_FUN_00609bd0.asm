@@ -11,6 +11,7 @@
 ;   crt_stdio.c__fclose_FUN_00601fd0 at 0060203e
 ;
 ; Referenced Globals:
+;   undefined4 SUB_00608908
 ;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
 ;   uint g_MaxHandleCount = 0x14
 ;   SIOControlBlock* g_IOControlBlock = 00000000
@@ -20,7 +21,6 @@
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00602790
-;   crt_io.c_setFileDescriptorFlags_FUN_00608908
 ;
 ; *****************************************************************************
 
@@ -92,8 +92,8 @@ section .text
     PUSH 0x0                            ; 00609c5f
         ;   Label: LAB_00609c5f
     PUSH EBX                            ; 00609c61
-    CALL crt_io.c_setFileDescriptorFlags_FUN_00608908 ; 00609c62
-        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; void crt_io.c_setFileDescriptorFlags_FUN_00608908(int file_handle_index, uint flags)
+    CALL 0x00608908                     ; 00609c62
+        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; SUB_00608908
     ADD ESP,0x8                         ; 00609c67
     MOV EAX,EDI                         ; 00609c6a
         ;   Label: LAB_00609c6a
