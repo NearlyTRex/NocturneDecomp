@@ -5,22 +5,21 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 117,
-    "complexity_score": 796,
+    "assembly_lines": 237,
+    "complexity_score": 519,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 151,
-    "suspect_count": 62,
+    "pseudocode_lines": 229,
+    "suspect_count": 27,
     "suspect_types": [
       "byvalue_struct_passing",
       "pointer_cast",
       "stack_param",
-      "stack_ref",
-      "unknown_field"
+      "stack_ref"
     ],
-    "total_lines": 268
+    "total_lines": 466
   },
   "cross_references": [
     {
@@ -36,6 +35,10 @@
       [
         "0045d300",
         "0045d462"
+      ],
+      [
+        "00603048",
+        "006031b3"
       ]
     ],
     "convention": "__cdecl",
@@ -95,16 +98,16 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.461538461538462,
-    "instruction_count": 104,
+    "avg_pcode_per_instr": 4.615384615384615,
+    "instruction_count": 208,
     "opcode_distribution": {
       "BOOL_NEGATE": 15,
       "BOOL_OR": 1,
-      "BRANCH": 14,
+      "BRANCH": 22,
       "CALL": 4,
       "CBRANCH": 14,
-      "COPY": 109,
-      "INT_ADD": 77,
+      "COPY": 205,
+      "INT_ADD": 165,
       "INT_AND": 74,
       "INT_CARRY": 8,
       "INT_EQUAL": 55,
@@ -120,13 +123,13 @@
       "INT_SUB": 55,
       "INT_XOR": 3,
       "INT_ZEXT": 24,
-      "LOAD": 46,
+      "LOAD": 94,
       "POPCOUNT": 20,
       "RETURN": 1,
-      "STORE": 24,
+      "STORE": 72,
       "SUBPIECE": 8
     },
-    "pcode_op_count": 672
+    "pcode_op_count": 960
   },
   "stack_frame": {
     "frame_size": 176,
@@ -180,28 +183,28 @@
     ],
     "patterns": [
       {
-        "address": "0045d3a1",
+        "address": "00603050",
         "description": "Alternative frame pointer (EDI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV EDI,ESP",
         "pattern_id": "alt_frame_pointer"
       },
       {
-        "address": "0045d3c3",
+        "address": "006030ab",
         "description": "Alternative frame pointer (EDI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV EDI,ESP",
         "pattern_id": "alt_frame_pointer"
       },
       {
-        "address": "0045d428",
+        "address": "00603106",
         "description": "Alternative frame pointer (EDI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV EDI,ESP",
         "pattern_id": "alt_frame_pointer"
       },
       {
-        "address": "0045d44a",
+        "address": "00603161",
         "description": "Alternative frame pointer (EDI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV EDI,ESP",
@@ -213,82 +216,34 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 48,
       "match": "in_stack_fffffef8",
       "severity": "moderate",
       "text": "SRenderVertex in_stack_fffffef8;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_ffffff28",
-      "severity": "moderate",
-      "text": "byte in_stack_ffffff28 [40];",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 60,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 55,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xffffff28",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)&stack0xffffff28;",
-      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 61,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -296,228 +251,28 @@
       "line": 68,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 72,
-      "match": "&stack0xfffffef8",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)&stack0xfffffef8;",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 75,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_ffffff28",
-      "severity": "moderate",
-      "text": "auVar8 = in_stack_ffffff28._0_24_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 79,
-      "match": "._0_24_",
-      "severity": "mild",
-      "text": "auVar8 = in_stack_ffffff28._0_24_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 80,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "vertex2.projected_vertex.transformed_x = auVar8._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 81,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "vertex2.projected_vertex.transformed_y = auVar8._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 82,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "vertex2.projected_vertex.transformed_z = auVar8._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 83,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "vertex2.projected_vertex.inv_z = auVar8._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 84,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "vertex2.projected_vertex.screen_x = auVar8._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 85,
-      "match": "._20_4_",
-      "severity": "mild",
-      "text": "vertex2.projected_vertex.screen_y = auVar8._20_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 86,
-      "match": "in_stack_ffffff28",
-      "severity": "moderate",
-      "text": "vertex2.u = in_stack_ffffff28._24_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 86,
-      "match": "._24_4_",
-      "severity": "mild",
-      "text": "vertex2.u = in_stack_ffffff28._24_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_ffffff28",
-      "severity": "moderate",
-      "text": "vertex2.v = in_stack_ffffff28._28_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 87,
-      "match": "._28_4_",
-      "severity": "mild",
-      "text": "vertex2.v = in_stack_ffffff28._28_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_ffffff28",
-      "severity": "moderate",
-      "text": "vertex2.r = in_stack_ffffff28._32_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 88,
-      "match": "._32_4_",
-      "severity": "mild",
-      "text": "vertex2.r = in_stack_ffffff28._32_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 89,
-      "match": "in_stack_ffffff28",
-      "severity": "moderate",
-      "text": "vertex2.g = in_stack_ffffff28._36_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 89,
-      "match": "._36_4_",
-      "severity": "mild",
-      "text": "vertex2.g = in_stack_ffffff28._36_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 91,
-      "match": "in_stack_fffffef8",
-      "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffef8,vertex2);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "pSVar2 = g_RenderVertexBuffer + *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 97,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 98,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 105,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 111,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 112,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 115,
+      "line": 78,
       "match": "&stack0xffffff28",
       "severity": "moderate",
       "text": "piVar4 = (int *)&stack0xffffff28;",
@@ -525,7 +280,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 93,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);",
@@ -533,7 +288,111 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 100,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 101,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 104,
+      "match": "&stack0xfffffef8",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)&stack0xfffffef8;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 119,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 148,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "pSVar2 = g_RenderVertexBuffer + *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 152,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 153,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 159,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 160,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 166,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 167,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 170,
+      "match": "&stack0xffffff28",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)&stack0xffffff28;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 185,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 191,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);",
@@ -541,7 +400,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 193,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);",
@@ -549,7 +408,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 130,
+      "line": 197,
       "match": "&stack0xfffffef8",
       "severity": "moderate",
       "text": "piVar6 = (int *)&stack0xfffffef8;",
@@ -557,147 +416,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 200,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 139,
-      "match": "in_stack_ffffff28",
-      "severity": "moderate",
-      "text": "auVar8 = in_stack_ffffff28._0_24_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 139,
-      "match": "._0_24_",
-      "severity": "mild",
-      "text": "auVar8 = in_stack_ffffff28._0_24_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 140,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "vertex2_00.projected_vertex.transformed_x = auVar8._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 141,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "vertex2_00.projected_vertex.transformed_y = auVar8._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 142,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "vertex2_00.projected_vertex.transformed_z = auVar8._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 143,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "vertex2_00.projected_vertex.inv_z = auVar8._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 144,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "vertex2_00.projected_vertex.screen_x = auVar8._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 145,
-      "match": "._20_4_",
-      "severity": "mild",
-      "text": "vertex2_00.projected_vertex.screen_y = auVar8._20_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 146,
-      "match": "in_stack_ffffff28",
-      "severity": "moderate",
-      "text": "vertex2_00.u = in_stack_ffffff28._24_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 146,
-      "match": "._24_4_",
-      "severity": "mild",
-      "text": "vertex2_00.u = in_stack_ffffff28._24_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 147,
-      "match": "in_stack_ffffff28",
-      "severity": "moderate",
-      "text": "vertex2_00.v = in_stack_ffffff28._28_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 147,
-      "match": "._28_4_",
-      "severity": "mild",
-      "text": "vertex2_00.v = in_stack_ffffff28._28_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 148,
-      "match": "in_stack_ffffff28",
-      "severity": "moderate",
-      "text": "vertex2_00.r = in_stack_ffffff28._32_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 148,
-      "match": "._32_4_",
-      "severity": "mild",
-      "text": "vertex2_00.r = in_stack_ffffff28._32_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 149,
-      "match": "in_stack_ffffff28",
-      "severity": "moderate",
-      "text": "vertex2_00.g = in_stack_ffffff28._36_4_;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 149,
-      "match": "._36_4_",
-      "severity": "mild",
-      "text": "vertex2_00.g = in_stack_ffffff28._36_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 151,
-      "match": "in_stack_fffffef8",
-      "severity": "moderate",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffef8,vertex2_00);",
-      "type": "stack_param"
     },
     {
       "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",

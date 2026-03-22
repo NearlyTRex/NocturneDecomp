@@ -93,7 +93,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
 
    95.2% | core/stairs.cpp
          20/21 clean, 1 remaining
-           - core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (446 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, suspect_float, unknown_field]
+           - core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (711 lines) [byvalue_struct_passing, decompiler_intrinsic, negative_offset, pointer_cast, stack_param, stack_ref, suspect_float, unknown_field]
 
    95.0% | core/emitter.cpp
          19/20 clean, 1 remaining
@@ -188,11 +188,11 @@ FILES AT 90-99% (ALMOST COMPLETE)
    90.7% | shape/edittool.cpp
          137/151 clean, 14 remaining
            - shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0 (50 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
-           - shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 (181 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field, warning_inlined_function]
+           - shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 (294 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_ref, unknown_field, warning_inlined_function]
            - shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 (10 lines) [param_count_too_few]
            - shape_edittool.cpp_paintWindowBackground_FUN_0049e590 (55 lines) [pointer_cast]
            - shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40 (113 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_ref]
-           - shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 (239 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
+           - shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 (347 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_ref]
            - shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 (212 lines) [negative_offset, pointer_cast]
            - shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360 (99 lines) [pointer_cast]
            - shape_edittool.cpp_CInputString_init_FUN_0049d3d0 (32 lines) [pointer_cast]
@@ -426,7 +426,7 @@ FILES AT 50-89%
          16/19 clean, 3 remaining
            - core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_00502a70 (49 lines) [pointer_cast]
            - core_ladder.cpp_CLadder_cacheRelativePosition_FUN_00502b80 (50 lines) [pointer_cast]
-           - core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 (166 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
+           - core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 (290 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_ref]
    84.2% | core/svetlana.cpp
          16/19 clean, 3 remaining
            - core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0 (304 lines) [pointer_cast, stack_alignment_array, warning_type_propagation]
@@ -442,13 +442,13 @@ FILES AT 50-89%
            - core_actor.cpp_getRandomInt_FUN_0040cc70 (23 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0 (17 lines) [pointer_cast]
            - core_actor.cpp_CActorPropertyList_addRuleList_FUN_0040e5a0 (26 lines) [unnamed_param]
-           - core_actor.cpp_draw3DLineSegment_FUN_0040d330 (88 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
+           - core_actor.cpp_draw3DLineSegment_FUN_0040d330 (83 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
            - core_actor.cpp_CActorPropertyList_addIntRange_FUN_0040e220 (11 lines) [unnamed_param]
            - core_actor.cpp_CActorPropertyList_addGroundType_FUN_0040e300 (9 lines) [unnamed_param]
            - core_actor.cpp_CActorPropertyList_addSound_FUN_0040e2d0 (9 lines) [unnamed_param]
            - core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640 (10 lines) [unnamed_param]
            - core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0 (10 lines) [unnamed_param]
-           - core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 (238 lines) [byvalue_struct_passing, pointer_cast, stack_param, stack_ref, unknown_field]
+           - core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 (357 lines) [byvalue_struct_passing, pointer_cast, stack_param, stack_ref]
            - core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 (116 lines) [decompiler_intrinsic, format_string_mismatch, pointer_cast]
            - core_actor.cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0 (11 lines) [unnamed_param]
            - core_actor.cpp_CActorPropertyList_addString_FUN_0040e290 (9 lines) [unnamed_param]
@@ -1121,7 +1121,7 @@ FILES AT 50-89%
          112/163 clean, 51 remaining
            - shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920 (19 lines) [stack_ref]
            - shape_design.c_triangulateDSE_FUN_0046e4d0 (58 lines) [pointer_cast]
-           - shape_design.c_renderPolygonWireframe_FUN_0045d300 (151 lines) [byvalue_struct_passing, pointer_cast, stack_param, stack_ref, unknown_field]
+           - shape_design.c_renderPolygonWireframe_FUN_0045d300 (229 lines) [byvalue_struct_passing, pointer_cast, stack_param, stack_ref]
            - shape_design.c_normalizeVertex_FUN_00461e60 (14 lines) [decompiler_intrinsic, unknown_field]
            - shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0 (72 lines) [decompiler_intrinsic, warning_inlined_function]
            - shape_design.c_createKeyframeModel_FUN_00468320 (118 lines) [decompiler_intrinsic, warning_inlined_function]
@@ -1593,9 +1593,9 @@ FILES AT 50-89%
            - core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0 (262 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_setedit.cpp_blitThumbnailToScreen32_FUN_00577330 (39 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (702 lines) [decompiler_intrinsic, pointer_cast]
-           - core_setedit.cpp_drawCameraFrustum_FUN_00582930 (453 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
+           - core_setedit.cpp_drawCameraFrustum_FUN_00582930 (917 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_ref]
            - core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 (166 lines) [decompiler_intrinsic, stack_ref, warning_inlined_function]
-           - core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (1008 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, suspect_float, unknown_field]
+           - core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (1475 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, suspect_float]
            - core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 (304 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0 (447 lines) [stack_ref, unknown_field]
            - core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310 (79 lines) [pointer_cast]

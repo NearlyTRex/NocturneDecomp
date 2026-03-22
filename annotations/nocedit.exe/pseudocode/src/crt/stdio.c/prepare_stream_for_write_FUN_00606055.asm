@@ -10,9 +10,6 @@
 ;   crt_fstream.cpp_ostream_write_FUN_005ffcb3 at 005ffd4a
 ;   crt_iostream.cpp_ostream_put_FUN_005ff2d7 at 005ff35e
 ;
-; Referenced Globals:
-;   undefined4 SUB_006039d0
-;
 ; Called Functions:
 ;   crt_stdio.c_get_standard_file_handle_FUN_0060b7a0
 ;   crt_stdio.c_stream_flush_FUN_006060bb
@@ -59,7 +56,7 @@ section .text
     ADD ESP,0x4                         ; 0060609a
     PUSH EAX                            ; 0060609d
     CALL 0x006039d0                     ; 0060609e
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; LAB_006039ce+2
     ADD ESP,0x4                         ; 006060a3
     PUSH 0x2                            ; 006060a6
     CALL crt_stdio.c_get_standard_file_handle_FUN_0060b7a0 ; 006060a8
@@ -67,7 +64,7 @@ section .text
     ADD ESP,0x4                         ; 006060ad
     PUSH EAX                            ; 006060b0
     CALL 0x006039d0                     ; 006060b1
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; LAB_006039ce+2
     ADD ESP,0x4                         ; 006060b6
     JMP 0x00606075                      ; 006060b9
         ;   XREF to: 00606075 (UNCONDITIONAL_JUMP)  ; LAB_00606075

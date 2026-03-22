@@ -12,7 +12,6 @@
 ;
 ; Referenced Globals:
 ;   undefined4 CAVE_cave_006027e0
-;   undefined4 SUB_006039d0
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;
@@ -92,7 +91,7 @@ section .text
         ;   XREF to: 0060ec41 (CONDITIONAL_JUMP)  ; LAB_0060ec41
     PUSH ESI                            ; 0060ec36
     CALL 0x006039d0                     ; 0060ec37
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; LAB_006039ce+2
     ADD ESP,0x4                         ; 0060ec3c
     MOV EDI,EAX                         ; 0060ec3f
     TEST EDI,EDI                        ; 0060ec41

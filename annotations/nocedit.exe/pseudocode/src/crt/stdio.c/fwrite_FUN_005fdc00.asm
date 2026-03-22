@@ -24,8 +24,6 @@
 ;
 ; Referenced Globals:
 ;   undefined4 CAVE_cave_006027e0
-;   undefined4 SUB_006038c0
-;   undefined4 SUB_006039d0
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
@@ -129,7 +127,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x10]      ; 005fdcc4
     PUSH EDI                            ; 005fdcc7
     CALL 0x006038c0                     ; 005fdcc8
-        ;   XREF to: 006038c0 (UNCONDITIONAL_CALL)  ; SUB_006038c0
+        ;   XREF to: 006038c0 (UNCONDITIONAL_CALL)  ; LAB_006038be+2
     ADD ESP,0xc                         ; 005fdccd
     MOV EBP,EAX                         ; 005fdcd0
     CMP EAX,-0x1                        ; 005fdcd2
@@ -188,7 +186,7 @@ section .text
     PUSH EBX                            ; 005fdd47
         ;   Label: LAB_005fdd47
     CALL 0x006039d0                     ; 005fdd48
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; LAB_006039ce+2
     ADD ESP,0x4                         ; 005fdd4d
     MOV EAX,dword ptr [ESP + 0x24]      ; 005fdd50
         ;   Label: LAB_005fdd50
@@ -260,7 +258,7 @@ section .text
     PUSH EBX                            ; 005fddf7
     MOV byte ptr [EBX + 0xd],CL         ; 005fddf8
     CALL 0x006039d0                     ; 005fddfb
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; LAB_006039ce+2
     ADD ESP,0x4                         ; 005fde00
     TEST byte ptr [EBX + 0xc],0x20      ; 005fde03
         ;   Label: LAB_005fde03

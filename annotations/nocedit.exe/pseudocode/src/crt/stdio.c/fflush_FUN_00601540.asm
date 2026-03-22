@@ -14,7 +14,6 @@
 ;   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 at 004bd69a
 ;
 ; Referenced Globals:
-;   undefined4 SUB_006039d0
 ;   undefined4 SUB_00605950
 ;
 ; *****************************************************************************
@@ -33,7 +32,7 @@ section .text
     PUSH EAX                            ; 00601550
         ;   Label: LAB_00601550
     CALL 0x006039d0                     ; 00601551
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; LAB_006039ce+2
     ADD ESP,0x4                         ; 00601556
     RET                                 ; 00601559
 

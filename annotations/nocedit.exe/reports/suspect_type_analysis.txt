@@ -4,28 +4,28 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6954 ( 38.9%)
-  pointer_cast                    5651 ( 31.6%)
-  unknown_field                   1239 (  6.9%)
-  stack_param                      624 (  3.5%)
-  special_crt_function             522 (  2.9%)
-  unnamed_param                    362 (  2.0%)
-  fpu_register_input               311 (  1.7%)
+  decompiler_intrinsic            6954 ( 40.2%)
+  pointer_cast                    5652 ( 32.7%)
+  unknown_field                    903 (  5.2%)
+  special_crt_function             522 (  3.0%)
+  unnamed_param                    362 (  2.1%)
+  stack_param                      354 (  2.0%)
+  fpu_register_input               311 (  1.8%)
   stack_ref                        267 (  1.5%)
   nonstandard_int                  267 (  1.5%)
   warning_inlined_function         264 (  1.5%)
   unresolved_funcptr               171 (  1.0%)
-  stack_alignment_array            132 (  0.7%)
-  warning_type_propagation         132 (  0.7%)
+  stack_alignment_array            132 (  0.8%)
+  warning_type_propagation         132 (  0.8%)
   param_count_too_few              127 (  0.7%)
   unaffected_reg                   106 (  0.6%)
   sub84_truncation                 100 (  0.6%)
-  negative_offset                   85 (  0.5%)
+  negative_offset                   86 (  0.5%)
   warning_unreachable               84 (  0.5%)
   register_param                    69 (  0.4%)
   param_count_too_many              52 (  0.3%)
   suspect_float                     50 (  0.3%)
-  unknown_type                      44 (  0.2%)
+  unknown_type                      44 (  0.3%)
   extra_output                      37 (  0.2%)
   mmx_assembly                      34 (  0.2%)
   format_string_mismatch            24 (  0.1%)
@@ -97,12 +97,12 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5651 occurrences)
+TYPE: pointer_cast (5652 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2143x  (uint *)((int)
-  1292x  (int *)((int)
+  2131x  (uint *)((int)
+  1304x  (int *)((int)
    325x  (SRenderVertex *)((int)
    301x  (float *)((int)
    289x  (CMatrix3x4f *)((int)
@@ -135,30 +135,30 @@ Example functions:
     piVar2 = (int *)((int)g_ScreenBufferArray + iVar8);...
 
 ====================================================================================================
-TYPE: unknown_field (1239 occurrences)
+TYPE: unknown_field (903 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   424x  ._0_4_
-   361x  ._4_4_
-    72x  ._8_4_
-    58x  ._12_4_
-    50x  ._16_4_
+   379x  ._0_4_
+   316x  ._4_4_
     47x  ._0_2_
-    38x  ._24_4_
     36x  ._2_2_
-    34x  ._20_4_
-    31x  ._0_24_
-    22x  ._28_4_
+    27x  ._8_4_
     14x  ._0_1_
+    13x  ._12_4_
      9x  ._1_1_
+     8x  ._24_4_
      7x  ._3_1_
-     7x  ._32_4_
+     5x  ._16_4_
+     5x  ._28_4_
+     5x  ._32_4_
+     4x  ._20_4_
      4x  ._44_4_
-     4x  ._36_4_
      3x  ._40_4_
      3x  ._48_4_
      3x  ._13604_4_
+     2x  ._2_1_
+     2x  ._1036_4_
 
 Example functions:
   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
@@ -179,50 +179,6 @@ Example functions:
     uVar1._1_1_ = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4))...
   crt_string.c_strtod_main_FUN_00605d5d
     uVar6._0_2_ = CONCAT11(bStack_2b,uStack_2c) & 0x7fff;...
-
-====================================================================================================
-TYPE: stack_param (624 occurrences)
-====================================================================================================
-
-Unique patterns:
-    61x  in_stack_fffffd64
-    46x  in_stack_fffffc88
-    42x  in_stack_0000000c
-    37x  in_stack_ffffff54
-    25x  in_stack_00000004
-    25x  in_stack_fffffd80
-    19x  in_stack_fffffd7c
-    18x  in_stack_00000008
-    17x  in_stack_00000010
-    16x  in_stack_fffffd78
-    16x  in_stack_ffffff9c
-    15x  in_stack_ffffff28
-    15x  in_stack_fffffee8
-    14x  in_stack_fffffd14
-    13x  in_stack_0000001c
-    13x  in_stack_0000000a
-    13x  in_stack_ffffff24
-    13x  in_stack_ffffff74
-    13x  in_stack_fffffd34
-    12x  in_stack_fffffd10
-
-Example functions:
-  crt_process.c_spawnvp_FUN_0060f39c
-    PRTL_CRITICAL_SECTION_DEBUG in_stack_ffffff3c;...
-  crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8
-    void *in_stack_00000008;...
-  crt_locale.c_islower_multibyte_FUN_00610990
-    ushort in_stack_00000006;...
-  crt_locale.c_istrailbyte_FUN_00610a70
-    undefined3 in_stack_00000005;...
-  crt_math.c_fdiv_thunk_FUN_00606d6b
-    uint in_stack_0000001c;...
-  crt_math.c_fdiv_thunk_FUN_00606bb3
-    ushort in_stack_0000000a;...
-  crt_math.c_handle_math_error_FUN_0060c02b
-    double in_stack_00000004;...
-  crt_math.c_fdiv_FUN_00606960
-    int in_stack_00000004;...
 
 ====================================================================================================
 TYPE: special_crt_function (522 occurrences)
@@ -321,6 +277,50 @@ Example functions:
     float10 __fpustack pentiumFdivBugWorkaroundDouble(float10 param0,double param1)...
   crt_time.c_gmtime_r_FUN_00607690
     uint * __cdecl gmtime_r(int days,uint seconds,int timezone_offset,uint *param_4)...
+
+====================================================================================================
+TYPE: stack_param (354 occurrences)
+====================================================================================================
+
+Unique patterns:
+    46x  in_stack_fffffc88
+    42x  in_stack_0000000c
+    25x  in_stack_00000004
+    18x  in_stack_00000008
+    17x  in_stack_00000010
+    14x  in_stack_fffffd14
+    13x  in_stack_0000001c
+    13x  in_stack_0000000a
+    12x  in_stack_fffffd10
+    10x  in_stack_fffffc94
+     9x  in_stack_00000018
+     8x  in_stack_00000014
+     8x  in_stack_ffffff94
+     8x  in_stack_fffffd6c
+     8x  in_stack_fffffc8c
+     7x  in_stack_fffffd70
+     6x  in_stack_fffffdcc
+     5x  in_stack_ffffffe0
+     5x  in_stack_fffffdbc
+     5x  in_stack_fffffdc0
+
+Example functions:
+  crt_process.c_spawnvp_FUN_0060f39c
+    PRTL_CRITICAL_SECTION_DEBUG in_stack_ffffff3c;...
+  crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8
+    void *in_stack_00000008;...
+  crt_locale.c_islower_multibyte_FUN_00610990
+    ushort in_stack_00000006;...
+  crt_locale.c_istrailbyte_FUN_00610a70
+    undefined3 in_stack_00000005;...
+  crt_math.c_fdiv_thunk_FUN_00606d6b
+    uint in_stack_0000001c;...
+  crt_math.c_fdiv_thunk_FUN_00606bb3
+    ushort in_stack_0000000a;...
+  crt_math.c_handle_math_error_FUN_0060c02b
+    double in_stack_00000004;...
+  crt_math.c_fdiv_FUN_00606960
+    int in_stack_00000004;...
 
 ====================================================================================================
 TYPE: fpu_register_input (311 occurrences)
@@ -819,7 +819,7 @@ Example functions:
     local_98 = SUB84(__BITCAST_UINT64(dVar10),0);...
 
 ====================================================================================================
-TYPE: negative_offset (85 occurrences)
+TYPE: negative_offset (86 occurrences)
 ====================================================================================================
 
 Unique patterns:

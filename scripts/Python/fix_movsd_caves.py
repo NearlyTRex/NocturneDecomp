@@ -186,6 +186,18 @@ def get_assembler():
     return Ks(KS_ARCH_X86, KS_MODE_32)
 
 
+def _fix_large_hex_offset(m):
+    """Convert large positive hex offsets to negative for keystone.
+
+    Ghidra writes [EBP + 0xffffff68] for [EBP - 0x98].
+    """
+    sign = m.group(1)
+    val = int(m.group(2), 16)
+    if sign == '+' and val >= 0x80000000:
+        return '- 0x%x' % (0x100000000 - val)
+    return m.group(0)
+
+
 def assemble_one(ks, text, addr):
     """Assemble a single instruction. Returns bytes or None."""
     # Normalize Ghidra syntax
@@ -195,6 +207,8 @@ def assemble_one(ks, text, addr):
     text = re.sub(r'\bDS:', '', text)
     text = re.sub(r'\bfloat ptr\b', 'dword ptr', text, flags=re.IGNORECASE)
     text = re.sub(r'\bdouble ptr\b', 'qword ptr', text, flags=re.IGNORECASE)
+    # Fix Ghidra's unsigned large hex offsets -> signed negative
+    text = re.sub(r'([+-])\s*(0x[89a-fA-F][0-9a-fA-F]{7})\b', _fix_large_hex_offset, text)
 
     try:
         encoding, _ = ks.asm(text, addr)
@@ -358,6 +372,8 @@ def generate_cave_code(ks, site_info, cave_addr):
     def emit_borrowed(insn_addr, text):
         nonlocal code_bytes, addr
         b = assemble_one(ks, text, addr)
+        if b is None:
+            raise ValueError("Cannot assemble borrowed instruction at 0x%x: %s" % (insn_addr, text))
         desc.append('  0x%08x  %-40s  (borrowed from 0x%x)' % (addr, text, insn_addr))
         code_bytes += b
         addr += len(b)
@@ -509,7 +525,12 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
 
         # Generate cave code
         this_cave_addr = cave_addr + current_offset
-        cave_code, cave_desc = generate_cave_code(ks, site_info, this_cave_addr)
+        try:
+            cave_code, cave_desc = generate_cave_code(ks, site_info, this_cave_addr)
+        except ValueError as e:
+            if verbose:
+                print("    SKIP: %s" % e)
+            continue
 
         if current_offset + len(cave_code) > cave_size:
             if verbose:

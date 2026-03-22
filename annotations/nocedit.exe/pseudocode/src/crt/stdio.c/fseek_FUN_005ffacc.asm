@@ -22,7 +22,6 @@
 ;   ... and 23 more
 ;
 ; Referenced Globals:
-;   undefined4 SUB_006039d0
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
 ;
@@ -58,7 +57,7 @@ section .text
         ;   XREF to: 005ffb31 (CONDITIONAL_JUMP)  ; LAB_005ffb31
     PUSH EBX                            ; 005ffafb
     CALL 0x006039d0                     ; 005ffafc
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; SUB_006039d0
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; LAB_006039ce+2
     ADD ESP,0x4                         ; 005ffb01
     TEST EAX,EAX                        ; 005ffb04
     JZ 0x005ffb48                       ; 005ffb06

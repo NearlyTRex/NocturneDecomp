@@ -1,6 +1,6 @@
 // Name: core_ladder.cpp_CLadder_renderOpaque_FUN_00502620
 // Address: 00502620
-// Address Range: [[00502620, 005028b3]]
+// Address Range: [[00502620, 005028b3] [00602e34, 00603047]]
 // Convention: __cdecl
 // Signature: int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
 
@@ -9,24 +9,43 @@
 int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
 
 {
+  SRenderVertex vertex1;
+  SRenderVertex vertex1_00;
+  SRenderVertex vertex1_01;
   SRenderVertex vertex2;
   SRenderVertex vertex2_00;
   SRenderVertex vertex2_01;
   CBoundingBox3D *this_ptr_00;
   int iVar1;
   int iVar2;
-  SRenderVertex *pSVar3;
-  SRenderVertex *pSVar4;
-  int *piVar5;
-  byte bVar6;
-  SRenderVertex in_stack_ffffff28;
-  byte auVar7 [24];
-  byte in_stack_ffffff58 [28];
-  uint uVar8;
-  CLadder *pCVar9;
-  uint uVar10;
-  SRenderVertex *pSVar11;
-  int *piVar12;
+  int iVar3;
+  int iVar4;
+  SRenderVertex *pSVar5;
+  SRenderVertex *pSVar6;
+  int *piVar7;
+  byte bVar8;
+  int iVar9;
+  int iVar10;
+  int iVar11;
+  int iVar12;
+  int iVar13;
+  int iVar14;
+  int iVar15;
+  int iVar16;
+  int iVar17;
+  int iVar18;
+  int iVar19;
+  int iVar20;
+  int iVar21;
+  int iVar22;
+  int iVar23;
+  int iVar24;
+  int iVar25;
+  int iVar26;
+  int iVar27;
+  int iVar28;
+  int iVar29;
+  int iVar30;
   SRenderVertex local_74;
   CVector3i CStack_30;
   float fStack_24;
@@ -35,10 +54,8 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
   uint uStack_18;
   int iStack_14;
   
-  bVar6 = 0;
+  bVar8 = 0;
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
-  uVar8 = 0x50264d;
-  pCVar9 = this_ptr;
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
                           (&this_ptr->base,(CBoundingBox3D *)&local_74);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
@@ -54,68 +71,140 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
           uStack_18 = 0;
           iStack_14 = local_74.projected_vertex.transformed_y;
           local_74.a = (int)ROUND(256.0f * 0.0);
-          piVar12 = &local_74.a;
-          pSVar11 = g_CDemonRendererPtr2->vertex_buffer_ptr + 2;
-          uVar10 = 0x50281e;
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                    (&pSVar11->projected_vertex,(CVector3i *)piVar12);
-          pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-          pSVar3 = pSVar4 + 2;
-          piVar5 = (int *)&stack0xffffff58;
-          for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *piVar5 = (pSVar3->projected_vertex).transformed_x;
-            pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);
-            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+                    (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,
+                     (CVector3i *)&local_74.a);
+          pSVar6 = g_CDemonRendererPtr2->vertex_buffer_ptr;
+          iVar2 = pSVar6[2].projected_vertex.transformed_x;
+          iVar20 = pSVar6[2].projected_vertex.transformed_y;
+          iVar21 = pSVar6[2].projected_vertex.transformed_z;
+          iVar22 = pSVar6[2].projected_vertex.inv_z;
+          iVar23 = pSVar6[2].projected_vertex.screen_x;
+          iVar24 = pSVar6[2].projected_vertex.screen_y;
+          iVar25 = pSVar6[2].u;
+          iVar26 = pSVar6[2].v;
+          iVar27 = pSVar6[2].r;
+          iVar28 = pSVar6[2].g;
+          iVar29 = pSVar6[2].b;
+          iVar3 = pSVar6[2].a;
+          pSVar5 = pSVar6 + 2;
+          piVar7 = (int *)&stack0xffffff58;
+          iVar30 = iVar3;
+          for (; iVar3 != 0; iVar3 = iVar3 + -1) {
+            *piVar7 = (pSVar5->projected_vertex).transformed_x;
+            pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);
+            piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
           }
-          piVar5 = (int *)&stack0xffffff28;
-          for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *piVar5 = (pSVar4->projected_vertex).transformed_x;
-            pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
-            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+          iVar3 = (pSVar6->projected_vertex).transformed_x;
+          iVar9 = (pSVar6->projected_vertex).transformed_y;
+          iVar10 = (pSVar6->projected_vertex).transformed_z;
+          iVar11 = (pSVar6->projected_vertex).inv_z;
+          iVar12 = (pSVar6->projected_vertex).screen_x;
+          iVar13 = (pSVar6->projected_vertex).screen_y;
+          iVar14 = pSVar6->u;
+          iVar15 = pSVar6->v;
+          iVar16 = pSVar6->r;
+          iVar17 = pSVar6->g;
+          iVar18 = pSVar6->b;
+          iVar4 = pSVar6->a;
+          piVar7 = (int *)&stack0xffffff28;
+          iVar19 = iVar4;
+          for (; iVar4 != 0; iVar4 = iVar4 + -1) {
+            *piVar7 = (pSVar6->projected_vertex).transformed_x;
+            pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);
+            piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
           }
-          vertex2_00.v = uVar8;
-          auVar7 = in_stack_ffffff58._0_24_;
-          vertex2_00.projected_vertex.transformed_x = auVar7._0_4_;
-          vertex2_00.projected_vertex.transformed_y = auVar7._4_4_;
-          vertex2_00.projected_vertex.transformed_z = auVar7._8_4_;
-          vertex2_00.projected_vertex.inv_z = auVar7._12_4_;
-          vertex2_00.projected_vertex.screen_x = auVar7._16_4_;
-          vertex2_00.projected_vertex.screen_y = auVar7._20_4_;
-          vertex2_00.u = in_stack_ffffff58._24_4_;
-          vertex2_00.r = (int)pCVar9;
-          vertex2_00.g = uVar10;
-          vertex2_00.b = (int)pSVar11;
-          vertex2_00.a = (int)piVar12;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff28,vertex2_00);
-          pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-          pSVar3 = pSVar4 + 2;
-          piVar5 = (int *)&stack0xffffff58;
-          for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *piVar5 = (pSVar3->projected_vertex).transformed_x;
-            pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);
-            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+          vertex1_00.projected_vertex.transformed_y = iVar9;
+          vertex1_00.projected_vertex.transformed_x = iVar3;
+          vertex1_00.projected_vertex.transformed_z = iVar10;
+          vertex1_00.projected_vertex.inv_z = iVar11;
+          vertex1_00.projected_vertex.screen_x = iVar12;
+          vertex1_00.projected_vertex.screen_y = iVar13;
+          vertex1_00.u = iVar14;
+          vertex1_00.v = iVar15;
+          vertex1_00.r = iVar16;
+          vertex1_00.g = iVar17;
+          vertex1_00.b = iVar18;
+          vertex1_00.a = iVar19;
+          vertex2_00.projected_vertex.transformed_y = iVar20;
+          vertex2_00.projected_vertex.transformed_x = iVar2;
+          vertex2_00.projected_vertex.transformed_z = iVar21;
+          vertex2_00.projected_vertex.inv_z = iVar22;
+          vertex2_00.projected_vertex.screen_x = iVar23;
+          vertex2_00.projected_vertex.screen_y = iVar24;
+          vertex2_00.u = iVar25;
+          vertex2_00.v = iVar26;
+          vertex2_00.r = iVar27;
+          vertex2_00.g = iVar28;
+          vertex2_00.b = iVar29;
+          vertex2_00.a = iVar30;
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(vertex1_00,vertex2_00);
+          pSVar6 = g_CDemonRendererPtr2->vertex_buffer_ptr;
+          iVar2 = pSVar6[2].projected_vertex.transformed_x;
+          iVar20 = pSVar6[2].projected_vertex.transformed_y;
+          iVar21 = pSVar6[2].projected_vertex.transformed_z;
+          iVar22 = pSVar6[2].projected_vertex.inv_z;
+          iVar23 = pSVar6[2].projected_vertex.screen_x;
+          iVar24 = pSVar6[2].projected_vertex.screen_y;
+          iVar25 = pSVar6[2].u;
+          iVar26 = pSVar6[2].v;
+          iVar27 = pSVar6[2].r;
+          iVar28 = pSVar6[2].g;
+          iVar29 = pSVar6[2].b;
+          iVar3 = pSVar6[2].a;
+          pSVar5 = pSVar6 + 2;
+          piVar7 = (int *)&stack0xffffff58;
+          iVar30 = iVar3;
+          for (; iVar3 != 0; iVar3 = iVar3 + -1) {
+            *piVar7 = (pSVar5->projected_vertex).transformed_x;
+            pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);
+            piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
           }
-          pSVar4 = pSVar4 + 1;
-          piVar5 = (int *)&stack0xffffff28;
-          for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-            *piVar5 = (pSVar4->projected_vertex).transformed_x;
-            pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
-            piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+          iVar3 = pSVar6[1].projected_vertex.transformed_x;
+          iVar9 = pSVar6[1].projected_vertex.transformed_y;
+          iVar10 = pSVar6[1].projected_vertex.transformed_z;
+          iVar11 = pSVar6[1].projected_vertex.inv_z;
+          iVar12 = pSVar6[1].projected_vertex.screen_x;
+          iVar13 = pSVar6[1].projected_vertex.screen_y;
+          iVar14 = pSVar6[1].u;
+          iVar15 = pSVar6[1].v;
+          iVar16 = pSVar6[1].r;
+          iVar17 = pSVar6[1].g;
+          iVar18 = pSVar6[1].b;
+          iVar4 = pSVar6[1].a;
+          pSVar6 = pSVar6 + 1;
+          piVar7 = (int *)&stack0xffffff28;
+          iVar19 = iVar4;
+          for (; iVar4 != 0; iVar4 = iVar4 + -1) {
+            *piVar7 = (pSVar6->projected_vertex).transformed_x;
+            pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);
+            piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
           }
-          vertex2_01.v = uVar8;
-          auVar7 = in_stack_ffffff58._0_24_;
-          vertex2_01.projected_vertex.transformed_x = auVar7._0_4_;
-          vertex2_01.projected_vertex.transformed_y = auVar7._4_4_;
-          vertex2_01.projected_vertex.transformed_z = auVar7._8_4_;
-          vertex2_01.projected_vertex.inv_z = auVar7._12_4_;
-          vertex2_01.projected_vertex.screen_x = auVar7._16_4_;
-          vertex2_01.projected_vertex.screen_y = auVar7._20_4_;
-          vertex2_01.u = in_stack_ffffff58._24_4_;
-          vertex2_01.r = (int)pCVar9;
-          vertex2_01.g = uVar10;
-          vertex2_01.b = (int)pSVar11;
-          vertex2_01.a = (int)piVar12;
-          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff28,vertex2_01);
+          vertex1_01.projected_vertex.transformed_y = iVar9;
+          vertex1_01.projected_vertex.transformed_x = iVar3;
+          vertex1_01.projected_vertex.transformed_z = iVar10;
+          vertex1_01.projected_vertex.inv_z = iVar11;
+          vertex1_01.projected_vertex.screen_x = iVar12;
+          vertex1_01.projected_vertex.screen_y = iVar13;
+          vertex1_01.u = iVar14;
+          vertex1_01.v = iVar15;
+          vertex1_01.r = iVar16;
+          vertex1_01.g = iVar17;
+          vertex1_01.b = iVar18;
+          vertex1_01.a = iVar19;
+          vertex2_01.projected_vertex.transformed_y = iVar20;
+          vertex2_01.projected_vertex.transformed_x = iVar2;
+          vertex2_01.projected_vertex.transformed_z = iVar21;
+          vertex2_01.projected_vertex.inv_z = iVar22;
+          vertex2_01.projected_vertex.screen_x = iVar23;
+          vertex2_01.projected_vertex.screen_y = iVar24;
+          vertex2_01.u = iVar25;
+          vertex2_01.v = iVar26;
+          vertex2_01.r = iVar27;
+          vertex2_01.g = iVar28;
+          vertex2_01.b = iVar29;
+          vertex2_01.a = iVar30;
+          engine_3d_c_clipAndDrawLine2D_FUN_00407d70(vertex1_01,vertex2_01);
         }
         fStack_24 = (float)0.5 * (this_ptr->ladder_size).x;
         fStack_1c = 0.0;
@@ -129,39 +218,74 @@ int __cdecl core_ladder_cpp_CLadder_renderOpaque_FUN_00502620(CLadder *this_ptr)
         local_74.r = (int)ROUND(fStack_24 * 256.0f);
         local_74.g = (int)ROUND(fStack_20 * 256.0f);
         local_74.b = (int)ROUND(fStack_1c * 256.0f);
-        piVar12 = &local_74.r;
-        pSVar11 = g_CDemonRendererPtr2->vertex_buffer_ptr + 1;
-        uVar10 = 0x50278a;
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&pSVar11->projected_vertex,(CVector3i *)piVar12);
-        pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-        pSVar3 = pSVar4 + 1;
-        piVar5 = (int *)&stack0xffffff58;
-        for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *piVar5 = (pSVar3->projected_vertex).transformed_x;
-          pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);
-          piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,
+                   (CVector3i *)&local_74.r);
+        pSVar6 = g_CDemonRendererPtr2->vertex_buffer_ptr;
+        iVar2 = pSVar6[1].projected_vertex.transformed_x;
+        iVar20 = pSVar6[1].projected_vertex.transformed_y;
+        iVar21 = pSVar6[1].projected_vertex.transformed_z;
+        iVar22 = pSVar6[1].projected_vertex.inv_z;
+        iVar23 = pSVar6[1].projected_vertex.screen_x;
+        iVar24 = pSVar6[1].projected_vertex.screen_y;
+        iVar25 = pSVar6[1].u;
+        iVar26 = pSVar6[1].v;
+        iVar27 = pSVar6[1].r;
+        iVar28 = pSVar6[1].g;
+        iVar29 = pSVar6[1].b;
+        iVar3 = pSVar6[1].a;
+        pSVar5 = pSVar6 + 1;
+        piVar7 = (int *)&stack0xffffff58;
+        iVar30 = iVar3;
+        for (; iVar3 != 0; iVar3 = iVar3 + -1) {
+          *piVar7 = (pSVar5->projected_vertex).transformed_x;
+          pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);
+          piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
         }
-        piVar5 = (int *)&stack0xffffff28;
-        for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *piVar5 = (pSVar4->projected_vertex).transformed_x;
-          pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
-          piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+        iVar3 = (pSVar6->projected_vertex).transformed_x;
+        iVar9 = (pSVar6->projected_vertex).transformed_y;
+        iVar10 = (pSVar6->projected_vertex).transformed_z;
+        iVar11 = (pSVar6->projected_vertex).inv_z;
+        iVar12 = (pSVar6->projected_vertex).screen_x;
+        iVar13 = (pSVar6->projected_vertex).screen_y;
+        iVar14 = pSVar6->u;
+        iVar15 = pSVar6->v;
+        iVar16 = pSVar6->r;
+        iVar17 = pSVar6->g;
+        iVar18 = pSVar6->b;
+        iVar4 = pSVar6->a;
+        piVar7 = (int *)&stack0xffffff28;
+        iVar19 = iVar4;
+        for (; iVar4 != 0; iVar4 = iVar4 + -1) {
+          *piVar7 = (pSVar6->projected_vertex).transformed_x;
+          pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);
+          piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
         }
-        vertex2.v = uVar8;
-        auVar7 = in_stack_ffffff58._0_24_;
-        vertex2.projected_vertex.transformed_x = auVar7._0_4_;
-        vertex2.projected_vertex.transformed_y = auVar7._4_4_;
-        vertex2.projected_vertex.transformed_z = auVar7._8_4_;
-        vertex2.projected_vertex.inv_z = auVar7._12_4_;
-        vertex2.projected_vertex.screen_x = auVar7._16_4_;
-        vertex2.projected_vertex.screen_y = auVar7._20_4_;
-        vertex2.u = in_stack_ffffff58._24_4_;
-        vertex2.r = (int)pCVar9;
-        vertex2.g = uVar10;
-        vertex2.b = (int)pSVar11;
-        vertex2.a = (int)piVar12;
-        engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff28,vertex2);
+        vertex1.projected_vertex.transformed_y = iVar9;
+        vertex1.projected_vertex.transformed_x = iVar3;
+        vertex1.projected_vertex.transformed_z = iVar10;
+        vertex1.projected_vertex.inv_z = iVar11;
+        vertex1.projected_vertex.screen_x = iVar12;
+        vertex1.projected_vertex.screen_y = iVar13;
+        vertex1.u = iVar14;
+        vertex1.v = iVar15;
+        vertex1.r = iVar16;
+        vertex1.g = iVar17;
+        vertex1.b = iVar18;
+        vertex1.a = iVar19;
+        vertex2.projected_vertex.transformed_y = iVar20;
+        vertex2.projected_vertex.transformed_x = iVar2;
+        vertex2.projected_vertex.transformed_z = iVar21;
+        vertex2.projected_vertex.inv_z = iVar22;
+        vertex2.projected_vertex.screen_x = iVar23;
+        vertex2.projected_vertex.screen_y = iVar24;
+        vertex2.u = iVar25;
+        vertex2.v = iVar26;
+        vertex2.r = iVar27;
+        vertex2.g = iVar28;
+        vertex2.b = iVar29;
+        vertex2.a = iVar30;
+        engine_3d_c_clipAndDrawLine2D_FUN_00407d70(vertex1,vertex2);
         local_74.projected_vertex.transformed_y =
              (int)((float)local_74.projected_vertex.transformed_y + 1.0f);
       }

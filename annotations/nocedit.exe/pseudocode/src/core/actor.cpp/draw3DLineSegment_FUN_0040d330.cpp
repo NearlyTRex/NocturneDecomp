@@ -9,19 +9,24 @@
 void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset)
 
 {
+  SRenderVertex vertex2;
   float fVar1;
   float fVar2;
   float fVar3;
   float fVar4;
   float fVar5;
   float fVar6;
-  int iVar1;
   int iVar7;
-  SRenderVertex *pSVar2;
-  SRenderVertex *pSVar3;
-  int *piVar8;
-  int *piVar4;
-  byte bVar5;
+  SRenderVertex *pSVar8;
+  SRenderVertex *pSVar9;
+  int *piVar10;
+  byte bVar11;
+  SRenderVertex in_stack_ffffff4c;
+  byte auVar12 [24];
+  byte in_stack_ffffff7c [36];
+  uint uVar13;
+  SRenderVertex *output;
+  CVector3i *input;
   CVector3i local_54;
   float local_48;
   float local_44;
@@ -36,15 +41,8 @@ void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_poin
   float local_18;
   float local_14;
   float local_10;
-  SRenderVertex vertex2;
-  SRenderVertex in_stack_ffffff4c;
-  SRenderVertex *output;
-  CVector3i *input;
-  byte auVar6 [24];
-  byte in_stack_ffffff7c [36];
-  uint uVar7;
   
-  bVar5 = 0;
+  bVar11 = 0;
   fVar1 = direction_offset->x * 0.2f;
   fVar2 = direction_offset->y * 0.2f;
   fVar3 = 0.2f * direction_offset->z;
@@ -61,33 +59,30 @@ void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_poin
   local_30.z = (int)ROUND((fVar6 + fVar3) * 256.0f);
   input = &local_30;
   output = g_CDemonRendererPtr1->vertex_buffer_ptr + 1;
-  uVar7 = 0x40d434;
+  uVar13 = 0x40d434;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(&output->projected_vertex,input);
-  pSVar3 = g_CDemonRendererPtr1->vertex_buffer_ptr;
-  pSVar2 = pSVar3 + 1;
-  piVar8 = (int *)&stack0xffffff7c;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar5 * -8 + 4);
-    *piVar8 = (pSVar2->projected_vertex).transformed_x;
-    pSVar2 = pSVar2;
-    piVar8 = piVar8 + (uint)bVar5 * -2 + 1;
-  }
-  piVar4 = (int *)&stack0xffffff4c;
+  pSVar9 = g_CDemonRendererPtr1->vertex_buffer_ptr;
+  pSVar8 = pSVar9 + 1;
+  piVar10 = (int *)&stack0xffffff7c;
   for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
-    piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
-    pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar5 * -8 + 4);
-    *piVar4 = (pSVar3->projected_vertex).transformed_x;
-    pSVar3 = pSVar3;
-    piVar4 = piVar4;
+    *piVar10 = (pSVar8->projected_vertex).transformed_x;
+    pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar11 * -2 + 1) * 4);
+    piVar10 = piVar10 + (uint)bVar11 * -2 + 1;
   }
-  vertex2.g = uVar7;
-  auVar6 = in_stack_ffffff7c._0_24_;
-  vertex2.projected_vertex.transformed_x = auVar6._0_4_;
-  vertex2.projected_vertex.transformed_y = auVar6._4_4_;
-  vertex2.projected_vertex.transformed_z = auVar6._8_4_;
-  vertex2.projected_vertex.inv_z = auVar6._12_4_;
-  vertex2.projected_vertex.screen_x = auVar6._16_4_;
-  vertex2.projected_vertex.screen_y = auVar6._20_4_;
+  piVar10 = (int *)&stack0xffffff4c;
+  for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *piVar10 = (pSVar9->projected_vertex).transformed_x;
+    pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);
+    piVar10 = piVar10 + (uint)bVar11 * -2 + 1;
+  }
+  vertex2.g = uVar13;
+  auVar12 = in_stack_ffffff7c._0_24_;
+  vertex2.projected_vertex.transformed_x = auVar12._0_4_;
+  vertex2.projected_vertex.transformed_y = auVar12._4_4_;
+  vertex2.projected_vertex.transformed_z = auVar12._8_4_;
+  vertex2.projected_vertex.inv_z = auVar12._12_4_;
+  vertex2.projected_vertex.screen_x = auVar12._16_4_;
+  vertex2.projected_vertex.screen_y = auVar12._20_4_;
   vertex2.u = in_stack_ffffff7c._24_4_;
   vertex2.v = in_stack_ffffff7c._28_4_;
   vertex2.r = in_stack_ffffff7c._32_4_;

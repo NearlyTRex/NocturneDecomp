@@ -21,9 +21,6 @@
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 at 0041a3fe
 ;   ... and 124 more
 ;
-; Referenced Globals:
-;   undefined4 SUB_00603b00
-;
 ; *****************************************************************************
 
 section .text
@@ -39,7 +36,7 @@ section .text
     SHL EDX,0x8                         ; 005fde54
     MOV DL,DH                           ; 005fde57
     CALL 0x00603b00                     ; 005fde59
-        ;   XREF to: 00603b00 (UNCONDITIONAL_CALL)  ; SUB_00603b00
+        ;   XREF to: 00603b00 (UNCONDITIONAL_CALL)  ; LAB_00603afe+2
     POP EAX                             ; 005fde5e
     RET                                 ; 005fde5f
 
