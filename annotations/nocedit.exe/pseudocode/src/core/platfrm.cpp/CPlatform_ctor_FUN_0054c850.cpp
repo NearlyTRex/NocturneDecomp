@@ -1,6 +1,6 @@
 // Name: core_platfrm.cpp_CPlatform_ctor_FUN_0054c850
 // Address: 0054c850
-// Address Range: [[0054c850, 0054ca1c]]
+// Address Range: [[0054c850, 0054ca1c] [0060511c, 0060516d]]
 // Convention: __cdecl
 // Signature: CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_0054c850(CPlatform *this_ptr)
 
@@ -13,7 +13,6 @@ CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_0054c850(CPlatform *this
   CPlatform_ptr_344 pCVar4;
   CPlatform_ptr_784 pCVar5;
   CPlatform *pCVar6;
-  uint *puVar1;
   uint *puVar8;
   uint *puVar9;
   uint *puVar10;
@@ -25,7 +24,6 @@ CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_0054c850(CPlatform *this
   CLocation *pCVar1;
   CPlatform *pCVar7;
   
-  bVar12 = 0;
   pCVar3 = (CPlatform *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar3->model);
   pCVar5 = core_course_cpp_CCourse_ctor_FUN_004424c0(&ADJ(pCVar4)->course);
@@ -57,19 +55,14 @@ CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_0054c850(CPlatform *this
     (ADJ(pCVar5)->start_pos).z = (ADJ(pCVar5)->end_pos).z;
   }
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&ADJ(pCVar5)->base.orient.vec,&local_14);
-  puVar9 = (uint *)((int)pCVar5 + (uint)bVar12 * -8 + 0x38);
   (ADJ(pCVar5)->end_orient).w = local_14.w;
-  puVar1 = (uint *)((int)&local_14 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);
-  *puVar9 = *(uint *)((int)&local_14 + (uint)bVar12 * -8 + 4);
-  puVar9[(uint)bVar12 * -2 + 1] = *puVar1;
-  (puVar9 + (uint)bVar12 * -2 + 1)[(uint)bVar12 * -2 + 1] = puVar1[(uint)bVar12 * -2 + 1];
-  puVar10 = (uint *)((int)pCVar5 + (uint)bVar12 * -8 + 0x28);
-  puVar8 = (uint *)((int)pCVar5 + (uint)bVar12 * -8 + 0x38);
+  (ADJ(pCVar5)->end_orient).x = local_14.x;
+  (ADJ(pCVar5)->end_orient).y = local_14.y;
+  (ADJ(pCVar5)->end_orient).z = local_14.z;
   (ADJ(pCVar5)->orig_orient).w = (ADJ(pCVar5)->end_orient).w;
-  puVar11 = puVar10 + (uint)bVar12 * -2 + 1;
-  *puVar10 = *puVar8;
-  *puVar11 = puVar8[(uint)bVar12 * -2 + 1];
-  puVar11[(uint)bVar12 * -2 + 1] = (puVar8 + (uint)bVar12 * -2 + 1)[(uint)bVar12 * -2 + 1];
+  (ADJ(pCVar5)->orig_orient).x = (ADJ(pCVar5)->end_orient).x;
+  (ADJ(pCVar5)->orig_orient).y = (ADJ(pCVar5)->end_orient).y;
+  (ADJ(pCVar5)->orig_orient).z = (ADJ(pCVar5)->end_orient).z;
   ADJ(pCVar5)->platform_type = PLATFORM_TYPE_DISABLED;
   ADJ(pCVar5)->one_shot = 0;
   ADJ(pCVar5)->block_virtual_director_flag = 0;

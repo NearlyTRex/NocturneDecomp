@@ -1,6 +1,6 @@
 // Name: core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
 // Address: 004d4d80
-// Address Range: [[004d4d80, 004d5547]]
+// Address Range: [[004d4d80, 004d5547] [00605402, 00605476]]
 // Convention: __cdecl
 // Signature: void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80(CGabriella *this_ptr)
 
@@ -11,16 +11,15 @@
 void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80(CGabriella *this_ptr)
 
 {
+  float *pfVar1;
   float fVar2;
   float fVar3;
   int iVar2;
   uint *puVar3;
-  float *pfVar4;
   uint *puVar6;
   uint *puVar7;
   uint *puVar4;
   uint *puVar5;
-  float *pfVar8;
   byte bVar6;
   float afStackY_19d0 [1521];
   CDeformableModelInstance *pCVar9;
@@ -83,13 +82,6 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
   local_78.z = 0.0;
   local_78.y = this_ptr->aim_yaw;
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_78,&local_124);
-  local_1a4.w = local_124.w;
-  puVar6 = (uint *)((int)&local_1a4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-  puVar3 = (uint *)((int)&local_124 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-  *(uint *)((int)&local_1a4 + (uint)bVar6 * -8 + 4) =
-       *(uint *)((int)&local_124 + (uint)bVar6 * -8 + 4);
-  *puVar6 = *puVar3;
-  puVar6[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
   if (0.0 < this_ptr->draw_blend) {
     local_28 = this_ptr->draw_blend / 0.2f;
     if (1.0 < local_28) {
@@ -168,14 +160,12 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
                  g_GabriellaIndices[0x11],
                  (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
                  g_GabriellaIndices[6],this_ptr->draw_blend / 0.64f,&local_1b4);
-      pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+      pfVar1 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
                 [g_GabriellaIndices[0x11]].w;
-      pfVar8 = pfVar4 + (uint)bVar6 * -2 + 1;
-      *pfVar4 = local_1b4.w;
-      pfVar4 = (float *)((int)&local_1b4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-      *pfVar8 = *(float *)((int)&local_1b4 + (uint)bVar6 * -8 + 4);
-      pfVar8[(uint)bVar6 * -2 + 1] = *pfVar4;
-      (pfVar8 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1] = pfVar4[(uint)bVar6 * -2 + 1];
+      *pfVar1 = local_1b4.w;
+      pfVar1[1] = local_1b4.x;
+      pfVar1[2] = local_1b4.y;
+      pfVar1[3] = local_1b4.z;
       iVar11 = g_GabriellaIndices[0xe];
       if (0.0 < this_ptr->fire_cooldown_timer) {
         fVar2 = this_ptr->fire_cooldown_timer;
@@ -194,14 +184,12 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
                  g_GabriellaIndices[0x11],
                  (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
                  g_GabriellaIndices[6],this_ptr->draw_blend / 0.64f,&local_1c4);
-      pfVar4 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
+      pfVar1 = &(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations
                 [g_GabriellaIndices[0x11]].w;
-      *pfVar4 = local_1c4.w;
-      puVar4 = pfVar4 + (uint)bVar6 * -2 + 1 + (uint)bVar6 * -2 + 1;
-      puVar6 = (uint *)((int)&local_1c4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-      pfVar4[(uint)bVar6 * -2 + 1] = *(float *)((int)&local_1c4 + (uint)bVar6 * -8 + 4);
-      *puVar4 = *puVar6;
-      puVar4[(uint)bVar6 * -2 + 1] = puVar6[(uint)bVar6 * -2 + 1];
+      *pfVar1 = local_1c4.w;
+      pfVar1[1] = local_1c4.x;
+      pfVar1[2] = local_1c4.y;
+      pfVar1[3] = local_1c4.z;
       if ((float)0.001 < local_28) {
         local_20 = this_ptr->draw_blend;
         if (0.82f < local_20) {
@@ -320,7 +308,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
   fVar2 = this_ptr->light_aim_blend;
   iVar11 = g_GabriellaIndices[1];
   core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(this_ptr->flashlight_angle,&local_d4);
-  pCVar8 = &local_154;
+  pCVar10 = &local_154;
   local_154.w = local_d4.w;
   puVar7 = (uint *)((int)&local_154 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
   puVar6 = (uint *)((int)&local_d4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
@@ -336,7 +324,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
        *(uint *)((int)&local_134 + (uint)bVar6 * -8 + 4);
   *puVar7 = *puVar6;
   puVar7[(uint)bVar6 * -2 + 1] = puVar6[(uint)bVar6 * -2 + 1];
-  core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_164,pCVar8,&local_94);
+  core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_164,pCVar10,&local_94);
   pCVar10 = &local_144;
   pCVar9 = &(this_ptr->base).base.model;
   local_144.w = local_94.w;

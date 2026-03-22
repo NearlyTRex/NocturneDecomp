@@ -1,24 +1,37 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 12,
+        "line": 74,
+        "message": "cannot cast from type 'float' to pointer type 'CQuaternion4f *'"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 78,
+        "message": "C-style cast from 'CQuaternion4f *' to 'float' is not allowed"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 180,
-    "complexity_score": 142,
+    "assembly_lines": 204,
+    "complexity_score": 144,
     "cross_reference_count": 15,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 67,
+    "pseudocode_lines": 69,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
       "warning_inlined_function"
     ],
-    "total_lines": 247
+    "total_lines": 273
   },
   "cross_references": [
     {
@@ -116,6 +129,10 @@
     "address": "005f77e0",
     "address_range": [
       [
+        "005995cf",
+        "00599616"
+      ],
+      [
         "005f77e0",
         "005f79a2"
       ]
@@ -158,12 +175,12 @@
         "call_addr": "004d54c1",
         "call_type": "direct",
         "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 2,
+        "instructions_analyzed": 16,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "005c0481",
@@ -260,16 +277,16 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.9447852760736195,
-    "instruction_count": 163,
+    "avg_pcode_per_instr": 6.212290502793296,
+    "instruction_count": 179,
     "opcode_distribution": {
       "BOOL_NEGATE": 2,
       "BOOL_OR": 7,
-      "BRANCH": 4,
+      "BRANCH": 8,
       "CALL": 1,
       "CALLOTHER": 2,
       "CBRANCH": 4,
-      "COPY": 654,
+      "COPY": 646,
       "FLOAT2FLOAT": 41,
       "FLOAT_ADD": 7,
       "FLOAT_DIV": 1,
@@ -281,24 +298,25 @@
       "FLOAT_SUB": 3,
       "INT2FLOAT": 7,
       "INT_ADD": 81,
-      "INT_AND": 35,
-      "INT_EQUAL": 14,
+      "INT_AND": 43,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 22,
       "INT_LEFT": 16,
       "INT_LESS": 1,
-      "INT_MULT": 16,
       "INT_NOTEQUAL": 20,
       "INT_OR": 20,
       "INT_SBORROW": 1,
-      "INT_SLESS": 7,
-      "INT_SUB": 21,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 11,
+      "INT_SUB": 5,
       "INT_XOR": 5,
-      "INT_ZEXT": 32,
+      "INT_ZEXT": 16,
       "LOAD": 55,
-      "POPCOUNT": 7,
+      "POPCOUNT": 11,
       "RETURN": 1,
       "STORE": 33
     },
-    "pcode_op_count": 1132
+    "pcode_op_count": 1112
   },
   "stack_frame": {
     "frame_size": 144,
@@ -421,7 +439,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 47,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar6 = SQRT((float10)1 - fVar5 * fVar5);",
@@ -429,26 +447,26 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 48,
       "match": "fpatan",
       "severity": "mild",
-      "text": "fVar9 = (float10)fpatan(fVar6,fVar5);",
+      "text": "fVar11 = (float10)fpatan(fVar6,fVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 49,
       "match": "fsin",
       "severity": "mild",
-      "text": "fVar8 = (float10)fsin(((float10)1 - (float10)t) * fVar9);",
+      "text": "fVar10 = (float10)fsin(((float10)1 - (float10)t) * fVar11);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 50,
       "match": "fsin",
       "severity": "mild",
-      "text": "fVar7 = (float10)fsin((float10)t * fVar9);",
+      "text": "fVar7 = (float10)fsin((float10)t * fVar11);",
       "type": "decompiler_intrinsic"
     },
     {

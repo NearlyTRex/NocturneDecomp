@@ -1,6 +1,6 @@
 // Name: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
 // Address: 005d47b0
-// Address Range: [[005d47b0, 005d57f3]]
+// Address Range: [[005d47b0, 005d57f3] [0060522c, 006052a3]]
 // Convention: __cdecl
 // Signature: int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr,int validate_first)
 
@@ -76,18 +76,14 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
   uint local_104;
   uint uStack_100;
   CVector3d local_fc;
-  ulonglong local_e4;
   double local_dc;
-  uint local_d4;
   CObj *pCStack_d0;
   int local_cc [4];
   double local_bc;
-  uint local_b4;
-  uint uStack_b0;
   double local_ac;
-  ulonglong local_a4;
+  uint local_a4;
+  CObj *pCStack_a0;
   double local_9c;
-  ulonglong uStack_94;
   double adStack_8c [9];
   void *local_44;
   void *local_3c;
@@ -403,7 +399,6 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
               shape_superopt_cpp_CPoly_copyFrom_FUN_005cc6a0((CPoly *)local_1f0,source,this_ptr);
               dVar1 = __BITCAST_DOUBLE(CONCAT44(uStack_128,local_12c)) -
                       __BITCAST_DOUBLE(CONCAT44(uStack_110,local_114));
-              local_1f0._4_4_ = uVar15;
               dVar6 = __BITCAST_DOUBLE(CONCAT44(uStack_120,local_124)) -
                       __BITCAST_DOUBLE(CONCAT44(uStack_108,local_10c));
               local_1f0._8_4_ = *(int *)((int)source->uv_coords + local_30 * 4 + -0xc);
@@ -414,54 +409,22 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
               dVar2 = local_fc.x - __BITCAST_DOUBLE(CONCAT44(uStack_110,local_114));
               dVar3 = local_fc.y - __BITCAST_DOUBLE(CONCAT44(uStack_108,local_10c));
               dVar4 = local_fc.z - __BITCAST_DOUBLE(CONCAT44(uStack_100,local_104));
-              local_e4 = __BITCAST_DOUBLE(CONCAT44(uStack_22c,local_230)) -
-                         __BITCAST_DOUBLE(CONCAT44(uStack_234,local_238));
               dVar7 = __BITCAST_DOUBLE(CONCAT44(uStack_2bc,uVar12));
-              dVar8 = local_e4;
-              local_dc = __BITCAST_DOUBLE(CONCAT44(uVar13,local_248)) - dVar7;
-              local_b4 = (uint)local_e4;
-              (&uStack_b0)[(uint)bVar20 * -2] =
-                   *(uint *)((int)&local_e4 + (uint)bVar20 * -8 + 4);
-              local_e4 = dVar8;
-              *(uint *)(&local_ac + (-(uint)bVar20 - (uint)bVar20)) =
-                   *(uint *)(&local_dc + (-(uint)bVar20 - (uint)bVar20));
-              *(uint *)
-               ((int)(&local_ac + (-(uint)bVar20 - (uint)bVar20)) + ((uint)bVar20 * -2 + 1) * 4) =
-                   *(uint *)
-                    ((int)(&local_dc + (-(uint)bVar20 - (uint)bVar20)) + ((uint)bVar20 * -2 + 1) * 4
-                    );
               dVar9 = SQRT(dVar4 * dVar4 + dVar3 * dVar3 + dVar2 * dVar2) /
                       SQRT(dVar5 * dVar5 + dVar6 * dVar6 + dVar1 * dVar1);
-              uStack_94 = __BITCAST_DOUBLE(CONCAT44(uStack_b0,local_b4)) * dVar9;
-              dVar10 = uStack_94;
-              adStack_8c[0] = local_ac * dVar9;
-              local_cc[2] = (int)uStack_94;
-              uStack_94 = dVar10;
-              local_cc[(uint)bVar20 * -2 + 3] = *(int *)((int)adStack_8c + (uint)bVar20 * -8 + -4);
-              *(uint *)(&local_bc + (-(uint)bVar20 - (uint)bVar20)) =
-                   *(uint *)(adStack_8c + (-(uint)bVar20 - (uint)bVar20));
-              *(uint *)
-               ((int)(&local_bc + (-(uint)bVar20 - (uint)bVar20)) + ((uint)bVar20 * -2 + 1) * 4) =
-                   *(uint *)
-                    ((int)(adStack_8c + (-(uint)bVar20 - (uint)bVar20)) +
-                    ((uint)bVar20 * -2 + 1) * 4);
-              local_a4 = __BITCAST_DOUBLE(CONCAT44(uStack_234,local_238)) +
-                         __BITCAST_DOUBLE(CONCAT44(local_cc[3],local_cc[2]));
-              dVar9 = local_a4;
-              local_9c = dVar7 + local_bc;
-              local_d4 = (uint)local_a4;
-              local_a4 = dVar9;
-              local_cc[(uint)bVar20 * -2 + -1] = *(int *)((int)&local_a4 + (uint)bVar20 * -8 + 4);
-              local_cc[(uint)bVar20 * -2 + (uint)bVar20 * -2] =
-                   *(int *)(&local_9c + (-(uint)bVar20 - (uint)bVar20));
-              (local_cc + (uint)bVar20 * -2 + (uint)bVar20 * -2)[(uint)bVar20 * -2 + 1] =
-                   *(int *)((int)(&local_9c + (-(uint)bVar20 - (uint)bVar20)) +
-                           ((uint)bVar20 * -2 + 1) * 4);
-              local_1e0 = local_d4;
-              local_1dc.parent_obj = pCStack_d0;
-              local_1dc.vertex_idx_0 = local_cc[0];
+              dVar10 = __BITCAST_DOUBLE(CONCAT44(uStack_234,local_238)) +
+                       (__BITCAST_DOUBLE(CONCAT44(uStack_22c,local_230)) -
+                       __BITCAST_DOUBLE(CONCAT44(uStack_234,local_238))) * dVar9;
+              dVar9 = dVar7 + (__BITCAST_DOUBLE(CONCAT44(uVar13,local_248)) - dVar7) * dVar9;
+              local_a4 = SUB84(__BITCAST_UINT64(dVar10),0);
+              pCStack_a0 = (CObj *)((ulonglong)dVar10 >> 0x20);
+              local_1dc.parent_obj = pCStack_a0;
+              local_9c._0_4_ = SUB84(__BITCAST_UINT64(dVar9),0);
+              local_1dc.vertex_idx_0 = local_9c._0_4_;
+              local_9c._4_4_ = (int)((ulonglong)dVar9 >> 0x20);
+              local_1dc.vertex_idx_1 = local_9c._4_4_;
+              local_1e0 = local_a4;
               pCVar16 = source->uv_coords + local_30;
-              local_1dc.vertex_idx_1 = local_cc[1];
               local_1dc.vertex_idx_2 = *(int *)&(pCVar16->impl).x;
               local_1dc.uv_coords[0].impl.x._0_4_ = *(uint *)((int)&(pCVar16->impl).x + 4);
               local_1dc.uv_coords[0].impl.x._4_4_ = *(uint *)&(pCVar16->impl).y;
@@ -471,11 +434,10 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
               local_1dc.uv_coords[1].impl.x._0_4_ = *(uint *)((int)&(pCVar18->impl).x + 4);
               local_1dc.uv_coords[1].impl.x._4_4_ = *(uint *)&(pCVar18->impl).y;
               local_1dc.uv_coords[1].impl.y._0_4_ = *(uint *)((int)&(pCVar18->impl).y + 4);
-              *(uint *)&(pCVar16->impl).x = local_d4;
-              *(CObj **)((int)&(pCVar16->impl).x + 4) = pCStack_d0;
-              *(int *)&(pCVar16->impl).y = local_cc[0];
-              *(int *)((int)&(pCVar16->impl).y + 4) = local_cc[1];
+              (pCVar16->impl).x = dVar10;
+              (pCVar16->impl).y = dVar9;
               iVar16 = this_ptr->poly_count;
+              local_1f0._4_4_ = uVar15;
               iVar17 = (*this_ptr->vtable->addPolygons)(this_ptr,1);
               if (iVar17 == 0) {
                 shape_memdbg_cpp_debugFree_FUN_0050f210(local_3c);

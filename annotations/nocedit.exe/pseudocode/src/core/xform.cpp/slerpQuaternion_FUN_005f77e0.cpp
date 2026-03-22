@@ -1,6 +1,6 @@
 // Name: core_xform.cpp_slerpQuaternion_FUN_005f77e0
 // Address: 005f77e0
-// Address Range: [[005f77e0, 005f79a2]]
+// Address Range: [[005995cf, 00599616] [005f77e0, 005f79a2]]
 // Convention: __stack3_esi
 // Signature: CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out)
 
@@ -12,12 +12,14 @@ CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_005f77e0(CQuater
 
 {
   float fVar4;
+  float fVar8;
+  CQuaternion4f *pCVar9;
   CQuaternion4f *pCVar4;
   float10 fVar5;
   float10 fVar6;
-  float10 fVar8;
+  float10 fVar10;
   float10 fVar7;
-  float10 fVar9;
+  float10 fVar11;
   double local_80;
   double local_78;
   double local_70;
@@ -50,10 +52,10 @@ CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_005f77e0(CQuater
     if (local_80 <= 0.99999000000000005) {
       fVar5 = (float10)local_80;
       fVar6 = SQRT((float10)1 - fVar5 * fVar5);
-      fVar9 = (float10)fpatan(fVar6,fVar5);
-      fVar8 = (float10)fsin(((float10)1 - (float10)t) * fVar9);
-      fVar7 = (float10)fsin((float10)t * fVar9);
-      local_70 = (double)(fVar8 * ((float10)1 / fVar6));
+      fVar11 = (float10)fpatan(fVar6,fVar5);
+      fVar10 = (float10)fsin(((float10)1 - (float10)t) * fVar11);
+      fVar7 = (float10)fsin((float10)t * fVar11);
+      local_70 = (double)(fVar10 * ((float10)1 / fVar6));
       local_78 = (double)(fVar7 * ((float10)1 / fVar6));
     }
     else {
@@ -67,12 +69,12 @@ CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_005f77e0(CQuater
     local_40[0].w = local_5c * (float)local_78 + quat1_in->w * fVar4;
     local_40[0].x = local_58 * (float)local_78 + quat1_in->x * fVar4;
   }
-  fVar1 = pCVar4->x;
-  fVar2 = pCVar4->y;
-  fVar3 = pCVar4->z;
-  quat_out->w = pCVar4->w;
-  quat_out->x = fVar1;
-  quat_out->y = fVar2;
-  quat_out->z = fVar3;
-  return quat_out;
+  fVar4 = pCVar4->x;
+  fVar8 = pCVar4->y;
+  pCVar9 = (CQuaternion4f *)pCVar4->z;
+  pCVar9->w = pCVar4->w;
+  pCVar9->x = fVar4;
+  pCVar9->y = fVar8;
+  pCVar9->z = (float)pCVar9;
+  return pCVar9;
 }

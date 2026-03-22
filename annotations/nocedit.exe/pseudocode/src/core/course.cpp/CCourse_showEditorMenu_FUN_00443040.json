@@ -5,19 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 602,
-    "complexity_score": 456,
+    "assembly_lines": 638,
+    "complexity_score": 344,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 50,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 296,
-    "suspect_count": 15,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 279,
+    "suspect_count": 6,
     "suspect_types": [
-      "pointer_cast",
-      "stack_alignment_array"
+      "pointer_cast"
     ],
-    "total_lines": 898
+    "total_lines": 917
   },
   "cross_references": [
     {
@@ -33,6 +32,10 @@
       [
         "00443040",
         "004436c8"
+      ],
+      [
+        "00605477",
+        "006054e3"
       ]
     ],
     "convention": "__cdecl",
@@ -489,34 +492,34 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.266524520255864,
-    "instruction_count": 469,
+    "avg_pcode_per_instr": 3.997971602434077,
+    "instruction_count": 493,
     "opcode_distribution": {
       "BOOL_NEGATE": 10,
       "BOOL_OR": 6,
-      "BRANCH": 21,
+      "BRANCH": 27,
       "CALL": 43,
       "CBRANCH": 45,
-      "COPY": 366,
+      "COPY": 354,
       "INT_ADD": 164,
-      "INT_AND": 212,
-      "INT_CARRY": 44,
-      "INT_EQUAL": 210,
+      "INT_AND": 224,
+      "INT_CARRY": 50,
+      "INT_EQUAL": 222,
       "INT_LESS": 29,
-      "INT_MULT": 34,
+      "INT_MULT": 10,
       "INT_NOTEQUAL": 3,
       "INT_SBORROW": 33,
-      "INT_SCARRY": 47,
-      "INT_SLESS": 99,
-      "INT_SUB": 235,
+      "INT_SCARRY": 53,
+      "INT_SLESS": 105,
+      "INT_SUB": 211,
       "INT_XOR": 5,
-      "INT_ZEXT": 32,
+      "INT_ZEXT": 8,
       "LOAD": 64,
-      "POPCOUNT": 99,
+      "POPCOUNT": 105,
       "RETURN": 1,
       "STORE": 199
     },
-    "pcode_op_count": 2001
+    "pcode_op_count": 1971
   },
   "stack_frame": {
     "frame_size": 1284,
@@ -672,123 +675,51 @@
   },
   "suspects": [
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 20,
-      "match": "afStackY_1860",
-      "severity": "moderate",
-      "text": "float afStackY_1860 [1234];",
-      "type": "stack_alignment_array"
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(char *)((int)",
+      "severity": "mild",
+      "text": "pcVar7 = (char *)((int)pcVar7 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(char *)((int)",
+      "line": 199,
+      "match": "(CQuaternion4f *)((int)",
       "severity": "mild",
-      "text": "pcVar8 = (char *)((int)pcVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "(&local_74,(CQuaternion4f *)((int)&(this_ptr->frames->orient).w + iVar6),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 201,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar9 = (uint *)((int)&local_74 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 202,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar6 = (uint *)((int)&local_84 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 203,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_74 + (uint)bVar13 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 204,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_84 + (uint)bVar13 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 210,
-      "match": "(CQuaternion4f *)((int)",
-      "severity": "mild",
-      "text": "(&local_74,(CQuaternion4f *)((int)&(this_ptr->frames->orient).w + iVar5),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 212,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "pfVar7 = (float *)((int)&(this_ptr->frames->orient).w + iVar5);",
+      "text": "pfVar1 = (float *)((int)&(this_ptr->frames->orient).w + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 215,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "pfVar7 = (float *)((int)&local_54 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 216,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*pfVar10 = *(float *)((int)&local_54 + (uint)bVar13 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 248,
+      "line": 234,
       "match": "(CVector3f *)((int)",
       "severity": "mild",
-      "text": "point = (CVector3f *)((int)&(this_ptr->frames->pos).x + iVar5);",
+      "text": "point = (CVector3f *)((int)&(this_ptr->frames->pos).x + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 268,
+      "line": 254,
       "match": "(CVector3f *)((int)",
       "severity": "mild",
-      "text": "(CVector3f *)((int)&(this_ptr->frames->orient).w + iVar5));",
+      "text": "(CVector3f *)((int)&(this_ptr->frames->orient).w + iVar6));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 271,
+      "line": 257,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "pfVar7 = (float *)((int)&(this_ptr->frames->orient).w + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 275,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "pfVar7 = (float *)((int)&local_64 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 276,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*pfVar10 = *(float *)((int)&local_64 + (uint)bVar13 * -8 + 4);",
+      "text": "pfVar1 = (float *)((int)&(this_ptr->frames->orient).w + iVar6);",
       "type": "pointer_cast"
     }
   ]

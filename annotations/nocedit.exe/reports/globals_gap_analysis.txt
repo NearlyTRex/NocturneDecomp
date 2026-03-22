@@ -2,14 +2,14 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19493
-  Named globals:             19224
+Total globals analyzed:      19492
+  Named globals:             19223
   DAT_ globals:              269
-Gaps found:                  1861
-  With exact size bounds:    1758
+Gaps found:                  1860
+  With exact size bounds:    1757
   With estimated bounds:     103
-Total gap bytes:             1,362,553,461
-  Exact gap bytes:           14,709,987
+Total gap bytes:             1,362,553,465
+  Exact gap bytes:           14,709,991
 Overlaps (size <= 0):        13301
 
 --------------------------------------------------------------------------------
@@ -18,7 +18,7 @@ GAP SIZE DISTRIBUTION
   1-4 bytes (likely padding/alignment)          485
   5-16 bytes (small vars)                       494
   17-64 bytes (structs/small arrays)            416
-  65-256 bytes (medium data)                    177
+  65-256 bytes (medium data)                    176
   257-1024 bytes (large structs/arrays)         89
   1-4 KB                                        70
   4-64 KB                                       109
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: switchdataD_00546554                     void*                at 0x00546554
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1758) - size bounds are known precisely
+ALL EXACT GAPS (1757) - size bounds are known precisely
 --------------------------------------------------------------------------------
    4,185,048 bytes  at 0x00002428  between DAT_00002424                   and IMAGE_DOS_HEADER_00400000
    3,350,789 bytes  at 0x00ff0103  between g_ColorMagenta                 and g_CoronaLightCache
@@ -238,7 +238,7 @@ ALL EXACT GAPS (1758) - size bounds are known precisely
       22,972 bytes  at 0x00438418  between PTR_caseD_3_00438414           and switchdataD_0043ddd4
       22,808 bytes  at 0x005472f8  between switchdataD_005472f4           and switchdataD_0054cc10
       22,440 bytes  at 0x005e5948  between switchdataD_005e5944           and PTR_caseD_1_005eb0f0
-      20,488 bytes  at 0x006059b4  between SUB_006059b0                   and g_FPExceptionJumpTable
+      20,572 bytes  at 0x00605960  between SUB_0060595c                   and g_FPExceptionJumpTable
       20,468 bytes  at 0x005285f0  between switchdataD_005285ec           and switchdataD_0052d5e4
       18,700 bytes  at 0x0043f9e8  between switchdataD_0043f9e4           and switchdataD_004442f4
       18,544 bytes  at 0x03f5dc34  between g_SfxSlots[1].options.trigger_ and g_SfxLastSlot
@@ -607,7 +607,6 @@ ALL EXACT GAPS (1758) - size bounds are known precisely
           84 bytes  at 0x02f46848  between g_Mp3WindowTables[1][19]+4     and g_Mp3WindowTables[1][30]+4
           84 bytes  at 0x02f469f8  between g_Mp3WindowTables[3][1]+4      and g_Mp3WindowTables[3][12]+4
           81 bytes  at 0x006855dc  between DAT_006855d8                   and g_ShiftJIS_TrailByteTable
-          80 bytes  at 0x00605960  between SUB_0060595c                   and SUB_006059b0
           80 bytes  at 0x006625e8  between g_CScatTypeInfo                and PTR_00662638
           80 bytes  at 0x00662e48  between FLOAT_00662e44                 and FLOAT_00662e98
           80 bytes  at 0x00665b90  between PTR_FUN_00665b8c               and g_IstrstreamLayoutInfo

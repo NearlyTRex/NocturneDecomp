@@ -1,6 +1,6 @@
 // Name: engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
 // Address: 004b76d0
-// Address Range: [[004b76d0, 004b7ab5]]
+// Address Range: [[004b76d0, 004b7ab5] [005768b6, 005768d8]]
 // Convention: __cdecl
 // Signature: void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(CFileManager *this_ptr)
 
@@ -21,6 +21,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
   time_t *ptVar6;
   char *pcVar7;
   time_t *ptVar7;
+  CPodDirectoryEntry *pCVar8;
   time_t *ptVar8;
   SFoundFileInfo *pSVar9;
   time_t *ptVar9;
@@ -106,15 +107,12 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
       this_ptr_00 = (CFileManager *)this_ptr_01;
       source_file = (_FILE *)file_offset;
     }
-    ptVar5 = (time_t *)((int)(local_1108.directory_entries + iVar4) + (uint)bVar10 * -8 + 4);
-    dest_filename = local_1108.directory_entries[iVar4].name;
-    ptVar8 = local_1c + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1;
-    ptVar6 = ptVar5 + (uint)bVar10 * -2 + 1;
-    local_1c[(uint)bVar10 * -2] = *ptVar5;
-    *ptVar8 = *ptVar6;
-    ptVar8[(uint)bVar10 * -2 + 1] = ptVar6[(uint)bVar10 * -2 + 1];
-    (ptVar8 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1] =
-         (ptVar6 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
+    pCVar8 = local_1108.directory_entries + iVar4;
+    dest_filename = pCVar8->name;
+    local_1c[0] = pCVar8->size;
+    local_1c[1] = pCVar8->offset;
+    local_1c[2] = pCVar8->timestamp;
+    local_1c[3] = pCVar8->checksum;
     info = &local_534;
     pcVar7 = dest_filename;
     pSVar9 = info;

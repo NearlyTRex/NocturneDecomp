@@ -1,6 +1,6 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0
 // Address: 0059fdd0
-// Address Range: [[0059fdd0, 0059ff14]]
+// Address Range: [[0059fdd0, 0059ff14] [00605015, 00605061]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0(CDeformableModelInstance *this_ptr,CVector3f *target_position,float blend_weight,int bone_index,CQuaternion4f *base_orientation,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
@@ -60,21 +60,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059
   *puVar4 = *puVar1;
   puVar4[(uint)bVar4 * -2 + 1] = puVar1[(uint)bVar4 * -2 + 1];
   core_xform_cpp_multiplyQuaternion_FUN_005f7640(base_orientation,quat2_in,&local_5c);
-  local_7c.w = local_5c.w;
-  puVar4 = (uint *)((int)&local_7c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-  puVar1 = (uint *)((int)&local_5c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-  *(uint *)((int)&local_7c + (uint)bVar4 * -8 + 4) =
-       *(uint *)((int)&local_5c + (uint)bVar4 * -8 + 4);
-  *puVar4 = *puVar1;
-  puVar4[(uint)bVar4 * -2 + 1] = puVar1[(uint)bVar4 * -2 + 1];
   core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_7c,quat2_in_00,&local_4c);
-  local_9c.w = local_4c.w;
-  puVar4 = (uint *)((int)&local_9c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-  puVar1 = (uint *)((int)&local_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-  *(uint *)((int)&local_9c + (uint)bVar4 * -8 + 4) =
-       *(uint *)((int)&local_4c + (uint)bVar4 * -8 + 4);
-  *puVar4 = *puVar1;
-  puVar4[(uint)bVar4 * -2 + 1] = puVar1[(uint)bVar4 * -2 + 1];
   core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
             (this_ptr,&local_9c,blend_weight,bone_index,blend_callback);
   return;

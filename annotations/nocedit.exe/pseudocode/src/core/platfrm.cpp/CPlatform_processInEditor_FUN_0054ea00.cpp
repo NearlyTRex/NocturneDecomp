@@ -1,6 +1,6 @@
 // Name: core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
 // Address: 0054ea00
-// Address Range: [[0054ea00, 0054f058]]
+// Address Range: [[0054ea00, 0054f058] [006050a6, 0060511b]]
 // Convention: __cdecl
 // Signature: void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *this_ptr)
 
@@ -16,8 +16,8 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
   int iVar4;
   CVector3f *pCVar3;
   CVector3f *pCVar6;
-  uint *puVar9;
   uint *puVar4;
+  uint *puVar9;
   CMatrix3x4f *pCVar10;
   CMatrix3x4f *pCVar5;
   uint *puVar6;
@@ -25,8 +25,8 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
   uint *puVar8;
   uint *puVar11;
   CMatrix3x4f *pCVar12;
-  uint *puVar13;
   CMatrix3x4f *pCVar9;
+  uint *puVar13;
   byte bVar10;
   float afStackY_18a8 [1387];
   float local_2e8;
@@ -95,19 +95,14 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
           (this_ptr->start_pos).z = (this_ptr->end_pos).z;
         }
         core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&(this_ptr->base).orient.vec,&CStack_9c);
-        puVar6 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x348);
         (this_ptr->end_orient).w = CStack_9c.w;
-        puVar9 = (uint *)((int)&CStack_9c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-        *puVar6 = *(uint *)((int)&CStack_9c + (uint)bVar10 * -8 + 4);
-        puVar6[(uint)bVar10 * -2 + 1] = *puVar9;
-        (puVar6 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1] = puVar9[(uint)bVar10 * -2 + 1];
-        puVar7 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x338);
-        puVar4 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x348);
+        (this_ptr->end_orient).x = CStack_9c.x;
+        (this_ptr->end_orient).y = CStack_9c.y;
+        (this_ptr->end_orient).z = CStack_9c.z;
         (this_ptr->orig_orient).w = (this_ptr->end_orient).w;
-        puVar8 = puVar7 + (uint)bVar10 * -2 + 1;
-        *puVar7 = *puVar4;
-        *puVar8 = puVar4[(uint)bVar10 * -2 + 1];
-        puVar8[(uint)bVar10 * -2 + 1] = (puVar4 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
+        (this_ptr->orig_orient).x = (this_ptr->end_orient).x;
+        (this_ptr->orig_orient).y = (this_ptr->end_orient).y;
+        (this_ptr->orig_orient).z = (this_ptr->end_orient).z;
       }
       iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_Y);
       if (iVar4 != 0) {
@@ -219,13 +214,10 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
           pCStack_1c->z = CStack_2b4.m[2].z;
         }
         core_xform_cpp_matrixToQuaternion_FUN_005f7420((CMatrix3x3f *)&CStack_2b4,&CStack_8c);
-        puVar13 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x338);
         (this_ptr->orig_orient).w = CStack_8c.w;
-        puVar11 = puVar13 + (uint)bVar10 * -2 + 1;
-        puVar9 = (uint *)((int)&CStack_8c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-        *puVar13 = *(uint *)((int)&CStack_8c + (uint)bVar10 * -8 + 4);
-        *puVar11 = *puVar9;
-        puVar11[(uint)bVar10 * -2 + 1] = puVar9[(uint)bVar10 * -2 + 1];
+        (this_ptr->orig_orient).x = CStack_8c.x;
+        (this_ptr->orig_orient).y = CStack_8c.y;
+        (this_ptr->orig_orient).z = CStack_8c.z;
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_134,&CStack_224,&CStack_1c4);
         pCVar5 = &CStack_1c4;
         pCVar9 = &CStack_1f4;

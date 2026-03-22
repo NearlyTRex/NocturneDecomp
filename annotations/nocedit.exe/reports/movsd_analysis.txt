@@ -6,24 +6,15 @@ MOVSD STRUCT COPY ANALYSIS
 decompiler cannot analyze them, producing garbled bVar*-8 pointer arithmetic.
 These can be fixed by replacing them with explicit MOV instructions in code caves.
 
-Fixable sites:       127
-Unfixable sites:     71
-Total sites:         198
-Est. cave space:     ~4699 bytes
+Fixable sites:       40
+Unfixable sites:     69
+Total sites:         109
+Est. cave space:     ~1480 bytes
 
 ----------------------------------------------------------------------------------------------------
 FIXABLE SITES (by function, sorted by site count)
 ----------------------------------------------------------------------------------------------------
-  CDeformableModelInstance_updateMotion_FUN_0059e0a0                 17 sites  ~629 bytes
-    0x0059e1f7  (11 bytes borrowable)
-    0x0059e5d2  (6 bytes borrowable)
-    0x0059e60c  (11 bytes borrowable)
-    0x0059e6c5  (11 bytes borrowable)
-    0x0059e792  (11 bytes borrowable)
-    0x0059e856  (11 bytes borrowable)
-    0x0059e865  (11 bytes borrowable)
-    0x0059e884  (6 bytes borrowable)
-    0x0059e8c4  (11 bytes borrowable)
+  CDeformableModelInstance_updateMotion_FUN_0059e0a0                  8 sites  ~296 bytes
     0x0059e8f5  (11 bytes borrowable)
     0x0059e91e  (6 bytes borrowable)
     0x0059ea04  (11 bytes borrowable)
@@ -32,10 +23,7 @@ FIXABLE SITES (by function, sorted by site count)
     0x0059ea94  (6 bytes borrowable)
     0x0059eac5  (11 bytes borrowable)
     0x0059eb3b  (10 bytes borrowable)
-  CStranger_applyArmAimRotation_FUN_005c02b0                         10 sites  ~370 bytes
-    0x005c032d  (10 bytes borrowable)
-    0x005c041b  (11 bytes borrowable)
-    0x005c0441  (8 bytes borrowable)
+  CStranger_applyArmAimRotation_FUN_005c02b0                          7 sites  ~259 bytes
     0x005c049f  (11 bytes borrowable)
     0x005c04c8  (11 bytes borrowable)
     0x005c050f  (8 bytes borrowable)
@@ -43,73 +31,10 @@ FIXABLE SITES (by function, sorted by site count)
     0x005c063d  (11 bytes borrowable)
     0x005c065f  (11 bytes borrowable)
     0x005c069c  (6 bytes borrowable)
-  CPoly_intersectPoly_FUN_005ce580                                    9 sites  ~333 bytes
-    0x005cee27  (11 bytes borrowable)
-    0x005cee66  (7 bytes borrowable)
-    0x005ceea4  (7 bytes borrowable)
-    0x005cf52e  (11 bytes borrowable)
-    0x005cf56d  (11 bytes borrowable)
-    0x005cf5be  (11 bytes borrowable)
-    0x005cf7b5  (7 bytes borrowable)
-    0x005cf7f1  (6 bytes borrowable)
-    0x005cf82a  (11 bytes borrowable)
-  CScat_blendAimBones_FUN_005584a0                                    8 sites  ~296 bytes
-    0x00558518  (10 bytes borrowable)
-    0x005585b3  (8 bytes borrowable)
-    0x005585d6  (8 bytes borrowable)
-    0x005585f3  (8 bytes borrowable)
-    0x00558628  (8 bytes borrowable)
-    0x0055868d  (8 bytes borrowable)
-    0x005586bd  (11 bytes borrowable)
-    0x005586f2  (11 bytes borrowable)
-  CStranger_updateProceduralAnimation_FUN_005be520                    5 sites  ~185 bytes
-    0x005bea96  (11 bytes borrowable)
-    0x005becaa  (11 bytes borrowable)
-    0x005bef60  (11 bytes borrowable)
-    0x005bf2a5  (11 bytes borrowable)
-    0x005bf44e  (10 bytes borrowable)
-  CDeformableModel_determinePartsFromS3D_FUN_0058f810                 4 sites  ~148 bytes
-    0x0059141b  (6 bytes borrowable)
-    0x0059142a  (6 bytes borrowable)
-    0x00591e18  (6 bytes borrowable)
-    0x00591e27  (6 bytes borrowable)
-  CDeformableModelInstance_blendMotion_FUN_0059eb50                   4 sites  ~148 bytes
-    0x0059f067  (11 bytes borrowable)
-    0x0059f148  (8 bytes borrowable)
-    0x0059f199  (6 bytes borrowable)
-    0x0059f1d3  (11 bytes borrowable)
-  CCharacter_applyLookAt_FUN_0042dcd0                                 3 sites  ~111 bytes
-    0x0042dd14  (8 bytes borrowable)
-    0x0042dd37  (8 bytes borrowable)
-    0x0042dd54  (8 bytes borrowable)
-  CCourse_interpolate_FUN_004427a0                                    3 sites  ~111 bytes
-    0x004428f1  (8 bytes borrowable)
-    0x00442908  (6 bytes borrowable)
-    0x00442a79  (6 bytes borrowable)
-  CCourse_showEditorMenu_FUN_00443040                                 3 sites  ~111 bytes
-    0x004433ce  (6 bytes borrowable)
-    0x0044341b  (11 bytes borrowable)
-    0x004435a5  (5 bytes borrowable)
-  CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80                 3 sites  ~111 bytes
-    0x004d4dd6  (10 bytes borrowable)
-    0x004d505a  (10 bytes borrowable)
-    0x004d54dc  (10 bytes borrowable)
-  CStranger_makeDrawDecision_FUN_005bfb60                             3 sites  ~111 bytes
-    0x005bfed7  (9 bytes borrowable)
-    0x005c006a  (10 bytes borrowable)
-    0x005c010a  (11 bytes borrowable)
-  lerpMatrix3x4_FUN_005f7140                                          3 sites  ~111 bytes
-    0x005f71be  (7 bytes borrowable)
-    0x005f71da  (11 bytes borrowable)
-    0x005f720b  (11 bytes borrowable)
   matrixToQuaternion_FUN_005f7420                                     3 sites  ~111 bytes
     0x005f74bc  (6 bytes borrowable)
     0x005f755f  (6 bytes borrowable)
     0x005f75cb  (6 bytes borrowable)
-  calculatePolygonAngularArea_FUN_00461ee0                            3 sites  ~111 bytes
-    0x00461f43  (5 bytes borrowable)
-    0x00461f6a  (5 bytes borrowable)
-    0x00461f93  (5 bytes borrowable)
   calculateVertexAngle_FUN_00462050                                   3 sites  ~111 bytes
     0x00462069  (5 bytes borrowable)
     0x0046207b  (5 bytes borrowable)
@@ -126,56 +51,21 @@ FIXABLE SITES (by function, sorted by site count)
     0x005c9e2c  (11 bytes borrowable)
     0x005c9e5e  (6 bytes borrowable)
     0x005c9e97  (11 bytes borrowable)
-  CObj_removeTJunctions_FUN_005d47b0                                  3 sites  ~111 bytes
-    0x005d5320  (11 bytes borrowable)
-    0x005d535a  (11 bytes borrowable)
-    0x005d538e  (11 bytes borrowable)
-  pointInPolygon2D_FUN_005d5e60                                       3 sites  ~111 bytes
-    0x005d5e92  (8 bytes borrowable)
-    0x005d5e9c  (8 bytes borrowable)
-    0x005d5fbf  (8 bytes borrowable)
-  CDrawSurface_fillPoly_FUN_00488cd0                                  2 sites  ~74 bytes
-    0x00488dd0  (10 bytes borrowable)
-    0x00488de0  (11 bytes borrowable)
-  CPlatform_ctor_FUN_0054c850                                         2 sites  ~74 bytes
-    0x0054c941  (10 bytes borrowable)
-    0x0054c951  (14 bytes borrowable)
-  CPlatform_processInEditor_FUN_0054ea00                              2 sites  ~74 bytes
-    0x0054eb1c  (10 bytes borrowable)
-    0x0054efab  (11 bytes borrowable)
+  CPoly_intersectPoly_FUN_005ce580                                    3 sites  ~111 bytes
+    0x005cf7b5  (7 bytes borrowable)
+    0x005cf7f1  (6 bytes borrowable)
+    0x005cf82a  (11 bytes borrowable)
   CDeformableModel_sortFacesByTexture_FUN_0058e240                    2 sites  ~74 bytes
     0x0058e33a  (6 bytes borrowable)
     0x0058e344  (6 bytes borrowable)
-  CSkeleton_importSkeletonFile_FUN_00592690                           2 sites  ~74 bytes
-    0x00595b0b  (5 bytes borrowable)
-    0x00595c89  (5 bytes borrowable)
-  CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0               2 sites  ~74 bytes
-    0x0059fec9  (8 bytes borrowable)
-    0x0059fee2  (11 bytes borrowable)
-  CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20      2 sites  ~74 bytes
-    0x005a0048  (11 bytes borrowable)
-    0x005a00b1  (11 bytes borrowable)
-  CDeformableModelInstance_blendWithQuaternions_FUN_0059f260          2 sites  ~74 bytes
-    0x0059f5a9  (8 bytes borrowable)
-    0x0059f685  (11 bytes borrowable)
-  CTurret_process_FUN_005e2430                                        2 sites  ~74 bytes
-    0x005e27a1  (11 bytes borrowable)
-    0x005e27ca  (7 bytes borrowable)
-  slerpQuaternion_FUN_005f77e0                                        2 sites  ~74 bytes
-    0x005f78fc  (8 bytes borrowable)
-    0x005f7906  (6 bytes borrowable)
-  CFileManager_extractFilesToDirectory_FUN_004b76d0                   2 sites  ~74 bytes
-    0x004b7871  (5 bytes borrowable)
-    0x004b798e  (5 bytes borrowable)
   CFileManager_extractPodFile_FUN_004b6e10                            2 sites  ~74 bytes
     0x004b6f94  (5 bytes borrowable)
     0x004b72d4  (5 bytes borrowable)
   convertWorldToScreenCoordinates_FUN_0045bd10                        2 sites  ~74 bytes
     0x0045be25  (5 bytes borrowable)
     0x0045be30  (5 bytes borrowable)
-  detachFaces_FUN_0046eba0                                            2 sites  ~74 bytes
-    0x0046ec26  (5 bytes borrowable)
-    0x0046ecbf  (5 bytes borrowable)
+  CFileManager_extractFilesToDirectory_FUN_004b76d0                   1 sites  ~37 bytes
+    0x004b798e  (5 bytes borrowable)
 
 ----------------------------------------------------------------------------------------------------
 UNFIXABLE SITES (cannot borrow enough bytes for JMP)
@@ -199,7 +89,6 @@ UNFIXABLE SITES (cannot borrow enough bytes for JMP)
   0x004f10d0  CHaystack_process_FUN_004f0e40                           only 4 bytes available (need 5)
   0x00526a12  CMobster_aimTommyGun_FUN_005267a0                        only 4 bytes available (need 5)
   0x0054cbaa  CPlatform_evaluatePosition_FUN_0054cab0                  only 4 bytes available (need 5)
-  0x0054eb2c  CPlatform_processInEditor_FUN_0054ea00                   branch target inside patch range
   0x0054ed10  CPlatform_processInEditor_FUN_0054ea00                   only 4 bytes available (need 5)
   0x0054edea  CPlatform_processInEditor_FUN_0054ea00                   only 4 bytes available (need 5)
   0x0054f050  CPlatform_processInEditor_FUN_0054ea00                   only 4 bytes available (need 5)
@@ -209,7 +98,6 @@ UNFIXABLE SITES (cannot borrow enough bytes for JMP)
   0x00557592  CScat_process_FUN_005571f0                               only 4 bytes available (need 5)
   0x0059fe81  CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0    only 4 bytes available (need 5)
   0x0059feac  CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0    only 4 bytes available (need 5)
-  0x005a0072  CDeformableModelInstance_applyRotationToHierarchy_FUN_0  branch target inside patch range
   0x0059ec6e  CDeformableModelInstance_blendMotion_FUN_0059eb50        only 4 bytes available (need 5)
   0x0059ec96  CDeformableModelInstance_blendMotion_FUN_0059eb50        branch target inside patch range
   0x0059efd5  CDeformableModelInstance_blendMotion_FUN_0059eb50        branch target inside patch range

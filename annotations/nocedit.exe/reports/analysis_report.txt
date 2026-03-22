@@ -10,15 +10,15 @@ Total functions: 6452
 Clean functions: 5023 (77.9%)
 Functions with suspects: 1429 (22.1%)
 
-Total suspect patterns: 14944
-Average suspects per function: 2.32
+Total suspect patterns: 14744
+Average suspects per function: 2.29
 
 Virtual files: 214 total, 47 at 100%, 83 at 90%+
 
 Pseudocode lines:
-  Min: 4, Max: 3411, Average: 48.1
+  Min: 4, Max: 3411, Average: 48.0
 
-Average complexity score: 73.6
+Average complexity score: 73.2
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,17 +28,17 @@ Failed: 603
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  decompiler_intrinsic      6810
-  pointer_cast              5326
-  unknown_field             858
+  decompiler_intrinsic      6806
+  pointer_cast              5121
+  unknown_field             871
   nonstandard_int           267
   warning_inlined_function  261
   stack_param               227
   stack_ref                 221
   warning_type_propagation  132
-  stack_alignment_array     113
+  stack_alignment_array     110
   unresolved_funcptr        99
-  sub84_truncation          93
+  sub84_truncation          94
   param_count_too_few       81
   warning_unreachable       74
   unnamed_param             64
@@ -64,7 +64,6 @@ SUSPECT PATTERN BREAKDOWN
   undefined_type            3
   warning_jumptable         2
   warning_indirect_jump     2
-  bare_stack_ref            2
   cpuid_intrinsic           2
   undefined_data            1
   cpuid_assembly            1
@@ -129,13 +128,13 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
   0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3521, suspects: 9, lines: 3411)
   005d1390: shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390 (score: 2967, suspects: 270, lines: 252)
-  005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 2751, suspects: 180, lines: 926)
   00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (score: 2695, suspects: 119, lines: 1475)
-  0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 2499, suspects: 98, lines: 1494)
+  005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 2504, suspects: 161, lines: 869)
+  0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 2490, suspects: 100, lines: 1470)
   004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2362, suspects: 16, lines: 2187)
   005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823 (score: 2235, suspects: 161, lines: 585)
-  00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2215, suspects: 29, lines: 1900)
   005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031 (score: 2198, suspects: 159, lines: 568)
+  00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2162, suspects: 25, lines: 1887)
   004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 2052, suspects: 97, lines: 1052)
   005b9c10: core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (score: 1941, suspects: 119, lines: 711)
   005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1901, suspects: 70, lines: 1166)
@@ -143,20 +142,20 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   005ca590: shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (score: 1674, suspects: 115, lines: 509)
   00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 1667, suspects: 73, lines: 917)
   004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1654, suspects: 6, lines: 1579)
-  005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (score: 1561, suspects: 105, lines: 491)
+  005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (score: 1538, suspects: 106, lines: 453)
   0056eac0: core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (score: 1467, suspects: 85, lines: 602)
   005d0340: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340 (score: 1441, suspects: 126, lines: 171)
-  005be520: core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (score: 1428, suspects: 77, lines: 638)
   004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 1406, suspects: 49, lines: 911)
   005f8550: core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (score: 1359, suspects: 84, lines: 494)
   005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 1341, suspects: 23, lines: 1086)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 1301, suspects: 52, lines: 761)
   0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (score: 1301, suspects: 42, lines: 856)
   005325e0: sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (score: 1281, suspects: 73, lines: 541)
-  0059e0a0: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (score: 1253, suspects: 77, lines: 473)
   005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470 (score: 1249, suspects: 19, lines: 1029)
   004922c8: core_dstrender.cpp_verticalBlur3TapMMXStride128_FUN_004922c8 (score: 1211, suspects: 104, lines: 156)
   00492185: core_dstrender.cpp_verticalBlur3TapMMXStride256_FUN_00492185 (score: 1211, suspects: 104, lines: 156)
+  00492042: core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042 (score: 1211, suspects: 104, lines: 156)
+  005be520: core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (score: 1193, suspects: 57, lines: 603)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
@@ -174,7 +173,7 @@ FUNCTIONS BY SUSPECT TYPE
     0043f2d0: support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0
     ... and 904 more
 
-  pointer_cast (902 functions):
+  pointer_cast (901 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     004874d0: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
     00487630: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
@@ -185,7 +184,7 @@ FUNCTIONS BY SUSPECT TYPE
     0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    ... and 892 more
+    ... and 891 more
 
   unknown_field (96 functions):
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
@@ -265,7 +264,7 @@ FUNCTIONS BY SUSPECT TYPE
     0048ec70: core_drone.cpp_CDrone_process_FUN_0048ec70
     ... and 122 more
 
-  stack_alignment_array (111 functions):
+  stack_alignment_array (108 functions):
     00488cd0: cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
     005e1ca0: support_trisock.cpp_performSocketOperation_FUN_005e1ca0
     0050d970: engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
@@ -276,7 +275,7 @@ FUNCTIONS BY SUSPECT TYPE
     00405350: engine_3d.c_renderPolygonUVTextureEnable_FUN_00405350
     004b6e10: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     004b76d0: engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
-    ... and 101 more
+    ... and 98 more
 
   unresolved_funcptr (51 functions):
     0043eef0: support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0
@@ -291,7 +290,7 @@ FUNCTIONS BY SUSPECT TYPE
     005ade70: sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
     ... and 41 more
 
-  sub84_truncation (50 functions):
+  sub84_truncation (51 functions):
     0050d9f0: engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0
     00441260: engine_colquant.c_computeBoxStatistics_FUN_00441260
     005334b0: sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0
@@ -302,7 +301,7 @@ FUNCTIONS BY SUSPECT TYPE
     004547d0: core_dcube.cpp_clipEdgeToPlane_FUN_004547d0
     00472160: core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
     004ed1c0: core_gore.cpp_CBloodPool_save_FUN_004ed1c0
-    ... and 40 more
+    ... and 41 more
 
   param_count_too_few (81 functions):
     00489520: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
@@ -500,9 +499,6 @@ FUNCTIONS BY SUSPECT TYPE
   warning_indirect_jump (2 functions):
     00457650: core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
     005b5710: wincore_windll.cpp_renderScanline_FUN_005b5710
-
-  bare_stack_ref (1 functions):
-    0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
 
   cpuid_intrinsic (1 functions):
     00524f4c: core_mmx.c_detectIntelProcessor_FUN_00524f4c

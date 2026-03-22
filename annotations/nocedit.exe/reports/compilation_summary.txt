@@ -10,9 +10,9 @@ Failed: 603
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1224
+  other                           1230
   format_error                     793
-  incompatible_types               213
+  incompatible_types               208
   undeclared_identifier            140
   syntax_error                      41
   missing_member                    20
@@ -21,9 +21,11 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1224 errors)
+CATEGORY: other (1230 errors)
 ====================================================================================================
 
+  core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
+    Line 135: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed...
   core_imp.cpp_CImp_process_FUN_004f9c30
     Line 279: C-style cast from 'CDemonActor *' to 'float' is not allowed...
   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
@@ -57,9 +59,7 @@ CATEGORY: other (1224 errors)
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
     Line 76: C-style cast from 'uint' (aka 'unsigned int') to 'uchar[4]' (aka 'unsigned char[...
   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-    Line 138: array type 'byte[4]' (aka 'unsigned char[4]') is not assignable...
-  core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
-    Line 183: array type 'byte[4]' (aka 'unsigned char[4]') is not assignable...
+    Line 135: array type 'byte[4]' (aka 'unsigned char[4]') is not assignable...
   core_mmx.c_detectIntelProcessor_FUN_00524f4c
     Line 67: assigning to 'char *' from 'const char *' discards qualifiers...
   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
@@ -80,12 +80,12 @@ CATEGORY: other (1224 errors)
     Line 33: cannot cast from type 'float' to pointer type 'CDemonActor *'...
   core_script.cpp_CScript_step_FUN_0055a810
     Line 1382: cannot cast from type 'float' to pointer type 'CDemonActor *'...
+  core_xform.cpp_lerpMatrix3x4_FUN_005f7140
+    Line 39: cannot cast from type 'float' to pointer type 'CMatrix3x3f *'...
   core_set.cpp_CDemonSet_processActors_FUN_0056b810
     Line 69: cannot cast from type 'float' to pointer type 'CPathMap *'...
-  core_xform.cpp_multiplyQuaternion_FUN_005f7640
-    Line 62: cannot cast from type 'float' to pointer type 'CQuaternion4f *'...
 
-  ... and 268 more errors
+  ... and 269 more errors
 
 ====================================================================================================
 CATEGORY: format_error (793 errors)
@@ -134,7 +134,7 @@ CATEGORY: format_error (793 errors)
   core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0
     Line 23: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0
-    Line 36: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
+    Line 35: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0
     Line 33: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
@@ -155,7 +155,7 @@ CATEGORY: format_error (793 errors)
   ... and 235 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (213 errors)
+CATEGORY: incompatible_types (208 errors)
 ====================================================================================================
 
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
@@ -219,7 +219,7 @@ CATEGORY: incompatible_types (213 errors)
   core_colonel.cpp_CColonel_process_FUN_0043fa00
     Line 245: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int...
 
-  ... and 88 more errors
+  ... and 86 more errors
 
 ====================================================================================================
 CATEGORY: undeclared_identifier (140 errors)
@@ -371,7 +371,7 @@ CATEGORY: type_error (10 errors)
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
     Line 28: unknown type name 'code'...
   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
-    Line 29: unknown type name 'code'...
+    Line 28: unknown type name 'code'...
   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
     Line 13: unknown type name 'code'...
   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030
@@ -414,7 +414,7 @@ COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
 Average suspects in successfully compiled functions: 1.74
-Average suspects in failed compilations: 7.90
+Average suspects in failed compilations: 7.55
 
 Functions that compile but have suspect patterns: 1438
 (These may have runtime issues even though syntax is valid)

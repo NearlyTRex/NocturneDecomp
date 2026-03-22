@@ -1,6 +1,6 @@
 // Name: shape_design.c_calculatePolygonAngularArea_FUN_00461ee0
 // Address: 00461ee0
-// Address Range: [[00461ee0, 00462048]]
+// Address Range: [[00461ee0, 00462048] [006052a4, 00605318]]
 // Convention: __cdecl
 // Signature: double __cdecl shape_design_c_calculatePolygonAngularArea_FUN_00461ee0(SShapeEditorPolygon *polygon_ptr)
 
@@ -9,15 +9,15 @@
 double __cdecl shape_design_c_calculatePolygonAngularArea_FUN_00461ee0(SShapeEditorPolygon *polygon_ptr)
 
 {
-  float fVar1;
-  float fVar2;
+  uint uVar1;
+  uint uVar2;
   uint uVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
   float *pfVar1;
   float *pfVar2;
-  float *pfVar4;
-  float *pfVar5;
   float *pfVar3;
-  float *pfVar6;
   byte bVar4;
   double dVar5;
   float afStackY_2034 [2020];
@@ -37,46 +37,26 @@ double __cdecl shape_design_c_calculatePolygonAngularArea_FUN_00461ee0(SShapeEdi
   int local_18;
   uint local_14;
   
-  bVar4 = 0;
   local_28 = 0.0;
-  uVar3 = polygon_ptr->vertex_indices_count;
-  for (local_18 = 0; local_18 < (int)uVar3; local_18 = local_18 + 1) {
-    pfVar1 = (float *)(polygon_ptr->vertex_indices[local_18 % (int)uVar3] * 0x14 + 0x1626410 +
-                      (uint)bVar4 * -8);
-    fVar1 = g_LoadedVertices[polygon_ptr->vertex_indices[local_18 % (int)uVar3]].vertex.x;
-    pfVar3 = local_4c + (uint)bVar4 * -2 + (uint)bVar4 * -2 + 1;
-    pfVar2 = pfVar1 + (uint)bVar4 * -2 + 1;
-    local_4c[(uint)bVar4 * -2] = *pfVar1;
-    *pfVar3 = *pfVar2;
-    pfVar3[(uint)bVar4 * -2 + 1] = pfVar2[(uint)bVar4 * -2 + 1];
-    (pfVar3 + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
-         (pfVar2 + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1];
-    pfVar4 = (float *)(polygon_ptr->vertex_indices[(local_18 + 1) % (int)uVar3] * 0x14 + 0x1626410 +
-                      (uint)bVar4 * -8);
-    fVar2 = g_LoadedVertices[polygon_ptr->vertex_indices[(local_18 + 1) % (int)uVar3]].vertex.x;
-    pfVar6 = local_38 + (uint)bVar4 * -2 + (uint)bVar4 * -2 + 1;
-    pfVar5 = pfVar4 + (uint)bVar4 * -2 + 1;
-    local_38[(uint)bVar4 * -2] = *pfVar4;
-    *pfVar6 = *pfVar5;
-    pfVar6[(uint)bVar4 * -2 + 1] = pfVar5[(uint)bVar4 * -2 + 1];
-    (pfVar6 + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
-         (pfVar5 + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1];
-    pfVar4 = (float *)(polygon_ptr->vertex_indices[(local_18 + 2) % (int)uVar3] * 0x14 + 0x1626410 +
-                      (uint)bVar4 * -8);
-    local_64 = g_LoadedVertices[polygon_ptr->vertex_indices[(local_18 + 2) % (int)uVar3]].vertex.x;
-    pfVar6 = local_60 + (uint)bVar4 * -2 + (uint)bVar4 * -2 + 1;
-    pfVar5 = pfVar4 + (uint)bVar4 * -2 + 1;
-    local_60[(uint)bVar4 * -2] = *pfVar4;
-    *pfVar6 = *pfVar5;
-    pfVar6[(uint)bVar4 * -2 + 1] = pfVar5[(uint)bVar4 * -2 + 1];
-    (pfVar6 + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
-         (pfVar5 + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1];
-    local_94 = (double)(fVar1 - fVar2);
-    local_8c = (double)(local_4c[0] - local_38[0]);
-    local_84 = (double)(local_4c[1] - local_38[1]);
-    local_7c = (double)(local_64 - fVar2);
-    local_74 = (double)(local_60[0] - local_38[0]);
-    local_6c = (double)(local_60[1] - local_38[1]);
+  uVar1 = polygon_ptr->vertex_indices_count;
+  for (local_18 = 0; local_18 < (int)uVar1; local_18 = local_18 + 1) {
+    uVar2 = polygon_ptr->vertex_indices[local_18 % (int)uVar1];
+    uVar3 = polygon_ptr->vertex_indices[(local_18 + 1) % (int)uVar1];
+    fVar4 = g_LoadedVertices[uVar3].vertex.x;
+    fVar5 = g_LoadedVertices[uVar3].vertex.y;
+    fVar6 = g_LoadedVertices[uVar3].vertex.z;
+    uVar3 = polygon_ptr->vertex_indices[(local_18 + 2) % (int)uVar1];
+    local_64 = g_LoadedVertices[uVar3].vertex.x;
+    local_60[0] = g_LoadedVertices[uVar3].vertex.y;
+    local_60[1] = g_LoadedVertices[uVar3].vertex.z;
+    local_60[2] = g_LoadedVertices[uVar3].u;
+    local_60[3] = g_LoadedVertices[uVar3].v;
+    local_94 = (double)(g_LoadedVertices[uVar2].vertex.x - fVar4);
+    local_8c = (double)(g_LoadedVertices[uVar2].vertex.y - fVar5);
+    local_84 = (double)(g_LoadedVertices[uVar2].vertex.z - fVar6);
+    local_7c = (double)(local_64 - fVar4);
+    local_74 = (double)(local_60[0] - fVar5);
+    local_6c = (double)(local_60[1] - fVar6);
     shape_design_c_normalizeVertex_FUN_00461e60((CVector3f *)&local_94);
     shape_design_c_normalizeVertex_FUN_00461e60((CVector3f *)&local_7c);
     dVar5 = shape_design_c_clampedArccos_FUN_00461c50

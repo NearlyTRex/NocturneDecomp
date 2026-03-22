@@ -1,6 +1,6 @@
 // Name: cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
 // Address: 00488cd0
-// Address Range: [[00488cd0, 0048908d]]
+// Address Range: [[00488cd0, 0048908d] [0060516e, 006051bc]]
 // Convention: __cdecl
 // Signature: void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurface *this_ptr,int vertex_count,SPoint2i *vertices)
 
@@ -95,36 +95,33 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurfac
           }
         }
         local_28 = local_28 + 1;
-        iVar1 = local_24 + 1;
+        iVar3 = local_24 + 1;
         iVar10 = local_24;
         pSVar13 = pSVar14;
-        local_24 = iVar1;
-      } while (iVar1 < vertex_count);
+        local_24 = iVar3;
+      } while (iVar3 < vertex_count);
     }
     iVar10 = local_20;
     if (1 < local_20) {
       while (iVar10 = iVar10 + -1, 0 < iVar10) {
         if (0 < iVar10) {
           iVar1 = 0;
+          iVar3 = iVar10 * 0x10;
           do {
             if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar1) <
                 *(int *)((int)&g_GlobalEdgeTable[0].x_start + iVar1)) {
-              piVar9 = (int *)(iVar1 + 0x2c6d2d4 + (uint)bVar17 * -8);
               uVar1 = *(uint *)((int)&g_GlobalEdgeTable[0].x_start + iVar1);
-              piVar10 = piVar9 + (uint)bVar17 * -2 + 1;
-              aiStack_38[(uint)bVar17 * -2] = *piVar9;
-              aiStack_38[(uint)bVar17 * -2 + (uint)bVar17 * -2 + 1] = *piVar10;
-              (aiStack_38 + (uint)bVar17 * -2 + (uint)bVar17 * -2 + 1)[(uint)bVar17 * -2 + 1] =
-                   piVar10[(uint)bVar17 * -2 + 1];
-              puVar15 = (uint *)(iVar1 + 0x2c6d2d4 + (uint)bVar17 * -8);
-              puVar11 = (uint *)(iVar1 + 0x2c6d2e4 + (uint)bVar17 * -8);
+              aiStack_38[0] = *(int *)((int)&g_GlobalEdgeTable[0].y_start + iVar1);
+              aiStack_38[1] = *(int *)((int)&g_GlobalEdgeTable[0].x_fixed_point + iVar1);
+              aiStack_38[2] = *(int *)((int)&g_GlobalEdgeTable[0].x_increment + iVar1);
               *(uint *)((int)&g_GlobalEdgeTable[0].x_start + iVar1) =
                    *(uint *)((int)&g_GlobalEdgeTable[1].x_start + iVar1);
-              puVar16 = puVar15 + (uint)bVar17 * -2 + 1;
-              puVar12 = puVar11 + (uint)bVar17 * -2 + 1;
-              *puVar15 = *puVar11;
-              *puVar16 = *puVar12;
-              puVar16[(uint)bVar17 * -2 + 1] = puVar12[(uint)bVar17 * -2 + 1];
+              *(uint *)((int)&g_GlobalEdgeTable[0].y_start + iVar1) =
+                   *(uint *)((int)&g_GlobalEdgeTable[1].y_start + iVar1);
+              *(uint *)((int)&g_GlobalEdgeTable[0].x_fixed_point + iVar1) =
+                   *(uint *)((int)&g_GlobalEdgeTable[1].x_fixed_point + iVar1);
+              iVar3 = *(int *)((int)&g_GlobalEdgeTable[1].x_increment + iVar1);
+              *(int *)((int)&g_GlobalEdgeTable[0].x_increment + iVar1) = iVar3;
               piVar12 = (int *)(iVar1 + 0x2c6d2e4 + (uint)bVar17 * -8);
               *(uint *)((int)&g_GlobalEdgeTable[1].x_start + iVar1) = uVar1;
               piVar13 = piVar12 + (uint)bVar17 * -2 + 1;
@@ -134,10 +131,10 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurfac
                    (aiStack_38 + (uint)bVar17 * -2 + (uint)bVar17 * -2 + 1)[(uint)bVar17 * -2 + 1];
             }
             iVar1 = iVar1 + 0x10;
-          } while (iVar1 < iVar10 * 0x10);
+          } while (iVar1 < iVar3);
         }
       }
-      iVar1 = 0;
+      iVar3 = 0;
       iVar10 = 0;
       local_14 = g_GlobalEdgeTable[0].x_start;
       if (0 < local_20) {
@@ -147,65 +144,65 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurfac
             for (; (iVar10 < local_20 &&
                    (*(int *)((int)&g_GlobalEdgeTable[0].x_start + local_18) <= local_14));
                 local_18 = local_18 + 0x10) {
-              aiStack_d8[iVar1 + -1] = iVar10;
-              iVar1 = iVar1 + 1;
+              aiStack_d8[iVar3 + -1] = iVar10;
+              iVar3 = iVar3 + 1;
               iVar10 = iVar10 + 1;
             }
             do {
-              iVar3 = 0;
-              iVar9 = (iVar1 + -1) * 4;
+              iVar1 = 0;
+              iVar9 = (iVar3 + -1) * 4;
               bVar3 = false;
               if (0 < iVar9) {
                 do {
-                  if (g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar3)].x_fixed_point <
-                      g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar3 + -4)].x_fixed_point) {
-                    uVar1 = *(uint *)((int)aiStack_d8 + iVar3 + -4);
-                    *(uint *)((int)aiStack_d8 + iVar3 + -4) =
-                         *(uint *)((int)aiStack_d8 + iVar3);
+                  if (g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar1)].x_fixed_point <
+                      g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar1 + -4)].x_fixed_point) {
+                    uVar1 = *(uint *)((int)aiStack_d8 + iVar1 + -4);
+                    *(uint *)((int)aiStack_d8 + iVar1 + -4) =
+                         *(uint *)((int)aiStack_d8 + iVar1);
                     bVar3 = true;
-                    *(uint *)((int)aiStack_d8 + iVar3) = uVar1;
+                    *(uint *)((int)aiStack_d8 + iVar1) = uVar1;
                   }
-                  iVar3 = iVar3 + 4;
-                } while (iVar3 < iVar9);
+                  iVar1 = iVar1 + 4;
+                } while (iVar1 < iVar9);
               }
             } while (bVar3);
-            if (1 < iVar1) {
-              iVar3 = 4;
+            if (1 < iVar3) {
+              iVar1 = 4;
               do {
-                iVar9 = iVar3 + -4;
-                iVar11 = iVar3 + -8;
-                iVar3 = iVar3 + 8;
+                iVar9 = iVar1 + -4;
+                iVar11 = iVar1 + -8;
+                iVar1 = iVar1 + 8;
                 cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00488110
                           (this_ptr,(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar11)].
                                      x_fixed_point >> 0x10) - this_ptr->x,local_14 - this_ptr->y,
                            (g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar9)].x_fixed_point >>
                            0x10) - this_ptr->x);
-              } while (iVar3 < iVar1 * 4);
+              } while (iVar1 < iVar3 * 4);
             }
             local_14 = local_14 + 1;
-            iVar3 = 0;
-            if (0 < iVar1) {
+            iVar1 = 0;
+            if (0 < iVar3) {
               iVar9 = 0;
               do {
                 iVar2 = *(int *)((int)aiStack_d8 + iVar9 + -4);
                 iVar11 = iVar9 + 4;
                 if (local_14 < g_GlobalEdgeTable[iVar2].y_start) {
-                  iVar3 = iVar3 + 1;
+                  iVar1 = iVar1 + 1;
                   g_GlobalEdgeTable[iVar2].x_fixed_point =
                        g_GlobalEdgeTable[iVar2].x_fixed_point + g_GlobalEdgeTable[iVar2].x_increment
                   ;
                 }
                 else {
-                  iVar1 = iVar1 + -1;
+                  iVar3 = iVar3 + -1;
                   memmove
                             ((void *)((int)aiStack_d8 + iVar9 + -4),
-                             (void *)((int)aiStack_d8 + iVar9),(iVar1 - iVar3) * 4);
+                             (void *)((int)aiStack_d8 + iVar9),(iVar3 - iVar1) * 4);
                   iVar11 = iVar9;
                 }
                 iVar9 = iVar11;
-              } while (iVar3 < iVar1);
+              } while (iVar1 < iVar3);
             }
-          } while (0 < iVar1);
+          } while (0 < iVar3);
         } while (iVar10 < local_20);
       }
     }

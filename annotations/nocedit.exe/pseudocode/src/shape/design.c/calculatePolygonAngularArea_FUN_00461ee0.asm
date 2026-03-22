@@ -30,10 +30,6 @@
 ;
 ; Referenced Globals:
 ;   double g_RadiansToDegrees2 = 57.2957795130800
-;   SVertexData[20000] g_LoadedVertices
-;   undefined4 g_LoadedVertices[0].vertex.y
-;   undefined4 g_LoadedVertices[0].vertex.z
-;   undefined4 g_LoadedVertices[0].u
 ;   undefined4 g_LoadedVertices[0].v
 ;
 ; Called Functions:
@@ -75,12 +71,10 @@ section .text
     ADD EDX,dword ptr [EBP + 0x14]      ; 00461f30
     IMUL ESI,dword ptr [EDX + 0xb8],0x14 ; 00461f33
     LEA EDI,[EBP + -0x40]               ; 00461f3a
-    LEA ESI,[ESI + 0x162640c]           ; 00461f3d | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 00461f43 | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 00461f44 | g_LoadedVertices[0].vertex.y
-    MOVSD ES:EDI,ESI                    ; 00461f45 | g_LoadedVertices[0].vertex.z
-    MOVSD ES:EDI,ESI                    ; 00461f46 | g_LoadedVertices[0].u
+    JMP 0x006052a4                      ; 00461f3d
+        ;   XREF to: 006052a4 (UNCONDITIONAL_JUMP)  ; LAB_006052a4
     MOVSD ES:EDI,ESI                    ; 00461f47 | g_LoadedVertices[0].v
+        ;   Label: LAB_00461f47
     MOV EDX,dword ptr [EBP + -0x8]      ; 00461f48
     INC EDX                             ; 00461f4b
     MOV EAX,EDX                         ; 00461f4c
@@ -90,12 +84,10 @@ section .text
     ADD EDX,dword ptr [EBP + 0x14]      ; 00461f57
     IMUL ESI,dword ptr [EDX + 0xb8],0x14 ; 00461f5a
     LEA EDI,[EBP + -0x2c]               ; 00461f61
-    LEA ESI,[ESI + 0x162640c]           ; 00461f64 | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 00461f6a | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 00461f6b | g_LoadedVertices[0].vertex.y
-    MOVSD ES:EDI,ESI                    ; 00461f6c | g_LoadedVertices[0].vertex.z
-    MOVSD ES:EDI,ESI                    ; 00461f6d | g_LoadedVertices[0].u
+    JMP 0x006052cb                      ; 00461f64
+        ;   XREF to: 006052cb (UNCONDITIONAL_JUMP)  ; LAB_006052cb
     MOVSD ES:EDI,ESI                    ; 00461f6e | g_LoadedVertices[0].v
+        ;   Label: LAB_00461f6e
     MOV EDX,dword ptr [EBP + -0x8]      ; 00461f6f
     ADD EDX,0x2                         ; 00461f72
     MOV EAX,EDX                         ; 00461f75
@@ -105,12 +97,10 @@ section .text
     ADD EDX,dword ptr [EBP + 0x14]      ; 00461f80
     IMUL ESI,dword ptr [EDX + 0xb8],0x14 ; 00461f83
     LEA EDI,[EBP + -0x54]               ; 00461f8a
-    LEA ESI,[ESI + 0x162640c]           ; 00461f8d | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 00461f93 | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 00461f94 | g_LoadedVertices[0].vertex.y
-    MOVSD ES:EDI,ESI                    ; 00461f95 | g_LoadedVertices[0].vertex.z
-    MOVSD ES:EDI,ESI                    ; 00461f96 | g_LoadedVertices[0].u
+    JMP 0x006052f2                      ; 00461f8d
+        ;   XREF to: 006052f2 (UNCONDITIONAL_JUMP)  ; LAB_006052f2
     MOVSD ES:EDI,ESI                    ; 00461f97 | g_LoadedVertices[0].v
+        ;   Label: LAB_00461f97
     FLD float ptr [EBP + -0x40]         ; 00461f98
     FSUB float ptr [EBP + -0x2c]        ; 00461f9b
     FSTP double ptr [EBP + 0xffffff7c]  ; 00461f9e
@@ -171,4 +161,46 @@ section .text
     POP ESI                             ; 00462046
     POP EBX                             ; 00462047
     RET                                 ; 00462048
+    LEA ESI,[ESI + 0x162640c]           ; 006052a4
+        ;   Label: LAB_006052a4
+    MOV ECX,dword ptr [ESI]             ; 006052aa
+    MOV dword ptr [EDI],ECX             ; 006052ac
+    MOV ECX,dword ptr [ESI + 0x4]       ; 006052ae
+    MOV dword ptr [EDI + 0x4],ECX       ; 006052b1
+    MOV ECX,dword ptr [ESI + 0x8]       ; 006052b4
+    MOV dword ptr [EDI + 0x8],ECX       ; 006052b7
+    MOV ECX,dword ptr [ESI + 0xc]       ; 006052ba
+    MOV dword ptr [EDI + 0xc],ECX       ; 006052bd
+    ADD ESI,0x10                        ; 006052c0
+    ADD EDI,0x10                        ; 006052c3
+    JMP 0x00461f47                      ; 006052c6
+        ;   XREF to: 00461f47 (UNCONDITIONAL_JUMP)  ; LAB_00461f47
+    LEA ESI,[ESI + 0x162640c]           ; 006052cb
+        ;   Label: LAB_006052cb
+    MOV ECX,dword ptr [ESI]             ; 006052d1
+    MOV dword ptr [EDI],ECX             ; 006052d3
+    MOV ECX,dword ptr [ESI + 0x4]       ; 006052d5
+    MOV dword ptr [EDI + 0x4],ECX       ; 006052d8
+    MOV ECX,dword ptr [ESI + 0x8]       ; 006052db
+    MOV dword ptr [EDI + 0x8],ECX       ; 006052de
+    MOV ECX,dword ptr [ESI + 0xc]       ; 006052e1
+    MOV dword ptr [EDI + 0xc],ECX       ; 006052e4
+    ADD ESI,0x10                        ; 006052e7
+    ADD EDI,0x10                        ; 006052ea
+    JMP 0x00461f6e                      ; 006052ed
+        ;   XREF to: 00461f6e (UNCONDITIONAL_JUMP)  ; LAB_00461f6e
+    LEA ESI,[ESI + 0x162640c]           ; 006052f2
+        ;   Label: LAB_006052f2
+    MOV ECX,dword ptr [ESI]             ; 006052f8
+    MOV dword ptr [EDI],ECX             ; 006052fa
+    MOV ECX,dword ptr [ESI + 0x4]       ; 006052fc
+    MOV dword ptr [EDI + 0x4],ECX       ; 006052ff
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00605302
+    MOV dword ptr [EDI + 0x8],ECX       ; 00605305
+    MOV ECX,dword ptr [ESI + 0xc]       ; 00605308
+    MOV dword ptr [EDI + 0xc],ECX       ; 0060530b
+    ADD ESI,0x10                        ; 0060530e
+    ADD EDI,0x10                        ; 00605311
+    JMP 0x00461f97                      ; 00605314
+        ;   XREF to: 00461f97 (UNCONDITIONAL_JUMP)  ; LAB_00461f97
 

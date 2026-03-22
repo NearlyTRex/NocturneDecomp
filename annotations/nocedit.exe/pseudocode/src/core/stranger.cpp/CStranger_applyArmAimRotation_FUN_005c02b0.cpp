@@ -1,6 +1,6 @@
 // Name: core_stranger.cpp_CStranger_applyArmAimRotation_FUN_005c02b0
 // Address: 005c02b0
-// Address Range: [[005c02b0, 005c06a6]]
+// Address Range: [[005c02b0, 005c06a6] [0060d067, 0060d0da]]
 // Convention: __cdecl
 // Signature: void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStranger *this_ptr,int arm_side)
 
@@ -100,13 +100,10 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
     pSVar2 = &this_ptr->right_arm_aim;
     pCVar1 = &local_ec;
   }
-  puVar2 = (uint *)((int)pCVar1 + (uint)bVar6 * -8 + 4);
   local_1bc.w = pCVar1->w;
-  puVar4 = (uint *)((int)&local_1bc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-  puVar3 = puVar2 + (uint)bVar6 * -2 + 1;
-  *(uint *)((int)&local_1bc + (uint)bVar6 * -8 + 4) = *puVar2;
-  *puVar4 = *puVar3;
-  puVar4[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
+  local_1bc.x = pCVar1->x;
+  local_1bc.y = pCVar1->y;
+  local_1bc.z = pCVar1->z;
   fVar1 = (this_ptr->base).base.layer_action_t;
   fVar1 = (1.0 - (1.0 - pSVar2->kickback_factor) * fVar1) * fVar1;
   if (0.0 < fVar1) {
@@ -126,21 +123,7 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
                core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
     core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(pSVar2->target_yaw,&local_4c);
     pCVar8 = &local_16c;
-    local_16c.w = local_4c.w;
-    puVar6 = (uint *)((int)&local_16c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-    puVar5 = (uint *)((int)&local_4c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-    *(uint *)((int)&local_16c + (uint)bVar6 * -8 + 4) =
-         *(uint *)((int)&local_4c + (uint)bVar6 * -8 + 4);
-    *puVar6 = *puVar5;
-    puVar6[(uint)bVar6 * -2 + 1] = puVar5[(uint)bVar6 * -2 + 1];
     core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(pSVar2->target_pitch,&local_19c);
-    local_17c.w = local_19c.w;
-    puVar6 = (uint *)((int)&local_17c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-    puVar5 = (uint *)((int)&local_19c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-    *(uint *)((int)&local_17c + (uint)bVar6 * -8 + 4) =
-         *(uint *)((int)&local_19c + (uint)bVar6 * -8 + 4);
-    *puVar6 = *puVar5;
-    puVar6[(uint)bVar6 * -2 + 1] = puVar5[(uint)bVar6 * -2 + 1];
     core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_17c,pCVar8,&local_ac);
     pCVar8 = &local_1cc;
     fVar8 = 0.95;

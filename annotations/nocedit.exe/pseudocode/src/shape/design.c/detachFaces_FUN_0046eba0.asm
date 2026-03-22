@@ -15,9 +15,6 @@
 ;   TerminatedCString s_Faces_detached_0061e093
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
-;   undefined4 g_LoadedVertices[0].vertex.y
-;   undefined4 g_LoadedVertices[0].vertex.z
-;   undefined4 g_LoadedVertices[0].u
 ;   undefined4 g_LoadedVertices[0].v
 ;   int g_PolygonCount
 ;   undefined4 g_ModelPolygonData[0].vertex_indices_count
@@ -75,12 +72,10 @@ section .text
     IMUL ESI,dword ptr [EBP + -0x8],0x14 ; 0046ec0f
     IMUL EDI,dword ptr [0x01626408],0x14 ; 0046ec13 | g_VertexCount
     LEA EDI,[EDI + 0x162640c]           ; 0046ec1a | g_LoadedVertices
-    LEA ESI,[ESI + 0x162640c]           ; 0046ec20 | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0046ec26 | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0046ec27 | g_LoadedVertices[0].vertex.y
-    MOVSD ES:EDI,ESI                    ; 0046ec28 | g_LoadedVertices[0].vertex.z
-    MOVSD ES:EDI,ESI                    ; 0046ec29 | g_LoadedVertices[0].u
+    JMP 0x004a6f0b                      ; 0046ec20
+        ;   XREF to: 004a6f0b (UNCONDITIONAL_JUMP)  ; CAVE_cave_00415045
     MOVSD ES:EDI,ESI                    ; 0046ec2a | g_LoadedVertices[0].v
+        ;   Label: LAB_0046ec2a
     MOV ESI,dword ptr [0x01626408]      ; 0046ec2b | g_VertexCount
     SUB ESI,dword ptr [EBP + -0x4]      ; 0046ec31
     IMUL EDX,dword ptr [EBP + -0x10],0x184 ; 0046ec34
@@ -133,12 +128,10 @@ section .text
     SUB EAX,dword ptr [EBP + -0x4]      ; 0046ecad
     IMUL EAX,EAX,0x14                   ; 0046ecb0
     LEA EDI,[EAX + 0x162640c]           ; 0046ecb3 | g_LoadedVertices
-    LEA ESI,[ESI + 0x162640c]           ; 0046ecb9 | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0046ecbf | g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0046ecc0 | g_LoadedVertices[0].vertex.y
-    MOVSD ES:EDI,ESI                    ; 0046ecc1 | g_LoadedVertices[0].vertex.z
-    MOVSD ES:EDI,ESI                    ; 0046ecc2 | g_LoadedVertices[0].u
+    JMP 0x004a6f32                      ; 0046ecb9
+        ;   XREF to: 004a6f32 (UNCONDITIONAL_JUMP)  ; LAB_004a6f32
     MOVSD ES:EDI,ESI                    ; 0046ecc3 | g_LoadedVertices[0].v
+        ;   Label: LAB_0046ecc3
     JMP 0x0046ec95                      ; 0046ecc4
         ;   XREF to: 0046ec95 (UNCONDITIONAL_JUMP)  ; LAB_0046ec95
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046ecc6
@@ -162,4 +155,32 @@ section .text
     POP ESI                             ; 0046ecef
     POP EBX                             ; 0046ecf0
     RET                                 ; 0046ecf1
+    LEA ESI,[ESI + 0x162640c]           ; 004a6f0b
+        ;   Label: CAVE_cave_00415045
+    MOV ECX,dword ptr [ESI]             ; 004a6f11
+    MOV dword ptr [EDI],ECX             ; 004a6f13
+    MOV ECX,dword ptr [ESI + 0x4]       ; 004a6f15
+    MOV dword ptr [EDI + 0x4],ECX       ; 004a6f18
+    MOV ECX,dword ptr [ESI + 0x8]       ; 004a6f1b
+    MOV dword ptr [EDI + 0x8],ECX       ; 004a6f1e
+    MOV ECX,dword ptr [ESI + 0xc]       ; 004a6f21
+    MOV dword ptr [EDI + 0xc],ECX       ; 004a6f24
+    ADD ESI,0x10                        ; 004a6f27
+    ADD EDI,0x10                        ; 004a6f2a
+    JMP 0x0046ec2a                      ; 004a6f2d
+        ;   XREF to: 0046ec2a (UNCONDITIONAL_JUMP)  ; LAB_0046ec2a
+    LEA ESI,[ESI + 0x162640c]           ; 004a6f32
+        ;   Label: LAB_004a6f32
+    MOV ECX,dword ptr [ESI]             ; 004a6f38
+    MOV dword ptr [EDI],ECX             ; 004a6f3a
+    MOV ECX,dword ptr [ESI + 0x4]       ; 004a6f3c
+    MOV dword ptr [EDI + 0x4],ECX       ; 004a6f3f
+    MOV ECX,dword ptr [ESI + 0x8]       ; 004a6f42
+    MOV dword ptr [EDI + 0x8],ECX       ; 004a6f45
+    MOV ECX,dword ptr [ESI + 0xc]       ; 004a6f48
+    MOV dword ptr [EDI + 0xc],ECX       ; 004a6f4b
+    ADD ESI,0x10                        ; 004a6f4e
+    ADD EDI,0x10                        ; 004a6f51
+    JMP 0x0046ecc3                      ; 004a6f54
+        ;   XREF to: 0046ecc3 (UNCONDITIONAL_JUMP)  ; LAB_0046ecc3
 

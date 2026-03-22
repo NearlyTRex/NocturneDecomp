@@ -4,22 +4,22 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6955 ( 40.4%)
-  pointer_cast                    5585 ( 32.5%)
-  unknown_field                    896 (  5.2%)
-  special_crt_function             522 (  3.0%)
+  decompiler_intrinsic            6951 ( 40.9%)
+  pointer_cast                    5380 ( 31.6%)
+  unknown_field                    909 (  5.3%)
+  special_crt_function             522 (  3.1%)
   unnamed_param                    362 (  2.1%)
   stack_param                      347 (  2.0%)
   fpu_register_input               311 (  1.8%)
   stack_ref                        268 (  1.6%)
   nonstandard_int                  267 (  1.6%)
-  warning_inlined_function         264 (  1.5%)
+  warning_inlined_function         264 (  1.6%)
   unresolved_funcptr               171 (  1.0%)
   warning_type_propagation         132 (  0.8%)
   param_count_too_few              127 (  0.7%)
-  stack_alignment_array            125 (  0.7%)
+  stack_alignment_array            122 (  0.7%)
   unaffected_reg                   106 (  0.6%)
-  sub84_truncation                 100 (  0.6%)
+  sub84_truncation                 101 (  0.6%)
   negative_offset                   86 (  0.5%)
   warning_unreachable               84 (  0.5%)
   register_param                    69 (  0.4%)
@@ -48,29 +48,28 @@ SUSPECT TYPE COUNTS
   warning_unmapped_variable          3 (  0.0%)
   warning_overlapping_globals        3 (  0.0%)
   warning_is_inlined                 2 (  0.0%)
-  bare_stack_ref                     2 (  0.0%)
   cpuid_intrinsic                    2 (  0.0%)
   warning_overlapping_instructions     1 (  0.0%)
   cpuid_assembly                     1 (  0.0%)
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (6955 occurrences)
+TYPE: decompiler_intrinsic (6951 occurrences)
 ====================================================================================================
 
 Unique patterns:
   2626x  ROUND
-  1548x  ADJ
-   451x  CONCAT44
+  1557x  ADJ
+   433x  CONCAT44
    427x  SQRT
    325x  ABS
    142x  CONCAT11
    120x  CARRY4
    106x  fcos
    105x  fsin
-   100x  SUB84
+   101x  SUB84
     95x  CONCAT12
-    86x  CONCAT22
+    90x  CONCAT22
     82x  CONCAT14
     66x  CONCAT21
     64x  CONCAT13
@@ -97,19 +96,19 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5585 occurrences)
+TYPE: pointer_cast (5380 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2067x  (uint *)((int)
-  1302x  (int *)((int)
+  1872x  (uint *)((int)
+  1303x  (int *)((int)
    325x  (SRenderVertex *)((int)
-   301x  (float *)((int)
+   294x  (float *)((int)
    289x  (CMatrix3x4f *)((int)
    208x  (double *)((int)
    189x  (void *)((int)
    171x  (byte *)((int)
-    82x  (ushort *)((int)
+    80x  (ushort *)((int)
     72x  (char *)((int)
     61x  (short *)((int)
     34x  (SShapeEditorPolygon *)((int)
@@ -131,16 +130,14 @@ Example functions:
     puVar1 = (uint *)((int)g_ScreenBufferArray[y] + start_x * 2);...
   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar1) <...
-  cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0
-    piVar2 = (int *)((int)g_ScreenBufferArray + iVar8);...
 
 ====================================================================================================
-TYPE: unknown_field (896 occurrences)
+TYPE: unknown_field (909 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   379x  ._0_4_
-   317x  ._4_4_
+   382x  ._0_4_
+   327x  ._4_4_
     47x  ._0_2_
     36x  ._2_2_
     26x  ._8_4_
@@ -690,7 +687,7 @@ Example functions:
     Function declares 0 params but call sites push 2 (2 missing)...
 
 ====================================================================================================
-TYPE: stack_alignment_array (125 occurrences)
+TYPE: stack_alignment_array (122 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -702,7 +699,6 @@ Unique patterns:
      3x  aiStackY_1018
      3x  afStackY_1870
      3x  afStackY_1000
-     3x  afStackY_1860
      2x  uStackY_38
      2x  aiStackY_1038
      2x  aiStackY_10d4
@@ -711,6 +707,7 @@ Unique patterns:
      2x  aiStackY_101c
      2x  aiStackY_10d8
      2x  afStackY_1040
+     2x  afStackY_1860
      1x  aiStackY_1818
      1x  acStackY_1034
      1x  auStackY_1808
@@ -778,11 +775,11 @@ Example functions:
     char (*unaff_EBP) [4];...
 
 ====================================================================================================
-TYPE: sub84_truncation (100 occurrences)
+TYPE: sub84_truncation (101 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   100x  SUB84(
+   101x  SUB84(
 
 Example functions:
   crt_math.c_handle_math_error_FUN_0060c02b
@@ -1753,18 +1750,6 @@ Example functions:
     /* WARNING: This is an inlined function */...
   crt_math.c_round_FUN_005fe6b0
     /* WARNING: This is an inlined function */...
-
-====================================================================================================
-TYPE: bare_stack_ref (2 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  stack0xfffffd26
-     1x  stack0xfffffd12
-
-Example functions:
-  core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-    stack0xfffffd26 = *(uint *)((int)puVar29 + 6);...
 
 ====================================================================================================
 TYPE: cpuid_intrinsic (2 occurrences)

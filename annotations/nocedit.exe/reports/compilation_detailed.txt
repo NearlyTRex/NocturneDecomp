@@ -10,9 +10,9 @@ Failed: 603
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1224
+  other                           1230
   format_error                     793
-  incompatible_types               213
+  incompatible_types               208
   undeclared_identifier            140
   syntax_error                      41
   missing_member                    20
@@ -21,9 +21,11 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1224 errors)
+CATEGORY: other (1230 errors)
 ====================================================================================================
 
+  core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
+    Line 135: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed
   core_imp.cpp_CImp_process_FUN_004f9c30
     Line 279: C-style cast from 'CDemonActor *' to 'float' is not allowed
   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
@@ -57,9 +59,7 @@ CATEGORY: other (1224 errors)
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
     Line 76: C-style cast from 'uint' (aka 'unsigned int') to 'uchar[4]' (aka 'unsigned char[4]') is not allowed
   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-    Line 138: array type 'byte[4]' (aka 'unsigned char[4]') is not assignable
-  core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
-    Line 183: array type 'byte[4]' (aka 'unsigned char[4]') is not assignable
+    Line 135: array type 'byte[4]' (aka 'unsigned char[4]') is not assignable
   core_mmx.c_detectIntelProcessor_FUN_00524f4c
     Line 67: assigning to 'char *' from 'const char *' discards qualifiers
   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
@@ -80,10 +80,14 @@ CATEGORY: other (1224 errors)
     Line 33: cannot cast from type 'float' to pointer type 'CDemonActor *'
   core_script.cpp_CScript_step_FUN_0055a810
     Line 1382: cannot cast from type 'float' to pointer type 'CDemonActor *'
+  core_xform.cpp_lerpMatrix3x4_FUN_005f7140
+    Line 39: cannot cast from type 'float' to pointer type 'CMatrix3x3f *'
   core_set.cpp_CDemonSet_processActors_FUN_0056b810
     Line 69: cannot cast from type 'float' to pointer type 'CPathMap *'
   core_xform.cpp_multiplyQuaternion_FUN_005f7640
     Line 62: cannot cast from type 'float' to pointer type 'CQuaternion4f *'
+  core_xform.cpp_slerpQuaternion_FUN_005f77e0
+    Line 74: cannot cast from type 'float' to pointer type 'CQuaternion4f *'
   core_platfrm.cpp_CPlatform_process_FUN_0054cc30
     Line 276: cannot cast from type 'float' to pointer type 'CVector3f *'
   core_setcolid.cpp_rayTestQuadFloor_FUN_005715d0
@@ -321,17 +325,17 @@ CATEGORY: other (1224 errors)
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
     Line 155: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
   shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
-    Line 406: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
+    Line 404: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
   sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
     Line 30: member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union
   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
     Line 161: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
   core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
-    Line 119: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
+    Line 114: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0
     Line 95: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
   core_turret.cpp_CTurret_process_FUN_005e2430
-    Line 200: member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union
+    Line 192: member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union
   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
     Line 92: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
@@ -449,7 +453,7 @@ CATEGORY: other (1224 errors)
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
     Line 131: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
-    Line 334: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
+    Line 326: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10
     Line 20: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
@@ -525,13 +529,13 @@ CATEGORY: other (1224 errors)
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 499: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-    Line 286: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 281: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
     Line 69: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
     Line 50: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-    Line 226: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 221: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
     Line 30: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_sound.cpp_CSound_process_FUN_005b2fd0
@@ -543,7 +547,7 @@ CATEGORY: other (1224 errors)
   core_werewolf.cpp_CWerewolf_process_FUN_005efde0
     Line 282: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
-    Line 62: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 63: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     Line 78: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
@@ -592,8 +596,6 @@ CATEGORY: other (1224 errors)
     Line 41: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   sound_sndmain.cpp_formatSfxOptionsToString_FUN_005a8d00
     Line 19: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_platfrm.cpp_CPlatform_ctor_FUN_0054c850
-    Line 60: no matching conversion for C-style cast from 'CPlatform_ptr_784' to 'int'
   sound_sndwav.cpp_staticInit_FUN_005b0670
     Line 12: no matching conversion for C-style cast from 'CSoundDeviceBasic_vtable *' to 'CSoundDevice'
   sound_snddx.cpp_staticInit_FUN_005ade60
@@ -668,7 +670,7 @@ CATEGORY: format_error (793 errors)
   core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0
     Line 23: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0
-    Line 36: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
+    Line 35: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0
     Line 33: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
@@ -930,7 +932,7 @@ CATEGORY: format_error (793 errors)
   core_motion.cpp_CMotionList_save_FUN_0052d170
     Line 37: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-    Line 265: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
+    Line 260: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
   core_event.cpp_CEventList_render_FUN_004addf0
     Line 39: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
   core_event.cpp_CEventList_saveState_FUN_004b1380
@@ -1104,7 +1106,7 @@ CATEGORY: format_error (793 errors)
   shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60
     Line 55: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-    Line 329: format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]
+    Line 324: format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]
   core_bodypart.cpp_CBodyPart_archive_FUN_00419880
     Line 42: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110
@@ -1157,7 +1159,7 @@ CATEGORY: format_error (793 errors)
     Line 40: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: incompatible_types (213 errors)
+CATEGORY: incompatible_types (208 errors)
 ====================================================================================================
 
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
@@ -1220,6 +1222,8 @@ CATEGORY: incompatible_types (213 errors)
     Line 208: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_colonel.cpp_CColonel_process_FUN_0043fa00
     Line 245: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
+  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
+    Line 285: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_haystack.cpp_CHaystack_process_FUN_004f0e40
     Line 270: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
@@ -1348,20 +1352,14 @@ CATEGORY: incompatible_types (213 errors)
     Line 21: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
   shape_memdbg.cpp_openFile_FUN_0050f7a0
     Line 33: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
-  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
-    Line 200: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
-  core_scat.cpp_CScat_blendAimBones_FUN_005584a0
-    Line 138: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
     Line 97: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
   core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
-    Line 166: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
+    Line 214: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
   core_frankgen.cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500
     Line 17: invalid conversion specifier '.' [-Werror,-Wformat-invalid-specifier]
   shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
     Line 59: invalid operands to binary expression ('double' and 'int')
-  shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
-    Line 508: invalid operands to binary expression ('double' and 'int')
   shape_superopt.cpp_CVec_dot_FUN_005d82e0
     Line 14: invalid operands to binary expression ('double' and 'int')
   shape_superopt.cpp_CVec_getLength_FUN_005d8200
@@ -1639,7 +1637,7 @@ CATEGORY: type_error (10 errors)
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
     Line 28: unknown type name 'code'
   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
-    Line 29: unknown type name 'code'
+    Line 28: unknown type name 'code'
   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
     Line 13: unknown type name 'code'
   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030

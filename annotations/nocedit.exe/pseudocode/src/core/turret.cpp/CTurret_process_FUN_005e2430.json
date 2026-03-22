@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 13,
-        "line": 200,
+        "line": 192,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 202,
+        "line": 194,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       }
     ],
@@ -18,25 +18,29 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 379,
-    "complexity_score": 345,
+    "assembly_lines": 403,
+    "complexity_score": 277,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 200,
-    "suspect_count": 13,
+    "pseudocode_lines": 192,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
       "unknown_field"
     ],
-    "total_lines": 579
+    "total_lines": 595
   },
   "cross_references": [],
   "function": {
     "address": "005e2430",
     "address_range": [
+      [
+        "00599617",
+        "00599662"
+      ],
       [
         "005e2430",
         "005e290c"
@@ -197,18 +201,18 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.490445859872612,
-    "instruction_count": 314,
+    "avg_pcode_per_instr": 5.163636363636364,
+    "instruction_count": 330,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 5,
       "BOOL_OR": 7,
-      "BRANCH": 10,
+      "BRANCH": 14,
       "BRANCHIND": 1,
       "CALL": 18,
       "CALLIND": 4,
       "CBRANCH": 15,
-      "COPY": 655,
+      "COPY": 647,
       "FLOAT2FLOAT": 35,
       "FLOAT_ADD": 1,
       "FLOAT_DIV": 1,
@@ -219,25 +223,25 @@
       "FLOAT_SUB": 5,
       "INT2FLOAT": 5,
       "INT_ADD": 178,
-      "INT_AND": 105,
-      "INT_CARRY": 22,
-      "INT_EQUAL": 75,
+      "INT_AND": 113,
+      "INT_CARRY": 26,
+      "INT_EQUAL": 83,
       "INT_LEFT": 20,
       "INT_LESS": 8,
-      "INT_MULT": 25,
+      "INT_MULT": 9,
       "INT_NOTEQUAL": 26,
       "INT_OR": 25,
       "INT_SBORROW": 9,
-      "INT_SCARRY": 22,
-      "INT_SLESS": 37,
-      "INT_SUB": 96,
-      "INT_ZEXT": 44,
+      "INT_SCARRY": 26,
+      "INT_SLESS": 41,
+      "INT_SUB": 80,
+      "INT_ZEXT": 28,
       "LOAD": 85,
-      "POPCOUNT": 37,
+      "POPCOUNT": 41,
       "RETURN": 3,
       "STORE": 123
     },
-    "pcode_op_count": 1724
+    "pcode_op_count": 1704
   },
   "stack_frame": {
     "frame_size": 6264,
@@ -388,55 +392,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar7 = (uint *)((int)&local_90 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 122,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_90 + (uint)bVar9 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 131,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar8 = (uint *)((int)&local_50 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 132,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar6 = (uint *)((int)&local_70 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 133,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_50 + (uint)bVar9 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 134,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_70 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 143,
+      "line": 135,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar9 = (uint *)((int)&local_80 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
@@ -444,7 +400,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 136,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)&local_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
@@ -452,7 +408,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 145,
+      "line": 137,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_80 + (uint)bVar9 * -8 + 4) =",
@@ -460,7 +416,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 146,
+      "line": 138,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_60 + (uint)bVar9 * -8 + 4);",
@@ -468,7 +424,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 193,
+      "line": 185,
       "match": "._12_8_",
       "severity": "mild",
       "text": "local_30._12_8_ =",
@@ -476,7 +432,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 195,
+      "line": 187,
       "match": "._12_8_",
       "severity": "mild",
       "text": "if (0.0 <= (double)local_30._12_8_) {",

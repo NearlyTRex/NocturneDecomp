@@ -1,6 +1,6 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
 // Address: 0059f260
-// Address Range: [[0059f260, 0059f6dc]]
+// Address Range: [[0059f260, 0059f6dc] [005b3e15, 005b3e61]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260(CDeformableModelInstance *this_ptr,CQuaternion4f *source_quaternions,CVector3f *source_position,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
@@ -107,22 +107,13 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
               *puVar3 = *puVar2;
               puVar3[(uint)bVar13 * -2 + 1] = puVar2[(uint)bVar13 * -2 + 1];
               core_xform_cpp_multiplyQuaternion_FUN_005f7640(quat1_in,quat2_in,local_78);
-              local_b8.w = local_78[0].w;
-              puVar3 = (uint *)((int)&local_b8 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-              puVar2 = (uint *)((int)local_78 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-              *(uint *)((int)&local_b8 + (uint)bVar13 * -8 + 4) =
-                   *(uint *)((int)local_78 + (uint)bVar13 * -8 + 4);
-              *puVar3 = *puVar2;
-              puVar3[(uint)bVar13 * -2 + 1] = puVar2[(uint)bVar13 * -2 + 1];
               core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_b8,local_2c + iVar1,&local_98);
               puVar9 = &local_98.w;
             }
-            puVar9 = puVar9 + (uint)bVar13 * -2 + 1;
             local_d8.w = (float)*puVar9;
-            puVar2 = (uint *)((int)&local_d8 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-            *(uint *)((int)&local_d8 + (uint)bVar13 * -8 + 4) = *puVar9;
-            *puVar2 = puVar9[(uint)bVar13 * -2 + 1];
-            puVar2[(uint)bVar13 * -2 + 1] = (puVar9 + (uint)bVar13 * -2 + 1)[(uint)bVar13 * -2 + 1];
+            local_d8.x = (float)puVar9[1];
+            local_d8.y = (float)puVar9[2];
+            local_d8.z = (float)puVar9[3];
             core_xform_cpp_slerpQuaternion_FUN_005f77e0(local_30,&local_d8,blend_weight,&local_88);
             puVar3 = (uint *)((int)local_28 + (uint)bVar13 * -8 + 0x6b4);
             (local_28->bone_transform).pose_data.bone_rotations[0].w = local_88.w;

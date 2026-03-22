@@ -1,6 +1,6 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
 // Address: 0059ff20
-// Address Range: [[0059ff20, 005a00ed]]
+// Address Range: [[0059ff20, 005a00ed] [00604f9e, 00605014]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20(CDeformableModelInstance *this_ptr,CQuaternion4f *rotation_quat,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
@@ -15,10 +15,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
   int iVar2;
   uint *puVar3;
   CMatrix3x4f *pCVar4;
-  uint *puVar2;
   uint *puVar5;
   uint *puVar6;
-  uint *puVar4;
   CMatrix3x4f *pCVar7;
   byte bVar8;
   float afStackY_1860 [1497];
@@ -53,21 +51,11 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
         if ((float)1.0000000000000001e-05 < ABS(fStack_18 * local_28)) {
           core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70
                     (fStack_18 * local_28,&local_34,&CStack_44);
-          CStack_64.w = CStack_44.w;
-          puVar2 = (uint *)((int)&CStack_64 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-          puVar3 = (uint *)((int)&CStack_44 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-          *(uint *)((int)&CStack_64 + (uint)bVar8 * -8 + 4) =
-               *(uint *)((int)&CStack_44 + (uint)bVar8 * -8 + 4);
-          *puVar2 = *puVar3;
-          puVar2[(uint)bVar8 * -2 + 1] = puVar3[(uint)bVar8 * -2 + 1];
           core_xform_cpp_multiplyQuaternion_FUN_005f7640(local_1c,&CStack_64,&CStack_84);
-          puVar5 = (uint *)((int)local_20 + (uint)bVar8 * -8 + 0x6b4);
           (local_20->bone_transform).pose_data.bone_rotations[0].w = CStack_84.w;
-          puVar6 = puVar5 + (uint)bVar8 * -2 + 1;
-          puVar2 = (uint *)((int)&CStack_84 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-          *puVar5 = *(uint *)((int)&CStack_84 + (uint)bVar8 * -8 + 4);
-          *puVar6 = *puVar2;
-          puVar6[(uint)bVar8 * -2 + 1] = puVar2[(uint)bVar8 * -2 + 1];
+          (local_20->bone_transform).pose_data.bone_rotations[0].x = CStack_84.x;
+          (local_20->bone_transform).pose_data.bone_rotations[0].y = CStack_84.y;
+          (local_20->bone_transform).pose_data.bone_rotations[0].z = CStack_84.z;
         }
       }
       local_20 = (CDeformableModelInstance *)&(local_20->motion_controller).tween_speed;
@@ -79,13 +67,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
     return;
   }
   core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70(local_28 * blend_weight,&local_34,&local_74);
-  local_54.w = local_74.w;
-  puVar4 = (uint *)((int)&local_54 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-  puVar2 = (uint *)((int)&local_74 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-  *(uint *)((int)&local_54 + (uint)bVar8 * -8 + 4) =
-       *(uint *)((int)&local_74 + (uint)bVar8 * -8 + 4);
-  *puVar4 = *puVar2;
-  puVar4[(uint)bVar8 * -2 + 1] = puVar2[(uint)bVar8 * -2 + 1];
   core_xform_cpp_quaternionToMatrix3x4_FUN_005f73e0(&local_54,&local_b4);
   pCVar4 = &local_b4;
   pCVar7 = &local_e4;

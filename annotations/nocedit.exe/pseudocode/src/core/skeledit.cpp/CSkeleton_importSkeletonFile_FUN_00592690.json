@@ -4,115 +4,115 @@
       {
         "category": "other",
         "column": 47,
-        "line": 226,
+        "line": 221,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 58,
-        "line": 232,
+        "line": 227,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 238,
+        "line": 233,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 43,
-        "line": 243,
+        "line": 238,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 254,
+        "line": 249,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 20,
-        "line": 265,
+        "line": 260,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 264,
+        "line": 259,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 287,
+        "line": 282,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 100,
-        "line": 299,
+        "line": 294,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 72,
-        "line": 337,
+        "line": 332,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[260]' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 69,
-        "line": 337,
+        "line": 332,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 346,
+        "line": 341,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 89,
-        "line": 358,
+        "line": 353,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[260]' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 86,
-        "line": 358,
+        "line": 353,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 383,
+        "line": 378,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 121,
-        "line": 391,
+        "line": 386,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 399,
+        "line": 394,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 418,
+        "line": 413,
         "message": "member reference base type 'byte[13608]' (aka 'unsigned char[13608]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 45,
-        "line": 518,
+        "line": 513,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -120,14 +120,14 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 5087,
-    "complexity_score": 2215,
+    "assembly_lines": 5111,
+    "complexity_score": 2162,
     "cross_reference_count": 0,
     "function_call_count": 57,
     "global_count": 186,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 1900,
-    "suspect_count": 29,
+    "pseudocode_lines": 1887,
+    "suspect_count": 25,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
@@ -135,7 +135,7 @@
       "unknown_field",
       "warning_inlined_function"
     ],
-    "total_lines": 6987
+    "total_lines": 6998
   },
   "cross_references": [],
   "function": {
@@ -144,6 +144,10 @@
       [
         "00592690",
         "00595f23"
+      ],
+      [
+        "00605062",
+        "006050a5"
       ]
     ],
     "convention": "__cdecl",
@@ -1564,17 +1568,17 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.463204528673394,
-    "instruction_count": 4063,
+    "avg_pcode_per_instr": 4.4407943123314535,
+    "instruction_count": 4079,
     "opcode_distribution": {
       "BOOL_AND": 16,
       "BOOL_NEGATE": 131,
       "BOOL_OR": 42,
-      "BRANCH": 156,
+      "BRANCH": 160,
       "BRANCHIND": 2,
       "CALL": 293,
       "CBRANCH": 289,
-      "COPY": 4188,
+      "COPY": 4180,
       "FLOAT2FLOAT": 137,
       "FLOAT_ADD": 14,
       "FLOAT_DIV": 1,
@@ -1586,31 +1590,31 @@
       "FLOAT_SUB": 16,
       "INT2FLOAT": 14,
       "INT_ADD": 1806,
-      "INT_AND": 2009,
-      "INT_CARRY": 367,
-      "INT_EQUAL": 1724,
+      "INT_AND": 2017,
+      "INT_CARRY": 371,
+      "INT_EQUAL": 1732,
       "INT_LEFT": 62,
       "INT_LESS": 134,
-      "INT_MULT": 111,
+      "INT_MULT": 95,
       "INT_NEGATE": 1,
       "INT_NOTEQUAL": 164,
       "INT_OR": 106,
       "INT_SBORROW": 156,
-      "INT_SCARRY": 451,
+      "INT_SCARRY": 455,
       "INT_SEXT": 84,
-      "INT_SLESS": 856,
-      "INT_SUB": 1431,
+      "INT_SLESS": 860,
+      "INT_SUB": 1415,
       "INT_XOR": 46,
-      "INT_ZEXT": 71,
+      "INT_ZEXT": 55,
       "LOAD": 798,
-      "POPCOUNT": 838,
+      "POPCOUNT": 842,
       "RETURN": 4,
       "ROUND": 1,
       "STORE": 1503,
       "SUBPIECE": 56,
       "TRUNC": 1
     },
-    "pcode_op_count": 18134
+    "pcode_op_count": 18114
   },
   "stack_frame": {
     "frame_size": 57056,
@@ -3088,7 +3092,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 411,
+      "line": 406,
       "match": "._13604_4_",
       "severity": "mild",
       "text": "(this_ptr,auStack_113f8._13604_4_,local_10c);",
@@ -3096,23 +3100,23 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 492,
+      "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
+      "text": "pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar25 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 493,
+      "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
+      "text": "pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar25 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 497,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar28 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 498,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar25 = (CMatrix3x4f *)((int)pCVar25 + ((uint)bVar28 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 502,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (0 < *(int *)((int)aiStack_2720 + iVar15)) {",
@@ -3120,7 +3124,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 835,
+      "line": 830,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((float)local_ec->frame_count -",
@@ -3128,7 +3132,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 835,
+      "line": 830,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((float)local_ec->frame_count -",
@@ -3136,7 +3140,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1300,
+      "line": 1295,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "} while (local_f0 < *(int *)((int)aiStack_2720 + local_ac));",
@@ -3144,7 +3148,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1324,
+      "line": 1319,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (0 < *(int *)((int)aiStack_2900 + iVar15)) {",
@@ -3152,7 +3156,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1330,
+      "line": 1325,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "} while (iVar4 < *(int *)((int)aiStack_2900 + iVar15));",
@@ -3160,7 +3164,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1357,
+      "line": 1352,
       "match": "._13604_4_",
       "severity": "mild",
       "text": "if (0 < (int)local_a9b0._13604_4_) {",
@@ -3168,7 +3172,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1364,
+      "line": 1359,
       "match": "._13604_4_",
       "severity": "mild",
       "text": "} while (iVar15 < (int)local_a9b0._13604_4_);",
@@ -3176,18 +3180,26 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1431,
-      "match": "(uint *)((int)",
+      "line": 1458,
+      "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "puVar23 = (uint *)((int)pCVar17 + (uint)bVar28 * -8 + 4);",
+      "text": "pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar25 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1436,
-      "match": "(uint *)((int)",
+      "line": 1459,
+      "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "*puVar23 = *(uint *)((int)&local_214 + (uint)bVar28 * -8 + 4);",
+      "text": "pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar25 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1466,
+      "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
+      "text": "pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar25 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -3195,31 +3207,23 @@
       "line": 1467,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar28 * -2 + 1) * 4);",
+      "text": "pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar25 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1468,
+      "line": 1480,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar25 = (CMatrix3x4f *)((int)pCVar25 + ((uint)bVar28 * -2 + 1) * 4);",
+      "text": "pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar25 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1475,
-      "match": "(CMatrix3x4f *)((int)",
+      "line": 1481,
+      "match": "(CMatrix3x3f *)((int)",
       "severity": "mild",
-      "text": "pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar28 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1476,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar25 = (CMatrix3x4f *)((int)pCVar25 + ((uint)bVar28 * -2 + 1) * 4);",
+      "text": "pCVar23 = (CMatrix3x3f *)((int)pCVar23 + ((uint)bVar25 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -3227,44 +3231,12 @@
       "line": 1489,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar28 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1490,
-      "match": "(CMatrix3x3f *)((int)",
-      "severity": "mild",
-      "text": "pCVar26 = (CMatrix3x3f *)((int)pCVar26 + ((uint)bVar28 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1493,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar23 = (uint *)((int)pCVar17 + (uint)bVar28 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1498,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*puVar23 = *(uint *)((int)&local_224 + (uint)bVar28 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1502,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
       "text": "local_4c = &((CMatrix3x4f *)((int)local_4c + 0x60))->m[2].x;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1636,
+      "line": 1623,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (0.0 < SQRT(local_1e4 * local_1e4 + local_1ec * local_1ec + local_1e8 * local_1e8)) {",
@@ -3272,15 +3244,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1646,
+      "line": 1633,
       "match": "SBORROW4",
       "severity": "mild",
-      "text": "while (bVar27 || SBORROW4(iVar4,local_94) != iVar15 < 0) {",
+      "text": "while (bVar24 || SBORROW4(iVar4,local_94) != iVar15 < 0) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1673,
+      "line": 1660,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)&g_SkeleditBiasEntries[0].motion_index + iVar15);",
@@ -3288,7 +3260,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1691,
+      "line": 1678,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if ((-1 < *(int *)((int)&g_SkeleditBiasEntries[0].motion_index + iVar5)) &&",
@@ -3296,7 +3268,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1692,
+      "line": 1679,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(local_2540[*(int *)((int)&g_SkeleditBiasEntries[0].ref_motion_index + iVar5)] == 0",
@@ -3308,7 +3280,7 @@
       "expected_args": 1,
       "format_string": "No motions defined in %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 376,
+      "line_number": 371,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"No motions defined in %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

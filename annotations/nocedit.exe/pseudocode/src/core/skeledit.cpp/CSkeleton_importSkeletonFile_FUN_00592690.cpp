@@ -1,6 +1,6 @@
 // Name: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
 // Address: 00592690
-// Address Range: [[00592690, 00595f23]]
+// Address Range: [[00592690, 00595f23] [00605062, 006050a5]]
 // Convention: __cdecl
 // Signature: int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleton *this_ptr,char *filename)
 
@@ -36,15 +36,12 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   char *pcVar18;
   char (*pacVar19) [260];
   SSkeleditBiasEntry *pSVar20;
-  uint *puVar21;
-  CMatrix3x4f *pCVar22;
+  CMatrix3x4f *pCVar21;
   SMotionTransition *dest;
-  uint *puVar23;
-  uint *puVar24;
-  CMatrix3x4f *pCVar25;
-  CMatrix3x3f *pCVar26;
-  bool bVar27;
-  byte bVar28;
+  CMatrix3x4f *pCVar22;
+  CMatrix3x3f *pCVar23;
+  bool bVar24;
+  byte bVar25;
   byte auStack_113f8 [13608];
   char local_ded0 [32];
   int aiStack_deb0 [3392];
@@ -66,8 +63,7 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   char local_1d70 [256];
   char local_1c70 [256];
   char local_1b70 [256];
-  char local_1a70 [112];
-  uint auStack_1a00 [36];
+  char local_1a70 [256];
   char local_1970 [256];
   char local_1870 [256];
   char local_1770 [256];
@@ -75,8 +71,7 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   char local_1570 [256];
   char local_1470 [256];
   char local_1370 [256];
-  char local_1270 [100];
-  uint auStack_120c [39];
+  char local_1270 [256];
   char local_1170 [256];
   char local_1070 [256];
   char local_f70 [256];
@@ -216,7 +211,7 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   char local_18 [4];
   char local_14 [4];
   
-  bVar28 = 0;
+  bVar25 = 0;
   core_skeleton_cpp_CSkeleton_free_FUN_00599a50(this_ptr);
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (filename,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x103c);
@@ -277,8 +272,8 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   pcVar18 = local_1e74;
   for (iVar15 = 0x41; iVar15 != 0; iVar15 = iVar15 + -1) {
     *(uint *)pcVar18 = *(uint *)pcVar13;
-    pcVar13 = pcVar13 + ((uint)bVar28 * -2 + 1) * 4;
-    pcVar18 = pcVar18 + ((uint)bVar28 * -2 + 1) * 4;
+    pcVar13 = pcVar13 + ((uint)bVar25 * -2 + 1) * 4;
+    pcVar18 = pcVar18 + ((uint)bVar25 * -2 + 1) * 4;
   }
   do {
     iVar15 = _fgetc(p_Var3);
@@ -497,12 +492,12 @@ LAB_00592a67:
             local_144 = 0.0;
             local_140 = 0.0;
             local_a8 = &local_ec->fps;
-            pCVar22 = &CMatrix3x4f_00665968;
-            pCVar25 = &local_434;
+            pCVar21 = &CMatrix3x4f_00665968;
+            pCVar22 = &local_434;
             for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-              pCVar25->m[0].w = pCVar22->m[0].w;
-              pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar28 * -2 + 1) * 4);
-              pCVar25 = (CMatrix3x4f *)((int)pCVar25 + ((uint)bVar28 * -2 + 1) * 4);
+              pCVar22->m[0].w = pCVar21->m[0].w;
+              pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar25 * -2 + 1) * 4);
+              pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar25 * -2 + 1) * 4);
             }
             local_13c = 0.0;
             local_ac = iVar15;
@@ -1435,14 +1430,10 @@ LAB_0059518b:
                     do {
                       core_xform_cpp_matrixToQuaternion_FUN_005f7420
                                 ((CMatrix3x3f *)local_48,&local_214);
-                      puVar23 = (uint *)((int)pCVar17 + (uint)bVar28 * -8 + 4);
                       pCVar17->w = local_214.w;
-                      puVar24 = puVar23 + (uint)bVar28 * -2 + 1;
-                      puVar21 = (uint *)
-                                ((int)&local_214 + (uint)bVar28 * -8 + (uint)bVar28 * -8 + 8);
-                      *puVar23 = *(uint *)((int)&local_214 + (uint)bVar28 * -8 + 4);
-                      *puVar24 = *puVar21;
-                      puVar24[(uint)bVar28 * -2 + 1] = puVar21[(uint)bVar28 * -2 + 1];
+                      pCVar17->x = local_214.x;
+                      pCVar17->y = local_214.y;
+                      pCVar17->z = local_214.z;
                       local_60 = local_60 + 1;
                       local_48 = &((CMatrix3x4f *)(local_48 + 0x18))->m[2].x;
                       pCVar17 = pCVar17 + 1;
@@ -1467,20 +1458,20 @@ LAB_0059518b:
                   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                             (&local_3a4,&local_150,&local_180);
                   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(local_7434,&local_3a4,&local_344);
-                  pCVar22 = &local_344;
-                  pCVar25 = &local_3d4;
+                  pCVar21 = &local_344;
+                  pCVar22 = &local_3d4;
                   for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-                    pCVar25->m[0].w = pCVar22->m[0].w;
-                    pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar28 * -2 + 1) * 4);
-                    pCVar25 = (CMatrix3x4f *)((int)pCVar25 + ((uint)bVar28 * -2 + 1) * 4);
+                    pCVar22->m[0].w = pCVar21->m[0].w;
+                    pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar25 * -2 + 1) * 4);
+                    pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar25 * -2 + 1) * 4);
                   }
                   core_xform_cpp_inverse_FUN_005f6210(&local_3d4,&local_374);
-                  pCVar22 = &local_374;
-                  pCVar25 = &local_404;
+                  pCVar21 = &local_374;
+                  pCVar22 = &local_404;
                   for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-                    pCVar25->m[0].w = pCVar22->m[0].w;
-                    pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar28 * -2 + 1) * 4);
-                    pCVar25 = (CMatrix3x4f *)((int)pCVar25 + ((uint)bVar28 * -2 + 1) * 4);
+                    pCVar22->m[0].w = pCVar21->m[0].w;
+                    pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar25 * -2 + 1) * 4);
+                    pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar25 * -2 + 1) * 4);
                   }
                   local_5c = 0;
                   if (0 < this_ptr->bone_count) {
@@ -1489,22 +1480,18 @@ LAB_0059518b:
                     do {
                       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                                 ((CMatrix3x4f *)local_4c,&local_404,&local_314);
-                      pCVar22 = &local_314;
-                      pCVar26 = &local_2e4;
+                      pCVar21 = &local_314;
+                      pCVar23 = &local_2e4;
                       for (iVar15 = 0xc; iVar15 != 0; iVar15 = iVar15 + -1) {
-                        pCVar26->m[0].x = pCVar22->m[0].w;
-                        pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar28 * -2 + 1) * 4);
-                        pCVar26 = (CMatrix3x3f *)((int)pCVar26 + ((uint)bVar28 * -2 + 1) * 4);
+                        pCVar23->m[0].x = pCVar21->m[0].w;
+                        pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar25 * -2 + 1) * 4);
+                        pCVar23 = (CMatrix3x3f *)((int)pCVar23 + ((uint)bVar25 * -2 + 1) * 4);
                       }
                       core_xform_cpp_matrixToQuaternion_FUN_005f7420(&local_2e4,&local_224);
-                      puVar23 = (uint *)((int)pCVar17 + (uint)bVar28 * -8 + 4);
                       pCVar17->w = local_224.w;
-                      puVar24 = puVar23 + (uint)bVar28 * -2 + 1;
-                      puVar21 = (uint *)
-                                ((int)&local_224 + (uint)bVar28 * -8 + (uint)bVar28 * -8 + 8);
-                      *puVar23 = *(uint *)((int)&local_224 + (uint)bVar28 * -8 + 4);
-                      *puVar24 = *puVar21;
-                      puVar24[(uint)bVar28 * -2 + 1] = puVar21[(uint)bVar28 * -2 + 1];
+                      pCVar17->x = local_224.x;
+                      pCVar17->y = local_224.y;
+                      pCVar17->z = local_224.z;
                       local_5c = local_5c + 1;
                       local_4c = &((CMatrix3x4f *)((int)local_4c + 0x60))->m[2].x;
                       pCVar17 = pCVar17 + 1;
@@ -1648,9 +1635,9 @@ LAB_00595723:
               local_1e8 = local_1e8 * fVar10;
               local_1e4 = local_1e4 * fVar10;
               iVar15 = local_cc - local_94;
-              bVar27 = local_cc == local_94;
+              bVar24 = local_cc == local_94;
               iVar4 = local_cc;
-              while (bVar27 || SBORROW4(iVar4,local_94) != iVar15 < 0) {
+              while (bVar24 || SBORROW4(iVar4,local_94) != iVar15 < 0) {
                 iVar15 = local_ec->frame_start + iVar4;
                 pCVar9 = this_ptr->frame_positions_2;
                 pCVar9[iVar15].x = pCVar9[iVar15].x + local_1ec;
@@ -1658,7 +1645,7 @@ LAB_00595723:
                 iVar4 = iVar4 + 1;
                 pCVar9[iVar15].z = pCVar9[iVar15].z + local_1e4;
                 iVar15 = iVar4 - local_94;
-                bVar27 = iVar15 == 0;
+                bVar24 = iVar15 == 0;
               }
             }
             local_44 = local_44 + 1;
@@ -1743,7 +1730,7 @@ LAB_00595eb8:
             if (uVar8 == 0) break;
             uVar8 = uVar8 - 1;
             cVar2 = *pcVar13;
-            pcVar13 = pcVar13 + (uint)bVar28 * -2 + 1;
+            pcVar13 = pcVar13 + (uint)bVar25 * -2 + 1;
           } while (cVar2 != '\0');
           n = ~uVar8 - 1;
           if (0 < (int)n) {

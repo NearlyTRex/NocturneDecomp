@@ -1,6 +1,6 @@
 // Name: core_turret.cpp_CTurret_process_FUN_005e2430
 // Address: 005e2430
-// Address Range: [[005e2430, 005e290c]]
+// Address Range: [[00599617, 00599662] [005e2430, 005e290c]]
 // Convention: __cdecl
 // Signature: void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,float delta_time)
 
@@ -125,22 +125,14 @@ LAB_005e24c7:
     if (0.0 < this_ptr->timer) {
       core_xform_cpp_eulerToQuaternion_FUN_005f7b20(local_18,&local_40);
       local_90.w = local_40.w;
-      puVar7 = (uint *)((int)&local_90 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-      *(uint *)((int)&local_90 + (uint)bVar9 * -8 + 4) =
-           *(uint *)(local_30 + (uint)bVar9 * -8 + -0xc);
-      *puVar7 = *(uint *)(local_30 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + -8);
-      puVar7[(uint)bVar9 * -2 + 1] =
-           *(uint *)
-            ((int)(local_30 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + -8) + ((uint)bVar9 * -2 + 1) * 4
-            );
+      local_90.x = local_40.x;
+      local_90.y = local_40.y;
+      local_90.z = local_40.z;
       core_xform_cpp_eulerToQuaternion_FUN_005f7b20(local_1c,&local_70);
       local_50.w = local_70.w;
-      puVar8 = (uint *)((int)&local_50 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-      puVar6 = (uint *)((int)&local_70 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-      *(uint *)((int)&local_50 + (uint)bVar9 * -8 + 4) =
-           *(uint *)((int)&local_70 + (uint)bVar9 * -8 + 4);
-      *puVar8 = *puVar6;
-      puVar8[(uint)bVar9 * -2 + 1] = puVar6[(uint)bVar9 * -2 + 1];
+      local_50.x = local_70.x;
+      local_50.y = local_70.y;
+      local_50.z = local_70.z;
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
                 (&local_90,&local_50,
                  (delta_time / (this_ptr->timer + delta_time)) * (float)2,&local_60);

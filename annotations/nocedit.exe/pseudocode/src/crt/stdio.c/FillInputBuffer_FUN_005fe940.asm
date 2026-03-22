@@ -14,7 +14,6 @@
 ;   undefined4 CAVE_cave_006027e0
 ;   undefined4 SUB_00602880
 ;   undefined4 SUB_0060595c
-;   undefined4 SUB_006059b0
 ;
 ; *****************************************************************************
 
@@ -64,7 +63,7 @@ section .text
         ;   XREF to: 005fe9b7 (CONDITIONAL_JUMP)  ; LAB_005fe9b7
     MOV dword ptr [EBX + 0x4],ECX       ; 005fe99b
     CALL 0x006059b0                     ; 005fe99e
-        ;   XREF to: 006059b0 (UNCONDITIONAL_CALL)  ; SUB_006059b0
+        ;   XREF to: 006059b0 (UNCONDITIONAL_CALL)  ; LAB_006059af+1
     MOV EDX,EAX                         ; 005fe9a3
     CMP EAX,-0x1                        ; 005fe9a5
     JZ 0x005fe9da                       ; 005fe9a8
