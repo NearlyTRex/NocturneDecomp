@@ -5,14 +5,14 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6452
-Successful: 5847 (90.6%)
-Failed: 605
+Successful: 5846 (90.6%)
+Failed: 606
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1224
+  other                           1232
   format_error                     798
-  incompatible_types               204
+  incompatible_types               205
   undeclared_identifier            134
   syntax_error                      41
   missing_member                    20
@@ -21,11 +21,11 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1224 errors)
+CATEGORY: other (1232 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
-    Line 135: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed
+    Line 133: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed
   core_imp.cpp_CImp_process_FUN_004f9c30
     Line 279: C-style cast from 'CDemonActor *' to 'float' is not allowed
   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
@@ -1167,7 +1167,7 @@ CATEGORY: format_error (798 errors)
     Line 40: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: incompatible_types (204 errors)
+CATEGORY: incompatible_types (205 errors)
 ====================================================================================================
 
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
@@ -1334,6 +1334,8 @@ CATEGORY: incompatible_types (204 errors)
     Line 183: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'
   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
     Line 162: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'
+  core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240
+    Line 85: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'uint *' (aka 'unsigned int *'); dereference with *
   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
     Line 173: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'ushort *' (aka 'unsigned short *')
   core_inv.cpp_CInventory_addItem_FUN_004fd600
@@ -1649,7 +1651,7 @@ CATEGORY: type_error (9 errors)
   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
     Line 41: unknown type name 'code'
   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
-    Line 44: unknown type name 'code'
+    Line 42: unknown type name 'code'
   engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0
     Line 13: unknown type name 'code'
   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80

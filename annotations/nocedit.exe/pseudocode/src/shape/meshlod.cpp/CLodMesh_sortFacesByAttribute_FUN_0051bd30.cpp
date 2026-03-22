@@ -1,6 +1,6 @@
 // Name: shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
 // Address: 0051bd30
-// Address Range: [[0051bd30, 0051c068]]
+// Address Range: [[0051bd30, 0051c068] [00608a48, 00608ab3]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMesh *this_ptr,int attribute_index)
 
@@ -13,19 +13,22 @@ void __cdecl shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMe
   uint uVar1;
   uint uVar2;
   int iVar3;
+  uint uVar4;
+  uint uVar5;
+  uint uVar6;
+  uint uVar7;
   int iVar1;
-  int iVar4;
+  int iVar8;
   uint *puVar2;
-  uint *puVar6;
-  uint *puVar7;
+  uint *puVar9;
+  uint *puVar10;
   uint *puVar3;
   uint *puVar4;
-  uint *puVar8;
+  uint *puVar11;
   uint *puVar5;
   byte bVar6;
   int aiStackY_189c [1522];
-  uint auStack_bc [6];
-  uint local_a4 [6];
+  uint auStack_ac [8];
   uint local_8c;
   float afStack_88 [3];
   float local_7c;
@@ -51,25 +54,23 @@ void __cdecl shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMe
       local_28 = 0x8c;
       local_24 = 0;
       do {
-        puVar6 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_28);
+        puVar9 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_28);
         puVar2 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_24);
-        if ((int)puVar6[attribute_index] < (int)puVar2[attribute_index]) {
-          puVar7 = puVar2 + (uint)bVar6 * -2 + 1;
-          uVar1 = *puVar2;
-          auStack_bc[(uint)bVar6 * -2] = *puVar7;
-          auStack_bc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] = puVar7[(uint)bVar6 * -2 + 1];
-          (auStack_bc + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1] =
-               (puVar7 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
-          auStack_bc[3] = puVar2[4];
-          auStack_bc[(uint)bVar6 * -2 + 4] = puVar2[(uint)bVar6 * -2 + 5];
-          auStack_bc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 5] =
+        if ((int)puVar9[attribute_index] < (int)puVar2[attribute_index]) {
+          uVar4 = *puVar2;
+          uVar5 = puVar2[1];
+          uVar6 = puVar2[2];
+          uVar7 = puVar2[3];
+          uVar1 = puVar2[4];
+          auStack_ac[(uint)bVar6 * -2] = puVar2[(uint)bVar6 * -2 + 5];
+          auStack_ac[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
                (puVar2 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1];
-          puVar7 = puVar2 + 7;
-          puVar8 = auStack_bc + 6;
+          puVar10 = puVar2 + 7;
+          puVar11 = auStack_ac + 2;
           for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *puVar8 = *puVar7;
-            puVar7 = puVar7 + (uint)bVar6 * -2 + 1;
-            puVar8 = puVar8 + (uint)bVar6 * -2 + 1;
+            *puVar11 = *puVar10;
+            puVar10 = puVar10 + (uint)bVar6 * -2 + 1;
+            puVar11 = puVar11 + (uint)bVar6 * -2 + 1;
           }
           local_8c = puVar2[0xd];
           afStack_88[(uint)bVar6 * -2] = (float)puVar2[(uint)bVar6 * -2 + 0xe];
@@ -88,82 +89,77 @@ void __cdecl shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMe
                (puVar2 + (uint)bVar6 * -2 + 0x1f)[(uint)bVar6 * -2 + 1];
           aiStack_44[2] = puVar2[0x21];
           aiStack_44[3] = puVar2[0x22];
-          puVar8 = puVar2 + (uint)bVar6 * -2 + 1;
-          puVar7 = puVar6 + (uint)bVar6 * -2 + 1;
-          *puVar2 = *puVar6;
-          *puVar8 = *puVar7;
-          puVar8[(uint)bVar6 * -2 + 1] = puVar7[(uint)bVar6 * -2 + 1];
-          (puVar8 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1] =
-               (puVar7 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
-          puVar2[4] = puVar6[4];
-          puVar2[(uint)bVar6 * -2 + 5] = puVar6[(uint)bVar6 * -2 + 5];
+          *puVar2 = *puVar9;
+          puVar2[1] = puVar9[1];
+          puVar2[2] = puVar9[2];
+          puVar2[3] = puVar9[3];
+          puVar2[4] = puVar9[4];
+          puVar2[(uint)bVar6 * -2 + 5] = puVar9[(uint)bVar6 * -2 + 5];
           (puVar2 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1] =
-               (puVar6 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1];
-          puVar3 = puVar6 + 7;
+               (puVar9 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1];
+          puVar3 = puVar9 + 7;
           puVar5 = puVar2 + 7;
-          for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+          for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {
             puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
             puVar3 = puVar3 + (uint)bVar6 * -2 + 1;
             *puVar5 = *puVar3;
             puVar3 = puVar3;
             puVar5 = puVar5;
           }
-          puVar2[0xd] = puVar6[0xd];
-          puVar2[(uint)bVar6 * -2 + 0xe] = puVar6[(uint)bVar6 * -2 + 0xe];
+          puVar2[0xd] = puVar9[0xd];
+          puVar2[(uint)bVar6 * -2 + 0xe] = puVar9[(uint)bVar6 * -2 + 0xe];
           (puVar2 + (uint)bVar6 * -2 + 0xe)[(uint)bVar6 * -2 + 1] =
-               (puVar6 + (uint)bVar6 * -2 + 0xe)[(uint)bVar6 * -2 + 1];
-          puVar2[0x10] = puVar6[0x10];
-          if ((float *)(puVar6 + 0x11) != src_ptr) {
-            *src_ptr = (float)puVar6[0x11];
-            puVar2[0x12] = puVar6[0x12];
-            puVar2[0x13] = puVar6[0x13];
+               (puVar9 + (uint)bVar6 * -2 + 0xe)[(uint)bVar6 * -2 + 1];
+          puVar2[0x10] = puVar9[0x10];
+          if ((float *)(puVar9 + 0x11) != src_ptr) {
+            *src_ptr = (float)puVar9[0x11];
+            puVar2[0x12] = puVar9[0x12];
+            puVar2[0x13] = puVar9[0x13];
           }
-          puVar2[0x14] = puVar6[0x14];
+          puVar2[0x14] = puVar9[0x14];
           __arr_op
-                    (puVar2 + 0x15,puVar6 + 0x15,3,0xc,core_actor_cpp_copyVector_FUN_00410360);
-          puVar2[0x1e] = puVar6[0x1e];
-          puVar2[(uint)bVar6 * -2 + 0x1f] = puVar6[(uint)bVar6 * -2 + 0x1f];
+                    (puVar2 + 0x15,puVar9 + 0x15,3,0xc,core_actor_cpp_copyVector_FUN_00410360);
+          puVar2[0x1e] = puVar9[0x1e];
+          puVar2[(uint)bVar6 * -2 + 0x1f] = puVar9[(uint)bVar6 * -2 + 0x1f];
           (puVar2 + (uint)bVar6 * -2 + 0x1f)[(uint)bVar6 * -2 + 1] =
-               (puVar6 + (uint)bVar6 * -2 + 0x1f)[(uint)bVar6 * -2 + 1];
-          puVar2[0x21] = puVar6[0x21];
-          puVar2[0x22] = puVar6[0x22];
-          puVar7 = puVar6 + (uint)bVar6 * -2 + 1;
-          *puVar6 = uVar1;
-          *puVar7 = auStack_bc[(uint)bVar6 * -2];
-          puVar7[(uint)bVar6 * -2 + 1] = auStack_bc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-          (puVar7 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1] =
-               (auStack_bc + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
-          puVar6[4] = auStack_bc[3];
-          puVar6[(uint)bVar6 * -2 + 5] = auStack_bc[(uint)bVar6 * -2 + 4];
-          (puVar6 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1] =
-               auStack_bc[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 5];
-          puVar4 = auStack_bc + 6;
-          puVar7 = puVar6 + 7;
-          for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+               (puVar9 + (uint)bVar6 * -2 + 0x1f)[(uint)bVar6 * -2 + 1];
+          puVar2[0x21] = puVar9[0x21];
+          puVar2[0x22] = puVar9[0x22];
+          *puVar9 = uVar4;
+          puVar9[1] = uVar5;
+          puVar9[2] = uVar6;
+          puVar9[3] = uVar7;
+          puVar9[4] = uVar1;
+          puVar9[(uint)bVar6 * -2 + 5] = auStack_ac[(uint)bVar6 * -2];
+          (puVar9 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1] =
+               auStack_ac[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+          puVar4 = auStack_ac + 2;
+          puVar10 = puVar9 + 7;
+          for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {
             puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-            *puVar7 = *puVar4;
+            *puVar10 = *puVar4;
             puVar4 = puVar4;
-            puVar7 = puVar7 + (uint)bVar6 * -2 + 1;
+            puVar10 = puVar10 + (uint)bVar6 * -2 + 1;
           }
-          puVar6[0xd] = local_8c;
-          puVar6[(uint)bVar6 * -2 + 0xe] = afStack_88[(uint)bVar6 * -2];
-          (puVar6 + (uint)bVar6 * -2 + 0xe)[(uint)bVar6 * -2 + 1] =
+          puVar9[0xd] = local_8c;
+          puVar9[(uint)bVar6 * -2 + 0xe] = afStack_88[(uint)bVar6 * -2];
+          (puVar9 + (uint)bVar6 * -2 + 0xe)[(uint)bVar6 * -2 + 1] =
                afStack_88[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-          puVar6[0x10] = afStack_88[2];
-          if ((float *)(puVar6 + 0x11) != &local_7c) {
-            puVar6[0x11] = local_7c;
-            puVar6[0x12] = local_78;
-            puVar6[0x13] = local_74;
+          puVar9[0x10] = afStack_88[2];
+          if ((float *)(puVar9 + 0x11) != &local_7c) {
+            puVar9[0x11] = local_7c;
+            puVar9[0x12] = local_78;
+            puVar9[0x13] = local_74;
           }
-          puVar6[0x14] = local_70;
+          puVar9[0x14] = local_70;
           __arr_op
-                    (puVar6 + 0x15,local_6c,3,0xc,core_actor_cpp_copyVector_FUN_00410360);
-          puVar6[0x1e] = uVar2;
-          puVar6[(uint)bVar6 * -2 + 0x1f] = aiStack_44[(uint)bVar6 * -2];
-          (puVar6 + (uint)bVar6 * -2 + 0x1f)[(uint)bVar6 * -2 + 1] =
+                    (puVar9 + 0x15,local_6c,3,0xc,core_actor_cpp_copyVector_FUN_00410360);
+          puVar9[0x1e] = uVar2;
+          puVar9[(uint)bVar6 * -2 + 0x1f] = aiStack_44[(uint)bVar6 * -2];
+          (puVar9 + (uint)bVar6 * -2 + 0x1f)[(uint)bVar6 * -2 + 1] =
                aiStack_44[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-          puVar6[0x21] = aiStack_44[2];
-          puVar6[0x22] = aiStack_44[3];
+          puVar9[0x21] = aiStack_44[2];
+          puVar9[0x22] = aiStack_44[3];
           core_cloth_cpp_CVector3f_arrdtor_FUN_0043e460(local_6c,0);
         }
         local_24 = local_24 + 0x8c;

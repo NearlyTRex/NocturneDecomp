@@ -1,6 +1,6 @@
 // Name: shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
 // Address: 0045bd10
-// Address Range: [[0045bd10, 0045be3d]]
+// Address Range: [[0045bd10, 0045be3d] [00608b6d, 00608bb4]]
 // Convention: __stack_esi
 // Signature: SVertexData * __stack_esi shape_design_c_convertWorldToScreenCoordinates_FUN_0045bd10(SScreenCoord *input_coords,SVertexData *output_vertex)
 

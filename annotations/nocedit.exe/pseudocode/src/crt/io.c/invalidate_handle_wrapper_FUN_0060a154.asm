@@ -10,7 +10,6 @@
 ;   crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4 at 0060a3c7
 ;
 ; Referenced Globals:
-;   undefined4 SUB_00608af4
 ;   void* g_TlsDataBase
 ;
 ; Called Functions:
@@ -32,7 +31,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0060a16c
     PUSH EDX                            ; 0060a170
     CALL 0x00608af4                     ; 0060a171
-        ;   XREF to: 00608af4 (UNCONDITIONAL_CALL)  ; SUB_00608af4
+        ;   XREF to: 00608af4 (UNCONDITIONAL_CALL)  ; LAB_00608af2+2
     ADD ESP,0x4                         ; 0060a176
     RET                                 ; 0060a179
 

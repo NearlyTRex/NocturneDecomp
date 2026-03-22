@@ -19,9 +19,6 @@
 ;   crt_stdio.c_CreateFileVariadic_FUN_00609074 at 00609091
 ;
 ; Referenced Globals:
-;   undefined4 SUB_00608908
-;   undefined4 SUB_00608940
-;   undefined4 SUB_00608b88
 ;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
 ;   CREATE_FILE_A_FUNC* g_CreateFileAFunc = 00211c6a
 ;   TerminatedCString s_con_006590a0
@@ -54,7 +51,7 @@ section .text
     SUB ESP,0x18                        ; 006090a4
     MOV EDI,dword ptr [ESP + 0x38]      ; 006090a7
     CALL 0x00608940                     ; 006090ab
-        ;   XREF to: 00608940 (UNCONDITIONAL_CALL)  ; SUB_00608940
+        ;   XREF to: 00608940 (UNCONDITIONAL_CALL)  ; LAB_0060893e+2
     TEST EAX,EAX                        ; 006090b0
     JZ 0x006090c8                       ; 006090b2
         ;   XREF to: 006090c8 (CONDITIONAL_JUMP)  ; LAB_006090c8
@@ -107,7 +104,7 @@ section .text
     JNZ 0x00609164                      ; 00609139
         ;   XREF to: 00609164 (CONDITIONAL_JUMP)  ; LAB_00609164
     CALL 0x00608b88                     ; 0060913b
-        ;   XREF to: 00608b88 (UNCONDITIONAL_CALL)  ; SUB_00608b88
+        ;   XREF to: 00608b88 (UNCONDITIONAL_CALL)  ; LAB_00608b86+2
     PUSH EAX                            ; 00609140
     CALL dword ptr [0x00684ef0]         ; 00609141 | PTR_crt_sync.c_RegisterHandle_FUN_00602438_00684ef0
     ADD ESP,0x4                         ; 00609147
@@ -294,7 +291,7 @@ section .text
         ;   Label: LAB_006092cd
     PUSH EBP                            ; 006092ce
     CALL 0x00608908                     ; 006092cf
-        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; SUB_00608908
+        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; LAB_00608906+2
     ADD ESP,0x8                         ; 006092d4
     MOV EAX,EBP                         ; 006092d7
     ADD ESP,0x18                        ; 006092d9

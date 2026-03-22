@@ -24,25 +24,73 @@
         "column": 77,
         "line": 143,
         "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 195,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 29,
+        "line": 196,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 28,
+        "line": 197,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 200,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 381,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 58,
+        "line": 382,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 53,
+        "line": 383,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 60,
+        "line": 384,
+        "message": "member reference base type 'double' is not a structure or union"
       }
     ],
     "success": false,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 811,
-    "complexity_score": 938,
+    "assembly_lines": 847,
+    "complexity_score": 1019,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 388,
-    "suspect_count": 54,
+    "pseudocode_lines": 389,
+    "suspect_count": 62,
     "suspect_types": [
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 1199
+    "total_lines": 1236
   },
   "cross_references": [
     {
@@ -76,6 +124,10 @@
       [
         "005c9aa0",
         "005ca58d"
+      ],
+      [
+        "00608ab4",
+        "00608b26"
       ]
     ],
     "convention": "__cdecl",
@@ -163,14 +215,14 @@
     "estimated_params": 7
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.640992167101827,
-    "instruction_count": 766,
+    "avg_pcode_per_instr": 5.431645569620253,
+    "instruction_count": 790,
     "opcode_distribution": {
       "BOOL_NEGATE": 11,
       "BOOL_OR": 11,
-      "BRANCH": 14,
+      "BRANCH": 20,
       "CBRANCH": 27,
-      "COPY": 1934,
+      "COPY": 1922,
       "FLOAT2FLOAT": 158,
       "FLOAT_ADD": 13,
       "FLOAT_DIV": 1,
@@ -182,28 +234,28 @@
       "FLOAT_SUB": 6,
       "INT2FLOAT": 2,
       "INT_ADD": 568,
-      "INT_AND": 156,
-      "INT_CARRY": 29,
-      "INT_EQUAL": 122,
+      "INT_AND": 168,
+      "INT_CARRY": 35,
+      "INT_EQUAL": 134,
       "INT_LEFT": 24,
       "INT_LESS": 7,
-      "INT_MULT": 62,
+      "INT_MULT": 38,
       "INT_NOTEQUAL": 56,
       "INT_OR": 30,
       "INT_SBORROW": 7,
-      "INT_SCARRY": 36,
+      "INT_SCARRY": 42,
       "INT_SEXT": 78,
-      "INT_SLESS": 58,
-      "INT_SUB": 53,
+      "INT_SLESS": 64,
+      "INT_SUB": 29,
       "INT_XOR": 5,
-      "INT_ZEXT": 60,
+      "INT_ZEXT": 36,
       "LOAD": 405,
-      "POPCOUNT": 58,
+      "POPCOUNT": 64,
       "RETURN": 1,
       "STORE": 238,
       "SUBPIECE": 52
     },
-    "pcode_op_count": 4321
+    "pcode_op_count": 4291
   },
   "stack_frame": {
     "frame_size": 512,
@@ -837,8 +889,40 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 188,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_68._4_4_ = (double *)((ulonglong)local_98 >> 0x20);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 189,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_80 = *local_68._4_4_ + local_70;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 190,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_a8 = local_68._4_4_[1] + local_98;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 193,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_78._4_4_ = (uint *)((ulonglong)local_a8 >> 0x20);",
+      "type": "unknown_field"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 217,
+      "line": 218,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&buf_a[iVar5].end_pos.x + 4) = local_f8[1];",
@@ -846,7 +930,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 219,
+      "line": 220,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&buf_a[iVar5].end_pos.y + 4) = local_f8[3];",
@@ -854,7 +938,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 221,
+      "line": 222,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&buf_a[iVar5].end_pos.z + 4) = local_e4;",
@@ -862,7 +946,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 235,
+      "line": 236,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&(pSVar4->start_pos).x + 4) = piVar5[5];",
@@ -870,7 +954,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 237,
+      "line": 238,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&(pSVar4->start_pos).y + 4) = piVar5[7];",
@@ -878,7 +962,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 239,
+      "line": 240,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&(pSVar4->start_pos).z + 4) = piVar5[9];",
@@ -886,7 +970,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 241,
+      "line": 242,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&(pSVar4->end_pos).x + 4) = piVar5[0xb];",
@@ -894,7 +978,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 243,
+      "line": 244,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&(pSVar4->end_pos).y + 4) = piVar5[0xd];",
@@ -902,7 +986,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 245,
+      "line": 246,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&(pSVar4->end_pos).z + 4) = piVar5[0xf];",
@@ -910,7 +994,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 247,
+      "line": 248,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pSVar4->start_uv + 4) = piVar5[0x11];",
@@ -918,7 +1002,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 249,
+      "line": 250,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pSVar4->start_uv + 0xc) = piVar5[0x13];",
@@ -926,7 +1010,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 251,
+      "line": 252,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pSVar4->end_uv + 4) = piVar5[0x15];",
@@ -934,7 +1018,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 253,
+      "line": 254,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pSVar4->end_uv + 0xc) = piVar5[0x17];",
@@ -942,7 +1026,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 256,
+      "line": 257,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&buf_b[iVar5].start_pos.x + 4) = local_f8[1];",
@@ -950,7 +1034,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 258,
+      "line": 259,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&buf_b[iVar5].start_pos.y + 4) = local_f8[3];",
@@ -958,7 +1042,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 260,
+      "line": 261,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&buf_b[iVar5].start_pos.z + 4) = local_e4;",
@@ -966,7 +1050,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 286,
+      "line": 287,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&buf_b[iVar5].end_pos.x + 4) = local_f8[1];",
@@ -974,7 +1058,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 288,
+      "line": 289,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&buf_b[iVar5].end_pos.y + 4) = local_f8[3];",
@@ -982,7 +1066,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 290,
+      "line": 291,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&buf_b[iVar5].end_pos.z + 4) = local_e4;",
@@ -990,7 +1074,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 304,
+      "line": 305,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&(pSVar4->start_pos).x + 4) = piVar5[5];",
@@ -998,7 +1082,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 306,
+      "line": 307,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&(pSVar4->start_pos).y + 4) = piVar5[7];",
@@ -1006,7 +1090,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 308,
+      "line": 309,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&(pSVar4->start_pos).z + 4) = piVar5[9];",
@@ -1014,7 +1098,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 310,
+      "line": 311,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&(pSVar4->end_pos).x + 4) = piVar5[0xb];",
@@ -1022,7 +1106,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 312,
+      "line": 313,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&(pSVar4->end_pos).y + 4) = piVar5[0xd];",
@@ -1030,7 +1114,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 314,
+      "line": 315,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&(pSVar4->end_pos).z + 4) = piVar5[0xf];",
@@ -1038,7 +1122,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 316,
+      "line": 317,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pSVar4->start_uv + 4) = piVar5[0x11];",
@@ -1046,7 +1130,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 318,
+      "line": 319,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pSVar4->start_uv + 0xc) = piVar5[0x13];",
@@ -1054,7 +1138,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 320,
+      "line": 321,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pSVar4->end_uv + 4) = piVar5[0x15];",
@@ -1062,7 +1146,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 322,
+      "line": 323,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pSVar4->end_uv + 0xc) = piVar5[0x17];",
@@ -1070,7 +1154,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 325,
+      "line": 326,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&buf_a[iVar5].start_pos.x + 4) = local_f8[1];",
@@ -1078,7 +1162,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 327,
+      "line": 328,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&buf_a[iVar5].start_pos.y + 4) = local_f8[3];",
@@ -1086,7 +1170,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 329,
+      "line": 330,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&buf_a[iVar5].start_pos.z + 4) = local_e4;",
@@ -1094,7 +1178,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 353,
+      "line": 354,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pSVar4->end_uv + 4) = piVar5[0x15];",
@@ -1102,31 +1186,63 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 355,
+      "line": 356,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pSVar4->end_uv + 0xc) = piVar5[0x17];",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unknown/mangled field access",
       "line": 374,
-      "match": "(int *)((int)",
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "*(int *)((int)pSVar3->start_uv + 4) = piVar5[0x11];",
-      "type": "pointer_cast"
+      "text": "*(uint *)pSVar3->start_uv = *local_78._4_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
+      "line": 375,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)pSVar3->start_uv + 4) = local_78._4_4_[1];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 375,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "*(uint *)((int)pSVar3->start_uv + 4) = local_78._4_4_[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
       "line": 376,
-      "match": "(int *)((int)",
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "*(int *)((int)pSVar3->start_uv + 0xc) = piVar5[0x13];",
-      "type": "pointer_cast"
+      "text": "*(uint *)(pSVar3->start_uv + 1) = local_78._4_4_[2];",
+      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 378,
+      "line": 377,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)pSVar3->start_uv + 0xc) = local_78._4_4_[3];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 377,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "*(uint *)((int)pSVar3->start_uv + 0xc) = local_78._4_4_[3];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 379,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pSVar3->end_uv + 4) = piVar5[0x15];",
@@ -1134,7 +1250,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 380,
+      "line": 381,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pSVar3->end_uv + 0xc) = piVar5[0x17];",

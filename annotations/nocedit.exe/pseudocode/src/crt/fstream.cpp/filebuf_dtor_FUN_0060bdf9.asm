@@ -11,7 +11,6 @@
 ;   crt_fstream.cpp_fstreambase_dtor_FUN_00606509 at 0060653a
 ;
 ; Referenced Globals:
-;   undefined4 SUB_00608bcc
 ;   filebuf_vtable g_FilebufVTable
 ;   WatcomTypeInfo g_FilebufTypeInfo
 ;
@@ -51,7 +50,7 @@ section .text
         ;   XREF to: 0060be34 (CONDITIONAL_JUMP)  ; LAB_0060be34
     PUSH EBX                            ; 0060be2b
     CALL 0x00608bcc                     ; 0060be2c
-        ;   XREF to: 00608bcc (UNCONDITIONAL_CALL)  ; SUB_00608bcc
+        ;   XREF to: 00608bcc (UNCONDITIONAL_CALL)  ; LAB_00608bcb+1
     ADD ESP,0x4                         ; 0060be31
     PUSH 0x1                            ; 0060be34
         ;   Label: LAB_0060be34

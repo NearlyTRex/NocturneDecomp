@@ -5,14 +5,14 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6452
-Successful: 5847 (90.6%)
-Failed: 605
+Successful: 5846 (90.6%)
+Failed: 606
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1224
+  other                           1232
   format_error                     798
-  incompatible_types               204
+  incompatible_types               205
   undeclared_identifier            134
   syntax_error                      41
   missing_member                    20
@@ -21,11 +21,11 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1224 errors)
+CATEGORY: other (1232 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
-    Line 135: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed...
+    Line 133: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed...
   core_imp.cpp_CImp_process_FUN_004f9c30
     Line 279: C-style cast from 'CDemonActor *' to 'float' is not allowed...
   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
@@ -155,7 +155,7 @@ CATEGORY: format_error (798 errors)
   ... and 237 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (204 errors)
+CATEGORY: incompatible_types (205 errors)
 ====================================================================================================
 
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
@@ -219,7 +219,7 @@ CATEGORY: incompatible_types (204 errors)
   core_colonel.cpp_CColonel_process_FUN_0043fa00
     Line 244: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int...
 
-  ... and 85 more errors
+  ... and 86 more errors
 
 ====================================================================================================
 CATEGORY: undeclared_identifier (134 errors)
@@ -379,7 +379,7 @@ CATEGORY: type_error (9 errors)
   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
     Line 41: unknown type name 'code'...
   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
-    Line 44: unknown type name 'code'...
+    Line 42: unknown type name 'code'...
   engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0
     Line 13: unknown type name 'code'...
   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
@@ -412,7 +412,7 @@ COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
 Average suspects in successfully compiled functions: 1.73
-Average suspects in failed compilations: 7.27
+Average suspects in failed compilations: 7.24
 
-Functions that compile but have suspect patterns: 1433
+Functions that compile but have suspect patterns: 1432
 (These may have runtime issues even though syntax is valid)

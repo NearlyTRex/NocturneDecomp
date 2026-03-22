@@ -22,7 +22,6 @@
 ;
 ; Referenced Globals:
 ;   undefined4 CAVE_cave_006088b0
-;   undefined4 SUB_00608908
 ;   SET_FILE_POINTER_FUNC* g_SetFilePointerFunc = 002121b6
 ;   ENTER_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8 = 00602434
 ;   EXIT_CRITICAL_SECTION_BY_INDEX_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec = 00602434
@@ -78,7 +77,7 @@ section .text
     PUSH EAX                            ; 006066d7
     PUSH EBX                            ; 006066d8
     CALL 0x00608908                     ; 006066d9
-        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; SUB_00608908
+        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; LAB_00608906+2
     ADD ESP,0x8                         ; 006066de
     MOV ESI,dword ptr [0x0068526c]      ; 006066e1 | g_IOControlBlock
         ;   Label: LAB_006066e1

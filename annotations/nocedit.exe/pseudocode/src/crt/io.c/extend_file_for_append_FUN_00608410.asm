@@ -13,7 +13,6 @@
 ;
 ; Referenced Globals:
 ;   undefined4 CAVE_cave_006088b0
-;   undefined4 SUB_00608908
 ;
 ; Called Functions:
 ;   crt_io.c_write_FUN_006084ec
@@ -61,7 +60,7 @@ section .text
     PUSH EAX                            ; 00608460
     PUSH EDI                            ; 00608461
     CALL 0x00608908                     ; 00608462
-        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; SUB_00608908
+        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; LAB_00608906+2
     ADD ESP,0x8                         ; 00608467
     TEST EBX,EBX                        ; 0060846a
     JLE 0x006084dd                      ; 0060846c
@@ -114,7 +113,7 @@ section .text
     PUSH EAX                            ; 006084ca
     PUSH EDI                            ; 006084cb
     CALL 0x00608908                     ; 006084cc
-        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; SUB_00608908
+        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; LAB_00608906+2
     ADD ESP,0x8                         ; 006084d1
     CMP EBX,-0x1                        ; 006084d4
     JNZ 0x006084dd                      ; 006084d7

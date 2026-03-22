@@ -6,45 +6,10 @@ MOVSD STRUCT COPY ANALYSIS
 decompiler cannot analyze them, producing garbled bVar*-8 pointer arithmetic.
 These can be fixed by replacing them with explicit MOV instructions in code caves.
 
-Fixable sites:       24
+Fixable sites:       0
 Unfixable sites:     4
-Total sites:         28
-Est. cave space:     ~888 bytes
-
-----------------------------------------------------------------------------------------------------
-FIXABLE SITES (by function, sorted by site count)
-----------------------------------------------------------------------------------------------------
-  CStranger_updateProceduralAnimation_FUN_005be520                    7 sites  ~259 bytes
-    0x005bef97  (9 bytes borrowable)
-    0x005bf0f6  (9 bytes borrowable)
-    0x005bf31b  (9 bytes borrowable)
-    0x005bf48e  (9 bytes borrowable)
-    0x005bf5a6  (5 bytes borrowable)
-    0x005bf634  (5 bytes borrowable)
-    0x005bf683  (5 bytes borrowable)
-  CDeformableModelInstance_updateMotion_FUN_0059e0a0                  4 sites  ~148 bytes
-    0x0059e40e  (11 bytes borrowable)
-    0x0059e4a2  (11 bytes borrowable)
-    0x0059e706  (8 bytes borrowable)
-    0x0059e7d3  (8 bytes borrowable)
-  calculateVertexAngle_FUN_00462050                                   3 sites  ~111 bytes
-    0x00462069  (5 bytes borrowable)
-    0x0046207b  (5 bytes borrowable)
-    0x0046208d  (5 bytes borrowable)
-  CLodMesh_sortFacesByAttribute_FUN_0051bd30                          3 sites  ~111 bytes
-    0x0051be1c  (8 bytes borrowable)
-    0x0051beda  (7 bytes borrowable)
-    0x0051bfba  (6 bytes borrowable)
-  CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0                      3 sites  ~111 bytes
-    0x005c9e2c  (11 bytes borrowable)
-    0x005c9e5e  (6 bytes borrowable)
-    0x005c9e97  (11 bytes borrowable)
-  CDeformableModel_sortFacesByTexture_FUN_0058e240                    2 sites  ~74 bytes
-    0x0058e33a  (6 bytes borrowable)
-    0x0058e344  (6 bytes borrowable)
-  convertWorldToScreenCoordinates_FUN_0045bd10                        2 sites  ~74 bytes
-    0x0045be25  (5 bytes borrowable)
-    0x0045be30  (5 bytes borrowable)
+Total sites:         4
+Est. cave space:     ~0 bytes
 
 ----------------------------------------------------------------------------------------------------
 UNFIXABLE SITES (cannot borrow enough bytes for JMP)

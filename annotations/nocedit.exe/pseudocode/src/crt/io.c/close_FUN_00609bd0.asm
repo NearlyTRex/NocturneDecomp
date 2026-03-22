@@ -11,7 +11,6 @@
 ;   crt_stdio.c__fclose_FUN_00601fd0 at 0060203e
 ;
 ; Referenced Globals:
-;   undefined4 SUB_00608908
 ;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
 ;   uint g_MaxHandleCount = 0x14
 ;   SIOControlBlock* g_IOControlBlock = 00000000
@@ -93,7 +92,7 @@ section .text
         ;   Label: LAB_00609c5f
     PUSH EBX                            ; 00609c61
     CALL 0x00608908                     ; 00609c62
-        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; SUB_00608908
+        ;   XREF to: 00608908 (UNCONDITIONAL_CALL)  ; LAB_00608906+2
     ADD ESP,0x8                         ; 00609c67
     MOV EAX,EDI                         ; 00609c6a
         ;   Label: LAB_00609c6a

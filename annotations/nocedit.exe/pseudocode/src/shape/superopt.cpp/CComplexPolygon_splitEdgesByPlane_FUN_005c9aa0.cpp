@@ -1,6 +1,6 @@
 // Name: shape_superopt.cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0
 // Address: 005c9aa0
-// Address Range: [[005c9aa0, 005ca58d]]
+// Address Range: [[005c9aa0, 005ca58d] [00608ab4, 00608b26]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_superopt_cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0(CComplexPolygon *this_ptr,CVector3d *plane_normal,CVector3d *plane_point,SExpandedEdge *buf_a,SExpandedEdge *buf_b,int *count_a,int *count_b)
 
@@ -183,20 +183,21 @@ void __cdecl shape_superopt_cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0(C
           pdVar6 = (double *)((int)pdVar6 + 4);
           puVar8 = puVar8 + 1;
         }
-        pdVar8 = (double *)(piVar5 + 0x10);
         local_40 = (double *)(piVar5 + 0x14);
-        local_90 = *pdVar8 - *local_40;
+        local_90 = *(double *)(piVar5 + 0x10) - *local_40;
         local_88 = *(double *)(piVar5 + 0x12) - *(double *)(piVar5 + 0x16);
         local_60 = local_90;
         local_58 = local_88;
         local_70 = local_90 * dVar2;
-        local_68 = local_88 * dVar2;
+        local_98 = local_88 * dVar2;
+        local_68 = local_98;
         local_a0 = local_70;
-        local_98 = local_68;
-        local_80 = *pdVar8 + local_70;
-        local_78 = *(double *)(piVar5 + 0x12) + local_68;
+        local_68._4_4_ = (double *)((ulonglong)local_98 >> 0x20);
+        local_80 = *local_68._4_4_ + local_70;
+        local_a8 = local_68._4_4_[1] + local_98;
+        local_78 = local_a8;
         local_b0 = local_80;
-        local_a8 = local_78;
+        local_78._4_4_ = (uint *)((ulonglong)local_a8 >> 0x20);
         if ((local_3c == 1) || (local_24 == 1)) {
           if ((local_3c == -1) || (local_30 == -1)) {
             local_34 = (double *)(piVar5 + 0x14);
@@ -228,7 +229,7 @@ void __cdecl shape_superopt_cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0(C
               *(uint *)((int)&buf_a[iVar5].end_pos.z + 4) = local_e4;
               iVar5 = *count_a;
               buf_a[iVar5].end_uv[0] = local_80;
-              buf_a[iVar5].end_uv[1] = local_78;
+              buf_a[iVar5].end_uv[1] = local_a8;
               buf_a[*count_a].start_side = -1;
               buf_a[*count_a].end_side = 0;
               *count_a = *count_a + 1;
@@ -267,7 +268,7 @@ void __cdecl shape_superopt_cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0(C
               *(uint *)((int)&buf_b[iVar5].start_pos.z + 4) = local_e4;
               iVar5 = *count_b;
               buf_b[iVar5].start_uv[0] = local_80;
-              buf_b[iVar5].start_uv[1] = local_78;
+              buf_b[iVar5].start_uv[1] = local_a8;
               buf_b[*count_b].start_side = 0;
               buf_b[*count_b].end_side = 1;
               *count_b = *count_b + 1;
@@ -297,7 +298,7 @@ void __cdecl shape_superopt_cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0(C
               *(uint *)((int)&buf_b[iVar5].end_pos.z + 4) = local_e4;
               iVar5 = *count_b;
               buf_b[iVar5].end_uv[0] = local_80;
-              buf_b[iVar5].end_uv[1] = local_78;
+              buf_b[iVar5].end_uv[1] = local_a8;
               buf_b[*count_b].start_side = 1;
               local_18 = *count_b * 0x60;
               buf_b[*count_b].end_side = 0;
@@ -336,7 +337,7 @@ void __cdecl shape_superopt_cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0(C
               *(uint *)((int)&buf_a[iVar5].start_pos.z + 4) = local_e4;
               iVar5 = *count_a;
               buf_a[iVar5].start_uv[0] = local_80;
-              buf_a[iVar5].start_uv[1] = local_78;
+              buf_a[iVar5].start_uv[1] = local_a8;
               buf_a[*count_a].start_side = 0;
               buf_a[*count_a].end_side = -1;
               *count_a = *count_a + 1;
@@ -377,10 +378,10 @@ void __cdecl shape_superopt_cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0(C
           (pSVar3->end_pos).x = *local_20;
           (pSVar3->end_pos).y = local_20[1];
           (pSVar3->end_pos).z = local_20[2];
-          *(uint *)pSVar3->start_uv = *(uint *)pdVar8;
-          *(int *)((int)pSVar3->start_uv + 4) = piVar5[0x11];
-          *(int *)(pSVar3->start_uv + 1) = piVar5[0x12];
-          *(int *)((int)pSVar3->start_uv + 0xc) = piVar5[0x13];
+          *(uint *)pSVar3->start_uv = *local_78._4_4_;
+          *(uint *)((int)pSVar3->start_uv + 4) = local_78._4_4_[1];
+          *(uint *)(pSVar3->start_uv + 1) = local_78._4_4_[2];
+          *(uint *)((int)pSVar3->start_uv + 0xc) = local_78._4_4_[3];
           *(uint *)pSVar3->end_uv = *(uint *)local_40;
           *(int *)((int)pSVar3->end_uv + 4) = piVar5[0x15];
           *(int *)(pSVar3->end_uv + 1) = piVar5[0x16];

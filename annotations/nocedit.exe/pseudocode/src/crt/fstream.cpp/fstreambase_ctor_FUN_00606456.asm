@@ -16,7 +16,6 @@
 ;   crt_fstream.cpp_ofstream_ctor_FUN_005ff710 at 005ff730
 ;
 ; Referenced Globals:
-;   undefined4 SUB_00608c15
 ;   WatcomVirtualBaseDescriptor g_FStreamBase_VirtualBaseLayout
 ;   void* g_FStreamBase_Destructor = 00606509
 ;   void* g_FStreamBase_IOSDestructor = 006064f1
@@ -78,7 +77,7 @@ section .text
     PUSH EDI                            ; 006064c9
     PUSH ESI                            ; 006064ca
     CALL 0x00608c15                     ; 006064cb
-        ;   XREF to: 00608c15 (UNCONDITIONAL_CALL)  ; SUB_00608c15
+        ;   XREF to: 00608c15 (UNCONDITIONAL_CALL)  ; LAB_00608c13+2
     ADD ESP,0x10                        ; 006064d0
     TEST EAX,EAX                        ; 006064d3
     JZ 0x006064dd                       ; 006064d5

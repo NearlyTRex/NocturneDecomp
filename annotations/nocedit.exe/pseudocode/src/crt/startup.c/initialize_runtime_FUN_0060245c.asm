@@ -12,7 +12,6 @@
 ;   crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8 at 006026ba
 ;
 ; Referenced Globals:
-;   undefined4 SUB_00608b20
 ;   EXIT_PROCESS_FUNC* g_ExitProcessFunc = 00211d12
 ;   GET_COMMAND_LINE_A_FUNC* g_GetCommandLineAFunc = 00211df8
 ;   GET_COMMAND_LINE_W_FUNC* g_GetCommandLineWFunc = 00211e0a
@@ -27,7 +26,8 @@
 ;   WCHAR* g_CommandLineArgsW = 00000000
 ;   WCHAR* g_ExeFileNameW = 00000000
 ;   WCHAR* g_DllFileNameW = 00000000
-;   ... and 17 more
+;   char* g_EnvironmentStrings = 00000000
+;   ... and 16 more
 ;
 ; Called Functions:
 ;   crt_startup.c_GetModuleFileNameCompat_FUN_0060a560
@@ -63,7 +63,7 @@ section .text
     CALL dword ptr CS:[0x611534]        ; 0060248a
         ;   XREF to: EXTERNAL:00000058 (UNCONDITIONAL_CALL)  ; g_ExitProcessFunc
     CALL 0x00608b20                     ; 00602491
-        ;   XREF to: 00608b20 (UNCONDITIONAL_CALL)  ; SUB_00608b20
+        ;   XREF to: 00608b20 (UNCONDITIONAL_CALL)  ; LAB_00608b1b+5
         ;   Label: LAB_00602491
     CALL dword ptr CS:[0x61158c]        ; 00602496 | g_GetEnvironmentStringsFunc
     XOR EBX,EBX                         ; 0060249d

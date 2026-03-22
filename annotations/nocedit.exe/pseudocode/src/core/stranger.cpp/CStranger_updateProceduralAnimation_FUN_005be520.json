@@ -4,7 +4,7 @@
       {
         "category": "type_error",
         "column": 3,
-        "line": 44,
+        "line": 42,
         "message": "unknown type name 'code'"
       }
     ],
@@ -12,21 +12,21 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 1445,
-    "complexity_score": 1000,
+    "assembly_lines": 1530,
+    "complexity_score": 669,
     "cross_reference_count": 2,
     "function_call_count": 24,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 570,
-    "suspect_count": 41,
+    "pseudocode_lines": 519,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unresolved_funcptr",
       "warning_inlined_function"
     ],
-    "total_lines": 2015
+    "total_lines": 2049
   },
   "cross_references": [
     {
@@ -52,6 +52,10 @@
       [
         "006056e2",
         "006057a8"
+      ],
+      [
+        "006088b0",
+        "006089ad"
       ],
       [
         "0060fa66",
@@ -428,17 +432,17 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.390916463909164,
-    "instruction_count": 1233,
+    "avg_pcode_per_instr": 5.1024049650892165,
+    "instruction_count": 1289,
     "opcode_distribution": {
       "BOOL_NEGATE": 19,
       "BOOL_OR": 29,
-      "BRANCH": 37,
+      "BRANCH": 51,
       "CALL": 67,
       "CALLIND": 1,
       "CALLOTHER": 5,
       "CBRANCH": 42,
-      "COPY": 2695,
+      "COPY": 2667,
       "FLOAT2FLOAT": 197,
       "FLOAT_ADD": 16,
       "FLOAT_DIV": 7,
@@ -451,26 +455,26 @@
       "FLOAT_SUB": 25,
       "INT2FLOAT": 26,
       "INT_ADD": 639,
-      "INT_AND": 367,
-      "INT_CARRY": 86,
-      "INT_EQUAL": 252,
+      "INT_AND": 395,
+      "INT_CARRY": 100,
+      "INT_EQUAL": 280,
       "INT_LEFT": 88,
       "INT_LESS": 25,
-      "INT_MULT": 64,
+      "INT_MULT": 8,
       "INT_NOTEQUAL": 112,
       "INT_OR": 111,
       "INT_SBORROW": 25,
-      "INT_SCARRY": 86,
-      "INT_SLESS": 126,
-      "INT_SUB": 361,
+      "INT_SCARRY": 100,
+      "INT_SLESS": 140,
+      "INT_SUB": 305,
       "INT_XOR": 9,
-      "INT_ZEXT": 152,
+      "INT_ZEXT": 96,
       "LOAD": 272,
-      "POPCOUNT": 126,
+      "POPCOUNT": 140,
       "RETURN": 2,
       "STORE": 461
     },
-    "pcode_op_count": 6647
+    "pcode_op_count": 6577
   },
   "stack_frame": {
     "frame_size": 7956,
@@ -1216,7 +1220,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 37,
+      "line": 35,
       "match": "code *",
       "severity": "moderate",
       "text": "code *blend_callback;",
@@ -1224,7 +1228,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 197,
+      "line": 195,
       "match": "(CQuaternion4f *)((int)",
       "severity": "mild",
       "text": "pCVar11 = (CQuaternion4f *)((int)pCVar11 + (uint)bVar15 * -8 + 4);",
@@ -1232,7 +1236,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
+      "line": 196,
       "match": "(CQuaternion4f *)((int)",
       "severity": "mild",
       "text": "pCVar8 = (CQuaternion4f *)((int)pCVar8 + (uint)bVar15 * -8 + 4);",
@@ -1240,7 +1244,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 200,
+      "line": 198,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar13 = (uint *)((int)pCVar11 + (uint)bVar15 * -8 + 4);",
@@ -1248,7 +1252,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 201,
+      "line": 199,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar10 = (uint *)((int)pCVar8 + (uint)bVar15 * -8 + 4);",
@@ -1256,283 +1260,59 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 288,
+      "line": 286,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar14 = SQRT(fVar6 * fVar6 + fVar14 * fVar14 + fVar5 * fVar5);",
+      "text": "fVar12 = SQRT(fVar6 * fVar6 + fVar12 * fVar12 + fVar5 * fVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 321,
+      "line": 319,
       "match": "fpatan",
       "severity": "mild",
       "text": "fVar16 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 325,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar12 = (uint *)((int)&local_330 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 326,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar11 = (uint *)((int)&local_3f0 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 327,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_330 + (uint)bVar15 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 328,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_3f0 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 352,
+      "line": 343,
       "match": "fpatan",
       "severity": "mild",
-      "text": "fVar13 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 360,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar12 = (uint *)((int)&local_1f0 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 361,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar11 = (uint *)((int)&local_220 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 362,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_1f0 + (uint)bVar15 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 363,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_220 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 387,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar13 = (float10)fpatan((float10)local_16c.y -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 392,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar12 = (uint *)((int)&local_3e0 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 393,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar11 = (uint *)((int)&local_340 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 394,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_3e0 + (uint)bVar15 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 395,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_340 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 404,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar13 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 408,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar12 = (uint *)((int)&local_210 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 409,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar11 = (uint *)((int)&local_200 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 410,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_210 + (uint)bVar15 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 411,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_200 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 420,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar12 = (uint *)((int)&local_210 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 421,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar11 = (uint *)((int)&local_350 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 422,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_210 + (uint)bVar15 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 423,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_350 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 454,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar13 = (float10)fpatan((float10)local_c4.y -",
+      "text": "fVar11 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 465,
+      "line": 371,
       "match": "fpatan",
       "severity": "mild",
-      "text": "fVar13 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /",
+      "text": "fVar11 = (float10)fpatan((float10)local_16c.y -",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 469,
-      "match": "(uint *)((int)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 381,
+      "match": "fpatan",
       "severity": "mild",
-      "text": "puVar12 = (uint *)((int)&local_1a0 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
-      "type": "pointer_cast"
+      "text": "fVar11 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 470,
-      "match": "(uint *)((int)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 417,
+      "match": "fpatan",
       "severity": "mild",
-      "text": "puVar11 = (uint *)((int)&local_2f0 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
-      "type": "pointer_cast"
+      "text": "fVar11 = (float10)fpatan((float10)local_c4.y -",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 471,
-      "match": "(uint *)((int)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 428,
+      "match": "fpatan",
       "severity": "mild",
-      "text": "*(uint *)((int)&local_1a0 + (uint)bVar15 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 472,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_2f0 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 530,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar12 = (uint *)((int)&CStack_270 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 531,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar11 = (uint *)((int)&CStack_370 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 532,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&CStack_270 + (uint)bVar15 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 533,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&CStack_370 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
+      "text": "fVar11 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

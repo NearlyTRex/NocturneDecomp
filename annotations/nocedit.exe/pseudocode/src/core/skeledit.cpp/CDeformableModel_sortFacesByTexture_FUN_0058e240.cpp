@@ -1,6 +1,6 @@
 // Name: core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240
 // Address: 0058e240
-// Address Range: [[0058e240, 0058e3d2]]
+// Address Range: [[0058e240, 0058e3d2] [00608b27, 00608b6c]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(CDeformableModel *this_ptr)
 
@@ -10,10 +10,12 @@ void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(
 
 {
   uint *puVar1;
+  ushort uVar2;
   ushort uVar3;
-  ushort uVar4;
+  uint uVar4;
   uint uVar5;
-  uint uVar6;
+  uint *puVar6;
+  uint uVar7;
   int iVar8;
   int iVar9;
   int iVar5;
@@ -40,7 +42,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(
   int *piVar1;
   int iVar4;
   int iVar3;
-  uint uVar2;
   
   local_34 = 0;
   if (0 < this_ptr->num_lods) {
@@ -71,22 +72,23 @@ void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(
                   puVar13 = (uint *)
                             ((int)&(local_38->tri_data_ptr[0]->vertex_indices).vertex_index_0 +
                             iVar5);
-                  uVar2 = *puVar13;
-                  uVar6 = puVar13[1];
+                  uVar4 = *puVar13;
+                  uVar7 = puVar13[1];
                   uStack_44 = (ushort)((uint)*(uint *)((int)puVar13 + 6) >> 0x10);
-                  uVar3 = *(ushort *)((int)puVar13 + 10);
+                  uVar2 = *(ushort *)((int)puVar13 + 10);
                   uVar5 = puVar13[3];
-                  uVar4 = *(ushort *)(puVar13 + 4);
+                  uVar3 = *(ushort *)(puVar13 + 4);
                   *puVar13 = *puVar1;
                   puVar13[1] = puVar1[1];
                   puVar13[2] = puVar1[2];
-                  puVar13[3] = puVar1[3];
+                  puVar6 = (uint *)puVar1[3];
+                  puVar13[3] = puVar6;
                   *(ushort *)(puVar13 + 4) = *(ushort *)(puVar1 + 4);
-                  *puVar1 = uVar2;
-                  puVar1[1] = uVar6;
-                  puVar1[2] = CONCAT22(uVar3,uStack_44);
-                  puVar1[3] = uVar5;
-                  *(ushort *)(puVar1 + 4) = uVar4;
+                  *puVar6 = uVar4;
+                  puVar6[1] = uVar7;
+                  puVar6[2] = CONCAT22(uVar2,uStack_44);
+                  puVar6[3] = uVar5;
+                  *(ushort *)(puVar6 + 4) = uVar3;
                 }
                 iVar7 = iVar7 + 4;
                 iVar5 = iVar5 + 0x12;

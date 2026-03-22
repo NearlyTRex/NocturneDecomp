@@ -1,6 +1,6 @@
 // Name: shape_design.c_calculateVertexAngle_FUN_00462050
 // Address: 00462050
-// Address Range: [[00462050, 00462122]]
+// Address Range: [[00462050, 00462122] [00608bb5, 00608c29]]
 // Convention: __cdecl
 // Signature: double __cdecl shape_design_c_calculateVertexAngle_FUN_00462050(int vertex1_index,int vertex2_index,int vertex3_index)
 

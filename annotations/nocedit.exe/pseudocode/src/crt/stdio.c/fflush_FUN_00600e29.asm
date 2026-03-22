@@ -11,9 +11,6 @@
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e10c4
 ;   engine_dosio.c_reopenFileStream_FUN_00481b50 at 00481b68
 ;
-; Referenced Globals:
-;   undefined4 SUB_00608bcc
-;
 ; Called Functions:
 ;   crt_stdio.c_reportStreamError_FUN_00606020
 ;
@@ -33,7 +30,7 @@ section .text
         ;   XREF to: 00600e4b (CONDITIONAL_JUMP)  ; LAB_00600e4b
     PUSH EDX                            ; 00600e3c
     CALL 0x00608bcc                     ; 00600e3d
-        ;   XREF to: 00608bcc (UNCONDITIONAL_CALL)  ; SUB_00608bcc
+        ;   XREF to: 00608bcc (UNCONDITIONAL_CALL)  ; LAB_00608bcb+1
     ADD ESP,0x4                         ; 00600e42
     TEST EAX,EAX                        ; 00600e45
     JZ 0x00600e58                       ; 00600e47
