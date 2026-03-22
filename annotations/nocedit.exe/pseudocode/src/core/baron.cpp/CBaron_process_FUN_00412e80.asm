@@ -273,13 +273,11 @@ section .text
     PUSH EAX                            ; 00413105
     LEA EDI,[ESP + 0x24]                ; 00413106
     LEA ESI,[ESP + 0x14]                ; 0041310a
-    PUSH EBX                            ; 0041310e
-    MOVSD ES:EDI,ESI                    ; 0041310f
-    MOVSD ES:EDI,ESI                    ; 00413110
-    MOVSD ES:EDI,ESI                    ; 00413111
-    MOVSD ES:EDI,ESI                    ; 00413112
+    JMP 0x0060eb5b                      ; 0041310e
+        ;   XREF to: 0060eb5b (UNCONDITIONAL_JUMP)  ; LAB_0060eb5b
     CALL core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750 ; 00413113
         ;   XREF to: 0059f750 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750(CDeformableModelInstance * this_ptr, CQuaternion4f * source_quaternions, float blend_weight, int bone_index, ...)
+        ;   Label: LAB_00413113
     ADD ESP,0x14                        ; 00413118
     PUSH dword ptr [ESP + 0xb0]         ; 0041311b
     PUSH EBP                            ; 00413122
@@ -559,4 +557,18 @@ section .text
         ;   XREF to: 00413014 (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EAX*0x4 + 0x412e68]  ; 0041345d | caseD_3 | caseD_4 | switchdataD_00412e68
         ;   Label: switchD
+    PUSH EBX                            ; 0060eb5b
+        ;   Label: LAB_0060eb5b
+    MOV ECX,dword ptr [ESI]             ; 0060eb5c
+    MOV dword ptr [EDI],ECX             ; 0060eb5e
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060eb60
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060eb63
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060eb66
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060eb69
+    MOV ECX,dword ptr [ESI + 0xc]       ; 0060eb6c
+    MOV dword ptr [EDI + 0xc],ECX       ; 0060eb6f
+    ADD ESI,0x10                        ; 0060eb72
+    ADD EDI,0x10                        ; 0060eb75
+    JMP 0x00413113                      ; 0060eb78
+        ;   XREF to: 00413113 (UNCONDITIONAL_JUMP)  ; LAB_00413113
 

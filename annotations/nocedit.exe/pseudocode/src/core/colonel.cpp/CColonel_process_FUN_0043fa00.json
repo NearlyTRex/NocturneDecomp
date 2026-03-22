@@ -4,19 +4,19 @@
       {
         "category": "format_error",
         "column": 81,
-        "line": 164,
+        "line": 163,
         "message": "format specifies type 'char *' but the argument has type 'CColonel *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 206,
+        "line": 205,
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 245,
+        "line": 244,
         "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'"
       }
     ],
@@ -24,21 +24,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 484,
-    "complexity_score": 343,
+    "assembly_lines": 496,
+    "complexity_score": 289,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 253,
-    "suspect_count": 7,
+    "pseudocode_lines": 244,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
       "stack_alignment_array",
       "unknown_field",
       "warning_type_propagation"
     ],
-    "total_lines": 737
+    "total_lines": 740
   },
   "cross_references": [],
   "function": {
@@ -47,6 +46,10 @@
       [
         "0043fa00",
         "0043ff16"
+      ],
+      [
+        "0060e52a",
+        "0060e54b"
       ]
     ],
     "convention": "__cdecl",
@@ -259,17 +262,17 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.380697050938338,
-    "instruction_count": 373,
+    "avg_pcode_per_instr": 5.241469816272966,
+    "instruction_count": 381,
     "opcode_distribution": {
       "BOOL_NEGATE": 14,
       "BOOL_OR": 11,
-      "BRANCH": 11,
+      "BRANCH": 13,
       "BRANCHIND": 1,
       "CALL": 27,
       "CALLIND": 2,
       "CBRANCH": 35,
-      "COPY": 674,
+      "COPY": 670,
       "FLOAT2FLOAT": 60,
       "FLOAT_ADD": 9,
       "FLOAT_EQUAL": 5,
@@ -280,26 +283,26 @@
       "FLOAT_SUB": 2,
       "INT2FLOAT": 1,
       "INT_ADD": 157,
-      "INT_AND": 168,
-      "INT_CARRY": 28,
-      "INT_EQUAL": 128,
+      "INT_AND": 172,
+      "INT_CARRY": 30,
+      "INT_EQUAL": 132,
       "INT_LEFT": 20,
       "INT_LESS": 18,
-      "INT_MULT": 9,
+      "INT_MULT": 1,
       "INT_NOTEQUAL": 25,
       "INT_OR": 25,
       "INT_SBORROW": 18,
-      "INT_SCARRY": 28,
-      "INT_SLESS": 64,
-      "INT_SUB": 124,
+      "INT_SCARRY": 30,
+      "INT_SLESS": 66,
+      "INT_SUB": 116,
       "INT_XOR": 3,
-      "INT_ZEXT": 28,
+      "INT_ZEXT": 20,
       "LOAD": 82,
-      "POPCOUNT": 64,
+      "POPCOUNT": 66,
       "RETURN": 1,
       "STORE": 142
     },
-    "pcode_op_count": 2007
+    "pcode_op_count": 1997
   },
   "stack_frame": {
     "frame_size": 6268,
@@ -493,43 +496,11 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 199,
+      "line": 198,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_98 = local_98 + 5.3286462644388174e-315._0_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 244,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar11 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 245,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar10 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 246,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 247,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4);",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

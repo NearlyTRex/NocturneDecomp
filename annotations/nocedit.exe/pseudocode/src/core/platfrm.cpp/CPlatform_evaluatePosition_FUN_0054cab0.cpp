@@ -1,6 +1,6 @@
 // Name: core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0
 // Address: 0054cab0
-// Address Range: [[0054cab0, 0054cc0d]]
+// Address Range: [[0054cab0, 0054cc0d] [0060e49e, 0060e4bf]]
 // Convention: __cdecl
 // Signature: void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform *this_ptr)
 
@@ -23,7 +23,6 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform 
   uint *puVar4;
   byte bVar5;
   float afStackY_1844 [1523];
-  CVector3f *vector_out;
   CQuaternion4f local_68;
   CVector3f local_58;
   float local_48;
@@ -42,7 +41,6 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform 
   CQuaternion4f *quat_in;
   UOrientationVector *out_euler;
   
-  bVar5 = 0;
   if (this_ptr->param < 0.0) {
     this_ptr->param = 0.0;
   }
@@ -66,16 +64,7 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform 
     (this_ptr->base).location.position.z = fVar6 * fVar7 + fVar3 * fVar4;
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
               (&this_ptr->orig_orient,&this_ptr->end_orient,this_ptr->param,&local_68);
-    vector_out = &local_58;
-    quat_in = &local_30;
-    local_58.x = local_68.w;
-    puVar4 = (uint *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-    puVar3 = (uint *)((int)&local_68 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-    *(uint *)((int)&local_58 + (uint)bVar5 * -8 + 4) =
-         *(uint *)((int)&local_68 + (uint)bVar5 * -8 + 4);
-    *puVar4 = *puVar3;
-    puVar4[(uint)bVar5 * -2 + 1] = puVar3[(uint)bVar5 * -2 + 1];
-    pCVar2 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(quat_in,vector_out);
+    pCVar2 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(&local_30,&local_58);
     if ((CVector3f *)out_euler_00 != pCVar2) {
       (out_euler_00->vec).x = pCVar2->x;
       (this_ptr->base).orient.vec.y = pCVar2->y;

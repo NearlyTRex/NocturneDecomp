@@ -25,6 +25,18 @@ You are fixing compilation errors in Ghidra-decompiled C/C++ pseudocode for a ga
 - Preserve `// Address Range:`, `// Convention:`, `// Signature:` if present (they go after `// MANUAL RECONSTRUCTION`).
 - The file must `#include "nocturne.h"`.
 
+### Prefer Ghidra Fixes Over Code Fixes
+Before writing a `.keep` file, check whether the compilation error is caused by something that can be fixed upstream in Ghidra. If the root cause is a wrong type annotation in Ghidra, fixing it there will produce correct decompiler output for ALL functions that use it — a `.keep` file only fixes one function.
+
+**If you identify any of these, STOP and suggest the Ghidra fix instead of creating a `.keep` file:**
+- **Wrong global variable type** — e.g., a global typed as `float` that should be a `float *`, or an `int` that should be a struct pointer. Fix the type in Ghidra's data type manager.
+- **Wrong function signature** — wrong return type, wrong parameter types/count, wrong calling convention. Fix the function signature in Ghidra.
+- **Wrong struct field type or layout** — a field typed as `int` that should be `float`, or a struct with wrong size/alignment. Fix the struct definition in Ghidra.
+- **Wrong calling convention on a vtable entry** — causes ESP tracking drift for the rest of the function. Fix the convention on the function pointer type in the vtable struct.
+- **Missing or wrong function pointer type** — e.g., a vtable slot typed as `int` instead of a function pointer. Fix the vtable struct in Ghidra.
+
+A `.keep` file is the right approach when the error is a **decompiler limitation** (split doubles, MOVSD artifacts, ADJ pointer quirks, format string splitting, etc.) that cannot be fixed by changing types in Ghidra.
+
 ## Common Error Patterns and Fixes
 
 ### 1. Pointer-to-float cast (`C-style cast from 'SomeType *' to 'float' is not allowed`)

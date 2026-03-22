@@ -1,6 +1,6 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
 // Address: 0059f260
-// Address Range: [[0059f260, 0059f6dc] [005b3e15, 005b3e61]]
+// Address Range: [[0059f260, 0059f6dc] [005b3e15, 005b3e61] [0060e438, 0060e459]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260(CDeformableModelInstance *this_ptr,CQuaternion4f *source_quaternions,CVector3f *source_position,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
@@ -23,7 +23,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
   uint *puVar4;
   byte bVar13;
   float afStackY_18c4 [1522];
-  CQuaternion4f *quat2_in;
   CQuaternion4f CStack_e8;
   CQuaternion4f local_d8;
   CQuaternion4f local_c8;
@@ -98,15 +97,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
             if (-1 < iVar1) {
               core_xform_cpp_negateFirstComponent_FUN_005f75e0(source_quaternions + iVar1,&local_c8)
               ;
-              quat2_in = &local_a8;
-              local_a8.w = local_c8.w;
-              puVar3 = (uint *)((int)&local_a8 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-              puVar2 = (uint *)((int)&local_c8 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-              *(uint *)((int)&local_a8 + (uint)bVar13 * -8 + 4) =
-                   *(uint *)((int)&local_c8 + (uint)bVar13 * -8 + 4);
-              *puVar3 = *puVar2;
-              puVar3[(uint)bVar13 * -2 + 1] = puVar2[(uint)bVar13 * -2 + 1];
-              core_xform_cpp_multiplyQuaternion_FUN_005f7640(quat1_in,quat2_in,local_78);
+              core_xform_cpp_multiplyQuaternion_FUN_005f7640(quat1_in,&local_a8,local_78);
               core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_b8,local_2c + iVar1,&local_98);
               puVar9 = &local_98.w;
             }

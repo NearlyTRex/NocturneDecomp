@@ -62,12 +62,10 @@ section .text
         ;   XREF to: 005e19d0 (UNCONDITIONAL_CALL)  ; SOCKADDR_IN * support_trisock.cpp_buildSockaddrIn_FUN_005e19d0(SNetworkAddr * net_addr, SOCKADDR_IN * dest_buffer)
     LEA ESI,[ESP + 0x4]                 ; 005e1ce3
     ADD ESP,0x4                         ; 005e1ce7
-    MOVSD ES:EDI,ESI                    ; 005e1cea
-    MOVSD ES:EDI,ESI                    ; 005e1ceb
-    MOVSD ES:EDI,ESI                    ; 005e1cec
-    MOVSD ES:EDI,ESI                    ; 005e1ced
-    PUSH 0x10                           ; 005e1cee
+    JMP 0x0060e3af                      ; 005e1cea
+        ;   XREF to: 0060e3af (UNCONDITIONAL_JUMP)  ; CAVE_cave_005fde92
     LEA ESI,[ESP + 0x14]                ; 005e1cf0
+        ;   Label: LAB_005e1cf0
     PUSH ESI                            ; 005e1cf4
     PUSH 0x0                            ; 005e1cf5
     MOV ESI,dword ptr [ESP + 0x44]      ; 005e1cf7
@@ -87,4 +85,18 @@ section .text
     POP EDI                             ; 005e1d18
     POP ESI                             ; 005e1d19
     RET                                 ; 005e1d1a
+    MOV ECX,dword ptr [ESI]             ; 0060e3af
+        ;   Label: CAVE_cave_005fde92
+    MOV dword ptr [EDI],ECX             ; 0060e3b1
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060e3b3
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060e3b6
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060e3b9
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060e3bc
+    MOV ECX,dword ptr [ESI + 0xc]       ; 0060e3bf
+    MOV dword ptr [EDI + 0xc],ECX       ; 0060e3c2
+    ADD ESI,0x10                        ; 0060e3c5
+    ADD EDI,0x10                        ; 0060e3c8
+    PUSH 0x10                           ; 0060e3cb
+    JMP 0x005e1cf0                      ; 0060e3cd
+        ;   XREF to: 005e1cf0 (UNCONDITIONAL_JUMP)  ; LAB_005e1cf0
 

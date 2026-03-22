@@ -89,12 +89,10 @@ section .text
     FSTP float ptr [ESP + 0x14]         ; 005f74b2
     LEA ESI,[ESP + 0x8]                 ; 005f74b6
     MOV EDI,ECX                         ; 005f74ba
-    MOVSD ES:EDI,ESI                    ; 005f74bc
-    MOVSD ES:EDI,ESI                    ; 005f74bd
-    MOVSD ES:EDI,ESI                    ; 005f74be
-    MOVSD ES:EDI,ESI                    ; 005f74bf
-    MOV EAX,ECX                         ; 005f74c0
+    JMP 0x0060f46a                      ; 005f74bc
+        ;   XREF to: 0060f46a (UNCONDITIONAL_JUMP)  ; LAB_0060f46a
     MOV ESP,EBP                         ; 005f74c2
+        ;   Label: LAB_005f74c2
     POP EBP                             ; 005f74c4
     POP EDI                             ; 005f74c5
     RET                                 ; 005f74c6
@@ -158,12 +156,10 @@ section .text
     FSTP float ptr [ESP + 0x10]         ; 005f7555
     LEA ESI,[ESP + 0x8]                 ; 005f7559
     MOV EDI,ECX                         ; 005f755d
-    MOVSD ES:EDI,ESI                    ; 005f755f
-    MOVSD ES:EDI,ESI                    ; 005f7560
-    MOVSD ES:EDI,ESI                    ; 005f7561
-    MOVSD ES:EDI,ESI                    ; 005f7562
-    MOV EAX,ECX                         ; 005f7563
+    JMP 0x0060f48d                      ; 005f755f
+        ;   XREF to: 0060f48d (UNCONDITIONAL_JUMP)  ; LAB_0060f48d
     MOV ESP,EBP                         ; 005f7565
+        ;   Label: LAB_005f7565
     POP EBP                             ; 005f7567
     POP EDI                             ; 005f7568
     RET                                 ; 005f7569
@@ -206,13 +202,53 @@ section .text
     FSTP float ptr [ESP + 0xc]          ; 005f75c1
     LEA ESI,[ESP + 0x8]                 ; 005f75c5
     MOV EDI,ECX                         ; 005f75c9
-    MOVSD ES:EDI,ESI                    ; 005f75cb
-    MOVSD ES:EDI,ESI                    ; 005f75cc
-    MOVSD ES:EDI,ESI                    ; 005f75cd
-    MOVSD ES:EDI,ESI                    ; 005f75ce
-    MOV EAX,ECX                         ; 005f75cf
+    JMP 0x0060f4b0                      ; 005f75cb
+        ;   XREF to: 0060f4b0 (UNCONDITIONAL_JUMP)  ; LAB_0060f4b0
     MOV ESP,EBP                         ; 005f75d1
+        ;   Label: LAB_005f75d1
     POP EBP                             ; 005f75d3
     POP EDI                             ; 005f75d4
     RET                                 ; 005f75d5
+    MOV ECX,dword ptr [ESI]             ; 0060f46a
+        ;   Label: LAB_0060f46a
+    MOV dword ptr [EDI],ECX             ; 0060f46c
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060f46e
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060f471
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060f474
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060f477
+    MOV ECX,dword ptr [ESI + 0xc]       ; 0060f47a
+    MOV dword ptr [EDI + 0xc],ECX       ; 0060f47d
+    ADD ESI,0x10                        ; 0060f480
+    ADD EDI,0x10                        ; 0060f483
+    MOV EAX,ECX                         ; 0060f486
+    JMP 0x005f74c2                      ; 0060f488
+        ;   XREF to: 005f74c2 (UNCONDITIONAL_JUMP)  ; LAB_005f74c2
+    MOV ECX,dword ptr [ESI]             ; 0060f48d
+        ;   Label: LAB_0060f48d
+    MOV dword ptr [EDI],ECX             ; 0060f48f
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060f491
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060f494
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060f497
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060f49a
+    MOV ECX,dword ptr [ESI + 0xc]       ; 0060f49d
+    MOV dword ptr [EDI + 0xc],ECX       ; 0060f4a0
+    ADD ESI,0x10                        ; 0060f4a3
+    ADD EDI,0x10                        ; 0060f4a6
+    MOV EAX,ECX                         ; 0060f4a9
+    JMP 0x005f7565                      ; 0060f4ab
+        ;   XREF to: 005f7565 (UNCONDITIONAL_JUMP)  ; LAB_005f7565
+    MOV ECX,dword ptr [ESI]             ; 0060f4b0
+        ;   Label: LAB_0060f4b0
+    MOV dword ptr [EDI],ECX             ; 0060f4b2
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060f4b4
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060f4b7
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060f4ba
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060f4bd
+    MOV ECX,dword ptr [ESI + 0xc]       ; 0060f4c0
+    MOV dword ptr [EDI + 0xc],ECX       ; 0060f4c3
+    ADD ESI,0x10                        ; 0060f4c6
+    ADD EDI,0x10                        ; 0060f4c9
+    MOV EAX,ECX                         ; 0060f4cc
+    JMP 0x005f75d1                      ; 0060f4ce
+        ;   XREF to: 005f75d1 (UNCONDITIONAL_JUMP)  ; LAB_005f75d1
 

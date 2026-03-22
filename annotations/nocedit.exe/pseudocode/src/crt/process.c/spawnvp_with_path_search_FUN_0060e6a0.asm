@@ -14,8 +14,6 @@
 ;
 ; Referenced Globals:
 ;   undefined4 SUB_0060f39c
-;   undefined4 SUB_0060f870
-;   undefined4 SUB_0060f890
 ;   TerminatedCString s_PATH_00659750
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;
@@ -91,7 +89,7 @@ section .text
         ;   XREF to: 0060e83b (CONDITIONAL_JUMP)  ; LAB_0060e83b
     PUSH EBP                            ; 0060e73a
     CALL 0x0060f870                     ; 0060e73b
-        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; SUB_0060f870
+        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; LAB_0060f86e+2
     ADD ESP,0x4                         ; 0060e740
     INC EAX                             ; 0060e743
     MOV CL,byte ptr [ESI]               ; 0060e744
@@ -107,7 +105,7 @@ section .text
         ;   Label: LAB_0060e76a
     PUSH EBX                            ; 0060e76c
     CALL 0x0060f890                     ; 0060e76d
-        ;   XREF to: 0060f890 (UNCONDITIONAL_CALL)  ; SUB_0060f890
+        ;   XREF to: 0060f890 (UNCONDITIONAL_CALL)  ; LAB_0060f88d+3
     ADD ESP,0x8                         ; 0060e772
     MOV ESI,EAX                         ; 0060e775
     TEST EAX,EAX                        ; 0060e777
@@ -115,7 +113,7 @@ section .text
         ;   XREF to: 0060e787 (CONDITIONAL_JUMP)  ; LAB_0060e787
     PUSH EBX                            ; 0060e77b
     CALL 0x0060f870                     ; 0060e77c
-        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; SUB_0060f870
+        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; LAB_0060f86e+2
     ADD ESP,0x4                         ; 0060e781
     LEA ESI,[EBX + EAX*0x1]             ; 0060e784
     MOV EDI,ESI                         ; 0060e787

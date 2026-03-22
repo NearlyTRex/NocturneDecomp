@@ -1,23 +1,59 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 15,
+        "line": 36,
+        "message": "cannot cast from type 'float' to pointer type 'CQuaternion4f *'"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 41,
+        "message": "C-style cast from 'CQuaternion4f *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 51,
+        "message": "cannot cast from type 'float' to pointer type 'CQuaternion4f *'"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 55,
+        "message": "C-style cast from 'CQuaternion4f *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 65,
+        "message": "cannot cast from type 'float' to pointer type 'CQuaternion4f *'"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 79,
+        "message": "cannot cast from type 'float' to pointer type 'CQuaternion4f *'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 191,
-    "complexity_score": 132,
+    "assembly_lines": 227,
+    "complexity_score": 115,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 72,
-    "suspect_count": 5,
+    "pseudocode_lines": 70,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "param_count_too_many"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 263
+    "total_lines": 297
   },
   "cross_references": [
     {
@@ -63,6 +99,10 @@
       [
         "005f7420",
         "005f75d5"
+      ],
+      [
+        "0060f46a",
+        "0060f4d2"
       ]
     ],
     "convention": "__stack_esi",
@@ -79,122 +119,14 @@
       "value": "0.5"
     }
   ],
-  "param_estimates": {
-    "call_site_count": 9,
-    "call_sites": [
-      {
-        "call_addr": "00443006",
-        "call_type": "direct",
-        "caller": "core_course.cpp_CCourse_importMatrices_FUN_00442ea0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0054ef87",
-        "call_type": "direct",
-        "caller": "core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "005f71ac",
-        "call_type": "direct",
-        "caller": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "005f71ce",
-        "call_type": "direct",
-        "caller": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "005f7b52",
-        "call_type": "direct",
-        "caller": "core_xform.cpp_eulerToQuaternion_FUN_005f7b20",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0054f03b",
-        "call_type": "direct",
-        "caller": "core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "00595af4",
-        "call_type": "direct",
-        "caller": "core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "00595c6d",
-        "call_type": "direct",
-        "caller": "core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "005f7ba2",
-        "call_type": "direct",
-        "caller": "core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      }
-    ],
-    "confidence": "high",
-    "declared_params": 2,
-    "declared_stack_bytes": 4,
-    "estimated_params": 1
-  },
   "pcode_summary": {
-    "avg_pcode_per_instr": 7.348066298342541,
-    "instruction_count": 181,
+    "avg_pcode_per_instr": 6.341463414634147,
+    "instruction_count": 205,
     "opcode_distribution": {
       "BOOL_OR": 7,
-      "BRANCH": 1,
+      "BRANCH": 7,
       "CBRANCH": 4,
-      "COPY": 819,
+      "COPY": 807,
       "FLOAT2FLOAT": 63,
       "FLOAT_ADD": 14,
       "FLOAT_DIV": 4,
@@ -206,23 +138,24 @@
       "FLOAT_SUB": 9,
       "INT2FLOAT": 5,
       "INT_ADD": 88,
-      "INT_AND": 25,
-      "INT_EQUAL": 4,
+      "INT_AND": 37,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 16,
       "INT_LEFT": 16,
       "INT_LESS": 1,
-      "INT_MULT": 24,
       "INT_NOTEQUAL": 20,
       "INT_OR": 20,
       "INT_SBORROW": 1,
-      "INT_SLESS": 2,
-      "INT_SUB": 27,
-      "INT_ZEXT": 40,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 3,
+      "INT_ZEXT": 16,
       "LOAD": 65,
-      "POPCOUNT": 2,
+      "POPCOUNT": 8,
       "RETURN": 3,
       "STORE": 30
     },
-    "pcode_op_count": 1330
+    "pcode_op_count": 1300
   },
   "stack_frame": {
     "frame_size": 80,
@@ -274,46 +207,35 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 24,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar9 = SQRT(fVar9 + 1.0);",
+      "text": "fVar8 = SQRT(fVar9 + 1.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 39,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar12 = SQRT((matrix_in->m[1].z - (matrix_in[1].m[0].y + matrix_in->m[0].x)) + 1.0);",
+      "text": "fVar11 = SQRT((matrix_in->m[1].z - (matrix_in[1].m[0].y + matrix_in->m[0].x)) + 1.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 53,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar9 = SQRT((matrix_in->m[0].x - (matrix_in->m[1].z + matrix_in[1].m[0].y)) + 1.0);",
+      "text": "fVar8 = SQRT((matrix_in->m[0].x - (matrix_in->m[1].z + matrix_in[1].m[0].y)) + 1.0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 61,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar5 = SQRT((matrix_in[1].m[0].y - fVar8) + 1.0);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "call_site_count": 9,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

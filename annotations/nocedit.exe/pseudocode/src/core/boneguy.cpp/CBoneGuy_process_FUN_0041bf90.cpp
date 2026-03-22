@@ -1,6 +1,6 @@
 // Name: core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
 // Address: 0041bf90
-// Address Range: [[0041bf90, 0041ca3c]]
+// Address Range: [[0041bf90, 0041ca3c] [0060eb39, 0060eb5a]]
 // Convention: __cdecl
 // Signature: void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,float delta_time)
 
@@ -31,7 +31,6 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   CBoneGuy *pCVar14;
   uint *puVar15;
   byte bVar16;
-  uint auStackY_1908 [1483];
   float fVar15;
   SDamageInfo local_1bc;
   SDamageInfo local_180;
@@ -87,7 +86,6 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   CDeformableModelInstance *pCVar2;
   CVector3f *pCVar3;
   
-  bVar16 = 0;
   iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,this_ptr->death_event);
   if (iVar7 != 0) {
@@ -131,16 +129,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
         local_a4 = local_18->z + ((pSVar8->pos).z - local_18->z) * *local_24;
         core_xform_cpp_slerpQuaternion_FUN_005f77e0
                   (local_28,local_20,this_ptr->recombine_interpolation,&local_11c);
-        pCVar12 = &local_12c;
-        quat_in = &local_88;
-        local_12c.x = local_11c.w;
-        puVar15 = (uint *)((int)&local_12c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
-        puVar14 = (uint *)((int)&local_11c + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
-        *(uint *)((int)&local_12c + (uint)bVar16 * -8 + 4) =
-             *(uint *)((int)&local_11c + (uint)bVar16 * -8 + 4);
-        *puVar15 = *puVar14;
-        puVar15[(uint)bVar16 * -2 + 1] = puVar14[(uint)bVar16 * -2 + 1];
-        core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(quat_in,pCVar12);
+        core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(&local_88,&local_12c);
         local_88.w = this_ptr->recombine_interpolation * (float)6.2831853070000001 + local_88.w;
         (pCVar6->base).location.position.x = local_ac;
         (pCVar6->base).location.position.y = local_a8;

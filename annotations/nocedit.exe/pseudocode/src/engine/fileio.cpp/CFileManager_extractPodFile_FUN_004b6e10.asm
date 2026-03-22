@@ -197,12 +197,10 @@ section .text
         ;   Label: LAB_004b6f7d
     MOV EBX,dword ptr [ESP + 0xe68]     ; 004b6f84
     LEA EDI,[ESP + 0xe40]               ; 004b6f8b
-    ADD ESI,EBX                         ; 004b6f92
-    MOVSD ES:EDI,ESI                    ; 004b6f94
-    MOVSD ES:EDI,ESI                    ; 004b6f95
-    MOVSD ES:EDI,ESI                    ; 004b6f96
-    MOVSD ES:EDI,ESI                    ; 004b6f97
+    JMP 0x0060f300                      ; 004b6f92
+        ;   XREF to: 0060f300 (UNCONDITIONAL_JUMP)  ; CAVE_cave_0060f300
     MOVSD ES:EDI,ESI                    ; 004b6f98
+        ;   Label: LAB_004b6f98
     MOV ESI,dword ptr [ESP + 0xe40]     ; 004b6f99
     LEA EDI,[ESP + 0x82c]               ; 004b6fa0
     PUSH EDI                            ; 004b6fa7
@@ -483,12 +481,10 @@ section .text
     PUSH ECX                            ; 004b72c4
     MOV EBX,dword ptr [ESP + 0xea0]     ; 004b72c5
     LEA ESI,[ESP + 0xe58]               ; 004b72cc
-    PUSH EBX                            ; 004b72d3
-    MOVSD ES:EDI,ESI                    ; 004b72d4
-    MOVSD ES:EDI,ESI                    ; 004b72d5
-    MOVSD ES:EDI,ESI                    ; 004b72d6
-    MOVSD ES:EDI,ESI                    ; 004b72d7
+    JMP 0x0060f323                      ; 004b72d3
+        ;   XREF to: 0060f323 (UNCONDITIONAL_JUMP)  ; LAB_0060f323
     MOVSD ES:EDI,ESI                    ; 004b72d8
+        ;   Label: LAB_004b72d8
     CALL engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50 ; 004b72d9
         ;   XREF to: 004b7d50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager * this_ptr, _FILE * source_file, char * dest_filename, int file_size, ...)
     ADD ESP,0x1c                        ; 004b72de
@@ -618,4 +614,32 @@ section .text
         ;   Label: LAB_004b744e
     JMP 0x004b7108                      ; 004b7453
         ;   XREF to: 004b7108 (UNCONDITIONAL_JUMP)  ; LAB_004b7108
+    ADD ESI,EBX                         ; 0060f300
+        ;   Label: CAVE_cave_0060f300
+    MOV ECX,dword ptr [ESI]             ; 0060f302
+    MOV dword ptr [EDI],ECX             ; 0060f304
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060f306
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060f309
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060f30c
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060f30f
+    MOV ECX,dword ptr [ESI + 0xc]       ; 0060f312
+    MOV dword ptr [EDI + 0xc],ECX       ; 0060f315
+    ADD ESI,0x10                        ; 0060f318
+    ADD EDI,0x10                        ; 0060f31b
+    JMP 0x004b6f98                      ; 0060f31e
+        ;   XREF to: 004b6f98 (UNCONDITIONAL_JUMP)  ; LAB_004b6f98
+    PUSH EBX                            ; 0060f323
+        ;   Label: LAB_0060f323
+    MOV ECX,dword ptr [ESI]             ; 0060f324
+    MOV dword ptr [EDI],ECX             ; 0060f326
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060f328
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060f32b
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060f32e
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060f331
+    MOV ECX,dword ptr [ESI + 0xc]       ; 0060f334
+    MOV dword ptr [EDI + 0xc],ECX       ; 0060f337
+    ADD ESI,0x10                        ; 0060f33a
+    ADD EDI,0x10                        ; 0060f33d
+    JMP 0x004b72d8                      ; 0060f340
+        ;   XREF to: 004b72d8 (UNCONDITIONAL_JUMP)  ; LAB_004b72d8
 

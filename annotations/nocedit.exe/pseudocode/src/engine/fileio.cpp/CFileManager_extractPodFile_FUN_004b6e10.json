@@ -2,139 +2,47 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 58,
-        "line": 73,
-        "message": "use of undeclared identifier 'stack0xfffff17c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 75,
-        "line": 74,
-        "message": "use of undeclared identifier 'stack0xfffff17c'"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 78,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 60,
-        "line": 79,
-        "message": "use of undeclared identifier 'stack0xfffff17c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 76,
-        "line": 82,
-        "message": "use of undeclared identifier 'stack0xfffff17c'"
-      },
-      {
-        "category": "other",
-        "column": 186,
-        "line": 87,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 62,
-        "line": 89,
-        "message": "use of undeclared identifier 'stack0xfffff17c'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 95,
-        "message": "no matching function for call to 'shape_memdbg_cpp_openFile_FUN_0050f7a0'"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 99,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 60,
-        "line": 100,
-        "message": "use of undeclared identifier 'stack0xfffff17c'"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 110,
-        "message": "member reference base type 'byte[2088]' (aka 'unsigned char[2088]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 113,
-        "message": "member reference base type 'byte[2088]' (aka 'unsigned char[2088]') is not a structure or union"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 43,
-        "line": 114,
-        "message": "incompatible pointer types assigning to 'time_t *' (aka 'long *') from 'uint *' (aka 'unsigned int *')"
-      },
-      {
-        "category": "other",
-        "column": 117,
-        "line": 145,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "category": "format_error",
+        "column": 50,
+        "line": 136,
+        "message": "format specifies type 'int' but the argument has type 'time_t' (aka 'long') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 150,
+        "line": 138,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
-        "category": "other",
-        "column": 67,
-        "line": 168,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "category": "format_error",
+        "column": 33,
+        "line": 157,
+        "message": "format specifies type 'int' but the argument has type 'time_t' (aka 'long') [-Werror,-Wformat]"
       },
       {
-        "category": "other",
-        "column": 36,
-        "line": 171,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 172,
-        "message": "no matching function for call to 'engine_2d_c_drawText_FUN_00401fd0'"
-      },
-      {
-        "category": "other",
-        "column": 36,
-        "line": 173,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "category": "format_error",
+        "column": 33,
+        "line": 159,
+        "message": "format specifies type 'int' but the argument has type 'time_t' (aka 'long') [-Werror,-Wformat]"
       }
     ],
     "success": false,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 555,
-    "complexity_score": 344,
+    "assembly_lines": 579,
+    "complexity_score": 224,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 214,
-    "suspect_count": 11,
+    "pseudocode_lines": 194,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array",
-      "stack_ref",
-      "unknown_field"
+      "stack_alignment_array"
     ],
-    "total_lines": 769
+    "total_lines": 773
   },
   "cross_references": [],
   "function": {
@@ -143,6 +51,10 @@
       [
         "004b6e10",
         "004b7457"
+      ],
+      [
+        "0060f300",
+        "0060f344"
       ]
     ],
     "convention": "__cdecl",
@@ -482,39 +394,39 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.613839285714286,
-    "instruction_count": 448,
+    "avg_pcode_per_instr": 4.411637931034483,
+    "instruction_count": 464,
     "opcode_distribution": {
       "BOOL_NEGATE": 33,
       "BOOL_OR": 3,
       "BOOL_XOR": 1,
-      "BRANCH": 5,
+      "BRANCH": 9,
       "CALL": 48,
       "CALLIND": 1,
       "CBRANCH": 27,
-      "COPY": 357,
+      "COPY": 349,
       "INT_ADD": 187,
-      "INT_AND": 276,
-      "INT_CARRY": 55,
-      "INT_EQUAL": 207,
+      "INT_AND": 284,
+      "INT_CARRY": 59,
+      "INT_EQUAL": 215,
       "INT_LEFT": 2,
       "INT_LESS": 19,
-      "INT_MULT": 20,
+      "INT_MULT": 4,
       "INT_NOTEQUAL": 21,
       "INT_OR": 21,
       "INT_SBORROW": 19,
-      "INT_SCARRY": 56,
-      "INT_SLESS": 103,
+      "INT_SCARRY": 60,
+      "INT_SLESS": 107,
       "INT_SRIGHT": 10,
-      "INT_SUB": 208,
+      "INT_SUB": 192,
       "INT_XOR": 4,
-      "INT_ZEXT": 21,
+      "INT_ZEXT": 5,
       "LOAD": 71,
-      "POPCOUNT": 101,
+      "POPCOUNT": 105,
       "RETURN": 5,
       "STORE": 186
     },
-    "pcode_op_count": 2067
+    "pcode_op_count": 2047
   },
   "stack_frame": {
     "frame_size": 11896,
@@ -671,84 +583,12 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 66,
-      "match": "&stack0xfffff17c",
-      "severity": "moderate",
-      "text": "engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xfffff17c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 67,
-      "match": "&stack0xfffff17c",
-      "severity": "moderate",
-      "text": "iVar3 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650((CPodFile *)&stack0xfffff17c,local_244)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 72,
-      "match": "&stack0xfffff17c",
-      "severity": "moderate",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 75,
-      "match": "&stack0xfffff17c",
-      "severity": "moderate",
-      "text": "iVar3 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230((CPodFile *)&stack0xfffff17c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 82,
-      "match": "&stack0xfffff17c",
-      "severity": "moderate",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 93,
-      "match": "&stack0xfffff17c",
-      "severity": "moderate",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 103,
-      "match": "._1036_4_",
-      "severity": "mild",
-      "text": "if (0 < (int)local_e80._1036_4_) {",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 103,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar5 = (uint *)((int)(char **)local_e80._1040_4_ + local_1c);",
+      "text": "puVar7 = (uint *)((int)&(CStack_e84.directory_entries)->name + local_1c);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 106,
-      "match": "._1040_4_",
-      "severity": "mild",
-      "text": "puVar5 = (uint *)((int)(char **)local_e80._1040_4_ + local_1c);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 187,
-      "match": "._1036_4_",
-      "severity": "mild",
-      "text": "} while (local_18 < (int)local_e80._1036_4_);",
-      "type": "unknown_field"
     }
   ]
 }

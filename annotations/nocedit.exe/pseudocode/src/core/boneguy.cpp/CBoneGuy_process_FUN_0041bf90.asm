@@ -242,13 +242,11 @@ section .text
     PUSH EAX                            ; 0041c15a
     LEA EAX,[EBP + 0x2]                 ; 0041c15b
     LEA ESI,[EBP + 0xffffff6e]          ; 0041c15e
-    PUSH EAX                            ; 0041c164
-    MOVSD ES:EDI,ESI                    ; 0041c165
-    MOVSD ES:EDI,ESI                    ; 0041c166
-    MOVSD ES:EDI,ESI                    ; 0041c167
-    MOVSD ES:EDI,ESI                    ; 0041c168
+    JMP 0x0060eb39                      ; 0041c164
+        ;   XREF to: 0060eb39 (UNCONDITIONAL_JUMP)  ; CAVE_cave_005fde92
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0 ; 0041c169
         ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f * quat_in, CVector3f * vector_out)
+        ;   Label: LAB_0041c169
     FLD float ptr [EBX + 0xc4e0]        ; 0041c16e
     FMUL double ptr [0x0061615d]        ; 0041c174 | DOUBLE_0061615d
     MOV ESI,dword ptr [EBP + 0x46]      ; 0041c17a
@@ -1044,4 +1042,18 @@ section .text
         ;   XREF to: 0041c3f4 (CONDITIONAL_JUMP)  ; caseD_4
     JMP dword ptr [EDI*0x4 + 0x41bf70]  ; 0041ca36 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
+    PUSH EAX                            ; 0060eb39
+        ;   Label: CAVE_cave_005fde92
+    MOV ECX,dword ptr [ESI]             ; 0060eb3a
+    MOV dword ptr [EDI],ECX             ; 0060eb3c
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060eb3e
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060eb41
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060eb44
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060eb47
+    MOV ECX,dword ptr [ESI + 0xc]       ; 0060eb4a
+    MOV dword ptr [EDI + 0xc],ECX       ; 0060eb4d
+    ADD ESI,0x10                        ; 0060eb50
+    ADD EDI,0x10                        ; 0060eb53
+    JMP 0x0041c169                      ; 0060eb56
+        ;   XREF to: 0041c169 (UNCONDITIONAL_JUMP)  ; LAB_0041c169
 

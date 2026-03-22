@@ -14,7 +14,6 @@
 ; int              Stack[0x20]:4   copy_program_flag
 ;
 ; Referenced Globals:
-;   undefined4 SUB_0060f870
 ;   int g_HeapFlags = 0x10000
 ;   char** g_EnvironmentBlock
 ;
@@ -56,7 +55,7 @@ section .text
         ;   Label: LAB_00610280
     PUSH ECX                            ; 00610282
     CALL 0x0060f870                     ; 00610283
-        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; SUB_0060f870
+        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; LAB_0060f86e+2
     INC EAX                             ; 00610288
     ADD EBX,0x4                         ; 00610289
     ADD EDI,EAX                         ; 0061028c
@@ -74,7 +73,7 @@ section .text
     MOV EBX,dword ptr [ESI]             ; 006102a0
     PUSH EBX                            ; 006102a2
     CALL 0x0060f870                     ; 006102a3
-        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; SUB_0060f870
+        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; LAB_0060f86e+2
     ADD EAX,0x3                         ; 006102a8
     ADD ESP,0x4                         ; 006102ab
     ADD EDI,EAX                         ; 006102ae
@@ -172,7 +171,7 @@ section .text
     PUSH EAX                            ; 00610376
         ;   Label: LAB_00610376
     CALL 0x0060f870                     ; 00610377
-        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; SUB_0060f870
+        ;   XREF to: 0060f870 (UNCONDITIONAL_CALL)  ; LAB_0060f86e+2
     ADD ESI,0x4                         ; 0061037c
     ADD ESP,0x4                         ; 0061037f
     ADD EBX,EAX                         ; 00610382

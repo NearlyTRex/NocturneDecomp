@@ -296,12 +296,10 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1118]    ; 004b797e
     PUSH EAX                            ; 004b7985
     LEA ESI,[ESP + 0x1108]              ; 004b7986
-    PUSH EBP                            ; 004b798d
-    MOVSD ES:EDI,ESI                    ; 004b798e
-    MOVSD ES:EDI,ESI                    ; 004b798f
-    MOVSD ES:EDI,ESI                    ; 004b7990
-    MOVSD ES:EDI,ESI                    ; 004b7991
+    JMP 0x0060e3d2                      ; 004b798d
+        ;   XREF to: 0060e3d2 (UNCONDITIONAL_JUMP)  ; LAB_0060e3d2
     MOVSD ES:EDI,ESI                    ; 004b7992
+        ;   Label: LAB_004b7992
     CALL engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50 ; 004b7993
         ;   XREF to: 004b7d50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50(CFileManager * this_ptr, _FILE * source_file, char * dest_filename, int file_size, ...)
     ADD ESP,0x1c                        ; 004b7998
@@ -418,4 +416,18 @@ section .text
     ADD EDI,0x10                        ; 005768d1
     JMP 0x004b7875                      ; 005768d4
         ;   XREF to: 004b7875 (UNCONDITIONAL_JUMP)  ; LAB_004b7875
+    PUSH EBP                            ; 0060e3d2
+        ;   Label: LAB_0060e3d2
+    MOV ECX,dword ptr [ESI]             ; 0060e3d3
+    MOV dword ptr [EDI],ECX             ; 0060e3d5
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060e3d7
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060e3da
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060e3dd
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060e3e0
+    MOV ECX,dword ptr [ESI + 0xc]       ; 0060e3e3
+    MOV dword ptr [EDI + 0xc],ECX       ; 0060e3e6
+    ADD ESI,0x10                        ; 0060e3e9
+    ADD EDI,0x10                        ; 0060e3ec
+    JMP 0x004b7992                      ; 0060e3ef
+        ;   XREF to: 004b7992 (UNCONDITIONAL_JUMP)  ; LAB_004b7992
 

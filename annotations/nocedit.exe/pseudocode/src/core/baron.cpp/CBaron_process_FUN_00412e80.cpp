@@ -1,6 +1,6 @@
 // Name: core_baron.cpp_CBaron_process_FUN_00412e80
 // Address: 00412e80
-// Address Range: [[00412e80, 00413463]]
+// Address Range: [[00412e80, 00413463] [0060eb5b, 0060eb7c]]
 // Convention: __cdecl
 // Signature: void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float delta_time)
 
@@ -46,7 +46,6 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
   uint uVar1;
   CGame *pCVar2;
   
-  bVar8 = 0;
   pCVar1 = &(this_ptr->base).base.model;
   if (this_ptr->summoned == 0) {
     iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
@@ -203,23 +202,14 @@ switchD_0041345d_default:
        (this_ptr->base).base.model.accumulated_root_motion.y;
   (this_ptr->base).base.velocity.y = (this_ptr->base).base.velocity.y - delta_time * fVar3;
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
-  pCVar9 = &(this_ptr->base).base.model;
-  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar9);
+  pCVar1 = &(this_ptr->base).base.model;
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar1);
   blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
-  fVar10 = this_ptr->head_blend_weight;
+  fVar3 = this_ptr->head_blend_weight;
   iVar2 = g_BaronIndices[0];
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_rotation,&local_a4);
-  source_quaternions = &local_94;
-  local_94.w = local_a4.w;
-  puVar7 = (uint *)((int)&local_94 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-  puVar6 = (uint *)((int)&local_a4 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-  *(uint *)((int)&local_94 + (uint)bVar8 * -8 + 4) =
-       *(uint *)((int)&local_a4 + (uint)bVar8 * -8 + 4);
-  *puVar7 = *puVar6;
-  puVar7[(uint)bVar8 * -2 + 1] = puVar6[(uint)bVar8 * -2 + 1];
   core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-            (pCVar9,source_quaternions,fVar10,iVar2,
-             (CDeformableModel_MotionBlendWeightFunc *)blend_callback);
+            (pCVar1,&local_94,fVar3,iVar2,(CDeformableModel_MotionBlendWeightFunc *)blend_callback);
   iVar2 = 0;
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   do {

@@ -1,6 +1,6 @@
 // Name: core_turret.cpp_CTurret_process_FUN_005e2430
 // Address: 005e2430
-// Address Range: [[00599617, 00599662] [005e2430, 005e290c]]
+// Address Range: [[00599617, 00599662] [005e2430, 005e290c] [0060e3f4, 0060e415]]
 // Convention: __cdecl
 // Signature: void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,float delta_time)
 
@@ -17,13 +17,10 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
   int iVar5;
   CVector3f *pCVar5;
   uint uVar6;
-  uint *puVar6;
   uint *puVar7;
   uint *puVar8;
-  uint *puVar9;
   byte bVar9;
   float afStackY_186c [1497];
-  CVector3f *vector_out;
   float local_f8;
   char local_f4 [100];
   CQuaternion4f local_90;
@@ -42,7 +39,6 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
   char *sound_name;
   UOrientationVector *pUVar1;
   
-  bVar9 = 0;
   EVar1 = this_ptr->state;
   (this_ptr->base).muzzle_flash_color.r = -1;
   switch(EVar1) {
@@ -136,16 +132,8 @@ LAB_005e24c7:
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
                 (&local_90,&local_50,
                  (delta_time / (this_ptr->timer + delta_time)) * (float)2,&local_60);
-      vector_out = &local_80;
-      quat_in = (CQuaternion4f *)local_30;
-      local_80.x = local_60.w;
-      puVar9 = (uint *)((int)&local_80 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-      puVar6 = (uint *)((int)&local_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
-      *(uint *)((int)&local_80 + (uint)bVar9 * -8 + 4) =
-           *(uint *)((int)&local_60 + (uint)bVar9 * -8 + 4);
-      *puVar9 = *puVar6;
-      puVar9[(uint)bVar9 * -2 + 1] = puVar6[(uint)bVar9 * -2 + 1];
-      pCVar5 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(quat_in,vector_out);
+      pCVar5 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
+                         ((CQuaternion4f *)local_30,&local_80);
       if (pCVar5 != local_18) {
         local_18->x = pCVar5->x;
         local_18->y = pCVar5->y;

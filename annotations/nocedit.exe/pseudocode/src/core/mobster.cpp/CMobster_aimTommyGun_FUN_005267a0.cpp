@@ -1,6 +1,6 @@
 // Name: core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
 // Address: 005267a0
-// Address Range: [[005267a0, 00526afd] [0060497f, 006049a3]]
+// Address Range: [[005267a0, 00526afd] [0060497f, 006049a3] [0060e4c0, 0060e4e5]]
 // Convention: __cdecl
 // Signature: void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_ptr,float delta_time)
 
@@ -40,7 +40,6 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
   CCharacter *pCVar1;
   float fVar7;
   
-  bVar6 = 0;
   if ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) {
     this_ptr->firing_blend = 0.0;
   }
@@ -125,13 +124,6 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_005267a0(CMobster *this_p
                 (&(this_ptr->base).base.model,target_motion_index,6.0,fVar7,g_MobsterIndices[10],
                  core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
       core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(local_2c.x,&local_60);
-      local_80.w = local_60.w;
-      puVar5 = (uint *)((int)&local_80 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-      puVar4 = (uint *)((int)&local_60 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-      *(uint *)((int)&local_80 + (uint)bVar6 * -8 + 4) =
-           *(uint *)((int)&local_60 + (uint)bVar6 * -8 + 4);
-      *puVar5 = *puVar4;
-      puVar5[(uint)bVar6 * -2 + 1] = puVar4[(uint)bVar6 * -2 + 1];
       this_ptr_00 = &(this_ptr->base).base.model;
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
                 (this_ptr_00,&local_80,this_ptr->firing_blend,g_MobsterIndices[10],

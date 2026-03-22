@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 13,
-        "line": 192,
+        "line": 180,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 194,
+        "line": 182,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       }
     ],
@@ -18,16 +18,15 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 403,
-    "complexity_score": 277,
+    "assembly_lines": 415,
+    "complexity_score": 220,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 192,
-    "suspect_count": 7,
+    "pseudocode_lines": 180,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
       "stack_alignment_array",
       "unknown_field"
     ],
@@ -44,6 +43,10 @@
       [
         "005e2430",
         "005e290c"
+      ],
+      [
+        "0060e3f4",
+        "0060e415"
       ]
     ],
     "convention": "__cdecl",
@@ -201,18 +204,18 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.163636363636364,
-    "instruction_count": 330,
+    "avg_pcode_per_instr": 5.011834319526627,
+    "instruction_count": 338,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 5,
       "BOOL_OR": 7,
-      "BRANCH": 14,
+      "BRANCH": 16,
       "BRANCHIND": 1,
       "CALL": 18,
       "CALLIND": 4,
       "CBRANCH": 15,
-      "COPY": 647,
+      "COPY": 643,
       "FLOAT2FLOAT": 35,
       "FLOAT_ADD": 1,
       "FLOAT_DIV": 1,
@@ -223,25 +226,25 @@
       "FLOAT_SUB": 5,
       "INT2FLOAT": 5,
       "INT_ADD": 178,
-      "INT_AND": 113,
-      "INT_CARRY": 26,
-      "INT_EQUAL": 83,
+      "INT_AND": 117,
+      "INT_CARRY": 28,
+      "INT_EQUAL": 87,
       "INT_LEFT": 20,
       "INT_LESS": 8,
-      "INT_MULT": 9,
+      "INT_MULT": 1,
       "INT_NOTEQUAL": 26,
       "INT_OR": 25,
       "INT_SBORROW": 9,
-      "INT_SCARRY": 26,
-      "INT_SLESS": 41,
-      "INT_SUB": 80,
-      "INT_ZEXT": 28,
+      "INT_SCARRY": 28,
+      "INT_SLESS": 43,
+      "INT_SUB": 72,
+      "INT_ZEXT": 20,
       "LOAD": 85,
-      "POPCOUNT": 41,
+      "POPCOUNT": 43,
       "RETURN": 3,
       "STORE": 123
     },
-    "pcode_op_count": 1704
+    "pcode_op_count": 1694
   },
   "stack_frame": {
     "frame_size": 6264,
@@ -384,47 +387,15 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 18,
+      "line": 16,
       "match": "afStackY_186c",
       "severity": "moderate",
       "text": "float afStackY_186c [1497];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 135,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar9 = (uint *)((int)&local_80 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 136,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar6 = (uint *)((int)&local_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 137,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_80 + (uint)bVar9 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 138,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_60 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 185,
+      "line": 173,
       "match": "._12_8_",
       "severity": "mild",
       "text": "local_30._12_8_ =",
@@ -432,7 +403,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 187,
+      "line": 175,
       "match": "._12_8_",
       "severity": "mild",
       "text": "if (0.0 <= (double)local_30._12_8_) {",

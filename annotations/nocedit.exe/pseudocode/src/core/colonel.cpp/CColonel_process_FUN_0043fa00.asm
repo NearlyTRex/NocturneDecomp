@@ -287,13 +287,11 @@ section .text
     PUSH EAX                            ; 0043fc74
     MOV EAX,dword ptr [ESP + 0x90]      ; 0043fc75
     LEA ESI,[ESP + 0x14]                ; 0043fc7c
-    PUSH EAX                            ; 0043fc80
-    MOVSD ES:EDI,ESI                    ; 0043fc81
-    MOVSD ES:EDI,ESI                    ; 0043fc82
-    MOVSD ES:EDI,ESI                    ; 0043fc83
-    MOVSD ES:EDI,ESI                    ; 0043fc84
+    JMP 0x0060e52a                      ; 0043fc80
+        ;   XREF to: 0060e52a (UNCONDITIONAL_JUMP)  ; LAB_0060e52a
     CALL core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750 ; 0043fc85
         ;   XREF to: 0059f750 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750(CDeformableModelInstance * this_ptr, CQuaternion4f * source_quaternions, float blend_weight, int bone_index, ...)
+        ;   Label: LAB_0043fc85
     ADD ESP,0x14                        ; 0043fc8a
     PUSH dword ptr [EBP + 0x18]         ; 0043fc8d
         ;   Label: LAB_0043fc8d
@@ -547,4 +545,18 @@ section .text
     ADD ESP,0x8                         ; 0043ff0f
     JMP 0x0043fc14                      ; 0043ff12
         ;   XREF to: 0043fc14 (UNCONDITIONAL_JUMP)  ; LAB_0043fc14
+    PUSH EAX                            ; 0060e52a
+        ;   Label: LAB_0060e52a
+    MOV ECX,dword ptr [ESI]             ; 0060e52b
+    MOV dword ptr [EDI],ECX             ; 0060e52d
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060e52f
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060e532
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060e535
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060e538
+    MOV ECX,dword ptr [ESI + 0xc]       ; 0060e53b
+    MOV dword ptr [EDI + 0xc],ECX       ; 0060e53e
+    ADD ESI,0x10                        ; 0060e541
+    ADD EDI,0x10                        ; 0060e544
+    JMP 0x0043fc85                      ; 0060e547
+        ;   XREF to: 0043fc85 (UNCONDITIONAL_JUMP)  ; LAB_0043fc85
 

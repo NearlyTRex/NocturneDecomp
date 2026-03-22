@@ -1,6 +1,6 @@
 // Name: shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
 // Address: 00555ff0
-// Address Range: [[00555ff0, 00556178]]
+// Address Range: [[00555ff0, 00556178] [0060f3fe, 0060f469]]
 // Convention: __cdecl
 // Signature: int __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0(CColorQuantizer *this_ptr,uchar *output_buffer)
 
@@ -14,13 +14,14 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff
   float fVar1;
   float fVar7;
   float fVar8;
+  float fVar9;
   CColorQuantizer *pCVar7;
   uchar *puVar8;
   int iVar9;
   CColorQuantizer *pCVar10;
-  CColorQuantizer *pCVar9;
+  CColorQuantizer *pCVar11;
   int iVar11;
-  int iVar10;
+  int iVar12;
   uchar local_14;
   float fVar6;
   float fVar4;
@@ -53,52 +54,52 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff
       pCVar7 = (CColorQuantizer *)&pCVar7->error_buffer_r;
     } while (iVar11 < this_ptr->num_colors);
   }
-  iVar10 = 0;
+  iVar12 = 0;
   if (0 < this_ptr->num_colors) {
     do {
       iVar9 = 0;
-      pCVar9 = this_ptr;
+      pCVar11 = this_ptr;
       while (iVar9 < this_ptr->num_colors + -1) {
-        if (pCVar9->palette[1].intensity < pCVar9->palette[0].intensity) {
-          fVar4 = pCVar9->palette[0].r;
-          fVar5 = pCVar9->palette[0].g;
-          fVar6 = pCVar9->palette[0].b;
-          fVar1 = pCVar9->palette[0].intensity;
-          pCVar9->palette[0].r = pCVar9->palette[1].r;
-          pCVar9->palette[0].g = pCVar9->palette[1].g;
-          pCVar9->palette[0].b = pCVar9->palette[1].b;
-          pCVar9->palette[0].intensity = pCVar9->palette[1].intensity;
-          pCVar9->palette[1].r = fVar4;
-          pCVar9->palette[1].g = fVar5;
-          pCVar9->palette[1].b = fVar6;
-          pCVar9->palette[1].intensity = fVar1;
-          iVar9 = iVar9 + 1;
-          pCVar9 = (CColorQuantizer *)&pCVar9->error_buffer_r;
+        if (pCVar11->palette[1].intensity < pCVar11->palette[0].intensity) {
+          fVar1 = pCVar11->palette[0].r;
+          fVar7 = pCVar11->palette[0].g;
+          fVar8 = pCVar11->palette[0].b;
+          fVar9 = pCVar11->palette[0].intensity;
+          pCVar11->palette[0].r = pCVar11->palette[1].r;
+          pCVar11->palette[0].g = pCVar11->palette[1].g;
+          pCVar11->palette[0].b = pCVar11->palette[1].b;
+          pCVar11->palette[0].intensity = pCVar11->palette[1].intensity;
+          pCVar11->palette[1].r = fVar1;
+          pCVar11->palette[1].g = fVar7;
+          pCVar11->palette[1].b = fVar8;
+          pCVar11->palette[1].intensity = fVar9;
+          iVar9 = (int)fVar9 + 1;
+          pCVar11 = (CColorQuantizer *)&pCVar11->error_buffer_r;
         }
         else {
           iVar9 = iVar9 + 1;
-          pCVar9 = (CColorQuantizer *)&pCVar9->error_buffer_r;
+          pCVar11 = (CColorQuantizer *)&pCVar11->error_buffer_r;
         }
       }
-      iVar10 = iVar10 + 1;
-    } while (iVar10 < this_ptr->num_colors);
+      iVar12 = iVar12 + 1;
+    } while (iVar12 < this_ptr->num_colors);
   }
   puVar8 = (uchar *)this_ptr->num_colors;
-  iVar10 = 0;
-  pCVar9 = this_ptr;
+  iVar12 = 0;
+  pCVar11 = this_ptr;
   if (0 < (int)puVar8) {
     do {
       puVar8 = output_buffer + 3;
-      local_14 = (uchar)(int)ROUND(ROUND(pCVar9->palette[0].r));
+      local_14 = (uchar)(int)ROUND(ROUND(pCVar11->palette[0].r));
       output_buffer[2] = local_14;
-      local_14 = (uchar)(int)ROUND(ROUND(pCVar9->palette[0].g));
+      local_14 = (uchar)(int)ROUND(ROUND(pCVar11->palette[0].g));
       output_buffer[1] = local_14;
-      local_14 = (uchar)(int)ROUND(ROUND(pCVar9->palette[0].b));
-      iVar10 = iVar10 + 1;
+      local_14 = (uchar)(int)ROUND(ROUND(pCVar11->palette[0].b));
+      iVar12 = iVar12 + 1;
       *output_buffer = local_14;
       output_buffer = puVar8;
-      pCVar9 = (CColorQuantizer *)&pCVar9->error_buffer_r;
-    } while (iVar10 < this_ptr->num_colors);
+      pCVar11 = (CColorQuantizer *)&pCVar11->error_buffer_r;
+    } while (iVar12 < this_ptr->num_colors);
   }
   return (int)puVar8;
 }

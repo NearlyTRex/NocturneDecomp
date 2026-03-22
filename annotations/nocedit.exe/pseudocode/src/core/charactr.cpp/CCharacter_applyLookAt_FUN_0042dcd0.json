@@ -4,7 +4,7 @@
       {
         "category": "format_error",
         "column": 118,
-        "line": 35,
+        "line": 33,
         "message": "format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]"
       }
     ],
@@ -12,20 +12,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 127,
-    "complexity_score": 109,
+    "assembly_lines": 139,
+    "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 5,
+    "pseudocode_lines": 39,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
       "stack_alignment_array",
       "warning_type_propagation"
     ],
-    "total_lines": 171
+    "total_lines": 178
   },
   "cross_references": [
     {
@@ -45,6 +44,10 @@
       [
         "0060554f",
         "006055bd"
+      ],
+      [
+        "0060e54c",
+        "0060e56d"
       ]
     ],
     "convention": "__cdecl",
@@ -125,41 +128,41 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.12621359223301,
-    "instruction_count": 103,
+    "avg_pcode_per_instr": 4.666666666666667,
+    "instruction_count": 111,
     "opcode_distribution": {
       "BOOL_NEGATE": 11,
       "BOOL_OR": 1,
-      "BRANCH": 7,
+      "BRANCH": 9,
       "CALL": 5,
       "CBRANCH": 2,
-      "COPY": 116,
+      "COPY": 112,
       "FLOAT2FLOAT": 1,
       "FLOAT_EQUAL": 1,
       "FLOAT_LESS": 1,
       "FLOAT_NAN": 2,
       "INT2FLOAT": 1,
       "INT_ADD": 68,
-      "INT_AND": 61,
-      "INT_CARRY": 13,
-      "INT_EQUAL": 36,
+      "INT_AND": 65,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 40,
       "INT_LEFT": 8,
       "INT_LESS": 2,
-      "INT_MULT": 9,
+      "INT_MULT": 1,
       "INT_NOTEQUAL": 10,
       "INT_OR": 15,
       "INT_SBORROW": 2,
-      "INT_SCARRY": 13,
-      "INT_SLESS": 21,
-      "INT_SUB": 29,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 23,
+      "INT_SUB": 21,
       "INT_XOR": 2,
-      "INT_ZEXT": 12,
+      "INT_ZEXT": 4,
       "LOAD": 28,
-      "POPCOUNT": 17,
+      "POPCOUNT": 19,
       "RETURN": 1,
       "STORE": 33
     },
-    "pcode_op_count": 528
+    "pcode_op_count": 518
   },
   "stack_frame": {
     "frame_size": 6232,
@@ -244,35 +247,11 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 12,
+      "line": 11,
       "match": "afStackY_1850",
       "severity": "moderate",
       "text": "float afStackY_1850 [1522];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)((int)pCVar6 + ((uint)bVar4 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&local_34 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*puVar2 = *(uint *)((int)&local_34 + (uint)bVar4 * -8 + 4);",
-      "type": "pointer_cast"
     }
   ]
 }

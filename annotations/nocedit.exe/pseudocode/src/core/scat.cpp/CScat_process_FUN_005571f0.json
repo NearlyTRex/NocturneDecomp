@@ -4,19 +4,19 @@
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 151,
+        "line": 150,
         "message": "use of undeclared identifier 'SUB14'"
       },
       {
         "category": "format_error",
         "column": 77,
-        "line": 195,
+        "line": 194,
         "message": "format specifies type 'char *' but the argument has type 'CScat *' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 310,
+        "line": 309,
         "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'"
       }
     ],
@@ -24,20 +24,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 661,
-    "complexity_score": 395,
+    "assembly_lines": 673,
+    "complexity_score": 341,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 320,
-    "suspect_count": 6,
+    "pseudocode_lines": 311,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 981
+    "total_lines": 984
   },
   "cross_references": [],
   "function": {
@@ -46,6 +45,10 @@
       [
         "005571f0",
         "005578dd"
+      ],
+      [
+        "0060e47c",
+        "0060e49d"
       ]
     ],
     "convention": "__cdecl",
@@ -281,17 +284,17 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.513513513513513,
-    "instruction_count": 518,
+    "avg_pcode_per_instr": 5.4106463878327,
+    "instruction_count": 526,
     "opcode_distribution": {
       "BOOL_NEGATE": 16,
       "BOOL_OR": 15,
-      "BRANCH": 14,
+      "BRANCH": 16,
       "BRANCHIND": 1,
       "CALL": 38,
       "CALLIND": 7,
       "CBRANCH": 45,
-      "COPY": 988,
+      "COPY": 984,
       "FLOAT2FLOAT": 70,
       "FLOAT_ADD": 10,
       "FLOAT_EQUAL": 10,
@@ -302,26 +305,26 @@
       "FLOAT_SUB": 2,
       "INT2FLOAT": 6,
       "INT_ADD": 213,
-      "INT_AND": 240,
-      "INT_CARRY": 45,
-      "INT_EQUAL": 170,
+      "INT_AND": 244,
+      "INT_CARRY": 47,
+      "INT_EQUAL": 174,
       "INT_LEFT": 40,
       "INT_LESS": 18,
-      "INT_MULT": 9,
+      "INT_MULT": 1,
       "INT_NOTEQUAL": 50,
       "INT_OR": 50,
       "INT_SBORROW": 18,
-      "INT_SCARRY": 45,
-      "INT_SLESS": 85,
-      "INT_SUB": 171,
+      "INT_SCARRY": 47,
+      "INT_SLESS": 87,
+      "INT_SUB": 163,
       "INT_XOR": 2,
-      "INT_ZEXT": 48,
+      "INT_ZEXT": 40,
       "LOAD": 110,
-      "POPCOUNT": 85,
+      "POPCOUNT": 87,
       "RETURN": 1,
       "STORE": 195
     },
-    "pcode_op_count": 2856
+    "pcode_op_count": 2846
   },
   "stack_frame": {
     "frame_size": 6252,
@@ -471,7 +474,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 24,
+      "line": 25,
       "match": "afStackY_1860",
       "severity": "moderate",
       "text": "float afStackY_1860 [1521];",
@@ -479,43 +482,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 144,
+      "line": 143,
       "match": "SUB14",
       "severity": "mild",
       "text": "(&this_ptr->base,SUB14(this_ptr->guns_drawn == 0,0));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 309,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar17 = (uint *)((int)&CStack_84 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 310,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar16 = (uint *)((int)&CStack_74 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 311,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&CStack_84 + (uint)bVar18 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 312,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&CStack_74 + (uint)bVar18 * -8 + 4);",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

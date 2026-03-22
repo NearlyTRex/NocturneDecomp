@@ -53,13 +53,11 @@ section .text
         ;   XREF to: 00604858 (UNCONDITIONAL_JUMP)  ; LAB_00604858
     LEA ESI,[EBX + 0x344]               ; 00441db7
         ;   Label: LAB_00441db7
-    PUSH EBX                            ; 00441dbd
-    MOVSD ES:EDI,ESI                    ; 00441dbe
-    MOVSD ES:EDI,ESI                    ; 00441dbf
-    MOVSD ES:EDI,ESI                    ; 00441dc0
-    MOVSD ES:EDI,ESI                    ; 00441dc1
+    JMP 0x0060e508                      ; 00441dbd
+        ;   XREF to: 0060e508 (UNCONDITIONAL_JUMP)  ; LAB_0060e508
     CALL core_platfrm.cpp_CPlatform_setup_FUN_0054ca20 ; 00441dc2
         ;   XREF to: 0054ca20 (UNCONDITIONAL_CALL)  ; void core_platfrm.cpp_CPlatform_setup_FUN_0054ca20(CPlatform * this_ptr)
+        ;   Label: LAB_00441dc2
     ADD ESP,0x4                         ; 00441dc7
     MOV dword ptr [EBX + 0xfc],0x1      ; 00441dca
     ADD ESP,0x10                        ; 00441dd4
@@ -90,4 +88,18 @@ section .text
     LEA EDI,[EBX + 0x334]               ; 00604874
     JMP 0x00441db7                      ; 0060487a
         ;   XREF to: 00441db7 (UNCONDITIONAL_JUMP)  ; LAB_00441db7
+    PUSH EBX                            ; 0060e508
+        ;   Label: LAB_0060e508
+    MOV ECX,dword ptr [ESI]             ; 0060e509
+    MOV dword ptr [EDI],ECX             ; 0060e50b
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060e50d
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060e510
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060e513
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060e516
+    MOV ECX,dword ptr [ESI + 0xc]       ; 0060e519
+    MOV dword ptr [EDI + 0xc],ECX       ; 0060e51c
+    ADD ESI,0x10                        ; 0060e51f
+    ADD EDI,0x10                        ; 0060e522
+    JMP 0x00441dc2                      ; 0060e525
+        ;   XREF to: 00441dc2 (UNCONDITIONAL_JUMP)  ; LAB_00441dc2
 
