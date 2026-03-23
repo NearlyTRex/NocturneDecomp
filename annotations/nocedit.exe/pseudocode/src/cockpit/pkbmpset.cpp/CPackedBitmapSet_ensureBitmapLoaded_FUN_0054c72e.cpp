@@ -12,7 +12,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c7
   int iVar1;
   int iVar2;
   
-  if (this_ptr->bitmap_array[bitmap_index].packed_data == (char *)0x0) {
+  if (this_ptr->bitmap_array[bitmap_index].packed_data == (ushort *)0x0) {
     iVar2 = 0;
     if (0 < this_ptr->bitmap_count) {
       iVar1 = 0;

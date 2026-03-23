@@ -73,7 +73,7 @@ C3DSLight * __cdecl core_set_cpp_C3DSLight_arrdtor_FUN_00571550(C3DSLight *objs,
 SRoom * __cdecl core_set_cpp_SRoom_arrdtor_FUN_00571570(SRoom *objs,uint flags);
 SVDBox * __cdecl core_set_cpp_SVDBox_arrdtor_FUN_00571590(SVDBox *objs,uint flags);
 void __cdecl core_setcolid_cpp_staticInit_FUN_005715b0(void);
-int __cdecl core_setcolid_cpp_rayTestQuadFloor_FUN_005715d0(float x,float z,CVector3f *out_height,CVector3f *vertex1,CVector3f *vertex2, CVector3f *vertex3,CVector3f *vertex4,CVector3f *out_transformed_normal);
+int __cdecl core_setcolid_cpp_rayTestQuadFloor_FUN_005715d0(CVector3f *position,float search_radius,CVector3f *out_height,CVector3f *vertex1, CVector3f *vertex2,CVector3f *vertex3,CVector3f *vertex4, CVector3f *out_transformed_normal);
 float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDemonSet *this_ptr,CVector3f *position,float radius);
 float __cdecl core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340(CDemonSet *this_ptr,CVector3f *position);
 int __cdecl core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460(CDemonSet *this_ptr,CVector3f *start_pos,CVector3f *end_pos);

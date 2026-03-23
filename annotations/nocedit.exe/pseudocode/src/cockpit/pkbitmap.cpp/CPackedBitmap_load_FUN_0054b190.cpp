@@ -14,7 +14,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
   int iVar4;
   char *pcVar5;
   ushort *puVar6;
-  char *pcVar1;
+  ushort *puVar1;
   uint uVar7;
   uint uVar2;
   int iVar8;
@@ -22,7 +22,6 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
   int new_size;
   int iVar3;
   uchar *puVar10;
-  ushort *puVar4;
   byte bVar11;
   char local_154 [300];
   int local_28;
@@ -56,9 +55,9 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
   do {
     *(int *)((int)this_ptr->row_pointers + local_28) = new_size;
     if (this_ptr->height <= local_24) {
-      pcVar1 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
+      puVar1 = (ushort *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                          (this_ptr->packed_data,new_size,"..\\cockpit\\pkbitmap.cpp",0x3d6);
-      this_ptr->packed_data = pcVar1;
+      this_ptr->packed_data = puVar1;
       return;
     }
     iVar8 = 0;
@@ -84,7 +83,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
             pcVar5 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                                (this_ptr->packed_data,local_18,"..\\cockpit\\pkbitmap.cpp",0x3ac
                                );
-            this_ptr->packed_data = pcVar5;
+            this_ptr->packed_data = (ushort *)pcVar5;
             if (pcVar5 == (char *)0x0) {
               _sprintf
                         (local_154,"Out of memory packing file \"%s\" on row %u trying to get %u bytes",this_ptr,local_24,local_18);
@@ -93,22 +92,22 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
               core_main_c_displayErrorAndQuit_FUN_00506f10(local_154);
             }
           }
-          puVar6 = (ushort *)(this_ptr->packed_data + iVar3);
+          puVar6 = (ushort *)((int)this_ptr->packed_data + iVar3);
           *puVar6 = (ushort)iVar8;
           puVar6[1] = (ushort)(iVar9 - iVar8);
           uVar1 = puVar6[1];
           puVar10 = local_14 + *puVar6;
-          puVar4 = puVar6 + 2;
+          puVar1 = puVar6 + 2;
           for (uVar7 = (uint)(uVar1 >> 2); uVar7 != 0; uVar7 = uVar7 - 1) {
-            *(uint *)puVar4 = *(uint *)puVar10;
+            *(uint *)puVar1 = *(uint *)puVar10;
             puVar10 = puVar10 + (uint)bVar11 * -8 + 4;
-            puVar4 = puVar4 + (uint)bVar11 * -4 + 2;
+            puVar1 = puVar1 + (uint)bVar11 * -4 + 2;
           }
           for (uVar2 = (byte)uVar1 & 0xffffff03; uVar2 != 0; uVar2 = uVar2 - 1) {
             puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
-            *(uchar *)puVar4 = *puVar10;
+            *(uchar *)puVar1 = *puVar10;
             puVar10 = puVar10;
-            puVar4 = (ushort *)((int)puVar4 + (uint)bVar11 * -2 + 1);
+            puVar1 = (ushort *)((int)puVar1 + (uint)bVar11 * -2 + 1);
           }
         }
         iVar8 = iVar9;

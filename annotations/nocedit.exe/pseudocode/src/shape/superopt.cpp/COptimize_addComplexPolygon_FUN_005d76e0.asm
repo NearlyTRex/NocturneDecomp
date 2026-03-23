@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_superopt_cpp_COptimize_addComplexPolygon_FUN_005d76e0(COptimize *this_ptr,CComplexPolygon *polygon)
+; CComplexPolygon * __cdecl shape_superopt_cpp_COptimize_addComplexPolygon_FUN_005d76e0(COptimize *this_ptr,CComplexPolygon *polygon)
 ;
 ; Parameters:
 ; COptimize *      Stack[0x4]:4   this_ptr

@@ -3,117 +3,93 @@
     "errors": [
       {
         "category": "other",
-        "column": 11,
-        "line": 30,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 31,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 33,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
         "column": 41,
-        "line": 42,
+        "line": 43,
         "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'IDirectSoundBuffer *'"
       },
       {
-        "category": "other",
-        "column": 26,
-        "line": 44,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 45,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 45,
-        "message": "expected expression"
-      },
-      {
-        "category": "other",
-        "column": 38,
-        "line": 45,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 59,
-        "line": 45,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 49,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
+        "category": "missing_member",
         "column": 18,
-        "line": 49,
-        "message": "expected expression"
+        "line": 44,
+        "message": "no member named '_12_4_' in 'tWAVEFORMATEX'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 51,
+        "line": 46,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 51,
+        "line": 46,
         "message": "expected expression"
       },
       {
-        "category": "other",
-        "column": 26,
-        "line": 54,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+        "category": "undeclared_identifier",
+        "column": 10,
+        "line": 50,
+        "message": "use of undeclared identifier 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 16,
+        "line": 50,
+        "message": "expected expression"
+      },
+      {
+        "category": "missing_member",
+        "column": 37,
+        "line": 50,
+        "message": "no member named '_12_4_' in 'tWAVEFORMATEX'"
+      },
+      {
+        "category": "missing_member",
+        "column": 27,
+        "line": 51,
+        "message": "no member named '_12_4_' in 'tWAVEFORMATEX'"
       },
       {
         "category": "undeclared_identifier",
         "column": 13,
-        "line": 55,
+        "line": 53,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 20,
-        "line": 55,
+        "line": 53,
         "message": "expected expression"
       },
       {
-        "category": "other",
-        "column": 38,
-        "line": 55,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+        "category": "missing_member",
+        "column": 20,
+        "line": 56,
+        "message": "no member named '_0_4_' in 'tWAVEFORMATEX'"
       },
       {
-        "category": "other",
-        "column": 59,
-        "line": 55,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 57,
+        "message": "use of undeclared identifier 'code'"
       },
       {
-        "category": "other",
-        "column": 50,
-        "line": 65,
-        "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
+        "category": "syntax_error",
+        "column": 20,
+        "line": 57,
+        "message": "expected expression"
+      },
+      {
+        "category": "missing_member",
+        "column": 39,
+        "line": 57,
+        "message": "no member named '_0_4_' in 'tWAVEFORMATEX'"
+      },
+      {
+        "category": "missing_member",
+        "column": 60,
+        "line": 57,
+        "message": "no member named '_0_4_' in 'tWAVEFORMATEX'"
       }
     ],
     "success": false,
@@ -121,19 +97,19 @@
   },
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 212,
+    "complexity_score": 184,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 57,
-    "suspect_count": 14,
+    "pseudocode_lines": 59,
+    "suspect_count": 11,
     "suspect_types": [
       "unknown_field",
       "unresolved_funcptr",
       "warning_max_restarts"
     ],
-    "total_lines": 203
+    "total_lines": 205
   },
   "cross_references": [],
   "function": {
@@ -268,15 +244,8 @@
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
-        "size": 12,
-        "type": "undefined1[12]"
-      },
-      {
-        "is_param": false,
-        "name": "puStack_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4 *"
+        "size": 20,
+        "type": "WAVEFORMATEX"
       },
       {
         "is_param": false,
@@ -312,71 +281,47 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 23,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_2c._0_4_ = (int *)0x10001;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 24,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_2c._4_4_ = 0x5622;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 26,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_2c._8_4_ = (int *)0xac44;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
       "line": 37,
-      "match": "._8_4_",
+      "match": "._12_4_",
       "severity": "mild",
-      "text": "if ((int *)local_2c._8_4_ != (int *)0x0) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 38,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)local_2c._8_4_ + 8))(local_2c._8_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 38,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)local_2c._8_4_ + 8))(local_2c._8_4_);",
+      "text": "if (local_2c._12_4_ == 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 38,
+      "line": 39,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)local_2c._8_4_ + 8))(local_2c._8_4_);",
+      "text": "(**(code **)(*(int *)local_2c.nAvgBytesPerSec + 8))(local_2c.nAvgBytesPerSec);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)*puStack_20)(puStack_20,&g_IID_IKsPropertySet,&g_DirectSoundPropertySet);",
-      "type": "unresolved_funcptr"
+      "description": "Unknown/mangled field access",
+      "line": 43,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "(*(code *)**(uint **)local_2c._12_4_)",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 43,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)**(uint **)local_2c._12_4_)",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unknown/mangled field access",
       "line": 44,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "(local_2c._12_4_,&g_IID_IKsPropertySet,&g_DirectSoundPropertySet);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 46,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)DStack_40.lpwfxFormat + 8))(DStack_40.lpwfxFormat);",
@@ -384,15 +329,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 47,
+      "line": 49,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "if ((int *)local_2c._0_4_ != (int *)0x0) {",
+      "text": "if (local_2c._0_4_ != 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 48,
+      "line": 50,
       "match": "._0_4_",
       "severity": "mild",
       "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",
@@ -400,7 +345,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 48,
+      "line": 50,
       "match": "._0_4_",
       "severity": "mild",
       "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",
@@ -408,7 +353,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 48,
+      "line": 50,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",

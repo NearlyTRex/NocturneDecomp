@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_setcolid_cpp_rayTestQuadFloor_FUN_005715d0(float x,float z,CVector3f *out_height,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,CVector3f *vertex4,CVector3f *out_transformed_normal)
+; int __cdecl core_setcolid_cpp_rayTestQuadFloor_FUN_005715d0(CVector3f *position,float search_radius,CVector3f *out_height,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,CVector3f *vertex4,CVector3f *out_transformed_normal)
 ;
 ; Parameters:
-; float            Stack[0x4]:4   x
-; float            Stack[0x8]:4   z
+; CVector3f *      Stack[0x4]:4   position
+; float            Stack[0x8]:4   search_radius
 ; CVector3f *      Stack[0xc]:4   out_height
 ; CVector3f *      Stack[0x10]:4   vertex1
 ; CVector3f *      Stack[0x14]:4   vertex2

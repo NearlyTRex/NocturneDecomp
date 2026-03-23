@@ -2,11 +2,11 @@
 // Address: 005ba6a0
 // Address Range: [[005ba6a0, 005ba6ea]]
 // Convention: __cdecl
-// Signature: int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_005ba6a0(CStairs *this_ptr,float x_pos,float z_pos,float *out_floor_height)
+// Signature: int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_005ba6a0(CStairs *this_ptr,CVector3f *position,float search_radius,float *out_floor_height)
 
 #include "nocturne.h"
 
-int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_005ba6a0(CStairs *this_ptr,float x_pos,float z_pos,float *out_floor_height)
+int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_005ba6a0(CStairs *this_ptr,CVector3f *position,float search_radius,float *out_floor_height)
 
 {
   int iVar1;
@@ -18,7 +18,7 @@ int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_005ba6a0(CStairs *t
   iVar3 = 0;
   for (iVar2 = 0; iVar2 < this_ptr->stair_count * 2; iVar2 = iVar2 + 1) {
     iVar1 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                      (triangle,(CVector3f *)x_pos,z_pos,out_floor_height);
+                      (triangle,position,search_radius,out_floor_height);
     if (iVar1 != 0) {
       iVar3 = 1;
     }

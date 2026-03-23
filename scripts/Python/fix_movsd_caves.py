@@ -69,23 +69,27 @@ def parse_asm_file(asm_path):
     return instructions
 
 
-def find_movsd_groups(instructions):
-    """Find groups of 4 consecutive MOVSD instructions.
+def find_movsd_groups(instructions, min_count=3):
+    """Find groups of consecutive MOVSD instructions.
 
-    Returns list of (start_index, start_addr, 'movsd4') for each group.
+    Detects runs of min_count or more consecutive MOVSDs (default 3+).
+    3x MOVSD = 12-byte copy (CVector3f), 4x = 16-byte copy (CQuaternion4f).
+
+    Returns list of (start_index, start_addr, 'movsdN', count) for each group.
     """
     groups = []
     i = 0
-    while i < len(instructions) - 3:
-        if (RE_MOVSD.match(instructions[i][1]) and
-            RE_MOVSD.match(instructions[i+1][1]) and
-            RE_MOVSD.match(instructions[i+2][1]) and
-            RE_MOVSD.match(instructions[i+3][1]) and
-            instructions[i+1][0] == instructions[i][0] + 1 and
-            instructions[i+2][0] == instructions[i][0] + 2 and
-            instructions[i+3][0] == instructions[i][0] + 3):
-            groups.append((i, instructions[i][0], 'movsd4'))
-            i += 4
+    while i < len(instructions):
+        if RE_MOVSD.match(instructions[i][1]):
+            # Count consecutive MOVSDs at contiguous addresses
+            run = 1
+            while (i + run < len(instructions) and
+                   RE_MOVSD.match(instructions[i + run][1]) and
+                   instructions[i + run][0] == instructions[i][0] + run):
+                run += 1
+            if run >= min_count:
+                groups.append((i, instructions[i][0], 'movsd%d' % run, run))
+            i += run
         else:
             i += 1
     return groups
@@ -247,9 +251,6 @@ def make_explicit_copy_asm(dword_count):
     return insns
 
 
-# The 16-byte explicit copy (4 dwords) for backwards compat
-EXPLICIT_COPY_ASM = make_explicit_copy_asm(4)
-
 # Instructions that modify ESP (unsafe to borrow without adjustment)
 RE_ESP_MODIFY = re.compile(
     r'^(PUSH|POP|SUB\s+ESP|ADD\s+ESP|CALL|RET)\b', re.IGNORECASE)
@@ -302,8 +303,12 @@ def collect_jump_targets(instructions):
     return targets
 
 
-def build_site_patch(ks, instructions, group_idx, group_addr, jump_targets=None):
+def build_site_patch(ks, instructions, group_idx, group_addr, jump_targets=None,
+                     movsd_count=4):
     """Build a site patch by borrowing adjacent instructions.
+
+    Args:
+      movsd_count: number of consecutive MOVSD instructions (3 or 4).
 
     Returns:
       site_start: start address of the patched region
@@ -316,8 +321,8 @@ def build_site_patch(ks, instructions, group_idx, group_addr, jump_targets=None)
         jump_targets = set()
 
     movsd_start = group_addr
-    movsd_end = group_addr + 4  # 4 bytes of MOVSD
-    movsd_size = 4
+    movsd_end = group_addr + movsd_count  # each MOVSD is 1 byte
+    movsd_size = movsd_count
 
     # We need >= 5 bytes for a JMP rel32
     total_size = movsd_size
@@ -325,7 +330,7 @@ def build_site_patch(ks, instructions, group_idx, group_addr, jump_targets=None)
     after_insns = []
 
     # Expand after first (safer — less likely to hit ESP/control flow)
-    after_idx = group_idx + 4
+    after_idx = group_idx + movsd_count
     while total_size < 5 and after_idx < len(instructions):
         addr, text = instructions[after_idx]
         # Don't borrow an instruction that is a branch target — other
@@ -431,18 +436,23 @@ def generate_cave_code(ks, site_info, cave_addr):
 
     group_type = site_info.get('group_type', 'movsd4')
 
-    if group_type == 'movsd4':
+    if group_type.startswith('movsd'):
+        # Determine dword count from group type (movsd3 -> 3, movsd4 -> 4)
+        dword_count = site_info.get('movsd_count', 4)
+        byte_count = dword_count * 4
+
         # Borrowed before instructions
         for insn_addr, text in site_info['before_insns']:
             emit_borrowed(insn_addr, text)
 
-        # Explicit 4-dword copy
-        for asm_text in EXPLICIT_COPY_ASM:
+        # Explicit N-dword copy
+        copy_insns = make_explicit_copy_asm(dword_count)
+        for asm_text in copy_insns:
             emit(asm_text)
 
-        # ESI/EDI advancement (4x MOVSD advances both by 16)
-        emit('add esi, 16', '(MOVSD esi/edi advancement)')
-        emit('add edi, 16', '(MOVSD esi/edi advancement)')
+        # ESI/EDI advancement (Nx MOVSD advances both by N*4)
+        emit('add esi, %d' % byte_count, '(MOVSD esi/edi advancement)')
+        emit('add edi, %d' % byte_count, '(MOVSD esi/edi advancement)')
 
         # Borrowed after instructions
         for insn_addr, text in site_info['after_insns']:
@@ -490,14 +500,14 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
     # Collect all branch targets for safety validation
     jump_targets = collect_jump_targets(instructions)
 
-    movsd4_groups = find_movsd_groups(instructions)
+    movsd_groups = find_movsd_groups(instructions, min_count=3)
     rep_groups = find_rep_movsd_groups(instructions)
 
     all_groups = []
-    for idx, addr, gtype in movsd4_groups:
-        all_groups.append(('movsd4', idx, addr, None, None))
+    for idx, addr, gtype, count in movsd_groups:
+        all_groups.append((gtype, idx, addr, None, None, count))
     for first_idx, first_addr, gtype, setup, rep_idx in rep_groups:
-        all_groups.append(('rep_movsd', first_idx, first_addr, setup, rep_idx))
+        all_groups.append(('rep_movsd', first_idx, first_addr, setup, rep_idx, 0))
 
     # Sort by address
     all_groups.sort(key=lambda g: g[2])
@@ -508,10 +518,15 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
         return None, cave_offset, []
 
     if verbose:
-        m4 = len(movsd4_groups)
+        mn = len(movsd_groups)
         mr = len(rep_groups)
-        print("Found %d MOVSD group(s) in %s (%d x4, %d REP)" % (
-            len(all_groups), os.path.basename(asm_path), m4, mr))
+        counts_str = ', '.join('%dx%d' % (
+            sum(1 for _, _, _, c in movsd_groups if c == n), n)
+            for n in sorted(set(c for _, _, _, c in movsd_groups)))
+        if mr:
+            counts_str += ', %d REP' % mr
+        print("Found %d MOVSD group(s) in %s (%s)" % (
+            len(all_groups), os.path.basename(asm_path), counts_str))
 
     # Read binary for original bytes
     pe_data, image_base, sections = None, None, None
@@ -523,18 +538,20 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
     allocations = []
     current_offset = cave_offset
 
-    for group_num, (gtype, group_idx, group_addr, setup, rep_idx) in enumerate(all_groups):
+    for group_num, (gtype, group_idx, group_addr, setup, rep_idx, movsd_count) in enumerate(all_groups):
         if verbose:
             print("\n  %s group %d at 0x%08x" % (gtype, group_num + 1, group_addr))
 
-        if gtype == 'movsd4':
+        if gtype.startswith('movsd') and gtype != 'rep_movsd':
             site_info = build_site_patch(ks, instructions, group_idx, group_addr,
-                                        jump_targets=jump_targets)
+                                        jump_targets=jump_targets,
+                                        movsd_count=movsd_count)
             if site_info is None:
                 if verbose:
                     print("    SKIP: cannot borrow enough bytes for JMP")
                 continue
-            site_info['group_type'] = 'movsd4'
+            site_info['group_type'] = gtype
+            site_info['movsd_count'] = movsd_count
 
         elif gtype == 'rep_movsd':
             # The entire setup block (SUB ESP through REP MOVSD) becomes the site

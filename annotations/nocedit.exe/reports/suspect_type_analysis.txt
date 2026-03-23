@@ -4,9 +4,9 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6939 ( 41.7%)
-  pointer_cast                    5100 ( 30.7%)
-  unknown_field                    941 (  5.7%)
+  decompiler_intrinsic            6938 ( 41.8%)
+  pointer_cast                    5103 ( 30.8%)
+  unknown_field                    900 (  5.4%)
   special_crt_function             499 (  3.0%)
   stack_param                      343 (  2.1%)
   unnamed_param                    323 (  1.9%)
@@ -17,9 +17,9 @@ SUSPECT TYPE COUNTS
   unresolved_funcptr               169 (  1.0%)
   warning_type_propagation         132 (  0.8%)
   param_count_too_few              121 (  0.7%)
-  stack_alignment_array            108 (  0.6%)
+  stack_alignment_array            108 (  0.7%)
   unaffected_reg                   106 (  0.6%)
-  sub84_truncation                 101 (  0.6%)
+  sub84_truncation                 100 (  0.6%)
   negative_offset                   86 (  0.5%)
   warning_unreachable               84 (  0.5%)
   register_param                    69 (  0.4%)
@@ -54,7 +54,7 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (6939 occurrences)
+TYPE: decompiler_intrinsic (6938 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -67,7 +67,7 @@ Unique patterns:
    120x  CARRY4
    106x  fcos
    105x  fsin
-   101x  SUB84
+   100x  SUB84
     95x  CONCAT12
     90x  CONCAT22
     82x  CONCAT14
@@ -96,19 +96,19 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5100 occurrences)
+TYPE: pointer_cast (5103 occurrences)
 ====================================================================================================
 
 Unique patterns:
   1615x  (uint *)((int)
-  1289x  (int *)((int)
+  1287x  (int *)((int)
    325x  (SRenderVertex *)((int)
-   289x  (float *)((int)
+   290x  (float *)((int)
    289x  (CMatrix3x4f *)((int)
    208x  (double *)((int)
    189x  (void *)((int)
    171x  (byte *)((int)
-    80x  (ushort *)((int)
+    84x  (ushort *)((int)
     71x  (char *)((int)
     61x  (short *)((int)
     34x  (SShapeEditorPolygon *)((int)
@@ -132,18 +132,18 @@ Example functions:
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar1) <...
 
 ====================================================================================================
-TYPE: unknown_field (941 occurrences)
+TYPE: unknown_field (900 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   381x  ._0_4_
-   356x  ._4_4_
+   370x  ._0_4_
+   344x  ._4_4_
     47x  ._0_2_
     36x  ._2_2_
-    26x  ._8_4_
     14x  ._0_1_
-    12x  ._12_4_
+    11x  ._12_4_
      9x  ._1_1_
+     9x  ._8_4_
      7x  ._3_1_
      7x  ._24_4_
      7x  ._4_8_
@@ -799,11 +799,11 @@ Example functions:
     char (*unaff_EBP) [4];...
 
 ====================================================================================================
-TYPE: sub84_truncation (101 occurrences)
+TYPE: sub84_truncation (100 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   101x  SUB84(
+   100x  SUB84(
 
 Example functions:
   crt_math.c_handle_math_error_FUN_0060c02b

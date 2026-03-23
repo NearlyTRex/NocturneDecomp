@@ -10,27 +10,27 @@ Total functions: 6452
 Clean functions: 5027 (77.9%)
 Functions with suspects: 1425 (22.1%)
 
-Total suspect patterns: 14485
-Average suspects per function: 2.25
+Total suspect patterns: 14445
+Average suspects per function: 2.24
 
 Virtual files: 214 total, 47 at 100%, 83 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3411, Average: 47.9
 
-Average complexity score: 72.7
+Average complexity score: 72.6
 
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6452
-Successful: 5846 (90.6%)
-Failed: 606
+Successful: 5909 (91.6%)
+Failed: 543
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  decompiler_intrinsic      6794
-  pointer_cast              4853
-  unknown_field             903
+  decompiler_intrinsic      6793
+  pointer_cast              4856
+  unknown_field             862
   nonstandard_int           267
   warning_inlined_function  261
   stack_param               227
@@ -38,7 +38,7 @@ SUSPECT PATTERN BREAKDOWN
   warning_type_propagation  132
   stack_alignment_array     108
   unresolved_funcptr        98
-  sub84_truncation          94
+  sub84_truncation          93
   param_count_too_few       81
   warning_unreachable       74
   unnamed_param             64
@@ -137,12 +137,12 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2162, suspects: 25, lines: 1887)
   004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 2052, suspects: 97, lines: 1052)
   005b9c10: core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (score: 1941, suspects: 119, lines: 711)
-  005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1901, suspects: 70, lines: 1166)
+  005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1865, suspects: 68, lines: 1150)
   004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1825, suspects: 8, lines: 1725)
   005ca590: shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (score: 1674, suspects: 115, lines: 509)
   00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 1667, suspects: 73, lines: 917)
   004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1654, suspects: 6, lines: 1579)
-  005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (score: 1538, suspects: 106, lines: 453)
+  005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (score: 1483, suspects: 101, lines: 448)
   0056eac0: core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (score: 1467, suspects: 85, lines: 602)
   005d0340: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340 (score: 1441, suspects: 126, lines: 171)
   004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 1406, suspects: 49, lines: 911)
@@ -186,7 +186,7 @@ FUNCTIONS BY SUSPECT TYPE
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
     ... and 872 more
 
-  unknown_field (95 functions):
+  unknown_field (92 functions):
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     0043e530: support_codec.cpp_readBitsFromStream_FUN_0043e530
     00441040: engine_colquant.c_computeWeightedColorDistance_FUN_00441040
@@ -197,7 +197,7 @@ FUNCTIONS BY SUSPECT TYPE
     00440c80: engine_colquant.c_partitionByGreen_FUN_00440c80
     00441790: engine_colquant.c_doubleMax_FUN_00441790
     00552a40: engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
-    ... and 85 more
+    ... and 82 more
 
   nonstandard_int (22 functions):
     004ce240: engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240

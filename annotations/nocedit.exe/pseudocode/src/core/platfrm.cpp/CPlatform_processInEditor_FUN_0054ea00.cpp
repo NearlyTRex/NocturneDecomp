@@ -37,12 +37,8 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
   CMatrix3x4f CStack_194;
   CMatrix3x4f CStack_164;
   CMatrix3x4f CStack_134;
-  byte auStack_104 [16];
-  float fStack_f4;
-  float fStack_f0;
-  byte auStack_e8 [16];
-  float fStack_d8;
-  float fStack_d4;
+  CSlew auStack_104;
+  CSlew auStack_e8;
   CQuaternion4f CStack_cc;
   CQuaternion4f CStack_bc;
   CQuaternion4f CStack_ac;
@@ -107,51 +103,51 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
       }
       switch(this_ptr->platform_type) {
       case PLATFORM_TYPE_START:
-        if ((CVector3f *)auStack_104 != &this_ptr->start_pos) {
-          auStack_104._0_4_ = (this_ptr->start_pos).x;
-          auStack_104._4_4_ = (this_ptr->start_pos).y;
-          auStack_104._8_4_ = (this_ptr->start_pos).z;
+        if (&auStack_104 != (CSlew *)&this_ptr->start_pos) {
+          auStack_104.position.x = (this_ptr->start_pos).x;
+          auStack_104.position.y = (this_ptr->start_pos).y;
+          auStack_104.position.z = (this_ptr->start_pos).z;
         }
         pCVar6 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                            ((CQuaternion4f *)(auStack_40 + 0xc),(CVector3f *)&this_ptr->orig_orient)
         ;
-        if ((CVector3f *)(auStack_104 + 0xc) != pCVar6) {
-          auStack_104._12_4_ = pCVar6->x;
-          fStack_f4 = pCVar6->y;
-          fStack_f0 = pCVar6->z;
+        if ((CVector3f *)&auStack_104.pitch != pCVar6) {
+          auStack_104.pitch = pCVar6->x;
+          auStack_104.yaw = pCVar6->y;
+          auStack_104.roll = pCVar6->z;
         }
-        core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)auStack_104);
-        if (&this_ptr->start_pos != (CVector3f *)auStack_104) {
-          (this_ptr->start_pos).x = (float)auStack_104._0_4_;
-          (this_ptr->start_pos).y = (float)auStack_104._4_4_;
-          (this_ptr->start_pos).z = (float)auStack_104._8_4_;
+        core_slew_cpp_CSlew_processInput_FUN_005a20b0(&auStack_104);
+        if ((CSlew *)&this_ptr->start_pos != &auStack_104) {
+          (this_ptr->start_pos).x = auStack_104.position.x;
+          (this_ptr->start_pos).y = auStack_104.position.y;
+          (this_ptr->start_pos).z = auStack_104.position.z;
         }
-        core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(auStack_104 + 0xc),&CStack_bc);
+        core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)&auStack_104.pitch,&CStack_bc);
         (this_ptr->orig_orient).w = CStack_bc.w;
         (this_ptr->orig_orient).x = CStack_bc.x;
         (this_ptr->orig_orient).y = CStack_bc.y;
         (this_ptr->orig_orient).z = CStack_bc.z;
         break;
       case PLATFORM_TYPE_END:
-        if ((CVector3f *)auStack_e8 != &this_ptr->end_pos) {
-          auStack_e8._0_4_ = (this_ptr->end_pos).x;
-          auStack_e8._4_4_ = (this_ptr->end_pos).y;
-          auStack_e8._8_4_ = (this_ptr->end_pos).z;
+        if (&auStack_e8 != (CSlew *)&this_ptr->end_pos) {
+          auStack_e8.position.x = (this_ptr->end_pos).x;
+          auStack_e8.position.y = (this_ptr->end_pos).y;
+          auStack_e8.position.z = (this_ptr->end_pos).z;
         }
         pCVar6 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                            (&CStack_7c,(CVector3f *)&this_ptr->end_orient);
-        if ((CVector3f *)(auStack_e8 + 0xc) != pCVar6) {
-          auStack_e8._12_4_ = pCVar6->x;
-          fStack_d8 = pCVar6->y;
-          fStack_d4 = pCVar6->z;
+        if ((CVector3f *)&auStack_e8.pitch != pCVar6) {
+          auStack_e8.pitch = pCVar6->x;
+          auStack_e8.yaw = pCVar6->y;
+          auStack_e8.roll = pCVar6->z;
         }
-        core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)auStack_e8);
-        if (&this_ptr->end_pos != (CVector3f *)auStack_e8) {
-          (this_ptr->end_pos).x = (float)auStack_e8._0_4_;
-          (this_ptr->end_pos).y = (float)auStack_e8._4_4_;
-          (this_ptr->end_pos).z = (float)auStack_e8._8_4_;
+        core_slew_cpp_CSlew_processInput_FUN_005a20b0(&auStack_e8);
+        if ((CSlew *)&this_ptr->end_pos != &auStack_e8) {
+          (this_ptr->end_pos).x = auStack_e8.position.x;
+          (this_ptr->end_pos).y = auStack_e8.position.y;
+          (this_ptr->end_pos).z = auStack_e8.position.z;
         }
-        core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)(auStack_e8 + 0xc),&CStack_ac);
+        core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)&auStack_e8.pitch,&CStack_ac);
         (this_ptr->end_orient).w = CStack_ac.w;
         (this_ptr->end_orient).x = CStack_ac.x;
         (this_ptr->end_orient).y = CStack_ac.y;

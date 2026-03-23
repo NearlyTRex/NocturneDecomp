@@ -3654,46 +3654,57 @@ def generate_code_cave_report(annotations_dir, output_path):
 
 
 def generate_movsd_report(pseudocode_src_dir, output_path):
-    """Generate a report of 4x MOVSD struct copy sites that could be fixed with code caves.
+    """Generate a comprehensive report of all MOVSD struct copy sites.
 
-    Scans all .asm files for groups of 4 consecutive MOVSD instructions (16-byte
-    struct copies) and checks whether each site has enough adjacent borrowable
-    instructions to fit a 5-byte JMP for a code cave patch.
+    Detects:
+      - Consecutive MOVSD groups (1x through Nx) — inline struct copies
+      - MOVSD.REP pass-by-value — stack copies for function calls
+      - MOVSD.REP general — struct-to-struct copies (matrices, etc.)
+
+    For consecutive groups, checks whether each site has enough adjacent
+    borrowable instructions to fit a 5-byte JMP for a code cave patch.
     """
     import glob as _glob
+    from collections import OrderedDict
 
     RE_ASM_INSN = re.compile(
         r'^\s+(\S.*?)\s*;\s*([0-9a-fA-F]+)(?:\s*\|.*)?$')
     RE_ASM_COMMENT = re.compile(r'^\s*;')
     RE_ASM_SECTION = re.compile(r'^section\s')
     RE_MOVSD = re.compile(r'^MOVSD\s+ES:', re.IGNORECASE)
+    RE_REP_MOVSD = re.compile(r'^MOVSD\.REP\s+ES:', re.IGNORECASE)
     # Instructions unsafe to relocate into a cave
     RE_UNSAFE = re.compile(
         r'^(CALL|RET|'
         r'JMP|JZ|JNZ|JE|JNE|JL|JG|JLE|JGE|JA|JB|JAE|JBE|JC|JNC)\b',
         re.IGNORECASE)
-    # ESP-modifying instructions — safe to borrow for MOVSD since it uses
-    # ESI/EDI, not ESP.  Executing them in the cave preserves order.
-    RE_ESP_MODIFY = re.compile(
-        r'^(PUSH|POP|SUB\s+ESP|ADD\s+ESP)\b', re.IGNORECASE)
+    # REP MOVSD setup patterns
+    RE_SUB_ESP_IMM = re.compile(r'^SUB\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', re.IGNORECASE)
+    RE_MOV_ECX_IMM = re.compile(r'^MOV\s+ECX\s*,\s*(0x[0-9a-fA-F]+|\d+)', re.IGNORECASE)
+    RE_MOV_EDI_ESP = re.compile(r'^MOV\s+EDI\s*,\s*ESP$', re.IGNORECASE)
 
-    # Rough instruction size estimate (no assembler needed)
-    # Most x86 MOV/LEA/INC/DEC are 1-7 bytes. We use a conservative estimate.
     def estimate_insn_size(text, addr, next_addr):
-        """Estimate instruction size from address gap to next instruction."""
         if next_addr is not None:
             return next_addr - addr
-        return 0  # unknown, can't use
+        return 0
+
+    def _parse_int(s):
+        return int(s, 16) if s.startswith('0x') else int(s)
 
     asm_pattern = os.path.join(pseudocode_src_dir, '**', '*.asm')
     all_files = sorted(_glob.glob(asm_pattern, recursive=True))
 
-    fixable_sites = []   # (func_name, addr, site_size, cave_bytes_needed)
-    unfixable_sites = [] # (func_name, addr, reason)
-    total_cave_needed = 0
+    # Site categories
+    # Each entry: (func_name, addr, count, site_size, cave_est, status, detail)
+    #   status: 'fixable', 'unfixable'
+    #   detail: reason string for unfixable, or borrowable bytes for fixable
+    consecutive_sites = []
+
+    # REP MOVSD entries: (func_name, addr, dword_count, copy_bytes, rep_type, cave_est)
+    #   rep_type: 'byval' or 'general'
+    rep_sites = []
 
     for asm_path in all_files:
-        # Parse instructions
         instructions = []
         with open(asm_path, 'r') as f:
             for line in f:
@@ -3703,12 +3714,12 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                 if m:
                     instructions.append((int(m.group(2), 16), m.group(1).strip()))
 
-        if len(instructions) < 4:
+        if len(instructions) < 2:
             continue
 
         func_name = os.path.basename(asm_path).replace('.asm', '')
 
-        # Collect branch targets for safety validation
+        # Collect branch targets
         RE_BRANCH_TGT = re.compile(
             r'^(?:JMP|JZ|JNZ|JE|JNE|JL|JG|JLE|JGE|JA|JB|JAE|JBE|JC|JNC|JS|JNS|'
             r'JO|JNO|JP|JNP)\s+(?:.*\s)?0x([0-9a-fA-F]+)', re.IGNORECASE)
@@ -3718,25 +3729,23 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
             if m:
                 jump_targets.add(int(m.group(1), 16))
 
-        # Find 4x MOVSD groups
+        # --- Detect consecutive MOVSD groups (1+) ---
         i = 0
-        while i < len(instructions) - 3:
-            if (RE_MOVSD.match(instructions[i][1]) and
-                RE_MOVSD.match(instructions[i+1][1]) and
-                RE_MOVSD.match(instructions[i+2][1]) and
-                RE_MOVSD.match(instructions[i+3][1]) and
-                instructions[i+1][0] == instructions[i][0] + 1 and
-                instructions[i+2][0] == instructions[i][0] + 2 and
-                instructions[i+3][0] == instructions[i][0] + 3):
+        while i < len(instructions):
+            if RE_MOVSD.match(instructions[i][1]):
+                run = 1
+                while (i + run < len(instructions) and
+                       RE_MOVSD.match(instructions[i + run][1]) and
+                       instructions[i + run][0] == instructions[i][0] + run):
+                    run += 1
 
                 group_addr = instructions[i][0]
-                total_size = 4  # 4 bytes of MOVSD
+                total_size = run
 
                 # Try borrowing after
-                after_idx = i + 4
+                after_idx = i + run
                 while total_size < 5 and after_idx < len(instructions):
                     addr, text = instructions[after_idx]
-                    # Don't borrow a branch target — other code jumps here
                     if addr in jump_targets:
                         break
                     if RE_UNSAFE.match(text):
@@ -3748,11 +3757,10 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                     total_size += sz
                     after_idx += 1
 
-                # Try borrowing before if needed
+                # Try borrowing before
                 before_idx = i - 1
                 while total_size < 5 and before_idx >= 0:
                     addr, text = instructions[before_idx]
-                    # Don't borrow a branch target
                     if addr in jump_targets:
                         break
                     if RE_UNSAFE.match(text):
@@ -3764,80 +3772,207 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                     total_size += sz
                     before_idx -= 1
 
+                cave_est = run * 6 + 15  # 2*N MOVs + esi/edi adj + borrowed + JMP
+
                 if total_size >= 5:
-                    # Check for jump targets landing inside the patch range
-                    # site_start accounts for instructions borrowed before
                     site_start = instructions[before_idx + 1][0] if before_idx + 1 < i else group_addr
                     site_end = site_start + total_size
                     has_internal_target = any(
                         site_start < t < site_end for t in jump_targets)
                     if has_internal_target:
-                        unfixable_sites.append((func_name, group_addr,
-                                               'branch target inside patch range'))
+                        consecutive_sites.append((
+                            func_name, group_addr, run, total_size, cave_est,
+                            'unfixable', 'branch target inside patch range'))
                     else:
-                        # ~37 bytes per cave entry (22 copy + 6 esi/edi adj + ~4 borrowed + 5 jmp)
-                        cave_est = 37
-                        fixable_sites.append((func_name, group_addr, total_size, cave_est))
-                        total_cave_needed += cave_est
+                        consecutive_sites.append((
+                            func_name, group_addr, run, total_size, cave_est,
+                            'fixable', '%d bytes borrowable' % total_size))
                 else:
-                    unfixable_sites.append((func_name, group_addr,
-                                           'only %d bytes available (need 5)' % total_size))
+                    consecutive_sites.append((
+                        func_name, group_addr, run, total_size, cave_est,
+                        'unfixable', 'only %d bytes available (need 5)' % total_size))
 
-                i += 4
+                i += run
             else:
                 i += 1
 
+        # --- Detect REP MOVSD ---
+        for idx, (addr, text) in enumerate(instructions):
+            if not RE_REP_MOVSD.match(text):
+                continue
+
+            # Search backward for setup
+            ecx_val = None
+            has_edi_esp = False
+            has_sub_esp = False
+            sub_esp_val = None
+
+            for j in range(idx - 1, max(idx - 9, -1), -1):
+                jtext = instructions[j][1]
+                m = RE_MOV_ECX_IMM.match(jtext)
+                if m and ecx_val is None:
+                    ecx_val = _parse_int(m.group(1))
+                if RE_MOV_EDI_ESP.match(jtext):
+                    has_edi_esp = True
+                m = RE_SUB_ESP_IMM.match(jtext)
+                if m and not has_sub_esp:
+                    has_sub_esp = True
+                    sub_esp_val = _parse_int(m.group(1))
+
+            dword_count = ecx_val if ecx_val is not None else 0
+            copy_bytes = dword_count * 4
+
+            if has_edi_esp and has_sub_esp:
+                rep_type = 'byval'
+            else:
+                rep_type = 'general'
+
+            # Cave estimate for REP: 2*N MOVs + esi/edi adj + JMP
+            cave_est = dword_count * 6 + 15 if dword_count > 0 else 0
+
+            rep_sites.append((func_name, addr, dword_count, copy_bytes, rep_type, cave_est))
+
+    # =====================================================================
     # Build report
+    # =====================================================================
     lines = []
     lines.append("=" * 100)
     lines.append("MOVSD STRUCT COPY ANALYSIS")
     lines.append("=" * 100)
     lines.append("")
-    lines.append("4x MOVSD patterns copy 16-byte structs (quaternions, vectors) but Ghidra's")
-    lines.append("decompiler cannot analyze them, producing garbled bVar*-8 pointer arithmetic.")
-    lines.append("These can be fixed by replacing them with explicit MOV instructions in code caves.")
-    lines.append("")
-    lines.append("Fixable sites:       %d" % len(fixable_sites))
-    lines.append("Unfixable sites:     %d" % len(unfixable_sites))
-    lines.append("Total sites:         %d" % (len(fixable_sites) + len(unfixable_sites)))
-    lines.append("Est. cave space:     ~%d bytes" % total_cave_needed)
+    lines.append("Ghidra's decompiler cannot analyze MOVSD string copy instructions, producing")
+    lines.append("garbled bVar*-8 pointer arithmetic or for-loop decompositions. These can be")
+    lines.append("fixed by replacing them with explicit MOV instructions in code caves.")
     lines.append("")
 
-    # Group by function
-    from collections import OrderedDict
-    by_func = OrderedDict()
-    for func_name, addr, site_size, cave_est in fixable_sites:
-        if func_name not in by_func:
-            by_func[func_name] = []
-        by_func[func_name].append((addr, site_size, cave_est))
+    # --- Summary ---
+    consec_fixable = [s for s in consecutive_sites if s[5] == 'fixable']
+    consec_unfixable = [s for s in consecutive_sites if s[5] == 'unfixable']
+    rep_byval = [s for s in rep_sites if s[4] == 'byval']
+    rep_general = [s for s in rep_sites if s[4] == 'general']
+    total_cave = sum(s[4] for s in consec_fixable)
 
-    if fixable_sites:
+    lines.append("SUMMARY")
+    lines.append("-" * 50)
+
+    # Count consecutive by run length
+    consec_by_run = {}
+    for s in consecutive_sites:
+        run = s[2]
+        consec_by_run[run] = consec_by_run.get(run, 0) + 1
+
+    lines.append("Consecutive MOVSD groups:  %d" % len(consecutive_sites))
+    for run in sorted(consec_by_run.keys()):
+        copy_bytes = run * 4
+        lines.append("  %dx MOVSD (%2d bytes):   %d sites" % (run, copy_bytes, consec_by_run[run]))
+    lines.append("  Fixable (cave patch):   %d" % len(consec_fixable))
+    lines.append("  Unfixable:              %d" % len(consec_unfixable))
+    lines.append("  Est. cave space:        ~%d bytes" % total_cave)
+    lines.append("")
+    lines.append("REP MOVSD sites:           %d" % len(rep_sites))
+    lines.append("  Pass-by-value:          %d" % len(rep_byval))
+    lines.append("  General struct copy:    %d" % len(rep_general))
+
+    # Count REP by dword count
+    rep_by_count = {}
+    for s in rep_sites:
+        dc = s[2]
+        rep_by_count[dc] = rep_by_count.get(dc, 0) + 1
+    if rep_by_count:
+        lines.append("")
+        lines.append("  REP MOVSD by copy size:")
+        for dc in sorted(rep_by_count.keys()):
+            if dc == 0:
+                lines.append("    unknown count:        %d sites" % rep_by_count[dc])
+            else:
+                lines.append("    %3d dwords (%4d bytes): %d sites" % (dc, dc * 4, rep_by_count[dc]))
+
+    lines.append("")
+    lines.append("Total MOVSD sites:         %d" % (len(consecutive_sites) + len(rep_sites)))
+    lines.append("")
+
+    # --- Fixable consecutive sites by function ---
+    if consec_fixable:
+        by_func = OrderedDict()
+        for func_name, addr, run, site_size, cave_est, status, detail in consec_fixable:
+            if func_name not in by_func:
+                by_func[func_name] = []
+            by_func[func_name].append((addr, run, site_size, cave_est))
+
         lines.append("-" * 100)
-        lines.append("FIXABLE SITES (by function, sorted by site count)")
+        lines.append("FIXABLE CONSECUTIVE MOVSD SITES (by function, sorted by site count)")
         lines.append("-" * 100)
         for func_name, sites in sorted(by_func.items(),
                                         key=lambda x: len(x[1]), reverse=True):
-            cave_total = sum(c for _, _, c in sites)
-            lines.append("  %-65s  %2d sites  ~%d bytes" % (
-                func_name[:65], len(sites), cave_total))
-            for addr, site_size, cave_est in sites:
-                lines.append("    0x%08x  (%d bytes borrowable)" % (addr, site_size))
+            cave_total = sum(c for _, _, _, c in sites)
+            lines.append("  %-60s  %2d sites  ~%d bytes" % (
+                func_name[:60], len(sites), cave_total))
+            for addr, run, site_size, cave_est in sites:
+                lines.append("    0x%08x  %dx MOVSD (%d bytes copy, %d bytes borrowable)" % (
+                    addr, run, run * 4, site_size))
         lines.append("")
 
-    if unfixable_sites:
+    # --- Unfixable consecutive sites ---
+    if consec_unfixable:
         lines.append("-" * 100)
-        lines.append("UNFIXABLE SITES (cannot borrow enough bytes for JMP)")
+        lines.append("UNFIXABLE CONSECUTIVE MOVSD SITES")
         lines.append("-" * 100)
-        for func_name, addr, reason in unfixable_sites:
-            lines.append("  0x%08x  %-55s  %s" % (addr, func_name[:55], reason))
+        for func_name, addr, run, site_size, cave_est, status, reason in consec_unfixable:
+            lines.append("  0x%08x  %dx MOVSD  %-45s  %s" % (
+                addr, run, func_name[:45], reason))
+        lines.append("")
+
+    # --- REP MOVSD general sites by function ---
+    if rep_general:
+        by_func = OrderedDict()
+        for func_name, addr, dword_count, copy_bytes, rep_type, cave_est in rep_general:
+            if func_name not in by_func:
+                by_func[func_name] = []
+            by_func[func_name].append((addr, dword_count, copy_bytes))
+
+        lines.append("-" * 100)
+        lines.append("REP MOVSD GENERAL STRUCT COPIES (by function)")
+        lines.append("-" * 100)
+        for func_name, sites in sorted(by_func.items(),
+                                        key=lambda x: len(x[1]), reverse=True):
+            lines.append("  %-60s  %2d sites" % (func_name[:60], len(sites)))
+            for addr, dword_count, copy_bytes in sites:
+                if dword_count > 0:
+                    lines.append("    0x%08x  REP MOVSD %d dwords (%d bytes)" % (
+                        addr, dword_count, copy_bytes))
+                else:
+                    lines.append("    0x%08x  REP MOVSD (dynamic count)" % addr)
+        lines.append("")
+
+    # --- REP MOVSD pass-by-value sites ---
+    if rep_byval:
+        by_func = OrderedDict()
+        for func_name, addr, dword_count, copy_bytes, rep_type, cave_est in rep_byval:
+            if func_name not in by_func:
+                by_func[func_name] = []
+            by_func[func_name].append((addr, dword_count, copy_bytes))
+
+        lines.append("-" * 100)
+        lines.append("REP MOVSD PASS-BY-VALUE SITES (by function)")
+        lines.append("-" * 100)
+        for func_name, sites in sorted(by_func.items(),
+                                        key=lambda x: len(x[1]), reverse=True):
+            lines.append("  %-60s  %2d sites" % (func_name[:60], len(sites)))
+            for addr, dword_count, copy_bytes in sites:
+                if dword_count > 0:
+                    lines.append("    0x%08x  REP MOVSD %d dwords (%d bytes)" % (
+                        addr, dword_count, copy_bytes))
+                else:
+                    lines.append("    0x%08x  REP MOVSD (dynamic count)" % addr)
         lines.append("")
 
     report_path = os.path.join(output_path, 'movsd_analysis.txt')
     try:
         with open(report_path, 'w') as f:
             f.write('\n'.join(lines) + '\n')
-        log_info("Wrote MOVSD analysis: %s (%d fixable, %d unfixable)" % (
-            report_path, len(fixable_sites), len(unfixable_sites)))
+        log_info("Wrote MOVSD analysis: %s (%d consecutive [%d fixable], %d REP [%d byval, %d general])" % (
+            report_path, len(consecutive_sites), len(consec_fixable),
+            len(rep_sites), len(rep_byval), len(rep_general)))
     except Exception as e:
         log_info("Failed to write MOVSD analysis: %s" % e)
 

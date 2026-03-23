@@ -1,29 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 19,
-        "line": 35,
-        "message": "comparison of distinct pointer types ('ushort *' (aka 'unsigned short *') and 'char *')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 72,
+    "complexity_score": 83,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 47,
-    "suspect_count": 2,
+    "pseudocode_lines": 48,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 122
+    "total_lines": 123
   },
   "cross_references": [
     {
@@ -161,7 +154,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 25,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar5 = (int *)((int)this_ptr->row_pointers + local_14);",
@@ -169,7 +162,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 29,
+      "match": "(ushort *)((int)",
+      "severity": "mild",
+      "text": "while (puVar7 < (ushort *)((int)puVar1 + iVar4)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "puVar9 = (ushort *)((int)puVar9 + 1);",

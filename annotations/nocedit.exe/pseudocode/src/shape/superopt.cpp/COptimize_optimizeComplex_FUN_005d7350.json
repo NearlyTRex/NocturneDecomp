@@ -1,29 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 19,
-        "line": 34,
-        "message": "cannot cast from type 'void' to pointer type 'CComplexPolygon *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 104,
+    "complexity_score": 103,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 58,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 196
+    "total_lines": 195
   },
   "cross_references": [],
   "function": {
@@ -159,7 +152,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(CPoly *)((int)",
       "severity": "mild",
       "text": "pCVar3 = (CPoly *)((int)&((CPoly *)(((this_ptr->base).poly_array)->uv_coords + -1))->",
@@ -167,7 +160,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "bVar1 = *(byte *)((int)&pCVar3->flags + 1);",
@@ -175,7 +168,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 48,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&pCVar3->flags + 1) = bVar1 | 0x80;",
@@ -183,7 +176,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 49,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&pCVar3->flags + 1) = bVar1 & 0xdf | 0x80;",

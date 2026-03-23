@@ -89,7 +89,7 @@ void __cdecl CDemonActor::customIntersectCylinderXZ(CDemonActor *this_ptr,SInter
 
 // Original: core_actor.cpp_CDemonActor_customGetFloorHeight_FUN_00408d50
 // Address: 00408d50
-int __cdecl CDemonActor::customGetFloorHeight(CDemonActor *this_ptr,float x_pos,float z_pos,float *out_floor_height);
+int __cdecl CDemonActor::customGetFloorHeight(CDemonActor *this_ptr,CVector3f *position,float search_radius,float *out_floor_height);
 
 // Original: core_actor.cpp_CDemonActor_getGroundType_FUN_00408d90
 // Address: 00408d90

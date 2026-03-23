@@ -5,23 +5,23 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6452
-Successful: 5846 (90.6%)
-Failed: 606
+Successful: 5909 (91.6%)
+Failed: 543
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1232
-  format_error                     798
+  other                            991
+  format_error                     782
   incompatible_types               205
   undeclared_identifier            134
   syntax_error                      41
-  missing_member                    20
+  missing_member                    26
   type_error                         9
   pointer_arithmetic                 9
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1232 errors)
+CATEGORY: other (991 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -36,12 +36,8 @@ CATEGORY: other (1232 errors)
     Line 40: C-style cast from 'CMatrix3x3f *' to 'float' is not allowed...
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
     Line 173: C-style cast from 'CPlatform *' to 'float' is not allowed...
-  core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0
-    Line 17: C-style cast from 'CVector3f *' to 'float' is not allowed...
   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010
     Line 21: C-style cast from 'CVector3f *' to 'float' is not allowed...
-  core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
-    Line 321: C-style cast from 'CVector3f *' to 'float' is not allowed...
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
     Line 399: C-style cast from 'CWeapon *' to 'float' is not allowed...
   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
@@ -50,6 +46,8 @@ CATEGORY: other (1232 errors)
     Line 181: C-style cast from 'char' to 'CActorPropertyActionFunc' (aka 'int (struct CDemonA...
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
     Line 113: C-style cast from 'float *' to 'float' is not allowed...
+  core_flame.cpp_CFlame_process_FUN_004c9c00
+    Line 100: C-style cast from 'struct CDeformableModelInstance *' to 'float' is not allowed...
   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004f33b0
     Line 59: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
   core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0
@@ -84,11 +82,13 @@ CATEGORY: other (1232 errors)
     Line 69: cannot cast from type 'float' to pointer type 'CPathMap *'...
   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0
     Line 45: cannot cast from type 'float' to pointer type 'CQuaternion4f *'...
+  core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
+    Line 95: cannot cast from type 'float' to pointer type 'CQuaternion4f *'...
 
-  ... and 271 more errors
+  ... and 181 more errors
 
 ====================================================================================================
-CATEGORY: format_error (798 errors)
+CATEGORY: format_error (782 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -152,7 +152,7 @@ CATEGORY: format_error (798 errors)
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
     Line 35: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Wer...
 
-  ... and 237 more errors
+  ... and 232 more errors
 
 ====================================================================================================
 CATEGORY: incompatible_types (205 errors)
@@ -345,7 +345,7 @@ CATEGORY: syntax_error (41 errors)
   shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
     Line 43: expected expression...
   sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
-    Line 45: expected expression...
+    Line 46: expected expression...
   sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae4b0
     Line 68: expected expression...
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
@@ -354,9 +354,11 @@ CATEGORY: syntax_error (41 errors)
     Line 123: expected expression...
 
 ====================================================================================================
-CATEGORY: missing_member (20 errors)
+CATEGORY: missing_member (26 errors)
 ====================================================================================================
 
+  sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
+    Line 44: no member named '_12_4_' in 'tWAVEFORMATEX'...
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
     Line 111: no member named '_18_2_' in 'tWAVEFORMATEX'...
   core_actor.cpp_CDemonActor_ctor_FUN_004088b0
@@ -411,8 +413,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.73
-Average suspects in failed compilations: 7.24
+Average suspects in successfully compiled functions: 1.74
+Average suspects in failed compilations: 7.71
 
-Functions that compile but have suspect patterns: 1432
+Functions that compile but have suspect patterns: 1451
 (These may have runtime issues even though syntax is valid)

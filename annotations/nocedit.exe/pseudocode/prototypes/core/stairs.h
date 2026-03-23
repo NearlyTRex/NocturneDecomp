@@ -53,7 +53,7 @@ void __cdecl CStairs::customIntersectCylinderXZ(CStairs *this_ptr,SIntersectXZCy
 
 // Original: core_stairs.cpp_CStairs_customGetFloorHeight_FUN_005ba6a0
 // Address: 005ba6a0
-int __cdecl CStairs::customGetFloorHeight(CStairs *this_ptr,float x_pos,float z_pos,float *out_floor_height);
+int __cdecl CStairs::customGetFloorHeight(CStairs *this_ptr,CVector3f *position,float search_radius,float *out_floor_height);
 
 // Original: core_stairs.cpp_CStairs_getGroundType_FUN_005ba6f0
 // Address: 005ba6f0

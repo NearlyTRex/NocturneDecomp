@@ -318,7 +318,7 @@ LAB_005722ec:
                             (pCVar2,&CStack_4c,&local_e8);
                   fStack_20 = local_28 - (pCVar2->location).position.y;
                   iVar1 = (*((pCVar2->vtable)._ub)->customGetFloorHeight)
-                                    (pCVar2,(float)&CStack_4c,radius,&fStack_20);
+                                    (pCVar2,&CStack_4c,radius,&fStack_20);
                   if (iVar1 != 0) {
                     this_ptr->collision_actor = pCVar2;
                     local_28 = fStack_20 + (pCVar2->location).position.y;

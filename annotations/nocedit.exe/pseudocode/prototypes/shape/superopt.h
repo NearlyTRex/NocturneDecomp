@@ -601,7 +601,7 @@ int __cdecl COptimize::splitToConvex(COptimize *this_ptr);
 
 // Original: shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0
 // Address: 005d76e0
-void __cdecl COptimize::addComplexPolygon(COptimize *this_ptr,CComplexPolygon *polygon);
+CComplexPolygon * __cdecl COptimize::addComplexPolygon(COptimize *this_ptr,CComplexPolygon *polygon);
 
 // Original: shape_superopt.cpp_findTriListTextureIndex_FUN_005d7750
 // Address: 005d7750

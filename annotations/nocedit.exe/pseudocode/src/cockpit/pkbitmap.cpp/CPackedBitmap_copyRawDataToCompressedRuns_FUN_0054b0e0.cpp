@@ -9,6 +9,7 @@
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0(CPackedBitmap *this_ptr,uchar *raw_bitmap_data,int row_stride)
 
 {
+  ushort *puVar1;
   int *piVar5;
   uint uVar6;
   uint uVar3;
@@ -29,10 +30,10 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_
   local_18 = 0;
   do {
     piVar5 = (int *)((int)this_ptr->row_pointers + local_14);
-    pcVar3 = this_ptr->packed_data;
+    puVar1 = this_ptr->packed_data;
     iVar4 = piVar5[1];
-    puVar7 = (ushort *)(pcVar3 + *piVar5);
-    while (puVar7 < pcVar3 + iVar4) {
+    puVar7 = (ushort *)(*piVar5 + (int)puVar1);
+    while (puVar7 < (ushort *)((int)puVar1 + iVar4)) {
       puVar9 = puVar7 + 2;
       uVar1 = puVar7[1];
       uVar2 = *puVar7;

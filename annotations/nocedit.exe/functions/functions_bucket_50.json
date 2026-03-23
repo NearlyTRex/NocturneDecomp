@@ -1110,7 +1110,7 @@
           "type":"CDemonActor*"
         },
         {
-          "name":"x_pos",
+          "name":"position",
           "storage":{
             "offset":8,
             "size":4,
@@ -1123,10 +1123,10 @@
               }
             ]
           },
-          "type":"float"
+          "type":"CVector3f*"
         },
         {
-          "name":"z_pos",
+          "name":"search_radius",
           "storage":{
             "offset":12,
             "size":4,
@@ -55580,7 +55580,7 @@
           "type":"CMansionPuzzleCircle*"
         },
         {
-          "name":"x_pos",
+          "name":"position",
           "storage":{
             "offset":8,
             "size":4,
@@ -55593,10 +55593,10 @@
               }
             ]
           },
-          "type":"float"
+          "type":"CVector3f*"
         },
         {
-          "name":"z_pos",
+          "name":"search_radius",
           "storage":{
             "offset":12,
             "size":4,
@@ -73939,7 +73939,7 @@
       ],
       "params":[
         {
-          "name":"x",
+          "name":"position",
           "storage":{
             "offset":4,
             "size":4,
@@ -73952,10 +73952,10 @@
               }
             ]
           },
-          "type":"float"
+          "type":"CVector3f*"
         },
         {
-          "name":"z",
+          "name":"search_radius",
           "storage":{
             "offset":8,
             "size":4,
@@ -74483,191 +74483,6 @@
     "vars":{
       "locals":[
         {
-          "name":"uVar11",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint",
-          "use":214
-        },
-        {
-          "name":"pCVar3",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3f*",
-          "use":235
-        },
-        {
-          "name":"pSVar4",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"SMRGLPrimitiveQuad*",
-          "use":448
-        },
-        {
-          "name":"pSVar5",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"SMRGLPrimitiveQuad*",
-          "use":497
-        },
-        {
-          "name":"fVar6",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"float",
-          "use":593
-        },
-        {
-          "name":"iVar7",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":872
-        },
-        {
-          "name":"iVar12",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":904
-        },
-        {
-          "name":"iVar10",
-          "storage":{
-            "reg":"EBX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000000c",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":1177
-        },
-        {
-          "name":"pCVar8",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CBoundingBox3D*",
-          "use":1740
-        },
-        {
-          "name":"this_ptr_02",
-          "storage":{
-            "reg":"EBX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000000c",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"C3DSCamera*",
-          "use":1878
-        },
-        {
-          "name":"this_ptr_03",
-          "storage":{
-            "reg":"EBX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000000c",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"CZThumb*",
-          "use":2107
-        },
-        {
-          "name":"fVar9",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"float",
-          "use":2124
-        },
-        {
           "name":"fStack_14",
           "storage":{
             "offset":-20,
@@ -75097,7 +74912,7 @@
               }
             ]
           },
-          "type":"undefined1[12]"
+          "type":"CVector3f"
         },
         {
           "name":"auStack_e8",
@@ -75194,86 +75009,6 @@
             ]
           },
           "type":"float"
-        },
-        {
-          "name":"this_ptr_01",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:3f84e95ebb",
-                "offset":272812826299,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonRenderer*",
-          "use":111
-        },
-        {
-          "name":"piVar2",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:79fa4855ad6",
-                "offset":8382241397462,
-                "size":4
-              }
-            ]
-          },
-          "type":"int*",
-          "use":216
-        },
-        {
-          "name":"this_ptr_00",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5f48f761d4",
-                "offset":409246065108,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonActor*",
-          "use":1637
-        },
-        {
-          "name":"fVar1",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5ffbff41b89",
-                "offset":6595995245449,
-                "size":4
-              }
-            ]
-          },
-          "type":"float",
-          "use":1933
-        },
-        {
-          "name":"fVar13",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:3fcd6cc65d",
-                "offset":274029397597,
-                "size":4
-              }
-            ]
-          },
-          "type":"float",
-          "use":2100
         }
       ],
       "params":[

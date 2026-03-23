@@ -31,8 +31,7 @@ int __cdecl shape_superopt_cpp_COptimize_optimizeComplex_FUN_005d7350(COptimize 
     if (uVar5 == (this_ptr->base).poly_count) {
       return 1;
     }
-    this_ptr_00 = (CComplexPolygon *)
-                  (*this_ptr->vtable->addComplexPolygon)(this_ptr,(CComplexPolygon *)0x0);
+    this_ptr_00 = (*this_ptr->vtable->addComplexPolygon)(this_ptr,(CComplexPolygon *)0x0);
     if (this_ptr_00 == (CComplexPolygon *)0x0) {
       shape_superopt_cpp_logToFile_FUN_005c7910("Unable to add polygon for complex pass");
       return 0;

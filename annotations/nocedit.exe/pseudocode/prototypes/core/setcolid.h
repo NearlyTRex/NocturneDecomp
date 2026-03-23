@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_setcolid.cpp_rayTestQuadFloor_FUN_005715d0
 // Address: 005715d0
-int __cdecl rayTestQuadFloor(float x,float z,CVector3f *out_height,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,CVector3f *vertex4,CVector3f *out_transformed_normal);
+int __cdecl rayTestQuadFloor(CVector3f *position,float search_radius,CVector3f *out_height,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,CVector3f *vertex4,CVector3f *out_transformed_normal);
 
 // Original: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
 // Address: 005716b0

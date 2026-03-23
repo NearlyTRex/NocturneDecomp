@@ -10,8 +10,9 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
 
 {
   char cVar2;
-  int iVar3;
   int iVar6;
+  int iVar3;
+  int iVar7;
   char *pcVar8;
   int iVar4;
   int iVar5;
@@ -33,7 +34,7 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
   bVar11 = 0;
   if (((foreground_color != this_ptr->cached_foreground_color) ||
       (background_color != this_ptr->cached_background_color)) ||
-     (iVar6 = _strcmp(this_ptr->text_cache,text_string), iVar6 != 0)) {
+     (iVar7 = _strcmp(this_ptr->text_cache,text_string), iVar7 != 0)) {
     this_ptr->cached_foreground_color = foreground_color;
     this_ptr->cached_background_color = background_color;
     if (foreground_color < 0) {
@@ -52,8 +53,8 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
     } while (cVar2 != '\0');
     iVar3 = (*((this_ptr->base).vtable)->getStringWidth)(&this_ptr->base,text_string);
     this_ptr->cached_string_width = iVar3;
-    iVar6 = (*((this_ptr->base).vtable)->getStringHeight)(&this_ptr->base,text_string);
-    this_ptr->cached_string_height = iVar6;
+    iVar7 = (*((this_ptr->base).vtable)->getStringHeight)(&this_ptr->base,text_string);
+    this_ptr->cached_string_height = iVar7;
     uVar6 = 0xffffffff;
     pcVar8 = this_ptr->text_cache;
     do {
@@ -70,10 +71,10 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
     (*g_TextOutAFunc)(this_ptr->device_context_handle,0,0,text_string,~uVar6 - 1);
   }
   if (this_ptr->right + x_position < g_WindowWidth) {
-    iVar6 = this_ptr->right;
+    iVar7 = this_ptr->right;
   }
   else {
-    iVar6 = g_WindowWidth - x_position;
+    iVar7 = g_WindowWidth - x_position;
   }
   if (this_ptr->top + y_position < g_WindowHeight) {
     CStack_24 = this_ptr->top;
@@ -81,8 +82,8 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
   else {
     CStack_24 = g_WindowHeight - y_position;
   }
-  if (this_ptr->cached_string_width < iVar6) {
-    iVar6 = this_ptr->cached_string_width;
+  if (this_ptr->cached_string_width < iVar7) {
+    iVar7 = this_ptr->cached_string_width;
   }
   if (this_ptr->cached_string_height < (int)CStack_24) {
     CStack_24 = this_ptr->cached_string_height;
@@ -95,7 +96,7 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
         pcVar8 = pcStack_1c + this_ptr->y_offset1;
         if ((-1 < (int)pcVar8) && ((int)pcVar8 < g_WindowHeight)) {
           iVar4 = 0;
-          if (0 < iVar6) {
+          if (0 < iVar7) {
             puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar8] + x_position * 2);
             do {
               uVar2 = *(ushort *)
@@ -112,7 +113,7 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
               }
               iVar4 = iVar4 + 1;
               puVar8 = puVar8 + 1;
-            } while (iVar4 < iVar6);
+            } while (iVar4 < iVar7);
           }
         }
         pcStack_1c = pcStack_1c + 1;
@@ -128,16 +129,16 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
         pcVar8 = pcStack_20 + this_ptr->y_offset1;
         if ((-1 < (int)pcVar8) && ((int)pcVar8 < g_WindowHeight)) {
           iVar5 = 0;
-          if (0 < iVar6) {
+          if (0 < iVar7) {
             piVar9 = (int *)(x_position * 4 + (int)g_ScreenBufferArray[(int)pcVar8]);
             do {
-              if (this_ptr->ppv_bits[this_ptr->right * iVar9 + iVar5] !=
-                  g_LightBufferPool[0xd] + 0x6ef7) {
-                *piVar9 = (int)this_ptr->ppv_bits[this_ptr->right * iVar9 + iVar5];
+              iVar6 = *(int *)((this_ptr->right * iVar9 + iVar5) * 4 + (int)this_ptr->ppv_bits);
+              if (iVar6 != GAME_COLOR_MAGENTA_TRANSPARENT) {
+                *piVar9 = iVar6;
               }
               iVar5 = iVar5 + 1;
               piVar9 = piVar9 + 1;
-            } while (iVar5 < iVar6);
+            } while (iVar5 < iVar7);
           }
         }
         pcStack_20 = pcStack_20 + 1;

@@ -2,112 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 18,
-        "line": 95,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 114,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 115,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 116,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 10,
-        "line": 120,
+        "line": 115,
         "message": "use of undeclared identifier 'stack0x00000000'"
-      },
-      {
-        "category": "other",
-        "column": 66,
-        "line": 121,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 66,
-        "line": 122,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 66,
-        "line": 123,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 260,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 261,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 262,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 268,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 274,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 275,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 276,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 376,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 377,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 54,
-        "line": 378,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       }
     ],
     "success": false,
@@ -115,18 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 1372,
-    "complexity_score": 637,
+    "complexity_score": 457,
     "cross_reference_count": 0,
     "function_call_count": 36,
     "global_count": 58,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 447,
-    "suspect_count": 18,
+    "pseudocode_lines": 442,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_ref",
-      "unknown_field"
+      "stack_ref"
     ],
-    "total_lines": 1819
+    "total_lines": 1814
   },
   "cross_references": [],
   "function": {
@@ -774,50 +671,15 @@
         "is_param": false,
         "name": "local_108",
         "offset": -264,
-        "size": 16,
-        "type": "undefined1[16]"
-      },
-      {
-        "is_param": false,
-        "name": "local_f8",
-        "offset": -248,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": false,
-        "name": "local_f4",
-        "offset": -244,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": false,
-        "name": "local_f0",
-        "offset": -240,
-        "size": 4,
-        "type": "float"
+        "size": 28,
+        "type": "CSlew"
       },
       {
         "is_param": false,
         "name": "local_ec",
         "offset": -236,
-        "size": 16,
-        "type": "undefined1[16]"
-      },
-      {
-        "is_param": false,
-        "name": "local_dc",
-        "offset": -220,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": false,
-        "name": "local_d8",
-        "offset": -216,
-        "size": 4,
-        "type": "float"
+        "size": 28,
+        "type": "CSlew"
       },
       {
         "is_param": false,
@@ -1026,148 +888,12 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 88,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "local_108._12_4_ = local_a0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 107,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_108._0_4_ = local_58;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 108,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_108._4_4_ = local_54;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 109,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_108._8_4_ = local_50;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 113,
+      "line": 108,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if (&stack0x00000000 != g_CDemonCameraInstance.camera_name + 0xcc) {",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 114,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.x = (float)local_108._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 115,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.y = (float)local_108._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 116,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.z = (float)local_108._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 253,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_ec._0_4_ = (pSVar3->position).x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 254,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_ec._4_4_ = (pSVar3->position).y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 255,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_ec._8_4_ = (pSVar3->position).z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 261,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "local_ec._12_4_ = pCVar4->x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 267,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "(pSVar3->position).x = (float)local_ec._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 268,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "(pSVar3->position).y = (float)local_ec._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 269,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "(pSVar3->position).z = (float)local_ec._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 369,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "(local_18->position).x = (float)local_108._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 370,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "(local_18->position).y = (float)local_108._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 371,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "(local_18->position).z = (float)local_108._8_4_;",
-      "type": "unknown_field"
     }
   ]
 }

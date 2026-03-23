@@ -1,20 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 69,
-        "line": 19,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      },
-      {
-        "category": "other",
-        "column": 69,
-        "line": 22,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -40,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_setcolid.cpp_rayTestQuadFloor_FUN_005715d0",
-    "signature": "int __cdecl core_setcolid_cpp_rayTestQuadFloor_FUN_005715d0(float x,float z,CVector3f *out_height,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,CVector3f *vertex4,CVector3f *out_transformed_normal)"
+    "signature": "int __cdecl core_setcolid_cpp_rayTestQuadFloor_FUN_005715d0(CVector3f *position,float search_radius,CVector3f *out_height,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,CVector3f *vertex4,CVector3f *out_transformed_normal)"
   },
   "function_calls": [
     {
@@ -113,14 +100,14 @@
       },
       {
         "is_param": true,
-        "name": "x",
+        "name": "position",
         "offset": 4,
         "size": 4,
-        "type": "float"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "z",
+        "name": "search_radius",
         "offset": 8,
         "size": 4,
         "type": "float"

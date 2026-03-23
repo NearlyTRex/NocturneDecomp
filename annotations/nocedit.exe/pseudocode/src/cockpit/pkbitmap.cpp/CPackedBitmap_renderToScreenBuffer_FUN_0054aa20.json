@@ -13,13 +13,13 @@
   },
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 67,
+    "complexity_score": 77,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 42,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -162,6 +162,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(ushort *)((int)",
+      "severity": "mild",
+      "text": "puVar9 = (ushort *)((int)this_ptr->packed_data + (int)*this_ptr->row_pointers);",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "line": 28,

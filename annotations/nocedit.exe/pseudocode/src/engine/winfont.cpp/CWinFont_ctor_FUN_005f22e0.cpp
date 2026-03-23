@@ -17,7 +17,7 @@ CWinFont * __cdecl engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(CWinFont *this_
   pCVar1->device_context_handle = (HDC)0x0;
   pCVar1->font_handle = (HFONT)0x0;
   pCVar1->object_handle = (HGDIOBJ)0x0;
-  pCVar1->ppv_bits = (void **)0x0;
+  pCVar1->ppv_bits = (void *)0x0;
   pCVar1->right = 0;
   pCVar1->top = 0;
   pCVar1->bpp = 0;

@@ -26,13 +26,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
   CPickList local_53c;
   char local_194 [100];
   CMatrix3x3f local_130;
-  byte local_108 [16];
-  float local_f8;
-  float local_f4;
-  float local_f0;
-  byte local_ec [16];
-  float local_dc;
-  float local_d8;
+  CSlew local_108;
+  CSlew local_ec;
   CVector3f local_d0;
   CVector3f local_c4;
   CVector3f local_b8;
@@ -70,7 +65,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
   this_ptr->actor_count = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_108);
+  core_slew_cpp_CSlew_init_FUN_005a2060(&local_108);
   local_a0 = 0.0;
   local_9c = 0.0;
   local_98 = 0.0;
@@ -91,16 +86,16 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     if (local_18 != (SRoom *)0x0) {
-      if ((float *)(local_108 + 0xc) != &local_a0) {
-        local_108._12_4_ = local_a0;
-        local_f8 = local_9c;
-        local_f4 = local_98;
+      if (&local_108.pitch != &local_a0) {
+        local_108.pitch = local_a0;
+        local_108.yaw = local_9c;
+        local_108.roll = local_98;
       }
       pCVar3 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
                          (&local_18->rotation_matrix,&local_94);
-      local_f8 = local_f8 + pCVar3->y;
+      local_108.yaw = local_108.yaw + pCVar3->y;
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                (&local_130,(CVector3f *)(local_108 + 0xc));
+                (&local_130,(CVector3f *)&local_108.pitch);
       local_88.z = -local_28;
       local_88.x = 0.0;
       local_88.y = 0.0;
@@ -110,21 +105,21 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
       local_58 = pCVar4->x + (local_18->position).x;
       local_54 = pCVar4->y + (local_18->position).y;
       local_50 = pCVar4->z + (local_18->position).z;
-      if ((float *)local_108 != &local_58) {
-        local_108._0_4_ = local_58;
-        local_108._4_4_ = local_54;
-        local_108._8_4_ = local_50;
+      if (&local_108 != (CSlew *)&local_58) {
+        local_108.position.x = local_58;
+        local_108.position.y = local_54;
+        local_108.position.z = local_50;
       }
     }
-    local_f0 = 28.0;
+    local_108.slew_rate = 28.0;
     if (&stack0x00000000 != g_CDemonCameraInstance.camera_name + 0xcc) {
-      g_CDemonCameraInstance.base.position.f.x = (float)local_108._0_4_;
-      g_CDemonCameraInstance.base.position.f.y = (float)local_108._4_4_;
-      g_CDemonCameraInstance.base.position.f.z = (float)local_108._8_4_;
+      g_CDemonCameraInstance.base.position.f.x = local_108.position.x;
+      g_CDemonCameraInstance.base.position.f.y = local_108.position.y;
+      g_CDemonCameraInstance.base.position.f.z = local_108.position.z;
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-              (&g_CDemonCameraInstance.base.rotation_matrix,(CVector3f *)(local_108 + 0xc));
-    g_CDemonCameraInstance.base.focal_length = local_f0;
+              (&g_CDemonCameraInstance.base.rotation_matrix,(CVector3f *)&local_108.pitch);
+    g_CDemonCameraInstance.base.focal_length = local_108.slew_rate;
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,150.0,0);
     engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);
@@ -196,7 +191,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
       return;
     }
     if (local_18 == (SRoom *)0x0) {
-      core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)local_108);
+      core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_108);
     }
     else {
       local_38 = g_CGamePtr->delta_time_float;
@@ -255,28 +250,28 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
       iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
       pSVar3 = local_18;
       if (iVar5 == 0) {
-        core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_ec);
-        if ((SRoom *)local_ec != pSVar3) {
-          local_ec._0_4_ = (pSVar3->position).x;
-          local_ec._4_4_ = (pSVar3->position).y;
-          local_ec._8_4_ = (pSVar3->position).z;
+        core_slew_cpp_CSlew_init_FUN_005a2060(&local_ec);
+        if ((SRoom *)&local_ec != pSVar3) {
+          local_ec.position.x = (pSVar3->position).x;
+          local_ec.position.y = (pSVar3->position).y;
+          local_ec.position.z = (pSVar3->position).z;
         }
         pCVar4 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
                            (&local_18->rotation_matrix,&local_70);
         pSVar3 = local_18;
-        if ((CVector3f *)(local_ec + 0xc) != pCVar4) {
-          local_ec._12_4_ = pCVar4->x;
-          local_dc = pCVar4->y;
-          local_d8 = pCVar4->z;
+        if ((CVector3f *)&local_ec.pitch != pCVar4) {
+          local_ec.pitch = pCVar4->x;
+          local_ec.yaw = pCVar4->y;
+          local_ec.roll = pCVar4->z;
         }
-        core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)local_ec);
-        if ((SRoom *)local_ec != pSVar3) {
-          (pSVar3->position).x = (float)local_ec._0_4_;
-          (pSVar3->position).y = (float)local_ec._4_4_;
-          (pSVar3->position).z = (float)local_ec._8_4_;
+        core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_ec);
+        if ((SRoom *)&local_ec != pSVar3) {
+          (pSVar3->position).x = local_ec.position.x;
+          (pSVar3->position).y = local_ec.position.y;
+          (pSVar3->position).z = local_ec.position.z;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                  (&local_18->rotation_matrix,(CVector3f *)(local_ec + 0xc));
+                  (&local_18->rotation_matrix,(CVector3f *)&local_ec.pitch);
       }
       else {
         local_24 = g_CGamePtr->delta_time_float * (float)4;
@@ -372,12 +367,12 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_53c,0);
           local_1c = this_ptr->room_count;
           local_18 = local_20 + local_1c;
-          if ((SRoom *)local_108 != local_18) {
-            (local_18->position).x = (float)local_108._0_4_;
-            (local_18->position).y = (float)local_108._4_4_;
-            (local_18->position).z = (float)local_108._8_4_;
+          if ((SRoom *)&local_108 != local_18) {
+            (local_18->position).x = local_108.position.x;
+            (local_18->position).y = local_108.position.y;
+            (local_18->position).z = local_108.position.z;
           }
-          local_b8.y = local_f8;
+          local_b8.y = local_108.yaw;
           local_b8.x = 0.0;
           local_b8.z = 0.0;
           core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30

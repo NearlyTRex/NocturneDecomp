@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408d50(CDemonActor *this_ptr,float x_pos,float z_pos,float *out_floor_height)
+; int __cdecl core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408d50(CDemonActor *this_ptr,CVector3f *position,float search_radius,float *out_floor_height )
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
-; float            Stack[0x8]:4   x_pos
-; float            Stack[0xc]:4   z_pos
+; CVector3f *      Stack[0x8]:4   position
+; float            Stack[0xc]:4   search_radius
 ; float *          Stack[0x10]:4   out_floor_height
 ;
 ; Referenced Globals:

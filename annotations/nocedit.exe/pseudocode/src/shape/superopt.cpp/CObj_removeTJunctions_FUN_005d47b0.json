@@ -3,32 +3,50 @@
     "errors": [
       {
         "category": "other",
-        "column": 24,
-        "line": 404,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
-      },
-      {
-        "category": "other",
         "column": 23,
-        "line": 422,
+        "line": 418,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 423,
+        "line": 419,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 23,
+        "line": 420,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 48,
+        "line": 421,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 44,
         "line": 424,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 48,
+        "column": 44,
         "line": 425,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 426,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 428,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
@@ -48,36 +66,6 @@
         "column": 44,
         "line": 431,
         "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 433,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 434,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 435,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 44,
-        "line": 436,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 24,
-        "line": 440,
-        "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       }
     ],
     "success": false,
@@ -85,13 +73,13 @@
   },
   "complexity": {
     "assembly_lines": 1087,
-    "complexity_score": 1538,
+    "complexity_score": 1483,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 453,
-    "suspect_count": 106,
+    "pseudocode_lines": 448,
+    "suspect_count": 101,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -99,7 +87,7 @@
       "sub84_truncation",
       "unknown_field"
     ],
-    "total_lines": 1540
+    "total_lines": 1535
   },
   "cross_references": [
     {
@@ -427,7 +415,7 @@
         "name": "local_1f0",
         "offset": -496,
         "size": 12,
-        "type": "undefined1[12]"
+        "type": "CVector3f"
       },
       {
         "is_param": false,
@@ -760,7 +748,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 121,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "((char *)((int)&local_1dc.normal.impl.z + 4),\"Deleting T-Junctions (%d deleted so far)\",0",
@@ -768,7 +756,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 134,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(seg_end_00->position).x + 4);",
@@ -776,7 +764,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 138,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(seg_start_00->position).x + 4);",
@@ -784,7 +772,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 142,
+      "line": 140,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "if ((pCVar10->position).x <= __BITCAST_DOUBLE(CONCAT44(uVar12,local_278))) {",
@@ -792,7 +780,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 142,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(pCVar10->position).x + 4);",
@@ -800,7 +788,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
+      "line": 153,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(pCVar15->position).x + 4);",
@@ -808,7 +796,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 158,
+      "line": 156,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar9 = __BITCAST_DOUBLE(CONCAT44(uVar12,local_270)) + -0.0001;",
@@ -816,7 +804,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 168,
+      "line": 166,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).y + 4),local_2b8))) {",
@@ -824,7 +812,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 168,
+      "line": 166,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).y + 4),local_2b8))) {",
@@ -832,7 +820,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 168,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(pCVar10->position).y + 4);",
@@ -840,7 +828,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 181,
+      "line": 179,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(pCVar15->position).y + 4);",
@@ -848,7 +836,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 184,
+      "line": 182,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar10 = __BITCAST_DOUBLE(CONCAT44(uVar12,local_250)) + -0.0001;",
@@ -856,7 +844,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 194,
+      "line": 192,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).z + 4),local_288))) {",
@@ -864,7 +852,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 194,
+      "line": 192,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).z + 4),local_288))) {",
@@ -872,7 +860,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 196,
+      "line": 194,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(pCVar10->position).z + 4);",
@@ -880,7 +868,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 207,
+      "line": 205,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(pCVar15->position).z + 4);",
@@ -888,7 +876,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 210,
+      "line": 208,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar11 = __BITCAST_DOUBLE(CONCAT44(uVar12,local_228)) + -0.0001;",
@@ -896,7 +884,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 219,
+      "line": 217,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).x + 4),local_290)) <=",
@@ -904,7 +892,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 219,
+      "line": 217,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).x + 4),local_290)) <=",
@@ -912,7 +900,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 222,
+      "line": 220,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(pCVar10->position).x + 4);",
@@ -920,7 +908,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 233,
+      "line": 231,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(pCVar15->position).x + 4);",
@@ -928,7 +916,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 236,
+      "line": 234,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar12 = __BITCAST_DOUBLE(CONCAT44(uVar12,local_260)) + 0.0001;",
@@ -936,7 +924,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 245,
+      "line": 243,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).y + 4),local_2c8)) <=",
@@ -944,7 +932,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 245,
+      "line": 243,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).y + 4),local_2c8)) <=",
@@ -952,7 +940,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 248,
+      "line": 246,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(pCVar10->position).y + 4);",
@@ -960,7 +948,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 259,
+      "line": 257,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(pCVar15->position).y + 4);",
@@ -968,7 +956,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 262,
+      "line": 260,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar13 = __BITCAST_DOUBLE(CONCAT44(uVar12,local_2b0)) + 0.0001;",
@@ -976,7 +964,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 271,
+      "line": 269,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).z + 4),local_2a8)) <=",
@@ -984,7 +972,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 271,
+      "line": 269,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).z + 4),local_2a8)) <=",
@@ -992,7 +980,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 274,
+      "line": 272,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(pCVar10->position).z + 4);",
@@ -1000,7 +988,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 285,
+      "line": 283,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(pCVar11->position).z + 4);",
@@ -1008,7 +996,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 288,
+      "line": 286,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar14 = __BITCAST_DOUBLE(CONCAT44(uVar12,local_268)) + 0.0001;",
@@ -1016,7 +1004,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 293,
+      "line": 291,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar17 = (uint *)((int)&(this_ptr->vertex_data->position).x + iVar21);",
@@ -1024,7 +1012,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 296,
+      "line": 294,
       "match": "(CVector3d *)((int)",
       "severity": "mild",
       "text": "pCVar19 = (CVector3d *)((int)pCVar19 + (uint)bVar20 * -8 + 4);",
@@ -1032,7 +1020,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 315,
+      "line": 313,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_110 = *(uint *)((int)&(pCVar10->position).x + 4);",
@@ -1040,7 +1028,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 317,
+      "line": 315,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_108 = *(uint *)((int)&(pCVar10->position).y + 4);",
@@ -1048,7 +1036,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 319,
+      "line": 317,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_100 = *(uint *)((int)&(pCVar10->position).z + 4);",
@@ -1056,7 +1044,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 321,
+      "line": 319,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_234 = *(uint *)((int)&source->uv_coords[2].impl.x + 4);",
@@ -1064,7 +1052,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 323,
+      "line": 321,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_2bc = *(uint *)((int)&source->uv_coords[2].impl.y + 4);",
@@ -1072,7 +1060,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 325,
+      "line": 323,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_128 = *(uint *)((int)&(seg_start_00->position).x + 4);",
@@ -1080,7 +1068,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 327,
+      "line": 325,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_120 = *(uint *)((int)&(seg_start_00->position).y + 4);",
@@ -1088,7 +1076,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 329,
+      "line": 327,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_118 = *(uint *)((int)&(seg_start_00->position).z + 4);",
@@ -1096,7 +1084,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 331,
+      "line": 329,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_22c = *(uint *)((int)&source->uv_coords[0].impl.x + 4);",
@@ -1104,7 +1092,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 334,
+      "line": 332,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar13 = *(uint *)((int)&source->uv_coords[0].impl.y + 4);",
@@ -1112,7 +1100,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 339,
+      "line": 337,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_110 = *(uint *)((int)&(seg_end_00->position).x + 4);",
@@ -1120,7 +1108,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 341,
+      "line": 339,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_108 = *(uint *)((int)&(seg_end_00->position).y + 4);",
@@ -1128,7 +1116,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 343,
+      "line": 341,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_100 = *(uint *)((int)&(seg_end_00->position).z + 4);",
@@ -1136,7 +1124,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 345,
+      "line": 343,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_234 = *(uint *)((int)&source->uv_coords[1].impl.x + 4);",
@@ -1144,7 +1132,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 347,
+      "line": 345,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_2bc = *(uint *)((int)&source->uv_coords[1].impl.y + 4);",
@@ -1152,7 +1140,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 349,
+      "line": 347,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_128 = *(uint *)((int)&(pCVar10->position).x + 4);",
@@ -1160,7 +1148,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 351,
+      "line": 349,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_120 = *(uint *)((int)&(pCVar10->position).y + 4);",
@@ -1168,7 +1156,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 353,
+      "line": 351,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_118 = *(uint *)((int)&(pCVar10->position).z + 4);",
@@ -1176,7 +1164,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 355,
+      "line": 353,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_22c = *(uint *)((int)&source->uv_coords[2].impl.x + 4);",
@@ -1184,7 +1172,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 358,
+      "line": 356,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar13 = *(uint *)((int)&source->uv_coords[2].impl.y + 4);",
@@ -1192,7 +1180,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 365,
+      "line": 363,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_110 = *(uint *)((int)&(seg_start_00->position).x + 4);",
@@ -1200,7 +1188,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 367,
+      "line": 365,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_108 = *(uint *)((int)&(seg_start_00->position).y + 4);",
@@ -1208,7 +1196,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 369,
+      "line": 367,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_100 = *(uint *)((int)&(seg_start_00->position).z + 4);",
@@ -1216,7 +1204,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 371,
+      "line": 369,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_234 = *(uint *)((int)&source->uv_coords[0].impl.x + 4);",
@@ -1224,7 +1212,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 373,
+      "line": 371,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_2bc = *(uint *)((int)&source->uv_coords[0].impl.y + 4);",
@@ -1232,7 +1220,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 375,
+      "line": 373,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_128 = *(uint *)((int)&(seg_end_00->position).x + 4);",
@@ -1240,7 +1228,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 377,
+      "line": 375,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_120 = *(uint *)((int)&(seg_end_00->position).y + 4);",
@@ -1248,7 +1236,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 379,
+      "line": 377,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_118 = *(uint *)((int)&(seg_end_00->position).z + 4);",
@@ -1256,7 +1244,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 381,
+      "line": 379,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_22c = *(uint *)((int)&source->uv_coords[1].impl.x + 4);",
@@ -1264,7 +1252,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 383,
+      "line": 381,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar13 = *(uint *)((int)&source->uv_coords[1].impl.y + 4);",
@@ -1272,7 +1260,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 386,
+      "line": 384,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "local_3c = (void *)((int)local_3c + -1);",
@@ -1280,7 +1268,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 393,
+      "line": 391,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(uStack_128,local_12c)) -",
@@ -1288,7 +1276,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 394,
+      "line": 392,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(uStack_110,local_114));",
@@ -1296,7 +1284,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 395,
+      "line": 393,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar6 = __BITCAST_DOUBLE(CONCAT44(uStack_120,local_124)) -",
@@ -1304,7 +1292,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 396,
+      "line": 394,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(uStack_108,local_10c));",
@@ -1312,23 +1300,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 397,
-      "match": "(int *)((int)",
+      "line": 395,
+      "match": "(float *)((int)",
       "severity": "mild",
-      "text": "local_1f0._8_4_ = *(int *)((int)source->uv_coords + local_30 * 4 + -0xc);",
+      "text": "local_1f0.z = *(float *)((int)source->uv_coords + local_30 * 4 + -0xc);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 397,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_1f0._8_4_ = *(int *)((int)source->uv_coords + local_30 * 4 + -0xc);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 398,
+      "line": 396,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar5 = __BITCAST_DOUBLE(CONCAT44(uStack_118,local_11c)) -",
@@ -1336,7 +1316,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 399,
+      "line": 397,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(uStack_100,local_104));",
@@ -1344,15 +1324,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 400,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "local_1e4 = *(int *)((int)source->uv_coords + local_38 * 4 + -0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 401,
+      "line": 398,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)source->uv_coords + local_30 * 4 + -0xc) = uVar15;",
@@ -1360,7 +1332,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 402,
+      "line": 399,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar2 = local_fc.x - __BITCAST_DOUBLE(CONCAT44(uStack_110,local_114));",
@@ -1368,7 +1340,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 403,
+      "line": 400,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar3 = local_fc.y - __BITCAST_DOUBLE(CONCAT44(uStack_108,local_10c));",
@@ -1376,7 +1348,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 404,
+      "line": 401,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar4 = local_fc.z - __BITCAST_DOUBLE(CONCAT44(uStack_100,local_104));",
@@ -1384,7 +1356,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 405,
+      "line": 402,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar7 = __BITCAST_DOUBLE(CONCAT44(uStack_2bc,uVar12));",
@@ -1392,7 +1364,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 406,
+      "line": 403,
       "match": "SQRT",
       "severity": "mild",
       "text": "dVar9 = SQRT(dVar4 * dVar4 + dVar3 * dVar3 + dVar2 * dVar2) /",
@@ -1400,7 +1372,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 407,
+      "line": 404,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(dVar5 * dVar5 + dVar6 * dVar6 + dVar1 * dVar1);",
@@ -1408,7 +1380,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 408,
+      "line": 405,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar10 = __BITCAST_DOUBLE(CONCAT44(uStack_234,local_238)) +",
@@ -1416,7 +1388,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 409,
+      "line": 406,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "(__BITCAST_DOUBLE(CONCAT44(uStack_22c,local_230)) -",
@@ -1424,7 +1396,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 410,
+      "line": 407,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(uStack_234,local_238))) * dVar9;",
@@ -1432,31 +1404,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 411,
+      "line": 408,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar9 = dVar7 + (__BITCAST_DOUBLE(CONCAT44(uVar13,local_248)) - dVar7) * dVar9;",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 412,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_a4 = SUB84(__BITCAST_UINT64(dVar10),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 412,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_a4 = SUB84(__BITCAST_UINT64(dVar10),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 415,
+      "line": 411,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_9c._0_4_ = SUB84(__BITCAST_UINT64(dVar9),0);",
@@ -1464,7 +1420,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 415,
+      "line": 411,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_9c._0_4_ = SUB84(__BITCAST_UINT64(dVar9),0);",
@@ -1472,7 +1428,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 415,
+      "line": 411,
       "match": "SUB84",
       "severity": "mild",
       "text": "local_9c._0_4_ = SUB84(__BITCAST_UINT64(dVar9),0);",
@@ -1480,7 +1436,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 416,
+      "line": 412,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_1dc.vertex_idx_0 = local_9c._0_4_;",
@@ -1488,7 +1444,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 417,
+      "line": 413,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_9c._4_4_ = (int)((ulonglong)dVar9 >> 0x20);",
@@ -1496,7 +1452,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 418,
+      "line": 414,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_1dc.vertex_idx_1 = local_9c._4_4_;",
@@ -1504,7 +1460,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 422,
+      "line": 417,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "local_1dc.uv_coords[0].impl.x._0_4_ = *(uint *)((int)&(pCVar16->impl).x + 4);",
@@ -1512,7 +1468,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 422,
+      "line": 417,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_1dc.uv_coords[0].impl.x._0_4_ = *(uint *)((int)&(pCVar16->impl).x + 4);",
@@ -1520,7 +1476,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 423,
+      "line": 418,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_1dc.uv_coords[0].impl.x._4_4_ = *(uint *)&(pCVar16->impl).y;",
@@ -1528,7 +1484,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 424,
+      "line": 419,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "local_1dc.uv_coords[0].impl.y._0_4_ = *(uint *)((int)&(pCVar16->impl).y + 4);",
@@ -1536,7 +1492,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 424,
+      "line": 419,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_1dc.uv_coords[0].impl.y._0_4_ = *(uint *)((int)&(pCVar16->impl).y + 4);",
@@ -1544,7 +1500,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 426,
+      "line": 421,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_1dc.uv_coords[0].impl.y._4_4_ = *(uint *)&(pCVar18->impl).x;",
@@ -1552,7 +1508,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 427,
+      "line": 422,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "local_1dc.uv_coords[1].impl.x._0_4_ = *(uint *)((int)&(pCVar18->impl).x + 4);",
@@ -1560,7 +1516,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 427,
+      "line": 422,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_1dc.uv_coords[1].impl.x._0_4_ = *(uint *)((int)&(pCVar18->impl).x + 4);",
@@ -1568,7 +1524,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 428,
+      "line": 423,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_1dc.uv_coords[1].impl.x._4_4_ = *(uint *)&(pCVar18->impl).y;",
@@ -1576,7 +1532,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 429,
+      "line": 424,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "local_1dc.uv_coords[1].impl.y._0_4_ = *(uint *)((int)&(pCVar18->impl).y + 4);",
@@ -1584,18 +1540,10 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 429,
+      "line": 424,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_1dc.uv_coords[1].impl.y._0_4_ = *(uint *)((int)&(pCVar18->impl).y + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 433,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_1f0._4_4_ = uVar15;",
       "type": "unknown_field"
     }
   ],

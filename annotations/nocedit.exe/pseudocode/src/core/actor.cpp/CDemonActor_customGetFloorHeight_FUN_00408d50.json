@@ -27,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CDemonActor_customGetFloorHeight_FUN_00408d50",
-    "signature": "int __cdecl core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408d50(CDemonActor *this_ptr,float x_pos,float z_pos,float *out_floor_height)"
+    "signature": "int __cdecl core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408d50(CDemonActor *this_ptr,CVector3f *position,float search_radius,float *out_floor_height )"
   },
   "function_calls": [
     {
@@ -118,14 +118,14 @@
       },
       {
         "is_param": true,
-        "name": "x_pos",
+        "name": "position",
         "offset": 8,
         "size": 4,
-        "type": "float"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "z_pos",
+        "name": "search_radius",
         "offset": 12,
         "size": 4,
         "type": "float"

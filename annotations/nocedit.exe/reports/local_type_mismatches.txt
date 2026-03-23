@@ -1,0 +1,173 @@
+====================================================================================================
+LOCAL VARIABLE TYPE MISMATCH REPORT
+====================================================================================================
+
+Variables declared as primitives/byte arrays but accessed with struct member notation.
+These can be fixed by retyping the local variable in Ghidra.
+
+Total mismatches found: 86
+  High confidence:   7
+  Medium confidence: 15
+  Low confidence:    64
+
+----------------------------------------------------------------------------------------------------
+BY SUGGESTED TYPE
+----------------------------------------------------------------------------------------------------
+
+  CBoneStructure (3 occurrences)
+    [medium] CDeformableModel_buildFromPosFile_FUN_0058c190      byte[88] -> CBoneStructure  accesses: [(0, 4)]  cast hints: CBoneStructure *
+    [medium] CSkeleton_importSkeletonFile_FUN_00592690           byte[13608] -> CBoneStructure  accesses: [(13604, 4)]  cast hints: CBoneStructure *
+    [medium] CSkeleton_importSkeletonFile_FUN_00592690           byte[13692] -> CBoneStructure  accesses: [(13604, 4)]  cast hints: CBoneStructure *
+
+  CParticle (1 occurrences)
+    [medium] CParticle_process_FUN_00545760                      byte[52] -> CParticle  accesses: [(0, 4), (4, 4), (8, 4), (24, 4), (28, 4), (32, 4), (48, 4)]  cast hints: CParticle *
+
+  CQuaternion4f (5 occurrences)
+    [medium] CDemonMission_editGore_FUN_0053e220                 byte[16] -> CQuaternion4f  accesses: [(0, 4), (4, 4), (8, 4), (12, 4)]  cast hints: CSlew *
+    [medium] CDemonSet_showRoomEditor_FUN_00581aa0               byte[16] -> CQuaternion4f  accesses: [(0, 4), (4, 4), (8, 4), (12, 4)]  cast hints: SRoom *, CSlew *
+    [medium] CDemonSet_showRoomEditor_FUN_00581aa0               byte[16] -> CQuaternion4f  accesses: [(0, 4), (4, 4), (8, 4), (12, 4)]  cast hints: SRoom *, CSlew *
+    [medium] CStairs_renderOpaque_FUN_005b9c10                   byte[16] -> CQuaternion4f  accesses: [(0, 4), (4, 4), (8, 4), (12, 4)]  cast hints: SMRGLTextureBasic *
+    [medium] CTurret_process_FUN_005e2430                        byte[20] -> CQuaternion4f  accesses: [(12, 8)]  cast hints: CQuaternion4f *
+
+  CStranger (1 occurrences)
+    [medium] CStranger_processFrame_FUN_005bb960                 byte[28] -> CStranger  accesses: [(8, 4), (12, 4), (24, 4)]  cast hints: CStranger *, UOrientationVector *, SInteractionInfo *, CHero *
+
+  CVector2f (3 occurrences)
+    [medium] CStranger_processFrame_FUN_005bb960                 byte[8] -> CVector2f  accesses: [(0, 4), (4, 4)]  cast hints: CVector3f *
+    [medium] CStranger_processFrame_FUN_005bb960                 byte[8] -> CVector2f  accesses: [(0, 4), (4, 4)]  cast hints: CVector3f *
+    [medium] CPoly_hasEdgeIntersection_FUN_005d1390              byte[8] -> CVector2f  accesses: [(0, 4), (4, 4)]  cast hints: CVector2d *
+
+  CVector2i_or_pair (32 occurrences)
+    [low] CWerewolf_process_FUN_005efde0                      ulonglong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]  cast hints: CVector3f *
+    [low] clipPolygonStage1_FUN_005f7ed0                      longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] clipPolygonStage1_FUN_005f7ed0                      longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] clipPolygonStage2_FUN_005f8040                      longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] clipPolygonStage2_FUN_005f8040                      longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] clipPolygonStage3_FUN_005f81c0                      longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] clipPolygonStage3_FUN_005f81c0                      longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] clipPolygonStage4_FUN_005f8330                      longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] clipPolygonStage4_FUN_005f8330                      longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] transformAndClipGeometry_FUN_005f8550               longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] transformAndClipGeometry_FUN_005f8550               longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] transformAndClipGeometry_FUN_005f8550               longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] transformAndClipGeometry_FUN_005f8550               longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] transformAndClipGeometry_FUN_005f8550               longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] transformAndClipGeometry_FUN_005f8550               longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] transformAndClipGeometry_FUN_005f8550               longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] transformAndClipGeometry_FUN_005f8550               longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] transformAndClipGeometry_FUN_005f8550               longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] transformAndClipGeometry_FUN_005f8550               longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] CPoly_intersectPoly_FUN_005ce580                    ulonglong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] CPoly_intersectPoly_FUN_005ce580                    ulonglong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] CPoly_intersectPoly_FUN_005ce580                    ulonglong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] CPoly_intersectPoly_FUN_005ce580                    ulonglong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] CPoly_intersectPoly_FUN_005ce580                    ulonglong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] CPoly_intersectPoly_FUN_005ce580                    ulonglong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] math_domain_error_FUN_00606832                      ulonglong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] clipPolygonNearPlane_FUN_00436420                   longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] clipPolygonNearPlane_FUN_00436420                   longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] clipPolygonToViewFrustum_FUN_004366e0               longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] clipPolygonToViewFrustum_FUN_004366e0               longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] clipPolygonToViewFrustum_FUN_004366e0               longlong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+    [low] computeBoxStatistics_FUN_00441260                   ulonglong -> CVector2i_or_pair  accesses: [(0, 4), (4, 4)]
+
+  CVector3f (7 occurrences)
+    [high] CPlatform_processInEditor_FUN_0054ea00              byte[16] -> CVector3f  accesses: [(0, 4), (4, 4), (8, 4), (12, 4)]  cast hints: CVector3f *, CSlew *
+    [high] CPlatform_processInEditor_FUN_0054ea00              byte[16] -> CVector3f  accesses: [(0, 4), (4, 4), (8, 4), (12, 4)]  cast hints: CVector3f *, CSlew *
+    [high] CDemonSet_evaluateVirtualDirector_FUN_005751d0      byte[12] -> CVector3f  accesses: [(0, 4), (4, 4), (8, 4)]  cast hints: CBoundingBox3D *
+    [high] CStranger_processFrame_FUN_005bb960                 byte[12] -> CVector3f  accesses: [(8, 4)]  cast hints: CVector3f *
+    [high] CStranger_processFrame_FUN_005bb960                 byte[12] -> CVector3f  accesses: [(8, 4)]  cast hints: CVector3f *
+    [high] CObj_removeTJunctions_FUN_005d47b0                  byte[12] -> CVector3f  accesses: [(4, 4), (8, 4)]  cast hints: CPoly *
+    [high] CDirectSoundDevice_initPropertySet_FUN_005ae660     byte[12] -> CVector3f  accesses: [(0, 4), (4, 4), (8, 4)]
+
+  SDamageInfo (2 occurrences)
+    [medium] CBoxActor_process_FUN_004219e0                      byte[56] -> SDamageInfo  accesses: [(4, 4), (52, 4)]  cast hints: SDamageInfo *
+    [medium] CBoxActor_process_FUN_004219e0                      byte[52] -> SDamageInfo  accesses: [(0, 4), (12, 4), (16, 4), (20, 4), (24, 4), (28, 4), (32, 4), (36, 4), (40, 4), (44, 4), (48, 4)]  cast hints: SDamageInfo *
+
+  short_pair (31 occurrences)
+    [low] setupTriangleEdgeInterpolation_FUN_00482fb0         uint -> short_pair  accesses: [(0, 2)]
+    [low] CNetGame_swapPlayerData_FUN_00543bb0                uint -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] renderTriangleTextured_FUN_00483370                 uint -> short_pair  accesses: [(0, 2)]
+    [low] CColorQuantizer_computeBoxStatistics_FUN_00555090   int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] CColorQuantizer_computeBoxStatistics_FUN_00555090   int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] CColorQuantizer_computeBoxStatistics_FUN_00555090   int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] CColorQuantizer_getPixelSortKey_FUN_00554ff0        int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] CColorQuantizer_getPixelSortKey_FUN_00554ff0        int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] CColorQuantizer_getPixelSortKey_FUN_00554ff0        int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] CColorQuantizer_reduceColors_FUN_00555a40           int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] CColorQuantizer_reduceColors_FUN_00555a40           int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] CColorQuantizer_reduceColors_FUN_00555a40           int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] parseWavFile_FUN_005a3fe0                           uint -> short_pair  accesses: [(2, 2)]
+    [low] strtod_main_FUN_00605d5d                            uint -> short_pair  accesses: [(0, 2)]
+    [low] computeBoxStatistics_FUN_00441260                   int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] computeBoxStatistics_FUN_00441260                   int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] computeBoxStatistics_FUN_00441260                   int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] computeWeightedColorDistance_FUN_00441040           int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] computeWeightedColorDistance_FUN_00441040           int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] computeWeightedColorDistance_FUN_00441040           int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] partitionByBlue_FUN_00440dc0                        int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] partitionByGreen_FUN_00440c80                       int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] partitionByIntensity_FUN_00440f00                   int -> short_pair  accesses: [(0, 2), (2, 2)]
+    [low] renderIndexedPolygonAdvanced_FUN_00553b10           uint -> short_pair  accesses: [(0, 2)]
+    [low] renderIndexedPolygonSoftware_FUN_00552a40           uint -> short_pair  accesses: [(0, 2)]
+    [low] renderPolygonSoftware_FUN_00552510                  uint -> short_pair  accesses: [(0, 2)]
+    [low] renderScanlinePolygon_FUN_00553470                  uint -> short_pair  accesses: [(0, 2)]
+    [low] setupAdvancedSoftwareEdge_FUN_00552f70              uint -> short_pair  accesses: [(0, 2)]
+    [low] setupBasicSoftwareEdge_FUN_00551ba0                 uint -> short_pair  accesses: [(0, 2)]
+    [low] setupColoredSoftwareEdge_FUN_00553190               uint -> short_pair  accesses: [(0, 2)]
+    [low] setupSoftwareEdgeWithZMode_FUN_00551d60             uint -> short_pair  accesses: [(0, 2)]
+
+  struct_1_floats_or_ints (1 occurrences)
+    [low] CWavInDevice_setMode_FUN_005b0f70                   byte[44] -> struct_1_floats_or_ints  accesses: [(40, 4)]
+
+----------------------------------------------------------------------------------------------------
+HIGH CONFIDENCE FIXES (recommended for Ghidra)
+----------------------------------------------------------------------------------------------------
+
+  Function: CDemonSet_evaluateVirtualDirector_FUN_005751d0
+  Variable: auStack_d4
+  Current:  byte[12]
+  Fix to:   CVector3f
+  Accesses: [(0, 4), (4, 4), (8, 4)]
+  Casts:    CBoundingBox3D *
+
+  Function: CDirectSoundDevice_initPropertySet_FUN_005ae660
+  Variable: local_2c
+  Current:  byte[12]
+  Fix to:   CVector3f
+  Accesses: [(0, 4), (4, 4), (8, 4)]
+
+  Function: CObj_removeTJunctions_FUN_005d47b0
+  Variable: local_1f0
+  Current:  byte[12]
+  Fix to:   CVector3f
+  Accesses: [(4, 4), (8, 4)]
+  Casts:    CPoly *
+
+  Function: CPlatform_processInEditor_FUN_0054ea00
+  Variable: auStack_104
+  Current:  byte[16]
+  Fix to:   CVector3f
+  Accesses: [(0, 4), (4, 4), (8, 4), (12, 4)]
+  Casts:    CVector3f *, CSlew *
+
+  Function: CPlatform_processInEditor_FUN_0054ea00
+  Variable: auStack_e8
+  Current:  byte[16]
+  Fix to:   CVector3f
+  Accesses: [(0, 4), (4, 4), (8, 4), (12, 4)]
+  Casts:    CVector3f *, CSlew *
+
+  Function: CStranger_processFrame_FUN_005bb960
+  Variable: auStack_1dc
+  Current:  byte[12]
+  Fix to:   CVector3f
+  Accesses: [(8, 4)]
+  Casts:    CVector3f *
+
+  Function: CStranger_processFrame_FUN_005bb960
+  Variable: auStack_134
+  Current:  byte[12]
+  Fix to:   CVector3f
+  Accesses: [(8, 4)]
+  Casts:    CVector3f *

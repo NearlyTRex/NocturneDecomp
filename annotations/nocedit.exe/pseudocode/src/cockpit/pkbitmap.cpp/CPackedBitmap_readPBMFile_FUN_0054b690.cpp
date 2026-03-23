@@ -83,7 +83,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
           }
           buffer = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                              ((int)size,"..\\cockpit\\pkbitmap.cpp",0x4de);
-          this_ptr->packed_data = buffer;
+          this_ptr->packed_data = (ushort *)buffer;
           if (buffer == (char *)0x0) goto LAB_0054b6fd;
           SVar2 = _fread(buffer,(SIZE_T)size,1,file_handle);
           if (SVar2 == 1) {

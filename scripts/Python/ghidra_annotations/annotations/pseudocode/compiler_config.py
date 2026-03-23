@@ -36,6 +36,7 @@ DEFAULT_COMPILE_FLAGS = [
     '-Wformat-overflow',
     '-Werror=format',
     '-Werror=format-overflow',
+    '-Wno-format-security',
     '-Wincompatible-pointer-types',
     '-Wint-conversion',
     '-Wreturn-type',

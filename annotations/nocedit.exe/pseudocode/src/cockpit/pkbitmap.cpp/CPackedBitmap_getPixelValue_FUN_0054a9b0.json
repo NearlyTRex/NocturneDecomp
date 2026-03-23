@@ -1,29 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 17,
-        "line": 17,
-        "message": "comparison of distinct pointer types ('ushort *' (aka 'unsigned short *') and 'char *')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 51,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
+    "pseudocode_lines": 17,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 73
+    "total_lines": 74
   },
   "cross_references": [
     {
@@ -148,7 +141,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 12,
+      "line": 13,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "puVar1 = (ushort *)((int)puVar1 + (puVar1[1] + 3 & 0xfffffffc) + 4)) {",
@@ -156,7 +149,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 15,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "return (uint)*(byte *)((int)puVar1 + (x_coordinate - uVar2) + 4);",

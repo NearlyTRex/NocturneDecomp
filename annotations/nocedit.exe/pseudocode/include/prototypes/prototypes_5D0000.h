@@ -139,7 +139,7 @@ int __cdecl shape_superopt_cpp_COptimize_optimize_FUN_005d7290(COptimize *this_p
 int __cdecl shape_superopt_cpp_COptimize_optimizeComplex_FUN_005d7350(COptimize *this_ptr);
 void __cdecl shape_superopt_cpp_COptimize_findCoplanarPolygons_FUN_005d7460(COptimize *this_ptr,CPoly *polygon,COptimize *search_obj);
 int __cdecl shape_superopt_cpp_COptimize_splitToConvex_FUN_005d7690(COptimize *this_ptr);
-void __cdecl shape_superopt_cpp_COptimize_addComplexPolygon_FUN_005d76e0(COptimize *this_ptr,CComplexPolygon *polygon);
+CComplexPolygon * __cdecl shape_superopt_cpp_COptimize_addComplexPolygon_FUN_005d76e0(COptimize *this_ptr,CComplexPolygon *polygon);
 int __cdecl shape_superopt_cpp_findTriListTextureIndex_FUN_005d7750(char *filename);
 void __cdecl shape_superopt_cpp_optimizeCubeTriList_FUN_005d77a0(void);
 void __cdecl shape_superopt_cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00(COptimize *this_ptr);

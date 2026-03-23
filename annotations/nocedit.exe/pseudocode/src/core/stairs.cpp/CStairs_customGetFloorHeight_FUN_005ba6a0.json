@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 33,
-        "line": 21,
-        "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -34,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_stairs.cpp_CStairs_customGetFloorHeight_FUN_005ba6a0",
-    "signature": "int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_005ba6a0(CStairs *this_ptr,float x_pos,float z_pos,float *out_floor_height)"
+    "signature": "int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_005ba6a0(CStairs *this_ptr,CVector3f *position,float search_radius,float *out_floor_height)"
   },
   "function_calls": [
     {
@@ -94,14 +87,14 @@
       },
       {
         "is_param": true,
-        "name": "x_pos",
+        "name": "position",
         "offset": 8,
         "size": 4,
-        "type": "float"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "z_pos",
+        "name": "search_radius",
         "offset": 12,
         "size": 4,
         "type": "float"

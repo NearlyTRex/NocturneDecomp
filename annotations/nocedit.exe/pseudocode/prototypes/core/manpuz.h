@@ -49,7 +49,7 @@ void __cdecl CMansionPuzzleCircle::customIntersectCylinderXZ(CMansionPuzzleCircl
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_customGetFloorHeight_FUN_005097d0
 // Address: 005097d0
-int __cdecl CMansionPuzzleCircle::customGetFloorHeight(CMansionPuzzleCircle *this_ptr,float x_pos,float z_pos,float *out_floor_height);
+int __cdecl CMansionPuzzleCircle::customGetFloorHeight(CMansionPuzzleCircle *this_ptr,CVector3f *position,float search_radius,float *out_floor_height);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_005097e0
 // Address: 005097e0

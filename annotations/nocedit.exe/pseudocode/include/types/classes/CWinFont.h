@@ -14,7 +14,7 @@ typedef struct CWinFont {
     HBITMAP dib_handle; // 0x8
     HFONT font_handle; // 0xc
     HGDIOBJ object_handle; // 0x10
-    void** ppv_bits; // 0x14
+    void* ppv_bits; // 0x14
     char text_cache[256]; // 0x18
     int cached_string_width; // 0x118
     int cached_string_height; // 0x11c

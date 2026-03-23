@@ -8,8 +8,7 @@
 ; Local Variables:
 ; char[400]        Stack[-0x1d0]:400  acStack_1d0
 ; DSBUFFERDESC     Stack[-0x40]:20  DStack_40
-; undefined1[12]   Stack[-0x2c]:12  local_2c
-; undefined4 *     Stack[-0x20]:4  puStack_20
+; WAVEFORMATEX     Stack[-0x2c]:20  local_2c
 ; IDirectSoundBuffer * Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
