@@ -1,6 +1,6 @@
 // Name: core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00
 // Address: 0057fd00
-// Address Range: [[0057fd00, 0057ff02]]
+// Address Range: [[0057fd00, 0057ff02] [0060c692, 0060c6af]]
 // Convention: __cdecl
 // Signature: void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDemonSet *this_ptr,char *coverage_map,int exclude_camera_index)
 
@@ -49,12 +49,7 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
     {
       core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                 (&g_CDemonCameraInstance,local_18,local_1c,&local_38);
-      local_44.x = local_38.x;
-      *(uint *)((int)&local_44 + (uint)bVar6 * -8 + 4) =
-           *(uint *)((int)&local_38 + (uint)bVar6 * -8 + 4);
-      *(uint *)((int)&local_44 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-           *(uint *)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-      if (local_44.z < 0x40000000) {
+      if (local_38.z < 0x40000000) {
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
                   (&g_CDemonCameraInstance,&local_44,&local_50);
         puVar5 = (uint *)((int)pCVar3 + (uint)bVar6 * -8 + 4);

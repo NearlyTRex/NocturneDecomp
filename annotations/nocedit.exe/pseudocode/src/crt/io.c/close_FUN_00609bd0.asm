@@ -6,8 +6,7 @@
 ; Parameters:
 ; int              Stack[0x4]:4   fd
 ;
-; XREF[2]:
-;   crt_io.c_close_handle_safe_FUN_0060c2e0 at 0060c30f
+; XREF[1]:
 ;   crt_stdio.c__fclose_FUN_00601fd0 at 0060203e
 ;
 ; Referenced Globals:

@@ -1,6 +1,6 @@
 // Name: core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
 // Address: 0044de10
-// Address Range: [[0044de10, 0044e356] [006048c4, 006048e8]]
+// Address Range: [[0044de10, 0044e356] [006048c4, 006048e8] [0060c74e, 0060c76c]]
 // Convention: __cdecl
 // Signature: void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect)
 
@@ -54,7 +54,6 @@ void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemon
   uint *local_1c;
   int local_18;
   
-  bVar10 = 0;
   local_40 = 0x80;
   iVar1 = _strcmp(light_source->filter_name,"movscrn.raw");
   if (iVar1 == 0) {
@@ -162,12 +161,9 @@ LAB_0044e087:
           core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
                     (&light_source->base,input_ptr,&local_70);
           local_64.x = local_70.x;
-          *(uint *)((int)&local_64 + (uint)bVar10 * -8 + 4) =
-               *(uint *)((int)&local_70 + (uint)bVar10 * -8 + 4);
-          *(uint *)((int)&local_64 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-               *(uint *)((int)&local_70 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-          if (local_64.z < 1) goto LAB_0044e06f;
-          *piVar4 = local_64.z - local_40;
+          local_64.y = local_70.y;
+          if (local_70.z < 1) goto LAB_0044e06f;
+          *piVar4 = local_70.z - local_40;
           puVar4 = core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270
                              (light_source,&local_64,(uchar)iVar7,(uchar)local_2c);
           *puVar5 = puVar4;

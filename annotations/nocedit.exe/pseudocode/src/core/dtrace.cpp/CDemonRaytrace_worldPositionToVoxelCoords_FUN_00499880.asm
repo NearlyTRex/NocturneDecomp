@@ -80,12 +80,23 @@ section .text
     CALL crt_math.c_round_FUN_005fe6b0  ; 0049990e
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 00499913
-    MOVSD ES:EDI,ESI                    ; 00499917
-    MOVSD ES:EDI,ESI                    ; 00499918
-    MOVSD ES:EDI,ESI                    ; 00499919
-    MOV EAX,EBX                         ; 0049991a
+    JMP 0x0060c93c                      ; 00499917
+        ;   XREF to: 0060c93c (UNCONDITIONAL_JUMP)  ; LAB_0060c93c
     ADD ESP,0x14                        ; 0049991c
+        ;   Label: LAB_0049991c
     POP EDI                             ; 0049991f
     POP EBX                             ; 00499920
     RET                                 ; 00499921
+    MOV ECX,dword ptr [ESI]             ; 0060c93c
+        ;   Label: LAB_0060c93c
+    MOV dword ptr [EDI],ECX             ; 0060c93e
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c940
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c943
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060c946
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060c949
+    ADD ESI,0xc                         ; 0060c94c
+    ADD EDI,0xc                         ; 0060c94f
+    MOV EAX,EBX                         ; 0060c952
+    JMP 0x0049991c                      ; 0060c954
+        ;   XREF to: 0049991c (UNCONDITIONAL_JUMP)  ; LAB_0049991c
 

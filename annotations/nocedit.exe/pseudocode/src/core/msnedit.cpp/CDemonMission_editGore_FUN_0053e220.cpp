@@ -1,6 +1,6 @@
 // Name: core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
 // Address: 0053e220
-// Address Range: [[0053e220, 0053e9d9]]
+// Address Range: [[0053e220, 0053e9d9] [0060c5a0, 0060c5dc]]
 // Convention: __cdecl
 // Signature: void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission *this_ptr)
 
@@ -49,7 +49,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
   CDemonSet *pCVar2;
   
   this_ptr_00 = g_CGamePtr;
-  bVar5 = 0;
   local_c0 = 0.0;
   local_c8 = 0.0;
   INT_02f7c634 = 0;
@@ -145,22 +144,14 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
          (g_MouseY < g_WindowHeight + -2)) {
         core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                   (&g_CDemonCameraInstance,g_MouseX,g_MouseY,&CStack_4c);
-        input_ptr = &CStack_34;
-        CStack_34.x = CStack_4c.x;
-        *(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + 4) =
-             *(uint *)((int)&CStack_4c + (uint)bVar5 * -8 + 4);
-        *(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-             *(uint *)((int)&CStack_4c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-                  (&g_CDemonCameraInstance,input_ptr,&CStack_58);
+                  (&g_CDemonCameraInstance,&CStack_34,&CStack_58);
         CStack_34.x = CStack_58.x;
-        *(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + 4) =
-             *(uint *)((int)&CStack_58 + (uint)bVar5 * -8 + 4);
-        *(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-             *(uint *)((int)&CStack_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-        auStack_94._0_4_ = (float)CStack_34.x * 0.00390625f;
-        auStack_94._4_4_ = (float)CStack_34.y * 0.00390625f;
-        auStack_94._8_4_ = (float)CStack_34.z * 0.00390625f;
+        CStack_34.y = CStack_58.y;
+        CStack_34.z = CStack_58.z;
+        auStack_94._0_4_ = (float)CStack_58.x * 0.00390625f;
+        auStack_94._4_4_ = (float)CStack_58.y * 0.00390625f;
+        auStack_94._8_4_ = (float)CStack_58.z * 0.00390625f;
         if (&local_bc != (CSlew *)auStack_94) {
           local_bc.position.x = (float)auStack_94._0_4_;
           local_bc.position.y = (float)auStack_94._4_4_;

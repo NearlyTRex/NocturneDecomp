@@ -1,6 +1,6 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0
 // Address: 005a05e0
-// Address Range: [[005a05e0, 005a0797]]
+// Address Range: [[005a05e0, 005a0797] [0060c8c1, 0060c8df]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0(CDeformableModelInstance *this_ptr)
 
@@ -12,6 +12,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_0
   float fVar1;
   float fVar4;
   int iVar5;
+  int iVar6;
+  int iVar7;
   CDeformableModel *pCVar8;
   int iVar9;
   CVector3f *pCVar10;
@@ -36,7 +38,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_0
   float fVar2;
   float fVar5;
   
-  bVar13 = 0;
   local_2c = 0x7fffffff;
   local_30 = 0x7fffffff;
   local_34 = 0x7fffffff;
@@ -44,37 +45,36 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_0
   local_48 = -0x7fffffff;
   local_4c = -0x7fffffff;
   pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
-  iVar4 = pCVar8->vertex_count[0];
+  iVar5 = pCVar8->vertex_count[0];
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070(this_ptr,0,0.0);
   core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr,0);
-  if (0 < iVar4) {
+  if (0 < iVar5) {
     iVar9 = 0;
     do {
       piVar11 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar9);
-      piVar12 = piVar11 + (uint)bVar13 * -2 + 1;
       iVar5 = *piVar11;
-      (&local_3c)[(uint)bVar13 * -2] = *piVar12;
-      (&local_38)[(uint)bVar13 * -2 + (uint)bVar13 * -2] = piVar12[(uint)bVar13 * -2 + 1];
+      iVar6 = piVar11[1];
+      iVar7 = piVar11[2];
       if (iVar5 < local_34) {
         local_34 = iVar5;
       }
       if (local_4c < iVar5) {
         local_4c = iVar5;
       }
-      if (local_3c < local_30) {
-        local_30 = local_3c;
+      if (iVar6 < local_30) {
+        local_30 = iVar6;
       }
-      if (local_48 < local_3c) {
-        local_48 = local_3c;
+      if (local_48 < iVar6) {
+        local_48 = iVar6;
       }
-      if (local_38 < local_2c) {
-        local_2c = local_38;
+      if (iVar7 < local_2c) {
+        local_2c = iVar7;
       }
-      if (local_44 < local_38) {
-        local_44 = local_38;
+      if (local_44 < iVar7) {
+        local_44 = iVar7;
       }
       iVar9 = iVar9 + 0xc;
-    } while (iVar9 < iVar4 * 0xc);
+    } while (iVar9 < iVar7);
   }
   pCVar1 = &this_ptr->bounding_box;
   (pCVar1->min).x = (float)local_34 * 0.00390625f;

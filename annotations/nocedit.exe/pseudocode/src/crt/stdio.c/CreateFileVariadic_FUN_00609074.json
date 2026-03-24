@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 19,
     "complexity_score": 38,
-    "cross_reference_count": 2,
+    "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -15,12 +15,6 @@
     "total_lines": 27
   },
   "cross_references": [
-    {
-      "addr": "0060c340",
-      "from_addr": "0060c424",
-      "name": "crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0060190c",
       "from_addr": "006019a1",
@@ -49,7 +43,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 1,
     "call_sites": [
       {
         "call_addr": "006019a1",
@@ -61,20 +55,9 @@
         "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
-      },
-      {
-        "call_addr": "0060c424",
-        "call_type": "direct",
-        "caller": "crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340",
-        "estimated_params": 4,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 16,
-        "stack_params": 4
       }
     ],
-    "confidence": "medium",
+    "confidence": "low",
     "declared_params": 3,
     "declared_stack_bytes": 12,
     "estimated_params": 4
@@ -140,7 +123,7 @@
   },
   "suspects": [
     {
-      "call_site_count": 2,
+      "call_site_count": 1,
       "declared_params": 3,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 4,

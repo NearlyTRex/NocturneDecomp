@@ -5,20 +5,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 395,
-    "complexity_score": 225,
+    "assembly_lines": 407,
+    "complexity_score": 223,
     "cross_reference_count": 7,
     "function_call_count": 9,
-    "global_count": 16,
+    "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 150,
+    "pseudocode_lines": 148,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 545
+    "total_lines": 555
   },
   "cross_references": [
     {
@@ -70,6 +70,10 @@
       [
         "0043bae0",
         "0043bf33"
+      ],
+      [
+        "0060c72f",
+        "0060c74d"
       ]
     ],
     "convention": "__cdecl",
@@ -157,36 +161,6 @@
     {
       "addr": "00827518",
       "name": "g_ClothBackfaceBuffer[0].vertices[0].vertex_index",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "0082751c",
-      "name": "g_ClothBackfaceBuffer[0].vertices[0].texture_u",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00827520",
-      "name": "g_ClothBackfaceBuffer[0].vertices[0].texture_v",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00827524",
-      "name": "g_ClothBackfaceBuffer[0].vertices[1].vertex_index",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00827528",
-      "name": "g_ClothBackfaceBuffer[0].vertices[1].texture_u",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "0082752c",
-      "name": "g_ClothBackfaceBuffer[0].vertices[1].texture_v",
       "type": "undefined4",
       "value": null
     },
@@ -330,43 +304,42 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.42942942942943,
-    "instruction_count": 333,
+    "avg_pcode_per_instr": 5.3088235294117645,
+    "instruction_count": 340,
     "opcode_distribution": {
       "BOOL_NEGATE": 61,
       "BOOL_OR": 5,
-      "BRANCH": 6,
+      "BRANCH": 8,
       "CALL": 16,
       "CBRANCH": 18,
-      "COPY": 284,
+      "COPY": 281,
       "FLOAT2FLOAT": 2,
       "FLOAT_MULT": 1,
       "INT_ADD": 129,
-      "INT_AND": 311,
-      "INT_CARRY": 30,
-      "INT_EQUAL": 182,
+      "INT_AND": 315,
+      "INT_CARRY": 32,
+      "INT_EQUAL": 186,
       "INT_LEFT": 12,
       "INT_LESS": 19,
-      "INT_MULT": 14,
+      "INT_MULT": 8,
       "INT_NOTEQUAL": 51,
       "INT_OR": 54,
       "INT_SBORROW": 20,
-      "INT_SCARRY": 34,
+      "INT_SCARRY": 36,
       "INT_SEXT": 12,
-      "INT_SLESS": 95,
+      "INT_SLESS": 97,
       "INT_SRIGHT": 18,
-      "INT_SUB": 132,
+      "INT_SUB": 126,
       "INT_XOR": 10,
-      "INT_ZEXT": 6,
       "LOAD": 79,
-      "POPCOUNT": 83,
+      "POPCOUNT": 85,
       "RETURN": 1,
       "ROUND": 1,
       "STORE": 113,
       "SUBPIECE": 8,
       "TRUNC": 1
     },
-    "pcode_op_count": 1808
+    "pcode_op_count": 1805
   },
   "stack_frame": {
     "frame_size": 40,
@@ -423,7 +396,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 32,
       "match": "ROUND",
       "severity": "mild",
       "text": "render_alpha = (int)ROUND(ROUND(this_ptr->transparency * (float)65535));",
@@ -431,7 +404,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 32,
       "match": "ROUND",
       "severity": "mild",
       "text": "render_alpha = (int)ROUND(ROUND(this_ptr->transparency * (float)65535));",
@@ -439,26 +412,26 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
-      "match": "(uint *)((int)",
+      "line": 124,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "puVar6 = (uint *)((int)pSVar3 + (uint)bVar7 * -8 + 0x1c);",
+      "text": "pSVar3->vertices[0].vertex_index = *(int *)((int)pSVar6 + iVar7 + 0x18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "pSVar3->vertices[0].texture_u = *(int *)((int)pSVar6 + iVar7 + 0x1c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 126,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar5 = (uint *)((int)pSVar6 + (uint)bVar7 * -8 + iVar7 + 0x1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 127,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pSVar3->vertices[0].vertex_index = *(int *)((int)pSVar6 + iVar7 + 0x18);",
+      "text": "iVar7 = *(int *)((int)pSVar6 + iVar7 + 0x20);",
       "type": "pointer_cast"
     }
   ]

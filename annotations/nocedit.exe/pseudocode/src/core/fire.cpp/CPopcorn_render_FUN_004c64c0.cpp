@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CPopcorn_render_FUN_004c64c0
 // Address: 004c64c0
-// Address Range: [[004c64c0, 004c6819]]
+// Address Range: [[004c64c0, 004c6819] [0060c8fd, 0060c91e]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
 
@@ -12,7 +12,6 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
   SRenderVertex *vertex_ptr_00;
   int iVar1;
   byte bVar2;
-  uint auStackY_1060 [1002];
   SMRGLHeaderPrimitive SStack_a0;
   CVector3i local_78;
   CVector3i local_6c;
@@ -25,7 +24,6 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
   SRenderVertex *vertex_ptr;
   CVector3i *rotation;
   
-  bVar2 = 0;
   vertex_ptr_00 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   local_48.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
   local_48.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
@@ -40,14 +38,8 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
             (g_CDemonRendererPtr2,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
             (g_CDemonRendererPtr2,&local_78);
-  rotation = (CVector3i *)0x0;
-  local_60.x = local_78.x;
-  *(uint *)((int)&local_60 + (uint)bVar2 * -8 + 4) =
-       *(uint *)((int)&local_78 + (uint)bVar2 * -8 + 4);
-  *(uint *)((int)&local_60 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-       *(uint *)((int)&local_78 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
-            (g_CDemonRendererPtr2,&local_60,rotation);
+            (g_CDemonRendererPtr2,&local_60,(CVector3i *)0x0);
   local_18.x = (int)ROUND(256.0f * -0.125);
   local_18.y = (int)ROUND(256.0f * -0.125);
   local_18.z = (int)ROUND(256.0f * 0.0);

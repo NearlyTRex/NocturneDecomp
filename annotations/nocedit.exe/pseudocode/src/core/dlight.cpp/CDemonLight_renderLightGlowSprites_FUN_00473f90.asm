@@ -195,11 +195,10 @@ section .text
     LEA ESI,[ESP + 0x60]                ; 00474107
     ADD ESP,0x4                         ; 0047410b
     LEA EAX,[ESP + 0xa4]                ; 0047410e
-    MOVSD ES:EDI,ESI                    ; 00474115
-    MOVSD ES:EDI,ESI                    ; 00474116
-    MOVSD ES:EDI,ESI                    ; 00474117
-    FILD dword ptr [EAX]                ; 00474118
+    JMP 0x0060c868                      ; 00474115
+        ;   XREF to: 0060c868 (UNCONDITIONAL_JUMP)  ; LAB_0060c868
     FMUL float ptr [0x0065c908]         ; 0047411a | FLOAT_0065c908
+        ;   Label: LAB_0047411a
     FSTP float ptr [EBX]                ; 00474120
     FILD dword ptr [EAX + 0x4]          ; 00474122
     FMUL float ptr [0x0065c908]         ; 00474125 | FLOAT_0065c908
@@ -581,4 +580,16 @@ section .text
     PUSH EBX                            ; 004746de | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004746df
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    MOV ECX,dword ptr [ESI]             ; 0060c868
+        ;   Label: LAB_0060c868
+    MOV dword ptr [EDI],ECX             ; 0060c86a
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c86c
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c86f
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060c872
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060c875
+    ADD ESI,0xc                         ; 0060c878
+    ADD EDI,0xc                         ; 0060c87b
+    FILD dword ptr [EAX]                ; 0060c87e
+    JMP 0x0047411a                      ; 0060c880
+        ;   XREF to: 0047411a (UNCONDITIONAL_JUMP)  ; LAB_0047411a
 

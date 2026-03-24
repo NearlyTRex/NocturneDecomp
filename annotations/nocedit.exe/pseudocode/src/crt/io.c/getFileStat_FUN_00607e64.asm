@@ -7,8 +7,7 @@
 ; char *           Stack[0x4]:4   filename
 ; _stat *          Stack[0x8]:4   file_info
 ;
-; XREF[2]:
-;   crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340 at 0060c3b4
+; XREF[1]:
 ;   crt_io.c_getFileStat_FUN_00600c18 at 00600c18
 ;
 ; Referenced Globals:

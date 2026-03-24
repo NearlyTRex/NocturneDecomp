@@ -9,8 +9,6 @@
 float10 __fpustack atan2(float10 y,float10 x)
 
 {
-  float10 fVar1;
-  
-  fVar1 = atan2(y,x);
-  return fVar1;
+  func_0x0060c440();
+  return y;
 }

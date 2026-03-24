@@ -9,9 +9,6 @@
 ; XREF[1]:
 ;   crt_heap.c_InternalHeapAlloc_FUN_00601bc0 at 00601c82
 ;
-; Referenced Globals:
-;   undefined4 SUB_0060c920
-;
 ; Called Functions:
 ;   crt_heap.c_AllocateNewHeapBlock_FUN_00609668
 ;
@@ -20,7 +17,7 @@
 section .text
 
     CALL 0x0060c920                     ; 00609718
-        ;   XREF to: 0060c920 (UNCONDITIONAL_CALL)  ; SUB_0060c920
+        ;   XREF to: 0060c920 (UNCONDITIONAL_CALL)  ; LAB_0060c91f+1
         ;   Label: crt_heap.c_SystemAllocWrapper_FUN_00609718
     MOV EDX,dword ptr [ESP + 0x4]       ; 0060971d
     PUSH EDX                            ; 00609721

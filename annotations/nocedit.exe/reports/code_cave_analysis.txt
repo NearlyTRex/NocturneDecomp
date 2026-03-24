@@ -6,10 +6,10 @@ Caves are created by zeroing out dead functions using the
 CreateCodeCave Ghidra script (Shift+Z). Patching scripts
 allocate space within caves for injected code (thunks, helpers).
 
-Total caves:        27
-Total bytes:        25,815
-Total free:         3,081
-Total allocations:  459
+Total caves:        28
+Total bytes:        26,519
+Total free:         2,803
+Total allocations:  491
 
 ----------------------------------------------------------------------------------------------------
 CAVES
@@ -741,8 +741,76 @@ CAVES
                4x MOVSD replacement for CGame_processFrame_FUN_004da100
     Free space: 26 bytes (offset 0x0766 - 0x0780)
 
-  cave_0060c5a0                   0060c5a0   2076 bytes  [FREE]
+  cave_0060c2e0                   0060c2e0    704 bytes  [FREE]
     (entirely free — no allocations)
+
+  cave_0060c5a0                   0060c5a0   2076 bytes  [982/2076 used]
+    Allocations:
+      +0x0000   32 bytes  movsd_0053e601             0x0053e601
+               4x MOVSD replacement for CDemonMission_editGore_FUN_0053e220
+      +0x0020   29 bytes  movsd_0053e62d             0x0053e62d
+               4x MOVSD replacement for CDemonMission_editGore_FUN_0053e220
+      +0x003d   31 bytes  movsd_004f00bd             0x004f00bd
+               4x MOVSD replacement for CGround_getNormalAtPosition_FUN_004effb0
+      +0x005c   29 bytes  movsd_004f00c6             0x004f00c6
+               4x MOVSD replacement for CGround_getNormalAtPosition_FUN_004effb0
+      +0x0079   30 bytes  movsd_00546b1d             0x00546b1d
+               4x MOVSD replacement for CPathMap_updateIfNeeded_FUN_00546a60
+      +0x0097   30 bytes  movsd_00546b71             0x00546b71
+               4x MOVSD replacement for CPathMap_updateIfNeeded_FUN_00546a60
+      +0x00b5   32 bytes  movsd_00535c95             0x00535c95
+               4x MOVSD replacement for screenToWorldPosition_FUN_00535c60
+      +0x00d5   29 bytes  movsd_00535cb5             0x00535cb5
+               4x MOVSD replacement for screenToWorldPosition_FUN_00535c60
+      +0x00f2   30 bytes  movsd_0057fdcd             0x0057fdcd
+               4x MOVSD replacement for CDemonSet_buildCameraCoverageMap_FUN_0057fd00
+      +0x0110   35 bytes  movsd_00580126             0x00580126
+               4x MOVSD replacement for CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0
+      +0x0133   29 bytes  movsd_00580151             0x00580151
+               4x MOVSD replacement for CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0
+      +0x0150   29 bytes  movsd_005b1c2a             0x005b1c2a
+               4x MOVSD replacement for updateListeners_FUN_005b1870
+      +0x016d   34 bytes  movsd_005b1d52             0x005b1d52
+               4x MOVSD replacement for updateListeners_FUN_005b1870
+      +0x018f   31 bytes  movsd_0043be95             0x0043be95
+               4x MOVSD replacement for CCloth_render_FUN_0043bae0
+      +0x01ae   31 bytes  movsd_0044e271             0x0044e271
+               4x MOVSD replacement for CDemonCamera_precomputeLight_FUN_0044de10
+      +0x01cd   32 bytes  movsd_00450d22             0x00450d22
+               4x MOVSD replacement for CDemonCamera_renderLightCoronas_FUN_00450ac0
+      +0x01ed   30 bytes  movsd_00451956             0x00451956
+               4x MOVSD replacement for CDemonCamera_renderLightCoronas_FUN_004518f0
+      +0x020b   33 bytes  movsd_00453983             0x00453983
+               4x MOVSD replacement for CDemonCamera_saveAlphaTransform_FUN_00453950
+      +0x022c   31 bytes  movsd_0044d6e2             0x0044d6e2
+               4x MOVSD replacement for CDemonCamera_screenToWorldWithAlpha_FUN_0044d600
+      +0x024b   33 bytes  movsd_0044d253             0x0044d253
+               4x MOVSD replacement for CDemonCamera_updateTransformMatrices_FUN_0044d1c0
+      +0x026c   32 bytes  movsd_0045089c             0x0045089c
+               4x MOVSD replacement for renderCoronaProjectedTextureScanline_FUN_004507a0
+      +0x028c   29 bytes  movsd_00475938             0x00475938
+               4x MOVSD replacement for CDemonLight_renderExternalVolumetricShafts_FUN_004758d0
+      +0x02a9   31 bytes  movsd_00473a9f             0x00473a9f
+               4x MOVSD replacement for CDemonLight_renderLightBloomQuad_FUN_00473a20
+      +0x02c8   29 bytes  movsd_00474115             0x00474115
+               4x MOVSD replacement for CDemonLight_renderLightGlowSprites_FUN_00473f90
+      +0x02e5   29 bytes  movsd_00474c4a             0x00474c4a
+               4x MOVSD replacement for CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
+      +0x0302   31 bytes  movsd_0047c7ef             0x0047c7ef
+               4x MOVSD replacement for CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
+      +0x0321   31 bytes  movsd_005a0653             0x005a0653
+               4x MOVSD replacement for CDeformableModelInstance_computeBoundingBox_FUN_005a05e0
+      +0x0340   29 bytes  movsd_00522be4             0x00522be4
+               4x MOVSD replacement for CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50
+      +0x035d   34 bytes  movsd_004c655e             0x004c655e
+               4x MOVSD replacement for CPopcorn_render_FUN_004c64c0
+      +0x037f   29 bytes  movsd_004c0ded             0x004c0ded
+               4x MOVSD replacement for CFireball_setupRenderState_FUN_004c0d80
+      +0x039c   29 bytes  movsd_00499917             0x00499917
+               4x MOVSD replacement for CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
+      +0x03b9   29 bytes  movsd_00499867             0x00499867
+               4x MOVSD replacement for CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0
+    Free space: 1094 bytes (offset 0x03d6 - 0x081c)
 
   cave_005fde92                   0060d067    145 bytes  [116/145 used]
     Allocations:

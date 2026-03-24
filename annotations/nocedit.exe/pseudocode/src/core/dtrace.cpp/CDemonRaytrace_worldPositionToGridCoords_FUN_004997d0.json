@@ -5,22 +5,21 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 59,
-    "complexity_score": 154,
+    "assembly_lines": 70,
+    "complexity_score": 135,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
-    "suspect_count": 10,
+    "pseudocode_lines": 25,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
-      "pointer_cast",
       "stack_alignment_array",
       "warning_inlined_function"
     ],
-    "total_lines": 88
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -42,6 +41,10 @@
       [
         "004997d0",
         "00499871"
+      ],
+      [
+        "0060c959",
+        "0060c975"
       ]
     ],
     "convention": "__stack2_esi",
@@ -93,33 +96,32 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.673076923076923,
-    "instruction_count": 52,
+    "avg_pcode_per_instr": 5.830508474576271,
+    "instruction_count": 59,
     "opcode_distribution": {
+      "BRANCH": 2,
       "CALL": 6,
-      "COPY": 141,
+      "COPY": 138,
       "FLOAT2FLOAT": 15,
       "FLOAT_DIV": 3,
       "FLOAT_SUB": 3,
       "INT_ADD": 35,
-      "INT_AND": 16,
-      "INT_CARRY": 4,
-      "INT_EQUAL": 16,
+      "INT_AND": 20,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 20,
       "INT_LESS": 4,
-      "INT_MULT": 6,
       "INT_SBORROW": 4,
-      "INT_SCARRY": 4,
-      "INT_SLESS": 8,
-      "INT_SUB": 18,
-      "INT_ZEXT": 6,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 10,
+      "INT_SUB": 12,
       "LOAD": 20,
-      "POPCOUNT": 8,
+      "POPCOUNT": 10,
       "RETURN": 1,
       "ROUND": 3,
       "STORE": 23,
       "TRUNC": 3
     },
-    "pcode_op_count": 347
+    "pcode_op_count": 344
   },
   "stack_frame": {
     "frame_size": 4112,
@@ -191,58 +193,50 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 18,
       "match": "ROUND",
       "severity": "mild",
-      "text": "dVar1 = ROUND(local_10);",
+      "text": "dVar1 = ROUND(dVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND(local_10));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND(local_10));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND(local_10));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND(local_10));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "piVar1 = (int *)((int)output_grid_coords + (uint)bVar2 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 25,
       "match": "ROUND",
       "severity": "mild",
       "text": "output_grid_coords->x = (int)ROUND(dVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "output_grid_coords->y = (int)ROUND(ROUND(dVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 26,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "output_grid_coords->y = (int)ROUND(ROUND(dVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "output_grid_coords->z = (int)ROUND(ROUND(dVar3));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "output_grid_coords->z = (int)ROUND(ROUND(dVar3));",
       "type": "decompiler_intrinsic"
     },
     {

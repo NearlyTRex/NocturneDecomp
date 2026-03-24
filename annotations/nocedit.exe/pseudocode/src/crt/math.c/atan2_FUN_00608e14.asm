@@ -4,8 +4,8 @@
 ; float10 __fpustack crt_math_c_atan2_FUN_00608e14(float10 y,float10 x)
 ;
 ;
-; Called Functions:
-;   crt_math.c_atan2_FUN_0060c440
+; Referenced Globals:
+;   undefined4 SUB_0060c440
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
     FNSAVE [ESP]                        ; 00608e1c
     FLD extended double ptr [ESP + 0x1c] ; 00608e1f
     FLD extended double ptr [ESP + 0x6c] ; 00608e23
-    CALL crt_math.c_atan2_FUN_0060c440  ; 00608e27
-        ;   XREF to: 0060c440 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_0060c440(float10 y, float10 x)
+    CALL 0x0060c440                     ; 00608e27
+        ;   XREF to: 0060c440 (UNCONDITIONAL_CALL)  ; SUB_0060c440
     FNSTSW AX                           ; 00608e2c
     FSTP extended double ptr [ESP + 0x1c] ; 00608e2e
     AND AX,0xff                         ; 00608e32

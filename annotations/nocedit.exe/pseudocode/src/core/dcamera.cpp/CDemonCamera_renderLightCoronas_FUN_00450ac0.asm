@@ -247,12 +247,11 @@ section .text
         ;   XREF to: 0044d7d0 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x8]                 ; 00450d1b
     ADD ESP,0x8                         ; 00450d1f
-    MOVSD ES:EDI,ESI                    ; 00450d22
-    MOVSD ES:EDI,ESI                    ; 00450d23
-    MOVSD ES:EDI,ESI                    ; 00450d24
-    CMP dword ptr [ESP + 0x14],0x0      ; 00450d25
+    JMP 0x0060c76d                      ; 00450d22
+        ;   XREF to: 0060c76d (UNCONDITIONAL_JUMP)  ; LAB_0060c76d
     JLE 0x00450dd8                      ; 00450d2a
         ;   XREF to: 00450dd8 (CONDITIONAL_JUMP)  ; LAB_00450dd8
+        ;   Label: LAB_00450d2a
     MOV EDX,dword ptr [ESP + 0x10]      ; 00450d30
     MOV EAX,[0x013bc234]                ; 00450d34 | g_CurrentLightForCorona
     SAR EDX,0x10                        ; 00450d39
@@ -327,4 +326,16 @@ section .text
     CMP EDX,ECX                         ; 00450e21
     JMP 0x00450cc0                      ; 00450e23
         ;   XREF to: 00450cc0 (UNCONDITIONAL_JUMP)  ; LAB_00450cc0
+    MOV ECX,dword ptr [ESI]             ; 0060c76d
+        ;   Label: LAB_0060c76d
+    MOV dword ptr [EDI],ECX             ; 0060c76f
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c771
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c774
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060c777
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060c77a
+    ADD ESI,0xc                         ; 0060c77d
+    ADD EDI,0xc                         ; 0060c780
+    CMP dword ptr [ESP + 0x14],0x0      ; 0060c783
+    JMP 0x00450d2a                      ; 0060c788
+        ;   XREF to: 00450d2a (UNCONDITIONAL_JUMP)  ; LAB_00450d2a
 

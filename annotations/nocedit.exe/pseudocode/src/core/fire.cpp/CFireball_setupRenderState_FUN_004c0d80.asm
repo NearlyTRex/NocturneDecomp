@@ -23,7 +23,6 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CVector3i g_BillboardCameraRight
 ;   undefined4 g_BillboardCameraRight.y
-;   undefined4 g_BillboardCameraRight.z
 ;   CVector3i g_BillboardCameraUp
 ;   undefined4 g_BillboardCameraUp.y
 ;   undefined4 g_BillboardCameraUp.z
@@ -32,7 +31,8 @@
 ;   undefined4 g_BillboardPrimitive.base.surface_normal.B
 ;   undefined4 g_BillboardPrimitive.base.surface_normal.C
 ;   undefined4 g_BillboardPrimitive.base.surface_normal.D
-;   ... and 4 more
+;   undefined4 g_BillboardPrimitive.vertices[0]
+;   ... and 3 more
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
@@ -69,11 +69,10 @@ section .text
         ;   XREF to: 0048c7e0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x54]                ; 004c0de6
     ADD ESP,0x4                         ; 004c0dea
-    MOVSD ES:EDI,ESI                    ; 004c0ded | g_BillboardCameraRight
-    MOVSD ES:EDI,ESI                    ; 004c0dee | g_BillboardCameraRight.y
-    MOVSD ES:EDI,ESI                    ; 004c0def | g_BillboardCameraRight.z
-    XOR ESI,ESI                         ; 004c0df0
+    JMP 0x0060c91f                      ; 004c0ded
+        ;   XREF to: 0060c91f (UNCONDITIONAL_JUMP)  ; LAB_0060c91f
     MOV dword ptr [0x02d12db8],ESI      ; 004c0df2 | g_BillboardCameraRight.y
+        ;   Label: LAB_004c0df2
     MOV ESI,dword ptr [0x00823a74]      ; 004c0df8 | g_CurrentSceneCamera
     MOV ECX,0xa                         ; 004c0dfe
     LEA EDI,[ESP + 0x28]                ; 004c0e03
@@ -109,4 +108,16 @@ section .text
     POP ESI                             ; 004c0e60
     POP EBX                             ; 004c0e61
     RET                                 ; 004c0e62
+    MOV ECX,dword ptr [ESI]             ; 0060c91f
+        ;   Label: LAB_0060c91f
+    MOV dword ptr [EDI],ECX             ; 0060c921
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c923
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c926
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060c929
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060c92c
+    ADD ESI,0xc                         ; 0060c92f
+    ADD EDI,0xc                         ; 0060c932
+    XOR ESI,ESI                         ; 0060c935
+    JMP 0x004c0df2                      ; 0060c937
+        ;   XREF to: 004c0df2 (UNCONDITIONAL_JUMP)  ; LAB_004c0df2
 

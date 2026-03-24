@@ -8,14 +8,14 @@ fixed by replacing them with explicit MOV instructions in code caves.
 
 SUMMARY
 --------------------------------------------------
-Consecutive MOVSD groups:  195
+Consecutive MOVSD groups:  163
   1x MOVSD ( 4 bytes):   109 sites
   2x MOVSD ( 8 bytes):   15 sites
-  3x MOVSD (12 bytes):   67 sites
+  3x MOVSD (12 bytes):   35 sites
   4x MOVSD (16 bytes):   4 sites
-  Fixable (cave patch):   105
+  Fixable (cave patch):   73
   Unfixable:              90
-  Est. cave space:        ~3099 bytes
+  Est. cave space:        ~2043 bytes
 
 REP MOVSD sites:           770
   Pass-by-value:          6
@@ -69,10 +69,10 @@ REP MOVSD sites:           770
     2122 dwords (8488 bytes): 1 sites
     3200 dwords (12800 bytes): 1 sites
 
-Total MOVSD sites:         965
+Total MOVSD sites:         933
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE 3x MOVSD SITES (12 bytes copy, 67 sites)
+FIXABLE 3x MOVSD SITES (12 bytes copy, 35 sites)
 ----------------------------------------------------------------------------------------------------
   CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0                       4 sites  ~132 bytes
     0x0047bb37  3x MOVSD (12 bytes copy, 10 bytes borrowable)
@@ -82,93 +82,36 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 67 sites)
   CDemonCamera_worldToCameraSpace_FUN_0044da90                             2 sites  ~66 bytes
     0x0044db11  3x MOVSD (12 bytes copy, 7 bytes borrowable)
     0x0044db1a  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CGround_getNormalAtPosition_FUN_004effb0                                 2 sites  ~66 bytes
-    0x004f00bd  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-    0x004f00c6  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CDemonMission_editGore_FUN_0053e220                                      2 sites  ~66 bytes
-    0x0053e601  3x MOVSD (12 bytes copy, 8 bytes borrowable)
-    0x0053e62d  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  screenToWorldPosition_FUN_00535c60                                       2 sites  ~66 bytes
-    0x00535c95  3x MOVSD (12 bytes copy, 8 bytes borrowable)
-    0x00535cb5  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CPathMap_updateIfNeeded_FUN_00546a60                                     2 sites  ~66 bytes
-    0x00546b1d  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-    0x00546b71  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   CDemonSet_calculateSpatialLighting_FUN_0056db80                          2 sites  ~66 bytes
     0x0056dcc5  3x MOVSD (12 bytes copy, 5 bytes borrowable)
     0x0056dd90  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  CDemonSet_buildCameraCoverageMap_FUN_0057fd00                            2 sites  ~66 bytes
-    0x0057fdcd  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-    0x0057fdff  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0                   2 sites  ~66 bytes
-    0x00580126  3x MOVSD (12 bytes copy, 11 bytes borrowable)
-    0x00580151  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  updateListeners_FUN_005b1870                                             2 sites  ~66 bytes
-    0x005b1c2a  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-    0x005b1d52  3x MOVSD (12 bytes copy, 10 bytes borrowable)
   normalizeVector3DFloat_FUN_0050d9f0                                      2 sites  ~66 bytes
     0x0050da8a  3x MOVSD (12 bytes copy, 6 bytes borrowable)
     0x0050da93  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   CCharacter_moveAndCollide_FUN_00428f40                                   1 sites  ~33 bytes
     0x004294a5  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-  CCloth_render_FUN_0043bae0                                               1 sites  ~33 bytes
-    0x0043be95  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-  CDemonCamera_precomputeLight_FUN_0044de10                                1 sites  ~33 bytes
-    0x0044e271  3x MOVSD (12 bytes copy, 7 bytes borrowable)
   CDemonCamera_precomputeNormals_FUN_0044e360                              1 sites  ~33 bytes
     0x0044e49a  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  CDemonCamera_renderLightCoronas_FUN_00450ac0                             1 sites  ~33 bytes
-    0x00450d22  3x MOVSD (12 bytes copy, 8 bytes borrowable)
-  CDemonCamera_renderLightCoronas_FUN_004518f0                             1 sites  ~33 bytes
-    0x00451956  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   CDemonCamera_restoreAlphaTransform_FUN_00453a70                          1 sites  ~33 bytes
     0x00453bc4  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDemonCamera_restoreTransform_FUN_0044f1e0                               1 sites  ~33 bytes
     0x0044f1fb  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CDemonCamera_saveAlphaTransform_FUN_00453950                             1 sites  ~33 bytes
-    0x00453983  3x MOVSD (12 bytes copy, 9 bytes borrowable)
   CDemonCamera_saveCameraTransform_FUN_0044ef30                            1 sites  ~33 bytes
     0x0044ef54  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDemonCamera_screenToWorldTransform_FUN_0044d370                         1 sites  ~33 bytes
     0x0044d465  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-  CDemonCamera_screenToWorldWithAlpha_FUN_0044d600                         1 sites  ~33 bytes
-    0x0044d6e2  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-  CDemonCamera_updateTransformMatrices_FUN_0044d1c0                        1 sites  ~33 bytes
-    0x0044d253  3x MOVSD (12 bytes copy, 9 bytes borrowable)
   CDemonCamera_worldToScreenCoord_FUN_0044d310                             1 sites  ~33 bytes
     0x0044d361  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  renderCoronaProjectedTextureScanline_FUN_004507a0                        1 sites  ~33 bytes
-    0x0045089c  3x MOVSD (12 bytes copy, 8 bytes borrowable)
   sampleFogAlongRay_FUN_0044bdd0                                           1 sites  ~33 bytes
     0x0044be5c  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CDemonLight_renderExternalVolumetricShafts_FUN_004758d0                  1 sites  ~33 bytes
-    0x00475938  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CDemonLight_renderLightBloomQuad_FUN_00473a20                            1 sites  ~33 bytes
-    0x00473a9f  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-  CDemonLight_renderLightGlowSprites_FUN_00473f90                          1 sites  ~33 bytes
-    0x00474115  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CDemonLight_renderVolumetricLightShaft_FUN_00474ad0                      1 sites  ~33 bytes
-    0x00474c4a  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CKeyFramedModel_removeUnusedVertices_FUN_0047aa30                        1 sites  ~33 bytes
     0x0047ac1e  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0                          1 sites  ~33 bytes
-    0x0047c7ef  3x MOVSD (12 bytes copy, 7 bytes borrowable)
   CDemonRaytrace_renderFrustumCubes_FUN_00497e50                           1 sites  ~33 bytes
     0x00497eb0  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-  CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0                    1 sites  ~33 bytes
-    0x00499867  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880                   1 sites  ~33 bytes
-    0x00499917  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CFireball_setupRenderState_FUN_004c0d80                                  1 sites  ~33 bytes
-    0x004c0ded  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CPopcorn_render_FUN_004c64c0                                             1 sites  ~33 bytes
-    0x004c655e  3x MOVSD (12 bytes copy, 10 bytes borrowable)
   CGame_beginFadeIn_FUN_004e0920                                           1 sites  ~33 bytes
     0x004e088f  3x MOVSD (12 bytes copy, 8 bytes borrowable)
   showDeveloperToolsMenu_FUN_005073a0                                      1 sites  ~33 bytes
     0x00507945  3x MOVSD (12 bytes copy, 9 bytes borrowable)
-  CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50         1 sites  ~33 bytes
-    0x00522be4  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDemonMission_playMission_FUN_00538ba0                                   1 sites  ~33 bytes
     0x00538bde  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDemonMission_replicateActor_FUN_0053bd80                                1 sites  ~33 bytes
@@ -179,8 +122,8 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 67 sites)
     0x0056eaa6  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   transformToWorldSpace_FUN_0056e890                                       1 sites  ~33 bytes
     0x0056e94f  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CDeformableModelInstance_computeBoundingBox_FUN_005a05e0                 1 sites  ~33 bytes
-    0x005a0653  3x MOVSD (12 bytes copy, 7 bytes borrowable)
+  CDemonSet_buildCameraCoverageMap_FUN_0057fd00                            1 sites  ~33 bytes
+    0x0057fdff  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   CDeformableModel_dismember_FUN_0059c5e0                                  1 sites  ~33 bytes
     0x0059c89f  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   build_file_info_env_FUN_0060ffd0                                         1 sites  ~33 bytes

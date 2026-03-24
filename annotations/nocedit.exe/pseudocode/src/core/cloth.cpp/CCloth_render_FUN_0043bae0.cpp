@@ -1,6 +1,6 @@
 // Name: core_cloth.cpp_CCloth_render_FUN_0043bae0
 // Address: 0043bae0
-// Address Range: [[0043bae0, 0043bf33]]
+// Address Range: [[0043bae0, 0043bf33] [0060c72f, 0060c74d]]
 // Convention: __cdecl
 // Signature: void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_joined_light)
 
@@ -31,7 +31,6 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
   CDemonRenderer *pCVar1;
   int iVar10;
   
-  bVar7 = 0;
   core_set_cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
             (g_CDemonSetPtr,(this_ptr->model).vertex_count,(this_ptr->model).vertex_list);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
@@ -129,13 +128,12 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
         if (0 < pSVar6[local_18].base.base.count) {
           do {
             iVar7 = ((pSVar6[local_18].base.base.count - iVar5) + -1) * 0xc + local_18 * 0x48;
-            puVar6 = (uint *)((int)pSVar3 + (uint)bVar7 * -8 + 0x1c);
-            puVar5 = (uint *)((int)pSVar6 + (uint)bVar7 * -8 + iVar7 + 0x1c);
             pSVar3->vertices[0].vertex_index = *(int *)((int)pSVar6 + iVar7 + 0x18);
-            *puVar6 = *puVar5;
-            puVar6[(uint)bVar7 * -2 + 1] = puVar5[(uint)bVar7 * -2 + 1];
+            pSVar3->vertices[0].texture_u = *(int *)((int)pSVar6 + iVar7 + 0x1c);
+            iVar7 = *(int *)((int)pSVar6 + iVar7 + 0x20);
+            pSVar3->vertices[0].texture_v = iVar7;
             iVar5 = iVar5 + 1;
-            pSVar3 = (SMRGLPrimitiveQuad *)&(pSVar3->base).surface_normal.B;
+            pSVar3 = (SMRGLPrimitiveQuad *)(iVar7 + 0xc);
           } while (iVar5 < pSVar6[local_18].base.base.count);
         }
         local_14 = local_14 + 1;

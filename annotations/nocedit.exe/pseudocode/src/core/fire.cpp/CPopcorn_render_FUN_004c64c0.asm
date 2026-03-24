@@ -109,12 +109,10 @@ section .text
     LEA ESI,[ESP + 0x2c]                ; 004c6554
     LEA EAX,[ESP + 0x44]                ; 004c6558
     PUSH 0x0                            ; 004c655c
-    MOVSD ES:EDI,ESI                    ; 004c655e
-    MOVSD ES:EDI,ESI                    ; 004c655f
-    MOVSD ES:EDI,ESI                    ; 004c6560
-    PUSH EAX                            ; 004c6561
-    MOV ESI,dword ptr [0x006703ec]      ; 004c6562 | g_CDemonRendererPtr2
+    JMP 0x0060c8fd                      ; 004c655e
+        ;   XREF to: 0060c8fd (UNCONDITIONAL_JUMP)  ; LAB_0060c8fd
     PUSH ESI                            ; 004c6568 | g_CDemonRendererInstance
+        ;   Label: LAB_004c6568
     LEA EBX,[ESP + 0x98]                ; 004c6569
     MOV EDI,0xbe000000                  ; 004c6570
     CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0 ; 004c6575
@@ -306,4 +304,17 @@ section .text
     PUSH EBX                            ; 004c6814 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c6815
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    MOV ECX,dword ptr [ESI]             ; 0060c8fd
+        ;   Label: LAB_0060c8fd
+    MOV dword ptr [EDI],ECX             ; 0060c8ff
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c901
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c904
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060c907
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060c90a
+    ADD ESI,0xc                         ; 0060c90d
+    ADD EDI,0xc                         ; 0060c910
+    PUSH EAX                            ; 0060c913
+    MOV ESI,dword ptr [0x006703ec]      ; 0060c914 | g_CDemonRendererPtr2
+    JMP 0x004c6568                      ; 0060c91a
+        ;   XREF to: 004c6568 (UNCONDITIONAL_JUMP)  ; LAB_004c6568
 

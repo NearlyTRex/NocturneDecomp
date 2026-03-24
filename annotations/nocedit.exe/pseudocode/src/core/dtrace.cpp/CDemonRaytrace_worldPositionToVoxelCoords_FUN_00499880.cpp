@@ -1,6 +1,6 @@
 // Name: core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
 // Address: 00499880
-// Address Range: [[00499880, 00499921]]
+// Address Range: [[00499880, 00499921] [0060c93c, 0060c958]]
 // Convention: __stack2_esi
 // Signature: CVector3i * __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords)
 
@@ -13,28 +13,26 @@ CVector3i * __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoor
 {
   uint *puVar2;
   byte bVar3;
+  double dVar2;
+  double dVar3;
   int aiStackY_1004 [1016];
   int local_18;
   int local_14;
   double local_10;
   double dVar1;
   
-  bVar3 = 0;
-  local_10 = floor
-                       ((double)((world_position->x - (this_ptr->bbox_min).x) /
-                                (this_ptr->adjusted_size).x));
-  dVar1 = ROUND(local_10);
-  local_10 = floor
-                       ((double)((world_position->y - (this_ptr->bbox_min).y) /
-                                (this_ptr->adjusted_size).y));
-  local_18 = (int)ROUND(ROUND(local_10));
-  local_10 = floor
-                       ((double)((world_position->z - (this_ptr->bbox_min).z) /
-                                (this_ptr->adjusted_size).z));
-  local_14 = (int)ROUND(ROUND(local_10));
-  puVar2 = (uint *)((int)output_voxel_coords + (uint)bVar3 * -8 + 4);
+  dVar2 = floor
+                    ((double)((world_position->x - (this_ptr->bbox_min).x) /
+                             (this_ptr->adjusted_size).x));
+  dVar1 = ROUND(dVar2);
+  dVar2 = floor
+                    ((double)((world_position->y - (this_ptr->bbox_min).y) /
+                             (this_ptr->adjusted_size).y));
+  dVar3 = floor
+                    ((double)((world_position->z - (this_ptr->bbox_min).z) /
+                             (this_ptr->adjusted_size).z));
   output_voxel_coords->x = (int)ROUND(dVar1);
-  *puVar2 = (&local_18)[(uint)bVar3 * -2];
-  puVar2[(uint)bVar3 * -2 + 1] = (&local_14)[(uint)bVar3 * -2 + (uint)bVar3 * -2];
+  output_voxel_coords->y = (int)ROUND(ROUND(dVar2));
+  output_voxel_coords->z = (int)ROUND(ROUND(dVar3));
   return output_voxel_coords;
 }

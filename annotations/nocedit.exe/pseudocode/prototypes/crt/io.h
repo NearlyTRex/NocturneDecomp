@@ -79,10 +79,6 @@ int __cdecl close(int fd);
 // Address: 0060c270
 int __cdecl IsSpecialDevice(int handle_index);
 
-// Original: crt_io.c_close_handle_safe_FUN_0060c2e0
-// Address: 0060c2e0
-int __cdecl close::handle_safe(int handle_index);
-
 // Original: crt_io.c_get_handle_FUN_006109f0
 // Address: 006109f0
 HANDLE __cdecl get::handle(int fd);

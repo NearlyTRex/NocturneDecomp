@@ -4,8 +4,7 @@
 ; float10 __watcallRegister crt_math_c_function_dispatch_FUN_00606a77(int function_index)
 ;
 ;
-; XREF[2]:
-;   crt_math.c_atan2_FUN_0060c440 at 0060c50f
+; XREF[1]:
 ;   crt_math.c_pow_FUN_005ffd76 at 005ffe59
 ;
 ; Referenced Globals:

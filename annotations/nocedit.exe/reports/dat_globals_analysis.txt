@@ -2,25 +2,23 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 264
-Filtered out (inside named data): 236
+Total DAT_ globals found: 262
+Filtered out (inside named data): 235
 Immediate constants (not real globals): 1
-Real globals remaining: 27
+Real globals remaining: 26
 
 Current type breakdown:
-  undefined4                     26
+  undefined4                     25
   undefined1                     1
 
-DAT_ globals with type hints: 6 / 27
+DAT_ globals with type hints: 5 / 26
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (4)
+HIGH CONFIDENCE INFERENCES (3)
 --------------------------------------------------------------------------------
   DAT_00002424                    addr=00002424    current=undefined4      likely=float           refs=21
   DAT_0068528c                    addr=0068528c    current=undefined4      likely=function_ptr    refs=1
     nearby: g_SpecialDeviceCleanupFunc (SPECIAL_DEVICE_CLEANUP_FUNC*) at offset +4
-  DAT_006874d4                    addr=006874d4    current=undefined4      likely=double          refs=1
-    nearby: PTR_FUN_006874e4 (void*) at offset -16
   DAT_02d831d6                    addr=02d831d6    current=undefined4      likely=byte            refs=3
     nearby: g_InputHistory (char[20]) at offset -1
 
@@ -75,7 +73,6 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_00747874                    addr=00747874    refs=1     type=undefined4    
   DAT_00685210                    addr=00685210    refs=1     type=undefined4      nearby: g_MaxHandleCount(-4)
   DAT_006852db                    addr=006852db    refs=1     type=undefined1      likely=byte  nearby: g_TempDirectoryBuffer(-1)
-  DAT_006874d4                    addr=006874d4    refs=1     type=undefined4      likely=double  nearby: PTR_FUN_006874e4(-16)
   DAT_0068528c                    addr=0068528c    refs=1     type=undefined4      likely=function_ptr  nearby: g_SpecialDeviceCleanupFunc(+4)
   DAT_006e6f63                    addr=006e6f63    refs=1     type=undefined4    
   DAT_006855d8                    addr=006855d8    refs=1     type=undefined4      nearby: PTR_crt_math.c_check_error_context_FUN_0060fa8b_00685590(+72)
@@ -101,7 +98,7 @@ They appear only as inline constant values.
   DAT_00766880                    value=0x766880        refs=1
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (236)
+FILTERED OUT - INSIDE NAMED DATA (235)
 --------------------------------------------------------------------------------
 These DAT_ globals fall within the address range of a named
 string, array, or struct and are not standalone globals.
@@ -331,7 +328,6 @@ string, array, or struct and are not standalone globals.
   DAT_00684011                    inside g_RendererDllName
   DAT_0068513c                    inside s_EST_006850bc
   DAT_006851bd                    inside s_EDT_0068513d
-  DAT_0068755c                    inside FLOAT10_00687552
   DAT_009e5d74                    inside g_TempWorldPositions
   DAT_009e5d80                    inside g_TempWorldPositions
   DAT_009e6c74                    inside g_TempWorldPositions

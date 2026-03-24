@@ -168,13 +168,24 @@ section .text
     FLD float ptr [EAX + 0x8]           ; 00522bd8
     FMUL float ptr [0x006616e4]         ; 00522bdb | g_MirrorFloatToInt
     FISTP dword ptr [EBX + 0x8]         ; 00522be1
-    MOVSD ES:EDI,ESI                    ; 00522be4
-    MOVSD ES:EDI,ESI                    ; 00522be5
-    MOVSD ES:EDI,ESI                    ; 00522be6
-    MOV EAX,EBP                         ; 00522be7
+    JMP 0x0060c8e0                      ; 00522be4
+        ;   XREF to: 0060c8e0 (UNCONDITIONAL_JUMP)  ; LAB_0060c8e0
     ADD ESP,0x54                        ; 00522be9
+        ;   Label: LAB_00522be9
     POP EBP                             ; 00522bec
     POP EDI                             ; 00522bed
     POP EBX                             ; 00522bee
     RET                                 ; 00522bef
+    MOV ECX,dword ptr [ESI]             ; 0060c8e0
+        ;   Label: LAB_0060c8e0
+    MOV dword ptr [EDI],ECX             ; 0060c8e2
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c8e4
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c8e7
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060c8ea
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060c8ed
+    ADD ESI,0xc                         ; 0060c8f0
+    ADD EDI,0xc                         ; 0060c8f3
+    MOV EAX,EBP                         ; 0060c8f6
+    JMP 0x00522be9                      ; 0060c8f8
+        ;   XREF to: 00522be9 (UNCONDITIONAL_JUMP)  ; LAB_00522be9
 

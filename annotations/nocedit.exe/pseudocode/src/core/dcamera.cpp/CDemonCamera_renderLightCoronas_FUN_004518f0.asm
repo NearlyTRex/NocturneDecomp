@@ -99,11 +99,10 @@ section .text
     ADD ESP,0x8                         ; 00451947
     MOV EDI,0x15c4178                   ; 0045194a | g_CoronaTargetX
     MOV EAX,dword ptr [ESP + 0x9c]      ; 0045194f
-    MOVSD ES:EDI,ESI                    ; 00451956 | g_CoronaTargetX
-    MOVSD ES:EDI,ESI                    ; 00451957 | g_CoronaTargetY
-    MOVSD ES:EDI,ESI                    ; 00451958 | g_CoronaTargetDepth
-    MOV EBP,dword ptr [EAX + 0x20]      ; 00451959
+    JMP 0x0060c78d                      ; 00451956
+        ;   XREF to: 0060c78d (UNCONDITIONAL_JUMP)  ; LAB_0060c78d
     TEST EBP,EBP                        ; 0045195c
+        ;   Label: LAB_0045195c
     JZ 0x00451aac                       ; 0045195e
         ;   XREF to: 00451aac (CONDITIONAL_JUMP)  ; LAB_00451aac
     MOV EDX,dword ptr [0x015c4178]      ; 00451964 | g_CoronaTargetX
@@ -742,4 +741,16 @@ section .text
     CMP EAX,EDX                         ; 00452109
     JMP 0x0045203c                      ; 0045210b
         ;   XREF to: 0045203c (UNCONDITIONAL_JUMP)  ; LAB_0045203c
+    MOV ECX,dword ptr [ESI]             ; 0060c78d
+        ;   Label: LAB_0060c78d
+    MOV dword ptr [EDI],ECX             ; 0060c78f
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c791
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c794
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060c797
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060c79a
+    ADD ESI,0xc                         ; 0060c79d
+    ADD EDI,0xc                         ; 0060c7a0
+    MOV EBP,dword ptr [EAX + 0x20]      ; 0060c7a3
+    JMP 0x0045195c                      ; 0060c7a6
+        ;   XREF to: 0045195c (UNCONDITIONAL_JUMP)  ; LAB_0045195c
 

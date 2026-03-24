@@ -1,6 +1,6 @@
 // Name: core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0
 // Address: 004758d0
-// Address Range: [[004758d0, 00475fb7]]
+// Address Range: [[004758d0, 00475fb7] [0060c82c, 0060c848]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLight *this_ptr)
 
@@ -84,18 +84,14 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
   float fVar1;
   CDemonRenderer *this_ptr_00;
   
-  bVar5 = 0;
   if (((this_ptr->volumetric_enabled != 0) &&
       ((float)0.10000000000000001 <= (g_CDemonSetPtr->active_fog).density_multiplier)) &&
      (g_CGamePtr->halo_mode != 0)) {
     engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
               (g_CDemonRendererPtr2,&local_f0);
-    local_98[(uint)bVar5 * -2] = *(int *)((int)&local_f0 + (uint)bVar5 * -8 + 4);
-    local_98[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-         *(int *)((int)&local_f0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
     fVar3 = (float)local_f0.x * 0.00390625f - (this_ptr->base).base.position.f.x;
-    fVar4 = (float)local_98[0] * 0.00390625f - (this_ptr->base).base.position.f.y;
-    fVar5 = (float)local_98[1] * 0.00390625f - (this_ptr->base).base.position.f.z;
+    fVar4 = (float)local_f0.y * 0.00390625f - (this_ptr->base).base.position.f.y;
+    fVar5 = (float)local_f0.z * 0.00390625f - (this_ptr->base).base.position.f.z;
     if (0.0 < SQRT(fVar5 * fVar5 + fVar3 * fVar3 + fVar4 * fVar4)) {
       local_120.x = 0.0;
       local_120.y = 0.0;

@@ -266,6 +266,13 @@ def run_test_mode(prog, patches):
         addr = space.getAddress(patch['address'])
         func = fm.getFunctionContaining(addr)
         if func:
+            func_name = func.getName()
+            # Skip CRT library functions — cave code placed adjacent to them
+            # can cause Ghidra to absorb the cave bytes into the CRT function,
+            # producing garbage decompilation that isn't relevant to game code
+            if func_name.startswith('crt_'):
+                non_func_patches.append(patch)
+                continue
             key = func.getEntryPoint().getOffset()
             if key not in func_addrs:
                 func_addrs[key] = (func, [])

@@ -388,19 +388,19 @@ static float FLOAT_00684174 = 1.0f;
 static float g_IEEE754NormalScaleFactor = 0.9375f;
 static float g_IEEE754SubnormalScaleFactor = 1.0625f;
 static float g_IEEE754RenormScaleFactor = 9.223372e+18f;
-static float FLOAT_00687518 = 16.0f;
-static float FLOAT_0068751c = 0.0625f;
+static float DAT_00687518 = 16.0f;
+static float DAT_0068751C = 0.0625f;
 
 // float10 constants
 static float10 g_PiOver2 = 1.5707963f;
 static float10 g_CalculatedPi = 3.1415927f;
 static float10 g_HalfCalculatedPi = 1.5707963f;
-static float10 FLOAT10_00687520 = -0.33333333f;
-static float10 FLOAT10_0068752a = 0.2f;
-static float10 FLOAT10_00687534 = -0.14285714f;
-static float10 FLOAT10_0068753e = 0.11111111f;
-static float10 FLOAT10_00687548 = -0.090907585f;
-static float10 FLOAT10_00687552 = 0.076416908f;
+static float10 DAT_00687520 = -0.33333333f;
+static float10 DAT_0068752A = 0.2f;
+static float10 DAT_00687534 = -0.14285714f;
+static float10 DAT_0068753E = 0.11111111f;
+static float10 DAT_00687548 = -0.090907585f;
+static float10 DAT_00687552 = 0.076416908f;
 
 // int constants
 static int DAT_00684F34 = 0x2D;
@@ -508,11 +508,11 @@ static void* DAT_006874C4 = (void*)crt_math_c_FUN_00606eb3;
 static void* DAT_006874C8 = (void*)crt_math_c_FUN_00606ed3;
 static void* DAT_006874CC = (void*)crt_math_c_fdiv_thunk_FUN_00606ee7;
 static void* DAT_006874D0 = (void*)crt_math_c_FUN_00606eff;
-static void* DAT_006874E8 = (void*)0x0060C5AB; // DAT_0060c5ab
-static void* DAT_006874EC = (void*)0x0060C5B8; // DAT_0060c5b8
-static void* DAT_006874F0 = (void*)0x0060C5CB; // DAT_0060c5cb
-static void* DAT_006874F4 = (void*)0x0060C5E0; // DAT_0060c5e0
-static void* DAT_006874F8 = (void*)0x0060C5F3; // DAT_0060c5f3
-static void* DAT_006874FC = (void*)0x0060C608; // DAT_0060c608
-static void* DAT_00687500 = (void*)0x0060C61B; // DAT_0060c61b
+static void* DAT_006874E8 = (void*)0x0060C5AB; // LAB_0060c5aa+1
+static void* DAT_006874EC = (void*)0x0060C5B8; // LAB_0060c5b6+2
+static void* DAT_006874F0 = (void*)0x0060C5CB; // LAB_0060c5ca+1
+static void* DAT_006874F4 = (void*)0x0060C5E0; // LAB_0060c5df+1
+static void* DAT_006874F8 = (void*)0x0060C5F3; // LAB_0060c5f3
+static void* DAT_006874FC = (void*)0x0060C608; // LAB_0060c606+2
+static void* DAT_00687500 = (void*)0x0060C61B; // LAB_0060c61b
 

@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6452
-Clean functions: 5030 (78.0%)
-Functions with suspects: 1422 (22.0%)
+Clean functions: 5032 (78.0%)
+Functions with suspects: 1420 (22.0%)
 
-Total suspect patterns: 14298
-Average suspects per function: 2.22
+Total suspect patterns: 14217
+Average suspects per function: 2.20
 
 Virtual files: 214 total, 47 at 100%, 83 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3411, Average: 47.9
 
-Average complexity score: 72.3
+Average complexity score: 72.1
 
 COMPILATION STATUS
 ----------------------------------------
@@ -29,14 +29,14 @@ Failed: 543
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   decompiler_intrinsic      6793
-  pointer_cast              4733
+  pointer_cast              4654
   unknown_field             849
   nonstandard_int           267
   warning_inlined_function  261
   stack_param               227
   stack_ref                 207
   warning_type_propagation  132
-  stack_alignment_array     101
+  stack_alignment_array     99
   unresolved_funcptr        98
   sub84_truncation          93
   param_count_too_few       81
@@ -122,7 +122,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
   005b1680: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680 (4 lines)
   005b1660: sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660 (4 lines)
-  ... and 4980 more
+  ... and 4982 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -173,7 +173,7 @@ FUNCTIONS BY SUSPECT TYPE
     0043f2d0: support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0
     ... and 904 more
 
-  pointer_cast (861 functions):
+  pointer_cast (844 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     004874d0: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
     00487630: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
@@ -184,7 +184,7 @@ FUNCTIONS BY SUSPECT TYPE
     0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    ... and 851 more
+    ... and 834 more
 
   unknown_field (91 functions):
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
@@ -264,7 +264,7 @@ FUNCTIONS BY SUSPECT TYPE
     0048ec70: core_drone.cpp_CDrone_process_FUN_0048ec70
     ... and 122 more
 
-  stack_alignment_array (99 functions):
+  stack_alignment_array (97 functions):
     00488cd0: cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
     0050d970: engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
     0050e5b0: engine_matrix.c_projectToScreen_FUN_0050e5b0
@@ -275,7 +275,7 @@ FUNCTIONS BY SUSPECT TYPE
     004b6e10: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     004b76d0: engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
     00542470: core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470
-    ... and 89 more
+    ... and 87 more
 
   unresolved_funcptr (50 functions):
     0043eef0: support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0

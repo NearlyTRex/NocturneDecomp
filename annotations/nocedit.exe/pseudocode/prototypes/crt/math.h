@@ -359,10 +359,6 @@ double __cdecl process::math_error(int errorFlags,double *value1,double *value2)
 // Address: 0060c02b
 double __mathinternal handle::math_error(void);
 
-// Original: crt_math.c_atan2_FUN_0060c440
-// Address: 0060c440
-float10 __fpustack atan2(float10 y,float10 x);
-
 // Original: crt_math.c_udivmod64_FUN_0060d3ed
 // Address: 0060d3ed
 ulonglong __watcallRegister udivmod64(ulonglong dividend,ulonglong divisor);

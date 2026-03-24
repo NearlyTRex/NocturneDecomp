@@ -1,6 +1,6 @@
 // Name: core_msnedit.cpp_screenToWorldPosition_FUN_00535c60
 // Address: 00535c60
-// Address Range: [[00535c60, 00535de8]]
+// Address Range: [[00535c60, 00535de8] [0060c655, 0060c691]]
 // Convention: __cdecl
 // Signature: CVector3f * __cdecl core_msnedit_cpp_screenToWorldPosition_FUN_00535c60(CVector3f *out_world_pos,int screen_x,int screen_y)
 
@@ -23,25 +23,13 @@ CVector3f * __cdecl core_msnedit_cpp_screenToWorldPosition_FUN_00535c60(CVector3
   CVector3i *input_ptr;
   float fVar1;
   
-  bVar5 = 0;
   core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
             (&g_CDemonCameraInstance,screen_x,screen_y,local_5c);
-  input_ptr = &local_38;
-  local_38.x = local_5c[0].x;
-  *(uint *)((int)&local_38 + (uint)bVar5 * -8 + 4) =
-       *(uint *)((int)local_5c + (uint)bVar5 * -8 + 4);
-  *(uint *)((int)&local_38 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-       *(uint *)((int)local_5c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-            (&g_CDemonCameraInstance,input_ptr,&local_20);
-  local_38.x = local_20.x;
-  *(uint *)((int)&local_38 + (uint)bVar5 * -8 + 4) =
-       *(uint *)((int)&local_20 + (uint)bVar5 * -8 + 4);
-  *(uint *)((int)&local_38 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-       *(uint *)((int)&local_20 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-  out_world_pos->x = (float)local_38.x * 0.00390625f;
-  out_world_pos->y = (float)local_38.y * 0.00390625f;
-  out_world_pos->z = (float)local_38.z * 0.00390625f;
+            (&g_CDemonCameraInstance,&local_38,&local_20);
+  out_world_pos->x = (float)local_20.x * 0.00390625f;
+  out_world_pos->y = (float)local_20.y * 0.00390625f;
+  out_world_pos->z = (float)local_20.z * 0.00390625f;
   if (10000.0f <
       SQRT(out_world_pos->z * out_world_pos->z +
            out_world_pos->x * out_world_pos->x + out_world_pos->y * out_world_pos->y)) {

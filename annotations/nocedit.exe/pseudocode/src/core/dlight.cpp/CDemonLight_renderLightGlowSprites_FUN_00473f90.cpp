@@ -1,6 +1,6 @@
 // Name: core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90
 // Address: 00473f90
-// Address Range: [[00473f90, 004746e3]]
+// Address Range: [[00473f90, 004746e3] [0060c868, 0060c884]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDemonLight *this_ptr)
 
@@ -63,7 +63,6 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
   float fVar1;
   float fVar2;
   
-  bVar4 = 0;
   if (this_ptr->volumetric_enabled != 0) {
     engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
               (g_CDemonRendererPtr2,&local_74);
@@ -86,12 +85,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
         fVar1 = fVar3 / fVar4;
         engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
                   (g_CDemonRendererPtr2,&local_ec);
-        local_a0[(uint)bVar4 * -2] = *(int *)((int)&local_ec + (uint)bVar4 * -8 + 4);
-        local_a0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-             *(int *)((int)&local_ec + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
         fVar3 = (float)local_ec.x * 0.00390625f - (this_ptr->base).base.position.f.x;
-        fVar4 = (float)local_a0[0] * 0.00390625f - (this_ptr->base).base.position.f.y;
-        fVar5 = (float)local_a0[1] * 0.00390625f - (this_ptr->base).base.position.f.z;
+        fVar4 = (float)local_ec.y * 0.00390625f - (this_ptr->base).base.position.f.y;
+        fVar5 = (float)local_ec.z * 0.00390625f - (this_ptr->base).base.position.f.z;
         fVar2 = SQRT(fVar5 * fVar5 + fVar3 * fVar3 + fVar4 * fVar4);
         if (0.0 < fVar2) {
           fVar6 = 1.0 / fVar2;

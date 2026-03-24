@@ -1,6 +1,6 @@
 // Name: core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20
 // Address: 00473a20
-// Address Range: [[00473a20, 00473f55] [00473f6c, 00473f87]]
+// Address Range: [[00473a20, 00473f55] [00473f6c, 00473f87] [0060c849, 0060c867]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemonLight *this_ptr)
 
@@ -45,7 +45,6 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   float fVar2;
   longlong lVar1;
   
-  bVar4 = 0;
   if (this_ptr->volumetric_enabled == 0) {
     return;
   }
@@ -58,13 +57,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
             (g_CDemonRendererPtr2,&local_34,(CVector3i *)0x0);
   engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
             (g_CDemonRendererPtr2,&local_7c);
-  local_60[(uint)bVar4 * -2] = *(int *)((int)&local_7c + (uint)bVar4 * -8 + 4);
-  local_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       *(int *)((int)&local_7c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
   fVar1 = (float)0.00390625;
   local_a0 = (world_position_00->f).x - (float)local_7c.x * fVar1;
-  local_9c = (this_ptr->base).base.position.f.y - (float)local_60[0] * fVar1;
-  local_98 = (this_ptr->base).base.position.f.z - (float)local_60[1] * fVar1;
+  local_9c = (this_ptr->base).base.position.f.y - (float)local_7c.y * fVar1;
+  local_98 = (this_ptr->base).base.position.f.z - (float)local_7c.z * fVar1;
   if (&local_58 != &local_a0) {
     local_58 = local_a0;
     local_54 = local_9c;

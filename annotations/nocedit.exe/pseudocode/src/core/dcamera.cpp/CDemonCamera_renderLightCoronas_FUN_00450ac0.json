@@ -5,21 +5,21 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 272,
-    "complexity_score": 299,
+    "assembly_lines": 283,
+    "complexity_score": 272,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 35,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 129,
-    "suspect_count": 15,
+    "pseudocode_lines": 122,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
       "warning_inlined_function"
     ],
-    "total_lines": 401
+    "total_lines": 405
   },
   "cross_references": [
     {
@@ -35,6 +35,10 @@
       [
         "00450ac0",
         "00450e27"
+      ],
+      [
+        "0060c76d",
+        "0060c78c"
       ]
     ],
     "convention": "__cdecl",
@@ -308,15 +312,15 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.336065573770492,
-    "instruction_count": 244,
+    "avg_pcode_per_instr": 6.147410358565737,
+    "instruction_count": 251,
     "opcode_distribution": {
       "BOOL_NEGATE": 58,
       "BOOL_OR": 7,
-      "BRANCH": 2,
+      "BRANCH": 4,
       "CALL": 5,
       "CBRANCH": 13,
-      "COPY": 342,
+      "COPY": 339,
       "FLOAT2FLOAT": 10,
       "FLOAT_ADD": 2,
       "FLOAT_EQUAL": 1,
@@ -325,31 +329,31 @@
       "FLOAT_NAN": 2,
       "INT2FLOAT": 1,
       "INT_ADD": 134,
-      "INT_AND": 261,
-      "INT_CARRY": 21,
-      "INT_EQUAL": 142,
+      "INT_AND": 265,
+      "INT_CARRY": 23,
+      "INT_EQUAL": 146,
       "INT_LEFT": 16,
       "INT_LESS": 12,
-      "INT_MULT": 16,
+      "INT_MULT": 10,
       "INT_NOTEQUAL": 41,
       "INT_OR": 55,
       "INT_SBORROW": 13,
-      "INT_SCARRY": 25,
+      "INT_SCARRY": 27,
       "INT_SEXT": 9,
-      "INT_SLESS": 76,
+      "INT_SLESS": 78,
       "INT_SRIGHT": 10,
-      "INT_SUB": 45,
+      "INT_SUB": 39,
       "INT_XOR": 14,
-      "INT_ZEXT": 12,
+      "INT_ZEXT": 6,
       "LOAD": 76,
-      "POPCOUNT": 64,
+      "POPCOUNT": 66,
       "RETURN": 1,
       "ROUND": 2,
       "STORE": 43,
       "SUBPIECE": 6,
       "TRUNC": 2
     },
-    "pcode_op_count": 1546
+    "pcode_op_count": 1543
   },
   "stack_frame": {
     "frame_size": 4180,
@@ -522,7 +526,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_DitherPatternTable + iVar1) = uVar2 & 0xff;",
@@ -530,7 +534,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_CoronaLeftExtent + iVar3) = this_ptr->display_width;",
@@ -538,7 +542,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 55,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_CoronaRightExtent + iVar3) = 0;",
@@ -546,7 +550,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 63,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "g_CoronaDepthShift = (int)ROUND(ROUND(fVar1 * 0.30103 * (float)3.3219280948900001));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 63,
       "match": "ROUND",
       "severity": "mild",
       "text": "g_CoronaDepthShift = (int)ROUND(ROUND(fVar1 * 0.30103 * (float)3.3219280948900001));",
@@ -555,14 +567,6 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 64,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "g_CoronaDepthShift = (int)ROUND(ROUND(fVar1 * 0.30103 * (float)3.3219280948900001));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
       "match": "ROUND",
       "severity": "mild",
       "text": "g_CoronaMaxDepth = (int)ROUND(ROUND(fVar1));",
@@ -570,7 +574,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 64,
       "match": "ROUND",
       "severity": "mild",
       "text": "g_CoronaMaxDepth = (int)ROUND(ROUND(fVar1));",
@@ -578,7 +582,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 73,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_2c)) {",
@@ -586,7 +590,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 74,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_18 = *(int *)((int)g_CoronaLeftExtent + local_2c);",
@@ -594,7 +598,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 75,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar1 = *(int *)((int)g_CoronaRightExtent + local_2c);",
@@ -602,27 +606,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 83,
       "match": "SBORROW4",
       "severity": "mild",
       "text": "while (bVar9 = SBORROW4(local_18,iVar1), bVar9 != iVar5 < 0) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "local_50[(uint)bVar8 * -2] = *(int *)((int)&local_60 + (uint)bVar8 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 94,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&local_60 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
-      "type": "pointer_cast"
     }
   ]
 }

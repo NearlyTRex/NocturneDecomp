@@ -4,31 +4,31 @@
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 73,
+        "line": 71,
         "message": "assigning to 'CDemonGlobe *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 74,
+        "line": 72,
         "message": "no matching function for call to 'core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0'"
       },
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 131,
+        "line": 128,
         "message": "no matching function for call to 'core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400'"
       },
       {
         "category": "incompatible_types",
         "column": 39,
-        "line": 221,
+        "line": 218,
         "message": "assigning to 'struct CDemonGlobe *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 226,
+        "line": 223,
         "message": "no matching function for call to 'core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400'"
       }
     ],
@@ -36,20 +36,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 674,
-    "complexity_score": 416,
+    "assembly_lines": 685,
+    "complexity_score": 393,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 41,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 271,
-    "suspect_count": 13,
+    "pseudocode_lines": 268,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 945
+    "total_lines": 953
   },
   "cross_references": [
     {
@@ -65,6 +65,10 @@
       [
         "004518f0",
         "0045210f"
+      ],
+      [
+        "0060c78d",
+        "0060c7aa"
       ]
     ],
     "convention": "__cdecl",
@@ -390,44 +394,44 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.333919156414763,
-    "instruction_count": 569,
+    "avg_pcode_per_instr": 6.251736111111111,
+    "instruction_count": 576,
     "opcode_distribution": {
       "BOOL_AND": 2,
       "BOOL_NEGATE": 169,
       "BOOL_OR": 8,
       "BOOL_XOR": 1,
-      "BRANCH": 11,
+      "BRANCH": 13,
       "CALL": 5,
       "CBRANCH": 49,
-      "COPY": 454,
+      "COPY": 451,
       "INT_ADD": 283,
-      "INT_AND": 718,
-      "INT_CARRY": 51,
-      "INT_EQUAL": 408,
+      "INT_AND": 722,
+      "INT_CARRY": 53,
+      "INT_EQUAL": 412,
       "INT_LEFT": 41,
       "INT_LESS": 56,
-      "INT_MULT": 29,
+      "INT_MULT": 23,
       "INT_NOTEQUAL": 100,
       "INT_OR": 147,
       "INT_RIGHT": 2,
       "INT_SBORROW": 60,
-      "INT_SCARRY": 61,
+      "INT_SCARRY": 63,
       "INT_SDIV": 2,
       "INT_SEXT": 53,
-      "INT_SLESS": 221,
+      "INT_SLESS": 223,
       "INT_SREM": 2,
       "INT_SRIGHT": 22,
-      "INT_SUB": 119,
+      "INT_SUB": 113,
       "INT_XOR": 36,
-      "INT_ZEXT": 11,
+      "INT_ZEXT": 5,
       "LOAD": 178,
-      "POPCOUNT": 181,
+      "POPCOUNT": 183,
       "RETURN": 2,
       "STORE": 82,
       "SUBPIECE": 40
     },
-    "pcode_op_count": 3604
+    "pcode_op_count": 3601
   },
   "stack_frame": {
     "frame_size": 4236,
@@ -665,7 +669,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 32,
+      "line": 31,
       "match": "aiStackY_107c",
       "severity": "moderate",
       "text": "int aiStackY_107c [1014];",
@@ -673,7 +677,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 63,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if ((g_CGamePtr->halo_mode != 0) || ((p2 == 0 && (*(int *)((int)p1 + 0x20) != 0)))) {",
@@ -684,28 +688,12 @@
       "line": 69,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(&g_CoronaTargetY)[(uint)bVar21 * -2] = *(int *)((int)&local_94 + (uint)bVar21 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&local_94 + (uint)bVar21 * -8 + (uint)bVar21 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(int *)((int)",
-      "severity": "mild",
       "text": "if (*(int *)((int)p1 + 0x20) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 85,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_CoronaLeftExtent + iVar4) = this_ptr->framebuffer_width;",
@@ -713,7 +701,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 86,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_CoronaRightExtent + iVar4) = 0;",
@@ -721,7 +709,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 92,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (((p2 == 0) && (*(int *)((int)p1 + 0x20) != 0)) &&",
@@ -729,7 +717,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 93,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(INT_0066ed68 = -1, *(int *)((int)p1 + 0x20) == 2)) {",
@@ -737,7 +725,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 227,
+      "line": 224,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (this_ptr->framebuffer_width != *(int *)((int)g_CoronaLeftExtent + local_58)) {",
@@ -745,7 +733,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 228,
+      "line": 225,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_28 = *(int *)((int)g_CoronaLeftExtent + local_58);",
@@ -753,7 +741,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 229,
+      "line": 226,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar13 = *(int *)((int)g_CoronaRightExtent + local_58);",
@@ -761,7 +749,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 237,
+      "line": 234,
       "match": "SBORROW4",
       "severity": "mild",
       "text": "while (SBORROW4(local_28,iVar13) != iVar1 < 0) {",

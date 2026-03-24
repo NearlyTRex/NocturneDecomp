@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 7,
     "complexity_score": 20,
-    "cross_reference_count": 2,
+    "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -14,12 +14,6 @@
     "total_lines": 12
   },
   "cross_references": [
-    {
-      "addr": "0060c2e0",
-      "from_addr": "0060c324",
-      "name": "crt_io.c_close_handle_safe_FUN_0060c2e0",
-      "type": "COMPUTED_CALL"
-    },
     {
       "addr": "00601fd0",
       "from_addr": "006020ac",
@@ -42,19 +36,8 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 1,
     "call_sites": [
-      {
-        "call_addr": "0060c324",
-        "call_type": "direct",
-        "caller": "crt_io.c_close_handle_safe_FUN_0060c2e0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
       {
         "call_addr": "006020ac",
         "call_type": "direct",
@@ -67,7 +50,7 @@
         "stack_params": 1
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "declared_params": 1,
     "declared_stack_bytes": 4,
     "estimated_params": 1

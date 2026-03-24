@@ -27,16 +27,11 @@
 ;   SMRGLPrimitiveQuad[1000] g_ClothBackfaceBuffer
 ;   undefined4 g_ClothBackfaceBuffer[0].base.base.count
 ;   undefined4 g_ClothBackfaceBuffer[0].vertices[0].vertex_index
-;   undefined4 g_ClothBackfaceBuffer[0].vertices[0].texture_u
-;   undefined4 g_ClothBackfaceBuffer[0].vertices[0].texture_v
-;   undefined4 g_ClothBackfaceBuffer[0].vertices[1].vertex_index
-;   undefined4 g_ClothBackfaceBuffer[0].vertices[1].texture_u
-;   undefined4 g_ClothBackfaceBuffer[0].vertices[1].texture_v
 ;   undefined4 g_ClothBackfaceBuffer[1].base.base.type
 ;   undefined4 g_ClothBackfaceBuffer[1].base.base.count
 ;   undefined4 g_ClothBackfaceBuffer[2].base.base.type
 ;   CDemonRenderer g_CDemonRendererInstance
-;   ... and 1 more
+;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
@@ -387,12 +382,10 @@ section .text
     LEA ESI,[EDX + EBX*0x1]             ; 0043be8c
     LEA EDI,[ECX + 0x18]                ; 0043be8f | g_ClothBackfaceBuffer[0].vertices[0].vertex_index
     LEA ESI,[ESI + 0x18]                ; 0043be92
-    MOVSD ES:EDI,ESI                    ; 0043be95 | g_ClothBackfaceBuffer[0].vertices[0].vertex_index | g_ClothBackfaceBuffer[0].vertices[1].vertex_index
-    MOVSD ES:EDI,ESI                    ; 0043be96 | g_ClothBackfaceBuffer[0].vertices[0].texture_u | g_ClothBackfaceBuffer[0].vertices[1].texture_u
-    MOVSD ES:EDI,ESI                    ; 0043be97 | g_ClothBackfaceBuffer[0].vertices[0].texture_v | g_ClothBackfaceBuffer[0].vertices[1].texture_v
-    INC EAX                             ; 0043be98
-    MOV EBX,dword ptr [EDX + 0x4]       ; 0043be99
+    JMP 0x0060c72f                      ; 0043be95
+        ;   XREF to: 0060c72f (UNCONDITIONAL_JUMP)  ; LAB_0060c72f
     ADD ECX,0xc                         ; 0043be9c
+        ;   Label: LAB_0043be9c
     CMP EAX,EBX                         ; 0043be9f
     JL 0x0043be83                       ; 0043bea1
         ;   XREF to: 0043be83 (CONDITIONAL_JUMP)  ; LAB_0043be83
@@ -448,4 +441,18 @@ section .text
     PUSH EDX                            ; 0043bf2e | g_CDemonSetInstance
     JMP 0x0043bcda                      ; 0043bf2f
         ;   XREF to: 0043bcda (UNCONDITIONAL_JUMP)  ; LAB_0043bcda
+    MOV ECX,dword ptr [ESI]             ; 0060c72f
+        ;   Label: LAB_0060c72f
+    MOV dword ptr [EDI],ECX             ; 0060c731
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c733
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c736
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060c739
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060c73c
+        ;   Label: LAB_0060c73c
+    ADD ESI,0xc                         ; 0060c73f
+    ADD EDI,0xc                         ; 0060c742
+    INC EAX                             ; 0060c745
+    MOV EBX,dword ptr [EDX + 0x4]       ; 0060c746
+    JMP 0x0043be9c                      ; 0060c749
+        ;   XREF to: 0043be9c (UNCONDITIONAL_JUMP)  ; LAB_0043be9c
 

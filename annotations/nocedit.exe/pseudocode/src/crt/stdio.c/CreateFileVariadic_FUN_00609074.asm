@@ -10,8 +10,7 @@
 ; Local Variables:
 ; va_list_t        Stack[-0x8]:4  variadic_args
 ;
-; XREF[2]:
-;   crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340 at 0060c424
+; XREF[1]:
 ;   crt_stdio.c_OpenFileAndInitialize_FUN_0060190c at 006019a1
 ;
 ; Called Functions:

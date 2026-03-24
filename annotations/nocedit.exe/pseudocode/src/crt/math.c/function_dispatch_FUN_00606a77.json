@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 3,
     "complexity_score": 78,
-    "cross_reference_count": 2,
+    "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
@@ -17,12 +17,6 @@
     "total_lines": 11
   },
   "cross_references": [
-    {
-      "addr": "0060c440",
-      "from_addr": "0060c50f",
-      "name": "crt_math.c_atan2_FUN_0060c440",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "005ffd76",
       "from_addr": "005ffe59",
@@ -51,6 +45,28 @@
       "value": "00606a81"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005ffe59",
+        "call_type": "direct",
+        "caller": "crt_math.c_pow_FUN_005ffd76",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.5,
     "instruction_count": 2,

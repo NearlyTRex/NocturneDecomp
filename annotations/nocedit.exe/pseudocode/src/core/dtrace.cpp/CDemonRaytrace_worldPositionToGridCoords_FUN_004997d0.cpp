@@ -1,6 +1,6 @@
 // Name: core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0
 // Address: 004997d0
-// Address Range: [[004997d0, 00499871]]
+// Address Range: [[004997d0, 00499871] [0060c959, 0060c975]]
 // Convention: __stack2_esi
 // Signature: void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)
 
@@ -11,30 +11,26 @@
 void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)
 
 {
-  int *piVar1;
-  byte bVar2;
+  double dVar2;
+  double dVar3;
   int aiStackY_1004 [1016];
   int local_18;
   int local_14;
   double local_10;
   double dVar1;
   
-  bVar2 = 0;
-  local_10 = floor
-                       ((double)((world_position->x - (this_ptr->bbox_min).x) /
-                                (this_ptr->cell_size).x));
-  dVar1 = ROUND(local_10);
-  local_10 = floor
-                       ((double)((world_position->y - (this_ptr->bbox_min).y) /
-                                (this_ptr->cell_size).y));
-  local_18 = (int)ROUND(ROUND(local_10));
-  local_10 = floor
-                       ((double)((world_position->z - (this_ptr->bbox_min).z) /
-                                (this_ptr->cell_size).z));
-  local_14 = (int)ROUND(ROUND(local_10));
-  piVar1 = (int *)((int)output_grid_coords + (uint)bVar2 * -8 + 4);
+  dVar2 = floor
+                    ((double)((world_position->x - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x
+                             ));
+  dVar1 = ROUND(dVar2);
+  dVar2 = floor
+                    ((double)((world_position->y - (this_ptr->bbox_min).y) / (this_ptr->cell_size).y
+                             ));
+  dVar3 = floor
+                    ((double)((world_position->z - (this_ptr->bbox_min).z) / (this_ptr->cell_size).z
+                             ));
   output_grid_coords->x = (int)ROUND(dVar1);
-  *piVar1 = (&local_18)[(uint)bVar2 * -2];
-  piVar1[(uint)bVar2 * -2 + 1] = (&local_14)[(uint)bVar2 * -2 + (uint)bVar2 * -2];
+  output_grid_coords->y = (int)ROUND(ROUND(dVar2));
+  output_grid_coords->z = (int)ROUND(ROUND(dVar3));
   return;
 }

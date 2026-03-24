@@ -79,10 +79,6 @@ filebuf * __cdecl filebuf::ctor(filebuf *this_ptr);
 // Address: 0060bdf9
 filebuf * __watcallStack filebuf::dtor(filebuf *this_ptr,uint flags);
 
-// Original: crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340
-// Address: 0060c340
-int __cdecl convertModesAndOpenFile(char *filename,int *iostream_mode,int permissions);
-
 // Original: crt_fstream.cpp_filebuf_pbackfail_FUN_0060d7ae
 // Address: 0060d7ae
 int __watcallStack filebuf::pbackfail(filebuf *this_ptr,int character);

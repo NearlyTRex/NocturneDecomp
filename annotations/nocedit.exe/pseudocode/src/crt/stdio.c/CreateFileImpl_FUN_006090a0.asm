@@ -20,7 +20,6 @@
 ;
 ; Referenced Globals:
 ;   undefined4 SUB_0060c850
-;   undefined4 SUB_0060c894
 ;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
 ;   CREATE_FILE_A_FUNC* g_CreateFileAFunc = 00211c6a
 ;   TerminatedCString s_con_006590a0
@@ -80,7 +79,7 @@ section .text
     PUSH EAX                            ; 006090ed
     MOV EBP,0x80                        ; 006090ee
     CALL 0x0060c894                     ; 006090f3
-        ;   XREF to: 0060c894 (UNCONDITIONAL_CALL)  ; SUB_0060c894
+        ;   XREF to: 0060c894 (UNCONDITIONAL_CALL)  ; LAB_0060c892+2
     MOV EDX,0xc                         ; 006090f8
     ADD ESP,0x8                         ; 006090fd
     XOR ECX,ECX                         ; 00609100

@@ -70,11 +70,10 @@ section .text
     LEA ESI,[ESP + 0x4]                 ; 0044d246
     LEA EDI,[EBX + 0x16c]               ; 0044d24a
     ADD ESP,0x4                         ; 0044d250
-    MOVSD ES:EDI,ESI                    ; 0044d253
-    MOVSD ES:EDI,ESI                    ; 0044d254
-    MOVSD ES:EDI,ESI                    ; 0044d255
-    MOV ESI,dword ptr [0x02d02548]      ; 0044d256 | g_ViewportCenterXFixed
+    JMP 0x0060c7eb                      ; 0044d253
+        ;   XREF to: 0060c7eb (UNCONDITIONAL_JUMP)  ; LAB_0060c7eb
     MOV dword ptr [EBX + 0x1c0],ESI     ; 0044d25c
+        ;   Label: LAB_0044d25c
     MOV ESI,dword ptr [0x02d0254c]      ; 0044d262 | g_ViewportCenterYFixed
     MOV dword ptr [EBX + 0x1c4],ESI     ; 0044d268
     MOV ESI,dword ptr [0x02d02550]      ; 0044d26e | g_ViewportRightFixed
@@ -90,4 +89,16 @@ section .text
     POP ESI                             ; 0044d293
     POP EBX                             ; 0044d294
     RET                                 ; 0044d295
+    MOV ECX,dword ptr [ESI]             ; 0060c7eb
+        ;   Label: LAB_0060c7eb
+    MOV dword ptr [EDI],ECX             ; 0060c7ed
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c7ef
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c7f2
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060c7f5
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060c7f8
+    ADD ESI,0xc                         ; 0060c7fb
+    ADD EDI,0xc                         ; 0060c7fe
+    MOV ESI,dword ptr [0x02d02548]      ; 0060c801 | g_ViewportCenterXFixed
+    JMP 0x0044d25c                      ; 0060c807
+        ;   XREF to: 0044d25c (UNCONDITIONAL_JUMP)  ; LAB_0044d25c
 

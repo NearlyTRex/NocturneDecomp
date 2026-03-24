@@ -1,6 +1,6 @@
 // Name: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
 // Address: 004518f0
-// Address Range: [[004518f0, 0045210f]]
+// Address Range: [[004518f0, 0045210f] [0060c78d, 0060c7aa]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0(CDemonCamera *this_ptr,void *p1,int p2)
 
@@ -35,7 +35,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0(CDemo
   uint uVar13;
   int *piVar20;
   uint uVar14;
-  byte bVar21;
   int aiStackY_107c [1014];
   CVector3i local_94;
   int local_88;
@@ -68,24 +67,22 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0(CDemo
   int *piVar1;
   byte uVar2;
   
-  bVar21 = 0;
   if ((g_CGamePtr->halo_mode != 0) || ((p2 == 0 && (*(int *)((int)p1 + 0x20) != 0)))) {
     g_CurrentGlobe = p1;
     core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(this_ptr,p1,&local_94);
     g_CoronaTargetX = local_94.x;
-    (&g_CoronaTargetY)[(uint)bVar21 * -2] = *(int *)((int)&local_94 + (uint)bVar21 * -8 + 4);
-    (&g_CoronaTargetDepth)[(uint)bVar21 * -2 + (uint)bVar21 * -2] =
-         *(int *)((int)&local_94 + (uint)bVar21 * -8 + (uint)bVar21 * -8 + 8);
+    g_CoronaTargetY = local_94.y;
+    g_CoronaTargetDepth = local_94.z;
     if (*(int *)((int)p1 + 0x20) == 0) {
       g_CoronaVisibilityEnabled = 0;
     }
     else {
-      g_CoronaVisibilityEnabled = g_CoronaTargetX;
-      if (g_CoronaTargetX != 0) {
+      g_CoronaVisibilityEnabled = local_94.x;
+      if (local_94.x != 0) {
         bVar3 = g_CameraDownscaleIterations.bytes[0] + 0x10;
         g_CoronaVisibilityEnabled = 1;
-        g_CoronaTargetX = g_CoronaTargetX >> (bVar3 & 0x1f);
-        g_CoronaTargetY = g_CoronaTargetY >> (bVar3 & 0x1f);
+        g_CoronaTargetX = local_94.x >> (bVar3 & 0x1f);
+        g_CoronaTargetY = local_94.y >> (bVar3 & 0x1f);
       }
     }
     iVar6 = 0;

@@ -1,6 +1,6 @@
 // Name: core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600
 // Address: 0044d600
-// Address Range: [[0044d600, 0044d7c6]]
+// Address Range: [[0044d600, 0044d7c6] [0060c7cc, 0060c7ea]]
 // Convention: __stack2_esi
 // Signature: CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
 
@@ -31,11 +31,9 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FU
   longlong lVar2;
   longlong lVar3;
   
-  bVar7 = 0;
   iVar7 = input_ptr->z;
   iVar1 = input_ptr->x;
   iVar2 = input_ptr->y;
-  local_10 = output_ptr;
   iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr2);
   if (iVar4 == 0) {
     lVar4 = (longlong)iVar2 * (longlong)(this_ptr->inverted_matrix).m[1].x +
@@ -77,10 +75,8 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FU
             ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
             ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
   }
-  local_14 = iVar7 + uVar5;
-  puVar6 = (uint *)((int)local_10 + (uint)bVar7 * -8 + 4);
-  local_10->x = local_1c;
-  *puVar6 = (&local_18)[(uint)bVar7 * -2];
-  puVar6[(uint)bVar7 * -2 + 1] = (&local_14)[(uint)bVar7 * -2 + (uint)bVar7 * -2];
-  return local_10;
+  output_ptr->x = local_1c;
+  output_ptr->y = local_18;
+  output_ptr->z = iVar7 + uVar5;
+  return output_ptr;
 }

@@ -443,9 +443,10 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_anvil.cpp_CAnvil_process_FUN_00411d90                             ( 46 lines)
     core_mission.cpp_CDemonMission_process_FUN_00524250                    ( 46 lines)
 
-  [stack_alignment_array] - 10 functions
+  [stack_alignment_array] - 12 functions
     core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700                  ( 15 lines)
     core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900            ( 20 lines)
+    core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0     ( 28 lines)
     shape_design.c_applyVertexCentering_FUN_004680f0                       ( 30 lines)
     engine_3d.c_renderPolygonPerspectiveNormalized_FUN_004055b0            ( 34 lines)
     engine_3d.c_renderPolygonUVTextureNormalized_FUN_00405430              ( 34 lines)
@@ -453,6 +454,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0             ( 35 lines)
     core_conveyor.cpp_CConveyor_setup_FUN_00441d60                         ( 38 lines)
     core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0 ( 40 lines)
+    core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0 ( 42 lines)
     core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750 ( 43 lines)
 
   [unnamed_param] - 9 functions
@@ -784,10 +786,10 @@ PRIORITY 3: Files at 90%+ (finish them off!)
 ALL REMAINING FILES
 ====================================================================================================
   core/event.cpp                                                89.3%  (50/56 clean, 6 remaining)
+  core/fire.cpp                                                 88.6%  (164/185 clean, 21 remaining)
   engine/dosio.c                                                88.5%  (23/26 clean, 3 remaining)
   core/curtain.cpp                                              88.5%  (23/26 clean, 3 remaining)
   shape/memdbg.cpp                                              88.5%  (23/26 clean, 3 remaining)
-  core/fire.cpp                                                 88.1%  (163/185 clean, 22 remaining)
   core/glass.cpp                                                87.5%  (21/24 clean, 3 remaining)
   core/wateract.cpp                                             87.0%  (20/23 clean, 3 remaining)
   core/vampboss.cpp                                             87.0%  (20/23 clean, 3 remaining)
@@ -878,7 +880,7 @@ ALL REMAINING FILES
   engine/model.c                                                50.0%  (4/8 clean, 4 remaining)
   core/main.c                                                   50.0%  (5/10 clean, 5 remaining)
   cockpit/ckptutil.c                                            49.1%  (27/55 clean, 28 remaining)
-  core/dcamera.cpp                                              47.7%  (41/86 clean, 45 remaining)
+  core/dcamera.cpp                                              48.8%  (42/86 clean, 44 remaining)
   sound/mp3.cpp                                                 47.4%  (27/57 clean, 30 remaining)
   core/course.cpp                                               46.7%  (7/15 clean, 8 remaining)
   engine/prim.c                                                 42.9%  (9/21 clean, 12 remaining)

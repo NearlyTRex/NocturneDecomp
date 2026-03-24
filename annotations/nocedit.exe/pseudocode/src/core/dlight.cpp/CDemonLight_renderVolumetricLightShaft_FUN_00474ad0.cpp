@@ -1,6 +1,6 @@
 // Name: core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
 // Address: 00474ad0
-// Address Range: [[00474ad0, 0047520c]]
+// Address Range: [[00474ad0, 0047520c] [0060c885, 0060c8a1]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight *this_ptr)
 
@@ -62,7 +62,6 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
   float fVar1;
   float fVar2;
   
-  bVar5 = 0;
   if ((this_ptr->volumetric_enabled != 0) && (g_CGamePtr->halo_mode == 2)) {
     engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
               (g_CDemonRendererPtr2,&local_8c);
@@ -84,12 +83,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
       fVar1 = fVar3 / fVar4;
       engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
                 (g_CDemonRendererPtr2,&local_d4);
-      local_58[(uint)bVar5 * -2] = *(int *)((int)&local_d4 + (uint)bVar5 * -8 + 4);
-      local_58[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-           *(int *)((int)&local_d4 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
       fVar3 = (float)local_d4.x * 0.00390625f - (this_ptr->base).base.position.f.x;
-      fVar4 = (float)local_58[0] * 0.00390625f - (this_ptr->base).base.position.f.y;
-      fVar5 = (float)local_58[1] * 0.00390625f - (this_ptr->base).base.position.f.z;
+      fVar4 = (float)local_d4.y * 0.00390625f - (this_ptr->base).base.position.f.y;
+      fVar5 = (float)local_d4.z * 0.00390625f - (this_ptr->base).base.position.f.z;
       fVar2 = SQRT(fVar5 * fVar5 + fVar3 * fVar3 + fVar4 * fVar4);
       if (0.0 < fVar2) {
         fVar6 = 1.0 / fVar2;

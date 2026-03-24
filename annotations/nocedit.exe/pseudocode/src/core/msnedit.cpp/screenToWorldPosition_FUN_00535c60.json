@@ -5,20 +5,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 137,
-    "complexity_score": 177,
+    "assembly_lines": 159,
+    "complexity_score": 80,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 11,
+    "pseudocode_lines": 40,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 189
+    "total_lines": 199
   },
   "cross_references": [
     {
@@ -40,6 +39,10 @@
       [
         "00535c60",
         "00535de8"
+      ],
+      [
+        "0060c655",
+        "0060c691"
       ]
     ],
     "convention": "__cdecl",
@@ -128,14 +131,15 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.123076923076923,
-    "instruction_count": 130,
+    "avg_pcode_per_instr": 5.486111111111111,
+    "instruction_count": 144,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
       "BOOL_OR": 2,
+      "BRANCH": 4,
       "CALL": 2,
       "CBRANCH": 2,
-      "COPY": 422,
+      "COPY": 416,
       "FLOAT2FLOAT": 42,
       "FLOAT_ADD": 7,
       "FLOAT_DIV": 1,
@@ -147,25 +151,24 @@
       "FLOAT_SUB": 3,
       "INT2FLOAT": 3,
       "INT_ADD": 84,
-      "INT_AND": 17,
-      "INT_CARRY": 4,
-      "INT_EQUAL": 12,
+      "INT_AND": 25,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 20,
       "INT_LEFT": 4,
       "INT_LESS": 2,
-      "INT_MULT": 12,
       "INT_NOTEQUAL": 5,
       "INT_OR": 5,
       "INT_SBORROW": 2,
-      "INT_SCARRY": 4,
-      "INT_SLESS": 6,
-      "INT_SUB": 25,
-      "INT_ZEXT": 16,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 10,
+      "INT_SUB": 13,
+      "INT_ZEXT": 4,
       "LOAD": 51,
-      "POPCOUNT": 6,
+      "POPCOUNT": 10,
       "RETURN": 2,
       "STORE": 36
     },
-    "pcode_op_count": 796
+    "pcode_op_count": 790
   },
   "stack_frame": {
     "frame_size": 4180,
@@ -242,72 +245,8 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_38 + (uint)bVar5 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)local_5c + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_38 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)local_5c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_38 + (uint)bVar5 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_20 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_38 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_20 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 27,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(out_world_pos->z * out_world_pos->z +",
@@ -315,7 +254,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 32,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar4 = 10000.0f / SQRT(fVar6 * fVar6 + fVar1 * fVar1 + fVar5 * fVar5);",
