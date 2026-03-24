@@ -75,18 +75,6 @@ char * __cdecl getTempDirectory(void);
 // Address: 00609bd0
 int __cdecl close(int fd);
 
-// Original: crt_io.c_findNextWithAttributes_FUN_00609d5c
-// Address: 00609d5c
-int __cdecl findNextWithAttributes(HANDLE hFindFile,DWORD dwAttributeMask,LPWIN32_FIND_DATAA lpFindFileData);
-
-// Original: crt_io.c_register_handle_wrapper_FUN_0060a144
-// Address: 0060a144
-int __cdecl register::handle_wrapper(HANDLE handle);
-
-// Original: crt_io.c_invalidate_handle_wrapper_FUN_0060a154
-// Address: 0060a154
-void __cdecl invalidate::handle_wrapper(int handle_index);
-
 // Original: crt_io.c_IsSpecialDevice_FUN_0060c270
 // Address: 0060c270
 int __cdecl IsSpecialDevice(int handle_index);

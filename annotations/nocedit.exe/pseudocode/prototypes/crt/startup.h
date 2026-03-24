@@ -27,14 +27,6 @@ void __cdecl HandleRuntimeError(char *error_message,int error_level);
 // Address: 00609e70
 void __watcallRegister WinMainBootstrap(void);
 
-// Original: crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c
-// Address: 0060a23c
-void * __cdecl GetOrCreateThreadData(void *pThreadData);
-
-// Original: crt_startup.c_GetModuleFileNameCompat_FUN_0060a560
-// Address: 0060a560
-DWORD __cdecl GetModuleFileNameCompat(HMODULE hModule,LPWSTR lpFilename,DWORD nSize);
-
 // Original: crt_startup.c_ExitApplication_FUN_0060b534
 // Address: 0060b534
 void __cdecl ExitApplication(int exit_code);

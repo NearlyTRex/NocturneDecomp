@@ -7,10 +7,6 @@
 ; void *           Stack[0x4]:4   tls_data
 ; void *           Stack[0x8]:4   thread_param
 ;
-; XREF[2]:
-;   crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8 at 0060a303
-;   crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4 at 0060a49f
-;
 ; Referenced Globals:
 ;   undefined4 SUB_0060e880
 ;   ENTER_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f10 = 00602434

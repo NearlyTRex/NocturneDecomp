@@ -1,6 +1,6 @@
 // Name: core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
 // Address: 004d2190
-// Address Range: [[004d2190, 004d232c]]
+// Address Range: [[004d2190, 004d232c] [006108c5, 006108e1]]
 // Convention: __cdecl
 // Signature: CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190(CFrankenstienMachine *this_ptr)
 
@@ -11,10 +11,10 @@
 CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190(CFrankenstienMachine *this_ptr)
 
 {
-  int iVar2;
   CKeyFramedModel *this_ptr_00;
   CVector3i *pCVar2;
   CVector3f *pCVar3;
+  CVector3i *pCVar1;
   int *piVar4;
   byte bVar5;
   int aiStackY_1014 [1012];
@@ -28,7 +28,6 @@ CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_
   float end_frame;
   float start_frame;
   
-  bVar5 = 0;
   switch(this_ptr->which_part) {
   case 0:
     start_frame = 0.0;
@@ -72,13 +71,10 @@ LAB_004d21b9:
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                           (&this_ptr->bed_model);
   pCVar2 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00477890(this_ptr_00,frame_index);
-  piVar4 = (int *)((int)(pCVar2 + iVar1) + (uint)bVar5 * -8 + 4);
-  iVar2 = pCVar2[iVar1].x;
-  local_28[(uint)bVar5 * -2] = *piVar4;
-  local_28[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] = piVar4[(uint)bVar5 * -2 + 1];
-  local_20.x = (float)iVar2 * 0.00390625f;
-  local_20.y = (float)local_28[0] * 0.00390625f;
-  local_20.z = (float)local_28[1] * 0.00390625f;
+  pCVar1 = pCVar2 + iVar1;
+  local_20.x = (float)pCVar1->x * 0.00390625f;
+  local_20.y = (float)pCVar1->y * 0.00390625f;
+  local_20.z = (float)pCVar1->z * 0.00390625f;
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      (&this_ptr->base,&local_38,&local_20);
   if (&this_ptr->anchor_world_position != pCVar3) {

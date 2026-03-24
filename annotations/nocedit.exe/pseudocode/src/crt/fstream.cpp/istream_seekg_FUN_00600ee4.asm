@@ -11,9 +11,6 @@
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1591
 ;   engine_dosio.c_reopenFileStream_FUN_00481b50 at 00481c13
 ;
-; Referenced Globals:
-;   undefined4 SUB_00608cd1
-;
 ; Called Functions:
 ;   crt_stdio.c_reportStreamError_FUN_00606020
 ;
@@ -27,7 +24,7 @@ section .text
     PUSH 0x1                            ; 00600ee9
     PUSH EBX                            ; 00600eeb
     CALL 0x00608cd1                     ; 00600eec
-        ;   XREF to: 00608cd1 (UNCONDITIONAL_CALL)  ; SUB_00608cd1
+        ;   XREF to: 00608cd1 (UNCONDITIONAL_CALL)  ; LAB_00608ccf+2
     ADD ESP,0x8                         ; 00600ef1
     TEST EAX,EAX                        ; 00600ef4
     JNZ 0x00600efc                      ; 00600ef6

@@ -11,8 +11,8 @@
 ;   crt_io.c__findfirst_FUN_006021f0 at 0060224f
 ;   crt_io.c__findnext_FUN_00602300 at 00602366
 ;
-; Called Functions:
-;   crt_time.c_filetime_to_time_t_FUN_00609da0
+; Referenced Globals:
+;   undefined4 SUB_00609da0
 ;
 ; *****************************************************************************
 
@@ -52,21 +52,21 @@ section .text
     LEA EAX,[ESI + 0x4]                 ; 0060229d
         ;   Label: LAB_0060229d
     PUSH EAX                            ; 006022a0
-    CALL crt_time.c_filetime_to_time_t_FUN_00609da0 ; 006022a1
-        ;   XREF to: 00609da0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_filetime_to_time_t_FUN_00609da0(FILETIME * filetime)
+    CALL 0x00609da0                     ; 006022a1
+        ;   XREF to: 00609da0 (UNCONDITIONAL_CALL)  ; SUB_00609da0
     ADD ESP,0x4                         ; 006022a6
     MOV dword ptr [EBX + 0x4],EAX       ; 006022a9
     LEA EAX,[ESI + 0xc]                 ; 006022ac
     PUSH EAX                            ; 006022af
-    CALL crt_time.c_filetime_to_time_t_FUN_00609da0 ; 006022b0
-        ;   XREF to: 00609da0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_filetime_to_time_t_FUN_00609da0(FILETIME * filetime)
+    CALL 0x00609da0                     ; 006022b0
+        ;   XREF to: 00609da0 (UNCONDITIONAL_CALL)  ; SUB_00609da0
     ADD ESP,0x4                         ; 006022b5
     MOV dword ptr [EBX + 0x8],EAX       ; 006022b8
     LEA EAX,[ESI + 0x14]                ; 006022bb
     PUSH EAX                            ; 006022be
     LEA EDI,[EBX + 0x14]                ; 006022bf
-    CALL crt_time.c_filetime_to_time_t_FUN_00609da0 ; 006022c2
-        ;   XREF to: 00609da0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_filetime_to_time_t_FUN_00609da0(FILETIME * filetime)
+    CALL 0x00609da0                     ; 006022c2
+        ;   XREF to: 00609da0 (UNCONDITIONAL_CALL)  ; SUB_00609da0
     MOV dword ptr [EBX + 0xc],EAX       ; 006022c7
     ADD ESP,0x4                         ; 006022ca
     MOV EAX,dword ptr [ESI + 0x20]      ; 006022cd

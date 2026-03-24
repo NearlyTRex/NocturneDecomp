@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 198,
     "complexity_score": 75,
-    "cross_reference_count": 6,
+    "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "mild",
@@ -24,12 +24,6 @@
       "addr": "0060c1e0",
       "from_addr": "0060c245",
       "name": "crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00609da0",
-      "from_addr": "00609e59",
-      "name": "crt_time.c_filetime_to_time_t_FUN_00609da0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -112,7 +106,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 6,
+    "call_site_count": 5,
     "call_sites": [
       {
         "call_addr": "00481f00",
@@ -151,17 +145,6 @@
         "call_addr": "006078d9",
         "call_type": "direct",
         "caller": "crt_unknown.c_FUN_00607858",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "00609e59",
-        "call_type": "direct",
-        "caller": "crt_time.c_filetime_to_time_t_FUN_00609da0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

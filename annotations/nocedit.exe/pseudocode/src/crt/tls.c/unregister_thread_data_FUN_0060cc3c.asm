@@ -6,9 +6,6 @@
 ; Parameters:
 ; void *           Stack[0x4]:4   threadDataKey
 ;
-; XREF[1]:
-;   crt_tls.c_cleanup_thread_tls_data_FUN_0060a334 at 0060a35a
-;
 ; Referenced Globals:
 ;   ENTER_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f10 = 00602434
 ;   EXIT_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f14 = 00602434

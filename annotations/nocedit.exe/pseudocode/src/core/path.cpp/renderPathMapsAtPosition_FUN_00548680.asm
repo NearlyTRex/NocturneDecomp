@@ -51,11 +51,10 @@ section .text
         ;   XREF to: 00499880 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     LEA ESI,[ESP + 0x14]                ; 005486a2
     ADD ESP,0x8                         ; 005486a6
-    MOVSD ES:EDI,ESI                    ; 005486a9
-    MOVSD ES:EDI,ESI                    ; 005486aa
-    MOVSD ES:EDI,ESI                    ; 005486ab
-    MOV ECX,dword ptr [0x030c3ab8]      ; 005486ac | g_PathMapCount
+    JMP 0x006107cf                      ; 005486a9
+        ;   XREF to: 006107cf (UNCONDITIONAL_JUMP)  ; LAB_006107cf
     XOR ESI,ESI                         ; 005486b2
+        ;   Label: LAB_005486b2
     TEST ECX,ECX                        ; 005486b4
     JLE 0x005486e3                      ; 005486b6
         ;   XREF to: 005486e3 (CONDITIONAL_JUMP)  ; LAB_005486e3
@@ -120,4 +119,16 @@ section .text
     ADD ESP,0x14                        ; 00548740
     JMP 0x005486d5                      ; 00548743
         ;   XREF to: 005486d5 (UNCONDITIONAL_JUMP)  ; LAB_005486d5
+    MOV ECX,dword ptr [ESI]             ; 006107cf
+        ;   Label: LAB_006107cf
+    MOV dword ptr [EDI],ECX             ; 006107d1
+    MOV ECX,dword ptr [ESI + 0x4]       ; 006107d3
+    MOV dword ptr [EDI + 0x4],ECX       ; 006107d6
+    MOV ECX,dword ptr [ESI + 0x8]       ; 006107d9
+    MOV dword ptr [EDI + 0x8],ECX       ; 006107dc
+    ADD ESI,0xc                         ; 006107df
+    ADD EDI,0xc                         ; 006107e2
+    MOV ECX,dword ptr [0x030c3ab8]      ; 006107e5 | g_PathMapCount
+    JMP 0x005486b2                      ; 006107eb
+        ;   XREF to: 005486b2 (UNCONDITIONAL_JUMP)  ; LAB_005486b2
 

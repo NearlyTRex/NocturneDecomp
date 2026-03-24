@@ -138,7 +138,7 @@
 ;   TerminatedCString s_Selected_part_d_s_Domina_0064d95d
 ;   TerminatedCString s_F1_for_key_list_0064d989
 ;   TerminatedCString s_LOD_d_PixHeight_d_Polys__0064d99b
-;   ... and 131 more
+;   ... and 129 more
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90
@@ -1159,12 +1159,10 @@ section .text
     LEA EAX,[EBP + 0xffffff3a]          ; 005973e7
     MOV EDX,dword ptr [0x006703ec]      ; 005973ed | g_CDemonRendererPtr2
     ADD ESP,0xc                         ; 005973f3
-    MOVSD ES:EDI,ESI                    ; 005973f6 | CVector3f_006819fc
-    MOVSD ES:EDI,ESI                    ; 005973f7 | CVector3f_006819fc.y
-    MOVSD ES:EDI,ESI                    ; 005973f8 | CVector3f_006819fc.z
-    PUSH EAX                            ; 005973f9
-    MOV EAX,dword ptr [EDX]             ; 005973fa | g_CDemonRendererInstance
+    JMP 0x006107b1                      ; 005973f6
+        ;   XREF to: 006107b1 (UNCONDITIONAL_JUMP)  ; CAVE_cave_005fde92
     PUSH EAX                            ; 005973fc
+        ;   Label: LAB_005973fc
     CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 005973fd
         ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV ECX,0xf00                       ; 00597402
@@ -3506,4 +3504,17 @@ section .text
     ADD ESP,0x8                         ; 00598ed0
     JMP 0x00597847                      ; 00598ed3
         ;   XREF to: 00597847 (UNCONDITIONAL_JUMP)  ; LAB_00597847
+    MOV ECX,dword ptr [ESI]             ; 006107b1
+        ;   Label: CAVE_cave_005fde92
+    MOV dword ptr [EDI],ECX             ; 006107b3
+    MOV ECX,dword ptr [ESI + 0x4]       ; 006107b5
+    MOV dword ptr [EDI + 0x4],ECX       ; 006107b8
+    MOV ECX,dword ptr [ESI + 0x8]       ; 006107bb
+    MOV dword ptr [EDI + 0x8],ECX       ; 006107be
+    ADD ESI,0xc                         ; 006107c1
+    ADD EDI,0xc                         ; 006107c4
+    PUSH EAX                            ; 006107c7
+    MOV EAX,dword ptr [EDX]             ; 006107c8
+    JMP 0x005973fc                      ; 006107ca
+        ;   XREF to: 005973fc (UNCONDITIONAL_JUMP)  ; LAB_005973fc
 

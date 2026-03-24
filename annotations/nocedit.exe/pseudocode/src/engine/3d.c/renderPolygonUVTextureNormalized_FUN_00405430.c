@@ -1,6 +1,6 @@
 // Name: engine_3d.c_renderPolygonUVTextureNormalized_FUN_00405430
 // Address: 00405430
-// Address Range: [[00405430, 00405503]]
+// Address Range: [[00405430, 00405503] [00608cc2, 00608cdf]]
 // Convention: __cdecl
 // Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureNormalized_FUN_00405430(SMRGLHeaderPrimitive *prim)
 
@@ -15,16 +15,10 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureNormalized_FUN_0
   CVector3i local_28;
   CVector3i local_1c;
   
-  bVar2 = 0;
   local_28.x = (prim->surface_normal).A;
   local_28.y = (prim->surface_normal).B;
   local_28.z = (prim->surface_normal).C;
   engine_matrix_c_normalizeVector3DFixed_FUN_0050d970(&local_28,&local_1c);
-  local_28.x = local_1c.x;
-  *(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4) =
-       *(uint *)((int)&local_1c + (uint)bVar2 * -8 + 4);
-  *(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-       *(uint *)((int)&local_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal);
   if (iVar1 != 0) {
     if (g_MMXSupported == 0) {

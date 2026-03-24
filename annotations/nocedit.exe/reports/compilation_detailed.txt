@@ -5,15 +5,15 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6452
-Successful: 5909 (91.6%)
-Failed: 543
+Successful: 5908 (91.6%)
+Failed: 544
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                            991
+  other                            979
   format_error                     782
   incompatible_types               205
-  undeclared_identifier            134
+  undeclared_identifier            135
   syntax_error                      41
   missing_member                    26
   type_error                         9
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (991 errors)
+CATEGORY: other (979 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -114,6 +114,8 @@ CATEGORY: other (991 errors)
     Line 65: cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectSound3DListener **'
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
     Line 326: cannot initialize return object of type 'SEdge *' with an lvalue of type 'void *'
+  core_particle.cpp_CParticle_process_FUN_00545760
+    Line 60: cast from pointer to smaller type 'byte' (aka 'unsigned char') loses information
   core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
     Line 126: cast from pointer to smaller type 'char' loses information
   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
@@ -164,8 +166,6 @@ CATEGORY: other (991 errors)
     Line 36: member reference base type 'byte[44]' (aka 'unsigned char[44]') is not a structure or union
   core_boxactor.cpp_CBoxActor_process_FUN_004219e0
     Line 63: member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union
-  core_particle.cpp_CParticle_process_FUN_00545760
-    Line 52: member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union
   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
     Line 215: member reference base type 'byte[88]' (aka 'unsigned char[88]') is not a structure or union
   core_stranger.cpp_CStranger_processFrame_FUN_005bb960
@@ -1099,9 +1099,9 @@ CATEGORY: incompatible_types (205 errors)
   core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80
     Line 57: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'float[10]'
   core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0
-    Line 57: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'float[10]'
+    Line 54: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'float[10]'
   core_fire.cpp_CSpark_setupRenderState_FUN_004c0300
-    Line 65: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'float[10]'
+    Line 62: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'float[10]'
   cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90
     Line 25: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
@@ -1214,11 +1214,13 @@ CATEGORY: incompatible_types (205 errors)
     Line 212: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (134 errors)
+CATEGORY: undeclared_identifier (135 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
     Line 24: use of undeclared identifier 'DAT_80000010'
+  core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
+    Line 42: use of undeclared identifier 'INT_02d83398'
   core_scat.cpp_CScat_process_FUN_005571f0
     Line 150: use of undeclared identifier 'SUB14'
   core_script.cpp_CScript_step_FUN_0055a810

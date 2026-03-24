@@ -35,22 +35,6 @@ undefined4 FUN_00607958(int param_1,int param_2,undefined4 param_3);
 // Address: 00607c88
 undefined4 FUN_00607c88(int *param_1,int *param_2);
 
-// Original: crt_unknown.c_FUN_00609fc8
-// Address: 00609fc8
-void FUN_00609fc8(void);
-
-// Original: crt_unknown.c_DeleteCritcalSectionsMaybe_FUN_00609ff4
-// Address: 00609ff4
-void DeleteCritcalSectionsMaybe(void);
-
-// Original: crt_unknown.c_FUN_0060a1dc
-// Address: 0060a1dc
-void FUN_0060a1dc(void);
-
-// Original: crt_unknown.c_FUN_0060a394
-// Address: 0060a394
-void FUN_0060a394(void);
-
 // Original: crt_unknown.c_FUN_0060ade0
 // Address: 0060ade0
 char * FUN_0060ade0(uint *param_1,char *param_2,int param_3);

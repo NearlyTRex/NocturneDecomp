@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 134,
+    "complexity_score": 133,
     "cross_reference_count": 1,
-    "function_call_count": 5,
-    "global_count": 31,
+    "function_call_count": 1,
+    "global_count": 35,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 94,
+    "pseudocode_lines": 93,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function"
     ],
-    "total_lines": 311
+    "total_lines": 310
   },
   "cross_references": [
     {
@@ -36,32 +36,36 @@
   },
   "function_calls": [
     {
-      "addr": "0060a560",
-      "is_variadic": false,
-      "name": "crt_startup.c_GetModuleFileNameCompat_FUN_0060a560"
-    },
-    {
-      "addr": "0060a23c",
-      "is_variadic": false,
-      "name": "crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c"
-    },
-    {
-      "addr": "0060a610",
-      "is_variadic": false,
-      "name": "crt_string.c_strdup_FUN_0060a610"
-    },
-    {
-      "addr": "0060a660",
-      "is_variadic": false,
-      "name": "crt_string.c_wcsdup_FUN_0060a660"
-    },
-    {
       "addr": "EXTERNAL:00000058",
       "is_variadic": false,
       "name": "ExitProcess"
     }
   ],
   "globals": [
+    {
+      "addr": "0060a23c",
+      "name": "SUB_0060a23c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060a560",
+      "name": "SUB_0060a560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060a610",
+      "name": "SUB_0060a610",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060a660",
+      "name": "SUB_0060a660",
+      "type": "undefined4",
+      "value": null
+    },
     {
       "addr": "00611534",
       "name": "g_ExitProcessFunc",
@@ -337,7 +341,7 @@
       "line": 80,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "(*(WCHAR *)pcVar5 != L'\\0')); pcVar5 = (char *)((int)pcVar5 + 2)) {",
+      "text": "(*(WCHAR *)pcVar7 != L'\\0')); pcVar7 = (char *)((int)pcVar7 + 2)) {",
       "type": "pointer_cast"
     },
     {
@@ -345,7 +349,7 @@
       "line": 84,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "pcVar5 = (char *)((int)pcVar5 + 2);",
+      "text": "pcVar7 = (char *)((int)pcVar7 + 2);",
       "type": "pointer_cast"
     },
     {

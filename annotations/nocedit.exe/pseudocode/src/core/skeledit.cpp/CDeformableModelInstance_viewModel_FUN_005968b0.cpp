@@ -1,6 +1,6 @@
 // Name: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
 // Address: 005968b0
-// Address Range: [[005968b0, 0059754b] [0059754f, 0059796e] [00597977, 00598ed7]]
+// Address Range: [[005968b0, 0059754b] [0059754f, 0059796e] [00597977, 00598ed7] [006107b1, 006107ce]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(CDeformableModelInstance *this_ptr)
 
@@ -506,10 +506,8 @@ LAB_0059722b:
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&local_d0,&local_dc);
       local_154.x = (int)CVector3f_006819fc.x;
-      *(uint *)((int)&local_154 + (uint)bVar22 * -8 + 4) =
-           *(uint *)((int)&CVector3f_006819fc + (uint)bVar22 * -8 + 4);
-      *(uint *)((int)&local_154 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 8) =
-           *(uint *)((uint)bVar22 * -8 + 0x681a04 + (uint)bVar22 * -8);
+      local_154.y = (int)CVector3f_006819fc.y;
+      local_154.z = (int)CVector3f_006819fc.z;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_154);
       local_154.x = 0xf00;

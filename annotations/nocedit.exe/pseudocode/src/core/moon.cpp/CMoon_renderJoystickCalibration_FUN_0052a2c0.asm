@@ -100,11 +100,10 @@ section .text
         ;   XREF to: 0050d9f0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * input_vector, CVector3i * output_vector)
     LEA ESI,[ESP + 0x4]                 ; 0052a379
     ADD ESP,0x4                         ; 0052a37d
-    MOVSD ES:EDI,ESI                    ; 0052a380
-    MOVSD ES:EDI,ESI                    ; 0052a381
-    MOVSD ES:EDI,ESI                    ; 0052a382
-    MOV EDX,dword ptr [0x006810c8]      ; 0052a383 | g_CDemonSetInstance | g_CDemonSetPtr
+    JMP 0x0061086a                      ; 0052a380
+        ;   XREF to: 0061086a (UNCONDITIONAL_JUMP)  ; LAB_0061086a
     MOV EAX,dword ptr [ESP + 0xc]       ; 0052a389
+        ;   Label: LAB_0052a389
     MOV dword ptr [EDX + 0x15ae74],EAX  ; 0052a38d | g_CDemonSetInstance.light_direction.x
     MOV EAX,dword ptr [ESP + 0x10]      ; 0052a393
     MOV dword ptr [EDX + 0x15ae78],EAX  ; 0052a397 | g_CDemonSetInstance.light_direction.y
@@ -128,4 +127,16 @@ section .text
     POP ESI                             ; 0052a3de
     POP EBX                             ; 0052a3df
     RET                                 ; 0052a3e0
+    MOV ECX,dword ptr [ESI]             ; 0061086a
+        ;   Label: LAB_0061086a
+    MOV dword ptr [EDI],ECX             ; 0061086c
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0061086e
+    MOV dword ptr [EDI + 0x4],ECX       ; 00610871
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00610874
+    MOV dword ptr [EDI + 0x8],ECX       ; 00610877
+    ADD ESI,0xc                         ; 0061087a
+    ADD EDI,0xc                         ; 0061087d
+    MOV EDX,dword ptr [0x006810c8]      ; 00610880 | g_CDemonSetPtr
+    JMP 0x0052a389                      ; 00610886
+        ;   XREF to: 0052a389 (UNCONDITIONAL_JUMP)  ; LAB_0052a389
 

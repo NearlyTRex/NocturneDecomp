@@ -33,12 +33,12 @@ void __watcallStack convertFileInfo(LPWIN32_FIND_DATAA win32_data,_find_t *dos_i
   if ((win32_data->dwFileAttributes & 4) != 0) {
     dos_info->attrib = dos_info->attrib | 4;
   }
-  tVar2 = filetime_to_time_t(&win32_data->ftCreationTime);
+  tVar2 = func_0x00609da0(&win32_data->ftCreationTime);
   dos_info->wr_time = tVar2;
-  tVar2 = filetime_to_time_t(&win32_data->ftLastAccessTime);
+  tVar2 = func_0x00609da0(&win32_data->ftLastAccessTime);
   dos_info->cr_time = tVar2;
   pcVar4 = dos_info->name;
-  tVar2 = filetime_to_time_t(&win32_data->ftLastWriteTime);
+  tVar2 = func_0x00609da0(&win32_data->ftLastWriteTime);
   dos_info->ac_time = tVar2;
   pCVar3 = win32_data->cFileName;
   dos_info->size = win32_data->nFileSizeLow;

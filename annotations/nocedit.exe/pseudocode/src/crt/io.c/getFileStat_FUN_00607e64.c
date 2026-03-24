@@ -82,12 +82,10 @@ int __cdecl getFileStat(char *filename,_stat *file_info)
     uVar6 = analyze_file_type
                       (_Stack_368.dwFileAttributes,_Stack_368.cFileName);
     file_info->_st_mode = (ushort)uVar6;
-    filetime_to_dos_datetime
-              (&_Stack_368.ftLastWriteTime,aWStack_20,aWStack_14);
+    func_0x00609cb0(&_Stack_368.ftLastWriteTime,aWStack_20,aWStack_14);
     tVar7 = dos_datetime_to_time_t(aWStack_20[0],aWStack_14[0]);
     file_info->_st_mtime = tVar7;
-    filetime_to_dos_datetime
-              (&_Stack_368.ftCreationTime,aWStack_18,aWStack_1c);
+    func_0x00609cb0(&_Stack_368.ftCreationTime,aWStack_18,aWStack_1c);
     if ((aWStack_18[0] == aWStack_20[0]) && (aWStack_1c[0] == aWStack_14[0])) {
       tVar3 = file_info->_st_mtime;
     }
@@ -95,8 +93,7 @@ int __cdecl getFileStat(char *filename,_stat *file_info)
       tVar3 = dos_datetime_to_time_t(aWStack_18[0],aWStack_1c[0]);
     }
     file_info->_st_ctime = tVar3;
-    filetime_to_dos_datetime
-              (&_Stack_368.ftLastAccessTime,aWStack_18,aWStack_1c);
+    func_0x00609cb0(&_Stack_368.ftLastAccessTime,aWStack_18,aWStack_1c);
     if ((aWStack_18[0] == aWStack_20[0]) && (aWStack_1c[0] == aWStack_14[0])) {
       tVar3 = file_info->_st_mtime;
     }

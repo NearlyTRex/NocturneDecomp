@@ -4,12 +4,12 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6938 ( 41.8%)
-  pointer_cast                    5103 ( 30.8%)
-  unknown_field                    900 (  5.4%)
-  special_crt_function             499 (  3.0%)
-  stack_param                      343 (  2.1%)
-  unnamed_param                    323 (  1.9%)
+  decompiler_intrinsic            6938 ( 42.1%)
+  pointer_cast                    5049 ( 30.6%)
+  unknown_field                    887 (  5.4%)
+  special_crt_function             464 (  2.8%)
+  stack_param                      340 (  2.1%)
+  unnamed_param                    323 (  2.0%)
   fpu_register_input               311 (  1.9%)
   nonstandard_int                  267 (  1.6%)
   warning_inlined_function         264 (  1.6%)
@@ -17,7 +17,7 @@ SUSPECT TYPE COUNTS
   unresolved_funcptr               169 (  1.0%)
   warning_type_propagation         132 (  0.8%)
   param_count_too_few              121 (  0.7%)
-  stack_alignment_array            108 (  0.7%)
+  stack_alignment_array            106 (  0.6%)
   unaffected_reg                   106 (  0.6%)
   sub84_truncation                 100 (  0.6%)
   negative_offset                   86 (  0.5%)
@@ -26,7 +26,7 @@ SUSPECT TYPE COUNTS
   suspect_float                     50 (  0.3%)
   param_count_too_many              48 (  0.3%)
   unknown_type                      44 (  0.3%)
-  extra_output                      35 (  0.2%)
+  extra_output                      38 (  0.2%)
   mmx_assembly                      34 (  0.2%)
   format_string_mismatch            24 (  0.1%)
   undefined_ram                     24 (  0.1%)
@@ -40,11 +40,11 @@ SUSPECT TYPE COUNTS
   fnstsw_flag_artifact               8 (  0.0%)
   displaced_global_access            6 (  0.0%)
   unresolved_register                5 (  0.0%)
+  warning_unmapped_variable          4 (  0.0%)
   warning_noreturn                   4 (  0.0%)
   warning_max_restarts               4 (  0.0%)
   warning_deadcode_restart           4 (  0.0%)
   special_cpu_detection              4 (  0.0%)
-  warning_unmapped_variable          3 (  0.0%)
   warning_spacebase                  3 (  0.0%)
   warning_overlapping_globals        3 (  0.0%)
   warning_is_inlined                 2 (  0.0%)
@@ -96,20 +96,20 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5103 occurrences)
+TYPE: pointer_cast (5049 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1615x  (uint *)((int)
-  1287x  (int *)((int)
+  1571x  (uint *)((int)
+  1280x  (int *)((int)
    325x  (SRenderVertex *)((int)
-   290x  (float *)((int)
    289x  (CMatrix3x4f *)((int)
+   287x  (float *)((int)
    208x  (double *)((int)
    189x  (void *)((int)
-   171x  (byte *)((int)
+   173x  (byte *)((int)
     84x  (ushort *)((int)
-    71x  (char *)((int)
+    70x  (char *)((int)
     61x  (short *)((int)
     34x  (SShapeEditorPolygon *)((int)
     26x  (CMatrix3x3f *)((int)
@@ -132,30 +132,30 @@ Example functions:
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar1) <...
 
 ====================================================================================================
-TYPE: unknown_field (900 occurrences)
+TYPE: unknown_field (887 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   370x  ._0_4_
-   344x  ._4_4_
+   368x  ._0_4_
+   342x  ._4_4_
     47x  ._0_2_
     36x  ._2_2_
     14x  ._0_1_
     11x  ._12_4_
      9x  ._1_1_
-     9x  ._8_4_
      7x  ._3_1_
-     7x  ._24_4_
+     7x  ._8_4_
      7x  ._4_8_
+     5x  ._24_4_
      4x  ._16_4_
-     4x  ._28_4_
-     4x  ._32_4_
      4x  ._44_4_
      3x  ._40_4_
      3x  ._20_4_
-     3x  ._48_4_
      3x  ._13604_4_
      2x  ._2_1_
+     2x  ._252_4_
+     2x  ._12_8_
+     2x  ._48_4_
 
 Example functions:
   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
@@ -178,21 +178,17 @@ Example functions:
     uVar6._0_2_ = CONCAT11(bStack_2b,uStack_2c) & 0x7fff;...
 
 ====================================================================================================
-TYPE: special_crt_function (499 occurrences)
+TYPE: special_crt_function (464 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   499x  crt_
+   464x  crt_
 
 Example functions:
-  crt_io.c_invalidate_handle_wrapper_FUN_0060a154
-    CRT function (runtime support) at 0060a154...
   crt_io.c_tell_FUN_00606720
     CRT function (runtime support) at 00606720...
   crt_io.c_get_handle_FUN_006109f0
     CRT function (runtime support) at 006109f0...
-  crt_io.c_register_handle_wrapper_FUN_0060a144
-    CRT function (runtime support) at 0060a144...
   crt_io.c_getFileStat_FUN_00600c18
     CRT function (runtime support) at 00600c18...
   crt_io.c_analyze_file_type_FUN_00607d50
@@ -237,23 +233,27 @@ Example functions:
     CRT function (runtime support) at 00609afc...
   crt_io.c_register_handler_wrapper_FUN_00602438
     CRT function (runtime support) at 00602438...
-  crt_io.c_findNextWithAttributes_FUN_00609d5c
-    CRT function (runtime support) at 00609d5c...
   crt_io.c__utime_00600c1e
     CRT function (runtime support) at 00600c1e...
   crt_windows.c_has_active_window_FUN_0060a710
     CRT function (runtime support) at 0060a710...
   crt_process.c_spawnCommand_FUN_00609c90
     CRT function (runtime support) at 00609c90...
+  crt_process.c_build_cmdline_FUN_00610258
+    CRT function (runtime support) at 00610258...
+  crt_process.c_build_command_line_FUN_006103a4
+    CRT function (runtime support) at 006103a4...
+  crt_process.c_set_shell_execute_flag_FUN_00609c80
+    CRT function (runtime support) at 00609c80...
 
 ====================================================================================================
-TYPE: stack_param (343 occurrences)
+TYPE: stack_param (340 occurrences)
 ====================================================================================================
 
 Unique patterns:
     46x  in_stack_fffffc88
     42x  in_stack_0000000c
-    25x  in_stack_00000004
+    22x  in_stack_00000004
     18x  in_stack_00000008
     17x  in_stack_00000010
     14x  in_stack_fffffd14
@@ -691,7 +691,7 @@ Example functions:
     Function declares 0 params but call sites push 2 (2 missing)...
 
 ====================================================================================================
-TYPE: stack_alignment_array (108 occurrences)
+TYPE: stack_alignment_array (106 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -708,13 +708,13 @@ Unique patterns:
      2x  afStackY_17f8
      2x  aiStackY_101c
      2x  aiStackY_10d8
-     2x  afStackY_1040
      2x  afStackY_1860
      1x  aiStackY_1818
      1x  aiStackY_100c
      1x  atStackY_2e68
      1x  atStackY_30f4
      1x  aEStackY_208c
+     1x  apvStackY_185c
 
 Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
@@ -1144,7 +1144,7 @@ Example functions:
     unkbyte10 in_ST0;...
 
 ====================================================================================================
-TYPE: extra_output (35 occurrences)
+TYPE: extra_output (38 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1152,6 +1152,7 @@ Unique patterns:
      6x  extraout_ST0_00
      4x  extraout_EAX_00
      3x  extraout_ST0
+     3x  extraout_EDX
      2x  extraout_EAX_01
      2x  extraout_EAX_02
      2x  extraout_EAX_03
@@ -1642,6 +1643,23 @@ Example functions:
     register0x0000000c = piVar3[1];...
 
 ====================================================================================================
+TYPE: warning_unmapped_variable (4 occurrences)
+====================================================================================================
+
+Unique patterns:
+     4x  WARNING: Variable defined which should be unmapped
+
+Example functions:
+  cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
+    /* WARNING: Variable defined which should be unmapped: local_c */...
+  core_particle.cpp_CParticle_process_FUN_00545760
+    /* WARNING: Variable defined which should be unmapped: afStackY_105c */...
+  core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
+    /* WARNING: Variable defined which should be unmapped: local_d00 */...
+  core_event.cpp_CEventList_executeCommand_FUN_004aacc0
+    /* WARNING: Variable defined which should be unmapped: local_163c */...
+
+====================================================================================================
 TYPE: warning_noreturn (4 occurrences)
 ====================================================================================================
 
@@ -1711,21 +1729,6 @@ Example functions:
     CPU detection function at 0052500f...
   core_mmx.c_detectCPUFeatures_FUN_00524f10
     CPU detection function at 00524f10...
-
-====================================================================================================
-TYPE: warning_unmapped_variable (3 occurrences)
-====================================================================================================
-
-Unique patterns:
-     3x  WARNING: Variable defined which should be unmapped
-
-Example functions:
-  cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
-    /* WARNING: Variable defined which should be unmapped: local_c */...
-  core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
-    /* WARNING: Variable defined which should be unmapped: local_d00 */...
-  core_event.cpp_CEventList_executeCommand_FUN_004aacc0
-    /* WARNING: Variable defined which should be unmapped: local_163c */...
 
 ====================================================================================================
 TYPE: warning_spacebase (3 occurrences)

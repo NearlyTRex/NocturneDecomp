@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 7,
     "complexity_score": 21,
-    "cross_reference_count": 17,
+    "cross_reference_count": 14,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -51,12 +51,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0060a560",
-      "from_addr": "0060a599",
-      "name": "crt_startup.c_GetModuleFileNameCompat_FUN_0060a560",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "006092f0",
       "from_addr": "00609331",
       "name": "crt_stdio.c___allocfp_FUN_006092f0",
@@ -66,18 +60,6 @@
       "addr": "00601140",
       "from_addr": "0060115d",
       "name": "crt_stdlib.c__fullpath_FUN_00601140",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0060a610",
-      "from_addr": "0060a62d",
-      "name": "crt_string.c_strdup_FUN_0060a610",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0060a660",
-      "from_addr": "0060a678",
-      "name": "crt_string.c_wcsdup_FUN_0060a660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -138,7 +120,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 22,
+    "call_site_count": 19,
     "call_sites": [
       {
         "call_addr": "00608d61",
@@ -229,9 +211,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "0060a62d",
+        "call_addr": "0060ef2d",
         "call_type": "direct",
-        "caller": "crt_string.c_strdup_FUN_0060a610",
+        "caller": "crt_env.c_putenv_internal_FUN_0060ee80",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -240,9 +222,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "0060ef2d",
+        "call_addr": "0060f0af",
         "call_type": "direct",
-        "caller": "crt_env.c_putenv_internal_FUN_0060ee80",
+        "caller": "crt_env.c_updateEnvironTable_FUN_0060f04c",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

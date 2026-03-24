@@ -6,10 +6,10 @@ Caves are created by zeroing out dead functions using the
 CreateCodeCave Ghidra script (Shift+Z). Patching scripts
 allocate space within caves for injected code (thunks, helpers).
 
-Total caves:        24
-Total bytes:        21,371
-Total free:         1,591
-Total allocations:  364
+Total caves:        26
+Total bytes:        23,739
+Total free:         3,316
+Total allocations:  385
 
 ----------------------------------------------------------------------------------------------------
 CAVES
@@ -519,7 +519,7 @@ CAVES
                4x MOVSD replacement for CPoly_intersectPoly_FUN_005ce580
     Free space: 31 bytes (offset 0x31e1 - 0x3200)
 
-  cave_006088b0                   006088b0   1136 bytes  [890/1136 used]
+  cave_006088b0                   006088b0   1136 bytes  [1102/1136 used]
     Allocations:
       +0x0000   38 bytes  movsd_005bef97             0x005bef97
                4x MOVSD replacement for CStranger_updateProceduralAnimation_FUN_005be520
@@ -569,7 +569,27 @@ CAVES
                4x MOVSD replacement for calculateVertexAngle_FUN_00462050
       +0x0353   39 bytes  movsd_0046208d             0x0046208d
                4x MOVSD replacement for calculateVertexAngle_FUN_00462050
-    Free space: 246 bytes (offset 0x037a - 0x0470)
+      +0x037a   34 bytes  movsd_00468124             0x00468124
+               4x MOVSD replacement for applyVertexCentering_FUN_004680f0
+      +0x039c   31 bytes  movsd_0050e5e2             0x0050e5e2
+               4x MOVSD replacement for projectToScreen_FUN_0050e5b0
+      +0x03bb   29 bytes  movsd_0050d9da             0x0050d9da
+               4x MOVSD replacement for normalizeVector3DFixed_FUN_0050d970
+      +0x03d8   29 bytes  movsd_0048c7f2             0x0048c7f2
+               4x MOVSD replacement for CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
+      +0x03f5   29 bytes  movsd_0048c772             0x0048c772
+               4x MOVSD replacement for CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
+      +0x0412   30 bytes  movsd_00405466             0x00405466
+               4x MOVSD replacement for renderPolygonUVTextureNormalized_FUN_00405430
+      +0x0430   30 bytes  movsd_00405386             0x00405386
+               4x MOVSD replacement for renderPolygonUVTextureEnable_FUN_00405350
+    Free space: 34 bytes (offset 0x044e - 0x0470)
+
+  cave_00609f20                   00609cb0    448 bytes  [FREE]
+    (entirely free — no allocations)
+
+  cave_00609f20                   00609f20   1920 bytes  [FREE]
+    (entirely free — no allocations)
 
   cave_005fde92                   0060d067    145 bytes  [116/145 used]
     Allocations:
@@ -809,7 +829,7 @@ CAVES
                4x MOVSD replacement for CStranger_updateProceduralAnimation_FUN_005be520
     Free space: 30 bytes (offset 0x081c - 0x083a)
 
-  cave_0060fb3a                   0060fb3a    448 bytes  [367/448 used]
+  cave_0060fb3a                   0060fb3a    448 bytes  [397/448 used]
     Allocations:
       +0x003f   39 bytes  movsd_0059f724             0x0059f724
                4x MOVSD replacement for CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0
@@ -827,8 +847,37 @@ CAVES
                4x MOVSD replacement for CDeformableModelInstance_blendMotion_FUN_0059eb50
       +0x0148   39 bytes  movsd_0059f0a1             0x0059f0a1
                4x MOVSD replacement for CDeformableModelInstance_blendMotion_FUN_0059eb50
-    Free space: 81 bytes (offset 0x016f - 0x01c0)
+      +0x016f   30 bytes  movsd_004055e6             0x004055e6
+               4x MOVSD replacement for renderPolygonPerspectiveNormalized_FUN_004055b0
+    Free space: 51 bytes (offset 0x018d - 0x01c0)
 
-  cave_005fde92                   006107b1    447 bytes  [FREE]
-    (entirely free — no allocations)
+  cave_005fde92                   006107b1    447 bytes  [401/447 used]
+    Allocations:
+      +0x0000   30 bytes  movsd_005973f6             0x005973f6
+               4x MOVSD replacement for CDeformableModelInstance_viewModel_FUN_005968b0
+      +0x001e   33 bytes  movsd_005486a9             0x005486a9
+               4x MOVSD replacement for renderPathMapsAtPosition_FUN_00548680
+      +0x003f   29 bytes  movsd_005483de             0x005483de
+               4x MOVSD replacement for getOrCreatePathMap_FUN_00548390
+      +0x005c   31 bytes  movsd_005481b2             0x005481b2
+               4x MOVSD replacement for CPathMap_renderPathMap_FUN_00547fc0
+      +0x007b   30 bytes  movsd_00547362             0x00547362
+               4x MOVSD replacement for CPathMap_findPathToDestination_FUN_00547320
+      +0x0099   32 bytes  movsd_00545838             0x00545838
+               4x MOVSD replacement for CParticle_process_FUN_00545760
+      +0x00b9   33 bytes  movsd_0052a380             0x0052a380
+               4x MOVSD replacement for CMoon_renderJoystickCalibration_FUN_0052a2c0
+      +0x00da   29 bytes  movsd_00522a43             0x00522a43
+               4x MOVSD replacement for CMirrorReflection_transformMirrorVertex_FUN_005229b0
+      +0x00f7   29 bytes  movsd_004eba3d             0x004eba3d
+               4x MOVSD replacement for CBloodParticle_setupRenderState_FUN_004eb9d0
+      +0x0114   29 bytes  movsd_004d2217             0x004d2217
+               4x MOVSD replacement for CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
+      +0x0131   33 bytes  movsd_004c03a7             0x004c03a7
+               4x MOVSD replacement for CSpark_setupRenderState_FUN_004c0300
+      +0x0152   29 bytes  movsd_004bf25d             0x004bf25d
+               4x MOVSD replacement for CSmokeParticle_setupRenderState_FUN_004bf1f0
+      +0x016f   34 bytes  movsd_004c68d4             0x004c68d4
+               4x MOVSD replacement for CRainDrop_render_FUN_004c6830
+    Free space: 46 bytes (offset 0x0191 - 0x01bf)
 

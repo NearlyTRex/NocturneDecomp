@@ -12,6 +12,10 @@
 ;   crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8 at 006026ba
 ;
 ; Referenced Globals:
+;   undefined4 SUB_0060a23c
+;   undefined4 SUB_0060a560
+;   undefined4 SUB_0060a610
+;   undefined4 SUB_0060a660
 ;   EXIT_PROCESS_FUNC* g_ExitProcessFunc = 00211d12
 ;   GET_COMMAND_LINE_A_FUNC* g_GetCommandLineAFunc = 00211df8
 ;   GET_COMMAND_LINE_W_FUNC* g_GetCommandLineWFunc = 00211e0a
@@ -23,17 +27,9 @@
 ;   DWORD g_WinMainCmdShow = 0x0
 ;   char* g_ExeFileNameA = 00000000
 ;   char* g_DllFileNameA = 00000000
-;   WCHAR* g_CommandLineArgsW = 00000000
-;   WCHAR* g_ExeFileNameW = 00000000
-;   WCHAR* g_DllFileNameW = 00000000
-;   char* g_EnvironmentStrings = 00000000
-;   ... and 16 more
+;   ... and 20 more
 ;
 ; Called Functions:
-;   crt_startup.c_GetModuleFileNameCompat_FUN_0060a560
-;   crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c
-;   crt_string.c_strdup_FUN_0060a610
-;   crt_string.c_wcsdup_FUN_0060a660
 ;   ExitProcess
 ;
 ; *****************************************************************************
@@ -49,8 +45,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 00602464
     PUSH EDX                            ; 00602468
     MOV dword ptr [0x03f9b220],ESI      ; 00602469 | g_EmergencyExitFlag
-    CALL crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c ; 0060246f
-        ;   XREF to: 0060a23c (UNCONDITIONAL_CALL)  ; void * crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c(void * pThreadData)
+    CALL 0x0060a23c                     ; 0060246f
+        ;   XREF to: 0060a23c (UNCONDITIONAL_CALL)  ; SUB_0060a23c
     ADD ESP,0x4                         ; 00602474
     MOV [0x03f9b22c],EAX                ; 00602477 | g_CurrentThreadTlsBlock
     TEST EAX,EAX                        ; 0060247c
@@ -104,14 +100,14 @@ section .text
     PUSH 0x0                            ; 00602533
     MOV EDI,0x3f9b334                   ; 00602535 | g_ExeFileNameBuffer_W
     MOV dword ptr [0x00684fd8],ECX      ; 0060253a | g_ExeFileNameA
-    CALL crt_startup.c_GetModuleFileNameCompat_FUN_0060a560 ; 00602540
-        ;   XREF to: 0060a560 (UNCONDITIONAL_CALL)  ; DWORD crt_startup.c_GetModuleFileNameCompat_FUN_0060a560(HMODULE hModule, LPWSTR lpFilename, DWORD nSize)
+    CALL 0x0060a560                     ; 00602540
+        ;   XREF to: 0060a560 (UNCONDITIONAL_CALL)  ; SUB_0060a560
     ADD ESP,0xc                         ; 00602545
     MOV dword ptr [0x00684fe4],EDI      ; 00602548 | g_ExeFileNameW
     CALL dword ptr CS:[0x611568]        ; 0060254e | g_GetCommandLineAFunc
     PUSH EAX                            ; 00602555
-    CALL crt_string.c_strdup_FUN_0060a610 ; 00602556
-        ;   XREF to: 0060a610 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strdup_FUN_0060a610(char * str)
+    CALL 0x0060a610                     ; 00602556
+        ;   XREF to: 0060a610 (UNCONDITIONAL_CALL)  ; SUB_0060a610
     MOV EDX,EAX                         ; 0060255b
     ADD ESP,0x4                         ; 0060255d
     MOV BL,byte ptr [EAX]               ; 00602560
@@ -170,8 +166,8 @@ section .text
     JZ 0x00602650                       ; 006025c9
         ;   XREF to: 00602650 (CONDITIONAL_JUMP)  ; LAB_00602650
     PUSH EAX                            ; 006025cf
-    CALL crt_string.c_wcsdup_FUN_0060a660 ; 006025d0
-        ;   XREF to: 0060a660 (UNCONDITIONAL_CALL)  ; WCHAR * crt_string.c_wcsdup_FUN_0060a660(WCHAR * str)
+    CALL 0x0060a660                     ; 006025d0
+        ;   XREF to: 0060a660 (UNCONDITIONAL_CALL)  ; SUB_0060a660
     MOV EDX,EAX                         ; 006025d5
     ADD ESP,0x4                         ; 006025d7
     MOV BX,word ptr [EAX]               ; 006025da
@@ -245,8 +241,8 @@ section .text
     PUSH EBP                            ; 00602683
     MOV EBX,0x3f9b640                   ; 00602684 | g_DllFileNameBuffer_W
     MOV [0x00684fdc],EAX                ; 00602689 | g_DllFileNameA
-    CALL crt_startup.c_GetModuleFileNameCompat_FUN_0060a560 ; 0060268e
-        ;   XREF to: 0060a560 (UNCONDITIONAL_CALL)  ; DWORD crt_startup.c_GetModuleFileNameCompat_FUN_0060a560(HMODULE hModule, LPWSTR lpFilename, DWORD nSize)
+    CALL 0x0060a560                     ; 0060268e
+        ;   XREF to: 0060a560 (UNCONDITIONAL_CALL)  ; SUB_0060a560
     ADD ESP,0xc                         ; 00602693
     MOV dword ptr [0x00684fe8],EBX      ; 00602696 | g_DllFileNameW
     MOV EAX,0x1                         ; 0060269c

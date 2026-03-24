@@ -19,7 +19,7 @@ int __cdecl _findnext(HANDLE find_handle,LPWIN32_FIND_DATAA find_data)
     iVar2 = -1;
   }
   else {
-    iVar2 = findNextWithAttributes(find_handle,0x37,&_Stack_144);
+    iVar2 = func_0x00609d5c(find_handle,0x37,&_Stack_144);
     if (iVar2 == 0) {
       convertWindowsErrorToErrno(2);
       return -1;

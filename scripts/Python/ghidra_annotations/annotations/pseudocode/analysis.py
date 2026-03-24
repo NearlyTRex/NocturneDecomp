@@ -3673,10 +3673,15 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
     RE_ASM_SECTION = re.compile(r'^section\s')
     RE_MOVSD = re.compile(r'^MOVSD\s+ES:', re.IGNORECASE)
     RE_REP_MOVSD = re.compile(r'^MOVSD\.REP\s+ES:', re.IGNORECASE)
-    # Instructions unsafe to relocate into a cave
+    # Instructions unsafe to relocate into a cave for MOVSD patches.
+    # Mirrors can_borrow(text, for_movsd=True) in fix_movsd_caves.py:
+    #   - CALL/RET: modify ESP and use relative addressing
+    #   - All branches/loops: use relative addressing
+    #   - PUSH/POP/ADD ESP/SUB ESP: allowed (MOVSD uses ESI/EDI, not ESP)
     RE_UNSAFE = re.compile(
         r'^(CALL|RET|'
-        r'JMP|JZ|JNZ|JE|JNE|JL|JG|JLE|JGE|JA|JB|JAE|JBE|JC|JNC)\b',
+        r'JMP|JZ|JNZ|JE|JNE|JL|JG|JLE|JGE|JA|JB|JAE|JBE|JC|JNC|JS|JNS|'
+        r'JO|JNO|JP|JNP|JCXZ|JECXZ|LOOP|LOOPE|LOOPNE)\b',
         re.IGNORECASE)
     # REP MOVSD setup patterns
     RE_SUB_ESP_IMM = re.compile(r'^SUB\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', re.IGNORECASE)
@@ -3705,6 +3710,11 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
     rep_sites = []
 
     for asm_path in all_files:
+        # Skip CRT library functions — not game code
+        rel_path = os.path.relpath(asm_path, pseudocode_src_dir)
+        if rel_path.startswith(os.path.join('src', 'crt') + os.sep):
+            continue
+
         instructions = []
         with open(asm_path, 'r') as f:
             for line in f:
@@ -3891,36 +3901,58 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
     lines.append("Total MOVSD sites:         %d" % (len(consecutive_sites) + len(rep_sites)))
     lines.append("")
 
-    # --- Fixable consecutive sites by function ---
+    # --- Fixable consecutive sites by function, grouped by MOVSD count ---
     if consec_fixable:
-        by_func = OrderedDict()
+        # Group by run count first
+        by_run = {}
         for func_name, addr, run, site_size, cave_est, status, detail in consec_fixable:
-            if func_name not in by_func:
-                by_func[func_name] = []
-            by_func[func_name].append((addr, run, site_size, cave_est))
+            if run not in by_run:
+                by_run[run] = {}
+            if func_name not in by_run[run]:
+                by_run[run][func_name] = []
+            by_run[run][func_name].append((addr, site_size, cave_est))
 
-        lines.append("-" * 100)
-        lines.append("FIXABLE CONSECUTIVE MOVSD SITES (by function, sorted by site count)")
-        lines.append("-" * 100)
-        for func_name, sites in sorted(by_func.items(),
-                                        key=lambda x: len(x[1]), reverse=True):
-            cave_total = sum(c for _, _, _, c in sites)
-            lines.append("  %-60s  %2d sites  ~%d bytes" % (
-                func_name[:60], len(sites), cave_total))
-            for addr, run, site_size, cave_est in sites:
-                lines.append("    0x%08x  %dx MOVSD (%d bytes copy, %d bytes borrowable)" % (
-                    addr, run, run * 4, site_size))
-        lines.append("")
+        for run in sorted(by_run.keys(), reverse=True):
+            funcs = by_run[run]
+            total_sites = sum(len(s) for s in funcs.values())
+            lines.append("-" * 100)
+            lines.append("FIXABLE %dx MOVSD SITES (%d bytes copy, %d sites)" % (
+                run, run * 4, total_sites))
+            lines.append("-" * 100)
+            for func_name, sites in sorted(funcs.items(),
+                                            key=lambda x: len(x[1]), reverse=True):
+                cave_total = sum(c for _, _, c in sites)
+                lines.append("  %-70s  %2d sites  ~%d bytes" % (
+                    func_name, len(sites), cave_total))
+                for addr, site_size, cave_est in sites:
+                    lines.append("    0x%08x  %dx MOVSD (%d bytes copy, %d bytes borrowable)" % (
+                        addr, run, run * 4, site_size))
+            lines.append("")
 
-    # --- Unfixable consecutive sites ---
+    # --- Unfixable consecutive sites by function, grouped by MOVSD count ---
     if consec_unfixable:
-        lines.append("-" * 100)
-        lines.append("UNFIXABLE CONSECUTIVE MOVSD SITES")
-        lines.append("-" * 100)
+        by_run = {}
         for func_name, addr, run, site_size, cave_est, status, reason in consec_unfixable:
-            lines.append("  0x%08x  %dx MOVSD  %-45s  %s" % (
-                addr, run, func_name[:45], reason))
-        lines.append("")
+            if run not in by_run:
+                by_run[run] = {}
+            if func_name not in by_run[run]:
+                by_run[run][func_name] = []
+            by_run[run][func_name].append((addr, site_size, reason))
+
+        for run in sorted(by_run.keys(), reverse=True):
+            funcs = by_run[run]
+            total_sites = sum(len(s) for s in funcs.values())
+            lines.append("-" * 100)
+            lines.append("UNFIXABLE %dx MOVSD SITES (%d bytes copy, %d sites)" % (
+                run, run * 4, total_sites))
+            lines.append("-" * 100)
+            for func_name, sites in sorted(funcs.items(),
+                                            key=lambda x: len(x[1]), reverse=True):
+                lines.append("  %-70s  %2d sites" % (func_name, len(sites)))
+                for addr, site_size, reason in sites:
+                    lines.append("    0x%08x  %dx MOVSD (%d bytes copy)  %s" % (
+                        addr, run, run * 4, reason))
+            lines.append("")
 
     # --- REP MOVSD general sites by function ---
     if rep_general:
@@ -3935,7 +3967,7 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
         lines.append("-" * 100)
         for func_name, sites in sorted(by_func.items(),
                                         key=lambda x: len(x[1]), reverse=True):
-            lines.append("  %-60s  %2d sites" % (func_name[:60], len(sites)))
+            lines.append("  %-70s  %2d sites" % (func_name, len(sites)))
             for addr, dword_count, copy_bytes in sites:
                 if dword_count > 0:
                     lines.append("    0x%08x  REP MOVSD %d dwords (%d bytes)" % (
@@ -3957,7 +3989,7 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
         lines.append("-" * 100)
         for func_name, sites in sorted(by_func.items(),
                                         key=lambda x: len(x[1]), reverse=True):
-            lines.append("  %-60s  %2d sites" % (func_name[:60], len(sites)))
+            lines.append("  %-70s  %2d sites" % (func_name, len(sites)))
             for addr, dword_count, copy_bytes in sites:
                 if dword_count > 0:
                     lines.append("    0x%08x  REP MOVSD %d dwords (%d bytes)" % (

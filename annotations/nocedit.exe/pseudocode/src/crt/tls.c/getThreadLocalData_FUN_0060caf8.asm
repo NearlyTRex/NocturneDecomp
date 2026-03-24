@@ -4,9 +4,6 @@
 ; void * __watcallRegister crt_tls_c_getThreadLocalData_FUN_0060caf8(void)
 ;
 ;
-; XREF[1]:
-;   crt_tls.c_get_thread_local_data_FUN_0060a1fc at 0060a228
-;
 ; Referenced Globals:
 ;   GET_CURRENT_THREAD_ID_FUNC* g_GetCurrentThreadIdFunc = 00211e84
 ;   TLS_SET_VALUE_FUNC* g_TlsSetValueFunc = 0021226c

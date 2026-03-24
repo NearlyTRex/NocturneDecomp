@@ -48,11 +48,10 @@ section .text
         ;   XREF to: 0050d970 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFixed_FUN_0050d970(CVector3i * input_vector, CVector3i * output_vector)
     LEA ESI,[ESP + 0x10]                ; 0040537f
     ADD ESP,0x4                         ; 00405383
-    MOVSD ES:EDI,ESI                    ; 00405386
-    MOVSD ES:EDI,ESI                    ; 00405387
-    MOVSD ES:EDI,ESI                    ; 00405388
-    LEA ESI,[EBX + 0x18]                ; 00405389
+    JMP 0x00608ce0                      ; 00405386
+        ;   XREF to: 00608ce0 (UNCONDITIONAL_JUMP)  ; LAB_00608ce0
     LEA EAX,[EBX + 0x8]                 ; 0040538c
+        ;   Label: LAB_0040538c
     PUSH EAX                            ; 0040538f
     CALL engine_3d.c_isVisiblePlane_FUN_00403950 ; 00405390
         ;   XREF to: 00403950 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403950(SClipPlane * plane)
@@ -108,4 +107,16 @@ section .text
         ;   Label: LAB_00405415
     JMP 0x004053b8                      ; 0040541f
         ;   XREF to: 004053b8 (UNCONDITIONAL_JUMP)  ; LAB_004053b8
+    MOV ECX,dword ptr [ESI]             ; 00608ce0
+        ;   Label: LAB_00608ce0
+    MOV dword ptr [EDI],ECX             ; 00608ce2
+    MOV ECX,dword ptr [ESI + 0x4]       ; 00608ce4
+    MOV dword ptr [EDI + 0x4],ECX       ; 00608ce7
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00608cea
+    MOV dword ptr [EDI + 0x8],ECX       ; 00608ced
+    ADD ESI,0xc                         ; 00608cf0
+    ADD EDI,0xc                         ; 00608cf3
+    LEA ESI,[EBX + 0x18]                ; 00608cf6
+    JMP 0x0040538c                      ; 00608cf9
+        ;   XREF to: 0040538c (UNCONDITIONAL_JUMP)  ; LAB_0040538c
 

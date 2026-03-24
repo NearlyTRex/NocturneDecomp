@@ -205,7 +205,7 @@ extern int INT_03f9b1f0;
 extern int INT_03f9b210;
 extern int g_EmergencyExitFlag;
 extern int g_EnvironInitialized;
-extern int INT_03f9bfd4;
+extern int DAT_03F9BFD4;
 extern int g_MultibyteLocaleActive;
 extern int g_BufferedCharacter;
 extern int g_BufferedVirtualKey;

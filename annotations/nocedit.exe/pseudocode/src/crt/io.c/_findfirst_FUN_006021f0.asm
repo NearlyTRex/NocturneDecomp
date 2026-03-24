@@ -11,6 +11,7 @@
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc2d4
 ;
 ; Referenced Globals:
+;   undefined4 SUB_00609d5c
 ;   FIND_CLOSE_FUNC* g_FindCloseFunc = 00211d78
 ;   FIND_FIRST_FILE_A_FUNC* g_FindFirstFileAFunc = 00211d84
 ;
@@ -18,7 +19,6 @@
 ;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_convertWindowsErrorToErrno_FUN_00608390
 ;   crt_io.c_convertFileInfo_FUN_00602264
-;   crt_io.c_findNextWithAttributes_FUN_00609d5c
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     PUSH EAX                            ; 00602219
     PUSH 0x37                           ; 0060221a
     PUSH EBX                            ; 0060221c
-    CALL crt_io.c_findNextWithAttributes_FUN_00609d5c ; 0060221d
-        ;   XREF to: 00609d5c (UNCONDITIONAL_CALL)  ; int crt_io.c_findNextWithAttributes_FUN_00609d5c(HANDLE hFindFile, DWORD dwAttributeMask, LPWIN32_FIND_DATAA lpFindFileData)
+    CALL 0x00609d5c                     ; 0060221d
+        ;   XREF to: 00609d5c (UNCONDITIONAL_CALL)  ; SUB_00609d5c
     ADD ESP,0xc                         ; 00602222
     TEST EAX,EAX                        ; 00602225
     JNZ 0x00602242                      ; 00602227

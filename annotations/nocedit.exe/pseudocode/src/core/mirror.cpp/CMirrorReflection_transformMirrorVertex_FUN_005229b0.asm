@@ -80,13 +80,24 @@ section .text
     FLD float ptr [EAX + 0x8]           ; 00522a37
     FMUL float ptr [0x006616e0]         ; 00522a3a | g_MirrorProjectionScale
     FISTP dword ptr [EBX + 0x8]         ; 00522a40
-    MOVSD ES:EDI,ESI                    ; 00522a43
-    MOVSD ES:EDI,ESI                    ; 00522a44
-    MOVSD ES:EDI,ESI                    ; 00522a45
-    MOV EAX,EBP                         ; 00522a46
+    JMP 0x0061088b                      ; 00522a43
+        ;   XREF to: 0061088b (UNCONDITIONAL_JUMP)  ; LAB_0061088b
     ADD ESP,0x30                        ; 00522a48
+        ;   Label: LAB_00522a48
     POP EBP                             ; 00522a4b
     POP EDI                             ; 00522a4c
     POP EBX                             ; 00522a4d
     RET                                 ; 00522a4e
+    MOV ECX,dword ptr [ESI]             ; 0061088b
+        ;   Label: LAB_0061088b
+    MOV dword ptr [EDI],ECX             ; 0061088d
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0061088f
+    MOV dword ptr [EDI + 0x4],ECX       ; 00610892
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00610895
+    MOV dword ptr [EDI + 0x8],ECX       ; 00610898
+    ADD ESI,0xc                         ; 0061089b
+    ADD EDI,0xc                         ; 0061089e
+    MOV EAX,EBP                         ; 006108a1
+    JMP 0x00522a48                      ; 006108a3
+        ;   XREF to: 00522a48 (UNCONDITIONAL_JUMP)  ; LAB_00522a48
 

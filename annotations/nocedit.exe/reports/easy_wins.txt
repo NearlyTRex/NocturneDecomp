@@ -68,7 +68,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/particle.cpp (1 remaining of 6)
     - core_particle.cpp_CParticle_process_FUN_00545760
-      Suspects: stack_alignment_array, unknown_field, pointer_cast, pointer_cast, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field
+      Suspects: warning_unmapped_variable, extra_output, stack_alignment_array, pointer_cast, pointer_cast, extra_output, extra_output
 
   core/conveyor.cpp (1 remaining of 17)
     - core_conveyor.cpp_CConveyor_setup_FUN_00441d60
@@ -406,6 +406,25 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_console.cpp_CConsole_printf_FUN_00441890                        ( 43 lines)
     core_morph.cpp_CMorph_previewMorph_FUN_0052ca90                        ( 44 lines)
 
+  [param_count_too_many] - 17 functions
+    engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930                   (  6 lines)
+    engine_texture.cpp_updateTextureWithPalette_FUN_005dd900               (  7 lines)
+    engine_dosio.c_changeFileExtension_FUN_00482050                        (  9 lines)
+    engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 (  9 lines)
+    engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0 (  9 lines)
+    core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0          ( 15 lines)
+    core_xform.cpp_negateFirstComponent_FUN_005f75e0                       ( 17 lines)
+    core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0                           ( 19 lines)
+    support_trisock.cpp_buildSockaddrIn_FUN_005e19d0                       ( 20 lines)
+    core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0                           ( 27 lines)
+    core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10                          ( 32 lines)
+    core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370      ( 33 lines)
+    engine_matrix.c_transformWorldToView_FUN_0050cc40                      ( 37 lines)
+    core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090    ( 38 lines)
+    core_set.cpp_transformToWorldSpace_FUN_0056e890                        ( 38 lines)
+    engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590                    ( 42 lines)
+    core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70       ( 44 lines)
+
   [warning_type_propagation] - 16 functions
     core_zombie.cpp_CZombie_canPickupWithHand_FUN_005fbda0                 ( 11 lines)
     core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20             ( 22 lines)
@@ -424,23 +443,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_anvil.cpp_CAnvil_process_FUN_00411d90                             ( 46 lines)
     core_mission.cpp_CDemonMission_process_FUN_00524250                    ( 46 lines)
 
-  [param_count_too_many] - 15 functions
-    engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930                   (  6 lines)
-    engine_texture.cpp_updateTextureWithPalette_FUN_005dd900               (  7 lines)
-    engine_dosio.c_changeFileExtension_FUN_00482050                        (  9 lines)
-    core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0          ( 15 lines)
-    core_xform.cpp_negateFirstComponent_FUN_005f75e0                       ( 17 lines)
-    core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0                           ( 19 lines)
-    support_trisock.cpp_buildSockaddrIn_FUN_005e19d0                       ( 20 lines)
-    core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0                           ( 27 lines)
-    core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10                          ( 32 lines)
-    core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370      ( 33 lines)
-    engine_matrix.c_transformWorldToView_FUN_0050cc40                      ( 37 lines)
-    core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090    ( 38 lines)
-    core_set.cpp_transformToWorldSpace_FUN_0056e890                        ( 38 lines)
-    engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590                    ( 42 lines)
-    core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70       ( 44 lines)
-
   [unnamed_param] - 9 functions
     core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260               (  8 lines)
     core_actor.cpp_CActorPropertyList_addGroundType_FUN_0040e300           (  9 lines)
@@ -451,6 +453,17 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_actor.cpp_CActorPropertyList_addRuleList_FUN_0040e5a0             ( 26 lines)
     core_actor.cpp_CActorPropertyList_addClothList_FUN_0040e500            ( 27 lines)
     core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0                 ( 31 lines)
+
+  [stack_alignment_array] - 9 functions
+    core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700                  ( 15 lines)
+    shape_design.c_applyVertexCentering_FUN_004680f0                       ( 30 lines)
+    engine_3d.c_renderPolygonPerspectiveNormalized_FUN_004055b0            ( 34 lines)
+    engine_3d.c_renderPolygonUVTextureNormalized_FUN_00405430              ( 34 lines)
+    engine_3d.c_renderPolygonUVTextureEnable_FUN_00405350                  ( 34 lines)
+    core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0             ( 35 lines)
+    core_conveyor.cpp_CConveyor_setup_FUN_00441d60                         ( 38 lines)
+    core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0 ( 40 lines)
+    core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750 ( 43 lines)
 
   [warning_unreachable] - 8 functions
     core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880             ( 20 lines)
@@ -483,12 +496,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690                ( 17 lines)
     core_dcube.cpp_CDemonCube_freeMemory_FUN_004569b0                      ( 32 lines)
     shape_meshlod.cpp_CLodMesh_free_FUN_00515970                           ( 46 lines)
-
-  [stack_alignment_array] - 4 functions
-    core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700                  ( 15 lines)
-    core_conveyor.cpp_CConveyor_setup_FUN_00441d60                         ( 38 lines)
-    core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0 ( 40 lines)
-    core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750 ( 43 lines)
 
   [special_cpu_detection] - 3 functions
     core_mmx.c_detectMMXSupport_FUN_00524ff9                               (  7 lines)

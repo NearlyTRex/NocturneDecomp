@@ -1,6 +1,6 @@
 // Name: core_path.cpp_CPathMap_findPathToDestination_FUN_00547320
 // Address: 00547320
-// Address Range: [[00547320, 00547bfe]]
+// Address Range: [[00547320, 00547bfe] [0061082c, 00610849]]
 // Convention: __cdecl
 // Signature: int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)
 
@@ -17,9 +17,6 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *
   float fVar4;
   uint uVar5;
   uint uVar6;
-  uint *puVar7;
-  byte bVar8;
-  float afStackY_1040 [963];
   CVector3f *in_direction_vector;
   CVector3f local_118;
   CVector3f local_10c;
@@ -53,14 +50,11 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *
   uint local_18;
   int local_14;
   
-  bVar8 = 0;
   core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
             (&g_CDemonRaytraceInstance,dest_position,&local_58);
-  puVar7 = (uint *)((int)this_ptr + (uint)bVar8 * -8 + 0x1c);
   (this_ptr->dest_voxel_coords).x = local_58.x;
-  *puVar7 = *(uint *)((int)&local_58 + (uint)bVar8 * -8 + 4);
-  puVar7[(uint)bVar8 * -2 + 1] =
-       *(uint *)((int)&local_58 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+  (this_ptr->dest_voxel_coords).y = local_58.y;
+  (this_ptr->dest_voxel_coords).z = local_58.z;
   local_a0 = 0;
   local_9c = 0;
   local_98 = 0;

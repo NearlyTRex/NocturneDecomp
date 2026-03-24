@@ -5,20 +5,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 52,
-    "complexity_score": 66,
+    "assembly_lines": 63,
+    "complexity_score": 51,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_many",
-      "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 73
+    "total_lines": 84
   },
   "cross_references": [
     {
@@ -46,6 +45,10 @@
       [
         "0050d970",
         "0050d9e5"
+      ],
+      [
+        "00608c6b",
+        "00608c87"
       ]
     ],
     "convention": "__stack_esi",
@@ -103,35 +106,36 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.08,
-    "instruction_count": 50,
+    "avg_pcode_per_instr": 4.4035087719298245,
+    "instruction_count": 57,
     "opcode_distribution": {
+      "BRANCH": 2,
       "CALL": 1,
-      "COPY": 46,
+      "COPY": 43,
       "INT_ADD": 24,
-      "INT_AND": 16,
-      "INT_CARRY": 7,
-      "INT_EQUAL": 16,
+      "INT_AND": 20,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 20,
       "INT_LEFT": 3,
       "INT_LESS": 1,
-      "INT_MULT": 12,
+      "INT_MULT": 6,
       "INT_NOTEQUAL": 6,
       "INT_OR": 3,
       "INT_SBORROW": 1,
-      "INT_SCARRY": 7,
+      "INT_SCARRY": 9,
       "INT_SDIV": 3,
       "INT_SEXT": 21,
-      "INT_SLESS": 8,
+      "INT_SLESS": 10,
       "INT_SREM": 3,
-      "INT_SUB": 12,
-      "INT_ZEXT": 12,
+      "INT_SUB": 6,
+      "INT_ZEXT": 6,
       "LOAD": 14,
-      "POPCOUNT": 8,
+      "POPCOUNT": 10,
       "RETURN": 1,
       "STORE": 11,
       "SUBPIECE": 18
     },
-    "pcode_op_count": 254
+    "pcode_op_count": 251
   },
   "stack_frame": {
     "frame_size": 4104,
@@ -197,19 +201,11 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 8,
+      "line": 10,
       "match": "aiStackY_1000",
       "severity": "moderate",
       "text": "int aiStackY_1000 [1017];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)((int)output_vector + (uint)bVar3 * -8 + 4);",
-      "type": "pointer_cast"
     },
     {
       "call_site_count": 3,

@@ -7,9 +7,7 @@
 ; ulong            Stack[0x4]:4   count
 ; ulong            Stack[0x8]:4   size
 ;
-; XREF[4]:
-;   crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c at 0060a24e
-;   crt_sync.c_allocate_critical_section_FUN_00609f24 at 00609f54
+; XREF[2]:
 ;   crt_tls.c_getThreadLocalData_FUN_0060caf8 at 0060cb57
 ;   crt_tls.c_register_thread_data_FUN_0060cbd0 at 0060cbe5
 ;

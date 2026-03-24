@@ -6,18 +6,18 @@
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr
 ;
-; XREF[20]:
+; XREF[17]:
 ;   crt_env.c_findEnvVar_FUN_0060f1f0 at 0060f27d
 ;   crt_env.c_putenv_internal_FUN_0060ee80 at 0060ef40
 ;   crt_iostream.cpp_freeBuffer_FUN_0060d7a0 at 0060d7a5
-;   crt_startup.c_GetModuleFileNameCompat_FUN_0060a560 at 0060a5ba
 ;   crt_stdio.c__fclose_FUN_00601fd0 at 00602055
 ;   crt_stdlib.c__fullpath_FUN_00601140 at 006011b1
-;   crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8 at 0060a310
 ;   crt_tls.c_register_thread_data_FUN_0060cbd0 at 0060cc01
 ;   crt_tls.c_unregister_thread_data_FUN_0060cc3c at 0060cc67
-;   crt_unknown.c_DeleteCritcalSectionsMaybe_FUN_00609ff4 at 0060a023
-;   ... and 10 more
+;   crt_unknown.c_FUN_0060ccb4 at 0060cccd
+;   crt_unknown.c_FUN_0060fe94 at 0060ff26
+;   shape_memdbg.cpp_debugFree_FUN_0050f460 at 0050f4f1
+;   ... and 7 more
 ;
 ; Called Functions:
 ;   crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0

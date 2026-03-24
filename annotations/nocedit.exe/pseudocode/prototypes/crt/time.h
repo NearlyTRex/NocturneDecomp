@@ -67,14 +67,6 @@ int __cdecl is::leap_year(int year);
 // Address: 006079b4
 int __cdecl determine::dst_status(_tm *timeptr);
 
-// Original: crt_time.c_filetime_to_dos_datetime_FUN_00609cb0
-// Address: 00609cb0
-void __cdecl filetime::to_dos_datetime(FILETIME *filetime,WORD *dos_date,WORD *dos_time);
-
-// Original: crt_time.c_filetime_to_time_t_FUN_00609da0
-// Address: 00609da0
-time_t __cdecl filetime::to_time_t(FILETIME *filetime);
-
 // Original: crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0
 // Address: 0060c1e0
 time_t __cdecl dos::datetime_to_time_t(WORD dos_date,WORD dos_time);

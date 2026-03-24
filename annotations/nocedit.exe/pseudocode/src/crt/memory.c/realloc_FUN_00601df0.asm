@@ -7,9 +7,8 @@
 ; void *           Stack[0x4]:4   ptr
 ; ulong            Stack[0x8]:4   new_size
 ;
-; XREF[13]:
+; XREF[12]:
 ;   crt_env.c_updateEnvironTable_FUN_0060f04c at 0060f182
-;   crt_sync.c_allocate_critical_section_FUN_00609f24 at 00609f82
 ;   crt_tls.c_getThreadLocalData_FUN_0060caf8 at 0060cb2f
 ;   crt_unknown.c_FUN_0060fcf4 at 0060fe29
 ;   shape_memdbg.cpp_debugRealloc_FUN_0050f540 at 0050f5ec
@@ -18,7 +17,8 @@
 ;   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410 at 005d243c
 ;   shape_superopt.cpp_CObj_addVertices_FUN_005d2580 at 005d259d
 ;   shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50 at 005d2f8d
-;   ... and 3 more
+;   shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0 at 005d46b4
+;   ... and 2 more
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc__FUN_00601e08

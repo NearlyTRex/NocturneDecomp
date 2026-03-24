@@ -32,7 +32,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CVector3i g_BillboardCameraRight
 ;   undefined4 g_BillboardCameraRight.y
-;   ... and 13 more
+;   ... and 12 more
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
@@ -79,11 +79,10 @@ section .text
         ;   XREF to: 0048c7e0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x54]                ; 004c03a0
     ADD ESP,0x4                         ; 004c03a4
-    MOVSD ES:EDI,ESI                    ; 004c03a7 | g_BillboardCameraRight
-    MOVSD ES:EDI,ESI                    ; 004c03a8 | g_BillboardCameraRight.y
-    MOVSD ES:EDI,ESI                    ; 004c03a9 | g_BillboardCameraRight.z
-    MOV ESI,dword ptr [0x00823a74]      ; 004c03aa | g_CurrentSceneCamera
+    JMP 0x006108e2                      ; 004c03a7
+        ;   XREF to: 006108e2 (UNCONDITIONAL_JUMP)  ; LAB_006108e2
     MOV ECX,0xa                         ; 004c03b0
+        ;   Label: LAB_004c03b0
     XOR EDI,EDI                         ; 004c03b5
     LEA ESI,[ESI + 0x10]                ; 004c03b7
     MOV dword ptr [0x02d12db8],EDI      ; 004c03ba | g_BillboardCameraRight.y
@@ -119,4 +118,16 @@ section .text
     POP ESI                             ; 004c041a
     POP EBX                             ; 004c041b
     RET                                 ; 004c041c
+    MOV ECX,dword ptr [ESI]             ; 006108e2
+        ;   Label: LAB_006108e2
+    MOV dword ptr [EDI],ECX             ; 006108e4
+    MOV ECX,dword ptr [ESI + 0x4]       ; 006108e6
+    MOV dword ptr [EDI + 0x4],ECX       ; 006108e9
+    MOV ECX,dword ptr [ESI + 0x8]       ; 006108ec
+    MOV dword ptr [EDI + 0x8],ECX       ; 006108ef
+    ADD ESI,0xc                         ; 006108f2
+    ADD EDI,0xc                         ; 006108f5
+    MOV ESI,dword ptr [0x00823a74]      ; 006108f8 | g_CurrentSceneCamera
+    JMP 0x004c03b0                      ; 006108fe
+        ;   XREF to: 004c03b0 (UNCONDITIONAL_JUMP)  ; LAB_004c03b0
 

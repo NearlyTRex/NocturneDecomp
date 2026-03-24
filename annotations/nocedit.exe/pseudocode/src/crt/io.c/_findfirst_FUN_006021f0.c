@@ -18,7 +18,7 @@ HANDLE __cdecl _findfirst(char *filespec,LPWIN32_FIND_DATAA find_data)
     __set_errno();
   }
   else {
-    iVar1 = findNextWithAttributes(hFindFile,0x37,&_Stack_144);
+    iVar1 = func_0x00609d5c(hFindFile,0x37,&_Stack_144);
     if (iVar1 == 0) {
       (*g_FindCloseFunc)(hFindFile);
       convertWindowsErrorToErrno(2);

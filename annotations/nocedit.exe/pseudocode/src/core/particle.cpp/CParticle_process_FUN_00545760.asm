@@ -32,7 +32,6 @@
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
-;   core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
 ;
 ; *****************************************************************************
@@ -107,12 +106,8 @@ section .text
     PUSH EAX                            ; 0054582a
     LEA EDI,[ESP + 0x40]                ; 0054582b
     LEA ESI,[ESP + 0x7c]                ; 0054582f
-    PUSH 0x3277d14                      ; 00545833 | g_CDemonRaytraceInstance
-    MOVSD ES:EDI,ESI                    ; 00545838
-    MOVSD ES:EDI,ESI                    ; 00545839
-    MOVSD ES:EDI,ESI                    ; 0054583a
-    CALL core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970 ; 0054583b
-        ;   XREF to: 00499970 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970(CDemonRaytrace * this_ptr, CVector3i * voxel_coords)
+    JMP 0x0061084a                      ; 00545833
+        ;   XREF to: 0061084a (UNCONDITIONAL_JUMP)  ; LAB_0061084a
     ADD ESP,0x8                         ; 00545840
     MOV dword ptr [EBX + 0x20],EAX      ; 00545843
     TEST EAX,EAX                        ; 00545846
@@ -307,4 +302,16 @@ section .text
     POP ESI                             ; 00545a7d
     POP EBX                             ; 00545a7e
     RET                                 ; 00545a7f
+    PUSH 0x3277d14                      ; 0061084a
+        ;   Label: LAB_0061084a
+    MOV ECX,dword ptr [ESI]             ; 0061084f
+    MOV dword ptr [EDI],ECX             ; 00610851
+    MOV ECX,dword ptr [ESI + 0x4]       ; 00610853
+    MOV dword ptr [EDI + 0x4],ECX       ; 00610856
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00610859
+    MOV dword ptr [EDI + 0x8],ECX       ; 0061085c
+    ADD ESI,0xc                         ; 0061085f
+    ADD EDI,0xc                         ; 00610862
+    JMP 0x0054583c                      ; 00610865
+        ;   XREF to: 0054583c (UNCONDITIONAL_JUMP)  ; LAB_0054583c
 

@@ -12,6 +12,7 @@
 ;   crt_io.c_getFileStat_FUN_00600c18 at 00600c18
 ;
 ; Referenced Globals:
+;   undefined4 CAVE_cave_00609f20
 ;   FIND_CLOSE_FUNC* g_FindCloseFunc = 00211d78
 ;   FIND_FIRST_FILE_A_FUNC* g_FindFirstFileAFunc = 00211d84
 ;   TerminatedCString s_anon_0065906c
@@ -29,7 +30,6 @@
 ;   crt_string.c_mbtowc_next_FUN_00605a70
 ;   crt_string.c_strpbrk_FUN_0060c190
 ;   crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0
-;   crt_time.c_filetime_to_dos_datetime_FUN_00609cb0
 ;   crt_watcom.c_getcwd_FUN_00608d20
 ;   FindClose
 ;
@@ -220,8 +220,8 @@ section .text
     PUSH EAX                            ; 00608012
     LEA EAX,[ESP + 0x1c]                ; 00608013
     PUSH EAX                            ; 00608017
-    CALL crt_time.c_filetime_to_dos_datetime_FUN_00609cb0 ; 00608018
-        ;   XREF to: 00609cb0 (UNCONDITIONAL_CALL)  ; void crt_time.c_filetime_to_dos_datetime_FUN_00609cb0(FILETIME * filetime, WORD * dos_date, WORD * dos_time)
+    CALL 0x00609cb0                     ; 00608018
+        ;   XREF to: 00609cb0 (UNCONDITIONAL_CALL)  ; CAVE_cave_00609f20
     ADD ESP,0xc                         ; 0060801d
     XOR EAX,EAX                         ; 00608020
     MOV AX,word ptr [ESP + 0x354]       ; 00608022
@@ -239,8 +239,8 @@ section .text
     PUSH EAX                            ; 00608050
     LEA EAX,[ESP + 0xc]                 ; 00608051
     PUSH EAX                            ; 00608055
-    CALL crt_time.c_filetime_to_dos_datetime_FUN_00609cb0 ; 00608056
-        ;   XREF to: 00609cb0 (UNCONDITIONAL_CALL)  ; void crt_time.c_filetime_to_dos_datetime_FUN_00609cb0(FILETIME * filetime, WORD * dos_date, WORD * dos_time)
+    CALL 0x00609cb0                     ; 00608056
+        ;   XREF to: 00609cb0 (UNCONDITIONAL_CALL)  ; CAVE_cave_00609f20
     ADD ESP,0xc                         ; 0060805b
     MOV EAX,dword ptr [ESP + 0x350]     ; 0060805e
     CMP AX,word ptr [ESP + 0x348]       ; 00608065
@@ -271,8 +271,8 @@ section .text
     PUSH EAX                            ; 006080b5
     LEA EAX,[ESP + 0x14]                ; 006080b6
     PUSH EAX                            ; 006080ba
-    CALL crt_time.c_filetime_to_dos_datetime_FUN_00609cb0 ; 006080bb
-        ;   XREF to: 00609cb0 (UNCONDITIONAL_CALL)  ; void crt_time.c_filetime_to_dos_datetime_FUN_00609cb0(FILETIME * filetime, WORD * dos_date, WORD * dos_time)
+    CALL 0x00609cb0                     ; 006080bb
+        ;   XREF to: 00609cb0 (UNCONDITIONAL_CALL)  ; CAVE_cave_00609f20
     ADD ESP,0xc                         ; 006080c0
     MOV EAX,dword ptr [ESP + 0x350]     ; 006080c3
     CMP AX,word ptr [ESP + 0x348]       ; 006080ca

@@ -43,11 +43,10 @@ section .text
         ;   XREF to: 0050cc40 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_transformWorldToView_FUN_0050cc40(CVector3i * input_coords, CVector3i * output_coords)
     LEA ESI,[ESP + 0x10]                ; 0050e5db
     ADD ESP,0x4                         ; 0050e5df
-    MOVSD ES:EDI,ESI                    ; 0050e5e2
-    MOVSD ES:EDI,ESI                    ; 0050e5e3
-    MOVSD ES:EDI,ESI                    ; 0050e5e4
-    MOV EBX,dword ptr [ESP + 0x8]       ; 0050e5e5
+    JMP 0x00608c4c                      ; 0050e5e2
+        ;   XREF to: 00608c4c (UNCONDITIONAL_JUMP)  ; LAB_00608c4c
     TEST EBX,EBX                        ; 0050e5e9
+        ;   Label: LAB_0050e5e9
     JLE 0x0050e628                      ; 0050e5eb
         ;   XREF to: 0050e628 (CONDITIONAL_JUMP)  ; LAB_0050e628
     MOV EAX,dword ptr [EBP + 0x14]      ; 0050e5ed
@@ -80,4 +79,16 @@ section .text
     POP ESI                             ; 0050e638
     POP EBX                             ; 0050e639
     RET                                 ; 0050e63a
+    MOV ECX,dword ptr [ESI]             ; 00608c4c
+        ;   Label: LAB_00608c4c
+    MOV dword ptr [EDI],ECX             ; 00608c4e
+    MOV ECX,dword ptr [ESI + 0x4]       ; 00608c50
+    MOV dword ptr [EDI + 0x4],ECX       ; 00608c53
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00608c56
+    MOV dword ptr [EDI + 0x8],ECX       ; 00608c59
+    ADD ESI,0xc                         ; 00608c5c
+    ADD EDI,0xc                         ; 00608c5f
+    MOV EBX,dword ptr [ESP + 0x8]       ; 00608c62
+    JMP 0x0050e5e9                      ; 00608c66
+        ;   XREF to: 0050e5e9 (UNCONDITIONAL_JUMP)  ; LAB_0050e5e9
 

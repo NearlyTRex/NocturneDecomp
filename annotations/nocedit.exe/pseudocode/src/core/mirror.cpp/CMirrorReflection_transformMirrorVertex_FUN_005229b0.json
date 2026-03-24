@@ -5,21 +5,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 60,
-    "complexity_score": 111,
+    "assembly_lines": 71,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 31,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many",
-      "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 91
+    "total_lines": 102
   },
   "cross_references": [
     {
@@ -35,6 +34,10 @@
       [
         "005229b0",
         "00522a4e"
+      ],
+      [
+        "0061088b",
+        "006108a7"
       ]
     ],
     "convention": "__stack2_esi",
@@ -83,34 +86,33 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.589285714285714,
-    "instruction_count": 56,
+    "avg_pcode_per_instr": 4.920634920634921,
+    "instruction_count": 63,
     "opcode_distribution": {
+      "BRANCH": 2,
       "CALL": 1,
       "CBRANCH": 1,
-      "COPY": 155,
+      "COPY": 152,
       "FLOAT2FLOAT": 12,
       "FLOAT_MULT": 6,
       "INT2FLOAT": 3,
       "INT_ADD": 32,
-      "INT_AND": 8,
-      "INT_CARRY": 2,
-      "INT_EQUAL": 8,
+      "INT_AND": 12,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 12,
       "INT_LESS": 2,
-      "INT_MULT": 6,
       "INT_SBORROW": 2,
-      "INT_SCARRY": 2,
-      "INT_SLESS": 4,
-      "INT_SUB": 15,
-      "INT_ZEXT": 6,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 6,
+      "INT_SUB": 9,
       "LOAD": 18,
-      "POPCOUNT": 4,
+      "POPCOUNT": 6,
       "RETURN": 1,
       "ROUND": 3,
       "STORE": 19,
       "TRUNC": 3
     },
-    "pcode_op_count": 313
+    "pcode_op_count": 310
   },
   "stack_frame": {
     "frame_size": 4120,
@@ -187,7 +189,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 8,
+      "line": 10,
       "match": "afStackY_100c",
       "severity": "moderate",
       "text": "float afStackY_100c [1009];",
@@ -195,34 +197,26 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_20 = (float)(int)ROUND(local_30.y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_1c = (int)ROUND(local_30.z * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "pfVar2 = (float *)((int)output_vertex + (uint)bVar3 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
       "line": 30,
       "match": "ROUND",
       "severity": "mild",
       "text": "output_vertex->x = (float)(int)ROUND(local_30.x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "output_vertex->y = (float)(int)ROUND(fVar1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "output_vertex->z = (float)(int)ROUND(fVar2);",
       "type": "decompiler_intrinsic"
     },
     {

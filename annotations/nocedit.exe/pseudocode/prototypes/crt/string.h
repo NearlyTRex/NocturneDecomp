@@ -99,14 +99,6 @@ char * __cdecl parse::uint(char *str,int *result);
 // Address: 00608e50
 int __cdecl ::mbstrnicmp(char *str1,char *str2,SIZE_T count);
 
-// Original: crt_string.c_strdup_FUN_0060a610
-// Address: 0060a610
-char * __cdecl strdup(char *str);
-
-// Original: crt_string.c_wcsdup_FUN_0060a660
-// Address: 0060a660
-WCHAR * __watcallRegister wcsdup(WCHAR *str);
-
 // Original: crt_string.c_mbstring_termination_check_FUN_0060b630
 // Address: 0060b630
 int __watcallStack mbstring::termination_check(char *str);

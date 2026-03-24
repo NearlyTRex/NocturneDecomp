@@ -6,9 +6,6 @@
 ; Parameters:
 ; ThreadData *     Stack[0x4]:4   pThreadData
 ;
-; XREF[1]:
-;   crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c at 0060a26d
-;
 ; Referenced Globals:
 ;   GET_CURRENT_THREAD_ID_FUNC* g_GetCurrentThreadIdFunc = 00211e84
 ;

@@ -5,19 +5,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 132,
-    "complexity_score": 191,
+    "assembly_lines": 143,
+    "complexity_score": 168,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 71,
-    "suspect_count": 11,
+    "pseudocode_lines": 68,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 203
+    "total_lines": 211
   },
   "cross_references": [
     {
@@ -33,6 +33,10 @@
       [
         "00548390",
         "005484fa"
+      ],
+      [
+        "006107f0",
+        "0061080c"
       ]
     ],
     "convention": "__cdecl",
@@ -162,37 +166,36 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.0,
-    "instruction_count": 103,
+    "avg_pcode_per_instr": 4.654545454545454,
+    "instruction_count": 110,
     "opcode_distribution": {
       "BOOL_NEGATE": 4,
       "BOOL_OR": 1,
-      "BRANCH": 3,
+      "BRANCH": 5,
       "CALL": 4,
       "CBRANCH": 10,
-      "COPY": 92,
+      "COPY": 89,
       "INT_ADD": 48,
-      "INT_AND": 65,
-      "INT_CARRY": 10,
-      "INT_EQUAL": 65,
+      "INT_AND": 69,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 69,
       "INT_LESS": 10,
-      "INT_MULT": 10,
+      "INT_MULT": 4,
       "INT_NOTEQUAL": 5,
       "INT_OR": 1,
       "INT_SBORROW": 10,
-      "INT_SCARRY": 12,
+      "INT_SCARRY": 14,
       "INT_SEXT": 3,
-      "INT_SLESS": 32,
-      "INT_SUB": 33,
+      "INT_SLESS": 34,
+      "INT_SUB": 27,
       "INT_XOR": 8,
-      "INT_ZEXT": 6,
       "LOAD": 22,
-      "POPCOUNT": 32,
+      "POPCOUNT": 34,
       "RETURN": 1,
       "STORE": 26,
       "SUBPIECE": 2
     },
-    "pcode_op_count": 515
+    "pcode_op_count": 512
   },
   "stack_frame": {
     "frame_size": 4132,
@@ -248,7 +251,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 14,
       "match": "aiStackY_101c",
       "severity": "moderate",
       "text": "int aiStackY_101c [1015];",
@@ -264,26 +267,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 42,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "local_18[(uint)bVar6 * -2] = *(int *)((int)&local_34 + (uint)bVar6 * -8 + 4);",
+      "text": "*(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->x + iVar8)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 44,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&local_34 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->x + iVar3)) &&",
+      "text": "*(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->y + iVar8))) &&",
       "type": "pointer_cast"
     },
     {
@@ -291,7 +286,7 @@
       "line": 47,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->y + iVar3))) &&",
+      "text": "*(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->z + iVar8)))",
       "type": "pointer_cast"
     },
     {
@@ -299,20 +294,12 @@
       "line": 50,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->z + iVar3)))",
+      "text": "if (g_PathMapLRUCounters[iVar7] < *(int *)((int)g_PathMapLRUCounters + iVar4)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (g_PathMapLRUCounters[iVar6] < *(int *)((int)g_PathMapLRUCounters + iVar4)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 63,
+      "line": 60,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)g_PathMapLRUCounters + iVar1) < g_PathMapLRUCounters[iVar5]) {",
@@ -320,7 +307,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 61,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_PathMapLRUCounters + iVar1) = *(int *)((int)g_PathMapLRUCounters + iVar1) + 1;",
@@ -328,7 +315,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 61,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_PathMapLRUCounters + iVar1) = *(int *)((int)g_PathMapLRUCounters + iVar1) + 1;",

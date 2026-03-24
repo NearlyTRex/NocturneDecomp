@@ -32,12 +32,23 @@ section .text
     CALL engine_matrix.c_getCameraRotation_FUN_0050e2f0 ; 0048c7eb
         ;   XREF to: 0050e2f0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraRotation_FUN_0050e2f0(CVector3i * output)
     MOV ESI,ESP                         ; 0048c7f0
-    MOVSD ES:EDI,ESI                    ; 0048c7f2
-    MOVSD ES:EDI,ESI                    ; 0048c7f3
-    MOVSD ES:EDI,ESI                    ; 0048c7f4
-    MOV EAX,EBX                         ; 0048c7f5
+    JMP 0x00608c88                      ; 0048c7f2
+        ;   XREF to: 00608c88 (UNCONDITIONAL_JUMP)  ; LAB_00608c88
     ADD ESP,0xc                         ; 0048c7f7
+        ;   Label: LAB_0048c7f7
     POP EDI                             ; 0048c7fa
     POP EBX                             ; 0048c7fb
     RET                                 ; 0048c7fc
+    MOV ECX,dword ptr [ESI]             ; 00608c88
+        ;   Label: LAB_00608c88
+    MOV dword ptr [EDI],ECX             ; 00608c8a
+    MOV ECX,dword ptr [ESI + 0x4]       ; 00608c8c
+    MOV dword ptr [EDI + 0x4],ECX       ; 00608c8f
+    MOV ECX,dword ptr [ESI + 0x8]       ; 00608c92
+    MOV dword ptr [EDI + 0x8],ECX       ; 00608c95
+    ADD ESI,0xc                         ; 00608c98
+    ADD EDI,0xc                         ; 00608c9b
+    MOV EAX,EBX                         ; 00608c9e
+    JMP 0x0048c7f7                      ; 00608ca0
+        ;   XREF to: 0048c7f7 (UNCONDITIONAL_JUMP)  ; LAB_0048c7f7
 

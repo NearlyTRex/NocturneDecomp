@@ -7,9 +7,6 @@
 ; XREF[1]:
 ;   crt_string.c_mbstrncpy_core_FUN_0060b670 at 0060b70c
 ;
-; Referenced Globals:
-;   undefined4 SUB_00608cd1
-;
 ; Called Functions:
 ;   crt_stdio.c_reportStreamError_FUN_00606020
 ;
@@ -25,7 +22,7 @@ section .text
     PUSH EBX                            ; 0060d57e
     MOV ESI,0xffffffff                  ; 0060d57f
     CALL 0x00608cd1                     ; 0060d584
-        ;   XREF to: 00608cd1 (UNCONDITIONAL_CALL)  ; SUB_00608cd1
+        ;   XREF to: 00608cd1 (UNCONDITIONAL_CALL)  ; LAB_00608ccf+2
     ADD ESP,0x8                         ; 0060d589
     TEST EAX,EAX                        ; 0060d58c
     JZ 0x0060d5f7                       ; 0060d58e

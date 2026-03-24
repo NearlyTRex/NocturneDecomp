@@ -7,9 +7,6 @@
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ; CVector3i *      Stack[0x8]:4   voxel_coords
 ;
-; XREF[1]:
-;   core_particle.cpp_CParticle_process_FUN_00545760 at 0054583b
-;
 ; Referenced Globals:
 ;   uchar[8] g_VoxelYBitMasks
 ;

@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CRainDrop_render_FUN_004c6830
 // Address: 004c6830
-// Address Range: [[004c6830, 004c6bc3]]
+// Address Range: [[004c6830, 004c6bc3] [00610920, 00610941]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
 
@@ -14,7 +14,6 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   SRenderVertex *vertex_ptr_00;
   int iVar1;
   byte bVar2;
-  uint auStackY_1020 [984];
   SMRGLHeaderPrimitive SStack_a8;
   CVector3i local_80;
   CVector3i local_74;
@@ -29,7 +28,6 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   SRenderVertex *vertex_ptr;
   CVector3i *rotation;
   
-  bVar2 = 0;
   vertex_ptr_00 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   local_68.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
   local_68.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
@@ -44,14 +42,8 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
             (g_CDemonRendererPtr2,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
             (g_CDemonRendererPtr2,&local_20);
-  rotation = (CVector3i *)0x0;
-  local_38.x = local_20.x;
-  *(uint *)((int)&local_38 + (uint)bVar2 * -8 + 4) =
-       *(uint *)((int)&local_20 + (uint)bVar2 * -8 + 4);
-  *(uint *)((int)&local_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-       *(uint *)((int)&local_20 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
-            (g_CDemonRendererPtr2,&local_38,rotation);
+            (g_CDemonRendererPtr2,&local_38,(CVector3i *)0x0);
   local_50.x = (int)ROUND(256.0f * -0.125);
   local_50.y = (int)ROUND(256.0f * -0.125);
   local_50.z = (int)ROUND(256.0f * 0.0);

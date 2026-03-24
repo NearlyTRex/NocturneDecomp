@@ -12,13 +12,13 @@ void __cdecl initialize_runtime(HMODULE hModule,void *pThreadParam,int unused)
   char cVar1;
   WCHAR WVar2;
   DWORD DVar3;
-  LPSTR str;
-  LPWSTR str_00;
-  WCHAR *pWVar4;
-  char *pcVar5;
+  LPSTR pCVar4;
+  LPWSTR pWVar5;
+  WCHAR *pWVar6;
+  char *pcVar7;
   
   g_EmergencyExitFlag = (int)hModule;
-  g_CurrentThreadTlsBlock = crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(pThreadParam);
+  g_CurrentThreadTlsBlock = (void *)func_0x0060a23c(pThreadParam);
   if (g_CurrentThreadTlsBlock == (void *)0x0) {
     if (hModule == (HMODULE)0x0) {
       (*g_ExitProcessFunc)(1);
@@ -39,21 +39,21 @@ void __cdecl initialize_runtime(HMODULE hModule,void *pThreadParam,int unused)
     g_WindowsVersionCombined = g_WindowsVersionLow << 8 | g_WindowsVersionMid;
     (*g_GetModuleFileNameAFunc)((HMODULE)0x0,g_ExeFileNameBuffer_A,0x104);
     g_ExeFileNameA = g_ExeFileNameBuffer_A;
-    GetModuleFileNameCompat((HMODULE)0x0,g_ExeFileNameBuffer_W,0x208);
+    func_0x0060a560(0,g_ExeFileNameBuffer_W,0x208);
     g_ExeFileNameW = g_ExeFileNameBuffer_W;
-    str = (*g_GetCommandLineAFunc)();
-    g_CommandLineA = strdup(str);
+    pCVar4 = (*g_GetCommandLineAFunc)();
+    g_CommandLineA = (char *)func_0x0060a610(pCVar4);
     g_WinMainCmdShow = (DWORD)g_CommandLineA;
     if (*g_CommandLineA == '\"') {
       cVar1 = g_CommandLineA[1];
-      pcVar5 = g_CommandLineA;
-      while ((g_WinMainCmdShow = (DWORD)(pcVar5 + 1), cVar1 != '\"' &&
+      pcVar7 = g_CommandLineA;
+      while ((g_WinMainCmdShow = (DWORD)(pcVar7 + 1), cVar1 != '\"' &&
              (*(char *)g_WinMainCmdShow != '\0'))) {
-        cVar1 = pcVar5[2];
-        pcVar5 = (char *)g_WinMainCmdShow;
+        cVar1 = pcVar7[2];
+        pcVar7 = (char *)g_WinMainCmdShow;
       }
       if (*(char *)g_WinMainCmdShow != '\0') {
-        g_WinMainCmdShow = (DWORD)(pcVar5 + 2);
+        g_WinMainCmdShow = (DWORD)(pcVar7 + 2);
       }
     }
     else {
@@ -64,39 +64,38 @@ void __cdecl initialize_runtime(HMODULE hModule,void *pThreadParam,int unused)
     while ((g_CharacterClassificationTable[(byte)(*(char *)g_WinMainCmdShow + 1)] & 2) != 0) {
       g_WinMainCmdShow = g_WinMainCmdShow + 1;
     }
-    str_00 = (*g_GetCommandLineWFunc)();
-    if (str_00 == (LPWSTR)0x0) {
-      pcVar5 = g_EmptyStringBuffer;
+    pWVar5 = (*g_GetCommandLineWFunc)();
+    if (pWVar5 == (LPWSTR)0x0) {
+      pcVar7 = g_EmptyStringBuffer;
     }
     else {
-      g_CommandLineW = wcsdup(str_00);
-      pcVar5 = (char *)g_CommandLineW;
+      g_CommandLineW = (WCHAR *)func_0x0060a660(pWVar5);
+      pcVar7 = (char *)g_CommandLineW;
       if (*g_CommandLineW == L'\"') {
         WVar2 = g_CommandLineW[1];
-        pWVar4 = g_CommandLineW;
-        while ((pcVar5 = (char *)(pWVar4 + 1), WVar2 != L'\"' && (*(WCHAR *)pcVar5 != L'\0'))) {
-          WVar2 = pWVar4[2];
-          pWVar4 = (WCHAR *)pcVar5;
+        pWVar6 = g_CommandLineW;
+        while ((pcVar7 = (char *)(pWVar6 + 1), WVar2 != L'\"' && (*(WCHAR *)pcVar7 != L'\0'))) {
+          WVar2 = pWVar6[2];
+          pWVar6 = (WCHAR *)pcVar7;
         }
-        if (*(WCHAR *)pcVar5 != L'\0') {
-          pcVar5 = (char *)(pWVar4 + 2);
+        if (*(WCHAR *)pcVar7 != L'\0') {
+          pcVar7 = (char *)(pWVar6 + 2);
         }
       }
       else {
-        for (; ((g_CharacterClassificationTable[(byte)((char)*(WCHAR *)pcVar5 + 1)] & 2) == 0 &&
-               (*(WCHAR *)pcVar5 != L'\0')); pcVar5 = (char *)((int)pcVar5 + 2)) {
+        for (; ((g_CharacterClassificationTable[(byte)((char)*(WCHAR *)pcVar7 + 1)] & 2) == 0 &&
+               (*(WCHAR *)pcVar7 != L'\0')); pcVar7 = (char *)((int)pcVar7 + 2)) {
         }
       }
-      while ((g_CharacterClassificationTable[(byte)((char)*(WCHAR *)pcVar5 + 1)] & 2) != 0) {
-        pcVar5 = (char *)((int)pcVar5 + 2);
+      while ((g_CharacterClassificationTable[(byte)((char)*(WCHAR *)pcVar7 + 1)] & 2) != 0) {
+        pcVar7 = (char *)((int)pcVar7 + 2);
       }
     }
-    g_CommandLineArgsW = (WCHAR *)pcVar5;
+    g_CommandLineArgsW = (WCHAR *)pcVar7;
     if (hModule != (HMODULE)0x0) {
       (*g_GetModuleFileNameAFunc)((HMODULE)unused,g_DllFileNameBuffer_A,0x104);
       g_DllFileNameA = g_DllFileNameBuffer_A;
-      GetModuleFileNameCompat
-                ((HMODULE)unused,g_DllFileNameBuffer_W,0x208);
+      func_0x0060a560(unused,g_DllFileNameBuffer_W,0x208);
       g_DllFileNameW = g_DllFileNameBuffer_W;
     }
   }

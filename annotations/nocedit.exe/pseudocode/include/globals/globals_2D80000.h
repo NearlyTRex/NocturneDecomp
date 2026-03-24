@@ -84,7 +84,7 @@ extern int INT_02d832b8;
 extern int INT_02d832bc;
 extern int g_ParticleCameraRotation;
 extern int INT_02d83394;
-extern int INT_02d83398;
+extern int DAT_02D83398;
 extern int INT_02d8339c;
 extern int INT_02d833a0;
 extern int INT_02d833a4;

@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 20,
     "complexity_score": 26,
-    "cross_reference_count": 4,
+    "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -14,18 +14,6 @@
     "total_lines": 31
   },
   "cross_references": [
-    {
-      "addr": "0060a23c",
-      "from_addr": "0060a24e",
-      "name": "crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00609f24",
-      "from_addr": "00609f54",
-      "name": "crt_sync.c_allocate_critical_section_FUN_00609f24",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0060caf8",
       "from_addr": "0060cb57",
@@ -65,34 +53,12 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 4,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "0060cbe5",
         "call_type": "direct",
         "caller": "crt_tls.c_register_thread_data_FUN_0060cbd0",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "0060a24e",
-        "call_type": "direct",
-        "caller": "crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "00609f54",
-        "call_type": "direct",
-        "caller": "crt_sync.c_allocate_critical_section_FUN_00609f24",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

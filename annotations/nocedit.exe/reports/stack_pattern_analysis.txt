@@ -7,7 +7,7 @@ These patterns cause Ghidra to hallucinate parameters or misidentify locals.
 
 SUMMARY
 --------------------------------------------------
-Functions with stack patterns: 701 / 6968
+Functions with stack patterns: 701 / 6933
 
 Pattern type counts:
   stack_alignment                  533
@@ -115,7 +115,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 005e1be6: MOV EDI,ESP
 
   engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
-    File: engine/matrix.c, Suspects: 3
+    File: engine/matrix.c, Suspects: 2
     - [alt_frame_pointer] at 0050d9d4: MOV ESI,ESP
 
   engine_matrix.c_getCameraOrigin_FUN_0050e2c0
@@ -131,7 +131,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0050c536: AND ESP,0xfffffff8
 
   engine_matrix.c_projectToScreen_FUN_0050e5b0
-    File: engine/matrix.c, Suspects: 8
+    File: engine/matrix.c, Suspects: 4
     - [stack_alignment] at 0050e5b9: AND ESP,0xfffffff8
     - [alt_frame_pointer] at 0050e5c3: MOV EDI,ESP
 
@@ -237,7 +237,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00501f39: AND ESP,0xfffffff8
 
   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
-    File: engine/drender.cpp, Suspects: 4
+    File: engine/drender.cpp, Suspects: 1
     - [alt_frame_pointer] at 0048c767: MOV ESI,ESP
     - [alt_frame_pointer] at 0048c770: MOV ESI,ESP
 
@@ -247,7 +247,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0048c80e: MOV ESI,ESP
 
   engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
-    File: engine/drender.cpp, Suspects: 4
+    File: engine/drender.cpp, Suspects: 1
     - [alt_frame_pointer] at 0048c7e7: MOV ESI,ESP
     - [alt_frame_pointer] at 0048c7f0: MOV ESI,ESP
 
@@ -277,5 +277,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 7.6 suspects/function
+  With stack patterns:    avg 7.5 suspects/function
   Without stack patterns: avg 1.8 suspects/function

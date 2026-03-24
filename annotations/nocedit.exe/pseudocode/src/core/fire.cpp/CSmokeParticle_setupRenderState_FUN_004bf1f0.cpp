@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0
 // Address: 004bf1f0
-// Address Range: [[004bf1f0, 004bf2d2]]
+// Address Range: [[004bf1f0, 004bf2d2] [00610903, 0061091f]]
 // Convention: __cdecl
 // Signature: int __cdecl core_fire_cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0(CSmokeParticle *this_ptr)
 
@@ -40,10 +40,7 @@ int __cdecl core_fire_cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0(CSmokePar
   pCVar1 = engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
                      (g_CDemonRendererPtr2,&local_18);
   g_BillboardCameraRight.x = local_18.x;
-  *(uint *)((int)&g_BillboardCameraRight + (uint)bVar7 * -8 + 4) =
-       *(uint *)((int)&local_18 + (uint)bVar7 * -8 + 4);
-  *(uint *)((uint)bVar7 * -8 + 0x2d12dbc + (uint)bVar7 * -8) =
-       *(uint *)((int)&local_18 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+  g_BillboardCameraRight.z = local_18.z;
   g_BillboardCameraRight.y = 0;
   pCVar3 = &(g_CurrentSceneCamera->base).rotation_matrix;
   pfVar5 = local_40;

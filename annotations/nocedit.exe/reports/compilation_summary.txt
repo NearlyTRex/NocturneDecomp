@@ -5,15 +5,15 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6452
-Successful: 5909 (91.6%)
-Failed: 543
+Successful: 5908 (91.6%)
+Failed: 544
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                            991
+  other                            979
   format_error                     782
   incompatible_types               205
-  undeclared_identifier            134
+  undeclared_identifier            135
   syntax_error                      41
   missing_member                    26
   type_error                         9
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (991 errors)
+CATEGORY: other (979 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -222,11 +222,13 @@ CATEGORY: incompatible_types (205 errors)
   ... and 86 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (134 errors)
+CATEGORY: undeclared_identifier (135 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
     Line 24: use of undeclared identifier 'DAT_80000010'...
+  core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
+    Line 42: use of undeclared identifier 'INT_02d83398'...
   core_scat.cpp_CScat_process_FUN_005571f0
     Line 150: use of undeclared identifier 'SUB14'...
   core_script.cpp_CScript_step_FUN_0055a810
@@ -283,10 +285,8 @@ CATEGORY: undeclared_identifier (134 errors)
     Line 30: use of undeclared identifier 'code'...
   shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40
     Line 23: use of undeclared identifier 'code'...
-  shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0
-    Line 28: use of undeclared identifier 'code'...
 
-  ... and 46 more errors
+  ... and 47 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (41 errors)
@@ -413,8 +413,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.74
-Average suspects in failed compilations: 7.71
+Average suspects in successfully compiled functions: 1.73
+Average suspects in failed compilations: 7.68
 
-Functions that compile but have suspect patterns: 1451
+Functions that compile but have suspect patterns: 1450
 (These may have runtime issues even though syntax is valid)

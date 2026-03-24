@@ -1,6 +1,6 @@
 // Name: core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
 // Address: 004eb9d0
-// Address Range: [[004eb9d0, 004ebab2]]
+// Address Range: [[004eb9d0, 004ebab2] [006108a8, 006108c4]]
 // Convention: __cdecl
 // Signature: void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004eb9d0(CBloodParticle *this_ptr)
 
@@ -39,9 +39,7 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004eb9d0(CBloodPa
   engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
             (g_CDemonRendererPtr2,&local_18);
   g_ParticleCameraRotation = local_18.x;
-  (&INT_02d83394)[(uint)bVar5 * -2] = *(int *)((int)&local_18 + (uint)bVar5 * -8 + 4);
-  (&INT_02d83398)[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
-       *(int *)((int)&local_18 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  INT_02d83398 = local_18.z;
   INT_02d83394 = 0;
   pCVar2 = &(g_CurrentSceneCamera->base).rotation_matrix;
   pfVar5 = local_40;

@@ -9,12 +9,12 @@
 LPVOID __watcallRegister create_thread_local_data(void)
 
 {
-  BOOL BVar1;
+  int iVar1;
   LPVOID pvVar2;
   
   pvVar2 = (LPVOID)0x0;
-  BVar1 = initialize_thread_tls_data((void *)0x0);
-  if (BVar1 != 0) {
+  iVar1 = func_0x0060a2d8(0);
+  if (iVar1 != 0) {
     pvVar2 = (*g_TlsGetValueFunc)(g_TLSIndex);
   }
   if (pvVar2 == (LPVOID)0x0) {

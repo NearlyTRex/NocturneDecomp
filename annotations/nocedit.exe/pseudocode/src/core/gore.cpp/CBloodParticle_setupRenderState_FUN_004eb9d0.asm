@@ -33,7 +33,7 @@
 ;   undefined4 g_GoreQuadPrimitive.vertices[3]
 ;   int g_ParticleCameraRotation
 ;   int INT_02d83394
-;   ... and 4 more
+;   ... and 3 more
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
@@ -70,11 +70,10 @@ section .text
         ;   XREF to: 0048c7e0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x54]                ; 004eba36
     ADD ESP,0x4                         ; 004eba3a
-    MOVSD ES:EDI,ESI                    ; 004eba3d | g_ParticleCameraRotation
-    MOVSD ES:EDI,ESI                    ; 004eba3e | INT_02d83394
-    MOVSD ES:EDI,ESI                    ; 004eba3f | INT_02d83398
-    XOR ESI,ESI                         ; 004eba40
+    JMP 0x006108a8                      ; 004eba3d
+        ;   XREF to: 006108a8 (UNCONDITIONAL_JUMP)  ; LAB_006108a8
     MOV dword ptr [0x02d83394],ESI      ; 004eba42 | INT_02d83394
+        ;   Label: LAB_004eba42
     MOV ESI,dword ptr [0x00823a74]      ; 004eba48 | g_CurrentSceneCamera
     MOV ECX,0xa                         ; 004eba4e
     LEA EDI,[ESP + 0x28]                ; 004eba53
@@ -110,4 +109,16 @@ section .text
     POP ESI                             ; 004ebab0
     POP EBX                             ; 004ebab1
     RET                                 ; 004ebab2
+    MOV ECX,dword ptr [ESI]             ; 006108a8
+        ;   Label: LAB_006108a8
+    MOV dword ptr [EDI],ECX             ; 006108aa
+    MOV ECX,dword ptr [ESI + 0x4]       ; 006108ac
+    MOV dword ptr [EDI + 0x4],ECX       ; 006108af
+    MOV ECX,dword ptr [ESI + 0x8]       ; 006108b2
+    MOV dword ptr [EDI + 0x8],ECX       ; 006108b5
+    ADD ESI,0xc                         ; 006108b8
+    ADD EDI,0xc                         ; 006108bb
+    XOR ESI,ESI                         ; 006108be
+    JMP 0x004eba42                      ; 006108c0
+        ;   XREF to: 004eba42 (UNCONDITIONAL_JUMP)  ; LAB_004eba42
 

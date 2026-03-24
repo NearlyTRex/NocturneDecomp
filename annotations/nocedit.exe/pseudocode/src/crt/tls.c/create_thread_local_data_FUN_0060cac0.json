@@ -2,9 +2,9 @@
   "complexity": {
     "assembly_lines": 27,
     "complexity_score": 29,
-    "cross_reference_count": 1,
-    "function_call_count": 3,
-    "global_count": 3,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
     "suspect_count": 1,
@@ -13,14 +13,7 @@
     ],
     "total_lines": 41
   },
-  "cross_references": [
-    {
-      "addr": "0060a1fc",
-      "from_addr": "0060a21b",
-      "name": "crt_tls.c_get_thread_local_data_FUN_0060a1fc",
-      "type": "UNCONDITIONAL_CALL"
-    }
-  ],
+  "cross_references": [],
   "function": {
     "address": "0060cac0",
     "address_range": [
@@ -40,17 +33,18 @@
       "name": "crt_startup.c_HandleRuntimeError_FUN_00606660"
     },
     {
-      "addr": "0060a2d8",
-      "is_variadic": false,
-      "name": "crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8"
-    },
-    {
       "addr": "EXTERNAL:000000a0",
       "is_variadic": false,
       "name": "TlsGetValue"
     }
   ],
   "globals": [
+    {
+      "addr": "0060a2d8",
+      "name": "SUB_0060a2d8",
+      "type": "undefined4",
+      "value": null
+    },
     {
       "addr": "00611654",
       "name": "g_TlsGetValueFunc",
@@ -70,6 +64,14 @@
       "value": "0xffffffff"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.15,
     "instruction_count": 20,

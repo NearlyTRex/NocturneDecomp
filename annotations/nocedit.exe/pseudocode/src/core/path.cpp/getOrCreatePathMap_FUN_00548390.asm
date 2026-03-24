@@ -68,11 +68,10 @@ section .text
     LEA ESI,[ESP + 0x8]                 ; 005483d5
     ADD ESP,0x8                         ; 005483d9
     XOR ECX,ECX                         ; 005483dc
-    MOVSD ES:EDI,ESI                    ; 005483de
-    MOVSD ES:EDI,ESI                    ; 005483df
-    MOVSD ES:EDI,ESI                    ; 005483e0
-    XOR EDX,EDX                         ; 005483e1
+    JMP 0x006107f0                      ; 005483de
+        ;   XREF to: 006107f0 (UNCONDITIONAL_JUMP)  ; LAB_006107f0
     XOR ESI,ESI                         ; 005483e3
+        ;   Label: LAB_005483e3
     MOV EDI,dword ptr [ESP + 0x18]      ; 005483e5
         ;   Label: LAB_005483e5
     CMP EDI,dword ptr [EDX + 0x2fec910] ; 005483e9 | g_PathMapCache[0].cached_voxel_coords.x | g_PathMapCache[1].cached_voxel_coords.x
@@ -172,4 +171,16 @@ section .text
         ;   XREF to: 005483e5 (CONDITIONAL_JUMP)  ; LAB_005483e5
     JMP 0x00548417                      ; 005484f6
         ;   XREF to: 00548417 (UNCONDITIONAL_JUMP)  ; LAB_00548417
+    MOV ECX,dword ptr [ESI]             ; 006107f0
+        ;   Label: LAB_006107f0
+    MOV dword ptr [EDI],ECX             ; 006107f2
+    MOV ECX,dword ptr [ESI + 0x4]       ; 006107f4
+    MOV dword ptr [EDI + 0x4],ECX       ; 006107f7
+    MOV ECX,dword ptr [ESI + 0x8]       ; 006107fa
+    MOV dword ptr [EDI + 0x8],ECX       ; 006107fd
+    ADD ESI,0xc                         ; 00610800
+    ADD EDI,0xc                         ; 00610803
+    XOR EDX,EDX                         ; 00610806
+    JMP 0x005483e3                      ; 00610808
+        ;   XREF to: 005483e3 (UNCONDITIONAL_JUMP)  ; LAB_005483e3
 
