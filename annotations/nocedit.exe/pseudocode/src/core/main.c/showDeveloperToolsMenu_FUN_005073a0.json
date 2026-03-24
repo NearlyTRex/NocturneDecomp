@@ -1,22 +1,72 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 24,
+        "line": 152,
+        "message": "member reference base type 'int' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 153,
+        "message": "member reference base type 'int' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 154,
+        "message": "member reference base type 'int' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 155,
+        "message": "member reference base type 'int' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 156,
+        "message": "member reference base type 'int' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 157,
+        "message": "member reference base type 'int' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 158,
+        "message": "member reference base type 'int' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 159,
+        "message": "member reference base type 'int' is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 609,
-    "complexity_score": 231,
+    "assembly_lines": 620,
+    "complexity_score": 314,
     "cross_reference_count": 1,
     "function_call_count": 49,
-    "global_count": 58,
+    "global_count": 54,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 216,
-    "suspect_count": 1,
+    "pseudocode_lines": 214,
+    "suspect_count": 9,
     "suspect_types": [
-      "stack_alignment_array"
+      "stack_alignment_array",
+      "unknown_field"
     ],
-    "total_lines": 825
+    "total_lines": 834
   },
   "cross_references": [
     {
@@ -32,6 +82,10 @@
       [
         "005073a0",
         "00507a46"
+      ],
+      [
+        "0060c476",
+        "0060c496"
       ]
     ],
     "convention": "__cdecl",
@@ -503,24 +557,6 @@
       "value": "02dcd7d4"
     },
     {
-      "addr": "0067d060",
-      "name": "s_memdump_txt_0067d060",
-      "type": "TerminatedCString",
-      "value": null
-    },
-    {
-      "addr": "0067d064",
-      "name": "s_ump.txt_0067d064",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "0067d068",
-      "name": "s_txt_0067d068",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "0067d20c",
       "name": "g_CurrentDebugFilename",
       "type": "char*",
@@ -543,12 +579,6 @@
       "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "03114278"
-    },
-    {
-      "addr": "00747874",
-      "name": "DAT_00747874",
-      "type": "undefined4",
-      "value": null
     },
     {
       "addr": "02cf1cd0",
@@ -656,36 +686,34 @@
     "estimated_params": 0
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.064935064935065,
-    "instruction_count": 462,
+    "avg_pcode_per_instr": 3.997867803837953,
+    "instruction_count": 469,
     "opcode_distribution": {
       "BOOL_NEGATE": 10,
       "BOOL_OR": 7,
-      "BRANCH": 16,
+      "BRANCH": 18,
       "CALL": 75,
       "CALLIND": 1,
       "CBRANCH": 29,
-      "COPY": 295,
+      "COPY": 292,
       "INT_2COMP": 1,
       "INT_ADD": 131,
-      "INT_AND": 216,
-      "INT_CARRY": 71,
-      "INT_EQUAL": 204,
+      "INT_AND": 220,
+      "INT_CARRY": 73,
+      "INT_EQUAL": 208,
       "INT_LESS": 16,
-      "INT_MULT": 6,
       "INT_NOTEQUAL": 1,
       "INT_SBORROW": 17,
-      "INT_SCARRY": 71,
-      "INT_SLESS": 102,
-      "INT_SUB": 242,
+      "INT_SCARRY": 73,
+      "INT_SLESS": 104,
+      "INT_SUB": 236,
       "INT_XOR": 2,
-      "INT_ZEXT": 6,
       "LOAD": 28,
-      "POPCOUNT": 102,
+      "POPCOUNT": 104,
       "RETURN": 3,
       "STORE": 226
     },
-    "pcode_op_count": 1878
+    "pcode_op_count": 1875
   },
   "stack_frame": {
     "frame_size": 4108,
@@ -762,11 +790,75 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 19,
+      "line": 20,
       "match": "aiStackY_1008",
       "severity": "moderate",
       "text": "int aiStackY_1008 [690];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 145,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "aiStack_1c[0]._0_1_ = \"memdump.txt\"[4];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 146,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "aiStack_1c[0]._1_1_ = \"memdump.txt\"[5];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 147,
+      "match": "._2_1_",
+      "severity": "mild",
+      "text": "aiStack_1c[0]._2_1_ = \"memdump.txt\"[6];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 148,
+      "match": "._3_1_",
+      "severity": "mild",
+      "text": "aiStack_1c[0]._3_1_ = \"memdump.txt\"[7];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 149,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "aiStack_1c[1]._0_1_ = \"memdump.txt\"[8];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 150,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "aiStack_1c[1]._1_1_ = \"memdump.txt\"[9];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 151,
+      "match": "._2_1_",
+      "severity": "mild",
+      "text": "aiStack_1c[1]._2_1_ = \"memdump.txt\"[10];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 152,
+      "match": "._3_1_",
+      "severity": "mild",
+      "text": "aiStack_1c[1]._3_1_ = \"memdump.txt\"[0xb];",
+      "type": "unknown_field"
     }
   ]
 }

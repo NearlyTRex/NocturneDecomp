@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 117,
+    "complexity_score": 102,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_many",
       "sub84_truncation"
     ],
     "total_lines": 119
@@ -68,92 +67,6 @@
       "value": "65535"
     }
   ],
-  "param_estimates": {
-    "call_site_count": 7,
-    "call_sites": [
-      {
-        "call_addr": "0050564f",
-        "call_type": "direct",
-        "caller": "engine_light.cpp_calculatePhongLighting_FUN_00505530",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0052a374",
-        "call_type": "direct",
-        "caller": "core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "005704b8",
-        "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "004f00b1",
-        "call_type": "direct",
-        "caller": "core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "004f014c",
-        "call_type": "direct",
-        "caller": "core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0",
-        "estimated_params": 1,
-        "instructions_analyzed": 30,
-        "method": "push_count",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "004f01f2",
-        "call_type": "direct",
-        "caller": "core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0",
-        "estimated_params": 1,
-        "instructions_analyzed": 30,
-        "method": "push_count",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "004f0272",
-        "call_type": "direct",
-        "caller": "core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0",
-        "estimated_params": 1,
-        "instructions_analyzed": 30,
-        "method": "push_count",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      }
-    ],
-    "confidence": "high",
-    "declared_params": 2,
-    "declared_stack_bytes": 4,
-    "estimated_params": 1
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.8625,
     "instruction_count": 80,
@@ -279,17 +192,6 @@
       "severity": "mild",
       "text": "output_vector->z = (int)ROUND(local_20);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "call_site_count": 7,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

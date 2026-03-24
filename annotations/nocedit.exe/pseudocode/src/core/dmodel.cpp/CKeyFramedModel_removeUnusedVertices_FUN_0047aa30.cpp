@@ -1,6 +1,6 @@
 // Name: core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30
 // Address: 0047aa30
-// Address Range: [[0047aa30, 0047ad95]]
+// Address Range: [[0047aa30, 0047ad95] [0060c3c2, 0060c3de]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(CKeyFramedModel *this_ptr)
 
@@ -33,7 +33,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(C
   int local_14;
   SMRGLPrimitiveQuad *local_10;
   
-  bVar13 = 0;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Removing unused vertices...");
   core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);
@@ -114,11 +113,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(C
             do {
               if (-1 < *piVar3) {
                 if (pCVar7 < pCVar5) {
-                  puVar11 = (uint *)((int)pCVar7 + (uint)bVar13 * -8 + 4);
-                  puVar9 = (uint *)((int)pCVar5 + (uint)bVar13 * -8 + 4);
                   pCVar7->x = pCVar5->x;
-                  *puVar11 = *puVar9;
-                  puVar11[(uint)bVar13 * -2 + 1] = puVar9[(uint)bVar13 * -2 + 1];
+                  pCVar7->y = pCVar5->y;
+                  iVar5 = pCVar5->z;
+                  pCVar7->z = iVar5;
                 }
                 pCVar7 = pCVar7 + 1;
               }

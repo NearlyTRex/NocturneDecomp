@@ -85,7 +85,7 @@
 ;   TerminatedCString s_shape_design_c_0061d545
 ;   TerminatedCString s_shape_design_c_0061d557
 ;   TerminatedCString s_Unable_to_read_file_s_0061d569
-;   ... and 157 more
+;   ... and 155 more
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -1017,10 +1017,10 @@ section .text
         ;   XREF to: 0046dfa8 (UNCONDITIONAL_JUMP)  ; LAB_0046dfa8
     LEA EDI,[EBP + -0x7c]               ; 0046c66f
         ;   Label: LAB_0046c66f
-    MOV ESI,0x66ef30                    ; 0046c672 | = "CramTex II"
-    MOVSD ES:EDI,ESI                    ; 0046c677 | = "CramTex II"
-    MOVSD ES:EDI,ESI                    ; 0046c678 | s_Tex_II_0066ef34
+    JMP 0x0060c502                      ; 0046c672
+        ;   XREF to: 0060c502 (UNCONDITIONAL_JUMP)  ; LAB_0060c502
     MOVSW ES:EDI,ESI                    ; 0046c679 | s_II_0066ef38
+        ;   Label: LAB_0046c679
     MOVSB ES:EDI,ESI                    ; 0046c67b | s__0066ef3a
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046c67c
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
@@ -3386,4 +3386,14 @@ section .text
     POP ESI                             ; 0046dfaf
     POP EBX                             ; 0046dfb0
     RET                                 ; 0046dfb1
+    MOV ESI,0x66ef30                    ; 0060c502
+        ;   Label: LAB_0060c502
+    MOV ECX,dword ptr [ESI]             ; 0060c507
+    MOV dword ptr [EDI],ECX             ; 0060c509
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c50b
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c50e
+    ADD ESI,0x8                         ; 0060c511
+    ADD EDI,0x8                         ; 0060c514
+    JMP 0x0046c679                      ; 0060c517
+        ;   XREF to: 0046c679 (UNCONDITIONAL_JUMP)  ; LAB_0046c679
 

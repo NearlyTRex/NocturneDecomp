@@ -164,10 +164,8 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70 ; 0044e48e
         ;   XREF to: 00453a70 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70(CDemonCamera * this_ptr, CVector3i * screen_pos, int alpha_index, CVector3i * world_pos)
     LEA ESI,[ESP + 0x1c]                ; 0044e493
-    ADD ESP,0xc                         ; 0044e497
-    MOVSD ES:EDI,ESI                    ; 0044e49a
-    MOVSD ES:EDI,ESI                    ; 0044e49b
-    MOVSD ES:EDI,ESI                    ; 0044e49c
+    JMP 0x0060c3a4                      ; 0044e497
+        ;   XREF to: 0060c3a4 (UNCONDITIONAL_JUMP)  ; LAB_0060c3a4
     LEA ESI,[ESP + 0x1c]                ; 0044e49d
         ;   Label: LAB_0044e49d
     LEA EDI,[EBX + 0x902f74]            ; 0044e4a1 | g_PrecomputedWorldPositions[321].x
@@ -441,4 +439,16 @@ section .text
     MOV EDX,dword ptr [ESP + 0x5c]      ; 0060a111
     JMP 0x0044e4ae                      ; 0060a115
         ;   XREF to: 0044e4ae (UNCONDITIONAL_JUMP)  ; LAB_0044e4ae
+    ADD ESP,0xc                         ; 0060c3a4
+        ;   Label: LAB_0060c3a4
+    MOV ECX,dword ptr [ESI]             ; 0060c3a7
+    MOV dword ptr [EDI],ECX             ; 0060c3a9
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c3ab
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c3ae
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060c3b1
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060c3b4
+    ADD ESI,0xc                         ; 0060c3b7
+    ADD EDI,0xc                         ; 0060c3ba
+    JMP 0x0044e49d                      ; 0060c3bd
+        ;   XREF to: 0044e49d (UNCONDITIONAL_JUMP)  ; LAB_0044e49d
 

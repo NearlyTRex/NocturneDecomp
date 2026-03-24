@@ -1,6 +1,6 @@
 // Name: shape_design.c_cramTextureList_FUN_0046bb80
 // Address: 0046bb80
-// Address Range: [[0046bb80, 0046dfb1]]
+// Address Range: [[0046bb80, 0046dfb1] [0060c502, 0060c51b]]
 // Convention: __cdecl
 // Signature: int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCram *cram)
 
@@ -31,7 +31,6 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCram *cram)
   char *pcVar10;
   byte bVar11;
   char acStackY_146e [1018];
-  ushort auStackY_1074 [630];
   char local_b58 [260];
   _FILE *local_a54;
   int local_a50;
@@ -57,7 +56,6 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCram *cram)
   char local_258 [260];
   char local_154 [200];
   char local_8c [4];
-  uint uStack_88;
   char acStack_84 [4];
   uchar **local_80;
   uchar **local_7c;
@@ -387,13 +385,9 @@ LAB_0046c5b7:
       local_8c[1] = "CramTex II"[1];
       local_8c[2] = "CramTex II"[2];
       local_8c[3] = "CramTex II"[3];
-      (&uStack_88)[(uint)bVar11 * -2] =
-           *(uint *)("CramTex II" + (uint)bVar11 * -8 + 4);
-      *(ushort *)(acStack_84 + (uint)bVar11 * -8 + (uint)bVar11 * -8) =
-           *(ushort *)("CramTex II" + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-      (acStack_84 + (uint)bVar11 * -8 + (uint)bVar11 * -8)[(uint)bVar11 * -4 + 2] =
-           ("CramTex II" + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8)
-           [((uint)bVar11 * -2 + 1) * 2];
+      acStack_84[0] = "CramTex II"[8];
+      acStack_84[1] = "CramTex II"[9];
+      acStack_84[(uint)bVar11 * -4 + 2] = "CramTex II"[(uint)bVar11 * -4 + 10];
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       _sprintf(local_154,"%s in progress...");
       engine_2d_c_drawText_FUN_00401fd0(local_154,0,0);

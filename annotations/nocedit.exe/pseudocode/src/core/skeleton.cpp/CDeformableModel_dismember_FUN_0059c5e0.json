@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 480,
-    "complexity_score": 346,
+    "assembly_lines": 490,
+    "complexity_score": 333,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 201,
-    "suspect_count": 14,
+    "pseudocode_lines": 198,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 681
+    "total_lines": 688
   },
   "cross_references": [
     {
@@ -32,6 +32,10 @@
       [
         "0059c5e0",
         "0059cb9a"
+      ],
+      [
+        "0060c43a",
+        "0060c457"
       ]
     ],
     "convention": "__cdecl",
@@ -155,38 +159,37 @@
     "estimated_params": 6
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 7.336515513126492,
-    "instruction_count": 419,
+    "avg_pcode_per_instr": 7.208920187793427,
+    "instruction_count": 426,
     "opcode_distribution": {
       "BOOL_NEGATE": 155,
       "BOOL_OR": 3,
-      "BRANCH": 4,
+      "BRANCH": 6,
       "CALL": 8,
       "CBRANCH": 22,
-      "COPY": 328,
+      "COPY": 325,
       "INT_ADD": 270,
-      "INT_AND": 655,
-      "INT_CARRY": 73,
-      "INT_EQUAL": 355,
+      "INT_AND": 659,
+      "INT_CARRY": 75,
+      "INT_EQUAL": 359,
       "INT_LEFT": 60,
       "INT_LESS": 29,
-      "INT_MULT": 39,
+      "INT_MULT": 33,
       "INT_NOTEQUAL": 71,
       "INT_OR": 150,
       "INT_SBORROW": 29,
-      "INT_SCARRY": 80,
+      "INT_SCARRY": 82,
       "INT_SEXT": 6,
-      "INT_SLESS": 220,
-      "INT_SUB": 91,
+      "INT_SLESS": 222,
+      "INT_SUB": 85,
       "INT_XOR": 46,
-      "INT_ZEXT": 6,
       "LOAD": 135,
-      "POPCOUNT": 160,
+      "POPCOUNT": 162,
       "RETURN": 2,
       "STORE": 73,
       "SUBPIECE": 4
     },
-    "pcode_op_count": 3074
+    "pcode_op_count": 3071
   },
   "stack_frame": {
     "frame_size": 76,
@@ -298,7 +301,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 66,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3)] = 1;",
@@ -306,7 +309,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 67,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3)] = 1;",
@@ -314,7 +317,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 68,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "puVar11 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);",
@@ -322,7 +325,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 77,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "g_VertexRemapTable[*(ushort *)((int)&(pSVar4->vertex_indices).vertex_index_0 + iVar5)] = 1;",
@@ -330,7 +333,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 78,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "g_VertexRemapTable[*(ushort *)((int)&(pSVar4->vertex_indices).vertex_index_1 + iVar5)] = 1;",
@@ -338,7 +341,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 79,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "puVar11 = (ushort *)((int)&(pSVar4->vertex_indices).vertex_index_2 + iVar5);",
@@ -346,7 +349,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 89,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)g_VertexRemapTable + iVar9) != 0) {",
@@ -354,7 +357,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 103,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)g_VertexRemapTable + iVar10) == 0) {",
@@ -362,7 +365,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 104,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_VertexRemapTable + iVar10) = 0xffffffff;",
@@ -370,7 +373,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 107,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_VertexRemapTable + iVar10) = iVar5;",
@@ -378,23 +381,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 109,
+      "line": 108,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar12);",
+      "text": "piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar13);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "piVar11 = (int *)((int)skinned_vertices + (uint)bVar14 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 157,
+      "line": 154,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)body_part_ptr->face_texture_indices + local_28) = iVar10;",
@@ -402,7 +397,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 189,
+      "line": 186,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)body_part_ptr->face_texture_indices + iVar5) = iVar10;",

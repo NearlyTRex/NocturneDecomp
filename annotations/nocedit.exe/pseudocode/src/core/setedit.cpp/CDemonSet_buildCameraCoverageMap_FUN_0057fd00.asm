@@ -156,10 +156,8 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370 ; 0057fdf4
         ;   XREF to: 0044d370 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[EBP + -0x40]               ; 0057fdf9
-    ADD ESP,0x8                         ; 0057fdfc
-    MOVSD ES:EDI,ESI                    ; 0057fdff
-    MOVSD ES:EDI,ESI                    ; 0057fe00
-    MOVSD ES:EDI,ESI                    ; 0057fe01
+    JMP 0x0060c41c                      ; 0057fdfc
+        ;   XREF to: 0060c41c (UNCONDITIONAL_JUMP)  ; LAB_0060c41c
     MOV EDI,dword ptr [EBP + -0x8]      ; 0057fe02
         ;   Label: LAB_0057fe02
     INC EDI                             ; 0057fe05
@@ -259,6 +257,18 @@ section .text
     MOV EBX,EAX                         ; 0057fefc
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0057fefe
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    ADD ESP,0x8                         ; 0060c41c
+        ;   Label: LAB_0060c41c
+    MOV ECX,dword ptr [ESI]             ; 0060c41f
+    MOV dword ptr [EDI],ECX             ; 0060c421
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c423
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c426
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060c429
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060c42c
+    ADD ESI,0xc                         ; 0060c42f
+    ADD EDI,0xc                         ; 0060c432
+    JMP 0x0057fe02                      ; 0060c435
+        ;   XREF to: 0057fe02 (UNCONDITIONAL_JUMP)  ; LAB_0057fe02
     MOV ECX,dword ptr [ESI]             ; 0060c692
         ;   Label: LAB_0060c692
     MOV dword ptr [EDI],ECX             ; 0060c694

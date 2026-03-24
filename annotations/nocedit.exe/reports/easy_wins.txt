@@ -28,7 +28,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   engine/light.cpp (1 remaining of 10)
     - engine_light.cpp_calculatePhongLighting_FUN_00505530
-      Suspects: stack_alignment_array, pointer_cast, pointer_cast, pointer_cast
+      Suspects: stack_alignment_array
 
   core/trap.cpp (1 remaining of 17)
     - core_trap.cpp_CTrap_process_FUN_005de770
@@ -280,7 +280,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [pointer_cast] - 73 functions
+  [pointer_cast] - 71 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360                        (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0                         (  5 lines)
     shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0                   ( 10 lines)
@@ -296,14 +296,13 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_netgame.cpp_findSimFrame_FUN_0053f550                             ( 18 lines)
     shape_meshlod.cpp_CLodMesh_hasVertexBoundaryEdge_FUN_00518740          ( 18 lines)
     shape_meshlod.cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420 ( 18 lines)
+    support_trisock.cpp_getSocketName_FUN_005e1df0                         ( 21 lines)
     engine_2d.c_plotPixelWithDepth_FUN_00401290                            ( 21 lines)
     sound_sndmain.cpp_killSfxByName_FUN_005aa2f0                           ( 21 lines)
-    support_trisock.cpp_getSocketName_FUN_005e1df0                         ( 22 lines)
     core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0      ( 22 lines)
     shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420                       ( 22 lines)
     shape_superopt.cpp_CObj_restoreVertexPositions_FUN_005d3860            ( 22 lines)
     shape_superopt.cpp_CObj_saveVertexPositions_FUN_005d3760               ( 22 lines)
-    support_trisock.cpp_acceptConnection_FUN_005e1d80                      ( 23 lines)
     engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50               ( 23 lines)
     sound_sndmain.cpp_freeSampleByName_FUN_005aa360                        ( 23 lines)
     core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20                  ( 23 lines)
@@ -313,10 +312,10 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_path.cpp_renderAllPathMaps_FUN_005485f0                           ( 24 lines)
     sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80                      ( 25 lines)
     core_dlight.cpp_CDemonLight_blitZBuffer_FUN_00472c70                   ( 25 lines)
+    support_trisock.cpp_receiveSocketData_FUN_005e1c20                     ( 26 lines)
     shape_memdbg.cpp_debugFree_FUN_0050f460                                ( 26 lines)
     shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0                         ( 26 lines)
     cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00432d00           ( 27 lines)
-    support_trisock.cpp_receiveSocketData_FUN_005e1c20                     ( 27 lines)
     core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50                 ( 27 lines)
     wincore_wddvmem.cpp_initializeScanlinePointers_FUN_005ece60            ( 27 lines)
     engine_3d.c_flushRenderQueue_FUN_00407a30                              ( 28 lines)
@@ -348,7 +347,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_dstrender.cpp_renderDepthOnlyStandard_FUN_0049072f                ( 45 lines)
     core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020        ( 46 lines)
     engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50  ( 47 lines)
-    core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0                       ( 47 lines)
     core_dlight.cpp_CDemonLight_beginBackgroundScene_FUN_00472e40          ( 47 lines)
     sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0          ( 48 lines)
     core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0       ( 48 lines)
@@ -406,7 +404,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_console.cpp_CConsole_printf_FUN_00441890                        ( 43 lines)
     core_morph.cpp_CMorph_previewMorph_FUN_0052ca90                        ( 44 lines)
 
-  [param_count_too_many] - 17 functions
+  [param_count_too_many] - 16 functions
     engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930                   (  6 lines)
     engine_texture.cpp_updateTextureWithPalette_FUN_005dd900               (  7 lines)
     engine_dosio.c_changeFileExtension_FUN_00482050                        (  9 lines)
@@ -423,7 +421,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090    ( 38 lines)
     core_set.cpp_transformToWorldSpace_FUN_0056e890                        ( 38 lines)
     engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590                    ( 42 lines)
-    core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70       ( 44 lines)
 
   [warning_type_propagation] - 16 functions
     core_zombie.cpp_CZombie_canPickupWithHand_FUN_005fbda0                 ( 11 lines)
@@ -751,8 +748,8 @@ PRIORITY 3: Files at 90%+ (finish them off!)
 
   engine/light.cpp (90.0% complete)
     1 functions remaining:
-      engine_light.cpp_calculatePhongLighting_FUN_00505530 (103 lines)
-        Types: ['pointer_cast', 'stack_alignment_array']
+      engine_light.cpp_calculatePhongLighting_FUN_00505530 (100 lines)
+        Types: ['stack_alignment_array']
 
   core/vehicle.cpp (90.0% complete)
     2 functions remaining:
@@ -801,6 +798,7 @@ ALL REMAINING FILES
   core/tvbat.cpp                                                85.0%  (17/20 clean, 3 remaining)
   core/motion.cpp                                               84.8%  (28/33 clean, 5 remaining)
   core/bodypart.cpp                                             84.4%  (38/45 clean, 7 remaining)
+  support/trisock.cpp                                           84.4%  (27/32 clean, 5 remaining)
   core/dfilter.cpp                                              84.2%  (16/19 clean, 3 remaining)
   core/ladder.cpp                                               84.2%  (16/19 clean, 3 remaining)
   core/enemy.cpp                                                84.2%  (16/19 clean, 3 remaining)
@@ -819,7 +817,6 @@ ALL REMAINING FILES
   core/flame.cpp                                                82.4%  (14/17 clean, 3 remaining)
   core/dtri.cpp                                                 82.1%  (23/28 clean, 5 remaining)
   wincore/windll.cpp                                            81.9%  (59/72 clean, 13 remaining)
-  support/trisock.cpp                                           81.2%  (26/32 clean, 6 remaining)
   core/smiley.cpp                                               81.2%  (13/16 clean, 3 remaining)
   core/batman.cpp                                               81.2%  (13/16 clean, 3 remaining)
   core/setutil.cpp                                              80.5%  (33/41 clean, 8 remaining)
@@ -836,12 +833,12 @@ ALL REMAINING FILES
   cockpit/pkbitmap.cpp                                          75.8%  (25/33 clean, 8 remaining)
   wincore/winrun.cpp                                            75.8%  (25/33 clean, 8 remaining)
   core/skeleton.cpp                                             75.2%  (88/117 clean, 29 remaining)
+  core/netgame.cpp                                              75.0%  (48/64 clean, 16 remaining)
   core/gargoyle.cpp                                             75.0%  (12/16 clean, 4 remaining)
   core/boneguy.cpp                                              75.0%  (21/28 clean, 7 remaining)
   core/ground.cpp                                               75.0%  (15/20 clean, 5 remaining)
   core/gabriela.cpp                                             73.7%  (28/38 clean, 10 remaining)
   core/set.cpp                                                  73.6%  (64/87 clean, 23 remaining)
-  core/netgame.cpp                                              73.4%  (47/64 clean, 17 remaining)
   core/tentacle.cpp                                             73.3%  (11/15 clean, 4 remaining)
   engine/fileio.cpp                                             73.2%  (52/71 clean, 19 remaining)
   core/bugs.cpp                                                 72.7%  (32/44 clean, 12 remaining)
@@ -871,16 +868,16 @@ ALL REMAINING FILES
   core/dtrace.cpp                                               60.8%  (31/51 clean, 20 remaining)
   shape/meshlod.cpp                                             60.5%  (75/124 clean, 49 remaining)
   engine/drender.cpp                                            59.1%  (52/88 clean, 36 remaining)
+  core/dmodel.cpp                                               59.1%  (39/66 clean, 27 remaining)
   core/dlight.cpp                                               58.8%  (20/34 clean, 14 remaining)
-  core/dmodel.cpp                                               57.6%  (38/66 clean, 28 remaining)
   engine/matrix.c                                               56.7%  (17/30 clean, 13 remaining)
   shape/superopt.cpp                                            56.5%  (105/186 clean, 81 remaining)
   core/setedit.cpp                                              55.2%  (32/58 clean, 26 remaining)
   core/xform.cpp                                                50.8%  (31/61 clean, 30 remaining)
   engine/model.c                                                50.0%  (4/8 clean, 4 remaining)
+  core/dcamera.cpp                                              50.0%  (43/86 clean, 43 remaining)
   core/main.c                                                   50.0%  (5/10 clean, 5 remaining)
   cockpit/ckptutil.c                                            49.1%  (27/55 clean, 28 remaining)
-  core/dcamera.cpp                                              48.8%  (42/86 clean, 44 remaining)
   sound/mp3.cpp                                                 47.4%  (27/57 clean, 30 remaining)
   core/course.cpp                                               46.7%  (7/15 clean, 8 remaining)
   engine/prim.c                                                 42.9%  (9/21 clean, 12 remaining)

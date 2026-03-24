@@ -21,8 +21,6 @@
 ;   TerminatedCString s_Replaying_006377a7
 ;   TerminatedCString s_shape_meshlod_cpp_006377b4
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   TerminatedCString s_replay_txt_0067d4b8
-;   undefined4 s_replay_txt_0067d4b8+4
 ;   undefined4 s_replay_txt_0067d4b8+8
 ;   undefined4 s_replay_txt_0067d4b8+0xa
 ;   CEditorTools g_CEditorToolsInstance
@@ -61,11 +59,10 @@ section .text
     LEA EDI,[ESP + 0xc]                 ; 00517413
     PUSH 0x0                            ; 00517417
     LEA EAX,[ESP + 0x10]                ; 00517419
-    MOV ESI,0x67d4b8                    ; 0051741d | = "replay.txt"
-    PUSH EAX                            ; 00517422
-    MOVSD ES:EDI,ESI                    ; 00517423 | = "replay.txt"
-    MOVSD ES:EDI,ESI                    ; 00517424 | s_replay_txt_0067d4b8+4
+    JMP 0x0060c51c                      ; 0051741d
+        ;   XREF to: 0060c51c (UNCONDITIONAL_JUMP)  ; LAB_0060c51c
     MOVSW ES:EDI,ESI                    ; 00517425 | s_replay_txt_0067d4b8+8
+        ;   Label: LAB_00517425
     MOVSB ES:EDI,ESI                    ; 00517427 | s_replay_txt_0067d4b8+0xa
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00517428
         ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
@@ -167,4 +164,15 @@ section .text
     POP ESI                             ; 00517529
     POP EBX                             ; 0051752a
     RET                                 ; 0051752b
+    MOV ESI,0x67d4b8                    ; 0060c51c
+        ;   Label: LAB_0060c51c
+    PUSH EAX                            ; 0060c521
+    MOV ECX,dword ptr [ESI]             ; 0060c522
+    MOV dword ptr [EDI],ECX             ; 0060c524
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c526
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c529
+    ADD ESI,0x8                         ; 0060c52c
+    ADD EDI,0x8                         ; 0060c52f
+    JMP 0x00517425                      ; 0060c532
+        ;   XREF to: 00517425 (UNCONDITIONAL_JUMP)  ; LAB_00517425
 

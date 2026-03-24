@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 38,
-    "complexity_score": 37,
+    "assembly_lines": 48,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 21,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 60
+    "total_lines": 69
   },
   "cross_references": [
     {
@@ -32,6 +32,10 @@
       [
         "005e1df0",
         "005e1e42"
+      ],
+      [
+        "0060c552",
+        "0060c56b"
       ]
     ],
     "convention": "__cdecl",
@@ -72,30 +76,29 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.363636363636363,
-    "instruction_count": 33,
+    "avg_pcode_per_instr": 3.7948717948717947,
+    "instruction_count": 39,
     "opcode_distribution": {
+      "BRANCH": 2,
       "CALL": 2,
       "CBRANCH": 1,
-      "COPY": 32,
+      "COPY": 30,
       "INT_ADD": 18,
-      "INT_AND": 13,
-      "INT_CARRY": 3,
-      "INT_EQUAL": 12,
+      "INT_AND": 17,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 16,
       "INT_LESS": 1,
-      "INT_MULT": 4,
       "INT_SBORROW": 1,
-      "INT_SCARRY": 3,
-      "INT_SLESS": 6,
-      "INT_SUB": 14,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 8,
+      "INT_SUB": 10,
       "INT_XOR": 1,
-      "INT_ZEXT": 4,
       "LOAD": 9,
-      "POPCOUNT": 6,
+      "POPCOUNT": 8,
       "RETURN": 2,
       "STORE": 12
     },
-    "pcode_op_count": 144
+    "pcode_op_count": 148
   },
   "stack_frame": {
     "frame_size": 40,
@@ -144,10 +147,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(uint *)((int)",
+      "line": 20,
+      "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)((int)pSVar3 + (uint)bVar4 * -8 + 4);",
+      "text": "uVar1 = *(ushort *)((int)&pSVar3->sin_addr + 2);",
       "type": "pointer_cast"
     }
   ]

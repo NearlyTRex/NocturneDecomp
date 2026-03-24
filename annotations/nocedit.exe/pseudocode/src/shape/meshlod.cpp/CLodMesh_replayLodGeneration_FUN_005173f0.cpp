@@ -1,6 +1,6 @@
 // Name: shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0
 // Address: 005173f0
-// Address Range: [[005173f0, 0051752b]]
+// Address Range: [[005173f0, 0051752b] [0060c51c, 0060c536]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_meshlod_cpp_CLodMesh_replayLodGeneration_FUN_005173f0(CLodMesh *this_ptr)
 
@@ -15,9 +15,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_replayLodGeneration_FUN_005173f0(CLodMes
   int iVar2;
   byte bVar3;
   char acStackY_1406 [1018];
-  ushort auStackY_100c [2026];
   char local_24 [4];
-  uint uStack_20;
   char acStack_1c [4];
   int local_18;
   int local_14;
@@ -30,22 +28,15 @@ void __cdecl shape_meshlod_cpp_CLodMesh_replayLodGeneration_FUN_005173f0(CLodMes
   
   bVar3 = 0;
   shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_00516d50(this_ptr);
-  iVar4 = 0x5f5;
-  source_file = "..\\shape\\meshlod.cpp";
-  mode = "rt";
-  directory = (char *)0x0;
-  filename = local_24;
   local_24[0] = "replay.txt"[0];
   local_24[1] = "replay.txt"[1];
   local_24[2] = "replay.txt"[2];
   local_24[3] = "replay.txt"[3];
-  (&uStack_20)[(uint)bVar3 * -2] = *(uint *)("replay.txt" + (uint)bVar3 * -8 + 4);
-  *(ushort *)(acStack_1c + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-       *(ushort *)("replay.txt" + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-  (acStack_1c + (uint)bVar3 * -8 + (uint)bVar3 * -8)[(uint)bVar3 * -4 + 2] =
-       ("replay.txt" + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8)[((uint)bVar3 * -2 + 1) * 2]
-  ;
-  file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0(filename,directory,mode,source_file,iVar4);
+  acStack_1c[0] = "replay.txt"[8];
+  acStack_1c[1] = "replay.txt"[9];
+  acStack_1c[(uint)bVar3 * -4 + 2] = "replay.txt"[(uint)bVar3 * -4 + 10];
+  file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
+                          (local_24,(char *)0x0,"rt","..\\shape\\meshlod.cpp",0x5f5);
   if (file_handle == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s",local_24);

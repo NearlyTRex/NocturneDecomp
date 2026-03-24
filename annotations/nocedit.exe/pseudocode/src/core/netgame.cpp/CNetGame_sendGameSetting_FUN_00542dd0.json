@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 181,
-    "complexity_score": 109,
+    "assembly_lines": 191,
+    "complexity_score": 130,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 94,
-    "suspect_count": 1,
+    "pseudocode_lines": 95,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 275
+    "total_lines": 286
   },
   "cross_references": [
     {
@@ -32,6 +32,10 @@
       [
         "00542dd0",
         "00542fe3"
+      ],
+      [
+        "0060c4ea",
+        "0060c501"
       ]
     ],
     "convention": "__cdecl",
@@ -143,41 +147,41 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.913333333333333,
-    "instruction_count": 150,
+    "avg_pcode_per_instr": 4.75,
+    "instruction_count": 156,
     "opcode_distribution": {
       "BOOL_NEGATE": 18,
       "BOOL_OR": 2,
-      "BRANCH": 1,
+      "BRANCH": 3,
       "CALL": 5,
       "CBRANCH": 12,
-      "COPY": 121,
+      "COPY": 119,
       "INT_ADD": 76,
-      "INT_AND": 110,
-      "INT_CARRY": 16,
-      "INT_EQUAL": 77,
+      "INT_AND": 114,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 81,
       "INT_LEFT": 5,
       "INT_LESS": 12,
-      "INT_MULT": 9,
+      "INT_MULT": 5,
       "INT_NOTEQUAL": 14,
       "INT_OR": 15,
       "INT_SBORROW": 12,
-      "INT_SCARRY": 17,
+      "INT_SCARRY": 19,
       "INT_SDIV": 1,
       "INT_SEXT": 4,
-      "INT_SLESS": 41,
+      "INT_SLESS": 43,
       "INT_SREM": 1,
       "INT_SRIGHT": 2,
-      "INT_SUB": 38,
+      "INT_SUB": 34,
       "INT_XOR": 4,
-      "INT_ZEXT": 6,
+      "INT_ZEXT": 2,
       "LOAD": 40,
-      "POPCOUNT": 37,
+      "POPCOUNT": 39,
       "RETURN": 1,
       "STORE": 36,
       "SUBPIECE": 4
     },
-    "pcode_op_count": 737
+    "pcode_op_count": 741
   },
   "stack_frame": {
     "frame_size": 212,
@@ -261,10 +265,26 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 73,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)local_53 + EVar3 + 0x10) = pCVar2->players[0].ready_flag;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
       "match": "(EHeroType *)((int)",
       "severity": "mild",
-      "text": "*(EHeroType *)((int)pCVar2 + (uint)bVar8 * -8 + 0x40);",
+      "text": "*(EHeroType *)((int)local_53 + EVar3 + HERO_TYPE_MOLOCH) = pCVar2->players[0].hero_number;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)local_53 + EVar3 + (HERO_TYPE_MOLOCH|HERO_TYPE_BARON)) =",
       "type": "pointer_cast"
     }
   ]

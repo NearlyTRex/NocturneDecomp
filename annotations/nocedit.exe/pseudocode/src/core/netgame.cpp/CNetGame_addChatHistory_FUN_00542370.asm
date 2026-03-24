@@ -19,8 +19,6 @@
 ;   CGame g_CGameInstance
 ;   int g_ChatHistoryCount
 ;   SChatHistory[400] g_ChatHistory
-;   undefined4 g_ChatHistory[0].sender_addr.port
-;   undefined4 g_ChatHistory[0].message_id
 ;   undefined4 g_ChatHistory[0].sender_name[0]
 ;   undefined4 g_ChatHistory[0].sender_name[1]
 ;   undefined4 g_ChatHistory[0].sender_name[2]
@@ -56,10 +54,10 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 0054239b
     LEA EDI,[EAX + 0x2f7c8d0]           ; 0054239f | g_ChatHistory
     MOV EDX,dword ptr [ESP + 0x18]      ; 005423a5
-    MOVSD ES:EDI,ESI                    ; 005423a9 | g_ChatHistory
-    MOVSD ES:EDI,ESI                    ; 005423aa | g_ChatHistory[0].sender_addr.port
-    MOV dword ptr [EAX + 0x2f7c8d8],EDX ; 005423ab | g_ChatHistory[0].message_id
+    JMP 0x0060c497                      ; 005423a9
+        ;   XREF to: 0060c497 (UNCONDITIONAL_JUMP)  ; LAB_0060c497
     ADD EAX,0x2f7c8d0                   ; 005423b1 | g_ChatHistory
+        ;   Label: LAB_005423b1
     MOV ESI,dword ptr [ESP + 0x1c]      ; 005423b6
     LEA EDI,[EAX + 0xc]                 ; 005423ba
     PUSH EDI                            ; 005423bd
@@ -130,4 +128,14 @@ section .text
     ADD ESP,0xc                         ; 0054245a
     JMP 0x00542389                      ; 0054245d
         ;   XREF to: 00542389 (UNCONDITIONAL_JUMP)  ; LAB_00542389
+    MOV ECX,dword ptr [ESI]             ; 0060c497
+        ;   Label: LAB_0060c497
+    MOV dword ptr [EDI],ECX             ; 0060c499
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c49b
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c49e
+    ADD ESI,0x8                         ; 0060c4a1
+    ADD EDI,0x8                         ; 0060c4a4
+    MOV dword ptr [EAX + 0x2f7c8d8],EDX ; 0060c4a7
+    JMP 0x005423b1                      ; 0060c4ad
+        ;   XREF to: 005423b1 (UNCONDITIONAL_JUMP)  ; LAB_005423b1
 

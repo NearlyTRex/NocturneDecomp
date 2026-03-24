@@ -1,6 +1,6 @@
 // Name: core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00
 // Address: 0057fd00
-// Address Range: [[0057fd00, 0057ff02] [0060c692, 0060c6af]]
+// Address Range: [[0057fd00, 0057ff02] [0060c41c, 0060c439] [0060c692, 0060c6af]]
 // Convention: __cdecl
 // Signature: void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDemonSet *this_ptr,char *coverage_map,int exclude_camera_index)
 
@@ -30,7 +30,6 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
   int local_18;
   int local_14;
   
-  bVar6 = 0;
   core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(this_ptr);
   memset(coverage_map,0,g_WindowWidth * g_WindowHeight);
   ptr = (CVector3i *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
@@ -52,11 +51,9 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
       if (local_38.z < 0x40000000) {
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
                   (&g_CDemonCameraInstance,&local_44,&local_50);
-        puVar5 = (uint *)((int)pCVar3 + (uint)bVar6 * -8 + 4);
         pCVar3->x = local_50.x;
-        *puVar5 = *(uint *)((int)&local_50 + (uint)bVar6 * -8 + 4);
-        puVar5[(uint)bVar6 * -2 + 1] =
-             *(uint *)((int)&local_50 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+        pCVar3->y = local_50.y;
+        pCVar3->z = local_50.z;
       }
       else {
         pCVar3->x = 0x7fffffff;

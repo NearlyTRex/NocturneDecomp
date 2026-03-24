@@ -1,6 +1,6 @@
 // Name: core_dcamera.cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90
 // Address: 0044da90
-// Address Range: [[0044da90, 0044dbc7]]
+// Address Range: [[0044da90, 0044dbc7] [0060c368, 0060c3a3]]
 // Convention: __stack2_esi
 // Signature: CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90(CDemonCamera *this_ptr,CVector3i *input_vector,CVector3i *output_vector)
 
@@ -57,9 +57,9 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_00
   pCVar5 = &g_CameraOutOfBoundsCoord;
 LAB_0044db11:
   iVar7 = pCVar5->y;
-  iVar1 = pCVar5->z;
+  iVar8 = pCVar5->z;
   output_vector->x = pCVar5->x;
   output_vector->y = iVar7;
-  output_vector->z = iVar1;
+  output_vector->z = iVar8;
   return output_vector;
 }

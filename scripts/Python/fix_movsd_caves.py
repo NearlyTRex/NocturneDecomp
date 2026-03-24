@@ -362,9 +362,8 @@ def build_site_patch(ks, instructions, group_idx, group_addr, jump_targets=None,
         insn_size = get_insn_size(ks, text, addr)
         if insn_size == 0:
             break
-        # Check contiguity
-        if addr + insn_size != movsd_start - sum(
-                get_insn_size(ks, t, a) for a, t in before_insns):
+        # Check contiguity (movsd_start is updated each iteration)
+        if addr + insn_size != movsd_start:
             break
         before_insns.insert(0, (addr, text))
         total_size += insn_size
@@ -382,7 +381,7 @@ def build_site_patch(ks, instructions, group_idx, group_addr, jump_targets=None,
         last_size = get_insn_size(ks, last_text, last_addr)
         return_addr = last_addr + last_size
     else:
-        return_addr = group_addr + 4  # right after MOVSDs
+        return_addr = movsd_end  # right after MOVSDs
 
     site_size = return_addr - site_start
 
@@ -500,7 +499,7 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
     # Collect all branch targets for safety validation
     jump_targets = collect_jump_targets(instructions)
 
-    movsd_groups = find_movsd_groups(instructions, min_count=3)
+    movsd_groups = find_movsd_groups(instructions, min_count=2)
     rep_groups = find_rep_movsd_groups(instructions)
 
     all_groups = []

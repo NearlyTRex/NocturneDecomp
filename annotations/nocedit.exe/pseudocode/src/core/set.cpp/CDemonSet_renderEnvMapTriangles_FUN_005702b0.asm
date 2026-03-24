@@ -211,10 +211,8 @@ section .text
     CALL engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0 ; 005704b8
         ;   XREF to: 0050d9f0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * input_vector, CVector3i * output_vector)
     LEA ESI,[ESP + 0xe4]                ; 005704bd
-    ADD ESP,0x4                         ; 005704c4
-    MOVSD ES:EDI,ESI                    ; 005704c7
-    MOVSD ES:EDI,ESI                    ; 005704c8
-    MOVSD ES:EDI,ESI                    ; 005704c9
+    JMP 0x0060c3fe                      ; 005704c4
+        ;   XREF to: 0060c3fe (UNCONDITIONAL_JUMP)  ; LAB_0060c3fe
     MOV EAX,dword ptr [ESP + 0xf0]      ; 005704ca
         ;   Label: LAB_005704ca
     MOV EDX,dword ptr [ESP + 0xec]      ; 005704d1
@@ -396,4 +394,16 @@ section .text
         ;   XREF to: 0048b970 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim)
     JMP 0x00570645                      ; 005706f0
         ;   XREF to: 00570645 (UNCONDITIONAL_JUMP)  ; LAB_00570645
+    ADD ESP,0x4                         ; 0060c3fe
+        ;   Label: LAB_0060c3fe
+    MOV ECX,dword ptr [ESI]             ; 0060c401
+    MOV dword ptr [EDI],ECX             ; 0060c403
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c405
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c408
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060c40b
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060c40e
+    ADD ESI,0xc                         ; 0060c411
+    ADD EDI,0xc                         ; 0060c414
+    JMP 0x005704ca                      ; 0060c417
+        ;   XREF to: 005704ca (UNCONDITIONAL_JUMP)  ; LAB_005704ca
 

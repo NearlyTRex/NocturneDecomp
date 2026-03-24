@@ -5,18 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 83,
-    "complexity_score": 62,
+    "assembly_lines": 93,
+    "complexity_score": 48,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 47,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 130
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 48,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 141
   },
   "cross_references": [
     {
@@ -50,6 +48,10 @@
       [
         "005412b0",
         "0054138f"
+      ],
+      [
+        "0060c4b2",
+        "0060c4cd"
       ]
     ],
     "convention": "__cdecl",
@@ -171,35 +173,34 @@
     "estimated_params": 5
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.305555555555555,
-    "instruction_count": 72,
+    "avg_pcode_per_instr": 4.0256410256410255,
+    "instruction_count": 78,
     "opcode_distribution": {
       "BOOL_NEGATE": 6,
-      "BRANCH": 1,
+      "BRANCH": 3,
       "CALL": 2,
       "CBRANCH": 3,
-      "COPY": 64,
+      "COPY": 62,
       "INT_ADD": 40,
-      "INT_AND": 35,
-      "INT_CARRY": 5,
-      "INT_EQUAL": 26,
+      "INT_AND": 39,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 30,
       "INT_LEFT": 2,
       "INT_LESS": 5,
-      "INT_MULT": 5,
+      "INT_MULT": 1,
       "INT_NOTEQUAL": 2,
       "INT_OR": 5,
       "INT_SBORROW": 6,
-      "INT_SCARRY": 5,
-      "INT_SLESS": 14,
-      "INT_SUB": 22,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 16,
+      "INT_SUB": 18,
       "INT_XOR": 1,
-      "INT_ZEXT": 4,
       "LOAD": 17,
-      "POPCOUNT": 12,
+      "POPCOUNT": 14,
       "RETURN": 1,
       "STORE": 27
     },
-    "pcode_op_count": 310
+    "pcode_op_count": 314
   },
   "stack_frame": {
     "frame_size": 24,
@@ -245,14 +246,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) = *(uint *)&addr[-(uint)bVar6].port;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

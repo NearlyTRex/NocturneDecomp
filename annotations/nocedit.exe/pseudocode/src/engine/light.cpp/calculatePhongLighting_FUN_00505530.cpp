@@ -1,6 +1,6 @@
 // Name: engine_light.cpp_calculatePhongLighting_FUN_00505530
 // Address: 00505530
-// Address Range: [[00505530, 00505770]]
+// Address Range: [[00505530, 00505770] [0060c458, 0060c475]]
 // Convention: __cdecl
 // Signature: int __cdecl engine_light_cpp_calculatePhongLighting_FUN_00505530(int world_x,int world_y,int world_z)
 
@@ -27,7 +27,6 @@ int __cdecl engine_light_cpp_calculatePhongLighting_FUN_00505530(int world_x,int
   int local_14;
   longlong lVar1;
   
-  bVar6 = 0;
   iVar6 = ((uint)((longlong)world_x * (longlong)g_LightDirectionX) >> 0x10 |
           (int)((ulonglong)((longlong)world_x * (longlong)g_LightDirectionX) >> 0x20) << 0x10) +
           ((uint)((longlong)world_y * (longlong)g_LightDirectionY) >> 0x10 |
@@ -71,10 +70,8 @@ int __cdecl engine_light_cpp_calculatePhongLighting_FUN_00505530(int world_x,int
     g_CachedViewPosition.z = g_RelativeZ;
     engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(&g_CachedViewPosition,&local_24);
     g_NormalizedViewVector.x = local_24.x;
-    *(uint *)((int)&g_NormalizedViewVector + (uint)bVar6 * -8 + 4) =
-         *(uint *)((int)&local_24 + (uint)bVar6 * -8 + 4);
-    *(uint *)((uint)bVar6 * -8 + 0x2dd30b4 + (uint)bVar6 * -8) =
-         *(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+    g_NormalizedViewVector.y = local_24.y;
+    g_NormalizedViewVector.z = local_24.z;
   }
   lVar2 = (longlong)iVar8 * (longlong)g_NormalizedViewVector.x;
   lVar3 = (longlong)iVar5 * (longlong)g_NormalizedViewVector.y;

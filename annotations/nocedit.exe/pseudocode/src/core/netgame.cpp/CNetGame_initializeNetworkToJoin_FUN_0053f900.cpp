@@ -1,6 +1,6 @@
 // Name: core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900
 // Address: 0053f900
-// Address Range: [[0053f900, 0053fbb5]]
+// Address Range: [[0053f900, 0053fbb5] [0060c4ce, 0060c4e9]]
 // Convention: __cdecl
 // Signature: int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetGame *this_ptr,uint32_t *server_ip)
 
@@ -23,7 +23,6 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetG
   float local_60;
   SNetPacketHeader local_5c;
   uint local_57;
-  uint uStack_53;
   char local_4f [20];
   EHeroType local_3b;
   int local_37;
@@ -38,7 +37,6 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetG
   CEditorTools *this_ptr_00;
   char cVar1;
   
-  bVar7 = 0;
   core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(this_ptr,0);
   pCVar2 = g_CGamePtr;
   this_ptr->player_count = 0;
@@ -82,7 +80,6 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetG
     if ((float)0.20000000000000001 < local_60) {
       local_5c.size = 0x29;
       local_5c.type = PACKET_PLAYER_ANNOUNCE;
-      (&uStack_53)[(uint)bVar7 * -2] = *(uint *)&(&local_28)[-(uint)bVar7].port;
       pcVar6 = local_4f;
       pcVar4 = this_ptr->player_name;
       do {

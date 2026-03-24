@@ -82,14 +82,24 @@ section .text
         ;   XREF to: 005e1960 (UNCONDITIONAL_CALL)  ; SOCKADDR_IN * support_trisock.cpp_convertSockAddr_FUN_005e1960(SNetworkAddr * dest_addr, SOCKADDR * src_addr)
     MOV ESI,EAX                         ; 005e1c87
     ADD ESP,0x8                         ; 005e1c89
-    MOVSD ES:EDI,ESI                    ; 005e1c8c
-    MOVSD ES:EDI,ESI                    ; 005e1c8d
-    CMP EBX,-0x1                        ; 005e1c8e
+    JMP 0x0060c976                      ; 005e1c8c
+        ;   XREF to: 0060c976 (UNCONDITIONAL_JUMP)  ; LAB_0060c976
     MOV EAX,EBX                         ; 005e1c91
+        ;   Label: LAB_005e1c91
     ADD ESP,0x1c                        ; 005e1c93
     POP EBP                             ; 005e1c96
     POP EDI                             ; 005e1c97
     POP ESI                             ; 005e1c98
     POP EBX                             ; 005e1c99
     RET                                 ; 005e1c9a
+    MOV ECX,dword ptr [ESI]             ; 0060c976
+        ;   Label: LAB_0060c976
+    MOV dword ptr [EDI],ECX             ; 0060c978
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c97a
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c97d
+    ADD ESI,0x8                         ; 0060c980
+    ADD EDI,0x8                         ; 0060c983
+    CMP EBX,-0x1                        ; 0060c986
+    JMP 0x005e1c91                      ; 0060c989
+        ;   XREF to: 005e1c91 (UNCONDITIONAL_JUMP)  ; LAB_005e1c91
 

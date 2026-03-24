@@ -8,8 +8,8 @@ allocate space within caves for injected code (thunks, helpers).
 
 Total caves:        28
 Total bytes:        26,519
-Total free:         2,803
-Total allocations:  491
+Total free:         2,127
+Total allocations:  514
 
 ----------------------------------------------------------------------------------------------------
 CAVES
@@ -741,10 +741,55 @@ CAVES
                4x MOVSD replacement for CGame_processFrame_FUN_004da100
     Free space: 26 bytes (offset 0x0766 - 0x0780)
 
-  cave_0060c2e0                   0060c2e0    704 bytes  [FREE]
-    (entirely free — no allocations)
+  cave_0060c2e0                   0060c2e0    704 bytes  [652/704 used]
+    Allocations:
+      +0x0000   34 bytes  movsd_0047bb37             0x0047bb37
+               4x MOVSD replacement for CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
+      +0x0022   34 bytes  movsd_0047bb48             0x0047bb48
+               4x MOVSD replacement for CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
+      +0x0044   34 bytes  movsd_0047bb59             0x0047bb59
+               4x MOVSD replacement for CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
+      +0x0066   34 bytes  movsd_0047bb71             0x0047bb71
+               4x MOVSD replacement for CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
+      +0x0088   31 bytes  movsd_0044db11             0x0044db11
+               4x MOVSD replacement for CDemonCamera_worldToCameraSpace_FUN_0044da90
+      +0x00a7   29 bytes  movsd_0044db1a             0x0044db1a
+               4x MOVSD replacement for CDemonCamera_worldToCameraSpace_FUN_0044da90
+      +0x00c4   30 bytes  movsd_0044e49a             0x0044e49a
+               4x MOVSD replacement for CDemonCamera_precomputeNormals_FUN_0044e360
+      +0x00e2   29 bytes  movsd_0047ac1e             0x0047ac1e
+               4x MOVSD replacement for CKeyFramedModel_removeUnusedVertices_FUN_0047aa30
+      +0x00ff   31 bytes  movsd_00497eb0             0x00497eb0
+               4x MOVSD replacement for CDemonRaytrace_renderFrustumCubes_FUN_00497e50
+      +0x011e   30 bytes  movsd_005704c7             0x005704c7
+               4x MOVSD replacement for CDemonSet_renderEnvMapTriangles_FUN_005702b0
+      +0x013c   30 bytes  movsd_0057fdff             0x0057fdff
+               4x MOVSD replacement for CDemonSet_buildCameraCoverageMap_FUN_0057fd00
+      +0x015a   30 bytes  movsd_0059c89f             0x0059c89f
+               4x MOVSD replacement for CDeformableModel_dismember_FUN_0059c5e0
+      +0x0178   30 bytes  movsd_0050565b             0x0050565b
+               4x MOVSD replacement for calculatePhongLighting_FUN_00505530
+      +0x0196   33 bytes  movsd_00507945             0x00507945
+               4x MOVSD replacement for showDeveloperToolsMenu_FUN_005073a0
+      +0x01b7   27 bytes  movsd_005423a9             0x005423a9
+               4x MOVSD replacement for CNetGame_addChatHistory_FUN_00542370
+      +0x01d2   28 bytes  movsd_00541314             0x00541314
+               4x MOVSD replacement for CNetGame_addPlayer_FUN_005412b0
+      +0x01ee   28 bytes  movsd_0053fa5d             0x0053fa5d
+               4x MOVSD replacement for CNetGame_initializeNetworkToJoin_FUN_0053f900
+      +0x020a   24 bytes  movsd_00542f15             0x00542f15
+               4x MOVSD replacement for CNetGame_sendGameSetting_FUN_00542dd0
+      +0x0222   26 bytes  movsd_0046c677             0x0046c677
+               4x MOVSD replacement for cramTextureList_FUN_0046bb80
+      +0x023c   27 bytes  movsd_00517423             0x00517423
+               4x MOVSD replacement for CLodMesh_replayLodGeneration_FUN_005173f0
+      +0x0257   27 bytes  movsd_005e1ddc             0x005e1ddc
+               4x MOVSD replacement for acceptConnection_FUN_005e1d80
+      +0x0272   26 bytes  movsd_005e1e3b             0x005e1e3b
+               4x MOVSD replacement for getSocketName_FUN_005e1df0
+    Free space: 52 bytes (offset 0x028c - 0x02c0)
 
-  cave_0060c5a0                   0060c5a0   2076 bytes  [982/2076 used]
+  cave_0060c5a0                   0060c5a0   2076 bytes  [1006/2076 used]
     Allocations:
       +0x0000   32 bytes  movsd_0053e601             0x0053e601
                4x MOVSD replacement for CDemonMission_editGore_FUN_0053e220
@@ -810,7 +855,9 @@ CAVES
                4x MOVSD replacement for CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
       +0x03b9   29 bytes  movsd_00499867             0x00499867
                4x MOVSD replacement for CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0
-    Free space: 1094 bytes (offset 0x03d6 - 0x081c)
+      +0x03d6   24 bytes  movsd_005e1c8c             0x005e1c8c
+               4x MOVSD replacement for receiveSocketData_FUN_005e1c20
+    Free space: 1070 bytes (offset 0x03ee - 0x081c)
 
   cave_005fde92                   0060d067    145 bytes  [116/145 used]
     Allocations:

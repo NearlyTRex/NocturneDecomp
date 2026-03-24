@@ -5,20 +5,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 340,
-    "complexity_score": 451,
+    "assembly_lines": 350,
+    "complexity_score": 417,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 146,
-    "suspect_count": 29,
+    "pseudocode_lines": 142,
+    "suspect_count": 26,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 486
+    "total_lines": 492
   },
   "cross_references": [
     {
@@ -34,6 +34,10 @@
       [
         "005702b0",
         "005706f4"
+      ],
+      [
+        "0060c3fe",
+        "0060c41b"
       ]
     ],
     "convention": "__cdecl",
@@ -208,15 +212,15 @@
     "estimated_params": 4
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.819148936170213,
-    "instruction_count": 282,
+    "avg_pcode_per_instr": 6.643598615916955,
+    "instruction_count": 289,
     "opcode_distribution": {
       "BOOL_NEGATE": 57,
       "BOOL_OR": 15,
-      "BRANCH": 4,
+      "BRANCH": 6,
       "CALL": 8,
       "CBRANCH": 24,
-      "COPY": 438,
+      "COPY": 435,
       "FLOAT2FLOAT": 12,
       "FLOAT_ABS": 3,
       "FLOAT_EQUAL": 3,
@@ -226,31 +230,31 @@
       "INT2FLOAT": 3,
       "INT_2COMP": 1,
       "INT_ADD": 156,
-      "INT_AND": 294,
-      "INT_CARRY": 16,
-      "INT_EQUAL": 167,
+      "INT_AND": 298,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 171,
       "INT_LEFT": 33,
       "INT_LESS": 22,
-      "INT_MULT": 23,
+      "INT_MULT": 17,
       "INT_NOTEQUAL": 54,
       "INT_OR": 71,
       "INT_RIGHT": 2,
       "INT_SBORROW": 23,
-      "INT_SCARRY": 21,
+      "INT_SCARRY": 23,
       "INT_SEXT": 6,
-      "INT_SLESS": 98,
-      "INT_SUB": 66,
+      "INT_SLESS": 100,
+      "INT_SUB": 60,
       "INT_XOR": 27,
-      "INT_ZEXT": 18,
+      "INT_ZEXT": 12,
       "LOAD": 79,
-      "POPCOUNT": 76,
+      "POPCOUNT": 78,
       "RETURN": 1,
       "ROUND": 6,
       "STORE": 74,
       "SUBPIECE": 4,
       "TRUNC": 6
     },
-    "pcode_op_count": 1923
+    "pcode_op_count": 1920
   },
   "stack_frame": {
     "frame_size": 4148,
@@ -394,7 +398,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 64,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar6 = *(int *)((int)&SStack_118.vertices[0].vertex_index + local_28[3]);",
@@ -402,7 +406,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 66,
       "match": "ABS",
       "severity": "mild",
       "text": "(1.0 <= ABS(g_VertexNormalArray[iVar6].x))) ||",
@@ -410,7 +414,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 67,
       "match": "ABS",
       "severity": "mild",
       "text": "(1.0 <= ABS(g_VertexNormalArray[iVar6].y))) ||",
@@ -418,7 +422,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 68,
       "match": "ABS",
       "severity": "mild",
       "text": "(1.0 <= ABS(g_VertexNormalArray[iVar6].z))) {",
@@ -426,7 +430,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 69,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_2c = (int)ROUND(g_VertexNormalArray[iVar6].x);",
@@ -434,7 +438,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 70,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28[0] = (int)ROUND(g_VertexNormalArray[iVar6].y);",
@@ -442,15 +446,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_28[1] = (int)ROUND(g_VertexNormalArray[iVar6].z);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 73,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_50.x = (int)ROUND(g_LightingReferencePosition.x * 256.0f) -",
@@ -458,7 +454,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 75,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_50.y = (int)ROUND(g_LightingReferencePosition.y * 256.0f) -",
@@ -466,7 +462,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 77,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_50.z = (int)ROUND(g_LightingReferencePosition.z * 256.0f) -",
@@ -474,23 +470,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "local_28[(uint)bVar6 * -2] = *(int *)((int)&local_38 + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 85,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 89,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&local_d0 + local_28[5]) = local_2c + 0x8000;",
@@ -498,7 +478,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 86,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&local_90 + local_28[5]) = iVar3;",
@@ -506,7 +486,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 95,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if ((0x8000 < local_d0) && (*(int *)((int)&local_d0 + iVar6) < -0x8000)) {",
@@ -514,7 +494,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 96,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "psVar1 = (short *)((int)&local_d0 + iVar6 + 2);",
@@ -522,7 +502,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 99,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if ((local_d0 < -0x8000) && (0x8000 < *(int *)((int)&local_d0 + iVar6))) {",
@@ -530,7 +510,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 100,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&local_d0 + iVar6) = *(int *)((int)&local_d0 + iVar6) + -0x10000;",
@@ -538,7 +518,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 100,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&local_d0 + iVar6) = *(int *)((int)&local_d0 + iVar6) + -0x10000;",
@@ -546,7 +526,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 102,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if ((0x8000 < local_90) && (*(int *)((int)&local_90 + iVar6) < -0x8000)) {",
@@ -554,7 +534,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 103,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "psVar2 = (short *)((int)&local_90 + iVar6 + 2);",
@@ -562,7 +542,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 106,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if ((local_90 < -0x8000) && (0x8000 < *(int *)((int)&local_90 + iVar6))) {",
@@ -570,7 +550,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 111,
+      "line": 107,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&local_90 + iVar6) = *(int *)((int)&local_90 + iVar6) + -0x10000;",
@@ -578,7 +558,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 111,
+      "line": 107,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&local_90 + iVar6) = *(int *)((int)&local_90 + iVar6) + -0x10000;",
@@ -586,7 +566,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 117,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&SStack_118.vertices[0].texture_u + iVar7) =",
@@ -594,7 +574,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 122,
+      "line": 118,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&local_d0 + iVar4) << 8;",
@@ -602,7 +582,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 119,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&SStack_118.vertices[0].texture_v + iVar7) =",
@@ -610,7 +590,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 120,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&local_90 + iVar4) << 8;",

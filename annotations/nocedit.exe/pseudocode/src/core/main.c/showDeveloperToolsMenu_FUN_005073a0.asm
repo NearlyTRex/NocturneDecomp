@@ -33,7 +33,7 @@
 ;   TerminatedCString s_s_6_Procedural_texture_s_00635102
 ;   TerminatedCString s_s_7_Enter_the_Demon_cour_0063511f
 ;   TerminatedCString s_A_File_Manager_00635140
-;   ... and 43 more
+;   ... and 39 more
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_ctor_FUN_004424c0
@@ -571,13 +571,11 @@ section .text
     LEA EDI,[ESP + 0x514]               ; 0050792f
     PUSH 0x0                            ; 00507936
     LEA EAX,[ESP + 0x518]               ; 00507938
-    MOV ESI,0x67d060                    ; 0050793f | = "memdump.txt"
-    PUSH EAX                            ; 00507944
-    MOVSD ES:EDI,ESI                    ; 00507945 | = "memdump.txt"
-    MOVSD ES:EDI,ESI                    ; 00507946 | s_ump.txt_0067d064
-    MOVSD ES:EDI,ESI                    ; 00507947 | s_txt_0067d068 | DAT_00747874
+    JMP 0x0060c476                      ; 0050793f
+        ;   XREF to: 0060c476 (UNCONDITIONAL_JUMP)  ; LAB_0060c476
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00507948
         ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
+        ;   Label: LAB_00507948
     ADD ESP,0x14                        ; 0050794d
     MOV EBX,EAX                         ; 00507950
     TEST EAX,EAX                        ; 00507952
@@ -666,4 +664,17 @@ section .text
         ;   XREF to: 00507788 (CONDITIONAL_JUMP)  ; LAB_00507788
     JMP 0x00507522                      ; 00507a42
         ;   XREF to: 00507522 (UNCONDITIONAL_JUMP)  ; LAB_00507522
+    MOV ESI,0x67d060                    ; 0060c476
+        ;   Label: LAB_0060c476
+    PUSH EAX                            ; 0060c47b
+    MOV ECX,dword ptr [ESI]             ; 0060c47c
+    MOV dword ptr [EDI],ECX             ; 0060c47e
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c480
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c483
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060c486
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060c489
+    ADD ESI,0xc                         ; 0060c48c
+    ADD EDI,0xc                         ; 0060c48f
+    JMP 0x00507948                      ; 0060c492
+        ;   XREF to: 00507948 (UNCONDITIONAL_JUMP)  ; LAB_00507948
 

@@ -245,6 +245,7 @@ def count_artifacts(code):
         'in_stack_': len(re.findall(r'in_stack_\w+', code)),
         'BITCAST': len(re.findall(r'__BITCAST_\w+', code)),
         'SUB_': len(re.findall(r'SUB\d+\(', code)),
+        'bVar_mul': len(re.findall(r'\bbVar\d+\s*\*\s*-', code)),
     }
     artifacts['total'] = sum(artifacts.values())
     return artifacts
@@ -330,14 +331,14 @@ def run_test_mode(prog, patches):
             print("  Patch: %s (0x%x)" % (p['name'], p['address']))
         print("=" * 70)
 
-        print("\nArtifacts BEFORE: undefined=%d CONCAT=%d BITCAST=%d SUB=%d extraout=%d (total=%d)" % (
+        print("\nArtifacts BEFORE: undefined=%d CONCAT=%d BITCAST=%d SUB=%d extraout=%d bVar_mul=%d (total=%d)" % (
             before_arts['undefined'], before_arts['CONCAT'],
             before_arts['BITCAST'], before_arts['SUB_'],
-            before_arts['extraout_'], before_arts['total']))
-        print("Artifacts AFTER:  undefined=%d CONCAT=%d BITCAST=%d SUB=%d extraout=%d (total=%d)" % (
+            before_arts['extraout_'], before_arts['bVar_mul'], before_arts['total']))
+        print("Artifacts AFTER:  undefined=%d CONCAT=%d BITCAST=%d SUB=%d extraout=%d bVar_mul=%d (total=%d)" % (
             after_arts['undefined'], after_arts['CONCAT'],
             after_arts['BITCAST'], after_arts['SUB_'],
-            after_arts['extraout_'], after_arts['total']))
+            after_arts['extraout_'], after_arts['bVar_mul'], after_arts['total']))
 
         delta = after_arts['total'] - before_arts['total']
         if delta < 0:

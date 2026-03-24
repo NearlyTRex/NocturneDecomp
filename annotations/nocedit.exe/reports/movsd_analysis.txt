@@ -8,14 +8,14 @@ fixed by replacing them with explicit MOV instructions in code caves.
 
 SUMMARY
 --------------------------------------------------
-Consecutive MOVSD groups:  163
+Consecutive MOVSD groups:  140
   1x MOVSD ( 4 bytes):   109 sites
-  2x MOVSD ( 8 bytes):   15 sites
-  3x MOVSD (12 bytes):   35 sites
+  2x MOVSD ( 8 bytes):   6 sites
+  3x MOVSD (12 bytes):   21 sites
   4x MOVSD (16 bytes):   4 sites
-  Fixable (cave patch):   73
+  Fixable (cave patch):   50
   Unfixable:              90
-  Est. cave space:        ~2043 bytes
+  Est. cave space:        ~1338 bytes
 
 REP MOVSD sites:           770
   Pass-by-value:          6
@@ -69,19 +69,11 @@ REP MOVSD sites:           770
     2122 dwords (8488 bytes): 1 sites
     3200 dwords (12800 bytes): 1 sites
 
-Total MOVSD sites:         933
+Total MOVSD sites:         910
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE 3x MOVSD SITES (12 bytes copy, 35 sites)
+FIXABLE 3x MOVSD SITES (12 bytes copy, 21 sites)
 ----------------------------------------------------------------------------------------------------
-  CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0                       4 sites  ~132 bytes
-    0x0047bb37  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-    0x0047bb48  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-    0x0047bb59  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-    0x0047bb71  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-  CDemonCamera_worldToCameraSpace_FUN_0044da90                             2 sites  ~66 bytes
-    0x0044db11  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-    0x0044db1a  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDemonSet_calculateSpatialLighting_FUN_0056db80                          2 sites  ~66 bytes
     0x0056dcc5  3x MOVSD (12 bytes copy, 5 bytes borrowable)
     0x0056dd90  3x MOVSD (12 bytes copy, 6 bytes borrowable)
@@ -90,8 +82,6 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 35 sites)
     0x0050da93  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   CCharacter_moveAndCollide_FUN_00428f40                                   1 sites  ~33 bytes
     0x004294a5  3x MOVSD (12 bytes copy, 10 bytes borrowable)
-  CDemonCamera_precomputeNormals_FUN_0044e360                              1 sites  ~33 bytes
-    0x0044e49a  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   CDemonCamera_restoreAlphaTransform_FUN_00453a70                          1 sites  ~33 bytes
     0x00453bc4  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDemonCamera_restoreTransform_FUN_0044f1e0                               1 sites  ~33 bytes
@@ -104,32 +94,18 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 35 sites)
     0x0044d361  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   sampleFogAlongRay_FUN_0044bdd0                                           1 sites  ~33 bytes
     0x0044be5c  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CKeyFramedModel_removeUnusedVertices_FUN_0047aa30                        1 sites  ~33 bytes
-    0x0047ac1e  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CDemonRaytrace_renderFrustumCubes_FUN_00497e50                           1 sites  ~33 bytes
-    0x00497eb0  3x MOVSD (12 bytes copy, 7 bytes borrowable)
   CGame_beginFadeIn_FUN_004e0920                                           1 sites  ~33 bytes
     0x004e088f  3x MOVSD (12 bytes copy, 8 bytes borrowable)
-  showDeveloperToolsMenu_FUN_005073a0                                      1 sites  ~33 bytes
-    0x00507945  3x MOVSD (12 bytes copy, 9 bytes borrowable)
   CDemonMission_playMission_FUN_00538ba0                                   1 sites  ~33 bytes
     0x00538bde  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDemonMission_replicateActor_FUN_0053bd80                                1 sites  ~33 bytes
     0x0053bdae  3x MOVSD (12 bytes copy, 9 bytes borrowable)
-  CDemonSet_renderEnvMapTriangles_FUN_005702b0                             1 sites  ~33 bytes
-    0x005704c7  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   transformNormalFixedPoint_FUN_0056e960                                   1 sites  ~33 bytes
     0x0056eaa6  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   transformToWorldSpace_FUN_0056e890                                       1 sites  ~33 bytes
     0x0056e94f  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CDemonSet_buildCameraCoverageMap_FUN_0057fd00                            1 sites  ~33 bytes
-    0x0057fdff  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  CDeformableModel_dismember_FUN_0059c5e0                                  1 sites  ~33 bytes
-    0x0059c89f  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   build_file_info_env_FUN_0060ffd0                                         1 sites  ~33 bytes
     0x0061002f  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  calculatePhongLighting_FUN_00505530                                      1 sites  ~33 bytes
-    0x0050565b  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   getCameraOrigin_FUN_0050e2c0                                             1 sites  ~33 bytes
     0x0050e2e7  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   getCameraRotation_FUN_0050e2f0                                           1 sites  ~33 bytes
@@ -140,34 +116,16 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 35 sites)
     0x005d7b24  3x MOVSD (12 bytes copy, 7 bytes borrowable)
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE 2x MOVSD SITES (8 bytes copy, 15 sites)
+FIXABLE 2x MOVSD SITES (8 bytes copy, 6 sites)
 ----------------------------------------------------------------------------------------------------
   CNetGame_processPacket_FUN_005406a0                                      3 sites  ~81 bytes
     0x00540806  2x MOVSD (8 bytes copy, 6 bytes borrowable)
     0x00540835  2x MOVSD (8 bytes copy, 5 bytes borrowable)
     0x0054096c  2x MOVSD (8 bytes copy, 12 bytes borrowable)
-  CNetGame_addChatHistory_FUN_00542370                                     1 sites  ~27 bytes
-    0x005423a9  2x MOVSD (8 bytes copy, 8 bytes borrowable)
-  CNetGame_addPlayer_FUN_005412b0                                          1 sites  ~27 bytes
-    0x00541314  2x MOVSD (8 bytes copy, 9 bytes borrowable)
-  CNetGame_initializeNetworkToJoin_FUN_0053f900                            1 sites  ~27 bytes
-    0x0053fa5d  2x MOVSD (8 bytes copy, 9 bytes borrowable)
-  CNetGame_sendGameSetting_FUN_00542dd0                                    1 sites  ~27 bytes
-    0x00542f15  2x MOVSD (8 bytes copy, 5 bytes borrowable)
   i64toa_FUN_0060ad40                                                      1 sites  ~27 bytes
     0x0060ad66  2x MOVSD (8 bytes copy, 6 bytes borrowable)
   FUN_0060ade0                                                             1 sites  ~27 bytes
     0x0060adfb  2x MOVSD (8 bytes copy, 5 bytes borrowable)
-  cramTextureList_FUN_0046bb80                                             1 sites  ~27 bytes
-    0x0046c677  2x MOVSD (8 bytes copy, 5 bytes borrowable)
-  CLodMesh_replayLodGeneration_FUN_005173f0                                1 sites  ~27 bytes
-    0x00517423  2x MOVSD (8 bytes copy, 5 bytes borrowable)
-  acceptConnection_FUN_005e1d80                                            1 sites  ~27 bytes
-    0x005e1ddc  2x MOVSD (8 bytes copy, 8 bytes borrowable)
-  getSocketName_FUN_005e1df0                                               1 sites  ~27 bytes
-    0x005e1e3b  2x MOVSD (8 bytes copy, 7 bytes borrowable)
-  receiveSocketData_FUN_005e1c20                                           1 sites  ~27 bytes
-    0x005e1c8c  2x MOVSD (8 bytes copy, 5 bytes borrowable)
   getTime_FUN_005f2dc0                                                     1 sites  ~27 bytes
     0x005f2dee  2x MOVSD (8 bytes copy, 7 bytes borrowable)
 

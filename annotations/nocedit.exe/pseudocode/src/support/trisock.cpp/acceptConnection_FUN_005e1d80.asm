@@ -62,11 +62,21 @@ section .text
         ;   XREF to: 005e1960 (UNCONDITIONAL_CALL)  ; SOCKADDR_IN * support_trisock.cpp_convertSockAddr_FUN_005e1960(SNetworkAddr * dest_addr, SOCKADDR * src_addr)
     MOV ESI,EAX                         ; 005e1dd7
     ADD ESP,0x8                         ; 005e1dd9
-    MOVSD ES:EDI,ESI                    ; 005e1ddc
-    MOVSD ES:EDI,ESI                    ; 005e1ddd
-    POP ESI                             ; 005e1dde
-    MOV EAX,0x1                         ; 005e1ddf
+    JMP 0x0060c537                      ; 005e1ddc
+        ;   XREF to: 0060c537 (UNCONDITIONAL_JUMP)  ; LAB_0060c537
     ADD ESP,0x1c                        ; 005e1de4
+        ;   Label: LAB_005e1de4
     POP EDI                             ; 005e1de7
     RET                                 ; 005e1de8
+    MOV ECX,dword ptr [ESI]             ; 0060c537
+        ;   Label: LAB_0060c537
+    MOV dword ptr [EDI],ECX             ; 0060c539
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060c53b
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060c53e
+    ADD ESI,0x8                         ; 0060c541
+    ADD EDI,0x8                         ; 0060c544
+    POP ESI                             ; 0060c547
+    MOV EAX,0x1                         ; 0060c548
+    JMP 0x005e1de4                      ; 0060c54d
+        ;   XREF to: 005e1de4 (UNCONDITIONAL_JUMP)  ; LAB_005e1de4
 

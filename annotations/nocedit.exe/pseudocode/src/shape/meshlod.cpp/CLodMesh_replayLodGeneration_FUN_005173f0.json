@@ -5,19 +5,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 123,
-    "complexity_score": 129,
+    "assembly_lines": 133,
+    "complexity_score": 110,
     "cross_reference_count": 0,
     "function_call_count": 10,
-    "global_count": 12,
+    "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 69,
-    "suspect_count": 5,
+    "pseudocode_lines": 60,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 192
+    "total_lines": 193
   },
   "cross_references": [],
   "function": {
@@ -26,6 +26,10 @@
       [
         "005173f0",
         "0051752b"
+      ],
+      [
+        "0060c51c",
+        "0060c536"
       ]
     ],
     "convention": "__cdecl",
@@ -122,18 +126,6 @@
       "value": "02cf1cd4"
     },
     {
-      "addr": "0067d4b8",
-      "name": "s_replay_txt_0067d4b8",
-      "type": "TerminatedCString",
-      "value": null
-    },
-    {
-      "addr": "0067d4bc",
-      "name": "s_replay_txt_0067d4b8+4",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "0067d4c0",
       "name": "s_replay_txt_0067d4b8+8",
       "type": "undefined4",
@@ -167,34 +159,35 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.764150943396227,
-    "instruction_count": 106,
+    "avg_pcode_per_instr": 4.544642857142857,
+    "instruction_count": 112,
     "opcode_distribution": {
       "BOOL_OR": 1,
+      "BRANCH": 2,
       "CALL": 10,
       "CBRANCH": 3,
-      "COPY": 125,
+      "COPY": 123,
       "FLOAT2FLOAT": 2,
       "INT2FLOAT": 2,
       "INT_ADD": 48,
-      "INT_AND": 46,
-      "INT_CARRY": 13,
-      "INT_EQUAL": 44,
+      "INT_AND": 50,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 48,
       "INT_LESS": 4,
-      "INT_MULT": 11,
+      "INT_MULT": 7,
       "INT_NOTEQUAL": 2,
       "INT_SBORROW": 4,
-      "INT_SCARRY": 14,
-      "INT_SLESS": 22,
-      "INT_SUB": 50,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 24,
+      "INT_SUB": 46,
       "INT_XOR": 2,
-      "INT_ZEXT": 8,
+      "INT_ZEXT": 4,
       "LOAD": 24,
-      "POPCOUNT": 22,
+      "POPCOUNT": 24,
       "RETURN": 2,
       "STORE": 46
     },
-    "pcode_op_count": 505
+    "pcode_op_count": 509
   },
   "stack_frame": {
     "frame_size": 5134,
@@ -271,16 +264,8 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 11,
-      "match": "auStackY_100c",
-      "severity": "moderate",
-      "text": "ushort auStackY_100c [2026];",
-      "type": "stack_alignment_array"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 50,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(this_ptr,*(int *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x28),",
@@ -288,7 +273,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 51,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x24),",
@@ -296,7 +281,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 52,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x18));",

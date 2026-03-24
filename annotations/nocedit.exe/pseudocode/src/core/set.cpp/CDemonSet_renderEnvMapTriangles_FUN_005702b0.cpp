@@ -1,6 +1,6 @@
 // Name: core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0
 // Address: 005702b0
-// Address Range: [[005702b0, 005706f4]]
+// Address Range: [[005702b0, 005706f4] [0060c3fe, 0060c41b]]
 // Convention: __cdecl
 // Signature: void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha)
 
@@ -30,7 +30,6 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet
   short *psVar1;
   longlong lVar2;
   
-  bVar6 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_EnvMapTexture);
   if (g_CGamePtr->render_mode == 2) {
@@ -76,7 +75,6 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet
              (1.0 <= ABS(g_VertexNormalArray[iVar6].z))) {
             local_2c = (int)ROUND(g_VertexNormalArray[iVar6].x);
             local_28[0] = (int)ROUND(g_VertexNormalArray[iVar6].y);
-            local_28[1] = (int)ROUND(g_VertexNormalArray[iVar6].z);
           }
           else {
             local_50.x = (int)ROUND(g_LightingReferencePosition.x * 256.0f) -
@@ -87,17 +85,15 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet
                          g_TransformedVertexArray[iVar6].z;
             engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(&local_50,&local_38);
             local_2c = local_38.x;
-            local_28[(uint)bVar6 * -2] = *(int *)((int)&local_38 + (uint)bVar6 * -8 + 4);
-            local_28[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-                 *(int *)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+            local_28[0] = local_38.y;
           }
           iVar5 = local_28[4] + 1;
           iVar3 = 0x8000 - local_28[0];
           *(int *)((int)&local_d0 + local_28[5]) = local_2c + 0x8000;
           *(int *)((int)&local_90 + local_28[5]) = iVar3;
+          local_28[3] = local_28[3] + 0xc;
           local_28[4] = iVar5;
           local_28[5] = local_28[5] + 4;
-          local_28[3] = local_28[3] + 0xc;
         } while (iVar5 < SStack_118.base.base.count);
       }
       if (1 < SStack_118.base.base.count) {

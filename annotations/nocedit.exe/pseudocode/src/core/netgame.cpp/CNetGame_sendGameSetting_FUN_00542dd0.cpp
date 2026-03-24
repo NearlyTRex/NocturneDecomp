@@ -1,6 +1,6 @@
 // Name: core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
 // Address: 00542dd0
-// Address Range: [[00542dd0, 00542fe3]]
+// Address Range: [[00542dd0, 00542fe3] [0060c4ea, 0060c501]]
 // Convention: __cdecl
 // Signature: void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *this_ptr,int player_index)
 
@@ -10,6 +10,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *th
 
 {
   char cVar2;
+  EHeroType EVar3;
   int iVar5;
   CNetGame *pCVar2;
   int iVar3;
@@ -30,7 +31,6 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0(CNetGame *th
   SNetPlayer *local_14;
   char cVar1;
   
-  bVar8 = 0;
   if ((this_ptr->connection_type != CONNECTION_HOST) || (this_ptr->network_mode != NET_MODE_LOBBY))
   {
     g_CurrentFilename = "..\\core\\netgame.cpp";
@@ -75,12 +75,13 @@ LAB_00542ef5:
         if (cVar2 != '\0') goto LAB_00542ef5;
       }
       local_53[iVar4 * 10] = pCVar2->players[0].addr.ip_address;
-      local_53[iVar4 * 10 + (uint)bVar8 * -2 + 1] =
-           *(EHeroType *)((int)pCVar2 + (uint)bVar8 * -8 + 0x40);
-      local_53[iVar4 * 10 + 4] = pCVar2->players[0].ready_flag;
-      local_53[iVar4 * 10 + 2] = pCVar2->players[0].hero_number;
+      EVar3 = *(EHeroType *)&pCVar2->players[0].addr.port;
+      local_53[iVar4 * 10 + 1] = EVar3;
+      *(int *)((int)local_53 + EVar3 + 0x10) = pCVar2->players[0].ready_flag;
+      *(EHeroType *)((int)local_53 + EVar3 + HERO_TYPE_MOLOCH) = pCVar2->players[0].hero_number;
       pcVar8 = pcVar6 + 0x28;
-      local_53[iVar4 * 10 + 3] = pCVar2->players[0].aim_mode;
+      *(int *)((int)local_53 + EVar3 + (HERO_TYPE_MOLOCH|HERO_TYPE_BARON)) =
+           pCVar2->players[0].aim_mode;
       iVar4 = iVar4 + 1;
       pSVar6 = local_14 + 1;
       local_14 = pSVar6;

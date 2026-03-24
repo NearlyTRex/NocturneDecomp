@@ -4,9 +4,9 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6930 ( 42.6%)
-  pointer_cast                    4889 ( 30.1%)
-  unknown_field                    887 (  5.5%)
+  decompiler_intrinsic            6929 ( 42.7%)
+  pointer_cast                    4874 ( 30.0%)
+  unknown_field                    895 (  5.5%)
   special_crt_function             439 (  2.7%)
   stack_param                      340 (  2.1%)
   unnamed_param                    320 (  2.0%)
@@ -19,12 +19,12 @@ SUSPECT TYPE COUNTS
   param_count_too_few              119 (  0.7%)
   unaffected_reg                   106 (  0.7%)
   sub84_truncation                 100 (  0.6%)
-  stack_alignment_array             99 (  0.6%)
+  stack_alignment_array             97 (  0.6%)
   negative_offset                   86 (  0.5%)
   warning_unreachable               84 (  0.5%)
   register_param                    69 (  0.4%)
   suspect_float                     50 (  0.3%)
-  param_count_too_many              48 (  0.3%)
+  param_count_too_many              46 (  0.3%)
   unknown_type                      40 (  0.2%)
   mmx_assembly                      34 (  0.2%)
   extra_output                      29 (  0.2%)
@@ -54,11 +54,11 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (6930 occurrences)
+TYPE: decompiler_intrinsic (6929 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2625x  ROUND
+  2624x  ROUND
   1557x  ADJ
    427x  SQRT
    421x  CONCAT44
@@ -96,19 +96,19 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (4889 occurrences)
+TYPE: pointer_cast (4874 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1452x  (uint *)((int)
-  1241x  (int *)((int)
+  1441x  (uint *)((int)
+  1236x  (int *)((int)
    325x  (SRenderVertex *)((int)
    289x  (float *)((int)
    289x  (CMatrix3x4f *)((int)
    208x  (double *)((int)
    189x  (void *)((int)
    170x  (byte *)((int)
-    84x  (ushort *)((int)
+    86x  (ushort *)((int)
     70x  (char *)((int)
     61x  (short *)((int)
     34x  (SShapeEditorPolygon *)((int)
@@ -132,7 +132,7 @@ Example functions:
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar1) <...
 
 ====================================================================================================
-TYPE: unknown_field (887 occurrences)
+TYPE: unknown_field (895 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -140,19 +140,19 @@ Unique patterns:
    342x  ._4_4_
     47x  ._0_2_
     36x  ._2_2_
-    14x  ._0_1_
+    16x  ._0_1_
+    11x  ._1_1_
     11x  ._12_4_
-     9x  ._1_1_
-     7x  ._3_1_
+     9x  ._3_1_
      7x  ._8_4_
      7x  ._4_8_
      5x  ._24_4_
+     4x  ._2_1_
      4x  ._16_4_
      4x  ._44_4_
      3x  ._40_4_
      3x  ._20_4_
      3x  ._13604_4_
-     2x  ._2_1_
      2x  ._252_4_
      2x  ._12_8_
      2x  ._48_4_
@@ -752,7 +752,7 @@ Example functions:
     local_98 = SUB84(__BITCAST_UINT64(dVar10),0);...
 
 ====================================================================================================
-TYPE: stack_alignment_array (99 occurrences)
+TYPE: stack_alignment_array (97 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1036,13 +1036,13 @@ Example functions:
     UStack_84.vec.y = 1.4013e-45;...
 
 ====================================================================================================
-TYPE: param_count_too_many (48 occurrences)
+TYPE: param_count_too_many (46 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    20x  declared:2 vs estimated:1
+    19x  declared:2 vs estimated:1
     15x  declared:3 vs estimated:2
-     8x  declared:4 vs estimated:3
+     7x  declared:4 vs estimated:3
      1x  declared:6 vs estimated:3
      1x  declared:6 vs estimated:5
      1x  declared:1 vs estimated:0
@@ -1063,8 +1063,6 @@ Example functions:
   support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
     Function declares 2 params but call sites push 1 (1 extra)...
   engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
-    Function declares 2 params but call sites push 1 (1 extra)...
-  engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0
     Function declares 2 params but call sites push 1 (1 extra)...
   engine_matrix.c_transformWorldToView_FUN_0050cc40
     Function declares 2 params but call sites push 1 (1 extra)...
@@ -1088,8 +1086,6 @@ Example functions:
     Function declares 4 params but call sites push 3 (1 extra)...
   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
     Function declares 3 params but call sites push 2 (1 extra)...
-  core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70
-    Function declares 4 params but call sites push 3 (1 extra)...
   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
     Function declares 3 params but call sites push 2 (1 extra)...
   core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
@@ -1110,6 +1106,10 @@ Example functions:
     Function declares 2 params but call sites push 1 (1 extra)...
   core_xform.cpp_inverse_FUN_005f6210
     Function declares 2 params but call sites push 1 (1 extra)...
+  core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0
+    Function declares 2 params but call sites push 1 (1 extra)...
+  core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70
+    Function declares 3 params but call sites push 2 (1 extra)...
 
 ====================================================================================================
 TYPE: unknown_type (40 occurrences)

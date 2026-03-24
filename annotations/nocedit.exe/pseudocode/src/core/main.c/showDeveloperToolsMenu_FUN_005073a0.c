@@ -1,6 +1,6 @@
 // Name: core_main.c_showDeveloperToolsMenu_FUN_005073a0
 // Address: 005073a0
-// Address Range: [[005073a0, 00507a46]]
+// Address Range: [[005073a0, 00507a46] [0060c476, 0060c496]]
 // Convention: __cdecl
 // Signature: void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
 
@@ -15,6 +15,7 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   char *pcVar3;
   int iVar4;
   int iVar5;
+  int iVar2;
   CKeyFramedModel *this_ptr;
   CKeyFramedModel *pCVar6;
   CKeyFramedModel *ptr;
@@ -24,8 +25,6 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   _FILE *output_file;
   byte bVar8;
   int aiStackY_1008 [690];
-  char *filename;
-  int iVar2;
   CIniFile local_528;
   char local_328 [256];
   CEdButton local_228;
@@ -40,7 +39,6 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   char *directory;
   char *mode;
   
-  bVar8 = 0;
   iVar1 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0
                     (&g_CDemonFileManagerInstance.base);
   if (iVar1 == 0) {
@@ -147,20 +145,20 @@ LAB_0050740e:
         else if (uVar1 == 0x5a) {
           shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590
                     (g_CEditorToolsPtr,local_328);
-          iVar2 = 0x2c0;
-          source_file = "..\\core\\main.c";
-          mode = "wt";
-          directory = (char *)0x0;
-          filename = local_20;
           local_20[0] = "memdump.txt"[0];
           local_20[1] = "memdump.txt"[1];
           local_20[2] = "memdump.txt"[2];
           local_20[3] = "memdump.txt"[3];
-          aiStack_1c[(uint)bVar8 * -2] = *(int *)("memdump.txt" + (uint)bVar8 * -8 + 4);
-          aiStack_1c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-               *(int *)("memdump.txt" + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+          aiStack_1c[0]._0_1_ = "memdump.txt"[4];
+          aiStack_1c[0]._1_1_ = "memdump.txt"[5];
+          aiStack_1c[0]._2_1_ = "memdump.txt"[6];
+          aiStack_1c[0]._3_1_ = "memdump.txt"[7];
+          aiStack_1c[1]._0_1_ = "memdump.txt"[8];
+          aiStack_1c[1]._1_1_ = "memdump.txt"[9];
+          aiStack_1c[1]._2_1_ = "memdump.txt"[10];
+          aiStack_1c[1]._3_1_ = "memdump.txt"[0xb];
           output_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                                  (filename,directory,mode,source_file,iVar2);
+                                  (local_20,(char *)0x0,"wt","..\\core\\main.c",0x2c0);
           if (output_file == (_FILE *)0x0) {
             g_CurrentFilename = "..\\core\\main.c";
             g_CurrentLineNumber = 0x2c1;
