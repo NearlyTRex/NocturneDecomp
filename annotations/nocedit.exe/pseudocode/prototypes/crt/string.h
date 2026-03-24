@@ -115,25 +115,9 @@ int __cdecl wcstombs(char *dest,wchar_t *src,SIZE_T dest_size);
 // Address: 0060c190
 char * __cdecl strpbrk(char *str,char *char_set);
 
-// Original: crt_string.c_compare_mb_chars_ci_FUN_0060c790
-// Address: 0060c790
-int __cdecl compare::mb_chars_ci(char *str1,char *str2);
-
-// Original: crt_string.c_wcslen_FUN_0060cd30
-// Address: 0060cd30
-ulong __cdecl wcslen(LPWSTR str);
-
-// Original: crt_string.c_memcpy_FUN_0060cd60
-// Address: 0060cd60
-void * __cdecl memcpy(void *dest,void *src,SIZE_T count);
-
 // Original: crt_string.c_char_in_set_FUN_0060e340
 // Address: 0060e340
 char * __cdecl char::in_set(char *charset,wchar_t wc);
-
-// Original: crt_string.c_mbcmp_FUN_0060e640
-// Address: 0060e640
-int __cdecl mbcmp(char *str1,char *str2);
 
 // Original: crt_string.c_strcpy_advance_FUN_00610240
 // Address: 00610240

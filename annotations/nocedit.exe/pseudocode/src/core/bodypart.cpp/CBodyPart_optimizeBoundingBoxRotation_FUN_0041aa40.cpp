@@ -1,6 +1,6 @@
 // Name: core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40
 // Address: 0041aa40
-// Address Range: [[0041aa40, 0041adcb]]
+// Address Range: [[0041aa40, 0041adcb] [0060a1b0, 0060a228]]
 // Convention: __cdecl
 // Signature: void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40(CBodyPart *this_ptr,CVector3i *out_bbox_min,CVector3i *out_bbox_max)
 
@@ -16,11 +16,11 @@ void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa4
   longlong lVar6;
   int iVar5;
   int iVar9;
+  int *piVar10;
   int iVar6;
   int iVar7;
   int iVar8;
   int *piVar9;
-  int *piVar10;
   byte bVar10;
   int aiStackY_106c [1001];
   int local_c0;
@@ -50,7 +50,6 @@ void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa4
   longlong lVar3;
   longlong lVar1;
   
-  bVar10 = 0;
   local_44 = 0x7fffffff;
   local_48 = 0;
   do {
@@ -126,13 +125,11 @@ void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa4
       }
       if (iVar9 < local_44) {
         local_84 = local_60;
-        aiStack_80[(uint)bVar10 * -2] = (&local_5c)[(uint)bVar10 * -2];
-        aiStack_80[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-             (&local_58)[(uint)bVar10 * -2 + (uint)bVar10 * -2];
+        aiStack_80[0] = local_5c;
+        aiStack_80[1] = local_58;
         aiStack_80[5] = aiStack_80[2];
-        aiStack_80[(uint)bVar10 * -2 + 6] = aiStack_80[(uint)bVar10 * -2 + 3];
-        aiStack_80[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
-             aiStack_80[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+        aiStack_80[6] = aiStack_80[3];
+        aiStack_80[7] = aiStack_80[4];
         local_44 = iVar9;
         if (&local_90 != &local_54) {
           local_90.x = local_54.x;
@@ -144,14 +141,12 @@ void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa4
     } while (local_c0 != 0x18);
     local_48 = local_48 + 2;
   } while (local_48 != 0x18);
-  piVar9 = (int *)((int)out_bbox_min + (uint)bVar10 * -8 + 4);
   out_bbox_min->x = local_84;
-  *piVar9 = aiStack_80[(uint)bVar10 * -2];
-  piVar9[(uint)bVar10 * -2 + 1] = aiStack_80[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
-  piVar10 = (int *)((int)out_bbox_max + (uint)bVar10 * -8 + 4);
+  out_bbox_min->y = aiStack_80[0];
+  out_bbox_min->z = aiStack_80[1];
   out_bbox_max->x = aiStack_80[5];
-  *piVar10 = aiStack_80[(uint)bVar10 * -2 + 6];
-  piVar10[(uint)bVar10 * -2 + 1] = aiStack_80[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
+  out_bbox_max->y = aiStack_80[6];
+  out_bbox_max->z = aiStack_80[7];
   core_bodypart_cpp_CBodyPart_applyRotation_FUN_0041a630(this_ptr,&local_90);
   return;
 }

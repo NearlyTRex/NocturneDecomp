@@ -1,6 +1,6 @@
 // Name: shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570
 // Address: 0051b570
-// Address Range: [[0051b570, 0051b6ee] [00604e5e, 00604e81]]
+// Address Range: [[0051b570, 0051b6ee] [00604e5e, 00604e81] [0060a43c, 0060a49a]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_meshlod_cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh *this_ptr)
 
@@ -57,9 +57,8 @@ void __cdecl shape_meshlod_cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh *this
           puVar4[2] = puVar2[2];
           puVar4[3] = puVar2[3];
           puVar4[4] = puVar2[4];
-          puVar4[(uint)bVar8 * -2 + 5] = puVar2[(uint)bVar8 * -2 + 5];
-          (puVar4 + (uint)bVar8 * -2 + 5)[(uint)bVar8 * -2 + 1] =
-               (puVar2 + (uint)bVar8 * -2 + 5)[(uint)bVar8 * -2 + 1];
+          puVar4[5] = puVar2[5];
+          puVar4[6] = puVar2[6];
           puVar6 = puVar2 + 7;
           puVar7 = puVar4 + 7;
           for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -70,9 +69,8 @@ void __cdecl shape_meshlod_cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh *this
             puVar7 = puVar7;
           }
           puVar4[0xd] = puVar2[0xd];
-          puVar4[(uint)bVar8 * -2 + 0xe] = puVar2[(uint)bVar8 * -2 + 0xe];
-          (puVar4 + (uint)bVar8 * -2 + 0xe)[(uint)bVar8 * -2 + 1] =
-               (puVar2 + (uint)bVar8 * -2 + 0xe)[(uint)bVar8 * -2 + 1];
+          puVar4[0xe] = puVar2[0xe];
+          puVar4[0xf] = puVar2[0xf];
           puVar4[0x10] = puVar2[0x10];
           if (puVar4 + 0x11 != puVar2 + 0x11) {
             puVar4[0x11] = puVar2[0x11];
@@ -83,9 +81,8 @@ void __cdecl shape_meshlod_cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh *this
           __arr_op
                     (puVar4 + 0x15,puVar2 + 0x15,3,0xc,core_actor_cpp_copyVector_FUN_00410360);
           puVar4[0x1e] = puVar2[0x1e];
-          puVar4[(uint)bVar8 * -2 + 0x1f] = puVar2[(uint)bVar8 * -2 + 0x1f];
-          (puVar4 + (uint)bVar8 * -2 + 0x1f)[(uint)bVar8 * -2 + 1] =
-               (puVar2 + (uint)bVar8 * -2 + 0x1f)[(uint)bVar8 * -2 + 1];
+          puVar4[0x1f] = puVar2[0x1f];
+          puVar4[0x20] = puVar2[0x20];
           puVar4[0x21] = puVar2[0x21];
           puVar4[0x22] = puVar2[0x22];
         }

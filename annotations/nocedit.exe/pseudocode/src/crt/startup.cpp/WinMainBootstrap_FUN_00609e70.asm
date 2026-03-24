@@ -10,6 +10,7 @@
 ;   entry at 0060239a
 ;
 ; Referenced Globals:
+;   undefined4 SUB_0060ca80
 ;   GET_MODULE_HANDLE_A_FUNC* g_GetModuleHandleAFunc = 00211f6e
 ;   DWORD g_WinMainCmdShow = 0x0
 ;   DWORD g_StackAllocSize = 0x0
@@ -22,7 +23,6 @@
 ;   crt_stack.c_GetStackUsage_FUN_0060c260
 ;   crt_stack.c_ProbeStackSpace_FUN_005ffa2f
 ;   crt_startup.c_ExitApplication_FUN_0060b534
-;   crt_startup.c_PlaceholderStub_FUN_0060ca80
 ;   crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8
 ;   wincore_winrun.cpp_winMain_FUN_005f3680
 ;
@@ -82,8 +82,8 @@ section .text
         ;   Label: LAB_00609ee6
     ADD EAX,EBX                         ; 00609eec
     MOV [0x00684ffc],EAX                ; 00609eee | g_CrtStackBuffer
-    CALL crt_startup.c_PlaceholderStub_FUN_0060ca80 ; 00609ef3
-        ;   XREF to: 0060ca80 (UNCONDITIONAL_CALL)  ; undefined crt_startup.c_PlaceholderStub_FUN_0060ca80()
+    CALL 0x0060ca80                     ; 00609ef3
+        ;   XREF to: 0060ca80 (UNCONDITIONAL_CALL)  ; SUB_0060ca80
     PUSH 0xa                            ; 00609ef8
     MOV EBX,dword ptr [0x00684fd4]      ; 00609efa | g_WinMainCmdShow
     PUSH EBX                            ; 00609f00

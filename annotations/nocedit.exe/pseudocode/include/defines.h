@@ -80,11 +80,9 @@
 #define SYSTEM_ERROR_ALREADY_EXISTS               183  // 0xB7
 #define SYSTEM_ERROR_FILENAME_EXCED_RANGE         206  // 0xCE
 #define SYSTEM_ERROR_INVALID_NAME                 123  // 0x7B
-#define SYSTEM_GENERIC_READ_WRITE                 0xC0000000  // 3221225472
-#define SYSTEM_GENERIC_WRITE                      0x40000000  // 1073741824
 #define SYSTEM_IO_ERROR                           5
 #define SYSTEM_WINDOWS_NT_4_0                     0x8000  // 32768
 
-// Total equates: 71
-// Total references: 268
+// Total equates: 69
+// Total references: 266
 

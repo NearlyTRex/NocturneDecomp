@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 23,
     "complexity_score": 50,
-    "cross_reference_count": 5,
+    "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -32,18 +32,6 @@
       "from_addr": "0060ad37",
       "name": "crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0060cac0",
-      "from_addr": "0060caeb",
-      "name": "crt_tls.c_create_thread_local_data_FUN_0060cac0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0060caf8",
-      "from_addr": "0060cb44",
-      "name": "crt_tls.c_getThreadLocalData_FUN_0060caf8",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -72,19 +60,8 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 6,
+    "call_site_count": 3,
     "call_sites": [
-      {
-        "call_addr": "0060cb44",
-        "call_type": "direct",
-        "caller": "crt_tls.c_getThreadLocalData_FUN_0060caf8",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
       {
         "call_addr": "005ffa2a",
         "call_type": "direct",
@@ -92,28 +69,6 @@
         "estimated_params": 2,
         "instructions_analyzed": 3,
         "method": "push_count",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "0060caeb",
-        "call_type": "direct",
-        "caller": "crt_tls.c_create_thread_local_data_FUN_0060cac0",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "0060cb6c",
-        "call_type": "direct",
-        "caller": "crt_tls.c_getThreadLocalData_FUN_0060caf8",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
         "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2

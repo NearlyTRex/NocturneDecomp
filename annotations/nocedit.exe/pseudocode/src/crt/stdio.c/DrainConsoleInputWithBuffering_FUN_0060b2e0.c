@@ -37,7 +37,7 @@ int __watcallStack DrainConsoleInputWithBuffering(HANDLE hConsoleInput)
     if (BVar1 == 0) {
       return -1;
     }
-    iVar2 = IsRelevantKeyEvent(&local_28);
+    iVar2 = func_0x0060cd90(&local_28);
   } while (iVar2 == 0);
   g_BufferedVirtualKey = (int)(byte)local_28.Event.MouseEvent.dwControlKeyState._2_1_;
   if (((local_28.Event.KeyEvent.dwControlKeyState._1_1_ & 1) == 0) && (g_BufferedVirtualKey != 0)) {

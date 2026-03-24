@@ -17,7 +17,8 @@ void __watcallRegister entry(void)
   HMODULE pHVar4;
   int iVar5;
   uint uVar6;
-  int *piVar7;
+  byte *puVar7;
+  int *piVar8;
   uint uStack_20;
   int aiStack_1c [2];
   uint uStack_14;
@@ -38,7 +39,7 @@ void __watcallRegister entry(void)
   *(byte **)((int)aiStack_1c + iVar5 + 4) = auStack_10;
   *(uint *)((int)aiStack_1c + iVar5) = 0x609eb6;
   crt_startup_cpp_InitializeWinAppRuntime_FUN_006026a8(auStack_10);
-  piVar7 = (int *)(auStack_10 + iVar5);
+  puVar7 = auStack_10 + iVar5;
   uVar6 = g_StackAllocSize + 3 & 0xfffffffc;
   *(uint *)(auStack_10 + iVar5 + -4) = 0x609eca;
   uVar2 = GetStackUsage();
@@ -47,28 +48,29 @@ void __watcallRegister entry(void)
     *(uint *)((int)aiStack_1c + iVar5 + 4) = 0x609ed4;
     ProbeStackSpace(*(uint *)(auStack_10 + iVar5 + -4));
     iVar1 = -(g_StackAllocSize + 3 & 0xfffffffc);
-    piVar7 = (int *)(auStack_10 + iVar1 + iVar5);
+    puVar7 = auStack_10 + iVar1 + iVar5;
     puVar3 = auStack_10 + iVar1 + iVar5;
   }
   else {
     puVar3 = (byte *)0x0;
   }
   g_CrtStackBuffer = puVar3 + g_StackAllocSize;
-  piVar7[-1] = 0x609ef8;
-  PlaceholderStub();
-  piVar7[-1] = 10;
-  piVar7[-2] = g_WinMainCmdShow;
-  piVar7[-3] = 0;
-  piVar7[-4] = 0;
-  piVar7[-5] = 0x609f0c;
-  pHVar4 = (*g_GetModuleHandleAFunc)((LPCSTR)piVar7[-4]);
-  piVar7[-4] = (int)pHVar4;
-  piVar7[-5] = 0x609f12;
+  piVar8 = (int *)(puVar7 + -4);
+  *(uint *)(puVar7 + -4) = 0x609ef8;
+  func_0x0060ca80();
+  piVar8[-1] = 10;
+  piVar8[-2] = g_WinMainCmdShow;
+  piVar8[-3] = 0;
+  piVar8[-4] = 0;
+  piVar8[-5] = 0x609f0c;
+  pHVar4 = (*g_GetModuleHandleAFunc)((LPCSTR)piVar8[-4]);
+  piVar8[-4] = (int)pHVar4;
+  piVar8[-5] = 0x609f12;
   iVar5 = wincore_winrun_cpp_winMain_FUN_005f3680
-                    ((HINSTANCE)piVar7[-4],(HINSTANCE)piVar7[-3],(LPSTR)piVar7[-2],piVar7[-1],
-                     *piVar7);
-  piVar7[-1] = iVar5;
-  piVar7[-2] = 0x609f18;
-  ExitApplication(piVar7[-1]);
+                    ((HINSTANCE)piVar8[-4],(HINSTANCE)piVar8[-3],(LPSTR)piVar8[-2],piVar8[-1],
+                     *piVar8);
+  piVar8[-1] = iVar5;
+  piVar8[-2] = 0x609f18;
+  ExitApplication(piVar8[-1]);
   return;
 }

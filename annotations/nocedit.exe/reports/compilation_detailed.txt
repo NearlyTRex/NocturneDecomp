@@ -5,15 +5,15 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6452
-Successful: 5908 (91.6%)
-Failed: 544
+Successful: 5909 (91.6%)
+Failed: 543
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                            979
+  other                            981
   format_error                     782
   incompatible_types               205
-  undeclared_identifier            135
+  undeclared_identifier            127
   syntax_error                      41
   missing_member                    26
   type_error                         9
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (979 errors)
+CATEGORY: other (981 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -38,6 +38,8 @@ CATEGORY: other (979 errors)
     Line 173: C-style cast from 'CPlatform *' to 'float' is not allowed
   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010
     Line 21: C-style cast from 'CVector3f *' to 'float' is not allowed
+  core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
+    Line 448: C-style cast from 'CVector3i *' to 'float' is not allowed
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
     Line 399: C-style cast from 'CWeapon *' to 'float' is not allowed
   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
@@ -117,7 +119,7 @@ CATEGORY: other (979 errors)
   core_particle.cpp_CParticle_process_FUN_00545760
     Line 60: cast from pointer to smaller type 'byte' (aka 'unsigned char') loses information
   core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
-    Line 126: cast from pointer to smaller type 'char' loses information
+    Line 132: cast from pointer to smaller type 'char' loses information
   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
     Line 119: cast from pointer to smaller type 'char' loses information
   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030
@@ -135,11 +137,11 @@ CATEGORY: other (979 errors)
   core_course.cpp_CCourse_importMatrices_FUN_00442ea0
     Line 35: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30
-    Line 111: data argument not used by format string [-Werror,-Wformat-extra-args]
+    Line 98: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
     Line 334: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_game.cpp_CGame_processFrame_FUN_004da100
-    Line 158: data argument not used by format string [-Werror,-Wformat-extra-args]
+    Line 145: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_script.cpp_CScript_loadState_FUN_00560820
     Line 44: data argument not used by format string [-Werror,-Wformat-extra-args]
   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
@@ -832,9 +834,9 @@ CATEGORY: format_error (782 errors)
   sound_sndmain.cpp_formatSfxOptionsToString_FUN_005a8d00
     Line 29: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30
-    Line 109: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
+    Line 98: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   core_game.cpp_CGame_processFrame_FUN_004da100
-    Line 157: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
+    Line 144: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
     Line 143: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100
@@ -1131,7 +1133,7 @@ CATEGORY: incompatible_types (205 errors)
   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
     Line 1244: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
-    Line 182: assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'
+    Line 173: assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
     Line 42: assigning to 'void **' from incompatible type 'void *'
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
@@ -1214,7 +1216,7 @@ CATEGORY: incompatible_types (205 errors)
     Line 212: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (135 errors)
+CATEGORY: undeclared_identifier (127 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -1367,8 +1369,6 @@ CATEGORY: undeclared_identifier (135 errors)
     Line 85: use of undeclared identifier 'stack0xffffffdc'
   shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920
     Line 19: use of undeclared identifier 'stack0xffffffe0'
-  core_mimic.cpp_CMimic_setup_FUN_0051f3e0
-    Line 118: use of undeclared identifier 'stack0xffffffe8'
   core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
     Line 93: use of undeclared identifier 'uint3'
 

@@ -13,14 +13,12 @@
 ;   crt_stdio.c_DrainConsoleInputAndSetup_FUN_0060b3f8 at 0060b458
 ;
 ; Referenced Globals:
+;   undefined4 SUB_0060cd90
 ;   READ_CONSOLE_INPUT_A_FUNC* g_ReadConsoleInputAFunc = 002120de
 ;   int g_ConsoleInputState = 0x0
 ;   int g_BufferedCharacter
 ;   int g_BufferedVirtualKey
 ;   int g_BufferedRepeatCount
-;
-; Called Functions:
-;   crt_stdio.c_IsRelevantKeyEvent_FUN_0060cd90
 ;
 ; *****************************************************************************
 
@@ -87,8 +85,8 @@ section .text
         ;   XREF to: 0060b3d3 (CONDITIONAL_JUMP)  ; LAB_0060b3d3
     MOV EAX,ESP                         ; 0060b369
     PUSH EAX                            ; 0060b36b
-    CALL crt_stdio.c_IsRelevantKeyEvent_FUN_0060cd90 ; 0060b36c
-        ;   XREF to: 0060cd90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_IsRelevantKeyEvent_FUN_0060cd90(_INPUT_RECORD * pInputRecord)
+    CALL 0x0060cd90                     ; 0060b36c
+        ;   XREF to: 0060cd90 (UNCONDITIONAL_CALL)  ; SUB_0060cd90
     ADD ESP,0x4                         ; 0060b371
     TEST EAX,EAX                        ; 0060b374
     JZ 0x0060b351                       ; 0060b376

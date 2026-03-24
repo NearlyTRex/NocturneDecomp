@@ -6,14 +6,12 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   mb_string
 ;
-; XREF[7]:
+; XREF[5]:
 ;   crt_file.c_makepath_FUN_005febfc at 005feca6
 ;   crt_locale.c_mbtowc_FUN_0060b1c0 at 0060b21e
 ;   crt_string.c_char_in_set_FUN_0060e340 at 0060e35b
-;   crt_string.c_compare_mb_chars_ci_FUN_0060c790 at 0060c7ac
 ;   crt_string.c_mbstrnbytes_FUN_00605ec0 at 00605eff
 ;   crt_string.c_mbstrnlen_FUN_00605e50 at 00605e6f
-;   crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0 at 0060e609
 ;
 ; Referenced Globals:
 ;   int g_MultibyteLocaleActive

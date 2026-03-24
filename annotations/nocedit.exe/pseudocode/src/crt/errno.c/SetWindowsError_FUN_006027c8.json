@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 5,
     "complexity_score": 22,
-    "cross_reference_count": 3,
+    "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
@@ -24,12 +24,6 @@
       "addr": "00610258",
       "from_addr": "006102ed",
       "name": "crt_process.c_build_cmdline_FUN_00610258",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0060e6a0",
-      "from_addr": "0060e7a2",
-      "name": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -61,19 +55,8 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 3,
+    "call_site_count": 2,
     "call_sites": [
-      {
-        "call_addr": "0060e7a2",
-        "call_type": "direct",
-        "caller": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
       {
         "call_addr": "006102ed",
         "call_type": "direct",

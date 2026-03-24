@@ -16,7 +16,6 @@
 #include "system/utime.h"
 #include "system/watcom.h"
 #include "system/winbase.h"
-#include "system/wincon.h"
 #include "system/windef.h"
 #include "system/winnt.h"
 
@@ -345,26 +344,6 @@ int __cdecl crt_io_c_IsSpecialDevice_FUN_0060c270(int handle_index);
 int __cdecl crt_io_c_close_handle_safe_FUN_0060c2e0(int handle_index);
 int __cdecl crt_fstream_cpp_convertModesAndOpenFile_FUN_0060c340(char *filename,int *iostream_mode,int permissions);
 float10 __fpustack crt_math_c_atan2_FUN_0060c440(float10 y,float10 x);
-int __cdecl crt_string_c_compare_mb_chars_ci_FUN_0060c790(char *str1,char *str2);
-void __cdecl crt_io_c_ConvertAccessMode_FUN_0060c850(int access_mode,DWORD *desired_access,DWORD *share_mode);
-void __cdecl crt_io_c_ConvertCreationDisposition_FUN_0060c894(DWORD mode_flags,DWORD *creation_disposition);
-void __cdecl crt_heap_c_CompactHeapBlocks_FUN_0060c920(void);
-int __cdecl crt_heap_c_VirtualFreeBlock_FUN_0060c95c(HeapBlock *block);
-void __cdecl crt_heap_c_UnlinkAndFreeBlock_FUN_0060c9bc(HeapBlock *block);
-int __watcallStack crt_io_c_access_FUN_0060c9f0(char *filename,int access_mode);
-int __watcallStack crt_process_c_spawnvp_FUN_0060ca20(int mode,char *cmdname,char **argv);
-void __cdecl crt_startup_c_PlaceholderStub_FUN_0060ca80(void);
-void * __cdecl crt_memory_c_calloc_FUN_0060ca90(ulong count,ulong size);
-LPVOID __watcallRegister crt_tls_c_create_thread_local_data_FUN_0060cac0(void);
-void * __watcallRegister crt_tls_c_getThreadLocalData_FUN_0060caf8(void);
-BOOL __cdecl crt_tls_c_register_thread_data_FUN_0060cbd0(void *tls_data,void *thread_param);
-void __cdecl crt_tls_c_unregister_thread_data_FUN_0060cc3c(void *threadDataKey);
-void crt_unknown_c_FUN_0060ccb4(void);
-void __cdecl crt_thread_c_InitializeThreadContext_FUN_0060ccf0(ThreadData *pThreadData);
-void crt_unknown_c_FUN_0060ccb4(void);
-ulong __cdecl crt_string_c_wcslen_FUN_0060cd30(LPWSTR str);
-void * __cdecl crt_string_c_memcpy_FUN_0060cd60(void *dest,void *src,SIZE_T count);
-int __watcallStack crt_stdio_c_IsRelevantKeyEvent_FUN_0060cd90(_INPUT_RECORD *pInputRecord);
 void __watcallRegister crt_stdio_c_InitializeConsoleHandles_FUN_0060cdbc(void);
 HANDLE __watcallRegister crt_stdio_c_GetConsoleInputHandle_FUN_0060ce30(void);
 HANDLE __cdecl crt_stdio_c_GetConsoleOutputHandle_FUN_0060ce3c(void);
@@ -399,10 +378,6 @@ int __watcallStack crt_fstream_cpp_filebuf_sync_FUN_0060dc5e(filebuf *this_ptr);
 void __cdecl crt_math_c_print_error_message_FUN_0060e298(int errorType,char *errorData);
 double __cdecl crt_math_c_report_math_error_FUN_0060e2e5(MathErrorContext *errorCtx);
 char * __cdecl crt_string_c_char_in_set_FUN_0060e340(char *charset,wchar_t wc);
-void __cdecl crt_mbstring_c_copyMbChar_FUN_0060e590(char *dest,char *src);
-char * crt_unknown_c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0(char *param_1);
-int __cdecl crt_string_c_mbcmp_FUN_0060e640(char *str1,char *str2);
-int __cdecl crt_process_c_spawnvp_with_path_search_FUN_0060e6a0(int mode,char *program,char **argv,char **envp);
 uint crt_unknown_c_ReadFileBytesMaybe_FUN_0060e930 (uint param_1,char *param_2,DWORD param_3,undefined4 param_4,undefined4 param_5, int param_6);
 int __cdecl crt_stdio_c_fputs_FUN_0060ebb0(char *str,_FILE *file);
 long __cdecl crt_stdlib_c_strtol_internal_FUN_0060ec70(char *str,char **endptr,int base,int is_signed);

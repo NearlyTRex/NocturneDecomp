@@ -1,6 +1,6 @@
 // Name: core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
 // Address: 0044e360
-// Address Range: [[0044e360, 0044e789]]
+// Address Range: [[0044e360, 0044e789] [0060a0a0, 0060a119]]
 // Convention: __cdecl
 // Signature: CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)
 
@@ -64,25 +64,18 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                     (this_ptr,local_28 * this_ptr->scale_factor,local_38 * this_ptr->scale_factor,
                      &local_84);
-          local_60.x = local_84.x;
-          *(uint *)((int)&local_60 + (uint)bVar11 * -8 + 4) =
-               *(uint *)((int)&local_84 + (uint)bVar11 * -8 + 4);
-          *(uint *)((int)&local_60 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =
-               *(uint *)((int)&local_84 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-          if ((local_60.z != 0x7fffffff) && (local_88 < local_60.z)) {
-            local_88 = local_60.z;
+          local_60.z = local_84.z;
+          if ((local_84.z != 0x7fffffff) && (local_88 < local_84.z)) {
+            local_88 = local_84.z;
           }
           core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
                     (this_ptr,&local_60,&local_54);
           local_6c = local_54.x;
-          aiStack_68[(uint)bVar11 * -2] = *(int *)((int)&local_54 + (uint)bVar11 * -8 + 4);
-          aiStack_68[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
-               *(int *)((int)&local_54 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
-          puVar8 = (uint *)(local_30 + 0x9e4e78 + (uint)bVar11 * -8);
+          aiStack_68[0] = local_54.y;
+          aiStack_68[1] = local_54.z;
           *(int *)((int)&g_TempWorldPositions[0][0].x + local_30) = local_54.x;
-          *puVar8 = *(uint *)((int)&local_54 + (uint)bVar11 * -8 + 4);
-          puVar8[(uint)bVar11 * -2 + 1] =
-               *(uint *)((int)&local_54 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
+          *(int *)((int)&g_TempWorldPositions[0][0].y + local_30) = local_54.y;
+          *(int *)((int)&g_TempWorldPositions[0][0].z + local_30) = local_54.z;
           if (*local_24 >> 0x18 != 0) {
             core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70
                       (this_ptr,&local_60,*local_24 >> 0x18,&local_78);
@@ -91,10 +84,9 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
             aiStack_68[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
                  *(int *)((int)&local_78 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);
           }
-          piVar9 = (int *)(iVar4 + 0x902f78 + (uint)bVar11 * -8);
           *(int *)((int)&g_PrecomputedWorldPositions[0].x + iVar4) = local_6c;
-          *piVar9 = aiStack_68[(uint)bVar11 * -2];
-          piVar9[(uint)bVar11 * -2 + 1] = aiStack_68[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
+          *(int *)((int)&g_PrecomputedWorldPositions[0].y + iVar4) = aiStack_68[0];
+          *(int *)((int)&g_PrecomputedWorldPositions[0].z + iVar4) = aiStack_68[1];
           *(int *)((int)g_PrecomputedDepthBuffer + iVar1 + 4) = local_60.z;
           uVar3 = *local_24;
           uVar2 = *local_24;

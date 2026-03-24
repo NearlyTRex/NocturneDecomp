@@ -1,73 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 118,
-        "message": "use of undeclared identifier 'stack0xffffffe8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 119,
-        "message": "use of undeclared identifier 'stack0xffffffec'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 124,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 125,
-        "message": "use of undeclared identifier 'stack0xffffffe0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 130,
-        "message": "use of undeclared identifier 'stack0xffffffe8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 132,
-        "message": "use of undeclared identifier 'stack0xffffffec'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 136,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 138,
-        "message": "use of undeclared identifier 'stack0xffffffe0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 329,
-    "complexity_score": 308,
+    "assembly_lines": 373,
+    "complexity_score": 198,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 47,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 143,
-    "suspect_count": 15,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 133,
+    "suspect_count": 6,
     "suspect_types": [
-      "pointer_cast",
-      "stack_alignment_array",
-      "stack_ref"
+      "pointer_cast"
     ],
-    "total_lines": 472
+    "total_lines": 506
   },
   "cross_references": [],
   "function": {
@@ -76,6 +25,10 @@
       [
         "0051f3e0",
         "0051f77b"
+      ],
+      [
+        "0060a29d",
+        "0060a317"
       ]
     ],
     "convention": "__cdecl",
@@ -452,39 +405,38 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.638686131386861,
-    "instruction_count": 274,
+    "avg_pcode_per_instr": 4.16887417218543,
+    "instruction_count": 302,
     "opcode_distribution": {
       "BOOL_NEGATE": 7,
       "BOOL_OR": 2,
-      "BRANCH": 2,
+      "BRANCH": 10,
       "CALL": 36,
       "CALLIND": 1,
       "CBRANCH": 7,
-      "COPY": 233,
+      "COPY": 221,
       "FLOAT2FLOAT": 2,
       "FLOAT_NEG": 1,
       "INT_ADD": 114,
-      "INT_AND": 133,
-      "INT_CARRY": 44,
-      "INT_EQUAL": 119,
+      "INT_AND": 149,
+      "INT_CARRY": 52,
+      "INT_EQUAL": 135,
       "INT_LEFT": 2,
       "INT_LESS": 4,
-      "INT_MULT": 30,
+      "INT_MULT": 6,
       "INT_NOTEQUAL": 6,
       "INT_OR": 5,
       "INT_SBORROW": 4,
-      "INT_SCARRY": 46,
-      "INT_SLESS": 61,
-      "INT_SUB": 152,
+      "INT_SCARRY": 54,
+      "INT_SLESS": 69,
+      "INT_SUB": 128,
       "INT_XOR": 5,
-      "INT_ZEXT": 24,
       "LOAD": 34,
-      "POPCOUNT": 59,
+      "POPCOUNT": 67,
       "RETURN": 1,
       "STORE": 137
     },
-    "pcode_op_count": 1271
+    "pcode_op_count": 1259
   },
   "stack_frame": {
     "frame_size": 8,
@@ -510,14 +462,14 @@
     ],
     "patterns": [
       {
-        "address": "0051f6af",
+        "address": "0060a2b3",
         "description": "Alternative frame pointer (EDI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV EDI,ESP",
         "pattern_id": "alt_frame_pointer"
       },
       {
-        "address": "0051f6c3",
+        "address": "0060a2ef",
         "description": "Alternative frame pointer (ESI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV ESI,ESP",
@@ -528,124 +480,52 @@
   },
   "suspects": [
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
-      "match": "auStackY_1010",
-      "severity": "moderate",
-      "text": "uint auStackY_1010 [1014];",
-      "type": "stack_alignment_array"
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "*(float *)((int)&(pSVar4->position).x + iVar11) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 98,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)&(pSVar3->position).x + iVar6) =",
+      "text": "-*(float *)((int)&(pSVar4->position).x + iVar11);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "-*(float *)((int)&(pSVar3->position).x + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 108,
+      "line": 107,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
+      "text": "puVar2 = (uint *)((int)&pSVar5->vertices[2].vertex_index + iVar11);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 111,
-      "match": "&stack0xffffffe8",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8) = *puVar8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 112,
-      "match": "&stack0xffffffec",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 110,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar3 = (uint *)((int)&pSVar5->vertices[0].vertex_index + iVar7);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 114,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
+      "text": "puVar3 = (uint *)((int)&pSVar5->vertices[0].vertex_index + iVar11);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 117,
-      "match": "&stack0xffffffdc",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar9 * -8) = *puVar8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 118,
-      "match": "&stack0xffffffe0",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 120,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);",
+      "text": "puVar2 = (uint *)((int)&pSVar5->vertices[2].vertex_index + iVar7);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 123,
-      "match": "&stack0xffffffe8",
-      "severity": "moderate",
-      "text": "*puVar8 = *(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 125,
-      "match": "&stack0xffffffec",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 126,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 129,
-      "match": "&stack0xffffffdc",
-      "severity": "moderate",
-      "text": "*puVar8 = *(uint *)(&stack0xffffffdc + (uint)bVar9 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 131,
-      "match": "&stack0xffffffe0",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
-      "type": "stack_ref"
     }
   ],
   "vtable_info": {

@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 77,
-    "complexity_score": 99,
+    "assembly_lines": 110,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 38,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 121
+    "total_lines": 148
   },
   "cross_references": [],
   "function": {
@@ -29,6 +29,10 @@
       [
         "00604e3a",
         "00604e5d"
+      ],
+      [
+        "0060a3dd",
+        "0060a43b"
       ]
     ],
     "convention": "__cdecl",
@@ -59,31 +63,31 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.929577464788732,
-    "instruction_count": 71,
+    "avg_pcode_per_instr": 3.7065217391304346,
+    "instruction_count": 92,
     "opcode_distribution": {
-      "BRANCH": 3,
+      "BRANCH": 9,
       "CALL": 1,
       "CBRANCH": 1,
-      "COPY": 99,
+      "COPY": 90,
       "FLOAT2FLOAT": 2,
       "INT_ADD": 60,
-      "INT_AND": 14,
-      "INT_CARRY": 6,
-      "INT_EQUAL": 15,
+      "INT_AND": 26,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 27,
       "INT_LESS": 1,
-      "INT_MULT": 20,
+      "INT_MULT": 2,
       "INT_SBORROW": 1,
-      "INT_SCARRY": 6,
-      "INT_SLESS": 7,
-      "INT_SUB": 30,
-      "INT_ZEXT": 20,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 13,
+      "INT_SUB": 12,
+      "INT_ZEXT": 2,
       "LOAD": 27,
-      "POPCOUNT": 7,
+      "POPCOUNT": 13,
       "RETURN": 1,
       "STORE": 29
     },
-    "pcode_op_count": 350
+    "pcode_op_count": 341
   },
   "stack_frame": {
     "frame_size": 12,
@@ -111,23 +115,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar6 = (uint *)((int)pvVar1 + (uint)bVar7 * -8 + 0x28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar4 = (uint *)((int)other + (uint)bVar7 * -8 + 0x7c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
+      "line": 35,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)pvVar1 + 0x24) = other->edge_dot_products[0];",
@@ -135,7 +123,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 36,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "*(float *)((int)pvVar1 + 0x28) = other->edge_dot_products[1];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "*(float *)((int)pvVar1 + 0x2c) = other->edge_dot_products[2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pvVar1 + 0x30) = other->visited_stamp;",
@@ -143,7 +147,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 39,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pvVar1 + 0x34) = other->affected_by_edge_stamp;",

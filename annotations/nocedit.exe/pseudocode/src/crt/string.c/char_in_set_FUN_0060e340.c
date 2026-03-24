@@ -19,7 +19,7 @@ char * __cdecl char_in_set(char *charset,wchar_t wc)
   while( true ) {
     iVar1 = mbstring_termination_check(charset);
     if (iVar1 != 0) break;
-    iVar1 = mbcmp(charset,acStack_8);
+    iVar1 = func_0x0060e640(charset,acStack_8);
     if (iVar1 == 0) break;
     charset = mbtowc_next(charset);
   }

@@ -75,14 +75,6 @@ double __watcallRegister FUN_0060b5e8(uint param_1,uint param_2);
 // Address: 0060b670
 char * FUN_0060b670(char *param_1,char *param_2,ulong param_3);
 
-// Original: crt_unknown.c_FUN_0060ccb4
-// Address: 0060ccb4
-void FUN_0060ccb4(void);
-
-// Original: crt_unknown.c_FUN_0060ccb4
-// Address: 0060cd20
-void FUN_0060ccb4(void);
-
 // Original: crt_unknown.c_FUN_0060ced8
 // Address: 0060ced8
 SIGNAL_HANDLER_TYPE FUN_0060ced8(int param_1);
@@ -102,10 +94,6 @@ undefined4 FUN_0060d48c(undefined4 param_1,undefined4 param_2,undefined4 param_3
 // Original: crt_unknown.c_FUN_0060d576
 // Address: 0060d576
 uint FUN_0060d576(int *param_1);
-
-// Original: crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0
-// Address: 0060e5d0
-char * SomethingWithUppercaseCharacterConvert(char *param_1);
 
 // Original: crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930
 // Address: 0060e930

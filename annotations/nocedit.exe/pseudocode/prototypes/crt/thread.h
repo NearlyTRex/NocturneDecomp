@@ -10,7 +10,3 @@ ThreadData * __cdecl GetTLS(void);
 // Original: crt_thread.c_noop_lock_FUN_0060b180
 // Address: 0060b180
 void __cdecl noop::lock(void);
-
-// Original: crt_thread.c_InitializeThreadContext_FUN_0060ccf0
-// Address: 0060ccf0
-void __cdecl InitializeThreadContext(ThreadData *pThreadData);

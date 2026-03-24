@@ -14,8 +14,6 @@
 ; Referenced Globals:
 ;   undefined4 SUB_0060a23c
 ;   undefined4 SUB_0060a560
-;   undefined4 SUB_0060a610
-;   undefined4 SUB_0060a660
 ;   EXIT_PROCESS_FUNC* g_ExitProcessFunc = 00211d12
 ;   GET_COMMAND_LINE_A_FUNC* g_GetCommandLineAFunc = 00211df8
 ;   GET_COMMAND_LINE_W_FUNC* g_GetCommandLineWFunc = 00211e0a
@@ -27,7 +25,9 @@
 ;   DWORD g_WinMainCmdShow = 0x0
 ;   char* g_ExeFileNameA = 00000000
 ;   char* g_DllFileNameA = 00000000
-;   ... and 20 more
+;   WCHAR* g_CommandLineArgsW = 00000000
+;   WCHAR* g_ExeFileNameW = 00000000
+;   ... and 18 more
 ;
 ; Called Functions:
 ;   ExitProcess
@@ -107,7 +107,7 @@ section .text
     CALL dword ptr CS:[0x611568]        ; 0060254e | g_GetCommandLineAFunc
     PUSH EAX                            ; 00602555
     CALL 0x0060a610                     ; 00602556
-        ;   XREF to: 0060a610 (UNCONDITIONAL_CALL)  ; SUB_0060a610
+        ;   XREF to: 0060a610 (UNCONDITIONAL_CALL)  ; LAB_0060a60e+2
     MOV EDX,EAX                         ; 0060255b
     ADD ESP,0x4                         ; 0060255d
     MOV BL,byte ptr [EAX]               ; 00602560
@@ -167,7 +167,7 @@ section .text
         ;   XREF to: 00602650 (CONDITIONAL_JUMP)  ; LAB_00602650
     PUSH EAX                            ; 006025cf
     CALL 0x0060a660                     ; 006025d0
-        ;   XREF to: 0060a660 (UNCONDITIONAL_CALL)  ; SUB_0060a660
+        ;   XREF to: 0060a660 (UNCONDITIONAL_CALL)  ; LAB_0060a65f+1
     MOV EDX,EAX                         ; 006025d5
     ADD ESP,0x4                         ; 006025d7
     MOV BX,word ptr [EAX]               ; 006025da

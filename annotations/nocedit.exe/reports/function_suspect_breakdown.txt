@@ -4,44 +4,44 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4650 functions
-  1 suspects: 691 functions
-  2 suspects: 320 functions
-  3 suspects: 241 functions
-  4 suspects: 155 functions
-  5 suspects: 131 functions
-  6 suspects: 107 functions
-  7 suspects: 94 functions
+  0 suspects: 4653 functions
+  1 suspects: 676 functions
+  2 suspects: 318 functions
+  3 suspects: 240 functions
+  4 suspects: 154 functions
+  5 suspects: 127 functions
+  6 suspects: 108 functions
+  7 suspects: 92 functions
   8 suspects: 54 functions
   9 suspects: 64 functions
   10 suspects: 22 functions
-  11 suspects: 37 functions
+  11 suspects: 38 functions
   12 suspects: 32 functions
   13 suspects: 29 functions
   14 suspects: 32 functions
-  15 suspects: 27 functions
-  16 suspects: 16 functions
+  15 suspects: 25 functions
+  16 suspects: 15 functions
   17 suspects: 11 functions
   18 suspects: 13 functions
   19 suspects: 18 functions
-  20 suspects: 21 functions
-  21 suspects: 11 functions
+  20 suspects: 22 functions
+  21 suspects: 12 functions
   22 suspects: 7 functions
-  23 suspects: 10 functions
-  24 suspects: 14 functions
-  25 suspects: 13 functions
-  26 suspects: 5 functions
+  23 suspects: 9 functions
+  24 suspects: 13 functions
+  25 suspects: 12 functions
+  26 suspects: 6 functions
   27 suspects: 4 functions
-  28 suspects: 7 functions
+  28 suspects: 9 functions
   29 suspects: 10 functions
   30 suspects: 3 functions
   31 suspects: 4 functions
   32 suspects: 5 functions
   33 suspects: 3 functions
   34 suspects: 2 functions
-  35 suspects: 4 functions
+  35 suspects: 3 functions
   36 suspects: 6 functions
-  37 suspects: 3 functions
+  37 suspects: 2 functions
   38 suspects: 1 functions
   39 suspects: 4 functions
   40 suspects: 3 functions
@@ -65,11 +65,10 @@ SUSPECT COUNT DISTRIBUTION
   70 suspects: 1 functions
   72 suspects: 1 functions
   73 suspects: 2 functions
-  76 suspects: 1 functions
+  76 suspects: 2 functions
   81 suspects: 1 functions
   82 suspects: 1 functions
   84 suspects: 1 functions
-  85 suspects: 1 functions
   97 suspects: 1 functions
   100 suspects: 1 functions
   101 suspects: 1 functions
@@ -86,14 +85,12 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [special_crt_function] (216 functions)
+  [special_crt_function] (198 functions)
   ------------------------------------------------------------
     crt_sync.c_CriticalSectionStub_FUN_00602458        (  4 lines)
       CRT function (runtime support) at 00602458...
     crt_sync.c_CriticalSectionStub_FUN_00602434        (  4 lines)
       CRT function (runtime support) at 00602434...
-    crt_startup.c_PlaceholderStub_FUN_0060ca80         (  4 lines)
-      CRT function (runtime support) at 0060ca80...
     crt_exit.c_ExitHookStub_FUN_0060b530               (  4 lines)
       CRT function (runtime support) at 0060b530...
     crt_thread.c_GetTLS_FUN_0060242c                   (  4 lines)
@@ -128,7 +125,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       CRT function (runtime support) at 006027ac...
     crt_startup.c_reportAbnormalTermination_FUN_006016 (  5 lines)
       CRT function (runtime support) at 00601628...
-    ... and 196 more
+    crt_stdio.c_storeErrorState_FUN_0060b78e           (  5 lines)
+      CRT function (runtime support) at 0060b78e...
+    ... and 178 more
 
   [pointer_cast] (134 functions)
   ------------------------------------------------------------
@@ -306,6 +305,47 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Type propagation algorithm not settling */...
     ... and 26 more
 
+  [stack_alignment_array] (19 functions)
+  ------------------------------------------------------------
+    core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7 ( 15 lines)
+      float afStackY_17f8 [1525];...
+    core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN ( 20 lines)
+      int aiStackY_1028 [1015];...
+    shape_design.c_applyVertexCentering_FUN_004680f0   ( 30 lines)
+      int aiStackY_1010 [1017];...
+    engine_3d.c_renderPolygonPerspectiveNormalized_FUN ( 34 lines)
+      int aiStackY_1010 [1016];...
+    engine_3d.c_renderPolygonUVTextureNormalized_FUN_0 ( 34 lines)
+      int aiStackY_1010 [1016];...
+    engine_3d.c_renderPolygonUVTextureEnable_FUN_00405 ( 34 lines)
+      int aiStackY_1010 [1016];...
+    core_moon.cpp_CMoon_renderJoystickCalibration_FUN_ ( 35 lines)
+      int aiStackY_101c [1014];...
+    core_conveyor.cpp_CConveyor_setup_FUN_00441d60     ( 38 lines)
+      float afStackY_17f8 [1526];...
+    core_skeleton.cpp_CDeformableModelInstance_aimBone ( 40 lines)
+      float afStackY_1888 [1521];...
+    core_skeleton.cpp_CDeformableModelInstance_blendBo ( 43 lines)
+      float afStackY_1808 [1522];...
+    shape_design.c_calculatePolygonAngularArea_FUN_004 ( 57 lines)
+      float afStackY_2034 [2020];...
+    core_icepick.cpp_CIcePick_updateShootBlend_FUN_004 ( 58 lines)
+      float afStackY_180c [1519];...
+    core_skeleton.cpp_blendBoneTransformData_FUN_005a1 ( 62 lines)
+      float afStackY_1830 [1524];...
+    core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00 ( 71 lines)
+      float afStackY_1844 [1523];...
+    core_dcamera.cpp_CDemonCamera_transformVectorWithA ( 75 lines)
+      uint auStackY_1000 [1014];...
+    core_dcamera.cpp_CDemonCamera_computeVisibleFrustu (106 lines)
+      int aiStackY_10d4 [1015];...
+    core_skeleton.cpp_CDeformableModelInstance_blendWi (131 lines)
+      float afStackY_18c4 [1522];...
+    core_main.c_showDeveloperToolsMenu_FUN_005073a0    (216 lines)
+      int aiStackY_1008 [690];...
+    core_haystack.cpp_CHaystack_process_FUN_004f0e40   (270 lines)
+      float afStackY_1868 [1521];...
+
   [param_count_too_many] (18 functions)
   ------------------------------------------------------------
     engine_texture.cpp_loadAndUpdateTexture_FUN_005dd9 (  6 lines)
@@ -318,7 +358,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 2 params but call sites push 1 (1 extra)...
     engine_drender.cpp_CDemonRenderer_getCameraRotatio (  9 lines)
       Function declares 2 params but call sites push 1 (1 extra)...
-    core_dcamera.cpp_CDemonCamera_screenToWorldCoord_F ( 15 lines)
+    core_dcamera.cpp_CDemonCamera_screenToWorldCoord_F ( 17 lines)
       Function declares 4 params but call sites push 3 (1 extra)...
     core_xform.cpp_negateFirstComponent_FUN_005f75e0   ( 17 lines)
       Function declares 2 params but call sites push 1 (1 extra)...
@@ -344,41 +384,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 4 params but call sites push 3 (1 extra)...
     core_xform.cpp_multiplyQuaternion_FUN_005f7640     ( 59 lines)
       Function declares 3 params but call sites push 2 (1 extra)...
-
-  [stack_alignment_array] (16 functions)
-  ------------------------------------------------------------
-    core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7 ( 15 lines)
-      float afStackY_17f8 [1525];...
-    shape_design.c_applyVertexCentering_FUN_004680f0   ( 30 lines)
-      int aiStackY_1010 [1017];...
-    engine_3d.c_renderPolygonPerspectiveNormalized_FUN ( 34 lines)
-      int aiStackY_1010 [1016];...
-    engine_3d.c_renderPolygonUVTextureNormalized_FUN_0 ( 34 lines)
-      int aiStackY_1010 [1016];...
-    engine_3d.c_renderPolygonUVTextureEnable_FUN_00405 ( 34 lines)
-      int aiStackY_1010 [1016];...
-    core_moon.cpp_CMoon_renderJoystickCalibration_FUN_ ( 35 lines)
-      int aiStackY_101c [1014];...
-    core_conveyor.cpp_CConveyor_setup_FUN_00441d60     ( 38 lines)
-      float afStackY_17f8 [1526];...
-    core_skeleton.cpp_CDeformableModelInstance_aimBone ( 40 lines)
-      float afStackY_1888 [1521];...
-    core_skeleton.cpp_CDeformableModelInstance_blendBo ( 43 lines)
-      float afStackY_1808 [1522];...
-    shape_design.c_calculatePolygonAngularArea_FUN_004 ( 57 lines)
-      float afStackY_2034 [2020];...
-    core_icepick.cpp_CIcePick_updateShootBlend_FUN_004 ( 58 lines)
-      float afStackY_180c [1519];...
-    core_skeleton.cpp_blendBoneTransformData_FUN_005a1 ( 62 lines)
-      float afStackY_1830 [1524];...
-    core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00 ( 71 lines)
-      float afStackY_1844 [1523];...
-    core_skeleton.cpp_CDeformableModelInstance_blendWi (131 lines)
-      float afStackY_18c4 [1522];...
-    core_main.c_showDeveloperToolsMenu_FUN_005073a0    (216 lines)
-      int aiStackY_1008 [690];...
-    core_haystack.cpp_CHaystack_process_FUN_004f0e40   (270 lines)
-      float afStackY_1868 [1521];...
 
   [warning_unreachable] (13 functions)
   ------------------------------------------------------------
@@ -593,8 +598,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: crt/strstream.cpp, Lines: 5, Types: ['negative_offset', 'special_crt_function']
   crt_process.c_spawnCommand_FUN_00609c90
     File: crt/process.c, Lines: 6, Types: ['param_count_too_many', 'special_crt_function']
-  crt_process.c_spawnvp_FUN_0060ca20
-    File: crt/process.c, Lines: 6, Types: ['param_count_too_few', 'special_crt_function']
   crt_math.c_ceil_FUN_006001b2
     File: crt/math.c, Lines: 6, Types: ['param_count_too_few', 'special_math_intrinsic']
   crt_stack.c_GetStackUsage_FUN_0060c260
@@ -671,5 +674,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: crt/memory.c, Lines: 16, Types: ['special_crt_function', 'unresolved_funcptr']
   crt_watcom.c_memavl_FUN_006008f0
     File: crt/watcom.c, Lines: 16, Types: ['param_count_too_few', 'special_crt_function']
+  core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059
+    File: core/skeleton.cpp, Lines: 16, Types: ['param_count_too_few', 'pointer_cast']
 
-  ... and 511 more
+  ... and 508 more

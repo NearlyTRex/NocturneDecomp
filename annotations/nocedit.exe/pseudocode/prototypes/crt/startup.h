@@ -30,7 +30,3 @@ void __watcallRegister WinMainBootstrap(void);
 // Original: crt_startup.c_ExitApplication_FUN_0060b534
 // Address: 0060b534
 void __cdecl ExitApplication(int exit_code);
-
-// Original: crt_startup.c_PlaceholderStub_FUN_0060ca80
-// Address: 0060ca80
-void __cdecl PlaceholderStub(void);

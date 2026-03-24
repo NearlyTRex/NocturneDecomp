@@ -5,19 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 299,
-    "complexity_score": 301,
+    "assembly_lines": 365,
+    "complexity_score": 121,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 141,
-    "suspect_count": 15,
+    "pseudocode_lines": 106,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 440
+    "total_lines": 471
   },
   "cross_references": [
     {
@@ -33,6 +32,10 @@
       [
         "00454060",
         "00454441"
+      ],
+      [
+        "00609f20",
+        "00609fee"
       ]
     ],
     "convention": "__cdecl",
@@ -108,39 +111,38 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.243801652892562,
-    "instruction_count": 242,
+    "avg_pcode_per_instr": 4.404929577464789,
+    "instruction_count": 284,
     "opcode_distribution": {
       "BOOL_AND": 9,
       "BOOL_NEGATE": 11,
       "BOOL_OR": 6,
-      "BRANCH": 8,
+      "BRANCH": 20,
       "CALL": 8,
       "CBRANCH": 18,
-      "COPY": 326,
+      "COPY": 308,
       "FLOAT2FLOAT": 15,
       "FLOAT_MULT": 3,
       "FLOAT_SUB": 3,
       "INT2FLOAT": 3,
       "INT_ADD": 163,
-      "INT_AND": 92,
-      "INT_CARRY": 10,
-      "INT_EQUAL": 101,
+      "INT_AND": 116,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 125,
       "INT_LESS": 23,
-      "INT_MULT": 37,
+      "INT_MULT": 1,
       "INT_NOTEQUAL": 7,
       "INT_SBORROW": 25,
-      "INT_SCARRY": 18,
-      "INT_SLESS": 46,
-      "INT_SUB": 95,
+      "INT_SCARRY": 30,
+      "INT_SLESS": 58,
+      "INT_SUB": 59,
       "INT_XOR": 3,
-      "INT_ZEXT": 36,
       "LOAD": 77,
-      "POPCOUNT": 46,
+      "POPCOUNT": 58,
       "RETURN": 1,
       "STORE": 79
     },
-    "pcode_op_count": 1269
+    "pcode_op_count": 1251
   },
   "stack_frame": {
     "frame_size": 4320,
@@ -397,118 +399,6 @@
       "severity": "moderate",
       "text": "int aiStackY_10d4 [1015];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_80 + (uint)bVar3 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_d4 + (uint)bVar3 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_80 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_d4 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "aiStack_70[(uint)bVar3 * -2 + 3] = *(int *)((int)&local_e0 + (uint)bVar3 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&local_e0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "aiStack_c4[(uint)bVar3 * -2] = *(int *)((int)&local_bc + (uint)bVar3 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 94,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&local_bc + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "aiStack_ac[(uint)bVar3 * -2] = *(int *)((int)&local_ec + (uint)bVar3 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 106,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&local_ec + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 112,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "aiStack_94[(uint)bVar3 * -2] = *(int *)((int)&local_8c + (uint)bVar3 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 114,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&local_8c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 125,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "aiStack_70[(uint)bVar3 * -2] = *(int *)((int)&local_44 + (uint)bVar3 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 127,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&local_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
-      "type": "pointer_cast"
     }
   ]
 }

@@ -5,19 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 187,
-    "complexity_score": 118,
+    "assembly_lines": 210,
+    "complexity_score": 90,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 78,
-    "suspect_count": 3,
+    "pseudocode_lines": 75,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 265
+    "total_lines": 285
   },
   "cross_references": [],
   "function": {
@@ -26,6 +25,10 @@
       [
         "0044dbd0",
         "0044dddc"
+      ],
+      [
+        "0060a550",
+        "0060a589"
       ]
     ],
     "convention": "__stack2_esi",
@@ -116,39 +119,40 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 8.950819672131148,
-    "instruction_count": 183,
+    "avg_pcode_per_instr": 8.284263959390863,
+    "instruction_count": 197,
     "opcode_distribution": {
       "BOOL_NEGATE": 81,
       "BOOL_OR": 12,
       "BOOL_XOR": 12,
+      "BRANCH": 4,
       "CALL": 1,
       "CBRANCH": 1,
-      "COPY": 160,
+      "COPY": 154,
       "INT_ADD": 125,
-      "INT_AND": 302,
-      "INT_CARRY": 49,
-      "INT_EQUAL": 126,
+      "INT_AND": 310,
+      "INT_CARRY": 53,
+      "INT_EQUAL": 134,
       "INT_LEFT": 17,
       "INT_LESS": 1,
-      "INT_MULT": 39,
+      "INT_MULT": 27,
       "INT_NOTEQUAL": 74,
       "INT_OR": 95,
       "INT_RIGHT": 30,
       "INT_SBORROW": 1,
-      "INT_SCARRY": 49,
+      "INT_SCARRY": 53,
       "INT_SEXT": 81,
-      "INT_SLESS": 87,
-      "INT_SUB": 49,
+      "INT_SLESS": 91,
+      "INT_SUB": 37,
       "INT_XOR": 16,
-      "INT_ZEXT": 24,
+      "INT_ZEXT": 12,
       "LOAD": 75,
-      "POPCOUNT": 55,
+      "POPCOUNT": 59,
       "RETURN": 2,
       "STORE": 20,
       "SUBPIECE": 54
     },
-    "pcode_op_count": 1638
+    "pcode_op_count": 1632
   },
   "stack_frame": {
     "frame_size": 4108,
@@ -256,27 +260,11 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
+      "line": 17,
       "match": "auStackY_1000",
       "severity": "moderate",
       "text": "uint auStackY_1000 [1014];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar5 = (uint *)((int)output_vector + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar10 = (uint *)((int)output_vector + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
     }
   ]
 }

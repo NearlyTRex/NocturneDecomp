@@ -77,7 +77,6 @@ section .text
     MOV ECX,dword ptr [ESI + 0x14]      ; 0060e87a
     MOV dword ptr [EDI + 0x14],ECX      ; 0060e87d
     MOV ECX,dword ptr [ESI + 0x18]      ; 0060e880
-        ;   Label: SUB_0060e880
     MOV dword ptr [EDI + 0x18],ECX      ; 0060e883
     MOV ECX,dword ptr [ESI + 0x1c]      ; 0060e886
     MOV dword ptr [EDI + 0x1c],ECX      ; 0060e889

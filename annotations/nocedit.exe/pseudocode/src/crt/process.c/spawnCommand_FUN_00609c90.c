@@ -11,6 +11,6 @@ int __watcallStack spawnCommand(int mode,char *cmdPath,char *cmdName,char *args,
 {
   int iVar1;
   
-  iVar1 = spawnvp(mode,cmdPath,&cmdName);
+  iVar1 = func_0x0060ca20(mode,cmdPath,&cmdName);
   return iVar1;
 }

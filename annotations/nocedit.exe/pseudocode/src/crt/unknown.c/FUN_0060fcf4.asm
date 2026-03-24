@@ -8,6 +8,7 @@
 ;   crt_env.c_putenv_internal_FUN_0060ee80 at 0060f03c
 ;
 ; Referenced Globals:
+;   undefined4 SUB_0060cd60
 ;   char** g_EnvironStringArea
 ;   int g_EnvironInitialized
 ;
@@ -15,7 +16,6 @@
 ;   crt_memory.c_malloc_FUN_00601bb0
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_memory.c_realloc_FUN_00601df0
-;   crt_string.c_memcpy_FUN_0060cd60
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   crt_unknown.c_FUN_0060fe94
 ;
@@ -149,8 +149,8 @@ section .text
     MOV EAX,[0x03f9b868]                ; 0060fdfe | g_EnvironInitialized
     PUSH EAX                            ; 0060fe03
     PUSH EDI                            ; 0060fe04
-    CALL crt_string.c_memcpy_FUN_0060cd60 ; 0060fe05
-        ;   XREF to: 0060cd60 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memcpy_FUN_0060cd60(void * dest, void * src, SIZE_T count)
+    CALL 0x0060cd60                     ; 0060fe05
+        ;   XREF to: 0060cd60 (UNCONDITIONAL_CALL)  ; SUB_0060cd60
     ADD ESP,0xc                         ; 0060fe0a
     MOV EDX,dword ptr [ESP + 0x4]       ; 0060fe0d
     PUSH EDX                            ; 0060fe11

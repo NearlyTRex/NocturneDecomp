@@ -83,18 +83,6 @@ int __cdecl IsSpecialDevice(int handle_index);
 // Address: 0060c2e0
 int __cdecl close::handle_safe(int handle_index);
 
-// Original: crt_io.c_ConvertAccessMode_FUN_0060c850
-// Address: 0060c850
-void __cdecl ConvertAccessMode(int access_mode,DWORD *desired_access,DWORD *share_mode);
-
-// Original: crt_io.c_ConvertCreationDisposition_FUN_0060c894
-// Address: 0060c894
-void __cdecl ConvertCreationDisposition(DWORD mode_flags,DWORD *creation_disposition);
-
-// Original: crt_io.c_access_FUN_0060c9f0
-// Address: 0060c9f0
-int __watcallStack access(char *filename,int access_mode);
-
 // Original: crt_io.c_get_handle_FUN_006109f0
 // Address: 006109f0
 HANDLE __cdecl get::handle(int fd);

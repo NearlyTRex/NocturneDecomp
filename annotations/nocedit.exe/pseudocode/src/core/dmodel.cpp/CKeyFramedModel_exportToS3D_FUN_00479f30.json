@@ -3,44 +3,44 @@
     "errors": [
       {
         "category": "format_error",
-        "column": 24,
-        "line": 109,
+        "column": 22,
+        "line": 98,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 24,
-        "line": 110,
+        "column": 55,
+        "line": 98,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 24,
-        "line": 111,
+        "column": 87,
+        "line": 98,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "format_error",
-        "column": 38,
-        "line": 131,
+        "column": 34,
+        "line": 117,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 71,
-        "line": 131,
+        "column": 67,
+        "line": 117,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 18,
-        "line": 132,
+        "column": 99,
+        "line": 117,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 51,
-        "line": 132,
+        "column": 17,
+        "line": 118,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
@@ -48,13 +48,13 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 329,
-    "complexity_score": 303,
+    "assembly_lines": 362,
+    "complexity_score": 284,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 133,
+    "pseudocode_lines": 114,
     "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -62,7 +62,7 @@
       "stack_alignment_array",
       "sub84_truncation"
     ],
-    "total_lines": 462
+    "total_lines": 476
   },
   "cross_references": [
     {
@@ -78,6 +78,10 @@
       [
         "00479f30",
         "0047a3a3"
+      ],
+      [
+        "0060a318",
+        "0060a37d"
       ]
     ],
     "convention": "__cdecl",
@@ -266,38 +270,37 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.149305555555555,
-    "instruction_count": 288,
+    "avg_pcode_per_instr": 4.770226537216828,
+    "instruction_count": 309,
     "opcode_distribution": {
       "BOOL_OR": 3,
-      "BRANCH": 1,
+      "BRANCH": 7,
       "CALL": 18,
       "CBRANCH": 10,
-      "COPY": 414,
+      "COPY": 405,
       "FLOAT2FLOAT": 16,
       "FLOAT_MULT": 9,
       "INT2FLOAT": 9,
       "INT_ADD": 155,
-      "INT_AND": 128,
-      "INT_CARRY": 30,
-      "INT_EQUAL": 126,
+      "INT_AND": 140,
+      "INT_CARRY": 36,
+      "INT_EQUAL": 138,
       "INT_LESS": 17,
-      "INT_MULT": 22,
+      "INT_MULT": 4,
       "INT_NOTEQUAL": 8,
       "INT_SBORROW": 17,
-      "INT_SCARRY": 35,
+      "INT_SCARRY": 41,
       "INT_SEXT": 3,
-      "INT_SLESS": 62,
-      "INT_SUB": 113,
+      "INT_SLESS": 68,
+      "INT_SUB": 95,
       "INT_XOR": 6,
-      "INT_ZEXT": 18,
       "LOAD": 86,
-      "POPCOUNT": 62,
+      "POPCOUNT": 68,
       "RETURN": 2,
       "STORE": 111,
       "SUBPIECE": 2
     },
-    "pcode_op_count": 1483
+    "pcode_op_count": 1474
   },
   "stack_frame": {
     "frame_size": 4160,
@@ -431,114 +434,114 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 85,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)this_ptr->poly_texture_index_list + local_1c),uVar1,",
+      "text": "*(uint *)((int)this_ptr->poly_texture_index_list + local_24),",
       "type": "pointer_cast"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 102,
+      "line": 91,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64((double)local_30 * 1.52587890625e-05),0),",
+      "text": "SUB84(__BITCAST_UINT64(dVar5),0),(int)((ulonglong)dVar5 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "SUB84(__BITCAST_UINT64((double)local_30 * 1.52587890625e-05),0),",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 104,
+      "line": 91,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64((double)local_2c * 1.52587890625e-05),0),",
+      "text": "SUB84(__BITCAST_UINT64(dVar5),0),(int)((ulonglong)dVar5 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
+      "line": 91,
       "match": "SUB84",
       "severity": "mild",
-      "text": "SUB84(__BITCAST_UINT64((double)local_2c * 1.52587890625e-05),0),",
+      "text": "SUB84(__BITCAST_UINT64(dVar5),0),(int)((ulonglong)dVar5 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 91,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "SUB84(__BITCAST_UINT64(dVar5),0),(int)((ulonglong)dVar5 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 120,
+      "line": 106,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "dVar2 = (double)*(int *)((int)&pCVar1->z + iVar3) * 0.00390625;",
+      "text": "dVar2 = (double)*(int *)((int)&pCVar1->z + iVar7) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 107,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "dVar3 = (double)*(int *)((int)&pCVar1->y + iVar3) * 0.00390625;",
+      "text": "dVar3 = (double)*(int *)((int)&pCVar1->y + iVar7) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 122,
+      "line": 108,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "dVar4 = (double)*(int *)((int)&pCVar1->x + iVar3) * 0.00390625;",
+      "text": "dVar4 = (double)*(int *)((int)&pCVar1->x + iVar7) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 124,
+      "line": 110,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "_fprintf(local_18,\"%g,%g,%g\\n\",SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20),",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "_fprintf(local_18,\"%g,%g,%g\\n\",SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 125,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20),SUB84(__BITCAST_UINT64(dVar2),0),",
+      "text": "_fprintf(p_Var5,\"%g,%g,%g\\n\",SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20),SUB84(__BITCAST_UINT64(dVar3),0)",
       "type": "sub84_truncation"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 125,
+      "line": 110,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20),SUB84(__BITCAST_UINT64(dVar2),0),",
+      "text": "_fprintf(p_Var5,\"%g,%g,%g\\n\",SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20),SUB84(__BITCAST_UINT64(dVar3),0)",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 125,
+      "line": 110,
       "match": "SUB84",
       "severity": "mild",
-      "text": "SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20),SUB84(__BITCAST_UINT64(dVar2),0),",
+      "text": "_fprintf(p_Var5,\"%g,%g,%g\\n\",SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20),SUB84(__BITCAST_UINT64(dVar3),0)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 125,
+      "line": 110,
       "match": "SUB84",
       "severity": "mild",
-      "text": "SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20),SUB84(__BITCAST_UINT64(dVar2),0),",
+      "text": "_fprintf(p_Var5,\"%g,%g,%g\\n\",SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20),SUB84(__BITCAST_UINT64(dVar3),0)",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 111,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": ",(int)((ulonglong)dVar3 >> 0x20),SUB84(__BITCAST_UINT64(dVar2),0),(int)((ulonglong)dVar2 >> 0x20));",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 111,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": ",(int)((ulonglong)dVar3 >> 0x20),SUB84(__BITCAST_UINT64(dVar2),0),(int)((ulonglong)dVar2 >> 0x20));",
       "type": "decompiler_intrinsic"
     }
   ]

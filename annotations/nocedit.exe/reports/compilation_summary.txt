@@ -5,15 +5,15 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6452
-Successful: 5908 (91.6%)
-Failed: 544
+Successful: 5909 (91.6%)
+Failed: 543
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                            979
+  other                            981
   format_error                     782
   incompatible_types               205
-  undeclared_identifier            135
+  undeclared_identifier            127
   syntax_error                      41
   missing_member                    26
   type_error                         9
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (979 errors)
+CATEGORY: other (981 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -38,6 +38,8 @@ CATEGORY: other (979 errors)
     Line 173: C-style cast from 'CPlatform *' to 'float' is not allowed...
   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010
     Line 21: C-style cast from 'CVector3f *' to 'float' is not allowed...
+  core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
+    Line 448: C-style cast from 'CVector3i *' to 'float' is not allowed...
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
     Line 399: C-style cast from 'CWeapon *' to 'float' is not allowed...
   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
@@ -82,10 +84,8 @@ CATEGORY: other (979 errors)
     Line 69: cannot cast from type 'float' to pointer type 'CPathMap *'...
   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0
     Line 45: cannot cast from type 'float' to pointer type 'CQuaternion4f *'...
-  core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-    Line 95: cannot cast from type 'float' to pointer type 'CQuaternion4f *'...
 
-  ... and 181 more errors
+  ... and 182 more errors
 
 ====================================================================================================
 CATEGORY: format_error (782 errors)
@@ -222,7 +222,7 @@ CATEGORY: incompatible_types (205 errors)
   ... and 86 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (135 errors)
+CATEGORY: undeclared_identifier (127 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -286,7 +286,7 @@ CATEGORY: undeclared_identifier (135 errors)
   shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40
     Line 23: use of undeclared identifier 'code'...
 
-  ... and 47 more errors
+  ... and 46 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (41 errors)
@@ -413,8 +413,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.73
-Average suspects in failed compilations: 7.68
+Average suspects in successfully compiled functions: 1.72
+Average suspects in failed compilations: 7.62
 
-Functions that compile but have suspect patterns: 1450
+Functions that compile but have suspect patterns: 1448
 (These may have runtime issues even though syntax is valid)

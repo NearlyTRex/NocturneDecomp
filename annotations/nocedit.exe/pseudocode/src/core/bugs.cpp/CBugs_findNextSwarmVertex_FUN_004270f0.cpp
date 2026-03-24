@@ -1,6 +1,6 @@
 // Name: core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004270f0
 // Address: 004270f0
-// Address Range: [[004270f0, 004272ec]]
+// Address Range: [[004270f0, 004272ec] [0060a49b, 0060a4d7]]
 // Convention: __cdecl
 // Signature: void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_ptr,SBug *bug_data)
 
@@ -10,14 +10,14 @@ void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_pt
 
 {
   int *piVar2;
-  int iVar6;
+  int *piVar3;
   int iVar3;
+  int iVar6;
   int iVar4;
   int iVar5;
   SSwarmVertex *pSVar6;
   int iVar7;
   int *piVar8;
-  int *piVar7;
   byte bVar9;
   int aiStackY_1030 [1008];
   int local_68 [8];
@@ -37,7 +37,6 @@ void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_pt
   int *piVar1;
   int iVar2;
   
-  bVar9 = 0;
   local_2c = bug_data->current_vertex;
   bug_data->interp_t = 0.0;
   bug_data->current_vertex = bug_data->dest_vertex;
@@ -83,19 +82,12 @@ void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_pt
     bug_data->dest_vertex = local_68[iVar6];
   }
   iVar6 = this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4];
-  piVar1 = (int *)(iVar6 + bug_data->current_vertex * 0xc);
-  piVar8 = piVar1 + (uint)bVar9 * -2 + 1;
-  local_3c = *piVar1;
-  (&local_38)[(uint)bVar9 * -2] = *piVar8;
-  (&local_34)[(uint)bVar9 * -2 + (uint)bVar9 * -2] = piVar8[(uint)bVar9 * -2 + 1];
-  piVar2 = (int *)(iVar6 + bug_data->dest_vertex * 0xc);
-  piVar7 = piVar2 + (uint)bVar9 * -2 + 1;
-  local_48 = *piVar2;
-  (&local_44)[(uint)bVar9 * -2] = *piVar7;
-  (&local_40)[(uint)bVar9 * -2 + (uint)bVar9 * -2] = piVar7[(uint)bVar9 * -2 + 1];
+  piVar2 = (int *)(iVar6 + bug_data->current_vertex * 0xc);
+  piVar3 = (int *)(iVar6 + *(int *)(piVar2[2] + 0x30) * 0xc);
+  iVar6 = piVar2[2] - piVar3[2];
   bug_data->crawl_duration =
-       SQRT((float)((local_34 - local_40) * (local_34 - local_40) +
-                   (local_3c - local_48) * (local_3c - local_48) +
-                   (local_38 - local_44) * (local_38 - local_44))) * (float)0.00390625;
+       SQRT((float)(iVar6 * iVar6 +
+                   (*piVar2 - *piVar3) * (*piVar2 - *piVar3) +
+                   (piVar2[1] - piVar3[1]) * (piVar2[1] - piVar3[1]))) * (float)0.00390625;
   return;
 }

@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 6777
-Functions with no callers: 3177
-Parameter mismatches detected: 96
-Signature accuracy rate: 97.3%
+Functions with parameter estimates: 6754
+Functions with no callers: 3169
+Parameter mismatches detected: 94
+Signature accuracy rate: 97.4%
 
 Mismatches by confidence:
   High confidence:   1 (multiple call sites agree)
-  Medium confidence: 26 (some agreement)
-  Low confidence:    69 (limited data)
+  Medium confidence: 25 (some agreement)
+  Low confidence:    68 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -49,7 +49,6 @@ MEDIUM CONFIDENCE MISMATCHES
   engine_matrix.c_getCameraOrigin_FUN_0050e2c0       declared:1 est:4 (+3) [4 calls]
   engine_matrix.c_getCameraRotation_FUN_0050e2f0     declared:1 est:4 (+3) [2 calls]
   crt_unknown.c_FUN_0060b133                         declared:0 est:2 (+2) [1 calls]
-  crt_unknown.c_SomethingWithUppercaseCharacterConve declared:0 est:2 (+2) [2 calls]
   engine_2d.c_drawTextRightAlignedColorFormatted_FUN declared:3 est:5 (+2) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:2 est:3 (+1) [2 calls]
@@ -72,18 +71,18 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  69 functions with low-confidence mismatches
+  68 functions with low-confidence mismatches
   Sample:
     cockpit_ckptutil.c_isLineClippingDisabled_FUN declared:0 est:4 (+4)
     crt_windows.c_has_active_window_FUN_0060a710  declared:0 est:4 (+4)
     crt_process.c_spawnCommand_FUN_00609c90       declared:6 est:3 (-3)
     crt_process.c_set_shell_execute_flag_FUN_0060 declared:1 est:2 (+1)
-    crt_process.c_spawnvp_FUN_0060ca20            declared:3 est:4 (+1)
     crt_process.c_getpid_FUN_006099c0             declared:0 est:4 (+4)
     crt_startup.cpp_InitializeWinAppRuntime_FUN_0 declared:1 est:3 (+2)
     crt_locale.c_islower_multibyte_FUN_00610990   declared:1 est:2 (+1)
     crt_locale.c_ismultibyte_FUN_00610a20         declared:1 est:2 (+1)
     crt_watcom.c__heapchk_FUN_00600ad0            declared:0 est:4 (+4)
+    crt_watcom.c_memavl_FUN_006008f0              declared:0 est:5 (+5)
 
 ====================================================================================================
 MISMATCH DIRECTION ANALYSIS
@@ -92,7 +91,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 10
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 86
+Functions where declaration has FEWER params than estimated: 84
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -100,8 +99,8 @@ Distribution of differences (estimated - declared):
   -3 params: 1 functions
   -2 params: 1 functions
   -1 params: 7 functions
-  +1 params: 41 functions
-  +2 params: 12 functions
+  +1 params: 40 functions
+  +2 params: 11 functions
   +3 params: 12 functions
   +4 params: 11 functions
   +5 params: 3 functions

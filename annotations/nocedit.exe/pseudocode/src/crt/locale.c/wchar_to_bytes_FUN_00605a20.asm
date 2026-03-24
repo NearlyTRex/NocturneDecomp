@@ -7,10 +7,9 @@
 ; wchar_t          Stack[0x4]:2   character
 ; char *           Stack[0x8]:4   output_buffer
 ;
-; XREF[3]:
+; XREF[2]:
 ;   crt_file.c_makepath_FUN_005febfc at 005fed67
 ;   crt_string.c_char_in_set_FUN_0060e340 at 0060e350
-;   crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0 at 0060e5fe
 ;
 ; *****************************************************************************
 

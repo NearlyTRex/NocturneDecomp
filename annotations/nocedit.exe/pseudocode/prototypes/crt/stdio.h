@@ -251,10 +251,6 @@ _FILE * __cdecl get::standard_file_handle(int fd);
 // Address: 0060b9b7
 int __watcallStack closeUnsupported(void);
 
-// Original: crt_stdio.c_IsRelevantKeyEvent_FUN_0060cd90
-// Address: 0060cd90
-int __watcallStack IsRelevantKeyEvent(_INPUT_RECORD *pInputRecord);
-
 // Original: crt_stdio.c_InitializeConsoleHandles_FUN_0060cdbc
 // Address: 0060cdbc
 void __watcallRegister InitializeConsoleHandles(void);

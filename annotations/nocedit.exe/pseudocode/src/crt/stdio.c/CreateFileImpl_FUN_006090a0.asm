@@ -19,6 +19,8 @@
 ;   crt_stdio.c_CreateFileVariadic_FUN_00609074 at 00609091
 ;
 ; Referenced Globals:
+;   undefined4 SUB_0060c850
+;   undefined4 SUB_0060c894
 ;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
 ;   CREATE_FILE_A_FUNC* g_CreateFileAFunc = 00211c6a
 ;   TerminatedCString s_con_006590a0
@@ -33,8 +35,6 @@
 ;   CreateFileA
 ;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_setErrno_FUN_00602790
-;   crt_io.c_ConvertAccessMode_FUN_0060c850
-;   crt_io.c_ConvertCreationDisposition_FUN_0060c894
 ;   crt_io.c_IsSpecialDevice_FUN_0060c270
 ;   crt_io.c_register_handler_wrapper_FUN_00602438
 ;   crt_string.c__stricmp_FUN_005fe7f0
@@ -70,8 +70,8 @@ section .text
     PUSH EAX                            ; 006090d5
     AND ESI,0x7                         ; 006090d6
     PUSH ESI                            ; 006090d9
-    CALL crt_io.c_ConvertAccessMode_FUN_0060c850 ; 006090da
-        ;   XREF to: 0060c850 (UNCONDITIONAL_CALL)  ; void crt_io.c_ConvertAccessMode_FUN_0060c850(int access_mode, DWORD * desired_access, DWORD * share_mode)
+    CALL 0x0060c850                     ; 006090da
+        ;   XREF to: 0060c850 (UNCONDITIONAL_CALL)  ; SUB_0060c850
     ADD ESP,0xc                         ; 006090df
     LEA EAX,[ESP + 0xc]                 ; 006090e2
     PUSH EAX                            ; 006090e6
@@ -79,8 +79,8 @@ section .text
     OR EAX,ESI                          ; 006090eb
     PUSH EAX                            ; 006090ed
     MOV EBP,0x80                        ; 006090ee
-    CALL crt_io.c_ConvertCreationDisposition_FUN_0060c894 ; 006090f3
-        ;   XREF to: 0060c894 (UNCONDITIONAL_CALL)  ; void crt_io.c_ConvertCreationDisposition_FUN_0060c894(DWORD mode_flags, DWORD * creation_disposition)
+    CALL 0x0060c894                     ; 006090f3
+        ;   XREF to: 0060c894 (UNCONDITIONAL_CALL)  ; SUB_0060c894
     MOV EDX,0xc                         ; 006090f8
     ADD ESP,0x8                         ; 006090fd
     XOR ECX,ECX                         ; 00609100

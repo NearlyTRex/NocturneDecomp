@@ -66,7 +66,3 @@ void * __cdecl ::_arrinit_(void *array_start,int element_count,WatcomTypeInfo *t
 // Original: crt_memory.c___GetStackLimits_FUN_0060a6a0
 // Address: 0060a6a0
 void __cdecl ::_GetStackLimits(ThreadData *pStackBound,uint *pHeapBound);
-
-// Original: crt_memory.c_calloc_FUN_0060ca90
-// Address: 0060ca90
-void * __cdecl calloc(ulong count,ulong size);

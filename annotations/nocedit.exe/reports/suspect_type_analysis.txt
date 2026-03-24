@@ -4,21 +4,21 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6938 ( 42.1%)
-  pointer_cast                    5049 ( 30.6%)
+  decompiler_intrinsic            6937 ( 42.4%)
+  pointer_cast                    4968 ( 30.4%)
   unknown_field                    887 (  5.4%)
-  special_crt_function             464 (  2.8%)
+  special_crt_function             441 (  2.7%)
   stack_param                      340 (  2.1%)
-  unnamed_param                    323 (  2.0%)
-  fpu_register_input               311 (  1.9%)
+  unnamed_param                    320 (  2.0%)
+  fpu_register_input               313 (  1.9%)
   nonstandard_int                  267 (  1.6%)
   warning_inlined_function         264 (  1.6%)
-  stack_ref                        250 (  1.5%)
-  unresolved_funcptr               169 (  1.0%)
+  stack_ref                        242 (  1.5%)
+  unresolved_funcptr               171 (  1.0%)
   warning_type_propagation         132 (  0.8%)
-  param_count_too_few              121 (  0.7%)
-  stack_alignment_array            106 (  0.6%)
+  param_count_too_few              119 (  0.7%)
   unaffected_reg                   106 (  0.6%)
+  stack_alignment_array            101 (  0.6%)
   sub84_truncation                 100 (  0.6%)
   negative_offset                   86 (  0.5%)
   warning_unreachable               84 (  0.5%)
@@ -54,7 +54,7 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (6938 occurrences)
+TYPE: decompiler_intrinsic (6937 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -96,18 +96,18 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5049 occurrences)
+TYPE: pointer_cast (4968 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1571x  (uint *)((int)
-  1280x  (int *)((int)
+  1515x  (uint *)((int)
+  1257x  (int *)((int)
    325x  (SRenderVertex *)((int)
+   289x  (float *)((int)
    289x  (CMatrix3x4f *)((int)
-   287x  (float *)((int)
    208x  (double *)((int)
    189x  (void *)((int)
-   173x  (byte *)((int)
+   170x  (byte *)((int)
     84x  (ushort *)((int)
     70x  (char *)((int)
     61x  (short *)((int)
@@ -178,11 +178,11 @@ Example functions:
     uVar6._0_2_ = CONCAT11(bStack_2b,uStack_2c) & 0x7fff;...
 
 ====================================================================================================
-TYPE: special_crt_function (464 occurrences)
+TYPE: special_crt_function (441 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   464x  crt_
+   441x  crt_
 
 Example functions:
   crt_io.c_tell_FUN_00606720
@@ -195,16 +195,12 @@ Example functions:
     CRT function (runtime support) at 00607d50...
   crt_io.c_IsSpecialDevice_FUN_0060c270
     CRT function (runtime support) at 0060c270...
-  crt_io.c_ConvertCreationDisposition_FUN_0060c894
-    CRT function (runtime support) at 0060c894...
   crt_io.c_convertFileInfo_FUN_00602264
     CRT function (runtime support) at 00602264...
   crt_io.c_chsize_FUN_00600cf0
     CRT function (runtime support) at 00600cf0...
   crt_io.c_extend_file_for_append_FUN_00608410
     CRT function (runtime support) at 00608410...
-  crt_io.c_ConvertAccessMode_FUN_0060c850
-    CRT function (runtime support) at 0060c850...
   crt_io.c__findfirst_FUN_006021f0
     CRT function (runtime support) at 006021f0...
   crt_io.c__tempnam_FUN_00601f1c
@@ -215,8 +211,6 @@ Example functions:
     CRT function (runtime support) at 0060c2e0...
   crt_io.c_invalidate_handle_wrapper_FUN_00602448
     CRT function (runtime support) at 00602448...
-  crt_io.c_access_FUN_0060c9f0
-    CRT function (runtime support) at 0060c9f0...
   crt_io.c_close_FUN_00609bd0
     CRT function (runtime support) at 00609bd0...
   crt_io.c__findnext_FUN_00602300
@@ -245,6 +239,12 @@ Example functions:
     CRT function (runtime support) at 006103a4...
   crt_process.c_set_shell_execute_flag_FUN_00609c80
     CRT function (runtime support) at 00609c80...
+  crt_process.c_build_file_info_env_FUN_0060ffd0
+    CRT function (runtime support) at 0060ffd0...
+  crt_process.c_execvp_FUN_00610790
+    CRT function (runtime support) at 00610790...
+  crt_process.c_getpid_FUN_006099c0
+    CRT function (runtime support) at 006099c0...
 
 ====================================================================================================
 TYPE: stack_param (340 occurrences)
@@ -289,11 +289,11 @@ Example functions:
     int in_stack_00000004;...
 
 ====================================================================================================
-TYPE: unnamed_param (323 occurrences)
+TYPE: unnamed_param (320 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   110x  param_1
+   107x  param_1
     69x  param_2
     47x  param1
     28x  param_3
@@ -318,11 +318,11 @@ Example functions:
     uint * __cdecl gmtime_r(int days,uint seconds,int timezone_offset,uint *param_4)...
 
 ====================================================================================================
-TYPE: fpu_register_input (311 occurrences)
+TYPE: fpu_register_input (313 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   102x  in_ST2
+   104x  in_ST2
     98x  in_ST3
     58x  in_ST0
     41x  in_ST1
@@ -440,7 +440,7 @@ Example functions:
     /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */...
 
 ====================================================================================================
-TYPE: stack_ref (250 occurrences)
+TYPE: stack_ref (242 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -454,16 +454,16 @@ Unique patterns:
      7x  &stack0xfffffe90
      7x  &stack0xfffffee8
      7x  &stack0xfffffeb8
-     6x  &stack0xffffffdc
      6x  &stack0x00000008
      5x  &stack0xffffff28
-     4x  &stack0xffffffe0
+     4x  &stack0xffffffdc
      4x  &stack0xffffff60
      4x  &stack0xfffffac4
      4x  &stack0xfffffdbc
      4x  &stack0xfffffe8c
-     4x  &stack0xffffffe8
      4x  &stack0xfffffea0
+     4x  &stack0xfffffe70
+     3x  &stack0xfffffff8
 
 Example functions:
   crt_io.c_write_FUN_006084ec
@@ -492,11 +492,11 @@ Example functions:
     (*g_GetConsoleModeFunc)(hConsoleHandle,(LPDWORD)&stack0xfffffff8);...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (169 occurrences)
+TYPE: unresolved_funcptr (171 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   117x  code *
+   119x  code *
     52x  code
 
 Example functions:
@@ -524,13 +524,13 @@ Example functions:
     code *pcVar1;...
   crt_math.c_FUN_00606cc2
     code *pcVar1;...
+  crt_math.c_atan2_FUN_0060c440
+    code *pcVar1;...
   crt_math.c_FUN_00606d66
     code *pcVar1;...
   crt_math.c_FUN_00606bff
     code *pcVar1;...
   crt_math.c_FUN_00606c1e
-    code *pcVar1;...
-  crt_math.c_FUN_00606ca3
     code *pcVar1;...
 
 ====================================================================================================
@@ -603,24 +603,24 @@ Example functions:
     /* WARNING: Type propagation algorithm not settling */...
 
 ====================================================================================================
-TYPE: param_count_too_few (121 occurrences)
+TYPE: param_count_too_few (119 occurrences)
 ====================================================================================================
 
 Unique patterns:
     21x  declared:1 vs estimated:2
     11x  declared:2 vs estimated:3
     11x  declared:0 vs estimated:4
-     9x  declared:0 vs estimated:2
      8x  declared:4 vs estimated:5
+     8x  declared:0 vs estimated:2
      8x  declared:0 vs estimated:1
      7x  declared:0 vs estimated:3
      5x  declared:3 vs estimated:6
-     3x  declared:3 vs estimated:4
      3x  declared:0 vs estimated:5
      3x  declared:4 vs estimated:7
      3x  declared:2 vs estimated:4
      2x  declared:6 vs estimated:7
      2x  declared:5 vs estimated:6
+     2x  declared:3 vs estimated:4
      2x  declared:1 vs estimated:4
      2x  declared:2 vs estimated:24
      2x  declared:6 vs estimated:8
@@ -653,8 +653,6 @@ Example functions:
     Function declares 0 params but call sites push 4 (4 missing)...
   crt_process.c_set_shell_execute_flag_FUN_00609c80
     Function declares 1 params but call sites push 2 (1 missing)...
-  crt_process.c_spawnvp_FUN_0060ca20
-    Function declares 3 params but call sites push 4 (1 missing)...
   crt_process.c_getpid_FUN_006099c0
     Function declares 0 params but call sites push 4 (4 missing)...
   crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8
@@ -687,17 +685,39 @@ Example functions:
     Function declares 0 params but call sites push 3 (3 missing)...
   crt_unknown.c_FUN_00607858
     Function declares 0 params but call sites push 3 (3 missing)...
-  crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0
+  crt_unknown.c_FUN_0060d480
+    Function declares 0 params but call sites push 5 (5 missing)...
+  crt_unknown.c_FUN_0060b133
     Function declares 0 params but call sites push 2 (2 missing)...
 
 ====================================================================================================
-TYPE: stack_alignment_array (106 occurrences)
+TYPE: unaffected_reg (106 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     6x  aiStackY_1028
+    37x  unaff_EBX
+    26x  unaff_EDI
+    24x  unaff_ESI
+    19x  unaff_EBP
+
+Example functions:
+  crt_io.c_chsize_FUN_00600cf0
+    HANDLE unaff_EBP;...
+  crt_io.c_close_FUN_00609bd0
+    HANDLE unaff_ESI;...
+  crt_stdlib.c_memory_swap_FUN_005fdf10
+    uint *unaff_ESI;...
+  crt_stdlib.c__fullpath_FUN_00601140
+    char (*unaff_EBP) [4];...
+
+====================================================================================================
+TYPE: stack_alignment_array (101 occurrences)
+====================================================================================================
+
+Unique patterns:
      5x  aiStackY_1010
      4x  aiStackY_1004
+     4x  aiStackY_1028
      3x  aiStackY_1000
      3x  aiStackY_1018
      3x  afStackY_1870
@@ -777,26 +797,6 @@ Example functions:
     int aiStackY_1038 [1015];...
   core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700
     float afStackY_17f8 [1525];...
-
-====================================================================================================
-TYPE: unaffected_reg (106 occurrences)
-====================================================================================================
-
-Unique patterns:
-    37x  unaff_EBX
-    26x  unaff_EDI
-    24x  unaff_ESI
-    19x  unaff_EBP
-
-Example functions:
-  crt_io.c_chsize_FUN_00600cf0
-    HANDLE unaff_EBP;...
-  crt_io.c_close_FUN_00609bd0
-    HANDLE unaff_ESI;...
-  crt_stdlib.c_memory_swap_FUN_005fdf10
-    uint *unaff_ESI;...
-  crt_stdlib.c__fullpath_FUN_00601140
-    char (*unaff_EBP) [4];...
 
 ====================================================================================================
 TYPE: sub84_truncation (100 occurrences)
@@ -1351,7 +1351,7 @@ Example functions:
   crt_watcom.c__memcpy_FUN_004b1a78
     (**(code **)(&DAT_00679d94 + uVar2 * 4))();...
   crt_math.c_atan2_FUN_0060c440
-    fVar1 = *(float10 *)(&DAT_0068755c + iVar1) +...
+    fVar2 = *(float10 *)(&DAT_0068755c + iVar1) +...
   crt_time.c_tzset_FUN_006072f8
     DAT_0068513c = 0;...
   crt_time.c__strftime_FUN_006002d4

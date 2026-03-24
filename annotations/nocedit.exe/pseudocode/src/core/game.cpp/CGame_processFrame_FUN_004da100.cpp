@@ -1,6 +1,6 @@
 // Name: core_game.cpp_CGame_processFrame_FUN_004da100
 // Address: 004da100
-// Address Range: [[004da100, 004dadd2]]
+// Address Range: [[004da100, 004dadd2] [0060a649, 0060a685]]
 // Convention: __cdecl
 // Signature: void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 
@@ -33,7 +33,6 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   int iVar14;
   int *piVar20;
   byte bVar21;
-  uint auStackY_107c [646];
   CSfxSample local_62c;
   char local_3dc [256];
   char local_2dc [256];
@@ -74,7 +73,6 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   CHero *pCVar4;
   CVector3i *input_ptr;
   
-  bVar21 = 0;
   local_40 = 0;
   if (this_ptr->profile_mode != 0) {
     local_44 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -120,22 +118,11 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       if ((g_MouseButtonFlags.bytes[0] & 1) != 0) {
         core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                   (&g_CDemonCameraInstance,g_MouseX,g_MouseY,&local_88);
-        input_ptr = &local_70;
-        local_70.x = local_88.x;
-        *(uint *)((int)&local_70 + (uint)bVar21 * -8 + 4) =
-             *(uint *)((int)&local_88 + (uint)bVar21 * -8 + 4);
-        *(uint *)((int)&local_70 + (uint)bVar21 * -8 + (uint)bVar21 * -8 + 8) =
-             *(uint *)((int)&local_88 + (uint)bVar21 * -8 + (uint)bVar21 * -8 + 8);
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-                  (&g_CDemonCameraInstance,input_ptr,&local_94);
-        local_70.x = local_94.x;
-        *(uint *)((int)&local_70 + (uint)bVar21 * -8 + 4) =
-             *(uint *)((int)&local_94 + (uint)bVar21 * -8 + 4);
-        *(uint *)((int)&local_70 + (uint)bVar21 * -8 + (uint)bVar21 * -8 + 8) =
-             *(uint *)((int)&local_94 + (uint)bVar21 * -8 + (uint)bVar21 * -8 + 8);
-        local_7c.x = (float)local_70.x * 0.00390625f;
-        local_7c.y = (float)local_70.y * 0.00390625f;
-        local_7c.z = (float)local_70.z * 0.00390625f;
+                  (&g_CDemonCameraInstance,&local_70,&local_94);
+        local_7c.x = (float)local_94.x * 0.00390625f;
+        local_7c.y = (float)local_94.y * 0.00390625f;
+        local_7c.z = (float)local_94.z * 0.00390625f;
         pCVar2 = g_HeroActors[g_LocalHeroIndex];
         (*((pCVar2->base).base.vtable._ub)->setPositionAndOrientation)
                   ((CDemonActor *)pCVar2,&local_7c,(CVector3f *)&(pCVar2->base).base.orient);

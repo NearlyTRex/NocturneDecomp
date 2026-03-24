@@ -1,6 +1,6 @@
 // Name: core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
 // Address: 004ca110
-// Address Range: [[004ca110, 004ca626] [004ca64e, 004ca659] [004ca65d, 004ca70b] [004caa15, 004caa6f]]
+// Address Range: [[004ca110, 004ca626] [004ca64e, 004ca659] [004ca65d, 004ca70b] [004caa15, 004caa6f] [0060a604, 0060a648]]
 // Convention: __cdecl
 // Signature: int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_ptr)
 
@@ -19,7 +19,6 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   float fVar7;
   SProjectedVertex *point;
   byte bVar6;
-  uint auStackY_1088 [973];
   SMRGLHeaderPrimitive SStack_144;
   SMRGLHeaderPrimitive SStack_11c;
   CBoundingBox3D local_f4;
@@ -53,7 +52,6 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   float fVar2;
   int iVar1;
   
-  bVar6 = 0;
   if (((this_ptr->flame_state != 0) || (g_CDemonMissionPtr->is_in_editor != 0)) &&
      (iVar5 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar5 == 0)) {
@@ -77,11 +75,6 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
     if ((this_ptr->is_visible != 0) && (this_ptr->which_flame != 3)) {
       engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
                 (g_CDemonRendererPtr2,&CStack_64);
-      CStack_58.x = CStack_64.x;
-      *(uint *)((int)&CStack_58 + (uint)bVar6 * -8 + 4) =
-           *(uint *)((int)&CStack_64 + (uint)bVar6 * -8 + 4);
-      *(uint *)((int)&CStack_58 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-           *(uint *)((int)&CStack_64 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       CStack_58.x = 0;
       CStack_58.y = 0;
       engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
@@ -92,12 +85,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
       engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
                 (g_CDemonRendererPtr2,&CStack_a0);
       iStack_18 = 1;
-      CStack_58.x = CStack_a0.x;
-      *(uint *)((int)&CStack_58 + (uint)bVar6 * -8 + 4) =
-           *(uint *)((int)&CStack_a0 + (uint)bVar6 * -8 + 4);
-      *(uint *)((int)&CStack_58 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-           *(uint *)((int)&CStack_a0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-      if ((0x2000 < CStack_58.x) || (CStack_58.x < -0x2000)) {
+      if ((0x2000 < CStack_a0.x) || (CStack_a0.x < -0x2000)) {
         iStack_18 = 3;
       }
       iVar6 = 0;

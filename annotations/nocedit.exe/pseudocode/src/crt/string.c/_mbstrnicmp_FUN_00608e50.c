@@ -14,7 +14,7 @@ int __cdecl _mbstrnicmp(char *str1,char *str2,SIZE_T count)
   while (((count != 0 &&
           (iVar1 = mbstring_termination_check(str1), iVar1 == 0)) &&
          (iVar1 = mbstring_termination_check(str2), iVar1 == 0))) {
-    iVar1 = compare_mb_chars_ci(str1,str2);
+    iVar1 = func_0x0060c790(str1,str2);
     if (iVar1 != 0) {
       return iVar1;
     }

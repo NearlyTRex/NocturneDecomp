@@ -55,13 +55,13 @@ uint FUN_0060fcf4(short *param_1)
     }
     if (iVar3 < 1) {
       n = -iVar3;
-      new_size = n + 1 + iVar3 * -4 + 8U;
+      new_size = n + 1 + iVar3 * -4 + 8;
       if (g_EnvironStringArea == (char **)0x0) {
         ptr = malloc(new_size);
         if (ptr == (uint *)0x0) {
           return 0xffffffff;
         }
-        memcpy(ptr,(void *)g_EnvironInitialized,iVar3 * -4);
+        func_0x0060cd60(ptr,g_EnvironInitialized,iVar3 * -4);
         g_EnvironStringArea = (char **)(ptr + (2 - iVar3));
         memset(g_EnvironStringArea,0,n + 1);
       }

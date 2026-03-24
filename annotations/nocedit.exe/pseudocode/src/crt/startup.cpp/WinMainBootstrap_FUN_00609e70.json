@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 184,
+    "complexity_score": 186,
     "cross_reference_count": 1,
-    "function_call_count": 8,
-    "global_count": 5,
+    "function_call_count": 7,
+    "global_count": 6,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 74,
+    "pseudocode_lines": 76,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
@@ -14,7 +14,7 @@
       "stack_ref",
       "warning_spacebase"
     ],
-    "total_lines": 145
+    "total_lines": 147
   },
   "cross_references": [
     {
@@ -64,11 +64,6 @@
       "name": "crt_startup.c_ExitApplication_FUN_0060b534"
     },
     {
-      "addr": "0060ca80",
-      "is_variadic": false,
-      "name": "crt_startup.c_PlaceholderStub_FUN_0060ca80"
-    },
-    {
       "addr": "006026a8",
       "is_variadic": false,
       "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8"
@@ -80,6 +75,12 @@
     }
   ],
   "globals": [
+    {
+      "addr": "0060ca80",
+      "name": "SUB_0060ca80",
+      "type": "undefined4",
+      "value": null
+    },
     {
       "addr": "006115b4",
       "name": "g_GetModuleHandleAFunc",
@@ -197,7 +198,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 27,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)aiStack_1c + runtimeBufferOffset + 4) = 0;",
@@ -205,7 +206,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 29,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&uStack_20 + runtimeBufferOffset) = 0x609e9e;",
@@ -213,7 +214,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 32,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)aiStack_1c + runtimeBufferOffset + 4),",
@@ -221,7 +222,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 35,
+      "line": 36,
       "match": "&stack0x000000e0",
       "severity": "moderate",
       "text": "*(DWORD *)(&stack0x000000e0 + runtimeBufferOffset) = g_RuntimeBufferSize;",
@@ -229,7 +230,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 38,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)aiStack_1c + runtimeBufferOffset) = 0x609eb6;",
@@ -237,7 +238,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 50,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)aiStack_1c + runtimeBufferOffset + 4) = 0x609ed4;",
@@ -245,7 +246,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 60,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "g_CrtStackBuffer = (void *)((int)pStackBuffer + g_StackAllocSize);",

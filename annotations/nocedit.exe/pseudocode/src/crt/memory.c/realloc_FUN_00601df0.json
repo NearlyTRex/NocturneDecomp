@@ -2,7 +2,7 @@
   "complexity": {
     "assembly_lines": 11,
     "complexity_score": 21,
-    "cross_reference_count": 12,
+    "cross_reference_count": 11,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -18,12 +18,6 @@
       "addr": "0060f04c",
       "from_addr": "0060f182",
       "name": "crt_env.c_updateEnvironTable_FUN_0060f04c",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0060caf8",
-      "from_addr": "0060cb2f",
-      "name": "crt_tls.c_getThreadLocalData_FUN_0060caf8",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -108,7 +102,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 12,
+    "call_site_count": 11,
     "call_sites": [
       {
         "call_addr": "0060f182",
@@ -177,17 +171,6 @@
         "stack_params": 2
       },
       {
-        "call_addr": "0060cb2f",
-        "call_type": "direct",
-        "caller": "crt_tls.c_getThreadLocalData_FUN_0060caf8",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
         "call_addr": "005d76f2",
         "call_type": "direct",
         "caller": "shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0",
@@ -213,6 +196,17 @@
         "call_addr": "005d243c",
         "call_type": "direct",
         "caller": "shape_superopt.cpp_CObj_addPolygons_FUN_005d2410",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005d259d",
+        "call_type": "direct",
+        "caller": "shape_superopt.cpp_CObj_addVertices_FUN_005d2580",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

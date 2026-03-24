@@ -6,10 +6,10 @@ Caves are created by zeroing out dead functions using the
 CreateCodeCave Ghidra script (Shift+Z). Patching scripts
 allocate space within caves for injected code (thunks, helpers).
 
-Total caves:        26
-Total bytes:        23,739
-Total free:         3,316
-Total allocations:  385
+Total caves:        27
+Total bytes:        25,815
+Total free:         3,081
+Total allocations:  459
 
 ----------------------------------------------------------------------------------------------------
 CAVES
@@ -585,10 +585,163 @@ CAVES
                4x MOVSD replacement for renderPolygonUVTextureEnable_FUN_00405350
     Free space: 34 bytes (offset 0x044e - 0x0470)
 
-  cave_00609f20                   00609cb0    448 bytes  [FREE]
-    (entirely free — no allocations)
+  cave_00609f20                   00609cb0    448 bytes  [417/448 used]
+    Allocations:
+      +0x0000   32 bytes  movsd_0051be27             0x0051be27
+               4x MOVSD replacement for CLodMesh_sortFacesByAttribute_FUN_0051bd30
+      +0x0020   30 bytes  movsd_0051be3f             0x0051be3f
+               4x MOVSD replacement for CLodMesh_sortFacesByAttribute_FUN_0051bd30
+      +0x003e   33 bytes  movsd_0051beb9             0x0051beb9
+               4x MOVSD replacement for CLodMesh_sortFacesByAttribute_FUN_0051bd30
+      +0x005f   32 bytes  movsd_0051bee4             0x0051bee4
+               4x MOVSD replacement for CLodMesh_sortFacesByAttribute_FUN_0051bd30
+      +0x007f   34 bytes  movsd_0051bf04             0x0051bf04
+               4x MOVSD replacement for CLodMesh_sortFacesByAttribute_FUN_0051bd30
+      +0x00a1   34 bytes  movsd_0051bf86             0x0051bf86
+               4x MOVSD replacement for CLodMesh_sortFacesByAttribute_FUN_0051bd30
+      +0x00c3   29 bytes  movsd_0051bfc7             0x0051bfc7
+               4x MOVSD replacement for CLodMesh_sortFacesByAttribute_FUN_0051bd30
+      +0x00e0   31 bytes  movsd_0051bfe3             0x0051bfe3
+               4x MOVSD replacement for CLodMesh_sortFacesByAttribute_FUN_0051bd30
+      +0x00ff   34 bytes  movsd_0051c038             0x0051c038
+               4x MOVSD replacement for CLodMesh_sortFacesByAttribute_FUN_0051bd30
+      +0x0121   35 bytes  movsd_0047b720             0x0047b720
+               4x MOVSD replacement for CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
+      +0x0144   29 bytes  movsd_0047b74a             0x0047b74a
+               4x MOVSD replacement for CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
+      +0x0161   35 bytes  movsd_0047b756             0x0047b756
+               4x MOVSD replacement for CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
+      +0x0184   29 bytes  movsd_0047b779             0x0047b779
+               4x MOVSD replacement for CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
+    Free space: 31 bytes (offset 0x01a1 - 0x01c0)
 
-  cave_00609f20                   00609f20   1920 bytes  [FREE]
+  cave_00609f20                   00609f20   1920 bytes  [1894/1920 used]
+    Allocations:
+      +0x0000   35 bytes  movsd_004541a6             0x004541a6
+               4x MOVSD replacement for CDemonCamera_computeVisibleFrustumBounds_FUN_00454060
+      +0x0023   29 bytes  movsd_00454240             0x00454240
+               4x MOVSD replacement for CDemonCamera_computeVisibleFrustumBounds_FUN_00454060
+      +0x0040   35 bytes  movsd_00454327             0x00454327
+               4x MOVSD replacement for CDemonCamera_computeVisibleFrustumBounds_FUN_00454060
+      +0x0063   35 bytes  movsd_0045437a             0x0045437a
+               4x MOVSD replacement for CDemonCamera_computeVisibleFrustumBounds_FUN_00454060
+      +0x0086   35 bytes  movsd_004543bf             0x004543bf
+               4x MOVSD replacement for CDemonCamera_computeVisibleFrustumBounds_FUN_00454060
+      +0x00a9   38 bytes  movsd_00454417             0x00454417
+               4x MOVSD replacement for CDemonCamera_computeVisibleFrustumBounds_FUN_00454060
+      +0x00cf   31 bytes  movsd_0056ed34             0x0056ed34
+               4x MOVSD replacement for CDemonSet_lightVerticies_FUN_0056eac0
+      +0x00ee   29 bytes  movsd_0056eda4             0x0056eda4
+               4x MOVSD replacement for CDemonSet_lightVerticies_FUN_0056eac0
+      +0x010b   30 bytes  movsd_0056ee87             0x0056ee87
+               4x MOVSD replacement for CDemonSet_lightVerticies_FUN_0056eac0
+      +0x0129   29 bytes  movsd_0056f026             0x0056f026
+               4x MOVSD replacement for CDemonSet_lightVerticies_FUN_0056eac0
+      +0x0146   29 bytes  movsd_0056f08b             0x0056f08b
+               4x MOVSD replacement for CDemonSet_lightVerticies_FUN_0056eac0
+      +0x0163   29 bytes  movsd_0056f144             0x0056f144
+               4x MOVSD replacement for CDemonSet_lightVerticies_FUN_0056eac0
+      +0x0180   31 bytes  movsd_0044e427             0x0044e427
+               4x MOVSD replacement for CDemonCamera_precomputeNormals_FUN_0044e360
+      +0x019f   31 bytes  movsd_0044e45b             0x0044e45b
+               4x MOVSD replacement for CDemonCamera_precomputeNormals_FUN_0044e360
+      +0x01be   29 bytes  movsd_0044e470             0x0044e470
+               4x MOVSD replacement for CDemonCamera_precomputeNormals_FUN_0044e360
+      +0x01db   31 bytes  movsd_0044e4a7             0x0044e4a7
+               4x MOVSD replacement for CDemonCamera_precomputeNormals_FUN_0044e360
+      +0x01fa   30 bytes  movsd_0052abc0             0x0052abc0
+               4x MOVSD replacement for CMorphModel_setFaceListFromPolygon_FUN_0052aac0
+      +0x0218   30 bytes  movsd_0052abcd             0x0052abcd
+               4x MOVSD replacement for CMorphModel_setFaceListFromPolygon_FUN_0052aac0
+      +0x0236   30 bytes  movsd_0052abda             0x0052abda
+               4x MOVSD replacement for CMorphModel_setFaceListFromPolygon_FUN_0052aac0
+      +0x0254   30 bytes  movsd_0052ac79             0x0052ac79
+               4x MOVSD replacement for CMorphModel_setFaceListFromPolygon_FUN_0052aac0
+      +0x0272   30 bytes  movsd_0052ac86             0x0052ac86
+               4x MOVSD replacement for CMorphModel_setFaceListFromPolygon_FUN_0052aac0
+      +0x0290   31 bytes  movsd_0041ad3c             0x0041ad3c
+               4x MOVSD replacement for CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40
+      +0x02af   29 bytes  movsd_0041ad53             0x0041ad53
+               4x MOVSD replacement for CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40
+      +0x02cc   30 bytes  movsd_0041ad9e             0x0041ad9e
+               4x MOVSD replacement for CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40
+      +0x02ea   31 bytes  movsd_0041adac             0x0041adac
+               4x MOVSD replacement for CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40
+      +0x0309   29 bytes  movsd_0044d868             0x0044d868
+               4x MOVSD replacement for CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
+      +0x0326   29 bytes  movsd_0044d86f             0x0044d86f
+               4x MOVSD replacement for CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
+      +0x0343   29 bytes  movsd_0044da74             0x0044da74
+               4x MOVSD replacement for CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
+      +0x0360   29 bytes  movsd_0044da7b             0x0044da7b
+               4x MOVSD replacement for CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
+      +0x037d   29 bytes  movsd_0051f6ac             0x0051f6ac
+               4x MOVSD replacement for CMimic_setup_FUN_0051f3e0
+      +0x039a   31 bytes  movsd_0051f6b5             0x0051f6b5
+               4x MOVSD replacement for CMimic_setup_FUN_0051f3e0
+      +0x03b9   29 bytes  movsd_0051f6c0             0x0051f6c0
+               4x MOVSD replacement for CMimic_setup_FUN_0051f3e0
+      +0x03d6   34 bytes  movsd_0051f6c9             0x0051f6c9
+               4x MOVSD replacement for CMimic_setup_FUN_0051f3e0
+      +0x03f8   34 bytes  movsd_0047a135             0x0047a135
+               4x MOVSD replacement for CKeyFramedModel_exportToS3D_FUN_00479f30
+      +0x041a   34 bytes  movsd_0047a142             0x0047a142
+               4x MOVSD replacement for CKeyFramedModel_exportToS3D_FUN_00479f30
+      +0x043c   34 bytes  movsd_0047a14f             0x0047a14f
+               4x MOVSD replacement for CKeyFramedModel_exportToS3D_FUN_00479f30
+      +0x045e   32 bytes  movsd_0051effa             0x0051effa
+               4x MOVSD replacement for CLodFace_copy2_FUN_0051efe0
+      +0x047e   30 bytes  movsd_0051f010             0x0051f010
+               4x MOVSD replacement for CLodFace_copy2_FUN_0051efe0
+      +0x049c   33 bytes  movsd_0051f055             0x0051f055
+               4x MOVSD replacement for CLodFace_copy2_FUN_0051efe0
+      +0x04bd   32 bytes  movsd_0051ef39             0x0051ef39
+               4x MOVSD replacement for CLodFace_copy_FUN_0051ef20
+      +0x04dd   30 bytes  movsd_0051ef4f             0x0051ef4f
+               4x MOVSD replacement for CLodFace_copy_FUN_0051ef20
+      +0x04fb   33 bytes  movsd_0051ef97             0x0051ef97
+               4x MOVSD replacement for CLodFace_copy_FUN_0051ef20
+      +0x051c   32 bytes  movsd_0051b66d             0x0051b66d
+               4x MOVSD replacement for CLodMesh_compactFaces_FUN_0051b570
+      +0x053c   30 bytes  movsd_0051b687             0x0051b687
+               4x MOVSD replacement for CLodMesh_compactFaces_FUN_0051b570
+      +0x055a   33 bytes  movsd_0051b6cc             0x0051b6cc
+               4x MOVSD replacement for CLodMesh_compactFaces_FUN_0051b570
+      +0x057b   30 bytes  movsd_0042721c             0x0042721c
+               4x MOVSD replacement for CBugs_findNextSwarmVertex_FUN_004270f0
+      +0x0599   31 bytes  movsd_00427235             0x00427235
+               4x MOVSD replacement for CBugs_findNextSwarmVertex_FUN_004270f0
+      +0x05b8   29 bytes  movsd_0044d2de             0x0044d2de
+               4x MOVSD replacement for CDemonCamera_screenToWorldCoord_FUN_0044d2a0
+      +0x05d5   29 bytes  movsd_0044d301             0x0044d301
+               4x MOVSD replacement for CDemonCamera_screenToWorldCoord_FUN_0044d2a0
+      +0x05f2   32 bytes  movsd_00452931             0x00452931
+               4x MOVSD replacement for CDemonCamera_screenToWorldRay_FUN_00452900
+      +0x0612   30 bytes  movsd_0045294e             0x0045294e
+               4x MOVSD replacement for CDemonCamera_screenToWorldRay_FUN_00452900
+      +0x0630   29 bytes  movsd_0044dd0b             0x0044dd0b
+               4x MOVSD replacement for CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0
+      +0x064d   29 bytes  movsd_0044ddd1             0x0044ddd1
+               4x MOVSD replacement for CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0
+      +0x066a   31 bytes  movsd_0049a2a5             0x0049a2a5
+               4x MOVSD replacement for CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280
+      +0x0689   30 bytes  movsd_0049a2f1             0x0049a2f1
+               4x MOVSD replacement for CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280
+      +0x06a7   30 bytes  movsd_0049a185             0x0049a185
+               4x MOVSD replacement for CDemonRaytrace_setVoxelShadowBit_FUN_0049a160
+      +0x06c5   31 bytes  movsd_0049a1d0             0x0049a1d0
+               4x MOVSD replacement for CDemonRaytrace_setVoxelShadowBit_FUN_0049a160
+      +0x06e4   35 bytes  movsd_004ca231             0x004ca231
+               4x MOVSD replacement for CFlame_renderTransparent_FUN_004ca110
+      +0x0707   34 bytes  movsd_004ca2a1             0x004ca2a1
+               4x MOVSD replacement for CFlame_renderTransparent_FUN_004ca110
+      +0x0729   32 bytes  movsd_004da2fc             0x004da2fc
+               4x MOVSD replacement for CGame_processFrame_FUN_004da100
+      +0x0749   29 bytes  movsd_004da318             0x004da318
+               4x MOVSD replacement for CGame_processFrame_FUN_004da100
+    Free space: 26 bytes (offset 0x0766 - 0x0780)
+
+  cave_0060c5a0                   0060c5a0   2076 bytes  [FREE]
     (entirely free — no allocations)
 
   cave_005fde92                   0060d067    145 bytes  [116/145 used]

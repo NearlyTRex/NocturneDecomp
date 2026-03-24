@@ -11,10 +11,12 @@
 ;   crt_env.c_putenv_internal_FUN_0060ee80 at 0060eea0
 ;   crt_string.c_strpbrk_FUN_0060c190 at 0060c1b2
 ;
+; Referenced Globals:
+;   undefined4 SUB_0060e640
+;
 ; Called Functions:
 ;   crt_locale.c_mblen_FUN_00605a40
 ;   crt_locale.c_wchar_to_bytes_FUN_00605a20
-;   crt_string.c_mbcmp_FUN_0060e640
 ;   crt_string.c_mbstring_termination_check_FUN_0060b630
 ;   crt_string.c_mbtowc_next_FUN_00605a70
 ;
@@ -51,8 +53,8 @@ section .text
     MOV EAX,ESP                         ; 0060e375
     PUSH EAX                            ; 0060e377
     PUSH EBX                            ; 0060e378
-    CALL crt_string.c_mbcmp_FUN_0060e640 ; 0060e379
-        ;   XREF to: 0060e640 (UNCONDITIONAL_CALL)  ; int crt_string.c_mbcmp_FUN_0060e640(char * str1, char * str2)
+    CALL 0x0060e640                     ; 0060e379
+        ;   XREF to: 0060e640 (UNCONDITIONAL_CALL)  ; SUB_0060e640
     ADD ESP,0x8                         ; 0060e37e
     TEST EAX,EAX                        ; 0060e381
     JZ 0x0060e392                       ; 0060e383

@@ -11,7 +11,6 @@
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc426
 ;
 ; Referenced Globals:
-;   undefined4 SUB_00609d5c
 ;   FIND_NEXT_FILE_A_FUNC* g_FindNextFileAFunc = 00211d96
 ;
 ; Called Functions:
@@ -46,7 +45,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x150]     ; 0060232e
     PUSH EBX                            ; 00602335
     CALL 0x00609d5c                     ; 00602336
-        ;   XREF to: 00609d5c (UNCONDITIONAL_CALL)  ; SUB_00609d5c
+        ;   XREF to: 00609d5c (UNCONDITIONAL_CALL)  ; LAB_00609d5b+1
     ADD ESP,0xc                         ; 0060233b
     TEST EAX,EAX                        ; 0060233e
     JNZ 0x00602359                      ; 00602340

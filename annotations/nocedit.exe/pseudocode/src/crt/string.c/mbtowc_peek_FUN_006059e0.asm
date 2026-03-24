@@ -6,12 +6,11 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   str
 ;
-; XREF[5]:
+; XREF[4]:
 ;   crt_file.c_makepath_FUN_005febfc at 005fec8a
 ;   crt_file.c_splitpath_s_FUN_00610460 at 00610519
 ;   crt_string.c_splitpath_FUN_005ff178 at 005ff1bc
 ;   crt_string.c_strpbrk_FUN_0060c190 at 0060c1a8
-;   crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0 at 0060e5e9
 ;
 ; Referenced Globals:
 ;   int g_MultibyteLocaleActive

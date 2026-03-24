@@ -6,18 +6,18 @@
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr
 ;
-; XREF[17]:
+; XREF[14]:
 ;   crt_env.c_findEnvVar_FUN_0060f1f0 at 0060f27d
 ;   crt_env.c_putenv_internal_FUN_0060ee80 at 0060ef40
 ;   crt_iostream.cpp_freeBuffer_FUN_0060d7a0 at 0060d7a5
 ;   crt_stdio.c__fclose_FUN_00601fd0 at 00602055
 ;   crt_stdlib.c__fullpath_FUN_00601140 at 006011b1
-;   crt_tls.c_register_thread_data_FUN_0060cbd0 at 0060cc01
-;   crt_tls.c_unregister_thread_data_FUN_0060cc3c at 0060cc67
-;   crt_unknown.c_FUN_0060ccb4 at 0060cccd
 ;   crt_unknown.c_FUN_0060fe94 at 0060ff26
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460 at 0050f4f1
-;   ... and 7 more
+;   shape_superopt.cpp_CComplexPolygon_free_FUN_005c79f0 at 005c7a80
+;   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320 at 005d235b
+;   shape_superopt.cpp_CObj_allocateVertices_FUN_005d2500 at 005d252d
+;   ... and 4 more
 ;
 ; Called Functions:
 ;   crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0

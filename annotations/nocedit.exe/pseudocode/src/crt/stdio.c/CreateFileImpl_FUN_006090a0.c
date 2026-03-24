@@ -33,9 +33,9 @@ HANDLE __cdecl CreateFileImpl(char *filename,dword access_mode,dword share_mode,
     return (HANDLE)0xffffffff;
   }
   access_mode_00 = access_mode & 7;
-  ConvertAccessMode(access_mode_00,&desired_access,&extra_parameter);
+  func_0x0060c850(access_mode_00,&desired_access,&extra_parameter);
   dwFlagsAndAttributes = 0x80;
-  ConvertCreationDisposition(share_mode | access_mode_00,&share_mode_windows);
+  func_0x0060c894(share_mode | access_mode_00,&share_mode_windows);
   if ((DAT_0068528c != (code *)0x0) &&
      (iVar3 = _stricmp(filename,"con"), iVar3 == 0)) {
     pvVar3 = (HANDLE)func_0x00608b88();

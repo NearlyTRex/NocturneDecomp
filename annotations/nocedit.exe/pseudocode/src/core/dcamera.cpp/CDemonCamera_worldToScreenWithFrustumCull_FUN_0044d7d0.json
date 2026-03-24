@@ -5,20 +5,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 233,
-    "complexity_score": 171,
+    "assembly_lines": 278,
+    "complexity_score": 125,
     "cross_reference_count": 5,
     "function_call_count": 1,
-    "global_count": 5,
+    "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 106,
-    "suspect_count": 5,
+    "pseudocode_lines": 95,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_many",
-      "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 339
+    "total_lines": 373
   },
   "cross_references": [
     {
@@ -58,6 +57,10 @@
       [
         "0044d7d0",
         "0044da86"
+      ],
+      [
+        "0060a229",
+        "0060a29c"
       ]
     ],
     "convention": "__stack2_esi",
@@ -82,18 +85,6 @@
       "addr": "0151bf98",
       "name": "g_CameraOutOfBoundsCoord",
       "type": "CVector3i",
-      "value": null
-    },
-    {
-      "addr": "0151bf9c",
-      "name": "g_CameraOutOfBoundsY",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "0151bfa0",
-      "name": "g_CameraOutOfBoundsZ",
-      "type": "undefined4",
       "value": null
     },
     {
@@ -168,43 +159,43 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 8.744186046511627,
-    "instruction_count": 215,
+    "avg_pcode_per_instr": 7.68724279835391,
+    "instruction_count": 243,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 107,
       "BOOL_OR": 1,
-      "BRANCH": 1,
+      "BRANCH": 9,
       "CALL": 1,
       "CBRANCH": 11,
-      "COPY": 203,
+      "COPY": 191,
       "INT_2COMP": 2,
       "INT_ADD": 125,
-      "INT_AND": 372,
-      "INT_CARRY": 18,
-      "INT_EQUAL": 149,
+      "INT_AND": 388,
+      "INT_CARRY": 26,
+      "INT_EQUAL": 165,
       "INT_LEFT": 26,
       "INT_LESS": 16,
-      "INT_MULT": 45,
+      "INT_MULT": 21,
       "INT_NOTEQUAL": 84,
       "INT_OR": 125,
       "INT_RIGHT": 36,
       "INT_SBORROW": 18,
-      "INT_SCARRY": 18,
+      "INT_SCARRY": 26,
       "INT_SDIV": 2,
       "INT_SEXT": 62,
-      "INT_SLESS": 102,
+      "INT_SLESS": 110,
       "INT_SREM": 2,
-      "INT_SUB": 84,
+      "INT_SUB": 60,
       "INT_XOR": 21,
-      "INT_ZEXT": 28,
+      "INT_ZEXT": 4,
       "LOAD": 83,
-      "POPCOUNT": 60,
+      "POPCOUNT": 68,
       "RETURN": 2,
       "STORE": 31,
       "SUBPIECE": 44
     },
-    "pcode_op_count": 1880
+    "pcode_op_count": 1868
   },
   "stack_frame": {
     "frame_size": 4132,
@@ -300,13 +291,6 @@
         "pattern_id": "alt_frame_pointer"
       },
       {
-        "address": "0044d86b",
-        "description": "Alternative frame pointer (ESI = ESP)",
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
-        "instruction": "MOV ESI,ESP",
-        "pattern_id": "alt_frame_pointer"
-      },
-      {
         "address": "0044da68",
         "description": "Alternative frame pointer (EDI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
@@ -314,7 +298,14 @@
         "pattern_id": "alt_frame_pointer"
       },
       {
-        "address": "0044da77",
+        "address": "0060a23f",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0060a279",
         "description": "Alternative frame pointer (ESI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV ESI,ESP",
@@ -326,35 +317,11 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 16,
       "match": "aiStackY_1018",
       "severity": "moderate",
       "text": "int aiStackY_1018 [1017];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "piVar8 = (int *)((int)output_ptr + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "aiStack_2c[(uint)bVar6 * -2] = *(int *)((int)&g_CameraOutOfBoundsCoord + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar5 = (uint *)((int)output_ptr + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
     },
     {
       "call_site_count": 5,

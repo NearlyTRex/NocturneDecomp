@@ -1,6 +1,6 @@
 // Name: core_mimic.cpp_CMimic_setup_FUN_0051f3e0
 // Address: 0051f3e0
-// Address Range: [[0051f3e0, 0051f77b]]
+// Address Range: [[0051f3e0, 0051f77b] [0060a29d, 0060a317]]
 // Convention: __cdecl
 // Signature: void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
 
@@ -11,21 +11,20 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
 {
   CDeformableModelInstance *pCVar1;
   uint *puVar2;
-  SMorphPoint *pSVar3;
-  SMRGLPrimitiveTriangle *pSVar4;
-  CSkeleton *this_ptr_00;
-  CDemonActor *pCVar5;
-  int iVar6;
+  uint *puVar3;
+  SMorphPoint *pSVar4;
+  SMRGLPrimitiveTriangle *pSVar5;
+  uint uVar6;
   int iVar7;
-  uint *puVar8;
-  byte bVar9;
-  uint auStackY_1010 [1014];
+  uint uVar8;
+  uint uVar9;
+  CSkeleton *this_ptr_00;
+  CDemonActor *pCVar10;
+  int iVar11;
+  int iVar12;
   uint class_name_hash;
   char *model_name;
-  uint uStack_28;
-  uint uStack_1c;
   
-  bVar9 = 0;
   if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
     g_CurrentFilename = "..\\core\\mimic.cpp";
     g_CurrentLineNumber = 0xb6;
@@ -82,10 +81,10 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
             (&this_ptr->cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,pCVar1);
   class_name_hash = g_CEnemyClassInfo.name_hash;
-  pCVar5 = core_actor_cpp_createActorByName_FUN_0040c430(this_ptr->morph_actor_type);
-  pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar5,class_name_hash);
-  this_ptr->morph_target_actor = pCVar5;
-  if (pCVar5 == (CDemonActor *)0x0) {
+  pCVar10 = core_actor_cpp_createActorByName_FUN_0040c430(this_ptr->morph_actor_type);
+  pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar10,class_name_hash);
+  this_ptr->morph_target_actor = pCVar10;
+  if (pCVar10 == (CDemonActor *)0x0) {
     g_CurrentFilename = "..\\core\\mimic.cpp";
     g_CurrentLineNumber = 0x101;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic failed to create morph target actor!");
@@ -96,49 +95,40 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(pCVar1);
   core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(&this_ptr->morph,0,pCVar1);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(pCVar1);
-  iVar7 = 0;
+  iVar12 = 0;
   if (0 < (this_ptr->morph).models[0].num_points) {
-    iVar6 = 0;
+    iVar11 = 0;
     do {
-      pSVar3 = (this_ptr->morph).models[0].points;
-      iVar7 = iVar7 + 1;
-      *(float *)((int)&(pSVar3->position).x + iVar6) =
-           -*(float *)((int)&(pSVar3->position).x + iVar6);
-      iVar6 = iVar6 + 0x10;
-    } while (iVar7 < (this_ptr->morph).models[0].num_points);
+      pSVar4 = (this_ptr->morph).models[0].points;
+      iVar12 = iVar12 + 1;
+      *(float *)((int)&(pSVar4->position).x + iVar11) =
+           -*(float *)((int)&(pSVar4->position).x + iVar11);
+      iVar11 = iVar11 + 0x10;
+    } while (iVar12 < (this_ptr->morph).models[0].num_points);
   }
-  iVar7 = 0;
+  iVar12 = 0;
   if (0 < (this_ptr->morph).models[0].num_faces) {
-    iVar6 = 0;
+    iVar11 = 0;
     do {
-      pSVar4 = (this_ptr->morph).models[0].faces;
-      puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);
-      puVar8 = puVar2 + (uint)bVar9 * -2 + 1;
-      uStack_1c = *puVar2;
-      *(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8) = *puVar8;
-      *(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
-           puVar8[(uint)bVar9 * -2 + 1];
-      puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);
-      puVar8 = puVar2 + (uint)bVar9 * -2 + 1;
-      uStack_28 = *puVar2;
-      *(uint *)(&stack0xffffffdc + (uint)bVar9 * -8) = *puVar8;
-      *(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
-           puVar8[(uint)bVar9 * -2 + 1];
-      puVar2 = (uint *)((int)&pSVar4->vertices[0].vertex_index + iVar6);
-      puVar8 = puVar2 + (uint)bVar9 * -2 + 1;
-      *puVar2 = uStack_1c;
-      *puVar8 = *(uint *)(&stack0xffffffe8 + (uint)bVar9 * -8);
-      puVar8[(uint)bVar9 * -2 + 1] =
-           *(uint *)(&stack0xffffffec + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-      puVar2 = (uint *)((int)&pSVar4->vertices[2].vertex_index + iVar6);
-      puVar8 = puVar2 + (uint)bVar9 * -2 + 1;
-      *puVar2 = uStack_28;
-      *puVar8 = *(uint *)(&stack0xffffffdc + (uint)bVar9 * -8);
-      puVar8[(uint)bVar9 * -2 + 1] =
-           *(uint *)(&stack0xffffffe0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-      iVar7 = iVar7 + 1;
-      iVar6 = iVar6 + 0x3c;
-    } while (iVar7 < (this_ptr->morph).models[0].num_faces);
+      pSVar5 = (this_ptr->morph).models[0].faces;
+      puVar2 = (uint *)((int)&pSVar5->vertices[2].vertex_index + iVar11);
+      uVar6 = puVar2[1];
+      iVar7 = puVar2[2];
+      puVar3 = (uint *)((int)&pSVar5->vertices[0].vertex_index + iVar7);
+      uVar8 = *puVar3;
+      uVar9 = puVar3[1];
+      iVar11 = puVar3[2];
+      puVar3 = (uint *)((int)&pSVar5->vertices[0].vertex_index + iVar11);
+      *puVar3 = *puVar2;
+      puVar3[1] = uVar6;
+      puVar3[2] = iVar7;
+      puVar2 = (uint *)((int)&pSVar5->vertices[2].vertex_index + iVar7);
+      *puVar2 = uVar8;
+      puVar2[1] = uVar9;
+      puVar2[2] = iVar11;
+      iVar12 = iVar12 + 1;
+      iVar11 = iVar11 + 0x3c;
+    } while (iVar12 < (this_ptr->morph).models[0].num_faces);
   }
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
             ((CDeformableModelInstance *)(this_ptr->morph_target_actor + 1));

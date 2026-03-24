@@ -1,6 +1,6 @@
 // Name: core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
 // Address: 0047b1e0
-// Address Range: [[0047b1e0, 0047bbb4]]
+// Address Range: [[0047b1e0, 0047bbb4] [00609dd1, 00609e50]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(CKeyFramedModel *this_ptr,float angle_threshold_radians)
 
@@ -32,9 +32,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(
   int iVar15;
   int iVar21;
   uint *puVar16;
-  int *piVar22;
   uint *puVar17;
   CVector3i *pCVar18;
+  int *piVar22;
   byte bVar19;
   float10 fVar20;
   double dVar21;
@@ -43,9 +43,15 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(
   uint uStack_104;
   uint local_100;
   uint uStack_fc;
-  int local_f0 [6];
+  int local_f0 [4];
+  uint uStack_e0;
+  uint uStack_dc;
   uint local_d8;
+  uint uStack_d4;
+  uint uStack_d0;
   uint local_cc;
+  uint uStack_c8;
+  uint uStack_c4;
   CVector3f local_c0;
   float local_b4;
   float local_b0;
@@ -167,30 +173,21 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(
                     } while (local_3c < 3);
                     if (-1 < local_4c) {
                       iVar16 = local_4c * 0xc + iVar18;
-                      puVar16 = (uint *)(iVar16 + 0x1c + (uint)bVar19 * -8);
                       local_f0[0] = *(int *)(iVar16 + 0x18);
-                      local_f0[(uint)bVar19 * -2 + 1] = *puVar16;
-                      local_f0[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 2] =
-                           puVar16[(uint)bVar19 * -2 + 1];
-                      iVar16 = g_TriangleMatchTableA[local_4c];
-                      iVar20 = g_TriangleMatchTableA[local_54] * 0xc + iVar19;
-                      piVar22 = (int *)(iVar20 + 0x1c + (uint)bVar19 * -8);
-                      local_f0[3] = *(uint *)(iVar20 + 0x18);
-                      local_f0[(uint)bVar19 * -2 + 4] = *piVar22;
-                      local_f0[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 5] =
-                           piVar22[(uint)bVar19 * -2 + 1];
-                      iVar16 = iVar16 * 0xc + iVar18;
-                      piVar22 = (int *)(iVar16 + 0x1c + (uint)bVar19 * -8);
+                      local_f0[1] = *(uint *)(iVar16 + 0x1c);
+                      local_f0[2] = *(uint *)(iVar16 + 0x20);
+                      iVar16 = g_TriangleMatchTableA[local_54] * 0xc + iVar19;
+                      local_f0[3] = *(uint *)(iVar16 + 0x18);
+                      uStack_e0 = *(uint *)(iVar16 + 0x1c);
+                      uStack_dc = *(uint *)(iVar16 + 0x20);
+                      iVar16 = g_TriangleMatchTableA[local_4c] * 0xc + iVar18;
                       local_d8 = *(uint *)(iVar16 + 0x18);
-                      local_f0[(uint)bVar19 * -2 + 7] = *piVar22;
-                      local_f0[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 8] =
-                           piVar22[(uint)bVar19 * -2 + 1];
+                      uStack_d4 = *(uint *)(iVar16 + 0x1c);
+                      uStack_d0 = *(uint *)(iVar16 + 0x20);
                       iVar16 = g_TriangleMatchTableB[local_4c] * 0xc + iVar18;
-                      piVar22 = (int *)(iVar16 + 0x1c + (uint)bVar19 * -8);
                       local_cc = *(uint *)(iVar16 + 0x18);
-                      local_f0[(uint)bVar19 * -2 + 10] = *piVar22;
-                      local_f0[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 0xb] =
-                           piVar22[(uint)bVar19 * -2 + 1];
+                      uStack_c8 = *(uint *)(iVar16 + 0x1c);
+                      uStack_c4 = *(uint *)(iVar16 + 0x20);
                       local_38 = 0;
                       if (this_ptr->frame_count < 1) {
 LAB_0047bb1b:

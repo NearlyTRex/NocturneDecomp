@@ -11,8 +11,10 @@
 ; XREF[1]:
 ;   crt_env.c_getenv_FUN_006013f0 at 0060141f
 ;
+; Referenced Globals:
+;   undefined4 SUB_0060c790
+;
 ; Called Functions:
-;   crt_string.c_compare_mb_chars_ci_FUN_0060c790
 ;   crt_string.c_mbstring_termination_check_FUN_0060b630
 ;   crt_string.c_mbtowc_next_FUN_00605a70
 ;
@@ -49,8 +51,8 @@ section .text
         ;   XREF to: 00608eab (CONDITIONAL_JUMP)  ; LAB_00608eab
     PUSH EBX                            ; 00608e80
     PUSH ESI                            ; 00608e81
-    CALL crt_string.c_compare_mb_chars_ci_FUN_0060c790 ; 00608e82
-        ;   XREF to: 0060c790 (UNCONDITIONAL_CALL)  ; int crt_string.c_compare_mb_chars_ci_FUN_0060c790(char * str1, char * str2)
+    CALL 0x0060c790                     ; 00608e82
+        ;   XREF to: 0060c790 (UNCONDITIONAL_CALL)  ; SUB_0060c790
     ADD ESP,0x8                         ; 00608e87
     MOV EBP,EAX                         ; 00608e8a
     TEST EAX,EAX                        ; 00608e8c

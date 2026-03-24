@@ -14,8 +14,8 @@
 ; XREF[1]:
 ;   crt_stdlib.c_system_FUN_00602130 at 006021a0
 ;
-; Called Functions:
-;   crt_process.c_spawnvp_FUN_0060ca20
+; Referenced Globals:
+;   undefined4 SUB_0060ca20
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH EDX                            ; 00609c9a
     MOV EBX,dword ptr [ESP + 0x10]      ; 00609c9b
     PUSH EBX                            ; 00609c9f
-    CALL crt_process.c_spawnvp_FUN_0060ca20 ; 00609ca0
-        ;   XREF to: 0060ca20 (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_FUN_0060ca20(int mode, char * cmdname, char * * argv)
+    CALL 0x0060ca20                     ; 00609ca0
+        ;   XREF to: 0060ca20 (UNCONDITIONAL_CALL)  ; SUB_0060ca20
     ADD ESP,0xc                         ; 00609ca5
     POP EBX                             ; 00609ca8
     RET                                 ; 00609ca9

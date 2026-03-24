@@ -6,10 +6,9 @@
 ; Parameters:
 ; DWORD            Stack[0x4]:4   windows_error_code
 ;
-; XREF[3]:
+; XREF[2]:
 ;   crt_errno.c_convertWindowsErrorToErrno_FUN_00608390 at 00608396
 ;   crt_process.c_build_cmdline_FUN_00610258 at 006102ed
-;   crt_process.c_spawnvp_with_path_search_FUN_0060e6a0 at 0060e7a2
 ;
 ; Referenced Globals:
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c

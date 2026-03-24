@@ -11,7 +11,6 @@
 ;   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 at 005dc2d4
 ;
 ; Referenced Globals:
-;   undefined4 SUB_00609d5c
 ;   FIND_CLOSE_FUNC* g_FindCloseFunc = 00211d78
 ;   FIND_FIRST_FILE_A_FUNC* g_FindFirstFileAFunc = 00211d84
 ;
@@ -46,7 +45,7 @@ section .text
     PUSH 0x37                           ; 0060221a
     PUSH EBX                            ; 0060221c
     CALL 0x00609d5c                     ; 0060221d
-        ;   XREF to: 00609d5c (UNCONDITIONAL_CALL)  ; SUB_00609d5c
+        ;   XREF to: 00609d5c (UNCONDITIONAL_CALL)  ; LAB_00609d5b+1
     ADD ESP,0xc                         ; 00602222
     TEST EAX,EAX                        ; 00602225
     JNZ 0x00602242                      ; 00602227

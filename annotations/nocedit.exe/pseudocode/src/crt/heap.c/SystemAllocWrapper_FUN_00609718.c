@@ -11,7 +11,7 @@ void * __cdecl SystemAllocWrapper(ulong size)
 {
   void *pvVar1;
   
-  CompactHeapBlocks();
+  func_0x0060c920();
   pvVar1 = (void *)AllocateNewHeapBlock(size);
   return pvVar1;
 }

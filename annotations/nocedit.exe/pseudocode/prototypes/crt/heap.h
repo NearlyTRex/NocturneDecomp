@@ -62,15 +62,3 @@ int __watcallRegister ResizeBlockInPlace(ushort segment,void *ptr,ulong new_size
 // Original: crt_heap.c_TryResizeInPlace_FUN_00609974
 // Address: 00609974
 void * __cdecl TryResizeInPlace(void *ptr,ulong new_size);
-
-// Original: crt_heap.c_CompactHeapBlocks_FUN_0060c920
-// Address: 0060c920
-void __cdecl CompactHeapBlocks(void);
-
-// Original: crt_heap.c_VirtualFreeBlock_FUN_0060c95c
-// Address: 0060c95c
-int __cdecl VirtualFreeBlock(HeapBlock *block);
-
-// Original: crt_heap.c_UnlinkAndFreeBlock_FUN_0060c9bc
-// Address: 0060c9bc
-void __cdecl UnlinkAndFreeBlock(HeapBlock *block);

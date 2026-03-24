@@ -10,9 +10,8 @@
 ; _MEMORY_BASIC_INFORMATION Stack[-0x28]:28  local_28
 ; undefined1[4]    Stack[-0xc]:4  local_c
 ;
-; XREF[2]:
+; XREF[1]:
 ;   crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8 at 006026ce
-;   crt_thread.c_InitializeThreadContext_FUN_0060ccf0 at 0060cd03
 ;
 ; Referenced Globals:
 ;   VIRTUAL_QUERY_FUNC* g_VirtualQueryFunc = 002122b4
