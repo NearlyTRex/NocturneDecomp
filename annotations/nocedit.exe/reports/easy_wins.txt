@@ -484,13 +484,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_dosio.c_findFile_FUN_00481760                                   ( 23 lines)
     shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070                  ( 36 lines)
 
-  [stack_ref] - 5 functions
-    core_event.cpp_formatEventError_FUN_004aa2a0                           (  7 lines)
-    engine_2d.c_getStringWidthFormatted_FUN_004027a0                       ( 11 lines)
-    core_sound.cpp_resetTrainSounds_FUN_005b26f0                           ( 12 lines)
-    shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920              ( 19 lines)
-    shape_superopt.cpp_logToFile_FUN_005c7910                              ( 20 lines)
-
   [negative_offset] - 4 functions
     core_course.cpp_CCourse_free_FUN_004426c0                              ( 14 lines)
     core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690                ( 17 lines)
@@ -511,6 +504,10 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90                          ( 21 lines)
     core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880                      ( 22 lines)
     core_lightgun.cpp_CLightGun_ctor_FUN_00505900                          ( 26 lines)
+
+  [stack_ref] - 2 functions
+    core_sound.cpp_resetTrainSounds_FUN_005b26f0                           ( 12 lines)
+    shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920              ( 19 lines)
 
   [mmx_assembly] - 2 functions
     core_dstrender.cpp_saveMMXRegisters_FUN_004906b0                       ( 12 lines)
@@ -681,6 +678,19 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_turret.cpp_CTurret_process_FUN_005e2430 (180 lines)
         Types: ['stack_alignment_array', 'unknown_field']
 
+  core/event.cpp (91.1% complete)
+    5 functions remaining:
+      core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0 (55 lines)
+        Types: ['decompiler_intrinsic', 'pointer_cast', 'sub84_truncation']
+      core_event.cpp_CEventList_render_FUN_004addf0 (114 lines)
+        Types: ['pointer_cast']
+      core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0 (59 lines)
+        Types: ['decompiler_intrinsic', 'sub84_truncation']
+      core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (1579 lines)
+        Types: ['decompiler_intrinsic', 'pointer_cast', 'unresolved_funcptr']
+      core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (2187 lines)
+        Types: ['format_string_mismatch', 'unknown_field', 'warning_unmapped_variable']
+
   core/menu.cpp (90.9% complete)
     2 functions remaining:
       core_menu.cpp_configureSoundOptions_FUN_00511e50 (746 lines)
@@ -782,7 +792,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 ALL REMAINING FILES
 ====================================================================================================
-  core/event.cpp                                                89.3%  (50/56 clean, 6 remaining)
   core/fire.cpp                                                 88.6%  (164/185 clean, 21 remaining)
   engine/dosio.c                                                88.5%  (23/26 clean, 3 remaining)
   core/curtain.cpp                                              88.5%  (23/26 clean, 3 remaining)
@@ -817,10 +826,10 @@ ALL REMAINING FILES
   core/flame.cpp                                                82.4%  (14/17 clean, 3 remaining)
   core/dtri.cpp                                                 82.1%  (23/28 clean, 5 remaining)
   wincore/windll.cpp                                            81.9%  (59/72 clean, 13 remaining)
+  engine/2d.c                                                   81.6%  (62/76 clean, 14 remaining)
   core/smiley.cpp                                               81.2%  (13/16 clean, 3 remaining)
   core/batman.cpp                                               81.2%  (13/16 clean, 3 remaining)
   core/setutil.cpp                                              80.5%  (33/41 clean, 8 remaining)
-  engine/2d.c                                                   80.3%  (61/76 clean, 15 remaining)
   cockpit/drawsurf.cpp                                          78.5%  (73/93 clean, 20 remaining)
   core/sound.cpp                                                78.4%  (29/37 clean, 8 remaining)
   core/icepick.cpp                                              78.3%  (18/23 clean, 5 remaining)
@@ -851,7 +860,7 @@ ALL REMAINING FILES
   engine/3d.c                                                   70.2%  (73/104 clean, 31 remaining)
   core/weather.cpp                                              70.0%  (7/10 clean, 3 remaining)
   shape/dsemodel.cpp                                            70.0%  (7/10 clean, 3 remaining)
-  sound/sndmain.cpp                                             69.4%  (134/193 clean, 59 remaining)
+  sound/sndmain.cpp                                             69.9%  (135/193 clean, 58 remaining)
   shape/design.c                                                68.7%  (112/163 clean, 51 remaining)
   engine/alphabit.cpp                                           66.7%  (6/9 clean, 3 remaining)
   core/dpart.cpp                                                66.7%  (10/15 clean, 5 remaining)
@@ -870,8 +879,8 @@ ALL REMAINING FILES
   engine/drender.cpp                                            59.1%  (52/88 clean, 36 remaining)
   core/dmodel.cpp                                               59.1%  (39/66 clean, 27 remaining)
   core/dlight.cpp                                               58.8%  (20/34 clean, 14 remaining)
+  shape/superopt.cpp                                            57.0%  (106/186 clean, 80 remaining)
   engine/matrix.c                                               56.7%  (17/30 clean, 13 remaining)
-  shape/superopt.cpp                                            56.5%  (105/186 clean, 81 remaining)
   core/setedit.cpp                                              55.2%  (32/58 clean, 26 remaining)
   core/xform.cpp                                                50.8%  (31/61 clean, 30 remaining)
   engine/model.c                                                50.0%  (4/8 clean, 4 remaining)

@@ -10,7 +10,6 @@
 ;   entry at 0060239a
 ;
 ; Referenced Globals:
-;   undefined4 SUB_0060ca80
 ;   GET_MODULE_HANDLE_A_FUNC* g_GetModuleHandleAFunc = 00211f6e
 ;   DWORD g_WinMainCmdShow = 0x0
 ;   DWORD g_StackAllocSize = 0x0
@@ -83,7 +82,7 @@ section .text
     ADD EAX,EBX                         ; 00609eec
     MOV [0x00684ffc],EAX                ; 00609eee | g_CrtStackBuffer
     CALL 0x0060ca80                     ; 00609ef3
-        ;   XREF to: 0060ca80 (UNCONDITIONAL_CALL)  ; SUB_0060ca80
+        ;   XREF to: 0060ca80 (UNCONDITIONAL_CALL)  ; LAB_0060ca7e+2
     PUSH 0xa                            ; 00609ef8
     MOV EBX,dword ptr [0x00684fd4]      ; 00609efa | g_WinMainCmdShow
     PUSH EBX                            ; 00609f00

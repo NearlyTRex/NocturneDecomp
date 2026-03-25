@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,452
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        228 ( 3.5%)
+  Functions with type issues:        223 ( 3.5%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,7 +22,7 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          3
-    Undefined types in variables:      217
+    Undefined types in variables:      212
     Unresolved stack params:           14
 
   Excluded (.keep / MMX / by-value):   14 functions
@@ -179,7 +179,7 @@ Unresolved stack parameters (missing from signature) (14)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (217)
+Undefined types in variables (212)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -807,11 +807,6 @@ Undefined types in variables (217)
     Locals:  local_20 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  formatEventError
-    Address: 0x004aa2a0  File: core/event.cpp
-    Locals:  local_4 (undefined1 *)
-    Suggested: Resolve undefined types to concrete types
-
   CCrater_activate
     Address: 0x004c4200  File: core/fire.cpp
     Locals:  local_2c (undefined4)
@@ -930,11 +925,6 @@ Undefined types in variables (217)
   CLarva_process
     Address: 0x00503080  File: core/larva.cpp
     Locals:  local_1f0 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  displayErrorAndQuit
-    Address: 0x00506f10  File: core/main.c
-    Locals:  local_14 (undefined1 *)
     Suggested: Resolve undefined types to concrete types
 
   configureGraphicsOptions
@@ -1097,11 +1087,6 @@ Undefined types in variables (217)
     Locals:  auStackY_184c (undefined4[1498])
     Suggested: Resolve undefined types to concrete types
 
-  getStringWidthFormatted
-    Address: 0x004027a0  File: engine/2d.c
-    Locals:  local_4 (undefined1 *)
-    Suggested: Resolve undefined types to concrete types
-
   modelStructNotSupported
     Address: 0x0041dbe0  File: engine/boss.c
     Locals:  local_3c (undefined4[13])
@@ -1192,11 +1177,6 @@ Undefined types in variables (217)
     Locals:  local_160 (undefined1[8])
     Suggested: Resolve undefined types to concrete types
 
-  logToFile
-    Address: 0x005c7910  File: shape/superopt.cpp
-    Locals:  local_8 (undefined1 *)
-    Suggested: Resolve undefined types to concrete types
-
   CDirectSoundDevice_commitDeferredSettings
     Address: 0x005b0340  File: sound/snddx.cpp
     Locals:  local_10 (undefined4[4])
@@ -1235,11 +1215,6 @@ Undefined types in variables (217)
   getSfxSample
     Address: 0x005a4c80  File: sound/sndmain.cpp
     Locals:  local_113 (undefined1[255])
-    Suggested: Resolve undefined types to concrete types
-
-  logSoundError
-    Address: 0x005adba0  File: sound/sndmain.cpp
-    Locals:  local_10 (undefined1 *)
     Suggested: Resolve undefined types to concrete types
 
   parseWavFile

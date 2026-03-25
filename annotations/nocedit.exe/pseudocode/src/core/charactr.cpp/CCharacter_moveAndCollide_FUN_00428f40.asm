@@ -60,17 +60,17 @@
 ;   double DOUBLE_00617082 = 0.900000000000000
 ;   double DOUBLE_0061708a = -0.0100000000000000
 ;   TerminatedCString s_noCollision_0066e778
-;   undefined4 s_llision_0066e77c
-;   undefined4 s_ion_0066e780
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 DAT_006e6f69
 ;   CDemonActor* g_LastCollisionActor
 ;   CVector3f g_TempNormal0
 ;   undefined4 g_TempNormal0.y
 ;   undefined4 g_TempNormal0.z
 ;   CVector3f g_TempNormal1
-;   ... and 12 more
+;   undefined4 g_TempNormal1.y
+;   undefined4 g_TempNormal1.z
+;   CVector3f g_TempNormal2
+;   ... and 9 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
@@ -482,11 +482,10 @@ section .text
     DEC ECX                             ; 0042949d
     LEA EDI,[ESP + 0x4c]                ; 0042949e
     SUB ECX,0xb                         ; 004294a2
-    MOVSD ES:EDI,ESI                    ; 004294a5 | = "noCollision"
-    MOVSD ES:EDI,ESI                    ; 004294a6 | s_llision_0066e77c
-    MOVSD ES:EDI,ESI                    ; 004294a7 | s_ion_0066e780 | DAT_006e6f69
-    MOV dword ptr [ESP + 0xb0],ECX      ; 004294a8
+    JMP 0x0060cad8                      ; 004294a5
+        ;   XREF to: 0060cad8 (UNCONDITIONAL_JUMP)  ; LAB_0060cad8
     MOV ESI,EDX                         ; 004294af
+        ;   Label: LAB_004294af
     XOR EDI,EDI                         ; 004294b1
     TEST ECX,ECX                        ; 004294b3
     JL 0x00428fcc                       ; 004294b5
@@ -737,4 +736,16 @@ section .text
     MOV dword ptr [ESP + 0x20],EAX      ; 004297d1
     JMP 0x00429383                      ; 004297d5
         ;   XREF to: 00429383 (UNCONDITIONAL_JUMP)  ; LAB_00429383
+    MOV ECX,dword ptr [ESI]             ; 0060cad8
+        ;   Label: LAB_0060cad8
+    MOV dword ptr [EDI],ECX             ; 0060cada
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060cadc
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060cadf
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060cae2
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060cae5
+    ADD ESI,0xc                         ; 0060cae8
+    ADD EDI,0xc                         ; 0060caeb
+    MOV dword ptr [ESP + 0xb0],ECX      ; 0060caee
+    JMP 0x004294af                      ; 0060caf5
+        ;   XREF to: 004294af (UNCONDITIONAL_JUMP)  ; LAB_004294af
 

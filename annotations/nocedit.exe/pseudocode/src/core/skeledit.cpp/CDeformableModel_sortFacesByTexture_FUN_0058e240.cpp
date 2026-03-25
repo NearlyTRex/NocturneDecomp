@@ -1,6 +1,6 @@
 // Name: core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240
 // Address: 0058e240
-// Address Range: [[0058e240, 0058e3d2] [00608b27, 00608b6c]]
+// Address Range: [[0058e240, 0058e3d2] [00608b27, 00608b6c] [0060ca22, 0060ca60]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(CDeformableModel *this_ptr)
 
@@ -9,13 +9,12 @@
 void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(CDeformableModel *this_ptr)
 
 {
-  uint *puVar1;
+  ushort uVar1;
   ushort uVar2;
-  ushort uVar3;
+  uint *puVar3;
   uint uVar4;
-  uint uVar5;
-  uint *puVar6;
-  uint uVar7;
+  uint *puVar5;
+  uint uVar6;
   int iVar8;
   int iVar9;
   int iVar5;
@@ -58,7 +57,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(
             if (local_20 <= iVar9) {
               iVar7 = local_20 * 4;
               iVar5 = local_20 * 0x12;
-              iVar4 = iVar5;
               do {
                 piVar1 = (int *)((int)local_38->index_data_ptr[0] + iVar7);
                 if (piVar1[1] < *piVar1) {
@@ -66,33 +64,29 @@ void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(
                   iVar3 = *piVar1;
                   *piVar1 = *piVar6;
                   *piVar6 = iVar3;
-                  puVar1 = (uint *)
-                           ((int)&local_38->tri_data_ptr[0][1].vertex_indices.vertex_index_0 + iVar4
-                           );
                   puVar13 = (uint *)
                             ((int)&(local_38->tri_data_ptr[0]->vertex_indices).vertex_index_0 +
                             iVar5);
                   uVar4 = *puVar13;
-                  uVar7 = puVar13[1];
+                  uVar6 = puVar13[1];
                   uStack_44 = (ushort)((uint)*(uint *)((int)puVar13 + 6) >> 0x10);
-                  uVar2 = *(ushort *)((int)puVar13 + 10);
-                  uVar5 = puVar13[3];
-                  uVar3 = *(ushort *)(puVar13 + 4);
-                  *puVar13 = *puVar1;
-                  puVar13[1] = puVar1[1];
-                  puVar13[2] = puVar1[2];
-                  puVar6 = (uint *)puVar1[3];
-                  puVar13[3] = puVar6;
-                  *(ushort *)(puVar13 + 4) = *(ushort *)(puVar1 + 4);
-                  *puVar6 = uVar4;
-                  puVar6[1] = uVar7;
-                  puVar6[2] = CONCAT22(uVar2,uStack_44);
-                  puVar6[3] = uVar5;
-                  *(ushort *)(puVar6 + 4) = uVar3;
+                  uVar1 = *(ushort *)((int)puVar13 + 10);
+                  puVar5 = (uint *)puVar13[3];
+                  uVar2 = *(ushort *)(puVar13 + 4);
+                  *puVar13 = *puVar5;
+                  puVar13[1] = puVar5[1];
+                  puVar13[2] = puVar5[2];
+                  puVar3 = (uint *)puVar5[3];
+                  puVar13[3] = puVar3;
+                  *(ushort *)(puVar13 + 4) = *(ushort *)(puVar5 + 4);
+                  *puVar3 = uVar4;
+                  puVar3[1] = uVar6;
+                  puVar3[2] = CONCAT22(uVar1,uStack_44);
+                  puVar3[3] = puVar5;
+                  *(ushort *)(puVar3 + 4) = uVar2;
                 }
                 iVar7 = iVar7 + 4;
                 iVar5 = iVar5 + 0x12;
-                iVar4 = iVar4 + 0x12;
               } while (iVar7 <= iVar9 << 2);
             }
           }

@@ -179,12 +179,11 @@ section .text
         ;   XREF to: 005229b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0(CMirrorReflection * this_ptr, CVector3f * input_vertex, CVector3f * output_vertex)
     LEA ESI,[ESP + 0x14]                ; 0056dcbe
     ADD ESP,0x8                         ; 0056dcc2
-    MOVSD ES:EDI,ESI                    ; 0056dcc5
-    MOVSD ES:EDI,ESI                    ; 0056dcc6
-    MOVSD ES:EDI,ESI                    ; 0056dcc7
-    TEST EBP,EBP                        ; 0056dcc8
+    JMP 0x0060ca61                      ; 0056dcc5
+        ;   XREF to: 0060ca61 (UNCONDITIONAL_JUMP)  ; LAB_0060ca61
     JNZ 0x0056dd66                      ; 0056dcca
         ;   XREF to: 0056dd66 (CONDITIONAL_JUMP)  ; LAB_0056dd66
+        ;   Label: LAB_0056dcca
     MOV EAX,[0x032776b4]                ; 0056dcd0 | g_DynamicLightCount
         ;   Label: LAB_0056dcd0
     XOR EDI,EDI                         ; 0056dcd5
@@ -257,16 +256,39 @@ section .text
     CALL core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50 ; 0056dd84
         ;   XREF to: 00522a50 (UNCONDITIONAL_CALL)  ; CVector3i * core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50(CMirrorReflection * this_ptr, CVector3i * point_a, CVector3i * point_b, CVector3i * output)
     LEA ESI,[ESP + 0x24]                ; 0056dd89
-    ADD ESP,0xc                         ; 0056dd8d
-    MOVSD ES:EDI,ESI                    ; 0056dd90
-    MOVSD ES:EDI,ESI                    ; 0056dd91
-    MOVSD ES:EDI,ESI                    ; 0056dd92
+    JMP 0x0060ca7e                      ; 0056dd8d
+        ;   XREF to: 0060ca7e (UNCONDITIONAL_JUMP)  ; LAB_0060ca7e
     JMP 0x0056dcd0                      ; 0056dd93
         ;   XREF to: 0056dcd0 (UNCONDITIONAL_JUMP)  ; LAB_0056dcd0
+        ;   Label: LAB_0056dd93
     PUSH EBP                            ; 0056dd98
         ;   Label: LAB_0056dd98
     MOV ECX,dword ptr [ESI + 0x32776b8] ; 0056dd99 | g_DynamicLights[1]
     PUSH ECX                            ; 0056dd9f
     JMP 0x0056dcf1                      ; 0056dda0
         ;   XREF to: 0056dcf1 (UNCONDITIONAL_JUMP)  ; LAB_0056dcf1
+    MOV ECX,dword ptr [ESI]             ; 0060ca61
+        ;   Label: LAB_0060ca61
+    MOV dword ptr [EDI],ECX             ; 0060ca63
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060ca65
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060ca68
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060ca6b
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060ca6e
+    ADD ESI,0xc                         ; 0060ca71
+    ADD EDI,0xc                         ; 0060ca74
+    TEST EBP,EBP                        ; 0060ca77
+    JMP 0x0056dcca                      ; 0060ca79
+        ;   XREF to: 0056dcca (UNCONDITIONAL_JUMP)  ; LAB_0056dcca
+    ADD ESP,0xc                         ; 0060ca7e
+        ;   Label: LAB_0060ca7e
+    MOV ECX,dword ptr [ESI]             ; 0060ca81
+    MOV dword ptr [EDI],ECX             ; 0060ca83
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060ca85
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060ca88
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060ca8b
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060ca8e
+    ADD ESI,0xc                         ; 0060ca91
+    ADD EDI,0xc                         ; 0060ca94
+    JMP 0x0056dd93                      ; 0060ca97
+        ;   XREF to: 0056dd93 (UNCONDITIONAL_JUMP)  ; LAB_0056dd93
 

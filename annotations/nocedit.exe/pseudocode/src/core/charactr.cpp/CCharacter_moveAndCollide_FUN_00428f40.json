@@ -1,24 +1,38 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 27,
+        "line": 109,
+        "message": "member reference base type 'const char[12]' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 124,
+        "message": "member reference base type 'const char[12]' is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 652,
-    "complexity_score": 359,
+    "assembly_lines": 663,
+    "complexity_score": 382,
     "cross_reference_count": 36,
     "function_call_count": 7,
-    "global_count": 27,
+    "global_count": 24,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 294,
-    "suspect_count": 5,
+    "pseudocode_lines": 292,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_alignment_array"
+      "stack_alignment_array",
+      "unknown_field"
     ],
-    "total_lines": 946
+    "total_lines": 955
   },
   "cross_references": [
     {
@@ -244,6 +258,10 @@
       [
         "00428f40",
         "004297d9"
+      ],
+      [
+        "0060cad8",
+        "0060caf9"
       ]
     ],
     "convention": "__cdecl",
@@ -320,18 +338,6 @@
       "value": null
     },
     {
-      "addr": "0066e77c",
-      "name": "s_llision_0066e77c",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "0066e780",
-      "name": "s_ion_0066e780",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "0067b654",
       "name": "g_CGamePtr",
       "type": "CGame*",
@@ -342,12 +348,6 @@
       "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "03114278"
-    },
-    {
-      "addr": "006e6f69",
-      "name": "DAT_006e6f69",
-      "type": "undefined4",
-      "value": null
     },
     {
       "addr": "00823c50",
@@ -572,16 +572,16 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.309688581314879,
-    "instruction_count": 578,
+    "avg_pcode_per_instr": 6.229059829059829,
+    "instruction_count": 585,
     "opcode_distribution": {
       "BOOL_NEGATE": 15,
       "BOOL_OR": 17,
-      "BRANCH": 4,
+      "BRANCH": 6,
       "CALL": 8,
       "CALLIND": 2,
       "CBRANCH": 34,
-      "COPY": 1694,
+      "COPY": 1691,
       "FLOAT2FLOAT": 163,
       "FLOAT_ADD": 18,
       "FLOAT_DIV": 2,
@@ -593,29 +593,29 @@
       "FLOAT_SUB": 8,
       "INT2FLOAT": 7,
       "INT_ADD": 334,
-      "INT_AND": 204,
-      "INT_CARRY": 26,
-      "INT_EQUAL": 137,
+      "INT_AND": 208,
+      "INT_CARRY": 28,
+      "INT_EQUAL": 141,
       "INT_LEFT": 48,
       "INT_LESS": 20,
-      "INT_MULT": 10,
+      "INT_MULT": 4,
       "INT_NEGATE": 1,
       "INT_NOTEQUAL": 67,
       "INT_OR": 60,
       "INT_SBORROW": 22,
-      "INT_SCARRY": 30,
+      "INT_SCARRY": 32,
       "INT_SEXT": 9,
-      "INT_SLESS": 68,
-      "INT_SUB": 67,
+      "INT_SLESS": 70,
+      "INT_SUB": 61,
       "INT_XOR": 8,
-      "INT_ZEXT": 55,
+      "INT_ZEXT": 49,
       "LOAD": 195,
-      "POPCOUNT": 68,
+      "POPCOUNT": 70,
       "RETURN": 3,
       "STORE": 161,
       "SUBPIECE": 6
     },
-    "pcode_op_count": 3647
+    "pcode_op_count": 3644
   },
   "stack_frame": {
     "frame_size": 4216,
@@ -891,7 +891,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 26,
+      "line": 27,
       "match": "afStackY_106c",
       "severity": "moderate",
       "text": "float afStackY_106c [991];",
@@ -899,7 +899,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 90,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((((ABS(velocity->z) == 0.0) && (ABS(velocity->x) == 0.0)) && (velocity->y <= 0.0)) &&",
@@ -907,26 +907,42 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 90,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((((ABS(velocity->z) == 0.0) && (ABS(velocity->x) == 0.0)) && (velocity->y <= 0.0)) &&",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 102,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "uVar10 = \"noCollision\"._8_4_;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 108,
       "match": "(SMotion *)((int)",
       "severity": "mild",
       "text": "pSVar12 = (SMotion *)((int)pSVar12 + (uint)bVar14 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 117,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "if (-1 < (int)\"noCollision\"._8_4_) {",
+      "type": "unknown_field"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 235,
+      "line": 233,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar10 = SQRT(afStack_80[4] * afStack_80[4] + afStack_80[2] * afStack_80[2]);",
+      "text": "fVar12 = SQRT(afStack_80[4] * afStack_80[4] + afStack_80[2] * afStack_80[2]);",
       "type": "decompiler_intrinsic"
     }
   ]

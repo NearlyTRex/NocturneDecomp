@@ -215,12 +215,11 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 005407fa
     PUSH EBX                            ; 005407fd
     LEA EDI,[ESP + 0x7d]                ; 005407fe
-    MOV ESI,dword ptr [EBP + 0x18]      ; 00540802
-    PUSH EDX                            ; 00540805
-    MOVSD ES:EDI,ESI                    ; 00540806
-    MOVSD ES:EDI,ESI                    ; 00540807
+    JMP 0x0060cafa                      ; 00540802
+        ;   XREF to: 0060cafa (UNCONDITIONAL_JUMP)  ; LAB_0060cafa
     CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00540808
         ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_005411c0(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
+        ;   Label: LAB_00540808
     ADD ESP,0xc                         ; 0054080d
     MOV EAX,dword ptr [EBP + 0x14]      ; 00540810
     MOV EAX,dword ptr [EAX + 0x114]     ; 00540813
@@ -233,11 +232,10 @@ section .text
     ADD EAX,ECX                         ; 0054082d
     LEA ESI,[ESI + 0x5]                 ; 0054082f
     LEA EDI,[EAX + 0x3c]                ; 00540832
-    MOVSD ES:EDI,ESI                    ; 00540835
-    MOVSD ES:EDI,ESI                    ; 00540836
-    MOV ESP,EBP                         ; 00540837
-    POP EBP                             ; 00540839
+    JMP 0x0060cb13                      ; 00540835
+        ;   XREF to: 0060cb13 (UNCONDITIONAL_JUMP)  ; LAB_0060cb13
     POP EDI                             ; 0054083a
+        ;   Label: LAB_0054083a
     POP ESI                             ; 0054083b
     POP EBX                             ; 0054083c
     RET                                 ; 0054083d
@@ -355,10 +353,10 @@ section .text
     ADD EAX,ESI                         ; 00540964
     LEA EDI,[EAX + 0x3c]                ; 00540966
     LEA ESI,[ECX + 0x69]                ; 00540969
-    MOVSD ES:EDI,ESI                    ; 0054096c
-    MOVSD ES:EDI,ESI                    ; 0054096d
-    MOV dword ptr [0x02f7c8c4],0xffffffff ; 0054096e | INT_02f7c8c4
+    JMP 0x0060cb2b                      ; 0054096c
+        ;   XREF to: 0060cb2b (UNCONDITIONAL_JUMP)  ; LAB_0060cb2b
     MOV ESP,EBP                         ; 00540978
+        ;   Label: LAB_00540978
     POP EBP                             ; 0054097a
     POP EDI                             ; 0054097b
     POP ESI                             ; 0054097c
@@ -1159,4 +1157,36 @@ section .text
     POP ESI                             ; 005411b0
     POP EBX                             ; 005411b1
     RET                                 ; 005411b2
+    MOV ESI,dword ptr [EBP + 0x18]      ; 0060cafa
+        ;   Label: LAB_0060cafa
+    PUSH EDX                            ; 0060cafd
+    MOV ECX,dword ptr [ESI]             ; 0060cafe
+    MOV dword ptr [EDI],ECX             ; 0060cb00
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060cb02
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060cb05
+    ADD ESI,0x8                         ; 0060cb08
+    ADD EDI,0x8                         ; 0060cb0b
+    JMP 0x00540808                      ; 0060cb0e
+        ;   XREF to: 00540808 (UNCONDITIONAL_JUMP)  ; LAB_00540808
+    MOV ECX,dword ptr [ESI]             ; 0060cb13
+        ;   Label: LAB_0060cb13
+    MOV dword ptr [EDI],ECX             ; 0060cb15
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060cb17
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060cb1a
+    ADD ESI,0x8                         ; 0060cb1d
+    ADD EDI,0x8                         ; 0060cb20
+    MOV ESP,EBP                         ; 0060cb23
+    POP EBP                             ; 0060cb25
+    JMP 0x0054083a                      ; 0060cb26
+        ;   XREF to: 0054083a (UNCONDITIONAL_JUMP)  ; LAB_0054083a
+    MOV ECX,dword ptr [ESI]             ; 0060cb2b
+        ;   Label: LAB_0060cb2b
+    MOV dword ptr [EDI],ECX             ; 0060cb2d
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060cb2f
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060cb32
+    ADD ESI,0x8                         ; 0060cb35
+    ADD EDI,0x8                         ; 0060cb38
+    MOV dword ptr [0x02f7c8c4],0xffffffff ; 0060cb3b | INT_02f7c8c4
+    JMP 0x00540978                      ; 0060cb45
+        ;   XREF to: 00540978 (UNCONDITIONAL_JUMP)  ; LAB_00540978
 

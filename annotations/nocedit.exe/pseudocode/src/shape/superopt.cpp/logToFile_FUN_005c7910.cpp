@@ -10,7 +10,7 @@ void __cdecl shape_superopt_cpp_logToFile_FUN_005c7910(char *format,...)
 
 {
   _FILE *stream;
-  byte *local_8;
+  va_list_t local_8;
   
   if (g_LogInitialized == 0) {
     remove("log.txt");
@@ -22,9 +22,9 @@ void __cdecl shape_superopt_cpp_logToFile_FUN_005c7910(char *format,...)
   if (stream == (_FILE *)0x0) {
     return;
   }
-  local_8 = &stack0x00000008;
+  VA_START_T(local_8, format);
   _fprintf(stream,format,&local_8);
-  local_8 = (byte *)0x0;
+  VA_END_T(local_8);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\shape\\superopt.cpp",0x3a);
   return;
 }

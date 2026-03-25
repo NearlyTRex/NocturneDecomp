@@ -1,6 +1,6 @@
 // Name: core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
 // Address: 0056db80
-// Address Range: [[0056db80, 0056dda4]]
+// Address Range: [[0056db80, 0056dda4] [0060ca61, 0060ca9b]]
 // Convention: __cdecl
 // Signature: int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal)
 
@@ -34,7 +34,6 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
   CDemonLight *light_source;
   CVector3f *position;
   
-  bVar6 = 0;
   if (g_LightingSystemDirty != 0) {
     if (g_LightingSystemDirty == 1) {
       rotation_matrix = (CMatrix3x3f *)0x0;
@@ -100,20 +99,10 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
       core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0
                 (&(local_14->mirror_glass_actors[0]->mirror).reflection,(CVector3f *)world_position,
                  &local_3c);
-      local_48.x = (int)local_3c.x;
-      *(uint *)((int)&local_48 + (uint)bVar6 * -8 + 4) =
-           *(uint *)((int)&local_3c + (uint)bVar6 * -8 + 4);
-      *(uint *)((int)&local_48 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-           *(uint *)((int)&local_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       if (surface_normal != (CVector3i *)0x0) {
         core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50
                   (&(local_14->mirror_glass_actors[0]->mirror).reflection,world_position,
                    surface_normal,&local_30);
-        local_24.x = local_30.x;
-        *(uint *)((int)&local_24 + (uint)bVar6 * -8 + 4) =
-             *(uint *)((int)&local_30 + (uint)bVar6 * -8 + 4);
-        *(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-             *(uint *)((int)&local_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       }
       iVar8 = 0;
       if (0 < g_DynamicLightCount) {

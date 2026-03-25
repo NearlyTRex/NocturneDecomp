@@ -17,7 +17,7 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
   char *pcVar4;
   char *pcVar5;
   char *pcVar1;
-  byte *local_14;
+  va_list_t local_14;
   int local_10;
   
   if (g_RecursiveCallFlag != 0) {
@@ -29,10 +29,10 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
     }
     notifyAbnormalTermination();
   }
-  local_14 = &stack0x00000008;
+  VA_START_T(local_14, format);
   g_RecursiveCallFlag = 1;
-  _vsprintf(g_ErrorMessageBuffer_02dd3130,format,(va_list_t)&local_14);
-  local_14 = (byte *)0x0;
+  _vsprintf(g_ErrorMessageBuffer_02dd3130,format,local_14);
+  VA_END_T(local_14);
   pcVar1 = g_CurrentFilename;
   do {
     pcVar4 = pcVar1;

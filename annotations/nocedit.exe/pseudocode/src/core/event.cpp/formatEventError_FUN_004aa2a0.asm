@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   format
 ; Local Variables:
-; undefined1 *     Stack[-0x4]:4  local_4
+; va_list_t        Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ad7a2

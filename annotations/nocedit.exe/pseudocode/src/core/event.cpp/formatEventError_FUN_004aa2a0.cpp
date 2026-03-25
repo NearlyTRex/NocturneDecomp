@@ -9,9 +9,9 @@
 int __cdecl core_event_cpp_formatEventError_FUN_004aa2a0(char *format,...)
 
 {
-  byte *local_4;
+  va_list_t local_4;
   
-  local_4 = &stack0x00000008;
-  _vsprintf(g_EventErrorMessageBuffer,format,(va_list_t)&local_4);
+  VA_START_T(local_4, format);
+  _vsprintf(g_EventErrorMessageBuffer,format,local_4);
   return 0;
 }

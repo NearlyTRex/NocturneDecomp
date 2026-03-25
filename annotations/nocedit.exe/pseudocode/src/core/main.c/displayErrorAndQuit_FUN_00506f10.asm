@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   format
 ; Local Variables:
-; undefined1 *     Stack[-0x14]:4  local_14
+; va_list_t        Stack[-0x14]:4  local_14
 ; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[741]:

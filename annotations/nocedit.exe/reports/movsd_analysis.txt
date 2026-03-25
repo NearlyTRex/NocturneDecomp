@@ -8,14 +8,14 @@ fixed by replacing them with explicit MOV instructions in code caves.
 
 SUMMARY
 --------------------------------------------------
-Consecutive MOVSD groups:  140
-  1x MOVSD ( 4 bytes):   109 sites
-  2x MOVSD ( 8 bytes):   6 sites
-  3x MOVSD (12 bytes):   21 sites
+Consecutive MOVSD groups:  122
+  1x MOVSD ( 4 bytes):   100 sites
+  2x MOVSD ( 8 bytes):   3 sites
+  3x MOVSD (12 bytes):   15 sites
   4x MOVSD (16 bytes):   4 sites
-  Fixable (cave patch):   50
+  Fixable (cave patch):   32
   Unfixable:              90
-  Est. cave space:        ~1338 bytes
+  Est. cave space:        ~870 bytes
 
 REP MOVSD sites:           770
   Pass-by-value:          6
@@ -69,19 +69,11 @@ REP MOVSD sites:           770
     2122 dwords (8488 bytes): 1 sites
     3200 dwords (12800 bytes): 1 sites
 
-Total MOVSD sites:         910
+Total MOVSD sites:         892
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE 3x MOVSD SITES (12 bytes copy, 21 sites)
+FIXABLE 3x MOVSD SITES (12 bytes copy, 15 sites)
 ----------------------------------------------------------------------------------------------------
-  CDemonSet_calculateSpatialLighting_FUN_0056db80                          2 sites  ~66 bytes
-    0x0056dcc5  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-    0x0056dd90  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  normalizeVector3DFloat_FUN_0050d9f0                                      2 sites  ~66 bytes
-    0x0050da8a  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-    0x0050da93  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  CCharacter_moveAndCollide_FUN_00428f40                                   1 sites  ~33 bytes
-    0x004294a5  3x MOVSD (12 bytes copy, 10 bytes borrowable)
   CDemonCamera_restoreAlphaTransform_FUN_00453a70                          1 sites  ~33 bytes
     0x00453bc4  3x MOVSD (12 bytes copy, 5 bytes borrowable)
   CDemonCamera_restoreTransform_FUN_0044f1e0                               1 sites  ~33 bytes
@@ -112,16 +104,10 @@ FIXABLE 3x MOVSD SITES (12 bytes copy, 21 sites)
     0x0050e317  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   transformWorldToView_FUN_0050cc40                                        1 sites  ~33 bytes
     0x0050cd01  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  optimizeCubeTriList_FUN_005d77a0                                         1 sites  ~33 bytes
-    0x005d7b24  3x MOVSD (12 bytes copy, 7 bytes borrowable)
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE 2x MOVSD SITES (8 bytes copy, 6 sites)
+FIXABLE 2x MOVSD SITES (8 bytes copy, 3 sites)
 ----------------------------------------------------------------------------------------------------
-  CNetGame_processPacket_FUN_005406a0                                      3 sites  ~81 bytes
-    0x00540806  2x MOVSD (8 bytes copy, 6 bytes borrowable)
-    0x00540835  2x MOVSD (8 bytes copy, 5 bytes borrowable)
-    0x0054096c  2x MOVSD (8 bytes copy, 12 bytes borrowable)
   i64toa_FUN_0060ad40                                                      1 sites  ~27 bytes
     0x0060ad66  2x MOVSD (8 bytes copy, 6 bytes borrowable)
   FUN_0060ade0                                                             1 sites  ~27 bytes
@@ -130,19 +116,8 @@ FIXABLE 2x MOVSD SITES (8 bytes copy, 6 sites)
     0x005f2dee  2x MOVSD (8 bytes copy, 7 bytes borrowable)
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE 1x MOVSD SITES (4 bytes copy, 23 sites)
+FIXABLE 1x MOVSD SITES (4 bytes copy, 14 sites)
 ----------------------------------------------------------------------------------------------------
-  CDeformableModel_determinePartsFromS3D_FUN_0058f810                      6 sites  ~126 bytes
-    0x005913fa  1x MOVSD (4 bytes copy, 10 bytes borrowable)
-    0x00591407  1x MOVSD (4 bytes copy, 10 bytes borrowable)
-    0x00591414  1x MOVSD (4 bytes copy, 5 bytes borrowable)
-    0x00591df7  1x MOVSD (4 bytes copy, 10 bytes borrowable)
-    0x00591e04  1x MOVSD (4 bytes copy, 10 bytes borrowable)
-    0x00591e11  1x MOVSD (4 bytes copy, 5 bytes borrowable)
-  CDeformableModel_sortFacesByTexture_FUN_0058e240                         3 sites  ~63 bytes
-    0x0058e31f  1x MOVSD (4 bytes copy, 7 bytes borrowable)
-    0x0058e329  1x MOVSD (4 bytes copy, 7 bytes borrowable)
-    0x0058e333  1x MOVSD (4 bytes copy, 5 bytes borrowable)
   calculatePolygonAngularArea_FUN_00461ee0                                 3 sites  ~63 bytes
     0x00461f47  1x MOVSD (4 bytes copy, 5 bytes borrowable)
     0x00461f6e  1x MOVSD (4 bytes copy, 7 bytes borrowable)

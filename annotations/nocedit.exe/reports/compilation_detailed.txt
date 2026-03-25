@@ -5,15 +5,15 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6452
-Successful: 5908 (91.6%)
-Failed: 544
+Successful: 5913 (91.6%)
+Failed: 539
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                            989
+  other                            977
   format_error                     782
-  incompatible_types               205
-  undeclared_identifier            127
+  incompatible_types               206
+  undeclared_identifier            122
   syntax_error                      41
   missing_member                    26
   type_error                         9
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (989 errors)
+CATEGORY: other (977 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -66,6 +66,8 @@ CATEGORY: other (989 errors)
     Line 63: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
   engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     Line 91: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
+  core_main.c_displayErrorAndQuit_FUN_00506f10
+    Line 62: assigning to 'uint *' (aka 'unsigned int *') from 'int *' converts between pointers to integer types with different sign
   core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
     Line 148: assigning to 'uint *' (aka 'unsigned int *') from 'int *' converts between pointers to integer types with different sign
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -86,12 +88,6 @@ CATEGORY: other (989 errors)
     Line 45: cannot cast from type 'float' to pointer type 'CQuaternion4f *'
   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
     Line 95: cannot cast from type 'float' to pointer type 'CQuaternion4f *'
-  core_xform.cpp_matrixToQuaternion_FUN_005f7420
-    Line 36: cannot cast from type 'float' to pointer type 'CQuaternion4f *'
-  core_xform.cpp_multiplyQuaternion_FUN_005f7640
-    Line 62: cannot cast from type 'float' to pointer type 'CQuaternion4f *'
-  core_xform.cpp_slerpQuaternion_FUN_005f77e0
-    Line 74: cannot cast from type 'float' to pointer type 'CQuaternion4f *'
   core_platfrm.cpp_CPlatform_process_FUN_0054cc30
     Line 276: cannot cast from type 'float' to pointer type 'CVector3f *'
   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
@@ -176,6 +172,8 @@ CATEGORY: other (989 errors)
     Line 18: member reference base type 'char[16]' is not a structure or union
   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940
     Line 57: member reference base type 'char[256]' is not a structure or union
+  core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
+    Line 109: member reference base type 'const char[12]' is not a structure or union
   core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
     Line 41: member reference base type 'const char[13]' is not a structure or union
   core_dcube.cpp_clipEdgeToPlane_FUN_004547d0
@@ -361,7 +359,7 @@ CATEGORY: other (989 errors)
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 499: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-    Line 281: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 279: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
     Line 69: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
@@ -415,7 +413,7 @@ CATEGORY: other (989 errors)
   shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0
     Line 41: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
-    Line 47: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 46: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
     Line 75: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
@@ -428,14 +426,6 @@ CATEGORY: other (989 errors)
     Line 12: no matching conversion for C-style cast from 'CSoundDeviceBasic_vtable *' to 'CSoundDevice'
   sound_snddx.cpp_staticInit_FUN_005ade60
     Line 12: no matching conversion for C-style cast from 'CSoundDeviceFull_vtable *' to 'CSoundDevice'
-  core_event.cpp_formatEventError_FUN_004aa2a0
-    Line 15: no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'
-  core_main.c_displayErrorAndQuit_FUN_00506f10
-    Line 34: no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'
-  engine_2d.c_getStringWidthFormatted_FUN_004027a0
-    Line 17: no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'
-  sound_sndmain.cpp_logSoundError_FUN_005adba0
-    Line 25: no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'
   engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410
     Line 42: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'
   engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
@@ -926,7 +916,7 @@ CATEGORY: format_error (782 errors)
   shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60
     Line 55: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-    Line 324: format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]
+    Line 322: format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]
   core_bodypart.cpp_CBodyPart_archive_FUN_00419880
     Line 42: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110
@@ -981,7 +971,7 @@ CATEGORY: format_error (782 errors)
     Line 40: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: incompatible_types (205 errors)
+CATEGORY: incompatible_types (206 errors)
 ====================================================================================================
 
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
@@ -1147,9 +1137,9 @@ CATEGORY: incompatible_types (205 errors)
   engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
     Line 183: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'
   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
-    Line 162: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'
+    Line 161: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'
   core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240
-    Line 85: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'uint *' (aka 'unsigned int *'); dereference with *
+    Line 80: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'uint *' (aka 'unsigned int *'); dereference with *
   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
     Line 169: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'ushort *' (aka 'unsigned short *')
   core_inv.cpp_CInventory_addItem_FUN_004fd600
@@ -1218,7 +1208,7 @@ CATEGORY: incompatible_types (205 errors)
     Line 212: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (127 errors)
+CATEGORY: undeclared_identifier (122 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -1319,16 +1309,6 @@ CATEGORY: undeclared_identifier (127 errors)
     Line 198: use of undeclared identifier 'stack0x00000000'
   shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     Line 60: use of undeclared identifier 'stack0x00000000'
-  core_event.cpp_formatEventError_FUN_004aa2a0
-    Line 14: use of undeclared identifier 'stack0x00000008'
-  core_main.c_displayErrorAndQuit_FUN_00506f10
-    Line 32: use of undeclared identifier 'stack0x00000008'
-  engine_2d.c_getStringWidthFormatted_FUN_004027a0
-    Line 16: use of undeclared identifier 'stack0x00000008'
-  shape_superopt.cpp_logToFile_FUN_005c7910
-    Line 25: use of undeclared identifier 'stack0x00000008'
-  sound_sndmain.cpp_logSoundError_FUN_005adba0
-    Line 24: use of undeclared identifier 'stack0x00000008'
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 41: use of undeclared identifier 'stack0x0000002c'
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0

@@ -5,19 +5,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 1085,
-    "complexity_score": 542,
+    "assembly_lines": 1115,
+    "complexity_score": 544,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 43,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 422,
+    "pseudocode_lines": 424,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "warning_unreachable"
     ],
-    "total_lines": 1507
+    "total_lines": 1539
   },
   "cross_references": [
     {
@@ -33,6 +33,10 @@
       [
         "005406a0",
         "005411b2"
+      ],
+      [
+        "0060cafa",
+        "0060cb49"
       ]
     ],
     "convention": "__cdecl",
@@ -393,16 +397,16 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.381114903299204,
-    "instruction_count": 879,
+    "avg_pcode_per_instr": 5.286510590858417,
+    "instruction_count": 897,
     "opcode_distribution": {
       "BOOL_NEGATE": 146,
       "BOOL_OR": 19,
-      "BRANCH": 13,
+      "BRANCH": 19,
       "BRANCHIND": 1,
       "CALL": 29,
       "CBRANCH": 98,
-      "COPY": 969,
+      "COPY": 963,
       "FLOAT2FLOAT": 17,
       "FLOAT_EQUAL": 9,
       "FLOAT_LESS": 9,
@@ -410,28 +414,28 @@
       "FLOAT_NAN": 18,
       "INT2FLOAT": 7,
       "INT_ADD": 427,
-      "INT_AND": 677,
-      "INT_CARRY": 61,
-      "INT_EQUAL": 414,
+      "INT_AND": 689,
+      "INT_CARRY": 67,
+      "INT_EQUAL": 426,
       "INT_LEFT": 76,
       "INT_LESS": 73,
-      "INT_MULT": 22,
+      "INT_MULT": 10,
       "INT_NOTEQUAL": 114,
       "INT_OR": 145,
       "INT_SBORROW": 73,
-      "INT_SCARRY": 67,
+      "INT_SCARRY": 73,
       "INT_SEXT": 6,
-      "INT_SLESS": 233,
-      "INT_SUB": 225,
+      "INT_SLESS": 239,
+      "INT_SUB": 213,
       "INT_XOR": 27,
-      "INT_ZEXT": 52,
+      "INT_ZEXT": 40,
       "LOAD": 301,
-      "POPCOUNT": 193,
+      "POPCOUNT": 199,
       "RETURN": 19,
       "STORE": 183,
       "SUBPIECE": 4
     },
-    "pcode_op_count": 4730
+    "pcode_op_count": 4742
   },
   "stack_frame": {
     "frame_size": 256,
@@ -660,54 +664,54 @@
     {
       "description": "Complex pointer cast",
       "line": 123,
-      "match": "(uint *)((int)",
+      "match": "(SNetworkAddr *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar5 * 0x78 + 0x40) =",
+      "text": "uVar4 = ((SNetworkAddr *)((int)packet + 5))->other;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 124,
-      "match": "(uint *)((int)",
+      "match": "(SNetworkAddr *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)packet + (uint)bVar10 * -8 + 9);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 147,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)this_ptr + (uint)bVar10 * -8 + iVar5 * 0x78 + 0x40) =",
+      "text": "this_ptr->players[iVar6].addr.port = ((SNetworkAddr *)((int)packet + 5))->port;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 148,
-      "match": "(uint *)((int)",
+      "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)packet + (uint)bVar10 * -8 + 0x6d);",
+      "text": "uVar5 = *(ushort *)((int)((int)packet + 0x6d) + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 228,
-      "match": "(uint *)((int)",
+      "line": 149,
+      "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "while (*(uint *)((int)g_ChatOutMessages[0].player_timestamps + iVar5 + -8) ==",
+      "text": "this_ptr->players[iVar6].addr.port = *(ushort *)((int)packet + 0x6d);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 230,
-      "match": "(byte *)((int)",
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)g_ChatOutMessages[0].player_timestamps + iVar5 + uVar2 + -4) = 1;",
+      "text": "while (*(uint *)((int)g_ChatOutMessages[0].player_timestamps + iVar6 + -8) ==",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 358,
+      "line": 232,
+      "match": "(byte *)((int)",
+      "severity": "mild",
+      "text": "*(byte *)((int)g_ChatOutMessages[0].player_timestamps + iVar6 + uVar2 + -4) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 360,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "if (uVar3 == *(uint *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
@@ -715,7 +719,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 395,
+      "line": 397,
       "match": "(SPlayerControl *)((int)",
       "severity": "mild",
       "text": "pSVar9 = (SPlayerControl *)((int)pSVar9 + (uint)bVar10 * -8 + 4);",
@@ -723,7 +727,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 396,
+      "line": 398,
       "match": "(SPlayerControl *)((int)",
       "severity": "mild",
       "text": "pSVar6 = (SPlayerControl *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
@@ -731,7 +735,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 420,
+      "line": 422,
       "match": "(SPlayerControl *)((int)",
       "severity": "mild",
       "text": "pSVar12 = (SPlayerControl *)((int)pSVar12 + (uint)bVar10 * -8 + 4);",

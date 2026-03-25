@@ -4,6 +4,12 @@
       {
         "category": "incompatible_types",
         "column": 32,
+        "line": 80,
+        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'uint *' (aka 'unsigned int *'); dereference with *"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 31,
         "line": 85,
         "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'uint *' (aka 'unsigned int *'); dereference with *"
       }
@@ -12,19 +18,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 184,
-    "complexity_score": 160,
+    "assembly_lines": 211,
+    "complexity_score": 154,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 100,
+    "pseudocode_lines": 94,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 284
+    "total_lines": 305
   },
   "cross_references": [
     {
@@ -44,6 +50,10 @@
       [
         "00608b27",
         "00608b6c"
+      ],
+      [
+        "0060ca22",
+        "0060ca60"
       ]
     ],
     "convention": "__cdecl",
@@ -73,38 +83,38 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.560509554140127,
-    "instruction_count": 157,
+    "avg_pcode_per_instr": 4.354651162790698,
+    "instruction_count": 172,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 6,
       "BOOL_OR": 4,
-      "BRANCH": 4,
+      "BRANCH": 10,
       "CBRANCH": 9,
-      "COPY": 137,
+      "COPY": 134,
       "INT_ADD": 106,
-      "INT_AND": 77,
-      "INT_CARRY": 15,
-      "INT_EQUAL": 67,
+      "INT_AND": 89,
+      "INT_CARRY": 21,
+      "INT_EQUAL": 79,
       "INT_LEFT": 2,
       "INT_LESS": 9,
-      "INT_MULT": 20,
+      "INT_MULT": 14,
       "INT_NOTEQUAL": 10,
       "INT_OR": 5,
       "INT_SBORROW": 10,
-      "INT_SCARRY": 17,
+      "INT_SCARRY": 23,
       "INT_SEXT": 3,
-      "INT_SLESS": 34,
-      "INT_SUB": 31,
+      "INT_SLESS": 40,
+      "INT_SUB": 25,
       "INT_XOR": 3,
-      "INT_ZEXT": 16,
+      "INT_ZEXT": 10,
       "LOAD": 56,
-      "POPCOUNT": 32,
+      "POPCOUNT": 38,
       "RETURN": 1,
       "STORE": 39,
       "SUBPIECE": 2
     },
-    "pcode_op_count": 716
+    "pcode_op_count": 749
   },
   "stack_frame": {
     "frame_size": 8228,
@@ -242,17 +252,17 @@
     ],
     "patterns": [
       {
-        "address": "0058e31b",
-        "description": "Alternative frame pointer (EDI = ESP)",
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
-        "instruction": "MOV EDI,ESP",
-        "pattern_id": "alt_frame_pointer"
-      },
-      {
         "address": "0058e340",
         "description": "Alternative frame pointer (ESI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0060ca22",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
         "pattern_id": "alt_frame_pointer"
       }
     ],
@@ -261,7 +271,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 54,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)local_38->index_data_ptr[0] + iVar7);",
@@ -269,7 +279,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 56,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar6 = (int *)((int)local_38->index_data_ptr[0] + iVar7 + 4);",
@@ -277,7 +287,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 65,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_44 = (ushort)((uint)*(uint *)((int)puVar13 + 6) >> 0x10);",
@@ -285,18 +295,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 66,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "uVar2 = *(ushort *)((int)puVar13 + 10);",
+      "text": "uVar1 = *(ushort *)((int)puVar13 + 10);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 77,
       "match": "CONCAT22",
       "severity": "mild",
-      "text": "puVar6[2] = CONCAT22(uVar2,uStack_44);",
+      "text": "puVar3[2] = CONCAT22(uVar1,uStack_44);",
       "type": "decompiler_intrinsic"
     }
   ]

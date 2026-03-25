@@ -8,7 +8,7 @@
 ; Local Variables:
 ; char[1024]       Stack[-0x528]:1024  local_528
 ; SSoundDeviceInfo Stack[-0x128]:280  local_128
-; undefined1 *     Stack[-0x10]:4  local_10
+; va_list_t        Stack[-0x10]:4  local_10
 ; int              Stack[-0xc]:4  local_c
 ;
 ; XREF[39]:

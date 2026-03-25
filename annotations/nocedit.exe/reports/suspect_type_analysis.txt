@@ -4,16 +4,16 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6929 ( 42.7%)
-  pointer_cast                    4874 ( 30.0%)
-  unknown_field                    895 (  5.5%)
+  decompiler_intrinsic            6927 ( 42.7%)
+  pointer_cast                    4858 ( 30.0%)
+  unknown_field                    897 (  5.5%)
   special_crt_function             439 (  2.7%)
   stack_param                      340 (  2.1%)
   unnamed_param                    320 (  2.0%)
   fpu_register_input               311 (  1.9%)
   nonstandard_int                  267 (  1.6%)
   warning_inlined_function         264 (  1.6%)
-  stack_ref                        242 (  1.5%)
+  stack_ref                        237 (  1.5%)
   unresolved_funcptr               169 (  1.0%)
   warning_type_propagation         132 (  0.8%)
   param_count_too_few              119 (  0.7%)
@@ -54,7 +54,7 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (6929 occurrences)
+TYPE: decompiler_intrinsic (6927 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -69,7 +69,7 @@ Unique patterns:
    105x  fsin
    100x  SUB84
     95x  CONCAT12
-    90x  CONCAT22
+    88x  CONCAT22
     82x  CONCAT14
     66x  CONCAT21
     64x  CONCAT13
@@ -96,19 +96,19 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (4874 occurrences)
+TYPE: pointer_cast (4858 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1441x  (uint *)((int)
-  1236x  (int *)((int)
+  1425x  (uint *)((int)
+  1232x  (int *)((int)
    325x  (SRenderVertex *)((int)
    289x  (float *)((int)
    289x  (CMatrix3x4f *)((int)
    208x  (double *)((int)
    189x  (void *)((int)
    170x  (byte *)((int)
-    86x  (ushort *)((int)
+    88x  (ushort *)((int)
     70x  (char *)((int)
     61x  (short *)((int)
     34x  (SShapeEditorPolygon *)((int)
@@ -132,7 +132,7 @@ Example functions:
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar1) <...
 
 ====================================================================================================
-TYPE: unknown_field (895 occurrences)
+TYPE: unknown_field (897 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -144,7 +144,7 @@ Unique patterns:
     11x  ._1_1_
     11x  ._12_4_
      9x  ._3_1_
-     7x  ._8_4_
+     9x  ._8_4_
      7x  ._4_8_
      5x  ._24_4_
      4x  ._2_1_
@@ -440,7 +440,7 @@ Example functions:
     /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */...
 
 ====================================================================================================
-TYPE: stack_ref (242 occurrences)
+TYPE: stack_ref (237 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -454,7 +454,6 @@ Unique patterns:
      7x  &stack0xfffffe90
      7x  &stack0xfffffee8
      7x  &stack0xfffffeb8
-     6x  &stack0x00000008
      5x  &stack0xffffff28
      4x  &stack0xffffffdc
      4x  &stack0xffffff60
@@ -464,6 +463,7 @@ Unique patterns:
      4x  &stack0xfffffea0
      4x  &stack0xfffffe70
      3x  &stack0xfffffff8
+     3x  &stack0xfffffff4
 
 Example functions:
   crt_io.c_write_FUN_006084ec

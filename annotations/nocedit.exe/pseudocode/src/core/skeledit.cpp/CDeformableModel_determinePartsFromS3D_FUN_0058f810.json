@@ -4,115 +4,115 @@
       {
         "category": "other",
         "column": 42,
-        "line": 281,
+        "line": 279,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 305,
+        "line": 303,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 313,
+        "line": 311,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 73,
-        "line": 316,
+        "line": 314,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 66,
-        "line": 324,
+        "line": 322,
         "message": "format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 77,
-        "line": 324,
+        "line": 322,
         "message": "format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 25,
-        "line": 325,
+        "line": 323,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 35,
-        "line": 325,
+        "line": 323,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 324,
+        "line": 322,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 331,
+        "line": 329,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 332,
+        "line": 330,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 67,
-        "line": 348,
+        "line": 346,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 348,
+        "line": 346,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 72,
-        "line": 352,
+        "line": 350,
         "message": "format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 352,
+        "line": 350,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 66,
-        "line": 360,
+        "line": 358,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 361,
+        "line": 359,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 377,
+        "line": 375,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 419,
+        "line": 417,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -120,21 +120,21 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 3346,
-    "complexity_score": 2490,
+    "assembly_lines": 3400,
+    "complexity_score": 2383,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 125,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 1470,
-    "suspect_count": 100,
+    "pseudocode_lines": 1443,
+    "suspect_count": 92,
     "suspect_types": [
       "decompiler_intrinsic",
       "negative_offset",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 4816
+    "total_lines": 4843
   },
   "cross_references": [
     {
@@ -154,6 +154,10 @@
       [
         "00605656",
         "006056e1"
+      ],
+      [
+        "0060c98e",
+        "0060ca21"
       ]
     ],
     "convention": "__cdecl",
@@ -1050,16 +1054,16 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.1508078994614,
-    "instruction_count": 2785,
+    "avg_pcode_per_instr": 5.119360568383659,
+    "instruction_count": 2815,
     "opcode_distribution": {
       "BOOL_AND": 8,
       "BOOL_NEGATE": 163,
       "BOOL_OR": 55,
-      "BRANCH": 50,
+      "BRANCH": 62,
       "CALL": 110,
       "CBRANCH": 207,
-      "COPY": 3744,
+      "COPY": 3738,
       "FLOAT2FLOAT": 225,
       "FLOAT_ABS": 6,
       "FLOAT_ADD": 17,
@@ -1072,34 +1076,34 @@
       "FLOAT_SUB": 40,
       "INT2FLOAT": 6,
       "INT_ADD": 1479,
-      "INT_AND": 1620,
-      "INT_CARRY": 261,
-      "INT_EQUAL": 1276,
+      "INT_AND": 1644,
+      "INT_CARRY": 273,
+      "INT_EQUAL": 1300,
       "INT_LEFT": 85,
       "INT_LESS": 126,
-      "INT_MULT": 110,
+      "INT_MULT": 98,
       "INT_NOTEQUAL": 239,
       "INT_OR": 173,
       "INT_RIGHT": 4,
       "INT_SBORROW": 137,
-      "INT_SCARRY": 311,
+      "INT_SCARRY": 323,
       "INT_SDIV": 3,
       "INT_SEXT": 93,
-      "INT_SLESS": 645,
+      "INT_SLESS": 657,
       "INT_SREM": 3,
       "INT_SRIGHT": 10,
-      "INT_SUB": 597,
+      "INT_SUB": 585,
       "INT_XOR": 73,
-      "INT_ZEXT": 100,
+      "INT_ZEXT": 88,
       "LOAD": 827,
-      "POPCOUNT": 613,
+      "POPCOUNT": 625,
       "RETURN": 2,
       "ROUND": 2,
       "STORE": 754,
       "SUBPIECE": 66,
       "TRUNC": 2
     },
-    "pcode_op_count": 14345
+    "pcode_op_count": 14411
   },
   "stack_frame": {
     "frame_size": 41468,
@@ -2510,7 +2514,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 346,
+      "line": 344,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)local_400 + local_144));",
@@ -2518,47 +2522,47 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 442,
+      "line": 440,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)pvVar30 + 4) = 3;",
+      "text": "*(uint *)((int)pvVar35 + 4) = 3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 444,
+      "line": 442,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)pvVar30 + 0x14) = local_13c[0];",
+      "text": "*(uint *)((int)pvVar35 + 0x14) = local_13c[0];",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 446,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)pvVar17 + 0x18) = *(uint *)(local_274 + iVar20 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 447,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_18 = (int)ROUND(ROUND((double)*(float *)(local_190 + iVar20 + -4) * dVar7));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 447,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_18 = (int)ROUND(ROUND((double)*(float *)(local_190 + iVar20 + -4) * dVar7));",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
       "line": 448,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pvVar17 + 0x18) = *(uint *)(local_274 + iVar15 + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 449,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND((double)*(float *)(local_190 + iVar15 + -4) * dVar7));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 449,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND((double)*(float *)(local_190 + iVar15 + -4) * dVar7));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 450,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pvVar17 + 0x1c) = local_18;",
@@ -2566,23 +2570,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 451,
+      "line": 449,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND((double)*(float *)(local_1fc + iVar15 + -4) * dVar7));",
+      "text": "local_18 = (int)ROUND(ROUND((double)*(float *)(local_1fc + iVar20 + -4) * dVar7));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 451,
+      "line": 449,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND((double)*(float *)(local_1fc + iVar15 + -4) * dVar7));",
+      "text": "local_18 = (int)ROUND(ROUND((double)*(float *)(local_1fc + iVar20 + -4) * dVar7));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 453,
+      "line": 451,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pvVar17 + 0x20) = local_18;",
@@ -2590,7 +2594,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 454,
+      "line": 452,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "pvVar17 = (void *)((int)pvVar17 + 0xc);",
@@ -2598,31 +2602,31 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 457,
+      "line": 455,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)pvVar30 + 0x18),*(uint *)((int)pvVar30 + 0x24));",
+      "text": "*(uint *)((int)pvVar35 + 0x18),*(uint *)((int)pvVar35 + 0x24));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 455,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)pvVar35 + 0x18),*(uint *)((int)pvVar35 + 0x24));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 457,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pvVar30 + 0x18),*(uint *)((int)pvVar30 + 0x24));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 459,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "pvVar30 = (void *)((int)pvVar30 + 0x3c);",
+      "text": "pvVar35 = (void *)((int)pvVar35 + 0x3c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 509,
+      "line": 507,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if ((*(int *)((int)local_88 + 4) == 3) &&",
@@ -2630,7 +2634,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 510,
+      "line": 508,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(*(int *)((int)local_88 + 0x14) == *(int *)((int)local_84 + 0x14))) {",
@@ -2638,7 +2642,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 510,
+      "line": 508,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(*(int *)((int)local_88 + 0x14) == *(int *)((int)local_84 + 0x14))) {",
@@ -2646,15 +2650,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 517,
+      "line": 515,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pCVar23 = &local_188->min + *(int *)((int)pvVar30 + 0x18);",
+      "text": "pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x18);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 530,
+      "line": 525,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((((float)0.02 < ABS(local_224)) ||",
@@ -2662,7 +2666,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 531,
+      "line": 526,
       "match": "ABS",
       "severity": "mild",
       "text": "((float)0.02 < ABS(local_220))) ||",
@@ -2670,7 +2674,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 532,
+      "line": 527,
       "match": "ABS",
       "severity": "mild",
       "text": "((float)0.02 < ABS(local_21c))) break;",
@@ -2678,15 +2682,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 533,
+      "line": 528,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "pvVar30 = (void *)((int)pvVar30 + 0xc);",
+      "text": "pvVar35 = (void *)((int)pvVar35 + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 539,
+      "line": 534,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)local_134 + 4) = 0;",
@@ -2694,7 +2698,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 546,
+      "line": 541,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "local_88 = (void *)((int)local_88 + 0x3c);",
@@ -2702,7 +2706,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 551,
+      "line": 546,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "local_84 = (void *)((int)local_84 + 0x3c);",
@@ -2710,103 +2714,103 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 593,
+      "line": 588,
       "match": "(CVector3f *)((int)",
       "severity": "mild",
-      "text": "(CVector3f *)((int)this_ptr->vertex_data_ptr[0]->bone_weights + iVar15 + 0xc)",
+      "text": "(CVector3f *)((int)this_ptr->vertex_data_ptr[0]->bone_weights + iVar20 + 0xc)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 658,
+      "line": 647,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)pvVar30 + 4) == 3) {",
+      "text": "if (*(int *)((int)pvVar35 + 4) == 3) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 659,
+      "line": 648,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pCVar26 = &local_188->min + *(int *)((int)pvVar30 + 0x18);",
+      "text": "pCVar26 = &local_188->min + *(int *)((int)pvVar35 + 0x18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 660,
+      "line": 649,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pCVar23 = &local_188->min + *(int *)((int)pvVar30 + 0x24);",
+      "text": "pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 664,
+      "line": 653,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pCVar27 = &local_188->min + *(int *)((int)pvVar30 + 0x30);",
+      "text": "pCVar29 = &local_188->min + *(int *)((int)pvVar35 + 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 671,
+      "line": 660,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar10 = SQRT(fVar7 * fVar7 + fVar12 * fVar12 + fVar11 * fVar11);",
+      "text": "fVar14 = SQRT(fVar8 * fVar8 + fVar15 * fVar15 + fVar16 * fVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 690,
+      "line": 679,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "pvVar30 = (void *)((int)pvVar30 + 0x3c);",
+      "text": "pvVar35 = (void *)((int)pvVar35 + 0x3c);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 714,
+      "line": 703,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar6 = SQRT(fVar7 * fVar7 + fVar11 * fVar11 + fVar10 * fVar10);",
+      "text": "fVar6 = SQRT(fVar8 * fVar8 + fVar15 * fVar15 + fVar16 * fVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 754,
+      "line": 743,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "for (iVar21 = 0; iVar21 < *(int *)((int)this_ptr->parts[0].tri_counts + iVar15);",
+      "text": "for (iVar21 = 0; iVar21 < *(int *)((int)this_ptr->parts[0].tri_counts + iVar20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 756,
+      "line": 745,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)pvVar30 + 0xc) = 0xffffffff;",
+      "text": "*(uint *)((int)pvVar35 + 0xc) = 0xffffffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 757,
+      "line": 746,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)pvVar30 + 8) = iVar25;",
+      "text": "*(int *)((int)pvVar35 + 8) = iVar31;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 758,
+      "line": 747,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "pvVar30 = (void *)((int)pvVar30 + 0x3c);",
+      "text": "pvVar35 = (void *)((int)pvVar35 + 0x3c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 760,
+      "line": 749,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "local_15c = (void *)((int)local_15c +",
@@ -2814,15 +2818,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 761,
+      "line": 750,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)this_ptr->parts[0].tri_counts + iVar15) * 0x3c);",
+      "text": "*(int *)((int)this_ptr->parts[0].tri_counts + iVar20) * 0x3c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 785,
+      "line": 774,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)local_7c + 4) == 3) {",
@@ -2830,15 +2834,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 796,
+      "line": 785,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pCVar23 = &local_188->min + *(int *)((int)pvVar30 + 0x18);",
+      "text": "pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x18);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 808,
+      "line": 794,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((((float)0.20000000000000001 < ABS(local_20c)) ||",
@@ -2846,7 +2850,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 809,
+      "line": 795,
       "match": "ABS",
       "severity": "mild",
       "text": "((float)0.20000000000000001 < ABS(local_208))) ||",
@@ -2854,7 +2858,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 810,
+      "line": 796,
       "match": "ABS",
       "severity": "mild",
       "text": "((float)0.20000000000000001 < ABS(local_204))) break;",
@@ -2862,15 +2866,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 814,
+      "line": 800,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "pvVar30 = (void *)((int)pvVar30 + 0xc);",
+      "text": "pvVar35 = (void *)((int)pvVar35 + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 820,
+      "line": 806,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "((*(int *)((int)local_7c + 0xc) < 0 ||",
@@ -2878,7 +2882,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 822,
+      "line": 808,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(float *)(*(int *)((int)local_7c + 0xc) * 4 + (int)local_174))))) {",
@@ -2886,7 +2890,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 831,
+      "line": 817,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "local_7c = (void *)((int)local_7c + 0x3c);",
@@ -2894,15 +2898,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 837,
+      "line": 823,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar25 = *(int *)((int)local_184 + local_11c * 0x3c + 0xc);",
+      "text": "iVar31 = *(int *)((int)local_184 + local_11c * 0x3c + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 838,
+      "line": 824,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)local_184 + local_11c * 0x3c + 0xc) = local_124;",
@@ -2910,95 +2914,63 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 899,
+      "line": 885,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)pvVar30 + 4) == 3) {",
+      "text": "if (*(int *)((int)pvVar35 + 4) == 3) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 900,
+      "line": 886,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar15 = *(int *)((int)pvVar30 + 8);",
+      "text": "iVar20 = *(int *)((int)pvVar35 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 901,
+      "line": 887,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar19 = *(int *)((int)pvVar30 + 0xc);",
+      "text": "iVar24 = *(int *)((int)pvVar35 + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 920,
+      "line": 906,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "pvVar30 = (void *)((int)pvVar30 + 0x3c);",
+      "text": "pvVar35 = (void *)((int)pvVar35 + 0x3c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 949,
+      "line": 933,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "auStack_2dc[1] = (ushort)*(uint *)((int)puVar18 + 6);",
+      "text": "uStack_2d8 = (ushort)((uint)*(uint *)((int)puVar23 + 6) >> 0x10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 950,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "auStack_2dc[2] = (ushort)((uint)*(uint *)((int)puVar18 + 6) >> 0x10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 952,
+      "line": 934,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "*(ushort *)((int)puVar18 + (uint)bVar34 * -8 + 10);",
+      "text": "uVar1 = *(ushort *)((int)puVar23 + 10);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 962,
+      "line": 945,
       "match": "CONCAT22",
       "severity": "mild",
-      "text": "puVar29[1] = CONCAT22(auStack_2dc[1],auStack_2dc[0]);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 963,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "puVar29[2] = CONCAT22(auStack_2dc[3],auStack_2dc[2]);",
+      "text": "puVar34[2] = CONCAT22(uVar1,uStack_2d8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 967,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*piVar24 = *(int *)((int)local_f0 + local_18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 968,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)local_f0 + local_18) = iVar15;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1039,
+      "line": 1022,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "local_c8 = (short *)((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).",
@@ -3006,7 +2978,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1047,
+      "line": 1030,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "local_c0 = (short *)((int)&(this_ptr->tri_data_ptr[0]->",
@@ -3014,111 +2986,79 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1120,
+      "line": 1098,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "auStack_2f0[1] = (ushort)*(uint *)((int)puVar18 + 6);",
+      "text": "uStack_2ec = (ushort)((uint)*(uint *)((int)puVar23 + 6) >> 0x10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1122,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "(ushort)((uint)*(uint *)((int)puVar18 + 6) >> 0x10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1124,
+      "line": 1099,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "*(ushort *)((int)puVar18 + (uint)bVar34 * -8 + 10);",
+      "text": "uVar1 = *(ushort *)((int)puVar23 + 10);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1135,
+      "line": 1110,
       "match": "CONCAT22",
       "severity": "mild",
-      "text": "puVar29[1] = CONCAT22(auStack_2f0[1],auStack_2f0[0]);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1136,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "puVar29[2] = CONCAT22(auStack_2f0[3],auStack_2f0[2]);",
+      "text": "puVar34[2] = CONCAT22(uVar1,uStack_2ec);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1140,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*piVar24 = *(int *)((int)local_f0 + local_18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1141,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)local_f0 + local_18) = iVar15;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1180,
+      "line": 1154,
       "match": "(SInputFace *)((int)",
       "severity": "mild",
-      "text": "pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar34 * -8 + 4);",
+      "text": "pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar39 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1181,
+      "line": 1155,
       "match": "(SInputFace *)((int)",
       "severity": "mild",
-      "text": "pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar34 * -8 + 4);",
+      "text": "pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar39 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1184,
+      "line": 1158,
       "match": "(SInputFace *)((int)",
       "severity": "mild",
-      "text": "pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar34 * -2 + 1);",
+      "text": "pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar39 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1185,
+      "line": 1159,
       "match": "(SInputFace *)((int)",
       "severity": "mild",
-      "text": "pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar34 * -2 + 1);",
+      "text": "pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar39 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1203,
+      "line": 1177,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar35 = (int *)((int)piVar35 + (uint)bVar34 * -2 + 1);",
+      "text": "piVar35 = (int *)((int)piVar35 + (uint)bVar39 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1205,
+      "line": 1179,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar24 = (int *)((int)piVar24 + (uint)bVar34 * -2 + 1);",
+      "text": "piVar30 = (int *)((int)piVar30 + (uint)bVar39 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1238,
+      "line": 1212,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (((*(int *)((int)local_4c + 4) == 3) &&",
@@ -3126,7 +3066,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1239,
+      "line": 1213,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(local_3c == *(int *)((int)local_4c + 8))) &&",
@@ -3134,7 +3074,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1240,
+      "line": 1214,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(*(int *)((int)local_4c + 0xc) < 0)) {",
@@ -3142,63 +3082,63 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1244,
+      "line": 1218,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar25 = *(int *)((int)local_4c + 0x14);",
+      "text": "iVar31 = *(int *)((int)local_4c + 0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1281,
+      "line": 1255,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pCVar23 = &local_188->min + *(int *)((int)pvVar37 + 0x18);",
+      "text": "pCVar28 = &local_188->min + *(int *)((int)pvVar37 + 0x18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1291,
+      "line": 1265,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "local_218 = *(float *)((int)pSVar8->bone_weights + iVar15 + 0xc) -",
+      "text": "local_218 = *(float *)((int)pSVar9->bone_weights + iVar20 + 0xc) -",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1293,
+      "line": 1267,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "local_214 = *(float *)((int)pSVar8->bone_weights + iVar15 + 0x10) -",
+      "text": "local_214 = *(float *)((int)pSVar9->bone_weights + iVar20 + 0x10) -",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1295,
+      "line": 1269,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "local_210 = *(float *)((int)pSVar8->bone_weights + iVar15 + 0x14) -",
+      "text": "local_210 = *(float *)((int)pSVar9->bone_weights + iVar20 + 0x14) -",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1312,
+      "line": 1286,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar25 = *(int *)((int)pvVar37 + 0x1c) >> 8;",
+      "text": "iVar31 = *(int *)((int)pvVar37 + 0x1c) >> 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1313,
+      "line": 1287,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar15 = *(int *)((int)pvVar37 + 0x20) >> 8;",
+      "text": "iVar20 = *(int *)((int)pvVar37 + 0x20) >> 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1326,
+      "line": 1300,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "pvVar37 = (void *)((int)pvVar37 + 0xc);",
@@ -3206,7 +3146,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1338,
+      "line": 1312,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (((*(int *)((int)local_50 + 4) == 3) &&",
@@ -3214,7 +3154,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1339,
+      "line": 1313,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(local_3c != *(int *)((int)local_50 + 8))) &&",
@@ -3222,7 +3162,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1340,
+      "line": 1314,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(*(int *)((int)local_50 + 0xc) < 0)) {",
@@ -3230,39 +3170,39 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1347,
+      "line": 1321,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pCVar23 = &local_188->min + *(int *)((int)pvVar30 + 0x18);",
+      "text": "pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1353,
+      "line": 1327,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)local_50 + (iVar25 % 3) * 0xc + 0x18);",
+      "text": "*(int *)((int)local_50 + (iVar31 % 3) * 0xc + 0x18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1360,
+      "line": 1331,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "pvVar30 = (void *)((int)pvVar30 + 0xc);",
+      "text": "pvVar35 = (void *)((int)pvVar35 + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1364,
+      "line": 1337,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "} while (pvVar30 != (void *)((int)local_b4 + 0x24));",
+      "text": "} while (pvVar35 != (void *)((int)local_b4 + 0x24));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1366,
+      "line": 1339,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_ac = *(int *)((int)local_50 + 8);",
@@ -3270,7 +3210,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1373,
+      "line": 1346,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "local_50 = (void *)((int)local_50 + 0x3c);",
@@ -3278,7 +3218,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1386,
+      "line": 1359,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "local_4c = (void *)((int)local_4c + 0x3c);",
@@ -3286,7 +3226,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 1412,
+      "line": 1385,
       "match": "local_188[-1].",
       "severity": "mild",
       "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].max.z);",
@@ -3294,7 +3234,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 1449,
+      "line": 1422,
       "match": "local_188[-1].",
       "severity": "mild",
       "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].max.z);",

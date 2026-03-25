@@ -1,6 +1,6 @@
 // Name: shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
 // Address: 005d77a0
-// Address Range: [[005d77a0, 005d7dfb]]
+// Address Range: [[005d77a0, 005d7dfb] [0060cb4a, 0060cb68]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_superopt_cpp_optimizeCubeTriList_FUN_005d77a0(void)
 
@@ -39,7 +39,6 @@ void __cdecl shape_superopt_cpp_optimizeCubeTriList_FUN_005d77a0(void)
   int local_14;
   char cVar1;
   
-  bVar7 = 0;
   shape_design_c_removeDegeneratePolygons_FUN_00465310();
   if ((g_PolygonCount < 1) || (g_VertexCount < 1)) {
     return;
@@ -161,9 +160,8 @@ LAB_005d7a1a:
           ;
           *puVar3 = local_168.parent_obj;
           puVar3[1] = local_168.vertex_idx_0;
-          puVar3[(uint)bVar7 * -2 + 2] = *(uint *)((int)&local_168 + (uint)bVar7 * -8 + 8);
-          (puVar3 + (uint)bVar7 * -2 + 2)[(uint)bVar7 * -2 + 1] =
-               *(uint *)((int)&local_168 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 0xc);
+          puVar3[2] = local_168.vertex_idx_1;
+          puVar3[3] = local_168.vertex_idx_2;
           __arr_op
                     (puVar3 + 4,local_168.uv_coords,3,0x10,shape_superopt_cpp_CP2D_copy_FUN_005d8330
                     );

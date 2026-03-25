@@ -499,7 +499,7 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
     # Collect all branch targets for safety validation
     jump_targets = collect_jump_targets(instructions)
 
-    movsd_groups = find_movsd_groups(instructions, min_count=2)
+    movsd_groups = find_movsd_groups(instructions, min_count=1)
     rep_groups = find_rep_movsd_groups(instructions)
 
     all_groups = []

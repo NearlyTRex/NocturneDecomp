@@ -345,13 +345,11 @@ section .text
     MOV EDI,EDX                         ; 005d7b1a
     PUSH EAX                            ; 005d7b1c
     LEA EAX,[EDX + 0x10]                ; 005d7b1d
-    LEA EDI,[EDI + 0x4]                 ; 005d7b20
-    PUSH EAX                            ; 005d7b23
-    MOVSD ES:EDI,ESI                    ; 005d7b24
-    MOVSD ES:EDI,ESI                    ; 005d7b25
-    MOVSD ES:EDI,ESI                    ; 005d7b26
+    JMP 0x0060cb4a                      ; 005d7b20
+        ;   XREF to: 0060cb4a (UNCONDITIONAL_JUMP)  ; LAB_0060cb4a
     CALL crt_memory.c___arr_op_FUN_006020c2 ; 005d7b27
         ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arr_op_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
+        ;   Label: LAB_005d7b27
     ADD ESP,0x14                        ; 005d7b2c
     MOV EDX,dword ptr [ESP + 0x134]     ; 005d7b2f
     MOV EAX,dword ptr [ESP + 0x40]      ; 005d7b36
@@ -574,4 +572,17 @@ section .text
     MOV dword ptr [0x03f6bbe4],EBX      ; 005d7df1 | INT_03f6bbe4
     JMP 0x005d7d1c                      ; 005d7df7
         ;   XREF to: 005d7d1c (UNCONDITIONAL_JUMP)  ; LAB_005d7d1c
+    LEA EDI,[EDI + 0x4]                 ; 0060cb4a
+        ;   Label: LAB_0060cb4a
+    PUSH EAX                            ; 0060cb4d
+    MOV ECX,dword ptr [ESI]             ; 0060cb4e
+    MOV dword ptr [EDI],ECX             ; 0060cb50
+    MOV ECX,dword ptr [ESI + 0x4]       ; 0060cb52
+    MOV dword ptr [EDI + 0x4],ECX       ; 0060cb55
+    MOV ECX,dword ptr [ESI + 0x8]       ; 0060cb58
+    MOV dword ptr [EDI + 0x8],ECX       ; 0060cb5b
+    ADD ESI,0xc                         ; 0060cb5e
+    ADD EDI,0xc                         ; 0060cb61
+    JMP 0x005d7b27                      ; 0060cb64
+        ;   XREF to: 005d7b27 (UNCONDITIONAL_JUMP)  ; LAB_005d7b27
 

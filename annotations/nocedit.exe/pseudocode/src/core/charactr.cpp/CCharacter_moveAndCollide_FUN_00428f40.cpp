@@ -1,6 +1,6 @@
 // Name: core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
 // Address: 00428f40
-// Address Range: [[00428f40, 004297d9]]
+// Address Range: [[00428f40, 004297d9] [0060cad8, 0060caf9]]
 // Convention: __cdecl
 // Signature: void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter *this_ptr,CVector3f *velocity)
 
@@ -15,18 +15,19 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
   float fVar6;
   float fVar7;
   float fVar8;
-  CDemonSet *pCVar9;
+  uint uVar10;
+  CDemonSet *pCVar11;
   CVector3f *pCVar7;
   CVector3f *pCVar8;
-  float fVar10;
+  float fVar12;
   SMotion *str1;
-  int iVar12;
-  CVector3f *pCVar13;
+  int iVar14;
+  CVector3f *pCVar15;
   uint uVar9;
   CVector3f *pCVar10;
   int iVar11;
-  CVector3f *pCVar14;
-  CVector3f *pCVar15;
+  CVector3f *pCVar16;
+  CVector3f *pCVar17;
   SMotion *pSVar12;
   int iVar13;
   byte bVar14;
@@ -81,15 +82,15 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
     pUVar2 = &(this_ptr->base).orient;
     (this_ptr->base).platform_position_delta.y = (this_ptr->base).platform_position_delta.z;
     (this_ptr->base).platform_position_delta.x = (this_ptr->base).platform_position_delta.y;
-    pCVar14 = &(this_ptr->base).platform_orientation_delta;
-    (pUVar2->vec).x = pCVar14->x + (pUVar2->vec).x;
+    pCVar16 = &(this_ptr->base).platform_orientation_delta;
+    (pUVar2->vec).x = pCVar16->x + (pUVar2->vec).x;
     (this_ptr->base).orient.vec.y =
          (this_ptr->base).platform_orientation_delta.y + (this_ptr->base).orient.vec.y;
     (this_ptr->base).orient.vec.z =
          (this_ptr->base).platform_orientation_delta.z + (this_ptr->base).orient.vec.z;
     (this_ptr->base).platform_orientation_delta.z = 0.0;
     (this_ptr->base).platform_orientation_delta.y = (this_ptr->base).platform_orientation_delta.z;
-    pCVar14->x = (this_ptr->base).platform_orientation_delta.y;
+    pCVar16->x = (this_ptr->base).platform_orientation_delta.y;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   }
   g_LastCollisionActor = (CDemonActor *)0x0;
@@ -105,6 +106,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
   if ((this_ptr->model).model_name[0] != '\0') {
     str1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&(this_ptr->model).motion_controller);
+    uVar10 = "noCollision"._8_4_;
     uVar9 = 0xffffffff;
     pSVar12 = str1;
     do {
@@ -118,14 +120,11 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
     local_84[1] = "noCollision"[1];
     local_84[2] = "noCollision"[2];
     local_84[3] = "noCollision"[3];
-    afStack_80[(uint)bVar14 * -2] = *(float *)("noCollision" + (uint)bVar14 * -8 + 4);
-    afStack_80[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1] =
-         *(float *)("noCollision" + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 8);
     iVar13 = 0;
-    if (-1 < (int)(~uVar9 - 0xc)) {
+    if (-1 < (int)"noCollision"._8_4_) {
       do {
-        iVar12 = _strnicmp(str1->motion_name,local_84,0xb);
-        if (iVar12 == 0) {
+        iVar14 = _strnicmp(str1->motion_name,local_84,0xb);
+        if (iVar14 == 0) {
           (this_ptr->velocity).z = 0.0;
           (this_ptr->velocity).y = (this_ptr->velocity).z;
           (this_ptr->velocity).x = (this_ptr->velocity).y;
@@ -133,7 +132,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
         }
         iVar13 = iVar13 + 1;
         str1 = (SMotion *)(str1->motion_name + 1);
-      } while (iVar13 <= (int)(~uVar9 - 0xc));
+      } while (iVar13 <= (int)uVar10);
     }
   }
   iVar11 = 0;
@@ -162,9 +161,9 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
   local_38 = 0;
   fVar7 = velocity->y;
   local_24 = this_ptr->collision_test_points + 1;
-  pCVar14 = this_ptr->collision_test_normals + 2;
+  pCVar16 = this_ptr->collision_test_normals + 2;
   local_2c = this_ptr->collision_test_normals + 1;
-  pCVar15 = this_ptr->collision_test_points + 2;
+  pCVar17 = this_ptr->collision_test_points + 2;
   do {
     local_a8.y = 0.0;
     local_34 = this_ptr->collision_cylinder_top * this_ptr->size_scale;
@@ -196,89 +195,88 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
       local_24->y = g_TempNormal1.y;
       local_24->z = g_TempNormal1.z;
     }
-    if (pCVar15 != &g_TempNormal2) {
-      pCVar15->x = g_TempNormal2.x;
-      pCVar15->y = g_TempNormal2.y;
-      pCVar15->z = g_TempNormal2.z;
+    if (pCVar17 != &g_TempNormal2) {
+      pCVar17->x = g_TempNormal2.x;
+      pCVar17->y = g_TempNormal2.y;
+      pCVar17->z = g_TempNormal2.z;
     }
     if (0.0 <= local_c0) {
       if (1.0 < local_c0) {
         local_c0 = 1.0;
       }
-      fVar10 = (this_ptr->base).location.position.y;
+      fVar12 = (this_ptr->base).location.position.y;
       (pCVar2->position).x = (pCVar2->position).x + local_a8.x * local_c0;
       fVar4 = (this_ptr->base).location.position.z;
-      (this_ptr->base).location.position.y = fVar10 + local_a8.y * local_c0;
-      pCVar9 = g_CDemonSetPtr;
+      (this_ptr->base).location.position.y = fVar12 + local_a8.y * local_c0;
+      pCVar11 = g_CDemonSetPtr;
       (this_ptr->base).location.position.z = fVar4 + local_a8.z * local_c0;
-      afStack_80[2] = (pCVar9->collision_normal).x;
-      afStack_80[3] = (pCVar9->collision_normal).y;
-      afStack_80[4] = (pCVar9->collision_normal).z;
-      fVar10 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+      afStack_80[2] = (pCVar11->collision_normal).x;
+      afStack_80[4] = (pCVar11->collision_normal).z;
+      fVar12 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
                          (&this_ptr->base,this_ptr->collision_cylinder_height,&local_9c);
       bVar4 = false;
-      pCVar13 = this_ptr->collision_test_normals + local_38 * 3;
-      this_ptr->closest_distance_threshold = fVar10;
-      if (pCVar13 != &g_TempNormal0) {
-        pCVar13->x = g_TempNormal0.x;
-        pCVar13->y = g_TempNormal0.y;
-        pCVar13->z = g_TempNormal0.z;
+      pCVar15 = this_ptr->collision_test_normals + local_38 * 3;
+      this_ptr->closest_distance_threshold = fVar12;
+      if (pCVar15 != &g_TempNormal0) {
+        pCVar15->x = g_TempNormal0.x;
+        pCVar15->y = g_TempNormal0.y;
+        pCVar15->z = g_TempNormal0.z;
       }
       if (local_2c != &g_TempNormal1) {
         local_2c->x = g_TempNormal1.x;
         local_2c->y = g_TempNormal1.y;
         local_2c->z = g_TempNormal1.z;
       }
-      if (pCVar14 != &g_TempNormal2) {
-        pCVar14->x = g_TempNormal2.x;
-        pCVar14->y = g_TempNormal2.y;
-        pCVar14->z = g_TempNormal2.z;
+      if (pCVar16 != &g_TempNormal2) {
+        pCVar16->x = g_TempNormal2.x;
+        pCVar16->y = g_TempNormal2.y;
+        pCVar16->z = g_TempNormal2.z;
       }
       if ((this_ptr->base).location.position.y < this_ptr->closest_distance_threshold) {
         (this_ptr->base).location.position.y = this_ptr->closest_distance_threshold;
         local_b0 = (this_ptr->base).location.position.y;
       }
       if ((float)0.90000000000000002 < local_c0) break;
-      fVar10 = SQRT(afStack_80[4] * afStack_80[4] + afStack_80[2] * afStack_80[2]);
+      fVar12 = SQRT(afStack_80[4] * afStack_80[4] + afStack_80[2] * afStack_80[2]);
       afStack_80[3] = 0.0;
-      if (0.0 < fVar10) {
-        fVar10 = 1.0 / fVar10;
-        afStack_80[2] = afStack_80[2] * fVar10;
-        afStack_80[3] = fVar10 * 0.0;
-        afStack_80[4] = afStack_80[4] * fVar10;
+      if (0.0 < fVar12) {
+        fVar12 = 1.0 / fVar12;
+        afStack_80[2] = afStack_80[2] * fVar12;
+        afStack_80[3] = fVar12 * 0.0;
+        afStack_80[4] = afStack_80[4] * fVar12;
       }
-      fVar10 = (float)0.90000000000000002 - local_c0;
-      local_a8.x = local_a8.x * fVar10;
-      local_a8.y = local_a8.y * fVar10;
-      local_a8.z = local_a8.z * fVar10;
-      fVar10 = afStack_80[4] * local_a8.z + afStack_80[2] * local_a8.x + afStack_80[3] * local_a8.y;
-      if (0.0 <= fVar10) break;
-      fVar10 = fVar10 * (float)1.2;
-      local_a8.x = local_a8.x - afStack_80[2] * fVar10;
-      local_a8.y = local_a8.y - afStack_80[3] * fVar10;
-      local_a8.z = local_a8.z - afStack_80[4] * fVar10;
+      fVar12 = (float)0.90000000000000002 - local_c0;
+      local_a8.x = local_a8.x * fVar12;
+      local_a8.y = local_a8.y * fVar12;
+      local_a8.z = local_a8.z * fVar12;
+      fVar12 = afStack_80[4] * local_a8.z + afStack_80[2] * local_a8.x + afStack_80[3] * local_a8.y;
+      if (0.0 <= fVar12) break;
+      fVar12 = fVar12 * (float)1.2;
+      local_a8.x = local_a8.x - afStack_80[2] * fVar12;
+      local_a8.y = local_a8.y - afStack_80[3] * fVar12;
+      local_a8.z = local_a8.z - afStack_80[4] * fVar12;
     }
     else {
       fVar8 = local_c0 + (float)-0.01;
-      fVar10 = (g_CDemonSetPtr->collision_normal).y;
+      fVar12 = (g_CDemonSetPtr->collision_normal).y;
       fVar4 = (g_CDemonSetPtr->collision_normal).z;
       fVar5 = (this_ptr->base).location.position.y;
       (pCVar2->position).x = (pCVar2->position).x - (g_CDemonSetPtr->collision_normal).x * fVar8;
       fVar6 = (this_ptr->base).location.position.z;
-      (this_ptr->base).location.position.y = fVar5 - fVar10 * fVar8;
+      (this_ptr->base).location.position.y = fVar5 - fVar12 * fVar8;
       bVar4 = true;
       (this_ptr->base).location.position.z = fVar6 - fVar4 * fVar8;
     }
-    pCVar15 = pCVar15 + 3;
+    pCVar17 = pCVar17 + 3;
     local_24 = local_24 + 3;
-    pCVar14 = pCVar14 + 3;
+    pCVar16 = pCVar16 + 3;
     local_2c = local_2c + 3;
     local_38 = local_38 + 1;
   } while (local_38 < 3);
   if (bVar4) {
-    fVar10 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+    fVar12 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
                        (&this_ptr->base,this_ptr->collision_cylinder_height,(CVector3f *)0x0);
-    this_ptr->closest_distance_threshold = fVar10;
+    this_ptr->closest_distance_threshold = fVar12;
   }
   fVar7 = (this_ptr->base).location.position.y + fVar7;
   (this_ptr->base).location.position.y = fVar7;

@@ -14,9 +14,6 @@
 ; XREF[1]:
 ;   crt_stdlib.c_system_FUN_00602130 at 006021a0
 ;
-; Referenced Globals:
-;   undefined4 SUB_0060ca20
-;
 ; *****************************************************************************
 
 section .text
@@ -30,7 +27,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00609c9b
     PUSH EBX                            ; 00609c9f
     CALL 0x0060ca20                     ; 00609ca0
-        ;   XREF to: 0060ca20 (UNCONDITIONAL_CALL)  ; SUB_0060ca20
+        ;   XREF to: 0060ca20 (UNCONDITIONAL_CALL)  ; LAB_0060ca1d+3
     ADD ESP,0xc                         ; 00609ca5
     POP EBX                             ; 00609ca8
     RET                                 ; 00609ca9

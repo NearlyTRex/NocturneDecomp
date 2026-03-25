@@ -2,18 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 32,
-        "message": "use of undeclared identifier 'stack0x00000008'"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 34,
-        "message": "no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'"
-      },
-      {
         "category": "other",
         "column": 20,
         "line": 62,
@@ -25,15 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 106,
+    "complexity_score": 91,
     "cross_reference_count": 741,
     "function_call_count": 14,
     "global_count": 20,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 76,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_ref",
       "warning_noreturn"
     ],
     "total_lines": 274
@@ -4852,7 +4839,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined1 *"
+        "type": "va_list_t"
       },
       {
         "is_param": false,
@@ -4871,14 +4858,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0x00000008",
-      "severity": "moderate",
-      "text": "local_14 = &stack0x00000008;",
-      "type": "stack_ref"
-    },
     {
       "description": "Subroutine marked as non-returning",
       "line": 62,
