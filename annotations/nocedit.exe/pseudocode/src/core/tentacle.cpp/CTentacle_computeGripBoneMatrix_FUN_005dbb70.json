@@ -5,20 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 69,
-    "complexity_score": 145,
+    "assembly_lines": 165,
+    "complexity_score": 50,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
-    "suspect_count": 8,
+    "pseudocode_lines": 35,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many",
-      "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 119
+    "total_lines": 200
   },
   "cross_references": [
     {
@@ -40,6 +38,10 @@
       [
         "005dbb70",
         "005dbc5b"
+      ],
+      [
+        "03fc3213",
+        "03fc3340"
       ]
     ],
     "convention": "__stack_esi",
@@ -86,12 +88,12 @@
         "call_addr": "005dba57",
         "call_type": "direct",
         "caller": "core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 2,
+        "instructions_analyzed": 7,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "005db204",
@@ -105,41 +107,39 @@
         "stack_params": 1
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "declared_params": 2,
     "declared_stack_bytes": 4,
-    "estimated_params": 1
+    "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.615384615384615,
-    "instruction_count": 65,
+    "avg_pcode_per_instr": 4.5369127516778525,
+    "instruction_count": 149,
     "opcode_distribution": {
       "BOOL_NEGATE": 20,
-      "BRANCH": 3,
+      "BRANCH": 6,
       "CALL": 3,
-      "CBRANCH": 3,
-      "COPY": 56,
-      "INT_ADD": 34,
-      "INT_AND": 80,
-      "INT_CARRY": 9,
-      "INT_EQUAL": 43,
+      "COPY": 125,
+      "INT_ADD": 100,
+      "INT_AND": 98,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 58,
       "INT_LEFT": 8,
       "INT_LESS": 5,
-      "INT_MULT": 10,
+      "INT_MULT": 4,
       "INT_NOTEQUAL": 8,
       "INT_OR": 20,
       "INT_SBORROW": 5,
-      "INT_SCARRY": 9,
-      "INT_SLESS": 26,
-      "INT_SUB": 33,
-      "INT_XOR": 4,
-      "INT_ZEXT": 6,
-      "LOAD": 8,
-      "POPCOUNT": 18,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 35,
+      "INT_SUB": 24,
+      "INT_XOR": 7,
+      "LOAD": 41,
+      "POPCOUNT": 27,
       "RETURN": 1,
-      "STORE": 18
+      "STORE": 51
     },
-    "pcode_op_count": 430
+    "pcode_op_count": 676
   },
   "stack_frame": {
     "frame_size": 260,
@@ -200,65 +200,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar4 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar4 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar4 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar4 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar4 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

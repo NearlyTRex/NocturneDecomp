@@ -5,19 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 876,
-    "complexity_score": 638,
+    "assembly_lines": 1100,
+    "complexity_score": 447,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 388,
-    "suspect_count": 24,
+    "pseudocode_lines": 342,
+    "suspect_count": 10,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 1264
+    "total_lines": 1442
   },
   "cross_references": [
     {
@@ -33,6 +32,10 @@
       [
         "005214c0",
         "005222ed"
+      ],
+      [
+        "03fc1b1e",
+        "03fc1e10"
       ]
     ],
     "convention": "__cdecl",
@@ -160,15 +163,15 @@
     "estimated_params": 4
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.020125786163522,
-    "instruction_count": 795,
+    "avg_pcode_per_instr": 4.606458123107972,
+    "instruction_count": 991,
     "opcode_distribution": {
       "BOOL_NEGATE": 6,
       "BOOL_OR": 6,
-      "BRANCH": 11,
+      "BRANCH": 18,
       "CALL": 29,
-      "CBRANCH": 30,
-      "COPY": 1915,
+      "CBRANCH": 23,
+      "COPY": 2076,
       "FLOAT2FLOAT": 150,
       "FLOAT_ABS": 6,
       "FLOAT_ADD": 13,
@@ -181,27 +184,26 @@
       "FLOAT_SQRT": 2,
       "FLOAT_SUB": 15,
       "INT2FLOAT": 13,
-      "INT_ADD": 498,
-      "INT_AND": 141,
-      "INT_CARRY": 30,
-      "INT_EQUAL": 117,
+      "INT_ADD": 652,
+      "INT_AND": 183,
+      "INT_CARRY": 44,
+      "INT_EQUAL": 152,
       "INT_LEFT": 24,
       "INT_LESS": 18,
-      "INT_MULT": 14,
       "INT_NOTEQUAL": 30,
       "INT_OR": 30,
       "INT_SBORROW": 18,
-      "INT_SCARRY": 30,
-      "INT_SLESS": 55,
-      "INT_SUB": 145,
-      "INT_XOR": 6,
-      "INT_ZEXT": 38,
-      "LOAD": 204,
-      "POPCOUNT": 55,
+      "INT_SCARRY": 44,
+      "INT_SLESS": 76,
+      "INT_SUB": 124,
+      "INT_XOR": 13,
+      "INT_ZEXT": 24,
+      "LOAD": 281,
+      "POPCOUNT": 76,
       "RETURN": 1,
-      "STORE": 276
+      "STORE": 353
     },
-    "pcode_op_count": 3991
+    "pcode_op_count": 4565
   },
   "stack_frame": {
     "frame_size": 1208,
@@ -715,7 +717,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 87,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS((float)local_1a4.A) <= ABS((float)local_1a4.B)) ||",
@@ -723,7 +725,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 87,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS((float)local_1a4.A) <= ABS((float)local_1a4.B)) ||",
@@ -731,7 +733,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 88,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS((float)local_1a4.A) <= ABS((float)local_1a4.C))) {",
@@ -739,7 +741,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 88,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS((float)local_1a4.A) <= ABS((float)local_1a4.C))) {",
@@ -747,7 +749,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 89,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS((float)local_1a4.B) <= ABS((float)local_1a4.A)) ||",
@@ -755,7 +757,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 89,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS((float)local_1a4.B) <= ABS((float)local_1a4.A)) ||",
@@ -763,7 +765,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 90,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS((float)local_1a4.B) <= ABS((float)local_1a4.C))) {",
@@ -771,7 +773,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 90,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS((float)local_1a4.B) <= ABS((float)local_1a4.C))) {",
@@ -779,7 +781,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 119,
+      "line": 115,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar1 = SQRT(local_18c * local_18c + local_194 * local_194 + local_190 * local_190);",
@@ -787,123 +789,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 139,
+      "line": 135,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar2 = SQRT(local_15c * local_15c + local_164 * local_164 + local_160 * local_160);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 175,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 176,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 185,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 186,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 192,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 193,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 202,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 205,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 211,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 214,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 221,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 222,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 340,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 343,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
     }
   ]
 }

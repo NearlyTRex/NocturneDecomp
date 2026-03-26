@@ -5,12 +5,12 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6452
-Successful: 5913 (91.6%)
-Failed: 539
+Successful: 5912 (91.6%)
+Failed: 540
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                            977
+  other                            978
   format_error                     782
   incompatible_types               206
   undeclared_identifier            122
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (977 errors)
+CATEGORY: other (978 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -41,9 +41,9 @@ CATEGORY: other (977 errors)
   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
     Line 448: C-style cast from 'CVector3i *' to 'float' is not allowed
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
-    Line 399: C-style cast from 'CWeapon *' to 'float' is not allowed
+    Line 309: C-style cast from 'CWeapon *' to 'float' is not allowed
   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
-    Line 45: C-style cast from 'UOrientationVector *' to 'float' is not allowed
+    Line 42: C-style cast from 'UOrientationVector *' to 'float' is not allowed
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
     Line 181: C-style cast from 'char' to 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)') is not allowed
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
@@ -172,6 +172,8 @@ CATEGORY: other (977 errors)
     Line 18: member reference base type 'char[16]' is not a structure or union
   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940
     Line 57: member reference base type 'char[256]' is not a structure or union
+  engine_model.c_getMRGLBounds_FUN_00528140
+    Line 181: member reference base type 'char[80]' is not a structure or union
   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
     Line 109: member reference base type 'const char[12]' is not a structure or union
   core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
@@ -281,7 +283,7 @@ CATEGORY: other (977 errors)
   shape_superopt.cpp_CComplexPolygon_computeWindingNormal_FUN_005cbb40
     Line 91: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
-    Line 131: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
+    Line 127: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
     Line 309: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10
@@ -365,7 +367,7 @@ CATEGORY: other (977 errors)
   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
     Line 50: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-    Line 221: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 220: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
     Line 30: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_sound.cpp_CSound_process_FUN_005b2fd0
@@ -610,7 +612,7 @@ CATEGORY: format_error (782 errors)
   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120
     Line 82: format specifies type 'char *' but the argument has type 'CLightActor *' [-Werror,-Wformat]
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
-    Line 505: format specifies type 'char *' but the argument has type 'CLightActor *' [-Werror,-Wformat]
+    Line 406: format specifies type 'char *' but the argument has type 'CLightActor *' [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
     Line 129: format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]
   core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0
@@ -752,7 +754,7 @@ CATEGORY: format_error (782 errors)
   core_motion.cpp_CMotionList_save_FUN_0052d170
     Line 37: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-    Line 260: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
+    Line 259: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
   core_event.cpp_CEventList_render_FUN_004addf0
     Line 39: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
   core_event.cpp_CEventList_saveState_FUN_004b1380
@@ -774,7 +776,7 @@ CATEGORY: format_error (782 errors)
   core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730
     Line 50: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
-    Line 204: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
+    Line 202: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   core_script.cpp_CScript_executeContextAction_FUN_00565d00
     Line 35: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0
@@ -1294,7 +1296,7 @@ CATEGORY: undeclared_identifier (122 errors)
   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
     Line 145: use of undeclared identifier 'stack0x00000000'
   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
-    Line 239: use of undeclared identifier 'stack0x00000000'
+    Line 230: use of undeclared identifier 'stack0x00000000'
   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990
     Line 49: use of undeclared identifier 'stack0x00000000'
   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0
@@ -1306,7 +1308,7 @@ CATEGORY: undeclared_identifier (122 errors)
   core_sound.cpp_resetTrainSounds_FUN_005b26f0
     Line 12: use of undeclared identifier 'stack0x00000000'
   core_sound.cpp_updateListeners_FUN_005b1870
-    Line 198: use of undeclared identifier 'stack0x00000000'
+    Line 202: use of undeclared identifier 'stack0x00000000'
   shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     Line 60: use of undeclared identifier 'stack0x00000000'
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950

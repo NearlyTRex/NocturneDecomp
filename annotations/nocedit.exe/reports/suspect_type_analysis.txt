@@ -4,19 +4,19 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6927 ( 42.7%)
-  pointer_cast                    4858 ( 30.0%)
-  unknown_field                    897 (  5.5%)
+  decompiler_intrinsic            6927 ( 43.4%)
+  pointer_cast                    4601 ( 28.8%)
+  unknown_field                    898 (  5.6%)
   special_crt_function             439 (  2.7%)
   stack_param                      340 (  2.1%)
   unnamed_param                    320 (  2.0%)
   fpu_register_input               311 (  1.9%)
-  nonstandard_int                  267 (  1.6%)
-  warning_inlined_function         264 (  1.6%)
+  nonstandard_int                  267 (  1.7%)
+  warning_inlined_function         264 (  1.7%)
   stack_ref                        237 (  1.5%)
-  unresolved_funcptr               169 (  1.0%)
+  unresolved_funcptr               169 (  1.1%)
   warning_type_propagation         132 (  0.8%)
-  param_count_too_few              119 (  0.7%)
+  param_count_too_few              120 (  0.8%)
   unaffected_reg                   106 (  0.7%)
   sub84_truncation                 100 (  0.6%)
   stack_alignment_array             97 (  0.6%)
@@ -24,12 +24,12 @@ SUSPECT TYPE COUNTS
   warning_unreachable               84 (  0.5%)
   register_param                    69 (  0.4%)
   suspect_float                     50 (  0.3%)
-  param_count_too_many              46 (  0.3%)
-  unknown_type                      40 (  0.2%)
+  param_count_too_many              44 (  0.3%)
+  unknown_type                      40 (  0.3%)
   mmx_assembly                      34 (  0.2%)
   extra_output                      29 (  0.2%)
-  format_string_mismatch            24 (  0.1%)
-  undefined_ram                     24 (  0.1%)
+  format_string_mismatch            24 (  0.2%)
+  undefined_ram                     24 (  0.2%)
   undefined_data                    21 (  0.1%)
   byvalue_struct_passing            21 (  0.1%)
   undefined_type                    15 (  0.1%)
@@ -37,13 +37,13 @@ SUSPECT TYPE COUNTS
   warning_jumptable                  9 (  0.1%)
   warning_indirect_jump              9 (  0.1%)
   nan_function_artifact              9 (  0.1%)
-  fnstsw_flag_artifact               8 (  0.0%)
+  fnstsw_flag_artifact               8 (  0.1%)
   displaced_global_access            6 (  0.0%)
+  warning_deadcode_restart           5 (  0.0%)
   unresolved_register                5 (  0.0%)
   warning_unmapped_variable          4 (  0.0%)
   warning_noreturn                   4 (  0.0%)
   warning_max_restarts               4 (  0.0%)
-  warning_deadcode_restart           4 (  0.0%)
   special_cpu_detection              4 (  0.0%)
   warning_spacebase                  3 (  0.0%)
   warning_overlapping_globals        3 (  0.0%)
@@ -96,30 +96,30 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (4858 occurrences)
+TYPE: pointer_cast (4601 occurrences)
 ====================================================================================================
 
 Unique patterns:
   1425x  (uint *)((int)
   1232x  (int *)((int)
-   325x  (SRenderVertex *)((int)
-   289x  (float *)((int)
-   289x  (CMatrix3x4f *)((int)
-   208x  (double *)((int)
+   301x  (float *)((int)
+   220x  (SRenderVertex *)((int)
+   200x  (double *)((int)
    189x  (void *)((int)
    170x  (byte *)((int)
+   142x  (CMatrix3x4f *)((int)
     88x  (ushort *)((int)
     70x  (char *)((int)
     61x  (short *)((int)
     34x  (SShapeEditorPolygon *)((int)
-    26x  (CMatrix3x3f *)((int)
     22x  (SMRGLHeaderExtended *)((int)
+    22x  (CMatrix3x3f *)((int)
     20x  (CVector3f *)((int)
     16x  (SScriptXRef *)((int)
-    16x  (CVector3d *)((int)
     14x  (HGLOBAL *)((int)
     14x  (SVoxelGrid *)((int)
     14x  (SExpandedEdge *)((int)
+    13x  (SMRGLHeaderPrimitive *)((int)
 
 Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
@@ -132,7 +132,7 @@ Example functions:
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar1) <...
 
 ====================================================================================================
-TYPE: unknown_field (897 occurrences)
+TYPE: unknown_field (898 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -603,12 +603,12 @@ Example functions:
     /* WARNING: Type propagation algorithm not settling */...
 
 ====================================================================================================
-TYPE: param_count_too_few (119 occurrences)
+TYPE: param_count_too_few (120 occurrences)
 ====================================================================================================
 
 Unique patterns:
     21x  declared:1 vs estimated:2
-    11x  declared:2 vs estimated:3
+    12x  declared:2 vs estimated:3
     11x  declared:0 vs estimated:4
      8x  declared:4 vs estimated:5
      8x  declared:0 vs estimated:2
@@ -1036,17 +1036,18 @@ Example functions:
     UStack_84.vec.y = 1.4013e-45;...
 
 ====================================================================================================
-TYPE: param_count_too_many (46 occurrences)
+TYPE: param_count_too_many (44 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    19x  declared:2 vs estimated:1
+    17x  declared:2 vs estimated:1
     15x  declared:3 vs estimated:2
-     7x  declared:4 vs estimated:3
+     6x  declared:4 vs estimated:3
      1x  declared:6 vs estimated:3
      1x  declared:6 vs estimated:5
      1x  declared:1 vs estimated:0
      1x  declared:2 vs estimated:0
+     1x  declared:4 vs estimated:2
      1x  declared:5 vs estimated:1
 
 Example functions:
@@ -1091,10 +1092,8 @@ Example functions:
   core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
     Function declares 3 params but call sites push 2 (1 extra)...
   core_xform.cpp_lerpMatrix3x4_FUN_005f7140
-    Function declares 4 params but call sites push 3 (1 extra)...
+    Function declares 4 params but call sites push 2 (2 extra)...
   core_xform.cpp_quaternionFromAngleY_FUN_005f79f0
-    Function declares 2 params but call sites push 1 (1 extra)...
-  core_xform.cpp_buildRotationX_FUN_005f6c40
     Function declares 2 params but call sites push 1 (1 extra)...
   core_xform.cpp_negateFirstComponent_FUN_005f75e0
     Function declares 2 params but call sites push 1 (1 extra)...
@@ -1110,6 +1109,8 @@ Example functions:
     Function declares 2 params but call sites push 1 (1 extra)...
   core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70
     Function declares 3 params but call sites push 2 (1 extra)...
+  core_xform.cpp_slerpQuaternion_FUN_005f77e0
+    Function declares 4 params but call sites push 3 (1 extra)...
 
 ====================================================================================================
 TYPE: unknown_type (40 occurrences)
@@ -1618,6 +1619,25 @@ Example functions:
     // 005f2f42: MOV dword ptr [EDX*0x4 + 0x3f96bc4],EBX  ; g_UseMultimediaTimer...
 
 ====================================================================================================
+TYPE: warning_deadcode_restart (5 occurrences)
+====================================================================================================
+
+Unique patterns:
+     5x  WARNING: Restarted to delay deadcode elimination
+
+Example functions:
+  engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0
+    /* WARNING: Restarted to delay deadcode elimination for space: ram */...
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
+    /* WARNING: Restarted to delay deadcode elimination for space: stack */...
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
+    /* WARNING: Restarted to delay deadcode elimination for space: stack */...
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
+    /* WARNING: Restarted to delay deadcode elimination for space: stack */...
+  core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30
+    /* WARNING: Restarted to delay deadcode elimination for space: stack */...
+
+====================================================================================================
 TYPE: unresolved_register (5 occurrences)
 ====================================================================================================
 
@@ -1681,23 +1701,6 @@ Example functions:
     /* WARNING: Exceeded maximum restarts with more pending */...
   sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120
     /* WARNING: Exceeded maximum restarts with more pending */...
-
-====================================================================================================
-TYPE: warning_deadcode_restart (4 occurrences)
-====================================================================================================
-
-Unique patterns:
-     4x  WARNING: Restarted to delay deadcode elimination
-
-Example functions:
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
-    /* WARNING: Restarted to delay deadcode elimination for space: stack */...
-  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
-    /* WARNING: Restarted to delay deadcode elimination for space: stack */...
-  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
-    /* WARNING: Restarted to delay deadcode elimination for space: stack */...
-  core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30
-    /* WARNING: Restarted to delay deadcode elimination for space: stack */...
 
 ====================================================================================================
 TYPE: special_cpu_detection (4 occurrences)

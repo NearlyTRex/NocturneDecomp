@@ -1,6 +1,6 @@
 // Name: core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0
 // Address: 005fb1f0
-// Address Range: [[005fb1f0, 005fb521]]
+// Address Range: [[005fb1f0, 005fb521] [03fc346b, 03fc3534]]
 // Convention: __stack2_esi
 // Signature: void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
@@ -16,11 +16,8 @@ void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZ
   CVector3f *pCVar1;
   CBoundingBox3D *pCVar4;
   int iVar3;
-  int iVar4;
-  CMatrix3x4f *pCVar7;
   CMatrix3x4f *pCVar5;
   CMatrix3x4f *pCVar6;
-  CMatrix3x4f *pCVar8;
   byte bVar7;
   CMatrix3x4f local_16c;
   CMatrix3x4f local_13c;
@@ -63,13 +60,18 @@ void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZ
       local_64.y = local_4c.y;
       local_64.z = local_4c.z;
     }
-    pCVar7 = &(this_ptr->base).base.carry_hands[hand_index].initial_carry_transform;
-    pCVar8 = &local_16c;
-    for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pCVar8->m[0].w = pCVar7->m[0].w;
-      pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);
-      pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar7 * -2 + 1) * 4);
-    }
+    local_16c.m[0].w = (this_ptr->base).base.carry_hands[hand_index].initial_carry_transform.m[0].w;
+    local_16c.m[0].x = (this_ptr->base).base.carry_hands[hand_index].initial_carry_transform.m[0].x;
+    local_16c.m[0].y = (this_ptr->base).base.carry_hands[hand_index].initial_carry_transform.m[0].y;
+    local_16c.m[0].z = (this_ptr->base).base.carry_hands[hand_index].initial_carry_transform.m[0].z;
+    local_16c.m[1].w = (this_ptr->base).base.carry_hands[hand_index].initial_carry_transform.m[1].w;
+    local_16c.m[1].x = (this_ptr->base).base.carry_hands[hand_index].initial_carry_transform.m[1].x;
+    local_16c.m[1].y = (this_ptr->base).base.carry_hands[hand_index].initial_carry_transform.m[1].y;
+    local_16c.m[1].z = (this_ptr->base).base.carry_hands[hand_index].initial_carry_transform.m[1].z;
+    local_16c.m[2].w = (this_ptr->base).base.carry_hands[hand_index].initial_carry_transform.m[2].w;
+    local_16c.m[2].x = (this_ptr->base).base.carry_hands[hand_index].initial_carry_transform.m[2].x;
+    local_16c.m[2].y = (this_ptr->base).base.carry_hands[hand_index].initial_carry_transform.m[2].y;
+    local_16c.m[2].z = (this_ptr->base).base.carry_hands[hand_index].initial_carry_transform.m[2].z;
   }
   else {
     iVar2 = _strnicmp
@@ -126,14 +128,9 @@ void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZ
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             (&local_16c,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar3,
              &local_13c);
-  pCVar7 = &local_13c;
-  pCVar6 = &local_10c;
-  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar7 * -8 + 4);
-    pCVar6->m[0].w = pCVar7->m[0].w;
-    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);
-    pCVar6 = pCVar6;
-  }
+  local_10c.m[0].z = local_13c.m[0].z;
+  local_10c.m[1].z = local_13c.m[1].z;
+  local_10c.m[2].z = local_13c.m[2].z;
   pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_ac,&local_64,&local_10c);
   local_10c.m[0].z = local_10c.m[0].z + (local_40.x - pCVar1->x);
   local_10c.m[1].z = local_10c.m[1].z + (local_40.y - pCVar1->y);

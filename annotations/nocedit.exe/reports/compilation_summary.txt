@@ -5,12 +5,12 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6452
-Successful: 5913 (91.6%)
-Failed: 539
+Successful: 5912 (91.6%)
+Failed: 540
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                            977
+  other                            978
   format_error                     782
   incompatible_types               206
   undeclared_identifier            122
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (977 errors)
+CATEGORY: other (978 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -41,9 +41,9 @@ CATEGORY: other (977 errors)
   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
     Line 448: C-style cast from 'CVector3i *' to 'float' is not allowed...
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
-    Line 399: C-style cast from 'CWeapon *' to 'float' is not allowed...
+    Line 309: C-style cast from 'CWeapon *' to 'float' is not allowed...
   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
-    Line 45: C-style cast from 'UOrientationVector *' to 'float' is not allowed...
+    Line 42: C-style cast from 'UOrientationVector *' to 'float' is not allowed...
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
     Line 181: C-style cast from 'char' to 'CActorPropertyActionFunc' (aka 'int (struct CDemonA...
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
@@ -85,7 +85,7 @@ CATEGORY: other (977 errors)
   core_set.cpp_CDemonSet_processActors_FUN_0056b810
     Line 69: cannot cast from type 'float' to pointer type 'CPathMap *'...
 
-  ... and 178 more errors
+  ... and 179 more errors
 
 ====================================================================================================
 CATEGORY: format_error (782 errors)
@@ -413,8 +413,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.70
-Average suspects in failed compilations: 7.61
+Average suspects in successfully compiled functions: 1.67
+Average suspects in failed compilations: 7.51
 
-Functions that compile but have suspect patterns: 1444
+Functions that compile but have suspect patterns: 1438
 (These may have runtime issues even though syntax is valid)

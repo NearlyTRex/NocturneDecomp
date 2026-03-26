@@ -3699,15 +3699,42 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
     asm_pattern = os.path.join(pseudocode_src_dir, '**', '*.asm')
     all_files = sorted(_glob.glob(asm_pattern, recursive=True))
 
+    # Load already-patched addresses from code_caves.json
+    patched_addrs = set()
+    annotations_base = pseudocode_src_dir
+    while annotations_base and os.path.basename(annotations_base) != 'pseudocode':
+        annotations_base = os.path.dirname(annotations_base)
+    if annotations_base:
+        caves_path = os.path.join(os.path.dirname(annotations_base), 'code_caves.json')
+        if os.path.isfile(caves_path):
+            try:
+                import json as _json
+                with open(caves_path, 'r') as f:
+                    caves_data = _json.load(f)
+                for cave in caves_data.get('caves', []):
+                    for alloc in cave.get('allocations', []):
+                        m = re.search(r'movsd_([0-9a-f]+)', alloc.get('name', ''))
+                        if m:
+                            patched_addrs.add(int(m.group(1), 16))
+            except Exception:
+                pass
+
     # Site categories
     # Each entry: (func_name, addr, count, site_size, cave_est, status, detail)
     #   status: 'fixable', 'unfixable'
     #   detail: reason string for unfixable, or borrowable bytes for fixable
     consecutive_sites = []
 
-    # REP MOVSD entries: (func_name, addr, dword_count, copy_bytes, rep_type, cave_est)
+    # REP MOVSD entries: (func_name, addr, dword_count, copy_bytes, rep_type, cave_est, status)
     #   rep_type: 'byval' or 'general'
+    #   status: 'fixable', 'no_artifacts', 'too_large', 'dynamic'
     rep_sites = []
+
+    # Max dword count for struct copy patches (matches fix_movsd_caves.py)
+    MAX_REP_DWORDS = 13
+
+    # Cache: func_name -> bool (has bVar_mul artifacts in pseudocode)
+    _bvar_cache = {}
 
     for asm_path in all_files:
         # Skip CRT library functions — not game code
@@ -3750,6 +3777,12 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                     run += 1
 
                 group_addr = instructions[i][0]
+
+                # Skip already-patched sites
+                if group_addr in patched_addrs:
+                    i += run
+                    continue
+
                 total_size = run
 
                 # Try borrowing after
@@ -3811,6 +3844,10 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
             if not RE_REP_MOVSD.match(text):
                 continue
 
+            # Skip already-patched sites
+            if addr in patched_addrs:
+                continue
+
             # Search backward for setup
             ecx_val = None
             has_edi_esp = False
@@ -3840,7 +3877,30 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
             # Cave estimate for REP: 2*N MOVs + esi/edi adj + JMP
             cave_est = dword_count * 6 + 15 if dword_count > 0 else 0
 
-            rep_sites.append((func_name, addr, dword_count, copy_bytes, rep_type, cave_est))
+            # Classify status for general copies
+            if rep_type == 'byval':
+                status = 'byval'
+            elif dword_count == 0:
+                status = 'dynamic'
+            elif dword_count > MAX_REP_DWORDS:
+                status = 'too_large'
+            else:
+                # Check if function has bVar_mul artifacts
+                if func_name not in _bvar_cache:
+                    has_bvar = False
+                    for ext in ('.cpp', '.c'):
+                        cpp_path = asm_path.replace('.asm', ext)
+                        if os.path.isfile(cpp_path):
+                            with open(cpp_path, 'r') as f:
+                                has_bvar = bool(re.search(r'\bbVar\w*\s*\*\s*-', f.read()))
+                            break
+                    _bvar_cache[func_name] = has_bvar
+                if _bvar_cache[func_name]:
+                    status = 'fixable'
+                else:
+                    status = 'no_artifacts'
+
+            rep_sites.append((func_name, addr, dword_count, copy_bytes, rep_type, cave_est, status))
 
     # =====================================================================
     # Build report
@@ -3858,12 +3918,20 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
     # --- Summary ---
     consec_fixable = [s for s in consecutive_sites if s[5] == 'fixable']
     consec_unfixable = [s for s in consecutive_sites if s[5] == 'unfixable']
-    rep_byval = [s for s in rep_sites if s[4] == 'byval']
+    rep_byval = [s for s in rep_sites if s[6] == 'byval']
+    rep_fixable = [s for s in rep_sites if s[6] == 'fixable']
+    rep_no_artifacts = [s for s in rep_sites if s[6] == 'no_artifacts']
+    rep_too_large = [s for s in rep_sites if s[6] == 'too_large']
+    rep_dynamic = [s for s in rep_sites if s[6] == 'dynamic']
     rep_general = [s for s in rep_sites if s[4] == 'general']
     total_cave = sum(s[4] for s in consec_fixable)
 
     lines.append("SUMMARY")
     lines.append("-" * 50)
+
+    if patched_addrs:
+        lines.append("Already patched (cave):    %d sites (excluded from counts below)" % len(patched_addrs))
+        lines.append("")
 
     # Count consecutive by run length
     consec_by_run = {}
@@ -3880,8 +3948,11 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
     lines.append("  Est. cave space:        ~%d bytes" % total_cave)
     lines.append("")
     lines.append("REP MOVSD sites:           %d" % len(rep_sites))
+    lines.append("  Fixable (struct copy):  %d" % len(rep_fixable))
+    lines.append("  No artifacts (OK):      %d" % len(rep_no_artifacts))
+    lines.append("  Too large (buffer):     %d" % len(rep_too_large))
+    lines.append("  Dynamic count:          %d" % len(rep_dynamic))
     lines.append("  Pass-by-value:          %d" % len(rep_byval))
-    lines.append("  General struct copy:    %d" % len(rep_general))
 
     # Count REP by dword count
     rep_by_count = {}
@@ -3954,16 +4025,19 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                         addr, run, run * 4, reason))
             lines.append("")
 
-    # --- REP MOVSD general sites by function ---
-    if rep_general:
+    # --- Helper to emit a REP MOVSD section ---
+    def _emit_rep_section(title, site_list):
+        if not site_list:
+            return
         by_func = OrderedDict()
-        for func_name, addr, dword_count, copy_bytes, rep_type, cave_est in rep_general:
+        for func_name, addr, dword_count, copy_bytes, rep_type, cave_est, status in site_list:
             if func_name not in by_func:
                 by_func[func_name] = []
             by_func[func_name].append((addr, dword_count, copy_bytes))
 
+        total_sites = sum(len(s) for s in by_func.values())
         lines.append("-" * 100)
-        lines.append("REP MOVSD GENERAL STRUCT COPIES (by function)")
+        lines.append("%s (%d sites)" % (title, total_sites))
         lines.append("-" * 100)
         for func_name, sites in sorted(by_func.items(),
                                         key=lambda x: len(x[1]), reverse=True):
@@ -3976,35 +4050,20 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                     lines.append("    0x%08x  REP MOVSD (dynamic count)" % addr)
         lines.append("")
 
-    # --- REP MOVSD pass-by-value sites ---
-    if rep_byval:
-        by_func = OrderedDict()
-        for func_name, addr, dword_count, copy_bytes, rep_type, cave_est in rep_byval:
-            if func_name not in by_func:
-                by_func[func_name] = []
-            by_func[func_name].append((addr, dword_count, copy_bytes))
-
-        lines.append("-" * 100)
-        lines.append("REP MOVSD PASS-BY-VALUE SITES (by function)")
-        lines.append("-" * 100)
-        for func_name, sites in sorted(by_func.items(),
-                                        key=lambda x: len(x[1]), reverse=True):
-            lines.append("  %-70s  %2d sites" % (func_name, len(sites)))
-            for addr, dword_count, copy_bytes in sites:
-                if dword_count > 0:
-                    lines.append("    0x%08x  REP MOVSD %d dwords (%d bytes)" % (
-                        addr, dword_count, copy_bytes))
-                else:
-                    lines.append("    0x%08x  REP MOVSD (dynamic count)" % addr)
-        lines.append("")
+    _emit_rep_section("FIXABLE REP MOVSD STRUCT COPIES", rep_fixable)
+    _emit_rep_section("REP MOVSD — NO ARTIFACTS (decompiler handles OK)", rep_no_artifacts)
+    _emit_rep_section("REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string)", rep_too_large)
+    _emit_rep_section("REP MOVSD — DYNAMIC COUNT (ECX not immediate)", rep_dynamic)
+    _emit_rep_section("REP MOVSD — PASS-BY-VALUE", rep_byval)
 
     report_path = os.path.join(output_path, 'movsd_analysis.txt')
     try:
         with open(report_path, 'w') as f:
             f.write('\n'.join(lines) + '\n')
-        log_info("Wrote MOVSD analysis: %s (%d consecutive [%d fixable], %d REP [%d byval, %d general])" % (
+        log_info("Wrote MOVSD analysis: %s (%d consecutive [%d fixable], %d REP [%d fixable, %d no-artifact, %d too-large, %d dynamic, %d byval])" % (
             report_path, len(consecutive_sites), len(consec_fixable),
-            len(rep_sites), len(rep_byval), len(rep_general)))
+            len(rep_sites), len(rep_fixable), len(rep_no_artifacts),
+            len(rep_too_large), len(rep_dynamic), len(rep_byval)))
     except Exception as e:
         log_info("Failed to write MOVSD analysis: %s" % e)
 

@@ -1,6 +1,6 @@
 // Name: core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
 // Address: 005db9d0
-// Address Range: [[005db9d0, 005dbb29]]
+// Address Range: [[005db9d0, 005dbb29] [03fc2566, 03fc2706]]
 // Convention: __cdecl
 // Signature: int __cdecl core_tentacle_cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0(CTentacle *this_ptr,CCharacter *character)
 
@@ -12,14 +12,11 @@ int __cdecl core_tentacle_cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0(CTentac
   CVector3f *pCVar2;
   UOrientationVector *orientation;
   int iVar3;
-  int iVar1;
-  CMatrix3x4f *pCVar3;
-  CMatrix3x4f *pCVar7;
   CMatrix3x4f *pCVar4;
   CMatrix3x4f *pCVar5;
-  CMatrix3x4f *pCVar8;
   CMatrix3x4f *pCVar6;
   byte bVar7;
+  CMatrix3x4f *matrix_b;
   CMatrix3x4f local_1cc;
   CMatrix3x4f local_19c;
   CMatrix3x4f local_16c;
@@ -33,51 +30,19 @@ int __cdecl core_tentacle_cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0(CTentac
   CVector3f local_10;
   CCharacter *pCVar1;
   
-  bVar7 = 0;
   if (character != (this_ptr->base).victim) {
     return 0;
   }
   core_xform_cpp_lerpMatrix3x4_FUN_005f7140
             (&this_ptr->target_matrix,&this_ptr->prev_target_matrix,this_ptr->target_blend,
              &local_1cc);
-  pCVar3 = &local_1cc;
-  pCVar7 = &local_16c;
-  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar7->m[0].w = pCVar3->m[0].w;
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);
-    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);
-  }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_13c,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec);
-  pCVar3 = &local_13c;
+  matrix_b = &local_13c;
   core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70(this_ptr,&local_4c);
-  pCVar7 = &local_4c;
-  pCVar8 = &local_dc;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar8->m[0].w = pCVar7->m[0].w;
-    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);
-    pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar7 * -2 + 1) * 4);
-  }
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_16c,&local_dc,&local_7c);
-  pCVar4 = &local_7c;
-  pCVar6 = &local_19c;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar7 * -8 + 4);
-    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar7 * -8 + 4);
-    pCVar6->m[0].w = pCVar4->m[0].w;
-    pCVar4 = pCVar4;
-    pCVar6 = pCVar6;
-  }
-  core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_19c,pCVar3,&local_ac);
-  pCVar5 = &local_ac;
-  pCVar3 = &local_10c;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar7 * -8 + 4);
-    pCVar3->m[0].w = pCVar5->m[0].w;
-    pCVar5 = pCVar5;
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);
-  }
+  core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_19c,matrix_b,&local_ac);
   pCVar2 = core_xform_cpp_getTranslation_FUN_005f6110(&local_10c,&local_10);
   pCVar1 = (this_ptr->base).victim;
   (pCVar1->base).location.position.x = pCVar2->x;

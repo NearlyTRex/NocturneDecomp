@@ -1,6 +1,6 @@
 // Name: shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
 // Address: 005cd7d0
-// Address Range: [[005cd7d0, 005cdfdf]]
+// Address Range: [[005cd7d0, 005cdfdf] [03fc206d, 03fc20a7]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_superopt_cpp_CPoly_computeNormal_FUN_005cd7d0(CPoly *this_ptr)
 
@@ -95,19 +95,15 @@ void __cdecl shape_superopt_cpp_CPoly_computeNormal_FUN_005cd7d0(CPoly *this_ptr
   pCVar2 = pCVar6 + this_ptr->vertex_idx_1;
   local_158 = (pCVar2->position).x - (pCVar1->position).x;
   local_150 = (pCVar2->position).y - (pCVar1->position).y;
-  local_18 = pCVar6 + this_ptr->vertex_idx_2;
   local_148 = (pCVar2->position).z - (pCVar1->position).z;
-  pdVar10 = &local_158;
-  pdVar11 = &local_248;
-  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *(uint *)pdVar11 = *(uint *)pdVar10;
-    pdVar10 = (double *)((int)pdVar10 + 4);
-    pdVar11 = (double *)((int)pdVar11 + 4);
-  }
-  dVar1 = 1.0 / SQRT(local_238 * local_238 + local_248 * local_248 + local_240 * local_240);
-  local_1a0 = local_248 * dVar1;
-  local_198 = local_240 * dVar1;
-  local_190 = local_238 * dVar1;
+  local_18 = pCVar6 + this_ptr->vertex_idx_2;
+  local_248 = local_158;
+  local_240 = local_150;
+  local_238 = local_148;
+  dVar1 = 1.0 / SQRT(local_148 * local_148 + local_158 * local_158 + local_150 * local_150);
+  local_1a0 = local_158 * dVar1;
+  local_198 = local_150 * dVar1;
+  local_190 = local_148 * dVar1;
   local_278 = (local_18->position).x - (pCVar2->position).x;
   local_270 = (local_18->position).y - (pCVar2->position).y;
   local_268 = (local_18->position).z - (pCVar2->position).z;

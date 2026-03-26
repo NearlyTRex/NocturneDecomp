@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 130,
-    "complexity_score": 115,
+    "assembly_lines": 258,
+    "complexity_score": 94,
     "cross_reference_count": 1,
     "function_call_count": 2,
-    "global_count": 12,
+    "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 60,
-    "suspect_count": 5,
+    "pseudocode_lines": 79,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 190
+    "total_lines": 337
   },
   "cross_references": [
     {
@@ -32,6 +32,10 @@
       [
         "0045d470",
         "0045d5c7"
+      ],
+      [
+        "03fc2a24",
+        "03fc2baf"
       ]
     ],
     "convention": "__cdecl",
@@ -53,30 +57,6 @@
   ],
   "globals": [
     {
-      "addr": "00688014",
-      "name": "g_RenderVertexBuffer",
-      "type": "SRenderVertex[16]",
-      "value": null
-    },
-    {
-      "addr": "00688018",
-      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_y",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "0069ffb4",
-      "name": "g_AALineVertex1",
-      "type": "int[12]",
-      "value": null
-    },
-    {
-      "addr": "0069ffb8",
-      "name": "g_AALineVertex1[1]",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "0069ffc4",
       "name": "g_AALineVertex1[4]",
       "type": "undefined4",
@@ -91,18 +71,6 @@
     {
       "addr": "0069ffc8",
       "name": "g_AALineVertex1[5]",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "0069ffe4",
-      "name": "g_AALineVertex2",
-      "type": "int[12]",
-      "value": null
-    },
-    {
-      "addr": "0069ffe8",
-      "name": "g_AALineVertex2[1]",
       "type": "undefined4",
       "value": null
     },
@@ -146,39 +114,38 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 7.7075471698113205,
-    "instruction_count": 106,
+    "avg_pcode_per_instr": 5.252293577981652,
+    "instruction_count": 218,
     "opcode_distribution": {
       "BOOL_NEGATE": 56,
       "BOOL_OR": 1,
-      "BRANCH": 9,
+      "BRANCH": 13,
       "CALL": 3,
-      "CBRANCH": 10,
-      "COPY": 97,
-      "INT_ADD": 47,
-      "INT_AND": 182,
-      "INT_CARRY": 8,
-      "INT_EQUAL": 71,
+      "CBRANCH": 6,
+      "COPY": 189,
+      "INT_ADD": 135,
+      "INT_AND": 206,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 91,
       "INT_LEFT": 6,
       "INT_LESS": 2,
-      "INT_MULT": 12,
+      "INT_MULT": 4,
       "INT_NOTEQUAL": 35,
       "INT_OR": 47,
       "INT_SBORROW": 3,
-      "INT_SCARRY": 9,
+      "INT_SCARRY": 17,
       "INT_SEXT": 12,
-      "INT_SLESS": 34,
+      "INT_SLESS": 46,
       "INT_SRIGHT": 16,
-      "INT_SUB": 44,
-      "INT_XOR": 3,
-      "INT_ZEXT": 8,
-      "LOAD": 40,
-      "POPCOUNT": 28,
+      "INT_SUB": 32,
+      "INT_XOR": 7,
+      "LOAD": 84,
+      "POPCOUNT": 40,
       "RETURN": 1,
-      "STORE": 25,
+      "STORE": 69,
       "SUBPIECE": 8
     },
-    "pcode_op_count": 817
+    "pcode_op_count": 1145
   },
   "stack_frame": {
     "frame_size": 36,
@@ -213,42 +180,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
+      "line": 49,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pSVar2 = g_RenderVertexBuffer + *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar5 * -8 + 4);",
+      "text": "iVar1 = *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);",
       "type": "pointer_cast"
     }
   ]

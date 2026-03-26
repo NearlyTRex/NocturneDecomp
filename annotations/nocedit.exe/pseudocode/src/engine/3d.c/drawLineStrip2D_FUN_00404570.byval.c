@@ -1,6 +1,6 @@
 // Name: engine_3d.c_drawLineStrip2D_FUN_00404570
 // Address: 00404570
-// Address Range: [[00404570, 004045ff] [0060e072, 0060e12a]]
+// Address Range: [[00404570, 004045ff] [0060e072, 0060e12a] [03fc28a4, 03fc2963]]
 // Convention: __cdecl
 // Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404570(SLineStrip *line_strip)
 
@@ -32,15 +32,12 @@ __asm {
         ret
     LAB_004045a8:
         imul ESI,dword ptr [EBX],0x30
-        mov ECX,0xc
-        lea EDI,[ESP + 0x30]
-        lea ESI,[g_RenderVertexBuffer + ESI]
-        rep movsd
+        jmp LAB_03fc28a4
+    LAB_004045bc:
         imul ESI,dword ptr [EBX + 0x4],0x30
         mov EDI,ESP
-        mov ECX,0xc
-        lea ESI,[g_RenderVertexBuffer + ESI]
-        rep movsd
+        jmp LAB_03fc2906
+    LAB_004045cf:
         jmp LAB_0060e072
     LAB_004045dd:
         rep movsd
@@ -112,5 +109,68 @@ __asm {
         mov ECX,dword ptr [ESI + 0x2c]
         mov dword ptr [EDI + 0x2c],ECX
         jmp LAB_004045f4
+    LAB_03fc28a4:
+        mov ECX,0xc
+        lea EDI,[ESP + 0x30]
+        lea ESI,[ESI + 0x688014]
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        add ESI,0x30
+        add EDI,0x30
+        xor ECX,ECX
+        jmp LAB_004045bc
+    LAB_03fc2906:
+        mov ECX,0xc
+        lea ESI,[ESI + 0x688014]
+        mov ECX,dword ptr [ESI]
+        mov dword ptr [EDI],ECX
+        mov ECX,dword ptr [ESI + 0x4]
+        mov dword ptr [EDI + 0x4],ECX
+        mov ECX,dword ptr [ESI + 0x8]
+        mov dword ptr [EDI + 0x8],ECX
+        mov ECX,dword ptr [ESI + 0xc]
+        mov dword ptr [EDI + 0xc],ECX
+        mov ECX,dword ptr [ESI + 0x10]
+        mov dword ptr [EDI + 0x10],ECX
+        mov ECX,dword ptr [ESI + 0x14]
+        mov dword ptr [EDI + 0x14],ECX
+        mov ECX,dword ptr [ESI + 0x18]
+        mov dword ptr [EDI + 0x18],ECX
+        mov ECX,dword ptr [ESI + 0x1c]
+        mov dword ptr [EDI + 0x1c],ECX
+        mov ECX,dword ptr [ESI + 0x20]
+        mov dword ptr [EDI + 0x20],ECX
+        mov ECX,dword ptr [ESI + 0x24]
+        mov dword ptr [EDI + 0x24],ECX
+        mov ECX,dword ptr [ESI + 0x28]
+        mov dword ptr [EDI + 0x28],ECX
+        mov ECX,dword ptr [ESI + 0x2c]
+        mov dword ptr [EDI + 0x2c],ECX
+        add ESI,0x30
+        add EDI,0x30
+        xor ECX,ECX
+        jmp LAB_004045cf
 }
 }

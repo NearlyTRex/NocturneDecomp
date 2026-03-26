@@ -212,15 +212,46 @@
         "size":2048,
         "size_formatted":"2KB",
         "type":"memory_block"
+      },
+      {
+        "following_block":".cave",
+        "likely_purpose":"Unmapped space between .rsrc and .cave",
+        "name":"Gap",
+        "permissions":"---",
+        "permissions_detailed":{
+          "execute":false,
+          "read":false,
+          "write":false
+        },
+        "preceding_block":".rsrc",
+        "range":"0x3fbf800-0x3fbffff",
+        "size":2048,
+        "size_formatted":"2KB",
+        "type":"gap"
+      },
+      {
+        "initialized":true,
+        "likely_purpose":"Executable code",
+        "name":".cave",
+        "permissions":"R-X",
+        "permissions_detailed":{
+          "execute":true,
+          "read":true,
+          "write":false
+        },
+        "range":"03fc0000-03fdffff",
+        "size":131072,
+        "size_formatted":"128KB",
+        "type":"memory_block"
       }
     ],
     "summary":{
-      "block_count":8,
-      "gap_count":5,
-      "total_gap_formatted":"83KB",
-      "total_gap_size":84992,
-      "total_mapped_formatted":"59.7MB",
-      "total_mapped_size":62565376
+      "block_count":9,
+      "gap_count":6,
+      "total_gap_formatted":"85KB",
+      "total_gap_size":87040,
+      "total_mapped_formatted":"59.8MB",
+      "total_mapped_size":62696448
     }
   },
   "gaps":[
@@ -263,6 +294,14 @@
       "preceding_block":".reloc",
       "size":512,
       "start":"0x3fbee00"
+    },
+    {
+      "end":"0x3fbffff",
+      "following_block":".cave",
+      "note":"Gap between .rsrc and .cave",
+      "preceding_block":".rsrc",
+      "size":2048,
+      "start":"0x3fbf800"
     }
   ],
   "memory_blocks":[
@@ -376,6 +415,21 @@
       },
       "size":2048,
       "start":"03fbf000",
+      "type":"Default"
+    },
+    {
+      "comment":"Code cave block for MOVSD struct copy patches",
+      "end":"03fdffff",
+      "importable":true,
+      "initialized":true,
+      "name":".cave",
+      "permissions":{
+        "execute":true,
+        "read":true,
+        "write":false
+      },
+      "size":131072,
+      "start":"03fc0000",
       "type":"Default"
     }
   ]

@@ -1,6 +1,6 @@
 // Name: core_sound.cpp_updateListeners_FUN_005b1870
 // Address: 005b1870
-// Address Range: [[005b1870, 005b1ec6] [0060c6f0, 0060c72e]]
+// Address Range: [[005b1870, 005b1ec6] [0060c6f0, 0060c72e] [03fc3169, 03fc3212]]
 // Convention: __cdecl
 // Signature: void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
 
@@ -16,8 +16,6 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
   int iVar5;
   CMatrix3x3f *pCVar6;
   float *pfVar7;
-  CMatrix3x3f *pCVar7;
-  float *pfVar9;
   float *pfVar8;
   byte bVar9;
   int aiStackY_10cc [965];
@@ -73,13 +71,16 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
         (float)0.0001) {
       return;
     }
-    pCVar6 = &g_CDemonCameraInstance.base.rotation_matrix;
-    pfVar9 = local_10c;
-    for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *pfVar9 = pCVar6->m[0].x;
-      pCVar6 = (CMatrix3x3f *)&pCVar6->m[0].y;
-      pfVar9 = pfVar9 + 1;
-    }
+    local_10c[0] = g_CDemonCameraInstance.base.rotation_matrix.m[0].x;
+    local_10c[1] = g_CDemonCameraInstance.base.rotation_matrix.m[0].y;
+    local_10c[2] = g_CDemonCameraInstance.base.rotation_matrix.m[0].z;
+    local_10c[3] = g_CDemonCameraInstance.base.rotation_matrix.m[1].x;
+    local_10c[4] = g_CDemonCameraInstance.base.rotation_matrix.m[1].y;
+    local_10c[5] = g_CDemonCameraInstance.base.rotation_matrix.m[1].z;
+    local_10c[6] = g_CDemonCameraInstance.base.rotation_matrix.m[2].x;
+    local_10c[7] = g_CDemonCameraInstance.base.rotation_matrix.m[2].y;
+    local_10c[8] = g_CDemonCameraInstance.base.rotation_matrix.m[2].z;
+    local_10c[9] = (float)g_CDemonCameraInstance.base.dead;
     iVar6 = 10;
     pfVar7 = local_10c;
     pfVar8 = (float *)&local_15c;
@@ -93,13 +94,16 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
       local_c8 = g_CDemonLightInstance.base.base.position.f.y;
       local_c4 = g_CDemonLightInstance.base.base.position.f.z;
     }
-    pCVar7 = &g_CDemonLightInstance.base.base.rotation_matrix;
-    pfVar9 = local_134;
-    for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *pfVar9 = pCVar7->m[0].x;
-      pCVar7 = (CMatrix3x3f *)&pCVar7->m[0].y;
-      pfVar9 = pfVar9 + 1;
-    }
+    local_134[0] = g_CDemonLightInstance.base.base.rotation_matrix.m[0].x;
+    local_134[1] = g_CDemonLightInstance.base.base.rotation_matrix.m[0].y;
+    local_134[2] = g_CDemonLightInstance.base.base.rotation_matrix.m[0].z;
+    local_134[3] = g_CDemonLightInstance.base.base.rotation_matrix.m[1].x;
+    local_134[4] = g_CDemonLightInstance.base.base.rotation_matrix.m[1].y;
+    local_134[5] = g_CDemonLightInstance.base.base.rotation_matrix.m[1].z;
+    local_134[6] = g_CDemonLightInstance.base.base.rotation_matrix.m[2].x;
+    local_134[7] = g_CDemonLightInstance.base.base.rotation_matrix.m[2].y;
+    local_134[8] = g_CDemonLightInstance.base.base.rotation_matrix.m[2].z;
+    local_134[9] = (float)g_CDemonLightInstance.base.base.dead;
     iVar6 = 10;
     pfVar8 = (float *)&local_15c;
     pfVar7 = local_134;

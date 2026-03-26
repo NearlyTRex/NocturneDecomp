@@ -5,18 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 88,
-    "complexity_score": 157,
+    "assembly_lines": 216,
+    "complexity_score": 49,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 72,
-    "suspect_count": 8,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 160
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 49,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 265
   },
   "cross_references": [],
   "function": {
@@ -25,6 +23,10 @@
       [
         "005f7000",
         "005f713c"
+      ],
+      [
+        "03fc2707",
+        "03fc28a3"
       ]
     ],
     "convention": "__stack2_esi",
@@ -68,34 +70,32 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.234567901234568,
-    "instruction_count": 81,
+    "avg_pcode_per_instr": 3.8963730569948187,
+    "instruction_count": 193,
     "opcode_distribution": {
-      "BRANCH": 4,
+      "BRANCH": 8,
       "CALL": 6,
-      "CBRANCH": 4,
-      "COPY": 175,
+      "COPY": 267,
       "FLOAT2FLOAT": 14,
       "FLOAT_ADD": 2,
       "FLOAT_DIV": 1,
       "FLOAT_MULT": 6,
-      "INT_ADD": 50,
-      "INT_AND": 16,
-      "INT_CARRY": 7,
-      "INT_EQUAL": 20,
+      "INT_ADD": 138,
+      "INT_AND": 40,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 40,
       "INT_LESS": 1,
-      "INT_MULT": 8,
       "INT_SBORROW": 1,
-      "INT_SCARRY": 7,
-      "INT_SLESS": 8,
-      "INT_SUB": 32,
-      "INT_ZEXT": 8,
-      "LOAD": 18,
-      "POPCOUNT": 8,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 20,
+      "INT_SUB": 20,
+      "INT_XOR": 4,
+      "LOAD": 62,
+      "POPCOUNT": 20,
       "RETURN": 1,
-      "STORE": 27
+      "STORE": 71
     },
-    "pcode_op_count": 424
+    "pcode_op_count": 752
   },
   "stack_frame": {
     "frame_size": 432,
@@ -197,70 +197,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

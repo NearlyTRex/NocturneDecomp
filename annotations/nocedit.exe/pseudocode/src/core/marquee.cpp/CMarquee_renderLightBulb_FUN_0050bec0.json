@@ -5,19 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 105,
-    "complexity_score": 180,
+    "assembly_lines": 201,
+    "complexity_score": 128,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 80,
-    "suspect_count": 9,
+    "pseudocode_lines": 93,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 185
+    "total_lines": 294
   },
   "cross_references": [
     {
@@ -33,6 +32,10 @@
       [
         "0050bec0",
         "0050c046"
+      ],
+      [
+        "03fc2f9c",
+        "03fc30af"
       ]
     ],
     "convention": "__cdecl",
@@ -120,35 +123,32 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.901960784313726,
-    "instruction_count": 102,
+    "avg_pcode_per_instr": 4.010752688172043,
+    "instruction_count": 186,
     "opcode_distribution": {
-      "BRANCH": 3,
+      "BRANCH": 6,
       "CALL": 2,
-      "CBRANCH": 3,
-      "COPY": 146,
+      "COPY": 215,
       "FLOAT2FLOAT": 6,
       "FLOAT_MULT": 3,
-      "INT_ADD": 57,
-      "INT_AND": 26,
-      "INT_CARRY": 7,
-      "INT_EQUAL": 29,
+      "INT_ADD": 123,
+      "INT_AND": 44,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 44,
       "INT_LESS": 5,
-      "INT_MULT": 6,
       "INT_SBORROW": 5,
-      "INT_SCARRY": 7,
-      "INT_SLESS": 13,
-      "INT_SUB": 25,
-      "INT_XOR": 1,
-      "INT_ZEXT": 6,
-      "LOAD": 84,
-      "POPCOUNT": 13,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 22,
+      "INT_SUB": 16,
+      "INT_XOR": 4,
+      "LOAD": 117,
+      "POPCOUNT": 22,
       "RETURN": 1,
       "ROUND": 3,
-      "STORE": 46,
+      "STORE": 79,
       "TRUNC": 3
     },
-    "pcode_op_count": 500
+    "pcode_op_count": 746
   },
   "stack_frame": {
     "frame_size": 80,
@@ -190,7 +190,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 16,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.x = (int)ROUND(position->x * 256.0f);",
@@ -198,7 +198,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 17,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.y = (int)ROUND(position->y * 256.0f);",
@@ -206,59 +206,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 18,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.z = (int)ROUND(position->z * 256.0f);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
     }
   ]
 }

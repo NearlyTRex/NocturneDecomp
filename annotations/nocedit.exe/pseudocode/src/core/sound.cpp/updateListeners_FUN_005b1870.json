@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 8,
-        "line": 198,
+        "line": 202,
         "message": "use of undeclared identifier 'stack0x00000000'"
       }
     ],
@@ -12,20 +12,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 439,
-    "complexity_score": 250,
+    "assembly_lines": 495,
+    "complexity_score": 254,
     "cross_reference_count": 2,
     "function_call_count": 7,
-    "global_count": 34,
+    "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 195,
+    "pseudocode_lines": 199,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_alignment_array",
       "stack_ref"
     ],
-    "total_lines": 634
+    "total_lines": 694
   },
   "cross_references": [
     {
@@ -51,6 +51,10 @@
       [
         "0060c6f0",
         "0060c72e"
+      ],
+      [
+        "03fc3169",
+        "03fc3212"
       ]
     ],
     "convention": "__cdecl",
@@ -199,18 +203,6 @@
       "value": null
     },
     {
-      "addr": "02d7eb00",
-      "name": "g_CDemonLightInstance.base.base.rotation_matrix.m[0].x",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "02d7eb04",
-      "name": "g_CDemonLightInstance.base.base.rotation_matrix.m[0].y",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "02d81cdc",
       "name": "g_CGameInstance.block_auto_save",
       "type": "undefined4",
@@ -249,18 +241,6 @@
     {
       "addr": "032758f0",
       "name": "g_CDemonCameraInstance.base.position+8",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "032758f4",
-      "name": "g_CDemonCameraInstance.base.rotation_matrix.m[0].x",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "032758f8",
-      "name": "g_CDemonCameraInstance.base.rotation_matrix.m[0].y",
       "type": "undefined4",
       "value": null
     },
@@ -333,16 +313,16 @@
     "estimated_params": 0
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.013054830287206,
-    "instruction_count": 383,
+    "avg_pcode_per_instr": 5.6682134570765665,
+    "instruction_count": 431,
     "opcode_distribution": {
       "BOOL_NEGATE": 39,
       "BOOL_OR": 11,
       "BOOL_XOR": 2,
-      "BRANCH": 10,
+      "BRANCH": 12,
       "CALL": 9,
-      "CBRANCH": 20,
-      "COPY": 913,
+      "CBRANCH": 18,
+      "COPY": 951,
       "FLOAT2FLOAT": 84,
       "FLOAT_ADD": 12,
       "FLOAT_EQUAL": 7,
@@ -352,30 +332,30 @@
       "FLOAT_SQRT": 2,
       "FLOAT_SUB": 7,
       "INT2FLOAT": 8,
-      "INT_ADD": 176,
-      "INT_AND": 204,
-      "INT_CARRY": 16,
-      "INT_EQUAL": 110,
+      "INT_ADD": 212,
+      "INT_AND": 216,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 120,
       "INT_LEFT": 32,
       "INT_LESS": 25,
-      "INT_MULT": 8,
+      "INT_MULT": 4,
       "INT_NOTEQUAL": 54,
       "INT_OR": 61,
       "INT_SBORROW": 25,
-      "INT_SCARRY": 16,
+      "INT_SCARRY": 20,
       "INT_SEXT": 6,
-      "INT_SLESS": 54,
+      "INT_SLESS": 60,
       "INT_SRIGHT": 8,
-      "INT_SUB": 72,
-      "INT_XOR": 4,
-      "INT_ZEXT": 36,
-      "LOAD": 79,
-      "POPCOUNT": 50,
+      "INT_SUB": 66,
+      "INT_XOR": 6,
+      "INT_ZEXT": 32,
+      "LOAD": 97,
+      "POPCOUNT": 56,
       "RETURN": 2,
-      "STORE": 102,
+      "STORE": 120,
       "SUBPIECE": 4
     },
-    "pcode_op_count": 2303
+    "pcode_op_count": 2443
   },
   "stack_frame": {
     "frame_size": 4304,
@@ -651,7 +631,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 14,
       "match": "aiStackY_10cc",
       "severity": "moderate",
       "text": "int aiStackY_10cc [965];",
@@ -659,7 +639,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 61,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (SQRT((local_c4 - g_SoundListenerPrev.z) * (local_c4 - g_SoundListenerPrev.z) +",
@@ -667,7 +647,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
+      "line": 159,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar1 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98);",
@@ -675,7 +655,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 191,
+      "line": 195,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if (&stack0x00000000 == (byte *)0x3f6b03c) {",

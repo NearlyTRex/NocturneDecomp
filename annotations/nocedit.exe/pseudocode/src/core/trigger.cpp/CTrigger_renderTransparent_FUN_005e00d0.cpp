@@ -1,6 +1,6 @@
 // Name: core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0
 // Address: 005e00d0
-// Address Range: [[005e00d0, 005e0623]]
+// Address Range: [[005e00d0, 005e0623] [03fc3341, 03fc346a]]
 // Convention: __cdecl
 // Signature: int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *this_ptr)
 
@@ -11,20 +11,20 @@
 int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *this_ptr)
 
 {
-  CDemonRenderer *pCVar1;
-  float fVar2;
+  SRenderVertex *pSVar1;
+  CDemonRenderer *pCVar3;
+  float fVar4;
   int iVar3;
   CBoundingBox3D *this_ptr_00;
   int iVar5;
   int iVar4;
   int blue;
   int iVar6;
-  SRenderVertex *pSVar7;
   SRenderVertex *pSVar5;
   int alpha;
   SRenderVertex *pSVar6;
-  int *piVar8;
   int *piVar7;
+  int *piVar8;
   byte bVar8;
   float10 fVar9;
   float10 fVar12;
@@ -54,7 +54,6 @@ int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *t
   float fVar1;
   CDemonRenderer *pCVar2;
   
-  bVar8 = 0;
   if ((g_CDemonMissionPtr->is_in_editor == 0) ||
      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 != 0)) {
@@ -131,7 +130,7 @@ LAB_005e0160:
     iStack_d0 = 0x28;
   }
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_8c);
-  fVar2 = CStack_8c.min.y;
+  fVar4 = CStack_8c.min.y;
   pCVar2 = g_CDemonRendererPtr2;
   fVar1 = (this_ptr->trigger_size).x * (float)0.5;
   g_CDemonRendererPtr2->vertex_buffer_ptr->r = (int)ROUND(ROUND(fVar1 * 256.0f));
@@ -142,67 +141,82 @@ LAB_005e0160:
   pCVar2->vertex_buffer_ptr->v = 0x800000;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(pCVar2,&SMRGLTextureBasic_0068434c);
   CStack_50.x = (int)ROUND(256.0f * 0.0);
-  CStack_50.y = (int)ROUND(fVar2 * 256.0f);
+  CStack_50.y = (int)ROUND(fVar4 * 256.0f);
   CStack_50.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_50);
-  pCVar1 = g_CDemonRendererPtr2;
-  pSVar7 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-  pSVar6 = g_CDemonRendererPtr2->vertex_buffer_ptr + 1;
-  for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-    pSVar6 = (SRenderVertex *)((int)pSVar6 + (uint)bVar8 * -8 + 4);
-    (pSVar6->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
-    pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);
-    pSVar6 = pSVar6;
-  }
+  pCVar3 = g_CDemonRendererPtr2;
+  pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
+  pSVar1[1].projected_vertex.transformed_x = (pSVar1->projected_vertex).transformed_x;
+  pSVar1[1].projected_vertex.transformed_y = (pSVar1->projected_vertex).transformed_y;
+  pSVar1[1].projected_vertex.transformed_z = (pSVar1->projected_vertex).transformed_z;
+  pSVar1[1].projected_vertex.inv_z = (pSVar1->projected_vertex).inv_z;
+  pSVar1[1].projected_vertex.screen_x = (pSVar1->projected_vertex).screen_x;
+  pSVar1[1].projected_vertex.screen_y = (pSVar1->projected_vertex).screen_y;
+  pSVar1[1].u = pSVar1->u;
+  pSVar1[1].v = pSVar1->v;
+  pSVar1[1].r = pSVar1->r;
+  pSVar1[1].g = pSVar1->g;
+  pSVar1[1].b = pSVar1->b;
+  pSVar1[1].a = pSVar1->a;
   CStack_74.x = (int)ROUND(256.0f * 0.0);
   CStack_74.y = (int)ROUND(CStack_8c.max.y * 256.0f);
   CStack_74.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&pCVar1->vertex_buffer_ptr[1].projected_vertex,&CStack_74);
+            (&pCVar3->vertex_buffer_ptr[1].projected_vertex,&CStack_74);
   iStack_d8 = 0;
   if (-1 < iStack_d0) {
     iStack_20 = 0x60;
     iStack_1c = 0x90;
     do {
-      pCVar1 = g_CDemonRendererPtr2;
+      pCVar3 = g_CDemonRendererPtr2;
       fVar11 = ((float10)iStack_d8 * (float10)2 * (float10)3.1415926535000001) /
                (float10)iStack_d0;
       fVar9 = (float10)fsin(fVar11);
       fVar12 = (float10)fcos(fVar11);
       fVar10 = (float10)fVar1;
-      pSVar7 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-      piVar8 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
-                             transformed_x + iStack_20);
-      for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *piVar8 = (pSVar7->projected_vertex).transformed_x;
-        pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);
-        piVar8 = piVar8 + (uint)bVar8 * -2 + 1;
-      }
+      pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
+      piVar8 = (int *)((int)&(pSVar1->projected_vertex).transformed_x + iStack_20);
+      *piVar8 = (pSVar1->projected_vertex).transformed_x;
+      piVar8[1] = (pSVar1->projected_vertex).transformed_y;
+      piVar8[2] = (pSVar1->projected_vertex).transformed_z;
+      piVar8[3] = (pSVar1->projected_vertex).inv_z;
+      piVar8[4] = (pSVar1->projected_vertex).screen_x;
+      piVar8[5] = (pSVar1->projected_vertex).screen_y;
+      piVar8[6] = pSVar1->u;
+      piVar8[7] = pSVar1->v;
+      piVar8[8] = pSVar1->r;
+      piVar8[9] = pSVar1->g;
+      piVar8[10] = pSVar1->b;
+      piVar8[0xb] = pSVar1->a;
       CStack_5c.x = (int)ROUND((float)(fVar9 * fVar10) * 256.0f);
       CStack_5c.y = (int)ROUND(CStack_8c.min.y * 256.0f);
       CStack_5c.z = (int)ROUND((float)(fVar12 * fVar10) * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
-                 ((int)&(pCVar1->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_20),
+                 ((int)&(pCVar3->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_20),
                  &CStack_5c);
-      pCVar1 = g_CDemonRendererPtr2;
-      pSVar5 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-      piVar7 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
-                             transformed_x + iStack_1c);
-      for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-        piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
-        pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar8 * -8 + 4);
-        *piVar7 = (pSVar5->projected_vertex).transformed_x;
-        pSVar5 = pSVar5;
-        piVar7 = piVar7;
-      }
+      pCVar3 = g_CDemonRendererPtr2;
+      pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
+      piVar8 = (int *)((int)&(pSVar1->projected_vertex).transformed_x + iStack_1c);
+      *piVar8 = (pSVar1->projected_vertex).transformed_x;
+      piVar8[1] = (pSVar1->projected_vertex).transformed_y;
+      piVar8[2] = (pSVar1->projected_vertex).transformed_z;
+      piVar8[3] = (pSVar1->projected_vertex).inv_z;
+      piVar8[4] = (pSVar1->projected_vertex).screen_x;
+      piVar8[5] = (pSVar1->projected_vertex).screen_y;
+      piVar8[6] = pSVar1->u;
+      piVar8[7] = pSVar1->v;
+      piVar8[8] = pSVar1->r;
+      piVar8[9] = pSVar1->g;
+      piVar8[10] = pSVar1->b;
+      piVar8[0xb] = pSVar1->a;
       aCStack_44[0].x = (int)ROUND((float)(fVar9 * fVar10) * 256.0f);
       aCStack_44[0].y = (int)ROUND(CStack_8c.max.y * 256.0f);
       aCStack_44[0].z = (int)ROUND((float)(fVar12 * fVar10) * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
-                 ((int)&(pCVar1->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_1c),
+                 ((int)&(pCVar3->vertex_buffer_ptr->projected_vertex).transformed_x + iStack_1c),
                  aCStack_44);
       iStack_1c = iStack_1c + 0x60;
       iStack_20 = iStack_20 + 0x60;

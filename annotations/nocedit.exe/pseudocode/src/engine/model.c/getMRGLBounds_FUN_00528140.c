@@ -1,6 +1,6 @@
 // Name: engine_model.c_getMRGLBounds_FUN_00528140
 // Address: 00528140
-// Address Range: [[00528140, 005285ea]]
+// Address Range: [[00528140, 005285ea] [03fc3673, 03fc3741]]
 // Convention: __stack_esi
 // Signature: SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *output_bounds)
 
@@ -65,14 +65,6 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
   if (iVar4 == 0x20) {
     mrgl_data_00 = engine_model_c_loadModelFile_FUN_00527ec0((char *)(mrgl_data + 2));
     engine_model_c_getMRGLBounds_FUN_00528140(mrgl_data_00,&local_74);
-    pSVar13 = &local_74;
-    puVar6 = &local_a8;
-    for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pSVar13 = (SMRGLModelBounds *)((int)pSVar13 + (uint)bVar15 * -8 + 4);
-      *puVar6 = (pSVar13->min_scaled).x;
-      pSVar13 = pSVar13;
-      puVar6 = puVar6 + (uint)bVar15 * -2 + 1;
-    }
     engine_model_c_freeMRGLData_FUN_005280b0(mrgl_data_00);
     iVar4 = 0xd;
     puVar6 = local_110;
@@ -186,13 +178,18 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
     puVar11 = puVar11;
     puVar6 = puVar6 + (uint)bVar15 * -2 + 1;
   }
-  puVar12 = (uint *)(local_160 + 0x4c);
-  puVar6 = (uint *)local_34;
-  for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
-    puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
-    *puVar6 = *puVar12;
-    puVar12 = puVar12;
-    puVar6 = puVar6 + (uint)bVar15 * -2 + 1;
-  }
+  *local_34 = local_160._76_4_;
+  local_34[1] = local_110[0];
+  local_34[2] = local_110[1];
+  local_34[3] = local_110[2];
+  local_34[4] = local_110[3];
+  local_34[5] = local_110[4];
+  local_34[6] = local_110[5];
+  local_34[7] = local_110[6];
+  local_34[8] = local_110[7];
+  local_34[9] = local_110[8];
+  local_34[10] = local_110[9];
+  local_34[0xb] = local_110[10];
+  local_34[0xc] = local_110[0xb];
   return (SMRGLModelBounds *)local_34;
 }

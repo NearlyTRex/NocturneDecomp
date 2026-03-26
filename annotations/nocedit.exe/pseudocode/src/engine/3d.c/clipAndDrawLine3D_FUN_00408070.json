@@ -5,19 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 274,
-    "complexity_score": 367,
+    "assembly_lines": 586,
+    "complexity_score": 206,
     "cross_reference_count": 2,
     "function_call_count": 7,
-    "global_count": 11,
+    "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 147,
-    "suspect_count": 21,
+    "pseudocode_lines": 191,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "pointer_cast"
+      "param_count_too_few"
     ],
-    "total_lines": 421
+    "total_lines": 777
   },
   "cross_references": [
     {
@@ -39,6 +38,10 @@
       [
         "00408070",
         "0040831a"
+      ],
+      [
+        "03fc124f",
+        "03fc15ed"
       ]
     ],
     "convention": "__cdecl",
@@ -96,12 +99,6 @@
       "value": null
     },
     {
-      "addr": "007725b8",
-      "name": "g_QuadVertex2_Y",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "007725bc",
       "name": "g_QuadVertex2_U",
       "type": "undefined4",
@@ -116,18 +113,6 @@
     {
       "addr": "007725c8",
       "name": "g_ProjectedScreenY1",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "007725e4",
-      "name": "g_QuadVertex3",
-      "type": "SRenderVertex",
-      "value": null
-    },
-    {
-      "addr": "007725e8",
-      "name": "g_QuadVertex3_Y",
       "type": "undefined4",
       "value": null
     },
@@ -182,38 +167,36 @@
     "estimated_params": 24
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.1415929203539825,
-    "instruction_count": 226,
+    "avg_pcode_per_instr": 3.91699604743083,
+    "instruction_count": 506,
     "opcode_distribution": {
       "BOOL_AND": 9,
       "BOOL_NEGATE": 31,
       "BOOL_OR": 9,
-      "BRANCH": 11,
+      "BRANCH": 21,
       "CALL": 12,
-      "CBRANCH": 31,
-      "COPY": 201,
+      "CBRANCH": 21,
+      "COPY": 431,
       "INT_2COMP": 6,
-      "INT_ADD": 105,
-      "INT_AND": 149,
-      "INT_CARRY": 15,
-      "INT_EQUAL": 123,
+      "INT_ADD": 325,
+      "INT_AND": 209,
+      "INT_CARRY": 35,
+      "INT_EQUAL": 173,
       "INT_LESS": 18,
-      "INT_MULT": 20,
       "INT_NOTEQUAL": 28,
       "INT_OR": 16,
       "INT_SBORROW": 24,
-      "INT_SCARRY": 16,
-      "INT_SLESS": 50,
+      "INT_SCARRY": 36,
+      "INT_SLESS": 80,
       "INT_SRIGHT": 8,
-      "INT_SUB": 102,
-      "INT_XOR": 1,
-      "INT_ZEXT": 20,
-      "LOAD": 45,
-      "POPCOUNT": 50,
+      "INT_SUB": 72,
+      "INT_XOR": 11,
+      "LOAD": 155,
+      "POPCOUNT": 80,
       "RETURN": 2,
-      "STORE": 60
+      "STORE": 170
     },
-    "pcode_op_count": 1162
+    "pcode_op_count": 1982
   },
   "stack_frame": {
     "frame_size": 164,
@@ -246,166 +229,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 90,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 100,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 124,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 125,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 130,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 131,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
     {
       "call_site_count": 2,
       "declared_params": 2,

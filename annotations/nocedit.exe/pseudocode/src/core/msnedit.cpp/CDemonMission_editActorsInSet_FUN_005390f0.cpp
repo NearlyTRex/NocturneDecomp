@@ -1,6 +1,6 @@
 // Name: core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
 // Address: 005390f0
-// Address Range: [[005390f0, 0053af22]]
+// Address Range: [[005390f0, 0053af22] [03fc30b0, 03fc3168]]
 // Convention: __cdecl
 // Signature: int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMission *this_ptr,int reset_cameras)
 
@@ -33,9 +33,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   float *pfVar10;
   int iVar11;
   char *pcVar12;
-  float *pfVar15;
-  CMatrix3x3f *pCVar16;
-  int iVar17;
+  int iVar15;
   bool bVar13;
   byte bVar14;
   CPickList local_9b4;
@@ -207,25 +205,18 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         local_104 = *local_58;
         if (&local_170 != (CSlew *)&local_10c) {
           local_170.position.x = g_CDemonCameraInstance.base.position.f.x;
-          local_170.position.y = *local_54;
-          local_170.position.z = *local_58;
+          local_170.position.y = local_108;
+          local_170.position.z = local_104;
         }
-        pCVar9 = &g_CDemonCameraInstance.base.rotation_matrix;
-        pfVar15 = local_1e8;
-        for (iVar14 = 10; iVar14 != 0; iVar14 = iVar14 + -1) {
-          pCVar9 = (CMatrix3x3f *)((int)pCVar9 + (uint)bVar14 * -8 + 4);
-          *pfVar15 = pCVar9->m[0].x;
-          pCVar9 = pCVar9;
-          pfVar15 = pfVar15 + (uint)bVar14 * -2 + 1;
-        }
-        pfVar10 = local_1e8;
-        pCVar16 = &local_1c0;
-        for (iVar14 = 10; iVar14 != 0; iVar14 = iVar14 + -1) {
-          pfVar10 = pfVar10 + (uint)bVar14 * -2 + 1;
-          pCVar16->m[0].x = *pfVar10;
-          pfVar10 = pfVar10;
-          pCVar16 = (CMatrix3x3f *)((int)pCVar16 + ((uint)bVar14 * -2 + 1) * 4);
-        }
+        local_1c0.m[0].x = g_CDemonCameraInstance.base.rotation_matrix.m[0].x;
+        local_1c0.m[0].y = g_CDemonCameraInstance.base.rotation_matrix.m[0].y;
+        local_1c0.m[0].z = g_CDemonCameraInstance.base.rotation_matrix.m[0].z;
+        local_1c0.m[1].x = g_CDemonCameraInstance.base.rotation_matrix.m[1].x;
+        local_1c0.m[1].y = g_CDemonCameraInstance.base.rotation_matrix.m[1].y;
+        local_1c0.m[1].z = g_CDemonCameraInstance.base.rotation_matrix.m[1].z;
+        local_1c0.m[2].x = g_CDemonCameraInstance.base.rotation_matrix.m[2].x;
+        local_1c0.m[2].y = g_CDemonCameraInstance.base.rotation_matrix.m[2].y;
+        local_1c0.m[2].z = g_CDemonCameraInstance.base.rotation_matrix.m[2].z;
         pCVar8 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(&local_1c0,&local_dc);
         if ((CVector3f *)&local_170.pitch != pCVar8) {
           local_170.pitch = pCVar8->x;
@@ -386,11 +377,11 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
       }
       iVar14 = local_14;
-      if ((((this_ptr->show_3d_viewport != 0) && (iVar17 = INT_02f7c634, INT_02f7c634 == 0)) &&
+      if ((((this_ptr->show_3d_viewport != 0) && (iVar15 = INT_02f7c634, INT_02f7c634 == 0)) &&
           (iVar9 = core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0
                              (g_CDemonSetPtr,(int *)0x0), local_38 = iVar9, iVar14 = local_14,
           -1 < iVar9)) &&
-         (iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU), iVar14 = iVar17,
+         (iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU), iVar14 = iVar15,
          iVar2 != 0)) {
         core_script_cpp_CScript_initEditorLayout_FUN_00566660
                   (g_CScriptPtr,0,0x101,g_WindowWidth + -1,g_WindowHeight + -1);
@@ -963,12 +954,12 @@ LAB_0053aea7:
       }
       else {
         this_ptr_01 = g_MsnEditPropertyList.properties + INT_02f7c528;
-        iVar17 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
-        if (iVar17 == 0) {
-          iVar17 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
-          if (iVar17 == 0) {
-            iVar17 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
-            if (iVar17 == 0) {
+        iVar15 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
+        if (iVar15 == 0) {
+          iVar15 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
+          if (iVar15 == 0) {
+            iVar15 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
+            if (iVar15 == 0) {
               if (g_MsnEditPropertyList.properties[iVar14].enabled_flag == 0) goto LAB_0053ad72;
               core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                         (this_ptr_01,this_ptr->selected_actor);

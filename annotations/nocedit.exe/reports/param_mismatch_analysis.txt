@@ -13,19 +13,29 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 6750
+Functions with parameter estimates: 6746
 Functions with no callers: 3167
-Parameter mismatches detected: 94
-Signature accuracy rate: 97.4%
+Parameter mismatches detected: 96
+Signature accuracy rate: 97.3%
 
 Mismatches by confidence:
-  High confidence:   1 (multiple call sites agree)
+  High confidence:   2 (multiple call sites agree)
   Medium confidence: 24 (some agreement)
-  Low confidence:    69 (limited data)
+  Low confidence:    70 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
 ====================================================================================================
+
+  core_xform.cpp_buildRotationX_FUN_005f6c40
+    Declared: 2 params (4 bytes), Estimated: 3 stack slots (12 bytes) [+1]
+    Call sites: 3, Confidence: high
+    File: core/xform.cpp
+    Signature: CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationX_FUN_005f6c40(float angle_radians,CMatrix3x4f *matrix_out)
+    Sample call sites:
+      core_stranger.cpp_CStranger_co at 005c088e: 0 reg [], 3 stack (12 bytes, via push_count)
+      core_gabriela.cpp_CGabriella_u at 004d5610: 0 reg [], 3 stack (12 bytes, via push_count)
+      core_stranger.cpp_CStranger_co at 005c0edc: 0 reg [], 3 stack (12 bytes, via push_count)
 
   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480
     Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
@@ -70,7 +80,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  69 functions with low-confidence mismatches
+  70 functions with low-confidence mismatches
   Sample:
     cockpit_ckptutil.c_isLineClippingDisabled_FUN declared:0 est:4 (+4)
     crt_windows.c_has_active_window_FUN_0060a710  declared:0 est:4 (+4)
@@ -87,18 +97,18 @@ LOW CONFIDENCE MISMATCHES (limited data)
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 10
+Functions where declaration has MORE params than estimated: 11
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 84
+Functions where declaration has FEWER params than estimated: 85
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
   -4 params: 1 functions
   -3 params: 1 functions
-  -2 params: 1 functions
+  -2 params: 2 functions
   -1 params: 7 functions
-  +1 params: 40 functions
+  +1 params: 41 functions
   +2 params: 11 functions
   +3 params: 12 functions
   +4 params: 11 functions

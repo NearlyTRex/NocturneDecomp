@@ -1,6 +1,6 @@
 // Name: core_mimic.cpp_CMimic_updatePose_FUN_0051f930
 // Address: 0051f930
-// Address Range: [[0051f930, 0051fcb8] [0060495b, 0060497e]]
+// Address Range: [[0051f930, 0051fcb8] [0060495b, 0060497e] [03fc15ee, 03fc18bb]]
 // Convention: __cdecl
 // Signature: void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
 
@@ -12,33 +12,32 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
 
 {
   float *pfVar1;
+  CHero *pCVar5;
   CSkeleton *pCVar6;
   int iVar7;
   SPose *pSVar8;
   CVector3f *pCVar9;
   uint uVar10;
-  int iVar2;
+  int iVar6;
   int iVar11;
   CVector3f *pCVar12;
-  CVector3f *pCVar5;
+  CVector3f *pCVar7;
   SPose *pSVar13;
   UOrientationVector *pUVar14;
   CMimic *pCVar15;
   CVector3i *pCVar16;
   uint *puVar17;
   uint *puVar18;
-  CMatrix3x4f *pCVar7;
   CMatrix3x4f *pCVar19;
-  CMatrix3x4f *pCVar8;
-  CMatrix3x4f *pCVar10;
   CMatrix3x4f *pCVar20;
   CMatrix3x4f *pCVar21;
   CVector3i *pCVar22;
   uint *puVar23;
   uint *puVar24;
-  CMatrix3x4f *pCVar11;
   CMatrix3x4f *pCVar25;
   byte bVar26;
+  CMatrix3x4f *pCVar8;
+  CMatrix3x4f *matrix_b;
   CMatrix3x4f local_2d0;
   CMatrix3x4f local_2a0;
   CMatrix3x4f local_270;
@@ -68,33 +67,57 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
   bVar26 = 0;
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                      (&(this_ptr->base).base.model);
-  iVar2 = pCVar6->bone_count;
-  pCVar5 = (this_ptr->base).base.model.transformed_vertices;
+  iVar6 = pCVar6->bone_count;
+  pCVar7 = (this_ptr->base).base.model.transformed_vertices;
   local_14 = this_ptr;
   pCVar15 = this_ptr;
-  for (iVar7 = 0; iVar5 = g_LocalHeroIndex, iVar7 < iVar2; iVar7 = iVar7 + 1) {
+  for (iVar7 = 0; iVar5 = g_LocalHeroIndex, iVar7 < iVar6; iVar7 = iVar7 + 1) {
     pfVar1 = &(g_HeroActors[g_LocalHeroIndex]->base).model.bone_transform.pose_data.bone_rotations
               [iVar7].w;
     (pCVar15->base).base.model.bone_transform.pose_data.bone_rotations[0].w = *pfVar1;
     (pCVar15->base).base.model.bone_transform.pose_data.bone_rotations[0].x = pfVar1[1];
     (pCVar15->base).base.model.bone_transform.pose_data.bone_rotations[0].y = pfVar1[2];
     (pCVar15->base).base.model.bone_transform.pose_data.bone_rotations[0].z = pfVar1[3];
-    pCVar8 = (g_HeroActors[iVar5]->base).model.bone_transform.bone_world_matrices + iVar7;
-    pCVar10 = (local_14->base).base.model.bone_transform.bone_world_matrices;
-    for (iVar11 = 0xc; iVar11 != 0; iVar11 = iVar11 + -1) {
-      pCVar10->m[0].w = pCVar8->m[0].w;
-      pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar26 * -2 + 1) * 4);
-      pCVar10 = (CMatrix3x4f *)((int)pCVar10 + (uint)bVar26 * -8 + 4);
-    }
+    pCVar5 = g_HeroActors[iVar5];
+    (local_14->base).base.model.bone_transform.bone_world_matrices[0].m[0].w =
+         (pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m[0].w;
+    (local_14->base).base.model.bone_transform.bone_world_matrices[0].m[0].x =
+         (pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m[0].x;
+    (local_14->base).base.model.bone_transform.bone_world_matrices[0].m[0].y =
+         (pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m[0].y;
+    (local_14->base).base.model.bone_transform.bone_world_matrices[0].m[0].z =
+         (pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m[0].z;
+    (local_14->base).base.model.bone_transform.bone_world_matrices[0].m[1].w =
+         (pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m[1].w;
+    *(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 1) + 4) =
+         *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 1) + 4)
+    ;
+    *(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 1) + 8) =
+         *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 1) + 8)
+    ;
+    *(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 1) + 0xc)
+         = *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 1) +
+                     0xc);
+    (local_14->base).base.model.bone_transform.bone_world_matrices[0].m[2].w =
+         (pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m[2].w;
+    *(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 2) + 4) =
+         *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 2) + 4)
+    ;
+    *(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 2) + 8) =
+         *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 2) + 8)
+    ;
+    *(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 2) + 0xc)
+         = *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 2) +
+                     0xc);
     pCVar12 = (g_HeroActors[iVar5]->base).model.transformed_vertices + iVar7;
-    if (pCVar5 != pCVar12) {
-      pCVar5->x = pCVar12->x;
-      pCVar5->y = pCVar12->y;
-      pCVar5->z = pCVar12->z;
+    if (pCVar7 != pCVar12) {
+      pCVar7->x = pCVar12->x;
+      pCVar7->y = pCVar12->y;
+      pCVar7->z = pCVar12->z;
     }
     pCVar15 = (CMimic *)((pCVar15->base).base.base.actor_name + 0x10);
     local_14 = (CMimic *)&(local_14->base).base.base.orient;
-    pCVar5 = pCVar5 + 1;
+    pCVar7 = pCVar7 + 1;
   }
   pCVar2 = g_HeroActors[g_LocalHeroIndex];
   pSVar8 = &(this_ptr->base).base.model.bone_transform;
@@ -115,7 +138,7 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
     pCVar16 = (CVector3i *)((int)pCVar16 + (uint)bVar26 * -8 + 4);
     pCVar22 = (CVector3i *)((int)pCVar22 + (uint)bVar26 * -8 + 4);
   }
-  for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
+  for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
     pCVar22 = (CVector3i *)((int)pCVar22 + (uint)bVar26 * -2 + 1);
     pCVar16 = (CVector3i *)((int)pCVar16 + (uint)bVar26 * -2 + 1);
     *(char *)&pCVar22->x = (char)pCVar16->x;
@@ -132,64 +155,18 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_f0,&(g_HeroActors[g_LocalHeroIndex]->base).base.location.position,
                &(g_HeroActors[g_LocalHeroIndex]->base).base.orient.vec);
-    pCVar10 = &local_c0;
+    matrix_b = &local_c0;
     core_xform_cpp_buildZFlipMatrix_FUN_005f6fa0(0.0,&local_90);
     pCVar8 = &local_2a0;
-    pCVar7 = &local_90;
-    pCVar11 = &local_2a0;
-    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      pCVar11->m[0].w = pCVar7->m[0].w;
-      pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar26 * -2 + 1) * 4);
-      pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar26 * -2 + 1) * 4);
-    }
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_f0,&local_120,&local_210);
-    pCVar19 = &local_210;
-    pCVar25 = &local_2d0;
-    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      pCVar25 = (CMatrix3x4f *)((int)pCVar25 + (uint)bVar26 * -8 + 4);
-      pCVar19 = (CMatrix3x4f *)((int)pCVar19 + (uint)bVar26 * -8 + 4);
-      pCVar25->m[0].w = pCVar19->m[0].w;
-      pCVar19 = pCVar19;
-      pCVar25 = pCVar25;
-    }
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_2d0,pCVar8,&local_1e0);
-    pCVar8 = &local_1e0;
-    pCVar7 = &local_270;
-    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      pCVar7->m[0].w = pCVar8->m[0].w;
-      pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar26 * -2 + 1) * 4);
-      pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar26 * -2 + 1) * 4);
-    }
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_270,pCVar10,&local_1b0);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_270,matrix_b,&local_1b0);
     pCVar8 = &local_60;
-    pCVar10 = &local_1b0;
-    pCVar7 = &local_60;
-    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      pCVar7->m[0].w = pCVar10->m[0].w;
-      pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar26 * -2 + 1) * 4);
-      pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar26 * -2 + 1) * 4);
-    }
     core_xform_cpp_buildXFlipMatrix_FUN_005f6ee0(0.0,&local_180);
-    pCVar20 = &local_180;
-    pCVar10 = &local_240;
-    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      pCVar20 = (CMatrix3x4f *)((int)pCVar20 + (uint)bVar26 * -8 + 4);
-      pCVar10->m[0].w = pCVar20->m[0].w;
-      pCVar20 = pCVar20;
-      pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar26 * -2 + 1) * 4);
-    }
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_240,pCVar8,&local_150);
-    pCVar21 = &local_150;
-    pCVar8 = &local_60;
-    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      pCVar21 = (CMatrix3x4f *)((int)pCVar21 + (uint)bVar26 * -8 + 4);
-      pCVar8->m[0].w = pCVar21->m[0].w;
-      pCVar21 = pCVar21;
-      pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar26 * -2 + 1) * 4);
-    }
-    (this_ptr->base).base.base.location.position.x = local_60.m[0].z;
-    (this_ptr->base).base.base.location.position.y = local_60.m[1].z;
-    (this_ptr->base).base.base.location.position.z = local_60.m[2].z;
+    (this_ptr->base).base.base.location.position.x = local_150.m[0].z;
+    (this_ptr->base).base.base.location.position.y = local_150.m[1].z;
+    (this_ptr->base).base.base.location.position.z = local_150.m[2].z;
     pCVar9 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_60,&local_24);
     pUVar14 = &(this_ptr->base).base.base.orient;
     if (pUVar14 != (UOrientationVector *)pCVar9) {

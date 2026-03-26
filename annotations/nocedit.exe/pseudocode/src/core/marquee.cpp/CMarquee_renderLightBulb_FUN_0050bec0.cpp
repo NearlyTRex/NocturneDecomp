@@ -1,6 +1,6 @@
 // Name: core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0
 // Address: 0050bec0
-// Address Range: [[0050bec0, 0050c046]]
+// Address Range: [[0050bec0, 0050c046] [03fc2f9c, 03fc30af]]
 // Convention: __cdecl
 // Signature: void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(CMarquee *this_ptr,CVector3f *position)
 
@@ -10,11 +10,9 @@ void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(CMarquee *th
 
 {
   int *piVar2;
-  int iVar2;
-  int iVar3;
   SRenderVertex *pSVar5;
+  int iVar2;
   SRenderVertex *pSVar3;
-  SRenderVertex *pSVar6;
   SRenderVertex *pSVar4;
   byte bVar5;
   SMRGLHeaderPrimitive local_44;
@@ -22,7 +20,6 @@ void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(CMarquee *th
   int *piVar1;
   CDemonRenderer *this_ptr_00;
   
-  bVar5 = 0;
   local_1c.x = (int)ROUND(position->x * 256.0f);
   local_1c.y = (int)ROUND(position->y * 256.0f);
   local_1c.z = (int)ROUND(position->z * 256.0f);
@@ -30,28 +27,44 @@ void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(CMarquee *th
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_1c);
   this_ptr_00 = g_CDemonRendererPtr2;
   pSVar5 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-  pSVar6 = g_CDemonRendererPtr2->vertex_buffer_ptr + 1;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    (pSVar6->projected_vertex).transformed_x = (pSVar5->projected_vertex).transformed_x;
-    pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar5 * -2 + 1) * 4);
-    pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar5 * -2 + 1) * 4);
-  }
+  pSVar5[1].projected_vertex.transformed_x = (pSVar5->projected_vertex).transformed_x;
+  pSVar5[1].projected_vertex.transformed_y = (pSVar5->projected_vertex).transformed_y;
+  pSVar5[1].projected_vertex.transformed_z = (pSVar5->projected_vertex).transformed_z;
+  pSVar5[1].projected_vertex.inv_z = (pSVar5->projected_vertex).inv_z;
+  pSVar5[1].projected_vertex.screen_x = (pSVar5->projected_vertex).screen_x;
+  pSVar5[1].projected_vertex.screen_y = (pSVar5->projected_vertex).screen_y;
+  pSVar5[1].u = pSVar5->u;
+  pSVar5[1].v = pSVar5->v;
+  pSVar5[1].r = pSVar5->r;
+  pSVar5[1].g = pSVar5->g;
+  pSVar5[1].b = pSVar5->b;
+  pSVar5[1].a = pSVar5->a;
   pSVar5 = this_ptr_00->vertex_buffer_ptr;
-  pSVar6 = this_ptr_00->vertex_buffer_ptr + 2;
-  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    (pSVar6->projected_vertex).transformed_x = (pSVar5->projected_vertex).transformed_x;
-    pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar5 * -2 + 1) * 4);
-    pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar5 * -2 + 1) * 4);
-  }
-  pSVar3 = this_ptr_00->vertex_buffer_ptr;
-  pSVar4 = this_ptr_00->vertex_buffer_ptr + 3;
-  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar5 * -8 + 4);
-    pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar5 * -8 + 4);
-    (pSVar4->projected_vertex).transformed_x = (pSVar3->projected_vertex).transformed_x;
-    pSVar3 = pSVar3;
-    pSVar4 = pSVar4;
-  }
+  pSVar5[2].projected_vertex.transformed_x = (pSVar5->projected_vertex).transformed_x;
+  pSVar5[2].projected_vertex.transformed_y = (pSVar5->projected_vertex).transformed_y;
+  pSVar5[2].projected_vertex.transformed_z = (pSVar5->projected_vertex).transformed_z;
+  pSVar5[2].projected_vertex.inv_z = (pSVar5->projected_vertex).inv_z;
+  pSVar5[2].projected_vertex.screen_x = (pSVar5->projected_vertex).screen_x;
+  pSVar5[2].projected_vertex.screen_y = (pSVar5->projected_vertex).screen_y;
+  pSVar5[2].u = pSVar5->u;
+  pSVar5[2].v = pSVar5->v;
+  pSVar5[2].r = pSVar5->r;
+  pSVar5[2].g = pSVar5->g;
+  pSVar5[2].b = pSVar5->b;
+  pSVar5[2].a = pSVar5->a;
+  pSVar5 = this_ptr_00->vertex_buffer_ptr;
+  pSVar5[3].projected_vertex.transformed_x = (pSVar5->projected_vertex).transformed_x;
+  pSVar5[3].projected_vertex.transformed_y = (pSVar5->projected_vertex).transformed_y;
+  pSVar5[3].projected_vertex.transformed_z = (pSVar5->projected_vertex).transformed_z;
+  pSVar5[3].projected_vertex.inv_z = (pSVar5->projected_vertex).inv_z;
+  pSVar5[3].projected_vertex.screen_x = (pSVar5->projected_vertex).screen_x;
+  pSVar5[3].projected_vertex.screen_y = (pSVar5->projected_vertex).screen_y;
+  pSVar5[3].u = pSVar5->u;
+  pSVar5[3].v = pSVar5->v;
+  pSVar5[3].r = pSVar5->r;
+  pSVar5[3].g = pSVar5->g;
+  pSVar5[3].b = pSVar5->b;
+  pSVar5[3].a = pSVar5->a;
   (this_ptr_00->vertex_buffer_ptr->projected_vertex).transformed_x =
        (this_ptr_00->vertex_buffer_ptr->projected_vertex).transformed_x + 0x80;
   piVar1 = &(this_ptr_00->vertex_buffer_ptr->projected_vertex).transformed_y;

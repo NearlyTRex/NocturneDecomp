@@ -1,6 +1,6 @@
 // Name: core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120
 // Address: 004d7120
-// Address Range: [[004d7120, 004d7589]]
+// Address Range: [[004d7120, 004d7589] [03fc2f37, 03fc2f9b]]
 // Convention: __stack2_esi
 // Signature: void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
@@ -105,15 +105,6 @@ LAB_004d73e5:
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             (&CStack_d0,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar1,
              &CStack_130);
-  pCVar4 = &CStack_130;
-  pCVar5 = &CStack_d0;
-  for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
-    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar6 * -8 + 4);
-    pCVar5->m[0].w = pCVar4->m[0].w;
-    pCVar4 = pCVar4;
-    pCVar5 = pCVar5;
-  }
   pCVar3 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&CStack_d0,&CStack_4c);
   if (&local_58 != pCVar3) {
     local_58.x = pCVar3->x;

@@ -1,6 +1,6 @@
 // Name: core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
 // Address: 0054ea00
-// Address Range: [[0054ea00, 0054f058] [006050a6, 0060511b] [0060f543, 0060f5ae]]
+// Address Range: [[0054ea00, 0054f058] [006050a6, 0060511b] [0060f543, 0060f5ae] [03fc23e0, 03fc2565]]
 // Convention: __cdecl
 // Signature: void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *this_ptr)
 
@@ -17,12 +17,10 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
   CVector3f *pCVar3;
   CVector3f *pCVar6;
   uint *puVar4;
-  CMatrix3x4f *pCVar7;
   CMatrix3x4f *pCVar5;
   uint *puVar6;
   uint *puVar7;
   uint *puVar8;
-  CMatrix3x4f *pCVar8;
   CMatrix3x4f *pCVar9;
   byte bVar10;
   float afStackY_18a8 [1387];
@@ -59,7 +57,6 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
   CVector3f *local_18;
   CLocation *pCVar1;
   
-  bVar10 = 0;
   if (this_ptr->platform_type != 4) {
     if (this_ptr->course_filename[0] == '\0') {
       fVar1 = (this_ptr->start_pos).x - (this_ptr->end_pos).x;
@@ -164,41 +161,19 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                   (&CStack_2b4,pCStack_1c,pCVar3);
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_2b4,&CStack_194,&CStack_164);
-        pCVar7 = &CStack_164;
-        pCVar8 = &CStack_254;
-        for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-          pCVar8->m[0].w = pCVar7->m[0].w;
-          pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar10 * -2 + 1) * 4);
-          pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar10 * -2 + 1) * 4);
-        }
         pCVar6 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                            (&CStack_64,(CVector3f *)&this_ptr->end_orient);
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                   (&CStack_1f4,&this_ptr->end_pos,pCVar6);
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_1f4,&CStack_194,&CStack_2e4);
-        pCVar7 = &CStack_2e4;
-        pCVar8 = &CStack_134;
-        for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-          pCVar8->m[0].w = pCVar7->m[0].w;
-          pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar10 * -2 + 1) * 4);
-          pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar10 * -2 + 1) * 4);
-        }
         core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                   (&CStack_224,local_18,pCStack_20);
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_254,&CStack_224,&CStack_284);
-        pCVar7 = &CStack_284;
-        pCVar8 = &CStack_2b4;
-        for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-          pCVar8->m[0].w = pCVar7->m[0].w;
-          pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar10 * -2 + 1) * 4);
-          pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar10 * -2 + 1) * 4);
-        }
-        CStack_64.z = CStack_2b4.m[0].z;
         if ((CVector3f *)&CStack_64.z != pCStack_1c) {
-          pCStack_1c->x = CStack_2b4.m[0].z;
-          pCStack_1c->y = CStack_2b4.m[1].z;
-          pCStack_1c->z = CStack_2b4.m[2].z;
+          pCStack_1c->x = CStack_284.m[0].z;
+          pCStack_1c->y = CStack_284.m[1].z;
+          pCStack_1c->z = CStack_284.m[2].z;
         }
         core_xform_cpp_matrixToQuaternion_FUN_005f7420((CMatrix3x3f *)&CStack_2b4,&CStack_8c);
         (this_ptr->orig_orient).w = CStack_8c.w;
@@ -206,20 +181,10 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
         (this_ptr->orig_orient).y = CStack_8c.y;
         (this_ptr->orig_orient).z = CStack_8c.z;
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_134,&CStack_224,&CStack_1c4);
-        pCVar5 = &CStack_1c4;
-        pCVar9 = &CStack_1f4;
-        for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-          pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar10 * -8 + 4);
-          pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar10 * -8 + 4);
-          pCVar9->m[0].w = pCVar5->m[0].w;
-          pCVar5 = pCVar5;
-          pCVar9 = pCVar9;
-        }
-        CStack_7c.z = CStack_1f4.m[0].z;
         if (&this_ptr->end_pos != (CVector3f *)&CStack_7c.z) {
-          (this_ptr->end_pos).x = CStack_1f4.m[0].z;
-          (this_ptr->end_pos).y = CStack_1f4.m[1].z;
-          (this_ptr->end_pos).z = CStack_1f4.m[2].z;
+          (this_ptr->end_pos).x = CStack_1c4.m[0].z;
+          (this_ptr->end_pos).y = CStack_1c4.m[1].z;
+          (this_ptr->end_pos).z = CStack_1c4.m[2].z;
         }
         core_xform_cpp_matrixToQuaternion_FUN_005f7420((CMatrix3x3f *)&CStack_1f4,&CStack_cc);
         (this_ptr->end_orient).w = CStack_cc.w;

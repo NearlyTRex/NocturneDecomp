@@ -1,6 +1,6 @@
 // Name: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
 // Address: 00592690
-// Address Range: [[00592690, 00595f23] [00605062, 006050a5]]
+// Address Range: [[00592690, 00595f23] [00605062, 006050a5] [03fc20a8, 03fc21d9]]
 // Convention: __cdecl
 // Signature: int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleton *this_ptr,char *filename)
 
@@ -34,14 +34,13 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   float *matrix_a;
   CQuaternion4f *pCVar17;
   char *pcVar18;
-  char (*pacVar19) [260];
-  SSkeleditBiasEntry *pSVar20;
-  CMatrix3x4f *pCVar21;
-  SMotionTransition *dest;
+  CMatrix3x4f *pCVar19;
+  char (*pacVar20) [260];
+  SSkeleditBiasEntry *pSVar21;
   CMatrix3x4f *pCVar22;
-  CMatrix3x3f *pCVar23;
-  bool bVar24;
-  byte bVar25;
+  SMotionTransition *dest;
+  bool bVar23;
+  byte bVar24;
   byte auStack_113f8 [13608];
   char local_ded0 [32];
   int aiStack_deb0 [3392];
@@ -211,7 +210,7 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   char local_18 [4];
   char local_14 [4];
   
-  bVar25 = 0;
+  bVar24 = 0;
   core_skeleton_cpp_CSkeleton_free_FUN_00599a50(this_ptr);
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (filename,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x103c);
@@ -272,8 +271,8 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   pcVar18 = local_1e74;
   for (iVar15 = 0x41; iVar15 != 0; iVar15 = iVar15 + -1) {
     *(uint *)pcVar18 = *(uint *)pcVar13;
-    pcVar13 = pcVar13 + ((uint)bVar25 * -2 + 1) * 4;
-    pcVar18 = pcVar18 + ((uint)bVar25 * -2 + 1) * 4;
+    pcVar13 = pcVar13 + ((uint)bVar24 * -2 + 1) * 4;
+    pcVar18 = pcVar18 + ((uint)bVar24 * -2 + 1) * 4;
   }
   do {
     iVar15 = _fgetc(p_Var3);
@@ -492,12 +491,12 @@ LAB_00592a67:
             local_144 = 0.0;
             local_140 = 0.0;
             local_a8 = &local_ec->fps;
-            pCVar21 = &CMatrix3x4f_00665968;
+            pCVar19 = &CMatrix3x4f_00665968;
             pCVar22 = &local_434;
             for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-              pCVar22->m[0].w = pCVar21->m[0].w;
-              pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar25 * -2 + 1) * 4);
-              pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar25 * -2 + 1) * 4);
+              pCVar22->m[0].w = pCVar19->m[0].w;
+              pCVar19 = (CMatrix3x4f *)((int)pCVar19 + ((uint)bVar24 * -2 + 1) * 4);
+              pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar24 * -2 + 1) * 4);
             }
             local_13c = 0.0;
             local_ac = iVar15;
@@ -1301,14 +1300,14 @@ LAB_0059518b:
                 local_f0 = local_f0 + 1;
               } while (local_f0 < *(int *)((int)aiStack_2720 + local_ac));
             }
-            pacVar19 = local_e8;
+            pacVar20 = local_e8;
             p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                (*local_e8,(char *)0x0,"rt","..\\core\\skeledit.cpp",
                                 0x13d8);
             local_c0 = p_Var3;
             if (p_Var3 == (_FILE *)0x0) {
               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                        (g_CEditorToolsPtr,"Can't open %s mentioned in %s",pacVar19);
+                        (g_CEditorToolsPtr,"Can't open %s mentioned in %s",pacVar20);
               shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2ca8,0);
               goto LAB_005927ee;
             }
@@ -1458,21 +1457,7 @@ LAB_0059518b:
                   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                             (&local_3a4,&local_150,&local_180);
                   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(local_7434,&local_3a4,&local_344);
-                  pCVar21 = &local_344;
-                  pCVar22 = &local_3d4;
-                  for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-                    pCVar22->m[0].w = pCVar21->m[0].w;
-                    pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar25 * -2 + 1) * 4);
-                    pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar25 * -2 + 1) * 4);
-                  }
                   core_xform_cpp_inverse_FUN_005f6210(&local_3d4,&local_374);
-                  pCVar21 = &local_374;
-                  pCVar22 = &local_404;
-                  for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-                    pCVar22->m[0].w = pCVar21->m[0].w;
-                    pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar25 * -2 + 1) * 4);
-                    pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar25 * -2 + 1) * 4);
-                  }
                   local_5c = 0;
                   if (0 < this_ptr->bone_count) {
                     local_4c = (float *)local_7434;
@@ -1480,13 +1465,6 @@ LAB_0059518b:
                     do {
                       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                                 ((CMatrix3x4f *)local_4c,&local_404,&local_314);
-                      pCVar21 = &local_314;
-                      pCVar23 = &local_2e4;
-                      for (iVar15 = 0xc; iVar15 != 0; iVar15 = iVar15 + -1) {
-                        pCVar23->m[0].x = pCVar21->m[0].w;
-                        pCVar21 = (CMatrix3x4f *)((int)pCVar21 + ((uint)bVar25 * -2 + 1) * 4);
-                        pCVar23 = (CMatrix3x3f *)((int)pCVar23 + ((uint)bVar25 * -2 + 1) * 4);
-                      }
                       core_xform_cpp_matrixToQuaternion_FUN_005f7420(&local_2e4,&local_224);
                       pCVar17->w = local_224.w;
                       pCVar17->x = local_224.x;
@@ -1635,9 +1613,9 @@ LAB_00595723:
               local_1e8 = local_1e8 * fVar10;
               local_1e4 = local_1e4 * fVar10;
               iVar15 = local_cc - local_94;
-              bVar24 = local_cc == local_94;
+              bVar23 = local_cc == local_94;
               iVar4 = local_cc;
-              while (bVar24 || SBORROW4(iVar4,local_94) != iVar15 < 0) {
+              while (bVar23 || SBORROW4(iVar4,local_94) != iVar15 < 0) {
                 iVar15 = local_ec->frame_start + iVar4;
                 pCVar9 = this_ptr->frame_positions_2;
                 pCVar9[iVar15].x = pCVar9[iVar15].x + local_1ec;
@@ -1645,7 +1623,7 @@ LAB_00595723:
                 iVar4 = iVar4 + 1;
                 pCVar9[iVar15].z = pCVar9[iVar15].z + local_1e4;
                 iVar15 = iVar4 - local_94;
-                bVar24 = iVar15 == 0;
+                bVar23 = iVar15 == 0;
               }
             }
             local_44 = local_44 + 1;
@@ -1695,8 +1673,8 @@ LAB_00595eb8:
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2ca8,0);
             goto LAB_005927ee;
           }
-          pSVar20 = g_SkeleditBiasEntries + iVar4;
-          iVar5 = (this_ptr->motion_list).motions[pSVar20->motion_index].frame_start +
+          pSVar21 = g_SkeleditBiasEntries + iVar4;
+          iVar5 = (this_ptr->motion_list).motions[pSVar21->motion_index].frame_start +
                   g_SkeleditBiasEntries[iVar4].source_frame;
           iVar4 = (this_ptr->motion_list).motions[g_SkeleditBiasEntries[iVar4].ref_motion_index].
                   frame_start + g_SkeleditBiasEntries[iVar4].ref_frame;
@@ -1705,17 +1683,17 @@ LAB_00595eb8:
           local_1d0 = pCVar9[iVar4].y - pCVar9[iVar5].y;
           local_1cc = pCVar9[iVar4].z - pCVar9[iVar5].z;
           for (iVar4 = 0; iVar5 = g_SkeleditBiasEntryCount,
-              iVar4 < (this_ptr->motion_list).motions[pSVar20->motion_index].frame_count;
+              iVar4 < (this_ptr->motion_list).motions[pSVar21->motion_index].frame_count;
               iVar4 = iVar4 + 1) {
-            iVar5 = (this_ptr->motion_list).motions[pSVar20->motion_index].frame_start + iVar4;
+            iVar5 = (this_ptr->motion_list).motions[pSVar21->motion_index].frame_start + iVar4;
             pCVar9 = this_ptr->frame_positions_1;
             pCVar9[iVar5].x = pCVar9[iVar5].x + local_1d4;
             pCVar9[iVar5].y = pCVar9[iVar5].y + local_1d0;
             pCVar9[iVar5].z = pCVar9[iVar5].z + local_1cc;
           }
-          local_2540[pSVar20->motion_index] = 0;
+          local_2540[pSVar21->motion_index] = 0;
           iVar15 = iVar15 + 1;
-          pSVar20->motion_index = -1;
+          pSVar21->motion_index = -1;
           if (iVar5 <= iVar15) goto LAB_00595eb8;
         } while( true );
       }
@@ -1730,7 +1708,7 @@ LAB_00595eb8:
             if (uVar8 == 0) break;
             uVar8 = uVar8 - 1;
             cVar2 = *pcVar13;
-            pcVar13 = pcVar13 + (uint)bVar25 * -2 + 1;
+            pcVar13 = pcVar13 + (uint)bVar24 * -2 + 1;
           } while (cVar2 != '\0');
           n = ~uVar8 - 1;
           if (0 < (int)n) {
@@ -1768,7 +1746,7 @@ LAB_00595eb8:
           pSVar16 = local_f8 + (this_ptr->motion_list).motion_count;
           iVar15 = (this_ptr->motion_list).motion_count;
           iVar4 = _strnicmp(local_21d0,"filename",8);
-          pacVar19 = g_MotionFilenames + iVar15;
+          pacVar20 = g_MotionFilenames + iVar15;
           if (iVar4 == 0) {
             pcVar13 = local_21ca + 2;
             while ((g_CharacterClassificationTable[(byte)(*pcVar13 + 1)] & 2) != 0) {
@@ -1779,25 +1757,25 @@ LAB_00595eb8:
               g_CurrentFilename = "..\\core\\skeledit.cpp";
               g_CurrentLineNumber = 0x112f;
               core_main_c_displayErrorAndQuit_FUN_00506f10
-                        ("Error parsing \"filename\" statement for animation %s in %s:\n%s",pacVar19,filename);
+                        ("Error parsing \"filename\" statement for animation %s in %s:\n%s",pacVar20,filename);
             }
-            splitpath(*pacVar19,local_1c,local_1470,local_1b70,local_c70);
+            splitpath(*pacVar20,local_1c,local_1470,local_1b70,local_c70);
             if ((local_1470[0] == '\0') && (local_1c[0] == '\0')) {
               splitpath
                         (filename,local_1c,local_1470,(char *)0x0,(char *)0x0);
-              makepath(*pacVar19,local_1c,local_1470,local_1b70,local_c70);
+              makepath(*pacVar20,local_1c,local_1470,local_1b70,local_c70);
             }
-            splitpath(*pacVar19,local_20,local_1a70,local_1970,local_d70);
+            splitpath(*pacVar20,local_20,local_1a70,local_1970,local_d70);
             if (local_d70[0] == '\0') {
               makepath
-                        (*pacVar19,local_20,local_1a70,local_1970,"bon");
+                        (*pacVar20,local_20,local_1a70,local_1970,"bon");
             }
             p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                               (*pacVar19,(char *)0x0,"rt","..\\core\\skeledit.cpp",
+                               (*pacVar20,(char *)0x0,"rt","..\\core\\skeledit.cpp",
                                 0x1139);
             if (p_Var3 == (_FILE *)0x0) {
               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                        (g_CEditorToolsPtr,"Can't open %s mentioned in %s",pacVar19);
+                        (g_CEditorToolsPtr,"Can't open %s mentioned in %s",pacVar20);
               shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2ca8,0);
               goto LAB_005927ee;
             }

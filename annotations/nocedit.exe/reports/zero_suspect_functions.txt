@@ -720,6 +720,7 @@ annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_checkCylinde
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_chooseNextLayerAction_FUN_0042e8c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_clearDoorTarget_FUN_0042cd60.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_computeBoundingBox_FUN_0042d530.cpp
+annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_computePickup_FUN_0042ce80.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_ctor_FUN_00427e20.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_detachBodyPart_FUN_0042bcc0.cpp
 annotations/nocedit.exe/pseudocode/src/core/charactr.cpp/CCharacter_dismember_FUN_0042b9e0.cpp
@@ -811,6 +812,7 @@ annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_addFilesToExtract_F
 annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_allocMemory_FUN_00438c50.cpp
 annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_applyConstraints_FUN_0043a420.cpp
 annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_applyRotation_FUN_0043e1a0.cpp
+annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_computeBoneTransform_FUN_0043a2b0.cpp
 annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_ctor_FUN_00438ba0.cpp
 annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_dtor_FUN_00438c00.cpp
 annotations/nocedit.exe/pseudocode/src/core/cloth.cpp/CCloth_free_FUN_00438cb0.cpp
@@ -2260,6 +2262,7 @@ annotations/nocedit.exe/pseudocode/src/core/marquee.cpp/CMarquee_getBoundingBox_
 annotations/nocedit.exe/pseudocode/src/core/marquee.cpp/CMarquee_getCollisionType_FUN_0050c370.cpp
 annotations/nocedit.exe/pseudocode/src/core/marquee.cpp/CMarquee_getPropertyList_FUN_0050c3e0.cpp
 annotations/nocedit.exe/pseudocode/src/core/marquee.cpp/CMarquee_process_FUN_0050bda0.cpp
+annotations/nocedit.exe/pseudocode/src/core/marquee.cpp/CMarquee_renderLightBulb_FUN_0050bec0.cpp
 annotations/nocedit.exe/pseudocode/src/core/marquee.cpp/CMarquee_renderOpaque_FUN_0050be50.cpp
 annotations/nocedit.exe/pseudocode/src/core/marquee.cpp/CMarquee_setup_FUN_0050bd60.cpp
 annotations/nocedit.exe/pseudocode/src/core/marquee.cpp/factoryFunc_FUN_0050bb20.cpp
@@ -2325,6 +2328,7 @@ annotations/nocedit.exe/pseudocode/src/core/minecar.cpp/factoryFunc_FUN_00520e50
 annotations/nocedit.exe/pseudocode/src/core/minecar.cpp/staticInit_FUN_00520e20.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirrorReflection_applyMirrorTransform_FUN_005222f0.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirrorReflection_setupMirrorCamera_FUN_00521480.cpp
+annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirrorReflection_setupMirrorReflection_FUN_005214c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirror_clipAndRenderReflectedPrimitive_FUN_00522560.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirror_ctor_FUN_005213c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/mirror.cpp/CMirror_dtor_FUN_005213e0.cpp
@@ -3352,6 +3356,7 @@ annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_getPropertyLi
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_renderOpaque_FUN_005db840.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_setup_FUN_005dafc0.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_shouldIgnoreForTargeting_FUN_005dbb30.cpp
+annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/CTentacle_updateGrabbedVictim_FUN_005db9d0.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/factoryFunc_FUN_005daf20.cpp
 annotations/nocedit.exe/pseudocode/src/core/tentacle.cpp/staticInit_FUN_005daef0.cpp
 annotations/nocedit.exe/pseudocode/src/core/terrain.cpp/CTerrain_free_FUN_005e1f30.cpp
@@ -3621,6 +3626,7 @@ annotations/nocedit.exe/pseudocode/src/core/werewolf.cpp/staticInit_FUN_005efb70
 annotations/nocedit.exe/pseudocode/src/core/xform.cpp/atan2Approximation_FUN_005f55c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/xform.cpp/buildMatrixFromEulerAndPositionDirect_FUN_005f54c0.cpp
 annotations/nocedit.exe/pseudocode/src/core/xform.cpp/buildMatrixFromEulerAndPosition_FUN_005f5390.cpp
+annotations/nocedit.exe/pseudocode/src/core/xform.cpp/buildMirrorTransform_FUN_005f7000.cpp
 annotations/nocedit.exe/pseudocode/src/core/xform.cpp/buildRotationY_FUN_005f6cc0.cpp
 annotations/nocedit.exe/pseudocode/src/core/xform.cpp/buildRotationZ_FUN_005f6d40.cpp
 annotations/nocedit.exe/pseudocode/src/core/xform.cpp/buildScaleMatrix_FUN_005f6e80.cpp
@@ -3862,6 +3868,7 @@ annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_calcula
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_calculateVertexLight_FUN_0048c740.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_captureFace_FUN_0048d8a0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_captureTexture_FUN_0048db80.cpp
+annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_clipAndFillPoly_FUN_0048a740.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420.cpp
 annotations/nocedit.exe/pseudocode/src/engine/drender.cpp/CDemonRenderer_ctor_FUN_0048a6c0.cpp
@@ -4563,6 +4570,7 @@ annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CComplexPolygon_getMat
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CComplexPolygon_getNormal_FUN_005cbef0.cpp
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CComplexPolygon_isEdgeChainClosed_FUN_005cbf20.cpp
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CComplexPolygon_processEdgeSubLoops_FUN_005c91e0.cpp
+annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CComplexPolygon_removeRedundantEdges_FUN_005c9340.cpp
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CComplexPolygon_removedSharedEdges_FUN_005c8160.cpp
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CObj_addVertices_FUN_005d2580.cpp
 annotations/nocedit.exe/pseudocode/src/shape/superopt.cpp/CObj_allocateVertices_FUN_005d2500.cpp

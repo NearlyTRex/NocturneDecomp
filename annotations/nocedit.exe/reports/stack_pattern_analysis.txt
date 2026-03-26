@@ -209,7 +209,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00528913: MOV EDI,ESP
 
   engine_3d.c_drawLineStrip3D_FUN_00404600
-    File: engine/3d.c, Suspects: 9
+    File: engine/3d.c, Suspects: 5
     - [alt_frame_pointer] at 00404650: MOV EDI,ESP
     - [alt_frame_pointer] at 00599480: MOV EDI,ESP
     - [alt_frame_pointer] at 005994dc: MOV EDI,ESP
@@ -221,7 +221,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0060e8b5: MOV EDI,ESP
 
   engine_3d.c_drawLineStrip2D_FUN_00404570
-    File: engine/3d.c, Suspects: 9
+    File: engine/3d.c, Suspects: 5
     - [alt_frame_pointer] at 004045c0: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e07e: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e0da: MOV EDI,ESP
@@ -261,9 +261,9 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0048c78e: MOV ESI,ESP
 
   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-    File: engine/drender.cpp, Suspects: 21
-    - [alt_frame_pointer] at 0048cb49: MOV EDI,ESP
-    - [alt_frame_pointer] at 0048cd73: MOV ESI,ESP
+    File: engine/drender.cpp, Suspects: 0
+    - [alt_frame_pointer] at 03fc07ac: MOV EDI,ESP
+    - [alt_frame_pointer] at 03fc0b48: MOV ESI,ESP
 
   engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
     File: engine/fileio.cpp, Suspects: 3
@@ -277,5 +277,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 7.4 suspects/function
+  With stack patterns:    avg 7.2 suspects/function
   Without stack patterns: avg 1.8 suspects/function

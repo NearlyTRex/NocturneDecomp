@@ -4,31 +4,31 @@
       {
         "category": "format_error",
         "column": 45,
-        "line": 204,
+        "line": 202,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 239,
+        "line": 230,
         "message": "use of undeclared identifier 'stack0x00000000'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 250,
+        "line": 241,
         "message": "use of undeclared identifier 'stack0x00000000'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 287,
+        "line": 278,
         "message": "use of undeclared identifier 'stack0x00000000'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 332,
+        "line": 323,
         "message": "use of undeclared identifier 'stack0x00000000'"
       }
     ],
@@ -36,20 +36,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 2710,
-    "complexity_score": 1090,
+    "assembly_lines": 2766,
+    "complexity_score": 1056,
     "cross_reference_count": 1,
     "function_call_count": 96,
-    "global_count": 107,
+    "global_count": 106,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1005,
-    "suspect_count": 7,
+    "pseudocode_lines": 996,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 3715
+    "total_lines": 3762
   },
   "cross_references": [
     {
@@ -65,6 +64,10 @@
       [
         "005390f0",
         "0053af22"
+      ],
+      [
+        "03fc30b0",
+        "03fc3168"
       ]
     ],
     "convention": "__cdecl",
@@ -1168,12 +1171,6 @@
       "value": null
     },
     {
-      "addr": "032758f8",
-      "name": "g_CDemonCameraInstance.base.rotation_matrix.m[0].y",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "0327591c",
       "name": "g_CDemonCameraInstance.base.focal_length",
       "type": "undefined4",
@@ -1219,18 +1216,18 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.4102914389799635,
-    "instruction_count": 2196,
+    "avg_pcode_per_instr": 4.378342245989304,
+    "instruction_count": 2244,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 33,
       "BOOL_OR": 20,
-      "BRANCH": 44,
+      "BRANCH": 46,
       "BRANCHIND": 2,
       "CALL": 159,
       "CALLIND": 59,
-      "CBRANCH": 159,
-      "COPY": 2734,
+      "CBRANCH": 157,
+      "COPY": 2772,
       "FLOAT2FLOAT": 155,
       "FLOAT_ADD": 28,
       "FLOAT_EQUAL": 10,
@@ -1241,29 +1238,29 @@
       "FLOAT_SQRT": 1,
       "FLOAT_SUB": 10,
       "INT2FLOAT": 4,
-      "INT_ADD": 741,
-      "INT_AND": 1006,
-      "INT_CARRY": 212,
-      "INT_EQUAL": 854,
+      "INT_ADD": 777,
+      "INT_AND": 1018,
+      "INT_CARRY": 216,
+      "INT_EQUAL": 864,
       "INT_LEFT": 40,
       "INT_LESS": 59,
-      "INT_MULT": 11,
+      "INT_MULT": 7,
       "INT_NOTEQUAL": 65,
       "INT_OR": 50,
       "INT_SBORROW": 74,
-      "INT_SCARRY": 215,
+      "INT_SCARRY": 219,
       "INT_SEXT": 6,
-      "INT_SLESS": 424,
-      "INT_SUB": 738,
-      "INT_XOR": 27,
-      "INT_ZEXT": 46,
-      "LOAD": 407,
-      "POPCOUNT": 424,
+      "INT_SLESS": 430,
+      "INT_SUB": 732,
+      "INT_XOR": 29,
+      "INT_ZEXT": 42,
+      "LOAD": 425,
+      "POPCOUNT": 430,
       "RETURN": 2,
-      "STORE": 814,
+      "STORE": 832,
       "SUBPIECE": 4
     },
-    "pcode_op_count": 9685
+    "pcode_op_count": 9825
   },
   "stack_frame": {
     "frame_size": 2496,
@@ -1759,24 +1756,8 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 209,
-      "match": "(CMatrix3x3f *)((int)",
-      "severity": "mild",
-      "text": "pCVar9 = (CMatrix3x3f *)((int)pCVar9 + (uint)bVar14 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 220,
-      "match": "(CMatrix3x3f *)((int)",
-      "severity": "mild",
-      "text": "pCVar16 = (CMatrix3x3f *)((int)pCVar16 + ((uint)bVar14 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 232,
+      "line": 223,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
@@ -1784,7 +1765,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 243,
+      "line": 234,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
@@ -1792,7 +1773,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 280,
+      "line": 271,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
@@ -1800,7 +1781,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 325,
+      "line": 316,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
@@ -1808,7 +1789,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 422,
+      "line": 413,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_40 = SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) * (float)0.25;",

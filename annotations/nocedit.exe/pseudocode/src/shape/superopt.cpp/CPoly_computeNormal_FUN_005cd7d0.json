@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 27,
-        "line": 131,
+        "line": 127,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 173,
+        "line": 169,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
@@ -18,20 +18,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 539,
-    "complexity_score": 463,
+    "assembly_lines": 559,
+    "complexity_score": 439,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 218,
-    "suspect_count": 23,
+    "pseudocode_lines": 214,
+    "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 757
+    "total_lines": 773
   },
   "cross_references": [
     {
@@ -47,6 +47,10 @@
       [
         "005cd7d0",
         "005cdfdf"
+      ],
+      [
+        "03fc206d",
+        "03fc20a7"
       ]
     ],
     "convention": "__cdecl",
@@ -77,14 +81,14 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 7.397683397683398,
-    "instruction_count": 518,
+    "avg_pcode_per_instr": 7.262172284644195,
+    "instruction_count": 534,
     "opcode_distribution": {
       "BOOL_NEGATE": 34,
       "BOOL_OR": 9,
-      "BRANCH": 10,
-      "CBRANCH": 12,
-      "COPY": 2353,
+      "BRANCH": 11,
+      "CBRANCH": 11,
+      "COPY": 2364,
       "FLOAT2FLOAT": 208,
       "FLOAT_ADD": 20,
       "FLOAT_DIV": 7,
@@ -96,27 +100,27 @@
       "FLOAT_SQRT": 7,
       "FLOAT_SUB": 27,
       "INT2FLOAT": 10,
-      "INT_ADD": 297,
-      "INT_AND": 123,
-      "INT_CARRY": 1,
-      "INT_EQUAL": 38,
+      "INT_ADD": 307,
+      "INT_AND": 129,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 43,
       "INT_LEFT": 36,
       "INT_LESS": 4,
-      "INT_MULT": 14,
+      "INT_MULT": 12,
       "INT_NOTEQUAL": 42,
       "INT_OR": 60,
       "INT_SBORROW": 4,
-      "INT_SCARRY": 1,
-      "INT_SLESS": 25,
-      "INT_SUB": 32,
-      "INT_XOR": 7,
-      "INT_ZEXT": 36,
-      "LOAD": 205,
-      "POPCOUNT": 13,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 28,
+      "INT_SUB": 29,
+      "INT_XOR": 8,
+      "INT_ZEXT": 34,
+      "LOAD": 210,
+      "POPCOUNT": 16,
       "RETURN": 1,
-      "STORE": 100
+      "STORE": 105
     },
-    "pcode_op_count": 3832
+    "pcode_op_count": 3878
   },
   "possible_indirect_callers": {
     "method_name": "computeNormal",
@@ -614,32 +618,16 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 97,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar10 = (double *)((int)pdVar10 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 98,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar11 = (double *)((int)pdVar11 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 96,
       "match": "SQRT",
       "severity": "mild",
-      "text": "dVar1 = 1.0 / SQRT(local_238 * local_238 + local_248 * local_248 + local_240 * local_240);",
+      "text": "dVar1 = 1.0 / SQRT(local_148 * local_148 + local_158 * local_158 + local_150 * local_150);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 111,
+      "line": 107,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar10 = (double *)((int)pdVar10 + 4);",
@@ -647,7 +635,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 108,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar11 = (double *)((int)pdVar11 + 4);",
@@ -655,7 +643,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
+      "line": 110,
       "match": "SQRT",
       "severity": "mild",
       "text": "dVar1 = 1.0 / SQRT(local_178 * local_178 + local_188 * local_188 + local_180 * local_180);",
@@ -663,7 +651,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 124,
+      "line": 120,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uStack_2ec = local_2d8._4_4_;",
@@ -671,7 +659,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 135,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar10 = (double *)((int)pdVar10 + 4);",
@@ -679,7 +667,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 136,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar11 = (double *)((int)pdVar11 + 4);",
@@ -687,7 +675,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 142,
+      "line": 138,
       "match": "SQRT",
       "severity": "mild",
       "text": "dVar1 = 1.0 / SQRT(local_160 * local_160 + local_170 * local_170 + local_168 * local_168);",
@@ -695,7 +683,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 149,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar10 = (double *)((int)pdVar10 + 4);",
@@ -703,7 +691,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 150,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar11 = (double *)((int)pdVar11 + 4);",
@@ -711,7 +699,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 156,
+      "line": 152,
       "match": "SQRT",
       "severity": "mild",
       "text": "dVar1 = 1.0 / SQRT(local_1f0 * local_1f0 + local_200 * local_200 + local_1f8 * local_1f8);",
@@ -719,7 +707,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 164,
+      "line": 160,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "if (local_2e8 < __BITCAST_DOUBLE(CONCAT44(uStack_2ec,local_2f0))) {",
@@ -727,7 +715,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 166,
+      "line": 162,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uStack_2ec = local_2e8._4_4_;",
@@ -735,7 +723,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 181,
+      "line": 177,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar10 = (double *)((int)pdVar10 + 4);",
@@ -743,7 +731,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 182,
+      "line": 178,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar11 = (double *)((int)pdVar11 + 4);",
@@ -751,7 +739,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 184,
+      "line": 180,
       "match": "SQRT",
       "severity": "mild",
       "text": "dVar1 = 1.0 / SQRT(local_220 * local_220 + local_230 * local_230 + local_228 * local_228);",
@@ -759,7 +747,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 195,
+      "line": 191,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
@@ -767,7 +755,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 196,
+      "line": 192,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
@@ -775,7 +763,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 198,
+      "line": 194,
       "match": "SQRT",
       "severity": "mild",
       "text": "dVar6 = 1.0 / SQRT(local_280 * local_280 + local_290 * local_290 + local_288 * local_288);",
@@ -783,7 +771,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 206,
+      "line": 202,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "if (local_2a8 < __BITCAST_DOUBLE(CONCAT44(uStack_2ec,local_2f0))) {",
@@ -791,7 +779,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 214,
+      "line": 210,
       "match": "SQRT",
       "severity": "mild",
       "text": "dVar6 = 1.0 / SQRT(dVar5 * dVar5 + dVar4 * dVar4 + dVar3 * dVar3);",

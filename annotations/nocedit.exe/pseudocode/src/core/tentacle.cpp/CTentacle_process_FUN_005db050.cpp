@@ -1,6 +1,6 @@
 // Name: core_tentacle.cpp_CTentacle_process_FUN_005db050
 // Address: 005db050
-// Address Range: [[005db050, 005db3d8] [005db479, 005db83c]]
+// Address Range: [[005db050, 005db3d8] [005db479, 005db83c] [03fc21da, 03fc23df]]
 // Convention: __cdecl
 // Signature: void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_ptr,float delta_time)
 
@@ -27,13 +27,11 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
   CDemonActor *pCVar9;
   CVector3f *pCVar10;
   float fVar9;
-  CMatrix3x4f *pCVar14;
   CMatrix3x4f *pCVar11;
-  CMatrix3x4f *pCVar15;
   CMatrix3x4f *pCVar12;
-  CMatrix3x4f *pCVar16;
   CMatrix3x4f *pCVar13;
   byte bVar14;
+  CMatrix3x4f *matrix_b;
   float local_258;
   float fStack_254;
   CMatrix3x4f CStack_250;
@@ -69,7 +67,6 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
   CCharacter *pCVar1;
   float fVar3;
   
-  bVar14 = 0;
   iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar4 != 0) {
     local_258 = delta_time * (this_ptr->base).speed;
@@ -86,24 +83,17 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
              pCVar7 == (CDemonActor *)0x0)) {
             core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(pCVar2);
             core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70(this_ptr,&CStack_1c0);
-            pCVar15 = &CStack_1c0;
-            pCVar14 = &CStack_1f0;
-            for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-              pCVar14->m[0].w = pCVar15->m[0].w;
-              pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar14 * -2 + 1) * 4);
-              pCVar14 = (CMatrix3x4f *)((int)pCVar14 + ((uint)bVar14 * -2 + 1) * 4);
-            }
             pCVar8 = core_xform_cpp_getTranslation_FUN_005f6110(&CStack_1f0,&CStack_94);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                       ((CDemonActor *)this_ptr,&CStack_a0,pCVar8);
             pCVar4 = (this_ptr->base).victim;
             fVar5 = CStack_a0.x - (pCVar4->base).location.position.x;
             fVar9 = CStack_a0.z - (pCVar4->base).location.position.z;
-            if (((ABS(CStack_a0.y - (pCVar4->base).location.position.y) <= (float)6)
-                && (fVar5 * fVar5 + fVar9 * fVar9 <= (float)16)) &&
-               (pCVar4 = (this_ptr->base).victim,
-               iVar6 = (*(((pCVar4->base).vtable._uc)->_uc).getGrabbed)
-                                 (pCVar4,(CDemonActor *)this_ptr,1), iVar6 != 0)) {
+            if ((ABS(CStack_a0.y - (pCVar4->base).location.position.y) <= (float)6) &&
+               ((fVar5 * fVar5 + fVar9 * fVar9 <= (float)16 &&
+                (pCVar4 = (this_ptr->base).victim,
+                iVar6 = (*(((pCVar4->base).vtable._uc)->_uc).getGrabbed)
+                                  (pCVar4,(CDemonActor *)this_ptr,1), iVar6 != 0)))) {
               pCVar4 = (this_ptr->base).victim;
               this_ptr->target_blend = 0.0;
               core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
@@ -111,40 +101,33 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
               core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                         (&CStack_190,&position->position,&(this_ptr->base).base.base.orient.vec);
               core_xform_cpp_inverse_FUN_005f6210(&CStack_1f0,&CStack_220);
-              pCVar15 = &CStack_250;
-              pCVar14 = &CStack_220;
-              pCVar16 = &CStack_250;
-              for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-                pCVar16->m[0].w = pCVar14->m[0].w;
-                pCVar14 = (CMatrix3x4f *)((int)pCVar14 + ((uint)bVar14 * -2 + 1) * 4);
-                pCVar16 = (CMatrix3x4f *)((int)pCVar16 + ((uint)bVar14 * -2 + 1) * 4);
-              }
+              matrix_b = &CStack_250;
               core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_160,&CStack_190,&CStack_d0);
-              pCVar11 = &CStack_d0;
-              pCVar13 = &CStack_130;
-              for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-                pCVar13 = (CMatrix3x4f *)((int)pCVar13 + (uint)bVar14 * -8 + 4);
-                pCVar11 = (CMatrix3x4f *)((int)pCVar11 + (uint)bVar14 * -8 + 4);
-                pCVar13->m[0].w = pCVar11->m[0].w;
-                pCVar11 = pCVar11;
-                pCVar13 = pCVar13;
-              }
-              core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_130,pCVar15,&CStack_100);
-              pCVar15 = &CStack_100;
-              pCVar14 = &this_ptr->target_matrix;
-              for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-                pCVar14->m[0].w = pCVar15->m[0].w;
-                pCVar15 = (CMatrix3x4f *)((int)pCVar15 + ((uint)bVar14 * -2 + 1) * 4);
-                pCVar14 = (CMatrix3x4f *)((int)pCVar14 + (uint)bVar14 * -8 + 4);
-              }
-              pCVar12 = &this_ptr->target_matrix;
-              pCVar15 = &this_ptr->prev_target_matrix;
-              for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-                pCVar12 = (CMatrix3x4f *)((int)pCVar12 + (uint)bVar14 * -8 + 4);
-                pCVar15->m[0].w = pCVar12->m[0].w;
-                pCVar12 = pCVar12;
-                pCVar15 = (CMatrix3x4f *)((int)pCVar15 + (uint)bVar14 * -8 + 4);
-              }
+              core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_130,matrix_b,&CStack_100);
+              (this_ptr->target_matrix).m[0].w = CStack_100.m[0].w;
+              (this_ptr->target_matrix).m[0].x = CStack_100.m[0].x;
+              (this_ptr->target_matrix).m[0].y = CStack_100.m[0].y;
+              (this_ptr->target_matrix).m[0].z = CStack_100.m[0].z;
+              (this_ptr->target_matrix).m[1].w = CStack_100.m[1].w;
+              (this_ptr->target_matrix).m[1].x = CStack_100.m[1].x;
+              (this_ptr->target_matrix).m[1].y = CStack_100.m[1].y;
+              (this_ptr->target_matrix).m[1].z = CStack_100.m[1].z;
+              (this_ptr->target_matrix).m[2].w = CStack_100.m[2].w;
+              (this_ptr->target_matrix).m[2].x = CStack_100.m[2].x;
+              (this_ptr->target_matrix).m[2].y = CStack_100.m[2].y;
+              (this_ptr->target_matrix).m[2].z = CStack_100.m[2].z;
+              (this_ptr->prev_target_matrix).m[0].w = (this_ptr->target_matrix).m[0].w;
+              (this_ptr->prev_target_matrix).m[0].x = (this_ptr->target_matrix).m[0].x;
+              (this_ptr->prev_target_matrix).m[0].y = (this_ptr->target_matrix).m[0].y;
+              (this_ptr->prev_target_matrix).m[0].z = (this_ptr->target_matrix).m[0].z;
+              (this_ptr->prev_target_matrix).m[1].w = (this_ptr->target_matrix).m[1].w;
+              (this_ptr->prev_target_matrix).m[1].x = (this_ptr->target_matrix).m[1].x;
+              (this_ptr->prev_target_matrix).m[1].y = (this_ptr->target_matrix).m[1].y;
+              (this_ptr->prev_target_matrix).m[1].z = (this_ptr->target_matrix).m[1].z;
+              (this_ptr->prev_target_matrix).m[2].w = (this_ptr->target_matrix).m[2].w;
+              (this_ptr->prev_target_matrix).m[2].x = (this_ptr->target_matrix).m[2].x;
+              (this_ptr->prev_target_matrix).m[2].y = (this_ptr->target_matrix).m[2].y;
+              (this_ptr->prev_target_matrix).m[2].z = (this_ptr->target_matrix).m[2].z;
               core_xform_cpp_clearTranslation_FUN_005f5370(&this_ptr->prev_target_matrix);
               iVar6 = 0;
               do {
@@ -248,11 +231,11 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
         this_ptr->wait_timer = 25.0;
       }
     }
-    else if ((((uVar3 == 6) && (pCVar1 = (this_ptr->base).victim, pCVar1 != (CCharacter *)0x0)) &&
-             (EVar8 = (*(((pCVar1->base).vtable._uc)->_uc).getDeathState)(pCVar1), (int)EVar8 < 1))
-            && (pCVar4 = (this_ptr->base).victim,
-               pCVar9 = (*(((pCVar4->base).vtable._uc)->_uc).getGrabber)(pCVar4),
-               pCVar9 == (CDemonActor *)0x0)) {
+    else if (((uVar3 == 6) && (pCVar1 = (this_ptr->base).victim, pCVar1 != (CCharacter *)0x0)) &&
+            ((EVar8 = (*(((pCVar1->base).vtable._uc)->_uc).getDeathState)(pCVar1), (int)EVar8 < 1 &&
+             (pCVar4 = (this_ptr->base).victim,
+             pCVar9 = (*(((pCVar4->base).vtable._uc)->_uc).getGrabber)(pCVar4),
+             pCVar9 == (CDemonActor *)0x0)))) {
       pCVar4 = (this_ptr->base).victim;
       CStack_64.x = (pCVar4->base).location.position.x - (position->position).x;
       CStack_64.y = (pCVar4->base).location.position.y -

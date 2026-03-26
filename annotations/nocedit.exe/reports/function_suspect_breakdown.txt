@@ -4,34 +4,34 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4662 functions
-  1 suspects: 672 functions
-  2 suspects: 314 functions
-  3 suspects: 241 functions
-  4 suspects: 156 functions
-  5 suspects: 127 functions
-  6 suspects: 109 functions
-  7 suspects: 91 functions
-  8 suspects: 54 functions
-  9 suspects: 67 functions
-  10 suspects: 19 functions
+  0 suspects: 4667 functions
+  1 suspects: 677 functions
+  2 suspects: 315 functions
+  3 suspects: 245 functions
+  4 suspects: 157 functions
+  5 suspects: 130 functions
+  6 suspects: 107 functions
+  7 suspects: 88 functions
+  8 suspects: 51 functions
+  9 suspects: 64 functions
+  10 suspects: 20 functions
   11 suspects: 38 functions
   12 suspects: 29 functions
   13 suspects: 29 functions
-  14 suspects: 31 functions
-  15 suspects: 24 functions
+  14 suspects: 30 functions
+  15 suspects: 23 functions
   16 suspects: 14 functions
-  17 suspects: 14 functions
+  17 suspects: 15 functions
   18 suspects: 15 functions
   19 suspects: 15 functions
   20 suspects: 21 functions
-  21 suspects: 12 functions
+  21 suspects: 10 functions
   22 suspects: 7 functions
-  23 suspects: 9 functions
-  24 suspects: 13 functions
-  25 suspects: 11 functions
+  23 suspects: 8 functions
+  24 suspects: 12 functions
+  25 suspects: 9 functions
   26 suspects: 7 functions
-  27 suspects: 4 functions
+  27 suspects: 3 functions
   28 suspects: 9 functions
   29 suspects: 9 functions
   30 suspects: 3 functions
@@ -44,7 +44,7 @@ SUSPECT COUNT DISTRIBUTION
   37 suspects: 2 functions
   38 suspects: 1 functions
   39 suspects: 4 functions
-  40 suspects: 3 functions
+  40 suspects: 2 functions
   41 suspects: 4 functions
   42 suspects: 2 functions
   43 suspects: 2 functions
@@ -73,7 +73,7 @@ SUSPECT COUNT DISTRIBUTION
   97 suspects: 1 functions
   101 suspects: 1 functions
   104 suspects: 3 functions
-  115 suspects: 1 functions
+  113 suspects: 1 functions
   119 suspects: 2 functions
   126 suspects: 1 functions
   159 suspects: 1 functions
@@ -173,7 +173,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return ADJ(pSVar1);...
     ... and 113 more
 
-  [pointer_cast] (131 functions)
+  [pointer_cast] (132 functions)
   ------------------------------------------------------------
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360    (  5 lines)
       *(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_va...
@@ -215,9 +215,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       uVar1 = *(uint *)((int)this_ptr->framebuffer_aligned +...
     shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420   ( 22 lines)
       puVar1 = (uint *)((int)this_ptr->spatial_grid_ptr->cell_star...
-    ... and 111 more
+    ... and 112 more
 
-  [param_count_too_few] (55 functions)
+  [param_count_too_few] (57 functions)
   ------------------------------------------------------------
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_0043 (  4 lines)
       Function declares 0 params but call sites push 4 (4 missing)...
@@ -259,9 +259,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 4 params but call sites push 5 (1 missing)...
     cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered ( 10 lines)
       Function declares 4 params but call sites push 5 (1 missing)...
-    ... and 35 more
+    ... and 37 more
 
-  [warning_type_propagation] (46 functions)
+  [warning_type_propagation] (47 functions)
   ------------------------------------------------------------
     core_zombie.cpp_CZombie_canPickupWithHand_FUN_005f ( 11 lines)
       /* WARNING: Type propagation algorithm not settling */...
@@ -274,6 +274,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_bride.cpp_CBride_getTargetPoints_FUN_00424a10 ( 28 lines)
       /* WARNING: Type propagation algorithm not settling */...
     core_sentinel.cpp_CSentinel_attractActorToward_FUN ( 29 lines)
+      /* WARNING: Type propagation algorithm not settling */...
+    core_tentacle.cpp_CTentacle_computeGripBoneMatrix_ ( 35 lines)
       /* WARNING: Type propagation algorithm not settling */...
     core_mobster.cpp_CMobster_positionOnVehicle_FUN_00 ( 39 lines)
       /* WARNING: Type propagation algorithm not settling */...
@@ -301,9 +303,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Type propagation algorithm not settling */...
     core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0      ( 58 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260 ( 59 lines)
-      /* WARNING: Type propagation algorithm not settling */...
-    ... and 26 more
+    ... and 27 more
 
   [stack_alignment_array] (24 functions)
   ------------------------------------------------------------
@@ -571,6 +571,11 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     sound_snddx.cpp_directSoundEnumerationCallback_FUN ( 87 lines)
       /* WARNING: Exceeded maximum restarts with more pending */...
 
+  [warning_deadcode_restart] (1 functions)
+  ------------------------------------------------------------
+    engine_font.cpp_CBitFont_render3DCharacter_FUN_004 (182 lines)
+      /* WARNING: Restarted to delay deadcode elimination for spac...
+
 ========================================================================================================================
 FUNCTIONS WITH 2-3 SUSPECTS
 ========================================================================================================================
@@ -675,4 +680,4 @@ FUNCTIONS WITH 2-3 SUSPECTS
   core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059
     File: core/skeleton.cpp, Lines: 16, Types: ['param_count_too_few', 'pointer_cast']
 
-  ... and 505 more
+  ... and 510 more

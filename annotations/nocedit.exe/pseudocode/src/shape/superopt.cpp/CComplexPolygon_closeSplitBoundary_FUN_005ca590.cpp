@@ -1,6 +1,6 @@
 // Name: shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
 // Address: 005ca590
-// Address Range: [[005ca590, 005cb395]]
+// Address Range: [[005ca590, 005cb395] [03fc2bb0, 03fc2bf8]]
 // Convention: __cdecl
 // Signature: int __cdecl shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590(CComplexPolygon *this_ptr,SExpandedEdge *edges,int *edge_count_ptr,int is_secondary)
 
@@ -294,6 +294,7 @@ LAB_005ca66d:
     }
     dVar9 = (__BITCAST_DOUBLE(CONCAT44(uStack_314,local_318)) * 10) /
             SQRT(local_190 * local_190 + local_1a0 * local_1a0 + local_198 * local_198);
+    iVar15 = 6;
     local_28 = local_20 - 1;
     local_140 = local_1a0 * dVar9;
     local_138 = local_198 * dVar9;
@@ -303,7 +304,9 @@ LAB_005ca66d:
     local_118 = __BITCAST_DOUBLE(CONCAT44(uStack_1a4,local_1a8)) + local_190 * dVar9;
     pdVar17 = &local_128;
     pdVar18 = &local_278;
-    for (iVar15 = 6; iVar15 != 0; iVar15 = iVar15 + -1) {
+    while( true ) {
+      if (iVar15 == 0) break;
+      iVar15 = iVar15 + -1;
       *(uint *)pdVar18 = *(uint *)pdVar17;
       pdVar17 = (double *)((int)pdVar17 + (uint)bVar17 * -8 + 4);
       pdVar18 = (double *)((int)pdVar18 + (uint)bVar17 * -8 + 4);
@@ -370,18 +373,12 @@ LAB_005ca66d:
             pdVar17 = (double *)((int)pdVar17 + (uint)bVar17 * -8 + 4);
             pdVar18 = (double *)((int)pdVar18 + (uint)bVar17 * -8 + 4);
           }
-          local_218 = __BITCAST_DOUBLE(CONCAT44(uStack_f4,local_f8)) - local_2d8;
-          local_210 = __BITCAST_DOUBLE(CONCAT44(uStack_ec,local_f0)) - local_2d0;
-          local_208 = __BITCAST_DOUBLE(CONCAT44(uStack_e4,local_e8)) - local_2c8;
-          pdVar15 = &local_218;
-          pdVar16 = &local_188;
-          for (iVar15 = 6; iVar15 != 0; iVar15 = iVar15 + -1) {
-            pdVar16 = (double *)((int)pdVar16 + (uint)bVar17 * -8 + 4);
-            pdVar15 = (double *)((int)pdVar15 + (uint)bVar17 * -8 + 4);
-            *(uint *)pdVar16 = *(uint *)pdVar15;
-            pdVar15 = pdVar15;
-            pdVar16 = pdVar16;
-          }
+          local_188 = __BITCAST_DOUBLE(CONCAT44(uStack_f4,local_f8)) - local_2d8;
+          local_180 = __BITCAST_DOUBLE(CONCAT44(uStack_ec,local_f0)) - local_2d0;
+          local_178 = __BITCAST_DOUBLE(CONCAT44(uStack_e4,local_e8)) - local_2c8;
+          local_218 = local_188;
+          local_210 = local_180;
+          local_208 = local_178;
           dVar9 = dVar13 / SQRT(local_220 * local_220 +
                                 local_230 * local_230 + local_228 * local_228);
           dVar10 = local_278 - (local_2a8 + local_230 * dVar9);

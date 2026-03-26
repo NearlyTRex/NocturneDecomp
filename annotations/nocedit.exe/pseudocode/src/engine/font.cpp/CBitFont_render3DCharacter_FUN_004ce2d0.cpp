@@ -1,10 +1,12 @@
 // Name: engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0
 // Address: 004ce2d0
-// Address Range: [[004ce2d0, 004ce79b]]
+// Address Range: [[004ce2d0, 004ce79b] [03fc3535, 03fc3672]]
 // Convention: __cdecl
 // Signature: void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont *this_ptr,int character_code,int x,int y,int right_x,int bottom_y,int color_mode)
 
 #include "nocturne.h"
+
+/* WARNING: Restarted to delay deadcode elimination for space: ram */
 
 void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont *this_ptr,int character_code,int x,int y,int right_x,int bottom_y,int color_mode)
 
@@ -12,15 +14,13 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont *t
   char cVar2;
   uint uVar4;
   int iVar3;
-  int iVar5;
   int iVar4;
+  int iVar5;
   char (*pacVar6) [80];
-  SRenderVertex *pSVar5;
   SRenderVertex *pSVar7;
   int iVar6;
   int iVar8;
   char *pcVar9;
-  SRenderVertex *pSVar8;
   SRenderVertex *pSVar10;
   int iVar11;
   int iVar12;
@@ -40,7 +40,6 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont *t
   uint uVar3;
   char cVar1;
   
-  bVar13 = 0;
   pcVar9 = g_FontTextureInfo.texture_name;
   pacVar6 = this_ptr->bitmap_files + this_ptr->char_bitmap_index[character_code];
   do {
@@ -63,10 +62,10 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont *t
       g_QuadVertex0.r = 0xffff;
       goto LAB_004ce397;
     }
-    iVar4 = color_mode * 3;
-    uVar2 = (uint)(byte)g_SourcePaletteData[iVar4];
-    uVar3 = (uint)(byte)g_SourcePaletteData[iVar4 + 1];
-    uVar4 = (uint)(byte)g_SourcePaletteData[iVar4 + 2];
+    iVar3 = color_mode * 3;
+    uVar2 = (uint)(byte)g_SourcePaletteData[iVar3];
+    uVar3 = (uint)(byte)g_SourcePaletteData[iVar3 + 1];
+    uVar4 = (uint)(byte)g_SourcePaletteData[iVar3 + 2];
   }
   g_QuadVertex0.g = uVar3 << 8;
   g_QuadVertex0.r = uVar2 << 8;
@@ -75,34 +74,41 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont *t
 LAB_004ce397:
   g_QuadVertex0.projected_vertex.transformed_z = 0x10000;
   g_QuadVertex0.projected_vertex.inv_z = 0x10000;
-  pSVar5 = &g_QuadVertex0;
-  pSVar8 = &g_QuadVertex1;
-  for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-    (pSVar8->projected_vertex).transformed_x = (pSVar5->projected_vertex).transformed_x;
-    pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar13 * -2 + 1) * 4);
-    pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar13 * -2 + 1) * 4);
-  }
-  pSVar5 = &g_QuadVertex0;
-  pSVar8 = &g_QuadVertex2;
-  for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-    (pSVar8->projected_vertex).transformed_x = (pSVar5->projected_vertex).transformed_x;
-    pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar13 * -2 + 1) * 4);
-    pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar13 * -2 + 1) * 4);
-  }
-  pSVar7 = &g_QuadVertex0;
-  pSVar10 = &g_QuadVertex3;
-  for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-    pSVar10 = (SRenderVertex *)((int)pSVar10 + (uint)bVar13 * -8 + 4);
-    pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar13 * -8 + 4);
-    (pSVar10->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
-    pSVar7 = pSVar7;
-    pSVar10 = pSVar10;
-  }
-  iVar4 = x * 0x10000 + -0x1000;
+  g_QuadVertex1.projected_vertex.transformed_z = 0x10000;
+  g_QuadVertex1.projected_vertex.inv_z = 0x10000;
+  g_QuadVertex1.projected_vertex.screen_x = g_QuadVertex0.projected_vertex.screen_x;
+  g_QuadVertex1.projected_vertex.screen_y = g_QuadVertex0.projected_vertex.screen_y;
+  g_QuadVertex1.u = g_QuadVertex0.u;
+  g_QuadVertex1.v = g_QuadVertex0.v;
+  g_QuadVertex1.r = g_QuadVertex0.r;
+  g_QuadVertex1.g = g_QuadVertex0.g;
+  g_QuadVertex1.b = g_QuadVertex0.b;
+  g_QuadVertex1.a = g_QuadVertex0.a;
+  g_QuadVertex2.projected_vertex.transformed_z = 0x10000;
+  g_QuadVertex2.projected_vertex.inv_z = 0x10000;
+  g_QuadVertex2.projected_vertex.screen_x = g_QuadVertex0.projected_vertex.screen_x;
+  g_QuadVertex2.projected_vertex.screen_y = g_QuadVertex0.projected_vertex.screen_y;
+  g_QuadVertex2.u = g_QuadVertex0.u;
+  g_QuadVertex2.v = g_QuadVertex0.v;
+  g_QuadVertex2.r = g_QuadVertex0.r;
+  g_QuadVertex2.g = g_QuadVertex0.g;
+  g_QuadVertex2.b = g_QuadVertex0.b;
+  g_QuadVertex2.a = g_QuadVertex0.a;
+  g_QuadVertex3.projected_vertex.transformed_z = 0x10000;
+  g_QuadVertex3.projected_vertex.inv_z = 0x10000;
+  g_QuadVertex3.projected_vertex.screen_x = g_QuadVertex0.projected_vertex.screen_x;
+  g_QuadVertex3.projected_vertex.screen_y = g_QuadVertex0.projected_vertex.screen_y;
+  g_QuadVertex3.u = g_QuadVertex0.u;
+  g_QuadVertex3.v = g_QuadVertex0.v;
+  g_QuadVertex3.r = g_QuadVertex0.r;
+  g_QuadVertex3.g = g_QuadVertex0.g;
+  g_QuadVertex3.b = g_QuadVertex0.b;
+  g_QuadVertex3.a = g_QuadVertex0.a;
+  iVar3 = x * 0x10000 + -0x1000;
   iVar6 = (right_x + 1) * 0x10000;
   iVar8 = iVar6 + 0x1000;
   iVar11 = (bottom_y + 1) * 0x10000;
-  iVar3 = y * 0x10000 + -0x1000;
+  iVar4 = y * 0x10000 + -0x1000;
   iVar12 = iVar11 + 0x1000;
   if (g_UseExternalRenderer == 0) {
     iVar12 = iVar11 + 0x9000;
@@ -110,13 +116,13 @@ LAB_004ce397:
   }
   g_QuadVertex0.projected_vertex.transformed_x =
        (int)((longlong)
-             ((((longlong)(iVar4 - g_ViewportRightFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
-             (longlong)(iVar4 - g_ViewportRightFixed) * 0x10000 & 0xffffffffU) /
+             ((((longlong)(iVar3 - g_ViewportRightFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
+             (longlong)(iVar3 - g_ViewportRightFixed) * 0x10000 & 0xffffffffU) /
             (longlong)g_ViewportCenterXFixed);
   g_QuadVertex0.projected_vertex.transformed_y =
        (int)((longlong)
-             ((((longlong)(iVar3 - g_ViewportBottomFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
-             (longlong)(iVar3 - g_ViewportBottomFixed) * 0x10000 & 0xffffffffU) /
+             ((((longlong)(iVar4 - g_ViewportBottomFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
+             (longlong)(iVar4 - g_ViewportBottomFixed) * 0x10000 & 0xffffffffU) /
             (longlong)g_ViewportCenterYFixed);
   g_QuadVertex1.projected_vertex.transformed_x =
        (int)((longlong)
@@ -125,8 +131,8 @@ LAB_004ce397:
             (longlong)g_ViewportCenterXFixed);
   g_QuadVertex1.projected_vertex.transformed_y =
        (int)((longlong)
-             ((((longlong)(iVar3 - g_ViewportBottomFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
-             (longlong)(iVar3 - g_ViewportBottomFixed) * 0x10000 & 0xffffffffU) /
+             ((((longlong)(iVar4 - g_ViewportBottomFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
+             (longlong)(iVar4 - g_ViewportBottomFixed) * 0x10000 & 0xffffffffU) /
             (longlong)g_ViewportCenterYFixed);
   g_QuadVertex2.projected_vertex.transformed_x =
        (int)((longlong)
@@ -140,8 +146,8 @@ LAB_004ce397:
             (longlong)g_ViewportCenterYFixed);
   g_QuadVertex3.projected_vertex.transformed_x =
        (int)((longlong)
-             ((((longlong)(iVar4 - g_ViewportRightFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
-             (longlong)(iVar4 - g_ViewportRightFixed) * 0x10000 & 0xffffffffU) /
+             ((((longlong)(iVar3 - g_ViewportRightFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
+             (longlong)(iVar3 - g_ViewportRightFixed) * 0x10000 & 0xffffffffU) /
             (longlong)g_ViewportCenterXFixed);
   g_QuadVertex3.projected_vertex.transformed_y =
        (int)((longlong)
@@ -160,8 +166,8 @@ LAB_004ce397:
   g_QuadVertex0.v =
        (iVar6 / this_ptr->bitmap_widths[this_ptr->char_bitmap_index[character_code]]) * 0x10000 +
        -0x1000;
-  g_QuadVertex2.u = (g_QuadVertex0.u + iVar8) - iVar4;
-  g_QuadVertex2.v = (g_QuadVertex0.v + iVar12) - iVar3;
+  g_QuadVertex2.u = (g_QuadVertex0.u + iVar8) - iVar3;
+  g_QuadVertex2.v = (g_QuadVertex0.v + iVar12) - iVar4;
   if (g_UseExternalRenderer == 0) {
     g_QuadVertex2.v = g_QuadVertex2.v + 0x8000;
     g_QuadVertex2.u = g_QuadVertex2.u + 0x8000;
@@ -177,11 +183,11 @@ LAB_004ce397:
   g_QuadVertex3.v = g_QuadVertex2.v;
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   if (g_CurrentTextureOpacityData == (void *)0x0) {
-    iVar4 = 0x207;
+    iVar3 = 0x207;
   }
   else {
-    iVar4 = 0x227;
+    iVar3 = 0x227;
   }
-  engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(&SStack_54,iVar4,0);
+  engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(&SStack_54,iVar3,0);
   return;
 }

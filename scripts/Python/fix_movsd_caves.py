@@ -95,7 +95,7 @@ def find_movsd_groups(instructions, min_count=3):
     return groups
 
 
-# Pattern for REP MOVSD pass-by-value: SUB ESP,N; MOV ECX,N; MOV EDI,ESP; LEA/MOV ESI,...; REP MOVSD
+# Pattern for REP MOVSD setup: SUB ESP,N; MOV ECX,N; MOV EDI,ESP; LEA/MOV ESI,...
 RE_SUB_ESP_IMM = re.compile(r'^SUB\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', re.IGNORECASE)
 RE_MOV_ECX_IMM = re.compile(r'^MOV\s+ECX\s*,\s*(0x[0-9a-fA-F]+|\d+)', re.IGNORECASE)
 RE_MOV_EDI_ESP = re.compile(r'^MOV\s+EDI\s*,\s*ESP$', re.IGNORECASE)
@@ -104,16 +104,22 @@ RE_MOV_ESI = re.compile(r'^MOV\s+ESI\s*,', re.IGNORECASE)
 
 
 def find_rep_movsd_groups(instructions):
-    """Find REP MOVSD pass-by-value copy patterns.
+    """Find REP MOVSD copy patterns (both pass-by-value and general struct copy).
 
-    Looks for: SUB ESP,size; MOV ECX,count; MOV EDI,ESP; LEA/MOV ESI,src; MOVSD.REP
-    The instructions don't have to be strictly consecutive (there may be gaps
-    or reordering), but they must all appear within a small window before
-    the REP MOVSD.
+    Pass-by-value pattern:
+        SUB ESP,size; MOV ECX,count; MOV EDI,ESP; LEA/MOV ESI,src; MOVSD.REP
+        Site starts from SUB ESP (the full setup block is relocated).
 
-    Returns list of (rep_index, rep_addr, 'rep_movsd', setup_info) where
-    setup_info = {'sub_esp': (idx, size), 'mov_ecx': (idx, count),
-                  'mov_edi_esp': idx, 'lea_mov_esi': idx, 'dword_count': int}
+    General struct copy pattern:
+        MOV ECX,count; ...; MOVSD.REP
+        EDI/ESI may be set earlier (e.g. before a CALL, surviving as callee-saved).
+        Site starts from MOV ECX — only instructions between MOV ECX and REP MOVSD
+        are relocated to the cave. EDI/ESI are already set on entry.
+
+    Returns list of (first_setup_index, first_setup_addr, 'rep_movsd', setup_info, rep_index)
+    where setup_info = {'sub_esp': (idx, size)|None, 'mov_ecx': (idx, count),
+                        'mov_edi_esp': idx|None, 'lea_mov_esi': idx|None,
+                        'dword_count': int}
     """
     groups = []
     for i, (addr, text) in enumerate(instructions):
@@ -151,29 +157,46 @@ def find_rep_movsd_groups(instructions):
                 setup['lea_mov_esi'] = j
                 continue
 
-        # Need at least SUB ESP + MOV ECX + the REP MOVSD itself
-        if setup['sub_esp'] is None or setup['mov_ecx'] is None:
+        # Must have at least MOV ECX for the dword count
+        if setup['mov_ecx'] is None:
             continue
 
         dword_count = setup['mov_ecx'][1]
-        byte_size = setup['sub_esp'][1]
 
-        # Sanity check: byte_size should == dword_count * 4
-        if byte_size != dword_count * 4:
-            continue
+        if setup['sub_esp'] is not None:
+            # Pass-by-value: SUB ESP present, require matching size
+            byte_size = setup['sub_esp'][1]
+            if byte_size != dword_count * 4:
+                continue
+
+            # Site starts from SUB ESP (full setup block)
+            setup_indices = [setup['sub_esp'][0]]
+            if setup['mov_ecx'] is not None:
+                setup_indices.append(setup['mov_ecx'][0])
+            if setup['mov_edi_esp'] is not None:
+                setup_indices.append(setup['mov_edi_esp'])
+            if setup['lea_mov_esi'] is not None:
+                setup_indices.append(setup['lea_mov_esi'])
+            first_setup_idx = min(setup_indices)
+        else:
+            # General struct copy: site starts from MOV ECX.
+            # EDI/ESI may be set earlier (surviving through CALLs as
+            # callee-saved registers) — we don't need them in the site.
+            first_setup_idx = setup['mov_ecx'][0]
+
+            # Validate: no CALLs or branches between MOV ECX and REP MOVSD
+            # (these can't be safely relocated to a code cave)
+            has_unsafe = False
+            for j in range(first_setup_idx + 1, i):
+                jtext = instructions[j][1]
+                if RE_RELATIVE.match(jtext):
+                    has_unsafe = True
+                    break
+            if has_unsafe:
+                continue
 
         setup['dword_count'] = dword_count
 
-        # Find the earliest setup instruction
-        setup_indices = [idx for idx, _ in [setup['sub_esp']] if idx is not None]
-        if setup['mov_ecx'] is not None:
-            setup_indices.append(setup['mov_ecx'][0])
-        if setup['mov_edi_esp'] is not None:
-            setup_indices.append(setup['mov_edi_esp'])
-        if setup['lea_mov_esi'] is not None:
-            setup_indices.append(setup['lea_mov_esi'])
-
-        first_setup_idx = min(setup_indices)
         groups.append((first_setup_idx, instructions[first_setup_idx][0],
                        'rep_movsd', setup, i))
 
@@ -202,8 +225,69 @@ def _fix_large_hex_offset(m):
     return m.group(0)
 
 
+def _normalize_string_ops(text):
+    """Normalize Ghidra string instruction syntax for keystone.
+
+    Ghidra writes:  MOVSD ES:EDI,ESI       -> movs dword ptr [edi], [esi]
+                    MOVSD.REP ES:EDI,ESI   -> rep movs dword ptr [edi], [esi]
+                    MOVSB.REP ES:EDI,ESI   -> rep movsb
+                    MOVSW.REP ES:EDI,ESI   -> rep movsw
+                    STOSB.REP ES:EDI       -> rep stosb
+    Keystone can't parse bare MOVSD (ambiguous with SSE2), so we need the
+    full MOVS DWORD PTR form. MOVSB/MOVSW/STOSB etc. work directly.
+    """
+    upper = text.upper().strip()
+
+    # Extract REP prefix from .REP suffix
+    rep_prefix = ''
+    if '.REPNE' in upper or '.REPNZ' in upper:
+        rep_prefix = 'repne '
+        upper = re.sub(r'\.REPN[EZ]', '', upper)
+    elif '.REP' in upper:
+        rep_prefix = 'rep '
+        upper = re.sub(r'\.REP', '', upper)
+
+    # Get just the mnemonic (before any space/operand)
+    mnemonic = upper.split()[0]
+
+    # Map Ghidra string ops to keystone-compatible forms
+    STRING_OP_MAP = {
+        'MOVSD': 'movs dword ptr es:[edi], dword ptr [esi]',
+        'MOVSW': 'movsw',
+        'MOVSB': 'movsb',
+        'STOSD': 'stos dword ptr es:[edi]',
+        'STOSW': 'stosw',
+        'STOSB': 'stosb',
+        'LODSD': 'lods dword ptr [esi]',
+        'LODSW': 'lodsw',
+        'LODSB': 'lodsb',
+        'SCASD': 'scas dword ptr es:[edi]',
+        'SCASW': 'scasw',
+        'SCASB': 'scasb',
+        'CMPSD': 'cmps dword ptr [esi], dword ptr es:[edi]',
+        'CMPSW': 'cmpsw',
+        'CMPSB': 'cmpsb',
+    }
+
+    if mnemonic in STRING_OP_MAP:
+        return rep_prefix + STRING_OP_MAP[mnemonic]
+
+    return None  # Not a string op
+
+
 def assemble_one(ks, text, addr):
     """Assemble a single instruction. Returns bytes or None."""
+    # Try string op normalization first (Ghidra format -> keystone format)
+    normalized = _normalize_string_ops(text)
+    if normalized is not None:
+        try:
+            encoding, _ = ks.asm(normalized, addr)
+            if encoding is not None:
+                return bytes(encoding)
+        except Exception:
+            pass
+        return None
+
     # Normalize Ghidra syntax
     text = re.sub(r'\bES:', '', text)
     text = re.sub(r'\bCS:', '', text)
@@ -468,6 +552,15 @@ def generate_cave_code(ks, site_info, cave_addr):
         for asm_text in copy_insns:
             emit(asm_text)
 
+        # ESI/EDI advancement — REP MOVSD advances both by count*4.
+        # Code after the site may rely on this (e.g. MOVSB.REP continuation).
+        byte_count = dword_count * 4
+        emit('add esi, %d' % byte_count, '(REP MOVSD esi/edi advancement)')
+        emit('add edi, %d' % byte_count, '(REP MOVSD esi/edi advancement)')
+
+        # ECX post-state — REP MOVSD leaves ECX=0
+        emit('xor ecx, ecx', '(REP MOVSD ecx post-state)')
+
     # JMP back
     jmp_offset = site_info['return_addr'] - (addr + 5)
     jmp_bytes = b'\xe9' + struct.pack('<i', jmp_offset)
@@ -475,6 +568,14 @@ def generate_cave_code(ks, site_info, cave_addr):
     code_bytes += jmp_bytes
 
     return code_bytes, desc
+
+
+    # Maximum dword count for REP MOVSD general struct copy patches.
+    # Copies larger than this are likely buffer/string copies (memcpy-style),
+    # not struct copies, and produce worse decompilation when expanded to
+    # explicit dword MOVs (Ghidra decompiles each as individual byte stores).
+    # Known struct sizes: 3 (CVector3f), 4 (CQuaternion4f), 6, 10, 12 (CMatrix3x4f), 13.
+MAX_REP_MOVSD_DWORDS = 13
 
 
 def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
@@ -553,7 +654,15 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
             site_info['movsd_count'] = movsd_count
 
         elif gtype == 'rep_movsd':
-            # The entire setup block (SUB ESP through REP MOVSD) becomes the site
+            # Skip non-struct copies (large buffer/string copies)
+            dword_count = setup['dword_count']
+            if setup['sub_esp'] is None and dword_count > MAX_REP_MOVSD_DWORDS:
+                if verbose:
+                    print("    SKIP: too large for struct copy (%d dwords, max %d)" % (
+                        dword_count, MAX_REP_MOVSD_DWORDS))
+                continue
+
+            # The entire setup block (MOV ECX / SUB ESP through REP MOVSD) becomes the site
             rep_addr, rep_text = instructions[rep_idx]
             rep_size = get_insn_size(ks, rep_text, rep_addr)
             site_start = group_addr
@@ -568,6 +677,20 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
             if site_size < 5:
                 if verbose:
                     print("    SKIP: site too small (%d bytes)" % site_size)
+                continue
+
+            # Validate: no branch targets land inside our patch range.
+            # A jump to site_start is OK (it hits our JMP), but a jump
+            # to any address in (site_start, return_addr) would land in
+            # JMP/NOP padding — corrupting control flow.
+            has_internal_target = False
+            for target in jump_targets:
+                if site_start < target < return_addr:
+                    has_internal_target = True
+                    break
+            if has_internal_target:
+                if verbose:
+                    print("    SKIP: branch target inside site range")
                 continue
 
             dword_count = setup['dword_count']
@@ -629,14 +752,27 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
         # Create patch entries
         patch_name_base = 'movsd_%08x' % group_addr
 
+        if gtype == 'rep_movsd':
+            dcount = site_info['dword_count']
+            site_desc = 'JMP to cave at 0x%x, replacing REP MOVSD (%d dwords)' % (
+                this_cave_addr, dcount)
+            cave_desc_str = 'Explicit %d-byte struct copy + JMP back to 0x%x' % (
+                dcount * 4, site_info['return_addr'])
+            alloc_desc = 'REP MOVSD %d-dword replacement for %s' % (dcount, func_name)
+        else:
+            borrow_count = len(site_info['before_insns']) + len(site_info['after_insns'])
+            site_desc = 'JMP to cave at 0x%x, replacing %dx MOVSD + %d borrowed insn(s)' % (
+                this_cave_addr, movsd_count, borrow_count)
+            cave_desc_str = 'Explicit %d-byte struct copy + JMP back to 0x%x' % (
+                movsd_count * 4, site_info['return_addr'])
+            alloc_desc = '%dx MOVSD replacement for %s' % (movsd_count, func_name)
+
         site_patch = {
             'name': '%s_site' % patch_name_base,
             'address': '0x%08x' % site_start,
             'original': site_orig.hex() if site_orig else '??' * site_size,
             'patched': site_bytes.hex(),
-            'description': 'JMP to cave at 0x%x, replacing 4x MOVSD + %d borrowed insn(s)' % (
-                this_cave_addr,
-                len(site_info['before_insns']) + len(site_info['after_insns'])),
+            'description': site_desc,
         }
 
         cave_patch = {
@@ -644,8 +780,7 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
             'address': '0x%08x' % this_cave_addr,
             'original': cave_orig.hex(),
             'patched': cave_code.hex(),
-            'description': 'Explicit 16-byte struct copy + JMP back to 0x%x' % (
-                site_info['return_addr']),
+            'description': cave_desc_str,
         }
 
         patches.extend([site_patch, cave_patch])
@@ -654,7 +789,7 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
             'name': patch_name_base,
             'offset': current_offset,
             'size': len(cave_code),
-            'description': '4x MOVSD replacement for %s' % func_name,
+            'description': alloc_desc,
             'used_by': ['0x%08x' % group_addr],
         })
 
@@ -732,7 +867,7 @@ def read_pe_bytes(data, image_base, sections, va, size):
 # ---------------------------------------------------------------------------
 
 def find_cave(annotations_dir, min_size):
-    """Find a cave with enough free space from code_caves.json."""
+    """Find the cave with the most free space from code_caves.json."""
     caves_path = os.path.join(annotations_dir, 'code_caves.json')
     if not os.path.isfile(caves_path):
         return None, None
@@ -740,15 +875,20 @@ def find_cave(annotations_dir, min_size):
     with open(caves_path) as f:
         data = json.load(f)
 
+    best_addr = None
+    best_cave = None
+    best_free = 0
+
     for cave in data.get('caves', []):
         total = cave.get('total_size', 0)
         used = cave.get('free_offset', 0)
         free = total - used
-        if free >= min_size:
-            addr = int(cave['start'], 16)
-            return addr, cave
+        if free >= min_size and free > best_free:
+            best_addr = int(cave['start'], 16)
+            best_cave = cave
+            best_free = free
 
-    return None, None
+    return best_addr, best_cave
 
 
 def find_asm_file(pseudocode_src_dir, func_addr_hex):
@@ -844,6 +984,22 @@ def main():
         cave_offset = cave_info.get('free_offset', 0)
         print("Using cave at 0x%08x (%d bytes free)" % (
             cave_addr, cave_size - cave_offset))
+
+    # Check if function has bVar_mul artifacts (MOVSD decompilation issues).
+    # If the existing pseudocode has no bVar_mul, the decompiler is already
+    # handling the REP MOVSD correctly — patching would make it worse.
+    cpp_path = asm_path.replace('.asm', '.cpp')
+    if not os.path.isfile(cpp_path):
+        cpp_path = asm_path.replace('.asm', '.c')
+    if os.path.isfile(cpp_path):
+        with open(cpp_path, 'r') as f:
+            cpp_text = f.read()
+        bvar_count = len(re.findall(r'\bbVar\w*\s*\*\s*-', cpp_text))
+        if bvar_count == 0:
+            print("\nNo bVar_mul artifacts in %s — skipping (decompiler handles MOVSD OK)" %
+                  os.path.basename(cpp_path))
+            sys.exit(0)
+        print("Found %d bVar_mul artifact(s) in pseudocode" % bvar_count)
 
     # Generate patches
     cave_name = cave_info.get('name', 'cave_%08x' % cave_addr) if cave_info else 'cave_%08x' % cave_addr

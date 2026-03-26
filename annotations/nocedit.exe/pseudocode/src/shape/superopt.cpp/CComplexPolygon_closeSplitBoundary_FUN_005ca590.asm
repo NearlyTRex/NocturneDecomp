@@ -595,12 +595,10 @@ section .text
     FSTP double ptr [ESP + 0x118]       ; 005cac7f
     FXCH                                ; 005cac86
     FSTP double ptr [ESP + 0x120]       ; 005cac88
-    MOV ECX,0x6                         ; 005cac8f
-    LEA EDI,[ESP + 0x1a8]               ; 005cac94
-    LEA ESI,[ESP + 0x118]               ; 005cac9b
-    FSTP double ptr [ESP + 0x128]       ; 005caca2
-    MOVSD.REP ES:EDI,ESI                ; 005caca9
+    JMP 0x03fc2bb0                      ; 005cac8f
+        ;   XREF to: 03fc2bb0 (UNCONDITIONAL_JUMP)  ; LAB_03fc2bb0
     FLD double ptr [ESP + 0x1b0]        ; 005cacab
+        ;   Label: LAB_005cacab
     FMUL ST0                            ; 005cacb2
     FLD double ptr [ESP + 0x1a8]        ; 005cacb4
     FMUL ST0                            ; 005cacbb
@@ -1141,4 +1139,26 @@ section .text
     INC dword ptr [EAX]                 ; 005cb38f
     JMP 0x005caffb                      ; 005cb391
         ;   XREF to: 005caffb (UNCONDITIONAL_JUMP)  ; LAB_005caffb
+    MOV ECX,0x6                         ; 03fc2bb0
+        ;   Label: LAB_03fc2bb0
+    LEA EDI,[ESP + 0x1a8]               ; 03fc2bb5
+    LEA ESI,[ESP + 0x118]               ; 03fc2bbc
+    FSTP double ptr [ESP + 0x128]       ; 03fc2bc3
+    MOV ECX,dword ptr [ESI]             ; 03fc2bca
+    MOV dword ptr [EDI],ECX             ; 03fc2bcc
+    MOV ECX,dword ptr [ESI + 0x4]       ; 03fc2bce
+    MOV dword ptr [EDI + 0x4],ECX       ; 03fc2bd1
+    MOV ECX,dword ptr [ESI + 0x8]       ; 03fc2bd4
+    MOV dword ptr [EDI + 0x8],ECX       ; 03fc2bd7
+    MOV ECX,dword ptr [ESI + 0xc]       ; 03fc2bda
+    MOV dword ptr [EDI + 0xc],ECX       ; 03fc2bdd
+    MOV ECX,dword ptr [ESI + 0x10]      ; 03fc2be0
+    MOV dword ptr [EDI + 0x10],ECX      ; 03fc2be3
+    MOV ECX,dword ptr [ESI + 0x14]      ; 03fc2be6
+    MOV dword ptr [EDI + 0x14],ECX      ; 03fc2be9
+    ADD ESI,0x18                        ; 03fc2bec
+    ADD EDI,0x18                        ; 03fc2bef
+    XOR ECX,ECX                         ; 03fc2bf2
+    JMP 0x005cacab                      ; 03fc2bf4
+        ;   XREF to: 005cacab (UNCONDITIONAL_JUMP)  ; LAB_005cacab
 
