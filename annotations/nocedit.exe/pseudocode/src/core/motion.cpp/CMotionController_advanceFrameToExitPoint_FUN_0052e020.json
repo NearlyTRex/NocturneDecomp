@@ -5,18 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 156,
-    "complexity_score": 84,
+    "assembly_lines": 176,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 69,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 225
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 64,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 240
   },
   "cross_references": [
     {
@@ -32,6 +30,10 @@
       [
         "0052e020",
         "0052e1cc"
+      ],
+      [
+        "03fc41f9",
+        "03fc4238"
       ]
     ],
     "convention": "__cdecl",
@@ -75,15 +77,15 @@
     "estimated_params": 5
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.4963503649635035,
-    "instruction_count": 137,
+    "avg_pcode_per_instr": 6.117647058823529,
+    "instruction_count": 153,
     "opcode_distribution": {
       "BOOL_NEGATE": 2,
       "BOOL_OR": 6,
-      "BRANCH": 3,
+      "BRANCH": 4,
       "CALLIND": 2,
-      "CBRANCH": 9,
-      "COPY": 357,
+      "CBRANCH": 8,
+      "COPY": 368,
       "FLOAT2FLOAT": 30,
       "FLOAT_ADD": 7,
       "FLOAT_DIV": 1,
@@ -93,29 +95,29 @@
       "FLOAT_NAN": 8,
       "FLOAT_SUB": 1,
       "INT2FLOAT": 6,
-      "INT_ADD": 81,
-      "INT_AND": 61,
-      "INT_CARRY": 6,
-      "INT_EQUAL": 39,
+      "INT_ADD": 91,
+      "INT_AND": 67,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 44,
       "INT_LEFT": 16,
       "INT_LESS": 7,
-      "INT_MULT": 3,
+      "INT_MULT": 1,
       "INT_NOTEQUAL": 23,
       "INT_OR": 20,
       "INT_SBORROW": 7,
-      "INT_SCARRY": 7,
+      "INT_SCARRY": 9,
       "INT_SEXT": 3,
-      "INT_SLESS": 19,
-      "INT_SUB": 20,
-      "INT_XOR": 2,
-      "INT_ZEXT": 18,
-      "LOAD": 65,
-      "POPCOUNT": 19,
+      "INT_SLESS": 22,
+      "INT_SUB": 17,
+      "INT_XOR": 3,
+      "INT_ZEXT": 16,
+      "LOAD": 70,
+      "POPCOUNT": 22,
       "RETURN": 1,
-      "STORE": 30,
+      "STORE": 35,
       "SUBPIECE": 2
     },
-    "pcode_op_count": 890
+    "pcode_op_count": 936
   },
   "stack_frame": {
     "frame_size": 60,
@@ -192,14 +194,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(SMotionTransition *)((int)",
-      "severity": "mild",
-      "text": "pSVar7 = (SMotionTransition *)((int)pSVar7 + (uint)bVar8 * -8 + 4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

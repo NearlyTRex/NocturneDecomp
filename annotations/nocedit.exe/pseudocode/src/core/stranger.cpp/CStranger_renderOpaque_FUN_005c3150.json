@@ -5,19 +5,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 504,
-    "complexity_score": 277,
+    "assembly_lines": 536,
+    "complexity_score": 248,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 217,
-    "suspect_count": 5,
+    "pseudocode_lines": 208,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 721
+    "total_lines": 744
   },
   "cross_references": [],
   "function": {
@@ -26,6 +26,10 @@
       [
         "005c3150",
         "005c3700"
+      ],
+      [
+        "03fc4cbe",
+        "03fc4d23"
       ]
     ],
     "convention": "__cdecl",
@@ -229,43 +233,43 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.4496314496314495,
-    "instruction_count": 407,
+    "avg_pcode_per_instr": 4.3517241379310345,
+    "instruction_count": 435,
     "opcode_distribution": {
       "BOOL_NEGATE": 24,
       "BOOL_OR": 8,
-      "BRANCH": 10,
+      "BRANCH": 11,
       "BRANCHIND": 1,
       "CALL": 37,
       "CALLIND": 4,
-      "CBRANCH": 28,
-      "COPY": 353,
+      "CBRANCH": 27,
+      "COPY": 376,
       "FLOAT2FLOAT": 5,
       "FLOAT_EQUAL": 3,
       "FLOAT_LESS": 3,
       "FLOAT_NAN": 6,
       "INT2FLOAT": 1,
-      "INT_ADD": 172,
-      "INT_AND": 222,
-      "INT_CARRY": 46,
-      "INT_EQUAL": 169,
+      "INT_ADD": 194,
+      "INT_AND": 228,
+      "INT_CARRY": 48,
+      "INT_EQUAL": 174,
       "INT_LEFT": 18,
       "INT_LESS": 18,
-      "INT_MULT": 12,
+      "INT_MULT": 10,
       "INT_NOTEQUAL": 22,
       "INT_OR": 30,
       "INT_SBORROW": 18,
-      "INT_SCARRY": 46,
-      "INT_SLESS": 88,
-      "INT_SUB": 156,
-      "INT_XOR": 8,
-      "INT_ZEXT": 16,
-      "LOAD": 49,
-      "POPCOUNT": 82,
+      "INT_SCARRY": 48,
+      "INT_SLESS": 91,
+      "INT_SUB": 153,
+      "INT_XOR": 9,
+      "INT_ZEXT": 14,
+      "LOAD": 60,
+      "POPCOUNT": 85,
       "RETURN": 1,
-      "STORE": 155
+      "STORE": 166
     },
-    "pcode_op_count": 1811
+    "pcode_op_count": 1893
   },
   "stack_frame": {
     "frame_size": 564,
@@ -455,23 +459,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar7 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 200,
+      "line": 191,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar7 * -8 + 4);",
@@ -479,7 +467,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 201,
+      "line": 192,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar7 * -8 + 4);",

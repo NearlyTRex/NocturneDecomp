@@ -1,6 +1,6 @@
 // Name: core_setutil.cpp_C3DSCamera_apply_FUN_00585870
 // Address: 00585870
-// Address Range: [[00585870, 0058596e]]
+// Address Range: [[00585870, 0058596e] [03fc401f, 03fc4073]]
 // Convention: __cdecl
 // Signature: void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera *this_ptr,CDemonCamera *camera)
 
@@ -11,14 +11,9 @@ void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera *this_ptr
 {
   UVector3 *pUVar1;
   char cVar2;
-  int iVar3;
-  CMatrix3x3f *pCVar4;
-  C3DSCamera *pCVar5;
-  CMatrix3x3f *pCVar6;
-  char *pcVar7;
-  byte bVar8;
+  C3DSCamera *pCVar3;
+  char *pcVar4;
   
-  bVar8 = 0;
   if (this_ptr->is_panning != 0) {
     g_CurrentFilename = "..\\core\\setutil.cpp";
     g_CurrentLineNumber = 0xf7;
@@ -30,24 +25,27 @@ void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera *this_ptr
     (camera->base).position.f.y = (this_ptr->position).y;
     (camera->base).position.f.z = (this_ptr->position).z;
   }
-  pCVar4 = &this_ptr->rotation_matrix;
-  pCVar6 = &(camera->base).rotation_matrix;
-  for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar6->m[0].x = pCVar4->m[0].x;
-    pCVar4 = (CMatrix3x3f *)((int)pCVar4 + (uint)bVar8 * -8 + 4);
-    pCVar6 = (CMatrix3x3f *)((int)pCVar6 + (uint)bVar8 * -8 + 4);
-  }
-  pcVar7 = camera->camera_name;
+  (camera->base).rotation_matrix.m[0].x = (this_ptr->rotation_matrix).m[0].x;
+  (camera->base).rotation_matrix.m[0].y = (this_ptr->rotation_matrix).m[0].y;
+  (camera->base).rotation_matrix.m[0].z = (this_ptr->rotation_matrix).m[0].z;
+  (camera->base).rotation_matrix.m[1].x = (this_ptr->rotation_matrix).m[1].x;
+  (camera->base).rotation_matrix.m[1].y = (this_ptr->rotation_matrix).m[1].y;
+  (camera->base).rotation_matrix.m[1].z = (this_ptr->rotation_matrix).m[1].z;
+  (camera->base).rotation_matrix.m[2].x = (this_ptr->rotation_matrix).m[2].x;
+  (camera->base).rotation_matrix.m[2].y = (this_ptr->rotation_matrix).m[2].y;
+  (camera->base).rotation_matrix.m[2].z = (this_ptr->rotation_matrix).m[2].z;
+  (camera->base).dead = this_ptr->dead;
+  pcVar4 = camera->camera_name;
   (camera->base).focal_length = this_ptr->projection_scale;
-  pCVar5 = this_ptr;
+  pCVar3 = this_ptr;
   do {
-    cVar2 = pCVar5->name[0];
-    *pcVar7 = cVar2;
+    cVar2 = pCVar3->name[0];
+    *pcVar4 = cVar2;
     if (cVar2 == '\0') break;
-    cVar2 = pCVar5->name[1];
-    pCVar5 = (C3DSCamera *)(pCVar5->name + 2);
-    pcVar7[1] = cVar2;
-    pcVar7 = pcVar7 + 2;
+    cVar2 = pCVar3->name[1];
+    pCVar3 = (C3DSCamera *)(pCVar3->name + 2);
+    pcVar4[1] = cVar2;
+    pcVar4 = pcVar4 + 2;
   } while (cVar2 != '\0');
   core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(camera,this_ptr->ambient_value);
   if (this_ptr->ambient_value < g_CDemonSetPtr->min_ambient_value) {

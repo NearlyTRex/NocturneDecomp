@@ -249,11 +249,10 @@ section .text
     LEA EDI,[ESP + 0x14]                ; 005d59f5
     CALL shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 ; 005d59f9
         ;   XREF to: 005d63d0 (UNCONDITIONAL_CALL)  ; CVector3d * shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0(CVector3d * point, CVector3d * plane_point, CVector3d * plane_normal, CVector3d * out_point)
-    MOV ECX,0x6                         ; 005d59fe
-    LEA ESI,[ESP + 0x2c]                ; 005d5a03
-    ADD ESP,0xc                         ; 005d5a07
-    MOVSD.REP ES:EDI,ESI                ; 005d5a0a
+    JMP 0x03fc3742                      ; 005d59fe
+        ;   XREF to: 03fc3742 (UNCONDITIONAL_JUMP)  ; LAB_03fc3742
     MOV EAX,dword ptr [ESP + 0x8]       ; 005d5a0c
+        ;   Label: LAB_005d5a0c
     MOV dword ptr [EBX],EAX             ; 005d5a10
     MOV EAX,dword ptr [ESP + 0xc]       ; 005d5a12
     MOV dword ptr [EBX + 0x4],EAX       ; 005d5a16
@@ -438,4 +437,25 @@ section .text
     POP ESI                             ; 005d5bad
     POP EBX                             ; 005d5bae
     RET                                 ; 005d5baf
+    MOV ECX,0x6                         ; 03fc3742
+        ;   Label: LAB_03fc3742
+    LEA ESI,[ESP + 0x2c]                ; 03fc3747
+    ADD ESP,0xc                         ; 03fc374b
+    MOV ECX,dword ptr [ESI]             ; 03fc374e
+    MOV dword ptr [EDI],ECX             ; 03fc3750
+    MOV ECX,dword ptr [ESI + 0x4]       ; 03fc3752
+    MOV dword ptr [EDI + 0x4],ECX       ; 03fc3755
+    MOV ECX,dword ptr [ESI + 0x8]       ; 03fc3758
+    MOV dword ptr [EDI + 0x8],ECX       ; 03fc375b
+    MOV ECX,dword ptr [ESI + 0xc]       ; 03fc375e
+    MOV dword ptr [EDI + 0xc],ECX       ; 03fc3761
+    MOV ECX,dword ptr [ESI + 0x10]      ; 03fc3764
+    MOV dword ptr [EDI + 0x10],ECX      ; 03fc3767
+    MOV ECX,dword ptr [ESI + 0x14]      ; 03fc376a
+    MOV dword ptr [EDI + 0x14],ECX      ; 03fc376d
+    ADD ESI,0x18                        ; 03fc3770
+    ADD EDI,0x18                        ; 03fc3773
+    XOR ECX,ECX                         ; 03fc3776
+    JMP 0x005d5a0c                      ; 03fc3778
+        ;   XREF to: 005d5a0c (UNCONDITIONAL_JUMP)  ; LAB_005d5a0c
 

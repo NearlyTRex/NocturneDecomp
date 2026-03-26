@@ -1,6 +1,6 @@
 // Name: core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800
 // Address: 00543800
-// Address Range: [[00543800, 005438b7]]
+// Address Range: [[00543800, 005438b7] [03fc419b, 03fc41f8]]
 // Convention: __cdecl
 // Signature: void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame *this_ptr,SSimFrame *sim_frame)
 
@@ -9,15 +9,11 @@
 void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame *this_ptr,SSimFrame *sim_frame)
 
 {
-  SSimFrame *pSVar1;
-  int iVar2;
+  int iVar1;
+  SSimFrame *pSVar2;
   int iVar3;
   int iVar4;
-  SPlayerControl *pSVar5;
-  int *piVar6;
-  byte bVar7;
   
-  bVar7 = 0;
   if (this_ptr->local_player_index < 0) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
     g_CurrentLineNumber = 0x9cd;
@@ -28,19 +24,23 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGam
   iVar3 = 0;
   if (0 < this_ptr->player_count) {
     iVar4 = 0;
-    pSVar1 = sim_frame;
+    pSVar2 = sim_frame;
     do {
-      piVar6 = (int *)((int)g_HeroActors + iVar4);
+      iVar1 = *(int *)((int)g_HeroActors + iVar4);
       iVar4 = iVar4 + 4;
-      pSVar5 = pSVar1->player_controls;
-      piVar6 = (int *)(*piVar6 + 0xbe2c);
-      for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *piVar6 = pSVar5->action_states[0];
-        pSVar5 = (SPlayerControl *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
-        piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
-      }
+      *(int *)(iVar1 + 0xbe2c) = pSVar2->player_controls[0].action_states[0];
+      *(int *)(iVar1 + 0xbe30) = pSVar2->player_controls[0].action_states[1];
+      *(int *)(iVar1 + 0xbe34) = pSVar2->player_controls[0].action_states[2];
+      *(int *)(iVar1 + 0xbe38) = pSVar2->player_controls[0].action_states[3];
+      *(int *)(iVar1 + 0xbe3c) = pSVar2->player_controls[0].action_states[4];
+      *(int *)(iVar1 + 0xbe40) = pSVar2->player_controls[0].action_states[5];
+      *(int *)(iVar1 + 0xbe44) = pSVar2->player_controls[0].action_states[6];
+      *(int *)(iVar1 + 0xbe48) = pSVar2->player_controls[0].action_states[7];
+      *(float *)(iVar1 + 0xbe4c) = pSVar2->player_controls[0].strafe_speed;
+      *(float *)(iVar1 + 0xbe50) = pSVar2->player_controls[0].turn_speed;
+      *(float *)(iVar1 + 0xbe54) = pSVar2->player_controls[0].look_up_down_speed;
       iVar3 = iVar3 + 1;
-      pSVar1 = (SSimFrame *)&pSVar1->player_controls[0].strafe_speed;
+      pSVar2 = (SSimFrame *)&pSVar2->player_controls[0].strafe_speed;
     } while (iVar3 < this_ptr->player_count);
   }
   this_ptr->players[this_ptr->local_player_index].sim_frame_index = sim_frame->sequence_number + 1;

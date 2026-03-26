@@ -1,6 +1,6 @@
 // Name: core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0
 // Address: 00425fe0
-// Address Range: [[00425fe0, 00426400]]
+// Address Range: [[00425fe0, 00426400] [03fc4786, 03fc47ed]]
 // Convention: __cdecl
 // Signature: void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00425fe0(CBugs *this_ptr,float delta_time)
 
@@ -20,12 +20,12 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00425fe0(CBugs *this_ptr,
   int iVar3;
   CCharacter *this_ptr_00;
   CPathMap *this_ptr_01;
-  int iVar6;
   CBugs *pCVar4;
   CMatrix3x4f *pCVar5;
   SBug *bug_data;
   float *pfVar6;
   CMatrix3x4f *pCVar7;
+  int iVar6;
   byte bVar8;
   SDamageInfo SStack_188;
   CMatrix3x4f CStack_14c;
@@ -56,7 +56,6 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00425fe0(CBugs *this_ptr,
   float fVar2;
   CLocation *dest_position;
   
-  bVar8 = 0;
   if (this_ptr->swarm_target == (CDemonActor *)0x0) {
     this_ptr->state = BUGS_STATE_IDLE;
     return;
@@ -137,15 +136,18 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00425fe0(CBugs *this_ptr,
             (&CStack_14c,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_11c,&CStack_14c,&CStack_ec);
-  pCVar5 = &CStack_ec;
-  pCVar7 = &this_ptr->model_world_matrix;
-  for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
-    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
-    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar8 * -8 + 4);
-    pCVar7->m[0].w = pCVar5->m[0].w;
-    pCVar5 = pCVar5;
-    pCVar7 = pCVar7;
-  }
+  (this_ptr->model_world_matrix).m[0].w = CStack_ec.m[0].w;
+  (this_ptr->model_world_matrix).m[0].x = CStack_ec.m[0].x;
+  (this_ptr->model_world_matrix).m[0].y = CStack_ec.m[0].y;
+  (this_ptr->model_world_matrix).m[0].z = CStack_ec.m[0].z;
+  (this_ptr->model_world_matrix).m[1].w = CStack_ec.m[1].w;
+  (this_ptr->model_world_matrix).m[1].x = CStack_ec.m[1].x;
+  (this_ptr->model_world_matrix).m[1].y = CStack_ec.m[1].y;
+  (this_ptr->model_world_matrix).m[1].z = CStack_ec.m[1].z;
+  (this_ptr->model_world_matrix).m[2].w = CStack_ec.m[2].w;
+  (this_ptr->model_world_matrix).m[2].x = CStack_ec.m[2].x;
+  (this_ptr->model_world_matrix).m[2].y = CStack_ec.m[2].y;
+  (this_ptr->model_world_matrix).m[2].z = CStack_ec.m[2].z;
   if (this_ptr->lod_index !=
       ((CDeformableModelInstance *)this_ptr->deformable_model_ptr)->cached_skinned_lod_index) {
     core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0

@@ -5,19 +5,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 127,
-    "complexity_score": 89,
+    "assembly_lines": 159,
+    "complexity_score": 183,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 3,
+    "pseudocode_lines": 53,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 176
+    "total_lines": 212
   },
   "cross_references": [],
   "function": {
@@ -26,6 +26,10 @@
       [
         "005f1820",
         "005f1975"
+      ],
+      [
+        "03fc3b28",
+        "03fc3b80"
       ]
     ],
     "convention": "__cdecl",
@@ -122,42 +126,42 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.728155339805825,
-    "instruction_count": 103,
+    "avg_pcode_per_instr": 5.129770992366412,
+    "instruction_count": 131,
     "opcode_distribution": {
       "BOOL_NEGATE": 7,
       "BOOL_OR": 3,
-      "BRANCH": 2,
+      "BRANCH": 3,
       "CALL": 12,
-      "CBRANCH": 6,
-      "COPY": 139,
+      "CBRANCH": 5,
+      "COPY": 162,
       "FLOAT2FLOAT": 6,
       "FLOAT_ADD": 1,
       "FLOAT_EQUAL": 2,
       "FLOAT_LESS": 2,
       "FLOAT_NAN": 4,
       "INT2FLOAT": 1,
-      "INT_ADD": 48,
-      "INT_AND": 65,
-      "INT_CARRY": 15,
-      "INT_EQUAL": 46,
+      "INT_ADD": 70,
+      "INT_AND": 71,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 51,
       "INT_LEFT": 10,
       "INT_LESS": 5,
-      "INT_MULT": 4,
+      "INT_MULT": 2,
       "INT_NOTEQUAL": 12,
       "INT_OR": 15,
       "INT_SBORROW": 5,
-      "INT_SCARRY": 15,
-      "INT_SLESS": 24,
-      "INT_SUB": 45,
-      "INT_XOR": 2,
-      "INT_ZEXT": 10,
-      "LOAD": 21,
-      "POPCOUNT": 22,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 27,
+      "INT_SUB": 42,
+      "INT_XOR": 3,
+      "INT_ZEXT": 8,
+      "LOAD": 32,
+      "POPCOUNT": 25,
       "RETURN": 3,
-      "STORE": 38
+      "STORE": 49
     },
-    "pcode_op_count": 590
+    "pcode_op_count": 672
   },
   "stack_frame": {
     "frame_size": 88,
@@ -207,18 +211,90 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(CMatrix3x4f *)((int)",
+      "line": 29,
+      "match": "(float *)((int)",
       "severity": "mild",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
+      "text": "local_50.m[0].x = *(float *)((int)pCVar1->m + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "local_50.m[0].y = *(float *)((int)pCVar1->m + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 31,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(float *)((int)",
       "severity": "mild",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar4 * -8 + 4);",
+      "text": "local_50.m[0].z = *(float *)((int)pCVar1->m + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(CQuaternion4f *)((int)",
+      "severity": "mild",
+      "text": "local_50.m[1].w = ((CQuaternion4f *)((int)pCVar1->m + 0x10))->w;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "local_50.m[1].x = *(float *)((int)pCVar1->m + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "local_50.m[1].y = *(float *)((int)pCVar1->m + 0x18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "local_50.m[1].z = *(float *)((int)pCVar1->m + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(CQuaternion4f *)((int)",
+      "severity": "mild",
+      "text": "local_50.m[2].w = ((CQuaternion4f *)((int)pCVar1->m + 0x20))->w;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "local_50.m[2].x = *(float *)((int)pCVar1->m + 0x24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "local_50.m[2].y = *(float *)((int)pCVar1->m + 0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "local_50.m[2].z = *(float *)((int)pCVar1->m + 0x2c);",
       "type": "pointer_cast"
     }
   ],

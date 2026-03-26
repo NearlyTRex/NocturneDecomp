@@ -14,8 +14,6 @@
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
 ;   int g_CurrentAlphaValue = 0xff
-;   SRenderVertex[16] g_RenderVertexBuffer
-;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_y
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
 ;   uint g_ProcessedVertexOffset
@@ -24,10 +22,12 @@
 ;   int g_RenderBufferEnabled
 ;   int g_RenderBufferCount
 ;   SRenderBufferEntry[256] g_RenderBufferPool
-;   undefined4 g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_x
-;   undefined4 g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_y
 ;   undefined4 g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_z
-;   ... and 12 more
+;   undefined4 g_RenderBufferPool[0].vertices[1].projected_vertex.transformed_z
+;   undefined4 g_RenderBufferPool[0].texture_data[0]
+;   undefined4 g_RenderBufferPool[0].texture_data[1]
+;   undefined4 g_RenderBufferPool[0].alpha_value
+;   ... and 7 more
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403950
@@ -146,10 +146,10 @@ section .text
     IMUL ESI,dword ptr [EDX + 0x772a98],0x30 ; 004073d1 | g_ProcessedVertexIndices | g_ProcessedVertexIndices[1]
         ;   Label: LAB_004073d1
     LEA EDI,[EAX + 0x4]                 ; 004073d8
-    MOV ECX,0xc                         ; 004073db
-    LEA ESI,[ESI + 0x688014]            ; 004073e0 | g_RenderVertexBuffer
-    MOVSD.REP ES:EDI,ESI                ; 004073e6 | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y | g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_x
+    JMP 0x03fc3820                      ; 004073db
+        ;   XREF to: 03fc3820 (UNCONDITIONAL_JUMP)  ; LAB_03fc3820
     MOV ESI,dword ptr [ESP + 0x4]       ; 004073e8
+        ;   Label: LAB_004073e8
     MOV ECX,dword ptr [EAX + 0xc]       ; 004073ec | g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_z | g_RenderBufferPool[0].vertices[1].projected_vertex.transformed_z
     CMP ECX,ESI                         ; 004073ef
     JGE 0x004073f7                      ; 004073f1
@@ -200,4 +200,36 @@ section .text
     ADD ESP,0x8                         ; 00407469
     JMP 0x0040743f                      ; 0040746c
         ;   XREF to: 0040743f (UNCONDITIONAL_JUMP)  ; LAB_0040743f
+    MOV ECX,0xc                         ; 03fc3820
+        ;   Label: LAB_03fc3820
+    LEA ESI,[ESI + 0x688014]            ; 03fc3825
+    MOV ECX,dword ptr [ESI]             ; 03fc382b
+    MOV dword ptr [EDI],ECX             ; 03fc382d
+    MOV ECX,dword ptr [ESI + 0x4]       ; 03fc382f
+    MOV dword ptr [EDI + 0x4],ECX       ; 03fc3832
+    MOV ECX,dword ptr [ESI + 0x8]       ; 03fc3835
+    MOV dword ptr [EDI + 0x8],ECX       ; 03fc3838
+    MOV ECX,dword ptr [ESI + 0xc]       ; 03fc383b
+    MOV dword ptr [EDI + 0xc],ECX       ; 03fc383e
+    MOV ECX,dword ptr [ESI + 0x10]      ; 03fc3841
+    MOV dword ptr [EDI + 0x10],ECX      ; 03fc3844
+    MOV ECX,dword ptr [ESI + 0x14]      ; 03fc3847
+    MOV dword ptr [EDI + 0x14],ECX      ; 03fc384a
+    MOV ECX,dword ptr [ESI + 0x18]      ; 03fc384d
+    MOV dword ptr [EDI + 0x18],ECX      ; 03fc3850
+    MOV ECX,dword ptr [ESI + 0x1c]      ; 03fc3853
+    MOV dword ptr [EDI + 0x1c],ECX      ; 03fc3856
+    MOV ECX,dword ptr [ESI + 0x20]      ; 03fc3859
+    MOV dword ptr [EDI + 0x20],ECX      ; 03fc385c
+    MOV ECX,dword ptr [ESI + 0x24]      ; 03fc385f
+    MOV dword ptr [EDI + 0x24],ECX      ; 03fc3862
+    MOV ECX,dword ptr [ESI + 0x28]      ; 03fc3865
+    MOV dword ptr [EDI + 0x28],ECX      ; 03fc3868
+    MOV ECX,dword ptr [ESI + 0x2c]      ; 03fc386b
+    MOV dword ptr [EDI + 0x2c],ECX      ; 03fc386e
+    ADD ESI,0x30                        ; 03fc3871
+    ADD EDI,0x30                        ; 03fc3874
+    XOR ECX,ECX                         ; 03fc3877
+    JMP 0x004073e8                      ; 03fc3879
+        ;   XREF to: 004073e8 (UNCONDITIONAL_JUMP)  ; LAB_004073e8
 

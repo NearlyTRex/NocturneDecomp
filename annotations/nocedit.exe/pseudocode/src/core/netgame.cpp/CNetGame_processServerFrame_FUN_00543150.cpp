@@ -1,6 +1,6 @@
 // Name: core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
 // Address: 00543150
-// Address Range: [[00543150, 00543594]]
+// Address Range: [[00543150, 00543594] [03fc5169, 03fc521c]]
 // Convention: __cdecl
 // Signature: void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame *this_ptr)
 
@@ -21,7 +21,6 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
   SSimFrame *pSVar10;
   SSimFrame *pSVar7;
   CNetGame *pCVar11;
-  SPlayerControl *pSVar12;
   SPlayerControl *pSVar8;
   SPlayerControl *pSVar9;
   int *piVar10;
@@ -38,7 +37,6 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
   SNetPlayer *local_14;
   SNetPlayer *pSVar1;
   
-  bVar11 = 0;
   iVar2 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   iVar1 = iVar2 / 0x12;
   iVar3 = iVar1 - g_LastPingTime;
@@ -144,14 +142,18 @@ LAB_005432f5:
     pSVar7 = pSVar10;
     if (0 < this_ptr->player_count) {
       do {
-        pSVar12 = &pCVar5->players[0].controls;
-        pSVar9 = pSVar7->player_controls;
-        for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {
-          pSVar9 = (SPlayerControl *)((int)pSVar9 + (uint)bVar11 * -8 + 4);
-          pSVar9->action_states[0] = pSVar12->action_states[0];
-          pSVar12 = (SPlayerControl *)((int)pSVar12 + (uint)bVar11 * -8 + 4);
-          pSVar9 = pSVar9;
-        }
+        pSVar7->player_controls[0].action_states[0] = pCVar5->players[0].controls.action_states[0];
+        pSVar7->player_controls[0].action_states[1] = pCVar5->players[0].controls.action_states[1];
+        pSVar7->player_controls[0].action_states[2] = pCVar5->players[0].controls.action_states[2];
+        pSVar7->player_controls[0].action_states[3] = pCVar5->players[0].controls.action_states[3];
+        pSVar7->player_controls[0].action_states[4] = pCVar5->players[0].controls.action_states[4];
+        pSVar7->player_controls[0].action_states[5] = pCVar5->players[0].controls.action_states[5];
+        pSVar7->player_controls[0].action_states[6] = pCVar5->players[0].controls.action_states[6];
+        pSVar7->player_controls[0].action_states[7] = pCVar5->players[0].controls.action_states[7];
+        pSVar7->player_controls[0].strafe_speed = pCVar5->players[0].controls.strafe_speed;
+        pSVar7->player_controls[0].turn_speed = pCVar5->players[0].controls.turn_speed;
+        pSVar7->player_controls[0].look_up_down_speed =
+             pCVar5->players[0].controls.look_up_down_speed;
         iVar1 = iVar1 + 1;
         pCVar5 = (CNetGame *)(pCVar5->players[0].controls.action_states + 3);
         pSVar7 = (SSimFrame *)&pSVar7->player_controls[0].strafe_speed;
@@ -199,15 +201,17 @@ LAB_005434de:
             iVar5 = 0;
             if (0 < this_ptr->player_count) {
               do {
-                pSVar8 = pSVar6->player_controls;
-                piVar10 = local_7f + iVar5 * 0xb;
-                for (iVar6 = 0xb; iVar6 != 0; iVar6 = iVar6 + -1) {
-                  piVar10 = piVar10 + (uint)bVar11 * -2 + 1;
-                  pSVar8 = (SPlayerControl *)((int)pSVar8 + (uint)bVar11 * -8 + 4);
-                  *piVar10 = pSVar8->action_states[0];
-                  pSVar8 = pSVar8;
-                  piVar10 = piVar10;
-                }
+                local_7f[iVar5 * 0xb] = pSVar6->player_controls[0].action_states[0];
+                local_7f[iVar5 * 0xb + 1] = pSVar6->player_controls[0].action_states[1];
+                local_7f[iVar5 * 0xb + 2] = pSVar6->player_controls[0].action_states[2];
+                local_7f[iVar5 * 0xb + 3] = pSVar6->player_controls[0].action_states[3];
+                local_7f[iVar5 * 0xb + 4] = pSVar6->player_controls[0].action_states[4];
+                local_7f[iVar5 * 0xb + 5] = pSVar6->player_controls[0].action_states[5];
+                local_7f[iVar5 * 0xb + 6] = pSVar6->player_controls[0].action_states[6];
+                local_7f[iVar5 * 0xb + 7] = pSVar6->player_controls[0].action_states[7];
+                local_7f[iVar5 * 0xb + 8] = (int)pSVar6->player_controls[0].strafe_speed;
+                local_7f[iVar5 * 0xb + 9] = (int)pSVar6->player_controls[0].turn_speed;
+                local_7f[iVar5 * 0xb + 10] = (int)pSVar6->player_controls[0].look_up_down_speed;
                 iVar5 = iVar5 + 1;
                 pSVar6 = (SSimFrame *)&pSVar6->player_controls[0].strafe_speed;
               } while (iVar5 < this_ptr->player_count);

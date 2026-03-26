@@ -5,19 +5,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 1115,
-    "complexity_score": 544,
+    "assembly_lines": 1175,
+    "complexity_score": 531,
     "cross_reference_count": 1,
     "function_call_count": 14,
-    "global_count": 43,
+    "global_count": 41,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 424,
-    "suspect_count": 11,
+    "pseudocode_lines": 441,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "warning_unreachable"
     ],
-    "total_lines": 1539
+    "total_lines": 1616
   },
   "cross_references": [
     {
@@ -37,6 +37,10 @@
       [
         "0060cafa",
         "0060cb49"
+      ],
+      [
+        "03fc521d",
+        "03fc52d6"
       ]
     ],
     "convention": "__cdecl",
@@ -340,18 +344,6 @@
       "value": null
     },
     {
-      "addr": "02f9c0d4",
-      "name": "g_SimFrameHistory[0].player_controls[0].action_states[1]",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "02f9c0fc",
-      "name": "g_SimFrameHistory[0].player_controls[1].action_states[0]",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "02f9c128",
       "name": "g_SimFrameHistory[1].sequence_number",
       "type": "undefined4",
@@ -397,45 +389,45 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.286510590858417,
-    "instruction_count": 897,
+    "avg_pcode_per_instr": 5.157007376185458,
+    "instruction_count": 949,
     "opcode_distribution": {
       "BOOL_NEGATE": 146,
       "BOOL_OR": 19,
-      "BRANCH": 19,
+      "BRANCH": 21,
       "BRANCHIND": 1,
       "CALL": 29,
-      "CBRANCH": 98,
-      "COPY": 963,
+      "CBRANCH": 96,
+      "COPY": 1005,
       "FLOAT2FLOAT": 17,
       "FLOAT_EQUAL": 9,
       "FLOAT_LESS": 9,
       "FLOAT_MULT": 3,
       "FLOAT_NAN": 18,
       "INT2FLOAT": 7,
-      "INT_ADD": 427,
-      "INT_AND": 689,
-      "INT_CARRY": 67,
-      "INT_EQUAL": 426,
+      "INT_ADD": 467,
+      "INT_AND": 701,
+      "INT_CARRY": 71,
+      "INT_EQUAL": 436,
       "INT_LEFT": 76,
       "INT_LESS": 73,
-      "INT_MULT": 10,
+      "INT_MULT": 6,
       "INT_NOTEQUAL": 114,
       "INT_OR": 145,
       "INT_SBORROW": 73,
-      "INT_SCARRY": 73,
+      "INT_SCARRY": 77,
       "INT_SEXT": 6,
-      "INT_SLESS": 239,
-      "INT_SUB": 213,
-      "INT_XOR": 27,
-      "INT_ZEXT": 40,
-      "LOAD": 301,
-      "POPCOUNT": 199,
+      "INT_SLESS": 245,
+      "INT_SUB": 207,
+      "INT_XOR": 29,
+      "INT_ZEXT": 36,
+      "LOAD": 321,
+      "POPCOUNT": 205,
       "RETURN": 19,
-      "STORE": 183,
+      "STORE": 203,
       "SUBPIECE": 4
     },
-    "pcode_op_count": 4742
+    "pcode_op_count": 4894
   },
   "stack_frame": {
     "frame_size": 256,
@@ -663,7 +655,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 121,
       "match": "(SNetworkAddr *)((int)",
       "severity": "mild",
       "text": "uVar4 = ((SNetworkAddr *)((int)packet + 5))->other;",
@@ -671,7 +663,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 122,
       "match": "(SNetworkAddr *)((int)",
       "severity": "mild",
       "text": "this_ptr->players[iVar6].addr.port = ((SNetworkAddr *)((int)packet + 5))->port;",
@@ -679,7 +671,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 146,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "uVar5 = *(ushort *)((int)((int)packet + 0x6d) + 2);",
@@ -687,7 +679,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 147,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "this_ptr->players[iVar6].addr.port = *(ushort *)((int)packet + 0x6d);",
@@ -695,7 +687,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 230,
+      "line": 228,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "while (*(uint *)((int)g_ChatOutMessages[0].player_timestamps + iVar6 + -8) ==",
@@ -703,7 +695,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 232,
+      "line": 230,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)g_ChatOutMessages[0].player_timestamps + iVar6 + uVar2 + -4) = 1;",
@@ -711,34 +703,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 360,
+      "line": 358,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "if (uVar3 == *(uint *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 397,
-      "match": "(SPlayerControl *)((int)",
-      "severity": "mild",
-      "text": "pSVar9 = (SPlayerControl *)((int)pSVar9 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 398,
-      "match": "(SPlayerControl *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SPlayerControl *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 422,
-      "match": "(SPlayerControl *)((int)",
-      "severity": "mild",
-      "text": "pSVar12 = (SPlayerControl *)((int)pSVar12 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

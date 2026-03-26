@@ -1,6 +1,6 @@
 // Name: core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110
 // Address: 0043a110
-// Address Range: [[0043a110, 0043a2af]]
+// Address Range: [[0043a110, 0043a2af] [03fc4607, 03fc4664]]
 // Convention: __cdecl
 // Signature: void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
 
@@ -27,7 +27,6 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110(CCloth *this_p
   int local_18;
   float local_14;
   
-  bVar5 = 0;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(model_ptr);
   bone_name = this_ptr->collide_bones + bone_index;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,bone_name->name,1);
@@ -65,15 +64,18 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110(CCloth *this_p
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
             (&local_94,&bone_name->euler1,&bone_name->euler2);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&bone_name->world_matrix,&local_94,&local_64);
-  pCVar3 = &local_64;
-  pCVar4 = &bone_name->world_matrix;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
-    pCVar4->m[0].w = pCVar3->m[0].w;
-    pCVar3 = pCVar3;
-    pCVar4 = pCVar4;
-  }
+  (bone_name->world_matrix).m[0].w = local_64.m[0].w;
+  (bone_name->world_matrix).m[0].x = local_64.m[0].x;
+  (bone_name->world_matrix).m[0].y = local_64.m[0].y;
+  (bone_name->world_matrix).m[0].z = local_64.m[0].z;
+  (bone_name->world_matrix).m[1].w = local_64.m[1].w;
+  (bone_name->world_matrix).m[1].x = local_64.m[1].x;
+  (bone_name->world_matrix).m[1].y = local_64.m[1].y;
+  (bone_name->world_matrix).m[1].z = local_64.m[1].z;
+  (bone_name->world_matrix).m[2].w = local_64.m[2].w;
+  (bone_name->world_matrix).m[2].x = local_64.m[2].x;
+  (bone_name->world_matrix).m[2].y = local_64.m[2].y;
+  (bone_name->world_matrix).m[2].z = local_64.m[2].z;
   bone_name->inv_radius1 = 1.0 / bone_name->radius1;
   bone_name->inv_radius2 = 1.0 / bone_name->radius2;
   if (bone_name->length <= 0.0) {

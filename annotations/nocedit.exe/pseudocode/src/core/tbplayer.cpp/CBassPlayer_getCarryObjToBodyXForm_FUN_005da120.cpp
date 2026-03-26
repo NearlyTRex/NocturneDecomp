@@ -1,6 +1,6 @@
 // Name: core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da120
 // Address: 005da120
-// Address Range: [[005da120, 005da238]]
+// Address Range: [[005da120, 005da238] [03fc3c9c, 03fc3cfa]]
 // Convention: __stack2_esi
 // Signature: void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da120(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
@@ -22,7 +22,6 @@ void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da
   CVector3f local_24;
   CVector3f local_18;
   
-  bVar3 = 0;
   iVar2 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 0) {
     local_18.y = -1.866;
@@ -46,12 +45,17 @@ void __stack2_esi core_tbplayer_cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             (&local_78,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar2,
              &local_a8);
-  pCVar2 = &local_a8;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar3 * -8 + 4);
-    out_matrix->m[0].w = pCVar2->m[0].w;
-    pCVar2 = pCVar2;
-    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
-  }
+  out_matrix->m[0].w = local_a8.m[0].w;
+  out_matrix->m[0].x = local_a8.m[0].x;
+  out_matrix->m[0].y = local_a8.m[0].y;
+  out_matrix->m[0].z = local_a8.m[0].z;
+  out_matrix->m[1].w = local_a8.m[1].w;
+  out_matrix->m[1].x = local_a8.m[1].x;
+  out_matrix->m[1].y = local_a8.m[1].y;
+  out_matrix->m[1].z = local_a8.m[1].z;
+  out_matrix->m[2].w = local_a8.m[2].w;
+  out_matrix->m[2].x = local_a8.m[2].x;
+  out_matrix->m[2].y = local_a8.m[2].y;
+  out_matrix->m[2].z = local_a8.m[2].z;
   return;
 }

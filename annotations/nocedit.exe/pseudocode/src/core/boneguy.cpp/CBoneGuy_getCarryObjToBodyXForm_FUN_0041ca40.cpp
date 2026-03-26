@@ -1,6 +1,6 @@
 // Name: core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40
 // Address: 0041ca40
-// Address Range: [[0041ca40, 0041cc36]]
+// Address Range: [[0041ca40, 0041cc36] [03fc48ab, 03fc490d]]
 // Convention: __stack2_esi
 // Signature: void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
@@ -15,7 +15,6 @@ void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(
   CVector3f *pCVar2;
   int iVar2;
   int iVar3;
-  CMatrix3x4f *pCVar5;
   CMatrix3x4f *pCVar3;
   CMatrix3x4f *pCVar4;
   byte bVar5;
@@ -72,14 +71,9 @@ void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             (&local_120,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar3,
              &local_c0);
-  pCVar5 = &local_c0;
-  pCVar4 = &local_f0;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);
-    pCVar4->m[0].w = pCVar5->m[0].w;
-    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar5 * -2 + 1) * 4);
-    pCVar4 = pCVar4;
-  }
+  local_f0.m[0].z = local_c0.m[0].z;
+  local_f0.m[1].z = local_c0.m[1].z;
+  local_f0.m[2].z = local_c0.m[2].z;
   pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_24,&local_48,&local_f0);
   local_f0.m[0].z = local_f0.m[0].z + (local_18.x - pCVar2->x);
   local_f0.m[1].z = local_f0.m[1].z + (local_18.y - pCVar2->y);

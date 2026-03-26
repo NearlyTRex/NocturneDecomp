@@ -5,19 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 145,
-    "complexity_score": 137,
+    "assembly_lines": 209,
+    "complexity_score": 95,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 87,
-    "suspect_count": 4,
+    "pseudocode_lines": 80,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many",
-      "pointer_cast"
+      "param_count_too_many"
     ],
-    "total_lines": 232
+    "total_lines": 289
   },
   "cross_references": [
     {
@@ -63,6 +62,10 @@
       [
         "0059f820",
         "0059fa1c"
+      ],
+      [
+        "03fc4d24",
+        "03fc4de4"
       ]
     ],
     "convention": "__stack2_esi",
@@ -99,23 +102,23 @@
         "call_addr": "00424ac3",
         "call_type": "direct",
         "caller": "core_bride.cpp_CBride_getTargetPoint_FUN_00424aa0",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 6,
+        "instructions_analyzed": 14,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
+        "stack_bytes": 24,
+        "stack_params": 6
       },
       {
         "call_addr": "004e84c3",
         "call_type": "direct",
         "caller": "core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 6,
+        "instructions_analyzed": 14,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
+        "stack_bytes": 24,
+        "stack_params": 6
       },
       {
         "call_addr": "0059fac6",
@@ -133,8 +136,8 @@
         "call_type": "direct",
         "caller": "core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80",
         "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "instructions_analyzed": 7,
+        "method": "push_count",
         "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
@@ -162,44 +165,43 @@
         "stack_params": 2
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "declared_params": 3,
     "declared_stack_bytes": 8,
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.546875,
-    "instruction_count": 128,
+    "avg_pcode_per_instr": 5.445652173913044,
+    "instruction_count": 184,
     "opcode_distribution": {
       "BOOL_NEGATE": 16,
-      "BRANCH": 5,
+      "BRANCH": 7,
       "CALL": 5,
-      "CBRANCH": 5,
-      "COPY": 328,
+      "CBRANCH": 3,
+      "COPY": 374,
       "FLOAT2FLOAT": 36,
       "FLOAT_ADD": 3,
       "FLOAT_MULT": 9,
-      "INT_ADD": 91,
-      "INT_AND": 70,
-      "INT_CARRY": 10,
-      "INT_EQUAL": 41,
+      "INT_ADD": 135,
+      "INT_AND": 82,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 51,
       "INT_LEFT": 6,
       "INT_LESS": 4,
-      "INT_MULT": 10,
+      "INT_MULT": 6,
       "INT_NOTEQUAL": 8,
       "INT_OR": 15,
       "INT_SBORROW": 4,
-      "INT_SCARRY": 10,
-      "INT_SLESS": 24,
-      "INT_SUB": 30,
-      "INT_XOR": 3,
-      "INT_ZEXT": 4,
-      "LOAD": 44,
-      "POPCOUNT": 18,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 30,
+      "INT_SUB": 24,
+      "INT_XOR": 5,
+      "LOAD": 66,
+      "POPCOUNT": 24,
       "RETURN": 1,
-      "STORE": 38
+      "STORE": 60
     },
-    "pcode_op_count": 838
+    "pcode_op_count": 1002
   },
   "stack_frame": {
     "frame_size": 184,
@@ -337,30 +339,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 55,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar6 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
     {
       "call_site_count": 6,
       "declared_params": 3,

@@ -10,10 +10,7 @@
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
 ;   int g_CurrentAlphaValue = 0xff
-;   SRenderVertex[16] g_RenderVertexBuffer
-;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_y
 ;   undefined4 g_RenderVertexBuffer[0].a
-;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_x
 ;   int[24] g_ProcessedVertexIndices
 ;   int g_RenderBufferEnabled
 ;   int g_RenderBufferCount
@@ -23,7 +20,9 @@
 ;   undefined4 g_RenderBufferSortArray[1]
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
-;   ... and 3 more
+;   int g_BlendMode
+;   _BIT_INTEGER32 g_RenderStateFlags
+;   int g_RenderStateFlag2
 ;
 ; Called Functions:
 ;   crt_stdlib.c__qsort_FUN_005fdf38
@@ -102,11 +101,10 @@ section .text
     XOR EBP,EBP                         ; 00407189
     IMUL EDX,EAX,0x30                   ; 0040718b
         ;   Label: LAB_0040718b
-    MOV ECX,0xc                         ; 0040718e
-    LEA ESI,[EBX + 0x4]                 ; 00407193
-    LEA EDI,[EDX + 0x688014]            ; 00407196 | g_RenderVertexBuffer
-    MOVSD.REP ES:EDI,ESI                ; 0040719c | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y | g_RenderVertexBuffer[1].projected_vertex.transformed_x
+    JMP 0x03fc38df                      ; 0040718e
+        ;   XREF to: 03fc38df (UNCONDITIONAL_JUMP)  ; LAB_03fc38df
     MOV CX,word ptr [EDX + 0x688040]    ; 0040719e | g_RenderVertexBuffer[0].a
+        ;   Label: LAB_0040719e
     XOR ECX,0xffffffff                  ; 004071a5
     ADD EBP,0x4                         ; 004071a8
     MOV word ptr [EDX + 0x688040],CX    ; 004071ab | g_RenderVertexBuffer[0].a
@@ -178,4 +176,37 @@ section .text
         ;   Label: LAB_00407272
     JMP 0x00407140                      ; 0040727c
         ;   XREF to: 00407140 (UNCONDITIONAL_JUMP)  ; LAB_00407140
+    MOV ECX,0xc                         ; 03fc38df
+        ;   Label: LAB_03fc38df
+    LEA ESI,[EBX + 0x4]                 ; 03fc38e4
+    LEA EDI,[EDX + 0x688014]            ; 03fc38e7
+    MOV ECX,dword ptr [ESI]             ; 03fc38ed
+    MOV dword ptr [EDI],ECX             ; 03fc38ef
+    MOV ECX,dword ptr [ESI + 0x4]       ; 03fc38f1
+    MOV dword ptr [EDI + 0x4],ECX       ; 03fc38f4
+    MOV ECX,dword ptr [ESI + 0x8]       ; 03fc38f7
+    MOV dword ptr [EDI + 0x8],ECX       ; 03fc38fa
+    MOV ECX,dword ptr [ESI + 0xc]       ; 03fc38fd
+    MOV dword ptr [EDI + 0xc],ECX       ; 03fc3900
+    MOV ECX,dword ptr [ESI + 0x10]      ; 03fc3903
+    MOV dword ptr [EDI + 0x10],ECX      ; 03fc3906
+    MOV ECX,dword ptr [ESI + 0x14]      ; 03fc3909
+    MOV dword ptr [EDI + 0x14],ECX      ; 03fc390c
+    MOV ECX,dword ptr [ESI + 0x18]      ; 03fc390f
+    MOV dword ptr [EDI + 0x18],ECX      ; 03fc3912
+    MOV ECX,dword ptr [ESI + 0x1c]      ; 03fc3915
+    MOV dword ptr [EDI + 0x1c],ECX      ; 03fc3918
+    MOV ECX,dword ptr [ESI + 0x20]      ; 03fc391b
+    MOV dword ptr [EDI + 0x20],ECX      ; 03fc391e
+    MOV ECX,dword ptr [ESI + 0x24]      ; 03fc3921
+    MOV dword ptr [EDI + 0x24],ECX      ; 03fc3924
+    MOV ECX,dword ptr [ESI + 0x28]      ; 03fc3927
+    MOV dword ptr [EDI + 0x28],ECX      ; 03fc392a
+    MOV ECX,dword ptr [ESI + 0x2c]      ; 03fc392d
+    MOV dword ptr [EDI + 0x2c],ECX      ; 03fc3930
+    ADD ESI,0x30                        ; 03fc3933
+    ADD EDI,0x30                        ; 03fc3936
+    XOR ECX,ECX                         ; 03fc3939
+    JMP 0x0040719e                      ; 03fc393b
+        ;   XREF to: 0040719e (UNCONDITIONAL_JUMP)  ; LAB_0040719e
 

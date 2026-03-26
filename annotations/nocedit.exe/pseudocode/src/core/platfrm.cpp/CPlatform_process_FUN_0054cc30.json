@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 26,
-        "line": 276,
+        "line": 256,
         "message": "cannot cast from type 'float' to pointer type 'CVector3f *'"
       }
     ],
@@ -12,20 +12,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 790,
-    "complexity_score": 432,
+    "assembly_lines": 854,
+    "complexity_score": 372,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 327,
-    "suspect_count": 9,
+    "pseudocode_lines": 307,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 1117
+    "total_lines": 1161
   },
   "cross_references": [
     {
@@ -41,6 +41,10 @@
       [
         "0054cc30",
         "0054d687"
+      ],
+      [
+        "03fc5096",
+        "03fc5168"
       ]
     ],
     "convention": "__cdecl",
@@ -264,18 +268,18 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.537519142419602,
-    "instruction_count": 653,
+    "avg_pcode_per_instr": 5.331452750352609,
+    "instruction_count": 709,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 16,
       "BOOL_OR": 21,
-      "BRANCH": 19,
+      "BRANCH": 21,
       "BRANCHIND": 1,
       "CALL": 31,
       "CALLIND": 9,
-      "CBRANCH": 53,
-      "COPY": 1208,
+      "CBRANCH": 51,
+      "COPY": 1254,
       "FLOAT2FLOAT": 91,
       "FLOAT_ABS": 2,
       "FLOAT_ADD": 9,
@@ -287,27 +291,27 @@
       "FLOAT_SQRT": 1,
       "FLOAT_SUB": 8,
       "INT2FLOAT": 7,
-      "INT_ADD": 327,
-      "INT_AND": 311,
-      "INT_CARRY": 57,
-      "INT_EQUAL": 229,
+      "INT_ADD": 371,
+      "INT_AND": 323,
+      "INT_CARRY": 61,
+      "INT_EQUAL": 239,
       "INT_LEFT": 56,
       "INT_LESS": 27,
-      "INT_MULT": 6,
+      "INT_MULT": 2,
       "INT_NOTEQUAL": 71,
       "INT_OR": 70,
       "INT_SBORROW": 27,
-      "INT_SCARRY": 62,
-      "INT_SLESS": 112,
-      "INT_SUB": 161,
-      "INT_XOR": 6,
-      "INT_ZEXT": 60,
-      "LOAD": 180,
-      "POPCOUNT": 112,
+      "INT_SCARRY": 66,
+      "INT_SLESS": 118,
+      "INT_SUB": 155,
+      "INT_XOR": 8,
+      "INT_ZEXT": 56,
+      "LOAD": 202,
+      "POPCOUNT": 118,
       "RETURN": 1,
-      "STORE": 195
+      "STORE": 217
     },
-    "pcode_op_count": 3616
+    "pcode_op_count": 3780
   },
   "stack_frame": {
     "frame_size": 816,
@@ -430,47 +434,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 234,
+      "line": 228,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar3 = *(int *)((int)g_CDemonSetPtr->actors + iStack_24);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 244,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar16 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 245,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar16 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 252,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar16 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 253,
-      "match": "(CMatrix3x3f *)((int)",
-      "severity": "mild",
-      "text": "pCVar14 = (CMatrix3x3f *)((int)pCVar14 + ((uint)bVar16 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 304,
+      "line": 284,
       "match": "ABS",
       "severity": "mild",
       "text": "if (((float)10 < ABS(fStack_40)) || ((float)10 < ABS(fStack_38)))",
@@ -478,7 +450,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 304,
+      "line": 284,
       "match": "ABS",
       "severity": "mild",
       "text": "if (((float)10 < ABS(fStack_40)) || ((float)10 < ABS(fStack_38)))",
@@ -486,7 +458,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 315,
+      "line": 295,
       "match": "SQRT",
       "severity": "mild",
       "text": "(fVar2 = SQRT(fVar2), fVar2 <= 0.0)))) goto LAB_0054d4f3;",

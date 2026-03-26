@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 162,
-    "complexity_score": 149,
+    "assembly_lines": 194,
+    "complexity_score": 139,
     "cross_reference_count": 1,
     "function_call_count": 3,
-    "global_count": 27,
+    "global_count": 22,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 94,
-    "suspect_count": 5,
+    "pseudocode_lines": 104,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 256
+    "total_lines": 298
   },
   "cross_references": [
     {
@@ -32,6 +32,10 @@
       [
         "00407290",
         "0040746d"
+      ],
+      [
+        "03fc3820",
+        "03fc387d"
       ]
     ],
     "convention": "__cdecl",
@@ -67,18 +71,6 @@
       "name": "g_CurrentAlphaValue",
       "type": "int",
       "value": "0xff"
-    },
-    {
-      "addr": "00688014",
-      "name": "g_RenderVertexBuffer",
-      "type": "SRenderVertex[16]",
-      "value": null
-    },
-    {
-      "addr": "00688018",
-      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_y",
-      "type": "undefined4",
-      "value": null
     },
     {
       "addr": "0068802c",
@@ -129,26 +121,8 @@
       "value": null
     },
     {
-      "addr": "00772b04",
-      "name": "g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_x",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00772b08",
-      "name": "g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_y",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "00772b0c",
       "name": "g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_z",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00772b34",
-      "name": "g_RenderBufferPool[0].vertices[1].projected_vertex.transformed_x",
       "type": "undefined4",
       "value": null
     },
@@ -240,39 +214,39 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.145038167938932,
-    "instruction_count": 131,
+    "avg_pcode_per_instr": 4.754716981132075,
+    "instruction_count": 159,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 19,
       "BOOL_OR": 1,
-      "BRANCH": 7,
+      "BRANCH": 8,
       "CALL": 3,
-      "CBRANCH": 13,
-      "COPY": 104,
-      "INT_ADD": 53,
-      "INT_AND": 109,
-      "INT_CARRY": 15,
-      "INT_EQUAL": 83,
+      "CBRANCH": 12,
+      "COPY": 127,
+      "INT_ADD": 75,
+      "INT_AND": 115,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 88,
       "INT_LEFT": 6,
       "INT_LESS": 12,
-      "INT_MULT": 10,
+      "INT_MULT": 8,
       "INT_NOTEQUAL": 11,
       "INT_OR": 15,
       "INT_SBORROW": 12,
-      "INT_SCARRY": 17,
+      "INT_SCARRY": 19,
       "INT_SEXT": 9,
-      "INT_SLESS": 43,
-      "INT_SUB": 31,
-      "INT_XOR": 6,
-      "INT_ZEXT": 4,
-      "LOAD": 24,
-      "POPCOUNT": 37,
+      "INT_SLESS": 46,
+      "INT_SUB": 28,
+      "INT_XOR": 7,
+      "INT_ZEXT": 2,
+      "LOAD": 35,
+      "POPCOUNT": 40,
       "RETURN": 1,
-      "STORE": 22,
+      "STORE": 33,
       "SUBPIECE": 6
     },
-    "pcode_op_count": 674
+    "pcode_op_count": 756
   },
   "stack_frame": {
     "frame_size": 28,
@@ -303,28 +277,12 @@
       "line": 64,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pSVar10 = g_RenderVertexBuffer + *(int *)((int)g_ProcessedVertexIndices + iVar4);",
+      "text": "iVar1 = *(int *)((int)g_ProcessedVertexIndices + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + (uint)bVar13 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + (uint)bVar13 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 88,
+      "line": 98,
       "match": "(SMRGLTextureBasic *)((int)",
       "severity": "mild",
       "text": "pSVar6 = (SMRGLTextureBasic *)((int)pSVar6 + (uint)bVar13 * -8 + 4);",
@@ -332,7 +290,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 106,
       "match": "(SMRGLHeaderExtended *)((int)",
       "severity": "mild",
       "text": "return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);",

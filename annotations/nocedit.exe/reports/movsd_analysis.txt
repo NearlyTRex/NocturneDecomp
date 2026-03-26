@@ -8,7 +8,7 @@ fixed by replacing them with explicit MOV instructions in code caves.
 
 SUMMARY
 --------------------------------------------------
-Already patched (cave):    676 sites (excluded from counts below)
+Already patched (cave):    766 sites (excluded from counts below)
 
 Consecutive MOVSD groups:  122
   1x MOVSD ( 4 bytes):   100 sites
@@ -19,8 +19,8 @@ Consecutive MOVSD groups:  122
   Unfixable:              90
   Est. cave space:        ~870 bytes
 
-REP MOVSD sites:           625
-  Fixable (struct copy):  118
+REP MOVSD sites:           535
+  Fixable (struct copy):  28
   No artifacts (OK):      33
   Too large (buffer):     178
   Dynamic count:          290
@@ -29,13 +29,12 @@ REP MOVSD sites:           625
   REP MOVSD by copy size:
     unknown count:        291 sites
       4 dwords (  16 bytes): 2 sites
-      6 dwords (  24 bytes): 35 sites
-      7 dwords (  28 bytes): 2 sites
+      6 dwords (  24 bytes): 27 sites
+      7 dwords (  28 bytes): 1 sites
       8 dwords (  32 bytes): 3 sites
-     10 dwords (  40 bytes): 14 sites
-     11 dwords (  44 bytes): 6 sites
-     12 dwords (  48 bytes): 86 sites
-     13 dwords (  52 bytes): 6 sites
+     10 dwords (  40 bytes): 3 sites
+     12 dwords (  48 bytes): 27 sites
+     13 dwords (  52 bytes): 1 sites
      18 dwords (  72 bytes): 7 sites
      20 dwords (  80 bytes): 1 sites
      25 dwords ( 100 bytes): 16 sites
@@ -74,7 +73,7 @@ REP MOVSD sites:           625
     2122 dwords (8488 bytes): 1 sites
     3200 dwords (12800 bytes): 1 sites
 
-Total MOVSD sites:         747
+Total MOVSD sites:         657
 
 ----------------------------------------------------------------------------------------------------
 FIXABLE 3x MOVSD SITES (12 bytes copy, 15 sites)
@@ -265,200 +264,47 @@ UNFIXABLE 1x MOVSD SITES (4 bytes copy, 86 sites)
     0x0048f94f  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE REP MOVSD STRUCT COPIES (118 sites)
+FIXABLE REP MOVSD STRUCT COPIES (28 sites)
 ----------------------------------------------------------------------------------------------------
-  CPoly_intersectPoly_FUN_005ce580                                         7 sites
-    0x005ce868  REP MOVSD 6 dwords (24 bytes)
-    0x005ce9c8  REP MOVSD 6 dwords (24 bytes)
-    0x005ce9f6  REP MOVSD 6 dwords (24 bytes)
-    0x005cea31  REP MOVSD 6 dwords (24 bytes)
-    0x005ced13  REP MOVSD 6 dwords (24 bytes)
-    0x005cf424  REP MOVSD 6 dwords (24 bytes)
-    0x005cf6bc  REP MOVSD 6 dwords (24 bytes)
   quantizeColors_FUN_004406c0                                              3 sites
     0x00440b01  REP MOVSD 8 dwords (32 bytes)
     0x00440b14  REP MOVSD 8 dwords (32 bytes)
     0x00440b28  REP MOVSD 8 dwords (32 bytes)
-  CFireball_setupRenderState_FUN_004c0d80                                  2 sites
-    0x004c0e0a  REP MOVSD 10 dwords (40 bytes)
-    0x004c0e17  REP MOVSD 10 dwords (40 bytes)
-  CLaserBeam_render_FUN_004c25c0                                           2 sites
-    0x004c2eef  REP MOVSD 12 dwords (48 bytes)
-    0x004c2f1d  REP MOVSD 12 dwords (48 bytes)
-  CSmokeParticle_setupRenderState_FUN_004bf1f0                             2 sites
-    0x004bf27a  REP MOVSD 10 dwords (40 bytes)
-    0x004bf287  REP MOVSD 10 dwords (40 bytes)
-  CSpark_setupRenderState_FUN_004c0300                                     2 sites
-    0x004c03c4  REP MOVSD 10 dwords (40 bytes)
-    0x004c03d1  REP MOVSD 10 dwords (40 bytes)
-  CFlies_renderOpaque_FUN_004cc300                                         2 sites
-    0x004cc674  REP MOVSD 12 dwords (48 bytes)
-    0x004cc682  REP MOVSD 12 dwords (48 bytes)
-  CBloodParticle_setupRenderState_FUN_004eb9d0                             2 sites
-    0x004eba5a  REP MOVSD 10 dwords (40 bytes)
-    0x004eba67  REP MOVSD 10 dwords (40 bytes)
-  CHostage_getCarryObjToBodyXForm_FUN_004f6550                             2 sites
-    0x004f6699  REP MOVSD 12 dwords (48 bytes)
-    0x004f66a4  REP MOVSD 12 dwords (48 bytes)
-  CNetGame_processPacket_FUN_005406a0                                      2 sites
-    0x0054109f  REP MOVSD 11 dwords (44 bytes)
-    0x00541191  REP MOVSD 11 dwords (44 bytes)
-  CNetGame_processServerFrame_FUN_00543150                                 2 sites
-    0x00543328  REP MOVSD 11 dwords (44 bytes)
-    0x0054352b  REP MOVSD 11 dwords (44 bytes)
-  CPlatform_process_FUN_0054cc30                                           2 sites
-    0x0054d55c  REP MOVSD 12 dwords (48 bytes)
-    0x0054d581  REP MOVSD 12 dwords (48 bytes)
-  CScat_updateWeaponAttachment_FUN_00558fd0                                2 sites
-    0x00559088  REP MOVSD 12 dwords (48 bytes)
-    0x005590b7  REP MOVSD 12 dwords (48 bytes)
-  CDemonSet_setCameraView_FUN_0056ae50                                     2 sites
-    0x0056b108  REP MOVSD 10 dwords (40 bytes)
-    0x0056b126  REP MOVSD 10 dwords (40 bytes)
-  CBoneStructure_computeLocalMatrices_FUN_0058ac80                         2 sites
-    0x0058acbf  REP MOVSD 12 dwords (48 bytes)
-    0x0058ad0a  REP MOVSD 12 dwords (48 bytes)
-  CDeformableModelInstance_viewModel_FUN_005968b0                          2 sites
-    0x005978c8  REP MOVSD 12 dwords (48 bytes)
-    0x00598097  REP MOVSD 12 dwords (48 bytes)
-  CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820                 2 sites
-    0x0059f89c  REP MOVSD 12 dwords (48 bytes)
-    0x0059f920  REP MOVSD 12 dwords (48 bytes)
+  CPoly_intersectPoly_FUN_005ce580                                         3 sites
+    0x005ced13  REP MOVSD 6 dwords (24 bytes)
+    0x005cf424  REP MOVSD 6 dwords (24 bytes)
+    0x005cf6bc  REP MOVSD 6 dwords (24 bytes)
   CStranger_computeWeaponAttachXForm_FUN_005c07b0                          2 sites
     0x005c0946  REP MOVSD 12 dwords (48 bytes)
     0x005c1507  REP MOVSD 12 dwords (48 bytes)
-  CStranger_renderOpaque_FUN_005c3150                                      2 sites
-    0x005c34a2  REP MOVSD 12 dwords (48 bytes)
-    0x005c35e0  REP MOVSD 12 dwords (48 bytes)
-  CStranger_updateWeaponPosition_FUN_005c06b0                              2 sites
-    0x005c072b  REP MOVSD 12 dwords (48 bytes)
-    0x005c0769  REP MOVSD 12 dwords (48 bytes)
-  lerpMatrix3x4_FUN_005f7140                                               2 sites
-    0x005f7178  REP MOVSD 12 dwords (48 bytes)
-    0x005f7185  REP MOVSD 12 dwords (48 bytes)
-  loadModelBinary_FUN_00458170                                             2 sites
-    0x004588dc  REP MOVSD 13 dwords (52 bytes)
-    0x004588ef  REP MOVSD 13 dwords (52 bytes)
-  CDSEModel_fitToExistingBIN_FUN_0048fed0                                  2 sites
-    0x0048ff4f  REP MOVSD 13 dwords (52 bytes)
-    0x0048ff5c  REP MOVSD 13 dwords (52 bytes)
   CComplexPolygon_splitByDimensions_FUN_005c9500                           2 sites
     0x005c9537  REP MOVSD 6 dwords (24 bytes)
     0x005c9547  REP MOVSD 6 dwords (24 bytes)
   CComplexPolygon_splitToConvex_FUN_005c84c0                               2 sites
     0x005c8575  REP MOVSD 6 dwords (24 bytes)
     0x005c87b9  REP MOVSD 6 dwords (24 bytes)
-  CPoly_hasCentroidIntersection_FUN_005d1230                               2 sites
-    0x005d126b  REP MOVSD 6 dwords (24 bytes)
-    0x005d12b0  REP MOVSD 6 dwords (24 bytes)
-  CBodyPart_applyRotation_FUN_0041a630                                     1 sites
-    0x0041a8c2  REP MOVSD 12 dwords (48 bytes)
-  CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40                             1 sites
-    0x0041cbd0  REP MOVSD 12 dwords (48 bytes)
-  CLightActor_process_FUN_00422a50                                         1 sites
-    0x00422c32  REP MOVSD 12 dwords (48 bytes)
-  CBride_getTargetPoint_FUN_00424aa0                                       1 sites
-    0x00424ad0  REP MOVSD 12 dwords (48 bytes)
-  CBugs_attackSwarmTarget_FUN_00425fe0                                     1 sites
-    0x00426113  REP MOVSD 12 dwords (48 bytes)
-  CCharacter_dismemberPartInternal_FUN_0042bd30                            1 sites
-    0x0042beb4  REP MOVSD 12 dwords (48 bytes)
-  CCharacter_getCarryObjToBodyXForm_FUN_0042d300                           1 sites
-    0x0042d355  REP MOVSD 12 dwords (48 bytes)
-  CCharacter_renderAttachedModels_FUN_0042a420                             1 sites
-    0x0042a4b4  REP MOVSD 12 dwords (48 bytes)
-  CCloth_orientBoneToChild_FUN_0043a110                                    1 sites
-    0x0043a23e  REP MOVSD 12 dwords (48 bytes)
-  CCourse_evaluate_FUN_00442710                                            1 sites
-    0x00442769  REP MOVSD 12 dwords (48 bytes)
-  CBulletHole_init_FUN_004bf7f0                                            1 sites
-    0x004bf96d  REP MOVSD 12 dwords (48 bytes)
   CFireEffect_createBulletImpact_FUN_004c76a0                              1 sites
     0x004c780e  REP MOVSD 12 dwords (48 bytes)
-  CGabriella_binarySearchClavicleBlend_FUN_004d6f80                        1 sites
-    0x004d7086  REP MOVSD 12 dwords (48 bytes)
+  CLaserBeam_render_FUN_004c25c0                                           1 sites
+    0x004c2f1d  REP MOVSD 12 dwords (48 bytes)
   CGabriella_getCarryObjToBodyXForm_FUN_004d7120                           1 sites
     0x004d73e8  REP MOVSD 12 dwords (48 bytes)
   CGabriella_updateWeaponPosition_FUN_004d5550                             1 sites
     0x004d5753  REP MOVSD 12 dwords (48 bytes)
-  CGhoul_getTargetPoint_FUN_004e84a0                                       1 sites
-    0x004e84d0  REP MOVSD 12 dwords (48 bytes)
-  CIcePick_getCarryObjToBodyXForm_FUN_004f8b20                             1 sites
-    0x004f8c24  REP MOVSD 12 dwords (48 bytes)
-  CImp_getCarryObjToBodyXForm_FUN_004fa920                                 1 sites
-    0x004faa47  REP MOVSD 12 dwords (48 bytes)
-  CLadder_cacheRelativePosition_FUN_00502b80                               1 sites
-    0x00502bfc  REP MOVSD 12 dwords (48 bytes)
-  CLadder_updatePositionFromMaster_FUN_00502a70                            1 sites
-    0x00502af0  REP MOVSD 12 dwords (48 bytes)
-  CMimic_renderMirrored_FUN_005205f0                                       1 sites
-    0x005207ad  REP MOVSD 12 dwords (48 bytes)
-  CMobster_getCarryObjToBodyXForm_FUN_00526b20                             1 sites
-    0x00526c33  REP MOVSD 12 dwords (48 bytes)
-  CMotionController_advanceFrameToExitPoint_FUN_0052e020                   1 sites
-    0x0052e0ed  REP MOVSD 6 dwords (24 bytes)
-  CNetGame_applySimFrameHistory_FUN_00543800                               1 sites
-    0x0054385e  REP MOVSD 11 dwords (44 bytes)
-  CNetGame_sendSimFrameAck_FUN_00543970                                    1 sites
-    0x00543a0d  REP MOVSD 11 dwords (44 bytes)
-  CPlatform_attachActor_FUN_0054e1e0                                       1 sites
-    0x0054e29b  REP MOVSD 12 dwords (48 bytes)
-  CPlatform_updateAttachedActors_FUN_0054e320                              1 sites
-    0x0054e3a8  REP MOVSD 12 dwords (48 bytes)
-  C3DSCamera_apply_FUN_00585870                                            1 sites
-    0x005858b4  REP MOVSD 10 dwords (40 bytes)
-  CBoneStructure_applyMatrixArray_FUN_0058af40                             1 sites
-    0x0058af8e  REP MOVSD 12 dwords (48 bytes)
+  CHostage_getCarryObjToBodyXForm_FUN_004f6550                             1 sites
+    0x004f6699  REP MOVSD 12 dwords (48 bytes)
+  CBoneStructure_computeLocalMatrices_FUN_0058ac80                         1 sites
+    0x0058acbf  REP MOVSD 12 dwords (48 bytes)
   CBoneStructure_computeWorldMatrices_FUN_0058ad30                         1 sites
     0x0058ad66  REP MOVSD 12 dwords (48 bytes)
-  CBoneStructure_extractInverseBindPose_FUN_0058aeb0                       1 sites
-    0x0058aef1  REP MOVSD 12 dwords (48 bytes)
   CBoneStructure_readBONheader_FUN_0058a4a0                                1 sites
     0x0058a746  REP MOVSD 7 dwords (28 bytes)
-  CDeformableModel_buildFromPosFile_FUN_0058c190                           1 sites
-    0x0058c3e4  REP MOVSD 12 dwords (48 bytes)
-  CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00                 1 sites
-    0x0058c043  REP MOVSD 12 dwords (48 bytes)
-  CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20           1 sites
-    0x005a00dd  REP MOVSD 12 dwords (48 bytes)
-  CDeformableModelInstance_getBoneTransform_FUN_005a1510                   1 sites
-    0x005a15a5  REP MOVSD 12 dwords (48 bytes)
-  CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20               1 sites
-    0x0059fae0  REP MOVSD 12 dwords (48 bytes)
-  CStranger_getCarryObjToBodyXForm_FUN_005c5170                            1 sites
-    0x005c51a7  REP MOVSD 12 dwords (48 bytes)
-  CBassPlayer_getCarryObjToBodyXForm_FUN_005da120                          1 sites
-    0x005da22b  REP MOVSD 12 dwords (48 bytes)
-  CDrummer_getCarryObjToBodyXForm_FUN_005da370                             1 sites
-    0x005da481  REP MOVSD 12 dwords (48 bytes)
-  CTurret_getBoundingBox_FUN_005e2910                                      1 sites
-    0x005e2a2e  REP MOVSD 12 dwords (48 bytes)
-  CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80                         1 sites
-    0x005e6c72  REP MOVSD 12 dwords (48 bytes)
-  CWerewolf_renderTransparent_FUN_005f1820                                 1 sites
-    0x005f18af  REP MOVSD 12 dwords (48 bytes)
+  CStranger_renderOpaque_FUN_005c3150                                      1 sites
+    0x005c34a2  REP MOVSD 12 dwords (48 bytes)
   inverseInPlace_FUN_005f6190                                              1 sites
     0x005f61af  REP MOVSD 12 dwords (48 bytes)
-  inverse_FUN_005f6210                                                     1 sites
-    0x005f6422  REP MOVSD 12 dwords (48 bytes)
-  invertAndGetTranslation_FUN_005f6140                                     1 sites
-    0x005f6168  REP MOVSD 12 dwords (48 bytes)
-  multiplyMatrix3x4InPlace_FUN_005f50c0                                    1 sites
-    0x005f50e9  REP MOVSD 12 dwords (48 bytes)
-  quaternionToMatrix3x4_FUN_005f73e0                                       1 sites
-    0x005f740f  REP MOVSD 12 dwords (48 bytes)
-  CZombie_renderTransparent_FUN_005fbe70                                   1 sites
-    0x005fbed5  REP MOVSD 12 dwords (48 bytes)
-  flushPremiumRenderBuffer_FUN_004070c0                                    1 sites
-    0x0040719c  REP MOVSD 12 dwords (48 bytes)
-  renderPolygonEngineAPIPremiumDirect_FUN_00407470                         1 sites
-    0x00407555  REP MOVSD 12 dwords (48 bytes)
-  renderPolygonEngineAPIPremiumMultiState_FUN_00407290                     1 sites
-    0x004073e6  REP MOVSD 12 dwords (48 bytes)
-  modelStructNotSupported_FUN_0041dbe0                                     1 sites
-    0x0041dc15  REP MOVSD 13 dwords (52 bytes)
-  CBitFont_showFontTest_FUN_004d04b0                                       1 sites
-    0x004d0734  REP MOVSD 7 dwords (28 bytes)
+  lerpMatrix3x4_FUN_005f7140                                               1 sites
+    0x005f7178  REP MOVSD 12 dwords (48 bytes)
   getMRGLBounds_FUN_00528140                                               1 sites
     0x0052852b  REP MOVSD 13 dwords (52 bytes)
   CLodMesh_sortFacesByAttribute_FUN_0051bd30                               1 sites
@@ -467,8 +313,6 @@ FIXABLE REP MOVSD STRUCT COPIES (118 sites)
     0x005c8ebc  REP MOVSD 6 dwords (24 bytes)
   CComplexPolygon_findReflexVertex_FUN_005c8b50                            1 sites
     0x005c8ba0  REP MOVSD 6 dwords (24 bytes)
-  CObj_findCoplanarPolygon_FUN_005d5800                                    1 sites
-    0x005d5a0a  REP MOVSD 6 dwords (24 bytes)
   CObj_removeTJunctions_FUN_005d47b0                                       1 sites
     0x005d4fdb  REP MOVSD 6 dwords (24 bytes)
 

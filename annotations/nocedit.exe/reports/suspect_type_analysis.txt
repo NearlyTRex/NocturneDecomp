@@ -4,13 +4,13 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6927 ( 43.4%)
-  pointer_cast                    4601 ( 28.8%)
-  unknown_field                    898 (  5.6%)
-  special_crt_function             439 (  2.7%)
+  decompiler_intrinsic            6927 ( 43.7%)
+  pointer_cast                    4482 ( 28.3%)
+  unknown_field                    910 (  5.7%)
+  special_crt_function             439 (  2.8%)
   stack_param                      340 (  2.1%)
   unnamed_param                    320 (  2.0%)
-  fpu_register_input               311 (  1.9%)
+  fpu_register_input               311 (  2.0%)
   nonstandard_int                  267 (  1.7%)
   warning_inlined_function         264 (  1.7%)
   stack_ref                        237 (  1.5%)
@@ -24,7 +24,7 @@ SUSPECT TYPE COUNTS
   warning_unreachable               84 (  0.5%)
   register_param                    69 (  0.4%)
   suspect_float                     50 (  0.3%)
-  param_count_too_many              44 (  0.3%)
+  param_count_too_many              41 (  0.3%)
   unknown_type                      40 (  0.3%)
   mmx_assembly                      34 (  0.2%)
   extra_output                      29 (  0.2%)
@@ -96,30 +96,30 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (4601 occurrences)
+TYPE: pointer_cast (4482 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1425x  (uint *)((int)
+  1428x  (uint *)((int)
   1232x  (int *)((int)
-   301x  (float *)((int)
-   220x  (SRenderVertex *)((int)
-   200x  (double *)((int)
+   321x  (float *)((int)
+   209x  (SRenderVertex *)((int)
+   193x  (double *)((int)
    189x  (void *)((int)
    170x  (byte *)((int)
-   142x  (CMatrix3x4f *)((int)
     88x  (ushort *)((int)
     70x  (char *)((int)
     61x  (short *)((int)
+    49x  (CMatrix3x4f *)((int)
     34x  (SShapeEditorPolygon *)((int)
-    22x  (SMRGLHeaderExtended *)((int)
-    22x  (CMatrix3x3f *)((int)
+    21x  (SMRGLHeaderExtended *)((int)
     20x  (CVector3f *)((int)
     16x  (SScriptXRef *)((int)
     14x  (HGLOBAL *)((int)
     14x  (SVoxelGrid *)((int)
     14x  (SExpandedEdge *)((int)
     13x  (SMRGLHeaderPrimitive *)((int)
+    11x  (CPlatform *)((int)
 
 Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
@@ -132,12 +132,12 @@ Example functions:
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar1) <...
 
 ====================================================================================================
-TYPE: unknown_field (898 occurrences)
+TYPE: unknown_field (910 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   368x  ._0_4_
-   342x  ._4_4_
+   374x  ._0_4_
+   348x  ._4_4_
     47x  ._0_2_
     36x  ._2_2_
     16x  ._0_1_
@@ -1036,13 +1036,13 @@ Example functions:
     UStack_84.vec.y = 1.4013e-45;...
 
 ====================================================================================================
-TYPE: param_count_too_many (44 occurrences)
+TYPE: param_count_too_many (41 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    17x  declared:2 vs estimated:1
     15x  declared:3 vs estimated:2
-     6x  declared:4 vs estimated:3
+    15x  declared:2 vs estimated:1
+     5x  declared:4 vs estimated:3
      1x  declared:6 vs estimated:3
      1x  declared:6 vs estimated:5
      1x  declared:1 vs estimated:0
@@ -1101,16 +1101,16 @@ Example functions:
     Function declares 2 params but call sites push 1 (1 extra)...
   core_xform.cpp_quaternionFromAngleZ_FUN_005f7a30
     Function declares 2 params but call sites push 1 (1 extra)...
-  core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0
-    Function declares 2 params but call sites push 1 (1 extra)...
-  core_xform.cpp_inverse_FUN_005f6210
-    Function declares 2 params but call sites push 1 (1 extra)...
   core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0
     Function declares 2 params but call sites push 1 (1 extra)...
   core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70
     Function declares 3 params but call sites push 2 (1 extra)...
   core_xform.cpp_slerpQuaternion_FUN_005f77e0
     Function declares 4 params but call sites push 3 (1 extra)...
+  core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
+    Function declares 3 params but call sites push 2 (1 extra)...
+  core_xform.cpp_multiplyQuaternion_FUN_005f7640
+    Function declares 3 params but call sites push 2 (1 extra)...
 
 ====================================================================================================
 TYPE: unknown_type (40 occurrences)

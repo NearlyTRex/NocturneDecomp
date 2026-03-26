@@ -7,30 +7,30 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6452
-Clean functions: 5048 (78.2%)
-Functions with suspects: 1404 (21.8%)
+Clean functions: 5075 (78.7%)
+Functions with suspects: 1377 (21.3%)
 
-Total suspect patterns: 13928
-Average suspects per function: 2.16
+Total suspect patterns: 13818
+Average suspects per function: 2.14
 
-Virtual files: 214 total, 47 at 100%, 85 at 90%+
+Virtual files: 214 total, 47 at 100%, 86 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3411, Average: 47.8
 
-Average complexity score: 71.6
+Average complexity score: 71.4
 
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6452
-Successful: 5912 (91.6%)
-Failed: 540
+Successful: 5914 (91.7%)
+Failed: 538
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   decompiler_intrinsic      6790
-  pointer_cast              4366
-  unknown_field             860
+  pointer_cast              4247
+  unknown_field             872
   nonstandard_int           267
   warning_inlined_function  261
   stack_param               227
@@ -43,7 +43,7 @@ SUSPECT PATTERN BREAKDOWN
   warning_unreachable       74
   unnamed_param             64
   suspect_float             50
-  param_count_too_many      39
+  param_count_too_many      36
   mmx_assembly              34
   negative_offset           34
   format_string_mismatch    24
@@ -122,14 +122,14 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
   005b1680: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680 (4 lines)
   005b1660: sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660 (4 lines)
-  ... and 4998 more
+  ... and 5025 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
   0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3521, suspects: 9, lines: 3411)
   005d1390: shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390 (score: 2967, suspects: 270, lines: 252)
   00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (score: 2695, suspects: 119, lines: 1475)
-  005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 2592, suspects: 174, lines: 827)
+  005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 2584, suspects: 175, lines: 809)
   0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 2383, suspects: 92, lines: 1443)
   004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2362, suspects: 16, lines: 2187)
   005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823 (score: 2235, suspects: 161, lines: 585)
@@ -147,10 +147,10 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 1406, suspects: 49, lines: 911)
   005f8550: core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (score: 1359, suspects: 84, lines: 494)
   0056eac0: core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (score: 1344, suspects: 76, lines: 569)
-  005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 1309, suspects: 20, lines: 1084)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 1301, suspects: 52, lines: 761)
   0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (score: 1301, suspects: 42, lines: 856)
   005325e0: sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (score: 1281, suspects: 73, lines: 541)
+  005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 1251, suspects: 16, lines: 1066)
   005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470 (score: 1249, suspects: 19, lines: 1029)
   004922c8: core_dstrender.cpp_verticalBlur3TapMMXStride128_FUN_004922c8 (score: 1211, suspects: 104, lines: 156)
   00492185: core_dstrender.cpp_verticalBlur3TapMMXStride256_FUN_00492185 (score: 1211, suspects: 104, lines: 156)
@@ -173,7 +173,7 @@ FUNCTIONS BY SUSPECT TYPE
     0043f2d0: support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0
     ... and 904 more
 
-  pointer_cast (823 functions):
+  pointer_cast (778 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     004874d0: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
     00487630: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
@@ -184,9 +184,9 @@ FUNCTIONS BY SUSPECT TYPE
     0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    ... and 813 more
+    ... and 768 more
 
-  unknown_field (94 functions):
+  unknown_field (95 functions):
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     0043e530: support_codec.cpp_readBitsFromStream_FUN_0043e530
     00441040: engine_colquant.c_computeWeightedColorDistance_FUN_00441040
@@ -197,7 +197,7 @@ FUNCTIONS BY SUSPECT TYPE
     00440c80: engine_colquant.c_partitionByGreen_FUN_00440c80
     00441790: engine_colquant.c_doubleMax_FUN_00441790
     00552a40: engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
-    ... and 84 more
+    ... and 85 more
 
   nonstandard_int (22 functions):
     004ce240: engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240
@@ -355,7 +355,7 @@ FUNCTIONS BY SUSPECT TYPE
     005c48b0: core_stranger.cpp_CStranger_processDamage_FUN_005c48b0
     ... and 9 more
 
-  param_count_too_many (39 functions):
+  param_count_too_many (36 functions):
     005e19d0: support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
     0050d970: engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
     0050cc40: engine_matrix.c_transformWorldToView_FUN_0050cc40
@@ -366,7 +366,7 @@ FUNCTIONS BY SUSPECT TYPE
     005dd900: engine_texture.cpp_updateTextureWithPalette_FUN_005dd900
     00528140: engine_model.c_getMRGLBounds_FUN_00528140
     0048c760: engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
-    ... and 29 more
+    ... and 26 more
 
   mmx_assembly (34 functions):
     00431622: cockpit_ckptutil.c_mmxOptimizedMemcpy_FUN_00431622

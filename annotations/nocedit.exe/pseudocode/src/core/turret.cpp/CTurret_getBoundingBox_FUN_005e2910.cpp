@@ -1,6 +1,6 @@
 // Name: core_turret.cpp_CTurret_getBoundingBox_FUN_005e2910
 // Address: 005e2910
-// Address Range: [[005e2910, 005e2b12]]
+// Address Range: [[005e2910, 005e2b12] [03fc3be0, 03fc3c3c]]
 // Convention: __cdecl
 // Signature: CBoundingBox3D * __cdecl core_turret_cpp_CTurret_getBoundingBox_FUN_005e2910(CTurret *this_ptr,CBoundingBox3D *out_box)
 
@@ -33,7 +33,6 @@ CBoundingBox3D * __cdecl core_turret_cpp_CTurret_getBoundingBox_FUN_005e2910(CTu
   CKeyFramedModelInstance *local_10;
   int local_c;
   
-  bVar7 = 0;
   fVar1 = core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(this_ptr,0);
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&(this_ptr->base).model)
   ;
@@ -53,15 +52,6 @@ CBoundingBox3D * __cdecl core_turret_cpp_CTurret_getBoundingBox_FUN_005e2910(CTu
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
             (&local_100,&g_ZeroVector.f,&(this_ptr->base).base.orient.vec);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_70,&local_100,&local_a0);
-  pCVar5 = &local_a0;
-  pCVar6 = &local_d0;
-  for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-    pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar7 * -8 + 4);
-    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar7 * -8 + 4);
-    pCVar6->m[0].w = pCVar5->m[0].w;
-    pCVar5 = pCVar5;
-    pCVar6 = pCVar6;
-  }
   fVar2 = core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(this_ptr,1);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   pCVar4 = pCVar1->frame_bounds + (int)ROUND(ROUND(fVar2)) * 2;

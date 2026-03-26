@@ -1,6 +1,6 @@
 // Name: core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970
 // Address: 00543970
-// Address Range: [[00543970, 00543aa8]]
+// Address Range: [[00543970, 00543aa8] [03fc4140, 03fc419a]]
 // Convention: __cdecl
 // Signature: void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *this_ptr)
 
@@ -17,7 +17,6 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
   int local_43;
   int local_3f [11];
   
-  bVar4 = 0;
   if (this_ptr->connection_type != CONNECTION_CLIENT) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
     g_CurrentLineNumber = 0xa29;
@@ -40,15 +39,6 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
   }
   local_48.size = 0x35;
   local_48.type = PACKET_PLAYER_CONTROL;
-  pSVar2 = &this_ptr->players[this_ptr->local_player_index].controls;
-  piVar3 = local_3f;
-  for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {
-    piVar3 = piVar3 + (uint)bVar4 * -2 + 1;
-    pSVar2 = (SPlayerControl *)((int)pSVar2 + (uint)bVar4 * -8 + 4);
-    *piVar3 = pSVar2->action_states[0];
-    pSVar2 = pSVar2;
-    piVar3 = piVar3;
-  }
   core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index,&local_48);
   UINT_02f7c8c8 = g_CurrentGameTime;
   return;

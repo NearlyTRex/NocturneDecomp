@@ -1,6 +1,6 @@
 // Name: core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
 // Address: 0059ff20
-// Address Range: [[0059ff20, 005a00ed] [00604f9e, 00605014]]
+// Address Range: [[0059ff20, 005a00ed] [00604f9e, 00605014] [03fc3e26, 03fc3e87]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20(CDeformableModelInstance *this_ptr,CQuaternion4f *rotation_quat,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
@@ -11,7 +11,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
 {
   CSkeleton *pCVar1;
   int hierarchy_distance;
-  int iVar1;
   int iVar2;
   uint *puVar3;
   CMatrix3x4f *pCVar4;
@@ -35,7 +34,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
   CQuaternion4f *local_1c;
   float fStack_18;
   
-  bVar8 = 0;
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   iVar2 = 0;
   local_24 = pCVar1;
@@ -68,15 +66,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
   }
   core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70(local_28 * blend_weight,&local_34,&local_74);
   core_xform_cpp_quaternionToMatrix3x4_FUN_005f73e0(&local_54,&local_b4);
-  pCVar4 = &local_b4;
-  pCVar7 = &local_e4;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
-    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar8 * -8 + 4);
-    pCVar7->m[0].w = pCVar4->m[0].w;
-    pCVar4 = pCVar4;
-    pCVar7 = pCVar7;
-  }
   core_xform_cpp_transformVector3x4InPlace_FUN_005f4e20
             ((CVector3f *)&this_ptr->bone_transform,&local_e4);
   return;

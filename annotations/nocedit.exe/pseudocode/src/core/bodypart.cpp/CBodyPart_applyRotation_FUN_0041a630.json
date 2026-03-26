@@ -5,20 +5,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 311,
-    "complexity_score": 515,
+    "assembly_lines": 343,
+    "complexity_score": 485,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 170,
-    "suspect_count": 33,
+    "pseudocode_lines": 160,
+    "suspect_count": 31,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 481
+    "total_lines": 503
   },
   "cross_references": [
     {
@@ -34,6 +34,10 @@
       [
         "0041a630",
         "0041aa34"
+      ],
+      [
+        "03fc490e",
+        "03fc4975"
       ]
     ],
     "convention": "__cdecl",
@@ -127,43 +131,42 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.003717472118959,
-    "instruction_count": 269,
+    "avg_pcode_per_instr": 5.713804713804714,
+    "instruction_count": 297,
     "opcode_distribution": {
       "BOOL_NEGATE": 45,
       "BOOL_OR": 3,
-      "BRANCH": 1,
+      "BRANCH": 2,
       "CALL": 21,
-      "CBRANCH": 11,
-      "COPY": 406,
+      "CBRANCH": 10,
+      "COPY": 429,
       "FLOAT2FLOAT": 18,
       "FLOAT_MULT": 9,
-      "INT_ADD": 142,
-      "INT_AND": 211,
-      "INT_CARRY": 23,
-      "INT_EQUAL": 110,
+      "INT_ADD": 164,
+      "INT_AND": 217,
+      "INT_CARRY": 25,
+      "INT_EQUAL": 115,
       "INT_LEFT": 9,
       "INT_LESS": 8,
-      "INT_MULT": 23,
+      "INT_MULT": 21,
       "INT_NOTEQUAL": 42,
       "INT_OR": 54,
       "INT_RIGHT": 18,
       "INT_SBORROW": 8,
-      "INT_SCARRY": 26,
+      "INT_SCARRY": 28,
       "INT_SEXT": 27,
-      "INT_SLESS": 68,
-      "INT_SUB": 83,
-      "INT_XOR": 13,
-      "INT_ZEXT": 2,
-      "LOAD": 61,
-      "POPCOUNT": 50,
+      "INT_SLESS": 71,
+      "INT_SUB": 80,
+      "INT_XOR": 14,
+      "LOAD": 72,
+      "POPCOUNT": 53,
       "RETURN": 1,
       "ROUND": 9,
-      "STORE": 86,
+      "STORE": 97,
       "SUBPIECE": 18,
       "TRUNC": 9
     },
-    "pcode_op_count": 1615
+    "pcode_op_count": 1697
   },
   "stack_frame": {
     "frame_size": 464,
@@ -367,7 +370,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 79,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "lVar2 = (longlong)(int)ROUND(ROUND(fVar10)) * (longlong)*(int *)((int)&pCVar1->x + iVar7);",
@@ -375,7 +378,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 79,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar2 = (longlong)(int)ROUND(ROUND(fVar10)) * (longlong)*(int *)((int)&pCVar1->x + iVar7);",
@@ -383,7 +386,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 79,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar2 = (longlong)(int)ROUND(ROUND(fVar10)) * (longlong)*(int *)((int)&pCVar1->x + iVar7);",
@@ -391,7 +394,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 80,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "lVar3 = (longlong)(int)ROUND(ROUND(fVar13)) * (longlong)*(int *)((int)&pCVar1->y + iVar7);",
@@ -399,7 +402,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 80,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar3 = (longlong)(int)ROUND(ROUND(fVar13)) * (longlong)*(int *)((int)&pCVar1->y + iVar7);",
@@ -407,7 +410,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 80,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar3 = (longlong)(int)ROUND(ROUND(fVar13)) * (longlong)*(int *)((int)&pCVar1->y + iVar7);",
@@ -415,7 +418,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 81,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "lVar4 = (longlong)(int)ROUND(ROUND(fVar16)) * (longlong)*(int *)((int)&pCVar1->z + iVar7);",
@@ -423,7 +426,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 81,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar4 = (longlong)(int)ROUND(ROUND(fVar16)) * (longlong)*(int *)((int)&pCVar1->z + iVar7);",
@@ -431,7 +434,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 81,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar4 = (longlong)(int)ROUND(ROUND(fVar16)) * (longlong)*(int *)((int)&pCVar1->z + iVar7);",
@@ -439,7 +442,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 82,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "lVar1 = (longlong)(int)ROUND(ROUND(fVar11)) * (longlong)*(int *)((int)&pCVar1->x + iVar7);",
@@ -447,7 +450,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 82,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar1 = (longlong)(int)ROUND(ROUND(fVar11)) * (longlong)*(int *)((int)&pCVar1->x + iVar7);",
@@ -455,7 +458,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 82,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar1 = (longlong)(int)ROUND(ROUND(fVar11)) * (longlong)*(int *)((int)&pCVar1->x + iVar7);",
@@ -463,7 +466,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 83,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "lVar5 = (longlong)(int)ROUND(ROUND(fVar14)) * (longlong)*(int *)((int)&pCVar1->y + iVar7);",
@@ -471,7 +474,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 83,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar5 = (longlong)(int)ROUND(ROUND(fVar14)) * (longlong)*(int *)((int)&pCVar1->y + iVar7);",
@@ -479,7 +482,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 83,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar5 = (longlong)(int)ROUND(ROUND(fVar14)) * (longlong)*(int *)((int)&pCVar1->y + iVar7);",
@@ -487,7 +490,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 84,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "lVar6 = (longlong)(int)ROUND(ROUND(fVar17)) * (longlong)*(int *)((int)&pCVar1->z + iVar7);",
@@ -495,7 +498,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 84,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar6 = (longlong)(int)ROUND(ROUND(fVar17)) * (longlong)*(int *)((int)&pCVar1->z + iVar7);",
@@ -503,7 +506,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 84,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar6 = (longlong)(int)ROUND(ROUND(fVar17)) * (longlong)*(int *)((int)&pCVar1->z + iVar7);",
@@ -511,7 +514,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 85,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "lVar7 = (longlong)(int)ROUND(ROUND(fVar12)) * (longlong)*(int *)((int)&pCVar1->x + iVar7);",
@@ -519,7 +522,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 85,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar7 = (longlong)(int)ROUND(ROUND(fVar12)) * (longlong)*(int *)((int)&pCVar1->x + iVar7);",
@@ -527,7 +530,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 85,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar7 = (longlong)(int)ROUND(ROUND(fVar12)) * (longlong)*(int *)((int)&pCVar1->x + iVar7);",
@@ -535,7 +538,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 86,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "lVar8 = (longlong)(int)ROUND(ROUND(fVar15)) * (longlong)*(int *)((int)&pCVar1->y + iVar7);",
@@ -543,7 +546,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 86,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar8 = (longlong)(int)ROUND(ROUND(fVar15)) * (longlong)*(int *)((int)&pCVar1->y + iVar7);",
@@ -551,7 +554,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 86,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar8 = (longlong)(int)ROUND(ROUND(fVar15)) * (longlong)*(int *)((int)&pCVar1->y + iVar7);",
@@ -559,7 +562,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 87,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "lVar9 = (longlong)(int)ROUND(ROUND(fVar18)) * (longlong)*(int *)((int)&pCVar1->z + iVar7);",
@@ -567,7 +570,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 87,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar9 = (longlong)(int)ROUND(ROUND(fVar18)) * (longlong)*(int *)((int)&pCVar1->z + iVar7);",
@@ -575,7 +578,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 87,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar9 = (longlong)(int)ROUND(ROUND(fVar18)) * (longlong)*(int *)((int)&pCVar1->z + iVar7);",
@@ -583,7 +586,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 88,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->x + iVar7) =",
@@ -591,7 +594,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 92,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->z + iVar7) =",
@@ -599,26 +602,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 96,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&pCVar1->y + iVar7) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 114,
-      "match": "(CMatrix3x3f *)((int)",
-      "severity": "mild",
-      "text": "pCVar10 = (CMatrix3x3f *)((int)pCVar10 + (uint)bVar11 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 115,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

@@ -1,6 +1,6 @@
 // Name: engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290
 // Address: 00407290
-// Address Range: [[00407290, 0040746d]]
+// Address Range: [[00407290, 0040746d] [03fc3820, 03fc387d]]
 // Convention: __cdecl
 // Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290(SMRGLHeaderPrimitive *prim)
 
@@ -68,15 +68,25 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiStat
       if (0 < iVar4) {
         iVar4 = 0;
         do {
-          pSVar10 = g_RenderVertexBuffer + *(int *)((int)g_ProcessedVertexIndices + iVar4);
-          pSVar11 = pSVar5->vertices;
-          for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {
-            pSVar11 = (SRenderVertex *)((int)pSVar11 + (uint)bVar13 * -8 + 4);
-            pSVar10 = (SRenderVertex *)((int)pSVar10 + (uint)bVar13 * -8 + 4);
-            (pSVar11->projected_vertex).transformed_x = (pSVar10->projected_vertex).transformed_x;
-            pSVar10 = pSVar10;
-            pSVar11 = pSVar11;
-          }
+          iVar1 = *(int *)((int)g_ProcessedVertexIndices + iVar4);
+          pSVar5->vertices[0].projected_vertex.transformed_x =
+               g_RenderVertexBuffer[iVar1].projected_vertex.transformed_x;
+          pSVar5->vertices[0].projected_vertex.transformed_y =
+               g_RenderVertexBuffer[iVar1].projected_vertex.transformed_y;
+          pSVar5->vertices[0].projected_vertex.transformed_z =
+               g_RenderVertexBuffer[iVar1].projected_vertex.transformed_z;
+          pSVar5->vertices[0].projected_vertex.inv_z =
+               g_RenderVertexBuffer[iVar1].projected_vertex.inv_z;
+          pSVar5->vertices[0].projected_vertex.screen_x =
+               g_RenderVertexBuffer[iVar1].projected_vertex.screen_x;
+          pSVar5->vertices[0].projected_vertex.screen_y =
+               g_RenderVertexBuffer[iVar1].projected_vertex.screen_y;
+          pSVar5->vertices[0].u = g_RenderVertexBuffer[iVar1].u;
+          pSVar5->vertices[0].v = g_RenderVertexBuffer[iVar1].v;
+          pSVar5->vertices[0].r = g_RenderVertexBuffer[iVar1].r;
+          pSVar5->vertices[0].g = g_RenderVertexBuffer[iVar1].g;
+          pSVar5->vertices[0].b = g_RenderVertexBuffer[iVar1].b;
+          pSVar5->vertices[0].a = g_RenderVertexBuffer[iVar1].a;
           iVar1 = pSVar5->vertices[0].projected_vertex.transformed_z;
           if (iVar1 < local_14) {
             local_14 = iVar1;

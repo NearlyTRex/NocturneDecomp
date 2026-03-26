@@ -1,6 +1,6 @@
 // Name: core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920
 // Address: 004fa920
-// Address Range: [[004fa920, 004faaef]]
+// Address Range: [[004fa920, 004faaef] [03fc43bc, 03fc441a]]
 // Convention: __stack2_esi
 // Signature: void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
@@ -24,7 +24,6 @@ void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *th
   CVector3f local_24;
   CVector3f local_18;
   
-  bVar3 = 0;
   iVar2 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 1) {
     local_60[0].y = -0.505;
@@ -66,12 +65,17 @@ void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *th
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             (&local_90,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar2,
              &local_c0);
-  pCVar2 = &local_c0;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar3 * -8 + 4);
-    out_matrix->m[0].w = pCVar2->m[0].w;
-    pCVar2 = pCVar2;
-    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
-  }
+  out_matrix->m[0].w = local_c0.m[0].w;
+  out_matrix->m[0].x = local_c0.m[0].x;
+  out_matrix->m[0].y = local_c0.m[0].y;
+  out_matrix->m[0].z = local_c0.m[0].z;
+  out_matrix->m[1].w = local_c0.m[1].w;
+  out_matrix->m[1].x = local_c0.m[1].x;
+  out_matrix->m[1].y = local_c0.m[1].y;
+  out_matrix->m[1].z = local_c0.m[1].z;
+  out_matrix->m[2].w = local_c0.m[2].w;
+  out_matrix->m[2].x = local_c0.m[2].x;
+  out_matrix->m[2].y = local_c0.m[2].y;
+  out_matrix->m[2].z = local_c0.m[2].z;
   return;
 }

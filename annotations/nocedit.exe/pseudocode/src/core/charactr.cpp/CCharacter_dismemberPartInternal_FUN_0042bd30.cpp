@@ -1,6 +1,6 @@
 // Name: core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
 // Address: 0042bd30
-// Address Range: [[0042bd30, 0042bf26]]
+// Address Range: [[0042bd30, 0042bf26] [03fc4726, 03fc4785]]
 // Convention: __cdecl
 // Signature: void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)
 
@@ -12,7 +12,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCh
   CVector3f *position;
   SDamageDecal *pSVar1;
   SFire *pSVar2;
-  int iVar1;
+  int hand_index;
   int iVar3;
   CCharacter *pCVar4;
   CMatrix3x4f *pCVar5;
@@ -27,7 +27,6 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCh
   CMatrix3x4f *local_18;
   int local_14;
   
-  bVar7 = 0;
   if (((this_ptr->model).model_name[0] != '\0') &&
      ((this_ptr->model).part_data.visibility_flags[part_index] != 0)) {
     core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
@@ -41,15 +40,8 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCh
                     (&pSVar1->transform,
                      (this_ptr->model).bone_transform.bone_world_matrices + pSVar1->bone_index,
                      &local_6c);
-          pCVar5 = &local_6c;
-          pCVar6 = &local_9c;
-          for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-            pCVar6 = (CMatrix3x3f *)((int)pCVar6 + (uint)bVar7 * -8 + 4);
-            pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar7 * -8 + 4);
-            pCVar6->m[0].x = pCVar5->m[0].w;
-            pCVar5 = pCVar5;
-            pCVar6 = pCVar6;
-          }
+          local_9c.m[1].x = local_6c.m[0].z;
+          local_9c.m[2].y = local_6c.m[1].z;
           position = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_9c,&local_24);
           local_3c.x = (int)local_9c.m[1].x;
           local_3c.y = (int)local_9c.m[2].y;
@@ -75,15 +67,16 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCh
         pSVar2 = pSVar2 + 1;
       } while (iVar3 < this_ptr->fire_count);
     }
-    iVar1 = 0;
+    hand_index = 0;
     pCVar4 = this_ptr;
     do {
       if (part_index == pCVar4->carry_hands[0].secondary_bone_index) {
-        (*(((this_ptr->base).vtable._uc)->_uc).dropCarriedObject)(this_ptr,iVar1,(CVector3f *)0x0);
+        (*(((this_ptr->base).vtable._uc)->_uc).dropCarriedObject)
+                  (this_ptr,hand_index,(CVector3f *)0x0);
       }
-      iVar1 = iVar1 + 1;
+      hand_index = hand_index + 1;
       pCVar4 = (CCharacter *)&(pCVar4->base).orient_matrix.m[0].z;
-    } while (iVar1 < 2);
+    } while (hand_index < 2);
     body_part->render_in_background = render_in_background;
     return;
   }

@@ -1,6 +1,6 @@
 // Name: core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0
 // Address: 0054e1e0
-// Address Range: [[0054e1e0, 0054e2d5]]
+// Address Range: [[0054e1e0, 0054e2d5] [03fc40db, 03fc413f]]
 // Convention: __cdecl
 // Signature: void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr,CDemonActor *actor)
 
@@ -22,7 +22,6 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this
   CDemonActor *pCVar1;
   CPlatform *pCVar2;
   
-  bVar6 = 0;
   if (actor != (CDemonActor *)0x0) {
     iVar3 = 0;
     pCVar1 = this_ptr->attach_actors[0].actor;
@@ -41,15 +40,18 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this
                       (&local_40,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
             pCVar6->attach_actors[0].actor = actor;
             core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_a0,&local_40,&local_70);
-            pCVar4 = &local_70;
-            pCVar5 = &pCVar6->attach_actors[0].matrix;
-            for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
-              pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
-              pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar6 * -8 + 4);
-              pCVar5->m[0].w = pCVar4->m[0].w;
-              pCVar4 = pCVar4;
-              pCVar5 = pCVar5;
-            }
+            pCVar6->attach_actors[0].matrix.m[0].w = local_70.m[0].w;
+            pCVar6->attach_actors[0].matrix.m[0].x = local_70.m[0].x;
+            pCVar6->attach_actors[0].matrix.m[0].y = local_70.m[0].y;
+            pCVar6->attach_actors[0].matrix.m[0].z = local_70.m[0].z;
+            pCVar6->attach_actors[0].matrix.m[1].w = local_70.m[1].w;
+            pCVar6->attach_actors[0].matrix.m[1].x = local_70.m[1].x;
+            pCVar6->attach_actors[0].matrix.m[1].y = local_70.m[1].y;
+            pCVar6->attach_actors[0].matrix.m[1].z = local_70.m[1].z;
+            pCVar6->attach_actors[0].matrix.m[2].w = local_70.m[2].w;
+            pCVar6->attach_actors[0].matrix.m[2].x = local_70.m[2].x;
+            pCVar6->attach_actors[0].matrix.m[2].y = local_70.m[2].y;
+            pCVar6->attach_actors[0].matrix.m[2].z = local_70.m[2].z;
             return;
           }
           iVar7 = iVar7 + 1;

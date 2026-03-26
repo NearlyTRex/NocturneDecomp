@@ -1,6 +1,6 @@
 // Name: shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
 // Address: 005d5800
-// Address Range: [[005d5800, 005d5baf]]
+// Address Range: [[005d5800, 005d5baf] [03fc3742, 03fc377c]]
 // Convention: __cdecl
 // Signature: int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_ptr,double coplanar_threshold,CPoly *search_polygon)
 
@@ -25,12 +25,6 @@ int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_
   CPoly *this_ptr_00;
   uint *puVar8;
   byte bVar9;
-  uint local_58;
-  uint local_54;
-  uint local_50;
-  uint local_4c;
-  uint local_48;
-  uint local_44;
   CVector3d local_40;
   int local_28;
   CP3D *local_24;
@@ -40,7 +34,6 @@ int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_
   CP3D *local_14;
   CVert *point;
   
-  bVar9 = 0;
   if (search_polygon == (CPoly *)0x0) {
     if (this_ptr->poly_count == 0) {
       iVar1 = 0;
@@ -79,21 +72,12 @@ LAB_005d59af:
                     (&point_00->position,
                      &this_ptr->vertex_data[search_polygon->vertex_idx_0].position,&local_14->impl,
                      &local_40);
-          puVar6 = (uint *)&local_40;
-          puVar8 = &local_58;
-          for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-            puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
-            puVar6 = puVar6 + (uint)bVar9 * -2 + 1;
-            *puVar8 = *puVar6;
-            puVar6 = puVar6;
-            puVar8 = puVar8;
-          }
-          *(uint *)&(point_00->position).x = local_58;
-          *(uint *)((int)&(point_00->position).x + 4) = local_54;
-          *(uint *)&(point_00->position).y = local_50;
-          *(uint *)((int)&(point_00->position).y + 4) = local_4c;
-          *(uint *)&(point_00->position).z = local_48;
-          *(uint *)((int)&(point_00->position).z + 4) = local_44;
+          *(uint *)&(point_00->position).x = local_40.x._0_4_;
+          *(uint *)((int)&(point_00->position).x + 4) = local_40.x._4_4_;
+          *(uint *)&(point_00->position).y = local_40.y._0_4_;
+          *(uint *)((int)&(point_00->position).y + 4) = local_40.y._4_4_;
+          *(uint *)&(point_00->position).z = local_40.z._0_4_;
+          *(uint *)((int)&(point_00->position).z + 4) = local_40.z._4_4_;
           (local_18->normal).impl.x = (local_14->impl).x;
           *(uint *)&(local_18->normal).impl.y = *(uint *)&(local_14->impl).y;
           *(uint *)((int)&(local_18->normal).impl.y + 4) =

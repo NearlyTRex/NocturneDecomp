@@ -1,6 +1,6 @@
 // Name: core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0
 // Address: 005205f0
-// Address Range: [[005205f0, 005207fe] [00520802, 0052084b]]
+// Address Range: [[005205f0, 005207fe] [00520802, 0052084b] [03fc4298, 03fc42f7]]
 // Convention: __cdecl
 // Signature: int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
 
@@ -34,7 +34,6 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
   CStranger *local_14;
   CDeformableModelInstance *this_ptr_00;
   
-  bVar4 = 0;
   if ((this_ptr->base).base.render_active == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     this_ptr_01 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
@@ -70,15 +69,6 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
                     (&local_c4,
                      (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                      g_MimicIndices[0],&local_f4);
-          pCVar2 = &local_f4;
-          pCVar3 = &local_94;
-          for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-            pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
-            pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar4 * -8 + 4);
-            pCVar3->m[0].w = pCVar2->m[0].w;
-            pCVar2 = pCVar2;
-            pCVar3 = pCVar3;
-          }
           core_xform_cpp_getTranslation_FUN_005f6110(&local_94,&local_4c);
           core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_94,&local_34);
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

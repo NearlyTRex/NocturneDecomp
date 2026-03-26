@@ -1,6 +1,6 @@
 // Name: core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420
 // Address: 0042a420
-// Address Range: [[0042a420, 0042a50b]]
+// Address Range: [[0042a420, 0042a50b] [03fc4665, 03fc46c6]]
 // Convention: __cdecl
 // Signature: void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCharacter *this_ptr)
 
@@ -22,7 +22,6 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCha
   CVector3i local_20;
   CMatrix3x4f *local_14;
   
-  bVar6 = 0;
   iVar3 = 0;
   if (0 < this_ptr->damage_decal_count) {
     pSVar2 = this_ptr->damage_decals;
@@ -32,15 +31,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCha
                   (&pSVar2->transform,
                    (this_ptr->model).bone_transform.bone_world_matrices + pSVar2->bone_index,
                    &local_8c);
-        pCVar4 = &local_8c;
-        pCVar5 = &local_5c;
-        for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-          pCVar5 = (CMatrix3x3f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
-          pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar6 * -8 + 4);
-          pCVar5->m[0].x = pCVar4->m[0].w;
-          pCVar4 = pCVar4;
-          pCVar5 = pCVar5;
-        }
+        local_5c.m[1].x = local_8c.m[0].z;
+        local_5c.m[2].y = local_8c.m[1].z;
         core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_5c,&local_2c);
         local_20.x = (int)local_5c.m[1].x;
         local_20.y = (int)local_5c.m[2].y;

@@ -1,6 +1,6 @@
 // Name: core_ladder.cpp_CLadder_cacheRelativePosition_FUN_00502b80
 // Address: 00502b80
-// Address Range: [[00502b80, 00502c89]]
+// Address Range: [[00502b80, 00502c89] [03fc435a, 03fc43bb]]
 // Convention: __cdecl
 // Signature: void __cdecl core_ladder_cpp_CLadder_cacheRelativePosition_FUN_00502b80(CLadder *this_ptr)
 
@@ -24,7 +24,6 @@ void __cdecl core_ladder_cpp_CLadder_cacheRelativePosition_FUN_00502b80(CLadder 
   float local_1c;
   CVector3f local_18;
   
-  bVar5 = 0;
   if (this_ptr->master_actor != (CDemonActor *)0x0) {
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_e4,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
@@ -32,21 +31,10 @@ void __cdecl core_ladder_cpp_CLadder_cacheRelativePosition_FUN_00502b80(CLadder 
               (&local_b4,&(this_ptr->master_actor->location).position,
                &(this_ptr->master_actor->orient).vec);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_e4,&local_b4,&local_54);
-    pCVar3 = &local_54;
-    pCVar4 = &local_84;
-    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      pCVar4 = (CMatrix3x3f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);
-      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
-      pCVar4->m[0].x = pCVar3->m[0].w;
-      pCVar3 = pCVar3;
-      pCVar4 = pCVar4;
-    }
-    local_24 = local_84.m[1].x;
-    local_20 = local_84.m[2].y;
     if (&this_ptr->relative_position != (CVector3f *)&local_24) {
-      (this_ptr->relative_position).x = local_84.m[1].x;
-      (this_ptr->relative_position).y = local_84.m[2].y;
-      (this_ptr->relative_position).z = local_58;
+      (this_ptr->relative_position).x = local_54.m[0].z;
+      (this_ptr->relative_position).y = local_54.m[1].z;
+      (this_ptr->relative_position).z = local_54.m[2].z;
     }
     pCVar1 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_84,&local_18);
     if (&this_ptr->cached_euler_angles != pCVar1) {

@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 3,
-        "line": 42,
+        "line": 39,
         "message": "use of undeclared identifier 'INT_02d83398'"
       }
     ],
@@ -12,21 +12,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 78,
-    "complexity_score": 164,
+    "assembly_lines": 134,
+    "complexity_score": 132,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 54,
-    "suspect_count": 9,
+    "pseudocode_lines": 37,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
       "stack_alignment_array",
       "warning_inlined_function"
     ],
-    "total_lines": 132
+    "total_lines": 171
   },
   "cross_references": [
     {
@@ -46,6 +45,10 @@
       [
         "006108a8",
         "006108c4"
+      ],
+      [
+        "03fc5333",
+        "03fc53d7"
       ]
     ],
     "convention": "__cdecl",
@@ -195,35 +198,32 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.304347826086956,
-    "instruction_count": 69,
+    "avg_pcode_per_instr": 3.735042735042735,
+    "instruction_count": 117,
     "opcode_distribution": {
-      "BRANCH": 4,
+      "BRANCH": 6,
       "CALL": 4,
-      "CBRANCH": 2,
-      "COPY": 145,
+      "COPY": 183,
       "FLOAT2FLOAT": 4,
       "FLOAT_MULT": 3,
-      "INT_ADD": 24,
-      "INT_AND": 14,
-      "INT_CARRY": 4,
-      "INT_EQUAL": 16,
+      "INT_ADD": 60,
+      "INT_AND": 26,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 26,
       "INT_LESS": 1,
-      "INT_MULT": 4,
       "INT_SBORROW": 1,
-      "INT_SCARRY": 4,
-      "INT_SLESS": 7,
-      "INT_SUB": 15,
-      "INT_XOR": 2,
-      "INT_ZEXT": 4,
-      "LOAD": 12,
-      "POPCOUNT": 7,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 13,
+      "INT_SUB": 9,
+      "INT_XOR": 4,
+      "LOAD": 30,
+      "POPCOUNT": 13,
       "RETURN": 1,
       "ROUND": 3,
-      "STORE": 13,
+      "STORE": 31,
       "TRUNC": 3
     },
-    "pcode_op_count": 297
+    "pcode_op_count": 437
   },
   "stack_frame": {
     "frame_size": 4104,
@@ -298,7 +298,7 @@
     ],
     "patterns": [
       {
-        "address": "004eba61",
+        "address": "03fc538b",
         "description": "Alternative frame pointer (EDI = ESP)",
         "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
         "instruction": "MOV EDI,ESP",
@@ -318,66 +318,58 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
+      "line": 12,
       "match": "aiStackY_1000",
       "severity": "moderate",
       "text": "int aiStackY_1000 [997];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(CMatrix3x3f *)((int)",
-      "severity": "mild",
-      "text": "pCVar2 = (CMatrix3x3f *)((int)pCVar2 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 34,
       "match": "ROUND",
       "severity": "mild",
-      "text": "INT_02d8339c = (int)ROUND(ROUND((double)local_60 * -65536));",
+      "text": "INT_02d8339c = (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[0].z *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 34,
       "match": "ROUND",
       "severity": "mild",
-      "text": "INT_02d8339c = (int)ROUND(ROUND((double)local_60 * -65536));",
+      "text": "INT_02d8339c = (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[0].z *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 36,
       "match": "ROUND",
       "severity": "mild",
-      "text": "INT_02d833a0 = (int)ROUND(ROUND((double)local_54 * -65536));",
+      "text": "INT_02d833a0 = (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[1].z *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 36,
       "match": "ROUND",
       "severity": "mild",
-      "text": "INT_02d833a0 = (int)ROUND(ROUND((double)local_54 * -65536));",
+      "text": "INT_02d833a0 = (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[1].z *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 38,
       "match": "ROUND",
       "severity": "mild",
-      "text": "INT_02d833a4 = (int)ROUND(ROUND((double)local_48 * -65536));",
+      "text": "INT_02d833a4 = (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[2].z *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 38,
       "match": "ROUND",
       "severity": "mild",
-      "text": "INT_02d833a4 = (int)ROUND(ROUND((double)local_48 * -65536));",
+      "text": "INT_02d833a4 = (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[2].z *",
       "type": "decompiler_intrinsic"
     }
   ]

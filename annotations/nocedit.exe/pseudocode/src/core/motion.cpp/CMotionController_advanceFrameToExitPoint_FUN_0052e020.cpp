@@ -1,6 +1,6 @@
 // Name: core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020
 // Address: 0052e020
-// Address Range: [[0052e020, 0052e1cc]]
+// Address Range: [[0052e020, 0052e1cc] [03fc41f9, 03fc4238]]
 // Convention: __cdecl
 // Signature: int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition)
 
@@ -12,7 +12,6 @@ int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e0
   SMotionTransition *pSVar1;
   float fVar3;
   SMotion *pSVar3;
-  int iVar4;
   SMotion *pSVar4;
   int iVar5;
   int *piVar6;
@@ -23,7 +22,6 @@ int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e0
   float fVar2;
   int iVar1;
   
-  bVar8 = 0;
   pSVar4 = this_ptr->motion_list_ptr->motions + motion_index;
   iVar5 = 0;
   fVar3 = *inout_delta_time * pSVar4->fps + current_frame;
@@ -58,15 +56,12 @@ int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e0
     (*this_ptr->vtable->accumulateScaledRootMotion)
               (this_ptr,(float)pSVar4->frame_start + current_frame,
                (float)(pSVar4->frame_start + pSVar4->exit_forward_from_frame),1.0);
-    piVar6 = &pSVar4->unused1;
-    pSVar7 = out_transition;
-    for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pSVar7 = (SMotionTransition *)((int)pSVar7 + (uint)bVar8 * -8 + 4);
-      piVar6 = piVar6 + (uint)bVar8 * -2 + 1;
-      pSVar7->desired_state = *piVar6;
-      piVar6 = piVar6;
-      pSVar7 = pSVar7;
-    }
+    out_transition->desired_state = pSVar4->unused1;
+    out_transition->cmd = pSVar4->exit_forward_cmd;
+    out_transition->to_motion_number = pSVar4->exit_forward_to_motion;
+    out_transition->to_frame_number = pSVar4->exit_forward_to_frame;
+    out_transition->tween_time = pSVar4->exit_forward_tween_time;
+    out_transition->set_new_state_as_desired = pSVar4->exit_forward_set_new_state;
     pSVar1 = this_ptr->in_transition;
     if ((pSVar1 != (SMotionTransition *)0x0) && (pSVar1->cmd == MOTION_CMD_WAIT_EXIT)) {
       out_transition->to_motion_number = pSVar1->to_motion_number;

@@ -1,6 +1,6 @@
 // Name: core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
 // Address: 004d6f80
-// Address Range: [[004d6f80, 004d711f]]
+// Address Range: [[004d6f80, 004d711f] [03fc44d5, 03fc453d]]
 // Convention: __cdecl
 // Signature: void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80(CGabriella *this_ptr,float delta_time,float *clavicle_blend,int probe_bone_index,int blend_bone_index,CVector3f *probe_offset)
 
@@ -29,7 +29,6 @@ void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
   float local_18;
   CDeformableModelInstance *local_14;
   
-  bVar6 = 0;
   pCVar2 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(pCVar2,&local_1b44);
   core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
@@ -52,15 +51,6 @@ void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
                core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
     core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
               (this_ptr_00,probe_bone_index,&local_78);
-    pCVar4 = &local_78;
-    pCVar5 = &local_a8;
-    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
-      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar6 * -8 + 4);
-      pCVar5->m[0].w = pCVar4->m[0].w;
-      pCVar4 = pCVar4;
-      pCVar5 = pCVar5;
-    }
     input_local_point =
          core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_48,probe_offset,&local_a8);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

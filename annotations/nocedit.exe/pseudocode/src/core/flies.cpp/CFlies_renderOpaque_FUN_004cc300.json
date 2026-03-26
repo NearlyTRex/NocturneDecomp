@@ -5,20 +5,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 322,
-    "complexity_score": 298,
+    "assembly_lines": 386,
+    "complexity_score": 274,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 18,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 153,
-    "suspect_count": 13,
+    "pseudocode_lines": 169,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 475
+    "total_lines": 555
   },
   "cross_references": [],
   "function": {
@@ -27,6 +27,10 @@
       [
         "004cc300",
         "004cc6f2"
+      ],
+      [
+        "03fc53d8",
+        "03fc5491"
       ]
     ],
     "convention": "__cdecl",
@@ -220,44 +224,42 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.92,
-    "instruction_count": 275,
+    "avg_pcode_per_instr": 4.5830815709969785,
+    "instruction_count": 331,
     "opcode_distribution": {
       "BOOL_NEGATE": 31,
       "BOOL_OR": 1,
-      "BRANCH": 6,
+      "BRANCH": 8,
       "CALL": 13,
       "CALLIND": 1,
-      "CBRANCH": 19,
-      "COPY": 323,
+      "CBRANCH": 17,
+      "COPY": 369,
       "FLOAT2FLOAT": 11,
       "FLOAT_ADD": 1,
       "FLOAT_MULT": 5,
       "INT2FLOAT": 1,
-      "INT_ADD": 114,
-      "INT_AND": 195,
-      "INT_CARRY": 18,
-      "INT_EQUAL": 130,
+      "INT_ADD": 158,
+      "INT_AND": 207,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 140,
       "INT_LEFT": 6,
       "INT_LESS": 10,
-      "INT_MULT": 4,
       "INT_NOTEQUAL": 22,
       "INT_OR": 29,
       "INT_SBORROW": 12,
-      "INT_SCARRY": 22,
-      "INT_SLESS": 65,
+      "INT_SCARRY": 26,
+      "INT_SLESS": 71,
       "INT_SRIGHT": 6,
-      "INT_SUB": 71,
-      "INT_XOR": 9,
-      "INT_ZEXT": 4,
-      "LOAD": 61,
-      "POPCOUNT": 59,
+      "INT_SUB": 65,
+      "INT_XOR": 11,
+      "LOAD": 83,
+      "POPCOUNT": 65,
       "RETURN": 2,
       "ROUND": 4,
-      "STORE": 94,
+      "STORE": 116,
       "TRUNC": 4
     },
-    "pcode_op_count": 1353
+    "pcode_op_count": 1517
   },
   "stack_frame": {
     "frame_size": 168,
@@ -406,39 +408,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 128,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 135,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "vertices = (SRenderVertex *)((int)vertices + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 138,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 140,
+      "line": 156,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "psVar1 = (short *)((int)&this_ptr_01->vertex_buffer_ptr[1].projected_vertex.screen_x + 2",
@@ -446,7 +416,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 159,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "*(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =",
@@ -454,7 +424,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 160,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "*(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) +",

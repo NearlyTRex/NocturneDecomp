@@ -2,14 +2,14 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19411
-  Named globals:             19151
-  DAT_ globals:              260
-Gaps found:                  1871
-  With exact size bounds:    1778
-  With estimated bounds:     93
-Total gap bytes:             1,362,554,174
-  Exact gap bytes:           14,712,038
+Total globals analyzed:      19409
+  Named globals:             19150
+  DAT_ globals:              259
+Gaps found:                  1869
+  With exact size bounds:    1777
+  With estimated bounds:     92
+Total gap bytes:             14,721,060
+  Exact gap bytes:           14,712,018
 Overlaps (size <= 0):        13285
 
 --------------------------------------------------------------------------------
@@ -17,19 +17,16 @@ GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
   1-4 bytes (likely padding/alignment)          489
   5-16 bytes (small vars)                       495
-  17-64 bytes (structs/small arrays)            413
+  17-64 bytes (structs/small arrays)            412
   65-256 bytes (medium data)                    179
   257-1024 bytes (large structs/arrays)         91
   1-4 KB                                        74
   4-64 KB                                       110
-  64+ KB                                        20
+  64+ KB                                        19
 
 --------------------------------------------------------------------------------
 LARGEST GAPS (top 50)
 --------------------------------------------------------------------------------
-  1,347,833,094 bytes ~  at 0x03fbf43d
-    after: Rsrc_GroupIcon_65_0                      GroupIconResource    at 0x03fbf43c  size=?
-    before: DAT_54524143                             undefined4           at 0x54524143
    4,185,048 bytes  at 0x00002428
     after: DAT_00002424                             undefined4           at 0x00002424  size=4
     before: IMAGE_DOS_HEADER_00400000                IMAGE_DOS_HEADER     at 0x00400000
@@ -177,9 +174,12 @@ LARGEST GAPS (top 50)
       24,188 bytes  at 0x004e8e24
     after: switchdataD_004e8e20                     void*                at 0x004e8e20  size=4
     before: switchdataD_004eeca0                     void*                at 0x004eeca0
+      24,135 bytes  at 0x00575d69
+    after: caseD_5                                  undefined4           at 0x00575d65  size=4
+    before: switchdataD_0057bbb0                     void*                at 0x0057bbb0
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1778) - size bounds are known precisely
+ALL EXACT GAPS (1777) - size bounds are known precisely
 --------------------------------------------------------------------------------
    4,185,048 bytes  at 0x00002428  between DAT_00002424                   and IMAGE_DOS_HEADER_00400000
    3,350,789 bytes  at 0x00ff0103  between g_ColorMagenta                 and g_CoronaLightCache
@@ -1021,7 +1021,6 @@ ALL EXACT GAPS (1778) - size bounds are known precisely
           20 bytes  at 0x00679380  between g_CEnemyClassVersion           and g_WindowWidth
           20 bytes  at 0x0067b4c8  between g_CFlameCanClassVersion        and g_CFlameThrowerClassVersion
           20 bytes  at 0x0067b4fc  between g_CFlashlightClassVersion      and g_CFliesClassVersion
-          20 bytes  at 0x0067b570  between s_Precision_Racing_v1_00_0067b and g_CFrankenstienMachineClassVer
           20 bytes  at 0x0067b904  between g_CGargoyleClassVersion        and g_CGasMaskClassVersion
           20 bytes  at 0x0067b930  between g_CGhoulClassVersion           and g_CGlassClassVersion
           20 bytes  at 0x0067cbf0  between g_CHaystackClassVersion        and g_CHealthItemClassVersion
@@ -40951,9 +40950,9 @@ OVERLAPS (13285) - next global starts inside previous
   16 bytes overlap
     g_FontTextureInfo                        SMRGLTextureBasic    at 0x0067b550  size=24
     g_TempFilenameBuffer                     undefined4           at 0x0067b558
-  252 bytes overlap ~
+  228 bytes overlap ~
     s_CART_Precision_Racing_v1_0067b568      TerminatedCString    at 0x0067b568  size=256
-    s_Precision_Racing_v1_00_0067b56c        undefined4           at 0x0067b56c
+    g_CFrankenstienMachineClassVersion       int                  at 0x0067b584
   236 bytes overlap ~
     s_save_SAVE_TMP_0067b670                 TerminatedCString    at 0x0067b670  size=256
     s_EFD_0067b684                           TerminatedCString    at 0x0067b684

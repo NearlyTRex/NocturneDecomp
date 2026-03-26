@@ -5,14 +5,14 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6452
-Successful: 5912 (91.6%)
-Failed: 540
+Successful: 5914 (91.7%)
+Failed: 538
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                            978
+  other                            984
   format_error                     782
-  incompatible_types               206
+  incompatible_types               203
   undeclared_identifier            122
   syntax_error                      41
   missing_member                    26
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (978 errors)
+CATEGORY: other (984 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -81,7 +81,7 @@ CATEGORY: other (978 errors)
   core_script.cpp_CScript_step_FUN_0055a810
     Line 1382: cannot cast from type 'float' to pointer type 'CDemonActor *'
   core_xform.cpp_lerpMatrix3x4_FUN_005f7140
-    Line 39: cannot cast from type 'float' to pointer type 'CMatrix3x3f *'
+    Line 37: cannot cast from type 'float' to pointer type 'CMatrix3x3f *'
   core_set.cpp_CDemonSet_processActors_FUN_0056b810
     Line 69: cannot cast from type 'float' to pointer type 'CPathMap *'
   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0
@@ -89,7 +89,7 @@ CATEGORY: other (978 errors)
   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
     Line 95: cannot cast from type 'float' to pointer type 'CQuaternion4f *'
   core_platfrm.cpp_CPlatform_process_FUN_0054cc30
-    Line 276: cannot cast from type 'float' to pointer type 'CVector3f *'
+    Line 256: cannot cast from type 'float' to pointer type 'CVector3f *'
   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
     Line 234: cannot cast from type 'float' to pointer type 'CVector3f *'
   core_zombie.cpp_CZombie_process_FUN_005f9470
@@ -200,6 +200,8 @@ CATEGORY: other (978 errors)
     Line 132: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
     Line 79: member reference base type 'double' is not a structure or union
+  shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
+    Line 75: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
     Line 418: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
@@ -359,7 +361,7 @@ CATEGORY: other (978 errors)
   core_setutil.cpp_C3DSLight_save_FUN_00587090
     Line 18: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 499: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 488: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
     Line 279: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
@@ -391,7 +393,7 @@ CATEGORY: other (978 errors)
   shape_design.c_exportVertexListFile_FUN_0045a610
     Line 22: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_design.c_loadModelBinary_FUN_00458170
-    Line 67: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 64: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_design.c_optimizePolygonMesh_FUN_004658e0
     Line 73: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_design.c_showFacetPartEditor_FUN_0045f1d0
@@ -448,7 +450,7 @@ CATEGORY: format_error (782 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
-    Line 151: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
+    Line 148: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320
     Line 24: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
@@ -464,7 +466,7 @@ CATEGORY: format_error (782 errors)
   core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70
     Line 67: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setutil.cpp_C3DSCamera_apply_FUN_00585870
-    Line 25: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
+    Line 20: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setutil.cpp_C3DSCamera_exportS3D_FUN_00586190
     Line 20: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0
@@ -768,7 +770,7 @@ CATEGORY: format_error (782 errors)
   core_setedit.cpp_editGroundTypes_FUN_00578630
     Line 49: format specifies type 'char *' but the argument has type 'char (*)[40]' [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
-    Line 110: format specifies type 'char *' but the argument has type 'char (*)[50]' [-Werror,-Wformat]
+    Line 108: format specifies type 'char *' but the argument has type 'char (*)[50]' [-Werror,-Wformat]
   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
     Line 60: format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_propertyDisplayCallback_FUN_0042f340
@@ -973,7 +975,7 @@ CATEGORY: format_error (782 errors)
     Line 40: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: incompatible_types (206 errors)
+CATEGORY: incompatible_types (203 errors)
 ====================================================================================================
 
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
@@ -1092,12 +1094,6 @@ CATEGORY: incompatible_types (206 errors)
     Line 50: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
     Line 78: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80
-    Line 54: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'float[10]'
-  core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0
-    Line 54: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'float[10]'
-  core_fire.cpp_CSpark_setupRenderState_FUN_004c0300
-    Line 62: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'float[10]'
   cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90
     Line 25: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
@@ -1183,7 +1179,7 @@ CATEGORY: incompatible_types (206 errors)
   core_sound.cpp_playSfxInternal_FUN_005b1fd0
     Line 162: invalid operands to binary expression ('float' and 'int')
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 440: no matching function for call to '_sprintf'
+    Line 436: no matching function for call to '_sprintf'
   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
     Line 47: no matching function for call to '_strnicmp'
   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
@@ -1216,7 +1212,7 @@ CATEGORY: undeclared_identifier (122 errors)
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
     Line 24: use of undeclared identifier 'DAT_80000010'
   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
-    Line 42: use of undeclared identifier 'INT_02d83398'
+    Line 39: use of undeclared identifier 'INT_02d83398'
   core_scat.cpp_CScat_process_FUN_005571f0
     Line 150: use of undeclared identifier 'SUB14'
   core_script.cpp_CScript_step_FUN_0055a810
@@ -1314,7 +1310,7 @@ CATEGORY: undeclared_identifier (122 errors)
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 41: use of undeclared identifier 'stack0x0000002c'
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 485: use of undeclared identifier 'stack0xffffcc64'
+    Line 474: use of undeclared identifier 'stack0xffffcc64'
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
     Line 157: use of undeclared identifier 'stack0xffffee80'
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0

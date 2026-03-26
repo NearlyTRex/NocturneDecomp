@@ -1,6 +1,6 @@
 // Name: core_platfrm.cpp_CPlatform_process_FUN_0054cc30
 // Address: 0054cc30
-// Address Range: [[0054cc30, 0054d687]]
+// Address Range: [[0054cc30, 0054d687] [03fc5096, 03fc5168]]
 // Convention: __cdecl
 // Signature: void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr,float delta_time)
 
@@ -24,17 +24,12 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
   char *pcVar8;
   char *pcVar9;
   CLocation *position;
-  CMatrix3x4f *pCVar10;
-  char *pcVar11;
-  int iVar12;
-  CMatrix3x4f *pCVar13;
-  CMatrix3x3f *pCVar14;
-  bool bVar15;
-  byte bVar16;
+  char *pcVar10;
+  int iVar11;
+  bool bVar12;
   char local_324 [256];
   CMatrix3x4f local_224;
   CMatrix3x3f CStack_1f4;
-  float fStack_1c8;
   CMatrix3x4f CStack_1c4;
   CMatrix3x4f CStack_194;
   CMatrix3x4f CStack_164;
@@ -65,11 +60,10 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
   float fStack_1c;
   CVector3f *pCStack_18;
   
-  bVar16 = 0;
   if (1 < this_ptr->one_shot) {
     return;
   }
-  bVar15 = false;
+  bVar12 = false;
   local_34 = this_ptr->param;
   local_30 = 0;
   local_2c = 0;
@@ -77,8 +71,8 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
   case PLATFORM_STATE_TYPE_AT_START:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->to_end_event);
-    bVar15 = iVar3 != 0;
-    if (bVar15) {
+    bVar12 = iVar3 != 0;
+    if (bVar12) {
       core_platfrm_cpp_CPlatform_startMovement_FUN_0054d690
                 (this_ptr,1.0,1.0 / this_ptr->travel_time_to_end);
     }
@@ -87,8 +81,8 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
   case PLATFORM_STATE_TYPE_AT_END:
     iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->to_start_event);
-    bVar15 = iVar3 != 0;
-    if (bVar15) {
+    bVar12 = iVar3 != 0;
+    if (bVar12) {
       core_platfrm_cpp_CPlatform_startMovement_FUN_0054d690
                 (this_ptr,0.0,1.0 / this_ptr->travel_time_to_start);
     }
@@ -163,19 +157,19 @@ LAB_0054d090:
     this_ptr->state = PLATFORM_STATE_TYPE_WTF;
   }
   if (this_ptr->render_in_background_when_not_moving_flag != 0) {
-    if (bVar15) {
-      pcVar11 = local_324;
+    if (bVar12) {
+      pcVar10 = local_324;
       pcVar9 = this_ptr->camera_while_moving;
       pcVar8 = local_324;
       do {
         cVar1 = *pcVar9;
-        *pcVar11 = cVar1;
+        *pcVar10 = cVar1;
         name = pcVar8;
         if (cVar1 == '\0') break;
         cVar1 = pcVar9[1];
         pcVar9 = pcVar9 + 2;
-        pcVar11[1] = cVar1;
-        pcVar11 = pcVar11 + 2;
+        pcVar10[1] = cVar1;
+        pcVar10 = pcVar10 + 2;
       } while (cVar1 != '\0');
 joined_r0x0054cd19:
       if (local_324[0] != '\0') {
@@ -232,10 +226,10 @@ LAB_0054cd70:
             (&local_104,&position->position,&euler_angles->vec);
   iVar3 = 0;
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_ac);
-  iVar12 = 0;
+  iVar11 = 0;
   do {
     while( true ) {
-      if (g_CDemonSetPtr->character_count <= iVar12) {
+      if (g_CDemonSetPtr->character_count <= iVar11) {
         iStack_24 = 0;
         for (iStack_20 = 0; iStack_20 < g_CDemonSetPtr->actor_count; iStack_20 = iStack_20 + 1) {
           iVar3 = *(int *)((int)g_CDemonSetPtr->actors + iStack_24);
@@ -244,24 +238,10 @@ LAB_0054cd70:
             core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                       (&CStack_1c4,pCStack_18,(CVector3f *)(iVar3 + 0x30));
             core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_1c4,&local_224,&CStack_134);
-            pCVar10 = &CStack_134;
-            pCVar13 = &CStack_164;
-            for (iVar12 = 0xc; iVar12 != 0; iVar12 = iVar12 + -1) {
-              pCVar13->m[0].w = pCVar10->m[0].w;
-              pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar16 * -2 + 1) * 4);
-              pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar16 * -2 + 1) * 4);
-            }
             core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_164,&local_104,&CStack_194);
-            pCVar10 = &CStack_194;
-            pCVar14 = &CStack_1f4;
-            for (iVar12 = 0xc; iVar12 != 0; iVar12 = iVar12 + -1) {
-              pCVar14->m[0].x = pCVar10->m[0].w;
-              pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar16 * -2 + 1) * 4);
-              pCVar14 = (CMatrix3x3f *)((int)pCVar14 + ((uint)bVar16 * -2 + 1) * 4);
-            }
-            fStack_7c = CStack_1f4.m[1].x;
-            fStack_78 = CStack_1f4.m[2].y;
-            fStack_74 = fStack_1c8;
+            fStack_7c = CStack_194.m[0].z;
+            fStack_78 = CStack_194.m[1].z;
+            fStack_74 = CStack_194.m[2].z;
             core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&CStack_1f4,&CStack_94);
             fStack_88 = fStack_7c - pCStack_18->x;
             fStack_84 = fStack_78 - pCStack_18->y;
@@ -289,7 +269,7 @@ LAB_0054cd70:
          (iVar6 = (*((this_ptr_00->base).vtable._ub)->shouldIgnoreForTargeting)(&this_ptr_00->base),
          iVar6 == 0)) break;
 LAB_0054d4f3:
-      iVar12 = iVar12 + 1;
+      iVar11 = iVar11 + 1;
       iVar3 = iVar3 + 4;
     }
     if (this_ptr->push_flag == 0) {
@@ -332,7 +312,7 @@ LAB_0054d4f3:
     CStack_64.y = (this_ptr_00->base).location.position.y;
     (*((this_ptr_00->base).vtable._ub)->setPositionAndOrientation)
               (&this_ptr_00->base,&CStack_64,(CVector3f *)&(this_ptr_00->base).orient);
-    iVar12 = iVar12 + 1;
+    iVar11 = iVar11 + 1;
     iVar3 = iVar3 + 4;
   } while( true );
 }

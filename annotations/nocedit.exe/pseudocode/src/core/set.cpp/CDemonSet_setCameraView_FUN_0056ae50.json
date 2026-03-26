@@ -4,7 +4,7 @@
       {
         "category": "format_error",
         "column": 33,
-        "line": 151,
+        "line": 148,
         "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       }
     ],
@@ -12,19 +12,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 736,
-    "complexity_score": 397,
+    "assembly_lines": 792,
+    "complexity_score": 367,
     "cross_reference_count": 13,
     "function_call_count": 36,
-    "global_count": 44,
+    "global_count": 42,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 307,
-    "suspect_count": 8,
+    "pseudocode_lines": 297,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 1043
+    "total_lines": 1089
   },
   "cross_references": [
     {
@@ -116,6 +116,10 @@
       [
         "00604a35",
         "00604a5b"
+      ],
+      [
+        "03fc4f10",
+        "03fc4fd0"
       ]
     ],
     "convention": "__cdecl",
@@ -444,18 +448,6 @@
       "value": null
     },
     {
-      "addr": "032758f4",
-      "name": "g_CDemonCameraInstance.base.rotation_matrix.m[0].x",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "032758f8",
-      "name": "g_CDemonCameraInstance.base.rotation_matrix.m[0].y",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "03276db0",
       "name": "g_MasterLightList",
       "type": "CDemonLight*[96]",
@@ -690,43 +682,42 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.461928934010152,
-    "instruction_count": 591,
+    "avg_pcode_per_instr": 4.34585289514867,
+    "instruction_count": 639,
     "opcode_distribution": {
       "BOOL_NEGATE": 15,
       "BOOL_OR": 8,
-      "BRANCH": 12,
+      "BRANCH": 14,
       "CALL": 50,
       "CALLIND": 1,
-      "CBRANCH": 41,
-      "COPY": 490,
+      "CBRANCH": 39,
+      "COPY": 528,
       "FLOAT2FLOAT": 6,
       "FLOAT_MULT": 3,
-      "INT_ADD": 265,
-      "INT_AND": 328,
-      "INT_CARRY": 77,
-      "INT_EQUAL": 295,
+      "INT_ADD": 301,
+      "INT_AND": 340,
+      "INT_CARRY": 81,
+      "INT_EQUAL": 305,
       "INT_LEFT": 4,
       "INT_LESS": 24,
-      "INT_MULT": 16,
+      "INT_MULT": 12,
       "INT_NOTEQUAL": 29,
       "INT_OR": 10,
       "INT_SBORROW": 24,
-      "INT_SCARRY": 87,
+      "INT_SCARRY": 91,
       "INT_SEXT": 18,
-      "INT_SLESS": 149,
-      "INT_SUB": 184,
-      "INT_XOR": 18,
-      "INT_ZEXT": 4,
-      "LOAD": 119,
-      "POPCOUNT": 145,
+      "INT_SLESS": 155,
+      "INT_SUB": 178,
+      "INT_XOR": 20,
+      "LOAD": 137,
+      "POPCOUNT": 151,
       "RETURN": 1,
       "ROUND": 3,
-      "STORE": 196,
+      "STORE": 214,
       "SUBPIECE": 12,
       "TRUNC": 3
     },
-    "pcode_op_count": 2637
+    "pcode_op_count": 2777
   },
   "stack_frame": {
     "frame_size": 400,
@@ -866,7 +857,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 59,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)g_DynamicLights + iVar8);",
@@ -874,7 +865,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 69,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar2 = (uint *)((int)g_SpotLightList + iVar7);",
@@ -882,31 +873,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 79,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar2 = (uint *)((int)g_SpotLightList + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 255,
-      "match": "(CMatrix3x3f *)((int)",
-      "severity": "mild",
-      "text": "pCVar9 = (CMatrix3x3f *)((int)pCVar9 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 266,
-      "match": "(CMatrix3x3f *)((int)",
-      "severity": "mild",
-      "text": "pCVar10 = (CMatrix3x3f *)((int)pCVar10 + ((uint)bVar16 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 298,
+      "line": 288,
       "match": "ROUND",
       "severity": "mild",
       "text": "*piVar14 = (int)ROUND(CStack_54.x * 256.0f);",
@@ -914,7 +889,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 299,
+      "line": 289,
       "match": "ROUND",
       "severity": "mild",
       "text": "piVar14[1] = (int)ROUND(CStack_54.y * 256.0f);",
@@ -922,7 +897,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 300,
+      "line": 290,
       "match": "ROUND",
       "severity": "mild",
       "text": "piVar14[2] = (int)ROUND(CStack_54.z * 256.0f);",

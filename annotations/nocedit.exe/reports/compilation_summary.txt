@@ -5,14 +5,14 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6452
-Successful: 5912 (91.6%)
-Failed: 540
+Successful: 5914 (91.7%)
+Failed: 538
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                            978
+  other                            984
   format_error                     782
-  incompatible_types               206
+  incompatible_types               203
   undeclared_identifier            122
   syntax_error                      41
   missing_member                    26
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (978 errors)
+CATEGORY: other (984 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -81,18 +81,18 @@ CATEGORY: other (978 errors)
   core_script.cpp_CScript_step_FUN_0055a810
     Line 1382: cannot cast from type 'float' to pointer type 'CDemonActor *'...
   core_xform.cpp_lerpMatrix3x4_FUN_005f7140
-    Line 39: cannot cast from type 'float' to pointer type 'CMatrix3x3f *'...
+    Line 37: cannot cast from type 'float' to pointer type 'CMatrix3x3f *'...
   core_set.cpp_CDemonSet_processActors_FUN_0056b810
     Line 69: cannot cast from type 'float' to pointer type 'CPathMap *'...
 
-  ... and 179 more errors
+  ... and 180 more errors
 
 ====================================================================================================
 CATEGORY: format_error (782 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
-    Line 151: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
+    Line 148: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320
     Line 24: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
@@ -108,7 +108,7 @@ CATEGORY: format_error (782 errors)
   core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70
     Line 67: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setutil.cpp_C3DSCamera_apply_FUN_00585870
-    Line 25: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
+    Line 20: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setutil.cpp_C3DSCamera_exportS3D_FUN_00586190
     Line 20: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0
@@ -155,7 +155,7 @@ CATEGORY: format_error (782 errors)
   ... and 232 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (206 errors)
+CATEGORY: incompatible_types (203 errors)
 ====================================================================================================
 
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
@@ -219,7 +219,7 @@ CATEGORY: incompatible_types (206 errors)
   core_colonel.cpp_CColonel_process_FUN_0043fa00
     Line 244: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int...
 
-  ... and 86 more errors
+  ... and 83 more errors
 
 ====================================================================================================
 CATEGORY: undeclared_identifier (122 errors)
@@ -228,7 +228,7 @@ CATEGORY: undeclared_identifier (122 errors)
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
     Line 24: use of undeclared identifier 'DAT_80000010'...
   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
-    Line 42: use of undeclared identifier 'INT_02d83398'...
+    Line 39: use of undeclared identifier 'INT_02d83398'...
   core_scat.cpp_CScat_process_FUN_005571f0
     Line 150: use of undeclared identifier 'SUB14'...
   core_script.cpp_CScript_step_FUN_0055a810
@@ -413,8 +413,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.67
+Average suspects in successfully compiled functions: 1.65
 Average suspects in failed compilations: 7.51
 
-Functions that compile but have suspect patterns: 1438
+Functions that compile but have suspect patterns: 1416
 (These may have runtime issues even though syntax is valid)

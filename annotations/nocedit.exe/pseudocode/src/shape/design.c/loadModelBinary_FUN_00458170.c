@@ -1,6 +1,6 @@
 // Name: shape_design.c_loadModelBinary_FUN_00458170
 // Address: 00458170
-// Address Range: [[00458170, 004587e3] [004587e9, 00458a0d]]
+// Address Range: [[00458170, 004587e3] [004587e9, 00458a0d] [03fc4abd, 03fc4b90]]
 // Convention: __cdecl
 // Signature: int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
 
@@ -11,14 +11,12 @@ int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
 {
   char cVar2;
   int iVar2;
-  int iVar3;
   char *pcVar4;
   char *pcVar3;
   SMRGLModelBounds *pSVar4;
   int *piVar5;
   char *pcVar5;
   char *pcVar6;
-  int *piVar6;
   int *piVar7;
   byte bVar8;
   SMRGLModelBounds local_198;
@@ -58,7 +56,6 @@ int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
   SIZE_T local_14;
   char cVar1;
   
-  bVar8 = 0;
   local_20 = 1.0;
   local_38 = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rb");
   if (local_38 == (_FILE *)0x0) {
@@ -234,32 +231,18 @@ LAB_00458835:
       core_main_c_displayErrorAndQuit_FUN_00506f10("loadBinary - Out of mem!");
     }
     engine_model_c_getMRGLBounds_FUN_00528140(local_1c,&local_198);
-    pSVar4 = &local_198;
-    piVar6 = local_dc;
-    for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
-      pSVar4 = (SMRGLModelBounds *)((int)pSVar4 + (uint)bVar8 * -8 + 4);
-      *piVar6 = (pSVar4->min_scaled).x;
-      pSVar4 = pSVar4;
-      piVar6 = piVar6 + (uint)bVar8 * -2 + 1;
-    }
-    piVar5 = local_dc;
-    piVar7 = &local_110;
-    for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-      piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
-      piVar5 = piVar5 + (uint)bVar8 * -2 + 1;
-      *piVar7 = *piVar5;
-      piVar5 = piVar5;
-      piVar7 = piVar7;
-    }
     engine_model_c_freeMRGLData_FUN_005280b0(local_1c);
     _sprintf
-              (local_160,"X size : %f",(double)(local_104 - local_110) * 0.00390625);
+              (local_160,"X size : %f",
+               (double)(local_198.max_scaled.x - local_198.min_scaled.x) * 0.00390625);
     engine_2d_c_drawText_FUN_00401fd0(local_160,0,0);
     _sprintf
-              (local_160,"Y size : %f",(double)(local_100 - local_10c) * 0.00390625);
+              (local_160,"Y size : %f",
+               (double)(local_198.max_scaled.y - local_198.min_scaled.y) * 0.00390625);
     engine_2d_c_drawText_FUN_00401fd0(local_160,0,0xb);
     _sprintf
-              (local_160,"Z size : %f",(double)(local_fc - local_108) * 0.00390625);
+              (local_160,"Z size : %f",
+               (double)(local_198.max_scaled.z - local_198.min_scaled.z) * 0.00390625);
     engine_2d_c_drawText_FUN_00401fd0(local_160,0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("Hit a key...",0,0x2c);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

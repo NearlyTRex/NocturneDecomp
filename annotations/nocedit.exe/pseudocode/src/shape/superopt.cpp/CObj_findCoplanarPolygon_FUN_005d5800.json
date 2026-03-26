@@ -1,23 +1,61 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 56,
+        "line": 75,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 76,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 77,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 78,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 79,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 67,
+        "line": 80,
+        "message": "member reference base type 'double' is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 409,
-    "complexity_score": 285,
+    "assembly_lines": 429,
+    "complexity_score": 334,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 165,
-    "suspect_count": 11,
+    "pseudocode_lines": 149,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
+      "unknown_field",
       "warning_unreachable"
     ],
-    "total_lines": 574
+    "total_lines": 578
   },
   "cross_references": [],
   "function": {
@@ -26,6 +64,10 @@
       [
         "005d5800",
         "005d5baf"
+      ],
+      [
+        "03fc3742",
+        "03fc377c"
       ]
     ],
     "convention": "__cdecl",
@@ -50,16 +92,16 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.136498516320475,
-    "instruction_count": 337,
+    "avg_pcode_per_instr": 5.0339943342776206,
+    "instruction_count": 353,
     "opcode_distribution": {
       "BOOL_NEGATE": 45,
       "BOOL_OR": 5,
-      "BRANCH": 9,
+      "BRANCH": 10,
       "CALL": 1,
       "CALLIND": 6,
-      "CBRANCH": 36,
-      "COPY": 382,
+      "CBRANCH": 35,
+      "COPY": 393,
       "FLOAT2FLOAT": 11,
       "FLOAT_ADD": 2,
       "FLOAT_EQUAL": 1,
@@ -68,27 +110,27 @@
       "FLOAT_NAN": 2,
       "FLOAT_SUB": 1,
       "INT2FLOAT": 1,
-      "INT_ADD": 202,
-      "INT_AND": 223,
-      "INT_CARRY": 20,
-      "INT_EQUAL": 158,
+      "INT_ADD": 212,
+      "INT_AND": 229,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 163,
       "INT_LEFT": 14,
       "INT_LESS": 27,
-      "INT_MULT": 3,
+      "INT_MULT": 1,
       "INT_NOTEQUAL": 15,
       "INT_OR": 31,
       "INT_SBORROW": 27,
-      "INT_SCARRY": 24,
-      "INT_SLESS": 86,
-      "INT_SUB": 69,
-      "INT_XOR": 13,
-      "INT_ZEXT": 6,
-      "LOAD": 162,
-      "POPCOUNT": 76,
+      "INT_SCARRY": 26,
+      "INT_SLESS": 89,
+      "INT_SUB": 66,
+      "INT_XOR": 14,
+      "INT_ZEXT": 4,
+      "LOAD": 167,
+      "POPCOUNT": 79,
       "RETURN": 5,
-      "STORE": 64
+      "STORE": 69
     },
-    "pcode_op_count": 1731
+    "pcode_op_count": 1777
   },
   "possible_indirect_callers": {
     "method_name": "findCoplanarPolygon",
@@ -271,7 +313,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 41,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;",
@@ -279,7 +321,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 41,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;",
@@ -287,39 +329,87 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 62,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(uint *)((int)",
+      "description": "Unknown/mangled field access",
+      "line": 68,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "*(uint *)((int)&(point_00->position).x + 4) = local_54;",
-      "type": "pointer_cast"
+      "text": "*(uint *)&(point_00->position).x = local_40.x._0_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 69,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(point_00->position).y + 4) = local_4c;",
+      "text": "*(uint *)((int)&(point_00->position).x + 4) = local_40.x._4_4_;",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(uint *)((int)",
+      "description": "Unknown/mangled field access",
+      "line": 69,
+      "match": "._4_4_",
       "severity": "mild",
-      "text": "*(uint *)((int)&(point_00->position).z + 4) = local_44;",
-      "type": "pointer_cast"
+      "text": "*(uint *)((int)&(point_00->position).x + 4) = local_40.x._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 70,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "*(uint *)&(point_00->position).y = local_40.y._0_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 71,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(point_00->position).y + 4) = local_40.y._4_4_;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 71,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(point_00->position).y + 4) = local_40.y._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 72,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "*(uint *)&(point_00->position).z = local_40.z._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(point_00->position).z + 4) = local_40.z._4_4_;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 73,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(point_00->position).z + 4) = local_40.z._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(local_18->normal).impl.y + 4) =",
@@ -327,7 +417,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 77,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(local_14->impl).y + 4);",
@@ -335,7 +425,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 79,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(local_18->normal).impl.z + 4) =",
@@ -343,7 +433,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 80,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(local_14->impl).z + 4);",

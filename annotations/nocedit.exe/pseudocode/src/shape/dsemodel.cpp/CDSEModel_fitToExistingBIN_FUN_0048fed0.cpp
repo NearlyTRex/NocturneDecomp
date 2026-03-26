@@ -1,6 +1,6 @@
 // Name: shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0
 // Address: 0048fed0
-// Address Range: [[0048fed0, 00490016]]
+// Address Range: [[0048fed0, 00490016] [03fc49f2, 03fc4abc]]
 // Convention: __cdecl
 // Signature: int __cdecl shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel *this_ptr,char *filename)
 
@@ -9,11 +9,14 @@
 int __cdecl shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel *this_ptr,char *filename)
 
 {
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  _FILE *file_ptr;
+  SMRGLHeaderExtended *mrgl_data;
   int iVar1;
-  int iVar2;
   SMRGLModelBounds *pSVar2;
   int *piVar3;
-  int *piVar5;
   int *piVar4;
   byte bVar5;
   SMRGLModelBounds local_c4;
@@ -31,41 +34,23 @@ int __cdecl shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel
   float local_18;
   float local_14;
   
-  bVar5 = 0;
-  local_24 = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rb");
-  if (local_24 == (_FILE *)0x0) {
-    local_28 = 0;
-  }
-  else {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_24,"..\\shape\\dsemodel.cpp",0x180);
-    local_20 = engine_model_c_loadModelFile_FUN_00527ec0(filename);
-    engine_model_c_getMRGLBounds_FUN_00528140(local_20,&local_c4);
-    pSVar2 = &local_c4;
-    piVar5 = local_90;
-    for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
-      pSVar2 = (SMRGLModelBounds *)((int)pSVar2 + (uint)bVar5 * -8 + 4);
-      *piVar5 = (pSVar2->min_scaled).x;
-      pSVar2 = pSVar2;
-      piVar5 = piVar5 + (uint)bVar5 * -2 + 1;
-    }
-    piVar3 = local_90;
-    piVar4 = &local_5c;
-    for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
-      piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
-      piVar3 = piVar3 + (uint)bVar5 * -2 + 1;
-      *piVar4 = *piVar3;
-      piVar3 = piVar3;
-      piVar4 = piVar4;
-    }
-    local_1c = (float)(local_50 - local_5c) * (float)0.00390625;
-    local_18 = (float)(local_48 - local_54) * (float)0.00390625;
-    local_14 = (float)(local_4c - local_58) * (float)0.00390625;
+  file_ptr = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rb");
+  if (file_ptr != (_FILE *)0x0) {
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\dsemodel.cpp",0x180);
+    mrgl_data = engine_model_c_loadModelFile_FUN_00527ec0(filename);
+    engine_model_c_getMRGLBounds_FUN_00528140(mrgl_data,&local_c4);
+    fVar1 = (float)0.00390625;
+    fVar2 = (float)0.00390625;
+    fVar3 = (float)0.00390625;
     shape_dsemodel_cpp_CDSEModel_centerModel_FUN_0048fa50(this_ptr);
-    shape_dsemodel_cpp_CDSEModel_scaleX_FUN_0048fd70(this_ptr,local_1c);
-    shape_dsemodel_cpp_CDSEModel_scaleY_FUN_0048fe20(this_ptr,local_14);
-    shape_dsemodel_cpp_CDSEModel_scaleZ_FUN_0048fcc0(this_ptr,local_18);
-    engine_model_c_freeMRGLData_FUN_005280b0(local_20);
-    local_28 = 1;
+    shape_dsemodel_cpp_CDSEModel_scaleX_FUN_0048fd70
+              (this_ptr,(float)(local_c4.max_scaled.x - local_c4.min_scaled.x) * fVar1);
+    shape_dsemodel_cpp_CDSEModel_scaleY_FUN_0048fe20
+              (this_ptr,(float)(local_c4.max_scaled.y - local_c4.min_scaled.y) * fVar3);
+    shape_dsemodel_cpp_CDSEModel_scaleZ_FUN_0048fcc0
+              (this_ptr,(float)(local_c4.max_scaled.z - local_c4.min_scaled.z) * fVar2);
+    engine_model_c_freeMRGLData_FUN_005280b0(mrgl_data);
   }
+  local_28 = (int)(file_ptr != (_FILE *)0x0);
   return local_28;
 }

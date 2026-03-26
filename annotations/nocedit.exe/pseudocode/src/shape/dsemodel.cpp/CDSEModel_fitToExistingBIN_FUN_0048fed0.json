@@ -5,18 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 113,
-    "complexity_score": 76,
+    "assembly_lines": 181,
+    "complexity_score": 46,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 61,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 174
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 46,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 227
   },
   "cross_references": [
     {
@@ -32,6 +30,10 @@
       [
         "0048fed0",
         "00490016"
+      ],
+      [
+        "03fc49f2",
+        "03fc4abc"
       ]
     ],
     "convention": "__cdecl",
@@ -144,34 +146,33 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.343434343434343,
-    "instruction_count": 99,
+    "avg_pcode_per_instr": 4.433962264150943,
+    "instruction_count": 159,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
-      "BRANCH": 3,
+      "BRANCH": 5,
       "CALL": 9,
-      "CBRANCH": 3,
-      "COPY": 175,
+      "CBRANCH": 1,
+      "COPY": 225,
       "FLOAT2FLOAT": 12,
       "FLOAT_MULT": 3,
       "INT2FLOAT": 3,
-      "INT_ADD": 56,
-      "INT_AND": 34,
-      "INT_CARRY": 9,
-      "INT_EQUAL": 36,
+      "INT_ADD": 104,
+      "INT_AND": 46,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 46,
       "INT_LESS": 8,
-      "INT_MULT": 4,
       "INT_SBORROW": 8,
-      "INT_SCARRY": 9,
-      "INT_SLESS": 17,
-      "INT_SUB": 40,
-      "INT_ZEXT": 4,
-      "LOAD": 36,
-      "POPCOUNT": 17,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 23,
+      "INT_SUB": 34,
+      "INT_XOR": 2,
+      "LOAD": 60,
+      "POPCOUNT": 23,
       "RETURN": 1,
-      "STORE": 41
+      "STORE": 65
     },
-    "pcode_op_count": 529
+    "pcode_op_count": 705
   },
   "stack_frame": {
     "frame_size": 208,
@@ -294,14 +295,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(SMRGLModelBounds *)((int)",
-      "severity": "mild",
-      "text": "pSVar2 = (SMRGLModelBounds *)((int)pSVar2 + (uint)bVar5 * -8 + 4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

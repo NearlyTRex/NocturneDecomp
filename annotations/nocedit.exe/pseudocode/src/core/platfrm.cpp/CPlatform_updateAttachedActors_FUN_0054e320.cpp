@@ -1,6 +1,6 @@
 // Name: core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320
 // Address: 0054e320
-// Address Range: [[0054e320, 0054e3e5]]
+// Address Range: [[0054e320, 0054e3e5] [03fc4074, 03fc40da]]
 // Convention: __cdecl
 // Signature: void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_0054e320(CPlatform *this_ptr)
 
@@ -26,7 +26,6 @@ void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_0054e320(CPlatf
   CDemonActor *this_ptr_00;
   CDemonActor_vtable *pCVar1;
   
-  bVar6 = 0;
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_8c,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
   iVar3 = 0;
@@ -35,15 +34,6 @@ void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_0054e320(CPlatf
     if (pCVar2->attach_actors[0].actor != (CDemonActor *)0x0) {
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&this_ptr->attach_actors[iVar3].matrix,&local_8c,&local_5c);
-      pCVar4 = &local_5c;
-      pCVar5 = &local_bc;
-      for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-        pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
-        pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar6 * -8 + 4);
-        pCVar5->m[0].w = pCVar4->m[0].w;
-        pCVar4 = pCVar4;
-        pCVar5 = pCVar5;
-      }
       this_ptr_00 = pCVar2->attach_actors[0].actor;
       pCVar1 = (this_ptr_00->vtable)._ub;
       new_orientation =

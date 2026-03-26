@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 413,
-    "complexity_score": 290,
+    "assembly_lines": 473,
+    "complexity_score": 264,
     "cross_reference_count": 2,
     "function_call_count": 10,
-    "global_count": 30,
+    "global_count": 27,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 215,
-    "suspect_count": 7,
+    "pseudocode_lines": 219,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 628
+    "total_lines": 692
   },
   "cross_references": [
     {
@@ -38,6 +38,10 @@
       [
         "00543150",
         "00543594"
+      ],
+      [
+        "03fc5169",
+        "03fc521c"
       ]
     ],
     "convention": "__cdecl",
@@ -236,26 +240,8 @@
       "value": null
     },
     {
-      "addr": "02f9c0d0",
-      "name": "g_SimFrameHistory[0].player_controls[0].action_states[0]",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "02f9c0d4",
-      "name": "g_SimFrameHistory[0].player_controls[0].action_states[1]",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "02f9c0f0",
       "name": "g_SimFrameHistory[0].player_controls[0].strafe_speed",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "02f9c0fc",
-      "name": "g_SimFrameHistory[0].player_controls[1].action_states[0]",
       "type": "undefined4",
       "value": null
     },
@@ -321,41 +307,41 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.420062695924765,
-    "instruction_count": 319,
+    "avg_pcode_per_instr": 5.070080862533692,
+    "instruction_count": 371,
     "opcode_distribution": {
       "BOOL_NEGATE": 45,
       "BOOL_OR": 13,
-      "BRANCH": 9,
+      "BRANCH": 11,
       "CALL": 15,
-      "CBRANCH": 36,
-      "COPY": 246,
-      "INT_ADD": 116,
-      "INT_AND": 309,
-      "INT_CARRY": 31,
-      "INT_EQUAL": 219,
+      "CBRANCH": 34,
+      "COPY": 288,
+      "INT_ADD": 156,
+      "INT_AND": 321,
+      "INT_CARRY": 35,
+      "INT_EQUAL": 229,
       "INT_LEFT": 15,
       "INT_LESS": 28,
-      "INT_MULT": 13,
+      "INT_MULT": 9,
       "INT_NOTEQUAL": 48,
       "INT_OR": 40,
       "INT_SBORROW": 30,
-      "INT_SCARRY": 41,
+      "INT_SCARRY": 45,
       "INT_SDIV": 1,
       "INT_SEXT": 16,
-      "INT_SLESS": 118,
+      "INT_SLESS": 124,
       "INT_SREM": 1,
       "INT_SRIGHT": 2,
-      "INT_SUB": 84,
-      "INT_XOR": 19,
-      "INT_ZEXT": 6,
-      "LOAD": 51,
-      "POPCOUNT": 104,
+      "INT_SUB": 78,
+      "INT_XOR": 21,
+      "INT_ZEXT": 2,
+      "LOAD": 71,
+      "POPCOUNT": 110,
       "RETURN": 2,
-      "STORE": 59,
+      "STORE": 79,
       "SUBPIECE": 12
     },
-    "pcode_op_count": 1729
+    "pcode_op_count": 1881
   },
   "stack_frame": {
     "frame_size": 152,
@@ -446,7 +432,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 88,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar6 + -0xc) <",
@@ -454,7 +440,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 92,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "((void *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
@@ -462,7 +448,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 109,
+      "line": 107,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (iVar1 == *(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
@@ -470,34 +456,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
-      "match": "(SPlayerControl *)((int)",
-      "severity": "mild",
-      "text": "pSVar9 = (SPlayerControl *)((int)pSVar9 + (uint)bVar11 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 145,
-      "match": "(SPlayerControl *)((int)",
-      "severity": "mild",
-      "text": "pSVar12 = (SPlayerControl *)((int)pSVar12 + (uint)bVar11 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 176,
+      "line": 178,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 199,
-      "match": "(SPlayerControl *)((int)",
-      "severity": "mild",
-      "text": "pSVar8 = (SPlayerControl *)((int)pSVar8 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

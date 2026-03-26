@@ -8,8 +8,8 @@ allocate space within caves for injected code (thunks, helpers).
 
 Total caves:        29
 Total bytes:        157,591
-Total free:         118,578
-Total allocations:  677
+Total free:         110,188
+Total allocations:  767
 
 ----------------------------------------------------------------------------------------------------
 CAVES
@@ -1185,7 +1185,7 @@ CAVES
                3x MOVSD replacement for CRainDrop_render_FUN_004c6830
     Free space: 46 bytes (offset 0x0191 - 0x01bf)
 
-  cave_03fc0000                   03fc0000  131072 bytes  [14146/131072 used]
+  cave_03fc0000                   03fc0000  131072 bytes  [22536/131072 used]
     Allocations:
       +0x0000  104 bytes  movsd_005c0893             0x005c0893
                REP MOVSD 12-dword replacement for CStranger_computeWeaponAttachXForm_FUN_005c07b0
@@ -1477,5 +1477,185 @@ CAVES
                REP MOVSD 13-dword replacement for getMRGLBounds_FUN_00528140
       +0x36dc  102 bytes  movsd_00528575             0x00528575
                REP MOVSD 13-dword replacement for getMRGLBounds_FUN_00528140
-    Free space: 116926 bytes (offset 0x3742 - 0x20000)
+      +0x3742   59 bytes  movsd_005d59fe             0x005d59fe
+               REP MOVSD 6-dword replacement for CObj_findCoplanarPolygon_FUN_005d5800
+      +0x377d   66 bytes  movsd_004d0727             0x004d0727
+               REP MOVSD 7-dword replacement for CBitFont_showFontTest_FUN_004d04b0
+      +0x37bf   97 bytes  movsd_0041dc0d             0x0041dc0d
+               REP MOVSD 13-dword replacement for modelStructNotSupported_FUN_0041dbe0
+      +0x3820   94 bytes  movsd_004073db             0x004073db
+               REP MOVSD 12-dword replacement for renderPolygonEngineAPIPremiumMultiState_FUN_00407290
+      +0x387e   97 bytes  movsd_00407547             0x00407547
+               REP MOVSD 12-dword replacement for renderPolygonEngineAPIPremiumDirect_FUN_00407470
+      +0x38df   97 bytes  movsd_0040718e             0x0040718e
+               REP MOVSD 12-dword replacement for flushPremiumRenderBuffer_FUN_004070c0
+      +0x3940  106 bytes  movsd_005fbebe             0x005fbebe
+               REP MOVSD 12-dword replacement for CZombie_renderTransparent_FUN_005fbe70
+      +0x39aa   91 bytes  movsd_005f7407             0x005f7407
+               REP MOVSD 12-dword replacement for quaternionToMatrix3x4_FUN_005f73e0
+      +0x3a05   97 bytes  movsd_005f50db             0x005f50db
+               REP MOVSD 12-dword replacement for multiplyMatrix3x4InPlace_FUN_005f50c0
+      +0x3a66   95 bytes  movsd_005f615c             0x005f615c
+               REP MOVSD 12-dword replacement for invertAndGetTranslation_FUN_005f6140
+      +0x3ac5   99 bytes  movsd_005f6412             0x005f6412
+               REP MOVSD 12-dword replacement for inverse_FUN_005f6210
+      +0x3b28   89 bytes  movsd_005f18a9             0x005f18a9
+               REP MOVSD 12-dword replacement for CWerewolf_renderTransparent_FUN_005f1820
+      +0x3b81   95 bytes  movsd_005e6c66             0x005e6c66
+               REP MOVSD 12-dword replacement for CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80
+      +0x3be0   93 bytes  movsd_005e2a24             0x005e2a24
+               REP MOVSD 12-dword replacement for CTurret_getBoundingBox_FUN_005e2910
+      +0x3c3d   95 bytes  movsd_005da475             0x005da475
+               REP MOVSD 12-dword replacement for CDrummer_getCarryObjToBodyXForm_FUN_005da370
+      +0x3c9c   95 bytes  movsd_005da21f             0x005da21f
+               REP MOVSD 12-dword replacement for CBassPlayer_getCarryObjToBodyXForm_FUN_005da120
+      +0x3cfb   95 bytes  movsd_005c519b             0x005c519b
+               REP MOVSD 12-dword replacement for CStranger_getCarryObjToBodyXForm_FUN_005c5170
+      +0x3d5a   98 bytes  movsd_0059fad1             0x0059fad1
+               REP MOVSD 12-dword replacement for CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+      +0x3dbc  106 bytes  movsd_005a158e             0x005a158e
+               REP MOVSD 12-dword replacement for CDeformableModelInstance_getBoneTransform_FUN_005a1510
+      +0x3e26   98 bytes  movsd_005a00ce             0x005a00ce
+               REP MOVSD 12-dword replacement for CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
+      +0x3e88  104 bytes  movsd_0058c02e             0x0058c02e
+               REP MOVSD 12-dword replacement for CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
+      +0x3ef0  115 bytes  movsd_0058c3c4             0x0058c3c4
+               REP MOVSD 12-dword replacement for CDeformableModel_buildFromPosFile_FUN_0058c190
+      +0x3f63   93 bytes  movsd_0058aee7             0x0058aee7
+               REP MOVSD 12-dword replacement for CBoneStructure_extractInverseBindPose_FUN_0058aeb0
+      +0x3fc0   95 bytes  movsd_0058af82             0x0058af82
+               REP MOVSD 12-dword replacement for CBoneStructure_applyMatrixArray_FUN_0058af40
+      +0x401f   85 bytes  movsd_005858a6             0x005858a6
+               REP MOVSD 10-dword replacement for C3DSCamera_apply_FUN_00585870
+      +0x4074  103 bytes  movsd_0054e394             0x0054e394
+               REP MOVSD 12-dword replacement for CPlatform_updateAttachedActors_FUN_0054e320
+      +0x40db  101 bytes  movsd_0054e289             0x0054e289
+               REP MOVSD 12-dword replacement for CPlatform_attachActor_FUN_0054e1e0
+      +0x4140   91 bytes  movsd_005439ff             0x005439ff
+               REP MOVSD 11-dword replacement for CNetGame_sendSimFrameAck_FUN_00543970
+      +0x419b   94 bytes  movsd_0054384d             0x0054384d
+               REP MOVSD 11-dword replacement for CNetGame_applySimFrameHistory_FUN_00543800
+      +0x41f9   64 bytes  movsd_0052e0dc             0x0052e0dc
+               REP MOVSD 6-dword replacement for CMotionController_advanceFrameToExitPoint_FUN_0052e020
+      +0x4239   95 bytes  movsd_00526c27             0x00526c27
+               REP MOVSD 12-dword replacement for CMobster_getCarryObjToBodyXForm_FUN_00526b20
+      +0x4298   96 bytes  movsd_005207a0             0x005207a0
+               REP MOVSD 12-dword replacement for CMimic_renderMirrored_FUN_005205f0
+      +0x42f8   98 bytes  movsd_00502ae1             0x00502ae1
+               REP MOVSD 12-dword replacement for CLadder_updatePositionFromMaster_FUN_00502a70
+      +0x435a   98 bytes  movsd_00502bed             0x00502bed
+               REP MOVSD 12-dword replacement for CLadder_cacheRelativePosition_FUN_00502b80
+      +0x43bc   95 bytes  movsd_004faa3b             0x004faa3b
+               REP MOVSD 12-dword replacement for CImp_getCarryObjToBodyXForm_FUN_004fa920
+      +0x441b   95 bytes  movsd_004f8c18             0x004f8c18
+               REP MOVSD 12-dword replacement for CIcePick_getCarryObjToBodyXForm_FUN_004f8b20
+      +0x447a   91 bytes  movsd_004e84c8             0x004e84c8
+               REP MOVSD 12-dword replacement for CGhoul_getTargetPoint_FUN_004e84a0
+      +0x44d5  105 bytes  movsd_004d7070             0x004d7070
+               REP MOVSD 12-dword replacement for CGabriella_binarySearchClavicleBlend_FUN_004d6f80
+      +0x453e  101 bytes  movsd_004bf95b             0x004bf95b
+               REP MOVSD 12-dword replacement for CBulletHole_init_FUN_004bf7f0
+      +0x45a3  100 bytes  movsd_00442758             0x00442758
+               REP MOVSD 12-dword replacement for CCourse_evaluate_FUN_00442710
+      +0x4607   94 bytes  movsd_0043a233             0x0043a233
+               REP MOVSD 12-dword replacement for CCloth_orientBoneToChild_FUN_0043a110
+      +0x4665   98 bytes  movsd_0042a4a5             0x0042a4a5
+               REP MOVSD 12-dword replacement for CCharacter_renderAttachedModels_FUN_0042a420
+      +0x46c7   95 bytes  movsd_0042d349             0x0042d349
+               REP MOVSD 12-dword replacement for CCharacter_getCarryObjToBodyXForm_FUN_0042d300
+      +0x4726   96 bytes  movsd_0042bea7             0x0042bea7
+               REP MOVSD 12-dword replacement for CCharacter_dismemberPartInternal_FUN_0042bd30
+      +0x4786  104 bytes  movsd_004260fe             0x004260fe
+               REP MOVSD 12-dword replacement for CBugs_attackSwarmTarget_FUN_00425fe0
+      +0x47ee   91 bytes  movsd_00424ac8             0x00424ac8
+               REP MOVSD 12-dword replacement for CBride_getTargetPoint_FUN_00424aa0
+      +0x4849   98 bytes  movsd_00422c23             0x00422c23
+               REP MOVSD 12-dword replacement for CLightActor_process_FUN_00422a50
+      +0x48ab   99 bytes  movsd_0041cbc0             0x0041cbc0
+               REP MOVSD 12-dword replacement for CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40
+      +0x490e  104 bytes  movsd_0041a8ad             0x0041a8ad
+               REP MOVSD 12-dword replacement for CBodyPart_applyRotation_FUN_0041a630
+      +0x4976   62 bytes  movsd_005d125c             0x005d125c
+               REP MOVSD 6-dword replacement for CPoly_hasCentroidIntersection_FUN_005d1230
+      +0x49b4   62 bytes  movsd_005d12a1             0x005d12a1
+               REP MOVSD 6-dword replacement for CPoly_hasCentroidIntersection_FUN_005d1230
+      +0x49f2  103 bytes  movsd_0048ff41             0x0048ff41
+               REP MOVSD 13-dword replacement for CDSEModel_fitToExistingBIN_FUN_0048fed0
+      +0x4a59  100 bytes  movsd_0048ff51             0x0048ff51
+               REP MOVSD 13-dword replacement for CDSEModel_fitToExistingBIN_FUN_0048fed0
+      +0x4abd  106 bytes  movsd_004588cb             0x004588cb
+               REP MOVSD 13-dword replacement for loadModelBinary_FUN_00458170
+      +0x4b27  106 bytes  movsd_004588de             0x004588de
+               REP MOVSD 13-dword replacement for loadModelBinary_FUN_00458170
+      +0x4b91   94 bytes  movsd_005f717a             0x005f717a
+               REP MOVSD 12-dword replacement for lerpMatrix3x4_FUN_005f7140
+      +0x4bef  101 bytes  movsd_005c0719             0x005c0719
+               REP MOVSD 12-dword replacement for CStranger_updateWeaponPosition_FUN_005c06b0
+      +0x4c54  106 bytes  movsd_005c0752             0x005c0752
+               REP MOVSD 12-dword replacement for CStranger_updateWeaponPosition_FUN_005c06b0
+      +0x4cbe  102 bytes  movsd_005c35cd             0x005c35cd
+               REP MOVSD 12-dword replacement for CStranger_renderOpaque_FUN_005c3150
+      +0x4d24   99 bytes  movsd_0059f88c             0x0059f88c
+               REP MOVSD 12-dword replacement for CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
+      +0x4d87   94 bytes  movsd_0059f915             0x0059f915
+               REP MOVSD 12-dword replacement for CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
+      +0x4de5  102 bytes  movsd_005978b5             0x005978b5
+               REP MOVSD 12-dword replacement for CDeformableModelInstance_viewModel_FUN_005968b0
+      +0x4e4b  102 bytes  movsd_00598084             0x00598084
+               REP MOVSD 12-dword replacement for CDeformableModelInstance_viewModel_FUN_005968b0
+      +0x4eb1   95 bytes  movsd_0058acfe             0x0058acfe
+               REP MOVSD 12-dword replacement for CBoneStructure_computeLocalMatrices_FUN_0058ac80
+      +0x4f10   95 bytes  movsd_0056b0f0             0x0056b0f0
+               REP MOVSD 10-dword replacement for CDemonSet_setCameraView_FUN_0056ae50
+      +0x4f6f   98 bytes  movsd_0056b10b             0x0056b10b
+               REP MOVSD 10-dword replacement for CDemonSet_setCameraView_FUN_0056ae50
+      +0x4fd1   99 bytes  movsd_00559078             0x00559078
+               REP MOVSD 12-dword replacement for CScat_updateWeaponAttachment_FUN_00558fd0
+      +0x5034   98 bytes  movsd_005590a8             0x005590a8
+               REP MOVSD 12-dword replacement for CScat_updateWeaponAttachment_FUN_00558fd0
+      +0x5096  113 bytes  movsd_0054d53e             0x0054d53e
+               REP MOVSD 12-dword replacement for CPlatform_process_FUN_0054cc30
+      +0x5107   98 bytes  movsd_0054d572             0x0054d572
+               REP MOVSD 12-dword replacement for CPlatform_process_FUN_0054cc30
+      +0x5169   91 bytes  movsd_0054331a             0x0054331a
+               REP MOVSD 11-dword replacement for CNetGame_processServerFrame_FUN_00543150
+      +0x51c4   89 bytes  movsd_0054351f             0x0054351f
+               REP MOVSD 11-dword replacement for CNetGame_processServerFrame_FUN_00543150
+      +0x521d   98 bytes  movsd_0054108a             0x0054108a
+               REP MOVSD 11-dword replacement for CNetGame_processPacket_FUN_005406a0
+      +0x527f   88 bytes  movsd_00541186             0x00541186
+               REP MOVSD 11-dword replacement for CNetGame_processPacket_FUN_005406a0
+      +0x52d7   92 bytes  movsd_004f669b             0x004f669b
+               REP MOVSD 12-dword replacement for CHostage_getCarryObjToBodyXForm_FUN_004f6550
+      +0x5333   83 bytes  movsd_004eba4e             0x004eba4e
+               REP MOVSD 10-dword replacement for CBloodParticle_setupRenderState_FUN_004eb9d0
+      +0x5386   82 bytes  movsd_004eba5c             0x004eba5c
+               REP MOVSD 10-dword replacement for CBloodParticle_setupRenderState_FUN_004eb9d0
+      +0x53d8   93 bytes  movsd_004cc66a             0x004cc66a
+               REP MOVSD 12-dword replacement for CFlies_renderOpaque_FUN_004cc300
+      +0x5435   93 bytes  movsd_004cc678             0x004cc678
+               REP MOVSD 12-dword replacement for CFlies_renderOpaque_FUN_004cc300
+      +0x5492   91 bytes  movsd_004c03b0             0x004c03b0
+               REP MOVSD 10-dword replacement for CSpark_setupRenderState_FUN_004c0300
+      +0x54ed   82 bytes  movsd_004c03c6             0x004c03c6
+               REP MOVSD 10-dword replacement for CSpark_setupRenderState_FUN_004c0300
+      +0x553f   83 bytes  movsd_004bf26e             0x004bf26e
+               REP MOVSD 10-dword replacement for CSmokeParticle_setupRenderState_FUN_004bf1f0
+      +0x5592   82 bytes  movsd_004bf27c             0x004bf27c
+               REP MOVSD 10-dword replacement for CSmokeParticle_setupRenderState_FUN_004bf1f0
+      +0x55e4   94 bytes  movsd_004c2ee4             0x004c2ee4
+               REP MOVSD 12-dword replacement for CLaserBeam_render_FUN_004c25c0
+      +0x5642   83 bytes  movsd_004c0dfe             0x004c0dfe
+               REP MOVSD 10-dword replacement for CFireball_setupRenderState_FUN_004c0d80
+      +0x5695   82 bytes  movsd_004c0e0c             0x004c0e0c
+               REP MOVSD 10-dword replacement for CFireball_setupRenderState_FUN_004c0d80
+      +0x56e7   57 bytes  movsd_005ce85e             0x005ce85e
+               REP MOVSD 6-dword replacement for CPoly_intersectPoly_FUN_005ce580
+      +0x5720   73 bytes  movsd_005ce9ae             0x005ce9ae
+               REP MOVSD 6-dword replacement for CPoly_intersectPoly_FUN_005ce580
+      +0x5769   77 bytes  movsd_005ce9d8             0x005ce9d8
+               REP MOVSD 6-dword replacement for CPoly_intersectPoly_FUN_005ce580
+      +0x57b6   82 bytes  movsd_005cea0e             0x005cea0e
+               REP MOVSD 6-dword replacement for CPoly_intersectPoly_FUN_005ce580
+    Free space: 108536 bytes (offset 0x5808 - 0x20000)
 

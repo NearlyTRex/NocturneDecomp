@@ -5,18 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 101,
-    "complexity_score": 60,
+    "assembly_lines": 131,
+    "complexity_score": 35,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 45,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 146
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 35,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 166
   },
   "cross_references": [
     {
@@ -32,6 +30,10 @@
       [
         "00543970",
         "00543aa8"
+      ],
+      [
+        "03fc4140",
+        "03fc419a"
       ]
     ],
     "convention": "__cdecl",
@@ -156,35 +158,34 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.2592592592592595,
-    "instruction_count": 81,
+    "avg_pcode_per_instr": 4.691588785046729,
+    "instruction_count": 107,
     "opcode_distribution": {
       "BOOL_NEGATE": 21,
-      "BRANCH": 4,
+      "BRANCH": 5,
       "CALL": 5,
-      "CBRANCH": 5,
-      "COPY": 65,
-      "INT_ADD": 27,
-      "INT_AND": 78,
-      "INT_CARRY": 6,
-      "INT_EQUAL": 39,
+      "CBRANCH": 4,
+      "COPY": 86,
+      "INT_ADD": 47,
+      "INT_AND": 84,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 44,
       "INT_LEFT": 8,
       "INT_LESS": 7,
-      "INT_MULT": 4,
+      "INT_MULT": 2,
       "INT_NOTEQUAL": 10,
       "INT_OR": 20,
       "INT_SBORROW": 7,
-      "INT_SCARRY": 6,
-      "INT_SLESS": 25,
-      "INT_SUB": 30,
-      "INT_XOR": 4,
-      "INT_ZEXT": 2,
-      "LOAD": 15,
-      "POPCOUNT": 17,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 28,
+      "INT_SUB": 27,
+      "INT_XOR": 5,
+      "LOAD": 25,
+      "POPCOUNT": 20,
       "RETURN": 1,
-      "STORE": 20
+      "STORE": 30
     },
-    "pcode_op_count": 426
+    "pcode_op_count": 502
   },
   "stack_frame": {
     "frame_size": 80,
@@ -223,14 +224,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(SPlayerControl *)((int)",
-      "severity": "mild",
-      "text": "pSVar2 = (SPlayerControl *)((int)pSVar2 + (uint)bVar4 * -8 + 4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

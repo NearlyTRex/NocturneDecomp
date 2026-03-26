@@ -1,6 +1,6 @@
 // Name: core_zombie.cpp_CZombie_renderTransparent_FUN_005fbe70
 // Address: 005fbe70
-// Address Range: [[005fbe70, 005fbfce]]
+// Address Range: [[005fbe70, 005fbfce] [03fc3940, 03fc39a9]]
 // Convention: __cdecl
 // Signature: int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_005fbe70(CZombie *this_ptr)
 
@@ -29,21 +29,11 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_005fbe70(CZombie *this
   CVector3f local_28;
   CVector3f local_1c;
   
-  bVar5 = 0;
   if (((this_ptr->base).base.was_rendered_opaque != 0) && (this_ptr->is_miner_zombie != 0)) {
     core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
               (&(this_ptr->base).base.model,this_ptr->bone_indices[0],&local_c4);
     local_70.y = 0.5;
     local_70.z = 0.5;
-    pCVar3 = &local_c4;
-    pCVar4 = &local_f4;
-    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);
-      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
-      pCVar4->m[0].w = pCVar3->m[0].w;
-      pCVar3 = pCVar3;
-      pCVar4 = pCVar4;
-    }
     local_70.x = 0.0;
     pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_94,&local_70,&local_f4);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

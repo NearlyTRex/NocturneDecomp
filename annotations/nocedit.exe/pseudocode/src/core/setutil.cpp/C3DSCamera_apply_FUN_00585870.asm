@@ -55,12 +55,11 @@ section .text
     MOV dword ptr [EAX + 0x4],ECX       ; 0058589d
     MOV ECX,dword ptr [EDX + 0x8]       ; 005858a0
     MOV dword ptr [EAX + 0x8],ECX       ; 005858a3
-    MOV ECX,0xa                         ; 005858a6
+    JMP 0x03fc401f                      ; 005858a6
+        ;   XREF to: 03fc401f (UNCONDITIONAL_JUMP)  ; LAB_03fc401f
         ;   Label: LAB_005858a6
-    LEA ESI,[EBX + 0x118]               ; 005858ab
-    LEA EDI,[EBP + 0x10]                ; 005858b1
-    MOVSD.REP ES:EDI,ESI                ; 005858b4
     FLD float ptr [EBX + 0x144]         ; 005858b6
+        ;   Label: LAB_005858b6
     LEA EDI,[EBP + 0x40]                ; 005858bc
     MOV ESI,EBX                         ; 005858bf
     FSTP float ptr [EBP + 0x38]         ; 005858c1
@@ -134,4 +133,33 @@ section .text
     POP ESI                             ; 0058596c
     POP EBX                             ; 0058596d
     RET                                 ; 0058596e
+    MOV ECX,0xa                         ; 03fc401f
+        ;   Label: LAB_03fc401f
+    LEA ESI,[EBX + 0x118]               ; 03fc4024
+    LEA EDI,[EBP + 0x10]                ; 03fc402a
+    MOV ECX,dword ptr [ESI]             ; 03fc402d
+    MOV dword ptr [EDI],ECX             ; 03fc402f
+    MOV ECX,dword ptr [ESI + 0x4]       ; 03fc4031
+    MOV dword ptr [EDI + 0x4],ECX       ; 03fc4034
+    MOV ECX,dword ptr [ESI + 0x8]       ; 03fc4037
+    MOV dword ptr [EDI + 0x8],ECX       ; 03fc403a
+    MOV ECX,dword ptr [ESI + 0xc]       ; 03fc403d
+    MOV dword ptr [EDI + 0xc],ECX       ; 03fc4040
+    MOV ECX,dword ptr [ESI + 0x10]      ; 03fc4043
+    MOV dword ptr [EDI + 0x10],ECX      ; 03fc4046
+    MOV ECX,dword ptr [ESI + 0x14]      ; 03fc4049
+    MOV dword ptr [EDI + 0x14],ECX      ; 03fc404c
+    MOV ECX,dword ptr [ESI + 0x18]      ; 03fc404f
+    MOV dword ptr [EDI + 0x18],ECX      ; 03fc4052
+    MOV ECX,dword ptr [ESI + 0x1c]      ; 03fc4055
+    MOV dword ptr [EDI + 0x1c],ECX      ; 03fc4058
+    MOV ECX,dword ptr [ESI + 0x20]      ; 03fc405b
+    MOV dword ptr [EDI + 0x20],ECX      ; 03fc405e
+    MOV ECX,dword ptr [ESI + 0x24]      ; 03fc4061
+    MOV dword ptr [EDI + 0x24],ECX      ; 03fc4064
+    ADD ESI,0x28                        ; 03fc4067
+    ADD EDI,0x28                        ; 03fc406a
+    XOR ECX,ECX                         ; 03fc406d
+    JMP 0x005858b6                      ; 03fc406f
+        ;   XREF to: 005858b6 (UNCONDITIONAL_JUMP)  ; LAB_005858b6
 

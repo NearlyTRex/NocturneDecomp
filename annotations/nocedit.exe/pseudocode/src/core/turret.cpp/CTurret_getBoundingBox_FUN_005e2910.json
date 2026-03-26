@@ -5,20 +5,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 164,
-    "complexity_score": 157,
+    "assembly_lines": 196,
+    "complexity_score": 122,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 72,
-    "suspect_count": 7,
+    "pseudocode_lines": 62,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 236
+    "total_lines": 258
   },
   "cross_references": [],
   "function": {
@@ -27,6 +26,10 @@
       [
         "005e2910",
         "005e2b12"
+      ],
+      [
+        "03fc3be0",
+        "03fc3c3c"
       ]
     ],
     "convention": "__cdecl",
@@ -97,38 +100,37 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.541095890410959,
-    "instruction_count": 146,
+    "avg_pcode_per_instr": 4.281609195402299,
+    "instruction_count": 174,
     "opcode_distribution": {
       "BOOL_NEGATE": 10,
-      "BRANCH": 1,
+      "BRANCH": 2,
       "CALL": 13,
-      "CBRANCH": 3,
-      "COPY": 149,
+      "CBRANCH": 2,
+      "COPY": 172,
       "FLOAT2FLOAT": 2,
-      "INT_ADD": 81,
-      "INT_AND": 74,
-      "INT_CARRY": 17,
-      "INT_EQUAL": 56,
+      "INT_ADD": 103,
+      "INT_AND": 80,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 61,
       "INT_LEFT": 4,
       "INT_LESS": 5,
-      "INT_MULT": 4,
+      "INT_MULT": 2,
       "INT_NOTEQUAL": 5,
       "INT_OR": 10,
       "INT_SBORROW": 5,
-      "INT_SCARRY": 18,
-      "INT_SLESS": 30,
-      "INT_SUB": 50,
-      "INT_XOR": 3,
-      "INT_ZEXT": 2,
-      "LOAD": 31,
-      "POPCOUNT": 26,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 33,
+      "INT_SUB": 47,
+      "INT_XOR": 4,
+      "LOAD": 42,
+      "POPCOUNT": 29,
       "RETURN": 2,
       "ROUND": 2,
-      "STORE": 58,
+      "STORE": 69,
       "TRUNC": 2
     },
-    "pcode_op_count": 663
+    "pcode_op_count": 745
   },
   "stack_frame": {
     "frame_size": 268,
@@ -227,7 +229,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 32,
       "match": "ROUND",
       "severity": "mild",
       "text": "pCVar4 = pCVar2->frame_bounds + (int)ROUND(ROUND(fVar1)) * 2;",
@@ -235,31 +237,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 32,
       "match": "ROUND",
       "severity": "mild",
       "text": "pCVar4 = pCVar2->frame_bounds + (int)ROUND(ROUND(fVar1)) * 2;",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 50,
       "match": "ROUND",
       "severity": "mild",
       "text": "pCVar4 = pCVar1->frame_bounds + (int)ROUND(ROUND(fVar2)) * 2;",
@@ -267,7 +253,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 50,
       "match": "ROUND",
       "severity": "mild",
       "text": "pCVar4 = pCVar1->frame_bounds + (int)ROUND(ROUND(fVar2)) * 2;",

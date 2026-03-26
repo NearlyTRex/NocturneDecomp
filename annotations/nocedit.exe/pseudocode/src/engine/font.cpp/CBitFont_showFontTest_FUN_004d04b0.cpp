@@ -1,6 +1,6 @@
 // Name: engine_font.cpp_CBitFont_showFontTest_FUN_004d04b0
 // Address: 004d04b0
-// Address Range: [[004d04b0, 004d0841]]
+// Address Range: [[004d04b0, 004d0841] [03fc377d, 03fc37be]]
 // Convention: __cdecl
 // Signature: void __cdecl engine_font_cpp_CBitFont_showFontTest_FUN_004d04b0(CBitFont *this_ptr,int screen_height)
 
@@ -23,7 +23,6 @@ void __cdecl engine_font_cpp_CBitFont_showFontTest_FUN_004d04b0(CBitFont *this_p
   char local_30 [28];
   int local_14;
   
-  bVar7 = 0;
   iVar5 = 0x20;
   engine_2d_c_fillRectColor_FUN_00403170(g_ClipLeft,g_ClipTop,g_ClipRight,g_ClipBottom,0);
   iVar3 = 10;
@@ -85,15 +84,34 @@ void __cdecl engine_font_cpp_CBitFont_showFontTest_FUN_004d04b0(CBitFont *this_p
   iVar6 = iVar6 + iVar4 * 2;
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (this_ptr,"One newline:\nTwo newlines:\n\nThree newlines:\n\n\nStop.",0x1c2,iVar6,6,-1);
-  pcVar4 = "CART Precision Racing v1.00";
-  pcVar6 = local_30;
-  for (iVar7 = 7; iVar7 != 0; iVar7 = iVar7 + -1) {
-    pcVar6 = pcVar6 + (uint)bVar7 * -8 + 4;
-    pcVar4 = pcVar4 + (uint)bVar7 * -8 + 4;
-    *(uint *)pcVar6 = *(uint *)pcVar4;
-    pcVar4 = pcVar4;
-    pcVar6 = pcVar6;
-  }
+  local_30[0] = "CART Precision Racing v1.00"[0];
+  local_30[1] = "CART Precision Racing v1.00"[1];
+  local_30[2] = "CART Precision Racing v1.00"[2];
+  local_30[3] = "CART Precision Racing v1.00"[3];
+  local_30[4] = "CART Precision Racing v1.00"[4];
+  local_30[5] = "CART Precision Racing v1.00"[5];
+  local_30[6] = "CART Precision Racing v1.00"[6];
+  local_30[7] = "CART Precision Racing v1.00"[7];
+  local_30[8] = "CART Precision Racing v1.00"[8];
+  local_30[9] = "CART Precision Racing v1.00"[9];
+  local_30[10] = "CART Precision Racing v1.00"[10];
+  local_30[0xb] = "CART Precision Racing v1.00"[0xb];
+  local_30[0xc] = "CART Precision Racing v1.00"[0xc];
+  local_30[0xd] = "CART Precision Racing v1.00"[0xd];
+  local_30[0xe] = "CART Precision Racing v1.00"[0xe];
+  local_30[0xf] = "CART Precision Racing v1.00"[0xf];
+  local_30[0x10] = "CART Precision Racing v1.00"[0x10];
+  local_30[0x11] = "CART Precision Racing v1.00"[0x11];
+  local_30[0x12] = "CART Precision Racing v1.00"[0x12];
+  local_30[0x13] = "CART Precision Racing v1.00"[0x13];
+  local_30[0x14] = "CART Precision Racing v1.00"[0x14];
+  local_30[0x15] = "CART Precision Racing v1.00"[0x15];
+  local_30[0x16] = "CART Precision Racing v1.00"[0x16];
+  local_30[0x17] = "CART Precision Racing v1.00"[0x17];
+  local_30[0x18] = "CART Precision Racing v1.00"[0x18];
+  local_30[0x19] = "CART Precision Racing v1.00"[0x19];
+  local_30[0x1a] = "CART Precision Racing v1.00"[0x1a];
+  local_30[0x1b] = "CART Precision Racing v1.00"[0x1b];
   engine_font_cpp_CBitFont_drawText_FUN_004cda80(this_ptr,local_30,0x82,iVar6,0xf8,0);
   engine_font_cpp_CBitFont_drawText_FUN_004cda80(this_ptr,local_30,0x82,iVar6 + iVar4,0xf9,0);
   iVar6 = iVar6 + iVar4 + iVar4;

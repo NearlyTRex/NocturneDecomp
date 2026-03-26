@@ -1,6 +1,6 @@
 // Name: core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
 // Address: 0056ae50
-// Address Range: [[0056ae50, 0056b789] [00604a35, 00604a5b]]
+// Address Range: [[0056ae50, 0056b789] [00604a35, 00604a5b] [03fc4f10, 03fc4fd0]]
 // Convention: __cdecl
 // Signature: void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_ptr,int index)
 
@@ -27,8 +27,6 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   SFog *pSVar11;
   int iVar12;
   int *piVar13;
-  float *pfVar9;
-  CMatrix3x3f *pCVar10;
   int *piVar14;
   C3DSCamera *this_ptr_02;
   int *piVar15;
@@ -56,7 +54,6 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   int iVar4;
   uint *puVar1;
   
-  bVar16 = 0;
   if ((index < 0) || (this_ptr->camera_count <= index)) {
     g_CurrentFilename = "..\\core\\set.cpp";
     g_CurrentLineNumber = 0x416;
@@ -256,22 +253,15 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
     local_48.y = g_CDemonCameraInstance.base.position.f.y;
     local_48.z = g_CDemonCameraInstance.base.position.f.z;
   }
-  pCVar9 = &g_CDemonCameraInstance.base.rotation_matrix;
-  pfVar9 = local_d4;
-  for (iVar5 = 10; iVar5 != 0; iVar5 = iVar5 + -1) {
-    pCVar9 = (CMatrix3x3f *)((int)pCVar9 + (uint)bVar16 * -8 + 4);
-    *pfVar9 = pCVar9->m[0].x;
-    pCVar9 = pCVar9;
-    pfVar9 = pfVar9 + (uint)bVar16 * -2 + 1;
-  }
-  pfVar10 = local_d4;
-  pCVar10 = &local_ac;
-  for (iVar5 = 10; iVar5 != 0; iVar5 = iVar5 + -1) {
-    pfVar10 = pfVar10 + (uint)bVar16 * -2 + 1;
-    pCVar10->m[0].x = *pfVar10;
-    pfVar10 = pfVar10;
-    pCVar10 = (CMatrix3x3f *)((int)pCVar10 + ((uint)bVar16 * -2 + 1) * 4);
-  }
+  local_ac.m[0].x = g_CDemonCameraInstance.base.rotation_matrix.m[0].x;
+  local_ac.m[0].y = g_CDemonCameraInstance.base.rotation_matrix.m[0].y;
+  local_ac.m[0].z = g_CDemonCameraInstance.base.rotation_matrix.m[0].z;
+  local_ac.m[1].x = g_CDemonCameraInstance.base.rotation_matrix.m[1].x;
+  local_ac.m[1].y = g_CDemonCameraInstance.base.rotation_matrix.m[1].y;
+  local_ac.m[1].z = g_CDemonCameraInstance.base.rotation_matrix.m[1].z;
+  local_ac.m[2].x = g_CDemonCameraInstance.base.rotation_matrix.m[2].x;
+  local_ac.m[2].y = g_CDemonCameraInstance.base.rotation_matrix.m[2].y;
+  local_ac.m[2].z = g_CDemonCameraInstance.base.rotation_matrix.m[2].z;
   pCVar5 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(&local_ac,&local_60);
   if (&local_3c != pCVar5) {
     local_3c.x = pCVar5->x;

@@ -5,19 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 80,
-    "complexity_score": 86,
+    "assembly_lines": 112,
+    "complexity_score": 65,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 3,
+    "pseudocode_lines": 50,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 126
+    "total_lines": 162
   },
   "cross_references": [],
   "function": {
@@ -26,6 +25,10 @@
       [
         "005da120",
         "005da238"
+      ],
+      [
+        "03fc3c9c",
+        "03fc3cfa"
       ]
     ],
     "convention": "__stack2_esi",
@@ -54,35 +57,34 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.138888888888889,
-    "instruction_count": 72,
+    "avg_pcode_per_instr": 4.52,
+    "instruction_count": 100,
     "opcode_distribution": {
       "BOOL_NEGATE": 16,
-      "BRANCH": 1,
+      "BRANCH": 2,
       "CALL": 2,
-      "CBRANCH": 4,
-      "COPY": 63,
-      "INT_ADD": 40,
-      "INT_AND": 64,
-      "INT_CARRY": 7,
-      "INT_EQUAL": 34,
+      "CBRANCH": 3,
+      "COPY": 86,
+      "INT_ADD": 62,
+      "INT_AND": 70,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 39,
       "INT_LEFT": 6,
       "INT_LESS": 4,
-      "INT_MULT": 3,
+      "INT_MULT": 1,
       "INT_NOTEQUAL": 6,
       "INT_OR": 15,
       "INT_SBORROW": 4,
-      "INT_SCARRY": 7,
-      "INT_SLESS": 21,
-      "INT_SUB": 20,
-      "INT_XOR": 3,
-      "INT_ZEXT": 2,
-      "LOAD": 9,
-      "POPCOUNT": 15,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 24,
+      "INT_SUB": 17,
+      "INT_XOR": 4,
+      "LOAD": 20,
+      "POPCOUNT": 18,
       "RETURN": 1,
-      "STORE": 23
+      "STORE": 34
     },
-    "pcode_op_count": 370
+    "pcode_op_count": 452
   },
   "stack_frame": {
     "frame_size": 180,
@@ -157,22 +159,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar3 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

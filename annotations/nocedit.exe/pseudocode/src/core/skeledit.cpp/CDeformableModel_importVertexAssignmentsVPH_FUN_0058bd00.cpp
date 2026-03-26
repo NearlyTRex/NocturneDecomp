@@ -1,6 +1,6 @@
 // Name: core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
 // Address: 0058bd00
-// Address Range: [[0058bd00, 0058c188]]
+// Address Range: [[0058bd00, 0058c188] [03fc3e88, 03fc3eef]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00(CDeformableModel *this_ptr,char *filename,CBoneStructure *bone_structure)
 
@@ -20,7 +20,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
   int iVar8;
   CMatrix3x4f *pCVar9;
   byte bVar10;
-  byte bVar3;
   int aiStack_430 [200];
   byte local_110 [2];
   int local_10e;
@@ -47,7 +46,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
   _FILE *file;
   byte *pbVar1;
   
-  bVar3 = 0;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Importing vertex assignments from %s...",filename);
   local_28 = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -133,15 +131,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
       local_1c = local_20;
       for (local_18 = 0; local_18 < (int)(uint)*local_20; local_18 = local_18 + 1) {
         core_xform_cpp_inverse_FUN_005f6210(&local_24[local_1c[1]].world_matrix,&local_d8);
-        pCVar7 = &local_d8;
-        pCVar9 = &local_a8;
-        for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-          pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar3 * -8 + 4);
-          pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar3 * -8 + 4);
-          pCVar9->m[0].w = pCVar7->m[0].w;
-          pCVar7 = pCVar7;
-          pCVar9 = pCVar9;
-        }
         pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_4c,&local_58,&local_a8);
         if (pCVar5 != pCVar4) {
           pCVar5->x = pCVar4->x;

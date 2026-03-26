@@ -26,7 +26,7 @@
 ;   TerminatedCString s_s_2_00pm_21_000_isn_t_Uh_0062a7f3
 ;   TerminatedCString s_One_newline_Two_newlines_0062a810
 ;   TerminatedCString s_Here_is_a_newline_Next_l_0062a844
-;   ... and 7 more
+;   ... and 5 more
 ;
 ; Called Functions:
 ;   engine_2d.c_fillRectColor_FUN_00403170
@@ -299,14 +299,11 @@ section .text
     MOV ESI,0x67b568                    ; 004d071a | = "CART Precision Racing v1.00"
     PUSH 0x82                           ; 004d071f
     LEA EAX,[EBP + -0x20]               ; 004d0724
-    MOV ECX,0x7                         ; 004d0727
-    PUSH EAX                            ; 004d072c
-    MOV EAX,dword ptr [EBP + 0x14]      ; 004d072d
-    LEA EDI,[EBP + -0x20]               ; 004d0730
-    PUSH EAX                            ; 004d0733
-    MOVSD.REP ES:EDI,ESI                ; 004d0734 | = "CART Precision Racing v1.00" | DAT_54524143 | s_Precision_Racing_v1_00_0067b56c
+    JMP 0x03fc377d                      ; 004d0727
+        ;   XREF to: 03fc377d (UNCONDITIONAL_JUMP)  ; LAB_03fc377d
     CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 004d0736
         ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)
+        ;   Label: LAB_004d0736
     ADD ESP,0x18                        ; 004d073b
     PUSH 0x0                            ; 004d073e
     MOV EDX,dword ptr [EBP + -0x4]      ; 004d0740
@@ -412,4 +409,29 @@ section .text
     POP ESI                             ; 004d083f
     POP EBX                             ; 004d0840
     RET                                 ; 004d0841
+    MOV ECX,0x7                         ; 03fc377d
+        ;   Label: LAB_03fc377d
+    PUSH EAX                            ; 03fc3782
+    MOV EAX,dword ptr [EBP + 0x14]      ; 03fc3783
+    LEA EDI,[EBP + -0x20]               ; 03fc3786
+    PUSH EAX                            ; 03fc3789
+    MOV ECX,dword ptr [ESI]             ; 03fc378a
+    MOV dword ptr [EDI],ECX             ; 03fc378c
+    MOV ECX,dword ptr [ESI + 0x4]       ; 03fc378e
+    MOV dword ptr [EDI + 0x4],ECX       ; 03fc3791
+    MOV ECX,dword ptr [ESI + 0x8]       ; 03fc3794
+    MOV dword ptr [EDI + 0x8],ECX       ; 03fc3797
+    MOV ECX,dword ptr [ESI + 0xc]       ; 03fc379a
+    MOV dword ptr [EDI + 0xc],ECX       ; 03fc379d
+    MOV ECX,dword ptr [ESI + 0x10]      ; 03fc37a0
+    MOV dword ptr [EDI + 0x10],ECX      ; 03fc37a3
+    MOV ECX,dword ptr [ESI + 0x14]      ; 03fc37a6
+    MOV dword ptr [EDI + 0x14],ECX      ; 03fc37a9
+    MOV ECX,dword ptr [ESI + 0x18]      ; 03fc37ac
+    MOV dword ptr [EDI + 0x18],ECX      ; 03fc37af
+    ADD ESI,0x1c                        ; 03fc37b2
+    ADD EDI,0x1c                        ; 03fc37b5
+    XOR ECX,ECX                         ; 03fc37b8
+    JMP 0x004d0736                      ; 03fc37ba
+        ;   XREF to: 004d0736 (UNCONDITIONAL_JUMP)  ; LAB_004d0736
 

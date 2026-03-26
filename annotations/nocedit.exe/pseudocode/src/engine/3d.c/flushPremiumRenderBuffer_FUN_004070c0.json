@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 143,
-    "complexity_score": 111,
+    "assembly_lines": 175,
+    "complexity_score": 103,
     "cross_reference_count": 0,
     "function_call_count": 4,
-    "global_count": 18,
+    "global_count": 15,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 86,
-    "suspect_count": 2,
+    "pseudocode_lines": 88,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 229
+    "total_lines": 263
   },
   "cross_references": [],
   "function": {
@@ -25,6 +25,10 @@
       [
         "004070c0",
         "00407280"
+      ],
+      [
+        "03fc38df",
+        "03fc393f"
       ]
     ],
     "convention": "__cdecl",
@@ -67,26 +71,8 @@
       "value": "0xff"
     },
     {
-      "addr": "00688014",
-      "name": "g_RenderVertexBuffer",
-      "type": "SRenderVertex[16]",
-      "value": null
-    },
-    {
-      "addr": "00688018",
-      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_y",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "00688040",
       "name": "g_RenderVertexBuffer[0].a",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00688044",
-      "name": "g_RenderVertexBuffer[1].projected_vertex.transformed_x",
       "type": "undefined4",
       "value": null
     },
@@ -172,36 +158,35 @@
     "estimated_params": 0
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.271929824561403,
-    "instruction_count": 114,
+    "avg_pcode_per_instr": 4.007042253521127,
+    "instruction_count": 142,
     "opcode_distribution": {
       "BOOL_NEGATE": 3,
       "BOOL_OR": 3,
-      "BRANCH": 4,
+      "BRANCH": 5,
       "CALL": 4,
-      "CBRANCH": 11,
-      "COPY": 97,
-      "INT_ADD": 44,
-      "INT_AND": 64,
-      "INT_CARRY": 11,
-      "INT_EQUAL": 61,
+      "CBRANCH": 10,
+      "COPY": 120,
+      "INT_ADD": 66,
+      "INT_AND": 70,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 66,
       "INT_LESS": 7,
-      "INT_MULT": 4,
+      "INT_MULT": 2,
       "INT_NOTEQUAL": 7,
       "INT_SBORROW": 7,
-      "INT_SCARRY": 13,
+      "INT_SCARRY": 15,
       "INT_SEXT": 3,
-      "INT_SLESS": 30,
-      "INT_SUB": 26,
-      "INT_XOR": 6,
-      "INT_ZEXT": 2,
-      "LOAD": 22,
-      "POPCOUNT": 30,
+      "INT_SLESS": 33,
+      "INT_SUB": 23,
+      "INT_XOR": 7,
+      "LOAD": 33,
+      "POPCOUNT": 33,
       "RETURN": 1,
-      "STORE": 25,
+      "STORE": 36,
       "SUBPIECE": 2
     },
-    "pcode_op_count": 487
+    "pcode_op_count": 569
   },
   "stack_frame": {
     "frame_size": 20,
@@ -229,15 +214,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
+      "line": 72,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_ProcessedVertexIndices + iVar1) = iVar3;",

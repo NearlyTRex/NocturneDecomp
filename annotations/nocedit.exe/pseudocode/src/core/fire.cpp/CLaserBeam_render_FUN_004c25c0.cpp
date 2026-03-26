@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CLaserBeam_render_FUN_004c25c0
 // Address: 004c25c0
-// Address Range: [[004c25c0, 004c2d4b] [004c2d69, 004c304f] [004c3053, 004c3865]]
+// Address Range: [[004c25c0, 004c2d4b] [004c2d69, 004c304f] [004c3053, 004c3865] [03fc55e4, 03fc5641]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
 
@@ -301,14 +301,19 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
                (float10)3.1415926535000001;
       fVar11 = (float10)fsin(fVar12);
       fVar12 = (float10)fcos(fVar12);
-      pSVar7 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-      pSVar10 = g_CDemonRendererPtr2->vertex_buffer_ptr + 3;
-      for (iVar9 = 0xc; iVar9 != 0; iVar9 = iVar9 + -1) {
-        pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar9 * -8 + 4);
-        (pSVar10->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
-        pSVar7 = pSVar7;
-        pSVar10 = (SRenderVertex *)((int)pSVar10 + (uint)bVar9 * -8 + 4);
-      }
+      pSVar10 = g_CDemonRendererPtr2->vertex_buffer_ptr;
+      pSVar10[3].projected_vertex.transformed_x = (pSVar10->projected_vertex).transformed_x;
+      pSVar10[3].projected_vertex.transformed_y = (pSVar10->projected_vertex).transformed_y;
+      pSVar10[3].projected_vertex.transformed_z = (pSVar10->projected_vertex).transformed_z;
+      pSVar10[3].projected_vertex.inv_z = (pSVar10->projected_vertex).inv_z;
+      pSVar10[3].projected_vertex.screen_x = (pSVar10->projected_vertex).screen_x;
+      pSVar10[3].projected_vertex.screen_y = (pSVar10->projected_vertex).screen_y;
+      pSVar10[3].u = pSVar10->u;
+      pSVar10[3].v = pSVar10->v;
+      pSVar10[3].r = pSVar10->r;
+      pSVar10[3].g = pSVar10->g;
+      pSVar10[3].b = pSVar10->b;
+      pSVar10[3].a = pSVar10->a;
       pSVar10 = pCVar4->vertex_buffer_ptr;
       pSVar8 = pSVar10 + 1;
       pSVar10 = pSVar10 + 2;

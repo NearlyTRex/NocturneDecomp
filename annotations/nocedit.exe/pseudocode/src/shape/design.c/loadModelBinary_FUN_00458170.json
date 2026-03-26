@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 67,
-        "line": 67,
+        "line": 64,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 186,
+        "line": 183,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -18,18 +18,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 735,
-    "complexity_score": 275,
+    "assembly_lines": 803,
+    "complexity_score": 243,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 38,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 260,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 995
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 243,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 1046
   },
   "cross_references": [
     {
@@ -49,6 +47,10 @@
       [
         "004587e9",
         "00458a0d"
+      ],
+      [
+        "03fc4abd",
+        "03fc4b90"
       ]
     ],
     "convention": "__cdecl",
@@ -389,42 +391,41 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.893169877408056,
-    "instruction_count": 571,
+    "avg_pcode_per_instr": 4.706814580031696,
+    "instruction_count": 631,
     "opcode_distribution": {
       "BOOL_NEGATE": 26,
       "BOOL_OR": 9,
-      "BRANCH": 32,
+      "BRANCH": 34,
       "CALL": 50,
-      "CBRANCH": 41,
-      "COPY": 577,
+      "CBRANCH": 39,
+      "COPY": 627,
       "FLOAT2FLOAT": 21,
       "FLOAT_DIV": 3,
       "FLOAT_MULT": 9,
       "INT2FLOAT": 9,
-      "INT_ADD": 253,
-      "INT_AND": 272,
-      "INT_CARRY": 56,
-      "INT_EQUAL": 238,
+      "INT_ADD": 301,
+      "INT_AND": 284,
+      "INT_CARRY": 60,
+      "INT_EQUAL": 248,
       "INT_LEFT": 8,
       "INT_LESS": 48,
-      "INT_MULT": 25,
+      "INT_MULT": 21,
       "INT_NOTEQUAL": 29,
       "INT_OR": 20,
       "INT_SBORROW": 48,
-      "INT_SCARRY": 62,
+      "INT_SCARRY": 66,
       "INT_SEXT": 63,
-      "INT_SLESS": 122,
-      "INT_SUB": 230,
-      "INT_XOR": 4,
-      "INT_ZEXT": 4,
-      "LOAD": 159,
-      "POPCOUNT": 114,
+      "INT_SLESS": 128,
+      "INT_SUB": 224,
+      "INT_XOR": 6,
+      "LOAD": 183,
+      "POPCOUNT": 120,
       "RETURN": 1,
-      "STORE": 219,
+      "STORE": 243,
       "SUBPIECE": 42
     },
-    "pcode_op_count": 2794
+    "pcode_op_count": 2970
   },
   "stack_frame": {
     "frame_size": 416,
@@ -687,14 +688,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 233,
-      "match": "(SMRGLModelBounds *)((int)",
-      "severity": "mild",
-      "text": "pSVar4 = (SMRGLModelBounds *)((int)pSVar4 + (uint)bVar8 * -8 + 4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

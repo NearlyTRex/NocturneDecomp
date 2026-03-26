@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 137,
-    "complexity_score": 128,
+    "assembly_lines": 169,
+    "complexity_score": 118,
     "cross_reference_count": 0,
     "function_call_count": 3,
-    "global_count": 21,
+    "global_count": 16,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 83,
-    "suspect_count": 4,
+    "pseudocode_lines": 93,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 220
+    "total_lines": 262
   },
   "cross_references": [],
   "function": {
@@ -25,6 +25,10 @@
       [
         "00407470",
         "00407618"
+      ],
+      [
+        "03fc387e",
+        "03fc38de"
       ]
     ],
     "convention": "__cdecl",
@@ -62,18 +66,6 @@
       "value": "0xff"
     },
     {
-      "addr": "00688014",
-      "name": "g_RenderVertexBuffer",
-      "type": "SRenderVertex[16]",
-      "value": null
-    },
-    {
-      "addr": "00688018",
-      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_y",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "00772af8",
       "name": "g_RenderBufferEnabled",
       "type": "int",
@@ -92,26 +84,8 @@
       "value": null
     },
     {
-      "addr": "00772b04",
-      "name": "g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_x",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00772b08",
-      "name": "g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_y",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "00772b0c",
       "name": "g_RenderBufferPool[0].vertices[0].projected_vertex.transformed_z",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00772b34",
-      "name": "g_RenderBufferPool[0].vertices[1].projected_vertex.transformed_x",
       "type": "undefined4",
       "value": null
     },
@@ -185,39 +159,39 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.918181818181818,
-    "instruction_count": 110,
+    "avg_pcode_per_instr": 4.5144927536231885,
+    "instruction_count": 138,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 14,
       "BOOL_OR": 2,
-      "BRANCH": 6,
+      "BRANCH": 7,
       "CALL": 3,
-      "CBRANCH": 12,
-      "COPY": 88,
-      "INT_ADD": 47,
-      "INT_AND": 83,
-      "INT_CARRY": 11,
-      "INT_EQUAL": 64,
+      "CBRANCH": 11,
+      "COPY": 111,
+      "INT_ADD": 69,
+      "INT_AND": 89,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 69,
       "INT_LEFT": 4,
       "INT_LESS": 10,
-      "INT_MULT": 8,
+      "INT_MULT": 6,
       "INT_NOTEQUAL": 8,
       "INT_OR": 10,
       "INT_SBORROW": 10,
-      "INT_SCARRY": 13,
+      "INT_SCARRY": 15,
       "INT_SEXT": 3,
-      "INT_SLESS": 33,
-      "INT_SUB": 28,
-      "INT_XOR": 3,
-      "INT_ZEXT": 4,
-      "LOAD": 27,
-      "POPCOUNT": 29,
+      "INT_SLESS": 36,
+      "INT_SUB": 25,
+      "INT_XOR": 4,
+      "INT_ZEXT": 2,
+      "LOAD": 38,
+      "POPCOUNT": 32,
       "RETURN": 1,
-      "STORE": 17,
+      "STORE": 28,
       "SUBPIECE": 2
     },
-    "pcode_op_count": 541
+    "pcode_op_count": 623
   },
   "stack_frame": {
     "frame_size": 8,
@@ -238,23 +212,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
+      "line": 87,
       "match": "(SMRGLTextureBasic *)((int)",
       "severity": "mild",
       "text": "pSVar4 = (SMRGLTextureBasic *)((int)pSVar4 + (uint)bVar10 * -8 + 4);",
@@ -262,7 +220,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 95,
       "match": "(SMRGLHeaderExtended *)((int)",
       "severity": "mild",
       "text": "return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);",

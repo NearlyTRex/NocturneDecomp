@@ -1,6 +1,6 @@
 // Name: core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
 // Address: 005406a0
-// Address Range: [[005406a0, 005411b2] [0060cafa, 0060cb49]]
+// Address Range: [[005406a0, 005411b2] [0060cafa, 0060cb49] [03fc521d, 03fc52d6]]
 // Convention: __cdecl
 // Signature: void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this_ptr,SNetworkAddr *source_addr,UNetPacket *packet)
 
@@ -31,7 +31,6 @@ void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this
   int iVar11;
   SNetPlayer *pSVar8;
   SPlayerControl *pSVar9;
-  SPlayerControl *pSVar12;
   byte bVar10;
   float local_f0;
   float local_ec;
@@ -60,7 +59,6 @@ void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this
   char *pcVar11;
   char cVar1;
   
-  bVar10 = 0;
   uVar2 = core_netgame_cpp_CNetGame_findPlayerByAddr_FUN_00541260(this_ptr,source_addr);
   local_1c = (SNetPlayer *)0x0;
   if (-1 < (int)uVar2) {
@@ -398,15 +396,25 @@ LAB_00541015:
           g_CurrentLineNumber = 0x596;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Player list mismatch processing SimFrame Update packet!");
         }
-        pSVar6 = (SPlayerControl *)((local_18->player_control).controls.action_states + 2);
-        pSVar9 = dest->player_controls + iVar6;
-        for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
-          pSVar9 = (SPlayerControl *)((int)pSVar9 + (uint)bVar10 * -8 + 4);
-          pSVar6 = (SPlayerControl *)((int)pSVar6 + (uint)bVar10 * -8 + 4);
-          pSVar9->action_states[0] = pSVar6->action_states[0];
-          pSVar6 = pSVar6;
-          pSVar9 = pSVar9;
-        }
+        dest->player_controls[iVar6].action_states[0] =
+             (local_18->sim_frame).frame.player_controls[0].action_states[0];
+        dest->player_controls[iVar6].action_states[1] =
+             (local_18->sim_frame).frame.player_controls[0].action_states[1];
+        dest->player_controls[iVar6].action_states[2] =
+             (local_18->sim_frame).frame.player_controls[0].action_states[2];
+        dest->player_controls[iVar6].action_states[3] = (local_18->player_state).ready_flag;
+        dest->player_controls[iVar6].action_states[4] = (local_18->player_announce).hero_number;
+        dest->player_controls[iVar6].action_states[5] = (local_18->player_announce).aim_mode;
+        dest->player_controls[iVar6].action_states[6] =
+             (local_18->sim_frame).frame.player_controls[0].action_states[6];
+        dest->player_controls[iVar6].action_states[7] =
+             (local_18->sim_frame).frame.player_controls[0].action_states[7];
+        dest->player_controls[iVar6].strafe_speed =
+             (local_18->sim_frame).frame.player_controls[0].strafe_speed;
+        dest->player_controls[iVar6].turn_speed =
+             (local_18->sim_frame).frame.player_controls[0].turn_speed;
+        dest->player_controls[iVar6].look_up_down_speed =
+             (local_18->sim_frame).frame.player_controls[0].look_up_down_speed;
         iVar6 = iVar6 + 1;
         local_18 = (UNetPacket *)((local_18->server_accept).mission_name + 0x13);
       } while (iVar6 < this_ptr->player_count);
@@ -420,14 +428,23 @@ LAB_00541015:
     if ((this_ptr->network_mode == NET_MODE_PLAYING) &&
        (local_1c->sim_frame_index < (packet->simple).value)) {
       local_1c->sim_frame_index = (packet->simple).value;
-      puVar7 = (ushort *)((packet->server_accept).player_name + 4);
-      pSVar12 = &local_1c->controls;
-      for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
-        puVar7 = puVar7 + (uint)bVar10 * -4 + 2;
-        pSVar12->action_states[0] = *(int *)puVar7;
-        puVar7 = puVar7;
-        pSVar12 = (SPlayerControl *)((int)pSVar12 + (uint)bVar10 * -8 + 4);
-      }
+      (local_1c->controls).action_states[0] = *(int *)&(packet->player_announce).addr.port;
+      (local_1c->controls).action_states[1] = (int)(packet->sim_frame).frame.delta_time;
+      (local_1c->controls).action_states[2] =
+           (packet->sim_frame).frame.player_controls[0].action_states[0];
+      (local_1c->controls).action_states[3] =
+           (packet->sim_frame).frame.player_controls[0].action_states[1];
+      (local_1c->controls).action_states[4] =
+           (packet->sim_frame).frame.player_controls[0].action_states[2];
+      (local_1c->controls).action_states[5] = (packet->player_state).ready_flag;
+      (local_1c->controls).action_states[6] = (packet->player_announce).hero_number;
+      (local_1c->controls).action_states[7] = (packet->player_announce).aim_mode;
+      (local_1c->controls).strafe_speed =
+           (float)(packet->sim_frame).frame.player_controls[0].action_states[6];
+      (local_1c->controls).turn_speed =
+           (float)(packet->sim_frame).frame.player_controls[0].action_states[7];
+      (local_1c->controls).look_up_down_speed =
+           (packet->sim_frame).frame.player_controls[0].strafe_speed;
       return;
     }
   }

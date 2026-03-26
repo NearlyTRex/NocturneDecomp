@@ -5,21 +5,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 203,
-    "complexity_score": 149,
+    "assembly_lines": 235,
+    "complexity_score": 127,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 89,
-    "suspect_count": 4,
+    "pseudocode_lines": 97,
+    "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_many",
-      "pointer_cast",
       "sub84_truncation"
     ],
-    "total_lines": 292
+    "total_lines": 332
   },
   "cross_references": [
     {
@@ -107,6 +105,10 @@
       [
         "005f6210",
         "005f6458"
+      ],
+      [
+        "03fc3ac5",
+        "03fc3b27"
       ]
     ],
     "convention": "__stack_esi",
@@ -152,134 +154,15 @@
       "value": null
     }
   ],
-  "param_estimates": {
-    "call_site_count": 15,
-    "call_sites": [
-      {
-        "call_addr": "0043a300",
-        "call_type": "direct",
-        "caller": "core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0",
-        "estimated_params": 4,
-        "instructions_analyzed": 19,
-        "method": "push_count",
-        "reg_params": [],
-        "stack_bytes": 16,
-        "stack_params": 4
-      },
-      {
-        "call_addr": "0042cf63",
-        "call_type": "direct",
-        "caller": "core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80",
-        "estimated_params": 1,
-        "instructions_analyzed": 3,
-        "method": "push_count",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "005218a7",
-        "call_type": "direct",
-        "caller": "core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0",
-        "estimated_params": 1,
-        "instructions_analyzed": 7,
-        "method": "push_count",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0042d24b",
-        "call_type": "direct",
-        "caller": "core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090",
-        "estimated_params": 1,
-        "instructions_analyzed": 6,
-        "method": "push_count",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "005f6157",
-        "call_type": "direct",
-        "caller": "core_xform.cpp_invertAndGetTranslation_FUN_005f6140",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0058acf9",
-        "call_type": "direct",
-        "caller": "core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "005218db",
-        "call_type": "direct",
-        "caller": "core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0043a39e",
-        "call_type": "direct",
-        "caller": "core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0",
-        "estimated_params": 1,
-        "instructions_analyzed": 23,
-        "method": "push_count",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0058aedd",
-        "call_type": "direct",
-        "caller": "core_skeledit.cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0058c010",
-        "call_type": "direct",
-        "caller": "core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      }
-    ],
-    "confidence": "high",
-    "declared_params": 2,
-    "declared_stack_bytes": 4,
-    "estimated_params": 1
-  },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.794871794871795,
-    "instruction_count": 195,
+    "avg_pcode_per_instr": 6.309417040358745,
+    "instruction_count": 223,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
-      "BRANCH": 2,
+      "BRANCH": 3,
       "CALL": 2,
-      "CBRANCH": 3,
-      "COPY": 895,
+      "CBRANCH": 2,
+      "COPY": 918,
       "FLOAT2FLOAT": 93,
       "FLOAT_ADD": 6,
       "FLOAT_DIV": 1,
@@ -287,23 +170,22 @@
       "FLOAT_NEG": 7,
       "FLOAT_SUB": 9,
       "INT2FLOAT": 1,
-      "INT_ADD": 93,
-      "INT_AND": 15,
-      "INT_CARRY": 2,
-      "INT_EQUAL": 13,
+      "INT_ADD": 115,
+      "INT_AND": 21,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 18,
       "INT_LESS": 1,
-      "INT_MULT": 2,
       "INT_SBORROW": 1,
-      "INT_SCARRY": 2,
-      "INT_SLESS": 6,
-      "INT_SUB": 11,
-      "INT_ZEXT": 2,
-      "LOAD": 82,
-      "POPCOUNT": 6,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 9,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "LOAD": 93,
+      "POPCOUNT": 9,
       "RETURN": 1,
-      "STORE": 32
+      "STORE": 43
     },
-    "pcode_op_count": 1325
+    "pcode_op_count": 1407
   },
   "stack_frame": {
     "frame_size": 160,
@@ -495,7 +377,7 @@
   "suspects": [
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 44,
+      "line": 53,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_98 = SUB84(__BITCAST_UINT64(dVar5),0);",
@@ -503,30 +385,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 53,
       "match": "SUB84",
       "severity": "mild",
       "text": "local_98 = SUB84(__BITCAST_UINT64(dVar5),0);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 15,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

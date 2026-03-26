@@ -1,6 +1,6 @@
 // Name: core_course.cpp_CCourse_evaluate_FUN_00442710
 // Address: 00442710
-// Address Range: [[00442710, 00442794]]
+// Address Range: [[00442710, 00442794] [03fc45a3, 03fc4606]]
 // Convention: __cdecl
 // Signature: void __cdecl core_course_cpp_CCourse_evaluate_FUN_00442710(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler)
 
@@ -20,19 +20,9 @@ void __cdecl core_course_cpp_CCourse_evaluate_FUN_00442710(CCourse *this_ptr,flo
   CQuaternion4f local_28;
   CVector3f local_18;
   
-  bVar5 = 0;
   core_course_cpp_CCourse_interpolate_FUN_004427a0(this_ptr,time,out_pos,&local_28);
   euler_out = &local_18;
   core_xform_cpp_quaternionToMatrix3x4_FUN_005f73e0(&local_28,&local_58);
-  pCVar3 = &local_58;
-  pCVar4 = &local_88;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pCVar4 = (CMatrix3x3f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
-    pCVar4->m[0].x = pCVar3->m[0].w;
-    pCVar3 = pCVar3;
-    pCVar4 = pCVar4;
-  }
   pCVar1 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_88,euler_out);
   if (out_euler == pCVar1) {
     return;

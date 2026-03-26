@@ -1,6 +1,6 @@
 // Name: core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
 // Address: 0058c190
-// Address Range: [[0058c190, 0058d782]]
+// Address Range: [[0058c190, 0058d782] [03fc3ef0, 03fc3f62]]
 // Convention: __cdecl
 // Signature: int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDeformableModel *this_ptr,CLodMeshPrecomputeEntry *entry)
 
@@ -217,18 +217,21 @@ LAB_0058c613:
     iVar5 = 0;
     do {
       core_xform_cpp_inverse_FUN_005f6210((CMatrix3x4f *)local_70,&local_11c);
-      pfVar19 = (float *)((int)&local_2520[0].m[0].w + iVar5);
-      iVar5 = iVar5 + 0x30;
-      pCVar14 = &local_11c;
-      for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {
-        pfVar19 = pfVar19 + (uint)bVar23 * -2 + 1;
-        pCVar14 = (CMatrix3x4f *)((int)pCVar14 + (uint)bVar23 * -8 + 4);
-        *pfVar19 = pCVar14->m[0].w;
-        pCVar14 = pCVar14;
-        pfVar19 = pfVar19;
-      }
+      *(float *)((int)&local_2520[0].m[0].w + iVar5) = local_11c.m[0].w;
+      *(float *)((int)&local_2520[0].m[0].x + iVar5) = local_11c.m[0].x;
+      *(float *)((int)&local_2520[0].m[0].y + iVar5) = local_11c.m[0].y;
+      *(float *)((int)&local_2520[0].m[0].z + iVar5) = local_11c.m[0].z;
+      *(float *)((int)&local_2520[0].m[1].w + iVar5) = local_11c.m[1].w;
+      *(float *)((int)&local_2520[0].m[1].x + iVar5) = local_11c.m[1].x;
+      *(float *)((int)&local_2520[0].m[1].y + iVar5) = local_11c.m[1].y;
+      *(float *)((int)&local_2520[0].m[1].z + iVar5) = local_11c.m[1].z;
+      *(float *)((int)&local_2520[0].m[2].w + iVar5) = local_11c.m[2].w;
+      *(float *)((int)&local_2520[0].m[2].x + iVar5) = local_11c.m[2].x;
+      *(float *)((int)&local_2520[0].m[2].y + iVar5) = local_11c.m[2].y;
+      *(float *)((int)&local_2520[0].m[2].z + iVar5) = local_11c.m[2].z;
       local_28 = local_28 + 1;
       local_70 = local_70 + 0x21;
+      iVar5 = iVar5 + 0x30;
     } while (local_28 < (int)local_a228._0_4_);
   }
   splitpath

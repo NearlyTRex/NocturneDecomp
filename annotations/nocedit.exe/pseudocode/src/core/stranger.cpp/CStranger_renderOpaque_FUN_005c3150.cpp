@@ -1,6 +1,6 @@
 // Name: core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150
 // Address: 005c3150
-// Address Range: [[005c3150, 005c3700]]
+// Address Range: [[005c3150, 005c3700] [03fc4cbe, 03fc4d23]]
 // Convention: __cdecl
 // Signature: int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *this_ptr)
 
@@ -18,9 +18,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
   int iVar5;
   CVector3f *start_pos;
   CMatrix3x4f *pCVar5;
-  CMatrix3x4f *pCVar7;
   CMatrix3x4f *pCVar6;
-  CMatrix3x4f *pCVar8;
   byte bVar7;
   CMatrix3x4f local_22c;
   CMatrix3x4f local_1fc;
@@ -68,13 +66,6 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
               (&local_16c,
                (this_ptr->base).base.model.bone_transform.bone_world_matrices + g_StrangerIndices[0]
                ,&local_22c);
-    pCVar7 = &local_22c;
-    pCVar8 = &local_13c;
-    for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-      pCVar8->m[0].w = pCVar7->m[0].w;
-      pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);
-      pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar7 * -2 + 1) * 4);
-    }
     core_xform_cpp_getTranslation_FUN_005f6110(&local_13c,&local_ac);
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_13c,&local_94);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

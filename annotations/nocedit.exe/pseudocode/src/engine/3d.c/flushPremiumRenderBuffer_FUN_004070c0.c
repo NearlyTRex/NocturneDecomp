@@ -1,6 +1,6 @@
 // Name: engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0
 // Address: 004070c0
-// Address Range: [[004070c0, 00407280]]
+// Address Range: [[004070c0, 00407280] [03fc38df, 03fc393f]]
 // Convention: __cdecl
 // Signature: void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070c0(void)
 
@@ -22,7 +22,6 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070c0(void)
   int local_c;
   int *piVar1;
   
-  bVar9 = 0;
   if (g_RenderBufferEnabled != 0) {
     if (0 < g_RenderBufferCount) {
       pSVar5 = g_RenderBufferPool;
@@ -63,15 +62,18 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070c0(void)
           piVar6 = piVar1;
           iVar1 = 0;
           do {
-            piVar7 = piVar6 + 1;
-            pSVar8 = g_RenderVertexBuffer + iVar3;
-            for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-              pSVar8 = (SRenderVertex *)((int)pSVar8 + (uint)bVar9 * -8 + 4);
-              piVar7 = piVar7 + (uint)bVar9 * -2 + 1;
-              (pSVar8->projected_vertex).transformed_x = *piVar7;
-              piVar7 = piVar7;
-              pSVar8 = pSVar8;
-            }
+            g_RenderVertexBuffer[iVar3].projected_vertex.transformed_x = piVar6[1];
+            g_RenderVertexBuffer[iVar3].projected_vertex.transformed_y = piVar6[2];
+            g_RenderVertexBuffer[iVar3].projected_vertex.transformed_z = piVar6[3];
+            g_RenderVertexBuffer[iVar3].projected_vertex.inv_z = piVar6[4];
+            g_RenderVertexBuffer[iVar3].projected_vertex.screen_x = piVar6[5];
+            g_RenderVertexBuffer[iVar3].projected_vertex.screen_y = piVar6[6];
+            g_RenderVertexBuffer[iVar3].u = piVar6[7];
+            g_RenderVertexBuffer[iVar3].v = piVar6[8];
+            g_RenderVertexBuffer[iVar3].r = piVar6[9];
+            g_RenderVertexBuffer[iVar3].g = piVar6[10];
+            g_RenderVertexBuffer[iVar3].b = piVar6[0xb];
+            g_RenderVertexBuffer[iVar3].a = piVar6[0xc];
             *(ushort *)&g_RenderVertexBuffer[iVar3].a =
                  (ushort)g_RenderVertexBuffer[iVar3].a ^ 0xffff;
             *(int *)((int)g_ProcessedVertexIndices + iVar1) = iVar3;

@@ -1,6 +1,6 @@
 // Name: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
 // Address: 005ce580
-// Address Range: [[005ce580, 005d0004] [006058d9, 006059c0] [0060f38f, 0060f3fd]]
+// Address Range: [[005ce580, 005d0004] [006058d9, 006059c0] [0060f38f, 0060f3fd] [03fc56e7, 03fc5807]]
 // Convention: __cdecl
 // Signature: int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,CPoly *other_poly,CPolyIntersectResult *out_result)
 
@@ -21,24 +21,24 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
   CVector2d *pCVar14;
   CVector3d *pCVar15;
   CVector2d *pCVar16;
-  CVert *pCVar17;
+  double dVar17;
   double dVar18;
-  double dVar19;
   int iVar5;
-  int iVar20;
-  double *pdVar21;
+  int iVar19;
+  double *pdVar20;
   int iVar6;
   int iVar7;
   int iVar8;
-  double *pdVar22;
+  double *pdVar21;
   int iVar9;
-  int iVar23;
+  int iVar22;
+  double *pdVar23;
   double *pdVar24;
-  double *pdVar25;
   CVert *pCVar10;
   double *pdVar11;
-  double *pdVar26;
+  double *pdVar25;
   double *pdVar12;
+  CVert *pCVar26;
   double *pdVar13;
   uint *puVar27;
   double *pdVar28;
@@ -265,36 +265,36 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
        (local_3c8.y <= CStack_2f0.y)) &&
       ((CStack_4d0.y <= local_458.y && (local_3c8.z <= CStack_2f0.z)))) &&
      (CStack_4d0.z <= local_458.z)) {
-    pCVar17 = other_poly->parent_obj->vertex_data;
+    pCVar26 = other_poly->parent_obj->vertex_data;
     iVar5 = (*this_ptr->vtable->rayIntersect)
-                      (this_ptr,&pCVar17[other_poly->vertex_idx_0].position,
-                       &pCVar17[other_poly->vertex_idx_1].position,&CStack_410);
+                      (this_ptr,&pCVar26[other_poly->vertex_idx_0].position,
+                       &pCVar26[other_poly->vertex_idx_1].position,&CStack_410);
     if (iVar5 == 0) {
-      pCVar17 = other_poly->parent_obj->vertex_data;
-      iVar20 = (*this_ptr->vtable->rayIntersect)
-                         (this_ptr,&pCVar17[other_poly->vertex_idx_1].position,
-                          &pCVar17[other_poly->vertex_idx_2].position,&CStack_410);
-      if (iVar20 == 0) {
-        pCVar17 = other_poly->parent_obj->vertex_data;
-        iVar20 = (*this_ptr->vtable->rayIntersect)
-                           (this_ptr,&pCVar17[other_poly->vertex_idx_2].position,
-                            &pCVar17[other_poly->vertex_idx_0].position,&CStack_410);
-        if (iVar20 == 0) {
-          pCVar17 = this_ptr->parent_obj->vertex_data;
-          iVar20 = (*other_poly->vtable->rayIntersect)
-                             (other_poly,&pCVar17[this_ptr->vertex_idx_0].position,
-                              &pCVar17[this_ptr->vertex_idx_1].position,&CStack_410);
-          if (iVar20 == 0) {
-            pCVar17 = this_ptr->parent_obj->vertex_data;
-            iVar20 = (*other_poly->vtable->rayIntersect)
-                               (other_poly,&pCVar17[this_ptr->vertex_idx_1].position,
-                                &pCVar17[this_ptr->vertex_idx_2].position,&CStack_410);
-            if (iVar20 == 0) {
-              pCVar17 = this_ptr->parent_obj->vertex_data;
-              iVar20 = (*other_poly->vtable->rayIntersect)
-                                 (other_poly,&pCVar17[this_ptr->vertex_idx_2].position,
-                                  &pCVar17[this_ptr->vertex_idx_0].position,&CStack_410);
-              if (iVar20 == 0) {
+      pCVar26 = other_poly->parent_obj->vertex_data;
+      iVar19 = (*this_ptr->vtable->rayIntersect)
+                         (this_ptr,&pCVar26[other_poly->vertex_idx_1].position,
+                          &pCVar26[other_poly->vertex_idx_2].position,&CStack_410);
+      if (iVar19 == 0) {
+        pCVar26 = other_poly->parent_obj->vertex_data;
+        iVar19 = (*this_ptr->vtable->rayIntersect)
+                           (this_ptr,&pCVar26[other_poly->vertex_idx_2].position,
+                            &pCVar26[other_poly->vertex_idx_0].position,&CStack_410);
+        if (iVar19 == 0) {
+          pCVar26 = this_ptr->parent_obj->vertex_data;
+          iVar19 = (*other_poly->vtable->rayIntersect)
+                             (other_poly,&pCVar26[this_ptr->vertex_idx_0].position,
+                              &pCVar26[this_ptr->vertex_idx_1].position,&CStack_410);
+          if (iVar19 == 0) {
+            pCVar26 = this_ptr->parent_obj->vertex_data;
+            iVar19 = (*other_poly->vtable->rayIntersect)
+                               (other_poly,&pCVar26[this_ptr->vertex_idx_1].position,
+                                &pCVar26[this_ptr->vertex_idx_2].position,&CStack_410);
+            if (iVar19 == 0) {
+              pCVar26 = this_ptr->parent_obj->vertex_data;
+              iVar19 = (*other_poly->vtable->rayIntersect)
+                                 (other_poly,&pCVar26[this_ptr->vertex_idx_2].position,
+                                  &pCVar26[this_ptr->vertex_idx_0].position,&CStack_410);
+              if (iVar19 == 0) {
                 return 0;
               }
             }
@@ -305,27 +305,27 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
     memset(out_result,0,0x148);
     pCVar3 = this_ptr->parent_obj->vertex_data;
     __arrinit(&uStack_5e0,5,&g_CP3DTypeInfo);
-    pCVar17 = pCVar3 + this_ptr->vertex_idx_0;
-    uStack_5e0._0_4_ = *(uint *)&(pCVar17->position).x;
-    uStack_5e0._4_4_ = *(uint *)((int)&(pCVar17->position).x + 4);
-    uStack_5d8._0_4_ = *(uint *)&(pCVar17->position).y;
-    uStack_5d8._4_4_ = *(uint *)((int)&(pCVar17->position).y + 4);
-    uStack_5d0._0_4_ = *(uint *)&(pCVar17->position).z;
-    uStack_5d0._4_4_ = *(uint *)((int)&(pCVar17->position).z + 4);
-    pCVar17 = pCVar3 + this_ptr->vertex_idx_1;
-    uStack_5c8 = *(uint *)&(pCVar17->position).x;
-    uStack_5c4 = *(uint *)((int)&(pCVar17->position).x + 4);
-    uStack_5c0 = *(uint *)&(pCVar17->position).y;
-    uStack_5bc = *(uint *)((int)&(pCVar17->position).y + 4);
-    uStack_5b8 = *(uint *)&(pCVar17->position).z;
-    uStack_5b4 = *(uint *)((int)&(pCVar17->position).z + 4);
-    pCVar17 = pCVar3 + this_ptr->vertex_idx_2;
-    uStack_5b0 = *(uint *)&(pCVar17->position).x;
-    uStack_5ac = *(uint *)((int)&(pCVar17->position).x + 4);
-    uStack_5a8 = *(uint *)&(pCVar17->position).y;
-    uStack_5a4 = *(uint *)((int)&(pCVar17->position).y + 4);
-    uStack_5a0 = *(uint *)&(pCVar17->position).z;
-    uStack_59c = *(uint *)((int)&(pCVar17->position).z + 4);
+    pCVar26 = pCVar3 + this_ptr->vertex_idx_0;
+    uStack_5e0._0_4_ = *(uint *)&(pCVar26->position).x;
+    uStack_5e0._4_4_ = *(uint *)((int)&(pCVar26->position).x + 4);
+    uStack_5d8._0_4_ = *(uint *)&(pCVar26->position).y;
+    uStack_5d8._4_4_ = *(uint *)((int)&(pCVar26->position).y + 4);
+    uStack_5d0._0_4_ = *(uint *)&(pCVar26->position).z;
+    uStack_5d0._4_4_ = *(uint *)((int)&(pCVar26->position).z + 4);
+    pCVar26 = pCVar3 + this_ptr->vertex_idx_1;
+    uStack_5c8 = *(uint *)&(pCVar26->position).x;
+    uStack_5c4 = *(uint *)((int)&(pCVar26->position).x + 4);
+    uStack_5c0 = *(uint *)&(pCVar26->position).y;
+    uStack_5bc = *(uint *)((int)&(pCVar26->position).y + 4);
+    uStack_5b8 = *(uint *)&(pCVar26->position).z;
+    uStack_5b4 = *(uint *)((int)&(pCVar26->position).z + 4);
+    pCVar26 = pCVar3 + this_ptr->vertex_idx_2;
+    uStack_5b0 = *(uint *)&(pCVar26->position).x;
+    uStack_5ac = *(uint *)((int)&(pCVar26->position).x + 4);
+    uStack_5a8 = *(uint *)&(pCVar26->position).y;
+    uStack_5a4 = *(uint *)((int)&(pCVar26->position).y + 4);
+    uStack_5a0 = *(uint *)&(pCVar26->position).z;
+    uStack_59c = *(uint *)((int)&(pCVar26->position).z + 4);
     __arrinit(&uStack_568,5,&g_CP2DTypeInfo);
     uStack_568._0_4_ = *(uint *)&this_ptr->uv_coords[0].impl.x;
     uStack_568._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.x + 4);
@@ -339,68 +339,50 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
     uStack_544 = *(uint *)((int)&this_ptr->uv_coords[2].impl.x + 4);
     uStack_540 = *(uint *)&this_ptr->uv_coords[2].impl.y;
     uStack_53c = *(uint *)((int)&this_ptr->uv_coords[2].impl.y + 4);
-    pCVar10 = other_poly->parent_obj->vertex_data + other_poly->vertex_idx_0;
-    pdVar26 = &dStack_320;
-    for (iVar20 = 6; iVar20 != 0; iVar20 = iVar20 + -1) {
-      pCVar10 = (CVert *)((int)pCVar10 + (uint)bVar16 * -8 + 4);
-      *(uint *)pdVar26 = *(uint *)&(pCVar10->position).x;
-      pCVar10 = pCVar10;
-      pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);
-    }
+    pCVar26 = other_poly->parent_obj->vertex_data + other_poly->vertex_idx_0;
+    dStack_320._0_4_ = *(uint *)&(pCVar26->position).x;
+    dStack_320._4_4_ = *(uint *)((int)&(pCVar26->position).x + 4);
+    pdVar20 = &(pCVar26->position).y;
+    dStack_318._0_4_ = *(uint *)pdVar20;
+    dStack_318._4_4_ = *(uint *)((int)&(pCVar26->position).y + 4);
+    pdVar24 = &(pCVar26->position).z;
+    dStack_310._0_4_ = *(uint *)pdVar24;
+    dStack_310._4_4_ = *(uint *)((int)&(pCVar26->position).z + 4);
     pCVar1 = &other_poly->normal;
     uStack_218 = *(uint *)&(pCVar1->impl).x;
     uStack_214 = *(uint *)((int)&(other_poly->normal).impl.x + 4);
-    pdVar26 = &(other_poly->normal).impl.y;
-    uStack_210 = *(uint *)pdVar26;
+    pdVar25 = &(other_poly->normal).impl.y;
+    uStack_210 = *(uint *)pdVar25;
     uStack_20c = *(uint *)((int)&(other_poly->normal).impl.y + 4);
     pdVar28 = &(other_poly->normal).impl.z;
-    dVar18 = *pdVar28;
     uStack_208 = *(uint *)pdVar28;
     uStack_204 = *(uint *)((int)&(other_poly->normal).impl.z + 4);
-    dStack_3b0 = dStack_320 * (pCVar1->impl).x;
-    dStack_3a8 = dStack_318 * *pdVar26;
-    dStack_3a0 = dStack_310 * *pdVar28;
     dStack_4e8 = (pCVar1->impl).x * __BITCAST_DOUBLE(CONCAT44(uStack_5e0._4_4_,(uint)uStack_5e0));
-    dStack_4e0 = *pdVar26 * __BITCAST_DOUBLE(CONCAT44(uStack_5d8._4_4_,(uint)uStack_5d8));
+    dStack_4e0 = *pdVar25 * __BITCAST_DOUBLE(CONCAT44(uStack_5d8._4_4_,(uint)uStack_5d8));
     dStack_4d8 = *pdVar28 * __BITCAST_DOUBLE(CONCAT44(uStack_5d0._4_4_,(uint)uStack_5d0));
-    dStack_2d8 = (pCVar1->impl).x * __BITCAST_DOUBLE(CONCAT44(uStack_5c4,uStack_5c8));
-    dStack_2d0 = *pdVar26 * __BITCAST_DOUBLE(CONCAT44(uStack_5bc,uStack_5c0));
-    dStack_2c8 = *pdVar28 * __BITCAST_DOUBLE(CONCAT44(uStack_5b4,uStack_5b8));
-    dStack_2c0 = (pCVar1->impl).x * __BITCAST_DOUBLE(CONCAT44(uStack_5ac,uStack_5b0));
-    dStack_2b8 = *pdVar26 * __BITCAST_DOUBLE(CONCAT44(uStack_5a4,uStack_5a8));
-    pdVar26 = &dStack_3b0;
+    dStack_278 = (pCVar1->impl).x * __BITCAST_DOUBLE(CONCAT44(uStack_5c4,uStack_5c8));
+    dStack_3b0 = (pCVar26->position).x * (pCVar1->impl).x;
+    dStack_270 = *pdVar25 * __BITCAST_DOUBLE(CONCAT44(uStack_5bc,uStack_5c0));
+    dStack_3a8 = *pdVar20 * *pdVar25;
+    dStack_268 = *pdVar28 * __BITCAST_DOUBLE(CONCAT44(uStack_5b4,uStack_5b8));
+    dStack_3a0 = *pdVar24 * *pdVar28;
+    dStack_470 = (pCVar1->impl).x * __BITCAST_DOUBLE(CONCAT44(uStack_5ac,uStack_5b0));
+    dStack_468 = *pdVar25 * __BITCAST_DOUBLE(CONCAT44(uStack_5a4,uStack_5a8));
+    dStack_460 = *pdVar28 * __BITCAST_DOUBLE(CONCAT44(uStack_59c,uStack_5a0));
+    pdVar25 = &dStack_3b0;
     pdVar28 = &dStack_248;
-    for (iVar20 = 6; iVar20 != 0; iVar20 = iVar20 + -1) {
-      *(uint *)pdVar28 = *(uint *)pdVar26;
-      pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);
+    for (iVar19 = 6; iVar19 != 0; iVar19 = iVar19 + -1) {
+      *(uint *)pdVar28 = *(uint *)pdVar25;
+      pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);
       pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);
     }
-    dStack_2b0 = dVar18 * __BITCAST_DOUBLE(CONCAT44(uStack_59c,uStack_5a0));
-    pdVar26 = &dStack_4e8;
-    pdVar28 = &dStack_398;
-    for (iVar20 = 6; iVar20 != 0; iVar20 = iVar20 + -1) {
-      *(uint *)pdVar28 = *(uint *)pdVar26;
-      pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);
-      pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);
-    }
-    dVar4 = -(dStack_248 + dStack_240 + dStack_238);
-    pdVar26 = &dStack_2d8;
-    pdVar28 = &dStack_278;
-    for (iVar20 = 6; iVar20 != 0; iVar20 = iVar20 + -1) {
-      *(uint *)pdVar28 = *(uint *)pdVar26;
-      pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);
-      pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);
-    }
-    pdVar26 = &dStack_2c0;
-    pdVar28 = &dStack_470;
-    for (iVar20 = 6; iVar20 != 0; iVar20 = iVar20 + -1) {
-      *(uint *)pdVar28 = *(uint *)pdVar26;
-      pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);
-      pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);
-    }
-    dStack_3f8 = dStack_398 + dStack_390 + dStack_388 + dVar4;
-    dStack_3f0 = dStack_278 + dStack_270 + dStack_268 + dVar4;
-    dStack_3e8 = dStack_470 + dStack_468 + dStack_460 + dVar4;
+    dStack_398 = dStack_4e8;
+    dStack_390 = dStack_4e0;
+    dStack_388 = dStack_4d8;
+    dVar17 = -(dStack_248 + dStack_240 + dStack_238);
+    dStack_3f8 = dStack_4e8 + dStack_4e0 + dStack_4d8 + dVar17;
+    dStack_3f0 = dStack_278 + dStack_270 + dStack_268 + dVar17;
+    dStack_3e8 = dStack_470 + dStack_468 + dStack_460 + dVar17;
     if ((dStack_3f8 < 1e-08) && (-1e-08 <= dStack_3f8)) {
       dStack_3f8 = 0.0;
     }
@@ -432,106 +414,106 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
           iStack_58 = 1;
           iStack_50 = 2;
         }
-        iVar20 = aiStack_d4[3];
-        dVar18 = (&dStack_3f8)[aiStack_d4[3]] /
+        iVar19 = aiStack_d4[3];
+        dVar17 = (&dStack_3f8)[aiStack_d4[3]] /
                  ((&dStack_3f8)[aiStack_d4[3]] - (&dStack_3f8)[iStack_50]);
-        pdVar21 = (double *)(&uStack_5e0 + iStack_50 * 3);
-        pdVar25 = (double *)(&uStack_5e0 + aiStack_d4[3] * 3);
-        dStack_2a8 = *pdVar25 - *pdVar21;
+        pdVar20 = (double *)(&uStack_5e0 + iStack_50 * 3);
+        pdVar24 = (double *)(&uStack_5e0 + aiStack_d4[3] * 3);
+        dStack_2a8 = *pdVar24 - *pdVar20;
         dStack_2a0 = (double)(&uStack_5d8)[aiStack_d4[3] * 3] - (double)(&uStack_5d8)[iStack_50 * 3]
         ;
         dStack_298 = (double)(&uStack_5d0)[aiStack_d4[3] * 3] - (double)(&uStack_5d0)[iStack_50 * 3]
         ;
-        pdVar26 = &dStack_2a8;
+        pdVar25 = &dStack_2a8;
         pdVar28 = &dStack_488;
         for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {
-          *(uint *)pdVar28 = *(uint *)pdVar26;
-          pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);
+          *(uint *)pdVar28 = *(uint *)pdVar25;
+          pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);
           pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);
         }
-        dStack_338 = dStack_488 * dVar18;
-        dStack_330 = dStack_480 * dVar18;
-        dStack_328 = dStack_478 * dVar18;
-        pdVar26 = &dStack_338;
+        dStack_338 = dStack_488 * dVar17;
+        dStack_330 = dStack_480 * dVar17;
+        dStack_328 = dStack_478 * dVar17;
+        pdVar25 = &dStack_338;
         pdVar28 = &dStack_4a0;
-        for (iVar23 = 6; iVar23 != 0; iVar23 = iVar23 + -1) {
-          *(uint *)pdVar28 = *(uint *)pdVar26;
-          pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);
+        for (iVar22 = 6; iVar22 != 0; iVar22 = iVar22 + -1) {
+          *(uint *)pdVar28 = *(uint *)pdVar25;
+          pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);
           pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);
         }
-        dStack_518 = *pdVar25 - dStack_4a0;
-        dStack_510 = (double)(&uStack_5d8)[iVar20 * 3] - dStack_498;
-        dStack_508 = (double)(&uStack_5d0)[iVar20 * 3] - dStack_490;
-        pdVar26 = &dStack_518;
+        dStack_518 = *pdVar24 - dStack_4a0;
+        dStack_510 = (double)(&uStack_5d8)[iVar19 * 3] - dStack_498;
+        dStack_508 = (double)(&uStack_5d0)[iVar19 * 3] - dStack_490;
+        pdVar25 = &dStack_518;
         puVar27 = &uStack_350;
-        for (iVar23 = 6; iVar23 != 0; iVar23 = iVar23 + -1) {
-          *puVar27 = *(uint *)pdVar26;
-          pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);
+        for (iVar22 = 6; iVar22 != 0; iVar22 = iVar22 + -1) {
+          *puVar27 = *(uint *)pdVar25;
+          pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);
           puVar27 = puVar27 + (uint)bVar16 * -2 + 1;
         }
-        pdVar22 = (double *)(&uStack_568 + iStack_50 * 2);
-        uStack_188 = (double)(&uStack_568)[aiStack_d4[3] * 2] - *pdVar22;
+        pdVar21 = (double *)(&uStack_568 + iStack_50 * 2);
+        uStack_188 = (double)(&uStack_568)[aiStack_d4[3] * 2] - *pdVar21;
         dStack_1b0 = (double)(&uStack_560)[aiStack_d4[3] * 2] - (double)(&uStack_560)[iStack_50 * 2]
         ;
         dStack_180 = dStack_1b0;
         uStack_1b8 = uStack_188;
         dStack_180._4_4_ = (double *)((ulonglong)dStack_1b0 >> 0x20);
-        uStack_118 = uStack_188 * dVar18;
-        dStack_1c0 = dStack_1b0 * dVar18;
+        uStack_118 = uStack_188 * dVar17;
+        dStack_1c0 = dStack_1b0 * dVar17;
         dStack_110 = dStack_1c0;
         uStack_1c8 = uStack_118;
         dStack_110._4_4_ = (double *)((ulonglong)dStack_1c0 >> 0x20);
         dStack_538 = *dStack_110._4_4_ - uStack_118;
-        dVar18 = dStack_110._4_4_[1] - dStack_1c0;
+        dVar17 = dStack_110._4_4_[1] - dStack_1c0;
         uStack_148 = dStack_538;
-        dStack_140 = dVar18;
+        dStack_140 = dVar17;
         dStack_128 = dStack_538;
-        uStack_120 = dVar18;
-        dVar19 = (&dStack_3f8)[iStack_58] / ((&dStack_3f8)[iStack_58] - (&dStack_3f8)[iStack_50]);
-        pdVar24 = (double *)(&uStack_5e0 + iStack_58 * 3);
-        dStack_500 = *pdVar24 - *pdVar21;
+        uStack_120 = dVar17;
+        dVar18 = (&dStack_3f8)[iStack_58] / ((&dStack_3f8)[iStack_58] - (&dStack_3f8)[iStack_50]);
+        pdVar23 = (double *)(&uStack_5e0 + iStack_58 * 3);
+        dStack_500 = *pdVar23 - *pdVar20;
         dStack_4f8 = (double)(&uStack_5d8)[iStack_58 * 3] - (double)(&uStack_5d8)[iStack_50 * 3];
         dStack_4f0 = (double)(&uStack_5d0)[iStack_58 * 3] - (double)(&uStack_5d0)[iStack_50 * 3];
-        pdVar26 = &dStack_500;
+        pdVar25 = &dStack_500;
         pdVar28 = &dStack_368;
-        for (iVar23 = 6; iVar23 != 0; iVar23 = iVar23 + -1) {
-          *(uint *)pdVar28 = *(uint *)pdVar26;
-          pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);
+        for (iVar22 = 6; iVar22 != 0; iVar22 = iVar22 + -1) {
+          *(uint *)pdVar28 = *(uint *)pdVar25;
+          pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);
           pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);
         }
-        dStack_308 = dStack_368 * dVar19;
-        dStack_300 = dStack_360 * dVar19;
-        dStack_2f8 = dStack_358 * dVar19;
-        pdVar26 = &dStack_308;
+        dStack_308 = dStack_368 * dVar18;
+        dStack_300 = dStack_360 * dVar18;
+        dStack_2f8 = dStack_358 * dVar18;
+        pdVar25 = &dStack_308;
         pdVar14 = &dStack_200;
-        for (iVar23 = 6; iVar23 != 0; iVar23 = iVar23 + -1) {
+        for (iVar22 = 6; iVar22 != 0; iVar22 = iVar22 + -1) {
           pdVar14 = (double *)((int)pdVar14 + (uint)bVar16 * -8 + 4);
-          *(uint *)pdVar14 = *(uint *)pdVar26;
-          pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);
+          *(uint *)pdVar14 = *(uint *)pdVar25;
+          pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);
           pdVar14 = pdVar14;
         }
-        dStack_380 = *pdVar24 - dStack_200;
+        dStack_380 = *pdVar23 - dStack_200;
         dStack_378 = (double)(&uStack_5d8)[iStack_58 * 3] - dStack_1f8;
         dStack_370 = (double)(&uStack_5d0)[iStack_58 * 3] - dStack_1f0;
         pdVar12 = &dStack_380;
         puVar15 = uStack_440;
-        for (iVar23 = 6; iVar23 != 0; iVar23 = iVar23 + -1) {
+        for (iVar22 = 6; iVar22 != 0; iVar22 = iVar22 + -1) {
           puVar15 = puVar15 + (uint)bVar16 * -2 + 1;
           pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);
           *puVar15 = *(uint *)pdVar12;
           pdVar12 = pdVar12;
           puVar15 = puVar15;
         }
-        pdVar26 = (double *)(&uStack_568 + iStack_58 * 2);
-        uStack_168 = *pdVar26 - *pdVar22;
+        pdVar25 = (double *)(&uStack_568 + iStack_58 * 2);
+        uStack_168 = *pdVar25 - *pdVar21;
         dStack_160 = (double)(&uStack_560)[iStack_58 * 2] - (double)(&uStack_560)[iStack_50 * 2];
         uStack_178 = uStack_168;
         dStack_170 = dStack_160;
-        uStack_158 = uStack_168 * dVar19;
-        dStack_150 = dStack_160 * dVar19;
+        uStack_158 = uStack_168 * dVar18;
+        dStack_150 = dStack_160 * dVar18;
         uStack_1a8 = uStack_158;
         dStack_1a0 = dStack_150;
-        uStack_158 = *pdVar26 - uStack_158;
+        uStack_158 = *pdVar25 - uStack_158;
         aiStack_d4._4_8_ = (double)(&uStack_560)[iStack_58 * 2] - dStack_150;
         uStack_1e8 = uStack_158;
         dStack_1e0 = (double)aiStack_d4._4_8_;
@@ -554,16 +536,16 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
         pCVar8 = (out_result->poly1).vertices;
         if (0.0 < (&dStack_3f8)[iStack_50]) {
           (out_result->poly1).vertex_count = 3;
-          pCVar8->x = *pdVar21;
+          pCVar8->x = *pdVar20;
           (out_result->poly1).vertices[0].y = (double)(&uStack_5d8)[iStack_50 * 3];
           (out_result->poly1).vertices[0].z = (double)(&uStack_5d0)[iStack_50 * 3];
-          pCVar7->x = *pdVar22;
+          pCVar7->x = *pdVar21;
           (out_result->poly1).uvs[0].y = (double)(&uStack_560)[iStack_50 * 2];
           pCVar6->x = __BITCAST_DOUBLE(CONCAT44(uStack_34c,uStack_350));
           (out_result->poly1).vertices[1].y = __BITCAST_DOUBLE(CONCAT44(uStack_344,uStack_348));
           (out_result->poly1).vertices[1].z = __BITCAST_DOUBLE(CONCAT44(uStack_33c,uStack_340));
           pCVar5->x = dStack_538;
-          (out_result->poly1).uvs[1].y = dVar18;
+          (out_result->poly1).uvs[1].y = dVar17;
           pCVar4->x = *dStack_1e0._4_4_;
           (out_result->poly1).vertices[2].y = dStack_1e0._4_4_[1];
           (out_result->poly1).vertices[2].z = dStack_1e0._4_4_[2];
@@ -574,16 +556,16 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
           (out_result->poly2).vertices[0].y = __BITCAST_DOUBLE(CONCAT44(uStack_344,uStack_348));
           (out_result->poly2).vertices[0].z = __BITCAST_DOUBLE(CONCAT44(uStack_33c,uStack_340));
           pCVar14->x = dStack_538;
-          (out_result->poly2).uvs[0].y = dVar18;
-          pCVar13->x = *pdVar25;
-          (out_result->poly2).vertices[1].y = (double)(&uStack_5d8)[iVar20 * 3];
-          (out_result->poly2).vertices[1].z = (double)(&uStack_5d0)[iVar20 * 3];
+          (out_result->poly2).uvs[0].y = dVar17;
+          pCVar13->x = *pdVar24;
+          (out_result->poly2).vertices[1].y = (double)(&uStack_5d8)[iVar19 * 3];
+          (out_result->poly2).vertices[1].z = (double)(&uStack_5d0)[iVar19 * 3];
           pCVar12->x = *dStack_180._4_4_;
           (out_result->poly2).uvs[1].y = dStack_180._4_4_[1];
-          pCVar11->x = *pdVar24;
+          pCVar11->x = *pdVar23;
           (out_result->poly2).vertices[2].y = (double)(&uStack_5d8)[iStack_58 * 3];
           (out_result->poly2).vertices[2].z = (double)(&uStack_5d0)[iStack_58 * 3];
-          pCVar9->x = *pdVar26;
+          pCVar9->x = *pdVar25;
           (out_result->poly2).uvs[2].y = (double)(&uStack_560)[iStack_58 * 2];
           *(uint *)&(out_result->poly2).vertices[3].x = *(uint *)dStack_1e0._4_4_;
           *(uint *)((int)&(out_result->poly2).vertices[3].x + 4) =
@@ -603,16 +585,16 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
         (out_result->poly1).vertices[0].y = __BITCAST_DOUBLE(CONCAT44(uStack_344,uStack_348));
         (out_result->poly1).vertices[0].z = __BITCAST_DOUBLE(CONCAT44(uStack_33c,uStack_340));
         pCVar7->x = dStack_538;
-        (out_result->poly1).uvs[0].y = dVar18;
-        pCVar6->x = *pdVar25;
-        (out_result->poly1).vertices[1].y = (double)(&uStack_5d8)[iVar20 * 3];
-        (out_result->poly1).vertices[1].z = (double)(&uStack_5d0)[iVar20 * 3];
+        (out_result->poly1).uvs[0].y = dVar17;
+        pCVar6->x = *pdVar24;
+        (out_result->poly1).vertices[1].y = (double)(&uStack_5d8)[iVar19 * 3];
+        (out_result->poly1).vertices[1].z = (double)(&uStack_5d0)[iVar19 * 3];
         pCVar5->x = *dStack_180._4_4_;
         (out_result->poly1).uvs[1].y = dStack_180._4_4_[1];
-        pCVar4->x = *pdVar24;
+        pCVar4->x = *pdVar23;
         (out_result->poly1).vertices[2].y = (double)(&uStack_5d8)[iStack_58 * 3];
         (out_result->poly1).vertices[2].z = (double)(&uStack_5d0)[iStack_58 * 3];
-        pCVar16->x = *pdVar26;
+        pCVar16->x = *pdVar25;
         (out_result->poly1).uvs[2].y = (double)(&uStack_560)[iStack_58 * 2];
         (out_result->poly1).vertices[3].x = *dStack_1e0._4_4_;
         (out_result->poly1).vertices[3].y = dStack_1e0._4_4_[1];
@@ -620,7 +602,7 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
         (out_result->poly1).uvs[3].x = uStack_158;
         (out_result->poly1).uvs[3].y = (double)aiStack_d4._4_8_;
         (out_result->poly2).vertex_count = 3;
-        *(uint *)&pCVar2->x = *(uint *)pdVar21;
+        *(uint *)&pCVar2->x = *(uint *)pdVar20;
         *(uint *)((int)&(out_result->poly2).vertices[0].x + 4) =
              *(uint *)((int)&uStack_5e0 + iStack_50 * 0x18 + 4);
         *(uint *)&(out_result->poly2).vertices[0].y =
@@ -628,7 +610,7 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
         *(uint *)((int)&(out_result->poly2).vertices[0].y + 4) =
              *(uint *)((int)&uStack_5d8 + iStack_50 * 0x18 + 4);
         (out_result->poly2).vertices[0].z = (double)(&uStack_5d0)[iStack_50 * 3];
-        pCVar14->x = *pdVar22;
+        pCVar14->x = *pdVar21;
         (out_result->poly2).uvs[0].y = (double)(&uStack_560)[iStack_50 * 2];
         *(uint *)&pCVar13->x = uStack_350;
         *(uint *)((int)&(out_result->poly2).vertices[1].x + 4) = uStack_34c;
@@ -637,7 +619,7 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
         *(uint *)&(out_result->poly2).vertices[1].z = uStack_340;
         *(uint *)((int)&(out_result->poly2).vertices[1].z + 4) = uStack_33c;
         pCVar12->x = dStack_538;
-        (out_result->poly2).uvs[1].y = dVar18;
+        (out_result->poly2).uvs[1].y = dVar17;
         *(uint *)&pCVar11->x = *(uint *)dStack_1e0._4_4_;
         *(uint *)((int)&(out_result->poly2).vertices[2].x + 4) =
              *(uint *)((int)dStack_1e0._4_4_ + 4);
@@ -666,51 +648,51 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
         iStack_54 = 1;
         iStack_6c = 2;
       }
-      dVar18 = (&dStack_3f8)[iStack_4c] / ((&dStack_3f8)[iStack_4c] - (&dStack_3f8)[iStack_54]);
-      pdVar25 = (double *)(&uStack_5e0 + iStack_54 * 3);
-      pdVar21 = (double *)(&uStack_5e0 + iStack_4c * 3);
-      dStack_230 = *pdVar21 - *pdVar25;
+      dVar17 = (&dStack_3f8)[iStack_4c] / ((&dStack_3f8)[iStack_4c] - (&dStack_3f8)[iStack_54]);
+      pdVar24 = (double *)(&uStack_5e0 + iStack_54 * 3);
+      pdVar20 = (double *)(&uStack_5e0 + iStack_4c * 3);
+      dStack_230 = *pdVar20 - *pdVar24;
       dStack_228 = (double)(&uStack_5d8)[iStack_4c * 3] - (double)(&uStack_5d8)[iStack_54 * 3];
       dStack_220 = (double)(&uStack_5d0)[iStack_4c * 3] - (double)(&uStack_5d0)[iStack_54 * 3];
-      pdVar26 = &dStack_230;
+      pdVar25 = &dStack_230;
       pdVar28 = &dStack_4b8;
-      for (iVar20 = 6; iVar20 != 0; iVar20 = iVar20 + -1) {
-        *(uint *)pdVar28 = *(uint *)pdVar26;
-        pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);
+      for (iVar19 = 6; iVar19 != 0; iVar19 = iVar19 + -1) {
+        *(uint *)pdVar28 = *(uint *)pdVar25;
+        pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);
         pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);
       }
-      dStack_290 = dStack_4b8 * dVar18;
-      dStack_288 = dStack_4b0 * dVar18;
-      dStack_280 = dStack_4a8 * dVar18;
-      pdVar26 = &dStack_290;
+      dStack_290 = dStack_4b8 * dVar17;
+      dStack_288 = dStack_4b0 * dVar17;
+      dStack_280 = dStack_4a8 * dVar17;
+      pdVar25 = &dStack_290;
       pdVar28 = &dStack_260;
-      for (iVar20 = 6; iVar20 != 0; iVar20 = iVar20 + -1) {
-        *(uint *)pdVar28 = *(uint *)pdVar26;
-        pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);
+      for (iVar19 = 6; iVar19 != 0; iVar19 = iVar19 + -1) {
+        *(uint *)pdVar28 = *(uint *)pdVar25;
+        pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);
         pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);
       }
-      dStack_428 = *pdVar21 - dStack_260;
+      dStack_428 = *pdVar20 - dStack_260;
       dStack_420 = (double)(&uStack_5d8)[iStack_4c * 3] - dStack_258;
       dStack_418 = (double)(&uStack_5d0)[iStack_4c * 3] - dStack_250;
-      pdVar26 = &dStack_428;
+      pdVar25 = &dStack_428;
       puVar27 = &uStack_3e0;
       for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {
-        *puVar27 = *(uint *)pdVar26;
-        pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);
+        *puVar27 = *(uint *)pdVar25;
+        pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);
         puVar27 = puVar27 + (uint)bVar16 * -2 + 1;
       }
       uStack_598 = uStack_3e0;
       pdVar28 = (double *)(&uStack_568 + iStack_54 * 2);
-      pdVar26 = (double *)(&uStack_568 + iStack_4c * 2);
-      uStack_1d8 = *pdVar26 - *pdVar28;
+      pdVar25 = (double *)(&uStack_568 + iStack_4c * 2);
+      uStack_1d8 = *pdVar25 - *pdVar28;
       dStack_1d0 = (double)(&uStack_560)[iStack_4c * 2] - (double)(&uStack_560)[iStack_54 * 2];
       uStack_108 = uStack_1d8;
       dStack_100 = dStack_1d0;
-      uStack_e8 = uStack_1d8 * dVar18;
-      dStack_e0 = dStack_1d0 * dVar18;
+      uStack_e8 = uStack_1d8 * dVar17;
+      dStack_e0 = dStack_1d0 * dVar17;
       uStack_198 = uStack_e8;
       dStack_190 = dStack_e0;
-      uStack_f8 = *pdVar26 - uStack_e8;
+      uStack_f8 = *pdVar25 - uStack_e8;
       dStack_f0 = (double)(&uStack_560)[iStack_4c * 2] - dStack_e0;
       uStack_138 = uStack_f8;
       dStack_130 = dStack_f0;
@@ -729,21 +711,21 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
       pCVar6 = (out_result->poly1).vertices + 1;
       pCVar7 = (out_result->poly1).uvs;
       pCVar8 = (out_result->poly1).vertices;
-      iVar20 = iStack_6c * 0x18;
+      iVar19 = iStack_6c * 0x18;
       iVar7 = iStack_6c * 0x10;
       pdVar13 = (double *)(&uStack_568 + iStack_6c * 2);
-      pdVar22 = (double *)(&uStack_5e0 + iStack_6c * 3);
+      pdVar21 = (double *)(&uStack_5e0 + iStack_6c * 3);
       if (0.0 < (&dStack_3f8)[iStack_4c]) {
         (out_result->poly1).vertex_count = 3;
-        pCVar8->x = *pdVar22;
+        pCVar8->x = *pdVar21;
         (out_result->poly1).vertices[0].y = (double)(&uStack_5d8)[iStack_6c * 3];
         (out_result->poly1).vertices[0].z = (double)(&uStack_5d0)[iStack_6c * 3];
         pCVar7->x = *pdVar13;
         (out_result->poly1).uvs[0].y = (double)(&uStack_560)[iStack_6c * 2];
-        pCVar6->x = *pdVar21;
+        pCVar6->x = *pdVar20;
         (out_result->poly1).vertices[1].y = (double)(&uStack_5d8)[iStack_4c * 3];
         (out_result->poly1).vertices[1].z = (double)(&uStack_5d0)[iStack_4c * 3];
-        pCVar5->x = *pdVar26;
+        pCVar5->x = *pdVar25;
         (out_result->poly1).uvs[1].y = (double)(&uStack_560)[iStack_4c * 2];
         pCVar4->x = __BITCAST_DOUBLE(CONCAT44(uStack_3dc,uStack_3e0));
         (out_result->poly1).vertices[2].y = __BITCAST_DOUBLE(CONCAT44(uStack_3d4,uStack_3d8));
@@ -751,17 +733,17 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
         pCVar16->x = uStack_f8;
         (out_result->poly1).uvs[2].y = dStack_f0;
         (out_result->poly2).vertex_count = 3;
-        *(uint *)&pCVar15->x = *(uint *)pdVar22;
+        *(uint *)&pCVar15->x = *(uint *)pdVar21;
         *(uint *)((int)&(out_result->poly2).vertices[0].x + 4) =
-             *(uint *)((int)&uStack_5e0 + iVar20 + 4);
+             *(uint *)((int)&uStack_5e0 + iVar19 + 4);
         *(uint *)&(out_result->poly2).vertices[0].y =
              *(uint *)(&uStack_5d8 + iStack_6c * 3);
         *(uint *)((int)&(out_result->poly2).vertices[0].y + 4) =
-             *(uint *)((int)&uStack_5d8 + iVar20 + 4);
+             *(uint *)((int)&uStack_5d8 + iVar19 + 4);
         *(uint *)&(out_result->poly2).vertices[0].z =
              *(uint *)(&uStack_5d0 + iStack_6c * 3);
         *(uint *)((int)&(out_result->poly2).vertices[0].z + 4) =
-             *(uint *)((int)&uStack_5d0 + iVar20 + 4);
+             *(uint *)((int)&uStack_5d0 + iVar19 + 4);
         *(uint *)&pCVar14->x = *(uint *)pdVar13;
         *(uint *)((int)&(out_result->poly2).uvs[0].x + 4) =
              *(uint *)((int)&uStack_568 + iVar7 + 4);
@@ -776,7 +758,7 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
         *(uint *)((int)&(out_result->poly2).vertices[1].z + 4) = uStack_3cc;
         pCVar12->x = uStack_f8;
         (out_result->poly2).uvs[1].y = dStack_f0;
-        pCVar11->x = *pdVar25;
+        pCVar11->x = *pdVar24;
         (out_result->poly2).vertices[2].y = (double)(&uStack_5d8)[iStack_54 * 3];
         (out_result->poly2).vertices[2].z = (double)(&uStack_5d0)[iStack_54 * 3];
         pCVar9->x = *pdVar28;
@@ -784,15 +766,15 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
         return 1;
       }
       (out_result->poly2).vertex_count = 3;
-      pCVar15->x = *pdVar22;
+      pCVar15->x = *pdVar21;
       (out_result->poly2).vertices[0].y = (double)(&uStack_5d8)[iStack_6c * 3];
       (out_result->poly2).vertices[0].z = (double)(&uStack_5d0)[iStack_6c * 3];
       pCVar14->x = *pdVar13;
       (out_result->poly2).uvs[0].y = (double)(&uStack_560)[iStack_6c * 2];
-      pCVar13->x = *pdVar21;
+      pCVar13->x = *pdVar20;
       (out_result->poly2).vertices[1].y = (double)(&uStack_5d8)[iStack_4c * 3];
       (out_result->poly2).vertices[1].z = (double)(&uStack_5d0)[iStack_4c * 3];
-      pCVar12->x = *pdVar26;
+      pCVar12->x = *pdVar25;
       (out_result->poly2).uvs[1].y = (double)(&uStack_560)[iStack_4c * 2];
       pCVar11->x = __BITCAST_DOUBLE(CONCAT44(uStack_3dc,uStack_3e0));
       (out_result->poly2).vertices[2].y = __BITCAST_DOUBLE(CONCAT44(uStack_3d4,uStack_3d8));
@@ -800,17 +782,17 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
       pCVar9->x = uStack_f8;
       (out_result->poly2).uvs[2].y = dStack_f0;
       (out_result->poly1).vertex_count = 3;
-      *(uint *)&pCVar8->x = *(uint *)pdVar22;
+      *(uint *)&pCVar8->x = *(uint *)pdVar21;
       *(uint *)((int)&(out_result->poly1).vertices[0].x + 4) =
-           *(uint *)((int)&uStack_5e0 + iVar20 + 4);
+           *(uint *)((int)&uStack_5e0 + iVar19 + 4);
       *(uint *)&(out_result->poly1).vertices[0].y =
            *(uint *)(&uStack_5d8 + iStack_6c * 3);
       *(uint *)((int)&(out_result->poly1).vertices[0].y + 4) =
-           *(uint *)((int)&uStack_5d8 + iVar20 + 4);
+           *(uint *)((int)&uStack_5d8 + iVar19 + 4);
       *(uint *)&(out_result->poly1).vertices[0].z =
            *(uint *)(&uStack_5d0 + iStack_6c * 3);
       *(uint *)((int)&(out_result->poly1).vertices[0].z + 4) =
-           *(uint *)((int)&uStack_5d0 + iVar20 + 4);
+           *(uint *)((int)&uStack_5d0 + iVar19 + 4);
       *(uint *)&pCVar7->x = *(uint *)pdVar13;
       *(uint *)((int)&(out_result->poly1).uvs[0].x + 4) =
            *(uint *)((int)&uStack_568 + iVar7 + 4);
@@ -825,7 +807,7 @@ int __cdecl shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580(CPoly *this_ptr,
       *(uint *)((int)&(out_result->poly1).vertices[1].z + 4) = uStack_3cc;
       pCVar5->x = uStack_f8;
       (out_result->poly1).uvs[1].y = dStack_f0;
-      pCVar4->x = *pdVar25;
+      pCVar4->x = *pdVar24;
       (out_result->poly1).vertices[2].y = (double)(&uStack_5d8)[iStack_54 * 3];
       (out_result->poly1).vertices[2].z = (double)(&uStack_5d0)[iStack_54 * 3];
       pCVar16->x = *pdVar28;

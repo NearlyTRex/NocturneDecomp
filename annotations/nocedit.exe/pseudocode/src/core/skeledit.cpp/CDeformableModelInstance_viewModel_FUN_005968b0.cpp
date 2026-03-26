@@ -1,6 +1,6 @@
 // Name: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
 // Address: 005968b0
-// Address Range: [[005968b0, 0059754b] [0059754f, 0059796e] [00597977, 00598ed7] [006107b1, 006107ce]]
+// Address Range: [[005968b0, 0059754b] [0059754f, 0059796e] [00597977, 00598ed7] [006107b1, 006107ce] [03fc4de5, 03fc4eb0]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(CDeformableModelInstance *this_ptr)
 
@@ -31,14 +31,11 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   CVector3f *pCVar15;
   CDeformableModelInstance *pCVar16;
   int iVar17;
-  CMatrix3x4f *pCVar18;
   SBone *string_data;
+  char *pcVar18;
   char *pcVar19;
-  CMatrix3x4f *pCVar20;
-  char *pcVar21;
-  byte bVar22;
-  ushort uVar23;
-  ushort uVar24;
+  ushort uVar20;
+  ushort uVar21;
   CPickList local_1900;
   CPickList local_1558;
   CPickList local_11b0;
@@ -151,7 +148,6 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   float local_18;
   char local_14 [4];
   
-  bVar22 = 0;
   core_skeleton_cpp_freeAllSkeletons_FUN_005a1ea0();
   core_skeleton_cpp_freeAllModels_FUN_005a1dc0();
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr);
@@ -454,13 +450,6 @@ LAB_0059722b:
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_2c0,&local_184,&local_19c);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_2c0,local_54 + iVar8,&local_320);
-      pCVar18 = &local_320;
-      pCVar20 = &local_2f0;
-      for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {
-        pCVar20->m[0].w = pCVar18->m[0].w;
-        pCVar18 = (CMatrix3x4f *)((int)pCVar18 + ((uint)bVar22 * -2 + 1) * 4);
-        pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar22 * -2 + 1) * 4);
-      }
       pCVar11 = (CSlew *)core_xform_cpp_getTranslation_FUN_005f6110(&local_2f0,&local_16c);
       if (&local_200 != pCVar11) {
         local_200.position.x = (pCVar11->position).x;
@@ -546,19 +535,19 @@ LAB_0059722b:
     if (local_98 == 0) {
       if (local_9c != 0) {
         fVar10 = 3.57331e-43;
-        uVar23 = SUB42(g_CEditorToolsPtr,0);
-        uVar24 = (ushort)((uint)g_CEditorToolsPtr >> 0x10);
+        uVar20 = SUB42(g_CEditorToolsPtr,0);
+        uVar21 = (ushort)((uint)g_CEditorToolsPtr >> 0x10);
         goto LAB_005975b4;
       }
     }
     else {
       fVar10 = (float)shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                                 (g_CEditorToolsPtr);
-      uVar23 = SUB42(g_CEditorToolsPtr,0);
-      uVar24 = (ushort)((uint)g_CEditorToolsPtr >> 0x10);
+      uVar20 = SUB42(g_CEditorToolsPtr,0);
+      uVar21 = (ushort)((uint)g_CEditorToolsPtr >> 0x10);
 LAB_005975b4:
       shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
-                ((CEditorTools *)CONCAT22(uVar24,uVar23),2.0,(int)fVar10);
+                ((CEditorTools *)CONCAT22(uVar21,uVar20),2.0,(int)fVar10);
     }
     _sprintf(local_46c);
     engine_2d_c_drawText_FUN_00401fd0(local_46c,0,g_WindowHeight + -0xb);
@@ -668,13 +657,6 @@ LAB_005975b4:
       core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                 (&local_230,&local_200.position,(CVector3f *)&local_200.pitch);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(local_54 + local_64,&local_230,&local_290);
-      pCVar18 = &local_290;
-      pCVar20 = &local_260;
-      for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {
-        pCVar20->m[0].w = pCVar18->m[0].w;
-        pCVar18 = (CMatrix3x4f *)((int)pCVar18 + ((uint)bVar22 * -2 + 1) * 4);
-        pCVar20 = (CMatrix3x4f *)((int)pCVar20 + ((uint)bVar22 * -2 + 1) * 4);
-      }
       pCVar14 = core_xform_cpp_invertAndGetTranslation_FUN_005f6140(&local_260,&local_10c);
       if (&local_184 != pCVar14) {
         local_184.x = pCVar14->x;
@@ -786,9 +768,9 @@ LAB_005975b4:
           iVar17 = iVar17 + 1) {
         pCVar13 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                             (&this_ptr->motion_controller);
-        pcVar21 = pCVar13->motions[0].motion_name + iVar8;
+        pcVar19 = pCVar13->motions[0].motion_name + iVar8;
         iVar8 = iVar8 + 0x54c;
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1900.base,pcVar21);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1900.base,pcVar19);
       }
       iVar8 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&local_1900,"Select motion",
@@ -927,21 +909,21 @@ LAB_005975b4:
         }
         if (local_2c == 4) {
           iVar8 = 0;
-          pcVar21 = shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(g_CEditorToolsPtr)
+          pcVar19 = shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(g_CEditorToolsPtr)
           ;
-          cVar2 = *pcVar21;
+          cVar2 = *pcVar19;
           while (cVar2 != '\0') {
             local_1c = 0;
-            sscanf(pcVar21,"%f%n");
+            sscanf(pcVar19,"%f%n");
             if (local_1c < 1) {
-              pcVar21 = pcVar21 + 1;
+              pcVar19 = pcVar19 + 1;
             }
             else {
               iVar8 = iVar8 + 1;
-              pcVar21 = pcVar21 + local_1c;
+              pcVar19 = pcVar19 + local_1c;
             }
             if (5 < iVar8) break;
-            cVar2 = *pcVar21;
+            cVar2 = *pcVar19;
           }
           if (iVar8 == 6) {
             iVar8 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
@@ -1071,16 +1053,16 @@ LAB_005975b4:
   if (((local_40 != 0) || (local_94 != 0)) &&
      (iVar8 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                         (g_CEditorToolsPtr,"You biased/scaled the model.  Save model before exiting viewer?"), iVar8 != 0)) {
-    pcVar21 = local_860;
-    pcVar19 = this_ptr_01->model_filename;
+    pcVar19 = local_860;
+    pcVar18 = this_ptr_01->model_filename;
     do {
-      cVar2 = *pcVar19;
-      *pcVar21 = cVar2;
+      cVar2 = *pcVar18;
+      *pcVar19 = cVar2;
       if (cVar2 == '\0') break;
-      cVar2 = pcVar19[1];
+      cVar2 = pcVar18[1];
+      pcVar18 = pcVar18 + 2;
+      pcVar19[1] = cVar2;
       pcVar19 = pcVar19 + 2;
-      pcVar21[1] = cVar2;
-      pcVar21 = pcVar21 + 2;
     } while (cVar2 != '\0');
     iVar8 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                       (g_CEditorToolsPtr,"Enter .DFM filename","models",
