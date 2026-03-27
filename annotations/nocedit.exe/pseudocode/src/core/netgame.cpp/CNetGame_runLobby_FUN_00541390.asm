@@ -8,7 +8,7 @@
 ; Local Variables:
 ; float            Stack[-0x138]:4  local_138
 ; float            Stack[-0x134]:4  local_134
-; uchar[256]       Stack[-0x130]:256  local_130
+; char[256]        Stack[-0x130]:256  local_130
 ; int              Stack[-0x30]:4  local_30
 ; char *           Stack[-0x2c]:4  local_2c
 ; char *           Stack[-0x28]:4  local_28

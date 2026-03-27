@@ -1,6 +1,6 @@
 // Name: core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550
 // Address: 004f6550
-// Address Range: [[004f6550, 004f69b8] [03fc52d7, 03fc5332]]
+// Address Range: [[004f6550, 004f69b8] [03fc52d7, 03fc5332] [03fc58b4, 03fc5909]]
 // Convention: __stack2_esi
 // Signature: CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
@@ -16,11 +16,21 @@
 CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
-  int iVar2;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  float fVar8;
+  float fVar9;
+  float fVar10;
+  float fVar11;
+  int iVar12;
   int iVar1;
   CMatrix3x4f *pCVar2;
   float *pfVar3;
-  float *pfVar4;
   byte bVar4;
   float local_294 [12];
   CMatrix3x4f local_264 [2];
@@ -41,11 +51,10 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
   CVector3f local_30;
   CVector3f local_24 [2];
   
-  bVar4 = 0;
   if ((this_ptr->hostage_type == 1) &&
-     (iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                        ((this_ptr->base).base.carry_hands[hand_index].carry_actor,
-                         "CShotgun"), iVar2 != 0)) {
+     (iVar12 = core_actor_cpp_isOfClass_FUN_0040c6d0
+                         ((this_ptr->base).base.carry_hands[hand_index].carry_actor,
+                          "CShotgun"), iVar12 != 0)) {
     local_84.x = 0.269;
     local_84.y = -0.012;
     local_54.x = -0.287;
@@ -114,23 +123,28 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
               ((CCharacter *)this_ptr,hand_index,&local_144);
     pCVar2 = &local_144;
   }
-  pfVar4 = local_294;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *pfVar4 = pCVar2->m[0].w;
-    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
-    pfVar4 = pfVar4 + (uint)bVar4 * -2 + 1;
-  }
-  out_matrix->m[0].w = local_294[0];
-  out_matrix->m[0].x = local_294[1];
-  out_matrix->m[0].y = local_294[2];
-  out_matrix->m[0].z = local_294[3];
-  out_matrix->m[1].w = local_294[4];
-  out_matrix->m[1].x = local_294[5];
-  out_matrix->m[1].y = local_294[6];
-  out_matrix->m[1].z = local_294[7];
-  out_matrix->m[2].w = local_294[8];
-  out_matrix->m[2].x = local_294[9];
-  out_matrix->m[2].y = local_294[10];
-  out_matrix->m[2].z = local_294[0xb];
+  fVar1 = pCVar2->m[0].x;
+  fVar2 = pCVar2->m[0].y;
+  fVar3 = pCVar2->m[0].z;
+  fVar4 = pCVar2->m[1].w;
+  fVar5 = pCVar2->m[1].x;
+  fVar6 = pCVar2->m[1].y;
+  fVar7 = pCVar2->m[1].z;
+  fVar8 = pCVar2->m[2].w;
+  fVar9 = pCVar2->m[2].x;
+  fVar10 = pCVar2->m[2].y;
+  fVar11 = pCVar2->m[2].z;
+  out_matrix->m[0].w = pCVar2->m[0].w;
+  out_matrix->m[0].x = fVar1;
+  out_matrix->m[0].y = fVar2;
+  out_matrix->m[0].z = fVar3;
+  out_matrix->m[1].w = fVar4;
+  out_matrix->m[1].x = fVar5;
+  out_matrix->m[1].y = fVar6;
+  out_matrix->m[1].z = fVar7;
+  out_matrix->m[2].w = fVar8;
+  out_matrix->m[2].x = fVar9;
+  out_matrix->m[2].y = fVar10;
+  out_matrix->m[2].z = fVar11;
   return out_matrix;
 }

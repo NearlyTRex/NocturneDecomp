@@ -387,5 +387,5 @@ int __cdecl crt_env_c_findEnvVar_FUN_0060f1f0(char *name,int delete_flag);
 undefined4 crt_unknown_c_FUN_0060fcf4(short *param_1);
 int crt_unknown_c_FUN_0060fe94(short *param_1,int param_2);
 wchar_t __watcallStack crt_locale_c_fullwidth_toupper_FUN_0060ffb0(wchar_t character);
-char * __cdecl crt_process_c_build_file_info_env_FUN_0060ffd0(void);
+char * __cdecl crt_process_c_buildFileInfoEnv_FUN_0060ffd0(void);
 

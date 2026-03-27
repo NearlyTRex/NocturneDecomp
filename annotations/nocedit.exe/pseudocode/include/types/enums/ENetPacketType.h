@@ -1,5 +1,8 @@
 #pragma once
 
+// Dependencies
+#include "system/basetypes.h"
+
 // Enum: ENetPacketType
 enum {
     PACKET_NONE = 0,
@@ -20,5 +23,5 @@ enum {
     PACKET_SIM_FRAME = 15,
     PACKET_PLAYER_CONTROL = 16
 };
-typedef int ENetPacketType;
+typedef uchar ENetPacketType;
 

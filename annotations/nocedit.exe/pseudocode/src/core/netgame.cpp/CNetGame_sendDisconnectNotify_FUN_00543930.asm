@@ -8,8 +8,7 @@
 ; SNetworkAddr *   Stack[0x8]:4   dest_addr
 ; int              Stack[0xc]:4   payload
 ; Local Variables:
-; SNetPacketHeader Stack[-0x10]:5  local_10
-; int              Stack[-0xb]:4  local_b
+; SNetPacket_Simple Stack[-0x10]:9  local_10
 ;
 ; XREF[2]:
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00 at 00540191

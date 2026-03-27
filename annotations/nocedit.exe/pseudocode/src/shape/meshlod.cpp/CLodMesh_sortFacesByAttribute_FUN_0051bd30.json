@@ -5,19 +5,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 403,
-    "complexity_score": 200,
+    "assembly_lines": 423,
+    "complexity_score": 203,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 160,
+    "pseudocode_lines": 163,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 563
+    "total_lines": 586
   },
   "cross_references": [
     {
@@ -41,6 +41,10 @@
       [
         "00609cb0",
         "00609dd0"
+      ],
+      [
+        "03fc59b6",
+        "03fc59f0"
       ]
     ],
     "convention": "__cdecl",
@@ -130,39 +134,39 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.809090909090909,
-    "instruction_count": 330,
+    "avg_pcode_per_instr": 3.7658959537572256,
+    "instruction_count": 346,
     "opcode_distribution": {
       "BOOL_NEGATE": 5,
       "BOOL_OR": 1,
-      "BRANCH": 28,
+      "BRANCH": 29,
       "CALL": 7,
-      "CBRANCH": 10,
-      "COPY": 276,
+      "CBRANCH": 9,
+      "COPY": 287,
       "FLOAT2FLOAT": 2,
-      "INT_ADD": 212,
-      "INT_AND": 120,
-      "INT_CARRY": 41,
-      "INT_EQUAL": 111,
+      "INT_ADD": 222,
+      "INT_AND": 126,
+      "INT_CARRY": 43,
+      "INT_EQUAL": 116,
       "INT_LEFT": 2,
       "INT_LESS": 5,
-      "INT_MULT": 9,
+      "INT_MULT": 7,
       "INT_NOTEQUAL": 7,
       "INT_OR": 5,
       "INT_SBORROW": 7,
-      "INT_SCARRY": 41,
+      "INT_SCARRY": 43,
       "INT_SEXT": 3,
-      "INT_SLESS": 55,
-      "INT_SUB": 50,
-      "INT_XOR": 2,
-      "INT_ZEXT": 6,
-      "LOAD": 91,
-      "POPCOUNT": 53,
+      "INT_SLESS": 58,
+      "INT_SUB": 47,
+      "INT_XOR": 3,
+      "INT_ZEXT": 4,
+      "LOAD": 96,
+      "POPCOUNT": 56,
       "RETURN": 1,
-      "STORE": 105,
+      "STORE": 110,
       "SUBPIECE": 2
     },
-    "pcode_op_count": 1257
+    "pcode_op_count": 1303
   },
   "stack_frame": {
     "frame_size": 6312,
@@ -362,7 +366,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 63,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar16 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_28);",
@@ -370,7 +374,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 64,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar2 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_24);",

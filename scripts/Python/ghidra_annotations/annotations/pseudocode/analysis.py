@@ -3827,9 +3827,24 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                             func_name, group_addr, run, total_size, cave_est,
                             'unfixable', 'branch target inside patch range'))
                     else:
-                        consecutive_sites.append((
-                            func_name, group_addr, run, total_size, cave_est,
-                            'fixable', '%d bytes borrowable' % total_size))
+                        # Check if function has bVar_mul artifacts
+                        if func_name not in _bvar_cache:
+                            has_bvar = False
+                            for ext in ('.cpp', '.c'):
+                                cpp_path = asm_path.replace('.asm', ext)
+                                if os.path.isfile(cpp_path):
+                                    with open(cpp_path, 'r') as f:
+                                        has_bvar = bool(re.search(r'\bbVar\w*\s*\*\s*-', f.read()))
+                                    break
+                            _bvar_cache[func_name] = has_bvar
+                        if _bvar_cache[func_name]:
+                            consecutive_sites.append((
+                                func_name, group_addr, run, total_size, cave_est,
+                                'fixable', '%d bytes borrowable' % total_size))
+                        else:
+                            consecutive_sites.append((
+                                func_name, group_addr, run, total_size, cave_est,
+                                'no_artifacts', 'no bVar_mul artifacts'))
                 else:
                     consecutive_sites.append((
                         func_name, group_addr, run, total_size, cave_est,
@@ -3918,6 +3933,7 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
     # --- Summary ---
     consec_fixable = [s for s in consecutive_sites if s[5] == 'fixable']
     consec_unfixable = [s for s in consecutive_sites if s[5] == 'unfixable']
+    consec_no_artifacts = [s for s in consecutive_sites if s[5] == 'no_artifacts']
     rep_byval = [s for s in rep_sites if s[6] == 'byval']
     rep_fixable = [s for s in rep_sites if s[6] == 'fixable']
     rep_no_artifacts = [s for s in rep_sites if s[6] == 'no_artifacts']
@@ -3944,6 +3960,7 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
         copy_bytes = run * 4
         lines.append("  %dx MOVSD (%2d bytes):   %d sites" % (run, copy_bytes, consec_by_run[run]))
     lines.append("  Fixable (cave patch):   %d" % len(consec_fixable))
+    lines.append("  No artifacts (OK):      %d" % len(consec_no_artifacts))
     lines.append("  Unfixable:              %d" % len(consec_unfixable))
     lines.append("  Est. cave space:        ~%d bytes" % total_cave)
     lines.append("")
@@ -3998,6 +4015,30 @@ def generate_movsd_report(pseudocode_src_dir, output_path):
                 for addr, site_size, cave_est in sites:
                     lines.append("    0x%08x  %dx MOVSD (%d bytes copy, %d bytes borrowable)" % (
                         addr, run, run * 4, site_size))
+            lines.append("")
+
+    # --- No-artifact consecutive sites by function, grouped by MOVSD count ---
+    if consec_no_artifacts:
+        by_run = {}
+        for func_name, addr, run, site_size, cave_est, status, detail in consec_no_artifacts:
+            if run not in by_run:
+                by_run[run] = {}
+            if func_name not in by_run[run]:
+                by_run[run][func_name] = []
+            by_run[run][func_name].append((addr, run))
+
+        for run in sorted(by_run.keys(), reverse=True):
+            funcs = by_run[run]
+            total_sites = sum(len(s) for s in funcs.values())
+            lines.append("-" * 100)
+            lines.append("NO ARTIFACTS %dx MOVSD SITES (%d bytes copy, %d sites — decompiler handles OK)" % (
+                run, run * 4, total_sites))
+            lines.append("-" * 100)
+            for func_name, sites in sorted(funcs.items(),
+                                            key=lambda x: len(x[1]), reverse=True):
+                lines.append("  %-70s  %2d sites" % (func_name, len(sites)))
+                for addr, r in sites:
+                    lines.append("    0x%08x  %dx MOVSD (%d bytes copy)" % (addr, r, r * 4))
             lines.append("")
 
     # --- Unfixable consecutive sites by function, grouped by MOVSD count ---

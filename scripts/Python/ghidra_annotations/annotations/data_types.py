@@ -607,7 +607,7 @@ def import_data_types(currentProgram, path):
         dt_name = enum_data["name"]
         log_info("Importing enum %s" % dt_name)
         category = CategoryPath(enum_data.get("cat")) if enum_data.get("cat") else CategoryPath("/")
-        enum = EnumDataType(category, enum_data["name"], 4)
+        enum = EnumDataType(category, enum_data["name"], enum_data.get("size", 4))
         for value in enum_data["values"]:
             enum.add(value["name"], value["val"])
         add_or_update_data_type(currentProgram, enum)
@@ -1007,6 +1007,7 @@ def export_data_types(currentProgram, path):
                 "type": dt_type,
                 "name": dt_name,
                 "cat": dt_cat_path,
+                "size": dt.getLength(),
                 "values": dt_values,
                 "importable": is_importable
             }

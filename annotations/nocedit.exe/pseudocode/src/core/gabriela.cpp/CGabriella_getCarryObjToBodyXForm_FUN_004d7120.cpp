@@ -1,6 +1,6 @@
 // Name: core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120
 // Address: 004d7120
-// Address Range: [[004d7120, 004d7589] [03fc2f37, 03fc2f9b]]
+// Address Range: [[004d7120, 004d7589] [03fc2f37, 03fc2f9b] [03fc5808, 03fc585d]]
 // Convention: __stack2_esi
 // Signature: void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
@@ -16,10 +16,8 @@ void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d71
   CVector3f *pCVar2;
   CVector3f *pCVar3;
   int iVar3;
-  int iVar4;
   CMatrix3x4f *pCVar6;
   CMatrix3x4f *pCVar4;
-  CMatrix3x4f *pCVar7;
   CMatrix3x4f *pCVar5;
   byte bVar6;
   CMatrix3x4f CStack_190;
@@ -87,12 +85,18 @@ void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d71
     core_xform_cpp_buildRotationY_FUN_005f6cc0(-1.5707964,&CStack_190);
     pCVar6 = &CStack_190;
 LAB_004d73e5:
-    pCVar7 = &CStack_d0;
-    for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pCVar7->m[0].w = pCVar6->m[0].w;
-      pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar6 * -2 + 1) * 4);
-      pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar6 * -2 + 1) * 4);
-    }
+    CStack_d0.m[0].w = pCVar6->m[0].w;
+    CStack_d0.m[0].x = pCVar6->m[0].x;
+    CStack_d0.m[0].y = pCVar6->m[0].y;
+    CStack_d0.m[0].z = pCVar6->m[0].z;
+    CStack_d0.m[1].w = pCVar6->m[1].w;
+    CStack_d0.m[1].x = pCVar6->m[1].x;
+    CStack_d0.m[1].y = pCVar6->m[1].y;
+    CStack_d0.m[1].z = pCVar6->m[1].z;
+    CStack_d0.m[2].w = pCVar6->m[2].w;
+    CStack_d0.m[2].x = pCVar6->m[2].x;
+    CStack_d0.m[2].y = pCVar6->m[2].y;
+    CStack_d0.m[2].z = pCVar6->m[2].z;
   }
   else {
     if (hand_index == 1) {

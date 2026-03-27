@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   fd
 ;
 ; XREF[1]:
-;   crt_process.c_build_file_info_env_FUN_0060ffd0 at 00610053
+;   crt_process.c_buildFileInfoEnv_FUN_0060ffd0 at 00610053
 ;
 ; Referenced Globals:
 ;   uint g_MaxHandleCount = 0x14

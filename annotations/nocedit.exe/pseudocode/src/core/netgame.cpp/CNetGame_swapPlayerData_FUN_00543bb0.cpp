@@ -1,6 +1,6 @@
 // Name: core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0
 // Address: 00543bb0
-// Address Range: [[00543bb0, 00543ca8] [006049c7, 006049e9]]
+// Address Range: [[00543bb0, 00543ca8] [006049c7, 006049e9] [03fc5b24, 03fc5b39]]
 // Convention: __cdecl
 // Signature: void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_00543bb0(CNetGame *this_ptr,SNetPlayer *other)
 
@@ -10,7 +10,6 @@ void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_00543bb0(CNetGame *thi
 
 {
   int iVar1;
-  int iVar2;
   SNetPlayer *pSVar2;
   EConnectionType *pEVar3;
   byte bVar4;
@@ -79,16 +78,14 @@ void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_00543bb0(CNetGame *thi
   local_14 = this_ptr->players[0].controls.action_states[2];
   pSVar2 = other;
   for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pSVar2 = (SNetPlayer *)((int)pSVar2 + (uint)bVar4 * -8 + 4);
     this_ptr->connection_type = *(EConnectionType *)pSVar2->name;
-    pSVar2 = pSVar2;
+    pSVar2 = (SNetPlayer *)((int)pSVar2 + (uint)bVar4 * -8 + 4);
     this_ptr = (CNetGame *)((int)this_ptr + (uint)bVar4 * -8 + 4);
   }
   pEVar3 = &EStack_88;
-  for (iVar2 = 0x1e; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pEVar3 = pEVar3 + (uint)bVar4 * -2 + 1;
+  for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(EConnectionType *)other->name = *pEVar3;
-    pEVar3 = pEVar3;
+    pEVar3 = pEVar3 + (uint)bVar4 * -2 + 1;
     other = (SNetPlayer *)((int)other + (uint)bVar4 * -8 + 4);
   }
   return;

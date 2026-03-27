@@ -8,19 +8,20 @@ fixed by replacing them with explicit MOV instructions in code caves.
 
 SUMMARY
 --------------------------------------------------
-Already patched (cave):    766 sites (excluded from counts below)
+Already patched (cave):    777 sites (excluded from counts below)
 
-Consecutive MOVSD groups:  122
-  1x MOVSD ( 4 bytes):   100 sites
+Consecutive MOVSD groups:  119
+  1x MOVSD ( 4 bytes):   98 sites
   2x MOVSD ( 8 bytes):   3 sites
-  3x MOVSD (12 bytes):   15 sites
+  3x MOVSD (12 bytes):   14 sites
   4x MOVSD (16 bytes):   4 sites
-  Fixable (cave patch):   32
+  Fixable (cave patch):   1
+  No artifacts (OK):      28
   Unfixable:              90
-  Est. cave space:        ~870 bytes
+  Est. cave space:        ~33 bytes
 
-REP MOVSD sites:           535
-  Fixable (struct copy):  28
+REP MOVSD sites:           527
+  Fixable (struct copy):  20
   No artifacts (OK):      33
   Too large (buffer):     178
   Dynamic count:          290
@@ -29,11 +30,11 @@ REP MOVSD sites:           535
   REP MOVSD by copy size:
     unknown count:        291 sites
       4 dwords (  16 bytes): 2 sites
-      6 dwords (  24 bytes): 27 sites
+      6 dwords (  24 bytes): 26 sites
       7 dwords (  28 bytes): 1 sites
       8 dwords (  32 bytes): 3 sites
      10 dwords (  40 bytes): 3 sites
-     12 dwords (  48 bytes): 27 sites
+     12 dwords (  48 bytes): 20 sites
      13 dwords (  52 bytes): 1 sites
      18 dwords (  72 bytes): 7 sites
      20 dwords (  80 bytes): 1 sites
@@ -73,79 +74,77 @@ REP MOVSD sites:           535
     2122 dwords (8488 bytes): 1 sites
     3200 dwords (12800 bytes): 1 sites
 
-Total MOVSD sites:         657
+Total MOVSD sites:         646
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE 3x MOVSD SITES (12 bytes copy, 15 sites)
+FIXABLE 3x MOVSD SITES (12 bytes copy, 1 sites)
 ----------------------------------------------------------------------------------------------------
-  CDemonCamera_restoreAlphaTransform_FUN_00453a70                          1 sites  ~33 bytes
-    0x00453bc4  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CDemonCamera_restoreTransform_FUN_0044f1e0                               1 sites  ~33 bytes
-    0x0044f1fb  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CDemonCamera_saveCameraTransform_FUN_0044ef30                            1 sites  ~33 bytes
-    0x0044ef54  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CDemonCamera_screenToWorldTransform_FUN_0044d370                         1 sites  ~33 bytes
-    0x0044d465  3x MOVSD (12 bytes copy, 7 bytes borrowable)
-  CDemonCamera_worldToScreenCoord_FUN_0044d310                             1 sites  ~33 bytes
-    0x0044d361  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  sampleFogAlongRay_FUN_0044bdd0                                           1 sites  ~33 bytes
-    0x0044be5c  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CGame_beginFadeIn_FUN_004e0920                                           1 sites  ~33 bytes
-    0x004e088f  3x MOVSD (12 bytes copy, 8 bytes borrowable)
-  CDemonMission_playMission_FUN_00538ba0                                   1 sites  ~33 bytes
-    0x00538bde  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  CDemonMission_replicateActor_FUN_0053bd80                                1 sites  ~33 bytes
-    0x0053bdae  3x MOVSD (12 bytes copy, 9 bytes borrowable)
-  transformNormalFixedPoint_FUN_0056e960                                   1 sites  ~33 bytes
-    0x0056eaa6  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  transformToWorldSpace_FUN_0056e890                                       1 sites  ~33 bytes
-    0x0056e94f  3x MOVSD (12 bytes copy, 5 bytes borrowable)
-  build_file_info_env_FUN_0060ffd0                                         1 sites  ~33 bytes
+  buildFileInfoEnv_FUN_0060ffd0                                            1 sites  ~33 bytes
     0x0061002f  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  getCameraOrigin_FUN_0050e2c0                                             1 sites  ~33 bytes
-    0x0050e2e7  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  getCameraRotation_FUN_0050e2f0                                           1 sites  ~33 bytes
-    0x0050e317  3x MOVSD (12 bytes copy, 6 bytes borrowable)
-  transformWorldToView_FUN_0050cc40                                        1 sites  ~33 bytes
-    0x0050cd01  3x MOVSD (12 bytes copy, 5 bytes borrowable)
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE 2x MOVSD SITES (8 bytes copy, 3 sites)
+NO ARTIFACTS 3x MOVSD SITES (12 bytes copy, 13 sites — decompiler handles OK)
 ----------------------------------------------------------------------------------------------------
-  i64toa_FUN_0060ad40                                                      1 sites  ~27 bytes
-    0x0060ad66  2x MOVSD (8 bytes copy, 6 bytes borrowable)
-  FUN_0060ade0                                                             1 sites  ~27 bytes
-    0x0060adfb  2x MOVSD (8 bytes copy, 5 bytes borrowable)
-  getTime_FUN_005f2dc0                                                     1 sites  ~27 bytes
-    0x005f2dee  2x MOVSD (8 bytes copy, 7 bytes borrowable)
+  CDemonCamera_restoreAlphaTransform_FUN_00453a70                          1 sites
+    0x00453bc4  3x MOVSD (12 bytes copy)
+  CDemonCamera_restoreTransform_FUN_0044f1e0                               1 sites
+    0x0044f1fb  3x MOVSD (12 bytes copy)
+  CDemonCamera_saveCameraTransform_FUN_0044ef30                            1 sites
+    0x0044ef54  3x MOVSD (12 bytes copy)
+  CDemonCamera_screenToWorldTransform_FUN_0044d370                         1 sites
+    0x0044d465  3x MOVSD (12 bytes copy)
+  CDemonCamera_worldToScreenCoord_FUN_0044d310                             1 sites
+    0x0044d361  3x MOVSD (12 bytes copy)
+  sampleFogAlongRay_FUN_0044bdd0                                           1 sites
+    0x0044be5c  3x MOVSD (12 bytes copy)
+  CGame_beginFadeIn_FUN_004e0920                                           1 sites
+    0x004e088f  3x MOVSD (12 bytes copy)
+  CDemonMission_playMission_FUN_00538ba0                                   1 sites
+    0x00538bde  3x MOVSD (12 bytes copy)
+  transformNormalFixedPoint_FUN_0056e960                                   1 sites
+    0x0056eaa6  3x MOVSD (12 bytes copy)
+  transformToWorldSpace_FUN_0056e890                                       1 sites
+    0x0056e94f  3x MOVSD (12 bytes copy)
+  getCameraOrigin_FUN_0050e2c0                                             1 sites
+    0x0050e2e7  3x MOVSD (12 bytes copy)
+  getCameraRotation_FUN_0050e2f0                                           1 sites
+    0x0050e317  3x MOVSD (12 bytes copy)
+  transformWorldToView_FUN_0050cc40                                        1 sites
+    0x0050cd01  3x MOVSD (12 bytes copy)
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE 1x MOVSD SITES (4 bytes copy, 14 sites)
+NO ARTIFACTS 2x MOVSD SITES (8 bytes copy, 3 sites — decompiler handles OK)
 ----------------------------------------------------------------------------------------------------
-  calculatePolygonAngularArea_FUN_00461ee0                                 3 sites  ~63 bytes
-    0x00461f47  1x MOVSD (4 bytes copy, 5 bytes borrowable)
-    0x00461f6e  1x MOVSD (4 bytes copy, 7 bytes borrowable)
-    0x00461f97  1x MOVSD (4 bytes copy, 7 bytes borrowable)
-  calculateVertexAngle_FUN_00462050                                        3 sites  ~63 bytes
-    0x0046206d  1x MOVSD (4 bytes copy, 5 bytes borrowable)
-    0x0046207f  1x MOVSD (4 bytes copy, 5 bytes borrowable)
-    0x00462091  1x MOVSD (4 bytes copy, 7 bytes borrowable)
-  CNetGame_applyNewGameSettings_FUN_00542470                               1 sites  ~21 bytes
-    0x005427a5  1x MOVSD (4 bytes copy, 11 bytes borrowable)
-  CNetGame_swapPlayerData_FUN_00543bb0                                     1 sites  ~21 bytes
-    0x00543bcd  1x MOVSD (4 bytes copy, 8 bytes borrowable)
-  SNetPlayer_copy_FUN_00543cf0                                             1 sites  ~21 bytes
-    0x00543d03  1x MOVSD (4 bytes copy, 7 bytes borrowable)
-  CFileManager_extractFilesToDirectory_FUN_004b76d0                        1 sites  ~21 bytes
-    0x004b7875  1x MOVSD (4 bytes copy, 8 bytes borrowable)
-  CFileManager_extractPodFile_FUN_004b6e10                                 1 sites  ~21 bytes
-    0x004b6f98  1x MOVSD (4 bytes copy, 8 bytes borrowable)
-  convertWorldToScreenCoordinates_FUN_0045bd10                             1 sites  ~21 bytes
-    0x0045be34  1x MOVSD (4 bytes copy, 6 bytes borrowable)
-  detachFaces_FUN_0046eba0                                                 1 sites  ~21 bytes
-    0x0046ec2a  1x MOVSD (4 bytes copy, 7 bytes borrowable)
-  duplicateSharedVertices_FUN_00465d50                                     1 sites  ~21 bytes
-    0x00465e62  1x MOVSD (4 bytes copy, 8 bytes borrowable)
+  i64toa_FUN_0060ad40                                                      1 sites
+    0x0060ad66  2x MOVSD (8 bytes copy)
+  FUN_0060ade0                                                             1 sites
+    0x0060adfb  2x MOVSD (8 bytes copy)
+  getTime_FUN_005f2dc0                                                     1 sites
+    0x005f2dee  2x MOVSD (8 bytes copy)
+
+----------------------------------------------------------------------------------------------------
+NO ARTIFACTS 1x MOVSD SITES (4 bytes copy, 12 sites — decompiler handles OK)
+----------------------------------------------------------------------------------------------------
+  calculatePolygonAngularArea_FUN_00461ee0                                 3 sites
+    0x00461f47  1x MOVSD (4 bytes copy)
+    0x00461f6e  1x MOVSD (4 bytes copy)
+    0x00461f97  1x MOVSD (4 bytes copy)
+  calculateVertexAngle_FUN_00462050                                        3 sites
+    0x0046206d  1x MOVSD (4 bytes copy)
+    0x0046207f  1x MOVSD (4 bytes copy)
+    0x00462091  1x MOVSD (4 bytes copy)
+  SNetPlayer_copy_FUN_00543cf0                                             1 sites
+    0x00543d03  1x MOVSD (4 bytes copy)
+  CFileManager_extractFilesToDirectory_FUN_004b76d0                        1 sites
+    0x004b7875  1x MOVSD (4 bytes copy)
+  CFileManager_extractPodFile_FUN_004b6e10                                 1 sites
+    0x004b6f98  1x MOVSD (4 bytes copy)
+  convertWorldToScreenCoordinates_FUN_0045bd10                             1 sites
+    0x0045be34  1x MOVSD (4 bytes copy)
+  detachFaces_FUN_0046eba0                                                 1 sites
+    0x0046ec2a  1x MOVSD (4 bytes copy)
+  duplicateSharedVertices_FUN_00465d50                                     1 sites
+    0x00465e62  1x MOVSD (4 bytes copy)
 
 ----------------------------------------------------------------------------------------------------
 UNFIXABLE 4x MOVSD SITES (16 bytes copy, 4 sites)
@@ -264,7 +263,7 @@ UNFIXABLE 1x MOVSD SITES (4 bytes copy, 86 sites)
     0x0048f94f  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE REP MOVSD STRUCT COPIES (28 sites)
+FIXABLE REP MOVSD STRUCT COPIES (20 sites)
 ----------------------------------------------------------------------------------------------------
   quantizeColors_FUN_004406c0                                              3 sites
     0x00440b01  REP MOVSD 8 dwords (32 bytes)
@@ -274,9 +273,6 @@ FIXABLE REP MOVSD STRUCT COPIES (28 sites)
     0x005ced13  REP MOVSD 6 dwords (24 bytes)
     0x005cf424  REP MOVSD 6 dwords (24 bytes)
     0x005cf6bc  REP MOVSD 6 dwords (24 bytes)
-  CStranger_computeWeaponAttachXForm_FUN_005c07b0                          2 sites
-    0x005c0946  REP MOVSD 12 dwords (48 bytes)
-    0x005c1507  REP MOVSD 12 dwords (48 bytes)
   CComplexPolygon_splitByDimensions_FUN_005c9500                           2 sites
     0x005c9537  REP MOVSD 6 dwords (24 bytes)
     0x005c9547  REP MOVSD 6 dwords (24 bytes)
@@ -287,28 +283,16 @@ FIXABLE REP MOVSD STRUCT COPIES (28 sites)
     0x004c780e  REP MOVSD 12 dwords (48 bytes)
   CLaserBeam_render_FUN_004c25c0                                           1 sites
     0x004c2f1d  REP MOVSD 12 dwords (48 bytes)
-  CGabriella_getCarryObjToBodyXForm_FUN_004d7120                           1 sites
-    0x004d73e8  REP MOVSD 12 dwords (48 bytes)
-  CGabriella_updateWeaponPosition_FUN_004d5550                             1 sites
-    0x004d5753  REP MOVSD 12 dwords (48 bytes)
-  CHostage_getCarryObjToBodyXForm_FUN_004f6550                             1 sites
-    0x004f6699  REP MOVSD 12 dwords (48 bytes)
   CBoneStructure_computeLocalMatrices_FUN_0058ac80                         1 sites
     0x0058acbf  REP MOVSD 12 dwords (48 bytes)
   CBoneStructure_computeWorldMatrices_FUN_0058ad30                         1 sites
     0x0058ad66  REP MOVSD 12 dwords (48 bytes)
   CBoneStructure_readBONheader_FUN_0058a4a0                                1 sites
     0x0058a746  REP MOVSD 7 dwords (28 bytes)
-  CStranger_renderOpaque_FUN_005c3150                                      1 sites
-    0x005c34a2  REP MOVSD 12 dwords (48 bytes)
   inverseInPlace_FUN_005f6190                                              1 sites
     0x005f61af  REP MOVSD 12 dwords (48 bytes)
-  lerpMatrix3x4_FUN_005f7140                                               1 sites
-    0x005f7178  REP MOVSD 12 dwords (48 bytes)
   getMRGLBounds_FUN_00528140                                               1 sites
     0x0052852b  REP MOVSD 13 dwords (52 bytes)
-  CLodMesh_sortFacesByAttribute_FUN_0051bd30                               1 sites
-    0x0051bfd8  REP MOVSD 6 dwords (24 bytes)
   CComplexPolygon_findBestSplitEdge_FUN_005c8e70                           1 sites
     0x005c8ebc  REP MOVSD 6 dwords (24 bytes)
   CComplexPolygon_findReflexVertex_FUN_005c8b50                            1 sites

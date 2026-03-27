@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 154,
+    "complexity_score": 151,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 124,
+    "pseudocode_lines": 121,
     "suspect_count": 2,
     "suspect_types": [
       "suspect_float",
       "unresolved_funcptr"
     ],
-    "total_lines": 448
+    "total_lines": 445
   },
   "cross_references": [
     {
@@ -348,15 +348,8 @@
         "is_param": false,
         "name": "local_30",
         "offset": -48,
-        "size": 5,
-        "type": "SNetPacketHeader"
-      },
-      {
-        "is_param": false,
-        "name": "local_2b",
-        "offset": -43,
-        "size": 4,
-        "type": "int"
+        "size": 9,
+        "type": "SNetPacket_Simple"
       },
       {
         "is_param": false,
@@ -429,7 +422,7 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 50,
+      "line": 46,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "local_1c = 1.4013e-45;",
@@ -437,7 +430,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 110,
+      "line": 107,
       "match": "code",
       "severity": "moderate",
       "text": "_sprintf(local_94,\"Waiting on sync code %d from server...\",sync_stage);",

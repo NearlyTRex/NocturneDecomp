@@ -6,8 +6,7 @@
 ; Parameters:
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; SNetPacketHeader Stack[-0x3c]:5  local_3c
-; uint             Stack[-0x37]:4  local_37
+; SNetPacket_Simple Stack[-0x3c]:9  local_3c
 ; char[20]         Stack[-0x33]:20  local_33
 ; int              Stack[-0x1f]:4  local_1f
 ; EHeroType        Stack[-0x1b]:4  local_1b

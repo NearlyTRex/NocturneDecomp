@@ -5,7 +5,7 @@ SUSPECT TYPE ANALYSIS
 SUSPECT TYPE COUNTS
 --------------------------------------------------
   decompiler_intrinsic            6927 ( 43.7%)
-  pointer_cast                    4482 ( 28.3%)
+  pointer_cast                    4471 ( 28.2%)
   unknown_field                    910 (  5.7%)
   special_crt_function             439 (  2.8%)
   stack_param                      340 (  2.1%)
@@ -96,7 +96,7 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (4482 occurrences)
+TYPE: pointer_cast (4471 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -107,10 +107,10 @@ Unique patterns:
    193x  (double *)((int)
    189x  (void *)((int)
    170x  (byte *)((int)
-    88x  (ushort *)((int)
+    86x  (ushort *)((int)
     70x  (char *)((int)
     61x  (short *)((int)
-    49x  (CMatrix3x4f *)((int)
+    38x  (CMatrix3x4f *)((int)
     34x  (SShapeEditorPolygon *)((int)
     21x  (SMRGLHeaderExtended *)((int)
     20x  (CVector3f *)((int)
@@ -160,7 +160,7 @@ Unique patterns:
 Example functions:
   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     local_14._0_1_ = (char)iVar1;...
-  crt_process.c_build_file_info_env_FUN_0060ffd0
+  crt_process.c_buildFileInfoEnv_FUN_0060ffd0
     *(uint *)pcVar3 = "C_FILE_INFO="._0_4_;...
   crt_stdlib.c_i64toa_FUN_0060ad40
     local_20._4_4_ = (int)(local_20 >> 0x20);...
@@ -237,12 +237,12 @@ Example functions:
     CRT function (runtime support) at 006103a4...
   crt_process.c_set_shell_execute_flag_FUN_00609c80
     CRT function (runtime support) at 00609c80...
-  crt_process.c_build_file_info_env_FUN_0060ffd0
-    CRT function (runtime support) at 0060ffd0...
   crt_process.c_execvp_FUN_00610790
     CRT function (runtime support) at 00610790...
   crt_process.c_getpid_FUN_006099c0
     CRT function (runtime support) at 006099c0...
+  crt_process.c_buildFileInfoEnv_FUN_0060ffd0
+    CRT function (runtime support) at 0060ffd0...
   crt_process.c_execv_FUN_006101f0
     CRT function (runtime support) at 006101f0...
 

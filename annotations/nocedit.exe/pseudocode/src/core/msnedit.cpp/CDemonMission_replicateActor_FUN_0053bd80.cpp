@@ -1,6 +1,6 @@
 // Name: core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
 // Address: 0053bd80
-// Address Range: [[0053bd80, 0053c0a7]]
+// Address Range: [[0053bd80, 0053c0a7] [03fc5aea, 03fc5b0a]]
 // Convention: __cdecl
 // Signature: void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMission *this_ptr)
 

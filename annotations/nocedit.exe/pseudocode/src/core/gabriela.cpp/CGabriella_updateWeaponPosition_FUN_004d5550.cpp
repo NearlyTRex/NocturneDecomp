@@ -1,6 +1,6 @@
 // Name: core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550
 // Address: 004d5550
-// Address Range: [[004d5550, 004d586b] [03fc18bc, 03fc1b1d]]
+// Address Range: [[004d5550, 004d586b] [03fc18bc, 03fc1b1d] [03fc585e, 03fc58b3]]
 // Convention: __cdecl
 // Signature: void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004d5550(CGabriella *this_ptr,float delta_time)
 
@@ -21,9 +21,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004d5550(CGab
   CMatrix3x4f *pCVar7;
   CMatrix3x4f *pCVar8;
   CMatrix3x4f *pCVar9;
-  CMatrix3x4f *pCVar10;
   byte bVar10;
   CMatrix3x4f *matrix_b_00;
+  CMatrix3x4f *pCVar10;
   CMatrix3x4f local_3ac;
   CMatrix3x4f local_37c;
   CMatrix3x4f local_34c;
@@ -51,7 +51,6 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004d5550(CGab
   CWeapon *pCVar1;
   CMatrix3x4f *matrix_b;
   
-  bVar10 = 0;
   core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090((CCharacter *)this_ptr,delta_time);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_34c,&(this_ptr->base).base.base.location.position,
@@ -95,12 +94,18 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004d5550(CGab
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_2ec,&local_34c,&local_10c);
     pCVar8 = &local_10c;
   }
-  pCVar10 = &local_31c;
-  for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-    pCVar10->m[0].w = pCVar8->m[0].w;
-    pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar10 * -2 + 1) * 4);
-    pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar10 * -2 + 1) * 4);
-  }
+  local_31c.m[0].w = pCVar8->m[0].w;
+  local_31c.m[0].x = pCVar8->m[0].x;
+  local_31c.m[0].y = pCVar8->m[0].y;
+  local_31c.m[0].z = pCVar8->m[0].z;
+  local_31c.m[1].w = pCVar8->m[1].w;
+  local_31c.m[1].x = pCVar8->m[1].x;
+  local_31c.m[1].y = pCVar8->m[1].y;
+  local_31c.m[1].z = pCVar8->m[1].z;
+  local_31c.m[2].w = pCVar8->m[2].w;
+  local_31c.m[2].x = pCVar8->m[2].x;
+  local_31c.m[2].y = pCVar8->m[2].y;
+  local_31c.m[2].z = pCVar8->m[2].z;
   pCVar3 = core_xform_cpp_getTranslation_FUN_005f6110(&local_31c,&local_28);
   pCVar4 = (this_ptr->base).inventory.selected_weapon;
   (pCVar4->base).location.position.x = pCVar3->x;

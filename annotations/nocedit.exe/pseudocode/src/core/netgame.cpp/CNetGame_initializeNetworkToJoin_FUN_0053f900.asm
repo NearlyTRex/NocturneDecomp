@@ -8,8 +8,7 @@
 ; uint32_t *       Stack[0x8]:4   server_ip
 ; Local Variables:
 ; float            Stack[-0x60]:4  local_60
-; SNetPacketHeader Stack[-0x5c]:5  local_5c
-; uint             Stack[-0x57]:4  local_57
+; SNetPacket_Simple Stack[-0x5c]:9  local_5c
 ; undefined4       Stack[-0x53]:4  uStack_53
 ; char[20]         Stack[-0x4f]:20  local_4f
 ; EHeroType        Stack[-0x3b]:4  local_3b

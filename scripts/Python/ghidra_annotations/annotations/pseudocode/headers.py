@@ -676,6 +676,18 @@ def generate_individual_union_header(currentProgram, union, type_to_path_map=Non
     return "\n".join(content)
 
 
+def _enum_typedef_type(enum):
+    """Return the C type name for an enum's typedef based on its size."""
+    size = enum.getLength()
+    if size == 1:
+        return "uchar"
+    elif size == 2:
+        return "ushort"
+    elif size == 8:
+        return "long long"
+    return "int"
+
+
 def generate_individual_enum_header(currentProgram, enum, type_to_path_map=None):
     """Generate header content for an individual enum.
 
@@ -690,6 +702,11 @@ def generate_individual_enum_header(currentProgram, enum, type_to_path_map=None)
     content = []
     content.append("#pragma once")
     content.append("")
+    typedef_type = _enum_typedef_type(enum)
+    if typedef_type != "int":
+        content.append("// Dependencies")
+        content.append('#include "system/basetypes.h"')
+        content.append("")
     content.append("// Enum: %s" % enum.getName())
     if enum.getDescription():
         content.append("// %s" % enum.getDescription())
@@ -700,7 +717,7 @@ def generate_individual_enum_header(currentProgram, enum, type_to_path_map=None)
         enum_values.append("    %s = %d" % (name, value))
     content.append(",\n".join(enum_values))
     content.append("};")
-    content.append("typedef int %s;" % enum.getName())
+    content.append("typedef %s %s;" % (typedef_type, enum.getName()))
     content.append("")
     return "\n".join(content)
 
@@ -975,6 +992,11 @@ def generate_enums_header(currentProgram, enums):
     content = []
     content.append("#pragma once")
     content.append("")
+    # Include basetypes if any enum needs a non-int typedef (uchar, ushort)
+    needs_basetypes = any(_enum_typedef_type(e) != "int" for e in enums)
+    if needs_basetypes:
+        content.append('#include "system/basetypes.h"')
+        content.append("")
     for enum in sorted(enums, key=lambda e: e.getName()):
         content.append("// Enum: %s" % enum.getName())
         if enum.getDescription():
@@ -986,7 +1008,7 @@ def generate_enums_header(currentProgram, enums):
             enum_values.append("    %s = %d" % (name, value))
         content.append(",\n".join(enum_values))
         content.append("};")
-        content.append("typedef int %s;" % enum.getName())
+        content.append("typedef %s %s;" % (_enum_typedef_type(enum), enum.getName()))
         content.append("")
     return "\n".join(content)
 
@@ -1495,7 +1517,7 @@ def generate_type_definition(currentProgram, dt):
             enum_values.append("    %s = %d" % (name, value))
         lines.append(",\n".join(enum_values))
         lines.append("};")
-        lines.append("typedef int %s;" % dt_name)
+        lines.append("typedef %s %s;" % (_enum_typedef_type(dt), dt_name))
 
     elif isinstance(dt, TypeDef):
         lines.append("")

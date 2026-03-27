@@ -9,18 +9,16 @@
 void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame *this_ptr)
 
 {
-  char cVar2;
+  char cVar1;
   int iVar2;
   int iVar3;
   SNetPlayer *pSVar4;
   char *pcVar5;
-  SNetPacketHeader local_3c;
-  uint local_37;
+  SNetPacket_Simple local_3c;
   char local_33 [20];
   int local_1f;
   EHeroType local_1b;
   int local_17;
-  char cVar1;
   
   if ((this_ptr->connection_type != CONNECTION_CLIENT) || (this_ptr->network_mode != NET_MODE_LOBBY)
      ) {
@@ -37,21 +35,23 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame 
     iVar3 = 0x20000;
   }
   g_CurrentGameTime = g_CurrentGameTime + iVar3;
-  local_3c.size = 0x29;
-  local_3c.type = PACKET_PLAYER_STATE;
+  local_3c.header.size = 0x29;
+  local_3c.header.type = PACKET_PLAYER_STATE;
   pcVar5 = local_33;
   pSVar4 = this_ptr->players + this_ptr->local_player_index;
   do {
     cVar1 = pSVar4->name[0];
     *pcVar5 = cVar1;
     if (cVar1 == '\0') break;
-    cVar2 = pSVar4->name[1];
+    cVar1 = pSVar4->name[1];
     pSVar4 = (SNetPlayer *)(pSVar4->name + 2);
-    pcVar5[1] = cVar2;
+    pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
-  } while (cVar2 != '\0');
+  } while (cVar1 != '\0');
   g_LastPingTime = iVar2 / 0x12;
-  core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index,&local_3c);
+  local_3c.value = g_CurrentGameTime;
+  core_netgame_cpp_CNetGame_send_FUN_005411c0
+            (this_ptr,this_ptr->server_player_index,&local_3c.header);
   INT_00680a04 = 1;
   this_ptr->players[this_ptr->local_player_index].state_change_time = g_CurrentGameTime;
   return;

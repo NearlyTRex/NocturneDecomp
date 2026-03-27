@@ -2,15 +2,15 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19409
-  Named globals:             19150
+Total globals analyzed:      19405
+  Named globals:             19146
   DAT_ globals:              259
 Gaps found:                  1869
   With exact size bounds:    1777
   With estimated bounds:     92
-Total gap bytes:             14,721,060
-  Exact gap bytes:           14,712,018
-Overlaps (size <= 0):        13285
+Total gap bytes:             14,721,076
+  Exact gap bytes:           14,712,034
+Overlaps (size <= 0):        13284
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
@@ -497,11 +497,11 @@ ALL EXACT GAPS (1777) - size bounds are known precisely
          222 bytes  at 0x0062df7b  between s_ARS.RAW_0062df77             and DOUBLE_0062e059
          220 bytes  at 0x006088b4  between CAVE_cave_006088b0             and SUB_00608990
          208 bytes  at 0x00670218  between g_ModelLastScaleInput+4        and g_CZombieDogClassVersion
+         208 bytes  at 0x00680838  between g_MsnEditCameraStatusBuffer+4  and g_MsnEditLastSelectedPropertyN
          203 bytes  at 0x0067b789  between PTR_s_train_msn_0067b784+1     and g_ChapterDisplayTexts
          200 bytes  at 0x006813fc  between g_EnvMapTexture                and g_CZThumbPoolDestructorNode
          195 bytes  at 0x03f96a7d  between g_WeatherParticleHitGround+1   and UINT_03f96b40
          192 bytes  at 0x006793e0  between g_DefaultSfxHandleName+4       and g_DefaultCommandArg
-         192 bytes  at 0x00680838  between g_MsnEditCameraStatusBuffer+4  and s_DUPACTOR_TMP_006808f8
          192 bytes  at 0x00680d68  between g_ActorRefDefaultBuffer+4      and g_CommandTemplates
          180 bytes  at 0x02f46938  between g_Mp3WindowTables[2][13]+4     and g_Mp3WindowTables[3][0]+4
          176 bytes  at 0x02f46a58  between g_Mp3WindowTables[3][13]+4     and g_Mp3DctMatrix
@@ -1960,7 +1960,7 @@ ALL EXACT GAPS (1777) - size bounds are known precisely
            1 bytes  at 0x0068572d  between g_ShiftJIS_TrailByteTable      and g_InitHandlerStatusStart
 
 --------------------------------------------------------------------------------
-OVERLAPS (13285) - next global starts inside previous
+OVERLAPS (13284) - next global starts inside previous
 --------------------------------------------------------------------------------
   241 bytes overlap ~
     s_engine_2d_c_00613004                   TerminatedCString    at 0x00613004  size=256
@@ -41052,9 +41052,6 @@ OVERLAPS (13285) - next global starts inside previous
   196 bytes overlap
     g_MsnEditCameraStatusBuffer              char[200]            at 0x00680830  size=200
     g_MsnEditCameraStatusBuffer+4            undefined4           at 0x00680834
-  252 bytes overlap ~
-    s_DUPACTOR_TMP_006808f8                  TerminatedCString    at 0x006808f8  size=256
-    s_CTOR.TMP_006808fc                      undefined4           at 0x006808fc
   100 bytes overlap
     g_MsnEditLastSelectedPropertyName        char[104]            at 0x00680908  size=104
     g_MsnEditLastSelectedPropertyName+4      undefined4           at 0x0068090c

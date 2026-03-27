@@ -10,12 +10,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
 
 {
   int iVar1;
-  SPlayerControl *pSVar2;
-  int *piVar3;
-  byte bVar4;
-  SNetPacketHeader local_48;
-  int local_43;
-  int local_3f [11];
+  SNetPacket_PlayerControl local_48;
   
   if (this_ptr->connection_type != CONNECTION_CLIENT) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
@@ -37,9 +32,23 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
     g_CurrentLineNumber = 0xa2c;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendSimFrameAck - I'm not in player list");
   }
-  local_48.size = 0x35;
-  local_48.type = PACKET_PLAYER_CONTROL;
-  core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,this_ptr->server_player_index,&local_48);
+  local_48.header.size = 0x35;
+  local_48.header.type = PACKET_PLAYER_CONTROL;
+  local_48.sim_frame_index = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
+  iVar1 = this_ptr->local_player_index;
+  local_48.controls.action_states[0] = this_ptr->players[iVar1].controls.action_states[0];
+  local_48.controls.action_states[1] = this_ptr->players[iVar1].controls.action_states[1];
+  local_48.controls.action_states[2] = this_ptr->players[iVar1].controls.action_states[2];
+  local_48.controls.action_states[3] = this_ptr->players[iVar1].controls.action_states[3];
+  local_48.controls.action_states[4] = this_ptr->players[iVar1].controls.action_states[4];
+  local_48.controls.action_states[5] = this_ptr->players[iVar1].controls.action_states[5];
+  local_48.controls.action_states[6] = this_ptr->players[iVar1].controls.action_states[6];
+  local_48.controls.action_states[7] = this_ptr->players[iVar1].controls.action_states[7];
+  local_48.controls.strafe_speed = this_ptr->players[iVar1].controls.strafe_speed;
+  local_48.controls.turn_speed = this_ptr->players[iVar1].controls.turn_speed;
+  local_48.controls.look_up_down_speed = this_ptr->players[iVar1].controls.look_up_down_speed;
+  core_netgame_cpp_CNetGame_send_FUN_005411c0
+            (this_ptr,this_ptr->server_player_index,&local_48.header);
   UINT_02f7c8c8 = g_CurrentGameTime;
   return;
 }

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 130,
+    "complexity_score": 125,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 95,
+    "pseudocode_lines": 90,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 286
+    "total_lines": 281
   },
   "cross_references": [
     {
@@ -194,15 +194,8 @@
         "is_param": false,
         "name": "local_c8",
         "offset": -200,
-        "size": 5,
-        "type": "SNetPacketHeader"
-      },
-      {
-        "is_param": false,
-        "name": "local_c3",
-        "offset": -195,
-        "size": 4,
-        "type": "int"
+        "size": 9,
+        "type": "SNetPacket_Simple"
       },
       {
         "is_param": false,
@@ -265,26 +258,26 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 68,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)local_53 + EVar3 + 0x10) = pCVar2->players[0].ready_flag;",
+      "text": "*(int *)((int)local_53 + EVar2 + 0x10) = pCVar3->players[0].ready_flag;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 69,
       "match": "(EHeroType *)((int)",
       "severity": "mild",
-      "text": "*(EHeroType *)((int)local_53 + EVar3 + HERO_TYPE_MOLOCH) = pCVar2->players[0].hero_number;",
+      "text": "*(EHeroType *)((int)local_53 + EVar2 + HERO_TYPE_MOLOCH) = pCVar3->players[0].hero_number;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 71,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)local_53 + EVar3 + (HERO_TYPE_MOLOCH|HERO_TYPE_BARON)) =",
+      "text": "*(int *)((int)local_53 + EVar2 + (HERO_TYPE_MOLOCH|HERO_TYPE_BARON)) =",
       "type": "pointer_cast"
     }
   ]

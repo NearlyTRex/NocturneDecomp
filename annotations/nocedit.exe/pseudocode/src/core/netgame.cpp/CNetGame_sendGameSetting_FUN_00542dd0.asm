@@ -7,8 +7,7 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   player_index
 ; Local Variables:
-; SNetPacketHeader Stack[-0xc8]:5  local_c8
-; int              Stack[-0xc3]:4  local_c3
+; SNetPacket_Simple Stack[-0xc8]:9  local_c8
 ; uint             Stack[-0xbf]:4  local_bf
 ; char[80]         Stack[-0xbb]:80  local_bb
 ; int              Stack[-0x6b]:4  local_6b

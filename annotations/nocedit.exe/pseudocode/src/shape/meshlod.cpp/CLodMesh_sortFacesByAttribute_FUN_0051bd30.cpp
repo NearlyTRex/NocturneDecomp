@@ -1,6 +1,6 @@
 // Name: shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
 // Address: 0051bd30
-// Address Range: [[0051bd30, 0051c068] [00608a48, 00608ab3] [00609cb0, 00609dd0]]
+// Address Range: [[0051bd30, 0051c068] [00608a48, 00608ab3] [00609cb0, 00609dd0] [03fc59b6, 03fc59f0]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMesh *this_ptr,int attribute_index)
 
@@ -34,7 +34,12 @@ void __cdecl shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMe
   uint *puVar5;
   byte bVar6;
   int aiStackY_189c [1522];
-  uint local_a4 [6];
+  uint local_a4;
+  uint uStack_a0;
+  uint uStack_9c;
+  uint uStack_98;
+  uint uStack_94;
+  uint uStack_90;
   uint local_8c;
   uint uStack_88;
   uint uStack_84;
@@ -73,7 +78,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMe
           uVar9 = puVar2[5];
           uVar10 = puVar2[6];
           puVar17 = puVar2 + 7;
-          puVar18 = local_a4;
+          puVar18 = &local_a4;
           for (iVar15 = 6; iVar15 != 0; iVar15 = iVar15 + -1) {
             *puVar18 = *puVar17;
             puVar17 = puVar17 + (uint)bVar6 * -2 + 1;
@@ -134,14 +139,12 @@ void __cdecl shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMe
           puVar16[4] = uVar8;
           puVar16[5] = uVar9;
           puVar16[6] = uVar10;
-          puVar4 = local_a4;
-          puVar17 = puVar16 + 7;
-          for (iVar15 = 6; iVar15 != 0; iVar15 = iVar15 + -1) {
-            puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-            *puVar17 = *puVar4;
-            puVar4 = puVar4;
-            puVar17 = puVar17 + (uint)bVar6 * -2 + 1;
-          }
+          puVar16[7] = local_a4;
+          puVar16[8] = uStack_a0;
+          puVar16[9] = uStack_9c;
+          puVar16[10] = uStack_98;
+          puVar16[0xb] = uStack_94;
+          puVar16[0xc] = uStack_90;
           puVar16[0xd] = local_8c;
           puVar16[0xe] = uStack_88;
           puVar16[0xf] = uStack_84;

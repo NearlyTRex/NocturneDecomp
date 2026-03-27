@@ -246,12 +246,11 @@ section .text
     LEA EDI,[EDI + 0x10]                ; 0051bfc4
     JMP 0x00609d73                      ; 0051bfc7
         ;   XREF to: 00609d73 (UNCONDITIONAL_JUMP)  ; LAB_00609d73
-    MOV ECX,0x6                         ; 0051bfcc
+    JMP 0x03fc59b6                      ; 0051bfcc
+        ;   XREF to: 03fc59b6 (UNCONDITIONAL_JUMP)  ; LAB_03fc59b6
         ;   Label: LAB_0051bfcc
-    LEA ESI,[ESP + 0x1c]                ; 0051bfd1
-    LEA EDI,[EDI + 0x1c]                ; 0051bfd5
-    MOVSD.REP ES:EDI,ESI                ; 0051bfd8
     MOV EDI,EBX                         ; 0051bfda
+        ;   Label: LAB_0051bfda
     LEA ESI,[ESP + 0x34]                ; 0051bfdc
     LEA EDI,[EDI + 0x34]                ; 0051bfe0
     JMP 0x00609d90                      ; 0051bfe3
@@ -449,4 +448,25 @@ section .text
     MOV EAX,dword ptr [ESP + 0x84]      ; 00609dc5
     JMP 0x0051c042                      ; 00609dcc
         ;   XREF to: 0051c042 (UNCONDITIONAL_JUMP)  ; LAB_0051c042
+    MOV ECX,0x6                         ; 03fc59b6
+        ;   Label: LAB_03fc59b6
+    LEA ESI,[ESP + 0x1c]                ; 03fc59bb
+    LEA EDI,[EDI + 0x1c]                ; 03fc59bf
+    MOV ECX,dword ptr [ESI]             ; 03fc59c2
+    MOV dword ptr [EDI],ECX             ; 03fc59c4
+    MOV ECX,dword ptr [ESI + 0x4]       ; 03fc59c6
+    MOV dword ptr [EDI + 0x4],ECX       ; 03fc59c9
+    MOV ECX,dword ptr [ESI + 0x8]       ; 03fc59cc
+    MOV dword ptr [EDI + 0x8],ECX       ; 03fc59cf
+    MOV ECX,dword ptr [ESI + 0xc]       ; 03fc59d2
+    MOV dword ptr [EDI + 0xc],ECX       ; 03fc59d5
+    MOV ECX,dword ptr [ESI + 0x10]      ; 03fc59d8
+    MOV dword ptr [EDI + 0x10],ECX      ; 03fc59db
+    MOV ECX,dword ptr [ESI + 0x14]      ; 03fc59de
+    MOV dword ptr [EDI + 0x14],ECX      ; 03fc59e1
+    ADD ESI,0x18                        ; 03fc59e4
+    ADD EDI,0x18                        ; 03fc59e7
+    XOR ECX,ECX                         ; 03fc59ea
+    JMP 0x0051bfda                      ; 03fc59ec
+        ;   XREF to: 0051bfda (UNCONDITIONAL_JUMP)  ; LAB_0051bfda
 

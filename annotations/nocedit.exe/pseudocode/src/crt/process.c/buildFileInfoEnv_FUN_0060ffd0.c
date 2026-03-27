@@ -1,12 +1,12 @@
-// Name: crt_process.c_build_file_info_env_FUN_0060ffd0
+// Name: crt_process.c_buildFileInfoEnv_FUN_0060ffd0
 // Address: 0060ffd0
 // Address Range: [[0060ffd0, 006101ed]]
 // Convention: __cdecl
-// Signature: char * __cdecl crt_process_c_build_file_info_env_FUN_0060ffd0(void)
+// Signature: char * __cdecl crt_process_c_buildFileInfoEnv_FUN_0060ffd0(void)
 
 #include "nocturne.h"
 
-char * __cdecl build_file_info_env(void)
+char * __cdecl buildFileInfoEnv(void)
 
 {
   char cVar2;

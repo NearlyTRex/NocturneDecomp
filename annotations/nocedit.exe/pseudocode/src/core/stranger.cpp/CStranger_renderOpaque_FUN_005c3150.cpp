@@ -1,6 +1,6 @@
 // Name: core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150
 // Address: 005c3150
-// Address Range: [[005c3150, 005c3700] [03fc4cbe, 03fc4d23]]
+// Address Range: [[005c3150, 005c3700] [03fc4cbe, 03fc4d23] [03fc5960, 03fc59b5]]
 // Convention: __cdecl
 // Signature: int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *this_ptr)
 
@@ -17,6 +17,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
   CVector3f *input;
   int iVar5;
   CVector3f *start_pos;
+  CMatrix3x4f *pCVar7;
   CMatrix3x4f *pCVar5;
   CMatrix3x4f *pCVar6;
   byte bVar7;
@@ -47,7 +48,6 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
   bool bVar3;
   CDemonActor *pCVar1;
   
-  bVar7 = 0;
   iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
   if (iVar4 == 0) {
     return 0;
@@ -176,7 +176,7 @@ LAB_005c33d7:
                 (&local_1cc,
                  (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                  g_StrangerIndices[0],&local_10c);
-      pCVar5 = &local_10c;
+      pCVar7 = &local_10c;
     }
     else {
       local_28.x = 1.16195;
@@ -191,16 +191,20 @@ LAB_005c33d7:
                 (&local_1fc,
                  (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                  g_StrangerIndices[0xe],&local_19c);
-      pCVar5 = &local_19c;
+      pCVar7 = &local_19c;
     }
-    pCVar6 = &local_dc;
-    for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-      pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar7 * -8 + 4);
-      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar7 * -8 + 4);
-      pCVar6->m[0].w = pCVar5->m[0].w;
-      pCVar5 = pCVar5;
-      pCVar6 = pCVar6;
-    }
+    local_dc.m[0].w = pCVar7->m[0].w;
+    local_dc.m[0].x = pCVar7->m[0].x;
+    local_dc.m[0].y = pCVar7->m[0].y;
+    local_dc.m[0].z = pCVar7->m[0].z;
+    local_dc.m[1].w = pCVar7->m[1].w;
+    local_dc.m[1].x = pCVar7->m[1].x;
+    local_dc.m[1].y = pCVar7->m[1].y;
+    local_dc.m[1].z = pCVar7->m[1].z;
+    local_dc.m[2].w = pCVar7->m[2].w;
+    local_dc.m[2].x = pCVar7->m[2].x;
+    local_dc.m[2].y = pCVar7->m[2].y;
+    local_dc.m[2].z = pCVar7->m[2].z;
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_dc,&local_40);
     core_xform_cpp_getTranslation_FUN_005f6110(&local_dc,&local_4c);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

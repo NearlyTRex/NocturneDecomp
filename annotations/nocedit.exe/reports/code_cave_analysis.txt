@@ -8,8 +8,8 @@ allocate space within caves for injected code (thunks, helpers).
 
 Total caves:        29
 Total bytes:        157,591
-Total free:         110,188
-Total allocations:  767
+Total free:         109,370
+Total allocations:  779
 
 ----------------------------------------------------------------------------------------------------
 CAVES
@@ -1185,7 +1185,7 @@ CAVES
                3x MOVSD replacement for CRainDrop_render_FUN_004c6830
     Free space: 46 bytes (offset 0x0191 - 0x01bf)
 
-  cave_03fc0000                   03fc0000  131072 bytes  [22536/131072 used]
+  cave_03fc0000                   03fc0000  131072 bytes  [23354/131072 used]
     Allocations:
       +0x0000  104 bytes  movsd_005c0893             0x005c0893
                REP MOVSD 12-dword replacement for CStranger_computeWeaponAttachXForm_FUN_005c07b0
@@ -1657,5 +1657,29 @@ CAVES
                REP MOVSD 6-dword replacement for CPoly_intersectPoly_FUN_005ce580
       +0x57b6   82 bytes  movsd_005cea0e             0x005cea0e
                REP MOVSD 6-dword replacement for CPoly_intersectPoly_FUN_005ce580
-    Free space: 108536 bytes (offset 0x5808 - 0x20000)
+      +0x5808   86 bytes  movsd_004d73dc             0x004d73dc
+               REP MOVSD narrow 12-dword replacement for CGabriella_getCarryObjToBodyXForm_FUN_004d7120
+      +0x585e   86 bytes  movsd_004d5748             0x004d5748
+               REP MOVSD narrow 12-dword replacement for CGabriella_updateWeaponPosition_FUN_004d5550
+      +0x58b4   86 bytes  movsd_004f668d             0x004f668d
+               REP MOVSD narrow 12-dword replacement for CHostage_getCarryObjToBodyXForm_FUN_004f6550
+      +0x590a   86 bytes  movsd_005c14f9             0x005c14f9
+               REP MOVSD narrow 12-dword replacement for CStranger_computeWeaponAttachXForm_FUN_005c07b0
+      +0x5960   86 bytes  movsd_005c3497             0x005c3497
+               REP MOVSD narrow 12-dword replacement for CStranger_renderOpaque_FUN_005c3150
+      +0x59b6   59 bytes  movsd_0051bfcc             0x0051bfcc
+               REP MOVSD 6-dword replacement for CLodMesh_sortFacesByAttribute_FUN_0051bd30
+      +0x59f1   83 bytes  movsd_005f716c             0x005f716c
+               REP MOVSD narrow 12-dword replacement for lerpMatrix3x4_FUN_005f7140
+      +0x5a44   83 bytes  movsd_005f716c             0x005f716c
+               REP MOVSD narrow 12-dword replacement for lerpMatrix3x4_FUN_005f7140
+      +0x5a97   83 bytes  movsd_005c0938             0x005c0938
+               REP MOVSD narrow 12-dword replacement for CStranger_computeWeaponAttachXForm_FUN_005c07b0
+      +0x5aea   33 bytes  movsd_0053bdae             0x0053bdae
+               3x MOVSD replacement for CDemonMission_replicateActor_FUN_0053bd80
+      +0x5b0b   25 bytes  movsd_005427a5             0x005427a5
+               1x MOVSD replacement for CNetGame_applyNewGameSettings_FUN_00542470
+      +0x5b24   22 bytes  movsd_00543bcd             0x00543bcd
+               1x MOVSD replacement for CNetGame_swapPlayerData_FUN_00543bb0
+    Free space: 107718 bytes (offset 0x5b3a - 0x20000)
 

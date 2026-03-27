@@ -32,7 +32,7 @@
 ;   char* g_CurrentDebugFilename = 0067d200
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   int g_ConfirmNewActorNames = 0x1
-;   ... and 11 more
+;   ... and 7 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -75,13 +75,11 @@ section .text
     RET                                 ; 0053bda1
     LEA EDI,[ESP + 0x84]                ; 0053bda2
         ;   Label: LAB_0053bda2
-    MOV ESI,0x6808f8                    ; 0053bda9 | = "DUPACTOR.TMP"
-    MOVSD ES:EDI,ESI                    ; 0053bdae | = "DUPACTOR.TMP"
-    MOVSD ES:EDI,ESI                    ; 0053bdaf | s_CTOR.TMP_006808fc
-    MOVSD ES:EDI,ESI                    ; 0053bdb0 | s_.TMP_00680900
-    MOVSB ES:EDI,ESI                    ; 0053bdb1 | s__00680904
+    JMP 0x03fc5aea                      ; 0053bda9
+        ;   XREF to: 03fc5aea (UNCONDITIONAL_JUMP)  ; LAB_03fc5aea
     CALL core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0 ; 0053bdb2
         ;   XREF to: 0040c7c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0()
+        ;   Label: LAB_0053bdb2
     PUSH 0x965                          ; 0053bdb7
     PUSH 0x63c732                       ; 0053bdbc | = "..\\core\\msnedit.cpp"
     PUSH 0x63c746                       ; 0053bdc1 | = "wt"
@@ -378,4 +376,17 @@ section .text
         ;   Label: LAB_0053c0a2
     JMP 0x0053bf29                      ; 0053c0a3
         ;   XREF to: 0053bf29 (UNCONDITIONAL_JUMP)  ; LAB_0053bf29
+    MOV ESI,0x6808f8                    ; 03fc5aea
+        ;   Label: LAB_03fc5aea
+    MOV ECX,dword ptr [ESI]             ; 03fc5aef
+    MOV dword ptr [EDI],ECX             ; 03fc5af1
+    MOV ECX,dword ptr [ESI + 0x4]       ; 03fc5af3
+    MOV dword ptr [EDI + 0x4],ECX       ; 03fc5af6
+    MOV ECX,dword ptr [ESI + 0x8]       ; 03fc5af9
+    MOV dword ptr [EDI + 0x8],ECX       ; 03fc5afc
+    ADD ESI,0xc                         ; 03fc5aff
+    ADD EDI,0xc                         ; 03fc5b02
+    MOVSB ES:EDI,ESI                    ; 03fc5b05
+    JMP 0x0053bdb2                      ; 03fc5b06
+        ;   XREF to: 0053bdb2 (UNCONDITIONAL_JUMP)  ; LAB_0053bdb2
 

@@ -9,8 +9,7 @@
 ; float            Stack[-0x158]:4  local_158
 ; float            Stack[-0x154]:4  local_154
 ; float            Stack[-0x150]:4  local_150
-; SNetPacketHeader Stack[-0x14c]:5  local_14c
-; uint             Stack[-0x147]:4  local_147
+; SNetPacket_Simple Stack[-0x14c]:9  local_14c
 ; char[259]        Stack[-0x143]:259  local_143
 ; SNetPlayer *     Stack[-0x40]:4  local_40
 ; SChatOutMessage * Stack[-0x3c]:4  local_3c

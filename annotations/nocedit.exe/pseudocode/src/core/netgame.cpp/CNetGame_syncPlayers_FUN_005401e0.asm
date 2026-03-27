@@ -10,8 +10,7 @@
 ; float            Stack[-0x198]:4  local_198
 ; char[256]        Stack[-0x194]:256  local_194
 ; char[100]        Stack[-0x94]:100  local_94
-; SNetPacketHeader Stack[-0x30]:5  local_30
-; int              Stack[-0x2b]:4  local_2b
+; SNetPacket_Simple Stack[-0x30]:9  local_30
 ; uint             Stack[-0x24]:4  local_24
 ; SNetPlayer *     Stack[-0x20]:4  local_20
 ; float            Stack[-0x1c]:4  local_1c

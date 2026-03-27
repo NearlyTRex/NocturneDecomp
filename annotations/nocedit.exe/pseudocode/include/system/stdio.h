@@ -23,7 +23,7 @@ enum {
     BASIC_NEAR_PTR_FLAG = 64,
     BASIC_RESERVED = 128
 };
-typedef int BASIC_LENGTH_FLAGS;
+typedef uchar BASIC_LENGTH_FLAGS;
 
 // Enum: EXTENDED_LENGTH_FLAGS
 enum {
@@ -50,7 +50,7 @@ enum {
     NEAR_PTR = 64,
     FAR_PTR = 128
 };
-typedef int FORMAT_FLAGS;
+typedef uchar FORMAT_FLAGS;
 
 // Structure: FORMAT_OUTPUT_CONTEXT
 typedef struct FORMAT_OUTPUT_CONTEXT {

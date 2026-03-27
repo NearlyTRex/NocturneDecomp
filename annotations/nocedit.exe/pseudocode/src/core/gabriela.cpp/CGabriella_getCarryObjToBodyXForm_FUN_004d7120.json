@@ -4,7 +4,7 @@
       {
         "category": "format_error",
         "column": 87,
-        "line": 82,
+        "line": 80,
         "message": "format specifies type 'char *' but the argument has type 'CLightActor *' [-Werror,-Wformat]"
       }
     ],
@@ -12,19 +12,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 334,
-    "complexity_score": 204,
+    "assembly_lines": 365,
+    "complexity_score": 188,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 144,
-    "suspect_count": 5,
+    "pseudocode_lines": 148,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 478
+    "total_lines": 513
   },
   "cross_references": [],
   "function": {
@@ -37,6 +37,10 @@
       [
         "03fc2f37",
         "03fc2f9b"
+      ],
+      [
+        "03fc5808",
+        "03fc585d"
       ]
     ],
     "convention": "__stack2_esi",
@@ -150,40 +154,40 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.919298245614035,
-    "instruction_count": 285,
+    "avg_pcode_per_instr": 4.741214057507987,
+    "instruction_count": 313,
     "opcode_distribution": {
       "BOOL_NEGATE": 28,
-      "BRANCH": 12,
+      "BRANCH": 13,
       "CALL": 10,
       "CALLIND": 1,
-      "CBRANCH": 14,
-      "COPY": 481,
+      "CBRANCH": 13,
+      "COPY": 504,
       "FLOAT2FLOAT": 36,
       "FLOAT_ADD": 7,
       "FLOAT_MULT": 5,
       "FLOAT_SUB": 3,
-      "INT_ADD": 161,
-      "INT_AND": 134,
-      "INT_CARRY": 18,
-      "INT_EQUAL": 92,
+      "INT_ADD": 183,
+      "INT_AND": 140,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 97,
       "INT_LEFT": 8,
       "INT_LESS": 12,
-      "INT_MULT": 6,
+      "INT_MULT": 4,
       "INT_NOTEQUAL": 8,
       "INT_OR": 20,
       "INT_SBORROW": 12,
-      "INT_SCARRY": 18,
-      "INT_SLESS": 51,
-      "INT_SUB": 57,
-      "INT_XOR": 9,
-      "INT_ZEXT": 4,
-      "LOAD": 59,
-      "POPCOUNT": 43,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 54,
+      "INT_SUB": 54,
+      "INT_XOR": 10,
+      "INT_ZEXT": 2,
+      "LOAD": 70,
+      "POPCOUNT": 46,
       "RETURN": 1,
-      "STORE": 92
+      "STORE": 103
     },
-    "pcode_op_count": 1402
+    "pcode_op_count": 1484
   },
   "stack_frame": {
     "frame_size": 412,
@@ -383,7 +387,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 148,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -391,23 +395,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar6 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 144,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar6 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 145,
+      "line": 149,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar6 * -2 + 1) * 4);",

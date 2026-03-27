@@ -10,8 +10,7 @@
 ; Local Variables:
 ; float            Stack[-0x2c]:4  local_2c
 ; float            Stack[-0x28]:4  local_28
-; SNetPacketHeader Stack[-0x24]:5  local_24
-; uint             Stack[-0x1f]:4  local_1f
+; SNetPacket_Simple Stack[-0x24]:9  local_24
 ; int              Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:

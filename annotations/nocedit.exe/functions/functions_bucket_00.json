@@ -62180,6 +62180,11 @@
         "end":"0053c0a7",
         "size":808,
         "start":"0053bd80"
+      },
+      {
+        "end":"03fc5b0a",
+        "size":33,
+        "start":"03fc5aea"
       }
     ],
     "conv":"__cdecl",
@@ -62847,104 +62852,12 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900",
     "ret":"int",
     "vars":{
       "locals":[
-        {
-          "name":"bVar7",
-          "storage":{
-            "reg":"DF",
-            "size":1,
-            "varnodes":[
-              {
-                "addr":"register:0000020a",
-                "offset":522,
-                "size":1
-              }
-            ]
-          },
-          "type":"byte"
-        },
-        {
-          "name":"addr",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"SNetworkAddr*",
-          "use":71
-        },
-        {
-          "name":"iVar3",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":81
-        },
-        {
-          "name":"uVar5",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint",
-          "use":199
-        },
-        {
-          "name":"pcVar4",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*",
-          "use":401
-        },
-        {
-          "name":"pcVar6",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*",
-          "use":407
-        },
         {
           "name":"local_18",
           "storage":{
@@ -63090,36 +63003,20 @@
           "type":"undefined4"
         },
         {
-          "name":"local_57",
-          "storage":{
-            "offset":-87,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x57]",
-                "offset":-87,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint"
-        },
-        {
           "name":"local_5c",
           "storage":{
             "offset":-92,
-            "size":5,
+            "size":9,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x5c]",
                 "offset":-92,
-                "size":5
+                "size":9
               }
             ]
           },
-          "type":"SNetPacketHeader"
+          "type":"SNetPacket_Simple"
         },
         {
           "name":"local_60",
@@ -63136,86 +63033,6 @@
             ]
           },
           "type":"float"
-        },
-        {
-          "name":"pCVar2",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:3fedd8a81c",
-                "offset":274573338652,
-                "size":4
-              }
-            ]
-          },
-          "type":"CGame*",
-          "use":18
-        },
-        {
-          "name":"aim_mode",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:7bf5e2cc229",
-                "offset":8518500139561,
-                "size":4
-              }
-            ]
-          },
-          "type":"EAimMode",
-          "use":71
-        },
-        {
-          "name":"hero_number",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:7bf9570118c",
-                "offset":8519427297676,
-                "size":4
-              }
-            ]
-          },
-          "type":"EHeroType",
-          "use":71
-        },
-        {
-          "name":"this_ptr_00",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:3fc001267e",
-                "offset":273804240510,
-                "size":4
-              }
-            ]
-          },
-          "type":"CEditorTools*",
-          "use":166
-        },
-        {
-          "name":"cVar1",
-          "storage":{
-            "size":1,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5fb1e594e3",
-                "offset":411006506211,
-                "size":1
-              }
-            ]
-          },
-          "type":"char",
-          "use":390
         }
       ],
       "params":[
@@ -63468,57 +63285,12 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_netgame.cpp_CNetGame_updatePing_FUN_00541c80",
     "ret":"void",
     "vars":{
       "locals":[
-        {
-          "name":"iVar1",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":62
-        },
-        {
-          "name":"iVar2",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":87
-        },
-        {
-          "name":"uVar3",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint",
-          "use":121
-        },
         {
           "name":"local_18",
           "storage":{
@@ -63536,36 +63308,20 @@
           "type":"int"
         },
         {
-          "name":"local_1f",
-          "storage":{
-            "offset":-31,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x1f]",
-                "offset":-31,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint"
-        },
-        {
           "name":"local_24",
           "storage":{
             "offset":-36,
-            "size":5,
+            "size":9,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x24]",
                 "offset":-36,
-                "size":5
+                "size":9
               }
             ]
           },
-          "type":"SNetPacketHeader"
+          "type":"SNetPacket_Simple"
         },
         {
           "name":"local_28",

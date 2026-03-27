@@ -388,11 +388,19 @@ def collect_jump_targets(instructions):
 
 
 def build_site_patch(ks, instructions, group_idx, group_addr, jump_targets=None,
-                     movsd_count=4):
+                     movsd_count=4, allow_target_borrow=False,
+                     group_byte_size=None):
     """Build a site patch by borrowing adjacent instructions.
 
     Args:
-      movsd_count: number of consecutive MOVSD instructions (3 or 4).
+      movsd_count: number of instructions in the group (e.g. 4 for 4x MOVSD,
+          1 for a single REP MOVSD).
+      allow_target_borrow: if True, allow borrowing ONE branch-target
+          instruction from before the site, making it the site_start.
+          Safe because a JMP at the branch target address correctly
+          redirects all incoming jumps to the cave.
+      group_byte_size: total byte size of the instruction group. Defaults to
+          movsd_count (correct for bare MOVSD where each is 1 byte).
 
     Returns:
       site_start: start address of the patched region
@@ -404,9 +412,9 @@ def build_site_patch(ks, instructions, group_idx, group_addr, jump_targets=None,
     if jump_targets is None:
         jump_targets = set()
 
+    movsd_size = group_byte_size if group_byte_size is not None else movsd_count
     movsd_start = group_addr
-    movsd_end = group_addr + movsd_count  # each MOVSD is 1 byte
-    movsd_size = movsd_count
+    movsd_end = group_addr + movsd_size
 
     # We need >= 5 bytes for a JMP rel32
     total_size = movsd_size
@@ -436,10 +444,27 @@ def build_site_patch(ks, instructions, group_idx, group_addr, jump_targets=None,
 
     # Expand before if still not enough
     before_idx = group_idx - 1
+    borrowed_target = False
     while total_size < 5 and before_idx >= 0:
         addr, text = instructions[before_idx]
-        # Don't borrow an instruction that is a branch target
+        # Don't borrow an instruction that is a branch target — unless
+        # allow_target_borrow is set and we haven't borrowed one yet.
+        # A branch-target borrow is only safe as site_start (first byte
+        # of our JMP), so we allow at most one and stop expanding.
         if addr in jump_targets:
+            if allow_target_borrow and not borrowed_target:
+                if not can_borrow(text, for_movsd=True):
+                    break
+                insn_size = get_insn_size(ks, text, addr)
+                if insn_size == 0:
+                    break
+                if addr + insn_size != movsd_start:
+                    break
+                before_insns.insert(0, (addr, text))
+                total_size += insn_size
+                movsd_start = addr
+                borrowed_target = True
+                break  # can't borrow further — this must be site_start
             break
         if not can_borrow(text, for_movsd=True):
             break
@@ -561,6 +586,32 @@ def generate_cave_code(ks, site_info, cave_addr):
         # ECX post-state — REP MOVSD leaves ECX=0
         emit('xor ecx, ecx', '(REP MOVSD ecx post-state)')
 
+    elif group_type == 'rep_movsd_narrow':
+        # Narrow patch: setup instructions stay in place, only the REP MOVSD
+        # (+ borrowed neighbors) is replaced. ESI/EDI/ECX are already set.
+
+        # Borrowed before instructions (may include a branch-target instruction)
+        for insn_addr, text in site_info['before_insns']:
+            emit_borrowed(insn_addr, text)
+
+        # Explicit N-dword copy using ECX as temp
+        dword_count = site_info['dword_count']
+        copy_insns = make_explicit_copy_asm(dword_count)
+        for asm_text in copy_insns:
+            emit(asm_text)
+
+        # ESI/EDI advancement
+        byte_count = dword_count * 4
+        emit('add esi, %d' % byte_count, '(REP MOVSD esi/edi advancement)')
+        emit('add edi, %d' % byte_count, '(REP MOVSD esi/edi advancement)')
+
+        # ECX post-state — REP MOVSD leaves ECX=0
+        emit('xor ecx, ecx', '(REP MOVSD ecx post-state)')
+
+        # Borrowed after instructions
+        for insn_addr, text in site_info['after_insns']:
+            emit_borrowed(insn_addr, text)
+
     # JMP back
     jmp_offset = site_info['return_addr'] - (addr + 5)
     jmp_bytes = b'\xe9' + struct.pack('<i', jmp_offset)
@@ -579,7 +630,8 @@ MAX_REP_MOVSD_DWORDS = 13
 
 
 def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
-                                   binary_path=None, verbose=True):
+                                   binary_path=None, verbose=True,
+                                   allow_target_borrow=False):
     """Generate MOVSD cave patches for all sites in a function.
 
     Args:
@@ -689,21 +741,83 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
                     has_internal_target = True
                     break
             if has_internal_target:
-                if verbose:
-                    print("    SKIP: branch target inside site range")
-                continue
+                if not allow_target_borrow:
+                    if verbose:
+                        print("    SKIP: branch target inside site range")
+                    continue
 
-            dword_count = setup['dword_count']
-            site_info = {
-                'site_start': site_start,
-                'site_size': site_size,
-                'return_addr': return_addr,
-                'before_insns': [],
-                'after_insns': [],
-                'setup_insns': setup_insns,
-                'dword_count': dword_count,
-                'group_type': 'rep_movsd',
-            }
+                # Fallback: replace just the REP MOVSD instruction (+ borrowed
+                # neighbors) instead of the full setup block. The setup
+                # instructions stay in place — ESI/EDI/ECX are already set
+                # when execution reaches the REP MOVSD.
+                if verbose:
+                    print("    Branch target in setup — trying narrow patch (REP MOVSD only)")
+
+                rep_movsd_size = get_insn_size(ks, rep_text, rep_addr)
+                site_info = build_site_patch(
+                    ks, instructions, rep_idx, rep_addr,
+                    jump_targets=jump_targets,
+                    movsd_count=1,  # single instruction
+                    allow_target_borrow=True,
+                    group_byte_size=rep_movsd_size)
+                if site_info is not None:
+                    # Override with rep_movsd metadata for cave code generation
+                    site_info['group_type'] = 'rep_movsd_narrow'
+                    site_info['dword_count'] = dword_count
+                    site_info['movsd_count'] = rep_movsd_size
+                elif rep_idx + 1 < len(instructions):
+                    # Trampoline fallback: if the MOVSD.REP is itself a branch
+                    # target and is immediately followed by a JMP, absorb both
+                    # into the patch. The new cave does the explicit copy then
+                    # chains to the old JMP target (trampoline).
+                    next_addr, next_text = instructions[rep_idx + 1]
+                    next_mnemonic = next_text.strip().split()[0].upper()
+                    jmp_match = RE_BRANCH_TARGET.match(next_text)
+                    if (next_mnemonic == 'JMP' and jmp_match and
+                            next_addr == rep_addr + rep_movsd_size):
+                        next_size = get_insn_size(ks, next_text, next_addr)
+                        total = rep_movsd_size + next_size
+                        if total >= 5:
+                            chain_target = int(jmp_match.group(1), 16)
+                            if verbose:
+                                print("    Narrow failed — trying trampoline "
+                                      "(MOVSD.REP + JMP 0x%x = %d bytes)" % (chain_target, total))
+                            # Build the expected current bytes: MOVSD.REP + JMP
+                            # The JMP may have been written by a previous cave patch,
+                            # so PE bytes won't match. Assemble what Ghidra has now.
+                            trampoline_orig = assemble_one(ks, rep_text, rep_addr)
+                            jmp_bytes = assemble_one(ks, next_text, next_addr)
+                            if trampoline_orig and jmp_bytes:
+                                trampoline_orig = trampoline_orig + jmp_bytes
+                            else:
+                                trampoline_orig = None
+                            site_info = {
+                                'site_start': rep_addr,
+                                'site_size': total,
+                                'return_addr': chain_target,  # chain to old JMP target
+                                'before_insns': [],
+                                'after_insns': [],
+                                'dword_count': dword_count,
+                                'group_type': 'rep_movsd_narrow',
+                                'movsd_count': rep_movsd_size,
+                                'override_orig': trampoline_orig,
+                            }
+                if site_info is None:
+                    if verbose:
+                        print("    SKIP: narrow patch and trampoline both failed")
+                    continue
+            else:
+                dword_count = setup['dword_count']
+                site_info = {
+                    'site_start': site_start,
+                    'site_size': site_size,
+                    'return_addr': return_addr,
+                    'before_insns': [],
+                    'after_insns': [],
+                    'setup_insns': setup_insns,
+                    'dword_count': dword_count,
+                    'group_type': 'rep_movsd',
+                }
 
         if verbose:
             print("    Site: 0x%08x - 0x%08x (%d bytes)" % (
@@ -744,9 +858,12 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
         site_bytes = b'\xe9' + struct.pack('<i', jmp_offset)
         site_bytes += b'\x90' * (site_size - 5)
 
-        # Get original bytes
-        site_orig = read_pe_bytes(pe_data, image_base, sections,
-                                  site_start, site_size) if pe_data else None
+        # Get original bytes — use override if the site was previously patched
+        # (e.g. trampoline replacing a MOVSD.REP + existing cave JMP)
+        site_orig = site_info.get('override_orig')
+        if site_orig is None:
+            site_orig = read_pe_bytes(pe_data, image_base, sections,
+                                      site_start, site_size) if pe_data else None
         cave_orig = b'\xcc' * len(cave_code)  # caves are INT3-filled
 
         # Create patch entries
@@ -754,11 +871,18 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
 
         if gtype == 'rep_movsd':
             dcount = site_info['dword_count']
-            site_desc = 'JMP to cave at 0x%x, replacing REP MOVSD (%d dwords)' % (
-                this_cave_addr, dcount)
+            narrow = site_info.get('group_type') == 'rep_movsd_narrow'
+            label = 'REP MOVSD narrow' if narrow else 'REP MOVSD'
+            borrow_count = len(site_info['before_insns']) + len(site_info['after_insns'])
+            if narrow:
+                site_desc = 'JMP to cave at 0x%x, narrow patch REP MOVSD (%d dwords) + %d borrowed insn(s)' % (
+                    this_cave_addr, dcount, borrow_count)
+            else:
+                site_desc = 'JMP to cave at 0x%x, replacing REP MOVSD (%d dwords)' % (
+                    this_cave_addr, dcount)
             cave_desc_str = 'Explicit %d-byte struct copy + JMP back to 0x%x' % (
                 dcount * 4, site_info['return_addr'])
-            alloc_desc = 'REP MOVSD %d-dword replacement for %s' % (dcount, func_name)
+            alloc_desc = '%s %d-dword replacement for %s' % (label, dcount, func_name)
         else:
             borrow_count = len(site_info['before_insns']) + len(site_info['after_insns'])
             site_desc = 'JMP to cave at 0x%x, replacing %dx MOVSD + %d borrowed insn(s)' % (
@@ -934,6 +1058,10 @@ def main():
                         help="Path to the PE binary")
     parser.add_argument("--pseudocode-src", type=str, default=None,
                         help="Path to pseudocode/src directory")
+    parser.add_argument("--allow-target-borrow", action="store_true",
+                        help="For REP MOVSD sites blocked by branch targets in the setup, "
+                             "try a narrow patch replacing just the REP MOVSD instruction "
+                             "(borrowing one branch-target instruction as site_start)")
 
     args = parser.parse_args()
 
@@ -1006,7 +1134,8 @@ def main():
 
     result, new_offset, allocations = generate_patches_for_function(
         asm_path, cave_addr, cave_size, cave_offset,
-        binary_path=binary_path, verbose=True)
+        binary_path=binary_path, verbose=True,
+        allow_target_borrow=args.allow_target_borrow)
 
     if result is None:
         print("\nNo patches generated.")

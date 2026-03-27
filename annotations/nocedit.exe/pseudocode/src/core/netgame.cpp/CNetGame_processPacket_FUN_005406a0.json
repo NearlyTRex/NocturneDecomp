@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 1175,
-    "complexity_score": 531,
+    "complexity_score": 530,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 41,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 441,
+    "pseudocode_lines": 440,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "warning_unreachable"
     ],
-    "total_lines": 1616
+    "total_lines": 1615
   },
   "cross_references": [
     {
@@ -655,7 +655,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 120,
       "match": "(SNetworkAddr *)((int)",
       "severity": "mild",
       "text": "uVar4 = ((SNetworkAddr *)((int)packet + 5))->other;",
@@ -663,47 +663,47 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 122,
+      "line": 121,
       "match": "(SNetworkAddr *)((int)",
       "severity": "mild",
-      "text": "this_ptr->players[iVar6].addr.port = ((SNetworkAddr *)((int)packet + 5))->port;",
+      "text": "this_ptr->players[iVar5].addr.port = ((SNetworkAddr *)((int)packet + 5))->port;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 145,
+      "match": "(SNetworkAddr *)((int)",
+      "severity": "mild",
+      "text": "uVar4 = ((SNetworkAddr *)((int)packet + 0x69))->other;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 146,
-      "match": "(ushort *)((int)",
+      "match": "(SNetworkAddr *)((int)",
       "severity": "mild",
-      "text": "uVar5 = *(ushort *)((int)((int)packet + 0x6d) + 2);",
+      "text": "this_ptr->players[iVar5].addr.port = ((SNetworkAddr *)((int)packet + 0x69))->port;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 147,
-      "match": "(ushort *)((int)",
-      "severity": "mild",
-      "text": "this_ptr->players[iVar6].addr.port = *(ushort *)((int)packet + 0x6d);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 228,
+      "line": 227,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "while (*(uint *)((int)g_ChatOutMessages[0].player_timestamps + iVar6 + -8) ==",
+      "text": "while (*(uint *)((int)g_ChatOutMessages[0].player_timestamps + iVar5 + -8) ==",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 230,
+      "line": 229,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)g_ChatOutMessages[0].player_timestamps + iVar6 + uVar2 + -4) = 1;",
+      "text": "*(byte *)((int)g_ChatOutMessages[0].player_timestamps + iVar5 + uVar2 + -4) = 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 358,
+      "line": 357,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "if (uVar3 == *(uint *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",

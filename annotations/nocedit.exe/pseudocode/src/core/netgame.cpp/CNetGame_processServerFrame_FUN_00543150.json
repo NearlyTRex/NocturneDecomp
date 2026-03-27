@@ -354,36 +354,8 @@
         "is_param": false,
         "name": "local_90",
         "offset": -144,
-        "size": 5,
-        "type": "SNetPacketHeader"
-      },
-      {
-        "is_param": false,
-        "name": "local_8b",
-        "offset": -139,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_87",
-        "offset": -135,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_83",
-        "offset": -131,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": false,
-        "name": "local_7f",
-        "offset": -127,
-        "size": 88,
-        "type": "int[22]"
+        "size": 105,
+        "type": "SNetPacket_SimFrame"
       },
       {
         "is_param": false,
@@ -432,15 +404,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 74,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar6 + -0xc) <",
+      "text": "if (*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar5 + -0xc) <",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 78,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "((void *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
@@ -448,7 +420,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 93,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (iVar1 == *(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
@@ -456,7 +428,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 164,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",

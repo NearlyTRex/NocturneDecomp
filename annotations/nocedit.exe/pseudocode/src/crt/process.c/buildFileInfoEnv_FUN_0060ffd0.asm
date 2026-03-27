@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl crt_process_c_build_file_info_env_FUN_0060ffd0(void)
+; char * __cdecl crt_process_c_buildFileInfoEnv_FUN_0060ffd0(void)
 ;
 ; Local Variables:
 ; char[28]         Stack[-0x44]:28  local_44
@@ -36,7 +36,7 @@
 section .text
 
     PUSH EBX                            ; 0060ffd0
-        ;   Label: crt_process.c_build_file_info_env_FUN_0060ffd0
+        ;   Label: crt_process.c_buildFileInfoEnv_FUN_0060ffd0
     PUSH ESI                            ; 0060ffd1
     PUSH EDI                            ; 0060ffd2
     PUSH ES                             ; 0060ffd3
