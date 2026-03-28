@@ -40872,6 +40872,23 @@
     "name":"core_frankgen.cpp_findLeader_FUN_004d2330",
     "ret":"CDemonActor*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CFrankenstienMachine*",
+          "use":36
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -46720,7 +46737,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CWeapon*",
           "use":613
         },
         {
@@ -47354,141 +47371,6 @@
     "vars":{
       "locals":[
         {
-          "name":"iVar6",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":28
-        },
-        {
-          "name":"uVar7",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"uint",
-          "use":126
-        },
-        {
-          "name":"pCVar8",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonActor*",
-          "use":274
-        },
-        {
-          "name":"pCVar9",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3f*",
-          "use":527
-        },
-        {
-          "name":"EVar10",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"EDeathState",
-          "use":701
-        },
-        {
-          "name":"pSVar11",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"SMotion*",
-          "use":855
-        },
-        {
-          "name":"iVar12",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":876
-        },
-        {
-          "name":"pCVar13",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CImp*",
-          "use":1723
-        },
-        {
-          "name":"path_map",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CPathMap*",
-          "use":2377
-        },
-        {
           "name":"local_14",
           "storage":{
             "offset":-20,
@@ -48047,150 +47929,6 @@
             ]
           },
           "type":"SDamageInfo"
-        },
-        {
-          "name":"pCVar1",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27f513b8c7c",
-                "offset":2745846959228,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDeformableModelInstance*",
-          "use":96
-        },
-        {
-          "name":"bVar5",
-          "storage":{
-            "size":1,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:57f31b0625e",
-                "offset":6043852628574,
-                "size":1
-              }
-            ]
-          },
-          "type":"bool",
-          "use":392
-        },
-        {
-          "name":"pCVar3",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5fc24581fb",
-                "offset":411281228283,
-                "size":4
-              }
-            ]
-          },
-          "type":"CCharacter*",
-          "use":613
-        },
-        {
-          "name":"pCVar2",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27fa186b713",
-                "offset":2747194062611,
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3f*",
-          "use":1081
-        },
-        {
-          "name":"pCVar4",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5fbd0033fb",
-                "offset":411192800251,
-                "size":4
-              }
-            ]
-          },
-          "type":"CCharacter*",
-          "use":1511
-        },
-        {
-          "name":"fVar14",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:3f74a0da31",
-                "offset":272539638321,
-                "size":4
-              }
-            ]
-          },
-          "type":"float",
-          "use":1623
-        },
-        {
-          "name":"damage_info",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:17bf2708e16c",
-                "offset":26109761085804,
-                "size":4
-              }
-            ]
-          },
-          "type":"SDamageInfo*",
-          "use":1647
-        },
-        {
-          "name":"max_distance",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:3f75120a3b",
-                "offset":272547056187,
-                "size":4
-              }
-            ]
-          },
-          "type":"float",
-          "use":2324
-        },
-        {
-          "name":"fVar15",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:3f66c54acf",
-                "offset":272307145423,
-                "size":4
-              }
-            ]
-          },
-          "type":"float",
-          "use":2332
         }
       ],
       "params":[
@@ -56213,7 +55951,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CHero*",
           "use":1020
         },
         {
@@ -62433,7 +62171,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CEnemy*",
           "use":93
         },
         {
@@ -62450,6 +62188,36 @@
           },
           "type":"int",
           "use":138
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CAmmo*",
+          "use":291
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHealthItem*",
+          "use":387
         },
         {
           "name":"local_14",
@@ -90067,7 +89835,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CTommyGun*",
           "use":776
         },
         {
@@ -95602,7 +95370,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CHero*",
           "use":1299
         },
         {
@@ -97628,7 +97396,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CMelee*",
           "use":322
         },
         {
@@ -97645,6 +97413,21 @@
           },
           "type":"CDemonActor*",
           "use":368
+        },
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHero*",
+          "use":410
         },
         {
           "name":"pCVar5",

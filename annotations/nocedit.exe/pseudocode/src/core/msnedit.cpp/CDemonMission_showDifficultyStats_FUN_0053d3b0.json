@@ -2,105 +2,69 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 39,
-        "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CEnemy *'"
-      },
-      {
-        "category": "other",
-        "column": 74,
-        "line": 51,
-        "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 27,
-        "line": 53,
-        "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 55,
-        "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 57,
-        "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CAmmo *'"
+        "category": "format_error",
+        "column": 59,
+        "line": 54,
+        "message": "format specifies type 'char *' but the argument has type 'CEnemy *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 59,
+        "line": 63,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 62,
-        "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CHealthItem *'"
       },
       {
         "category": "format_error",
         "column": 62,
-        "line": 66,
-        "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 56,
-        "line": 67,
-        "message": "format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]"
+        "line": 71,
+        "message": "format specifies type 'char *' but the argument has type 'CHealthItem *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 76,
+        "line": 78,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 77,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 53,
         "line": 79,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 36,
+        "column": 53,
         "line": 81,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 35,
+        "column": 36,
         "line": 83,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 11,
+        "column": 35,
         "line": 85,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 11,
+        "line": 87,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 86,
+        "line": 88,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 88,
+        "line": 90,
         "message": "member reference base type 'double' is not a structure or union"
       }
     ],
@@ -109,12 +73,12 @@
   },
   "complexity": {
     "assembly_lines": 364,
-    "complexity_score": 252,
+    "complexity_score": 254,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 102,
+    "pseudocode_lines": 104,
     "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -122,7 +86,7 @@
       "unknown_field",
       "warning_inlined_function"
     ],
-    "total_lines": 466
+    "total_lines": 468
   },
   "cross_references": [
     {
@@ -473,7 +437,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 48,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(local_14 * 100.0f)),",
@@ -481,7 +445,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 48,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(local_14 * 100.0f)),",
@@ -489,7 +453,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 69,
+      "line": 71,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_20),0);",
@@ -497,7 +461,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 69,
+      "line": 71,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_20),0);",
@@ -505,7 +469,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 71,
       "match": "SUB84",
       "severity": "mild",
       "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_20),0);",
@@ -513,7 +477,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 70,
+      "line": 72,
       "match": "._0_4_",
       "severity": "mild",
       "text": "_sprintf(local_224,\"Total enemy HP\\t%g\",local_30._0_4_);",
@@ -521,7 +485,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 72,
+      "line": 74,
       "match": "._0_4_",
       "severity": "mild",
       "text": "_sprintf(local_224,\"Total\\t\\t\\t\\t\\t%g hp\",local_30._0_4_);",
@@ -529,7 +493,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 78,
+      "line": 80,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_24),0);",
@@ -537,7 +501,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 78,
+      "line": 80,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_24),0);",
@@ -545,7 +509,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 80,
       "match": "SUB84",
       "severity": "mild",
       "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_24),0);",
@@ -553,7 +517,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 79,
+      "line": 81,
       "match": "._0_4_",
       "severity": "mild",
       "text": "_sprintf(local_224,\"Total health items\\t%g\",local_30._0_4_);",
@@ -561,7 +525,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 81,
+      "line": 83,
       "match": "._0_4_",
       "severity": "mild",
       "text": "_sprintf(local_224,\"Total\\t\\t\\t\\t\\t%g hp\",local_30._0_4_);",

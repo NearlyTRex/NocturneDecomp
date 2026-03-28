@@ -27112,7 +27112,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CBoxActor*",
           "use":215
         },
         {
@@ -50214,6 +50214,23 @@
     "name":"core_game.cpp_giveHeroWeapon_FUN_004dd870",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWeapon*",
+          "use":57
+        }
+      ],
       "params":[
         {
           "name":"class_name",
@@ -57982,6 +57999,21 @@
           "use":137
         },
         {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTommyGun*",
+          "use":157
+        },
+        {
           "name":"fStack_18",
           "storage":{
             "offset":-24,
@@ -59665,6 +59697,38 @@
     "name":"core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHealthItem*",
+          "use":40
+        },
+        {
+          "name":"actor_ptr",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHealthItem*",
+          "use":96
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -60517,7 +60581,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CGlass*",
           "use":1260
         },
         {
@@ -67387,6 +67451,21 @@
     "vars":{
       "locals":[
         {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CStranger*",
+          "use":308
+        },
+        {
           "name":"local_14",
           "storage":{
             "offset":-20,
@@ -68372,7 +68451,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CMobster*",
           "use":289
         },
         {
@@ -82470,7 +82549,7 @@
               }
             ]
           },
-          "type":"CCharacter*",
+          "type":"CEnemy*",
           "use":29
         },
         {
@@ -100645,6 +100724,21 @@
           "use":1330
         },
         {
+          "name":"pCVar13",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDynamite*",
+          "use":1537
+        },
+        {
           "name":"pCVar14",
           "storage":{
             "reg":"EAX",
@@ -107192,7 +107286,7 @@
               }
             ]
           },
-          "type":"CCharacter*",
+          "type":"CTVBat*",
           "use":3521
         },
         {

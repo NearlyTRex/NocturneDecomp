@@ -13,8 +13,9 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(C
 {
   CInventory *this_ptr_00;
   CDeformableModelInstance *this_ptr_01;
-  CDemonActor *pCVar3;
-  uint uVar4;
+  CWeapon *pCVar3;
+  CDemonActor *pCVar4;
+  uint uVar5;
   int iVar5;
   CMotionList *pCVar6;
   CDynamite *this_ptr_02;
@@ -26,7 +27,7 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(C
   float fVar9;
   CMelee *pCVar11;
   CMelee *pCVar8;
-  CWeapon *pCVar13;
+  CDynamite *pCVar13;
   CVector3f *pCVar14;
   CMelee *pCVar9;
   CMelee *pCVar10;
@@ -59,16 +60,16 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(C
   local_1c = (CWeapon *)0x0;
   if ((this_ptr->base).nearby_interactive_actor == (CDemonActor *)0x0) {
     if (this_ptr->guns_drawn != 0) {
-      pCVar3 = (this_ptr->base).base.carry_hands[1].carry_actor;
-      if (pCVar3 == (CDemonActor *)0x0) {
+      pCVar4 = (this_ptr->base).base.carry_hands[1].carry_actor;
+      if (pCVar4 == (CDemonActor *)0x0) {
         local_1c = (this_ptr->base).inventory.selected_weapon;
       }
       else {
         local_1c = (CWeapon *)
-                   core_actor_cpp_castToClassHash_FUN_0040c790(pCVar3,g_CWeaponClassInfo.name_hash);
+                   core_actor_cpp_castToClassHash_FUN_0040c790(pCVar4,g_CWeaponClassInfo.name_hash);
         if ((local_1c == (CWeapon *)0x0) &&
-           (pCVar3 = (this_ptr->base).base.carry_hands[1].carry_actor,
-           uVar13 = (*((pCVar3->vtable)._ub)->getAllowedMeleeAttackTypes)(pCVar3), (uVar13 & 3) != 0
+           (pCVar4 = (this_ptr->base).base.carry_hands[1].carry_actor,
+           uVar13 = (*((pCVar4->vtable)._ub)->getAllowedMeleeAttackTypes)(pCVar4), (uVar13 & 3) != 0
            )) {
           local_40 = 8;
         }
@@ -128,8 +129,8 @@ LAB_005c52fa:
           goto LAB_005c52fa;
           iVar15 = local_40;
           if (local_40 < 0) {
-            pCVar13 = this_ptr->weapon;
-            if (pCVar13 == local_1c) {
+            pCVar3 = this_ptr->weapon;
+            if (pCVar3 == local_1c) {
               if (this_ptr->weapon == (CWeapon *)0x0) {
 switchD_005c56f5_caseD_8:
                 iVar15 = 0;
@@ -156,14 +157,14 @@ switchD_005c56f5_caseD_8:
                 }
               }
             }
-            else if (pCVar13 == (CWeapon *)0x0) {
+            else if (pCVar3 == (CWeapon *)0x0) {
               if (local_1c == (CWeapon *)0x0) {
                 iVar15 = 0;
               }
               else {
-                uVar4 = local_1c->weapon_type;
-                if (uVar4 < 7) goto joined_r0x005c57cf;
-                if (((7 < uVar4) && (uVar4 != 8)) ||
+                uVar5 = local_1c->weapon_type;
+                if (uVar5 < 7) goto joined_r0x005c57cf;
+                if (((7 < uVar5) && (uVar5 != 8)) ||
                    ((pCVar11 = (CMelee *)
                                core_actor_cpp_castToClassHash_FUN_0040c790
                                          (&local_1c->base,g_CMeleeClassInfo.name_hash),
@@ -173,17 +174,17 @@ switchD_005c56f5_caseD_8:
               }
             }
             else {
-              uVar4 = pCVar13->weapon_type;
-              if (uVar4 < 7) {
+              uVar5 = pCVar3->weapon_type;
+              if (uVar5 < 7) {
 joined_r0x005c57cf:
-                if (uVar4 != 0) goto LAB_005c52fa;
+                if (uVar5 != 0) goto LAB_005c52fa;
                 iVar15 = 1;
               }
               else {
-                if (((7 < uVar4) && (uVar4 != 8)) ||
+                if (((7 < uVar5) && (uVar5 != 8)) ||
                    ((pCVar8 = (CMelee *)
                               core_actor_cpp_castToClassHash_FUN_0040c790
-                                        (&pCVar13->base,g_CMeleeClassInfo.name_hash),
+                                        (&pCVar3->base,g_CMeleeClassInfo.name_hash),
                     pCVar8 != (CMelee *)0x0 && (pCVar8->can_go_in_inventory != 0))))
                 goto LAB_005c52fa;
                 iVar15 = 0;
@@ -220,19 +221,19 @@ joined_r0x005c57cf:
          ((float)(int)(0xb / (longlong)pCVar6->motions[iVar8].frame_count) <=
           (this_ptr->base).base.layer_action_t)) {
         core_stranger_cpp_CStranger_getThrowDirection_FUN_005c51c0(this_ptr,&local_54);
-        pCVar13 = (CWeapon *)
+        pCVar13 = (CDynamite *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (&this_ptr->weapon->base,g_CDynamiteClassInfo.name_hash);
-        if (pCVar13 != (CWeapon *)0x0) {
+        if (pCVar13 != (CDynamite *)0x0) {
           pCVar14 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                               ((CDemonActor *)this_ptr,&local_60,&local_54);
-          pcVar4 = pCVar13[1].base.actor_name + 4;
+          pcVar4 = (char *)&pCVar13->toss_velocity;
           if ((CVector3f *)pcVar4 != pCVar14) {
             *(float *)pcVar4 = pCVar14->x;
-            *(float *)(pCVar13[1].base.actor_name + 8) = pCVar14->y;
-            *(float *)(pCVar13[1].base.actor_name + 0xc) = pCVar14->z;
+            (pCVar13->toss_velocity).y = pCVar14->y;
+            (pCVar13->toss_velocity).z = pCVar14->z;
           }
-          (*(((pCVar13->base).vtable._uw)->_uw).fire)(pCVar13);
+          (*(((pCVar13->base).base.vtable._uw)->_uw).fire)((CWeapon *)pCVar13);
           this_ptr->weapon = (CWeapon *)0x0;
         }
         if ((this_ptr->base).base.carry_hands[1].carry_actor != (CDemonActor *)0x0) {
@@ -256,33 +257,33 @@ joined_r0x005c57cf:
       break;
     case 0xc:
       if ((((int)fVar9 < 0x3ebd70a4) && (0x3ebd70a3 < (int)(this_ptr->base).base.layer_action_t)) &&
-         (pCVar13 = this_ptr->weapon, pCVar13 != (CWeapon *)0x0)) {
-        (*((pCVar13->base).vtable._ub)->processMeleeHit)(&pCVar13->base,1);
+         (pCVar3 = this_ptr->weapon, pCVar3 != (CWeapon *)0x0)) {
+        (*((pCVar3->base).vtable._ub)->processMeleeHit)(&pCVar3->base,1);
       }
       break;
     case 0xd:
       if ((((int)fVar9 < 0x3f28f5c3) && (0x3f28f5c2 < (int)(this_ptr->base).base.layer_action_t)) &&
-         (pCVar13 = this_ptr->weapon, pCVar13 != (CWeapon *)0x0)) {
-        (*((pCVar13->base).vtable._ub)->processMeleeHit)(&pCVar13->base,2);
+         (pCVar3 = this_ptr->weapon, pCVar3 != (CWeapon *)0x0)) {
+        (*((pCVar3->base).vtable._ub)->processMeleeHit)(&pCVar3->base,2);
       }
     }
     if (-1 < iVar5) {
-      pCVar13 = this_ptr->weapon;
-      if (pCVar13 != local_1c) {
-        if (pCVar13 != (CWeapon *)0x0) {
-          uVar4 = pCVar13->weapon_type;
-          if (uVar4 < 7) {
-            if (uVar4 == 0) {
+      pCVar3 = this_ptr->weapon;
+      if (pCVar3 != local_1c) {
+        if (pCVar3 != (CWeapon *)0x0) {
+          uVar5 = pCVar3->weapon_type;
+          if (uVar5 < 7) {
+            if (uVar5 == 0) {
               iVar8 = 1;
             }
             else {
               iVar8 = 3;
             }
           }
-          else if ((uVar4 < 8) || (uVar4 == 8)) {
+          else if ((uVar5 < 8) || (uVar5 == 8)) {
             pCVar9 = (CMelee *)
                      core_actor_cpp_castToClassHash_FUN_0040c790
-                               (&pCVar13->base,g_CMeleeClassInfo.name_hash);
+                               (&pCVar3->base,g_CMeleeClassInfo.name_hash);
             if ((pCVar9 == (CMelee *)0x0) || (pCVar9->can_go_in_inventory == 0)) {
               iVar8 = 0;
             }
@@ -304,16 +305,16 @@ LAB_005c53f2:
             iVar7 = 0;
           }
           else {
-            uVar4 = local_1c->weapon_type;
-            if (uVar4 < 7) {
-              if (uVar4 == 0) {
+            uVar5 = local_1c->weapon_type;
+            if (uVar5 < 7) {
+              if (uVar5 == 0) {
                 iVar7 = 1;
               }
               else {
                 iVar7 = 3;
               }
             }
-            else if ((uVar4 < 8) || (uVar4 == 8)) {
+            else if ((uVar5 < 8) || (uVar5 == 8)) {
               pCVar10 = (CMelee *)
                         core_actor_cpp_castToClassHash_FUN_0040c790
                                   (&local_1c->base,g_CMeleeClassInfo.name_hash);

@@ -11,11 +11,13 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
 {
   CWeapon *actor_ptr_00;
   float fVar3;
-  CDemonActor *pCVar3;
-  CDemonActor *pCVar4;
+  CLightGun *pCVar3;
+  CBattery *pCVar4;
+  CLightGun *this_ptr_00;
+  CBattery *pCVar6;
   int iVar4;
   int iVar5;
-  CInventory *pCVar6;
+  CInventory *pCVar7;
   CInventory *pCVar5;
   float local_20;
   float local_1c;
@@ -26,9 +28,10 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
   actor_ptr_00 = this_ptr->selected_weapon;
   if (actor_ptr_00 != (CWeapon *)0x0) {
     if ((this_ptr->cached_ammo_count != actor_ptr_00->ammo_count) &&
-       (pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
+       (pCVar3 = (CLightGun *)
+                 core_actor_cpp_castToClassHash_FUN_0040c790
                            (&actor_ptr_00->base,g_CLightGunClassInfo.name_hash),
-       pCVar3 == (CDemonActor *)0x0)) {
+       pCVar3 == (CLightGun *)0x0)) {
       core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0(this_ptr,0);
     }
     this_ptr->cached_ammo_count = this_ptr->selected_weapon->ammo_count;
@@ -39,10 +42,11 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
     pCVar5 = this_ptr;
     if (0 < this_ptr->item_count) {
       do {
-        pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
+        pCVar6 = (CBattery *)
+                 core_actor_cpp_castToClassHash_FUN_0040c790
                            (pCVar5->items[0],g_CBatteryClassInfo.name_hash);
-        if (pCVar4 != (CDemonActor *)0x0) {
-          local_20 = 1.0 / pCVar4[2].location.position.z + local_20;
+        if (pCVar6 != (CBattery *)0x0) {
+          local_20 = 1.0 / pCVar6->recharge_time + local_20;
         }
         iVar5 = iVar5 + 1;
         pCVar5 = (CInventory *)&pCVar5->owner;
@@ -58,16 +62,17 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
   else {
     iVar4 = 0;
     local_1c = 30.0f;
-    pCVar6 = this_ptr;
+    pCVar7 = this_ptr;
     if (0 < this_ptr->item_count) {
       do {
-        pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
-                           (pCVar6->items[0],g_CBatteryClassInfo.name_hash);
-        if (pCVar4 != (CDemonActor *)0x0) {
-          local_1c = local_1c + (float)pCVar4[2].location.area_id;
+        pCVar4 = (CBattery *)
+                 core_actor_cpp_castToClassHash_FUN_0040c790
+                           (pCVar7->items[0],g_CBatteryClassInfo.name_hash);
+        if (pCVar4 != (CBattery *)0x0) {
+          local_1c = local_1c + pCVar4->discharge_time;
         }
         iVar4 = iVar4 + 1;
-        pCVar6 = (CInventory *)&pCVar6->owner;
+        pCVar7 = (CInventory *)&pCVar7->owner;
       } while (iVar4 < this_ptr->item_count);
     }
     fVar1 = this_ptr->battery_charge -
@@ -78,16 +83,18 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
     }
   }
   iVar5 = 0;
-  pCVar6 = this_ptr;
+  pCVar7 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
-                         (pCVar6->items[0],g_CLightGunClassInfo.name_hash);
-      if ((pCVar4 != (CDemonActor *)0x0) && (pCVar4[2].location.position.y != 2.8026e-45)) {
-        (*((pCVar4->vtable)._ub)->process)(pCVar4,g_CGamePtr->delta_time_float);
+      this_ptr_00 = (CLightGun *)
+                    core_actor_cpp_castToClassHash_FUN_0040c790
+                              (pCVar7->items[0],g_CLightGunClassInfo.name_hash);
+      if ((this_ptr_00 != (CLightGun *)0x0) && ((this_ptr_00->base).weapon_state != 2)) {
+        (*((this_ptr_00->base).base.vtable._ub)->process)
+                  ((CDemonActor *)this_ptr_00,g_CGamePtr->delta_time_float);
       }
       iVar5 = iVar5 + 1;
-      pCVar6 = (CInventory *)&pCVar6->owner;
+      pCVar7 = (CInventory *)&pCVar7->owner;
     } while (iVar5 < this_ptr->item_count);
   }
   this_ptr->weapon_highlight_timer = this_ptr->weapon_highlight_timer - g_CGamePtr->delta_time_float

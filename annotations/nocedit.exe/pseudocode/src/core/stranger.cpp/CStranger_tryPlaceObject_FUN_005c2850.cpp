@@ -28,7 +28,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *t
   CVector3f *pCVar13;
   float fVar9;
   float fVar14;
-  CDemonActor *pCVar10;
+  CCrate *pCVar10;
   UOrientationVector *pUVar11;
   CLocation *pCVar12;
   UOrientationVector *pUVar15;
@@ -252,13 +252,14 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *t
         this_ptr->action_timer = 4.0;
         return 1;
       }
-      pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c790
+      pCVar10 = (CCrate *)
+                core_actor_cpp_castToClassHash_FUN_0040c790
                           (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar13),
                            g_CCrateClassInfo.name_hash);
-      if ((pCVar10 != (CDemonActor *)0x0) &&
-         (fVar14 = (pCVar10->location).position.x - fVar7,
-         fVar5 = (pCVar10->location).position.y - fVar10,
-         fVar6 = (pCVar10->location).position.z - fVar4,
+      if ((pCVar10 != (CCrate *)0x0) &&
+         (fVar14 = (pCVar10->base).location.position.x - fVar7,
+         fVar5 = (pCVar10->base).location.position.y - fVar10,
+         fVar6 = (pCVar10->base).location.position.z - fVar4,
          SQRT(fVar6 * fVar6 + fVar14 * fVar14 + fVar5 * fVar5) < (float)2)) break;
       iVar16 = iVar16 + 1;
       iVar13 = iVar13 + 4;

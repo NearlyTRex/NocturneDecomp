@@ -12,7 +12,7 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00427400(CBugs *this_ptr,CDe
 
 {
   int iVar2;
-  CDemonActor *pCVar4;
+  CHero *pCVar4;
   CEnemy *pCVar3;
   CDeformableModel *pCVar5;
   CDeformableModel *pCVar6;
@@ -31,9 +31,9 @@ void __cdecl core_bugs_cpp_CBugs_setSwarmTarget_FUN_00427400(CBugs *this_ptr,CDe
   class_name_hash = g_CHeroClassInfo.name_hash;
   this_ptr->deformable_model_ptr = (CKeyFramedModelInstance *)0x0;
   this_ptr->swarm_target = (CDemonActor *)0x0;
-  pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790(target,class_name_hash);
-  if (pCVar4 != (CDemonActor *)0x0) {
-    this_ptr->deformable_model_ptr = (CKeyFramedModelInstance *)(pCVar4 + 1);
+  pCVar4 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(target,class_name_hash);
+  if (pCVar4 != (CHero *)0x0) {
+    this_ptr->deformable_model_ptr = (CKeyFramedModelInstance *)&(pCVar4->base).model;
   }
   pCVar3 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c790(target,g_CEnemyClassInfo.name_hash)
   ;

@@ -15,7 +15,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
   CDemonActor *this_ptr_00;
   _FILE *file_handle;
   int iVar3;
-  CDemonActor *pCVar4;
+  CCharacter *pCVar4;
   CDemonActor *pCVar5;
   int iVar7;
   int iVar4;
@@ -135,14 +135,15 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
   }
   core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,this_ptr_00);
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
-  pCVar4 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c790(this_ptr_00,g_CCharacterClassInfo.name_hash);
-  if (pCVar4 != (CDemonActor *)0x0) {
-    pCVar5 = pCVar4;
+  pCVar4 = (CCharacter *)
+           core_actor_cpp_castToClassHash_FUN_0040c790(this_ptr_00,g_CCharacterClassInfo.name_hash);
+  if (pCVar4 != (CCharacter *)0x0) {
+    pCVar5 = &pCVar4->base;
     do {
       pCVar5 = (CDemonActor *)&(pCVar5->orient_matrix).m[0].z;
       pCVar5[0x1b].direction_hint = 0;
       pCVar5 = pCVar5;
-    } while (pCVar5 != (CDemonActor *)(pCVar4->create_event + 0x10));
+    } while (pCVar5 != (CDemonActor *)((pCVar4->base).create_event + 0x10));
   }
   (*((this_ptr_00->vtable)._ub)->setup)(this_ptr_00);
   (*((this_ptr_00->vtable)._ub)->onDropped)(this_ptr_00,(CVector3f *)0x0);

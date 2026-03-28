@@ -20,7 +20,7 @@ void __cdecl core_icepick_cpp_CIcePick_process_FUN_004f80b0(CIcePick *this_ptr,f
   int iVar6;
   CVector3f *pCVar4;
   CVector3f *pCVar7;
-  CDemonActor *pCVar5;
+  CWeapon *pCVar5;
   EDeathState EVar6;
   uint uVar9;
   CWeapon *this_ptr_02;
@@ -297,15 +297,13 @@ LAB_004f82e5:
             (&(this_ptr->base).base.model.motion_controller,iVar6,1);
 LAB_004f82f8:
   core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(&(this_ptr->base).inventory);
-  pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790
+  pCVar5 = (CWeapon *)
+           core_actor_cpp_castToClassHash_FUN_0040c790
                      ((this_ptr->base).base.carry_hands[1].carry_actor,g_CWeaponClassInfo.name_hash)
   ;
-  if (pCVar5 != (CDemonActor *)0x0) {
-    (*((pCVar5->vtable)._ub)->process)(pCVar5,delta_time);
-    pCVar5[4].actor_name[8] = 'd';
-    pCVar5[4].actor_name[9] = '\0';
-    pCVar5[4].actor_name[10] = '\0';
-    pCVar5[4].actor_name[0xb] = '\0';
+  if (pCVar5 != (CWeapon *)0x0) {
+    (*((pCVar5->base).vtable._ub)->process)((CDemonActor *)pCVar5,delta_time);
+    pCVar5->ammo_count = 100;
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   pCVar1 = &(this_ptr->base).base.model;

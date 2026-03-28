@@ -13,14 +13,15 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
 {
   char cVar1;
   int iVar2;
-  CDemonActor *pCVar3;
+  CLightGun *pCVar3;
   int iVar3;
   int iVar4;
   char *pcVar5;
   char *pcVar6;
   int iVar5;
-  CDemonActor *pCVar6;
+  CHealthItem *pCVar7;
   int iVar7;
+  CFilmReel *pCVar6;
   char *pcVar7;
   int iVar10;
   int iVar8;
@@ -105,9 +106,10 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   if (this_ptr->weapon_highlight_timer < 1.0) {
     local_68 = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));
   }
-  pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
+  pCVar3 = (CLightGun *)
+           core_actor_cpp_castToClassHash_FUN_0040c790
                      (&this_ptr->selected_weapon->base,g_CLightGunClassInfo.name_hash);
-  if (pCVar3 == (CDemonActor *)0x0) {
+  if (pCVar3 == (CLightGun *)0x0) {
     iVar3 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
                       (this_ptr,&this_ptr->selected_weapon->base,3);
     if (iVar3 == 0) {
@@ -256,22 +258,23 @@ LAB_005009c0:
       local_5c = 0x28;
       local_4c = 8;
     }
-    pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCVar7 = (CHealthItem *)
+             core_actor_cpp_castToClassHash_FUN_0040c790
                        (this_ptr->selected_item,g_CHealthItemClassInfo.name_hash);
-    if (pCVar6 != (CDemonActor *)0x0) {
+    if (pCVar7 != (CHealthItem *)0x0) {
       _sprintf
-                (local_378,"%d x%3.0f%%",pCVar6[2].location.position.y,
-                 (double)pCVar6[2].location.position.z);
+                (local_378,"%d x%3.0f%%",pCVar7->use_count,(double)pCVar7->hp_restored);
       iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
       iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_44,local_378);
       engine_font_cpp_CBitFont_drawText_FUN_004cda80
                 ((CBitFont *)local_44,local_378,(g_WindowWidth - local_4c) - iVar7,
                  (g_WindowHeight - local_4c) - iVar5,0xf8,0);
     }
-    pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCVar6 = (CFilmReel *)
+             core_actor_cpp_castToClassHash_FUN_0040c790
                        (this_ptr->selected_item,g_CFilmReelClassInfo.name_hash);
-    if (pCVar6 != (CDemonActor *)0x0) {
-      core_inv_cpp_getItemDisplayName_FUN_004fcf00(pCVar6);
+    if (pCVar6 != (CFilmReel *)0x0) {
+      core_inv_cpp_getItemDisplayName_FUN_004fcf00((CDemonActor *)pCVar6);
       _sprintf(local_278,"%s");
       iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
       iVar11 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_44,local_278);

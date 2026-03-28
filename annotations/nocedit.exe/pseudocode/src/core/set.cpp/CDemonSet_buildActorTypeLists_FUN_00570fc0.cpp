@@ -14,20 +14,20 @@ void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0(CDemonSet *
   CCharacter *pCVar1;
   CEnemy *pCVar2;
   CWayPoint *pCVar3;
-  CDemonActor *pCVar4;
-  int iVar5;
-  CDemonSet *pCVar6;
+  CTrigger *pCVar4;
+  int iVar4;
+  CDemonSet *pCVar5;
   
   this_ptr->enemy_count = 0;
   this_ptr->threat_count = 0;
   this_ptr->waypoint_count = 0;
   this_ptr->renderable_actor_count = 0;
   this_ptr->character_count = 0;
-  iVar5 = 0;
-  pCVar6 = this_ptr;
+  iVar4 = 0;
+  pCVar5 = this_ptr;
   if (0 < this_ptr->actor_count) {
     do {
-      actor_ptr = pCVar6->actors[0];
+      actor_ptr = pCVar5->actors[0];
       if ((actor_ptr->is_transparent != 0) || (actor_ptr->is_renderable != 0)) {
         this_ptr->renderable_actors[this_ptr->renderable_actor_count] = actor_ptr;
         this_ptr->renderable_actor_count = this_ptr->renderable_actor_count + 1;
@@ -45,10 +45,11 @@ void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0(CDemonSet *
         if (this_ptr->waypoints[this_ptr->waypoint_count] != (CWayPoint *)0x0) {
           this_ptr->waypoint_count = this_ptr->waypoint_count + 1;
         }
-        pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
+        pCVar4 = (CTrigger *)
+                 core_actor_cpp_castToClassHash_FUN_0040c790
                            (actor_ptr,g_CTriggerClassInfo.name_hash);
-        if (((pCVar4 != (CDemonActor *)0x0) && (*(int *)(pCVar4[1].actor_name + 0x1c) == 4)) &&
-           (pCVar4[2].orient_matrix.m[1].z != 0.0)) goto LAB_005710a5;
+        if (((pCVar4 != (CTrigger *)0x0) && (pCVar4->hero_triggers_me == 4)) &&
+           (pCVar4->auto_aim_at_me != 0)) goto LAB_005710a5;
       }
       else {
         this_ptr->character_count = this_ptr->character_count + 1;
@@ -61,9 +62,9 @@ LAB_005710a5:
           this_ptr->threat_count = this_ptr->threat_count + 1;
         }
       }
-      iVar5 = iVar5 + 1;
-      pCVar6 = (CDemonSet *)pCVar6->cameras;
-    } while (iVar5 < this_ptr->actor_count);
+      iVar4 = iVar4 + 1;
+      pCVar5 = (CDemonSet *)pCVar5->cameras;
+    } while (iVar4 < this_ptr->actor_count);
   }
   return;
 }

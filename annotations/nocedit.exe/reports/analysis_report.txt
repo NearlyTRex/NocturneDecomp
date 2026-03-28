@@ -7,10 +7,10 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5072 (78.6%)
-Functions with suspects: 1382 (21.4%)
+Clean functions: 5073 (78.6%)
+Functions with suspects: 1381 (21.4%)
 
-Total suspect patterns: 13795
+Total suspect patterns: 13794
 Average suspects per function: 2.14
 
 Virtual files: 214 total, 46 at 100%, 84 at 90%+
@@ -23,8 +23,8 @@ Average complexity score: 71.3
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6454
-Successful: 5904 (91.5%)
-Failed: 550
+Successful: 5910 (91.6%)
+Failed: 544
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
@@ -42,7 +42,7 @@ SUSPECT PATTERN BREAKDOWN
   param_count_too_few       81
   warning_unreachable       75
   unnamed_param             64
-  suspect_float             54
+  suspect_float             53
   param_count_too_many      36
   mmx_assembly              34
   negative_offset           34
@@ -121,7 +121,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
   005b1680: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680 (4 lines)
   005b1660: sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660 (4 lines)
-  ... and 5022 more
+  ... and 5023 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -130,7 +130,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (score: 2695, suspects: 119, lines: 1475)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 2584, suspects: 175, lines: 809)
   0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 2383, suspects: 92, lines: 1443)
-  004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2244, suspects: 7, lines: 2164)
+  004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2245, suspects: 7, lines: 2165)
   005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823 (score: 2235, suspects: 161, lines: 585)
   005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031 (score: 2198, suspects: 159, lines: 568)
   00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2080, suspects: 19, lines: 1865)
@@ -154,7 +154,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004922c8: core_dstrender.cpp_verticalBlur3TapMMXStride128_FUN_004922c8 (score: 1211, suspects: 104, lines: 156)
   00492185: core_dstrender.cpp_verticalBlur3TapMMXStride256_FUN_00492185 (score: 1211, suspects: 104, lines: 156)
   00492042: core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042 (score: 1211, suspects: 104, lines: 156)
-  004fd600: core_inv.cpp_CInventory_addItem_FUN_004fd600 (score: 1131, suspects: 0, lines: 1131)
+  004fd600: core_inv.cpp_CInventory_addItem_FUN_004fd600 (score: 1153, suspects: 0, lines: 1153)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
@@ -172,7 +172,7 @@ FUNCTIONS BY SUSPECT TYPE
     0043f2d0: support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0
     ... and 904 more
 
-  pointer_cast (772 functions):
+  pointer_cast (771 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     004874d0: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
     00487630: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
@@ -183,7 +183,7 @@ FUNCTIONS BY SUSPECT TYPE
     0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    ... and 762 more
+    ... and 761 more
 
   unknown_field (93 functions):
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
@@ -341,9 +341,8 @@ FUNCTIONS BY SUSPECT TYPE
     0040e3b0: core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
     ... and 7 more
 
-  suspect_float (22 functions):
+  suspect_float (21 functions):
     005401e0: core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-    004ffad0: core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
     004bed00: core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_004bed00
     00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
     0049a640: core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640
@@ -352,7 +351,8 @@ FUNCTIONS BY SUSPECT TYPE
     00529ed0: core_moon.cpp_CMoon_render_FUN_00529ed0
     004c25c0: core_fire.cpp_CLaserBeam_render_FUN_004c25c0
     004ca110: core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
-    ... and 12 more
+    00570d60: core_set.cpp_CDemonSet_setGamma_FUN_00570d60
+    ... and 11 more
 
   param_count_too_many (36 functions):
     005e19d0: support_trisock.cpp_buildSockaddrIn_FUN_005e19d0

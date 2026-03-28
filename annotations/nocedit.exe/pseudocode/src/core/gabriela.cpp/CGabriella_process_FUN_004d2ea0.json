@@ -4,73 +4,73 @@
       {
         "category": "format_error",
         "column": 83,
-        "line": 307,
+        "line": 308,
         "message": "format specifies type 'char *' but the argument has type 'CGabriella *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 328,
+        "line": 329,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 334,
+        "line": 335,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 334,
+        "line": 335,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 334,
+        "line": 335,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 335,
+        "line": 336,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 336,
-        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 32,
-        "line": 336,
-        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 49,
         "line": 337,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
+        "column": 32,
+        "line": 337,
+        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
+        "column": 49,
+        "line": 338,
+        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
+      },
+      {
+        "category": "other",
         "column": 13,
-        "line": 339,
+        "line": 340,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 339,
+        "line": 340,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 343,
+        "line": 344,
         "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
       }
     ],
@@ -79,19 +79,18 @@
   },
   "complexity": {
     "assembly_lines": 1655,
-    "complexity_score": 743,
+    "complexity_score": 731,
     "cross_reference_count": 0,
     "function_call_count": 47,
     "global_count": 42,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 688,
-    "suspect_count": 4,
+    "pseudocode_lines": 691,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 2343
+    "total_lines": 2346
   },
   "cross_references": [],
   "function": {
@@ -1057,27 +1056,19 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 325,
+      "line": 326,
       "match": "SQRT",
       "severity": "mild",
-      "text": "if ((((local_b8.z - SQRT(fVar8 * fVar8 + fVar9 * fVar9) < (float)3) &&",
+      "text": "if ((((local_b8.z - SQRT(fVar10 * fVar10 + fVar11 * fVar11) < (float)3) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 327,
+      "line": 328,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS((float)local_1c) < (float)0.78539816337500001)) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 450,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "(*(uint *)((int)&pCVar13[0x1a].orient + 4) = (uint)(pCVar13[0x1a].orient.vec.y == 0.0),",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

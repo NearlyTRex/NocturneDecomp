@@ -14,10 +14,11 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
   CDeformableModelInstance *this_ptr_03;
   CLadder *this_ptr_04;
   CDemonActor_vtable *pCVar1;
-  int iVar2;
+  CDemonActor *pCVar2;
+  int iVar3;
   int bone_index;
-  EGroundType EVar3;
-  CDemonActor *pCVar4;
+  EGroundType EVar4;
+  CLightActor *pCVar4;
   CEnemy *this_ptr_02;
   CVector3f *pCVar5;
   SDamageInfo SStack_a0;
@@ -31,13 +32,13 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
   
   this_ptr_03 = &(this_ptr->base).base.model;
   do {
-    iVar2 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+    iVar3 = core_motion_cpp_CMotionController_advance_FUN_0052d610
                       (&this_ptr_03->motion_controller,&delta_time);
-    switch(iVar2) {
+    switch(iVar3) {
     case 1:
     case 7:
       bone_index = g_GabriellaIndices[7];
-      if (iVar2 == 7) {
+      if (iVar3 == 7) {
         bone_index = g_GabriellaIndices[8];
       }
       core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
@@ -71,17 +72,18 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
       }
       else {
         pCVar1 = (this_ptr->base).base.base.vtable._ub;
-        EVar3 = (*((this_ptr_04->base).vtable._ub)->getGroundType)(&this_ptr_04->base);
+        EVar4 = (*((this_ptr_04->base).vtable._ub)->getGroundType)(&this_ptr_04->base);
         pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                            ((CDemonActor *)this_ptr,local_58,&local_64);
-        (*pCVar1->handleFootstep)((CDemonActor *)this_ptr,pCVar5,EVar3);
+        (*pCVar1->handleFootstep)((CDemonActor *)this_ptr,pCVar5,EVar4);
       }
       break;
     case 2:
-      pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
+      pCVar4 = (CLightActor *)
+               core_actor_cpp_castToClassHash_FUN_0040c790
                          ((this_ptr->base).object_to_pick_up,g_CLightActorClassInfo.name_hash);
-      if (pCVar4 != (CDemonActor *)0x0) {
-        if (pCVar4[4].scale.y != 1) {
+      if (pCVar4 != (CLightActor *)0x0) {
+        if (pCVar4->light_actor_type != LIGHT_TYPE_FLASHLIGHT) {
           this_ptr->flashlight_angle = -0.5235988;
           core_hero_cpp_CHero_executeObjectPickup_FUN_004f3890(&this_ptr->base,0);
           break;
@@ -98,7 +100,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
                 (&this_ptr_03->motion_controller,0,1);
       break;
     default:
-      core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar2);
+      core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar3);
       break;
     case 6:
       this_ptr_02 = (CEnemy *)
@@ -136,10 +138,10 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
       (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
       break;
     case 0xf:
-      pCVar4 = (this_ptr->base).base.grabbed_by;
-      if ((pCVar4 != (CDemonActor *)0x0) &&
+      pCVar2 = (this_ptr->base).base.grabbed_by;
+      if ((pCVar2 != (CDemonActor *)0x0) &&
          (pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                             ((CDemonActor *)this_ptr,&local_28,&(pCVar4->location).position),
+                             ((CDemonActor *)this_ptr,&local_28,&(pCVar2->location).position),
          0.0 < pCVar5->z)) {
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"hit-gh[4,7].wav");
@@ -158,8 +160,8 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
       core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004f38d0(&this_ptr->base,0);
       break;
     case 0x16:
-      iVar2 = core_hero_cpp_CHero_tryOpenDoor_FUN_004f2ed0(&this_ptr->base);
-      if (iVar2 == 0) {
+      iVar3 = core_hero_cpp_CHero_tryOpenDoor_FUN_004f2ed0(&this_ptr->base);
+      if (iVar3 == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&this_ptr_03->motion_controller,0,1);
       }

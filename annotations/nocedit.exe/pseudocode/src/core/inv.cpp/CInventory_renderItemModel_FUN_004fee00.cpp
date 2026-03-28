@@ -14,7 +14,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
   CKeyFramedModelInstance *this_ptr_00;
   CKeyFramedModel *pCVar13;
   int iVar1;
-  CDemonActor *pCVar14;
+  CMelee *pCVar14;
   float fVar10;
   CVector3i local_50;
   CVector3i local_44;
@@ -96,14 +96,17 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
     if (iVar1 != 0) {
       local_2c.x = (int)((float)local_2c.x + 1.570796f);
     }
-    pCVar14 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c790(item,g_CMeleeClassInfo.name_hash);
-    if (pCVar14 != (CDemonActor *)0x0) {
-      iVar1 = _stricmp(pCVar14[1].create_event,"axe1.kfm");
+    pCVar14 = (CMelee *)
+              core_actor_cpp_castToClassHash_FUN_0040c790(item,g_CMeleeClassInfo.name_hash);
+    if (pCVar14 != (CMelee *)0x0) {
+      iVar1 = _stricmp
+                        ((pCVar14->base).model.model_name,"axe1.kfm");
       if (iVar1 == 0) {
         local_2c.x = (int)((float)local_2c.x + -1.570796f);
         local_2c.z = (int)((float)local_2c.z + -1.570796f);
       }
-      iVar1 = _stricmp(pCVar14[1].create_event,"ax.kfm");
+      iVar1 = _stricmp((pCVar14->base).model.model_name,"ax.kfm")
+      ;
       if (iVar1 == 0) {
         local_2c.x = (int)((float)local_2c.x + -1.570796f);
         local_2c.z = (int)((float)local_2c.z + -1.570796f);

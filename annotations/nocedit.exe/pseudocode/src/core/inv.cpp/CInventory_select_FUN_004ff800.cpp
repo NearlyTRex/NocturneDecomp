@@ -16,8 +16,8 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
   CHealthItem *this_ptr_00;
   char *pcVar4;
   char *pcVar5;
-  CLightGun *pCVar5;
-  CDemonActor *pCVar6;
+  CGasMask *pCVar5;
+  CBoxActor *pCVar6;
   char *pcVar6;
   char *pcVar7;
   char *pcVar8;
@@ -39,19 +39,19 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
     if (iVar3 == 0) {
       iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CGasMask");
       if (iVar3 != 0) {
-        pCVar5 = (CLightGun *)
+        pCVar5 = (CGasMask *)
                  core_actor_cpp_castToClassHash_FUN_0040c790
                            (actor_ptr,g_CGasMaskClassInfo.name_hash);
-        (pCVar5->base).weapon_state = (uint)((pCVar5->base).weapon_state == 0);
-        this_ptr->light_gun_ptr = pCVar5;
+        pCVar5->carrier = (CDemonActor *)(uint)(pCVar5->carrier == (CDemonActor *)0x0);
+        this_ptr->light_gun_ptr = (CLightGun *)pCVar5;
         return 0;
       }
       iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CBoxActor");
       if (iVar3 != 0) {
-        pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
+        pCVar6 = (CBoxActor *)
+                 core_actor_cpp_castToClassHash_FUN_0040c790
                            (actor_ptr,g_CBoxActorClassInfo.name_hash);
-        core_event_cpp_CEventList_executeCommands_FUN_004aabe0
-                  (g_CEventListPtr,pCVar6[4].create_event + 0x28);
+        core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,pCVar6->use_event);
         return 0;
       }
     }

@@ -9,9 +9,10 @@
 void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_004beb40(CFilmProjector *this_ptr,float delta_time)
 
 {
-  float fVar1;
-  int iVar2;
-  CDemonActor *pCVar3;
+  CDemonActor *pCVar1;
+  float fVar2;
+  int iVar3;
+  CFilmReel *pCVar3;
   uint uVar4;
   
   if ((this_ptr->base).triggered == 0) {
@@ -24,28 +25,28 @@ void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_004beb40(CFilmProjecto
     }
   }
   else {
-    pCVar3 = (this_ptr->base).dest_actor;
-    fVar1 = (float)3.1415926535000001;
-    (pCVar3->orient).vec.z = (pCVar3->orient).vec.z - delta_time * fVar1;
-    this_ptr->reel_rotation = this_ptr->reel_rotation - delta_time * fVar1;
+    pCVar1 = (this_ptr->base).dest_actor;
+    fVar2 = (float)3.1415926535000001;
+    (pCVar1->orient).vec.z = (pCVar1->orient).vec.z - delta_time * fVar2;
+    this_ptr->reel_rotation = this_ptr->reel_rotation - delta_time * fVar2;
     if (this_ptr->prev_dest_state == 0) {
-      pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
+      pCVar3 = (CFilmReel *)
+               core_actor_cpp_castToClassHash_FUN_0040c790
                          ((this_ptr->base).dest_actor,g_CFilmReelClassInfo.name_hash);
-      if (pCVar3 == (CDemonActor *)0x0) {
+      if (pCVar3 == (CFilmReel *)0x0) {
         g_CurrentFilename = "..\\core\\filmreel.cpp";
         g_CurrentLineNumber = 0x11e;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CFilmProjector::Need to put CFilmReel in place");
       }
-      core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730
-                (g_CFilterFXPtr,(char *)&pCVar3[2].location.position.z);
+      core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(g_CFilterFXPtr,pCVar3->movie_name);
       sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
       uVar4 = (*((this_ptr->base).base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"35-start.wav");
       this_ptr->sfx_handle = uVar4;
     }
     else {
-      iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
-      if (iVar2 == 0) {
+      iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
+      if (iVar3 == 0) {
         uVar4 = (*((this_ptr->base).base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"35-loop.wav");
         this_ptr->sfx_handle = uVar4;

@@ -9,12 +9,12 @@
 void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_0050eb50(CMelee *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim)
 
 {
-  CDemonActor *pCVar1;
+  CCharacter *pCVar1;
   
-  pCVar1 = (CCharacter *)core_actor_cpp_castToClassHash_FUN_0040c790(victim,g_CCharacterClassInfo.name_hash);
-  if (pCVar1 != (CDemonActor *)0x0) {
-    core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_0050ebe0
-              (this_ptr,0x14,pCVar1[0x1c].lifecycle_state);
+  pCVar1 = (CCharacter *)
+           core_actor_cpp_castToClassHash_FUN_0040c790(victim,g_CCharacterClassInfo.name_hash);
+  if (pCVar1 != (CCharacter *)0x0) {
+    core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_0050ebe0(this_ptr,0x14,pCVar1->blood_type);
     if (attack_flags == 1) {
       (*((this_ptr->base).base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,this_ptr->thrust_hit_character_sound);

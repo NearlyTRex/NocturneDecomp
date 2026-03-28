@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 373,
-    "complexity_score": 198,
+    "complexity_score": 199,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 47,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 133,
+    "pseudocode_lines": 134,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 506
+    "total_lines": 507
   },
   "cross_references": [],
   "function": {
@@ -481,31 +481,31 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 97,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(pSVar4->position).x + iVar11) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 98,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "-*(float *)((int)&(pSVar4->position).x + iVar11);",
+      "text": "*(float *)((int)&(pSVar4->position).x + iVar10) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 99,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "-*(float *)((int)&(pSVar4->position).x + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 108,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar2 = (uint *)((int)&pSVar5->vertices[2].vertex_index + iVar11);",
+      "text": "puVar2 = (uint *)((int)&pSVar5->vertices[2].vertex_index + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 111,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)&pSVar5->vertices[0].vertex_index + iVar7);",
@@ -513,15 +513,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 115,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar3 = (uint *)((int)&pSVar5->vertices[0].vertex_index + iVar11);",
+      "text": "puVar3 = (uint *)((int)&pSVar5->vertices[0].vertex_index + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 119,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar2 = (uint *)((int)&pSVar5->vertices[2].vertex_index + iVar7);",

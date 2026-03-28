@@ -34,7 +34,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,f
   CVector3f *pCVar20;
   float fVar24;
   SMotion *pSVar21;
-  CDemonActor *pCVar22;
+  CWeapon *pCVar22;
   int iVar25;
   int iVar23;
   uint disable_search;
@@ -678,9 +678,10 @@ LAB_004f50f1:
     this_ptr->gun_raise_progress = 0.0;
   }
   if (((this_ptr->hostage_type == 1) &&
-      (pCVar22 = core_actor_cpp_castToClassHash_FUN_0040c790
+      (pCVar22 = (CWeapon *)
+                 core_actor_cpp_castToClassHash_FUN_0040c790
                            ((this_ptr->base).base.carry_hands[1].carry_actor,
-                            g_CWeaponClassInfo.name_hash), pCVar22 != (CDemonActor *)0x0)) &&
+                            g_CWeaponClassInfo.name_hash), pCVar22 != (CWeapon *)0x0)) &&
      (iVar25 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                          (g_CEventListPtr,"deputeFireShotgun"), iVar25 != 0)) {
     this_ptr->gun_raise_progress = 0.01;

@@ -16,7 +16,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
   int iVar3;
   CBoundingBox3D *pCVar2;
   EDeathState EVar3;
-  CDemonActor *actor;
+  CGlass *actor;
   CTrigger *this_ptr_02;
   int iVar4;
   int iVar5;
@@ -92,7 +92,8 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
        ) {
       pCStack_1c = (CCharacter *)0x0;
     }
-    actor = core_actor_cpp_castToClassHash_FUN_0040c790
+    actor = (CGlass *)
+            core_actor_cpp_castToClassHash_FUN_0040c790
                       (g_CDemonSetPtr->collision_actor,g_CGlassClassInfo.name_hash);
     this_ptr_02 = (CTrigger *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
@@ -108,7 +109,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
       }
       break;
     }
-    if (actor == (CDemonActor *)0x0) {
+    if (actor == (CGlass *)0x0) {
       if (this_ptr_02 != (CTrigger *)0x0) {
         core_trigger_cpp_CTrigger_onProjectileHit_FUN_005e0aa0(this_ptr_02);
         iVar3 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
@@ -122,7 +123,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
       }
     }
     else {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,actor);
+      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)actor);
     }
     iVar5 = iVar5 + 1;
   } while (iVar5 < 1);

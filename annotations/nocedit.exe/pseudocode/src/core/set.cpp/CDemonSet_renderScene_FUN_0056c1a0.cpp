@@ -11,7 +11,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
 {
   CDemonLight *pCVar1;
   CDemonActor *pCVar2;
-  CDemonActor *pCVar5;
+  CGlass *pCVar5;
   CDemonSet *pCVar6;
   int iVar7;
   int iVar3;
@@ -217,10 +217,11 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
   pCVar4 = this_ptr;
   if (0 < this_ptr->actor_count) {
     do {
-      pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790
+      pCVar5 = (CGlass *)
+               core_actor_cpp_castToClassHash_FUN_0040c790
                          (pCVar4->actors[0],g_CGlassClassInfo.name_hash);
-      if (pCVar5 != (CDemonActor *)0x0) {
-        (*((pCVar5->vtable)._ub)->renderBackground)(pCVar5,0);
+      if (pCVar5 != (CGlass *)0x0) {
+        (*((pCVar5->base).vtable._ub)->renderBackground)((CDemonActor *)pCVar5,0);
       }
       iVar3 = iVar3 + 1;
       pCVar4 = (CDemonSet *)pCVar4->cameras;

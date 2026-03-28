@@ -10,40 +10,42 @@ void __cdecl core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340(C
 
 {
   char cVar1;
-  CDemonActor *pCVar2;
-  int iVar3;
+  CCharacter *pCVar2;
+  int iVar2;
+  char *pcVar3;
   char *pcVar4;
-  char *pcVar5;
   
-  pcVar4 = "(none)";
-  pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
+  pcVar3 = "(none)";
+  pCVar2 = (CCharacter *)
+           core_actor_cpp_castToClassHash_FUN_0040c790
                      (&this_ptr->base,g_CCharacterClassInfo.name_hash);
-  pcVar5 = output_buffer;
-  do {
-    cVar1 = *pcVar4;
-    *pcVar5 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
-  } while (cVar1 != '\0');
-  pcVar5 = pCVar2->create_event;
   pcVar4 = output_buffer;
   do {
-    while (pCVar2[0x1b].direction_hint == 0) {
-      pCVar2 = (CDemonActor *)&(pCVar2->orient_matrix).m[0].z;
-      if (pCVar2 == (CDemonActor *)(pcVar5 + 0x10)) {
+    cVar1 = *pcVar3;
+    *pcVar4 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar3[1];
+    pcVar3 = pcVar3 + 2;
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
+  } while (cVar1 != '\0');
+  pcVar4 = (pCVar2->base).create_event + 0x10;
+  pcVar3 = output_buffer;
+  do {
+    while (pCVar2->carry_hands[0].carry_actor == (CDemonActor *)0x0) {
+      pCVar2 = (CCharacter *)&(pCVar2->base).orient_matrix.m[0].z;
+      if (pCVar2 == (CCharacter *)pcVar4) {
         return;
       }
     }
-    if (output_buffer < pcVar4) {
-      iVar3 = _sprintf(pcVar4,", ");
-      pcVar4 = pcVar4 + iVar3;
+    if (output_buffer < pcVar3) {
+      iVar2 = _sprintf(pcVar3,", ");
+      pcVar3 = pcVar3 + iVar2;
     }
-    iVar3 = _sprintf(pcVar4,"%s",pCVar2[0x1b].direction_hint);
-    pcVar4 = pcVar4 + iVar3;
-    pCVar2 = (CDemonActor *)&(pCVar2->orient_matrix).m[0].z;
-  } while (pCVar2 != (CDemonActor *)(pcVar5 + 0x10));
+    iVar2 = _sprintf
+                      (pcVar3,"%s",pCVar2->carry_hands[0].carry_actor);
+    pcVar3 = pcVar3 + iVar2;
+    pCVar2 = (CCharacter *)&(pCVar2->base).orient_matrix.m[0].z;
+  } while (pCVar2 != (CCharacter *)pcVar4);
   return;
 }

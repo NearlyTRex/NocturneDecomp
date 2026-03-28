@@ -160,7 +160,7 @@ section .text
     PUSH EDX                            ; 00524a51
     PUSH EBX                            ; 00524a52
     CALL core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80 ; 00524a53
-        ;   XREF to: 004f3d80 (UNCONDITIONAL_CALL)  ; CDemonActor * core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder * this_ptr, EHeroType hero_type)
+        ;   XREF to: 004f3d80 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder * this_ptr, EHeroType hero_type)
     ADD ESP,0x8                         ; 00524a58
     MOV dword ptr [ESP],EAX             ; 00524a5b
     JMP 0x00524a35                      ; 00524a5e

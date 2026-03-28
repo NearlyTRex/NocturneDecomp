@@ -42067,7 +42067,7 @@
               }
             ]
           },
-          "type":"CCharacter*",
+          "type":"CEnemy*",
           "use":29
         },
         {
@@ -44496,7 +44496,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CMobster*",
           "use":129
         },
         {
@@ -51107,6 +51107,23 @@
     "name":"core_mimic.cpp_CMimic_setup_FUN_0051f3e0",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar10",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CEnemy*",
+          "use":522
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -55626,6 +55643,21 @@
     "ret":"void",
     "vars":{
       "locals":[
+        {
+          "name":"actor_ptr",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CEnemy*",
+          "use":590
+        },
         {
           "name":"local_14",
           "storage":{
@@ -87820,8 +87852,23 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CTrap*",
           "use":2806
+        },
+        {
+          "name":"pCVar16",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTrap*",
+          "use":3146
         },
         {
           "name":"pCVar14",
@@ -87869,6 +87916,21 @@
           },
           "type":"CLocation*",
           "use":3563
+        },
+        {
+          "name":"pCVar17",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTrap*",
+          "use":4181
         },
         {
           "name":"iVar15",

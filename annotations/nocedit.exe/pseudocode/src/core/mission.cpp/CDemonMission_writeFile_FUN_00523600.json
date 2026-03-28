@@ -4,32 +4,20 @@
       {
         "category": "format_error",
         "column": 35,
-        "line": 42,
+        "line": 43,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 38,
-        "line": 56,
+        "line": 57,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 65,
-        "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CHero *'"
       },
       {
         "category": "format_error",
         "column": 47,
-        "line": 77,
+        "line": 79,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 87,
-        "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CHero *'"
       }
     ],
     "success": false,
@@ -37,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 334,
-    "complexity_score": 116,
+    "complexity_score": 118,
     "cross_reference_count": 2,
     "function_call_count": 12,
     "global_count": 33,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 101,
+    "pseudocode_lines": 103,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 435
+    "total_lines": 437
   },
   "cross_references": [
     {
@@ -423,7 +411,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 47,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)g_ActorClassRegistrations + iVar8);",

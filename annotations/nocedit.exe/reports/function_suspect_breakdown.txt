@@ -4,8 +4,8 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4691 functions
-  1 suspects: 691 functions
+  0 suspects: 4692 functions
+  1 suspects: 690 functions
   2 suspects: 300 functions
   3 suspects: 237 functions
   4 suspects: 151 functions
@@ -416,7 +416,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Removing unreachable block (ram,0x004b29c8) */...
     shape_design.c_showPointEditor_FUN_0045c6c0        ( 85 lines)
       /* WARNING: Removing unreachable block (ram,0x0045c93b) */...
-    core_stranger.cpp_CStranger_updateWeaponLayerActio (378 lines)
+    core_stranger.cpp_CStranger_updateWeaponLayerActio (379 lines)
       /* WARNING: Removing unreachable block (ram,0x005c5793) */...
 
   [unresolved_funcptr] (11 functions)
@@ -488,23 +488,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_actor.cpp_CActorPropertyList_addFile_FUN_0040 ( 31 lines)
       (pCVar2->param1).v_int = allow_none;...
 
-  [suspect_float] (7 functions)
-  ------------------------------------------------------------
-    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90      ( 21 lines)
-      (pCVar2->base).fire_cooldown = 1.4013e-45;...
-    core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880  ( 22 lines)
-      (pCVar2->base).fire_cooldown = 1.4013e-45;...
-    core_lightgun.cpp_CLightGun_ctor_FUN_00505900      ( 26 lines)
-      (pCVar3->base).fire_cooldown = 1.4013e-45;...
-    core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_ ( 32 lines)
-      fStack_3c = 6.972979e-39;...
-    core_dtri.cpp_rayTriangleIntersection_FUN_0049a800 ( 71 lines)
-      if (fVar2 == 2.8026e-45) {...
-    core_inv.cpp_CInventory_updateInventory_FUN_004ffa (108 lines)
-      if ((pCVar4 != (CDemonActor *)0x0) && (pCVar4[2].location.po...
-    core_charactr.cpp_CCharacter_setup_FUN_00428140    (114 lines)
-      this_ptr->fire_spread_rate = 5.60519e-45;...
-
   [negative_offset] (6 functions)
   ------------------------------------------------------------
     core_course.cpp_CCourse_free_FUN_004426c0          ( 14 lines)
@@ -519,6 +502,21 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       local_14 = (CDemonSet *)&local_14[-1].weather_type;...
     core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056 ( 72 lines)
       local_14 = (CDemonSet *)&local_14[-1].weather_type;...
+
+  [suspect_float] (6 functions)
+  ------------------------------------------------------------
+    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90      ( 21 lines)
+      (pCVar2->base).fire_cooldown = 1.4013e-45;...
+    core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880  ( 22 lines)
+      (pCVar2->base).fire_cooldown = 1.4013e-45;...
+    core_lightgun.cpp_CLightGun_ctor_FUN_00505900      ( 26 lines)
+      (pCVar3->base).fire_cooldown = 1.4013e-45;...
+    core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_ ( 32 lines)
+      fStack_3c = 6.972979e-39;...
+    core_dtri.cpp_rayTriangleIntersection_FUN_0049a800 ( 71 lines)
+      if (fVar2 == 2.8026e-45) {...
+    core_charactr.cpp_CCharacter_setup_FUN_00428140    (114 lines)
+      this_ptr->fire_spread_rate = 5.60519e-45;...
 
   [mmx_assembly] (4 functions)
   ------------------------------------------------------------
@@ -539,7 +537,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       local_14._0_1_ = (char)iVar1;...
     support_codec.cpp_readBitsFromStream_FUN_0043e530  ( 71 lines)
       bit_count._0_1_ = (byte)iVar3;...
-    core_msnedit.cpp_CDemonMission_replicateActor_FUN_ (141 lines)
+    core_msnedit.cpp_CDemonMission_replicateActor_FUN_ (142 lines)
       local_20 = (char  [4])"DUPACTOR.TMP"._0_4_;...
 
   [special_cpu_detection] (3 functions)

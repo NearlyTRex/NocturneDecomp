@@ -14,7 +14,7 @@ CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004f3960(CHero *this_ptr,f
   float fVar2;
   float fVar3;
   CVehicle *pCVar1;
-  CDemonActor *pCVar2;
+  CMobster *pCVar2;
   EDeathState EVar3;
   int iVar4;
   int iVar7;
@@ -38,9 +38,10 @@ CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004f3960(CHero *this_ptr,f
              core_actor_cpp_castToClassHash_FUN_0040c790
                        ((CDemonActor *)this_ptr_01,g_CVehicleClassInfo.name_hash);
     if (pCVar1 == (CVehicle *)0x0) {
-      pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
+      pCVar2 = (CMobster *)
+               core_actor_cpp_castToClassHash_FUN_0040c790
                          ((CDemonActor *)this_ptr_01,g_CMobsterClassInfo.name_hash);
-      if ((pCVar2 == (CDemonActor *)0x0) || (*(int *)(pCVar2[0x8e].actor_name + 0x10) == 0)) {
+      if ((pCVar2 == (CMobster *)0x0) || (pCVar2->vehicle == (CDemonActor *)0x0)) {
         EVar3 = (*(((this_ptr_01->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr_01->base);
         if (EVar3 == DEATH_STATE_ALIVE) {
           iVar4 = (*((this_ptr_01->base).base.vtable._ub)->shouldIgnoreForTargeting)

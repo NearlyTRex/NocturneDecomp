@@ -5,14 +5,14 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 5904 (91.5%)
-Failed: 550
+Successful: 5910 (91.6%)
+Failed: 544
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                            980
-  format_error                     785
-  incompatible_types               203
+  other                            978
+  format_error                     784
+  incompatible_types               185
   undeclared_identifier            131
   syntax_error                      41
   missing_member                    26
@@ -21,13 +21,13 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (980 errors)
+CATEGORY: other (978 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
     Line 133: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed...
   core_imp.cpp_CImp_process_FUN_004f9c30
-    Line 279: C-style cast from 'CDemonActor *' to 'float' is not allowed...
+    Line 267: C-style cast from 'CDemonActor *' to 'float' is not allowed...
   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
     Line 55: C-style cast from 'CDemonCamera *' to 'float' is not allowed...
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
@@ -54,8 +54,6 @@ CATEGORY: other (980 errors)
     Line 100: C-style cast from 'struct CDeformableModelInstance *' to 'float' is not allowed...
   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004f33b0
     Line 59: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
-  core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0
-    Line 51: C-style cast from 'struct CDemonActor *' to 'float' is not allowed...
   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470
     Line 180: C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed...
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
@@ -77,18 +75,20 @@ CATEGORY: other (980 errors)
   core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00
     Line 148: cannot cast from type 'float' to pointer type 'CCharacter *'...
   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
-    Line 328: cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'...
+    Line 329: cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'...
   core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330
     Line 33: cannot cast from type 'float' to pointer type 'CDemonActor *'...
   core_script.cpp_CScript_step_FUN_0055a810
     Line 1382: cannot cast from type 'float' to pointer type 'CDemonActor *'...
   core_xform.cpp_lerpMatrix3x4_FUN_005f7140
     Line 42: cannot cast from type 'float' to pointer type 'CMatrix3x3f *'...
+  core_set.cpp_CDemonSet_processActors_FUN_0056b810
+    Line 69: cannot cast from type 'float' to pointer type 'CPathMap *'...
 
   ... and 180 more errors
 
 ====================================================================================================
-CATEGORY: format_error (785 errors)
+CATEGORY: format_error (784 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -144,7 +144,7 @@ CATEGORY: format_error (785 errors)
   core_charactr.cpp_CCharacter_setup_FUN_00428140
     Line 54: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   core_lightgun.cpp_CLightGun_fire_FUN_00505c70
-    Line 170: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
+    Line 171: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   core_script.cpp_parseBodyPartMask_FUN_00559730
     Line 40: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror...
   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920
@@ -155,7 +155,7 @@ CATEGORY: format_error (785 errors)
   ... and 232 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (203 errors)
+CATEGORY: incompatible_types (185 errors)
 ====================================================================================================
 
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
@@ -219,7 +219,7 @@ CATEGORY: incompatible_types (203 errors)
   core_colonel.cpp_CColonel_process_FUN_0043fa00
     Line 244: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int...
 
-  ... and 84 more errors
+  ... and 73 more errors
 
 ====================================================================================================
 CATEGORY: undeclared_identifier (131 errors)
@@ -414,7 +414,7 @@ COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
 Average suspects in successfully compiled functions: 1.64
-Average suspects in failed compilations: 7.46
+Average suspects in failed compilations: 7.54
 
-Functions that compile but have suspect patterns: 1408
+Functions that compile but have suspect patterns: 1407
 (These may have runtime issues even though syntax is valid)

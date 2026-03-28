@@ -12,7 +12,7 @@ float __cdecl core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_004d6260(CG
 
 {
   float fVar3;
-  CCharacter *this_ptr_00;
+  CEnemy *this_ptr_00;
   int iVar3;
   EDeathState EVar4;
   CVector3f *pCVar5;
@@ -36,15 +36,15 @@ float __cdecl core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_004d6260(CG
   float fVar2;
   float fVar1;
   
-  this_ptr_00 = (CCharacter *)
+  this_ptr_00 = (CEnemy *)
                 core_actor_cpp_castToClassHash_FUN_0040c790
                           (target_actor,g_CEnemyClassInfo.name_hash);
   __arrinit(local_f8,10,&g_CVectorTypeInfo);
   iVar3 = (*((target_actor->vtable)._ub)->getTargetPoints)(target_actor,local_f8);
   if ((iVar3 != 0) &&
-     (((this_ptr_00 == (CCharacter *)0x0 ||
-       (EVar4 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00),
-       (int)EVar4 < 1)) &&
+     (((this_ptr_00 == (CEnemy *)0x0 ||
+       (EVar4 = (*(((this_ptr_00->base).base.vtable._uc)->_uc).getDeathState)
+                          ((CCharacter *)this_ptr_00), (int)EVar4 < 1)) &&
       (core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                  ((CDemonActor *)this_ptr,&CStack_50,&(target_actor->location).position),
       0.0 < CStack_50.z)))) {

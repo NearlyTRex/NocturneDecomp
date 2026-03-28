@@ -11,10 +11,12 @@
 void __cdecl core_msnedit_cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0(CDemonMission *this_ptr)
 
 {
-  CDemonActor *pCVar2;
+  char *str1;
+  CEnemy *pCVar2;
   int iVar3;
   int iVar1;
-  CDemonActor *pCVar3;
+  CAmmo *pCVar3;
+  CHealthItem *pCVar4;
   CPickList local_10c4;
   CPickList local_d1c;
   CPickList local_974;
@@ -36,40 +38,40 @@ void __cdecl core_msnedit_cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0(CDe
   local_20 = 0.0;
   local_24 = 0.0;
   for (; actor_ptr != (CDemonActor *)0x0; actor_ptr = actor_ptr->next_actor) {
-    pCVar2 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CEnemyClassInfo.name_hash);
-    if (pCVar2 != (CDemonActor *)0x0) {
+    pCVar2 = (CEnemy *)
+             core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CEnemyClassInfo.name_hash);
+    if (pCVar2 != (CEnemy *)0x0) {
       local_14 = 1.0;
-      if (pCVar2->create_event[0] != '\0') {
-        iVar3 = _stricmp(pCVar2->create_event,"none");
+      if ((pCVar2->base).base.create_event[0] != '\0') {
+        str1 = (pCVar2->base).base.create_event;
+        iVar3 = _stricmp(str1,"none");
         if ((iVar3 != 0) &&
-           (iVar1 = _stricmp(pCVar2->create_event,"true"),
-           iVar1 != 0)) {
-          local_14 = pCVar2->create_prob;
+           (iVar1 = _stricmp(str1,"true"), iVar1 != 0)) {
+          local_14 = (pCVar2->base).base.create_prob;
         }
       }
       _sprintf
-                (local_224,"%s\t%g hp\tx\t%i%%\t=\t%g hp",pCVar2,(double)(float)pCVar2[0x1a].next_actor,
+                (local_224,"%s\t%g hp\tx\t%i%%\t=\t%g hp",pCVar2,(double)(pCVar2->base).hit_points,
                  (int)ROUND(ROUND(local_14 * 100.0f)),
-                 (double)((float)pCVar2[0x1a].next_actor * local_14));
+                 (double)((pCVar2->base).hit_points * local_14));
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_d1c.base,local_224);
-      local_20 = (float)pCVar2[0x1a].next_actor * local_14 + local_20;
+      local_20 = (pCVar2->base).hit_points * local_14 + local_20;
     }
-    pCVar3 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CAmmoClassInfo.name_hash);
-    if (pCVar3 != (CDemonActor *)0x0) {
+    pCVar3 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c790
+                                (actor_ptr,g_CAmmoClassInfo.name_hash);
+    if (pCVar3 != (CAmmo *)0x0) {
       _sprintf(local_224,"%s\t%s\t%s\t%d");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_974.base,local_224);
     }
-    pCVar3 = (CHealthItem *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CHealthItemClassInfo.name_hash)
+    pCVar4 = (CHealthItem *)
+             core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CHealthItemClassInfo.name_hash)
     ;
-    if (pCVar3 != (CDemonActor *)0x0) {
+    if (pCVar4 != (CHealthItem *)0x0) {
       _sprintf
-                (local_224,"%s\t%g hp\tx\t%d uses\t=\t%g hp",pCVar3,
-                 (double)pCVar3[2].location.position.z,pCVar3[2].location.position.y,
-                 (double)((float)(int)pCVar3[2].location.position.y * pCVar3[2].location.position.z)
-                );
+                (local_224,"%s\t%g hp\tx\t%d uses\t=\t%g hp",pCVar4,(double)pCVar4->hp_restored,
+                 pCVar4->use_count,(double)((float)pCVar4->use_count * pCVar4->hp_restored));
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_10c4.base,local_224);
-      local_24 = (float)(int)pCVar3[2].location.position.y * pCVar3[2].location.position.z +
-                 local_24;
+      local_24 = (float)pCVar4->use_count * pCVar4->hp_restored + local_24;
     }
   }
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_5cc);

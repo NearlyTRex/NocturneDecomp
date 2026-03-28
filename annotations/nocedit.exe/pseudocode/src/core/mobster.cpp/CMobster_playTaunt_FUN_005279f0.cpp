@@ -11,7 +11,7 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_005279f0(CMobster *this_ptr
 {
   float fVar1;
   int iVar2;
-  CDemonActor *pCVar2;
+  CMobster *pCVar2;
   int iVar3;
   uint uVar4;
   int iVar5;
@@ -54,13 +54,13 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_005279f0(CMobster *this_ptr
             this_ptr->sfx_handles[1] = uVar4;
             return;
           }
-          pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
+          pCVar2 = (CMobster *)
+                   core_actor_cpp_castToClassHash_FUN_0040c790
                              (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + local_18),
                               g_CMobsterClassInfo.name_hash);
-          if (((pCVar2 != (CDemonActor *)0x0) &&
-              (iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
-                                 (*(uint *)(pCVar2[0x8e].create_event + 0xc)), iVar3 != 0)) &&
-             (iVar2 = iVar2 + 1, 3 < iVar2)) break;
+          if (((pCVar2 != (CMobster *)0x0) &&
+              (iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(pCVar2->sfx_handles[1]),
+              iVar3 != 0)) && (iVar2 = iVar2 + 1, 3 < iVar2)) break;
           local_18 = local_18 + 4;
           iVar6 = iVar6 + 1;
         }

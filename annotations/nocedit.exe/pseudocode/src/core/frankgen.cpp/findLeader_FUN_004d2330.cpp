@@ -9,25 +9,26 @@
 CDemonActor * __cdecl core_frankgen_cpp_findLeader_FUN_004d2330(void)
 
 {
-  CDemonActor *pCVar1;
+  CFrankenstienMachine *pCVar1;
+  int iVar1;
   int iVar2;
-  int iVar3;
   
-  iVar3 = 0;
   iVar2 = 0;
+  iVar1 = 0;
   while( true ) {
-    if (g_CDemonSetPtr->actor_count <= iVar2) {
+    if (g_CDemonSetPtr->actor_count <= iVar1) {
       g_CurrentFilename = "..\\core\\frankgen.cpp";
       g_CurrentLineNumber = 0x1cf;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CFrankenstienMachine::findLeader - no leader found!");
       return (CDemonActor *)0x0;
     }
-    pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
-                       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),
+    pCVar1 = (CFrankenstienMachine *)
+             core_actor_cpp_castToClassHash_FUN_0040c790
+                       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2),
                         g_CFrankenstienMachineClassInfo.name_hash);
-    if (pCVar1 != (CDemonActor *)0x0) break;
-    iVar2 = iVar2 + 1;
-    iVar3 = iVar3 + 4;
+    if (pCVar1 != (CFrankenstienMachine *)0x0) break;
+    iVar1 = iVar1 + 1;
+    iVar2 = iVar2 + 4;
   }
-  return pCVar1;
+  return (CDemonActor *)pCVar1;
 }

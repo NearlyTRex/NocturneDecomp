@@ -21,7 +21,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   float fVar14;
   CVector3f *pCVar9;
   CVehicle *pCVar10;
-  CDemonActor *pCVar11;
+  CMobster *pCVar11;
   ECollisionType EVar12;
   int iVar13;
   uint uVar14;
@@ -30,7 +30,7 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   CMobster *this_ptr_01;
   CTommyGun *this_ptr_02;
   CTommyGun *actor;
-  CDemonActor *pCVar16;
+  CMobster *pCVar16;
   EDeathState EVar15;
   int iVar16;
   int iVar17;
@@ -144,10 +144,10 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   iStack_18 = 0;
   for (iVar17 = 0; iVar17 < g_CDemonSetPtr->character_count; iVar17 = iVar17 + 1) {
     pCVar12 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_18);
-    pCVar11 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCVar11 = (CMobster *)
+              core_actor_cpp_castToClassHash_FUN_0040c790
                         (&pCVar12->base,g_CMobsterClassInfo.name_hash);
-    if ((pCVar11 == (CDemonActor *)0x0) ||
-       (this_ptr != *(CVehicle **)(pCVar11[0x8e].actor_name + 0x10))) {
+    if ((pCVar11 == (CMobster *)0x0) || (this_ptr != (CVehicle *)pCVar11->vehicle)) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_c8);
       EVar12 = (*((pCVar12->base).vtable._ub)->getCollisionType)(&pCVar12->base,&SStack_c8);
       if ((EVar12 == COLLISION_TYPE_CYLINDER) &&
@@ -188,17 +188,18 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   iStack_20 = 0;
   iStack_1c = 0;
   for (iVar18 = 0; iVar18 < g_CDemonSetPtr->enemy_count; iVar18 = iVar18 + 1) {
-    pCVar16 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCVar16 = (CMobster *)
+              core_actor_cpp_castToClassHash_FUN_0040c790
                         (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar17),
                          g_CMobsterClassInfo.name_hash);
-    if ((pCVar16 != (CDemonActor *)0x0) &&
-       (pCVar13 = *(CVehicle **)(pCVar16[0x8e].actor_name + 0x10), this_ptr == pCVar13)) {
-      if (*(int *)(pCVar16[0x8e].actor_name + 0x14) == 0) {
-        pCVar13->last_mobster_left = pCVar16;
+    if ((pCVar16 != (CMobster *)0x0) &&
+       (pCVar13 = (CVehicle *)pCVar16->vehicle, this_ptr == pCVar13)) {
+      if (pCVar16->side_of_car == 0) {
+        pCVar13->last_mobster_left = (CDemonActor *)pCVar16;
         iStack_1c = 1;
       }
       else {
-        pCVar13->last_mobster_right = pCVar16;
+        pCVar13->last_mobster_right = (CDemonActor *)pCVar16;
         iStack_20 = 1;
       }
     }

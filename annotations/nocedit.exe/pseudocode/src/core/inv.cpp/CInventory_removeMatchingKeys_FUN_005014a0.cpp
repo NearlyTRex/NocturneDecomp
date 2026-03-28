@@ -9,7 +9,7 @@
 void __cdecl core_inv_cpp_CInventory_removeMatchingKeys_FUN_005014a0(CInventory *this_ptr,uint key_mask)
 
 {
-  CDemonActor *pCVar1;
+  CKeyActor *pCVar1;
   CInventory *pCVar2;
   int iVar3;
   
@@ -17,10 +17,10 @@ void __cdecl core_inv_cpp_CInventory_removeMatchingKeys_FUN_005014a0(CInventory 
   pCVar2 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      while ((pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
+      while ((pCVar1 = (CKeyActor *)
+                       core_actor_cpp_castToClassHash_FUN_0040c790
                                  (pCVar2->items[0],g_CKeyActorClassInfo.name_hash),
-             pCVar1 == (CDemonActor *)0x0 || (((uint)pCVar1[2].location.position.y & key_mask) == 0)
-             )) {
+             pCVar1 == (CKeyActor *)0x0 || ((pCVar1->key_mask & key_mask) == 0))) {
         iVar3 = iVar3 + 1;
         pCVar2 = (CInventory *)&pCVar2->owner;
         if (this_ptr->item_count <= iVar3) {

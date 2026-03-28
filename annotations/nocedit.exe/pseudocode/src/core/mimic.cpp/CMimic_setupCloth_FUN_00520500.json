@@ -4,7 +4,7 @@
       {
         "category": "format_error",
         "column": 50,
-        "line": 58,
+        "line": 59,
         "message": "format specifies type 'char *' but the argument has type 'CMimic *' [-Werror,-Wformat]"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 85,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 50,
-    "suspect_count": 3,
+    "pseudocode_lines": 51,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 132
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -188,6 +188,14 @@
     {
       "description": "Complex pointer cast",
       "line": 31,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
       "match": "(SClothVertex *)((int)",
       "severity": "mild",
       "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
@@ -195,7 +203,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 35,
       "match": "(SClothVertex *)((int)",
       "severity": "mild",
       "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);",
@@ -203,7 +211,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 36,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar4 = (int *)((int)piVar4 + (uint)bVar6 * -2 + 1);",

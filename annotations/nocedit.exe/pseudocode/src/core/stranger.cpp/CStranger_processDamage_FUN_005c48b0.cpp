@@ -15,7 +15,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
   SMotion *pSVar1;
   uint uVar5;
   int iVar2;
-  CDemonActor *pCVar6;
+  CTommyGun *pCVar6;
   uint uVar3;
   CCharacter_full_vtable *pCVar1;
   CDeformableModelInstance *this_ptr_00;
@@ -106,9 +106,10 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
   if (((damage_info->damage_type != DAMAGE_TYPE_NO_FLINCH) &&
       ((this_ptr->base).ladder_to_climb == (CLadder *)0x0)) &&
      ((this_ptr->ladder_to_descend == (CLadder *)0x0 && (this_ptr->action_pending == 0)))) {
-    pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCVar6 = (CTommyGun *)
+             core_actor_cpp_castToClassHash_FUN_0040c790
                        (damage_info->attacker,g_CTommyGunClassInfo.name_hash);
-    if (pCVar6 != (CDemonActor *)0x0) {
+    if (pCVar6 != (CTommyGun *)0x0) {
       iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.333);
       if (iVar2 == 0) goto LAB_005c4be2;
     }

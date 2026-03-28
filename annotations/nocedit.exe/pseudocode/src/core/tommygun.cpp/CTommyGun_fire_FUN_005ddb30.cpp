@@ -24,7 +24,7 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
   CTrigger *this_ptr_02;
   CCrate *this_ptr_05;
   CFlameCan *this_ptr_03;
-  CDemonActor *pCVar6;
+  CHero *pCVar6;
   int iVar8;
   SDamageInfo SStack_148;
   CMatrix3x3f CStack_10c;
@@ -161,9 +161,9 @@ int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
     else {
       iVar8 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01);
       if ((iVar8 != 0) &&
-         (pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
-                             ((this_ptr->base).carried_by_actor,g_CHeroClassInfo.name_hash),
-         this_ptr_00 = g_CDemonSetPtr, pCVar6 != (CDemonActor *)0x0)) {
+         (pCVar6 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790
+                                      ((this_ptr->base).carried_by_actor,g_CHeroClassInfo.name_hash)
+         , this_ptr_00 = g_CDemonSetPtr, pCVar6 != (CHero *)0x0)) {
         if (iStack_20 == 0) {
           (this_ptr->base).ammo_count = (this_ptr->base).ammo_count + 1;
           core_setcolid_cpp_CDemonSet_init_FUN_00574180(this_ptr_00);

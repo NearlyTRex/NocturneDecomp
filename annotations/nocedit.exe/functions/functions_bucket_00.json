@@ -7957,7 +7957,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CHero*",
           "use":43
         },
         {
@@ -37181,6 +37181,23 @@
     "name":"core_flame.cpp_CFlame_renderBackground_FUN_004caa80",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CFlame*",
+          "use":276
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -47105,8 +47122,26 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80",
-    "ret":"CDemonActor*",
+    "ret":"CHero*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EBX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000000c",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CHero*",
+          "use":8
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -48250,6 +48285,203 @@
     "name":"core_inv.cpp_CInventory_addItem_FUN_004fd600",
     "ret":"int",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar13",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CAmmo*",
+          "use":230
+        },
+        {
+          "name":"pCVar15",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CAmmo*",
+          "use":1933
+        },
+        {
+          "name":"pCVar5_01",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWeapon*",
+          "use":2544
+        },
+        {
+          "name":"pCVar7",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CAmmo*",
+          "use":3133
+        },
+        {
+          "name":"pCVar14",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWeapon*",
+          "use":3206
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWeapon*",
+          "use":3287
+        },
+        {
+          "name":"pCVar5_00",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTommyGun*",
+          "use":3756
+        },
+        {
+          "name":"pCVar8",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWeapon*",
+          "use":3888
+        },
+        {
+          "name":"pCVar12",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDynamite*",
+          "use":4012
+        },
+        {
+          "name":"pCVar11",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMelee*",
+          "use":4161
+        },
+        {
+          "name":"pCVar9",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWeapon*",
+          "use":4210
+        },
+        {
+          "name":"pCVar10",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CAmmo*",
+          "use":4294
+        },
+        {
+          "name":"pCVar6",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTommyGun*",
+          "use":4551
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -48454,7 +48686,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CMelee*",
           "use":651
         },
         {
@@ -49286,8 +49518,23 @@
               }
             ]
           },
-          "type":"CLightGun*",
+          "type":"CGasMask*",
           "use":560
+        },
+        {
+          "name":"pCVar6",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CBoxActor*",
+          "use":641
         },
         {
           "name":"local_14",
@@ -56437,7 +56684,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CGabriella*",
           "use":66
         },
         {
@@ -57233,7 +57480,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CHero*",
           "use":436
         },
         {
@@ -57250,6 +57497,21 @@
           },
           "type":"char*",
           "use":526
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHero*",
+          "use":650
         },
         {
           "name":"pCVar6",
@@ -62233,7 +62495,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CCharacter*",
           "use":466
         },
         {
@@ -65340,6 +65602,38 @@
     "name":"core_pendulum.cpp_CPendulum_process_FUN_0054a180",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"left_hand_actor",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHero*",
+          "use":274
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CEnemy*",
+          "use":309
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -72051,7 +72345,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CWaterActor*",
           "use":67
         },
         {
@@ -95275,7 +95569,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CMobster*",
           "use":729
         },
         {
@@ -95382,6 +95676,21 @@
           },
           "type":"CTommyGun*",
           "use":1491
+        },
+        {
+          "name":"pCVar16",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMobster*",
+          "use":1848
         },
         {
           "name":"EVar15",

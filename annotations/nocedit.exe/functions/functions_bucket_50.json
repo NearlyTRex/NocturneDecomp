@@ -47845,7 +47845,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CWayPoint*",
           "use":145
         },
         {
@@ -51699,7 +51699,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CWeapon*",
           "use":5086
         },
         {
@@ -53998,6 +53998,23 @@
     "name":"core_inv.cpp_clampWeaponAmmoCount_FUN_004fd5d0",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTommyGun*",
+          "use":12
+        }
+      ],
       "params":[
         {
           "name":"actor_ptr",
@@ -54105,7 +54122,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CLightGun*",
           "use":49
         },
         {
@@ -54125,6 +54142,36 @@
           "use":115
         },
         {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CBattery*",
+          "use":138
+        },
+        {
+          "name":"this_ptr_00",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CLightGun*",
+          "use":227
+        },
+        {
           "name":"pCVar5",
           "storage":{
             "reg":"EDI",
@@ -54139,6 +54186,21 @@
           },
           "type":"CInventory*",
           "use":534
+        },
+        {
+          "name":"pCVar6",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CBattery*",
+          "use":545
         },
         {
           "name":"local_1c",
@@ -54451,6 +54513,23 @@
     "name":"core_inv.cpp_CInventory_checkHasMatchingKey_FUN_005013d0",
     "ret":"int",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CKeyActor*",
+          "use":45
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -57181,6 +57260,23 @@
     "name":"core_melee.cpp_CMelee_playAttackHitEffects_FUN_0050eb50",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CCharacter*",
+          "use":18
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -85208,7 +85304,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CCrate*",
           "use":1781
         },
         {

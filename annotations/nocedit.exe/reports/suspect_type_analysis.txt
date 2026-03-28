@@ -23,7 +23,7 @@ SUSPECT TYPE COUNTS
   negative_offset                   86 (  0.5%)
   warning_unreachable               85 (  0.5%)
   register_param                    69 (  0.4%)
-  suspect_float                     54 (  0.3%)
+  suspect_float                     53 (  0.3%)
   param_count_too_many              41 (  0.3%)
   unknown_type                      40 (  0.3%)
   mmx_assembly                      34 (  0.2%)
@@ -99,8 +99,8 @@ TYPE: pointer_cast (4467 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1428x  (uint *)((int)
-  1232x  (int *)((int)
+  1427x  (uint *)((int)
+  1233x  (int *)((int)
    321x  (float *)((int)
    209x  (SRenderVertex *)((int)
    193x  (double *)((int)
@@ -986,14 +986,14 @@ Example functions:
     byte *in_EAX;...
 
 ====================================================================================================
-TYPE: suspect_float (54 occurrences)
+TYPE: suspect_float (53 occurrences)
 ====================================================================================================
 
 Unique patterns:
     12x  1.4013e-45
      8x  1.12104e-44
-     4x  2.8026e-45
      4x  2.10195e-44
+     3x  2.8026e-45
      3x  1.26117e-44
      3x  1.82169e-44
      2x  2.24208e-44
@@ -1014,8 +1014,6 @@ Unique patterns:
 Example functions:
   core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
     local_1c = 1.4013e-45;...
-  core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
-    if ((pCVar4 != (CDemonActor *)0x0) && (pCVar4[2].location.position.y != 2.8026e-...
   core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_004bed00
     fStack_3c = 6.972979e-39;...
   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
@@ -1283,9 +1281,9 @@ Unique patterns:
      1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"grabbedBy=%s\n");
      1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"pushedObject=%s\n");
      1x  core_main_c_displayErrorAndQuit_FUN_00506f10("No motions defined in %s");
-     1x  iVar3 = core_event_cpp_formatEventError_FUN_004aa2a0("Event name %s is too long");
-     1x  iVar3 = core_event_cpp_formatEventError_FUN_004aa2a0("Event name %s is not valid");
-     1x  iVar3 = core_event_cpp_formatEventError_FUN_004aa2a0("SpotLight %s doesn't exist.");
+     1x  iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0("Event name %s is too long");
+     1x  iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0("Event name %s is not valid");
+     1x  iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0("SpotLight %s doesn't exist.");
      1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find CDemonLight for light %s in advanceLightFil
 
 Example functions:

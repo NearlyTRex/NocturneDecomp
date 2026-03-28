@@ -30,7 +30,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
   CBoundingBox3D *pCVar20;
   uint uVar12;
   int iVar21;
-  CCharacter *this_ptr_00;
+  CTVBat *this_ptr_00;
   CVector3f *pCVar13;
   CVector3f *pCVar22;
   CVector3f *pCVar23;
@@ -446,15 +446,15 @@ LAB_005e648e:
                   ((CCharacter *)this_ptr,&CStack_10c,-1.0,0);
         iVar18 = 0;
         for (local_2c = 0; local_2c < g_CDemonSetPtr->enemy_count; local_2c = local_2c + 1) {
-          this_ptr_00 = (CCharacter *)
+          this_ptr_00 = (CTVBat *)
                         core_actor_cpp_castToClassHash_FUN_0040c790
                                   (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar18),
                                    g_CTVBatClassInfo.name_hash);
-          if ((this_ptr_00 != (CCharacter *)0x0) &&
-             (this_ptr_00[1].model.transformed_vertices[0xc].x != 0.0)) {
+          if ((this_ptr_00 != (CTVBat *)0x0) && (this_ptr_00->follow_orders != 0)) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_208);
             SStack_208.damage_amount = 999.0;
-            (*(((this_ptr_00->base).vtable._uc)->_uc).processDamage)(this_ptr_00,&SStack_208);
+            (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).processDamage)
+                      ((CCharacter *)this_ptr_00,&SStack_208);
           }
           iVar18 = iVar18 + 4;
         }

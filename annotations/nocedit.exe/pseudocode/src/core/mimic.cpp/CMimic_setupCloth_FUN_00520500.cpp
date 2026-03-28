@@ -10,7 +10,7 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_00520500(CMimic *this_ptr)
 
 {
   CDeformableModelInstance *this_ptr_01;
-  CDemonActor *pCVar1;
+  CGabriella *pCVar1;
   SMotion *motion_name;
   uint uVar2;
   int iVar3;
@@ -25,16 +25,17 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_00520500(CMimic *this_ptr)
   core_cloth_cpp_CCloth_setup_FUN_00439710
             (&this_ptr->cloth,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec,&(this_ptr->base).base.model);
-  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
+  pCVar1 = (CGabriella *)
+           core_actor_cpp_castToClassHash_FUN_0040c790
                      ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],g_CGabriellaClassInfo.name_hash)
   ;
-  if (pCVar1 != (CDemonActor *)0x0) {
-    piVar4 = &pCVar1[0x1ba].is_transparent;
+  if (pCVar1 != (CGabriella *)0x0) {
+    piVar4 = (int *)(pCVar1->coat_cloth).vertices;
     pSVar5 = (this_ptr->cloth).vertices;
     for (uVar2 = (this_ptr->cloth).model.vertex_count * 0x47 & 0x3fffffff; uVar2 != 0;
         uVar2 = uVar2 - 1) {
-      (pSVar5->position).x = (float)*piVar4;
-      piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
+      (pSVar5->position).x = (((SClothVertex *)piVar4)->position).x;
+      piVar4 = (int *)((int)piVar4 + (uint)bVar6 * -8 + 4);
       pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -8 + 4);
     }
     for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {

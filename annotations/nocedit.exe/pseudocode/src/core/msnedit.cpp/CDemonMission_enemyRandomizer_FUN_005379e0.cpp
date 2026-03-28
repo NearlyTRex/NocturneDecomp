@@ -13,7 +13,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonM
   CDemonActor_vtable *pCVar2;
   CEnemy *this_ptr_00;
   int iVar3;
-  CDemonActor *actor_ptr;
+  CEnemy *actor_ptr;
   float fVar4;
   int initial_selected_index;
   ulonglong in_stack_fffff2fc;
@@ -106,21 +106,21 @@ LAB_00537aa5:
             shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff300);
             for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0;
                 pCVar1 = pCVar1->next_actor) {
-              actor_ptr = core_actor_cpp_castToClassHash_FUN_0040c790
+              actor_ptr = (CEnemy *)
+                          core_actor_cpp_castToClassHash_FUN_0040c790
                                     (pCVar1,g_CEnemyClassInfo.name_hash);
-              if (((actor_ptr != (CDemonActor *)0x0) &&
-                  (((INT_02f797e0 != 0 || (*(int *)(actor_ptr[0x8d].create_event + 0x3c) != 0)) &&
-                   (iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CEnemy"),
-                   iVar3 != 0)))) &&
-                 (iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
-                                    (g_ActorWildcardBuffer,actor_ptr->actor_name,0), iVar3 != 0)) {
+              if (((actor_ptr != (CEnemy *)0x0) &&
+                  (((INT_02f797e0 != 0 || (actor_ptr->randomize_me != 0)) &&
+                   (iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
+                                      ((CDemonActor *)actor_ptr,"CEnemy"), iVar3 != 0))))
+                 && (iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
+                                       (g_ActorWildcardBuffer,(char *)actor_ptr,0), iVar3 != 0)) {
                 fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9f,1.1f);
-                pCVar2 = (actor_ptr->vtable)._ub;
-                *(float *)(actor_ptr[0x8d].create_event + 0x34) = fVar4;
-                (*pCVar2->setup)(actor_ptr);
+                pCVar2 = (actor_ptr->base).base.vtable._ub;
+                actor_ptr->speed = fVar4;
+                (*pCVar2->setup)((CDemonActor *)actor_ptr);
                 _sprintf
-                          (local_208 + 4,"%s\n%7.3f",actor_ptr,
-                           (double)*(float *)(actor_ptr[0x8d].create_event + 0x34));
+                          (local_208 + 4,"%s\n%7.3f",actor_ptr,(double)actor_ptr->speed);
                 string_data = (CEnemy *)(local_208 + 4);
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_cfc,(char *)string_data);
               }

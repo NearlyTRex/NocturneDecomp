@@ -13,7 +13,7 @@ int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004f8970(CIcePick *th
 {
   float fVar3;
   CDemonActor *pCVar3;
-  CDemonActor *pCVar4;
+  CTommyGun *pCVar4;
   int iVar4;
   int iVar5;
   CVector3f local_34;
@@ -36,9 +36,10 @@ int __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004f8970(CIcePick *th
     this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);
     pCVar3 = (*((this_ptr_00->vtable)._ub)->getCarrier)(this_ptr_00);
     if (pCVar3 == (CDemonActor *)0x0) {
-      pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
+      pCVar4 = (CTommyGun *)
+               core_actor_cpp_castToClassHash_FUN_0040c790
                          (this_ptr_00,g_CTommyGunClassInfo.name_hash);
-      if (pCVar4 != (CDemonActor *)0x0) {
+      if (pCVar4 != (CTommyGun *)0x0) {
         fVar1 = (this_ptr_00->location).position.x - local_34.x;
         fVar2 = (this_ptr_00->location).position.z - local_34.z;
         if ((ABS((this_ptr_00->location).position.y - local_34.y) <= (float)2) &&

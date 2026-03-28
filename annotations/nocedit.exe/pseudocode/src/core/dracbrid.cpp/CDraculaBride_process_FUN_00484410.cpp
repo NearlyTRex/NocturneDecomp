@@ -30,7 +30,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   EDeathState EVar14;
   EDeathState EVar13;
   CPathMap *path_map;
-  CDemonActor *pCVar14;
+  CDraculaBride *pCVar14;
   CPathMap *pCVar15;
   CDraculaBride *pCVar17;
   int iVar18;
@@ -245,10 +245,11 @@ LAB_004848f9:
       iVar18 = 0;
       iVar10 = 0;
       while ((iVar18 < g_CDemonSetPtr->enemy_count &&
-             ((pCVar14 = core_actor_cpp_castToClassHash_FUN_0040c790
+             ((pCVar14 = (CDraculaBride *)
+                         core_actor_cpp_castToClassHash_FUN_0040c790
                                    (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar10),
                                     g_CDraculaBrideClassInfo.name_hash),
-              pCVar14 == (CDemonActor *)0x0 || (*(int *)pCVar14[0x8e].create_event == 0))))) {
+              pCVar14 == (CDraculaBride *)0x0 || (pCVar14->mist_state == 0))))) {
         iVar18 = iVar18 + 1;
         iVar10 = iVar10 + 4;
       }

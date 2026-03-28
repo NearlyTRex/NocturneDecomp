@@ -15,8 +15,8 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
   int enabled;
   CBoundingBox3D *this_ptr_01;
   int iVar1;
-  CDemonActor *pCVar2;
-  int iVar3;
+  CStranger *pCVar2;
+  int iVar2;
   CMatrix3x4f local_c4;
   CMatrix3x4f local_94;
   CBoundingBox3D local_64;
@@ -47,10 +47,11 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
         core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
                   (&(this_ptr->base).base.model,-1,0xffffffff,1,0);
         core_cloth_cpp_CCloth_render_FUN_0043bae0(&this_ptr->cloth,0);
-        pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
+        pCVar2 = (CStranger *)
+                 core_actor_cpp_castToClassHash_FUN_0040c790
                            ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],
                             g_CStrangerClassInfo.name_hash);
-        if (pCVar2 != (CDemonActor *)0x0) {
+        if (pCVar2 != (CStranger *)0x0) {
           local_28.x = 0.0;
           local_28.z = 0.0;
           local_40.y = 0.71933335;
@@ -68,13 +69,13 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                     (g_CDemonRendererPtr2,(CVector3i *)&local_34,(CVector3i *)&local_4c);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-                    ((CKeyFramedModelInstance *)&pCVar2[0x17a].platform_position_delta.z,0.0,-1);
+                    (&pCVar2->model,0.0,-1);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
         }
         core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420((CCharacter *)this_ptr);
         if ((INT_02f43978 != 0) &&
-           (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-                              (g_CDemonRendererPtr2), iVar3 == 0)) {
+           (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+                              (g_CDemonRendererPtr2), iVar2 == 0)) {
           this_ptr_00 = &(this_ptr->base).base.model;
           core_motion_cpp_CMotionController_render_FUN_0052e700
                     (&this_ptr_00->motion_controller,(CDemonActor *)this_ptr);

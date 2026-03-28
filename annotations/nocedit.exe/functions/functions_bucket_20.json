@@ -43585,7 +43585,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CLightActor*",
           "use":1004
         },
         {
@@ -43602,6 +43602,21 @@
           },
           "type":"CBoxActor*",
           "use":1709
+        },
+        {
+          "name":"pCVar15",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDynamite*",
+          "use":1918
         },
         {
           "name":"EVar15",
@@ -50404,7 +50419,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CBattery*",
           "use":46
         },
         {
@@ -50568,6 +50583,23 @@
     "name":"core_inv.cpp_CInventory_removeMatchingKeys_FUN_005014a0",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CKeyActor*",
+          "use":33
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -67288,7 +67320,7 @@
               }
             ]
           },
-          "type":"CCharacter*",
+          "type":"CEnemy*",
           "use":82
         },
         {
@@ -71303,7 +71335,7 @@
               }
             ]
           },
-          "type":"CDemonActor*",
+          "type":"CGlass*",
           "use":1140
         },
         {

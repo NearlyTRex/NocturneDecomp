@@ -41,8 +41,7 @@ LAB_0052499a:
                             (actor_ptr,g_CHeroPlaceholderClassInfo.name_hash);
     if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (index == this_ptr_00->index)) {
       if (existing_actor == (CCharacter *)0x0) {
-        local_14 = (CHero *)core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80
-                                      (this_ptr_00,hero_type);
+        local_14 = core_hero_cpp_CHeroPlaceholder_createHero_FUN_004f3d80(this_ptr_00,hero_type);
       }
       else {
         local_14 = (CHero *)existing_actor;

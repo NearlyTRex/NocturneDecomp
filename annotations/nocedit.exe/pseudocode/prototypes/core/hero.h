@@ -177,7 +177,7 @@ CBoundingBox3D * __cdecl CHeroPlaceholder::getBoundingBox(CHeroPlaceholder *this
 
 // Original: core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80
 // Address: 004f3d80
-CDemonActor * __cdecl CHeroPlaceholder::createHero(CHeroPlaceholder *this_ptr,EHeroType hero_type);
+CHero * __cdecl CHeroPlaceholder::createHero(CHeroPlaceholder *this_ptr,EHeroType hero_type);
 
 // Original: core_hero.cpp_CHeroPlaceholder_archive_FUN_004f3ef0
 // Address: 004f3ef0
