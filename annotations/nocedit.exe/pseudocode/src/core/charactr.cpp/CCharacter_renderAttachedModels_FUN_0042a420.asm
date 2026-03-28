@@ -28,7 +28,7 @@
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;
 ; *****************************************************************************
 
@@ -114,8 +114,8 @@ section .text
     ADD ESP,0xc                         ; 0042a4fd
     MOV EDI,dword ptr [0x006703ec]      ; 0042a500 | g_CDemonRendererPtr2
     PUSH EDI                            ; 0042a506 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0042a507
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 0042a507
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     MOV ECX,0xc                         ; 03fc4665
         ;   Label: LAB_03fc4665
     PUSH EAX                            ; 03fc466a

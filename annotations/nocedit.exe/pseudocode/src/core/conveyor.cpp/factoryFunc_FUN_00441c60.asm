@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_conveyor.cpp_factoryFunc_FUN_00441c60
     PUSH 0x618e25                       ; 00441c62 | = "..\\core\\conveyor.cpp"
     PUSH 0x860                          ; 00441c67
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 00441c6c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00441c6c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00441c71
     TEST EAX,EAX                        ; 00441c74
     JNZ 0x00441c79                      ; 00441c76

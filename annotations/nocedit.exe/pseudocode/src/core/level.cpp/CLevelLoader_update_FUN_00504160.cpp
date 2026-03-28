@@ -137,7 +137,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
               (&g_LoadingMoonModel,0,(CKeyFramedModelInstance *)0x0,0x205);
     if (this_ptr->use_custom_viewport != 0) {
-      engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
+      engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0();
     }
     g_CDemonSetPtr->rendering_mode = 0;
     this_ptr_01 = g_ThemeFont;

@@ -11,7 +11,8 @@ CStranger * __cdecl core_stranger_cpp_factoryFunc_FUN_005bb0e0(void)
 {
   CStranger *pCVar1;
   
-  pCVar1 = (CStranger *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1fe70,"..\\core\\stranger.cpp",0x1d3);
+  pCVar1 = (CStranger *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+                     (0x1fe70,"..\\core\\stranger.cpp",0x1d3);
   if (pCVar1 == (CStranger *)0x0) {
     return (CStranger *)0x0;
   }

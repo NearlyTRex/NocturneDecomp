@@ -132,8 +132,8 @@ void __cdecl engine_fileio_cpp_writeArtFileEntries_FUN_004bc9f0(char *filename,_
 int __cdecl engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50(CFileManager *this_ptr,char *pod_filename);
 void __cdecl engine_fileio_cpp_CFileManager_searchMountedPods_FUN_004bcb70(CFileManager *this_ptr,char *default_wildcard);
 int __cdecl engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(CFileManager *this_ptr);
-int __cdecl engine_fileio_cpp_logOnAsVersionControlUser_FUN_004b2770(void);
-void __cdecl engine_fileio_cpp_logOffVersionControl_FUN_004b2830(void);
+int __cdecl engine_fileio_cpp_logOnAsVersionControlUser_FUN_004bcea0(void);
+void __cdecl engine_fileio_cpp_logOffVersionControl_FUN_004bceb0(void);
 void __cdecl engine_fileio_cpp_CFileManager_managePodMounts_FUN_004bcec0(CFileManager *this_ptr);
 void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path,time_t cutoff_timestamp);
 CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_ctor_FUN_004bd710(CCheckOutList *this_ptr);

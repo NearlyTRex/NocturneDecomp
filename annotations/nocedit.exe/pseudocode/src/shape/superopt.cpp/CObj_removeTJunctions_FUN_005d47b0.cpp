@@ -390,7 +390,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
               }
               local_3c = (void *)((int)local_3c + -1);
               if ((int)local_3c < 1) {
-                shape_memdbg_cpp_debugFree_FUN_0050f210(local_44);
+                shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(local_44);
                 return 0;
               }
               shape_superopt_cpp_CPoly_ctor_FUN_005cc620((CPoly *)&local_1f0,(CObj *)0x0);
@@ -435,7 +435,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
               local_1f0.y = (float)uVar15;
               iVar17 = (*this_ptr->vtable->addPolygons)(this_ptr,1);
               if (iVar17 == 0) {
-                shape_memdbg_cpp_debugFree_FUN_0050f210(local_3c);
+                shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(local_3c);
                 shape_superopt_cpp_CPoly_dtor_FUN_005cc660((CPoly *)&local_1f0.z,0);
                 return 0;
               }
@@ -453,6 +453,6 @@ LAB_005d4d06:
       local_24 = local_24 + 1;
     } while (local_24 < (uint)this_ptr->poly_count);
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(local_44);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(local_44);
   return 1;
 }

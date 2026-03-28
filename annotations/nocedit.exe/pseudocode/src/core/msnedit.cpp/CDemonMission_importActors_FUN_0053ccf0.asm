@@ -121,8 +121,8 @@ section .text
     PUSH 0xbef                          ; 0053cd99
     PUSH 0x63c997                       ; 0053cd9e | = "..\\core\\msnedit.cpp"
     PUSH 0x27d0                         ; 0053cda3
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0053cda8
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0053cda8
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0053cdad
     MOV dword ptr [ESP + 0x43c],EAX     ; 0053cdb0
     TEST EAX,EAX                        ; 0053cdb7
@@ -230,8 +230,8 @@ section .text
     PUSH EAX                            ; 0053cf03
     MOV dword ptr [0x0067d20c],ESI      ; 0053cf04 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],EDI      ; 0053cf0a | g_CurrentDebugLine
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0053cf10
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 0053cf10
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 0053cf15
     MOV dword ptr [0x0067d550],EBP      ; 0053cf18 | g_CDemonMissionPtr
     POP EDI                             ; 0053cf1e

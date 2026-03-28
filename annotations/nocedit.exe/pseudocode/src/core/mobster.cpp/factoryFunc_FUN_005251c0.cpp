@@ -11,7 +11,7 @@ CMobster * __cdecl core_mobster_cpp_factoryFunc_FUN_005251c0(void)
 {
   CMobster *pCVar1;
   
-  pCVar1 = (CMobster *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf94,"..\\core\\mobster.cpp",0x85);
+  pCVar1 = (CMobster *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0xbf94,"..\\core\\mobster.cpp",0x85);
   if (pCVar1 == (CMobster *)0x0) {
     return (CMobster *)0x0;
   }

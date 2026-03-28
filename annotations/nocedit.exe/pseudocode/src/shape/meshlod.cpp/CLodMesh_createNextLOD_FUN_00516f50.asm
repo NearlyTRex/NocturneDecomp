@@ -22,8 +22,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0
 ;   shape_meshlod.cpp_CLodMesh_ctor_FUN_00515840
 ;   shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950
@@ -48,8 +48,8 @@ section .text
         ;   Label: LAB_00516f73
     PUSH 0x63768a                       ; 00516f78 | = "..\\shape\\meshlod.cpp"
     PUSH 0x74                           ; 00516f7d
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 00516f7f
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00516f7f
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00516f84
     TEST EAX,EAX                        ; 00516f87
     JZ 0x00516f94                       ; 00516f89
@@ -79,8 +79,8 @@ section .text
         ;   XREF to: 00515950 (UNCONDITIONAL_CALL)  ; CLodMesh * shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950(CLodMesh * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00516fb3
     PUSH EAX                            ; 00516fb6
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00516fb7
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 00516fb7
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 00516fbc
     JMP 0x00516f73                      ; 00516fbf
         ;   XREF to: 00516f73 (UNCONDITIONAL_JUMP)  ; LAB_00516f73

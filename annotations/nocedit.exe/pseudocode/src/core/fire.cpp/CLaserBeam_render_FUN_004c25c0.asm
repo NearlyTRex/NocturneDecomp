@@ -127,7 +127,7 @@
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
 ;   engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
@@ -642,8 +642,8 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 004c2d3f | g_CDemonRendererPtr2
     PUSH EDX                            ; 004c2d45 | g_CDemonRendererInstance
     INC ESI                             ; 004c2d46
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c2d47
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004c2d47
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     FLD float ptr [ESP + 0x30]          ; 004c2d69
         ;   Label: LAB_004c2d69
     FLDZ                                ; 004c2d6d
@@ -830,8 +830,8 @@ section .text
     MOV ESI,dword ptr [0x006703ec]      ; 004c3044 | g_CDemonRendererPtr2
         ;   Label: LAB_004c3044
     PUSH ESI                            ; 004c304a | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c304b
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004c304b
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     FLD float ptr [ESP + 0x1c]          ; 004c3053
         ;   Label: LAB_004c3053
     FLDZ                                ; 004c3057
@@ -1386,8 +1386,8 @@ section .text
     ADD ESP,0x8                         ; 004c3857
     MOV EBX,dword ptr [0x006703ec]      ; 004c385a | g_CDemonRendererPtr2
     PUSH EBX                            ; 004c3860 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c3861
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004c3861
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     MOV ECX,0xc                         ; 03fc55e4
         ;   Label: LAB_03fc55e4
     LEA EDI,[ESI + 0x90]                ; 03fc55e9

@@ -37,13 +37,13 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
-;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480
+;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
 ;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
     PUSH 0x1007                         ; 00580339
     PUSH 0x648567                       ; 0058033e | = "..\\core\\setedit.cpp"
     PUSH EAX                            ; 00580343
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00580344
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00580344
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00580349
     MOV [0x03659384],EAX                ; 0058034c | g_CameraDepthData
     TEST EAX,EAX                        ; 00580351
@@ -211,8 +211,8 @@ section .text
         ;   XREF to: 005804b0 (CONDITIONAL_JUMP)  ; LAB_005804b0
     MOV ECX,dword ptr [0x006703ec]      ; 005804f6 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 005804fc | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 005804fd
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480()
+    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 ; 005804fd
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0()
     ADD ESP,0x4                         ; 00580502
     MOV EBX,dword ptr [ESP + 0xc]       ; 00580505
     MOV ESI,dword ptr [ESP + 0x8]       ; 00580509

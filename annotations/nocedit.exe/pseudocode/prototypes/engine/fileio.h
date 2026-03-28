@@ -271,11 +271,11 @@ void __cdecl CFileManager::searchMountedPods(CFileManager *this_ptr,char *defaul
 // Address: 004bccf0
 int __cdecl CFileManager::createPodConfigWizard(CFileManager *this_ptr);
 
-// Original: engine_fileio.cpp_logOnAsVersionControlUser_FUN_004b2770
+// Original: engine_fileio.cpp_logOnAsVersionControlUser_FUN_004bcea0
 // Address: 004bcea0
 int __cdecl logOnAsVersionControlUser(void);
 
-// Original: engine_fileio.cpp_logOffVersionControl_FUN_004b2830
+// Original: engine_fileio.cpp_logOffVersionControl_FUN_004bceb0
 // Address: 004bceb0
 void __cdecl logOffVersionControl(void);
 

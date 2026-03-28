@@ -224,7 +224,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_37ec);
     shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
               (&local_37ec.base,"models","*.kfm");
-    shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_37ec.base);
+    shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_37ec.base);
     if ((this_ptr->param1).v_int != 0) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_37ec.base,"(none)");
     }
@@ -271,7 +271,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_2cf4);
     shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
               (&local_2cf4.base,"models","*.dfm");
-    shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_2cf4.base);
+    shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_2cf4.base);
     if ((this_ptr->param1).v_int != 0) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2cf4.base,"(none)");
     }
@@ -338,7 +338,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_309c);
     shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
               (&local_309c.base,this_ptr->string1,this_ptr->string2);
-    shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_309c.base);
+    shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_309c.base);
     if ((this_ptr->param1).v_int != 0) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_309c.base,"(none)");
     }
@@ -492,7 +492,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_294c);
     shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
               (&local_294c.base,"models","*.cth");
-    shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_294c.base);
+    shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_294c.base);
     if ((this_ptr->param1).v_int < ((this_ptr->data).v_kfm_ptr)->part_visibility_flags[0]) {
       _sprintf
                 (local_2a0,"Select %s for actor %s.  Current is %s.",pcVar14,actor,

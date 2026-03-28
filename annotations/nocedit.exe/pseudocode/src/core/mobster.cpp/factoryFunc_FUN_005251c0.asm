@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_mobster.cpp_CMobster_ctor_FUN_00525200
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_mobster.cpp_factoryFunc_FUN_005251c0
     PUSH 0x6396b6                       ; 005251c5 | = "..\\core\\mobster.cpp"
     PUSH 0xbf94                         ; 005251ca
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005251cf
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005251cf
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005251d4
     TEST EAX,EAX                        ; 005251d7
     JNZ 0x005251dc                      ; 005251d9

@@ -416,8 +416,8 @@ section .text
     PUSH EAX                            ; 005385eb | = "Save mission to %s"
     MOV EAX,[0x00678a60]                ; 005385ec | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 005385f1 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 005385f2
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 005385f2
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0xc                         ; 005385f7
     TEST EAX,EAX                        ; 005385fa
     JZ 0x005384ec                       ; 005385fc
@@ -475,8 +475,8 @@ section .text
     PUSH EAX                            ; 00538689 | = "This is going to remove set %s from t..."
     MOV EDI,dword ptr [0x00678a60]      ; 0053868a | g_CEditorToolsPtr
     PUSH EDI                            ; 00538690 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 00538691
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 00538691
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0xc                         ; 00538696
     TEST EAX,EAX                        ; 00538699
     JZ 0x005384ec                       ; 0053869b
@@ -551,8 +551,8 @@ section .text
     PUSH EAX                            ; 00538741 | = "Precompute lights?"
     MOV EDX,dword ptr [0x00678a60]      ; 00538742 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 00538748 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 00538749
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 00538749
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0053874e
     TEST EAX,EAX                        ; 00538751
     JZ 0x005384ec                       ; 00538753
@@ -740,8 +740,8 @@ section .text
         ;   Label: LAB_0053891d
     MOV EAX,[0x00678a60]                ; 00538922 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 00538927 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 00538928
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 00538928
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0053892d
     TEST EAX,EAX                        ; 00538930
     JZ 0x005384ec                       ; 00538932

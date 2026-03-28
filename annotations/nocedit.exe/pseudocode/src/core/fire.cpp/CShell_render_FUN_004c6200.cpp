@@ -38,7 +38,7 @@ void __cdecl core_fire_cpp_CShell_render_FUN_004c6200(CShell *this_ptr)
                 (g_CDemonRendererPtr2,(CVector3i *)&this_ptr->euler_angles,(CVector3i *)0x0);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                 (this_ptr->model_ptr,0,(CKeyFramedModelInstance *)0x0,-1);
-      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
       return;
     }
   }

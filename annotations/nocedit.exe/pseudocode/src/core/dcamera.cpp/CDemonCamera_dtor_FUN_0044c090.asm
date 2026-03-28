@@ -18,7 +18,7 @@
 ;   core_camview.cpp_CCameraView_dtor_FUN_00427d00
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_0044c360
 ;   crt_memory.c___vec_delete_FUN_005fe632
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -64,8 +64,8 @@ section .text
     RET                                 ; 0044c0e0
     PUSH EAX                            ; 0044c0e1
         ;   Label: LAB_0044c0e1
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0044c0e2
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 0044c0e2
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 0044c0e7
     MOV EAX,EBX                         ; 0044c0ea
     POP EBX                             ; 0044c0ec

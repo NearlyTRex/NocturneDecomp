@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_course.cpp_CCourse_free_FUN_004426c0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH 0x618edb                       ; 00442523 | = "..\\core\\course.cpp"
     ADD EAX,0x4                         ; 00442528
     PUSH EAX                            ; 0044252b
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0044252c
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0044252c
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00442531
     TEST EAX,EAX                        ; 00442534
     JNZ 0x00442542                      ; 00442536

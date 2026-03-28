@@ -41,7 +41,7 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   core_sound.cpp_CSound_dtor_FUN_005aaeb0
+;   core_sound.cpp_CSound_dtor_FUN_005b2d60
 ;   crt_errno.c__errno_FUN_00601450
 ;   crt_stdio.c__vsprintf_FUN_005fdba8
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
@@ -50,7 +50,7 @@
 ;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c__time_FUN_006001f0
 ;   crt_watcom.c_notifyAbnormalTermination_FUN_00601620
-;   engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90
+;   engine_2d.c_cleanupGraphicsSystem_FUN_00401130
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;   wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005f3920
@@ -180,11 +180,11 @@ section .text
     MOV EBX,dword ptr [0x00681ef8]      ; 0050700e | g_CSoundInstance | g_CSoundPtr
         ;   Label: LAB_0050700e
     PUSH EBX                            ; 00507014 | g_CSoundInstance
-    CALL core_sound.cpp_CSound_dtor_FUN_005aaeb0 ; 00507015
-        ;   XREF to: 005b2d60 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_dtor_FUN_005aaeb0()
+    CALL core_sound.cpp_CSound_dtor_FUN_005b2d60 ; 00507015
+        ;   XREF to: 005b2d60 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_dtor_FUN_005b2d60()
     ADD ESP,0x4                         ; 0050701a
-    CALL engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90 ; 0050701d
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90()
+    CALL engine_2d.c_cleanupGraphicsSystem_FUN_00401130 ; 0050701d
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_00401130()
     CALL wincore_winrun.cpp_endPeriod_FUN_005f2db0 ; 00507022
         ;   XREF to: 005f2db0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_005f2db0()
     PUSH 0x2dd3130                      ; 00507027 | g_ErrorMessageBuffer_02dd3130

@@ -21,6 +21,6 @@ CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_dtor_FUN_005daea0(CTelep
   if ((flags & 2) == 0) {
     return (CTeleportDest *)ptr;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
   return (CTeleportDest *)ptr;
 }

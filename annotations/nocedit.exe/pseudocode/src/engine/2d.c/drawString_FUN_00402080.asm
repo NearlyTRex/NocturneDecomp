@@ -13,7 +13,7 @@
 ;   engine_console.cpp_CConsole_render_FUN_00441b00 at 00441b72
 ;
 ; Called Functions:
-;   engine_2d.c_drawCharacter_FUN_00401a10
+;   engine_2d.c_drawCharacterMasked_FUN_00401a10
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     PUSH ECX                            ; 004020b9
     PUSH EBP                            ; 004020ba
     PUSH EAX                            ; 004020bb
-    CALL engine_2d.c_drawCharacter_FUN_00401a10 ; 004020bc
-        ;   XREF to: 00401a10 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacter_FUN_00401a10(int char_code, int x_pos, int y_pos, int color)
+    CALL engine_2d.c_drawCharacterMasked_FUN_00401a10 ; 004020bc
+        ;   XREF to: 00401a10 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacterMasked_FUN_00401a10(int char_code, int x_pos, int y_pos, int color)
     ADD ESP,0x10                        ; 004020c1
     ADD EBP,EAX                         ; 004020c4
     INC EBX                             ; 004020c6

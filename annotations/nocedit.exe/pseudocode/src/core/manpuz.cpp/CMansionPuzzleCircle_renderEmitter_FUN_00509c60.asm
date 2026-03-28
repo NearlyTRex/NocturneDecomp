@@ -7,7 +7,6 @@
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   panel_index
 ; Local Variables:
-; CVector3i        Stack[-0x28]:12  local_28
 ; CVector3i        Stack[-0x1c]:12  local_1c
 ; int              Stack[-0x10]:4  local_10
 ;
@@ -25,7 +24,7 @@
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
 ;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
 ;
@@ -90,8 +89,8 @@ section .text
     ADD ESP,0xc                         ; 00509d04
     MOV EBP,dword ptr [0x006703ec]      ; 00509d07 | g_CDemonRendererPtr2
     PUSH EBP                            ; 00509d0d | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00509d0e
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00509d0e
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     PUSH ESI                            ; 00509d3a
         ;   Label: LAB_00509d3a
     MOV ESI,dword ptr [0x00678a60]      ; 00509d3b | g_CEditorToolsPtr

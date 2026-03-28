@@ -33,7 +33,7 @@ void __cdecl engine_2d_c_drawTextMultilineColor_FUN_00401f40(char *text,int x_st
       }
       char_code = (uint)(byte)*text;
       if ((0x1f < (byte)*text) && (char_code < 0x100)) {
-        engine_2d_c_drawCharacter_FUN_00401a10(char_code,x_pos,y_start,color);
+        engine_2d_c_drawCharacterMasked_FUN_00401a10(char_code,x_pos,y_start,color);
         x_pos = x_pos + g_FontTable[char_code - 0x20].width + 1;
       }
       iVar4 = iVar4 + 1;

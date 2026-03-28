@@ -15,7 +15,7 @@
 ;   core_glass.cpp_CVector3f_arrdtor_FUN_004eb8a0
 ;   core_mirror.cpp_CMirror_dtor_FUN_005213e0
 ;   crt_memory.c___vec_delete_FUN_005fe632
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -69,8 +69,8 @@ section .text
     RET                                 ; 004eb887
     PUSH EAX                            ; 004eb888
         ;   Label: LAB_004eb888
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004eb889
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 004eb889
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 004eb88e
     MOV EAX,EBX                         ; 004eb891
     POP EBX                             ; 004eb893

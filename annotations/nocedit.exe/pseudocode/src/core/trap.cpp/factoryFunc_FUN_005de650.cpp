@@ -11,7 +11,7 @@ CTrap * __cdecl core_trap_cpp_factoryFunc_FUN_005de650(void)
 {
   CTrap *pCVar1;
   
-  pCVar1 = (CTrap *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2dc,"..\\core\\trap.cpp",0x20);
+  pCVar1 = (CTrap *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x2dc,"..\\core\\trap.cpp",0x20);
   if (pCVar1 == (CTrap *)0x0) {
     return (CTrap *)0x0;
   }

@@ -183,8 +183,8 @@ section .text
     CALL engine_2d.c_fillRectColor_FUN_00403170 ; 0043d6d1
         ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 0043d6d6
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0043d6d9
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0043d6d9
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
     PUSH 0x1f                           ; 0043d6de
     MOV EBX,dword ptr [0x0068416c]      ; 0043d6e0 | g_CSpotViewInstance | g_CSpotViewPtr
     PUSH EBX                            ; 0043d6e6 | g_CSpotViewInstance
@@ -469,8 +469,8 @@ section .text
     PUSH 0x0                            ; 0043d9d6
     MOV EDX,dword ptr [0x00678a60]      ; 0043d9d8 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 0043d9de | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0043d9df
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380 ; 0043d9df
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 0043d9e4
     CMP dword ptr [ESP + 0x60],0x0      ; 0043d9e7
     JL 0x0043da50                       ; 0043d9ec

@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408a30
 ;   crt_memory.c___vec_delete_FUN_005fe632
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -56,8 +56,8 @@ section .text
     RET                                 ; 004f3c7a
     PUSH EAX                            ; 004f3c7b
         ;   Label: LAB_004f3c7b
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004f3c7c
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 004f3c7c
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 004f3c81
     MOV EAX,EBX                         ; 004f3c84
     POP EBX                             ; 004f3c86

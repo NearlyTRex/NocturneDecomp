@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_tbplayer.cpp_CBassPlayer_ctor_FUN_005da060
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_tbplayer.cpp_factoryFunc_FUN_005da020
     PUSH 0x654b9a                       ; 005da022 | = "..\\core\\tbplayer.cpp"
     PUSH 0x1f710                        ; 005da027
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005da02c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005da02c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005da031
     TEST EAX,EAX                        ; 005da034
     JNZ 0x005da039                      ; 005da036

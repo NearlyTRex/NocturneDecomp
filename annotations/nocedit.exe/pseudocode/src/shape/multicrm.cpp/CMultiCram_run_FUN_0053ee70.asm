@@ -44,8 +44,8 @@
 ;   shape_dsemodel.cpp_CDSEModel_load_FUN_0048f960
 ;   shape_dsemodel.cpp_CDSEModel_processModelPart_FUN_0048f770
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   ... and 1 more
@@ -83,8 +83,8 @@ section .text
     MOV EAX,0x63d0f1                    ; 0053eeb2 | = "..\\shape\\multicrm.cpp"
     PUSH EAX                            ; 0053eeb7 | = "..\\shape\\multicrm.cpp"
     PUSH 0x1f20dc                       ; 0053eeb8
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0053eebd
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0053eebd
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0053eec2
     MOV EDX,dword ptr [EBP + -0xc]      ; 0053eec5
     SHL EDX,0x2                         ; 0053eec8
@@ -450,8 +450,8 @@ section .text
     SHL EAX,0x2                         ; 0053f2cd
     ADD EAX,dword ptr [EBP + 0x14]      ; 0053f2d0
     PUSH dword ptr [EAX + 0x4]          ; 0053f2d3
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0053f2d6
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 0053f2d6
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 0053f2db
     JMP 0x0053f2a6                      ; 0053f2de
         ;   XREF to: 0053f2a6 (UNCONDITIONAL_JUMP)  ; LAB_0053f2a6

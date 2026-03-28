@@ -159,8 +159,8 @@ section .text
     PUSH 0x628be7                       ; 004ba03d | = "..\\engine\\fileio.cpp"
     ADD EAX,0x4                         ; 004ba042
     PUSH EAX                            ; 004ba045
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 004ba046
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 004ba046
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004ba04b
     PUSH EAX                            ; 004ba04e
     CALL crt_memory.c___vec_new_FUN_00601272 ; 004ba04f

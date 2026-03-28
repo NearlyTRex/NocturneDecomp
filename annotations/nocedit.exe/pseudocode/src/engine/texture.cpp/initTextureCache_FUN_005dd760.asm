@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   wincore_wddvmem.cpp_initTextureCache_FUN_005dd760 at 00403790
+;   wincore_wddvmem.cpp_initTextureCache_FUN_00403790 at 00403790
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_texture_cpp_00655455
@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   engine_texture.cpp_CTextureCache_ctor_FUN_005dcab0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
         ;   Label: engine_texture.cpp_initTextureCache_FUN_005dd760
     PUSH 0x655455                       ; 005dd765 | = "..\\engine\\texture.cpp"
     PUSH 0x1400c                        ; 005dd76a
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005dd76f
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005dd76f
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005dd774
     TEST EAX,EAX                        ; 005dd777
     JNZ 0x005dd781                      ; 005dd779

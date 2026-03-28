@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_elephant.cpp_CElephantGun_ctor_FUN_004a6fe0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_elephant.cpp_factoryFunc_FUN_004a6fa0
     PUSH 0x623faf                       ; 004a6fa2 | = "..\\core\\elephant.cpp"
     PUSH 0x584                          ; 004a6fa7
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 004a6fac
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004a6fac
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004a6fb1
     TEST EAX,EAX                        ; 004a6fb4
     JNZ 0x004a6fb9                      ; 004a6fb6

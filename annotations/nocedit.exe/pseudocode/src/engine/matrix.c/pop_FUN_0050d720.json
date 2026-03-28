@@ -20,8 +20,8 @@
     {
       "addr": "0048c640",
       "from_addr": "0048c640",
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720",
-      "type": "UNCONDITIONAL_JUMP"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640",
+      "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0045f1d0",
@@ -268,7 +268,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "004a1f28",
@@ -287,6 +287,17 @@
         "caller": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
         "estimated_params": 0,
         "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "0048c640",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640",
+        "estimated_params": 0,
+        "instructions_analyzed": 0,
         "method": "push_count",
         "reg_params": [],
         "stack_bytes": 0,

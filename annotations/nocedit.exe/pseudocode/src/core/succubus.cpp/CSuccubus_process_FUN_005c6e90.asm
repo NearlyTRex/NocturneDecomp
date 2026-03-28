@@ -309,8 +309,8 @@ section .text
     PUSH 0x16c                          ; 005c7130
     PUSH 0x654162                       ; 005c7135 | = "..\\core\\succubus.cpp"
     PUSH 0xbef0                         ; 005c713a
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005c713f
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005c713f
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005c7144
     TEST EAX,EAX                        ; 005c7147
     JZ 0x005c7154                       ; 005c7149

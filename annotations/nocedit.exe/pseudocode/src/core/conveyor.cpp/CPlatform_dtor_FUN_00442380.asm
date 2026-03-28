@@ -14,7 +14,7 @@
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408a30
 ;   core_course.cpp_CCourse_dtor_FUN_004424e0
 ;   crt_memory.c___vec_delete_FUN_005fe632
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -62,8 +62,8 @@ section .text
     RET                                 ; 004423d7
     PUSH EAX                            ; 004423d8
         ;   Label: LAB_004423d8
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004423d9
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 004423d9
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 004423de
     MOV EAX,EBX                         ; 004423e1
     POP EBX                             ; 004423e3

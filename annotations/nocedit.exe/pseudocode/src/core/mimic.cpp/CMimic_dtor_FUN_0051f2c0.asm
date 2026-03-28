@@ -24,7 +24,7 @@
 ;   core_morph.cpp_CMorph_dtor_FUN_0052b330
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40
 ;   crt_memory.c___vec_delete_FUN_005fe632
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -130,8 +130,8 @@ section .text
     RET                                 ; 0051f3d1
     PUSH EAX                            ; 0051f3d2
         ;   Label: LAB_0051f3d2
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0051f3d3
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 0051f3d3
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 0051f3d8
     MOV EAX,EBX                         ; 0051f3db
     POP EBX                             ; 0051f3dd

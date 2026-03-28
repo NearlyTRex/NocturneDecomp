@@ -40,7 +40,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_hideActorsMenu_FUN_0053dcf0(CDemonMi
         }
       }
       iVar3 = 0;
-      shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_3b8.base);
+      shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_3b8.base);
       while (iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                (&local_3b8,"Hide actors.  Press ESC When done.",iVar3,0), -1 < iVar3)
       {

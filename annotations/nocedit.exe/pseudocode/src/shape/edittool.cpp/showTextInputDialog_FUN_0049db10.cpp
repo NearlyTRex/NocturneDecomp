@@ -68,7 +68,7 @@ LAB_0049dcd6:
   shape_edittool_cpp_CInputString_draw_FUN_0049d9b0(&local_320,g_ClipLeft,g_ClipTop);
   shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_fc,(uint)(iVar6 == 0));
   shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_1e0,(uint)(iVar6 == 1));
-  shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
+  shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
   if ((iVar7 == 0) &&

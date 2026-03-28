@@ -215,7 +215,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
           } while (local_48 < 0x10);
           local_50 = local_50 + 1;
         } while (local_50 < 0x10);
-        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
         return;
       }
     }

@@ -109,7 +109,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
   }
   core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380(this_ptr);
   iVar12 = this_ptr->triangle_count;
-  piVar8 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  piVar8 = (int *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                      (iVar12 * 0x1c + 4,"..\\core\\dtrace.cpp",0x2ed);
   local_44 = piVar8;
   if (piVar8 != (int *)0x0) {

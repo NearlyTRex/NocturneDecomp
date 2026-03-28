@@ -18,6 +18,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
   float fVar11;
   float fVar12;
   float fVar13;
+  CDemonRenderer *this_ptr_00;
   float fVar14;
   int iVar2;
   float10 fVar3;
@@ -29,7 +30,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
   float10 fVar7;
   unkbyte10 Var8;
   float10 fVar9;
-  int local_e8;
+  int iVar17;
   SMRGLHeaderPrimitive local_e0;
   CVector3i local_b8;
   CVector3i local_ac;
@@ -56,8 +57,6 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
   float local_20;
   int local_1c;
   int local_18;
-  float fVar1;
-  CDemonRenderer *this_ptr_00;
   
   if (this_ptr->volumetric_enabled != 0) {
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -69,9 +68,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,g_LightTextures);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-    local_e8 = 1;
+    iVar17 = 1;
     do {
-      fVar3 = (float10)local_e8 *
+      fVar3 = (float10)iVar17 *
               ((float10)18 / (float10)(this_ptr->base).base.focal_length) *
               (float10)0.0625;
       Var8 = fpatan(fVar3,(float10)1);
@@ -88,12 +87,12 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
         fVar16 = (float10)fcos(fVar9);
         fVar7 = (float10)(float)fVar3;
         fVar8 = (float)(fVar15 * fVar7);
-        fVar1 = (float)(this_ptr->shadow_map_height / 2);
+        fVar11 = (float)(this_ptr->shadow_map_height / 2);
         fVar10 = (float)(fVar5 * fVar7);
-        fVar11 = (float)(this_ptr->shadow_map_width / 2);
+        fVar14 = (float)(this_ptr->shadow_map_width / 2);
         fVar11 = (float)this_ptr->shadow_depth_buffer
-                        [(int)ROUND(ROUND(fVar1 - fVar1 * fVar8)) * this_ptr->shadow_map_width +
-                         (int)ROUND(ROUND(fVar11 * fVar10 + fVar11))] * (float)0.00390625;
+                        [(int)ROUND(ROUND(fVar11 - fVar11 * fVar8)) * this_ptr->shadow_map_width +
+                         (int)ROUND(ROUND(fVar14 * fVar10 + fVar14))] * (float)0.00390625;
         iVar2 = 0;
         do {
           fVar14 = (this_ptr->base).max_distance;
@@ -173,9 +172,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
         } while (iVar2 < 4);
         local_4c = local_4c + 1;
       } while (local_4c < 0x10);
-      local_e8 = local_e8 + 1;
-    } while (local_e8 < 0x10);
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+      iVar17 = iVar17 + 1;
+    } while (iVar17 < 0x10);
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
     return;
   }

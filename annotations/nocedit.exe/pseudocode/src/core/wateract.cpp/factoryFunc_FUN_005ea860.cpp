@@ -11,7 +11,8 @@ CWaterActor * __cdecl core_wateract_cpp_factoryFunc_FUN_005ea860(void)
 {
   CWaterActor *pCVar1;
   
-  pCVar1 = (CWaterActor *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2b238,"..\\core\\wateract.cpp",0x55);
+  pCVar1 = (CWaterActor *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+                     (0x2b238,"..\\core\\wateract.cpp",0x55);
   if (pCVar1 == (CWaterActor *)0x0) {
     return (CWaterActor *)0x0;
   }

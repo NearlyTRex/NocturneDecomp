@@ -48,7 +48,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showSoundFilesInMission_FUN_0053ec80
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Finding sound files in script...");
   core_script_cpp_CScript_collectSoundReferences_FUN_00567bc0(g_CScriptPtr,&local_5ac.base);
-  shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_5ac.base);
+  shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_5ac.base);
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
             (&local_5ac,"Sound files used",-1,0);
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5ac,0);

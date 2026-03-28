@@ -113,7 +113,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
        )) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3004.base,"$");
     }
-    shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_3004.base);
+    shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_3004.base);
     uVar10 = 0;
     iVar5 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&local_3004.base,value_buffer);
     iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20

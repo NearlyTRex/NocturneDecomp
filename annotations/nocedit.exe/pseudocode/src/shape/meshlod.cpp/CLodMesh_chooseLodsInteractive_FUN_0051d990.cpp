@@ -101,7 +101,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   iVar7 = -1;
   do {
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xfc);
-    wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
     if (iVar7 == 0) {
       local_d0.distance = local_3d8[0];
     }
@@ -291,7 +291,7 @@ LAB_0051e453:
     iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
     if ((iVar5 != 0) && (0 < iVar7)) {
       _sprintf(local_248,"Delete LOD %d?",iVar7);
-      iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+      iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
                         (g_CEditorToolsPtr,local_248);
       if (iVar5 != 0) {
         local_30 = local_30 + -1;

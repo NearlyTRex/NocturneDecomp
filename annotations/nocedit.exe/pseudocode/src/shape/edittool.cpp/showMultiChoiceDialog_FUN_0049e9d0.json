@@ -25,15 +25,15 @@
   },
   "cross_references": [
     {
-      "addr": "0049f060",
-      "from_addr": "0049f0c4",
-      "name": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
+      "addr": "0049f180",
+      "from_addr": "0049f208",
+      "name": "shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0049f180",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0049f180",
-      "from_addr": "0049f208",
-      "name": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f180",
+      "addr": "0049f060",
+      "from_addr": "0049f0c4",
+      "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -127,6 +127,11 @@
       "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890"
     },
     {
+      "addr": "004a1380",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380"
+    },
+    {
       "addr": "004a0f80",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80"
@@ -135,11 +140,6 @@
       "addr": "004a0dd0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0"
-    },
-    {
-      "addr": "004a1380",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380"
     },
     {
       "addr": "004a2f70",
@@ -154,7 +154,7 @@
     {
       "addr": "0050f1f0",
       "is_variadic": false,
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
+      "name": "shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0"
     },
     {
       "addr": "005fe659",
@@ -336,7 +336,7 @@
       {
         "call_addr": "0049f0c4",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
+        "caller": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -358,7 +358,7 @@
       {
         "call_addr": "0049f208",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f180",
+        "caller": "shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0049f180",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

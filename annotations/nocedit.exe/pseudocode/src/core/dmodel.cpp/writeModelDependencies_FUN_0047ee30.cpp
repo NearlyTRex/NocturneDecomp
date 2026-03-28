@@ -13,7 +13,8 @@ void __cdecl core_dmodel_cpp_writeModelDependencies_FUN_0047ee30(_FILE *dependen
   CKeyFramedModel *pCVar1;
   
   _fprintf(dependency_file,"models\\%s\n",model_filename);
-  this_ptr = (CKeyFramedModel *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x56d8,"..\\core\\dmodel.cpp",0xe8a);
+  this_ptr = (CKeyFramedModel *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+                       (0x56d8,"..\\core\\dmodel.cpp",0xe8a);
   pCVar1 = (CKeyFramedModel *)0x0;
   if (this_ptr != (CKeyFramedModel *)0x0) {
     pCVar1 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(this_ptr);
@@ -31,6 +32,6 @@ void __cdecl core_dmodel_cpp_writeModelDependencies_FUN_0047ee30(_FILE *dependen
     return;
   }
   pCVar1 = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(pCVar1,0);
-  shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(pCVar1);
   return;
 }

@@ -110,7 +110,7 @@ switchD_0044c448_caseD_3:
       wincore_windll_cpp_beginScene_FUN_005b7280();
     }
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
     if (g_UseExternalRenderer != 0) {
       wincore_windll_cpp_clear_FUN_005b7a30();
       wincore_windll_cpp_clearZBuffer_FUN_005b7be0();

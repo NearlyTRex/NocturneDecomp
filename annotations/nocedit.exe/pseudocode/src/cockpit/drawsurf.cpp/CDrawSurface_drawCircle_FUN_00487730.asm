@@ -17,7 +17,7 @@
 ;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30 at 00489e29
 ;
 ; Called Functions:
-;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004878e0
+;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_004878e0
 ;
 ; *****************************************************************************
 
@@ -94,8 +94,8 @@ section .text
     PUSH ECX                            ; 004877ce
     SUB EDI,EBP                         ; 004877cf
     MOV EBX,EBP                         ; 004877d1
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004878e0 ; 004877d3
-        ;   XREF to: 004878e0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004878e0(CDrawSurface * this_ptr, int x, int y, int width, ...)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_004878e0 ; 004877d3
+        ;   XREF to: 004878e0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_004878e0(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 004877d8
     TEST EBP,EBP                        ; 004877db
     JLE 0x00487794                      ; 004877dd
@@ -122,8 +122,8 @@ section .text
     PUSH EDX                            ; 00487801
     MOV ECX,dword ptr [ESP + 0x24]      ; 00487802
     PUSH ECX                            ; 00487806
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004878e0 ; 00487807
-        ;   XREF to: 004878e0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004878e0(CDrawSurface * this_ptr, int x, int y, int width, ...)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_004878e0 ; 00487807
+        ;   XREF to: 004878e0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_004878e0(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 0048780c
     CMP ESI,EBX                         ; 0048780f
     JGE 0x00487794                      ; 00487811

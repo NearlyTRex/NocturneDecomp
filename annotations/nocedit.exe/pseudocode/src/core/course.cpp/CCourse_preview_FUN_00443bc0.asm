@@ -65,7 +65,7 @@
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407d70
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   ... and 7 more
 ;
 ; *****************************************************************************
@@ -176,8 +176,8 @@ section .text
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00443cca
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00443cca
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 00443ccf
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 00443ccf
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
     LEA EAX,[EBP + -0x36]               ; 00443cd4
     PUSH EAX                            ; 00443cd7
     MOV EDI,dword ptr [0x006703ec]      ; 00443cd8 | g_CDemonRendererPtr2
@@ -389,8 +389,8 @@ section .text
     ADD ESP,0x10                        ; 00443f1d
     MOV EDX,dword ptr [0x006703ec]      ; 00443f20 | g_CDemonRendererPtr2
     PUSH EDX                            ; 00443f26 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00443f27
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00443f27
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00443f2c
     SUB ESP,0x8                         ; 00443f2f
         ;   Label: LAB_00443f2f

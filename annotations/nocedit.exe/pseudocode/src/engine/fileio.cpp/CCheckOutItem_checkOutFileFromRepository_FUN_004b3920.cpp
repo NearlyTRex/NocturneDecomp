@@ -67,7 +67,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3
   }
   g_VersionControlSession.overwrite_own_choice = 0;
   g_VersionControlSession.overwrite_writeable_choice = 0;
-  uVar3 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,filename);
+  uVar3 = engine_dosio_c_getFileSize_FUN_00481960((char *)0x0,filename);
   if (((int)uVar3 < 0) || ((uVar3 & 8) != 0)) {
     iVar3 = 1;
   }
@@ -203,7 +203,7 @@ LAB_004b3ae9:
             }
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                       (g_CEditorToolsPtr,"Clearing read-only bit for %s...",local_228);
-            uVar6 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,filename);
+            uVar6 = engine_dosio_c_getFileSize_FUN_00481960((char *)0x0,filename);
             if (((int)uVar6 < 0) || ((uVar6 & 8) == 0)) {
 LAB_004b3f0c:
               if (-1 < (int)uVar6) {

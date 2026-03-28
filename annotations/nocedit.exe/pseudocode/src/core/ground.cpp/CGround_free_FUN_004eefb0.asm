@@ -19,8 +19,8 @@
 ;
 ; Called Functions:
 ;   core_texlist.cpp_CTextureList_dtor_FUN_005dbdf0
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
 
@@ -66,8 +66,8 @@ section .text
         ;   XREF to: 005dbdf0 (UNCONDITIONAL_CALL)  ; CTextureList * core_texlist.cpp_CTextureList_dtor_FUN_005dbdf0(CTextureList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004ef00a
     PUSH EAX                            ; 004ef00d
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004ef00e
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 004ef00e
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 004ef013
     MOV dword ptr [EBX + 0x28],0x0      ; 004ef016
     POP EDI                             ; 004ef01d

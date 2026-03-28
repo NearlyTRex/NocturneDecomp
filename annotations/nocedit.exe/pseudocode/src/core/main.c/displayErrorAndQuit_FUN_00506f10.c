@@ -63,8 +63,8 @@ LAB_00506f71:
           _fprintf(p_Var1,"errno = %d (%s)\n",*puVar3,pcVar1);
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\main.c",0xad);
         }
-        core_sound_cpp_CSound_dtor_FUN_005aaeb0();
-        engine_2d_c_cleanupGraphicsSystem_FUN_005ecd90();
+        core_sound_cpp_CSound_dtor_FUN_005b2d60();
+        engine_2d_c_cleanupGraphicsSystem_FUN_00401130();
         wincore_winrun_cpp_endPeriod_FUN_005f2db0();
                     /* WARNING: Subroutine does not return */
         wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(g_ErrorMessageBuffer_02dd3130);

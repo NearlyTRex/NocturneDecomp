@@ -107,9 +107,9 @@ void __cdecl CFileBitStream::readQuantizedSamples(CFileBitStream *this_ptr,SMpeg
 // Address: 0052fc50
 void __cdecl CFileBitStream::readQuantizedSamplesGrouped(CFileBitStream *this_ptr,SMpegSubbandScalefactors *sample_array,SMpegSubbandAllocation *allocation_array,SBitAllocationTable *allocation_table);
 
-// Original: sound_mp3.cpp_requantizeLayer3Samples_FUN_0052fee0
+// Original: sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0
 // Address: 0052fee0
-void __cdecl requantizeLayer3Samples(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame_info);
+void __cdecl requantizeLayer3SamplesSimple(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame_info);
 
 // Original: sound_mp3.cpp_requantizeSamples_FUN_005301b0
 // Address: 005301b0
@@ -187,9 +187,9 @@ int __cdecl calculateMainDataSize(SMpegFrame frame_info);
 // Address: 00533d30
 int __cdecl initializeHuffmanTables(void);
 
-// Original: sound_mp3.cpp_initializeHuffmanTables_FUN_00533f80
+// Original: sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_00533f80
 // Address: 00533f80
-void __cdecl initializeHuffmanTables(void);
+void __cdecl initializeHuffmanTablesOnce(void);
 
 // Original: sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210
 // Address: 00534210

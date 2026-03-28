@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   core_keyactor.cpp_CKeyActor_ctor_FUN_00501690
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
         ;   Label: core_keyactor.cpp_factoryFunc_FUN_00501650
     PUSH 0x630c1f                       ; 00501652 | = "..\\core\\keyactor.cpp"
     PUSH 0x31c                          ; 00501657
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0050165c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0050165c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00501661
     TEST EAX,EAX                        ; 00501664
     JNZ 0x00501669                      ; 00501666

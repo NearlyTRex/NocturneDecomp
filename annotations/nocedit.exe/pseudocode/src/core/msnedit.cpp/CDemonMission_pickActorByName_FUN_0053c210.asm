@@ -32,7 +32,7 @@
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
-;   shape_edittool.cpp_CStrList_sort_FUN_004a2ec0
+;   shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0
 ;
 ; *****************************************************************************
 
@@ -89,8 +89,8 @@ section .text
         ;   Label: LAB_0053c287
     PUSH EAX                            ; 0053c289
     MOV ESI,0xffffffff                  ; 0053c28a
-    CALL shape_edittool.cpp_CStrList_sort_FUN_004a2ec0 ; 0053c28f
-        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sort_FUN_004a2ec0(CStrList * this_ptr)
+    CALL shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0 ; 0053c28f
+        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 0053c294
     TEST EDI,EDI                        ; 0053c297
     JZ 0x0053c2c2                       ; 0053c299

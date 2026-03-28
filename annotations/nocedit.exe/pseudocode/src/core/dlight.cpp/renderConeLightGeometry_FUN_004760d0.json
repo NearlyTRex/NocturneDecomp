@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 341,
-    "complexity_score": 383,
+    "complexity_score": 385,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 128,
+    "pseudocode_lines": 130,
     "suspect_count": 24,
     "suspect_types": [
       "decompiler_intrinsic",
       "unknown_type",
       "warning_inlined_function"
     ],
-    "total_lines": 469
+    "total_lines": 471
   },
   "cross_references": [
     {
@@ -77,7 +77,7 @@
     {
       "addr": "0048c640",
       "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640"
     },
     {
       "addr": "0048c450",
@@ -453,7 +453,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 59,
       "match": "fpatan",
       "severity": "mild",
       "text": "Var8 = fpatan(fVar3,(float10)1);",
@@ -461,7 +461,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 60,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar4 = (float10)fcos(Var8);",
@@ -469,7 +469,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 67,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar5 = (float10)fsin(fVar12);",
@@ -477,7 +477,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 70,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar6 = (float10)fsin(fVar9);",
@@ -485,7 +485,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 71,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar12 = (float10)fcos(fVar12);",
@@ -493,7 +493,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 72,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar13 = (float10)fcos(fVar9);",
@@ -501,34 +501,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
+      "line": 75,
       "match": "ROUND",
       "severity": "mild",
       "text": "iVar3 = (int)ROUND(ROUND((falloff - fVar8) * (1.0 / falloff) * (float)1024));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iVar3 = (int)ROUND(ROUND((falloff - fVar8) * (1.0 / falloff) * (float)1024));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iVar4 = (int)ROUND(ROUND((falloff - fVar10) * (1.0 / falloff) * (float)1024));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iVar4 = (int)ROUND(ROUND((falloff - fVar10) * (1.0 / falloff) * (float)1024));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -536,7 +512,7 @@
       "line": 75,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_84.x = (int)ROUND(fVar10 * (float)(fVar5 * fVar7) * 256.0f);",
+      "text": "iVar3 = (int)ROUND(ROUND((falloff - fVar8) * (1.0 / falloff) * (float)1024));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -544,7 +520,15 @@
       "line": 76,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_84.y = (int)ROUND(fVar10 * (float)(fVar12 * fVar7) * 256.0f);",
+      "text": "iVar4 = (int)ROUND(ROUND((falloff - fVar10) * (1.0 / falloff) * (float)1024));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 76,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "iVar4 = (int)ROUND(ROUND((falloff - fVar10) * (1.0 / falloff) * (float)1024));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -552,23 +536,23 @@
       "line": 77,
       "match": "ROUND",
       "severity": "mild",
+      "text": "local_84.x = (int)ROUND(fVar10 * (float)(fVar5 * fVar7) * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_84.y = (int)ROUND(fVar10 * (float)(fVar12 * fVar7) * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 79,
+      "match": "ROUND",
+      "severity": "mild",
       "text": "local_84.z = (int)ROUND(fVar10 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_78.x = (int)ROUND(fVar10 * (float)(fVar6 * fVar7) * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_78.y = (int)ROUND(fVar10 * (float)(fVar13 * fVar7) * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -576,23 +560,23 @@
       "line": 82,
       "match": "ROUND",
       "severity": "mild",
+      "text": "local_78.x = (int)ROUND(fVar10 * (float)(fVar6 * fVar7) * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 83,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_78.y = (int)ROUND(fVar10 * (float)(fVar13 * fVar7) * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 84,
+      "match": "ROUND",
+      "severity": "mild",
       "text": "local_78.z = (int)ROUND(fVar10 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_6c.x = (int)ROUND(fVar8 * (float)(fVar6 * fVar7) * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_6c.y = (int)ROUND(fVar8 * (float)(fVar13 * fVar7) * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -600,12 +584,28 @@
       "line": 87,
       "match": "ROUND",
       "severity": "mild",
+      "text": "local_6c.x = (int)ROUND(fVar8 * (float)(fVar6 * fVar7) * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 88,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_6c.y = (int)ROUND(fVar8 * (float)(fVar13 * fVar7) * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 89,
+      "match": "ROUND",
+      "severity": "mild",
       "text": "local_6c.z = (int)ROUND(fVar8 * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 92,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_60[0].x = (int)ROUND(fVar8 * (float)(fVar5 * fVar7) * 256.0f);",
@@ -613,7 +613,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 93,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_60[0].y = (int)ROUND(fVar8 * (float)(fVar12 * fVar7) * 256.0f);",
@@ -621,7 +621,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 94,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_60[0].z = (int)ROUND(fVar8 * 256.0f);",

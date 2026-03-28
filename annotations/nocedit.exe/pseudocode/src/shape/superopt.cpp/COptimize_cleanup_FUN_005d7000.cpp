@@ -24,7 +24,7 @@ void __cdecl shape_superopt_cpp_COptimize_cleanup_FUN_005d7000(COptimize *this_p
       pCVar1 = *(CComplexPolygon **)(iVar2 + (int)this_ptr->complex_polygons);
       if (pCVar1 != (CComplexPolygon *)0x0) {
         pCVar1 = shape_superopt_cpp_CComplexPolygon_dtor_FUN_005c79d0(pCVar1,0);
-        shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
+        shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(pCVar1);
       }
       uVar3 = uVar3 + 1;
       iVar2 = iVar2 + 4;

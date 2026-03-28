@@ -1,22 +1,30 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 60,
+        "line": 81,
+        "message": "use of undeclared identifier 'stack0xffffff88'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 206,
+    "complexity_score": 215,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 24,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 81,
-    "suspect_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 75,
+    "suspect_count": 13,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "stack_ref"
     ],
-    "total_lines": 287
+    "total_lines": 281
   },
   "cross_references": [
     {
@@ -57,7 +65,7 @@
     {
       "addr": "0048c640",
       "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640"
     },
     {
       "addr": "0048c450",
@@ -289,19 +297,12 @@
     "pcode_op_count": 899
   },
   "stack_frame": {
-    "frame_size": 128,
-    "local_size": 124,
+    "frame_size": 88,
+    "local_size": 84,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "local_78",
-        "offset": -120,
-        "size": 24,
-        "type": "SMRGLHeaderPrimitive"
-      },
       {
         "is_param": false,
         "name": "local_50",
@@ -370,7 +371,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 30,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_2c.x = (int)ROUND(fVar1 * 256.0f);",
@@ -378,7 +379,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 31,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_2c.y = (int)ROUND(fVar1 * 256.0f);",
@@ -386,7 +387,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 32,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_2c.z = (int)ROUND(256.0f * 0.0);",
@@ -394,7 +395,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 36,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_14.x = (int)ROUND(local_44 * 256.0f);",
@@ -402,7 +403,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 37,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_14.y = (int)ROUND(fVar1 * 256.0f);",
@@ -410,7 +411,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 38,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_14.z = (int)ROUND(256.0f * 0.0);",
@@ -418,7 +419,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 42,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_38.x = (int)ROUND(local_44 * 256.0f);",
@@ -426,7 +427,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 43,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_38.y = (int)ROUND(local_40 * 256.0f);",
@@ -434,7 +435,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 44,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_38.z = (int)ROUND(256.0f * 0.0);",
@@ -442,7 +443,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 48,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_50.x = (int)ROUND(local_44 * 256.0f);",
@@ -450,7 +451,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 49,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_50.y = (int)ROUND(local_40 * 256.0f);",
@@ -458,11 +459,19 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 50,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_50.z = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 74,
+      "match": "&stack0xffffff88",
+      "severity": "moderate",
+      "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff88);",
+      "type": "stack_ref"
     }
   ]
 }

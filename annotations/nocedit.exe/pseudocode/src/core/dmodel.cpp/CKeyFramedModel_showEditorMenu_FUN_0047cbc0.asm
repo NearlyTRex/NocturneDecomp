@@ -218,8 +218,8 @@ section .text
     MOV dword ptr [EAX + 0x15ae7c],0x4844 ; 0047cc94 | g_CDemonSetInstance.light_direction.z
     ADD ESP,0x14                        ; 0047cc9e
     MOV dword ptr [EAX + 0x15ae80],0x7d00 ; 0047cca1 | g_CDemonSetInstance.ambient_base_quick
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0047ccab
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0047ccab
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
     MOV EAX,[0x00679394]                ; 0047ccb0 | g_WindowWidth
     MOV EDX,EAX                         ; 0047ccb5
     SAR EDX,0x1f                        ; 0047ccb7
@@ -332,8 +332,8 @@ section .text
     MOV ESI,dword ptr [0x006703e8]      ; 0047cde3 | g_CDemonRendererPtr1
     PUSH ESI                            ; 0047cde9 | g_CDemonRendererInstance
     MOV EDI,dword ptr [EBP + 0x26]      ; 0047cdea
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0047cded
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 0047cded
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     MOV ESI,dword ptr [EBP + 0x2e]      ; 0047ce5a
         ;   Label: LAB_0047ce5a
     TEST ESI,ESI                        ; 0047ce5d
@@ -1249,8 +1249,8 @@ section .text
     PUSH EAX                            ; 0047d889 | = "You haven't crammed this model.  Save..."
     MOV ESI,dword ptr [0x00678a60]      ; 0047d88a | g_CEditorToolsPtr
     PUSH ESI                            ; 0047d890 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 0047d891
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 0047d891
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0047d896
     TEST EAX,EAX                        ; 0047d899
     JNZ 0x0047d83f                      ; 0047d89b

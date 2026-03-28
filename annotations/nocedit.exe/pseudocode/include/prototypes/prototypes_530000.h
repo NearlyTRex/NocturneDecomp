@@ -50,7 +50,7 @@ void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_00533690(float *input_sample
 void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *this_ptr,float *input_samples,float *output_buffer,int subband_index, int channel,SMpegFrame *frame_info,SMpegFrameHeader *header);
 int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_00533c50(SMpegFrame frame_info);
 int __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533d30(void);
-void __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533f80(void);
+void __cdecl sound_mp3_cpp_initializeHuffmanTablesOnce_FUN_00533f80(void);
 void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void);
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(CMP3Decoder *this_ptr);
 CMP3Decoder * __cdecl sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(CMP3Decoder *this_ptr,uint flags);

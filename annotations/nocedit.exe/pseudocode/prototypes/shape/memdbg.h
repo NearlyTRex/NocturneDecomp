@@ -47,21 +47,21 @@ void __cdecl traceMemory(char *format,...) __attribute__((format(printf, 1, 2)))
 // Address: 0050f180
 void __cdecl traceFile(char *format,...) __attribute__((format(printf, 1, 2)));
 
-// Original: shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+// Original: shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 // Address: 0050f1b0
-void * __cdecl debugAlloc(int size,char *filename,int line_number);
+void * __cdecl debugAllocTracked(int size,char *filename,int line_number);
 
 // Original: shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
 // Address: 0050f1d0
 void * __cdecl debugAlloc(int size);
 
-// Original: shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+// Original: shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 // Address: 0050f1f0
-void * __cdecl debugAlloc(int size,char *filename,int line_number);
+void * __cdecl debugAllocTracked(int size,char *filename,int line_number);
 
-// Original: shape_memdbg.cpp_debugFree_FUN_0050f210
+// Original: shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 // Address: 0050f210
-void __cdecl debugFree(void *ptr);
+void __cdecl debugFreeChecked(void *ptr);
 
 // Original: shape_memdbg.cpp_debugMalloc_FUN_0050f250
 // Address: 0050f250

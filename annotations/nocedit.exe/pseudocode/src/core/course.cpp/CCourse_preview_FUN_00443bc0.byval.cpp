@@ -99,7 +99,7 @@ __asm {
         mov dword ptr [EBP + -0x2e],EAX
     LAB_00443cca:
         call wincore_windll_cpp_clearScreen_FUN_005b3e70
-        call wincore_windll_cpp_clearZBuffer_FUN_005b3ed4
+        call wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4
         lea EAX,[EBP + -0x36]
         push EAX
         mov EDI,dword ptr [g_CDemonRendererPtr2]
@@ -286,7 +286,7 @@ __asm {
         add ESP,0x10
         mov EDX,dword ptr [g_CDemonRendererPtr2]
         push EDX
-        call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720
+        call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640
         add ESP,0x4
     LAB_00443f2f:
         sub ESP,0x8

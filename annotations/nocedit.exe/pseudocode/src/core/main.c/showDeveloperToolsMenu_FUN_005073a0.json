@@ -4,12 +4,6 @@
       {
         "category": "other",
         "column": 24,
-        "line": 152,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 24,
         "line": 153,
         "message": "member reference base type 'int' is not a structure or union"
       },
@@ -48,6 +42,12 @@
         "column": 24,
         "line": 159,
         "message": "member reference base type 'int' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 24,
+        "line": 160,
+        "message": "member reference base type 'int' is not a structure or union"
       }
     ],
     "success": false,
@@ -55,18 +55,18 @@
   },
   "complexity": {
     "assembly_lines": 620,
-    "complexity_score": 314,
+    "complexity_score": 315,
     "cross_reference_count": 1,
     "function_call_count": 49,
     "global_count": 54,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 214,
+    "pseudocode_lines": 215,
     "suspect_count": 9,
     "suspect_types": [
       "stack_alignment_array",
       "unknown_field"
     ],
-    "total_lines": 834
+    "total_lines": 835
   },
   "cross_references": [
     {
@@ -261,7 +261,7 @@
     {
       "addr": "004a1380",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380"
+      "name": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380"
     },
     {
       "addr": "0049e6a0",
@@ -301,12 +301,12 @@
     {
       "addr": "0050f1b0",
       "is_variadic": false,
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+      "name": "shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0"
     },
     {
       "addr": "0050f210",
       "is_variadic": false,
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+      "name": "shape_memdbg.cpp_debugFreeChecked_FUN_0050f210"
     },
     {
       "addr": "0050f6c0",
@@ -798,7 +798,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 145,
+      "line": 146,
       "match": "._0_1_",
       "severity": "mild",
       "text": "aiStack_1c[0]._0_1_ = \"memdump.txt\"[4];",
@@ -806,7 +806,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 146,
+      "line": 147,
       "match": "._1_1_",
       "severity": "mild",
       "text": "aiStack_1c[0]._1_1_ = \"memdump.txt\"[5];",
@@ -814,7 +814,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 147,
+      "line": 148,
       "match": "._2_1_",
       "severity": "mild",
       "text": "aiStack_1c[0]._2_1_ = \"memdump.txt\"[6];",
@@ -822,7 +822,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 148,
+      "line": 149,
       "match": "._3_1_",
       "severity": "mild",
       "text": "aiStack_1c[0]._3_1_ = \"memdump.txt\"[7];",
@@ -830,7 +830,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 149,
+      "line": 150,
       "match": "._0_1_",
       "severity": "mild",
       "text": "aiStack_1c[1]._0_1_ = \"memdump.txt\"[8];",
@@ -838,7 +838,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 150,
+      "line": 151,
       "match": "._1_1_",
       "severity": "mild",
       "text": "aiStack_1c[1]._1_1_ = \"memdump.txt\"[9];",
@@ -846,7 +846,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 151,
+      "line": 152,
       "match": "._2_1_",
       "severity": "mild",
       "text": "aiStack_1c[1]._2_1_ = \"memdump.txt\"[10];",
@@ -854,7 +854,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 152,
+      "line": 153,
       "match": "._3_1_",
       "severity": "mild",
       "text": "aiStack_1c[1]._3_1_ = \"memdump.txt\"[0xb];",

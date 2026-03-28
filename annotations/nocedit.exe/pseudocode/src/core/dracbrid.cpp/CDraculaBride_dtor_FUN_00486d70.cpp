@@ -40,6 +40,6 @@ CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_00486d70(CDracu
   if ((flags & 2) == 0) {
     return ptr;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
   return ptr;
 }

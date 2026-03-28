@@ -107,7 +107,7 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
       }
     }
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
               (g_CDemonRendererPtr2,(CVector3f *)&local_cc.pitch);
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
@@ -222,7 +222,7 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
                 (g_CDemonRendererPtr2,(CVector3i *)&local_98,(CVector3i *)0x0);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                 (model_ptr,0,(CKeyFramedModelInstance *)0x0,-1);
-      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     }
     _sprintf(&stack0xfffffed0,"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f");
     engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,0,0);

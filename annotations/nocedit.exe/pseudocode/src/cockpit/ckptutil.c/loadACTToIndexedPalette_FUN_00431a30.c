@@ -6,17 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_c */
-
 void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(char *filename,uchar *output_palette)
 
 {
-  byte *pbVar4;
-  byte local_30c [768];
-  uchar local_c;
-  byte bVar3;
   byte *pbVar1;
   byte *pbVar2;
+  byte bVar3;
+  byte *pbVar4;
+  byte local_30c [768];
   
   cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(filename,local_30c);
   pbVar4 = local_30c;
@@ -30,6 +27,6 @@ void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(char *filen
          [((int)(uint)*pbVar2 >> 3) +
           ((int)(uint)bVar3 >> 3) * 0x400 + ((int)(uint)*pbVar1 >> 3) * 0x20];
     output_palette = output_palette + 1;
-  } while (pbVar4 != &local_c);
+  } while (pbVar4 != &stack0xfffffff4);
   return;
 }

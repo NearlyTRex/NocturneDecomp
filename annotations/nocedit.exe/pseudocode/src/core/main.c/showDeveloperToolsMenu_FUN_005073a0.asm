@@ -363,8 +363,8 @@ section .text
     PUSH EDI                            ; 00507705
     MOV EDX,dword ptr [0x00678a60]      ; 00507706 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 0050770c | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0050770d
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380 ; 0050770d
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 00507712
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00507715
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -428,8 +428,8 @@ section .text
         ;   Label: LAB_005077a6
     PUSH 0x6351d2                       ; 005077ab | = "..\\core\\main.c"
     PUSH 0x56d8                         ; 005077b0
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005077b5
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005077b5
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005077ba
     TEST EAX,EAX                        ; 005077bd
     JZ 0x005077ca                       ; 005077bf
@@ -469,8 +469,8 @@ section .text
         ;   XREF to: 00476d90 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00507821
     PUSH EAX                            ; 00507824
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00507825
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 00507825
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 0050782a
     JMP 0x00507522                      ; 0050782d
         ;   XREF to: 00507522 (UNCONDITIONAL_JUMP)  ; LAB_00507522
@@ -504,8 +504,8 @@ section .text
         ;   Label: LAB_0050787b
     PUSH 0x63520d                       ; 00507880 | = "..\\core\\main.c"
     PUSH 0xc2c                          ; 00507885
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0050788a
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0050788a
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0050788f
     TEST EAX,EAX                        ; 00507892
     JNZ 0x005078e0                      ; 00507894
@@ -532,8 +532,8 @@ section .text
         ;   XREF to: 0052b330 (UNCONDITIONAL_CALL)  ; CMorph * core_morph.cpp_CMorph_dtor_FUN_0052b330(CMorph * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005078cf
     PUSH EAX                            ; 005078d2
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005078d3
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005078d3
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005078d8
     JMP 0x00507522                      ; 005078db
         ;   XREF to: 00507522 (UNCONDITIONAL_JUMP)  ; LAB_00507522

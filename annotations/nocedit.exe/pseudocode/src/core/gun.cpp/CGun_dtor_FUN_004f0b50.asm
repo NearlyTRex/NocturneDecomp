@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   core_weapon.cpp_CWeapon_dtor_FUN_005edf80
 ;   crt_memory.c___vec_delete_FUN_005fe632
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     RET                                 ; 004f0b90
     PUSH EAX                            ; 004f0b91
         ;   Label: LAB_004f0b91
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004f0b92
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 004f0b92
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 004f0b97
     MOV EAX,EBX                         ; 004f0b9a
     POP EBX                             ; 004f0b9c

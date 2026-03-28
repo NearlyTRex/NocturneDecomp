@@ -1,0 +1,244 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 245,
+    "complexity_score": 125,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 100,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 345
+  },
+  "cross_references": [
+    {
+      "addr": "00534d40",
+      "from_addr": "00535452",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052fee0",
+    "address_range": [
+      [
+        "0052fee0",
+        "005301ac"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0",
+    "signature": "void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame_info)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0067d860",
+      "name": "g_MpegRequantizationScaleTable",
+      "type": "double[17]",
+      "value": null
+    },
+    {
+      "addr": "0067d8e8",
+      "name": "g_MpegRequantizationOffsetTable",
+      "type": "double[17]",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00535452",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.837320574162679,
+    "instruction_count": 209,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 38,
+      "BOOL_OR": 3,
+      "BRANCH": 5,
+      "CBRANCH": 13,
+      "COPY": 274,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 126,
+      "INT_AND": 198,
+      "INT_CARRY": 23,
+      "INT_EQUAL": 123,
+      "INT_LEFT": 12,
+      "INT_LESS": 10,
+      "INT_MULT": 11,
+      "INT_NOTEQUAL": 21,
+      "INT_OR": 35,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 26,
+      "INT_SLESS": 70,
+      "INT_SUB": 22,
+      "INT_XOR": 13,
+      "LOAD": 68,
+      "POPCOUNT": 57,
+      "RETURN": 1,
+      "STORE": 44
+    },
+    "pcode_op_count": 1220
+  },
+  "stack_frame": {
+    "frame_size": 108,
+    "local_size": 92,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "SBitAllocationTable *"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4 *"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4 *"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "scalefactor_indices",
+        "offset": 4,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "quantized_samples",
+        "offset": 8,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "dequantized_output",
+        "offset": 12,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "frame_info",
+        "offset": 16,
+        "size": 4,
+        "type": "SMpegFrame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "local_24 = (uint *)((int)dequantized_output + local_40 + local_54);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "[*(int *)((int)quantized_samples + local_54 + local_1c * 0x80) * 4];",
+      "type": "pointer_cast"
+    }
+  ]
+}

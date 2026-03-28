@@ -6,7 +6,6 @@
 ; Parameters:
 ; CParticle *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; float[998]       Stack[-0x105c]:3992  afStackY_105c
 ; CVector3i        Stack[-0x74]:12  local_74
 ; undefined1[52]   Stack[-0x68]:52  local_68
 ; float[2]         Stack[-0x34]:8  afStack_34

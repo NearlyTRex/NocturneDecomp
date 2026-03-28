@@ -40,7 +40,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 ;   shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870
 ;   shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
 ;
@@ -75,8 +75,8 @@ section .text
     PUSH 0x637724                       ; 0051703c | = "..\\shape\\meshlod.cpp"
     ADD EAX,0x4                         ; 00517041
     PUSH EAX                            ; 00517044
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00517045
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00517045
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0051704a
     TEST EAX,EAX                        ; 0051704d
     JZ 0x00517057                       ; 0051704f

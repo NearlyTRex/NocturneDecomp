@@ -1,0 +1,105 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 201,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 186,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 189
+  },
+  "cross_references": [
+    {
+      "addr": "005f3680",
+      "from_addr": "005f3900",
+      "name": "wincore_winrun.cpp_winMain_FUN_005f3680",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00507a50",
+    "address_range": [
+      [
+        "00507a50",
+        "00507a54"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_main.c_enterMainGameMenu_FUN_00507a50",
+    "signature": "int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005f3900",
+        "call_type": "direct",
+        "caller": "wincore_winrun.cpp_winMain_FUN_005f3680",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 1.0,
+    "instruction_count": 1,
+    "opcode_distribution": {
+      "BRANCH": 1
+    },
+    "pcode_op_count": 1
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "iStack_c",
+        "offset": -12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_8",
+        "offset": -8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(char *)((int)",
+      "severity": "mild",
+      "text": "*(char *)((int)pacVar6 + 1) = cVar1;",
+      "type": "pointer_cast"
+    }
+  ]
+}

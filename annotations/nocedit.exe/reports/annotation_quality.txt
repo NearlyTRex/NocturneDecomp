@@ -11,10 +11,10 @@ manual annotation work.
 SUMMARY STATISTICS
 ====================================================================================================
 
-  Total functions analyzed:          6,452
+  Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        223 ( 3.5%)
+  Functions with type issues:        227 ( 3.5%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -23,7 +23,7 @@ SUMMARY STATISTICS
     Missing register params:           0
     Wrong calling convention:          3
     Undefined types in variables:      212
-    Unresolved stack params:           14
+    Unresolved stack params:           17
 
   Excluded (.keep / MMX / by-value):   14 functions
     Wrong calling convention:          0
@@ -91,7 +91,7 @@ Wrong calling convention (unaffected register usage) (3)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (14)
+Unresolved stack parameters (missing from signature) (17)
 --------------------------------------------------------------------------------
 
   CWinFont_setColorAndDrawText
@@ -118,16 +118,34 @@ Unresolved stack parameters (missing from signature) (14)
     Signature: void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
     Suggested: Signature is missing stack parameters entirely
 
-  CCloth_boneEditor
-    Address: 0x0043c880  File: core/cloth.cpp
-    Evidence: in_stack_fffffac8, in_stack_fffffac8, in_stack_fffffac8
-    Signature: void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
+  CBugs_renderOpaque
+    Address: 0x004251b0  File: core/bugs.cpp
+    Evidence: in_stack_00000008, in_stack_00000008
+    Signature: int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
+  CVehicle_renderOpaque
+    Address: 0x005e88c0  File: core/vehicle.cpp
+    Evidence: in_stack_0000000c, in_stack_0000000c
+    Signature: int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDemonSet_buildCameraCoverageMap
+    Address: 0x0057fd00  File: core/setedit.cpp
+    Evidence: in_stack_ffffffb0, in_stack_ffffffb0
+    Signature: void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDemonSet *this_ptr,char *coverage_map,int exclude_camera_index)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonActor_processMeleeHit
     Address: 0x0040a210  File: core/actor.cpp
     Evidence: in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70, in_stack_fffffd6c, in_stack_fffffd70
     Signature: int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,int hit_type)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDemonMission_enemyRandomizer
+    Address: 0x005379e0  File: core/msnedit.cpp
+    Evidence: in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc
+    Signature: void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonMission *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CWerewolf_process
@@ -707,7 +725,7 @@ Undefined types in variables (212)
     Locals:  local_48 (undefined4), uStack_44 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  requantizeLayer3Samples
+  requantizeLayer3SamplesSimple
     Address: 0x0052fee0  File: sound/mp3.cpp
     Locals:  local_34 (undefined4 *), local_24 (undefined4 *)
     Suggested: Resolve undefined types to concrete types
@@ -1363,56 +1381,13 @@ Undefined types - by-value struct passing (3)
     Suggested: Resolve undefined types to concrete types
 
 ====================================================================================================
-FUNCTION NAME / ADDRESS MISMATCHES (14)
+FUNCTION NAME / ADDRESS MISMATCHES (0)
 ====================================================================================================
 
-Functions where the FUN_XXXXXXXX suffix does not match the actual entry point.
-These were likely renamed or moved and the name suffix was not updated.
-
-  engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90                        
-    FUN_ says: 0x005ecd90   actual: 0x00401130   file: engine/2d.c
-
-  engine_2d.c_resetGraphicsSystem_FUN_005ed2a0                          
-    FUN_ says: 0x005ed2a0   actual: 0x00402a70   file: engine/2d.c
-
-  engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0                   
-    FUN_ says: 0x005ed4b0   actual: 0x00402a80   file: engine/2d.c
-
-  wincore_wddvmem.cpp_initTextureCache_FUN_005dd760                     
-    FUN_ says: 0x005dd760   actual: 0x00403790   file: wincore/wddvmem.cpp
-
-  wincore_wddvmem.cpp_freeTextureCache_FUN_005dd7a0                     
-    FUN_ says: 0x005dd7a0   actual: 0x004037a0   file: wincore/wddvmem.cpp
-
-  cockpit_ckptutil.c_applyColorPalette_FUN_004319b0                     
-    FUN_ says: 0x004319b0   actual: 0x00431830   file: cockpit/ckptutil.c
-
-  engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620             
-    FUN_ says: 0x0050d620   actual: 0x0048c630   file: engine/drender.cpp
-
-  engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720              
-    FUN_ says: 0x0050d720   actual: 0x0048c640   file: engine/drender.cpp
-
-  engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480            
-    FUN_ says: 0x0050e480   actual: 0x0048c8c0   file: engine/drender.cpp
-
-  engine_fileio.cpp_logOnAsVersionControlUser_FUN_004b2770              
-    FUN_ says: 0x004b2770   actual: 0x004bcea0   file: engine/fileio.cpp
-
-  engine_fileio.cpp_logOffVersionControl_FUN_004b2830                   
-    FUN_ says: 0x004b2830   actual: 0x004bceb0   file: engine/fileio.cpp
-
-  core_inv.cpp_CInventory_hasItemOfClass_FUN_004fe9d0                   
-    FUN_ says: 0x004fe9d0   actual: 0x004fea20   file: core/inv.cpp
-
-  core_main.c_enterMainGameMenu_FUN_00512f40                            
-    FUN_ says: 0x00512f40   actual: 0x00507a50   file: core/main.c
-
-  core_sound.cpp_CSound_dtor_FUN_005aaeb0                               
-    FUN_ says: 0x005aaeb0   actual: 0x005b2d60   file: core/sound.cpp
+  No mismatches found.
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (64 groups)
+DUPLICATE FUNCTION NAMES (42 groups)
 ====================================================================================================
 
 Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
@@ -1421,14 +1396,6 @@ Some are legitimate overloads, others may need disambiguating names.
   cockpit_drawsurf.cpp_CDrawSurface_ctor  (2 functions)
     0x00486e70  (CDrawSurface *this_ptr)
     0x00486ea0  (CDrawSurface *this_ptr,int x,int y,int width,int height,C...)
-
-  cockpit_drawsurf.cpp_CDrawSurface_drawCenteredRectangle  (2 functions)
-    0x00488550  (CDrawSurface *this_ptr,int center_x,int center_y,int widt...)
-    0x004886c0  (CDrawSurface *this_ptr,int center_x,int center_y,int widt...)
-
-  cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline  (2 functions)
-    0x004878e0  (CDrawSurface *this_ptr,int x,int y,int width,int height)
-    0x004884d0  (CDrawSurface *this_ptr,int x,int y,int width,int height)
 
   cockpit_pkbmpset.cpp_CPackedBitmapSet_doNothing  (2 functions)
     0x0054c7c0  (CPackedBitmapSet *this_ptr)
@@ -1464,23 +1431,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0043e2c0  (CVector3f *a,CVector3f *b)
     0x0043e320  (CVector3f *a,CVector3f *b)
 
-  core_dcamera.cpp_CDemonCamera_renderLightCoronas  (2 functions)
-    0x00450ac0  (CDemonCamera *this_ptr,CDemonLight *light_source)
-    0x004518f0  (CDemonCamera *this_ptr,void *p1,int p2)
-
-  core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput  (2 functions)
-    0x004917bc  (ulonglong *output_buffer,ulonglong *texture_buffer,byte *...)
-    0x00491c9a  (ulonglong *output_buffer,ulonglong *texture_buffer,byte *...)
-
-  core_dstrender.cpp_blendLightmapToTexture64BitOutput  (3 functions)
-    0x004924a9  (ulonglong *output_buffer,ulonglong *texture_buffer,byte *...)
-    0x004925c5  (ulonglong *output_buffer,ulonglong *texture_buffer,byte *...)
-    0x00492bd5  (uint *output_buffer,ulonglong *texture_buffer,byte *textu...)
-
-  core_dstrender.cpp_blendLightmapToTextureMMX  (2 functions)
-    0x00492f03  (uint *output_buffer,ulonglong *texture_buffer,byte *textu...)
-    0x00493dc4  (ulonglong *output_buffer,ulonglong *texture_buffer,byte *...)
-
   core_filmreel.cpp_factoryFunc  (2 functions)
     0x004be670  (void)
     0x004bea00  (void)
@@ -1492,18 +1442,6 @@ Some are legitimate overloads, others may need disambiguating names.
   core_netgame.cpp_copyInteger  (2 functions)
     0x00543e20  (int *dest,int *src)
     0x00543e30  (int *dest,int *src)
-
-  core_set.cpp_CDemonSet_setCameraView  (2 functions)
-    0x0056ae50  (CDemonSet *this_ptr,int index)
-    0x00570c70  (CDemonSet *this_ptr)
-
-  core_setdir.cpp_CZThumb_saveZBufferTable  (2 functions)
-    0x005747d0  (CZThumb *this_ptr,int count)
-    0x00574910  (CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_a...)
-
-  core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox  (2 functions)
-    0x005a05e0  (CDeformableModelInstance *this_ptr)
-    0x005a16c0  (CDeformableModelInstance *this_ptr,CBoundingBox3D *output...)
 
   core_skeleton.cpp_CVector3f_arrdtor  (2 functions)
     0x005a1ff0  (CVector3f *objs,uint flags)
@@ -1521,8 +1459,8 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00401590  (char *filename)
     0x00402860  (char *filename)
 
-  engine_2d.c_drawCharacter  (2 functions)
-    0x00401610  (int char_code,int x_pos,int y_pos)
+  engine_2d.c_drawCharacterMasked  (2 functions)
+    0x00401900  (int char_code,int x_pos,int y_pos)
     0x00401a10  (int char_code,int x_pos,int y_pos,int color)
 
   engine_3d.c_oldFunction  (8 functions)
@@ -1543,34 +1481,9 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00403ad0  (SMRGLHeaderPrimitive *primitive)
     0x004066d0  (SMRGLHeaderPrimitive *prim)
 
-  engine_3d.c_renderPolygonLitDetailed  (2 functions)
-    0x00404220  (SMRGLHeaderPrimitive *prim)
-    0x00406a20  (SMRGLHeaderPrimitive *prim)
-
-  engine_3d.c_renderPolygonTextureNormalized  (2 functions)
-    0x00403f20  (SMRGLHeaderPrimitive *prim)
-    0x004044a0  (SMRGLHeaderPrimitive *primitive)
-
-  engine_3d.c_renderPolygonTexturePerspectiveCorrect  (2 functions)
-    0x004060a0  (SMRGLHeaderPrimitive *prim)
-    0x00406290  (SMRGLHeaderPrimitive *prim)
-
-  engine_3d.c_renderPolygonUVTextureEnable  (3 functions)
-    0x00405170  (SMRGLHeaderPrimitive *prim)
-    0x00405350  (SMRGLHeaderPrimitive *prim)
-    0x00405a00  (SMRGLHeaderPrimitive *prim)
-
-  engine_3d.c_renderPolygonUVTextureNormalized  (2 functions)
-    0x00405430  (SMRGLHeaderPrimitive *prim)
-    0x004061f0  (SMRGLHeaderPrimitive *prim)
-
   engine_3d.c_renderPolygonVertexLitNormalized  (2 functions)
     0x00404f80  (SMRGLHeaderPrimitive *prim)
     0x00405020  (SMRGLHeaderPrimitive *prim)
-
-  engine_3d.c_setRenderAlpha  (2 functions)
-    0x00406d60  (SMRGLHeaderExtended *block)
-    0x00406d80  (int alpha_color_value)
 
   engine_boss.c_modelStructNotSupported  (5 functions)
     0x0041db50  (SMRGLHeaderExtended *mrgl_data)
@@ -1579,17 +1492,21 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0041dbe0  (SMRGLHeaderExtended *mrgl_data)
     0x0041dc20  (SMRGLHeaderExtended *mrgl_data)
 
-  engine_dosio.c_getFileTimestamp  (2 functions)
-    0x004818d0  (char *directory_path,char *filename)
+  engine_dosio.c_getFileSize  (2 functions)
+    0x00481880  (char *directory,char *filename)
     0x00481960  (char *directory,char *filename)
 
   engine_drender.cpp_CDemonRenderer_setRenderAlpha  (2 functions)
     0x0048ca60  (CDemonRenderer *this_ptr,int render_alpha)
     0x0048ca70  (CDemonRenderer *this_ptr,float render_alpha)
 
-  engine_matrix.c_matrixPushAndTransform  (2 functions)
-    0x0050cee0  (int rot_x,int rot_y,int rot_z,int translate_x,int transla...)
-    0x0050db00  (int rotation_x,int rotation_y,int rotation_z)
+  engine_fileio.cpp_logOffVersionControl  (2 functions)
+    0x004b2830  (void)
+    0x004bceb0  (void)
+
+  engine_fileio.cpp_logOnAsVersionControlUser  (2 functions)
+    0x004b2770  (void)
+    0x004bcea0  (void)
 
   engine_ncursfx.cpp_CAlphaBitmap_arrdtor  (2 functions)
     0x00544730  (CAlphaBitmap *objs,uint flags)
@@ -1604,26 +1521,13 @@ Some are legitimate overloads, others may need disambiguating names.
     0x0045c510  (void)
     0x0045ce00  (void)
 
-  shape_edittool.cpp_CEditorTools_setMousePointerType  (2 functions)
-    0x004a1380  (CEditorTools *this_ptr,int use_clipping)
-    0x004a2920  (CEditorTools *this_ptr,int cursor_type,int width,int height)
-
-  shape_edittool.cpp_CEditorTools_showConfirmationDialog  (2 functions)
+  shape_edittool.cpp_CEditorTools_showYesNoDialog  (2 functions)
     0x0049f060  (CEditorTools *this_ptr,char *format_string,...)
-    0x0049f180  (CEditorTools *this_ptr,char *format,...)
+    0x0049f0f0  (CEditorTools *this_ptr,char *format_string,...)
 
-  shape_edittool.cpp_CStrList_sort  (2 functions)
-    0x004a2ec0  (CStrList *this_ptr)
-    0x004a2f00  (CStrList *this_ptr,int sort_type,int sort_order)
-
-  shape_memdbg.cpp_debugAlloc  (3 functions)
+  shape_memdbg.cpp_debugAllocTracked  (2 functions)
     0x0050f1b0  (int size,char *filename,int line_number)
-    0x0050f1d0  (int size)
     0x0050f1f0  (int size,char *filename,int line_number)
-
-  shape_memdbg.cpp_debugFree  (2 functions)
-    0x0050f210  (void *ptr)
-    0x0050f460  (void *ptr,char *filename,int line_number)
 
   shape_meshlod.cpp_copyFloat  (3 functions)
     0x0051f090  (float *dest_ptr,float *src_ptr)
@@ -1655,14 +1559,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x005d8190  (CVec *this_ptr,CVec *other)
     0x005d82b0  (CVec *this_ptr,CVec *other)
 
-  sound_mp3.cpp_initializeHuffmanTables  (2 functions)
-    0x00533d30  (void)
-    0x00533f80  (void)
-
-  sound_mp3.cpp_requantizeLayer3Samples  (2 functions)
-    0x0052fee0  (int *scalefactor_indices,uint *quantized_samples,float *d...)
-    0x00531d50  (SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubb...)
-
   sound_sndmain.cpp_doNothing  (2 functions)
     0x005adde0  (void)
     0x005addf0  (void)
@@ -1674,18 +1570,6 @@ Some are legitimate overloads, others may need disambiguating names.
   support_trisock.cpp_shouldNeverBeCalled  (2 functions)
     0x005e1a80  (int unknown1,int unknown2)
     0x005e1ab0  (int unknown1,int unknown2)
-
-  wincore_windll.cpp_clearZBuffer  (2 functions)
-    0x005b3ed4  (void)
-    0x005b7be0  (void)
-
-  wincore_windll.cpp_selectTexture  (2 functions)
-    0x005b72b3  (SMRGLTextureBasic *texture_info)
-    0x005b7340  (SMRGLTextureBasic *tex,byte *palette_data)
-
-  wincore_windll.cpp_updateTexture  (2 functions)
-    0x005b72fb  (SMRGLTextureBasic *texture_info)
-    0x005b7380  (SMRGLTextureBasic *tex,SRGBColorPalette *palette_data)
 
   wincore_winrun.cpp_doNothing  (2 functions)
     0x005f2f80  (void)

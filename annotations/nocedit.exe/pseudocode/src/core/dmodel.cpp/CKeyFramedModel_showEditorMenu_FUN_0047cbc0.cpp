@@ -170,7 +170,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     (pCVar6->light_direction).y = -0x4844;
     (pCVar6->light_direction).z = 0x4844;
     pCVar6->ambient_base_quick = 32000;
-    wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
     iVar9 = g_WindowWidth / 2 + -0x28;
     if (this_ptr->frame_count < 1) {
       engine_2d_c_drawText_FUN_00401fd0("(No model)",iVar9,g_WindowHeight / 2);
@@ -202,7 +202,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 (g_CDemonRendererPtr1,(CVector3i *)&local_114,(CVector3i *)0x0);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                 (this_ptr,(int)ROUND(ROUND(local_70)),(CKeyFramedModelInstance *)0x0,-1);
-      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr1);
       if ((bVar7) && (iVar18 = 0, 0 < this_ptr->vertex_count)) {
         iVar11 = 0;
         do {
@@ -211,7 +211,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
             iVar12 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar11);
             x = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar11) >> 0x10;
             if (-1 < x) {
-              _sprintf(local_2dc,"%d",iVar18);
+              _sprintf(local_2dc,"%d");
               engine_2d_c_drawText_FUN_00401fd0(local_2dc,x,iVar12 >> 0x10);
             }
           }
@@ -224,8 +224,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       }
       if (!bVar9) {
         _sprintf
-                  (local_408,"Frame: %d of %d",(int)ROUND(ROUND(local_70)),
-                   this_ptr->frame_count);
+                  (local_408,"Frame: %d of %d",(int)ROUND(ROUND(local_70)));
         engine_2d_c_drawText_FUN_00401fd0(local_408,0,g_WindowHeight + -0x37);
       }
     }
@@ -472,7 +471,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                           (g_CEditorToolsPtr,"Nothing to save!");
               }
               else if (((bVar2) ||
-                       (iVar18 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+                       (iVar18 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
                                            (g_CEditorToolsPtr,"You haven't crammed this model.  Save anyway?"),
                        iVar18 != 0)) &&
                       (iVar18 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70

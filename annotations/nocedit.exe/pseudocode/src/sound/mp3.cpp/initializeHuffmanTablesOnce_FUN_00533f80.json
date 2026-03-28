@@ -1,0 +1,384 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 199,
+    "complexity_score": 174,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 36,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 119,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 318
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00533f80",
+    "address_range": [
+      [
+        "00533f80",
+        "00534209"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_00533f80",
+    "signature": "void __cdecl sound_mp3_cpp_initializeHuffmanTablesOnce_FUN_00533f80(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "0060013c",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sscanf_FUN_0060013c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063af26",
+      "name": "s_d_0063af26",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063af29",
+      "name": "s_u_0063af29",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063af2c",
+      "name": "s_sound_mp3_cpp_0063af2c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063af3d",
+      "name": "s_wrong_table_number_u_Fil_0063af3d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063af5e",
+      "name": "s_sound_mp3_cpp_0063af5e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063af6f",
+      "name": "s_wrong_table_u_reference__0063af6f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063af93",
+      "name": "s_sound_mp3_cpp_0063af93",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063afa4",
+      "name": "s_MP3_Huffman_tree_overflo_0063afa4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063afc9",
+      "name": "s_sound_mp3_cpp_0063afc9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063afda",
+      "name": "s_huffman_decodertable_err_0063afda",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b00c",
+      "name": "s_sound_mp3_cpp_0063b00c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b01d",
+      "name": "s_decoder_table_read_error_0063b01d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00680170",
+      "name": "g_HuffmanTableSources",
+      "type": "SHuffmanTableSource[34]",
+      "value": null
+    },
+    {
+      "addr": "00680174",
+      "name": "g_HuffmanTableSources[0].xlen",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00680178",
+      "name": "g_HuffmanTableSources[0].ylen",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068017c",
+      "name": "g_HuffmanTableSources[0].bits",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00680180",
+      "name": "g_HuffmanTableSources[0].reference_index",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00680184",
+      "name": "g_HuffmanTableSources[0].huffman_data_ptr",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f45980",
+      "name": "g_HuffmanTablesInitialized",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f68188",
+      "name": "g_CurrentMp3Filename",
+      "type": "char[256]",
+      "value": null
+    },
+    {
+      "addr": "02f68288",
+      "name": "g_HuffmanTables",
+      "type": "SHuffmanTable[34]",
+      "value": null
+    },
+    {
+      "addr": "02f6828c",
+      "name": "g_HuffmanTables[0].xlen",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f68290",
+      "name": "g_HuffmanTables[0].ylen",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f68294",
+      "name": "g_HuffmanTables[0].linbits",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f68298",
+      "name": "g_HuffmanTables[0].max_value",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f6829c",
+      "name": "g_HuffmanTables[0].reference_index",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f682a8",
+      "name": "g_HuffmanTables[0].huffman_data[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f682a9",
+      "name": "g_HuffmanTables[0].huffman_data[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f682aa",
+      "name": "g_HuffmanTables[0].huffman_data[2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f682ab",
+      "name": "g_HuffmanTables[0].huffman_data[3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f682ac",
+      "name": "g_HuffmanTables[0].huffman_data[4]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f682ad",
+      "name": "g_HuffmanTables[0].huffman_data[5]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f68aac",
+      "name": "g_HuffmanTables[0].table_size",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f68ab0",
+      "name": "g_HuffmanTables[1].table_id[0]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.45679012345679,
+    "instruction_count": 162,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 1,
+      "BRANCH": 7,
+      "CALL": 6,
+      "CBRANCH": 13,
+      "COPY": 134,
+      "INT_ADD": 69,
+      "INT_AND": 101,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 78,
+      "INT_LEFT": 2,
+      "INT_LESS": 8,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 10,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 19,
+      "INT_SEXT": 3,
+      "INT_SLESS": 40,
+      "INT_SUB": 47,
+      "INT_XOR": 4,
+      "INT_ZEXT": 4,
+      "LOAD": 35,
+      "POPCOUNT": 37,
+      "RETURN": 1,
+      "STORE": 46,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 722
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "SHuffmanTable *"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].table_size + local_8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].xlen + local_8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].ylen + local_8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].bits + local_8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar5 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + local_8);",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -10,7 +10,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90",
+    "name":"engine_2d.c_cleanupGraphicsSystem_FUN_00401130",
     "ret":"void",
     "thtarget":"005ecd90",
     "thunk":true
@@ -1289,7 +1289,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_3d.c_renderPolygonUVTextureNormalized_FUN_00405430",
+    "name":"engine_3d.c_renderPolygonUVTextureNormalizedLit_FUN_00405430",
     "ret":"SMRGLHeaderExtended*",
     "vars":{
       "locals":[
@@ -11043,7 +11043,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"cockpit_ckptutil.c_applyColorPalette_FUN_004319b0",
+    "name":"cockpit_ckptutil.c_applyColorPalette_FUN_00431830",
     "ret":"void",
     "vars":{
       "params":[
@@ -11212,38 +11212,6 @@
     "vars":{
       "locals":[
         {
-          "name":"pbVar4",
-          "storage":{
-            "reg":"ECX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000004",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"byte*",
-          "use":114
-        },
-        {
-          "name":"local_c",
-          "storage":{
-            "offset":-12,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xc]",
-                "offset":-12,
-                "size":1
-              }
-            ]
-          },
-          "type":"uchar"
-        },
-        {
           "name":"local_30c",
           "storage":{
             "offset":-780,
@@ -11258,54 +11226,6 @@
             ]
           },
           "type":"byte[768]"
-        },
-        {
-          "name":"bVar3",
-          "storage":{
-            "size":1,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5fa3c06345",
-                "offset":410769187653,
-                "size":1
-              }
-            ]
-          },
-          "type":"byte",
-          "use":45
-        },
-        {
-          "name":"pbVar1",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27f5cd19bde",
-                "offset":2746041342942,
-                "size":4
-              }
-            ]
-          },
-          "type":"byte*",
-          "use":62
-        },
-        {
-          "name":"pbVar2",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27f9539f80c",
-                "offset":2746987706380,
-                "size":4
-              }
-            ]
-          },
-          "type":"byte*",
-          "use":88
         }
       ],
       "params":[
@@ -28420,10 +28340,30 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620",
+    "name":"engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0048c630",
     "ret":"void",
     "thtarget":"0050d620",
-    "thunk":true
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonRenderer*"
+        }
+      ]
+    }
   },
   {
     "addr":"0048dc30",
@@ -35312,7 +35252,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_fileio.cpp_logOffVersionControl_FUN_004b2830",
+    "name":"engine_fileio.cpp_logOffVersionControl_FUN_004bceb0",
     "ret":"void",
     "thtarget":"004b2830",
     "thunk":true
@@ -36019,21 +35959,6 @@
     "vars":{
       "locals":[
         {
-          "name":"uVar1",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"uint",
-          "use":159
-        },
-        {
           "name":"local_c",
           "storage":{
             "offset":-12,
@@ -36091,22 +36016,6 @@
               {
                 "addr":"Stack[-0x28]",
                 "offset":-40,
-                "size":12
-              }
-            ]
-          },
-          "type":"CVector3i"
-        },
-        {
-          "name":"local_34",
-          "storage":{
-            "offset":-52,
-            "size":12,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x34]",
-                "offset":-52,
                 "size":12
               }
             ]
@@ -51690,7 +51599,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_memdbg.cpp_debugAlloc_FUN_0050f1b0",
+    "name":"shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0",
     "ret":"void*",
     "vars":{
       "params":[
@@ -98161,38 +98070,6 @@
             ]
           },
           "type":"CVector3i"
-        },
-        {
-          "name":"local_2c",
-          "storage":{
-            "offset":-44,
-            "size":12,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x2c]",
-                "offset":-44,
-                "size":12
-              }
-            ]
-          },
-          "type":"CVector3i"
-        },
-        {
-          "name":"cVar1",
-          "storage":{
-            "size":1,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5f8b4fece4",
-                "offset":410359164132,
-                "size":1
-              }
-            ]
-          },
-          "type":"char",
-          "use":197
         }
       ],
       "params":[

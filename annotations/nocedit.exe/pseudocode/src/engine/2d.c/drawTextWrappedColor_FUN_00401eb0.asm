@@ -15,7 +15,7 @@
 ;   engine_2d.c_drawTextColor_FUN_00402430 at 00402461
 ;
 ; Called Functions:
-;   engine_2d.c_drawCharacter_FUN_00401a10
+;   engine_2d.c_drawCharacterMasked_FUN_00401a10
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     PUSH EBX                            ; 00401f03
     PUSH ESI                            ; 00401f04
     PUSH EAX                            ; 00401f05
-    CALL engine_2d.c_drawCharacter_FUN_00401a10 ; 00401f06
-        ;   XREF to: 00401a10 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacter_FUN_00401a10(int char_code, int x_pos, int y_pos, int color)
+    CALL engine_2d.c_drawCharacterMasked_FUN_00401a10 ; 00401f06
+        ;   XREF to: 00401a10 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacterMasked_FUN_00401a10(int char_code, int x_pos, int y_pos, int color)
     ADD ESP,0x10                        ; 00401f0b
     ADD ESI,EAX                         ; 00401f0e
     CMP ESI,dword ptr [ESP + 0x24]      ; 00401f10

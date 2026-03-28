@@ -54,7 +54,7 @@ LAB_00556a6b:
   this_ptr->width = (short)width;
   uVar5 = (short)width * (ushort)(byte)this_ptr->bytes_per_pixel;
   this_ptr->bytes_per_row = uVar5;
-  pvVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  pvVar1 = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                      ((uint)(ushort)this_ptr->height * (uint)uVar5,"..\\shape\\quantize.cpp",
                       0x498);
   this_ptr->pixel_data = pvVar1;
@@ -63,7 +63,7 @@ LAB_00556a6b:
     g_CurrentLineNumber = 0x67;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Could not allocate data buffer.");
   }
-  ppvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  ppvVar2 = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                       ((uint)(ushort)this_ptr->height << 2,"..\\shape\\quantize.cpp",0x49d);
   this_ptr->row_table = ppvVar2;
   if (ppvVar2 == (void **)0x0) {
@@ -81,7 +81,8 @@ LAB_00556a6b:
     iVar4 = iVar4 + 4;
   }
   if (this_ptr->bit_depth == '\b') {
-    pvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x300,"..\\shape\\quantize.cpp",0x4ac);
+    pvVar2 = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+                       (0x300,"..\\shape\\quantize.cpp",0x4ac);
     this_ptr->palette = pvVar2;
     if (pvVar2 == (void *)0x0) {
       g_CurrentFilename = "..\\shape\\quantize.cpp";

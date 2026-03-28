@@ -231,9 +231,9 @@ void __cdecl processCoronaScanline(int row,int x_start,int x_end,SCorona *corona
 // Address: 004517f0
 void __cdecl blendCoronaTextureSpan(int scanline_y,int x_start,int x_end,int source_buffer_offset);
 
-// Original: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
+// Original: core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
 // Address: 004518f0
-void __cdecl CDemonCamera::renderLightCoronas(CDemonCamera *this_ptr,void *p1,int p2);
+void __cdecl CDemonCamera::renderGlobeCoronas(CDemonCamera *this_ptr,void *p1,int p2);
 
 // Original: core_dcamera.cpp_transformAndStoreVertex_FUN_00452110
 // Address: 00452110

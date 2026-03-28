@@ -163,13 +163,13 @@ void __cdecl CDemonRenderer::applyDirectTransform(CDemonRenderer *this_ptr,CVect
 // Address: 0048c4f0
 void __cdecl CDemonRenderer::applyScaledTransform(CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation);
 
-// Original: engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620
+// Original: engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0048c630
 // Address: 0048c630
-void __cdecl CDemonRenderer::matrixPush(void);
+void __cdecl CDemonRenderer::matrixPush(CDemonRenderer *this_ptr);
 
-// Original: engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+// Original: engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 // Address: 0048c640
-void __cdecl CDemonRenderer::matrixPop(void);
+void __cdecl CDemonRenderer::matrixPop(CDemonRenderer *this_ptr);
 
 // Original: engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
 // Address: 0048c650
@@ -219,7 +219,7 @@ float __cdecl CDemonRenderer::calculateProjectionFactor(CDemonRenderer *this_ptr
 // Address: 0048c890
 void __cdecl CDemonRenderer::pushViewport(CDemonRenderer *this_ptr,int x,int y,int width,int height);
 
-// Original: engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480
+// Original: engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
 // Address: 0048c8c0
 void __cdecl CDemonRenderer::popViewport(void);
 

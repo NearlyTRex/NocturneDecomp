@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 41,
+    "complexity_score": 26,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 35,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 78
   },
   "cross_references": [
@@ -34,8 +32,8 @@
     {
       "addr": "0048c630",
       "from_addr": "0048c630",
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620",
-      "type": "UNCONDITIONAL_JUMP"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0048c630",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -270,7 +268,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "0051f133",
@@ -293,12 +291,23 @@
         "reg_params": [],
         "stack_bytes": 0,
         "stack_params": 0
+      },
+      {
+        "call_addr": "0048c630",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0048c630",
+        "estimated_params": 0,
+        "instructions_analyzed": 0,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 3
+    "estimated_params": 0
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 2.75,
@@ -334,17 +343,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

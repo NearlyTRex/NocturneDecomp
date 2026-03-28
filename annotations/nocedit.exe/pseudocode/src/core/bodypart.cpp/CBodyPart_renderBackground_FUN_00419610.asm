@@ -24,7 +24,7 @@
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;
 ; *****************************************************************************
 
@@ -94,8 +94,8 @@ section .text
     MOV EAX,[0x006703ec]                ; 004196bc | g_CDemonRendererPtr2
         ;   Label: LAB_004196bc
     PUSH EAX                            ; 004196c1 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004196c2
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004196c2
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     ADD ESP,0x18                        ; 004196e0
         ;   Label: LAB_004196e0
     POP EBP                             ; 004196e3

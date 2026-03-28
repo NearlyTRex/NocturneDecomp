@@ -25,7 +25,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircle_FUN_00487730(CDrawSurf
       iVar2 = iVar2 - this_ptr->y;
       width = 0;
       iVar5 = 1 - radius;
-      cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_004878e0
+      cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_004878e0
                 (this_ptr,iVar3,iVar2,0,radius);
       if (0 < radius) {
         iVar4 = 1;
@@ -38,7 +38,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircle_FUN_00487730(CDrawSurf
             iVar1 = (width - radius) * 2 + 1;
           }
           iVar5 = iVar5 + iVar1;
-          cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_004878e0
+          cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_004878e0
                     (this_ptr,iVar3,iVar2,width,radius);
         } while (width < radius);
       }

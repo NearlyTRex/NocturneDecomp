@@ -7,7 +7,7 @@
 // Address: 00401010
 void __cdecl initGraphicsSystem(void);
 
-// Original: engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90
+// Original: engine_2d.c_cleanupGraphicsSystem_FUN_00401130
 // Address: 00401130
 void __cdecl cleanupGraphicsSystem(void);
 
@@ -63,9 +63,9 @@ int __cdecl getStringWidth(char *text);
 // Address: 00401900
 int __cdecl drawCharacterMasked(int char_code,int x_pos,int y_pos);
 
-// Original: engine_2d.c_drawCharacter_FUN_00401a10
+// Original: engine_2d.c_drawCharacterMasked_FUN_00401a10
 // Address: 00401a10
-int __cdecl drawCharacter(int char_code,int x_pos,int y_pos,int color);
+int __cdecl drawCharacterMasked(int char_code,int x_pos,int y_pos,int color);
 
 // Original: engine_2d.c_drawCharacterHighlighted_FUN_00401b70
 // Address: 00401b70
@@ -239,11 +239,11 @@ void __cdecl buildColorLookupTable(void);
 // Address: 00402930
 void __cdecl loadOrBuildColorMap(char *filename);
 
-// Original: engine_2d.c_resetGraphicsSystem_FUN_005ed2a0
+// Original: engine_2d.c_resetGraphicsSystem_FUN_00402a70
 // Address: 00402a70
 void __cdecl resetGraphicsSystem(void);
 
-// Original: engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0
+// Original: engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80
 // Address: 00402a80
 void __cdecl reinitializeGraphicsSystem(void);
 

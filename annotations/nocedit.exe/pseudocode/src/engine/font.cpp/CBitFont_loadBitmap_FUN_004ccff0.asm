@@ -47,7 +47,7 @@
 ;   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
 ;   engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 ;
 ; *****************************************************************************
 
@@ -131,8 +131,8 @@ section .text
         ;   Label: LAB_004cd0bb
     PUSH 0x62a50e                       ; 004cd0c0 | = "..\\engine\\font.cpp"
     PUSH ESI                            ; 004cd0c5
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 004cd0c6
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 004cd0c6
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     MOV EDX,dword ptr [EBX]             ; 004cd0cb
     MOV dword ptr [EBX + EDX*0x4 + 0x144],EAX ; 004cd0cd
     MOV EAX,dword ptr [EBX]             ; 004cd0d4

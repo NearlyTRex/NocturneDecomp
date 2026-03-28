@@ -24,6 +24,6 @@ CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_dtor_FUN_004495a0(CCrossbow *thi
   if ((flags & 2) == 0) {
     return ptr;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
   return ptr;
 }

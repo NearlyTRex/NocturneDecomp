@@ -59,7 +59,7 @@ ColorConversionFunc * __cdecl cockpit_ckptutil_c_getRGBConvertersionFunction_FUN
 OptimizedMemcpyFunc * __cdecl cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_00431780(void);
 ColorConversionFunc * __cdecl cockpit_ckptutil_c_get16BitConversionFunction_FUN_004317a0(void);
 void * __cdecl cockpit_ckptutil_c_loadBitmapWithPalette_FUN_004317b0(char *filename,int width,int height,void *span_data_buffer,void *buffer, int transparent_color_index);
-void __cdecl cockpit_ckptutil_c_applyColorPalette_FUN_004319b0(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
+void __cdecl cockpit_ckptutil_c_applyColorPalette_FUN_00431830(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
 void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_00431870(char *filename,void *buffer,int size);
 void __cdecl cockpit_ckptutil_c_applyActPalette_FUN_004319b0(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
 void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(char *filename,uchar *output_palette);

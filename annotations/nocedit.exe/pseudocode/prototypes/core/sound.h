@@ -47,7 +47,7 @@ CSound * __cdecl CSound::ctor(CSound *this_ptr);
 // Address: 005b2d00
 void __cdecl CSound::findAllSoundFiles(CSound *this_ptr);
 
-// Original: core_sound.cpp_CSound_dtor_FUN_005aaeb0
+// Original: core_sound.cpp_CSound_dtor_FUN_005b2d60
 // Address: 005b2d60
 void __cdecl CSound::dtor(void);
 

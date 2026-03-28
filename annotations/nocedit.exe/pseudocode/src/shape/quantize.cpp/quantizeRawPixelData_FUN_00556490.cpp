@@ -31,7 +31,8 @@ int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixe
   
   bVar9 = 0;
   g_QuantizeCurrentLineNumber = line_number;
-  pCVar1 = (CBitmap *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x28,"..\\shape\\quantize.cpp",0x3ec);
+  pCVar1 = (CBitmap *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x28,"..\\shape\\quantize.cpp",0x3ec)
+  ;
   local_14 = (CBitmap *)0x0;
   if (pCVar1 != (CBitmap *)0x0) {
     local_14 = shape_quantize_cpp_CBitmap_ctor_FUN_00556a00
@@ -90,7 +91,8 @@ LAB_00556524:
     _sprintf(local_dc,"%d-bit color                                                                  ",bit_depth);
     engine_2d_c_drawText_FUN_00401fd0(local_dc,0,line_number * 0xb);
   }
-  this_ptr = (CColorQuantizer *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x4b44,"..\\shape\\quantize.cpp",0x417);
+  this_ptr = (CColorQuantizer *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+                       (0x4b44,"..\\shape\\quantize.cpp",0x417);
   pCVar2 = (CColorQuantizer *)0x0;
   if (this_ptr != (CColorQuantizer *)0x0) {
     pCVar2 = shape_quantize_cpp_CColorQuantizer_ctor_FUN_00554900(this_ptr);
@@ -160,12 +162,12 @@ LAB_00556524:
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x443;
     ptr = shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(pCVar2,0);
-    shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+    shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x444;
     if (local_14 != (CBitmap *)0x0) {
       ptr_00 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(local_14,0);
-      shape_memdbg_cpp_debugFree_FUN_0050f210(ptr_00);
+      shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr_00);
     }
     iVar4 = 1;
   }

@@ -145,7 +145,7 @@ LAB_005a900a:
          (iVar7 = _stricmp(local_290,".mp3"), iVar7 == 0)) {
         iVar7 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_390);
         if (0 < iVar7) {
-          this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
+          this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
                                (0x8630,"..\\sound\\sndmain.cpp",0x3c5);
           pCVar8 = (CMP3Decoder *)0x0;
           if (this_ptr != (CMP3Decoder *)0x0) {

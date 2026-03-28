@@ -417,7 +417,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                 *parse_position = *parse_position + local_ac;
               }
               else {
-                local_e0 = core_inv_cpp_CInventory_hasItemOfClass_FUN_004fe9d0
+                local_e0 = core_inv_cpp_CInventory_hasItemOfClass_FUN_004fea20
                                      ((CInventory *)(pCVar7[0x176].create_event + 0x30),
                                       local_72d + 1);
                 *parse_position = *parse_position + local_ac;

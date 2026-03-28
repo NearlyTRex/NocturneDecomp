@@ -177,7 +177,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
           local_3c = local_3c + 1;
         } while (local_30 < 2);
         engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,4);
-        wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+        wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
         iVar6 = (int)((g_WindowHeight + (g_WindowHeight >> 0x1f) * -4) -
                      (uint)((g_WindowHeight >> 0x1f) << 1 < 0)) >> 2;
         iVar15 = -1;
@@ -213,7 +213,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
               local_8 = iVar18;
             }
           }
-          engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
+          engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0();
           iVar18 = iVar18 + 1;
           local_44 = local_44 + 4;
           local_40 = local_40 + 1;
@@ -312,7 +312,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
             }
             core_morph_cpp_drawVertexMarker_FUN_0052bb80(vertex,5);
           }
-          engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
+          engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0();
           local_2c = local_2c + 1;
           local_38 = local_38 + 4;
           local_c = local_c + 1;
@@ -353,7 +353,7 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
           local_70 = -1;
         }
         if (iVar15 < 0) {
-          shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
+          shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
         }
         local_78 = g_MouseButtonFlags;
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

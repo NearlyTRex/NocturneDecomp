@@ -41,7 +41,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     PUSH 0x31                           ; 00418e23
     PUSH 0x615b7c                       ; 00418e25 | = "..\\core\\bodypart.cpp"
     PUSH 0xf30                          ; 00418e2a
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 00418e2f
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00418e2f
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00418e34
     TEST EAX,EAX                        ; 00418e37
     JNZ 0x00418f18                      ; 00418e39

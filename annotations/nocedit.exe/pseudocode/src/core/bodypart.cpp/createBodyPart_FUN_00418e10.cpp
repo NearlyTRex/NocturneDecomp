@@ -20,7 +20,8 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(CVector3f *pos
   float10 fVar8;
   UOrientationVector *pUVar1;
   
-  this_ptr = (CBodyPart *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xf30,"..\\core\\bodypart.cpp",0x31);
+  this_ptr = (CBodyPart *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+                       (0xf30,"..\\core\\bodypart.cpp",0x31);
   this_ptr_00 = (CBodyPart *)0x0;
   if (this_ptr != (CBodyPart *)0x0) {
     this_ptr_00 = core_bodypart_cpp_CBodyPart_ctor_FUN_00419010(this_ptr);

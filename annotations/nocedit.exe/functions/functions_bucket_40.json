@@ -30695,7 +30695,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"cockpit_drawsurf.cpp_CDrawSurface_drawCenteredRectangle_FUN_004886c0",
+    "name":"cockpit_drawsurf.cpp_CDrawSurface_drawCenteredSolidRectangle_FUN_004886c0",
     "ret":"void",
     "vars":{
       "params":[
@@ -32011,10 +32011,30 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720",
+    "name":"engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640",
     "ret":"void",
     "thtarget":"0050d720",
-    "thunk":true
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonRenderer*"
+        }
+      ]
+    }
   },
   {
     "addr":"0048c6c0",
@@ -32143,7 +32163,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480",
+    "name":"engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0",
     "ret":"void",
     "thtarget":"0050e480",
     "thunk":true
@@ -34172,7 +34192,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_edittool.cpp_CStrList_sort_FUN_004a2ec0",
+    "name":"shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0",
     "ret":"void",
     "vars":{
       "params":[
@@ -35380,313 +35400,6 @@
     "ret":"int",
     "vars":{
       "locals":[
-        {
-          "name":"bVar18",
-          "storage":{
-            "reg":"DF",
-            "size":1,
-            "varnodes":[
-              {
-                "addr":"register:0000020a",
-                "offset":522,
-                "size":1
-              }
-            ]
-          },
-          "type":"byte"
-        },
-        {
-          "name":"iVar2",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":57
-        },
-        {
-          "name":"pcVar15",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*",
-          "use":115
-        },
-        {
-          "name":"pcVar16",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*",
-          "use":122
-        },
-        {
-          "name":"str1",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"char[32]*",
-          "use":154
-        },
-        {
-          "name":"iVar3",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":156
-        },
-        {
-          "name":"uVar12",
-          "storage":{
-            "reg":"ECX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000004",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint",
-          "use":192
-        },
-        {
-          "name":"uVar13",
-          "storage":{
-            "reg":"ECX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000004",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint",
-          "use":291
-        },
-        {
-          "name":"SVar14",
-          "storage":{
-            "reg":"ECX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000004",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"SIZE_T",
-          "use":1061
-        },
-        {
-          "name":"pCVar4",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonActor*",
-          "use":1164
-        },
-        {
-          "name":"pCVar6",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CBoxActor*",
-          "use":1651
-        },
-        {
-          "name":"pCVar5",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CChain*",
-          "use":1693
-        },
-        {
-          "name":"pCVar7",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CCharacter*",
-          "use":3504
-        },
-        {
-          "name":"this_ptr_01",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CLever*",
-          "use":8364
-        },
-        {
-          "name":"pCVar8",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CMotionList*",
-          "use":8934
-        },
-        {
-          "name":"type",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"EWeatherType",
-          "use":9754
-        },
-        {
-          "name":"pSVar9",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"SMotion*",
-          "use":10507
-        },
-        {
-          "name":"pbVar10",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"byte*",
-          "use":10642
-        },
-        {
-          "name":"puVar17",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4*",
-          "use":10669
-        },
-        {
-          "name":"pCVar11",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonActor*",
-          "use":11888
-        },
         {
           "name":"local_14",
           "storage":{
@@ -37158,22 +36871,6 @@
             ]
           },
           "type":"char[200]"
-        },
-        {
-          "name":"local_163c",
-          "storage":{
-            "offset":-5692,
-            "size":255,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x163c]",
-                "offset":-5692,
-                "size":255
-              }
-            ]
-          },
-          "type":"char[255]"
         }
       ],
       "params":[
@@ -85845,7 +85542,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005a16c0",
     "ret":"CBoundingBox3D*",
     "vars":{
       "locals":[
@@ -98541,99 +98238,6 @@
     "vars":{
       "locals":[
         {
-          "name":"pCVar1",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CBoundingBox3D*",
-          "use":46
-        },
-        {
-          "name":"iVar2",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":86
-        },
-        {
-          "name":"rotation",
-          "storage":{
-            "reg":"EBX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000000c",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3i*",
-          "use":275
-        },
-        {
-          "name":"this_ptr_00",
-          "storage":{
-            "reg":"EBP",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000014",
-                "offset":20,
-                "size":4
-              }
-            ]
-          },
-          "type":"CKeyFramedModelInstance*",
-          "use":275
-        },
-        {
-          "name":"position",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3i*",
-          "use":275
-        },
-        {
-          "name":"pCVar3",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3f*",
-          "use":538
-        },
-        {
           "name":"pCStack_14",
           "storage":{
             "offset":-20,
@@ -98739,22 +98343,6 @@
               {
                 "addr":"Stack[-0x60]",
                 "offset":-96,
-                "size":24
-              }
-            ]
-          },
-          "type":"CBoundingBox3D"
-        },
-        {
-          "name":"CStack_78",
-          "storage":{
-            "offset":-120,
-            "size":24,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x78]",
-                "offset":-120,
                 "size":24
               }
             ]

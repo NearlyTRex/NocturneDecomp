@@ -73,7 +73,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
     core_main_c_displayErrorAndQuit_FUN_00506f10(pcVar8);
   }
   engine_matrix_c_initializeTrigTables_FUN_0050c530();
-  wincore_wddvmem_cpp_initTextureCache_FUN_005dd760();
+  wincore_wddvmem_cpp_initTextureCache_FUN_00403790();
   engine_2d_c_initGraphicsSystem_FUN_00401010();
   wincore_winrun_cpp_calibrateCPUSpeed_FUN_005f2b80();
   wincore_winrun_cpp_initJoystick_FUN_005f4310();

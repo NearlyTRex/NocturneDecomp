@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_baron.cpp_CBaronWeapon_ctor_FUN_00413d40
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
         ;   Label: core_baron.cpp_factoryFunc_FUN_00413d00
     PUSH 0x615099                       ; 00413d05 | = "..\\core\\baron.cpp"
     PUSH 0x57c                          ; 00413d0a
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 00413d0f
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00413d0f
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00413d14
     TEST EAX,EAX                        ; 00413d17
     JNZ 0x00413d1c                      ; 00413d19

@@ -27,7 +27,7 @@
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -74,8 +74,8 @@ section .text
     PUSH 0x623928                       ; 004a32b5 | = "..\\shape\\edittool.cpp"
     INC EBP                             ; 004a32ba
     PUSH EBP                            ; 004a32bb
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 004a32bc
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 004a32bc
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004a32c1
     MOV dword ptr [ESP],EAX             ; 004a32c4
     TEST EAX,EAX                        ; 004a32c7

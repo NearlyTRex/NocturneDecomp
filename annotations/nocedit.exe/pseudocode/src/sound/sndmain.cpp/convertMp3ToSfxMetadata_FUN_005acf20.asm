@@ -101,8 +101,8 @@ section .text
         ;   Label: LAB_005acf89
     PUSH 0x65110d                       ; 005acf8e | = "..\\sound\\sndmain.cpp"
     PUSH 0x8630                         ; 005acf93
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005acf98
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005acf98
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005acf9d
     TEST EAX,EAX                        ; 005acfa0
     JZ 0x005acfad                       ; 005acfa2
@@ -152,8 +152,8 @@ section .text
         ;   XREF to: 00534530 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530(CMP3Decoder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005ad013
     PUSH EAX                            ; 005ad016
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005ad017
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005ad017
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005ad01c
     PUSH 0x0                            ; 005ad01f
     LEA EAX,[ESP + 0x634]               ; 005ad021

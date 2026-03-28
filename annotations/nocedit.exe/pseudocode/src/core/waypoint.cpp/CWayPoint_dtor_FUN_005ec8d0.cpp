@@ -21,6 +21,6 @@ CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_005ec8d0(CWayPoint *thi
   if ((flags & 2) == 0) {
     return ptr;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
   return ptr;
 }

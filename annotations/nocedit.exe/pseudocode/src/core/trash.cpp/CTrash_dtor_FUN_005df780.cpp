@@ -21,6 +21,6 @@ CTrash * __cdecl core_trash_cpp_CTrash_dtor_FUN_005df780(CTrash *this_ptr,uint f
   if ((flags & 2) == 0) {
     return ptr;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
   return ptr;
 }

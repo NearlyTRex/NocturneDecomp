@@ -129,7 +129,7 @@ __asm {
         push EDX
         inc EBX
         add ESI,0x30
-        call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720
+        call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640
     LAB_0059b7f0:
         add ESP,0x3c
         pop EBP

@@ -240,8 +240,8 @@ section .text
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0058327f
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
     MOV ESI,dword ptr [EBP + 0x52]      ; 00583284
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 00583287
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 00583287
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
     TEST ESI,ESI                        ; 0058328c
     JZ 0x0058338c                       ; 0058328e
         ;   XREF to: 0058338c (CONDITIONAL_JUMP)  ; LAB_0058338c
@@ -546,8 +546,8 @@ section .text
     PUSH ECX                            ; 0058362a | g_CDemonRendererInstance
     MOV EBX,dword ptr [EBP + 0x5a]      ; 0058362b
     INC ESI                             ; 0058362e
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0058362f
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 0058362f
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     XOR EAX,EAX                         ; 00583651
         ;   Label: LAB_00583651
     MOV dword ptr [EBP + 0x5e],EAX      ; 00583653
@@ -886,8 +886,8 @@ section .text
     PUSH ECX                            ; 00583aa1 | g_CDemonRendererInstance
     MOV ESI,dword ptr [EBP + 0x6e]      ; 00583aa2
     MOV EDI,dword ptr [EBP + 0x5e]      ; 00583aa5
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00583aa8
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00583aa8
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     PUSH 0x0                            ; 00583ad6
         ;   Label: LAB_00583ad6
     PUSH 0x32758e4                      ; 00583ad8 | g_CDemonCameraInstance
@@ -897,8 +897,8 @@ section .text
     PUSH 0x0                            ; 00583ae5
     MOV EBX,dword ptr [0x00678a60]      ; 00583ae7 | g_CEditorToolsPtr | g_CEditorToolsInstance
     PUSH EBX                            ; 00583aed | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 00583aee
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380 ; 00583aee
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 00583af3
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00583af6
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -1045,8 +1045,8 @@ section .text
     PUSH 0x648ddf                       ; 00583ca0 | = "Delete the selected box?"
     MOV ESI,dword ptr [0x00678a60]      ; 00583ca5 | g_CEditorToolsPtr
     PUSH ESI                            ; 00583cab | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 00583cac
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 00583cac
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00583cb1
     TEST EAX,EAX                        ; 00583cb4
     JZ 0x00583d09                       ; 00583cb6

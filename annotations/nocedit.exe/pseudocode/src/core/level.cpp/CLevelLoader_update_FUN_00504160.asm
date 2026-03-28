@@ -51,7 +51,7 @@
 ;   core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480
+;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890
 ;   engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
@@ -391,8 +391,8 @@ section .text
         ;   XREF to: 005045a1 (CONDITIONAL_JUMP)  ; LAB_005045a1
     MOV EBP,dword ptr [0x006703ec]      ; 00504592 | g_CDemonRendererPtr2
     PUSH EBP                            ; 00504598 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 00504599
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480()
+    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 ; 00504599
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0()
     ADD ESP,0x4                         ; 0050459e
     MOV EAX,[0x006810c8]                ; 005045a1 | g_CDemonSetPtr
         ;   Label: LAB_005045a1

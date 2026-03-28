@@ -38,7 +38,7 @@
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
 
@@ -111,8 +111,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0xe0]      ; 005d422f
         ;   Label: LAB_005d422f
     PUSH EDI                            ; 005d4236
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005d4237
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005d4237
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005d423c
     CMP dword ptr [EBP + 0x20],0x0      ; 005d423f
     JNZ 0x005d44b3                      ; 005d4243

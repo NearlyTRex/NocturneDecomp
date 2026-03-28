@@ -365,7 +365,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         if (this_ptr->show_3d_viewport == 0) {
           wincore_windll_cpp_clearScreen_FUN_005b3e70();
         }
-        wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+        wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
         core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
         core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,150.0,0);
         core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(g_CDemonSetPtr,0xffffffff);
@@ -495,14 +495,14 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
     if (INT_02f7c634 != 0) {
       core_script_cpp_CScript_updateMouseCursor_FUN_00566bc0(g_CScriptPtr);
     }
-    shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(g_CEditorToolsPtr,0,0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(g_CDemonSetPtr);
     iVar14 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if ((iVar14 != 0) &&
-       (iVar14 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+       (iVar14 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
                            (g_CEditorToolsPtr,"Exit editor?"), iVar14 != 0))
     goto LAB_00539e00;
     if (INT_02f7c634 == 0) {
@@ -685,7 +685,7 @@ LAB_00539d68:
       }
       else {
         _sprintf(local_3b4,"%s.msn",local_4c);
-        iVar14 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+        iVar14 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
                            (g_CEditorToolsPtr,"Save mission to %s.msn",local_4c);
         if (iVar14 != 0) {
           core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(this_ptr,local_3b4);
@@ -803,7 +803,7 @@ LAB_00539e00:
               }
             }
             if (local_9b4.base.item_count < 1) break;
-            shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_9b4.base);
+            shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_9b4.base);
             iVar14 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                (&local_9b4,"Select actor to unhide",iVar14,0);
             if (iVar14 < 0) goto LAB_0053a88c;

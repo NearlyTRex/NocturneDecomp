@@ -33,7 +33,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_004
   core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);
   if ((0 < this_ptr->vertex_count) && (0 < this_ptr->frame_count)) {
     core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(this_ptr);
-    ptr = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+    ptr = (int *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                     (this_ptr->vertex_count << 2,"..\\core\\dmodel.cpp",0x8df);
     if (ptr == (int *)0x0) {
       g_CurrentFilename = "..\\core\\dmodel.cpp";

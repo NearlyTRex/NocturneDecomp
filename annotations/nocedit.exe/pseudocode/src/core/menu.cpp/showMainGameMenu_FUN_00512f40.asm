@@ -8,7 +8,7 @@
 ; int              Stack[-0x8]:4  iStack_8
 ;
 ; XREF[1]:
-;   core_main.c_enterMainGameMenu_FUN_00512f40 at 00507a50
+;   core_main.c_enterMainGameMenu_FUN_00507a50 at 00507a50
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00512f28 = 0051315c

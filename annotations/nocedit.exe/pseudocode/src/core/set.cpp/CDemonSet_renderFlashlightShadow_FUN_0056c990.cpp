@@ -120,7 +120,7 @@ void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSe
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2,&local_20)
   ;
   g_CDemonRaytraceInstance.rendering_mode = 1;
-  wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+  wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,9999.9,0);
   g_CDemonRaytraceInstance.rendering_mode = 0;
   g_UseExternalRenderer = iVar5;

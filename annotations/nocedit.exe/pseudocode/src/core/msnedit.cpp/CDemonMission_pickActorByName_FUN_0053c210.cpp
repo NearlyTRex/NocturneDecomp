@@ -34,7 +34,7 @@ char * __cdecl core_msnedit_cpp_CDemonMission_pickActorByName_FUN_0053c210(CDemo
     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3b4.base,(char *)*puVar1);
   }
   iVar2 = -1;
-  shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_3b4.base);
+  shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_3b4.base);
   iVar1 = iVar2;
   if ((current_name != (char *)0x0) && (index = 0, 0 < local_3b4.base.item_count)) {
     do {

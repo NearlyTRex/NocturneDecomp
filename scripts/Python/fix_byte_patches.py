@@ -79,6 +79,23 @@ def load_cave_comments(json_path):
     ]
 
 
+def load_clear_thunks(json_path, group_filter=None):
+    """Load thunk-clearing addresses from patch groups.
+
+    Returns list of address ints for functions whose thunk status should be
+    removed after byte patching (e.g. JMP thunks converted to CALL+RET).
+    """
+    with open(json_path, 'r') as f:
+        data = json.load(f)
+    addrs = []
+    for group in data['groups']:
+        if group_filter and group['name'] != group_filter:
+            continue
+        for addr_str in group.get('clear_thunks', []):
+            addrs.append(int(addr_str, 16))
+    return addrs
+
+
 def load_function_body_extensions(json_path):
     """Load function body extensions from the patches JSON.
 
@@ -251,7 +268,7 @@ def count_artifacts(code):
     return artifacts
 
 
-def run_test_mode(prog, patches):
+def run_test_mode(prog, patches, clear_thunks=None):
     """Test mode: apply ALL patches in one transaction, then decompile each affected function."""
     from collections import OrderedDict
     fm = prog.getFunctionManager()
@@ -304,6 +321,10 @@ def run_test_mode(prog, patches):
             if not ok:
                 print("  SKIP %s: %s" % (p['name'], msg))
                 all_ok = False
+
+        # Clear thunk status on patched functions
+        if clear_thunks:
+            apply_clear_thunks(prog, clear_thunks)
 
         # Decompile all affected functions AFTER
         after_data = OrderedDict()
@@ -382,6 +403,24 @@ def apply_cave_comments(prog, cave_comments):
             print("  WARNING: No code unit at 0x%x for cave comment" % cc['address'])
 
 
+def apply_clear_thunks(prog, thunk_addrs):
+    """Clear thunk status on functions that have been patched to real functions."""
+    fm = prog.getFunctionManager()
+    space = prog.getAddressFactory().getDefaultAddressSpace()
+
+    for addr_int in thunk_addrs:
+        addr = space.getAddress(addr_int)
+        func = fm.getFunctionAt(addr)
+        if func is None:
+            print("  WARNING: No function at 0x%x for thunk clearing" % addr_int)
+            continue
+        if func.isThunk():
+            func.setThunkedFunction(None)
+            print("  Cleared thunk status on %s at 0x%x" % (func.getName(), addr_int))
+        else:
+            print("  %s at 0x%x is not a thunk, skipping" % (func.getName(), addr_int))
+
+
 def apply_function_body_extensions(prog, extensions):
     """Add cave address ranges to function bodies.
 
@@ -419,7 +458,7 @@ def apply_function_body_extensions(prog, extensions):
 
 
 def run_apply_or_dry(prog, patches, dry_run, cave_comments=None,
-                     body_extensions=None):
+                     body_extensions=None, clear_thunks=None):
     """Apply or dry-run all patches."""
     if not dry_run:
         tx_id = prog.startTransaction("Apply byte patches")
@@ -443,6 +482,10 @@ def run_apply_or_dry(prog, patches, dry_run, cave_comments=None,
         # Extend function bodies to include cave ranges
         if not dry_run and body_extensions:
             apply_function_body_extensions(prog, body_extensions)
+
+        # Clear thunk status on patched functions
+        if not dry_run and clear_thunks:
+            apply_clear_thunks(prog, clear_thunks)
     finally:
         if not dry_run:
             prog.endTransaction(tx_id, True)
@@ -519,17 +562,19 @@ def main():
 
     cave_comments = load_cave_comments(json_path)
     body_extensions = load_function_body_extensions(json_path)
+    clear_thunks = load_clear_thunks(json_path, group_filter=args.group)
 
     exit_code = 0
     try:
         project = pyghidra.open_project(project_path, args.project_name)
         with pyghidra.program_context(project, "/" + args.program_name) as prog:
             if args.test:
-                run_test_mode(prog, patches)
+                run_test_mode(prog, patches, clear_thunks=clear_thunks)
             else:
                 run_apply_or_dry(prog, patches, dry_run=not args.apply,
                                  cave_comments=cave_comments,
-                                 body_extensions=body_extensions)
+                                 body_extensions=body_extensions,
+                                 clear_thunks=clear_thunks)
         project.close()
     except Exception as e:
         print("ERROR: %s" % str(e))

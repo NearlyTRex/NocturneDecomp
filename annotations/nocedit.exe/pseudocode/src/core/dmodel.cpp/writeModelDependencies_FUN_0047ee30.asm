@@ -29,8 +29,8 @@
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     PUSH 0xe8a                          ; 0047ee49
     PUSH 0x620f39                       ; 0047ee4e | = "..\\core\\dmodel.cpp"
     PUSH 0x56d8                         ; 0047ee53
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0047ee58
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0047ee58
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0047ee5d
     TEST EAX,EAX                        ; 0047ee60
     JNZ 0x0047eecc                      ; 0047ee62
@@ -111,8 +111,8 @@ section .text
         ;   XREF to: 00476d90 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0047eedf
     PUSH EAX                            ; 0047eee2
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0047eee3
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 0047eee3
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 0047eee8
     POP EBP                             ; 0047eeeb
     POP EBX                             ; 0047eeec

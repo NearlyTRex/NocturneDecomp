@@ -409,7 +409,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_2d.c_drawCharacter_FUN_00401a10",
+    "name":"engine_2d.c_drawCharacterMasked_FUN_00401a10",
     "ret":"int",
     "vars":{
       "locals":[
@@ -942,7 +942,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"wincore_wddvmem.cpp_initTextureCache_FUN_005dd760",
+    "name":"wincore_wddvmem.cpp_initTextureCache_FUN_00403790",
     "ret":"CTextureCache*",
     "thtarget":"005dd760",
     "thunk":true,
@@ -1102,7 +1102,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290",
+    "name":"engine_3d.c_renderPolygonTexturePerspectiveCorrectClamped_FUN_00406290",
     "ret":"SMRGLHeaderExtended*",
     "vars":{
       "params":[
@@ -27387,54 +27387,6 @@
             ]
           },
           "type":"SMRGLHeaderPrimitive"
-        },
-        {
-          "name":"local_e8",
-          "storage":{
-            "offset":-232,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xe8]",
-                "offset":-232,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"fVar1",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:6df92dd0226",
-                "offset":7557311431206,
-                "size":4
-              }
-            ]
-          },
-          "type":"float",
-          "use":345
-        },
-        {
-          "name":"this_ptr_00",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:3f4df3e881",
-                "offset":271890770049,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonRenderer*",
-          "use":1235
         }
       ],
       "params":[
@@ -40996,22 +40948,6 @@
             ]
           },
           "type":"CVector3i"
-        },
-        {
-          "name":"local_78",
-          "storage":{
-            "offset":-120,
-            "size":24,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x78]",
-                "offset":-120,
-                "size":24
-              }
-            ]
-          },
-          "type":"SMRGLHeaderPrimitive"
         }
       ],
       "params":[
@@ -54708,7 +54644,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_memdbg.cpp_debugFree_FUN_0050f210",
+    "name":"shape_memdbg.cpp_debugFreeChecked_FUN_0050f210",
     "ret":"void",
     "vars":{
       "params":[

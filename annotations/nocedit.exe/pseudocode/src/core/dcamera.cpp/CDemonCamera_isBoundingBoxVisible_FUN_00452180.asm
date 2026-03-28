@@ -10,7 +10,6 @@
 ; CVector3f *      Stack[0x10]:4   bbox_min
 ; CVector3f *      Stack[0x14]:4   bbox_max
 ; Local Variables:
-; CVector3i        Stack[-0x130]:12  local_130
 ; float            Stack[-0x124]:4  local_124
 ; float            Stack[-0x120]:4  local_120
 ; float            Stack[-0x11c]:4  local_11c
@@ -92,8 +91,8 @@
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
-;   engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
+;   engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0048c630
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
@@ -112,8 +111,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x144]     ; 0045219f
     MOV EDX,dword ptr [0x006703ec]      ; 004521a6 | g_CDemonRendererPtr2
     PUSH EDX                            ; 004521ac | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620 ; 004521ad
-        ;   XREF to: 0048c630 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0048c630 ; 004521ad
+        ;   XREF to: 0048c630 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0048c630(CDemonRenderer * this_ptr)
     FLD float ptr [EBX + 0x4]           ; 004521b2
     FSUB float ptr [EBP]                ; 004521b5
     FLD double ptr [0x0061a332]         ; 004521b8 | g_CameraFixedPointScale_0061a332
@@ -447,6 +446,6 @@ section .text
     MOV EDI,dword ptr [0x006703ec]      ; 004526fc | g_CDemonRendererPtr2
         ;   Label: LAB_004526fc
     PUSH EDI                            ; 00452702 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00452703
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00452703
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
 

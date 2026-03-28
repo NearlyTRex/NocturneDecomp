@@ -14,7 +14,7 @@
 ;   core_cloth.cpp_CCloth_dtor_FUN_00438c00
 ;   core_hero.cpp_CHero_dtor_FUN_004f2470
 ;   crt_memory.c___vec_delete_FUN_005fe632
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -68,8 +68,8 @@ section .text
     RET                                 ; 005d9fb7
     PUSH EAX                            ; 005d9fb8
         ;   Label: LAB_005d9fb8
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005d9fb9
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005d9fb9
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005d9fbe
     MOV EAX,EBX                         ; 005d9fc1
     POP EBX                             ; 005d9fc3

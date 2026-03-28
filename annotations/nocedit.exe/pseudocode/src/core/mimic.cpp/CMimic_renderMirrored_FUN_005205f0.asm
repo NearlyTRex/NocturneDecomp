@@ -6,7 +6,6 @@
 ; Parameters:
 ; CMimic *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; CMatrix3x4f      Stack[-0xf4]:48  local_f4
 ; CMatrix3x4f      Stack[-0xc4]:48  local_c4
 ; CMatrix3x4f      Stack[-0x94]:48  local_94
 ; CBoundingBox3D   Stack[-0x64]:24  local_64
@@ -246,8 +245,8 @@ section .text
     ADD ESP,0xc                         ; 005207f0
     MOV ESI,dword ptr [0x006703ec]      ; 005207f3 | g_CDemonRendererPtr2
     PUSH ESI                            ; 005207f9 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 005207fa
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 005207fa
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     PUSH EBX                            ; 00520802
         ;   Label: LAB_00520802
     CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420 ; 00520803
@@ -278,8 +277,8 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 00520840 | g_CDemonRendererPtr2
         ;   Label: LAB_00520840
     PUSH EDX                            ; 00520846 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00520847
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00520847
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     MOV ECX,0xc                         ; 03fc4298
         ;   Label: LAB_03fc4298
     PUSH EAX                            ; 03fc429d

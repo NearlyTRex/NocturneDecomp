@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_crossbow.cpp_CCrossbow_ctor_FUN_00448c70
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_crossbow.cpp_factoryFunc_FUN_00448c30
     PUSH 0x619b64                       ; 00448c32 | = "..\\core\\crossbow.cpp"
     PUSH 0x820                          ; 00448c37
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 00448c3c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00448c3c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00448c41
     TEST EAX,EAX                        ; 00448c44
     JNZ 0x00448c49                      ; 00448c46

@@ -1,0 +1,264 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 91,
+    "complexity_score": 47,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 47,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 138
+  },
+  "cross_references": [
+    {
+      "addr": "0042d530",
+      "from_addr": "0042d552",
+      "name": "core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e5970",
+      "from_addr": "005e620b",
+      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a16c0",
+    "address_range": [
+      [
+        "005a16c0",
+        "005a17a0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005a16c0",
+    "signature": "CBoundingBox3D * __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005a16c0(CDeformableModelInstance *this_ptr,CBoundingBox3D *output_bbox)"
+  },
+  "function_calls": [
+    {
+      "addr": "00420240",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_expand_FUN_00420240"
+    },
+    {
+      "addr": "004202b0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0"
+    },
+    {
+      "addr": "00420fb0",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_reset_FUN_00420fb0"
+    },
+    {
+      "addr": "0059a810",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810"
+    },
+    {
+      "addr": "005a07a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    },
+    {
+      "addr": "005f4dc0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_transformVector3x4_FUN_005f4dc0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "005e620b",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005e63eb",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042d552",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005e64b9",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005e61bc",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005e639c",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005e5f1f",
+        "call_type": "direct",
+        "caller": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5394736842105265,
+    "instruction_count": 76,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 6,
+      "CBRANCH": 4,
+      "COPY": 58,
+      "INT_ADD": 43,
+      "INT_AND": 41,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 40,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 20,
+      "INT_SUB": 25,
+      "INT_XOR": 2,
+      "LOAD": 18,
+      "POPCOUNT": 20,
+      "RETURN": 1,
+      "STORE": 30
+    },
+    "pcode_op_count": 345
+  },
+  "stack_frame": {
+    "frame_size": 72,
+    "local_size": 64,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "CMatrix3x4f *"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "output_bbox",
+        "offset": 8,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      }
+    ]
+  },
+  "suspects": []
+}

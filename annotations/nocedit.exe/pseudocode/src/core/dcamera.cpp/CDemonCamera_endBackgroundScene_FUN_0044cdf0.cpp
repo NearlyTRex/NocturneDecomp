@@ -22,7 +22,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemo
   bVar8 = 0;
   g_BackgroundSceneDepth = g_BackgroundSceneDepth + -1;
   if (g_BackgroundSceneDepth == 0) {
-    engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
+    engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0();
     (this_ptr->saved_viewport_rect).left = g_ViewportCenterXFixed;
     (this_ptr->saved_viewport_rect).top = g_ViewportCenterYFixed;
     (this_ptr->saved_viewport_rect).right = g_ViewportRightFixed;

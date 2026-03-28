@@ -11,7 +11,7 @@ void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930(char *p1,EAmmoType p3
 {
   CAmmo *pCVar1;
   
-  pCVar1 = (CAmmo *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x31c,"..\\core\\game.cpp",0xa1c);
+  pCVar1 = (CAmmo *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x31c,"..\\core\\game.cpp",0xa1c);
   if (pCVar1 == (CAmmo *)0x0) {
     return;
   }

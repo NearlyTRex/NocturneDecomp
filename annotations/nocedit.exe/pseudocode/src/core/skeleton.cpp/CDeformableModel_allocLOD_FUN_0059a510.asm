@@ -39,7 +39,7 @@
 ;   core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0
 ;   crt_memory.c___vec_delete_FUN_005fe632
 ;   crt_memory.c___vec_new_FUN_00601272
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -129,8 +129,8 @@ section .text
     PUSH 0x64e733                       ; 0059a61e | = "..\\core\\skeleton.cpp"
     ADD EBX,0x4                         ; 0059a623
     PUSH EBX                            ; 0059a626
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0059a627
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0059a627
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0059a62c
     PUSH EAX                            ; 0059a62f
     CALL crt_memory.c___vec_new_FUN_00601272 ; 0059a630
@@ -148,8 +148,8 @@ section .text
     PUSH 0x64e748                       ; 0059a65a | = "..\\core\\skeleton.cpp"
     ADD EAX,EAX                         ; 0059a65f
     PUSH EAX                            ; 0059a661
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0059a662
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0059a662
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     MOV dword ptr [EBX + 0x7c],EAX      ; 0059a667
     ADD ESP,0xc                         ; 0059a66a
     MOV ECX,dword ptr [EBX + 0x68]      ; 0059a66d
@@ -159,8 +159,8 @@ section .text
     PUSH 0x64e75d                       ; 0059a67a | = "..\\core\\skeleton.cpp"
     SHL EAX,0x2                         ; 0059a67f
     PUSH EAX                            ; 0059a682
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0059a683
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0059a683
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0059a688
     MOV EBP,dword ptr [EBX + 0x68]      ; 0059a68b
     MOV dword ptr [EBX + 0x90],EAX      ; 0059a68e
@@ -171,8 +171,8 @@ section .text
     PUSH 0x64e772                       ; 0059a69d | = "..\\core\\skeleton.cpp"
     LEA EAX,[EBP*0x4 + 0x0]             ; 0059a6a2
     PUSH EAX                            ; 0059a6a9
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0059a6aa
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0059a6aa
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0059a6af
     MOV dword ptr [EBX + 0xa4],EAX      ; 0059a6b2
     LEA EAX,[EDI*0x4 + 0x0]             ; 0059a6b8

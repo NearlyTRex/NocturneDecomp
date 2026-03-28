@@ -32,6 +32,7 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
   float local_28;
   float local_24;
   int local_20;
+  int iStack_1c;
   float local_18;
   int local_14;
   CKeyFramedModel *pCVar2;
@@ -79,9 +80,9 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
                     (g_CDemonRendererPtr2,(CVector3i *)&local_78,&local_48);
           core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                     (this_ptr->model_ptr,0,(CKeyFramedModelInstance *)0x0,(int)ROUND(ROUND(fVar6)));
-          engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+          engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
           iVar4 = iVar4 + 1;
-          if (local_20 <= iVar4) {
+          if (iStack_1c <= iVar4) {
             return;
           }
         }

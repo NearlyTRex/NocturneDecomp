@@ -37,7 +37,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c_memset_FUN_005fde40
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -79,8 +79,8 @@ section .text
     PUSH 0x620257                       ; 0047aa7b | = "..\\core\\dmodel.cpp"
     LEA EAX,[EBX*0x4 + 0x0]             ; 0047aa80
     PUSH EAX                            ; 0047aa87
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0047aa88
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0047aa88
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0047aa8d
     MOV dword ptr [ESP + 0xc],EAX       ; 0047aa90
     TEST EAX,EAX                        ; 0047aa94

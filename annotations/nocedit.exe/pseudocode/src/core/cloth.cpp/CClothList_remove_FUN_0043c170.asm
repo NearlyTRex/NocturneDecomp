@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_dtor_FUN_00438c00
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
         ;   XREF to: 00438c00 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_dtor_FUN_00438c00(CCloth * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0043c1dc
     PUSH EAX                            ; 0043c1df
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0043c1e0
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 0043c1e0
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 0043c1e5
     MOV EAX,dword ptr [ESP + 0x14]      ; 0043c1e8
         ;   Label: LAB_0043c1e8

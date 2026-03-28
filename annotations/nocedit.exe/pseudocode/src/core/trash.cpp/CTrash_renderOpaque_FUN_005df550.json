@@ -1,19 +1,28 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 63,
+        "line": 19,
+        "message": "use of undeclared identifier 'stack0xffffffc4'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 26,
+    "complexity_score": 41,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 3,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
     "total_lines": 94
   },
   "cross_references": [],
@@ -63,7 +72,7 @@
     {
       "addr": "0048c640",
       "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640"
     }
   ],
   "globals": [
@@ -153,7 +162,16 @@
     ],
     "severity": "medium"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 12,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffffc4);",
+      "type": "stack_ref"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

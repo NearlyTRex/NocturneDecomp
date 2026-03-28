@@ -21,7 +21,8 @@ void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   this_ptr->model_count = g_PartsCount;
   for (local_1c = 0; (int)local_1c < this_ptr->model_count; local_1c = local_1c + 1) {
-    pCVar1 = (CDSEModel *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1f20dc,"..\\shape\\multicrm.cpp",0x42);
+    pCVar1 = (CDSEModel *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+                       (0x1f20dc,"..\\shape\\multicrm.cpp",0x42);
     this_ptr->models[local_1c] = pCVar1;
     if (this_ptr->models[local_1c] == (CDSEModel *)0x0) {
       g_CurrentFilename = "..\\shape\\multicrm.cpp";
@@ -98,7 +99,7 @@ void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr
   for (local_1c = 0; (int)local_1c < this_ptr->model_count; local_1c = local_1c + 1) {
     g_CurrentDebugFilename = "..\\shape\\multicrm.cpp";
     g_CurrentDebugLine = 0xa9;
-    shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr->models[local_1c]);
+    shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(this_ptr->models[local_1c]);
   }
   engine_2d_c_drawText_FUN_00401fd0("Press any key...",0,local_14);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

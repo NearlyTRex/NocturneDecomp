@@ -25,8 +25,8 @@
 ;   int g_CurrentDebugLine
 ;
 ; Called Functions:
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;   shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870
 ;   shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950
@@ -164,8 +164,8 @@ section .text
         ;   XREF to: 00515950 (UNCONDITIONAL_CALL)  ; CLodMesh * shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950(CLodMesh * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00515a9b
     PUSH EAX                            ; 00515a9e
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00515a9f
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 00515a9f
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 00515aa4
     PUSH EBX                            ; 00515aa7
     CALL shape_meshlod.cpp_CLodMesh_init_FUN_00515880 ; 00515aa8

@@ -49,7 +49,8 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
     g_CurrentLineNumber = 5999;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",mp3_filename);
   }
-  this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x8630,"..\\sound\\sndmain.cpp",0x1773);
+  this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+                       (0x8630,"..\\sound\\sndmain.cpp",0x1773);
   pCVar4 = (CMP3Decoder *)0x0;
   if (this_ptr != (CMP3Decoder *)0x0) {
     pCVar4 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(this_ptr);
@@ -69,7 +70,7 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
   g_CurrentDebugFilename = "..\\sound\\sndmain.cpp";
   g_CurrentDebugLine = 0x1784;
   ptr = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(pCVar4,0);
-  shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
   splitpath(mp3_filename,local_14,local_12c,local_22c,(char *)0x0);
   makepath(local_330,local_14,local_12c,local_22c,"sfx");
   p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0

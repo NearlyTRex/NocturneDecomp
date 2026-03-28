@@ -41,7 +41,7 @@
 ;   engine_dosio.c_copyFileTimestamp_FUN_00481910
 ;   engine_dosio.c_ensureTrailingSlash_FUN_00481f80
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
-;   engine_dosio.c_getFileTimestamp_FUN_00481960
+;   engine_dosio.c_getFileSize_FUN_00481960
 ;   engine_dosio.c_makePath_FUN_00481f50
 ;   engine_dosio.c_setFileAttributes_FUN_004819f0
 ;   engine_fileio.cpp_copyFileWithProgress_FUN_004b2030
@@ -349,8 +349,8 @@ section .text
         ;   Label: LAB_004b34f5
     PUSH EAX                            ; 004b34fc
     PUSH 0x0                            ; 004b34fd
-    CALL engine_dosio.c_getFileTimestamp_FUN_00481960 ; 004b34ff
-        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileTimestamp_FUN_00481960(char * directory, char * filename)
+    CALL engine_dosio.c_getFileSize_FUN_00481960 ; 004b34ff
+        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481960(char * directory, char * filename)
     ADD ESP,0x8                         ; 004b3504
     MOV ESI,EAX                         ; 004b3507
     TEST EAX,EAX                        ; 004b3509

@@ -3,7 +3,7 @@
 # ============================================================================
 #
 # Function:    engine_fileio.cpp_logOffVersionControl_FUN_004b2830
-# Entry:       004bceb0
+# Entry:       004b2830
 # Signature:   void __cdecl engine_fileio_cpp_logOffVersionControl_FUN_004b2830(void)
 #
 # Format: @<address> [ESP:offset] # <assembly>
@@ -16,9 +16,77 @@
 #
 # ============================================================================
 
-@004bceb0 [ESP:+0]  # JMP 0x004b2830
-BRANCH (ram,0x4b2830,4)
+@004b2830 [ESP:+0]  # CMP dword ptr [0x02d12d2c], 0x0
+COPY (unique,0x66100,4) = (ram,0x2d12d2c,4)
+INT_LESS (register,0x200,1) = (unique,0x66100,4), (const,0x0,4)
+INT_SBORROW (register,0x20b,1) = (unique,0x66100,4), (const,0x0,4)
+INT_SUB (unique,0x66300,4) = (unique,0x66100,4), (const,0x0,4)
+INT_SLESS (register,0x207,1) = (unique,0x66300,4), (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (unique,0x66300,4), (const,0x0,4)
+INT_AND (unique,0x49800,4) = (unique,0x66300,4), (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
+
+@004b2837 [ESP:+0]  # JNZ 0x004b283a
+BOOL_NEGATE (unique,0x17c00,1) = (register,0x206,1)
+CBRANCH (ram,0x4b283a,4), (unique,0x17c00,1)
+
+@004b2839 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+@004b283a [ESP:-4](-4)~  # PUSH EBX
+COPY (unique,0x41500,4) = (register,0xc,4) /* EBX */
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
+
+@004b283b [ESP:-4](-4)~  # CALL dword ptr CS:[0x611480]
+COPY (unique,0x63500,4) = (ram,0x611480,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4b2842,4)
+CALLIND (unique,0x63500,4)
+
+@004b2842 [ESP:-4]~  # MOV ECX, dword ptr [0x02d12d2c]
+COPY (register,0x4,4) /* ECX */ = (ram,0x2d12d2c,4)
+
+@004b2848 [ESP:-8](-4)~  # PUSH ECX
+COPY (unique,0x41500,4) = (register,0x4,4) /* ECX */
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
+
+@004b2849 [ESP:-8]~  # XOR EBX, EBX
+COPY (register,0x200,1) = (const,0x0,1)
+COPY (register,0x20b,1) = (const,0x0,1)
+INT_XOR (register,0xc,4) /* EBX */ = (register,0xc,4) /* EBX */, (register,0xc,4) /* EBX */
+INT_SLESS (register,0x207,1) = (register,0xc,4) /* EBX */, (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (register,0xc,4) /* EBX */, (const,0x0,4)
+INT_AND (unique,0x49800,4) = (register,0xc,4) /* EBX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
+
+@004b284b [ESP:-4](-4)~  # CALL dword ptr CS:[0x611504]
+COPY (unique,0x63500,4) = (ram,0x611504,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4b2852,4)
+CALLIND (unique,0x63500,4)
+
+@004b2852 [ESP:-4]~  # MOV dword ptr [0x02d12d2c], EBX
+COPY (ram,0x2d12d2c,4) = (register,0xc,4) /* EBX */
+
+@004b2858 [ESP:+0](+4)~  # POP EBX
+COPY (unique,0x87300,4) = (const,0x0,4)
+LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+COPY (register,0xc,4) /* EBX */ = (unique,0x87300,4)
+
+@004b2859 [ESP:+4](+4)~  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
 
 # ============================================================================
-# Summary: 1 instructions, 1 P-code ops
+# Summary: 12 instructions, 47 P-code ops
 # ============================================================================

@@ -33,12 +33,12 @@
 ;   core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004509b0
 ;   core_dcamera.cpp_updateFogScrollOffset_FUN_0044bfb0
 ;   core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc
-;   core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_00491c9a
+;   core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutputOffset_FUN_00491c9a
 ;   core_dstrender.cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
 ;   core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1
-;   core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5
-;   core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00492f03
-;   core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00493dc4
+;   core_dstrender.cpp_blendLightmapToTexture32BitOutputAmbient_FUN_00492bd5
+;   core_dstrender.cpp_blendLightmapToTextureMMX32BitBlendBias_FUN_00492f03
+;   core_dstrender.cpp_blendLightmapToTextureMMX64BitAmbient_FUN_00493dc4
 ;   core_dstrender.cpp_blendTextureWithLightmapMMX_FUN_00493860
 ;
 ; *****************************************************************************
@@ -189,8 +189,8 @@ section .text
     PUSH ECX                            ; 00453434
     MOV EBX,dword ptr [ESP + 0x20]      ; 00453435
     PUSH EBX                            ; 00453439
-    CALL core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00492f03 ; 0045343a
-        ;   XREF to: 00492f03 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00492f03(uint * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
+    CALL core_dstrender.cpp_blendLightmapToTextureMMX32BitBlendBias_FUN_00492f03 ; 0045343a
+        ;   XREF to: 00492f03 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendLightmapToTextureMMX32BitBlendBias_FUN_00492f03(uint * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
     ADD ESP,0x14                        ; 0045343f
     JMP 0x004533fd                      ; 00453442
         ;   XREF to: 004533fd (UNCONDITIONAL_JUMP)  ; LAB_004533fd
@@ -206,8 +206,8 @@ section .text
     PUSH EAX                            ; 0045345a
     MOV EDX,dword ptr [ESP + 0x20]      ; 0045345b
     PUSH EDX                            ; 0045345f
-    CALL core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00493dc4 ; 00453460
-        ;   XREF to: 00493dc4 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00493dc4(ulonglong * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
+    CALL core_dstrender.cpp_blendLightmapToTextureMMX64BitAmbient_FUN_00493dc4 ; 00453460
+        ;   XREF to: 00493dc4 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendLightmapToTextureMMX64BitAmbient_FUN_00493dc4(ulonglong * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
     ADD ESP,0x14                        ; 00453465
     CMP dword ptr [EDI + 0x14c],0x2     ; 00453468
         ;   Label: LAB_00453468
@@ -338,8 +338,8 @@ section .text
     PUSH EAX                            ; 004535c0
     MOV EDX,dword ptr [ESP + 0x1c]      ; 004535c1
     PUSH EDX                            ; 004535c5
-    CALL core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5 ; 004535c6
-        ;   XREF to: 00492bd5 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5(uint * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
+    CALL core_dstrender.cpp_blendLightmapToTexture32BitOutputAmbient_FUN_00492bd5 ; 004535c6
+        ;   XREF to: 00492bd5 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendLightmapToTexture32BitOutputAmbient_FUN_00492bd5(uint * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
     ADD ESP,0x14                        ; 004535cb
     CMP dword ptr [EDI + 0x14c],0x2     ; 004535ce
         ;   Label: LAB_004535ce
@@ -354,8 +354,8 @@ section .text
     PUSH ECX                            ; 004535e8
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004535e9
     PUSH EBX                            ; 004535ed
-    CALL core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_00491c9a ; 004535ee
-        ;   XREF to: 00491c9a (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_00491c9a(ulonglong * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
+    CALL core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutputOffset_FUN_00491c9a ; 004535ee
+        ;   XREF to: 00491c9a (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutputOffset_FUN_00491c9a(ulonglong * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, ...)
     ADD ESP,0x14                        ; 004535f3
     JMP 0x00453574                      ; 004535f6
         ;   XREF to: 00453574 (UNCONDITIONAL_JUMP)  ; LAB_00453574

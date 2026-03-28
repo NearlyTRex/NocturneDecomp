@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_manpuz.cpp_CMirrorHack_ctor_FUN_0050b110
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_manpuz.cpp_factoryFunc_FUN_0050b0d0
     PUSH 0x635905                       ; 0050b0d5 | = "..\\core\\manpuz.cpp"
     PUSH 0x2d8                          ; 0050b0da
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0050b0df
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0050b0df
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0050b0e4
     TEST EAX,EAX                        ; 0050b0e7
     JNZ 0x0050b0ec                      ; 0050b0e9

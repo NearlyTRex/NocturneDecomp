@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHeroPlaceholder_ctor_FUN_004f3c00
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_hero.cpp_factoryFunc_FUN_004f3bc0
     PUSH 0x62ecd6                       ; 004f3bc5 | = "..\\core\\hero.cpp"
     PUSH 0x15c                          ; 004f3bca
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 004f3bcf
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004f3bcf
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004f3bd4
     TEST EAX,EAX                        ; 004f3bd7
     JNZ 0x004f3bdc                      ; 004f3bd9

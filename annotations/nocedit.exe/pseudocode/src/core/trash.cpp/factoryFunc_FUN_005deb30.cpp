@@ -11,7 +11,7 @@ CTrash * __cdecl core_trash_cpp_factoryFunc_FUN_005deb30(void)
 {
   CTrash *pCVar1;
   
-  pCVar1 = (CTrash *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x328,"..\\core\\trash.cpp",0x43);
+  pCVar1 = (CTrash *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x328,"..\\core\\trash.cpp",0x43);
   if (pCVar1 == (CTrash *)0x0) {
     return (CTrash *)0x0;
   }

@@ -21,6 +21,6 @@ CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_dtor_FUN_004cbc60(CFlashligh
   if ((flags & 2) == 0) {
     return (CFlashlight *)ptr;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
   return (CFlashlight *)ptr;
 }

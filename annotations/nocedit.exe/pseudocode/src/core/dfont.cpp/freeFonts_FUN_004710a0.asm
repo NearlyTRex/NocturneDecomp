@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_dtor_FUN_004cceb0
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
         ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004710f6
     PUSH EAX                            ; 004710f9
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004710fa
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 004710fa
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 004710ff
     MOV ESI,0x61eba2                    ; 00471102 | = "..\\core\\dfont.cpp"
         ;   Label: LAB_00471102
@@ -83,8 +83,8 @@ section .text
         ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00471131
     PUSH EAX                            ; 00471134
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00471135
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 00471135
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 0047113a
     MOV ECX,0x61ebb4                    ; 0047113d | = "..\\core\\dfont.cpp"
         ;   Label: LAB_0047113d
@@ -103,8 +103,8 @@ section .text
         ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0047116c
     PUSH EAX                            ; 0047116f
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00471170
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 00471170
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 00471175
     MOV EAX,0x61ebc6                    ; 00471178 | = "..\\core\\dfont.cpp"
         ;   Label: LAB_00471178
@@ -123,8 +123,8 @@ section .text
         ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004711a6
     PUSH EAX                            ; 004711a9
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004711aa
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 004711aa
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 004711af
     MOV EBP,0x61ebd8                    ; 004711b2 | = "..\\core\\dfont.cpp"
         ;   Label: LAB_004711b2
@@ -144,8 +144,8 @@ section .text
         ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004711e6
     PUSH EAX                            ; 004711e9
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004711ea
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 004711ea
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 004711ef
     XOR EBX,EBX                         ; 004711f2
         ;   Label: LAB_004711f2
@@ -227,8 +227,8 @@ section .text
         ;   XREF to: 004cceb0 (UNCONDITIONAL_CALL)  ; CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004712d7
     PUSH EAX                            ; 004712da
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004712db
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 004712db
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 004712e0
     JMP 0x004710c8                      ; 004712e3
         ;   XREF to: 004710c8 (UNCONDITIONAL_JUMP)  ; LAB_004710c8

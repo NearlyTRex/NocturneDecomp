@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_boxactor.cpp_CBoxActor_ctor_FUN_00421700
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_boxactor.cpp_factoryFunc_FUN_004216c0
     PUSH 0x61661b                       ; 004216c2 | = "..\\core\\boxactor.cpp"
     PUSH 0x66c                          ; 004216c7
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 004216cc
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004216cc
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004216d1
     TEST EAX,EAX                        ; 004216d4
     JNZ 0x004216d9                      ; 004216d6

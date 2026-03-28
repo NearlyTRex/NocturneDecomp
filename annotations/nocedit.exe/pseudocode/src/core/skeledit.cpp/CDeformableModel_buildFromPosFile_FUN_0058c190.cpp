@@ -277,7 +277,7 @@ LAB_0058c613:
               if (entry->skip_generation != 2) {
                 _sprintf
                           (local_eb8,"Can't open %s.  Keep going anyway?",local_a1c);
-                iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+                iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
                                   (g_CEditorToolsPtr,local_eb8);
                 if (iVar5 == 0) {
                   return 0;

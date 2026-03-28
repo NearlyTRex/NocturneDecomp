@@ -21,6 +21,6 @@ CShovel * __cdecl core_shovel_cpp_CShovel_dtor_FUN_00588c80(CShovel *this_ptr,ui
   if ((flags & 2) == 0) {
     return (CShovel *)ptr;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
   return (CShovel *)ptr;
 }

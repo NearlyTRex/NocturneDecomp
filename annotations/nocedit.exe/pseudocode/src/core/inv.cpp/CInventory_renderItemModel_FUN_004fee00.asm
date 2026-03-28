@@ -50,7 +50,7 @@
 ;   core_inv.cpp_getItemModel_FUN_004fcda0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890
@@ -381,8 +381,8 @@ section .text
     MOV ESI,dword ptr [0x006703ec]      ; 004ff178 | g_CDemonRendererPtr2
         ;   Label: LAB_004ff178
     PUSH ESI                            ; 004ff17e | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004ff17f
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004ff17f
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     FLD float ptr [EBP + -0x54]         ; 004ff1ba
         ;   Label: LAB_004ff1ba
     FCOMP float ptr [EBP + -0x50]       ; 004ff1bd

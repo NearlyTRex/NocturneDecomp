@@ -9,19 +9,19 @@
 void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
 
 {
-  SClothBone *pSVar1;
-  CSkeleton *pCVar2;
-  int iVar3;
-  SClothVertex *pSVar4;
+  CSkeleton *pCVar1;
+  int iVar2;
+  SClothVertex *pSVar3;
   uint color;
   SMotion *string_data;
+  SClothBone *pSVar4;
   int *piVar5;
   CCloth *pCVar6;
   CVector3f *pCVar7;
-  float delta_time;
   int iVar8;
-  CKeys *in_stack_fffffac8;
-  char acStack_1a8 [256];
+  float delta_time;
+  float fStack_550;
+  CPickList CStack_54c;
   CSlew CStack_a8;
   float fStack_8c;
   float fStack_88;
@@ -67,16 +67,16 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
             (&g_CDeformableModelInstanceInstance.motion_controller,0,0.0);
-  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                      (&g_CDeformableModelInstanceInstance);
   g_CDemonSetPtr->lighting_quality_mode = 1;
-  pCStack_30 = pCVar2;
+  pCStack_30 = pCVar1;
   core_cloth_cpp_CCloth_setup_FUN_00439710
             (this_ptr,&UNION_UVector3_00838e40.f,&UNION_UVector3_00838e4c.f,
              &g_CDeformableModelInstanceInstance);
   local_40 = this_ptr->collide_bones;
   pSStack_5c = this_ptr->vertices;
-  local_60 = (pCVar2->motion_list).motions;
+  local_60 = (pCVar1->motion_list).motions;
   local_38 = &this_ptr->last_position;
   local_34 = pSStack_5c;
   do {
@@ -117,34 +117,34 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
                  &g_CDeformableModelInstanceInstance);
     }
     else {
-      iVar3 = 0;
+      iVar2 = 0;
       if (0 < (this_ptr->model).vertex_count) {
         iVar8 = 0;
         pCVar7 = &pSStack_5c->offset_pos;
         do {
           piVar5 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar8);
-          iVar3 = iVar3 + 1;
+          iVar2 = iVar2 + 1;
           *piVar5 = (int)ROUND(pCVar7->x * 256.0f);
           piVar5[1] = (int)ROUND(pCVar7->y * 256.0f);
           piVar5[2] = (int)ROUND(pCVar7->z * 256.0f);
           pCVar7 = (CVector3f *)((int)(pCVar7 + 0x17) + 8);
           iVar8 = iVar8 + 0xc;
-        } while (iVar3 < (this_ptr->model).vertex_count);
+        } while (iVar2 < (this_ptr->model).vertex_count);
       }
-      iVar3 = 0;
+      iVar2 = 0;
       if (0 < this_ptr->collide_bone_count) {
         do {
           core_cloth_cpp_CCloth_computeBoneTransform_FUN_0043a2b0
-                    (this_ptr,iVar3,&g_CDeformableModelInstanceInstance);
-          iVar3 = iVar3 + 1;
-        } while (iVar3 < this_ptr->collide_bone_count);
+                    (this_ptr,iVar2,&g_CDeformableModelInstanceInstance);
+          iVar2 = iVar2 + 1;
+        } while (iVar2 < this_ptr->collide_bone_count);
       }
     }
     (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
     shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(g_CSpotViewPtr);
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xf8);
-    wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&UNION_UVector3_00838e40.f);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
@@ -156,8 +156,8 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     if (local_50 != 0) {
       core_cloth_cpp_CCloth_render_FUN_0043bae0(this_ptr,0);
     }
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4);
+    if (iVar2 != 0) {
       g_ClothBoneScreenshotCounter = g_ClothBoneScreenshotCounter + 1;
       _sprintf
                 (g_ClothBoneScreenshotFilename,"noc%d.pcx",g_ClothBoneScreenshotCounter);
@@ -170,10 +170,10 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
       pCVar6 = this_ptr;
       if (0 < this_ptr->locked_vertex_count) {
         do {
-          pSVar4 = local_34 + pCVar6->locked_vertex_indices[0];
-          CStack_74.x = (int)ROUND((pSVar4->position).x * 256.0f);
-          CStack_74.y = (int)ROUND((pSVar4->position).y * 256.0f);
-          CStack_74.z = (int)ROUND((pSVar4->position).z * 256.0f);
+          pSVar3 = local_34 + pCVar6->locked_vertex_indices[0];
+          CStack_74.x = (int)ROUND((pSVar3->position).x * 256.0f);
+          CStack_74.y = (int)ROUND((pSVar3->position).y * 256.0f);
+          CStack_74.z = (int)ROUND((pSVar3->position).z * 256.0f);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&CStack_74);
           core_cloth_cpp_drawVertexMarker_FUN_0043c6e0(19999);
@@ -182,9 +182,9 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
         } while (local_18 < this_ptr->locked_vertex_count);
       }
     }
-    if ((0 < local_28) && (iVar3 = 0, 0 < this_ptr->collide_bone_count)) {
+    if ((0 < local_28) && (iVar2 = 0, 0 < this_ptr->collide_bone_count)) {
       do {
-        if ((local_28 == 2) && (iVar3 == local_24)) {
+        if ((local_28 == 2) && (iVar2 == local_24)) {
           color = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                             (g_CEditorToolsPtr);
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
@@ -196,46 +196,50 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
                     (g_CDemonRendererPtr2,0xff);
           iVar8 = 0;
         }
-        core_cloth_cpp_CCloth_renderBone_FUN_0043b7e0(this_ptr,iVar3,iVar8);
-        iVar3 = iVar3 + 1;
-      } while (iVar3 < this_ptr->collide_bone_count);
+        core_cloth_cpp_CCloth_renderBone_FUN_0043b7e0(this_ptr,iVar2,iVar8);
+        iVar2 = iVar2 + 1;
+      } while (iVar2 < this_ptr->collide_bone_count);
     }
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-    _sprintf(acStack_1a8,"Model motion : %s frame %f",local_20);
-    engine_2d_c_drawText_FUN_00401fd0(acStack_1a8,0,0);
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M);
-    if (iVar3 != 0) {
-      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffac4);
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
+    _sprintf
+              ((char *)&CStack_54c.selection_state,"Model motion : %s frame %f",local_20,
+               (int)((ulonglong)
+                     (double)g_CDeformableModelInstanceInstance.motion_controller.
+                             current_frame_number >> 0x20));
+    engine_2d_c_drawText_FUN_00401fd0((char *)&CStack_54c.selection_state,0,0);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M);
+    if (iVar2 != 0) {
+      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_54c);
       local_2c = -1;
-      iVar3 = 0;
+      iVar2 = 0;
       string_data = local_60;
       if (0 < (pCStack_30->motion_list).motion_count) {
         do {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    ((CStrList *)&stack0xfffffac4,string_data->motion_name);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_54c.base,string_data->motion_name);
           if (string_data == local_20) {
-            local_2c = iVar3;
+            local_2c = iVar2;
           }
-          iVar3 = iVar3 + 1;
+          iVar2 = iVar2 + 1;
           string_data = string_data + 1;
-        } while (iVar3 < (pCStack_30->motion_list).motion_count);
+        } while (iVar2 < (pCStack_30->motion_list).motion_count);
       }
-      iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        ((CPickList *)&stack0xfffffac4,"Select motion",local_2c,0);
-      if (-1 < iVar3) {
+      iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                        (&CStack_54c,"Select motion",local_2c,0);
+      if (-1 < iVar2) {
         core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
-                  (&g_CDeformableModelInstanceInstance.motion_controller,iVar3,0.0);
+                  (&g_CDeformableModelInstanceInstance.motion_controller,iVar2,0.0);
       }
-      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffac4,0);
+      shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_54c,0);
     }
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);
+    if (iVar2 != 0) {
       shape_spotview_cpp_CSpotView_reset_FUN_005b9620(g_CSpotViewPtr,0x1f);
     }
     _sprintf
-              (acStack_1a8,"%f",(double)(1.0 / (float)in_stack_fffffac8));
+              ((char *)&CStack_54c.selection_state,"%f",SUB84(__BITCAST_UINT64((double)(1.0 / fStack_550)),0),
+               (int)((ulonglong)(double)(1.0 / fStack_550) >> 0x20));
     engine_2d_c_drawTextRightAligned_FUN_004021c0
-              (acStack_1a8,g_WindowWidth + -2,g_WindowHeight + -0xd);
+              ((char *)&CStack_54c.selection_state,g_WindowWidth + -2,g_WindowHeight + -0xd);
     engine_2d_c_drawText_FUN_00401fd0("1. Toggle bone drawing/editing",0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("2. Add bone",0,0x21);
     engine_2d_c_drawText_FUN_00401fd0("C. Toggle cloth render",0,0x37);
@@ -245,34 +249,33 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     engine_2d_c_drawText_FUN_00401fd0("L. Toggle locked vertices",0,99);
     engine_2d_c_drawText_FUN_00401fd0("Z. Restart cloth",0,0x6e);
     engine_2d_c_drawText_FUN_00401fd0("M. Select motion",0,0x79);
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_1);
-    if ((iVar3 != 0) && (local_28 = local_28 + 1, 2 < local_28)) {
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_1);
+    if ((iVar2 != 0) && (local_28 = local_28 + 1, 2 < local_28)) {
       local_28 = 0;
     }
-    in_stack_fffffac8 = g_CKeysPtr;
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_2);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_2);
+    if (iVar2 != 0) {
       core_cloth_cpp_CCloth_addCollisionBone_FUN_0043c430(this_ptr);
       local_24 = this_ptr->collide_bone_count + -1;
     }
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_H);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_H);
+    if (iVar2 != 0) {
       local_3c = 1 - local_3c;
     }
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
+    if (iVar2 != 0) {
       local_50 = (uint)(local_50 == 0);
     }
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_S);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_S);
+    if (iVar2 != 0) {
       local_4c = (uint)(local_4c == 0);
     }
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_P);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_P);
+    if (iVar2 != 0) {
       local_48 = (uint)(local_48 == 0);
     }
     iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_L);
-    iVar3 = local_24;
+    iVar2 = local_24;
     if (iVar8 != 0) {
       local_44 = (uint)(local_44 == 0);
     }
@@ -284,71 +287,72 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
       engine_2d_c_drawText_FUN_00401fd0("O. Cylinder length override",0,0xbb);
       engine_2d_c_drawText_FUN_00401fd0("Use TAB/Shift-TAB to select cylinder",0,0xc6);
       engine_2d_c_drawText_FUN_00401fd0("Use CTRL to slew cylinder",0,0xd1);
-      pSVar1 = local_40;
-      _sprintf(acStack_1a8,"Editing cylinder %d, on bone %s");
-      engine_2d_c_drawText_FUN_00401fd0(acStack_1a8,0,g_WindowHeight + -0x16);
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
-      if (iVar8 == 0) {
+      pSVar4 = local_40 + iVar2;
+      _sprintf
+                ((char *)&CStack_54c.selection_state,"Editing cylinder %d, on bone %s",iVar2,
+                 pSVar4);
+      engine_2d_c_drawText_FUN_00401fd0
+                ((char *)&CStack_54c.selection_state,0,g_WindowHeight + -0x16);
+      iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
+      if (iVar2 == 0) {
         shape_spotview_cpp_CSpotView_handleInput_FUN_005b9670(g_CSpotViewPtr,0x1f);
       }
       else {
         core_slew_cpp_CSlew_init_FUN_005a2060(&CStack_a8);
-        local_80.x = pSVar1[iVar3].euler1.x * 10.0f;
-        local_80.y = pSVar1[iVar3].euler1.y * 10.0f;
-        local_80.z = 10.0f * pSVar1[iVar3].euler1.z;
+        local_80.x = (pSVar4->euler1).x * 10.0f;
+        local_80.y = (pSVar4->euler1).y * 10.0f;
+        local_80.z = 10.0f * (pSVar4->euler1).z;
         local_58 = 10.0;
         if (&CStack_a8 != (CSlew *)&local_80) {
           CStack_a8.position.x = local_80.x;
           CStack_a8.position.y = local_80.y;
           CStack_a8.position.z = local_80.z;
         }
-        if ((CVector3f *)&CStack_a8.pitch != &pSVar1[iVar3].euler2) {
-          CStack_a8.pitch = pSVar1[iVar3].euler2.x;
-          CStack_a8.yaw = pSVar1[iVar3].euler2.y;
-          CStack_a8.roll = pSVar1[iVar3].euler2.z;
+        if ((CVector3f *)&CStack_a8.pitch != &pSVar4->euler2) {
+          CStack_a8.pitch = (pSVar4->euler2).x;
+          CStack_a8.yaw = (pSVar4->euler2).y;
+          CStack_a8.roll = (pSVar4->euler2).z;
         }
         core_slew_cpp_CSlew_processInput_FUN_005a20b0(&CStack_a8);
         fStack_84 = 1.0 / local_58;
         fStack_8c = CStack_a8.position.x * fStack_84;
         fStack_88 = CStack_a8.position.y * fStack_84;
         fStack_84 = CStack_a8.position.z * fStack_84;
-        if (&pSVar1[iVar3].euler1 != (CVector3f *)&fStack_8c) {
-          pSVar1[iVar3].euler1.x = fStack_8c;
-          pSVar1[iVar3].euler1.y = fStack_88;
-          pSVar1[iVar3].euler1.z = fStack_84;
+        if (&pSVar4->euler1 != (CVector3f *)&fStack_8c) {
+          (pSVar4->euler1).x = fStack_8c;
+          (pSVar4->euler1).y = fStack_88;
+          (pSVar4->euler1).z = fStack_84;
         }
-        if (&pSVar1[iVar3].euler2 != (CVector3f *)&CStack_a8.pitch) {
-          pSVar1[iVar3].euler2.x = CStack_a8.pitch;
-          pSVar1[iVar3].euler2.y = CStack_a8.yaw;
-          pSVar1[iVar3].euler2.z = CStack_a8.roll;
+        if (&pSVar4->euler2 != (CVector3f *)&CStack_a8.pitch) {
+          (pSVar4->euler2).x = CStack_a8.pitch;
+          (pSVar4->euler2).y = CStack_a8.yaw;
+          (pSVar4->euler2).z = CStack_a8.roll;
         }
       }
-      iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
-      if ((iVar8 != 0) &&
-         (iVar8 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-                            (g_CEditorToolsPtr,"Delete this bone?"), iVar8 != 0)) {
-        iVar8 = this_ptr->collide_bone_count + -1;
-        this_ptr->collide_bone_count = iVar8;
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
+      if ((iVar2 != 0) &&
+         (iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
+                            (g_CEditorToolsPtr,"Delete this bone?"), iVar2 != 0)) {
+        iVar2 = this_ptr->collide_bone_count + -1;
+        this_ptr->collide_bone_count = iVar2;
         memmove
-                  (local_40 + local_24,local_40 + local_24 + 1,(iVar8 - local_24) * 0xac);
+                  (local_40 + local_24,local_40 + local_24 + 1,(iVar2 - local_24) * 0xac);
       }
-      iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_X);
-      if (iVar8 != 0) {
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_X);
+      if (iVar2 != 0) {
         shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                  (g_CEditorToolsPtr,"Enter X radius",&pSVar1[iVar3].radius1,1,0.0,9999.0,1
-                  );
+                  (g_CEditorToolsPtr,"Enter X radius",&pSVar4->radius1,1,0.0,9999.0,1);
       }
-      iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_Y);
-      if (iVar8 != 0) {
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_Y);
+      if (iVar2 != 0) {
         shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                  (g_CEditorToolsPtr,"Enter Y radius",&pSVar1[iVar3].radius2,1,0.0,9999.0,1
-                  );
+                  (g_CEditorToolsPtr,"Enter Y radius",&pSVar4->radius2,1,0.0,9999.0,1);
       }
-      iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_O);
-      if (iVar8 != 0) {
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_O);
+      if (iVar2 != 0) {
         shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                  (g_CEditorToolsPtr,"Enter cylinder length, 0 to use length of bone",&pSVar1[iVar3].length,1,0.0
-                   ,9999.0,1);
+                  (g_CEditorToolsPtr,"Enter cylinder length, 0 to use length of bone",&pSVar4->length,1,0.0,
+                   9999.0,1);
       }
       core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
                 (&g_CDeformableModelInstanceInstance);
@@ -356,28 +360,36 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
                 (&g_CDeformableModelInstanceInstance);
       core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110
                 (this_ptr,local_24,&g_CDeformableModelInstanceInstance);
-      iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB);
-      if ((iVar3 != 0) &&
-         (iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT), iVar3 != 0)) {
-        local_24 = local_24 + -1;
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB);
+      if (iVar2 != 0) {
+        iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
+        if (iVar2 == 0) {
+          local_20 = (SMotion *)(local_20->motion_name + 1);
+        }
+        else {
+          local_24 = local_24 + -1;
+        }
       }
     }
     else {
       shape_spotview_cpp_CSpotView_handleInput_FUN_005b9670(g_CSpotViewPtr,0x1f);
     }
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_Z);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_Z);
+    if (iVar2 != 0) {
       core_cloth_cpp_CCloth_setup_FUN_00439710
                 (this_ptr,&UNION_UVector3_00838e40.f,&UNION_UVector3_00838e4c.f,
                  &g_CDeformableModelInstanceInstance);
+    }
+    if (local_24 < 0) {
+      local_20 = (SMotion *)(this_ptr->collide_bone_count + -1);
     }
     if (this_ptr->collide_bone_count <= local_24) {
       local_24 = 0;
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
-    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
-  } while (iVar3 == 0);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
+  } while (iVar2 == 0);
   g_CDemonSetPtr->lighting_quality_mode = 0;
   engine_2d_c_clearInputAndWait_FUN_00403260();
   return;

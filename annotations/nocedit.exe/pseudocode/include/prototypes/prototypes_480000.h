@@ -83,7 +83,7 @@ int __cdecl engine_dosio_c_findFileNormally_FUN_004817c0(SFoundFileInfo *info);
 int __cdecl engine_dosio_c_getFileSize_FUN_00481880(char *directory,char *filename);
 uint __cdecl engine_dosio_c_getFileTimestamp_FUN_004818d0(char *directory_path,char *filename);
 int __cdecl engine_dosio_c_copyFileTimestamp_FUN_00481910(char *source_file,char *dest_file);
-int __cdecl engine_dosio_c_getFileTimestamp_FUN_00481960(char *directory,char *filename);
+int __cdecl engine_dosio_c_getFileSize_FUN_00481960(char *directory,char *filename);
 int __cdecl engine_dosio_c_setFileAttributes_FUN_004819f0(char *filename,byte flags);
 int __cdecl engine_dosio_c_truncateFile_FUN_00481a20(_FILE *file_handle,long new_size_bytes);
 _FILE * __cdecl engine_dosio_c_getFile_FUN_00481a50(char *directory,char *filename,char *mode);
@@ -167,7 +167,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromTopLeft_FUN_0048782
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromTopRight_FUN_00487850(CDrawSurface *this_ptr,int top_right_x,int top_right_y,int radius);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromBottomLeft_FUN_00487880(CDrawSurface *this_ptr,int bottom_left_x,int bottom_left_y,int radius);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromBottomRight_FUN_004878b0(CDrawSurface *this_ptr,int bottom_right_x,int bottom_right_y,int radius);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_004878e0(CDrawSurface *this_ptr,int x,int y,int width,int height);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_004878e0(CDrawSurface *this_ptr,int x,int y,int width,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_00487990(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedDashedLine_FUN_00487a30(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_00487ad0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
@@ -179,11 +179,11 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_00488230(CDr
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0(CDrawSurface *this_ptr,int x,int y,int width,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530(CDrawSurface *this_ptr);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCenteredRectangle_FUN_00488550(CDrawSurface *this_ptr,int center_x,int center_y,int width,int height);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCenteredRectangleOutline_FUN_00488550(CDrawSurface *this_ptr,int center_x,int center_y,int width,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleBetweenPoints_FUN_004885d0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2,int border_width, int border_height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_00488630(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawFullSurface_FUN_004886a0(CDrawSurface *this_ptr);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCenteredRectangle_FUN_004886c0(CDrawSurface *this_ptr,int center_x,int center_y,int width,int height);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCenteredSolidRectangle_FUN_004886c0(CDrawSurface *this_ptr,int center_x,int center_y,int width,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawInsetRectangle_FUN_00488740(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2,int inset_x,int inset_y);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedFullSurface_FUN_00488990(CDrawSurface *this_ptr);
@@ -274,8 +274,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c
 void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer *this_ptr,CVector3f *world_position);
 void __cdecl engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0(CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation);
 void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation);
-void __cdecl engine_drender_cpp_CDemonRenderer_matrixPush_FUN_0050d620(void);
-void __cdecl engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720(void);
+void __cdecl engine_drender_cpp_CDemonRenderer_matrixPush_FUN_0048c630(CDemonRenderer *this_ptr);
+void __cdecl engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(CDemonRenderer *this_ptr,float field_of_view);
 void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670(CDemonRenderer *this_ptr,float scale_factor);
 void __cdecl engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_0048c690(CDemonRenderer *this_ptr,float intensity);
@@ -288,7 +288,7 @@ CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationToBuf
 float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800(CDemonRenderer *this_ptr,float *output);
 float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer *this_ptr,int x,int y,int width,int height);
-void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(void);
+void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(void);
 template<typename T_func0>
 inline void engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,T_func0 scanline_renderer) {
     (void)this_ptr; (void)prim; (void)scanline_renderer;

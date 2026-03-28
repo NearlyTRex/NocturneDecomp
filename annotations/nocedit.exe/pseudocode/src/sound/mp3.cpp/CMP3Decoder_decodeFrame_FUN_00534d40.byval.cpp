@@ -523,7 +523,7 @@ __asm {
         push EAX
         lea EAX,[ESP + 0x5414]
         push EAX
-        call sound_mp3_cpp_requantizeLayer3Samples_FUN_0052fee0
+        call sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0
         add ESP,0x10
         mov EAX,dword ptr [ESP + 0x6014]
         sar EAX,0x2

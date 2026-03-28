@@ -273,7 +273,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       pCVar3->vertex_buffer_ptr[3].v = 0x80000;
       engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(pCVar3,&local_248);
       iVar6 = iVar6 + 1;
-      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+      engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     } while (iVar6 < 0x19);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   }
@@ -371,7 +371,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       }
       local_20 = local_20 + 1;
     } while (local_20 <= (int)local_24);
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   }
   if (0.0 < local_2f4) {
     fVar8 = 1.0 / fVar8;
@@ -441,7 +441,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
               (g_CDemonRendererPtr2,(int)ROUND(ROUND(fVar8 * local_2f4)));
     engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
               (g_CDemonRendererPtr2,&local_290);
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   }
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);

@@ -23,7 +23,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;
 ; *****************************************************************************
 
@@ -94,8 +94,8 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 00570c2b | g_CDemonRendererPtr2
         ;   Label: LAB_00570c2b
     PUSH EDX                            ; 00570c31 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00570c32
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00570c32
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     INC EBP                             ; 00570c3a
         ;   Label: LAB_00570c3a
     MOV ECX,dword ptr [ESI + 0x14d154]  ; 00570c3b

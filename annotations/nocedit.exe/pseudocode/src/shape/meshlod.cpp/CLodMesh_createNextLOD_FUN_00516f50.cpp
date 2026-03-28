@@ -16,9 +16,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_createNextLOD_FUN_00516f50(CLodMesh *thi
   g_CurrentDebugFilename = "..\\shape\\meshlod.cpp";
   if (this_ptr->next_lod != (CLodMesh *)0x0) {
     pCVar1 = shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(this_ptr->next_lod,0);
-    shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
+    shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(pCVar1);
   }
-  this_ptr_00 = (CLodMesh *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x74,"..\\shape\\meshlod.cpp",0x560);
+  this_ptr_00 = (CLodMesh *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+                          (0x74,"..\\shape\\meshlod.cpp",0x560);
   pCVar1 = (CLodMesh *)0x0;
   if (this_ptr_00 != (CLodMesh *)0x0) {
     pCVar1 = shape_meshlod_cpp_CLodMesh_ctor_FUN_00515840(this_ptr_00);

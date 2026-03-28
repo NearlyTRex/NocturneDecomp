@@ -58,8 +58,8 @@
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80
 ;   core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0
 ;   core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130
+;   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
 ;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
-;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860
 ;   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20
@@ -113,8 +113,8 @@ section .text
     JZ 0x0056c21a                       ; 0056c205
         ;   XREF to: 0056c21a (CONDITIONAL_JUMP)  ; LAB_0056c21a
     PUSH EBX                            ; 0056c207
-    CALL core_set.cpp_CDemonSet_setCameraView_FUN_00570c70 ; 0056c208
-        ;   XREF to: 00570c70 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_00570c70(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_restoreCameraView_FUN_00570c70 ; 0056c208
+        ;   XREF to: 00570c70 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_restoreCameraView_FUN_00570c70(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0056c20d
     MOV dword ptr [EBX + 0x161654],0x0  ; 0056c210
     PUSH 0x1                            ; 0056c21a
@@ -233,8 +233,8 @@ section .text
     PUSH EDX                            ; 0056c344
     PUSH 0x32758e4                      ; 0056c345 | g_CDemonCameraInstance
     XOR ESI,ESI                         ; 0056c34a
-    CALL core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0 ; 0056c34c
-        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0(CDemonCamera * this_ptr, void * p1, int p2)
+    CALL core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 ; 0056c34c
+        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera * this_ptr, void * p1, int p2)
     MOV ECX,dword ptr [EBX + 0x15acb4]  ; 0056c351
     ADD ESP,0xc                         ; 0056c357
     TEST ECX,ECX                        ; 0056c35a
@@ -252,8 +252,8 @@ section .text
     MOV EAX,dword ptr [EDI + 0x32776cc] ; 0056c36f | g_CoronaGlobes
     PUSH EAX                            ; 0056c375
     PUSH 0x32758e4                      ; 0056c376 | g_CDemonCameraInstance
-    CALL core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0 ; 0056c37b
-        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0(CDemonCamera * this_ptr, void * p1, int p2)
+    CALL core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 ; 0056c37b
+        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera * this_ptr, void * p1, int p2)
     ADD ESP,0xc                         ; 0056c380
     PUSH EBX                            ; 0056c383
     INC ESI                             ; 0056c384
@@ -293,8 +293,8 @@ section .text
     PUSH EAX                            ; 0056c3dc
     PUSH EDI                            ; 0056c3dd
     PUSH 0x32758e4                      ; 0056c3de | g_CDemonCameraInstance
-    CALL core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0 ; 0056c3e3
-        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0(CDemonCamera * this_ptr, void * p1, int p2)
+    CALL core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 ; 0056c3e3
+        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera * this_ptr, void * p1, int p2)
     MOV EAX,[0x03277b80]                ; 0056c3e8 | g_VisibleCoronaGlobeCount
     MOV dword ptr [EAX*0x4 + 0x3277b84],EDI ; 0056c3ed | g_VisibleCoronaGlobes
     LEA EDI,[EAX + 0x1]                 ; 0056c3f4
@@ -750,8 +750,8 @@ section .text
     PUSH 0x1                            ; 0056c857
     PUSH EDI                            ; 0056c859
     PUSH 0x32758e4                      ; 0056c85a | g_CDemonCameraInstance
-    CALL core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0 ; 0056c85f
-        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0(CDemonCamera * this_ptr, void * p1, int p2)
+    CALL core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 ; 0056c85f
+        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera * this_ptr, void * p1, int p2)
     ADD ESP,0xc                         ; 0056c864
     PUSH EBX                            ; 0056c867
     CALL core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0 ; 0056c868

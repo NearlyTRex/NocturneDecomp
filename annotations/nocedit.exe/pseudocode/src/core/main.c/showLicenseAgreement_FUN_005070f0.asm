@@ -41,7 +41,7 @@
 ;   shape_edittool.cpp_CEdButton_dtor_FUN_004a6510
 ;   shape_edittool.cpp_CEdButton_paint_FUN_004a65e0
 ;   shape_edittool.cpp_CEdButton_wasClicked_FUN_004a6830
-;   shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380
 ;   shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0
 ;   shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20
 ;   ... and 6 more
@@ -212,8 +212,8 @@ section .text
     PUSH EBP                            ; 005072ca
     MOV EDX,dword ptr [0x00678a60]      ; 005072cb | g_CEditorToolsPtr
     PUSH EDX                            ; 005072d1 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 005072d2
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380 ; 005072d2
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 005072d7
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005072da
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

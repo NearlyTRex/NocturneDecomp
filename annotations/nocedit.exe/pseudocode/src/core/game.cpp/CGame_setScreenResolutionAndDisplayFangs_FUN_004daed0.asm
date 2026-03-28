@@ -25,7 +25,7 @@
 ;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;
 ; Called Functions:
-;   engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0
+;   engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540
@@ -41,8 +41,8 @@ section .text
     PUSH EBX                            ; 004daed0
         ;   Label: core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0
     SUB ESP,0x14                        ; 004daed1
-    CALL engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0 ; 004daed4
-        ;   XREF to: 00402a80 (UNCONDITIONAL_CALL)  ; void engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0()
+    CALL engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80 ; 004daed4
+        ;   XREF to: 00402a80 (UNCONDITIONAL_CALL)  ; void engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80()
     CMP dword ptr [0x00679398],0x1e0    ; 004daed9 | g_WindowHeight
     JNZ 0x004daeef                      ; 004daee3
         ;   XREF to: 004daeef (CONDITIONAL_JUMP)  ; LAB_004daeef

@@ -284,7 +284,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
       (this_ptr->base).base.base.location.position.y = local_b4;
     }
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
-    pCVar11 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
+    pCVar11 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005a16c0
                         (&this_ptr->model,&local_19c);
     pCVar1 = &(this_ptr->base).base.cached_bounding_box;
     if (pCVar1 != pCVar11) {
@@ -329,7 +329,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     core_cloth_cpp_CCloth_process_FUN_0043ab80
               (&this_ptr->skirt_cloth,&pCVar3->position,local_18,delta_time,
                (this_ptr->base).base.closest_distance_threshold,pCVar6);
-    pCVar20 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
+    pCVar20 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005a16c0
                         (pCVar6,&local_154);
     pCVar9 = &(this_ptr->base).base.cached_bounding_box;
     if (pCVar9 != pCVar20) {
@@ -343,7 +343,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
       (this_ptr->base).base.cached_bounding_box.max.y = (pCVar20->max).y;
       (this_ptr->base).base.cached_bounding_box.max.z = (pCVar20->max).z;
     }
-    core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
+    core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005a16c0
               (&this_ptr->model,&local_184);
     pCVar9 = &(this_ptr->base).base.cached_bounding_box;
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(pCVar9,&local_184.min);
@@ -392,7 +392,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     core_cloth_cpp_CCloth_process_FUN_0043ab80
               (&this_ptr->skirt_cloth,local_18,&euler_00->vec,delta_time,
                (this_ptr->base).base.closest_distance_threshold,pCVar6);
-    pCVar20 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
+    pCVar20 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005a16c0
                         (pCVar6,&local_1b4);
     pCVar9 = &(this_ptr->base).base.cached_bounding_box;
     if (pCVar9 != pCVar20) {
@@ -406,7 +406,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
       (this_ptr->base).base.cached_bounding_box.max.y = (pCVar20->max).y;
       (this_ptr->base).base.cached_bounding_box.max.z = (pCVar20->max).z;
     }
-    core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
+    core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005a16c0
               (&this_ptr->model,&local_1cc);
     pCVar9 = &(this_ptr->base).base.cached_bounding_box;
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(pCVar9,&local_1cc.min);
@@ -461,7 +461,7 @@ LAB_005e648e:
       }
     }
   }
-  pCVar20 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
+  pCVar20 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005a16c0
                       (pCVar6,&local_16c);
   pCVar9 = &(this_ptr->base).base.cached_bounding_box;
   if (pCVar9 != pCVar20) {

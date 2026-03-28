@@ -78,7 +78,7 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
             (g_CDemonRendererPtr2,&local_50);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+  wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,9999.9,0);
   _sprintf(local_f0,"%s.raw",name);
   p_Var4 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_f0,"wb");
@@ -124,7 +124,7 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
   }
   _fwrite(g_SourcePaletteData,0x100,3,p_Var4);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xbf1);
-  engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
+  engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0();
   if (local_1c != (void *)0x0) {
     if (0 < render_height) {
       iVar6 = 0;

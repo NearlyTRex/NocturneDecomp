@@ -14,12 +14,9 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
   int iVar2;
   CVector3i *pCVar3;
   int iVar4;
-  CVector3i *point;
-  uint *puVar5;
-  int iVar3;
-  byte bVar6;
-  int aiStackY_1038 [1015];
-  CVector3i local_50;
+  int in_stack_ffffffb0;
+  int iStack_4c;
+  int iStack_48;
   CVector3i local_44;
   CVector3i local_38;
   CVector3i *local_2c;
@@ -32,7 +29,7 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
   
   core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(this_ptr);
   memset(coverage_map,0,g_WindowWidth * g_WindowHeight);
-  ptr = (CVector3i *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  ptr = (CVector3i *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                   (g_CDemonCameraInstance.framebuffer_height *
                    g_CDemonCameraInstance.framebuffer_width * 0xc,"..\\core\\setedit.cpp",0xf22)
   ;
@@ -50,10 +47,10 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
                 (&g_CDemonCameraInstance,local_18,local_1c,&local_38);
       if (local_38.z < 0x40000000) {
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-                  (&g_CDemonCameraInstance,&local_44,&local_50);
-        pCVar3->x = local_50.x;
-        pCVar3->y = local_50.y;
-        pCVar3->z = local_50.z;
+                  (&g_CDemonCameraInstance,&local_44,(CVector3i *)&stack0xffffffb0);
+        pCVar3->x = in_stack_ffffffb0;
+        pCVar3->y = iStack_4c;
+        pCVar3->z = iStack_48;
       }
       else {
         pCVar3->x = 0x7fffffff;
@@ -74,29 +71,29 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                   (g_CDemonRendererPtr2,local_24,(CVector3i *)0x0);
         iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(local_28);
-        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
         if (iVar1 != 0) {
-          iVar3 = 0;
-          point = ptr;
-          while (iVar3 < g_CDemonCameraInstance.framebuffer_height) {
+          iVar1 = 0;
+          pCVar3 = ptr;
+          while (iVar1 < g_CDemonCameraInstance.framebuffer_height) {
             iVar4 = 0;
             if (g_CDemonCameraInstance.framebuffer_width < 1) {
-              iVar3 = iVar3 + 1;
+              iVar1 = iVar1 + 1;
             }
             else {
               do {
-                if (point->x < 0x7fffffff) {
+                if (pCVar3->x < 0x7fffffff) {
                   iVar2 = core_setedit_cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0
-                                    (this_ptr,point,local_14);
+                                    (this_ptr,pCVar3,local_14);
                   if (iVar2 != 0) {
-                    coverage_map[g_WindowWidth * iVar3 + iVar4] =
-                         coverage_map[g_WindowWidth * iVar3 + iVar4] + '\x01';
+                    coverage_map[g_WindowWidth * iVar1 + iVar4] =
+                         coverage_map[g_WindowWidth * iVar1 + iVar4] + '\x01';
                   }
                 }
                 iVar4 = iVar4 + 1;
-                point = point + 1;
+                pCVar3 = pCVar3 + 1;
               } while (iVar4 < g_CDemonCameraInstance.framebuffer_width);
-              iVar3 = iVar3 + 1;
+              iVar1 = iVar1 + 1;
             }
           }
         }

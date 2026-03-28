@@ -23,6 +23,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   float10 fVar11;
   float10 fVar6;
   float10 fVar12;
+  float fVar7;
   SMRGLHeaderPrimitive local_a4;
   int local_8c;
   int local_88;
@@ -52,6 +53,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   fVar1 = (this_ptr->base).base.focal_length;
   fVar3 = (float)18;
   fVar2 = (this_ptr->base).max_distance;
+  fVar7 = (fVar3 / fVar1) * fVar2;
   iVar9 = 0;
   fVar4 = (this_ptr->base).max_distance;
   iVar5 = 0;
@@ -59,7 +61,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
     fVar10 = (float10)iVar9 * (float10)6.2831853070000001 * (float10)0.0625;
     fVar11 = (float10)fcos(fVar10);
     fVar6 = (float10)fsin(fVar10);
-    fVar12 = (float10)((fVar3 / fVar1) * fVar2);
+    fVar12 = (float10)fVar7;
     local_64.x = (int)ROUND((float)(fVar11 * fVar12) * 256.0f);
     local_64.y = (int)ROUND((float)(fVar6 * fVar12) * 256.0f);
     local_64.z = (int)ROUND(fVar4 * 256.0f);
@@ -129,7 +131,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
               (g_CDemonRendererPtr2,&local_a4,
                core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320);
   } while (iVar5 < 0xe);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(this_ptr);
   return;

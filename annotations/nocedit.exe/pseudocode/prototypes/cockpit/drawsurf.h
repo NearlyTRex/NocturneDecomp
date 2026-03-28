@@ -99,9 +99,9 @@ void __cdecl CDrawSurface::drawCircleFromBottomLeft(CDrawSurface *this_ptr,int b
 // Address: 004878b0
 void __cdecl CDrawSurface::drawCircleFromBottomRight(CDrawSurface *this_ptr,int bottom_right_x,int bottom_right_y,int radius);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004878e0
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_004878e0
 // Address: 004878e0
-void __cdecl CDrawSurface::drawRectangleOutline(CDrawSurface *this_ptr,int x,int y,int width,int height);
+void __cdecl CDrawSurface::drawRectangleCornerPoints(CDrawSurface *this_ptr,int x,int y,int width,int height);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00487990
 // Address: 00487990
@@ -147,9 +147,9 @@ void __cdecl CDrawSurface::drawRectangleOutline(CDrawSurface *this_ptr,int x,int
 // Address: 00488530
 void __cdecl CDrawSurface::drawSurfaceBorder(CDrawSurface *this_ptr);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_drawCenteredRectangle_FUN_00488550
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawCenteredRectangleOutline_FUN_00488550
 // Address: 00488550
-void __cdecl CDrawSurface::drawCenteredRectangle(CDrawSurface *this_ptr,int center_x,int center_y,int width,int height);
+void __cdecl CDrawSurface::drawCenteredRectangleOutline(CDrawSurface *this_ptr,int center_x,int center_y,int width,int height);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawRectangleBetweenPoints_FUN_004885d0
 // Address: 004885d0
@@ -163,9 +163,9 @@ void __cdecl CDrawSurface::drawSolidRectangle(CDrawSurface *this_ptr,int x1,int 
 // Address: 004886a0
 void __cdecl CDrawSurface::drawFullSurface(CDrawSurface *this_ptr);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_drawCenteredRectangle_FUN_004886c0
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawCenteredSolidRectangle_FUN_004886c0
 // Address: 004886c0
-void __cdecl CDrawSurface::drawCenteredRectangle(CDrawSurface *this_ptr,int center_x,int center_y,int width,int height);
+void __cdecl CDrawSurface::drawCenteredSolidRectangle(CDrawSurface *this_ptr,int center_x,int center_y,int width,int height);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawInsetRectangle_FUN_00488740
 // Address: 00488740

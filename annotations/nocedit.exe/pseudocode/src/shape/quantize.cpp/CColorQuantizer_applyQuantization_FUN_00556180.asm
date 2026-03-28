@@ -25,8 +25,8 @@
 ;
 ; Called Functions:
 ;   crt_string.c__strncpy_FUN_00600f40
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
 ;   shape_quantize.cpp_CBitmap_dtor_FUN_00556c20
 ;   shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500
@@ -66,8 +66,8 @@ section .text
         ;   Label: LAB_005561af
     PUSH 0x640d9b                       ; 005561b4 | = "..\\shape\\quantize.cpp"
     PUSH 0x28                           ; 005561b9
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005561bb
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005561bb
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005561c0
     TEST EAX,EAX                        ; 005561c3
     JZ 0x005561ed                       ; 005561c5
@@ -127,8 +127,8 @@ section .text
         ;   XREF to: 00556c20 (UNCONDITIONAL_CALL)  ; CBitmap * shape_quantize.cpp_CBitmap_dtor_FUN_00556c20(CBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0055625b
     PUSH EAX                            ; 0055625e
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0055625f
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 0055625f
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 00556264
     XOR EAX,EAX                         ; 00556267
         ;   Label: LAB_00556267
@@ -267,8 +267,8 @@ section .text
         ;   XREF to: 00556c20 (UNCONDITIONAL_CALL)  ; CBitmap * shape_quantize.cpp_CBitmap_dtor_FUN_00556c20(CBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005563a3
     PUSH EAX                            ; 005563a6
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005563a7
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005563a7
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005563ac
     MOV EAX,dword ptr [EBP + 0x18]      ; 005563af
         ;   Label: LAB_005563af

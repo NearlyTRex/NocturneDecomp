@@ -84,7 +84,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
     }
     wincore_winrun_cpp_doNothing_FUN_005f2f80();
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
     if (local_18 != (SRoom *)0x0) {
       if (&local_108.pitch != &local_a0) {
         local_108.pitch = local_a0;
@@ -155,7 +155,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
           local_c4.z = -pCVar4->z;
           core_setedit_cpp_renderColoredBox_FUN_005817d0(&local_c4,pCVar4,0.2,0,0,0xff);
         }
-        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
         local_14 = (CMatrix3x3f *)&local_14[1].m[2].z;
         pCVar4 = (CVector3f *)&pCVar4[5].z;
         iVar6 = iVar6 + 1;
@@ -392,7 +392,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
     iVar5 = local_1c;
     if ((((iVar4 != 0) && (-1 < local_1c)) && (local_1c < this_ptr->room_count)) &&
-       (iVar7 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+       (iVar7 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
                           (g_CEditorToolsPtr,"Delete the selected room?"), iVar7 != 0)) {
       iVar7 = this_ptr->room_count + -1;
       this_ptr->room_count = iVar7;

@@ -21,7 +21,7 @@
 ;   crt_iostream.cpp_ios_dtor_FUN_0060632c
 ;   crt_memory.c___vec_delete_FUN_005fe632
 ;   crt_strstream.cpp_strstreambuf_dtor_FUN_0060bb7f
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -86,8 +86,8 @@ section .text
         ;   XREF to: 006062eb (UNCONDITIONAL_JUMP)  ; LAB_006062eb
     PUSH EBX                            ; 00606324
         ;   Label: LAB_00606324
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00606325
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 00606325
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     JMP 0x0060630a                      ; 0060632a
         ;   XREF to: 0060630a (UNCONDITIONAL_JUMP)  ; LAB_0060630a
 

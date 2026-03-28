@@ -83,7 +83,8 @@ LAB_0050740e:
           core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(g_CDemonSetPtr);
         }
         else if (uVar1 < 0x36) {
-          this_ptr = (CKeyFramedModel *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x56d8,"..\\core\\main.c",0x274);
+          this_ptr = (CKeyFramedModel *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+                               (0x56d8,"..\\core\\main.c",0x274);
           pCVar6 = (CKeyFramedModel *)0x0;
           if (this_ptr != (CKeyFramedModel *)0x0) {
             pCVar6 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(this_ptr);
@@ -98,7 +99,7 @@ LAB_0050740e:
           g_CurrentDebugFilename = "..\\core\\main.c";
           if (pCVar6 != (CKeyFramedModel *)0x0) {
             ptr = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(pCVar6,0);
-            shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+            shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
           }
         }
         else {
@@ -117,7 +118,7 @@ LAB_0050740e:
                       (&g_CDemonFileManagerInstance);
           }
           else if (uVar1 == 0x42) {
-            this_ptr_00 = (CMorph *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
+            this_ptr_00 = (CMorph *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
                                     (0xc2c,"..\\core\\main.c",0x292);
             morph = (CMorph *)0x0;
             if (this_ptr_00 != (CMorph *)0x0) {
@@ -129,7 +130,7 @@ LAB_0050740e:
               g_CurrentDebugFilename = "..\\core\\main.c";
               if (morph != (CMorph *)0x0) {
                 pCVar7 = core_morph_cpp_CMorph_dtor_FUN_0052b330(morph,0);
-                shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar7);
+                shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(pCVar7);
               }
             }
           }
@@ -213,7 +214,7 @@ LAB_0050740e:
               (g_EditorFont,pcVar3,0x1e,-local_60.scroll_position,0xff,-1);
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_228,0);
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_144,0);
-    shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
   } while (iVar2 == 0);

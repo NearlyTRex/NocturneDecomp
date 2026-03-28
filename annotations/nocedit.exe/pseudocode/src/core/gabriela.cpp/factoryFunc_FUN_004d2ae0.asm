@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_gabriela.cpp_CGabriella_ctor_FUN_004d2b20
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_gabriela.cpp_factoryFunc_FUN_004d2ae0
     PUSH 0x62acb5                       ; 004d2ae5 | = "..\\core\\gabriela.cpp"
     PUSH 0x5fa88                        ; 004d2aea
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 004d2aef
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004d2aef
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004d2af4
     TEST EAX,EAX                        ; 004d2af7
     JNZ 0x004d2afc                      ; 004d2af9

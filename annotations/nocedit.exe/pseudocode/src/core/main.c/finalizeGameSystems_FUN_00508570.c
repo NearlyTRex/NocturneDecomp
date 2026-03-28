@@ -78,14 +78,14 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
   core_netgame_cpp_CNetGame_shutdown_FUN_0053f830(g_CNetGamePtr);
   engine_ncursfx_cpp_CMouse_reset_FUN_00544500(g_CMousePtr);
   core_mission_cpp_CDemonMission_clearMission_FUN_00522d20(g_CDemonMissionPtr);
-  core_sound_cpp_CSound_dtor_FUN_005aaeb0();
+  core_sound_cpp_CSound_dtor_FUN_005b2d60();
   core_dmodel_cpp_freeAllModels_FUN_00478cb0();
   core_skeleton_cpp_freeAllModels_FUN_005a1dc0();
   core_skeleton_cpp_freeAllSkeletons_FUN_005a1ea0();
   engine_matrix_c_doNothing_FUN_0050c5b0();
   wincore_winrun_cpp_endPeriod_FUN_005f2db0();
-  engine_2d_c_cleanupGraphicsSystem_FUN_005ecd90();
-  wincore_wddvmem_cpp_freeTextureCache_FUN_005dd7a0();
+  engine_2d_c_cleanupGraphicsSystem_FUN_00401130();
+  wincore_wddvmem_cpp_freeTextureCache_FUN_004037a0();
   core_dfont_cpp_freeFonts_FUN_004710a0();
   wincore_winrun_cpp_doNothing_FUN_005f4380();
   engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);

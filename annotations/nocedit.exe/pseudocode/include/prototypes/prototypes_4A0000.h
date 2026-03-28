@@ -45,7 +45,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004a0ea0(CEditor
 void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(CEditorTools *editor_tools,int line_position);
 uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools *this_ptr);
-void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools *this_ptr,int use_clipping);
+void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEditorTools *this_ptr,int use_clipping);
 char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(CEditorTools *this_ptr);
 void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEditorTools *this_ptr,char *text_data);
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEditorTools *this_ptr,float scale_factor,int text_color);
@@ -69,7 +69,7 @@ void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_004a2cc0(CStrList *this_pt
 void __cdecl shape_edittool_cpp_CStrList_insertRange_FUN_004a2d80(CStrList *this_ptr,int insertion_index,CStrList *source_list);
 void __cdecl shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0(CStrList *this_ptr,int index);
 void __cdecl shape_edittool_cpp_CStrList_remove_FUN_004a2e00(CStrList *this_ptr,int start_index,int end_index);
-void __cdecl shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(CStrList *this_ptr);
+void __cdecl shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(CStrList *this_ptr);
 int __cdecl shape_edittool_cpp_CStrList_qsortByString_FUN_004a2ee0(char *a,char *b);
 void __cdecl shape_edittool_cpp_CStrList_sort_FUN_004a2f00(CStrList *this_ptr,int sort_type,int sort_order);
 char * __cdecl shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(CStrList *this_ptr,int index);

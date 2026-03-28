@@ -79,7 +79,7 @@ __asm {
         call wincore_winrun_cpp_doNothing_FUN_005f2f80
         call wincore_windll_cpp_clearScreen_FUN_005b3e70
         mov ESI,dword ptr [EBP + 0x52]
-        call wincore_windll_cpp_clearZBuffer_FUN_005b3ed4
+        call wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4
         test ESI,ESI
         jz LAB_0058338c
         lea EAX,[EBP + 0xfffffe56]
@@ -353,7 +353,7 @@ __asm {
         push ECX
         mov EBX,dword ptr [EBP + 0x5a]
         inc ESI
-        call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720
+        call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640
     LAB_00583651:
         xor EAX,EAX
         mov dword ptr [EBP + 0x5e],EAX
@@ -663,7 +663,7 @@ __asm {
         push ECX
         mov ESI,dword ptr [EBP + 0x6e]
         mov EDI,dword ptr [EBP + 0x5e]
-        call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720
+        call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640
     LAB_00583ad6:
         push 0x0
         push 0x32758e4
@@ -672,7 +672,7 @@ __asm {
         push 0x0
         mov EBX,dword ptr [g_CEditorToolsPtr]
         push EBX
-        call shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380
+        call shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380
         add ESP,0x8
         call wincore_wddvmem_cpp_swapBuffers_FUN_005eda20
         mov ESI,dword ptr [g_CGamePtr]
@@ -801,7 +801,7 @@ __asm {
         push 0x648ddf
         mov ESI,dword ptr [g_CEditorToolsPtr]
         push ESI
-        call shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+        call shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
         add ESP,0x8
         test EAX,EAX
         jz LAB_00583d09

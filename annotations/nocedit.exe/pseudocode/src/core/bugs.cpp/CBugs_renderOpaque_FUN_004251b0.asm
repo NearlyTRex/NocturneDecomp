@@ -28,7 +28,7 @@
 ;   core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;
 ; *****************************************************************************
@@ -149,8 +149,8 @@ section .text
     ADD ESP,0xc                         ; 004252e9
     MOV ECX,dword ptr [0x006703ec]      ; 004252ec | g_CDemonRendererPtr2
     PUSH ECX                            ; 004252f2 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004252f3
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004252f3
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     PUSH 0x0                            ; 00425314
         ;   Label: LAB_00425314
     MOV ECX,dword ptr [0x006810c8]      ; 00425316 | g_CDemonSetPtr | g_CDemonSetInstance

@@ -54,7 +54,7 @@
 ;   crt_stdio.c_fputc_FUN_006007a0
 ;   crt_stdio.c_fwrite_FUN_005fdc00
 ;   engine_dosio.c_getFile_FUN_00481a50
-;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480
+;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
 ;   engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670
@@ -203,8 +203,8 @@ section .text
     ADD ESP,0x8                         ; 0057d060
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0057d063
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0057d068
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0057d068
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
     PUSH 0x0                            ; 0057d06d
     MOV EBX,dword ptr [0x006810c8]      ; 0057d06f | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH 0x461c3f9a                     ; 0057d075
@@ -335,8 +335,8 @@ section .text
     ADD ESP,0xc                         ; 0057d214
     MOV ECX,dword ptr [0x006703ec]      ; 0057d217 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0057d21d | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 0057d21e
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480()
+    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 ; 0057d21e
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0()
     ADD ESP,0x4                         ; 0057d223
     CMP dword ptr [ESP + 0x2654],0x0    ; 0057d226
     JZ 0x0057d2bc                       ; 0057d22e

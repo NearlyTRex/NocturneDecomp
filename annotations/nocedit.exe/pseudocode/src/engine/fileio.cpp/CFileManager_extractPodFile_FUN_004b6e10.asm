@@ -283,8 +283,8 @@ section .text
     PUSH EAX                            ; 004b7098
     MOV ESI,dword ptr [0x00678a60]      ; 004b7099 | g_CEditorToolsPtr
     PUSH ESI                            ; 004b709f | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f180 ; 004b70a0
-        ;   XREF to: 0049f180 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f180(CEditorTools * this_ptr, char * format)
+    CALL shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0049f180 ; 004b70a0
+        ;   XREF to: 0049f180 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0049f180(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004b70a5
     MOV dword ptr [ESP + 0xe70],EAX     ; 004b70a8
     CMP dword ptr [ESP + 0xe70],-0x1    ; 004b70af

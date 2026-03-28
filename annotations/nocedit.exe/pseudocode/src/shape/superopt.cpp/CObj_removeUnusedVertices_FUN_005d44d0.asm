@@ -21,7 +21,7 @@
 ;   crt_memory.c_realloc_FUN_00601df0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;   shape_memdbg.cpp_malloc_FUN_006021da
 ;
@@ -240,8 +240,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x64]      ; 005d46c7
     PUSH EBP                            ; 005d46cb
     MOV dword ptr [ESI],EAX             ; 005d46cc
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005d46ce
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005d46ce
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005d46d3
     PUSH EBX                            ; 005d46d6
     CALL shape_memdbg.cpp_free_FUN_005fe659 ; 005d46d7

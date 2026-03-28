@@ -730,8 +730,8 @@ section .text
     PUSH 0x61feb0                       ; 0047995d | = "I can't copy %s to %s.  Continue impo..."
     MOV EAX,[0x00678a60]                ; 00479962 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 00479967 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 00479968
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 00479968
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x10                        ; 0047996d
     TEST EAX,EAX                        ; 00479970
     JNZ 0x004797c3                      ; 00479972
@@ -1187,8 +1187,8 @@ section .text
     PUSH 0x61ff7f                       ; 00479dd3 | = "..\\core\\dmodel.cpp"
     MOV ECX,dword ptr [EAX + 0x110]     ; 00479dd8
     PUSH ECX                            ; 00479dde
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00479ddf
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00479ddf
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     MOV EDX,dword ptr [EBP + 0x8e]      ; 00479de4
     ADD ESP,0xc                         ; 00479dea
     MOV dword ptr [EDX + 0x11c],EAX     ; 00479ded

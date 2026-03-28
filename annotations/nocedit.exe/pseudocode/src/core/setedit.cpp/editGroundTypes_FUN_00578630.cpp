@@ -52,7 +52,7 @@ void __cdecl core_setedit_cpp_editGroundTypes_FUN_00578630(char *filename)
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_bdc.base,local_2fc);
         } while (iVar3 < g_GroundTextureCount);
       }
-      shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_bdc.base);
+      shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_bdc.base);
       pcVar5 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                  (&local_bdc,"Editing ground types, press ESC when done.",(int)pcVar5,0);
       if (-1 < (int)pcVar5) break;

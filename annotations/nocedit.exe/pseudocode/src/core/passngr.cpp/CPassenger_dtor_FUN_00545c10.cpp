@@ -50,7 +50,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
                      (&ADJ(pCVar6)->base.base.model,0);
   ptr = (CPassenger *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)ADJ(pCVar7),1);
   if ((flags & 2) != 0) {
-    shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+    shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
     return ptr;
   }
   return ptr;

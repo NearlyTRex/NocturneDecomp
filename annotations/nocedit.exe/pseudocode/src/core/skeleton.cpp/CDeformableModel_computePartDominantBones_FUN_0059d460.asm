@@ -68,7 +68,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -115,8 +115,8 @@ section .text
     MOV EAX,dword ptr [EAX + 0x28558]   ; 0059d4c7
     PUSH 0x22b4                         ; 0059d4cd
     MOV dword ptr [ESP + 0x218],EAX     ; 0059d4d2
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0059d4d9
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0059d4d9
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0059d4de
     TEST EAX,EAX                        ; 0059d4e1
     JZ 0x0059d4ee                       ; 0059d4e3

@@ -335,9 +335,9 @@ void __cdecl CDeformableModelInstance::preCache(CDeformableModelInstance *this_p
 // Address: 005a0480
 void __cdecl CDeformableModelInstance::initializeFromModel(CDeformableModelInstance *this_ptr,CDeformableModel *model_ptr);
 
-// Original: core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0
+// Original: core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_005a05e0
 // Address: 005a05e0
-void __cdecl CDeformableModelInstance::computeBoundingBox(CDeformableModelInstance *this_ptr);
+void __cdecl CDeformableModelInstance::computeBoundingBoxFromVertices(CDeformableModelInstance *this_ptr);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 // Address: 005a07a0
@@ -399,9 +399,9 @@ SPose * __cdecl CDeformableModelInstance::getBoneTransform(CDeformableModelInsta
 // Address: 005a15e0
 void __cdecl CDeformableModelInstance::setBoneTransform(CDeformableModelInstance *this_ptr,SPose *bone_transform);
 
-// Original: core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
+// Original: core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005a16c0
 // Address: 005a16c0
-CBoundingBox3D * __cdecl CDeformableModelInstance::computeBoundingBox(CDeformableModelInstance *this_ptr,CBoundingBox3D *output_bbox);
+CBoundingBox3D * __cdecl CDeformableModelInstance::computeBoundingBoxFromBones(CDeformableModelInstance *this_ptr,CBoundingBox3D *output_bbox);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_renderSkeleton_FUN_005a17b0
 // Address: 005a17b0

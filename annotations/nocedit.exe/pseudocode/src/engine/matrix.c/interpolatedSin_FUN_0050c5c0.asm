@@ -10,8 +10,8 @@
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 at 004fee6f
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160 at 0050425c
 ;   engine_matrix.c_buildRotationMatrix_FUN_0050c920 at 0050c962
+;   engine_matrix.c_matrixPushAndRotate_FUN_0050db00 at 0050dc43
 ;   engine_matrix.c_matrixPushAndTransform_FUN_0050cee0 at 0050d06c
-;   engine_matrix.c_matrixPushAndTransform_FUN_0050db00 at 0050dc43
 ;
 ; Referenced Globals:
 ;   int[257] g_SinTable

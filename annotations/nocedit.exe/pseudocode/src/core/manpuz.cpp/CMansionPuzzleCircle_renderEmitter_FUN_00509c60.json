@@ -1,20 +1,29 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 65,
+        "line": 21,
+        "message": "use of undeclared identifier 'stack0xffffffd8'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 26,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 26,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 95
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 91
   },
   "cross_references": [
     {
@@ -49,7 +58,7 @@
     {
       "addr": "0048c640",
       "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640"
     },
     {
       "addr": "004a1ca0",
@@ -154,19 +163,12 @@
     "pcode_op_count": 218
   },
   "stack_frame": {
-    "frame_size": 52,
-    "local_size": 44,
+    "frame_size": 40,
+    "local_size": 32,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 12,
-        "type": "CVector3i"
-      },
       {
         "is_param": false,
         "name": "local_1c",
@@ -197,5 +199,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 14,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "(g_CDemonRendererPtr2,&g_ZeroVector.i,(CVector3i *)&stack0xffffffd8);",
+      "type": "stack_ref"
+    }
+  ]
 }

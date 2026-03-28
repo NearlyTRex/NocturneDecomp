@@ -1031,8 +1031,8 @@ section .text
     PUSH 0x64885e                       ; 00581256 | = "Reset all cameras to master fog setting?"
     MOV ESI,dword ptr [0x00678a60]      ; 0058125b | g_CEditorToolsPtr
     PUSH ESI                            ; 00581261 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 00581262
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 00581262
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00581267
     TEST EAX,EAX                        ; 0058126a
     JZ 0x00580c22                       ; 0058126c

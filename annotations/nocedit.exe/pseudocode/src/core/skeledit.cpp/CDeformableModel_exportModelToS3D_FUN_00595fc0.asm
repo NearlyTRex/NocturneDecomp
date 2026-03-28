@@ -84,7 +84,7 @@
 ;   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;
@@ -132,8 +132,8 @@ section .text
     PUSH 0x64d642                       ; 0059601d | = "..\\core\\skeledit.cpp"
     SHL EAX,0x2                         ; 00596022
     PUSH EAX                            ; 00596025
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00596026
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00596026
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0059602b
     MOV EBX,EAX                         ; 0059602e
     TEST EAX,EAX                        ; 00596030

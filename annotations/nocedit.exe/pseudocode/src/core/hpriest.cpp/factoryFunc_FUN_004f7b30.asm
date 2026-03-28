@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_hpriest.cpp_CHighPriestOfGardath_ctor_FUN_004f7b70
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_hpriest.cpp_factoryFunc_FUN_004f7b30
     PUSH 0x62f549                       ; 004f7b32 | = "..\\core\\hpriest.cpp"
     PUSH 0x1f76c                        ; 004f7b37
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 004f7b3c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004f7b3c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004f7b41
     TEST EAX,EAX                        ; 004f7b44
     JNZ 0x004f7b49                      ; 004f7b46

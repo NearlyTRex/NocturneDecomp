@@ -823,8 +823,8 @@ section .text
     PUSH EAX                            ; 0058c99c
     MOV EBX,dword ptr [0x00678a60]      ; 0058c99d | g_CEditorToolsPtr
     PUSH EBX                            ; 0058c9a3 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 0058c9a4
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 0058c9a4
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0058c9a9
     TEST EAX,EAX                        ; 0058c9ac
     JZ 0x0058c79d                       ; 0058c9ae

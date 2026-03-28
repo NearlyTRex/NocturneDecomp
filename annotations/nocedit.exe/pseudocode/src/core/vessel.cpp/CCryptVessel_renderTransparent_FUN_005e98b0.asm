@@ -6,7 +6,6 @@
 ; Parameters:
 ; CCryptVessel *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; CVector3i        Stack[-0x2c]:12  local_2c
 ; CVector3i        Stack[-0x20]:12  local_20
 ; uint             Stack[-0x14]:4  local_14
 ;
@@ -26,7 +25,7 @@
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
@@ -143,13 +142,13 @@ section .text
     ADD ESP,0x8                         ; 005e99d0
     MOV EBX,dword ptr [0x006703ec]      ; 005e99d3 | g_CDemonRendererPtr2
     PUSH EBX                            ; 005e99d9 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 005e99da
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 005e99da
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 005e99df
     MOV ESI,dword ptr [0x006703ec]      ; 005e99e2 | g_CDemonRendererPtr2
     PUSH ESI                            ; 005e99e8 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 005e99e9
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 005e99e9
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     MOV EAX,0x1                         ; 005e99ee
     ADD ESP,0x4                         ; 005e99f3
     MOV ESP,EBP                         ; 005e99f6

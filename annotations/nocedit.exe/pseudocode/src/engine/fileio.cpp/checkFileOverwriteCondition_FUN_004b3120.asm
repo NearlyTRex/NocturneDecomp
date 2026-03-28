@@ -20,7 +20,7 @@
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
-;   engine_dosio.c_getFileTimestamp_FUN_00481960
+;   engine_dosio.c_getFileSize_FUN_00481960
 ;   engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x3fc]     ; 004b3130
     PUSH ESI                            ; 004b3137
     PUSH 0x0                            ; 004b3138
-    CALL engine_dosio.c_getFileTimestamp_FUN_00481960 ; 004b313a
-        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileTimestamp_FUN_00481960(char * directory, char * filename)
+    CALL engine_dosio.c_getFileSize_FUN_00481960 ; 004b313a
+        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481960(char * directory, char * filename)
     ADD ESP,0x8                         ; 004b313f
     MOV EBX,EAX                         ; 004b3142
     TEST EAX,EAX                        ; 004b3144

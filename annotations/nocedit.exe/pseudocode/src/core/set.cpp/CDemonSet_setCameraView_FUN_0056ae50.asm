@@ -32,7 +32,7 @@
 ;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 at 0053e304
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055da68
 ;   core_set.cpp_CDemonSet_reinitCamera_FUN_0056b7e0 at 0056b7fe
-;   core_set.cpp_CDemonSet_setCameraView_FUN_00570c70 at 00570c84
+;   core_set.cpp_CDemonSet_restoreCameraView_FUN_00570c70 at 00570c84
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 at 00575209
 ;   core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320 at 005813ad
 ;   ... and 3 more

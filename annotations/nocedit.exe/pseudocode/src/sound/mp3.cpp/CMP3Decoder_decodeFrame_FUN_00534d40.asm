@@ -682,8 +682,8 @@ section .text
     PUSH EAX                            ; 00535449
     LEA EAX,[ESP + 0x5414]              ; 0053544a
     PUSH EAX                            ; 00535451
-    CALL sound_mp3.cpp_requantizeLayer3Samples_FUN_0052fee0 ; 00535452
-        ;   XREF to: 0052fee0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_requantizeLayer3Samples_FUN_0052fee0(int * scalefactor_indices, uint * quantized_samples, float * dequantized_output, SMpegFrame * frame_info)
+    CALL sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0 ; 00535452
+        ;   XREF to: 0052fee0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int * scalefactor_indices, uint * quantized_samples, float * dequantized_output, SMpegFrame * frame_info)
     ADD ESP,0x10                        ; 00535457
     MOV EAX,dword ptr [ESP + 0x6014]    ; 0053545a
     SAR EAX,0x2                         ; 00535461

@@ -501,8 +501,8 @@ section .text
     ADD ESP,0xc                         ; 0040f2e8
     MOV EAX,ESP                         ; 0040f2eb
     PUSH EAX                            ; 0040f2ed
-    CALL shape_edittool.cpp_CStrList_sort_FUN_004a2ec0 ; 0040f2ee
-        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sort_FUN_004a2ec0(CStrList * this_ptr)
+    CALL shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0 ; 0040f2ee
+        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0(CStrList * this_ptr)
     MOV EAX,dword ptr [EBX + 0x5c]      ; 0040f2f3
     ADD ESP,0x4                         ; 0040f2f6
     TEST EAX,EAX                        ; 0040f2f9
@@ -677,8 +677,8 @@ section .text
     ADD ESP,0xc                         ; 0040f4ad
     LEA EAX,[ESP + 0xaf8]               ; 0040f4b0
     PUSH EAX                            ; 0040f4b7
-    CALL shape_edittool.cpp_CStrList_sort_FUN_004a2ec0 ; 0040f4b8
-        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sort_FUN_004a2ec0(CStrList * this_ptr)
+    CALL shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0 ; 0040f4b8
+        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0(CStrList * this_ptr)
     MOV EDI,dword ptr [EBX + 0x5c]      ; 0040f4bd
     ADD ESP,0x4                         ; 0040f4c0
     TEST EDI,EDI                        ; 0040f4c3
@@ -935,8 +935,8 @@ section .text
     ADD ESP,0xc                         ; 0040f73e
     LEA EAX,[ESP + 0x750]               ; 0040f741
     PUSH EAX                            ; 0040f748
-    CALL shape_edittool.cpp_CStrList_sort_FUN_004a2ec0 ; 0040f749
-        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sort_FUN_004a2ec0(CStrList * this_ptr)
+    CALL shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0 ; 0040f749
+        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0(CStrList * this_ptr)
     MOV ECX,dword ptr [EBX + 0x5c]      ; 0040f74e
     ADD ESP,0x4                         ; 0040f751
     TEST ECX,ECX                        ; 0040f754
@@ -1385,8 +1385,8 @@ section .text
     ADD ESP,0xc                         ; 0040fbcc
     LEA EAX,[ESP + 0xea0]               ; 0040fbcf
     PUSH EAX                            ; 0040fbd6
-    CALL shape_edittool.cpp_CStrList_sort_FUN_004a2ec0 ; 0040fbd7
-        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sort_FUN_004a2ec0(CStrList * this_ptr)
+    CALL shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0 ; 0040fbd7
+        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0(CStrList * this_ptr)
     MOV ECX,dword ptr [EBX + 0x68]      ; 0040fbdc
     MOV EAX,dword ptr [EBX + 0x5c]      ; 0040fbdf
     MOV EDI,dword ptr [ECX]             ; 0040fbe2

@@ -45,7 +45,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   core_setedit_cpp_CDemonSet_clearCameraDepthData_FUN_00580560(this_ptr);
   core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(this_ptr);
-  coverage_map = (char *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  coverage_map = (char *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                            (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",0x786);
   if (coverage_map == (char *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
@@ -102,7 +102,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
           y = y + 0xb;
         } while (iVar11 < iVar10 * 4);
       }
-      shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
+      shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
     }
     _sprintf
               (acStack_13c,"Visit %d, rotate: %d, zcheck %d, render %d",g_CubesTestedCount,

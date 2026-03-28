@@ -4,19 +4,19 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 78,
+        "line": 79,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 128,
+        "line": 130,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 24,
-        "line": 147,
+        "line": 149,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       }
     ],
@@ -25,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 373,
-    "complexity_score": 228,
+    "complexity_score": 230,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 163,
+    "pseudocode_lines": 165,
     "suspect_count": 6,
     "suspect_types": [
       "unaffected_reg"
     ],
-    "total_lines": 536
+    "total_lines": 538
   },
   "cross_references": [
     {
@@ -81,12 +81,12 @@
     {
       "addr": "0050f1b0",
       "is_variadic": false,
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+      "name": "shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0"
     },
     {
       "addr": "0050f210",
       "is_variadic": false,
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+      "name": "shape_memdbg.cpp_debugFreeChecked_FUN_0050f210"
     },
     {
       "addr": "0050f250",
@@ -421,7 +421,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 42,
+      "line": 43,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = 1;",
@@ -429,7 +429,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 52,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = 2;",
@@ -437,7 +437,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 56,
+      "line": 57,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = 3;",
@@ -445,7 +445,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 60,
+      "line": 61,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = 4;",
@@ -453,7 +453,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 70,
+      "line": 71,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "uVar5 = width * height * unaff_ESI;",

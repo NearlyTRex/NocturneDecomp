@@ -27,6 +27,7 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *pos
   float10 fVar7;
   unkbyte10 Var8;
   float10 fVar9;
+  float fVar14;
   SMRGLHeaderPrimitive local_b8;
   float local_90;
   float local_8c;
@@ -61,6 +62,7 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *pos
   iVar11 = 1;
   do {
     fVar3 = (float10)iVar11 * ((float10)18 / (float10)fov) * (float10)0.125;
+    fVar14 = (float)fVar3;
     Var8 = fpatan(fVar3,(float10)1);
     fVar4 = (float10)fcos(Var8);
     iVar2 = 0;
@@ -75,7 +77,7 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *pos
       fVar6 = (float10)fsin(fVar9);
       fVar12 = (float10)fcos(fVar12);
       fVar13 = (float10)fcos(fVar9);
-      fVar7 = (float10)(float)fVar3;
+      fVar7 = (float10)fVar14;
       fVar10 = fVar8 * 0.0;
       iVar3 = (int)ROUND(ROUND((falloff - fVar8) * (1.0 / falloff) * (float)1024));
       iVar4 = (int)ROUND(ROUND((falloff - fVar10) * (1.0 / falloff) * (float)1024));
@@ -133,7 +135,7 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *pos
     } while (iVar2 < 8);
     iVar11 = iVar11 + 1;
   } while (iVar11 < 8);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   return;
 }

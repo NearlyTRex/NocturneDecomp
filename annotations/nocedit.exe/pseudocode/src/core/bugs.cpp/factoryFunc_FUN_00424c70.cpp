@@ -11,7 +11,7 @@ CBugs * __cdecl core_bugs_cpp_factoryFunc_FUN_00424c70(void)
 {
   CBugs *pCVar1;
   
-  pCVar1 = (CBugs *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x199f8,"..\\core\\bugs.cpp",0x3e);
+  pCVar1 = (CBugs *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x199f8,"..\\core\\bugs.cpp",0x3e);
   if (pCVar1 == (CBugs *)0x0) {
     return (CBugs *)0x0;
   }

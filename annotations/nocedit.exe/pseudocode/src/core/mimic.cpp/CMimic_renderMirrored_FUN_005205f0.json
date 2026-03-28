@@ -1,22 +1,30 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 56,
+        "line": 65,
+        "message": "use of undeclared identifier 'stack0xffffff0c'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 257,
-    "complexity_score": 106,
+    "complexity_score": 115,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 91,
-    "suspect_count": 1,
+    "pseudocode_lines": 85,
+    "suspect_count": 2,
     "suspect_types": [
+      "stack_ref",
       "warning_type_propagation"
     ],
-    "total_lines": 348
+    "total_lines": 342
   },
   "cross_references": [
     {
@@ -141,7 +149,7 @@
     {
       "addr": "0048c640",
       "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640"
     },
     {
       "addr": "0050d620",
@@ -289,19 +297,12 @@
     "pcode_op_count": 917
   },
   "stack_frame": {
-    "frame_size": 252,
-    "local_size": 248,
+    "frame_size": 204,
+    "local_size": 200,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "local_f4",
-        "offset": -244,
-        "size": 48,
-        "type": "CMatrix3x4f"
-      },
       {
         "is_param": false,
         "name": "local_c4",
@@ -389,6 +390,14 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 58,
+      "match": "&stack0xffffff0c",
+      "severity": "moderate",
+      "text": "g_MimicIndices[0],(CMatrix3x4f *)&stack0xffffff0c);",
+      "type": "stack_ref"
     }
   ]
 }

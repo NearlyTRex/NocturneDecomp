@@ -16,7 +16,7 @@ __asm {
         mov ESI,dword ptr [EBP + 0x14]
         call sound_sndmain_cpp_processAudio_FUN_005abe20
         call wincore_windll_cpp_clearScreen_FUN_005b3e70
-        call wincore_windll_cpp_clearZBuffer_FUN_005b3ed4
+        call wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4
         push 0x3f87558
         mov EDX,dword ptr [g_CDemonRendererPtr2]
         push EDX
@@ -140,7 +140,7 @@ __asm {
         add ESP,0x10
         mov ECX,dword ptr [g_CDemonRendererPtr2]
         push ECX
-        call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720
+        call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640
     LAB_0052a11f:
         add EBX,0x18
         cmp EBX,0x2d0

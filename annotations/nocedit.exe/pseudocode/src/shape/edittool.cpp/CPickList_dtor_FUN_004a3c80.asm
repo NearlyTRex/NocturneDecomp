@@ -30,7 +30,7 @@
 ;   shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20
 ;   shape_edittool.cpp_CPickList_clear_FUN_004a5770
 ;   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -95,8 +95,8 @@ section .text
     RET                                 ; 004a3d05
     PUSH EAX                            ; 004a3d06
         ;   Label: LAB_004a3d06
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004a3d07
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 004a3d07
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 004a3d0c
     MOV EAX,EBX                         ; 004a3d0f
     POP EBX                             ; 004a3d11

@@ -38,7 +38,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
       iVar6 = iVar6 + 4;
     } while (iVar4 < g_NumActorClassTypes);
   }
-  shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&CStack_448.base);
+  shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&CStack_448.base);
   iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                     (&CStack_448,"Choose type of actor to create",INT_00680648,0);
   if (-1 < iVar3) {

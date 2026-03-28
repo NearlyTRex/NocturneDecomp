@@ -24,7 +24,7 @@
 ;
 ; Called Functions:
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0054f610
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
         ;   XREF to: 0054f610 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_0054f610(CPodFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00550cd2
     PUSH EAX                            ; 00550cd5
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00550cd6
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 00550cd6
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 00550cdb
     JMP 0x00550cae                      ; 00550cde
         ;   XREF to: 00550cae (UNCONDITIONAL_JUMP)  ; LAB_00550cae

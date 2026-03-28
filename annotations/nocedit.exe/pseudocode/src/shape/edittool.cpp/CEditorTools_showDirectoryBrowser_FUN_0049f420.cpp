@@ -121,7 +121,7 @@ LAB_0049f47a:
       }
       engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(&local_18f0);
     }
-    shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_1ec8.base);
+    shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_1ec8.base);
     iVar6 = local_1ec8.base.item_count;
     iVar8 = -1;
     if (local_12c8[0] != '\0') {

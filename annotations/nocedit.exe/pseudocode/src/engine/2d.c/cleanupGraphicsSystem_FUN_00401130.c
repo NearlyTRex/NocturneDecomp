@@ -1,0 +1,14 @@
+// Name: engine_2d.c_cleanupGraphicsSystem_FUN_00401130
+// Address: 00401130
+// Address Range: [[00401130, 00401134]]
+// Convention: __cdecl
+// Signature: void __cdecl engine_2d_c_cleanupGraphicsSystem_FUN_00401130(void)
+
+#include "nocturne.h"
+
+void __cdecl engine_2d_c_cleanupGraphicsSystem_FUN_00401130(void)
+
+{
+  wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_005ecd90();
+  return;
+}

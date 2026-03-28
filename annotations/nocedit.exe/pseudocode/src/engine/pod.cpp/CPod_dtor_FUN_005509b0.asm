@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_005fe632
 ;   engine_pod.cpp_CPod_cleanup_FUN_00550c80
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -57,8 +57,8 @@ section .text
     RET                                 ; 005509fb
     PUSH EBX                            ; 005509fc
         ;   Label: LAB_005509fc
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005509fd
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005509fd
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 00550a02
     MOV EAX,EBX                         ; 00550a05
     POP EBX                             ; 00550a07

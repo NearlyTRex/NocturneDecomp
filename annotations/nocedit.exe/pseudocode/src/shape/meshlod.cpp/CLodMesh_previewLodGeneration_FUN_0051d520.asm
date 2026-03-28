@@ -95,8 +95,8 @@ section .text
     CALL engine_2d.c_fillRectColor_FUN_00403170 ; 0051d588
         ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 0051d58d
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0051d590
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0051d590
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
     MOV ECX,dword ptr [0x0068416c]      ; 0051d595 | g_CSpotViewInstance | g_CSpotViewPtr
     PUSH ECX                            ; 0051d59b | g_CSpotViewInstance
     CALL shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20 ; 0051d59c
@@ -358,8 +358,8 @@ section .text
     PUSH 0x6382d3                       ; 0051d839 | = "Good enough?"
     MOV EAX,[0x00678a60]                ; 0051d83e | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 0051d843 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 0051d844
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 0051d844
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0051d849
     TEST EAX,EAX                        ; 0051d84c
     JNZ 0x0051d972                      ; 0051d84e

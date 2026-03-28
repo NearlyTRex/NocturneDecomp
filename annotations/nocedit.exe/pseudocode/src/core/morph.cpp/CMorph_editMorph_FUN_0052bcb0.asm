@@ -332,8 +332,8 @@ section .text
     CALL engine_2d.c_fillRectColor_FUN_00403170 ; 0052bfaf
         ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 0052bfb4
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0052bfb7
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0052bfb7
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
     MOV EAX,[0x00679398]                ; 0052bfbc | g_WindowHeight
     MOV EDX,EAX                         ; 0052bfc1
     SAR EDX,0x1f                        ; 0052bfc3
@@ -438,8 +438,8 @@ section .text
     MOV EBX,dword ptr [0x006703ec]      ; 0052c110 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0052c110
     PUSH EBX                            ; 0052c116 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 0052c117
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480()
+    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 ; 0052c117
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0()
     ADD ESP,0x4                         ; 0052c11c
     INC ESI                             ; 0052c11f
     MOV EAX,dword ptr [ESP + 0x4d80]    ; 0052c120
@@ -607,8 +607,8 @@ section .text
     MOV EBX,dword ptr [0x006703ec]      ; 0052c33d | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0052c33d
     PUSH EBX                            ; 0052c343 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 0052c344
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480()
+    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 ; 0052c344
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0()
     ADD ESP,0x4                         ; 0052c349
     MOV ESI,dword ptr [ESP + 0x4d98]    ; 0052c34c
     MOV EAX,dword ptr [ESP + 0x4d8c]    ; 0052c353
@@ -1059,8 +1059,8 @@ section .text
         ;   Label: LAB_0052c9b5
     MOV EBX,dword ptr [0x00678a60]      ; 0052c9b7 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 0052c9bd | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0052c9be
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380 ; 0052c9be
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 0052c9c3
     JMP 0x0052c3d7                      ; 0052c9c6
         ;   XREF to: 0052c3d7 (UNCONDITIONAL_JUMP)  ; LAB_0052c3d7

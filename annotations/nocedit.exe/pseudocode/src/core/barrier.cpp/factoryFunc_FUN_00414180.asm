@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_barrier.cpp_CBarrier_ctor_FUN_004141c0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_barrier.cpp_factoryFunc_FUN_00414180
     PUSH 0x615148                       ; 00414182 | = "..\\core\\barrier.cpp"
     PUSH 0x230                          ; 00414187
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0041418c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0041418c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00414191
     TEST EAX,EAX                        ; 00414194
     JNZ 0x00414199                      ; 00414196

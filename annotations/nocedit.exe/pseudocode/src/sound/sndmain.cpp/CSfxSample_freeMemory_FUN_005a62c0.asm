@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530
 ;   sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_005a6400
 ;   sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_005a63b0
@@ -77,8 +77,8 @@ section .text
         ;   XREF to: 00534530 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530(CMP3Decoder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a6317
     PUSH EAX                            ; 005a631a
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005a631b
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005a631b
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005a6320
     MOV EAX,dword ptr [EBX + 0x174]     ; 005a6323
         ;   Label: LAB_005a6323

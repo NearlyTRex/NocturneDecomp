@@ -21,6 +21,6 @@ CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_
   if ((flags & 2) == 0) {
     return this_ptr;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(this_ptr);
   return this_ptr;
 }

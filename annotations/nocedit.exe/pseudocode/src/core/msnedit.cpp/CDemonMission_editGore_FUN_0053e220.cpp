@@ -76,7 +76,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   core_slew_cpp_CSlew_init_FUN_005a2060(&local_bc);
   iVar2 = g_CDemonCameraInstance.corona_blend_factor;
-  pCVar3 = (CBoxActor *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x66c,"..\\core\\msnedit.cpp",0xe7b);
+  pCVar3 = (CBoxActor *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x66c,"..\\core\\msnedit.cpp",0xe7b);
   actor_00 = (CBoxActor *)0x0;
   if (pCVar3 != (CBoxActor *)0x0) {
     actor_00 = core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(pCVar3);
@@ -132,7 +132,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
     core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(pCVar1,0);
     core_fire_cpp_CFireEffect_process_FUN_004c6ec0(g_CFireEffectPtr);
     core_gore_cpp_CGore_process_FUN_004ed9e0(g_CGorePtr);
-    shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(g_CDemonSetPtr);

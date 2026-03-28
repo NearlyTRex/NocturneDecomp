@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0 at 00402a80
+;   engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80 at 00402a80
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

@@ -29,12 +29,12 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
   remove("test.raw");
   local_20 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                        (g_CEditorToolsPtr,"Write file?");
-  pCVar1 = (CMP3Decoder *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x8630,"..\\sound\\mp3.cpp",0xdc8);
+  pCVar1 = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x8630,"..\\sound\\mp3.cpp",0xdc8);
   local_24 = (CMP3Decoder *)0x0;
   if (pCVar1 != (CMP3Decoder *)0x0) {
     local_24 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(pCVar1);
   }
-  this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x8630,"..\\sound\\mp3.cpp",0xdc8);
+  this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x8630,"..\\sound\\mp3.cpp",0xdc8);
   pCVar2 = (CMP3Decoder *)0x0;
   if (this_ptr != (CMP3Decoder *)0x0) {
     pCVar2 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(this_ptr);
@@ -80,12 +80,12 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
   g_CurrentDebugFilename = "..\\sound\\mp3.cpp";
   g_CurrentDebugLine = 0xdeb;
   pCVar2 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(local_24,0);
-  shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar2);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(pCVar2);
   g_CurrentDebugFilename = "..\\sound\\mp3.cpp";
   g_CurrentDebugLine = 0xdec;
   if (local_2c != (CMP3Decoder *)0x0) {
     pCVar2 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(local_2c,0);
-    shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar2);
+    shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(pCVar2);
   }
   _time(&local_34);
   local_14 = local_34 - local_38;

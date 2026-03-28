@@ -34,7 +34,7 @@ int __cdecl shape_superopt_cpp_CObj_removeInvalidPolygons_FUN_005d46f0(CObj *thi
         uVar2 = index - 1;
         iVar2 = (*this_ptr->vtable->removePolygon)(this_ptr,index);
         if (iVar2 == 0) {
-          shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+          shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
           return 0;
         }
         iVar3 = iVar3 + 1;
@@ -42,7 +42,7 @@ int __cdecl shape_superopt_cpp_CObj_removeInvalidPolygons_FUN_005d46f0(CObj *thi
       index = uVar2 + 1;
     } while (index < (uint)this_ptr->poly_count);
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
   iVar2 = (*this_ptr->vtable->removeUnusedVertices)(this_ptr);
   return iVar2;
 }

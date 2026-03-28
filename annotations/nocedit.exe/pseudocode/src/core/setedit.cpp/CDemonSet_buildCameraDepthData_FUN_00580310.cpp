@@ -22,7 +22,7 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemon
   
   if ((g_CameraDepthData == (void *)0x0) && (0 < this_ptr->camera_count)) {
     g_CameraDepthData =
-         shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+         shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                    (this_ptr->camera_count * 0x4b030,"..\\core\\setedit.cpp",0x1007);
     if (g_CameraDepthData == (void *)0x0) {
       g_CurrentFilename = "..\\core\\setedit.cpp";
@@ -77,7 +77,7 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemon
           } while (iVar4 != 0x500);
           iVar5 = iVar5 + 4;
         } while (iVar5 != 0x3c0);
-        engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
+        engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0();
         local_1c = local_1c + 0x23;
         local_20 = local_20 + 0x23;
         local_24 = local_24 + 0x4b030;

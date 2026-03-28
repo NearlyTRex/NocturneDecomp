@@ -11,7 +11,7 @@ CMirrorHack * __cdecl core_manpuz_cpp_factoryFunc_FUN_0050b0d0(void)
 {
   CMirrorHack *pCVar1;
   
-  pCVar1 = (CMirrorHack *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2d8,"..\\core\\manpuz.cpp",0x616);
+  pCVar1 = (CMirrorHack *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x2d8,"..\\core\\manpuz.cpp",0x616);
   if (pCVar1 == (CMirrorHack *)0x0) {
     return (CMirrorHack *)0x0;
   }

@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;
 ; *****************************************************************************
@@ -60,6 +60,6 @@ section .text
     MOV EDI,dword ptr [0x006703ec]      ; 005e97a2 | g_CDemonRendererPtr2
     PUSH EDI                            ; 005e97a8 | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x7e8],EAX     ; 005e97a9
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 005e97af
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 005e97af
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
 

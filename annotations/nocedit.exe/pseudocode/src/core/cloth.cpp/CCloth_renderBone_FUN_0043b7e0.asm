@@ -39,7 +39,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
 ;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
@@ -177,8 +177,8 @@ section .text
     MOV EAX,[0x006703ec]                ; 0043b961 | g_CDemonRendererPtr2
         ;   Label: LAB_0043b961
     PUSH EAX                            ; 0043b966 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0043b967
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 0043b967
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     MOV EBX,dword ptr [ESP + 0x40]      ; 0043b976
         ;   Label: LAB_0043b976
     PUSH EBX                            ; 0043b97a

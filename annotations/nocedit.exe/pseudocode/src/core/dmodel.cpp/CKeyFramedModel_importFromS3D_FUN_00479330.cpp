@@ -261,7 +261,7 @@ LAB_0047983f:
             if (bVar4) goto LAB_004797c3;
           }
         }
-        iVar9 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+        iVar9 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
                           (g_CEditorToolsPtr,"I can't copy %s to %s.  Continue import anyway?",local_7b0,local_4a4
                           );
         if (iVar9 == 0) goto LAB_00479719;
@@ -411,7 +411,7 @@ LAB_00479c73:
       local_1c = (int)ROUND(ROUND(local_2c * 255.0f));
       auStack_8dc[iVar8] = (uchar)local_1c;
     }
-    puVar9 = (uchar *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+    puVar9 = (uchar *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                        (this_ptr->poly_count,"..\\core\\dmodel.cpp",0x725);
     this_ptr->env_map_opac_list = puVar9;
     if (puVar9 == (uchar *)0x0) {

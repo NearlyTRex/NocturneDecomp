@@ -36,7 +36,7 @@
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044c410
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_watcom.c__memcpy_FUN_004b1a78
-;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480
+;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
 ;   wincore_windll.cpp_endScene_FUN_005b72a0
 ;   wincore_windll.cpp_masterZBuffer_FUN_005b7d00
 ;
@@ -100,8 +100,8 @@ section .text
     MOV EAX,[0x006703ec]                ; 0044cc11 | g_CDemonRendererInstance | g_CDemonRendererPtr2
         ;   Label: LAB_0044cc11
     PUSH EAX                            ; 0044cc16 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 0044cc17
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480()
+    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 ; 0044cc17
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0()
     ADD ESP,0x4                         ; 0044cc1c
     PUSH EBX                            ; 0044cc1f
     CALL core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044c410 ; 0044cc20

@@ -22,8 +22,8 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
 ;   core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140
-;   shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060
 ;
 ; *****************************************************************************
 
@@ -181,8 +181,8 @@ section .text
     PUSH 0x654d22                       ; 005dad5b | = "Switch to destination %s"
     MOV ESI,dword ptr [0x00678a60]      ; 005dad60 | g_CEditorToolsPtr
     PUSH ESI                            ; 005dad66 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 005dad67
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 005dad67
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0xc                         ; 005dad6c
     TEST EAX,EAX                        ; 005dad6f
     JZ 0x005dad25                       ; 005dad71

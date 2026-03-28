@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_wateract.cpp_CWaterActor_ctor_FUN_005ea8a0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_wateract.cpp_factoryFunc_FUN_005ea860
     PUSH 0x657253                       ; 005ea862 | = "..\\core\\wateract.cpp"
     PUSH 0x2b238                        ; 005ea867
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005ea86c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005ea86c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005ea871
     TEST EAX,EAX                        ; 005ea874
     JNZ 0x005ea879                      ; 005ea876

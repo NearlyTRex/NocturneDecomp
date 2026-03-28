@@ -34,7 +34,7 @@
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005f5690
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407d70
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
@@ -186,8 +186,8 @@ section .text
     PUSH EDX                            ; 0059b7cf | g_CDemonRendererInstance
     INC EBX                             ; 0059b7d0
     ADD ESI,0x30                        ; 0059b7d1
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0059b7d4
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 0059b7d4
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     ADD ESP,0x3c                        ; 0059b7f0
         ;   Label: LAB_0059b7f0
     POP EBP                             ; 0059b7f3

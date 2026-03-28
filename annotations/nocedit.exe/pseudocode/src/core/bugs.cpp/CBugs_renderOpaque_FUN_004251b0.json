@@ -6,17 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 73,
+    "complexity_score": 99,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
-    "suspect_count": 1,
+    "pseudocode_lines": 59,
+    "suspect_count": 3,
     "suspect_types": [
+      "stack_param",
       "warning_type_propagation"
     ],
-    "total_lines": 194
+    "total_lines": 195
   },
   "cross_references": [],
   "function": {
@@ -74,7 +75,7 @@
     {
       "addr": "0048c640",
       "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640"
     },
     {
       "addr": "0048ca60",
@@ -224,6 +225,22 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "} while (iVar3 < *(int *)(in_stack_00000008 + 0xbec0));",
+      "type": "stack_param"
     }
   ],
   "vtable_info": {

@@ -91,7 +91,7 @@
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_copyFileTimestamp_FUN_00481910
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
-;   engine_dosio.c_getFileTimestamp_FUN_00481960
+;   engine_dosio.c_getFileSize_FUN_00481960
 ;   engine_dosio.c_makePath_FUN_00481f50
 ;   engine_dosio.c_setFileAttributes_FUN_004819f0
 ;   engine_dosio.c_splitPath_FUN_00481f20
@@ -765,8 +765,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x2314]    ; 004b8f15
     PUSH ECX                            ; 004b8f1c
     PUSH EAX                            ; 004b8f1d
-    CALL engine_dosio.c_getFileTimestamp_FUN_00481960 ; 004b8f1e
-        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileTimestamp_FUN_00481960(char * directory, char * filename)
+    CALL engine_dosio.c_getFileSize_FUN_00481960 ; 004b8f1e
+        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481960(char * directory, char * filename)
     ADD ESP,0x8                         ; 004b8f23
     TEST EAX,EAX                        ; 004b8f26
     JL 0x004b8f32                       ; 004b8f28
@@ -1747,8 +1747,8 @@ section .text
     PUSH EBX                            ; 004b9a76
     PUSH 0x0                            ; 004b9a77
     MOV EBP,EBX                         ; 004b9a79
-    CALL engine_dosio.c_getFileTimestamp_FUN_00481960 ; 004b9a7b
-        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileTimestamp_FUN_00481960(char * directory, char * filename)
+    CALL engine_dosio.c_getFileSize_FUN_00481960 ; 004b9a7b
+        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481960(char * directory, char * filename)
     ADD ESP,0x8                         ; 004b9a80
     LEA ESI,[EDI + 0x308]               ; 004b9a83
     MOV dword ptr [ESP + 0x2300],EAX    ; 004b9a89
@@ -1889,8 +1889,8 @@ section .text
     PUSH EBX                            ; 004b9c0f
         ;   Label: LAB_004b9c0f
     PUSH ESI                            ; 004b9c10
-    CALL engine_dosio.c_getFileTimestamp_FUN_00481960 ; 004b9c11
-        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileTimestamp_FUN_00481960(char * directory, char * filename)
+    CALL engine_dosio.c_getFileSize_FUN_00481960 ; 004b9c11
+        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481960(char * directory, char * filename)
     ADD ESP,0x8                         ; 004b9c16
     TEST EAX,EAX                        ; 004b9c19
     JL 0x004b9b05                       ; 004b9c1b

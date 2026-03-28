@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_lightgun.cpp_CLightGun_ctor_FUN_00505900
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_lightgun.cpp_factoryFunc_FUN_005058c0
     PUSH 0x631440                       ; 005058c2 | = "..\\core\\lightgun.cpp"
     PUSH 0x590                          ; 005058c7
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005058cc
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005058cc
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005058d1
     TEST EAX,EAX                        ; 005058d4
     JNZ 0x005058d9                      ; 005058d6

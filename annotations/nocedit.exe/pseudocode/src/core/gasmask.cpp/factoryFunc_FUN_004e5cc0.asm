@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_gasmask.cpp_CGasMask_ctor_FUN_004e5d00
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_gasmask.cpp_factoryFunc_FUN_004e5cc0
     PUSH 0x62da95                       ; 004e5cc2 | = "..\\core\\gasmask.cpp"
     PUSH 0x2d8                          ; 004e5cc7
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 004e5ccc
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004e5ccc
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004e5cd1
     TEST EAX,EAX                        ; 004e5cd4
     JNZ 0x004e5cd9                      ; 004e5cd6

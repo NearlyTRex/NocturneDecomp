@@ -61,7 +61,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_
     } while (index < local_14);
   }
   core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0(this_ptr);
-  core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_005a05e0(this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr);
   return;
 }

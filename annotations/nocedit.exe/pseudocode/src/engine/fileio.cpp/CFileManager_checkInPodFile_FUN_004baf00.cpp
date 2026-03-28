@@ -531,8 +531,8 @@ LAB_004bbfdd:
                               (local_54,"..\\engine\\fileio.cpp",0xc4);
                     local_54 = (_FILE *)0x0;
                   }
-                  iVar3 = engine_dosio_c_getFileTimestamp_FUN_00481960
-                                    ((char *)0x0,local_12b4.found_path);
+                  iVar3 = engine_dosio_c_getFileSize_FUN_00481960((char *)0x0,local_12b4.found_path)
+                  ;
                   if (((-1 < iVar3) &&
                       (iVar4 = engine_dosio_c_setFileAttributes_FUN_004819f0
                                          (local_12b4.found_path,(byte)iVar3 | 8), iVar4 == 0)) ||

@@ -31,9 +31,9 @@ uint __cdecl getFileTimestamp(char *directory_path,char *filename);
 // Address: 00481910
 int __cdecl copyFileTimestamp(char *source_file,char *dest_file);
 
-// Original: engine_dosio.c_getFileTimestamp_FUN_00481960
+// Original: engine_dosio.c_getFileSize_FUN_00481960
 // Address: 00481960
-int __cdecl getFileTimestamp(char *directory,char *filename);
+int __cdecl getFileSize(char *directory,char *filename);
 
 // Original: engine_dosio.c_setFileAttributes_FUN_004819f0
 // Address: 004819f0

@@ -55,9 +55,9 @@ void __edi_esi_ebx renderTexturedDecalMMXScanline(SSoftwareEdge *left_edge,SSoft
 // Address: 004917bc
 void __cdecl blendBilerpLightmapToTexture64BitOutput(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
-// Original: core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_00491c9a
+// Original: core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutputOffset_FUN_00491c9a
 // Address: 00491c9a
-void __cdecl blendBilerpLightmapToTexture64BitOutput(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
+void __cdecl blendBilerpLightmapToTexture64BitOutputOffset(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90
 // Address: 00491f90
@@ -83,29 +83,29 @@ void __cdecl verticalBlur3TapMMXStride128(ulonglong *output_buffer,ulonglong *in
 // Address: 004923ff
 void __cdecl spatialFilter9TapMMX(uint *output_buffer,uint *input_buffer,int pixel_count);
 
-// Original: core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_004924a9
+// Original: core_dstrender.cpp_blendLightmapToTexture64BitOutputBlendBias_FUN_004924a9
 // Address: 004924a9
-void __cdecl blendLightmapToTexture64BitOutput(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
+void __cdecl blendLightmapToTexture64BitOutputBlendBias(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
-// Original: core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_004925c5
+// Original: core_dstrender.cpp_blendLightmapToTexture64BitOutputAmbient_FUN_004925c5
 // Address: 004925c5
-void __cdecl blendLightmapToTexture64BitOutput(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
+void __cdecl blendLightmapToTexture64BitOutputAmbient(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1
 // Address: 004926e1
 void __cdecl blendLightmapToTexture32BitInputOutput(uint *output_buffer,uint *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
-// Original: core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5
+// Original: core_dstrender.cpp_blendLightmapToTexture32BitOutputAmbient_FUN_00492bd5
 // Address: 00492bd5
-void __cdecl blendLightmapToTexture64BitOutput(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
+void __cdecl blendLightmapToTexture32BitOutputAmbient(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00492e8a
 // Address: 00492e8a
 void __cdecl alphaBlendPixelsMMX(uint *output_buffer,uint *source1_buffer,uint *source2_buffer,uint alpha1,uint alpha2,int pixel_count);
 
-// Original: core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00492f03
+// Original: core_dstrender.cpp_blendLightmapToTextureMMX32BitBlendBias_FUN_00492f03
 // Address: 00492f03
-void __cdecl blendLightmapToTextureMMX(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
+void __cdecl blendLightmapToTextureMMX32BitBlendBias(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
 // Address: 00493450
@@ -119,9 +119,9 @@ void __cdecl blendSinglePixelLightmapMMX(ushort *output_pixel,uint *texture_pixe
 // Address: 00493860
 void __cdecl blendTextureWithLightmapMMX(uint *output_buffer,uint *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
-// Original: core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00493dc4
+// Original: core_dstrender.cpp_blendLightmapToTextureMMX64BitAmbient_FUN_00493dc4
 // Address: 00493dc4
-void __cdecl blendLightmapToTextureMMX(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
+void __cdecl blendLightmapToTextureMMX64BitAmbient(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9
 // Address: 004940e9

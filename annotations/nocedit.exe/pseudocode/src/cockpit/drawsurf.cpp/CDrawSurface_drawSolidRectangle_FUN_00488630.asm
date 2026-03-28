@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   y2
 ;
 ; XREF[3]:
-;   cockpit_drawsurf.cpp_CDrawSurface_drawCenteredRectangle_FUN_004886c0 at 00488720
+;   cockpit_drawsurf.cpp_CDrawSurface_drawCenteredSolidRectangle_FUN_004886c0 at 00488720
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawFullSurface_FUN_004886a0 at 004886b2
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawInsetRectangle_FUN_00488740 at 0048878c
 ;

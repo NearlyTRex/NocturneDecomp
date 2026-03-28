@@ -320,5 +320,5 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBit
 void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array, SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array, SBitAllocationTable *allocation_table);
 void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples, SMpegSubbandAllocation *allocation,SBitAllocationTable *alloc_table);
 void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *sample_array, SMpegSubbandAllocation *allocation_array,SBitAllocationTable *allocation_table);
-void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output, SMpegFrame *frame_info);
+void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output, SMpegFrame *frame_info);
 

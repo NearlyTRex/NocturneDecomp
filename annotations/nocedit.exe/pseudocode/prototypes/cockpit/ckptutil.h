@@ -43,7 +43,7 @@ ColorConversionFunc * __cdecl get16BitConversionFunction(void);
 // Address: 004317b0
 void * __cdecl loadBitmapWithPalette(char *filename,int width,int height,void *span_data_buffer,void *buffer,int transparent_color_index);
 
-// Original: cockpit_ckptutil.c_applyColorPalette_FUN_004319b0
+// Original: cockpit_ckptutil.c_applyColorPalette_FUN_00431830
 // Address: 00431830
 void __cdecl applyColorPalette(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
 

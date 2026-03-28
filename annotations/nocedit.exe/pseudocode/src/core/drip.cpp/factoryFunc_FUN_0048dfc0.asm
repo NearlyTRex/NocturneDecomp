@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_drip.cpp_CDrip_ctor_FUN_0048e000
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_drip.cpp_factoryFunc_FUN_0048dfc0
     PUSH 0x622205                       ; 0048dfc2 | = "..\\core\\drip.cpp"
     PUSH 0x33c                          ; 0048dfc7
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0048dfcc
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0048dfcc
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0048dfd1
     TEST EAX,EAX                        ; 0048dfd4
     JNZ 0x0048dfd9                      ; 0048dfd6

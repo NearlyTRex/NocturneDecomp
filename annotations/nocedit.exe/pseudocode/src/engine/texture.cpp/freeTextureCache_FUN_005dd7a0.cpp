@@ -20,7 +20,7 @@ void __cdecl engine_texture_cpp_freeTextureCache_FUN_005dd7a0(void)
     return;
   }
   engine_texture_cpp_CTextureCache_freeTextures_FUN_005dcb30(g_TextureCacheInstance);
-  shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
   g_TextureCacheInstance = (CTextureCache *)0x0;
   return;
 }

@@ -91,7 +91,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
     g_SecondaryPolygonIndex = -1;
     shape_design_c_calculateVertexNormals_FUN_0045be40();
     engine_2d_c_clearInputAndWait_FUN_00403260();
-    engine_2d_c_resetGraphicsSystem_FUN_005ed2a0();
+    engine_2d_c_resetGraphicsSystem_FUN_00402a70();
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     local_18 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -100,7 +100,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
       wincore_windll_cpp_beginScene_FUN_005b7280();
       if (g_UseExternalRenderer == 0) {
-        wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+        wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
       }
       else {
         wincore_windll_cpp_clearZBuffer_FUN_005b7be0();
@@ -606,7 +606,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       g_GlobalDeltaTimeInt = (iVar12 - local_18) / 0x12;
       local_18 = iVar12;
     } while (g_KeyboardState[1] == '\0');
-    engine_2d_c_reinitializeGraphicsSystem_FUN_005ed4b0();
+    engine_2d_c_reinitializeGraphicsSystem_FUN_00402a80();
     engine_2d_c_clearInputAndWait_FUN_00403260();
     g_ProjectionScale = iVar11;
     engine_2d_c_setTextColor_FUN_00402840(color);

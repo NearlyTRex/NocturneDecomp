@@ -30,7 +30,7 @@
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
@@ -128,8 +128,8 @@ section .text
     ADD ESP,0xc                         ; 00413bc5
     MOV EDI,dword ptr [0x006703ec]      ; 00413bc8 | g_CDemonRendererPtr2
     PUSH EDI                            ; 00413bce | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00413bcf
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00413bcf
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     PUSH EBX                            ; 00413bd7
         ;   Label: LAB_00413bd7
     CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 00413bd8

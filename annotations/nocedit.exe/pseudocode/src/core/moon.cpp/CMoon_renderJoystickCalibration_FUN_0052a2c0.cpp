@@ -17,7 +17,7 @@ void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0(CMoon *t
   CDemonSet *pCVar1;
   
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+  wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
             (g_CDemonRendererPtr2,&g_ZeroVector.i);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,56.0);

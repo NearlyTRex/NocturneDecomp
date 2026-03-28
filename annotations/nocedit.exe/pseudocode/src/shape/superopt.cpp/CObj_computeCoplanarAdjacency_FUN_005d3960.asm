@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
 
@@ -182,8 +182,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 005d3b15
         ;   Label: LAB_005d3b15
     PUSH EAX                            ; 005d3b19
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005d3b1a
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005d3b1a
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005d3b1f
     MOV ESP,EBP                         ; 005d3b22
     POP EBP                             ; 005d3b24

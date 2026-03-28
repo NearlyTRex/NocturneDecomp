@@ -3,51 +3,33 @@
     "errors": [
       {
         "category": "format_error",
-        "column": 55,
-        "line": 204,
+        "column": 81,
+        "line": 205,
         "message": "format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]"
       },
       {
-        "category": "other",
-        "column": 52,
-        "line": 204,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "category": "format_error",
+        "column": 16,
+        "line": 206,
+        "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 68,
-        "line": 208,
-        "message": "use of undeclared identifier 'stack0xfffffac4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 35,
-        "line": 215,
-        "message": "use of undeclared identifier 'stack0xfffffac4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 224,
-        "message": "use of undeclared identifier 'stack0xfffffac4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 68,
-        "line": 229,
-        "message": "use of undeclared identifier 'stack0xfffffac4'"
+        "category": "format_error",
+        "column": 57,
+        "line": 239,
+        "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 48,
-        "line": 236,
-        "message": "C-style cast from 'CKeys *' to 'float' is not allowed"
+        "column": 16,
+        "line": 240,
+        "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
-        "category": "other",
-        "column": 47,
-        "line": 288,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "category": "format_error",
+        "column": 18,
+        "line": 293,
+        "message": "format specifies type 'char *' but the argument has type 'SClothBone *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -55,20 +37,19 @@
   },
   "complexity": {
     "assembly_lines": 1402,
-    "complexity_score": 544,
+    "complexity_score": 501,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 56,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 374,
-    "suspect_count": 15,
+    "pseudocode_lines": 386,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param",
-      "stack_ref"
+      "sub84_truncation"
     ],
-    "total_lines": 1776
+    "total_lines": 1788
   },
   "cross_references": [
     {
@@ -230,7 +211,7 @@
     {
       "addr": "0048c640",
       "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640"
     },
     {
       "addr": "0048c450",
@@ -260,7 +241,7 @@
     {
       "addr": "0049f060",
       "is_variadic": true,
-      "name": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060"
+      "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060"
     },
     {
       "addr": "004a3b90",
@@ -310,7 +291,7 @@
     {
       "addr": "005b3ed4",
       "is_variadic": false,
-      "name": "wincore_windll.cpp_clearZBuffer_FUN_005b3ed4"
+      "name": "wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4"
     },
     {
       "addr": "005b575c",
@@ -880,14 +861,6 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_fffffac8",
-      "severity": "moderate",
-      "text": "CKeys *in_stack_fffffac8;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 118,
       "match": "(int *)((int)",
@@ -932,7 +905,7 @@
       "line": 167,
       "match": "ROUND",
       "severity": "mild",
-      "text": "CStack_74.x = (int)ROUND((pSVar4->position).x * 256.0f);",
+      "text": "CStack_74.x = (int)ROUND((pSVar3->position).x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -940,7 +913,7 @@
       "line": 168,
       "match": "ROUND",
       "severity": "mild",
-      "text": "CStack_74.y = (int)ROUND((pSVar4->position).y * 256.0f);",
+      "text": "CStack_74.y = (int)ROUND((pSVar3->position).y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -948,56 +921,24 @@
       "line": 169,
       "match": "ROUND",
       "severity": "mild",
-      "text": "CStack_74.z = (int)ROUND((pSVar4->position).z * 256.0f);",
+      "text": "CStack_74.z = (int)ROUND((pSVar3->position).z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 201,
-      "match": "&stack0xfffffac4",
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 232,
+      "match": "SUB84(",
       "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffac4);",
-      "type": "stack_ref"
+      "text": "((char *)&CStack_54c.selection_state,\"%f\",SUB84(__BITCAST_UINT64((double)(1.0 / fStack_550)),0),",
+      "type": "sub84_truncation"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 208,
-      "match": "&stack0xfffffac4",
-      "severity": "moderate",
-      "text": "((CStrList *)&stack0xfffffac4,string_data->motion_name);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 217,
-      "match": "&stack0xfffffac4",
-      "severity": "moderate",
-      "text": "((CPickList *)&stack0xfffffac4,\"Select motion\",local_2c,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 222,
-      "match": "&stack0xfffffac4",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffffac4,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 229,
-      "match": "in_stack_fffffac8",
-      "severity": "moderate",
-      "text": "(acStack_1a8,\"%f\",(double)(1.0 / (float)in_stack_fffffac8));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 245,
-      "match": "in_stack_fffffac8",
-      "severity": "moderate",
-      "text": "in_stack_fffffac8 = g_CKeysPtr;",
-      "type": "stack_param"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 232,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "((char *)&CStack_54c.selection_state,\"%f\",SUB84(__BITCAST_UINT64((double)(1.0 / fStack_550)),0),",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

@@ -40,7 +40,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c___vec_new_FUN_00601272
 ;   crt_stdio.c_fread_FUN_005fd990
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 ;
 ; *****************************************************************************
 
@@ -126,8 +126,8 @@ section .text
     PUSH 0x63f334                       ; 0054ba81 | = "..\\cockpit\\pkbitmap.cpp"
     ADD EAX,0x4                         ; 0054ba86
     PUSH EAX                            ; 0054ba89
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0054ba8a
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0054ba8a
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0054ba8f
     PUSH EAX                            ; 0054ba92
     CALL crt_memory.c___vec_new_FUN_00601272 ; 0054ba93

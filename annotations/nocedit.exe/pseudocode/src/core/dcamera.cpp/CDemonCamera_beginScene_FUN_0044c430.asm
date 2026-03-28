@@ -50,8 +50,8 @@
 ;   wincore_windll.cpp_beginScene_FUN_005b7280
 ;   wincore_windll.cpp_clear_FUN_005b7a30
 ;   wincore_windll.cpp_clearScreen_FUN_005b3e70
-;   wincore_windll.cpp_clearZBuffer_FUN_005b3ed4
 ;   wincore_windll.cpp_clearZBuffer_FUN_005b7be0
+;   wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4
 ;
 ; *****************************************************************************
 
@@ -226,8 +226,8 @@ section .text
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0044c653
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0044c653
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0044c658
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0044c658
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
     CMP dword ptr [0x02d03e94],0x0      ; 0044c65d | g_UseExternalRenderer
     JZ 0x0044c670                       ; 0044c664
         ;   XREF to: 0044c670 (CONDITIONAL_JUMP)  ; LAB_0044c670

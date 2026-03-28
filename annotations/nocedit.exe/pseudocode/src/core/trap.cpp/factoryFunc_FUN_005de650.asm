@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_trap.cpp_CTrap_ctor_FUN_005de690
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_trap.cpp_factoryFunc_FUN_005de650
     PUSH 0x65551b                       ; 005de652 | = "..\\core\\trap.cpp"
     PUSH 0x2dc                          ; 005de657
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005de65c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005de65c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005de661
     TEST EAX,EAX                        ; 005de664
     JNZ 0x005de669                      ; 005de666

@@ -1,0 +1,411 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 738,
+    "complexity_score": 167,
+    "cross_reference_count": 15,
+    "function_call_count": 3,
+    "global_count": 16,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 167,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 905
+  },
+  "cross_references": [
+    {
+      "addr": "0043d590",
+      "from_addr": "0043d9df",
+      "name": "core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004da100",
+      "from_addr": "004dab06",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005073a0",
+      "from_addr": "0050770d",
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005070f0",
+      "from_addr": "005072d2",
+      "name": "core_main.c_showLicenseAgreement_FUN_005070f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052bcb0",
+      "from_addr": "0052c9be",
+      "name": "core_morph.cpp_CMorph_editMorph_FUN_0052bcb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005390f0",
+      "from_addr": "0053998b",
+      "name": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053e220",
+      "from_addr": "0053e536",
+      "name": "core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00535e70",
+      "from_addr": "00536a97",
+      "name": "core_msnedit.cpp_showEditorHelpScreen_FUN_00535e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057d660",
+      "from_addr": "0057e03b",
+      "name": "core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a940",
+      "from_addr": "0057ab94",
+      "name": "core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00583170",
+      "from_addr": "00583aee",
+      "name": "core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a4d40",
+      "from_addr": "004a521e",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049e130",
+      "from_addr": "0049e391",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049e9d0",
+      "from_addr": "0049efe0",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049db10",
+      "from_addr": "0049dd4f",
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0049db10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a1380",
+    "address_range": [
+      [
+        "004a1380",
+        "004a1b23"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380",
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEditorTools *this_ptr,int use_clipping)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00401140",
+      "is_variadic": false,
+      "name": "engine_2d.c_plotPixel_FUN_00401140"
+    },
+    {
+      "addr": "004a1330",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00623535",
+      "name": "s_shape_edittool_cpp_00623535",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062354b",
+      "name": "s_CEditorTools_setMousePoi_0062354b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a64",
+      "name": "g_CursorSizeHorizontal",
+      "type": "int",
+      "value": "0x9"
+    },
+    {
+      "addr": "00678a68",
+      "name": "g_CursorSizeVertical",
+      "type": "int",
+      "value": "0x9"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "02cf2670",
+      "name": "g_MouseCursorType",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a8c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a90",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 15,
+    "call_sites": [
+      {
+        "call_addr": "0049efe0",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004dab06",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processFrame_FUN_004da100",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053998b",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0050770d",
+        "call_type": "direct",
+        "caller": "core_main.c_showDeveloperToolsMenu_FUN_005073a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0049dd4f",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_showTextInputDialog_FUN_0049db10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0049e391",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0057ab94",
+        "call_type": "direct",
+        "caller": "core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053e536",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00536a97",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_showEditorHelpScreen_FUN_00535e70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0057e03b",
+        "call_type": "direct",
+        "caller": "core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.261477045908183,
+    "instruction_count": 501,
+    "opcode_distribution": {
+      "BOOL_AND": 3,
+      "BOOL_NEGATE": 30,
+      "BOOL_OR": 2,
+      "BRANCH": 18,
+      "CALL": 17,
+      "CBRANCH": 145,
+      "COPY": 319,
+      "INT_ADD": 50,
+      "INT_AND": 516,
+      "INT_CARRY": 27,
+      "INT_EQUAL": 465,
+      "INT_LESS": 113,
+      "INT_NOTEQUAL": 96,
+      "INT_OR": 20,
+      "INT_SBORROW": 114,
+      "INT_SCARRY": 35,
+      "INT_SLESS": 205,
+      "INT_SRIGHT": 15,
+      "INT_SUB": 172,
+      "LOAD": 11,
+      "POPCOUNT": 205,
+      "RETURN": 1,
+      "STORE": 57
+    },
+    "pcode_op_count": 2636
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "use_clipping",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

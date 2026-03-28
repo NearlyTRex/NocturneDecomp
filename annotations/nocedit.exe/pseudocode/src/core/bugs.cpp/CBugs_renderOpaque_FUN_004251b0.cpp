@@ -17,6 +17,7 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
   CVector3i *rotation;
   CVector3i *position;
   int iVar3;
+  int in_stack_00000008;
   CBoundingBox3D local_44;
   CVector3f CStack_2c;
   CVector3f CStack_20;
@@ -53,11 +54,11 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
                       (g_CDemonRendererPtr2,0xffff);
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                       (this_ptr->models + this_ptr->bugs[iVar3].model_index,0.0,0x2e7);
-            engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+            engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
             position = (CVector3i *)&position[5].y;
             iVar3 = iVar3 + 1;
             rotation = (CVector3i *)&rotation[5].y;
-          } while (iVar3 < this_ptr->count);
+          } while (iVar3 < *(int *)(in_stack_00000008 + 0xbec0));
         }
         core_set_cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0(g_CDemonSetPtr,(CVector3f *)0x0);
       }

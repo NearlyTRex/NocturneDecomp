@@ -130,8 +130,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005786e7
         ;   Label: LAB_005786e7
     PUSH EAX                            ; 005786eb
-    CALL shape_edittool.cpp_CStrList_sort_FUN_004a2ec0 ; 005786ec
-        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sort_FUN_004a2ec0(CStrList * this_ptr)
+    CALL shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0 ; 005786ec
+        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 005786f1
     PUSH 0x0                            ; 005786f4
     PUSH EDI                            ; 005786f6

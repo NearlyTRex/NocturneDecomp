@@ -17,7 +17,7 @@ ios * __cdecl crt_iostream_cpp_ios_dtor_FUN_0060632c(ios *this_ptr,uint flags)
     if ((flags & 2) == 0) {
       return this_ptr;
     }
-    shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);
+    shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(this_ptr);
   }
   else {
     ptr = __vec_delete(this_ptr,&g_IOSTypeInfo);

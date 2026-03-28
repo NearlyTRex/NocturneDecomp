@@ -514,8 +514,8 @@ section .text
         ;   Label: LAB_00443522
     MOV ESI,dword ptr [0x00678a60]      ; 00443527 | g_CEditorToolsPtr
     PUSH ESI                            ; 0044352d | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 0044352e
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 0044352e
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00443533
     TEST EAX,EAX                        ; 00443536
     JZ 0x004431bd                       ; 00443538

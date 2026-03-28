@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_vampboss.cpp_CVampireBoss_ctor_FUN_005e5590
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_vampboss.cpp_factoryFunc_FUN_005e5550
     PUSH 0x656ab0                       ; 005e5552 | = "..\\core\\vampboss.cpp"
     PUSH 0xce920                        ; 005e5557
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005e555c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005e555c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005e5561
     TEST EAX,EAX                        ; 005e5564
     JNZ 0x005e5569                      ; 005e5566

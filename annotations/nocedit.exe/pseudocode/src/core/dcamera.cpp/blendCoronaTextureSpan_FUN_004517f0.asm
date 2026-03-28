@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   source_buffer_offset
 ;
 ; XREF[1]:
-;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0 at 00451e6d
+;   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 at 00451e6d
 ;
 ; Referenced Globals:
 ;   char[241][320] g_CoronaBlurOutputBuffer

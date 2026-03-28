@@ -80,7 +80,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
         _fread(buffer,4,1,file_handle);
         SVar1 = *buffer;
         if (SVar1 != 0) {
-          pSVar3 = (SIZE_T *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+          pSVar3 = (SIZE_T *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                              (SVar1 * 0x38 + 4,"..\\core\\dtrace.cpp",0x172);
           pSVar4 = pSVar3;
           if (pSVar3 != (SIZE_T *)0x0) {
@@ -88,7 +88,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
             *pSVar3 = SVar1;
           }
           buffer[1] = (SIZE_T)pSVar4;
-          pvVar5 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+          pvVar5 = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                              (*buffer,"..\\core\\dtrace.cpp",0x173);
           buffer[0x15] = (SIZE_T)pvVar5;
           if ((buffer[1] == 0) || (pvVar5 == (void *)0x0)) {
@@ -106,7 +106,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
               iVar3 = iVar3 + 0x38;
             } while (iVar1 < (int)*buffer);
           }
-          pCVar6 = (CDemonPart *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x388,"..\\core\\dtrace.cpp",0x17a);
+          pCVar6 = (CDemonPart *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+                             (0x388,"..\\core\\dtrace.cpp",0x17a);
           pCVar7 = (CDemonPart *)0x0;
           if (pCVar6 != (CDemonPart *)0x0) {
             pCVar7 = core_dpart_cpp_CDemonPart_ctor_FUN_00482110(pCVar6);
@@ -140,7 +141,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
           iVar3 = iVar3 + 0x58;
         }
         else {
-          this_ptr_00 = (CDemonPart *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
+          this_ptr_00 = (CDemonPart *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
                                   (0x388,"..\\core\\dtrace.cpp",0x19a);
           pCVar2 = (CDemonPart *)0x0;
           if (this_ptr_00 != (CDemonPart *)0x0) {

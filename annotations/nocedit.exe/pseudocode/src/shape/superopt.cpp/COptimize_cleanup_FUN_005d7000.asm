@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_00601cd0
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_superopt.cpp_CComplexPolygon_dtor_FUN_005c79d0
 ;   shape_superopt.cpp_CComplexPolygon_free_FUN_005c79f0
 ;   shape_superopt.cpp_CObj_free_FUN_005d2600
@@ -99,8 +99,8 @@ section .text
         ;   XREF to: 005c79d0 (UNCONDITIONAL_CALL)  ; CComplexPolygon * shape_superopt.cpp_CComplexPolygon_dtor_FUN_005c79d0(CComplexPolygon * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005d70aa
     PUSH EAX                            ; 005d70ad
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005d70ae
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005d70ae
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005d70b3
     JMP 0x005d7035                      ; 005d70b6
         ;   XREF to: 005d7035 (UNCONDITIONAL_JUMP)  ; LAB_005d7035

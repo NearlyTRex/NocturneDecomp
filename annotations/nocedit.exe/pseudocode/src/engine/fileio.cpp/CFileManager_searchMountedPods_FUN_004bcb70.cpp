@@ -50,7 +50,7 @@ void __cdecl engine_fileio_cpp_CFileManager_searchMountedPods_FUN_004bcb70(CFile
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_9cc,0);
     return;
   }
-  shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_9cc.base);
+  shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_9cc.base);
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(&local_9cc,local_108,-1,0)
   ;
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_9cc,0);

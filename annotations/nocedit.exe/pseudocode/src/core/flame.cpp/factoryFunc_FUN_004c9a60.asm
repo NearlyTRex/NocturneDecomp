@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_flame.cpp_CFlame_ctor_FUN_004c9aa0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_flame.cpp_factoryFunc_FUN_004c9a60
     PUSH 0x62a0dd                       ; 004c9a62 | = "..\\core\\flame.cpp"
     PUSH 0x2a4                          ; 004c9a67
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 004c9a6c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004c9a6c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004c9a71
     TEST EAX,EAX                        ; 004c9a74
     JNZ 0x004c9a79                      ; 004c9a76

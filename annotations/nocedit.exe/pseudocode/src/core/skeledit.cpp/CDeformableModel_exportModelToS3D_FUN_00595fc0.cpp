@@ -69,7 +69,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
               (g_CEditorToolsPtr,"Can't create %s");
     return;
   }
-  dest = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  dest = (int *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                    (this_ptr->vertex_count[lod_level] << 2,"..\\core\\skeledit.cpp",0x1565);
   if (dest == (int *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";

@@ -35,10 +35,10 @@
 ;   core_netgame.cpp_CNetGame_shutdown_FUN_0053f830
 ;   core_skeleton.cpp_freeAllModels_FUN_005a1dc0
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0
-;   core_sound.cpp_CSound_dtor_FUN_005aaeb0
+;   core_sound.cpp_CSound_dtor_FUN_005b2d60
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_rand_FUN_005feb5c
-;   engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90
+;   engine_2d.c_cleanupGraphicsSystem_FUN_00401130
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560
@@ -276,8 +276,8 @@ section .text
     ADD ESP,0x4                         ; 005087d4
     MOV EBP,dword ptr [0x00681ef8]      ; 005087d7 | g_CSoundPtr
     PUSH EBP                            ; 005087dd | g_CSoundInstance
-    CALL core_sound.cpp_CSound_dtor_FUN_005aaeb0 ; 005087de
-        ;   XREF to: 005b2d60 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_dtor_FUN_005aaeb0()
+    CALL core_sound.cpp_CSound_dtor_FUN_005b2d60 ; 005087de
+        ;   XREF to: 005b2d60 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_dtor_FUN_005b2d60()
     ADD ESP,0x4                         ; 005087e3
     CALL core_dmodel.cpp_freeAllModels_FUN_00478cb0 ; 005087e6
         ;   XREF to: 00478cb0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_freeAllModels_FUN_00478cb0()
@@ -289,10 +289,10 @@ section .text
         ;   XREF to: 0050c5b0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_doNothing_FUN_0050c5b0()
     CALL wincore_winrun.cpp_endPeriod_FUN_005f2db0 ; 005087fa
         ;   XREF to: 005f2db0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_005f2db0()
-    CALL engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90 ; 005087ff
-        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90()
-    CALL wincore_wddvmem.cpp_freeTextureCache_FUN_005dd7a0 ; 00508804
-        ;   XREF to: 004037a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_freeTextureCache_FUN_005dd7a0()
+    CALL engine_2d.c_cleanupGraphicsSystem_FUN_00401130 ; 005087ff
+        ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_00401130()
+    CALL wincore_wddvmem.cpp_freeTextureCache_FUN_004037a0 ; 00508804
+        ;   XREF to: 004037a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_freeTextureCache_FUN_004037a0()
     CALL core_dfont.cpp_freeFonts_FUN_004710a0 ; 00508809
         ;   XREF to: 004710a0 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_freeFonts_FUN_004710a0()
     CALL wincore_winrun.cpp_doNothing_FUN_005f4380 ; 0050880e

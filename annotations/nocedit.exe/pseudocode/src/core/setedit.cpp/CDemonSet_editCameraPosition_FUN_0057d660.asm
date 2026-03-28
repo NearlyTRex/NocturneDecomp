@@ -335,8 +335,8 @@ section .text
     PUSH 0xc81                          ; 0057d966
     PUSH 0x647e78                       ; 0057d96b | = "..\\core\\setedit.cpp"
     PUSH EAX                            ; 0057d970
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0057d971
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0057d971
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0057d976
     MOV dword ptr [ESP + 0x1164],EAX    ; 0057d979
     TEST EAX,EAX                        ; 0057d980
@@ -502,8 +502,8 @@ section .text
         ;   XREF to: 00476d90 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0057dbac
     PUSH EAX                            ; 0057dbaf
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0057dbb0
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 0057dbb0
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 0057dbb5
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0057dbb8
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
@@ -857,8 +857,8 @@ section .text
         ;   Label: LAB_0057e032
     MOV EBX,dword ptr [0x00678a60]      ; 0057e034 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 0057e03a | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0057e03b
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380 ; 0057e03b
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 0057e040
     PUSH 0x0                            ; 0057e043
         ;   Label: LAB_0057e043

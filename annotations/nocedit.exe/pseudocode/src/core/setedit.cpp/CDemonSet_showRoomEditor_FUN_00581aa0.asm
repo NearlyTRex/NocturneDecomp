@@ -153,8 +153,8 @@ section .text
         ;   Label: LAB_00581b7c
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00581b81
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 00581b86
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 00581b86
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
     CMP dword ptr [EBP + 0x76],0x0      ; 00581b8b
     JZ 0x00581c45                       ; 00581b8f
         ;   XREF to: 00581c45 (CONDITIONAL_JUMP)  ; LAB_00581c45
@@ -359,8 +359,8 @@ section .text
     MOV EBX,dword ptr [0x006703ec]      ; 00581dad | g_CDemonRendererPtr2
         ;   Label: LAB_00581dad
     PUSH EBX                            ; 00581db3 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00581db4
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00581db4
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     ADD dword ptr [EBP + 0x7a],0x44     ; 00581db9
     MOV EAX,dword ptr [EBP + 0x92]      ; 00581dbd
     ADD ESI,0x44                        ; 00581dc3
@@ -647,8 +647,8 @@ section .text
     PUSH 0x648bdc                       ; 005820fd | = "Delete the selected room?"
     MOV EBX,dword ptr [0x00678a60]      ; 00582102 | g_CEditorToolsPtr
     PUSH EBX                            ; 00582108 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 00582109
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 00582109
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0058210e
     TEST EAX,EAX                        ; 00582111
     JZ 0x00582164                       ; 00582113

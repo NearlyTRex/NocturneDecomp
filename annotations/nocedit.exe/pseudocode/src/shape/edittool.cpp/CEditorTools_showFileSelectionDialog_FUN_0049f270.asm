@@ -41,7 +41,7 @@
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
 ;   shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0
-;   shape_edittool.cpp_CStrList_sort_FUN_004a2ec0
+;   shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 ;
 ; *****************************************************************************
@@ -74,8 +74,8 @@ section .text
         ;   XREF to: 0049f3d7 (CONDITIONAL_JUMP)  ; LAB_0049f3d7
     MOV EAX,ESP                         ; 0049f2b3
     PUSH EAX                            ; 0049f2b5
-    CALL shape_edittool.cpp_CStrList_sort_FUN_004a2ec0 ; 0049f2b6
-        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sort_FUN_004a2ec0(CStrList * this_ptr)
+    CALL shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0 ; 0049f2b6
+        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 0049f2bb
     MOV AH,byte ptr [ESP + 0x8d4]       ; 0049f2be
     MOV EDI,0xffffffff                  ; 0049f2c5

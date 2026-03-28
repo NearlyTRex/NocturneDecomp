@@ -84,6 +84,6 @@ void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_0043b7e0(CCloth *this_ptr,int 
                this_ptr->collide_bones[bone_index].radius1 +
                this_ptr->collide_bones[bone_index].radius2,text_color);
   }
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   return;
 }

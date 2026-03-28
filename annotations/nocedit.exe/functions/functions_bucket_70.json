@@ -780,7 +780,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_2d.c_resetGraphicsSystem_FUN_005ed2a0",
+    "name":"engine_2d.c_resetGraphicsSystem_FUN_00402a70",
     "ret":"void",
     "thtarget":"005ed2a0",
     "thunk":true
@@ -1185,7 +1185,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_3d.c_renderPolygonUVTextureEnable_FUN_00405170",
+    "name":"engine_3d.c_renderPolygonUVTextureEnableVertexLit_FUN_00405170",
     "ret":"SMRGLHeaderExtended*",
     "vars":{
       "params":[
@@ -19692,7 +19692,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0",
+    "name":"core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -44656,52 +44656,6 @@
     "vars":{
       "locals":[
         {
-          "name":"this_ptr_00",
-          "storage":{
-            "reg":"EBX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000000c",
-                "offset":12,
-                "size":4
-              }
-            ]
-          },
-          "type":"CKeyFramedModelInstance*",
-          "use":106
-        },
-        {
-          "name":"pCVar3",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CKeyFramedModel*",
-          "use":112
-        },
-        {
-          "name":"iVar4",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":183
-        },
-        {
           "name":"local_18",
           "storage":{
             "offset":-24,
@@ -45052,86 +45006,6 @@
             ]
           },
           "type":"CBoundingBox3D"
-        },
-        {
-          "name":"local_e4",
-          "storage":{
-            "offset":-228,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xe4]",
-                "offset":-228,
-                "size":4
-              }
-            ]
-          },
-          "type":"float"
-        },
-        {
-          "name":"local_e8",
-          "storage":{
-            "offset":-232,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xe8]",
-                "offset":-232,
-                "size":4
-              }
-            ]
-          },
-          "type":"float"
-        },
-        {
-          "name":"pCVar1",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5f31f27d25",
-                "offset":408859868453,
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3f*",
-          "use":117
-        },
-        {
-          "name":"texture",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27fe615b111",
-                "offset":2748344283409,
-                "size":4
-              }
-            ]
-          },
-          "type":"SMRGLTextureBasic*",
-          "use":849
-        },
-        {
-          "name":"lVar2",
-          "storage":{
-            "size":8,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:41f7fa2e95a",
-                "offset":4533331880282,
-                "size":8
-              }
-            ]
-          },
-          "type":"longlong",
-          "use":889
         }
       ],
       "params":[
@@ -64299,7 +64173,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_memdbg.cpp_debugAlloc_FUN_0050f1f0",
+    "name":"shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0",
     "ret":"void*",
     "vars":{
       "params":[
@@ -67513,84 +67387,6 @@
     "vars":{
       "locals":[
         {
-          "name":"bVar4",
-          "storage":{
-            "reg":"DF",
-            "size":1,
-            "varnodes":[
-              {
-                "addr":"register:0000020a",
-                "offset":522,
-                "size":1
-              }
-            ]
-          },
-          "type":"byte"
-        },
-        {
-          "name":"this_ptr_01",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CBoundingBox3D*",
-          "use":60
-        },
-        {
-          "name":"iVar1",
-          "storage":{
-            "reg":"ECX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000004",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":432
-        },
-        {
-          "name":"pCVar2",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"CMatrix3x4f*",
-          "use":445
-        },
-        {
-          "name":"pCVar3",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"CMatrix3x4f*",
-          "use":445
-        },
-        {
           "name":"local_14",
           "storage":{
             "offset":-20,
@@ -67749,38 +67545,6 @@
             ]
           },
           "type":"CMatrix3x4f"
-        },
-        {
-          "name":"local_f4",
-          "storage":{
-            "offset":-244,
-            "size":48,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xf4]",
-                "offset":-244,
-                "size":48
-              }
-            ]
-          },
-          "type":"CMatrix3x4f"
-        },
-        {
-          "name":"this_ptr_00",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27f3cd93d66",
-                "offset":2745504972134,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDeformableModelInstance*",
-          "use":568
         }
       ],
       "params":[
@@ -85422,7 +85186,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_set.cpp_CDemonSet_setCameraView_FUN_00570c70",
+    "name":"core_set.cpp_CDemonSet_restoreCameraView_FUN_00570c70",
     "ret":"void",
     "vars":{
       "params":[

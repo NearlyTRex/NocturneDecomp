@@ -137,7 +137,7 @@ LAB_004b32cc:
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
     }
     stream_ptr = (_FILE *)0x0;
-    uVar3 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,local_328.found_path);
+    uVar3 = engine_dosio_c_getFileSize_FUN_00481960((char *)0x0,local_328.found_path);
     if (((((int)uVar3 < 0) || ((uVar3 & 8) != 0)) ||
         (iVar3 = engine_dosio_c_setFileAttributes_FUN_004819f0(local_328.found_path,(byte)uVar3 | 8)
         , iVar3 != 0)) && (-1 < (int)uVar3)) {

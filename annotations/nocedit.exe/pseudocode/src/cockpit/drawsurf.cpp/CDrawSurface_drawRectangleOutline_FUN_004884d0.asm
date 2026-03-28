@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   height
 ;
 ; XREF[3]:
-;   cockpit_drawsurf.cpp_CDrawSurface_drawCenteredRectangle_FUN_00488550 at 004885b0
+;   cockpit_drawsurf.cpp_CDrawSurface_drawCenteredRectangleOutline_FUN_00488550 at 004885b0
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleBetweenPoints_FUN_004885d0 at 0048861c
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530 at 00488542
 ;

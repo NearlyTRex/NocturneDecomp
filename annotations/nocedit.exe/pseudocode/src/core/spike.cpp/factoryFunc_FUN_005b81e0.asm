@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_spike.cpp_CSpike_ctor_FUN_005b8220
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_spike.cpp_factoryFunc_FUN_005b81e0
     PUSH 0x652dcf                       ; 005b81e2 | = "..\\core\\spike.cpp"
     PUSH 0x560                          ; 005b81e7
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005b81ec
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005b81ec
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005b81f1
     TEST EAX,EAX                        ; 005b81f4
     JNZ 0x005b81f9                      ; 005b81f6

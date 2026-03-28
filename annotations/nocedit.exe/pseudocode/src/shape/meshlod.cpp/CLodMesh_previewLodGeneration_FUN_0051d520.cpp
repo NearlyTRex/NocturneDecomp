@@ -34,7 +34,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520(CLodMes
   local_18 = 1;
   do {
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xfc);
-    wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
     shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(g_CSpotViewPtr);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&local_28);
@@ -116,7 +116,7 @@ LAB_0051d5ec:
       } while (iVar2 != 0);
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      iVar2 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+      iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
                         (g_CEditorToolsPtr,"Good enough?");
       if (iVar2 != 0) {
         local_18 = 0;

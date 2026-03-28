@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_dtor_FUN_00470240
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
         ;   XREF to: 00470240 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CDemonFilter_dtor_FUN_00470240(CDemonFilter * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0047004e
     PUSH EAX                            ; 00470051
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00470052
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 00470052
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 00470057
     JMP 0x00470031                      ; 0047005a
         ;   XREF to: 00470031 (UNCONDITIONAL_JUMP)  ; LAB_00470031

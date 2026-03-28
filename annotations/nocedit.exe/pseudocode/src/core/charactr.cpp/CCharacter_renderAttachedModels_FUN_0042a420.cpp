@@ -40,7 +40,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCha
                   (g_CDemonRendererPtr2,(CVector3i *)&local_2c,&local_20);
         core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                   (&CKeyFramedModelInstance_00823a98,0.0,-1);
-        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
       }
       iVar3 = iVar3 + 1;
       pSVar2 = pSVar2 + 1;

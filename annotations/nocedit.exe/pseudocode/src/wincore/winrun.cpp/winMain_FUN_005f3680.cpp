@@ -129,7 +129,7 @@ LAB_005f37d1:
   g_TotalPhysicalMemory = memStatus.dwTotalPhys;
   g_MessageFlags[0] = memStatus.dwAvailPageFile;
   core_main_c_initializeGameSystems_FUN_00507a60();
-  core_main_c_enterMainGameMenu_FUN_00512f40();
+  core_main_c_enterMainGameMenu_FUN_00507a50();
   core_main_c_finalizeGameSystems_FUN_00508570();
   return 0;
 }

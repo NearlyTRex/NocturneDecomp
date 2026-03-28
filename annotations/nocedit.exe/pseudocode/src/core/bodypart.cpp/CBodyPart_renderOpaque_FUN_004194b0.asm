@@ -22,7 +22,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;
 ; *****************************************************************************
 
@@ -115,13 +115,13 @@ section .text
     PUSH EDX                            ; 00419592 | g_CDemonRendererInstance
     ADD EDI,0x194                       ; 00419593
     ADD ESI,0x194                       ; 00419599
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0041959f
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 0041959f
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     MOV EBX,dword ptr [0x006703ec]      ; 004195c0 | g_CDemonRendererPtr2
         ;   Label: LAB_004195c0
     PUSH EBX                            ; 004195c6 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004195c7
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004195c7
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     MOV ESI,dword ptr [0x006703ec]      ; 004195ec | g_CDemonRendererPtr2
         ;   Label: LAB_004195ec
     PUSH ESI                            ; 004195f2 | g_CDemonRendererInstance

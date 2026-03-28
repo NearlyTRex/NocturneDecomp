@@ -19,7 +19,7 @@ int __cdecl showLicenseAgreement(void);
 // Address: 005073a0
 void __cdecl showDeveloperToolsMenu(void);
 
-// Original: core_main.c_enterMainGameMenu_FUN_00512f40
+// Original: core_main.c_enterMainGameMenu_FUN_00507a50
 // Address: 00507a50
 int __cdecl enterMainGameMenu(void);
 

@@ -19,7 +19,7 @@ int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004d6140(CGabriella *t
   if (iVar4 != 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     core_cloth_cpp_CCloth_render_FUN_0043bae0(&this_ptr->coat_cloth,0);
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     pCVar3 = (this_ptr->base).inventory.selected_weapon;
     if (((pCVar3 != (CWeapon *)0x0) &&
         ((*((pCVar3->base).vtable._ub)->renderOpaque)(&pCVar3->base),

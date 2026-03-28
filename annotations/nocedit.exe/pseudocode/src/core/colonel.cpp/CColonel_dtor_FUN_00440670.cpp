@@ -21,6 +21,6 @@ CColonel * __cdecl core_colonel_cpp_CColonel_dtor_FUN_00440670(CColonel *this_pt
   if ((flags & 2) == 0) {
     return ptr;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
   return ptr;
 }

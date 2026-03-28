@@ -14,7 +14,7 @@ void __cdecl core_charactr_cpp_CCharacter_computeBoundingBox_FUN_0042d530(CChara
   CBoundingBox3D CStack_1c;
   
   if ((this_ptr->model).model_name[0] != '\0') {
-    pCVar2 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
+    pCVar2 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005a16c0
                        (&this_ptr->model,&CStack_1c);
     if (&this_ptr->cached_bounding_box != pCVar2) {
       (this_ptr->cached_bounding_box).min.x = (pCVar2->min).x;

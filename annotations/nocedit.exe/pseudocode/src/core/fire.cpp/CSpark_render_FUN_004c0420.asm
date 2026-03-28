@@ -6,7 +6,6 @@
 ; Parameters:
 ; CSpark *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; float            Stack[-0xd8]:4  fStack_d8
 ; float            Stack[-0xd4]:4  fStack_d4
 ; CVector3i        Stack[-0xd0]:12  local_d0
 ; CVector3i        Stack[-0xc4]:12  CStack_c4
@@ -52,7 +51,7 @@
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
@@ -168,8 +167,8 @@ section .text
     ADD ESP,0x8                         ; 004c056a
     MOV EBX,dword ptr [0x006703ec]      ; 004c056d | g_CDemonRendererPtr2
     PUSH EBX                            ; 004c0573 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c0574
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004c0574
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     PUSH 0x67a7c4                       ; 004c08e3 | g_FireEffectBlueSparkTexture
         ;   Label: LAB_004c08e3
     MOV EBX,dword ptr [0x006703ec]      ; 004c08e8 | g_CDemonRendererPtr2

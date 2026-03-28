@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_drone.cpp_CDrone_ctor_FUN_0048eb50
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_drone.cpp_factoryFunc_FUN_0048eb10
     PUSH 0x62235b                       ; 0048eb12 | = "..\\core\\drone.cpp"
     PUSH 0xbed4                         ; 0048eb17
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0048eb1c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0048eb1c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0048eb21
     TEST EAX,EAX                        ; 0048eb24
     JNZ 0x0048eb29                      ; 0048eb26

@@ -37,7 +37,7 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_applyQuantization_FUN_00556180(CC
   if (iVar5 == 0) {
     return 0;
   }
-  pCVar6 = (CBitmap *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x28,"..\\shape\\quantize.cpp",900);
+  pCVar6 = (CBitmap *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x28,"..\\shape\\quantize.cpp",900);
   local_20 = (CBitmap *)0x0;
   if (pCVar6 != (CBitmap *)0x0) {
     local_20 = shape_quantize_cpp_CBitmap_ctor_FUN_00556a00
@@ -81,7 +81,7 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_applyQuantization_FUN_00556180(CC
         pCVar6 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(ppCVar9[-2],(uint)ppCVar9[-1]);
         ppCVar9[-1] = pCVar6;
         ppCVar9[-2] = (CBitmap *)0x5563ac;
-        shape_memdbg_cpp_debugFree_FUN_0050f210(ppCVar9[-1]);
+        shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ppCVar9[-1]);
       }
       *bitmap_ptr = local_20;
       return 1;
@@ -105,7 +105,7 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_applyQuantization_FUN_00556180(CC
           pCVar6 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(ppCVar9[1],(uint)ppCVar9[2]);
           ppCVar9[2] = pCVar6;
           ppCVar9[1] = (CBitmap *)0x556264;
-          shape_memdbg_cpp_debugFree_FUN_0050f210(ppCVar9[2]);
+          shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ppCVar9[2]);
         }
         return 0;
       }

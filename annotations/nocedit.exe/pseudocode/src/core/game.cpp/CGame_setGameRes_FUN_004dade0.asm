@@ -29,7 +29,7 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_0044c190
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   engine_2d.c_resetGraphicsSystem_FUN_005ed2a0
+;   engine_2d.c_resetGraphicsSystem_FUN_00402a70
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0
 ;   wincore_windll.cpp_selectCard_FUN_005b7d90
 ;
@@ -93,8 +93,8 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004dae64
         ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x10                        ; 004dae69
-    CALL engine_2d.c_resetGraphicsSystem_FUN_005ed2a0 ; 004dae6c
-        ;   XREF to: 00402a70 (UNCONDITIONAL_CALL)  ; void engine_2d.c_resetGraphicsSystem_FUN_005ed2a0()
+    CALL engine_2d.c_resetGraphicsSystem_FUN_00402a70 ; 004dae6c
+        ;   XREF to: 00402a70 (UNCONDITIONAL_CALL)  ; void engine_2d.c_resetGraphicsSystem_FUN_00402a70()
         ;   Label: LAB_004dae6c
     MOV EDI,dword ptr [0x00679398]      ; 004dae71 | g_WindowHeight
     PUSH EDI                            ; 004dae77

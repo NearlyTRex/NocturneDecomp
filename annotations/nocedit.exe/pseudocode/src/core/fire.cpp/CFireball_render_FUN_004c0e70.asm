@@ -6,8 +6,6 @@
 ; Parameters:
 ; CFireball *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; float            Stack[-0xe8]:4  local_e8
-; float            Stack[-0xe4]:4  local_e4
 ; CBoundingBox3D   Stack[-0xe0]:24  local_e0
 ; CVector3i        Stack[-0xc8]:12  local_c8
 ; CVector3i        Stack[-0xbc]:12  local_bc
@@ -47,7 +45,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
 ;   core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;
 ; *****************************************************************************
@@ -147,8 +145,8 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 004c0f62 | g_CDemonRendererPtr2
         ;   Label: LAB_004c0f62
     PUSH EDX                            ; 004c0f68 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c0f69
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004c0f69
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     MOV dword ptr [ESP + 0xc8],0x40800000 ; 004c0f7c
         ;   Label: LAB_004c0f7c
     JMP 0x004c0e99                      ; 004c0f87

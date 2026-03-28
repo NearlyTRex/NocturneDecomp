@@ -3,50 +3,62 @@
     "errors": [
       {
         "category": "other",
-        "column": 51,
-        "line": 424,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 538,
-        "message": "use of undeclared identifier 'stack0xfffff150'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 82,
-        "line": 539,
-        "message": "use of undeclared identifier 'stack0xfffff150'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 74,
-        "line": 541,
-        "message": "use of undeclared identifier 'stack0xfffff150'"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 565,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 62,
-        "line": 690,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 64,
-        "line": 796,
+        "column": 36,
+        "line": 214,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 45,
-        "line": 807,
+        "line": 227,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 423,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 29,
+        "line": 537,
+        "message": "use of undeclared identifier 'stack0xfffff150'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 82,
+        "line": 538,
+        "message": "use of undeclared identifier 'stack0xfffff150'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 74,
+        "line": 540,
+        "message": "use of undeclared identifier 'stack0xfffff150'"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 564,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 689,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 64,
+        "line": 795,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 45,
+        "line": 806,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -55,12 +67,12 @@
   },
   "complexity": {
     "assembly_lines": 2429,
-    "complexity_score": 1301,
+    "complexity_score": 1300,
     "cross_reference_count": 2,
     "function_call_count": 71,
     "global_count": 126,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 856,
+    "pseudocode_lines": 855,
     "suspect_count": 42,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -69,7 +81,7 @@
       "stack_ref",
       "warning_inlined_function"
     ],
-    "total_lines": 3285
+    "total_lines": 3284
   },
   "cross_references": [
     {
@@ -325,7 +337,7 @@
     {
       "addr": "0048c640",
       "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640"
     },
     {
       "addr": "0048c450",
@@ -398,11 +410,6 @@
       "name": "shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300"
     },
     {
-      "addr": "0049f060",
-      "is_variadic": true,
-      "name": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060"
-    },
-    {
       "addr": "0049f420",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420"
@@ -428,6 +435,11 @@
       "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0"
     },
     {
+      "addr": "0049f060",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060"
+    },
+    {
       "addr": "005fe659",
       "is_variadic": false,
       "name": "shape_memdbg.cpp_free_FUN_005fe659"
@@ -445,7 +457,7 @@
     {
       "addr": "005b3ed4",
       "is_variadic": false,
-      "name": "wincore_windll.cpp_clearZBuffer_FUN_005b3ed4"
+      "name": "wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4"
     },
     {
       "addr": "005f2e70",
@@ -2056,7 +2068,7 @@
       "line": 220,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(local_408,\"Frame: %d of %d\",(int)ROUND(ROUND(local_70)),",
+      "text": "(local_408,\"Frame: %d of %d\",(int)ROUND(ROUND(local_70)));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -2064,12 +2076,12 @@
       "line": 220,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(local_408,\"Frame: %d of %d\",(int)ROUND(ROUND(local_70)),",
+      "text": "(local_408,\"Frame: %d of %d\",(int)ROUND(ROUND(local_70)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 363,
+      "line": 362,
       "match": "ROUND",
       "severity": "mild",
       "text": "if (((int)ROUND(fVar3) != 0 || (int)ROUND(fVar4) != 0) || (int)ROUND(fVar6) != 0) {",
@@ -2077,7 +2089,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 363,
+      "line": 362,
       "match": "ROUND",
       "severity": "mild",
       "text": "if (((int)ROUND(fVar3) != 0 || (int)ROUND(fVar4) != 0) || (int)ROUND(fVar6) != 0) {",
@@ -2085,7 +2097,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 363,
+      "line": 362,
       "match": "ROUND",
       "severity": "mild",
       "text": "if (((int)ROUND(fVar3) != 0 || (int)ROUND(fVar4) != 0) || (int)ROUND(fVar6) != 0) {",
@@ -2093,7 +2105,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 368,
+      "line": 367,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)&pCVar4->x + iVar18);",
@@ -2101,7 +2113,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 369,
+      "line": 368,
       "match": "ROUND",
       "severity": "mild",
       "text": "*piVar1 = *piVar1 + (int)ROUND(fVar3);",
@@ -2109,7 +2121,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 370,
+      "line": 369,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&pCVar4->y + iVar18) =",
@@ -2117,7 +2129,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 371,
+      "line": 370,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&pCVar4->y + iVar18) + (int)ROUND(fVar4);",
@@ -2125,7 +2137,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 371,
+      "line": 370,
       "match": "ROUND",
       "severity": "mild",
       "text": "*(int *)((int)&pCVar4->y + iVar18) + (int)ROUND(fVar4);",
@@ -2133,7 +2145,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 372,
+      "line": 371,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&pCVar4->z + iVar18) =",
@@ -2141,7 +2153,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 373,
+      "line": 372,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&pCVar4->z + iVar18) + (int)ROUND(fVar6);",
@@ -2149,7 +2161,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 373,
+      "line": 372,
       "match": "ROUND",
       "severity": "mild",
       "text": "*(int *)((int)&pCVar4->z + iVar18) + (int)ROUND(fVar6);",
@@ -2157,7 +2169,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 507,
+      "line": 506,
       "match": "(CKeyFramedModel *)((int)",
       "severity": "mild",
       "text": "pCVar13 = (CKeyFramedModel *)((int)pCVar13 + (uint)bVar15 * -2 + 1);",
@@ -2165,7 +2177,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 511,
+      "line": 510,
       "match": "pCVar13[-1].",
       "severity": "mild",
       "text": "pcVar20 = (char *)((int)&pCVar13[-1].dead + 3);",
@@ -2173,7 +2185,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 511,
+      "line": 510,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar20 = (char *)((int)&pCVar13[-1].dead + 3);",
@@ -2181,7 +2193,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 531,
+      "line": 530,
       "match": "&stack0xfffff150",
       "severity": "moderate",
       "text": "(&stack0xfffff150,(char *)0x0,\"models\",local_698,local_b98);",
@@ -2189,7 +2201,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 532,
+      "line": 531,
       "match": "&stack0xfffff150",
       "severity": "moderate",
       "text": "iVar18 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);",
@@ -2197,7 +2209,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 534,
+      "line": 533,
       "match": "&stack0xfffff150",
       "severity": "moderate",
       "text": "iVar18 = core_dmodel_cpp_copyFile_FUN_0047c930(\"t:\\\\\",&stack0xfffff150,1);",
@@ -2205,7 +2217,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 705,
+      "line": 704,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_108.x = (float)*(int *)((int)&this_ptr->vertex_list->x + iVar18) * fVar3;",
@@ -2213,7 +2225,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 706,
+      "line": 705,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_108.y = (float)*(int *)((int)&this_ptr->vertex_list->y + iVar18) * fVar3;",
@@ -2221,7 +2233,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 707,
+      "line": 706,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_108.z = (float)*(int *)((int)&this_ptr->vertex_list->z + iVar18) * fVar3;",
@@ -2229,7 +2241,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 716,
+      "line": 715,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->x + iVar18) =",
@@ -2237,7 +2249,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 717,
+      "line": 716,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(local_108.x * fVar5));",
@@ -2245,7 +2257,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 717,
+      "line": 716,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(local_108.x * fVar5));",
@@ -2253,7 +2265,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 718,
+      "line": 717,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->y + iVar18) =",
@@ -2261,7 +2273,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 719,
+      "line": 718,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(local_108.y * fVar5));",
@@ -2269,7 +2281,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 719,
+      "line": 718,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(local_108.y * fVar5));",
@@ -2277,7 +2289,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 720,
+      "line": 719,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar18) =",
@@ -2285,7 +2297,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 721,
+      "line": 720,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(fVar5 * local_108.z));",
@@ -2293,7 +2305,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 721,
+      "line": 720,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(fVar5 * local_108.z));",
@@ -2301,7 +2313,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 747,
+      "line": 746,
       "match": "collision_triangle_list[-1].",
       "severity": "mild",
       "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);",
@@ -2309,7 +2321,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 759,
+      "line": 758,
       "match": "ROUND",
       "severity": "mild",
       "text": "(this_ptr,(int)ROUND(ROUND(local_70)));",
@@ -2317,7 +2329,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 759,
+      "line": 758,
       "match": "ROUND",
       "severity": "mild",
       "text": "(this_ptr,(int)ROUND(ROUND(local_70)));",
@@ -2325,7 +2337,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 781,
+      "line": 780,
       "match": "ROUND",
       "severity": "mild",
       "text": "(this_ptr,(int)ROUND(ROUND(local_70)));",
@@ -2333,7 +2345,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 781,
+      "line": 780,
       "match": "ROUND",
       "severity": "mild",
       "text": "(this_ptr,(int)ROUND(ROUND(local_70)));",

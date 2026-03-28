@@ -90,7 +90,7 @@
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -189,8 +189,8 @@ section .text
     PUSH 0x622ae4                       ; 00495400 | = "..\\core\\dtrace.cpp"
     ADD EAX,0x4                         ; 00495405
     PUSH EAX                            ; 00495408
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00495409
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00495409
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0049540e
     TEST EAX,EAX                        ; 00495411
     JZ 0x0049541b                       ; 00495413

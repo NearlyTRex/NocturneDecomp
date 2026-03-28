@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90 at 00401130
+;   engine_2d.c_cleanupGraphicsSystem_FUN_00401130 at 00401130
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_00657764

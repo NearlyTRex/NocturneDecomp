@@ -238,8 +238,8 @@ section .text
         ;   XREF to: 0053b4f3 (CONDITIONAL_JUMP)  ; LAB_0053b4f3
     LEA EAX,[ESP + 0x2504]              ; 0053b26b
     PUSH EAX                            ; 0053b272
-    CALL shape_edittool.cpp_CStrList_sort_FUN_004a2ec0 ; 0053b273
-        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sort_FUN_004a2ec0(CStrList * this_ptr)
+    CALL shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0 ; 0053b273
+        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 0053b278
     MOV EAX,dword ptr [ESP + 0x2bb8]    ; 0053b27b
     ADD EAX,0x4                         ; 0053b282

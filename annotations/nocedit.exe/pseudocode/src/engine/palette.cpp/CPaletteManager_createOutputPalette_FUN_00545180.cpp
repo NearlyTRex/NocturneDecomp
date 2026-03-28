@@ -41,7 +41,8 @@ int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(
   char *pcVar14;
   
   bVar13 = 0;
-  workspace = (SColorQuantMapper *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x8308,"..\\engine\\palette.cpp",0xb4);
+  workspace = (SColorQuantMapper *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+                        (0x8308,"..\\engine\\palette.cpp",0xb4);
   color_count = 0;
   if (workspace == (SColorQuantMapper *)0x0) {
     g_CurrentFilename = "..\\engine\\palette.cpp";
@@ -245,7 +246,7 @@ LAB_00545459:
     shape_memdbg_cpp_debugFree_FUN_0050f460(color_data,"..\\engine\\palette.cpp",0x129);
     g_CurrentDebugFilename = "..\\engine\\palette.cpp";
     g_CurrentDebugLine = 0x12a;
-    shape_memdbg_cpp_debugFree_FUN_0050f210(workspace);
+    shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(workspace);
     iVar4 = 1;
   }
   return iVar4;

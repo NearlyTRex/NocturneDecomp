@@ -693,7 +693,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_3d.c_renderPolygonUVTextureEnable_FUN_00405350",
+    "name":"engine_3d.c_renderPolygonUVTextureEnableNormalized_FUN_00405350",
     "ret":"SMRGLHeaderExtended*",
     "vars":{
       "locals":[
@@ -29024,7 +29024,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"cockpit_drawsurf.cpp_CDrawSurface_drawCenteredRectangle_FUN_00488550",
+    "name":"cockpit_drawsurf.cpp_CDrawSurface_drawCenteredRectangleOutline_FUN_00488550",
     "ret":"void",
     "vars":{
       "params":[
@@ -55440,7 +55440,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_main.c_enterMainGameMenu_FUN_00512f40",
+    "name":"core_main.c_enterMainGameMenu_FUN_00507a50",
     "ret":"int",
     "thtarget":"00512f40",
     "thunk":true,
@@ -74068,7 +74068,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setdir.cpp_CZThumb_saveZBufferTable_FUN_005747d0",
+    "name":"core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0",
     "ret":"void",
     "vars":{
       "params":[
@@ -85764,99 +85764,6 @@
     "vars":{
       "locals":[
         {
-          "name":"bVar7",
-          "storage":{
-            "reg":"DF",
-            "size":1,
-            "varnodes":[
-              {
-                "addr":"register:0000020a",
-                "offset":522,
-                "size":1
-              }
-            ]
-          },
-          "type":"byte"
-        },
-        {
-          "name":"iVar4",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":22
-        },
-        {
-          "name":"start_pos",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3f*",
-          "use":95
-        },
-        {
-          "name":"input",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3f*",
-          "use":220
-        },
-        {
-          "name":"pCVar5",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"CMatrix3x4f*",
-          "use":850
-        },
-        {
-          "name":"pCVar6",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"CMatrix3x4f*",
-          "use":850
-        },
-        {
           "name":"local_14",
           "storage":{
             "offset":-20,
@@ -86207,70 +86114,6 @@
             ]
           },
           "type":"CMatrix3x4f"
-        },
-        {
-          "name":"local_22c",
-          "storage":{
-            "offset":-556,
-            "size":48,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x22c]",
-                "offset":-556,
-                "size":48
-              }
-            ]
-          },
-          "type":"CMatrix3x4f"
-        },
-        {
-          "name":"pCVar1",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5fd9b0941b",
-                "offset":411674121243,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonActor*",
-          "use":89
-        },
-        {
-          "name":"pCVar2",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5f50b66723",
-                "offset":409376024355,
-                "size":4
-              }
-            ]
-          },
-          "type":"CWeapon*",
-          "use":356
-        },
-        {
-          "name":"bVar3",
-          "storage":{
-            "size":1,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:57f99ef6d42",
-                "offset":6045601590594,
-                "size":1
-              }
-            ]
-          },
-          "type":"bool",
-          "use":507
         }
       ],
       "params":[

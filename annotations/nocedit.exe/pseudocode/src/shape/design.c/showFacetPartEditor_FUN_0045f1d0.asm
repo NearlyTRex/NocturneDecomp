@@ -55,7 +55,7 @@
 ;   engine_2d.c_getStringWidth_FUN_004018a0
 ;   engine_2d.c_getTextColor_FUN_00402830
 ;   engine_2d.c_plotPixel_FUN_00401140
-;   engine_2d.c_resetGraphicsSystem_FUN_005ed2a0
+;   engine_2d.c_resetGraphicsSystem_FUN_00402a70
 ;   engine_2d.c_setTextColor_FUN_00402840
 ;   engine_3d.c_processCameraRelativePoint_FUN_004037e0
 ;   engine_light.cpp_setAmbientLightLevel_FUN_00505490
@@ -143,8 +143,8 @@ section .text
         ;   XREF to: 0045be40 (UNCONDITIONAL_CALL)  ; void shape_design.c_calculateVertexNormals_FUN_0045be40()
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0045f304
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
-    CALL engine_2d.c_resetGraphicsSystem_FUN_005ed2a0 ; 0045f309
-        ;   XREF to: 00402a70 (UNCONDITIONAL_CALL)  ; void engine_2d.c_resetGraphicsSystem_FUN_005ed2a0()
+    CALL engine_2d.c_resetGraphicsSystem_FUN_00402a70 ; 0045f309
+        ;   XREF to: 00402a70 (UNCONDITIONAL_CALL)  ; void engine_2d.c_resetGraphicsSystem_FUN_00402a70()
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0045f30e
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045f313
@@ -162,8 +162,8 @@ section .text
     CMP dword ptr [0x02d03e94],0x0      ; 0045f32f | g_UseExternalRenderer
     JNZ 0x0045f33f                      ; 0045f336
         ;   XREF to: 0045f33f (CONDITIONAL_JUMP)  ; LAB_0045f33f
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0045f338
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0045f338
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
     JMP 0x0045f344                      ; 0045f33d
         ;   XREF to: 0045f344 (UNCONDITIONAL_JUMP)  ; LAB_0045f344
     CALL wincore_windll.cpp_clearZBuffer_FUN_005b7be0 ; 0045f33f

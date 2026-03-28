@@ -6,22 +6,18 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *this_ptr)
 
 {
+  CDemonActor *pCVar1;
+  CWeapon *pCVar2;
   CLightGun *pCVar3;
-  int iVar4;
-  float fVar4;
-  CVector3f *input;
+  bool bVar4;
   int iVar5;
+  float fVar6;
+  CVector3f *input;
   CVector3f *start_pos;
   CMatrix3x4f *pCVar7;
-  CMatrix3x4f *pCVar5;
-  CMatrix3x4f *pCVar6;
-  byte bVar7;
-  CMatrix3x4f local_22c;
   CMatrix3x4f local_1fc;
   CMatrix3x4f local_1cc;
   CMatrix3x4f local_19c;
@@ -44,12 +40,9 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
   CLightGun *local_1c;
   float local_18;
   float local_14;
-  CWeapon *pCVar2;
-  bool bVar3;
-  CDemonActor *pCVar1;
   
-  iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
-  if (iVar4 == 0) {
+  iVar5 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
+  if (iVar5 == 0) {
     return 0;
   }
   if ((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] != 0) {
@@ -64,20 +57,21 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
               (&local_16c,&local_a0,&local_34);
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
               (&local_16c,
-               (this_ptr->base).base.model.bone_transform.bone_world_matrices + g_StrangerIndices[0]
-               ,&local_22c);
+               (CMatrix3x4f *)
+               (this_ptr->base).base.model.bone_transform.bone_world_matrices[g_StrangerIndices[0]].
+               m,(CMatrix3x4f *)&stack0xfffffdd4);
     core_xform_cpp_getTranslation_FUN_005f6110(&local_13c,&local_ac);
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_13c,&local_94);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
               (g_CDemonRendererPtr2,(CVector3i *)&local_94,(CVector3i *)&local_ac);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               (&this_ptr->model,0.0,-1);
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   }
-  fVar4 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
+  fVar6 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
                     ((CCharacter *)this_ptr,6);
-  if ((float)0.98999999999999999 < fVar4) {
+  if ((float)0.98999999999999999 < fVar6) {
     pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
     start_pos = (CVector3f *)0x0;
     if (pCVar1 != (CDemonActor *)0x0) {
@@ -139,20 +133,20 @@ switchD_005c331f_caseD_3:
       iVar5 = 8;
     }
   }
-  fVar4 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
+  fVar6 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
                     ((CCharacter *)this_ptr,iVar5);
-  bVar3 = (float)0.94999999999999996 < fVar4;
+  bVar4 = (float)0.94999999999999996 < fVar6;
   if ((this_ptr->weapon->weapon_type == 1) && ((this_ptr->base).base.layer_action_index == 8)) {
-    bVar3 = true;
+    bVar4 = true;
 LAB_005c336f:
     (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).releaseFromGrab)
               ((CCharacter *)this_ptr->weapon);
   }
-  else if (bVar3) goto LAB_005c336f;
+  else if (bVar4) goto LAB_005c336f;
   if (this_ptr->weapon->weapon_type == 0) {
     core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005c06b0(this_ptr,1);
     (*((this_ptr->weapon->base).vtable._ub)->renderOpaque)(&this_ptr->weapon->base);
-    if (bVar3) {
+    if (bVar4) {
       (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).releaseFromGrab)
                 ((CCharacter *)this_ptr->weapon);
     }
@@ -174,8 +168,9 @@ LAB_005c33d7:
                 (&local_1cc,&local_64,&local_88);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&local_1cc,
-                 (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                 g_StrangerIndices[0],&local_10c);
+                 (CMatrix3x4f *)
+                 (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                 [g_StrangerIndices[0]].m,&local_10c);
       pCVar7 = &local_10c;
     }
     else {
@@ -189,8 +184,9 @@ LAB_005c33d7:
                 (&local_1fc,&local_58,&local_28);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                 (&local_1fc,
-                 (this_ptr->base).base.model.bone_transform.bone_world_matrices +
-                 g_StrangerIndices[0xe],&local_19c);
+                 (CMatrix3x4f *)
+                 (this_ptr->base).base.model.bone_transform.bone_world_matrices
+                 [g_StrangerIndices[0xe]].m,&local_19c);
       pCVar7 = &local_19c;
     }
     local_dc.m[0].w = pCVar7->m[0].w;
@@ -211,7 +207,7 @@ LAB_005c33d7:
               (g_CDemonRendererPtr2,(CVector3i *)&local_40,(CVector3i *)&local_4c);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               (&(pCVar3->base).model,0.0,-1);
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   }
   if ((((this_ptr->base).base.model.part_data.visibility_flags[g_StrangerIndices[0x16]] == 0) &&

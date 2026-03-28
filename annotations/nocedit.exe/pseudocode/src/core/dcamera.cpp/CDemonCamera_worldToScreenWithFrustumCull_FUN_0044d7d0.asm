@@ -18,8 +18,8 @@
 ;
 ; XREF[5]:
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10 at 0044e265
+;   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 at 0045193e
 ;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0 at 00450d16
-;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0 at 0045193e
 ;   core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0 at 00450890
 ;   core_game.cpp_CGame_beginFadeIn_FUN_004e0920 at 004e0883
 ;

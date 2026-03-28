@@ -36,8 +36,8 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
   int local_18;
   byte *local_14;
   
-  ptr = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0(bitmap_height * 4,"..\\engine\\font.cpp",0x1b7)
-  ;
+  ptr = (int *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+                  (bitmap_height * 4,"..\\engine\\font.cpp",0x1b7);
   if (ptr == (int *)0x0) {
     g_CurrentFilename = "..\\engine\\font.cpp";
     g_CurrentLineNumber = 0x1b8;

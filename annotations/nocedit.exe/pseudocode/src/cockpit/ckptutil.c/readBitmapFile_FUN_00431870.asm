@@ -11,7 +11,7 @@
 ; char[80]         Stack[-0x60]:80  local_60
 ;
 ; XREF[5]:
-;   cockpit_ckptutil.c_applyColorPalette_FUN_004319b0 at 0043184a
+;   cockpit_ckptutil.c_applyColorPalette_FUN_00431830 at 0043184a
 ;   cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0 at 004317cc
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080 at 0054b091
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000 at 0054b02e

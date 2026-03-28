@@ -133,7 +133,7 @@ LAB_005d43a8:
       iStack_24 = iStack_24 + 0x38;
     } while (uStack_18 < (uint)this_ptr->vertex_count);
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(pvStack_28);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(pvStack_28);
   if (remove_degenerate != 0) {
     iVar2 = (*this_ptr->vtable->removeUnusedVertices)(this_ptr);
     return iVar2;

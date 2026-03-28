@@ -1,20 +1,30 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 62,
+        "line": 61,
+        "message": "use of undeclared identifier 'stack0xffffff88'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 83,
+    "complexity_score": 121,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 4,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 83,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 278
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 81,
+    "suspect_count": 3,
+    "suspect_types": [
+      "stack_param",
+      "stack_ref"
+    ],
+    "total_lines": 276
   },
   "cross_references": [],
   "function": {
@@ -82,7 +92,7 @@
     {
       "addr": "0048c640",
       "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640"
     }
   ],
   "globals": [
@@ -148,19 +158,12 @@
     "pcode_op_count": 663
   },
   "stack_frame": {
-    "frame_size": 128,
-    "local_size": 124,
+    "frame_size": 104,
+    "local_size": 100,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "CStack_78",
-        "offset": -120,
-        "size": 24,
-        "type": "CBoundingBox3D"
-      },
       {
         "is_param": false,
         "name": "local_60",
@@ -219,7 +222,32 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "} while (iVar3 < *(int *)(in_stack_0000000c + 0x938));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 54,
+      "match": "&stack0xffffff88",
+      "severity": "moderate",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffff88);",
+      "type": "stack_ref"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

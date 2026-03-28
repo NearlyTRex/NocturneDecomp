@@ -162,7 +162,7 @@ LAB_0057d6df:
   }
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
-  pvStack_1c = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  pvStack_1c = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                          (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",0xc81);
   if (pvStack_1c == (void *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
@@ -256,7 +256,7 @@ LAB_0057db4e:
         g_CurrentDebugFilename = "..\\core\\setedit.cpp";
         if (local_e1 != (CKeyFramedModel *)0x0) {
           ptr = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(local_e1,0);
-          shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+          shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
         }
         engine_2d_c_clearInputAndWait_FUN_00403260();
         engine_2d_c_setupViewportAndClipping_FUN_00401800
@@ -292,7 +292,7 @@ LAB_0057db4e:
             y = y + 0xb;
           } while (iVar13 < iVar20 * 4);
         }
-        shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
+        shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
       }
       engine_2d_c_drawText_FUN_00401fd0("Move camera with slew keys.  Press SPACE when done.  ESC to cancel",0,0);
       _sprintf(CStack_574.cancel_button.button_text + 0xbc,"%f");

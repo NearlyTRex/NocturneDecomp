@@ -67,7 +67,7 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList *str_
   }
   type_info = &g_CEdButtonTypeInfo;
   iVar3 = iVar2;
-  pvVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  pvVar3 = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                      (iVar2 * 0xe4 + 4,"..\\shape\\edittool.cpp",0x412);
   object_ptr = __vec_new(pvVar3,iVar3,type_info);
   iVar9 = 0;
@@ -249,7 +249,7 @@ LAB_0049eae7:
         pCVar16 = pCVar16 + 1;
       } while (iVar10 < iVar2);
     }
-    shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   } while (iVar3 == -2);
   g_CurrentDebugFilename = "..\\shape\\edittool.cpp";

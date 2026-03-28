@@ -11,7 +11,7 @@ CBattery * __cdecl core_battery_cpp_factoryFunc_FUN_00417e50(void)
 {
   CBattery *pCVar1;
   
-  pCVar1 = (CBattery *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2e0,"..\\core\\battery.cpp",0x1f);
+  pCVar1 = (CBattery *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x2e0,"..\\core\\battery.cpp",0x1f);
   if (pCVar1 == (CBattery *)0x0) {
     return (CBattery *)0x0;
   }

@@ -1,20 +1,29 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 49,
+        "line": 48,
+        "message": "use of undeclared identifier 'stack0xffffffd0'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 49,
+    "complexity_score": 63,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 49,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 83
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 48,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 82
   },
   "cross_references": [
     {
@@ -111,19 +120,12 @@
     "pcode_op_count": 110
   },
   "stack_frame": {
-    "frame_size": 60,
-    "local_size": 56,
+    "frame_size": 48,
+    "local_size": 44,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 12,
-        "type": "CVector3i"
-      },
       {
         "is_param": false,
         "name": "local_28",
@@ -161,5 +163,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 41,
+      "match": "&stack0xffffffd0",
+      "severity": "moderate",
+      "text": "(g_CDemonRendererPtr2,(CVector3i *)&stack0xffffffd0,(CVector3i *)0x0);",
+      "type": "stack_ref"
+    }
+  ]
 }

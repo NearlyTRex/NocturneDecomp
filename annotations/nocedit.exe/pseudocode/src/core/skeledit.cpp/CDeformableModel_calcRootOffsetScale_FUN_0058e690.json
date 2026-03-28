@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 180,
+    "complexity_score": 181,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 155,
+    "pseudocode_lines": 156,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 516
+    "total_lines": 517
   },
   "cross_references": [],
   "function": {
@@ -70,7 +70,7 @@
     {
       "addr": "0050f1b0",
       "is_variadic": false,
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+      "name": "shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0"
     }
   ],
   "globals": [
@@ -298,7 +298,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 88,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar3 = (int *)((int)&this_ptr_01->skinned_vertices_buffer->x + iVar6);",
@@ -306,7 +306,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 143,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar7 = (int *)((int)&this_ptr_01->skinned_vertices_buffer->x + iVar9);",

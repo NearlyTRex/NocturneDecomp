@@ -81,7 +81,7 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
@@ -653,8 +653,8 @@ section .text
         ;   XREF to: 00475b28 (CONDITIONAL_JUMP)  ; LAB_00475b28
     MOV ESI,dword ptr [0x006703ec]      ; 00475f81 | g_CDemonRendererPtr2
     PUSH ESI                            ; 00475f87 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00475f88
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00475f88
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00475f8d
     LEA ESP,[EBP + 0x7e]                ; 00475f90
     POP EBP                             ; 00475f93

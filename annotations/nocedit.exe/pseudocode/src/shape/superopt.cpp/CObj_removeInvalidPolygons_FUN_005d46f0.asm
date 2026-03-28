@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
         ;   XREF to: 005d4713 (CONDITIONAL_JUMP)  ; LAB_005d4713
     PUSH EBP                            ; 005d473b
         ;   Label: LAB_005d473b
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005d473c
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005d473c
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005d4741
     MOV EAX,dword ptr [ESI + 0x18]      ; 005d4744
     PUSH ESI                            ; 005d4747
@@ -113,8 +113,8 @@ section .text
         ;   XREF to: 005d4735 (UNCONDITIONAL_JUMP)  ; LAB_005d4735
     PUSH EBP                            ; 005d478f
         ;   Label: LAB_005d478f
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005d4790
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005d4790
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005d4795
     XOR EAX,EAX                         ; 005d4798
     ADD ESP,0x5c                        ; 005d479a

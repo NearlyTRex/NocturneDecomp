@@ -7,6 +7,7 @@
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+/* WARNING: Removing unreachable block (ram,0x00474702) */
 
 void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDemonLight *this_ptr)
 
@@ -21,6 +22,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
   SMRGLTextureBasic *texture;
   byte bVar4;
   int aiStackY_10d4 [992];
+  float fVar9;
   SMRGLHeaderPrimitive local_138;
   float local_110;
   float local_10c;
@@ -77,12 +79,13 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
       local_74.z = pCVar3->z;
     }
     if (local_74.z <= (this_ptr->base).max_distance) {
-      fVar4 = ((local_74.z * (float)18) / (this_ptr->base).base.focal_length) *
+      fVar3 = ((local_74.z * (float)18) / (this_ptr->base).base.focal_length) *
               (float)2;
-      fVar3 = local_74.x * local_74.x + local_74.y * local_74.y;
-      fVar4 = fVar4 * fVar4;
-      if (fVar3 <= fVar4) {
-        fVar1 = fVar3 / fVar4;
+      fVar9 = local_74.x * local_74.x + local_74.y * local_74.y;
+      fVar3 = fVar3 * fVar3;
+      if (fVar9 <= fVar3) {
+        fVar1 = fVar9 / fVar3;
+        fVar9 = 1.0 - fVar1;
         engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
                   (g_CDemonRendererPtr2,&local_ec);
         fVar3 = (float)local_ec.x * 0.00390625f - (this_ptr->base).base.position.f.x;
@@ -100,23 +103,22 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
           if (0.0 < (fVar5 * fVar6 * pCVar8->z +
                     fVar3 * fVar6 * pCVar8->x + fVar4 * fVar6 * pCVar8->y) * (float)iVar7 *
                     1.525902e-05f) {
-            iVar7 = (int)ROUND(ROUND((1.0 - fVar1) * (float)65535));
+            iVar7 = (int)ROUND(ROUND(fVar9 * (float)65535));
             engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-            local_18 = 0;
             texture = g_LightTextures;
             do {
               texture = texture + 2;
-              fVar3 = (float)local_18 * 0.1111111f * (this_ptr->base).max_distance;
-              fVar4 = fVar3 * (float)0.25;
-              fVar3 = (float)texture[1].base.count * (float)0.5 *
-                      ((fVar3 * (float)18) / (this_ptr->base).base.focal_length) *
+              fVar9 = 0.1111111f * 0.0 * (this_ptr->base).max_distance;
+              fVar3 = fVar9 * (float)0.25;
+              fVar9 = (float)texture[1].base.count * (float)0.5 *
+                      ((fVar9 * (float)18) / (this_ptr->base).base.focal_length) *
                       (float)2;
               local_68.x = (this_ptr->base).base.position.f.x +
-                           (this_ptr->base).base.rotation_matrix.m[0].z * fVar4;
+                           (this_ptr->base).base.rotation_matrix.m[0].z * fVar3;
               local_68.y = (this_ptr->base).base.position.f.y +
-                           (this_ptr->base).base.rotation_matrix.m[1].z * fVar4;
+                           (this_ptr->base).base.rotation_matrix.m[1].z * fVar3;
               local_68.z = (this_ptr->base).base.position.f.z +
-                           (this_ptr->base).base.rotation_matrix.m[2].z * fVar4;
+                           (this_ptr->base).base.rotation_matrix.m[2].z * fVar3;
               if (&local_e0 != &local_68) {
                 local_e0.x = local_68.x;
                 local_e0.y = local_68.y;
@@ -128,18 +130,18 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
                         (g_CDemonRendererPtr2,(float *)&local_44);
               engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                         (g_CDemonRendererPtr2,&local_44,(CVector3i *)0x0);
-              local_d4.x = (int)ROUND(fVar3 * 256.0f);
-              local_d4.y = (int)ROUND(fVar3 * 256.0f);
+              local_d4.x = (int)ROUND(fVar9 * 256.0f);
+              local_d4.y = (int)ROUND(fVar9 * 256.0f);
               local_d4.z = (int)ROUND(256.0f * 0.0);
               wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                         (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_d4);
-              local_98 = -fVar3;
+              local_98 = -fVar9;
               local_5c.x = (int)ROUND(local_98 * 256.0f);
-              local_5c.y = (int)ROUND(fVar3 * 256.0f);
+              local_5c.y = (int)ROUND(fVar9 * 256.0f);
               local_5c.z = (int)ROUND(256.0f * 0.0);
               wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                         (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_5c);
-              local_94 = -fVar3;
+              local_94 = -fVar9;
               local_50.x = (int)ROUND(local_98 * 256.0f);
               local_50.y = (int)ROUND(local_94 * 256.0f);
               local_50.z = (int)ROUND(256.0f * 0.0);
@@ -185,11 +187,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
               this_ptr_00->vertex_buffer_ptr[3].b = 0xffff;
               engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10
                         (this_ptr_00,&local_138);
-              engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-              local_18 = local_18 + 1;
-            } while (local_18 < 9);
-            engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
-            return;
+              engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
+            } while( true );
           }
         }
       }

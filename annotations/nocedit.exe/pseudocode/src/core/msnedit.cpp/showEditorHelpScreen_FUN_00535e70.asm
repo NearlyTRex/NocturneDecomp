@@ -36,7 +36,7 @@
 ;   engine_2d.c_drawLine_FUN_004011b0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   shape_edittool.cpp_calculateGridWidth_FUN_004a6490
-;   shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380
 ;   shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0
 ;   shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20
 ;   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0
@@ -950,8 +950,8 @@ section .text
     PUSH EBP                            ; 00536a8f
     MOV ECX,dword ptr [0x00678a60]      ; 00536a90 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 00536a96 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 00536a97
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380 ; 00536a97
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 00536a9c
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00536a9f
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

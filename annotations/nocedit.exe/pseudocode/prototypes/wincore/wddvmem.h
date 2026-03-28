@@ -3,11 +3,11 @@
 // Function prototypes for wincore/wddvmem.cpp
 // Generated from Ghidra function signatures
 
-// Original: wincore_wddvmem.cpp_initTextureCache_FUN_005dd760
+// Original: wincore_wddvmem.cpp_initTextureCache_FUN_00403790
 // Address: 00403790
 CTextureCache * __cdecl initTextureCache(void);
 
-// Original: wincore_wddvmem.cpp_freeTextureCache_FUN_005dd7a0
+// Original: wincore_wddvmem.cpp_freeTextureCache_FUN_004037a0
 // Address: 004037a0
 void __cdecl freeTextureCache(void);
 

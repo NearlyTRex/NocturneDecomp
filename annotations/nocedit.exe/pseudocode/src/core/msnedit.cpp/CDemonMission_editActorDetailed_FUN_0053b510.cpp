@@ -79,7 +79,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemo
                   (g_CEditorToolsPtr,"No actors relevent to the operation of this event.");
       }
       else {
-        shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_6ac.base);
+        shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_6ac.base);
         _sprintf
                   (acStack_304,"Actors relevent to \"%s\"",property->name);
         iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20

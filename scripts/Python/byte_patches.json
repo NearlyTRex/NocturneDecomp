@@ -232,6 +232,30 @@
                     "description": "Replace dead CMP [NULL],0 / JZ with POP EBX / RET to eliminate iRam00000000"
                 }
             ]
+        },
+        {
+            "name": "thunk_to_real_function",
+            "description": "Convert JMP thunks to CALL+RET so the wrapper is a real function with its own parameters",
+            "patches": [
+                {
+                    "name": "CDemonRenderer_matrixPush: JMP->CALL+RET for this_ptr param",
+                    "address": "0x0048c630",
+                    "original": "e9eb0f08008d",
+                    "patched":  "e8eb0f0800c3",
+                    "description": "Convert JMP push to CALL push + RET so decompiler sees CDemonRenderer* this_ptr parameter"
+                },
+                {
+                    "name": "CDemonRenderer_matrixPop: JMP->CALL+RET for this_ptr param",
+                    "address": "0x0048c640",
+                    "original": "e9db1008008d",
+                    "patched":  "e8db100800c3",
+                    "description": "Convert JMP pop to CALL pop + RET so decompiler sees CDemonRenderer* this_ptr parameter"
+                }
+            ],
+            "clear_thunks": [
+                "0x0048c630",
+                "0x0048c640"
+            ]
         }
     ]
 }

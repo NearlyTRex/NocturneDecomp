@@ -11,7 +11,6 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ebac0(CBloodParticle *th
 {
   SRenderVertex *output_00;
   float fVar1;
-  float fVar2;
   longlong lVar3;
   float fVar4;
   float fVar5;
@@ -133,64 +132,69 @@ LAB_004ebdb7:
             (g_CDemonRendererPtr2,0xffff - (int)g_PerspectiveReciprocal);
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
             (g_CDemonRendererPtr2,&g_GoreQuadPrimitive.base);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-  CStack_e8.x = (this_ptr->base).position.x;
-  CStack_e8.y = (this_ptr->base).position.y;
-  CStack_e8.z = (this_ptr->base).position.z;
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
+  CStack_e8.y = (this_ptr->base).position.x;
+  CStack_e8.z = (this_ptr->base).position.y;
+  CStack_dc.x = (int)(this_ptr->base).position.z;
   fVar1 = (this_ptr->base).velocity.x;
-  fStack_6c = (this_ptr->base).velocity.y;
+  fStack_68 = (this_ptr->base).velocity.y;
   iVar7 = 0;
-  fStack_f0 = 1.0;
-  fVar2 = (this_ptr->base).velocity.z;
-  fStack_ec = 0.025;
+  fStack_ec = 1.0;
+  CStack_64.x = (int)(this_ptr->base).velocity.z;
+  CStack_e8.x = 0.025;
   do {
-    fStack_ec = fStack_ec * (float)0.69999999999999996;
-    fStack_f0 = (float)0.69999999999999996 * fStack_f0;
-    fStack_6c = fStack_6c - fStack_ec * (this_ptr->base).gravity_acceleration;
-    CStack_e8.x = CStack_e8.x - fVar1 * fStack_ec;
-    CStack_e8.z = CStack_e8.z - fVar2 * fStack_ec;
-    CStack_e8.y = CStack_e8.y - fStack_6c * fStack_ec;
+    CStack_e8.x = CStack_e8.x * (float)0.69999999999999996;
+    fStack_ec = (float)0.69999999999999996 * fStack_ec;
+    fStack_68 = fStack_68 - CStack_e8.x * (this_ptr->base).gravity_acceleration;
+    local_94.x = (int)((float)CStack_64.x * CStack_e8.x);
+    CStack_e8.y = CStack_e8.y - fVar1 * CStack_e8.x;
+    CStack_dc.x = (int)((float)CStack_dc.x - (float)local_94.x);
+    CStack_e8.z = CStack_e8.z - fStack_68 * CStack_e8.x;
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr2,&CStack_e8);
+              (g_CDemonRendererPtr2,(CVector3f *)&CStack_e8.y);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
               (g_CDemonRendererPtr2,(CVector3i *)&g_ParticleCameraRotation,(CVector3i *)0x0);
-    fVar4 = fStack_f0 * (float)-0.10000000000000001;
-    CStack_dc.x = (int)ROUND(fVar4 * 256.0f);
+    fVar4 = fStack_ec * (float)-0.10000000000000001;
     CStack_dc.y = (int)ROUND(fVar4 * 256.0f);
-    CStack_dc.z = (int)ROUND(256.0f * 0.0);
+    CStack_dc.z = (int)ROUND(fVar4 * 256.0f);
+    local_d0.x = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_dc);
-    fVar5 = fStack_f0 * (float)0.10000000000000001;
-    CStack_ac.x = (int)ROUND(fVar5 * 256.0f);
-    CStack_ac.y = (int)ROUND(fVar4 * 256.0f);
-    CStack_ac.z = (int)ROUND(256.0f * 0.0);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,(CVector3i *)&CStack_dc.y)
+    ;
+    fVar5 = fStack_ec * (float)0.10000000000000001;
+    CStack_ac.y = (int)ROUND(fVar5 * 256.0f);
+    CStack_ac.z = (int)ROUND(fVar4 * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_ac);
-    CStack_64.x = (int)ROUND(fVar5 * 256.0f);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,
+               (CVector3i *)&CStack_ac.y);
     CStack_64.y = (int)ROUND(fVar5 * 256.0f);
-    CStack_64.z = (int)ROUND(256.0f * 0.0);
+    CStack_64.z = (int)ROUND(fVar5 * 256.0f);
+    local_58.x = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&CStack_64);
-    CStack_c4.x = (int)ROUND(fVar4 * 256.0f);
-    CStack_c4.y = (int)ROUND(fVar5 * 256.0f);
-    CStack_c4.z = (int)ROUND(256.0f * 0.0);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,
+               (CVector3i *)&CStack_64.y);
+    CStack_c4.y = (int)ROUND(fVar4 * 256.0f);
+    CStack_c4.z = (int)ROUND(fVar5 * 256.0f);
+    local_b8.x = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_c4);
-    local_88.x = (int)ROUND(CStack_e8.x * 256.0f);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,
+               (CVector3i *)&CStack_c4.y);
     local_88.y = (int)ROUND(CStack_e8.y * 256.0f);
     local_88.z = (int)ROUND(CStack_e8.z * 256.0f);
+    local_7c.x = (int)ROUND((float)CStack_dc.x * 256.0f);
     core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
-              (g_CDemonSetPtr,&local_88,(CVector3i *)&INT_02d8339c,0,4);
+              (g_CDemonSetPtr,(CVector3i *)&local_88.y,(CVector3i *)&INT_02d8339c,0,4);
     iVar6 = 0;
     do {
-      lVar3 = (longlong)local_28 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].r + iVar6);
-      *(uint *)((int)&g_RenderVertexBuffer[0].r + iVar6) =
-           (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
-      lVar3 = (longlong)local_20 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].g + iVar6);
+      *(uint *)((int)&g_RenderVertexBuffer[0].r + iVar6) = 0;
+      lVar3 = (longlong)(int)fStack_1c * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].g + iVar6)
+      ;
       *(uint *)((int)&g_RenderVertexBuffer[0].g + iVar6) =
            (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
       iVar5 = iVar6 + 0x30;
-      *(uint *)((int)&g_RenderVertexBuffer[0].b + iVar6) = 0;
+      lVar3 = (longlong)local_20 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].b + iVar6);
+      *(uint *)((int)&g_RenderVertexBuffer[0].b + iVar6) =
+           (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
       iVar6 = iVar5;
     } while (iVar5 != 0xc0);
     (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
@@ -200,7 +204,7 @@ LAB_004ebdb7:
     engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
               (g_CDemonRendererPtr2,&g_GoreQuadPrimitive.base);
     iVar7 = iVar7 + 1;
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   } while (iVar7 < 3);
   return;
 }

@@ -71,7 +71,7 @@
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
@@ -539,8 +539,8 @@ section .text
     MOV EAX,[0x006703ec]                ; 004751dd | g_CDemonRendererPtr2
     PUSH EAX                            ; 004751e2 | g_CDemonRendererInstance
     INC ESI                             ; 004751e3
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004751e4
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004751e4
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004751e9
     CMP ESI,0x19                        ; 004751ec
     JL 0x00474db1                       ; 004751ef

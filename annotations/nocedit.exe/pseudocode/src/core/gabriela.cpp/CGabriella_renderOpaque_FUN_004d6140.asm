@@ -17,7 +17,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
 ;   core_cloth.cpp_CCloth_render_FUN_0043bae0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     ADD ESP,0x8                         ; 004d618a
     MOV EDX,dword ptr [0x006703ec]      ; 004d618d | g_CDemonRendererPtr2
     PUSH EDX                            ; 004d6193 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004d6194
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004d6194
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     PUSH EAX                            ; 004d619e
         ;   Label: LAB_004d619e
     MOV EDX,dword ptr [EAX + 0x154]     ; 004d619f

@@ -11,7 +11,7 @@ CChain * __cdecl core_chain_cpp_factoryFunc_FUN_0042fb40(void)
 {
   CChain *pCVar1;
   
-  pCVar1 = (CChain *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x578,"..\\core\\chain.cpp",0x30);
+  pCVar1 = (CChain *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x578,"..\\core\\chain.cpp",0x30);
   if (pCVar1 == (CChain *)0x0) {
     return (CChain *)0x0;
   }

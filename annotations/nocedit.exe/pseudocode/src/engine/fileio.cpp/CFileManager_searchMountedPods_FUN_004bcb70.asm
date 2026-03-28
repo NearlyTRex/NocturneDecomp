@@ -36,7 +36,7 @@
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
-;   shape_edittool.cpp_CStrList_sort_FUN_004a2ec0
+;   shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0
 ;
 ; *****************************************************************************
 
@@ -162,8 +162,8 @@ section .text
     MOV EAX,ESP                         ; 004bcca6
         ;   Label: LAB_004bcca6
     PUSH EAX                            ; 004bcca8
-    CALL shape_edittool.cpp_CStrList_sort_FUN_004a2ec0 ; 004bcca9
-        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sort_FUN_004a2ec0(CStrList * this_ptr)
+    CALL shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0 ; 004bcca9
+        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 004bccae
     PUSH 0x0                            ; 004bccb1
     PUSH -0x1                           ; 004bccb3

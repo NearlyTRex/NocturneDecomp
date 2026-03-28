@@ -28,7 +28,7 @@ ifstream * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_005ff856(void *this_ptr,uin
     if ((flags & 2) == 0) {
       return this_ptr;
     }
-    shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);
+    shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(this_ptr);
   }
   else {
     ptr = __vec_delete(this_ptr,&g_IFStreamTypeInfo);

@@ -42,10 +42,10 @@
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;   shape_memdbg.cpp_debugCalloc_FUN_0050f350
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     PUSH 0xb4                           ; 00545185
     PUSH 0x63e4c8                       ; 0054518a | = "..\\engine\\palette.cpp"
     PUSH 0x8308                         ; 0054518f
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 00545194
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00545194
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00545199
     XOR EBP,EBP                         ; 0054519c
     MOV dword ptr [ESP + 0x54],EAX      ; 0054519e
@@ -433,8 +433,8 @@ section .text
     PUSH EBP                            ; 005454ed
     MOV dword ptr [0x0067d20c],ESI      ; 005454ee | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],EDI      ; 005454f4 | g_CurrentDebugLine
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005454fa
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005454fa
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     MOV EAX,0x1                         ; 005454ff
     ADD ESP,0x4                         ; 00545504
     POP ESI                             ; 00545507

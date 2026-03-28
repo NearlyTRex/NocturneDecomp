@@ -43,9 +43,9 @@
 ;   shape_edittool.cpp_calculateButtonHeight_FUN_004a6970
 ;   shape_edittool.cpp_calculateGridHeight_FUN_004a64b0
 ;   shape_edittool.cpp_CEdButton_paint_FUN_004a65e0
+;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380
 ;   shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_004a1230
 ;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80
-;   shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380
 ;   shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10
 ;   shape_edittool.cpp_CPickList_isItemEnabled_FUN_004a54e0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
@@ -425,8 +425,8 @@ section .text
         ;   Label: LAB_004a5216
     MOV ESI,dword ptr [0x00678a60]      ; 004a5217 | g_CEditorToolsPtr
     PUSH ESI                            ; 004a521d | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 004a521e
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380 ; 004a521e
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 004a5223
     ADD ESP,0x14c                       ; 004a5226
     POP EBP                             ; 004a522c

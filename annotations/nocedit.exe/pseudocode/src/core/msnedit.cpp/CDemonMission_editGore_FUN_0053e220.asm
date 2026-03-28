@@ -179,8 +179,8 @@ section .text
     MOV EAX,[0x03276acc]                ; 0053e356 | g_CDemonCameraInstance.corona_blend_factor
     PUSH 0x66c                          ; 0053e35b
     MOV dword ptr [ESP + 0xb4],EAX      ; 0053e360
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0053e367
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0053e367
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0053e36c
     TEST EAX,EAX                        ; 0053e36f
     JNZ 0x0053e8fb                      ; 0053e371
@@ -322,8 +322,8 @@ section .text
     PUSH 0x0                            ; 0053e52d
     MOV ECX,dword ptr [0x00678a60]      ; 0053e52f | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 0053e535 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0053e536
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380 ; 0053e536
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 0053e53b
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0053e53e
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()

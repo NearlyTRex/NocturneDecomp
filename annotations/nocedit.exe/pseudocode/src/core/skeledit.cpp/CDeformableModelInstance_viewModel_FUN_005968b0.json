@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 11,
+        "category": "other",
+        "column": 32,
         "line": 436,
-        "message": "no matching function for call to '_sprintf'"
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
@@ -458,7 +458,7 @@
     {
       "addr": "0048c640",
       "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640"
     },
     {
       "addr": "0048c450",
@@ -536,11 +536,6 @@
       "name": "shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0"
     },
     {
-      "addr": "0049f060",
-      "is_variadic": true,
-      "name": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060"
-    },
-    {
       "addr": "0049e740",
       "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
@@ -564,6 +559,11 @@
       "addr": "004a03d0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0"
+    },
+    {
+      "addr": "0049f060",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060"
     },
     {
       "addr": "0049f0f0",
@@ -623,7 +623,7 @@
     {
       "addr": "005b3ed4",
       "is_variadic": false,
-      "name": "wincore_windll.cpp_clearZBuffer_FUN_005b3ed4"
+      "name": "wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4"
     },
     {
       "addr": "005b575c",
@@ -2387,7 +2387,7 @@
       "line": 425,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar17 + 3) & 0x80) == 0) {",
+      "text": "if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar16 + 3) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
     {
@@ -2395,7 +2395,7 @@
       "line": 426,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar4 = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar17);",
+      "text": "local_68 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar16) >> 0x10;",
       "type": "pointer_cast"
     },
     {
@@ -2403,7 +2403,7 @@
       "line": 427,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "local_68 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar17) >> 0x10;",
+      "text": "x = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar16) >> 0x10;",
       "type": "pointer_cast"
     },
     {
@@ -2427,7 +2427,7 @@
       "line": 530,
       "match": "3.57331e-43",
       "severity": "mild",
-      "text": "fVar10 = 3.57331e-43;",
+      "text": "fVar9 = 3.57331e-43;",
       "type": "suspect_float"
     },
     {
@@ -2435,7 +2435,7 @@
       "line": 531,
       "match": "SUB42",
       "severity": "mild",
-      "text": "uVar20 = SUB42(g_CEditorToolsPtr,0);",
+      "text": "uVar19 = SUB42(g_CEditorToolsPtr,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -2443,7 +2443,7 @@
       "line": 539,
       "match": "SUB42",
       "severity": "mild",
-      "text": "uVar20 = SUB42(g_CEditorToolsPtr,0);",
+      "text": "uVar19 = SUB42(g_CEditorToolsPtr,0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -2451,7 +2451,7 @@
       "line": 543,
       "match": "CONCAT22",
       "severity": "mild",
-      "text": "((CEditorTools *)CONCAT22(uVar21,uVar20),2.0,(int)fVar10);",
+      "text": "((CEditorTools *)CONCAT22(uVar20,uVar19),2.0,(int)fVar9);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -2459,7 +2459,7 @@
       "line": 566,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_18 = (float)(int)ROUND(ROUND(fVar10));",
+      "text": "local_18 = (float)(int)ROUND(ROUND(fVar9));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -2467,7 +2467,7 @@
       "line": 566,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_18 = (float)(int)ROUND(ROUND(fVar10));",
+      "text": "local_18 = (float)(int)ROUND(ROUND(fVar9));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -2491,7 +2491,7 @@
       "line": 780,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_38 = (float)(int)ROUND(ROUND(pSVar12->exit_forward_to_frame));",
+      "text": "local_38 = (float)(int)ROUND(ROUND(pSVar11->exit_forward_to_frame));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -2499,7 +2499,7 @@
       "line": 780,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_38 = (float)(int)ROUND(ROUND(pSVar12->exit_forward_to_frame));",
+      "text": "local_38 = (float)(int)ROUND(ROUND(pSVar11->exit_forward_to_frame));",
       "type": "decompiler_intrinsic"
     }
   ]

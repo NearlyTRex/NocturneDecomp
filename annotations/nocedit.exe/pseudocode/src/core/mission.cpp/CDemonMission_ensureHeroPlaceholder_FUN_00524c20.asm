@@ -40,7 +40,7 @@
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -134,8 +134,8 @@ section .text
         ;   Label: LAB_00524cf1
     PUSH 0x639606                       ; 00524cf6 | = "..\\core\\mission.cpp"
     PUSH 0x15c                          ; 00524cfb
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 00524d00
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00524d00
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00524d05
     TEST EAX,EAX                        ; 00524d08
     JZ 0x00524d15                       ; 00524d0a

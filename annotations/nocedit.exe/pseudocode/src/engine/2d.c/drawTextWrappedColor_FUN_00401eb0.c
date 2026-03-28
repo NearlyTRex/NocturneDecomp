@@ -36,7 +36,7 @@ void __cdecl engine_2d_c_drawTextWrappedColor_FUN_00401eb0(char *text,int x_star
       }
       bVar2 = *text;
       if ((0x1f < bVar2) && (bVar2 < 0x100)) {
-        iVar3 = engine_2d_c_drawCharacter_FUN_00401a10((uint)bVar2,iVar6,y_start,color);
+        iVar3 = engine_2d_c_drawCharacterMasked_FUN_00401a10((uint)bVar2,iVar6,y_start,color);
         iVar6 = iVar6 + iVar3;
         if ((x_max < iVar6) && (y_start = y_start + 0xb, iVar6 = x_start, y_max < y_start)) {
           return;

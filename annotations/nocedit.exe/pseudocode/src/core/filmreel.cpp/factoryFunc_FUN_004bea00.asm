@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_filmreel.cpp_CFilmProjector_ctor_FUN_004bea40
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_filmreel.cpp_factoryFunc_FUN_004bea00
     PUSH 0x629b27                       ; 004bea05 | = "..\\core\\filmreel.cpp"
     PUSH 0x3e4                          ; 004bea0a
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 004bea0f
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004bea0f
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004bea14
     TEST EAX,EAX                        ; 004bea17
     JNZ 0x004bea1c                      ; 004bea19

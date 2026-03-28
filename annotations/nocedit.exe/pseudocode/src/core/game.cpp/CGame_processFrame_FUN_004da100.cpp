@@ -368,7 +368,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(&g_CPickList);
       }
       if (this_ptr->is_paused != 0) {
-        shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
+        shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
       }
       wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
     }

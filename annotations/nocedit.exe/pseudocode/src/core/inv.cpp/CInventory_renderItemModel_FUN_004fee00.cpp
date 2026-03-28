@@ -15,6 +15,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
   CKeyFramedModel *pCVar13;
   int iVar1;
   CDemonActor *pCVar14;
+  float fVar10;
   CVector3i local_50;
   CVector3i local_44;
   float local_38;
@@ -57,13 +58,13 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
     this_ptr_00 = core_inv_cpp_getItemModel_FUN_004fcda0(item);
     pCVar13 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
     pCVar1 = pCVar13->frame_bounds;
-    fVar2 = pCVar1->x;
+    fVar10 = pCVar1->x;
     fVar3 = pCVar1->y;
     fVar4 = pCVar1->z;
     fVar5 = pCVar1[1].x;
     fVar6 = pCVar1[1].y;
     fVar7 = pCVar1[1].z;
-    local_14 = (fVar5 - fVar2) * 0.5f;
+    local_14 = (fVar5 - fVar10) * 0.5f;
     fVar8 = (fVar6 - fVar3) * 0.5f;
     fVar9 = (fVar7 - fVar4) * 0.5f;
     if (((local_14 <= fVar8) || (local_14 <= fVar9)) && (local_14 = fVar9, fVar9 < fVar8)) {
@@ -84,7 +85,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
               (g_CDemonRendererPtr2,&g_ZeroVector.f);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&g_ZeroVector.f);
-    local_50.x = (int)((fVar2 + fVar5) * -0.5f);
+    local_50.x = (int)((fVar10 + fVar5) * -0.5f);
     local_50.y = (int)((fVar3 + fVar6) * -0.5f);
     local_50.z = (int)((fVar4 + fVar7) * -0.5f);
     g_PerspectiveReciprocal = 0.0;
@@ -122,9 +123,9 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
     else {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(this_ptr_00,0.0,-1);
     }
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-    engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
+    engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0();
     g_CDemonSetPtr->rendering_mode = 0;
     return;
   }

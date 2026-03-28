@@ -233,7 +233,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
         }
       }
       else {
-        iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+        iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
                           (g_CEditorToolsPtr,"Reset all cameras to master fog setting?");
         if (iVar5 != 0) {
           pCVar5 = &this_ptr->cameras[0].fog.scroll;

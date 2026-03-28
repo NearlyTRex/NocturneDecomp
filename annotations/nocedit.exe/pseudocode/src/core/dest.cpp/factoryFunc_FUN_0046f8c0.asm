@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_dest.cpp_CActorDestination_ctor_FUN_0046f900
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_dest.cpp_factoryFunc_FUN_0046f8c0
     PUSH 0x61e38c                       ; 0046f8c2 | = "..\\core\\dest.cpp"
     PUSH 0x1f4                          ; 0046f8c7
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0046f8cc
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0046f8cc
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0046f8d1
     TEST EAX,EAX                        ; 0046f8d4
     JNZ 0x0046f8d9                      ; 0046f8d6

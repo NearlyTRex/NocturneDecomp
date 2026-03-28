@@ -11,7 +11,7 @@ CGun * __cdecl core_gun_cpp_factoryFunc_FUN_004f02b0(void)
 {
   CGun *pCVar1;
   
-  pCVar1 = (CGun *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x578,"..\\core\\gun.cpp",0x29);
+  pCVar1 = (CGun *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x578,"..\\core\\gun.cpp",0x29);
   if (pCVar1 == (CGun *)0x0) {
     return (CGun *)0x0;
   }

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   wincore_wddvmem.cpp_freeTextureCache_FUN_005dd7a0 at 004037a0
+;   wincore_wddvmem.cpp_freeTextureCache_FUN_004037a0 at 004037a0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_texture_cpp_0065546b
@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   engine_texture.cpp_CTextureCache_freeTextures_FUN_005dcb30
 ;   engine_texture.cpp_CTextureCache_reset_FUN_005dcb20
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
         ;   XREF to: 005dcb30 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_freeTextures_FUN_005dcb30(CTextureCache * this_ptr)
     ADD ESP,0x4                         ; 005dd7e4
     PUSH ESI                            ; 005dd7e7
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005dd7e8
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005dd7e8
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005dd7ed
     XOR EDI,EDI                         ; 005dd7f0
     MOV dword ptr [0x03f87358],EDI      ; 005dd7f2 | g_TextureCacheInstance

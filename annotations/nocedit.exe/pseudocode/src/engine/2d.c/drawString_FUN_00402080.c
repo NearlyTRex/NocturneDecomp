@@ -29,7 +29,7 @@ void __cdecl engine_2d_c_drawString_FUN_00402080(char *text,int x_pos,int y_pos,
     do {
       bVar2 = *text;
       if ((0x1f < bVar2) && (bVar2 < 0x100)) {
-        iVar3 = engine_2d_c_drawCharacter_FUN_00401a10((uint)bVar2,x_pos,y_pos,color);
+        iVar3 = engine_2d_c_drawCharacterMasked_FUN_00401a10((uint)bVar2,x_pos,y_pos,color);
         x_pos = x_pos + iVar3;
       }
       iVar5 = iVar5 + 1;

@@ -44,7 +44,7 @@
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 ;   shape_edittool.cpp_CStrList_removeAt_FUN_004a2de0
-;   shape_edittool.cpp_CStrList_sort_FUN_004a2ec0
+;   shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0
 ;   shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20
 ;
 ; *****************************************************************************
@@ -123,8 +123,8 @@ section .text
         ;   Label: LAB_0053e05a
     PUSH EAX                            ; 0053e05c
     XOR ESI,ESI                         ; 0053e05d
-    CALL shape_edittool.cpp_CStrList_sort_FUN_004a2ec0 ; 0053e05f
-        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sort_FUN_004a2ec0(CStrList * this_ptr)
+    CALL shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0 ; 0053e05f
+        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 0053e064
     XOR EBP,EBP                         ; 0053e067
     PUSH EBP                            ; 0053e069

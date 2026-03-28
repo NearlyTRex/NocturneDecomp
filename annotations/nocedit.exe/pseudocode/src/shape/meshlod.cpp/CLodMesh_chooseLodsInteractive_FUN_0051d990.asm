@@ -76,8 +76,8 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
 ;   shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020
-;   shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060
 ;   ... and 20 more
 ;
 ; *****************************************************************************
@@ -233,8 +233,8 @@ section .text
     CALL engine_2d.c_fillRectColor_FUN_00403170 ; 0051dba2
         ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 0051dba7
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0051dbaa
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0051dbaa
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
     TEST ESI,ESI                        ; 0051dbaf
     JNZ 0x0051dbc1                      ; 0051dbb1
         ;   XREF to: 0051dbc1 (CONDITIONAL_JUMP)  ; LAB_0051dbc1
@@ -709,8 +709,8 @@ section .text
     PUSH EAX                            ; 0051e18d
     MOV EBX,dword ptr [0x00678a60]      ; 0051e18e | g_CEditorToolsPtr
     PUSH EBX                            ; 0051e194 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 0051e195
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 0051e195
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0051e19a
     TEST EAX,EAX                        ; 0051e19d
     JZ 0x0051e224                       ; 0051e19f

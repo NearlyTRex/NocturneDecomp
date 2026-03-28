@@ -27,7 +27,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_freeCubeList_FUN_004942d0(CDemonRayt
         g_CurrentDebugLine = 0x9c;
         g_CurrentDebugFilename = "..\\core\\dtrace.cpp";
         ptr = core_dpart_cpp_CDemonPart_dtor_FUN_00482160((CDemonPart *)puVar1[3],0);
-        shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
+        shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(ptr);
       }
       iVar3 = iVar3 + 0x58;
       puVar1[3] = 0;

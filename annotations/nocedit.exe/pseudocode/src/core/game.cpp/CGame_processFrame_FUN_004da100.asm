@@ -953,8 +953,8 @@ section .text
     PUSH 0x0                            ; 004daafd
     MOV ESI,dword ptr [0x00678a60]      ; 004daaff | g_CEditorToolsPtr
     PUSH ESI                            ; 004dab05 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 004dab06
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380 ; 004dab06
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 004dab0b
     PUSH 0x0                            ; 004dab0e
         ;   Label: LAB_004dab0e

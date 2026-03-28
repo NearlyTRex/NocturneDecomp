@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_grave.cpp_CGrave_ctor_FUN_004ee510
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_grave.cpp_factoryFunc_FUN_004ee4d0
     PUSH 0x62e46f                       ; 004ee4d2 | = "..\\core\\grave.cpp"
     PUSH 0x3b0                          ; 004ee4d7
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 004ee4dc
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004ee4dc
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004ee4e1
     TEST EAX,EAX                        ; 004ee4e4
     JNZ 0x004ee4e9                      ; 004ee4e6

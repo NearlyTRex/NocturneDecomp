@@ -162,6 +162,6 @@ void __cdecl shape_superopt_cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj 
       } while (local_5c < (uint)this_ptr->poly_count);
     }
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(local_68);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(local_68);
   return;
 }

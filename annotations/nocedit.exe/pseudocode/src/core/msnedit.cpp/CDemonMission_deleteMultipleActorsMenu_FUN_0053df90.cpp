@@ -40,7 +40,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df9
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_764.base,pCVar3->actor_name);
       }
       iVar4 = 0;
-      shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_764.base);
+      shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_764.base);
       while (iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                (&local_764,"Delete actors.  Press ESC When done.",iVar4,0), -1 < iVar4)
       {

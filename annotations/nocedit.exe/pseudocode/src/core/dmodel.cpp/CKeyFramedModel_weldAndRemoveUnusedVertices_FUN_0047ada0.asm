@@ -44,7 +44,7 @@
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -86,8 +86,8 @@ section .text
     PUSH 0x620314                       ; 0047ade4 | = "..\\core\\dmodel.cpp"
     SHL EAX,0x2                         ; 0047ade9
     PUSH EAX                            ; 0047adec
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0047aded
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0047aded
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0047adf2
     MOV dword ptr [ESP + 0x1c],EAX      ; 0047adf5
     TEST EAX,EAX                        ; 0047adf9

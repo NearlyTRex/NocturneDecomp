@@ -1,22 +1,30 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 68,
+        "line": 50,
+        "message": "use of undeclared identifier 'stack0xffffffb0'; did you mean 'in_stack_ffffffb0'?"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 120,
+    "complexity_score": 142,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 105,
-    "suspect_count": 1,
+    "pseudocode_lines": 102,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_alignment_array"
+      "stack_param",
+      "stack_ref"
     ],
-    "total_lines": 326
+    "total_lines": 323
   },
   "cross_references": [
     {
@@ -102,7 +110,7 @@
     {
       "addr": "0048c640",
       "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640"
     },
     {
       "addr": "0048c450",
@@ -112,7 +120,7 @@
     {
       "addr": "0050f1f0",
       "is_variadic": false,
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
+      "name": "shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0"
     },
     {
       "addr": "005fe659",
@@ -277,26 +285,12 @@
     "pcode_op_count": 745
   },
   "stack_frame": {
-    "frame_size": 4168,
-    "local_size": 4156,
+    "frame_size": 84,
+    "local_size": 72,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "aiStackY_1038",
-        "offset": -4152,
-        "size": 4060,
-        "type": "int[1015]"
-      },
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 12,
-        "type": "CVector3i"
-      },
       {
         "is_param": false,
         "name": "local_44",
@@ -385,12 +379,28 @@
   },
   "suspects": [
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
-      "match": "aiStackY_1038",
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_ffffffb0",
       "severity": "moderate",
-      "text": "int aiStackY_1038 [1015];",
-      "type": "stack_alignment_array"
+      "text": "int in_stack_ffffffb0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 43,
+      "match": "&stack0xffffffb0",
+      "severity": "moderate",
+      "text": "(&g_CDemonCameraInstance,&local_44,(CVector3i *)&stack0xffffffb0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_ffffffb0",
+      "severity": "moderate",
+      "text": "pCVar3->x = in_stack_ffffffb0;",
+      "type": "stack_param"
     }
   ]
 }

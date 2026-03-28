@@ -117,7 +117,7 @@ int __cdecl shape_superopt_cpp_CObj_removeUnusedVertices_FUN_005d44d0(CObj *this
       this_ptr->vertex_data = pCVar4;
     }
     this_ptr->vertex_count = uVar6;
-    shape_memdbg_cpp_debugFree_FUN_0050f210(local_20);
+    shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(local_20);
     shape_memdbg_cpp_free_FUN_005fe659(dest);
     iVar7 = 1;
   }

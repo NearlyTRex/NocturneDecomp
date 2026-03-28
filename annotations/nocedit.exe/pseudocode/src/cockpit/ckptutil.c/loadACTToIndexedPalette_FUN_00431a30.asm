@@ -8,7 +8,6 @@
 ; uchar *          Stack[0x8]:4   output_palette
 ; Local Variables:
 ; byte[768]        Stack[-0x30c]:768  local_30c
-; uchar            Stack[-0xc]:1  local_c
 ;
 ; XREF[4]:
 ;   cockpit_ckptutil.c_applyActPalette_FUN_004319b0 at 004319c9

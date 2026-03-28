@@ -29,7 +29,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
     iVar2 = 0;
   }
   else {
-    shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_8bc.base);
+    shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_8bc.base);
     pcVar3 = (char *)0xffffffff;
     pcVar1 = pcVar3;
     if (((flags & 1) != 0) && (output_buffer = (char *)0x0, 0 < local_8bc.base.item_count)) {

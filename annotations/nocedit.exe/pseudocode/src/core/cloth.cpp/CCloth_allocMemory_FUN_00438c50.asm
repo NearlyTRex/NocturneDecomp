@@ -20,7 +20,7 @@
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_free_FUN_00438cb0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH 0x618162                       ; 00438c66 | = "..\\core\\cloth.cpp"
     SHL EAX,0x2                         ; 00438c6b
     PUSH EAX                            ; 00438c6e
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00438c6f
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00438c6f
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00438c74
     MOV dword ptr [EBX + 0x3fe3c],EAX   ; 00438c77
     TEST EAX,EAX                        ; 00438c7d

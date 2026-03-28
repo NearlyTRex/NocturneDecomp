@@ -85,7 +85,7 @@
 ; Called Functions:
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
 ;   shape_superopt.cpp_CPoly_ctor_FUN_005cc620
 ;   shape_superopt.cpp_CPoly_dtor_FUN_005cc660
@@ -472,8 +472,8 @@ section .text
         ;   Label: LAB_005d4d3e
     PUSH EDI                            ; 005d4d45
     MOV EBX,0x1                         ; 005d4d46
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005d4d4b
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005d4d4b
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005d4d50
     MOV EAX,EBX                         ; 005d4d53
     MOV ESP,EBP                         ; 005d4d55
@@ -1110,8 +1110,8 @@ section .text
         ;   Label: LAB_005d57ad
     PUSH ESI                            ; 005d57b4
     XOR EBX,EBX                         ; 005d57b5
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005d57b7
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005d57b7
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005d57bc
     MOV EAX,EBX                         ; 005d57bf
     MOV ESP,EBP                         ; 005d57c1
@@ -1123,8 +1123,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28c]     ; 005d57c8
         ;   Label: LAB_005d57c8
     PUSH EDI                            ; 005d57cf
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005d57d0
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005d57d0
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005d57d5
     XOR EBX,EBX                         ; 005d57d8
     PUSH EBX                            ; 005d57da

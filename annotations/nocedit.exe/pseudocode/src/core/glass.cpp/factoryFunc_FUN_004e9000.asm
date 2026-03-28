@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_glass.cpp_CGlass_ctor_FUN_004e9040
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_glass.cpp_factoryFunc_FUN_004e9000
     PUSH 0x62df50                       ; 004e9002 | = "..\\core\\glass.cpp"
     PUSH 0xb40                          ; 004e9007
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 004e900c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004e900c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004e9011
     TEST EAX,EAX                        ; 004e9014
     JNZ 0x004e9019                      ; 004e9016

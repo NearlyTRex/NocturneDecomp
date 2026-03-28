@@ -1274,7 +1274,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_3d.c_setRenderAlpha_FUN_00406d60",
+    "name":"engine_3d.c_setRenderAlphaFromBlock_FUN_00406d60",
     "ret":"SMRGLHeaderExtended*",
     "vars":{
       "params":[
@@ -30292,7 +30292,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_dosio.c_getFileTimestamp_FUN_00481960",
+    "name":"engine_dosio.c_getFileSize_FUN_00481960",
     "ret":"int",
     "vars":{
       "locals":[
@@ -30839,7 +30839,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004878e0",
+    "name":"cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_004878e0",
     "ret":"void",
     "vars":{
       "params":[
@@ -34045,7 +34045,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
+    "name":"shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060",
     "ret":"int",
     "variadic":true,
     "vars":{
@@ -47226,22 +47226,6 @@
             ]
           },
           "type":"CVector3i"
-        },
-        {
-          "name":"local_28",
-          "storage":{
-            "offset":-40,
-            "size":12,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x28]",
-                "offset":-40,
-                "size":12
-              }
-            ]
-          },
-          "type":"CVector3i"
         }
       ],
       "params":[
@@ -53478,7 +53462,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"sound_mp3.cpp_requantizeLayer3Samples_FUN_0052fee0",
+    "name":"sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -55737,22 +55721,6 @@
             ]
           },
           "type":"CPickList"
-        },
-        {
-          "name":"local_d00",
-          "storage":{
-            "offset":-3328,
-            "size":936,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xd00]",
-                "offset":-3328,
-                "size":936
-              }
-            ]
-          },
-          "type":"CPickList"
         }
       ],
       "params":[
@@ -57550,36 +57518,6 @@
     "vars":{
       "locals":[
         {
-          "name":"bVar5",
-          "storage":{
-            "reg":"DF",
-            "size":1,
-            "varnodes":[
-              {
-                "addr":"register:0000020a",
-                "offset":522,
-                "size":1
-              }
-            ]
-          },
-          "type":"byte"
-        },
-        {
-          "name":"iVar4",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":219
-        },
-        {
           "name":"local_14",
           "storage":{
             "offset":-20,
@@ -57690,90 +57628,6 @@
             ]
           },
           "type":"CVector3i"
-        },
-        {
-          "name":"afStackY_105c",
-          "type":"float[998]"
-        },
-        {
-          "name":"fVar2",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5f93529297",
-                "offset":410493555351,
-                "size":4
-              }
-            ]
-          },
-          "type":"float",
-          "use":120
-        },
-        {
-          "name":"fVar3",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5fbf4a1036",
-                "offset":411231195190,
-                "size":4
-              }
-            ]
-          },
-          "type":"float",
-          "use":134
-        },
-        {
-          "name":"this_ptr_00",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27f4cfe3caa",
-                "offset":2745775832234,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonRaytrace*",
-          "use":211
-        },
-        {
-          "name":"voxel_coords",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:7bf7ae4d5f8",
-                "offset":8518981965304,
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3i*",
-          "use":218
-        },
-        {
-          "name":"pCVar1",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27f331d2b39",
-                "offset":2745341651769,
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3f*",
-          "use":249
         }
       ],
       "params":[
@@ -57793,9 +57647,6 @@
           },
           "type":"CParticle*"
         }
-      ],
-      "storage_conflicts_resolved":[
-        "afStackY_105c"
       ]
     }
   },
@@ -71602,7 +71453,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0",
+    "name":"core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_005a05e0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -75971,7 +75822,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_sound.cpp_CSound_dtor_FUN_005aaeb0",
+    "name":"core_sound.cpp_CSound_dtor_FUN_005b2d60",
     "ret":"void",
     "thtarget":"005aaeb0",
     "thunk":true

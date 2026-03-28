@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_manpuz.cpp_factoryFunc_FUN_005088e0
     PUSH 0x63568e                       ; 005088e5 | = "..\\core\\manpuz.cpp"
     PUSH 0x1514                         ; 005088ea
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005088ef
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005088ef
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005088f4
     TEST EAX,EAX                        ; 005088f7
     JNZ 0x005088fc                      ; 005088f9

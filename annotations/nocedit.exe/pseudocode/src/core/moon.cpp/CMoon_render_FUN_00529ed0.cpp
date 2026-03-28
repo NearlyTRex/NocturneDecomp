@@ -37,7 +37,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   
   sound_sndmain_cpp_processAudio_FUN_005abe20();
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+  wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
             (g_CDemonRendererPtr2,&g_ZeroVector.i);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,112.0);
@@ -82,7 +82,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
                   (&g_MoonBatModel,
                    (int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5))),
                    (CKeyFramedModelInstance *)0x0,-1);
-        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
         fVar1 = *(float *)((int)&g_MoonBats[0].course_position + iVar5) /
                 (float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar5)].len;
         if ((float)0.5 <= fVar1) {
@@ -91,6 +91,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
         else {
           dVar1 = (double)8192.0f - (double)fVar1 * (double)16384.0f;
         }
+        local_5c.x = 7.588293e-39;
         g_CDemonSetPtr->ambient_base_quick = (int)ROUND(ROUND(dVar1));
       }
       iVar5 = iVar5 + 0x18;

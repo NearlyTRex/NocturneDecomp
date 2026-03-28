@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_turret.cpp_CTurret_ctor_FUN_005e20f0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_turret.cpp_factoryFunc_FUN_005e20b0
     PUSH 0x6565b0                       ; 005e20b5 | = "..\\core\\turret.cpp"
     PUSH 0x8bc                          ; 005e20ba
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005e20bf
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005e20bf
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005e20c4
     TEST EAX,EAX                        ; 005e20c7
     JNZ 0x005e20cc                      ; 005e20c9

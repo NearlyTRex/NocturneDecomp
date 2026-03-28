@@ -54,7 +54,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
   }
   core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(&g_CDemonCameraInstance);
   if (this_ptr->mirror_camera_dirty != 0) {
-    core_set_cpp_CDemonSet_setCameraView_FUN_00570c70(this_ptr);
+    core_set_cpp_CDemonSet_restoreCameraView_FUN_00570c70(this_ptr);
     this_ptr->mirror_camera_dirty = 0;
   }
   core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
@@ -102,12 +102,12 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
       local_18 = 0;
       do {
         iVar3 = 0;
-        core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
+        core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
                   (&g_CDemonCameraInstance,*(void **)((int)g_CoronaGlobes + local_18),0);
         if (0 < this_ptr->mirror_glass_actor_count) {
           do {
             core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(this_ptr,iVar3,0);
-            core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
+            core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
                       (&g_CDemonCameraInstance,*(void **)((int)g_CoronaGlobes + local_18),1);
             iVar3 = iVar3 + 1;
             core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0(this_ptr);
@@ -124,7 +124,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
       do {
         p1 = *(CDemonGlobe **)((int)g_QueuedCoronaGlobes + iVar3);
         if (*(int *)((int)g_QueuedCoronaGlobeAlphaMasks + iVar3) == 0) {
-          core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
+          core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
                     (&g_CDemonCameraInstance,p1,0);
           g_VisibleCoronaGlobes[g_VisibleCoronaGlobeCount] = p1;
           g_VisibleCoronaGlobeCount = g_VisibleCoronaGlobeCount + 1;
@@ -132,7 +132,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
         else {
           core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0
                     (this_ptr,*(int *)((int)g_QueuedCoronaGlobeAlphaMasks + iVar3) + -1,0);
-          core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
+          core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
                     (&g_CDemonCameraInstance,p1,1);
           core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0(this_ptr);
         }

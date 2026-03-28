@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 390,
-    "complexity_score": 239,
+    "complexity_score": 240,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 199,
+    "pseudocode_lines": 200,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 589
+    "total_lines": 590
   },
   "cross_references": [
     {
@@ -88,7 +88,7 @@
     {
       "addr": "0050f1b0",
       "is_variadic": false,
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+      "name": "shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0"
     }
   ],
   "globals": [
@@ -489,7 +489,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 102,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)local_230 + iVar6) = 0;",
@@ -497,7 +497,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 148,
+      "line": 149,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_14 = SQRT(local_5c * local_5c + local_64 * local_64 + local_60 * local_60);",
@@ -505,7 +505,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 171,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "if (local_230[iVar3] < *(float *)((int)local_230 + iVar2)) {",

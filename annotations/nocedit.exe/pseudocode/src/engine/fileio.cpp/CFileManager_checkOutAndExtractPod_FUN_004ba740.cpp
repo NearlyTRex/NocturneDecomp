@@ -103,7 +103,7 @@ LAB_004ba895:
   }
   g_VersionControlSession.overwrite_own_choice = 0;
   g_VersionControlSession.overwrite_writeable_choice = 0;
-  uVar4 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,local_340);
+  uVar4 = engine_dosio_c_getFileSize_FUN_00481960((char *)0x0,local_340);
   if (((int)uVar4 < 0) || ((uVar4 & 8) != 0)) {
     iVar4 = 1;
   }
@@ -228,7 +228,7 @@ LAB_004baa2c:
               }
               shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                         (g_CEditorToolsPtr,"Clearing read-only bit for %s...",local_23c);
-              uVar7 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,filename);
+              uVar7 = engine_dosio_c_getFileSize_FUN_00481960((char *)0x0,filename);
               if (((((int)uVar7 < 0) || ((uVar7 & 8) == 0)) ||
                   (iVar4 = engine_dosio_c_setFileAttributes_FUN_004819f0
                                      (filename,(byte)uVar7 & 0xf7), iVar4 != 0)) &&

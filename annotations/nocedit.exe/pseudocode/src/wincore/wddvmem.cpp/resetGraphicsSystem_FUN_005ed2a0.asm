@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_2d.c_resetGraphicsSystem_FUN_005ed2a0 at 00402a70
+;   engine_2d.c_resetGraphicsSystem_FUN_00402a70 at 00402a70
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_You_have_hit_a_kludge_in_006577da

@@ -383,8 +383,8 @@ section .text
     CALL engine_2d.c_fillRectColor_FUN_00403170 ; 00596b9e
         ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 00596ba3
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 00596ba6
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 00596ba6
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
     LEA EAX,[EBP + 0xfffffd32]          ; 00596bab
     PUSH EAX                            ; 00596bb1
     CALL shape_spotview.cpp_CSpotView_applyCamera_FUN_005b9a20 ; 00596bb2
@@ -1246,8 +1246,8 @@ section .text
     ADD ESP,0x8                         ; 0059753d
     MOV EDX,dword ptr [0x006703ec]      ; 00597540 | g_CDemonRendererPtr2
     PUSH EDX                            ; 00597546 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00597547
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00597547
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     MOV ECX,dword ptr [EBP + -0x16]     ; 0059754f
         ;   Label: LAB_0059754f
     TEST ECX,ECX                        ; 00597552
@@ -1612,8 +1612,8 @@ section .text
     ADD ESP,0x10                        ; 00597960
     MOV EDX,dword ptr [0x006703ec]      ; 00597963 | g_CDemonRendererPtr2
     PUSH EDX                            ; 00597969 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0059796a
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 0059796a
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     CMP dword ptr [EBP + -0xe],0x0      ; 00597977
         ;   Label: LAB_00597977
     JZ 0x005975bc                       ; 0059797b
@@ -2755,8 +2755,8 @@ section .text
     PUSH 0x64dc40                       ; 005985df | = "Import these values:\nX: %g\nY: %g\nZ..."
     MOV ESI,dword ptr [0x00678a60]      ; 005985e4 | g_CEditorToolsPtr
     PUSH ESI                            ; 005985ea | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 005985eb
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 005985eb
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x38                        ; 005985f0
     TEST EAX,EAX                        ; 005985f3
     JZ 0x0059863f                       ; 005985f5

@@ -41,7 +41,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart
         iVar2 != 0)))) {
       core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(this_ptr,-1);
     }
-    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     g_CDemonSetPtr->disable_directional_lighting = 0;
     this_ptr->is_visible = iVar1;
   }

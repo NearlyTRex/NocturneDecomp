@@ -8,7 +8,7 @@
 ;   core_msnedit.cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0 at 0053c66a
 ;   core_script.cpp_CScript_drawEditor_FUN_005645d0 at 00564725
 ;   core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760 at 005dca18
-;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 at 0048c8c0
+;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 at 0048c8c0
 ;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80 at 004a1089
 ;
 ; Referenced Globals:

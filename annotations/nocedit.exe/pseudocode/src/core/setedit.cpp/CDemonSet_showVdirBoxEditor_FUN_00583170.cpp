@@ -177,7 +177,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
     wincore_winrun_cpp_doNothing_FUN_005f2f80();
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     pSVar11 = local_3c;
-    wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
+    wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
     if (pSVar11 != (SVDBox *)0x0) {
       if ((float *)&stack0xfffffdc8 != &local_c8) {
         in_stack_fffffdcc = local_c4;
@@ -275,7 +275,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
         }
         pCVar3 = local_34;
         iVar12 = iVar12 + 1;
-        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
         local_34 = (CMatrix3x3f *)((int)(pCVar3 + 1) + 0x20);
       } while (iVar12 < this_ptr->vdir_box_count);
     }
@@ -1173,14 +1173,14 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
         pCVar5 = local_20;
         pCVar4 = local_2c;
         iVar12 = local_30;
-        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
         local_2c = pCVar4 + 0x23;
         local_20 = pCVar5 + 0x23;
         local_30 = iVar12 + 1;
       } while (local_30 < this_ptr->camera_count);
     }
     core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
-    shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
+    shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     iVar12 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
@@ -1407,7 +1407,7 @@ LAB_00583c6f:
     iVar12 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
     if (((iVar12 != 0) && (-1 < local_18)) &&
        ((local_18 < this_ptr->vdir_box_count &&
-        (iVar6 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+        (iVar6 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
                            (g_CEditorToolsPtr,"Delete the selected box?"), iVar12 = local_18
         , iVar6 != 0)))) {
       iVar6 = this_ptr->vdir_box_count + -1;

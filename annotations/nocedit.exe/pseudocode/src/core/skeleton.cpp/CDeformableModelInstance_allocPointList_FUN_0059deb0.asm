@@ -20,7 +20,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeleton.cpp_CDeformableModelInstance_free_FUN_0059df40
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     PUSH 0x64ed3e                       ; 0059ded9 | = "..\\core\\skeleton.cpp"
     SHL EAX,0x2                         ; 0059dede
     PUSH EAX                            ; 0059dee1
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0059dee2
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0059dee2
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0059dee7
     MOV dword ptr [EBX + 0x2234],EAX    ; 0059deea
     TEST EAX,EAX                        ; 0059def0

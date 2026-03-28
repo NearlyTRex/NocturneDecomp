@@ -127,17 +127,17 @@ void __cdecl CEditorTools::createCenteredDialog(CEditorTools *this_ptr,char *dia
 // Address: 0049e9d0
 int __cdecl showMultiChoiceDialog(CStrList *str_list,char *dialog_title,int dialog_mode);
 
-// Original: shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+// Original: shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060
 // Address: 0049f060
-int __cdecl CEditorTools::showConfirmationDialog(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
+int __cdecl CEditorTools::showYesNoDialog(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 // Address: 0049f0f0
 int __cdecl CEditorTools::showYesNoDialog(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 
-// Original: shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f180
+// Original: shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0049f180
 // Address: 0049f180
-int __cdecl CEditorTools::showConfirmationDialog(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
+int __cdecl CEditorTools::showYesAllNoCancelDialog(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
 // Address: 0049f270
@@ -211,9 +211,9 @@ void __cdecl CEditorTools::drawWindowSeparator(CEditorTools *editor_tools,int li
 // Address: 004a1330
 uint __cdecl CEditorTools::getTimeCycledColorByte(CEditorTools *this_ptr);
 
-// Original: shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380
+// Original: shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380
 // Address: 004a1380
-void __cdecl CEditorTools::setMousePointerType(CEditorTools *this_ptr,int use_clipping);
+void __cdecl CEditorTools::drawMousePointer(CEditorTools *this_ptr,int use_clipping);
 
 // Original: shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30
 // Address: 004a1b30
@@ -307,9 +307,9 @@ void __cdecl CStrList::removeAt(CStrList *this_ptr,int index);
 // Address: 004a2e00
 void __cdecl CStrList::remove(CStrList *this_ptr,int start_index,int end_index);
 
-// Original: shape_edittool.cpp_CStrList_sort_FUN_004a2ec0
+// Original: shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0
 // Address: 004a2ec0
-void __cdecl CStrList::sort(CStrList *this_ptr);
+void __cdecl CStrList::sortAll(CStrList *this_ptr);
 
 // Original: shape_edittool.cpp_CStrList_qsortByString_FUN_004a2ee0
 // Address: 004a2ee0

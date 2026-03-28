@@ -26,6 +26,6 @@ int __cdecl core_anvil_cpp_CAnvil_renderOpaque_FUN_00411ec0(CAnvil *this_ptr)
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               (&this_ptr->model,0.0,-1);
   }
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   return iVar1;
 }

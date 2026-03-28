@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_succubus.cpp_CSuccubus_ctor_FUN_005c6a80
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_succubus.cpp_factoryFunc_FUN_005c6a40
     PUSH 0x653fc3                       ; 005c6a42 | = "..\\core\\succubus.cpp"
     PUSH 0xef68                         ; 005c6a47
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005c6a4c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005c6a4c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005c6a51
     TEST EAX,EAX                        ; 005c6a54
     JNZ 0x005c6a59                      ; 005c6a56

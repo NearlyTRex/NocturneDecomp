@@ -83,9 +83,9 @@ CVector3i * __stack_esi normalizeVector3DFloat(CVector3i *input_vector,CVector3i
 // Address: 0050dad0
 int __cdecl vectorLength3DToInt(CVector3i *vector_ptr);
 
-// Original: engine_matrix.c_matrixPushAndTransform_FUN_0050db00
+// Original: engine_matrix.c_matrixPushAndRotate_FUN_0050db00
 // Address: 0050db00
-void __cdecl matrixPushAndTransform(int rotation_x,int rotation_y,int rotation_z);
+void __cdecl matrixPushAndRotate(int rotation_x,int rotation_y,int rotation_z);
 
 // Original: engine_matrix.c_setCameraOrigin_FUN_0050e270
 // Address: 0050e270

@@ -18,7 +18,7 @@
 ; float            Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0 at 00451bcb
+;   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 at 00451bcb
 ;
 ; Referenced Globals:
 ;   double g_CoronaRadiusScaleFactor = 0.00390625

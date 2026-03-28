@@ -42,7 +42,7 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_set.cpp_CDemonSet_computeLighting_FUN_0056e110
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
@@ -224,8 +224,8 @@ section .text
         ;   XREF to: 004bfddf (CONDITIONAL_JUMP)  ; LAB_004bfddf
     MOV EDX,dword ptr [0x006703ec]      ; 004bfd21 | g_CDemonRendererPtr2
     PUSH EDX                            ; 004bfd27 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004bfd28
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004bfd28
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     PUSH ESI                            ; 004bfd38
         ;   Label: LAB_004bfd38
     MOV EDI,dword ptr [0x006703ec]      ; 004bfd39 | g_CDemonRendererPtr2
@@ -291,6 +291,6 @@ section .text
     ADD ESP,0x4                         ; 004bfde5
     MOV EAX,[0x006703ec]                ; 004bfde8 | g_CDemonRendererPtr2
     PUSH EAX                            ; 004bfded | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004bfdee
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004bfdee
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
 

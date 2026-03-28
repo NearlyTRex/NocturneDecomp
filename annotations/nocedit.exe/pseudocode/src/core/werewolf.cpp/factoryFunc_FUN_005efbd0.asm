@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_werewolf.cpp_CWerewolf_ctor_FUN_005efc10
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_werewolf.cpp_factoryFunc_FUN_005efbd0
     PUSH 0x657c3e                       ; 005efbd2 | = "..\\core\\werewolf.cpp"
     PUSH 0xbf04                         ; 005efbd7
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005efbdc
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005efbdc
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005efbe1
     TEST EAX,EAX                        ; 005efbe4
     JNZ 0x005efbe9                      ; 005efbe6

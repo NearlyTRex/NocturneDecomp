@@ -6,7 +6,6 @@
 ; Parameters:
 ; CMuzzleFlash *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; CVector3i        Stack[-0x34]:12  local_34
 ; CVector3i        Stack[-0x28]:12  local_28
 ; CVector3i        Stack[-0x1c]:12  local_1c
 ; float            Stack[-0x10]:4  local_10

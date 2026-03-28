@@ -161,8 +161,8 @@ section .text
     CALL engine_matrix.c_initializeTrigTables_FUN_0050c530 ; 00507bc1
         ;   XREF to: 0050c530 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_initializeTrigTables_FUN_0050c530()
         ;   Label: LAB_00507bc1
-    CALL wincore_wddvmem.cpp_initTextureCache_FUN_005dd760 ; 00507bc6
-        ;   XREF to: 00403790 (UNCONDITIONAL_CALL)  ; CTextureCache * wincore_wddvmem.cpp_initTextureCache_FUN_005dd760()
+    CALL wincore_wddvmem.cpp_initTextureCache_FUN_00403790 ; 00507bc6
+        ;   XREF to: 00403790 (UNCONDITIONAL_CALL)  ; CTextureCache * wincore_wddvmem.cpp_initTextureCache_FUN_00403790()
     CALL engine_2d.c_initGraphicsSystem_FUN_00401010 ; 00507bcb
         ;   XREF to: 00401010 (UNCONDITIONAL_CALL)  ; void engine_2d.c_initGraphicsSystem_FUN_00401010()
     CALL wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80 ; 00507bd0

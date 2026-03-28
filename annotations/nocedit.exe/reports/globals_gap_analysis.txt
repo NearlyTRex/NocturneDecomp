@@ -2,21 +2,21 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19405
-  Named globals:             19146
+Total globals analyzed:      19412
+  Named globals:             19153
   DAT_ globals:              259
-Gaps found:                  1869
-  With exact size bounds:    1777
+Gaps found:                  1868
+  With exact size bounds:    1776
   With estimated bounds:     92
-Total gap bytes:             14,721,076
-  Exact gap bytes:           14,712,034
-Overlaps (size <= 0):        13284
+Total gap bytes:             14,721,064
+  Exact gap bytes:           14,712,022
+Overlaps (size <= 0):        13288
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
-  1-4 bytes (likely padding/alignment)          489
-  5-16 bytes (small vars)                       495
+  1-4 bytes (likely padding/alignment)          490
+  5-16 bytes (small vars)                       493
   17-64 bytes (structs/small arrays)            412
   65-256 bytes (medium data)                    179
   257-1024 bytes (large structs/arrays)         91
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: switchdataD_0057bbb0                     void*                at 0x0057bbb0
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1777) - size bounds are known precisely
+ALL EXACT GAPS (1776) - size bounds are known precisely
 --------------------------------------------------------------------------------
    4,185,048 bytes  at 0x00002428  between DAT_00002424                   and IMAGE_DOS_HEADER_00400000
    3,350,789 bytes  at 0x00ff0103  between g_ColorMagenta                 and g_CoronaLightCache
@@ -1287,8 +1287,6 @@ ALL EXACT GAPS (1777) - size bounds are known precisely
            8 bytes  at 0x005f8510  between switchdataD_005f850c           and PTR_caseD_3_005f8518
            8 bytes  at 0x005f8530  between switchdataD_005f852c           and PTR_caseD_3_005f8538
            8 bytes  at 0x00605954  between SUB_00605950                   and SUB_0060595c
-           8 bytes  at 0x00611464  between g_GetUserNameAFunc             and g_RegCloseKeyFunc
-           8 bytes  at 0x00611480  between g_RegSetValueExAFunc           and g_BringWindowToTopFunc
            8 bytes  at 0x00611538  between g_ExitProcessFunc              and g_FileTimeToLocalFileTimeFunc
            8 bytes  at 0x00611560  between g_FreeLibraryFunc              and g_GetCommandLineAFunc
            8 bytes  at 0x00611584  between g_GetCurrentProcessIdFunc      and g_GetEnvironmentStringsFunc
@@ -1564,6 +1562,7 @@ ALL EXACT GAPS (1777) - size bounds are known precisely
            4 bytes  at 0x005f8544  between PTR_caseD_1_005f8540           and PTR_caseD_3_005f8548
            4 bytes  at 0x00611400  between g_TextOutAFunc                 and g_joyGetDevCapsAFunc
            4 bytes  at 0x0061145c  between g_waveOutWriteFunc             and g_GetUserNameAFunc
+           4 bytes  at 0x00611484  between g_RevertToSelfFunc             and g_BringWindowToTopFunc
            4 bytes  at 0x0061148c  between g_BringWindowToTopFunc         and g_CloseClipboardFunc
            4 bytes  at 0x00611500  between g_UpdateWindowFunc             and g_CloseHandleFunc
            4 bytes  at 0x0061150c  between g_CreateDirectoryAFunc         and g_CreateFileAFunc
@@ -1960,7 +1959,7 @@ ALL EXACT GAPS (1777) - size bounds are known precisely
            1 bytes  at 0x0068572d  between g_ShiftJIS_TrailByteTable      and g_InitHandlerStatusStart
 
 --------------------------------------------------------------------------------
-OVERLAPS (13284) - next global starts inside previous
+OVERLAPS (13288) - next global starts inside previous
 --------------------------------------------------------------------------------
   241 bytes overlap ~
     s_engine_2d_c_00613004                   TerminatedCString    at 0x00613004  size=256
@@ -14346,8 +14345,17 @@ OVERLAPS (13284) - next global starts inside previous
   253 bytes overlap ~
     s_rt_006261e5                            TerminatedCString    at 0x006261e5  size=256
     s_engine_fileio_cpp_006261e8             TerminatedCString    at 0x006261e8
-  106 bytes overlap ~
+  235 bytes overlap ~
     s_engine_fileio_cpp_006261e8             TerminatedCString    at 0x006261e8  size=256
+    s_engine_fileio_cpp_006261fd             TerminatedCString    at 0x006261fd
+  235 bytes overlap ~
+    s_engine_fileio_cpp_006261fd             TerminatedCString    at 0x006261fd  size=256
+    s_fileManager_logOnAsVersi_00626212      TerminatedCString    at 0x00626212
+  196 bytes overlap ~
+    s_fileManager_logOnAsVersi_00626212      TerminatedCString    at 0x00626212  size=256
+    s_Can_t_log_on_to_server_a_0062624e      TerminatedCString    at 0x0062624e
+  208 bytes overlap ~
+    s_Can_t_log_on_to_server_a_0062624e      TerminatedCString    at 0x0062624e  size=256
     s_engine_fileio_cpp_0062627e             TerminatedCString    at 0x0062627e
   235 bytes overlap ~
     s_engine_fileio_cpp_0062627e             TerminatedCString    at 0x0062627e  size=256
@@ -41523,6 +41531,9 @@ OVERLAPS (13284) - next global starts inside previous
   3 bytes overlap
     g_VersionControlDirectory+2              undefined4           at 0x02d12aca  size=4
     g_VersionControlDirectory+3              undefined4           at 0x02d12acb
+  4 bytes overlap
+    g_VersionControlSession                  SVersionControlSessi at 0x02d12bd0  size=352
+    g_VersionControlSessionHandle            undefined4           at 0x02d12d2c
   8 bytes overlap
     UNION_UVector3_02d7b814                  UVector3             at 0x02d7b814  size=12
     UNION_UVector3_02d7b814+4                undefined4           at 0x02d7b818

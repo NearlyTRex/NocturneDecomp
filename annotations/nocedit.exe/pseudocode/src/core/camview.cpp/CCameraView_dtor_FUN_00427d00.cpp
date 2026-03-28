@@ -20,6 +20,6 @@ CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_00427d00(CCameraView
   if ((flags & 2) == 0) {
     return this_ptr;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);
+  shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(this_ptr);
   return this_ptr;
 }

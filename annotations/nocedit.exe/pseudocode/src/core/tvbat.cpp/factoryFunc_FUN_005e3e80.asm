@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_tvbat.cpp_CTVBat_ctor_FUN_005e3ef0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_tvbat.cpp_factoryFunc_FUN_005e3e80
     PUSH 0x656889                       ; 005e3e82 | = "..\\core\\tvbat.cpp"
     PUSH 0xc0f4                         ; 005e3e87
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005e3e8c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005e3e8c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005e3e91
     TEST EAX,EAX                        ; 005e3e94
     JNZ 0x005e3e99                      ; 005e3e96

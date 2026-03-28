@@ -1,22 +1,29 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 34,
+        "line": 62,
+        "message": "use of undeclared identifier 'stack0xfffffdd4'"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 568,
-    "complexity_score": 227,
+    "complexity_score": 224,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 212,
+    "pseudocode_lines": 209,
     "suspect_count": 1,
     "suspect_types": [
-      "warning_type_propagation"
+      "stack_ref"
     ],
-    "total_lines": 780
+    "total_lines": 777
   },
   "cross_references": [],
   "function": {
@@ -144,7 +151,7 @@
     {
       "addr": "0048c640",
       "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640"
     }
   ],
   "globals": [
@@ -275,19 +282,12 @@
     "pcode_op_count": 1975
   },
   "stack_frame": {
-    "frame_size": 564,
-    "local_size": 560,
+    "frame_size": 516,
+    "local_size": 512,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "local_22c",
-        "offset": -556,
-        "size": 48,
-        "type": "CMatrix3x4f"
-      },
       {
         "is_param": false,
         "name": "local_1fc",
@@ -453,12 +453,12 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
+      "description": "Direct stack address reference",
+      "line": 55,
+      "match": "&stack0xfffffdd4",
       "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
+      "text": "m,(CMatrix3x4f *)&stack0xfffffdd4);",
+      "type": "stack_ref"
     }
   ],
   "vtable_info": {

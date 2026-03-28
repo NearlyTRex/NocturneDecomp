@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 83,
-        "line": 60,
+        "line": 50,
         "message": "cast from pointer to smaller type 'byte' (aka 'unsigned char') loses information"
       }
     ],
@@ -13,20 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 276,
-    "complexity_score": 193,
+    "complexity_score": 154,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 103,
-    "suspect_count": 7,
+    "pseudocode_lines": 94,
+    "suspect_count": 5,
     "suspect_types": [
       "extra_output",
-      "pointer_cast",
-      "stack_alignment_array",
-      "warning_unmapped_variable"
+      "pointer_cast"
     ],
-    "total_lines": 379
+    "total_lines": 370
   },
   "cross_references": [
     {
@@ -231,19 +229,12 @@
     "pcode_op_count": 1533
   },
   "stack_frame": {
-    "frame_size": 4196,
-    "local_size": 4192,
+    "frame_size": 124,
+    "local_size": 120,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "afStackY_105c",
-        "offset": -4188,
-        "size": 3992,
-        "type": "float[998]"
-      },
       {
         "is_param": false,
         "name": "local_74",
@@ -321,32 +312,16 @@
   },
   "suspects": [
     {
-      "description": "Variable defined which should be unmapped",
-      "line": 2,
-      "match": "WARNING: Variable defined which should be unmapped",
-      "severity": "moderate",
-      "text": "/* WARNING: Variable defined which should be unmapped: afStackY_105c */",
-      "type": "warning_unmapped_variable"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
+      "line": 13,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "char *extraout_EDX;",
       "type": "extra_output"
     },
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 18,
-      "match": "afStackY_105c",
-      "severity": "moderate",
-      "text": "float afStackY_105c [998];",
-      "type": "stack_alignment_array"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 43,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)afStack_34[1] + -0xb) = *(byte *)((int)afStack_34[1] + -0xb) ^ (byte)&local_74;",
@@ -354,7 +329,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 43,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)afStack_34[1] + -0xb) = *(byte *)((int)afStack_34[1] + -0xb) ^ (byte)&local_74;",
@@ -362,7 +337,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 57,
+      "line": 47,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "*extraout_EDX = *extraout_EDX + (char)((uint)afStack_34[1] >> 8);",
@@ -370,7 +345,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 57,
+      "line": 47,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "*extraout_EDX = *extraout_EDX + (char)((uint)afStack_34[1] >> 8);",

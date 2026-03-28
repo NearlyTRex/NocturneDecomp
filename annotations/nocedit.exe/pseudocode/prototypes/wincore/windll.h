@@ -7,9 +7,9 @@
 // Address: 005b3e70
 void __cdecl clearScreen(void);
 
-// Original: wincore_windll.cpp_clearZBuffer_FUN_005b3ed4
+// Original: wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4
 // Address: 005b3ed4
-void __cdecl clearZBuffer(void);
+void __cdecl clearZBufferNative(void);
 
 // Original: wincore_windll.cpp_clearScreenRegion_FUN_005b3f37
 // Address: 005b3f37
@@ -103,13 +103,13 @@ int __cdecl beginScene(void);
 // Address: 005b72a0
 int __cdecl endScene(void);
 
-// Original: wincore_windll.cpp_selectTexture_FUN_005b72b3
+// Original: wincore_windll.cpp_selectTextureGlobal_FUN_005b72b3
 // Address: 005b72b3
-int __cdecl selectTexture(SMRGLTextureBasic *texture_info);
+int __cdecl selectTextureGlobal(SMRGLTextureBasic *texture_info);
 
-// Original: wincore_windll.cpp_updateTexture_FUN_005b72fb
+// Original: wincore_windll.cpp_updateTextureGlobal_FUN_005b72fb
 // Address: 005b72fb
-int __cdecl updateTexture(SMRGLTextureBasic *texture_info);
+int __cdecl updateTextureGlobal(SMRGLTextureBasic *texture_info);
 
 // Original: wincore_windll.cpp_selectTexture_FUN_005b7340
 // Address: 005b7340

@@ -19,7 +19,7 @@
 ;   int g_CurrentDebugLine
 ;
 ; Called Functions:
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -76,8 +76,8 @@ section .text
     PUSH ESI                            ; 00556c8c
     MOV dword ptr [0x0067d20c],EDI      ; 00556c8d | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],EBP      ; 00556c93 | g_CurrentDebugLine
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00556c99
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 00556c99
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 00556c9e
     POP EDI                             ; 00556ca1
     MOV EAX,EBX                         ; 00556ca2

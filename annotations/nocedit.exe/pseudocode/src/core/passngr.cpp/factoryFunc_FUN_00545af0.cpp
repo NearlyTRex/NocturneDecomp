@@ -11,7 +11,8 @@ CPassenger * __cdecl core_passngr_cpp_factoryFunc_FUN_00545af0(void)
 {
   CPassenger *pCVar1;
   
-  pCVar1 = (CPassenger *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x20448,"..\\core\\passngr.cpp",0x43);
+  pCVar1 = (CPassenger *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x20448,"..\\core\\passngr.cpp",0x43)
+  ;
   if (pCVar1 == (CPassenger *)0x0) {
     return (CPassenger *)0x0;
   }

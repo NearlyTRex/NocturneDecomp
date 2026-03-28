@@ -20,7 +20,7 @@
 ;   ... and 172 more
 ;
 ; Called Functions:
-;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005fe659
         ;   Label: shape_memdbg.cpp_free_FUN_005fe659
     PUSH EDX                            ; 005fe65d
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005fe65e
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    CALL shape_memdbg.cpp_debugFreeChecked_FUN_0050f210 ; 005fe65e
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFreeChecked_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005fe663
     RET                                 ; 005fe666
 

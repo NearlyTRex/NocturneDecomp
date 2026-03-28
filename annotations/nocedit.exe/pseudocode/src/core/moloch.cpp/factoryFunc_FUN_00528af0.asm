@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_moloch.cpp_CMoloch_ctor_FUN_00528b30
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_moloch.cpp_factoryFunc_FUN_00528af0
     PUSH 0x639d35                       ; 00528af2 | = "..\\core\\moloch.cpp"
     PUSH 0x22b98                        ; 00528af7
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 00528afc
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00528afc
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00528b01
     TEST EAX,EAX                        ; 00528b04
     JNZ 0x00528b09                      ; 00528b06

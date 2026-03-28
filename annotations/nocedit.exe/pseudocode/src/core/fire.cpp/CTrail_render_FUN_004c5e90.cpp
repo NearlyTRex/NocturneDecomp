@@ -10,7 +10,6 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
 
 {
   float fVar1;
-  SMRGLHeaderPrimitive local_78;
   CVector3i local_50;
   float local_44;
   float local_40;
@@ -25,11 +24,6 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,this_ptr->texture_ptr);
-  local_78.base.count = 4;
-  local_78.surface_normal.D = 0;
-  local_78.surface_normal.C = 0;
-  local_78.surface_normal.B = 0;
-  local_78.surface_normal.A = 0;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70
             (g_CDemonRendererPtr2,this_ptr->current_alpha);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
@@ -84,8 +78,8 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   g_RenderVertexBuffer[3].g = 0xffff;
   g_RenderVertexBuffer[3].b = 0xffff;
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-            (g_CDemonRendererPtr2,&local_78);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+            (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff88);
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   return;
 }

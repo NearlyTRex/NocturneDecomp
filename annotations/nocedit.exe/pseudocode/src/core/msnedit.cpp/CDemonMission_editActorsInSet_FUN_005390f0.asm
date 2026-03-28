@@ -830,8 +830,8 @@ section .text
         ;   Label: LAB_00539982
     MOV EDX,dword ptr [0x00678a60]      ; 00539984 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 0053998a | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380 ; 0053998b
-        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
+    CALL shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380 ; 0053998b
+        ;   XREF to: 004a1380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004a1380(CEditorTools * this_ptr, int use_clipping)
     ADD ESP,0x8                         ; 00539990
     PUSH 0x0                            ; 00539993
     PUSH 0x0                            ; 00539995
@@ -865,8 +865,8 @@ section .text
     PUSH 0x63c4b0                       ; 005399df | = "Exit editor?"
     MOV EDI,dword ptr [0x00678a60]      ; 005399e4 | g_CEditorToolsPtr
     PUSH EDI                            ; 005399ea | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 005399eb
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 005399eb
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 005399f0
     TEST EAX,EAX                        ; 005399f3
     JNZ 0x00539e00                      ; 005399f5
@@ -1684,8 +1684,8 @@ section .text
         ;   XREF to: 0053a316 (CONDITIONAL_JUMP)  ; LAB_0053a316
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0053a311
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0053a316
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0053a316
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
         ;   Label: LAB_0053a316
     PUSH 0x1                            ; 0053a31b
     PUSH 0x32758e4                      ; 0053a31d | g_CDemonCameraInstance
@@ -1967,8 +1967,8 @@ section .text
     PUSH 0x63c4d5                       ; 0053a616 | = "Save mission to %s.msn"
     MOV EBX,dword ptr [0x00678a60]      ; 0053a61b | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 0053a621 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 0053a622
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 0053a622
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0xc                         ; 0053a627
     TEST EAX,EAX                        ; 0053a62a
     JZ 0x00539dc5                       ; 0053a62c
@@ -2548,8 +2548,8 @@ section .text
     LEA EAX,[EBP + 0xfffff6da]          ; 0053ac13
         ;   Label: LAB_0053ac13
     PUSH EAX                            ; 0053ac19
-    CALL shape_edittool.cpp_CStrList_sort_FUN_004a2ec0 ; 0053ac1a
-        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sort_FUN_004a2ec0(CStrList * this_ptr)
+    CALL shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0 ; 0053ac1a
+        ;   XREF to: 004a2ec0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_sortAll_FUN_004a2ec0(CStrList * this_ptr)
     ADD ESP,0x4                         ; 0053ac1f
     PUSH EDI                            ; 0053ac22
     PUSH ESI                            ; 0053ac23

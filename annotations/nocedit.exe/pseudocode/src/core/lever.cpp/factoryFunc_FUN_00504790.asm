@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_lever.cpp_CLever_ctor_FUN_005047d0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_lever.cpp_factoryFunc_FUN_00504790
     PUSH 0x63105f                       ; 00504792 | = "..\\core\\lever.cpp"
     PUSH 0x814                          ; 00504797
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0050479c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0050479c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005047a1
     TEST EAX,EAX                        ; 005047a4
     JNZ 0x005047a9                      ; 005047a6

@@ -23,7 +23,7 @@
 ;   core_ground.cpp_CGround_free_FUN_004eefb0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_texlist.cpp_CTextureList_ctor_FUN_005dbdd0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
         ;   Label: LAB_004eef31
     PUSH 0x62e6da                       ; 004eef36 | = "..\\core\\ground.cpp"
     PUSH 0x1a5ec                        ; 004eef3b
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 004eef40
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004eef40
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004eef45
     TEST EAX,EAX                        ; 004eef48
     JZ 0x004eef55                       ; 004eef4a

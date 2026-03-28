@@ -27,7 +27,7 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044c410
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480
+;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
 ;   engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0
 ;
 ; *****************************************************************************
@@ -87,8 +87,8 @@ section .text
     ADD ESP,0x8                         ; 00472da8
     MOV ECX,dword ptr [0x006703ec]      ; 00472dab | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 00472db1 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 00472db2
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480()
+    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 ; 00472db2
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0()
     ADD ESP,0x4                         ; 00472db7
     MOV EBX,dword ptr [ESI + 0x1cc4]    ; 00472dba
     XOR EAX,EAX                         ; 00472dc0

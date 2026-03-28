@@ -83,7 +83,7 @@
 ;   engine_dosio.c_copyFileTimestamp_FUN_00481910
 ;   engine_dosio.c_ensureTrailingSlash_FUN_00481f80
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
-;   engine_dosio.c_getFileTimestamp_FUN_00481960
+;   engine_dosio.c_getFileSize_FUN_00481960
 ;   ... and 41 more
 ;
 ; *****************************************************************************
@@ -1636,8 +1636,8 @@ section .text
         ;   Label: LAB_004bc061
     PUSH EAX                            ; 004bc068
     PUSH 0x0                            ; 004bc069
-    CALL engine_dosio.c_getFileTimestamp_FUN_00481960 ; 004bc06b
-        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileTimestamp_FUN_00481960(char * directory, char * filename)
+    CALL engine_dosio.c_getFileSize_FUN_00481960 ; 004bc06b
+        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481960(char * directory, char * filename)
     ADD ESP,0x8                         ; 004bc070
     MOV EBX,EAX                         ; 004bc073
     TEST EAX,EAX                        ; 004bc075

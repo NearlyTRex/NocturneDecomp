@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c___vec_new_FUN_00601272
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     PUSH 0x622605                       ; 004943ae | = "..\\core\\dtrace.cpp"
     ADD EAX,0x4                         ; 004943b3
     PUSH EAX                            ; 004943b6
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 004943b7
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 004943b7
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004943bc
     PUSH EAX                            ; 004943bf
     CALL crt_memory.c___vec_new_FUN_00601272 ; 004943c0

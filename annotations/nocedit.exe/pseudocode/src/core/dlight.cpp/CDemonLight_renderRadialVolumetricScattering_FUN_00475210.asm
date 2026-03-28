@@ -6,7 +6,6 @@
 ; Parameters:
 ; CDemonLight *    Stack[0x4]:4   this_ptr
 ; Local Variables:
-; int              Stack[-0xe8]:4  local_e8
 ; SMRGLHeaderPrimitive Stack[-0xe0]:24  local_e0
 ; CVector3i        Stack[-0xb8]:12  local_b8
 ; CVector3i        Stack[-0xac]:12  local_ac
@@ -54,7 +53,7 @@
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
+;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
@@ -501,8 +500,8 @@ section .text
         ;   XREF to: 00475298 (CONDITIONAL_JUMP)  ; LAB_00475298
     MOV EBX,dword ptr [0x006703ec]      ; 0047586d | g_CDemonRendererPtr2
     PUSH EBX                            ; 00475873 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00475874
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00475874
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
     MOV EAX,dword ptr [ESP + 0xc0]      ; 00475894
         ;   Label: LAB_00475894
     JMP 0x004754f6                      ; 0047589b

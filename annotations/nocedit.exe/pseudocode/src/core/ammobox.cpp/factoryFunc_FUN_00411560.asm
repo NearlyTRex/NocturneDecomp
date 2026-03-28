@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_ammobox.cpp_CAmmoBox_ctor_FUN_004115a0
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_ammobox.cpp_factoryFunc_FUN_00411560
     PUSH 0x614bac                       ; 00411562 | = "..\\core\\ammobox.cpp"
     PUSH 0x34c                          ; 00411567
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0041156c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0041156c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00411571
     TEST EAX,EAX                        ; 00411574
     JNZ 0x00411579                      ; 00411576

@@ -11,7 +11,7 @@ CFlame * __cdecl core_flame_cpp_factoryFunc_FUN_004c9a60(void)
 {
   CFlame *pCVar1;
   
-  pCVar1 = (CFlame *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2a4,"..\\core\\flame.cpp",0x75);
+  pCVar1 = (CFlame *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x2a4,"..\\core\\flame.cpp",0x75);
   if (pCVar1 == (CFlame *)0x0) {
     return (CFlame *)0x0;
   }

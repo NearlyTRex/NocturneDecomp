@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_sound.cpp_CSound_dtor_FUN_005aaeb0 at 005b2d60
+;   core_sound.cpp_CSound_dtor_FUN_005b2d60 at 005b2d60
 ;
 ; Referenced Globals:
 ;   int g_ShutdownInProgress

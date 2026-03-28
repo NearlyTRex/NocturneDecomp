@@ -223,9 +223,9 @@ void __cdecl CDemonSet::buildMirrorList(CDemonSet *this_ptr);
 // Address: 00570c60
 void __cdecl CDemonSet::markMirrorCameraDirty(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_CDemonSet_setCameraView_FUN_00570c70
+// Original: core_set.cpp_CDemonSet_restoreCameraView_FUN_00570c70
 // Address: 00570c70
-void __cdecl CDemonSet::setCameraView(CDemonSet *this_ptr);
+void __cdecl CDemonSet::restoreCameraView(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0
 // Address: 00570ca0

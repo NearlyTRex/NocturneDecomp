@@ -41,7 +41,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -80,8 +80,8 @@ section .text
         ;   Label: LAB_0058e6c9
     PUSH 0x64aff0                       ; 0058e6ce | = "..\\core\\skeledit.cpp"
     PUSH 0x22b4                         ; 0058e6d3
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0058e6d8
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0058e6d8
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0058e6dd
     TEST EAX,EAX                        ; 0058e6e0
     JZ 0x0058e6ed                       ; 0058e6e2

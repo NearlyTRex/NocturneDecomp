@@ -1432,8 +1432,8 @@ section .text
     PUSH 0x64c370                       ; 005933eb | = "User \"%s\" is currently working on t..."
     MOV EDX,dword ptr [0x00678a60]      ; 005933f0 | g_CEditorToolsPtr
     PUSH EDX                            ; 005933f6 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 ; 005933f7
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 005933f7
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0xc                         ; 005933fc
     TEST EAX,EAX                        ; 005933ff
     JNZ 0x00592a67                      ; 00593401

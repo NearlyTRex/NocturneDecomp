@@ -365,8 +365,8 @@ section .text
     MOV ECX,0x1                         ; 0056ccd9
     ADD ESP,0x8                         ; 0056ccde
     MOV dword ptr [0x03277d14],ECX      ; 0056cce1 | g_CDemonRaytraceInstance
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0056cce7
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0056cce7
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
     PUSH 0x0                            ; 0056ccec
     MOV EBX,dword ptr [0x006810c8]      ; 0056ccee | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH 0x461c3f9a                     ; 0056ccf4

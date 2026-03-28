@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_flamecan.cpp_CFlameCan_ctor_FUN_004cb160
-;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_flamecan.cpp_factoryFunc_FUN_004cb120
     PUSH 0x62a2b2                       ; 004cb122 | = "..\\core\\flamecan.cpp"
     PUSH 0x5e8                          ; 004cb127
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 004cb12c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004cb12c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004cb131
     TEST EAX,EAX                        ; 004cb134
     JNZ 0x004cb139                      ; 004cb136

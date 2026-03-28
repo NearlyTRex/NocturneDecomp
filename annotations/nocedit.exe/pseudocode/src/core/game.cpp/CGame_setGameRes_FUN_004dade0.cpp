@@ -29,7 +29,7 @@ void __cdecl core_game_cpp_CGame_setGameRes_FUN_004dade0(CGame *this_ptr)
                  this_ptr->game_bpp);
     }
   }
-  engine_2d_c_resetGraphicsSystem_FUN_005ed2a0();
+  engine_2d_c_resetGraphicsSystem_FUN_00402a70();
   core_dcamera_cpp_CDemonCamera_init_FUN_0044c190(&g_CDemonCameraInstance,g_WindowHeight);
   if (g_WindowHeight < 0x180) {
     g_EditorFont = g_SmallEditorFont;

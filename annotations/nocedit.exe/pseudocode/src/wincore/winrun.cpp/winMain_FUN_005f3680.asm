@@ -36,7 +36,7 @@
 ;
 ; Called Functions:
 ;   BringWindowToTop
-;   core_main.c_enterMainGameMenu_FUN_00512f40
+;   core_main.c_enterMainGameMenu_FUN_00507a50
 ;   core_main.c_finalizeGameSystems_FUN_00508570
 ;   core_main.c_initializeGameSystems_FUN_00507a60
 ;   CreateWindowExA
@@ -291,8 +291,8 @@ section .text
     CALL core_main.c_initializeGameSystems_FUN_00507a60 ; 005f38f8
         ;   XREF to: 00507a60 (UNCONDITIONAL_CALL)  ; void core_main.c_initializeGameSystems_FUN_00507a60()
     ADD ESP,0x8                         ; 005f38fd
-    CALL core_main.c_enterMainGameMenu_FUN_00512f40 ; 005f3900
-        ;   XREF to: 00507a50 (UNCONDITIONAL_CALL)  ; int core_main.c_enterMainGameMenu_FUN_00512f40()
+    CALL core_main.c_enterMainGameMenu_FUN_00507a50 ; 005f3900
+        ;   XREF to: 00507a50 (UNCONDITIONAL_CALL)  ; int core_main.c_enterMainGameMenu_FUN_00507a50()
     CALL core_main.c_finalizeGameSystems_FUN_00508570 ; 005f3905
         ;   XREF to: 00508570 (UNCONDITIONAL_CALL)  ; void core_main.c_finalizeGameSystems_FUN_00508570()
     XOR EAX,EAX                         ; 005f390a

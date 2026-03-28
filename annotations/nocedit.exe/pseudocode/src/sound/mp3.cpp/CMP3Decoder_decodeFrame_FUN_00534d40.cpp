@@ -226,7 +226,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
         do {
           sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50
                     (pCVar2,local_cc8,local_290,(SBitAllocationTable *)&local_e0);
-          sound_mp3_cpp_requantizeLayer3Samples_FUN_0052fee0
+          sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0
                     ((int *)local_cc8,(uint *)local_290,(float *)local_9c8,(SMpegFrame *)&local_e0);
           sound_mp3_cpp_applyScalefactorsToSubbands_FUN_005302f0
                     ((float *)local_9c8,(int *)local_fc8,(SMpegFrame *)&local_e0,

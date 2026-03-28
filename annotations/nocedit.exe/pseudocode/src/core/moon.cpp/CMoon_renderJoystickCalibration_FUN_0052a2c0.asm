@@ -36,7 +36,7 @@
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
 ;   engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0
 ;   wincore_windll.cpp_clearScreen_FUN_005b3e70
-;   wincore_windll.cpp_clearZBuffer_FUN_005b3ed4
+;   wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     SUB ESP,0x24                        ; 0052a2c4
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0052a2c7
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0052a2cc
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
+    CALL wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4 ; 0052a2cc
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBufferNative_FUN_005b3ed4()
     PUSH 0x3f87558                      ; 0052a2d1 | g_ZeroVector
     MOV EDX,dword ptr [0x006703ec]      ; 0052a2d6 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0052a2dc | g_CDemonRendererInstance

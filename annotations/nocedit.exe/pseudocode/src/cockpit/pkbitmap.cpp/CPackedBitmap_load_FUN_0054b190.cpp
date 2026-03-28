@@ -39,7 +39,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
   if (row_stride == 0) {
     row_stride = this_ptr->width;
   }
-  ppvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  ppvVar2 = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                       ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x378);
   this_ptr->row_pointers = ppvVar2;
   if (ppvVar2 == (void **)0x0) {
