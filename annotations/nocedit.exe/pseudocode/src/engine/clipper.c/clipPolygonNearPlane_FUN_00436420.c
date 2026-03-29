@@ -31,7 +31,6 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
   longlong lVar1;
   longlong lVar2;
   
-  bVar12 = 0;
   iVar7 = 0;
   if (g_NearPlaneDistance != 0) {
     if (0 < g_ClippedVertexCount) {
@@ -47,10 +46,10 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
     if (g_NearPlaneDistance <= iVar7) {
       g_SecondaryClipVertexCount = g_ClippedVertexCount;
       iVar6 = 0;
-      piVar10 = &g_SecondaryClipVertexBuffer[0].projected_vertex.transformed_y;
-      piVar8 = &g_ClippedVertexBuffer[0].projected_vertex.transformed_y;
       g_SecondaryClipVertexBuffer[0].projected_vertex.transformed_x =
            g_ClippedVertexBuffer[0].projected_vertex.transformed_x;
+      piVar8 = &g_ClippedVertexBuffer[0].projected_vertex.transformed_y;
+      piVar10 = &g_SecondaryClipVertexBuffer[0].projected_vertex.transformed_y;
       iVar4 = g_ClippedVertexCount * 0x30 + -4;
       if (iVar4 != 0 && 3 < g_ClippedVertexCount * 0x30) {
         while (7 < iVar4) {
@@ -98,8 +97,7 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
             if (iVar4 != 0 && -9 < iVar4 + -8) {
               (pSVar8->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
               if (4 < iVar4) {
-                *(uint *)((int)pSVar8 + (uint)bVar12 * -8 + 4) =
-                     *(uint *)((int)pSVar7 + (uint)bVar12 * -8 + 4);
+                (pSVar8->projected_vertex).transformed_y = (pSVar7->projected_vertex).transformed_y;
               }
             }
             g_ClippedVertexCount = g_ClippedVertexCount + 1;
@@ -127,8 +125,8 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
             if (iVar4 != 0 && -9 < iVar4 + -8) {
               (pSVar11->projected_vertex).transformed_x = (pSVar9->projected_vertex).transformed_x;
               if (4 < iVar4) {
-                *(uint *)((int)pSVar11 + (uint)bVar12 * -8 + 4) =
-                     *(uint *)((int)pSVar9 + (uint)bVar12 * -8 + 4);
+                (pSVar11->projected_vertex).transformed_y = (pSVar9->projected_vertex).transformed_y
+                ;
               }
             }
             g_ClippedVertexCount = g_ClippedVertexCount + 1;

@@ -68,7 +68,6 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
   longlong lVar1;
   uint uVar11;
   
-  bVar22 = 0;
   if ((vertex_count < 0) || (0x10 < vertex_count)) {
     _sprintf(local_24c,"Too many poly verticies : %d",vertex_count);
     g_CurrentFilename = "..\\engine\\clipper.c";
@@ -119,8 +118,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
             if (iVar7 != 0 && -9 < iVar7 + -8) {
               (pSVar11->projected_vertex).transformed_x = (pSVar17->projected_vertex).transformed_x;
               if (4 < iVar7) {
-                *(uint *)((int)pSVar11 + (uint)bVar22 * -8 + 4) =
-                     *(uint *)((int)pSVar17 + (uint)bVar22 * -8 + 4);
+                (pSVar11->projected_vertex).transformed_y =
+                     (pSVar17->projected_vertex).transformed_y;
               }
             }
             vertex_indices = vertex_indices + 1;
@@ -420,8 +419,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
                 if (iVar12 != 0 && -9 < iVar12 + -8) {
                   (pSVar15->projected_vertex).transformed_x = (int)*plVar14;
                   if (4 < iVar12) {
-                    *(uint *)((int)pSVar15 + (uint)bVar22 * -8 + 4) =
-                         *(uint *)((int)plVar14 + (uint)bVar22 * -8 + 4);
+                    (pSVar15->projected_vertex).transformed_y = *(int *)((int)plVar14 + 4);
                   }
                 }
                 iVar10 = iVar10 + 4;
@@ -445,10 +443,11 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
               if (g_NearPlaneDistance <= iVar7) {
                 g_SecondaryClipVertexCount = g_ClippedVertexCount;
                 local_14 = 0;
-                plVar20 = (longlong *)((int)g_SecondaryClipVertexBuffer + (uint)bVar22 * -8 + 4);
-                plVar18 = (longlong *)((int)g_ClippedVertexBuffer + (uint)bVar22 * -8 + 4);
                 g_SecondaryClipVertexBuffer[0].projected_vertex.transformed_x =
                      g_ClippedVertexBuffer[0].projected_vertex.transformed_x;
+                plVar18 = (longlong *)&g_ClippedVertexBuffer[0].projected_vertex.transformed_y;
+                plVar20 = (longlong *)&g_SecondaryClipVertexBuffer[0].projected_vertex.transformed_y
+                ;
                 iVar7 = g_ClippedVertexCount * 0x30 + -4;
                 if (iVar7 != 0 && 3 < g_ClippedVertexCount * 0x30) {
                   while (7 < iVar7) {
@@ -461,8 +460,7 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
                   if (iVar7 != 0 && -9 < iVar7 + -8) {
                     *(int *)plVar20 = (int)*plVar18;
                     if (4 < iVar7) {
-                      *(uint *)((int)plVar20 + (uint)bVar22 * -8 + 4) =
-                           *(uint *)((int)plVar18 + (uint)bVar22 * -8 + 4);
+                      *(uint *)((int)plVar20 + 4) = *(uint *)((int)plVar18 + 4);
                     }
                   }
                 }
@@ -499,8 +497,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
                         (pSVar16->projected_vertex).transformed_x =
                              (pSVar15->projected_vertex).transformed_x;
                         if (4 < iVar7) {
-                          *(uint *)((int)pSVar16 + (uint)bVar22 * -8 + 4) =
-                               *(uint *)((int)pSVar15 + (uint)bVar22 * -8 + 4);
+                          (pSVar16->projected_vertex).transformed_y =
+                               (pSVar15->projected_vertex).transformed_y;
                         }
                       }
                       g_ClippedVertexCount = g_ClippedVertexCount + 1;
@@ -530,8 +528,8 @@ int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_co
                         (pSVar15->projected_vertex).transformed_x =
                              (pSVar19->projected_vertex).transformed_x;
                         if (4 < iVar7) {
-                          *(uint *)((int)pSVar15 + (uint)bVar22 * -8 + 4) =
-                               *(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);
+                          (pSVar15->projected_vertex).transformed_y =
+                               (pSVar19->projected_vertex).transformed_y;
                         }
                       }
                       g_ClippedVertexCount = g_ClippedVertexCount + 1;

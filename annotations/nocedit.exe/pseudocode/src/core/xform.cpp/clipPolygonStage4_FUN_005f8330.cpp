@@ -26,7 +26,6 @@ void __cdecl core_xform_cpp_clipPolygonStage4_FUN_005f8330(void)
   longlong lVar1;
   longlong lVar2;
   
-  bVar8 = 0;
   local_14 = 0;
   if (0 < g_ClipVertexCountStage4) {
     vertex_a = g_ClipVertexBufferStage4;
@@ -59,8 +58,7 @@ void __cdecl core_xform_cpp_clipPolygonStage4_FUN_005f8330(void)
         if (iVar1 != 0 && -9 < iVar1 + -8) {
           (pSVar3->projected_vertex).transformed_x = (pSVar2->projected_vertex).transformed_x;
           if (4 < iVar1) {
-            *(uint *)((int)pSVar3 + (uint)bVar8 * -8 + 4) =
-                 *(uint *)((int)pSVar2 + (uint)bVar8 * -8 + 4);
+            (pSVar3->projected_vertex).transformed_y = (pSVar2->projected_vertex).transformed_y;
           }
         }
         g_ClippedVertexCount = g_ClippedVertexCount + 1;
@@ -88,8 +86,7 @@ void __cdecl core_xform_cpp_clipPolygonStage4_FUN_005f8330(void)
         if (iVar5 != 0 && -9 < iVar5) {
           (pSVar7->projected_vertex).transformed_x = (pSVar6->projected_vertex).transformed_x;
           if (4 < iVar5) {
-            *(uint *)((int)pSVar7 + (uint)bVar8 * -8 + 4) =
-                 *(uint *)((int)pSVar6 + (uint)bVar8 * -8 + 4);
+            (pSVar7->projected_vertex).transformed_y = (pSVar6->projected_vertex).transformed_y;
           }
         }
         g_ClippedVertexCount = g_ClippedVertexCount + 1;

@@ -4,9 +4,9 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6914 ( 43.7%)
-  pointer_cast                    4446 ( 28.1%)
-  unknown_field                    896 (  5.7%)
+  decompiler_intrinsic            6914 ( 43.8%)
+  pointer_cast                    4417 ( 28.0%)
+  unknown_field                    898 (  5.7%)
   special_crt_function             439 (  2.8%)
   stack_param                      351 (  2.2%)
   unnamed_param                    320 (  2.0%)
@@ -95,12 +95,12 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (4446 occurrences)
+TYPE: pointer_cast (4417 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1411x  (uint *)((int)
-  1230x  (int *)((int)
+  1383x  (uint *)((int)
+  1231x  (int *)((int)
    321x  (float *)((int)
    209x  (SRenderVertex *)((int)
    193x  (double *)((int)
@@ -131,19 +131,19 @@ Example functions:
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar9) <...
 
 ====================================================================================================
-TYPE: unknown_field (896 occurrences)
+TYPE: unknown_field (898 occurrences)
 ====================================================================================================
 
 Unique patterns:
    363x  ._0_4_
-   346x  ._4_4_
+   347x  ._4_4_
     47x  ._0_2_
     36x  ._2_2_
     16x  ._0_1_
     11x  ._1_1_
     11x  ._12_4_
+    10x  ._8_4_
      9x  ._3_1_
-     9x  ._8_4_
      7x  ._4_8_
      5x  ._24_4_
      4x  ._2_1_

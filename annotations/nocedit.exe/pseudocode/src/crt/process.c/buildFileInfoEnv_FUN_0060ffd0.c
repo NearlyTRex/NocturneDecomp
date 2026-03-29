@@ -46,14 +46,11 @@ char * __cdecl buildFileInfoEnv(void)
   }
   else {
     file_handle_index = 0;
-    pcVar5 = pcVar3 + (uint)bVar7 * -8 + 4;
     *(uint *)pcVar3 = "C_FILE_INFO="._0_4_;
-    *(uint *)pcVar5 = *(uint *)("C_FILE_INFO=" + (uint)bVar7 * -8 + 4);
-    *(uint *)(pcVar5 + (uint)bVar7 * -8 + 4) =
-         *(uint *)("C_FILE_INFO=" + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
-    (pcVar5 + (uint)bVar7 * -8 + 4)[(uint)bVar7 * -8 + 4] =
-         ("C_FILE_INFO=" + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8)
-         [((uint)bVar7 * -2 + 1) * 4];
+    pcVar5 = pcVar3 + 4;
+    *(uint *)pcVar5 = "C_FILE_INFO="._4_4_;
+    *(uint *)(pcVar3 + 8) = "C_FILE_INFO="._8_4_;
+    pcVar3[0xc] = "C_FILE_INFO="[0xc];
     if (uVar4 != 0) {
       do {
         uVar4 = func_0x006088b0(file_handle_index);

@@ -155,6 +155,14 @@
     "declared_stack_bytes": 4,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "0x0048f9da": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.6625,
     "instruction_count": 80,

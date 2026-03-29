@@ -4,25 +4,25 @@
       {
         "category": "other",
         "column": 16,
+        "line": 49,
+        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 16,
         "line": 50,
         "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 51,
+        "line": 77,
         "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 79,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 80,
+        "line": 78,
         "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       }
     ],
@@ -31,20 +31,19 @@
   },
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 255,
+    "complexity_score": 207,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 15,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 95,
-    "suspect_count": 14,
+    "pseudocode_lines": 92,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
       "unknown_field",
       "warning_unreachable"
     ],
-    "total_lines": 254
+    "total_lines": 251
   },
   "cross_references": [],
   "function": {
@@ -166,6 +165,44 @@
     "declared_stack_bytes": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "0x005f83b4": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f83d0": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f83d6": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f843f": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f845b": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8461": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.658333333333333,
     "instruction_count": 120,
@@ -239,7 +276,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 43,
+      "line": 42,
       "match": "._0_4_",
       "severity": "mild",
       "text": "lVar1._0_4_ = (pSVar2->projected_vertex).transformed_x;",
@@ -247,7 +284,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 44,
+      "line": 43,
       "match": "._4_4_",
       "severity": "mild",
       "text": "lVar1._4_4_ = (pSVar2->projected_vertex).transformed_y;",
@@ -255,7 +292,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 45,
       "match": "ROUND",
       "severity": "mild",
       "text": "(pSVar3->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar1);",
@@ -263,31 +300,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 47,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar1) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 55,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar3 + (uint)bVar8 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar2 + (uint)bVar8 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 72,
+      "line": 70,
       "match": "._0_4_",
       "severity": "mild",
       "text": "lVar2._0_4_ = (pSVar6->projected_vertex).transformed_x;",
@@ -295,7 +316,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 73,
+      "line": 71,
       "match": "._4_4_",
       "severity": "mild",
       "text": "lVar2._4_4_ = (pSVar6->projected_vertex).transformed_y;",
@@ -303,7 +324,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 73,
       "match": "ROUND",
       "severity": "mild",
       "text": "(pSVar7->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);",
@@ -311,27 +332,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 75,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar7 + (uint)bVar8 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar6 + (uint)bVar8 * -8 + 4);",
-      "type": "pointer_cast"
     }
   ]
 }
