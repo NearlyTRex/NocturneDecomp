@@ -12,7 +12,7 @@ You are fixing compilation errors in Ghidra-decompiled C/C++ pseudocode for a ga
 
 ### Fidelity Requirements
 - **Assembly is ground truth.** When the decompiler output is ambiguous or wrong, consult the `.asm` file (same directory, same base name) to understand what the code actually does.
-- Keep the function signature identical (name, calling convention, parameters, return type) unless the assembly proves it wrong.
+- **The function signature MUST NOT change.** The name, calling convention, parameters, and return type must be identical to the original. This is non-negotiable — the signature comes from Ghidra's analysis and must be preserved exactly. Only the function body internals may be modified.
 - Keep variable names from the original where possible.
 - Keep the overall structure (control flow, variable declarations) as close to the original as possible.
 - Only change what is necessary to make it compile and be semantically correct.
@@ -28,9 +28,10 @@ You are fixing compilation errors in Ghidra-decompiled C/C++ pseudocode for a ga
 ### Prefer Ghidra Fixes Over Code Fixes
 Before writing a `.keep` file, check whether the compilation error is caused by something that can be fixed upstream in Ghidra. If the root cause is a wrong type annotation in Ghidra, fixing it there will produce correct decompiler output for ALL functions that use it — a `.keep` file only fixes one function.
 
-**If you identify any of these, STOP and suggest the Ghidra fix instead of creating a `.keep` file:**
+**If you identify any of these, STOP and tell the user to fix it in Ghidra. Skip the function and move on to the next one:**
 - **Wrong global variable type** — e.g., a global typed as `float` that should be a `float *`, or an `int` that should be a struct pointer. Fix the type in Ghidra's data type manager.
-- **Wrong function signature** — wrong return type, wrong parameter types/count, wrong calling convention. Fix the function signature in Ghidra.
+- **Wrong function return type** — e.g., a function returning `CPackedBitmapSet *` when it should return `void` (common when Ghidra infers a return from EAX being live at RET but no caller uses it). Fix the function signature in Ghidra.
+- **Wrong function parameter types/count or calling convention** — Fix the function signature in Ghidra.
 - **Wrong struct field type or layout** — a field typed as `int` that should be `float`, or a struct with wrong size/alignment. Fix the struct definition in Ghidra.
 - **Wrong calling convention on a vtable entry** — causes ESP tracking drift for the rest of the function. Fix the convention on the function pointer type in the vtable struct.
 - **Missing or wrong function pointer type** — e.g., a vtable slot typed as `int` instead of a function pointer. Fix the vtable struct in Ghidra.
@@ -159,12 +160,14 @@ int_ptr = (int *)uint_ptr;
         INSTRUCTION  ; ADDRESS
    ```
 3. **Identify the minimal fix** — change only what's needed to compile.
-4. **Write the `.keep.cpp` file** with the fix applied.
-5. **Verify compilation** by running:
+4. **Create the `.keep` file by copying the original** — always use `cp` to copy the original `.cpp`/`.c` to the `.keep.cpp`/`.keep.c` path first, then apply edits to the copy. This preserves the original structure and makes it easy to diff the changes. Never write a `.keep` file from scratch.
+5. **Edit the `.keep` file** — add the `// MANUAL RECONSTRUCTION` header line and apply the minimal fix.
+6. **Verify compilation** by running:
    ```
    clang++ -m32 -mmmx -fasm-blocks -fsyntax-only -std=gnu++11 \
      -Wno-everything -Warray-bounds -Wformat -Wformat-overflow \
      -Werror=format -Werror=format-overflow \
+     -Wno-format-security -Wno-format-extra-args \
      -Wincompatible-pointer-types -Wint-conversion \
      -Wreturn-type -Wtautological-compare \
      -I annotations/nocedit.exe/pseudocode/include \

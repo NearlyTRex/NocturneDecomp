@@ -63,7 +63,7 @@ LAB_00556a6b:
     g_CurrentLineNumber = 0x67;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Could not allocate data buffer.");
   }
-  ppvVar2 = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+  ppvVar2 = (void **)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                       ((uint)(ushort)this_ptr->height << 2,"..\\shape\\quantize.cpp",0x49d);
   this_ptr->row_table = ppvVar2;
   if (ppvVar2 == (void **)0x0) {

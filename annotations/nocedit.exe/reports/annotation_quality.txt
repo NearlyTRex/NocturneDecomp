@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        227 ( 3.5%)
+  Functions with type issues:        226 ( 3.5%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          3
-    Undefined types in variables:      212
+    Undefined types in variables:      211
     Unresolved stack params:           17
 
-  Excluded (.keep / MMX / by-value):   14 functions
+  Excluded (.keep / MMX / by-value):   15 functions
     Wrong calling convention:          0
-    Undefined types in variables:      12
+    Undefined types in variables:      13
     Unresolved stack params:           4
 
 ====================================================================================================
@@ -197,7 +197,7 @@ Unresolved stack parameters (missing from signature) (17)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (212)
+Undefined types in variables (211)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -480,11 +480,6 @@ Undefined types in variables (212)
     Locals:  local_118 (undefined4), uStack_114 (undefined4), local_110 (undefined8), local_108 (undefined4), uStack_104 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CActorProperty_editInteractive
-    Address: 0x0040eed0  File: core/actor.cpp
-    Locals:  local_aac (undefined1[300]), local_750 (undefined1[260]), local_10f (undefined1[99]), local_ab (undefined1[99])
-    Suggested: Resolve undefined types to concrete types
-
   CMobster_processWeaponPickup
     Address: 0x00526d90  File: core/mobster.cpp
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_14 (undefined4)
@@ -553,11 +548,6 @@ Undefined types in variables (212)
   mpegLayer3StereoProcess
     Address: 0x005325e0  File: sound/mp3.cpp
     Locals:  local_2080 (undefined4), local_207c (undefined4), uStack_57a (undefined4), local_18 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonActor_doCheckForInvalidPointers
-    Address: 0x0040ac80  File: core/actor.cpp
-    Locals:  temp_z (undefined8), temp_y (undefined8), temp_x (undefined8)
     Suggested: Resolve undefined types to concrete types
 
   CBoxActor_process
@@ -643,6 +633,11 @@ Undefined types in variables (212)
   buildSockaddrIn
     Address: 0x005e19d0  File: support/trisock.cpp
     Locals:  auStackY_17f4 (undefined4[1524]), local_18 (undefined4), auStack_10 (undefined4[2])
+    Suggested: Resolve undefined types to concrete types
+
+  CActorProperty_editInteractive
+    Address: 0x0040eed0  File: core/actor.cpp
+    Locals:  local_10f (undefined1[99]), local_ab (undefined1[99])
     Suggested: Resolve undefined types to concrete types
 
   CBugs_findNextSwarmVertex
@@ -1309,7 +1304,7 @@ Unresolved stack params - by-value struct passing (4)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (8)
+Undefined types - .keep overrides (9)
 --------------------------------------------------------------------------------
 
   closestPointOnSegment3D
@@ -1330,6 +1325,11 @@ Undefined types - .keep overrides (8)
   distancePointToSegmentXY
     Address: 0x005d64a0  File: shape/superopt.cpp
     Locals:  auStackY_1824 (undefined4[1524]), local_48 (undefined4), local_38 (undefined4), uStack_34 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonActor_doCheckForInvalidPointers
+    Address: 0x0040ac80  File: core/actor.cpp
+    Locals:  temp_z (undefined8), temp_y (undefined8), temp_x (undefined8)
     Suggested: Resolve undefined types to concrete types
 
   CEventList_setTimerEvent

@@ -189,18 +189,22 @@ def apply_nop_patch(program, addr, length):
     cmd.applyTo(program)
 
 
-def patch_prologues(program, dry_run=True, pattern_filter=None):
+def patch_prologues(program, dry_run=True, pattern_filter=None, func_filter=None):
     """Find and patch non-standard prologues.
 
     Args:
         program: Ghidra program object
         dry_run: If True, only report what would be patched
         pattern_filter: 'and-esp', 'sub-ebp', or None for both
+        func_filter: Only patch functions whose name contains this substring
 
     Returns:
         Dict with statistics
     """
     results = find_all_prologue_patterns(program)
+    if func_filter:
+        results = [(f, info) for f, info in results
+                   if func_filter.lower() in f.getName().lower()]
 
     stats = {
         'total_functions': len(list(program.getFunctionManager().getFunctions(True))),
@@ -607,7 +611,7 @@ def main():
     parser.add_argument("--limit", type=int, default=10,
                         help="Max functions to test in --test mode (default: 10)")
     parser.add_argument("--func", type=str, default=None,
-                        help="Only test functions whose name contains this substring")
+                        help="Only process functions whose name contains this substring")
 
     args = parser.parse_args()
 
@@ -660,6 +664,7 @@ def main():
                         currentProgram,
                         dry_run=dry_run,
                         pattern_filter=args.pattern,
+                        func_filter=args.func,
                     )
                     print_report(stats, dry_run, args.pattern)
                 finally:

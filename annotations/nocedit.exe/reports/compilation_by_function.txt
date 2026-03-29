@@ -5,172 +5,35 @@ FUNCTION COMPILATION ERRORS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 5927 (91.8%)
-Failed: 527
+Successful: 5948 (92.2%)
+Failed: 506
 
 ====================================================================================================
-cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90 (1 error)
+core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (11 errors)
 ====================================================================================================
-  Line 25 [incompatible_types]: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  Line 93 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  Line 208 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  Line 255 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  Line 463 [format_error]: format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]
+  Line 463 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
+  Line 495 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  Line 496 [format_error]: format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]
+  Line 501 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  Line 573 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]
+  Line 573 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]
+  Line 721 [format_error]: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
 
 ====================================================================================================
-cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730 (1 error)
+core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 (8 errors)
 ====================================================================================================
-  Line 37 [incompatible_types]: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
-
-====================================================================================================
-cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30 (1 error)
-====================================================================================================
-  Line 30 [undeclared_identifier]: use of undeclared identifier 'stack0xfffffff4'
-
-====================================================================================================
-cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690 (2 errors)
-====================================================================================================
-  Line 24 [incompatible_types]: assigning to 'char *' from incompatible type 'void *'
-  Line 55 [type_error]: member reference base type 'int' is not a structure or union
-
-====================================================================================================
-cockpit_ckptutil.c_rotateCircularBitmap_FUN_00433030 (2 errors)
-====================================================================================================
-  Line 63 [pointer_type]: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
-  Line 88 [pointer_type]: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
-
-====================================================================================================
-cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0 (1 error)
-====================================================================================================
-  Line 326 [pointer_type]: cannot initialize return object of type 'SEdge *' with an lvalue of type 'void *'
-
-====================================================================================================
-cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70 (1 error)
-====================================================================================================
-  Line 58 [pointer_type]: comparison of distinct pointer types ('ushort *' (aka 'unsigned short *') and 'char *')
-
-====================================================================================================
-cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080 (1 error)
-====================================================================================================
-  Line 15 [incompatible_types]: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-
-====================================================================================================
-cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190 (2 errors)
-====================================================================================================
-  Line 42 [incompatible_types]: assigning to 'void **' from incompatible type 'void *'
-  Line 89 [format_error]: format specifies type 'char *' but the argument has type 'CPackedBitmap *' [-Werror,-Wformat]
-
-====================================================================================================
-cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860 (1 error)
-====================================================================================================
-  Line 20 [format_error]: format specifies type 'char *' but the argument has type 'CPackedBitmap *' [-Werror,-Wformat]
-
-====================================================================================================
-cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690 (1 error)
-====================================================================================================
-  Line 64 [incompatible_types]: assigning to 'void **' from incompatible type 'void *'
-
-====================================================================================================
-cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000 (1 error)
-====================================================================================================
-  Line 16 [incompatible_types]: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-
-====================================================================================================
-cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20 (1 error)
-====================================================================================================
-  Line 37 [pointer_type]: comparison of distinct pointer types ('ushort *' (aka 'unsigned short *') and 'char *')
-
-====================================================================================================
-cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0 (1 error)
-====================================================================================================
-  Line 18 [incompatible_types]: assigning to 'CPackedBitmapSet *' from incompatible type 'void *'
-
-====================================================================================================
-cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40 (2 errors)
-====================================================================================================
-  Line 40 [format_error]: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
-  Line 52 [format_error]: format specifies type 'unsigned int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
-
-====================================================================================================
-cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0 (2 errors)
-====================================================================================================
-  Line 35 [incompatible_types]: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  Line 37 [format_error]: format specifies type 'unsigned int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
-
-====================================================================================================
-core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (19 errors)
-====================================================================================================
-  Line 13 [other]: unknown type name 'code'
-  Line 96 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
-  Line 157 [incompatible_types]: assigning to 'char *' from incompatible type 'byte[300]' (aka 'unsigned char[300]')
-  Line 169 [incompatible_types]: no matching function for call to 'shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0'
-  Line 177 [incompatible_types]: assigning to 'char *' from incompatible type 'byte[300]' (aka 'unsigned char[300]')
-  Line 181 [cast_error]: C-style cast from 'char' to 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)') is not allowed
-  Line 183 [undeclared_identifier]: use of undeclared identifier 'code'
-  Line 185 [other]: subscript of pointer to function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
-  Line 186 [pointer_arithmetic]: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
-  Line 187 [undeclared_identifier]: use of undeclared identifier 'code'
-  Line 211 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
-  Line 245 [type_error]: member reference base type 'EActorPropertyType' (aka 'int') is not a structure or union
-  Line 258 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
-  Line 292 [type_error]: member reference base type 'EActorPropertyType' (aka 'int') is not a structure or union
-  Line 327 [incompatible_types]: assigning to 'char *' from incompatible type 'byte[260]' (aka 'unsigned char[260]')
-  Line 355 [incompatible_types]: no matching function for call to 'makepath'
-  Line 364 [incompatible_types]: assigning to 'char *' from incompatible type 'byte[260]' (aka 'unsigned char[260]')
-  Line 368 [cast_error]: C-style cast from 'char' to 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)') is not allowed
-  Line 370 [undeclared_identifier]: use of undeclared identifier 'code'
-
-====================================================================================================
-core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 (15 errors)
-====================================================================================================
-  Line 28 [other]: unknown type name 'code'
-  Line 32 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 50 [cast_error]: cast from pointer to smaller type 'char' loses information
-  Line 55 [other]: subscript of pointer to function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
-  Line 56 [pointer_arithmetic]: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
-  Line 59 [undeclared_identifier]: use of undeclared identifier 'code'
-  Line 162 [undeclared_identifier]: use of undeclared identifier 'code'
-  Line 166 [undeclared_identifier]: use of undeclared identifier 'code'
-  Line 174 [format_error]: format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]
-  Line 174 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
-  Line 210 [incompatible_types]: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  Line 237 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]
-  Line 237 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]
-  Line 277 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 286 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-
-====================================================================================================
-core_actor.cpp_CDemonActor_ctor_FUN_004088b0 (18 errors)
-====================================================================================================
-  Line 20 [missing_member]: no member named 'unk15' in 'CDemonActor'
-  Line 29 [missing_member]: no member named 'heading' in 'UOrientationVector'
-  Line 30 [missing_member]: no member named 'bank' in 'UOrientationVector'
-  Line 31 [missing_member]: no member named 'pitch' in 'UOrientationVector'
-  Line 37 [missing_member]: no member named 'was_created' in 'CDemonActor'
-  Line 40 [missing_member]: no member named 'unk2' in 'CDemonActor'
-  Line 41 [missing_member]: no member named 'unk3' in 'CDemonActor'
-  Line 42 [missing_member]: no member named 'unk3' in 'CDemonActor'
-  Line 43 [missing_member]: no member named 'unk3' in 'CDemonActor'
-  Line 44 [missing_member]: no member named 'unk4' in 'CDemonActor'
-  Line 45 [missing_member]: no member named 'unk4' in 'CDemonActor'
-  Line 46 [missing_member]: no member named 'unk4' in 'CDemonActor'
-  Line 54 [missing_member]: no member named 'unk5' in 'CDemonActor'
-  Line 56 [missing_member]: no member named 'unk8' in 'CDemonActor'
-  Line 57 [missing_member]: no member named 'unk6' in 'CDemonActor'
-  Line 58 [missing_member]: no member named 'unk7' in 'CDemonActor'
-  Line 64 [missing_member]: no member named 'unk14' in 'CDemonActor'
-  Line 65 [missing_member]: no member named 'unk10' in 'CDemonActor'
-
-====================================================================================================
-core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 (5 errors)
-====================================================================================================
-  Line 37 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 42 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 60 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 86 [format_error]: format specifies type 'unsigned int' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
-  Line 118 [format_error]: format specifies type 'unsigned int' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
-
-====================================================================================================
-core_actor.cpp_CDemonActor_load_FUN_0040b050 (2 errors)
-====================================================================================================
-  Line 65 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
-  Line 70 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  Line 30 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  Line 172 [format_error]: format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]
+  Line 172 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
+  Line 208 [incompatible_types]: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
+  Line 235 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]
+  Line 235 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[100]' [-Werror,-Wformat]
+  Line 275 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  Line 284 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
 core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 (15 errors)
@@ -2278,13 +2141,6 @@ core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (4 errors)
   Line 268 [other]: array type 'byte[4]' (aka 'unsigned char[4]') is not assignable
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510 (3 errors)
-====================================================================================================
-  Line 74 [format_error]: format specifies type 'int' but the argument has type 'int *' [-Werror,-Wformat]
-  Line 74 [format_error]: format specifies type 'int' but the argument has type 'int *' [-Werror,-Wformat]
-  Line 75 [format_error]: format specifies type 'int' but the argument has type 'int *' [-Werror,-Wformat]
-
-====================================================================================================
 core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0 (1 error)
 ====================================================================================================
   Line 75 [undeclared_identifier]: use of undeclared identifier 'stack0x00000000'
@@ -3473,11 +3329,6 @@ shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250 (2 errors)
 ====================================================================================================
   Line 38 [format_error]: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   Line 39 [format_error]: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
-
-====================================================================================================
-shape_quantize.cpp_CBitmap_ctor_FUN_00556a00 (1 error)
-====================================================================================================
-  Line 66 [incompatible_types]: assigning to 'void **' from incompatible type 'void *'
 
 ====================================================================================================
 shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (3 errors)

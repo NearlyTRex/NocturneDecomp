@@ -705,7 +705,7 @@ def _transform_void_cast_line(line, var_types):
         if assign_match:
             var_name = assign_match.group(2)
             var_type = var_types.get(var_name)
-            if var_type and var_type.replace('*', '').strip() != 'void':
+            if var_type and var_type != 'void *':
                 cast = '(%s)' % var_type
                 prefix = assign_match.group(1)
                 rest = line[len(prefix):]

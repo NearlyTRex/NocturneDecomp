@@ -4,9 +4,9 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6914 ( 43.8%)
-  pointer_cast                    4416 ( 28.0%)
-  unknown_field                    898 (  5.7%)
+  decompiler_intrinsic            6914 ( 43.9%)
+  pointer_cast                    4413 ( 28.0%)
+  unknown_field                    896 (  5.7%)
   special_crt_function             439 (  2.8%)
   stack_param                      351 (  2.2%)
   unnamed_param                    320 (  2.0%)
@@ -14,7 +14,7 @@ SUSPECT TYPE COUNTS
   nonstandard_int                  267 (  1.7%)
   warning_inlined_function         264 (  1.7%)
   stack_ref                        250 (  1.6%)
-  unresolved_funcptr               171 (  1.1%)
+  unresolved_funcptr               158 (  1.0%)
   warning_type_propagation         131 (  0.8%)
   param_count_too_few              119 (  0.8%)
   unaffected_reg                   106 (  0.7%)
@@ -95,19 +95,19 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (4416 occurrences)
+TYPE: pointer_cast (4413 occurrences)
 ====================================================================================================
 
 Unique patterns:
   1383x  (uint *)((int)
-  1230x  (int *)((int)
+  1231x  (int *)((int)
    321x  (float *)((int)
    209x  (SRenderVertex *)((int)
    193x  (double *)((int)
    189x  (void *)((int)
-   170x  (byte *)((int)
+   169x  (byte *)((int)
     86x  (ushort *)((int)
-    70x  (char *)((int)
+    69x  (char *)((int)
     61x  (short *)((int)
     38x  (CMatrix3x4f *)((int)
     34x  (SShapeEditorPolygon *)((int)
@@ -131,7 +131,7 @@ Example functions:
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar9) <...
 
 ====================================================================================================
-TYPE: unknown_field (898 occurrences)
+TYPE: unknown_field (896 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -139,7 +139,7 @@ Unique patterns:
    347x  ._4_4_
     47x  ._0_2_
     36x  ._2_2_
-    16x  ._0_1_
+    14x  ._0_1_
     11x  ._1_1_
     11x  ._12_4_
     10x  ._8_4_
@@ -491,12 +491,12 @@ Example functions:
     local_8 = &stack0x0000000c;...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (171 occurrences)
+TYPE: unresolved_funcptr (158 occurrences)
 ====================================================================================================
 
 Unique patterns:
    119x  code *
-    52x  code
+    39x  code
 
 Example functions:
   crt_fstream.cpp_istream_seekg_FUN_00600ee4

@@ -5,26 +5,26 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 5927 (91.8%)
-Failed: 527
+Successful: 5948 (92.2%)
+Failed: 506
 
 ERROR CATEGORIES
 --------------------------------------------------
-  format_error                    1103
-  type_error                       426
-  incompatible_types               163
-  cast_error                       149
-  undeclared_identifier            131
+  format_error                    1096
+  type_error                       423
+  incompatible_types               147
+  cast_error                       146
+  undeclared_identifier            124
   syntax_error                      41
-  other                             30
-  pointer_type                      29
-  missing_member                    26
-  pointer_arithmetic                 9
+  other                             26
+  pointer_type                      24
+  missing_member                     8
+  pointer_arithmetic                 7
   argument_error                     4
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: format_error (1103 errors)
+CATEGORY: format_error (1096 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -88,10 +88,10 @@ CATEGORY: format_error (1103 errors)
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     Line 96: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Wer...
 
-  ... and 272 more errors
+  ... and 265 more errors
 
 ====================================================================================================
-CATEGORY: type_error (426 errors)
+CATEGORY: type_error (423 errors)
 ====================================================================================================
 
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -104,8 +104,6 @@ CATEGORY: type_error (426 errors)
     Line 20: invalid suffix '._0_4_' on floating constant...
   shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
     Line 43: invalid suffix '._4_4_' on floating constant...
-  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-    Line 245: member reference base type 'EActorPropertyType' (aka 'int') is not a structure o...
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
     Line 412: member reference base type 'byte[13608]' (aka 'unsigned char[13608]') is not a s...
   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
@@ -154,17 +152,17 @@ CATEGORY: type_error (426 errors)
     Line 132: member reference base type 'double' is not a structure or union...
   shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
     Line 79: member reference base type 'double' is not a structure or union...
+  shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
+    Line 75: member reference base type 'double' is not a structure or union...
 
-  ... and 51 more errors
+  ... and 49 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (163 errors)
+CATEGORY: incompatible_types (147 errors)
 ====================================================================================================
 
   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
     Line 71: assigning to 'CDemonGlobe *' from incompatible type 'void *'...
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0
-    Line 18: assigning to 'CPackedBitmapSet *' from incompatible type 'void *'...
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 24: assigning to 'CPodAuditRecord *' from incompatible type 'void *'...
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
@@ -191,8 +189,6 @@ CATEGORY: incompatible_types (163 errors)
     Line 38: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int...
   core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0
     Line 288: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int...
-  cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
-    Line 37: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'...
   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
     Line 46: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'...
   engine_pcx.c_writePCXScanline_FUN_00548c50
@@ -201,10 +197,6 @@ CATEGORY: incompatible_types (163 errors)
     Line 23: assigning to 'char *' from incompatible type 'HANDLE' (aka 'void *')...
   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
     Line 38: assigning to 'char *' from incompatible type 'LPVOID' (aka 'void *')...
-  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-    Line 157: assigning to 'char *' from incompatible type 'byte[300]' (aka 'unsigned char[300...
-  cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
-    Line 24: assigning to 'char *' from incompatible type 'void *'...
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
     Line 182: assigning to 'char *' from incompatible type 'void *'...
   sound_sndmain.cpp_allocMixBuffers_FUN_005a5730
@@ -221,11 +213,19 @@ CATEGORY: incompatible_types (163 errors)
     Line 24: assigning to 'int *' from incompatible type 'void *'...
   shape_superopt.cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20
     Line 24: assigning to 'int *' from incompatible type 'void *'...
+  shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0
+    Line 33: assigning to 'int *' from incompatible type 'void *'...
+  core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770
+    Line 33: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'...
+  shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
+    Line 50: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'...
+  shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
+    Line 79: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'...
 
-  ... and 54 more errors
+  ... and 43 more errors
 
 ====================================================================================================
-CATEGORY: cast_error (149 errors)
+CATEGORY: cast_error (146 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -252,8 +252,6 @@ CATEGORY: cast_error (149 errors)
     Line 312: C-style cast from 'CWeapon *' to 'float' is not allowed...
   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
     Line 42: C-style cast from 'UOrientationVector *' to 'float' is not allowed...
-  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-    Line 181: C-style cast from 'char' to 'CActorPropertyActionFunc' (aka 'int (struct CDemonA...
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
     Line 113: C-style cast from 'float *' to 'float' is not allowed...
   core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
@@ -288,11 +286,13 @@ CATEGORY: cast_error (149 errors)
     Line 256: cannot cast from type 'float' to pointer type 'CVector3f *'...
   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
     Line 234: cannot cast from type 'float' to pointer type 'CVector3f *'...
+  core_zombie.cpp_CZombie_process_FUN_005f9470
+    Line 273: cannot cast from type 'float' to pointer type 'CVector3f *'...
 
-  ... and 13 more errors
+  ... and 11 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (131 errors)
+CATEGORY: undeclared_identifier (124 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -303,10 +303,6 @@ CATEGORY: undeclared_identifier (131 errors)
     Line 150: use of undeclared identifier 'SUB14'...
   core_script.cpp_CScript_step_FUN_0055a810
     Line 1564: use of undeclared identifier 'SUB14'...
-  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-    Line 183: use of undeclared identifier 'code'...
-  core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
-    Line 59: use of undeclared identifier 'code'...
   core_curtain.cpp_CCurtain_process_FUN_0044a920
     Line 127: use of undeclared identifier 'code'...
   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
@@ -355,8 +351,12 @@ CATEGORY: undeclared_identifier (131 errors)
     Line 30: use of undeclared identifier 'code'...
   shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40
     Line 23: use of undeclared identifier 'code'...
+  shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0
+    Line 28: use of undeclared identifier 'code'...
+  shape_superopt.cpp_CObj_saveVertexPositionsWithFlag_FUN_005d37b0
+    Line 28: use of undeclared identifier 'code'...
 
-  ... and 52 more errors
+  ... and 49 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (41 errors)
@@ -424,7 +424,7 @@ CATEGORY: syntax_error (41 errors)
     Line 123: expected expression...
 
 ====================================================================================================
-CATEGORY: other (30 errors)
+CATEGORY: other (26 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
@@ -437,10 +437,6 @@ CATEGORY: other (30 errors)
     Line 57: conversion from 'double' to 'int' is not allowed in a converted constant express...
   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
     Line 101: no matching literal operator for call to 'operator""_4_4_' with argument of type...
-  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-    Line 13: unknown type name 'code'...
-  core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
-    Line 28: unknown type name 'code'...
   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
     Line 26: unknown type name 'code'...
   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
@@ -459,15 +455,13 @@ CATEGORY: other (30 errors)
     Line 165: value of type 'SRenderVertex *' is not implicitly convertible to 'int'...
 
 ====================================================================================================
-CATEGORY: pointer_type (29 errors)
+CATEGORY: pointer_type (24 errors)
 ====================================================================================================
 
   core_mmx.c_detectIntelProcessor_FUN_00524f4c
     Line 67: assigning to 'char *' from 'const char *' discards qualifiers...
   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
     Line 51: assigning to 'char *' from 'const char *' discards qualifiers...
-  cockpit_ckptutil.c_rotateCircularBitmap_FUN_00433030
-    Line 63: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between point...
   engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     Line 91: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between point...
   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -488,34 +482,22 @@ CATEGORY: pointer_type (29 errors)
     Line 80: cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectS...
   sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440
     Line 65: cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectS...
-  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
-    Line 326: cannot initialize return object of type 'SEdge *' with an lvalue of type 'void *...
   shape_superopt.cpp_CObj_updatePolyFlagsFromVerts_FUN_005d36b0
     Line 31: comparison of distinct pointer types ('CPoly *' and 'int *')...
-  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
-    Line 58: comparison of distinct pointer types ('ushort *' (aka 'unsigned short *') and 'c...
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    Line 37: comparison of distinct pointer types ('ushort *' (aka 'unsigned short *') and 'c...
 
 ====================================================================================================
-CATEGORY: missing_member (26 errors)
+CATEGORY: missing_member (8 errors)
 ====================================================================================================
 
   sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
     Line 44: no member named '_12_4_' in 'tWAVEFORMATEX'...
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
     Line 111: no member named '_18_2_' in 'tWAVEFORMATEX'...
-  core_actor.cpp_CDemonActor_ctor_FUN_004088b0
-    Line 20: no member named 'unk15' in 'CDemonActor'...
 
 ====================================================================================================
-CATEGORY: pointer_arithmetic (9 errors)
+CATEGORY: pointer_arithmetic (7 errors)
 ====================================================================================================
 
-  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-    Line 186: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'in...
-  core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
-    Line 56: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'in...
   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
     Line 123: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'in...
   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030
@@ -547,8 +529,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.64
-Average suspects in failed compilations: 7.65
+Average suspects in successfully compiled functions: 1.65
+Average suspects in failed compilations: 7.73
 
-Functions that compile but have suspect patterns: 1411
+Functions that compile but have suspect patterns: 1422
 (These may have runtime issues even though syntax is valid)
