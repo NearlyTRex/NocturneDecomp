@@ -13,7 +13,7 @@ CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00472760(CDemonLight 
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr_00 = __vec_delete(this_ptr,&g_CDemonLight);
+    __vec_delete(this_ptr,&g_CDemonLight);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

@@ -14,7 +14,7 @@ CSimBox * __cdecl core_simbox_cpp_CSimBox_dtor_FUN_005893e0(CSimBox *this_ptr,ui
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr_00 = __vec_delete(this_ptr,&g_CSimBoxTypeInfo);
+    __vec_delete(this_ptr,&g_CSimBoxTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

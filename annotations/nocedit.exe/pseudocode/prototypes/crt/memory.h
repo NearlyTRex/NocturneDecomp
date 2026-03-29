@@ -9,7 +9,7 @@ void * __cdecl memset(void *dest,int value,ulong count);
 
 // Original: crt_memory.c___vec_delete_FUN_005fe632
 // Address: 005fe632
-void * __cdecl ::_vec_delete(void *object_ptr,WatcomTypeInfo *type_info);
+void __cdecl ::_vec_delete(void *object_ptr,WatcomTypeInfo *type_info);
 
 // Original: crt_memory.c___arrinit_FUN_005fe667
 // Address: 005fe667

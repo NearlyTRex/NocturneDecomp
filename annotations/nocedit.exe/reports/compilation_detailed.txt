@@ -5,14 +5,14 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 5910 (91.6%)
-Failed: 544
+Successful: 5927 (91.8%)
+Failed: 527
 
 ERROR CATEGORIES
 --------------------------------------------------
-  format_error                    1133
+  format_error                    1103
   type_error                       426
-  incompatible_types               185
+  incompatible_types               163
   cast_error                       149
   undeclared_identifier            131
   syntax_error                      41
@@ -24,15 +24,9 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: format_error (1133 errors)
+CATEGORY: format_error (1103 errors)
 ====================================================================================================
 
-  core_script.cpp_CScript_loadState_FUN_00560820
-    Line 44: data argument not used by format string [-Werror,-Wformat-extra-args]
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
-    Line 347: data argument not used by format string [-Werror,-Wformat-extra-args]
-  engine_fileio.cpp_CFileManager_verifyPodCRC_FUN_004b7c90
-    Line 42: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
     Line 148: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320
@@ -491,6 +485,8 @@ CATEGORY: format_error (1133 errors)
     Line 41: format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]
   core_menu.cpp_showJoystickCalibrationScreen_FUN_00510410
     Line 20: format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
+    Line 591: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
   shape_memdbg.cpp_debugCalloc_FUN_0050f350
     Line 25: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
   core_game.cpp_CGame_renderOverlay_FUN_004d8040
@@ -804,63 +800,21 @@ CATEGORY: type_error (426 errors)
     Line 53: statement requires expression of integer type ('float' invalid)
 
 ====================================================================================================
-CATEGORY: incompatible_types (185 errors)
+CATEGORY: incompatible_types (163 errors)
 ====================================================================================================
 
-  shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
-    Line 51: assigning to 'CColorQuantizer *' from incompatible type 'void *'
-  shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0
-    Line 16: assigning to 'CComplexPolygon **' from incompatible type 'void *'
-  core_actor.cpp_createActorByName_FUN_0040c430
-    Line 26: assigning to 'CDemonActor *' from incompatible type 'void *'
-  core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380
-    Line 21: assigning to 'CDemonCube *' from incompatible type 'void *'
   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
     Line 71: assigning to 'CDemonGlobe *' from incompatible type 'void *'
-  shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0
-    Line 72: assigning to 'CEdButton *' from incompatible type 'void *'
-  core_morph.cpp_CMorph_ctor_FUN_0052b310
-    Line 14: assigning to 'CMorph *' from incompatible type 'void *'
-  engine_ncursfx.cpp_CMouse_ctor_FUN_00544380
-    Line 16: assigning to 'CMouse *' from incompatible type 'void *'
-  cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0
-    Line 62: assigning to 'CPackedBitmap *' from incompatible type 'void *'
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0
-    Line 26: assigning to 'CPackedBitmap *' from incompatible type 'void *'
   cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0
     Line 18: assigning to 'CPackedBitmapSet *' from incompatible type 'void *'
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 24: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
     Line 113: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
-  engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
-    Line 86: assigning to 'CPodFile *' from incompatible type 'void *'
-  shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
-    Line 24: assigning to 'CPoly *' from incompatible type 'void *'
-  shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
-    Line 24: assigning to 'CPoly *' from incompatible type 'void *'
-  shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50
-    Line 26: assigning to 'CPoly *' from incompatible type 'void *'
-  shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90
-    Line 31: assigning to 'CPoly **' from incompatible type 'void *'
-  shape_superopt.cpp_CObj_addVertices_FUN_005d2580
-    Line 14: assigning to 'CVert *' from incompatible type 'void *'
-  shape_superopt.cpp_CObj_allocateVertices_FUN_005d2500
-    Line 15: assigning to 'CVert *' from incompatible type 'void *'
-  shape_superopt.cpp_CObj_removeVertex_FUN_005d3140
-    Line 29: assigning to 'CVert *' from incompatible type 'void *'
   wincore_winrun.cpp_winMain_FUN_005f3680
     Line 111: assigning to 'HBRUSH' (aka 'HBRUSH__ *') from incompatible type 'LPVOID' (aka 'void *')
   shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500
     Line 117: assigning to 'SExpandedEdge *' from incompatible type 'void *'
-  shape_memdbg.cpp_debugCalloc_FUN_0050f350
-    Line 27: assigning to 'SMemHead *' from incompatible type 'void *'
-  shape_memdbg.cpp_debugMalloc_FUN_0050f250
-    Line 24: assigning to 'SMemHead *' from incompatible type 'void *'
-  shape_memdbg.cpp_debugRealloc_FUN_0050f540
-    Line 38: assigning to 'SMemHead *' from incompatible type 'void *'
-  core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510
-    Line 45: assigning to 'SVert *' from incompatible type 'void *'
   shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
     Line 54: assigning to 'SVertexData *' from incompatible type 'void *'
   core_baron.cpp_CBaron_process_FUN_00412e80
@@ -963,6 +917,10 @@ CATEGORY: incompatible_types (185 errors)
     Line 39: incompatible integer to pointer conversion assigning to 'HANDLE' (aka 'void *') from 'long'
   engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
     Line 182: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'
+  shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
+    Line 36: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'
+  shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
+    Line 36: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'
   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
     Line 161: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'
   core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240

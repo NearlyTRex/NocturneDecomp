@@ -14,7 +14,7 @@ CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dt
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr_00 = __vec_delete(this_ptr,&g_CDeformableModelInstanceTypeInfo);
+    __vec_delete(this_ptr,&g_CDeformableModelInstanceTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

@@ -13,7 +13,7 @@ CColonel * __cdecl core_colonel_cpp_CColonel_dtor_FUN_00440670(CColonel *this_pt
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr_00 = __vec_delete(this_ptr,&g_CColonelTypeInfo);
+    __vec_delete(this_ptr,&g_CColonelTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

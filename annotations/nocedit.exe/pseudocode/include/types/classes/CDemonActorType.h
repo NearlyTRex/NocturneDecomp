@@ -1,5 +1,8 @@
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
 #include "types/funcdefs/CDemonActor_FactoryFunc.h"

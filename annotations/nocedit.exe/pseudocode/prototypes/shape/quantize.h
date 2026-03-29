@@ -21,7 +21,7 @@ int __cdecl CColorQuantizer::quantize(CColorQuantizer *this_ptr);
 
 // Original: shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
 // Address: 00554d40
-CColorQuantizer * __cdecl CColorQuantizer::reset(CColorQuantizer *this_ptr);
+void __cdecl CColorQuantizer::reset(CColorQuantizer *this_ptr);
 
 // Original: shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70
 // Address: 00554e70

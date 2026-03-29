@@ -39,7 +39,7 @@ char * __cdecl buildFileInfoEnv(void)
     cVar1 = *pcVar3;
     pcVar3 = pcVar3 + 1;
   } while (cVar1 != '\0');
-  pcVar3 = malloc(g_MaxHandleCount * 0x1b + ~uVar2);
+  pcVar3 = (char *)malloc(g_MaxHandleCount * 0x1b + ~uVar2);
   uVar4 = g_MaxHandleCount;
   if (pcVar3 == (char *)0x0) {
     pcVar3 = (char *)0x0;

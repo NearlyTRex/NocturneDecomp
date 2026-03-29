@@ -19,7 +19,7 @@ CGhoul * __cdecl core_ghoul_cpp_CGhoul_dtor_FUN_004e8f10(CGhoul *this_ptr,uint f
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr_00 = __vec_delete(this_ptr,&g_CGhoulTypeInfo);
+    __vec_delete(this_ptr,&g_CGhoulTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

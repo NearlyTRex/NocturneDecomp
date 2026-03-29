@@ -59,7 +59,7 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_0054b9b0(CPackedBi
       element_count = uVar3;
       array_memory = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                                (uVar3 * 0x24 + 4,"..\\cockpit\\pkbitmap.cpp",0x562);
-      pCVar1 = __vec_new(array_memory,element_count,type_info);
+      pCVar1 = (CPackedBitmap *)__vec_new(array_memory,element_count,type_info);
       if (pCVar1 != (CPackedBitmap *)0x0) {
         iVar5 = 0;
         local_14 = pCVar1;

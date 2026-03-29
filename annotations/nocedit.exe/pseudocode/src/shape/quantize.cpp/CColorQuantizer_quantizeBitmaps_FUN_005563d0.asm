@@ -30,7 +30,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 005563d8
     PUSH EDI                            ; 005563dc
     CALL shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40 ; 005563dd
-        ;   XREF to: 00554d40 (UNCONDITIONAL_CALL)  ; CColorQuantizer * shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantizer * this_ptr)
+        ;   XREF to: 00554d40 (UNCONDITIONAL_CALL)  ; void shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantizer * this_ptr)
     XOR ESI,ESI                         ; 005563e2
     ADD ESP,0x4                         ; 005563e4
     TEST EBP,EBP                        ; 005563e7
@@ -77,7 +77,7 @@ section .text
     PUSH EDI                            ; 00556429
         ;   Label: LAB_00556429
     CALL shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40 ; 0055642a
-        ;   XREF to: 00554d40 (UNCONDITIONAL_CALL)  ; CColorQuantizer * shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantizer * this_ptr)
+        ;   XREF to: 00554d40 (UNCONDITIONAL_CALL)  ; void shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantizer * this_ptr)
     MOV EAX,0x1                         ; 0055642f
     ADD ESP,0x4                         ; 00556434
     POP EBP                             ; 00556437

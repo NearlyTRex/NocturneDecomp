@@ -23,7 +23,7 @@ int __cdecl shape_superopt_cpp_CObj_removePolygon_FUN_005d2f50(CObj *this_ptr,ui
     ;
   }
   if (this_ptr->poly_count != 0) {
-    pCVar2 = realloc(this_ptr->poly_array,this_ptr->poly_count * 0x68);
+    pCVar2 = (CPoly *)realloc(this_ptr->poly_array,this_ptr->poly_count * 0x68);
     if (pCVar2 != (CPoly *)0x0) {
       this_ptr->poly_array = pCVar2;
     }

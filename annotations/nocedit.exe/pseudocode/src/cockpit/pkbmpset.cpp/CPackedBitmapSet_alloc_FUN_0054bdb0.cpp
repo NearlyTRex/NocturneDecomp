@@ -23,7 +23,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_0054bdb0(CPackedBit
   element_count = bitmap_count;
   array_memory = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                            (bitmap_count * 0x24 + 4,"..\\cockpit\\pkbmpset.cpp",100);
-  pCVar1 = __vec_new(array_memory,element_count,type_info);
+  pCVar1 = (CPackedBitmap *)__vec_new(array_memory,element_count,type_info);
   this_ptr->bitmap_array = pCVar1;
   if (pCVar1 == (CPackedBitmap *)0x0) {
     _sprintf

@@ -19,7 +19,7 @@ CDemonActor * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042f9f0(CCharacter 
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr_00 = __vec_delete(this_ptr,&g_CCharacterTypeInfo);
+    __vec_delete(this_ptr,&g_CCharacterTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return &this_ptr->base;
   }

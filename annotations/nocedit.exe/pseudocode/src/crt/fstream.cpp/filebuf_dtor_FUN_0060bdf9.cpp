@@ -28,7 +28,7 @@ filebuf * __watcallStack crt_fstream_cpp_filebuf_dtor_FUN_0060bdf9(filebuf *this
     shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(this_ptr);
   }
   else {
-    ptr = __vec_delete(this_ptr,&g_FilebufTypeInfo);
+    __vec_delete(this_ptr,&g_FilebufTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr);
   }
   return this_ptr;

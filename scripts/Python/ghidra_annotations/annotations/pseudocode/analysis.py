@@ -2170,6 +2170,90 @@ def generate_compilation_detailed_report(functions, output_path):
     return report_text
 
 
+def generate_compilation_by_function_report(functions, output_path):
+    """Generate compilation report grouped by function, showing all errors per function.
+
+    Args:
+        functions: List of function data dicts (with compilation_status)
+        output_path: Directory to write report
+    """
+    lines = []
+    lines.append("=" * 100)
+    lines.append("FUNCTION COMPILATION ERRORS (GROUPED BY FUNCTION)")
+    lines.append("=" * 100)
+    lines.append("")
+
+    funcs_with_status = [f for f in functions if f.get('compilation_status')]
+    if not funcs_with_status:
+        lines.append("No compilation status data available.")
+        lines.append("Run export with compilation verification enabled to generate this data.")
+        report_text = "\n".join(lines)
+        report_path = os.path.join(output_path, "compilation_by_function.txt")
+        try:
+            with open(report_path, 'w') as f:
+                f.write(report_text)
+            log_info("Wrote compilation by-function report: %s" % report_path)
+        except Exception as e:
+            log_info("Failed to write compilation by-function report: %s" % str(e))
+        return report_text
+
+    total = len(funcs_with_status)
+    successful = sum(1 for f in funcs_with_status
+                     if f['compilation_status'].get('success', False))
+    failed = total - successful
+    success_rate = (successful * 100.0 / total) if total > 0 else 0
+
+    lines.append("SUMMARY")
+    lines.append("-" * 50)
+    lines.append("Total functions compiled: %d" % total)
+    lines.append("Successful: %d (%.1f%%)" % (successful, success_rate))
+    lines.append("Failed: %d" % failed)
+    lines.append("")
+
+    # Collect failed functions with all their errors
+    failed_funcs = []
+    for func in funcs_with_status:
+        status = func.get('compilation_status', {})
+        if not status.get('success'):
+            func_name = func.get('function', {}).get('name', 'unknown')
+            errors = status.get('errors', [])
+            if errors:
+                failed_funcs.append({
+                    'name': func_name,
+                    'errors': errors,
+                })
+
+    # Sort by function name
+    failed_funcs.sort(key=lambda f: f['name'])
+
+    for func_entry in failed_funcs:
+        lines.append("=" * 100)
+        lines.append("%s (%d error%s)" % (
+            func_entry['name'],
+            len(func_entry['errors']),
+            's' if len(func_entry['errors']) != 1 else '',
+        ))
+        lines.append("=" * 100)
+        for error in sorted(func_entry['errors'], key=lambda e: e.get('line', 0)):
+            category = error.get('category', 'other')
+            line = error.get('line', 0)
+            message = error.get('message', '')
+            lines.append("  Line %d [%s]: %s" % (line, category, message))
+        lines.append("")
+
+    report_text = "\n".join(lines)
+
+    report_path = os.path.join(output_path, "compilation_by_function.txt")
+    try:
+        with open(report_path, 'w') as f:
+            f.write(report_text)
+        log_info("Wrote compilation by-function report: %s" % report_path)
+    except Exception as e:
+        log_info("Failed to write compilation by-function report: %s" % str(e))
+
+    return report_text
+
+
 def generate_csv_data(functions, files, output_path):
     """Generate CSV files for further analysis or graphing."""
 
@@ -4140,6 +4224,7 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     generate_param_mismatch_report(functions, output_path)
     generate_compilation_summary_report(functions, output_path)
     generate_compilation_detailed_report(functions, output_path)
+    generate_compilation_by_function_report(functions, output_path)
     generate_pass_by_value_report(functions, output_path)
     generate_annotation_quality_report(functions, output_path)
     generate_vtable_union_mismatch_report(pseudocode_src_dir, output_path)

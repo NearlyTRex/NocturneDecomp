@@ -35,7 +35,7 @@ strstreambase * __cdecl crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstr
     shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(this_ptr);
   }
   else {
-    ptr = __vec_delete(this_ptr,&g_StrStreamBaseTypeInfo);
+    __vec_delete(this_ptr,&g_StrStreamBaseTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr);
   }
   return this_ptr;

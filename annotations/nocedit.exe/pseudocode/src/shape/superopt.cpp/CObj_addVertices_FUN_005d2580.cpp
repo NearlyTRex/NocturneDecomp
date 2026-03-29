@@ -11,7 +11,7 @@ int __cdecl shape_superopt_cpp_CObj_addVertices_FUN_005d2580(CObj *this_ptr,int 
 {
   CVert *pCVar1;
   
-  pCVar1 = realloc
+  pCVar1 = (CVert *)realloc
                      (this_ptr->vertex_data,(this_ptr->vertex_count + add_count) * 0x38);
   if (pCVar1 != (CVert *)0x0) {
     this_ptr->vertex_data = pCVar1;

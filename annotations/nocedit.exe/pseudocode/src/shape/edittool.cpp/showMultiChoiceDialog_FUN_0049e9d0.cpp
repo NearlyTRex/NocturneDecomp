@@ -69,7 +69,7 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList *str_
   iVar3 = iVar2;
   pvVar3 = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                      (iVar2 * 0xe4 + 4,"..\\shape\\edittool.cpp",0x412);
-  object_ptr = __vec_new(pvVar3,iVar3,type_info);
+  object_ptr = (CEdButton *)__vec_new(pvVar3,iVar3,type_info);
   iVar9 = 0;
   local_48 = 0;
   local_3c = object_ptr;
@@ -254,7 +254,7 @@ LAB_0049eae7:
   } while (iVar3 == -2);
   g_CurrentDebugFilename = "..\\shape\\edittool.cpp";
   g_CurrentDebugLine = 0x49d;
-  ptr = __vec_delete(object_ptr,&g_CEdButtonTypeInfo);
+  __vec_delete(object_ptr,&g_CEdButtonTypeInfo);
   shape_memdbg_cpp_free_FUN_005fe659(ptr);
   g_InputKeyMask = iVar4;
   engine_2d_c_clearInputAndWait_FUN_00403260();

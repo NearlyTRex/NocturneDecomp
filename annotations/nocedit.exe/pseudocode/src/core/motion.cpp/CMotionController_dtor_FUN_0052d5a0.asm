@@ -41,7 +41,7 @@ section .text
         ;   Label: LAB_0052d5bc
     PUSH EBX                            ; 0052d5c1
     CALL crt_memory.c___vec_delete_FUN_005fe632 ; 0052d5c2
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0052d5c7
     PUSH EAX                            ; 0052d5ca
     CALL shape_memdbg.cpp_free_FUN_005fe659 ; 0052d5cb

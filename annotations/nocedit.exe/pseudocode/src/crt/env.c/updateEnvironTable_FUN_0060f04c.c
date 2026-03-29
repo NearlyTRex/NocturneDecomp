@@ -42,7 +42,7 @@ int __cdecl updateEnvironTable(char *envstr)
     if (bVar7) {
       return 0;
     }
-    ptr = malloc(9);
+    ptr = (char **)malloc(9);
     if (ptr == (char **)0x0) {
       return -1;
     }
@@ -61,7 +61,7 @@ int __cdecl updateEnvironTable(char *envstr)
       n = -iVar2;
       new_size = iVar2 * -4 + 8U + n + 1;
       if (g_EnvironStringArea == (char **)0x0) {
-        ptr = malloc(new_size);
+        ptr = (char **)malloc(new_size);
         if (ptr == (char **)0x0) {
           return -1;
         }
@@ -83,7 +83,7 @@ int __cdecl updateEnvironTable(char *envstr)
         memset(g_EnvironStringArea,0,n + 1);
       }
       else {
-        ptr = realloc(ptr,new_size);
+        ptr = (char **)realloc(ptr,new_size);
         if (ptr == (char **)0x0) {
           return -1;
         }

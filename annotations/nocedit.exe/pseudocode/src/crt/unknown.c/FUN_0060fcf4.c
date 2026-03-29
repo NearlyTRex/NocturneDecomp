@@ -38,7 +38,7 @@ uint FUN_0060fcf4(short *param_1)
     if (bVar4) {
       return 0;
     }
-    ptr = malloc(9);
+    ptr = (uint *)malloc(9);
     if (ptr == (uint *)0x0) {
       return 0xffffffff;
     }
@@ -57,7 +57,7 @@ uint FUN_0060fcf4(short *param_1)
       n = -iVar3;
       new_size = n + 1 + iVar3 * -4 + 8;
       if (g_EnvironStringArea == (char **)0x0) {
-        ptr = malloc(new_size);
+        ptr = (uint *)malloc(new_size);
         if (ptr == (uint *)0x0) {
           return 0xffffffff;
         }
@@ -66,7 +66,7 @@ uint FUN_0060fcf4(short *param_1)
         memset(g_EnvironStringArea,0,n + 1);
       }
       else {
-        ptr = realloc(ptr,new_size);
+        ptr = (uint *)realloc(ptr,new_size);
         if (ptr == (uint *)0x0) {
           return 0xffffffff;
         }

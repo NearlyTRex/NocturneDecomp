@@ -24,7 +24,7 @@ void * __cdecl shape_memdbg_cpp_debugCalloc_FUN_0050f350(SIZE_T count,SIZE_T siz
   shape_memdbg_cpp_traceMemory_FUN_0050f150
             ("debugCalloc(%d, %d, %s, %d)",count,size,filename,line_number);
   if (count_00 != 0) {
-    header = malloc(count_00 + GAME_SMEMHEAD_AND_BACKGUARD_SIZE);
+    header = (SMemHead *)malloc(count_00 + GAME_SMEMHEAD_AND_BACKGUARD_SIZE);
     if (header == (SMemHead *)0x0) {
       shape_memdbg_cpp_traceMemory_FUN_0050f150("   !!FAILED!!");
       wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);

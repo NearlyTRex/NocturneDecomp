@@ -291,7 +291,7 @@ crt_cpp.c_pureVirtualStub_FUN_005fee9f,005fee9f,crt/cpp.c,5,1,special_crt_functi
 crt_cpp.c_handlePureVirtualCall_FUN_006015f1,006015f1,crt/cpp.c,9,1,special_crt_function,24
 crt_cpp.c_reportPureVirtualError_FUN_00605b23,00605b23,crt/cpp.c,12,3,register_param|special_crt_function,52
 crt_memory.c___arr_op_FUN_006020c2,006020c2,crt/memory.c,11,3,pointer_cast|special_crt_function,51
-crt_memory.c___vec_delete_FUN_005fe632,005fe632,crt/memory.c,8,3,pointer_cast|special_crt_function,48
+crt_memory.c___vec_delete_FUN_005fe632,005fe632,crt/memory.c,8,2,pointer_cast|special_crt_function,38
 crt_memory.c_realloc__FUN_00601e08,00601e08,crt/memory.c,43,3,pointer_cast|special_crt_function,83
 crt_memory.c___arrcopy_FUN_00600bc2,00600bc2,crt/memory.c,15,8,pointer_cast|special_crt_function|unnamed_param,110
 crt_memory.c___vec_new_FUN_00601272,00601272,crt/memory.c,6,1,special_crt_function,21
@@ -304,7 +304,7 @@ crt_memory.c___arrinit_FUN_005fe667,005fe667,crt/memory.c,16,7,pointer_cast|spec
 crt_memory.c___arrfini_FUN_005feee9,005feee9,crt/memory.c,9,1,special_crt_function,24
 crt_memory.c_realloc_FUN_00601df0,00601df0,crt/memory.c,6,1,special_crt_function,21
 crt_memory.c___arrinit__FUN_00608dc8,00608dc8,crt/memory.c,15,7,pointer_cast|special_crt_function|unnamed_param,100
-crt_memory.c___arrinit_dispatch_FUN_00601200,00601200,crt/memory.c,16,2,special_crt_function|unresolved_funcptr,46
+crt_memory.c___arrinit_dispatch_FUN_00601200,00601200,crt/memory.c,16,4,special_crt_function|unresolved_funcptr,66
 crt_memory.c_free_FUN_00601cd0,00601cd0,crt/memory.c,5,1,special_crt_function,20
 crt_watcom.c_notifyAbnormalTermination_FUN_00601620,00601620,crt/watcom.c,6,1,special_crt_function,21
 crt_watcom.c__mkdir_FUN_00600e10,00600e10,crt/watcom.c,13,1,special_crt_function,28
@@ -647,7 +647,7 @@ crt_strstream.cpp_ostrstream_tellp_FUN_005ff45d,005ff45d,crt/strstream.cpp,10,4,
 crt_strstream.cpp_strstreambuf_setbuf_FUN_0060ba70,0060ba70,crt/strstream.cpp,7,1,special_crt_function,22
 crt_strstream.cpp_strstreambase_dtor_FUN_006062a6,006062a6,crt/strstream.cpp,32,3,negative_offset|special_crt_function,72
 crt_strstream.cpp_ostrstream_ctor_FUN_005ff384,005ff384,crt/strstream.cpp,49,9,negative_offset|pointer_cast|special_crt_function,154
-crt_strstream.cpp_strstreambuf_dtor_FUN_0060bb7f,0060bb7f,crt/strstream.cpp,29,1,special_crt_function,44
+crt_strstream.cpp_strstreambuf_dtor_FUN_0060bb7f,0060bb7f,crt/strstream.cpp,30,1,special_crt_function,45
 crt_strstream.cpp_ostrstream_destructor_thunk_from_ios_FUN_005ff445,005ff445,crt/strstream.cpp,6,3,negative_offset|pointer_cast|special_crt_function,51
 crt_strstream.cpp_strstreambuf_init_FUN_0060b815,0060b815,crt/strstream.cpp,59,1,special_crt_function,74
 crt_strstream.cpp_istrstream_destructor_thunk_from_ios_FUN_005ff5b2,005ff5b2,crt/strstream.cpp,6,3,negative_offset|pointer_cast|special_crt_function,51
@@ -1378,7 +1378,7 @@ engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950,004b5950,engine/fi
 engine_fileio.cpp_CCheckOutList_findEntry_FUN_004b2e60,004b2e60,engine/fileio.cpp,19,0,,19
 engine_fileio.cpp_CFileManager_freeAuditRecords_FUN_004b5910,004b5910,engine/fileio.cpp,10,0,,10
 engine_fileio.cpp_CFileManager_load_FUN_004b6c00,004b6c00,engine/fileio.cpp,117,0,,117
-engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40,004b9f40,engine/fileio.cpp,175,1,pointer_cast,190
+engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40,004b9f40,engine/fileio.cpp,176,1,pointer_cast,191
 engine_fileio.cpp_trimWhitespace_FUN_004b1d40,004b1d40,engine/fileio.cpp,30,0,,30
 engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030,004b5030,engine/fileio.cpp,101,0,,101
 engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0,004b35a0,engine/fileio.cpp,134,0,,134
@@ -6046,7 +6046,7 @@ core_flamecan.cpp_CFlameCan_addFilesToExtract_FUN_004cb750,004cb750,core/flameca
 shape_quantize.cpp_reallocMemory_FUN_00556d20,00556d20,shape/quantize.cpp,5,0,,5
 shape_quantize.cpp_CBitmap_dtor_FUN_00556c20,00556c20,shape/quantize.cpp,20,0,,20
 shape_quantize.cpp_CBitmap_getPalette_FUN_00556de0,00556de0,shape/quantize.cpp,4,0,,4
-shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40,00554d40,shape/quantize.cpp,46,0,,46
+shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40,00554d40,shape/quantize.cpp,45,0,,45
 shape_quantize.cpp_CBitmap_getWidth_FUN_00556d90,00556d90,shape/quantize.cpp,4,0,,4
 shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500,00555500,shape/quantize.cpp,70,0,,70
 shape_quantize.cpp_CBitmap_ctor_FUN_00556a00,00556a00,shape/quantize.cpp,85,1,pointer_cast,100

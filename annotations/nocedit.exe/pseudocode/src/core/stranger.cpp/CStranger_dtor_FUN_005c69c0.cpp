@@ -13,7 +13,7 @@ CStranger * __cdecl core_stranger_cpp_CStranger_dtor_FUN_005c69c0(CStranger *thi
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    ptr_00 = __vec_delete(this_ptr,&g_CStrangerTypeInfo);
+    __vec_delete(this_ptr,&g_CStrangerTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

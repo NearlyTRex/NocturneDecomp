@@ -33,7 +33,7 @@ fstreambase * __cdecl crt_fstream_cpp_fstreambase_dtor_FUN_00606509(fstreambase 
     shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(this_ptr);
   }
   else {
-    ptr = __vec_delete(this_ptr,&g_FStreamBaseTypeInfo);
+    __vec_delete(this_ptr,&g_FStreamBaseTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr);
   }
   return this_ptr;

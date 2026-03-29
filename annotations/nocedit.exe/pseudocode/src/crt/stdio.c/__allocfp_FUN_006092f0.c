@@ -18,7 +18,7 @@ _FILE * __cdecl __allocfp(int unused_param)
     dest = &g_StaticFilePoolStart;
     do {
       if ((((_FILE *)dest)->_flag & 3) == 0) {
-        psVar1 = malloc(0x1d);
+        psVar1 = (streambuf *)malloc(0x1d);
         if (psVar1 == (streambuf *)0x0) goto LAB_00609398;
         uVar2 = 3;
         goto LAB_00609369;
@@ -26,7 +26,7 @@ _FILE * __cdecl __allocfp(int unused_param)
       dest = (_FILE **)((int)dest + 0x1a);
     } while (dest < (_FILE *)&g_StaticFilePoolEnd);
     uVar2 = 0x4003;
-    psVar1 = malloc(0x37);
+    psVar1 = (streambuf *)malloc(0x37);
     if (psVar1 == (streambuf *)0x0) {
 LAB_00609398:
       setErrno(SYSTEM_IO_ERROR);

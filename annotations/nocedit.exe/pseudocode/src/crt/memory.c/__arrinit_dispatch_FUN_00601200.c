@@ -15,10 +15,10 @@ void * __cdecl __arrinit_dispatch(void *array_ptr,int element_count,WatcomTypeIn
   pvVar2 = (void *)0x0;
   if (array_ptr != (void *)0x0) {
     if ((char)type_info->type_flags == '\x04') {
-      pcVar1 = __arrinit_;
+      pcVar1 = (code *)__arrinit_;
     }
     else {
-      pcVar1 = __arrinit;
+      pcVar1 = (code *)__arrinit;
     }
     pvVar2 = (void *)(*pcVar1)(array_ptr,element_count,type_info);
   }

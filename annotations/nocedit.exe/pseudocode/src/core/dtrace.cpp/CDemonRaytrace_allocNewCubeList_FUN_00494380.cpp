@@ -18,7 +18,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380(CDemon
   type_info = &g_CDemonCubeTypeInfo;
   array_memory = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
                            (element_count * 0x34 + 4,"..\\core\\dtrace.cpp",0xad);
-  pCVar1 = __vec_new(array_memory,element_count,type_info);
+  pCVar1 = (CDemonCube *)__vec_new(array_memory,element_count,type_info);
   this_ptr->cube_data = pCVar1;
   if (pCVar1 != (CDemonCube *)0x0) {
     return;

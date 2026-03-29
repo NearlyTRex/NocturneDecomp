@@ -1,29 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 16,
-        "line": 86,
-        "message": "assigning to 'CPodFile *' from incompatible type 'void *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 462,
-    "complexity_score": 190,
+    "complexity_score": 191,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 26,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 175,
+    "pseudocode_lines": 176,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 637
+    "total_lines": 638
   },
   "cross_references": [
     {
@@ -520,7 +513,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 138,
+      "line": 139,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_40->directory_entries->checksum + local_34)",

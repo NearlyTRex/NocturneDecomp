@@ -78,7 +78,7 @@ section .text
     MOV EDX,dword ptr [ESI + EDI*0x4 + 0x40] ; 0059a562
     PUSH EDX                            ; 0059a566
     CALL crt_memory.c___vec_delete_FUN_005fe632 ; 0059a567
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0059a56c
     PUSH EAX                            ; 0059a56f
     MOV EBX,0x290                       ; 0059a570

@@ -11,6 +11,7 @@ strstreambuf * __cdecl crt_strstream_cpp_strstreambuf_dtor_FUN_0060bb7f(strstrea
 {
   char *ptr;
   void *pvVar1;
+  void *ptr_00;
   
   if ((flags & 4) == 0) {
     pvVar1 = this_ptr[1]._streambuf.__b_lock;
@@ -32,8 +33,8 @@ strstreambuf * __cdecl crt_strstream_cpp_strstreambuf_dtor_FUN_0060bb7f(strstrea
     shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(this_ptr);
   }
   else {
-    pvVar1 = __vec_delete(this_ptr,&g_StrStreamBufTypeInfo);
-    shape_memdbg_cpp_free_FUN_005fe659(pvVar1);
+    __vec_delete(this_ptr,&g_StrStreamBufTypeInfo);
+    shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
   }
   return this_ptr;
 }

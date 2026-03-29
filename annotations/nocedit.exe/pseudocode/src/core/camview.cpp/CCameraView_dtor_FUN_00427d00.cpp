@@ -12,7 +12,7 @@ CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_00427d00(CCameraView
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CCameraViewTypeInfo);
+    __vec_delete(this_ptr,&g_CCameraViewTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr);
     return this_ptr;
   }

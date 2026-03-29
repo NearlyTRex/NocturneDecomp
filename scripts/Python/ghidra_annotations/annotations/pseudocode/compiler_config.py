@@ -16,6 +16,8 @@ DEFAULT_COMPILER = 'clang++'
 # - -Wno-everything: suppress all warnings (decompiler output, not hand-written)
 #
 # Selectively re-enabled warnings that catch wrong Ghidra type annotations:
+# (some format sub-warnings are re-suppressed because they fire on benign
+#  original code patterns, not faulty annotations)
 # - -Warray-bounds: OOB struct/array access (wrong array size or struct layout)
 # - -Wformat: format string type mismatches (wrong type on printf args)
 # - -Wformat-overflow: buffer overflow from format string expansion (wrong buffer size)
@@ -37,6 +39,7 @@ DEFAULT_COMPILE_FLAGS = [
     '-Werror=format',
     '-Werror=format-overflow',
     '-Wno-format-security',
+    '-Wno-format-extra-args',
     '-Wincompatible-pointer-types',
     '-Wint-conversion',
     '-Wreturn-type',

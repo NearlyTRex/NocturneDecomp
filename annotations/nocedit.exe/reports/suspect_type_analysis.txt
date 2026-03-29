@@ -5,7 +5,7 @@ SUSPECT TYPE ANALYSIS
 SUSPECT TYPE COUNTS
 --------------------------------------------------
   decompiler_intrinsic            6914 ( 43.8%)
-  pointer_cast                    4417 ( 28.0%)
+  pointer_cast                    4416 ( 28.0%)
   unknown_field                    898 (  5.7%)
   special_crt_function             439 (  2.8%)
   stack_param                      351 (  2.2%)
@@ -14,7 +14,7 @@ SUSPECT TYPE COUNTS
   nonstandard_int                  267 (  1.7%)
   warning_inlined_function         264 (  1.7%)
   stack_ref                        250 (  1.6%)
-  unresolved_funcptr               169 (  1.1%)
+  unresolved_funcptr               171 (  1.1%)
   warning_type_propagation         131 (  0.8%)
   param_count_too_few              119 (  0.8%)
   unaffected_reg                   106 (  0.7%)
@@ -95,12 +95,12 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (4417 occurrences)
+TYPE: pointer_cast (4416 occurrences)
 ====================================================================================================
 
 Unique patterns:
   1383x  (uint *)((int)
-  1231x  (int *)((int)
+  1230x  (int *)((int)
    321x  (float *)((int)
    209x  (SRenderVertex *)((int)
    193x  (double *)((int)
@@ -491,11 +491,11 @@ Example functions:
     local_8 = &stack0x0000000c;...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (169 occurrences)
+TYPE: unresolved_funcptr (171 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   117x  code *
+   119x  code *
     52x  code
 
 Example functions:
@@ -528,8 +528,6 @@ Example functions:
   crt_math.c_FUN_00606bff
     code *pcVar1;...
   crt_math.c_FUN_00606c1e
-    code *pcVar1;...
-  crt_math.c_FUN_00606ca3
     code *pcVar1;...
 
 ====================================================================================================

@@ -2,16 +2,15 @@
 // Address: 00554d40
 // Address Range: [[00554d40, 00554e6b]]
 // Convention: __cdecl
-// Signature: CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantizer *this_ptr)
+// Signature: void __cdecl shape_quantize_cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantizer *this_ptr)
 
 #include "nocturne.h"
 
-CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantizer *this_ptr)
+void __cdecl shape_quantize_cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantizer *this_ptr)
 
 {
   CColorQuantizer_ProgressCallback *pCVar1;
   int iVar2;
-  CColorQuantizer *pCVar3;
   
   if (this_ptr->error_buffer_r != (float *)0x0) {
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
@@ -48,9 +47,9 @@ CColorQuantizer * __cdecl shape_quantize_cpp_CColorQuantizer_reset_FUN_00554d40(
   }
   pCVar1 = this_ptr->progress_callback;
   iVar2 = this_ptr->num_colors;
-  pCVar3 = memset(this_ptr,0,0x4b44);
+  memset(this_ptr,0,0x4b44);
   this_ptr->status = -1;
   this_ptr->progress_callback = pCVar1;
   this_ptr->num_colors = iVar2;
-  return pCVar3;
+  return;
 }

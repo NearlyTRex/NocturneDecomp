@@ -13,7 +13,7 @@ CComplexPolygon * __cdecl shape_superopt_cpp_COptimize_addComplexPolygon_FUN_005
   CComplexPolygon **ppCVar2;
   CComplexPolygon *pCVar3;
   
-  ppCVar2 = realloc
+  ppCVar2 = (CComplexPolygon **)realloc
                       (this_ptr->complex_polygons,(this_ptr->complex_polygon_count + 1) * 4);
   pCVar3 = (CComplexPolygon *)0x0;
   if (ppCVar2 != (CComplexPolygon **)0x0) {

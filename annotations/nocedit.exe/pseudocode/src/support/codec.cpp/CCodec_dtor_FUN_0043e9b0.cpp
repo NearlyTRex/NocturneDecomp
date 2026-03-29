@@ -12,7 +12,7 @@ CCodec * __cdecl support_codec_cpp_CCodec_dtor_FUN_0043e9b0(CCodec *this_ptr,uin
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = __vec_delete(this_ptr,&g_CCodecTypeInfo);
+    __vec_delete(this_ptr,&g_CCodecTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr);
     return this_ptr;
   }
