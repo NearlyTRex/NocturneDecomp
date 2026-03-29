@@ -194,12 +194,43 @@ ERROR_CATEGORIES = {
         r"format.*expects.*argument of type",
         r"format specifies type",
         r"format.*expects.*but.*has type",
+        r"more '%' conversions than data arguments",
+        r"data argument not used by format string",
+        r"-Wformat",
     ],
     # Return type mismatches (wrong return type annotation in Ghidra)
     'return_type_error': [
         r"non-void function does not return",
         r"control reaches end of non-void",
         r"return-type",
+    ],
+    # Cast errors (pointer/float/type cast failures)
+    'cast_error': [
+        r"C-style cast from .* is not allowed",
+        r"cannot cast from type",
+        r"no matching conversion for C-style cast",
+        r"cast from pointer to smaller type",
+    ],
+    # Member access on non-struct type (wrong local/field type in Ghidra)
+    'type_error': [
+        r"member reference base type .* is not a structure or union",
+        r"is not a structure or union",
+        r"called object type .* is not a function",
+        r"invalid suffix '\._\d+_\d+_'",
+        r"statement requires expression of integer type",
+    ],
+    # Argument count mismatches (wrong function signature in Ghidra)
+    'argument_error': [
+        r"too few arguments to function call",
+        r"too many arguments to function call",
+    ],
+    # Pointer type mismatches
+    'pointer_type': [
+        r"cannot initialize a parameter of type",
+        r"cannot initialize return object of type",
+        r"comparison of distinct pointer types",
+        r"converts between pointers to integer types with different sign",
+        r"discards qualifiers",
     ],
 }
 
