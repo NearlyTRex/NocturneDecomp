@@ -9,7 +9,7 @@
 CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *this_ptr,uint flags)
 
 {
-  CDemonActor *this_ptr_00;
+  CWerewolf *this_ptr_00;
   CPassenger_ptr_129044 pCVar1;
   CPassenger_ptr_48676 pCVar2;
   CPassenger_ptr_13260 pCVar3;
@@ -28,10 +28,10 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
   }
   this_ptr_00 = this_ptr->werewolf_actor;
   (this_ptr->base).base.base.vtable._ub = &g_CPassengerVTable;
-  if (this_ptr_00 != (CDemonActor *)0x0) {
+  if (this_ptr_00 != (CWerewolf *)0x0) {
     g_CurrentDebugLine = 0x50;
     g_CurrentDebugFilename = "..\\core\\passngr.cpp";
-    (*((this_ptr_00->vtable)._ub)->dtor)(this_ptr_00,2);
+    (*((this_ptr_00->base).base.base.vtable._ub)->dtor)((CDemonActor *)this_ptr_00,2);
   }
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_0052b330(&this_ptr->morph,0);
   pCVar2 = core_path_cpp_CPathMap_dtor_FUN_005464d0(&ADJ(pCVar1)->base.path_map,0);

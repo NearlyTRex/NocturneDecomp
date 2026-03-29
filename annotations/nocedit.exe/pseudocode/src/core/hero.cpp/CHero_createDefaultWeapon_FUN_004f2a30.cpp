@@ -10,7 +10,7 @@ void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004f2a30(CHero *this_pt
 
 {
   char cVar1;
-  CDemonActor *actor_ptr;
+  CGun *actor_ptr;
   CWeapon *pCVar2;
   char *pcVar2;
   CWeapon *pCVar3;
@@ -18,8 +18,9 @@ void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004f2a30(CHero *this_pt
   
   core_inv_cpp_CInventory_initialize_FUN_004fd190(&this_ptr->inventory);
   class_name_hash = g_CWeaponClassInfo.name_hash;
-  actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430("CGun");
-  pCVar2 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,class_name_hash);
+  actor_ptr = (CGun *)core_actor_cpp_createActorByName_FUN_0040c430("CGun");
+  pCVar2 = (CWeapon *)
+           core_actor_cpp_castToClassHash_FUN_0040c790((CDemonActor *)actor_ptr,class_name_hash);
   if (pCVar2 == (CWeapon *)0x0) {
     g_CurrentFilename = "..\\core\\hero.cpp";
     g_CurrentLineNumber = 0x1b2;

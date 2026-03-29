@@ -5,19 +5,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 353,
-    "complexity_score": 491,
+    "assembly_lines": 364,
+    "complexity_score": 518,
     "cross_reference_count": 0,
     "function_call_count": 3,
-    "global_count": 13,
+    "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 201,
-    "suspect_count": 28,
+    "pseudocode_lines": 198,
+    "suspect_count": 31,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 554
+    "total_lines": 562
   },
   "cross_references": [],
   "function": {
@@ -30,6 +30,10 @@
       [
         "0060516e",
         "006051bc"
+      ],
+      [
+        "03fc5b88",
+        "03fc5bae"
       ]
     ],
     "convention": "__cdecl",
@@ -97,24 +101,6 @@
       "value": null
     },
     {
-      "addr": "02c6d2e4",
-      "name": "g_GlobalEdgeTable[1].y_start",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "02c6d2e8",
-      "name": "g_GlobalEdgeTable[1].x_fixed_point",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "02c6d2ec",
-      "name": "g_GlobalEdgeTable[1].x_increment",
-      "type": "undefined4",
-      "value": null
-    },
-    {
       "addr": "02c6d2f0",
       "name": "g_GlobalEdgeTable[2].x_start",
       "type": "undefined4",
@@ -142,42 +128,42 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.103202846975089,
-    "instruction_count": 281,
+    "avg_pcode_per_instr": 5.899653979238754,
+    "instruction_count": 289,
     "opcode_distribution": {
       "BOOL_AND": 3,
       "BOOL_NEGATE": 65,
       "BOOL_OR": 10,
-      "BRANCH": 7,
+      "BRANCH": 9,
       "CALL": 3,
       "CBRANCH": 30,
-      "COPY": 229,
+      "COPY": 225,
       "INT_ADD": 159,
-      "INT_AND": 312,
-      "INT_CARRY": 23,
-      "INT_EQUAL": 189,
+      "INT_AND": 316,
+      "INT_CARRY": 25,
+      "INT_EQUAL": 193,
       "INT_LEFT": 21,
       "INT_LESS": 28,
-      "INT_MULT": 23,
+      "INT_MULT": 15,
       "INT_NOTEQUAL": 51,
       "INT_OR": 59,
       "INT_SBORROW": 30,
-      "INT_SCARRY": 28,
+      "INT_SCARRY": 30,
       "INT_SDIV": 1,
       "INT_SEXT": 7,
-      "INT_SLESS": 106,
+      "INT_SLESS": 108,
       "INT_SREM": 1,
       "INT_SRIGHT": 4,
-      "INT_SUB": 65,
+      "INT_SUB": 57,
       "INT_XOR": 18,
-      "INT_ZEXT": 10,
+      "INT_ZEXT": 2,
       "LOAD": 89,
-      "POPCOUNT": 86,
+      "POPCOUNT": 88,
       "RETURN": 1,
       "STORE": 51,
       "SUBPIECE": 6
     },
-    "pcode_op_count": 1715
+    "pcode_op_count": 1705
   },
   "stack_frame": {
     "frame_size": 6184,
@@ -293,7 +279,7 @@
       "line": 104,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar1) <",
+      "text": "if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar9) <",
       "type": "pointer_cast"
     },
     {
@@ -301,7 +287,7 @@
       "line": 105,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_GlobalEdgeTable[0].x_start + iVar1)) {",
+      "text": "*(int *)((int)&g_GlobalEdgeTable[0].x_start + iVar9)) {",
       "type": "pointer_cast"
     },
     {
@@ -309,23 +295,23 @@
       "line": 106,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)((int)&g_GlobalEdgeTable[0].x_start + iVar1);",
+      "text": "uVar1 = *(uint *)((int)&g_GlobalEdgeTable[0].x_start + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 107,
-      "match": "(int *)((int)",
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "aiStack_38[0] = *(int *)((int)&g_GlobalEdgeTable[0].y_start + iVar1);",
+      "text": "uVar2 = *(uint *)((int)&g_GlobalEdgeTable[0].y_start + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 108,
-      "match": "(int *)((int)",
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "aiStack_38[1] = *(int *)((int)&g_GlobalEdgeTable[0].x_fixed_point + iVar1);",
+      "text": "uVar3 = *(uint *)((int)&g_GlobalEdgeTable[0].x_fixed_point + iVar9);",
       "type": "pointer_cast"
     },
     {
@@ -333,7 +319,7 @@
       "line": 109,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "aiStack_38[2] = *(int *)((int)&g_GlobalEdgeTable[0].x_increment + iVar1);",
+      "text": "iVar10 = *(int *)((int)&g_GlobalEdgeTable[0].x_increment + iVar9);",
       "type": "pointer_cast"
     },
     {
@@ -341,7 +327,7 @@
       "line": 110,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_GlobalEdgeTable[0].x_start + iVar1) =",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[0].x_start + iVar9) =",
       "type": "pointer_cast"
     },
     {
@@ -349,7 +335,7 @@
       "line": 111,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_start + iVar1);",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_start + iVar9);",
       "type": "pointer_cast"
     },
     {
@@ -357,7 +343,7 @@
       "line": 112,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_GlobalEdgeTable[0].y_start + iVar1) =",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[0].y_start + iVar9) =",
       "type": "pointer_cast"
     },
     {
@@ -365,7 +351,7 @@
       "line": 113,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].y_start + iVar1);",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].y_start + iVar9);",
       "type": "pointer_cast"
     },
     {
@@ -373,7 +359,7 @@
       "line": 114,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_GlobalEdgeTable[0].x_fixed_point + iVar1) =",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[0].x_fixed_point + iVar9) =",
       "type": "pointer_cast"
     },
     {
@@ -381,23 +367,31 @@
       "line": 115,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_fixed_point + iVar1);",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_fixed_point + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 116,
-      "match": "(int *)((int)",
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "iVar3 = *(int *)((int)&g_GlobalEdgeTable[1].x_increment + iVar1);",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[0].x_increment + iVar9) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 117,
-      "match": "(int *)((int)",
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_GlobalEdgeTable[0].x_increment + iVar1) = iVar3;",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_increment + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 118,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_start + iVar9) = uVar1;",
       "type": "pointer_cast"
     },
     {
@@ -405,12 +399,28 @@
       "line": 119,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_start + iVar1) = uVar1;",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].y_start + iVar9) = uVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 138,
+      "line": 120,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_fixed_point + iVar9) = uVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 121,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&g_GlobalEdgeTable[1].x_increment + iVar9) = iVar10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 135,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(*(int *)((int)&g_GlobalEdgeTable[0].x_start + local_18) <= local_14));",
@@ -418,26 +428,42 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 147,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar1)].x_fixed_point <",
+      "text": "if (g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar9)].x_fixed_point <",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 148,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar9 + -4)].x_fixed_point) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 149,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uVar1 = *(uint *)((int)aiStack_d8 + iVar9 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)aiStack_d8 + iVar9 + -4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 151,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar1 + -4)].x_fixed_point) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 152,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)((int)aiStack_d8 + iVar1 + -4);",
+      "text": "*(uint *)((int)aiStack_d8 + iVar9);",
       "type": "pointer_cast"
     },
     {
@@ -445,63 +471,47 @@
       "line": 153,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)aiStack_d8 + iVar1 + -4) =",
+      "text": "*(uint *)((int)aiStack_d8 + iVar9) = uVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)aiStack_d8 + iVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 156,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)aiStack_d8 + iVar1) = uVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 169,
+      "line": 166,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(this_ptr,(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar11)].",
+      "text": "(this_ptr,(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar13)].",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 168,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar9)].x_fixed_point >>",
+      "text": "(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar11)].x_fixed_point >>",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 180,
+      "line": 177,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar2 = *(int *)((int)aiStack_d8 + iVar9 + -4);",
+      "text": "iVar2 = *(int *)((int)aiStack_d8 + iVar11 + -4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 191,
+      "line": 188,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "((void *)((int)aiStack_d8 + iVar9 + -4),",
+      "text": "((void *)((int)aiStack_d8 + iVar11 + -4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 192,
+      "line": 189,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "(void *)((int)aiStack_d8 + iVar9),(iVar3 - iVar1) * 4);",
+      "text": "(void *)((int)aiStack_d8 + iVar11),(iVar10 - iVar9) * 4);",
       "type": "pointer_cast"
     }
   ]

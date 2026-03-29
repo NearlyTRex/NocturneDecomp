@@ -4,13 +4,19 @@
       {
         "category": "other",
         "column": 16,
+        "line": 91,
+        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 16,
         "line": 92,
         "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 93,
+        "line": 127,
         "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       },
       {
@@ -21,21 +27,21 @@
       },
       {
         "category": "other",
-        "column": 16,
-        "line": 129,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "other",
         "column": 9,
-        "line": 165,
+        "line": 164,
         "message": "statement requires expression of integer type ('SRenderVertex *' invalid)"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 166,
+        "line": 165,
         "message": "value of type 'SRenderVertex *' is not implicitly convertible to 'int'"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 170,
+        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       },
       {
         "category": "other",
@@ -45,74 +51,68 @@
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 172,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "other",
         "column": 14,
-        "line": 189,
+        "line": 187,
         "message": "value of type 'SRenderVertex *' is not implicitly convertible to 'int'"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 195,
+        "line": 193,
         "message": "value of type 'SRenderVertex *' is not implicitly convertible to 'int'"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 200,
+        "line": 198,
         "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 201,
+        "line": 199,
         "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 244,
+        "line": 241,
         "message": "statement requires expression of integer type ('SRenderVertex *' invalid)"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 245,
+        "line": 242,
         "message": "value of type 'SRenderVertex *' is not implicitly convertible to 'int'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 250,
+        "line": 247,
         "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 251,
+        "line": 248,
         "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 268,
+        "line": 264,
         "message": "value of type 'SRenderVertex *' is not implicitly convertible to 'int'"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 274,
+        "line": 270,
         "message": "value of type 'SRenderVertex *' is not implicitly convertible to 'int'"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 279,
+        "line": 275,
         "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       }
     ],
@@ -121,13 +121,13 @@
   },
   "complexity": {
     "assembly_lines": 793,
-    "complexity_score": 1359,
+    "complexity_score": 1195,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 53,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 494,
-    "suspect_count": 84,
+    "pseudocode_lines": 490,
+    "suspect_count": 68,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -135,7 +135,7 @@
       "unknown_field",
       "warning_unreachable"
     ],
-    "total_lines": 1287
+    "total_lines": 1283
   },
   "cross_references": [
     {
@@ -564,6 +564,188 @@
     "declared_stack_bytes": 8,
     "estimated_params": 2
   },
+  "pcode_overrides": {
+    "0x005f85b8": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f85d4": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f85da": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8641": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f865d": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8663": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f86f8": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8714": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f871a": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f87c2": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f87de": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f87e4": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8887": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f88a3": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f88a9": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8952": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f896e": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8974": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8a21": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8a3d": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8a43": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8abb": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8ad7": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8add": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8b55": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8b71": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8b77": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8bef": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8c0b": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ],
+    "0x005f8c11": [
+      "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",
+      "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",
+      "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",
+      "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.691780821917808,
     "instruction_count": 584,
@@ -815,7 +997,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 70,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);",
@@ -823,7 +1005,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 85,
+      "line": 84,
       "match": "._0_4_",
       "severity": "mild",
       "text": "lVar1._0_4_ = (pSVar7->projected_vertex).transformed_x;",
@@ -831,7 +1013,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 86,
+      "line": 85,
       "match": "._4_4_",
       "severity": "mild",
       "text": "lVar1._4_4_ = (pSVar7->projected_vertex).transformed_y;",
@@ -839,7 +1021,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 87,
       "match": "ROUND",
       "severity": "mild",
       "text": "(pSVar5->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar1);",
@@ -847,7 +1029,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 89,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar1) >> 0x20);",
@@ -855,7 +1037,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 100,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);",
@@ -863,7 +1045,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 121,
+      "line": 120,
       "match": "._0_4_",
       "severity": "mild",
       "text": "lVar2._0_4_ = (pSVar8->projected_vertex).transformed_x;",
@@ -871,7 +1053,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 122,
+      "line": 121,
       "match": "._4_4_",
       "severity": "mild",
       "text": "lVar2._4_4_ = (pSVar8->projected_vertex).transformed_y;",
@@ -879,7 +1061,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
+      "line": 123,
       "match": "ROUND",
       "severity": "mild",
       "text": "(pSVar7->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);",
@@ -887,7 +1069,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 126,
+      "line": 125,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);",
@@ -895,7 +1077,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 164,
+      "line": 163,
       "match": "._0_4_",
       "severity": "mild",
       "text": "lVar3._0_4_ = (pSVar7->projected_vertex).transformed_x;",
@@ -903,7 +1085,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 165,
+      "line": 164,
       "match": "._4_4_",
       "severity": "mild",
       "text": "lVar3._4_4_ = (pSVar7->projected_vertex).transformed_y;",
@@ -911,7 +1093,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 167,
+      "line": 166,
       "match": "ROUND",
       "severity": "mild",
       "text": "(pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar3);",
@@ -919,31 +1101,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 169,
+      "line": 168,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar3) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 176,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar8 + (uint)bVar22 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 177,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar7 + (uint)bVar22 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 186,
+      "line": 184,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "local_24 = extraout_EAX;",
@@ -951,7 +1117,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 193,
+      "line": 191,
       "match": "._0_4_",
       "severity": "mild",
       "text": "lVar7._0_4_ = (pSVar8->projected_vertex).transformed_x;",
@@ -959,7 +1125,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 194,
+      "line": 192,
       "match": "._4_4_",
       "severity": "mild",
       "text": "lVar7._4_4_ = (pSVar8->projected_vertex).transformed_y;",
@@ -967,7 +1133,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 196,
+      "line": 194,
       "match": "ROUND",
       "severity": "mild",
       "text": "(pSVar9->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar7);",
@@ -975,31 +1141,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 198,
+      "line": 196,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar7) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 205,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar9 + (uint)bVar22 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 206,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar8 + (uint)bVar22 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 213,
+      "line": 210,
       "match": "extraout_EAX_00",
       "severity": "moderate",
       "text": "local_24 = extraout_EAX_00;",
@@ -1007,7 +1157,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 243,
+      "line": 240,
       "match": "._0_4_",
       "severity": "mild",
       "text": "lVar4._0_4_ = (pSVar7->projected_vertex).transformed_x;",
@@ -1015,7 +1165,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 244,
+      "line": 241,
       "match": "._4_4_",
       "severity": "mild",
       "text": "lVar4._4_4_ = (pSVar7->projected_vertex).transformed_y;",
@@ -1023,7 +1173,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 246,
+      "line": 243,
       "match": "ROUND",
       "severity": "mild",
       "text": "(pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar4);",
@@ -1031,31 +1181,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 248,
+      "line": 245,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar4) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 255,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar8 + (uint)bVar22 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 256,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar7 + (uint)bVar22 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 265,
+      "line": 261,
       "match": "extraout_EAX_01",
       "severity": "moderate",
       "text": "local_24 = extraout_EAX_01;",
@@ -1063,7 +1197,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 272,
+      "line": 268,
       "match": "._0_4_",
       "severity": "mild",
       "text": "lVar8._0_4_ = (pSVar19->projected_vertex).transformed_x;",
@@ -1071,7 +1205,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 273,
+      "line": 269,
       "match": "._4_4_",
       "severity": "mild",
       "text": "lVar8._4_4_ = (pSVar19->projected_vertex).transformed_y;",
@@ -1079,7 +1213,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 275,
+      "line": 271,
       "match": "ROUND",
       "severity": "mild",
       "text": "(pSVar21->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar8);",
@@ -1087,31 +1221,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 277,
+      "line": 273,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar8) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 284,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar21 + (uint)bVar22 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 285,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 292,
+      "line": 288,
       "match": "extraout_EAX_02",
       "severity": "moderate",
       "text": "local_24 = extraout_EAX_02;",
@@ -1119,7 +1237,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 320,
+      "line": 316,
       "match": "._0_4_",
       "severity": "mild",
       "text": "lVar5._0_4_ = (pSVar7->projected_vertex).transformed_x;",
@@ -1127,7 +1245,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 321,
+      "line": 317,
       "match": "._4_4_",
       "severity": "mild",
       "text": "lVar5._4_4_ = (pSVar7->projected_vertex).transformed_y;",
@@ -1135,7 +1253,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 323,
+      "line": 319,
       "match": "ROUND",
       "severity": "mild",
       "text": "(pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar5);",
@@ -1143,31 +1261,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 325,
+      "line": 321,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar5) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 332,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar8 + (uint)bVar22 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 333,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar7 + (uint)bVar22 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 343,
+      "line": 339,
       "match": "extraout_EAX_03",
       "severity": "moderate",
       "text": "local_24 = extraout_EAX_03;",
@@ -1175,7 +1277,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 350,
+      "line": 346,
       "match": "._0_4_",
       "severity": "mild",
       "text": "lVar9._0_4_ = (pSVar7->projected_vertex).transformed_x;",
@@ -1183,7 +1285,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 351,
+      "line": 347,
       "match": "._4_4_",
       "severity": "mild",
       "text": "lVar9._4_4_ = (pSVar7->projected_vertex).transformed_y;",
@@ -1191,7 +1293,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 353,
+      "line": 349,
       "match": "ROUND",
       "severity": "mild",
       "text": "(pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar9);",
@@ -1199,31 +1301,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 355,
+      "line": 351,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar9) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 362,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar8 + (uint)bVar22 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 363,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar7 + (uint)bVar22 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 371,
+      "line": 367,
       "match": "extraout_EAX_04",
       "severity": "moderate",
       "text": "local_24 = extraout_EAX_04;",
@@ -1231,7 +1317,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 399,
+      "line": 395,
       "match": "._0_4_",
       "severity": "mild",
       "text": "lVar6._0_4_ = (pSVar7->projected_vertex).transformed_x;",
@@ -1239,7 +1325,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 400,
+      "line": 396,
       "match": "._4_4_",
       "severity": "mild",
       "text": "lVar6._4_4_ = (pSVar7->projected_vertex).transformed_y;",
@@ -1247,7 +1333,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 402,
+      "line": 398,
       "match": "ROUND",
       "severity": "mild",
       "text": "(pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar6);",
@@ -1255,31 +1341,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 404,
+      "line": 400,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar6) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 412,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar8 + (uint)bVar22 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 413,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar7 + (uint)bVar22 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 423,
+      "line": 419,
       "match": "extraout_EAX_05",
       "severity": "moderate",
       "text": "local_24 = extraout_EAX_05;",
@@ -1287,7 +1357,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 430,
+      "line": 426,
       "match": "._0_4_",
       "severity": "mild",
       "text": "lVar10._0_4_ = (pSVar20->projected_vertex).transformed_x;",
@@ -1295,7 +1365,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 431,
+      "line": 427,
       "match": "._4_4_",
       "severity": "mild",
       "text": "lVar10._4_4_ = (pSVar20->projected_vertex).transformed_y;",
@@ -1303,7 +1373,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 433,
+      "line": 429,
       "match": "ROUND",
       "severity": "mild",
       "text": "(pSVar7->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar10);",
@@ -1311,31 +1381,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 435,
+      "line": 431,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar10) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 443,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar7 + (uint)bVar22 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 444,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 452,
+      "line": 448,
       "match": "extraout_EAX_06",
       "severity": "moderate",
       "text": "local_24 = extraout_EAX_06;",

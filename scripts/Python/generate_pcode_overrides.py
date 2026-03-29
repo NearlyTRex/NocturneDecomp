@@ -52,11 +52,16 @@ Usage:
 
     # Scan for all suspect types (includes experimental)
     python generate_pcode_overrides.py /path/to/pseudocode/src --type=all
+
+- movsd_df0 (--type=movsd): Bare MOVSD string copy with direction flag assumed clear
+  Fix: Override MOVSD pcode to remove DF-dependent bVar*-8 arithmetic
+  Status: STABLE - Watcom always uses DF=0 (forward direction)
 """
 
 import argparse
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -232,6 +237,141 @@ def generate_callind_preserve_pcode(target_type, target_value, return_address=No
         ]
     else:
         return None
+
+
+def generate_movsd_df0_pcode():
+    """Generate p-code for MOVSD assuming DF=0 (forward direction).
+
+    Replaces Ghidra's DF-dependent MOVSD pcode (which produces garbled
+    bVar*-8 pointer arithmetic) with a simple:
+        [EDI] = [ESI]; ESI += 4; EDI += 4
+
+    Returns:
+        List of p-code operation strings
+    """
+    # ESI = register 0x18, EDI = register 0x1c
+    # RAM space = 0x1a1
+    return [
+        "LOAD (unique,0x14800,4) = (const,0x1a1,4), (register,0x18,4)",   # tmp = [ESI]
+        "STORE (const,0x1a1,4), (register,0x1c,4), (unique,0x14800,4)",   # [EDI] = tmp
+        "INT_ADD (register,0x18,4) = (register,0x18,4), (const,0x4,4)",   # ESI += 4
+        "INT_ADD (register,0x1c,4) = (register,0x1c,4), (const,0x4,4)",   # EDI += 4
+    ]
+
+
+# Regex to match bare MOVSD (not MOVSD.REP) in Ghidra asm output
+RE_BARE_MOVSD = re.compile(
+    r'^\s+MOVSD\s+ES:.*;\s*([0-9a-fA-F]+)', re.IGNORECASE)
+
+
+def find_movsd_sites(asm_path):
+    """Find bare MOVSD instruction addresses in an ASM file.
+
+    Only matches single MOVSD (not MOVSD.REP which is handled by
+    fix_movsd_caves.py). Returns addresses as hex strings with 0x prefix.
+    """
+    addresses = []
+    with open(asm_path, 'r') as f:
+        for line in f:
+            # Skip REP MOVSD (Ghidra syntax: MOVSD.REP)
+            if '.REP' in line.upper():
+                continue
+            m = RE_BARE_MOVSD.match(line)
+            if m:
+                addresses.append('0x' + m.group(1).lower())
+    return addresses
+
+
+def process_json_file_movsd(json_path, apply=False, verbose=True):
+    """Process a JSON file to add MOVSD DF=0 pcode overrides.
+
+    Finds the corresponding .asm file, scans for bare MOVSD instructions,
+    and generates pcode overrides that assume DF=0.
+
+    Returns:
+        Tuple of (fixes_count, skipped_count)
+    """
+    # Find .asm file
+    asm_path = json_path.replace('.json', '.asm')
+    if not os.path.isfile(asm_path):
+        return 0, 0
+
+    # Scan for MOVSD sites
+    movsd_addrs = find_movsd_sites(asm_path)
+    if not movsd_addrs:
+        return 0, 0
+
+    # Load JSON
+    try:
+        with open(json_path, 'r') as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, IOError):
+        return 0, 0
+
+    if not isinstance(data, dict):
+        return 0, 0
+
+    existing = data.get('pcode_overrides', {})
+    pcode = generate_movsd_df0_pcode()
+
+    # Filter to only new overrides
+    new_addrs = []
+    for addr in movsd_addrs:
+        norm = addr.lower().replace('0x', '').lstrip('0') or '0'
+        already = False
+        for ex_addr in existing:
+            ex_norm = ex_addr.lower().replace('0x', '').lstrip('0') or '0'
+            if ex_norm == norm:
+                already = True
+                break
+        if not already:
+            new_addrs.append(addr)
+
+    if not new_addrs:
+        return 0, 0
+
+    func_name = data.get('function', {}).get('name', os.path.basename(json_path))
+
+    if verbose:
+        print("\n%s: %d MOVSD site(s)" % (func_name, len(new_addrs)))
+        for addr in new_addrs:
+            print("    %s  MOVSD DF=0 override" % addr)
+
+    if apply:
+        if 'pcode_overrides' not in data:
+            data['pcode_overrides'] = {}
+        for addr in new_addrs:
+            data['pcode_overrides'][addr] = pcode
+        try:
+            with open(json_path, 'w') as f:
+                json.dump(data, f, indent=2, sort_keys=True)
+            if verbose:
+                print("  Applied %d override(s)" % len(new_addrs))
+        except IOError as e:
+            print("  Error writing %s: %s" % (json_path, e))
+            return 0, 0
+
+    return len(new_addrs), 0
+
+
+def scan_directory_movsd(src_dir, apply=False, verbose=True):
+    """Scan directory for JSON files and add MOVSD pcode overrides."""
+    files_with_fixes = 0
+    total_fixes = 0
+    files_scanned = 0
+
+    for root, dirs, files in os.walk(src_dir):
+        for filename in files:
+            if not filename.endswith('.json'):
+                continue
+            json_path = os.path.join(root, filename)
+            files_scanned += 1
+            fixes, _ = process_json_file_movsd(json_path, apply=apply, verbose=verbose)
+            if fixes > 0:
+                files_with_fixes += 1
+                total_fixes += fixes
+
+    return files_scanned, files_with_fixes, total_fixes
 
 
 def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
@@ -706,8 +846,10 @@ Suspect Types:
     call-preserve      - Direct CALL in non-EBP-frame with ESP preserve (EXPERIMENTAL)
     direct-call        - Both direct CALL types
 
-    stable             - All stable types (recommended)
-    all                - All types (includes experimental)
+    movsd              - Bare MOVSD DF=0 override (STABLE, scans ASM files)
+
+    stable             - All stable types (recommended, excludes movsd)
+    all                - All types (includes experimental, excludes movsd)
 
 Examples:
     # Dry run - CALLIND anchor suspects only (default, stable)
@@ -730,7 +872,7 @@ Examples:
     parser.add_argument('--type', choices=['callind-anchor', 'callind-preserve', 'callind',
                                            'variadic-anchor', 'variadic-ebp-preserve', 'variadic-preserve',
                                            'variadic', 'stack-align', 'call-anchor', 'call-preserve',
-                                           'direct-call', 'stable', 'all'],
+                                           'direct-call', 'stable', 'all', 'movsd'],
                         default='callind-anchor', help='Suspect type to process (default: callind-anchor)')
     parser.add_argument('--apply', action='store_true',
                         help='Apply fixes to JSON files (default: dry run)')
@@ -776,6 +918,42 @@ Examples:
     elif args.type == 'stable':
         suspect_types = {'callind_anchor', 'variadic_anchor', 'stack_align_anchor', 'call_esp_anchor'}
         type_desc = 'all stable types (recommended)'
+    elif args.type == 'movsd':
+        # MOVSD is handled via a separate code path (ASM scanning, not suspects)
+        path = Path(args.path)
+        verbose = not args.quiet
+
+        if not path.exists():
+            print("Error: Path does not exist: %s" % path)
+            sys.exit(1)
+
+        if verbose:
+            print("Scanning for bare MOVSD instructions (DF=0 override)...")
+            if not args.apply:
+                print("(Dry run - use --apply to apply fixes)\n")
+
+        if path.is_file():
+            if not path.suffix == '.json':
+                print("Error: File must be a JSON file")
+                sys.exit(1)
+            fixes, _ = process_json_file_movsd(str(path), apply=args.apply, verbose=verbose)
+            if fixes == 0:
+                print("No bare MOVSD sites found")
+            elif not args.apply:
+                print("\nRun with --apply to apply these fixes")
+        else:
+            files_scanned, files_with_fixes, total_fixes = \
+                scan_directory_movsd(str(path), apply=args.apply, verbose=verbose)
+            print("\n" + "=" * 60)
+            print("Summary:")
+            print("  Type: MOVSD DF=0 override (stable)")
+            print("  Files scanned: %d" % files_scanned)
+            print("  Files with MOVSD: %d" % files_with_fixes)
+            print("  Total overrides: %d" % total_fixes)
+            if total_fixes > 0 and not args.apply:
+                print("\nRun with --apply to apply these fixes")
+        sys.exit(0)
+
     else:  # all
         suspect_types = {'callind_anchor', 'callind_preserve',
                          'variadic_anchor', 'variadic_preserve_ebp', 'variadic_preserve',

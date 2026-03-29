@@ -4,7 +4,7 @@
       {
         "category": "type_error",
         "column": 3,
-        "line": 42,
+        "line": 44,
         "message": "unknown type name 'code'"
       }
     ],
@@ -12,21 +12,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 1530,
-    "complexity_score": 669,
+    "assembly_lines": 1541,
+    "complexity_score": 621,
     "cross_reference_count": 2,
     "function_call_count": 24,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 519,
-    "suspect_count": 13,
+    "pseudocode_lines": 516,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
       "unresolved_funcptr",
       "warning_inlined_function"
     ],
-    "total_lines": 2049
+    "total_lines": 2057
   },
   "cross_references": [
     {
@@ -56,6 +55,10 @@
       [
         "006088b0",
         "006089ad"
+      ],
+      [
+        "0060cb69",
+        "0060cb8a"
       ],
       [
         "0060fa66",
@@ -432,17 +435,17 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.1024049650892165,
-    "instruction_count": 1289,
+    "avg_pcode_per_instr": 5.063222821896685,
+    "instruction_count": 1297,
     "opcode_distribution": {
       "BOOL_NEGATE": 19,
       "BOOL_OR": 29,
-      "BRANCH": 51,
+      "BRANCH": 53,
       "CALL": 67,
       "CALLIND": 1,
       "CALLOTHER": 5,
       "CBRANCH": 42,
-      "COPY": 2667,
+      "COPY": 2663,
       "FLOAT2FLOAT": 197,
       "FLOAT_ADD": 16,
       "FLOAT_DIV": 7,
@@ -455,26 +458,25 @@
       "FLOAT_SUB": 25,
       "INT2FLOAT": 26,
       "INT_ADD": 639,
-      "INT_AND": 395,
-      "INT_CARRY": 100,
-      "INT_EQUAL": 280,
+      "INT_AND": 399,
+      "INT_CARRY": 102,
+      "INT_EQUAL": 284,
       "INT_LEFT": 88,
       "INT_LESS": 25,
-      "INT_MULT": 8,
       "INT_NOTEQUAL": 112,
       "INT_OR": 111,
       "INT_SBORROW": 25,
-      "INT_SCARRY": 100,
-      "INT_SLESS": 140,
-      "INT_SUB": 305,
+      "INT_SCARRY": 102,
+      "INT_SLESS": 142,
+      "INT_SUB": 297,
       "INT_XOR": 9,
-      "INT_ZEXT": 96,
+      "INT_ZEXT": 88,
       "LOAD": 272,
-      "POPCOUNT": 140,
+      "POPCOUNT": 142,
       "RETURN": 2,
       "STORE": 461
     },
-    "pcode_op_count": 6577
+    "pcode_op_count": 6567
   },
   "stack_frame": {
     "frame_size": 7956,
@@ -1220,55 +1222,23 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 35,
+      "line": 37,
       "match": "code *",
       "severity": "moderate",
       "text": "code *blend_callback;",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 195,
-      "match": "(CQuaternion4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar11 = (CQuaternion4f *)((int)pCVar11 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 196,
-      "match": "(CQuaternion4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar8 = (CQuaternion4f *)((int)pCVar8 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 198,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar13 = (uint *)((int)pCVar11 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 199,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar10 = (uint *)((int)pCVar8 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 286,
+      "line": 283,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar12 = SQRT(fVar6 * fVar6 + fVar12 * fVar12 + fVar5 * fVar5);",
+      "text": "fVar15 = SQRT(fVar6 * fVar6 + fVar15 * fVar15 + fVar5 * fVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 319,
+      "line": 316,
       "match": "fpatan",
       "severity": "mild",
       "text": "fVar16 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /",
@@ -1276,42 +1246,42 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 343,
+      "line": 340,
       "match": "fpatan",
       "severity": "mild",
-      "text": "fVar11 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /",
+      "text": "fVar14 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 371,
+      "line": 368,
       "match": "fpatan",
       "severity": "mild",
-      "text": "fVar11 = (float10)fpatan((float10)local_16c.y -",
+      "text": "fVar14 = (float10)fpatan((float10)local_16c.y -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 381,
+      "line": 378,
       "match": "fpatan",
       "severity": "mild",
-      "text": "fVar11 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /",
+      "text": "fVar14 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 417,
+      "line": 414,
       "match": "fpatan",
       "severity": "mild",
-      "text": "fVar11 = (float10)fpatan((float10)local_c4.y -",
+      "text": "fVar14 = (float10)fpatan((float10)local_c4.y -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 428,
+      "line": 425,
       "match": "fpatan",
       "severity": "mild",
-      "text": "fVar11 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /",
+      "text": "fVar14 = (float10)fpatan((float10)(this_ptr->carry_object_bbox).max.x /",
       "type": "decompiler_intrinsic"
     }
   ]

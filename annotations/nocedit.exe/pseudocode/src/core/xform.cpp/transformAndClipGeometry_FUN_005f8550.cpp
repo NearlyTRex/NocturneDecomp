@@ -66,7 +66,6 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
   longlong lVar10;
   longlong lVar9;
   
-  bVar22 = 0;
   local_24 = (SRenderVertex *)0x0;
   iVar18 = 0;
   piVar15 = vertex_indices;
@@ -180,8 +179,7 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
           if (iVar6 != 0 && -9 < iVar6 + -8) {
             (pSVar8->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
             if (4 < iVar6) {
-              *(uint *)((int)pSVar8 + (uint)bVar22 * -8 + 4) =
-                   *(uint *)((int)pSVar7 + (uint)bVar22 * -8 + 4);
+              (pSVar8->projected_vertex).transformed_y = (pSVar7->projected_vertex).transformed_y;
             }
           }
           g_ClipVertexCountStage2 = g_ClipVertexCountStage2 + 1;
@@ -209,8 +207,7 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
           if (iVar6 != 0 && -9 < iVar6 + -8) {
             (pSVar9->projected_vertex).transformed_x = (pSVar8->projected_vertex).transformed_x;
             if (4 < iVar6) {
-              *(uint *)((int)pSVar9 + (uint)bVar22 * -8 + 4) =
-                   *(uint *)((int)pSVar8 + (uint)bVar22 * -8 + 4);
+              (pSVar9->projected_vertex).transformed_y = (pSVar8->projected_vertex).transformed_y;
             }
           }
           g_ClipVertexCountStage2 = g_ClipVertexCountStage2 + 1;
@@ -259,8 +256,7 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
             if (iVar6 != 0 && -9 < iVar6 + -8) {
               (pSVar8->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
               if (4 < iVar6) {
-                *(uint *)((int)pSVar8 + (uint)bVar22 * -8 + 4) =
-                     *(uint *)((int)pSVar7 + (uint)bVar22 * -8 + 4);
+                (pSVar8->projected_vertex).transformed_y = (pSVar7->projected_vertex).transformed_y;
               }
             }
             g_ClipVertexCountStage3 = g_ClipVertexCountStage3 + 1;
@@ -288,8 +284,8 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
             if (iVar6 != 0 && -9 < iVar6 + -8) {
               (pSVar21->projected_vertex).transformed_x = (pSVar19->projected_vertex).transformed_x;
               if (4 < iVar6) {
-                *(uint *)((int)pSVar21 + (uint)bVar22 * -8 + 4) =
-                     *(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);
+                (pSVar21->projected_vertex).transformed_y =
+                     (pSVar19->projected_vertex).transformed_y;
               }
             }
             g_ClipVertexCountStage3 = g_ClipVertexCountStage3 + 1;
@@ -336,8 +332,8 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
               if (iVar6 != 0 && -9 < iVar6 + -8) {
                 (pSVar8->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
                 if (4 < iVar6) {
-                  *(uint *)((int)pSVar8 + (uint)bVar22 * -8 + 4) =
-                       *(uint *)((int)pSVar7 + (uint)bVar22 * -8 + 4);
+                  (pSVar8->projected_vertex).transformed_y =
+                       (pSVar7->projected_vertex).transformed_y;
                 }
               }
               g_ClipVertexCountStage4 = g_ClipVertexCountStage4 + 1;
@@ -366,8 +362,8 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
               if (iVar6 != 0 && -9 < iVar6 + -8) {
                 (pSVar8->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
                 if (4 < iVar6) {
-                  *(uint *)((int)pSVar8 + (uint)bVar22 * -8 + 4) =
-                       *(uint *)((int)pSVar7 + (uint)bVar22 * -8 + 4);
+                  (pSVar8->projected_vertex).transformed_y =
+                       (pSVar7->projected_vertex).transformed_y;
                 }
               }
               g_ClipVertexCountStage4 = g_ClipVertexCountStage4 + 1;
@@ -416,8 +412,8 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
                   (pSVar8->projected_vertex).transformed_x =
                        (pSVar7->projected_vertex).transformed_x;
                   if (4 < iVar6) {
-                    *(uint *)((int)pSVar8 + (uint)bVar22 * -8 + 4) =
-                         *(uint *)((int)pSVar7 + (uint)bVar22 * -8 + 4);
+                    (pSVar8->projected_vertex).transformed_y =
+                         (pSVar7->projected_vertex).transformed_y;
                   }
                 }
                 g_ClippedVertexCount = g_ClippedVertexCount + 1;
@@ -447,8 +443,8 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
                   (pSVar7->projected_vertex).transformed_x =
                        (pSVar20->projected_vertex).transformed_x;
                   if (4 < iVar6) {
-                    *(uint *)((int)pSVar7 + (uint)bVar22 * -8 + 4) =
-                         *(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);
+                    (pSVar7->projected_vertex).transformed_y =
+                         (pSVar20->projected_vertex).transformed_y;
                   }
                 }
                 g_ClippedVertexCount = g_ClippedVertexCount + 1;

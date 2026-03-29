@@ -16,13 +16,13 @@
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 1090,
+        "line": 1091,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 1090,
+        "line": 1091,
         "message": "expected expression"
       }
     ],
@@ -31,20 +31,20 @@
   },
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 1825,
+    "complexity_score": 1816,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 197,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1725,
-    "suspect_count": 8,
+    "pseudocode_lines": 1726,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "sub84_truncation",
       "unresolved_funcptr"
     ],
-    "total_lines": 5672
+    "total_lines": 5673
   },
   "cross_references": [
     {
@@ -2784,16 +2784,8 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 625,
-      "match": "NAN",
-      "severity": "mild",
-      "text": "this_ptr_01[2].location.position.y = -NAN;",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 1075,
+      "line": 1076,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar11 = *(int *)((int)g_CDemonSetPtr->enemies + iStack_74);",
@@ -2801,7 +2793,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1080,
+      "line": 1081,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (SQRT(fVar5 * fVar5 + fVar15 * fVar15 + fVar4 * fVar4) <= (float)50) {",
@@ -2809,7 +2801,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1083,
+      "line": 1084,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar11 + 0x154) + 0x11c))(iVar11,&SStack_2fc);",
@@ -2817,7 +2809,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1441,
+      "line": 1442,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar6 = *(int *)((int)g_CDemonSetPtr->characters + iStack_40);",

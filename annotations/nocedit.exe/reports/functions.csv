@@ -59,7 +59,7 @@ cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_00487ad0,00487ad0,cockpi
 cockpit_drawsurf.cpp_CDrawSurface_drawCenteredSolidRectangle_FUN_004886c0,004886c0,cockpit/drawsurf.cpp,16,0,,16
 cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0,00489ab0,cockpit/drawsurf.cpp,6,0,,6
 cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630,00487630,cockpit/drawsurf.cpp,36,2,pointer_cast,61
-cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0,00488cd0,cockpit/drawsurf.cpp,201,28,pointer_cast|stack_alignment_array,491
+cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0,00488cd0,cockpit/drawsurf.cpp,198,31,pointer_cast|stack_alignment_array,518
 cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0,00489ce0,cockpit/drawsurf.cpp,7,0,,7
 cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0,00488ad0,cockpit/drawsurf.cpp,94,3,pointer_cast,129
 cockpit_drawsurf.cpp_setCurrentFont_FUN_004874c0,004874c0,cockpit/drawsurf.cpp,5,0,,5
@@ -2839,7 +2839,7 @@ core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0,005f6ee0,core/xform.cpp,19,1,param_
 core_xform.cpp_quaternionFromAngleZ_FUN_005f7a30,005f7a30,core/xform.cpp,12,3,decompiler_intrinsic|param_count_too_many,52
 core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80,005f7c80,core/xform.cpp,47,4,decompiler_intrinsic,92
 core_xform.cpp_normalizeMatrix_FUN_005f51e0,005f51e0,core/xform.cpp,47,3,decompiler_intrinsic,82
-core_xform.cpp_transformAndClipGeometry_FUN_005f8550,005f8550,core/xform.cpp,494,84,decompiler_intrinsic|extra_output|pointer_cast|unknown_field|warning_unreachable,1359
+core_xform.cpp_transformAndClipGeometry_FUN_005f8550,005f8550,core/xform.cpp,490,68,decompiler_intrinsic|extra_output|pointer_cast|unknown_field|warning_unreachable,1195
 core_xform.cpp_buildYFlipMatrix_FUN_005f6f40,005f6f40,core/xform.cpp,23,0,,23
 core_xform.cpp_clipPolygonStage3_FUN_005f81c0,005f81c0,core/xform.cpp,95,14,decompiler_intrinsic|pointer_cast|unknown_field|warning_unreachable,255
 core_xform.cpp_atan2Approximation_FUN_005f55c0,005f55c0,core/xform.cpp,29,0,,29
@@ -2926,7 +2926,7 @@ core_gun.cpp_staticInit_FUN_004f0280,004f0280,core/gun.cpp,7,0,,7
 core_gun.cpp_CGun_getActorType_FUN_004f02e0,004f02e0,core/gun.cpp,4,0,,4
 core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004f38d0,004f38d0,core/hero.cpp,11,0,,11
 core_hero.cpp_CHero_removeMatchingKeys_FUN_004f3910,004f3910,core/hero.cpp,5,0,,5
-core_hero.cpp_CHero_createDefaultWeapon_FUN_004f2a30,004f2a30,core/hero.cpp,33,0,,33
+core_hero.cpp_CHero_createDefaultWeapon_FUN_004f2a30,004f2a30,core/hero.cpp,34,0,,34
 core_hero.cpp_CHero_stopPushingBox_FUN_004f3350,004f3350,core/hero.cpp,16,0,,16
 core_hero.cpp_CHero_dtor_FUN_004f2470,004f2470,core/hero.cpp,33,5,decompiler_intrinsic|negative_offset|pointer_cast,98
 core_hero.cpp_CHero_getPropertyList_FUN_004f3f20,004f3f20,core/hero.cpp,7,0,,7
@@ -3210,7 +3210,7 @@ core_ammobox.cpp_CAmmoBox_addToInventory_FUN_00411700,00411700,core/ammobox.cpp,
 core_ammobox.cpp_CAmmoBox_addFilesToExtract_FUN_00411c00,00411c00,core/ammobox.cpp,6,0,,6
 core_ammobox.cpp_CAmmoBox_process_FUN_00411680,00411680,core/ammobox.cpp,4,0,,4
 core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_00411820,00411820,core/ammobox.cpp,22,0,,22
-core_passngr.cpp_CPassenger_setup_FUN_00545d30,00545d30,core/passngr.cpp,69,1,warning_type_propagation,84
+core_passngr.cpp_CPassenger_setup_FUN_00545d30,00545d30,core/passngr.cpp,72,1,warning_type_propagation,87
 core_passngr.cpp_CPassenger_addFilesToExtract_FUN_005462f0,005462f0,core/passngr.cpp,5,0,,5
 core_passngr.cpp_CPassenger_dtor_FUN_00545c10,00545c10,core/passngr.cpp,47,8,decompiler_intrinsic,132
 core_passngr.cpp_CPassenger_process_FUN_00545ef0,00545ef0,core/passngr.cpp,82,1,warning_type_propagation,97
@@ -4247,7 +4247,7 @@ core_stranger.cpp_CStranger_tryThrowDynamite_FUN_005c5e80,005c5e80,core/stranger
 core_stranger.cpp_CStranger_reset_FUN_005c6750,005c6750,core/stranger.cpp,16,0,,16
 core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960,005c3960,core/stranger.cpp,269,4,decompiler_intrinsic,314
 core_stranger.cpp_CStranger_setup_FUN_005bb4b0,005bb4b0,core/stranger.cpp,110,0,,110
-core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520,005be520,core/stranger.cpp,519,13,decompiler_intrinsic|pointer_cast|unresolved_funcptr|warning_inlined_function,669
+core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520,005be520,core/stranger.cpp,516,9,decompiler_intrinsic|unresolved_funcptr|warning_inlined_function,621
 core_stranger.cpp_CStranger_updateTurnBlending_FUN_005bf800,005bf800,core/stranger.cpp,91,2,decompiler_intrinsic,116
 core_stranger.cpp_CStranger_getHandsMidpoint_FUN_005be490,005be490,core/stranger.cpp,27,0,,27
 core_stranger.cpp_staticInit_FUN_005bae80,005bae80,core/stranger.cpp,13,0,,13
@@ -4637,7 +4637,7 @@ core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90,0059ab90,core/s
 core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_005a14b0,005a14b0,core/skeleton.cpp,21,0,,21
 core_skeleton.cpp_distancePointToLineSegment_FUN_005996e0,005996e0,core/skeleton.cpp,44,3,decompiler_intrinsic,79
 core_skeleton.cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860,0059a860,core/skeleton.cpp,4,0,,4
-core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0,0059e0a0,core/skeleton.cpp,369,26,pointer_cast|stack_alignment_array,639
+core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0,0059e0a0,core/skeleton.cpp,358,22,pointer_cast|stack_alignment_array,588
 core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210,005a0210,core/skeleton.cpp,12,0,,12
 core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0,0059f6e0,core/skeleton.cpp,28,0,,28
 core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0,005a10e0,core/skeleton.cpp,24,0,,24
@@ -5941,7 +5941,7 @@ core_game.cpp_beginProfileTimer_FUN_004e30f0,004e30f0,core/game.cpp,8,0,,8
 core_game.cpp_captureDebugMovieFrame_FUN_004d7810,004d7810,core/game.cpp,104,1,pointer_cast,119
 core_game.cpp_CGame_loadAssets_FUN_004e07a0,004e07a0,core/game.cpp,8,0,,8
 core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930,004dd930,core/game.cpp,20,0,,20
-core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0,004ddaf0,core/game.cpp,1725,8,decompiler_intrinsic|pointer_cast|sub84_truncation|unresolved_funcptr,1825
+core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0,004ddaf0,core/game.cpp,1726,7,decompiler_intrinsic|pointer_cast|sub84_truncation|unresolved_funcptr,1816
 core_game.cpp_CGame_displayBitmap_FUN_004e2890,004e2890,core/game.cpp,24,0,,24
 core_game.cpp_CGame_process_FUN_004e3190,004e3190,core/game.cpp,130,0,,130
 core_game.cpp_CGame_drawScreenBorder_FUN_004d7e50,004d7e50,core/game.cpp,13,0,,13

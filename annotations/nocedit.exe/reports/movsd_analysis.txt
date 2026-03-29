@@ -8,16 +8,15 @@ fixed by replacing them with explicit MOV instructions in code caves.
 
 SUMMARY
 --------------------------------------------------
-Already patched (cave):    777 sites (excluded from counts below)
+Already patched (cave):    781 sites (excluded from counts below)
 
-Consecutive MOVSD groups:  119
+Consecutive MOVSD groups:  115
   1x MOVSD ( 4 bytes):   98 sites
   2x MOVSD ( 8 bytes):   3 sites
   3x MOVSD (12 bytes):   14 sites
-  4x MOVSD (16 bytes):   4 sites
   Fixable (cave patch):   1
   No artifacts (OK):      28
-  Unfixable:              90
+  Unfixable:              86
   Est. cave space:        ~33 bytes
 
 REP MOVSD sites:           527
@@ -74,7 +73,7 @@ REP MOVSD sites:           527
     2122 dwords (8488 bytes): 1 sites
     3200 dwords (12800 bytes): 1 sites
 
-Total MOVSD sites:         646
+Total MOVSD sites:         642
 
 ----------------------------------------------------------------------------------------------------
 FIXABLE 3x MOVSD SITES (12 bytes copy, 1 sites)
@@ -145,17 +144,6 @@ NO ARTIFACTS 1x MOVSD SITES (4 bytes copy, 12 sites — decompiler handles OK)
     0x0046ec2a  1x MOVSD (4 bytes copy)
   duplicateSharedVertices_FUN_00465d50                                     1 sites
     0x00465e62  1x MOVSD (4 bytes copy)
-
-----------------------------------------------------------------------------------------------------
-UNFIXABLE 4x MOVSD SITES (16 bytes copy, 4 sites)
-----------------------------------------------------------------------------------------------------
-  CDeformableModelInstance_updateMotion_FUN_0059e0a0                       2 sites
-    0x0059e52b  4x MOVSD (16 bytes copy)  only 4 bytes available (need 5)
-    0x0059e964  4x MOVSD (16 bytes copy)  only 4 bytes available (need 5)
-  CDrawSurface_fillPoly_FUN_00488cd0                                       1 sites
-    0x00488df1  4x MOVSD (16 bytes copy)  only 4 bytes available (need 5)
-  CStranger_updateProceduralAnimation_FUN_005be520                         1 sites
-    0x005be795  4x MOVSD (16 bytes copy)  branch target inside patch range
 
 ----------------------------------------------------------------------------------------------------
 UNFIXABLE 1x MOVSD SITES (4 bytes copy, 86 sites)

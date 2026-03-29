@@ -1,0 +1,58 @@
+{
+  "groups": [
+    {
+      "name": "movsd_caves_CStranger_updateProceduralAnimation_FUN_005be520",
+      "description": "MOVSD redirect-callers fix for CStranger_updateProceduralAnimation (0x005be795)",
+      "patches": [
+        {
+          "name": "movsd_005be795_cave",
+          "address": "0x0060cb69",
+          "original": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "patched": "528b0e890f8b4e04894f048b4e08894f088b4e0c894f0c83c61083c710e90e1cfbff",
+          "description": "Explicit 16-byte copy with two entry points (0x0060cb69 with PUSH, 0x0060cb6a without) + JMP back to 0x005be799"
+        },
+        {
+          "name": "movsd_005be795_site",
+          "address": "0x005be794",
+          "original": "52a5a5a5a5",
+          "patched": "e9d0e30400",
+          "description": "JMP to cave entry 1 (with PUSH EDX), replacing PUSH EDX + 4x MOVSD"
+        },
+        {
+          "name": "movsd_005be795_caller1",
+          "address": "0x005beb9b",
+          "original": "e9f5fbffff",
+          "patched": "e9cadf0400",
+          "description": "Redirect JMP from LAB_005be795 to cave entry 2 (without PUSH)"
+        },
+        {
+          "name": "movsd_005be795_caller2",
+          "address": "0x005bf174",
+          "original": "e91cf6ffff",
+          "patched": "e9f1d90400",
+          "description": "Redirect JMP from LAB_005be795 to cave entry 2 (without PUSH)"
+        },
+        {
+          "name": "movsd_005be795_caller3",
+          "address": "0x005bf393",
+          "original": "e9fdf3ffff",
+          "patched": "e9d2d70400",
+          "description": "Redirect JMP from LAB_005be795 to cave entry 2 (without PUSH)"
+        }
+      ]
+    }
+  ],
+  "function_body_extensions": [
+    {
+      "function": "0x005be520",
+      "cave_start": "0x0060cb69",
+      "cave_size": 34
+    }
+  ],
+  "cave_comments": [
+    {
+      "address": "0x0060c5a0",
+      "comment": "CODE_CAVE cave_0060c5a0 2076 1515"
+    }
+  ]
+}

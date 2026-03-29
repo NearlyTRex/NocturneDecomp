@@ -41,7 +41,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_00545b30(CPassenger *t
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
   pcVar2 = "nameMePlease";
-  ADJ(pCVar3)->werewolf_actor = (CDemonActor *)0x0;
+  ADJ(pCVar3)->werewolf_actor = (CWerewolf *)0x0;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&ADJ(pCVar3)->base.base.model,"trainman.dfm");
   pcVar3 = ADJ(pCVar3)->name_of_wolf;

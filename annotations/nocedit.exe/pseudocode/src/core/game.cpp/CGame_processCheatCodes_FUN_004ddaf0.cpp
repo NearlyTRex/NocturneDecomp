@@ -26,7 +26,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   char *pcVar8;
   byte *pbVar9;
   CDemonActor *pCVar16;
-  CDemonActor *this_ptr_01;
+  CKeyActor *this_ptr_01;
   CSkeleton *pCVar17;
   CStranger *pCVar15;
   CGasMask *this_ptr_02;
@@ -38,7 +38,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   int iVar19;
   CSkeleton *pCVar12;
   CSkeleton *pCVar20;
-  CDemonActor *pCVar13;
+  CKeyActor *pCVar13;
   byte *pbVar14;
   byte *pbVar21;
   byte bVar22;
@@ -626,24 +626,25 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         pCVar16 = core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0
                             (&g_HeroActors[g_LocalHeroIndex]->inventory,"Skeleton_key");
         if (pCVar16 == (CDemonActor *)0x0) {
-          this_ptr_01 = core_actor_cpp_createActorByName_FUN_0040c430("CKeyActor");
+          this_ptr_01 = (CKeyActor *)
+                        core_actor_cpp_createActorByName_FUN_0040c430("CKeyActor");
           pcVar8 = "Skeleton_key";
-          (*((this_ptr_01->vtable)._ub)->setup)(this_ptr_01);
-          this_ptr_01[2].location.position.y = -NAN;
+          (*((this_ptr_01->base).vtable._ub)->setup)((CDemonActor *)this_ptr_01);
+          this_ptr_01->key_mask = -1;
           pCVar13 = this_ptr_01;
           do {
             cVar3 = *pcVar8;
-            pCVar13->actor_name[0] = cVar3;
+            (pCVar13->base).actor_name[0] = cVar3;
             if (cVar3 == '\0') break;
             cVar2 = pcVar8[1];
             pcVar8 = pcVar8 + 2;
-            pCVar13->actor_name[1] = cVar2;
-            pCVar13 = (CDemonActor *)(pCVar13->actor_name + 2);
+            (pCVar13->base).actor_name[1] = cVar2;
+            pCVar13 = (CKeyActor *)((pCVar13->base).actor_name + 2);
           } while (cVar2 != '\0');
           core_sound_cpp_CSound_playSound_FUN_005b3a20
                     (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
           core_inv_cpp_CInventory_addItem_FUN_004fd600
-                    (&g_HeroActors[g_LocalHeroIndex]->inventory,this_ptr_01,1);
+                    (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)this_ptr_01,1);
           fVar15 = 5.0;
           pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("You have the skeleton key");

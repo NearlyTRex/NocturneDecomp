@@ -8,8 +8,8 @@ allocate space within caves for injected code (thunks, helpers).
 
 Total caves:        29
 Total bytes:        157,591
-Total free:         109,370
-Total allocations:  779
+Total free:         109,219
+Total allocations:  783
 
 ----------------------------------------------------------------------------------------------------
 CAVES
@@ -789,7 +789,7 @@ CAVES
                2x MOVSD replacement for getSocketName_FUN_005e1df0
     Free space: 52 bytes (offset 0x028c - 0x02c0)
 
-  cave_0060c5a0                   0060c5a0   2076 bytes  [1481/2076 used]
+  cave_0060c5a0                   0060c5a0   2076 bytes  [1515/2076 used]
     Allocations:
       +0x0000   32 bytes  movsd_0053e601             0x0053e601
                3x MOVSD replacement for CDemonMission_editGore_FUN_0053e220
@@ -893,7 +893,9 @@ CAVES
                2x MOVSD replacement for CNetGame_processPacket_FUN_005406a0
       +0x05aa   31 bytes  movsd_005d7b24             0x005d7b24
                3x MOVSD replacement for optimizeCubeTriList_FUN_005d77a0
-    Free space: 595 bytes (offset 0x05c9 - 0x081c)
+      +0x05c9   34 bytes  movsd_005be795             0x005be795
+               4x MOVSD redirect-callers fix for CStranger_updateProceduralAnimation_FUN_005be520
+    Free space: 561 bytes (offset 0x05eb - 0x081c)
 
   cave_005fde92                   0060d067    145 bytes  [116/145 used]
     Allocations:
@@ -1185,7 +1187,7 @@ CAVES
                3x MOVSD replacement for CRainDrop_render_FUN_004c6830
     Free space: 46 bytes (offset 0x0191 - 0x01bf)
 
-  cave_03fc0000                   03fc0000  131072 bytes  [23354/131072 used]
+  cave_03fc0000                   03fc0000  131072 bytes  [23471/131072 used]
     Allocations:
       +0x0000  104 bytes  movsd_005c0893             0x005c0893
                REP MOVSD 12-dword replacement for CStranger_computeWeaponAttachXForm_FUN_005c07b0
@@ -1681,5 +1683,11 @@ CAVES
                1x MOVSD replacement for CNetGame_applyNewGameSettings_FUN_00542470
       +0x5b24   22 bytes  movsd_00543bcd             0x00543bcd
                1x MOVSD replacement for CNetGame_swapPlayerData_FUN_00543bb0
-    Free space: 107718 bytes (offset 0x5b3a - 0x20000)
+      +0x5b3a   39 bytes  movsd_0059e52b             0x0059e52b
+               4x MOVSD replacement for CDeformableModelInstance_updateMotion_FUN_0059e0a0
+      +0x5b61   39 bytes  movsd_0059e964             0x0059e964
+               4x MOVSD replacement for CDeformableModelInstance_updateMotion_FUN_0059e0a0
+      +0x5b88   39 bytes  movsd_00488df1             0x00488df1
+               4x MOVSD replacement for CDrawSurface_fillPoly_FUN_00488cd0
+    Free space: 107601 bytes (offset 0x5baf - 0x20000)
 

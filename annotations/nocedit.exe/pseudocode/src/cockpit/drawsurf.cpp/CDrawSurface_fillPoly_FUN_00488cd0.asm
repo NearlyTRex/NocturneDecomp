@@ -27,9 +27,6 @@
 ;   undefined4 g_GlobalEdgeTable[0].x_fixed_point
 ;   undefined4 g_GlobalEdgeTable[0].x_increment
 ;   undefined4 g_GlobalEdgeTable[1].x_start
-;   undefined4 g_GlobalEdgeTable[1].y_start
-;   undefined4 g_GlobalEdgeTable[1].x_fixed_point
-;   undefined4 g_GlobalEdgeTable[1].x_increment
 ;   undefined4 g_GlobalEdgeTable[2].x_start
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -123,12 +120,9 @@ section .text
         ;   Label: LAB_00488dda
     JMP 0x00605195                      ; 00488de0
         ;   XREF to: 00605195 (UNCONDITIONAL_JUMP)  ; LAB_00605195
-    LEA EDI,[EAX + 0x2c6d2e0]           ; 00488deb | g_GlobalEdgeTable[1].x_start
+    JMP 0x03fc5b88                      ; 00488deb
+        ;   XREF to: 03fc5b88 (UNCONDITIONAL_JUMP)  ; LAB_03fc5b88
         ;   Label: LAB_00488deb
-    MOVSD ES:EDI,ESI                    ; 00488df1 | g_GlobalEdgeTable[1].x_start
-    MOVSD ES:EDI,ESI                    ; 00488df2 | g_GlobalEdgeTable[1].y_start
-    MOVSD ES:EDI,ESI                    ; 00488df3 | g_GlobalEdgeTable[1].x_fixed_point
-    MOVSD ES:EDI,ESI                    ; 00488df4 | g_GlobalEdgeTable[1].x_increment
     ADD EAX,0x10                        ; 00488df5
         ;   Label: LAB_00488df5
     CMP EAX,ECX                         ; 00488df8
@@ -396,4 +390,18 @@ section .text
     LEA ESI,[ESP + 0xa0]                ; 006051b1
     JMP 0x00488deb                      ; 006051b8
         ;   XREF to: 00488deb (UNCONDITIONAL_JUMP)  ; LAB_00488deb
+    LEA EDI,[EAX + 0x2c6d2e0]           ; 03fc5b88
+        ;   Label: LAB_03fc5b88
+    MOV ECX,dword ptr [ESI]             ; 03fc5b8e
+    MOV dword ptr [EDI],ECX             ; 03fc5b90
+    MOV ECX,dword ptr [ESI + 0x4]       ; 03fc5b92
+    MOV dword ptr [EDI + 0x4],ECX       ; 03fc5b95
+    MOV ECX,dword ptr [ESI + 0x8]       ; 03fc5b98
+    MOV dword ptr [EDI + 0x8],ECX       ; 03fc5b9b
+    MOV ECX,dword ptr [ESI + 0xc]       ; 03fc5b9e
+    MOV dword ptr [EDI + 0xc],ECX       ; 03fc5ba1
+    ADD ESI,0x10                        ; 03fc5ba4
+    ADD EDI,0x10                        ; 03fc5ba7
+    JMP 0x00488df5                      ; 03fc5baa
+        ;   XREF to: 00488df5 (UNCONDITIONAL_JUMP)  ; LAB_00488df5
 

@@ -697,7 +697,8 @@ def generate_patches_for_function(asm_path, cave_addr, cave_size, cave_offset=0,
         if gtype.startswith('movsd') and gtype != 'rep_movsd':
             site_info = build_site_patch(ks, instructions, group_idx, group_addr,
                                         jump_targets=jump_targets,
-                                        movsd_count=movsd_count)
+                                        movsd_count=movsd_count,
+                                        allow_target_borrow=allow_target_borrow)
             if site_info is None:
                 if verbose:
                     print("    SKIP: cannot borrow enough bytes for JMP")

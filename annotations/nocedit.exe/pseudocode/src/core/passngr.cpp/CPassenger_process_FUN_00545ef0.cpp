@@ -35,11 +35,11 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_00545ef0(CPassenger *this_p
   if ((iVar2 == 1) || (iVar2 == 2)) {
     if ((iVar2 == 2) &&
        ((fVar4 = delta_time / 2.0f + this_ptr->morph_time, this_ptr->morph_time = fVar4,
-        1.0 <= fVar4 && (this_ptr->werewolf_actor != (CDemonActor *)0x0)))) {
+        1.0 <= fVar4 && (this_ptr->werewolf_actor != (CWerewolf *)0x0)))) {
       core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
-                (g_CDemonMissionPtr,this_ptr->werewolf_actor);
+                (g_CDemonMissionPtr,(CDemonActor *)this_ptr->werewolf_actor);
       this_ptr_01 = g_CDemonMissionPtr;
-      this_ptr->werewolf_actor = (CDemonActor *)0x0;
+      this_ptr->werewolf_actor = (CWerewolf *)0x0;
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
                 (this_ptr_01,(CDemonActor *)this_ptr,1);
     }
@@ -78,7 +78,7 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_00545ef0(CPassenger *this_p
          pCVar7->y + (this_ptr->base).base.base.location.position.y;
     (this_ptr->base).base.base.location.position.z =
          pCVar7->z + (this_ptr->base).base.base.location.position.z;
-    pCVar3 = this_ptr->werewolf_actor;
+    pCVar3 = (CDemonActor *)this_ptr->werewolf_actor;
     if (pCVar3 != (CDemonActor *)0x0) {
       (pCVar3->location).position.x = (pCVar1->position).x;
       (pCVar3->location).position.y = (this_ptr->base).base.base.location.position.y;

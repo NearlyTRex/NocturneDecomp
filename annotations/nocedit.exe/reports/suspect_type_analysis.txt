@@ -4,8 +4,8 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6915 ( 43.7%)
-  pointer_cast                    4467 ( 28.2%)
+  decompiler_intrinsic            6914 ( 43.7%)
+  pointer_cast                    4446 ( 28.1%)
   unknown_field                    896 (  5.7%)
   special_crt_function             439 (  2.8%)
   stack_param                      351 (  2.2%)
@@ -53,7 +53,7 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (6915 occurrences)
+TYPE: decompiler_intrinsic (6914 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -95,12 +95,12 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (4467 occurrences)
+TYPE: pointer_cast (4446 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1427x  (uint *)((int)
-  1233x  (int *)((int)
+  1411x  (uint *)((int)
+  1230x  (int *)((int)
    321x  (float *)((int)
    209x  (SRenderVertex *)((int)
    193x  (double *)((int)
@@ -128,7 +128,7 @@ Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
     puVar1 = (uint *)((int)g_ScreenBufferArray[y] + start_x * 2);...
   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
-    if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar1) <...
+    if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar9) <...
 
 ====================================================================================================
 TYPE: unknown_field (896 occurrences)
