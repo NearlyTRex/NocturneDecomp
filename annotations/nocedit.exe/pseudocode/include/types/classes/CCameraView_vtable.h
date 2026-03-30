@@ -5,6 +5,7 @@ struct CCameraView;
 struct CDemonCamera;
 struct CVector3f;
 struct CVector3i;
+struct SProjectedVertex;
 
 // Dependencies
 #include "system/basetypes.h"

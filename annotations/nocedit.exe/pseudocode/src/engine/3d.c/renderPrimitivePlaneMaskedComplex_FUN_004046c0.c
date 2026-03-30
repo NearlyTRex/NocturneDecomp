@@ -16,7 +16,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitivePlaneMaskedComplex_FUN_
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&primitive->surface_normal);
   if (iVar1 == 0) goto LAB_004046e0;
   engine_3d_c_calculatePolygonLighting_FUN_00403a00(primitive);
-  if (g_PerspectiveReciprocal == 0.0) {
+  if (g_PerspectiveReciprocal == 0) {
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) goto LAB_00404736;
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005b5322;

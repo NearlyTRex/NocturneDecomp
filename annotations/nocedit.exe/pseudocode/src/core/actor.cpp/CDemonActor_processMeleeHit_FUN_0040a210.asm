@@ -87,7 +87,9 @@ section .text
     PUSH EBP                            ; 0040a213
     MOV EBP,ESP                         ; 0040a214
     SUB ESP,0x28c                       ; 0040a216
-    AND ESP,0xfffffff8                  ; 0040a21c
+    NOP                                 ; 0040a21c
+    NOP                                 ; 0040a21d
+    NOP                                 ; 0040a21e
     MOV EBX,dword ptr [EBP + 0x14]      ; 0040a21f
     MOV ESI,dword ptr [EBP + 0x18]      ; 0040a222
     PUSH 0x5ea                          ; 0040a225

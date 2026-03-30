@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0",
-    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera *this_ptr,CVector3f *position,float max_distance)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera *this_ptr,CVector3f *position,SProjectedVertex *projected_vertex)"
   },
   "function_calls": [],
   "globals": [
@@ -109,7 +109,7 @@
     {
       "addr": "02d051f4",
       "name": "g_PerspectiveReciprocal",
-      "type": "float",
+      "type": "int",
       "value": null
     },
     {
@@ -236,10 +236,10 @@
       },
       {
         "is_param": true,
-        "name": "max_distance",
+        "name": "projected_vertex",
         "offset": 12,
         "size": 4,
-        "type": "float"
+        "type": "SProjectedVertex *"
       }
     ]
   },

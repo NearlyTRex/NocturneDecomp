@@ -152,7 +152,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
   core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(this_ptr,0xc);
   core_set_cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60(this_ptr);
   core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0
-            (&g_CDemonCameraInstance,(CVector3f *)0x0,0.0);
+            (&g_CDemonCameraInstance,(CVector3f *)0x0,(SProjectedVertex *)0x0);
   iVar3 = 0;
   core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(g_CGorePtr);
   if (0 < this_ptr->mirror_glass_actor_count) {
@@ -191,7 +191,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
         local_64.y = (pCVar1->base).base.position.f.y;
         local_64.z = (pCVar1->base).base.position.f.z;
         core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0
-                  (&g_CDemonCameraInstance,&local_64,0.0);
+                  (&g_CDemonCameraInstance,&local_64,(SProjectedVertex *)0x0);
         iVar3 = 0;
         core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(pCVar1);
         if (0 < this_ptr->mirror_glass_actor_count) {
@@ -238,7 +238,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
         local_58.y = (pCVar1->base).base.position.f.y;
         local_58.z = (pCVar1->base).base.position.f.z;
         core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0
-                  (&g_CDemonCameraInstance,&local_58,0.0);
+                  (&g_CDemonCameraInstance,&local_58,(SProjectedVertex *)0x0);
         iVar3 = 0;
         core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(pCVar1);
         if (0 < this_ptr->mirror_glass_actor_count) {

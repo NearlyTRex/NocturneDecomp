@@ -43,7 +43,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   undefined4 g_LightBufferPool[11][183800]
 ;   CDemonRenderer g_CDemonRendererInstance
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0

@@ -127,9 +127,9 @@ LAB_004ebdb7:
     iVar7 = iVar6;
   } while (iVar6 != 0xc0);
   (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
-            (g_CurrentSceneCamera,(CVector3f *)this_ptr,0.0);
+            (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-            (g_CDemonRendererPtr2,0xffff - (int)g_PerspectiveReciprocal);
+            (g_CDemonRendererPtr2,0xffff - g_PerspectiveReciprocal);
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
             (g_CDemonRendererPtr2,&g_GoreQuadPrimitive.base);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
@@ -198,9 +198,9 @@ LAB_004ebdb7:
       iVar6 = iVar5;
     } while (iVar5 != 0xc0);
     (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
-              (g_CurrentSceneCamera,(CVector3f *)this_ptr,0.0);
+              (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-              (g_CDemonRendererPtr2,0xffff - (int)g_PerspectiveReciprocal);
+              (g_CDemonRendererPtr2,0xffff - g_PerspectiveReciprocal);
     engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
               (g_CDemonRendererPtr2,&g_GoreQuadPrimitive.base);
     iVar7 = iVar7 + 1;

@@ -36,7 +36,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet
     alpha = g_CurrentAlphaValue << 8;
   }
   else {
-    lVar2 = (longlong)(0xffff - (int)g_PerspectiveReciprocal) * (longlong)alpha;
+    lVar2 = (longlong)(0xffff - g_PerspectiveReciprocal) * (longlong)alpha;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr2,(uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);

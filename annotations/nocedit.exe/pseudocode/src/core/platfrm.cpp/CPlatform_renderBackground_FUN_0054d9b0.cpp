@@ -68,7 +68,7 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform 
     CStack_14.z = (int)ROUND((this_ptr->base).location.position.z * 256.0f);
     g_FlatShadingLightLevel =
          (*((g_CurrentSceneCamera->base).vtable)->getFogValueAtPosition)
-                   (g_CurrentSceneCamera,&CStack_14);
+                   (g_CurrentSceneCamera,&CStack_14,(SProjectedVertex *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               (&this_ptr->model,0.0,-1);
     g_CDemonSetPtr->per_pixel_lighting_enabled = 0;

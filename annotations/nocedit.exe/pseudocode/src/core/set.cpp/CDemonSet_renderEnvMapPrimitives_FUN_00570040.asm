@@ -32,7 +32,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   SMRGLTextureBasic g_EnvMapTexture
 ;   CDemonRenderer g_CDemonRendererInstance
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;   undefined4 g_CGameInstance.render_mode
 ;   CVector3f[20000] g_VertexNormalArray
 ;   undefined4 g_VertexNormalArray[0].y

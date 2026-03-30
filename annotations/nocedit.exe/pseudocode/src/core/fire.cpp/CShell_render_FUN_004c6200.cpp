@@ -27,7 +27,7 @@ void __cdecl core_fire_cpp_CShell_render_FUN_004c6200(CShell *this_ptr)
       iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
       if (iVar2 == 0) {
         (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
-                  (g_CurrentSceneCamera,(CVector3f *)this_ptr,0.0);
+                  (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
       }
       core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380
                 (g_CDemonSetPtr,(CVector3f *)this_ptr,(UOrientationVector *)&this_ptr->euler_angles,

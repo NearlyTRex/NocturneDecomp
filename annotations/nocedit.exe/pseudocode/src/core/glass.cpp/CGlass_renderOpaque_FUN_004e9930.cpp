@@ -47,7 +47,7 @@ int __cdecl core_glass_cpp_CGlass_renderOpaque_FUN_004e9930(CGlass *this_ptr)
     }
     core_set_cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
               (g_CDemonSetPtr,this_ptr->broken_vertex_count,input_vertices);
-    lVar1 = (longlong)(0xffff - (int)g_PerspectiveReciprocal) * (longlong)this_ptr->opacity;
+    lVar1 = (longlong)(0xffff - g_PerspectiveReciprocal) * (longlong)this_ptr->opacity;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr2,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     prim = &this_ptr->broken_quads[0].base;

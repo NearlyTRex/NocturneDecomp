@@ -23,6 +23,12 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   char *pcVar10;
   char *pcVar11;
   byte bVar11;
+  uint local_480;
+  uint uStack_47c;
+  uint local_478;
+  uint uStack_474;
+  uint local_470;
+  uint uStack_46c;
   float local_468;
   char local_464 [300];
   char local_338 [256];
@@ -43,7 +49,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   double dVar2;
   float fVar1;
   float fVar4;
-
+  
   bVar11 = 0;
   fVar4 = (float)g_Cached3DDistanceFactorInverse;
   fVar2 = 20.0f * fVar4;
@@ -153,7 +159,7 @@ joined_r0x005a47dc:
             g_CurrentFilename = "..\\sound\\sndmain.cpp";
             g_CurrentLineNumber = 0x29a;
             core_main_c_displayErrorAndQuit_FUN_00506f10
-                      ("Reference volume distance %g is too small in %s line %d!",(double)fVar2,local_138,local_18);
+                      ("Reference volume distance %g is too small in %s line %d!",dVar3,local_138,local_18);
           }
         }
         else {
@@ -191,7 +197,7 @@ joined_r0x005a47dc:
                   g_CurrentFilename = "..\\sound\\sndmain.cpp";
                   g_CurrentLineNumber = 0x2ae;
                   core_main_c_displayErrorAndQuit_FUN_00506f10
-                            ("Length for %s already known, then specified again in %s line %d",this_ptr,local_138,local_18);
+                            ("Length for %s already known, then specified again in %s line %d",this_ptr->sample_info.name,local_138,local_18);
                 }
                 if (local_38 < 1) {
                   g_CurrentLineNumber = 0x2af;

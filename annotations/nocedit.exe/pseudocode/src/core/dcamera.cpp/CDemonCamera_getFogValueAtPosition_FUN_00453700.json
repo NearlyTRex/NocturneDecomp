@@ -30,7 +30,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700",
-    "signature": "int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700(CDemonCamera *this_ptr,CVector3i *world_position)"
+    "signature": "int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700(CDemonCamera *this_ptr,CVector3i *world_position,SProjectedVertex *projected_vertex)"
   },
   "function_calls": [
     {
@@ -68,9 +68,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 2,
-    "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.333333333333333,
@@ -110,10 +110,10 @@
     "pcode_op_count": 506
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -129,6 +129,13 @@
         "offset": 8,
         "size": 4,
         "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "projected_vertex",
+        "offset": 12,
+        "size": 4,
+        "type": "SProjectedVertex *"
       }
     ]
   },

@@ -21,7 +21,7 @@
 ;   uint g_ProcessedVertexOffset
 ;   uint g_ProcessedVertexBackupOffset
 ;   void* g_CurrentVertexData
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;

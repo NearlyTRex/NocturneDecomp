@@ -42,7 +42,7 @@
 ;   int g_StoredZ
 ;   CDemonCamera* g_CurrentSceneCamera
 ;   CDemonRenderer g_CDemonRendererInstance
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;   CDemonCamera g_CDemonCameraInstance
 ;
 ; Called Functions:
@@ -170,7 +170,7 @@ section .text
     PUSH EAX                            ; 00420632
     PUSH 0x32758e4                      ; 00420633 | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0 ; 00420638
-        ;   XREF to: 004537d0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera * this_ptr, CVector3f * position, float max_distance)
+        ;   XREF to: 004537d0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
     MOV ESI,dword ptr [0x02d051f4]      ; 0042063d | g_PerspectiveReciprocal
     ADD ESP,0xc                         ; 00420643
     CMP ESI,0xfde8                      ; 00420646

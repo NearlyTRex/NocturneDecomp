@@ -281,11 +281,11 @@ void __cdecl CDemonCamera::initCameraFog(CDemonCamera *this_ptr,SFog *fog_config
 
 // Original: core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700
 // Address: 00453700
-int __cdecl CDemonCamera::getFogValueAtPosition(CDemonCamera *this_ptr,CVector3i *world_position);
+int __cdecl CDemonCamera::getFogValueAtPosition(CDemonCamera *this_ptr,CVector3i *world_position,SProjectedVertex *projected_vertex);
 
 // Original: core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0
 // Address: 004537d0
-void __cdecl CDemonCamera::setupPerspectiveAndFog(CDemonCamera *this_ptr,CVector3f *position,float max_distance);
+void __cdecl CDemonCamera::setupPerspectiveAndFog(CDemonCamera *this_ptr,CVector3f *position,SProjectedVertex *projected_vertex);
 
 // Original: core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0
 // Address: 004538c0

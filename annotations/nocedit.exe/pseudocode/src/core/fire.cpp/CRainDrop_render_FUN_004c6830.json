@@ -240,7 +240,7 @@
     {
       "addr": "02d051f4",
       "name": "g_PerspectiveReciprocal",
-      "type": "float",
+      "type": "int",
       "value": null
     },
     {
@@ -530,7 +530,7 @@
       "line": 72,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(int)ROUND(ROUND((float)(0xffff - (int)g_PerspectiveReciprocal) *",
+      "text": "(int)ROUND(ROUND((float)(0xffff - g_PerspectiveReciprocal) *",
       "type": "decompiler_intrinsic"
     },
     {
@@ -538,7 +538,7 @@
       "line": 72,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(int)ROUND(ROUND((float)(0xffff - (int)g_PerspectiveReciprocal) *",
+      "text": "(int)ROUND(ROUND((float)(0xffff - g_PerspectiveReciprocal) *",
       "type": "decompiler_intrinsic"
     },
     {

@@ -34,7 +34,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *thi
   } while (iVar3 < 0x1e);
   iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-  if ((iVar1 == 0) && ((int)g_PerspectiveReciprocal < 0x4000)) {
+  if ((iVar1 == 0) && (g_PerspectiveReciprocal < 0x4000)) {
     pCVar5 = this_ptr;
     do {
       pCVar5 = (CSvetlana *)((pCVar5->base).base.base.actor_name + 4);

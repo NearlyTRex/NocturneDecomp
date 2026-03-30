@@ -88,7 +88,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
     local_50.x = (int)((fVar10 + fVar5) * -0.5f);
     local_50.y = (int)((fVar3 + fVar6) * -0.5f);
     local_50.z = (int)((fVar4 + fVar7) * -0.5f);
-    g_PerspectiveReciprocal = 0.0;
+    g_PerspectiveReciprocal = 0;
     local_2c.x = 0;
     local_2c.z = 0;
     local_2c.y = rotation_y;

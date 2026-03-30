@@ -55,6 +55,7 @@ SUSPECT_SEVERITY = {
     'warning_unmapped_variable': 'moderate',
     'warning_type_propagation': 'moderate',
     'warning_partial_indirect': 'moderate',
+    'warning_unable_to_use_type': 'moderate',
     'warning_inlined_function': 'mild',
     'warning_is_inlined': 'mild',
     # Mild: minor issues, code is readable
@@ -193,6 +194,9 @@ _SUSPECT_PATTERN_DEFS = [
     # WARNING: This is an inlined function
     (r'WARNING:\s*This is an inlined function', 'warning_is_inlined',
      'Function body is an inlined copy'),
+    # WARNING: Unable to use type for symbol
+    (r'WARNING:\s*Unable to use type for symbol', 'warning_unable_to_use_type',
+     'Ghidra could not apply type to a symbol'),
     # Decompiler intrinsics - pseudo-functions and artifacts (not real C)
     # Includes: ROUND(), SQRT(), CONCAT44, SUB84, SBORROW, CARRY4, NAN(), fsin, fcos, fptan, ADJ(), etc.
     (r'\b(ROUND|SQRT|TRUNC|FLOOR|CEIL|ABS|ZEXT|SEXT|CARRY\d*|SCARRY\d*|SBORROW\d*|CONCAT\d+|SUB\d+|NAN|fsin|fcos|fptan|fpatan|fsqrt|fabs|ADJ)\b', 'decompiler_intrinsic', 'Decompiler intrinsic (not real C)'),

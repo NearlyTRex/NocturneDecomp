@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_camview_cpp_CCameraView_setupPerspectiveAndFog_FUN_00427d20(CCameraView *this_ptr,CVector3f *position,float max_distance)
+; void __cdecl core_camview_cpp_CCameraView_setupPerspectiveAndFog_FUN_00427d20(CCameraView *this_ptr,CVector3f *position,SProjectedVertex *projected_vertex)
 ;
 ; Parameters:
 ; CCameraView *    Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
-; float            Stack[0xc]:4   max_distance
+; SProjectedVertex * Stack[0xc]:4   projected_vertex
 ;
 ; *****************************************************************************
 

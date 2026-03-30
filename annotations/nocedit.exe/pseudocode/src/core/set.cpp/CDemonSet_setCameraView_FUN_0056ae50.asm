@@ -52,7 +52,7 @@
 ;   CWeather* g_CWeatherPtr = 03f95dc0
 ;   SMRGLTextureBasic[24] g_SkyDomeTextureData
 ;   int g_UseExternalRenderer
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;   ... and 27 more
 ;
 ; Called Functions:

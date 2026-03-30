@@ -39,7 +39,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_GlobalDeltaTimeInt
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;   ... and 8 more
 ;
 ; Called Functions:

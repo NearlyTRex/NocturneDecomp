@@ -89,7 +89,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
       fVar2 = SQRT(fVar4 * fVar4 + fVar8 * fVar8 + fVar3 * fVar3);
       if (0.0 < fVar2) {
         fVar5 = 1.0 / fVar2;
-        iVar6 = 0xffff - (int)g_PerspectiveReciprocal;
+        iVar6 = 0xffff - g_PerspectiveReciprocal;
         local_ec.x = 0.0;
         local_ec.y = 0.0;
         local_ec.z = 1.0;

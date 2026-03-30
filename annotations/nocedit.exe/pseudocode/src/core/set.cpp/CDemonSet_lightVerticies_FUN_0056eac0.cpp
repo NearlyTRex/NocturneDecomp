@@ -132,7 +132,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                   core_set_cpp_transformToWorldSpace_FUN_0056e890(&local_16c,&local_154);
                   core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                             (this_ptr,&local_160,(CVector3i *)0x0,local_44,0);
-                  *(float *)((int)&g_RenderVertexBuffer[0].a + iVar24) = g_PerspectiveReciprocal;
+                  *(int *)((int)&g_RenderVertexBuffer[0].a + iVar24) = g_PerspectiveReciprocal;
                   local_44 = local_44 + 1;
                   iVar24 = iVar24 + 0x30;
                 } while (local_44 < vertex_count);
@@ -323,8 +323,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                     core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                               (this_ptr,local_68,&local_100,iVar24,0);
                     local_68 = local_68 + 1;
-                    *(float *)((int)&g_RenderVertexBuffer[0].a + local_64) = g_PerspectiveReciprocal
-                    ;
+                    *(int *)((int)&g_RenderVertexBuffer[0].a + local_64) = g_PerspectiveReciprocal;
                     iVar24 = iVar19;
                     local_64 = local_64 + 0x30;
                   } while (iVar19 < vertex_count);
@@ -361,8 +360,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                               (this_ptr,world_position,surface_normal,local_3c,0);
                     pCVar22 = pCVar22 + 1;
                     local_3c = local_3c + 1;
-                    *(float *)((int)&g_RenderVertexBuffer[0].a + local_58) = g_PerspectiveReciprocal
-                    ;
+                    *(int *)((int)&g_RenderVertexBuffer[0].a + local_58) = g_PerspectiveReciprocal;
                     local_60 = local_60 + 1;
                     local_58 = local_58 + 0x30;
                   } while (local_3c < vertex_count);
@@ -472,7 +470,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                 iVar17 = iVar24 + 1;
                 core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                           (this_ptr,local_54,(CVector3i *)pCVar23,iVar24,0);
-                *(float *)((int)&g_RenderVertexBuffer[0].a + iVar19) = g_PerspectiveReciprocal;
+                *(int *)((int)&g_RenderVertexBuffer[0].a + iVar19) = g_PerspectiveReciprocal;
                 local_54 = local_54 + 1;
                 iVar24 = iVar17;
                 iVar19 = iVar19 + 0x30;
@@ -496,7 +494,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
             core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                       (this_ptr,&local_178,(CVector3i *)0x0,local_40,0);
             local_40 = local_40 + 1;
-            *(float *)((int)&g_RenderVertexBuffer[0].a + iVar24) = g_PerspectiveReciprocal;
+            *(int *)((int)&g_RenderVertexBuffer[0].a + iVar24) = g_PerspectiveReciprocal;
             iVar24 = iVar24 + 0x30;
           } while (local_40 < vertex_count);
           return;
@@ -541,7 +539,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
               *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;
               iVar19 = iVar17;
             } while (iVar17 < iVar24);
-            g_PerspectiveReciprocal = 0.0;
+            g_PerspectiveReciprocal = 0;
             return;
           }
         }
@@ -555,10 +553,10 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
             *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;
             iVar19 = iVar17;
           } while (iVar17 < iVar24);
-          g_PerspectiveReciprocal = 0.0;
+          g_PerspectiveReciprocal = 0;
           return;
         }
-        g_PerspectiveReciprocal = 0.0;
+        g_PerspectiveReciprocal = 0;
         return;
       }
       if (0 < vertex_count) {
@@ -572,7 +570,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
           iVar13 = iVar13;
         } while (iVar13 < iVar24);
       }
-      g_PerspectiveReciprocal = 0.0;
+      g_PerspectiveReciprocal = 0;
     }
   }
   return;

@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;
 ; *****************************************************************************
 

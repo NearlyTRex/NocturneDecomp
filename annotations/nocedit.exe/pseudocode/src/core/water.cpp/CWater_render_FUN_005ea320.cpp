@@ -45,7 +45,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,g_WaterTextures + g_WaterCurrentFrame);
-    g_PerspectiveReciprocal = 0.0;
+    g_PerspectiveReciprocal = 0;
     g_WaterAnimationPhase =
          g_CGamePtr->delta_time_float * (float)3.1415926535000001 * (float)0.5 *
          (float)2 + g_WaterAnimationPhase;

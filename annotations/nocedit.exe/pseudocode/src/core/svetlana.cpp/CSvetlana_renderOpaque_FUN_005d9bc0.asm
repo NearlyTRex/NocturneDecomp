@@ -13,7 +13,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CDemonRenderer g_CDemonRendererInstance
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.render_mode
 ;   CDemonSet g_CDemonSetInstance

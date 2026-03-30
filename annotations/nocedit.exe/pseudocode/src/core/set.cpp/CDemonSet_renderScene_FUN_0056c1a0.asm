@@ -347,7 +347,7 @@ section .text
     PUSH 0x0                            ; 0056c46c
     PUSH 0x32758e4                      ; 0056c46e | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0 ; 0056c473
-        ;   XREF to: 004537d0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera * this_ptr, CVector3f * position, float max_distance)
+        ;   XREF to: 004537d0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
     ADD ESP,0xc                         ; 0056c478
     MOV EDI,dword ptr [0x0067b9a0]      ; 0056c47b | g_CGorePtr
     PUSH EDI                            ; 0056c481 | g_CGoreInstance
@@ -774,7 +774,7 @@ section .text
     PUSH EAX                            ; 0056c892
     PUSH 0x32758e4                      ; 0056c893 | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0 ; 0056c898
-        ;   XREF to: 004537d0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera * this_ptr, CVector3f * position, float max_distance)
+        ;   XREF to: 004537d0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
     ADD ESP,0xc                         ; 0056c89d
     PUSH EDI                            ; 0056c8a0
     XOR ESI,ESI                         ; 0056c8a1
@@ -822,7 +822,7 @@ section .text
     PUSH EAX                            ; 0056c905
     PUSH 0x32758e4                      ; 0056c906 | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0 ; 0056c90b
-        ;   XREF to: 004537d0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera * this_ptr, CVector3f * position, float max_distance)
+        ;   XREF to: 004537d0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera * this_ptr, CVector3f * position, SProjectedVertex * projected_vertex)
     ADD ESP,0xc                         ; 0056c910
     PUSH EDI                            ; 0056c913
     XOR ESI,ESI                         ; 0056c914

@@ -118,8 +118,9 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_34);
           (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
-                    (g_CurrentSceneCamera,&(this_ptr->base).location.position,0.0);
-          g_RenderVertexBuffer[0].a = 0xffff - (int)g_PerspectiveReciprocal;
+                    (g_CurrentSceneCamera,&(this_ptr->base).location.position,
+                     (SProjectedVertex *)0x0);
+          g_RenderVertexBuffer[0].a = 0xffff - g_PerspectiveReciprocal;
           if (fStack_1c == 4.2039e-45) {
             g_RenderVertexBuffer[0].a = g_RenderVertexBuffer[0].a / 2;
           }

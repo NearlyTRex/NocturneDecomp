@@ -94,7 +94,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
         fVar2 = SQRT(fVar5 * fVar5 + fVar3 * fVar3 + fVar4 * fVar4);
         if (0.0 < fVar2) {
           fVar6 = 1.0 / fVar2;
-          iVar7 = 0xffff - (int)g_PerspectiveReciprocal;
+          iVar7 = 0xffff - g_PerspectiveReciprocal;
           local_8c.x = 0.0;
           local_8c.y = 0.0;
           local_8c.z = 1.0;

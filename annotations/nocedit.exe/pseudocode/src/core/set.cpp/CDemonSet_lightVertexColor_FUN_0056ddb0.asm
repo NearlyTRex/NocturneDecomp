@@ -26,7 +26,7 @@
 ;   undefined4 g_RenderVertexBuffer[0].g
 ;   undefined4 g_RenderVertexBuffer[0].b
 ;   undefined4 g_RenderVertexBuffer[0].a
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;   int g_CameraOriginX
 ;   int g_CameraOriginZ
 ;   char* g_CurrentFilename

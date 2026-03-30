@@ -1,11 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700(CDemonCamera *this_ptr,CVector3i *world_position)
+; int __cdecl core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700(CDemonCamera *this_ptr,CVector3i *world_position,SProjectedVertex *projected_vertex)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; CVector3i *      Stack[0x8]:4   world_position
+; SProjectedVertex * Stack[0xc]:4   projected_vertex
 ;
 ; Referenced Globals:
 ;   double g_CameraFogIntensityFixedPointScale8 = 256

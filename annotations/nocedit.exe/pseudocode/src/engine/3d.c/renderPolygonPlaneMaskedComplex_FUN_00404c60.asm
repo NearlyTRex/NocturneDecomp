@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_RenderStateFlag2

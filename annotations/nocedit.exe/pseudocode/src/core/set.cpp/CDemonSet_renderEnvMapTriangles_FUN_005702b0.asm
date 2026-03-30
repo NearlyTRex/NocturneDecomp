@@ -31,7 +31,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   SMRGLTextureBasic g_EnvMapTexture
 ;   CDemonRenderer g_CDemonRendererInstance
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;   undefined4 g_CGameInstance.render_mode
 ;   CVector3f g_LightingReferencePosition
 ;   undefined4 g_LightingReferencePosition.y

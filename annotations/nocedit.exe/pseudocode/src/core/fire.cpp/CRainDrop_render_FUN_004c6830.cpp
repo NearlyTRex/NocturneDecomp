@@ -67,7 +67,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_FireEffectRainDropTexture);
   (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
-            (g_CurrentSceneCamera,(CVector3f *)this_ptr,0.0);
+            (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
   g_RenderVertexBuffer[1].u = 0xd00000;
   g_RenderVertexBuffer[0].u = 0x800000;
   g_RenderVertexBuffer[0].v = 0xdc0000;
@@ -76,7 +76,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   g_RenderVertexBuffer[3].u = 0x800000;
   g_RenderVertexBuffer[2].v = (int)g_CameraLoadImageReadBuffer + 0x771b0;
   g_RenderVertexBuffer[0].a =
-       (int)ROUND(ROUND((float)(0xffff - (int)g_PerspectiveReciprocal) *
+       (int)ROUND(ROUND((float)(0xffff - g_PerspectiveReciprocal) *
                         (this_ptr->base).lifetime_remaining * (float)4));
   g_RenderVertexBuffer[3].v = (int)g_CameraLoadImageReadBuffer + 0x771b0;
   CStack_2c.x = (int)ROUND((this_ptr->base).position.x * 256.0f);

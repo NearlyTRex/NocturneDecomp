@@ -82,7 +82,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
     local_50 = local_50 * fVar1;
   }
   fVar1 = -(local_50 * local_44 + local_58 * local_4c + local_54 * local_48);
-  lVar1 = (longlong)(0xffff - (int)g_PerspectiveReciprocal / 2) *
+  lVar1 = (longlong)(0xffff - g_PerspectiveReciprocal / 2) *
           (longlong)(int)ROUND(ROUND(fVar1 * fVar1 * fVar1 * fVar1 * (float)65536));
   uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   if (0.0 < fVar1) {

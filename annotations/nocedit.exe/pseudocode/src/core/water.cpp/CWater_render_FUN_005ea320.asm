@@ -37,7 +37,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_GlobalDeltaTimeInt
 ;   int g_UseExternalRenderer
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;   ... and 15 more
 ;
 ; Called Functions:

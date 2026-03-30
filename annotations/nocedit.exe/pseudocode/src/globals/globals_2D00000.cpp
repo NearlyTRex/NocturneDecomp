@@ -62,9 +62,6 @@ char g_KeyboardState[512] = {};
 // char[768]
 char g_SourcePaletteData[768] = {};
 
-// float
-float g_PerspectiveReciprocal = {};
-
 // int
 int g_RedScaleFactor = {};
 int g_GreenScaleFactor = {};
@@ -87,6 +84,7 @@ int g_CurrentTextureOffsetV = {};
 int g_TextureBits = {};
 int g_UseExternalRenderer = {};
 int g_SoftwareRenderingForced = {};
+int g_PerspectiveReciprocal = {};
 int g_JoystickPresent = {};
 int g_JoyWantUAxis = {};
 int g_JoyWantRAxis = {};

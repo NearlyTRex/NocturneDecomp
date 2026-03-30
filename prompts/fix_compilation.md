@@ -13,6 +13,7 @@ You are fixing compilation errors in Ghidra-decompiled C/C++ pseudocode for a ga
 ### Fidelity Requirements
 - **Assembly is ground truth.** When the decompiler output is ambiguous or wrong, consult the `.asm` file (same directory, same base name) to understand what the code actually does.
 - **The function signature MUST NOT change.** The name, calling convention, parameters, and return type must be identical to the original. This is non-negotiable — the signature comes from Ghidra's analysis and must be preserved exactly. Only the function body internals may be modified.
+- **Semantic correctness over compiler appeasement.** Never just slap a cast on an expression to silence a type error. Understand *what the code is actually doing* from the assembly and express that intent. For example, if a `CDemonActor *` is passed to `%s`, don't cast to `(char *)` — the struct has `actor_name[32]` at offset 0x0, so use `actor->actor_name`. If a `CClothList` is accessed through the wrong union member (e.g., `v_kfm_ptr->part_visibility_flags`), replace with the correct member (`v_clothlist_ptr->filenames[i]`). The decompiler frequently picks wrong union members or loses type info — always check what the data really is.
 - Keep variable names from the original where possible.
 - Keep the overall structure (control flow, variable declarations) as close to the original as possible.
 - Only change what is necessary to make it compile and be semantically correct.
@@ -160,18 +161,15 @@ int_ptr = (int *)uint_ptr;
         INSTRUCTION  ; ADDRESS
    ```
 3. **Identify the minimal fix** — change only what's needed to compile.
-4. **Create the `.keep` file by copying the original** — always use `cp` to copy the original `.cpp`/`.c` to the `.keep.cpp`/`.keep.c` path first, then apply edits to the copy. This preserves the original structure and makes it easy to diff the changes. Never write a `.keep` file from scratch.
-5. **Edit the `.keep` file** — add the `// MANUAL RECONSTRUCTION` header line and apply the minimal fix.
+4. **Create the `.keep` file** by running:
+   ```
+   scripts/Bash/prepare_keep.sh path/to/file.cpp
+   ```
+   This copies the original and adds the `// MANUAL RECONSTRUCTION` header line. Never write a `.keep` file from scratch.
+5. **Edit the `.keep` file** — apply the minimal fix.
 6. **Verify compilation** by running:
    ```
-   clang++ -m32 -mmmx -fasm-blocks -fsyntax-only -std=gnu++11 \
-     -Wno-everything -Warray-bounds -Wformat -Wformat-overflow \
-     -Werror=format -Werror=format-overflow \
-     -Wno-format-security -Wno-format-extra-args \
-     -Wincompatible-pointer-types -Wint-conversion \
-     -Wreturn-type -Wtautological-compare \
-     -I annotations/nocedit.exe/pseudocode/include \
-     path/to/file.keep.cpp
+   scripts/Bash/test_compilation.sh path/to/file.keep.cpp
    ```
 
 ## Type System Reference

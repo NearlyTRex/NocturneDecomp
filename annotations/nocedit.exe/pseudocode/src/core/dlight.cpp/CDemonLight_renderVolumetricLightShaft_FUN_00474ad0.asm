@@ -58,7 +58,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   undefined4 g_LightBufferPool[11][183800]
 ;   CDemonRenderer g_CDemonRendererInstance
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.halo_mode
 ;

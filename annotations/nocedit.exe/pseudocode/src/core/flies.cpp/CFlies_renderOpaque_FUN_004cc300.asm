@@ -28,7 +28,7 @@
 ;   undefined4 DAT_00800000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_UseExternalRenderer
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;   int INT_02d7a7c0
 ;   uint g_FlyBlendColor
 ;   uint g_FlyInvBlendColor

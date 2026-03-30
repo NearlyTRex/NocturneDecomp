@@ -55,7 +55,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *thi
     lVar4 = (longlong)this_ptr->fog_scale_factor * (longlong)iVar11;
     g_RenderVertexBuffer[vertex_index].b =
          (uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10;
-    g_RenderVertexBuffer[vertex_index].a = (int)g_PerspectiveReciprocal;
+    g_RenderVertexBuffer[vertex_index].a = g_PerspectiveReciprocal;
     return;
   }
   if (skip_lighting_calculation == 0) {

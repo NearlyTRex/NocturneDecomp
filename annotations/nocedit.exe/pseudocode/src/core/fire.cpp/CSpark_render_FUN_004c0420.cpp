@@ -89,8 +89,8 @@ void __cdecl core_fire_cpp_CSpark_render_FUN_004c0420(CSpark *this_ptr)
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,texture);
 LAB_004c04af:
   (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
-            (g_CurrentSceneCamera,(CVector3f *)this_ptr,0.0);
-  lVar3 = (longlong)this_ptr->intensity_current * (longlong)(0xffff - (int)g_PerspectiveReciprocal);
+            (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+  lVar3 = (longlong)this_ptr->intensity_current * (longlong)(0xffff - g_PerspectiveReciprocal);
   g_RenderVertexBuffer[0].a = (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
   g_RenderVertexBuffer[0].r = 0xffff;
   g_RenderVertexBuffer[0].g = 0xffff;
@@ -157,9 +157,8 @@ LAB_004c04af:
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,
                (CVector3i *)&CStack_94.y);
     (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
-              (g_CurrentSceneCamera,(CVector3f *)this_ptr,0.0);
-    lVar3 = (longlong)this_ptr->intensity_current *
-            (longlong)(0xffff - (int)g_PerspectiveReciprocal);
+              (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+    lVar3 = (longlong)this_ptr->intensity_current * (longlong)(0xffff - g_PerspectiveReciprocal);
     g_RenderVertexBuffer[0].a = (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
     g_RenderVertexBuffer[0].r = 0xffff;
     g_RenderVertexBuffer[0].g = 0xffff;

@@ -17,7 +17,7 @@
 ;   float FLOAT_0063a43f = 2
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0

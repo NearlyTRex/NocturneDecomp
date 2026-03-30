@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera *this_ptr,CVector3f *position,float max_distance)
+; void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera *this_ptr,CVector3f *position,SProjectedVertex *projected_vertex)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
-; float            Stack[0xc]:4   max_distance
+; SProjectedVertex * Stack[0xc]:4   projected_vertex
 ; Local Variables:
 ; CVector3i        Stack[-0x10]:12  local_10
 ;
@@ -25,7 +25,7 @@
 ;   _BIT_INTEGER32 g_RedBitPosition
 ;   _BIT_INTEGER32 g_GreenBitPosition
 ;   _BIT_INTEGER32 g_BlueBitPosition
-;   float g_PerspectiveReciprocal
+;   int g_PerspectiveReciprocal
 ;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************

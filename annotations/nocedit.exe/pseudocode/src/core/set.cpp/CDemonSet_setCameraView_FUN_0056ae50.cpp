@@ -50,7 +50,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   CDemonActor *this_ptr_00;
   CDemonLight *this_ptr_01;
   C3DSLight **ppCVar2;
-  float fVar3;
+  int fVar3;
   int iVar4;
   uint *puVar1;
   
@@ -218,8 +218,8 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
     }
   }
   this_ptr->lighting_quality_mode = 0;
-  fVar3 = (float)this_ptr->cameras[index].is_panning;
-  if (fVar3 == 0.0) {
+  fVar3 = this_ptr->cameras[index].is_panning;
+  if (fVar3 == 0) {
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
     core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70(&g_CDemonCameraInstance);
     g_PerspectiveReciprocal = fVar3;

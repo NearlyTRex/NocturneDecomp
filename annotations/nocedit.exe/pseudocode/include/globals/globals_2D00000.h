@@ -70,9 +70,6 @@ extern char g_KeyboardState[512];
 // char[768]
 extern char g_SourcePaletteData[768];
 
-// float
-extern float g_PerspectiveReciprocal;
-
 // int
 extern int g_RedScaleFactor;
 extern int g_GreenScaleFactor;
@@ -95,6 +92,7 @@ extern int g_CurrentTextureOffsetV;
 extern int g_TextureBits;
 extern int g_UseExternalRenderer;
 extern int g_SoftwareRenderingForced;
+extern int g_PerspectiveReciprocal;
 extern int g_JoystickPresent;
 extern int g_JoyWantUAxis;
 extern int g_JoyWantRAxis;

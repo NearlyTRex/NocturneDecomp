@@ -38,7 +38,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
   int iStack_18;
   CDemonRenderer *pCVar2;
   short *psVar1;
-  float fVar3;
+  int fVar3;
   
   iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar4 != 0) {
@@ -66,7 +66,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
     pCVar2 = g_CDemonRendererPtr2;
     if (g_UseExternalRenderer == 0) {
       engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr2,0,0,0);
-      uVar5 = (int)g_PerspectiveReciprocal >> 8;
+      uVar5 = g_PerspectiveReciprocal >> 8;
       g_FlyBlendColor = uVar5 | uVar5 << 8 | uVar5 << 0x10;
       g_FlyInvBlendColor = g_FlyBlendColor ^ 0xffffff;
     }
@@ -86,7 +86,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
       pCVar2->vertex_buffer_ptr[2].g = 0;
       fVar3 = g_PerspectiveReciprocal;
       pCVar2->vertex_buffer_ptr[2].b = 0;
-      iVar5 = 0xffff - (int)fVar3;
+      iVar5 = 0xffff - fVar3;
       pCVar2->vertex_buffer_ptr->a = iVar5;
       pCVar2->vertex_buffer_ptr[1].a = iVar5;
       pCVar2->vertex_buffer_ptr[2].a = iVar5;

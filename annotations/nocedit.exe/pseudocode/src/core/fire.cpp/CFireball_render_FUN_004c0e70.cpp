@@ -120,7 +120,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
       texture = &g_FireEffectSparkTexture;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,texture);
-    lVar3 = (longlong)this_ptr->timer * (longlong)(0xffff - (int)g_PerspectiveReciprocal);
+    lVar3 = (longlong)this_ptr->timer * (longlong)(0xffff - g_PerspectiveReciprocal);
     g_RenderVertexBuffer[0].a = (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
     g_RenderVertexBuffer[0].r = 0xffff;
     g_RenderVertexBuffer[0].g = 0xffff;
@@ -195,8 +195,8 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,
                    (CVector3i *)&local_c8.z);
         (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)
-                  (g_CurrentSceneCamera,(CVector3f *)this_ptr,0.0);
-        lVar3 = (longlong)this_ptr->timer * (longlong)(0xffff - (int)g_PerspectiveReciprocal);
+                  (g_CurrentSceneCamera,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+        lVar3 = (longlong)this_ptr->timer * (longlong)(0xffff - g_PerspectiveReciprocal);
         g_RenderVertexBuffer[0].a = (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
         g_RenderVertexBuffer[0].r = 0xffff;
         g_RenderVertexBuffer[0].g = 0xffff;
