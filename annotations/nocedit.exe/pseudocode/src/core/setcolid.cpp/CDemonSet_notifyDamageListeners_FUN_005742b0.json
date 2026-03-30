@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 163,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 38,
-    "suspect_count": 12,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 125
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 37,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 124
   },
   "cross_references": [
     {
@@ -36,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0",
-    "signature": "void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet *this_ptr,SDamageInfo *damage_info,CVector3f *actor_position,void *unknown_param)"
+    "signature": "void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet *this_ptr,CVector3f *position,CVector3f *actor_position,SDamageInfo *damage_info)"
   },
   "function_calls": [],
   "globals": [],
@@ -144,10 +142,10 @@
       },
       {
         "is_param": true,
-        "name": "damage_info",
+        "name": "position",
         "offset": 8,
         "size": 4,
-        "type": "SDamageInfo *"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
@@ -158,109 +156,12 @@
       },
       {
         "is_param": true,
-        "name": "unknown_param",
+        "name": "damage_info",
         "offset": 16,
         "size": 4,
-        "type": "void *"
+        "type": "SDamageInfo *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "local_5c.damage_amount = *(float *)((int)unknown_param + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "local_5c.gore_multiplier = *(float *)((int)unknown_param + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "local_5c.impact_point.x = *(float *)((int)unknown_param + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "local_5c.impact_point.y = *(float *)((int)unknown_param + 0x10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "local_5c.impact_point.z = *(float *)((int)unknown_param + 0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "local_5c.impact_force = *(float *)((int)unknown_param + 0x18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "local_5c.impact_direction.x = *(float *)((int)unknown_param + 0x1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "local_5c.impact_direction.y = *(float *)((int)unknown_param + 0x20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "local_5c.impact_direction.z = *(float *)((int)unknown_param + 0x24);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(EAmmoType *)((int)",
-      "severity": "mild",
-      "text": "local_5c.ammo_type = *(EAmmoType *)((int)unknown_param + 0x28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "local_5c.dismember_prob = *(float *)((int)unknown_param + 0x2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(EDamageType *)((int)",
-      "severity": "mild",
-      "text": "local_5c.damage_type = *(EDamageType *)((int)unknown_param + 0x30);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

@@ -52,7 +52,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_004297e0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
@@ -327,8 +327,8 @@ section .text
     ADD ESP,0x4                         ; 0047f3ff
     PUSH 0x41700000                     ; 0047f402
     PUSH 0x40e00000                     ; 0047f407
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0047f40c
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0047f40c
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [EBP + 0x76],EAX      ; 0047f411
     MOV dword ptr [EBP + -0x22],EBX     ; 0047f414
     MOV dword ptr [EBP + -0x1e],EBX     ; 0047f417
@@ -591,8 +591,8 @@ section .text
         ;   XREF to: 0047f252 (CONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x3f800000                     ; 0047f6fb
     PUSH 0x0                            ; 0047f700
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0047f702
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0047f702
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [EBP + 0x76],EAX      ; 0047f707
     ADD ESP,0x8                         ; 0047f70a
     FLD float ptr [EBP + 0x76]          ; 0047f70d

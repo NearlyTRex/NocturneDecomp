@@ -18,7 +18,7 @@
 ;   core_ghoul.cpp_CGhoul_process_FUN_004e6600 at 004e771d
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;
 ; *****************************************************************************
 
@@ -53,6 +53,6 @@ section .text
     PUSH 0x40000000                     ; 004e6405
         ;   Label: LAB_004e6405
     PUSH 0x3f800000                     ; 004e640a
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004e640f
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004e640f
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

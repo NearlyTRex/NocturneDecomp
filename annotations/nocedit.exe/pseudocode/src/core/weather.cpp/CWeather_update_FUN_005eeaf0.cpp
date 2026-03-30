@@ -104,7 +104,8 @@ LAB_005eeb1c:
       fVar6 = this_ptr->sub_flash_interval - fVar4;
       this_ptr->sub_flash_interval = fVar6;
       if (fVar6 < 0.0) {
-        fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,this_ptr->max_flash_interval);
+        fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
+                          (0.1,this_ptr->max_flash_interval);
         this_ptr_00 = g_CEventListPtr;
         this_ptr->sub_flash_interval = fVar6;
         iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
@@ -114,13 +115,13 @@ LAB_005eeb1c:
           fVar3 = (float)g_CDemonCameraInstance.corona_blend_factor;
           fVar6 = (float)1.5259021896696401e-05;
           this_ptr->base_ambient = fVar3 * fVar6;
-          fVar10 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,0.3);
+          fVar10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.1,0.3);
           local_2c = fVar10 + fVar3 * fVar6;
           if (1.0 < local_2c) {
             local_2c = 1.0;
           }
-          fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.01,local_2c * (float)0.59999999999999998)
-          ;
+          fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
+                            (0.01,local_2c * (float)0.59999999999999998);
           this_ptr->flash_timer = fVar6;
           core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
                     (&g_CDemonCameraInstance,local_2c);

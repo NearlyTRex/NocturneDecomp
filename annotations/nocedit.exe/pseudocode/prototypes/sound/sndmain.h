@@ -239,13 +239,13 @@ void __cdecl setNextSfxTrackedDoublePosition(CVector3d *position_source_ptr);
 // Address: 005a89a0
 void __cdecl setNextSfxStaticVelocity(double vel_x,double vel_y,double vel_z);
 
-// Original: sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a00
+// Original: sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_005a8a00
 // Address: 005a8a00
-void __cdecl setNextSfxTrackedVelocity(CVector3f *velocity_source_ptr);
+void __cdecl setNextSfxTrackedVelocity1(CVector3f *velocity_source_ptr);
 
-// Original: sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a30
+// Original: sound_sndmain.cpp_setNextSfxTrackedVelocity2_FUN_005a8a30
 // Address: 005a8a30
-void __cdecl setNextSfxTrackedVelocity(CVector3d *velocity_source_ptr);
+void __cdecl setNextSfxTrackedVelocity2(CVector3d *velocity_source_ptr);
 
 // Original: sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60
 // Address: 005a8a60
@@ -751,13 +751,13 @@ int __cdecl CSampleInfo::getStreamingFlag(CSampleInfo *this_ptr);
 // Address: 005addd0
 int __cdecl CSampleInfo::getBitDepth(CSampleInfo *this_ptr);
 
-// Original: sound_sndmain.cpp_doNothing_FUN_005adde0
+// Original: sound_sndmain.cpp_doNothing1_FUN_005adde0
 // Address: 005adde0
-void __cdecl doNothing(void);
+void __cdecl doNothing1(void);
 
-// Original: sound_sndmain.cpp_doNothing_FUN_005addf0
+// Original: sound_sndmain.cpp_doNothing2_FUN_005addf0
 // Address: 005addf0
-void __cdecl doNothing(void);
+void __cdecl doNothing2(void);
 
 // Original: sound_sndmain.cpp_CSfxSlot_ctor_FUN_005ade00
 // Address: 005ade00

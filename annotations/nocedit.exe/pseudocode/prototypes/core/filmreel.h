@@ -7,9 +7,9 @@
 // Address: 004be620
 void __cdecl staticInit(void);
 
-// Original: core_filmreel.cpp_factoryFunc_FUN_004be670
+// Original: core_filmreel.cpp_factoryFuncFilmReel_FUN_004be670
 // Address: 004be670
-CFilmReel * __cdecl factoryFunc(void);
+CFilmReel * __cdecl factoryFuncFilmReel(void);
 
 // Original: core_filmreel.cpp_CFilmReel_getActorType_FUN_004be6a0
 // Address: 004be6a0
@@ -71,9 +71,9 @@ void __cdecl CFilmReel::getPropertyList(CFilmReel *this_ptr,CActorPropertyList *
 // Address: 004be9b0
 void __cdecl CFilmReel::addFilesToExtract(CFilmReel *this_ptr,_FILE *file_handle);
 
-// Original: core_filmreel.cpp_factoryFunc_FUN_004bea00
+// Original: core_filmreel.cpp_factoryFuncFilmProjector_FUN_004bea00
 // Address: 004bea00
-CFilmProjector * __cdecl factoryFunc(void);
+CFilmProjector * __cdecl factoryFuncFilmProjector(void);
 
 // Original: core_filmreel.cpp_CFilmProjector_getActorType_FUN_004bea30
 // Address: 004bea30

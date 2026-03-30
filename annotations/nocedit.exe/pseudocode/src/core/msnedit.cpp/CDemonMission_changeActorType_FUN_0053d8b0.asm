@@ -44,7 +44,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 ;   ... and 4 more
@@ -177,8 +177,8 @@ section .text
     PUSH 0x63cd56                       ; 0053d9fd | = "Attempt to transfer properties?"
     MOV ECX,dword ptr [0x00678a60]      ; 0053da02 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 0053da08 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0053da09
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 0053da09
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0053da0e
     TEST EAX,EAX                        ; 0053da11
     JZ 0x0053db0f                       ; 0053da13

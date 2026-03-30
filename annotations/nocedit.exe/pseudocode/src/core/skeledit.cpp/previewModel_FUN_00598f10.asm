@@ -22,7 +22,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH 0x1b79                         ; 00598f1e
     PUSH 0x64e0d2                       ; 00598f23 | = "..\\core\\skeledit.cpp"
     PUSH 0x22b4                         ; 00598f28
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00598f2d
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00598f2d
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00598f32
     TEST EAX,EAX                        ; 00598f35
     JNZ 0x00598fa1                      ; 00598f37

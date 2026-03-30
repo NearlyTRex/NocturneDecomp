@@ -24,7 +24,7 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,this_ptr->texture_ptr);
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70
+  engine_drender_cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70
             (g_CDemonRendererPtr2,this_ptr->current_alpha);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450

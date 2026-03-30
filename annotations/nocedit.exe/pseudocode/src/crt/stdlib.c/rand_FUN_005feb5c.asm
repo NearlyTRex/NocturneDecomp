@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[41]:
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 at 0040cc5b
 ;   core_actor.cpp_getRandomFloat_FUN_0040cbc0 at 0040cbee
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10 at 0040cc5b
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70 at 0040cca5
 ;   core_actor.cpp_randomChance_FUN_0040cd10 at 0040cd4d
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 at 004138a9

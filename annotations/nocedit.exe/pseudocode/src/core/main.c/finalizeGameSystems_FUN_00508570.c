@@ -87,7 +87,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
   engine_2d_c_cleanupGraphicsSystem_FUN_00401130();
   wincore_wddvmem_cpp_freeTextureCache_FUN_004037a0();
   core_dfont_cpp_freeFonts_FUN_004710a0();
-  wincore_winrun_cpp_doNothing_FUN_005f4380();
+  wincore_winrun_cpp_doNothing2_FUN_005f4380();
   engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
   core_inivar_cpp_writeIniData_FUN_004fc510();
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\main.c",0x530);

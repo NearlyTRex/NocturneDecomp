@@ -26,7 +26,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
   
   if ((this_ptr->is_berserk == 0) &&
      (fVar1 = this_ptr->heal_timer - delta_time, this_ptr->heal_timer = fVar1, fVar1 <= 0.0)) {
-    fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(1.0,2.0);
+    fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(1.0,2.0);
     local_18 = 0;
     local_1c = 0;
     this_ptr->heal_timer = fVar2 + this_ptr->heal_timer;

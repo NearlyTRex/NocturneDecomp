@@ -115,7 +115,7 @@ void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,S
                           ((CDemonActor *)this_ptr,"ghoul-die-!-?.wav @1.6");
         this_ptr->sfx_handles[2] = uVar8;
       }
-      fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(4.0,10.0);
+      fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(4.0,10.0);
       fVar4 = (float)65536;
       this_ptr->arise_timer = 0xa0000;
       pCVar3 = (this_ptr->base).base.base.vtable._ub;

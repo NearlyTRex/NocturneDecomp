@@ -11,7 +11,7 @@ CStairs * __cdecl core_stairs_cpp_factoryFunc_FUN_005b9b30(void)
 {
   CStairs *pCVar1;
   
-  pCVar1 = (CStairs *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0xa34,"..\\core\\stairs.cpp",0x6f);
+  pCVar1 = (CStairs *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xa34,"..\\core\\stairs.cpp",0x6f);
   if (pCVar1 == (CStairs *)0x0) {
     return (CStairs *)0x0;
   }

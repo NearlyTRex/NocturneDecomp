@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Bip01_Head_00657c96
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
@@ -82,6 +82,6 @@ section .text
     MOV EAX,dword ptr [EBX + 0xbed4]    ; 005efd5f
     PUSH 0x0                            ; 005efd65
     MOV dword ptr [EBX + 0xfc],EAX      ; 005efd67
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005efd6d
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005efd6d
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

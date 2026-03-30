@@ -11,7 +11,7 @@ CSmiley * __cdecl core_smiley_cpp_factorFunc_FUN_005a23f0(void)
 {
   CSmiley *pCVar1;
   
-  pCVar1 = (CSmiley *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0xbf00,"..\\core\\smiley.cpp",0x6e);
+  pCVar1 = (CSmiley *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbf00,"..\\core\\smiley.cpp",0x6e);
   if (pCVar1 == (CSmiley *)0x0) {
     return (CSmiley *)0x0;
   }

@@ -23,9 +23,9 @@ int __cdecl core_fire_cpp_CShell_onCollision_FUN_004c6380(CShell *this_ptr,CVect
   if (local_18 < 0.0) {
     local_18 = 0.0;
   }
-  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-6.2831855,6.2831855);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-6.2831855,6.2831855);
   (this_ptr->angular_velocity).x = fVar1 * local_18;
-  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-3.1415927,3.1415927);
   iVar3 = this_ptr->bounce_count;
   (this_ptr->angular_velocity).y = fVar2 * local_18;
   if (iVar3 == 0) {

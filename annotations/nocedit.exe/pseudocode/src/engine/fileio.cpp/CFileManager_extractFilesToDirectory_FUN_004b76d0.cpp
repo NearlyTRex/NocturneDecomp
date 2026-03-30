@@ -126,7 +126,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
       _sprintf
                 (local_cdc.found_path,"%s already exists on disk.\n\nWould you like to replace the existing file\n\n%d bytes\nmodified on %s\n\nwith this one?\n\n%d bytes\nmodified on %s\n",local_534.target_path,
                  local_534.file_size,local_320,local_1c[0],local_220);
-      iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+      iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
                         (g_CEditorToolsPtr,local_cdc.found_path);
     }
     if (iVar4 != 0) {

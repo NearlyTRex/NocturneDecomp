@@ -30,7 +30,7 @@
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00495aa0
 ;   core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0
@@ -188,15 +188,15 @@ section .text
     PUSH 0x3f000000                     ; 0048e470
         ;   Label: LAB_0048e470
     PUSH 0xbf000000                     ; 0048e475
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0048e47a
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0048e47a
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     PUSH 0x3f800000                     ; 0048e5f0
         ;   Label: LAB_0048e5f0
     FLD float ptr [EBX + 0x2fc]         ; 0048e5f5
     PUSH 0x0                            ; 0048e5fb
     FSTP float ptr [EBX + 0x24]         ; 0048e5fd
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0048e600
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0048e600
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [EBX + 0x2dc],0x0     ; 0048e696
         ;   Label: LAB_0048e696
     ADD ESP,0xa4                        ; 0048e6a0

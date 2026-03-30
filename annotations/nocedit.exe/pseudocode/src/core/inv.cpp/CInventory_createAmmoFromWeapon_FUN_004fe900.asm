@@ -24,7 +24,7 @@
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
         ;   Label: LAB_004fe912
     PUSH 0x6307ea                       ; 004fe917 | = "..\\core\\inv.cpp"
     PUSH 0x31c                          ; 004fe91c
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004fe921
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 004fe921
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004fe926
     TEST EAX,EAX                        ; 004fe929
     JZ 0x004fe936                       ; 004fe92b

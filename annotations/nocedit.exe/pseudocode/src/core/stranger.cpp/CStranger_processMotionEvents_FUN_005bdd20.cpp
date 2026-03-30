@@ -181,7 +181,7 @@ LAB_005bde44:
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     ((CDemonActor *)this_ptr,local_38,pCVar4);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_b0);
-          local_b0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+          local_b0.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,15.0);
           local_14 = local_b0.damage_amount;
           pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                              ((CDemonActor *)this_ptr_03,&local_50,local_38);

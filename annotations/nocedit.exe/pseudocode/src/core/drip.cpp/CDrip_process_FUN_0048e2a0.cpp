@@ -63,16 +63,16 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
         position_00 = &(this_ptr->base).location;
         iVar3 = 0;
         do {
-          CStack_60.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);
-          CStack_60.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);
-          fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);
+          CStack_60.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.5,0.5);
+          CStack_60.y = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.5,0.5);
+          fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.5,0.5);
           CStack_60.x = CStack_60.x + (position_00->position).x;
           CStack_60.y = CStack_60.y + (this_ptr->base).location.position.y;
           CStack_60.z = fVar1 + (this_ptr->base).location.position.z;
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
                     (g_CFireEffectPtr,&CStack_60,0.5,(CVector3f *)0x0,0xffff);
-          fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.7853982,1.5707964);
-          fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
+          fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.7853982,1.5707964);
+          fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,6.2831855);
           fVar6 = (float10)fcos((float10)fVar2);
           fVar7 = (float10)fcos((float10)fVar1);
           fVar8 = (float10)fsin((float10)fVar2);
@@ -88,14 +88,14 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
         } while (iVar3 < 10);
       }
       (this_ptr->base).location.position.y = (this_ptr->home_pos).y;
-      fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+      fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
       (this_ptr->base).location.position.x = fVar1 * this_ptr->drip_radius + (this_ptr->home_pos).x;
-      fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+      fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
       (this_ptr->base).location.position.z = fVar1 * this_ptr->drip_radius + (this_ptr->home_pos).z;
       (this_ptr->vel).z = 0.0;
       (this_ptr->vel).y = (this_ptr->vel).z;
       (this_ptr->vel).x = (this_ptr->vel).y;
-      fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10
+      fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
                         (this_ptr->min_auto_drip_time,this_ptr->max_auto_drip_time);
       this_ptr->drip_timer = fVar1;
     }

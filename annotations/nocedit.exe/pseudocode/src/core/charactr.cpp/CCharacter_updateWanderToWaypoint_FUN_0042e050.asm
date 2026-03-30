@@ -29,7 +29,7 @@
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005ec320
@@ -158,8 +158,8 @@ section .text
         ;   XREF to: 0042e2f6 (CONDITIONAL_JUMP)  ; LAB_0042e2f6
     PUSH 0x40000000                     ; 0042e1e6
     PUSH 0x3f800000                     ; 0042e1eb
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0042e1f0
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0042e1f0
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
         ;   Label: LAB_0042e1f0
     MOV EBX,dword ptr [EDI + 0x25f0]    ; 0042e20c
         ;   Label: LAB_0042e20c

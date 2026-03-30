@@ -7,7 +7,7 @@
 ; CElephantGun *   Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;
 ; *****************************************************************************
 
@@ -27,6 +27,6 @@ section .text
     PUSH 0x44160000                     ; 004a79cc
         ;   Label: LAB_004a79cc
     PUSH 0x43e10000                     ; 004a79d1
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004a79d6
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004a79d6
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

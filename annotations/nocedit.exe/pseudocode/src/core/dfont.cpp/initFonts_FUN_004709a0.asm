@@ -33,7 +33,7 @@
 ;   engine_font.cpp_CBitFont_setFontReady_FUN_004d0290
 ;   engine_font.cpp_CBitFont_setInitializedFlag_FUN_004cd540
 ;   engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     PUSH 0x3f                           ; 004709a4
     PUSH 0x61e866                       ; 004709a6 | = "..\\core\\dfont.cpp"
     PUSH 0x3198                         ; 004709ab
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004709b0
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 004709b0
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004709b5
     TEST EAX,EAX                        ; 004709b8
     JNZ 0x00470de9                      ; 004709ba
@@ -101,8 +101,8 @@ section .text
     PUSH 0x4f                           ; 00470a59
     PUSH 0x61e8b8                       ; 00470a5b | = "..\\core\\dfont.cpp"
     PUSH 0x3198                         ; 00470a60
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00470a65
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00470a65
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00470a6a
     TEST EAX,EAX                        ; 00470a6d
     JZ 0x00470a7a                       ; 00470a6f
@@ -151,8 +151,8 @@ section .text
     PUSH 0x5e                           ; 00470af8
     PUSH 0x61e909                       ; 00470afa | = "..\\core\\dfont.cpp"
     PUSH 0x3198                         ; 00470aff
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00470b04
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00470b04
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00470b09
     TEST EAX,EAX                        ; 00470b0c
     JZ 0x00470b19                       ; 00470b0e
@@ -217,8 +217,8 @@ section .text
     PUSH 0x6f                           ; 00470bcc
     PUSH 0x61e95b                       ; 00470bce | = "..\\core\\dfont.cpp"
     PUSH 0x3198                         ; 00470bd3
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00470bd8
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00470bd8
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00470bdd
     TEST EAX,EAX                        ; 00470be0
     JZ 0x00470bed                       ; 00470be2
@@ -269,8 +269,8 @@ section .text
     MOV EAX,[0x020a5724]                ; 00470c75 | g_SmallEditorFont
     PUSH 0x3198                         ; 00470c7a
     MOV [0x02cf1cd0],EAX                ; 00470c7f | g_EditorFont
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00470c84
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00470c84
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00470c89
     TEST EAX,EAX                        ; 00470c8c
     JZ 0x00470c99                       ; 00470c8e
@@ -316,8 +316,8 @@ section .text
     MOV EAX,[0x020a5724]                ; 00470d15 | g_SmallEditorFont
     PUSH 0x3198                         ; 00470d1a
     MOV [0x02cf1cd0],EAX                ; 00470d1f | g_EditorFont
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00470d24
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00470d24
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00470d29
     TEST EAX,EAX                        ; 00470d2c
     JZ 0x00470d39                       ; 00470d2e
@@ -446,8 +446,8 @@ section .text
         ;   Label: LAB_00470ebd
     PUSH 0x61ea4e                       ; 00470ec2 | = "..\\core\\dfont.cpp"
     PUSH 0x13c                          ; 00470ec7
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00470ecc
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00470ecc
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00470ed1
     TEST EAX,EAX                        ; 00470ed4
     JZ 0x00470eec                       ; 00470ed6
@@ -481,8 +481,8 @@ section .text
     MOV dword ptr [EAX + 0x3190],0x1    ; 00470f2c
     PUSH 0x13c                          ; 00470f36
     MOV dword ptr [EAX + 0x3194],EDX    ; 00470f3b
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00470f41
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00470f41
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00470f46
     TEST EAX,EAX                        ; 00470f49
     JZ 0x00470f61                       ; 00470f4b
@@ -516,8 +516,8 @@ section .text
     MOV dword ptr [EAX + 0x3190],0x1    ; 00470fa2
     PUSH 0x13c                          ; 00470fac
     MOV dword ptr [EAX + 0x3194],EDX    ; 00470fb1
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00470fb7
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00470fb7
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00470fbc
     TEST EAX,EAX                        ; 00470fbf
     JZ 0x00470fd7                       ; 00470fc1
@@ -551,8 +551,8 @@ section .text
     MOV dword ptr [EAX + 0x3190],0x1    ; 00471018
     PUSH 0x13c                          ; 00471022
     MOV dword ptr [EAX + 0x3194],EDX    ; 00471027
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0047102d
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0047102d
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00471032
     TEST EAX,EAX                        ; 00471035
     JZ 0x0047104d                       ; 00471037

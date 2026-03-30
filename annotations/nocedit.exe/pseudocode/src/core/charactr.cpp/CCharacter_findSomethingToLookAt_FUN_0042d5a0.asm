@@ -33,7 +33,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -418,8 +418,8 @@ section .text
     ADD ESP,0x4                         ; 0042d9f0
     PUSH 0x40000000                     ; 0042d9f3
     PUSH 0x3f800000                     ; 0042d9f8
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0042d9fd
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0042d9fd
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     XOR EAX,EAX                         ; 0042da1e
         ;   Label: LAB_0042da1e
     MOV dword ptr [ESP + 0x38],EAX      ; 0042da20

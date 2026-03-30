@@ -25,15 +25,15 @@ CVector3f * __cdecl core_flies_cpp_CFlies_generateRandomPoint_FUN_004cc820(CFlie
   float fVar5;
   float fVar4;
   
-  fVar12 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+  fVar12 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
   out_point->y = fVar12;
   out_point->y = out_point->y * out_point->y * (this_ptr->box_size).y;
   fVar12 = (this_ptr->box_size).x;
-  fVar12 = core_actor_cpp_getRandomFloat_FUN_0040cc10
+  fVar12 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
                      (fVar12 * (float)-0.5,fVar12 * (float)0.5);
   out_point->x = fVar12;
   fVar12 = (this_ptr->box_size).z;
-  fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10
+  fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
                     (fVar12 * (float)-0.5,fVar12 * (float)0.5);
   out_point->z = fVar6;
   if (reference_point != (CVector3f *)0x0) {

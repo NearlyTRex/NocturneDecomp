@@ -182,7 +182,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
     local_64 = 0;
     local_14 = -1;
     local_30 = g_MouseButtonFlags;
-    wincore_winrun_cpp_doNothing_FUN_005f2f80();
+    wincore_winrun_cpp_doNothing1_FUN_005f2f80();
     local_38 = -1;
     if (INT_02f7c634 != 2) {
       pcVar13 = g_MsnEditCameraStatusBuffer;
@@ -502,7 +502,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
     core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(g_CDemonSetPtr);
     iVar14 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if ((iVar14 != 0) &&
-       (iVar14 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
+       (iVar14 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
                            (g_CEditorToolsPtr,"Exit editor?"), iVar14 != 0))
     goto LAB_00539e00;
     if (INT_02f7c634 == 0) {
@@ -685,7 +685,7 @@ LAB_00539d68:
       }
       else {
         _sprintf(local_3b4,"%s.msn",local_4c);
-        iVar14 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
+        iVar14 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
                            (g_CEditorToolsPtr,"Save mission to %s.msn",local_4c);
         if (iVar14 != 0) {
           core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(this_ptr,local_3b4);

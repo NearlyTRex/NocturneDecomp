@@ -66,7 +66,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
@@ -559,8 +559,8 @@ section .text
         ;   XREF to: 0051fdb4 (CONDITIONAL_JUMP)  ; LAB_0051fdb4
     PUSH 0x41700000                     ; 005201f5
     PUSH 0x40e00000                     ; 005201fa
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005201ff
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005201ff
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     JBE 0x0051fd7d                      ; 0052029d
         ;   XREF to: 0051fd7d (CONDITIONAL_JUMP)  ; LAB_0051fd7d
         ;   Label: LAB_0052029d

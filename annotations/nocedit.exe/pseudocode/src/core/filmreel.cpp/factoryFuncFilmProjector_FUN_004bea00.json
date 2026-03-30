@@ -1,0 +1,98 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 11,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
+  "cross_references": [
+    {
+      "addr": "004be620",
+      "from_addr": "004be64f",
+      "name": "core_filmreel.cpp_staticInit_FUN_004be620",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "004bea00",
+    "address_range": [
+      [
+        "004bea00",
+        "004bea25"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_filmreel.cpp_factoryFuncFilmProjector_FUN_004bea00",
+    "signature": "CFilmProjector * __cdecl core_filmreel_cpp_factoryFuncFilmProjector_FUN_004bea00(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004bea40",
+      "is_variadic": false,
+      "name": "core_filmreel.cpp_CFilmProjector_ctor_FUN_004bea40"
+    },
+    {
+      "addr": "0050f1b0",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629b27",
+      "name": "s_core_filmreel_cpp_00629b27",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.416666666666667,
+    "instruction_count": 12,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 6,
+      "INT_ADD": 4,
+      "INT_AND": 7,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 2,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 53
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
+}

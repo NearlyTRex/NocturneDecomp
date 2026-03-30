@@ -75,10 +75,10 @@ void __cdecl shape_design_c_showPointEditor_FUN_0045c6c0(void)
     _sprintf(local_84,"%d,%d,%d");
     engine_2d_c_drawText_FUN_00401fd0(local_84,0,g_WindowHeight + -0xb);
     if (g_PointEditorMode == 0) {
-      shape_design_c_doNothing_FUN_0045c4f0();
+      shape_design_c_doNothing1_FUN_0045c4f0();
     }
     else if (g_PointEditorMode == 1) {
-      shape_design_c_doNothing_FUN_0045c510();
+      shape_design_c_doNothing2_FUN_0045c510();
     }
     shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0();
     shape_design_c_renderVertexPointsWithLabels_FUN_0045bff0();
@@ -87,7 +87,7 @@ void __cdecl shape_design_c_showPointEditor_FUN_0045c6c0(void)
       g_KeyboardState[0x23] = '\0';
       shape_design_c_showHelpFile_FUN_00457f00("point.hlp");
     }
-    wincore_winrun_cpp_doNothing_FUN_005f2f80();
+    wincore_winrun_cpp_doNothing1_FUN_005f2f80();
     wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   } while (g_KeyboardState[1] == '\0');

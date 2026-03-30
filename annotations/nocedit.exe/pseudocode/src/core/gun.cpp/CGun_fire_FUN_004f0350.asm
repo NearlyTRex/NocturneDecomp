@@ -60,7 +60,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_crate.cpp_CCrate_explode_FUN_00448a70
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0
@@ -247,8 +247,8 @@ section .text
     MOV dword ptr [ESP + 0xc8],ECX      ; 004f05d9
     MOV dword ptr [ESP + 0xcc],ECX      ; 004f05e0
     MOV dword ptr [ESP + 0xd0],EDI      ; 004f05e7
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004f05ee
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004f05ee
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     LEA EAX,[ESP + 0x90]                ; 004f06df
         ;   Label: LAB_004f06df
     PUSH EAX                            ; 004f06e6

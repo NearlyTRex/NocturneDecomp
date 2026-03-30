@@ -295,8 +295,8 @@ section .text
         ;   XREF to: 004037a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_freeTextureCache_FUN_004037a0()
     CALL core_dfont.cpp_freeFonts_FUN_004710a0 ; 00508809
         ;   XREF to: 004710a0 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_freeFonts_FUN_004710a0()
-    CALL wincore_winrun.cpp_doNothing_FUN_005f4380 ; 0050880e
-        ;   XREF to: 005f4380 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing_FUN_005f4380()
+    CALL wincore_winrun.cpp_doNothing2_FUN_005f4380 ; 0050880e
+        ;   XREF to: 005f4380 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing2_FUN_005f4380()
     MOV EAX,[0x00680cdc]                ; 00508813 | g_CDemonPodInstance | g_CDemonPodPtr
     PUSH EAX                            ; 00508818 | g_CDemonPodInstance
     CALL engine_pod.cpp_CPod_cleanup_FUN_00550c80 ; 00508819

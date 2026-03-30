@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 ;
 ; *****************************************************************************
@@ -51,8 +51,8 @@ section .text
     PUSH 0x61a5be                       ; 0045685b | = "..\\core\\dcube.cpp"
     ADD EAX,0x4                         ; 00456860
     PUSH EAX                            ; 00456863
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00456864
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 00456864
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00456869
     TEST EAX,EAX                        ; 0045686c
     JNZ 0x0045697d                      ; 0045686e
@@ -76,8 +76,8 @@ section .text
     PUSH 0x61a611                       ; 004568a6 | = "..\\core\\dcube.cpp"
     SHL EAX,0x5                         ; 004568ab
     PUSH EAX                            ; 004568ae
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 004568af
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 004568af
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004568b4
     MOV dword ptr [EBX + 0x2c],EAX      ; 004568b7
     TEST EAX,EAX                        ; 004568ba

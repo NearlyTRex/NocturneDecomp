@@ -23,7 +23,7 @@ void __cdecl core_trash_cpp_CTrash_setup_FUN_005debc0(CTrash *this_ptr)
   this_ptr->collision_top_y = 2.0;
   this_ptr->damping_factor = 1.0;
   this_ptr->collision_radius = 1.0;
-  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(6.0,20.0);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(6.0,20.0);
   this_ptr->animation_timer = fVar1;
   (this_ptr->drift_target).z = 0.0;
   (this_ptr->drift_target).y = (this_ptr->drift_target).z;

@@ -94,7 +94,7 @@ void __cdecl core_imp_cpp_CImp_setup_FUN_004f9910(CImp *this_ptr)
   (this_ptr->base).base.carry_hands[0].secondary_bone_index = this_ptr->part_indices[1];
   (this_ptr->base).base.carry_hands[1].bone_index = g_ImpIndices[2];
   (this_ptr->base).base.carry_hands[1].secondary_bone_index = this_ptr->part_indices[3];
-  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,20.0);
   this_ptr->laugh_timer = fVar2;
   return;
 }

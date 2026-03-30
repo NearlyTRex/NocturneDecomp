@@ -50,11 +50,11 @@ void __cdecl core_fire_cpp_CCrater_activate_FUN_004c4200(CCrater *this_ptr,CVect
   pCVar5 = this_ptr;
   do {
     local_18 = -radius;
-    local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_18,radius);
+    local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(local_18,radius);
     pCVar5->smoke_positions[0].x = local_14 * (float)0.5 + (this_ptr->center_position).x
     ;
     pCVar5->smoke_positions[0].y = (this_ptr->center_position).y;
-    local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_18,radius);
+    local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(local_18,radius);
     pCVar6 = &pCVar5->center_position;
     pCVar5->smoke_positions[0].z = local_14 * (float)0.5 + (this_ptr->center_position).z
     ;

@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_00410dc0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_ammo.cpp_factoryFunc_FUN_00410d80
     PUSH 0x614923                       ; 00410d82 | = "..\\core\\ammo.cpp"
     PUSH 0x31c                          ; 00410d87
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00410d8c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00410d8c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00410d91
     TEST EAX,EAX                        ; 00410d94
     JNZ 0x00410d99                      ; 00410d96

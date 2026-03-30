@@ -43,7 +43,7 @@
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
 ;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
     PUSH 0x1007                         ; 00580339
     PUSH 0x648567                       ; 0058033e | = "..\\core\\setedit.cpp"
     PUSH EAX                            ; 00580343
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00580344
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 00580344
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00580349
     MOV [0x03659384],EAX                ; 0058034c | g_CameraDepthData
     TEST EAX,EAX                        ; 00580351

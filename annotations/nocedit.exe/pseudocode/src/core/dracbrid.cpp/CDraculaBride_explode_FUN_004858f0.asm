@@ -35,7 +35,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
@@ -171,8 +171,8 @@ section .text
     FCHS                                ; 00485a2d
     FSTP float ptr [ESP + 0x94]         ; 00485a2f
     PUSH dword ptr [ESP + 0x94]         ; 00485a36
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00485a3d
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00485a3d
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV ESI,dword ptr [EDI + 0x2610]    ; 00485aed
         ;   Label: LAB_00485aed
     PUSH ESI                            ; 00485af3

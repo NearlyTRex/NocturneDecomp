@@ -31,9 +31,9 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeath
   float fVar2;
   float fVar1;
   
-  fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);
+  fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,20.0);
   this_ptr->lightning_countdown = fVar3;
-  fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,this_ptr->max_flash_interval);
+  fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(2.0,this_ptr->max_flash_interval);
   this_ptr->flash_timer = flash_timer;
   this_ptr->lightning_active = 1;
   this_ptr->sub_flash_interval = fVar3;

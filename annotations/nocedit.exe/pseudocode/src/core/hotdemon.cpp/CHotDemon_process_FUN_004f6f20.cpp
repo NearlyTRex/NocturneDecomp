@@ -266,7 +266,7 @@ LAB_004f73d5:
   case 2:
   case 8:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_10c);
-    local_10c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+    local_10c.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
     damage_info = &local_10c;
     local_10c.attacker = (CDemonActor *)this_ptr;
     local_10c.wielder = (CDemonActor *)this_ptr;

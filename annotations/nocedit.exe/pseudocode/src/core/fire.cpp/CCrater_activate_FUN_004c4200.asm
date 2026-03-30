@@ -34,7 +34,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_fire.cpp_CCrater_render_FUN_004c4620
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
 ;
@@ -87,6 +87,6 @@ section .text
     FCHS                                ; 004c4279
     FSTP float ptr [ESP + 0x64]         ; 004c427b
     PUSH dword ptr [ESP + 0x64]         ; 004c427f
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c4283
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c4283
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

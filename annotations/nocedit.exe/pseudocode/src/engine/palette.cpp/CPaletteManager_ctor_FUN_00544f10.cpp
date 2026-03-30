@@ -13,7 +13,7 @@ CPaletteManager * __cdecl engine_palette_cpp_CPaletteManager_ctor_FUN_00544f10(C
   
   this_ptr->max_texture_count = max_texture_count;
   this_ptr->max_pixel_count = max_pixel_count;
-  pcVar1 = (char *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+  pcVar1 = (char *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                      (max_texture_count << 6,"..\\engine\\palette.cpp",0x2b);
   this_ptr->texture_names = pcVar1;
   if (pcVar1 != (char *)0x0) {

@@ -124,8 +124,8 @@ void __cdecl shape_meshlod_cpp_CLodMesh_exportToFile_FUN_0051c070(CLodMesh *this
 int __cdecl shape_meshlod_cpp_CLodMesh_exportToS3D_FUN_0051c100(CLodMesh *this_ptr,_FILE *file_ptr);
 void __cdecl shape_meshlod_cpp_crc32UpdateByte_FUN_0051c270(uint *crc_ptr,uchar data_byte);
 void __cdecl shape_meshlod_cpp_crc32UpdateBuffer_FUN_0051c350(uint *crc_ptr,uchar *data_ptr,int byte_count);
-void __cdecl shape_meshlod_cpp_crc32UpdateDword_FUN_0051c480(uint *crc_ptr,uint dword_value);
-void __cdecl shape_meshlod_cpp_crc32UpdateDword_FUN_0051c540(uint *crc_ptr,uint dword_value);
+void __cdecl shape_meshlod_cpp_crc32UpdateDword1_FUN_0051c480(uint *crc_ptr,uint dword_value);
+void __cdecl shape_meshlod_cpp_crc32UpdateDword2_FUN_0051c540(uint *crc_ptr,uint dword_value);
 void __cdecl shape_meshlod_cpp_crc32UpdateVector3f_FUN_0051c600(uint *crc_ptr,CVector3f *vector_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0(CLodMesh *this_ptr,uint *out_crc);
 void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,_FILE *file_handle);
@@ -158,9 +158,9 @@ void __cdecl shape_meshlod_cpp_CLodFace_copy_FUN_0051ef20(CLodFace *this_ptr,CLo
 CLodFace * __cdecl shape_meshlod_cpp_CLodFace_dtor_FUN_0051efc0(CLodFace *this_ptr,uint flags);
 CLodFace * __cdecl shape_meshlod_cpp_CLodFace_copy2_FUN_0051efe0(CLodFace *destination,CLodFace *source);
 CSpotView * __cdecl shape_meshlod_cpp_CSpotView_dtor_FUN_0051f080(CSpotView *this_ptr,uint flags);
-float * __cdecl shape_meshlod_cpp_copyFloat_FUN_0051f090(float *dest_ptr,float *src_ptr);
-float * __cdecl shape_meshlod_cpp_copyFloat_FUN_0051f0a0(float *dest_ptr,float *src_ptr);
-float * __cdecl shape_meshlod_cpp_copyFloat_FUN_0051f0b0(float *dest_ptr,float *src_ptr);
+float * __cdecl shape_meshlod_cpp_copyFloat1_FUN_0051f090(float *dest_ptr,float *src_ptr);
+float * __cdecl shape_meshlod_cpp_copyFloat2_FUN_0051f0a0(float *dest_ptr,float *src_ptr);
+float * __cdecl shape_meshlod_cpp_copyFloat3_FUN_0051f0b0(float *dest_ptr,float *src_ptr);
 CLodFace * __cdecl shape_meshlod_cpp_CLodFace_arrdtor_FUN_0051f0c0(CLodFace *objs,uint flags);
 CVector3f * __cdecl shape_meshlod_cpp_CVector3f_arrdtor_FUN_0051f0e0(CVector3f *objs,uint flags);
 void __cdecl core_mimic_cpp_staticInit_FUN_0051f100(void);

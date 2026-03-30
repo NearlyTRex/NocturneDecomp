@@ -13,7 +13,7 @@
 ;   CDemonActor_vtable g_CTVBatVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
 ;
@@ -40,6 +40,6 @@ section .text
     MOV dword ptr [EBX + 0xbebc],0x0    ; 005e3f24
     PUSH 0x3f666666                     ; 005e3f2e
     MOV dword ptr [EBX + 0xc040],0x0    ; 005e3f33
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005e3f3d
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005e3f3d
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

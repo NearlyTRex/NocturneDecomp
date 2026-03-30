@@ -77,7 +77,7 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042b190(CCharacter
       local_30 = local_4c.y * fVar1;
       local_2c = local_4c.z * fVar1;
     }
-    fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.3,0.6);
+    fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.3,0.6);
     local_28.x = (g_CDemonSetPtr->collision_impact_position).x - local_34 * fVar1;
     local_28.y = (g_CDemonSetPtr->collision_impact_position).y - local_30 * fVar1;
     local_28.z = (g_CDemonSetPtr->collision_impact_position).z - local_2c * fVar1;
@@ -86,7 +86,7 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042b190(CCharacter
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_ac,&local_28,euler_angles);
     pCVar9 = &local_ac;
-    fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.034906585,0.034906585);
+    fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.034906585,0.034906585);
     core_xform_cpp_buildRotationY_FUN_005f6cc0(fVar1,&local_25c);
     pCVar8 = &local_2bc;
     pCVar7 = &local_25c;
@@ -96,7 +96,7 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042b190(CCharacter
       pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);
       pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar7 * -2 + 1) * 4);
     }
-    fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.034906585,0.034906585);
+    fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.034906585,0.034906585);
     core_xform_cpp_buildRotationX_FUN_005f6c40(fVar1,&local_16c);
     pCVar3 = &local_16c;
     pCVar6 = &local_19c;

@@ -7,8 +7,8 @@ SUMMARY
 Total virtual files: 214
 Total functions: 6454
 Clean functions: 5073 (78.6%)
-Files at 100%: 46
-Files at 90%+: 84
+Files at 100%: 47
+Files at 90%+: 83
 Files at 50%+: 205
 
 ====================================================================================================
@@ -25,14 +25,14 @@ FILES AT 100% (COMPLETE)
   core/biggs.cpp: 14 functions, 366 lines
   core/camview.cpp: 6 functions, 38 lines
   core/crate.cpp: 20 functions, 309 lines
-  core/crossbow.cpp: 12 functions, 311 lines
+  core/crossbow.cpp: 12 functions, 312 lines
   core/dfont.cpp: 3 functions, 279 lines
   core/dimage.cpp: 6 functions, 131 lines
-  core/dynamite.cpp: 12 functions, 162 lines
-  core/elephant.cpp: 10 functions, 407 lines
+  core/dynamite.cpp: 12 functions, 163 lines
+  core/elephant.cpp: 10 functions, 409 lines
   core/fileman.cpp: 12 functions, 577 lines
-  core/flamecan.cpp: 16 functions, 260 lines
-  core/flashlit.cpp: 7 functions, 65 lines
+  core/flamecan.cpp: 16 functions, 261 lines
+  core/flashlit.cpp: 7 functions, 66 lines
   core/flattn.cpp: 2 functions, 11 lines
   core/gasmask.cpp: 14 functions, 131 lines
   core/gun.cpp: 7 functions, 273 lines
@@ -40,36 +40,33 @@ FILES AT 100% (COMPLETE)
   core/hiram.cpp: 10 functions, 166 lines
   core/hpriest.cpp: 9 functions, 118 lines
   core/inivar.cpp: 2 functions, 277 lines
-  core/litecone.cpp: 12 functions, 169 lines
-  core/melee.cpp: 17 functions, 267 lines
+  core/litecone.cpp: 12 functions, 170 lines
+  core/melee.cpp: 17 functions, 268 lines
   core/minecar.cpp: 7 functions, 71 lines
   core/npc.cpp: 14 functions, 342 lines
-  core/pendulum.cpp: 20 functions, 668 lines
+  core/pendulum.cpp: 20 functions, 669 lines
   core/podmain.cpp: 4 functions, 64 lines
-  core/shotgun.cpp: 10 functions, 413 lines
+  core/setcolid.cpp: 40 functions, 1553 lines
+  core/shotgun.cpp: 10 functions, 414 lines
   core/shovel.cpp: 8 functions, 70 lines
   core/simbox.cpp: 15 functions, 319 lines
   core/slew.cpp: 4 functions, 123 lines
   core/spike.cpp: 15 functions, 518 lines
   core/spline.cpp: 7 functions, 149 lines
   core/stone.cpp: 8 functions, 80 lines
-  core/teleport.cpp: 23 functions, 321 lines
+  core/teleport.cpp: 23 functions, 324 lines
   engine/ini.cpp: 18 functions, 455 lines
   engine/keys.cpp: 9 functions, 56 lines
-  engine/ncursfx.cpp: 11 functions, 162 lines
+  engine/ncursfx.cpp: 11 functions, 163 lines
   shape/multicrm.cpp: 6 functions, 125 lines
   shape/spotview.cpp: 6 functions, 215 lines
   wincore/winvideo.cpp: 5 functions, 263 lines
 
-Total: 46 files
+Total: 47 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   97.5% | core/setcolid.cpp
-         39/40 clean, 1 remaining
-           - core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0 (38 lines) [pointer_cast]
-
    96.4% | core/door.cpp
          27/28 clean, 1 remaining
            - core_door.cpp_CDoor_process_FUN_004800c0 (194 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr]
@@ -85,7 +82,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
    95.7% | core/boxactor.cpp
          44/46 clean, 2 remaining
            - core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_00421fe0 (17 lines) [decompiler_intrinsic, warning_inlined_function]
-           - core_boxactor.cpp_CBoxActor_process_FUN_004219e0 (134 lines) [decompiler_intrinsic, unknown_field, warning_inlined_function]
+           - core_boxactor.cpp_CBoxActor_process_FUN_004219e0 (134 lines) [decompiler_intrinsic, warning_inlined_function]
 
    95.7% | core/trigger.cpp
          22/23 clean, 1 remaining
@@ -223,13 +220,6 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 (86 lines) [decompiler_intrinsic, warning_inlined_function]
            - shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970 (160 lines) [pointer_cast]
 
-   90.2% | core/mission.cpp
-         37/41 clean, 4 remaining
-           - core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (103 lines) [pointer_cast]
-           - core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 (66 lines) [pointer_cast]
-           - core_mission.cpp_CDemonMission_process_FUN_00524250 (46 lines) [warning_type_propagation]
-           - core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 (21 lines) [pointer_cast, unresolved_funcptr]
-
    90.0% | core/box.cpp
          27/30 clean, 3 remaining
            - core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680 (82 lines) [decompiler_intrinsic, pointer_cast]
@@ -253,7 +243,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
          9/10 clean, 1 remaining
            - engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060 (60 lines) [pointer_cast]
 
-Total: 38 files
+Total: 36 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -294,6 +284,13 @@ FILES AT 50-89%
            - core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0 (44 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_motion.cpp_CMotionList_save_FUN_0052d170 (96 lines) [decompiler_intrinsic, sub84_truncation]
            - core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0 (40 lines) [decompiler_intrinsic, warning_inlined_function]
+   87.8% | core/mission.cpp
+         36/41 clean, 5 remaining
+           - core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60 (17 lines) [unknown_param]
+           - core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (103 lines) [pointer_cast]
+           - core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 (66 lines) [pointer_cast]
+           - core_mission.cpp_CDemonMission_process_FUN_00524250 (46 lines) [warning_type_propagation]
+           - core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 (21 lines) [pointer_cast, unresolved_funcptr]
    87.6% | core/fire.cpp
          162/185 clean, 23 remaining
            - core_fire.cpp_CGunFlame_render_FUN_004c50b0 (153 lines) [decompiler_intrinsic, warning_inlined_function]
@@ -553,7 +550,7 @@ FILES AT 50-89%
            - core_script.cpp_compareEventXRefs_FUN_005675a0 (48 lines) [decompiler_intrinsic]
            - core_script.cpp_parseCommandWithTemplates_FUN_00561690 (284 lines) [pointer_cast]
            - core_script.cpp_CCmdParse_bestParse_FUN_00561db0 (75 lines) [pointer_cast]
-           - core_script.cpp_CScript_step_FUN_0055a810 (3411 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, warning_type_propagation]
+           - core_script.cpp_CScript_step_FUN_0055a810 (3412 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, warning_type_propagation]
            - core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 (26 lines) [pointer_cast]
            - core_script.cpp_CScript_addEventXRef_FUN_00567510 (24 lines) [pointer_cast]
            - core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0 (44 lines) [pointer_cast]
@@ -568,7 +565,7 @@ FILES AT 50-89%
            - core_setutil.cpp_C3DSLight_load_FUN_00586310 (185 lines) [pointer_cast]
    82.4% | core/flame.cpp
          14/17 clean, 3 remaining
-           - core_flame.cpp_CFlame_updateGlobe_FUN_004cad90 (27 lines) [decompiler_intrinsic, warning_inlined_function]
+           - core_flame.cpp_CFlame_updateGlobe_FUN_004cad90 (28 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_flame.cpp_CFlame_renderTransparent_FUN_004ca110 (261 lines) [decompiler_intrinsic, suspect_float, warning_inlined_function]
            - core_flame.cpp_CFlame_process_FUN_004c9c00 (139 lines) [decompiler_intrinsic, sub84_truncation, warning_inlined_function]
    82.4% | core/imp.cpp
@@ -621,13 +618,13 @@ FILES AT 50-89%
            - engine_2d.c_getTextWrapEnabled_FUN_004027f0 (4 lines) [param_count_too_few]
            - engine_2d.c_findBestPaletteMatch_FUN_00401460 (43 lines) [decompiler_intrinsic, pointer_cast]
            - engine_2d.c_drawVLine_FUN_00402ff0 (56 lines) [pointer_cast]
+           - engine_2d.c_drawCharacterMaskedColor_FUN_00401a10 (76 lines) [pointer_cast]
            - engine_2d.c_drawCharacterHighlighted_FUN_00401b70 (58 lines) [pointer_cast]
            - engine_2d.c_mapFrameBuffer_FUN_00403430 (66 lines) [pointer_cast]
            - engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580 (10 lines) [param_count_too_few]
            - engine_2d.c_drawCharacterMasked_FUN_00401900 (66 lines) [pointer_cast]
            - engine_2d.c_plotPixelWithDepth_FUN_00401290 (21 lines) [pointer_cast]
            - engine_2d.c_buildColorLookupTable_FUN_00402870 (51 lines) [decompiler_intrinsic, pointer_cast]
-           - engine_2d.c_drawCharacterMasked_FUN_00401a10 (76 lines) [pointer_cast]
            - engine_2d.c_drawCharacter_FUN_00401610 (89 lines) [pointer_cast]
            - engine_2d.c_unmapFrameBuffer_FUN_00403670 (30 lines) [pointer_cast]
            - engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80 (32 lines) [param_count_too_few]
@@ -649,7 +646,7 @@ FILES AT 50-89%
            - core_tentacle.cpp_CTentacle_process_FUN_005db050 (258 lines) [decompiler_intrinsic, warning_type_propagation]
    80.0% | engine/boss.c
          4/5 clean, 1 remaining
-           - engine_boss.c_modelStructNotSupported_FUN_0041dbe0 (36 lines) [param_count_too_few]
+           - engine_boss.c_modelStructNotSupported4_FUN_0041dbe0 (36 lines) [param_count_too_few]
    80.0% | shape/dsemodel.cpp
          8/10 clean, 2 remaining
            - shape_dsemodel.cpp_CDSEModel_centerModel_FUN_0048fa50 (64 lines) [decompiler_intrinsic, sub84_truncation]
@@ -709,7 +706,7 @@ FILES AT 50-89%
            - core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510 (160 lines) [unresolved_funcptr]
            - core_msnedit.cpp_CDemonMission_pickActorByName_FUN_0053c210 (49 lines) [pointer_cast]
            - core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80 (142 lines) [unknown_field]
-           - core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 (140 lines) [stack_param, stack_ref]
+           - core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 (141 lines) [stack_param, stack_ref]
            - core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 (52 lines) [unknown_field]
            - core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0 (30 lines) [pointer_cast]
            - core_msnedit.cpp_drawMotionBar_FUN_00536e20 (105 lines) [param_count_too_few]
@@ -717,7 +714,7 @@ FILES AT 50-89%
            - core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0 (104 lines) [decompiler_intrinsic, sub84_truncation, unknown_field, warning_inlined_function]
            - core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (996 lines) [decompiler_intrinsic, stack_ref]
            - core_msnedit.cpp_screenToWorldPosition_FUN_00535c60 (40 lines) [decompiler_intrinsic, stack_alignment_array]
-           - core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 (222 lines) [stack_alignment_array, unknown_field]
+           - core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 (223 lines) [stack_alignment_array, unknown_field]
    77.8% | core/tommygun.cpp
          7/9 clean, 2 remaining
            - core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90 (21 lines) [suspect_float]
@@ -975,7 +972,7 @@ FILES AT 50-89%
          13/18 clean, 5 remaining
            - core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e8520 (103 lines) [warning_type_propagation]
            - core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004e8bc0 (91 lines) [warning_type_propagation]
-           - core_ghoul.cpp_CGhoul_process_FUN_004e6600 (1052 lines) [decompiler_intrinsic, fnstsw_flag_artifact, stack_param, stack_ref, unresolved_funcptr, warning_inlined_function]
+           - core_ghoul.cpp_CGhoul_process_FUN_004e6600 (1053 lines) [decompiler_intrinsic, fnstsw_flag_artifact, stack_param, stack_ref, unresolved_funcptr, warning_inlined_function]
            - core_ghoul.cpp_CGhoul_ctor_FUN_004e6030 (37 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0 (149 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function, warning_type_propagation]
    71.9% | core/setdir.cpp
@@ -987,7 +984,7 @@ FILES AT 50-89%
            - core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (112 lines) [pointer_cast]
            - core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710 (52 lines) [pointer_cast]
            - core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70 (98 lines) [pointer_cast]
-           - core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 (76 lines) [pointer_cast]
+           - core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 (76 lines) [pointer_cast, unknown_param]
            - core_setdir.cpp_setPixelGrayscale_FUN_005748a0 (5 lines) [pointer_cast]
    71.8% | core/dcube.cpp
          28/39 clean, 11 remaining
@@ -1007,12 +1004,12 @@ FILES AT 50-89%
            - core_bride.cpp_CBride_getTargetPoints_FUN_00424a10 (28 lines) [warning_type_propagation]
            - core_bride.cpp_CBride_processDamage_FUN_00424830 (71 lines) [warning_type_propagation]
            - core_bride.cpp_CBride_processDismemberment_FUN_00424600 (82 lines) [warning_type_propagation]
-           - core_bride.cpp_CBride_process_FUN_00423a30 (388 lines) [warning_type_propagation]
+           - core_bride.cpp_CBride_process_FUN_00423a30 (392 lines) [warning_type_propagation]
    71.4% | core/moon.cpp
          10/14 clean, 4 remaining
            - core_moon.cpp_CMoon_render_FUN_00529ed0 (125 lines) [decompiler_intrinsic, mmx_assembly, pointer_cast, suspect_float, warning_inlined_function]
            - core_moon.cpp_CMoon_update_FUN_00529d60 (45 lines) [pointer_cast]
-           - core_moon.cpp_CMoon_init_FUN_00529ae0 (57 lines) [pointer_cast]
+           - core_moon.cpp_CMoon_init_FUN_00529ae0 (58 lines) [pointer_cast]
            - core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0 (35 lines) [stack_alignment_array]
    70.2% | engine/3d.c
          73/104 clean, 31 remaining
@@ -1050,7 +1047,7 @@ FILES AT 50-89%
    70.0% | core/weather.cpp
          7/10 clean, 3 remaining
            - core_weather.cpp_CWeather_renderParticles_FUN_005ef190 (205 lines) [decompiler_intrinsic, pointer_cast]
-           - core_weather.cpp_CWeather_update_FUN_005eeaf0 (140 lines) [pointer_cast]
+           - core_weather.cpp_CWeather_update_FUN_005eeaf0 (141 lines) [pointer_cast]
            - core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940 (69 lines) [decompiler_intrinsic, pointer_cast]
    69.9% | sound/sndmain.cpp
          135/193 clean, 58 remaining
@@ -1317,7 +1314,9 @@ FILES AT 50-89%
            - shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (384 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, unknown_field]
            - shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 (108 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0 (61 lines) [decompiler_intrinsic, warning_inlined_function]
+           - shape_meshlod.cpp_crc32UpdateDword1_FUN_0051c480 (74 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40 (53 lines) [pointer_cast]
+           - shape_meshlod.cpp_crc32UpdateDword2_FUN_0051c540 (74 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (192 lines) [decompiler_intrinsic, param_count_too_many, pointer_cast, stack_ref, warning_inlined_function]
            - shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080 (90 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 (53 lines) [pointer_cast]
@@ -1343,7 +1342,6 @@ FILES AT 50-89%
            - shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0 (107 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
            - shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70 (17 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300 (39 lines) [decompiler_intrinsic, pointer_cast]
-           - shape_meshlod.cpp_crc32UpdateDword_FUN_0051c480 (74 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_countCollapsibleEdgesForVertex_FUN_00516480 (23 lines) [pointer_cast]
            - shape_meshlod.cpp_crc32UpdateVector3f_FUN_0051c600 (72 lines) [pointer_cast]
            - shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0 (178 lines) [decompiler_intrinsic, sub84_truncation]
@@ -1352,7 +1350,6 @@ FILES AT 50-89%
            - shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0 (26 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (79 lines) [format_string_mismatch, pointer_cast]
            - shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990 (47 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
-           - shape_meshlod.cpp_crc32UpdateDword_FUN_0051c540 (74 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20 (38 lines) [pointer_cast]
            - shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830 (159 lines) [byvalue_struct_passing, pointer_cast, stack_ref]
            - shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 (82 lines) [pointer_cast]
@@ -1365,7 +1362,6 @@ FILES AT 50-89%
            - engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50 (47 lines) [pointer_cast]
            - engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 (113 lines) [pointer_cast]
            - engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550 (45 lines) [pointer_cast]
-           - engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70 (7 lines) [decompiler_intrinsic, warning_inlined_function]
            - engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0 (69 lines) [pointer_cast]
            - engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0 (61 lines) [pointer_cast]
            - engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 (9 lines) [param_count_too_many]
@@ -1374,6 +1370,7 @@ FILES AT 50-89%
            - engine_drender.cpp_renderTriangleTextured_FUN_00483370 (278 lines) [unknown_field]
            - engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 (20 lines) [decompiler_intrinsic, warning_inlined_function]
            - engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 (10 lines) [decompiler_intrinsic, warning_inlined_function]
+           - engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70 (7 lines) [decompiler_intrinsic, warning_inlined_function]
            - engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670 (6 lines) [decompiler_intrinsic, warning_inlined_function]
            - engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150 (9 lines) [decompiler_intrinsic, warning_inlined_function]
            - engine_drender.cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320 (36 lines) [pointer_cast]
@@ -1463,43 +1460,44 @@ FILES AT 50-89%
    58.1% | shape/superopt.cpp
          108/186 clean, 78 remaining
            - shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (87 lines) [decompiler_intrinsic, pointer_cast]
-           - shape_superopt.cpp_CP3D_add_FUN_005d85a0 (20 lines) [pointer_cast]
+           - shape_superopt.cpp_CP3D_add1_FUN_005d8520 (20 lines) [pointer_cast]
            - shape_superopt.cpp_CP3D_multiply_FUN_005d85f0 (20 lines) [pointer_cast]
            - shape_superopt.cpp_CPoly_scale_FUN_005cc7c0 (229 lines) [decompiler_intrinsic, pointer_cast]
            - shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 (204 lines) [decompiler_intrinsic, param_count_too_few, pointer_cast, stack_alignment_array, unknown_field]
            - shape_superopt.cpp_CComplexPolygon_computeWindingNormal_FUN_005cbb40 (96 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
-           - shape_superopt.cpp_CVec_copy_FUN_005d8160 (10 lines) [pointer_cast]
            - shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390 (252 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
            - shape_superopt.cpp_CPoly_saveVertexPositions_FUN_005cd4b0 (37 lines) [pointer_cast]
            - shape_superopt.cpp_CVec_getLength_FUN_005d8200 (12 lines) [decompiler_intrinsic, sub84_truncation]
            - shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0 (214 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
            - shape_superopt.cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0 (71 lines) [decompiler_intrinsic, pointer_cast, unknown_field]
            - shape_superopt.cpp_CObj_removeVertex_FUN_005d3140 (51 lines) [pointer_cast]
-           - shape_superopt.cpp_CP3D_add_FUN_005d8520 (20 lines) [pointer_cast]
            - shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020 (170 lines) [decompiler_intrinsic, param_count_too_many, pointer_cast, sub84_truncation, unknown_field]
            - shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40 (17 lines) [unresolved_funcptr]
+           - shape_superopt.cpp_CP3D_copy2_FUN_005d84a0 (10 lines) [pointer_cast]
            - shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0 (85 lines) [pointer_cast]
            - shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70 (119 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation]
-           - shape_superopt.cpp_CP3D_copy_FUN_005d84a0 (10 lines) [pointer_cast]
            - shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_005d4110 (20 lines) [unresolved_funcptr]
            - shape_superopt.cpp_CP2D_copy_FUN_005d8330 (8 lines) [pointer_cast]
            - shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (506 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation]
            - shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (45 lines) [decompiler_intrinsic, pointer_cast]
+           - shape_superopt.cpp_CVec_copy3_FUN_005d82b0 (10 lines) [pointer_cast]
            - shape_superopt.cpp_CP3D_subtract_FUN_005d84d0 (20 lines) [pointer_cast]
+           - shape_superopt.cpp_CP3D_add2_FUN_005d85a0 (20 lines) [pointer_cast]
            - shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60 (84 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation]
            - shape_superopt.cpp_CObj_transform_FUN_005d2c40 (83 lines) [pointer_cast]
            - shape_superopt.cpp_CPoly_getBounds_FUN_005ce3e0 (72 lines) [pointer_cast]
            - shape_superopt.cpp_CPoly_saveVertexPositionsWithFlag_FUN_005cd560 (44 lines) [pointer_cast]
            - shape_superopt.cpp_CObj_restoreVertexPositions_FUN_005d3860 (22 lines) [pointer_cast]
            - shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60 (52 lines) [pointer_cast]
+           - shape_superopt.cpp_CP3D_copy1_FUN_005d8470 (10 lines) [pointer_cast]
            - shape_superopt.cpp_CObj_copyFrom_FUN_005d2650 (43 lines) [pointer_cast, unresolved_funcptr]
+           - shape_superopt.cpp_CVec_copy2_FUN_005d8190 (10 lines) [pointer_cast]
            - shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90 (30 lines) [pointer_cast]
            - shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340 (171 lines) [pointer_cast, unknown_field]
            - shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (448 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array, sub84_truncation, unknown_field]
            - shape_superopt.cpp_CObj_addPolygons_FUN_005d2410 (46 lines) [pointer_cast, unresolved_funcptr]
            - shape_superopt.cpp_CVec_dot_FUN_005d82e0 (7 lines) [decompiler_intrinsic, sub84_truncation]
            - shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0 (81 lines) [pointer_cast]
-           - shape_superopt.cpp_CVec_copy_FUN_005d82b0 (10 lines) [pointer_cast]
            - shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350 (58 lines) [pointer_cast]
            - shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (809 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array, sub84_truncation, unknown_field]
            - shape_superopt.cpp_CPoly_restoreVertexPositionsWithFlag_FUN_005cd6f0 (44 lines) [pointer_cast]
@@ -1515,7 +1513,6 @@ FILES AT 50-89%
            - shape_superopt.cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0 (389 lines) [pointer_cast, unknown_field]
            - shape_superopt.cpp_CObj_appendTo_FUN_005d2720 (62 lines) [pointer_cast, unresolved_funcptr]
            - shape_superopt.cpp_CP3D_scale_FUN_005d8630 (20 lines) [pointer_cast]
-           - shape_superopt.cpp_CP3D_copy_FUN_005d8470 (10 lines) [pointer_cast]
            - shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30 (63 lines) [pointer_cast]
            - shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0 (44 lines) [pointer_cast, unresolved_funcptr]
            - shape_superopt.cpp_CPoly_transform_FUN_005ccc30 (181 lines) [pointer_cast]
@@ -1533,10 +1530,10 @@ FILES AT 50-89%
            - shape_superopt.cpp_CObj_saveVertexPositionsWithFlag_FUN_005d37b0 (44 lines) [pointer_cast, unresolved_funcptr]
            - shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0 (150 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, unknown_field]
            - shape_superopt.cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280 (110 lines) [pointer_cast]
-           - shape_superopt.cpp_CVec_copy_FUN_005d8190 (10 lines) [pointer_cast]
            - shape_superopt.cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0 (17 lines) [unresolved_funcptr]
            - shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320 (52 lines) [pointer_cast, unresolved_funcptr]
            - shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0 (44 lines) [pointer_cast]
+           - shape_superopt.cpp_CVec_copy1_FUN_005d8160 (10 lines) [pointer_cast]
            - shape_superopt.cpp_CPoly_restoreVertexPositions_FUN_005cd640 (37 lines) [pointer_cast]
            - shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90 (157 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, unknown_field]
            - shape_superopt.cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20 (102 lines) [pointer_cast]
@@ -1675,7 +1672,7 @@ FILES AT 50-89%
            - engine_pcx.c_writePCXScanline_FUN_00548c50 (50 lines) [pointer_cast]
            - engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 (106 lines) [pointer_cast]
 
-Total: 121 files
+Total: 122 files
 
 ====================================================================================================
 FILES BELOW 50%
@@ -1744,16 +1741,16 @@ FILES BELOW 50%
            - sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60 (73 lines) [pointer_cast]
    42.9% | engine/prim.c
          9/21 clean, 12 remaining
+           - engine_prim.c_getTriangleWindingFromIndices1_FUN_00552210 (42 lines) [decompiler_intrinsic]
+           - engine_prim.c_getTriangleWindingFromIndices2_FUN_00552300 (42 lines) [decompiler_intrinsic]
            - engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40 (236 lines) [decompiler_intrinsic, unknown_field]
            - engine_prim.c_setupSoftwareEdgeWithZMode_FUN_00551d60 (110 lines) [unknown_field]
            - engine_prim.c_renderScanlinePolygon_FUN_00553470 (287 lines) [unknown_field]
            - engine_prim.c_setupAdvancedSoftwareEdge_FUN_00552f70 (103 lines) [unknown_field]
-           - engine_prim.c_getTriangleWindingFromIndices_FUN_00552210 (42 lines) [decompiler_intrinsic]
            - engine_prim.c_renderPolygonSoftware_FUN_00552510 (230 lines) [decompiler_intrinsic, unknown_field]
            - engine_prim.c_setupBasicSoftwareEdge_FUN_00551ba0 (91 lines) [unknown_field]
            - engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10 (352 lines) [unknown_field]
            - engine_prim.c_calculateTriangleWindingOrder_FUN_00552150 (29 lines) [decompiler_intrinsic]
-           - engine_prim.c_getTriangleWindingFromIndices_FUN_00552300 (42 lines) [decompiler_intrinsic]
            - engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0 (43 lines) [decompiler_intrinsic]
            - engine_prim.c_setupColoredSoftwareEdge_FUN_00553190 (122 lines) [unknown_field]
    35.7% | engine/clipper.c

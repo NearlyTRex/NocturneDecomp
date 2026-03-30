@@ -55,7 +55,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
@@ -338,8 +338,8 @@ section .text
     PUSH 0x40e00000                     ; 005db3ca
         ;   Label: LAB_005db3ca
     PUSH 0xc0e00000                     ; 005db3cf
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005db3d4
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005db3d4
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV ESI,dword ptr [EBX + 0xbe3c]    ; 005db479
         ;   Label: LAB_005db479
     TEST ESI,ESI                        ; 005db47f

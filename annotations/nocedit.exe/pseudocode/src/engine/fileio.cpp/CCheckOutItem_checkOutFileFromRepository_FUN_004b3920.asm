@@ -41,7 +41,7 @@
 ;   crt_stdio.c_setvbuf_FUN_00601490
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_ensureTrailingSlash_FUN_00481f80
-;   engine_dosio.c_getFileSize_FUN_00481960
+;   engine_dosio.c_getFileSizeWithFinder_FUN_00481960
 ;   engine_dosio.c_makePath_FUN_00481f50
 ;   engine_dosio.c_setFileAttributes_FUN_004819f0
 ;   engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
@@ -104,8 +104,8 @@ section .text
     PUSH ESI                            ; 004b3999
     MOV dword ptr [0x02d12bf0],ESI      ; 004b399a | g_VersionControlSession.overwrite_own_choice
     MOV dword ptr [0x02d12bf4],ESI      ; 004b39a0 | g_VersionControlSession.overwrite_writeable_choice
-    CALL engine_dosio.c_getFileSize_FUN_00481960 ; 004b39a6
-        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481960(char * directory, char * filename)
+    CALL engine_dosio.c_getFileSizeWithFinder_FUN_00481960 ; 004b39a6
+        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSizeWithFinder_FUN_00481960(char * directory, char * filename)
     ADD ESP,0x8                         ; 004b39ab
     TEST EAX,EAX                        ; 004b39ae
     JL 0x004b39ba                       ; 004b39b0
@@ -600,8 +600,8 @@ section .text
     ADD ESP,0xc                         ; 004b3ee4
     PUSH EBP                            ; 004b3ee7
     PUSH 0x0                            ; 004b3ee8
-    CALL engine_dosio.c_getFileSize_FUN_00481960 ; 004b3eea
-        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481960(char * directory, char * filename)
+    CALL engine_dosio.c_getFileSizeWithFinder_FUN_00481960 ; 004b3eea
+        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSizeWithFinder_FUN_00481960(char * directory, char * filename)
     ADD ESP,0x8                         ; 004b3eef
     MOV EBX,EAX                         ; 004b3ef2
     TEST EAX,EAX                        ; 004b3ef4

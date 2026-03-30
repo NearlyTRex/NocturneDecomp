@@ -22,12 +22,12 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(CSkeleton *thi
   }
   this_ptr->bone_count = bone_count;
   this_ptr->frame_count = frame_count;
-  pCVar2 = (CQuaternion4f *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+  pCVar2 = (CQuaternion4f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                      (this_ptr->bone_count * this_ptr->frame_count * 0x10,
                       "..\\core\\skeleton.cpp",0xcf);
   fVar1 = (float)this_ptr->frame_count;
   this_ptr->bone_angle_frames = pCVar2;
-  pCVar3 = (CVector3f *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+  pCVar3 = (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                      ((int)fVar1 * 0xc + 4,"..\\core\\skeleton.cpp",0xd0);
   pCVar4 = pCVar3;
   if (pCVar3 != (CVector3f *)0x0) {
@@ -36,7 +36,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(CSkeleton *thi
   }
   fVar1 = (float)this_ptr->frame_count;
   this_ptr->frame_positions_1 = pCVar4;
-  pCVar3 = (CVector3f *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+  pCVar3 = (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                      ((int)fVar1 * 0xc + 4,"..\\core\\skeleton.cpp",0xd1);
   pCVar4 = pCVar3;
   if (pCVar3 != (CVector3f *)0x0) {

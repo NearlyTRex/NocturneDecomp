@@ -133,9 +133,9 @@ LAB_0046e929:
       return;
     }
     engine_2d_c_loadPaletteFile_FUN_004015a0(local_68);
-    engine_2d_c_doNothing_FUN_00402860(local_68);
+    engine_2d_c_doNothing2_FUN_00402860(local_68);
     engine_2d_c_loadOrBuildColorMap_FUN_00402930(local_68);
-    engine_2d_c_doNothing_FUN_00401590(local_68);
+    engine_2d_c_doNothing1_FUN_00401590(local_68);
   }
   else if (local_14 == 2) {
     engine_2d_c_getInputWithPrompt_FUN_004032c0(local_68,0x4f,0,0x42,"Enter .ACT filename : ");
@@ -213,9 +213,9 @@ LAB_0046ea46:
       return;
     }
     engine_2d_c_loadPaletteFile_FUN_004015a0("vga.act");
-    engine_2d_c_doNothing_FUN_00402860("vga.lte");
+    engine_2d_c_doNothing2_FUN_00402860("vga.lte");
     engine_2d_c_loadOrBuildColorMap_FUN_00402930("vga.act");
-    engine_2d_c_doNothing_FUN_00401590("vga.act");
+    engine_2d_c_doNothing1_FUN_00401590("vga.act");
   }
   wincore_wddvmem_cpp_setupColorPalette_FUN_005ed8f0();
   engine_2d_c_drawText_FUN_00401fd0("New palette loaded.  Hit a key...",0,0x58);

@@ -83,7 +83,7 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
@@ -205,8 +205,8 @@ section .text
     ADD ESP,0x4                         ; 004f4d09
     PUSH 0x41700000                     ; 004f4d0c
     PUSH 0x41200000                     ; 004f4d11
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004f4d16
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004f4d16
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [ESP + 0x1b0],EAX     ; 004f4d1b
     FLD float ptr [ESP + 0x1b0]         ; 004f4d22
     ADD ESP,0x8                         ; 004f4d29

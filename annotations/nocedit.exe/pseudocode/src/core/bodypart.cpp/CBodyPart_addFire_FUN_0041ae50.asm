@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_flame.cpp_CFlame_setup_FUN_004c9b90
 ;
 ; *****************************************************************************
@@ -119,8 +119,8 @@ section .text
     PUSH 0x41a00000                     ; 0041af60
         ;   Label: LAB_0041af60
     PUSH 0x41400000                     ; 0041af65
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0041af6a
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041af6a
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     ADD ESP,0x10                        ; 0041af82
         ;   Label: LAB_0041af82
     POP EBP                             ; 0041af85

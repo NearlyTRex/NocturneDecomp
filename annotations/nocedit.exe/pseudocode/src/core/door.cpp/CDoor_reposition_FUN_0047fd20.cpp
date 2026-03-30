@@ -119,10 +119,10 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
   }
 LAB_0047fe19:
   if (0.0 < this_ptr->swing_range) {
-    CStack_20.x = core_actor_cpp_getRandomFloat_FUN_0040cc10
+    CStack_20.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
                             (-this_ptr->swing_range,this_ptr->swing_range);
     CStack_20.y = 0.0;
-    CStack_20.z = core_actor_cpp_getRandomFloat_FUN_0040cc10
+    CStack_20.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
                             (-this_ptr->swing_range,this_ptr->swing_range);
     pCVar3 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                        (&this_ptr->base,&CStack_98,&CStack_20);

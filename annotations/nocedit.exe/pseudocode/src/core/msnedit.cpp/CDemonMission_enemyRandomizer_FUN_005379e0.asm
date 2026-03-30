@@ -36,7 +36,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
@@ -345,8 +345,8 @@ section .text
         ;   XREF to: 00537c3c (CONDITIONAL_JUMP)  ; LAB_00537c3c
     PUSH dword ptr [0x006804b4]         ; 00537cef | FLOAT_006804b4
     PUSH dword ptr [0x006804b0]         ; 00537cf5 | FLOAT_006804b0
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00537cfb
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00537cfb
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     CMP dword ptr [EAX + 0xbe2c],0x0    ; 00537d5f
         ;   Label: LAB_00537d5f
     JNZ 0x00537cc1                      ; 00537d66

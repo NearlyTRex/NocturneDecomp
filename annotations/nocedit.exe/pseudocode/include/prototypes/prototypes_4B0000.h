@@ -132,8 +132,8 @@ void __cdecl engine_fileio_cpp_writeArtFileEntries_FUN_004bc9f0(char *filename,_
 int __cdecl engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50(CFileManager *this_ptr,char *pod_filename);
 void __cdecl engine_fileio_cpp_CFileManager_searchMountedPods_FUN_004bcb70(CFileManager *this_ptr,char *default_wildcard);
 int __cdecl engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(CFileManager *this_ptr);
-int __cdecl engine_fileio_cpp_logOnAsVersionControlUser_FUN_004bcea0(void);
-void __cdecl engine_fileio_cpp_logOffVersionControl_FUN_004bceb0(void);
+int __cdecl engine_fileio_cpp_logOnAsVersionControlUserThunk_FUN_004bcea0(void);
+void __cdecl engine_fileio_cpp_logOffVersionControlThunk_FUN_004bceb0(void);
 void __cdecl engine_fileio_cpp_CFileManager_managePodMounts_FUN_004bcec0(CFileManager *this_ptr);
 void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path,time_t cutoff_timestamp);
 CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_ctor_FUN_004bd710(CCheckOutList *this_ptr);
@@ -149,7 +149,7 @@ void __cdecl core_fileman_cpp_CDemonFileManager_addKeyframeModelToExtractList_FU
 void __cdecl core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDemonFileManager *this_ptr);
 void __cdecl core_fileman_cpp_refreshSoundDirectory_FUN_004be590(_FILE *file_list_output,char *source_directory);
 void __cdecl core_filmreel_cpp_staticInit_FUN_004be620(void);
-CFilmReel * __cdecl core_filmreel_cpp_factoryFunc_FUN_004be670(void);
+CFilmReel * __cdecl core_filmreel_cpp_factoryFuncFilmReel_FUN_004be670(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmReel_getActorType_FUN_004be6a0(CFilmReel *this_ptr);
 CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_ctor_FUN_004be6b0(CFilmReel *this_ptr);
 void __cdecl core_filmreel_cpp_CFilmReel_setup_FUN_004be720(CFilmReel *this_ptr);
@@ -165,7 +165,7 @@ ECollisionType __cdecl core_filmreel_cpp_CFilmReel_getCollisionType_FUN_004be8f0
 CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_004be910(CFilmReel *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_filmreel_cpp_CFilmReel_getPropertyList_FUN_004be960(CFilmReel *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_filmreel_cpp_CFilmReel_addFilesToExtract_FUN_004be9b0(CFilmReel *this_ptr,_FILE *file_handle);
-CFilmProjector * __cdecl core_filmreel_cpp_factoryFunc_FUN_004bea00(void);
+CFilmProjector * __cdecl core_filmreel_cpp_factoryFuncFilmProjector_FUN_004bea00(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmProjector_getActorType_FUN_004bea30(CFilmProjector *this_ptr);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_004bea40(CFilmProjector *this_ptr);
 void __cdecl core_filmreel_cpp_CFilmProjector_setup_FUN_004beb00(CFilmProjector *this_ptr);

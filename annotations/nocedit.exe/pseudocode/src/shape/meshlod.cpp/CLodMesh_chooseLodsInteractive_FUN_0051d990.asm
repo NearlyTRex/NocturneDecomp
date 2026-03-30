@@ -77,7 +77,7 @@
 ;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
 ;   shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
 ;   ... and 20 more
 ;
 ; *****************************************************************************
@@ -709,8 +709,8 @@ section .text
     PUSH EAX                            ; 0051e18d
     MOV EBX,dword ptr [0x00678a60]      ; 0051e18e | g_CEditorToolsPtr
     PUSH EBX                            ; 0051e194 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 0051e195
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 0051e195
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0051e19a
     TEST EAX,EAX                        ; 0051e19d
     JZ 0x0051e224                       ; 0051e19f

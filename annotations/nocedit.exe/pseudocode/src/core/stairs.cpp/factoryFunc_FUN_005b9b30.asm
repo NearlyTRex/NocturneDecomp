@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_stairs.cpp_CStairs_ctor_FUN_005b9b70
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_stairs.cpp_factoryFunc_FUN_005b9b30
     PUSH 0x653042                       ; 005b9b32 | = "..\\core\\stairs.cpp"
     PUSH 0xa34                          ; 005b9b37
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005b9b3c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 005b9b3c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005b9b41
     TEST EAX,EAX                        ; 005b9b44
     JNZ 0x005b9b49                      ; 005b9b46

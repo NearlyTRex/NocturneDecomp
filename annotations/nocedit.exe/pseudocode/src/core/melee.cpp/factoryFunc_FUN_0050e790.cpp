@@ -11,7 +11,7 @@ CMelee * __cdecl core_melee_cpp_factoryFunc_FUN_0050e790(void)
 {
   CMelee *pCVar1;
   
-  pCVar1 = (CMelee *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x6cc,"..\\core\\melee.cpp",0x26);
+  pCVar1 = (CMelee *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x6cc,"..\\core\\melee.cpp",0x26);
   if (pCVar1 == (CMelee *)0x0) {
     return (CMelee *)0x0;
   }

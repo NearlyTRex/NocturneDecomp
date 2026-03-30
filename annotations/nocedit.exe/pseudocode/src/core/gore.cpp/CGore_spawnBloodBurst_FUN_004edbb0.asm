@@ -34,7 +34,7 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0
 ;   crt_math.c_atan2_FUN_006013b1
 ;
@@ -171,8 +171,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x5c]      ; 004edcd3
     PUSH 0xbf490fdb                     ; 004edcd7
     MOV dword ptr [ESP + 0x54],EAX      ; 004edcdc
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004edce0
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004edce0
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     XOR EDX,EDX                         ; 004eddc2
         ;   Label: LAB_004eddc2
     MOV dword ptr [ESP + 0x3c],EDX      ; 004eddc4

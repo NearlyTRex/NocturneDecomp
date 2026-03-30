@@ -343,13 +343,13 @@ void __cdecl crc32UpdateByte(uint *crc_ptr,uchar data_byte);
 // Address: 0051c350
 void __cdecl crc32UpdateBuffer(uint *crc_ptr,uchar *data_ptr,int byte_count);
 
-// Original: shape_meshlod.cpp_crc32UpdateDword_FUN_0051c480
+// Original: shape_meshlod.cpp_crc32UpdateDword1_FUN_0051c480
 // Address: 0051c480
-void __cdecl crc32UpdateDword(uint *crc_ptr,uint dword_value);
+void __cdecl crc32UpdateDword1(uint *crc_ptr,uint dword_value);
 
-// Original: shape_meshlod.cpp_crc32UpdateDword_FUN_0051c540
+// Original: shape_meshlod.cpp_crc32UpdateDword2_FUN_0051c540
 // Address: 0051c540
-void __cdecl crc32UpdateDword(uint *crc_ptr,uint dword_value);
+void __cdecl crc32UpdateDword2(uint *crc_ptr,uint dword_value);
 
 // Original: shape_meshlod.cpp_crc32UpdateVector3f_FUN_0051c600
 // Address: 0051c600
@@ -479,17 +479,17 @@ CLodFace * __cdecl CLodFace::copy2(CLodFace *destination,CLodFace *source);
 // Address: 0051f080
 CSpotView * __cdecl CSpotView::dtor(CSpotView *this_ptr,uint flags);
 
-// Original: shape_meshlod.cpp_copyFloat_FUN_0051f090
+// Original: shape_meshlod.cpp_copyFloat1_FUN_0051f090
 // Address: 0051f090
-float * __cdecl copyFloat(float *dest_ptr,float *src_ptr);
+float * __cdecl copyFloat1(float *dest_ptr,float *src_ptr);
 
-// Original: shape_meshlod.cpp_copyFloat_FUN_0051f0a0
+// Original: shape_meshlod.cpp_copyFloat2_FUN_0051f0a0
 // Address: 0051f0a0
-float * __cdecl copyFloat(float *dest_ptr,float *src_ptr);
+float * __cdecl copyFloat2(float *dest_ptr,float *src_ptr);
 
-// Original: shape_meshlod.cpp_copyFloat_FUN_0051f0b0
+// Original: shape_meshlod.cpp_copyFloat3_FUN_0051f0b0
 // Address: 0051f0b0
-float * __cdecl copyFloat(float *dest_ptr,float *src_ptr);
+float * __cdecl copyFloat3(float *dest_ptr,float *src_ptr);
 
 // Original: shape_meshlod.cpp_CLodFace_arrdtor_FUN_0051f0c0
 // Address: 0051f0c0

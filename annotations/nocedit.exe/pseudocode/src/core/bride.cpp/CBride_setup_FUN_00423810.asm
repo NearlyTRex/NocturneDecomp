@@ -25,7 +25,7 @@
 ;   ... and 16 more
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
@@ -205,6 +205,6 @@ section .text
     ADD ESP,0x4                         ; 004239f3
     PUSH 0x41a00000                     ; 004239f6
     PUSH 0x40000000                     ; 004239fb
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00423a00
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00423a00
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

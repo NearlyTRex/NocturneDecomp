@@ -247,7 +247,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
       }
       else {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_190);
-        local_190.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+        local_190.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
         damage_info = &local_190;
         local_190.attacker = (CDemonActor *)this_ptr;
         local_190.wielder = (CDemonActor *)this_ptr;
@@ -284,7 +284,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
         EVar13 = (*(((pCVar6->base).vtable._uc)->_uc).getDeathState)(pCVar6);
         if (EVar13 == DEATH_STATE_ALIVE) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_154);
-          local_154.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+          local_154.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
           pSVar13 = &local_154;
           local_154.attacker = (CDemonActor *)this_ptr;
           local_154.wielder = (CDemonActor *)this_ptr;

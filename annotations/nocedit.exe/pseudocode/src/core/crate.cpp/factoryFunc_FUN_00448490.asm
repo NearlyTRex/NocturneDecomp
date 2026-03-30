@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_crate.cpp_CCrate_ctor_FUN_004484d0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_crate.cpp_factoryFunc_FUN_00448490
     PUSH 0x619ae1                       ; 00448492 | = "..\\core\\crate.cpp"
     PUSH 0x2fc                          ; 00448497
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0044849c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0044849c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004484a1
     TEST EAX,EAX                        ; 004484a4
     JNZ 0x004484a9                      ; 004484a6

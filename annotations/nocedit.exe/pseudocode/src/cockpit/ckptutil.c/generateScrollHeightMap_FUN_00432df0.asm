@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0
 ;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
@@ -64,8 +64,8 @@ section .text
     PUSH 0x617afb                       ; 00432e28 | = "..\\cockpit\\ckptutil.c"
     LEA EAX,[EBP*0x4 + 0x0]             ; 00432e2d
     PUSH EAX                            ; 00432e34
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00432e35
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 00432e35
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00432e3a
     MOV dword ptr [ESP + 0x20],EAX      ; 00432e3d
     TEST EAX,EAX                        ; 00432e41

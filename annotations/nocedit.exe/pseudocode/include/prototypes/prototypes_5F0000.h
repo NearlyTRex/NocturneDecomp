@@ -70,7 +70,7 @@ int __cdecl wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00(void);
 char __cdecl wincore_winrun_cpp_getValue_FUN_005f2f20(void);
 void __cdecl wincore_winrun_cpp_enqueueInput_FUN_005f2f30(int input_value);
 void __cdecl wincore_winrun_cpp_setValue_FUN_005f2f70(int val);
-void __cdecl wincore_winrun_cpp_doNothing_FUN_005f2f80(void);
+void __cdecl wincore_winrun_cpp_doNothing1_FUN_005f2f80(void);
 void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_005f2f90(int x_coord,int y_coord);
 void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0(void);
 void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_005f30c0(void);
@@ -92,7 +92,7 @@ void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(char *buffer
 void __cdecl wincore_winrun_cpp_getRegistryStringValue_FUN_005f4210(char *key_path,char *value_name,char *output_buffer,uint *buffer_size);
 void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290(char *key_path,char *value_name,char *value_data);
 void __cdecl wincore_winrun_cpp_initJoystick_FUN_005f4310(void);
-void __cdecl wincore_winrun_cpp_doNothing_FUN_005f4380(void);
+void __cdecl wincore_winrun_cpp_doNothing2_FUN_005f4380(void);
 void __cdecl wincore_winrun_cpp_getJoystickState_FUN_005f43a0(void);
 void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_005f4500(HWND parent_window);
 void __cdecl wincore_winvideo_cpp_closeMovie_FUN_005f46b0(HWND window_handle);

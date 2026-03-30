@@ -46,7 +46,7 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c
   local_30 = 0;
   local_44 = 0;
   if (1 < this_ptr->num_parts) {
-    pCVar1 = (CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+    pCVar1 = (CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
                        (0x22b4,"..\\core\\skeleton.cpp",0x5ef);
     this_ptr_00 = (CDeformableModelInstance *)0x0;
     if (pCVar1 != (CDeformableModelInstance *)0x0) {

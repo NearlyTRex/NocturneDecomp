@@ -11,7 +11,8 @@ CPendulum * __cdecl core_pendulum_cpp_factoryFunc_FUN_00549350(void)
 {
   CPendulum *pCVar1;
   
-  pCVar1 = (CPendulum *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x444,"..\\core\\pendulum.cpp",0x2b);
+  pCVar1 = (CPendulum *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x444,"..\\core\\pendulum.cpp",0x2b)
+  ;
   if (pCVar1 == (CPendulum *)0x0) {
     return (CPendulum *)0x0;
   }

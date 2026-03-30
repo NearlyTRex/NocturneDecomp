@@ -138,14 +138,14 @@ SVertexData * __stack_esi shape_design_c_convertWorldToScreenCoordinates_FUN_004
 void __cdecl shape_design_c_calculateVertexNormals_FUN_0045be40(void);
 void __cdecl shape_design_c_renderVertexPointsWithLabels_FUN_0045bff0(void);
 void __cdecl shape_design_c_renderPolygonVerticesWithLabels_FUN_0045c2f0(int polygon_index);
-void __cdecl shape_design_c_doNothing_FUN_0045c4f0(void);
-void __cdecl shape_design_c_doNothing_FUN_0045c510(void);
+void __cdecl shape_design_c_doNothing1_FUN_0045c4f0(void);
+void __cdecl shape_design_c_doNothing2_FUN_0045c510(void);
 void __cdecl shape_design_c_selectVertexToMove_FUN_0045c530(void);
 void __cdecl shape_design_c_selectVertexToDelete_FUN_0045c5b0(void);
 void __cdecl shape_design_c_showPointEditor_FUN_0045c6c0(void);
 void __cdecl shape_design_c_calculatePolygonNormal_FUN_0045caa0(SShapeEditorPolygon *polygon);
 void __cdecl shape_design_c_createPolygonFromVertexList_FUN_0045cc80(void);
-void __cdecl shape_design_c_doNothing_FUN_0045ce00(void);
+void __cdecl shape_design_c_doNothing3_FUN_0045ce00(void);
 void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index);
 void __cdecl shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index,int *color_value);
 void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimitive *polygon_data);

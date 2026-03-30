@@ -148,8 +148,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x6e]      ; 00581b74
     ADD EDX,EAX                         ; 00581b77
     MOV dword ptr [EBP + 0x76],EDX      ; 00581b79
-    CALL wincore_winrun.cpp_doNothing_FUN_005f2f80 ; 00581b7c
-        ;   XREF to: 005f2f80 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing_FUN_005f2f80()
+    CALL wincore_winrun.cpp_doNothing1_FUN_005f2f80 ; 00581b7c
+        ;   XREF to: 005f2f80 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing1_FUN_005f2f80()
         ;   Label: LAB_00581b7c
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00581b81
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
@@ -647,8 +647,8 @@ section .text
     PUSH 0x648bdc                       ; 005820fd | = "Delete the selected room?"
     MOV EBX,dword ptr [0x00678a60]      ; 00582102 | g_CEditorToolsPtr
     PUSH EBX                            ; 00582108 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 00582109
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 00582109
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0058210e
     TEST EAX,EAX                        ; 00582111
     JZ 0x00582164                       ; 00582113

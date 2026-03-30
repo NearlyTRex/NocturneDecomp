@@ -165,7 +165,7 @@ LAB_005e24c7:
   (this_ptr->base).fire_cooldown_timer = fVar2 - delta_time;
   if ((0 < iVar5) || (0.0 < this_ptr->fire_sound_timer)) {
     this_ptr->fire_sound_frames = this_ptr->fire_sound_frames + -1;
-    fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
+    fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.9,1.1111112);
     local_14 = fVar3;
     iVar4 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(this_ptr->sfx_handles[0],fVar3);
     if (iVar4 == 0) {

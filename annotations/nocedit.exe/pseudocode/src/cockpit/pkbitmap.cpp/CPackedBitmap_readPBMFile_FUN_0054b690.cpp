@@ -61,7 +61,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
       if (((local_20 != 0) || (local_1c != 0)) ||
          ((this_ptr->width + -1 != local_18 || (this_ptr->height + -1 != local_14))))
       goto LAB_0054b6da;
-      ppvVar3 = (void **)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+      ppvVar3 = (void **)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                           ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x4c6);
       this_ptr->row_pointers = ppvVar3;
       if (ppvVar3 != (void **)0x0) {

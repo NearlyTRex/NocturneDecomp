@@ -90,7 +90,7 @@ void __cdecl core_zombie_cpp_CZombie_setup_FUN_005f9140(CZombie *this_ptr)
   (this_ptr->base).base.carry_hands[1].secondary_bone_index = this_ptr->part_indices[3];
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   (this_ptr->base).base.base.is_transparent = (uint)(this_ptr->is_miner_zombie != 0);
-  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
   iVar2 = this_ptr->part_indices[4];
   this_ptr->rise_delay = fVar2;
   if ((-1 < iVar2) && ((this_ptr->base).base.collision_cylinder_top < 0.0)) {

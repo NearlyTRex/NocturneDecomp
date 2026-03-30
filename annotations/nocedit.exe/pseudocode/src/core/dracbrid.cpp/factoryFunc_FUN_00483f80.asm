@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_dracbrid.cpp_CDraculaBride_ctor_FUN_00483fc0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_dracbrid.cpp_factoryFunc_FUN_00483f80
     PUSH 0x621854                       ; 00483f82 | = "..\\core\\dracbrid.cpp"
     PUSH 0xbfec                         ; 00483f87
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00483f8c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00483f8c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00483f91
     TEST EAX,EAX                        ; 00483f94
     JNZ 0x00483f99                      ; 00483f96

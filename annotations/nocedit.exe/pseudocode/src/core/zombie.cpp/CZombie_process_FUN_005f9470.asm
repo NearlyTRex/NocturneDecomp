@@ -172,7 +172,7 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
 ;   core_actor.cpp_CVector_ctor_FUN_00410340
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_004297e0
@@ -531,8 +531,8 @@ section .text
     ADD ESP,0x4                         ; 005f9827
     PUSH 0x41c80000                     ; 005f982a
     PUSH 0x41700000                     ; 005f982f
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005f9834
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005f9834
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV EAX,dword ptr [EBX + 0xbecc]    ; 005f990b
         ;   Label: LAB_005f990b
     TEST EAX,EAX                        ; 005f9911

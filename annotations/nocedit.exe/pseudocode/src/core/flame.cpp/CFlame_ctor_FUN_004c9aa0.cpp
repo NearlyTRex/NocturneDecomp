@@ -17,7 +17,7 @@ CFlame * __cdecl core_flame_cpp_CFlame_ctor_FUN_004c9aa0(CFlame *this_ptr)
   (pCVar1->flame_size).x = 1.0;
   (pCVar1->flame_size).y = 2.0;
   (pCVar1->flame_size).z = 1.0;
-  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,8.0);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,8.0);
   pCVar1->which_flame = 0;
   pCVar1->globe_scalar = 1.0;
   pCVar1->is_visible = 1;

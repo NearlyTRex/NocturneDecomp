@@ -72,7 +72,7 @@ int __cdecl engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0(CFileManage
               shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_7bc,0);
             }
             else {
-              iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+              iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
                                 (g_CEditorToolsPtr,"Delete local files?");
               if (iVar3 != 0) {
                 iVar3 = engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50

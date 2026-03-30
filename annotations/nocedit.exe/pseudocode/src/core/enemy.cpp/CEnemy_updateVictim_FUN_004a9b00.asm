@@ -31,7 +31,7 @@
 ;   undefined4 g_CGameInstance.allow_enemy_attack_flag
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;
 ; *****************************************************************************
@@ -132,6 +132,6 @@ section .text
         ;   Label: LAB_004a9c0e
     PUSH 0x3f000000                     ; 004a9c13
     MOV dword ptr [EDI + 0xbe30],0x0    ; 004a9c18
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004a9c22
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004a9c22
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

@@ -104,7 +104,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
       }
       else if (uVar9 == 1) {
         if (this_ptr->action_timer <= 0.0) {
-          local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);
+          local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,20.0);
           this_ptr->action_timer = local_14;
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar4->motion_controller,3,1);
@@ -183,7 +183,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
       else {
         pCVar10 = (*(((pCVar5->base).vtable._uc)->_uc).getGrabber)(pCVar5);
         if (pCVar10 == (CDemonActor *)0x0) {
-          local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.2,0.5);
+          local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.2,0.5);
           (this_ptr->base).attack_cooldown = local_14;
           local_20 = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
                                (&pCVar4->motion_controller);
@@ -196,7 +196,8 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
                   ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]]
                    != 0)))) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_140);
-                local_140.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+                local_140.damage_amount =
+                     core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
                 pSVar12 = &local_140;
                 local_140.attacker = (CDemonActor *)this_ptr;
                 local_140.wielder = (CDemonActor *)this_ptr;
@@ -215,7 +216,8 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
             else if ((this_ptr->base).base.model.part_data.visibility_flags
                      [this_ptr->part_indices[3]] != 0) {
               core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1f4);
-              local_1f4.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+              local_1f4.damage_amount =
+                   core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
               local_1f4.attacker = (CDemonActor *)this_ptr;
               local_1f4.wielder = (CDemonActor *)this_ptr;
               pSVar15 = &local_1f4;
@@ -247,7 +249,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
       else {
         pCVar10 = (*(((pCVar5->base).vtable._uc)->_uc).getGrabber)(pCVar5);
         if (pCVar10 == (CDemonActor *)0x0) {
-          local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.2,0.5);
+          local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.2,0.5);
           (this_ptr->base).attack_cooldown = local_14;
           local_1c = core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
                                (&pCVar4->motion_controller);
@@ -259,7 +261,8 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
               if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]]
                   != 0) {
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_17c);
-                local_17c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+                local_17c.damage_amount =
+                     core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
                 local_17c.attacker = (CDemonActor *)this_ptr;
                 local_17c.wielder = (CDemonActor *)this_ptr;
                 pSVar15 = &local_17c;
@@ -281,7 +284,8 @@ void __cdecl core_bride_cpp_CBride_process_FUN_00423a30(CBride *this_ptr,float d
                     ((this_ptr->base).base.model.part_data.visibility_flags
                      [this_ptr->part_indices[1]] != 0)) {
               core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1b8);
-              local_1b8.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+              local_1b8.damage_amount =
+                   core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
               local_1b8.attacker = (CDemonActor *)this_ptr;
               local_1b8.wielder = (CDemonActor *)this_ptr;
               pSVar15 = &local_1b8;

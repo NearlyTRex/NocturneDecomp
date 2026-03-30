@@ -72,7 +72,7 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
   }
   else if (iVar4 == 0x26) {
     puVar6 = local_110;
-    engine_boss_c_modelStructNotSupported_FUN_0041dbe0((SMRGLHeaderExtended *)local_dc);
+    engine_boss_c_modelStructNotSupported4_FUN_0041dbe0((SMRGLHeaderExtended *)local_dc);
     iVar4 = 0xd;
     puVar11 = local_110 + 0xc;
   }

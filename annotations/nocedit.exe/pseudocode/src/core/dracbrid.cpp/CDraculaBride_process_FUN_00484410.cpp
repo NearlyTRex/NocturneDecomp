@@ -274,7 +274,7 @@ LAB_004848f9:
       }
     }
     if (this_ptr->action_delay < 0.0) {
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,20.0);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(2.0,20.0);
       this_ptr->action_delay = local_14;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(this_ptr->base).base.model.motion_controller,0xd,1);
@@ -283,7 +283,7 @@ LAB_004848f9:
     goto LAB_004852f8;
   case 2:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_28c);
-    local_28c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+    local_28c.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
     pSVar21 = &local_28c;
     local_28c.attacker = (CDemonActor *)this_ptr;
     local_28c.wielder = (CDemonActor *)this_ptr;
@@ -300,7 +300,7 @@ LAB_004848f9:
     break;
   case 3:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_304);
-    local_304.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+    local_304.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
     pSVar21 = &local_304;
     local_304.attacker = (CDemonActor *)this_ptr;
     local_304.wielder = (CDemonActor *)this_ptr;
@@ -342,7 +342,7 @@ LAB_004848f9:
       if (((this_ptr->base).base.hit_points < 20.0f) || (this_ptr->action_delay < 0.0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,0,1);
-        local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,20.0);
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(2.0,20.0);
         this_ptr->action_delay = local_14;
       }
       pCVar5 = &(this_ptr->base).base.model;
@@ -408,7 +408,7 @@ LAB_004848f9:
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                                  (local_70.y - (this_ptr->base).base.base.orient.vec.y);
             if (ABS(local_14) < (float)0.39269908168750001) {
-              local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.7853982,0.7853982);
+              local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.7853982,0.7853982);
               (this_ptr->base).base.base.orient.vec.y =
                    local_14 + (this_ptr->base).base.base.orient.vec.y;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -425,7 +425,7 @@ LAB_004848f9:
         }
       }
       else {
-        local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,20.0);
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(2.0,20.0);
         this_ptr->action_delay = local_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar5->motion_controller,0,1);
@@ -544,7 +544,7 @@ LAB_004852f8:
     break;
   case 0x13:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_2c8);
-    local_2c8.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+    local_2c8.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
     pSVar21 = &local_2c8;
     local_2c8.attacker = (CDemonActor *)this_ptr;
     local_2c8.wielder = (CDemonActor *)this_ptr;
@@ -561,7 +561,7 @@ LAB_004852f8:
     break;
   case 0x14:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_214);
-    local_214.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+    local_214.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
     pSVar21 = &local_214;
     local_214.attacker = (CDemonActor *)this_ptr;
     local_214.wielder = (CDemonActor *)this_ptr;
@@ -578,7 +578,7 @@ LAB_004852f8:
     break;
   case 0x15:
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_250);
-    local_250.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+    local_250.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
     pSVar18 = &local_250;
     local_250.attacker = (CDemonActor *)this_ptr;
     local_250.wielder = (CDemonActor *)this_ptr;
@@ -704,7 +704,7 @@ LAB_004852f8:
         this_ptr->mist_state = 0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar5->motion_controller,0xe,1);
-        local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,20.0);
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(2.0,20.0);
         this_ptr->action_delay = local_14;
       }
     }

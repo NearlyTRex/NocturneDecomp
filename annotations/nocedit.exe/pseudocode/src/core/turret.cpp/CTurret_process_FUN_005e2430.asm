@@ -38,7 +38,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_turret.cpp_CTurret_updatePatrol_FUN_005e3560
@@ -173,8 +173,8 @@ section .text
     DEC ECX                             ; 005e2540
     PUSH 0x3f666666                     ; 005e2541
     MOV dword ptr [EBX + 0x8b0],ECX     ; 005e2546
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005e254c
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005e254c
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [ESP + 0xec],EAX      ; 005e2551
     FLD float ptr [ESP + 0xec]          ; 005e2558
     ADD ESP,0x8                         ; 005e255f

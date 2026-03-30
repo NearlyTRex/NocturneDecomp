@@ -41,7 +41,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40
 ;   core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
 ;   core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041b070
@@ -497,8 +497,8 @@ section .text
     PUSH 0x40490fdb                     ; 0041a59c
         ;   Label: LAB_0041a59c
     PUSH 0xc0490fdb                     ; 0041a5a1
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0041a5a6
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041a5a6
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [EDX + 0x8],0x0       ; 0041a615
         ;   Label: LAB_0041a615
     MOV EAX,dword ptr [EDX + 0x8]       ; 0041a61c

@@ -276,7 +276,7 @@ LAB_004158fb:
       break;
     case 3:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_13c);
-      local_13c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_13c.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
       damage_info = &local_13c;
       local_13c.attacker = (CDemonActor *)this_ptr;
       local_13c.wielder = (CDemonActor *)this_ptr;

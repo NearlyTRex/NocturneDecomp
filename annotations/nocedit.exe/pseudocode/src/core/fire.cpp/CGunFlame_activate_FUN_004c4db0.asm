@@ -20,7 +20,7 @@
 ;   core_fire.cpp_CFireEffect_createGunFlames_FUN_004c8ef0 at 004c8f20
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;
 ; *****************************************************************************
 
@@ -46,6 +46,6 @@ section .text
     PUSH 0x3f800000                     ; 004c4dd8
         ;   Label: LAB_004c4dd8
     PUSH 0x3f666666                     ; 004c4ddd
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c4de2
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c4de2
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

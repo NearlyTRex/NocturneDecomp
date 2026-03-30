@@ -459,13 +459,13 @@ CSkeleton * __cdecl CSkeleton::arrdtor(CSkeleton *objs,uint flags);
 // Address: 005a1fd0
 CDeformableModel * __cdecl CDeformableModel::arrdtor(CDeformableModel *objs,uint flags);
 
-// Original: core_skeleton.cpp_CVector3f_arrdtor_FUN_005a1ff0
+// Original: core_skeleton.cpp_CVector3f_arrdtor1_FUN_005a1ff0
 // Address: 005a1ff0
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor1(CVector3f *objs,uint flags);
 
-// Original: core_skeleton.cpp_CVector3f_arrdtor_FUN_005a2010
+// Original: core_skeleton.cpp_CVector3f_arrdtor2_FUN_005a2010
 // Address: 005a2010
-CVector3f * __cdecl CVector3f::arrdtor(CVector3f *objs,uint flags);
+CVector3f * __cdecl CVector3f::arrdtor2(CVector3f *objs,uint flags);
 
 // Original: core_skeleton.cpp_CBoundingBox3D_arrdtor_FUN_005a2030
 // Address: 005a2030

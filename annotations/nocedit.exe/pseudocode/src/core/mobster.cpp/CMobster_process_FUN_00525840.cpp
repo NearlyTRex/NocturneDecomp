@@ -455,7 +455,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
           fVar25 = 5.0;
           fVar24 = 4.0;
         }
-        local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fVar24,fVar25);
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(fVar24,fVar25);
         this_ptr->firing_cooldown = local_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base).base.model.motion_controller,0,1);
@@ -478,7 +478,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
       break;
     case 9:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_160);
-      local_160.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_160.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
       local_160.attacker = (CDemonActor *)this_ptr;
       local_160.wielder = (CDemonActor *)this_ptr;
       local_14 = local_160.damage_amount;
@@ -493,7 +493,7 @@ void __cdecl core_mobster_cpp_CMobster_process_FUN_00525840(CMobster *this_ptr,f
                             ((CDemonActor *)this_ptr,&local_100,pCVar13);
         core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar22,fVar16,pSVar17);
       }
-      local_160.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_160.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
       local_14 = local_160.damage_amount;
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[3]] != 0) {
         damage_info = &local_160;

@@ -214,7 +214,8 @@ LAB_004e6a5f:
                  (local_240.max.y - local_240.min.y) * (float)0.69999999999999996 +
                  (pCVar3->base).location.position.y;
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_29c);
-            local_29c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
+            local_29c.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(15.0,25.0)
+            ;
             in_stack_fffffc88 = (char *)0x4e6c71;
             local_14 = local_29c.damage_amount;
             pCVar12 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
@@ -279,7 +280,7 @@ LAB_004e6a5f:
                           ((CDeformableModelInstance *)local_18,&local_1e0,iVar9);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_1d4,pCVar12);
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(8.0,12.0);
       local_58 = (float)(int)ROUND(ROUND(local_14 * (float)0.25));
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
                 (g_CGorePtr,&local_1d4,(CVector3f *)0x0,(int)local_58,0);
@@ -293,7 +294,7 @@ LAB_004e6a5f:
                           ((CDeformableModelInstance *)pCVar11,&local_1b0,g_GhoulIndices[0]);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_228,pCVar12);
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(8.0,12.0);
       local_54 = (float)(int)ROUND(ROUND(local_14 * (float)0.25));
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
                 (g_CGorePtr,&local_228,(CVector3f *)0x0,(int)local_54,0);
@@ -311,7 +312,7 @@ LAB_004e6a5f:
                           ((CDeformableModelInstance *)pCVar11,&local_1ec,g_GhoulIndices[0]);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_15c,pCVar12);
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(8.0,12.0);
       local_84 = (float)(int)ROUND(ROUND(local_14 * (float)0.25));
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
                 (g_CGorePtr,&local_15c,(CVector3f *)0x0,(int)local_84,0);
@@ -513,7 +514,7 @@ LAB_004e6a5f:
                 local_3c = local_24 + local_40;
                 local_34 = local_3c + local_38;
                 if (0.0 < local_34) {
-                  local_28 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,local_34);
+                  local_28 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,local_34);
                   if (local_24 <= local_28) {
                     if (local_3c <= local_28) {
                       iVar9 = 0xb;
@@ -544,7 +545,7 @@ LAB_004e6a5f:
               if (0 < iVar9) {
                 in_stack_fffffc88 = (char *)0x4e777f;
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(local_30,0,1);
-                local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,30.0);
+                local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,30.0);
                 this_ptr->heal_timer = local_14;
               }
               if (iVar9 < 0) {
@@ -613,7 +614,7 @@ LAB_004e7a33:
                             ((CMotionController *)in_stack_fffffc88,this_ptr->pending_eat_state,1);
                   if (this_ptr->pending_eat_state == 0xd) {
                     pCVar4 = (this_ptr->base).base.base.vtable._ub;
-                    local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.5,1.2);
+                    local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.5,1.2);
                     in_stack_fffffc88 = (char *)this_ptr;
                     (*pCVar4->playSoundWithDelay)
                               ((CDemonActor *)this_ptr,"ghoul-scream-!-?.wav",local_14);
@@ -640,7 +641,7 @@ LAB_004e7576:
         pCVar14 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3);
         if (pCVar14 == (CDemonActor *)0x0) {
           in_stack_fffffc88 = (char *)0x3f000000;
-          local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.2,0.5);
+          local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.2,0.5);
           iVar9 = this_ptr->part_indices[3];
           (this_ptr->base).attack_cooldown = local_14;
           if ((this_ptr->base).base.model.part_data.visibility_flags[iVar9] != 0) {
@@ -652,7 +653,7 @@ LAB_004e7576:
             if ((local_50 <= (float)2) &&
                (local_20 = (CMotionController_vtable *)3.4f, 1.0 <= local_9c)) {
               core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_2d8);
-              local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+              local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
               local_2d8.damage_amount = local_14;
               if (this_ptr->is_berserk != 0) {
                 local_2d8.damage_amount = local_14 * (float)2;
@@ -703,7 +704,7 @@ LAB_004e7576:
           this_ptr->spasm_count = this_ptr->spasm_count + -1;
         }
         if ((0 < this_ptr->spasm_count) || (0 < this_ptr->lives_left)) {
-          local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(1.0,12.0);
+          local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(1.0,12.0);
           this_ptr->spasm_timer = (int)ROUND(ROUND(local_14 * (float)65536));
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&(this_ptr->base).base.model.motion_controller,0xf,1);
@@ -776,7 +777,7 @@ LAB_004e7243:
             }
             else {
               local_14 = (float)(this_ptr->lives_left + 1);
-              local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10
+              local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
                                    (10.0,(float)(int)local_14 * (float)10);
               (this_ptr->base).base.hit_points = local_14;
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -788,7 +789,7 @@ LAB_004e7243:
           iVar9 = this_ptr->arise_timer - g_GlobalDeltaTimeInt;
           this_ptr->arise_timer = iVar9;
           if (iVar9 < 1) {
-            local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,30.0);
+            local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,30.0);
             this_ptr->arise_timer = (int)ROUND(ROUND(-local_14 * 65536.0f));
           }
         }
@@ -826,7 +827,7 @@ LAB_004e7d9a:
          (pCVar14 = (*(((pCVar3->base).vtable._uc)->_uc).getGrabber)(pCVar3),
          pCVar14 != (CDemonActor *)0x0)) goto LAB_004e7d9a;
       in_stack_fffffc88 = (char *)0x3f000000;
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.2,0.5);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.2,0.5);
       iVar9 = this_ptr->part_indices[1];
       (this_ptr->base).attack_cooldown = local_14;
       if ((this_ptr->base).base.model.part_data.visibility_flags[iVar9] != 0) {
@@ -839,7 +840,7 @@ LAB_004e7d9a:
           local_20 = (CMotionController_vtable *)2.5f;
           if (1.0 <= local_a4) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_314);
-            local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+            local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
             local_314.damage_amount = local_14;
             if (this_ptr->is_berserk != 0) {
               local_314.damage_amount = local_14 * (float)2;
@@ -873,7 +874,7 @@ LAB_004e7d9a:
       if (iVar9 < 1) {
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"burp[1,2].wav");
-        local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(15.0,30.0);
         in_stack_fffffc88 = (char *)CONCAT22((short)((uint)local_14 >> 0x10),in_FPUControlWord);
         this_ptr->burp_timer = (int)ROUND(ROUND(local_14 * (float)65536));
       }

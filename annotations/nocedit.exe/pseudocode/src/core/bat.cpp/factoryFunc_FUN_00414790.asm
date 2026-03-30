@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_bat.cpp_CBat_ctor_FUN_004147d0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_bat.cpp_factoryFunc_FUN_00414790
     PUSH 0x6152cb                       ; 00414792 | = "..\\core\\bat.cpp"
     PUSH 0x388                          ; 00414797
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0041479c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0041479c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004147a1
     TEST EAX,EAX                        ; 004147a4
     JNZ 0x004147a9                      ; 004147a6

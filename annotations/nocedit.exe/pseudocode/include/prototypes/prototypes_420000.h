@@ -69,7 +69,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *thi
 CVector3f * __cdecl core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(CBoundingBox3D *this_ptr,CVector3f *out_point,CVector3f *in_point);
 int __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0(CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius);
 void __cdecl core_boxactor_cpp_staticInit_FUN_00421650(void);
-CBoxActor * __cdecl core_boxactor_cpp_factoryFunc_FUN_004216c0(void);
+CBoxActor * __cdecl core_boxactor_cpp_factoryFuncBoxActor_FUN_004216c0(void);
 CDemonActorType * __cdecl core_boxactor_cpp_CBoxActor_getActorType_FUN_004216f0(void);
 CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_setup_FUN_00421830(CBoxActor *this_ptr);
@@ -94,7 +94,7 @@ int __cdecl core_boxactor_cpp_CBoxActor_getAllowedMeleeAttackTypes_FUN_004226d0(
 void __cdecl core_boxactor_cpp_CBoxActor_getPropertyList_FUN_004226e0(CBoxActor *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_boxactor_cpp_CBoxActor_processInEditor_FUN_004228e0(CBoxActor *this_ptr);
 void __cdecl core_boxactor_cpp_CBoxActor_addFilesToExtract_FUN_00422900(CBoxActor *this_ptr,_FILE *file_handle);
-CLightActor * __cdecl core_boxactor_cpp_factoryFunc_FUN_00422950(void);
+CLightActor * __cdecl core_boxactor_cpp_factoryFuncLightActor_FUN_00422950(void);
 CDemonActorType * __cdecl core_boxactor_cpp_CLightActor_getActorType_FUN_00422980(CLightActor *this_ptr);
 CLightActor * __cdecl core_boxactor_cpp_CLightActor_ctor_FUN_00422990(CLightActor *this_ptr);
 void __cdecl core_boxactor_cpp_CLightActor_setup_FUN_00422a20(CLightActor *this_ptr);
@@ -284,9 +284,9 @@ CDemonActor * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042f9f0(CCharacter 
 SFire * __cdecl core_charactr_cpp_SFire_ctor_FUN_0042fab0(SFire *this_ptr);
 SPose * __cdecl core_charactr_cpp_SPose_ctor_FUN_0042fac0(SPose *this_ptr);
 SPose * __cdecl core_charactr_cpp_SPose_dtor_FUN_0042fad0(SPose *this_ptr,uint flags);
-float * __cdecl core_charactr_cpp_copyFloat_FUN_0042fae0(float *dst,float *src);
-float * __cdecl core_charactr_cpp_copyFloat_FUN_0042faf0(float *dst,float *src);
-float * __cdecl core_charactr_cpp_copyFloat_FUN_0042fb00(float *dst,float *src);
+float * __cdecl core_charactr_cpp_copyFloat1_FUN_0042fae0(float *dst,float *src);
+float * __cdecl core_charactr_cpp_copyFloat2_FUN_0042faf0(float *dst,float *src);
+float * __cdecl core_charactr_cpp_copyFloat3_FUN_0042fb00(float *dst,float *src);
 void __cdecl core_chain_cpp_staticInit_FUN_0042fb10(void);
 CChain * __cdecl core_chain_cpp_factoryFunc_FUN_0042fb40(void);
 CDemonActorType * __cdecl core_chain_cpp_CChain_getActorType_FUN_0042fb70(CChain *this_ptr);

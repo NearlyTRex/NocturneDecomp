@@ -71,8 +71,8 @@ void __cdecl engine_prim_c_normalizeTextureCoords_FUN_00552020(SRenderVertex *ve
 void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_005520a0(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_replaceWWithDepth_FUN_00552110(SRenderVertex *vertices,int vertex_count);
 int __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00552150(SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2);
-int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552210(SMRGLPrimitiveTriangle *triangle);
-int __cdecl engine_prim_c_getTriangleWindingFromIndices_FUN_00552300(SMRGLPrimitiveTriangle *triangle_indices);
+int __cdecl engine_prim_c_getTriangleWindingFromIndices1_FUN_00552210(SMRGLPrimitiveTriangle *triangle);
+int __cdecl engine_prim_c_getTriangleWindingFromIndices2_FUN_00552300(SMRGLPrimitiveTriangle *triangle_indices);
 int __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_005523f0(STrianglePackedIndices *triangle);
 void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex_indices,int vertex_count);
@@ -104,8 +104,8 @@ int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixe
 int __cdecl shape_quantize_cpp_displayProgressBar_FUN_005568f0(char *label,int total_count,int current_index);
 CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr,int width,int height,int bit_depth);
 CBitmap * __cdecl shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(CBitmap *this_ptr,uint flags);
-void __cdecl shape_quantize_cpp_showError_FUN_00556cb0(char *error);
-void __cdecl shape_quantize_cpp_showError_FUN_00556ce0(char *error);
+void __cdecl shape_quantize_cpp_showError1_FUN_00556cb0(char *error);
+void __cdecl shape_quantize_cpp_showError2_FUN_00556ce0(char *error);
 void __cdecl shape_quantize_cpp_doNothing_FUN_00556d10(void);
 void __cdecl shape_quantize_cpp_reallocMemory_FUN_00556d20(void *ptr,int new_size);
 void __cdecl shape_quantize_cpp_freeMemory_FUN_00556d40(void *ptr);

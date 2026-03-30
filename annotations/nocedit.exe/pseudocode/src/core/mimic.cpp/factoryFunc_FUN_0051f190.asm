@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_mimic.cpp_factoryFunc_FUN_0051f190
     PUSH 0x638542                       ; 0051f192 | = "..\\core\\mimic.cpp"
     PUSH 0x4ca58                        ; 0051f197
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0051f19c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0051f19c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0051f1a1
     TEST EAX,EAX                        ; 0051f1a4
     JNZ 0x0051f1a9                      ; 0051f1a6

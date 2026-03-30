@@ -16,7 +16,7 @@
 ;   undefined4 g_CGameInstance.allow_damage_flag
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
 ;   core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -84,8 +84,8 @@ section .text
     PUSH 0x42c80000                     ; 004d6bda
     PUSH 0x0                            ; 004d6bdf
     MOV dword ptr [EBX + 0x2598],0x0    ; 004d6be1
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004d6beb
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004d6beb
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     FLD float ptr [ESI + 0x4]           ; 004d6c76
         ;   Label: LAB_004d6c76
     FLDZ                                ; 004d6c79
@@ -132,8 +132,8 @@ section .text
     PUSH 0x3ecccccd                     ; 004d6cce
     PUSH 0x3e800000                     ; 004d6cd3
     MOV EDI,dword ptr [EBX + 0x154]     ; 004d6cd8
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004d6cde
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004d6cde
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     PUSH 0x1                            ; 004d6d03
         ;   Label: LAB_004d6d03
     PUSH 0x8                            ; 004d6d05

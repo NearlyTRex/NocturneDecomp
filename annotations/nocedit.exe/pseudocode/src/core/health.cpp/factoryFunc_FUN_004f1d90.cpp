@@ -11,7 +11,7 @@ CHealthItem * __cdecl core_health_cpp_factoryFunc_FUN_004f1d90(void)
 {
   CHealthItem *pCVar1;
   
-  pCVar1 = (CHealthItem *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x2dc,"..\\core\\health.cpp",0x22);
+  pCVar1 = (CHealthItem *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x2dc,"..\\core\\health.cpp",0x22);
   if (pCVar1 == (CHealthItem *)0x0) {
     return (CHealthItem *)0x0;
   }

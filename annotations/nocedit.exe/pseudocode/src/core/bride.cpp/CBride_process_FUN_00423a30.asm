@@ -59,7 +59,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_004297e0
@@ -132,8 +132,8 @@ section .text
         ;   XREF to: 00423b02 (CONDITIONAL_JUMP)  ; LAB_00423b02
     PUSH 0x41a00000                     ; 00423ac0
     PUSH 0x41200000                     ; 00423ac5
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00423aca
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00423aca
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     FLD float ptr [EBX + 0xbe24]        ; 00423b02
         ;   Label: LAB_00423b02
     FMUL double ptr [0x00616c15]        ; 00423b08 | DOUBLE_00616c15
@@ -434,8 +434,8 @@ section .text
     PUSH 0x3f000000                     ; 00423e75
         ;   Label: LAB_00423e75
     PUSH 0x3e4ccccd                     ; 00423e7a
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00423e7f
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00423e7f
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV EDI,dword ptr [EBX + 0xbe3c]    ; 0042404a
         ;   Label: LAB_0042404a
     TEST EDI,EDI                        ; 00424050
@@ -468,8 +468,8 @@ section .text
     PUSH 0x3f000000                     ; 0042408c
         ;   Label: LAB_0042408c
     PUSH 0x3e4ccccd                     ; 00424091
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00424096
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00424096
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     JBE 0x00423e33                      ; 004242b3
         ;   XREF to: 00423e33 (CONDITIONAL_JUMP)  ; LAB_00423e33
         ;   Label: LAB_004242b3

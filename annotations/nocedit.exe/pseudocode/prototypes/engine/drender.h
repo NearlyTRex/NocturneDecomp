@@ -251,9 +251,9 @@ void __cdecl CDemonRenderer::setBlendMode(CDemonRenderer *this_ptr,int blend_mod
 // Address: 0048ca60
 int __cdecl CDemonRenderer::setRenderAlpha(CDemonRenderer *this_ptr,int render_alpha);
 
-// Original: engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70
+// Original: engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70
 // Address: 0048ca70
-void __cdecl CDemonRenderer::setRenderAlpha(CDemonRenderer *this_ptr,float render_alpha);
+void __cdecl CDemonRenderer::setRenderAlphaNormalized(CDemonRenderer *this_ptr,float render_alpha);
 
 // Original: engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 // Address: 0048caa0

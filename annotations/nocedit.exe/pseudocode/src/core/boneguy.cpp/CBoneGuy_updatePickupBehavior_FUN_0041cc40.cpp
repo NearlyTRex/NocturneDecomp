@@ -50,7 +50,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40(CBoneGuy
   this_ptr->search_timer = fVar1;
   if (0.0 < fVar1) {
     this_ptr->pickup_attempt_count = this_ptr->pickup_attempt_count + 1;
-    local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
+    local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(5.0,10.0);
     this_ptr->search_timer = local_18;
   }
   if ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0) {

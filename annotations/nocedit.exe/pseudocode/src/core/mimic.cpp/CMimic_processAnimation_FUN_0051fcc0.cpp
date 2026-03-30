@@ -196,7 +196,7 @@ LAB_0051fd7d:
           if (fVar6 <= (float)2) {
             local_1c = 2.5f;
             if (1.0 <= fVar6) {
-              fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+              fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
               core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                         (pCVar1,&local_ac,g_MimicIndices[8]);
               local_ac.x._3_1_ = local_ac.x._3_1_ ^ 0x80;

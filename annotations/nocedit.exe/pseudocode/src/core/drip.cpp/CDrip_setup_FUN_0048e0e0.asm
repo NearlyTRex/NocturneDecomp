@@ -7,7 +7,7 @@
 ; CDrip *          Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 ;
 ; *****************************************************************************
@@ -34,6 +34,6 @@ section .text
     MOV dword ptr [EAX + 0x8],ECX       ; 0048e117
     PUSH dword ptr [EBX + 0x2e4]        ; 0048e11a
     PUSH dword ptr [EBX + 0x2e0]        ; 0048e120
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0048e126
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0048e126
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

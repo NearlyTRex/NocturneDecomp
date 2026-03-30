@@ -14,7 +14,7 @@
 ; float            Stack[-0xc]:4  local_c
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;
 ; *****************************************************************************
 
@@ -43,6 +43,6 @@ section .text
     MOV dword ptr [ESP + 0x44],ECX      ; 005887d3
     MOV dword ptr [ESP + 0x48],ESI      ; 005887d7
     MOV dword ptr [ESP + 0x4c],EDI      ; 005887db
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005887df
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005887df
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

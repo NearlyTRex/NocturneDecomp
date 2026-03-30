@@ -14,6 +14,6 @@ float __cdecl core_lightgun_cpp_CLightGun_getDamage_FUN_00506670(CLightGun *this
   if ((this_ptr->base).ammo_type == 6) {
     return 0.0;
   }
-  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(150.0,200.0);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(150.0,200.0);
   return fVar1;
 }

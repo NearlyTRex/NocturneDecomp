@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_dog.cpp_CZombieDog_ctor_FUN_0047f050
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_dog.cpp_factoryFunc_FUN_0047f010
     PUSH 0x620f8c                       ; 0047f012 | = "..\\core\\dog.cpp"
     PUSH 0xbec8                         ; 0047f017
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0047f01c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0047f01c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0047f021
     TEST EAX,EAX                        ; 0047f024
     JNZ 0x0047f029                      ; 0047f026

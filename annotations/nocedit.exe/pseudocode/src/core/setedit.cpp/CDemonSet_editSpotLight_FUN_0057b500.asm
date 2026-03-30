@@ -26,7 +26,7 @@
 ;   core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50
 ;   crt_string.c__strcmp_FUN_005fef20
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
 ;
 ; *****************************************************************************
 
@@ -120,8 +120,8 @@ section .text
     PUSH 0x6477f7                       ; 0057b5bf | = "Precompute light visibility?"
     MOV EBP,dword ptr [0x00678a60]      ; 0057b5c4 | g_CEditorToolsPtr
     PUSH EBP                            ; 0057b5ca | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0057b5cb
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 0057b5cb
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0057b5d0
     TEST EAX,EAX                        ; 0057b5d3
     JZ 0x0057b5e5                       ; 0057b5d5

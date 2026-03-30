@@ -64,10 +64,10 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   core_netgame.cpp_assignInt1_FUN_00543e20
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0
 ;   core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00
 ;   core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_00542ff0
-;   core_netgame.cpp_copyInteger_FUN_00543e20
 ;   crt_string.c__strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
@@ -327,8 +327,8 @@ section .text
     MOV dword ptr [ESP + 0xd0],EAX      ; 005427bb
     LEA EAX,[ESP + 0xd4]                ; 005427c2
     PUSH EAX                            ; 005427c9
-    CALL core_netgame.cpp_copyInteger_FUN_00543e20 ; 005427ca
-        ;   XREF to: 00543e20 (UNCONDITIONAL_CALL)  ; int * core_netgame.cpp_copyInteger_FUN_00543e20(int * dest, int * src)
+    CALL core_netgame.cpp_assignInt1_FUN_00543e20 ; 005427ca
+        ;   XREF to: 00543e20 (UNCONDITIONAL_CALL)  ; int * core_netgame.cpp_assignInt1_FUN_00543e20(int * dest, int * src)
     ADD ESP,0x8                         ; 005427cf
     MOV AX,word ptr [EDI + 0x4]         ; 005427d2
     MOV word ptr [ESP + 0xd4],AX        ; 005427d6

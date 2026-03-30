@@ -88,9 +88,9 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
                        (this_ptr_00,&CStack_b4,corner_index ^ 1);
     pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(this_ptr_00,&CStack_c0,corner_index)
     ;
-    core_actor_cpp_copyFloat_FUN_004104f0(&CStack_48.x,&pCVar3->x);
-    core_actor_cpp_copyFloat_FUN_004104e0(&CStack_48.y,&pCVar3->y);
-    core_actor_cpp_copyFloat_FUN_004104d0(&CStack_48.z,&pCVar3->z);
+    core_actor_cpp_copyFloat3_FUN_004104f0(&CStack_48.x,&pCVar3->x);
+    core_actor_cpp_copyFloat2_FUN_004104e0(&CStack_48.y,&pCVar3->y);
+    core_actor_cpp_copyFloat1_FUN_004104d0(&CStack_48.z,&pCVar3->z);
     core_actor_cpp_CVector_ctor_FUN_00410340(&CStack_24);
     CStack_24.x = pCVar2->x * 0.2f;
     CStack_24.y = pCVar2->y * 0.2f;
@@ -180,9 +180,9 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
                        (this_ptr_00,&CStack_e4,corner_index ^ 2);
     pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                        (this_ptr_00,&CStack_120,corner_index);
-    core_actor_cpp_copyFloat_FUN_004104f0(&CStack_60.x,&pCVar3->x);
-    core_actor_cpp_copyFloat_FUN_004104e0(&CStack_60.y,&pCVar3->y);
-    core_actor_cpp_copyFloat_FUN_004104d0(&CStack_60.z,&pCVar3->z);
+    core_actor_cpp_copyFloat3_FUN_004104f0(&CStack_60.x,&pCVar3->x);
+    core_actor_cpp_copyFloat2_FUN_004104e0(&CStack_60.y,&pCVar3->y);
+    core_actor_cpp_copyFloat1_FUN_004104d0(&CStack_60.z,&pCVar3->z);
     core_actor_cpp_CVector_ctor_FUN_00410340(&CStack_6c);
     CStack_6c.x = pCVar2->x * 0.2f;
     CStack_6c.y = pCVar2->y * 0.2f;
@@ -272,9 +272,9 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
                        (this_ptr_00,&CStack_84,corner_index ^ 4);
     pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(this_ptr_00,&CStack_90,corner_index)
     ;
-    core_actor_cpp_copyFloat_FUN_004104f0(&CStack_30.x,&pCVar3->x);
-    core_actor_cpp_copyFloat_FUN_004104e0(&CStack_30.y,&pCVar3->y);
-    core_actor_cpp_copyFloat_FUN_004104d0(&CStack_30.z,&pCVar3->z);
+    core_actor_cpp_copyFloat3_FUN_004104f0(&CStack_30.x,&pCVar3->x);
+    core_actor_cpp_copyFloat2_FUN_004104e0(&CStack_30.y,&pCVar3->y);
+    core_actor_cpp_copyFloat1_FUN_004104d0(&CStack_30.z,&pCVar3->z);
     core_actor_cpp_CVector_ctor_FUN_00410340(&CStack_fc);
     CStack_fc.x = pCVar2->x * 0.2f;
     CStack_fc.y = pCVar2->y * 0.2f;

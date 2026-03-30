@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_ghoul.cpp_CGhoul_ctor_FUN_004e6030
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_ghoul.cpp_factoryFunc_FUN_004e5ff0
     PUSH 0x62dae9                       ; 004e5ff5 | = "..\\core\\ghoul.cpp"
     PUSH 0xbf38                         ; 004e5ffa
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004e5fff
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 004e5fff
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004e6004
     TEST EAX,EAX                        ; 004e6007
     JNZ 0x004e600c                      ; 004e6009

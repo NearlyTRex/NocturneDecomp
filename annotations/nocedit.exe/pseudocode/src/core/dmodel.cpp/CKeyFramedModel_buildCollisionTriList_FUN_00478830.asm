@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -85,8 +85,8 @@ section .text
     PUSH 0x61f8c7                       ; 004788dd | = "..\\core\\dmodel.cpp"
     ADD EAX,0x4                         ; 004788e2
     PUSH EAX                            ; 004788e5
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 004788e6
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 004788e6
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004788eb
     TEST EAX,EAX                        ; 004788ee
     JZ 0x004788f8                       ; 004788f0

@@ -11,7 +11,7 @@ CActorDestination * __cdecl core_dest_cpp_factoryFunc_FUN_0046f8c0(void)
 {
   CActorDestination *pCVar1;
   
-  pCVar1 = (CActorDestination *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(500,"..\\core\\dest.cpp",0x29);
+  pCVar1 = (CActorDestination *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(500,"..\\core\\dest.cpp",0x29);
   if (pCVar1 == (CActorDestination *)0x0) {
     return (CActorDestination *)0x0;
   }

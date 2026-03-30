@@ -69,15 +69,15 @@ void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CV
           local_34.z = 0.0;
           local_34.x = (float)-fVar4;
           local_34.y = (float)fVar3;
-          fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.7853982,0.7853982);
+          fVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.7853982,0.7853982);
           local_34.x = fVar5 + local_34.x;
-          fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.7853982,0.7853982);
+          fVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.7853982,0.7853982);
           local_34.y = fVar5 + local_34.y;
           core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_74,&local_34);
           local_34.x = local_74.m[0].z;
           local_34.y = local_74.m[1].z;
           local_34.z = local_74.m[2].z;
-          core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);
+          core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.5,0.5);
           local_4c.x = local_34.x * fVar2;
           local_4c.y = local_34.y * fVar2;
           local_4c.z = local_34.z * fVar2;

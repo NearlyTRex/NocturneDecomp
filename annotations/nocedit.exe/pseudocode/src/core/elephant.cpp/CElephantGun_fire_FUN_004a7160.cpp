@@ -77,8 +77,9 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
   pCStack_40 = (CCrate *)0x0;
   if (0 < iVar3) {
     do {
-      fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
-      fVar8 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,(float)(fVar6 * (float10)fVar1));
+      fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,6.2831855);
+      fVar8 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
+                        (0.0,(float)(fVar6 * (float10)fVar1));
       fVar11 = (float10)fcos((float10)fVar4);
       fVar7 = (float10)fsin((float10)fVar4);
       CStack_bc.x = (float)(fVar11 * (float10)fVar8);

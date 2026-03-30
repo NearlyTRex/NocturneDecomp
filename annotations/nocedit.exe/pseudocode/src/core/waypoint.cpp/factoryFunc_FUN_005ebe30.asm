@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_waypoint.cpp_CWayPoint_ctor_FUN_005ebe70
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_waypoint.cpp_factoryFunc_FUN_005ebe30
     PUSH 0x657527                       ; 005ebe32 | = "..\\core\\waypoint.cpp"
     PUSH 0x558                          ; 005ebe37
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005ebe3c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 005ebe3c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005ebe41
     TEST EAX,EAX                        ; 005ebe44
     JNZ 0x005ebe49                      ; 005ebe46

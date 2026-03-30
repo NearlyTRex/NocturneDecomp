@@ -59,13 +59,13 @@ void __cdecl CChain::getPropertyList(CChain *this_ptr,CActorPropertyList *proper
 // Address: 00431250
 void __cdecl CChain::addFilesToExtract(CChain *this_ptr,_FILE *file_handle);
 
-// Original: core_chain.cpp_passthroughInt_FUN_00431330
+// Original: core_chain.cpp_passthroughInt1_FUN_00431330
 // Address: 00431330
-int __cdecl passthroughInt(int value);
+int __cdecl passthroughInt1(int value);
 
-// Original: core_chain.cpp_passthroughInt_FUN_00431340
+// Original: core_chain.cpp_passthroughInt2_FUN_00431340
 // Address: 00431340
-int __cdecl passthroughInt(int value);
+int __cdecl passthroughInt2(int value);
 
 // Original: core_chain.cpp_fastSqrt_FUN_00431350
 // Address: 00431350

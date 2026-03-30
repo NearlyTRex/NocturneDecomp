@@ -42,7 +42,7 @@ void __cdecl core_flies_cpp_CFlies_initFly_FUN_004cc760(CFlies *this_ptr,int fly
     }
     reference_point = reference_point + 1;
   } while (reference_point != pCVar1 + 3);
-  fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+  fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
   pSVar5->t = fVar4;
   return;
 }

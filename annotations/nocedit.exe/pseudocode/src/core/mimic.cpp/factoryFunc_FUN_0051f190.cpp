@@ -11,7 +11,7 @@ CMimic * __cdecl core_mimic_cpp_factoryFunc_FUN_0051f190(void)
 {
   CMimic *pCVar1;
   
-  pCVar1 = (CMimic *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x4ca58,"..\\core\\mimic.cpp",0x77);
+  pCVar1 = (CMimic *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x4ca58,"..\\core\\mimic.cpp",0x77);
   if (pCVar1 == (CMimic *)0x0) {
     return (CMimic *)0x0;
   }

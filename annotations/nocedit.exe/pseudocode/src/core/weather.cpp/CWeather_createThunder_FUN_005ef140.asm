@@ -10,7 +10,7 @@
 ;   core_weather.cpp_CWeather_update_FUN_005eeaf0 at 005eedd4
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;
 ; *****************************************************************************
 
@@ -22,6 +22,6 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 005ef144
     PUSH 0x41a00000                     ; 005ef148
     PUSH 0x41200000                     ; 005ef14d
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005ef152
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005ef152
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

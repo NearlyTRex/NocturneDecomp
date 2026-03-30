@@ -100,9 +100,9 @@ LAB_00484145:
                     (this_ptr_01,"head01",1);
   this_ptr->part_indices[8] = iVar1;
   this_ptr->attack_landed = 0;
-  fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
+  fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(5.0,10.0);
   this_ptr->freaky_timer = fVar3;
-  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,20.0);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(2.0,20.0);
   this_ptr->action_delay = fVar2;
   return;
 }

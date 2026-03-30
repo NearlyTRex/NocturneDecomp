@@ -11,7 +11,7 @@ CAmmo * __cdecl core_ammo_cpp_factoryFunc_FUN_00410d80(void)
 {
   CAmmo *pCVar1;
   
-  pCVar1 = (CAmmo *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x31c,"..\\core\\ammo.cpp",0x1e);
+  pCVar1 = (CAmmo *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x31c,"..\\core\\ammo.cpp",0x1e);
   if (pCVar1 == (CAmmo *)0x0) {
     return (CAmmo *)0x0;
   }

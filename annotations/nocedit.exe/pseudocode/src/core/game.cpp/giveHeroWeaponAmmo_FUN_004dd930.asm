@@ -22,7 +22,7 @@
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH 0xa1c                          ; 004dd931
     PUSH 0x62b9cc                       ; 004dd936 | = "..\\core\\game.cpp"
     PUSH 0x31c                          ; 004dd93b
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004dd940
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 004dd940
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     MOV EBX,EAX                         ; 004dd945
     ADD ESP,0xc                         ; 004dd947
     TEST EAX,EAX                        ; 004dd94a

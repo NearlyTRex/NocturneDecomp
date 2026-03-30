@@ -50,7 +50,7 @@
 ;   ... and 53 more
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_setcolid.cpp_CDemonSet_disableIgnore_FUN_00574210
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
 ;   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00572460
@@ -607,8 +607,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x128]     ; 005b36ca
     PUSH 0xc0400000                     ; 005b36d1
     MOV dword ptr [EAX],0x0             ; 005b36d6
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005b36dc
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005b36dc
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [ESP + 0x134],EAX     ; 005b36e1
     FLD float ptr [ESP + 0x134]         ; 005b36e8
     ADD ESP,0x8                         ; 005b36ef
@@ -624,8 +624,8 @@ section .text
         ;   XREF to: 005a8af0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0(int channel_index)
     ADD ESP,0x4                         ; 005b371c
     PUSH 0x3f6b85c                      ; 005b371f | g_TrainVelocityVector
-    CALL sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a00 ; 005b3724
-        ;   XREF to: 005a8a00 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a00(CVector3f * velocity_source_ptr)
+    CALL sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_005a8a00 ; 005b3724
+        ;   XREF to: 005a8a00 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_005a8a00(CVector3f * velocity_source_ptr)
     ADD ESP,0x4                         ; 005b3729
     FLD float ptr [ESP]                 ; 005b372c
     SUB ESP,0x8                         ; 005b372f
@@ -690,8 +690,8 @@ section .text
     MOV EBX,0x41a00000                  ; 005b37cb
     LEA EDI,[ESP + 0x78]                ; 005b37d0
     MOV ESI,0x682118                    ; 005b37d4 | g_TrainSoundFilenameTemplate
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005b37d9
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005b37d9
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [ESP + 0x134],EAX     ; 005b37de
     MOV ECX,0x19                        ; 005b37e5
     FLD float ptr [ESP + 0x134]         ; 005b37ea

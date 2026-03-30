@@ -213,10 +213,10 @@ switchD_0041345d_default:
   iVar2 = 0;
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   do {
-    local_60.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
+    local_60.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-2.0,2.0);
     iVar2 = iVar2 + 1;
     local_60.y = 2.0;
-    fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
+    fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-2.0,2.0);
     local_60.x = local_60.x + (this_ptr->base).base.base.location.position.x;
     local_60.y = local_60.y + (this_ptr->base).base.base.location.position.y;
     local_60.z = fVar3 + (this_ptr->base).base.base.location.position.z;

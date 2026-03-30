@@ -115,7 +115,8 @@ LAB_00537aa5:
                                       ((CDemonActor *)actor_ptr,"CEnemy"), iVar3 != 0))))
                  && (iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
                                        (g_ActorWildcardBuffer,(char *)actor_ptr,0), iVar3 != 0)) {
-                fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9f,1.1f);
+                fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
+                                  (0.9f,1.1f);
                 pCVar2 = (actor_ptr->base).base.vtable._ub;
                 actor_ptr->speed = fVar4;
                 (*pCVar2->setup)((CDemonActor *)actor_ptr);

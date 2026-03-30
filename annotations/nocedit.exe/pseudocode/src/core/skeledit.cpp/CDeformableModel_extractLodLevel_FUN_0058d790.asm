@@ -54,7 +54,7 @@
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
 ;   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 ;   crt_math.c_round_FUN_005fe6b0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0
 ;   shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
 ;
 ; *****************************************************************************
@@ -492,8 +492,8 @@ section .text
     PUSH 0x64ae7b                       ; 0058dc92 | = "..\\core\\skeledit.cpp"
     LEA EAX,[EDI*0x4 + 0x0]             ; 0058dc97
     PUSH EAX                            ; 0058dc9e
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0058dc9f
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 0058dc9f
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0058dca4
     MOV dword ptr [EBX + 0xa4],EAX      ; 0058dca7
     TEST EAX,EAX                        ; 0058dcad

@@ -36,7 +36,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_bodypart.cpp_addVector_FUN_0041b540
@@ -114,8 +114,8 @@ section .text
     INC ECX                             ; 005fb5b7
     PUSH 0x40a00000                     ; 005fb5b8
     MOV dword ptr [ESI + 0xbec0],ECX    ; 005fb5bd
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005fb5c3
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005fb5c3
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV EAX,dword ptr [ESI + 0xbecc]    ; 005fb5e1
         ;   Label: LAB_005fb5e1
     LEA EDI,[ESI + 0x20]                ; 005fb5e7

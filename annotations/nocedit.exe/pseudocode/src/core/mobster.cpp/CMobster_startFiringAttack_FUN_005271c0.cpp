@@ -17,7 +17,7 @@ void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_005271c0(CMobster *
   if (0.0 < this_ptr->firing_cooldown) {
     return;
   }
-  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.5,1.0);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.5,1.0);
   pCVar1 = (this_ptr->base).base.carry_hands[0].carry_actor;
   this_ptr_01 = &(this_ptr->base).base.model;
   this_ptr->firing_cooldown = fVar2;

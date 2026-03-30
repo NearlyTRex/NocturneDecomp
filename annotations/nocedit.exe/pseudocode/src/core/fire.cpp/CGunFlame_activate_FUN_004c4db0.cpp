@@ -26,19 +26,19 @@ void __cdecl core_fire_cpp_CGunFlame_activate_FUN_004c4db0(CGunFlame *this_ptr,C
     (this_ptr->position).y = position->y;
     (this_ptr->position).z = position->z;
   }
-  fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.0);
+  fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.9,1.0);
   this_ptr->lifetime = 2.0f * fVar3;
-  fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,19.0);
+  fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,19.0);
   this_ptr->anim_frame = fVar3;
   local_20.x = euler_angles->x;
   local_20.y = euler_angles->y;
   local_20.z = euler_angles->z;
-  fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05235988,0.05235988);
+  fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.05235988,0.05235988);
   local_20.y = fVar3 + local_20.y;
-  fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05235988,0.05235988);
+  fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.05235988,0.05235988);
   local_20.x = fVar3 + local_20.x;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_6c,&local_20);
-  local_38.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.1,6.4);
+  local_38.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(5.1,6.4);
   local_38.x = 0.0;
   local_38.y = 0.0;
   pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&local_6c,&local_2c,&local_38);
@@ -47,7 +47,7 @@ void __cdecl core_fire_cpp_CGunFlame_activate_FUN_004c4db0(CGunFlame *this_ptr,C
     (this_ptr->velocity).y = pCVar3->y;
     (this_ptr->velocity).z = pCVar3->z;
   }
-  fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,0.1);
+  fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,0.1);
   fVar1 = (this_ptr->velocity).y;
   fVar2 = (this_ptr->velocity).z;
   (this_ptr->position).x = (this_ptr->position).x + (this_ptr->velocity).x * fVar4;

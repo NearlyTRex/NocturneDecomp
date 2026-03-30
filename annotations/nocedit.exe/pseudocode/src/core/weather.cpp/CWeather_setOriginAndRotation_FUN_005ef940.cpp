@@ -37,8 +37,8 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005ef940(CWeathe
     pCVar2 = g_WeatherParticlePositions;
     iVar3 = 0;
     do {
-      fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,50.0);
-      fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10
+      fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(5.0,50.0);
+      fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
                         (rotation->y + (float)-0.78539816337500001,rotation->y + (float)0.78539816337500001);
       fVar4 = (float10)fsin((float10)fVar3);
       fVar5 = (float10)fcos((float10)fVar3);
@@ -62,7 +62,7 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005ef940(CWeathe
       fVar2 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&local_50,&local_44);
       fVar1 = (local_44.y - local_50.y) * fVar2 + local_50.y;
       *(float *)((int)g_WeatherParticleGroundHeights + iVar3) = fVar1;
-      fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+      fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
       local_38.y = fVar2 * (float)100 + fVar1;
       if (pCVar2 != &local_38) {
         pCVar2->x = local_38.x;

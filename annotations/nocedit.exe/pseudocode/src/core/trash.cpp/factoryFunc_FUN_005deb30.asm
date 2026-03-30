@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_trash.cpp_CTrash_ctor_FUN_005deb70
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_trash.cpp_factoryFunc_FUN_005deb30
     PUSH 0x65556d                       ; 005deb32 | = "..\\core\\trash.cpp"
     PUSH 0x328                          ; 005deb37
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005deb3c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 005deb3c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005deb41
     TEST EAX,EAX                        ; 005deb44
     JNZ 0x005deb49                      ; 005deb46

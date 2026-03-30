@@ -178,15 +178,15 @@ section .text
         ;   Label: LAB_00578e4d
     MOV EBX,dword ptr [0x00678a60]      ; 00578e52 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 00578e58 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 00578e59
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 00578e59
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00578e5e
     PUSH 0x646d24                       ; 00578e61 | = "Precompute fog?"
     MOV ESI,dword ptr [0x00678a60]      ; 00578e66 | g_CEditorToolsPtr
     PUSH ESI                            ; 00578e6c | g_CEditorToolsInstance
     MOV dword ptr [ESP + 0x241c],EAX    ; 00578e6d
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 00578e74
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 00578e74
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00578e79
     PUSH 0x646d34                       ; 00578e7c | = "Reading S3D header, parts, and materials"
     MOV EDI,dword ptr [0x00678a60]      ; 00578e81 | g_CEditorToolsPtr
@@ -822,8 +822,8 @@ section .text
     PUSH 0x646c2c                       ; 00579581 | = "There are currently no lights current..."
     MOV EBP,dword ptr [0x00678a60]      ; 00579586 | g_CEditorToolsPtr
     PUSH EBP                            ; 0057958c | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 0057958d
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 0057958d
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00579592
     TEST EAX,EAX                        ; 00579595
     JNZ 0x00578e3f                      ; 00579597
@@ -842,8 +842,8 @@ section .text
     PUSH 0x646c99                       ; 005795b8 | = "There are currently no cameras curren..."
     MOV ECX,dword ptr [0x00678a60]      ; 005795bd | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 005795c3 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 005795c4
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 005795c4
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 005795c9
     TEST EAX,EAX                        ; 005795cc
     JNZ 0x00578e4d                      ; 005795ce
@@ -1284,8 +1284,8 @@ section .text
     PUSH 0x6470a5                       ; 00579ae8 | = "..\\core\\setedit.cpp"
     ADD EAX,0x4                         ; 00579aed
     PUSH EAX                            ; 00579af0
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00579af1
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 00579af1
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     MOV EBX,EAX                         ; 00579af6
     ADD ESP,0xc                         ; 00579af8
     TEST EAX,EAX                        ; 00579afb

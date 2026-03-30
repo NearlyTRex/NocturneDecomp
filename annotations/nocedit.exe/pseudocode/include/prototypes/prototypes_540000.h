@@ -86,8 +86,8 @@ SNetPlayer * __cdecl core_netgame_cpp_SNetPlayer_ctor_FUN_00543ce0(SNetPlayer *t
 void __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_00543cf0(SNetPlayer *this_ptr,SNetPlayer *other);
 void __cdecl core_netgame_cpp_copyPlayerControls_FUN_00543db0(SPlayerControl *dest,SPlayerControl *src);
 void __cdecl core_netgame_cpp_copyNetAddr_FUN_00543e00(SNetworkAddr *dest,SNetworkAddr *src);
-int * __cdecl core_netgame_cpp_copyInteger_FUN_00543e20(int *dest,int *src);
-int * __cdecl core_netgame_cpp_copyInteger_FUN_00543e30(int *dest,int *src);
+int * __cdecl core_netgame_cpp_assignInt1_FUN_00543e20(int *dest,int *src);
+int * __cdecl core_netgame_cpp_assignInt2_FUN_00543e30(int *dest,int *src);
 void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file);
 char * __cdecl support_newmsg_cpp_findLocalizedString_FUN_00544170(char *key,int lower_bound,int upper_bound);
 char * __cdecl support_newmsg_cpp_getLocalizedString_FUN_005441f0(char *key);
@@ -101,8 +101,8 @@ int __cdecl engine_ncursfx_cpp_CMouse_startEffect_FUN_00544510(CMouse *this_ptr,
 int __cdecl engine_ncursfx_cpp_CMouse_consumeButton_FUN_00544540(CMouse *this_ptr,uint button_mask,int use_skull_effect);
 void __cdecl engine_ncursfx_cpp_CMouse_getPosition_FUN_005445a0(CMouse *this_ptr,int *out_x,int *out_y);
 void __cdecl engine_ncursfx_cpp_CMouse_render_FUN_005445c0(CMouse *this_ptr);
-CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor_FUN_00544730(CAlphaBitmap *objs,uint flags);
-CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor_FUN_00544750(CAlphaBitmap *objs,uint flags);
+CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor1_FUN_00544730(CAlphaBitmap *objs,uint flags);
+CAlphaBitmap * __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor2_FUN_00544750(CAlphaBitmap *objs,uint flags);
 void __cdecl core_npc_cpp_staticInit_FUN_00544770(void);
 CNPC * __cdecl core_npc_cpp_factoryFunc_FUN_005447a0(void);
 CDemonActorType * __cdecl core_npc_cpp_CNPC_getActorType_FUN_005447d0(CNPC *this_ptr);
@@ -244,8 +244,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadStoredACTFile_FUN_0054c71
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_0054c72e(CPackedBitmapSet *this_ptr,int bitmap_index);
 int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getWidth_FUN_0054c7a0(CPackedBitmap *this_ptr);
 int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getHeight_FUN_0054c7b0(CPackedBitmap *this_ptr);
-void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_doNothing_FUN_0054c7c0(CPackedBitmapSet *this_ptr);
-void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_doNothing_FUN_0054c7d0(CPackedBitmapSet *this_ptr);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_doNothing1_FUN_0054c7c0(CPackedBitmapSet *this_ptr);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_doNothing2_FUN_0054c7d0(CPackedBitmapSet *this_ptr);
 void __cdecl core_platfrm_cpp_staticInit_FUN_0054c7e0(void);
 CPlatform * __cdecl core_platfrm_cpp_factoryFunc_FUN_0054c810(void);
 CDemonActorType * __cdecl core_platfrm_cpp_CPlatform_getActorType_FUN_0054c840(CPlatform *this_ptr);

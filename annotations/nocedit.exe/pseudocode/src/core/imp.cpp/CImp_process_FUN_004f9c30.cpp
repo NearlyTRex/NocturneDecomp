@@ -138,7 +138,7 @@ LAB_004f9c99:
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_8c,pCVar9);
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_164);
-        local_164.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
+        local_164.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(5.0,10.0);
         local_164.attacker = (CDemonActor *)this_ptr;
         local_164.wielder = (CDemonActor *)this_ptr;
         pCVar3 = (this_ptr->base).victim;
@@ -343,7 +343,7 @@ LAB_004f9c99:
                 uVar7 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                                   ((CDemonActor *)this_ptr,"imp-laugh?.wav");
                 this_ptr->sfx_handles[0] = uVar7;
-                fVar15 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);
+                fVar15 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,20.0);
                 this_ptr->laugh_timer = fVar15;
               }
             }
@@ -367,14 +367,14 @@ LAB_004f9c99:
           uVar7 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                             ((CDemonActor *)this_ptr,"imp-laugh?.wav");
           this_ptr->sfx_handles[0] = uVar7;
-          fVar15 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);
+          fVar15 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,20.0);
           this_ptr->laugh_timer = fVar15;
         }
       }
       break;
     case 4:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1a0);
-      local_1a0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(3.0,5.0);
+      local_1a0.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(3.0,5.0);
       damage_info = &local_1a0;
       local_1a0.attacker = (CDemonActor *)this_ptr;
       local_1a0.wielder = (CDemonActor *)this_ptr;

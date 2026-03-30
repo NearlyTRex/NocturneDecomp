@@ -53,7 +53,7 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr,float delta_t
         this_ptr->sfx_handle = uVar3;
       }
     }
-    fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10
+    fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
                       (this_ptr->periodic_sound_timer_min,this_ptr->periodic_sound_timer_max);
     this_ptr->sound_timer = fVar2;
     return;

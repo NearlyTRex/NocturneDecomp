@@ -10,13 +10,13 @@ Total functions: 6454
 Clean functions: 5073 (78.6%)
 Functions with suspects: 1381 (21.4%)
 
-Total suspect patterns: 13725
-Average suspects per function: 2.13
+Total suspect patterns: 13692
+Average suspects per function: 2.12
 
-Virtual files: 214 total, 46 at 100%, 84 at 90%+
+Virtual files: 214 total, 47 at 100%, 83 at 90%+
 
 Pseudocode lines:
-  Min: 4, Max: 3411, Average: 47.8
+  Min: 4, Max: 3412, Average: 47.8
 
 Average complexity score: 71.2
 
@@ -29,8 +29,8 @@ Failed: 381
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   decompiler_intrinsic      6777
-  pointer_cast              4179
-  unknown_field             856
+  pointer_cast              4167
+  unknown_field             831
   nonstandard_int           267
   warning_inlined_function  261
   stack_param               238
@@ -56,6 +56,7 @@ SUSPECT PATTERN BREAKDOWN
   warning_deadcode_restart  5
   unknown_type              4
   special_cpu_detection     4
+  unknown_param             4
   warning_max_restarts      3
   nan_function_artifact     3
   warning_overlapping_globals 3
@@ -71,9 +72,9 @@ SUSPECT PATTERN BREAKDOWN
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
+  0054c7d0: cockpit_pkbmpset.cpp_CPackedBitmapSet_doNothing2_FUN_0054c7d0 (4 lines)
   0054bcc0: cockpit_pkbmpset.cpp_alignTo4ByteBoundary_FUN_0054bcc0 (4 lines)
-  0054c7c0: cockpit_pkbmpset.cpp_CPackedBitmapSet_doNothing_FUN_0054c7c0 (4 lines)
-  0054c7d0: cockpit_pkbmpset.cpp_CPackedBitmapSet_doNothing_FUN_0054c7d0 (4 lines)
+  0054c7c0: cockpit_pkbmpset.cpp_CPackedBitmapSet_doNothing1_FUN_0054c7c0 (4 lines)
   0048a6a0: cockpit_drawsurf.cpp_getFontMaxWidth_FUN_0048a6a0 (4 lines)
   00488aa0: cockpit_drawsurf.cpp_getDashAnimationThreshold_FUN_00488aa0 (4 lines)
   00488a90: cockpit_drawsurf.cpp_getDashLength_FUN_00488a90 (4 lines)
@@ -91,9 +92,9 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005509e0: engine_pod.cpp_CPod_load_FUN_005509e0 (4 lines)
   005dd8f0: engine_texture.cpp_doNothing_FUN_005dd8f0 (4 lines)
   005dd570: engine_texture.cpp_CTextureCache_getTextureCount_FUN_005dd570 (4 lines)
-  00401590: engine_2d.c_doNothing_FUN_00401590 (4 lines)
   00402830: engine_2d.c_getTextColor_FUN_00402830 (4 lines)
-  00402860: engine_2d.c_doNothing_FUN_00402860 (4 lines)
+  00402860: engine_2d.c_doNothing2_FUN_00402860 (4 lines)
+  00401590: engine_2d.c_doNothing1_FUN_00401590 (4 lines)
   00544f00: engine_palette.cpp_CFont_getLineSpacing_FUN_00544f00 (4 lines)
   005f2b70: engine_winfont.cpp_CWinFont_getLineSpacing_FUN_005f2b70 (4 lines)
   00441880: engine_console.cpp_CConsole_dtor_FUN_00441880 (4 lines)
@@ -125,7 +126,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
-  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3521, suspects: 9, lines: 3411)
+  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3522, suspects: 9, lines: 3412)
   005d1390: shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390 (score: 2967, suspects: 270, lines: 252)
   00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (score: 2695, suspects: 119, lines: 1475)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 2584, suspects: 175, lines: 809)
@@ -134,7 +135,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823 (score: 2235, suspects: 161, lines: 585)
   005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031 (score: 2198, suspects: 159, lines: 568)
   00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2080, suspects: 19, lines: 1865)
-  004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 2052, suspects: 97, lines: 1052)
+  004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 2053, suspects: 97, lines: 1053)
   005b9c10: core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (score: 1941, suspects: 119, lines: 711)
   005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1865, suspects: 68, lines: 1150)
   004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1816, suspects: 7, lines: 1726)
@@ -172,7 +173,7 @@ FUNCTIONS BY SUSPECT TYPE
     0043f2d0: support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0
     ... and 904 more
 
-  pointer_cast (766 functions):
+  pointer_cast (765 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     004874d0: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
     00487630: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
@@ -183,9 +184,9 @@ FUNCTIONS BY SUSPECT TYPE
     0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    ... and 756 more
+    ... and 755 more
 
-  unknown_field (92 functions):
+  unknown_field (91 functions):
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     0043e530: support_codec.cpp_readBitsFromStream_FUN_0043e530
     00441040: engine_colquant.c_computeWeightedColorDistance_FUN_00441040
@@ -196,7 +197,7 @@ FUNCTIONS BY SUSPECT TYPE
     00440c80: engine_colquant.c_partitionByGreen_FUN_00440c80
     00441790: engine_colquant.c_doubleMax_FUN_00441790
     00552a40: engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
-    ... and 82 more
+    ... and 81 more
 
   nonstandard_int (22 functions):
     004ce240: engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240
@@ -464,6 +465,10 @@ FUNCTIONS BY SUSPECT TYPE
     00524f4c: core_mmx.c_detectIntelProcessor_FUN_00524f4c
     0052500f: core_mmx.c_getCPUInfo_FUN_0052500f
     00524f10: core_mmx.c_detectCPUFeatures_FUN_00524f10
+
+  unknown_param (2 functions):
+    00574910: core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910
+    00524e60: core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60
 
   warning_max_restarts (3 functions):
     005ae660: sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660

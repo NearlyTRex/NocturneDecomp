@@ -22,7 +22,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
         ;   Label: LAB_00550a20
     PUSH 0x6406ce                       ; 00550a25 | = "..\\engine\\pod.cpp"
     PUSH 0x42c                          ; 00550a2a
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00550a2f
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00550a2f
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00550a34
     TEST EAX,EAX                        ; 00550a37
     JZ 0x00550a44                       ; 00550a39

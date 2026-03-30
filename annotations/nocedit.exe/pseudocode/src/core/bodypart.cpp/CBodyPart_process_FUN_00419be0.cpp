@@ -76,12 +76,12 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
            (iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                               (g_CEventListPtr,"disableBodyPartDamage"), iVar7 == 0)) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_54);
-          local_54.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+          local_54.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,15.0);
           local_54.attacker = &this_ptr->base;
           local_54.wielder = &this_ptr->base;
           local_c = local_54.damage_amount;
           core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
-                    (g_CDemonSetPtr,(SDamageInfo *)&local_18,&(this_ptr->base).location.position,
+                    (g_CDemonSetPtr,(CVector3f *)&local_18,&(this_ptr->base).location.position,
                      &local_54);
           core_bodypart_cpp_CBodyPart_processFires_FUN_00419e10(this_ptr,delta_time);
           return;

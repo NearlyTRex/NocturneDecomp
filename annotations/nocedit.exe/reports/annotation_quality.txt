@@ -25,9 +25,9 @@ SUMMARY STATISTICS
     Undefined types in variables:      203
     Unresolved stack params:           16
 
-  Excluded (.keep / MMX / by-value):   24 functions
+  Excluded (.keep / MMX / by-value):   23 functions
     Wrong calling convention:          0
-    Undefined types in variables:      21
+    Undefined types in variables:      20
     Unresolved stack params:           5
 
 ====================================================================================================
@@ -1054,7 +1054,7 @@ Undefined types in variables (203)
     Locals:  auStackY_184c (undefined4[1498])
     Suggested: Resolve undefined types to concrete types
 
-  modelStructNotSupported
+  modelStructNotSupported4
     Address: 0x0041dbe0  File: engine/boss.c
     Locals:  local_3c (undefined4[13])
     Suggested: Resolve undefined types to concrete types
@@ -1262,7 +1262,7 @@ Unresolved stack params - by-value struct passing (4)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (17)
+Undefined types - .keep overrides (16)
 --------------------------------------------------------------------------------
 
   closestPointOnSegment3D
@@ -1293,11 +1293,6 @@ Undefined types - .keep overrides (17)
   CDemonActor_doCheckForInvalidPointers
     Address: 0x0040ac80  File: core/actor.cpp
     Locals:  temp_z (undefined8), temp_y (undefined8), temp_x (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
-  CBoxActor_process
-    Address: 0x004219e0  File: core/boxactor.cpp
-    Locals:  local_e8 (undefined8), auStack_cc (undefined1[56]), auStack_60 (undefined1[52])
     Suggested: Resolve undefined types to concrete types
 
   CActorProperty_editInteractive
@@ -1385,91 +1380,11 @@ FUNCTION NAME / ADDRESS MISMATCHES (0)
   No mismatches found.
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (42 groups)
+DUPLICATE FUNCTION NAMES (3 groups)
 ====================================================================================================
 
 Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
 Some are legitimate overloads, others may need disambiguating names.
-
-  cockpit_drawsurf.cpp_CDrawSurface_ctor  (2 functions)
-    0x00486e70  (CDrawSurface *this_ptr)
-    0x00486ea0  (CDrawSurface *this_ptr,int x,int y,int width,int height,C...)
-
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_doNothing  (2 functions)
-    0x0054c7c0  (CPackedBitmapSet *this_ptr)
-    0x0054c7d0  (CPackedBitmapSet *this_ptr)
-
-  core_actor.cpp_copyFloat  (3 functions)
-    0x004104d0  (float *dst,float *src)
-    0x004104e0  (float *dst,float *src)
-    0x004104f0  (float *dst,float *src)
-
-  core_actor.cpp_getRandomFloat  (2 functions)
-    0x0040cbc0  (void)
-    0x0040cc10  (float min_value,float max_value)
-
-  core_baron.cpp_factoryFunc  (2 functions)
-    0x00412b80  (void)
-    0x00413d00  (void)
-
-  core_boxactor.cpp_factoryFunc  (2 functions)
-    0x004216c0  (void)
-    0x00422950  (void)
-
-  core_chain.cpp_passthroughInt  (2 functions)
-    0x00431330  (int value)
-    0x00431340  (int value)
-
-  core_charactr.cpp_copyFloat  (3 functions)
-    0x0042fae0  (float *dst,float *src)
-    0x0042faf0  (float *dst,float *src)
-    0x0042fb00  (float *dst,float *src)
-
-  core_cloth.cpp_dotProduct  (2 functions)
-    0x0043e2c0  (CVector3f *a,CVector3f *b)
-    0x0043e320  (CVector3f *a,CVector3f *b)
-
-  core_filmreel.cpp_factoryFunc  (2 functions)
-    0x004be670  (void)
-    0x004bea00  (void)
-
-  core_manpuz.cpp_factoryFunc  (2 functions)
-    0x005088e0  (void)
-    0x0050b0d0  (void)
-
-  core_netgame.cpp_copyInteger  (2 functions)
-    0x00543e20  (int *dest,int *src)
-    0x00543e30  (int *dest,int *src)
-
-  core_skeleton.cpp_CVector3f_arrdtor  (2 functions)
-    0x005a1ff0  (CVector3f *objs,uint flags)
-    0x005a2010  (CVector3f *objs,uint flags)
-
-  core_tbplayer.cpp_factoryFunc  (2 functions)
-    0x005da020  (void)
-    0x005da280  (void)
-
-  core_teleport.cpp_factoryFunc  (2 functions)
-    0x005da730  (void)
-    0x005da9a0  (void)
-
-  engine_2d.c_doNothing  (2 functions)
-    0x00401590  (char *filename)
-    0x00402860  (char *filename)
-
-  engine_2d.c_drawCharacterMasked  (2 functions)
-    0x00401900  (int char_code,int x_pos,int y_pos)
-    0x00401a10  (int char_code,int x_pos,int y_pos,int color)
-
-  engine_3d.c_oldFunction  (8 functions)
-    0x00403740  (SMRGLHeaderPrimitive *prim)
-    0x00403e00  (SMRGLHeaderExtended *primitive)
-    0x00403ec0  (SMRGLHeaderExtended *primitive)
-    0x00403ef0  (SMRGLHeaderExtended *primitive)
-    0x004041d0  (SMRGLHeaderExtended *primitive)
-    0x00404420  (SMRGLHeaderExtended *primitive)
-    0x00404690  (SMRGLHeaderExtended *primitive)
-    0x00404df0  (SMRGLHeaderExtended *primitive)
 
   engine_3d.c_renderPolygonDepthWriteTexturedLit  (2 functions)
     0x00405d80  (SMRGLHeaderPrimitive *prim)
@@ -1482,93 +1397,3 @@ Some are legitimate overloads, others may need disambiguating names.
   engine_3d.c_renderPolygonVertexLitNormalized  (2 functions)
     0x00404f80  (SMRGLHeaderPrimitive *prim)
     0x00405020  (SMRGLHeaderPrimitive *prim)
-
-  engine_boss.c_modelStructNotSupported  (5 functions)
-    0x0041db50  (SMRGLHeaderExtended *mrgl_data)
-    0x0041db80  (char *filename)
-    0x0041dbb0  (SMRGLHeaderExtended *mrgl_data)
-    0x0041dbe0  (SMRGLHeaderExtended *mrgl_data)
-    0x0041dc20  (SMRGLHeaderExtended *mrgl_data)
-
-  engine_dosio.c_getFileSize  (2 functions)
-    0x00481880  (char *directory,char *filename)
-    0x00481960  (char *directory,char *filename)
-
-  engine_drender.cpp_CDemonRenderer_setRenderAlpha  (2 functions)
-    0x0048ca60  (CDemonRenderer *this_ptr,int render_alpha)
-    0x0048ca70  (CDemonRenderer *this_ptr,float render_alpha)
-
-  engine_fileio.cpp_logOffVersionControl  (2 functions)
-    0x004b2830  (void)
-    0x004bceb0  (void)
-
-  engine_fileio.cpp_logOnAsVersionControlUser  (2 functions)
-    0x004b2770  (void)
-    0x004bcea0  (void)
-
-  engine_ncursfx.cpp_CAlphaBitmap_arrdtor  (2 functions)
-    0x00544730  (CAlphaBitmap *objs,uint flags)
-    0x00544750  (CAlphaBitmap *objs,uint flags)
-
-  engine_prim.c_getTriangleWindingFromIndices  (2 functions)
-    0x00552210  (SMRGLPrimitiveTriangle *triangle)
-    0x00552300  (SMRGLPrimitiveTriangle *triangle_indices)
-
-  shape_design.c_doNothing  (3 functions)
-    0x0045c4f0  (void)
-    0x0045c510  (void)
-    0x0045ce00  (void)
-
-  shape_edittool.cpp_CEditorTools_showYesNoDialog  (2 functions)
-    0x0049f060  (CEditorTools *this_ptr,char *format_string,...)
-    0x0049f0f0  (CEditorTools *this_ptr,char *format_string,...)
-
-  shape_memdbg.cpp_debugAllocTracked  (2 functions)
-    0x0050f1b0  (int size,char *filename,int line_number)
-    0x0050f1f0  (int size,char *filename,int line_number)
-
-  shape_meshlod.cpp_copyFloat  (3 functions)
-    0x0051f090  (float *dest_ptr,float *src_ptr)
-    0x0051f0a0  (float *dest_ptr,float *src_ptr)
-    0x0051f0b0  (float *dest_ptr,float *src_ptr)
-
-  shape_meshlod.cpp_crc32UpdateDword  (2 functions)
-    0x0051c480  (uint *crc_ptr,uint dword_value)
-    0x0051c540  (uint *crc_ptr,uint dword_value)
-
-  shape_multicrm.cpp_CMultiCram_setModelCount  (2 functions)
-    0x0053ee50  (CMultiCram *this_ptr,int *model_count)
-    0x0053ee60  (CMultiCram *this_ptr,int *model_count)
-
-  shape_quantize.cpp_showError  (2 functions)
-    0x00556cb0  (char *error)
-    0x00556ce0  (char *error)
-
-  shape_superopt.cpp_CP3D_add  (2 functions)
-    0x005d8520  (CP3D *this_ptr,CP3D *a,CP3D *b)
-    0x005d85a0  (CP3D *this_ptr,CP3D *a,CP3D *b)
-
-  shape_superopt.cpp_CP3D_copy  (2 functions)
-    0x005d8470  (CP3D *this_ptr,CP3D *other)
-    0x005d84a0  (CP3D *this_ptr,CP3D *other)
-
-  shape_superopt.cpp_CVec_copy  (3 functions)
-    0x005d8160  (CVec *this_ptr,CVec *other)
-    0x005d8190  (CVec *this_ptr,CVec *other)
-    0x005d82b0  (CVec *this_ptr,CVec *other)
-
-  sound_sndmain.cpp_doNothing  (2 functions)
-    0x005adde0  (void)
-    0x005addf0  (void)
-
-  sound_sndmain.cpp_setNextSfxTrackedVelocity  (2 functions)
-    0x005a8a00  (CVector3f *velocity_source_ptr)
-    0x005a8a30  (CVector3d *velocity_source_ptr)
-
-  support_trisock.cpp_shouldNeverBeCalled  (2 functions)
-    0x005e1a80  (int unknown1,int unknown2)
-    0x005e1ab0  (int unknown1,int unknown2)
-
-  wincore_winrun.cpp_doNothing  (2 functions)
-    0x005f2f80  (void)
-    0x005f4380  (void)

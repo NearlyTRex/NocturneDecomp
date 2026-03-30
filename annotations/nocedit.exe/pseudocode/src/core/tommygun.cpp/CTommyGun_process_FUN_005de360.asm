@@ -18,7 +18,7 @@
 ;   float FLOAT_00655511 = 0.1666667
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_weapon.cpp_CWeapon_process_FUN_005ee110
 ;   crt_math.c_floor_FUN_005feb90
 ;   crt_math.c_round_FUN_005fe6b0
@@ -58,8 +58,8 @@ section .text
     LEA EAX,[EDX + -0x1]                ; 005de391
     PUSH 0x3f666666                     ; 005de394
     MOV dword ptr [EBX + 0x578],EAX     ; 005de399
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005de39f
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005de39f
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     PUSH 0x2                            ; 005de436
         ;   Label: LAB_005de436
     MOV ECX,dword ptr [EBX + 0x57c]     ; 005de438

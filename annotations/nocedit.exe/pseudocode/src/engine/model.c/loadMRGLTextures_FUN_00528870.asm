@@ -14,7 +14,7 @@
 ;   engine_model.c_initializeMRGLModel_FUN_00528940 at 00528957
 ;
 ; Called Functions:
-;   engine_boss.c_modelStructNotSupported_FUN_0041dc20
+;   engine_boss.c_modelStructNotSupported5_FUN_0041dc20
 ;   engine_model.c_getMRGLSize_FUN_00528700
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800
 ;
@@ -74,8 +74,8 @@ section .text
     RET                                 ; 005288c8
     PUSH EBX                            ; 005288c9
         ;   Label: LAB_005288c9
-    CALL engine_boss.c_modelStructNotSupported_FUN_0041dc20 ; 005288ca
-        ;   XREF to: 0041dc20 (UNCONDITIONAL_CALL)  ; void engine_boss.c_modelStructNotSupported_FUN_0041dc20(SMRGLHeaderExtended * mrgl_data)
+    CALL engine_boss.c_modelStructNotSupported5_FUN_0041dc20 ; 005288ca
+        ;   XREF to: 0041dc20 (UNCONDITIONAL_CALL)  ; void engine_boss.c_modelStructNotSupported5_FUN_0041dc20(SMRGLHeaderExtended * mrgl_data)
     ADD ESP,0x4                         ; 005288cf
     JMP 0x005288c1                      ; 005288d2
         ;   XREF to: 005288c1 (UNCONDITIONAL_JUMP)  ; LAB_005288c1

@@ -18,7 +18,7 @@ void __cdecl engine_pod_cpp_CPod_mount_FUN_00550a10(CPod *this_ptr,char *pod_fil
     g_CurrentLineNumber = 0x39a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many .POD files at once!");
   }
-  this_ptr_00 = (CPodFile *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+  this_ptr_00 = (CPodFile *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
                           (0x42c,"..\\engine\\pod.cpp",0x39f);
   pCVar1 = (CPodFile *)0x0;
   if (this_ptr_00 != (CPodFile *)0x0) {

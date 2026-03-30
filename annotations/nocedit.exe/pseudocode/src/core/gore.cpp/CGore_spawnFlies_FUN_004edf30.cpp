@@ -14,7 +14,7 @@ CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004edf30(CGore *this_ptr,CVe
   CFlies *this_ptr_00;
   CFlies *this_ptr_01;
   
-  this_ptr_00 = (CFlies *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+  this_ptr_00 = (CFlies *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
                           (0x2a20,"..\\core\\gore.cpp",0x67c);
   this_ptr_01 = (CFlies *)0x0;
   if (this_ptr_00 != (CFlies *)0x0) {

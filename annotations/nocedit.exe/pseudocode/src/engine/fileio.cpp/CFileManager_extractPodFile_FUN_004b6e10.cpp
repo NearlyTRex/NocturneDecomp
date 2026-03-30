@@ -80,7 +80,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
   if (iVar3 == 0) {
     p_Var3 = _localtime((time_t *)&CStack_e84.timestamp);
     _strftime(local_444,0x100,"%m/%d/%Y",p_Var3);
-    iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+    iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
                       (g_CEditorToolsPtr,"Warning!  This .POD file has an invalid CRC.  If it's date is earlier\nthan 07/28/1998, it has no CRC, and you should ignore this message.\n\n%s %s\n\nDo you wish to continue?",CStack_e84.filename,
                        local_444);
     if (iVar3 == 0) {
@@ -185,7 +185,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
     engine_fileio_cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0(this_ptr,&local_30);
     iVar3 = engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0(this_ptr,&local_30,local_244);
     if ((-1 < iVar3) &&
-       (iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+       (iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
                           (g_CEditorToolsPtr,"%s is currently mounted.\nDo you want to dismount it now?",local_244),
        iVar5 != 0)) {
       shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0(&local_30,iVar3);

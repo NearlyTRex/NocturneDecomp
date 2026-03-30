@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_smiley.cpp_CSmiley_ctor_FUN_005a2430
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_smiley.cpp_factorFunc_FUN_005a23f0
     PUSH 0x64f152                       ; 005a23f2 | = "..\\core\\smiley.cpp"
     PUSH 0xbf00                         ; 005a23f7
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005a23fc
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 005a23fc
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005a2401
     TEST EAX,EAX                        ; 005a2404
     JNZ 0x005a2409                      ; 005a2406

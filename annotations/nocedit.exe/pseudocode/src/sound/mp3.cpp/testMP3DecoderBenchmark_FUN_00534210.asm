@@ -39,9 +39,9 @@
 ;   crt_stdio.c_remove_FUN_005ff9d0
 ;   crt_time.c__time_FUN_006001f0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;   sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0
@@ -68,15 +68,15 @@ section .text
     PUSH 0x63b0eb                       ; 00534229 | = "Write file?"
     MOV EDX,dword ptr [0x00678a60]      ; 0053422e | g_CEditorToolsPtr
     PUSH EDX                            ; 00534234 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 00534235
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 00534235
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0053423a
     PUSH 0xdc8                          ; 0053423d
     PUSH 0x63b0f7                       ; 00534242 | = "..\\sound\\mp3.cpp"
     PUSH 0x8630                         ; 00534247
     MOV dword ptr [ESP + 0x24],EAX      ; 0053424c
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00534250
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00534250
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00534255
     TEST EAX,EAX                        ; 00534258
     JNZ 0x0053449c                      ; 0053425a
@@ -86,8 +86,8 @@ section .text
     PUSH 0x63b108                       ; 00534265 | = "..\\sound\\mp3.cpp"
     PUSH 0x8630                         ; 0053426a
     MOV dword ptr [ESP + 0x20],EAX      ; 0053426f
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00534273
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00534273
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00534278
     TEST EAX,EAX                        ; 0053427b
     JZ 0x00534288                       ; 0053427d

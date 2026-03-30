@@ -27,7 +27,7 @@
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
-;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70
+;   engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70
 ;   engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0
 ;
 ; *****************************************************************************
@@ -177,8 +177,8 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 004174ea | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH dword ptr [ESP + 0x8]          ; 004174f0
     PUSH ECX                            ; 004174f4 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70 ; 004174f5
-        ;   XREF to: 0048ca70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70(CDemonRenderer * this_ptr, float render_alpha)
+    CALL engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70 ; 004174f5
+        ;   XREF to: 0048ca70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70(CDemonRenderer * this_ptr, float render_alpha)
     ADD ESP,0x8                         ; 004174fa
     PUSH 0x1                            ; 004174fd
     MOV EDI,dword ptr [0x006703ec]      ; 004174ff | g_CDemonRendererPtr2

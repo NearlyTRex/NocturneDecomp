@@ -25,7 +25,7 @@
 ;   ... and 25 more
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
@@ -271,6 +271,6 @@ section .text
     MOV EAX,dword ptr [EBX + 0xbed4]    ; 004f9bdb
     PUSH 0x41200000                     ; 004f9be1
     MOV dword ptr [EBX + 0x24f4],EAX    ; 004f9be6
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004f9bec
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004f9bec
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

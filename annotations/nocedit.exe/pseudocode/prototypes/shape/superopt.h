@@ -631,13 +631,13 @@ CVec * __cdecl CVec::ctor(CVec *this_ptr);
 // Address: 005d8150
 CVec * __cdecl CVec::dtor(CVec *this_ptr,uint flags);
 
-// Original: shape_superopt.cpp_CVec_copy_FUN_005d8160
+// Original: shape_superopt.cpp_CVec_copy1_FUN_005d8160
 // Address: 005d8160
-CVec * __cdecl CVec::copy(CVec *this_ptr,CVec *other);
+CVec * __cdecl CVec::copy1(CVec *this_ptr,CVec *other);
 
-// Original: shape_superopt.cpp_CVec_copy_FUN_005d8190
+// Original: shape_superopt.cpp_CVec_copy2_FUN_005d8190
 // Address: 005d8190
-CVec * __cdecl CVec::copy(CVec *this_ptr,CVec *other);
+CVec * __cdecl CVec::copy2(CVec *this_ptr,CVec *other);
 
 // Original: shape_superopt.cpp_CVec_normalize_FUN_005d81c0
 // Address: 005d81c0
@@ -655,9 +655,9 @@ void __cdecl CVec::setLength(CVec *this_ptr,double length);
 // Address: 005d8270
 CVec * __cdecl CVec::cross(CVec *this_ptr,CVec *a,CVec *b);
 
-// Original: shape_superopt.cpp_CVec_copy_FUN_005d82b0
+// Original: shape_superopt.cpp_CVec_copy3_FUN_005d82b0
 // Address: 005d82b0
-void __cdecl CVec::copy(CVec *this_ptr,CVec *other);
+void __cdecl CVec::copy3(CVec *this_ptr,CVec *other);
 
 // Original: shape_superopt.cpp_CVec_dot_FUN_005d82e0
 // Address: 005d82e0
@@ -691,29 +691,29 @@ int __cdecl CP2D::isEqual(CP2D *this_ptr,CP2D *b);
 // Address: 005d8440
 void __cdecl CP3D::set(CP3D *this_ptr,double x,double y,double z);
 
-// Original: shape_superopt.cpp_CP3D_copy_FUN_005d8470
+// Original: shape_superopt.cpp_CP3D_copy1_FUN_005d8470
 // Address: 005d8470
-void __cdecl CP3D::copy(CP3D *this_ptr,CP3D *other);
+void __cdecl CP3D::copy1(CP3D *this_ptr,CP3D *other);
 
-// Original: shape_superopt.cpp_CP3D_copy_FUN_005d84a0
+// Original: shape_superopt.cpp_CP3D_copy2_FUN_005d84a0
 // Address: 005d84a0
-void __cdecl CP3D::copy(CP3D *this_ptr,CP3D *other);
+void __cdecl CP3D::copy2(CP3D *this_ptr,CP3D *other);
 
 // Original: shape_superopt.cpp_CP3D_subtract_FUN_005d84d0
 // Address: 005d84d0
 CP3D * __stack2_esi CP3D::subtract(CP3D *this_ptr,CP3D *a,CP3D *b);
 
-// Original: shape_superopt.cpp_CP3D_add_FUN_005d8520
+// Original: shape_superopt.cpp_CP3D_add1_FUN_005d8520
 // Address: 005d8520
-CP3D * __stack2_esi CP3D::add(CP3D *this_ptr,CP3D *a,CP3D *b);
+CP3D * __stack2_esi CP3D::add1(CP3D *this_ptr,CP3D *a,CP3D *b);
 
 // Original: shape_superopt.cpp_CP3D_increment_FUN_005d8570
 // Address: 005d8570
 CP3D * __cdecl CP3D::increment(CP3D *this_ptr,CP3D *other);
 
-// Original: shape_superopt.cpp_CP3D_add_FUN_005d85a0
+// Original: shape_superopt.cpp_CP3D_add2_FUN_005d85a0
 // Address: 005d85a0
-CP3D * __stack2_esi CP3D::add(CP3D *this_ptr,CP3D *a,CP3D *b);
+CP3D * __stack2_esi CP3D::add2(CP3D *this_ptr,CP3D *a,CP3D *b);
 
 // Original: shape_superopt.cpp_CP3D_multiply_FUN_005d85f0
 // Address: 005d85f0

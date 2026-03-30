@@ -10,7 +10,7 @@
 ;   core_mobster.cpp_CMobster_process_FUN_00525840 at 00525ef2
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;
 ; *****************************************************************************
 
@@ -33,6 +33,6 @@ section .text
     PUSH 0x3f800000                     ; 005271dc
         ;   Label: LAB_005271dc
     PUSH 0x3f000000                     ; 005271e1
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005271e6
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005271e6
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

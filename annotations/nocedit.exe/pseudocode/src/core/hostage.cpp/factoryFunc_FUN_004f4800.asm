@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_hostage.cpp_CHostage_ctor_FUN_004f4840
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_hostage.cpp_factoryFunc_FUN_004f4800
     PUSH 0x62ee1b                       ; 004f4802 | = "..\\core\\hostage.cpp"
     PUSH 0x1faf0                        ; 004f4807
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004f480c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 004f480c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004f4811
     TEST EAX,EAX                        ; 004f4814
     JNZ 0x004f4819                      ; 004f4816

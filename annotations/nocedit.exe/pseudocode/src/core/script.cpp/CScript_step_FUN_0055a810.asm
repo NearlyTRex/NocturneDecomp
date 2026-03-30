@@ -201,7 +201,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
 ;   core_actor.cpp_CVector_ctor_FUN_00410340
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
 ;   core_bodypart.cpp_createBodyPart_FUN_00418e10
@@ -3259,8 +3259,8 @@ section .text
     SUB ESP,0x4                         ; 0055c9da
     FCHS                                ; 0055c9dd
     FSTP float ptr [ESP]                ; 0055c9df
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0055c9e2
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0055c9e2
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     LEA EAX,[ESP + 0x3e54]              ; 0055ca7e
         ;   Label: LAB_0055ca7e
     JMP 0x0055c8b5                      ; 0055ca85

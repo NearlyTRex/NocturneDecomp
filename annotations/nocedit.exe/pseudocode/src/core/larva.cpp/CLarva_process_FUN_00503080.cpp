@@ -100,9 +100,9 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
         local_e4 = local_cc;
       }
       local_e8 = local_e8 + 2.0f;
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-2.0,2.0);
       local_ec = local_14 + local_ec;
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-2.0,2.0);
       fVar15 = (float10)fsin((float10)-0.52359877558333301);
       fVar16 = (float10)fptan((float10)0.52359877558333301);
       fVar17 = (float10)local_e4;
@@ -179,7 +179,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
         else if ((this_ptr->base).attack_cooldown <= 0.0) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr_00->motion_controller,2,1);
-          local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
+          local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(15.0,30.0);
           (this_ptr->base).attack_cooldown = local_14;
         }
       }
@@ -295,7 +295,7 @@ LAB_00503184:
                (float10)-0.20000000000000001;
       fVar16 = (float10)f2xm1(fVar15 - (fVar15 / fVar17) * fVar17);
       fVar17 = (float10)fscale(fVar16 + fVar17,fVar15);
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.99,1.01);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.99,1.01);
       _sprintf
                 (&stack0xfffffe10,"slime.wav @%f *%f",(double)(this_ptr->base).base.size_scale,
                  (double)(local_14 * (float)fVar17));

@@ -30,9 +30,9 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-;   core_actor.cpp_copyFloat_FUN_004104d0
-;   core_actor.cpp_copyFloat_FUN_004104e0
-;   core_actor.cpp_copyFloat_FUN_004104f0
+;   core_actor.cpp_copyFloat1_FUN_004104d0
+;   core_actor.cpp_copyFloat2_FUN_004104e0
+;   core_actor.cpp_copyFloat3_FUN_004104f0
 ;   core_actor.cpp_CVector3f_toFixed8_FUN_004103d0
 ;   core_actor.cpp_CVector_ctor_FUN_00410340
 ;   core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0
@@ -90,22 +90,22 @@ section .text
     LEA EDI,[ESP + 0x100]               ; 0040d9c7
     PUSH EDI                            ; 0040d9ce
     MOV EBX,EAX                         ; 0040d9cf
-    CALL core_actor.cpp_copyFloat_FUN_004104f0 ; 0040d9d1
-        ;   XREF to: 004104f0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat_FUN_004104f0(float * dst, float * src)
+    CALL core_actor.cpp_copyFloat3_FUN_004104f0 ; 0040d9d1
+        ;   XREF to: 004104f0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat3_FUN_004104f0(float * dst, float * src)
     ADD ESP,0x8                         ; 0040d9d6
     LEA EDI,[EBX + 0x4]                 ; 0040d9d9
     PUSH EDI                            ; 0040d9dc
     LEA EDI,[ESP + 0x104]               ; 0040d9dd
     PUSH EDI                            ; 0040d9e4
-    CALL core_actor.cpp_copyFloat_FUN_004104e0 ; 0040d9e5
-        ;   XREF to: 004104e0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat_FUN_004104e0(float * dst, float * src)
+    CALL core_actor.cpp_copyFloat2_FUN_004104e0 ; 0040d9e5
+        ;   XREF to: 004104e0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat2_FUN_004104e0(float * dst, float * src)
     ADD ESP,0x8                         ; 0040d9ea
     LEA EDI,[EBX + 0x8]                 ; 0040d9ed
     PUSH EDI                            ; 0040d9f0
     LEA EDI,[ESP + 0x108]               ; 0040d9f1
     PUSH EDI                            ; 0040d9f8
-    CALL core_actor.cpp_copyFloat_FUN_004104d0 ; 0040d9f9
-        ;   XREF to: 004104d0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat_FUN_004104d0(float * dst, float * src)
+    CALL core_actor.cpp_copyFloat1_FUN_004104d0 ; 0040d9f9
+        ;   XREF to: 004104d0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat1_FUN_004104d0(float * dst, float * src)
     ADD ESP,0x8                         ; 0040d9fe
     LEA EDI,[ESP + 0x120]               ; 0040da01
     PUSH EDI                            ; 0040da08
@@ -221,22 +221,22 @@ section .text
     PUSH EAX                            ; 0040db6d
     LEA EDI,[ESP + 0xe8]                ; 0040db6e
     PUSH EDI                            ; 0040db75
-    CALL core_actor.cpp_copyFloat_FUN_004104f0 ; 0040db76
-        ;   XREF to: 004104f0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat_FUN_004104f0(float * dst, float * src)
+    CALL core_actor.cpp_copyFloat3_FUN_004104f0 ; 0040db76
+        ;   XREF to: 004104f0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat3_FUN_004104f0(float * dst, float * src)
     ADD ESP,0x8                         ; 0040db7b
     LEA EDI,[EBX + 0x4]                 ; 0040db7e
     PUSH EDI                            ; 0040db81
     LEA EDI,[ESP + 0xec]                ; 0040db82
     PUSH EDI                            ; 0040db89
-    CALL core_actor.cpp_copyFloat_FUN_004104e0 ; 0040db8a
-        ;   XREF to: 004104e0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat_FUN_004104e0(float * dst, float * src)
+    CALL core_actor.cpp_copyFloat2_FUN_004104e0 ; 0040db8a
+        ;   XREF to: 004104e0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat2_FUN_004104e0(float * dst, float * src)
     ADD ESP,0x8                         ; 0040db8f
     LEA EDI,[EBX + 0x8]                 ; 0040db92
     PUSH EDI                            ; 0040db95
     LEA EDI,[ESP + 0xf0]                ; 0040db96
     PUSH EDI                            ; 0040db9d
-    CALL core_actor.cpp_copyFloat_FUN_004104d0 ; 0040db9e
-        ;   XREF to: 004104d0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat_FUN_004104d0(float * dst, float * src)
+    CALL core_actor.cpp_copyFloat1_FUN_004104d0 ; 0040db9e
+        ;   XREF to: 004104d0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat1_FUN_004104d0(float * dst, float * src)
     ADD ESP,0x8                         ; 0040dba3
     LEA EDI,[ESP + 0xd8]                ; 0040dba6
     PUSH EDI                            ; 0040dbad
@@ -353,22 +353,22 @@ section .text
     PUSH EAX                            ; 0040dd32
     LEA EDI,[ESP + 0x118]               ; 0040dd33
     PUSH EDI                            ; 0040dd3a
-    CALL core_actor.cpp_copyFloat_FUN_004104f0 ; 0040dd3b
-        ;   XREF to: 004104f0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat_FUN_004104f0(float * dst, float * src)
+    CALL core_actor.cpp_copyFloat3_FUN_004104f0 ; 0040dd3b
+        ;   XREF to: 004104f0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat3_FUN_004104f0(float * dst, float * src)
     ADD ESP,0x8                         ; 0040dd40
     LEA EDI,[EBX + 0x4]                 ; 0040dd43
     PUSH EDI                            ; 0040dd46
     LEA EDI,[ESP + 0x11c]               ; 0040dd47
     PUSH EDI                            ; 0040dd4e
-    CALL core_actor.cpp_copyFloat_FUN_004104e0 ; 0040dd4f
-        ;   XREF to: 004104e0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat_FUN_004104e0(float * dst, float * src)
+    CALL core_actor.cpp_copyFloat2_FUN_004104e0 ; 0040dd4f
+        ;   XREF to: 004104e0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat2_FUN_004104e0(float * dst, float * src)
     ADD ESP,0x8                         ; 0040dd54
     LEA EDI,[EBX + 0x8]                 ; 0040dd57
     PUSH EDI                            ; 0040dd5a
     LEA EDI,[ESP + 0x120]               ; 0040dd5b
     PUSH EDI                            ; 0040dd62
-    CALL core_actor.cpp_copyFloat_FUN_004104d0 ; 0040dd63
-        ;   XREF to: 004104d0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat_FUN_004104d0(float * dst, float * src)
+    CALL core_actor.cpp_copyFloat1_FUN_004104d0 ; 0040dd63
+        ;   XREF to: 004104d0 (UNCONDITIONAL_CALL)  ; float * core_actor.cpp_copyFloat1_FUN_004104d0(float * dst, float * src)
     ADD ESP,0x8                         ; 0040dd68
     LEA EDI,[ESP + 0x48]                ; 0040dd6b
     PUSH EDI                            ; 0040dd6f

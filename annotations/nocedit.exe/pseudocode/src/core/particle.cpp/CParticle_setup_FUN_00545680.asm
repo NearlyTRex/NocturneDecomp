@@ -14,7 +14,7 @@
 ;   core_gore.cpp_CBloodParticle_setup_FUN_004eb9a0 at 004eb9c6
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;
 ; *****************************************************************************
 
@@ -65,6 +65,6 @@ section .text
     PUSH 0x3fc90fdb                     ; 005456dd
         ;   Label: LAB_005456dd
     PUSH 0x3f490fdb                     ; 005456e2
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005456e7
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005456e7
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

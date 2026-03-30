@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_anvil.cpp_CAnvil_ctor_FUN_00411ce0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_anvil.cpp_factoryFunc_FUN_00411ca0
     PUSH 0x614cfa                       ; 00411ca2 | = "..\\core\\anvil.cpp"
     PUSH 0x344                          ; 00411ca7
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00411cac
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00411cac
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00411cb1
     TEST EAX,EAX                        ; 00411cb4
     JNZ 0x00411cb9                      ; 00411cb6

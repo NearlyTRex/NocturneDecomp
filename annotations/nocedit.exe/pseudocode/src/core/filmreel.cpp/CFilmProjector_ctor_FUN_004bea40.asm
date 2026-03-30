@@ -7,7 +7,7 @@
 ; CFilmProjector * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_filmreel.cpp_factoryFunc_FUN_004bea00 at 004bea1d
+;   core_filmreel.cpp_factoryFuncFilmProjector_FUN_004bea00 at 004bea1d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_filmreel_kfm_00629b3c

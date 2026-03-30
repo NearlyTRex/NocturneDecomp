@@ -51,7 +51,7 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -88,8 +88,8 @@ section .text
     PUSH 0x64851d                       ; 0057fd4c | = "..\\core\\setedit.cpp"
     SHL EAX,0x2                         ; 0057fd51
     PUSH EAX                            ; 0057fd54
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0057fd55
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 0057fd55
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0057fd5a
     MOV dword ptr [EBP + -0x1c],EAX     ; 0057fd5d
     TEST EAX,EAX                        ; 0057fd60

@@ -20,7 +20,7 @@
 ;   CDemonActor_vtable g_CZombieVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;
@@ -76,6 +76,6 @@ section .text
         ;   Label: LAB_005f9076
     PUSH 0x3f800000                     ; 005f9077
     PUSH 0x3e99999a                     ; 005f907c
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005f9081
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005f9081
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

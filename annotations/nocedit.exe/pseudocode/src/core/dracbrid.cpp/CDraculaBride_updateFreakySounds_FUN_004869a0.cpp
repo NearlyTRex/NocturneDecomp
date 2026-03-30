@@ -77,11 +77,11 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_004869a0(CDr
           local_68 = g_CDemonCameraInstance.base.position.f.x;
           local_64 = *local_24;
           local_60 = *local_28;
-          local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+          local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
           local_68 = local_18 + local_68;
-          local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
+          local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-2.0,2.0);
           local_64 = local_18 + local_64;
-          local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+          local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
           local_44.x = local_68;
           local_60 = local_18 + local_60;
           local_44.y = *local_30;

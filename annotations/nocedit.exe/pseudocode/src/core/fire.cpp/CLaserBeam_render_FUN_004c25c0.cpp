@@ -436,7 +436,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
     pCVar4->vertex_buffer_ptr[3].g = (this_ptr->color).g;
     pCVar4->vertex_buffer_ptr[3].b = (this_ptr->color).b;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(pCVar4,1);
-    fVar8 = core_actor_cpp_getRandomFloat_FUN_0040cc10(32768.0,40959.0);
+    fVar8 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(32768.0,40959.0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr2,(int)ROUND(ROUND(fVar8 * local_2f4)));
     engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0

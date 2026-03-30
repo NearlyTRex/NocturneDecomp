@@ -68,7 +68,7 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
             force_immediate = 1.4013e-45;
           }
           else {
-            force_immediate = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,100.0);
+            force_immediate = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,100.0);
             iVar2 = (force_immediate <= 50.0f) + 0x25;
           }
         }

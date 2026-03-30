@@ -143,7 +143,7 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
       break;
     case 2:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_c0);
-      local_c0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_c0.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
       local_c0.attacker = (CDemonActor *)this_ptr;
       local_c0.wielder = (CDemonActor *)this_ptr;
       damage_info = &local_c0;

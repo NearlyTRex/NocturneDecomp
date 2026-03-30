@@ -33,8 +33,8 @@ void __cdecl core_particle_cpp_CParticle_setup_FUN_00545680(CParticle *this_ptr,
     this_ptr->was_in_solid = 0;
     return;
   }
-  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.7853982,1.5707964);
-  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.7853982,1.5707964);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,6.2831855);
   fVar3 = (float10)fcos((float10)fVar2);
   fVar4 = (float10)fcos((float10)fVar1);
   fVar5 = (float10)fsin((float10)fVar2);

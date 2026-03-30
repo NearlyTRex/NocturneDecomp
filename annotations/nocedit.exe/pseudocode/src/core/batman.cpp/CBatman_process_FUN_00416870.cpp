@@ -251,7 +251,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
       break;
     case 3:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_188);
-      local_188.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_188.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
       damage_info = &local_188;
       local_188.attacker = (CDemonActor *)this_ptr;
       local_188.wielder = (CDemonActor *)this_ptr;

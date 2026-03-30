@@ -192,7 +192,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
       CStack_28.y = 0;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,(CVector3i *)&CStack_88.y,(CVector3i *)&CStack_28.y);
-      fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.98,1.02);
+      fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.98,1.02);
       fVar7 = fVar7 * fVar1 * fVar5;
       CStack_40.x = 0;
       CStack_c4.y = (int)ROUND(fVar7 * 256.0f);

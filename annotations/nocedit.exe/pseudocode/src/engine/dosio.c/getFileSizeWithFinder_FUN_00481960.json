@@ -1,0 +1,284 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 15,
+    "cross_reference_count": 8,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 65
+  },
+  "cross_references": [
+    {
+      "addr": "004b3920",
+      "from_addr": "004b39a6",
+      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b4220",
+      "from_addr": "004b4fcd",
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004baf00",
+      "from_addr": "004bc06b",
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ba740",
+      "from_addr": "004ba8e7",
+      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b86b0",
+      "from_addr": "004b8f1e",
+      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b5a50",
+      "from_addr": "004b5b47",
+      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b3120",
+      "from_addr": "004b313a",
+      "name": "engine_fileio.cpp_checkFileOverwriteCondition_FUN_004b3120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b3220",
+      "from_addr": "004b34ff",
+      "name": "engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00481960",
+    "address_range": [
+      [
+        "00481960",
+        "004819ed"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.c_getFileSizeWithFinder_FUN_00481960",
+    "signature": "int __cdecl engine_dosio_c_getFileSizeWithFinder_FUN_00481960(char *directory,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00481c30",
+      "is_variadic": false,
+      "name": "engine_dosio.c_CFileFinder_ctor_FUN_00481c30"
+    },
+    {
+      "addr": "00481c50",
+      "is_variadic": false,
+      "name": "engine_dosio.c_CFileFinder_dtor_FUN_00481c50"
+    },
+    {
+      "addr": "00481c70",
+      "is_variadic": false,
+      "name": "engine_dosio.c_CFileFinder_openSearch_FUN_00481c70"
+    },
+    {
+      "addr": "004816c0",
+      "is_variadic": false,
+      "name": "engine_dosio.c_getRelativeFilePath_FUN_004816c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 12,
+    "call_sites": [
+      {
+        "call_addr": "004b5b47",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b313a",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_checkFileOverwriteCondition_FUN_004b3120",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b34ff",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b39a6",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b3eea",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b4fcd",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ba8e7",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bad90",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bc06b",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b8f1e",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9761904761904763,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 29,
+      "INT_ADD": 19,
+      "INT_AND": 19,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 9,
+      "INT_SUB": 17,
+      "LOAD": 7,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 167
+  },
+  "stack_frame": {
+    "frame_size": 824,
+    "local_size": 816,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_32c",
+        "offset": -812,
+        "size": 532,
+        "type": "char[532]"
+      },
+      {
+        "is_param": false,
+        "name": "local_118",
+        "offset": -280,
+        "size": 276,
+        "type": "CFileFinder"
+      },
+      {
+        "is_param": true,
+        "name": "directory",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -76,7 +76,7 @@ __asm {
         add EDX,EAX
         mov dword ptr [EBP + 0x52],EDX
     LAB_0058327a:
-        call wincore_winrun_cpp_doNothing_FUN_005f2f80
+        call wincore_winrun_cpp_doNothing1_FUN_005f2f80
         call wincore_windll_cpp_clearScreen_FUN_005b3e70
         mov ESI,dword ptr [EBP + 0x52]
         call wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4
@@ -801,7 +801,7 @@ __asm {
         push 0x648ddf
         mov ESI,dword ptr [g_CEditorToolsPtr]
         push ESI
-        call shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
+        call shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
         add ESP,0x8
         test EAX,EAX
         jz LAB_00583d09

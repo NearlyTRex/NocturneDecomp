@@ -153,6 +153,25 @@ int_ptr = (int *)uint_ptr;
 
 **Fix:** Consult the assembly and reconstruct the statement. Keep it as close to the original structure as possible.
 
+### 12. Byte buffer locals that should be structs (`auStack_XX`, `byte[N]`)
+
+**Cause:** Ghidra fails to identify the type of stack-allocated structs, especially when the compiler reuses stack slots across different lifetimes. The decompiler emits raw `byte[N]` arrays with `._offset_size_` sub-accesses instead of proper field names.
+
+**Diagnosis:** Compare the byte buffer size and access patterns against known struct layouts:
+- A `byte[56]` or `byte[60]` with a constructor call and field writes at known offsets → likely a struct (e.g., `SDamageInfo` at 60 bytes). Check if an adjacent 4-byte variable completes the struct size.
+- A large `byte[N]` accessed at many different sub-offsets with `CVector3f`-sized (12-byte) patterns → likely multiple `CVector3f` temporaries that the compiler packed into overlapping stack slots.
+
+**Fix (in Ghidra, not in .keep):** This is best fixed upstream in Ghidra by retyping stack variables. **Stack locals in Ghidra cannot overlap** — each byte of stack space can only belong to one variable. With that constraint:
+1. Open the function in the decompiler, right-click the byte array variable, and retype it to the correct struct.
+2. If the struct is split across two adjacent variables (e.g., `auStack_cc[56]` + `pCStack_94[4]` = 60 bytes = `SDamageInfo`), merge them by retyping the first variable to the full struct size — the adjacent variable will be absorbed.
+3. For scratch buffers where the compiler reuses stack slots across different code phases (e.g., `CVector3f` temporaries for both rotation and bounding-box calculations), you must choose one phase's interpretation per slot since locals cannot overlap. Pick the interpretation that makes the most important code path readable.
+
+**How to identify struct candidates:**
+- Check if a constructor/initializer is called on the buffer (e.g., `SDamageInfo_ctor(auStack_cc)`)
+- Check if the buffer is passed to a function expecting a typed pointer (e.g., `(CBoundingBox3D *)buffer`)
+- Match the buffer size against known struct sizes in the project headers
+- Map `._offset_size_` accesses to struct field offsets to confirm the match
+
 ## Workflow
 
 1. **Read the original `.cpp` file** to understand the function and see the compilation error.

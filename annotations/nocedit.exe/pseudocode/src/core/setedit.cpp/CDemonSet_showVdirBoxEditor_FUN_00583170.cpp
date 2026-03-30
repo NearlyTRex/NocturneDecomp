@@ -174,7 +174,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
     if ((-1 < iVar12) && (iVar12 < this_ptr->vdir_box_count)) {
       local_3c = local_40 + iVar12;
     }
-    wincore_winrun_cpp_doNothing_FUN_005f2f80();
+    wincore_winrun_cpp_doNothing1_FUN_005f2f80();
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     pSVar11 = local_3c;
     wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
@@ -1407,7 +1407,7 @@ LAB_00583c6f:
     iVar12 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
     if (((iVar12 != 0) && (-1 < local_18)) &&
        ((local_18 < this_ptr->vdir_box_count &&
-        (iVar6 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
+        (iVar6 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
                            (g_CEditorToolsPtr,"Delete the selected box?"), iVar12 = local_18
         , iVar6 != 0)))) {
       iVar6 = this_ptr->vdir_box_count + -1;

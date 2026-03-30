@@ -33,10 +33,12 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
   int iVar1;
   
   if ((0x27f < g_WindowWidth) && (0x1df < g_WindowHeight)) {
-    cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486ea0
+    cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00486ea0
               (&local_64,g_WindowWidth / 2,g_WindowHeight / 2,0xc9,0x65,(CDrawSurface *)0x0);
-    cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486ea0(&local_a4,0xc,8,0x15,0xb,&local_64);
-    cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486ea0(&local_c4,0xbe,0x5f,0x14,10,&local_64);
+    cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00486ea0
+              (&local_a4,0xc,8,0x15,0xb,&local_64);
+    cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00486ea0
+              (&local_c4,0xbe,0x5f,0x14,10,&local_64);
     cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_00487220(0x80,0x80,0x80);
     cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70(&local_64);
     cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(7);
@@ -101,7 +103,7 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
     iVar2 = g_WindowHeight / 2 + 0x66;
     iVar3 = g_WindowHeight - iVar2;
     iVar7 = test_font->current_line_height;
-    cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486ea0
+    cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00486ea0
               (&local_44,g_WindowWidth / 2,iVar2,0xc9,iVar3,(CDrawSurface *)0x0);
     cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_00487220(0x80,0x80,0x80);
     cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70(&local_44);
@@ -144,7 +146,7 @@ void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_00489d30(CBitFont *test
     cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(&local_44,100,y_01);
     iVar5 = g_WindowHeight / 2 + 0x66;
     iVar4 = g_WindowHeight - iVar5;
-    cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486ea0
+    cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00486ea0
               (&local_84,g_WindowWidth / 2 + -0xca,iVar5,0xc9,iVar4,(CDrawSurface *)0x0);
     cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_00487220(0x80,0x80,0x80);
     cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70(&local_84);

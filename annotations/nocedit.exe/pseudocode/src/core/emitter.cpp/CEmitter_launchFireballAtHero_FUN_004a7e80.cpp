@@ -46,9 +46,9 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004a7e80(CEmitte
     local_64 = local_58;
   }
   local_68 = local_68 + 5.0f;
-  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-8.0,8.0);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-8.0,8.0);
   local_6c = fVar2 + local_6c;
-  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-8.0,8.0);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-8.0,8.0);
   fVar3 = (float10)fsin((float10)-1.30899693895833);
   fVar4 = (float10)fptan((float10)1.30899693895833);
   fVar8 = (float10)local_64;

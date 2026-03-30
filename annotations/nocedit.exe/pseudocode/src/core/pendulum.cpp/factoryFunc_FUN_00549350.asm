@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_pendulum.cpp_CPendulum_ctor_FUN_00549390
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_pendulum.cpp_factoryFunc_FUN_00549350
     PUSH 0x63ec5b                       ; 00549352 | = "..\\core\\pendulum.cpp"
     PUSH 0x444                          ; 00549357
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0054935c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0054935c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00549361
     TEST EAX,EAX                        ; 00549364
     JNZ 0x00549369                      ; 00549366

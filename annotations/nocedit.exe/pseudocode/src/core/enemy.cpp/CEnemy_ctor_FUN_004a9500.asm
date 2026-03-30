@@ -23,7 +23,7 @@
 ;   CDemonActor_vtable g_CEnemyVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_ctor_FUN_00427e20
 ;
 ; *****************************************************************************
@@ -44,6 +44,6 @@ section .text
     MOV EBX,EAX                         ; 004a9518
     PUSH 0x3f666666                     ; 004a951a
     MOV dword ptr [EAX + 0x154],0x65d7d4 ; 004a951f | g_CEnemyVTable
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004a9529
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004a9529
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

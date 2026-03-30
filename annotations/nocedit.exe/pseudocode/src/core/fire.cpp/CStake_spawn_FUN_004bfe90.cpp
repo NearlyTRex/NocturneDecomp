@@ -67,9 +67,9 @@ void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,CVector3f 
   }
   core_box_cpp_CBox_setupCorners_FUN_0041dd20
             (&this_ptr->physics_box,spawn_position,orientation_angles,&local_74,2.0);
-  local_5c.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-9.424778,9.424778);
+  local_5c.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-9.424778,9.424778);
   local_5c.z = 0.0;
-  local_5c.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(-9.424778,9.424778);
+  local_5c.y = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-9.424778,9.424778);
   core_box_cpp_CBox_setupVelocities_FUN_00420180(&this_ptr->physics_box,&local_44,&local_5c);
   return;
 }

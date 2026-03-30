@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_hiram.cpp_CHiram_ctor_FUN_004f43f0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_hiram.cpp_getFactoryFunc_FUN_004f43b0
     PUSH 0x62edd6                       ; 004f43b2 | = "..\\core\\hiram.cpp"
     PUSH 0x1f76c                        ; 004f43b7
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004f43bc
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 004f43bc
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004f43c1
     TEST EAX,EAX                        ; 004f43c4
     JNZ 0x004f43c9                      ; 004f43c6

@@ -15,7 +15,7 @@
 ;   core_flies.cpp_CFlies_process_FUN_004cbf00 at 004cc147
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_flies.cpp_CFlies_generateRandomPoint_FUN_004cc820
 ;
 ; *****************************************************************************
@@ -81,8 +81,8 @@ section .text
         ;   XREF to: 004cc7b6 (CONDITIONAL_JUMP)  ; LAB_004cc7b6
     PUSH 0x3f800000                     ; 004cc7e3
     PUSH 0x0                            ; 004cc7e8
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004cc7ea
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004cc7ea
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV EDX,dword ptr [EAX]             ; 004cc808
         ;   Label: LAB_004cc808
     MOV dword ptr [EBX],EDX             ; 004cc80a

@@ -171,17 +171,17 @@ void __cdecl CCloth::applyRotation(CCloth *this_ptr,CVector3f *euler);
 // Address: 0043e2a0
 int __cdecl calcLightAttenuation(float dist_sq);
 
-// Original: core_cloth.cpp_dotProduct_FUN_0043e2c0
+// Original: core_cloth.cpp_dotProduct1_FUN_0043e2c0
 // Address: 0043e2c0
-float __cdecl dotProduct(CVector3f *a,CVector3f *b);
+float __cdecl dotProduct1(CVector3f *a,CVector3f *b);
 
 // Original: core_cloth.cpp_addVector_FUN_0043e2f0
 // Address: 0043e2f0
 void __cdecl addVector(CVector3f *a,CVector3f *b);
 
-// Original: core_cloth.cpp_dotProduct_FUN_0043e320
+// Original: core_cloth.cpp_dotProduct2_FUN_0043e320
 // Address: 0043e320
-float __cdecl dotProduct(CVector3f *a,CVector3f *b);
+float __cdecl dotProduct2(CVector3f *a,CVector3f *b);
 
 // Original: core_cloth.cpp_vectorLengthFast_FUN_0043e350
 // Address: 0043e350

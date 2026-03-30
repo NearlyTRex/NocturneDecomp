@@ -37,7 +37,7 @@
 ;   CKeyFramedModelInstance g_FireEffectFlamingStakeModel
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_box.cpp_CBox_setupCorners_FUN_0041dd20
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
@@ -198,8 +198,8 @@ section .text
     ADD ESP,0x14                        ; 004c00a3
     PUSH 0x4116cbe4                     ; 004c00a6
     PUSH 0xc116cbe4                     ; 004c00ab
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c00b0
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c00b0
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV EAX,dword ptr [ESP + 0x94]      ; 004c0111
         ;   Label: LAB_004c0111
     MOV dword ptr [ESP + 0x70],EAX      ; 004c0118

@@ -11,7 +11,7 @@ void __cdecl core_trash_cpp_addRandomJitter_FUN_005decc0(float *value)
 {
   float fVar1;
   
-  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05,0.05);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.05,0.05);
   *value = fVar1 + *value;
   return;
 }

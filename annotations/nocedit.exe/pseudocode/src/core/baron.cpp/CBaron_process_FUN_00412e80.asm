@@ -45,7 +45,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_baron.cpp_CBaron_advanceMotion_FUN_00413a00
 ;   core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
@@ -290,8 +290,8 @@ section .text
     PUSH 0x40000000                     ; 00413135
         ;   Label: LAB_00413135
     PUSH 0xc0000000                     ; 0041313a
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0041313f
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041313f
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [ESP + 0xa0],EAX      ; 00413144
     FLD float ptr [ESP + 0xa0]          ; 0041314b
     ADD ESP,0x8                         ; 00413152
@@ -300,8 +300,8 @@ section .text
     FSTP float ptr [ESP + 0x4c]         ; 0041315b
     PUSH 0xc0000000                     ; 0041315f
     MOV dword ptr [ESP + 0x54],EDI      ; 00413164
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00413168
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00413168
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [ESP + 0xa0],EAX      ; 0041316d
     MOV EBP,dword ptr [0x0067a3d0]      ; 00413174 | g_CFireEffectPtr
     FLD float ptr [ESP + 0xa0]          ; 0041317a

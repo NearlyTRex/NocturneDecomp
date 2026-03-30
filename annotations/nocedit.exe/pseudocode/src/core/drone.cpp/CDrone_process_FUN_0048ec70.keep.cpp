@@ -153,7 +153,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
       break;
     case 2:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_dc);
-      local_dc.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+      local_dc.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,15.0);
       local_dc.attacker = (CDemonActor *)this_ptr;
       local_dc.wielder = (CDemonActor *)this_ptr;
       pSVar12 = &local_dc;
@@ -166,7 +166,7 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
       pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          ((CDemonActor *)this_ptr,&local_58,pCVar3);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar3,fVar10,pSVar12);
-      local_dc.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+      local_dc.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,15.0);
       local_dc.attacker = (CDemonActor *)this_ptr;
       local_dc.wielder = (CDemonActor *)this_ptr;
       damage_info = &local_dc;
@@ -239,7 +239,7 @@ switchD_0048f284_caseD_3:
     if (iVar5 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       iVar5 = 2;
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
       sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar5);
       uVar9 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                         ((CDemonActor *)this_ptr,"slime.wav");

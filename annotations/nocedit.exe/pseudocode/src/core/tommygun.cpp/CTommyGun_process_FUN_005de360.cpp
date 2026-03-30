@@ -56,7 +56,7 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
     return;
   }
   this_ptr->fire_frames_remaining = this_ptr->fire_frames_remaining + -1;
-  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.9,1.1111112);
   iVar3 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(this_ptr->sfx_handles[0],fVar2);
   if (iVar3 != 0) {
     return;

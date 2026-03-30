@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
@@ -281,8 +281,8 @@ section .text
         ;   Label: LAB_005c4b44
     PUSH 0x42c80000                     ; 005c4b46
     PUSH 0x0                            ; 005c4b4b
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005c4b4d
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005c4b4d
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     FLD float ptr [ESI + 0x4]           ; 005c4b7c
         ;   Label: LAB_005c4b7c
     FLDZ                                ; 005c4b7f

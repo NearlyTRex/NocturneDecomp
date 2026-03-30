@@ -306,8 +306,8 @@ section .text
     MOV EAX,[0x02cf6a94]                ; 0053935a | g_MouseButtonFlags
     MOV dword ptr [EBP + 0x7a],ESI      ; 0053935f
     MOV dword ptr [EBP + 0x5e],EAX      ; 00539362
-    CALL wincore_winrun.cpp_doNothing_FUN_005f2f80 ; 00539365
-        ;   XREF to: 005f2f80 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing_FUN_005f2f80()
+    CALL wincore_winrun.cpp_doNothing1_FUN_005f2f80 ; 00539365
+        ;   XREF to: 005f2f80 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing1_FUN_005f2f80()
     MOV EAX,[0x02f7c634]                ; 0053936a | INT_02f7c634
     MOV dword ptr [EBP + 0x56],ESI      ; 0053936f
     CMP EAX,0x2                         ; 00539372
@@ -865,8 +865,8 @@ section .text
     PUSH 0x63c4b0                       ; 005399df | = "Exit editor?"
     MOV EDI,dword ptr [0x00678a60]      ; 005399e4 | g_CEditorToolsPtr
     PUSH EDI                            ; 005399ea | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 005399eb
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 005399eb
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 005399f0
     TEST EAX,EAX                        ; 005399f3
     JNZ 0x00539e00                      ; 005399f5
@@ -1967,8 +1967,8 @@ section .text
     PUSH 0x63c4d5                       ; 0053a616 | = "Save mission to %s.msn"
     MOV EBX,dword ptr [0x00678a60]      ; 0053a61b | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 0053a621 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 0053a622
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 0053a622
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0xc                         ; 0053a627
     TEST EAX,EAX                        ; 0053a62a
     JZ 0x00539dc5                       ; 0053a62c

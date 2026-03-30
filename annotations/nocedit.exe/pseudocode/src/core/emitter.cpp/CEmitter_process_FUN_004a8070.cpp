@@ -118,9 +118,9 @@ LAB_004a811d:
         local_70.y = (this_ptr->base).location.position.y;
         local_70.z = (this_ptr->base).location.position.z;
       }
-      fVar14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);
+      fVar14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.5,0.5);
       local_70.x = fVar14 * (this_ptr->emitter_size).x + local_70.x;
-      fVar14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.5,0.5);
+      fVar14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.5,0.5);
       local_70.z = fVar14 * (this_ptr->emitter_size).z + local_70.z;
       local_d0.x = 0.0;
       local_d0.y = (this_ptr->emitter_size).y;
@@ -131,8 +131,8 @@ LAB_004a811d:
     } while (iVar9 < 4);
     break;
   case 4:
-    fVar15 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.7853982,1.5707964);
-    fVar16 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
+    fVar15 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.7853982,1.5707964);
+    fVar16 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,6.2831855);
     fVar14 = this_ptr->rock_speed;
     fVar9 = (float10)fcos((float10)fVar15);
     fVar10 = (float10)fcos((float10)fVar16);

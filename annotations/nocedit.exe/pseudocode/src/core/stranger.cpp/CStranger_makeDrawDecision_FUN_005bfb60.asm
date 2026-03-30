@@ -51,7 +51,7 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
@@ -285,8 +285,8 @@ section .text
     MOV EDI,EAX                         ; 005bfe0d
     PUSH 0x0                            ; 005bfe0f
     MOV dword ptr [ESP + 0xf0],EAX      ; 005bfe11
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005bfe18
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005bfe18
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     PUSH 0x59ddb0                       ; 005bfe53
         ;   Label: LAB_005bfe53
     MOV ECX,dword ptr [0x03f6bb10]      ; 005bfe58 | g_StrangerIndices[17]

@@ -15,7 +15,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTriList_FUN_00494600(CDemonRayt
   uchar *puVar4;
   
   iVar1 = this_ptr->triangle_count;
-  piVar2 = (int *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+  piVar2 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                      (iVar1 * 0x38 + 4,"..\\core\\dtrace.cpp",0xf7);
   pCVar3 = (CDemonTriangle *)0x0;
   if (piVar2 != (int *)0x0) {
@@ -23,7 +23,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTriList_FUN_00494600(CDemonRayt
     *piVar2 = iVar1;
   }
   this_ptr->triangle_list = pCVar3;
-  puVar4 = (uchar *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+  puVar4 = (uchar *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                      (this_ptr->triangle_count,"..\\core\\dtrace.cpp",0xf8);
   this_ptr->triangle_flags = puVar4;
   if ((this_ptr->triangle_list != (CDemonTriangle *)0x0) && (puVar4 != (uchar *)0x0)) {

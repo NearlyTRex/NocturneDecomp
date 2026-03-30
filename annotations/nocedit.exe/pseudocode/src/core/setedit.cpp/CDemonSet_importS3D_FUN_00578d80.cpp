@@ -119,18 +119,18 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
     return;
   }
   if (((local_68 == 0) && (this_ptr->light_count < 1)) &&
-     (iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
+     (iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
                         (g_CEditorToolsPtr,"There are currently no lights currently in the set, and you have chosen not to import any.  Continue anyway?"), iVar5 == 0)) {
     return;
   }
   if (((local_6c == 0) && (this_ptr->camera_count < 1)) &&
-     (iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
+     (iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
                         (g_CEditorToolsPtr,"There are currently no cameras currently in the set, and you have chosen not to import any.  Continue anyway?"), iVar5 == 0)) {
     return;
   }
-  local_64 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+  local_64 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
                        (g_CEditorToolsPtr,"Precompute light visibility?");
-  local_60 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+  local_60 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
                        (g_CEditorToolsPtr,"Precompute fog?");
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Reading S3D header, parts, and materials");
@@ -363,7 +363,7 @@ LAB_0057911a:
     this_ptr->set_scale_factor = 1.0;
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (this_ptr_00,"Reading vertices");
-    piVar5 = (int *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+    piVar5 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                        (local_50 * 0xc + 4,"..\\core\\setedit.cpp",0x547);
     local_38 = piVar5;
     if (piVar5 != (int *)0x0) {

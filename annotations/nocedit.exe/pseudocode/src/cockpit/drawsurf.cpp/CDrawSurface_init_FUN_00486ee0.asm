@@ -13,7 +13,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486e70 at 00486e8a
-;   cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0 at 00486ec2
+;   cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0 at 00486ec2
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

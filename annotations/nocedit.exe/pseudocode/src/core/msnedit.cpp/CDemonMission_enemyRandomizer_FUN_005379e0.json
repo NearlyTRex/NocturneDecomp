@@ -10,25 +10,25 @@
       {
         "category": "format_error",
         "column": 54,
-        "line": 123,
+        "line": 124,
         "message": "format specifies type 'char *' but the argument has type 'CEnemy *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 68,
-        "line": 134,
+        "line": 135,
         "message": "format specifies type 'int' but the argument has type 'CEnemy *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 136,
+        "line": 137,
         "message": "use of undeclared identifier 'stack0xfffff300'"
       },
       {
         "category": "undeclared_identifier",
         "column": 74,
-        "line": 138,
+        "line": 139,
         "message": "use of undeclared identifier 'stack0xfffff300'"
       }
     ],
@@ -37,18 +37,18 @@
   },
   "complexity": {
     "assembly_lines": 333,
-    "complexity_score": 260,
+    "complexity_score": 261,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 140,
+    "pseudocode_lines": 141,
     "suspect_count": 11,
     "suspect_types": [
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 473
+    "total_lines": 474
   },
   "cross_references": [
     {
@@ -83,7 +83,7 @@
     {
       "addr": "0040cc10",
       "is_variadic": false,
-      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10"
     },
     {
       "addr": "0040c6d0",
@@ -431,7 +431,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 129,
+      "line": 130,
       "match": "&stack0xfffff300",
       "severity": "moderate",
       "text": "((CPickList *)&stack0xfffff300,local_e0 + 4,-1,0);",
@@ -439,7 +439,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 131,
+      "line": 132,
       "match": "&stack0xfffff300",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff300,0);",
@@ -447,7 +447,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 137,
+      "line": 138,
       "match": "in_stack_fffff2fc",
       "severity": "moderate",
       "text": "in_stack_fffff2fc = uVar5 & 0xffffffff00000000;",

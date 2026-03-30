@@ -88,7 +88,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
     if (iVar7 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       iVar8 = 2;
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
       sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar8);
       uVar8 = (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->loop_wav_name);
       this_ptr->sfx_handle = uVar8;

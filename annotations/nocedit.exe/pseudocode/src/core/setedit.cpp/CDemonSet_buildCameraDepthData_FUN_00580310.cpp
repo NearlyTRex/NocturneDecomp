@@ -22,7 +22,7 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemon
   
   if ((g_CameraDepthData == (void *)0x0) && (0 < this_ptr->camera_count)) {
     g_CameraDepthData =
-         shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+         shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                    (this_ptr->camera_count * 0x4b030,"..\\core\\setedit.cpp",0x1007);
     if (g_CameraDepthData == (void *)0x0) {
       g_CurrentFilename = "..\\core\\setedit.cpp";

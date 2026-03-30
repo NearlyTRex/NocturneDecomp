@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet *this_ptr,SDamageInfo *damage_info,CVector3f *actor_position,void *unknown_param)
+; void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet *this_ptr,CVector3f *position,CVector3f *actor_position,SDamageInfo *damage_info)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
-; SDamageInfo *    Stack[0x8]:4   damage_info
+; CVector3f *      Stack[0x8]:4   position
 ; CVector3f *      Stack[0xc]:4   actor_position
-; void *           Stack[0x10]:4   unknown_param
+; SDamageInfo *    Stack[0x10]:4   damage_info
 ; Local Variables:
 ; SDamageInfo      Stack[-0x5c]:60  local_5c
 ; float *          Stack[-0x20]:4  local_20

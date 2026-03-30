@@ -335,7 +335,7 @@ LAB_005e4342:
                          ((CDemonActor *)this_ptr,this_ptr->periodic_sound);
       this_ptr->periodic_sound_handle = uVar14;
     }
-    fVar15 = core_actor_cpp_getRandomFloat_FUN_0040cc10
+    fVar15 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
                        (this_ptr->periodic_sound_timer_min,this_ptr->periodic_sound_timer_max);
     this_ptr->periodic_sound_timer = fVar15;
     return;

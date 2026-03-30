@@ -229,7 +229,7 @@ LAB_005429ed:
             aEStack_b8[1] = *(EHeroType *)(pSVar16->name + 8);
             aEStack_b8[2] = *(EHeroType *)(pSVar16->name + 0xc);
             aEStack_b8[3] = *(EHeroType *)(pSVar16->name + 0x10);
-            core_netgame_cpp_copyInteger_FUN_00543e20(&local_a0,(int *)local_18);
+            core_netgame_cpp_assignInt1_FUN_00543e20(&local_a0,(int *)local_18);
             local_9c = local_18->port;
             local_98 = pSVar16->last_arrival_time;
             local_94 = pSVar16->ping_quality;

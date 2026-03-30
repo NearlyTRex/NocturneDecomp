@@ -24,7 +24,7 @@ void __cdecl core_teleport_cpp_CTeleport_processInEditor_FUN_005dabe0(CTeleport 
                 (g_CEditorToolsPtr,"Teleport has no destination!");
       return;
     }
-    iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
+    iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
                       (g_CEditorToolsPtr,"Switch to destination %s",this_ptr->destination);
     if (iVar2 != 0) {
       core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140

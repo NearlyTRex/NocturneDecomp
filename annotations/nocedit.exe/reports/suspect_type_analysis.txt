@@ -5,8 +5,8 @@ SUSPECT TYPE ANALYSIS
 SUSPECT TYPE COUNTS
 --------------------------------------------------
   decompiler_intrinsic            6914 ( 43.9%)
-  pointer_cast                    4413 ( 28.0%)
-  unknown_field                    896 (  5.7%)
+  pointer_cast                    4401 ( 28.0%)
+  unknown_field                    871 (  5.5%)
   special_crt_function             439 (  2.8%)
   stack_param                      351 (  2.2%)
   unnamed_param                    320 (  2.0%)
@@ -34,6 +34,7 @@ SUSPECT TYPE COUNTS
   byvalue_struct_passing            21 (  0.1%)
   undefined_type                    15 (  0.1%)
   special_math_intrinsic            15 (  0.1%)
+  unknown_param                     10 (  0.1%)
   warning_jumptable                  9 (  0.1%)
   warning_indirect_jump              9 (  0.1%)
   nan_function_artifact              9 (  0.1%)
@@ -95,13 +96,13 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (4413 occurrences)
+TYPE: pointer_cast (4401 occurrences)
 ====================================================================================================
 
 Unique patterns:
   1383x  (uint *)((int)
   1237x  (int *)((int)
-   315x  (float *)((int)
+   305x  (float *)((int)
    209x  (SRenderVertex *)((int)
    193x  (double *)((int)
    189x  (void *)((int)
@@ -131,30 +132,30 @@ Example functions:
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar9) <...
 
 ====================================================================================================
-TYPE: unknown_field (896 occurrences)
+TYPE: unknown_field (871 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   363x  ._0_4_
-   347x  ._4_4_
+   362x  ._0_4_
+   346x  ._4_4_
     47x  ._0_2_
     36x  ._2_2_
     14x  ._0_1_
     11x  ._1_1_
-    11x  ._12_4_
     10x  ._8_4_
      9x  ._3_1_
+     9x  ._12_4_
      7x  ._4_8_
-     5x  ._24_4_
      4x  ._2_1_
-     4x  ._44_4_
-     3x  ._40_4_
-     3x  ._16_4_
-     3x  ._20_4_
+     3x  ._24_4_
      3x  ._13604_4_
      2x  ._252_4_
      2x  ._12_8_
-     2x  ._48_4_
+     1x  ._76_4_
+     1x  ._1_3_
+     1x  ._40_4_
+     1x  ._18_2_
+     1x  ._16_4_
 
 Example functions:
   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
@@ -417,11 +418,11 @@ Example functions:
     /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */...
   engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
     /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */...
-  engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70
-    /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */...
   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
     /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */...
   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
+    /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */...
+  engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70
     /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */...
   engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670
     /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */...
@@ -1514,6 +1515,23 @@ Example functions:
     Math intrinsic (round) at 005fe6b0...
   crt_math.c_pow_FUN_005ffd76
     Math intrinsic (pow) at 005ffd76...
+
+====================================================================================================
+TYPE: unknown_param (10 occurrences)
+====================================================================================================
+
+Unique patterns:
+     6x  unknown_10
+     2x  unknown_scale
+     2x  unknown_flag
+
+Example functions:
+  crt_string.c_strtok_FUN_005fff50
+    str = *(char **)pTVar2->unknown_10;...
+  core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910
+    void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this...
+  core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60
+    void __cdecl core_mission_cpp_CDemonMission_addFilesToExtract_FUN_00524e60(CDemo...
 
 ====================================================================================================
 TYPE: warning_jumptable (9 occurrences)

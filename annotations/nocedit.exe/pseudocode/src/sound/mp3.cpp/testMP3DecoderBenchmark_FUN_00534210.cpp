@@ -27,14 +27,15 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
   int local_14;
   
   remove("test.raw");
-  local_20 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+  local_20 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
                        (g_CEditorToolsPtr,"Write file?");
-  pCVar1 = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x8630,"..\\sound\\mp3.cpp",0xdc8);
+  pCVar1 = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x8630,"..\\sound\\mp3.cpp",0xdc8);
   local_24 = (CMP3Decoder *)0x0;
   if (pCVar1 != (CMP3Decoder *)0x0) {
     local_24 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(pCVar1);
   }
-  this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x8630,"..\\sound\\mp3.cpp",0xdc8);
+  this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x8630,"..\\sound\\mp3.cpp",0xdc8)
+  ;
   pCVar2 = (CMP3Decoder *)0x0;
   if (this_ptr != (CMP3Decoder *)0x0) {
     pCVar2 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(this_ptr);

@@ -38,7 +38,6 @@
 ;   ... and 19 more
 ;
 ; Called Functions:
-;   cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_00488990
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_00487730
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromBottomLeft_FUN_00487880
@@ -53,6 +52,7 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00489830
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
 ;   ... and 11 more
 ;
 ; *****************************************************************************
@@ -97,8 +97,8 @@ section .text
     PUSH EBX                            ; 00489d86
     LEA EAX,[ESP + 0x7c]                ; 00489d87
     PUSH EAX                            ; 00489d8b
-    CALL cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0 ; 00489d8c
-        ;   XREF to: 00486ea0 (UNCONDITIONAL_CALL)  ; CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0(CDrawSurface * this_ptr, int x, int y, int width, ...)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0 ; 00489d8c
+        ;   XREF to: 00486ea0 (UNCONDITIONAL_CALL)  ; CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x18                        ; 00489d91
     LEA EAX,[ESP + 0x68]                ; 00489d94
     PUSH EAX                            ; 00489d98
@@ -108,8 +108,8 @@ section .text
     PUSH 0xc                            ; 00489d9f
     LEA EAX,[ESP + 0x3c]                ; 00489da1
     PUSH EAX                            ; 00489da5
-    CALL cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0 ; 00489da6
-        ;   XREF to: 00486ea0 (UNCONDITIONAL_CALL)  ; CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0(CDrawSurface * this_ptr, int x, int y, int width, ...)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0 ; 00489da6
+        ;   XREF to: 00486ea0 (UNCONDITIONAL_CALL)  ; CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x18                        ; 00489dab
     LEA EAX,[ESP + 0x68]                ; 00489dae
     PUSH EAX                            ; 00489db2
@@ -119,8 +119,8 @@ section .text
     PUSH 0xbe                           ; 00489db9
     LEA EAX,[ESP + 0x1c]                ; 00489dbe
     PUSH EAX                            ; 00489dc2
-    CALL cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0 ; 00489dc3
-        ;   XREF to: 00486ea0 (UNCONDITIONAL_CALL)  ; CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0(CDrawSurface * this_ptr, int x, int y, int width, ...)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0 ; 00489dc3
+        ;   XREF to: 00486ea0 (UNCONDITIONAL_CALL)  ; CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x18                        ; 00489dc8
     PUSH 0x80                           ; 00489dcb
     PUSH 0x80                           ; 00489dd0
@@ -435,8 +435,8 @@ section .text
     LEA EAX,[ESP + 0x9c]                ; 0048a120
     PUSH EAX                            ; 0048a127
     MOV EBX,dword ptr [ESI + 0x3170]    ; 0048a128
-    CALL cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0 ; 0048a12e
-        ;   XREF to: 00486ea0 (UNCONDITIONAL_CALL)  ; CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0(CDrawSurface * this_ptr, int x, int y, int width, ...)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0 ; 0048a12e
+        ;   XREF to: 00486ea0 (UNCONDITIONAL_CALL)  ; CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x18                        ; 0048a133
     PUSH 0x80                           ; 0048a136
     PUSH 0x80                           ; 0048a13b
@@ -667,8 +667,8 @@ section .text
     PUSH ECX                            ; 0048a41e
     LEA EAX,[ESP + 0x5c]                ; 0048a41f
     PUSH EAX                            ; 0048a423
-    CALL cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0 ; 0048a424
-        ;   XREF to: 00486ea0 (UNCONDITIONAL_CALL)  ; CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0(CDrawSurface * this_ptr, int x, int y, int width, ...)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0 ; 0048a424
+        ;   XREF to: 00486ea0 (UNCONDITIONAL_CALL)  ; CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x18                        ; 0048a429
     PUSH 0x80                           ; 0048a42c
     PUSH 0x80                           ; 0048a431

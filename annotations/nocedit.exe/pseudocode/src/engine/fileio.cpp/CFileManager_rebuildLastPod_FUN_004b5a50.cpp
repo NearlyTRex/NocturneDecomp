@@ -123,7 +123,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
         pcVar13 = pcVar13 + 2;
       } while (cVar2 != '\0');
     }
-    uVar3 = engine_dosio_c_getFileSize_FUN_00481960((char *)0x0,local_290);
+    uVar3 = engine_dosio_c_getFileSizeWithFinder_FUN_00481960((char *)0x0,local_290);
     if ((-1 < (int)uVar3) && ((uVar3 & 8) != 0)) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"%s exists and is read only.  Cannot build POD.",local_290);

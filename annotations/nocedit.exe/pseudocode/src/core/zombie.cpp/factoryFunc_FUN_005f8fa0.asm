@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_zombie.cpp_CZombie_ctor_FUN_005f8fe0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_zombie.cpp_factoryFunc_FUN_005f8fa0
     PUSH 0x658475                       ; 005f8fa5 | = "..\\core\\zombie.cpp"
     PUSH 0xbfac                         ; 005f8faa
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005f8faf
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 005f8faf
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005f8fb4
     TEST EAX,EAX                        ; 005f8fb7
     JNZ 0x005f8fbc                      ; 005f8fb9

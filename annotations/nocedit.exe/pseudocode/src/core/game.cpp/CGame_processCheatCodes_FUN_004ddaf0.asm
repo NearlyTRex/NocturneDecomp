@@ -3751,8 +3751,8 @@ section .text
     XOR BL,BL                           ; 004e0318
     PUSH 0x2d8                          ; 004e031a
     MOV byte ptr [0x02d831d8],BL        ; 004e031f | g_InputHistory+1
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004e0325
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 004e0325
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004e032a
     TEST EAX,EAX                        ; 004e032d
     JZ 0x004e033a                       ; 004e032f

@@ -59,9 +59,9 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   ADJ(dest)->pickup_target = (CDemonActor *)0x0;
   ADJ(dest)->base.victim_height = 6.0;
   ADJ(dest)->pickup_attempt_count = iVar4;
-  local_14.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,255.0);
-  local_14.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,40.0);
-  local_14.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(106.0,256.0);
+  local_14.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,255.0);
+  local_14.y = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,40.0);
+  local_14.z = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(106.0,256.0);
   core_boneguy_cpp_hsvToRgb_FUN_0041ba10((CColor3f *)&local_20,(CColor3f *)&local_14);
   fVar2 = 256.0f;
   ADJ(dest)->base.base.base.scale.x = (int)ROUND(ROUND(local_20.x * 256.0f));

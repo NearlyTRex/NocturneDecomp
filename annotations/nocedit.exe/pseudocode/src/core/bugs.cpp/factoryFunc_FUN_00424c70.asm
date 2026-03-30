@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_bugs.cpp_CBugs_ctor_FUN_00424cb0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_bugs.cpp_factoryFunc_FUN_00424c70
     PUSH 0x616ccf                       ; 00424c72 | = "..\\core\\bugs.cpp"
     PUSH 0x199f8                        ; 00424c77
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00424c7c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00424c7c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00424c81
     TEST EAX,EAX                        ; 00424c84
     JNZ 0x00424c89                      ; 00424c86

@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_curtain.cpp_CCurtain_ctor_FUN_004496a0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_curtain.cpp_factoryFunc_FUN_00449660
     PUSH 0x619bc3                       ; 00449662 | = "..\\core\\curtain.cpp"
     PUSH 0x65b38                        ; 00449667
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0044966c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0044966c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00449671
     TEST EAX,EAX                        ; 00449674
     JNZ 0x00449679                      ; 00449676

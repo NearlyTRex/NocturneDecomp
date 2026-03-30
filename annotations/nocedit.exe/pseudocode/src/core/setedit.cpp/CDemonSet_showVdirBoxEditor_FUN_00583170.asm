@@ -234,8 +234,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x4e]      ; 00583272
     ADD EDX,EAX                         ; 00583275
     MOV dword ptr [EBP + 0x52],EDX      ; 00583277
-    CALL wincore_winrun.cpp_doNothing_FUN_005f2f80 ; 0058327a
-        ;   XREF to: 005f2f80 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing_FUN_005f2f80()
+    CALL wincore_winrun.cpp_doNothing1_FUN_005f2f80 ; 0058327a
+        ;   XREF to: 005f2f80 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing1_FUN_005f2f80()
         ;   Label: LAB_0058327a
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0058327f
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
@@ -1045,8 +1045,8 @@ section .text
     PUSH 0x648ddf                       ; 00583ca0 | = "Delete the selected box?"
     MOV ESI,dword ptr [0x00678a60]      ; 00583ca5 | g_CEditorToolsPtr
     PUSH ESI                            ; 00583cab | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 00583cac
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 00583cac
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00583cb1
     TEST EAX,EAX                        ; 00583cb4
     JZ 0x00583d09                       ; 00583cb6

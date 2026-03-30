@@ -137,7 +137,7 @@ LAB_00568089:
     case 0x66:
       if ((this_ptr->base).victim != (CCharacter *)0x0) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_164);
-        local_164.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(1.0,5.0);
+        local_164.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(1.0,5.0);
         pCVar5 = (this_ptr->base).victim;
         (*(((pCVar5->base).vtable._uc)->_uc).processDamage)(pCVar5,&local_164);
       }
@@ -345,7 +345,7 @@ LAB_0056878f:
       break;
     case 4:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1a0);
-      local_1a0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_1a0.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
       pSVar13 = &local_1a0;
       local_1a0.attacker = (CDemonActor *)this_ptr;
       local_1a0.wielder = (CDemonActor *)this_ptr;
@@ -357,7 +357,7 @@ LAB_0056878f:
       pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          ((CDemonActor *)this_ptr,&local_a4,pCVar7);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar7,fVar12,pSVar13);
-      local_1a0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
+      local_1a0.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(15.0,30.0);
       damage_info = &local_1a0;
       fVar9 = 1.0;
       local_1a0.attacker = (CDemonActor *)this_ptr;

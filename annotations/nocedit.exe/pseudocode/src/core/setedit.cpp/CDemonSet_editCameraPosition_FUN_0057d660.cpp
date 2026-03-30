@@ -162,7 +162,7 @@ LAB_0057d6df:
   }
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
-  pvStack_1c = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+  pvStack_1c = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                          (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",0xc81);
   if (pvStack_1c == (void *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";

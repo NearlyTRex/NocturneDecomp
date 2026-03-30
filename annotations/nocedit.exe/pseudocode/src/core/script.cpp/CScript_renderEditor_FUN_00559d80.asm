@@ -25,12 +25,12 @@
 ;   TerminatedCString s_No_script_loaded_0064179b
 ;
 ; Called Functions:
-;   cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00489c20
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0
 ;   cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_00488c70
 ;   cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0
+;   cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0
 ;   cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
 ;   cockpit_drawsurf.cpp_setCurrentFont_FUN_004874c0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
@@ -63,8 +63,8 @@ section .text
     PUSH EDX                            ; 00559db8
     LEA EAX,[ESP + 0x78]                ; 00559db9
     PUSH EAX                            ; 00559dbd
-    CALL cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0 ; 00559dbe
-        ;   XREF to: 00486ea0 (UNCONDITIONAL_CALL)  ; CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0(CDrawSurface * this_ptr, int x, int y, int width, ...)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0 ; 00559dbe
+        ;   XREF to: 00486ea0 (UNCONDITIONAL_CALL)  ; CDrawSurface * cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x18                        ; 00559dc3
     PUSH 0x0                            ; 00559dc6
     CALL cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010 ; 00559dc8

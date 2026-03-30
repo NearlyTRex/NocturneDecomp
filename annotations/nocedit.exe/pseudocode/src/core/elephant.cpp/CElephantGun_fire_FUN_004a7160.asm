@@ -51,7 +51,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60
 ;   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
@@ -111,8 +111,8 @@ section .text
     PUSH 0x40c90fdb                     ; 004a71f4
         ;   Label: LAB_004a71f4
     PUSH 0x0                            ; 004a71f9
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004a71fb
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004a71fb
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV EAX,dword ptr [ESP + 0xa8]      ; 004a7406
         ;   Label: LAB_004a7406
     MOV dword ptr [ESP + 0x60],EAX      ; 004a740d

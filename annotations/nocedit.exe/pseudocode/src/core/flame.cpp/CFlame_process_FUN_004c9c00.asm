@@ -44,7 +44,7 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
@@ -296,8 +296,8 @@ section .text
     PUSH 0x3f866666                     ; 004c9f0c
         ;   Label: LAB_004c9f0c
     PUSH 0x3f733333                     ; 004c9f11
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c9f16
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c9f16
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV EBX,dword ptr [ESI + 0x1b0]     ; 004c9f98
         ;   Label: LAB_004c9f98
     TEST EBX,EBX                        ; 004c9f9e

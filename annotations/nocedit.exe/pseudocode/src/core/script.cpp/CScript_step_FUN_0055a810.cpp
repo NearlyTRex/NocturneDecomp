@@ -908,12 +908,13 @@ joined_r0x0055f6da:
                                               if (0.0 < local_3f80) {
                                                 local_3f80 = local_3f80 * (float)3.1415926535000001 *
                                                              (float)0.0055555555555555497;
-                                                fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10
-                                                                  (-local_3f80,local_3f80);
+                                                fVar7 = 
+                                                  core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
+                                                            (-local_3f80,local_3f80);
                                                 y = 0.0;
                                                 local_14 = fVar7;
                                                 local_14 = 
-                                                  core_actor_cpp_getRandomFloat_FUN_0040cc10
+                                                  core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
                                                             (-local_3f80,local_3f80);
                                                 pCVar10 = core_script_cpp_makeVector_FUN_00567d00
                                                                     (&local_130,local_14,y,fVar7);

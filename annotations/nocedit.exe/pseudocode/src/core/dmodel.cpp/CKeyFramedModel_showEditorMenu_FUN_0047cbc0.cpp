@@ -471,7 +471,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                           (g_CEditorToolsPtr,"Nothing to save!");
               }
               else if (((bVar2) ||
-                       (iVar18 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f060
+                       (iVar18 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
                                            (g_CEditorToolsPtr,"You haven't crammed this model.  Save anyway?"),
                        iVar18 != 0)) &&
                       (iVar18 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70

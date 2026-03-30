@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[4]:
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 at 0040cc2e
 ;   core_actor.cpp_getRandomFloat_FUN_0040cbc0 at 0040cbd1
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10 at 0040cc2e
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70 at 0040ccea
 ;   core_actor.cpp_randomChance_FUN_0040cd10 at 0040cd21
 ;

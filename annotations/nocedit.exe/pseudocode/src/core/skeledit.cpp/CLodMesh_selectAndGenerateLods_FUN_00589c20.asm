@@ -40,7 +40,7 @@
 ;   core_skeledit.cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
@@ -329,8 +329,8 @@ section .text
         ;   Label: LAB_00589edb
     MOV ESI,dword ptr [0x00678a60]      ; 00589edc | g_CEditorToolsPtr
     PUSH ESI                            ; 00589ee2 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 00589ee3
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 00589ee3
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00589ee8
     TEST EAX,EAX                        ; 00589eeb
     JZ 0x00589c54                       ; 00589eed

@@ -39,9 +39,9 @@ void __cdecl enqueueInput(int input_value);
 // Address: 005f2f70
 void __cdecl setValue(int val);
 
-// Original: wincore_winrun.cpp_doNothing_FUN_005f2f80
+// Original: wincore_winrun.cpp_doNothing1_FUN_005f2f80
 // Address: 005f2f80
-void __cdecl doNothing(void);
+void __cdecl doNothing1(void);
 
 // Original: wincore_winrun.cpp_plotClippedPixel_FUN_005f2f90
 // Address: 005f2f90
@@ -127,9 +127,9 @@ void __cdecl setRegistryStringValue(char *key_path,char *value_name,char *value_
 // Address: 005f4310
 void __cdecl initJoystick(void);
 
-// Original: wincore_winrun.cpp_doNothing_FUN_005f4380
+// Original: wincore_winrun.cpp_doNothing2_FUN_005f4380
 // Address: 005f4380
-void __cdecl doNothing(void);
+void __cdecl doNothing2(void);
 
 // Original: wincore_winrun.cpp_getJoystickState_FUN_005f43a0
 // Address: 005f43a0

@@ -7,9 +7,9 @@
 // Address: 00421650
 void __cdecl staticInit(void);
 
-// Original: core_boxactor.cpp_factoryFunc_FUN_004216c0
+// Original: core_boxactor.cpp_factoryFuncBoxActor_FUN_004216c0
 // Address: 004216c0
-CBoxActor * __cdecl factoryFunc(void);
+CBoxActor * __cdecl factoryFuncBoxActor(void);
 
 // Original: core_boxactor.cpp_CBoxActor_getActorType_FUN_004216f0
 // Address: 004216f0
@@ -107,9 +107,9 @@ void __cdecl CBoxActor::processInEditor(CBoxActor *this_ptr);
 // Address: 00422900
 void __cdecl CBoxActor::addFilesToExtract(CBoxActor *this_ptr,_FILE *file_handle);
 
-// Original: core_boxactor.cpp_factoryFunc_FUN_00422950
+// Original: core_boxactor.cpp_factoryFuncLightActor_FUN_00422950
 // Address: 00422950
-CLightActor * __cdecl factoryFunc(void);
+CLightActor * __cdecl factoryFuncLightActor(void);
 
 // Original: core_boxactor.cpp_CLightActor_getActorType_FUN_00422980
 // Address: 00422980

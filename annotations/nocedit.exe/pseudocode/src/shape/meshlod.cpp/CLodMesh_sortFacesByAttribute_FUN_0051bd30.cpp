@@ -89,9 +89,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMe
           uStack_84 = puVar2[0xf];
           local_80 = puVar2[0x10];
           src_ptr = (float *)(puVar2 + 0x11);
-          shape_meshlod_cpp_copyFloat_FUN_0051f0b0(&local_7c,src_ptr);
-          shape_meshlod_cpp_copyFloat_FUN_0051f0a0(&local_78,(float *)(puVar2 + 0x12));
-          shape_meshlod_cpp_copyFloat_FUN_0051f090(&local_74,(float *)(puVar2 + 0x13));
+          shape_meshlod_cpp_copyFloat3_FUN_0051f0b0(&local_7c,src_ptr);
+          shape_meshlod_cpp_copyFloat2_FUN_0051f0a0(&local_78,(float *)(puVar2 + 0x12));
+          shape_meshlod_cpp_copyFloat1_FUN_0051f090(&local_74,(float *)(puVar2 + 0x13));
           local_70 = puVar2[0x14];
           __arrcopy(local_6c,puVar2 + 0x15,3,&g_CVectorTypeInfo);
           uVar11 = puVar2[0x1e];

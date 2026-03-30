@@ -28,7 +28,7 @@
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_004702f0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_string.c__strcmp_FUN_005fef20
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -95,8 +95,8 @@ section .text
     PUSH 0x58                           ; 004700d5
     PUSH 0x61e4f1                       ; 004700d7 | = "..\\core\\dfilter.cpp"
     PUSH 0x4c                           ; 004700dc
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004700de
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 004700de
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004700e3
     TEST EAX,EAX                        ; 004700e6
     JZ 0x004700f3                       ; 004700e8

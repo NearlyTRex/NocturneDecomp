@@ -81,8 +81,9 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
   iStack_40 = 0;
   if (0 < iVar9) {
     do {
-      fVar10 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
-      fVar11 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,(float)(fVar6 * (float10)fVar1));
+      fVar10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,6.2831855);
+      fVar11 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
+                         (0.0,(float)(fVar6 * (float10)fVar1));
       fVar14 = (float10)fcos((float10)fVar10);
       fVar7 = (float10)fsin((float10)fVar10);
       CStack_b0.x = (float)(fVar14 * (float10)fVar11);

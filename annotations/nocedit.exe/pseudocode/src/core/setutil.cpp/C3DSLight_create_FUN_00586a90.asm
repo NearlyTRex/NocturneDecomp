@@ -24,7 +24,7 @@
 ;   core_dlight.cpp_CDemonLight_ctor_FUN_004726a0
 ;   core_dlight.cpp_CDemonLight_init_FUN_004727c0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     PUSH 0x2f8                          ; 00586a9b
     PUSH 0x64961f                       ; 00586aa0 | = "..\\core\\setutil.cpp"
     PUSH 0x2fac                         ; 00586aa5
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00586aaa
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00586aaa
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00586aaf
     TEST EAX,EAX                        ; 00586ab2
     JNZ 0x00586bbe                      ; 00586ab4

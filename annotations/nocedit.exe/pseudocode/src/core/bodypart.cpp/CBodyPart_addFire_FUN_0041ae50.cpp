@@ -62,7 +62,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_pt
         iVar3 = iVar3 + 4;
       } while (iVar5 < this_ptr->tri_count);
     }
-    fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(12.0,20.0);
+    fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(12.0,20.0);
     this_ptr->fire_time_remaining = (int)fVar4;
   }
   return;

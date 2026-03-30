@@ -142,7 +142,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
                          (pCVar3,&local_158,this_ptr->bone_indices[3]);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_98,pCVar9);
-      fVar13 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
+      fVar13 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(8.0,12.0);
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
                 (g_CGorePtr,&local_98,(CVector3f *)0x0,
                  (int)ROUND(ROUND(fVar13 * (float)0.25)),0);
@@ -175,7 +175,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
     if ((EVar12 == DEATH_STATE_ALIVE) &&
        ((CHero *)(this_ptr->base).victim == g_HeroActors[g_LocalHeroIndex])) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_2a8);
-      local_2a8.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_2a8.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
       local_2a8.attacker = (CDemonActor *)this_ptr;
       local_2a8.wielder = (CDemonActor *)this_ptr;
       pSVar17 = &local_2a8;
@@ -188,7 +188,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
       pCVar18 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                           ((CDemonActor *)this_ptr,&local_140,pCVar18);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar18,fVar13,pSVar17);
-      local_2a8.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_2a8.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
       local_2a8.attacker = (CDemonActor *)this_ptr;
       local_2a8.wielder = (CDemonActor *)this_ptr;
       pSVar22 = &local_2a8;
@@ -201,7 +201,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
       pCVar18 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                           ((CDemonActor *)this_ptr,&local_188,pCVar18);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(&this_ptr->base,pCVar18,fVar13,pSVar22);
-      local_2a8.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_2a8.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
       pSVar22 = &local_2a8;
       local_2a8.attacker = (CDemonActor *)this_ptr;
       local_2a8.wielder = (CDemonActor *)this_ptr;
@@ -221,7 +221,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
         if (2 < uVar5) {
           if (g_HeroActors[g_LocalHeroIndex] != (CHero *)(this_ptr->base).victim) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffce0);
-            core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+            core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
             pSVar22 = (SDamageInfo *)&stack0xfffffce0;
             fVar16 = 0.4;
             pCVar18 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
@@ -460,7 +460,7 @@ LAB_005f092a:
       pCVar3 = &(this_ptr->base).base.model;
       if (uVar5 < 5) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_26c);
-        local_26c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+        local_26c.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
         local_26c.attacker = (CDemonActor *)this_ptr;
         local_26c.wielder = (CDemonActor *)this_ptr;
         pSVar22 = &local_26c;
@@ -498,7 +498,7 @@ LAB_005f092a:
         }
         if (g_HeroActors[g_LocalHeroIndex] != (CHero *)(this_ptr->base).victim) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_230);
-          local_230.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+          local_230.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
           local_230.attacker = (CDemonActor *)this_ptr;
           local_230.wielder = (CDemonActor *)this_ptr;
           pSVar22 = &local_230;
@@ -545,7 +545,7 @@ LAB_005f092a:
 LAB_005f04ff:
         if ((CHero *)(this_ptr->base).victim != g_HeroActors[g_LocalHeroIndex]) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_2e4);
-          local_2e4.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+          local_2e4.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
           local_2e4.attacker = (CDemonActor *)this_ptr;
           local_2e4.wielder = (CDemonActor *)this_ptr;
           pSVar22 = &local_2e4;

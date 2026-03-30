@@ -112,7 +112,7 @@ LAB_005b8655:
       goto LAB_005b84db;
     }
   }
-  fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.75,1.25);
+  fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.75,1.25);
   this_ptr->wait_timer = fVar6 * this_ptr->period;
 LAB_005b84db:
   pCVar1 = &(this_ptr->base).location;

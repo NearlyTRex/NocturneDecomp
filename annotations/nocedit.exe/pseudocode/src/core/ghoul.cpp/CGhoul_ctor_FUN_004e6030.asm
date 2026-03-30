@@ -14,7 +14,7 @@
 ;   CDemonActor_vtable g_CGhoulVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;
@@ -40,6 +40,6 @@ section .text
     ADD ESP,0x8                         ; 004e605a
     PUSH 0x420c0000                     ; 004e605d
     PUSH 0x41a00000                     ; 004e6062
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004e6067
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004e6067
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

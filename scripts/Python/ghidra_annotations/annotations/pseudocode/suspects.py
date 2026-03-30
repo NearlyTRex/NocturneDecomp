@@ -64,6 +64,7 @@ SUSPECT_SEVERITY = {
     'unknown_field': 'mild',
     'undefined_ram': 'mild',
     'unnamed_field': 'mild',
+    'unknown_param': 'mild',
     'register_param': 'mild',
     'negative_offset': 'mild',
     'decompiler_intrinsic': 'mild',
@@ -161,6 +162,8 @@ _SUSPECT_PATTERN_DEFS = [
     (r'\b[pu]?uRam[0-9a-fA-F]+\b', 'undefined_ram', 'Undefined RAM reference'),
     # param_N or paramN - Unnamed function parameters (need meaningful names)
     (r'\bparam_?\d+\b', 'unnamed_param', 'Unnamed function parameter'),
+    # Parameters or variables with "unknown" in the name - flagged for later investigation
+    (r'\bunknown_\w+\b', 'unknown_param', 'Parameter/variable named unknown (needs investigation)'),
     # local_XX - Unnamed local variables (need meaningful names)
     (r'\blocal_[0-9a-fA-F]+\b', 'unnamed_local', 'Unnamed local variable'),
     # --- Stack alignment / FPU decompiler artifacts (severity indicators) ---

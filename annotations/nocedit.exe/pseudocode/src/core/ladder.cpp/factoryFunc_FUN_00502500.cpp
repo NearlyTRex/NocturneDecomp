@@ -11,7 +11,7 @@ CLadder * __cdecl core_ladder_cpp_factoryFunc_FUN_00502500(void)
 {
   CLadder *pCVar1;
   
-  pCVar1 = (CLadder *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x300,"..\\core\\ladder.cpp",0x2d);
+  pCVar1 = (CLadder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x300,"..\\core\\ladder.cpp",0x2d);
   if (pCVar1 == (CLadder *)0x0) {
     return (CLadder *)0x0;
   }

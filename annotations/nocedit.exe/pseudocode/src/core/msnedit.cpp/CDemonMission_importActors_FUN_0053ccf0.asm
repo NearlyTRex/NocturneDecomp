@@ -64,8 +64,8 @@ section .text
     PUSH 0x63c8ea                       ; 0053cd00 | = "Use a saved game file instead of a mi..."
     MOV EDX,dword ptr [0x00678a60]      ; 0053cd05 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 0053cd0b | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0053cd0c
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 0053cd0c
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0053cd11
     MOV EBX,EAX                         ; 0053cd14
     TEST EAX,EAX                        ; 0053cd16
@@ -121,8 +121,8 @@ section .text
     PUSH 0xbef                          ; 0053cd99
     PUSH 0x63c997                       ; 0053cd9e | = "..\\core\\msnedit.cpp"
     PUSH 0x27d0                         ; 0053cda3
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0053cda8
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0053cda8
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0053cdad
     MOV dword ptr [ESP + 0x43c],EAX     ; 0053cdb0
     TEST EAX,EAX                        ; 0053cdb7

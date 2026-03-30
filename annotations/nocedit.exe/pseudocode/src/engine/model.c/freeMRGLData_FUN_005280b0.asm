@@ -20,7 +20,7 @@
 ;   TerminatedCString s_engine_model_c_00639bc5
 ;
 ; Called Functions:
-;   engine_boss.c_modelStructNotSupported_FUN_0041dbb0
+;   engine_boss.c_modelStructNotSupported3_FUN_0041dbb0
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
 ;
 ; *****************************************************************************
@@ -43,8 +43,8 @@ section .text
     JNZ 0x00528128                      ; 005280c7
         ;   XREF to: 00528128 (CONDITIONAL_JUMP)  ; LAB_00528128
     PUSH EBP                            ; 005280c9
-    CALL engine_boss.c_modelStructNotSupported_FUN_0041dbb0 ; 005280ca
-        ;   XREF to: 0041dbb0 (UNCONDITIONAL_CALL)  ; void engine_boss.c_modelStructNotSupported_FUN_0041dbb0(SMRGLHeaderExtended * mrgl_data)
+    CALL engine_boss.c_modelStructNotSupported3_FUN_0041dbb0 ; 005280ca
+        ;   XREF to: 0041dbb0 (UNCONDITIONAL_CALL)  ; void engine_boss.c_modelStructNotSupported3_FUN_0041dbb0(SMRGLHeaderExtended * mrgl_data)
     ADD ESP,0x4                         ; 005280cf
     POP EBP                             ; 005280d2
         ;   Label: LAB_005280d2

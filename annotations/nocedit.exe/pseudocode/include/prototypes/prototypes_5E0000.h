@@ -76,8 +76,8 @@ void __cdecl support_trisock_cpp_createNetworkAddr_FUN_005e1940(SNetworkAddr *de
 SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_005e1960(SNetworkAddr *dest_addr,SOCKADDR *src_addr);
 SOCKADDR_IN * __stack_esi support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer);
 void __cdecl support_trisock_cpp_formatSocketAddress_FUN_005e1a30(char *output_buffer,SNetworkAddr *network_addr);
-int __cdecl support_trisock_cpp_shouldNeverBeCalled_FUN_005e1a80(int unknown1,int unknown2);
-int __cdecl support_trisock_cpp_shouldNeverBeCalled_FUN_005e1ab0(int unknown1,int unknown2);
+int __cdecl support_trisock_cpp_shouldNeverBeCalled1_FUN_005e1a80(int unknown1,int unknown2);
+int __cdecl support_trisock_cpp_shouldNeverBeCalled2_FUN_005e1ab0(int unknown1,int unknown2);
 _SOCKET * __cdecl support_trisock_cpp_invalidateSocket_FUN_005e1ae0(_SOCKET *socket_handle);
 _SOCKET * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(_SOCKET *socket_handle);
 int __cdecl support_trisock_cpp_createSocket_FUN_005e1b10(_SOCKET *socket_handle);

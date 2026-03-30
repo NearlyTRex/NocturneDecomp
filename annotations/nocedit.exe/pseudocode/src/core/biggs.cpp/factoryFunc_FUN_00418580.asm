@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_biggs.cpp_CBiggs_ctor_FUN_004185c0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_biggs.cpp_factoryFunc_FUN_00418580
     PUSH 0x615aa8                       ; 00418582 | = "..\\core\\biggs.cpp"
     PUSH 0xccd0                         ; 00418587
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0041858c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0041858c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00418591
     TEST EAX,EAX                        ; 00418594
     JNZ 0x00418599                      ; 00418596

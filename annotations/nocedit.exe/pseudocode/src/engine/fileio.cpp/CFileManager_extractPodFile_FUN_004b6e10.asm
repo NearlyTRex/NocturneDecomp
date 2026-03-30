@@ -154,8 +154,8 @@ section .text
     PUSH 0x627b6e                       ; 004b6ee6 | = "Warning!  This .POD file has an inval..."
     MOV EBX,dword ptr [0x00678a60]      ; 004b6eeb | g_CEditorToolsPtr | g_CEditorToolsInstance
     PUSH EBX                            ; 004b6ef1 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 004b6ef2
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 004b6ef2
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x10                        ; 004b6ef7
     TEST EAX,EAX                        ; 004b6efa
     JZ 0x004b724a                       ; 004b6efc
@@ -349,8 +349,8 @@ section .text
     PUSH 0x627d5e                       ; 004b716f | = "%s is currently mounted.\nDo you want..."
     MOV EDX,dword ptr [0x00678a60]      ; 004b7174 | g_CEditorToolsPtr | g_CEditorToolsInstance
     PUSH EDX                            ; 004b717a | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 004b717b
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 004b717b
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0xc                         ; 004b7180
     TEST EAX,EAX                        ; 004b7183
     JZ 0x004b71e8                       ; 004b7185

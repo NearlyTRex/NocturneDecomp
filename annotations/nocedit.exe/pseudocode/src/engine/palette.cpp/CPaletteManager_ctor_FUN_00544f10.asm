@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 00544f26
     PUSH EAX                            ; 00544f2a
     MOV dword ptr [EBX + 0x8],EDX       ; 00544f2b
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00544f2e
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 00544f2e
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00544f33
     MOV dword ptr [EBX + 0x4],EAX       ; 00544f36
     TEST EAX,EAX                        ; 00544f39

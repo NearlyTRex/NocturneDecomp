@@ -23,7 +23,7 @@ void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *m
   
   iVar1 = (mrgl->base).type;
   if (iVar1 == 0x26) {
-    engine_boss_c_modelStructNotSupported_FUN_0041dc20(mrgl);
+    engine_boss_c_modelStructNotSupported5_FUN_0041dc20(mrgl);
   }
   else {
     while (iVar1 != 0) {

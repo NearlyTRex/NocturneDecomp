@@ -44,7 +44,7 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
-;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70
+;   engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
 ;
 ; *****************************************************************************
@@ -94,8 +94,8 @@ section .text
     MOV EAX,[0x006703ec]                ; 004c5efa | g_CDemonRendererPtr2
     PUSH dword ptr [EBX + 0x14]         ; 004c5eff
     PUSH EAX                            ; 004c5f02 | g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70 ; 004c5f03
-        ;   XREF to: 0048ca70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70(CDemonRenderer * this_ptr, float render_alpha)
+    CALL engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70 ; 004c5f03
+        ;   XREF to: 0048ca70 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70(CDemonRenderer * this_ptr, float render_alpha)
     ADD ESP,0x8                         ; 004c5f08
     PUSH ESI                            ; 004c5f0b
     MOV EDX,dword ptr [0x006703ec]      ; 004c5f0c | g_CDemonRendererPtr2

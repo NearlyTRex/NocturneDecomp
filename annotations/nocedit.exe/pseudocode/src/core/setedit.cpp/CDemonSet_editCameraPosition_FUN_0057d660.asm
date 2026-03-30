@@ -335,8 +335,8 @@ section .text
     PUSH 0xc81                          ; 0057d966
     PUSH 0x647e78                       ; 0057d96b | = "..\\core\\setedit.cpp"
     PUSH EAX                            ; 0057d970
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0057d971
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 0057d971
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0057d976
     MOV dword ptr [ESP + 0x1164],EAX    ; 0057d979
     TEST EAX,EAX                        ; 0057d980

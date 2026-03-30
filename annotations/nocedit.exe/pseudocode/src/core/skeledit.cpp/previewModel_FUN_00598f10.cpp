@@ -12,7 +12,7 @@ void __cdecl core_skeledit_cpp_previewModel_FUN_00598f10(char *model_name)
   CDeformableModelInstance *this_ptr;
   CDeformableModelInstance *this_ptr_00;
   
-  this_ptr = (CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+  this_ptr = (CDeformableModelInstance *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
                        (0x22b4,"..\\core\\skeledit.cpp",0x1b79);
   this_ptr_00 = (CDeformableModelInstance *)0x0;
   if (this_ptr != (CDeformableModelInstance *)0x0) {

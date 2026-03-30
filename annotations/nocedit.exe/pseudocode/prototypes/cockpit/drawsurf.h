@@ -7,9 +7,9 @@
 // Address: 00486e70
 CDrawSurface * __cdecl CDrawSurface::ctor(CDrawSurface *this_ptr);
 
-// Original: cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0
+// Original: cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00486ea0
 // Address: 00486ea0
-CDrawSurface * __cdecl CDrawSurface::ctor(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
+CDrawSurface * __cdecl CDrawSurface::initFromParent(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0
 // Address: 00486ee0

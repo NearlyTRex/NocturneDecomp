@@ -44,7 +44,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004f38d0
@@ -456,8 +456,8 @@ section .text
     ADD ESP,0x4                         ; 005be180
     PUSH 0x41700000                     ; 005be183
     PUSH 0x41200000                     ; 005be188
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005be18d
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005be18d
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [EBX + 0x2598],0x0    ; 005be262
         ;   Label: LAB_005be262
     JMP 0x005bddf2                      ; 005be26c

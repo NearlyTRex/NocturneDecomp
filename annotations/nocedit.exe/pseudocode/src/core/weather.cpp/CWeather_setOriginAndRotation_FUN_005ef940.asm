@@ -22,7 +22,7 @@
 ;   CVector3f[200] g_WeatherParticlePositions
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     PUSH 0x42480000                     ; 005ef98d
         ;   Label: LAB_005ef98d
     PUSH 0x40a00000                     ; 005ef992
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005ef997
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005ef997
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV ESP,EBP                         ; 005efb24
         ;   Label: LAB_005efb24
     POP EBP                             ; 005efb26

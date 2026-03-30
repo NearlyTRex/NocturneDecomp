@@ -801,8 +801,8 @@ section .text
     PUSH 0x64b857                       ; 0058fee8 | = "..\\core\\skeledit.cpp"
     SUB EAX,EDX                         ; 0058feed
     PUSH EAX                            ; 0058feef
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0058fef0
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 0058fef0
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0058fef5
     MOV dword ptr [ESP + 0xa074],EAX    ; 0058fef8
     TEST EAX,EAX                        ; 0058feff
@@ -937,8 +937,8 @@ section .text
     PUSH 0x64b919                       ; 005900a3 | = "..\\core\\skeledit.cpp"
     ADD EAX,0x4                         ; 005900a8
     PUSH EAX                            ; 005900ab
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 005900ac
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 005900ac
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     MOV EDX,EAX                         ; 005900b1
     ADD ESP,0xc                         ; 005900b3
     TEST EAX,EAX                        ; 005900b6
@@ -1332,8 +1332,8 @@ section .text
     PUSH 0x64ba51                       ; 00590694 | = "..\\core\\skeledit.cpp"
     ADD EAX,0x4                         ; 00590699
     PUSH EAX                            ; 0059069c
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0059069d
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 0059069d
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     MOV EDX,EAX                         ; 005906a2
     ADD ESP,0xc                         ; 005906a4
     TEST EAX,EAX                        ; 005906a7
@@ -1353,8 +1353,8 @@ section .text
     ADD EAX,0x4                         ; 005906d4
     PUSH EAX                            ; 005906d7
     MOV dword ptr [ESP + 0xa088],EDX    ; 005906d8
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 005906df
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 005906df
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005906e4
     TEST EAX,EAX                        ; 005906e7
     JZ 0x005906f1                       ; 005906e9
@@ -1543,8 +1543,8 @@ section .text
     PUSH 0x64bafa                       ; 0059098f | = "..\\core\\skeledit.cpp"
     LEA EAX,[EDI*0x4 + 0x0]             ; 00590994
     PUSH EAX                            ; 0059099b
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0059099c
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 0059099c
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005909a1
     MOV dword ptr [ESP + 0xa084],EAX    ; 005909a4
     TEST EAX,EAX                        ; 005909ab
@@ -2150,8 +2150,8 @@ section .text
     PUSH 0x64bb72                       ; 0059125b | = "..\\core\\skeledit.cpp"
     SHL EAX,0x2                         ; 00591260
     PUSH EAX                            ; 00591263
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00591264
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 00591264
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00591269
     MOV EBX,EAX                         ; 0059126c
     MOV dword ptr [ESP + 0xa088],EAX    ; 0059126e
@@ -2161,8 +2161,8 @@ section .text
     PUSH 0x64bb87                       ; 00591280 | = "..\\core\\skeledit.cpp"
     SHL EAX,0x2                         ; 00591285
     PUSH EAX                            ; 00591288
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00591289
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 00591289
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0059128e
     MOV dword ptr [ESP + 0xa108],EAX    ; 00591291
     TEST EBX,EBX                        ; 00591298
@@ -2432,8 +2432,8 @@ section .text
     PUSH 0x64bd30                       ; 00591601 | = "..\\core\\skeledit.cpp"
     ADD EAX,EAX                         ; 00591606
     PUSH EAX                            ; 00591608
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00591609
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 00591609
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0059160e
     MOV EBX,EAX                         ; 00591611
     MOV dword ptr [ESP + 0xa0a8],EAX    ; 00591613
@@ -2445,8 +2445,8 @@ section .text
     PUSH 0x64bd45                       ; 0059162e | = "..\\core\\skeledit.cpp"
     SHL EAX,0x2                         ; 00591633
     PUSH EAX                            ; 00591636
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00591637
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 00591637
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0059163c
     MOV dword ptr [ESP + 0xa0ac],EAX    ; 0059163f
     TEST EBX,EBX                        ; 00591646
@@ -2534,8 +2534,8 @@ section .text
     PUSH 0x64bde7                       ; 00591766 | = "..\\core\\skeledit.cpp"
     LEA EAX,[EDI*0x4 + 0x0]             ; 0059176b
     PUSH EAX                            ; 00591772
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00591773
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 00591773
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00591778
     MOV EDX,dword ptr [EBP + 0x14]      ; 0059177b
     MOV dword ptr [EDX + 0xa4],EAX      ; 0059177e

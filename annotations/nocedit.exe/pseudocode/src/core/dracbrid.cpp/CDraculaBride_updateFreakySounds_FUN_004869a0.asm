@@ -48,7 +48,7 @@
 ;   ... and 17 more
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_spline.cpp_computeSplineBasis_FUN_005b90a0
 ;   core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0
 ;   core_spline.cpp_evaluateSplineTangent3D_FUN_005b9490
@@ -193,8 +193,8 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 00486af5 | g_CDemonCameraInstance.base.position+8
     PUSH 0xc0a00000                     ; 00486af7
     MOV dword ptr [ESP + 0x30],EAX      ; 00486afc
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00486b00
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00486b00
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV EAX,dword ptr [ESP + 0x54]      ; 00486b9d
         ;   Label: LAB_00486b9d
     MOV dword ptr [EAX + 0x50],0x0      ; 00486ba1 | SFreaky_ARRAY_02c6d0c0[1].owner

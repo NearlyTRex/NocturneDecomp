@@ -121,16 +121,15 @@
   },
   "complexity": {
     "assembly_lines": 305,
-    "complexity_score": 439,
+    "complexity_score": 184,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 134,
-    "suspect_count": 29,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "unknown_field",
       "warning_inlined_function"
     ],
     "total_lines": 439
@@ -174,7 +173,7 @@
     {
       "addr": "0040cc10",
       "is_variadic": false,
-      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10"
     },
     {
       "addr": "0040cd70",
@@ -342,32 +341,18 @@
     "pcode_op_count": 1664
   },
   "stack_frame": {
-    "frame_size": 244,
-    "local_size": 236,
+    "frame_size": 216,
+    "local_size": 208,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_e8",
-        "offset": -232,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "auStack_cc",
+        "name": "local_cc",
         "offset": -204,
-        "size": 56,
-        "type": "undefined1[56]"
-      },
-      {
-        "is_param": false,
-        "name": "pCStack_94",
-        "offset": -148,
-        "size": 4,
-        "type": "CBoxActor *"
+        "size": 60,
+        "type": "SDamageInfo"
       },
       {
         "is_param": false,
@@ -399,17 +384,59 @@
       },
       {
         "is_param": false,
-        "name": "auStack_60",
+        "name": "local_60",
         "offset": -96,
-        "size": 52,
-        "type": "undefined1[52]"
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "CDemonActor *"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -490,227 +517,27 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 50,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iVar8 = (int)ROUND(ROUND(local_28));",
+      "text": "iVar9 = (int)ROUND(ROUND(local_28));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 50,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iVar8 = (int)ROUND(ROUND(local_28));",
+      "text": "iVar9 = (int)ROUND(ROUND(local_28));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 56,
-      "match": "._44_4_",
-      "severity": "mild",
-      "text": "auStack_60._44_4_ = (this_ptr->rpm).x * delta_time;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 57,
-      "match": "._48_4_",
-      "severity": "mild",
-      "text": "auStack_60._48_4_ = (this_ptr->rpm).y * delta_time;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 58,
-      "match": "._44_4_",
-      "severity": "mild",
-      "text": "local_88 = (float)auStack_60._44_4_ * 0.1047198f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 60,
-      "match": "._48_4_",
-      "severity": "mild",
-      "text": "local_84 = (float)auStack_60._48_4_ * 0.1047198f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 93,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "auStack_60._0_4_ = (this_ptr->base).location.position.z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 105,
-      "match": "._36_4_",
-      "severity": "mild",
-      "text": "auStack_60._36_4_ = (pCVar9->min).x + (pCVar9->max).x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 106,
-      "match": "._40_4_",
-      "severity": "mild",
-      "text": "auStack_60._40_4_ = (pCVar9->min).y + (pCVar9->max).y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 107,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "auStack_60._12_4_ = (float)auStack_60._36_4_ * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 107,
-      "match": "._36_4_",
-      "severity": "mild",
-      "text": "auStack_60._12_4_ = (float)auStack_60._36_4_ * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 108,
-      "match": "._44_4_",
-      "severity": "mild",
-      "text": "auStack_60._44_4_ = (pCVar9->min).z + (pCVar9->max).z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 109,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "auStack_60._16_4_ = (float)auStack_60._40_4_ * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 109,
-      "match": "._40_4_",
-      "severity": "mild",
-      "text": "auStack_60._16_4_ = (float)auStack_60._40_4_ * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 110,
-      "match": "._20_4_",
-      "severity": "mild",
-      "text": "auStack_60._20_4_ = (float)auStack_60._44_4_ * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 110,
-      "match": "._44_4_",
-      "severity": "mild",
-      "text": "auStack_60._20_4_ = (float)auStack_60._44_4_ * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 111,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "local_6c.x = -(float)auStack_60._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 112,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "local_6c.y = -(float)auStack_60._16_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 113,
-      "match": "._20_4_",
-      "severity": "mild",
-      "text": "local_6c.z = -(float)auStack_60._20_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 116,
-      "match": "._24_4_",
-      "severity": "mild",
-      "text": "auStack_60._24_4_ = (this_ptr->physics_box).position.x + pCVar10->x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 117,
-      "match": "._28_4_",
-      "severity": "mild",
-      "text": "auStack_60._28_4_ = (this_ptr->physics_box).position.y + pCVar10->y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 119,
-      "match": "._32_4_",
-      "severity": "mild",
-      "text": "auStack_60._32_4_ = (this_ptr->physics_box).position.z + pCVar10->z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 120,
-      "match": "._24_4_",
-      "severity": "mild",
-      "text": "(actor_position_00->position).x = (float)auStack_60._24_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 121,
-      "match": "._28_4_",
-      "severity": "mild",
-      "text": "(this_ptr->base).location.position.y = (float)auStack_60._28_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 122,
-      "match": "._32_4_",
-      "severity": "mild",
-      "text": "(this_ptr->base).location.position.z = (float)auStack_60._32_4_;",
-      "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 126,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar6 = SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar6 * fVar6);",
+      "text": "fVar8 = SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar8 * fVar8);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 129,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_cc._4_4_ = fVar6 * this_ptr->weight_in_pounds * 0.2f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 130,
-      "match": "._52_4_",
-      "severity": "mild",
-      "text": "auStack_cc._52_4_ = this_ptr;",
-      "type": "unknown_field"
     }
   ],
   "vtable_info": {

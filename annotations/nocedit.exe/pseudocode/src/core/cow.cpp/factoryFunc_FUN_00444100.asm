@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_cow.cpp_CZombieCow_ctor_FUN_00444140
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_cow.cpp_factoryFunc_FUN_00444100
     PUSH 0x619460                       ; 00444102 | = "..\\core\\cow.cpp"
     PUSH 0xbef0                         ; 00444107
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0044410c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0044410c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00444111
     TEST EAX,EAX                        ; 00444114
     JNZ 0x00444119                      ; 00444116

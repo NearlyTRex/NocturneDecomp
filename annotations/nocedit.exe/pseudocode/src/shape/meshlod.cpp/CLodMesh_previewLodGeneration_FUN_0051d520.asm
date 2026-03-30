@@ -358,8 +358,8 @@ section .text
     PUSH 0x6382d3                       ; 0051d839 | = "Good enough?"
     MOV EAX,[0x00678a60]                ; 0051d83e | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 0051d843 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 0051d844
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 0051d844
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0051d849
     TEST EAX,EAX                        ; 0051d84c
     JNZ 0x0051d972                      ; 0051d84e

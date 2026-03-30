@@ -18,7 +18,7 @@
 ;   float FLOAT_0065b5c8 = 0.5
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_004272f0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
@@ -152,8 +152,8 @@ section .text
     FSTP float ptr [ESP + 0x10]         ; 00424fd0
     PUSH dword ptr [ESP + 0x10]         ; 00424fd4
     MOV dword ptr [ESI + 0x4],EAX       ; 00424fd8
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00424fdb
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00424fdb
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV EBX,dword ptr [EBP + 0x14]      ; 00425083
         ;   Label: LAB_00425083
     PUSH EBX                            ; 00425086

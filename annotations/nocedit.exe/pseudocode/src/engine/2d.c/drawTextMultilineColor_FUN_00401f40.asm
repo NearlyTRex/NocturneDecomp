@@ -18,7 +18,7 @@
 ;   SFontGlyph[224] g_FontTable
 ;
 ; Called Functions:
-;   engine_2d.c_drawCharacterMasked_FUN_00401a10
+;   engine_2d.c_drawCharacterMaskedColor_FUN_00401a10
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     PUSH EBX                            ; 00401f85
     SUB EBX,0x20                        ; 00401f86
     IMUL EBX,EBX,0x91                   ; 00401f89
-    CALL engine_2d.c_drawCharacterMasked_FUN_00401a10 ; 00401f8f
-        ;   XREF to: 00401a10 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacterMasked_FUN_00401a10(int char_code, int x_pos, int y_pos, int color)
+    CALL engine_2d.c_drawCharacterMaskedColor_FUN_00401a10 ; 00401f8f
+        ;   XREF to: 00401a10 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacterMaskedColor_FUN_00401a10(int char_code, int x_pos, int y_pos, int color)
     ADD ESP,0x10                        ; 00401f94
     MOV BL,byte ptr [EBX + 0x666040]    ; 00401f97 | g_FontTable
     AND EBX,0xff                        ; 00401f9d

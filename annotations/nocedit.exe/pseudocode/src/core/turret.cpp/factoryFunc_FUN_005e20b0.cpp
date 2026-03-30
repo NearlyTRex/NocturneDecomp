@@ -11,7 +11,7 @@ CTurret * __cdecl core_turret_cpp_factoryFunc_FUN_005e20b0(void)
 {
   CTurret *pCVar1;
   
-  pCVar1 = (CTurret *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x8bc,"..\\core\\turret.cpp",0xa2);
+  pCVar1 = (CTurret *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x8bc,"..\\core\\turret.cpp",0xa2);
   if (pCVar1 == (CTurret *)0x0) {
     return (CTurret *)0x0;
   }

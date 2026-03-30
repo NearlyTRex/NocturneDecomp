@@ -26,7 +26,7 @@
 ;   undefined4 g_CGameInstance.gratuitous_dismemberment
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
 ;   core_bodypart.cpp_createBodyPart_FUN_00418e10
@@ -87,8 +87,8 @@ section .text
         ;   XREF to: 00527413 (CONDITIONAL_JUMP)  ; LAB_00527413
     PUSH 0x3f800000                     ; 005273e2
     PUSH 0x0                            ; 005273e7
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005273e9
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005273e9
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [ESP + 0x20],EAX      ; 005273ee
     FLD float ptr [ESP + 0x20]          ; 005273f2
     ADD ESP,0x8                         ; 005273f6

@@ -251,10 +251,10 @@ void __cdecl copyPlayerControls(SPlayerControl *dest,SPlayerControl *src);
 // Address: 00543e00
 void __cdecl copyNetAddr(SNetworkAddr *dest,SNetworkAddr *src);
 
-// Original: core_netgame.cpp_copyInteger_FUN_00543e20
+// Original: core_netgame.cpp_assignInt1_FUN_00543e20
 // Address: 00543e20
-int * __cdecl copyInteger(int *dest,int *src);
+int * __cdecl assignInt1(int *dest,int *src);
 
-// Original: core_netgame.cpp_copyInteger_FUN_00543e30
+// Original: core_netgame.cpp_assignInt2_FUN_00543e30
 // Address: 00543e30
-int * __cdecl copyInteger(int *dest,int *src);
+int * __cdecl assignInt2(int *dest,int *src);

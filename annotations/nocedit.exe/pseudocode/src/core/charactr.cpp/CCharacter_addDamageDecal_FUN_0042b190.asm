@@ -46,7 +46,7 @@
 ;   undefined4 g_CDemonSetInstance.collision_triangle_index
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;
 ; *****************************************************************************
 
@@ -138,8 +138,8 @@ section .text
     PUSH 0x3f19999a                     ; 0042b2da
         ;   Label: LAB_0042b2da
     PUSH 0x3e99999a                     ; 0042b2df
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0042b2e4
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0042b2e4
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV ESP,EBP                         ; 0042b566
         ;   Label: LAB_0042b566
     POP EBP                             ; 0042b568

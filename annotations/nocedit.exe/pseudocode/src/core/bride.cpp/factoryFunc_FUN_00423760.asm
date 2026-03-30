@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_bride.cpp_CBride_ctor_FUN_004237a0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_bride.cpp_factoryFunc_FUN_00423760
     PUSH 0x616aa4                       ; 00423762 | = "..\\core\\bride.cpp"
     PUSH 0xbeec                         ; 00423767
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0042376c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0042376c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00423771
     TEST EAX,EAX                        ; 00423774
     JNZ 0x00423779                      ; 00423776

@@ -51,7 +51,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(CBitFont *this_ptr
     g_CurrentLineNumber = 0xeb;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_43c);
   }
-  pvVar3 = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0(iVar5,"..\\engine\\font.cpp",0xf0);
+  pvVar3 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0(iVar5,"..\\engine\\font.cpp",0xf0);
   this_ptr->bitmap_data[this_ptr->bitmap_count] = pvVar3;
   if (this_ptr->bitmap_data[this_ptr->bitmap_count] == (void *)0x0) {
     _sprintf(local_43c,"Unable to allocate memory for font bitmap (%s).",filename);

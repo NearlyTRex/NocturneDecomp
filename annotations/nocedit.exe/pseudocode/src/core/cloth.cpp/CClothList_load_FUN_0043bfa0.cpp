@@ -27,7 +27,7 @@ void __cdecl core_cloth_cpp_CClothList_load_FUN_0043bfa0(CClothList *this_ptr)
         pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00438c00(pCVar3->cloths[0],0);
         shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(pCVar2);
       }
-      this_ptr_00 = (CCloth *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+      this_ptr_00 = (CCloth *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
                               (0x3fe70,"..\\core\\cloth.cpp",0x5a8);
       pCVar2 = (CCloth *)0x0;
       if (this_ptr_00 != (CCloth *)0x0) {

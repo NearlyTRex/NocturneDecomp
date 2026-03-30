@@ -7,7 +7,7 @@
 ; CLarva *         Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a9650
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
@@ -37,6 +37,6 @@ section .text
     ADD ESP,0x4                         ; 00503051
     PUSH 0x41f00000                     ; 00503054
     PUSH 0x0                            ; 00503059
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0050305b
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0050305b
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

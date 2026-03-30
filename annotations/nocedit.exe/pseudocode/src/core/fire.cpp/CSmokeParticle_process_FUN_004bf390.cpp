@@ -25,9 +25,9 @@ void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_004bf390(CSmokeParticle *t
   }
   (this_ptr->position).y =
        fVar3 * this_ptr->vertical_accel * this_ptr->drag_factor + (this_ptr->position).y;
-  fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-1.0,1.0);
+  fVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-1.0,1.0);
   (this_ptr->position).x = fVar5 * fVar3 + (this_ptr->position).x;
-  fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-1.0,1.0);
+  fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-1.0,1.0);
   (this_ptr->position).z = fVar4 * fVar3 + (this_ptr->position).z;
   fVar4 = (this_ptr->wind_influence).y;
   fVar2 = (this_ptr->wind_influence).z;

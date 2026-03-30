@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   crt_string.c__strncpy_FUN_00600f40
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
 ;   shape_quantize.cpp_CBitmap_dtor_FUN_00556c20
@@ -66,8 +66,8 @@ section .text
         ;   Label: LAB_005561af
     PUSH 0x640d9b                       ; 005561b4 | = "..\\shape\\quantize.cpp"
     PUSH 0x28                           ; 005561b9
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005561bb
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 005561bb
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005561c0
     TEST EAX,EAX                        ; 005561c3
     JZ 0x005561ed                       ; 005561c5

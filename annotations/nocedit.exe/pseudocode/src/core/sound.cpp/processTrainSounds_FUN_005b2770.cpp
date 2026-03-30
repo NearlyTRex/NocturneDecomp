@@ -129,7 +129,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
   } while (iVar6 < 10);
   g_TrainNoiseCooldown = g_TrainNoiseCooldown - fVar7;
   if ((g_TrainNoiseCooldown <= 0.0) && (local_1c != (STrainNoise *)0x0)) {
-    g_TrainNoiseCooldown = core_actor_cpp_getRandomFloat_FUN_0040cc10(1.0,5.0);
+    g_TrainNoiseCooldown = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(1.0,5.0);
     local_20 = 20.0;
     local_11c = 1.0;
     pcVar10 = g_TrainSoundFilenameTemplate;
@@ -167,13 +167,13 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
       goto switchD_005b2c8d_caseD_4;
     }
     (local_1c->position).x = 0.0;
-    fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.0,2.0);
+    fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-3.0,2.0);
     fVar2 = fVar7 * local_20 + g_SoundListenerPrev.z;
     (local_1c->position).y = 0.0;
     (local_1c->position).z = fVar2;
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(3);
-    sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a00(&g_TrainVelocityVector);
+    sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_005a8a00(&g_TrainVelocityVector);
     _sprintf(local_b4,"%s @ %g",local_118,(double)local_11c);
     uVar6 = core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
                       (g_CSoundPtr,(CDemonActor *)0x0,local_b4,&local_1c->position);

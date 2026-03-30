@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_stone.cpp_CTempleStone_ctor_FUN_005bad10
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_stone.cpp_factoryFunc_FUN_005bacd0
     PUSH 0x653148                       ; 005bacd2 | = "..\\core\\stone.cpp"
     PUSH 0x670                          ; 005bacd7
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005bacdc
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 005bacdc
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005bace1
     TEST EAX,EAX                        ; 005bace4
     JNZ 0x005bace9                      ; 005bace6

@@ -32,7 +32,7 @@ void __cdecl engine_model_c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended *mrgl_
       shape_memdbg_cpp_debugFree_FUN_0050f460(mrgl_data,"..\\engine\\model.c",0x13c);
       return;
     }
-    engine_boss_c_modelStructNotSupported_FUN_0041dbb0(mrgl_data);
+    engine_boss_c_modelStructNotSupported3_FUN_0041dbb0(mrgl_data);
   }
   return;
 }

@@ -7,7 +7,7 @@
 ; CBaronWeapon *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_baron.cpp_factoryFunc_FUN_00413d00 at 00413d1d
+;   core_baron.cpp_factoryFuncBaronWeapon_FUN_00413d00 at 00413d1d
 ;
 ; Referenced Globals:
 ;   CDemonActor_vtable g_CBaronWeaponVTable

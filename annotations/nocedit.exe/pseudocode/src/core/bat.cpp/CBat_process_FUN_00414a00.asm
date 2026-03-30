@@ -15,7 +15,7 @@
 ;   double DOUBLE_00615386 = 0.700000000000000
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_bat.cpp_CBat_updateCoursePosition_FUN_00414ce0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
@@ -180,6 +180,6 @@ section .text
     PUSH dword ptr [EBX + 0x37c]        ; 00414bbe
         ;   Label: LAB_00414bbe
     PUSH dword ptr [EBX + 0x378]        ; 00414bc4
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00414bca
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00414bca
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

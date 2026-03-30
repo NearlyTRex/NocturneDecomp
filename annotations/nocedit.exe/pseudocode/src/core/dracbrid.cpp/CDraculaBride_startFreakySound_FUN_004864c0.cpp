@@ -47,7 +47,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDrac
   float local_14;
   int bone_index;
   
-  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(1.0,7.0);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(1.0,7.0);
   this_ptr->freaky_timer = fVar2;
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540();
   if (iVar1 != 0) {
@@ -70,11 +70,11 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDrac
         local_2c = pSVar5->control_points[1].x;
         local_28 = pSVar5->control_points[1].y;
         local_24 = pSVar5->control_points[1].z;
-        fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+        fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
         local_2c = fVar2 + local_2c;
-        fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
+        fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-2.0,2.0);
         local_28 = fVar2 + local_28;
-        fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+        fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
         local_6c = fVar2 + local_24;
         local_74 = local_2c;
         local_70 = local_28;
@@ -87,11 +87,11 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDrac
         fVar6 = pSVar5->control_points[1].y;
         fVar1 = pSVar5->control_points[1].z;
         local_24 = local_6c;
-        fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+        fVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
         fVar5 = fVar5 + fVar2;
-        fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
+        fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-2.0,2.0);
         fVar2 = fVar2 + fVar6;
-        fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+        fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
         local_54 = fVar6 + fVar1;
         if (pSVar5->control_points + 2 != (CVector3f *)&local_5c) {
           pSVar5->control_points[2].x = fVar5;
@@ -103,11 +103,11 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDrac
         local_60 = g_CDemonCameraInstance.base.position.f.z;
         local_5c = fVar5;
         local_58 = fVar2;
-        fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+        fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
         local_68 = fVar2 + local_68;
-        fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
+        fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-2.0,2.0);
         local_64 = fVar2 + local_64;
-        fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+        fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-5.0,5.0);
         local_60 = fVar2 + local_60;
         local_38 = local_68;
         local_34 = local_64;
@@ -136,7 +136,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDrac
         }
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940(&pSVar5->position);
-        sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a00(&pSVar5->tangent);
+        sound_sndmain_cpp_setNextSfxTrackedVelocity1_FUN_005a8a00(&pSVar5->tangent);
         sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(volume);
         core_sound_cpp_CSound_findRandomSoundFile_FUN_005b1ed0(g_CSoundPtr,local_174,sound_name);
         uVar4 = sound_sndmain_cpp_startSfx_FUN_005a8e90(local_174);

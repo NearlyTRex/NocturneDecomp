@@ -11,7 +11,7 @@ CBiggs * __cdecl core_biggs_cpp_factoryFunc_FUN_00418580(void)
 {
   CBiggs *pCVar1;
   
-  pCVar1 = (CBiggs *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0xccd0,"..\\core\\biggs.cpp",0x52);
+  pCVar1 = (CBiggs *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xccd0,"..\\core\\biggs.cpp",0x52);
   if (pCVar1 == (CBiggs *)0x0) {
     return (CBiggs *)0x0;
   }

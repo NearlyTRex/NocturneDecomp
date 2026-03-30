@@ -55,13 +55,13 @@ SOCKADDR_IN * __stack_esi buildSockaddrIn(SNetworkAddr *net_addr,SOCKADDR_IN *de
 // Address: 005e1a30
 void __cdecl formatSocketAddress(char *output_buffer,SNetworkAddr *network_addr);
 
-// Original: support_trisock.cpp_shouldNeverBeCalled_FUN_005e1a80
+// Original: support_trisock.cpp_shouldNeverBeCalled1_FUN_005e1a80
 // Address: 005e1a80
-int __cdecl shouldNeverBeCalled(int unknown1,int unknown2);
+int __cdecl shouldNeverBeCalled1(int unknown1,int unknown2);
 
-// Original: support_trisock.cpp_shouldNeverBeCalled_FUN_005e1ab0
+// Original: support_trisock.cpp_shouldNeverBeCalled2_FUN_005e1ab0
 // Address: 005e1ab0
-int __cdecl shouldNeverBeCalled(int unknown1,int unknown2);
+int __cdecl shouldNeverBeCalled2(int unknown1,int unknown2);
 
 // Original: support_trisock.cpp_invalidateSocket_FUN_005e1ae0
 // Address: 005e1ae0

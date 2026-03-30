@@ -144,7 +144,7 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,f
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s escaping from %s\n",this_ptr,pCVar9);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_194);
-          local_194.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+          local_194.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,15.0);
           local_194.attacker = (CDemonActor *)this_ptr;
           local_194.wielder = (CDemonActor *)this_ptr;
           pCVar5 = (CCharacter *)(this_ptr->base).base.grabbed_by;

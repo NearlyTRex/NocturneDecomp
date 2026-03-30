@@ -266,7 +266,7 @@ LAB_005f9541:
           }
         }
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_3ac);
-        local_3ac.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
+        local_3ac.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(15.0,25.0);
         local_3ac.attacker = (CDemonActor *)this_ptr;
         local_3ac.wielder = (CDemonActor *)this_ptr;
         pCVar3 = (this_ptr->base).victim;

@@ -10,7 +10,7 @@
 ;   engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0 at 004b35e5
 ;   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 at 004bb716
 ;   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 at 004ba932
-;   engine_fileio.cpp_logOnAsVersionControlUser_FUN_004bcea0 at 004bcea0
+;   engine_fileio.cpp_logOnAsVersionControlUserThunk_FUN_004bcea0 at 004bcea0
 ;
 ; Referenced Globals:
 ;   IMPERSONATE_LOGGED_ON_USER_FUNC* g_ImpersonateLoggedOnUserFunc = 002119b4

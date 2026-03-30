@@ -19,7 +19,7 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_charactr.cpp_CCharacter_shatter_FUN_0042b8e0
@@ -168,8 +168,8 @@ section .text
     PUSH 0x41200000                     ; 004e895f
         ;   Label: LAB_004e895f
     PUSH 0x40800000                     ; 004e8964
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004e8969
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004e8969
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     PUSH EDI                            ; 004e89a9
         ;   Label: LAB_004e89a9
     PUSH EBX                            ; 004e89aa

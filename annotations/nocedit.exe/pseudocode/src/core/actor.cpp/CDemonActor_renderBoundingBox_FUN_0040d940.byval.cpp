@@ -47,19 +47,19 @@ __asm {
         lea EDI,[ESP + 0x100]
         push EDI
         mov EBX,EAX
-        call core_actor_cpp_copyFloat_FUN_004104f0
+        call core_actor_cpp_copyFloat3_FUN_004104f0
         add ESP,0x8
         lea EDI,[EBX + 0x4]
         push EDI
         lea EDI,[ESP + 0x104]
         push EDI
-        call core_actor_cpp_copyFloat_FUN_004104e0
+        call core_actor_cpp_copyFloat2_FUN_004104e0
         add ESP,0x8
         lea EDI,[EBX + 0x8]
         push EDI
         lea EDI,[ESP + 0x108]
         push EDI
-        call core_actor_cpp_copyFloat_FUN_004104d0
+        call core_actor_cpp_copyFloat1_FUN_004104d0
         add ESP,0x8
         lea EDI,[ESP + 0x120]
         push EDI
@@ -163,19 +163,19 @@ __asm {
         push EAX
         lea EDI,[ESP + 0xe8]
         push EDI
-        call core_actor_cpp_copyFloat_FUN_004104f0
+        call core_actor_cpp_copyFloat3_FUN_004104f0
         add ESP,0x8
         lea EDI,[EBX + 0x4]
         push EDI
         lea EDI,[ESP + 0xec]
         push EDI
-        call core_actor_cpp_copyFloat_FUN_004104e0
+        call core_actor_cpp_copyFloat2_FUN_004104e0
         add ESP,0x8
         lea EDI,[EBX + 0x8]
         push EDI
         lea EDI,[ESP + 0xf0]
         push EDI
-        call core_actor_cpp_copyFloat_FUN_004104d0
+        call core_actor_cpp_copyFloat1_FUN_004104d0
         add ESP,0x8
         lea EDI,[ESP + 0xd8]
         push EDI
@@ -280,19 +280,19 @@ __asm {
         push EAX
         lea EDI,[ESP + 0x118]
         push EDI
-        call core_actor_cpp_copyFloat_FUN_004104f0
+        call core_actor_cpp_copyFloat3_FUN_004104f0
         add ESP,0x8
         lea EDI,[EBX + 0x4]
         push EDI
         lea EDI,[ESP + 0x11c]
         push EDI
-        call core_actor_cpp_copyFloat_FUN_004104e0
+        call core_actor_cpp_copyFloat2_FUN_004104e0
         add ESP,0x8
         lea EDI,[EBX + 0x8]
         push EDI
         lea EDI,[ESP + 0x120]
         push EDI
-        call core_actor_cpp_copyFloat_FUN_004104d0
+        call core_actor_cpp_copyFloat1_FUN_004104d0
         add ESP,0x8
         lea EDI,[ESP + 0x48]
         push EDI

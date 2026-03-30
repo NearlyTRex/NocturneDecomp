@@ -49,7 +49,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0
 ;
 ; *****************************************************************************
 
@@ -563,8 +563,8 @@ section .text
     PUSH 0x61f4b0                       ; 004775c4 | = "..\\core\\dmodel.cpp"
     MOV ESI,dword ptr [EAX + 0x110]     ; 004775c9
     PUSH ESI                            ; 004775cf
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 004775d0
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 004775d0
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004775d5
     MOV EBX,dword ptr [ESP + 0x4c]      ; 004775d8
     MOV dword ptr [EBX + 0x11c],EAX     ; 004775dc

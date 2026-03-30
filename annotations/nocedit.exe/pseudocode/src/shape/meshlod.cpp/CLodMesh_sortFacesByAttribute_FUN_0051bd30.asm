@@ -38,9 +38,9 @@
 ;   core_cloth.cpp_CVector3f_arrdtor_FUN_0043e460
 ;   crt_memory.c___arr_op_FUN_006020c2
 ;   crt_memory.c___arrcopy_FUN_00600bc2
-;   shape_meshlod.cpp_copyFloat_FUN_0051f090
-;   shape_meshlod.cpp_copyFloat_FUN_0051f0a0
-;   shape_meshlod.cpp_copyFloat_FUN_0051f0b0
+;   shape_meshlod.cpp_copyFloat1_FUN_0051f090
+;   shape_meshlod.cpp_copyFloat2_FUN_0051f0a0
+;   shape_meshlod.cpp_copyFloat3_FUN_0051f0b0
 ;
 ; *****************************************************************************
 
@@ -137,24 +137,24 @@ section .text
     LEA EAX,[ESP + 0x48]                ; 0051be56
     PUSH EAX                            ; 0051be5a
     MOV dword ptr [ESP + 0xb4],EBP      ; 0051be5b
-    CALL shape_meshlod.cpp_copyFloat_FUN_0051f0b0 ; 0051be62
-        ;   XREF to: 0051f0b0 (UNCONDITIONAL_CALL)  ; float * shape_meshlod.cpp_copyFloat_FUN_0051f0b0(float * dest_ptr, float * src_ptr)
+    CALL shape_meshlod.cpp_copyFloat3_FUN_0051f0b0 ; 0051be62
+        ;   XREF to: 0051f0b0 (UNCONDITIONAL_CALL)  ; float * shape_meshlod.cpp_copyFloat3_FUN_0051f0b0(float * dest_ptr, float * src_ptr)
     MOV EAX,ESI                         ; 0051be67
     ADD ESP,0x8                         ; 0051be69
     ADD EAX,0x4                         ; 0051be6c
     PUSH EAX                            ; 0051be6f
     LEA EAX,[ESP + 0x4c]                ; 0051be70
     PUSH EAX                            ; 0051be74
-    CALL shape_meshlod.cpp_copyFloat_FUN_0051f0a0 ; 0051be75
-        ;   XREF to: 0051f0a0 (UNCONDITIONAL_CALL)  ; float * shape_meshlod.cpp_copyFloat_FUN_0051f0a0(float * dest_ptr, float * src_ptr)
+    CALL shape_meshlod.cpp_copyFloat2_FUN_0051f0a0 ; 0051be75
+        ;   XREF to: 0051f0a0 (UNCONDITIONAL_CALL)  ; float * shape_meshlod.cpp_copyFloat2_FUN_0051f0a0(float * dest_ptr, float * src_ptr)
     MOV EAX,ESI                         ; 0051be7a
     ADD ESP,0x8                         ; 0051be7c
     ADD EAX,0x8                         ; 0051be7f
     PUSH EAX                            ; 0051be82
     LEA EAX,[ESP + 0x50]                ; 0051be83
     PUSH EAX                            ; 0051be87
-    CALL shape_meshlod.cpp_copyFloat_FUN_0051f090 ; 0051be88
-        ;   XREF to: 0051f090 (UNCONDITIONAL_CALL)  ; float * shape_meshlod.cpp_copyFloat_FUN_0051f090(float * dest_ptr, float * src_ptr)
+    CALL shape_meshlod.cpp_copyFloat1_FUN_0051f090 ; 0051be88
+        ;   XREF to: 0051f090 (UNCONDITIONAL_CALL)  ; float * shape_meshlod.cpp_copyFloat1_FUN_0051f090(float * dest_ptr, float * src_ptr)
     ADD ESP,0x8                         ; 0051be8d
     PUSH 0x6598c0                       ; 0051be90 | g_CVectorTypeInfo
     MOV EAX,dword ptr [EBX + 0x50]      ; 0051be95

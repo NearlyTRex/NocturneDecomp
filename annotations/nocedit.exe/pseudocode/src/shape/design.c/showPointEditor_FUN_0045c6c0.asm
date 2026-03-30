@@ -32,8 +32,8 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawLine_FUN_004011b0
 ;   engine_2d.c_drawText_FUN_00401fd0
-;   shape_design.c_doNothing_FUN_0045c4f0
-;   shape_design.c_doNothing_FUN_0045c510
+;   shape_design.c_doNothing1_FUN_0045c4f0
+;   shape_design.c_doNothing2_FUN_0045c510
 ;   shape_design.c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0
 ;   shape_design.c_handleEditorHotkeys_FUN_0045b990
 ;   shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0
@@ -362,13 +362,13 @@ section .text
     MOV dword ptr [EBP + -0x80],EAX     ; 0045ca24
     JMP 0x0045ca39                      ; 0045ca27
         ;   XREF to: 0045ca39 (UNCONDITIONAL_JUMP)  ; LAB_0045ca39
-    CALL shape_design.c_doNothing_FUN_0045c4f0 ; 0045ca29
-        ;   XREF to: 0045c4f0 (UNCONDITIONAL_CALL)  ; void shape_design.c_doNothing_FUN_0045c4f0()
+    CALL shape_design.c_doNothing1_FUN_0045c4f0 ; 0045ca29
+        ;   XREF to: 0045c4f0 (UNCONDITIONAL_CALL)  ; void shape_design.c_doNothing1_FUN_0045c4f0()
         ;   Label: LAB_0045ca29
     JMP 0x0045ca49                      ; 0045ca2e
         ;   XREF to: 0045ca49 (UNCONDITIONAL_JUMP)  ; LAB_0045ca49
-    CALL shape_design.c_doNothing_FUN_0045c510 ; 0045ca30
-        ;   XREF to: 0045c510 (UNCONDITIONAL_CALL)  ; void shape_design.c_doNothing_FUN_0045c510()
+    CALL shape_design.c_doNothing2_FUN_0045c510 ; 0045ca30
+        ;   XREF to: 0045c510 (UNCONDITIONAL_CALL)  ; void shape_design.c_doNothing2_FUN_0045c510()
         ;   Label: LAB_0045ca30
     JMP 0x0045ca49                      ; 0045ca35
         ;   XREF to: 0045ca49 (UNCONDITIONAL_JUMP)  ; LAB_0045ca49
@@ -400,8 +400,8 @@ section .text
     CALL shape_design.c_showHelpFile_FUN_00457f00 ; 0045ca6e
         ;   XREF to: 00457f00 (UNCONDITIONAL_CALL)  ; void shape_design.c_showHelpFile_FUN_00457f00(char * help_filename)
     ADD ESP,0x4                         ; 0045ca73
-    CALL wincore_winrun.cpp_doNothing_FUN_005f2f80 ; 0045ca76
-        ;   XREF to: 005f2f80 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing_FUN_005f2f80()
+    CALL wincore_winrun.cpp_doNothing1_FUN_005f2f80 ; 0045ca76
+        ;   XREF to: 005f2f80 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing1_FUN_005f2f80()
         ;   Label: LAB_0045ca76
     CALL wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0 ; 0045ca7b
         ;   XREF to: 005f2fd0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0()

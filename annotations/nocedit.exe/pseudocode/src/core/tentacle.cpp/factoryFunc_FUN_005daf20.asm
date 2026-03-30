@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_tentacle.cpp_CTentacle_ctor_FUN_005daf60
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_tentacle.cpp_factoryFunc_FUN_005daf20
     PUSH 0x654d9e                       ; 005daf22 | = "..\\core\\tentacle.cpp"
     PUSH 0xbf2c                         ; 005daf27
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005daf2c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 005daf2c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005daf31
     TEST EAX,EAX                        ; 005daf34
     JNZ 0x005daf39                      ; 005daf36

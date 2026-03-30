@@ -42,7 +42,7 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *thi
     core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
               (&this_ptr->light,CDemonFilter_ARRAY_008229ec + iVar1,filter_index,filter_pos_x,
                filter_pos_y);
-    fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,0.15);
+    fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,0.15);
     this_ptr->flicker_timer = fVar3;
   }
   if (this_ptr->light_actor_type != LIGHT_TYPE_GLOBE) {

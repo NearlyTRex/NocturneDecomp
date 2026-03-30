@@ -240,7 +240,7 @@ LAB_005c6fd0:
   if ((this_ptr->morph_started != 0) &&
      (fVar4 = this_ptr->morph_timer + delta_time, this_ptr->morph_timer = fVar4,
      4.0f < fVar4)) {
-    this_ptr_00 = (CHotDemon *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+    this_ptr_00 = (CHotDemon *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
                             (0xbef0,"..\\core\\succubus.cpp",0x16c);
     pCVar11 = (CHotDemon *)0x0;
     if (this_ptr_00 != (CHotDemon *)0x0) {
@@ -306,7 +306,7 @@ LAB_005c6fd0:
     if ((iVar12 == 0) &&
        (fVar4 = this_ptr->ambient_sfx_cooldown - delta_time, this_ptr->ambient_sfx_cooldown = fVar4,
        fVar4 < 0.0)) {
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(5.0,10.0);
       pCVar6 = (this_ptr->base).base.base.vtable._ub;
       this_ptr->ambient_sfx_cooldown = local_14;
       uVar12 = (*pCVar6->playSound)((CDemonActor *)this_ptr,"succubus-horny-?.wav");

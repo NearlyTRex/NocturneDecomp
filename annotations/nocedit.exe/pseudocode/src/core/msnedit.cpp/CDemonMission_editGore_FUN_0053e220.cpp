@@ -76,7 +76,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   core_slew_cpp_CSlew_init_FUN_005a2060(&local_bc);
   iVar2 = g_CDemonCameraInstance.corona_blend_factor;
-  pCVar3 = (CBoxActor *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x66c,"..\\core\\msnedit.cpp",0xe7b);
+  pCVar3 = (CBoxActor *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x66c,"..\\core\\msnedit.cpp",0xe7b)
+  ;
   actor_00 = (CBoxActor *)0x0;
   if (pCVar3 != (CBoxActor *)0x0) {
     actor_00 = core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(pCVar3);
@@ -100,7 +101,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
   core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,&actor_00->base);
   pUVar5 = &(actor_00->base).orient;
   while( true ) {
-    wincore_winrun_cpp_doNothing_FUN_005f2f80();
+    wincore_winrun_cpp_doNothing1_FUN_005f2f80();
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(g_CEditorToolsPtr,0,0,0);
     (actor_00->base).location.position.x = local_bc.position.x;
     (actor_00->base).location.position.y = local_bc.position.y;
@@ -209,7 +210,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
     }
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);
     if (iVar3 != 0) {
-      iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+      iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
                         (g_CEditorToolsPtr,"Reset gore?");
       if (iVar3 != 0) {
         core_gore_cpp_CGore_reset_FUN_004ed760(g_CGorePtr);

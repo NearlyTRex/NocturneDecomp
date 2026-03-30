@@ -56,7 +56,7 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
     this_ptr->victim_search_timer = fVar3;
     if (fVar3 <= 0.0) {
       this_ptr->is_in_combat = 0;
-      fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.5,1.5);
+      fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.5,1.5);
       local_38 = this_ptr->victim_search_radius * this_ptr->victim_search_radius;
       iVar5 = 0;
       this_ptr->victim_search_timer = fVar2;

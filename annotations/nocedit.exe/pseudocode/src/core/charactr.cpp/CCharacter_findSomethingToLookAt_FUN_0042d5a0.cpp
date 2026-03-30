@@ -133,7 +133,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
         iStack_18 = iStack_18 + 4;
       }
       core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
-      fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(1.0,2.0);
+      fStack_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(1.0,2.0);
       this_ptr->look_at_search_timer = fStack_14;
     }
     else {

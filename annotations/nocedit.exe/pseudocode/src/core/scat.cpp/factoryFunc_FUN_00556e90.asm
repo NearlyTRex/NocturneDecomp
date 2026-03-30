@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_scat.cpp_CScat_ctor_FUN_00556ed0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_scat.cpp_factoryFunc_FUN_00556e90
     PUSH 0x641200                       ; 00556e95 | = "..\\core\\scat.cpp"
     PUSH 0x1fc00                        ; 00556e9a
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00556e9f
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00556e9f
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00556ea4
     TEST EAX,EAX                        ; 00556ea7
     JNZ 0x00556eac                      ; 00556ea9

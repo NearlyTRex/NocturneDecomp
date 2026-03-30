@@ -117,7 +117,7 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
 ;   core_fire.cpp_computeScreenSpaceSize_FUN_004c24d0
@@ -1361,8 +1361,8 @@ section .text
     ADD ESP,0x8                         ; 004c37f9
     PUSH 0x471fff00                     ; 004c37fc
     PUSH 0x47000000                     ; 004c3801
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c3806
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c3806
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [ESP + 0x300],EAX     ; 004c380b
     FLD float ptr [ESP + 0x300]         ; 004c3812
     ADD ESP,0x8                         ; 004c3819

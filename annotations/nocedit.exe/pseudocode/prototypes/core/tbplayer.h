@@ -7,9 +7,9 @@
 // Address: 005d9fd0
 void __cdecl staticInit(void);
 
-// Original: core_tbplayer.cpp_factoryFunc_FUN_005da020
+// Original: core_tbplayer.cpp_factoryFuncBassPlayer_FUN_005da020
 // Address: 005da020
-CBassPlayer * __cdecl factoryFunc(void);
+CBassPlayer * __cdecl factoryFuncBassPlayer(void);
 
 // Original: core_tbplayer.cpp_CBassPlayer_getActorType_FUN_005da050
 // Address: 005da050
@@ -35,9 +35,9 @@ void __stack2_esi CBassPlayer::getCarryObjToBodyXForm(CBassPlayer *this_ptr,int 
 // Address: 005da240
 void __cdecl CBassPlayer::processDamage(CBassPlayer *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_tbplayer.cpp_factoryFunc_FUN_005da280
+// Original: core_tbplayer.cpp_factoryFuncDrummer_FUN_005da280
 // Address: 005da280
-CDrummer * __cdecl factoryFunc(void);
+CDrummer * __cdecl factoryFuncDrummer(void);
 
 // Original: core_tbplayer.cpp_CDrummer_getActorType_FUN_005da2b0
 // Address: 005da2b0

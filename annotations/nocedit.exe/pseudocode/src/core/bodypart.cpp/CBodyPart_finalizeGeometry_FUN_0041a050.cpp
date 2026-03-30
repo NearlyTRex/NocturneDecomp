@@ -185,11 +185,11 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart
       (this_ptr->physics_box).linear_velocity_local.y = pCVar8->y;
       (this_ptr->physics_box).linear_velocity_local.z = pCVar8->z;
     }
-    fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
+    fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-3.1415927,3.1415927);
     (this_ptr->physics_box).angular_velocity.x = fVar7;
-    fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
+    fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-3.1415927,3.1415927);
     (this_ptr->physics_box).angular_velocity.z = fVar7;
-    fVar9 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-9.424778,9.424778);
+    fVar9 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-9.424778,9.424778);
     (this_ptr->physics_box).angular_velocity.y = fVar9;
     return;
   }

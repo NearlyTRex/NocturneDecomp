@@ -19,7 +19,7 @@
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 ;   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
-;   sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a00
+;   sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_005a8a00
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     ADD ESP,0x4                         ; 005e8b64
     LEA EAX,[ESI + 0x1060]              ; 005e8b67
     PUSH EAX                            ; 005e8b6d
-    CALL sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a00 ; 005e8b6e
-        ;   XREF to: 005a8a00 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a00(CVector3f * velocity_source_ptr)
+    CALL sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_005a8a00 ; 005e8b6e
+        ;   XREF to: 005a8a00 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_005a8a00(CVector3f * velocity_source_ptr)
     ADD ESP,0x4                         ; 005e8b73
     PUSH EBX                            ; 005e8b76
     MOV EDX,dword ptr [ESP + 0x14]      ; 005e8b77

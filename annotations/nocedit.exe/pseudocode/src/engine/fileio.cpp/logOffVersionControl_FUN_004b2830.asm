@@ -10,7 +10,7 @@
 ;   engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0 at 004b3701
 ;   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 at 004bb8e2
 ;   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 at 004baa5b
-;   engine_fileio.cpp_logOffVersionControl_FUN_004bceb0 at 004bceb0
+;   engine_fileio.cpp_logOffVersionControlThunk_FUN_004bceb0 at 004bceb0
 ;
 ; Referenced Globals:
 ;   REVERT_TO_SELF_FUNC* g_RevertToSelfFunc = 00211a32

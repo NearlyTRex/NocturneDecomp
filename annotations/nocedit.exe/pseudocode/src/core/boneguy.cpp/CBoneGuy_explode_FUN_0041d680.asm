@@ -29,7 +29,7 @@
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
@@ -88,8 +88,8 @@ section .text
     PUSH 0x40a00000                     ; 0041d721
         ;   Label: LAB_0041d721
     PUSH 0xc0a00000                     ; 0041d726
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0041d72b
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041d72b
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     PUSH 0x616342                       ; 0041d853 | = "boneguy-fallapart.wav"
         ;   Label: LAB_0041d853
     MOV EBP,dword ptr [ESP + 0x50]      ; 0041d858

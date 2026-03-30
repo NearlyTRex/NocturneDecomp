@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_sentinel.cpp_CSentinel_ctor_FUN_00567db0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_sentinel.cpp_factoryFunc_FUN_00567d70
     PUSH 0x645704                       ; 00567d72 | = "..\\core\\sentinel.cpp"
     PUSH 0xbec4                         ; 00567d77
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00567d7c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00567d7c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00567d81
     TEST EAX,EAX                        ; 00567d84
     JNZ 0x00567d89                      ; 00567d86

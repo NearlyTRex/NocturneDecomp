@@ -2,11 +2,11 @@
 // Address: 005742b0
 // Address Range: [[005742b0, 005743b4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet *this_ptr,SDamageInfo *damage_info,CVector3f *actor_position,void *unknown_param)
+// Signature: void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet *this_ptr,CVector3f *position,CVector3f *actor_position,SDamageInfo *damage_info)
 
 #include "nocturne.h"
 
-void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet *this_ptr,SDamageInfo *damage_info,CVector3f *actor_position,void *unknown_param)
+void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet *this_ptr,CVector3f *position,CVector3f *actor_position,SDamageInfo *damage_info)
 
 {
   int iVar1;
@@ -22,24 +22,23 @@ void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDem
   if (0 < this_ptr->character_count) {
     pCVar2 = this_ptr;
     do {
-      local_5c.hit_part_index = *(int *)unknown_param;
-      local_5c.damage_amount = *(float *)((int)unknown_param + 4);
-      local_5c.gore_multiplier = *(float *)((int)unknown_param + 8);
-      local_5c.impact_point.x = *(float *)((int)unknown_param + 0xc);
-      local_5c.impact_point.y = *(float *)((int)unknown_param + 0x10);
-      local_5c.impact_point.z = *(float *)((int)unknown_param + 0x14);
-      local_5c.impact_force = *(float *)((int)unknown_param + 0x18);
-      local_5c.impact_direction.x = *(float *)((int)unknown_param + 0x1c);
-      local_5c.impact_direction.y = *(float *)((int)unknown_param + 0x20);
-      local_5c.impact_direction.z = *(float *)((int)unknown_param + 0x24);
-      local_5c.ammo_type = *(EAmmoType *)((int)unknown_param + 0x28);
-      local_5c.dismember_prob = *(float *)((int)unknown_param + 0x2c);
-      local_5c.damage_type = *(EDamageType *)((int)unknown_param + 0x30);
-      local_5c.attacker = *(CDemonActor **)((int)unknown_param + 0x34);
-      local_5c.wielder = *(CDemonActor **)((int)unknown_param + 0x38);
+      local_5c.hit_part_index = damage_info->hit_part_index;
+      local_5c.damage_amount = damage_info->damage_amount;
+      local_5c.gore_multiplier = damage_info->gore_multiplier;
+      local_5c.impact_point.x = (damage_info->impact_point).x;
+      local_5c.impact_point.y = (damage_info->impact_point).y;
+      local_5c.impact_point.z = (damage_info->impact_point).z;
+      local_5c.impact_force = damage_info->impact_force;
+      local_5c.impact_direction.x = (damage_info->impact_direction).x;
+      local_5c.impact_direction.y = (damage_info->impact_direction).y;
+      local_5c.impact_direction.z = (damage_info->impact_direction).z;
+      local_5c.ammo_type = damage_info->ammo_type;
+      local_5c.dismember_prob = damage_info->dismember_prob;
+      local_5c.damage_type = damage_info->damage_type;
+      local_5c.attacker = damage_info->attacker;
+      local_5c.wielder = damage_info->wielder;
       (*(((pCVar2->characters[0]->base).vtable._uc)->_uc).testDamageLine)
-                (pCVar2->characters[0],(CVector3f *)damage_info,actor_position,&local_5c,
-                 (CVector3f *)0x0);
+                (pCVar2->characters[0],position,actor_position,&local_5c,(CVector3f *)0x0);
       iVar1 = iVar1 + 1;
       pCVar2 = (CDemonSet *)pCVar2->cameras;
     } while (iVar1 < this_ptr->character_count);

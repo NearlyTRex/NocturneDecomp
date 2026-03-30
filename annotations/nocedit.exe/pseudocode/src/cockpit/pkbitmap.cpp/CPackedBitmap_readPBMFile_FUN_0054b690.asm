@@ -39,7 +39,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fseek_FUN_005ffacc
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 ;
 ; *****************************************************************************
@@ -148,8 +148,8 @@ section .text
     PUSH 0x63f1ce                       ; 0054b79c | = "..\\cockpit\\pkbitmap.cpp"
     SHL EAX,0x2                         ; 0054b7a1
     PUSH EAX                            ; 0054b7a4
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0054b7a5
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 0054b7a5
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0054b7aa
     MOV dword ptr [EBX + 0x20],EAX      ; 0054b7ad
     TEST EAX,EAX                        ; 0054b7b0

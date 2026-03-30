@@ -44,7 +44,7 @@ int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_00526d90(CMobster 
     this_ptr->idle_timer = fVar2;
     if (0.0 < fVar2) {
       this_ptr->ai_idle_counter = this_ptr->ai_idle_counter + 1;
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(5.0,10.0);
       this_ptr->idle_timer = local_14;
     }
     if (((this_ptr->base).base.model.part_data.visibility_flags

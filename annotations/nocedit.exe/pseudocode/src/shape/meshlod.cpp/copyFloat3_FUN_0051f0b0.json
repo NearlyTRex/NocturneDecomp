@@ -1,0 +1,97 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 12
+  },
+  "cross_references": [
+    {
+      "addr": "0051bd30",
+      "from_addr": "0051be62",
+      "name": "shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051f0b0",
+    "address_range": [
+      [
+        "0051f0b0",
+        "0051f0be"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_copyFloat3_FUN_0051f0b0",
+    "signature": "float * __cdecl shape_meshlod_cpp_copyFloat3_FUN_0051f0b0(float *dest_ptr,float *src_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0051be62",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.3333333333333335,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "COPY": 5,
+      "INT_ADD": 3,
+      "LOAD": 4,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 14
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "src_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
+      }
+    ]
+  },
+  "suspects": []
+}

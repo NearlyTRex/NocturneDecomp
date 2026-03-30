@@ -11,7 +11,8 @@ CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFunc_FUN_004d16e0(void)
 {
   CFrankenstienMachine *pCVar1;
   
-  pCVar1 = (CFrankenstienMachine *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x49c,"..\\core\\frankgen.cpp",0x75);
+  pCVar1 = (CFrankenstienMachine *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x49c,"..\\core\\frankgen.cpp",0x75)
+  ;
   if (pCVar1 == (CFrankenstienMachine *)0x0) {
     return (CFrankenstienMachine *)0x0;
   }

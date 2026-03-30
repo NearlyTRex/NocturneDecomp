@@ -22,7 +22,7 @@ void __cdecl core_ground_cpp_CGround_init_FUN_004eef00(CGround *this_ptr)
     g_CurrentLineNumber = 0xd3;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CGround::init - Out of memory");
   }
-  this_ptr_00 = (CTextureList *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+  this_ptr_00 = (CTextureList *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
                           (0x1a5ec,"..\\core\\ground.cpp",0xd7);
   pCVar2 = (CTextureList *)0x0;
   if (this_ptr_00 != (CTextureList *)0x0) {

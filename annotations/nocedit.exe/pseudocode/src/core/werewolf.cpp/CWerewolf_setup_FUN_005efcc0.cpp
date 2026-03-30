@@ -33,13 +33,13 @@ void __cdecl core_werewolf_cpp_CWerewolf_setup_FUN_005efcc0(CWerewolf *this_ptr)
   this_ptr->bone_indices[4] = iVar2;
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   (this_ptr->base).base.base.is_transparent = this_ptr->light_up_eyes;
-  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
   this_ptr->eye_glow_phase = fVar2;
   if (this_ptr->type == WEREWOLF_TYPE_TRAIN) {
     (this_ptr->base).base.collision_cylinder_radius = 1.5;
   }
   this_ptr->sfx_handle = 0;
-  fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,30.0);
+  fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,30.0);
   this_ptr->sfx_handles[0] = 0;
   this_ptr->sfx_handles[1] = 0;
   this_ptr->howl_cooldown = fVar3;

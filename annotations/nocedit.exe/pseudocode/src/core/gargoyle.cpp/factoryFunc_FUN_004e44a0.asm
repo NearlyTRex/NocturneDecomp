@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_gargoyle.cpp_CGargoyle_ctor_FUN_004e44e0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_gargoyle.cpp_factoryFunc_FUN_004e44a0
     PUSH 0x62d7c1                       ; 004e44a2 | = "..\\core\\gargoyle.cpp"
     PUSH 0xbf18                         ; 004e44a7
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004e44ac
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 004e44ac
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004e44b1
     TEST EAX,EAX                        ; 004e44b4
     JNZ 0x004e44b9                      ; 004e44b6

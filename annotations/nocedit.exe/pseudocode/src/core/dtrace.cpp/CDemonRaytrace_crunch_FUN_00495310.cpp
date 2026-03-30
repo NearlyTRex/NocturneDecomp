@@ -109,7 +109,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
   }
   core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380(this_ptr);
   iVar12 = this_ptr->triangle_count;
-  piVar8 = (int *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+  piVar8 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                      (iVar12 * 0x1c + 4,"..\\core\\dtrace.cpp",0x2ed);
   local_44 = piVar8;
   if (piVar8 != (int *)0x0) {
@@ -206,13 +206,13 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
             local_54 = local_4c;
             pfVar10 = (float *)(local_50 + 1);
             iVar12 = *local_50;
-            core_charactr_cpp_copyFloat_FUN_0042fb00(&local_e8,pfVar10);
-            core_charactr_cpp_copyFloat_FUN_0042faf0(&local_e4,(float *)(piVar9 + 2));
-            core_charactr_cpp_copyFloat_FUN_0042fae0(&local_e0,(float *)(piVar9 + 3));
+            core_charactr_cpp_copyFloat3_FUN_0042fb00(&local_e8,pfVar10);
+            core_charactr_cpp_copyFloat2_FUN_0042faf0(&local_e4,(float *)(piVar9 + 2));
+            core_charactr_cpp_copyFloat1_FUN_0042fae0(&local_e0,(float *)(piVar9 + 3));
             local_14 = (float *)(local_48 + 4);
-            core_charactr_cpp_copyFloat_FUN_0042fb00(&local_dc,local_14);
-            core_charactr_cpp_copyFloat_FUN_0042faf0(&local_d8,local_14 + 1);
-            core_charactr_cpp_copyFloat_FUN_0042fae0(&local_d4,local_14 + 2);
+            core_charactr_cpp_copyFloat3_FUN_0042fb00(&local_dc,local_14);
+            core_charactr_cpp_copyFloat2_FUN_0042faf0(&local_d8,local_14 + 1);
+            core_charactr_cpp_copyFloat1_FUN_0042fae0(&local_d4,local_14 + 2);
             local_64 = local_4c;
             *local_48 = *local_4c;
             if (pfVar10 != pfVar11) {
@@ -266,13 +266,13 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *
                 local_30 = local_2c;
                 pfVar11 = (float *)(local_28 + 1);
                 local_d0 = *local_28;
-                core_charactr_cpp_copyFloat_FUN_0042fb00(&local_cc,pfVar11);
-                core_charactr_cpp_copyFloat_FUN_0042faf0(&local_c8,(float *)(piVar9 + 2));
-                core_charactr_cpp_copyFloat_FUN_0042fae0(&local_c4,(float *)(piVar9 + 3));
+                core_charactr_cpp_copyFloat3_FUN_0042fb00(&local_cc,pfVar11);
+                core_charactr_cpp_copyFloat2_FUN_0042faf0(&local_c8,(float *)(piVar9 + 2));
+                core_charactr_cpp_copyFloat1_FUN_0042fae0(&local_c4,(float *)(piVar9 + 3));
                 local_14 = (float *)(local_24 + 4);
-                core_charactr_cpp_copyFloat_FUN_0042fb00(&local_c0,local_14);
-                core_charactr_cpp_copyFloat_FUN_0042faf0(&local_bc,local_14 + 1);
-                core_charactr_cpp_copyFloat_FUN_0042fae0(&local_b8,local_14 + 2);
+                core_charactr_cpp_copyFloat3_FUN_0042fb00(&local_c0,local_14);
+                core_charactr_cpp_copyFloat2_FUN_0042faf0(&local_bc,local_14 + 1);
+                core_charactr_cpp_copyFloat1_FUN_0042fae0(&local_b8,local_14 + 2);
                 local_40 = local_2c;
                 *local_24 = *local_2c;
                 if (pfVar11 != pfVar12) {

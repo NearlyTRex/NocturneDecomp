@@ -7,15 +7,19 @@
 ; CBoxActor *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined8       Stack[-0xe8]:8  local_e8
-; undefined1[56]   Stack[-0xcc]:56  auStack_cc
-; CBoxActor *      Stack[-0x94]:4  pCStack_94
+; SDamageInfo      Stack[-0xcc]:60  local_cc
 ; float            Stack[-0x88]:4  local_88
 ; float            Stack[-0x84]:4  local_84
 ; float            Stack[-0x80]:4  local_80
 ; CVector3f        Stack[-0x6c]:12  local_6c
-; undefined1[52]   Stack[-0x60]:52  auStack_60
-; CDemonActor *    Stack[-0x2c]:4  local_2c
+; CVector3f        Stack[-0x60]:12  local_60
+; CVector3f        Stack[-0x54]:12  local_54
+; CVector3f        Stack[-0x48]:12  local_48
+; float            Stack[-0x3c]:4  local_3c
+; float            Stack[-0x38]:4  local_38
+; float            Stack[-0x34]:4  local_34
+; float            Stack[-0x30]:4  local_30
+; float            Stack[-0x2c]:4  local_2c
 ; double           Stack[-0x28]:8  local_28
 ; float            Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
@@ -38,7 +42,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_box.cpp_CBox_process_FUN_0041e2f0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
@@ -215,8 +219,8 @@ section .text
     PUSH 0x2                            ; 00421bf9
     PUSH 0x3f800000                     ; 00421bfb
     PUSH 0x0                            ; 00421c00
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00421c02
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00421c02
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     LEA EDX,[EBX + 0x20]                ; 00421c4a
         ;   Label: LAB_00421c4a
     MOV EAX,dword ptr [EDX]             ; 00421c4d
@@ -350,7 +354,7 @@ section .text
     PUSH EAX                            ; 00421dea | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x18]         ; 00421deb
     CALL core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0 ; 00421def
-        ;   XREF to: 005742b0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet * this_ptr, SDamageInfo * damage_info, CVector3f * actor_position, void * unknown_param)
+        ;   XREF to: 005742b0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet * this_ptr, CVector3f * position, CVector3f * actor_position, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00421df4
     MOV ESP,EBP                         ; 00421df7
     POP EBP                             ; 00421df9

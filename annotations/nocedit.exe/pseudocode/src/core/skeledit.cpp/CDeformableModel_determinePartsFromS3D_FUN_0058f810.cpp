@@ -420,7 +420,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
           local_160 = iVar31;
           _fprintf(local_180,"Automap capped faces is active\n");
         }
-        local_184 = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+        local_184 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                               ((int)local_16c * 0x3c,"..\\core\\skeledit.cpp",0xc4e);
         if (local_184 == (void *)0x0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
@@ -464,7 +464,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
             pvVar35 = (void *)((int)pvVar35 + 0x3c);
           } while (iVar31 < (int)local_16c);
         }
-        pfVar10 = (float *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+        pfVar10 = (float *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                             ((int)local_168 * 0xc + 4,"..\\core\\skeledit.cpp",0xc7c);
         local_188 = (CBoundingBox3D *)pfVar10;
         if (pfVar10 != (float *)0x0) {
@@ -626,7 +626,7 @@ LAB_005902c8:
         local_1b0 = local_264;
         _fprintf(local_180,"Scale = %7.3f %7.3f %7.3f\n",(double)local_1dc,(double)local_1d8,
                    (double)local_1d4);
-        pfVar21 = (float *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+        pfVar21 = (float *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                             ((int)local_16c * 0xc + 4,"..\\core\\skeledit.cpp",0xd0f);
         local_17c = pfVar21;
         if (pfVar21 != (float *)0x0) {
@@ -634,7 +634,7 @@ LAB_005902c8:
           *pfVar21 = local_16c;
         }
         fVar8 = (float)this_ptr->tri_count[0];
-        pfVar21 = (float *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+        pfVar21 = (float *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                             ((int)fVar8 * 0xc + 4,"..\\core\\skeledit.cpp",0xd10);
         local_178 = pfVar21;
         if (pfVar21 != (float *)0x0) {
@@ -734,7 +734,7 @@ LAB_005902c8:
                   (g_CEditorToolsPtr,"Matching faces");
         _fprintf(local_180,"Matching faces in %s\n");
         if (this_ptr->tri_count[0] <= (int)local_16c) {
-          local_174 = shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+          local_174 = shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                                 (this_ptr->tri_count[0] * 4,"..\\core\\skeledit.cpp",0xd42);
           if (local_174 == (void *)0x0) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
@@ -862,10 +862,10 @@ LAB_005902c8:
               pCVar12 = (CDeformableModel *)(pCVar12->tri_count + 3);
             } while (iVar31 < this_ptr->num_parts);
           }
-          puVar13 = (uint *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+          puVar13 = (uint *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                               (this_ptr->tri_count[0] << 2,"..\\core\\skeledit.cpp",0xe56);
           local_170 = puVar13;
-          local_f0 = (int *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+          local_f0 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                                (this_ptr->tri_count[0] << 2,"..\\core\\skeledit.cpp",0xe57);
           if ((puVar13 == (uint *)0x0) || (local_f0 == (int *)0x0)) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
@@ -1138,11 +1138,11 @@ LAB_00591f48:
           local_f0 = (int *)0x0;
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                     (g_CEditorToolsPtr,"Finding capped faces in %s");
-          pSVar14 = (SInputFace *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+          pSVar14 = (SInputFace *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                               ((this_ptr->tri_count[0] + local_158) * 0x12,
                                "..\\core\\skeledit.cpp",0xf1a);
           local_150 = pSVar14;
-          local_14c = (int *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+          local_14c = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                                 ((this_ptr->tri_count[0] + local_158) * 4,
                                  "..\\core\\skeledit.cpp",0xf1b);
           if ((pSVar14 == (SInputFace *)0x0) || (local_14c == (int *)0x0)) {
@@ -1195,7 +1195,7 @@ LAB_00591f48:
           shape_memdbg_cpp_free_FUN_005fe659(this_ptr->cap_index_ptr[0]);
           this_ptr->cap_index_ptr[0] = (int *)0x0;
           if (0 < local_158) {
-            piVar15 = (int *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+            piVar15 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                                 (local_158 * 4,"..\\core\\skeledit.cpp",0xf2b);
             this_ptr->cap_index_ptr[0] = piVar15;
             if (piVar15 == (int *)0x0) {

@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_dynamite.cpp_CDynamite_ctor_FUN_0049cdc0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_dynamite.cpp_factoryFunc_FUN_0049cd80
     PUSH 0x622e6c                       ; 0049cd82 | = "..\\core\\dynamite.cpp"
     PUSH 0x58c                          ; 0049cd87
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0049cd8c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0049cd8c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0049cd91
     TEST EAX,EAX                        ; 0049cd94
     JNZ 0x0049cd99                      ; 0049cd96

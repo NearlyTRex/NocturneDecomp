@@ -50,7 +50,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
-;   engine_boss.c_modelStructNotSupported_FUN_0041dbe0
+;   engine_boss.c_modelStructNotSupported4_FUN_0041dbe0
 ;   engine_model.c_freeMRGLData_FUN_005280b0
 ;   engine_model.c_loadModelFile_FUN_00527ec0
 ;
@@ -377,8 +377,8 @@ section .text
         ;   Label: LAB_0052859e
     LEA ESI,[ESP + 0x88]                ; 0052859f
     LEA EDI,[ESP + 0x54]                ; 005285a6
-    CALL engine_boss.c_modelStructNotSupported_FUN_0041dbe0 ; 005285aa
-        ;   XREF to: 0041dbe0 (UNCONDITIONAL_CALL)  ; void engine_boss.c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExtended * mrgl_data)
+    CALL engine_boss.c_modelStructNotSupported4_FUN_0041dbe0 ; 005285aa
+        ;   XREF to: 0041dbe0 (UNCONDITIONAL_CALL)  ; void engine_boss.c_modelStructNotSupported4_FUN_0041dbe0(SMRGLHeaderExtended * mrgl_data)
     MOV ECX,0xd                         ; 005285af
     LEA ESI,[ESP + 0x88]                ; 005285b4
     ADD ESP,0x4                         ; 005285bb

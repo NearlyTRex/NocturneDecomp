@@ -179,8 +179,8 @@ section .text
     MOV EAX,[0x03276acc]                ; 0053e356 | g_CDemonCameraInstance.corona_blend_factor
     PUSH 0x66c                          ; 0053e35b
     MOV dword ptr [ESP + 0xb4],EAX      ; 0053e360
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0053e367
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0053e367
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0053e36c
     TEST EAX,EAX                        ; 0053e36f
     JNZ 0x0053e8fb                      ; 0053e371
@@ -231,8 +231,8 @@ section .text
     ADD ESI,0x30                        ; 0053e408
     MOV dword ptr [ESP + 0xac],EBX      ; 0053e40b
     MOV dword ptr [ESP + 0xb0],ESI      ; 0053e412
-    CALL wincore_winrun.cpp_doNothing_FUN_005f2f80 ; 0053e419
-        ;   XREF to: 005f2f80 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing_FUN_005f2f80()
+    CALL wincore_winrun.cpp_doNothing1_FUN_005f2f80 ; 0053e419
+        ;   XREF to: 005f2f80 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing1_FUN_005f2f80()
         ;   Label: LAB_0053e419
     PUSH 0x0                            ; 0053e41e
     PUSH 0x0                            ; 0053e420
@@ -607,8 +607,8 @@ section .text
     PUSH 0x63d003                       ; 0053e8b6 | = "Reset gore?"
     MOV EDX,dword ptr [0x00678a60]      ; 0053e8bb | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 0053e8c1 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0053e8c2
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 0053e8c2
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0053e8c7
     TEST EAX,EAX                        ; 0053e8ca
     JZ 0x0053e419                       ; 0053e8cc

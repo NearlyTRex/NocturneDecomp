@@ -22,9 +22,9 @@ CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004e6030(CGhoul *this_ptr)
   (pCVar1->base).base.base.vtable._ub = &g_CGhoulVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar1->base).base.model,"guul.dfm");
-  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(20.0,35.0);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(20.0,35.0);
   pCVar1->burp_timer = (int)ROUND(ROUND(fVar2 * (float)65536));
-  fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(4.0,10.0);
+  fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(4.0,10.0);
   pCVar1->arise_timer = 0xa0000;
   pCVar1->pending_eat_state = -1;
   fVar1 = (float)65536;

@@ -47,9 +47,9 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *thi
           if ((impact_point != (CVector3f *)0x0) && (0.0 < local_b0)) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_3c,impact_point)
             ;
-            fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-local_b0,local_b0);
+            fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-local_b0,local_b0);
             local_3c.y = fVar2 + local_3c.y;
-            fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-local_b0,local_b0);
+            fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-local_b0,local_b0);
             local_3c.x = fVar2 + local_3c.x;
             core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_ac,&local_3c);
             local_6c.z = SQRT(impact_point->z * impact_point->z +

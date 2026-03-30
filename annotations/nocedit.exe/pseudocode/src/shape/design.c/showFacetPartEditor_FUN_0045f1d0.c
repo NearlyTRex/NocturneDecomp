@@ -512,7 +512,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       g_SelectedPolygonIndex =
            shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(g_SelectedPolygonIndex);
       engine_matrix_c_pop_FUN_0050d720();
-      wincore_winrun_cpp_doNothing_FUN_005f2f80();
+      wincore_winrun_cpp_doNothing1_FUN_005f2f80();
       wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
       wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
       wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
@@ -580,7 +580,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       }
       if (g_KeyboardState[0x14] != '\0') {
         g_KeyboardState[0x14] = '\0';
-        shape_design_c_doNothing_FUN_0045ce00();
+        shape_design_c_doNothing3_FUN_0045ce00();
       }
       if (g_KeyboardState[0x23] != '\0') {
         g_KeyboardState[0x23] = '\0';

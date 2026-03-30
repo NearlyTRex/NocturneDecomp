@@ -83,7 +83,7 @@ int __cdecl engine_dosio_c_findFileNormally_FUN_004817c0(SFoundFileInfo *info);
 int __cdecl engine_dosio_c_getFileSize_FUN_00481880(char *directory,char *filename);
 uint __cdecl engine_dosio_c_getFileTimestamp_FUN_004818d0(char *directory_path,char *filename);
 int __cdecl engine_dosio_c_copyFileTimestamp_FUN_00481910(char *source_file,char *dest_file);
-int __cdecl engine_dosio_c_getFileSize_FUN_00481960(char *directory,char *filename);
+int __cdecl engine_dosio_c_getFileSizeWithFinder_FUN_00481960(char *directory,char *filename);
 int __cdecl engine_dosio_c_setFileAttributes_FUN_004819f0(char *filename,byte flags);
 int __cdecl engine_dosio_c_truncateFile_FUN_00481a20(_FILE *file_handle,long new_size_bytes);
 _FILE * __cdecl engine_dosio_c_getFile_FUN_00481a50(char *directory,char *filename,char *mode);
@@ -144,7 +144,7 @@ CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_dtor_FUN_00486d70(CDracu
 CVector3f * __cdecl core_dracbrid_cpp_CVector3f_arrdtor_FUN_00486e30(CVector3f *objs,uint flags);
 SFreaky * __cdecl core_dracbrid_cpp_SFreaky_arrdtor_FUN_00486e50(SFreaky *objs,uint flags);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486e70(CDrawSurface *this_ptr);
-CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486ea0(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
+CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00486ea0(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_00486ee0(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface );
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(int color_value);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_00487220(int red,int green,int blue);
@@ -299,7 +299,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9
 void __cdecl engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer *this_ptr,int state_flag);
 void __cdecl engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer *this_ptr,int blend_mode);
 int __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer *this_ptr,int render_alpha);
-void __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70(CDemonRenderer *this_ptr,float render_alpha);
+void __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70(CDemonRenderer *this_ptr,float render_alpha);
 void __cdecl engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer *this_ptr,int enabled);
 void __cdecl engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(CDemonRenderer *this_ptr,int value);
 int __cdecl engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer *this_ptr);

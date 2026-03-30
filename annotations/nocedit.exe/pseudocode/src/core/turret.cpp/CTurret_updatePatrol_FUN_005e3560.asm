@@ -23,7 +23,7 @@
 ;   double DOUBLE_00656798 = 0.333333333333333
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_turret.cpp_CTurret_aimAtTarget_FUN_005e3280
 ;
 ; *****************************************************************************
@@ -102,6 +102,6 @@ section .text
     PUSH 0x3f666666                     ; 005e3602
         ;   Label: LAB_005e3602
     PUSH 0x3dcccccd                     ; 005e3607
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005e360c
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005e360c
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

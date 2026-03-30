@@ -44,7 +44,7 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
     pcVar7[1] = cVar2;
     pcVar7 = pcVar7 + 2;
   } while (cVar2 != '\0');
-  fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.3,1.0);
+  fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.3,1.0);
   pCVar3->grave_actor = (CDemonActor *)0x0;
   pCVar3->pickup_range_factor = fVar4;
   iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,0xff);

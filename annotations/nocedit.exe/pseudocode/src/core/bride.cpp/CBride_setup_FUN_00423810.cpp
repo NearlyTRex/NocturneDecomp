@@ -70,7 +70,7 @@ void __cdecl core_bride_cpp_CBride_setup_FUN_00423810(CBride *this_ptr)
                     (this_ptr_02,"headpiece",1);
   this_ptr->part_indices[8] = iVar2;
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
-  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,20.0);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(2.0,20.0);
   this_ptr->sfx_handles[0] = 0;
   this_ptr->sfx_handles[1] = 0;
   this_ptr->action_timer = fVar2;

@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
 ;
@@ -83,8 +83,8 @@ section .text
     ADD ESP,0x4                         ; 004f94f7
     PUSH 0x43020000                     ; 004f94fa
     PUSH 0x42b40000                     ; 004f94ff
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004f9504
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004f9504
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     CMP dword ptr [ESP + 0x54],0x0      ; 004f9564
         ;   Label: LAB_004f9564
     JNZ 0x004f9573                      ; 004f9569

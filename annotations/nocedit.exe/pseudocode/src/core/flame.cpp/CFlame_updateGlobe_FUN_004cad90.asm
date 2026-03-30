@@ -17,7 +17,7 @@
 ;   double DOUBLE_0062a1be = 0.5
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310
 ;
 ; *****************************************************************************
@@ -60,6 +60,6 @@ section .text
     SUB ESP,0x4                         ; 004cadf0
     FCHS                                ; 004cadf3
     FSTP float ptr [ESP]                ; 004cadf5
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004cadf8
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004cadf8
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

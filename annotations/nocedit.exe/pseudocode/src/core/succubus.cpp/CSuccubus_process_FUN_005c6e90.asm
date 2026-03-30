@@ -43,7 +43,7 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_isOnGround_FUN_004297e0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
@@ -309,8 +309,8 @@ section .text
     PUSH 0x16c                          ; 005c7130
     PUSH 0x654162                       ; 005c7135 | = "..\\core\\succubus.cpp"
     PUSH 0xbef0                         ; 005c713a
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005c713f
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 005c713f
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005c7144
     TEST EAX,EAX                        ; 005c7147
     JZ 0x005c7154                       ; 005c7149
@@ -690,6 +690,6 @@ section .text
     PUSH 0x41200000                     ; 005c7544
         ;   Label: LAB_005c7544
     PUSH 0x40a00000                     ; 005c7549
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005c754e
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005c754e
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

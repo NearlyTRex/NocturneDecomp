@@ -45,7 +45,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004cda20
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;
 ; *****************************************************************************
@@ -66,8 +66,8 @@ section .text
     PUSH 0x62a5d0                       ; 004cd577 | = "..\\engine\\font.cpp"
     LEA EAX,[EDX*0x4 + 0x0]             ; 004cd57c
     PUSH EAX                            ; 004cd583
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 004cd584
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 004cd584
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004cd589
     MOV dword ptr [ESP + 0x12c],EAX     ; 004cd58c
     TEST EAX,EAX                        ; 004cd593

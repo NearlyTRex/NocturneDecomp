@@ -586,7 +586,7 @@ def transform_variadic_functions(code):
 
 # Regex for allocator functions that return void*
 _ALLOCATOR_FUNC_RE = re.compile(
-    r'(?:shape_memdbg_cpp_debug(?:Alloc(?:Tracked)?|Malloc|Calloc|Realloc)_FUN_[0-9a-f]+'
+    r'(?:shape_memdbg_cpp_debug(?:Alloc(?:Tracked\d*)?|Malloc|Calloc|Realloc)_FUN_[0-9a-f]+'
     r'|crt_memory_c_(?:malloc|calloc|realloc)_FUN_[0-9a-f]+'
     r'|(?:_?(?:malloc|calloc|realloc))\b'
     r'|__(?:arrfini|arrinit|vec_new)'

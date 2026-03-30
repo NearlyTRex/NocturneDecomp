@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 132,
+    "complexity_score": 133,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 22,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 58,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 157
+    "total_lines": 158
   },
   "cross_references": [
     {
@@ -52,7 +52,7 @@
     {
       "addr": "0040cc10",
       "is_variadic": false,
-      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10"
     },
     {
       "addr": "00442580",
@@ -334,7 +334,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 47,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&g_MoonBats[0].course_position + iVar3) = -fVar3;",
@@ -342,7 +342,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 49,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&g_MoonBats[0].animation_frame + iVar3) = fVar4;",
@@ -350,7 +350,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 51,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&g_MoonBats[0].random_offset.x + iVar3) = fVar1;",
@@ -358,7 +358,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 53,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&g_MoonBats[0].random_offset.y + iVar3) = fVar1;",
@@ -366,7 +366,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 56,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&g_MoonBats[0].random_offset.z + iVar3) = fVar1;",

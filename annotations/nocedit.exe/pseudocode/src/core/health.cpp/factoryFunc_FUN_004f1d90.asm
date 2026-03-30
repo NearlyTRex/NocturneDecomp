@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_health.cpp_CHealthItem_ctor_FUN_004f1dd0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_health.cpp_factoryFunc_FUN_004f1d90
     PUSH 0x62e9dd                       ; 004f1d92 | = "..\\core\\health.cpp"
     PUSH 0x2dc                          ; 004f1d97
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004f1d9c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 004f1d9c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004f1da1
     TEST EAX,EAX                        ; 004f1da4
     JNZ 0x004f1da9                      ; 004f1da6

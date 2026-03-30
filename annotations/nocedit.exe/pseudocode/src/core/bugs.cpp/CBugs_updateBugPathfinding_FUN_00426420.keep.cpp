@@ -56,9 +56,9 @@ int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426420(CBugs *this_pt
     if (dest_vertex == (CVector3f *)0x0) {
       max_value = 0.5f * 12.0f * (float)0.5;
       fVar3 = 0.5f * -12.0f * (float)0.5;
-      fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fVar3,max_value);
+      fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(fVar3,max_value);
       (bug_data->dest_position).x = fVar4;
-      fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fVar3,max_value);
+      fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(fVar3,max_value);
       (bug_data->dest_position).z = fVar3;
       fVar3 = core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00425b70
                         (this_ptr,(bug_data->dest_position).x,(bug_data->dest_position).z);

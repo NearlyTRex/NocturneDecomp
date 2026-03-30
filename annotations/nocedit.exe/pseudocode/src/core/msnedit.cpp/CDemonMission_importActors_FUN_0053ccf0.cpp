@@ -31,7 +31,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMiss
   CDemonMission *pCVar1;
   
   bVar9 = 0;
-  iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+  iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
                     (g_CEditorToolsPtr,"Use a saved game file instead of a mission?");
   if (iVar2 == 0) {
     iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
@@ -49,7 +49,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMiss
   core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(this_ptr);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Creating temp mission");
-  this_ptr_00 = (CDemonMission *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0
+  this_ptr_00 = (CDemonMission *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
                           (0x27d0,"..\\core\\msnedit.cpp",0xbef);
   if (this_ptr_00 == (CDemonMission *)0x0) {
     g_CurrentFilename = "..\\core\\msnedit.cpp";

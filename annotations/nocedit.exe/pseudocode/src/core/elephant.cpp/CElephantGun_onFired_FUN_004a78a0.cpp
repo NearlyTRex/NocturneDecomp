@@ -22,8 +22,8 @@ void __cdecl core_elephant_cpp_CElephantGun_onFired_FUN_004a78a0(CElephantGun *t
   local_38.x = 5.0;
   local_38.y = 6.0;
   local_38.z = -6.0;
-  local_2c.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.3926991,0.3926991);
-  local_2c.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.3926991,0.3926991);
+  local_2c.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.3926991,0.3926991);
+  local_2c.y = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.3926991,0.3926991);
   local_2c.z = 0.0;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_6c,&local_2c);
   pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&local_6c,&local_20,&local_38);

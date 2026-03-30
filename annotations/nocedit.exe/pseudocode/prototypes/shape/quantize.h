@@ -79,13 +79,13 @@ CBitmap * __cdecl CBitmap::ctor(CBitmap *this_ptr,int width,int height,int bit_d
 // Address: 00556c20
 CBitmap * __cdecl CBitmap::dtor(CBitmap *this_ptr,uint flags);
 
-// Original: shape_quantize.cpp_showError_FUN_00556cb0
+// Original: shape_quantize.cpp_showError1_FUN_00556cb0
 // Address: 00556cb0
-void __cdecl showError(char *error);
+void __cdecl showError1(char *error);
 
-// Original: shape_quantize.cpp_showError_FUN_00556ce0
+// Original: shape_quantize.cpp_showError2_FUN_00556ce0
 // Address: 00556ce0
-void __cdecl showError(char *error);
+void __cdecl showError2(char *error);
 
 // Original: shape_quantize.cpp_doNothing_FUN_00556d10
 // Address: 00556d10

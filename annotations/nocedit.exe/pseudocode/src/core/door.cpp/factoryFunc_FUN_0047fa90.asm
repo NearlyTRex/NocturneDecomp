@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_door.cpp_CDoor_ctor_FUN_0047fad0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_door.cpp_factoryFunc_FUN_0047fa90
     PUSH 0x621085                       ; 0047fa92 | = "..\\core\\door.cpp"
     PUSH 0x9e0                          ; 0047fa97
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0047fa9c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0047fa9c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0047faa1
     TEST EAX,EAX                        ; 0047faa4
     JNZ 0x0047faa9                      ; 0047faa6

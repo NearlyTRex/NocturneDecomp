@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_flamegun.cpp_factoryFunc_FUN_004cb840
     PUSH 0x62a379                       ; 004cb842 | = "..\\core\\flamegun.cpp"
     PUSH 0x588                          ; 004cb847
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004cb84c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 004cb84c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004cb851
     TEST EAX,EAX                        ; 004cb854
     JNZ 0x004cb859                      ; 004cb856

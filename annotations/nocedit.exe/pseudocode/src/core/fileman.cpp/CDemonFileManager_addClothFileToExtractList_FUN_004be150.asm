@@ -32,7 +32,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     PUSH 0x153                          ; 004be16c
     PUSH 0x62979e                       ; 004be171 | = "..\\core\\fileman.cpp"
     PUSH 0x3fe70                        ; 004be176
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 004be17b
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 004be17b
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004be180
     TEST EAX,EAX                        ; 004be183
     JNZ 0x004be203                      ; 004be185

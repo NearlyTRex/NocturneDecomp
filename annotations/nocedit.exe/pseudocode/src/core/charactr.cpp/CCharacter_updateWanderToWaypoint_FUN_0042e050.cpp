@@ -110,7 +110,7 @@ LAB_0042e1d9:
     fVar7 = 2.0;
     fVar6 = 1.0;
   }
-  local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fVar6,fVar7);
+  local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(fVar6,fVar7);
   this_ptr->wander_cooldown = local_14;
 LAB_0042e20c:
   pCVar4 = this_ptr->wander_nearest_waypoint;

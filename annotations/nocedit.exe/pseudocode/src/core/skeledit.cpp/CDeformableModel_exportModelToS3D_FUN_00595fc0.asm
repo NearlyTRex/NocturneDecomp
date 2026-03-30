@@ -78,13 +78,13 @@
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   shape_edittool.cpp_CStrList_ctor_FUN_004a2a20
 ;   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0
+;   shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0
 ;   shape_memdbg.cpp_free_FUN_005fe659
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;
@@ -132,8 +132,8 @@ section .text
     PUSH 0x64d642                       ; 0059601d | = "..\\core\\skeledit.cpp"
     SHL EAX,0x2                         ; 00596022
     PUSH EAX                            ; 00596025
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 00596026
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 00596026
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0059602b
     MOV EBX,EAX                         ; 0059602e
     TEST EAX,EAX                        ; 00596030
@@ -151,8 +151,8 @@ section .text
         ;   Label: LAB_00596057
     MOV EDI,dword ptr [0x00678a60]      ; 0059605c | g_CEditorToolsPtr
     PUSH EDI                            ; 00596062 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 00596063
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 00596063
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00596068
     MOV dword ptr [EBP + -0x12],EAX     ; 0059606b
     LEA EAX,[EBP + -0x36]               ; 0059606e

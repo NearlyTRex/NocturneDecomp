@@ -23,7 +23,7 @@ PRIORITY 1: Files with 1-2 functions remaining
       Suspects: stack_param, stack_param, pointer_cast
 
   engine/boss.c (1 remaining of 5)
-    - engine_boss.c_modelStructNotSupported_FUN_0041dbe0
+    - engine_boss.c_modelStructNotSupported4_FUN_0041dbe0
       Suspects: param_count_too_few
 
   engine/light.cpp (1 remaining of 10)
@@ -93,10 +93,6 @@ PRIORITY 1: Files with 1-2 functions remaining
   core/larva.cpp (1 remaining of 13)
     - core_larva.cpp_CLarva_process_FUN_00503080
       Suspects: warning_inlined_function, warning_unreachable, unknown_type, stack_param, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, stack_param, decompiler_intrinsic, stack_ref, stack_ref
-
-  core/setcolid.cpp (1 remaining of 40)
-    - core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
-      Suspects: pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast
 
   core/moloch.cpp (1 remaining of 15)
     - core_moloch.cpp_CMoloch_processAI_FUN_005293b0
@@ -258,7 +254,7 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_00421fe0
       Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic
     - core_boxactor.cpp_CBoxActor_process_FUN_004219e0
-      Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, decompiler_intrinsic, unknown_field, unknown_field
+      Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
 
   core/menu.cpp (2 remaining of 22)
     - core_menu.cpp_configureSoundOptions_FUN_00511e50
@@ -414,7 +410,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_platfrm.cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480     ( 22 lines)
     sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540               ( 23 lines)
     engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80                    ( 32 lines)
-    engine_boss.c_modelStructNotSupported_FUN_0041dbe0                     ( 36 lines)
+    engine_boss.c_modelStructNotSupported4_FUN_0041dbe0                    ( 36 lines)
     core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0               ( 37 lines)
     engine_console.cpp_CConsole_printf_FUN_00441890                        ( 43 lines)
     core_morph.cpp_CMorph_previewMorph_FUN_0052ca90                        ( 44 lines)
@@ -550,11 +546,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
-  core/setcolid.cpp (97.5% complete)
-    1 functions remaining:
-      core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0 (38 lines)
-        Types: ['pointer_cast']
-
   core/door.cpp (96.4% complete)
     1 functions remaining:
       core_door.cpp_CDoor_process_FUN_004800c0 (194 lines)
@@ -580,7 +571,7 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_00421fe0 (17 lines)
         Types: ['decompiler_intrinsic', 'warning_inlined_function']
       core_boxactor.cpp_CBoxActor_process_FUN_004219e0 (134 lines)
-        Types: ['decompiler_intrinsic', 'unknown_field', 'warning_inlined_function']
+        Types: ['decompiler_intrinsic', 'warning_inlined_function']
 
   core/lever.cpp (95.5% complete)
     1 functions remaining:
@@ -768,17 +759,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970 (160 lines)
         Types: ['pointer_cast']
 
-  core/mission.cpp (90.2% complete)
-    4 functions remaining:
-      core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (103 lines)
-        Types: ['pointer_cast']
-      core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 (66 lines)
-        Types: ['pointer_cast']
-      core_mission.cpp_CDemonMission_process_FUN_00524250 (46 lines)
-        Types: ['warning_type_propagation']
-      core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 (21 lines)
-        Types: ['pointer_cast', 'unresolved_funcptr']
-
   engine/palette.cpp (90.0% complete)
     1 functions remaining:
       engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060 (60 lines)
@@ -817,6 +797,7 @@ ALL REMAINING FILES
   core/curtain.cpp                                              88.5%  (23/26 clean, 3 remaining)
   shape/memdbg.cpp                                              88.5%  (23/26 clean, 3 remaining)
   core/motion.cpp                                               87.9%  (29/33 clean, 4 remaining)
+  core/mission.cpp                                              87.8%  (36/41 clean, 5 remaining)
   core/fire.cpp                                                 87.6%  (162/185 clean, 23 remaining)
   core/glass.cpp                                                87.5%  (21/24 clean, 3 remaining)
   core/cloth.cpp                                                87.3%  (48/55 clean, 7 remaining)

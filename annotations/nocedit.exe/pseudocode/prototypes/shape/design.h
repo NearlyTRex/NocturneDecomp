@@ -107,13 +107,13 @@ void __cdecl renderVertexPointsWithLabels(void);
 // Address: 0045c2f0
 void __cdecl renderPolygonVerticesWithLabels(int polygon_index);
 
-// Original: shape_design.c_doNothing_FUN_0045c4f0
+// Original: shape_design.c_doNothing1_FUN_0045c4f0
 // Address: 0045c4f0
-void __cdecl doNothing(void);
+void __cdecl doNothing1(void);
 
-// Original: shape_design.c_doNothing_FUN_0045c510
+// Original: shape_design.c_doNothing2_FUN_0045c510
 // Address: 0045c510
-void __cdecl doNothing(void);
+void __cdecl doNothing2(void);
 
 // Original: shape_design.c_selectVertexToMove_FUN_0045c530
 // Address: 0045c530
@@ -135,9 +135,9 @@ void __cdecl calculatePolygonNormal(SShapeEditorPolygon *polygon);
 // Address: 0045cc80
 void __cdecl createPolygonFromVertexList(void);
 
-// Original: shape_design.c_doNothing_FUN_0045ce00
+// Original: shape_design.c_doNothing3_FUN_0045ce00
 // Address: 0045ce00
-void __cdecl doNothing(void);
+void __cdecl doNothing3(void);
 
 // Original: shape_design.c_renderSinglePolygon_FUN_0045ce20
 // Address: 0045ce20

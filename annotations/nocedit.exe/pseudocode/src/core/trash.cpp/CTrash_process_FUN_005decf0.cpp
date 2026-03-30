@@ -106,12 +106,12 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float d
     (this_ptr->base).location.position.z = (this_ptr->home_pos).z;
     return;
   }
-  fVar18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05,0.05);
+  fVar18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.05,0.05);
   (this_ptr->drift).x = fVar18 + (this_ptr->drift).x;
-  fVar18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05,0.05);
+  fVar18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.05,0.05);
   pfVar3 = &(this_ptr->drift).y;
   *pfVar3 = fVar18 + *pfVar3;
-  fVar18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05,0.05);
+  fVar18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.05,0.05);
   pfVar3 = &(this_ptr->drift).z;
   *pfVar3 = fVar18 + *pfVar3;
   pCVar5 = g_CDemonSetPtr;
@@ -134,13 +134,13 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float d
       (this_ptr->drift_target).y = (pCVar17->active_fog).scroll.y;
       (this_ptr->drift_target).z = (pCVar17->active_fog).scroll.z;
     }
-    fVar18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-10.0,10.0);
+    fVar18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-10.0,10.0);
     (this_ptr->drift_target).x = fVar18 + (this_ptr->drift_target).x;
-    fVar18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
+    fVar18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(15.0,25.0);
     (this_ptr->drift_target).y = fVar18 + (this_ptr->drift_target).y;
-    fVar18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-10.0,10.0);
+    fVar18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-10.0,10.0);
     (this_ptr->drift_target).z = fVar18 + (this_ptr->drift_target).z;
-    fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(6.0,20.0);
+    fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(6.0,20.0);
     this_ptr->animation_timer = fVar7;
   }
   pCVar20 = &this_ptr->drift_target;

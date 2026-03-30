@@ -39,7 +39,7 @@
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 at 00484967
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;
 ; *****************************************************************************
 
@@ -54,6 +54,6 @@ section .text
     MOV EBP,dword ptr [ESP + 0x178]     ; 004864ca
     PUSH 0x40e00000                     ; 004864d1
     PUSH 0x3f800000                     ; 004864d6
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004864db
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004864db
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

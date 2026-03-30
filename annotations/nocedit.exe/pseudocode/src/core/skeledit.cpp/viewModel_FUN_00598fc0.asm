@@ -285,8 +285,8 @@ section .text
     PUSH 0x64e0d2                       ; 005991c2 | = "..\\core\\skeledit.cpp"
     PUSH 0x22b4                         ; 005991c7
     LEA EDI,[ESP + 0xc]                 ; 005991cc
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005991d0
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 005991d0
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005991d5
     TEST EAX,EAX                        ; 005991d8
     JZ 0x005991e5                       ; 005991da

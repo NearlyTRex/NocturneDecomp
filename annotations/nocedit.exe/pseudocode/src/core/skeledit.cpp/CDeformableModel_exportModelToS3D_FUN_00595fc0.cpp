@@ -69,14 +69,14 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
               (g_CEditorToolsPtr,"Can't create %s");
     return;
   }
-  dest = (int *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+  dest = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                    (this_ptr->vertex_count[lod_level] << 2,"..\\core\\skeledit.cpp",0x1565);
   if (dest == (int *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x1566;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
-  iVar1 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+  iVar1 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
                     (g_CEditorToolsPtr,"Export capped faces?");
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_b8);
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_c8);

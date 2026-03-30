@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_larva.cpp_CLarva_ctor_FUN_00502f90
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_larva.cpp_factoryFunc_FUN_00502f50
     PUSH 0x630eca                       ; 00502f52 | = "..\\core\\larva.cpp"
     PUSH 0xbec8                         ; 00502f57
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00502f5c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00502f5c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00502f61
     TEST EAX,EAX                        ; 00502f64
     JNZ 0x00502f69                      ; 00502f66

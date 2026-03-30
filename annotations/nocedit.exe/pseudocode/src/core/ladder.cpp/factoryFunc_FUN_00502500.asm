@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_ladder.cpp_CLadder_ctor_FUN_00502540
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_ladder.cpp_factoryFunc_FUN_00502500
     PUSH 0x630df8                       ; 00502502 | = "..\\core\\ladder.cpp"
     PUSH 0x300                          ; 00502507
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0050250c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0050250c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00502511
     TEST EAX,EAX                        ; 00502514
     JNZ 0x00502519                      ; 00502516

@@ -139,7 +139,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
     } while (local_1c < this_ptr->poly_count);
   }
   if (local_2c != 0) {
-    puVar2 = (uchar *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+    puVar2 = (uchar *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                        (this_ptr->poly_count,"..\\core\\dmodel.cpp",0x177);
     this_ptr->env_map_opac_list = puVar2;
     if (puVar2 == (uchar *)0x0) {

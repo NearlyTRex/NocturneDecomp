@@ -22,7 +22,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_randomChance_FUN_0040cd10
 ;   core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0
 ;
@@ -73,6 +73,6 @@ section .text
     PUSH 0x3fc90fdb                     ; 004c39dd
         ;   Label: LAB_004c39dd
     PUSH 0x3f490fdb                     ; 004c39e2
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c39e7
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c39e7
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

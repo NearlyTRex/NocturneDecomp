@@ -7,9 +7,9 @@
 // Address: 005da6e0
 void __cdecl staticInit(void);
 
-// Original: core_teleport.cpp_factoryFunc_FUN_005da730
+// Original: core_teleport.cpp_factoryFuncTeleportDest_FUN_005da730
 // Address: 005da730
-CTeleportDest * __cdecl factoryFunc(void);
+CTeleportDest * __cdecl factoryFuncTeleportDest(void);
 
 // Original: core_teleport.cpp_CTeleportDest_getActorType_FUN_005da760
 // Address: 005da760
@@ -43,9 +43,9 @@ void __cdecl CTeleportDest::processInEditor(CTeleportDest *this_ptr);
 // Address: 005da970
 void __cdecl CTeleportDest::showEditorHelp(CTeleportDest *this_ptr,int *y_pos);
 
-// Original: core_teleport.cpp_factoryFunc_FUN_005da9a0
+// Original: core_teleport.cpp_factoryFuncTeleport_FUN_005da9a0
 // Address: 005da9a0
-CTeleport * __cdecl factoryFunc(void);
+CTeleport * __cdecl factoryFuncTeleport(void);
 
 // Original: core_teleport.cpp_CTeleport_getActorType_FUN_005da9d0
 // Address: 005da9d0

@@ -37,7 +37,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(C
             (g_CEditorToolsPtr,"Removing unused vertices...");
   core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);
   if ((0 < this_ptr->vertex_count) && (0 < this_ptr->frame_count)) {
-    dest = (int *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1f0
+    dest = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                      (this_ptr->vertex_count * 4,"..\\core\\dmodel.cpp",0x868);
     if (dest == (int *)0x0) {
       g_CurrentFilename = "..\\core\\dmodel.cpp";

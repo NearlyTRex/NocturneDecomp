@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_passngr.cpp_CPassenger_ctor_FUN_00545b30
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_passngr.cpp_factoryFunc_FUN_00545af0
     PUSH 0x63e770                       ; 00545af2 | = "..\\core\\passngr.cpp"
     PUSH 0x20448                        ; 00545af7
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00545afc
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00545afc
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00545b01
     TEST EAX,EAX                        ; 00545b04
     JNZ 0x00545b09                      ; 00545b06

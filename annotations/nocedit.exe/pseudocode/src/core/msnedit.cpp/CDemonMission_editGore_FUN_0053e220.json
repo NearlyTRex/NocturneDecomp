@@ -4,12 +4,6 @@
       {
         "category": "type_error",
         "column": 19,
-        "line": 152,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 19,
         "line": 153,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
@@ -21,8 +15,8 @@
       },
       {
         "category": "type_error",
-        "column": 50,
-        "line": 156,
+        "column": 19,
+        "line": 155,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
@@ -39,8 +33,14 @@
       },
       {
         "category": "type_error",
+        "column": 50,
+        "line": 159,
+        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+      },
+      {
+        "category": "type_error",
         "column": 19,
-        "line": 203,
+        "line": 204,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       }
     ],
@@ -49,18 +49,18 @@
   },
   "complexity": {
     "assembly_lines": 647,
-    "complexity_score": 312,
+    "complexity_score": 313,
     "cross_reference_count": 1,
     "function_call_count": 43,
     "global_count": 43,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 222,
+    "pseudocode_lines": 223,
     "suspect_count": 8,
     "suspect_types": [
       "stack_alignment_array",
       "unknown_field"
     ],
-    "total_lines": 869
+    "total_lines": 870
   },
   "cross_references": [
     {
@@ -281,12 +281,12 @@
     {
       "addr": "0049f0f0",
       "is_variadic": true,
-      "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0"
+      "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0"
     },
     {
       "addr": "0050f1b0",
       "is_variadic": false,
-      "name": "shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0"
+      "name": "shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0"
     },
     {
       "addr": "005eda20",
@@ -301,7 +301,7 @@
     {
       "addr": "005f2f80",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_doNothing_FUN_005f2f80"
+      "name": "wincore_winrun.cpp_doNothing1_FUN_005f2f80"
     }
   ],
   "globals": [
@@ -836,7 +836,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 145,
+      "line": 146,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_94._0_4_ = (float)CStack_58.x * 0.00390625f;",
@@ -844,7 +844,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 146,
+      "line": 147,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_94._4_4_ = (float)CStack_58.y * 0.00390625f;",
@@ -852,7 +852,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 147,
+      "line": 148,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_94._8_4_ = (float)CStack_58.z * 0.00390625f;",
@@ -860,7 +860,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 149,
+      "line": 150,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_bc.position.x = (float)auStack_94._0_4_;",
@@ -868,7 +868,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 150,
+      "line": 151,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_bc.position.y = (float)auStack_94._4_4_;",
@@ -876,7 +876,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 151,
+      "line": 152,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_bc.position.z = (float)auStack_94._8_4_;",
@@ -884,7 +884,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 196,
+      "line": 197,
       "match": "._12_4_",
       "severity": "mild",
       "text": "auStack_94._12_4_ = CStack_7c.x + (CStack_a0.x - CStack_7c.x) * fVar4;",

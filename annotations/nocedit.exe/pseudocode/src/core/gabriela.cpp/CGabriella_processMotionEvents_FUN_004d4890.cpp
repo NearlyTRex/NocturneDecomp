@@ -113,7 +113,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabr
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   ((CDemonActor *)this_ptr,&local_64,pCVar5);
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_a0);
-        SStack_a0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+        SStack_a0.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(10.0,15.0);
         local_18 = SStack_a0.damage_amount;
         pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                            ((CDemonActor *)this_ptr_02,&local_34,&local_64);

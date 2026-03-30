@@ -61,7 +61,7 @@
 ; float            Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220
 ;
 ; *****************************************************************************
@@ -88,8 +88,8 @@ section .text
         ;   XREF to: 005df505 (CONDITIONAL_JUMP)  ; LAB_005df505
     PUSH 0x3d4ccccd                     ; 005ded1b
     PUSH 0xbd4ccccd                     ; 005ded20
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005ded25
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005ded25
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV ESP,EBP                         ; 005df4fe
         ;   Label: LAB_005df4fe
     POP EBP                             ; 005df500

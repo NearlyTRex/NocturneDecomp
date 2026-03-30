@@ -24,7 +24,7 @@
 ;   core_cloth.cpp_CCloth_dtor_FUN_00438c00
 ;   core_cloth.cpp_CCloth_load_FUN_00438cf0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
 ; *****************************************************************************
@@ -57,8 +57,8 @@ section .text
         ;   Label: LAB_0043bfde
     PUSH 0x618574                       ; 0043bfe3 | = "..\\core\\cloth.cpp"
     PUSH 0x3fe70                        ; 0043bfe8
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0043bfed
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0043bfed
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0043bff2
     TEST EAX,EAX                        ; 0043bff5
     JZ 0x0043c002                       ; 0043bff7

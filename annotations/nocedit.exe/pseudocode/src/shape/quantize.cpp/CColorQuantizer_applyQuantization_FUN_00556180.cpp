@@ -37,7 +37,7 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_applyQuantization_FUN_00556180(CC
   if (iVar5 == 0) {
     return 0;
   }
-  pCVar6 = (CBitmap *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0x28,"..\\shape\\quantize.cpp",900);
+  pCVar6 = (CBitmap *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0x28,"..\\shape\\quantize.cpp",900);
   local_20 = (CBitmap *)0x0;
   if (pCVar6 != (CBitmap *)0x0) {
     local_20 = shape_quantize_cpp_CBitmap_ctor_FUN_00556a00

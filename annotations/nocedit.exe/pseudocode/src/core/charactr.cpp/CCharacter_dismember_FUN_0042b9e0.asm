@@ -43,7 +43,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
@@ -187,8 +187,8 @@ section .text
     FCHS                                ; 0042bb34
     FSTP float ptr [ESP + 0x94]         ; 0042bb36
     PUSH dword ptr [ESP + 0x94]         ; 0042bb3d
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0042bb44
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0042bb44
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV EAX,dword ptr [EDI + 0x2610]    ; 0042bbf4
         ;   Label: LAB_0042bbf4
     PUSH EAX                            ; 0042bbfa

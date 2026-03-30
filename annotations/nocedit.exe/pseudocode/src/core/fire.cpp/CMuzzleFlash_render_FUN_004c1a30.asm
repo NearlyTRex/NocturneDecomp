@@ -19,7 +19,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;
@@ -59,6 +59,6 @@ section .text
     ADD ESP,0xc                         ; 004c1a6b
     PUSH 0x40c90fdb                     ; 004c1a6e
     PUSH 0x0                            ; 004c1a73
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c1a75
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c1a75
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

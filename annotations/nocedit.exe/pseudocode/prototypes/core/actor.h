@@ -455,9 +455,9 @@ uint __cdecl generateRandomValue(void);
 // Address: 0040cbc0
 float __cdecl getRandomFloat(void);
 
-// Original: core_actor.cpp_getRandomFloat_FUN_0040cc10
+// Original: core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 // Address: 0040cc10
-float __cdecl getRandomFloat(float min_value,float max_value);
+float __cdecl getRandomFloatFromRange(float min_value,float max_value);
 
 // Original: core_actor.cpp_getRandomInt_FUN_0040cc70
 // Address: 0040cc70
@@ -719,17 +719,17 @@ CBoundingBox3D * __cdecl CBoundingBox3D::dtor(CBoundingBox3D *this_ptr,uint flag
 // Address: 004104a0
 CVector3f * __cdecl CVector::copy(CVector3f *this_ptr,CVector3f *other);
 
-// Original: core_actor.cpp_copyFloat_FUN_004104d0
+// Original: core_actor.cpp_copyFloat1_FUN_004104d0
 // Address: 004104d0
-float * __cdecl copyFloat(float *dst,float *src);
+float * __cdecl copyFloat1(float *dst,float *src);
 
-// Original: core_actor.cpp_copyFloat_FUN_004104e0
+// Original: core_actor.cpp_copyFloat2_FUN_004104e0
 // Address: 004104e0
-float * __cdecl copyFloat(float *dst,float *src);
+float * __cdecl copyFloat2(float *dst,float *src);
 
-// Original: core_actor.cpp_copyFloat_FUN_004104f0
+// Original: core_actor.cpp_copyFloat3_FUN_004104f0
 // Address: 004104f0
-float * __cdecl copyFloat(float *dst,float *src);
+float * __cdecl copyFloat3(float *dst,float *src);
 
 // Original: core_actor.cpp_CVector3f_arrdtor_FUN_00410500
 // Address: 00410500

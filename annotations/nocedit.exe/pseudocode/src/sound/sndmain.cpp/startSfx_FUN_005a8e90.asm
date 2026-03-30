@@ -54,7 +54,7 @@
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;   engine_dosio.c_splitPath_FUN_00481f20
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;   sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0
 ;   sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550
 ;   sound_sndmain.cpp_CSfxOptions_reset_FUN_005a8830
@@ -419,8 +419,8 @@ section .text
     PUSH 0x3c5                          ; 005a9284
     PUSH 0x64fa71                       ; 005a9289 | = "..\\sound\\sndmain.cpp"
     PUSH 0x8630                         ; 005a928e
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 005a9293
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 005a9293
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005a9298
     TEST EAX,EAX                        ; 005a929b
     JZ 0x005a92a8                       ; 005a929d

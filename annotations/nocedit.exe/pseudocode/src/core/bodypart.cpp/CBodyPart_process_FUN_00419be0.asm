@@ -24,7 +24,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_bodypart.cpp_CBodyPart_processFires_FUN_00419e10
 ;   core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_0041b1b0
@@ -210,6 +210,6 @@ section .text
     ADD ESP,0x4                         ; 00419da8
     PUSH 0x41700000                     ; 00419dab
     PUSH 0x41200000                     ; 00419db0
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00419db5
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00419db5
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

@@ -29,7 +29,7 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_course.cpp_CCourse_load_FUN_00442580
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0
 ;   crt_stdlib.c_rand_FUN_005feb5c
@@ -68,8 +68,8 @@ section .text
     SUB ESP,0x4                         ; 00529b25
     FSTP float ptr [ESP]                ; 00529b28
     PUSH 0x0                            ; 00529b2b
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00529b2d
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00529b2d
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV EDX,dword ptr [0x0067b654]      ; 00529bf0 | g_CGamePtr
         ;   Label: LAB_00529bf0
     MOV ECX,dword ptr [EDX + 0x214]     ; 00529bf6 | g_CGameInstance.head_of_horror_cheat

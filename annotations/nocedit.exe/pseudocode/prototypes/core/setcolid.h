@@ -105,7 +105,7 @@ void __cdecl CDemonSet::setRayTypeLaser(CDemonSet *this_ptr,float f1,float f2,fl
 
 // Original: core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
 // Address: 005742b0
-void __cdecl CDemonSet::notifyDamageListeners(CDemonSet *this_ptr,SDamageInfo *damage_info,CVector3f *actor_position,void *unknown_param);
+void __cdecl CDemonSet::notifyDamageListeners(CDemonSet *this_ptr,CVector3f *position,CVector3f *actor_position,SDamageInfo *damage_info);
 
 // Original: core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0
 // Address: 005743c0

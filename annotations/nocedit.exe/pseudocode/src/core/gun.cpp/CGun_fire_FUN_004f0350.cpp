@@ -205,8 +205,8 @@ int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
   CStack_90.x = 3.0;
   CStack_90.y = 3.0;
   CStack_90.z = -4.0;
-  CStack_d8.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.3926991,0.3926991);
-  CStack_d8.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.3926991,0.3926991);
+  CStack_d8.x = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.3926991,0.3926991);
+  CStack_d8.y = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.3926991,0.3926991);
   CStack_d8.z = 0.0;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&CStack_10c,&CStack_d8);
   pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0

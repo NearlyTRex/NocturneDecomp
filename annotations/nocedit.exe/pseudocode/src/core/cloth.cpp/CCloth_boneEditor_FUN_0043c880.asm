@@ -1139,8 +1139,8 @@ section .text
     PUSH 0x618858                       ; 0043d21a | = "Delete this bone?"
     MOV ECX,dword ptr [0x00678a60]      ; 0043d21f | g_CEditorToolsPtr
     PUSH ECX                            ; 0043d225 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 ; 0043d226
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 0043d226
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0043d22b
     TEST EAX,EAX                        ; 0043d22e
     JZ 0x0043d275                       ; 0043d230

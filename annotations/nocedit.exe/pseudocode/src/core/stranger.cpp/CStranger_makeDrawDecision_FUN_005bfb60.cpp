@@ -140,7 +140,7 @@ LAB_005bfd3a:
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar8);
     local_20 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                          (&this_ptr_00->motion_list,motion_name,iVar9);
-    fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+    fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
     local_24 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
                          (&pCVar8->motion_controller,local_20,fVar4);
   }

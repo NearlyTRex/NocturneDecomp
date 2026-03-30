@@ -290,7 +290,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
       break;
     case 2:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_180);
-      local_180.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_180.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
       damage_info = &local_180;
       local_180.attacker = (CDemonActor *)this_ptr;
       local_180.wielder = (CDemonActor *)this_ptr;
@@ -343,7 +343,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
           local_f4.z = pCVar12->z;
         }
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1bc);
-        local_1bc.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
+        local_1bc.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(15.0,25.0);
         local_1bc.attacker = (this_ptr->base).base.carry_hands[1].carry_actor;
         local_1bc.wielder = (CDemonActor *)this_ptr;
         local_14 = local_1bc.damage_amount;
@@ -429,7 +429,7 @@ LAB_0041c60c:
     }
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     iVar11 = 2;
-    local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+    local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
     sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar11);
     uVar12 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                        ((CDemonActor *)this_ptr,"boneGuy-walkloop.wav");

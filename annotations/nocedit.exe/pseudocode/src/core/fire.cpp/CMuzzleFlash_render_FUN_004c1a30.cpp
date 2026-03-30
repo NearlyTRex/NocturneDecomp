@@ -23,7 +23,7 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_004c1a30(CMuzzleFlash *this_p
             (g_CDemonRendererPtr2,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,(CVector3i *)&this_ptr->rotation,(CVector3i *)0x0);
-  local_28.z = (int)core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
+  local_28.z = (int)core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,6.2831855);
   local_28.x = 0;
   local_28.y = 0;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

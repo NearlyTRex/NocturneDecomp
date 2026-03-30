@@ -26,7 +26,7 @@
 ;   float FLOAT_0062407e = 5
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_hero.cpp_closestHeroToPoint_FUN_004f2170
 ;
 ; *****************************************************************************
@@ -71,6 +71,6 @@ section .text
     FADD float ptr [0x0062407e]         ; 004a7ee3 | FLOAT_0062407e
     PUSH 0xc1000000                     ; 004a7ee9
     FSTP float ptr [ESP + 0x10]         ; 004a7eee
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004a7ef2
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004a7ef2
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

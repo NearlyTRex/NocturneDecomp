@@ -15,7 +15,7 @@
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20 at 004c7b6c
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     MOV dword ptr [EBX + 0x18],0x0      ; 004bf32b
     PUSH 0x3f733333                     ; 004bf332
     MOV dword ptr [EBX + 0x14],EAX      ; 004bf337
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004bf33a
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004bf33a
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     PUSH ESI                            ; 004bf35f
         ;   Label: LAB_004bf35f
     MOV ESI,dword ptr [ECX]             ; 004bf360

@@ -25,7 +25,7 @@ void __cdecl core_script_cpp_CScript_renderEditor_FUN_00559d80(CScript *this_ptr
   int x;
   
   iVar1 = (bottom - top) + 1;
-  cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486ea0
+  cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00486ea0
             (&local_40,left,top,(right - left) + 1,iVar1,(CDrawSurface *)0x0);
   cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0);
   cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70(&local_40);

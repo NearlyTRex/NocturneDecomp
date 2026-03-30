@@ -42,7 +42,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_gabriela.cpp_CGabriella_collectAmmo_FUN_004d5c10
@@ -303,8 +303,8 @@ section .text
     ADD ESP,0x4                         ; 004d4aff
     PUSH 0x41700000                     ; 004d4b02
     PUSH 0x41200000                     ; 004d4b07
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004d4b0c
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004d4b0c
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [ESP + 0x98],EAX      ; 004d4b11
     FLD float ptr [ESP + 0x98]          ; 004d4b18
     ADD ESP,0x8                         ; 004d4b1f

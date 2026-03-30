@@ -60,7 +60,7 @@ int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005fb530(CZombie *this_ptr
   this_ptr->pickup_scan_timer = fVar3;
   if (0.0 < fVar3) {
     this_ptr->pickup_seed = this_ptr->pickup_seed + 1;
-    local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,10.0);
+    local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(5.0,10.0);
     this_ptr->pickup_scan_timer = local_14;
   }
   if ((this_ptr->base).base.carry_hands[0].carry_actor != (CDemonActor *)0x0) {

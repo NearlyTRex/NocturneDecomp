@@ -62,7 +62,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
 ;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0
 ;   core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0056d140
@@ -501,8 +501,8 @@ section .text
     ADD ESP,0xc                         ; 004ca6fa
     PUSH 0x3f828f5c                     ; 004ca6fd
     PUSH 0x3f7ae148                     ; 004ca702
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004ca707
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004ca707
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV EAX,dword ptr [EBP + 0x290]     ; 004caa15
         ;   Label: LAB_004caa15
     POP ESI                             ; 004caa1b

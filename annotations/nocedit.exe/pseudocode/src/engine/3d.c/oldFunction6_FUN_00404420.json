@@ -1,0 +1,122 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 7,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00404420",
+    "address_range": [
+      [
+        "00404420",
+        "00404445"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_oldFunction6_FUN_00404420",
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction6_FUN_00404420(SMRGLHeaderExtended *primitive)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00613444",
+      "name": "s_engine_3d_c_00613444",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613453",
+      "name": "s_Old_func_00613453",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4444444444444446,
+    "instruction_count": 9,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 7,
+      "INT_ADD": 2,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 2,
+      "INT_XOR": 1,
+      "LOAD": 1,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 31
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "primitive",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderExtended *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 72,
+        "vtable_addr": "0066df88"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

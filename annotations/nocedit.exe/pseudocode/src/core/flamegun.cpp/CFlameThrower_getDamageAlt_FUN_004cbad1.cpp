@@ -11,6 +11,6 @@ float __cdecl core_flamegun_cpp_CFlameThrower_getDamageAlt_FUN_004cbad1(CFlameTh
 {
   float fVar1;
   
-  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(150.0,200.0);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(150.0,200.0);
   return fVar1;
 }

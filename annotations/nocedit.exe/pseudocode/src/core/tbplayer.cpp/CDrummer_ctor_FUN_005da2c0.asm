@@ -7,7 +7,7 @@
 ; CDrummer *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_tbplayer.cpp_factoryFunc_FUN_005da280 at 005da29a
+;   core_tbplayer.cpp_factoryFuncDrummer_FUN_005da280 at 005da29a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_drummer_dfm_00654bed

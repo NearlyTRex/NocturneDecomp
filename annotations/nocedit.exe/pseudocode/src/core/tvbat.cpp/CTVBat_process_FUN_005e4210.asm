@@ -63,7 +63,7 @@
 ;   ... and 14 more
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
@@ -870,6 +870,6 @@ section .text
     PUSH dword ptr [EBX + 0xc0e4]       ; 005e4d36
         ;   Label: LAB_005e4d36
     PUSH dword ptr [EBX + 0xc0e0]       ; 005e4d3c
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005e4d42
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005e4d42
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

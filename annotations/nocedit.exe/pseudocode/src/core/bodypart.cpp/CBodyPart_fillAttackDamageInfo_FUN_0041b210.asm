@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;
 ; *****************************************************************************
 
@@ -34,6 +34,6 @@ section .text
     ADD ESP,0x10                        ; 0041b22e
     PUSH 0x41700000                     ; 0041b231
     PUSH 0x40a00000                     ; 0041b236
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0041b23b
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041b23b
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

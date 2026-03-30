@@ -24,7 +24,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 ;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_005b8950
 ;
@@ -228,8 +228,8 @@ section .text
     PUSH 0x3fa00000                     ; 005b8664
         ;   Label: LAB_005b8664
     PUSH 0x3f400000                     ; 005b8669
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005b866e
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005b866e
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     CMP EDI,0x2                         ; 005b868f
         ;   Label: LAB_005b868f
     JNZ 0x005b86ad                      ; 005b8692

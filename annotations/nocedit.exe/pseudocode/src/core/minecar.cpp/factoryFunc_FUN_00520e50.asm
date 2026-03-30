@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_platfrm.cpp_CPlatform_ctor_FUN_0054c850
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
         ;   Label: core_minecar.cpp_factoryFunc_FUN_00520e50
     PUSH 0x638961                       ; 00520e52 | = "..\\core\\minecar.cpp"
     PUSH 0x730                          ; 00520e57
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00520e5c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00520e5c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00520e61
     TEST EAX,EAX                        ; 00520e64
     JNZ 0x00520e69                      ; 00520e66

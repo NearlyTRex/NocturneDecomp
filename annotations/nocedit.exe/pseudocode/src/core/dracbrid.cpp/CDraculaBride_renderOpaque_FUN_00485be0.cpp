@@ -50,7 +50,7 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
           }
           if (0.0 < (double)fStack_30) {
             engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
-            engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70
+            engine_drender_cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0048ca70
                       (g_CDemonRendererPtr2,fStack_30);
             engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0
                       (g_CDemonRendererPtr2,1);

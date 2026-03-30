@@ -7,7 +7,7 @@
 ; CDynamite *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;
 ; *****************************************************************************
 
@@ -17,6 +17,6 @@ section .text
         ;   Label: core_dynamite.cpp_CDynamite_getDamage_FUN_0049cee0
     PUSH 0x43fa0000                     ; 0049cee3
     PUSH 0x43c80000                     ; 0049cee8
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0049ceed
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0049ceed
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

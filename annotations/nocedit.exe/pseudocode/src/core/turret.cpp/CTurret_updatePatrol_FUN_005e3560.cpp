@@ -41,9 +41,9 @@ void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_005e3560(CTurret *this_ptr
         iVar8 = 0;
         fVar6 = (this_ptr->patrol_target).z;
         while( true ) {
-          fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,0.9);
+          fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.1,0.9);
           (this_ptr->patrol_target).x = CStack_54.min.x * fVar7 + (1.0 - fVar7) * CStack_54.max.x;
-          fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,0.9);
+          fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.1,0.9);
           (this_ptr->patrol_target).z = CStack_54.min.z * fVar7 + (1.0 - fVar7) * CStack_54.max.z;
           (this_ptr->patrol_target).y = CStack_54.min.y;
           pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

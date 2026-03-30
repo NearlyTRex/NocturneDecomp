@@ -44,7 +44,7 @@
 ;   shape_dsemodel.cpp_CDSEModel_load_FUN_0048f960
 ;   shape_dsemodel.cpp_CDSEModel_processModelPart_FUN_0048f770
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;   wincore_windll.cpp_clearScreen_FUN_005b3e70
@@ -83,8 +83,8 @@ section .text
     MOV EAX,0x63d0f1                    ; 0053eeb2 | = "..\\shape\\multicrm.cpp"
     PUSH EAX                            ; 0053eeb7 | = "..\\shape\\multicrm.cpp"
     PUSH 0x1f20dc                       ; 0053eeb8
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0053eebd
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0053eebd
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0053eec2
     MOV EDX,dword ptr [EBP + -0xc]      ; 0053eec5
     SHL EDX,0x2                         ; 0053eec8

@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_chain.cpp_CChain_ctor_FUN_0042fb80
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_chain.cpp_factoryFunc_FUN_0042fb40
     PUSH 0x617791                       ; 0042fb42 | = "..\\core\\chain.cpp"
     PUSH 0x578                          ; 0042fb47
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 0042fb4c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 0042fb4c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0042fb51
     TEST EAX,EAX                        ; 0042fb54
     JNZ 0x0042fb59                      ; 0042fb56

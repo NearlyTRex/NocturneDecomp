@@ -1,0 +1,157 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 45,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 49
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005d8520",
+    "address_range": [
+      [
+        "005d8520",
+        "005d8562"
+      ]
+    ],
+    "convention": "__stack2_esi",
+    "is_ebp_frame": true,
+    "name": "shape_superopt.cpp_CP3D_add1_FUN_005d8520",
+    "signature": "CP3D * __stack2_esi shape_superopt_cpp_CP3D_add1_FUN_005d8520(CP3D *this_ptr,CP3D *a,CP3D *b)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.714285714285714,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CBRANCH": 1,
+      "COPY": 88,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 3,
+      "INT_ADD": 13,
+      "INT_AND": 5,
+      "INT_EQUAL": 5,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 6,
+      "INT_ZEXT": 2,
+      "LOAD": 12,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 160
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CP3D *"
+      },
+      {
+        "is_param": true,
+        "name": "a",
+        "offset": 8,
+        "size": 4,
+        "type": "CP3D *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer",
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005d8527",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      },
+      {
+        "address": "005d8541",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(CP3D *)((int)",
+      "severity": "mild",
+      "text": "pCVar3 = (CP3D *)((int)&(pCVar3->impl).x + 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

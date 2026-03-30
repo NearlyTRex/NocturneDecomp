@@ -47,7 +47,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;
@@ -291,8 +291,8 @@ section .text
     SUB ESP,0x4                         ; 0048000d
     FCHS                                ; 00480010
     FSTP float ptr [ESP]                ; 00480012
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00480015
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00480015
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [ESP + 0xcc],EAX      ; 0048001a
     XOR ESI,ESI                         ; 00480021
     FLD float ptr [ESP + 0xcc]          ; 00480023
@@ -304,8 +304,8 @@ section .text
     SUB ESP,0x4                         ; 00480047
     FCHS                                ; 0048004a
     FSTP float ptr [ESP]                ; 0048004c
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0048004f
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0048004f
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [ESP + 0xcc],EAX      ; 00480054
     FLD float ptr [ESP + 0xcc]          ; 0048005b
     ADD ESP,0x8                         ; 00480062

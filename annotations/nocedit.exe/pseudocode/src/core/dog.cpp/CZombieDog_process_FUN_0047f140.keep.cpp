@@ -177,7 +177,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
                     (&pCVar4->motion_controller,0,1);
         }
         else if ((0 < iVar10) && ((this_ptr->base).attack_cooldown <= 0.0)) {
-          local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+          local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
           if ((float)0.5 < local_14) {
             iVar10 = 3;
           }
@@ -193,7 +193,7 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
     case 3:
     case 4:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_e0);
-      local_e0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+      local_e0.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(7.0,15.0);
       local_e0.attacker = (CDemonActor *)this_ptr;
       local_e0.wielder = (CDemonActor *)this_ptr;
       damage_info = &local_e0;

@@ -41,7 +41,7 @@
 ;   crt_ctype.c_toupper_FUN_005ff9e0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
-;   engine_boss.c_modelStructNotSupported_FUN_0041db80
+;   engine_boss.c_modelStructNotSupported2_FUN_0041db80
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -239,8 +239,8 @@ section .text
     JNZ 0x00527eee                      ; 0052808c
         ;   XREF to: 00527eee (CONDITIONAL_JUMP)  ; LAB_00527eee
     PUSH EBX                            ; 00528092
-    CALL engine_boss.c_modelStructNotSupported_FUN_0041db80 ; 00528093
-        ;   XREF to: 0041db80 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported_FUN_0041db80(char * filename)
+    CALL engine_boss.c_modelStructNotSupported2_FUN_0041db80 ; 00528093
+        ;   XREF to: 0041db80 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported2_FUN_0041db80(char * filename)
     ADD ESP,0x4                         ; 00528098
     ADD ESP,0x50                        ; 0052809b
     POP EBP                             ; 0052809e

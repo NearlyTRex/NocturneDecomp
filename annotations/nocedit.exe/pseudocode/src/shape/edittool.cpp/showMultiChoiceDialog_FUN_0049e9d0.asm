@@ -29,8 +29,8 @@
 ;
 ; XREF[3]:
 ;   shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0049f180 at 0049f208
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f060 at 0049f0c4
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 at 0049f154
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 at 0049f0c4
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 at 0049f154
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_00622eae
@@ -118,8 +118,8 @@ section .text
     PUSH 0x62301e                       ; 0049ea5a | = "..\\shape\\edittool.cpp"
     ADD EAX,0x4                         ; 0049ea5f
     PUSH EAX                            ; 0049ea62
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0 ; 0049ea63
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1f0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0 ; 0049ea63
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0049ea68
     PUSH EAX                            ; 0049ea6b
     CALL crt_memory.c___vec_new_FUN_00601272 ; 0049ea6c

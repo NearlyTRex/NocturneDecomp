@@ -148,7 +148,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_13c8,0);
   }
-  local_34 = (_FILE *)shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+  local_34 = (_FILE *)shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
                                 (g_CEditorToolsPtr,"Keep %s checked out after updating to network?",&local_e0c);
   local_38 = "history";
   if (g_VersionControlDirectory[0] == '\0') {
@@ -437,7 +437,7 @@ LAB_004b4d50:
                                 (local_48,"..\\engine\\fileio.cpp",0xc4);
                       local_48 = (_FILE *)0x0;
                     }
-                    iVar4 = engine_dosio_c_getFileSize_FUN_00481960
+                    iVar4 = engine_dosio_c_getFileSizeWithFinder_FUN_00481960
                                       ((char *)0x0,local_e0c.found_path);
                     if (((-1 < iVar4) &&
                         (iVar7 = engine_dosio_c_setFileAttributes_FUN_004819f0

@@ -11,7 +11,7 @@ CImp * __cdecl core_imp_cpp_factoryFunc_FUN_004f9860(void)
 {
   CImp *pCVar1;
   
-  pCVar1 = (CImp *)shape_memdbg_cpp_debugAllocTracked_FUN_0050f1b0(0xbef4,"..\\core\\imp.cpp",0x59);
+  pCVar1 = (CImp *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0(0xbef4,"..\\core\\imp.cpp",0x59);
   if (pCVar1 == (CImp *)0x0) {
     return (CImp *)0x0;
   }

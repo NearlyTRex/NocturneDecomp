@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_battery.cpp_CBattery_ctor_FUN_00417e90
-;   shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0
+;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_battery.cpp_factoryFunc_FUN_00417e50
     PUSH 0x6159c5                       ; 00417e52 | = "..\\core\\battery.cpp"
     PUSH 0x2e0                          ; 00417e57
-    CALL shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0 ; 00417e5c
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked_FUN_0050f1b0(int size, char * filename, int line_number)
+    CALL shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0 ; 00417e5c
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00417e61
     TEST EAX,EAX                        ; 00417e64
     JNZ 0x00417e69                      ; 00417e66

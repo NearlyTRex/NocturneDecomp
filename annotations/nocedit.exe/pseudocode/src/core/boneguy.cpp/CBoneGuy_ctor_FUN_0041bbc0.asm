@@ -24,7 +24,7 @@
 ;   WatcomTypeInfo g_SBoneGuyBoxTypeInfo
 ;
 ; Called Functions:
-;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
@@ -111,6 +111,6 @@ section .text
     POP EDI                             ; 0041bce5
     PUSH 0x437f0000                     ; 0041bce6
     PUSH 0x0                            ; 0041bceb
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0041bced
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041bced
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
 

@@ -133,8 +133,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_showSoundFilesInMission_FUN_0053ec80
 void * __cdecl shape_multicrm_cpp_CMultiCram_getModels_FUN_0053ee00(CMultiCram *this_ptr,CDSEModel **dest_array);
 CDSEModel * __cdecl shape_multicrm_cpp_CMultiCram_getSecondModel_FUN_0053ee30(CMultiCram *this_ptr);
 CMultiCram * __cdecl shape_multicrm_cpp_CMultiCram_getModelCount_FUN_0053ee40(CMultiCram *this_ptr,int *model_count_ptr);
-CMultiCram * __cdecl shape_multicrm_cpp_CMultiCram_setModelCount_FUN_0053ee50(CMultiCram *this_ptr,int *model_count);
-CMultiCram * __cdecl shape_multicrm_cpp_CMultiCram_setModelCount_FUN_0053ee60(CMultiCram *this_ptr,int *model_count);
+CMultiCram * __cdecl shape_multicrm_cpp_CMultiCram_setModelCount1_FUN_0053ee50(CMultiCram *this_ptr,int *model_count);
+CMultiCram * __cdecl shape_multicrm_cpp_CMultiCram_setModelCount2_FUN_0053ee60(CMultiCram *this_ptr,int *model_count);
 void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr);
 void __cdecl core_netgame_cpp_staticInit_FUN_0053f310(void);
 void __cdecl core_netgame_cpp_resetGameTime_FUN_0053f360(void);

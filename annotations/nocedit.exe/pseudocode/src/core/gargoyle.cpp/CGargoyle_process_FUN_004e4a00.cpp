@@ -101,7 +101,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       iVar7 = core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004e48a0(this_ptr);
       if (iVar7 == 0) {
-        local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
         this_ptr->petrify_timer = local_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar4->motion_controller,5,1);
@@ -166,7 +166,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
       iVar7 = core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004e48a0(this_ptr);
       pCVar4 = &(this_ptr->base).base.model;
       if (iVar7 == 0) {
-        local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+        local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
         this_ptr->petrify_timer = local_14;
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&pCVar4->motion_controller,5,1);
@@ -273,7 +273,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
       break;
     case 3:
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_104);
-      local_104.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(3.0,5.0);
+      local_104.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(3.0,5.0);
       damage_info = &local_104;
       local_104.attacker = (CDemonActor *)this_ptr;
       local_104.wielder = (CDemonActor *)this_ptr;

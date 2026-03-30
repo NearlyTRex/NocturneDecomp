@@ -51,7 +51,7 @@ switchD_005273b9_default:
       ((iVar2 != this_ptr->part_indices[3] && (iVar2 != this_ptr->part_indices[9])))) &&
      (iVar2 != this_ptr->part_indices[10])) goto LAB_0052761a;
   if (this_ptr->part_indices[9] == damage_info->hit_part_index) {
-    fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+    fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
     if ((float)0.33300000000000002 <= fVar2) {
       if (0.66600000000000004 <= (double)fVar2) goto LAB_00527413;
       iVar2 = this_ptr->part_indices[2];
