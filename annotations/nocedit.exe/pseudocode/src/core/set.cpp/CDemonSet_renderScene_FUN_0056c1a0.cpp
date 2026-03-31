@@ -103,12 +103,12 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
       do {
         iVar3 = 0;
         core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
-                  (&g_CDemonCameraInstance,*(void **)((int)g_CoronaGlobes + local_18),0);
+                  (&g_CDemonCameraInstance,*(CDemonGlobe **)((int)g_CoronaGlobes + local_18),0);
         if (0 < this_ptr->mirror_glass_actor_count) {
           do {
             core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(this_ptr,iVar3,0);
             core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
-                      (&g_CDemonCameraInstance,*(void **)((int)g_CoronaGlobes + local_18),1);
+                      (&g_CDemonCameraInstance,*(CDemonGlobe **)((int)g_CoronaGlobes + local_18),1);
             iVar3 = iVar3 + 1;
             core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0(this_ptr);
           } while (iVar3 < this_ptr->mirror_glass_actor_count);

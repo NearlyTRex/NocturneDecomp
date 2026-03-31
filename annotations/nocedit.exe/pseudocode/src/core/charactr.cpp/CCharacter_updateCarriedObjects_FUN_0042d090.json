@@ -1,43 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "cast_error",
-        "column": 16,
-        "line": 42,
-        "message": "C-style cast from 'UOrientationVector *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 16,
-        "line": 43,
-        "message": "C-style cast from 'CLocation *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 16,
-        "line": 45,
-        "message": "C-style cast from 'CMatrix3x4f *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 382,
-    "complexity_score": 219,
+    "complexity_score": 223,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 104,
+    "pseudocode_lines": 108,
     "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 486
+    "total_lines": 490
   },
   "cross_references": [
     {
@@ -334,8 +315,22 @@
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 12,
-        "type": "CVector3f"
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": false,
@@ -410,7 +405,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 46,
       "match": "in_stack_fffffd80",
       "severity": "moderate",
       "text": "(this_ptr,(int)local_18,in_stack_fffffd80);",
@@ -418,7 +413,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 64,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "((CMatrix3x4f *)((int)pCVar4->x * 0x30 + iStack_14),&CStack_244);",
@@ -426,7 +421,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 69,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "(&CStack_184,(CMatrix3x4f *)((int)pCVar4->x * 0x30 + iStack_14),&CStack_124);",
@@ -434,7 +429,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 87,
+      "line": 91,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "iVar1 = *(int *)(unaff_EBP + 8);",
@@ -442,7 +437,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 91,
+      "line": 95,
       "match": "in_stack_fffffd80",
       "severity": "moderate",
       "text": "in_stack_fffffd80 = (CMatrix3x4f *)0x42d1f9;",
@@ -450,7 +445,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 94,
+      "line": 98,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "iVar1 = *(int *)(unaff_EBP + 8);",
@@ -458,7 +453,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 101,
+      "line": 105,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "(*(CDemonActor **)(unaff_EBP + 8));",
@@ -466,7 +461,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 107,
       "match": "(CVector3f *)((int)",
       "severity": "mild",
       "text": "local_18 = (CVector3f *)((int)&local_18->x + 1);",

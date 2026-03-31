@@ -2,11 +2,11 @@
 // Address: 004518f0
 // Address Range: [[004518f0, 0045210f] [0060c78d, 0060c7aa]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera *this_ptr,void *p1,int p2)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera *this_ptr,void *p1,int p2)
+void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render)
 
 {
   byte bVar3;
@@ -67,13 +67,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemo
   int *piVar1;
   byte uVar2;
   
-  if ((g_CGamePtr->halo_mode != 0) || ((p2 == 0 && (*(int *)((int)p1 + 0x20) != 0)))) {
-    g_CurrentGlobe = p1;
-    core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(this_ptr,p1,&local_94);
+  if ((g_CGamePtr->halo_mode != 0) || ((force_render == 0 && (globe->corona_mode != 0)))) {
+    g_CurrentGlobe = globe;
+    core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
+              (this_ptr,&globe->position_scaled,&local_94);
     g_CoronaTargetX = local_94.x;
     g_CoronaTargetY = local_94.y;
     g_CoronaTargetDepth = local_94.z;
-    if (*(int *)((int)p1 + 0x20) == 0) {
+    if (globe->corona_mode == 0) {
       g_CoronaVisibilityEnabled = 0;
     }
     else {
@@ -96,12 +97,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemo
       } while (iVar6 < this_ptr->display_height);
     }
     iVar13 = g_CoronaLightCache.count;
-    if (((p2 == 0) && (*(int *)((int)p1 + 0x20) != 0)) &&
-       (INT_0066ed68 = -1, *(int *)((int)p1 + 0x20) == 2)) {
+    if (((force_render == 0) && (globe->corona_mode != 0)) &&
+       (INT_0066ed68 = -1, globe->corona_mode == 2)) {
       if (g_CoronaLightCache.count != 0) {
         iVar1 = 0;
         do {
-          if (p1 == *(void **)((int)g_CoronaLightCache.entries[0].left_extents + iVar1 + -4)) {
+          if (globe == *(CDemonGlobe **)
+                        ((int)g_CoronaLightCache.entries[0].left_extents + iVar1 + -4)) {
             iVar12 = 0;
             iVar13 = iVar1 + 0x132220c;
             if (this_ptr->display_height < 1) {
@@ -125,7 +127,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemo
         iVar1 = g_CoronaLightCache.count * 0x13384;
         source_buffer_offset = g_CoronaLightCache.entries + g_CoronaLightCache.count;
         g_CoronaLightCache.count = g_CoronaLightCache.count + 1;
-        core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(p1);
+        core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(globe);
         local_54 = 0;
         if (0 < this_ptr->display_height) {
           local_6c = g_CoronaLightCache.entries[iVar13].lightmap[0];
@@ -145,16 +147,17 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemo
               for (; iVar13 < iVar18; iVar13 = iVar13 + 1) {
                 local_14 = '\0';
                 if (((*puVar19 < (uint)*piVar20) &&
-                    (uVar3 = pCVar16->x - (g_CurrentGlobe->color).r, uVar17 = (int)uVar3 >> 0x1f,
-                    iVar5 = (uVar3 ^ uVar17) - uVar17, iVar5 < g_CurrentGlobe->linear_radius_scaled)
-                    ) && ((uVar3 = pCVar16->y - (g_CurrentGlobe->color).g,
-                          uVar17 = (int)uVar3 >> 0x1f, iVar10 = (uVar3 ^ uVar17) - uVar17,
-                          iVar10 < g_CurrentGlobe->linear_radius_scaled &&
-                          ((uVar3 = pCVar16->z - (g_CurrentGlobe->color).b,
-                           uVar17 = (int)uVar3 >> 0x1f, iVar11 = (uVar3 ^ uVar17) - uVar17,
-                           iVar11 < g_CurrentGlobe->linear_radius_scaled &&
-                           (iVar5 = iVar10 * iVar10 + iVar5 * iVar5 + iVar11 * iVar11,
-                           iVar5 < g_CurrentGlobe->quadratic_radius_scaled)))))) {
+                    (uVar3 = pCVar16->x - (g_CurrentGlobe->position_scaled).x,
+                    uVar17 = (int)uVar3 >> 0x1f, iVar5 = (uVar3 ^ uVar17) - uVar17,
+                    iVar5 < g_CurrentGlobe->linear_radius_scaled)) &&
+                   ((uVar3 = pCVar16->y - (g_CurrentGlobe->position_scaled).y,
+                    uVar17 = (int)uVar3 >> 0x1f, iVar10 = (uVar3 ^ uVar17) - uVar17,
+                    iVar10 < g_CurrentGlobe->linear_radius_scaled &&
+                    ((uVar3 = pCVar16->z - (g_CurrentGlobe->position_scaled).z,
+                     uVar17 = (int)uVar3 >> 0x1f, iVar11 = (uVar3 ^ uVar17) - uVar17,
+                     iVar11 < g_CurrentGlobe->linear_radius_scaled &&
+                     (iVar5 = iVar10 * iVar10 + iVar5 * iVar5 + iVar11 * iVar11,
+                     iVar5 < g_CurrentGlobe->quadratic_radius_scaled)))))) {
                   if (g_CoronaVisibilityEnabled != 0) {
                     if (*puVar19 == 0) {
                       iVar10 = 0x7fffffff;
@@ -215,12 +218,12 @@ LAB_00451d8b:
             local_60 = local_60 + 4;
           } while (local_54 < this_ptr->display_height);
         }
-        source_buffer_offset->globe = p1;
+        source_buffer_offset->globe = globe;
         return;
       }
       g_CoronaVisibilityEnabled = 0;
     }
-    core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(p1);
+    core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(globe);
     local_64 = 0;
     if (0 < this_ptr->display_height) {
       local_58 = 0;
@@ -240,13 +243,13 @@ LAB_00451d8b:
           iVar1 = local_28 - iVar13;
           while (SBORROW4(local_28,iVar13) != iVar1 < 0) {
             if ((((*local_38 < (uint)*local_34) &&
-                 (uVar5 = pCVar10->x - (g_CurrentGlobe->color).r,
+                 (uVar5 = pCVar10->x - (g_CurrentGlobe->position_scaled).x,
                  (int)((uVar5 ^ (int)uVar5 >> 0x1f) - ((int)uVar5 >> 0x1f)) <
                  g_CurrentGlobe->linear_radius_scaled)) &&
-                (uVar13 = pCVar10->y - (g_CurrentGlobe->color).g,
+                (uVar13 = pCVar10->y - (g_CurrentGlobe->position_scaled).y,
                 (int)((uVar13 ^ (int)uVar13 >> 0x1f) - ((int)uVar13 >> 0x1f)) <
                 g_CurrentGlobe->linear_radius_scaled)) &&
-               (uVar14 = pCVar10->z - (g_CurrentGlobe->color).b,
+               (uVar14 = pCVar10->z - (g_CurrentGlobe->position_scaled).z,
                (int)((uVar14 ^ (int)uVar14 >> 0x1f) - ((int)uVar14 >> 0x1f)) <
                g_CurrentGlobe->linear_radius_scaled)) {
               iVar1 = uVar14 * uVar14 + uVar5 * uVar5 + uVar13 * uVar13;

@@ -233,7 +233,7 @@ void __cdecl blendCoronaTextureSpan(int scanline_y,int x_start,int x_end,int sou
 
 // Original: core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
 // Address: 004518f0
-void __cdecl CDemonCamera::renderGlobeCoronas(CDemonCamera *this_ptr,void *p1,int p2);
+void __cdecl CDemonCamera::renderGlobeCoronas(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render);
 
 // Original: core_dcamera.cpp_transformAndStoreVertex_FUN_00452110
 // Address: 00452110

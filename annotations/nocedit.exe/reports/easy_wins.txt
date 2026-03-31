@@ -250,6 +250,12 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_cow.cpp_CZombieCow_process_FUN_00444310
       Suspects: warning_type_propagation
 
+  core/spline.cpp (2 remaining of 7)
+    - core_spline.cpp_evaluateSplineScalar_FUN_005b9230
+      Suspects: unnamed_param, unnamed_param, unnamed_param, unnamed_param
+    - core_spline.cpp_evaluateSplineTangentScalar_FUN_005b93f0
+      Suspects: unnamed_param, unnamed_param, unnamed_param, unnamed_param
+
   core/boxactor.cpp (2 remaining of 46)
     - core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_00421fe0
       Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic
@@ -468,12 +474,13 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0 ( 42 lines)
     core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750 ( 43 lines)
 
-  [unnamed_param] - 9 functions
+  [unnamed_param] - 10 functions
     core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260               (  8 lines)
     core_actor.cpp_CActorPropertyList_addGroundType_FUN_0040e300           (  9 lines)
     core_actor.cpp_CActorPropertyList_addSound_FUN_0040e2d0                (  9 lines)
     core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0             ( 10 lines)
     core_actor.cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0             ( 10 lines)
+    core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930                          ( 20 lines)
     core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350               ( 23 lines)
     core_actor.cpp_CActorPropertyList_addRuleList_FUN_0040e5a0             ( 26 lines)
     core_actor.cpp_CActorPropertyList_addClothList_FUN_0040e500            ( 27 lines)
@@ -759,6 +766,17 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970 (160 lines)
         Types: ['pointer_cast']
 
+  core/mission.cpp (90.2% complete)
+    4 functions remaining:
+      core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (103 lines)
+        Types: ['pointer_cast']
+      core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 (66 lines)
+        Types: ['pointer_cast']
+      core_mission.cpp_CDemonMission_process_FUN_00524250 (46 lines)
+        Types: ['warning_type_propagation']
+      core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 (21 lines)
+        Types: ['pointer_cast', 'unresolved_funcptr']
+
   engine/palette.cpp (90.0% complete)
     1 functions remaining:
       engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060 (60 lines)
@@ -797,7 +815,6 @@ ALL REMAINING FILES
   core/curtain.cpp                                              88.5%  (23/26 clean, 3 remaining)
   shape/memdbg.cpp                                              88.5%  (23/26 clean, 3 remaining)
   core/motion.cpp                                               87.9%  (29/33 clean, 4 remaining)
-  core/mission.cpp                                              87.8%  (36/41 clean, 5 remaining)
   core/fire.cpp                                                 87.6%  (162/185 clean, 23 remaining)
   core/glass.cpp                                                87.5%  (21/24 clean, 3 remaining)
   core/cloth.cpp                                                87.3%  (48/55 clean, 7 remaining)
@@ -855,12 +872,12 @@ ALL REMAINING FILES
   engine/fileio.cpp                                             74.0%  (54/73 clean, 19 remaining)
   core/set.cpp                                                  73.6%  (64/87 clean, 23 remaining)
   core/bugs.cpp                                                 72.7%  (32/44 clean, 12 remaining)
-  core/game.cpp                                                 72.7%  (48/66 clean, 18 remaining)
   core/ghoul.cpp                                                72.2%  (13/18 clean, 5 remaining)
   core/setdir.cpp                                               71.9%  (23/32 clean, 9 remaining)
   core/dcube.cpp                                                71.8%  (28/39 clean, 11 remaining)
   core/moon.cpp                                                 71.4%  (10/14 clean, 4 remaining)
   core/bride.cpp                                                71.4%  (10/14 clean, 4 remaining)
+  core/game.cpp                                                 71.2%  (47/66 clean, 19 remaining)
   engine/3d.c                                                   70.2%  (73/104 clean, 31 remaining)
   core/weather.cpp                                              70.0%  (7/10 clean, 3 remaining)
   sound/sndmain.cpp                                             69.9%  (135/193 clean, 58 remaining)

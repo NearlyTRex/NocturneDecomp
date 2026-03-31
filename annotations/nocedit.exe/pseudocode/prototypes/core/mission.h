@@ -157,7 +157,7 @@ int __cdecl CDemonMission::countDamageableEnemies(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60
 // Address: 00524e60
-void __cdecl CDemonMission::addFilesToExtract(CDemonMission *this_ptr,_FILE *file_handle,int unknown_flag);
+void __cdecl CDemonMission::addFilesToExtract(CDemonMission *this_ptr,_FILE *file_handle,int include_all);
 
 // Original: core_mission.cpp_CDemonMission_ctor_FUN_00524ef0
 // Address: 00524ef0

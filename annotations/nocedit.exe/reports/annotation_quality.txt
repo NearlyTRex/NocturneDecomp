@@ -14,21 +14,21 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        217 ( 3.4%)
+  Functions with type issues:        208 ( 3.2%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
-    Wrong calling convention:          3
-    Undefined types in variables:      203
-    Unresolved stack params:           16
+    Wrong calling convention:          2
+    Undefined types in variables:      195
+    Unresolved stack params:           15
 
-  Excluded (.keep / MMX / by-value):   23 functions
-    Wrong calling convention:          0
-    Undefined types in variables:      20
-    Unresolved stack params:           5
+  Excluded (.keep / MMX / by-value):   32 functions
+    Wrong calling convention:          1
+    Undefined types in variables:      28
+    Unresolved stack params:           6
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -69,14 +69,8 @@ Missing register parameters (likely wrong calling convention) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (3)
+Wrong calling convention (unaffected register usage) (2)
 --------------------------------------------------------------------------------
-
-  CCharacter_updateCarriedObjects
-    Address: 0x0042d090  File: core/charactr.cpp
-    Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
-    Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter *this_ptr,float delta_time)
-    Suggested: Calling convention may be wrong (preserved registers being used)
 
   CColorQuantizer_mapScanlineToPalette
     Address: 0x005556f0  File: shape/quantize.cpp
@@ -91,7 +85,7 @@ Wrong calling convention (unaffected register usage) (3)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (16)
+Unresolved stack parameters (missing from signature) (15)
 --------------------------------------------------------------------------------
 
   CWinFont_setColorAndDrawText
@@ -178,12 +172,6 @@ Unresolved stack parameters (missing from signature) (16)
     Signature: void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
-  CCharacter_updateCarriedObjects
-    Address: 0x0042d090  File: core/charactr.cpp
-    Evidence: in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80
-    Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
   dampControlAxis
     Address: 0x004dc370  File: core/game.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
@@ -191,7 +179,7 @@ Unresolved stack parameters (missing from signature) (16)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (203)
+Undefined types in variables (195)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -259,11 +247,6 @@ Undefined types in variables (203)
     Locals:  local_180 (undefined4), local_17c (undefined4), local_178 (undefined1), local_177 (undefined1), local_114 (undefined1), local_113 (undefined1), local_b0 (undefined1), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined1), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CCloth_boneEditor
-    Address: 0x0043c880  File: core/cloth.cpp
-    Locals:  local_558 (undefined4), local_6c (undefined4), local_64 (undefined4), local_60 (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_18 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CDraculaBride_updateFreakySounds
     Address: 0x004869a0  File: core/dracbrid.cpp
     Locals:  local_88 (undefined1), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined1), local_50 (undefined1), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
@@ -307,11 +290,6 @@ Undefined types in variables (203)
   isPointOnLineSegment
     Address: 0x005d6c10  File: shape/superopt.cpp
     Locals:  local_f8 (undefined4), local_f0 (undefined4), local_c0 (undefined4), local_b8 (undefined4), local_b0 (undefined4), local_a8 (undefined4), local_70 (undefined4[4]), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4[4]), local_48 (undefined4), local_44 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CKeyFramedModel_mergeTrianglesToQuads
-    Address: 0x0047b1e0  File: core/dmodel.cpp
-    Locals:  local_108 (undefined4), uStack_104 (undefined4), local_100 (undefined4), uStack_fc (undefined4), local_f0 (undefined4), local_e4 (undefined4), local_d8 (undefined4), local_cc (undefined4), local_64 (undefined4 *), local_50 (undefined4 *), local_18 (undefined4 *)
     Suggested: Resolve undefined types to concrete types
 
   CNetGame_swapPlayerData
@@ -412,11 +390,6 @@ Undefined types in variables (203)
   CMatrix3x3f_getEulerAngles
     Address: 0x00472160  File: core/dirmat.cpp
     Locals:  local_98 (undefined4), uStack_94 (undefined4), uStack_84 (undefined4), local_80 (undefined4), local_68 (undefined4), uStack_5c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CKeyFramedModel_importFromS3D
-    Address: 0x00479330  File: core/dmodel.cpp
-    Locals:  local_7c (undefined1[4]), local_78 (undefined1[4]), local_70 (undefined1[4]), local_6c (undefined1[4]), local_64 (undefined1[4]), local_60 (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
   CDemonSet_importS3D
@@ -739,26 +712,6 @@ Undefined types in variables (203)
     Locals:  local_18 (undefined1[12])
     Suggested: Resolve undefined types to concrete types
 
-  CCourse_importBON
-    Address: 0x00442bc0  File: core/course.cpp
-    Locals:  local_1c (undefined1[4])
-    Suggested: Resolve undefined types to concrete types
-
-  CCourse_importCRS
-    Address: 0x00442d70  File: core/course.cpp
-    Locals:  local_14 (undefined1[4])
-    Suggested: Resolve undefined types to concrete types
-
-  CCourse_load
-    Address: 0x00442580  File: core/course.cpp
-    Locals:  auStack_18 (undefined1[4])
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonCamera_precomputeLight
-    Address: 0x0044de10  File: core/dcamera.cpp
-    Locals:  local_1c (undefined4 *)
-    Suggested: Resolve undefined types to concrete types
-
   CDemonCamera_saveBackdrop
     Address: 0x004529b0  File: core/dcamera.cpp
     Locals:  local_174 (undefined1[68])
@@ -767,11 +720,6 @@ Undefined types in variables (203)
   CDemonCube_buildGeometryFromPolygonData
     Address: 0x00456ed0  File: core/dcube.cpp
     Locals:  local_18 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  CKeyFramedModel_exportToS3D
-    Address: 0x00479f30  File: core/dmodel.cpp
-    Locals:  local_34 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CEventList_updateSfxEntries
@@ -1218,13 +1166,41 @@ manual .keep.cpp files, MMX inline assembly transforms, or by-value struct
 passing patterns. Issues here are expected and not actionable.
 
 --------------------------------------------------------------------------------
-Unresolved stack params - .keep overrides (1)
+Wrong calling convention - .keep overrides (1)
+--------------------------------------------------------------------------------
+
+  CCharacter_updateCarriedObjects
+    Address: 0x0042d090  File: core/charactr.cpp
+    Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
+    Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter *this_ptr,float delta_time)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+--------------------------------------------------------------------------------
+Wrong calling convention - MMX functions (0)
+--------------------------------------------------------------------------------
+
+  (none)
+
+--------------------------------------------------------------------------------
+Wrong calling convention - by-value struct passing (0)
+--------------------------------------------------------------------------------
+
+  (none)
+
+--------------------------------------------------------------------------------
+Unresolved stack params - .keep overrides (2)
 --------------------------------------------------------------------------------
 
   CDemonActor_processMeleeHit
     Address: 0x0040a210  File: core/actor.cpp
     Evidence: in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74
     Signature: int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,int hit_type)
+    Suggested: Signature is missing stack parameters entirely
+
+  CCharacter_updateCarriedObjects
+    Address: 0x0042d090  File: core/charactr.cpp
+    Evidence: in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80
+    Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
@@ -1262,12 +1238,27 @@ Unresolved stack params - by-value struct passing (4)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (16)
+Undefined types - .keep overrides (24)
 --------------------------------------------------------------------------------
 
   closestPointOnSegment3D
     Address: 0x005d6020  File: shape/superopt.cpp
     Locals:  local_168 (undefined4), uStack_164 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined8), local_128 (undefined4[4]), local_118 (undefined4), uStack_114 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), uStack_f4 (undefined4), local_f0 (undefined4), uStack_ec (undefined4), local_e8 (undefined4), uStack_e4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4[6]), local_80 (undefined4[4]), local_70 (undefined4), uStack_6c (undefined4), local_68 (undefined4), uStack_64 (undefined4), local_60 (undefined4), uStack_5c (undefined4), local_58 (undefined4), uStack_54 (undefined4), local_40 (undefined4), uStack_3c (undefined4), local_38 (undefined4), uStack_34 (undefined4), local_30 (undefined4), uStack_2c (undefined4), local_28 (undefined4), uStack_24 (undefined4), local_20 (undefined4), uStack_1c (undefined4), local_18 (undefined4), uStack_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CCloth_boneEditor
+    Address: 0x0043c880  File: core/cloth.cpp
+    Locals:  local_558 (undefined4), local_6c (undefined4), local_64 (undefined4), local_60 (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_18 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CKeyFramedModel_mergeTrianglesToQuads
+    Address: 0x0047b1e0  File: core/dmodel.cpp
+    Locals:  local_108 (undefined4), uStack_104 (undefined4), local_100 (undefined4), uStack_fc (undefined4), local_f0 (undefined4), local_e4 (undefined4), local_d8 (undefined4), local_cc (undefined4), local_64 (undefined4 *), local_50 (undefined4 *), local_18 (undefined4 *)
+    Suggested: Resolve undefined types to concrete types
+
+  CKeyFramedModel_importFromS3D
+    Address: 0x00479330  File: core/dmodel.cpp
+    Locals:  local_7c (undefined1[4]), local_78 (undefined1[4]), local_70 (undefined1[4]), local_6c (undefined1[4]), local_64 (undefined1[4]), local_60 (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
   CSfxSample_parseConfigFile
@@ -1338,6 +1329,31 @@ Undefined types - .keep overrides (16)
   CBox_loadFromFile
     Address: 0x0041fe90  File: core/box.cpp
     Locals:  local_10 (undefined1[4])
+    Suggested: Resolve undefined types to concrete types
+
+  CCourse_importBON
+    Address: 0x00442bc0  File: core/course.cpp
+    Locals:  local_1c (undefined1[4])
+    Suggested: Resolve undefined types to concrete types
+
+  CCourse_importCRS
+    Address: 0x00442d70  File: core/course.cpp
+    Locals:  local_14 (undefined1[4])
+    Suggested: Resolve undefined types to concrete types
+
+  CCourse_load
+    Address: 0x00442580  File: core/course.cpp
+    Locals:  auStack_18 (undefined1[4])
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonCamera_precomputeLight
+    Address: 0x0044de10  File: core/dcamera.cpp
+    Locals:  local_1c (undefined4 *)
+    Suggested: Resolve undefined types to concrete types
+
+  CKeyFramedModel_exportToS3D
+    Address: 0x00479f30  File: core/dmodel.cpp
+    Locals:  local_34 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CDemonSet_showCameraEditor

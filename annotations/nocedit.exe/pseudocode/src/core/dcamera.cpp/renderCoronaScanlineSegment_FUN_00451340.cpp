@@ -25,13 +25,13 @@ void __cdecl core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340(int row_i
            (column_start << (g_CameraDownscaleIterations.bytes[0] & 0x1f));
   for (; column_start < column_end; column_start = column_start + 1) {
     if ((((*puVar2 < (uint)*piVar6) &&
-         (uVar7 = pCVar4->x - (g_CurrentGlobe->color).r,
+         (uVar7 = pCVar4->x - (g_CurrentGlobe->position_scaled).x,
          (int)((uVar7 ^ (int)uVar7 >> 0x1f) - ((int)uVar7 >> 0x1f)) <
          g_CurrentGlobe->linear_radius_scaled)) &&
-        (uVar3 = pCVar4->y - (g_CurrentGlobe->color).g,
+        (uVar3 = pCVar4->y - (g_CurrentGlobe->position_scaled).y,
         (int)((uVar3 ^ (int)uVar3 >> 0x1f) - ((int)uVar3 >> 0x1f)) <
         g_CurrentGlobe->linear_radius_scaled)) &&
-       (uVar8 = pCVar4->z - (g_CurrentGlobe->color).b,
+       (uVar8 = pCVar4->z - (g_CurrentGlobe->position_scaled).z,
        (int)((uVar8 ^ (int)uVar8 >> 0x1f) - ((int)uVar8 >> 0x1f)) <
        g_CurrentGlobe->linear_radius_scaled)) {
       iVar1 = uVar8 * uVar8 + uVar3 * uVar3 + uVar7 * uVar7;

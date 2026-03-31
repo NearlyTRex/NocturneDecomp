@@ -6,6 +6,7 @@
 #include "types/classes/CDSEModel.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonCube.h"
+#include "types/classes/CDemonPart.h"
 #include "types/classes/CDemonRaytrace.h"
 #include "types/classes/CDemonTriangle.h"
 #include "types/classes/CDynamite.h"
@@ -69,7 +70,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_freeNewCubeList_FUN_00494400(CDemonR
 void __cdecl core_dtrace_cpp_CDemonRaytrace_consolidateTriList_FUN_00494450(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_allocTriList_FUN_00494600(CDemonRaytrace *this_ptr);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_freeTriList_FUN_00494690(CDemonRaytrace *this_ptr);
-void __cdecl core_dtrace_cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710(CDemonRaytrace *this_ptr,void *callback_data,int linear_index,void *user_data);
+void __cdecl core_dtrace_cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710(CDemonRaytrace *this_ptr,CDemonPart *part,int linear_index,_FILE *file_handle);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytrace *this_ptr,_FILE *file_handle);
 int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0(CDemonRaytrace *this_ptr,char *filename);
 void __cdecl core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace *this_ptr,_FILE *file_handle);

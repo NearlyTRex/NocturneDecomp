@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera *this_ptr,void *p1,int p2)
+; void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera *this_ptr,CDemonGlobe *globe,int force_render)
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
-; void *           Stack[0x8]:4   p1
-; int              Stack[0xc]:4   p2
+; CDemonGlobe *    Stack[0x8]:4   globe
+; int              Stack[0xc]:4   force_render
 ; Local Variables:
 ; int[1014]        Stack[-0x107c]:4056  aiStackY_107c
 ; CVector3i        Stack[-0x94]:12  local_94

@@ -25,7 +25,7 @@
 ;   core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_004990f0 at 0049913e
 ;
 ; Referenced Globals:
-;   void* PTR_LAB_00457630 = 00457774
+;   void* PTR_case_0_00457630 = 00457774
 ;   TerminatedCString s_core_dcube_cpp_0061a7dd
 ;   TerminatedCString s_CDemonCube_rotateVertici_0061a7ef
 ;   float g_CubeColorScaleFactor = 127
@@ -43,9 +43,11 @@
 ;
 ; Called Functions:
 ;   core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_004566e0
+;   core_ground.cpp_getGroundTypeColor_FUN_004eee20
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
+;   engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
@@ -167,11 +169,12 @@ section .text
     CMP dword ptr [EBP + 0x18],0x4      ; 00457765
         ;   Label: LAB_00457765
     JA 0x00457774                       ; 00457769
-        ;   XREF to: 00457774 (CONDITIONAL_JUMP)  ; LAB_00457774
+        ;   XREF to: 00457774 (CONDITIONAL_JUMP)  ; case_4
     MOV EAX,dword ptr [EBP + -0x14]     ; 0045776b
-    JMP dword ptr [EAX + 0x457630]      ; 0045776e | PTR_LAB_00457630
+    JMP dword ptr [EAX + 0x457630]      ; 0045776e | PTR_case_0_00457630
+        ;   Label: switch
     MOV EAX,dword ptr [EBP + 0x14]      ; 00457774
-        ;   Label: LAB_00457774
+        ;   Label: case_0
     MOV ESI,dword ptr [EBP + -0x8]      ; 00457777
     MOV EAX,dword ptr [EAX + 0x2c]      ; 0045777a
     ADD EAX,ESI                         ; 0045777d
@@ -282,4 +285,23 @@ section .text
     MOV byte ptr [0x015c42a0],DL        ; 004578ac | g_ColorConstantsInitialized
     JMP 0x00457746                      ; 004578b2
         ;   XREF to: 00457746 (UNCONDITIONAL_JUMP)  ; LAB_00457746
+    MOV EAX,dword ptr [EBP + 0x14]      ; 004578b7
+        ;   Label: case_3
+    MOV ECX,dword ptr [EBP + -0x4]      ; 004578ba
+    MOV EAX,dword ptr [EAX + 0x30]      ; 004578bd
+    ADD EAX,ECX                         ; 004578c0
+    MOV AL,byte ptr [EAX]               ; 004578c2
+    AND EAX,0xff                        ; 004578c4
+    PUSH EAX                            ; 004578c9
+    CALL core_ground.cpp_getGroundTypeColor_FUN_004eee20 ; 004578ca
+        ;   XREF to: 004eee20 (UNCONDITIONAL_CALL)  ; uint core_ground.cpp_getGroundTypeColor_FUN_004eee20(EGroundType type)
+    ADD ESP,0x4                         ; 004578cf
+    PUSH EAX                            ; 004578d2
+    MOV EBX,dword ptr [0x006703ec]      ; 004578d3 | g_CDemonRendererPtr2
+    PUSH EBX                            ; 004578d9 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960 ; 004578da
+        ;   XREF to: 0048c960 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(CDemonRenderer * this_ptr, int color)
+    ADD ESP,0x8                         ; 004578df
+    JMP 0x00457800                      ; 004578e2
+        ;   XREF to: 00457800 (UNCONDITIONAL_JUMP)  ; LAB_00457800
 

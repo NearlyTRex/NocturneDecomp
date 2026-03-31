@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5073 (78.6%)
-Functions with suspects: 1381 (21.4%)
+Clean functions: 5071 (78.6%)
+Functions with suspects: 1383 (21.4%)
 
-Total suspect patterns: 13692
+Total suspect patterns: 13691
 Average suspects per function: 2.12
 
-Virtual files: 214 total, 47 at 100%, 83 at 90%+
+Virtual files: 214 total, 46 at 100%, 83 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3412, Average: 47.8
@@ -23,13 +23,13 @@ Average complexity score: 71.2
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6454
-Successful: 6073 (94.1%)
-Failed: 381
+Successful: 6111 (94.7%)
+Failed: 343
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   decompiler_intrinsic      6777
-  pointer_cast              4167
+  pointer_cast              4164
   unknown_field             831
   nonstandard_int           267
   warning_inlined_function  261
@@ -38,10 +38,10 @@ SUSPECT PATTERN BREAKDOWN
   warning_type_propagation  131
   stack_alignment_array     95
   sub84_truncation          94
-  unresolved_funcptr        85
+  unresolved_funcptr        84
   param_count_too_few       81
   warning_unreachable       75
-  unnamed_param             64
+  unnamed_param             73
   suspect_float             53
   param_count_too_many      36
   mmx_assembly              34
@@ -56,19 +56,18 @@ SUSPECT PATTERN BREAKDOWN
   warning_deadcode_restart  5
   unknown_type              4
   special_cpu_detection     4
-  unknown_param             4
   warning_max_restarts      3
   nan_function_artifact     3
   warning_overlapping_globals 3
   undefined_type            3
-  warning_jumptable         2
-  warning_indirect_jump     2
   cpuid_intrinsic           2
   undefined_data            1
   unresolved_register       1
   cpuid_assembly            1
   warning_noreturn          1
   warning_spacebase         1
+  warning_jumptable         1
+  warning_indirect_jump     1
 
 EASIEST FUNCTIONS (Clean, Sorted by Size)
 ----------------------------------------
@@ -122,7 +121,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
   005b1680: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680 (4 lines)
   005b1660: sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660 (4 lines)
-  ... and 5023 more
+  ... and 5021 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -290,7 +289,7 @@ FUNCTIONS BY SUSPECT TYPE
     00472160: core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
     ... and 42 more
 
-  unresolved_funcptr (48 functions):
+  unresolved_funcptr (47 functions):
     0043eef0: support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0
     0043f270: support_codec.cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270
     0043f200: support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200
@@ -301,7 +300,7 @@ FUNCTIONS BY SUSPECT TYPE
     00407890: engine_3d.c_dispatchMRGLBlockChain_FUN_00407890
     0048da80: engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
     005ade70: sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
-    ... and 38 more
+    ... and 37 more
 
   param_count_too_few (81 functions):
     00489520: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
@@ -329,7 +328,7 @@ FUNCTIONS BY SUSPECT TYPE
     004b2890: engine_fileio.cpp_CCheckOutList_load_FUN_004b2890
     ... and 31 more
 
-  unnamed_param (17 functions):
+  unnamed_param (20 functions):
     0040e1e0: core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0
     0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
     0040e350: core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350
@@ -340,7 +339,7 @@ FUNCTIONS BY SUSPECT TYPE
     0040e2d0: core_actor.cpp_CActorPropertyList_addSound_FUN_0040e2d0
     0040e640: core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640
     0040e3b0: core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
-    ... and 7 more
+    ... and 10 more
 
   suspect_float (21 functions):
     005401e0: core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
@@ -466,10 +465,6 @@ FUNCTIONS BY SUSPECT TYPE
     0052500f: core_mmx.c_getCPUInfo_FUN_0052500f
     00524f10: core_mmx.c_detectCPUFeatures_FUN_00524f10
 
-  unknown_param (2 functions):
-    00574910: core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910
-    00524e60: core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60
-
   warning_max_restarts (3 functions):
     005ae660: sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
     005ae830: sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
@@ -489,14 +484,6 @@ FUNCTIONS BY SUSPECT TYPE
     005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
     005b55f7: wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7
 
-  warning_jumptable (2 functions):
-    00457650: core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
-    005b5710: wincore_windll.cpp_renderScanline_FUN_005b5710
-
-  warning_indirect_jump (2 functions):
-    00457650: core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
-    005b5710: wincore_windll.cpp_renderScanline_FUN_005b5710
-
   cpuid_intrinsic (1 functions):
     00524f4c: core_mmx.c_detectIntelProcessor_FUN_00524f4c
 
@@ -514,3 +501,9 @@ FUNCTIONS BY SUSPECT TYPE
 
   warning_spacebase (1 functions):
     00556180: shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
+
+  warning_jumptable (1 functions):
+    005b5710: wincore_windll.cpp_renderScanline_FUN_005b5710
+
+  warning_indirect_jump (1 functions):
+    005b5710: wincore_windll.cpp_renderScanline_FUN_005b5710

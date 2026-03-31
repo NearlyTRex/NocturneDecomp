@@ -162,6 +162,9 @@ _SUSPECT_PATTERN_DEFS = [
     (r'\b[pu]?uRam[0-9a-fA-F]+\b', 'undefined_ram', 'Undefined RAM reference'),
     # param_N or paramN - Unnamed function parameters (need meaningful names)
     (r'\bparam_?\d+\b', 'unnamed_param', 'Unnamed function parameter'),
+    # p1, p2, etc. - Short generic parameter names in function signatures (need meaningful names)
+    # Only match when preceded by a type and * (pointer param) or type name, to avoid matching local vars
+    (r'(?:void|int|float|uint|char|double)\s*\*?\s*\bp\d+\b', 'unnamed_param', 'Unnamed function parameter (short form)'),
     # Parameters or variables with "unknown" in the name - flagged for later investigation
     (r'\bunknown_\w+\b', 'unknown_param', 'Parameter/variable named unknown (needs investigation)'),
     # local_XX - Unnamed local variables (need meaningful names)

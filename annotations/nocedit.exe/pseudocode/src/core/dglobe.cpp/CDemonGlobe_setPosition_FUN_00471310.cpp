@@ -19,8 +19,8 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310(CDemonGlobe *t
     (this_ptr->position).z = position->z;
   }
   dVar1 = 256;
-  (this_ptr->color).r = (int)ROUND(ROUND((double)position->x * 256));
-  (this_ptr->color).g = (int)ROUND(ROUND((double)position->y * dVar1));
-  (this_ptr->color).b = (int)ROUND(ROUND(dVar1 * (double)position->z));
+  (this_ptr->position_scaled).x = (int)ROUND(ROUND((double)position->x * 256));
+  (this_ptr->position_scaled).y = (int)ROUND(ROUND((double)position->y * dVar1));
+  (this_ptr->position_scaled).z = (int)ROUND(ROUND(dVar1 * (double)position->z));
   return;
 }

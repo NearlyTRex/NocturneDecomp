@@ -571,7 +571,7 @@ section .text
     MOV ESI,dword ptr [0x0067d550]      ; 004bdf1c | g_CDemonMissionPtr
     PUSH ESI                            ; 004bdf22 | g_CDemonMissionInstance
     CALL core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60 ; 004bdf23
-        ;   XREF to: 00524e60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60(CDemonMission * this_ptr, _FILE * file_handle, int unknown_flag)
+        ;   XREF to: 00524e60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60(CDemonMission * this_ptr, _FILE * file_handle, int include_all)
     ADD ESP,0xc                         ; 004bdf28
     JMP 0x004bdb2c                      ; 004bdf2b
         ;   XREF to: 004bdb2c (UNCONDITIONAL_JUMP)  ; LAB_004bdb2c

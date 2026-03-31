@@ -50,10 +50,10 @@
 ;   core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600
 ;   core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00494450
 ;   core_dtrace.cpp_CDemonRaytrace_convertCubeIndexToPosition_FUN_00499ba0
-;   core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710
 ;   core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004942d0
 ;   core_dtrace.cpp_CDemonRaytrace_freeNewCubeList_FUN_00494400
 ;   core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690
+;   core_dtrace.cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710
 ;   core_dtri.cpp_CDemonTriangle_readDataBinary_FUN_0049a5a0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c_memset_FUN_005fde40
@@ -329,8 +329,8 @@ section .text
     PUSH EAX                            ; 00494a43
     PUSH EBP                            ; 00494a44
     MOV dword ptr [EDI + 0xc],EAX       ; 00494a45
-    CALL core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710 ; 00494a48
-        ;   XREF to: 00494710 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710(CDemonRaytrace * this_ptr, void * callback_data, int linear_index, void * user_data)
+    CALL core_dtrace.cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710 ; 00494a48
+        ;   XREF to: 00494710 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710(CDemonRaytrace * this_ptr, CDemonPart * part, int linear_index, _FILE * file_handle)
     ADD ESP,0x10                        ; 00494a4d
     MOV EAX,dword ptr [ESP + 0x58]      ; 00494a50
         ;   Label: LAB_00494a50
@@ -522,8 +522,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0xc]       ; 00494c21
     PUSH EAX                            ; 00494c24
     PUSH EBP                            ; 00494c25
-    CALL core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710 ; 00494c26
-        ;   XREF to: 00494710 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710(CDemonRaytrace * this_ptr, void * callback_data, int linear_index, void * user_data)
+    CALL core_dtrace.cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710 ; 00494c26
+        ;   XREF to: 00494710 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710(CDemonRaytrace * this_ptr, CDemonPart * part, int linear_index, _FILE * file_handle)
     ADD ESP,0x10                        ; 00494c2b
     MOV EDX,dword ptr [ESP + 0x58]      ; 00494c2e
     PUSH EDX                            ; 00494c32

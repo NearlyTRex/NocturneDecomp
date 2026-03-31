@@ -234,7 +234,7 @@ section .text
     PUSH 0x32758e4                      ; 0056c345 | g_CDemonCameraInstance
     XOR ESI,ESI                         ; 0056c34a
     CALL core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 ; 0056c34c
-        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera * this_ptr, void * p1, int p2)
+        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera * this_ptr, CDemonGlobe * globe, int force_render)
     MOV ECX,dword ptr [EBX + 0x15acb4]  ; 0056c351
     ADD ESP,0xc                         ; 0056c357
     TEST ECX,ECX                        ; 0056c35a
@@ -253,7 +253,7 @@ section .text
     PUSH EAX                            ; 0056c375
     PUSH 0x32758e4                      ; 0056c376 | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 ; 0056c37b
-        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera * this_ptr, void * p1, int p2)
+        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera * this_ptr, CDemonGlobe * globe, int force_render)
     ADD ESP,0xc                         ; 0056c380
     PUSH EBX                            ; 0056c383
     INC ESI                             ; 0056c384
@@ -294,7 +294,7 @@ section .text
     PUSH EDI                            ; 0056c3dd
     PUSH 0x32758e4                      ; 0056c3de | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 ; 0056c3e3
-        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera * this_ptr, void * p1, int p2)
+        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera * this_ptr, CDemonGlobe * globe, int force_render)
     MOV EAX,[0x03277b80]                ; 0056c3e8 | g_VisibleCoronaGlobeCount
     MOV dword ptr [EAX*0x4 + 0x3277b84],EDI ; 0056c3ed | g_VisibleCoronaGlobes
     LEA EDI,[EAX + 0x1]                 ; 0056c3f4
@@ -751,7 +751,7 @@ section .text
     PUSH EDI                            ; 0056c859
     PUSH 0x32758e4                      ; 0056c85a | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 ; 0056c85f
-        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera * this_ptr, void * p1, int p2)
+        ;   XREF to: 004518f0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemonCamera * this_ptr, CDemonGlobe * globe, int force_render)
     ADD ESP,0xc                         ; 0056c864
     PUSH EBX                            ; 0056c867
     CALL core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0 ; 0056c868

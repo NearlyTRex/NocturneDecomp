@@ -1,6 +1,6 @@
 // Name: core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
 // Address: 00457650
-// Address Range: [[00457650, 004578b6]]
+// Address Range: [[00457650, 004578e6]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *this_ptr,uint rendering_mode)
 
@@ -9,6 +9,7 @@
 void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *this_ptr,uint rendering_mode)
 
 {
+  uint color;
   int iVar3;
   CVector3f *pCVar4;
   int iVar5;
@@ -73,26 +74,35 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *t
     local_18 = 0;
     do {
       if (rendering_mode < 5) {
-                    /* WARNING: Could not recover jumptable at 0x0045776e. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-        (**(code **)((int)&PTR_LAB_00457630 + local_24))();
-        return;
+                    /* WARNING: Switch is manually overridden */
+        switch(local_24) {
+        default:
+          goto override_jmp_0045776e_case_0;
+        case 0xc:
+          color = core_ground_cpp_getGroundTypeColor_FUN_004eee20
+                            ((uint)*(byte *)((int)this_ptr->ground_type_memory + local_14));
+          engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
+                    (g_CDemonRendererPtr2,color);
+        }
       }
-      pCVar2 = this_ptr->triangle_buffer;
-      pfVar1 = (float *)((int)(pCVar2->triangle).vertices + local_18 + 0xc);
-      if (&local_3c != pfVar1) {
-        local_3c = *pfVar1;
-        local_38 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x10);
-        local_34 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x14);
+      else {
+override_jmp_0045776e_case_0:
+        pCVar2 = this_ptr->triangle_buffer;
+        pfVar1 = (float *)((int)(pCVar2->triangle).vertices + local_18 + 0xc);
+        if (&local_3c != pfVar1) {
+          local_3c = *pfVar1;
+          local_38 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x10);
+          local_34 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x14);
+        }
+        local_3c = local_3c * 127.0f;
+        local_38 = local_38 * 127.0f;
+        local_34 = 127.0f * local_34;
+        local_28 = (uint)ROUND(local_34);
+        local_2c = (uint)ROUND(local_38);
+        local_30 = (uint)ROUND(local_3c);
+        engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
+                  (g_CDemonRendererPtr2,local_30 & 0xff,local_2c & 0xff,local_28 & 0xff);
       }
-      local_3c = local_3c * 127.0f;
-      local_38 = local_38 * 127.0f;
-      local_34 = 127.0f * local_34;
-      local_28 = (uint)ROUND(local_34);
-      local_2c = (uint)ROUND(local_38);
-      local_30 = (uint)ROUND(local_3c);
-      engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
-                (g_CDemonRendererPtr2,local_30 & 0xff,local_2c & 0xff,local_28 & 0xff);
       iVar3 = local_18 + 0x20;
       iVar5 = local_14 + 1;
       core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_004566e0

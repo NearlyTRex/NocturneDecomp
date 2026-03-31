@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   offset_position
 ;
 ; XREF[1]:
-;   core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710 at 00494790
+;   core_dtrace.cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710 at 00494790
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_newformat_006217ef

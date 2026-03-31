@@ -251,7 +251,7 @@
       "line": 15,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(this_ptr->color).r = (int)ROUND(ROUND((double)position->x * 256));",
+      "text": "(this_ptr->position_scaled).x = (int)ROUND(ROUND((double)position->x * 256));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -259,7 +259,7 @@
       "line": 15,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(this_ptr->color).r = (int)ROUND(ROUND((double)position->x * 256));",
+      "text": "(this_ptr->position_scaled).x = (int)ROUND(ROUND((double)position->x * 256));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -267,7 +267,7 @@
       "line": 16,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(this_ptr->color).g = (int)ROUND(ROUND((double)position->y * dVar1));",
+      "text": "(this_ptr->position_scaled).y = (int)ROUND(ROUND((double)position->y * dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -275,7 +275,7 @@
       "line": 16,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(this_ptr->color).g = (int)ROUND(ROUND((double)position->y * dVar1));",
+      "text": "(this_ptr->position_scaled).y = (int)ROUND(ROUND((double)position->y * dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -283,7 +283,7 @@
       "line": 17,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(this_ptr->color).b = (int)ROUND(ROUND(dVar1 * (double)position->z));",
+      "text": "(this_ptr->position_scaled).z = (int)ROUND(ROUND(dVar1 * (double)position->z));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -291,7 +291,7 @@
       "line": 17,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(this_ptr->color).b = (int)ROUND(ROUND(dVar1 * (double)position->z));",
+      "text": "(this_ptr->position_scaled).z = (int)ROUND(ROUND(dVar1 * (double)position->z));",
       "type": "decompiler_intrinsic"
     }
   ]

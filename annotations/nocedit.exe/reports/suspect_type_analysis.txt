@@ -5,16 +5,16 @@ SUSPECT TYPE ANALYSIS
 SUSPECT TYPE COUNTS
 --------------------------------------------------
   decompiler_intrinsic            6914 ( 43.9%)
-  pointer_cast                    4401 ( 28.0%)
+  pointer_cast                    4398 ( 27.9%)
   unknown_field                    871 (  5.5%)
   special_crt_function             439 (  2.8%)
   stack_param                      351 (  2.2%)
-  unnamed_param                    320 (  2.0%)
+  unnamed_param                    329 (  2.1%)
   fpu_register_input               311 (  2.0%)
   nonstandard_int                  267 (  1.7%)
   warning_inlined_function         264 (  1.7%)
   stack_ref                        250 (  1.6%)
-  unresolved_funcptr               158 (  1.0%)
+  unresolved_funcptr               157 (  1.0%)
   warning_type_propagation         131 (  0.8%)
   param_count_too_few              119 (  0.8%)
   unaffected_reg                   106 (  0.7%)
@@ -34,11 +34,11 @@ SUSPECT TYPE COUNTS
   byvalue_struct_passing            21 (  0.1%)
   undefined_type                    15 (  0.1%)
   special_math_intrinsic            15 (  0.1%)
-  unknown_param                     10 (  0.1%)
-  warning_jumptable                  9 (  0.1%)
-  warning_indirect_jump              9 (  0.1%)
   nan_function_artifact              9 (  0.1%)
+  warning_jumptable                  8 (  0.1%)
+  warning_indirect_jump              8 (  0.1%)
   fnstsw_flag_artifact               8 (  0.1%)
+  unknown_param                      6 (  0.0%)
   displaced_global_access            6 (  0.0%)
   warning_deadcode_restart           5 (  0.0%)
   warning_noreturn                   4 (  0.0%)
@@ -96,17 +96,17 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (4401 occurrences)
+TYPE: pointer_cast (4398 occurrences)
 ====================================================================================================
 
 Unique patterns:
   1383x  (uint *)((int)
-  1237x  (int *)((int)
+  1233x  (int *)((int)
    305x  (float *)((int)
    209x  (SRenderVertex *)((int)
    193x  (double *)((int)
    189x  (void *)((int)
-   169x  (byte *)((int)
+   170x  (byte *)((int)
     86x  (ushort *)((int)
     69x  (char *)((int)
     61x  (short *)((int)
@@ -289,7 +289,7 @@ Example functions:
     int in_stack_00000004;...
 
 ====================================================================================================
-TYPE: unnamed_param (320 occurrences)
+TYPE: unnamed_param (329 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -304,6 +304,11 @@ Unique patterns:
      6x  param_5
      6x  param3
      4x  param4
+     2x  float *p0
+     2x  float *p1
+     2x  float *p2
+     2x  float *p3
+     1x  char *p1
 
 Example functions:
   crt_memory.c___arrcopy_FUN_00600bc2
@@ -492,11 +497,11 @@ Example functions:
     local_8 = &stack0x0000000c;...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (158 occurrences)
+TYPE: unresolved_funcptr (157 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   119x  code *
+   118x  code *
     39x  code
 
 Example functions:
@@ -1517,61 +1522,6 @@ Example functions:
     Math intrinsic (pow) at 005ffd76...
 
 ====================================================================================================
-TYPE: unknown_param (10 occurrences)
-====================================================================================================
-
-Unique patterns:
-     6x  unknown_10
-     2x  unknown_scale
-     2x  unknown_flag
-
-Example functions:
-  crt_string.c_strtok_FUN_005fff50
-    str = *(char **)pTVar2->unknown_10;...
-  core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910
-    void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this...
-  core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60
-    void __cdecl core_mission_cpp_CDemonMission_addFilesToExtract_FUN_00524e60(CDemo...
-
-====================================================================================================
-TYPE: warning_jumptable (9 occurrences)
-====================================================================================================
-
-Unique patterns:
-     9x  WARNING: Could not recover jumptable
-
-Example functions:
-  crt_watcom.c__memset_FUN_004b19d0
-    /* WARNING: Could not recover jumptable at 0x004b1a19. Too many branches */...
-  crt_watcom.c__memcpy_FUN_004b1a78
-    /* WARNING: Could not recover jumptable at 0x004b1b0d. Too many branches */...
-  crt_math.c_function_dispatch_FUN_00606a77
-    /* WARNING: Could not recover jumptable at 0x00606a7a. Too many branches */...
-  core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
-    /* WARNING: Could not recover jumptable at 0x0045776e. Too many branches */...
-  wincore_windll.cpp_renderScanline_FUN_005b5710
-    /* WARNING: Could not recover jumptable at 0x005b5710. Too many branches */...
-
-====================================================================================================
-TYPE: warning_indirect_jump (9 occurrences)
-====================================================================================================
-
-Unique patterns:
-     9x  WARNING: Treating indirect jump as call
-
-Example functions:
-  crt_watcom.c__memset_FUN_004b19d0
-    /* WARNING: Treating indirect jump as call */...
-  crt_watcom.c__memcpy_FUN_004b1a78
-    /* WARNING: Treating indirect jump as call */...
-  crt_math.c_function_dispatch_FUN_00606a77
-    /* WARNING: Treating indirect jump as call */...
-  core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
-    /* WARNING: Treating indirect jump as call */...
-  wincore_windll.cpp_renderScanline_FUN_005b5710
-    /* WARNING: Treating indirect jump as call */...
-
-====================================================================================================
 TYPE: nan_function_artifact (9 occurrences)
 ====================================================================================================
 
@@ -1587,6 +1537,40 @@ Example functions:
     (ushort)(0.0 < (float)damage_info) << 8 | (ushort)NAN((float)damage_info) << 10...
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
     (ushort)(NAN(dVar9) || NAN(359.5)) << 10 |...
+
+====================================================================================================
+TYPE: warning_jumptable (8 occurrences)
+====================================================================================================
+
+Unique patterns:
+     8x  WARNING: Could not recover jumptable
+
+Example functions:
+  crt_watcom.c__memset_FUN_004b19d0
+    /* WARNING: Could not recover jumptable at 0x004b1a19. Too many branches */...
+  crt_watcom.c__memcpy_FUN_004b1a78
+    /* WARNING: Could not recover jumptable at 0x004b1b0d. Too many branches */...
+  crt_math.c_function_dispatch_FUN_00606a77
+    /* WARNING: Could not recover jumptable at 0x00606a7a. Too many branches */...
+  wincore_windll.cpp_renderScanline_FUN_005b5710
+    /* WARNING: Could not recover jumptable at 0x005b5710. Too many branches */...
+
+====================================================================================================
+TYPE: warning_indirect_jump (8 occurrences)
+====================================================================================================
+
+Unique patterns:
+     8x  WARNING: Treating indirect jump as call
+
+Example functions:
+  crt_watcom.c__memset_FUN_004b19d0
+    /* WARNING: Treating indirect jump as call */...
+  crt_watcom.c__memcpy_FUN_004b1a78
+    /* WARNING: Treating indirect jump as call */...
+  crt_math.c_function_dispatch_FUN_00606a77
+    /* WARNING: Treating indirect jump as call */...
+  wincore_windll.cpp_renderScanline_FUN_005b5710
+    /* WARNING: Treating indirect jump as call */...
 
 ====================================================================================================
 TYPE: fnstsw_flag_artifact (8 occurrences)
@@ -1615,6 +1599,17 @@ Example functions:
     CONCAT22((short)uVar8 * (short)(uVar39 >> 0x10)...
   wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
     CONCAT22((short)uVar7 * (short)(uVar38 >> 0x10)...
+
+====================================================================================================
+TYPE: unknown_param (6 occurrences)
+====================================================================================================
+
+Unique patterns:
+     6x  unknown_10
+
+Example functions:
+  crt_string.c_strtok_FUN_005fff50
+    str = *(char **)pTVar2->unknown_10;...
 
 ====================================================================================================
 TYPE: displaced_global_access (6 occurrences)

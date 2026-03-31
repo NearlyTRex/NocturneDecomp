@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtrace_cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710(CDemonRaytrace *this_ptr,void *callback_data,int linear_index,void *user_data)
+; void __cdecl core_dtrace_cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710(CDemonRaytrace *this_ptr,CDemonPart *part,int linear_index,_FILE *file_handle)
 ;
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
-; void *           Stack[0x8]:4   callback_data
+; CDemonPart *     Stack[0x8]:4   part
 ; int              Stack[0xc]:4   linear_index
-; void *           Stack[0x10]:4   user_data
+; _FILE *          Stack[0x10]:4   file_handle
 ; Local Variables:
 ; CVector3f        Stack[-0x1c]:12  local_1c
 ; int              Stack[-0x10]:4  local_10
@@ -23,7 +23,7 @@
 section .text
 
     PUSH EBX                            ; 00494710
-        ;   Label: core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710
+        ;   Label: core_dtrace.cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710
     PUSH ESI                            ; 00494711
     PUSH EDI                            ; 00494712
     SUB ESP,0x10                        ; 00494713

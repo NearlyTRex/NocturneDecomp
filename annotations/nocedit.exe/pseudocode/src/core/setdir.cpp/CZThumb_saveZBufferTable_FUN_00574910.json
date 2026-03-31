@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 197,
-    "complexity_score": 146,
+    "complexity_score": 121,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 18,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 76,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
-      "unknown_param"
+      "pointer_cast"
     ],
     "total_lines": 273
   },
@@ -30,7 +29,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910",
-    "signature": "void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height,float unknown_scale,_FILE *file_handle)"
+    "signature": "void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height,float projection_scale,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -289,7 +288,7 @@
       },
       {
         "is_param": true,
-        "name": "unknown_scale",
+        "name": "projection_scale",
         "offset": 24,
         "size": 4,
         "type": "float"
@@ -304,22 +303,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Parameter/variable named unknown (needs investigation)",
-      "line": 2,
-      "match": "unknown_scale",
-      "severity": "mild",
-      "text": "void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height,float unknown_scale,_FILE *file_handle)",
-      "type": "unknown_param"
-    },
-    {
-      "description": "Parameter/variable named unknown (needs investigation)",
-      "line": 24,
-      "match": "unknown_scale",
-      "severity": "mild",
-      "text": "this_ptr->projection_scale = (int)unknown_scale;",
-      "type": "unknown_param"
-    },
     {
       "description": "Complex pointer cast",
       "line": 49,

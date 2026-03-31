@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 3,
-        "line": 26,
-        "message": "no matching function for call to 'core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -40,8 +33,8 @@
       ]
     ],
     "convention": "__cdecl",
-    "name": "core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710",
-    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710(CDemonRaytrace *this_ptr,void *callback_data,int linear_index,void *user_data)"
+    "name": "core_dtrace.cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710",
+    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710(CDemonRaytrace *this_ptr,CDemonPart *part,int linear_index,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -149,10 +142,10 @@
       },
       {
         "is_param": true,
-        "name": "callback_data",
+        "name": "part",
         "offset": 8,
         "size": 4,
-        "type": "void *"
+        "type": "CDemonPart *"
       },
       {
         "is_param": true,
@@ -163,10 +156,10 @@
       },
       {
         "is_param": true,
-        "name": "user_data",
+        "name": "file_handle",
         "offset": 16,
         "size": 4,
-        "type": "void *"
+        "type": "_FILE *"
       }
     ]
   },

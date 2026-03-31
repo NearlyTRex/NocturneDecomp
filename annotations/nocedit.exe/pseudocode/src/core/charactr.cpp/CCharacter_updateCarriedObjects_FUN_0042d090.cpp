@@ -34,18 +34,21 @@ void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCha
   CMatrix3x4f CStack_94;
   CMatrix3x4f CStack_64;
   CVector3f CStack_34;
-  CVector3f local_28;
+  int local_28;
+  int local_24;
+  int local_20;
   CVector3f *local_1c;
   CVector3f *local_18;
   int iStack_14;
   
-  local_28.x = (float)&(this_ptr->base).orient;
-  local_28.y = (float)&(this_ptr->base).location;
+  local_28 = (int)&(this_ptr->base).orient;
+  local_24 = (int)&(this_ptr->base).location;
   local_18 = (CVector3f *)0x0;
-  local_28.z = (float)(this_ptr->model).bone_transform.bone_world_matrices;
+  local_20 = (int)(this_ptr->model).bone_transform.bone_world_matrices;
   pCVar4 = (CVector3f *)this_ptr->carry_hands;
   do {
     if (pCVar4->z != 0.0) {
+      local_1c = pCVar4;
       (*(((this_ptr->base).vtable._uc)->_uc).getCarryObjToBodyXForm)
                 (this_ptr,(int)local_18,in_stack_fffffd80);
       CStack_214.m[0].w = afStack_1b4[0];
@@ -88,9 +91,10 @@ void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCha
           pCVar4[5].y = 1.0;
         }
       }
-      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&CStack_c4,local_18,pCVar4);
+      core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
+                (&CStack_c4,local_18,local_1c);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_214,&CStack_c4,&CStack_f4);
-      pCVar2 = core_xform_cpp_getTranslation_FUN_005f6110(&CStack_274,&local_28);
+      pCVar2 = core_xform_cpp_getTranslation_FUN_005f6110(&CStack_274,(CVector3f *)&local_28);
       iVar1 = *(int *)(unaff_EBP + 8);
       *(float *)(iVar1 + 0x20) = pCVar2->x;
       *(float *)(iVar1 + 0x24) = pCVar2->y;

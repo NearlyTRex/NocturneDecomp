@@ -3,13 +3,13 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/winnt.h"
-#include "types/classes/CColor3i.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 
 // Structure: CDemonGlobe
 // Ghidra size: 0x40 (64 bytes)
 typedef struct CDemonGlobe {
-    CColor3i color; // 0x0
+    CVector3i position_scaled; // 0x0
     int linear_radius_scaled; // 0xc
     int quadratic_radius_scaled; // 0x10
     int falloff_value; // 0x14

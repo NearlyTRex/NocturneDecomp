@@ -20,7 +20,9 @@
 ; CMatrix3x4f      Stack[-0x94]:48  CStack_94
 ; CMatrix3x4f      Stack[-0x64]:48  CStack_64
 ; CVector3f        Stack[-0x34]:12  CStack_34
-; CVector3f        Stack[-0x28]:12  local_28
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
 ; CVector3f *      Stack[-0x1c]:4  local_1c
 ; CVector3f *      Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  iStack_14

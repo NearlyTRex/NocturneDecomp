@@ -2,11 +2,11 @@
 // Address: 00574910
 // Address Range: [[00574910, 00574b1c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height,float unknown_scale,_FILE *file_handle)
+// Signature: void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height,float projection_scale,_FILE *file_handle)
 
 #include "nocturne.h"
 
-void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height,float unknown_scale,_FILE *file_handle)
+void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height,float projection_scale,_FILE *file_handle)
 
 {
   int iVar1;
@@ -28,7 +28,7 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this
   }
   this_ptr->width = width;
   this_ptr->height = height;
-  this_ptr->projection_scale = (int)unknown_scale;
+  this_ptr->projection_scale = projection_scale;
   pvVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                      (this_ptr->width * this_ptr->height * 4,"..\\core\\setdir.cpp",0x9e);
   this_ptr->zbuffer_data = pvVar2;

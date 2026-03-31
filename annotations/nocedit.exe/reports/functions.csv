@@ -1829,7 +1829,7 @@ core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0,00457cf0,core/dcu
 core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_004567b0,004567b0,core/dcube.cpp,20,0,,20
 core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455250,00455250,core/dcube.cpp,12,0,,12
 core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00455ed0,00455ed0,core/dcube.cpp,41,2,decompiler_intrinsic,66
-core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650,00457650,core/dcube.cpp,98,12,decompiler_intrinsic|pointer_cast|unresolved_funcptr|warning_indirect_jump|warning_jumptable,243
+core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650,00457650,core/dcube.cpp,108,10,decompiler_intrinsic|pointer_cast,218
 core_dcube.cpp_clipPolygonAgainstMinY_FUN_00454ad0,00454ad0,core/dcube.cpp,53,0,,53
 core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00,00454f00,core/dcube.cpp,53,0,,53
 core_dcube.cpp_staticInit_FUN_00454720,00454720,core/dcube.cpp,11,0,,11
@@ -1924,7 +1924,7 @@ core_dcamera.cpp_CDemonCamera_restoreTransform_FUN_0044f1e0,0044f1e0,core/dcamer
 core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440,00450440,core/dcamera.cpp,75,2,pointer_cast,100
 core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370,0044d370,core/dcamera.cpp,33,1,param_count_too_many,48
 core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70,0044cc70,core/dcamera.cpp,62,1,pointer_cast,77
-core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0,004518f0,core/dcamera.cpp,268,11,decompiler_intrinsic|pointer_cast|stack_alignment_array,393
+core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0,004518f0,core/dcamera.cpp,271,7,decompiler_intrinsic|pointer_cast|stack_alignment_array,356
 core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0,004517f0,core/dcamera.cpp,74,21,decompiler_intrinsic|mmx_assembly|nonstandard_int|unknown_field,304
 core_dcamera.cpp_CDemonCamera_pushRect_FUN_0044c740,0044c740,core/dcamera.cpp,15,0,,15
 core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090,00451090,core/dcamera.cpp,38,1,param_count_too_many,53
@@ -5038,7 +5038,7 @@ core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190,0042b190,core/charactr.
 core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800,0042f800,core/charactr.cpp,25,0,,25
 core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0,0042b5b0,core/charactr.cpp,33,0,,33
 core_charactr.cpp_SPose_ctor_FUN_0042fac0,0042fac0,core/charactr.cpp,4,0,,4
-core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090,0042d090,core/charactr.cpp,104,10,pointer_cast|stack_param|unaffected_reg,219
+core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090,0042d090,core/charactr.cpp,108,10,pointer_cast|stack_param|unaffected_reg,223
 core_charactr.cpp_CCharacter_kill_FUN_00428e30,00428e30,core/charactr.cpp,24,0,,24
 core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042e670,0042e670,core/charactr.cpp,83,3,pointer_cast,118
 core_charactr.cpp_CCharacter_canWalk_FUN_0042ca60,0042ca60,core/charactr.cpp,4,0,,4
@@ -5136,7 +5136,7 @@ core_setdir.cpp_CZThumb_free_FUN_00574b50,00574b50,core/setdir.cpp,13,0,,13
 core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_00576820,00576820,core/setdir.cpp,16,0,,16
 core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70,00575f70,core/setdir.cpp,98,8,pointer_cast,183
 core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40,00575e40,core/setdir.cpp,46,0,,46
-core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910,00574910,core/setdir.cpp,76,6,pointer_cast|unknown_param,146
+core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910,00574910,core/setdir.cpp,76,4,pointer_cast,121
 core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30,00574e30,core/setdir.cpp,16,0,,16
 core_setdir.cpp_CZThumb_popRenderingContext_FUN_00574ef0,00574ef0,core/setdir.cpp,7,0,,7
 core_setdir.cpp_CDemonSet_setPendingCamera_FUN_00575b00,00575b00,core/setdir.cpp,6,0,,6
@@ -5306,8 +5306,8 @@ core_ground.cpp_CGround_transformAndStoreVertex_FUN_004ef3a0,004ef3a0,core/groun
 core_ground.cpp_CGround_render_FUN_004efc90,004efc90,core/ground.cpp,18,0,,18
 core_spline.cpp_evaluateSplineTangent3D_FUN_005b9490,005b9490,core/spline.cpp,47,0,,47
 core_spline.cpp_evaluateSplintInt_FUN_005b9270,005b9270,core/spline.cpp,5,1,decompiler_intrinsic,20
-core_spline.cpp_evaluateSplineScalar_FUN_005b9230,005b9230,core/spline.cpp,4,0,,4
-core_spline.cpp_evaluateSplineTangentScalar_FUN_005b93f0,005b93f0,core/spline.cpp,4,0,,4
+core_spline.cpp_evaluateSplineScalar_FUN_005b9230,005b9230,core/spline.cpp,4,4,unnamed_param,49
+core_spline.cpp_evaluateSplineTangentScalar_FUN_005b93f0,005b93f0,core/spline.cpp,4,4,unnamed_param,49
 core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0,005b92d0,core/spline.cpp,45,0,,45
 core_spline.cpp_computeSplineBasis_FUN_005b90a0,005b90a0,core/spline.cpp,39,0,,39
 core_spline.cpp_evaluateSplineTangentInt_FUN_005b9430,005b9430,core/spline.cpp,5,1,decompiler_intrinsic,20
@@ -5641,6 +5641,7 @@ core_dtrace.cpp_CDemonRaytrace_convertCubeIndexToPosition_FUN_00499ba0,00499ba0,
 core_dtrace.cpp_CDemonRaytrace_allocTris_FUN_004950b0,004950b0,core/dtrace.cpp,13,0,,13
 core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00499970,00499970,core/dtrace.cpp,28,0,,28
 core_dtrace.cpp_CDemonRaytrace_voxelCoordsToWorldPosition_FUN_00499930,00499930,core/dtrace.cpp,10,0,,10
+core_dtrace.cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710,00494710,core/dtrace.cpp,18,0,,18
 core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00494240,00494240,core/dtrace.cpp,7,0,,7
 core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0,00494de0,core/dtrace.cpp,39,0,,39
 core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70,00495b70,core/dtrace.cpp,184,29,decompiler_intrinsic|warning_inlined_function,484
@@ -5675,7 +5676,6 @@ core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_00499b70,00499b70,core/dtrace.cpp,
 core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0,004947a0,core/dtrace.cpp,249,7,pointer_cast,324
 core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500,00497500,core/dtrace.cpp,216,37,decompiler_intrinsic|warning_inlined_function,596
 core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004952b0,004952b0,core/dtrace.cpp,11,0,,11
-core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710,00494710,core/dtrace.cpp,18,0,,18
 core_dtrace.cpp_CDemonRaytrace_transferShadowVoxels_FUN_00499f10,00499f10,core/dtrace.cpp,77,7,decompiler_intrinsic|warning_inlined_function,157
 core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00496c60,00496c60,core/dtrace.cpp,104,13,decompiler_intrinsic|warning_inlined_function,244
 core_platfrm.cpp_CPlatform_getGroundType_FUN_0054e1c0,0054e1c0,core/platfrm.cpp,4,0,,4
@@ -5716,7 +5716,7 @@ core_mission.cpp_CDemonMission_findActorByName_FUN_00524030,00524030,core/missio
 core_mission.cpp_CDemonMission_countDamageableEnemies_FUN_00524e00,00524e00,core/mission.cpp,27,0,,27
 core_mission.cpp_CDemonMission_addActorToList_FUN_00523b70,00523b70,core/mission.cpp,22,0,,22
 core_mission.cpp_CDemonMission_setTeleportTarget_FUN_00524070,00524070,core/mission.cpp,8,0,,8
-core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60,00524e60,core/mission.cpp,17,2,unknown_param,42
+core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60,00524e60,core/mission.cpp,17,0,,17
 core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20,00524c20,core/mission.cpp,73,0,,73
 core_mission.cpp_CDemonMission_setMissionName_FUN_00524630,00524630,core/mission.cpp,18,0,,18
 core_mission.cpp_CDemonMission_run_FUN_00524420,00524420,core/mission.cpp,66,0,,66
@@ -5940,7 +5940,7 @@ core_game.cpp_CGame_fadeIn_FUN_004e0b90,004e0b90,core/game.cpp,7,0,,7
 core_game.cpp_beginProfileTimer_FUN_004e30f0,004e30f0,core/game.cpp,8,0,,8
 core_game.cpp_captureDebugMovieFrame_FUN_004d7810,004d7810,core/game.cpp,104,1,pointer_cast,119
 core_game.cpp_CGame_loadAssets_FUN_004e07a0,004e07a0,core/game.cpp,8,0,,8
-core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930,004dd930,core/game.cpp,20,0,,20
+core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930,004dd930,core/game.cpp,20,1,unnamed_param,35
 core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0,004ddaf0,core/game.cpp,1726,7,decompiler_intrinsic|pointer_cast|sub84_truncation|unresolved_funcptr,1816
 core_game.cpp_CGame_displayBitmap_FUN_004e2890,004e2890,core/game.cpp,24,0,,24
 core_game.cpp_CGame_process_FUN_004e3190,004e3190,core/game.cpp,130,0,,130

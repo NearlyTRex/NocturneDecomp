@@ -43,9 +43,9 @@ void __cdecl CDemonRaytrace::allocTriList(CDemonRaytrace *this_ptr);
 // Address: 00494690
 void __cdecl CDemonRaytrace::freeTriList(CDemonRaytrace *this_ptr);
 
-// Original: core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710
+// Original: core_dtrace.cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710
 // Address: 00494710
-void __cdecl CDemonRaytrace::convertLinearIndexToWorldPosAndCallback(CDemonRaytrace *this_ptr,void *callback_data,int linear_index,void *user_data);
+void __cdecl CDemonRaytrace::loadPartAtGridIndex(CDemonRaytrace *this_ptr,CDemonPart *part,int linear_index,_FILE *file_handle);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0
 // Address: 004947a0

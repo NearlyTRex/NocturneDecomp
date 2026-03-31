@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height,float unknown_scale,_FILE *file_handle)
+; void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb *this_ptr,CVector3f *camera_pos,CVector3f *look_at_pos,int width,int height,float projection_scale,_FILE *file_handle)
 ;
 ; Parameters:
 ; CZThumb *        Stack[0x4]:4   this_ptr
@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   look_at_pos
 ; int              Stack[0x10]:4   width
 ; int              Stack[0x14]:4   height
-; float            Stack[0x18]:4   unknown_scale
+; float            Stack[0x18]:4   projection_scale
 ; _FILE *          Stack[0x1c]:4   file_handle
 ;
 ; Referenced Globals:

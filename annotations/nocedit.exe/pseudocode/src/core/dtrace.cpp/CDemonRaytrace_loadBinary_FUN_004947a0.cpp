@@ -113,7 +113,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
             pCVar7 = core_dpart_cpp_CDemonPart_ctor_FUN_00482110(pCVar6);
           }
           buffer[3] = (SIZE_T)pCVar7;
-          core_dtrace_cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710
+          core_dtrace_cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710
                     (this_ptr,pCVar7,local_1c,file_handle);
         }
         _fread(buffer + 5,0x40,1,file_handle);
@@ -153,8 +153,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
             g_CurrentLineNumber = 0x19b;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for cube model loading dtrace database");
           }
-          core_dtrace_cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710
-                    (this_ptr,(void *)piVar4[3],iVar1,file_handle);
+          core_dtrace_cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710
+                    (this_ptr,(CDemonPart *)piVar4[3],iVar1,file_handle);
           _fread(piVar4 + 5,0x40,1,file_handle);
           local_18 = local_18 + *piVar4;
           iVar1 = iVar1 + 1;

@@ -1926,6 +1926,10 @@ def generate_constants_file(constants_list, type_to_path_map=None, needed_protot
             base_type, full_var_name = format_variable_declaration(const['type'], const['name'])
             if const['is_initialized'] and const['initializer'] and const['initializer'] != "None":
                 initializer = const['initializer']
+                # Skip jump table entries with switch case label references
+                if re.search(r'&case_\d+', initializer):
+                    content.append("// %s %s = %s; // jump table entry (not exportable)" % (base_type, full_var_name, initializer))
+                    continue
                 # Fix void* arithmetic: (void*)(char*)(...)+N -> (void*)((char*)(...)+N)
                 # Clang treats void* arithmetic as a hard error in C++ mode
                 initializer = re.sub(

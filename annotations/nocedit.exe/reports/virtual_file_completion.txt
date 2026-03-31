@@ -6,8 +6,8 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5073 (78.6%)
-Files at 100%: 47
+Clean functions: 5071 (78.6%)
+Files at 100%: 46
 Files at 90%+: 83
 Files at 50%+: 205
 
@@ -52,7 +52,6 @@ FILES AT 100% (COMPLETE)
   core/simbox.cpp: 15 functions, 319 lines
   core/slew.cpp: 4 functions, 123 lines
   core/spike.cpp: 15 functions, 518 lines
-  core/spline.cpp: 7 functions, 149 lines
   core/stone.cpp: 8 functions, 80 lines
   core/teleport.cpp: 23 functions, 324 lines
   engine/ini.cpp: 18 functions, 455 lines
@@ -62,7 +61,7 @@ FILES AT 100% (COMPLETE)
   shape/spotview.cpp: 6 functions, 215 lines
   wincore/winvideo.cpp: 5 functions, 263 lines
 
-Total: 47 files
+Total: 46 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -220,6 +219,13 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 (86 lines) [decompiler_intrinsic, warning_inlined_function]
            - shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970 (160 lines) [pointer_cast]
 
+   90.2% | core/mission.cpp
+         37/41 clean, 4 remaining
+           - core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (103 lines) [pointer_cast]
+           - core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 (66 lines) [pointer_cast]
+           - core_mission.cpp_CDemonMission_process_FUN_00524250 (46 lines) [warning_type_propagation]
+           - core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 (21 lines) [pointer_cast, unresolved_funcptr]
+
    90.0% | core/box.cpp
          27/30 clean, 3 remaining
            - core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680 (82 lines) [decompiler_intrinsic, pointer_cast]
@@ -243,7 +249,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
          9/10 clean, 1 remaining
            - engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060 (60 lines) [pointer_cast]
 
-Total: 36 files
+Total: 37 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -284,13 +290,6 @@ FILES AT 50-89%
            - core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0 (44 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_motion.cpp_CMotionList_save_FUN_0052d170 (96 lines) [decompiler_intrinsic, sub84_truncation]
            - core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0 (40 lines) [decompiler_intrinsic, warning_inlined_function]
-   87.8% | core/mission.cpp
-         36/41 clean, 5 remaining
-           - core_mission.cpp_CDemonMission_addFilesToExtract_FUN_00524e60 (17 lines) [unknown_param]
-           - core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (103 lines) [pointer_cast]
-           - core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 (66 lines) [pointer_cast]
-           - core_mission.cpp_CDemonMission_process_FUN_00524250 (46 lines) [warning_type_propagation]
-           - core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 (21 lines) [pointer_cast, unresolved_funcptr]
    87.6% | core/fire.cpp
          162/185 clean, 23 remaining
            - core_fire.cpp_CGunFlame_render_FUN_004c50b0 (153 lines) [decompiler_intrinsic, warning_inlined_function]
@@ -348,7 +347,7 @@ FILES AT 50-89%
            - core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 (82 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520 (125 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
            - core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190 (149 lines) [decompiler_intrinsic, pointer_cast]
-           - core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 (104 lines) [pointer_cast, stack_param, unaffected_reg]
+           - core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 (108 lines) [pointer_cast, stack_param, unaffected_reg]
            - core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042e670 (83 lines) [pointer_cast]
    87.0% | core/vampboss.cpp
          20/23 clean, 3 remaining
@@ -948,26 +947,6 @@ FILES AT 50-89%
            - core_bugs.cpp_CBugs_processInEditor_FUN_004278d0 (45 lines) [warning_type_propagation]
            - core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00425b70 (44 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400 (108 lines) [decompiler_intrinsic, pointer_cast, warning_type_propagation]
-   72.7% | core/game.cpp
-         48/66 clean, 18 remaining
-           - core_game.cpp_CGame_processHotkeys_FUN_004dcee0 (249 lines) [stack_ref]
-           - core_game.cpp_CGame_beginFadeOut_FUN_004e0960 (57 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
-           - core_game.cpp_CGame_renderOverlay_FUN_004d8040 (139 lines) [decompiler_intrinsic, warning_inlined_function]
-           - core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 (53 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
-           - core_game.cpp_CGame_finishAct_FUN_004e3b90 (234 lines) [decompiler_intrinsic, warning_inlined_function]
-           - core_game.cpp_CGame_rollCredits_FUN_004e4010 (155 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
-           - core_game.cpp_CGame_processFrame_FUN_004da100 (382 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, warning_type_propagation]
-           - core_game.cpp_drawHealthBar_FUN_004d7fa0 (20 lines) [decompiler_intrinsic, warning_inlined_function]
-           - core_game.cpp_CGame_displayActStats_FUN_004e3800 (207 lines) [decompiler_intrinsic, warning_inlined_function]
-           - core_game.cpp_CGame_updateDT_FUN_004d7d90 (27 lines) [decompiler_intrinsic, warning_inlined_function]
-           - core_game.cpp_captureDebugMovieFrame_FUN_004d7810 (104 lines) [pointer_cast]
-           - core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (1726 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, unresolved_funcptr]
-           - core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0 (42 lines) [decompiler_intrinsic, warning_inlined_function]
-           - core_game.cpp_CGame_slamDT_FUN_004e3080 (13 lines) [decompiler_intrinsic, warning_inlined_function]
-           - core_game.cpp_CGame_saveGame_FUN_004e0cd0 (178 lines) [pointer_cast]
-           - core_game.cpp_dampControlAxis_FUN_004dc370 (23 lines) [stack_param]
-           - core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 (194 lines) [pointer_cast]
-           - core_game.cpp_CGame_playerControls_FUN_004dbd80 (49 lines) [warning_unreachable]
    72.2% | core/ghoul.cpp
          13/18 clean, 5 remaining
            - core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e8520 (103 lines) [warning_type_propagation]
@@ -984,7 +963,7 @@ FILES AT 50-89%
            - core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (112 lines) [pointer_cast]
            - core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710 (52 lines) [pointer_cast]
            - core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70 (98 lines) [pointer_cast]
-           - core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 (76 lines) [pointer_cast, unknown_param]
+           - core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 (76 lines) [pointer_cast]
            - core_setdir.cpp_setPixelGrayscale_FUN_005748a0 (5 lines) [pointer_cast]
    71.8% | core/dcube.cpp
          28/39 clean, 11 remaining
@@ -998,7 +977,7 @@ FILES AT 50-89%
            - core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0 (64 lines) [pointer_cast]
            - core_dcube.cpp_CDemonCube_save_FUN_00457430 (44 lines) [pointer_cast]
            - core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0 (98 lines) [pointer_cast]
-           - core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650 (98 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr, warning_indirect_jump, warning_jumptable]
+           - core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650 (108 lines) [decompiler_intrinsic, pointer_cast]
    71.4% | core/bride.cpp
          10/14 clean, 4 remaining
            - core_bride.cpp_CBride_getTargetPoints_FUN_00424a10 (28 lines) [warning_type_propagation]
@@ -1011,6 +990,31 @@ FILES AT 50-89%
            - core_moon.cpp_CMoon_update_FUN_00529d60 (45 lines) [pointer_cast]
            - core_moon.cpp_CMoon_init_FUN_00529ae0 (58 lines) [pointer_cast]
            - core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0 (35 lines) [stack_alignment_array]
+   71.4% | core/spline.cpp
+         5/7 clean, 2 remaining
+           - core_spline.cpp_evaluateSplineScalar_FUN_005b9230 (4 lines) [unnamed_param]
+           - core_spline.cpp_evaluateSplineTangentScalar_FUN_005b93f0 (4 lines) [unnamed_param]
+   71.2% | core/game.cpp
+         47/66 clean, 19 remaining
+           - core_game.cpp_CGame_processHotkeys_FUN_004dcee0 (249 lines) [stack_ref]
+           - core_game.cpp_CGame_beginFadeOut_FUN_004e0960 (57 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
+           - core_game.cpp_CGame_renderOverlay_FUN_004d8040 (139 lines) [decompiler_intrinsic, warning_inlined_function]
+           - core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 (53 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
+           - core_game.cpp_CGame_finishAct_FUN_004e3b90 (234 lines) [decompiler_intrinsic, warning_inlined_function]
+           - core_game.cpp_CGame_rollCredits_FUN_004e4010 (155 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
+           - core_game.cpp_CGame_processFrame_FUN_004da100 (382 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, warning_type_propagation]
+           - core_game.cpp_drawHealthBar_FUN_004d7fa0 (20 lines) [decompiler_intrinsic, warning_inlined_function]
+           - core_game.cpp_CGame_displayActStats_FUN_004e3800 (207 lines) [decompiler_intrinsic, warning_inlined_function]
+           - core_game.cpp_CGame_updateDT_FUN_004d7d90 (27 lines) [decompiler_intrinsic, warning_inlined_function]
+           - core_game.cpp_captureDebugMovieFrame_FUN_004d7810 (104 lines) [pointer_cast]
+           - core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930 (20 lines) [unnamed_param]
+           - core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (1726 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, unresolved_funcptr]
+           - core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0 (42 lines) [decompiler_intrinsic, warning_inlined_function]
+           - core_game.cpp_CGame_slamDT_FUN_004e3080 (13 lines) [decompiler_intrinsic, warning_inlined_function]
+           - core_game.cpp_CGame_saveGame_FUN_004e0cd0 (178 lines) [pointer_cast]
+           - core_game.cpp_dampControlAxis_FUN_004dc370 (23 lines) [stack_param]
+           - core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 (194 lines) [pointer_cast]
+           - core_game.cpp_CGame_playerControls_FUN_004dbd80 (49 lines) [warning_unreachable]
    70.2% | engine/3d.c
          73/104 clean, 31 remaining
            - engine_3d.c_drawLineStrip3D_FUN_00404600 (139 lines) [byvalue_struct_passing, pointer_cast, stack_ref]
@@ -1638,7 +1642,7 @@ FILES AT 50-89%
            - core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440 (75 lines) [pointer_cast]
            - core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370 (33 lines) [param_count_too_many]
            - core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70 (62 lines) [pointer_cast]
-           - core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 (268 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
+           - core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0 (271 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
            - core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0 (74 lines) [decompiler_intrinsic, mmx_assembly, nonstandard_int, unknown_field]
            - core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090 (38 lines) [param_count_too_many]
            - core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0 (20 lines) [decompiler_intrinsic, warning_inlined_function]

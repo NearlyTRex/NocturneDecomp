@@ -56,11 +56,11 @@ void __cdecl core_dcamera_cpp_processCoronaScanline_FUN_004514b0(int row,int x_s
     }
     local_14 = '\0';
     if ((((*puVar13 < (uint)*piVar14) &&
-         (uVar2 = pCVar6->x - (g_CurrentGlobe->color).r, uVar8 = (int)uVar2 >> 0x1f,
+         (uVar2 = pCVar6->x - (g_CurrentGlobe->position_scaled).x, uVar8 = (int)uVar2 >> 0x1f,
          iVar3 = (uVar2 ^ uVar8) - uVar8, iVar3 < g_CurrentGlobe->linear_radius_scaled)) &&
-        (uVar3 = pCVar6->y - (g_CurrentGlobe->color).g, uVar9 = (int)uVar3 >> 0x1f,
+        (uVar3 = pCVar6->y - (g_CurrentGlobe->position_scaled).y, uVar9 = (int)uVar3 >> 0x1f,
         iVar4 = (uVar3 ^ uVar9) - uVar9, iVar4 < g_CurrentGlobe->linear_radius_scaled)) &&
-       ((uVar3 = pCVar6->z - (g_CurrentGlobe->color).b, uVar9 = (int)uVar3 >> 0x1f,
+       ((uVar3 = pCVar6->z - (g_CurrentGlobe->position_scaled).z, uVar9 = (int)uVar3 >> 0x1f,
         iVar5 = (uVar3 ^ uVar9) - uVar9, iVar5 < g_CurrentGlobe->linear_radius_scaled &&
         (iVar7 = iVar3 * iVar3 + iVar4 * iVar4 + iVar5 * iVar5,
         iVar7 < g_CurrentGlobe->quadratic_radius_scaled)))) {

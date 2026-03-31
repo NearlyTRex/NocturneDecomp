@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mission_cpp_CDemonMission_addFilesToExtract_FUN_00524e60(CDemonMission *this_ptr,_FILE *file_handle,int unknown_flag)
+; void __cdecl core_mission_cpp_CDemonMission_addFilesToExtract_FUN_00524e60(CDemonMission *this_ptr,_FILE *file_handle,int include_all)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
-; int              Stack[0xc]:4   unknown_flag
+; int              Stack[0xc]:4   include_all
 ;
 ; XREF[1]:
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004bdf23

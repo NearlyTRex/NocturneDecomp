@@ -6,6 +6,9 @@
 ; Parameters:
 ; EGroundType      Stack[0x4]:4   type
 ;
+; XREF[1]:
+;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650 at 004578ca
+;
 ; Referenced Globals:
 ;   void* switchdataD_004eede0 = 004eee31
 ;

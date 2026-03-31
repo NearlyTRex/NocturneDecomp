@@ -10921,6 +10921,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090",
     "ret":"void",
@@ -11085,20 +11086,52 @@
           "type":"CVector3f*"
         },
         {
+          "name":"local_20",
+          "storage":{
+            "offset":-32,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[-0x20]",
+                "offset":-32,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"local_24",
+          "storage":{
+            "offset":-36,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[-0x24]",
+                "offset":-36,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
           "name":"local_28",
           "storage":{
             "offset":-40,
-            "size":12,
+            "size":4,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x28]",
                 "offset":-40,
-                "size":12
+                "size":4
               }
             ]
           },
-          "type":"CVector3f"
+          "type":"int"
         },
         {
           "name":"CStack_34",
@@ -33056,7 +33089,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710",
+    "name":"core_dtrace.cpp_CDemonRaytrace_loadPartAtGridIndex_FUN_00494710",
     "ret":"void",
     "vars":{
       "locals":[
@@ -33157,7 +33190,7 @@
           "type":"CDemonRaytrace*"
         },
         {
-          "name":"callback_data",
+          "name":"part",
           "storage":{
             "offset":8,
             "size":4,
@@ -33170,7 +33203,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"CDemonPart*"
         },
         {
           "name":"linear_index",
@@ -33189,7 +33222,7 @@
           "type":"int"
         },
         {
-          "name":"user_data",
+          "name":"file_handle",
           "storage":{
             "offset":16,
             "size":4,
@@ -33202,7 +33235,7 @@
               }
             ]
           },
-          "type":"void*"
+          "type":"_FILE*"
         }
       ]
     }
@@ -76257,7 +76290,7 @@
           "type":"int"
         },
         {
-          "name":"unknown_scale",
+          "name":"projection_scale",
           "storage":{
             "offset":24,
             "size":4,

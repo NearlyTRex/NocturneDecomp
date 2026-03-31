@@ -1,45 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 78,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 78,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 78,
-        "message": "use of undeclared identifier 'PTR_LAB_00457630'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 228,
-    "complexity_score": 243,
+    "assembly_lines": 248,
+    "complexity_score": 218,
     "cross_reference_count": 2,
-    "function_call_count": 7,
+    "function_call_count": 9,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 98,
-    "suspect_count": 12,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 108,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "unresolved_funcptr",
-      "warning_indirect_jump",
-      "warning_jumptable"
+      "pointer_cast"
     ],
-    "total_lines": 326
+    "total_lines": 356
   },
   "cross_references": [
     {
@@ -60,7 +38,7 @@
     "address_range": [
       [
         "00457650",
-        "004578b6"
+        "004578e6"
       ]
     ],
     "convention": "__cdecl",
@@ -73,6 +51,11 @@
       "addr": "004566e0",
       "is_variadic": false,
       "name": "core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_004566e0"
+    },
+    {
+      "addr": "004eee20",
+      "is_variadic": false,
+      "name": "core_ground.cpp_getGroundTypeColor_FUN_004eee20"
     },
     {
       "addr": "00506f10",
@@ -88,6 +71,11 @@
       "addr": "0048c450",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    },
+    {
+      "addr": "0048c960",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960"
     },
     {
       "addr": "0048ca00",
@@ -108,7 +96,7 @@
   "globals": [
     {
       "addr": "00457630",
-      "name": "PTR_LAB_00457630",
+      "name": "PTR_case_0_00457630",
       "type": "void*",
       "value": "00457774"
     },
@@ -229,40 +217,40 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.9162303664921465,
-    "instruction_count": 191,
+    "avg_pcode_per_instr": 4.868932038834951,
+    "instruction_count": 206,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 10,
       "BOOL_OR": 3,
-      "BRANCH": 2,
+      "BRANCH": 3,
       "BRANCHIND": 1,
-      "CALL": 10,
+      "CALL": 12,
       "CBRANCH": 11,
-      "COPY": 306,
+      "COPY": 316,
       "FLOAT2FLOAT": 16,
       "FLOAT_MULT": 6,
-      "INT_ADD": 91,
-      "INT_AND": 93,
-      "INT_CARRY": 15,
-      "INT_EQUAL": 76,
+      "INT_ADD": 97,
+      "INT_AND": 102,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 84,
       "INT_LEFT": 2,
       "INT_LESS": 7,
       "INT_NOTEQUAL": 6,
       "INT_OR": 6,
       "INT_SBORROW": 7,
-      "INT_SCARRY": 18,
-      "INT_SLESS": 39,
-      "INT_SUB": 45,
+      "INT_SCARRY": 21,
+      "INT_SLESS": 43,
+      "INT_SUB": 50,
       "INT_XOR": 3,
-      "LOAD": 57,
-      "POPCOUNT": 37,
+      "LOAD": 61,
+      "POPCOUNT": 41,
       "RETURN": 1,
       "ROUND": 6,
-      "STORE": 58,
+      "STORE": 63,
       "TRUNC": 6
     },
-    "pcode_op_count": 939
+    "pcode_op_count": 1003
   },
   "stack_frame": {
     "frame_size": 84,
@@ -374,7 +362,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 41,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_48.x = (int)ROUND(pCVar4->x * 256.0f);",
@@ -382,7 +370,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 42,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_48.y = (int)ROUND(pCVar4->y * 256.0f);",
@@ -390,39 +378,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 43,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_48.z = (int)ROUND(pCVar4->z * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Jump table recovery failed",
-      "line": 69,
-      "match": "WARNING: Could not recover jumptable",
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "/* WARNING: Could not recover jumptable at 0x0045776e. Too many branches */",
-      "type": "warning_jumptable"
-    },
-    {
-      "description": "Indirect jump treated as call",
-      "line": 70,
-      "match": "WARNING: Treating indirect jump as call",
-      "severity": "mild",
-      "text": "/* WARNING: Treating indirect jump as call */",
-      "type": "warning_indirect_jump"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 71,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)((int)&PTR_LAB_00457630 + local_24))();",
-      "type": "unresolved_funcptr"
+      "text": "((uint)*(byte *)((int)this_ptr->ground_type_memory + local_14));",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 84,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "pfVar1 = (float *)((int)(pCVar2->triangle).vertices + local_18 + 0xc);",
@@ -430,7 +402,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 87,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_38 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x10);",
@@ -438,7 +410,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 88,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_34 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x14);",
@@ -446,7 +418,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 93,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28 = (uint)ROUND(local_34);",
@@ -454,7 +426,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 94,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_2c = (uint)ROUND(local_38);",
@@ -462,7 +434,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 95,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30 = (uint)ROUND(local_3c);",
