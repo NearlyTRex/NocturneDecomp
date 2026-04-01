@@ -65,7 +65,7 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(CHaystack *this_p
       pCVar5 = (CHero *)core_hero_cpp_CHero_closestEnemy_FUN_004f3960(&this_ptr->base,&local_88);
       if ((pCVar5 == (CHero *)0x0) || ((float)20 <= local_88)) {
         if (this_ptr->guns_drawn != 0) {
-          (this_ptr->base).player_control.action_states[6] = 1;
+          (this_ptr->base).player_control.action_bindings.draw_key = 1;
         }
       }
       else {
@@ -109,11 +109,11 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(CHaystack *this_p
           (this_ptr->base).player_control.turn_speed = 0.25;
         }
         if (((float)10 <= fVar2) || (bVar3)) {
-          (this_ptr->base).player_control.action_states[2] = 1;
-          (this_ptr->base).player_control.action_states[0] = 1;
+          (this_ptr->base).player_control.action_bindings.run_key = 1;
+          (this_ptr->base).player_control.action_bindings.walk_key = 1;
         }
         else {
-          (this_ptr->base).player_control.action_states[0] = 1;
+          (this_ptr->base).player_control.action_bindings.walk_key = 1;
         }
       }
     }
@@ -121,13 +121,13 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(CHaystack *this_p
       this_ptr_02 = &(this_ptr->base).base.model;
       if (bVar3) {
         if (this_ptr->guns_drawn == 0) {
-          (this_ptr->base).player_control.action_states[6] = 1;
+          (this_ptr->base).player_control.action_bindings.draw_key = 1;
         }
         else {
           pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&this_ptr_02->motion_controller);
           if ((pSVar7->state_index != 2) && (pSVar7->state_index != 1)) {
-            (this_ptr->base).player_control.action_states[3] = 1;
+            (this_ptr->base).player_control.action_bindings.fire_key = 1;
           }
         }
       }
@@ -135,7 +135,7 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(CHaystack *this_p
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&this_ptr_02->motion_controller);
         if ((pSVar4->state_index == 10) && (this_ptr->guns_drawn != 0)) {
-          (this_ptr->base).player_control.action_states[6] = 1;
+          (this_ptr->base).player_control.action_bindings.draw_key = 1;
         }
       }
       if (bVar3) {
@@ -153,7 +153,7 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(CHaystack *this_p
         }
         fVar1 = (this_ptr->base).player_control.turn_speed;
         if ((((float)-0.25 < fVar1) && ((double)fVar1 < 0.25)) &&
-           ((this_ptr->base).player_control.action_states[3] != 0)) {
+           ((this_ptr->base).player_control.action_bindings.fire_key != 0)) {
           (this_ptr->base).player_control.turn_speed = 0.0;
         }
       }

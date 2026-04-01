@@ -5,20 +5,20 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6111 (94.7%)
-Failed: 343
+Successful: 6106 (94.6%)
+Failed: 348
 
 ERROR CATEGORIES
 --------------------------------------------------
   format_error                     748
-  type_error                       382
+  type_error                       380
   incompatible_types               129
-  cast_error                       124
-  undeclared_identifier            115
+  cast_error                       122
+  undeclared_identifier            114
+  missing_member                    44
   syntax_error                      37
   other                             26
   pointer_type                      24
-  missing_member                     8
   pointer_arithmetic                 7
   argument_error                     4
   pointer_precision                  2
@@ -64,7 +64,7 @@ CATEGORY: format_error (748 errors)
   core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
     Line 46: format specifies type 'char *' but the argument has type 'CMimic *' [-Werror,-Wf...
   core_scat.cpp_CScat_process_FUN_005571f0
-    Line 194: format specifies type 'char *' but the argument has type 'CScat *' [-Werror,-Wfo...
+    Line 195: format specifies type 'char *' but the argument has type 'CScat *' [-Werror,-Wfo...
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
     Line 60: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror...
   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
@@ -91,7 +91,7 @@ CATEGORY: format_error (748 errors)
   ... and 126 more errors
 
 ====================================================================================================
-CATEGORY: type_error (382 errors)
+CATEGORY: type_error (380 errors)
 ====================================================================================================
 
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -155,7 +155,7 @@ CATEGORY: type_error (382 errors)
   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
     Line 38: member reference base type 'double' is not a structure or union...
 
-  ... and 42 more errors
+  ... and 41 more errors
 
 ====================================================================================================
 CATEGORY: incompatible_types (129 errors)
@@ -178,7 +178,7 @@ CATEGORY: incompatible_types (129 errors)
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
     Line 313: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int...
   core_scat.cpp_CScat_process_FUN_005571f0
-    Line 309: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int...
+    Line 310: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int...
   core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720
     Line 38: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int...
   core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0
@@ -225,7 +225,7 @@ CATEGORY: incompatible_types (129 errors)
   ... and 32 more errors
 
 ====================================================================================================
-CATEGORY: cast_error (124 errors)
+CATEGORY: cast_error (122 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -260,8 +260,6 @@ CATEGORY: cast_error (124 errors)
     Line 329: cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'...
   core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330
     Line 33: cannot cast from type 'float' to pointer type 'CDemonActor *'...
-  core_script.cpp_CScript_step_FUN_0055a810
-    Line 1383: cannot cast from type 'float' to pointer type 'CDemonActor *'...
   core_xform.cpp_lerpMatrix3x4_FUN_005f7140
     Line 42: cannot cast from type 'float' to pointer type 'CMatrix3x3f *'...
   core_set.cpp_CDemonSet_processActors_FUN_0056b810
@@ -288,11 +286,13 @@ CATEGORY: cast_error (124 errors)
     Line 12: no matching conversion for C-style cast from 'CSoundDeviceBasic_vtable *' to 'CS...
   sound_snddx.cpp_staticInit_FUN_005ade60
     Line 12: no matching conversion for C-style cast from 'CSoundDeviceFull_vtable *' to 'CSo...
+  engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410
+    Line 42: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'...
 
-  ... and 2 more errors
+  ... and 1 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (115 errors)
+CATEGORY: undeclared_identifier (114 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -300,11 +300,11 @@ CATEGORY: undeclared_identifier (115 errors)
   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
     Line 39: use of undeclared identifier 'INT_02d83398'...
   core_scat.cpp_CScat_process_FUN_005571f0
-    Line 150: use of undeclared identifier 'SUB14'...
+    Line 151: use of undeclared identifier 'SUB14'...
   core_script.cpp_CScript_step_FUN_0055a810
-    Line 1565: use of undeclared identifier 'SUB14'...
+    Line 1575: use of undeclared identifier 'SUB14'...
   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
-    Line 1190: use of undeclared identifier 'code'...
+    Line 1196: use of undeclared identifier 'code'...
   core_fire.cpp_CFireball_process_FUN_004c0b30
     Line 96: use of undeclared identifier 'code'...
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
@@ -359,11 +359,32 @@ CATEGORY: undeclared_identifier (115 errors)
   ... and 42 more errors
 
 ====================================================================================================
+CATEGORY: missing_member (44 errors)
+====================================================================================================
+
+  sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
+    Line 44: no member named '_12_4_' in 'tWAVEFORMATEX'...
+  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
+    Line 111: no member named '_18_2_' in 'tWAVEFORMATEX'...
+  core_baron.cpp_CBaron_process_FUN_00412e80
+    Line 108: no member named 'action_states' in 'SPlayerControl'...
+  core_colonel.cpp_CColonel_process_FUN_0043fa00
+    Line 93: no member named 'action_states' in 'SPlayerControl'...
+  core_moloch.cpp_CMoloch_process_FUN_00528d20
+    Line 93: no member named 'action_states' in 'SPlayerControl'...
+  core_stranger.cpp_CStranger_handleActionButton_FUN_005c5b90
+    Line 23: no member named 'action_states' in 'SPlayerControl'...
+  core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0
+    Line 107: no member named 'action_states' in 'SPlayerControl'...
+  core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400
+    Line 112: no member named 'action_states' in 'SPlayerControl'...
+
+====================================================================================================
 CATEGORY: syntax_error (37 errors)
 ====================================================================================================
 
   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
-    Line 1190: expected expression...
+    Line 1196: expected expression...
   core_fire.cpp_CFireball_process_FUN_004c0b30
     Line 96: expected expression...
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
@@ -478,15 +499,6 @@ CATEGORY: pointer_type (24 errors)
     Line 31: comparison of distinct pointer types ('CPoly *' and 'int *')...
 
 ====================================================================================================
-CATEGORY: missing_member (8 errors)
-====================================================================================================
-
-  sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
-    Line 44: no member named '_12_4_' in 'tWAVEFORMATEX'...
-  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
-    Line 111: no member named '_18_2_' in 'tWAVEFORMATEX'...
-
-====================================================================================================
 CATEGORY: pointer_arithmetic (7 errors)
 ====================================================================================================
 
@@ -522,7 +534,7 @@ COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
 Average suspects in successfully compiled functions: 1.69
-Average suspects in failed compilations: 9.76
+Average suspects in failed compilations: 9.66
 
-Functions that compile but have suspect patterns: 1499
+Functions that compile but have suspect patterns: 1496
 (These may have runtime issues even though syntax is valid)

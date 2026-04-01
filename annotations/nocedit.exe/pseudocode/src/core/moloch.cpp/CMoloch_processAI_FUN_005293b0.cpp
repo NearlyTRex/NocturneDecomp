@@ -65,11 +65,11 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
          (uVar8 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
                             ((CCharacter *)this_ptr,delta_time), uVar8 != 0)) {
         if (uVar8 < 2) {
-          (this_ptr->base).player_control.action_states[0] = 1;
+          (this_ptr->base).player_control.action_bindings.walk_key = 1;
         }
         else if (uVar8 == 2) {
-          (this_ptr->base).player_control.action_states[2] = 1;
-          (this_ptr->base).player_control.action_states[0] = 1;
+          (this_ptr->base).player_control.action_bindings.run_key = 1;
+          (this_ptr->base).player_control.action_bindings.walk_key = 1;
         }
       }
     }
@@ -90,7 +90,7 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
         if (0.25 < (this_ptr->base).player_control.turn_speed) {
           (this_ptr->base).player_control.turn_speed = 0.25;
         }
-        (this_ptr->base).player_control.action_states[0] = 1;
+        (this_ptr->base).player_control.action_bindings.walk_key = 1;
       }
       (this_ptr->base).base.hero_proximity_timer = 0.0;
     }

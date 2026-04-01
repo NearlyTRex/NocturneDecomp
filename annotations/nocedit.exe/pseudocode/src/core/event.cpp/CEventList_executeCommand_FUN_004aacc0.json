@@ -4,115 +4,115 @@
       {
         "category": "format_error",
         "column": 75,
-        "line": 169,
+        "line": 172,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 77,
-        "line": 211,
+        "line": 214,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 74,
-        "line": 230,
+        "line": 233,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 91,
-        "line": 237,
+        "line": 240,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 42,
-        "line": 251,
+        "line": 254,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 55,
-        "line": 259,
+        "line": 262,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 52,
-        "line": 259,
+        "line": 262,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 47,
-        "line": 261,
+        "line": 264,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 42,
-        "line": 311,
+        "line": 314,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 65,
-        "line": 379,
+        "line": 382,
         "message": "use of undeclared identifier 'stack0xffffe9c4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 68,
-        "line": 389,
+        "line": 392,
         "message": "use of undeclared identifier 'stack0xffffe9c4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 401,
+        "line": 404,
         "message": "use of undeclared identifier 'stack0xffffe9c4'"
       },
       {
         "category": "format_error",
         "column": 50,
-        "line": 414,
+        "line": 417,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 63,
-        "line": 436,
+        "line": 439,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 76,
-        "line": 572,
+        "line": 575,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 72,
-        "line": 645,
+        "line": 648,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 69,
-        "line": 666,
+        "line": 669,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 56,
-        "line": 722,
+        "line": 725,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 96,
-        "line": 721,
+        "line": 724,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -121,18 +121,18 @@
   },
   "complexity": {
     "assembly_lines": 5057,
-    "complexity_score": 2245,
+    "complexity_score": 2248,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 177,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 2165,
+    "pseudocode_lines": 2168,
     "suspect_count": 7,
     "suspect_types": [
       "format_string_mismatch",
       "stack_ref"
     ],
-    "total_lines": 7222
+    "total_lines": 7225
   },
   "cross_references": [
     {
@@ -2219,7 +2219,7 @@
   "suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 372,
+      "line": 375,
       "match": "&stack0xffffe9c4",
       "severity": "moderate",
       "text": "((char *)local_ec,\"( %[^ ,], %d, %d )%n\",&stack0xffffe9c4,&local_d8,&local_d4);",
@@ -2227,7 +2227,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 382,
+      "line": 385,
       "match": "&stack0xffffe9c4",
       "severity": "moderate",
       "text": "iVar2 = engine_dosio_c_getFileSize_FUN_00481880(\"art\",&stack0xffffe9c4);",
@@ -2235,7 +2235,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 394,
+      "line": 397,
       "match": "&stack0xffffe9c4",
       "severity": "moderate",
       "text": "(g_CGamePtr,&stack0xffffe9c4,local_d8,local_d4);",
@@ -2247,7 +2247,7 @@
       "expected_args": 1,
       "format_string": "Event name %s is too long",
       "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
-      "line_number": 162,
+      "line_number": 165,
       "match": "iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0(\"Event name %s is too long\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -2258,7 +2258,7 @@
       "expected_args": 1,
       "format_string": "Event name %s is not valid",
       "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
-      "line_number": 204,
+      "line_number": 207,
       "match": "iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0(\"Event name %s is not valid\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -2269,7 +2269,7 @@
       "expected_args": 1,
       "format_string": "SpotLight %s doesn't exist.",
       "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
-      "line_number": 223,
+      "line_number": 226,
       "match": "iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0(\"SpotLight %s doesn't exist.\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -2280,7 +2280,7 @@
       "expected_args": 1,
       "format_string": "Can't find CDemonLight for light %s in advanceLightFilter meta-command",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 230,
+      "line_number": 233,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't find CDemonLight for light %s in advanceLightFil",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

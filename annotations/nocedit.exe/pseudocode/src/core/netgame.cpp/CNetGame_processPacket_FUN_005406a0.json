@@ -6,13 +6,13 @@
   },
   "complexity": {
     "assembly_lines": 1175,
-    "complexity_score": 530,
+    "complexity_score": 540,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 41,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 440,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "warning_unreachable"
@@ -339,7 +339,7 @@
     },
     {
       "addr": "02f9c0d0",
-      "name": "g_SimFrameHistory[0].player_controls[0].action_states[0]",
+      "name": "g_SimFrameHistory[0].player_controls[0].action_bindings.walk_key",
       "type": "undefined4",
       "value": null
     },
@@ -706,7 +706,15 @@
       "line": 357,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "if (uVar3 == *(uint *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
+      "text": "if (uVar3 == *(uint *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 359,
+      "match": "(SSimFrame *)((int)",
+      "severity": "mild",
+      "text": "dest = (SSimFrame *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc);",
       "type": "pointer_cast"
     }
   ]

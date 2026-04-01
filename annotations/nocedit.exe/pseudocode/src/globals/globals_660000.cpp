@@ -597,6 +597,9 @@ CCharacter_vtable DAT_00665AD0 = {
 // CConsole*
 CConsole* g_CConsolePtr = (CConsole*)&g_CConsoleInstance;
 
+// CDemonActor*
+CDemonActor* g_ScriptSentinelActor = (CDemonActor*)0xFFFFFFFF;
+
 // CDemonActor_vtable
 CDemonActor_vtable g_CIcePickVTable = {
     .setup = (CDemonActor_setup *)core_icepick_cpp_CIcePick_setup_FUN_004f7e80,

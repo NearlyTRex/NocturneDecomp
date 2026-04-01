@@ -194,8 +194,8 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0 (55 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation]
            - core_event.cpp_CEventList_render_FUN_004addf0 (114 lines) [pointer_cast]
            - core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0 (59 lines) [decompiler_intrinsic, sub84_truncation]
-           - core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (1579 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr]
-           - core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (2165 lines) [format_string_mismatch, stack_ref]
+           - core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (1584 lines) [decompiler_intrinsic, pointer_cast, unresolved_funcptr]
+           - core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (2168 lines) [format_string_mismatch, stack_ref]
 
    90.9% | core/menu.cpp
          20/22 clean, 2 remaining
@@ -549,7 +549,7 @@ FILES AT 50-89%
            - core_script.cpp_compareEventXRefs_FUN_005675a0 (48 lines) [decompiler_intrinsic]
            - core_script.cpp_parseCommandWithTemplates_FUN_00561690 (284 lines) [pointer_cast]
            - core_script.cpp_CCmdParse_bestParse_FUN_00561db0 (75 lines) [pointer_cast]
-           - core_script.cpp_CScript_step_FUN_0055a810 (3412 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, warning_type_propagation]
+           - core_script.cpp_CScript_step_FUN_0055a810 (3416 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, warning_type_propagation]
            - core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 (26 lines) [pointer_cast]
            - core_script.cpp_CScript_addEventXRef_FUN_00567510 (24 lines) [pointer_cast]
            - core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0 (44 lines) [pointer_cast]
@@ -763,15 +763,15 @@ FILES AT 50-89%
    76.6% | core/netgame.cpp
          49/64 clean, 15 remaining
            - core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 (60 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 (97 lines) [pointer_cast]
-           - core_netgame.cpp_allocSimFrame_FUN_0053f5a0 (32 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 (94 lines) [pointer_cast]
+           - core_netgame.cpp_allocSimFrame_FUN_0053f5a0 (30 lines) [pointer_cast]
            - core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800 (38 lines) [pointer_cast]
-           - core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 (219 lines) [pointer_cast]
+           - core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150 (224 lines) [pointer_cast, warning_type_propagation]
            - core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0 (121 lines) [suspect_float, unresolved_funcptr]
-           - core_netgame.cpp_findSimFrame_FUN_0053f550 (18 lines) [pointer_cast]
+           - core_netgame.cpp_findSimFrame_FUN_0053f550 (17 lines) [pointer_cast]
            - core_netgame.cpp_CNetGame_removePlayer_FUN_00542b00 (54 lines) [pointer_cast]
            - core_netgame.cpp_CNetGame_runLobby_FUN_00541390 (288 lines) [decompiler_intrinsic, warning_inlined_function]
-           - core_netgame.cpp_purgeOldSimFrames_FUN_0053f650 (27 lines) [pointer_cast]
+           - core_netgame.cpp_purgeOldSimFrames_FUN_0053f650 (26 lines) [pointer_cast]
            - core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0 (82 lines) [pointer_cast, unknown_field]
            - core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0 (90 lines) [pointer_cast]
            - core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 (272 lines) [pointer_cast, stack_alignment_array]
@@ -783,7 +783,7 @@ FILES AT 50-89%
            - core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 (206 lines) [decompiler_intrinsic, param_count_too_few, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 (252 lines) [stack_alignment_array, unresolved_funcptr, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60 (113 lines) [decompiler_intrinsic, warning_type_propagation]
-           - core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 (691 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 (692 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 (115 lines) [warning_type_propagation]
            - core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (148 lines) [pointer_cast, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004d6260 (84 lines) [decompiler_intrinsic, warning_type_propagation]
@@ -799,7 +799,7 @@ FILES AT 50-89%
          19/25 clean, 6 remaining
            - core_scat.cpp_CScat_updateWeaponState_FUN_00558060 (107 lines) [suspect_float]
            - core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (49 lines) [warning_type_propagation]
-           - core_scat.cpp_CScat_process_FUN_005571f0 (311 lines) [decompiler_intrinsic, stack_alignment_array]
+           - core_scat.cpp_CScat_process_FUN_005571f0 (312 lines) [decompiler_intrinsic, stack_alignment_array]
            - core_scat.cpp_CScat_scoreAimTarget_FUN_00558cf0 (83 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (80 lines) [stack_alignment_array, warning_type_propagation]
            - core_scat.cpp_CScat_updateAI_FUN_005578e0 (158 lines) [decompiler_intrinsic, warning_type_propagation]

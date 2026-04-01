@@ -36,14 +36,22 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
   local_48.header.type = PACKET_PLAYER_CONTROL;
   local_48.sim_frame_index = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
   iVar1 = this_ptr->local_player_index;
-  local_48.controls.action_states[0] = this_ptr->players[iVar1].controls.action_states[0];
-  local_48.controls.action_states[1] = this_ptr->players[iVar1].controls.action_states[1];
-  local_48.controls.action_states[2] = this_ptr->players[iVar1].controls.action_states[2];
-  local_48.controls.action_states[3] = this_ptr->players[iVar1].controls.action_states[3];
-  local_48.controls.action_states[4] = this_ptr->players[iVar1].controls.action_states[4];
-  local_48.controls.action_states[5] = this_ptr->players[iVar1].controls.action_states[5];
-  local_48.controls.action_states[6] = this_ptr->players[iVar1].controls.action_states[6];
-  local_48.controls.action_states[7] = this_ptr->players[iVar1].controls.action_states[7];
+  local_48.controls.action_bindings.walk_key =
+       this_ptr->players[iVar1].controls.action_bindings.walk_key;
+  local_48.controls.action_bindings.backup_key =
+       this_ptr->players[iVar1].controls.action_bindings.backup_key;
+  local_48.controls.action_bindings.run_key =
+       this_ptr->players[iVar1].controls.action_bindings.run_key;
+  local_48.controls.action_bindings.fire_key =
+       this_ptr->players[iVar1].controls.action_bindings.fire_key;
+  local_48.controls.action_bindings.use_item_key =
+       this_ptr->players[iVar1].controls.action_bindings.use_item_key;
+  local_48.controls.action_bindings.light_key =
+       this_ptr->players[iVar1].controls.action_bindings.light_key;
+  local_48.controls.action_bindings.draw_key =
+       this_ptr->players[iVar1].controls.action_bindings.draw_key;
+  local_48.controls.action_bindings.jump_key =
+       this_ptr->players[iVar1].controls.action_bindings.jump_key;
   local_48.controls.strafe_speed = this_ptr->players[iVar1].controls.strafe_speed;
   local_48.controls.turn_speed = this_ptr->players[iVar1].controls.turn_speed;
   local_48.controls.look_up_down_speed = this_ptr->players[iVar1].controls.look_up_down_speed;

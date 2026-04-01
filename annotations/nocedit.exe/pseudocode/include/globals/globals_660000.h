@@ -8,6 +8,7 @@
 #include "system/watcom.h"
 #include "types/classes/CCharacter_vtable.h"
 #include "types/classes/CConsole.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CDemonPod_vtable.h"
@@ -67,6 +68,9 @@ extern CCharacter_vtable DAT_00665AD0;
 
 // CConsole*
 extern CConsole* g_CConsolePtr;
+
+// CDemonActor*
+extern CDemonActor* g_ScriptSentinelActor;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CIcePickVTable;

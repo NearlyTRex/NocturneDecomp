@@ -16,8 +16,7 @@ int __cdecl core_netgame_cpp_findSimFrame_FUN_0053f550(int sequence_number)
   if (0 < g_SimFrameCount) {
     iVar1 = 0;
     do {
-      if (sequence_number ==
-          *(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar1 + -0xc)) {
+      if (sequence_number == *(int *)((int)g_SimFrameHistory[0].player_controls + iVar1 + -0xc)) {
         return iVar2;
       }
       iVar1 = iVar1 + 100;

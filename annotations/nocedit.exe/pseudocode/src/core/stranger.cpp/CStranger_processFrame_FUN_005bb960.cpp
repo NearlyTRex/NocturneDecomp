@@ -348,8 +348,8 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
                                         (&(this_ptr->base).base.model.motion_controller);
                     iStack_58 = pSVar19->state_index;
                     iStack_18 = 0;
-                    if ((this_ptr->base).player_control.action_states[0] == 0) {
-                      if ((this_ptr->base).player_control.action_states[1] == 0) {
+                    if ((this_ptr->base).player_control.action_bindings.walk_key == 0) {
+                      if ((this_ptr->base).player_control.action_bindings.backup_key == 0) {
                         fVar18 = (this_ptr->base).player_control.strafe_speed;
                         if ((float)-0.01 <= fVar18) {
                           if (0.01 < (double)fVar18) {
@@ -364,7 +364,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
                         iStack_18 = 2;
                       }
                     }
-                    else if ((this_ptr->base).player_control.action_states[2] == 0) {
+                    else if ((this_ptr->base).player_control.action_bindings.run_key == 0) {
                       iStack_18 = 1;
                     }
                     else {
@@ -384,7 +384,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
                     fVar18 = (this_ptr->base).player_control.strafe_speed;
                     fVar13 = (this_ptr->base).player_control.turn_speed *
                              (this_ptr->base).base.turn_speed;
-                    iVar21 = (this_ptr->base).player_control.action_states[7];
+                    iVar21 = (this_ptr->base).player_control.action_bindings.jump_key;
                     (this_ptr->base).base.turn_angle_accumulator = fVar13;
                     fVar4 = (this_ptr->base).base.turn_angle_accumulator;
                     fVar5 = (this_ptr->base).base.turn_angle_accumulator;
@@ -422,7 +422,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
                       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                                 (&(this_ptr->base).base.model.motion_controller,iStack_18,1);
                     }
-                    if ((this_ptr->base).player_control.action_states[4] != 0) {
+                    if ((this_ptr->base).player_control.action_bindings.use_item_key != 0) {
                       core_hero_cpp_CHero_tryUseSelectedItem_FUN_004f3760(&this_ptr->base);
                       iStack_60 = 0;
                       break;
@@ -478,7 +478,7 @@ LAB_005bd19f:
           }
           else {
             pCStack_78 = pCVar10;
-            if ((this_ptr->base).player_control.action_states[3] != 0) {
+            if ((this_ptr->base).player_control.action_bindings.fire_key != 0) {
               pCVar20 = (this_ptr->base).pushed_object;
               (*((pCVar20->base).vtable._ub)->getBoundingBox)(&pCVar20->base,&CStack_248);
               fStack_1b0 = CStack_248.min.z + CStack_248.max.z;
@@ -581,12 +581,12 @@ LAB_005bd19f:
                 (*(((this_ptr->base).base.base.vtable._uc)->_uc).releaseFromGrab)
                           ((CCharacter *)this_ptr);
               }
-              else if ((this_ptr->base).player_control.action_states[3] != 0) {
+              else if ((this_ptr->base).player_control.action_bindings.fire_key != 0) {
                 in_stack_fffffd14 = (UOrientationVector *)0x23;
                 in_stack_fffffd10 = pUStack_24;
                 core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                           ((CMotionController *)&pUStack_24->vec,0x23,1);
-                (this_ptr->base).player_control.action_states[3] = 0;
+                (this_ptr->base).player_control.action_bindings.fire_key = 0;
               }
             }
             goto switchD_005bd22e_caseD_6;
@@ -1020,7 +1020,7 @@ LAB_005bc1a6:
   (this_ptr->pending_velocity).x = (this_ptr->pending_velocity).y;
   pCVar15 = g_CGamePtr;
   if (local_1c != 0) {
-    if ((this_ptr->base).player_control.action_states[6] != 0) {
+    if ((this_ptr->base).player_control.action_bindings.draw_key != 0) {
       if (this_ptr->guns_drawn == 0) {
         this_ptr->guns_drawn = 1;
       }
@@ -1033,7 +1033,7 @@ LAB_005bc1a6:
         }
       }
     }
-    if ((((this_ptr->base).player_control.action_states[5] != 0) &&
+    if ((((this_ptr->base).player_control.action_bindings.light_key != 0) &&
         (pCVar11 = (this_ptr->base).inventory.selected_weapon, pCVar11 != (CWeapon *)0x0)) &&
        (pCVar11->can_attach_light != 0)) {
       uVar23 = (uint)(g_CGamePtr->auto_save_blocked == 0);

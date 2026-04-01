@@ -101,11 +101,11 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043ff20(CColonel *this_ptr
           (this_ptr->base).player_control.turn_speed = 0.25;
         }
         if (((float)10 <= fVar2) || (bVar3)) {
-          (this_ptr->base).player_control.action_states[2] = 1;
-          (this_ptr->base).player_control.action_states[0] = 1;
+          (this_ptr->base).player_control.action_bindings.run_key = 1;
+          (this_ptr->base).player_control.action_bindings.walk_key = 1;
         }
         else {
-          (this_ptr->base).player_control.action_states[0] = 1;
+          (this_ptr->base).player_control.action_bindings.walk_key = 1;
         }
       }
     }
@@ -113,13 +113,13 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043ff20(CColonel *this_ptr
       this_ptr_02 = &(this_ptr->base).base.model;
       if (bVar3) {
         if (this_ptr->guns_drawn == 0) {
-          (this_ptr->base).player_control.action_states[6] = 1;
+          (this_ptr->base).player_control.action_bindings.draw_key = 1;
         }
         else {
           pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&this_ptr_02->motion_controller);
           if ((pSVar7->state_index != 2) && (pSVar7->state_index != 1)) {
-            (this_ptr->base).player_control.action_states[3] = 1;
+            (this_ptr->base).player_control.action_bindings.fire_key = 1;
           }
         }
       }
@@ -142,7 +142,7 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043ff20(CColonel *this_ptr
         }
         fVar1 = (this_ptr->base).player_control.turn_speed;
         if ((((float)-0.25 < fVar1) && ((double)fVar1 < 0.25)) &&
-           ((this_ptr->base).player_control.action_states[3] != 0)) {
+           ((this_ptr->base).player_control.action_bindings.fire_key != 0)) {
           (this_ptr->base).player_control.turn_speed = 0.0;
         }
       }

@@ -108,20 +108,20 @@ LAB_004f8427:
             if ((this_ptr->guns_drawn != 0) && (this_ptr->is_armed == 0)) {
               iVar6 = 10;
             }
-            if ((this_ptr->base).player_control.action_states[0] != 0) {
-              if ((this_ptr->base).player_control.action_states[2] == 0) {
+            if ((this_ptr->base).player_control.action_bindings.walk_key != 0) {
+              if ((this_ptr->base).player_control.action_bindings.run_key == 0) {
                 iVar6 = 1;
               }
               else {
                 iVar6 = 2;
               }
             }
-            if ((this_ptr->base).player_control.action_states[1] != 0) {
+            if ((this_ptr->base).player_control.action_bindings.backup_key != 0) {
               iVar6 = 3;
             }
-            if ((this_ptr->base).player_control.action_states[6] != 0) {
+            if ((this_ptr->base).player_control.action_bindings.draw_key != 0) {
               iVar6 = this_ptr->guns_drawn;
-              (this_ptr->base).player_control.action_states[6] = 0;
+              (this_ptr->base).player_control.action_bindings.draw_key = 0;
               uVar9 = (uint)(iVar6 == 0);
               this_ptr->guns_drawn = uVar9;
               if ((uVar9 == 0) || (this_ptr->is_armed != 0)) {
@@ -131,7 +131,7 @@ LAB_004f8427:
                 iVar6 = 10;
               }
             }
-            if ((this_ptr->base).player_control.action_states[3] != 0) {
+            if ((this_ptr->base).player_control.action_bindings.fire_key != 0) {
               bVar1 = true;
               if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != HERO_CONTROL_AI))
               {
@@ -157,7 +157,7 @@ LAB_004f84cc:
               }
               if (this_ptr->guns_drawn != 0) {
                 if (this_ptr->is_armed == 0) {
-                  (this_ptr->base).player_control.action_states[3] = 0;
+                  (this_ptr->base).player_control.action_bindings.fire_key = 0;
                   switch(this_ptr->attack_count) {
                   case 0:
                   case 2:
@@ -198,7 +198,7 @@ switchD_004f8665_default:
               core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                         (&(this_ptr->base).base.model.motion_controller,iVar6,1);
             }
-            if (((this_ptr->base).player_control.action_states[4] != 0) &&
+            if (((this_ptr->base).player_control.action_bindings.use_item_key != 0) &&
                (iVar6 = core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004f8970(this_ptr),
                iVar6 == 0)) {
               core_icepick_cpp_CIcePick_startThrowAttack_FUN_004f8ad0(this_ptr);
@@ -290,7 +290,7 @@ LAB_004f82e5:
   }
   else {
     if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) goto LAB_004f82e5;
-    if ((this_ptr->base).player_control.action_states[3] == 0) goto LAB_004f82f8;
+    if ((this_ptr->base).player_control.action_bindings.fire_key == 0) goto LAB_004f82f8;
     iVar6 = 0x11;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

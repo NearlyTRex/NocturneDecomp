@@ -39,6 +39,7 @@ from ghidra_annotations.annotations.pseudocode.headers import (
 from ghidra_annotations.annotations.pseudocode.output import (
     export_function_prototypes, generate_function_file_contents
 )
+from ghidra_annotations.annotations.pseudocode.actor_cast_report import generate_actor_cast_report
 from ghidra_annotations.annotations.pseudocode.adj_report import generate_adj_pointer_report
 from ghidra_annotations.annotations.pseudocode.analysis import generate_analysis_report
 from ghidra_annotations.annotations.pseudocode.dat_report import generate_dat_report, generate_struct_detection_report, generate_globals_gap_report
@@ -1211,6 +1212,12 @@ def export_pseudocode(currentProgram, path, strict=False):
     # Generate ADJ pointer types report
     timer.start_phase("Generate ADJ pointer types report")
     generate_adj_pointer_report(pseudocode_src_dir, reports_dir)
+    timer.end_phase()
+
+    # Generate actor pointer cast mismatch report
+    timer.start_phase("Generate actor cast mismatch report")
+    log_info("Generating actor cast mismatch report...")
+    generate_actor_cast_report(pseudocode_src_dir, reports_dir)
     timer.end_phase()
 
     # Log timing profile

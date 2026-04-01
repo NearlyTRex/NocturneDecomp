@@ -1,0 +1,220 @@
+====================================================================================================
+ACTOR POINTER CAST MISMATCH REPORT
+====================================================================================================
+
+This report identifies locations where actor resolution functions
+(castToClassHash, resolveActorByName, getActor) return a pointer
+that is cast to a type incompatible with the class specified by
+the ClassInfo argument. The ClassInfo tells us what class the actor
+actually is; when the cast doesn't match, all downstream field
+accesses and vtable calls will be wrong.
+
+----------------------------------------------------------------------------------------------------
+SUMMARY
+----------------------------------------------------------------------------------------------------
+
+  Total resolution calls found:  313
+  Type mismatches found:         0
+  Unresolved (indirect variable): 17
+
+  Calls by function:
+    castToClassHash                249 calls
+    createActorByName              7 calls
+    getActor                       35 calls
+    resolveActorByName             22 calls
+
+====================================================================================================
+UNRESOLVED CALLS (class identity passed via variable)
+====================================================================================================
+
+These calls pass the class hash or name through an intermediate variable
+rather than directly from a ClassInfo global or string literal.
+Manual inspection is needed to determine the expected class.
+
+--------------------------------------------------------------------------------
+  core/event.cpp/CEventList_executeCommand_FUN_004aacc0.cpp
+--------------------------------------------------------------------------------
+
+  Line 357: castToClassHash()
+    355:           if ((pCVar8 != g_ActorNameSentinel) && (local_f0 != 0)) {
+    356:             pCVar8->lifecycle_state = ACTOR_DESTROYED;
+    357:             pCVar6 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar8,uVar14);
+    358:             if (pCVar6 != (CBoxActor *)0x0) {
+    359:               pCVar6->loop_wav_name[0] = '\0';
+    360:               sound_sndmain_cpp_killSfx_FUN_005a9c40(pCVar6->sfx_handle);
+
+--------------------------------------------------------------------------------
+  core/game.cpp/giveHeroWeapon_FUN_004dd870.cpp
+--------------------------------------------------------------------------------
+
+  Line 15: createActorByName()
+    13:   CWeapon *pCVar1;
+    14: 
+    15:   actor = core_actor_cpp_createActorByName_FUN_0040c430(class_name);
+    16:   core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr,actor);
+    17:   (*((actor->vtable)._ub)->setup)(actor);
+    18:   pCVar1 = (CWeapon *)
+
+--------------------------------------------------------------------------------
+  core/hero.cpp/CHeroPlaceholder_createHero_FUN_004f3d80.cpp
+--------------------------------------------------------------------------------
+
+  Line 55: createActorByName()
+    53:   }
+    54:   class_name_hash = g_CHeroClassInfo.name_hash;
+    55:   actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430(class_name);
+    56:   pCVar2 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,class_name_hash);
+    57: LAB_004f3db9:
+    58:   if (pCVar2 == (CHero *)0x0) {
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/CInventory_addItem_FUN_004fd600.cpp
+--------------------------------------------------------------------------------
+
+  Line 1023: castToClassHash()
+    1021:               pCVar5->ammo_count = pCVar5->ammo_count + pCStack_24->ammo_count;
+    1022:               pCVar5_00 = (CTommyGun *)
+    1023:                           core_actor_cpp_castToClassHash_FUN_0040c790((CDemonActor *)pCVar5,uVar4);
+    1024:               if ((pCVar5_00 != (CTommyGun *)0x0) && (200 < (pCVar5_00->base).ammo_count)) {
+    1025:                 (pCVar5_00->base).ammo_count = 200;
+    1026:               }
+
+  Line 1098: castToClassHash()
+    1096:             pCVar9->ammo_count = pCVar9->ammo_count + pCVar8->ammo_count;
+    1097:             pCVar6 = (CTommyGun *)
+    1098:                      core_actor_cpp_castToClassHash_FUN_0040c790((CDemonActor *)pCVar9,uVar4);
+    1099:             if ((pCVar6 != (CTommyGun *)0x0) && (200 < (pCVar6->base).ammo_count)) {
+    1100:               (pCVar6->base).ammo_count = 200;
+    1101:             }
+
+  Line 612: createActorByName()
+    610:       pCVar15 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c790
+    611:                                    (item_actor,g_CAmmoClassInfo.name_hash);
+    612:       pCVar5_02 = core_actor_cpp_createActorByName_FUN_0040c430(pCVar15->weapon_class_name);
+    613:       pcVar16 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("This ammo is for your ")
+    614:       ;
+    615:       pcVar20 = acStack_234;
+
+  Line 1038: createActorByName()
+    1036:         } while (iVar18 < this_ptr->item_count);
+    1037:       }
+    1038:       pCVar5_02 = core_actor_cpp_createActorByName_FUN_0040c430(pcStack_28);
+    1039:       core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(g_CDemonMissionPtr,pCVar5_02);
+    1040:       (*((pCVar5_02->vtable)._ub)->setup)(pCVar5_02);
+    1041:       *(int *)(pCVar5_02[4].actor_name + 8) = pCStack_24->ammo_count;
+
+  Line 1127: createActorByName()
+    1125:             pcVar20 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90
+    1126:                                 ((CDemonActor *)pCVar8);
+    1127:             pCVar5_02 = core_actor_cpp_createActorByName_FUN_0040c430(pcVar20);
+    1128:             core_mission_cpp_CDemonMission_generateActorName_FUN_00524700
+    1129:                       (g_CDemonMissionPtr,pCVar5_02);
+    1130:             (*((pCVar5_02->vtable)._ub)->setup)(pCVar5_02);
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/CInventory_load_FUN_004ff400.cpp
+--------------------------------------------------------------------------------
+
+  Line 70: createActorByName()
+    68:       if (g_CDemonMissionPtr->has_inventory_actors == 0) {
+    69:         pcVar9 = local_78;
+    70:         pCVar3 = core_actor_cpp_createActorByName_FUN_0040c430(local_dc);
+    71:         pCVar8 = pCVar3;
+    72:         do {
+    73:           cVar1 = *pcVar9;
+
+--------------------------------------------------------------------------------
+  core/inv.cpp/getItemModel_FUN_004fcda0.keep.cpp
+--------------------------------------------------------------------------------
+
+  Line 41: castToClassHash()
+    39:     return (CKeyFramedModelInstance *)0x0;
+    40:   }
+    41:   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,class_name_hash);
+    42:   return (CKeyFramedModelInstance *)(pCVar2 + 1);
+    43: }
+    44: 
+
+--------------------------------------------------------------------------------
+  core/mimic.cpp/CMimic_setup_FUN_0051f3e0.cpp
+--------------------------------------------------------------------------------
+
+  Line 85: createActorByName()
+    83:              &(this_ptr->base).base.base.orient.vec,pCVar1);
+    84:   class_name_hash = g_CEnemyClassInfo.name_hash;
+    85:   actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430(this_ptr->morph_actor_type);
+    86:   pCVar10 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,class_name_hash);
+    87:   this_ptr->morph_target_actor = (CDemonActor *)pCVar10;
+    88:   if (pCVar10 == (CEnemy *)0x0) {
+
+--------------------------------------------------------------------------------
+  core/mission.cpp/CDemonMission_readMissionFile_FUN_00522eb0.keep.cpp
+--------------------------------------------------------------------------------
+
+  Line 167: createActorByName()
+    165:     _fscanf(file_handle,"%s \"%[^\"]\"\n",local_90,local_f4);
+    166:     pcVar9 = local_f4;
+    167:     actor = core_actor_cpp_createActorByName_FUN_0040c430(local_90);
+    168:     local_18 = actor;
+    169:     pCVar6 = actor;
+    170:     do {
+
+--------------------------------------------------------------------------------
+  core/msnedit.cpp/CDemonMission_changeActorType_FUN_0053d8b0.cpp
+--------------------------------------------------------------------------------
+
+  Line 73: createActorByName()
+    71:     pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_624.base,iVar5);
+    72:     _sprintf(local_88,"C%s",pcVar4);
+    73:     pCVar7 = core_actor_cpp_createActorByName_FUN_0040c430(local_88);
+    74:     (*((pCVar7->vtable)._ub)->setup)(pCVar7);
+    75:     iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+    76:                       (g_CEditorToolsPtr,"Attempt to transfer properties?");
+
+--------------------------------------------------------------------------------
+  core/msnedit.cpp/CDemonMission_importActorsFrom_FUN_0053b9f0.cpp
+--------------------------------------------------------------------------------
+
+  Line 48: createActorByName()
+    46:     pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_448.base,iVar3);
+    47:     _sprintf(local_a0,"C%s",pcVar2);
+    48:     actor = core_actor_cpp_createActorByName_FUN_0040c430(local_a0);
+    49:     core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,actor);
+    50:     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
+    51:     (actor->location).area_id = this_ptr->current_set_index;
+
+--------------------------------------------------------------------------------
+  core/msnedit.cpp/CDemonMission_replicateActor_FUN_0053bd80.cpp
+--------------------------------------------------------------------------------
+
+  Line 53: createActorByName()
+    51:   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\msnedit.cpp",0x96b);
+    52:   class_name = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr->selected_actor);
+    53:   this_ptr_00 = core_actor_cpp_createActorByName_FUN_0040c430(class_name);
+    54:   file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
+    55:                           (local_20,(char *)0x0,"rt","..\\core\\msnedit.cpp",0x973);
+    56:   if (file_handle == (_FILE *)0x0) {
+
+--------------------------------------------------------------------------------
+  core/set.cpp/CDemonSet_buildActorTypeLists_FUN_00570fc0.cpp
+--------------------------------------------------------------------------------
+
+  Line 56: castToClassHash()
+    54:       else {
+    55:         this_ptr->character_count = this_ptr->character_count + 1;
+    56:         pCVar2 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,class_name_hash);
+    57:         this_ptr->enemies[this_ptr->enemy_count] = pCVar2;
+    58:         if (this_ptr->enemies[this_ptr->enemy_count] != (CEnemy *)0x0) {
+    59:           this_ptr->enemy_count = this_ptr->enemy_count + 1;
+
+--------------------------------------------------------------------------------
+  core/weapon.cpp/CWeapon_updateLighting_FUN_005ee4a0.cpp
+--------------------------------------------------------------------------------
+
+  Line 42: castToClassHash()
+    40:   g_CDemonLightInstance.antialiasing_enabled = 1;
+    41:   actor_ptr = (*((this_ptr->base).vtable._ub)->getCarrier)(&this_ptr->base);
+    42:   pCVar1 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,in_stack_ffffffc8);
+    43:   if ((pCVar1 != (CHero *)0x0) &&
+    44:      (fVar1 = (pCVar1->inventory).battery_charge, fVar1 < 15.0f)) {
+    45:     local_e2 = fVar1 * 0.06666667f;

@@ -78,7 +78,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
       pCVar6 = (CHero *)core_hero_cpp_CHero_closestEnemy_FUN_004f3960(&this_ptr->base,&fStack_3c);
       if ((pCVar6 == (CHero *)0x0) || (local_28 <= fStack_3c)) {
         if (this_ptr->blades_drawn != 0) {
-          (this_ptr->base).player_control.action_states[6] = 1;
+          (this_ptr->base).player_control.action_bindings.draw_key = 1;
         }
       }
       else {
@@ -114,11 +114,11 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
            (uVar7 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
                               ((CCharacter *)this_ptr,delta_time), uVar7 != 0)) {
           if (uVar7 < 2) {
-            (this_ptr->base).player_control.action_states[0] = 1;
+            (this_ptr->base).player_control.action_bindings.walk_key = 1;
           }
           else if (uVar7 == 2) {
-            (this_ptr->base).player_control.action_states[2] = 1;
-            (this_ptr->base).player_control.action_states[0] = 1;
+            (this_ptr->base).player_control.action_bindings.run_key = 1;
+            (this_ptr->base).player_control.action_bindings.walk_key = 1;
           }
         }
       }
@@ -141,11 +141,11 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
           (this_ptr->base).player_control.turn_speed = local_1c;
         }
         if (((float)10 <= fVar2) || (bVar3)) {
-          (this_ptr->base).player_control.action_states[2] = 1;
-          (this_ptr->base).player_control.action_states[0] = 1;
+          (this_ptr->base).player_control.action_bindings.run_key = 1;
+          (this_ptr->base).player_control.action_bindings.walk_key = 1;
         }
         else {
-          (this_ptr->base).player_control.action_states[0] = 1;
+          (this_ptr->base).player_control.action_bindings.walk_key = 1;
         }
       }
     }
@@ -153,13 +153,13 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
       this_ptr_01 = &(this_ptr->base).base.model;
       if (bVar3) {
         if (this_ptr->blades_drawn == 0) {
-          (this_ptr->base).player_control.action_states[6] = 1;
+          (this_ptr->base).player_control.action_bindings.draw_key = 1;
         }
         else {
           pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&this_ptr_01->motion_controller);
           if ((pSVar8->state_index != 2) && (pSVar8->state_index != 1)) {
-            (this_ptr->base).player_control.action_states[3] = 1;
+            (this_ptr->base).player_control.action_bindings.fire_key = 1;
           }
         }
         (this_ptr->base).base.hero_proximity_timer = 0.0;
@@ -168,7 +168,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
         pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&this_ptr_01->motion_controller);
         if ((pSVar5->state_index == 10) && (this_ptr->blades_drawn != 0)) {
-          (this_ptr->base).player_control.action_states[6] = 1;
+          (this_ptr->base).player_control.action_bindings.draw_key = 1;
         }
         iVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uh)->_uh).isWeaponDrawn)
                           (g_HeroActors[g_LocalHeroIndex]);
@@ -176,11 +176,11 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
            (uVar9 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
                               ((CCharacter *)this_ptr,delta_time), uVar9 != 0)) {
           if (uVar9 < 2) {
-            (this_ptr->base).player_control.action_states[0] = 1;
+            (this_ptr->base).player_control.action_bindings.walk_key = 1;
           }
           else if (uVar9 == 2) {
-            (this_ptr->base).player_control.action_states[2] = 1;
-            (this_ptr->base).player_control.action_states[0] = 1;
+            (this_ptr->base).player_control.action_bindings.run_key = 1;
+            (this_ptr->base).player_control.action_bindings.walk_key = 1;
           }
         }
       }
@@ -200,7 +200,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
         }
         fVar1 = (this_ptr->base).player_control.turn_speed;
         if ((((float)-0.25 < fVar1) && ((double)fVar1 < 0.25)) &&
-           ((this_ptr->base).player_control.action_states[3] != 0)) {
+           ((this_ptr->base).player_control.action_bindings.fire_key != 0)) {
           (this_ptr->base).player_control.turn_speed = 0.0;
         }
       }

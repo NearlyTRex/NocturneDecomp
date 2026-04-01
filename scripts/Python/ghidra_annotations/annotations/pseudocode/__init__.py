@@ -92,6 +92,9 @@ from ghidra_annotations.annotations.pseudocode.output import (
     write_function_files,
     export_function_prototypes
 )
+from ghidra_annotations.annotations.pseudocode.actor_cast_report import (
+    generate_actor_cast_report
+)
 from ghidra_annotations.annotations.pseudocode.analysis import (
     generate_analysis_report,
     create_pie_chart_svg,

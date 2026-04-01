@@ -4,31 +4,31 @@
       {
         "category": "undeclared_identifier",
         "column": 53,
-        "line": 1190,
+        "line": 1196,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 60,
-        "line": 1190,
+        "line": 1196,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 52,
-        "line": 1192,
+        "line": 1198,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 59,
-        "line": 1192,
+        "line": 1198,
         "message": "expected expression"
       },
       {
         "category": "incompatible_types",
         "column": 40,
-        "line": 1244,
+        "line": 1249,
         "message": "assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'"
       }
     ],
@@ -37,19 +37,19 @@
   },
   "complexity": {
     "assembly_lines": 3369,
-    "complexity_score": 1654,
+    "complexity_score": 1659,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 231,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1579,
+    "pseudocode_lines": 1584,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 4948
+    "total_lines": 4953
   },
   "cross_references": [
     {
@@ -1947,7 +1947,7 @@
         "name": "local_b4",
         "offset": -180,
         "size": 4,
-        "type": "CDemonActor *"
+        "type": "CCharacter *"
       },
       {
         "is_param": false,
@@ -2223,7 +2223,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 734,
+      "line": 738,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_e0 = (uint)(SQRT((local_104.z - local_ec.z) * (local_104.z - local_ec.z)",
@@ -2231,7 +2231,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 977,
+      "line": 981,
       "match": "ABS",
       "severity": "mild",
       "text": "if (local_a88 * (float)3.1415926535000001 * (float)0.0055555555555555497 < ABS(pCVar14->y))",
@@ -2239,7 +2239,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1181,
+      "line": 1187,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar6 = *(int *)((int)g_CDemonSetPtr->enemies + local_c0);",
@@ -2247,7 +2247,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1183,
+      "line": 1189,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x120))",
@@ -2255,7 +2255,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1185,
+      "line": 1191,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x68))(iVar6),",
@@ -2263,7 +2263,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1190,
+      "line": 1196,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3) <=",

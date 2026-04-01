@@ -56,7 +56,7 @@ int __cdecl core_hero_cpp_CHero_tryPullLever_FUN_004f2f50(CHero *this_ptr)
   if (this_ptr->lever_to_pull != (CLever *)0x0) {
     iVar5 = core_event_cpp_CRuleList_evaluateAndRun_FUN_004b18e0(&this_ptr->lever_to_pull->rule);
     if (iVar5 == 0) {
-      (this_ptr->player_control).action_states[3] = 0;
+      (this_ptr->player_control).action_bindings.fire_key = 0;
       return 1;
     }
   }

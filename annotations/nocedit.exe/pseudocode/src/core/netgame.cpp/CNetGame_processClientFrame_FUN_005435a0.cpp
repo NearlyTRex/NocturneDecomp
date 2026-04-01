@@ -33,12 +33,11 @@ LAB_00543605:
         iVar1 = 0;
         do {
           if (this_ptr->players[this_ptr->local_player_index].sim_frame_index ==
-              *(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar1 + -0xc)) {
+              *(int *)((int)g_SimFrameHistory[0].player_controls + iVar1 + -0xc)) {
             if (-1 < iVar2) {
               core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800
                         (this_ptr,(SSimFrame *)
-                                  ((int)g_SimFrameHistory[0].player_controls[0].action_states +
-                                  iVar1 + -0xc));
+                                  ((int)g_SimFrameHistory[0].player_controls + iVar1 + -0xc));
               core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(this_ptr);
               iVar5 = 0;
               iVar4 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
@@ -46,12 +45,11 @@ LAB_00543605:
                 iVar3 = 0;
                 local_18 = g_SimFrameHistory + 1;
                 do {
-                  if (*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +
-                              iVar3 + -0xc) < iVar4) {
+                  if (*(int *)((int)g_SimFrameHistory[0].player_controls + iVar3 + -0xc) < iVar4) {
                     g_SimFrameCount = g_SimFrameCount + -1;
                     memmove
-                              ((void *)((int)g_SimFrameHistory[0].player_controls[0].action_states +
-                                       iVar3 + -0xc),local_18,(g_SimFrameCount - iVar5) * 100);
+                              ((void *)((int)g_SimFrameHistory[0].player_controls + iVar3 + -0xc),
+                               local_18,(g_SimFrameCount - iVar5) * 100);
                   }
                   else {
                     iVar5 = iVar5 + 1;
@@ -67,8 +65,7 @@ LAB_00543605:
               }
               iVar5 = 0;
               while (this_ptr->players[this_ptr->local_player_index].sim_frame_index !=
-                     *(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +
-                             iVar5 + -0xc)) {
+                     *(int *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc)) {
                 iVar5 = iVar5 + 100;
                 iVar4 = iVar4 + 1;
                 if (g_SimFrameCount * 100 <= iVar5) {

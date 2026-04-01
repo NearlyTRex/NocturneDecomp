@@ -102,20 +102,20 @@ switchD_005d8f77_caseD_9:
         if (this_ptr->blades_drawn != 0) {
           iVar3 = 10;
         }
-        if ((this_ptr->base).player_control.action_states[0] != 0) {
-          if ((this_ptr->base).player_control.action_states[2] == 0) {
+        if ((this_ptr->base).player_control.action_bindings.walk_key != 0) {
+          if ((this_ptr->base).player_control.action_bindings.run_key == 0) {
             iVar3 = 1;
           }
           else {
             iVar3 = 2;
           }
         }
-        if ((this_ptr->base).player_control.action_states[1] != 0) {
+        if ((this_ptr->base).player_control.action_bindings.backup_key != 0) {
           iVar3 = 3;
         }
-        if ((this_ptr->base).player_control.action_states[6] != 0) {
+        if ((this_ptr->base).player_control.action_bindings.draw_key != 0) {
           iVar3 = this_ptr->blades_drawn;
-          (this_ptr->base).player_control.action_states[6] = 0;
+          (this_ptr->base).player_control.action_bindings.draw_key = 0;
           uVar8 = (uint)(iVar3 == 0);
           this_ptr->blades_drawn = uVar8;
           if (uVar8 == 0) {
@@ -125,7 +125,7 @@ switchD_005d8f77_caseD_9:
             iVar3 = 10;
           }
         }
-        if ((this_ptr->base).player_control.action_states[3] != 0) {
+        if ((this_ptr->base).player_control.action_bindings.fire_key != 0) {
           bVar2 = true;
           if ((this_ptr->blades_drawn == 0) && ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
             iVar9 = core_hero_cpp_CHero_tryInteract_FUN_004f2af0(&this_ptr->base);
@@ -149,7 +149,7 @@ LAB_005d9011:
             if (!bVar2) goto LAB_005d9032;
           }
           iVar3 = this_ptr->attack_hand;
-          (this_ptr->base).player_control.action_states[3] = 0;
+          (this_ptr->base).player_control.action_bindings.fire_key = 0;
           if (iVar3 == 0) {
             iVar3 = 0xf;
           }
@@ -274,7 +274,7 @@ LAB_005d8e14:
   }
   else {
     if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) goto LAB_005d8e14;
-    if ((this_ptr->base).player_control.action_states[3] == 0) goto LAB_005d8e27;
+    if ((this_ptr->base).player_control.action_bindings.fire_key == 0) goto LAB_005d8e27;
     iVar3 = 0x10;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame *this_ptr)
 
 {
@@ -70,7 +72,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
           iVar1 = iVar5;
         }
         iVar2 = iVar2 + 1;
-        pCVar3 = (CNetGame *)(pCVar3->players[0].controls.action_states + 3);
+        pCVar3 = (CNetGame *)&pCVar3->players[0].controls.action_bindings.fire_key;
       } while (iVar2 < this_ptr->player_count);
     }
     iVar2 = 0;
@@ -78,12 +80,11 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
       iVar5 = 0;
       pSVar4 = g_SimFrameHistory + 1;
       do {
-        if (*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar5 + -0xc) <
-            iVar1) {
+        if (*(int *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc) < iVar1) {
           g_SimFrameCount = g_SimFrameCount + -1;
           memmove
-                    ((void *)((int)g_SimFrameHistory[0].player_controls[0].action_states +
-                             iVar5 + -0xc),pSVar4,(g_SimFrameCount - iVar2) * 100);
+                    ((void *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc),pSVar4,
+                     (g_SimFrameCount - iVar2) * 100);
         }
         else {
           pSVar4 = pSVar4 + 1;
@@ -97,11 +98,9 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame 
     if (0 < g_SimFrameCount) {
       iVar5 = 0;
       do {
-        if (iVar1 == *(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +
-                             iVar5 + -0xc)) {
+        if (iVar1 == *(int *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc)) {
           if (-1 < iVar2) {
-            pSVar4 = (SSimFrame *)
-                     ((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar5 + -0xc);
+            pSVar4 = (SSimFrame *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc);
             goto LAB_005432f5;
           }
           break;
@@ -128,20 +127,28 @@ LAB_005432f5:
     pSVar6 = pSVar4;
     if (0 < this_ptr->player_count) {
       do {
-        pSVar6->player_controls[0].action_states[0] = pCVar3->players[0].controls.action_states[0];
-        pSVar6->player_controls[0].action_states[1] = pCVar3->players[0].controls.action_states[1];
-        pSVar6->player_controls[0].action_states[2] = pCVar3->players[0].controls.action_states[2];
-        pSVar6->player_controls[0].action_states[3] = pCVar3->players[0].controls.action_states[3];
-        pSVar6->player_controls[0].action_states[4] = pCVar3->players[0].controls.action_states[4];
-        pSVar6->player_controls[0].action_states[5] = pCVar3->players[0].controls.action_states[5];
-        pSVar6->player_controls[0].action_states[6] = pCVar3->players[0].controls.action_states[6];
-        pSVar6->player_controls[0].action_states[7] = pCVar3->players[0].controls.action_states[7];
+        pSVar6->player_controls[0].action_bindings.walk_key =
+             pCVar3->players[0].controls.action_bindings.walk_key;
+        pSVar6->player_controls[0].action_bindings.backup_key =
+             pCVar3->players[0].controls.action_bindings.backup_key;
+        pSVar6->player_controls[0].action_bindings.run_key =
+             pCVar3->players[0].controls.action_bindings.run_key;
+        pSVar6->player_controls[0].action_bindings.fire_key =
+             pCVar3->players[0].controls.action_bindings.fire_key;
+        pSVar6->player_controls[0].action_bindings.use_item_key =
+             pCVar3->players[0].controls.action_bindings.use_item_key;
+        pSVar6->player_controls[0].action_bindings.light_key =
+             pCVar3->players[0].controls.action_bindings.light_key;
+        pSVar6->player_controls[0].action_bindings.draw_key =
+             pCVar3->players[0].controls.action_bindings.draw_key;
+        pSVar6->player_controls[0].action_bindings.jump_key =
+             pCVar3->players[0].controls.action_bindings.jump_key;
         pSVar6->player_controls[0].strafe_speed = pCVar3->players[0].controls.strafe_speed;
         pSVar6->player_controls[0].turn_speed = pCVar3->players[0].controls.turn_speed;
         pSVar6->player_controls[0].look_up_down_speed =
              pCVar3->players[0].controls.look_up_down_speed;
         iVar1 = iVar1 + 1;
-        pCVar3 = (CNetGame *)(pCVar3->players[0].controls.action_states + 3);
+        pCVar3 = (CNetGame *)&pCVar3->players[0].controls.action_bindings.fire_key;
         pSVar6 = (SSimFrame *)&pSVar6->player_controls[0].strafe_speed;
       } while (iVar1 < this_ptr->player_count);
     }
@@ -167,9 +174,8 @@ LAB_005432f5:
             if (0 < g_SimFrameCount) {
               iVar5 = 0;
               do {
-                if (local_20 ==
-                    *(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +
-                            iVar5 + -0xc)) goto LAB_005434de;
+                if (local_20 == *(int *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc))
+                goto LAB_005434de;
                 iVar5 = iVar5 + 100;
                 iVar2 = iVar2 + 1;
               } while (iVar5 < g_SimFrameCount * 100);
@@ -190,22 +196,22 @@ LAB_005434de:
             iVar2 = 0;
             if (0 < this_ptr->player_count) {
               do {
-                local_90.frame.player_controls[iVar2].action_states[0] =
-                     pSVar4->player_controls[0].action_states[0];
-                local_90.frame.player_controls[iVar2].action_states[1] =
-                     pSVar4->player_controls[0].action_states[1];
-                local_90.frame.player_controls[iVar2].action_states[2] =
-                     pSVar4->player_controls[0].action_states[2];
-                local_90.frame.player_controls[iVar2].action_states[3] =
-                     pSVar4->player_controls[0].action_states[3];
-                local_90.frame.player_controls[iVar2].action_states[4] =
-                     pSVar4->player_controls[0].action_states[4];
-                local_90.frame.player_controls[iVar2].action_states[5] =
-                     pSVar4->player_controls[0].action_states[5];
-                local_90.frame.player_controls[iVar2].action_states[6] =
-                     pSVar4->player_controls[0].action_states[6];
-                local_90.frame.player_controls[iVar2].action_states[7] =
-                     pSVar4->player_controls[0].action_states[7];
+                local_90.frame.player_controls[iVar2].action_bindings.walk_key =
+                     pSVar4->player_controls[0].action_bindings.walk_key;
+                local_90.frame.player_controls[iVar2].action_bindings.backup_key =
+                     pSVar4->player_controls[0].action_bindings.backup_key;
+                local_90.frame.player_controls[iVar2].action_bindings.run_key =
+                     pSVar4->player_controls[0].action_bindings.run_key;
+                local_90.frame.player_controls[iVar2].action_bindings.fire_key =
+                     pSVar4->player_controls[0].action_bindings.fire_key;
+                local_90.frame.player_controls[iVar2].action_bindings.use_item_key =
+                     pSVar4->player_controls[0].action_bindings.use_item_key;
+                local_90.frame.player_controls[iVar2].action_bindings.light_key =
+                     pSVar4->player_controls[0].action_bindings.light_key;
+                local_90.frame.player_controls[iVar2].action_bindings.draw_key =
+                     pSVar4->player_controls[0].action_bindings.draw_key;
+                local_90.frame.player_controls[iVar2].action_bindings.jump_key =
+                     pSVar4->player_controls[0].action_bindings.jump_key;
                 local_90.frame.player_controls[iVar2].strafe_speed =
                      pSVar4->player_controls[0].strafe_speed;
                 local_90.frame.player_controls[iVar2].turn_speed =

@@ -11,7 +11,7 @@ int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0(CTurret *this
 {
   UOrientationVector *pUVar1;
   
-  if (player_control->action_states[4] == 0) {
+  if ((player_control->action_bindings).use_item_key == 0) {
     pUVar1 = &(this_ptr->base).base.orient;
     if (pUVar1 != user_orientation) {
       (pUVar1->vec).x = (user_orientation->vec).x;
@@ -19,11 +19,11 @@ int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0(CTurret *this
       (this_ptr->base).base.orient.vec.z = (user_orientation->vec).z;
     }
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
-    if (player_control->action_states[3] != 0) {
+    if ((player_control->action_bindings).fire_key != 0) {
       (*(((this_ptr->base).base.vtable._uw)->_uw).fire)(&this_ptr->base);
     }
     return 1;
   }
-  player_control->action_states[4] = 0;
+  (player_control->action_bindings).use_item_key = 0;
   return 0;
 }

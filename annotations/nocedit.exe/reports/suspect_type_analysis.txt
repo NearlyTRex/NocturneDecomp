@@ -5,7 +5,7 @@ SUSPECT TYPE ANALYSIS
 SUSPECT TYPE COUNTS
 --------------------------------------------------
   decompiler_intrinsic            6914 ( 43.9%)
-  pointer_cast                    4398 ( 27.9%)
+  pointer_cast                    4401 ( 28.0%)
   unknown_field                    871 (  5.5%)
   special_crt_function             439 (  2.8%)
   stack_param                      351 (  2.2%)
@@ -15,7 +15,7 @@ SUSPECT TYPE COUNTS
   warning_inlined_function         264 (  1.7%)
   stack_ref                        250 (  1.6%)
   unresolved_funcptr               157 (  1.0%)
-  warning_type_propagation         131 (  0.8%)
+  warning_type_propagation         132 (  0.8%)
   param_count_too_few              119 (  0.8%)
   unaffected_reg                   106 (  0.7%)
   sub84_truncation                 101 (  0.6%)
@@ -96,7 +96,7 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (4398 occurrences)
+TYPE: pointer_cast (4401 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -537,16 +537,18 @@ Example functions:
     code *pcVar1;...
 
 ====================================================================================================
-TYPE: warning_type_propagation (131 occurrences)
+TYPE: warning_type_propagation (132 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   131x  WARNING: Type propagation algorithm not settling
+   132x  WARNING: Type propagation algorithm not settling
 
 Example functions:
   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     /* WARNING: Type propagation algorithm not settling */...
   engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
+    /* WARNING: Type propagation algorithm not settling */...
+  core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
     /* WARNING: Type propagation algorithm not settling */...
   core_trap.cpp_CTrap_process_FUN_005de770
     /* WARNING: Type propagation algorithm not settling */...
@@ -601,8 +603,6 @@ Example functions:
   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
     /* WARNING: Type propagation algorithm not settling */...
   core_baron.cpp_CBaron_process_FUN_00412e80
-    /* WARNING: Type propagation algorithm not settling */...
-  core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0
     /* WARNING: Type propagation algorithm not settling */...
 
 ====================================================================================================

@@ -13,6 +13,6 @@ int __cdecl core_baron_cpp_CBaronWeapon_fire_FUN_00413df0(CBaronWeapon *this_ptr
   if (this_ptr->baron == (CBaron *)0x0) {
     return 0;
   }
-  (this_ptr->baron->base).player_control.action_states[3] = 1;
+  (this_ptr->baron->base).player_control.action_bindings.fire_key = 1;
   return 1;
 }

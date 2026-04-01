@@ -98,7 +98,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *thi
           (this_ptr->base).player_control.turn_speed = 0.25;
         }
         iVar7 = g_LocalHeroIndex;
-        (this_ptr->base).player_control.action_states[0] = 1;
+        (this_ptr->base).player_control.action_bindings.walk_key = 1;
         pCVar2 = g_HeroActors[iVar7];
         if (&local_9c != local_b4) {
           local_9c = (this_ptr->base).base.base.location.position.x -
@@ -110,7 +110,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *thi
         }
         if ((float)10 <
             SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98)) {
-          (this_ptr->base).player_control.action_states[2] = 1;
+          (this_ptr->base).player_control.action_bindings.run_key = 1;
           return;
         }
       }
@@ -127,7 +127,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *thi
           pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                               (&(this_ptr->base).base.model.motion_controller);
           if (pSVar10->state_index == 0) {
-            (this_ptr->base).player_control.action_states[6] = 1;
+            (this_ptr->base).player_control.action_bindings.draw_key = 1;
             return;
           }
         }
@@ -137,7 +137,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *thi
           pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&(this_ptr->base).base.model.motion_controller);
           if (pSVar3->state_index == 0) {
-            (this_ptr->base).player_control.action_states[6] = 1;
+            (this_ptr->base).player_control.action_bindings.draw_key = 1;
           }
         }
         local_6c.x = (this_ptr_01->base).base.location.position.x -
@@ -206,7 +206,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *thi
           core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(this_ptr_00,&CStack_78,&CStack_48);
           core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
           if (this_ptr_01 == (CEnemy *)g_CDemonSetPtr->collision_actor) {
-            (this_ptr->base).player_control.action_states[3] = 1;
+            (this_ptr->base).player_control.action_bindings.fire_key = 1;
             return;
           }
         }

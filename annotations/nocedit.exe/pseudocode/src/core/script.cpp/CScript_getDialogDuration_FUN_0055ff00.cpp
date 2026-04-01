@@ -10,7 +10,7 @@ float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *th
 
 {
   char cVar2;
-  CDemonActor *pCVar2;
+  CCharacter *pCVar2;
   int iVar3;
   uint uVar4;
   uint uVar3;
@@ -53,16 +53,17 @@ float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *th
   else {
     local_28 = this_ptr->message_duration;
   }
-  pCVar2 = core_script_cpp_getActor_FUN_005594e0
+  pCVar2 = (CCharacter *)
+           core_script_cpp_getActor_FUN_005594e0
                      (actor_specifier,g_CCharacterClassInfo.name_hash,&g_CCharacterClassInfo);
-  this_ptr->who_is_speaking = pCVar2;
-  if (pCVar2 == (CDemonActor *)0x0) {
+  this_ptr->who_is_speaking = (CDemonActor *)pCVar2;
+  if (pCVar2 == (CCharacter *)0x0) {
     if (g_ActorLookedUpByVariable != 0) {
       return 0.0;
     }
     return -1.0;
   }
-  this_ptr->last_speaker = pCVar2;
+  this_ptr->last_speaker = (CDemonActor *)pCVar2;
   if ((this_ptr->focus_actor_locked == 0) && (this_ptr->who_is_speaking != this_ptr->focus_actor)) {
     this_ptr->focus_actor_changed = 1;
     this_ptr->focus_actor = this_ptr->who_is_speaking;

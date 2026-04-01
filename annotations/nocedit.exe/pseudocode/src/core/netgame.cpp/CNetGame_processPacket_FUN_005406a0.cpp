@@ -74,7 +74,7 @@ void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(CNetGame *this
     if ((int)uVar2 < 0) {
       uVar2 = core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0
                         (this_ptr,source_addr,(packet->player_announce).name,
-                         (packet->sim_frame).frame.player_controls[0].action_states[4],
+                         (packet->sim_frame).frame.player_controls[0].action_bindings.use_item_key,
                          (packet->player_announce).aim_mode);
     }
     else {
@@ -361,11 +361,9 @@ LAB_00540df8:
     if (0 < g_SimFrameCount) {
       iVar5 = 0;
       do {
-        if (uVar3 == *(uint *)((int)g_SimFrameHistory[0].player_controls[0].action_states +
-                              iVar5 + -0xc)) {
+        if (uVar3 == *(uint *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc)) {
           if (-1 < (int)uVar6) {
-            dest = (SSimFrame *)
-                   ((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar5 + -0xc);
+            dest = (SSimFrame *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc);
             goto LAB_00541015;
           }
           break;
@@ -395,19 +393,21 @@ LAB_00541015:
           g_CurrentLineNumber = 0x596;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Player list mismatch processing SimFrame Update packet!");
         }
-        dest->player_controls[iVar5].action_states[0] =
-             (local_18->sim_frame).frame.player_controls[0].action_states[0];
-        dest->player_controls[iVar5].action_states[1] =
-             (local_18->sim_frame).frame.player_controls[0].action_states[1];
-        dest->player_controls[iVar5].action_states[2] =
-             (local_18->sim_frame).frame.player_controls[0].action_states[2];
-        dest->player_controls[iVar5].action_states[3] = (local_18->player_state).ready_flag;
-        dest->player_controls[iVar5].action_states[4] = (local_18->player_announce).hero_number;
-        dest->player_controls[iVar5].action_states[5] = (local_18->player_announce).aim_mode;
-        dest->player_controls[iVar5].action_states[6] =
-             (local_18->sim_frame).frame.player_controls[0].action_states[6];
-        dest->player_controls[iVar5].action_states[7] =
-             (local_18->sim_frame).frame.player_controls[0].action_states[7];
+        dest->player_controls[iVar5].action_bindings.walk_key =
+             (local_18->sim_frame).frame.player_controls[0].action_bindings.walk_key;
+        dest->player_controls[iVar5].action_bindings.backup_key =
+             (local_18->sim_frame).frame.player_controls[0].action_bindings.backup_key;
+        dest->player_controls[iVar5].action_bindings.run_key =
+             (local_18->sim_frame).frame.player_controls[0].action_bindings.run_key;
+        dest->player_controls[iVar5].action_bindings.fire_key = (local_18->player_state).ready_flag;
+        dest->player_controls[iVar5].action_bindings.use_item_key =
+             (local_18->player_announce).hero_number;
+        dest->player_controls[iVar5].action_bindings.light_key =
+             (local_18->player_announce).aim_mode;
+        dest->player_controls[iVar5].action_bindings.draw_key =
+             (local_18->sim_frame).frame.player_controls[0].action_bindings.draw_key;
+        dest->player_controls[iVar5].action_bindings.jump_key =
+             (local_18->sim_frame).frame.player_controls[0].action_bindings.jump_key;
         dest->player_controls[iVar5].strafe_speed =
              (local_18->sim_frame).frame.player_controls[0].strafe_speed;
         dest->player_controls[iVar5].turn_speed =
@@ -427,21 +427,21 @@ LAB_00541015:
     if ((this_ptr->network_mode == NET_MODE_PLAYING) &&
        (local_1c->sim_frame_index < (packet->simple).value)) {
       local_1c->sim_frame_index = (packet->simple).value;
-      (local_1c->controls).action_states[0] = *(int *)&(packet->player_announce).addr.port;
-      (local_1c->controls).action_states[1] = (int)(packet->sim_frame).frame.delta_time;
-      (local_1c->controls).action_states[2] =
-           (packet->sim_frame).frame.player_controls[0].action_states[0];
-      (local_1c->controls).action_states[3] =
-           (packet->sim_frame).frame.player_controls[0].action_states[1];
-      (local_1c->controls).action_states[4] =
-           (packet->sim_frame).frame.player_controls[0].action_states[2];
-      (local_1c->controls).action_states[5] = (packet->player_state).ready_flag;
-      (local_1c->controls).action_states[6] = (packet->player_announce).hero_number;
-      (local_1c->controls).action_states[7] = (packet->player_announce).aim_mode;
+      (local_1c->controls).action_bindings.walk_key = *(int *)&(packet->player_announce).addr.port;
+      (local_1c->controls).action_bindings.backup_key = (int)(packet->sim_frame).frame.delta_time;
+      (local_1c->controls).action_bindings.run_key =
+           (packet->sim_frame).frame.player_controls[0].action_bindings.walk_key;
+      (local_1c->controls).action_bindings.fire_key =
+           (packet->sim_frame).frame.player_controls[0].action_bindings.backup_key;
+      (local_1c->controls).action_bindings.use_item_key =
+           (packet->sim_frame).frame.player_controls[0].action_bindings.run_key;
+      (local_1c->controls).action_bindings.light_key = (packet->player_state).ready_flag;
+      (local_1c->controls).action_bindings.draw_key = (packet->player_announce).hero_number;
+      (local_1c->controls).action_bindings.jump_key = (packet->player_announce).aim_mode;
       (local_1c->controls).strafe_speed =
-           (float)(packet->sim_frame).frame.player_controls[0].action_states[6];
+           (float)(packet->sim_frame).frame.player_controls[0].action_bindings.draw_key;
       (local_1c->controls).turn_speed =
-           (float)(packet->sim_frame).frame.player_controls[0].action_states[7];
+           (float)(packet->sim_frame).frame.player_controls[0].action_bindings.jump_key;
       (local_1c->controls).look_up_down_speed =
            (packet->sim_frame).frame.player_controls[0].strafe_speed;
       return;

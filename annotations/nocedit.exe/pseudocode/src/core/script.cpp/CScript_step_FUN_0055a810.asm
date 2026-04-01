@@ -127,7 +127,7 @@
 ; int              Stack[-0xd0]:4  local_d0
 ; int              Stack[-0xcc]:4  local_cc
 ; uint             Stack[-0xc8]:4  local_c8
-; CEnemy *         Stack[-0xc4]:4  local_c4
+; CHero *          Stack[-0xc4]:4  local_c4
 ; int              Stack[-0xc0]:4  local_c0
 ; int              Stack[-0xbc]:4  local_bc
 ; int              Stack[-0xb8]:4  local_b8
@@ -6703,7 +6703,7 @@ section .text
     TEST EAX,EAX                        ; 0055f412
     JNZ 0x0055f420                      ; 0055f414
         ;   XREF to: 0055f420 (CONDITIONAL_JUMP)  ; LAB_0055f420
-    MOV EAX,[0x00662638]                ; 0055f416 | PTR_00662638
+    MOV EAX,[0x00662638]                ; 0055f416 | g_ScriptSentinelActor
     JMP 0x0055f360                      ; 0055f41b
         ;   XREF to: 0055f360 (UNCONDITIONAL_JUMP)  ; LAB_0055f360
     PUSH 0x823c14                       ; 0055f420 | g_CCharacterClassInfo

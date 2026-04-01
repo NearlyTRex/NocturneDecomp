@@ -64,7 +64,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float del
     }
   }
   if (iVar7 != this_ptr->guns_drawn) {
-    (this_ptr->base).player_control.action_states[6] = 1;
+    (this_ptr->base).player_control.action_bindings.draw_key = 1;
   }
   local_60.x = (this_ptr_01->base).base.location.position.x -
                (this_ptr->base).base.base.location.position.x;
@@ -88,7 +88,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float del
       pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller);
       if ((pSVar5->state_index == 7) && (this_ptr->guns_drawn != 0)) {
-        (this_ptr->base).player_control.action_states[3] = 1;
+        (this_ptr->base).player_control.action_bindings.fire_key = 1;
       }
 LAB_00557a94:
       if (local_2c == 0) goto LAB_00557b63;
@@ -98,13 +98,13 @@ LAB_00557a94:
     if ((this_ptr->guns_drawn != 0) && (iVar7 != 0)) {
       if (((float)0.90000000000000002 < (this_ptr->base).base.layer_action_t) &&
          (this_ptr->aim_converged != 0)) {
-        (this_ptr->base).player_control.action_states[3] = 1;
+        (this_ptr->base).player_control.action_bindings.fire_key = 1;
       }
       core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00428d80
                 ((CCharacter *)this_ptr,&(this_ptr_01->base).base.location.position);
     }
-    (this_ptr->base).player_control.action_states[2] = 0;
-    (this_ptr->base).player_control.action_states[0] = 0;
+    (this_ptr->base).player_control.action_bindings.run_key = 0;
+    (this_ptr->base).player_control.action_bindings.walk_key = 0;
     goto LAB_00557a94;
   }
   this_ptr_00 = (*((this_ptr_01->base).base.vtable._ub)->getPathMap)((CDemonActor *)this_ptr_01);
@@ -127,9 +127,9 @@ LAB_00557a94:
       (this_ptr->base).player_control.turn_speed = local_20;
     }
     if ((float)10 <= local_7c) {
-      (this_ptr->base).player_control.action_states[2] = 1;
+      (this_ptr->base).player_control.action_bindings.run_key = 1;
     }
-    (this_ptr->base).player_control.action_states[0] = 1;
+    (this_ptr->base).player_control.action_bindings.walk_key = 1;
   }
 LAB_00557b63:
   local_78.x = (this_ptr_01->base).base.location.position.x -

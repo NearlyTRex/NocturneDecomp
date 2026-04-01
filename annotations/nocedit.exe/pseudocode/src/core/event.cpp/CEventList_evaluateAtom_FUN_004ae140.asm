@@ -47,7 +47,7 @@
 ; int              Stack[-0xc0]:4  local_c0
 ; char *           Stack[-0xbc]:4  local_bc
 ; int              Stack[-0xb8]:4  local_b8
-; CDemonActor *    Stack[-0xb4]:4  local_b4
+; CCharacter *     Stack[-0xb4]:4  local_b4
 ; char *           Stack[-0xb0]:4  local_b0
 ; int              Stack[-0xac]:4  local_ac
 ; char *           Stack[-0xa8]:4  local_a8

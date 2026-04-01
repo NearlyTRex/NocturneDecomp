@@ -18,12 +18,11 @@ void __cdecl core_netgame_cpp_purgeOldSimFrames_FUN_0053f650(int min_sequence)
     iVar2 = 0;
     src = g_SimFrameHistory + 1;
     do {
-      while (*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar2 + -0xc) <
-             min_sequence) {
+      while (*(int *)((int)g_SimFrameHistory[0].player_controls + iVar2 + -0xc) < min_sequence) {
         g_SimFrameCount = g_SimFrameCount + -1;
         memmove
-                  ((void *)((int)g_SimFrameHistory[0].player_controls[0].action_states +
-                           iVar2 + -0xc),src,(g_SimFrameCount - iVar1) * 100);
+                  ((void *)((int)g_SimFrameHistory[0].player_controls + iVar2 + -0xc),src,
+                   (g_SimFrameCount - iVar1) * 100);
         if (g_SimFrameCount <= iVar1) {
           return;
         }

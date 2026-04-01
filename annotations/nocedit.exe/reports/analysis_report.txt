@@ -10,32 +10,32 @@ Total functions: 6454
 Clean functions: 5071 (78.6%)
 Functions with suspects: 1383 (21.4%)
 
-Total suspect patterns: 13691
+Total suspect patterns: 13695
 Average suspects per function: 2.12
 
 Virtual files: 214 total, 46 at 100%, 83 at 90%+
 
 Pseudocode lines:
-  Min: 4, Max: 3412, Average: 47.8
+  Min: 4, Max: 3416, Average: 47.8
 
 Average complexity score: 71.2
 
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6454
-Successful: 6111 (94.7%)
-Failed: 343
+Successful: 6106 (94.6%)
+Failed: 348
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   decompiler_intrinsic      6777
-  pointer_cast              4164
+  pointer_cast              4167
   unknown_field             831
   nonstandard_int           267
   warning_inlined_function  261
   stack_param               238
   stack_ref                 215
-  warning_type_propagation  131
+  warning_type_propagation  132
   stack_alignment_array     95
   sub84_truncation          94
   unresolved_funcptr        84
@@ -125,12 +125,12 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
-  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3522, suspects: 9, lines: 3412)
+  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3526, suspects: 9, lines: 3416)
   005d1390: shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390 (score: 2967, suspects: 270, lines: 252)
   00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (score: 2695, suspects: 119, lines: 1475)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 2584, suspects: 175, lines: 809)
   0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 2383, suspects: 92, lines: 1443)
-  004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2245, suspects: 7, lines: 2165)
+  004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2248, suspects: 7, lines: 2168)
   005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823 (score: 2235, suspects: 161, lines: 585)
   005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031 (score: 2198, suspects: 159, lines: 568)
   00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2080, suspects: 19, lines: 1865)
@@ -139,7 +139,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1865, suspects: 68, lines: 1150)
   004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1816, suspects: 7, lines: 1726)
   00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 1667, suspects: 73, lines: 917)
-  004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1654, suspects: 6, lines: 1579)
+  004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1659, suspects: 6, lines: 1584)
   005ca590: shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (score: 1651, suspects: 113, lines: 506)
   005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (score: 1483, suspects: 101, lines: 448)
   005d0340: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340 (score: 1441, suspects: 126, lines: 171)
@@ -250,9 +250,10 @@ FUNCTIONS BY SUSPECT TYPE
     005a59c0: sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
     ... and 54 more
 
-  warning_type_propagation (131 functions):
+  warning_type_propagation (132 functions):
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     004366e0: engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
+    00543150: core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
     005de770: core_trap.cpp_CTrap_process_FUN_005de770
     00411d90: core_anvil.cpp_CAnvil_process_FUN_00411d90
     0047f140: core_dog.cpp_CZombieDog_process_FUN_0047f140
@@ -260,8 +261,7 @@ FUNCTIONS BY SUSPECT TYPE
     00415470: core_batcreat.cpp_CBatCreature_process_FUN_00415470
     00485b20: core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20
     00484410: core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
-    0048ec70: core_drone.cpp_CDrone_process_FUN_0048ec70
-    ... and 121 more
+    ... and 122 more
 
   stack_alignment_array (95 functions):
     00488cd0: cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0

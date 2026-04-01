@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 33,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
+    "pseudocode_lines": 17,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 54
+    "total_lines": 53
   },
   "cross_references": [],
   "function": {
@@ -107,10 +107,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 13,
+      "line": 12,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar1 + -0xc)) {",
+      "text": "if (sequence_number == *(int *)((int)g_SimFrameHistory[0].player_controls + iVar1 + -0xc)) {",
       "type": "pointer_cast"
     }
   ]

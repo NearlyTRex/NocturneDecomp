@@ -16,13 +16,13 @@ int __cdecl core_hero_cpp_CHero_canLookAt_FUN_004f37d0(CHero *this_ptr)
     if (EVar1 == DEATH_STATE_DYING) {
       return 1;
     }
-    if (((((((this_ptr->player_control).action_states[0] != 0) ||
-           ((this_ptr->player_control).action_states[1] != 0)) ||
-          ((this_ptr->player_control).action_states[3] != 0)) ||
-         (((this_ptr->player_control).action_states[4] != 0 ||
-          ((this_ptr->player_control).action_states[5] != 0)))) ||
-        (((this_ptr->player_control).action_states[6] != 0 ||
-         (((this_ptr->player_control).action_states[7] != 0 ||
+    if (((((((this_ptr->player_control).action_bindings.walk_key != 0) ||
+           ((this_ptr->player_control).action_bindings.backup_key != 0)) ||
+          ((this_ptr->player_control).action_bindings.fire_key != 0)) ||
+         (((this_ptr->player_control).action_bindings.use_item_key != 0 ||
+          ((this_ptr->player_control).action_bindings.light_key != 0)))) ||
+        (((this_ptr->player_control).action_bindings.draw_key != 0 ||
+         (((this_ptr->player_control).action_bindings.jump_key != 0 ||
           ((float)0.10000000000000001 < ABS((this_ptr->player_control).strafe_speed))))))) ||
        (((float)0.10000000000000001 < ABS((this_ptr->player_control).turn_speed) ||
         (((float)0.10000000000000001 < ABS((this_ptr->player_control).look_up_down_speed) ||

@@ -101,7 +101,7 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this
           }
           pSVar5 = (SChatOutMessage *)&pSVar5->sequence_number;
           local_20 = (SChatOutMessage *)((int)&local_20->timestamp + 1);
-          local_24 = (CNetGame *)(local_24->players[0].controls.action_states + 3);
+          local_24 = (CNetGame *)&local_24->players[0].controls.action_bindings.fire_key;
           local_1c = local_1c + 0xf;
           local_28 = local_28 + 1;
         } while (local_28 < this_ptr->player_count);

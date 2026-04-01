@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 52,
+    "complexity_score": 51,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 26,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 82
+    "total_lines": 81
   },
   "cross_references": [],
   "function": {
@@ -125,15 +125,15 @@
       "line": 14,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "while (*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar2 + -0xc) <",
+      "text": "while (*(int *)((int)g_SimFrameHistory[0].player_controls + iVar2 + -0xc) < min_sequence) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 17,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "((void *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
+      "text": "((void *)((int)g_SimFrameHistory[0].player_controls + iVar2 + -0xc),src,",
       "type": "pointer_cast"
     }
   ]

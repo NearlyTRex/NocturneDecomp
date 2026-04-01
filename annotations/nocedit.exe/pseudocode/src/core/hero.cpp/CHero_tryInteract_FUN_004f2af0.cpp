@@ -50,7 +50,7 @@ int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004f2af0(CHero *this_ptr)
   if (iVar4 != (CDemonActor *)0x0) {
     iVar5 = (*((iVar4->vtable)._ub)->processActionButton)(iVar4);
     if (iVar5 != 0) {
-      (this_ptr->player_control).action_states[3] = 0;
+      (this_ptr->player_control).action_bindings.fire_key = 0;
     }
     return 1;
   }

@@ -28,14 +28,14 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGam
     do {
       iVar1 = *(int *)((int)g_HeroActors + iVar4);
       iVar4 = iVar4 + 4;
-      *(int *)(iVar1 + 0xbe2c) = pSVar2->player_controls[0].action_states[0];
-      *(int *)(iVar1 + 0xbe30) = pSVar2->player_controls[0].action_states[1];
-      *(int *)(iVar1 + 0xbe34) = pSVar2->player_controls[0].action_states[2];
-      *(int *)(iVar1 + 0xbe38) = pSVar2->player_controls[0].action_states[3];
-      *(int *)(iVar1 + 0xbe3c) = pSVar2->player_controls[0].action_states[4];
-      *(int *)(iVar1 + 0xbe40) = pSVar2->player_controls[0].action_states[5];
-      *(int *)(iVar1 + 0xbe44) = pSVar2->player_controls[0].action_states[6];
-      *(int *)(iVar1 + 0xbe48) = pSVar2->player_controls[0].action_states[7];
+      *(int *)(iVar1 + 0xbe2c) = pSVar2->player_controls[0].action_bindings.walk_key;
+      *(int *)(iVar1 + 0xbe30) = pSVar2->player_controls[0].action_bindings.backup_key;
+      *(int *)(iVar1 + 0xbe34) = pSVar2->player_controls[0].action_bindings.run_key;
+      *(int *)(iVar1 + 0xbe38) = pSVar2->player_controls[0].action_bindings.fire_key;
+      *(int *)(iVar1 + 0xbe3c) = pSVar2->player_controls[0].action_bindings.use_item_key;
+      *(int *)(iVar1 + 0xbe40) = pSVar2->player_controls[0].action_bindings.light_key;
+      *(int *)(iVar1 + 0xbe44) = pSVar2->player_controls[0].action_bindings.draw_key;
+      *(int *)(iVar1 + 0xbe48) = pSVar2->player_controls[0].action_bindings.jump_key;
       *(float *)(iVar1 + 0xbe4c) = pSVar2->player_controls[0].strafe_speed;
       *(float *)(iVar1 + 0xbe50) = pSVar2->player_controls[0].turn_speed;
       *(float *)(iVar1 + 0xbe54) = pSVar2->player_controls[0].look_up_down_speed;

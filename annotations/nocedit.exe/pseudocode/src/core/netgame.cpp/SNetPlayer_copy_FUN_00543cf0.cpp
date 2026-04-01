@@ -28,14 +28,15 @@ void __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_00543cf0(SNetPlayer *this_ptr,
   this_ptr->state_change_time = other->state_change_time;
   this_ptr->ready_flag = other->ready_flag;
   this_ptr->sim_frame_index = other->sim_frame_index;
-  (this_ptr->controls).action_states[0] = (other->controls).action_states[0];
-  (this_ptr->controls).action_states[1] = (other->controls).action_states[1];
-  (this_ptr->controls).action_states[2] = (other->controls).action_states[2];
-  (this_ptr->controls).action_states[3] = (other->controls).action_states[3];
-  (this_ptr->controls).action_states[4] = (other->controls).action_states[4];
-  (this_ptr->controls).action_states[5] = (other->controls).action_states[5];
-  (this_ptr->controls).action_states[6] = (other->controls).action_states[6];
-  (this_ptr->controls).action_states[7] = (other->controls).action_states[7];
+  (this_ptr->controls).action_bindings.walk_key = (other->controls).action_bindings.walk_key;
+  (this_ptr->controls).action_bindings.backup_key = (other->controls).action_bindings.backup_key;
+  (this_ptr->controls).action_bindings.run_key = (other->controls).action_bindings.run_key;
+  (this_ptr->controls).action_bindings.fire_key = (other->controls).action_bindings.fire_key;
+  (this_ptr->controls).action_bindings.use_item_key = (other->controls).action_bindings.use_item_key
+  ;
+  (this_ptr->controls).action_bindings.light_key = (other->controls).action_bindings.light_key;
+  (this_ptr->controls).action_bindings.draw_key = (other->controls).action_bindings.draw_key;
+  (this_ptr->controls).action_bindings.jump_key = (other->controls).action_bindings.jump_key;
   (this_ptr->controls).strafe_speed = (other->controls).strafe_speed;
   (this_ptr->controls).turn_speed = (other->controls).turn_speed;
   (this_ptr->controls).look_up_down_speed = (other->controls).look_up_down_speed;

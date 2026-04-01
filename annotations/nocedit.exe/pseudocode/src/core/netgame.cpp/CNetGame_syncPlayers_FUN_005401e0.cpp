@@ -65,7 +65,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
             local_18 = local_18 + 0xb;
           }
           iVar1 = iVar1 + 1;
-          pCVar3 = (CNetGame *)(pCVar3->players[0].controls.action_states + 3);
+          pCVar3 = (CNetGame *)&pCVar3->players[0].controls.action_bindings.fire_key;
         } while (iVar1 < this_ptr->player_count);
       }
       if (local_1c != 0.0) break;
@@ -94,7 +94,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
               core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(this_ptr,iVar1,2.0);
             }
             iVar1 = iVar1 + 1;
-            pCVar3 = (CNetGame *)(pCVar3->players[0].controls.action_states + 3);
+            pCVar3 = (CNetGame *)&pCVar3->players[0].controls.action_bindings.fire_key;
           } while (iVar1 < this_ptr->player_count);
         }
       }

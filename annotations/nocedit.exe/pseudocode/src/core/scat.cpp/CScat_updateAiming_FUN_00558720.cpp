@@ -68,7 +68,7 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_00558720(CScat *this_ptr,float
   if ((this_ptr->guns_drawn == 0) || (is_holstered != 0)) {
     this_ptr->aim_target = (CDemonActor *)0x0;
   }
-  else if ((this_ptr->base).player_control.action_states[3] == 0) {
+  else if ((this_ptr->base).player_control.action_bindings.fire_key == 0) {
     local_28 = (CDemonActor *)is_holstered;
     local_24 = 1e+30;
     iVar4 = 0;
@@ -84,7 +84,7 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_00558720(CScat *this_ptr,float
     }
     this_ptr->aim_target = local_28;
   }
-  if ((this_ptr->base).player_control.action_states[3] != 0) {
+  if ((this_ptr->base).player_control.action_bindings.fire_key != 0) {
     if (this_ptr->aim_target == (CDemonActor *)0x0) {
       this_ptr->aim_yaw = 0.0;
       this_ptr->aim_pitch = this_ptr->aim_yaw;

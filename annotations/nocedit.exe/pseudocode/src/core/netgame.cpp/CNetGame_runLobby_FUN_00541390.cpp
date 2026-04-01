@@ -163,7 +163,7 @@ LAB_005415cb:
         do {
           pCVar8->players[0].sim_frame_index = 0;
           iVar6 = iVar6 + 1;
-          pCVar8 = (CNetGame *)(pCVar8->players[0].controls.action_states + 3);
+          pCVar8 = (CNetGame *)&pCVar8->players[0].controls.action_bindings.fire_key;
         } while (iVar6 < this_ptr->player_count);
       }
       this_ptr->has_pending_sim_frame = 0;
@@ -192,7 +192,7 @@ LAB_005415cb:
               bVar2 = false;
             }
             iVar6 = iVar6 + 1;
-            pCVar5 = (CNetGame *)(pCVar5->players[0].controls.action_states + 3);
+            pCVar5 = (CNetGame *)&pCVar5->players[0].controls.action_bindings.fire_key;
           } while (iVar6 < this_ptr->player_count);
         }
         if ((bVar2) && (1 < this_ptr->player_count)) {

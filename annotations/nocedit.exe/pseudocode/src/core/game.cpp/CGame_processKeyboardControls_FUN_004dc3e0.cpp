@@ -17,6 +17,7 @@ void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *thi
   int iVar5;
   uint uVar5;
   EDeathState EVar6;
+  int *piVar7;
   byte bVar6;
   CHero *this_ptr_00;
   float fVar2;
@@ -138,50 +139,54 @@ LAB_004dc4e9:
   else {
     bVar6 = g_KeyboardState[this_ptr->key_run] == '\0';
   }
-  player_control->action_states[2] = (uint)bVar6;
+  (player_control->action_bindings).run_key = (uint)bVar6;
   iVar5 = this_ptr->key_walk;
   if (g_PrevKeyboardState[iVar5] != g_KeyboardState[iVar5]) {
-    player_control->action_states[0] = (uint)(byte)g_KeyboardState[iVar5];
+    (player_control->action_bindings).walk_key = (uint)(byte)g_KeyboardState[iVar5];
   }
   iVar5 = this_ptr->key_backup;
   if (g_PrevKeyboardState[iVar5] != g_KeyboardState[iVar5]) {
-    player_control->action_states[1] = (uint)(byte)g_KeyboardState[iVar5];
+    (player_control->action_bindings).backup_key = (uint)(byte)g_KeyboardState[iVar5];
   }
   EVar3 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                     (&g_HeroActors[g_LocalHeroIndex]->base);
   if (EVar3 == DEATH_STATE_ALIVE) {
     iVar5 = this_ptr->key_fire;
     if (g_PrevKeyboardState[iVar5] != g_KeyboardState[iVar5]) {
-      player_control->action_states[3] = (uint)(byte)g_KeyboardState[iVar5];
+      (player_control->action_bindings).fire_key = (uint)(byte)g_KeyboardState[iVar5];
     }
   }
   else {
-    player_control->action_states[3] = 0;
+    (player_control->action_bindings).fire_key = 0;
   }
+  piVar7 = &(player_control->action_bindings).use_item_key;
   if (g_PrevKeyboardState[this_ptr->key_use_item] == g_KeyboardState[this_ptr->key_use_item]) {
-    player_control->action_states[4] = 0;
+    *piVar7 = 0;
   }
   else {
-    player_control->action_states[4] = (uint)(byte)g_KeyboardState[this_ptr->key_use_item];
+    *piVar7 = (uint)(byte)g_KeyboardState[this_ptr->key_use_item];
   }
+  piVar7 = &(player_control->action_bindings).light_key;
   if (g_PrevKeyboardState[this_ptr->key_light] == g_KeyboardState[this_ptr->key_light]) {
-    player_control->action_states[5] = 0;
+    *piVar7 = 0;
   }
   else {
-    player_control->action_states[5] = (uint)(byte)g_KeyboardState[this_ptr->key_light];
+    *piVar7 = (uint)(byte)g_KeyboardState[this_ptr->key_light];
   }
+  piVar7 = &(player_control->action_bindings).draw_key;
   if (g_PrevKeyboardState[this_ptr->key_draw] == g_KeyboardState[this_ptr->key_draw]) {
-    player_control->action_states[6] = 0;
+    *piVar7 = 0;
   }
   else {
-    player_control->action_states[6] = (uint)(byte)g_KeyboardState[this_ptr->key_draw];
+    *piVar7 = (uint)(byte)g_KeyboardState[this_ptr->key_draw];
   }
   iVar5 = this_ptr->key_jump;
+  piVar7 = &(player_control->action_bindings).jump_key;
   if (g_PrevKeyboardState[iVar5] == g_KeyboardState[iVar5]) {
-    player_control->action_states[7] = 0;
+    *piVar7 = 0;
   }
   else {
-    player_control->action_states[7] = (uint)(byte)g_KeyboardState[iVar5];
+    *piVar7 = (uint)(byte)g_KeyboardState[iVar5];
   }
   iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_next_weapon);
   if (iVar4 != 0) {
