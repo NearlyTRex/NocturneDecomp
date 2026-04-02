@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_processJoystickControls_FUN_004dc230(CGame *this_ptr,SPlayerControl *player_control)
+; void __cdecl core_game_cpp_CGame_processJoystickControls_FUN_004dc230(CGame *this_ptr,SPlayerInput *player_control)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
-; SPlayerControl * Stack[0x8]:4   player_control
+; SPlayerInput *   Stack[0x8]:4   player_control
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_playerControls_FUN_004dbd80 at 004dbdfd
@@ -30,7 +30,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 004dc243
     PUSH EBX                            ; 004dc247
     CALL core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0 ; 004dc248
-        ;   XREF to: 004dc3e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame * this_ptr, SPlayerControl * player_control)
+        ;   XREF to: 004dc3e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame * this_ptr, SPlayerInput * player_control)
     ADD ESP,0x8                         ; 004dc24d
     POP EBX                             ; 004dc250
     LEA EAX,[EAX]                       ; 004dc251

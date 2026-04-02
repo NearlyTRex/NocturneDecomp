@@ -161,7 +161,7 @@ void __cdecl CNetGame::applySimFrameHistory(CNetGame *this_ptr,SSimFrame *sim_fr
 
 // Original: core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0
 // Address: 005438c0
-SPlayerControl * __cdecl CNetGame::getMyControls(CNetGame *this_ptr);
+SPlayerInput * __cdecl CNetGame::getMyControls(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_00543930
 // Address: 00543930
@@ -243,9 +243,9 @@ SNetPlayer * __cdecl SNetPlayer::ctor(SNetPlayer *this_ptr);
 // Address: 00543cf0
 void __cdecl SNetPlayer::copy(SNetPlayer *this_ptr,SNetPlayer *other);
 
-// Original: core_netgame.cpp_copyPlayerControls_FUN_00543db0
+// Original: core_netgame.cpp_copyPlayerInput_FUN_00543db0
 // Address: 00543db0
-void __cdecl copyPlayerControls(SPlayerControl *dest,SPlayerControl *src);
+void __cdecl copyPlayerInput(SPlayerInput *dest,SPlayerInput *src);
 
 // Original: core_netgame.cpp_copyNetAddr_FUN_00543e00
 // Address: 00543e00

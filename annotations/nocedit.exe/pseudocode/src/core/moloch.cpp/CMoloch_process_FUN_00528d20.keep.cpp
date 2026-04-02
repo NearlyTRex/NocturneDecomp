@@ -90,18 +90,18 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
     uVar5 = pSVar10->state_index;
     if ((((uVar5 == 0) || (uVar5 < 2)) || (uVar5 == 2)) && ((this_ptr->base).base.is_on_ground != 0)
        ) {
-      uVar9 = (uint)((this_ptr->base).player_control.action_states[0] != 0);
-      if ((this_ptr->base).player_control.action_states[1] != 0) {
+      uVar9 = (uint)((this_ptr->base).player_input.action_state.walk != 0);
+      if ((this_ptr->base).player_input.action_state.backup != 0) {
         uVar9 = 2;
       }
-      if ((this_ptr->base).player_control.action_states[6] != 0) {
+      if ((this_ptr->base).player_input.action_state.draw != 0) {
         if (this_ptr->morphing == 0) {
           core_moloch_cpp_CMoloch_startMorph_FUN_00529900(this_ptr);
         }
-        (this_ptr->base).player_control.action_states[6] = 0;
+        (this_ptr->base).player_input.action_state.draw = 0;
       }
       (this_ptr->base).base.turn_angle_accumulator =
-           (this_ptr->base).player_control.turn_speed * (this_ptr->base).base.turn_speed;
+           (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
       pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&(this_ptr->base).base.model.motion_controller);
       if (uVar9 != pSVar10->state_index) goto LAB_00528e32;
@@ -187,7 +187,7 @@ LAB_00528e3a:
       (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
     }
     else if (((this_ptr->base).base.grabbed_by != (CDemonActor *)0x0) &&
-            ((this_ptr->base).player_control.action_states[3] == 0)) goto LAB_00528f8e;
+            ((this_ptr->base).player_input.action_state.fire == 0)) goto LAB_00528f8e;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.motion_controller,0,1);
   }

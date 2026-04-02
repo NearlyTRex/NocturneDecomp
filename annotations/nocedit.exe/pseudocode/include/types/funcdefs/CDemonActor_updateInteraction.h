@@ -8,9 +8,9 @@ union UOrientationVector;
 
 // Forward declarations
 struct CDemonActor;
-struct SPlayerControl;
+struct SPlayerInput;
 union UOrientationVector;
 
 // Function Definition: CDemonActor_updateInteraction
-typedef int CDemonActor_updateInteraction(struct CDemonActor* this_ptr, union UOrientationVector* user_orientation, struct SPlayerControl* player_control);
+typedef int CDemonActor_updateInteraction(struct CDemonActor* this_ptr, union UOrientationVector* user_orientation, struct SPlayerInput* player_control);
 

@@ -2,11 +2,11 @@
 // Address: 004dc3e0
 // Address Range: [[004dc3e0, 004dccb4]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *this_ptr,SPlayerControl *player_control)
+// Signature: void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *this_ptr,SPlayerInput *player_control)
 
 #include "nocturne.h"
 
-void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *this_ptr,SPlayerControl *player_control)
+void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *this_ptr,SPlayerInput *player_control)
 
 {
   float *pfVar2;
@@ -139,41 +139,41 @@ LAB_004dc4e9:
   else {
     bVar6 = g_KeyboardState[this_ptr->key_run] == '\0';
   }
-  (player_control->action_bindings).run_key = (uint)bVar6;
+  (player_control->action_state).run = (uint)bVar6;
   iVar5 = this_ptr->key_walk;
   if (g_PrevKeyboardState[iVar5] != g_KeyboardState[iVar5]) {
-    (player_control->action_bindings).walk_key = (uint)(byte)g_KeyboardState[iVar5];
+    (player_control->action_state).walk = (uint)(byte)g_KeyboardState[iVar5];
   }
   iVar5 = this_ptr->key_backup;
   if (g_PrevKeyboardState[iVar5] != g_KeyboardState[iVar5]) {
-    (player_control->action_bindings).backup_key = (uint)(byte)g_KeyboardState[iVar5];
+    (player_control->action_state).backup = (uint)(byte)g_KeyboardState[iVar5];
   }
   EVar3 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uc)->_uc).getDeathState)
                     (&g_HeroActors[g_LocalHeroIndex]->base);
   if (EVar3 == DEATH_STATE_ALIVE) {
     iVar5 = this_ptr->key_fire;
     if (g_PrevKeyboardState[iVar5] != g_KeyboardState[iVar5]) {
-      (player_control->action_bindings).fire_key = (uint)(byte)g_KeyboardState[iVar5];
+      (player_control->action_state).fire = (uint)(byte)g_KeyboardState[iVar5];
     }
   }
   else {
-    (player_control->action_bindings).fire_key = 0;
+    (player_control->action_state).fire = 0;
   }
-  piVar7 = &(player_control->action_bindings).use_item_key;
+  piVar7 = &(player_control->action_state).use_item;
   if (g_PrevKeyboardState[this_ptr->key_use_item] == g_KeyboardState[this_ptr->key_use_item]) {
     *piVar7 = 0;
   }
   else {
     *piVar7 = (uint)(byte)g_KeyboardState[this_ptr->key_use_item];
   }
-  piVar7 = &(player_control->action_bindings).light_key;
+  piVar7 = &(player_control->action_state).light;
   if (g_PrevKeyboardState[this_ptr->key_light] == g_KeyboardState[this_ptr->key_light]) {
     *piVar7 = 0;
   }
   else {
     *piVar7 = (uint)(byte)g_KeyboardState[this_ptr->key_light];
   }
-  piVar7 = &(player_control->action_bindings).draw_key;
+  piVar7 = &(player_control->action_state).draw;
   if (g_PrevKeyboardState[this_ptr->key_draw] == g_KeyboardState[this_ptr->key_draw]) {
     *piVar7 = 0;
   }
@@ -181,7 +181,7 @@ LAB_004dc4e9:
     *piVar7 = (uint)(byte)g_KeyboardState[this_ptr->key_draw];
   }
   iVar5 = this_ptr->key_jump;
-  piVar7 = &(player_control->action_bindings).jump_key;
+  piVar7 = &(player_control->action_state).jump;
   if (g_PrevKeyboardState[iVar5] == g_KeyboardState[iVar5]) {
     *piVar7 = 0;
   }

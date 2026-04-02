@@ -41,7 +41,7 @@ void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00542cf0(CNetGame
         pCVar4->players[0].last_update_time = (g_CurrentGameTime + iVar2) - 0x1e0000;
       }
       iVar3 = iVar3 + 1;
-      pCVar4 = (CNetGame *)&pCVar4->players[0].controls.action_bindings.fire_key;
+      pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.fire;
     } while (iVar3 < this_ptr->player_count);
   }
   g_CurrentGameTime = g_CurrentGameTime + iVar2;

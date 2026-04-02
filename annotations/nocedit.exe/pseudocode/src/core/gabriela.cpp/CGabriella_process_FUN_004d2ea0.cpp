@@ -220,7 +220,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
       }
       else if ((this_ptr->base).base.grabbed_by != (CDemonActor *)0x0) {
-        if ((this_ptr->base).player_control.action_bindings.fire_key != 0) {
+        if ((this_ptr->base).player_input.action_state.fire != 0) {
           iVar17 = 7;
           goto LAB_004d3215;
         }
@@ -256,15 +256,15 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
 LAB_004d3af9:
               if ((this_ptr->base).base.is_on_ground != 0) {
                 iVar17 = 0;
-                if ((this_ptr->base).player_control.action_bindings.walk_key != 0) {
-                  if ((this_ptr->base).player_control.action_bindings.run_key == 0) {
+                if ((this_ptr->base).player_input.action_state.walk != 0) {
+                  if ((this_ptr->base).player_input.action_state.run == 0) {
                     iVar17 = 1;
                   }
                   else {
                     iVar17 = 2;
                   }
                 }
-                if ((this_ptr->base).player_control.action_bindings.backup_key != 0) {
+                if ((this_ptr->base).player_input.action_state.backup != 0) {
                   iVar17 = 3;
                 }
                 fVar3 = (this_ptr->base).base.walk_step_speed;
@@ -272,7 +272,7 @@ LAB_004d3af9:
                 pCVar4 = &(this_ptr->base).base.model;
                 fVar5 = (this_ptr->base).base.position_delta.z;
                 (this_ptr->base).base.turn_angle_accumulator =
-                     (this_ptr->base).player_control.turn_speed * (this_ptr->base).base.turn_speed;
+                     (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
                 (this_ptr->base).base.position_delta.z = fVar3 + fVar5;
                 (this_ptr->base).base.position_delta.x = fVar4 + local_20 * delta_time;
                 pSVar18 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -281,7 +281,7 @@ LAB_004d3af9:
                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                             (&pCVar4->motion_controller,iVar17,1);
                 }
-                if (((this_ptr->base).player_control.action_bindings.use_item_key != 0) &&
+                if (((this_ptr->base).player_input.action_state.use_item != 0) &&
                    (iVar17 = core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870
                                        (this_ptr), iVar17 == 0)) {
                   core_gabriela_cpp_CGabriella_tryThrowObject_FUN_004d6050(this_ptr);
@@ -314,7 +314,7 @@ LAB_004d3af9:
       }
       goto LAB_004d3215;
     }
-    if ((this_ptr->base).player_control.action_bindings.fire_key != 0) {
+    if ((this_ptr->base).player_input.action_state.fire != 0) {
       this_ptr_03 = (this_ptr->base).pushed_object;
       (*((this_ptr_03->base).vtable._ub)->getBoundingBox)(&this_ptr_03->base,&local_1b4);
       local_a0.x = (local_1b4.min.x + local_1b4.max.x) * 0.5f;
@@ -440,7 +440,7 @@ LAB_004d3cb4:
     pCVar16->x = (this_ptr->base).base.model.accumulated_root_motion.y;
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
-  if (((is_holstering == 0) && ((this_ptr->base).player_control.action_bindings.draw_key != 0)) &&
+  if (((is_holstering == 0) && ((this_ptr->base).player_input.action_state.draw != 0)) &&
      ((this_ptr->base).inventory.selected_weapon != (CWeapon *)0x0)) {
     bVar6 = (byte)this_ptr->weapon_state_flags;
     if ((bVar6 & 3) == 0) {
@@ -455,15 +455,15 @@ LAB_004d3cb4:
                       ((this_ptr->base).base.carry_hands[0].carry_actor,
                        g_CLightActorClassInfo.name_hash);
   if (pCVar13 != (CLightActor *)0x0) {
-    if ((((this_ptr->base).player_control.action_bindings.light_key != 0) && (is_holstering == 0))
-       && ((pCVar13->light).light_enabled_flag = (uint)((pCVar13->light).light_enabled_flag == 0),
-          pCVar13->light_actor_type == LIGHT_TYPE_FLASHLIGHT)) {
+    if ((((this_ptr->base).player_input.action_state.light != 0) && (is_holstering == 0)) &&
+       ((pCVar13->light).light_enabled_flag = (uint)((pCVar13->light).light_enabled_flag == 0),
+       pCVar13->light_actor_type == LIGHT_TYPE_FLASHLIGHT)) {
       (*((this_ptr->base).base.base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"flashlit.wav");
     }
     if ((pCVar13->light).light_enabled_flag != 0) {
       this_ptr->flashlight_angle =
-           (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
+           (this_ptr->base).player_input.look_up_down_speed * (float)3.1415926535000001 *
            (float)2 * delta_time + this_ptr->flashlight_angle;
       fVar10 = core_gabriela_cpp_CGabriella_getFlashlightMinAngle_FUN_004d4c90(this_ptr);
       fVar11 = core_gabriela_cpp_CGabriella_getFlashlightMaxAngle_FUN_004d4ce0(this_ptr);
@@ -557,8 +557,7 @@ LAB_004d344b:
   fVar10 = this_ptr->fire_cooldown_timer - delta_time / 0.2f;
   this_ptr->fire_cooldown_timer = fVar10;
   if (((fVar10 <= 0.0) && (this_ptr->fire_cooldown_timer = 0.0, is_holstering == 0)) &&
-     (((this_ptr->base).player_control.action_bindings.fire_key != 0 && (this_ptr->fire_state == 0))
-     )) {
+     (((this_ptr->base).player_input.action_state.fire != 0 && (this_ptr->fire_state == 0)))) {
     if (this_ptr->weapon_state_flags == 0) {
       if ((this_ptr->draw_blend <= 0.0) &&
          (iVar17 = core_hero_cpp_CHero_tryInteract_FUN_004f2af0(&this_ptr->base), iVar17 == 0)) {
@@ -637,14 +636,14 @@ LAB_004d344b:
                         (&((this_ptr->base).inventory.selected_weapon)->base,
                          g_CDynamiteClassInfo.name_hash);
     if (pCVar15 != (CDynamite *)0x0) {
-      if ((this_ptr->base).player_control.action_bindings.fire_key == 0) {
+      if ((this_ptr->base).player_input.action_state.fire == 0) {
         this_ptr->fire_state = 2;
       }
       else {
         fVar10 = delta_time * (float)25 + this_ptr->dynamite_charge_power;
         this_ptr->dynamite_charge_power = fVar10;
         if (60.0f < fVar10) {
-          (this_ptr->base).player_control.action_bindings.fire_key = 0;
+          (this_ptr->base).player_input.action_state.fire = 0;
           this_ptr->fire_state = 2;
           this_ptr->dynamite_charge_power = 60.0f;
         }
@@ -683,7 +682,7 @@ LAB_004d4152:
   this_ptr->fire_state = 0;
   core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_004d5fe0(this_ptr);
   if (((this_ptr->base).inventory.selected_weapon)->fire_cooldown == 0.0) {
-    (this_ptr->base).player_control.action_bindings.fire_key = 0;
+    (this_ptr->base).player_input.action_state.fire = 0;
   }
 LAB_004d368e:
   EVar15 = (*(((this_ptr->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)this_ptr);

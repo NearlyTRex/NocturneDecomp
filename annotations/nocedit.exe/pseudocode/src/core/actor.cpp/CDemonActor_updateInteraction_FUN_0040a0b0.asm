@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_CDemonActor_updateInteraction_FUN_0040a0b0(CDemonActor *this_ptr,UOrientationVector *user_orientation,SPlayerControl *player_control)
+; int __cdecl core_actor_cpp_CDemonActor_updateInteraction_FUN_0040a0b0(CDemonActor *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ; UOrientationVector * Stack[0x8]:4   user_orientation
-; SPlayerControl * Stack[0xc]:4   player_control
+; SPlayerInput *   Stack[0xc]:4   player_control
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_006139f5

@@ -184,7 +184,7 @@ int __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_00542470(CNetGame
         }
 LAB_005429ed:
         local_24 = local_24 + 1;
-        local_28 = (CNetGame *)&local_28->players[0].controls.action_bindings.fire_key;
+        local_28 = (CNetGame *)&local_28->players[0].player_input.action_state.fire;
         local_44[3] = local_44[3] + 1;
         local_10f[iVar6 * 0x28] = '\0';
         local_2c = local_2c + 0xf;
@@ -241,17 +241,17 @@ LAB_005429ed:
             local_7c = pSVar16->state_change_time;
             local_78 = pSVar16->ready_flag;
             local_74 = pSVar16->sim_frame_index;
-            local_70 = (pSVar9->controls).action_bindings.walk_key;
-            local_6c = (pSVar9->controls).action_bindings.backup_key;
-            local_68 = (pSVar9->controls).action_bindings.run_key;
-            local_64 = (pSVar9->controls).action_bindings.fire_key;
-            local_60 = (pSVar9->controls).action_bindings.use_item_key;
-            local_5c = (pSVar9->controls).action_bindings.light_key;
-            local_58 = (pSVar9->controls).action_bindings.draw_key;
-            local_54 = (pSVar9->controls).action_bindings.jump_key;
-            local_50 = (pSVar9->controls).strafe_speed;
-            local_4c = (pSVar9->controls).turn_speed;
-            local_48 = (pSVar9->controls).look_up_down_speed;
+            local_70 = (pSVar9->player_input).action_state.walk;
+            local_6c = (pSVar9->player_input).action_state.backup;
+            local_68 = (pSVar9->player_input).action_state.run;
+            local_64 = (pSVar9->player_input).action_state.fire;
+            local_60 = (pSVar9->player_input).action_state.use_item;
+            local_5c = (pSVar9->player_input).action_state.light;
+            local_58 = (pSVar9->player_input).action_state.draw;
+            local_54 = (pSVar9->player_input).action_state.jump;
+            local_50 = (pSVar9->player_input).strafe_speed;
+            local_4c = (pSVar9->player_input).turn_speed;
+            local_48 = (pSVar9->player_input).look_up_down_speed;
             pSVar10 = pSVar6;
             for (iVar6 = 0x1e; iVar6 != 0; iVar6 = iVar6 + -1) {
               pSVar16 = (SNetPlayer *)((int)pSVar16 + (uint)bVar17 * -8 + 4);

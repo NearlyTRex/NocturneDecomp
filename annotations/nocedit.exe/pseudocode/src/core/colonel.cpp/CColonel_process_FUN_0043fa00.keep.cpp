@@ -90,24 +90,24 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
     case 3:
       if ((this_ptr->base).base.is_on_ground != 0) {
         iVar6 = 0;
-        if ((this_ptr->base).player_control.action_states[0] != 0) {
-          if ((this_ptr->base).player_control.action_states[2] == 0) {
+        if ((this_ptr->base).player_input.action_state.walk != 0) {
+          if ((this_ptr->base).player_input.action_state.run == 0) {
             iVar6 = 1;
           }
           else {
             iVar6 = 2;
           }
         }
-        if ((this_ptr->base).player_control.action_states[1] != 0) {
+        if ((this_ptr->base).player_input.action_state.backup != 0) {
           iVar6 = 3;
         }
-        if ((this_ptr->base).player_control.action_states[6] != 0) {
+        if ((this_ptr->base).player_input.action_state.draw != 0) {
           iVar9 = this_ptr->guns_drawn;
-          (this_ptr->base).player_control.action_states[6] = 0;
+          (this_ptr->base).player_input.action_state.draw = 0;
           iVar6 = 0;
           this_ptr->guns_drawn = (uint)(iVar9 == 0);
         }
-        if ((this_ptr->base).player_control.action_states[3] != 0) {
+        if ((this_ptr->base).player_input.action_state.fire != 0) {
           bVar4 = true;
           if ((this_ptr->guns_drawn == 0) && ((this_ptr->base).control_type != HERO_CONTROL_AI)) {
             iVar8 = core_hero_cpp_CHero_tryInteract_FUN_004f2af0(&this_ptr->base);
@@ -130,11 +130,11 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
 LAB_0043fd60:
             if (!bVar4) goto LAB_0043fd6e;
           }
-          (this_ptr->base).player_control.action_states[3] = 0;
+          (this_ptr->base).player_input.action_state.fire = 0;
         }
 LAB_0043fd6e:
         (this_ptr->base).base.turn_angle_accumulator =
-             (this_ptr->base).player_control.turn_speed * (this_ptr->base).base.turn_speed;
+             (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
         pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&(this_ptr->base).base.model.motion_controller);
         if (iVar6 != pSVar8->state_index) goto LAB_0043fad3;
@@ -230,7 +230,7 @@ LAB_0043fc01:
     }
     else {
       if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) goto LAB_0043fc01;
-      if ((this_ptr->base).player_control.action_states[3] == 0) goto LAB_0043fc14;
+      if ((this_ptr->base).player_input.action_state.fire == 0) goto LAB_0043fc14;
       iVar6 = 9;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

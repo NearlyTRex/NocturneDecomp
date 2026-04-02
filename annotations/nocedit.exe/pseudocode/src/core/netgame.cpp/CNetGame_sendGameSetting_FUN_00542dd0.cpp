@@ -81,7 +81,7 @@ LAB_00542ef5:
       pSVar7 = local_14 + 1;
       local_14 = pSVar7;
       pcVar6 = pcVar8;
-      pCVar3 = (CNetGame *)&pCVar3->players[0].controls.action_bindings.fire_key;
+      pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.fire;
     } while (iVar5 < this_ptr->player_count);
   }
   core_netgame_cpp_CNetGame_send_FUN_005411c0(this_ptr,player_index,&local_c8.header);

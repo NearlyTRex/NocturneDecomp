@@ -35,9 +35,9 @@ char * __cdecl parseConditionExpr(char **cursor,char *out_buffer);
 // Address: 005594e0
 CDemonActor * __cdecl getActor(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class);
 
-// Original: core_script.cpp_getActionKeyOffset_FUN_00559660
+// Original: core_script.cpp_getActionState_FUN_00559660
 // Address: 00559660
-int * __cdecl getActionKeyOffset(SActionKeyBindings *action_bindings,char *action_name);
+int * __cdecl getActionState(SPlayerActionState *action_state,char *action_name);
 
 // Original: core_script.cpp_parseBodyPartMask_FUN_00559730
 // Address: 00559730

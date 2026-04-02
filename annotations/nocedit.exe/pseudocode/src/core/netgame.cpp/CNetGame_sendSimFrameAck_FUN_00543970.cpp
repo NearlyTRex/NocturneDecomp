@@ -10,7 +10,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
 
 {
   int iVar1;
-  SNetPacket_PlayerControl local_48;
+  SNetPacket_PlayerInput local_48;
   
   if (this_ptr->connection_type != CONNECTION_CLIENT) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
@@ -33,28 +33,24 @@ void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *th
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendSimFrameAck - I'm not in player list");
   }
   local_48.header.size = 0x35;
-  local_48.header.type = PACKET_PLAYER_CONTROL;
+  local_48.header.type = PACKET_PLAYER_INPUT;
   local_48.sim_frame_index = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
   iVar1 = this_ptr->local_player_index;
-  local_48.controls.action_bindings.walk_key =
-       this_ptr->players[iVar1].controls.action_bindings.walk_key;
-  local_48.controls.action_bindings.backup_key =
-       this_ptr->players[iVar1].controls.action_bindings.backup_key;
-  local_48.controls.action_bindings.run_key =
-       this_ptr->players[iVar1].controls.action_bindings.run_key;
-  local_48.controls.action_bindings.fire_key =
-       this_ptr->players[iVar1].controls.action_bindings.fire_key;
-  local_48.controls.action_bindings.use_item_key =
-       this_ptr->players[iVar1].controls.action_bindings.use_item_key;
-  local_48.controls.action_bindings.light_key =
-       this_ptr->players[iVar1].controls.action_bindings.light_key;
-  local_48.controls.action_bindings.draw_key =
-       this_ptr->players[iVar1].controls.action_bindings.draw_key;
-  local_48.controls.action_bindings.jump_key =
-       this_ptr->players[iVar1].controls.action_bindings.jump_key;
-  local_48.controls.strafe_speed = this_ptr->players[iVar1].controls.strafe_speed;
-  local_48.controls.turn_speed = this_ptr->players[iVar1].controls.turn_speed;
-  local_48.controls.look_up_down_speed = this_ptr->players[iVar1].controls.look_up_down_speed;
+  local_48.player_input.action_state.walk = this_ptr->players[iVar1].player_input.action_state.walk;
+  local_48.player_input.action_state.backup =
+       this_ptr->players[iVar1].player_input.action_state.backup;
+  local_48.player_input.action_state.run = this_ptr->players[iVar1].player_input.action_state.run;
+  local_48.player_input.action_state.fire = this_ptr->players[iVar1].player_input.action_state.fire;
+  local_48.player_input.action_state.use_item =
+       this_ptr->players[iVar1].player_input.action_state.use_item;
+  local_48.player_input.action_state.light =
+       this_ptr->players[iVar1].player_input.action_state.light;
+  local_48.player_input.action_state.draw = this_ptr->players[iVar1].player_input.action_state.draw;
+  local_48.player_input.action_state.jump = this_ptr->players[iVar1].player_input.action_state.jump;
+  local_48.player_input.strafe_speed = this_ptr->players[iVar1].player_input.strafe_speed;
+  local_48.player_input.turn_speed = this_ptr->players[iVar1].player_input.turn_speed;
+  local_48.player_input.look_up_down_speed =
+       this_ptr->players[iVar1].player_input.look_up_down_speed;
   core_netgame_cpp_CNetGame_send_FUN_005411c0
             (this_ptr,this_ptr->server_player_index,&local_48.header);
   UINT_02f7c8c8 = g_CurrentGameTime;

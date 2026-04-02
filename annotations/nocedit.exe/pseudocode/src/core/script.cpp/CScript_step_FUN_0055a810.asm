@@ -5041,8 +5041,8 @@ section .text
     PUSH EDX                            ; 0055e020
     ADD EAX,0xbe2c                      ; 0055e021
     PUSH EAX                            ; 0055e026
-    CALL core_script.cpp_getActionKeyOffset_FUN_00559660 ; 0055e027
-        ;   XREF to: 00559660 (UNCONDITIONAL_CALL)  ; int * core_script.cpp_getActionKeyOffset_FUN_00559660(SActionKeyBindings * action_bindings, char * action_name)
+    CALL core_script.cpp_getActionState_FUN_00559660 ; 0055e027
+        ;   XREF to: 00559660 (UNCONDITIONAL_CALL)  ; int * core_script.cpp_getActionState_FUN_00559660(SPlayerActionState * action_state, char * action_name)
     ADD ESP,0x8                         ; 0055e02c
     MOV ESI,EAX                         ; 0055e02f
     TEST EAX,EAX                        ; 0055e031
@@ -5211,8 +5211,8 @@ section .text
     PUSH EDX                            ; 0055e210
     ADD EAX,0xbe2c                      ; 0055e211
     PUSH EAX                            ; 0055e216
-    CALL core_script.cpp_getActionKeyOffset_FUN_00559660 ; 0055e217
-        ;   XREF to: 00559660 (UNCONDITIONAL_CALL)  ; int * core_script.cpp_getActionKeyOffset_FUN_00559660(SActionKeyBindings * action_bindings, char * action_name)
+    CALL core_script.cpp_getActionState_FUN_00559660 ; 0055e217
+        ;   XREF to: 00559660 (UNCONDITIONAL_CALL)  ; int * core_script.cpp_getActionState_FUN_00559660(SPlayerActionState * action_state, char * action_name)
     ADD ESP,0x8                         ; 0055e21c
     MOV ESI,EAX                         ; 0055e21f
     TEST EAX,EAX                        ; 0055e221

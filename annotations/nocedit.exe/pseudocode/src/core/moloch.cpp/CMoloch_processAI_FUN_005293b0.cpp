@@ -35,7 +35,7 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
   CLocation *pCVar1;
   
   pCVar3 = g_HeroActors[g_LocalHeroIndex];
-  memset(&(this_ptr->base).player_control,0,0x2c);
+  memset(&(this_ptr->base).player_input,0,0x2c);
   iVar2 = g_LocalHeroIndex;
   EVar4 = (this_ptr->base).ai_task;
   if ((EVar4 != HERO_TASK_STAND) && (EVar4 == HERO_TASK_FOLLOW)) {
@@ -65,11 +65,11 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
          (uVar8 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
                             ((CCharacter *)this_ptr,delta_time), uVar8 != 0)) {
         if (uVar8 < 2) {
-          (this_ptr->base).player_control.action_bindings.walk_key = 1;
+          (this_ptr->base).player_input.action_state.walk = 1;
         }
         else if (uVar8 == 2) {
-          (this_ptr->base).player_control.action_bindings.run_key = 1;
-          (this_ptr->base).player_control.action_bindings.walk_key = 1;
+          (this_ptr->base).player_input.action_state.run = 1;
+          (this_ptr->base).player_input.action_state.walk = 1;
         }
       }
     }
@@ -83,14 +83,14 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
         fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (CStack_68.y - (this_ptr->base).base.base.orient.vec.y);
         fVar1 = fVar1 * (float)0.31830988619288902 * (float)4;
-        (this_ptr->base).player_control.turn_speed = fVar1;
+        (this_ptr->base).player_input.turn_speed = fVar1;
         if (fVar1 < -0.25) {
-          (this_ptr->base).player_control.turn_speed = -0.25;
+          (this_ptr->base).player_input.turn_speed = -0.25;
         }
-        if (0.25 < (this_ptr->base).player_control.turn_speed) {
-          (this_ptr->base).player_control.turn_speed = 0.25;
+        if (0.25 < (this_ptr->base).player_input.turn_speed) {
+          (this_ptr->base).player_input.turn_speed = 0.25;
         }
-        (this_ptr->base).player_control.action_bindings.walk_key = 1;
+        (this_ptr->base).player_input.action_state.walk = 1;
       }
       (this_ptr->base).base.hero_proximity_timer = 0.0;
     }
@@ -98,12 +98,12 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
     if (fVar2 <= 0.0) {
       if (fVar2 < 0.0) {
         (this_ptr->base).base.turn_angle_accumulator = 0.0;
-        (this_ptr->base).player_control.turn_speed = -0.25;
+        (this_ptr->base).player_input.turn_speed = -0.25;
       }
     }
     else {
       (this_ptr->base).base.turn_angle_accumulator = 0.0;
-      (this_ptr->base).player_control.turn_speed = 0.25;
+      (this_ptr->base).player_input.turn_speed = 0.25;
     }
     CStack_38.x = (pCVar3->base).base.location.position.x -
                   (this_ptr->base).base.base.location.position.x;

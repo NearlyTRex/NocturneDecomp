@@ -16,7 +16,7 @@ struct CLever;
 #include "types/enums/EAimMode.h"
 #include "types/enums/EHeroControlType.h"
 #include "types/enums/EHeroTask.h"
-#include "types/structs/SPlayerControl.h"
+#include "types/structs/SPlayerInput.h"
 #include "types/unions/UOrientationVector.h"
 
 // Structure: CHero
@@ -25,7 +25,7 @@ typedef struct CHero {
     CCharacter base; // 0x0
     float invincibility_timer; // 0xbe24
     EHeroControlType control_type; // 0xbe28
-    SPlayerControl player_control; // 0xbe2c
+    SPlayerInput player_input; // 0xbe2c
     CPathMap path_map; // 0xbe58
     EAimMode aim_mode; // 0x1f734
     CInventory inventory; // 0x1f738

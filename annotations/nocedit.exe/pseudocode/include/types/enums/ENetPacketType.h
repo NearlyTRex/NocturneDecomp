@@ -21,7 +21,7 @@ enum {
     PACKET_DISCONNECT = 13,
     PACKET_UNUSED = 14,
     PACKET_SIM_FRAME = 15,
-    PACKET_PLAYER_CONTROL = 16
+    PACKET_PLAYER_INPUT = 16
 };
 typedef uchar ENetPacketType;
 

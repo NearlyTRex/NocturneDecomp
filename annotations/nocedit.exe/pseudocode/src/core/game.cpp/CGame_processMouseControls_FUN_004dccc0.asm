@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_processMouseControls_FUN_004dccc0(CGame *this_ptr,SPlayerControl *player_control)
+; void __cdecl core_game_cpp_CGame_processMouseControls_FUN_004dccc0(CGame *this_ptr,SPlayerInput *player_control)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
-; SPlayerControl * Stack[0x8]:4   player_control
+; SPlayerInput *   Stack[0x8]:4   player_control
 ; Local Variables:
 ; float            Stack[-0x40]:4  local_40
 ; float            Stack[-0x3c]:4  local_3c
@@ -47,7 +47,7 @@ section .text
     PUSH EBX                            ; 004dccd2
     PUSH EDI                            ; 004dccd3
     CALL core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0 ; 004dccd4
-        ;   XREF to: 004dc3e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame * this_ptr, SPlayerControl * player_control)
+        ;   XREF to: 004dc3e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame * this_ptr, SPlayerInput * player_control)
     MOV EDX,dword ptr [EDI + 0x27c]     ; 004dccd9
     ADD ESP,0x8                         ; 004dccdf
     TEST EDX,EDX                        ; 004dcce2

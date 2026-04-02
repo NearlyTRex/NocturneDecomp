@@ -21,7 +21,7 @@ void __cdecl core_stranger_cpp_CStranger_handleFireButton_FUN_005c5f10(CStranger
   uint uVar7;
   int iVar8;
   
-  iVar1 = (this_ptr->base).player_control.action_bindings.fire_key;
+  iVar1 = (this_ptr->base).player_input.action_state.fire;
   this_ptr->can_grab_weapon = 0;
   if (iVar1 == 0) {
     return;

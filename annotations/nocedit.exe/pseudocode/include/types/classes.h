@@ -188,6 +188,7 @@
 #include "types/classes/CLodEdge.h"
 #include "types/classes/CLodFace.h"
 #include "types/classes/CLodMesh.h"
+#include "types/classes/CLodMeshPrecomputeEntry.h"
 #include "types/classes/CLodVert.h"
 #include "types/classes/CMP3Decoder.h"
 #include "types/classes/CMansionPuzzleCircle.h"

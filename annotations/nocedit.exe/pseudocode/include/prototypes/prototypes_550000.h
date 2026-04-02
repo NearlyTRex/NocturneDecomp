@@ -17,11 +17,11 @@
 #include "types/classes/CProceduralTexture.h"
 #include "types/classes/CScat.h"
 #include "types/classes/CScript.h"
-#include "types/structs/SActionKeyBindings.h"
 #include "types/structs/SColorBox.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SFoundFileInfo.h"
 #include "types/structs/SMRGLPrimitiveTriangle.h"
+#include "types/structs/SPlayerActionState.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoftwareEdge.h"
 #include "types/structs/STrianglePackedIndices.h"
@@ -151,7 +151,7 @@ char * __cdecl core_script_cpp_skipWhitespace_FUN_005593d0(char *str);
 char * __cdecl core_script_cpp_parseArgument_FUN_005593f0(char **cursor,char *out_buffer,int max_length);
 char * __cdecl core_script_cpp_parseConditionExpr_FUN_005594a0(char **cursor,char *out_buffer);
 CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class);
-int * __cdecl core_script_cpp_getActionKeyOffset_FUN_00559660(SActionKeyBindings *action_bindings,char *action_name);
+int * __cdecl core_script_cpp_getActionState_FUN_00559660(SPlayerActionState *action_state,char *action_name);
 int __cdecl core_script_cpp_parseBodyPartMask_FUN_00559730(CCharacter *character,char *part_names,int *part_mask);
 CScript * __cdecl core_script_cpp_CScript_ctor_FUN_005597f0(CScript *this_ptr);
 CScript * __cdecl core_script_cpp_CScript_dtor_FUN_00559840(CScript *this_ptr,uint flags);

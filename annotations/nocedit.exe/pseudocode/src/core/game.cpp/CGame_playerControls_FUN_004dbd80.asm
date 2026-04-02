@@ -68,7 +68,7 @@ section .text
         ;   Label: LAB_004dbdb4
     PUSH ESI                            ; 004dbdb5
     CALL core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0 ; 004dbdb6
-        ;   XREF to: 004dc3e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame * this_ptr, SPlayerControl * player_control)
+        ;   XREF to: 004dc3e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame * this_ptr, SPlayerInput * player_control)
     ADD ESP,0x8                         ; 004dbdbb
         ;   Label: LAB_004dbdbb
     MOV ECX,0x258                       ; 004dbdbe
@@ -96,14 +96,14 @@ section .text
         ;   Label: LAB_004dbdfb
     PUSH ESI                            ; 004dbdfc
     CALL core_game.cpp_CGame_processJoystickControls_FUN_004dc230 ; 004dbdfd
-        ;   XREF to: 004dc230 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processJoystickControls_FUN_004dc230(CGame * this_ptr, SPlayerControl * player_control)
+        ;   XREF to: 004dc230 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processJoystickControls_FUN_004dc230(CGame * this_ptr, SPlayerInput * player_control)
     JMP 0x004dbdbb                      ; 004dbe02
         ;   XREF to: 004dbdbb (UNCONDITIONAL_JUMP)  ; LAB_004dbdbb
     PUSH EDX                            ; 004dbe04
         ;   Label: LAB_004dbe04
     PUSH ESI                            ; 004dbe05
     CALL core_game.cpp_CGame_processMouseControls_FUN_004dccc0 ; 004dbe06
-        ;   XREF to: 004dccc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processMouseControls_FUN_004dccc0(CGame * this_ptr, SPlayerControl * player_control)
+        ;   XREF to: 004dccc0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processMouseControls_FUN_004dccc0(CGame * this_ptr, SPlayerInput * player_control)
     JMP 0x004dbdbb                      ; 004dbe0b
         ;   XREF to: 004dbdbb (UNCONDITIONAL_JUMP)  ; LAB_004dbdbb
     PUSH EDI                            ; 004dbe0d
@@ -111,7 +111,7 @@ section .text
     MOV EDI,dword ptr [0x00680a00]      ; 004dbe0e | g_CNetGamePtr
     PUSH EDI                            ; 004dbe14 | g_CNetGameInstance
     CALL core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0 ; 004dbe15
-        ;   XREF to: 005438c0 (UNCONDITIONAL_CALL)  ; SPlayerControl * core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame * this_ptr)
+        ;   XREF to: 005438c0 (UNCONDITIONAL_CALL)  ; SPlayerInput * core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame * this_ptr)
     MOV EDX,EAX                         ; 004dbe1a
     MOV EAX,dword ptr [ESI + 0xbc]      ; 004dbe1c
     ADD ESP,0x4                         ; 004dbe22

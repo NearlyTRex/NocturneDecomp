@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *this_ptr,SPlayerControl *player_control)
+; void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *this_ptr,SPlayerInput *player_control)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
-; SPlayerControl * Stack[0x8]:4   player_control
+; SPlayerInput *   Stack[0x8]:4   player_control
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_playerControls_FUN_004dbd80 at 004dbdb6

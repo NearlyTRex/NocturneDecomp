@@ -4,9 +4,9 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6914 ( 43.9%)
-  pointer_cast                    4401 ( 28.0%)
-  unknown_field                    871 (  5.5%)
+  decompiler_intrinsic            6914 ( 44.0%)
+  pointer_cast                    4402 ( 28.0%)
+  unknown_field                    861 (  5.5%)
   special_crt_function             439 (  2.8%)
   stack_param                      351 (  2.2%)
   unnamed_param                    329 (  2.1%)
@@ -23,10 +23,10 @@ SUSPECT TYPE COUNTS
   negative_offset                   86 (  0.5%)
   warning_unreachable               85 (  0.5%)
   register_param                    69 (  0.4%)
-  suspect_float                     53 (  0.3%)
   param_count_too_many              41 (  0.3%)
   unknown_type                      40 (  0.3%)
   mmx_assembly                      34 (  0.2%)
+  suspect_float                     32 (  0.2%)
   extra_output                      29 (  0.2%)
   format_string_mismatch            24 (  0.2%)
   undefined_ram                     24 (  0.2%)
@@ -96,12 +96,12 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (4401 occurrences)
+TYPE: pointer_cast (4402 occurrences)
 ====================================================================================================
 
 Unique patterns:
   1383x  (uint *)((int)
-  1233x  (int *)((int)
+  1234x  (int *)((int)
    305x  (float *)((int)
    209x  (SRenderVertex *)((int)
    193x  (double *)((int)
@@ -132,22 +132,21 @@ Example functions:
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar9) <...
 
 ====================================================================================================
-TYPE: unknown_field (871 occurrences)
+TYPE: unknown_field (861 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   362x  ._0_4_
-   346x  ._4_4_
+   359x  ._0_4_
+   344x  ._4_4_
     47x  ._0_2_
     36x  ._2_2_
     14x  ._0_1_
     11x  ._1_1_
-    10x  ._8_4_
+     9x  ._8_4_
      9x  ._3_1_
-     9x  ._12_4_
+     7x  ._12_4_
      7x  ._4_8_
      4x  ._2_1_
-     3x  ._24_4_
      3x  ._13604_4_
      2x  ._252_4_
      2x  ._12_8_
@@ -156,6 +155,7 @@ Unique patterns:
      1x  ._40_4_
      1x  ._18_2_
      1x  ._16_4_
+     1x  ._20_4_
 
 Example functions:
   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
@@ -990,62 +990,6 @@ Example functions:
     byte *in_EAX;...
 
 ====================================================================================================
-TYPE: suspect_float (53 occurrences)
-====================================================================================================
-
-Unique patterns:
-    12x  1.4013e-45
-     8x  1.12104e-44
-     4x  2.10195e-44
-     3x  2.8026e-45
-     3x  1.26117e-44
-     3x  1.82169e-44
-     2x  2.24208e-44
-     2x  4.2039e-45
-     2x  3.58732e-43
-     2x  3.57331e-43
-     1x  6.972979e-39
-     1x  8.106091e-39
-     1x  8.106946e-39
-     1x  8.107024e-39
-     1x  7.588293e-39
-     1x  2.69049e-43
-     1x  9.80909e-45
-     1x  1.4013e-44
-     1x  1.54143e-44
-     1x  1.68156e-44
-
-Example functions:
-  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-    local_1c = 1.4013e-45;...
-  core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_004bed00
-    fStack_3c = 6.972979e-39;...
-  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
-    in_stack_fffffdc0 = 8.106091e-39;...
-  core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640
-    triangle->area = 1.4013e-45;...
-  core_dtri.cpp_rayTriangleIntersection_FUN_0049a800
-    if (fVar2 == 2.8026e-45) {...
-  core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90
-    (pCVar2->base).fire_cooldown = 1.4013e-45;...
-  core_moon.cpp_CMoon_render_FUN_00529ed0
-    local_5c.x = 7.588293e-39;...
-  core_fire.cpp_CLaserBeam_render_FUN_004c25c0
-    local_24 = 1.12104e-44;...
-  core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
-    if (fStack_1c == 4.2039e-45) {...
-  core_set.cpp_CDemonSet_setGamma_FUN_00570d60
-    local_18 = 3.58732e-43;...
-  core_scat.cpp_CScat_updateWeaponState_FUN_00558060
-    ((pCVar5->model).transformed_vertices[0x19].y == 1.12104e-44)) {...
-  core_stranger.cpp_CStranger_processDamage_FUN_005c48b0
-    force_immediate = 1.4013e-45;...
-  core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370
-    (g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);...
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb960
-    UStack_84.vec.y = 1.4013e-45;...
-
-====================================================================================================
 TYPE: param_count_too_many (41 occurrences)
 ====================================================================================================
 
@@ -1234,6 +1178,64 @@ Example functions:
     Function uses MMX instructions...
   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
     Function uses MMX instructions...
+
+====================================================================================================
+TYPE: suspect_float (32 occurrences)
+====================================================================================================
+
+Unique patterns:
+     9x  1.4013e-45
+     7x  1.12104e-44
+     3x  2.8026e-45
+     2x  3.58732e-43
+     2x  3.57331e-43
+     1x  6.972979e-39
+     1x  8.106091e-39
+     1x  8.106946e-39
+     1x  8.107024e-39
+     1x  7.588293e-39
+     1x  2.24208e-44
+     1x  4.2039e-45
+     1x  2.69049e-43
+     1x  5.60519e-45
+
+Example functions:
+  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
+    local_1c = 1.4013e-45;...
+  core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_004bed00
+    fStack_3c = 6.972979e-39;...
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
+    in_stack_fffffdc0 = 8.106091e-39;...
+  core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640
+    triangle->area = 1.4013e-45;...
+  core_dtri.cpp_rayTriangleIntersection_FUN_0049a800
+    if (fVar2 == 2.8026e-45) {...
+  core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90
+    (pCVar2->base).fire_cooldown = 1.4013e-45;...
+  core_moon.cpp_CMoon_render_FUN_00529ed0
+    local_5c.x = 7.588293e-39;...
+  core_fire.cpp_CLaserBeam_render_FUN_004c25c0
+    local_24 = 1.12104e-44;...
+  core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
+    if (fStack_1c == 4.2039e-45) {...
+  core_set.cpp_CDemonSet_setGamma_FUN_00570d60
+    local_18 = 3.58732e-43;...
+  core_scat.cpp_CScat_updateWeaponState_FUN_00558060
+    ((pCVar5->model).transformed_vertices[0x19].y == 1.12104e-44)) {...
+  core_stranger.cpp_CStranger_processDamage_FUN_005c48b0
+    force_immediate = 1.4013e-45;...
+  core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370
+    (g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);...
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+    fVar9 = 3.57331e-43;...
+  core_charactr.cpp_CCharacter_setup_FUN_00428140
+    this_ptr->fire_spread_rate = 5.60519e-45;...
+  core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880
+    (pCVar2->base).fire_cooldown = 1.4013e-45;...
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10
+    local_bc.min.x = 2.8026e-45;...
+  core_lightgun.cpp_CLightGun_ctor_FUN_00505900
+    (pCVar3->base).fire_cooldown = 1.4013e-45;...
 
 ====================================================================================================
 TYPE: extra_output (29 occurrences)

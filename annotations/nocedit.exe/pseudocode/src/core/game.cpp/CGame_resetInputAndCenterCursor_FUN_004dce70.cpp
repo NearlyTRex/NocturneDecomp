@@ -9,7 +9,7 @@
 void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(CGame *this_ptr)
 
 {
-  SPlayerControl *dest;
+  SPlayerInput *dest;
   int value;
   ulong count;
   

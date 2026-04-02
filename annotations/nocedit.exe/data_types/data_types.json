@@ -3625,10 +3625,6 @@
       "type":"struct"
     },
     {
-      "name":"SActionKeyBindings",
-      "type":"struct"
-    },
-    {
       "name":"SActorVarBlock",
       "type":"struct"
     },
@@ -4505,11 +4501,15 @@
       "type":"struct"
     },
     {
-      "name":"SPlayerControl",
+      "name":"SPlayerActionState",
       "type":"struct"
     },
     {
-      "name":"SNetPacket_PlayerControl",
+      "name":"SPlayerInput",
+      "type":"struct"
+    },
+    {
+      "name":"SNetPacket_PlayerInput",
       "type":"struct"
     },
     {
@@ -9807,7 +9807,7 @@
           "val":15
         },
         {
-          "name":"PACKET_PLAYER_CONTROL",
+          "name":"PACKET_PLAYER_INPUT",
           "val":16
         }
       ]
@@ -13214,7 +13214,7 @@
         },
         {
           "name":"player_control",
-          "type":"SPlayerControl*"
+          "type":"SPlayerInput*"
         }
       ],
       "return_type":"int",
@@ -37550,9 +37550,9 @@
         },
         {
           "len":44,
-          "name":"player_control",
+          "name":"player_input",
           "offset":48684,
-          "type":"SPlayerControl"
+          "type":"SPlayerInput"
         },
         {
           "len":80092,
@@ -39517,7 +39517,7 @@
     },
     {
       "alig":1,
-      "cat":"/Nocturne/Struct/Game",
+      "cat":"/Nocturne/Class/Game",
       "desc":"",
       "fields":[
         {
@@ -52769,66 +52769,6 @@
       "fields":[
         {
           "len":4,
-          "name":"walk_key",
-          "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"backup_key",
-          "offset":4,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"run_key",
-          "offset":8,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"fire_key",
-          "offset":12,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"use_item_key",
-          "offset":16,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"light_key",
-          "offset":20,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"draw_key",
-          "offset":24,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"jump_key",
-          "offset":28,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":32,
-      "name":"SActionKeyBindings",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
           "name":"count",
           "offset":0,
           "type":"int"
@@ -57965,14 +57905,14 @@
         },
         {
           "len":44,
-          "name":"controls",
+          "name":"player_input",
           "offset":9,
-          "type":"SPlayerControl"
+          "type":"SPlayerInput"
         }
       ],
       "importable":true,
       "len":53,
-      "name":"SNetPacket_PlayerControl",
+      "name":"SNetPacket_PlayerInput",
       "pack":false,
       "type":"struct"
     },
@@ -58223,9 +58163,9 @@
         },
         {
           "len":44,
-          "name":"controls",
+          "name":"player_input",
           "offset":76,
-          "type":"SPlayerControl"
+          "type":"SPlayerInput"
         }
       ],
       "importable":true,
@@ -58558,10 +58498,70 @@
       "desc":"",
       "fields":[
         {
-          "len":32,
-          "name":"action_bindings",
+          "len":4,
+          "name":"walk",
           "offset":0,
-          "type":"SActionKeyBindings"
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"backup",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"run",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"fire",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"use_item",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"light",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"draw",
+          "offset":24,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"jump",
+          "offset":28,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":32,
+      "name":"SPlayerActionState",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":32,
+          "name":"action_state",
+          "offset":0,
+          "type":"SPlayerActionState"
         },
         {
           "len":4,
@@ -58584,7 +58584,7 @@
       ],
       "importable":true,
       "len":44,
-      "name":"SPlayerControl",
+      "name":"SPlayerInput",
       "pack":false,
       "type":"struct"
     },
@@ -59580,9 +59580,9 @@
         },
         {
           "len":88,
-          "name":"player_controls",
+          "name":"player_input",
           "offset":12,
-          "type":"SPlayerControl[2]"
+          "type":"SPlayerInput[2]"
         }
       ],
       "importable":true,
@@ -67785,9 +67785,9 @@
         },
         {
           "len":53,
-          "name":"player_control",
+          "name":"player_input",
           "offset":0,
-          "type":"SNetPacket_PlayerControl"
+          "type":"SNetPacket_PlayerInput"
         },
         {
           "len":1032,

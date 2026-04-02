@@ -42898,7 +42898,7 @@
               }
             ]
           },
-          "type":"SPlayerControl*"
+          "type":"SPlayerInput*"
         }
       ]
     }
@@ -47544,7 +47544,7 @@
               }
             ]
           },
-          "type":"SPlayerControl*"
+          "type":"SPlayerInput*"
         }
       ],
       "ret_storage":{
@@ -60839,12 +60839,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_script.cpp_getActionKeyOffset_FUN_00559660",
+    "name":"core_script.cpp_getActionState_FUN_00559660",
     "ret":"int*",
     "vars":{
       "params":[
         {
-          "name":"action_bindings",
+          "name":"action_state",
           "storage":{
             "offset":4,
             "size":4,
@@ -60857,7 +60857,7 @@
               }
             ]
           },
-          "type":"SActionKeyBindings*"
+          "type":"SPlayerActionState*"
         },
         {
           "name":"action_name",
@@ -77048,13 +77048,14 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_stranger.cpp_CStranger_processFrame_FUN_005bb960",
     "ret":"void",
     "vars":{
       "locals":[
         {
-          "name":"iStack_14",
+          "name":"local_14",
           "storage":{
             "offset":-20,
             "size":4,
@@ -77070,7 +77071,7 @@
           "type":"int"
         },
         {
-          "name":"iStack_18",
+          "name":"local_18",
           "storage":{
             "offset":-24,
             "size":4,
@@ -77102,7 +77103,7 @@
           "type":"int"
         },
         {
-          "name":"fStack_20",
+          "name":"local_20",
           "storage":{
             "offset":-32,
             "size":4,
@@ -77115,10 +77116,10 @@
               }
             ]
           },
-          "type":"float"
+          "type":"int"
         },
         {
-          "name":"pUStack_24",
+          "name":"local_24",
           "storage":{
             "offset":-36,
             "size":4,
@@ -77134,7 +77135,7 @@
           "type":"UOrientationVector*"
         },
         {
-          "name":"pfStack_2c",
+          "name":"local_2c",
           "storage":{
             "offset":-44,
             "size":4,
@@ -77147,10 +77148,10 @@
               }
             ]
           },
-          "type":"float*"
+          "type":"float"
         },
         {
-          "name":"pCStack_30",
+          "name":"local_30",
           "storage":{
             "offset":-48,
             "size":4,
@@ -77166,7 +77167,7 @@
           "type":"CDeformableModelInstance*"
         },
         {
-          "name":"fStack_3c",
+          "name":"local_3c",
           "storage":{
             "offset":-60,
             "size":4,
@@ -77182,7 +77183,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_44",
+          "name":"local_44",
           "storage":{
             "offset":-68,
             "size":4,
@@ -77198,7 +77199,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_48",
+          "name":"local_48",
           "storage":{
             "offset":-72,
             "size":4,
@@ -77214,7 +77215,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_4c",
+          "name":"local_4c",
           "storage":{
             "offset":-76,
             "size":4,
@@ -77230,7 +77231,7 @@
           "type":"float"
         },
         {
-          "name":"pCStack_50",
+          "name":"local_50",
           "storage":{
             "offset":-80,
             "size":4,
@@ -77246,7 +77247,7 @@
           "type":"CMotionController*"
         },
         {
-          "name":"pCStack_54",
+          "name":"local_54",
           "storage":{
             "offset":-84,
             "size":4,
@@ -77262,7 +77263,7 @@
           "type":"CMotionController*"
         },
         {
-          "name":"iStack_58",
+          "name":"local_58",
           "storage":{
             "offset":-88,
             "size":4,
@@ -77278,7 +77279,7 @@
           "type":"int"
         },
         {
-          "name":"pCStack_5c",
+          "name":"local_5c",
           "storage":{
             "offset":-92,
             "size":4,
@@ -77294,7 +77295,7 @@
           "type":"CMotionController*"
         },
         {
-          "name":"iStack_60",
+          "name":"local_60",
           "storage":{
             "offset":-96,
             "size":4,
@@ -77310,7 +77311,7 @@
           "type":"int"
         },
         {
-          "name":"pCStack_64",
+          "name":"local_64",
           "storage":{
             "offset":-100,
             "size":4,
@@ -77326,7 +77327,7 @@
           "type":"CMotionController*"
         },
         {
-          "name":"pCStack_68",
+          "name":"local_68",
           "storage":{
             "offset":-104,
             "size":4,
@@ -77342,7 +77343,7 @@
           "type":"CMotionController*"
         },
         {
-          "name":"fStack_6c",
+          "name":"local_6c",
           "storage":{
             "offset":-108,
             "size":4,
@@ -77358,7 +77359,7 @@
           "type":"float"
         },
         {
-          "name":"pCStack_70",
+          "name":"local_70",
           "storage":{
             "offset":-112,
             "size":4,
@@ -77374,7 +77375,7 @@
           "type":"CAmmoBox*"
         },
         {
-          "name":"uStack_74",
+          "name":"local_74",
           "storage":{
             "offset":-116,
             "size":4,
@@ -77390,7 +77391,7 @@
           "type":"undefined4"
         },
         {
-          "name":"pCStack_78",
+          "name":"local_78",
           "storage":{
             "offset":-120,
             "size":4,
@@ -77406,23 +77407,55 @@
           "type":"CDemonActor*"
         },
         {
-          "name":"UStack_84",
+          "name":"local_7c",
+          "storage":{
+            "offset":-124,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[-0x7c]",
+                "offset":-124,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"local_80",
+          "storage":{
+            "offset":-128,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[-0x80]",
+                "offset":-128,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"local_84",
           "storage":{
             "offset":-132,
-            "size":12,
+            "size":4,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x84]",
                 "offset":-132,
-                "size":12
+                "size":4
               }
             ]
           },
-          "type":"UOrientationVector"
+          "type":"float"
         },
         {
-          "name":"aCStack_9c",
+          "name":"local_9c",
           "storage":{
             "offset":-156,
             "size":24,
@@ -77438,7 +77471,7 @@
           "type":"CVector3f[2]"
         },
         {
-          "name":"CStack_b0",
+          "name":"local_b0",
           "storage":{
             "offset":-176,
             "size":12,
@@ -77454,7 +77487,7 @@
           "type":"CVector3f"
         },
         {
-          "name":"fStack_b4",
+          "name":"local_b4",
           "storage":{
             "offset":-180,
             "size":4,
@@ -77470,39 +77503,23 @@
           "type":"float"
         },
         {
-          "name":"fStack_b8",
-          "storage":{
-            "offset":-184,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xb8]",
-                "offset":-184,
-                "size":4
-              }
-            ]
-          },
-          "type":"float"
-        },
-        {
-          "name":"auStack_c0",
+          "name":"local_c0",
           "storage":{
             "offset":-192,
-            "size":8,
+            "size":12,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0xc0]",
                 "offset":-192,
-                "size":8
+                "size":12
               }
             ]
           },
-          "type":"undefined1[8]"
+          "type":"CVector3f"
         },
         {
-          "name":"fStack_c4",
+          "name":"local_c4",
           "storage":{
             "offset":-196,
             "size":4,
@@ -77518,7 +77535,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_c8",
+          "name":"local_c8",
           "storage":{
             "offset":-200,
             "size":4,
@@ -77534,7 +77551,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_d0",
+          "name":"local_d0",
           "storage":{
             "offset":-208,
             "size":4,
@@ -77550,7 +77567,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_d4",
+          "name":"local_d4",
           "storage":{
             "offset":-212,
             "size":4,
@@ -77566,7 +77583,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_d8",
+          "name":"local_d8",
           "storage":{
             "offset":-216,
             "size":4,
@@ -77582,7 +77599,7 @@
           "type":"float"
         },
         {
-          "name":"CStack_ec",
+          "name":"local_ec",
           "storage":{
             "offset":-236,
             "size":12,
@@ -77598,7 +77615,7 @@
           "type":"CVector3f"
         },
         {
-          "name":"fStack_f0",
+          "name":"local_f0",
           "storage":{
             "offset":-240,
             "size":4,
@@ -77614,7 +77631,7 @@
           "type":"float"
         },
         {
-          "name":"CStack_fc",
+          "name":"local_fc",
           "storage":{
             "offset":-252,
             "size":12,
@@ -77630,7 +77647,7 @@
           "type":"CVector3f"
         },
         {
-          "name":"aCStack_114",
+          "name":"local_114",
           "storage":{
             "offset":-276,
             "size":24,
@@ -77646,7 +77663,7 @@
           "type":"CVector3f[2]"
         },
         {
-          "name":"CStack_128",
+          "name":"local_128",
           "storage":{
             "offset":-296,
             "size":12,
@@ -77662,7 +77679,7 @@
           "type":"CVector3f"
         },
         {
-          "name":"auStack_134",
+          "name":"local_134",
           "storage":{
             "offset":-308,
             "size":12,
@@ -77678,7 +77695,7 @@
           "type":"CVector3f"
         },
         {
-          "name":"aCStack_14c",
+          "name":"local_14c",
           "storage":{
             "offset":-332,
             "size":24,
@@ -77694,7 +77711,7 @@
           "type":"CVector3f[2]"
         },
         {
-          "name":"fStack_150",
+          "name":"local_150",
           "storage":{
             "offset":-336,
             "size":4,
@@ -77710,7 +77727,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_154",
+          "name":"local_154",
           "storage":{
             "offset":-340,
             "size":4,
@@ -77726,7 +77743,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_158",
+          "name":"local_158",
           "storage":{
             "offset":-344,
             "size":4,
@@ -77742,39 +77759,23 @@
           "type":"float"
         },
         {
-          "name":"fStack_160",
-          "storage":{
-            "offset":-352,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x160]",
-                "offset":-352,
-                "size":4
-              }
-            ]
-          },
-          "type":"float"
-        },
-        {
-          "name":"auStack_168",
+          "name":"local_168",
           "storage":{
             "offset":-360,
-            "size":8,
+            "size":12,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x168]",
                 "offset":-360,
-                "size":8
+                "size":12
               }
             ]
           },
-          "type":"undefined1[8]"
+          "type":"CVector3f"
         },
         {
-          "name":"CStack_174",
+          "name":"local_174",
           "storage":{
             "offset":-372,
             "size":12,
@@ -77790,7 +77791,7 @@
           "type":"CVector3f"
         },
         {
-          "name":"aCStack_194",
+          "name":"local_194",
           "storage":{
             "offset":-404,
             "size":24,
@@ -77806,7 +77807,7 @@
           "type":"CVector3f[2]"
         },
         {
-          "name":"fStack_198",
+          "name":"local_198",
           "storage":{
             "offset":-408,
             "size":4,
@@ -77822,7 +77823,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_19c",
+          "name":"local_19c",
           "storage":{
             "offset":-412,
             "size":4,
@@ -77838,7 +77839,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_1a0",
+          "name":"local_1a0",
           "storage":{
             "offset":-416,
             "size":4,
@@ -77854,7 +77855,7 @@
           "type":"float"
         },
         {
-          "name":"CStack_1ac",
+          "name":"local_1ac",
           "storage":{
             "offset":-428,
             "size":12,
@@ -77870,7 +77871,7 @@
           "type":"CVector3f"
         },
         {
-          "name":"fStack_1b0",
+          "name":"local_1b0",
           "storage":{
             "offset":-432,
             "size":4,
@@ -77886,7 +77887,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_1bc",
+          "name":"local_1bc",
           "storage":{
             "offset":-444,
             "size":4,
@@ -77902,7 +77903,7 @@
           "type":"float"
         },
         {
-          "name":"UStack_1c8",
+          "name":"local_1c8",
           "storage":{
             "offset":-456,
             "size":12,
@@ -77918,7 +77919,7 @@
           "type":"UOrientationVector"
         },
         {
-          "name":"fStack_1cc",
+          "name":"local_1cc",
           "storage":{
             "offset":-460,
             "size":4,
@@ -77934,7 +77935,7 @@
           "type":"float"
         },
         {
-          "name":"uStack_1d0",
+          "name":"local_1d0",
           "storage":{
             "offset":-464,
             "size":4,
@@ -77950,7 +77951,7 @@
           "type":"undefined4"
         },
         {
-          "name":"auStack_1dc",
+          "name":"local_1dc",
           "storage":{
             "offset":-476,
             "size":12,
@@ -77966,7 +77967,7 @@
           "type":"CVector3f"
         },
         {
-          "name":"aCStack_1f4",
+          "name":"local_1f4",
           "storage":{
             "offset":-500,
             "size":24,
@@ -77982,7 +77983,7 @@
           "type":"CVector3f[2]"
         },
         {
-          "name":"CStack_200",
+          "name":"local_200",
           "storage":{
             "offset":-512,
             "size":12,
@@ -77998,7 +77999,7 @@
           "type":"CVector3f"
         },
         {
-          "name":"CStack_20c",
+          "name":"local_20c",
           "storage":{
             "offset":-524,
             "size":12,
@@ -78014,7 +78015,7 @@
           "type":"CVector3f"
         },
         {
-          "name":"CStack_218",
+          "name":"local_218",
           "storage":{
             "offset":-536,
             "size":12,
@@ -78030,7 +78031,7 @@
           "type":"CVector3f"
         },
         {
-          "name":"CStack_224",
+          "name":"local_224",
           "storage":{
             "offset":-548,
             "size":12,
@@ -78046,7 +78047,7 @@
           "type":"CVector3f"
         },
         {
-          "name":"CStack_230",
+          "name":"local_230",
           "storage":{
             "offset":-560,
             "size":12,
@@ -78062,7 +78063,7 @@
           "type":"CVector3f"
         },
         {
-          "name":"CStack_248",
+          "name":"local_248",
           "storage":{
             "offset":-584,
             "size":24,
@@ -78078,7 +78079,7 @@
           "type":"CBoundingBox3D"
         },
         {
-          "name":"fStack_25c",
+          "name":"local_25c",
           "storage":{
             "offset":-604,
             "size":4,
@@ -78094,7 +78095,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_260",
+          "name":"local_260",
           "storage":{
             "offset":-608,
             "size":4,
@@ -78110,39 +78111,23 @@
           "type":"float"
         },
         {
-          "name":"fStack_264",
-          "storage":{
-            "offset":-612,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x264]",
-                "offset":-612,
-                "size":4
-              }
-            ]
-          },
-          "type":"float"
-        },
-        {
-          "name":"auStack_280",
+          "name":"local_280",
           "storage":{
             "offset":-640,
-            "size":28,
+            "size":32,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x280]",
                 "offset":-640,
-                "size":28
+                "size":32
               }
             ]
           },
-          "type":"undefined1[28]"
+          "type":"SInteractionInfo"
         },
         {
-          "name":"SStack_2bc",
+          "name":"local_2bc",
           "storage":{
             "offset":-700,
             "size":60,
@@ -78158,7 +78143,7 @@
           "type":"SDamageInfo"
         },
         {
-          "name":"fStack_2c0",
+          "name":"local_2c0",
           "storage":{
             "offset":-704,
             "size":4,
@@ -78174,7 +78159,7 @@
           "type":"float"
         },
         {
-          "name":"pfStack_2c4",
+          "name":"local_2c4",
           "storage":{
             "offset":-708,
             "size":4,
@@ -78187,10 +78172,10 @@
               }
             ]
           },
-          "type":"float*"
+          "type":"float"
         },
         {
-          "name":"fStack_2d0",
+          "name":"local_2d0",
           "storage":{
             "offset":-720,
             "size":4,
@@ -78206,7 +78191,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_2d8",
+          "name":"local_2d8",
           "storage":{
             "offset":-728,
             "size":4,
@@ -78222,7 +78207,7 @@
           "type":"float"
         },
         {
-          "name":"uStack_2dc",
+          "name":"local_2dc",
           "storage":{
             "offset":-732,
             "size":4,
@@ -78235,7 +78220,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"uint"
         }
       ],
       "params":[

@@ -73,9 +73,9 @@ void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_00543bb0(CNetGame *thi
   local_28 = this_ptr->players[0].state_change_time;
   local_24 = this_ptr->players[0].ready_flag;
   local_20 = this_ptr->players[0].sim_frame_index;
-  local_1c = this_ptr->players[0].controls.action_bindings.walk_key;
-  local_18 = this_ptr->players[0].controls.action_bindings.backup_key;
-  local_14 = this_ptr->players[0].controls.action_bindings.run_key;
+  local_1c = this_ptr->players[0].player_input.action_state.walk;
+  local_18 = this_ptr->players[0].player_input.action_state.backup;
+  local_14 = this_ptr->players[0].player_input.action_state.run;
   pSVar2 = other;
   for (iVar1 = 0x1e; iVar1 != 0; iVar1 = iVar1 + -1) {
     this_ptr->connection_type = *(EConnectionType *)pSVar2->name;

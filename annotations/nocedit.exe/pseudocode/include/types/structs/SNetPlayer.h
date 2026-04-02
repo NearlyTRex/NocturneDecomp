@@ -4,7 +4,7 @@
 #include "system/basetypes.h"
 #include "types/enums/EHeroType.h"
 #include "types/structs/SNetworkAddr.h"
-#include "types/structs/SPlayerControl.h"
+#include "types/structs/SPlayerInput.h"
 
 // Structure: SNetPlayer
 // Ghidra size: 0x78 (120 bytes)
@@ -23,6 +23,6 @@ typedef struct SNetPlayer {
     uint state_change_time; // 0x40
     int ready_flag; // 0x44
     int sim_frame_index; // 0x48
-    SPlayerControl controls; // 0x4c
+    SPlayerInput player_input; // 0x4c
 } SNetPlayer;
 

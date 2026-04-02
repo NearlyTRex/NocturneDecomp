@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * __cdecl core_script_cpp_getActionKeyOffset_FUN_00559660(SActionKeyBindings *action_bindings,char *action_name)
+; int * __cdecl core_script_cpp_getActionState_FUN_00559660(SPlayerActionState *action_state,char *action_name)
 ;
 ; Parameters:
-; SActionKeyBindings * Stack[0x4]:4   action_bindings
+; SPlayerActionState * Stack[0x4]:4   action_state
 ; char *           Stack[0x8]:4   action_name
 ;
 ; XREF[1]:
@@ -28,7 +28,7 @@
 section .text
 
     PUSH EBX                            ; 00559660
-        ;   Label: core_script.cpp_getActionKeyOffset_FUN_00559660
+        ;   Label: core_script.cpp_getActionState_FUN_00559660
     PUSH ESI                            ; 00559661
     MOV EBX,dword ptr [ESP + 0xc]       ; 00559662
     MOV ESI,dword ptr [ESP + 0x10]      ; 00559666

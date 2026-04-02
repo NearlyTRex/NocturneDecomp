@@ -38,7 +38,7 @@
 #include "types/structs/SInteractionInfo.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SNetworkAddr.h"
-#include "types/structs/SPlayerControl.h"
+#include "types/structs/SPlayerInput.h"
 #include "types/structs/SWaterVertex.h"
 #include "types/unions/UOrientationVector.h"
 
@@ -113,7 +113,7 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_005e2d50(CTurret *this_
 int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_005e3280(CTurret *this_ptr,CVector3f *target_pos,float delta_time);
 void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_005e3440(CTurret *this_ptr,SInteractionInfo *interaction_info);
 int __cdecl core_turret_cpp_CTurret_startInteraction_FUN_005e34b0(CTurret *this_ptr,CDemonActor *user);
-int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0(CTurret *this_ptr,UOrientationVector *user_orientation,SPlayerControl *player_control );
+int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0(CTurret *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control);
 void __cdecl core_turret_cpp_CTurret_stopInteraction_FUN_005e3540(CTurret *this_ptr,CDemonActor *user);
 void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_005e3560(CTurret *this_ptr,float delta_time);
 float __cdecl core_turret_cpp_CTurret_getDamage_FUN_005e36f0(CTurret *this_ptr);

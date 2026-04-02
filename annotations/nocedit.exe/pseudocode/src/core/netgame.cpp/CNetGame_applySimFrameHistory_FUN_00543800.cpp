@@ -28,19 +28,19 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGam
     do {
       iVar1 = *(int *)((int)g_HeroActors + iVar4);
       iVar4 = iVar4 + 4;
-      *(int *)(iVar1 + 0xbe2c) = pSVar2->player_controls[0].action_bindings.walk_key;
-      *(int *)(iVar1 + 0xbe30) = pSVar2->player_controls[0].action_bindings.backup_key;
-      *(int *)(iVar1 + 0xbe34) = pSVar2->player_controls[0].action_bindings.run_key;
-      *(int *)(iVar1 + 0xbe38) = pSVar2->player_controls[0].action_bindings.fire_key;
-      *(int *)(iVar1 + 0xbe3c) = pSVar2->player_controls[0].action_bindings.use_item_key;
-      *(int *)(iVar1 + 0xbe40) = pSVar2->player_controls[0].action_bindings.light_key;
-      *(int *)(iVar1 + 0xbe44) = pSVar2->player_controls[0].action_bindings.draw_key;
-      *(int *)(iVar1 + 0xbe48) = pSVar2->player_controls[0].action_bindings.jump_key;
-      *(float *)(iVar1 + 0xbe4c) = pSVar2->player_controls[0].strafe_speed;
-      *(float *)(iVar1 + 0xbe50) = pSVar2->player_controls[0].turn_speed;
-      *(float *)(iVar1 + 0xbe54) = pSVar2->player_controls[0].look_up_down_speed;
+      *(int *)(iVar1 + 0xbe2c) = pSVar2->player_input[0].action_state.walk;
+      *(int *)(iVar1 + 0xbe30) = pSVar2->player_input[0].action_state.backup;
+      *(int *)(iVar1 + 0xbe34) = pSVar2->player_input[0].action_state.run;
+      *(int *)(iVar1 + 0xbe38) = pSVar2->player_input[0].action_state.fire;
+      *(int *)(iVar1 + 0xbe3c) = pSVar2->player_input[0].action_state.use_item;
+      *(int *)(iVar1 + 0xbe40) = pSVar2->player_input[0].action_state.light;
+      *(int *)(iVar1 + 0xbe44) = pSVar2->player_input[0].action_state.draw;
+      *(int *)(iVar1 + 0xbe48) = pSVar2->player_input[0].action_state.jump;
+      *(float *)(iVar1 + 0xbe4c) = pSVar2->player_input[0].strafe_speed;
+      *(float *)(iVar1 + 0xbe50) = pSVar2->player_input[0].turn_speed;
+      *(float *)(iVar1 + 0xbe54) = pSVar2->player_input[0].look_up_down_speed;
       iVar3 = iVar3 + 1;
-      pSVar2 = (SSimFrame *)&pSVar2->player_controls[0].strafe_speed;
+      pSVar2 = (SSimFrame *)&pSVar2->player_input[0].strafe_speed;
     } while (iVar3 < this_ptr->player_count);
   }
   this_ptr->players[this_ptr->local_player_index].sim_frame_index = sim_frame->sequence_number + 1;

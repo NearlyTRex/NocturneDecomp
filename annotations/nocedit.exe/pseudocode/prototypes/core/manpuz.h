@@ -181,7 +181,7 @@ int __cdecl CMirrorHack::startInteraction(CMirrorHack *this_ptr,CDemonActor *use
 
 // Original: core_manpuz.cpp_CMirrorHack_updateInteraction_FUN_0050b360
 // Address: 0050b360
-int __cdecl CMirrorHack::updateInteraction(CMirrorHack *this_ptr,UOrientationVector *user_orientation,SPlayerControl *player_control);
+int __cdecl CMirrorHack::updateInteraction(CMirrorHack *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control);
 
 // Original: core_manpuz.cpp_CMirrorHack_stopUsing_FUN_0050b3c0
 // Address: 0050b3c0

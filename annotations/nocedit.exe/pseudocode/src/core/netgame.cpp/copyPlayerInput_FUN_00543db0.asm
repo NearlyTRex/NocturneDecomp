@@ -1,18 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_netgame_cpp_copyPlayerControls_FUN_00543db0(SPlayerControl *dest,SPlayerControl *src)
+; void __cdecl core_netgame_cpp_copyPlayerInput_FUN_00543db0(SPlayerInput *dest,SPlayerInput *src)
 ;
 ; Parameters:
-; SPlayerControl * Stack[0x4]:4   dest
-; SPlayerControl * Stack[0x8]:4   src
+; SPlayerInput *   Stack[0x4]:4   dest
+; SPlayerInput *   Stack[0x8]:4   src
 ;
 ; *****************************************************************************
 
 section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00543db0
-        ;   Label: core_netgame.cpp_copyPlayerControls_FUN_00543db0
+        ;   Label: core_netgame.cpp_copyPlayerInput_FUN_00543db0
     MOV EDX,dword ptr [ESP + 0x8]       ; 00543db4
     MOV ECX,dword ptr [EDX]             ; 00543db8
     MOV dword ptr [EAX],ECX             ; 00543dba

@@ -10,7 +10,7 @@ Total functions: 6454
 Clean functions: 5071 (78.6%)
 Functions with suspects: 1383 (21.4%)
 
-Total suspect patterns: 13695
+Total suspect patterns: 13665
 Average suspects per function: 2.12
 
 Virtual files: 214 total, 46 at 100%, 83 at 90%+
@@ -18,19 +18,19 @@ Virtual files: 214 total, 46 at 100%, 83 at 90%+
 Pseudocode lines:
   Min: 4, Max: 3416, Average: 47.8
 
-Average complexity score: 71.2
+Average complexity score: 71.1
 
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6454
-Successful: 6106 (94.6%)
-Failed: 348
+Successful: 6112 (94.7%)
+Failed: 342
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   decompiler_intrinsic      6777
-  pointer_cast              4167
-  unknown_field             831
+  pointer_cast              4168
+  unknown_field             821
   nonstandard_int           267
   warning_inlined_function  261
   stack_param               238
@@ -42,10 +42,10 @@ SUSPECT PATTERN BREAKDOWN
   param_count_too_few       81
   warning_unreachable       75
   unnamed_param             73
-  suspect_float             53
   param_count_too_many      36
   mmx_assembly              34
   negative_offset           34
+  suspect_float             32
   format_string_mismatch    24
   undefined_ram             24
   byvalue_struct_passing    21
@@ -136,11 +136,11 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2080, suspects: 19, lines: 1865)
   004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 2053, suspects: 97, lines: 1053)
   005b9c10: core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (score: 1941, suspects: 119, lines: 711)
-  005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1865, suspects: 68, lines: 1150)
   004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1816, suspects: 7, lines: 1726)
   00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 1667, suspects: 73, lines: 917)
   004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1659, suspects: 6, lines: 1584)
   005ca590: shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (score: 1651, suspects: 113, lines: 506)
+  005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1545, suspects: 38, lines: 1140)
   005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (score: 1483, suspects: 101, lines: 448)
   005d0340: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340 (score: 1441, suspects: 126, lines: 171)
   004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 1406, suspects: 49, lines: 911)
@@ -185,7 +185,7 @@ FUNCTIONS BY SUSPECT TYPE
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
     ... and 755 more
 
-  unknown_field (91 functions):
+  unknown_field (90 functions):
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     0043e530: support_codec.cpp_readBitsFromStream_FUN_0043e530
     00441040: engine_colquant.c_computeWeightedColorDistance_FUN_00441040
@@ -196,7 +196,7 @@ FUNCTIONS BY SUSPECT TYPE
     00440c80: engine_colquant.c_partitionByGreen_FUN_00440c80
     00441790: engine_colquant.c_doubleMax_FUN_00441790
     00552a40: engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
-    ... and 81 more
+    ... and 80 more
 
   nonstandard_int (22 functions):
     004ce240: engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240
@@ -341,19 +341,6 @@ FUNCTIONS BY SUSPECT TYPE
     0040e3b0: core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
     ... and 10 more
 
-  suspect_float (21 functions):
-    005401e0: core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-    004bed00: core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_004bed00
-    00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
-    0049a640: core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640
-    0049a800: core_dtri.cpp_rayTriangleIntersection_FUN_0049a800
-    005dda90: core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90
-    00529ed0: core_moon.cpp_CMoon_render_FUN_00529ed0
-    004c25c0: core_fire.cpp_CLaserBeam_render_FUN_004c25c0
-    004ca110: core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
-    00570d60: core_set.cpp_CDemonSet_setGamma_FUN_00570d60
-    ... and 11 more
-
   param_count_too_many (36 functions):
     005e19d0: support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
     0050d970: engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
@@ -392,6 +379,19 @@ FUNCTIONS BY SUSPECT TYPE
     0056cf00: core_set.cpp_CDemonSet_renderTransparentActors_FUN_0056cf00
     0056cd60: core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60
     ... and 11 more
+
+  suspect_float (20 functions):
+    005401e0: core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
+    004bed00: core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_004bed00
+    00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
+    0049a640: core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640
+    0049a800: core_dtri.cpp_rayTriangleIntersection_FUN_0049a800
+    005dda90: core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90
+    00529ed0: core_moon.cpp_CMoon_render_FUN_00529ed0
+    004c25c0: core_fire.cpp_CLaserBeam_render_FUN_004c25c0
+    004ca110: core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
+    00570d60: core_set.cpp_CDemonSet_setGamma_FUN_00570d60
+    ... and 10 more
 
   format_string_mismatch (11 functions):
     00534d40: sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40

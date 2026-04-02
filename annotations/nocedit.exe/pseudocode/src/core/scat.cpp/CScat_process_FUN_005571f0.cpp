@@ -101,10 +101,10 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
         if (iVar7 != 0) {
           desired_state_index = 7;
         }
-        if ((this_ptr->base).player_control.action_bindings.walk_key != 0) {
+        if ((this_ptr->base).player_input.action_state.walk != 0) {
           iVar7 = core_scat_cpp_CScat_isWeaponReady_FUN_00558010(this_ptr);
           if (iVar7 == 0) {
-            if ((this_ptr->base).player_control.action_bindings.run_key == 0) {
+            if ((this_ptr->base).player_input.action_state.run == 0) {
               desired_state_index = 1;
             }
             else {
@@ -115,7 +115,7 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
             desired_state_index = 9;
           }
         }
-        if ((this_ptr->base).player_control.action_bindings.backup_key != 0) {
+        if ((this_ptr->base).player_input.action_state.backup != 0) {
           iVar7 = core_scat_cpp_CScat_isWeaponReady_FUN_00558010(this_ptr);
           if (iVar7 == 0) {
             desired_state_index = 3;
@@ -124,20 +124,19 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
             desired_state_index = 10;
           }
         }
-        if (((((this_ptr->base).player_control.action_bindings.fire_key != 0) &&
-             (this_ptr->guns_drawn != 0)) &&
-            (pCVar6 = this_ptr->weapon_actor, pCVar6 != (CWeapon *)0x0)) &&
+        if (((((this_ptr->base).player_input.action_state.fire != 0) && (this_ptr->guns_drawn != 0))
+            && (pCVar6 = this_ptr->weapon_actor, pCVar6 != (CWeapon *)0x0)) &&
            (iVar7 = (*(((pCVar6->base).vtable._uw)->_uw).isReadyToFire)(pCVar6), iVar7 != 0)) {
           (*(((this_ptr->weapon_actor->base).vtable._uw)->_uw).fire)(this_ptr->weapon_actor);
           pCVar6 = this_ptr->weapon_actor;
-          (this_ptr->base).player_control.action_bindings.fire_key = 0;
+          (this_ptr->base).player_input.action_state.fire = 0;
           if (pCVar6->weapon_type == 8) {
             desired_state_index = 0xb;
           }
         }
         pCVar2 = &(this_ptr->base).base.model;
         (this_ptr->base).base.turn_angle_accumulator =
-             (this_ptr->base).player_control.turn_speed * (this_ptr->base).base.turn_speed +
+             (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed +
              (this_ptr->base).base.turn_angle_accumulator;
         pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                             (&pCVar2->motion_controller);
@@ -145,8 +144,8 @@ void __cdecl core_scat_cpp_CScat_process_FUN_005571f0(CScat *this_ptr,float delt
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&pCVar2->motion_controller,desired_state_index,1);
         }
-        if ((this_ptr->base).player_control.action_bindings.draw_key != 0) {
-          (this_ptr->base).player_control.action_bindings.draw_key = 0;
+        if ((this_ptr->base).player_input.action_state.draw != 0) {
+          (this_ptr->base).player_input.action_state.draw = 0;
           (*(((this_ptr->base).base.base.vtable._uh)->_uh).drawWeapon)
                     (&this_ptr->base,SUB14(this_ptr->guns_drawn == 0,0));
         }
@@ -260,7 +259,7 @@ LAB_005573f5:
     }
     else {
       if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) goto LAB_005573f5;
-      if ((this_ptr->base).player_control.action_bindings.fire_key == 0) goto LAB_00557408;
+      if ((this_ptr->base).player_input.action_state.fire == 0) goto LAB_00557408;
       iVar7 = 0xf;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

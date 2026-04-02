@@ -43,7 +43,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float del
   if ((this_ptr->base).ai_task == HERO_TASK_STAND) {
     return;
   }
-  memset(&(this_ptr->base).player_control,0,0x2c);
+  memset(&(this_ptr->base).player_input,0,0x2c);
   pCVar1 = g_HeroActors[g_LocalHeroIndex];
   local_3c.x = (this_ptr->base).base.base.location.position.x -
                (pCVar1->base).base.location.position.x;
@@ -64,7 +64,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float del
     }
   }
   if (iVar7 != this_ptr->guns_drawn) {
-    (this_ptr->base).player_control.action_bindings.draw_key = 1;
+    (this_ptr->base).player_input.action_state.draw = 1;
   }
   local_60.x = (this_ptr_01->base).base.location.position.x -
                (this_ptr->base).base.base.location.position.x;
@@ -88,7 +88,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float del
       pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller);
       if ((pSVar5->state_index == 7) && (this_ptr->guns_drawn != 0)) {
-        (this_ptr->base).player_control.action_bindings.fire_key = 1;
+        (this_ptr->base).player_input.action_state.fire = 1;
       }
 LAB_00557a94:
       if (local_2c == 0) goto LAB_00557b63;
@@ -98,13 +98,13 @@ LAB_00557a94:
     if ((this_ptr->guns_drawn != 0) && (iVar7 != 0)) {
       if (((float)0.90000000000000002 < (this_ptr->base).base.layer_action_t) &&
          (this_ptr->aim_converged != 0)) {
-        (this_ptr->base).player_control.action_bindings.fire_key = 1;
+        (this_ptr->base).player_input.action_state.fire = 1;
       }
       core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00428d80
                 ((CCharacter *)this_ptr,&(this_ptr_01->base).base.location.position);
     }
-    (this_ptr->base).player_control.action_bindings.run_key = 0;
-    (this_ptr->base).player_control.action_bindings.walk_key = 0;
+    (this_ptr->base).player_input.action_state.run = 0;
+    (this_ptr->base).player_input.action_state.walk = 0;
     goto LAB_00557a94;
   }
   this_ptr_00 = (*((this_ptr_01->base).base.vtable._ub)->getPathMap)((CDemonActor *)this_ptr_01);
@@ -119,17 +119,17 @@ LAB_00557a94:
                           (CStack_54.y - (this_ptr->base).base.base.orient.vec.y);
     fVar3 = fStack_18 * (float)0.31830988619288902 * (float)4;
     fStack_24 = -local_20;
-    (this_ptr->base).player_control.turn_speed = fVar3;
+    (this_ptr->base).player_input.turn_speed = fVar3;
     if (fVar3 < fStack_24) {
-      (this_ptr->base).player_control.turn_speed = fStack_24;
+      (this_ptr->base).player_input.turn_speed = fStack_24;
     }
-    if (local_20 < (this_ptr->base).player_control.turn_speed) {
-      (this_ptr->base).player_control.turn_speed = local_20;
+    if (local_20 < (this_ptr->base).player_input.turn_speed) {
+      (this_ptr->base).player_input.turn_speed = local_20;
     }
     if ((float)10 <= local_7c) {
-      (this_ptr->base).player_control.action_bindings.run_key = 1;
+      (this_ptr->base).player_input.action_state.run = 1;
     }
-    (this_ptr->base).player_control.action_bindings.walk_key = 1;
+    (this_ptr->base).player_input.action_state.walk = 1;
   }
 LAB_00557b63:
   local_78.x = (this_ptr_01->base).base.location.position.x -

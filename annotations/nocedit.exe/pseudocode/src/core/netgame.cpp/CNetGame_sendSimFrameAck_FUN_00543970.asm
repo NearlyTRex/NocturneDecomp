@@ -6,7 +6,7 @@
 ; Parameters:
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; SNetPacket_PlayerControl Stack[-0x48]:53  local_48
+; SNetPacket_PlayerInput Stack[-0x48]:53  local_48
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 at 00543649

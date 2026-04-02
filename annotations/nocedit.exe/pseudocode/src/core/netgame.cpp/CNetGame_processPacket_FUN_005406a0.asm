@@ -1048,7 +1048,7 @@ section .text
         ;   Label: LAB_0054106f
     ADD ESI,dword ptr [ESP + 0xcc]      ; 00541072
     MOV EAX,dword ptr [ESP + 0xd8]      ; 00541079
-    LEA EDI,[ESI + 0xc]                 ; 00541080 | g_SimFrameHistory[0].player_controls[0].action_bindings.walk_key
+    LEA EDI,[ESI + 0xc]                 ; 00541080 | g_SimFrameHistory[0].player_input[0].action_state.walk
     MOV ESI,dword ptr [ESP + 0xd8]      ; 00541083
     JMP 0x03fc521d                      ; 0054108a
         ;   XREF to: 03fc521d (UNCONDITIONAL_JUMP)  ; LAB_03fc521d

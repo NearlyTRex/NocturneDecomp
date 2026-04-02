@@ -2,28 +2,28 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "type_error",
-        "column": 15,
-        "line": 133,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
         "category": "format_error",
         "column": 81,
-        "line": 181,
+        "line": 178,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 84,
-        "line": 190,
+        "line": 187,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "cast_error",
-        "column": 39,
-        "line": 373,
+        "column": 32,
+        "line": 370,
         "message": "C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 41,
+        "line": 372,
+        "message": "cannot cast from type 'float' to pointer type 'CMotionController *'"
       },
       {
         "category": "cast_error",
@@ -34,85 +34,85 @@
       {
         "category": "cast_error",
         "column": 41,
-        "line": 378,
+        "line": 379,
         "message": "cannot cast from type 'float' to pointer type 'CMotionController *'"
       },
       {
         "category": "format_error",
         "column": 44,
-        "line": 470,
+        "line": 467,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "type_error",
-        "column": 26,
-        "line": 486,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 26,
-        "line": 487,
-        "message": "member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union"
       },
       {
         "category": "cast_error",
         "column": 35,
-        "line": 497,
+        "line": 493,
         "message": "cannot cast from type 'float' to pointer type 'UOrientationVector *'"
       },
       {
         "category": "cast_error",
-        "column": 49,
-        "line": 500,
+        "column": 74,
+        "line": 495,
         "message": "C-style cast from 'UOrientationVector *' to 'float' is not allowed"
       },
       {
         "category": "cast_error",
-        "column": 23,
-        "line": 507,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
+        "column": 26,
+        "line": 567,
+        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       },
       {
         "category": "cast_error",
-        "column": 23,
-        "line": 507,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
+        "column": 28,
+        "line": 574,
+        "message": "C-style cast from 'CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "cast_error",
-        "column": 23,
-        "line": 507,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
+        "column": 64,
+        "line": 597,
+        "message": "cannot cast from type 'float' to pointer type 'CStranger *'"
       },
       {
         "category": "cast_error",
-        "column": 30,
-        "line": 508,
-        "message": "cannot cast from type 'float' to pointer type 'float *'"
+        "column": 22,
+        "line": 608,
+        "message": "cannot cast from type 'float' to pointer type 'UOrientationVector *'"
       },
       {
         "category": "cast_error",
-        "column": 21,
-        "line": 509,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
+        "column": 15,
+        "line": 611,
+        "message": "C-style cast from 'UOrientationVector *' to 'float' is not allowed"
       },
       {
         "category": "cast_error",
-        "column": 43,
-        "line": 509,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
+        "column": 24,
+        "line": 612,
+        "message": "cannot cast from type 'float' to pointer type 'UOrientationVector *'"
       },
       {
         "category": "cast_error",
-        "column": 43,
-        "line": 510,
-        "message": "C-style cast from 'float *' to 'float' is not allowed"
+        "column": 37,
+        "line": 614,
+        "message": "C-style cast from 'UOrientationVector *' to 'float' is not allowed"
       },
       {
         "category": "cast_error",
-        "column": 21,
-        "line": 512,
+        "column": 24,
+        "line": 615,
+        "message": "cannot cast from type 'float' to pointer type 'UOrientationVector *'"
+      },
+      {
+        "category": "cast_error",
+        "column": 81,
+        "line": 618,
+        "message": "C-style cast from 'UOrientationVector *' to 'float' is not allowed"
+      },
+      {
+        "category": "cast_error",
+        "column": 24,
+        "line": 672,
         "message": "C-style cast from 'float *' to 'float' is not allowed"
       }
     ],
@@ -121,23 +121,21 @@
   },
   "complexity": {
     "assembly_lines": 2746,
-    "complexity_score": 1865,
+    "complexity_score": 1545,
     "cross_reference_count": 1,
     "function_call_count": 50,
     "global_count": 68,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1150,
-    "suspect_count": 68,
+    "pseudocode_lines": 1140,
+    "suspect_count": 38,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
       "pointer_cast",
       "stack_param",
-      "sub84_truncation",
-      "suspect_float",
-      "unknown_field"
+      "sub84_truncation"
     ],
-    "total_lines": 3896
+    "total_lines": 3886
   },
   "cross_references": [
     {
@@ -930,500 +928,493 @@
     "variables": [
       {
         "is_param": false,
-        "name": "uStack_2dc",
+        "name": "local_2dc",
         "offset": -732,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
-        "name": "fStack_2d8",
+        "name": "local_2d8",
         "offset": -728,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_2d0",
+        "name": "local_2d0",
         "offset": -720,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "pfStack_2c4",
+        "name": "local_2c4",
         "offset": -708,
         "size": 4,
-        "type": "float *"
+        "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_2c0",
+        "name": "local_2c0",
         "offset": -704,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "SStack_2bc",
+        "name": "local_2bc",
         "offset": -700,
         "size": 60,
         "type": "SDamageInfo"
       },
       {
         "is_param": false,
-        "name": "auStack_280",
+        "name": "local_280",
         "offset": -640,
-        "size": 28,
-        "type": "undefined1[28]"
+        "size": 32,
+        "type": "SInteractionInfo"
       },
       {
         "is_param": false,
-        "name": "fStack_264",
-        "offset": -612,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": false,
-        "name": "fStack_260",
+        "name": "local_260",
         "offset": -608,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_25c",
+        "name": "local_25c",
         "offset": -604,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "CStack_248",
+        "name": "local_248",
         "offset": -584,
         "size": 24,
         "type": "CBoundingBox3D"
       },
       {
         "is_param": false,
-        "name": "CStack_230",
+        "name": "local_230",
         "offset": -560,
         "size": 12,
         "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "CStack_224",
+        "name": "local_224",
         "offset": -548,
         "size": 12,
         "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "CStack_218",
+        "name": "local_218",
         "offset": -536,
         "size": 12,
         "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "CStack_20c",
+        "name": "local_20c",
         "offset": -524,
         "size": 12,
         "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "CStack_200",
+        "name": "local_200",
         "offset": -512,
         "size": 12,
         "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "aCStack_1f4",
+        "name": "local_1f4",
         "offset": -500,
         "size": 24,
         "type": "CVector3f[2]"
       },
       {
         "is_param": false,
-        "name": "auStack_1dc",
+        "name": "local_1dc",
         "offset": -476,
         "size": 12,
         "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "uStack_1d0",
+        "name": "local_1d0",
         "offset": -464,
         "size": 4,
         "type": "undefined4"
       },
       {
         "is_param": false,
-        "name": "fStack_1cc",
+        "name": "local_1cc",
         "offset": -460,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "UStack_1c8",
+        "name": "local_1c8",
         "offset": -456,
         "size": 12,
         "type": "UOrientationVector"
       },
       {
         "is_param": false,
-        "name": "fStack_1bc",
+        "name": "local_1bc",
         "offset": -444,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_1b0",
+        "name": "local_1b0",
         "offset": -432,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "CStack_1ac",
+        "name": "local_1ac",
         "offset": -428,
         "size": 12,
         "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "fStack_1a0",
+        "name": "local_1a0",
         "offset": -416,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_19c",
+        "name": "local_19c",
         "offset": -412,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_198",
+        "name": "local_198",
         "offset": -408,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "aCStack_194",
+        "name": "local_194",
         "offset": -404,
         "size": 24,
         "type": "CVector3f[2]"
       },
       {
         "is_param": false,
-        "name": "CStack_174",
+        "name": "local_174",
         "offset": -372,
         "size": 12,
         "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "auStack_168",
+        "name": "local_168",
         "offset": -360,
-        "size": 8,
-        "type": "undefined1[8]"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "fStack_160",
-        "offset": -352,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": false,
-        "name": "fStack_158",
+        "name": "local_158",
         "offset": -344,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_154",
+        "name": "local_154",
         "offset": -340,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_150",
+        "name": "local_150",
         "offset": -336,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "aCStack_14c",
+        "name": "local_14c",
         "offset": -332,
         "size": 24,
         "type": "CVector3f[2]"
       },
       {
         "is_param": false,
-        "name": "auStack_134",
+        "name": "local_134",
         "offset": -308,
         "size": 12,
         "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "CStack_128",
+        "name": "local_128",
         "offset": -296,
         "size": 12,
         "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "aCStack_114",
+        "name": "local_114",
         "offset": -276,
         "size": 24,
         "type": "CVector3f[2]"
       },
       {
         "is_param": false,
-        "name": "CStack_fc",
+        "name": "local_fc",
         "offset": -252,
         "size": 12,
         "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "fStack_f0",
+        "name": "local_f0",
         "offset": -240,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "CStack_ec",
+        "name": "local_ec",
         "offset": -236,
         "size": 12,
         "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "fStack_d8",
+        "name": "local_d8",
         "offset": -216,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_d4",
+        "name": "local_d4",
         "offset": -212,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_d0",
+        "name": "local_d0",
         "offset": -208,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_c8",
+        "name": "local_c8",
         "offset": -200,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_c4",
+        "name": "local_c4",
         "offset": -196,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "auStack_c0",
+        "name": "local_c0",
         "offset": -192,
-        "size": 8,
-        "type": "undefined1[8]"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "fStack_b8",
-        "offset": -184,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": false,
-        "name": "fStack_b4",
+        "name": "local_b4",
         "offset": -180,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "CStack_b0",
+        "name": "local_b0",
         "offset": -176,
         "size": 12,
         "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "aCStack_9c",
+        "name": "local_9c",
         "offset": -156,
         "size": 24,
         "type": "CVector3f[2]"
       },
       {
         "is_param": false,
-        "name": "UStack_84",
+        "name": "local_84",
         "offset": -132,
-        "size": 12,
-        "type": "UOrientationVector"
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
-        "name": "pCStack_78",
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
         "offset": -120,
         "size": 4,
         "type": "CDemonActor *"
       },
       {
         "is_param": false,
-        "name": "uStack_74",
+        "name": "local_74",
         "offset": -116,
         "size": 4,
         "type": "undefined4"
       },
       {
         "is_param": false,
-        "name": "pCStack_70",
+        "name": "local_70",
         "offset": -112,
         "size": 4,
         "type": "CAmmoBox *"
       },
       {
         "is_param": false,
-        "name": "fStack_6c",
+        "name": "local_6c",
         "offset": -108,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "pCStack_68",
+        "name": "local_68",
         "offset": -104,
         "size": 4,
         "type": "CMotionController *"
       },
       {
         "is_param": false,
-        "name": "pCStack_64",
+        "name": "local_64",
         "offset": -100,
         "size": 4,
         "type": "CMotionController *"
       },
       {
         "is_param": false,
-        "name": "iStack_60",
+        "name": "local_60",
         "offset": -96,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": false,
-        "name": "pCStack_5c",
+        "name": "local_5c",
         "offset": -92,
         "size": 4,
         "type": "CMotionController *"
       },
       {
         "is_param": false,
-        "name": "iStack_58",
+        "name": "local_58",
         "offset": -88,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": false,
-        "name": "pCStack_54",
+        "name": "local_54",
         "offset": -84,
         "size": 4,
         "type": "CMotionController *"
       },
       {
         "is_param": false,
-        "name": "pCStack_50",
+        "name": "local_50",
         "offset": -80,
         "size": 4,
         "type": "CMotionController *"
       },
       {
         "is_param": false,
-        "name": "fStack_4c",
+        "name": "local_4c",
         "offset": -76,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_48",
+        "name": "local_48",
         "offset": -72,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_44",
+        "name": "local_44",
         "offset": -68,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "fStack_3c",
+        "name": "local_3c",
         "offset": -60,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": false,
-        "name": "pCStack_30",
+        "name": "local_30",
         "offset": -48,
         "size": 4,
         "type": "CDeformableModelInstance *"
       },
       {
         "is_param": false,
-        "name": "pfStack_2c",
+        "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "float *"
+        "type": "float"
       },
       {
         "is_param": false,
-        "name": "pUStack_24",
+        "name": "local_24",
         "offset": -36,
         "size": 4,
         "type": "UOrientationVector *"
       },
       {
         "is_param": false,
-        "name": "fStack_20",
+        "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "float"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -1434,14 +1425,14 @@
       },
       {
         "is_param": false,
-        "name": "iStack_18",
+        "name": "local_18",
         "offset": -24,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": false,
-        "name": "iStack_14",
+        "name": "local_14",
         "offset": -20,
         "size": 4,
         "type": "int"
@@ -1497,64 +1488,16 @@
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 126,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_c0._4_4_ = CStack_fc.y * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 163,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "UStack_84.vec.y = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 285,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "UStack_84.vec.y = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 289,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "UStack_84.vec.y = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 479,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "auStack_168._0_4_ = fStack_1b0 * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 480,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_168._4_4_ = CStack_1ac.x * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 490,
+      "line": 486,
       "match": "in_stack_fffffd14",
       "severity": "moderate",
-      "text": "in_stack_fffffd14 = (UOrientationVector *)pCVar17->y;",
+      "text": "in_stack_fffffd14 = (UOrientationVector *)pCVar16->y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 491,
+      "line": 487,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = (UOrientationVector *)0x5bd021;",
@@ -1562,31 +1505,31 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 493,
+      "line": 488,
       "match": "in_stack_fffffd14",
       "severity": "moderate",
-      "text": "((float)in_stack_fffffd14);",
+      "text": "local_2c4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((float)in_stack_fffffd14);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 497,
+      "line": 492,
       "match": "SQRT",
       "severity": "mild",
-      "text": "if ((((aCStack_9c[0].z - SQRT(CStack_fc.z * CStack_fc.z + CStack_fc.x * CStack_fc.x) <",
+      "text": "if ((((local_9c[0].z - SQRT(local_fc.z * local_fc.z + local_fc.x * local_fc.x) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 500,
+      "line": 495,
       "match": "ABS",
       "severity": "mild",
-      "text": "(ABS((float)pfStack_2c4) < (float)0.78539816337500001)) {",
+      "text": "(ABS(local_2c4) < (float)0.78539816337500001)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 508,
+      "line": 503,
       "match": "in_stack_fffffd14",
       "severity": "moderate",
       "text": "in_stack_fffffd14 = &(this_ptr->base).base.base.orient;",
@@ -1594,7 +1537,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 511,
+      "line": 506,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = (UOrientationVector *)this_ptr;",
@@ -1602,7 +1545,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 513,
+      "line": 508,
       "match": "in_stack_fffffd14",
       "severity": "moderate",
       "text": "((CCharacter *)this_ptr,in_stack_fffffd14);",
@@ -1610,7 +1553,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 568,
+      "line": 563,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = (UOrientationVector *)0x5bc90d;",
@@ -1618,15 +1561,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 569,
+      "line": 564,
       "match": "in_stack_fffffd14",
       "severity": "moderate",
-      "text": "in_stack_fffffd14 = pUStack_24;",
+      "text": "in_stack_fffffd14 = local_24;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 573,
+      "line": 568,
       "match": "in_stack_fffffd14",
       "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)0x5bceeb;",
@@ -1634,7 +1577,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 578,
+      "line": 573,
       "match": "in_stack_fffffd14",
       "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)0x23;",
@@ -1642,15 +1585,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 579,
+      "line": 574,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
-      "text": "in_stack_fffffd10 = pUStack_24;",
+      "text": "in_stack_fffffd10 = local_24;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 587,
+      "line": 582,
       "match": "in_stack_fffffd14",
       "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)0x0;",
@@ -1658,7 +1601,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 588,
+      "line": 583,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = (UOrientationVector *)&(this_ptr->base).base.model;",
@@ -1666,31 +1609,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 590,
+      "line": 585,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "((CMotionController *)in_stack_fffffd10,0,1);",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 595,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "if (((float)auStack_280._8_4_ == 0.0) || (this_ptr != (CStranger *)auStack_280._12_4_)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 595,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "if (((float)auStack_280._8_4_ == 0.0) || (this_ptr != (CStranger *)auStack_280._12_4_)) {",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 596,
+      "line": 592,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = (UOrientationVector *)0x5bce6e;",
@@ -1698,55 +1625,39 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 597,
+      "line": 593,
       "match": "in_stack_fffffd14",
       "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)this_ptr;",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 601,
-      "match": "._12_4_",
+      "description": "Complex pointer cast",
+      "line": 597,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pCVar10 = ((CHero *)auStack_280._12_4_)->nearby_interactive_actor;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 611,
-      "match": "._24_4_",
-      "severity": "mild",
-      "text": "if ((float)auStack_280._24_4_ < (float)pUStack_24) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 612,
-      "match": "._24_4_",
-      "severity": "mild",
-      "text": "pUStack_24 = (UOrientationVector *)auStack_280._24_4_;",
-      "type": "unknown_field"
+      "text": "iVar20 = *(int *)((int)local_280.distance_max + 0x1fbb0);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 626,
+      "line": 622,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
-      "text": "in_stack_fffffd10 = &UStack_1c8;",
+      "text": "in_stack_fffffd10 = &local_1c8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 629,
+      "line": 625,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
-      "text": "(pCVar10,in_stack_fffffd10,&(this_ptr->base).player_control);",
+      "text": "(pCVar9,in_stack_fffffd10,&(this_ptr->base).player_input);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 632,
+      "line": 628,
       "match": "in_stack_fffffd14",
       "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)0x5bceaf;",
@@ -1754,183 +1665,39 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 671,
+      "line": 666,
       "match": "in_stack_fffffd14",
       "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)0x5bcdfe;",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 713,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "auStack_c0._0_4_ = (this_ptr->ladder_offset).z * fStack_2c0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 720,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "(this_ptr->base).base.base.location.position.z = fVar5 + (float)auStack_c0._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 816,
-      "match": "9.80909e-45",
-      "severity": "mild",
-      "text": "if (fStack_20 == 9.80909e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 824,
-      "match": "1.12104e-44",
-      "severity": "mild",
-      "text": "if (fStack_20 == 1.12104e-44) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 833,
-      "match": "1.26117e-44",
-      "severity": "mild",
-      "text": "if (fStack_20 == 1.26117e-44) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 849,
-      "match": "1.4013e-44",
-      "severity": "mild",
-      "text": "else if (fStack_20 == 1.4013e-44) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 854,
-      "match": "1.54143e-44",
-      "severity": "mild",
-      "text": "else if (fStack_20 == 1.54143e-44) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 858,
-      "match": "1.68156e-44",
-      "severity": "mild",
-      "text": "else if (fStack_20 == 1.68156e-44) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 871,
-      "match": "1.82169e-44",
-      "severity": "mild",
-      "text": "else if (fStack_20 == 1.82169e-44) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 888,
-      "match": "1.96182e-44",
-      "severity": "mild",
-      "text": "if (fStack_20 != 1.96182e-44) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 889,
-      "match": "2.10195e-44",
-      "severity": "mild",
-      "text": "if (fStack_20 == 2.10195e-44) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 895,
-      "match": "2.24208e-44",
-      "severity": "mild",
-      "text": "if (fStack_20 == 2.24208e-44) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 926,
-      "match": "2.10195e-44",
-      "severity": "mild",
-      "text": "if (((fStack_20 == 2.10195e-44) || (fStack_20 == 1.26117e-44)) || (fStack_20 == 1.82169e-44)) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 926,
-      "match": "1.26117e-44",
-      "severity": "mild",
-      "text": "if (((fStack_20 == 2.10195e-44) || (fStack_20 == 1.26117e-44)) || (fStack_20 == 1.82169e-44)) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 926,
-      "match": "1.82169e-44",
-      "severity": "mild",
-      "text": "if (((fStack_20 == 2.10195e-44) || (fStack_20 == 1.26117e-44)) || (fStack_20 == 1.82169e-44)) {",
-      "type": "suspect_float"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 932,
+      "line": 923,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "uVar25 = SUB84(__BITCAST_UINT64((double)fVar18),0);",
+      "text": "uVar25 = SUB84(__BITCAST_UINT64((double)fVar17),0);",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 932,
+      "line": 923,
       "match": "SUB84",
       "severity": "mild",
-      "text": "uVar25 = SUB84(__BITCAST_UINT64((double)fVar18),0);",
+      "text": "uVar25 = SUB84(__BITCAST_UINT64((double)fVar17),0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 935,
-      "match": "1.82169e-44",
-      "severity": "mild",
-      "text": "if (((fStack_20 == 1.82169e-44) || (fStack_20 == 1.26117e-44)) ||",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 935,
-      "match": "1.26117e-44",
-      "severity": "mild",
-      "text": "if (((fStack_20 == 1.82169e-44) || (fStack_20 == 1.26117e-44)) ||",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 936,
-      "match": "2.10195e-44",
-      "severity": "mild",
-      "text": "(fStack_20 == 2.10195e-44)) goto LAB_005bd763;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 942,
+      "line": 932,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "(float)(((float10)__BITCAST_DOUBLE(CONCAT44(uStack_2dc,uVar25)) + (float10)-20) *",
+      "text": "(float)(((float10)__BITCAST_DOUBLE(CONCAT44(local_2dc,uVar25)) + (float10)-20) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 960,
+      "line": 950,
       "match": "in_stack_fffffd14",
       "severity": "moderate",
       "text": "in_stack_fffffd14 = (UOrientationVector *)0x1;",
@@ -1938,7 +1705,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 961,
+      "line": 951,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "in_stack_fffffd10 = (UOrientationVector *)0x11;",
@@ -1946,7 +1713,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 964,
+      "line": 954,
       "match": "in_stack_fffffd10",
       "severity": "moderate",
       "text": "(&(this_ptr->base).base.model.motion_controller,(int)in_stack_fffffd10,",
@@ -1954,58 +1721,42 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 965,
+      "line": 955,
       "match": "in_stack_fffffd14",
       "severity": "moderate",
       "text": "(int)in_stack_fffffd14);",
       "type": "stack_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 981,
-      "match": "4.2039e-45",
-      "severity": "mild",
-      "text": "if (fStack_20 == 4.2039e-45) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 986,
-      "match": "2.10195e-44",
-      "severity": "mild",
-      "text": "if (fStack_20 != 2.10195e-44) {",
-      "type": "suspect_float"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 1005,
+      "line": 995,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)UStack_84.vec.z + 8) = 0;",
+      "text": "*(uint *)((int)local_7c + 8) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1006,
+      "line": 996,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)UStack_84.vec.z + 4) = *(uint *)((int)UStack_84.vec.z + 8);",
+      "text": "*(uint *)((int)local_7c + 4) = *(uint *)((int)local_7c + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1006,
+      "line": 996,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)UStack_84.vec.z + 4) = *(uint *)((int)UStack_84.vec.z + 8);",
+      "text": "*(uint *)((int)local_7c + 4) = *(uint *)((int)local_7c + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1007,
+      "line": 997,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)UStack_84.vec.z = *(uint *)((int)UStack_84.vec.z + 4);",
+      "text": "*(uint *)local_7c = *(uint *)((int)local_7c + 4);",
       "type": "pointer_cast"
     },
     {
@@ -2014,7 +1765,7 @@
       "expected_args": 1,
       "format_string": "grabbedBy=%s\\n",
       "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 174,
+      "line_number": 171,
       "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"grabbedBy=%s\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -2025,7 +1776,7 @@
       "expected_args": 1,
       "format_string": "pushedObject=%s\\n",
       "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 183,
+      "line_number": 180,
       "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"pushedObject=%s\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

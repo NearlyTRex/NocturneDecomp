@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0(CTurret *this_ptr,UOrientationVector *user_orientation,SPlayerControl *player_control )
+; int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005e34d0(CTurret *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control)
 ;
 ; Parameters:
 ; CTurret *        Stack[0x4]:4   this_ptr
 ; UOrientationVector * Stack[0x8]:4   user_orientation
-; SPlayerControl * Stack[0xc]:4   player_control
+; SPlayerInput *   Stack[0xc]:4   player_control
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10

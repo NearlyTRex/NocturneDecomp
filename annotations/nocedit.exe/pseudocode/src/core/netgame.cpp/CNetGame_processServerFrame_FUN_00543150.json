@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 473,
-    "complexity_score": 294,
+    "complexity_score": 292,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 224,
+    "pseudocode_lines": 222,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 697
+    "total_lines": 695
   },
   "cross_references": [
     {
@@ -242,7 +242,7 @@
     },
     {
       "addr": "02f9c0f0",
-      "name": "g_SimFrameHistory[0].player_controls[0].strafe_speed",
+      "name": "g_SimFrameHistory[0].player_input[0].strafe_speed",
       "type": "undefined4",
       "value": null
     },
@@ -416,7 +416,7 @@
       "line": 76,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc) < iVar1) {",
+      "text": "if (*(int *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc) < iVar1) {",
       "type": "pointer_cast"
     },
     {
@@ -424,7 +424,7 @@
       "line": 79,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "((void *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc),pSVar4,",
+      "text": "((void *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc),pSVar4,",
       "type": "pointer_cast"
     },
     {
@@ -432,7 +432,7 @@
       "line": 94,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (iVar1 == *(int *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc)) {",
+      "text": "if (iVar1 == *(int *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc)) {",
       "type": "pointer_cast"
     },
     {
@@ -440,15 +440,15 @@
       "line": 96,
       "match": "(SSimFrame *)((int)",
       "severity": "mild",
-      "text": "pSVar4 = (SSimFrame *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc);",
+      "text": "pSVar4 = (SSimFrame *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 169,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (local_20 == *(int *)((int)g_SimFrameHistory[0].player_controls + iVar5 + -0xc))",
+      "text": "if (local_20 == *(int *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc))",
       "type": "pointer_cast"
     }
   ]

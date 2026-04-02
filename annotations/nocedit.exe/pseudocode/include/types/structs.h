@@ -5,8 +5,6 @@
 // =============================================================================
 // Auto-generated aggregate of all structs type definitions.
 
-#include "types/structs/CLodMeshPrecomputeEntry.h"
-#include "types/structs/SActionKeyBindings.h"
 #include "types/structs/SActorVarBlock.h"
 #include "types/structs/SAlphaEntry.h"
 #include "types/structs/SArmAimData.h"
@@ -123,7 +121,7 @@
 #include "types/structs/SNetPacket_ChatMessage.h"
 #include "types/structs/SNetPacket_GameSettings.h"
 #include "types/structs/SNetPacket_PlayerAnnounce.h"
-#include "types/structs/SNetPacket_PlayerControl.h"
+#include "types/structs/SNetPacket_PlayerInput.h"
 #include "types/structs/SNetPacket_PlayerState.h"
 #include "types/structs/SNetPacket_ServerAccept.h"
 #include "types/structs/SNetPacket_SimFrame.h"
@@ -136,7 +134,8 @@
 #include "types/structs/SPartInstanceData.h"
 #include "types/structs/SPlatformAttachment.h"
 #include "types/structs/SPlayer.h"
-#include "types/structs/SPlayerControl.h"
+#include "types/structs/SPlayerActionState.h"
+#include "types/structs/SPlayerInput.h"
 #include "types/structs/SPoint2i.h"
 #include "types/structs/SPolyDataFileRecord.h"
 #include "types/structs/SPolygonScreenData.h"

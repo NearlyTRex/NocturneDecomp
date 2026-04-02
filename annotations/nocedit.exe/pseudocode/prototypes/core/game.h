@@ -105,7 +105,7 @@ void __cdecl CGame::resetKeyState(CGame *this_ptr);
 
 // Original: core_game.cpp_CGame_processJoystickControls_FUN_004dc230
 // Address: 004dc230
-void __cdecl CGame::processJoystickControls(CGame *this_ptr,SPlayerControl *player_control);
+void __cdecl CGame::processJoystickControls(CGame *this_ptr,SPlayerInput *player_control);
 
 // Original: core_game.cpp_pollKeyStateOnChange_FUN_004dc270
 // Address: 004dc270
@@ -125,11 +125,11 @@ void __cdecl dampControlAxis(float *axis_value,float damp_time,float damp_rate);
 
 // Original: core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0
 // Address: 004dc3e0
-void __cdecl CGame::processKeyboardControls(CGame *this_ptr,SPlayerControl *player_control);
+void __cdecl CGame::processKeyboardControls(CGame *this_ptr,SPlayerInput *player_control);
 
 // Original: core_game.cpp_CGame_processMouseControls_FUN_004dccc0
 // Address: 004dccc0
-void __cdecl CGame::processMouseControls(CGame *this_ptr,SPlayerControl *player_control);
+void __cdecl CGame::processMouseControls(CGame *this_ptr,SPlayerInput *player_control);
 
 // Original: core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70
 // Address: 004dce70

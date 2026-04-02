@@ -34,7 +34,7 @@
 #include "types/structs/SNetPlayer.h"
 #include "types/structs/SNetworkAddr.h"
 #include "types/structs/SPlayer.h"
-#include "types/structs/SPlayerControl.h"
+#include "types/structs/SPlayerInput.h"
 #include "types/structs/SSimFrame.h"
 #include "types/unions/UNetPacket.h"
 
@@ -63,7 +63,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame 
 void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_00543150(CNetGame *this_ptr);
 void __cdecl core_netgame_cpp_CNetGame_processClientFrame_FUN_005435a0(CNetGame *this_ptr);
 void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_00543800(CNetGame *this_ptr,SSimFrame *sim_frame);
-SPlayerControl * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame *this_ptr);
+SPlayerInput * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame *this_ptr);
 void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_00543930(CNetGame *this_ptr,SNetworkAddr *dest_addr,int payload);
 void __cdecl core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(CNetGame *this_ptr);
 int __cdecl core_netgame_cpp_matchPacketSize_FUN_00543ab0(SNetPacketHeader *a,SNetPacketHeader *b);
@@ -84,7 +84,7 @@ SChatHistory * __cdecl core_netgame_cpp_SChatHistory_ctor_FUN_00543cc0(SChatHist
 SChatHistory * __cdecl core_netgame_cpp_SChatHistory_dtor_FUN_00543cd0(SChatHistory *this_ptr,uint flags);
 SNetPlayer * __cdecl core_netgame_cpp_SNetPlayer_ctor_FUN_00543ce0(SNetPlayer *this_ptr);
 void __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_00543cf0(SNetPlayer *this_ptr,SNetPlayer *other);
-void __cdecl core_netgame_cpp_copyPlayerControls_FUN_00543db0(SPlayerControl *dest,SPlayerControl *src);
+void __cdecl core_netgame_cpp_copyPlayerInput_FUN_00543db0(SPlayerInput *dest,SPlayerInput *src);
 void __cdecl core_netgame_cpp_copyNetAddr_FUN_00543e00(SNetworkAddr *dest,SNetworkAddr *src);
 int * __cdecl core_netgame_cpp_assignInt1_FUN_00543e20(int *dest,int *src);
 int * __cdecl core_netgame_cpp_assignInt2_FUN_00543e30(int *dest,int *src);

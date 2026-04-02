@@ -17,9 +17,9 @@ SSimFrame * __cdecl core_netgame_cpp_allocSimFrame_FUN_0053f5a0(int sequence_num
   if (0 < g_SimFrameCount) {
     iVar1 = 0;
     do {
-      if (sequence_number == *(int *)((int)g_SimFrameHistory[0].player_controls + iVar1 + -0xc)) {
+      if (sequence_number == *(int *)((int)g_SimFrameHistory[0].player_input + iVar1 + -0xc)) {
         if (-1 < iVar2) {
-          return (SSimFrame *)((int)g_SimFrameHistory[0].player_controls + iVar1 + -0xc);
+          return (SSimFrame *)((int)g_SimFrameHistory[0].player_input + iVar1 + -0xc);
         }
         break;
       }

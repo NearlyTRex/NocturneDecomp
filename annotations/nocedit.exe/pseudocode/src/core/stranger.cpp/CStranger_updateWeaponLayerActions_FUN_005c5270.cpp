@@ -107,7 +107,7 @@ LAB_005c52fa:
         if (70.0f < fVar3) {
           this_ptr->aim_speed_factor = 70.0f;
         }
-        if ((this_ptr->base).player_control.action_bindings.fire_key != 0) {
+        if ((this_ptr->base).player_input.action_state.fire != 0) {
           return;
         }
         goto switchD_005c56f5_caseD_8;

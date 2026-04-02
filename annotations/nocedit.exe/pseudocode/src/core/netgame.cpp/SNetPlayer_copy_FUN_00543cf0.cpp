@@ -28,17 +28,16 @@ void __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_00543cf0(SNetPlayer *this_ptr,
   this_ptr->state_change_time = other->state_change_time;
   this_ptr->ready_flag = other->ready_flag;
   this_ptr->sim_frame_index = other->sim_frame_index;
-  (this_ptr->controls).action_bindings.walk_key = (other->controls).action_bindings.walk_key;
-  (this_ptr->controls).action_bindings.backup_key = (other->controls).action_bindings.backup_key;
-  (this_ptr->controls).action_bindings.run_key = (other->controls).action_bindings.run_key;
-  (this_ptr->controls).action_bindings.fire_key = (other->controls).action_bindings.fire_key;
-  (this_ptr->controls).action_bindings.use_item_key = (other->controls).action_bindings.use_item_key
-  ;
-  (this_ptr->controls).action_bindings.light_key = (other->controls).action_bindings.light_key;
-  (this_ptr->controls).action_bindings.draw_key = (other->controls).action_bindings.draw_key;
-  (this_ptr->controls).action_bindings.jump_key = (other->controls).action_bindings.jump_key;
-  (this_ptr->controls).strafe_speed = (other->controls).strafe_speed;
-  (this_ptr->controls).turn_speed = (other->controls).turn_speed;
-  (this_ptr->controls).look_up_down_speed = (other->controls).look_up_down_speed;
+  (this_ptr->player_input).action_state.walk = (other->player_input).action_state.walk;
+  (this_ptr->player_input).action_state.backup = (other->player_input).action_state.backup;
+  (this_ptr->player_input).action_state.run = (other->player_input).action_state.run;
+  (this_ptr->player_input).action_state.fire = (other->player_input).action_state.fire;
+  (this_ptr->player_input).action_state.use_item = (other->player_input).action_state.use_item;
+  (this_ptr->player_input).action_state.light = (other->player_input).action_state.light;
+  (this_ptr->player_input).action_state.draw = (other->player_input).action_state.draw;
+  (this_ptr->player_input).action_state.jump = (other->player_input).action_state.jump;
+  (this_ptr->player_input).strafe_speed = (other->player_input).strafe_speed;
+  (this_ptr->player_input).turn_speed = (other->player_input).turn_speed;
+  (this_ptr->player_input).look_up_down_speed = (other->player_input).look_up_down_speed;
   return;
 }

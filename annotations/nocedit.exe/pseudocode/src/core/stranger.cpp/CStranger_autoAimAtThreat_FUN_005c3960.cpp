@@ -106,7 +106,7 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
       local_30 = -0.5235988;
     }
   }
-  fVar3 = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
+  fVar3 = (this_ptr->base).player_input.look_up_down_speed * (float)3.1415926535000001 *
           (float)2 * delta_time + local_24->aim_pitch;
   local_24->aim_yaw = 0.0;
   local_24->aim_pitch = fVar3;

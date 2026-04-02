@@ -6,7 +6,7 @@
 #include "types/structs/SNetPacket_ChatMessage.h"
 #include "types/structs/SNetPacket_GameSettings.h"
 #include "types/structs/SNetPacket_PlayerAnnounce.h"
-#include "types/structs/SNetPacket_PlayerControl.h"
+#include "types/structs/SNetPacket_PlayerInput.h"
 #include "types/structs/SNetPacket_PlayerState.h"
 #include "types/structs/SNetPacket_ServerAccept.h"
 #include "types/structs/SNetPacket_SimFrame.h"
@@ -22,7 +22,7 @@ typedef union UNetPacket {
     SNetPacket_PlayerState player_state;
     SNetPacket_GameSettings game_settings;
     SNetPacket_SimFrame sim_frame;
-    SNetPacket_PlayerControl player_control;
+    SNetPacket_PlayerInput player_input;
     char raw[1032];
 } UNetPacket;
 

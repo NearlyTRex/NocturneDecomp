@@ -13,7 +13,7 @@ struct SDamageInfo;
 struct SInteractionInfo;
 struct SIntersectXZCylinder;
 struct SLaserInfo;
-struct SPlayerControl;
+struct SPlayerInput;
 struct _FILE;
 union UOrientationVector;
 

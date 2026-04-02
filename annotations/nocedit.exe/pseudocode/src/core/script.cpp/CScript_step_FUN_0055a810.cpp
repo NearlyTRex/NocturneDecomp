@@ -1963,9 +1963,9 @@ joined_r0x0055c026:
                                                   if (pCVar21 == (CHero *)0x0)
                                                   goto joined_r0x0055c026;
                                                   piVar11 = 
-                                                  core_script_cpp_getActionKeyOffset_FUN_00559660
-                                                            (&(pCVar21->player_control).
-                                                              action_bindings,local_50c);
+                                                  core_script_cpp_getActionState_FUN_00559660
+                                                            (&(pCVar21->player_input).action_state,
+                                                             local_50c);
                                                   if (piVar11 == (int *)0x0) {
                                                     _sprintf
                                                               (g_ScriptErrorBuffer,
@@ -2060,9 +2060,9 @@ joined_r0x0055c026:
                                                   if (pCVar22 == (CHero *)0x0)
                                                   goto joined_r0x0055c026;
                                                   piVar10 = 
-                                                  core_script_cpp_getActionKeyOffset_FUN_00559660
-                                                            (&(pCVar22->player_control).
-                                                              action_bindings,local_8f4);
+                                                  core_script_cpp_getActionState_FUN_00559660
+                                                            (&(pCVar22->player_input).action_state,
+                                                             local_8f4);
                                                   iVar8 = g_ScriptEventsEnabled;
                                                   if (piVar10 == (int *)0x0) {
                                                     _sprintf

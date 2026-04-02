@@ -12,7 +12,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
 
 {
   EControlMode EVar1;
-  SPlayerControl *player_control;
+  SPlayerInput *player_control;
   int iVar2;
   char *pcVar3;
   char *pcVar4;

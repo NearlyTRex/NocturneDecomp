@@ -421,7 +421,7 @@ section .text
     INC EAX                             ; 0054352d
         ;   Label: LAB_0054352d
     MOV EDI,dword ptr [EBX + 0x1c]      ; 0054352e
-    ADD EDX,0x2c                        ; 00543531 | g_SimFrameHistory[0].player_controls[0].strafe_speed
+    ADD EDX,0x2c                        ; 00543531 | g_SimFrameHistory[0].player_input[0].strafe_speed
     CMP EAX,EDI                         ; 00543534
     JL 0x0054351c                       ; 00543536
         ;   XREF to: 0054351c (CONDITIONAL_JUMP)  ; LAB_0054351c

@@ -120,7 +120,7 @@ LAB_004d6841:
     }
   }
   else {
-    fVar3 = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
+    fVar3 = (this_ptr->base).player_input.look_up_down_speed * (float)3.1415926535000001 *
             (float)2 * delta_time + this_ptr->target_aim_pitch;
     this_ptr->target_aim_pitch = fVar3;
     if (fVar3 < -1.570796f) {

@@ -105,24 +105,24 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
     case 2:
     case 3:
       iVar2 = 0;
-      if ((this_ptr->base).player_control.action_states[0] != 0) {
-        if ((this_ptr->base).player_control.action_states[2] == 0) {
+      if ((this_ptr->base).player_input.action_state.walk != 0) {
+        if ((this_ptr->base).player_input.action_state.run == 0) {
           iVar2 = 1;
         }
         else {
           iVar2 = 3;
         }
       }
-      if ((this_ptr->base).player_control.action_states[1] != 0) {
+      if ((this_ptr->base).player_input.action_state.backup != 0) {
         iVar2 = 2;
       }
-      if ((this_ptr->base).player_control.action_states[3] != 0) {
+      if ((this_ptr->base).player_input.action_state.fire != 0) {
         this_ptr->new_attack = 1;
         iVar2 = 4;
-        (this_ptr->base).player_control.action_states[3] = 0;
+        (this_ptr->base).player_input.action_state.fire = 0;
       }
       (this_ptr->base).base.turn_angle_accumulator =
-           (this_ptr->base).player_control.turn_speed * (this_ptr->base).base.turn_speed;
+           (this_ptr->base).player_input.turn_speed * (this_ptr->base).base.turn_speed;
       pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&(this_ptr->base).base.model.motion_controller);
       if (iVar2 == pSVar6->state_index) break;

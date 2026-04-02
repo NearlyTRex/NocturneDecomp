@@ -56,7 +56,7 @@ void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00413470(CBaron *this_ptr,C
       (this_ptr->base).base.base.orient.vec.y = (pCVar5->orient).vec.y;
       (this_ptr->base).base.base.orient.vec.z = (pCVar5->orient).vec.z;
     }
-    memset(&(this_ptr->base).player_control,0,0x2c);
+    memset(&(this_ptr->base).player_input,0,0x2c);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(this_ptr->base).base.model.motion_controller,6,1);
     this_ptr->summoned = 1;

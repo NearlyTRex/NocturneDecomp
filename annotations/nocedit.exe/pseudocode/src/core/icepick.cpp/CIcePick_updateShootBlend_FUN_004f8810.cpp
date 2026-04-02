@@ -50,7 +50,7 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004f8810(CIcePick *t
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
               (this_ptr_02,target_motion_index,0.0,this_ptr->shoot_blend_weight,
                g_IcePickIndices[0x10],core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
-    fVar2 = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
+    fVar2 = (this_ptr->base).player_input.look_up_down_speed * (float)3.1415926535000001 *
             (float)2 * delta_time + this_ptr->aim_pitch;
     this_ptr->aim_pitch = fVar2;
     if ((float)0.78539816337500001 < fVar2) {

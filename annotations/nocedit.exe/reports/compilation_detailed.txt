@@ -5,20 +5,20 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6106 (94.6%)
-Failed: 348
+Successful: 6112 (94.7%)
+Failed: 342
 
 ERROR CATEGORIES
 --------------------------------------------------
   format_error                     748
-  type_error                       380
+  type_error                       377
   incompatible_types               129
-  cast_error                       122
+  cast_error                       125
   undeclared_identifier            114
-  missing_member                    44
   syntax_error                      37
   other                             26
   pointer_type                      24
+  missing_member                     8
   pointer_arithmetic                 7
   argument_error                     4
   pointer_precision                  2
@@ -64,7 +64,7 @@ CATEGORY: format_error (748 errors)
   core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
     Line 46: format specifies type 'char *' but the argument has type 'CMimic *' [-Werror,-Wformat]
   core_scat.cpp_CScat_process_FUN_005571f0
-    Line 195: format specifies type 'char *' but the argument has type 'CScat *' [-Werror,-Wformat]
+    Line 194: format specifies type 'char *' but the argument has type 'CScat *' [-Werror,-Wformat]
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
     Line 60: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
@@ -292,7 +292,7 @@ CATEGORY: format_error (748 errors)
   core_sound.cpp_processTrainSounds_FUN_005b2770
     Line 148: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_stranger.cpp_CStranger_processFrame_FUN_005bb960
-    Line 181: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 178: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_werewolf.cpp_CWerewolf_process_FUN_005efde0
     Line 284: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
@@ -341,7 +341,7 @@ CATEGORY: format_error (748 errors)
     Line 19: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
-CATEGORY: type_error (380 errors)
+CATEGORY: type_error (377 errors)
 ====================================================================================================
 
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -362,8 +362,6 @@ CATEGORY: type_error (380 errors)
     Line 36: member reference base type 'byte[44]' (aka 'unsigned char[44]') is not a structure or union
   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
     Line 215: member reference base type 'byte[88]' (aka 'unsigned char[88]') is not a structure or union
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb960
-    Line 133: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0
     Line 18: member reference base type 'char[16]' is not a structure or union
   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940
@@ -508,7 +506,7 @@ CATEGORY: incompatible_types (129 errors)
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
     Line 313: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_scat.cpp_CScat_process_FUN_005571f0
-    Line 310: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
+    Line 309: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720
     Line 38: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0
@@ -617,13 +615,13 @@ CATEGORY: incompatible_types (129 errors)
     Line 212: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: cast_error (122 errors)
+CATEGORY: cast_error (125 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
     Line 129: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed
   core_stranger.cpp_CStranger_processFrame_FUN_005bb960
-    Line 373: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed
+    Line 370: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed
   core_imp.cpp_CImp_process_FUN_004f9c30
     Line 267: C-style cast from 'CDemonActor *' to 'float' is not allowed
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
@@ -692,7 +690,7 @@ CATEGORY: undeclared_identifier (114 errors)
   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
     Line 39: use of undeclared identifier 'INT_02d83398'
   core_scat.cpp_CScat_process_FUN_005571f0
-    Line 151: use of undeclared identifier 'SUB14'
+    Line 150: use of undeclared identifier 'SUB14'
   core_script.cpp_CScript_step_FUN_0055a810
     Line 1575: use of undeclared identifier 'SUB14'
   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
@@ -833,27 +831,6 @@ CATEGORY: undeclared_identifier (114 errors)
     Line 93: use of undeclared identifier 'uint3'
 
 ====================================================================================================
-CATEGORY: missing_member (44 errors)
-====================================================================================================
-
-  sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
-    Line 44: no member named '_12_4_' in 'tWAVEFORMATEX'
-  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
-    Line 111: no member named '_18_2_' in 'tWAVEFORMATEX'
-  core_baron.cpp_CBaron_process_FUN_00412e80
-    Line 108: no member named 'action_states' in 'SPlayerControl'
-  core_colonel.cpp_CColonel_process_FUN_0043fa00
-    Line 93: no member named 'action_states' in 'SPlayerControl'
-  core_moloch.cpp_CMoloch_process_FUN_00528d20
-    Line 93: no member named 'action_states' in 'SPlayerControl'
-  core_stranger.cpp_CStranger_handleActionButton_FUN_005c5b90
-    Line 23: no member named 'action_states' in 'SPlayerControl'
-  core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0
-    Line 107: no member named 'action_states' in 'SPlayerControl'
-  core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400
-    Line 112: no member named 'action_states' in 'SPlayerControl'
-
-====================================================================================================
 CATEGORY: syntax_error (37 errors)
 ====================================================================================================
 
@@ -971,6 +948,15 @@ CATEGORY: pointer_type (24 errors)
     Line 65: cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectSound3DListener **'
   shape_superopt.cpp_CObj_updatePolyFlagsFromVerts_FUN_005d36b0
     Line 31: comparison of distinct pointer types ('CPoly *' and 'int *')
+
+====================================================================================================
+CATEGORY: missing_member (8 errors)
+====================================================================================================
+
+  sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
+    Line 44: no member named '_12_4_' in 'tWAVEFORMATEX'
+  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
+    Line 111: no member named '_18_2_' in 'tWAVEFORMATEX'
 
 ====================================================================================================
 CATEGORY: pointer_arithmetic (7 errors)

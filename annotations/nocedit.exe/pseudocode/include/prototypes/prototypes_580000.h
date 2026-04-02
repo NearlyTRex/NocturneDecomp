@@ -17,6 +17,7 @@
 #include "types/classes/CDemonSet.h"
 #include "types/classes/CIniFile.h"
 #include "types/classes/CLodMesh.h"
+#include "types/classes/CLodMeshPrecomputeEntry.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CShotgun.h"
 #include "types/classes/CShovel.h"
@@ -26,7 +27,6 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
-#include "types/structs/CLodMeshPrecomputeEntry.h"
 #include "types/structs/SCollisionInfo.h"
 
 // =============================================================================
