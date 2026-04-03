@@ -33,16 +33,16 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   CGasMask *actor;
   CStranger *pCVar14;
   uint uVar10;
-  int iVar11;
+  int iVar13;
   int iVar18;
   int iVar19;
-  CSkeleton *pCVar12;
+  CSkeleton *pCVar18;
   CSkeleton *pCVar20;
-  CKeyActor *pCVar13;
-  byte *pbVar14;
+  CKeyActor *pCVar19;
+  byte *pbVar20;
   byte *pbVar21;
   byte bVar22;
-  float fVar15;
+  float fVar21;
   char local_460 [256];
   byte abStack_360 [100];
   SDamageInfo SStack_2fc;
@@ -226,6 +226,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   CSound *this_ptr_00;
   CWeapon *pCVar4;
   CHero *pCVar5;
+  CEnemy *iVar11;
   
   bVar22 = 0;
   if (g_CheatSystemEnabled == 0) {
@@ -241,19 +242,19 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
     }
     if ((this_ptr->subtitle_system_enabled == 0) &&
        (iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F10), iVar6 != 0)) {
-      iVar11 = 0;
+      iVar13 = 0;
       iVar6 = 100;
       pbVar9 = abStack_360;
       pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Enter cheat code");
       iVar6 = shape_edittool_cpp_CEditorTools_showCheatInputDialog_FUN_004a0400
-                        (g_CEditorToolsPtr,pcVar8,(char *)pbVar9,iVar6,iVar11);
+                        (g_CEditorToolsPtr,pcVar8,(char *)pbVar9,iVar6,iVar13);
       if (iVar6 != 0) {
         iVar6 = 0;
         while (abStack_360[0] != 0) {
           wincore_winrun_cpp_enqueueInput_FUN_005f2f30((uint)abStack_360[iVar6]);
-          iVar11 = iVar6 + 1;
+          iVar13 = iVar6 + 1;
           iVar6 = iVar6 + 1;
-          abStack_360[0] = abStack_360[iVar11];
+          abStack_360[0] = abStack_360[iVar13];
         }
       }
     }
@@ -287,10 +288,10 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         pbVar13 = pbVar13 + 1;
       }
       if (local_2a4 == ~uVar10 - 1) {
-        fVar15 = 5.0;
+        fVar21 = 5.0;
         g_InputHistory[1] = '\0';
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Buy Fly! today!");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
         uVar10 = (uint)(this_ptr->velocity_debug_enabled == 0);
         this_ptr->velocity_debug_enabled = uVar10;
         if (uVar10 != 0) {
@@ -301,12 +302,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_ShowFPS);
       local_29c = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -339,12 +340,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_ProfileMode);
         local_294 = 0;
         uVar10 = 0xffffffff;
-        pbVar14 = pbVar9;
+        pbVar20 = pbVar9;
         do {
           if (uVar10 == 0) break;
           uVar10 = uVar10 - 1;
-          bVar1 = *pbVar14;
-          pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+          bVar1 = *pbVar20;
+          pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
         } while (bVar1 != 0);
         for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
           bVar1 = g_InputHistory[iVar6];
@@ -367,12 +368,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_EventDebug);
         local_28c = 0;
         uVar10 = 0xffffffff;
-        pbVar14 = pbVar9;
+        pbVar20 = pbVar9;
         do {
           if (uVar10 == 0) break;
           uVar10 = uVar10 - 1;
-          bVar1 = *pbVar14;
-          pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+          bVar1 = *pbVar20;
+          pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
         } while (bVar1 != 0);
         for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
           bVar1 = g_InputHistory[iVar6];
@@ -392,9 +393,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           else {
             pcVar8 = "Event debug on";
           }
-          fVar15 = 5.0;
+          fVar21 = 5.0;
           pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar8);
-          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
           core_sound_cpp_CSound_playSound_FUN_005b3a20
                     (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
         }
@@ -402,12 +403,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       if (this_ptr->velocity_debug_enabled != 0) {
         pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_ScriptDebug);
         uVar10 = 0xffffffff;
-        pbVar14 = pbVar9;
+        pbVar20 = pbVar9;
         do {
           if (uVar10 == 0) break;
           uVar10 = uVar10 - 1;
-          bVar1 = *pbVar14;
-          pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+          bVar1 = *pbVar20;
+          pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
         } while (bVar1 != 0);
         local_284 = 0;
         for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
@@ -423,18 +424,18 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           uVar10 = (uint)(this_ptr->subtitle_system_enabled == 0);
           this_ptr->subtitle_system_enabled = uVar10;
           if (uVar10 == 0) {
-            fVar15 = 5.0;
+            fVar21 = 5.0;
             pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Script debug off")
             ;
-            core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+            core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
             this_ptr_03 = g_CDemonSetPtr;
             iVar6 = g_WindowHeight;
             this_ptr->screen_clear_enabled = 0;
           }
           else {
-            fVar15 = 5.0;
+            fVar21 = 5.0;
             pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Script debug on");
-            core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+            core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
             this_ptr_03 = g_CDemonSetPtr;
             iVar6 = 0xf0;
             this_ptr->screen_clear_enabled = 1;
@@ -448,15 +449,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_MemoryDebug);
         local_27c = 0;
         uVar10 = 0xffffffff;
-        pbVar14 = pbVar9;
+        pbVar20 = pbVar9;
         do {
           if (uVar10 == 0) break;
           uVar10 = uVar10 - 1;
-          bVar1 = *pbVar14;
-          pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+          bVar1 = *pbVar20;
+          pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
         } while (bVar1 != 0);
-        iVar11 = ~uVar10 - 1;
-        for (iVar6 = iVar11; 0 < iVar6; iVar6 = iVar6 + -1) {
+        iVar13 = ~uVar10 - 1;
+        for (iVar6 = iVar13; 0 < iVar6; iVar6 = iVar6 + -1) {
           bVar1 = g_InputHistory[iVar6];
           uVar10 = toupper((uint)*pbVar9);
           if (bVar1 == uVar10) {
@@ -464,8 +465,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           }
           pbVar9 = pbVar9 + 1;
         }
-        if (local_27c == iVar11) {
-          g_InputHistory[1] = (byte)local_27c ^ (byte)iVar11;
+        if (local_27c == iVar13) {
+          g_InputHistory[1] = (byte)local_27c ^ (byte)iVar13;
           uVar10 = (uint)(this_ptr->editor_tools_enabled == 0);
           this_ptr->editor_tools_enabled = uVar10;
           if (uVar10 == 0) {
@@ -474,9 +475,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           else {
             pcVar8 = "Memory debugging on";
           }
-          fVar15 = 5.0;
+          fVar21 = 5.0;
           pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar8);
-          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
           core_sound_cpp_CSound_playSound_FUN_005b3a20
                     (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
         }
@@ -484,12 +485,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_ManualAim);
       local_274 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -500,11 +501,11 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         pbVar9 = pbVar9 + 1;
       }
       if (local_274 == ~uVar10 - 1) {
-        fVar15 = 5.0;
+        fVar21 = 5.0;
         g_InputHistory[1] = '\0';
         this_ptr->aim_mode = AIM_MODE_MANUAL;
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Manual aim enabled");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
         g_HeroActors[g_LocalHeroIndex]->aim_mode = this_ptr->aim_mode;
@@ -512,12 +513,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_AutoAim);
       local_26c = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -528,11 +529,11 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         pbVar9 = pbVar9 + 1;
       }
       if (local_26c == ~uVar10 - 1) {
-        fVar15 = 5.0;
+        fVar21 = 5.0;
         g_InputHistory[1] = '\0';
         this_ptr->aim_mode = AIM_MODE_AUTO;
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Auto aim enabled");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
         g_HeroActors[g_LocalHeroIndex]->aim_mode = this_ptr->aim_mode;
@@ -541,12 +542,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_MovieRecording);
         local_264 = 0;
         uVar10 = 0xffffffff;
-        pbVar14 = pbVar9;
+        pbVar20 = pbVar9;
         do {
           if (uVar10 == 0) break;
           uVar10 = uVar10 - 1;
-          bVar1 = *pbVar14;
-          pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+          bVar1 = *pbVar20;
+          pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
         } while (bVar1 != 0);
         for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
           bVar1 = g_InputHistory[iVar6];
@@ -583,12 +584,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_CollisionDebug);
         local_25c = 0;
         uVar10 = 0xffffffff;
-        pbVar14 = pbVar9;
+        pbVar20 = pbVar9;
         do {
           if (uVar10 == 0) break;
           uVar10 = uVar10 - 1;
-          bVar1 = *pbVar14;
-          pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+          bVar1 = *pbVar20;
+          pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
         } while (bVar1 != 0);
         for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
           bVar1 = g_InputHistory[iVar6];
@@ -606,12 +607,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_SkeletonKey);
       local_254 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -631,35 +632,35 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           pcVar8 = "Skeleton_key";
           (*((this_ptr_01->base).vtable._ub)->setup)((CDemonActor *)this_ptr_01);
           this_ptr_01->key_mask = -1;
-          pCVar13 = this_ptr_01;
+          pCVar19 = this_ptr_01;
           do {
             cVar3 = *pcVar8;
-            (pCVar13->base).actor_name[0] = cVar3;
+            (pCVar19->base).actor_name[0] = cVar3;
             if (cVar3 == '\0') break;
             cVar2 = pcVar8[1];
             pcVar8 = pcVar8 + 2;
-            (pCVar13->base).actor_name[1] = cVar2;
-            pCVar13 = (CKeyActor *)((pCVar13->base).actor_name + 2);
+            (pCVar19->base).actor_name[1] = cVar2;
+            pCVar19 = (CKeyActor *)((pCVar19->base).actor_name + 2);
           } while (cVar2 != '\0');
           core_sound_cpp_CSound_playSound_FUN_005b3a20
                     (g_CSoundPtr,(void *)0x0,"cheat-1.wav");
           core_inv_cpp_CInventory_addItem_FUN_004fd600
                     (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)this_ptr_01,1);
-          fVar15 = 5.0;
+          fVar21 = 5.0;
           pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                              ("You have the skeleton key");
-          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
         }
       }
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_GodMode);
       iStack_24c = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -674,14 +675,14 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         uVar10 = (uint)(this_ptr->god_mode_enabled == 0);
         this_ptr->god_mode_enabled = uVar10;
         if (uVar10 == 0) {
-          fVar15 = 5.0;
+          fVar21 = 5.0;
           pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("God mode disabled");
-          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
         }
         else {
-          fVar15 = 5.0;
+          fVar21 = 5.0;
           pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("God mode enabled");
-          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
           (g_HeroActors[g_LocalHeroIndex]->base).hit_points = 100.0;
         }
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
@@ -690,16 +691,16 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_FreezeEnemies);
       iVar6 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       iVar18 = ~uVar10 - 1;
-      for (iVar11 = iVar18; 0 < iVar11; iVar11 = iVar11 + -1) {
-        bVar1 = g_InputHistory[iVar11];
+      for (iVar13 = iVar18; 0 < iVar13; iVar13 = iVar13 + -1) {
+        bVar1 = g_InputHistory[iVar13];
         uVar10 = toupper((uint)*pbVar9);
         if (uVar10 == bVar1) {
           iVar6 = iVar6 + 1;
@@ -716,9 +717,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         else {
           pcVar8 = "Enemies frozen";
         }
-        fVar15 = 5.0;
+        fVar21 = 5.0;
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar8);
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
       }
@@ -726,15 +727,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_Shotgun);
       iStack_238 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
-      iVar11 = ~uVar10 - 1;
-      for (iVar6 = iVar11; 0 < iVar6; iVar6 = iVar6 + -1) {
+      iVar13 = ~uVar10 - 1;
+      for (iVar6 = iVar13; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
         uVar10 = toupper((uint)*pbVar9);
         if (bVar1 == uVar10) {
@@ -742,8 +743,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         }
         pbVar9 = pbVar9 + 1;
       }
-      if (iStack_238 == iVar11) {
-        g_InputHistory[1] = (byte)iStack_238 ^ (byte)iVar11;
+      if (iStack_238 == iVar13) {
+        g_InputHistory[1] = (byte)iStack_238 ^ (byte)iVar13;
         core_game_cpp_giveHeroWeapon_FUN_004dd870("CShotgun");
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcVar8,5.0);
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
@@ -752,16 +753,16 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("You have the crossbow");
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_Crossbow);
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       iStack_228 = 0;
-      iVar11 = ~uVar10 - 1;
-      for (iVar6 = iVar11; 0 < iVar6; iVar6 = iVar6 + -1) {
+      iVar13 = ~uVar10 - 1;
+      for (iVar6 = iVar13; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
         uVar10 = toupper((uint)*pbVar9);
         if (bVar1 == uVar10) {
@@ -769,8 +770,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         }
         pbVar9 = pbVar9 + 1;
       }
-      if (iStack_228 == iVar11) {
-        g_InputHistory[1] = (byte)((uint)iStack_228 >> 8) ^ (byte)((uint)iVar11 >> 8);
+      if (iStack_228 == iVar13) {
+        g_InputHistory[1] = (byte)((uint)iStack_228 >> 8) ^ (byte)((uint)iVar13 >> 8);
         core_game_cpp_giveHeroWeapon_FUN_004dd870("CCrossbow");
         core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcVar8,5.0);
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
@@ -780,12 +781,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_Dynamite);
       iStack_218 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -806,12 +807,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_FlameThrower);
       iStack_208 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -832,12 +833,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       ;
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_TommyGun);
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       iStack_1f8 = 0;
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
@@ -860,12 +861,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_BaronWeapon);
       iStack_1e8 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -887,12 +888,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_ElephantGun);
       iStack_1d8 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -913,12 +914,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
                          ("You have the charged radiance emitter");
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_LightGun);
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       iStack_1c8 = 0;
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
@@ -939,15 +940,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_AllWeapons);
       iStack_1c0 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
-      iVar11 = ~uVar10 - 1;
-      for (iVar6 = iVar11; 0 < iVar6; iVar6 = iVar6 + -1) {
+      iVar13 = ~uVar10 - 1;
+      for (iVar6 = iVar13; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
         uVar10 = toupper((uint)*pbVar9);
         if (bVar1 == uVar10) {
@@ -955,8 +956,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         }
         pbVar9 = pbVar9 + 1;
       }
-      if (iStack_1c0 == iVar11) {
-        g_InputHistory[1] = (byte)iStack_1c0 ^ (byte)iVar11;
+      if (iStack_1c0 == iVar13) {
+        g_InputHistory[1] = (byte)iStack_1c0 ^ (byte)iVar13;
         core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930("CGun",AMMO_TYPE_SILVER);
         core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930("CGun",AMMO_TYPE_LITHIUM);
         core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930("CGun",AMMO_TYPE_MERCURY);
@@ -968,10 +969,10 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         core_game_cpp_giveHeroWeapon_FUN_004dd870("CTommyGun");
         core_game_cpp_giveHeroWeapon_FUN_004dd870("CElephantGun");
         core_game_cpp_giveHeroWeapon_FUN_004dd870("CLightGun");
-        fVar15 = 5.0;
+        fVar21 = 5.0;
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("You've got all the weapons");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
         iVar6 = g_LocalHeroIndex;
         this_ptr->god_mode_enabled = 1;
         this_ptr_00 = g_CSoundPtr;
@@ -982,15 +983,15 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_MoreAmmo);
       iStack_1b8 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
-      iVar11 = ~uVar10 - 1;
-      for (iVar6 = iVar11; 0 < iVar6; iVar6 = iVar6 + -1) {
+      iVar13 = ~uVar10 - 1;
+      for (iVar6 = iVar13; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
         uVar10 = toupper((uint)*pbVar9);
         if (bVar1 == uVar10) {
@@ -998,17 +999,17 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         }
         pbVar9 = pbVar9 + 1;
       }
-      if (iStack_1b8 == iVar11) {
-        g_InputHistory[1] = (byte)((uint)iStack_1b8 >> 8) ^ (byte)((uint)iVar11 >> 8);
+      if (iStack_1b8 == iVar13) {
+        g_InputHistory[1] = (byte)((uint)iStack_1b8 >> 8) ^ (byte)((uint)iVar13 >> 8);
         pCVar4 = (g_HeroActors[g_LocalHeroIndex]->inventory).selected_weapon;
         if (pCVar4 != (CWeapon *)0x0) {
           piVar1 = &pCVar4->ammo_count;
           *piVar1 = *piVar1 + 100;
         }
-        fVar15 = 5.0;
+        fVar21 = 5.0;
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("You just got 100 more bullets");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
       }
@@ -1016,12 +1017,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
         pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_RaiseEvent);
         iStack_1b0 = 0;
         uVar10 = 0xffffffff;
-        pbVar14 = pbVar9;
+        pbVar20 = pbVar9;
         do {
           if (uVar10 == 0) break;
           uVar10 = uVar10 - 1;
-          bVar1 = *pbVar14;
-          pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+          bVar1 = *pbVar20;
+          pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
         } while (bVar1 != 0);
         for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
           bVar1 = g_InputHistory[iVar6];
@@ -1058,12 +1059,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
 LAB_004df408:
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_KillNearby);
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       iStack_1a8 = 0;
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
@@ -1080,27 +1081,28 @@ LAB_004df408:
         ;
         iStack_74 = 0;
         for (iVar6 = 0; iVar6 < g_CDemonSetPtr->enemy_count; iVar6 = iVar6 + 1) {
-          iVar11 = *(int *)((int)g_CDemonSetPtr->enemies + iStack_74);
+          iVar11 = *(CEnemy **)((int)g_CDemonSetPtr->enemies + iStack_74);
           pCVar5 = g_HeroActors[g_LocalHeroIndex];
-          fVar15 = (pCVar5->base).base.location.position.x - *(float *)(iVar11 + 0x20);
-          fVar4 = (pCVar5->base).base.location.position.y - *(float *)(iVar11 + 0x24);
-          fVar5 = (pCVar5->base).base.location.position.z - *(float *)(iVar11 + 0x28);
-          if (SQRT(fVar5 * fVar5 + fVar15 * fVar15 + fVar4 * fVar4) <= (float)50) {
+          fVar21 = (pCVar5->base).base.location.position.x - (iVar11->base).base.location.position.x
+          ;
+          fVar4 = (pCVar5->base).base.location.position.y - (iVar11->base).base.location.position.y;
+          fVar5 = (pCVar5->base).base.location.position.z - (iVar11->base).base.location.position.z;
+          if (SQRT(fVar5 * fVar5 + fVar21 * fVar21 + fVar4 * fVar4) <= (float)50) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_2fc);
             SStack_2fc.damage_amount = 100.0;
-            (**(code **)(*(int *)(iVar11 + 0x154) + 0x11c))(iVar11,&SStack_2fc);
+            (*(((iVar11->base).base.vtable._uc)->_uc).processDamage)(&iVar11->base,&SStack_2fc);
           }
           iStack_74 = iStack_74 + 4;
         }
       }
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_Dismemberment);
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       iStack_1a0 = 0;
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
@@ -1121,9 +1123,9 @@ LAB_004df408:
         else {
           pcVar8 = "Gratuitous dismemberment enabled";
         }
-        fVar15 = 5.0;
+        fVar21 = 5.0;
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar8);
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
       }
@@ -1131,12 +1133,12 @@ LAB_004df408:
         pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_TimeFactor);
         iStack_198 = 0;
         uVar10 = 0xffffffff;
-        pbVar14 = pbVar9;
+        pbVar20 = pbVar9;
         do {
           if (uVar10 == 0) break;
           uVar10 = uVar10 - 1;
-          bVar1 = *pbVar14;
-          pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+          bVar1 = *pbVar20;
+          pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
         } while (bVar1 != 0);
         for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
           bVar1 = g_InputHistory[iVar6];
@@ -1158,15 +1160,15 @@ LAB_004df408:
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_ToggleCutscene);
       iVar6 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
-      for (iVar11 = ~uVar10 - 1; 0 < iVar11; iVar11 = iVar11 + -1) {
-        bVar1 = g_InputHistory[iVar11];
+      for (iVar13 = ~uVar10 - 1; 0 < iVar13; iVar13 = iVar13 + -1) {
+        bVar1 = g_InputHistory[iVar13];
         uVar7 = toupper((uint)*pbVar9);
         if (uVar7 == bVar1) {
           iVar6 = iVar6 + 1;
@@ -1182,12 +1184,12 @@ LAB_004df408:
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_ToggleRenderMode);
       iStack_188 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -1206,15 +1208,15 @@ LAB_004df408:
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_FlamingAmmo);
       iStack_180 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
-      iVar11 = ~uVar10 - 1;
-      for (iVar6 = iVar11; 0 < iVar6; iVar6 = iVar6 + -1) {
+      iVar13 = ~uVar10 - 1;
+      for (iVar6 = iVar13; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
         uVar10 = toupper((uint)*pbVar9);
         if (bVar1 == uVar10) {
@@ -1222,12 +1224,12 @@ LAB_004df408:
         }
         pbVar9 = pbVar9 + 1;
       }
-      if (iStack_180 == iVar11) {
-        g_InputHistory[1] = (byte)iStack_180 ^ (byte)iVar11;
+      if (iStack_180 == iVar13) {
+        g_InputHistory[1] = (byte)iStack_180 ^ (byte)iVar13;
         actor_ptr = (g_HeroActors[g_LocalHeroIndex]->inventory).selected_weapon;
         if (actor_ptr != (CWeapon *)0x0) {
           if (actor_ptr->ammo_type == 5) {
-            fVar15 = 5.0;
+            fVar21 = 5.0;
             actor_ptr->ammo_type = 0;
             pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                ("Flaming ammo disabled");
@@ -1235,18 +1237,18 @@ LAB_004df408:
           else {
             iVar6 = core_actor_cpp_isOfClass_FUN_0040c6d0(&actor_ptr->base,"CCrossbow");
             if (iVar6 == 0) {
-              fVar15 = 5.0;
+              fVar21 = 5.0;
               pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                  ("You can only use flaming ammo on the crossbow.");
             }
             else {
-              fVar15 = 5.0;
+              fVar21 = 5.0;
               actor_ptr->ammo_type = 5;
               pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                                  ("Flaming ammo enabled.");
             }
           }
-          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
         }
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
@@ -1256,15 +1258,15 @@ LAB_004df408:
         ;
         iStack_178 = 0;
         uVar10 = 0xffffffff;
-        pbVar14 = pbVar9;
+        pbVar20 = pbVar9;
         do {
           if (uVar10 == 0) break;
           uVar10 = uVar10 - 1;
-          bVar1 = *pbVar14;
-          pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+          bVar1 = *pbVar20;
+          pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
         } while (bVar1 != 0);
-        iVar11 = ~uVar10 - 1;
-        for (iVar6 = iVar11; 0 < iVar6; iVar6 = iVar6 + -1) {
+        iVar13 = ~uVar10 - 1;
+        for (iVar6 = iVar13; 0 < iVar6; iVar6 = iVar6 + -1) {
           bVar1 = g_InputHistory[iVar6];
           uVar10 = toupper((uint)*pbVar9);
           if (bVar1 == uVar10) {
@@ -1272,8 +1274,8 @@ LAB_004df408:
           }
           pbVar9 = pbVar9 + 1;
         }
-        if (iStack_178 == iVar11) {
-          g_InputHistory[1] = (byte)((uint)iStack_178 >> 8) ^ (byte)((uint)iVar11 >> 8);
+        if (iStack_178 == iVar13) {
+          g_InputHistory[1] = (byte)((uint)iStack_178 >> 8) ^ (byte)((uint)iVar13 >> 8);
           core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00453c90
                     (&g_CDemonCameraInstance,0xff00ff);
           core_sound_cpp_CSound_playSound_FUN_005b3a20
@@ -1284,12 +1286,12 @@ LAB_004df408:
         pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_ResetEffects);
         iStack_170 = 0;
         uVar10 = 0xffffffff;
-        pbVar14 = pbVar9;
+        pbVar20 = pbVar9;
         do {
           if (uVar10 == 0) break;
           uVar10 = uVar10 - 1;
-          bVar1 = *pbVar14;
-          pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+          bVar1 = *pbVar20;
+          pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
         } while (bVar1 != 0);
         for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
           bVar1 = g_InputHistory[iVar6];
@@ -1309,12 +1311,12 @@ LAB_004df408:
       if (this_ptr->velocity_debug_enabled != 0) {
         pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_SingleStep);
         uVar10 = 0xffffffff;
-        pbVar14 = pbVar9;
+        pbVar20 = pbVar9;
         do {
           if (uVar10 == 0) break;
           uVar10 = uVar10 - 1;
-          bVar1 = *pbVar14;
-          pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+          bVar1 = *pbVar20;
+          pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
         } while (bVar1 != 0);
         iStack_168 = 0;
         for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
@@ -1335,19 +1337,19 @@ LAB_004df408:
           else {
             pcVar8 = "Single step enabled";
           }
-          fVar15 = 5.0;
+          fVar21 = 5.0;
           pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar8);
-          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+          core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
         }
       }
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_RestoreBattery);
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       iStack_160 = 0;
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
@@ -1359,24 +1361,24 @@ LAB_004df408:
         pbVar9 = pbVar9 + 1;
       }
       if (iStack_160 == ~uVar10 - 1) {
-        fVar15 = 5.0;
+        fVar21 = 5.0;
         g_InputHistory[1] = '\0';
         (g_HeroActors[g_LocalHeroIndex]->inventory).battery_charge = 100.0;
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("Flashlight battery restored");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
       }
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_WeatherRain);
       iStack_158 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -1393,12 +1395,12 @@ LAB_004df408:
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_WeatherSnow);
       iStack_150 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -1414,12 +1416,12 @@ LAB_004df408:
       }
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_BigHat);
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       iStack_148 = 0;
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
@@ -1455,51 +1457,51 @@ LAB_004df408:
                               (pCVar17,"Bip01 head",0);
             if (iVar6 != -1) {
               this_ptr_04->rest_pose_data[iVar6] = this_ptr_04->rest_pose_data[iVar6] * fStack_144;
-              iVar11 = 0;
-              pCVar12 = pCVar17;
+              iVar13 = 0;
+              pCVar18 = pCVar17;
               if (0 < pCVar17->bone_count) {
                 do {
-                  if (iVar6 == pCVar12->bone_list[0].parent_index) {
+                  if (iVar6 == pCVar18->bone_list[0].parent_index) {
                     core_game_cpp_scaleBoneRecursive_FUN_004dda80
-                              (this_ptr_04,pCVar17,fStack_144,iVar11);
+                              (this_ptr_04,pCVar17,fStack_144,iVar13);
                   }
-                  iVar11 = iVar11 + 1;
-                  pCVar12 = (CSkeleton *)((pCVar12->motion_list).state_names[1] + 2);
-                } while (iVar11 < pCVar17->bone_count);
+                  iVar13 = iVar13 + 1;
+                  pCVar18 = (CSkeleton *)((pCVar18->motion_list).state_names[1] + 2);
+                } while (iVar13 < pCVar17->bone_count);
               }
             }
             iVar6 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                               (pCVar17,"bipltit02",0);
             if (iVar6 != -1) {
               this_ptr_04->rest_pose_data[iVar6] = this_ptr_04->rest_pose_data[iVar6] * fStack_144;
-              iVar11 = 0;
-              pCVar12 = pCVar17;
+              iVar13 = 0;
+              pCVar18 = pCVar17;
               if (0 < pCVar17->bone_count) {
                 do {
-                  if (iVar6 == pCVar12->bone_list[0].parent_index) {
+                  if (iVar6 == pCVar18->bone_list[0].parent_index) {
                     core_game_cpp_scaleBoneRecursive_FUN_004dda80
-                              (this_ptr_04,pCVar17,fStack_144,iVar11);
+                              (this_ptr_04,pCVar17,fStack_144,iVar13);
                   }
-                  iVar11 = iVar11 + 1;
-                  pCVar12 = (CSkeleton *)((pCVar12->motion_list).state_names[1] + 2);
-                } while (iVar11 < pCVar17->bone_count);
+                  iVar13 = iVar13 + 1;
+                  pCVar18 = (CSkeleton *)((pCVar18->motion_list).state_names[1] + 2);
+                } while (iVar13 < pCVar17->bone_count);
               }
             }
             iVar6 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                               (pCVar17,"biprtit02",0);
             if (iVar6 != -1) {
               this_ptr_04->rest_pose_data[iVar6] = this_ptr_04->rest_pose_data[iVar6] * fStack_144;
-              iVar11 = 0;
+              iVar13 = 0;
               pCVar20 = pCVar17;
               if (0 < pCVar17->bone_count) {
                 do {
                   if (iVar6 == pCVar20->bone_list[0].parent_index) {
                     core_game_cpp_scaleBoneRecursive_FUN_004dda80
-                              (this_ptr_04,pCVar17,fStack_144,iVar11);
+                              (this_ptr_04,pCVar17,fStack_144,iVar13);
                   }
-                  iVar11 = iVar11 + 1;
+                  iVar13 = iVar13 + 1;
                   pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);
-                } while (iVar11 < pCVar17->bone_count);
+                } while (iVar13 < pCVar17->bone_count);
               }
             }
           }
@@ -1524,12 +1526,12 @@ LAB_004df408:
         pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_GeometryDebug);
         iStack_110 = 0;
         uVar10 = 0xffffffff;
-        pbVar14 = pbVar9;
+        pbVar20 = pbVar9;
         do {
           if (uVar10 == 0) break;
           uVar10 = uVar10 - 1;
-          bVar1 = *pbVar14;
-          pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+          bVar1 = *pbVar20;
+          pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
         } while (bVar1 != 0);
         for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
           bVar1 = g_InputHistory[iVar6];
@@ -1547,12 +1549,12 @@ LAB_004df408:
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_GasMask);
       iStack_108 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -1575,20 +1577,20 @@ LAB_004df408:
         (*((actor->base).vtable._ub)->setup)(&actor->base);
         core_inv_cpp_CInventory_addItem_FUN_004fd600
                   (&g_HeroActors[g_LocalHeroIndex]->inventory,&actor->base,1);
-        fVar15 = 5.0;
+        fVar21 = 5.0;
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("You've got a gasmask!")
         ;
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
       }
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_RestoreHealth);
       iStack_100 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -1599,21 +1601,21 @@ LAB_004df408:
         pbVar9 = pbVar9 + 1;
       }
       if (iStack_100 == ~uVar10 - 1) {
-        fVar15 = 5.0;
+        fVar21 = 5.0;
         g_InputHistory[1] = '\0';
         (g_HeroActors[g_LocalHeroIndex]->base).hit_points = 100.0;
         pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Health restored.");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar15);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar8,fVar21);
       }
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_OldHat);
       iStack_f8 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -1640,12 +1642,12 @@ LAB_004df408:
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_SilverAmmo);
       iStack_f0 = 0;
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       for (iVar6 = ~uVar10 - 1; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
@@ -1661,16 +1663,16 @@ LAB_004df408:
       }
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_LithiumAmmo);
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       iStack_e8 = 0;
-      iVar11 = ~uVar10 - 1;
-      for (iVar6 = iVar11; 0 < iVar6; iVar6 = iVar6 + -1) {
+      iVar13 = ~uVar10 - 1;
+      for (iVar6 = iVar13; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
         uVar10 = toupper((uint)*pbVar9);
         if (bVar1 == uVar10) {
@@ -1678,22 +1680,22 @@ LAB_004df408:
         }
         pbVar9 = pbVar9 + 1;
       }
-      if (iStack_e8 == iVar11) {
-        g_InputHistory[1] = (byte)iStack_e8 ^ (byte)iVar11;
+      if (iStack_e8 == iVar13) {
+        g_InputHistory[1] = (byte)iStack_e8 ^ (byte)iVar13;
         core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930("CGun",AMMO_TYPE_LITHIUM);
       }
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_MercuryAmmo);
       uVar10 = 0xffffffff;
-      pbVar14 = pbVar9;
+      pbVar20 = pbVar9;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        bVar1 = *pbVar14;
-        pbVar14 = pbVar14 + (uint)bVar22 * -2 + 1;
+        bVar1 = *pbVar20;
+        pbVar20 = pbVar20 + (uint)bVar22 * -2 + 1;
       } while (bVar1 != 0);
       iStack_e0 = 0;
-      iVar11 = ~uVar10 - 1;
-      for (iVar6 = iVar11; 0 < iVar6; iVar6 = iVar6 + -1) {
+      iVar13 = ~uVar10 - 1;
+      for (iVar6 = iVar13; 0 < iVar6; iVar6 = iVar6 + -1) {
         bVar1 = g_InputHistory[iVar6];
         uVar10 = toupper((uint)*pbVar9);
         if (bVar1 == uVar10) {
@@ -1701,8 +1703,8 @@ LAB_004df408:
         }
         pbVar9 = pbVar9 + 1;
       }
-      if (iStack_e0 == iVar11) {
-        g_InputHistory[1] = (byte)((uint)iStack_e0 >> 8) ^ (byte)((uint)iVar11 >> 8);
+      if (iStack_e0 == iVar13) {
+        g_InputHistory[1] = (byte)((uint)iStack_e0 >> 8) ^ (byte)((uint)iVar13 >> 8);
         core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930("CGun",AMMO_TYPE_MERCURY);
       }
       if (this_ptr->velocity_debug_enabled != 0) {

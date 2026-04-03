@@ -7,7 +7,7 @@
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   world_pos
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0xdc]:24  local_dc
+; SMRGLPrimitiveQuad Stack[-0xdc]:72  local_dc
 ; CVector3i        Stack[-0x94]:12  local_94
 ; CVector3i        Stack[-0x88]:12  local_88
 ; CVector3i        Stack[-0x7c]:12  local_7c

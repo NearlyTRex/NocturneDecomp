@@ -17,14 +17,8 @@ void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004ef990(CGround *thi
   int iVar3;
   int row_00;
   uint column;
-  SMRGLHeaderPrimitive SStack_84;
-  int local_6c;
-  int local_68;
-  int local_64;
-  SMRGLHeaderPrimitive local_4c;
-  int local_34;
-  int local_30;
-  int local_2c;
+  SMRGLPrimitiveTriangleIndex SStack_84;
+  SMRGLPrimitiveTriangleIndex local_4c;
   int local_14;
   
   row_00 = (world_column - this_ptr->camera_x) + this_ptr->grid_width;
@@ -49,15 +43,27 @@ void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004ef990(CGround *thi
   }
   core_ground_cpp_CGround_setQuadTextureCoordinates_FUN_004ef880(this_ptr,column,row);
   if ((column & 1) == (row & 1)) {
-    SStack_84.base.count = 3;
-    core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(this_ptr,&SStack_84);
-    local_4c.base.count = 3;
-    core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(this_ptr,&local_4c);
+    SStack_84.base.base.count = 3;
+    SStack_84.vertices[2] = this_ptr->vertex_indices[0];
+    SStack_84.vertices[1] = this_ptr->vertex_indices[1];
+    SStack_84.vertices[0] = this_ptr->vertex_indices[2];
+    core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(this_ptr,&SStack_84.base);
+    local_4c.base.base.count = 3;
+    local_4c.vertices[2] = this_ptr->vertex_indices[0];
+    local_4c.vertices[1] = this_ptr->vertex_indices[2];
+    local_4c.vertices[0] = this_ptr->vertex_indices[3];
+    core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(this_ptr,&local_4c.base);
     return;
   }
-  SStack_84.base.count = 3;
-  core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(this_ptr,&SStack_84);
-  local_4c.base.count = 3;
-  core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(this_ptr,&local_4c);
+  SStack_84.base.base.count = 3;
+  SStack_84.vertices[2] = this_ptr->vertex_indices[0];
+  SStack_84.vertices[1] = this_ptr->vertex_indices[1];
+  SStack_84.vertices[0] = this_ptr->vertex_indices[3];
+  core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(this_ptr,&SStack_84.base);
+  local_4c.base.base.count = 3;
+  local_4c.vertices[2] = this_ptr->vertex_indices[1];
+  local_4c.vertices[1] = this_ptr->vertex_indices[2];
+  local_4c.vertices[0] = this_ptr->vertex_indices[3];
+  core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(this_ptr,&local_4c.base);
   return;
 }

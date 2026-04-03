@@ -9,11 +9,7 @@
 ; int              Stack[0xc]:4   primitive_count
 ; int              Stack[0x10]:4   render_flags
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x38]:24  local_38
-; int              Stack[-0x20]:4  local_20
-; int              Stack[-0x1c]:4  local_1c
-; int              Stack[-0x18]:4  local_18
-; int              Stack[-0x14]:4  local_14
+; SMRGLPrimitiveQuadIndex Stack[-0x38]:40  local_38
 ;
 ; XREF[4]:
 ;   core_cloth.cpp_CCloth_render_FUN_0043bae0 at 0043be28

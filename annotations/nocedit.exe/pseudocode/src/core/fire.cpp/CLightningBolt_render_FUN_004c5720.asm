@@ -6,7 +6,7 @@
 ; Parameters:
 ; CLightningBolt * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0xdc]:24  local_dc
+; SMRGLPrimitiveQuadIndex Stack[-0xdc]:40  local_dc
 ; float            Stack[-0xb4]:4  local_b4
 ; float            Stack[-0xb0]:4  local_b0
 ; float            Stack[-0xac]:4  local_ac

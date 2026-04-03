@@ -6,7 +6,7 @@
 ; Parameters:
 ; CWeather *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0xf0]:24  local_f0
+; SMRGLPrimitiveQuadIndex Stack[-0xf0]:40  local_f0
 ; CVector3i        Stack[-0xc8]:12  local_c8
 ; float            Stack[-0xbc]:4  local_bc
 ; float            Stack[-0xb8]:4  local_b8

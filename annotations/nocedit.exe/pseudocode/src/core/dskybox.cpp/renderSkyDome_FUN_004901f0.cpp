@@ -13,28 +13,17 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_
 {
   char cVar2;
   float fVar3;
+  uint uVar4;
   int iVar3;
-  int iVar6;
   int iVar4;
-  int vertex_index;
+  int iVar6;
+  int iVar9;
   int iVar5;
   char *pcVar6;
   int iVar7;
   int iVar8;
   float10 fVar9;
-  SMRGLHeaderPrimitive local_b4;
-  int local_9c;
-  uint local_98;
-  uint local_94;
-  int local_90;
-  uint local_8c;
-  uint local_88;
-  int local_84;
-  int local_80;
-  uint local_7c;
-  int local_78;
-  int local_74;
-  uint local_70;
+  SMRGLPrimitiveQuad local_b4;
   CVector3i local_6c;
   CVector3f local_60;
   CVector3f local_54;
@@ -44,6 +33,7 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_
   float local_34;
   float local_30;
   float local_2c;
+  uint uStack_28;
   int local_24;
   int local_20;
   int local_1c;
@@ -85,11 +75,11 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,(CVector3f *)&CVector3i_02ca0388);
-  local_b4.base.count = 4;
-  local_b4.surface_normal.D = 0;
-  local_b4.surface_normal.C = 0;
-  local_b4.surface_normal.B = 0;
-  local_b4.surface_normal.A = 0;
+  local_b4.base.base.count = 4;
+  local_b4.base.surface_normal.D = 0;
+  local_b4.base.surface_normal.C = 0;
+  local_b4.base.surface_normal.B = 0;
+  local_b4.base.surface_normal.A = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,(SMRGLTextureBasic *)&(sky_texture->base).count);
   fVar9 = (float10)fsin((float10)0.58904862253125001);
@@ -128,30 +118,66 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_
   this_ptr->vertex_buffer_ptr[3].g = iVar6;
   this_ptr->vertex_buffer_ptr[3].b = iVar6;
   this_ptr->vertex_buffer_ptr[3].a = 0;
+  local_b4.vertices[0].vertex_index = 0;
+  local_b4.vertices[1].vertex_index = 1;
+  local_b4.vertices[0].texture_u = 0x80000;
+  local_b4.vertices[0].texture_v = 0x80000;
+  local_b4.vertices[1].texture_u = 0x80000;
+  local_b4.vertices[1].texture_v = 0x80000;
+  local_b4.vertices[3].vertex_index = 3;
+  local_b4.vertices[2].vertex_index = 2;
   iVar7 = 0;
-  engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(this_ptr,&local_b4,0x2c5);
+  local_b4.vertices[2].texture_u = 0x80000;
+  local_b4.vertices[2].texture_v = 0x80000;
+  local_b4.vertices[3].texture_u = 0x80000;
+  local_b4.vertices[3].texture_v = 0x80000;
+  engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
+            (this_ptr,&local_b4.base,0x2c5);
   local_24 = 0;
   do {
     iVar6 = 0;
-    vertex_index = local_24;
+    iVar9 = local_24;
     do {
       iVar4 = iVar6 + 1;
-      core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(sky_texture,iVar7,iVar6,vertex_index);
+      core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(sky_texture,iVar7,iVar6,iVar9);
       iVar6 = iVar4;
-      vertex_index = vertex_index + 1;
+      iVar9 = iVar9 + 1;
     } while (iVar4 < 4);
     local_24 = local_24 + 4;
     iVar7 = iVar7 + 1;
   } while (iVar7 < 0x11);
   local_20 = 0;
+  uStack_28 = 0;
   do {
+    iVar5 = 0x1000000;
+    uVar4 = (int)((uStack_28 + (uStack_28 >> 0x1f) * -4) - (uint)((uStack_28 >> 0x1f) << 1 < 0)) >>
+            2 & 0xffffff;
+    iVar6 = 0;
     iVar8 = 0;
     do {
+      local_b4.vertices[0].vertex_index = local_20 + iVar8;
+      local_b4.vertices[1].vertex_index = local_b4.vertices[0].vertex_index + 1;
+      local_b4.vertices[2].vertex_index = local_b4.vertices[0].vertex_index + 5;
+      local_b4.vertices[3].vertex_index = local_b4.vertices[0].vertex_index + 4;
+      iVar3 = iVar6 >> 0x1f;
+      iVar9 = iVar6 + iVar3 * -4;
       iVar8 = iVar8 + 1;
+      iVar6 = iVar6 + 0x1000000;
+      local_b4.vertices[1].texture_v =
+           (int)((iVar5 + (iVar5 >> 0x1f) * -4) - (uint)((iVar5 >> 0x1f) << 1 < 0)) >> 2 ^ 0xffffff;
+      local_b4.vertices[0].texture_v = (int)(iVar9 - (uint)(iVar3 << 1 < 0)) >> 2 ^ 0xffffff;
+      iVar5 = iVar5 + 0x1000000;
+      local_b4.vertices[0].texture_u = uVar4;
+      local_b4.vertices[1].texture_u = uVar4;
+      local_b4.vertices[2].texture_u = uVar4 + 0x400000;
+      local_b4.vertices[2].texture_v = local_b4.vertices[1].texture_v;
+      local_b4.vertices[3].texture_u = uVar4 + 0x400000;
+      local_b4.vertices[3].texture_v = local_b4.vertices[0].texture_v;
       engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-                (g_CDemonRendererPtr2,&local_b4,0x2c5);
+                (g_CDemonRendererPtr2,&local_b4.base,0x2c5);
     } while (iVar8 < 3);
     local_20 = local_20 + 4;
+    uStack_28 = (uint)(byte)(uStack_28._3_1_ + 1) << 0x18;
   } while (local_20 != 0x40);
   return;
 }

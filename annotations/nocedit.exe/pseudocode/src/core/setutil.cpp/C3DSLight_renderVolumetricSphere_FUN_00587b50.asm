@@ -6,11 +6,7 @@
 ; Parameters:
 ; C3DSLight *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x78]:24  local_78
-; int              Stack[-0x60]:4  local_60
-; int              Stack[-0x5c]:4  local_5c
-; int              Stack[-0x58]:4  local_58
-; int              Stack[-0x54]:4  local_54
+; SMRGLPrimitiveQuadIndex Stack[-0x78]:40  local_78
 ; CVector3i        Stack[-0x50]:12  local_50
 ; float            Stack[-0x44]:4  local_44
 ; float            Stack[-0x40]:4  local_40

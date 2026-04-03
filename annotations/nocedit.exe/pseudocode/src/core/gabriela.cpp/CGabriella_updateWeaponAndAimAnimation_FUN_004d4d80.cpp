@@ -23,7 +23,6 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
   float afStackY_19d0 [1521];
   CQuaternion4f *pCVar5;
   int iVar6;
-  code *blend_callback;
   CQuaternion4f local_1f4;
   CQuaternion4f local_1e4;
   CQuaternion4f local_1d4;
@@ -66,6 +65,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
   CDeformableModelInstance *local_18;
   CDeformableModelInstance *local_14;
   CDeformableModel_MotionBlendWeightFunc *pcVar10;
+  CDeformableModel_MotionBlendWeightFunc *blend_callback;
   CDeformableModel_MotionBlendWeightFunc *pcVar11;
   CQuaternion4f *pCVar8;
   CDeformableModelInstance *pCVar7;

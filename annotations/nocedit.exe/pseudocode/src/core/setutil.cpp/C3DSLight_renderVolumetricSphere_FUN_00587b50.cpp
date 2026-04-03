@@ -21,11 +21,7 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
   float10 fVar7;
   float10 fVar8;
   float10 fVar2;
-  SMRGLHeaderPrimitive local_78;
-  int local_60;
-  int local_5c;
-  int local_58;
-  int local_54;
+  SMRGLPrimitiveQuadIndex local_78;
   CVector3i local_50;
   float local_44;
   float local_40;
@@ -83,21 +79,27 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
             (this_ptr_00,&SMRGLTextureBasic_006817fc);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0x4000);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
-  local_78.base.count = 4;
-  local_78.surface_normal.D = 0;
-  local_78.surface_normal.C = 0;
-  local_78.surface_normal.B = 0;
-  local_78.surface_normal.A = 0;
+  local_78.base.base.count = 4;
+  local_78.base.surface_normal.D = 0;
+  local_78.base.surface_normal.C = 0;
+  local_78.base.surface_normal.B = 0;
+  local_78.base.surface_normal.A = 0;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
+  local_14 = 10;
   local_10 = 0;
   do {
     iVar2 = -4;
     do {
+      local_78.vertices[0] = local_10 + iVar2;
+      local_78.vertices[1] = local_14 + iVar2;
       iVar2 = iVar2 + 1;
+      local_78.vertices[2] = local_14 + iVar2;
+      local_78.vertices[3] = local_10 + iVar2;
       engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-                (g_CDemonRendererPtr2,&local_78);
+                (g_CDemonRendererPtr2,&local_78.base);
     } while (iVar2 < 4);
     local_10 = local_10 + 10;
+    local_14 = local_14 + 10;
   } while (local_10 != 0xa0);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   return;

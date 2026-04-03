@@ -925,6 +925,24 @@
     "name":"engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0",
     "ret":"SMRGLHeaderExtended*",
     "vars":{
+      "locals":[
+        {
+          "name":"pcVar2",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"RenderScanlineFunc*",
+          "use":68
+        }
+      ],
       "params":[
         {
           "name":"prim",
@@ -23249,74 +23267,27 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_004566e0",
     "ret":"void",
     "vars":{
       "locals":[
         {
-          "name":"local_10",
-          "storage":{
-            "offset":-16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x10]",
-                "offset":-16,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint"
-        },
-        {
-          "name":"local_14",
-          "storage":{
-            "offset":-20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x14]",
-                "offset":-20,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint"
-        },
-        {
-          "name":"local_18",
-          "storage":{
-            "offset":-24,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x18]",
-                "offset":-24,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint"
-        },
-        {
           "name":"local_30",
           "storage":{
             "offset":-48,
-            "size":24,
+            "size":36,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x30]",
                 "offset":-48,
-                "size":24
+                "size":36
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveTriangleIndex"
         }
       ],
       "params":[
@@ -27623,6 +27594,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0",
     "ret":"void",
@@ -27728,17 +27700,17 @@
           "name":"SStack_50",
           "storage":{
             "offset":-80,
-            "size":24,
+            "size":40,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x50]",
                 "offset":-80,
-                "size":24
+                "size":40
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuadIndex"
         },
         {
           "name":"pCVar1",
@@ -46096,6 +46068,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_inv.cpp_drawItemIconBackground_FUN_005001e0",
     "ret":"void",
@@ -46169,17 +46142,17 @@
           "name":"local_48",
           "storage":{
             "offset":-72,
-            "size":24,
+            "size":40,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x48]",
                 "offset":-72,
-                "size":24
+                "size":40
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuadIndex"
         },
         {
           "name":"this_ptr",
@@ -46370,6 +46343,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_level.cpp_CLevelLoader_update_FUN_00504160",
     "ret":"void",
@@ -46616,17 +46590,17 @@
           "name":"local_88",
           "storage":{
             "offset":-136,
-            "size":24,
+            "size":40,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x88]",
                 "offset":-136,
-                "size":24
+                "size":40
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuadIndex"
         },
         {
           "name":"pCVar2",
@@ -85714,6 +85688,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760",
     "ret":"void",
@@ -85787,17 +85762,17 @@
           "name":"SStack_50",
           "storage":{
             "offset":-80,
-            "size":24,
+            "size":40,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x50]",
                 "offset":-80,
-                "size":24
+                "size":40
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuadIndex"
         },
         {
           "name":"cVar1",

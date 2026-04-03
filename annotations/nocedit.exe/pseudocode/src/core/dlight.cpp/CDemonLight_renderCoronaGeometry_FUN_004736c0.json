@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 262,
+    "complexity_score": 272,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 127,
+    "pseudocode_lines": 137,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 405
+    "total_lines": 415
   },
   "cross_references": [
     {
@@ -244,29 +244,8 @@
         "is_param": false,
         "name": "local_a4",
         "offset": -164,
-        "size": 24,
-        "type": "SMRGLHeaderPrimitive"
-      },
-      {
-        "is_param": false,
-        "name": "local_8c",
-        "offset": -140,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_88",
-        "offset": -136,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_84",
-        "offset": -132,
-        "size": 4,
-        "type": "int"
+        "size": 36,
+        "type": "SMRGLPrimitiveTriangleIndex"
       },
       {
         "is_param": false,
@@ -382,7 +361,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 53,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar11 = (float10)fcos(fVar10);",
@@ -390,15 +369,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 54,
       "match": "fsin",
       "severity": "mild",
-      "text": "fVar6 = (float10)fsin(fVar10);",
+      "text": "fVar7 = (float10)fsin(fVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 56,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_64.x = (int)ROUND((float)(fVar11 * fVar12) * 256.0f);",
@@ -406,15 +385,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 57,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_64.y = (int)ROUND((float)(fVar6 * fVar12) * 256.0f);",
+      "text": "local_64.y = (int)ROUND((float)(fVar7 * fVar12) * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 58,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_64.z = (int)ROUND(fVar4 * 256.0f);",
@@ -422,7 +401,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 65,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar5) = 0;",
@@ -430,7 +409,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 68,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_7c.x = (int)ROUND(CVector3f_026a72d8.x * 256.0f);",
@@ -438,7 +417,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
+      "line": 69,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_7c.y = (int)ROUND(CVector3f_026a72d8.y * 256.0f);",
@@ -446,7 +425,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 70,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_7c.z = (int)ROUND(CVector3f_026a72d8.z * 256.0f);",
@@ -454,7 +433,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 120,
+      "line": 125,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->base).max_distance * (float)256));",
@@ -462,7 +441,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 120,
+      "line": 125,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->base).max_distance * (float)256));",

@@ -8,19 +8,7 @@
 ; char *           Stack[0x8]:4   texture_name
 ; int              Stack[0xc]:4   brightness_factor
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0xb4]:24  local_b4
-; int              Stack[-0x9c]:4  local_9c
-; uint             Stack[-0x98]:4  local_98
-; uint             Stack[-0x94]:4  local_94
-; int              Stack[-0x90]:4  local_90
-; uint             Stack[-0x8c]:4  local_8c
-; uint             Stack[-0x88]:4  local_88
-; int              Stack[-0x84]:4  local_84
-; int              Stack[-0x80]:4  local_80
-; uint             Stack[-0x7c]:4  local_7c
-; int              Stack[-0x78]:4  local_78
-; int              Stack[-0x74]:4  local_74
-; uint             Stack[-0x70]:4  local_70
+; SMRGLPrimitiveQuad Stack[-0xb4]:72  local_b4
 ; CVector3i        Stack[-0x6c]:12  local_6c
 ; CVector3f        Stack[-0x60]:12  local_60
 ; CVector3f        Stack[-0x54]:12  local_54

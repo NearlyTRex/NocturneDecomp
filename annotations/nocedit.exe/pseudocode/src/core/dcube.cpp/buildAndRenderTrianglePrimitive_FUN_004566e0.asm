@@ -7,10 +7,7 @@
 ; CVector3f * *    Stack[0x4]:4   triangle_vertex_pointers
 ; CVector3f *      Stack[0x8]:4   vertex_buffer
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x30]:24  local_30
-; uint             Stack[-0x18]:4  local_18
-; uint             Stack[-0x14]:4  local_14
-; uint             Stack[-0x10]:4  local_10
+; SMRGLPrimitiveTriangleIndex Stack[-0x30]:36  local_30
 ;
 ; XREF[1]:
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650 at 0045781a

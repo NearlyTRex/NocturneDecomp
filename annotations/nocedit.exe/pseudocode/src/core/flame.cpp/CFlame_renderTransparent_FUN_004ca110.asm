@@ -6,9 +6,8 @@
 ; Parameters:
 ; CFlame *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4[973]  Stack[-0x1088]:3892  auStackY_1088
-; SMRGLHeaderPrimitive Stack[-0x144]:24  SStack_144
-; SMRGLHeaderPrimitive Stack[-0x11c]:24  SStack_11c
+; SMRGLPrimitiveQuadIndex Stack[-0x144]:40  local_144
+; SMRGLPrimitiveQuadIndex Stack[-0x11c]:40  local_11c
 ; CBoundingBox3D   Stack[-0xf4]:24  local_f4
 ; CVector3i        Stack[-0xdc]:12  CStack_dc
 ; CVector3i        Stack[-0xd0]:12  CStack_d0
@@ -33,7 +32,7 @@
 ; float            Stack[-0x1c]:4  fStack_1c
 ; int              Stack[-0x18]:4  iStack_18
 ; int              Stack[-0x14]:4  iStack_14
-; float            Stack[-0x10]:4  fStack_10
+; int              Stack[-0x10]:4  fStack_10
 ;
 ; XREF[4]:
 ;   core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740 at 004197dd

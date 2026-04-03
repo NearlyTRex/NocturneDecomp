@@ -15,7 +15,7 @@ void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(CMarquee *th
   SRenderVertex *pSVar3;
   SRenderVertex *pSVar4;
   byte bVar5;
-  SMRGLHeaderPrimitive local_44;
+  SMRGLPrimitiveQuadIndex local_44;
   CVector3i local_1c;
   int *piVar1;
   CDemonRenderer *this_ptr_00;
@@ -93,11 +93,15 @@ void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(CMarquee *th
   this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
   this_ptr_00->vertex_buffer_ptr[3].u = 0x80000;
   this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
-  local_44.base.count = 4;
-  local_44.surface_normal.D = 0;
-  local_44.surface_normal.C = 0;
-  local_44.surface_normal.B = 0;
-  local_44.surface_normal.A = 0;
-  engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(this_ptr_00,&local_44,99);
+  local_44.base.base.count = 4;
+  local_44.base.surface_normal.D = 0;
+  local_44.base.surface_normal.C = 0;
+  local_44.base.surface_normal.B = 0;
+  local_44.base.surface_normal.A = 0;
+  local_44.vertices[0] = 0;
+  local_44.vertices[3] = 3;
+  local_44.vertices[1] = 1;
+  local_44.vertices[2] = 2;
+  engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(this_ptr_00,&local_44.base,99);
   return;
 }

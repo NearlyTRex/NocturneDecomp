@@ -6,7 +6,7 @@
 ; Parameters:
 ; CFlies *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0xa0]:24  SStack_a0
+; SMRGLPrimitiveQuad Stack[-0xa0]:72  SStack_a0
 ; CBoundingBox3D   Stack[-0x58]:24  local_58
 ; CVector3f        Stack[-0x40]:12  CStack_40
 ; CVector3i        Stack[-0x34]:12  CStack_34

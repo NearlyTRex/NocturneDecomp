@@ -97,8 +97,8 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
         this_ptr_02 = g_HeroActors[g_LocalHeroIndex];
         pCVar2 = &(this_ptr->base).location;
         fVar3 = (this_ptr_02->base).base.location.position.y - (this_ptr->base).location.position.y;
-        if (((float)-0.5 < fVar3) && (fVar3 < (float)SStack_8c.deformable_model)) {
-          fVar2 = (float)SStack_8c.keyframed_model +
+        if (((float)-0.5 < fVar3) && (fVar3 < SStack_8c.cylinder_top_y)) {
+          fVar2 = SStack_8c.cylinder_radius +
                   (float)(int)ROUND(ROUND(((this_ptr->flame_size).x + (this_ptr->flame_size).z) *
                                           (float)0.25));
           local_f8 = (double)fVar2;
@@ -127,8 +127,8 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
           pCVar2 = &(this_ptr->base).location;
           fVar3 = (this_ptr_03->base).base.location.position.y -
                   (this_ptr->base).location.position.y;
-          if (((float)-0.5 < fVar3) && (fVar3 < (float)SStack_64.deformable_model)) {
-            fVar3 = (float)SStack_64.keyframed_model +
+          if (((float)-0.5 < fVar3) && (fVar3 < SStack_64.cylinder_top_y)) {
+            fVar3 = SStack_64.cylinder_radius +
                     (float)(int)ROUND(ROUND(((this_ptr->flame_size).x + (this_ptr->flame_size).z) *
                                             (float)0.25));
             dStack_f0 = (double)fVar3;

@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 535,
-    "complexity_score": 458,
+    "complexity_score": 466,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 16,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 233,
+    "pseudocode_lines": 241,
     "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 768
+    "total_lines": 776
   },
   "cross_references": [],
   "function": {
@@ -262,36 +262,8 @@
         "is_param": false,
         "name": "SStack_cc",
         "offset": -204,
-        "size": 24,
-        "type": "SMRGLHeaderPrimitive"
-      },
-      {
-        "is_param": false,
-        "name": "iStack_b4",
-        "offset": -180,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "iStack_b0",
-        "offset": -176,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "iStack_ac",
-        "offset": -172,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "iStack_a8",
-        "offset": -168,
-        "size": 4,
-        "type": "int"
+        "size": 40,
+        "type": "SMRGLPrimitiveQuadIndex"
       },
       {
         "is_param": false,
@@ -428,7 +400,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 120,
+      "line": 117,
       "match": "ROUND",
       "severity": "mild",
       "text": "iStack_d0 = (int)ROUND(ROUND((this_ptr->trigger_size).x * (float)0.10000000000000001 +",
@@ -436,7 +408,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 120,
+      "line": 117,
       "match": "ROUND",
       "severity": "mild",
       "text": "iStack_d0 = (int)ROUND(ROUND((this_ptr->trigger_size).x * (float)0.10000000000000001 +",
@@ -444,7 +416,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 129,
+      "line": 126,
       "match": "ROUND",
       "severity": "mild",
       "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->r = (int)ROUND(ROUND(fVar1 * 256.0f));",
@@ -452,7 +424,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 129,
+      "line": 126,
       "match": "ROUND",
       "severity": "mild",
       "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->r = (int)ROUND(ROUND(fVar1 * 256.0f));",
@@ -460,7 +432,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 136,
+      "line": 133,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_50.x = (int)ROUND(256.0f * 0.0);",
@@ -468,7 +440,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 137,
+      "line": 134,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_50.y = (int)ROUND(fVar4 * 256.0f);",
@@ -476,7 +448,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
+      "line": 135,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_50.z = (int)ROUND(256.0f * 0.0);",
@@ -484,7 +456,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
+      "line": 152,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_74.x = (int)ROUND(256.0f * 0.0);",
@@ -492,7 +464,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 156,
+      "line": 153,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_74.y = (int)ROUND(CStack_8c.max.y * 256.0f);",
@@ -500,7 +472,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 157,
+      "line": 154,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_74.z = (int)ROUND(256.0f * 0.0);",
@@ -508,7 +480,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 168,
+      "line": 165,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar9 = (float10)fsin(fVar11);",
@@ -516,7 +488,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 169,
+      "line": 166,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar12 = (float10)fcos(fVar11);",
@@ -524,7 +496,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 172,
+      "line": 169,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar8 = (int *)((int)&(pSVar1->projected_vertex).transformed_x + iStack_20);",
@@ -532,7 +504,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 185,
+      "line": 182,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_5c.x = (int)ROUND((float)(fVar9 * fVar10) * 256.0f);",
@@ -540,7 +512,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 186,
+      "line": 183,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_5c.y = (int)ROUND(CStack_8c.min.y * 256.0f);",
@@ -548,7 +520,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 187,
+      "line": 184,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_5c.z = (int)ROUND((float)(fVar12 * fVar10) * 256.0f);",
@@ -556,7 +528,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 194,
+      "line": 191,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar8 = (int *)((int)&(pSVar1->projected_vertex).transformed_x + iStack_1c);",
@@ -564,7 +536,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 207,
+      "line": 204,
       "match": "ROUND",
       "severity": "mild",
       "text": "aCStack_44[0].x = (int)ROUND((float)(fVar9 * fVar10) * 256.0f);",
@@ -572,7 +544,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 208,
+      "line": 205,
       "match": "ROUND",
       "severity": "mild",
       "text": "aCStack_44[0].y = (int)ROUND(CStack_8c.max.y * 256.0f);",
@@ -580,7 +552,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 209,
+      "line": 206,
       "match": "ROUND",
       "severity": "mild",
       "text": "aCStack_44[0].z = (int)ROUND((float)(fVar12 * fVar10) * 256.0f);",

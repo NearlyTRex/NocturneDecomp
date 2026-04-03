@@ -6,7 +6,7 @@
 ; Parameters:
 ; CWater *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0xb4]:24  SStack_b4
+; SMRGLPrimitiveQuadIndex Stack[-0xb4]:40  SStack_b4
 ; CVector3f        Stack[-0x8c]:12  local_8c
 ; CVector3i        Stack[-0x80]:12  local_80
 ; int              Stack[-0x74]:4  local_74

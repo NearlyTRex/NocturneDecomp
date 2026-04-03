@@ -23,7 +23,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
   byte bVar4;
   int aiStackY_10d4 [992];
   float fVar9;
-  SMRGLHeaderPrimitive local_138;
+  SMRGLPrimitiveQuadIndex local_138;
   float local_110;
   float local_10c;
   float local_108;
@@ -156,29 +156,33 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                         (g_CDemonRendererPtr2,texture);
               this_ptr_00 = g_CDemonRendererPtr2;
-              local_138.base.count = 4;
-              local_138.surface_normal.D = 0;
-              local_138.surface_normal.C = 0;
-              local_138.surface_normal.B = 0;
-              local_138.surface_normal.A = 0;
+              local_138.base.base.count = 4;
+              local_138.base.surface_normal.D = 0;
+              local_138.base.surface_normal.C = 0;
+              local_138.base.surface_normal.B = 0;
+              local_138.base.surface_normal.A = 0;
+              local_138.vertices[0] = 0;
               g_CDemonRendererPtr2->vertex_buffer_ptr->u = *(int *)texture[1].texture_name << 0x10;
               this_ptr_00->vertex_buffer_ptr->v = *(int *)(texture[1].texture_name + 4) << 0x10;
               this_ptr_00->vertex_buffer_ptr->a = iVar7;
               this_ptr_00->vertex_buffer_ptr->r = 0xffff;
               this_ptr_00->vertex_buffer_ptr->g = 0xffff;
               this_ptr_00->vertex_buffer_ptr->b = 0xffff;
+              local_138.vertices[1] = 1;
               this_ptr_00->vertex_buffer_ptr[1].u = *(int *)(texture[1].texture_name + 8) << 0x10;
               this_ptr_00->vertex_buffer_ptr[1].v = *(int *)(texture[1].texture_name + 4) << 0x10;
               this_ptr_00->vertex_buffer_ptr[1].a = iVar7;
               this_ptr_00->vertex_buffer_ptr[1].r = 0xffff;
               this_ptr_00->vertex_buffer_ptr[1].g = 0xffff;
               this_ptr_00->vertex_buffer_ptr[1].b = 0xffff;
+              local_138.vertices[2] = 2;
               this_ptr_00->vertex_buffer_ptr[2].u = *(int *)(texture[1].texture_name + 8) << 0x10;
               this_ptr_00->vertex_buffer_ptr[2].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;
               this_ptr_00->vertex_buffer_ptr[2].a = iVar7;
               this_ptr_00->vertex_buffer_ptr[2].r = 0xffff;
               this_ptr_00->vertex_buffer_ptr[2].g = 0xffff;
               this_ptr_00->vertex_buffer_ptr[2].b = 0xffff;
+              local_138.vertices[3] = 3;
               this_ptr_00->vertex_buffer_ptr[3].u = *(int *)texture[1].texture_name << 0x10;
               this_ptr_00->vertex_buffer_ptr[3].v = *(int *)(texture[1].texture_name + 0xc) << 0x10;
               this_ptr_00->vertex_buffer_ptr[3].a = iVar7;
@@ -186,7 +190,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
               this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
               this_ptr_00->vertex_buffer_ptr[3].b = 0xffff;
               engine_drender_cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10
-                        (this_ptr_00,&local_138);
+                        (this_ptr_00,&local_138.base);
               engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
             } while( true );
           }

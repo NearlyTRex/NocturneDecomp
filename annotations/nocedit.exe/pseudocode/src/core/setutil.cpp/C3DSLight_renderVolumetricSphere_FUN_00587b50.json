@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 207,
-    "complexity_score": 308,
+    "complexity_score": 310,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 93,
+    "pseudocode_lines": 95,
     "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 300
+    "total_lines": 302
   },
   "cross_references": [],
   "function": {
@@ -202,36 +202,8 @@
         "is_param": false,
         "name": "local_78",
         "offset": -120,
-        "size": 24,
-        "type": "SMRGLHeaderPrimitive"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_5c",
-        "offset": -92,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_54",
-        "offset": -84,
-        "size": 4,
-        "type": "int"
+        "size": 40,
+        "type": "SMRGLPrimitiveQuadIndex"
       },
       {
         "is_param": false,
@@ -316,7 +288,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 29,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(this_ptr->atten_end) == 0.0) {",
@@ -324,7 +296,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 42,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar5 = (float10)fsin(fVar4);",
@@ -332,7 +304,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 43,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar1 = (float10)fcos(fVar4);",
@@ -340,7 +312,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 47,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar8 = (float10)fcos(fVar7);",
@@ -348,7 +320,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 48,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar2 = (float10)fsin(fVar7);",
@@ -356,7 +328,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 49,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_50.x = (int)ROUND((float)(fVar5 * fVar6 * fVar8) * 256.0f);",
@@ -364,7 +336,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 50,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_50.y = (int)ROUND((float)(fVar2 * fVar6) * 256.0f);",
@@ -372,7 +344,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 51,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_50.z = (int)ROUND((float)(fVar1 * fVar6 * fVar8) * 256.0f);",
@@ -380,7 +352,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 57,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar1) = 0x800000;",
@@ -388,7 +360,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 58,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar1) = 0x800000;",
@@ -396,7 +368,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 59,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->r + iVar1) =",
@@ -404,7 +376,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 60,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->color).r * 255.0f));",
@@ -412,7 +384,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 60,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->color).r * 255.0f));",
@@ -420,7 +392,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 61,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->g + iVar1) =",
@@ -428,7 +400,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 62,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->color).g * 255.0f));",
@@ -436,7 +408,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 62,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->color).g * 255.0f));",
@@ -444,7 +416,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 64,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->b + iVar1) =",
@@ -452,7 +424,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 65,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->color).b * 255.0f));",
@@ -460,7 +432,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 65,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((this_ptr->color).b * 255.0f));",

@@ -20,7 +20,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
   int iVar5;
   int iVar10;
   int iVar6;
-  SMRGLHeaderPrimitive local_88;
+  SMRGLPrimitiveQuadIndex local_88;
   CVector3i local_60;
   CVector3i local_54;
   CVector3i local_48;
@@ -123,16 +123,20 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
       *(int *)((int)&pCVar3->vertex_buffer_ptr->b + iVar7) = (this_ptr->color).b << 8;
       iVar7 = iVar8;
     } while (iVar8 != 0xc0);
-    local_88.surface_normal.D = 0;
-    local_88.surface_normal.C = 0;
-    local_88.surface_normal.B = 0;
-    local_88.surface_normal.A = 0;
-    local_88.base.count = 4;
+    local_88.base.surface_normal.D = 0;
+    local_88.base.surface_normal.C = 0;
+    local_88.base.surface_normal.B = 0;
+    local_88.base.surface_normal.A = 0;
+    local_88.vertices[0] = 0;
+    local_88.base.base.count = 4;
+    local_88.vertices[2] = 2;
+    local_88.vertices[3] = 3;
+    local_88.vertices[1] = 1;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(pCVar3,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&g_LoadingMoonGlowTexture);
     engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-              (g_CDemonRendererPtr2,&local_88,0x327);
+              (g_CDemonRendererPtr2,&local_88.base,0x327);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
               (&g_LoadingMoonModel,0,(CKeyFramedModelInstance *)0x0,0x205);

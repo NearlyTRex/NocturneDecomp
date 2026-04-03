@@ -14,7 +14,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0(CDemo
   int iVar2;
   int iVar1;
   int iVar3;
-  SMRGLHeaderPrimitive SStack_50;
+  SMRGLPrimitiveQuadIndex SStack_50;
   float local_28;
   float local_24;
   float local_20;
@@ -52,17 +52,24 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0(CDemo
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&g_CoronaHeadliteTexture);
   iVar2 = 0;
   do {
-    SStack_50.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x14);
-    SStack_50.surface_normal.A = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x10);
-    SStack_50.surface_normal.B = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0xc);
-    SStack_50.surface_normal.C = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -8);
+    SStack_50.base.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x14);
+    SStack_50.base.surface_normal.A =
+         *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x10);
+    SStack_50.base.surface_normal.B =
+         *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0xc);
+    SStack_50.base.surface_normal.C = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -8)
+    ;
     iVar1 = iVar2 + -4;
+    SStack_50.vertices[0] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2);
+    SStack_50.vertices[1] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 4);
+    SStack_50.vertices[2] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 8);
+    SStack_50.vertices[3] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 0xc);
     iVar2 = iVar2 + 0x24;
-    SStack_50.surface_normal.D =
+    SStack_50.base.surface_normal.D =
          (int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar1) *
                           this_ptr->radius));
     engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-              (g_CDemonRendererPtr1,&SStack_50);
+              (g_CDemonRendererPtr1,&SStack_50.base);
   } while (iVar2 != 0xbd0);
   return;
 }

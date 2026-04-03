@@ -6,7 +6,7 @@
 ; Parameters:
 ; CMirror *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x64]:24  local_64
+; SMRGLPrimitiveQuadIndex Stack[-0x64]:40  local_64
 ; CVector3i        Stack[-0x3c]:12  local_3c
 ; CVector3i        Stack[-0x30]:12  local_30
 ; CVector3i        Stack[-0x24]:12  local_24

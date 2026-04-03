@@ -33,7 +33,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
   unkbyte10 Var10;
   float10 fVar11;
   int aiStackY_10d8 [987];
-  SMRGLHeaderPrimitive local_160;
+  SMRGLPrimitiveQuadIndex local_160;
   CVector3f local_138;
   CVector3i local_12c;
   CVector3f local_120;
@@ -200,14 +200,18 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
               this_ptr_00->vertex_buffer_ptr[1].r = iVar1;
               this_ptr_00->vertex_buffer_ptr[2].r = iVar2;
               this_ptr_00->vertex_buffer_ptr[3].r = iVar2;
-              local_160.base.count = 4;
-              local_160.surface_normal.D = 0;
-              local_160.surface_normal.C = 0;
-              local_160.surface_normal.B = 0;
-              local_160.surface_normal.A = 0;
+              local_160.base.base.count = 4;
+              local_160.vertices[2] = 1;
+              local_160.base.surface_normal.D = 0;
+              local_160.base.surface_normal.C = 0;
+              local_160.base.surface_normal.B = 0;
+              local_160.base.surface_normal.A = 0;
               iVar4 = local_24 + 1;
+              local_160.vertices[1] = 2;
+              local_160.vertices[3] = 0;
+              local_160.vertices[0] = 3;
               engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
-                        (this_ptr_00,&local_160,
+                        (this_ptr_00,&local_160.base,
                          core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440);
               local_24 = iVar4;
             } while (iVar4 < 4);

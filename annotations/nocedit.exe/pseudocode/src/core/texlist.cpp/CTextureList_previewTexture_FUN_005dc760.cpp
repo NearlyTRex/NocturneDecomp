@@ -14,7 +14,7 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
   char (*pacVar3) [16];
   int iVar3;
   char *pcVar4;
-  SMRGLHeaderPrimitive SStack_50;
+  SMRGLPrimitiveQuadIndex SStack_50;
   SMRGLTextureBasic local_28;
   char cVar1;
   
@@ -60,11 +60,15 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
     g_RenderVertexBuffer[3].projected_vertex.transformed_y = -0xa00;
     g_RenderVertexBuffer[3].projected_vertex.transformed_x = 0xa00;
     g_RenderVertexBuffer[3].projected_vertex.transformed_z = 0xa00;
-    SStack_50.surface_normal.A = 0;
-    SStack_50.surface_normal.B = 0;
-    SStack_50.surface_normal.C = 0;
-    SStack_50.surface_normal.D = 0;
-    SStack_50.base.count = 4;
+    SStack_50.base.surface_normal.A = 0;
+    SStack_50.base.surface_normal.B = 0;
+    SStack_50.base.surface_normal.C = 0;
+    SStack_50.base.surface_normal.D = 0;
+    SStack_50.vertices[0] = 0;
+    SStack_50.vertices[3] = 3;
+    SStack_50.base.base.count = 4;
+    SStack_50.vertices[2] = 2;
+    SStack_50.vertices[1] = 1;
     g_RenderVertexBuffer[2].u = 0x80000;
     pcVar4 = local_28.texture_name;
     pacVar3 = this_ptr->master_texture_names + this_ptr->current_master_selection;
@@ -79,7 +83,7 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
       pcVar4 = pcVar4 + 2;
     } while (cVar2 != '\0');
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&local_28);
-    engine_3d_c_renderPolygonTextureEnable_FUN_00403cc0(&SStack_50);
+    engine_3d_c_renderPolygonTextureEnable_FUN_00403cc0(&SStack_50.base);
     if (g_KeyboardState[0x1b] != '\0') {
       g_KeyboardState[0x1b] = '\0';
       iVar2 = this_ptr->current_master_selection + (uint)(byte)g_KeyboardState[0x2a] * 9 + 1;

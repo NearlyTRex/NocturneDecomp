@@ -6,7 +6,7 @@
 ; Parameters:
 ; CTextureList *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x50]:24  SStack_50
+; SMRGLPrimitiveQuadIndex Stack[-0x50]:40  SStack_50
 ; SMRGLTextureBasic Stack[-0x28]:24  local_28
 ;
 ; Referenced Globals:

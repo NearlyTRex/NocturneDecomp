@@ -21,7 +21,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
   byte bVar5;
   int aiStackY_10bc [990];
   float fVar8;
-  SMRGLHeaderPrimitive local_12c;
+  SMRGLPrimitiveQuadIndex local_12c;
   CVector3f local_104;
   CVector3i local_f8;
   CVector3f local_ec;
@@ -145,11 +145,12 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
             engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                       (g_CDemonRendererPtr2,g_LightTextures + 1);
             this_ptr_00 = g_CDemonRendererPtr2;
-            local_12c.base.count = 4;
-            local_12c.surface_normal.D = 0;
-            local_12c.surface_normal.C = 0;
-            local_12c.surface_normal.B = 0;
-            local_12c.surface_normal.A = 0;
+            local_12c.base.base.count = 4;
+            local_12c.base.surface_normal.D = 0;
+            local_12c.base.surface_normal.C = 0;
+            local_12c.base.surface_normal.B = 0;
+            local_12c.base.surface_normal.A = 0;
+            local_12c.vertices[0] = 0;
             iVar6 = (int)ROUND(ROUND(((((this_ptr->base).max_distance - fVar8) *
                                       (float)8192) / (this_ptr->base).max_distance) *
                                      (1.0 - fVar1)));
@@ -157,14 +158,17 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
             this_ptr_00->vertex_buffer_ptr->r = 0xffff;
             this_ptr_00->vertex_buffer_ptr->g = 0xffff;
             this_ptr_00->vertex_buffer_ptr->b = 0xffff;
+            local_12c.vertices[1] = 1;
             this_ptr_00->vertex_buffer_ptr[1].a = iVar6;
             this_ptr_00->vertex_buffer_ptr[1].r = 0xffff;
             this_ptr_00->vertex_buffer_ptr[1].g = 0xffff;
             this_ptr_00->vertex_buffer_ptr[1].b = 0xffff;
+            local_12c.vertices[2] = 2;
             this_ptr_00->vertex_buffer_ptr[2].a = iVar6;
             this_ptr_00->vertex_buffer_ptr[2].r = 0xffff;
             this_ptr_00->vertex_buffer_ptr[2].g = 0xffff;
             this_ptr_00->vertex_buffer_ptr[2].b = 0xffff;
+            local_12c.vertices[3] = 3;
             this_ptr_00->vertex_buffer_ptr[3].a = iVar6;
             this_ptr_00->vertex_buffer_ptr[3].r = 0xffff;
             this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
@@ -178,7 +182,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
             this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
             this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
             engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                      (this_ptr_00,&local_12c);
+                      (this_ptr_00,&local_12c.base);
             iVar4 = iVar4 + 1;
             engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
           } while (iVar4 < 0x19);

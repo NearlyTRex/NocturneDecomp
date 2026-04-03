@@ -27,7 +27,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
   int screen_y;
   SRenderVertex *pSVar8;
   byte bVar9;
-  SMRGLHeaderPrimitive SStack_a0;
+  SMRGLPrimitiveQuad SStack_a0;
   CBoundingBox3D local_58;
   CVector3f CStack_40;
   CVector3i CStack_34;
@@ -71,11 +71,20 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
       g_FlyInvBlendColor = g_FlyBlendColor ^ 0xffffff;
     }
     else {
-      SStack_a0.base.count = 3;
-      SStack_a0.surface_normal.D = 0;
-      SStack_a0.surface_normal.C = 0;
-      SStack_a0.surface_normal.B = 0;
-      SStack_a0.surface_normal.A = 0;
+      SStack_a0.base.base.count = 3;
+      SStack_a0.base.surface_normal.D = 0;
+      SStack_a0.base.surface_normal.C = 0;
+      SStack_a0.base.surface_normal.B = 0;
+      SStack_a0.base.surface_normal.A = 0;
+      SStack_a0.vertices[0].vertex_index = 0;
+      SStack_a0.vertices[0].texture_u = 0x800000;
+      SStack_a0.vertices[0].texture_v = 0x800000;
+      SStack_a0.vertices[1].texture_u = 0x800000;
+      SStack_a0.vertices[1].texture_v = 0x800000;
+      SStack_a0.vertices[2].texture_u = 0x800000;
+      SStack_a0.vertices[2].texture_v = 0x800000;
+      SStack_a0.vertices[1].vertex_index = 1;
+      SStack_a0.vertices[2].vertex_index = 2;
       g_CDemonRendererPtr2->vertex_buffer_ptr->r = 0;
       pCVar2->vertex_buffer_ptr->g = 0;
       pCVar2->vertex_buffer_ptr->b = 0;
@@ -167,7 +176,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
                  *(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) +
                  1;
             engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-                      (this_ptr_01,&SStack_a0,999);
+                      (this_ptr_01,&SStack_a0.base,999);
           }
         }
         pSStack_20 = pSStack_20 + 1;

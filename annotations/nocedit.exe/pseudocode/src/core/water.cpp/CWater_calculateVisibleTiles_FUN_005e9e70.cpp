@@ -21,7 +21,7 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *th
   int iVar6;
   int iVar7;
   int iVar8;
-  SMRGLHeaderPrimitive SStack_b4;
+  SMRGLPrimitiveQuadIndex SStack_b4;
   CVector3f local_8c;
   CVector3i local_80;
   int local_74;
@@ -117,14 +117,18 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *th
                 g_RenderVertexBuffer[2].projected_vertex.screen_x &
                 g_RenderVertexBuffer[3].projected_vertex.screen_x;
         if (((uVar3 & 0x80000000) == 0) || ((char)uVar3 == '\0')) {
-          SStack_b4.base.count = 4;
-          SStack_b4.surface_normal.D = 0;
-          SStack_b4.surface_normal.C = 0;
-          SStack_b4.surface_normal.B = 0;
-          SStack_b4.surface_normal.A = 0;
+          SStack_b4.base.base.count = 4;
+          SStack_b4.base.surface_normal.D = 0;
+          SStack_b4.base.surface_normal.C = 0;
+          SStack_b4.base.surface_normal.B = 0;
+          SStack_b4.base.surface_normal.A = 0;
+          SStack_b4.vertices[0] = 0;
+          SStack_b4.vertices[3] = 3;
           g_RenderPixelBudget = 0x10;
+          SStack_b4.vertices[1] = 1;
+          SStack_b4.vertices[2] = 2;
           iVar4 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
-                            (g_CDemonRendererPtr2,&SStack_b4);
+                            (g_CDemonRendererPtr2,&SStack_b4.base);
           if (iVar4 != 0) {
             if (0xfff < g_VisibleWaterTileCount) {
               g_CurrentFilename = "..\\core\\water.cpp";

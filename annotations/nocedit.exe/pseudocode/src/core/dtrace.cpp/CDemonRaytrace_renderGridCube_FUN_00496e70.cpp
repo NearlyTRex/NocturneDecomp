@@ -10,7 +10,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00496e70(CDemonRa
 
 {
   uint uVar1;
-  SMRGLHeaderPrimitive local_dc;
+  SMRGLPrimitiveQuad local_dc;
   CVector3i local_94;
   CVector3i local_88;
   CVector3i local_7c;
@@ -82,24 +82,48 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00496e70(CDemonRa
   uVar1 = rand();
   engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
             (g_CDemonRendererPtr2,uVar1 & 0xff);
-  local_dc.base.count = 4;
-  local_dc.surface_normal.A = 0;
-  local_dc.surface_normal.B = 0;
-  local_dc.surface_normal.C = 0;
-  local_dc.surface_normal.D = 0;
+  local_dc.base.base.count = 4;
+  local_dc.base.surface_normal.A = 0;
+  local_dc.base.surface_normal.B = 0;
+  local_dc.base.surface_normal.C = 0;
+  local_dc.base.surface_normal.D = 0;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
+  local_dc.vertices[3].vertex_index = 0;
+  local_dc.vertices[2].vertex_index = 1;
+  local_dc.vertices[0].vertex_index = 4;
+  local_dc.vertices[1].vertex_index = 5;
   engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-            (g_CDemonRendererPtr2,&local_dc);
+            (g_CDemonRendererPtr2,&local_dc.base);
+  local_dc.vertices[3].vertex_index = 2;
+  local_dc.vertices[2].vertex_index = 3;
+  local_dc.vertices[1].vertex_index = 7;
+  local_dc.vertices[0].vertex_index = 6;
   engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-            (g_CDemonRendererPtr2,&local_dc);
+            (g_CDemonRendererPtr2,&local_dc.base);
+  local_dc.vertices[1].vertex_index = 7;
+  local_dc.vertices[3].vertex_index = 0;
+  local_dc.vertices[2].vertex_index = 4;
+  local_dc.vertices[0].vertex_index = 3;
   engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-            (g_CDemonRendererPtr2,&local_dc);
+            (g_CDemonRendererPtr2,&local_dc.base);
+  local_dc.vertices[3].vertex_index = 1;
+  local_dc.vertices[2].vertex_index = 2;
+  local_dc.vertices[1].vertex_index = 6;
+  local_dc.vertices[0].vertex_index = 5;
   engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-            (g_CDemonRendererPtr2,&local_dc);
+            (g_CDemonRendererPtr2,&local_dc.base);
+  local_dc.vertices[1].vertex_index = 6;
+  local_dc.vertices[3].vertex_index = 4;
+  local_dc.vertices[2].vertex_index = 5;
+  local_dc.vertices[0].vertex_index = 7;
   engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-            (g_CDemonRendererPtr2,&local_dc);
+            (g_CDemonRendererPtr2,&local_dc.base);
+  local_dc.vertices[2].vertex_index = 2;
+  local_dc.vertices[1].vertex_index = 1;
+  local_dc.vertices[3].vertex_index = 3;
+  local_dc.vertices[0].vertex_index = 0;
   engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-            (g_CDemonRendererPtr2,&local_dc);
+            (g_CDemonRendererPtr2,&local_dc.base);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   return;
 }

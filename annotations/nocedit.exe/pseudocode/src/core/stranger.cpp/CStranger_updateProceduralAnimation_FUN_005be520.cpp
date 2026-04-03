@@ -41,7 +41,6 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(
   CQuaternion4f *rotation_quat;
   float fVar15;
   char *motion_name;
-  code *blend_callback;
   int iVar16;
   float local_1f0c;
   float local_1f08;
@@ -142,6 +141,7 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(
   float local_20;
   CDeformableModelInstance *local_1c;
   CDeformableModelInstance *local_18;
+  CDeformableModel_MotionBlendWeightFunc *blend_callback;
   
   local_1f08 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
                          (&(this_ptr->base).base.model.motion_controller,0);

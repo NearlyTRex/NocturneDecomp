@@ -4,37 +4,37 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4690 functions
-  1 suspects: 690 functions
-  2 suspects: 300 functions
-  3 suspects: 235 functions
+  0 suspects: 4694 functions
+  1 suspects: 692 functions
+  2 suspects: 297 functions
+  3 suspects: 233 functions
   4 suspects: 155 functions
-  5 suspects: 128 functions
-  6 suspects: 109 functions
+  5 suspects: 129 functions
+  6 suspects: 107 functions
   7 suspects: 87 functions
-  8 suspects: 52 functions
-  9 suspects: 63 functions
+  8 suspects: 53 functions
+  9 suspects: 62 functions
   10 suspects: 26 functions
   11 suspects: 37 functions
   12 suspects: 27 functions
   13 suspects: 28 functions
-  14 suspects: 26 functions
+  14 suspects: 25 functions
   15 suspects: 22 functions
   16 suspects: 12 functions
-  17 suspects: 15 functions
-  18 suspects: 15 functions
-  19 suspects: 14 functions
-  20 suspects: 21 functions
+  17 suspects: 16 functions
+  18 suspects: 16 functions
+  19 suspects: 13 functions
+  20 suspects: 20 functions
   21 suspects: 11 functions
   22 suspects: 8 functions
   23 suspects: 8 functions
-  24 suspects: 12 functions
+  24 suspects: 13 functions
   25 suspects: 10 functions
   26 suspects: 6 functions
   27 suspects: 4 functions
   28 suspects: 7 functions
-  29 suspects: 8 functions
-  30 suspects: 4 functions
+  29 suspects: 9 functions
+  30 suspects: 3 functions
   31 suspects: 6 functions
   32 suspects: 3 functions
   33 suspects: 1 functions
@@ -172,7 +172,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return ADJ(pSVar1);...
     ... and 114 more
 
-  [pointer_cast] (131 functions)
+  [pointer_cast] (133 functions)
   ------------------------------------------------------------
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360    (  5 lines)
       *(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_va...
@@ -214,7 +214,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       uVar1 = *(uint *)((int)this_ptr->framebuffer_aligned +...
     shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420   ( 22 lines)
       puVar1 = (uint *)((int)this_ptr->spatial_grid_ptr->cell_star...
-    ... and 111 more
+    ... and 113 more
 
   [param_count_too_few] (57 functions)
   ------------------------------------------------------------
@@ -434,8 +434,8 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       iVar1 = (**(code **)((int)g_SearchHandlers + iVar2))(context...
     shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4 ( 36 lines)
       iVar1 = (**(code **)(*(int *)(iVar4 + 100) + 0x70))...
-    engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_004 ( 74 lines)
-      code *pcVar2;...
+    engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_004 ( 75 lines)
+      code *pcVar3;...
     sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae ( 77 lines)
       uVar2 = (**(code **)(*piVar1 + 0x48))(piVar1);...
     sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f3 ( 86 lines)
@@ -690,4 +690,4 @@ FUNCTIONS WITH 2-3 SUSPECTS
   crt_watcom.c_memavl_FUN_006008f0
     File: crt/watcom.c, Lines: 16, Types: ['param_count_too_few', 'special_crt_function']
 
-  ... and 485 more
+  ... and 480 more

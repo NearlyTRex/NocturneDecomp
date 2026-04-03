@@ -7,7 +7,7 @@
 ; CBoundingBox3D * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; CVector3i[8]     Stack[-0xb0]:96  local_b0
-; SMRGLHeaderPrimitive Stack[-0x50]:24  local_50
+; SMRGLPrimitiveQuadIndex Stack[-0x50]:40  local_50
 ; int              Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20

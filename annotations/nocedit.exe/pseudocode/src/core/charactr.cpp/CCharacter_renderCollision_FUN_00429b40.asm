@@ -7,11 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; int              Stack[-0xf0]:4  local_f0
-; SMRGLHeaderPrimitive Stack[-0xe8]:24  local_e8
-; int              Stack[-0xd0]:4  local_d0
-; int              Stack[-0xcc]:4  local_cc
-; int              Stack[-0xc8]:4  local_c8
-; int              Stack[-0xc4]:4  local_c4
+; SMRGLPrimitiveQuadIndex Stack[-0xe8]:40  local_e8
 ; CVector3i        Stack[-0xc0]:12  local_c0
 ; CVector3i        Stack[-0xb4]:12  local_b4
 ; CVector3i        Stack[-0xa8]:12  local_a8

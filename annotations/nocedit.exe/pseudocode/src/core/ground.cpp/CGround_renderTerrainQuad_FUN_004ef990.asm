@@ -8,14 +8,8 @@
 ; int              Stack[0x8]:4   world_column
 ; int              Stack[0xc]:4   world_row
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x84]:24  SStack_84
-; int              Stack[-0x6c]:4  local_6c
-; int              Stack[-0x68]:4  local_68
-; int              Stack[-0x64]:4  local_64
-; SMRGLHeaderPrimitive Stack[-0x4c]:24  local_4c
-; int              Stack[-0x34]:4  local_34
-; int              Stack[-0x30]:4  local_30
-; int              Stack[-0x2c]:4  local_2c
+; SMRGLPrimitiveTriangleIndex Stack[-0x84]:36  SStack_84
+; SMRGLPrimitiveTriangleIndex Stack[-0x4c]:36  local_4c
 ; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

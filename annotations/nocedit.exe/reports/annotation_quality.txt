@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        208 ( 3.2%)
+  Functions with type issues:        207 ( 3.2%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,7 +22,7 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          2
-    Undefined types in variables:      195
+    Undefined types in variables:      194
     Unresolved stack params:           15
 
   Excluded (.keep / MMX / by-value):   32 functions
@@ -179,7 +179,7 @@ Unresolved stack parameters (missing from signature) (15)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (195)
+Undefined types in variables (194)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -770,11 +770,6 @@ Undefined types in variables (195)
   safeAcos
     Address: 0x004bf1a0  File: core/fire.cpp
     Locals:  local_8 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CFlame_renderTransparent
-    Address: 0x004ca110  File: core/flame.cpp
-    Locals:  auStackY_1088 (undefined4[973])
     Suggested: Resolve undefined types to concrete types
 
   CFlameThrower_getDamageAlt

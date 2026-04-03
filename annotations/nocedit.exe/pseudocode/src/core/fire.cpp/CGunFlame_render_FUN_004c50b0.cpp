@@ -27,7 +27,7 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   float10 fVar12;
   float10 fVar13;
   float local_d0;
-  SMRGLHeaderPrimitive local_c4;
+  SMRGLPrimitiveQuadIndex local_c4;
   float local_9c;
   float local_98;
   float local_94;
@@ -150,14 +150,18 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   this_ptr_00->vertex_buffer_ptr[3].g = iVar2;
   this_ptr_00->vertex_buffer_ptr[3].b = iVar3;
   this_ptr_00->vertex_buffer_ptr[3].a = iVar4;
-  local_c4.surface_normal.D = 0;
-  local_c4.surface_normal.C = 0;
-  local_c4.surface_normal.B = 0;
-  local_c4.surface_normal.A = 0;
-  local_c4.base.count = 4;
+  local_c4.base.surface_normal.D = 0;
+  local_c4.base.surface_normal.C = 0;
+  local_c4.base.surface_normal.B = 0;
+  local_c4.base.surface_normal.A = 0;
+  local_c4.vertices[0] = 0;
+  local_c4.vertices[2] = 2;
+  local_c4.base.base.count = 4;
+  local_c4.vertices[3] = 3;
+  local_c4.vertices[1] = 1;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(this_ptr_00,1);
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr2,&local_c4);
+            (g_CDemonRendererPtr2,&local_c4.base);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   return;

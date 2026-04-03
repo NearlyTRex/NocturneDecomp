@@ -19,9 +19,8 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   float fVar7;
   SProjectedVertex *point;
   byte bVar6;
-  SMRGLHeaderPrimitive SStack_144;
-  byte auStack_120 [4];
-  SMRGLHeaderPrimitive SStack_11c;
+  SMRGLPrimitiveQuadIndex local_144;
+  SMRGLPrimitiveQuadIndex local_11c;
   CBoundingBox3D local_f4;
   CVector3i CStack_dc;
   CVector3i CStack_d0;
@@ -46,7 +45,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   float fStack_1c;
   int iStack_18;
   int iStack_14;
-  float fStack_10;
+  int fStack_10;
   CDemonRenderer *this_ptr_00;
   float fVar4;
   float fVar3;
@@ -166,14 +165,8 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
                      SMRGLTextureBasic_ARRAY_0067b100 +
                      this_ptr->which_flame * 8 + (int)ROUND(ROUND(this_ptr->animation_time)) % 8);
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-          SStack_11c.base.type = 4;
-          SStack_11c.surface_normal.C = 0;
-          SStack_11c.surface_normal.B = 0;
-          SStack_11c.surface_normal.A = 0;
-          SStack_11c.base.count = 0;
-          SStack_11c.surface_normal.D = 0;
           engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                    (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)auStack_120);
+                    (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)(local_144.vertices + 3));
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
           iVar6 = iVar6 + 1;
@@ -222,11 +215,11 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,
                  (CVector3i *)&CStack_40.y);
-      fStack_10 = 0.0;
+      fStack_10 = 0;
       do {
         point = (SProjectedVertex *)
                 ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
-                (int)fStack_10);
+                fStack_10);
         iVar6 = point->transformed_z;
         if (0x200 < iVar6) {
           iVar1 = iVar6 + -0x100;
@@ -238,8 +231,8 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
           engine_matrix_c_projectTransformedPoint_FUN_0050cdc0(point);
         }
         this_ptr_00 = g_CDemonRendererPtr2;
-        fStack_10 = (float)((int)fStack_10 + 0x30);
-      } while (fStack_10 != 2.69049e-43);
+        fStack_10 = fStack_10 + 0x30;
+      } while (fStack_10 != 0xc0);
       g_CDemonRendererPtr2->vertex_buffer_ptr->a = 0x4000;
       this_ptr_00->vertex_buffer_ptr[1].a = 0x4000;
       this_ptr_00->vertex_buffer_ptr[2].a = 0x4000;
@@ -252,17 +245,19 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
       this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
       this_ptr_00->vertex_buffer_ptr[3].u = 0x80000;
       this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
-      SStack_144.surface_normal.A = 4;
-      SStack_144.surface_normal.D = 0;
-      SStack_144.surface_normal.C = 0;
-      SStack_144.surface_normal.B = 0;
-      auStack_120 = (byte  [4])0x2;
-      SStack_11c.base.type = 3;
+      local_144.base.surface_normal.A = 4;
+      local_144.vertices[0] = 0;
+      local_144.base.surface_normal.D = 0;
+      local_144.base.surface_normal.C = 0;
+      local_144.base.surface_normal.B = 0;
+      local_144.vertices[1] = 0;
+      local_144.vertices[3] = 2;
+      local_144.vertices[2] = 1;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                 (this_ptr_00,&SMRGLTextureBasic_0067b0c8);
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
       engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-                (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&SStack_144.base.count,0x163);
+                (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&local_144.base.base.count,0x163);
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     }

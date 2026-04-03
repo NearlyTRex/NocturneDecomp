@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 386,
-    "complexity_score": 274,
+    "complexity_score": 283,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 18,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 169,
+    "pseudocode_lines": 178,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 555
+    "total_lines": 564
   },
   "cross_references": [],
   "function": {
@@ -272,8 +272,8 @@
         "is_param": false,
         "name": "SStack_a0",
         "offset": -160,
-        "size": 24,
-        "type": "SMRGLHeaderPrimitive"
+        "size": 72,
+        "type": "SMRGLPrimitiveQuad"
       },
       {
         "is_param": false,
@@ -368,7 +368,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 101,
       "match": "ROUND",
       "severity": "mild",
       "text": "iStack_1c = (int)ROUND(ROUND(pSStack_20->t * 64.0f));",
@@ -376,7 +376,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 101,
       "match": "ROUND",
       "severity": "mild",
       "text": "iStack_1c = (int)ROUND(ROUND(pSStack_20->t * 64.0f));",
@@ -384,7 +384,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 112,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_34.x = (int)ROUND(CStack_40.x * 256.0f);",
@@ -392,7 +392,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
+      "line": 113,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_34.y = (int)ROUND(CStack_40.y * 256.0f);",
@@ -400,7 +400,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 114,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_34.z = (int)ROUND(CStack_40.z * 256.0f);",
@@ -408,7 +408,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 156,
+      "line": 165,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "psVar1 = (short *)((int)&this_ptr_01->vertex_buffer_ptr[1].projected_vertex.screen_x + 2",
@@ -416,7 +416,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 159,
+      "line": 168,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "*(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =",
@@ -424,7 +424,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
+      "line": 169,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "*(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) +",

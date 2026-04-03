@@ -3,56 +3,20 @@
     "errors": [
       {
         "category": "other",
-        "column": 3,
-        "line": 41,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 46,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "cast_error",
-        "column": 13,
-        "line": 47,
-        "message": "cast from pointer to smaller type 'char' loses information"
-      },
-      {
-        "category": "pointer_arithmetic",
-        "column": 23,
-        "line": 50,
-        "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
-      },
-      {
-        "category": "cast_error",
-        "column": 21,
+        "column": 27,
         "line": 56,
-        "message": "cast from pointer to smaller type 'char' loses information"
-      },
-      {
-        "category": "pointer_arithmetic",
-        "column": 27,
-        "line": 57,
-        "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
-      },
-      {
-        "category": "pointer_arithmetic",
-        "column": 27,
-        "line": 59,
-        "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
+        "message": "assigning to 'byte *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
       },
       {
         "category": "format_error",
         "column": 57,
-        "line": 105,
+        "line": 104,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 78,
-        "line": 151,
+        "line": 150,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       }
     ],
@@ -61,17 +25,15 @@
   },
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 185,
+    "complexity_score": 159,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 160,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unresolved_funcptr"
-    ],
-    "total_lines": 584
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 159,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 583
   },
   "cross_references": [
     {
@@ -398,22 +360,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 34,
-      "match": "code",
-      "severity": "moderate",
-      "text": "code cVar3;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 39,
-      "match": "code",
-      "severity": "moderate",
-      "text": "while (cVar3 != (code)0x0) {",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

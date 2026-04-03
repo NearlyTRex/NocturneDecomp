@@ -28,91 +28,91 @@
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 538,
+        "line": 550,
         "message": "invalid operands to binary expression ('CEditorTools *' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 546,
+        "line": 558,
         "message": "invalid operands to binary expression ('CEditorTools *' and 'int')"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 552,
+        "line": 564,
         "message": "no matching function for call to '_sprintf'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 555,
+        "line": 567,
         "message": "no matching function for call to '_sprintf'"
       },
       {
         "category": "format_error",
         "column": 36,
-        "line": 559,
+        "line": 571,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 42,
-        "line": 561,
+        "line": 573,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 45,
-        "line": 563,
+        "line": 575,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 568,
+        "line": 580,
         "message": "no matching function for call to '_sprintf'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 574,
+        "line": 586,
         "message": "no matching function for call to '_sprintf'"
       },
       {
         "category": "format_error",
         "column": 48,
-        "line": 576,
+        "line": 588,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 45,
-        "line": 579,
+        "line": 591,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 48,
-        "line": 581,
+        "line": 593,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 57,
-        "line": 742,
+        "line": 754,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 43,
-        "line": 808,
+        "line": 820,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 32,
-        "line": 823,
+        "line": 835,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -121,12 +121,12 @@
   },
   "complexity": {
     "assembly_lines": 3419,
-    "complexity_score": 1251,
+    "complexity_score": 1263,
     "cross_reference_count": 2,
     "function_call_count": 90,
     "global_count": 144,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1066,
+    "pseudocode_lines": 1078,
     "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -135,7 +135,7 @@
       "suspect_float",
       "warning_inlined_function"
     ],
-    "total_lines": 4485
+    "total_lines": 4497
   },
   "cross_references": [
     {
@@ -1689,8 +1689,8 @@
         "is_param": false,
         "name": "local_3a4",
         "offset": -932,
-        "size": 24,
-        "type": "SMRGLHeaderPrimitive"
+        "size": 72,
+        "type": "SMRGLPrimitiveQuad"
       },
       {
         "is_param": false,
@@ -2424,7 +2424,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 530,
+      "line": 542,
       "match": "3.57331e-43",
       "severity": "mild",
       "text": "fVar9 = 3.57331e-43;",
@@ -2432,23 +2432,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 531,
-      "match": "SUB42",
-      "severity": "mild",
-      "text": "uVar19 = SUB42(g_CEditorToolsPtr,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 539,
-      "match": "SUB42",
-      "severity": "mild",
-      "text": "uVar19 = SUB42(g_CEditorToolsPtr,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
       "line": 543,
+      "match": "SUB42",
+      "severity": "mild",
+      "text": "uVar19 = SUB42(g_CEditorToolsPtr,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 551,
+      "match": "SUB42",
+      "severity": "mild",
+      "text": "uVar19 = SUB42(g_CEditorToolsPtr,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 555,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "((CEditorTools *)CONCAT22(uVar20,uVar19),2.0,(int)fVar9);",
@@ -2456,7 +2456,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 566,
+      "line": 578,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18 = (float)(int)ROUND(ROUND(fVar9));",
@@ -2464,7 +2464,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 566,
+      "line": 578,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18 = (float)(int)ROUND(ROUND(fVar9));",
@@ -2472,7 +2472,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 640,
+      "line": 652,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (0.0 < SQRT(local_118.z * local_118.z +",
@@ -2480,7 +2480,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 686,
+      "line": 698,
       "match": "SQRT",
       "severity": "mild",
       "text": "(0.0 < SQRT(local_13c.z * local_13c.z +",
@@ -2488,7 +2488,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 780,
+      "line": 792,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_38 = (float)(int)ROUND(ROUND(pSVar11->exit_forward_to_frame));",
@@ -2496,7 +2496,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 780,
+      "line": 792,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_38 = (float)(int)ROUND(ROUND(pSVar11->exit_forward_to_frame));",

@@ -16,7 +16,7 @@ void __cdecl core_setedit_cpp_renderColoredBox_FUN_005817d0(CVector3f *corner_a,
   int iVar2;
   uint uVar3;
   float local_60;
-  SMRGLHeaderPrimitive local_54;
+  SMRGLPrimitiveQuadIndex local_54;
   CVector3i local_2c;
   int local_20;
   int local_1c;
@@ -62,23 +62,47 @@ void __cdecl core_setedit_cpp_renderColoredBox_FUN_005817d0(CVector3f *corner_a,
       if (7 < (int)uVar3) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr,&g_SolidWhiteTexture)
         ;
-        local_54.surface_normal.D = 0;
-        local_54.surface_normal.C = 0;
-        local_54.surface_normal.B = 0;
-        local_54.surface_normal.A = 0;
-        local_54.base.count = 4;
+        local_54.base.surface_normal.D = 0;
+        local_54.base.surface_normal.C = 0;
+        local_54.base.surface_normal.B = 0;
+        local_54.base.surface_normal.A = 0;
+        local_54.vertices[0] = 0;
+        local_54.vertices[2] = 6;
+        local_54.base.base.count = 4;
+        local_54.vertices[3] = 4;
+        local_54.vertices[1] = 2;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr2,&local_54);
+                  (g_CDemonRendererPtr2,&local_54.base);
+        local_54.vertices[3] = 5;
+        local_54.vertices[0] = 1;
+        local_54.vertices[1] = 3;
+        local_54.vertices[2] = 7;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr2,&local_54);
+                  (g_CDemonRendererPtr2,&local_54.base);
+        local_54.vertices[0] = 0;
+        local_54.vertices[1] = 1;
+        local_54.vertices[2] = 3;
+        local_54.vertices[3] = 2;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr2,&local_54);
+                  (g_CDemonRendererPtr2,&local_54.base);
+        local_54.vertices[0] = 4;
+        local_54.vertices[1] = 5;
+        local_54.vertices[2] = 7;
+        local_54.vertices[3] = 6;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr2,&local_54);
+                  (g_CDemonRendererPtr2,&local_54.base);
+        local_54.vertices[0] = 2;
+        local_54.vertices[3] = 6;
+        local_54.vertices[1] = 3;
+        local_54.vertices[2] = 7;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr2,&local_54);
+                  (g_CDemonRendererPtr2,&local_54.base);
+        local_54.vertices[1] = 1;
+        local_54.vertices[0] = 0;
+        local_54.vertices[2] = 5;
+        local_54.vertices[3] = 4;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr2,&local_54);
+                  (g_CDemonRendererPtr2,&local_54.base);
         return;
       }
       if ((uVar3 & 1) == 0) break;

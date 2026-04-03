@@ -7,7 +7,7 @@
 ; CGunFlame *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; float            Stack[-0xd0]:4  local_d0
-; SMRGLHeaderPrimitive Stack[-0xc4]:24  local_c4
+; SMRGLPrimitiveQuadIndex Stack[-0xc4]:40  local_c4
 ; float            Stack[-0x9c]:4  local_9c
 ; float            Stack[-0x98]:4  local_98
 ; float            Stack[-0x94]:4  local_94

@@ -31,7 +31,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
   unkbyte10 Var8;
   float10 fVar9;
   int iVar17;
-  SMRGLHeaderPrimitive local_e0;
+  SMRGLPrimitiveQuadIndex local_e0;
   CVector3i local_b8;
   CVector3i local_ac;
   float local_a0;
@@ -162,13 +162,17 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
           this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
           iVar2 = iVar2 + 1;
           this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
-          local_e0.surface_normal.D = 0;
-          local_e0.surface_normal.C = 0;
-          local_e0.base.count = 4;
-          local_e0.surface_normal.B = 0;
-          local_e0.surface_normal.A = 0;
-          engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(this_ptr_00,&local_e0)
-          ;
+          local_e0.base.surface_normal.D = 0;
+          local_e0.base.surface_normal.C = 0;
+          local_e0.base.base.count = 4;
+          local_e0.base.surface_normal.B = 0;
+          local_e0.vertices[1] = 1;
+          local_e0.base.surface_normal.A = 0;
+          local_e0.vertices[0] = 0;
+          local_e0.vertices[3] = 3;
+          local_e0.vertices[2] = 2;
+          engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+                    (this_ptr_00,&local_e0.base);
         } while (iVar2 < 4);
         local_4c = local_4c + 1;
       } while (local_4c < 0x10);

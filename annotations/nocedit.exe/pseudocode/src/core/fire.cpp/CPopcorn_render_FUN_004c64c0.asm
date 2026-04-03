@@ -7,7 +7,7 @@
 ; CPopcorn *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4[1002] Stack[-0x1060]:4008  auStackY_1060
-; SMRGLHeaderPrimitive Stack[-0xa0]:24  SStack_a0
+; SMRGLPrimitiveQuadIndex Stack[-0xa0]:40  SStack_a0
 ; CVector3i        Stack[-0x78]:12  local_78
 ; CVector3i        Stack[-0x6c]:12  local_6c
 ; CVector3i        Stack[-0x60]:12  local_60

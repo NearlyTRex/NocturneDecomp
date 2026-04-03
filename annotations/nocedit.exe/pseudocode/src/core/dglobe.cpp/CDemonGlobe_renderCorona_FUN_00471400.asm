@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDemonGlobe *    Stack[0x4]:4   this_ptr
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x64]:24  local_64
+; SMRGLPrimitiveQuadIndex Stack[-0x64]:40  local_64
 ; float            Stack[-0x3c]:4  local_3c
 ; float            Stack[-0x38]:4  local_38
 ; float            Stack[-0x34]:4  local_34

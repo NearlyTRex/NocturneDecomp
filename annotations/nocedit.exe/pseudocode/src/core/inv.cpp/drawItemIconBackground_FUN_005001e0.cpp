@@ -9,7 +9,7 @@
 void __cdecl core_inv_cpp_drawItemIconBackground_FUN_005001e0(int x1,int y1,int x2,int y2,int alpha)
 
 {
-  SMRGLHeaderPrimitive local_48;
+  SMRGLPrimitiveQuadIndex local_48;
   int local_20;
   int local_1c;
   int local_18;
@@ -40,12 +40,16 @@ void __cdecl core_inv_cpp_drawItemIconBackground_FUN_005001e0(int x1,int y1,int 
   this_ptr->vertex_buffer_ptr[3].projected_vertex.transformed_z = 0x1000;
   this_ptr->vertex_buffer_ptr[3].u = 0;
   this_ptr->vertex_buffer_ptr[3].v = 0x600000;
-  local_48.base.count = 4;
-  local_48.surface_normal.D = 0;
-  local_48.surface_normal.C = 0;
-  local_48.surface_normal.B = 0;
-  local_48.surface_normal.A = 0;
-  engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(this_ptr,&local_48,0xa3);
+  local_48.base.base.count = 4;
+  local_48.base.surface_normal.D = 0;
+  local_48.base.surface_normal.C = 0;
+  local_48.base.surface_normal.B = 0;
+  local_48.base.surface_normal.A = 0;
+  local_48.vertices[0] = 0;
+  local_48.vertices[3] = 3;
+  local_48.vertices[1] = 1;
+  local_48.vertices[2] = 2;
+  engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(this_ptr,&local_48.base,0xa3);
   core_dcamera_cpp_CDemonCamera_pushRect_FUN_0044c740(&g_CDemonCameraInstance,x1,x2,y1,y2);
   return;
 }

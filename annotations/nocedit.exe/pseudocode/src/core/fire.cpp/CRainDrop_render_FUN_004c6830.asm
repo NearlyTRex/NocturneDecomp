@@ -7,7 +7,7 @@
 ; CRainDrop *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4[984]  Stack[-0x1020]:3936  auStackY_1020
-; SMRGLHeaderPrimitive Stack[-0xa8]:24  SStack_a8
+; SMRGLPrimitiveQuadIndex Stack[-0xa8]:40  SStack_a8
 ; CVector3i        Stack[-0x80]:12  local_80
 ; CVector3i        Stack[-0x74]:12  local_74
 ; CVector3i        Stack[-0x68]:12  local_68

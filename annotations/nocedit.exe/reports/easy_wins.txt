@@ -206,7 +206,7 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0
       Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
     - core_dskybox.cpp_renderSkyDome_FUN_004901f0
-      Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
+      Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, unknown_field
 
   core/turret.cpp (2 remaining of 24)
     - core_turret.cpp_CTurret_getBoundingBox_FUN_005e2910
@@ -296,7 +296,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [pointer_cast] - 71 functions
+  [pointer_cast] - 72 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360                        (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0                         (  5 lines)
     shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0                   ( 10 lines)
@@ -351,6 +351,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_ground.cpp_CGround_transformAndStoreVertex_FUN_004ef3a0           ( 35 lines)
     engine_3d.c_renderOverlayTextureEnable_FUN_00404020                    ( 36 lines)
     core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00453160              ( 37 lines)
+    core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0                        ( 37 lines)
     core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800            ( 38 lines)
     core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320           ( 38 lines)
     core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0                 ( 40 lines)
@@ -569,7 +570,7 @@ PRIORITY 3: Files at 90%+ (finish them off!)
 
   core/trigger.cpp (95.7% complete)
     1 functions remaining:
-      core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0 (233 lines)
+      core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0 (241 lines)
         Types: ['decompiler_intrinsic', 'pointer_cast', 'warning_inlined_function']
 
   core/boxactor.cpp (95.7% complete)
@@ -662,6 +663,15 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20 (315 lines)
         Types: ['decompiler_intrinsic', 'warning_type_propagation']
 
+  core/mission.cpp (92.7% complete)
+    3 functions remaining:
+      core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (103 lines)
+        Types: ['pointer_cast']
+      core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 (66 lines)
+        Types: ['pointer_cast']
+      core_mission.cpp_CDemonMission_process_FUN_00524250 (46 lines)
+        Types: ['warning_type_propagation']
+
   core/anvil.cpp (92.3% complete)
     1 functions remaining:
       core_anvil.cpp_CAnvil_process_FUN_00411d90 (46 lines)
@@ -722,8 +732,8 @@ PRIORITY 3: Files at 90%+ (finish them off!)
         Types: ['pointer_cast']
       core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0 (59 lines)
         Types: ['decompiler_intrinsic', 'sub84_truncation']
-      core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (1584 lines)
-        Types: ['decompiler_intrinsic', 'pointer_cast', 'unresolved_funcptr']
+      core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (1592 lines)
+        Types: ['decompiler_intrinsic', 'warning_type_propagation']
       core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (2168 lines)
         Types: ['format_string_mismatch', 'stack_ref']
 
@@ -765,17 +775,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970 (160 lines)
         Types: ['pointer_cast']
 
-  core/mission.cpp (90.2% complete)
-    4 functions remaining:
-      core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (103 lines)
-        Types: ['pointer_cast']
-      core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 (66 lines)
-        Types: ['pointer_cast']
-      core_mission.cpp_CDemonMission_process_FUN_00524250 (46 lines)
-        Types: ['warning_type_propagation']
-      core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 (21 lines)
-        Types: ['pointer_cast', 'unresolved_funcptr']
-
   engine/palette.cpp (90.0% complete)
     1 functions remaining:
       engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060 (60 lines)
@@ -813,8 +812,8 @@ ALL REMAINING FILES
   engine/dosio.c                                                88.5%  (23/26 clean, 3 remaining)
   core/curtain.cpp                                              88.5%  (23/26 clean, 3 remaining)
   shape/memdbg.cpp                                              88.5%  (23/26 clean, 3 remaining)
+  core/fire.cpp                                                 88.1%  (163/185 clean, 22 remaining)
   core/motion.cpp                                               87.9%  (29/33 clean, 4 remaining)
-  core/fire.cpp                                                 87.6%  (162/185 clean, 23 remaining)
   core/glass.cpp                                                87.5%  (21/24 clean, 3 remaining)
   core/cloth.cpp                                                87.3%  (48/55 clean, 7 remaining)
   core/charactr.cpp                                             87.2%  (95/109 clean, 14 remaining)
@@ -849,12 +848,12 @@ ALL REMAINING FILES
   engine/2d.c                                                   81.6%  (62/76 clean, 14 remaining)
   core/smiley.cpp                                               81.2%  (13/16 clean, 3 remaining)
   core/batman.cpp                                               81.2%  (13/16 clean, 3 remaining)
+  core/msnedit.cpp                                              81.0%  (51/63 clean, 12 remaining)
   core/tentacle.cpp                                             80.0%  (12/15 clean, 3 remaining)
   cockpit/drawsurf.cpp                                          78.5%  (73/93 clean, 20 remaining)
   core/sound.cpp                                                78.4%  (29/37 clean, 8 remaining)
   core/icepick.cpp                                              78.3%  (18/23 clean, 5 remaining)
   sound/snddx.cpp                                               78.1%  (25/32 clean, 7 remaining)
-  core/msnedit.cpp                                              77.8%  (49/63 clean, 14 remaining)
   core/morph.cpp                                                77.6%  (38/49 clean, 11 remaining)
   core/skeleton.cpp                                             76.9%  (90/117 clean, 27 remaining)
   core/netgame.cpp                                              76.6%  (49/64 clean, 15 remaining)

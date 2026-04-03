@@ -21842,17 +21842,17 @@
           "name":"local_64",
           "storage":{
             "offset":-100,
-            "size":24,
+            "size":40,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x64]",
                 "offset":-100,
-                "size":24
+                "size":40
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuadIndex"
         }
       ],
       "params":[
@@ -24979,6 +24979,24 @@
     "name":"engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80",
     "ret":"void",
     "vars":{
+      "locals":[
+        {
+          "name":"compar",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:27f86c0a5e4",
+                "offset":2746744874468,
+                "size":4
+              }
+            ]
+          },
+          "type":"QSORT_COMPARATOR_FUNC*",
+          "use":74
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -38042,6 +38060,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_flies.cpp_CFlies_renderOpaque_FUN_004cc300",
     "ret":"int",
@@ -38319,17 +38338,17 @@
           "name":"SStack_a0",
           "storage":{
             "offset":-160,
-            "size":24,
+            "size":72,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0xa0]",
                 "offset":-160,
-                "size":24
+                "size":72
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuad"
         },
         {
           "name":"pCVar2",
@@ -40507,6 +40526,22 @@
           },
           "type":"CDeformableModelInstance*",
           "use":277
+        },
+        {
+          "name":"blend_callback",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:27f6b7568f1",
+                "offset":2746286958833,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel_MotionBlendWeightFunc*",
+          "use":369
         },
         {
           "name":"pCVar8",

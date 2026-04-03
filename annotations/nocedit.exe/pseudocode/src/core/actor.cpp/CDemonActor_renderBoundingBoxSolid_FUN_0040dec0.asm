@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   blue
 ; int              Stack[0x14]:4   alpha
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x74]:24  SStack_74
+; SMRGLPrimitiveQuadIndex Stack[-0x74]:40  SStack_74
 ; CBoundingBox3D   Stack[-0x4c]:24  local_4c
 ; CVector3f        Stack[-0x34]:12  CStack_34
 ; CVector3i        Stack[-0x28]:12  CStack_28

@@ -7,7 +7,7 @@
 ; CWerewolf *      Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   eye_position
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x11c]:24  SStack_11c
+; SMRGLPrimitiveQuadIndex Stack[-0x11c]:40  SStack_11c
 ; float            Stack[-0xf4]:4  local_f4
 ; float            Stack[-0xf0]:4  local_f0
 ; float            Stack[-0xec]:4  local_ec

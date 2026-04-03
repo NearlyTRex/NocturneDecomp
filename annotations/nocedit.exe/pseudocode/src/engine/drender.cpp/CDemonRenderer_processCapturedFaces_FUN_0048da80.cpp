@@ -15,7 +15,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
   SFace *pSVar4;
   int iVar5;
   int iVar6;
-  code *compar;
+  QSORT_COMPARATOR_FUNC *compar;
   
   if (this_ptr->face_count == 0) {
     if (0 < g_CaptureFaceCount) {

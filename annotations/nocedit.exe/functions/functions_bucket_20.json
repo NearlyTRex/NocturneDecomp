@@ -39276,6 +39276,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_fire.cpp_CLightningBolt_render_FUN_004c5720",
     "ret":"void",
@@ -39603,17 +39604,17 @@
           "name":"local_dc",
           "storage":{
             "offset":-220,
-            "size":24,
+            "size":40,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0xdc]",
                 "offset":-220,
-                "size":24
+                "size":40
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuadIndex"
         },
         {
           "name":"world_position",
@@ -92219,6 +92220,22 @@
             ]
           },
           "type":"float"
+        },
+        {
+          "name":"blend_callback",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:27fea688b5a",
+                "offset":2748416822106,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModel_MotionBlendWeightFunc*",
+          "use":713
         }
       ],
       "params":[

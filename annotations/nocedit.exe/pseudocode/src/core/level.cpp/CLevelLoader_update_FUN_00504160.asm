@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   text
 ; int              Stack[0xc]:4   clear_screen
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x88]:24  local_88
+; SMRGLPrimitiveQuadIndex Stack[-0x88]:40  local_88
 ; CVector3i        Stack[-0x60]:12  local_60
 ; CVector3i        Stack[-0x54]:12  local_54
 ; CVector3i        Stack[-0x48]:12  local_48

@@ -1570,9 +1570,8 @@ LAB_0055a97f:
                                                   }
                                                   local_11c = local_11c + 1;
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    (*(((local_c4->base).base.vtable._ue)->_ue).
-                                                      updateVictim)((CEnemy *)local_c4,
-                                                                    SUB14(local_c0 == 0,0));
+                                                    (*(((local_c4->base).base.vtable._uh)->_uh).
+                                                      drawWeapon)(local_c4,SUB14(local_c0 == 0,0));
                                                   }
                                                   }
                                                   else {

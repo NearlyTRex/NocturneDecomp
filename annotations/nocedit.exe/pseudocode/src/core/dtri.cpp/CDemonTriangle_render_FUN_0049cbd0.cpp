@@ -11,7 +11,7 @@
 void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *this_ptr)
 
 {
-  SMRGLHeaderPrimitive SStack_78;
+  SMRGLPrimitiveQuad SStack_78;
   CVector3i local_30;
   CVector3i local_24;
   CVector3i local_18;
@@ -31,17 +31,20 @@ void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *th
   local_24.z = (int)ROUND((this_ptr->vertex3).z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr1->vertex_buffer_ptr[2].projected_vertex,&local_24);
-  SStack_78.base.count = 3;
-  SStack_78.surface_normal.A =
+  SStack_78.base.base.count = 3;
+  SStack_78.base.surface_normal.A =
        (int)ROUND(ROUND((double)(this_ptr->normal).x * -65536));
-  SStack_78.surface_normal.B =
+  SStack_78.base.surface_normal.B =
        (int)ROUND(ROUND((double)(this_ptr->normal).y * -65536));
-  SStack_78.surface_normal.C =
+  SStack_78.base.surface_normal.C =
        (int)ROUND(ROUND(-65536 * (double)(this_ptr->normal).z));
-  SStack_78.surface_normal.D =
+  SStack_78.vertices[0].vertex_index = 0;
+  SStack_78.vertices[1].vertex_index = 1;
+  SStack_78.vertices[2].vertex_index = 2;
+  SStack_78.base.surface_normal.D =
        (int)ROUND(ROUND(this_ptr->plane_distance * (float)65536 *
                         (float)256));
   engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-            (g_CDemonRendererPtr1,&SStack_78);
+            (g_CDemonRendererPtr1,&SStack_78.base);
   return;
 }

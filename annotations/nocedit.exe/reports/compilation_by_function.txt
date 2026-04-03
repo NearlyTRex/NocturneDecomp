@@ -5,8 +5,8 @@ FUNCTION COMPILATION ERRORS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6112 (94.7%)
-Failed: 342
+Successful: 6123 (94.9%)
+Failed: 331
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (10 errors)
@@ -23,13 +23,9 @@ core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (10 errors)
   Line 806 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
-core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (5 errors)
+core_dskybox.cpp_renderSkyDome_FUN_004901f0 (1 error)
 ====================================================================================================
-  Line 1196 [undeclared_identifier]: use of undeclared identifier 'code'
-  Line 1196 [syntax_error]: expected expression
-  Line 1198 [undeclared_identifier]: use of undeclared identifier 'code'
-  Line 1198 [syntax_error]: expected expression
-  Line 1249 [incompatible_types]: assigning to 'uint' (aka 'unsigned int') from incompatible type 'void'
+  Line 180 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
 
 ====================================================================================================
 core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (19 errors)
@@ -55,68 +51,6 @@ core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (19 errors)
   Line 725 [format_error]: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
 
 ====================================================================================================
-core_event.cpp_CEventList_loadState_FUN_004b0fc0 (15 errors)
-====================================================================================================
-  Line 37 [format_error]: format specifies type 'int *' but the argument has type 'CEventList *' [-Werror,-Wformat]
-  Line 42 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
-  Line 48 [format_error]: format specifies type 'int *' but the argument has type 'SEventNameBlock *' [-Werror,-Wformat]
-  Line 53 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
-  Line 59 [format_error]: format specifies type 'int *' but the argument has type 'SEventNameBlock *' [-Werror,-Wformat]
-  Line 64 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
-  Line 70 [format_error]: format specifies type 'int *' but the argument has type 'STimerBlock *' [-Werror,-Wformat]
-  Line 77 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
-  Line 87 [format_error]: format specifies type 'int *' but the argument has type 'SCounterBlock *' [-Werror,-Wformat]
-  Line 93 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
-  Line 104 [format_error]: format specifies type 'int *' but the argument has type 'SActorVarBlock *' [-Werror,-Wformat]
-  Line 109 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
-  Line 109 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
-  Line 119 [format_error]: format specifies type 'int *' but the argument has type 'SEventNameBlock *' [-Werror,-Wformat]
-  Line 124 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
-
-====================================================================================================
-core_event.cpp_CEventList_render_FUN_004addf0 (6 errors)
-====================================================================================================
-  Line 39 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
-  Line 52 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
-  Line 66 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
-  Line 89 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 98 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 113 [format_error]: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
-
-====================================================================================================
-core_event.cpp_CEventList_saveState_FUN_004b1380 (7 errors)
-====================================================================================================
-  Line 30 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
-  Line 41 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
-  Line 52 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
-  Line 63 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
-  Line 74 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 83 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 94 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
-
-====================================================================================================
-core_event.cpp_parseVectorLocation_FUN_004aa530 (1 error)
-====================================================================================================
-  Line 18 [format_error]: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
-
-====================================================================================================
-core_fire.cpp_CCrater_load_FUN_004c4880 (7 errors)
-====================================================================================================
-  Line 17 [format_error]: format specifies type 'int *' but the argument has type 'CCrater *' [-Werror,-Wformat]
-  Line 19 [format_error]: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
-  Line 27 [format_error]: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
-  Line 31 [format_error]: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
-  Line 33 [format_error]: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
-  Line 35 [format_error]: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
-  Line 37 [format_error]: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
-
-====================================================================================================
-core_fire.cpp_CFireball_process_FUN_004c0b30 (2 errors)
-====================================================================================================
-  Line 96 [undeclared_identifier]: use of undeclared identifier 'code'
-  Line 96 [syntax_error]: expected expression
-
-====================================================================================================
 core_fire.cpp_CMuzzleFlash_render_FUN_004c1a30 (1 error)
 ====================================================================================================
   Line 48 [undeclared_identifier]: use of undeclared identifier 'stack0xffffffd0'
@@ -125,19 +59,6 @@ core_fire.cpp_CMuzzleFlash_render_FUN_004c1a30 (1 error)
 core_fire.cpp_CTrail_render_FUN_004c5e90 (1 error)
 ====================================================================================================
   Line 81 [undeclared_identifier]: use of undeclared identifier 'stack0xffffff88'
-
-====================================================================================================
-core_flame.cpp_CFlame_process_FUN_004c9c00 (4 errors)
-====================================================================================================
-  Line 100 [cast_error]: C-style cast from 'struct CDeformableModelInstance *' to 'float' is not allowed
-  Line 101 [cast_error]: C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed
-  Line 130 [cast_error]: C-style cast from 'struct CDeformableModelInstance *' to 'float' is not allowed
-  Line 131 [cast_error]: C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed
-
-====================================================================================================
-core_flame.cpp_CFlame_renderTransparent_FUN_004ca110 (1 error)
-====================================================================================================
-  Line 259 [cast_error]: C-style cast from 'int' to 'byte[4]' (aka 'unsigned char[4]') is not allowed
 
 ====================================================================================================
 core_frankgen.cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500 (1 error)
@@ -171,9 +92,8 @@ core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 (12 errors)
   Line 344 [cast_error]: C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed
 
 ====================================================================================================
-core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 (2 errors)
+core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 (1 error)
 ====================================================================================================
-  Line 26 [other]: unknown type name 'code'
   Line 239 [incompatible_types]: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
 
 ====================================================================================================
@@ -188,11 +108,9 @@ core_game.cpp_CGame_loadGame_FUN_004e12b0 (2 errors)
   Line 316 [format_error]: format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]
 
 ====================================================================================================
-core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (3 errors)
+core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (1 error)
 ====================================================================================================
-  Line 334 [format_error]: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
-  Line 1091 [undeclared_identifier]: use of undeclared identifier 'code'
-  Line 1091 [syntax_error]: expected expression
+  Line 335 [format_error]: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
 
 ====================================================================================================
 core_game.cpp_CGame_processFrame_FUN_004da100 (14 errors)
@@ -430,12 +348,6 @@ core_mission.cpp_CDemonMission_loadActor_FUN_00523990 (3 errors)
   Line 62 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
 
 ====================================================================================================
-core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 (2 errors)
-====================================================================================================
-  Line 27 [undeclared_identifier]: use of undeclared identifier 'code'
-  Line 27 [syntax_error]: expected expression
-
-====================================================================================================
 core_mmx.c_detectIntelProcessor_FUN_00524f4c (2 errors)
 ====================================================================================================
   Line 63 [undeclared_identifier]: use of undeclared identifier 'register0x0000000c'
@@ -470,40 +382,23 @@ core_motion.cpp_CMotionList_save_FUN_0052d170 (6 errors)
   Line 73 [format_error]: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
 
 ====================================================================================================
-core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (6 errors)
+core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (1 error)
 ====================================================================================================
-  Line 13 [other]: unknown type name 'code'
-  Line 67 [format_error]: format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]
-  Line 119 [cast_error]: cast from pointer to smaller type 'char' loses information
-  Line 122 [other]: subscript of pointer to function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
-  Line 123 [pointer_arithmetic]: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
-  Line 126 [undeclared_identifier]: use of undeclared identifier 'code'
+  Line 65 [format_error]: format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]
 
 ====================================================================================================
-core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030 (9 errors)
+core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030 (3 errors)
 ====================================================================================================
-  Line 41 [other]: unknown type name 'code'
-  Line 46 [undeclared_identifier]: use of undeclared identifier 'code'
-  Line 47 [cast_error]: cast from pointer to smaller type 'char' loses information
-  Line 50 [pointer_arithmetic]: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
-  Line 56 [cast_error]: cast from pointer to smaller type 'char' loses information
-  Line 57 [pointer_arithmetic]: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
-  Line 59 [pointer_arithmetic]: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
-  Line 105 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
-  Line 151 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  Line 56 [other]: assigning to 'byte *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not
+  Line 104 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  Line 150 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
 
 ====================================================================================================
-core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510 (9 errors)
+core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510 (3 errors)
 ====================================================================================================
-  Line 41 [other]: unknown type name 'code'
-  Line 46 [undeclared_identifier]: use of undeclared identifier 'code'
-  Line 47 [cast_error]: cast from pointer to smaller type 'char' loses information
-  Line 50 [pointer_arithmetic]: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
-  Line 56 [cast_error]: cast from pointer to smaller type 'char' loses information
-  Line 57 [pointer_arithmetic]: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
-  Line 59 [pointer_arithmetic]: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
-  Line 105 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
-  Line 151 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  Line 56 [other]: assigning to 'byte *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not
+  Line 104 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  Line 150 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
 
 ====================================================================================================
 core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730 (2 errors)
@@ -683,7 +578,7 @@ core_script.cpp_CScript_saveState_FUN_00560b50 (10 errors)
 core_script.cpp_CScript_step_FUN_0055a810 (2 errors)
 ====================================================================================================
   Line 907 [format_error]: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
-  Line 1575 [undeclared_identifier]: use of undeclared identifier 'SUB14'
+  Line 1574 [undeclared_identifier]: use of undeclared identifier 'SUB14'
 
 ====================================================================================================
 core_script.cpp_editParameterValue_FUN_00562920 (10 errors)
@@ -704,12 +599,6 @@ core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0 (2 errors)
 ====================================================================================================
   Line 111 [undeclared_identifier]: use of undeclared identifier 'stack0xffffff78'
   Line 118 [cast_error]: C-style cast from 'CHero *' to 'float' is not allowed
-
-====================================================================================================
-core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 (2 errors)
-====================================================================================================
-  Line 25 [undeclared_identifier]: use of undeclared identifier 'code'
-  Line 25 [syntax_error]: expected expression
 
 ====================================================================================================
 core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (3 errors)
@@ -1021,21 +910,21 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (19 errors)
   Line 474 [undeclared_identifier]: use of undeclared identifier 'stack0xffffcc64'
   Line 483 [undeclared_identifier]: use of undeclared identifier 'stack0xffffcc64'
   Line 488 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 538 [incompatible_types]: invalid operands to binary expression ('CEditorTools *' and 'int')
-  Line 546 [incompatible_types]: invalid operands to binary expression ('CEditorTools *' and 'int')
-  Line 552 [incompatible_types]: no matching function for call to '_sprintf'
-  Line 555 [incompatible_types]: no matching function for call to '_sprintf'
-  Line 559 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 561 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 563 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 568 [incompatible_types]: no matching function for call to '_sprintf'
-  Line 574 [incompatible_types]: no matching function for call to '_sprintf'
-  Line 576 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 579 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 581 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 742 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 808 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 823 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  Line 550 [incompatible_types]: invalid operands to binary expression ('CEditorTools *' and 'int')
+  Line 558 [incompatible_types]: invalid operands to binary expression ('CEditorTools *' and 'int')
+  Line 564 [incompatible_types]: no matching function for call to '_sprintf'
+  Line 567 [incompatible_types]: no matching function for call to '_sprintf'
+  Line 571 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  Line 573 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  Line 575 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  Line 580 [incompatible_types]: no matching function for call to '_sprintf'
+  Line 586 [incompatible_types]: no matching function for call to '_sprintf'
+  Line 588 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  Line 591 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  Line 593 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  Line 754 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  Line 820 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  Line 835 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
 core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (10 errors)
@@ -1358,11 +1247,6 @@ core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150 (1 error)
   Line 62 [undeclared_identifier]: use of undeclared identifier 'stack0xfffffdd4'
 
 ====================================================================================================
-core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (1 error)
-====================================================================================================
-  Line 44 [other]: unknown type name 'code'
-
-====================================================================================================
 core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0 (2 errors)
 ====================================================================================================
   Line 197 [format_error]: format specifies type 'char *' but the argument has type 'CSvetlana *' [-Werror,-Wformat]
@@ -1501,32 +1385,35 @@ core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (19 errors)
   Line 275 [type_error]: member reference base type 'longlong' (aka 'long long') is not a structure or union
 
 ====================================================================================================
-core_zombie.cpp_CZombie_process_FUN_005f9470 (19 errors)
+core_zombie.cpp_CZombie_process_FUN_005f9470 (18 errors)
 ====================================================================================================
-  Line 189 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
-  Line 189 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
-  Line 273 [cast_error]: cannot cast from type 'float' to pointer type 'CVector3f *'
-  Line 304 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
-  Line 304 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
-  Line 324 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
-  Line 324 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
-  Line 579 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
-  Line 606 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
-  Line 615 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
-  Line 669 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
-  Line 685 [cast_error]: cannot cast from type 'float' to pointer type 'CVector3f *'
-  Line 688 [cast_error]: C-style cast from 'CVector3f *' to 'float' is not allowed
-  Line 737 [undeclared_identifier]: use of undeclared identifier 'code'
-  Line 737 [syntax_error]: expected expression
-  Line 747 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
-  Line 828 [cast_error]: cannot cast from type 'float' to pointer type 'CVector3f *'
-  Line 840 [cast_error]: C-style cast from 'CVector3f *' to 'float' is not allowed
-  Line 869 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
+  Line 190 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
+  Line 190 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  Line 274 [cast_error]: cannot cast from type 'float' to pointer type 'CVector3f *'
+  Line 305 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
+  Line 305 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  Line 325 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
+  Line 325 [format_error]: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+  Line 580 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
+  Line 607 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
+  Line 616 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
+  Line 670 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
+  Line 686 [cast_error]: cannot cast from type 'float' to pointer type 'CVector3f *'
+  Line 689 [cast_error]: C-style cast from 'CVector3f *' to 'float' is not allowed
+  Line 749 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
+  Line 830 [cast_error]: cannot cast from type 'float' to pointer type 'CVector3f *'
+  Line 842 [cast_error]: C-style cast from 'CVector3f *' to 'float' is not allowed
+  Line 871 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
+  Line 898 [format_error]: format specifies type 'char *' but the argument has type 'CZombie *' [-Werror,-Wformat]
 
 ====================================================================================================
-engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0 (1 error)
+engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0 (5 errors)
 ====================================================================================================
-  Line 13 [other]: unknown type name 'code'
+  Line 14 [other]: unknown type name 'code'
+  Line 61 [incompatible_types]: assigning to 'RenderScanlineFunc *' (aka 'void (*)(struct SHardwareEdge *, struct SHardwareEdge *, int)') from incompatible type 'void (SSoftwareEdge *, SSoftwareEdge *, int)': type mismatch at 1st parameter ('struct SHardwareEdge *' vs 'SSoftwareEdge *')
+  Line 64 [incompatible_types]: assigning to 'RenderScanlineFunc *' (aka 'void (*)(struct SHardwareEdge *, struct SHardwareEdge *, int)') from incompatible type 'void (SSoftwareEdge *, SSoftwareEdge *, int)': type mismatch at 1st parameter ('struct SHardwareEdge *' vs 'SSoftwareEdge *')
+  Line 68 [incompatible_types]: assigning to 'RenderScanlineFunc *' (aka 'void (*)(struct SHardwareEdge *, struct SHardwareEdge *, int)') from incompatible type 'void (SSoftwareEdge *, SSoftwareEdge *, int)': type mismatch at 1st parameter ('struct SHardwareEdge *' vs 'SSoftwareEdge *')
+  Line 71 [incompatible_types]: assigning to 'RenderScanlineFunc *' (aka 'void (*)(struct SHardwareEdge *, struct SHardwareEdge *, int)') from incompatible type 'void (SSoftwareEdge *, SSoftwareEdge *, int)': type mismatch at 1st parameter ('struct SHardwareEdge *' vs 'SSoftwareEdge *')
 
 ====================================================================================================
 engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950 (2 errors)
@@ -1620,9 +1507,10 @@ engine_dosio.c_findFile_FUN_00481760 (2 errors)
   Line 24 [syntax_error]: expected expression
 
 ====================================================================================================
-engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80 (1 error)
+engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80 (2 errors)
 ====================================================================================================
-  Line 18 [other]: unknown type name 'code'
+  Line 32 [incompatible_types]: assigning to 'QSORT_COMPARATOR_FUNC *' (aka 'int (*)(void *, void *)') from incompatible type 'int (SFace **, SFace **)': type mismatch at 1st parameter ('void *' vs 'SFace **')
+  Line 35 [incompatible_types]: assigning to 'QSORT_COMPARATOR_FUNC *' (aka 'int (*)(void *, void *)') from incompatible type 'int (SFace **, SFace **)': type mismatch at 1st parameter ('void *' vs 'SFace **')
 
 ====================================================================================================
 engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410 (1 error)

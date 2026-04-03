@@ -1,23 +1,31 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "type_error",
+        "column": 39,
+        "line": 180,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 216,
+    "complexity_score": 257,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 13,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 146,
-    "suspect_count": 6,
+    "pseudocode_lines": 172,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
+      "unknown_field",
       "warning_inlined_function"
     ],
-    "total_lines": 508
+    "total_lines": 534
   },
   "cross_references": [
     {
@@ -255,92 +263,8 @@
         "is_param": false,
         "name": "local_b4",
         "offset": -180,
-        "size": 24,
-        "type": "SMRGLHeaderPrimitive"
-      },
-      {
-        "is_param": false,
-        "name": "local_9c",
-        "offset": -156,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_98",
-        "offset": -152,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_94",
-        "offset": -148,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_90",
-        "offset": -144,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_8c",
-        "offset": -140,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_88",
-        "offset": -136,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_84",
-        "offset": -132,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_80",
-        "offset": -128,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_7c",
-        "offset": -124,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_78",
-        "offset": -120,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_74",
-        "offset": -116,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_70",
-        "offset": -112,
-        "size": 4,
-        "type": "uint"
+        "size": 72,
+        "type": "SMRGLPrimitiveQuad"
       },
       {
         "is_param": false,
@@ -474,7 +398,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 78,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar9 = (float10)fsin((float10)0.58904862253125001);",
@@ -482,7 +406,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 79,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_6c.x = (int)ROUND(ROUND(fVar9 * (float10)g_SkyDomeVertexScale * (float10)256));",
@@ -490,7 +414,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 79,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_6c.x = (int)ROUND(ROUND(fVar9 * (float10)g_SkyDomeVertexScale * (float10)256));",
@@ -498,7 +422,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 80,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_6c.y = (int)ROUND(ROUND((float10)g_SkyDomeVertexScale * (float10)256));",
@@ -506,11 +430,19 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 80,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_6c.y = (int)ROUND(ROUND((float10)g_SkyDomeVertexScale * (float10)256));",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 173,
+      "match": "._3_1_",
+      "severity": "mild",
+      "text": "uStack_28 = (uint)(byte)(uStack_28._3_1_ + 1) << 0x18;",
+      "type": "unknown_field"
     }
   ]
 }

@@ -16,7 +16,7 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_pt
   int iVar4;
   SChainVertex *pSVar4;
   SChainVertex *pSVar5;
-  SMRGLHeaderPrimitive SStack_b8;
+  SMRGLPrimitiveQuadIndex SStack_b8;
   CBoundingBox3D local_90;
   CVector3i CStack_78;
   CVector3i CStack_6c;
@@ -41,11 +41,15 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_pt
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                 (g_CDemonRendererPtr2,(SMRGLTextureBasic *)&this_ptr->texture_size);
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
-      SStack_b8.base.count = 4;
-      SStack_b8.surface_normal.D = 0;
-      SStack_b8.surface_normal.C = 0;
-      SStack_b8.surface_normal.B = 0;
-      SStack_b8.surface_normal.A = 0;
+      SStack_b8.base.base.count = 4;
+      SStack_b8.base.surface_normal.D = 0;
+      SStack_b8.base.surface_normal.C = 0;
+      SStack_b8.base.surface_normal.B = 0;
+      SStack_b8.base.surface_normal.A = 0;
+      SStack_b8.vertices[0] = 0;
+      SStack_b8.vertices[1] = 1;
+      SStack_b8.vertices[2] = 2;
+      SStack_b8.vertices[3] = 3;
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
       pSVar5 = this_ptr->vertices;
@@ -103,7 +107,7 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_pt
         core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
                   (g_CDemonSetPtr,&CStack_6c,(CVector3i *)0x0,2,2);
         engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-                  (g_CDemonRendererPtr2,&SStack_b8);
+                  (g_CDemonRendererPtr2,&SStack_b8.base);
         CStack_30.x = (int)ROUND((pSVar5->position).x * 256.0f);
         CStack_30.y = (int)ROUND((pSVar5->position).y * 256.0f);
         CStack_30.z = (int)ROUND((pSVar5->position).z * 256.0f);
@@ -157,7 +161,7 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_pt
                   (g_CDemonSetPtr,&CStack_6c,(CVector3i *)0x0,2,2);
         pSVar5 = pSVar5 + 1;
         engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-                  (g_CDemonRendererPtr2,&SStack_b8);
+                  (g_CDemonRendererPtr2,&SStack_b8.base);
       }
       return 1;
     }

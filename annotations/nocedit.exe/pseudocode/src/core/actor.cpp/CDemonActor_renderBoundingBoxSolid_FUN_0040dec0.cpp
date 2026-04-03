@@ -11,7 +11,7 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0(CDem
 {
   int iVar1;
   uint corner_index;
-  SMRGLHeaderPrimitive SStack_74;
+  SMRGLPrimitiveQuadIndex SStack_74;
   CBoundingBox3D local_4c;
   CVector3f CStack_34;
   CVector3i CStack_28;
@@ -45,23 +45,47 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0(CDem
   } while ((int)corner_index < 8);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (this_ptr_00,&SMRGLTextureBasic_0066e158);
-  SStack_74.base.count = 4;
-  SStack_74.surface_normal.D = 0;
-  SStack_74.surface_normal.C = 0;
-  SStack_74.surface_normal.B = 0;
-  SStack_74.surface_normal.A = 0;
+  SStack_74.base.base.count = 4;
+  SStack_74.base.surface_normal.D = 0;
+  SStack_74.base.surface_normal.C = 0;
+  SStack_74.base.surface_normal.B = 0;
+  SStack_74.base.surface_normal.A = 0;
+  SStack_74.vertices[0] = 0;
+  SStack_74.vertices[1] = 2;
+  SStack_74.vertices[2] = 6;
+  SStack_74.vertices[3] = 4;
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr2,&SStack_74);
+            (g_CDemonRendererPtr2,&SStack_74.base);
+  SStack_74.vertices[0] = 1;
+  SStack_74.vertices[1] = 3;
+  SStack_74.vertices[2] = 7;
+  SStack_74.vertices[3] = 5;
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr2,&SStack_74);
+            (g_CDemonRendererPtr2,&SStack_74.base);
+  SStack_74.vertices[2] = 3;
+  SStack_74.vertices[0] = 0;
+  SStack_74.vertices[1] = 1;
+  SStack_74.vertices[3] = 2;
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr2,&SStack_74);
+            (g_CDemonRendererPtr2,&SStack_74.base);
+  SStack_74.vertices[0] = 4;
+  SStack_74.vertices[1] = 5;
+  SStack_74.vertices[2] = 7;
+  SStack_74.vertices[3] = 6;
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr2,&SStack_74);
+            (g_CDemonRendererPtr2,&SStack_74.base);
+  SStack_74.vertices[2] = 7;
+  SStack_74.vertices[0] = 2;
+  SStack_74.vertices[1] = 3;
+  SStack_74.vertices[3] = 6;
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr2,&SStack_74);
+            (g_CDemonRendererPtr2,&SStack_74.base);
+  SStack_74.vertices[1] = 1;
+  SStack_74.vertices[3] = 4;
+  SStack_74.vertices[0] = 0;
+  SStack_74.vertices[2] = 5;
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr2,&SStack_74);
+            (g_CDemonRendererPtr2,&SStack_74.base);
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(this_ptr);
   return;
 }

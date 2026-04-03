@@ -2,40 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 3,
-        "line": 13,
-        "message": "unknown type name 'code'"
-      },
-      {
         "category": "format_error",
         "column": 59,
-        "line": 67,
+        "line": 65,
         "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "cast_error",
-        "column": 29,
-        "line": 119,
-        "message": "cast from pointer to smaller type 'char' loses information"
-      },
-      {
-        "category": "other",
-        "column": 29,
-        "line": 122,
-        "message": "subscript of pointer to function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
-      },
-      {
-        "category": "pointer_arithmetic",
-        "column": 37,
-        "line": 123,
-        "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 126,
-        "message": "use of undeclared identifier 'code'"
       }
     ],
     "success": false,
@@ -43,18 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 393,
-    "complexity_score": 224,
+    "complexity_score": 197,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 174,
-    "suspect_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 172,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "unresolved_funcptr"
+      "pointer_cast"
     ],
-    "total_lines": 567
+    "total_lines": 565
   },
   "cross_references": [
     {
@@ -368,16 +337,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 6,
-      "match": "code",
-      "severity": "moderate",
-      "text": "code cVar3;",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 40,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 0x2c) != 0) {",
@@ -385,19 +346,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 47,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(&local_624.base,(char *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 1))",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 119,
-      "match": "code",
-      "severity": "moderate",
-      "text": "} while (cVar3 != (code)0x0);",
-      "type": "unresolved_funcptr"
     }
   ]
 }

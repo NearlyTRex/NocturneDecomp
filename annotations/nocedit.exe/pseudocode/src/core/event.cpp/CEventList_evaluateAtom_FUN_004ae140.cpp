@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this_ptr,char *expression,int *parse_position)
 
 {
@@ -16,7 +18,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
   int iVar8;
   int iVar9;
   int iVar5;
-  int iVar6;
+  int iVar10;
   CDemonActor *pCVar10;
   CDemonActor *pCVar15;
   CHero *pCVar8;
@@ -26,13 +28,14 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
   CDemonActor *pCVar13;
   CVector3f *pCVar14;
   CCharacter *pCVar12;
+  EDeathState EVar16;
   CHero *this_ptr_01;
   CHero *pCVar7;
   CCharacter *this_ptr_02;
   uint uVar15;
   SIZE_T SVar16;
-  uint uVar16;
-  SIZE_T SVar17;
+  uint uVar17;
+  SIZE_T SVar18;
   char *pcVar19;
   char *pcVar17;
   char *pcVar18;
@@ -110,6 +113,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
   int local_20;
   int local_1c;
   float local_18 [2];
+  CEnemy *iVar6;
   CDemonActor *pCVar6;
   float fVar3;
   float fVar4;
@@ -237,28 +241,28 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
         return -1;
       }
       pcVar19 = acStack_345 + 1;
-      uVar16 = 0xffffffff;
+      uVar17 = 0xffffffff;
       pcVar4 = pcVar19;
       do {
-        if (uVar16 == 0) break;
-        uVar16 = uVar16 - 1;
+        if (uVar17 == 0) break;
+        uVar17 = uVar17 - 1;
         cVar2 = *pcVar4;
         pcVar4 = pcVar4 + (uint)bVar19 * -2 + 1;
       } while (cVar2 != '\0');
-      SVar17 = ~uVar16 - 1;
-      if (0 < (int)SVar17) {
-        pcVar4 = pcVar19 + SVar17;
+      SVar18 = ~uVar17 - 1;
+      if (0 < (int)SVar18) {
+        pcVar4 = pcVar19 + SVar18;
         do {
           if ((g_CharacterClassificationTable[(byte)(pcVar4[-1] + 1)] & 2) == 0) break;
-          SVar17 = SVar17 - 1;
+          SVar18 = SVar18 - 1;
           pcVar4 = pcVar4 + -1;
-        } while (0 < (int)SVar17);
+        } while (0 < (int)SVar18);
       }
-      pcVar19[SVar17] = '\0';
+      pcVar19[SVar18] = '\0';
       local_bc = acStack_345 + 2;
       while ((g_CharacterClassificationTable[(byte)(acStack_345[1] + 1)] & 2) != 0) {
-        memmove(pcVar19,local_bc,SVar17);
-        SVar17 = SVar17 - 1;
+        memmove(pcVar19,local_bc,SVar18);
+        SVar18 = SVar18 - 1;
       }
       pCVar10 = core_event_cpp_resolveActorByName_FUN_004aa400
                           (acStack_345 + 1,g_CDemonActorClassInfo.name_hash,
@@ -310,28 +314,28 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
           return -1;
         }
         pcVar19 = acStack_859 + 1;
-        uVar16 = 0xffffffff;
+        uVar17 = 0xffffffff;
         pcVar4 = pcVar19;
         do {
-          if (uVar16 == 0) break;
-          uVar16 = uVar16 - 1;
+          if (uVar17 == 0) break;
+          uVar17 = uVar17 - 1;
           cVar2 = *pcVar4;
           pcVar4 = pcVar4 + (uint)bVar19 * -2 + 1;
         } while (cVar2 != '\0');
-        SVar17 = ~uVar16 - 1;
-        if (0 < (int)SVar17) {
-          pcVar4 = pcVar19 + SVar17;
+        SVar18 = ~uVar17 - 1;
+        if (0 < (int)SVar18) {
+          pcVar4 = pcVar19 + SVar18;
           do {
             if ((g_CharacterClassificationTable[(byte)(pcVar4[-1] + 1)] & 2) == 0) break;
-            SVar17 = SVar17 - 1;
+            SVar18 = SVar18 - 1;
             pcVar4 = pcVar4 + -1;
-          } while (0 < (int)SVar17);
+          } while (0 < (int)SVar18);
         }
-        pcVar19[SVar17] = '\0';
+        pcVar19[SVar18] = '\0';
         local_b0 = acStack_859 + 2;
         while ((g_CharacterClassificationTable[(byte)(acStack_859[1] + 1)] & 2) != 0) {
-          memmove(pcVar19,local_b0,SVar17);
-          SVar17 = SVar17 - 1;
+          memmove(pcVar19,local_b0,SVar18);
+          SVar18 = SVar18 - 1;
         }
         local_e0 = 0;
         if ((g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) &&
@@ -366,51 +370,51 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
           }
           else {
             pcVar19 = acStack_59d + 1;
-            uVar16 = 0xffffffff;
+            uVar17 = 0xffffffff;
             pcVar4 = pcVar19;
             do {
-              if (uVar16 == 0) break;
-              uVar16 = uVar16 - 1;
+              if (uVar17 == 0) break;
+              uVar17 = uVar17 - 1;
               cVar2 = *pcVar4;
               pcVar4 = pcVar4 + (uint)bVar19 * -2 + 1;
             } while (cVar2 != '\0');
-            SVar17 = ~uVar16 - 1;
-            if (0 < (int)SVar17) {
-              pcVar4 = pcVar19 + SVar17;
+            SVar18 = ~uVar17 - 1;
+            if (0 < (int)SVar18) {
+              pcVar4 = pcVar19 + SVar18;
               do {
                 if ((g_CharacterClassificationTable[(byte)(pcVar4[-1] + 1)] & 2) == 0) break;
-                SVar17 = SVar17 - 1;
+                SVar18 = SVar18 - 1;
                 pcVar4 = pcVar4 + -1;
-              } while (0 < (int)SVar17);
+              } while (0 < (int)SVar18);
             }
-            pcVar19[SVar17] = '\0';
+            pcVar19[SVar18] = '\0';
             local_50 = acStack_59d + 2;
             while ((g_CharacterClassificationTable[(byte)(acStack_59d[1] + 1)] & 2) != 0) {
-              memmove(pcVar19,local_50,SVar17);
-              SVar17 = SVar17 - 1;
+              memmove(pcVar19,local_50,SVar18);
+              SVar18 = SVar18 - 1;
             }
-            uVar16 = 0xffffffff;
+            uVar17 = 0xffffffff;
             pcVar19 = local_72d + 1;
             do {
-              if (uVar16 == 0) break;
-              uVar16 = uVar16 - 1;
+              if (uVar17 == 0) break;
+              uVar17 = uVar17 - 1;
               cVar2 = *pcVar19;
               pcVar19 = pcVar19 + (uint)bVar19 * -2 + 1;
             } while (cVar2 != '\0');
-            SVar17 = ~uVar16 - 1;
-            if (0 < (int)SVar17) {
-              pcVar19 = local_72d + ~uVar16;
+            SVar18 = ~uVar17 - 1;
+            if (0 < (int)SVar18) {
+              pcVar19 = local_72d + ~uVar17;
               do {
                 if ((g_CharacterClassificationTable[(byte)(pcVar19[-1] + 1)] & 2) == 0) break;
-                SVar17 = SVar17 - 1;
+                SVar18 = SVar18 - 1;
                 pcVar19 = pcVar19 + -1;
-              } while (0 < (int)SVar17);
+              } while (0 < (int)SVar18);
             }
-            (local_72d + 1)[SVar17] = '\0';
+            (local_72d + 1)[SVar18] = '\0';
             local_a8 = local_72d + 2;
             while ((g_CharacterClassificationTable[(byte)(local_72d[1] + 1)] & 2) != 0) {
-              memmove(local_72d + 1,local_a8,SVar17);
-              SVar17 = SVar17 - 1;
+              memmove(local_72d + 1,local_a8,SVar18);
+              SVar18 = SVar18 - 1;
             }
             pCVar8 = (CHero *)core_event_cpp_resolveActorByName_FUN_004aa400
                                         (acStack_59d + 1,g_CHeroClassInfo.name_hash,
@@ -531,28 +535,28 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
             }
             else {
               pcVar19 = acStack_27d + 1;
-              uVar16 = 0xffffffff;
+              uVar17 = 0xffffffff;
               pcVar4 = pcVar19;
               do {
-                if (uVar16 == 0) break;
-                uVar16 = uVar16 - 1;
+                if (uVar17 == 0) break;
+                uVar17 = uVar17 - 1;
                 cVar2 = *pcVar4;
                 pcVar4 = pcVar4 + (uint)bVar19 * -2 + 1;
               } while (cVar2 != '\0');
-              SVar17 = ~uVar16 - 1;
-              if (0 < (int)SVar17) {
-                pcVar4 = pcVar19 + SVar17;
+              SVar18 = ~uVar17 - 1;
+              if (0 < (int)SVar18) {
+                pcVar4 = pcVar19 + SVar18;
                 do {
                   if ((g_CharacterClassificationTable[(byte)(pcVar4[-1] + 1)] & 2) == 0) break;
-                  SVar17 = SVar17 - 1;
+                  SVar18 = SVar18 - 1;
                   pcVar4 = pcVar4 + -1;
-                } while (0 < (int)SVar17);
+                } while (0 < (int)SVar18);
               }
-              pcVar19[SVar17] = '\0';
+              pcVar19[SVar18] = '\0';
               local_98 = acStack_27d + 2;
               while ((g_CharacterClassificationTable[(byte)(acStack_27d[1] + 1)] & 2) != 0) {
-                memmove(pcVar19,local_98,SVar17);
-                SVar17 = SVar17 - 1;
+                memmove(pcVar19,local_98,SVar18);
+                SVar18 = SVar18 - 1;
               }
               pCVar9 = (CGlass *)
                        core_event_cpp_resolveActorByName_FUN_004aa400
@@ -715,9 +719,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                 }
                 else {
                   *parse_position = *parse_position + local_88;
-                  iVar6 = core_event_cpp_parseVectorLocation_FUN_004aa530
-                                    (expression,parse_position,&local_ec);
-                  if (-1 < iVar6) {
+                  iVar10 = core_event_cpp_parseVectorLocation_FUN_004aa530
+                                     (expression,parse_position,&local_ec);
+                  if (-1 < iVar10) {
                     local_88 = -1;
                     sscanf
                               (expression + *parse_position," , %f )%n",local_84,&local_88);
@@ -738,7 +742,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                       return -1;
                     }
                     *parse_position = *parse_position + local_88;
-                    if ((iVar3 == 0) || (iVar6 == 0)) {
+                    if ((iVar3 == 0) || (iVar10 == 0)) {
                       local_e0 = 0;
                     }
                     else {
@@ -776,51 +780,51 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                 }
                 else {
                   pcVar19 = acStack_471 + 1;
-                  uVar16 = 0xffffffff;
+                  uVar17 = 0xffffffff;
                   pcVar4 = pcVar19;
                   do {
-                    if (uVar16 == 0) break;
-                    uVar16 = uVar16 - 1;
+                    if (uVar17 == 0) break;
+                    uVar17 = uVar17 - 1;
                     cVar2 = *pcVar4;
                     pcVar4 = pcVar4 + (uint)bVar19 * -2 + 1;
                   } while (cVar2 != '\0');
-                  SVar17 = ~uVar16 - 1;
-                  if (0 < (int)SVar17) {
-                    pcVar4 = pcVar19 + SVar17;
+                  SVar18 = ~uVar17 - 1;
+                  if (0 < (int)SVar18) {
+                    pcVar4 = pcVar19 + SVar18;
                     do {
                       if ((g_CharacterClassificationTable[(byte)(pcVar4[-1] + 1)] & 2) == 0) break;
-                      SVar17 = SVar17 - 1;
+                      SVar18 = SVar18 - 1;
                       pcVar4 = pcVar4 + -1;
-                    } while (0 < (int)SVar17);
+                    } while (0 < (int)SVar18);
                   }
-                  pcVar19[SVar17] = '\0';
+                  pcVar19[SVar18] = '\0';
                   local_68 = acStack_471 + 2;
                   while ((g_CharacterClassificationTable[(byte)(acStack_471[1] + 1)] & 2) != 0) {
-                    memmove(pcVar19,local_68,SVar17);
-                    SVar17 = SVar17 - 1;
+                    memmove(pcVar19,local_68,SVar18);
+                    SVar18 = SVar18 - 1;
                   }
-                  uVar16 = 0xffffffff;
+                  uVar17 = 0xffffffff;
                   pcVar19 = local_665 + 1;
                   do {
-                    if (uVar16 == 0) break;
-                    uVar16 = uVar16 - 1;
+                    if (uVar17 == 0) break;
+                    uVar17 = uVar17 - 1;
                     cVar2 = *pcVar19;
                     pcVar19 = pcVar19 + (uint)bVar19 * -2 + 1;
                   } while (cVar2 != '\0');
-                  SVar17 = ~uVar16 - 1;
-                  if (0 < (int)SVar17) {
-                    pcVar19 = local_665 + ~uVar16;
+                  SVar18 = ~uVar17 - 1;
+                  if (0 < (int)SVar18) {
+                    pcVar19 = local_665 + ~uVar17;
                     do {
                       if ((g_CharacterClassificationTable[(byte)(pcVar19[-1] + 1)] & 2) == 0) break;
-                      SVar17 = SVar17 - 1;
+                      SVar18 = SVar18 - 1;
                       pcVar19 = pcVar19 + -1;
-                    } while (0 < (int)SVar17);
+                    } while (0 < (int)SVar18);
                   }
-                  (local_665 + 1)[SVar17] = '\0';
+                  (local_665 + 1)[SVar18] = '\0';
                   local_64 = local_665 + 2;
                   while ((g_CharacterClassificationTable[(byte)(local_665[1] + 1)] & 2) != 0) {
-                    memmove(local_665 + 1,local_64,SVar17);
-                    SVar17 = SVar17 - 1;
+                    memmove(local_665 + 1,local_64,SVar18);
+                    SVar18 = SVar18 - 1;
                   }
                   pCVar15 = core_event_cpp_resolveActorByName_FUN_004aa400
                                       (acStack_471 + 1,g_CDemonActorClassInfo.name_hash,
@@ -862,51 +866,51 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                   return -1;
                 }
                 pcVar19 = acStack_1b5 + 1;
-                uVar16 = 0xffffffff;
+                uVar17 = 0xffffffff;
                 pcVar4 = pcVar19;
                 do {
-                  if (uVar16 == 0) break;
-                  uVar16 = uVar16 - 1;
+                  if (uVar17 == 0) break;
+                  uVar17 = uVar17 - 1;
                   cVar2 = *pcVar4;
                   pcVar4 = pcVar4 + (uint)bVar19 * -2 + 1;
                 } while (cVar2 != '\0');
-                SVar17 = ~uVar16 - 1;
-                if (0 < (int)SVar17) {
-                  pcVar4 = pcVar19 + SVar17;
+                SVar18 = ~uVar17 - 1;
+                if (0 < (int)SVar18) {
+                  pcVar4 = pcVar19 + SVar18;
                   do {
                     if ((g_CharacterClassificationTable[(byte)(pcVar4[-1] + 1)] & 2) == 0) break;
-                    SVar17 = SVar17 - 1;
+                    SVar18 = SVar18 - 1;
                     pcVar4 = pcVar4 + -1;
-                  } while (0 < (int)SVar17);
+                  } while (0 < (int)SVar18);
                 }
-                pcVar19[SVar17] = '\0';
+                pcVar19[SVar18] = '\0';
                 local_5c = acStack_1b5 + 2;
                 while ((g_CharacterClassificationTable[(byte)(acStack_1b5[1] + 1)] & 2) != 0) {
-                  memmove(pcVar19,local_5c,SVar17);
-                  SVar17 = SVar17 - 1;
+                  memmove(pcVar19,local_5c,SVar18);
+                  SVar18 = SVar18 - 1;
                 }
-                uVar16 = 0xffffffff;
+                uVar17 = 0xffffffff;
                 pcVar19 = local_4d5 + 1;
                 do {
-                  if (uVar16 == 0) break;
-                  uVar16 = uVar16 - 1;
+                  if (uVar17 == 0) break;
+                  uVar17 = uVar17 - 1;
                   cVar2 = *pcVar19;
                   pcVar19 = pcVar19 + (uint)bVar19 * -2 + 1;
                 } while (cVar2 != '\0');
-                SVar17 = ~uVar16 - 1;
-                if (0 < (int)SVar17) {
-                  pcVar19 = local_4d5 + ~uVar16;
+                SVar18 = ~uVar17 - 1;
+                if (0 < (int)SVar18) {
+                  pcVar19 = local_4d5 + ~uVar17;
                   do {
                     if ((g_CharacterClassificationTable[(byte)(pcVar19[-1] + 1)] & 2) == 0) break;
-                    SVar17 = SVar17 - 1;
+                    SVar18 = SVar18 - 1;
                     pcVar19 = pcVar19 + -1;
-                  } while (0 < (int)SVar17);
+                  } while (0 < (int)SVar18);
                 }
-                (local_4d5 + 1)[SVar17] = '\0';
+                (local_4d5 + 1)[SVar18] = '\0';
                 local_58 = local_4d5 + 2;
                 while ((g_CharacterClassificationTable[(byte)(local_4d5[1] + 1)] & 2) != 0) {
-                  memmove(local_4d5 + 1,local_58,SVar17);
-                  SVar17 = SVar17 - 1;
+                  memmove(local_4d5 + 1,local_58,SVar18);
+                  SVar18 = SVar18 - 1;
                 }
                 pCVar15 = core_event_cpp_resolveActorByName_FUN_004aa400
                                     (acStack_1b5 + 1,g_CDemonActorClassInfo.name_hash,
@@ -1088,34 +1092,34 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                         return -1;
                       }
                       pcVar19 = acStack_791 + 1;
-                      uVar16 = 0xffffffff;
+                      uVar17 = 0xffffffff;
                       pcVar4 = pcVar19;
                       do {
-                        if (uVar16 == 0) break;
-                        uVar16 = uVar16 - 1;
+                        if (uVar17 == 0) break;
+                        uVar17 = uVar17 - 1;
                         cVar2 = *pcVar4;
                         pcVar4 = pcVar4 + (uint)bVar19 * -2 + 1;
                       } while (cVar2 != '\0');
-                      SVar17 = ~uVar16 - 1;
-                      if (0 < (int)SVar17) {
-                        pcVar4 = pcVar19 + SVar17;
+                      SVar18 = ~uVar17 - 1;
+                      if (0 < (int)SVar18) {
+                        pcVar4 = pcVar19 + SVar18;
                         do {
                           if ((g_CharacterClassificationTable[(byte)(pcVar4[-1] + 1)] & 2) == 0)
                           break;
-                          SVar17 = SVar17 - 1;
+                          SVar18 = SVar18 - 1;
                           pcVar4 = pcVar4 + -1;
-                        } while (0 < (int)SVar17);
+                        } while (0 < (int)SVar18);
                       }
-                      pcVar19[SVar17] = '\0';
+                      pcVar19[SVar18] = '\0';
                       local_3c = acStack_791 + 2;
                       while ((g_CharacterClassificationTable[(byte)(acStack_791[1] + 1)] & 2) != 0)
                       {
-                        memmove(pcVar19,local_3c,SVar17);
-                        SVar17 = SVar17 - 1;
+                        memmove(pcVar19,local_3c,SVar18);
+                        SVar18 = SVar18 - 1;
                       }
-                      uVar16 = core_event_cpp_CEventList_getSfxHandle_FUN_004b0c40
+                      uVar17 = core_event_cpp_CEventList_getSfxHandle_FUN_004b0c40
                                          (this_ptr,acStack_791 + 1);
-                      local_e0 = (uint)(uVar16 != 0);
+                      local_e0 = (uint)(uVar17 != 0);
                       *parse_position = *parse_position + local_40;
                     }
                     else {
@@ -1191,15 +1195,19 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                                 local_c0 = 0;
                                 for (iVar3 = 0; iVar3 < g_CDemonSetPtr->enemy_count;
                                     iVar3 = iVar3 + 1) {
-                                  iVar6 = *(int *)((int)g_CDemonSetPtr->enemies + local_c0);
-                                  if ((((local_b4 == *(CCharacter **)(iVar6 + 0xbe3c)) &&
-                                       (iVar5 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x120))
-                                                          (iVar6), iVar5 < 1)) &&
-                                      (iVar5 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x68))(iVar6),
-                                      iVar5 == 0)) &&
-                                     (fVar3 = *(float *)(iVar6 + 0x20) - (local_30->position).x,
-                                     fVar5 = *(float *)(iVar6 + 0x24) - (local_30->position).y,
-                                     fVar4 = *(float *)(iVar6 + 0x28) - (local_30->position).z,
+                                  iVar6 = *(CEnemy **)((int)g_CDemonSetPtr->enemies + local_c0);
+                                  if ((((local_b4 == iVar6->victim) &&
+                                       (EVar16 = (*(((iVar6->base).base.vtable._uc)->_uc).
+                                                   getDeathState)(&iVar6->base), (int)EVar16 < 1))
+                                      && (iVar10 = (*((iVar6->base).base.vtable._ub)->
+                                                     shouldIgnoreForTargeting)((CDemonActor *)iVar6)
+                                         , iVar10 == 0)) &&
+                                     (fVar3 = (iVar6->base).base.location.position.x -
+                                              (local_30->position).x,
+                                     fVar5 = (iVar6->base).base.location.position.y -
+                                             (local_30->position).y,
+                                     fVar4 = (iVar6->base).base.location.position.z -
+                                             (local_30->position).z,
                                      SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3) <=
                                      (float)30)) {
                                     local_e0 = 1;
@@ -1246,8 +1254,8 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                             local_e0 = (uint)this_ptr_01 ^ (uint)g_ActorNameSentinel;
                           }
                           else {
-                            local_e0 = (*(((this_ptr_01->base).base.vtable._ue)->_ue).randomize)
-                                                 ((CEnemy *)this_ptr_01);
+                            local_e0 = (*(((this_ptr_01->base).base.vtable._uh)->_uh).isWeaponDrawn)
+                                                 (this_ptr_01);
                           }
                           *parse_position = *parse_position + local_20;
                         }
@@ -1432,51 +1440,51 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
     memmove(pcVar19,local_d4,SVar16);
     SVar16 = SVar16 - 1;
   }
-  uVar16 = 0xffffffff;
+  uVar17 = 0xffffffff;
   pcVar19 = local_3a9 + 1;
   do {
-    if (uVar16 == 0) break;
-    uVar16 = uVar16 - 1;
+    if (uVar17 == 0) break;
+    uVar17 = uVar17 - 1;
     cVar2 = *pcVar19;
     pcVar19 = pcVar19 + (uint)bVar19 * -2 + 1;
   } while (cVar2 != '\0');
-  SVar17 = ~uVar16 - 1;
-  if (0 < (int)SVar17) {
-    pcVar19 = local_3a9 + ~uVar16;
+  SVar18 = ~uVar17 - 1;
+  if (0 < (int)SVar18) {
+    pcVar19 = local_3a9 + ~uVar17;
     do {
       if ((g_CharacterClassificationTable[(byte)(pcVar19[-1] + 1)] & 2) == 0) break;
-      SVar17 = SVar17 - 1;
+      SVar18 = SVar18 - 1;
       pcVar19 = pcVar19 + -1;
-    } while (0 < (int)SVar17);
+    } while (0 < (int)SVar18);
   }
-  (local_3a9 + 1)[SVar17] = '\0';
+  (local_3a9 + 1)[SVar18] = '\0';
   local_d0 = local_3a9 + 2;
   while ((g_CharacterClassificationTable[(byte)(local_3a9[1] + 1)] & 2) != 0) {
-    memmove(local_3a9 + 1,local_d0,SVar17);
-    SVar17 = SVar17 - 1;
+    memmove(local_3a9 + 1,local_d0,SVar18);
+    SVar18 = SVar18 - 1;
   }
-  uVar16 = 0xffffffff;
+  uVar17 = 0xffffffff;
   pcVar19 = local_985 + 1;
   do {
-    if (uVar16 == 0) break;
-    uVar16 = uVar16 - 1;
+    if (uVar17 == 0) break;
+    uVar17 = uVar17 - 1;
     cVar2 = *pcVar19;
     pcVar19 = pcVar19 + (uint)bVar19 * -2 + 1;
   } while (cVar2 != '\0');
-  SVar17 = ~uVar16 - 1;
-  if (0 < (int)SVar17) {
-    pcVar19 = local_985 + ~uVar16;
+  SVar18 = ~uVar17 - 1;
+  if (0 < (int)SVar18) {
+    pcVar19 = local_985 + ~uVar17;
     do {
       if ((g_CharacterClassificationTable[(byte)(pcVar19[-1] + 1)] & 2) == 0) break;
-      SVar17 = SVar17 - 1;
+      SVar18 = SVar18 - 1;
       pcVar19 = pcVar19 + -1;
-    } while (0 < (int)SVar17);
+    } while (0 < (int)SVar18);
   }
-  (local_985 + 1)[SVar17] = '\0';
+  (local_985 + 1)[SVar18] = '\0';
   local_c8 = local_985 + 2;
   while ((g_CharacterClassificationTable[(byte)(local_985[1] + 1)] & 2) != 0) {
-    memmove(local_985 + 1,local_c8,SVar17);
-    SVar17 = SVar17 - 1;
+    memmove(local_985 + 1,local_c8,SVar18);
+    SVar18 = SVar18 - 1;
   }
   iVar8 = _strcmp(local_985 + 1,"<");
   iVar3 = 0;
@@ -1531,36 +1539,37 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
   }
   *parse_position = *parse_position + local_dc;
   iVar9 = sscanf(acStack_921 + 1,"%d",&local_c4);
-  iVar6 = local_c4;
+  iVar10 = local_c4;
   if (iVar9 != 1) {
-    iVar6 = core_event_cpp_CEventList_getCounterValue_FUN_004b0830(g_CEventListPtr,acStack_921 + 1);
+    iVar10 = core_event_cpp_CEventList_getCounterValue_FUN_004b0830(g_CEventListPtr,acStack_921 + 1)
+    ;
   }
   iVar5 = sscanf(local_3a9 + 1,"%d",&local_74);
   if (iVar5 == 1) {
     switch(iVar3) {
     case 0:
 switchD_004ae724_caseD_0:
-      local_e0 = (uint)(iVar6 < local_74);
+      local_e0 = (uint)(iVar10 < local_74);
       break;
     case 1:
 switchD_004ae724_caseD_1:
-      local_e0 = (uint)(iVar6 <= local_74);
+      local_e0 = (uint)(iVar10 <= local_74);
       break;
     case 2:
 switchD_004ae724_caseD_2:
-      local_e0 = (uint)(iVar6 == local_74);
+      local_e0 = (uint)(iVar10 == local_74);
       break;
     case 3:
 switchD_004ae724_caseD_3:
-      local_e0 = (uint)(iVar6 != local_74);
+      local_e0 = (uint)(iVar10 != local_74);
       break;
     case 4:
 switchD_004ae724_caseD_4:
-      local_e0 = (uint)(local_74 <= iVar6);
+      local_e0 = (uint)(local_74 <= iVar10);
       break;
     case 5:
 switchD_004ae724_caseD_5:
-      local_e0 = (uint)(local_74 < iVar6);
+      local_e0 = (uint)(local_74 < iVar10);
       break;
     default:
 switchD_004ae724_default:

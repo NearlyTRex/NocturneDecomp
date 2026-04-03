@@ -21,7 +21,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
   int iVar3;
   uint uVar4;
   int iVar5;
-  SMRGLHeaderPrimitive local_f0;
+  SMRGLPrimitiveQuadIndex local_f0;
   CVector3i local_c8;
   float local_bc;
   float local_b8;
@@ -82,11 +82,15 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
     local_10 = -0.4;
     local_14 = 0.05;
   }
-  local_f0.base.count = 4;
-  local_f0.surface_normal.D = 0;
-  local_f0.surface_normal.C = 0;
-  local_f0.surface_normal.B = 0;
-  local_f0.surface_normal.A = 0;
+  local_f0.base.base.count = 4;
+  local_f0.base.surface_normal.D = 0;
+  local_f0.base.surface_normal.C = 0;
+  local_f0.base.surface_normal.B = 0;
+  local_f0.base.surface_normal.A = 0;
+  local_f0.vertices[0] = 0;
+  local_f0.vertices[1] = 1;
+  local_f0.vertices[2] = 2;
+  local_f0.vertices[3] = 3;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   world_position = g_WeatherParticlePositions;
   uVar4 = 0;
@@ -151,7 +155,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_98);
       engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-                (g_CDemonRendererPtr2,&local_f0);
+                (g_CDemonRendererPtr2,&local_f0.base);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     }
     uVar4 = uVar4 + 1;
@@ -202,7 +206,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_44);
         engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
-                  (g_CDemonRendererPtr2,&local_f0);
+                  (g_CDemonRendererPtr2,&local_f0.base);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
       }
       iVar5 = iVar5 + 0xc;

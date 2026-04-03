@@ -10,7 +10,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005f1230(CWerewolf *t
 
 {
   float *pfVar2;
-  SMRGLHeaderPrimitive SStack_11c;
+  SMRGLPrimitiveQuadIndex SStack_11c;
   float local_f4;
   float local_f0;
   float local_ec;
@@ -143,16 +143,20 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005f1230(CWerewolf *t
   this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
   this_ptr_00->vertex_buffer_ptr[3].u = 0x80000;
   this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
-  SStack_11c.base.count = 4;
-  SStack_11c.surface_normal.D = 0;
-  SStack_11c.surface_normal.C = 0;
-  SStack_11c.surface_normal.B = 0;
-  SStack_11c.surface_normal.A = 0;
+  SStack_11c.base.base.count = 4;
+  SStack_11c.base.surface_normal.D = 0;
+  SStack_11c.base.surface_normal.C = 0;
+  SStack_11c.base.surface_normal.B = 0;
+  SStack_11c.base.surface_normal.A = 0;
+  SStack_11c.vertices[0] = 0;
+  SStack_11c.vertices[3] = 3;
+  SStack_11c.vertices[1] = 1;
+  SStack_11c.vertices[2] = 2;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (this_ptr_00,&SMRGLTextureBasic_0068495c);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr2,&SStack_11c);
+            (g_CDemonRendererPtr2,&SStack_11c.base);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   return;
 }

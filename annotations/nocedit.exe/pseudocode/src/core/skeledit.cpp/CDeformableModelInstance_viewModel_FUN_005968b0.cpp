@@ -50,7 +50,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   char local_4d0 [100];
   char local_46c [100];
   char local_408 [100];
-  SMRGLHeaderPrimitive local_3a4;
+  SMRGLPrimitiveQuad local_3a4;
   CSpotView local_35c;
   CMatrix3x4f local_320;
   CMatrix3x4f local_2f0;
@@ -508,16 +508,28 @@ LAB_0059722b:
       local_154.x = -0xf00;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_154);
-      local_3a4.base.count = 4;
-      local_3a4.surface_normal.D = 0;
-      local_3a4.surface_normal.C = 0;
-      local_3a4.surface_normal.B = 0;
-      local_3a4.surface_normal.A = 0;
+      local_3a4.base.base.count = 4;
+      local_3a4.vertices[1].texture_u = 0xfe0000;
+      local_3a4.vertices[2].texture_u = 0xfe0000;
+      local_3a4.vertices[2].texture_v = 0xfe0000;
+      local_3a4.vertices[3].texture_v = 0xfe0000;
+      local_3a4.base.surface_normal.D = 0;
+      local_3a4.base.surface_normal.C = 0;
+      local_3a4.base.surface_normal.B = 0;
+      local_3a4.base.surface_normal.A = 0;
+      local_3a4.vertices[0].vertex_index = 0;
+      local_3a4.vertices[3].vertex_index = 3;
+      local_3a4.vertices[0].texture_u = 0x20000;
+      local_3a4.vertices[0].texture_v = 0x20000;
+      local_3a4.vertices[1].texture_v = 0x20000;
+      local_3a4.vertices[3].texture_u = 0x20000;
+      local_3a4.vertices[1].vertex_index = 1;
+      local_3a4.vertices[2].vertex_index = 2;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                 (g_CDemonRendererPtr2,&SMRGLTextureBasic_006819e4);
       engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(g_CDemonRendererPtr2,0xff,0,0xff);
       engine_drender_cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40
-                (g_CDemonRendererPtr2,&local_3a4);
+                (g_CDemonRendererPtr2,&local_3a4.base);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     }
     iVar7 = local_a4;

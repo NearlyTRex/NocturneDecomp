@@ -10,17 +10,15 @@ void __cdecl core_msnedit_cpp_CDemonMission_changeActorType_FUN_0053d8b0(CDemonM
 
 {
   char cVar2;
-  code cVar3;
   char *pcVar5;
   int iVar6;
-  char *pcVar4;
-  int iVar5;
+  char *pcVar3;
+  int iVar4;
   CDemonActor *pCVar7;
   int iVar8;
   CActorProperty *pCVar9;
   int iVar10;
-  CDemonActor *pCVar6;
-  CActorPropertyActionFunc *pCVar8;
+  CDemonActor *pCVar5;
   CDemonActor *pCVar11;
   char *pcVar12;
   CActorPropertyList CStack_502c;
@@ -62,19 +60,19 @@ void __cdecl core_msnedit_cpp_CDemonMission_changeActorType_FUN_0053d8b0(CDemonM
     } while (iVar10 < g_NumActorClassTypes);
   }
   shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_624.base);
-  pcVar4 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr->selected_actor);
+  pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr->selected_actor);
   _sprintf
-            (local_27c,"Change %s of type %s to new type",this_ptr->selected_actor,pcVar4);
-  iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+            (local_27c,"Change %s of type %s to new type",this_ptr->selected_actor,pcVar3);
+  iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                     (&local_624,local_27c,-1,0);
-  if (-1 < iVar5) {
-    pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_624.base,iVar5);
-    _sprintf(local_88,"C%s",pcVar4);
+  if (-1 < iVar4) {
+    pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_624.base,iVar4);
+    _sprintf(local_88,"C%s",pcVar3);
     pCVar7 = core_actor_cpp_createActorByName_FUN_0040c430(local_88);
     (*((pCVar7->vtable)._ub)->setup)(pCVar7);
-    iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+    iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
                       (g_CEditorToolsPtr,"Attempt to transfer properties?");
-    if (iVar5 != 0) {
+    if (iVar4 != 0) {
       core_actor_cpp_CActorPropertyList_init_FUN_0040e130(&CStack_2b28);
       core_actor_cpp_CActorPropertyList_init_FUN_0040e130(&CStack_502c);
       (*((pCVar7->vtable)._ub)->getPropertyList)(pCVar7,&CStack_2b28);
@@ -89,8 +87,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_changeActorType_FUN_0053d8b0(CDemonM
             pCVar9 = CStack_502c.properties;
             do {
               if ((pCVar9->type == pCStack_18->type) &&
-                 (iVar5 = _stricmp(pCVar9->name,pCStack_18->name),
-                 iVar5 == 0)) {
+                 (iVar4 = _stricmp(pCVar9->name,pCStack_18->name),
+                 iVar4 == 0)) {
                 switch(pCVar9->type) {
                 case PROP_INT:
                 case PROP_ENUM_PAIR:
@@ -113,17 +111,17 @@ void __cdecl core_msnedit_cpp_CDemonMission_changeActorType_FUN_0053d8b0(CDemonM
                 case PROP_FILE:
                 case PROP_EVENT:
                 case PROP_BUTTON:
-                  pCVar8 = (pCVar9->data).v_action_func_ptr;
-                  pcVar12 = (char *)(pCStack_18->data).v_action_func_ptr;
+                  pcVar3 = (pCVar9->data).v_string_ptr;
+                  pcVar12 = (pCStack_18->data).v_string_ptr;
                   do {
-                    cVar2 = (char)*pCVar8;
+                    cVar2 = *pcVar3;
                     *pcVar12 = cVar2;
                     if (cVar2 == '\0') break;
-                    cVar3 = pCVar8[1];
-                    pCVar8 = pCVar8 + 2;
-                    pcVar12[1] = (char)cVar3;
+                    cVar2 = pcVar3[1];
+                    pcVar3 = pcVar3 + 2;
+                    pcVar12[1] = cVar2;
                     pcVar12 = pcVar12 + 2;
-                  } while (cVar3 != (code)0x0);
+                  } while (cVar2 != '\0');
                   break;
                 case PROP_BOOL:
                 case PROP_CHOICE:
@@ -148,33 +146,33 @@ void __cdecl core_msnedit_cpp_CDemonMission_changeActorType_FUN_0053d8b0(CDemonM
         } while (iStack_1c < CStack_2b28.count);
       }
     }
-    pCVar6 = this_ptr->selected_actor;
+    pCVar5 = this_ptr->selected_actor;
     pCVar11 = pCVar7;
     do {
-      cVar1 = pCVar6->actor_name[0];
+      cVar1 = pCVar5->actor_name[0];
       pCVar11->actor_name[0] = cVar1;
       if (cVar1 == '\0') break;
-      cVar2 = pCVar6->actor_name[1];
-      pCVar6 = (CDemonActor *)(pCVar6->actor_name + 2);
+      cVar2 = pCVar5->actor_name[1];
+      pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
       pCVar11->actor_name[1] = cVar2;
       pCVar11 = (CDemonActor *)(pCVar11->actor_name + 2);
     } while (cVar2 != '\0');
-    pCVar6 = this_ptr->selected_actor;
-    (pCVar7->location).position.x = (pCVar6->location).position.x;
-    (pCVar7->location).position.y = (pCVar6->location).position.y;
-    (pCVar7->location).position.z = (pCVar6->location).position.z;
-    (pCVar7->location).area_id = (pCVar6->location).area_id;
-    pCVar6 = this_ptr->selected_actor;
-    if (&pCVar7->orient != &pCVar6->orient) {
-      (pCVar7->orient).vec.x = (pCVar6->orient).vec.x;
-      (pCVar7->orient).vec.y = (pCVar6->orient).vec.y;
-      (pCVar7->orient).vec.z = (pCVar6->orient).vec.z;
+    pCVar5 = this_ptr->selected_actor;
+    (pCVar7->location).position.x = (pCVar5->location).position.x;
+    (pCVar7->location).position.y = (pCVar5->location).position.y;
+    (pCVar7->location).position.z = (pCVar5->location).position.z;
+    (pCVar7->location).area_id = (pCVar5->location).area_id;
+    pCVar5 = this_ptr->selected_actor;
+    if (&pCVar7->orient != &pCVar5->orient) {
+      (pCVar7->orient).vec.x = (pCVar5->orient).vec.x;
+      (pCVar7->orient).vec.y = (pCVar5->orient).vec.y;
+      (pCVar7->orient).vec.z = (pCVar5->orient).vec.z;
     }
     (*((pCVar7->vtable)._ub)->setup)(pCVar7);
-    pCVar6 = this_ptr->selected_actor;
+    pCVar5 = this_ptr->selected_actor;
     core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(this_ptr,(CDemonActor *)0x0);
-    core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(this_ptr,pCVar6);
-    core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(this_ptr,pCVar6,1);
+    core_msnedit_cpp_CDemonMission_deleteActor_FUN_00538ea0(this_ptr,pCVar5);
+    core_mission_cpp_CDemonMission_removeActor_FUN_00523f20(this_ptr,pCVar5,1);
     core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,pCVar7);
     core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
     core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(this_ptr,pCVar7);

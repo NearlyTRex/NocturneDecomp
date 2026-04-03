@@ -9,9 +9,9 @@
 void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission *this_ptr,int set_index)
 
 {
-  int iVar1;
   int iVar2;
   int iVar3;
+  CDemonActor *iVar1;
   
   if (set_index != this_ptr->current_set_index) {
     this_ptr->current_set_index = set_index;
@@ -22,9 +22,9 @@ void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(CDemonMission *
     }
     iVar3 = 0;
     for (iVar2 = 0; iVar2 < g_CDemonSetPtr->actor_count; iVar2 = iVar2 + 1) {
-      iVar1 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);
+      iVar1 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3);
       iVar3 = iVar3 + 4;
-      (**(code **)(*(int *)(iVar1 + 0x154) + 0x48))(iVar1);
+      (*((iVar1->vtable)._ub)->updateCollisionData)(iVar1);
     }
   }
   return;

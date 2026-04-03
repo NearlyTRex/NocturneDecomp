@@ -15,12 +15,12 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr)
   int iVar5;
   SDamageInfo SStack_54;
   float local_18;
-  uint local_14;
+  float local_14;
   CDemonGlobe *this_ptr_00;
   CDemonSet *this_ptr_02;
   CFireEffect *this_ptr_01;
   longlong lVar2;
-  int iVar1;
+  CCharacter *iVar1;
   
   if (this_ptr->first_update_flag == 0) {
     this_ptr->first_update_flag = 1;
@@ -74,26 +74,27 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr)
   }
   if (this_ptr->lighting_active == 0) {
     local_18 = 20.0;
-    local_14 = 0x40800000;
+    local_14 = 4.0;
   }
   else if (this_ptr->lighting_active == 2) {
     local_18 = 5.0;
-    local_14 = 0x3f800000;
+    local_14 = 1.0;
   }
   else {
     local_18 = 5.0;
-    local_14 = 0x3f800000;
+    local_14 = 1.0;
   }
   iVar5 = 0;
   iVar2 = 0;
   while( true ) {
     if (g_CDemonSetPtr->character_count <= iVar2) break;
-    iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar5);
+    iVar1 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iVar5);
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_54);
     SStack_54.damage_amount = local_18;
     iVar5 = iVar5 + 4;
     iVar2 = iVar2 + 1;
-    (**(code **)(*(int *)(iVar1 + 0x154) + 0x114))(iVar1,this_ptr,local_14,&SStack_54);
+    (*(((iVar1->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
+              (iVar1,(CVector3f *)this_ptr,local_14,&SStack_54);
   }
   return;
 }

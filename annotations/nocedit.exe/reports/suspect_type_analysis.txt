@@ -5,8 +5,8 @@ SUSPECT TYPE ANALYSIS
 SUSPECT TYPE COUNTS
 --------------------------------------------------
   decompiler_intrinsic            6914 ( 44.0%)
-  pointer_cast                    4402 ( 28.0%)
-  unknown_field                    861 (  5.5%)
+  pointer_cast                    4404 ( 28.1%)
+  unknown_field                    862 (  5.5%)
   special_crt_function             439 (  2.8%)
   stack_param                      351 (  2.2%)
   unnamed_param                    329 (  2.1%)
@@ -14,8 +14,8 @@ SUSPECT TYPE COUNTS
   nonstandard_int                  267 (  1.7%)
   warning_inlined_function         264 (  1.7%)
   stack_ref                        250 (  1.6%)
-  unresolved_funcptr               157 (  1.0%)
-  warning_type_propagation         132 (  0.8%)
+  unresolved_funcptr               141 (  0.9%)
+  warning_type_propagation         133 (  0.8%)
   param_count_too_few              119 (  0.8%)
   unaffected_reg                   106 (  0.7%)
   sub84_truncation                 101 (  0.6%)
@@ -26,7 +26,7 @@ SUSPECT TYPE COUNTS
   param_count_too_many              41 (  0.3%)
   unknown_type                      40 (  0.3%)
   mmx_assembly                      34 (  0.2%)
-  suspect_float                     32 (  0.2%)
+  suspect_float                     31 (  0.2%)
   extra_output                      29 (  0.2%)
   format_string_mismatch            24 (  0.2%)
   undefined_ram                     24 (  0.2%)
@@ -96,12 +96,12 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (4402 occurrences)
+TYPE: pointer_cast (4404 occurrences)
 ====================================================================================================
 
 Unique patterns:
   1383x  (uint *)((int)
-  1234x  (int *)((int)
+  1236x  (int *)((int)
    305x  (float *)((int)
    209x  (SRenderVertex *)((int)
    193x  (double *)((int)
@@ -132,7 +132,7 @@ Example functions:
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar9) <...
 
 ====================================================================================================
-TYPE: unknown_field (861 occurrences)
+TYPE: unknown_field (862 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -142,8 +142,8 @@ Unique patterns:
     36x  ._2_2_
     14x  ._0_1_
     11x  ._1_1_
+    10x  ._3_1_
      9x  ._8_4_
-     9x  ._3_1_
      7x  ._12_4_
      7x  ._4_8_
      4x  ._2_1_
@@ -497,12 +497,12 @@ Example functions:
     local_8 = &stack0x0000000c;...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (157 occurrences)
+TYPE: unresolved_funcptr (141 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   118x  code *
-    39x  code
+   108x  code *
+    33x  code
 
 Example functions:
   crt_fstream.cpp_istream_seekg_FUN_00600ee4
@@ -537,11 +537,11 @@ Example functions:
     code *pcVar1;...
 
 ====================================================================================================
-TYPE: warning_type_propagation (132 occurrences)
+TYPE: warning_type_propagation (133 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   132x  WARNING: Type propagation algorithm not settling
+   133x  WARNING: Type propagation algorithm not settling
 
 Example functions:
   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
@@ -1180,7 +1180,7 @@ Example functions:
     Function uses MMX instructions...
 
 ====================================================================================================
-TYPE: suspect_float (32 occurrences)
+TYPE: suspect_float (31 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1196,7 +1196,6 @@ Unique patterns:
      1x  7.588293e-39
      1x  2.24208e-44
      1x  4.2039e-45
-     1x  2.69049e-43
      1x  5.60519e-45
 
 Example functions:
@@ -1236,6 +1235,8 @@ Example functions:
     local_bc.min.x = 2.8026e-45;...
   core_lightgun.cpp_CLightGun_ctor_FUN_00505900
     (pCVar3->base).fire_cooldown = 1.4013e-45;...
+  core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
+    this_ptr->morph_target_actor[0x8d].previous_transform_state.orientation.vec.x = ...
 
 ====================================================================================================
 TYPE: extra_output (29 occurrences)

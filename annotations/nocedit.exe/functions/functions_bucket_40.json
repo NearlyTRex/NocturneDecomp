@@ -3494,6 +3494,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0",
     "ret":"void",
@@ -3631,17 +3632,17 @@
           "name":"SStack_74",
           "storage":{
             "offset":-116,
-            "size":24,
+            "size":40,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x74]",
                 "offset":-116,
-                "size":24
+                "size":40
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuadIndex"
         },
         {
           "name":"this_ptr_00",
@@ -10674,6 +10675,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40",
     "ret":"void",
@@ -11158,84 +11160,20 @@
           "type":"CVector3i"
         },
         {
-          "name":"local_c4",
-          "storage":{
-            "offset":-196,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xc4]",
-                "offset":-196,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"local_c8",
-          "storage":{
-            "offset":-200,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xc8]",
-                "offset":-200,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"local_cc",
-          "storage":{
-            "offset":-204,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xcc]",
-                "offset":-204,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"local_d0",
-          "storage":{
-            "offset":-208,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xd0]",
-                "offset":-208,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
           "name":"local_e8",
           "storage":{
             "offset":-232,
-            "size":24,
+            "size":40,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0xe8]",
                 "offset":-232,
-                "size":24
+                "size":40
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuadIndex"
         },
         {
           "name":"local_f0",
@@ -24569,6 +24507,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0",
     "ret":"void",
@@ -24877,68 +24816,20 @@
           "type":"CVector3i"
         },
         {
-          "name":"local_84",
-          "storage":{
-            "offset":-132,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x84]",
-                "offset":-132,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"local_88",
-          "storage":{
-            "offset":-136,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x88]",
-                "offset":-136,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"local_8c",
-          "storage":{
-            "offset":-140,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x8c]",
-                "offset":-140,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
           "name":"local_a4",
           "storage":{
             "offset":-164,
-            "size":24,
+            "size":36,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0xa4]",
                 "offset":-164,
-                "size":24
+                "size":36
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveTriangleIndex"
         },
         {
           "name":"fVar1",
@@ -38578,6 +38469,22 @@
           "use":5715
         },
         {
+          "name":"iVar6",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:5ffe45e39d",
+                "offset":412287886237,
+                "size":4
+              }
+            ]
+          },
+          "type":"CEnemy*",
+          "use":7341
+        },
+        {
           "name":"fVar3",
           "storage":{
             "size":4,
@@ -38624,6 +38531,22 @@
           },
           "type":"float",
           "use":7496
+        },
+        {
+          "name":"unionfacet4_4aff89",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40417ac96360",
+                "offset":70649977070432,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":7753
         }
       ],
       "params":[
@@ -42126,6 +42049,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_fire.cpp_CLaserBeam_render_FUN_004c25c0",
     "ret":"void",
@@ -43476,33 +43400,33 @@
           "name":"local_248",
           "storage":{
             "offset":-584,
-            "size":24,
+            "size":40,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x248]",
                 "offset":-584,
-                "size":24
+                "size":40
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuadIndex"
         },
         {
           "name":"local_290",
           "storage":{
             "offset":-656,
-            "size":24,
+            "size":72,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x290]",
                 "offset":-656,
-                "size":24
+                "size":72
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuad"
         },
         {
           "name":"local_294",
@@ -44092,6 +44016,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_fire.cpp_CPopcorn_render_FUN_004c64c0",
     "ret":"void",
@@ -44259,17 +44184,17 @@
           "name":"SStack_a0",
           "storage":{
             "offset":-160,
-            "size":24,
+            "size":40,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0xa0]",
                 "offset":-160,
-                "size":24
+                "size":40
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuadIndex"
         },
         {
           "name":"auStackY_1060",
@@ -56762,6 +56687,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0",
     "ret":"void",
@@ -56850,17 +56776,17 @@
           "name":"local_44",
           "storage":{
             "offset":-68,
-            "size":24,
+            "size":40,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x44]",
                 "offset":-68,
-                "size":24
+                "size":40
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuadIndex"
         },
         {
           "name":"this_ptr_00",

@@ -18,16 +18,14 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   bool bVar7;
   int iVar8;
   int iVar5;
+  int iVar6;
   int iVar9;
   float10 fVar10;
   float10 fVar11;
-  float10 fVar6;
+  float10 fVar7;
   float10 fVar12;
-  float fVar7;
-  SMRGLHeaderPrimitive local_a4;
-  int local_8c;
-  int local_88;
-  int local_84;
+  float fVar8;
+  SMRGLPrimitiveTriangleIndex local_a4;
   CVector3i local_7c;
   CVector3f local_70;
   CVector3i local_64;
@@ -53,17 +51,17 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   fVar1 = (this_ptr->base).base.focal_length;
   fVar3 = (float)18;
   fVar2 = (this_ptr->base).max_distance;
-  fVar7 = (fVar3 / fVar1) * fVar2;
+  fVar8 = (fVar3 / fVar1) * fVar2;
   iVar9 = 0;
   fVar4 = (this_ptr->base).max_distance;
   iVar5 = 0;
   do {
     fVar10 = (float10)iVar9 * (float10)6.2831853070000001 * (float10)0.0625;
     fVar11 = (float10)fcos(fVar10);
-    fVar6 = (float10)fsin(fVar10);
-    fVar12 = (float10)fVar7;
+    fVar7 = (float10)fsin(fVar10);
+    fVar12 = (float10)fVar8;
     local_64.x = (int)ROUND((float)(fVar11 * fVar12) * 256.0f);
-    local_64.y = (int)ROUND((float)(fVar6 * fVar12) * 256.0f);
+    local_64.y = (int)ROUND((float)(fVar7 * fVar12) * 256.0f);
     local_64.z = (int)ROUND(fVar4 * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
@@ -102,35 +100,47 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
      ((-local_34[0].z < local_34[0].y && (local_34[0].z < (this_ptr->base).max_distance)))) {
     bVar7 = true;
   }
-  local_a4.surface_normal.D = 0;
-  local_a4.surface_normal.C = 0;
-  local_a4.surface_normal.B = 0;
-  local_a4.surface_normal.A = 0;
-  local_a4.base.count = 3;
+  local_a4.base.surface_normal.D = 0;
+  local_a4.base.surface_normal.C = 0;
+  local_a4.base.surface_normal.B = 0;
+  local_a4.base.surface_normal.A = 0;
+  local_a4.base.base.count = 3;
   if (bVar7) {
     core_dcamera_cpp_initializeCoronaBuffers_FUN_004502e0();
   }
   else {
-    iVar8 = 0;
+    local_a4.vertices[2] = 0x10;
+    local_a4.vertices[1] = 0;
     do {
-      iVar8 = iVar8 + 1;
+      if (local_a4.vertices[1] == 0xf) {
+        local_a4.vertices[0] = 0;
+      }
+      else {
+        local_a4.vertices[0] = local_a4.vertices[1] + 1;
+      }
+      iVar8 = local_a4.vertices[1] + 1;
       engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
-                (g_CDemonRendererPtr2,&local_a4,
+                (g_CDemonRendererPtr2,&local_a4.base,
                  core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320);
+      local_a4.vertices[1] = iVar8;
     } while (iVar8 < 0x10);
   }
-  local_a4.surface_normal.A = 0;
-  local_a4.surface_normal.B = 0;
-  local_a4.surface_normal.C = 0xffff;
-  iVar5 = 0;
-  local_a4.surface_normal.D =
+  local_a4.base.surface_normal.A = 0;
+  local_a4.base.surface_normal.B = 0;
+  local_a4.base.surface_normal.C = 0xffff;
+  local_a4.base.surface_normal.D =
        (int)ROUND(ROUND((this_ptr->base).max_distance * (float)256));
+  iVar5 = 0;
   do {
-    iVar5 = iVar5 + 1;
+    iVar6 = iVar5 + 1;
+    local_a4.vertices[0] = 0;
+    local_a4.vertices[1] = iVar5;
+    local_a4.vertices[2] = iVar6;
     engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
-              (g_CDemonRendererPtr2,&local_a4,
+              (g_CDemonRendererPtr2,&local_a4.base,
                core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320);
-  } while (iVar5 < 0xe);
+    iVar5 = iVar6;
+  } while (iVar6 < 0xe);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(this_ptr);

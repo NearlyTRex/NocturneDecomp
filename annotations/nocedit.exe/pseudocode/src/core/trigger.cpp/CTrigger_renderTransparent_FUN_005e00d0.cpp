@@ -12,6 +12,7 @@ int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *t
 
 {
   SRenderVertex *pSVar1;
+  int iVar2;
   CDemonRenderer *pCVar3;
   float fVar4;
   int iVar3;
@@ -32,11 +33,7 @@ int __cdecl core_trigger_cpp_CTrigger_renderTransparent_FUN_005e00d0(CTrigger *t
   float10 fVar11;
   int iStack_d8;
   int iStack_d0;
-  SMRGLHeaderPrimitive SStack_cc;
-  int iStack_b4;
-  int iStack_b0;
-  int iStack_ac;
-  int iStack_a8;
+  SMRGLPrimitiveQuadIndex SStack_cc;
   CBoundingBox3D local_a4;
   CBoundingBox3D CStack_8c;
   CVector3i CStack_74;
@@ -227,14 +224,25 @@ LAB_005e0160:
   iVar6 = 0;
   if (0 < iStack_d0) {
     do {
-      SStack_cc.base.count = 4;
+      iVar2 = iVar6 * 2;
+      SStack_cc.base.base.count = 4;
+      SStack_cc.vertices[0] = iVar2 + 4;
+      SStack_cc.vertices[1] = iVar2 + 5;
+      SStack_cc.vertices[2] = iVar2 + 3;
+      SStack_cc.vertices[3] = iVar2 + 2;
       engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-                (g_CDemonRendererPtr2,&SStack_cc,0x367);
-      SStack_cc.base.count = 3;
+                (g_CDemonRendererPtr2,&SStack_cc.base,0x367);
+      SStack_cc.base.base.count = 3;
+      SStack_cc.vertices[2] = 0;
+      SStack_cc.vertices[0] = iVar2 + 4;
+      SStack_cc.vertices[1] = iVar2 + 2;
       engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-                (g_CDemonRendererPtr2,&SStack_cc,0x367);
+                (g_CDemonRendererPtr2,&SStack_cc.base,0x367);
+      SStack_cc.vertices[2] = 1;
+      SStack_cc.vertices[0] = iVar2 + 3;
+      SStack_cc.vertices[1] = iVar2 + 5;
       engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-                (g_CDemonRendererPtr2,&SStack_cc,0x367);
+                (g_CDemonRendererPtr2,&SStack_cc.base,0x367);
       iVar6 = iVar6 + 1;
     } while (iVar6 < iStack_d0);
   }

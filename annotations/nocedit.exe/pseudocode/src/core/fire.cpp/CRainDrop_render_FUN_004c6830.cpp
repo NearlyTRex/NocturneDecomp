@@ -14,7 +14,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   SRenderVertex *vertex_ptr_00;
   int iVar1;
   byte bVar2;
-  SMRGLHeaderPrimitive SStack_a8;
+  SMRGLPrimitiveQuadIndex SStack_a8;
   CVector3i local_80;
   CVector3i local_74;
   CVector3i local_68;
@@ -88,13 +88,17 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
             (g_CDemonSetPtr,&CStack_2c,&g_BillboardCameraUp,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-  SStack_a8.surface_normal.D = 0;
-  SStack_a8.surface_normal.C = 0;
-  SStack_a8.surface_normal.B = 0;
-  SStack_a8.surface_normal.A = 0;
-  SStack_a8.base.count = 4;
+  SStack_a8.base.surface_normal.D = 0;
+  SStack_a8.base.surface_normal.C = 0;
+  SStack_a8.base.surface_normal.B = 0;
+  SStack_a8.base.surface_normal.A = 0;
+  SStack_a8.vertices[0] = 0;
+  SStack_a8.vertices[3] = 3;
+  SStack_a8.base.base.count = 4;
+  SStack_a8.vertices[1] = 1;
+  SStack_a8.vertices[2] = 2;
   engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-            (g_CDemonRendererPtr2,&SStack_a8);
+            (g_CDemonRendererPtr2,&SStack_a8.base);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   return;
