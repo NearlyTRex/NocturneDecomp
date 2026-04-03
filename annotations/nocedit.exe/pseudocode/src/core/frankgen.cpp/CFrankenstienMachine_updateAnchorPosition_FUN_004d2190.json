@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 131,
+    "complexity_score": 106,
     "cross_reference_count": 4,
     "function_call_count": 8,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 76,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "stack_alignment_array",
       "warning_inlined_function"
     ],
@@ -323,22 +322,6 @@
       "severity": "moderate",
       "text": "int aiStackY_1014 [1012];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "frame_index = (int)ROUND(ROUND(this_ptr->part_frame));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "frame_index = (int)ROUND(ROUND(this_ptr->part_frame));",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

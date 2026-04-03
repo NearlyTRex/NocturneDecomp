@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 202,
+    "complexity_score": 167,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 16,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 82,
-    "suspect_count": 11,
+    "suspect_count": 8,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 231
@@ -266,30 +265,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_28.x = (int)ROUND(local_34.x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_28.y = (int)ROUND(local_34.y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_28.z = (int)ROUND(local_34.z * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
     {
       "description": "Complex pointer cast",
       "line": 35,

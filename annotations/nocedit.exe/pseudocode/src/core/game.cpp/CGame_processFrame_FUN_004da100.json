@@ -91,15 +91,14 @@
   },
   "complexity": {
     "assembly_lines": 1158,
-    "complexity_score": 662,
+    "complexity_score": 547,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 382,
-    "suspect_count": 26,
+    "suspect_count": 15,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "sub84_truncation",
       "warning_type_propagation"
@@ -1171,14 +1170,6 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 137,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "(g_CConsolePtr,\"screen paint : %3.2f ms\\n\",SUB84(__BITCAST_UINT64(dVar4),0),",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 202,
       "match": "(int *)((int)",
@@ -1195,28 +1186,12 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 255,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "(local_3dc,\"FR: %f, AVG: %f, PC: %d\",SUB84(__BITCAST_UINT64(dVar4),0),",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 257,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)(int)FLOAT_02d7c2e8 / DOUBLE_02d7c2e0),0),",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 257,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "SUB84(__BITCAST_UINT64((double)(int)FLOAT_02d7c2e8 / DOUBLE_02d7c2e0),0),",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
@@ -1227,14 +1202,6 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 269,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "(double)(pCVar2->base).base.location.position.x,SUB84(__BITCAST_UINT64(dVar2),0),",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 270,
       "match": "SUB84(",
@@ -1243,14 +1210,6 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 270,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20),",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 271,
       "match": "SUB84(",
@@ -1265,22 +1224,6 @@
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64(dVar6),0),(int)((ulonglong)dVar6 >> 0x20),SUB84(__BITCAST_UINT64(dVar7),0),",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 271,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "SUB84(__BITCAST_UINT64(dVar6),0),(int)((ulonglong)dVar6 >> 0x20),SUB84(__BITCAST_UINT64(dVar7),0),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 271,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "SUB84(__BITCAST_UINT64(dVar6),0),(int)((ulonglong)dVar6 >> 0x20),SUB84(__BITCAST_UINT64(dVar7),0),",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
@@ -1291,28 +1234,12 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 272,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "(int)((ulonglong)dVar7 >> 0x20),SUB84(__BITCAST_UINT64(dVar8),0),(int)((ulonglong)dVar8 >> 0x20));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 281,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(local_3dc,\"Fudge: %g,%g,%g\",SUB84(__BITCAST_UINT64((double)pCVar5->x),0),",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 281,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "(local_3dc,\"Fudge: %g,%g,%g\",SUB84(__BITCAST_UINT64((double)pCVar5->x),0),",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
@@ -1323,28 +1250,12 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 282,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(double)pCVar5->x >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->y),0),",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 283,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(int)((ulonglong)(double)pCVar5->y >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->z),0),",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 283,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(double)pCVar5->y >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->z),0),",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

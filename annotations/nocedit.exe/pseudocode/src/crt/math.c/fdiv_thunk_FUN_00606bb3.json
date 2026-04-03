@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 248,
+    "complexity_score": 223,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
-    "suspect_count": 20,
+    "suspect_count": 18,
     "suspect_types": [
-      "decompiler_intrinsic",
       "fpu_register_input",
       "special_crt_function",
       "stack_param",
@@ -219,22 +218,6 @@
       "severity": "moderate",
       "text": "return (float10)CONCAT64(uStack0000000c,CONCAT22(in_stack_0000000a,uStack00000008));",
       "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
-      "match": "CONCAT64",
-      "severity": "mild",
-      "text": "return (float10)CONCAT64(uStack0000000c,CONCAT22(in_stack_0000000a,uStack00000008));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "return (float10)CONCAT64(uStack0000000c,CONCAT22(in_stack_0000000a,uStack00000008));",
-      "type": "decompiler_intrinsic"
     },
     {
       "address": "00606bb3",

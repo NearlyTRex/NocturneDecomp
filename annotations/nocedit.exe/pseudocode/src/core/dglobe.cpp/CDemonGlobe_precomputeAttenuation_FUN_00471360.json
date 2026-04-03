@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 102,
+    "complexity_score": 37,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_inlined_function"
     ],
     "total_lines": 78
@@ -231,54 +230,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "this_ptr->quadratic_radius_scaled = (int)ROUND(ROUND(radius * radius * fVar1));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "this_ptr->quadratic_radius_scaled = (int)ROUND(ROUND(radius * radius * fVar1));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "this_ptr->linear_radius_scaled = (int)ROUND(ROUND(fVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "this_ptr->linear_radius_scaled = (int)ROUND(ROUND(fVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(dVar3 / (double)(this_ptr->quadratic_radius_scaled >> 0x10)));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(dVar3 / (double)(this_ptr->quadratic_radius_scaled >> 0x10)));",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 659,
-    "complexity_score": 374,
+    "complexity_score": 339,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 274,
-    "suspect_count": 9,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic",
       "negative_offset"
     ],
     "total_lines": 933
@@ -547,14 +546,6 @@
       "type": "negative_offset"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_ec = SQRT(fVar9 * fVar9 + fVar13 * fVar13 + fVar8 * fVar8) + local_ec;",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 228,
       "match": "pSVar18[-1].",
@@ -577,22 +568,6 @@
       "severity": "mild",
       "text": "local_bc = pSVar18[-1].position.z - (pSVar18->position).z;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 231,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_f0 = SQRT(local_bc * local_bc + local_c4 * local_c4 + local_c0 * local_c0) + local_f0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 241,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (delta_time * (float)0.10000000000000001 < SQRT(fVar9 * fVar9 + fVar13 * fVar13 + fVar8 * fVar8))",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

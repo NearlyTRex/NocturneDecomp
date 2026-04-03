@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 626,
-    "complexity_score": 360,
+    "complexity_score": 315,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 260,
-    "suspect_count": 9,
+    "suspect_count": 5,
     "suspect_types": [
-      "decompiler_intrinsic",
       "stack_param"
     ],
     "total_lines": 886
@@ -511,22 +510,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "((fVar3 < (float)3 && (ABS(fVar7) < (float)2)))) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 151,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS(pCVar9->x - pCVar13->x) < (float)2)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 152,
       "match": "in_stack_ffffff18",
@@ -551,28 +534,12 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 226,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(fVar14 - (this_ptr->base).base.base.location.position.y) <= 1.0) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 230,
       "match": "in_stack_ffffff18",
       "severity": "moderate",
       "text": "force_immediate = (int)((ulonglong)in_stack_ffffff18 >> 0x20);",
       "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 256,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar6 * fVar6 + fVar14 * fVar14 + fVar5 * fVar5) < (float)2)) break;",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

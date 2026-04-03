@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 82,
+    "complexity_score": 47,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 47,
-    "suspect_count": 3,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 168
   },
   "cross_references": [
@@ -337,30 +335,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS((pCVar1->base).location.position.y - (this_ptr->base).base.location.position.y) <=",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (SQRT(local_20.z * local_20.z + local_20.x * local_20.x) <= (float)5) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(pCVar3->y) <= (float)0.34906585038888899) {",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

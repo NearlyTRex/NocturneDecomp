@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 1656,
-    "complexity_score": 780,
+    "complexity_score": 695,
     "cross_reference_count": 0,
     "function_call_count": 39,
     "global_count": 49,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 680,
-    "suspect_count": 9,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_type_propagation"
     ],
     "total_lines": 2336
@@ -985,70 +984,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 173,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((float)5 < ABS((pCVar15->base).location.position.y - local_ec.y)) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 174,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "(fVar14 = SQRT(fVar24 * fVar24 + fVar14 * fVar14), local_68 <= fVar14))",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 246,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar11 * fVar11 + fVar14 * fVar14 + fVar24 * fVar24))) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 264,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar24 * fVar24 + fVar14 * fVar14) < (float)40)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 419,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_198 = SQRT(fVar14 * fVar14 + pCVar21->x * pCVar21->x);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 445,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS((this_ptr->base).base.turn_angle_accumulator) < (float)0.017453292519444399)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 604,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT((double)local_b0.z * (double)local_b0.z +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 609,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(dVar11 * dVar11 + dVar10 * dVar10 + dVar9 * dVar9) <=",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

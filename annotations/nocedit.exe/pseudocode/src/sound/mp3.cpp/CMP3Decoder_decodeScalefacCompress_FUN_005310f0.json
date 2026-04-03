@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 312,
-    "complexity_score": 244,
+    "complexity_score": 189,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 104,
-    "suspect_count": 13,
+    "suspect_count": 8,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 416
@@ -239,14 +238,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "local_1a = CONCAT22(1,(ushort)local_1a);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(uint *)((int)",
@@ -255,44 +246,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "local_1a = CONCAT22(2,(ushort)local_1a);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)granule_info->granules + iVar1 + 0x3c) = 1;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "local_1a = CONCAT22(3,(ushort)local_1a);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "local_1a = CONCAT22(4,(ushort)local_1a);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "local_1a = CONCAT22(5,(ushort)local_1a);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

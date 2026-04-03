@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 211,
-    "complexity_score": 128,
+    "complexity_score": 93,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 78,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_inlined_function"
     ],
     "total_lines": 289
@@ -281,30 +280,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar2 = (float10)fpatan((float10)surface_normal->y,",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT((float10)surface_normal->x * (float10)surface_normal->x +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar6 = (float10)fpatan((float10)surface_normal->x,(float10)surface_normal->z);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

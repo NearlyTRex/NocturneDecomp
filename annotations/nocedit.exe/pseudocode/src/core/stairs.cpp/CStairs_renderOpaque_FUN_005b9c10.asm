@@ -6,33 +6,30 @@
 ; Parameters:
 ; CStairs *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0xdc]:24  SStack_dc
-; int              Stack[-0xc4]:4  iStack_c4
-; int              Stack[-0xc0]:4  iStack_c0
+; SMRGLPrimitiveQuadIndex Stack[-0xe4]:40  local_e4
 ; CBoundingBox3D   Stack[-0xbc]:24  local_bc
-; CVector3i        Stack[-0x9c]:12  CStack_9c
-; float            Stack[-0x90]:4  fStack_90
-; float            Stack[-0x8c]:4  fStack_8c
-; float            Stack[-0x88]:4  fStack_88
-; CVector3i        Stack[-0x84]:12  CStack_84
-; CVector3i        Stack[-0x78]:12  CStack_78
-; CVector3i        Stack[-0x6c]:12  CStack_6c
-; undefined1[16]   Stack[-0x60]:16  auStack_60
-; int              Stack[-0x50]:4  iStack_50
-; int              Stack[-0x4c]:4  iStack_4c
-; CVector3i        Stack[-0x48]:12  CStack_48
-; int              Stack[-0x3c]:4  iStack_3c
-; char *           Stack[-0x30]:4  pcStack_30
-; float *          Stack[-0x2c]:4  pfStack_2c
-; UOrientationVector * Stack[-0x28]:4  pUStack_28
-; int              Stack[-0x24]:4  iStack_24
-; int              Stack[-0x20]:4  iStack_20
-; int              Stack[-0x1c]:4  iStack_1c
-; int              Stack[-0x18]:4  iStack_18
-; int              Stack[-0x14]:4  iStack_14
-; int              Stack[-0x10]:4  iStack_10
-; int              Stack[-0xc]:4  iStack_c
-; int              Stack[-0x8]:4  iStack_8
+; CVector3i        Stack[-0x9c]:12  local_9c
+; float            Stack[-0x90]:4  local_90
+; float            Stack[-0x8c]:4  local_8c
+; float            Stack[-0x88]:4  local_88
+; CVector3i        Stack[-0x84]:12  local_84
+; CVector3i        Stack[-0x78]:12  local_78
+; CVector3i        Stack[-0x6c]:12  local_6c
+; int              Stack[-0x50]:4  local_50
+; int              Stack[-0x4c]:4  local_4c
+; CVector3i        Stack[-0x48]:12  local_48
+; int              Stack[-0x3c]:4  local_3c
+; char *           Stack[-0x30]:4  local_30
+; float *          Stack[-0x2c]:4  local_2c
+; UOrientationVector * Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
+; int              Stack[-0xc]:4  local_c
+; int              Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0065305a = 0.5

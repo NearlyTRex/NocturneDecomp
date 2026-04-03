@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 792,
-    "complexity_score": 367,
+    "complexity_score": 332,
     "cross_reference_count": 13,
     "function_call_count": 36,
     "global_count": 42,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 297,
-    "suspect_count": 6,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 1089
@@ -871,30 +870,6 @@
       "severity": "mild",
       "text": "puVar2 = (uint *)((int)g_SpotLightList + iVar7);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 288,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*piVar14 = (int)ROUND(CStack_54.x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 289,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "piVar14[1] = (int)ROUND(CStack_54.y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 290,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "piVar14[2] = (int)ROUND(CStack_54.z * 256.0f);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

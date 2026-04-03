@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 301,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 10,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 56,
-    "suspect_count": 24,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 139
   },
   "cross_references": [
@@ -177,200 +175,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->base.vtable._ub = &g_CEmitterVTable;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "(ADJ(this_ptr_00)->emitter_size).x = 1.0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "(ADJ(this_ptr_00)->emitter_size).y = 1.0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "(ADJ(this_ptr_00)->emitter_size).z = 1.0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "pcVar3 = ADJ(this_ptr_00)->event_on;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->emitter_type = 0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "pcVar3 = ADJ(this_ptr_00)->event_off;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->emit_timer = 0.0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->emit_period = 0.1;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->emitter_state = 1;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "(ADJ(this_ptr_00)->laser_color).r = 0xff;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "(ADJ(this_ptr_00)->laser_color).g = 0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "(ADJ(this_ptr_00)->laser_color).b = 0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->laser_type = 1;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->max_emit_time = 0.0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->state_timer = 0.0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->rock_speed = 20.0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->periodic_flag = 0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->max_wait_time = 0.0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->dest_actor = (CDemonActor *)0x0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->wav_name[0] = '\\0';",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->sfx_type = 1;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->was_active = 0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "return ADJ(this_ptr_00);",
-      "type": "decompiler_intrinsic"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

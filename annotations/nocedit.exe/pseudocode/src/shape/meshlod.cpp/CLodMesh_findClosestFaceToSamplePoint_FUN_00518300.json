@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 106,
+    "complexity_score": 91,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "sub84_truncation"
     ],
@@ -258,14 +257,6 @@
       "severity": "moderate",
       "text": "local_28 = SUB84(__BITCAST_UINT64(dVar2),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_28 = SUB84(__BITCAST_UINT64(dVar2),0);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

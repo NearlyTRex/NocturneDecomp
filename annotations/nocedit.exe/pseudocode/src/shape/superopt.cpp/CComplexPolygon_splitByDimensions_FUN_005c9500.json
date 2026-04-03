@@ -121,15 +121,14 @@
   },
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 797,
+    "complexity_score": 642,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 272,
-    "suspect_count": 51,
+    "suspect_count": 36,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field"
     ],
@@ -512,28 +511,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (*pdVar8 < __BITCAST_DOUBLE(CONCAT44(local_e0[1],local_e0[0]))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 84,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "local_e0[1] = *(uint *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (pdVar8[1] < __BITCAST_DOUBLE(CONCAT44(local_e0[3],local_e0[2]))) {",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -544,28 +527,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (pdVar8[2] < __BITCAST_DOUBLE(CONCAT44(uStack_cc,local_d0))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 92,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_cc = *(uint *)((int)pdVar8 + 0x14);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(local_188[1],local_188[0])) < *pdVar8) {",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -576,14 +543,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(local_188[3],local_188[2])) < pdVar8[1]) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 100,
       "match": "(uint *)((int)",
@@ -592,44 +551,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_174,local_178)) < pdVar8[2]) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 104,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_174 = *(uint *)((int)pdVar8 + 0x14);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(local_188[1],local_188[0])) - __BITCAST_DOUBLE(CONCAT44(local_e0[1],local_e0[0]))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(local_188[1],local_188[0])) - __BITCAST_DOUBLE(CONCAT44(local_e0[1],local_e0[0]))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 130,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "local_f8 = *max_dimensions + __BITCAST_DOUBLE(CONCAT44(local_e0[1],local_e0[0]));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -696,30 +623,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 149,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(local_188[3],local_188[2])) -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 150,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(local_e0[3],local_e0[2]))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 156,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "local_c0 = __BITCAST_DOUBLE(CONCAT44(local_e0[3],local_e0[2])) + max_dimensions[1];",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 162,
       "match": "(CVector3d *)((int)",
@@ -774,30 +677,6 @@
       "severity": "mild",
       "text": "local_128.y._4_4_ = 0x3ff00000;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 175,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_174,local_178)) - __BITCAST_DOUBLE(CONCAT44(uStack_cc,local_d0)) <=",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 175,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_174,local_178)) - __BITCAST_DOUBLE(CONCAT44(uStack_cc,local_d0)) <=",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 185,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "local_100 = __BITCAST_DOUBLE(CONCAT44(uStack_cc,local_d0)) + max_dimensions[2];",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

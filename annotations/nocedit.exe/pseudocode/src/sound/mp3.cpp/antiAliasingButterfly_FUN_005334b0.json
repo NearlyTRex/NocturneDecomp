@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 251,
+    "complexity_score": 226,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 106,
-    "suspect_count": 13,
+    "suspect_count": 11,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "sub84_truncation"
     ],
@@ -282,14 +281,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar5 = 1.0 / SQRT(*(double *)((int)g_Mp3AntiAliasCSSource + iVar2) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(double *)((int)",
@@ -304,14 +295,6 @@
       "severity": "moderate",
       "text": "local_48 = SUB84(__BITCAST_UINT64(dVar5),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_48 = SUB84(__BITCAST_UINT64(dVar5),0);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 533,
-    "complexity_score": 697,
+    "complexity_score": 652,
     "cross_reference_count": 10,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 282,
-    "suspect_count": 39,
+    "suspect_count": 35,
     "suspect_types": [
-      "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
       "special_crt_function",
@@ -531,28 +530,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "_iVar12 = CONCAT44(local_30,num);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 111,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "pvVar4 = extraout_EAX;",
       "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 113,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "_iVar12 = CONCAT44(pvVar7,pvVar4);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -579,14 +562,6 @@
       "type": "extra_output"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "_iVar12 = CONCAT44(pvVar4,pvVar7);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 135,
       "match": "(void *)((int)",
@@ -609,14 +584,6 @@
       "severity": "mild",
       "text": "local_28 = (void *)((int)local_28 + size);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 154,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "_iVar12 = CONCAT44(pvVar7,local_24);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

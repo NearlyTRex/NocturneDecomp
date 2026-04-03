@@ -13,15 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 310,
-    "complexity_score": 357,
+    "complexity_score": 332,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 132,
-    "suspect_count": 21,
+    "suspect_count": 19,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "sub84_truncation"
     ],
@@ -353,14 +352,6 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_108 = SUB84(weld_tolerance,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(double *)((int)",
@@ -503,14 +494,6 @@
       "severity": "mild",
       "text": "*(byte *)((int)pdVar2 + 0x35) = *(byte *)((int)pdVar2 + 0x35) | 0x80;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 115,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "(SQRT((pdVar2[2] - pdStack_1c[2]) * (pdVar2[2] - pdStack_1c[2]) +",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

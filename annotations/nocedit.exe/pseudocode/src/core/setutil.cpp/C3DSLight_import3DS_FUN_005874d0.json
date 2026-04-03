@@ -55,15 +55,14 @@
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 136,
+    "complexity_score": 101,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 86,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_inlined_function"
     ],
     "total_lines": 147
@@ -253,30 +252,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar11 = (float10)fpatan((float10)fVar3,(float10)fVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar5 = (float10)fpatan((float10)(fStack_34 - fVar1),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar10 * fVar10 + fVar9 * (float10)fVar2));",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

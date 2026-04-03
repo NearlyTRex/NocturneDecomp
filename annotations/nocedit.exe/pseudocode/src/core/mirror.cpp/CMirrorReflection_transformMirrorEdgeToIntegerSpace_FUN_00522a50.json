@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 155,
-    "complexity_score": 122,
+    "complexity_score": 87,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "param_count_too_many",
       "stack_alignment_array"
     ],
@@ -223,30 +222,6 @@
       "severity": "moderate",
       "text": "int aiStackY_1024 [1006];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "output->x = (int)ROUND(local_54.x * 65536.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "output->y = (int)ROUND(fVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "output->z = (int)ROUND(fVar2);",
-      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 1,

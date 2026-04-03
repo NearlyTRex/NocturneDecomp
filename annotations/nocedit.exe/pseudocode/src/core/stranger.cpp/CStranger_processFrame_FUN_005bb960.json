@@ -121,15 +121,14 @@
   },
   "complexity": {
     "assembly_lines": 2746,
-    "complexity_score": 1545,
+    "complexity_score": 1500,
     "cross_reference_count": 1,
     "function_call_count": 50,
     "global_count": 68,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1140,
-    "suspect_count": 38,
+    "suspect_count": 34,
     "suspect_types": [
-      "decompiler_intrinsic",
       "format_string_mismatch",
       "pointer_cast",
       "stack_param",
@@ -1512,22 +1511,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 492,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if ((((local_9c[0].z - SQRT(local_fc.z * local_fc.z + local_fc.x * local_fc.x) <",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 495,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS(local_2c4) < (float)0.78539816337500001)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 503,
       "match": "in_stack_fffffd14",
@@ -1678,22 +1661,6 @@
       "severity": "moderate",
       "text": "uVar25 = SUB84(__BITCAST_UINT64((double)fVar17),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 923,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "uVar25 = SUB84(__BITCAST_UINT64((double)fVar17),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 932,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(float)(((float10)__BITCAST_DOUBLE(CONCAT44(local_2dc,uVar25)) + (float10)-20) *",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

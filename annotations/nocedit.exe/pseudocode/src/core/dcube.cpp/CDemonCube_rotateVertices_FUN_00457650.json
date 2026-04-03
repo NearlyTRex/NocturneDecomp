@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 248,
-    "complexity_score": 218,
+    "complexity_score": 153,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 15,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 108,
-    "suspect_count": 10,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 356
@@ -361,30 +360,6 @@
   },
   "suspects": [
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_48.x = (int)ROUND(pCVar4->x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_48.y = (int)ROUND(pCVar4->y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_48.z = (int)ROUND(pCVar4->z * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 76,
       "match": "(byte *)((int)",
@@ -415,30 +390,6 @@
       "severity": "mild",
       "text": "local_34 = *(float *)((int)(pCVar2->triangle).vertices + local_18 + 0x14);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_28 = (uint)ROUND(local_34);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_2c = (uint)ROUND(local_38);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_30 = (uint)ROUND(local_3c);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

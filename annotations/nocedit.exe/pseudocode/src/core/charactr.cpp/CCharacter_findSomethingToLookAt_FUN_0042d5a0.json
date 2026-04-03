@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 576,
-    "complexity_score": 271,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 22,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 216,
-    "suspect_count": 5,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 792
   },
   "cross_references": [
@@ -355,46 +353,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(&CStack_44,&CStack_50), ABS(CStack_44.y) <= (float)1.3962634015555599)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS(CStack_44.x) <= (float)0.78539816337500001)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fStack_100 = ((float)20 / (SQRT(fVar6) + (float)20)) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 189,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((float)1.3962634015555599 < ABS(CStack_d4.y)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 192,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((float)0.78539816337500001 < ABS(CStack_d4.x)) {",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

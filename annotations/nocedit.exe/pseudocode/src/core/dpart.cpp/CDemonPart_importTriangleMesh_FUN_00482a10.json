@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 564,
+    "complexity_score": 379,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 24,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 119,
-    "suspect_count": 43,
+    "suspect_count": 25,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
@@ -381,44 +380,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(*pfVar6 * fVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(*pfVar6 * fVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_positions->y + local_24) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(pfVar6[1] * fVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(pfVar6[1] * fVar2));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -429,44 +396,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(pfVar6[2] * fVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(pfVar6[2] * fVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_positions->x + local_1c) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(*pfVar5 * fVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(*pfVar5 * fVar2));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -477,92 +412,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(pfVar5[1] * fVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(pfVar5[1] * fVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 63,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_positions->z + local_1c) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(pfVar5[2] * fVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(pfVar5[2] * fVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((double)pfVar5[3] * 256));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((double)pfVar5[3] * 256));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "this_ptr->vertex_positions[local_2c].y = (int)ROUND(ROUND((double)pfVar5[4] * dVar3));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "this_ptr->vertex_positions[local_2c].y = (int)ROUND(ROUND((double)pfVar5[4] * dVar3));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND((double)pfVar5[5] * dVar3));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND((double)pfVar5[5] * dVar3));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

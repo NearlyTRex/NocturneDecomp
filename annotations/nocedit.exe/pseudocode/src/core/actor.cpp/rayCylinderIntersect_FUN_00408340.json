@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 389,
-    "complexity_score": 164,
+    "complexity_score": 119,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 119,
-    "suspect_count": 4,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 508
   },
   "cross_references": [
@@ -178,38 +176,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar1_00 = SQRT(ray_direction->x * ray_direction->x + ray_direction->z * ray_direction->z);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if ((fVar12 <= fVar13) || (fVar13 = fVar9 - SQRT(fVar12 - fVar13), fVar1_00 < fVar13)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar12 = SQRT(fVar12 * out_normal->z +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar12 = SQRT(out_normal->z * out_normal->z +",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

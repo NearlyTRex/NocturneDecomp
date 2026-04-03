@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 138,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 18,
-    "suspect_count": 10,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic",
       "nan_function_artifact",
       "special_crt_function",
       "unknown_field"
@@ -100,22 +99,6 @@
       "type": "nan_function_artifact"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
-      "match": "NAN",
-      "severity": "mild",
-      "text": "uVar1._1_1_ = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
-      "match": "NAN",
-      "severity": "mild",
-      "text": "uVar1._1_1_ = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 14,
       "match": "._1_1_",
@@ -124,28 +107,12 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
-      "match": "CONCAT11",
-      "severity": "mild",
-      "text": "uVar1 = CONCAT11(uVar1._1_1_,2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 16,
       "match": "._1_1_",
       "severity": "mild",
       "text": "uVar1 = CONCAT11(uVar1._1_1_,3);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
-      "match": "CONCAT11",
-      "severity": "mild",
-      "text": "uVar1 = CONCAT11(uVar1._1_1_,3);",
-      "type": "decompiler_intrinsic"
     },
     {
       "address": "0060b190",

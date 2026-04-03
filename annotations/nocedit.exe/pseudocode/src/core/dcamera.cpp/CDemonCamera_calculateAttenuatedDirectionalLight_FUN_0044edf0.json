@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 73,
+    "complexity_score": 38,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 38,
-    "suspect_count": 3,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 146
   },
   "cross_references": [
@@ -186,30 +184,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(int)ROUND(fVar4 * fVar8 * 65536.0f) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar2 = (longlong)(int)ROUND(fVar5 * fVar8 * 65536.0f) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar3 = (longlong)(int)ROUND(fVar6 * fVar8 * 65536.0f) *",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

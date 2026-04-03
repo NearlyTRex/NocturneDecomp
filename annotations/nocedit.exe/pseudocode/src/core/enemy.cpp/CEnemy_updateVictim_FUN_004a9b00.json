@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 208,
+    "complexity_score": 183,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 148,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 244
@@ -266,14 +265,6 @@
   },
   "suspects": [
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(fVar4) <= fVar1) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 78,
       "match": "(float *)((int)",
@@ -296,14 +287,6 @@
       "severity": "mild",
       "text": "local_18 = *(float *)((int)g_EnemyVictimCandidateDistances + iVar8);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
-      "match": "NAN",
-      "severity": "mild",
-      "text": "if (pCVar2 == (CCharacter *)NAN) {",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

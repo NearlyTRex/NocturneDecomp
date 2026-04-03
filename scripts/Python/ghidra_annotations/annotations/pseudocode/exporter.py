@@ -98,6 +98,7 @@ OMIT_SUSPECT_TYPES = {
     'variadic_preserve', 'variadic_preserve_ebp', 'variadic_anchor',
     'stack_align_anchor', 'lea_esp_stack_addr',
     'unnamed_local',
+    'decompiler_intrinsic',
 }
 
 

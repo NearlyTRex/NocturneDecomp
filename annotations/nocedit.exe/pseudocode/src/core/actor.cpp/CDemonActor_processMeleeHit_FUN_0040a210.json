@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 769,
-    "complexity_score": 580,
+    "complexity_score": 535,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 30,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 300,
-    "suspect_count": 25,
+    "suspect_count": 21,
     "suspect_types": [
-      "decompiler_intrinsic",
       "stack_param",
       "stack_ref",
       "sub84_truncation",
@@ -787,44 +786,12 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(uStack_268 * 0.5 + 1.0)),pCVar3->blood_type);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(uStack_268 * 0.5 + 1.0)),pCVar3->blood_type);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 234,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)local_164.impact_direction.z),0),",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 234,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "SUB84(__BITCAST_UINT64((double)local_164.impact_direction.z),0),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 272,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(local_68.y * local_68.y + local_74.z * local_74.z + local_68.x * local_68.x);",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

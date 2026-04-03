@@ -12,7 +12,7 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror 
   int *piVar2;
   int iVar2;
   int iVar3;
-  SMRGLHeaderPrimitive SStack_88;
+  SMRGLPrimitiveQuad SStack_88;
   CVector3i local_40;
   CVector3i local_34;
   CVector3i local_28;
@@ -56,12 +56,16 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror 
          >> 4;
     iVar2 = iVar3;
   } while (iVar3 != 0xc0);
-  SStack_88.base.count = 4;
-  SStack_88.surface_normal.D = 0;
-  SStack_88.surface_normal.C = 0;
-  SStack_88.surface_normal.B = 0;
-  SStack_88.surface_normal.A = 0;
+  SStack_88.base.base.count = 4;
+  SStack_88.base.surface_normal.D = 0;
+  SStack_88.base.surface_normal.C = 0;
+  SStack_88.base.surface_normal.B = 0;
+  SStack_88.vertices[2].vertex_index = 2;
+  SStack_88.base.surface_normal.A = 0;
+  SStack_88.vertices[0].vertex_index = 0;
+  SStack_88.vertices[3].vertex_index = 3;
+  SStack_88.vertices[1].vertex_index = 1;
   engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950
-            (g_CDemonRendererPtr2,&SStack_88);
+            (g_CDemonRendererPtr2,&SStack_88.base);
   return;
 }

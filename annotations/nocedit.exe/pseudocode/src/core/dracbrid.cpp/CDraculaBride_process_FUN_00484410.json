@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 1793,
-    "complexity_score": 845,
+    "complexity_score": 790,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 54,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 760,
-    "suspect_count": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_inlined_function",
       "warning_type_propagation"
     ],
@@ -1060,46 +1059,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((this_ptr->fade_timer * fVar20) / fVar22));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((this_ptr->fade_timer * fVar20) / fVar22));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 399,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(local_7c.z * local_7c.z + local_7c.x * local_7c.x + local_7c.y * local_7c.y)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 403,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(local_14) < (float)0.39269908168750001) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 641,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar9 * fVar9 + fVar20 * fVar20 + fVar22 * fVar22) < (float)5))",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

@@ -25,15 +25,14 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 102,
+    "complexity_score": 77,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 47,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "format_string_mismatch",
       "warning_inlined_function"
     ],
@@ -295,22 +294,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "this_ptr->stream_read_position = (int)ROUND(ROUND(dVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "this_ptr->stream_read_position = (int)ROUND(ROUND(dVar2));",
-      "type": "decompiler_intrinsic"
     },
     {
       "actual_args": 0,

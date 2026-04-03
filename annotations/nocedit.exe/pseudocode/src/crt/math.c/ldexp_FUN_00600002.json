@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 210,
+    "complexity_score": 145,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 50,
-    "suspect_count": 14,
+    "suspect_count": 8,
     "suspect_types": [
-      "decompiler_intrinsic",
       "param_count_too_few",
       "special_math_intrinsic",
       "unknown_field"
@@ -197,22 +196,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar1 = -__BITCAST_DOUBLE(CONCAT44(INFINITY._4_4_,INFINITY._0_4_));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
-      "match": "SUB82",
-      "severity": "mild",
-      "text": "local_1c = SUB82(__BITCAST_UINT64(dVar1),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 40,
       "match": "._0_4_",
@@ -235,38 +218,6 @@
       "severity": "mild",
       "text": "uStack_18 = INFINITY._4_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "SUB82",
-      "severity": "mild",
-      "text": "local_1c = SUB82(x,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "uStack_18 = CONCAT22(uStack_1e,local_20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "return __BITCAST_DOUBLE(CONCAT44(uStack_18,CONCAT22(uStack_1a,local_1c)));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "return __BITCAST_DOUBLE(CONCAT44(uStack_18,CONCAT22(uStack_1a,local_1c)));",
-      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 1,

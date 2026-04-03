@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 685,
-    "complexity_score": 356,
+    "complexity_score": 341,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 41,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 271,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array"
     ],
@@ -683,14 +682,6 @@
       "severity": "mild",
       "text": "iVar13 = *(int *)((int)g_CoronaRightExtent + local_58);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 237,
-      "match": "SBORROW4",
-      "severity": "mild",
-      "text": "while (SBORROW4(local_28,iVar13) != iVar1 < 0) {",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

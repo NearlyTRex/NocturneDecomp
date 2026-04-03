@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 233,
+    "complexity_score": 188,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 83,
-    "suspect_count": 14,
+    "suspect_count": 10,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 206
@@ -147,38 +146,6 @@
       "severity": "mild",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(longlong)ROUND((float10)*(longlong *)(iVar7 + -0x18 + (int)src_buffer));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*(longlong *)(iVar8 + (int)dest_buffer) = (longlong)ROUND((float10)lVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*(longlong *)(iVar7 + -8 + (int)dest_buffer) = (longlong)ROUND((float10)lVar3);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*(longlong *)(iVar7 + -0x10 + (int)dest_buffer) = (longlong)ROUND((float10)lVar2);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 371,
+    "complexity_score": 186,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 141,
-    "suspect_count": 21,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
       "warning_inlined_function"
@@ -374,150 +373,6 @@
       "severity": "mild",
       "text": "piVar10 = (int *)((int)&this_ptr->vertices->x + local_1c);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[0].x * 65536.0f)) * (longlong)*piVar10",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[0].x * 65536.0f)) * (longlong)*piVar10",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar2 = (longlong)(int)ROUND(ROUND(local_b8.m[1].x * 65536.0f)) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar2 = (longlong)(int)ROUND(ROUND(local_b8.m[1].x * 65536.0f)) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar3 = (longlong)(int)ROUND(ROUND(local_b8.m[2].x * 65536.0f)) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar3 = (longlong)(int)ROUND(ROUND(local_b8.m[2].x * 65536.0f)) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar4 = (longlong)(int)ROUND(ROUND(local_b8.m[0].y * 65536.0f)) * (longlong)*piVar10",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar4 = (longlong)(int)ROUND(ROUND(local_b8.m[0].y * 65536.0f)) * (longlong)*piVar10",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar5 = (longlong)(int)ROUND(ROUND(local_b8.m[1].y * 65536.0f)) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar5 = (longlong)(int)ROUND(ROUND(local_b8.m[1].y * 65536.0f)) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar6 = (longlong)(int)ROUND(ROUND(local_b8.m[2].y * 65536.0f)) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar6 = (longlong)(int)ROUND(ROUND(local_b8.m[2].y * 65536.0f)) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar4 = (longlong)(int)ROUND(ROUND(local_b8.m[0].z * 65536.0f)) * (longlong)*piVar10",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar4 = (longlong)(int)ROUND(ROUND(local_b8.m[0].z * 65536.0f)) * (longlong)*piVar10",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar5 = (longlong)(int)ROUND(ROUND(local_b8.m[1].z * 65536.0f)) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar5 = (longlong)(int)ROUND(ROUND(local_b8.m[1].z * 65536.0f)) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar6 = (longlong)(int)ROUND(ROUND(local_b8.m[2].z * 65536.0f)) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar6 = (longlong)(int)ROUND(ROUND(local_b8.m[2].z * 65536.0f)) *",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

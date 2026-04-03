@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 181,
+    "complexity_score": 166,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
-      "decompiler_intrinsic",
       "param_count_too_few",
       "sub84_truncation",
       "unknown_field"
@@ -351,14 +350,6 @@
       "severity": "moderate",
       "text": "local_28 = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_28 = SUB84(__BITCAST_UINT64(dVar1),0);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",

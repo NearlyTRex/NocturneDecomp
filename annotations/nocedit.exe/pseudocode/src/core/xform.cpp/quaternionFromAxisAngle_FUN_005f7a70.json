@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 58,
+    "complexity_score": 33,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 18,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "param_count_too_many"
     ],
     "total_lines": 62
@@ -149,22 +148,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar4 = (float10)fsin((float10)angle_radians * (float10)0.5);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar5 = (float10)fcos((float10)angle_radians * (float10)0.5);",
-      "type": "decompiler_intrinsic"
-    },
     {
       "call_site_count": 2,
       "declared_params": 3,

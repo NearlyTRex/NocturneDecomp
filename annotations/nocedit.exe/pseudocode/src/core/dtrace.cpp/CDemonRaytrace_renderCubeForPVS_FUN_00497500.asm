@@ -10,8 +10,7 @@
 ; int              Stack[0x10]:4   grid_z
 ; int              Stack[0x14]:4   render_mode
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0xd4]:24  SStack_d4
-; int              Stack[-0xbc]:4  local_bc
+; SMRGLPrimitiveQuadIndex Stack[-0xd4]:40  SStack_d4
 ; float            Stack[-0xac]:4  local_ac
 ; float            Stack[-0xa8]:4  local_a8
 ; float            Stack[-0xa4]:4  local_a4

@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 101,
+    "complexity_score": 36,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 36,
-    "suspect_count": 6,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 140
   },
   "cross_references": [
@@ -254,54 +252,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(fVar2) <= (float)10) && (ABS(fVar1) <= (float)30)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(fVar2) <= (float)10) && (ABS(fVar1) <= (float)30)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((float)30 < ABS(fVar3)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "else if (((ABS(fVar2) <= (float)8) && (ABS(fVar1) <= (float)25)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "else if (((ABS(fVar2) <= (float)8) && (ABS(fVar1) <= (float)25)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS(fVar3) <= (float)25)) {",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

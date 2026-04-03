@@ -43,15 +43,14 @@
   },
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 180,
+    "complexity_score": 145,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 12,
+    "suspect_count": 9,
     "suspect_types": [
-      "decompiler_intrinsic",
       "param_count_too_few",
       "sub84_truncation",
       "unknown_field"
@@ -255,14 +254,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 34,
       "match": "._4_4_",
@@ -287,14 +278,6 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "g_AudioLatencySeconds._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 40,
       "match": "._4_4_",
@@ -317,14 +300,6 @@
       "severity": "moderate",
       "text": "g_AudioLatencySeconds._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "g_AudioLatencySeconds._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);",
-      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 2,

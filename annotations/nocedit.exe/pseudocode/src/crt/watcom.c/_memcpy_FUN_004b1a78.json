@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 522,
+    "complexity_score": 497,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 77,
-    "suspect_count": 41,
+    "suspect_count": 39,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "special_crt_function",
       "undefined_data",
@@ -412,22 +411,6 @@
       "severity": "mild",
       "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
       "type": "undefined_data"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*plVar3 = (longlong)ROUND((float10)lVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*plVar3 = (longlong)ROUND((float10)lVar1);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Jump table recovery failed",

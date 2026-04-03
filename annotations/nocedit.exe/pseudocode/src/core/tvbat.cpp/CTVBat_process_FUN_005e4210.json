@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 792,
-    "complexity_score": 468,
+    "complexity_score": 363,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 29,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 333,
-    "suspect_count": 12,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_inlined_function",
       "warning_type_propagation"
     ],
@@ -639,86 +638,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 189,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 190,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(this_ptr->max_height <= ABS(local_84))) && ((CVector3f *)&local_58 != &this_ptr->home_pos)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 224,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar18 = (float10)fpatan((float10)local_88,(float10)local_80);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 225,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar19 = SQRT((float10)local_88 * (float10)local_88 + (float10)local_80 * (float10)local_80);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 226,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar22 = (float10)fpatan((float10)local_84,fVar19);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 260,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar23 = (float10)fsin(fVar18);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 262,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar21 = (float10)fsin(fVar20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 263,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar18 = (float10)fcos(fVar18);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 264,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar24 = (float10)fcos(fVar20);",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

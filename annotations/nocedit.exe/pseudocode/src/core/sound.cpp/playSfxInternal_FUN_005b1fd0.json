@@ -85,15 +85,14 @@
   },
   "complexity": {
     "assembly_lines": 665,
-    "complexity_score": 332,
+    "complexity_score": 317,
     "cross_reference_count": 6,
     "function_call_count": 27,
     "global_count": 43,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 262,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "decompiler_intrinsic",
       "format_string_mismatch"
     ],
     "total_lines": 927
@@ -883,14 +882,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
-      "match": "SUB41",
-      "severity": "mild",
-      "text": "cVar5 = SUB41(fVar4,0) + '0';",
-      "type": "decompiler_intrinsic"
-    },
     {
       "actual_args": 0,
       "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",

@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 272,
+    "complexity_score": 217,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 35,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 122,
-    "suspect_count": 13,
+    "suspect_count": 8,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
       "warning_inlined_function"
@@ -549,38 +548,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "g_CoronaDepthShift = (int)ROUND(ROUND(fVar1 * 0.30103 * (float)3.3219280948900001));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "g_CoronaDepthShift = (int)ROUND(ROUND(fVar1 * 0.30103 * (float)3.3219280948900001));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "g_CoronaMaxDepth = (int)ROUND(ROUND(fVar1));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "g_CoronaMaxDepth = (int)ROUND(ROUND(fVar1));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 73,
       "match": "(int *)((int)",
@@ -603,14 +570,6 @@
       "severity": "mild",
       "text": "iVar1 = *(int *)((int)g_CoronaRightExtent + local_2c);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
-      "match": "SBORROW4",
-      "severity": "mild",
-      "text": "while (bVar9 = SBORROW4(local_18,iVar1), bVar9 != iVar5 < 0) {",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

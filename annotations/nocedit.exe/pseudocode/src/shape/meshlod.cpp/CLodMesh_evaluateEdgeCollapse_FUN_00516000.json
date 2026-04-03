@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 391,
-    "complexity_score": 188,
+    "complexity_score": 143,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 143,
-    "suspect_count": 4,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 534
   },
   "cross_references": [
@@ -368,38 +366,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((float)3 < ABS((float)piVar8[7] - (float)piVar7[7])) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "ABS(this_ptr_01->uv_coords[iVar4][corner_idx] -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(local_80.z * local_80.z + local_80.x * local_80.x + local_80.y * local_80.y",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 125,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": ") * SQRT(local_74.z * local_74.z +",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

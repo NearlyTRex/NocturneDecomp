@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 488,
-    "complexity_score": 271,
+    "complexity_score": 236,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 206,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "param_count_too_few",
       "warning_type_propagation"
     ],
@@ -551,30 +550,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_120 = SQRT(local_7c * local_7c + local_84 * local_84 + local_80 * local_80);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 175,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fStack_118 = SQRT(fVar4 * fVar4 + fVar8 * fVar8 + fVar3 * fVar3);",
-      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 1,

@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 107,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 32,
-    "suspect_count": 7,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 107
   },
   "cross_references": [],
@@ -187,62 +185,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar3 = (float10)fsin(fVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar1 = (float10)fcos(fVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar6 = (float10)fcos(fVar5);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar7 = (float10)fsin(fVar5);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_38[0].x = (int)ROUND((float)(fVar3 * fVar4 * fVar6) * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_38[0].y = (int)ROUND((float)(fVar7 * fVar4) * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_38[0].z = (int)ROUND((float)(fVar1 * fVar4 * fVar6) * 256.0f);",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

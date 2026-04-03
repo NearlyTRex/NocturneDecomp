@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 502,
-    "complexity_score": 707,
+    "complexity_score": 522,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 347,
-    "suspect_count": 34,
+    "suspect_count": 16,
     "suspect_types": [
       "byvalue_struct_passing",
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref"
     ],
@@ -593,54 +592,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_8c.x = (int)ROUND(*pfVar3 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_8c.y = (int)ROUND(pfVar3[1] * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 109,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_8c.z = (int)ROUND(pfVar3[2] * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_8c.x = (int)ROUND((*pfVar3 * 0.8f +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_8c.y = (int)ROUND((pfVar3[1] * 0.8f +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 117,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_8c.z = (int)ROUND((pfVar3[2] * 0.8f +",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 122,
       "match": "&stack0xfffffec0",
@@ -673,54 +624,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 185,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_b0.x = (int)ROUND(*pfVar3 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 186,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_b0.y = (int)ROUND(pfVar3[1] * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 187,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_b0.z = (int)ROUND(pfVar3[2] * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 189,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_b0.x = (int)ROUND((*pfVar3 * 0.8f +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 192,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_b0.y = (int)ROUND((pfVar3[1] * 0.8f +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 195,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_b0.z = (int)ROUND((pfVar3[2] * 0.8f +",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 200,
       "match": "&stack0xfffffec0",
@@ -751,54 +654,6 @@
       "severity": "mild",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 263,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_50.x = (int)ROUND(*pfVar3 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 264,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_50.y = (int)ROUND(pfVar3[1] * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 265,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_50.z = (int)ROUND(pfVar3[2] * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 267,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_50.x = (int)ROUND((*pfVar3 * 0.8f +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 270,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_50.y = (int)ROUND((pfVar3[1] * 0.8f +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 273,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_50.z = (int)ROUND((0.8f * pfVar3[2] +",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",

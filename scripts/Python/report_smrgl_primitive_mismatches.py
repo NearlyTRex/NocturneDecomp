@@ -101,24 +101,28 @@ def find_mismatches(asm_path):
             continue
 
         # Find the true extent of vertex data following the header.
-        # Strategy: start from the end of the header and absorb:
-        #   1. Any initial gap (undefined space before the next defined variable)
-        #   2. Any small int/undefined variables that are part of the vertex data
-        # Stop when we hit a non-absorbable type or a gap between defined vars > 4 bytes.
+        #
+        # 1. Measure gap to the immediate next variable (any type). This
+        #    catches pure undefined gaps.
+        # 2. If next var is absorbable (int/uint), absorb contiguous chain.
+        # 3. Then check: does the distance to the next NON-absorbable var
+        #    match a known primitive type? If so, override — this catches
+        #    cases where Ghidra scattered vertex fields as separate ints
+        #    with gaps between them.
+
         end_offset = offset + size
         absorbed = []
         j = i + 1
 
-        # First, find the next defined variable to measure the initial gap
+        # Step 1+2: Measure gap + absorb contiguous small vars
         if j < len(variables):
             next_type, next_offset, next_size, next_name = variables[j]
             initial_gap = next_offset - end_offset
 
             if initial_gap > 0 and next_type not in ABSORBABLE_TYPES:
-                # Pure gap before a non-absorbable type — extend to it
+                # Pure gap before a non-absorbable type
                 end_offset = next_offset
             elif initial_gap >= 0 and next_type in ABSORBABLE_TYPES:
-                # Gap (possibly 0) then absorbable vars — absorb everything
                 end_offset = next_offset + next_size
                 absorbed.append(variables[j])
                 j += 1
@@ -130,7 +134,6 @@ def find_mismatches(asm_path):
                     if gap_to_next > 4:
                         break
                     if next_type not in ABSORBABLE_TYPES:
-                        # Include any trailing gap up to this non-absorbable var
                         if gap_to_next > 0:
                             end_offset = next_offset
                         break
@@ -138,6 +141,32 @@ def find_mismatches(asm_path):
                     absorbed.append(variables[j])
                     end_offset = next_offset + next_size
                     j += 1
+            elif initial_gap > 0:
+                # Gap before an absorbable type that starts after some space
+                end_offset = next_offset + next_size
+                absorbed.append(variables[j])
+                j += 1
+
+        # Step 3: Boundary override — check distance to next non-absorbable
+        next_boundary = None
+        absorbed_candidates = []
+        for k in range(i + 1, len(variables)):
+            vtype, voffset, vsize, vname = variables[k]
+            if voffset < offset + size:
+                continue
+            if vtype not in ABSORBABLE_TYPES:
+                next_boundary = variables[k]
+                break
+            absorbed_candidates.append(variables[k])
+
+        if next_boundary is not None:
+            boundary_distance = next_boundary[1] - offset
+            for gap_key, rec in GAP_TO_TYPE.items():
+                if rec[0] == boundary_distance and boundary_distance > (end_offset - offset):
+                    # Boundary gives a larger known type — prefer it
+                    end_offset = next_boundary[1]
+                    absorbed = absorbed_candidates
+                    break
 
         total_size = end_offset - offset
         if total_size <= SMRGL_HEADER_PRIMITIVE_SIZE:
@@ -145,11 +174,9 @@ def find_mismatches(asm_path):
 
         extra = total_size - SMRGL_HEADER_PRIMITIVE_SIZE
 
-        # Match by extra bytes first, then check if the total size matches
-        # a known primitive (covers cases where gap is fully filled by defined vars)
+        # Match by extra bytes or total size against known primitive types
         recommendation = GAP_TO_TYPE.get(extra)
         if recommendation is None:
-            # Check all known types to see if total_size matches
             for gap_key, rec in GAP_TO_TYPE.items():
                 if rec[0] == total_size:
                     recommendation = rec

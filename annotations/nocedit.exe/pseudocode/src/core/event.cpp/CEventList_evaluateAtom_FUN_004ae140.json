@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 3369,
-    "complexity_score": 1642,
+    "complexity_score": 1607,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 231,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1592,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_type_propagation"
     ],
     "total_lines": 4961
@@ -2196,30 +2195,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 742,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_e0 = (uint)(SQRT((local_104.z - local_ec.z) * (local_104.z - local_ec.z)",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 985,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (local_a88 * (float)3.1415926535000001 * (float)0.0055555555555555497 < ABS(pCVar14->y))",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1204,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3) <=",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

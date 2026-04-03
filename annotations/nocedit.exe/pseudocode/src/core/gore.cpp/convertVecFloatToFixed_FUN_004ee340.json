@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 42,
+    "complexity_score": 7,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 3,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 22
   },
   "cross_references": [],
@@ -88,30 +86,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 5,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "dst->x = (int)ROUND(src->x * 65536.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 6,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "dst->y = (int)ROUND(src->y * 65536.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 7,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "dst->z = (int)ROUND(src->z * 65536.0f);",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

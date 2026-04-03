@@ -6,11 +6,7 @@
 ; Parameters:
 ; CDemonPart *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x58]:24  local_58
-; int              Stack[-0x40]:4  local_40
-; int              Stack[-0x34]:4  local_34
-; int              Stack[-0x28]:4  local_28
-; int              Stack[-0x1c]:4  local_1c
+; SMRGLPrimitiveQuad Stack[-0x58]:72  local_58
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

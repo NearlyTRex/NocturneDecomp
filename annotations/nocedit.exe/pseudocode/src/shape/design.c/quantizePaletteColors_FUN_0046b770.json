@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 90,
+    "complexity_score": 65,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 65,
-    "suspect_count": 2,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 268
   },
   "cross_references": [
@@ -328,22 +326,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar2 = SQRT((float)(uVar6 * uVar6 + uVar5 * uVar5 + uVar4 * uVar4)) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT((float)(uVar9 * uVar9 + uVar8 * uVar8 + uVar7 * uVar7)) *",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

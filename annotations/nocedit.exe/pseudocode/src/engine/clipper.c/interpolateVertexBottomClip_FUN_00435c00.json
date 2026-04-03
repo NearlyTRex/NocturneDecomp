@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 125,
+    "complexity_score": 50,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 50,
-    "suspect_count": 7,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 162
   },
   "cross_references": [
@@ -132,62 +130,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar4);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
-      "match": "CARRY4",
-      "severity": "mild",
-      "text": "iVar4 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
-      "match": "CARRY4",
-      "severity": "mild",
-      "text": "(int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
-      "match": "CARRY4",
-      "severity": "mild",
-      "text": "output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
-      "match": "CARRY4",
-      "severity": "mild",
-      "text": "output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->a;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
-      "match": "CARRY4",
-      "severity": "mild",
-      "text": "output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
-      "match": "CARRY4",
-      "severity": "mild",
-      "text": "output->v = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

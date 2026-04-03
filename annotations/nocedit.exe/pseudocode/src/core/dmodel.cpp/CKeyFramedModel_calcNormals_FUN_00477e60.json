@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 180,
+    "complexity_score": 105,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 75,
-    "suspect_count": 9,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
@@ -274,62 +273,6 @@
       "severity": "mild",
       "text": "piVar9 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar7);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar2 = SQRT(dVar3 * dVar3 + dVar4 * dVar4 + dVar1 * dVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*piVar9 = (int)ROUND(ROUND(dVar1 * dVar5));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*piVar9 = (int)ROUND(ROUND(dVar1 * dVar5));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "piVar9[1] = (int)ROUND(ROUND(dVar4 * dVar5));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "piVar9[1] = (int)ROUND(ROUND(dVar4 * dVar5));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "piVar9[2] = (int)ROUND(ROUND(dVar3 * dVar5));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "piVar9[2] = (int)ROUND(ROUND(dVar3 * dVar5));",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

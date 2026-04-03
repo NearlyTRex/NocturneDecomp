@@ -31,15 +31,14 @@
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 206,
+    "complexity_score": 161,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 15,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 91,
-    "suspect_count": 10,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic",
       "unknown_field",
       "warning_unreachable"
     ],
@@ -291,22 +290,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar2->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar1) >> 0x20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 70,
       "match": "._0_4_",
@@ -321,22 +304,6 @@
       "severity": "mild",
       "text": "lVar2._4_4_ = (pSVar7->projected_vertex).transformed_y;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

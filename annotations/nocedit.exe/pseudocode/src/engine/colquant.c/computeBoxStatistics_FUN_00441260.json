@@ -61,15 +61,14 @@
   },
   "complexity": {
     "assembly_lines": 378,
-    "complexity_score": 430,
+    "complexity_score": 335,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 135,
-    "suspect_count": 27,
+    "suspect_count": 18,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "sub84_truncation",
       "unknown_field",
@@ -444,54 +443,6 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "workspace->boxes[box_index].avg_red = (short)(int)ROUND(ROUND(local_78 / (double)local_30));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "workspace->boxes[box_index].avg_red = (short)(int)ROUND(ROUND(local_78 / (double)local_30));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "workspace->boxes[box_index].avg_green = (short)(int)ROUND(ROUND(local_70 / (double)local_30));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "workspace->boxes[box_index].avg_green = (short)(int)ROUND(ROUND(local_70 / (double)local_30));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "workspace->boxes[box_index].avg_blue = (short)(int)ROUND(ROUND(local_50 / (double)local_30));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "workspace->boxes[box_index].avg_blue = (short)(int)ROUND(ROUND(local_50 / (double)local_30));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 67,
       "match": "(uint *)((int)",
@@ -522,22 +473,6 @@
       "severity": "mild",
       "text": "*(uint *)((int)&workspace->boxes[box_index].spread_intensity + 4) = 0;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "workspace->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_48 / (double)local_30));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "workspace->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_48 / (double)local_30));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -618,14 +553,6 @@
       "severity": "moderate",
       "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64(dVar14),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64(dVar14),0);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",

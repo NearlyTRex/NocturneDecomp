@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 123,
+    "complexity_score": 88,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 73,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_inlined_function"
     ],
     "total_lines": 288
@@ -229,30 +228,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar1 = SQRT(fStack_70 * fStack_70 + fStack_78 * fStack_78 + fStack_74 * fStack_74);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iStack_18 = (int)ROUND(ROUND((double)damage_info->damage_amount * 0.40000000000000002));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iStack_18 = (int)ROUND(ROUND((double)damage_info->damage_amount * 0.40000000000000002));",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

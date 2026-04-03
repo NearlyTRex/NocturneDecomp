@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5075 (78.6%)
-Functions with suspects: 1379 (21.4%)
+Clean functions: 5097 (79.0%)
+Functions with suspects: 1357 (21.0%)
 
-Total suspect patterns: 13652
-Average suspects per function: 2.12
+Total suspect patterns: 6878
+Average suspects per function: 1.07
 
 Virtual files: 214 total, 46 at 100%, 83 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3415, Average: 47.8
 
-Average complexity score: 71.1
+Average complexity score: 59.9
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,8 +28,7 @@ Failed: 331
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  decompiler_intrinsic      6777
-  pointer_cast              4170
+  pointer_cast              4173
   unknown_field             822
   nonstandard_int           267
   warning_inlined_function  261
@@ -121,56 +120,43 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
   005b1680: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680 (4 lines)
   005b1660: sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660 (4 lines)
-  ... and 5025 more
+  ... and 5047 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
-  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3525, suspects: 9, lines: 3415)
-  005d1390: shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390 (score: 2967, suspects: 270, lines: 252)
-  00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (score: 2695, suspects: 119, lines: 1475)
-  005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 2584, suspects: 175, lines: 809)
-  0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 2383, suspects: 92, lines: 1443)
+  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3460, suspects: 3, lines: 3415)
+  00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (score: 2450, suspects: 95, lines: 1475)
+  005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 2319, suspects: 149, lines: 809)
   004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2248, suspects: 7, lines: 2168)
-  005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823 (score: 2235, suspects: 161, lines: 585)
-  005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031 (score: 2198, suspects: 159, lines: 568)
-  00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2080, suspects: 19, lines: 1865)
-  004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 2053, suspects: 97, lines: 1053)
-  005b9c10: core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (score: 1941, suspects: 119, lines: 711)
-  004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1798, suspects: 5, lines: 1728)
-  00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 1667, suspects: 73, lines: 917)
-  005ca590: shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (score: 1651, suspects: 113, lines: 506)
-  004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1642, suspects: 4, lines: 1592)
-  005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1545, suspects: 38, lines: 1140)
-  005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (score: 1483, suspects: 101, lines: 448)
+  005d1390: shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390 (score: 2242, suspects: 198, lines: 252)
+  0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 2238, suspects: 78, lines: 1443)
+  00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2035, suspects: 15, lines: 1865)
+  004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 1778, suspects: 70, lines: 1053)
+  004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1773, suspects: 3, lines: 1728)
+  005b9c10: core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (score: 1731, suspects: 98, lines: 716)
+  004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1607, suspects: 1, lines: 1592)
+  005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1500, suspects: 34, lines: 1140)
   005d0340: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340 (score: 1441, suspects: 126, lines: 171)
+  00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 1422, suspects: 49, lines: 917)
   004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 1406, suspects: 49, lines: 911)
-  0056eac0: core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (score: 1342, suspects: 76, lines: 567)
-  0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (score: 1300, suspects: 42, lines: 855)
-  005325e0: sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (score: 1281, suspects: 73, lines: 541)
-  005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 1263, suspects: 16, lines: 1078)
-  005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470 (score: 1221, suspects: 17, lines: 1031)
-  004922c8: core_dstrender.cpp_verticalBlur3TapMMXStride128_FUN_004922c8 (score: 1211, suspects: 104, lines: 156)
-  00492185: core_dstrender.cpp_verticalBlur3TapMMXStride256_FUN_00492185 (score: 1211, suspects: 104, lines: 156)
-  00492042: core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042 (score: 1211, suspects: 104, lines: 156)
-  005f8550: core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (score: 1195, suspects: 68, lines: 490)
+  0056eac0: core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (score: 1247, suspects: 67, lines: 567)
+  005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (score: 1188, suspects: 72, lines: 448)
+  005ca590: shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (score: 1186, suspects: 67, lines: 506)
+  005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 1168, suspects: 7, lines: 1078)
+  005325e0: sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (score: 1166, suspects: 62, lines: 541)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 1158, suspects: 39, lines: 758)
   004fd600: core_inv.cpp_CInventory_addItem_FUN_004fd600 (score: 1153, suspects: 0, lines: 1153)
+  0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (score: 1095, suspects: 22, lines: 855)
+  0046bb80: shape_design.c_cramTextureList_FUN_0046bb80 (score: 1080, suspects: 2, lines: 1050)
+  005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470 (score: 1076, suspects: 3, lines: 1031)
+  005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823 (score: 1060, suspects: 44, lines: 585)
+  005390f0: core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (score: 1041, suspects: 4, lines: 996)
+  005c9aa0: shape_superopt.cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0 (score: 1019, suspects: 62, lines: 389)
+  0058c190: core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (score: 1009, suspects: 28, lines: 719)
+  005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031 (score: 993, suspects: 39, lines: 568)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
-
-  decompiler_intrinsic (914 functions):
-    00488630: cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
-    004887a0: cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
-    00487bc0: cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0
-    00431410: cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
-    00431528: cockpit_ckptutil.c_optimizedMemcpy_FUN_00431528
-    00433f50: cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
-    004342f0: cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
-    0043f490: support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490
-    0043f710: support_codec.cpp_CLZWCompress_dtor_FUN_0043f710
-    0043f2d0: support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0
-    ... and 904 more
 
   pointer_cast (761 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230

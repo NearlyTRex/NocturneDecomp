@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 686,
-    "complexity_score": 346,
+    "complexity_score": 311,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 33,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 296,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_type_propagation"
     ],
     "total_lines": 982
@@ -600,30 +599,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_24 = SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar3 * fVar3);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 178,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar14 * fVar14 + fVar6 * fVar6 + fVar7 * fVar7) <= (float)200)) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 292,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((float)0.20000000000000001 < ABS((this_ptr->local_velocity).x)) &&",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

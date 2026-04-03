@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 486,
+    "complexity_score": 401,
     "cross_reference_count": 43,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
-    "suspect_count": 42,
+    "suspect_count": 34,
     "suspect_types": [
-      "decompiler_intrinsic",
       "special_crt_function",
       "stack_param",
       "unknown_type"
@@ -436,22 +435,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
-      "match": "CONCAT28",
-      "severity": "mild",
-      "text": "fVar1 = (float10)CONCAT28(in_stack_0000000c,CONCAT44(in_stack_00000008,in_stack_00000004));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "fVar1 = (float10)CONCAT28(in_stack_0000000c,CONCAT44(in_stack_00000008,in_stack_00000004));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000018",
@@ -476,22 +459,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
-      "match": "CONCAT28",
-      "severity": "mild",
-      "text": "fVar2 = (float10)CONCAT28(in_stack_00000018,CONCAT44(in_stack_00000014,in_stack_00000010));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "fVar2 = (float10)CONCAT28(in_stack_00000018,CONCAT44(in_stack_00000014,in_stack_00000010));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000008",
@@ -506,14 +473,6 @@
       "severity": "moderate",
       "text": "if (CARRY4(in_stack_00000008,in_stack_00000008)) break;",
       "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
-      "match": "CARRY4",
-      "severity": "mild",
-      "text": "if (CARRY4(in_stack_00000008,in_stack_00000008)) break;",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",
@@ -564,14 +523,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
-      "match": "CARRY4",
-      "severity": "mild",
-      "text": "if (CARRY4(in_stack_00000014,in_stack_00000014)) goto LAB_00606a70;",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 23,
       "match": "in_stack_00000018",
@@ -596,28 +547,12 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "CARRY4",
-      "severity": "mild",
-      "text": "(!CARRY4(in_stack_00000014,in_stack_00000014))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "in_stack_00000004 = SUB104(fVar2,0);",
       "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
-      "match": "SUB104",
-      "severity": "mild",
-      "text": "in_stack_00000004 = SUB104(fVar2,0);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved stack parameter",

@@ -67,15 +67,14 @@
   },
   "complexity": {
     "assembly_lines": 2429,
-    "complexity_score": 1300,
+    "complexity_score": 1095,
     "cross_reference_count": 2,
     "function_call_count": 71,
     "global_count": 126,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 855,
-    "suspect_count": 42,
+    "suspect_count": 22,
     "suspect_types": [
-      "decompiler_intrinsic",
       "negative_offset",
       "pointer_cast",
       "stack_ref",
@@ -2024,22 +2023,6 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 197,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(this_ptr,(int)ROUND(ROUND(local_70)),(CKeyFramedModelInstance *)0x0,-1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 197,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(this_ptr,(int)ROUND(ROUND(local_70)),(CKeyFramedModelInstance *)0x0,-1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 203,
       "match": "(byte *)((int)",
@@ -2064,60 +2047,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 220,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(local_408,\"Frame: %d of %d\",(int)ROUND(ROUND(local_70)));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 220,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(local_408,\"Frame: %d of %d\",(int)ROUND(ROUND(local_70)));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 362,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "if (((int)ROUND(fVar3) != 0 || (int)ROUND(fVar4) != 0) || (int)ROUND(fVar6) != 0) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 362,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "if (((int)ROUND(fVar3) != 0 || (int)ROUND(fVar4) != 0) || (int)ROUND(fVar6) != 0) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 362,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "if (((int)ROUND(fVar3) != 0 || (int)ROUND(fVar4) != 0) || (int)ROUND(fVar6) != 0) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 367,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)&pCVar4->x + iVar18);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 368,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*piVar1 = *piVar1 + (int)ROUND(fVar3);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -2136,14 +2071,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 370,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*(int *)((int)&pCVar4->y + iVar18) + (int)ROUND(fVar4);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 371,
       "match": "(int *)((int)",
@@ -2158,14 +2085,6 @@
       "severity": "mild",
       "text": "*(int *)((int)&pCVar4->z + iVar18) + (int)ROUND(fVar6);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 372,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*(int *)((int)&pCVar4->z + iVar18) + (int)ROUND(fVar6);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -2248,44 +2167,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 716,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(local_108.x * fVar5));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 716,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(local_108.x * fVar5));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 717,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->y + iVar18) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 718,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(local_108.y * fVar5));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 718,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(local_108.y * fVar5));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -2296,60 +2183,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 720,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(fVar5 * local_108.z));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 720,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(fVar5 * local_108.z));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 746,
       "match": "collision_triangle_list[-1].",
       "severity": "mild",
       "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 758,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(this_ptr,(int)ROUND(ROUND(local_70)));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 758,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(this_ptr,(int)ROUND(ROUND(local_70)));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 780,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(this_ptr,(int)ROUND(ROUND(local_70)));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 780,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(this_ptr,(int)ROUND(ROUND(local_70)));",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

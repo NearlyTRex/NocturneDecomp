@@ -43,15 +43,14 @@
   },
   "complexity": {
     "assembly_lines": 698,
-    "complexity_score": 481,
+    "complexity_score": 426,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 321,
-    "suspect_count": 14,
+    "suspect_count": 9,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field",
       "warning_type_propagation"
@@ -683,30 +682,6 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS((this_ptr->base).base.base.location.position.y -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (SQRT(local_70.z * local_70.z + local_70.x * local_70.x + local_70.y * local_70.y) <",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(1.0 - ABS(fVar6) * (float)0.63661977238577705) * (float)25 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 102,
       "match": "(CMatrix3x4f *)((int)",
@@ -721,22 +696,6 @@
       "severity": "mild",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 139,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (-local_118.z <= SQRT(fVar7 * fVar7 + fVar6 * fVar6)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 169,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS((this_ptr->base).base.turn_angle_accumulator) /",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",

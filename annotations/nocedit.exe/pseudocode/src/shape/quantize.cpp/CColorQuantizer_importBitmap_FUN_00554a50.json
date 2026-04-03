@@ -13,15 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 216,
+    "complexity_score": 181,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 101,
-    "suspect_count": 10,
+    "suspect_count": 7,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
@@ -244,30 +243,6 @@
       "severity": "mild",
       "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar13 * -2 + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(SQRT((double)((uint)bVar3 * (uint)bVar3 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(SQRT((double)((uint)bVar3 * (uint)bVar3 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(SQRT((double)((uint)bVar3 * (uint)bVar3 +",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

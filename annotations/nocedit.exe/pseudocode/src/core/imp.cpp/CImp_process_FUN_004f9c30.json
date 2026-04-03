@@ -25,15 +25,14 @@
   },
   "complexity": {
     "assembly_lines": 1167,
-    "complexity_score": 617,
+    "complexity_score": 522,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 34,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 492,
-    "suspect_count": 11,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_inlined_function",
       "warning_type_propagation"
     ],
@@ -739,78 +738,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "bVar5 = (float)0.80000000000000004 < SQRT(fVar16 * fVar16 + fVar15 * fVar15);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((ABS(local_68.y - (((this_ptr->base).victim)->base).location.position.y) <=",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(local_164.damage_amount * (float)2.5 *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(local_164.damage_amount * (float)2.5 *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 194,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar15 = SQRT(local_80.z * local_80.z + local_80.x * local_80.x + local_80.y * local_80.y)",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 200,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(fVar16) < (float)0.52359877558333301) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 273,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar16 = SQRT(fVar17 * fVar17 + fVar16 * fVar16);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 294,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(fVar17) < (float)0.52359877558333301) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 318,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(fVar15) < (float)0.52359877558333301) {",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 182,
-    "complexity_score": 108,
+    "complexity_score": 73,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_type_propagation"
     ],
     "total_lines": 240
@@ -250,30 +249,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar4 = SQRT(fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar5 = SQRT(fVar2 * fVar2 + fVar1 * fVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if ((0.0 < fVar5) && (fVar4 = fVar5 - SQRT(fVar4), 0.0 < fVar4)) {",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

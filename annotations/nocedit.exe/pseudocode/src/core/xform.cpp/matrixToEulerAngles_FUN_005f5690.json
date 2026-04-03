@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 454,
-    "complexity_score": 432,
+    "complexity_score": 237,
     "cross_reference_count": 26,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 172,
-    "suspect_count": 25,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic",
       "sub84_truncation"
     ],
     "total_lines": 626
@@ -538,44 +537,12 @@
   },
   "suspects": [
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar10 = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 41,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_98 = SUB84(__BITCAST_UINT64(dVar10),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_98 = SUB84(__BITCAST_UINT64(dVar10),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar5 = SQRT(fVar9 * fVar9 + fVar8 * fVar8 + fVar5 * fVar5);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar10 = (double)SQRT(fVar4 * fVar4 + fVar9 * fVar9 + fVar8 * fVar8);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
@@ -586,44 +553,12 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_88 = SUB84(__BITCAST_UINT64(dVar10),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar11 = (double)SQRT((float10)1 - fVar6 * fVar6);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 70,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "uStack_3c = SUB84(__BITCAST_UINT64(dVar11),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "uStack_3c = SUB84(__BITCAST_UINT64(dVar11),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "fVar5 = matrix_in->m[0].z * (float)__BITCAST_DOUBLE(CONCAT44(local_98,uStack_9c)) * (float)dVar11;",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
@@ -634,22 +569,6 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "uStack_34 = SUB84(__BITCAST_UINT64(dVar5),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar11 = (double)(matrix_in[1].m[0].y * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c)) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 77,
       "match": "SUB84(",
@@ -658,84 +577,12 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "uStack_64 = SUB84(__BITCAST_UINT64(dVar11),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_34,local_30)) < 0.0) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_64,local_68)) < 0.0) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar11 = (double)matrix_in->m[1].y * dVar10 * __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar10 = (double)matrix_in->m[1].z * dVar10 * __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 104,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_b0 = SUB84(__BITCAST_UINT64(dVar11),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_b0 = SUB84(__BITCAST_UINT64(dVar11),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 110,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar11 = __BITCAST_DOUBLE(CONCAT44((float)dVar9,local_b0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 144,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "fVar5 = -matrix_in->m[2].z * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar11 = (double)(matrix_in->m[0].x * (float)__BITCAST_DOUBLE(CONCAT44(local_98,uStack_9c)));",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

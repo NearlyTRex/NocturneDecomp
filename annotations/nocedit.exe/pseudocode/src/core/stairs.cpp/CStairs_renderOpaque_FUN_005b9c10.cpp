@@ -73,33 +73,31 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
   int iVar39;
   CDemonRenderer *pCVar40;
   SMRGLTextureBasic *input;
-  SMRGLHeaderPrimitive SStack_dc;
-  int iStack_c4;
-  int iStack_c0;
+  SMRGLPrimitiveQuadIndex local_e4;
   CBoundingBox3D local_bc;
-  CVector3i CStack_9c;
-  float fStack_90;
-  float fStack_8c;
-  float fStack_88;
-  CVector3i CStack_84;
-  CVector3i CStack_78;
-  CVector3i CStack_6c;
+  CVector3i local_9c;
+  float local_90;
+  float local_8c;
+  float local_88;
+  CVector3i local_84;
+  CVector3i local_78;
+  CVector3i local_6c;
   byte auStack_60 [16];
-  int iStack_50;
-  int iStack_4c;
-  CVector3i CStack_48;
-  int iStack_3c;
-  char *pcStack_30;
-  float *pfStack_2c;
-  UOrientationVector *pUStack_28;
-  int iStack_24;
-  int iStack_20;
-  int iStack_1c;
-  int iStack_18;
-  int iStack_14;
-  int iStack_10;
-  int iStack_c;
-  int iStack_8;
+  int local_50;
+  int local_4c;
+  CVector3i local_48;
+  int local_3c;
+  char *local_30;
+  float *local_2c;
+  UOrientationVector *local_28;
+  int local_24;
+  int local_20;
+  int local_1c;
+  int local_18;
+  int local_14;
+  int local_10;
+  int local_c;
+  int local_8;
   
   bVar18 = 0;
   if ((g_CDemonMissionPtr->is_in_editor != 0) &&
@@ -118,38 +116,38 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                 (g_CDemonRendererPtr2,&SMRGLTextureBasic_00684178);
       if (-1 < this_ptr->stair_count) {
-        iStack_1c = 0x60;
-        iStack_20 = 0x90;
+        local_1c = 0x60;
+        local_20 = 0x90;
         iVar11 = 0x30;
         iVar16 = 0;
         do {
           fVar3 = -*(float *)(in_stack_0000000c[1].actor_name + 8) * (float)0.5;
           fVar1 = *(float *)in_stack_0000000c[1].actor_name * (float)iVar12;
           fVar2 = (float)iVar12 * *(float *)(in_stack_0000000c[1].actor_name + 4);
-          CStack_84.x = (int)ROUND(fVar3 * 256.0f);
-          CStack_84.y = (int)ROUND(fVar1 * 256.0f);
-          CStack_84.z = (int)ROUND(fVar2 * 256.0f);
+          local_84.x = (int)ROUND(fVar3 * 256.0f);
+          local_84.y = (int)ROUND(fVar1 * 256.0f);
+          local_84.z = (int)ROUND(fVar2 * 256.0f);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     ((SProjectedVertex *)
                      ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
-                            transformed_x + iVar16),&CStack_84);
+                            transformed_x + iVar16),&local_84);
           fVar2 = fVar2 + *(float *)(in_stack_0000000c[1].actor_name + 4);
-          CStack_78.x = (int)ROUND(fVar3 * 256.0f);
-          CStack_78.y = (int)ROUND(fVar1 * 256.0f);
-          CStack_78.z = (int)ROUND(fVar2 * 256.0f);
+          local_78.x = (int)ROUND(fVar3 * 256.0f);
+          local_78.y = (int)ROUND(fVar1 * 256.0f);
+          local_78.z = (int)ROUND(fVar2 * 256.0f);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     ((SProjectedVertex *)
                      ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
-                            transformed_x + iVar11),&CStack_78);
+                            transformed_x + iVar11),&local_78);
           fVar2 = fVar2 - *(float *)(in_stack_0000000c[1].actor_name + 4);
           fVar3 = fVar3 + *(float *)(in_stack_0000000c[1].actor_name + 8);
-          CStack_48.x = (int)ROUND(fVar3 * 256.0f);
-          CStack_48.y = (int)ROUND(fVar1 * 256.0f);
-          CStack_48.z = (int)ROUND(fVar2 * 256.0f);
+          local_48.x = (int)ROUND(fVar3 * 256.0f);
+          local_48.y = (int)ROUND(fVar1 * 256.0f);
+          local_48.z = (int)ROUND(fVar2 * 256.0f);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     ((SProjectedVertex *)
                      ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
-                            transformed_x + iStack_1c),&CStack_48);
+                            transformed_x + local_1c),&local_48);
           auStack_60._0_4_ = (uint)ROUND(fVar3 * 256.0f);
           auStack_60._4_4_ = (uint)ROUND(fVar1 * 256.0f);
           auStack_60._8_4_ =
@@ -158,29 +156,29 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           input = (SMRGLTextureBasic *)auStack_60;
           pCVar40 = (CDemonRenderer *)
                     ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x
-                    + iStack_20);
+                    + local_20);
           iVar39 = 0x5b9e6a;
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     ((SProjectedVertex *)pCVar40,(CVector3i *)input);
           iVar12 = iVar12 + 1;
           iVar16 = iVar16 + 0xc0;
-          iStack_1c = iStack_1c + 0xc0;
+          local_1c = local_1c + 0xc0;
           iVar11 = iVar11 + 0xc0;
-          iStack_20 = iStack_20 + 0xc0;
+          local_20 = local_20 + 0xc0;
         } while (iVar12 <= *(int *)(in_stack_0000000c[1].actor_name + 0x14));
       }
-      iStack_14 = 0;
+      local_14 = 0;
       g_ActiveRenderColor = 3;
       if (0 < *(int *)(in_stack_0000000c[1].actor_name + 0x14)) {
         iVar11 = 0x90;
-        iStack_18 = 0x120;
-        iStack_24 = 0xc0;
-        iStack_c = 0;
-        iStack_10 = 0x60;
+        local_18 = 0x120;
+        local_24 = 0xc0;
+        local_c = 0;
+        local_10 = 0x60;
         iVar12 = 0x30;
         do {
           pSVar15 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-          piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + iStack_10);
+          piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + local_10);
           iVar4 = *piVar13;
           iVar39 = piVar13[1];
           iVar16 = piVar13[2];
@@ -200,7 +198,7 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
             piVar13 = piVar13 + (uint)bVar18 * -2 + 1;
             piVar17 = piVar17 + (uint)bVar18 * -2 + 1;
           }
-          piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + iStack_c);
+          piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + local_c);
           iVar7 = *piVar13;
           iVar10 = piVar13[1];
           iVar20 = piVar13[2];
@@ -332,7 +330,7 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
             piVar13 = piVar13 + (uint)bVar18 * -2 + 1;
             piVar17 = piVar17 + (uint)bVar18 * -2 + 1;
           }
-          piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + iStack_c);
+          piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + local_c);
           iVar7 = *piVar13;
           iVar10 = piVar13[1];
           iVar20 = piVar13[2];
@@ -398,7 +396,7 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
             piVar13 = piVar13 + (uint)bVar18 * -2 + 1;
             piVar17 = piVar17 + (uint)bVar18 * -2 + 1;
           }
-          piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + iStack_10);
+          piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + local_10);
           iVar7 = *piVar13;
           iVar10 = piVar13[1];
           iVar20 = piVar13[2];
@@ -444,7 +442,7 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           vertex2_02.a = iVar36;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(vertex1_02,vertex2_02);
           pSVar15 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-          piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + iStack_24);
+          piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + local_24);
           iVar4 = *piVar13;
           iVar39 = piVar13[1];
           iVar16 = piVar13[2];
@@ -510,7 +508,7 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           vertex2_03.a = iVar36;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(vertex1_03,vertex2_03);
           pSVar15 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-          piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + iStack_18);
+          piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + local_18);
           in_stack_fffffee8 = *piVar13;
           in_stack_fffffeec = piVar13[1];
           in_stack_fffffef0 = piVar13[2];
@@ -578,12 +576,12 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           vertex2_04.a = (int)input;
           engine_3d_c_clipAndDrawLine2D_FUN_00407d70(vertex1_04,vertex2_04);
           iVar11 = iVar11 + 0xc0;
-          iStack_18 = iStack_18 + 0xc0;
-          iStack_24 = iStack_24 + 0xc0;
-          iStack_c = iStack_c + 0xc0;
-          iStack_10 = iStack_10 + 0xc0;
-          iStack_14 = iStack_14 + 1;
-        } while (iStack_14 < *(int *)(in_stack_0000000c[1].actor_name + 0x14));
+          local_18 = local_18 + 0xc0;
+          local_24 = local_24 + 0xc0;
+          local_c = local_c + 0xc0;
+          local_10 = local_10 + 0xc0;
+          local_14 = local_14 + 1;
+        } while (local_14 < *(int *)(in_stack_0000000c[1].actor_name + 0x14));
       }
       pSVar15 = g_CDemonRendererPtr2->vertex_buffer_ptr;
       pSVar14 = pSVar15 + *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 4 + 2;
@@ -638,11 +636,11 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
       vertex2_05.b = (int)pCVar40;
       vertex2_05.a = (int)input;
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70(vertex1_05,vertex2_05);
-      SStack_dc.base.count = 4;
-      SStack_dc.surface_normal.D = 0;
-      SStack_dc.surface_normal.C = 0;
-      SStack_dc.surface_normal.B = 0;
-      SStack_dc.surface_normal.A = 0;
+      local_e4.base.surface_normal.B = 4;
+      local_e4.vertices[1] = 0;
+      local_e4.vertices[0] = 0;
+      local_e4.base.surface_normal.D = 0;
+      local_e4.base.surface_normal.C = 0;
       iVar4 = 0;
       for (iVar39 = 0; pCVar40 = g_CDemonRendererPtr2,
           iVar39 <= *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 4; iVar39 = iVar39 + 1) {
@@ -659,41 +657,47 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
         iVar39 = 0;
         do {
           local_bc.min.y = (float)(iVar39 + 2);
+          local_e4.vertices[2] = iVar39;
+          local_e4.vertices[3] = iVar39 + 1;
           local_bc.min.x = (float)(iVar39 + 3);
           engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                    (g_CDemonRendererPtr2,&SStack_dc);
+                    (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&local_e4.base.surface_normal);
           local_bc.min.x = (float)(iVar39 + 6);
+          local_e4.vertices[2] = iVar39 + 1;
+          local_e4.vertices[3] = iVar39 + 4;
           local_bc.min.y = (float)(iVar39 + 3);
           engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                    (g_CDemonRendererPtr2,&SStack_dc);
+                    (g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&local_e4.base.surface_normal);
           iVar4 = iVar4 + 1;
           iVar39 = iVar39 + 4;
         } while (iVar4 < *(int *)(in_stack_0000000c[1].actor_name + 0x14));
       }
-      SStack_dc.base.count = 3;
-      SStack_dc.surface_normal.D = 0;
-      SStack_dc.surface_normal.C = 0;
-      SStack_dc.surface_normal.B = 0;
+      local_e4.base.surface_normal.B = 3;
+      local_e4.vertices[1] = 0;
+      local_e4.vertices[0] = 0;
+      local_e4.base.surface_normal.D = 0;
       local_bc.min.x = 2.8026e-45;
-      SStack_dc.surface_normal.A = 0;
-      pUStack_28 = &in_stack_0000000c[1].orient;
-      pfStack_2c = &in_stack_0000000c[1].location.position.y;
-      for (iStack_8 = 0; iStack_8 < *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 2;
-          iStack_8 = iStack_8 + 1) {
-        pcVar6 = in_stack_0000000c[1].actor_name + iStack_8 * 0x38 + 0x18;
-        CStack_6c.x = (int)ROUND(*(float *)pcVar6 * 256.0f);
-        CStack_6c.y = (int)ROUND(*(float *)(pcVar6 + 4) * 256.0f);
-        CStack_6c.z = (int)ROUND(*(float *)(pcVar6 + 8) * 256.0f);
+      local_e4.base.surface_normal.C = 0;
+      local_e4.vertices[2] = 0;
+      local_e4.vertices[3] = 1;
+      local_28 = &in_stack_0000000c[1].orient;
+      local_2c = &in_stack_0000000c[1].location.position.y;
+      for (local_8 = 0; local_8 < *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 2;
+          local_8 = local_8 + 1) {
+        pcVar6 = in_stack_0000000c[1].actor_name + local_8 * 0x38 + 0x18;
+        local_6c.x = (int)ROUND(*(float *)pcVar6 * 256.0f);
+        local_6c.y = (int)ROUND(*(float *)(pcVar6 + 4) * 256.0f);
+        local_6c.z = (int)ROUND(*(float *)(pcVar6 + 8) * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_6c);
-        CStack_9c.x = (int)ROUND(*pfStack_2c * 256.0f);
-        CStack_9c.y = (int)ROUND(pfStack_2c[1] * 256.0f);
-        CStack_9c.z = (int)ROUND(pfStack_2c[2] * 256.0f);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_6c);
+        local_9c.x = (int)ROUND(*local_2c * 256.0f);
+        local_9c.y = (int)ROUND(local_2c[1] * 256.0f);
+        local_9c.z = (int)ROUND(local_2c[2] * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                  (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&CStack_9c);
-        auStack_60._12_4_ = (uint)ROUND((pUStack_28->vec).x * 256.0f);
-        iStack_50 = (int)ROUND((pUStack_28->vec).y * 256.0f);
-        iStack_4c = (int)ROUND((pUStack_28->vec).z * 256.0f);
+                  (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_9c);
+        auStack_60._12_4_ = (uint)ROUND((local_28->vec).x * 256.0f);
+        local_50 = (int)ROUND((local_28->vec).y * 256.0f);
+        local_4c = (int)ROUND((local_28->vec).z * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,
                    (CVector3i *)(auStack_60 + 0xc));
@@ -709,9 +713,10 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           *(uint *)((int)&pCVar40->vertex_buffer_ptr->v + iVar4) = 0x800000;
           iVar4 = iVar39;
         } while (iVar39 != 0x90);
-        engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(pCVar40,&SStack_dc);
-        pUStack_28 = (UOrientationVector *)((int)pUStack_28 + 0x38);
-        pfStack_2c = pfStack_2c + 0xe;
+        engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+                  (pCVar40,(SMRGLHeaderPrimitive *)&local_e4.base.surface_normal);
+        local_28 = (UOrientationVector *)((int)local_28 + 0x38);
+        local_2c = local_2c + 0xe;
       }
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);

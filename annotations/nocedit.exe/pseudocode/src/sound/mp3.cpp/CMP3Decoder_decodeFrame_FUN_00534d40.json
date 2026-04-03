@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 1165,
-    "complexity_score": 906,
+    "complexity_score": 861,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 506,
-    "suspect_count": 36,
+    "suspect_count": 32,
     "suspect_types": [
       "byvalue_struct_passing",
-      "decompiler_intrinsic",
       "format_string_mismatch",
       "pointer_cast",
       "stack_ref",
@@ -887,22 +886,6 @@
       "type": "warning_deadcode_restart"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iVar5 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar9]",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iVar5 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar9]",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 183,
       "match": "(int *)((int)",
@@ -1109,22 +1092,6 @@
       "severity": "mild",
       "text": "*psVar13 = *(short *)((int)local_33c8 + iVar4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 487,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_60 = (int)ROUND(ROUND((((double)local_60cc /",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 487,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_60 = (int)ROUND(ROUND((((double)local_60cc /",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Calls calculateMainDataSize - decompiler cannot recognize by-value pattern",

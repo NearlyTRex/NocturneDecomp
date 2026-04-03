@@ -49,15 +49,14 @@
   },
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 219,
+    "complexity_score": 194,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 64,
-    "suspect_count": 14,
+    "suspect_count": 12,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "sub84_truncation"
     ],
@@ -301,14 +300,6 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(__BITCAST_UINT64(dVar1),0),",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(uint *)((int)",
@@ -339,14 +330,6 @@
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)*(float *)(pCVar3->lod_workspace + iVar5)),0),",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "SUB84(__BITCAST_UINT64((double)*(float *)(pCVar3->lod_workspace + iVar5)),0),",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

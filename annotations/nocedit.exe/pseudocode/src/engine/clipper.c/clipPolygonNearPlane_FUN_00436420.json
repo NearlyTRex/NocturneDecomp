@@ -31,15 +31,14 @@
   },
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 274,
+    "complexity_score": 219,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 19,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 134,
-    "suspect_count": 12,
+    "suspect_count": 7,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field",
       "warning_unreachable"
@@ -319,14 +318,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*(longlong *)piVar10 = (longlong)ROUND((float10)lVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 81,
       "match": "._0_4_",
@@ -343,22 +334,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 109,
       "match": "._0_4_",
@@ -373,22 +348,6 @@
       "severity": "mild",
       "text": "lVar3._4_4_ = (pSVar9->projected_vertex).transformed_y;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar11->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar3);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar3) >> 0x20);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

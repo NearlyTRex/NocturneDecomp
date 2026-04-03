@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 156,
+    "complexity_score": 101,
     "cross_reference_count": 15,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 86,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_inlined_function"
     ],
     "total_lines": 224
@@ -439,46 +438,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar2 = SQRT(direction->z * direction->z +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar1 = SQRT(local_40.z * local_40.z + local_40.x * local_40.x + local_40.y * local_40.y);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar4 = (float10)fpatan((float10)local_40.y,",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT((float10)local_40.x * (float10)local_40.x +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar3 = (float10)fpatan((float10)local_40.x,(float10)local_40.z);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

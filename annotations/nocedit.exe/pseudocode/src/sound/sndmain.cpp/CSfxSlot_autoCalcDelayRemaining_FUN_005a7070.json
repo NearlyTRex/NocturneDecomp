@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 53,
+    "complexity_score": 38,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 72
@@ -184,14 +183,6 @@
       "severity": "mild",
       "text": "*(uint *)((int)&(this_ptr->options).delay_remaining + 4) = 0;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "(SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) * g_Cached3DDistanceFactor) /",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

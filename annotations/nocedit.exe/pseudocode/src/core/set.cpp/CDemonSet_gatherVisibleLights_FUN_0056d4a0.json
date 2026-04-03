@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 562,
-    "complexity_score": 466,
+    "complexity_score": 401,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 34,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 261,
-    "suspect_count": 19,
+    "suspect_count": 13,
     "suspect_types": [
-      "decompiler_intrinsic",
       "displaced_global_access",
       "pointer_cast"
     ],
@@ -629,54 +628,6 @@
       "severity": "mild",
       "text": "iVar10 = *(int *)((int)g_VisibleOmniLights + iVar11);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 243,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_7c = (int)ROUND(local_b8 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 244,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_78 = (int)ROUND(local_b4 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 245,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_74 = (int)ROUND(local_b0 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 247,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "g_ColorCorrectionLightMultiplier = (int)ROUND(local_88 * 256.0f) + local_7c;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 248,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "g_ColorCorrectionColorMultiplier = (int)ROUND(local_84 * 256.0f) + local_78;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 249,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iVar7 = (int)ROUND(local_80 * 256.0f) + local_74;",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Compiler displaced index base: [reg*4 + 0x32c17ac] lands in g_GlobeLightCount but intended target is g_GlobeLights at 0x32c17b0 (displaced by 4 bytes)",

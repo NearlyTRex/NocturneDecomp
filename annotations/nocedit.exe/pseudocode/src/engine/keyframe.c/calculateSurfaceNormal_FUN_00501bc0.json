@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 118,
+    "complexity_score": 53,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 53,
-    "suspect_count": 6,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 186
   },
   "cross_references": [
@@ -218,54 +216,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_20 = SQRT(fVar13 * fVar13 + fVar12 * fVar12 + fVar6 * fVar6);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(local_20) == 0.0) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(texture->base).surface_normal.A = (int)ROUND(fVar16);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(texture->base).surface_normal.B = (int)ROUND(fVar12);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(texture->base).surface_normal.C = (int)ROUND(fVar15);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND((float)iVar1 * fVar15 + (float)iVar2 * fVar16 + (float)iVar5 * fVar12);",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

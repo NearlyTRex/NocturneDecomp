@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 379,
-    "complexity_score": 188,
+    "complexity_score": 173,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 158,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_type_propagation"
     ],
     "total_lines": 537
@@ -352,14 +351,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_7c = SQRT(local_3c.z * local_3c.z + local_3c.x * local_3c.x + local_3c.y * local_3c.y);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

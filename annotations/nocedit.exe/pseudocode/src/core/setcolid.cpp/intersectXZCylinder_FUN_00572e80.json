@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 212,
-    "complexity_score": 112,
+    "complexity_score": 67,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 67,
-    "suspect_count": 4,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 279
   },
   "cross_references": [],
@@ -143,38 +141,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar8 = SQRT(fVar5 - fVar8);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(cylinder->dir_x) <= ABS(cylinder->dir_z)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(cylinder->dir_x) <= ABS(cylinder->dir_z)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar9 = SQRT(fVar8) - fVar9;",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

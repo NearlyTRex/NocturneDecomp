@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 257,
-    "complexity_score": 202,
+    "complexity_score": 157,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 112,
-    "suspect_count": 7,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function",
       "warning_type_propagation"
@@ -350,38 +349,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_34 = (int)ROUND(ROUND(dVar10));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_34 = (int)ROUND(ROUND(dVar10));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_10 = (int)ROUND(ROUND(dVar10));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_10 = (int)ROUND(ROUND(dVar10));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

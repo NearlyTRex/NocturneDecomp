@@ -121,15 +121,14 @@
   },
   "complexity": {
     "assembly_lines": 1929,
-    "complexity_score": 2584,
+    "complexity_score": 2319,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 809,
-    "suspect_count": 175,
+    "suspect_count": 149,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
       "sub84_truncation",
@@ -2132,14 +2131,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 353,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dStack_4e8 = (pCVar1->impl).x * __BITCAST_DOUBLE(CONCAT44(uStack_5e0._4_4_,(uint)uStack_5e0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 354,
       "match": "._4_4_",
@@ -2148,76 +2139,12 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 354,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dStack_4e0 = *pdVar25 * __BITCAST_DOUBLE(CONCAT44(uStack_5d8._4_4_,(uint)uStack_5d8));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 355,
       "match": "._4_4_",
       "severity": "mild",
       "text": "dStack_4d8 = *pdVar28 * __BITCAST_DOUBLE(CONCAT44(uStack_5d0._4_4_,(uint)uStack_5d0));",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 355,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dStack_4d8 = *pdVar28 * __BITCAST_DOUBLE(CONCAT44(uStack_5d0._4_4_,(uint)uStack_5d0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 356,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dStack_278 = (pCVar1->impl).x * __BITCAST_DOUBLE(CONCAT44(uStack_5c4,uStack_5c8));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 358,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dStack_270 = *pdVar25 * __BITCAST_DOUBLE(CONCAT44(uStack_5bc,uStack_5c0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 360,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dStack_268 = *pdVar28 * __BITCAST_DOUBLE(CONCAT44(uStack_5b4,uStack_5b8));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 362,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dStack_470 = (pCVar1->impl).x * __BITCAST_DOUBLE(CONCAT44(uStack_5ac,uStack_5b0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 363,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dStack_468 = *pdVar25 * __BITCAST_DOUBLE(CONCAT44(uStack_5a4,uStack_5a8));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 364,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dStack_460 = *pdVar28 * __BITCAST_DOUBLE(CONCAT44(uStack_59c,uStack_5a0));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -2404,14 +2331,6 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 513,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "uStack_1e8._0_4_ = SUB84(uStack_158,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 515,
       "match": "._4_4_",
@@ -2444,30 +2363,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 537,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "pCVar6->x = __BITCAST_DOUBLE(CONCAT44(uStack_34c,uStack_350));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 538,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(out_result->poly1).vertices[1].y = __BITCAST_DOUBLE(CONCAT44(uStack_344,uStack_348));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 539,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(out_result->poly1).vertices[1].z = __BITCAST_DOUBLE(CONCAT44(uStack_33c,uStack_340));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 542,
       "match": "._4_4_",
@@ -2498,30 +2393,6 @@
       "severity": "mild",
       "text": "(out_result->poly1).uvs[2].y = (double)aiStack_d4._4_8_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 548,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "pCVar2->x = __BITCAST_DOUBLE(CONCAT44(uStack_34c,uStack_350));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 549,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(out_result->poly2).vertices[0].y = __BITCAST_DOUBLE(CONCAT44(uStack_344,uStack_348));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 550,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(out_result->poly2).vertices[0].z = __BITCAST_DOUBLE(CONCAT44(uStack_33c,uStack_340));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -2642,30 +2513,6 @@
       "severity": "mild",
       "text": "(out_result->poly2).uvs[3].y = (double)aiStack_d4._4_8_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 577,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "pCVar8->x = __BITCAST_DOUBLE(CONCAT44(uStack_34c,uStack_350));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 578,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(out_result->poly1).vertices[0].y = __BITCAST_DOUBLE(CONCAT44(uStack_344,uStack_348));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 579,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(out_result->poly1).vertices[0].z = __BITCAST_DOUBLE(CONCAT44(uStack_33c,uStack_340));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -2948,44 +2795,12 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 693,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "dStack_130._0_4_ = SUB84(dStack_f0,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 694,
       "match": "._0_4_",
       "severity": "mild",
       "text": "uStack_530 = dStack_130._0_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 723,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "pCVar4->x = __BITCAST_DOUBLE(CONCAT44(uStack_3dc,uStack_3e0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 724,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(out_result->poly1).vertices[2].y = __BITCAST_DOUBLE(CONCAT44(uStack_3d4,uStack_3d8));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 725,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(out_result->poly1).vertices[2].z = __BITCAST_DOUBLE(CONCAT44(uStack_3cc,uStack_3d0));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -3090,30 +2905,6 @@
       "severity": "mild",
       "text": "*(uint *)((int)&(out_result->poly2).vertices[1].z + 4) = uStack_3cc;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 772,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "pCVar11->x = __BITCAST_DOUBLE(CONCAT44(uStack_3dc,uStack_3e0));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 773,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(out_result->poly2).vertices[2].y = __BITCAST_DOUBLE(CONCAT44(uStack_3d4,uStack_3d8));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 774,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(out_result->poly2).vertices[2].z = __BITCAST_DOUBLE(CONCAT44(uStack_3cc,uStack_3d0));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

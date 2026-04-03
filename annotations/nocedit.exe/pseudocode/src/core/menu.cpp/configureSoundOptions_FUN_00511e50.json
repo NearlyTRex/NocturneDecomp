@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 1482,
-    "complexity_score": 906,
+    "complexity_score": 791,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 63,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 746,
-    "suspect_count": 14,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "sub84_truncation",
       "warning_inlined_function"
@@ -932,100 +931,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 130,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((fVar4 * 100.0f) / 0.25f + (float)0.001",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 130,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((fVar4 * 100.0f) / 0.25f + (float)0.001",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 196,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((fVar5 * 100.0f) / 1.0f + (float)0.001",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 196,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((fVar5 * 100.0f) / 1.0f + (float)0.001",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 261,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((fVar5 * 100.0f) / 0.25f + (float)0.001",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 261,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((fVar5 * 100.0f) / 0.25f + (float)0.001",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 510,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "fVar18 = (float10)__BITCAST_DOUBLE(CONCAT44(local_a40,uStack_a44)) * (float10)dVar17;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 513,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(iVar8,(float)__BITCAST_DOUBLE(CONCAT44(local_a40,uStack_a44)),(float)fVar18);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 517,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((float)g_WindowHeight -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 517,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((float)g_WindowHeight -",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 519,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "uStack_4c = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 519,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "uStack_4c = SUB84(__BITCAST_UINT64(dVar1),0);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

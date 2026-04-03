@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 400,
-    "complexity_score": 189,
+    "complexity_score": 154,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 129,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "suspect_float"
     ],
     "total_lines": 529
@@ -283,30 +282,6 @@
       "severity": "mild",
       "text": "(g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);",
       "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar1 = SQRT(CStack_78.z * CStack_78.z + CStack_78.x * CStack_78.x + CStack_78.y * CStack_78.y);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "(dVar2 = (double)(SQRT(fVar1 * fVar1 - fStack_20 * fStack_20) / fVar1), dVar2 < 1.0)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 99,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "(dVar2 = (double)(SQRT(fStack_bc * fStack_bc - local_9c.x * local_9c.x) / fStack_bc),",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

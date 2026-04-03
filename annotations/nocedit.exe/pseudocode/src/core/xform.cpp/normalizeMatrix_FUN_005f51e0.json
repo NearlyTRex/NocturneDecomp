@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 82,
+    "complexity_score": 47,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 47,
-    "suspect_count": 3,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 227
   },
   "cross_references": [],
@@ -110,30 +108,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar7 = 1.0 / SQRT(dVar4);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar7 = 1.0 / SQRT(dVar7);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar7 = 1.0 / SQRT(dVar7);",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

@@ -19,15 +19,14 @@
   },
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 128,
+    "complexity_score": 113,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 33,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field"
     ],
@@ -224,14 +223,6 @@
       "severity": "mild",
       "text": "if (*(double *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x20) <",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_1c,local_20))) {",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

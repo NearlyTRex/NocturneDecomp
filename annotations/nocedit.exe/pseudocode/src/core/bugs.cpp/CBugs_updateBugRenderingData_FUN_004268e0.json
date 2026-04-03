@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 590,
-    "complexity_score": 257,
+    "complexity_score": 222,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 222,
-    "suspect_count": 3,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 812
   },
   "cross_references": [
@@ -493,30 +491,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar4 = SQRT(local_b8 * local_b8 + local_c0 * local_c0 + local_bc * local_bc);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 183,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar11 = SQRT(fVar5 * fVar5 + fVar9 * fVar9 + fVar10 * fVar10);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 195,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar5 = SQRT(fVar8 * fVar8 + fVar6 * fVar6 + fVar7 * fVar7);",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

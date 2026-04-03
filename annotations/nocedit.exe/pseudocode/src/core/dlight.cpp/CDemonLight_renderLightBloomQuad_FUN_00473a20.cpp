@@ -16,7 +16,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   uint uVar3;
   byte bVar4;
   int aiStackY_1064 [992];
-  SMRGLHeaderPrimitive local_d4;
+  SMRGLPrimitiveQuadIndex local_d4;
   float local_a0;
   float local_9c;
   float local_98;
@@ -133,13 +133,17 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
     this_ptr_00->vertex_buffer_ptr[3].b = 0xffff;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr_00,g_LightTextures + 1);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-    local_d4.base.count = 4;
-    local_d4.surface_normal.A = 0;
-    local_d4.surface_normal.B = 0;
-    local_d4.surface_normal.C = -0xffff;
-    local_d4.surface_normal.D = -0x7fff;
+    local_d4.base.base.count = 4;
+    local_d4.base.surface_normal.A = 0;
+    local_d4.base.surface_normal.B = 0;
+    local_d4.base.surface_normal.C = -0xffff;
+    local_d4.base.surface_normal.D = -0x7fff;
+    local_d4.vertices[0] = 0;
+    local_d4.vertices[3] = 3;
+    local_d4.vertices[1] = 1;
+    local_d4.vertices[2] = 2;
     engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-              (g_CDemonRendererPtr2,&local_d4);
+              (g_CDemonRendererPtr2,&local_d4.base);
   }
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);

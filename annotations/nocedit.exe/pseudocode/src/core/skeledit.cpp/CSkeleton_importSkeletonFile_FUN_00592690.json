@@ -121,15 +121,14 @@
   },
   "complexity": {
     "assembly_lines": 5207,
-    "complexity_score": 2080,
+    "complexity_score": 2035,
     "cross_reference_count": 0,
     "function_call_count": 57,
     "global_count": 186,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 1865,
-    "suspect_count": 19,
+    "suspect_count": 15,
     "suspect_types": [
-      "decompiler_intrinsic",
       "format_string_mismatch",
       "pointer_cast",
       "unknown_field",
@@ -3127,22 +3126,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 829,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((float)local_ec->frame_count -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 829,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((float)local_ec->frame_count -",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 1294,
       "match": "(int *)((int)",
@@ -3189,22 +3172,6 @@
       "severity": "mild",
       "text": "local_4c = &((CMatrix3x4f *)((int)local_4c + 0x60))->m[2].x;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1601,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (0.0 < SQRT(local_1e4 * local_1e4 + local_1ec * local_1ec + local_1e8 * local_1e8)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1611,
-      "match": "SBORROW4",
-      "severity": "mild",
-      "text": "while (bVar23 || SBORROW4(iVar4,local_94) != iVar15 < 0) {",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

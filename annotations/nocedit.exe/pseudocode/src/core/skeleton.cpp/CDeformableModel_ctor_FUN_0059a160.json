@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 255,
+    "complexity_score": 40,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 40,
-    "suspect_count": 21,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 114
   },
   "cross_references": [
@@ -126,176 +124,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "(&ADJ(pvVar2)->bbox_pool[0].max,100,&g_CBoundingBox3DTypeInfo);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "pCVar1 = ADJ(pvVar3);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "} while (pSVar3 != ADJ(pvVar3)->lod_info + 2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(pvVar3)->num_texture_sets = 0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(pvVar3)->num_textures = 0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "memset(ADJ(pvVar3)->texture_sets,0,0x7080);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(pvVar3)->num_parts = 0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "memset(ADJ(pvVar3)->parts,0,0xb40);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(pvVar3)->model_name[0] = '\\0';",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(pvVar3)->skeleton_ptr = (CSkeleton *)0x0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "(ADJ(pvVar3)->model_scale).z = 1.0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "(ADJ(pvVar3)->model_scale).y = (ADJ(pvVar3)->model_scale).z;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "(ADJ(pvVar3)->model_scale).y = (ADJ(pvVar3)->model_scale).z;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "(ADJ(pvVar3)->model_scale).x = (ADJ(pvVar3)->model_scale).y;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "(ADJ(pvVar3)->model_scale).x = (ADJ(pvVar3)->model_scale).y;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "memset(ADJ(pvVar3)->lod_info,0,0x28);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(pvVar3)->bbox_pool[0].min.z = 0.0;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(pvVar3)->bbox_pool[0].min.y = ADJ(pvVar3)->bbox_pool[0].min.z;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(pvVar3)->bbox_pool[0].min.y = ADJ(pvVar3)->bbox_pool[0].min.z;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(pvVar3)->bbox_pool[0].min.x = ADJ(pvVar3)->bbox_pool[0].min.y;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(pvVar3)->bbox_pool[0].min.x = ADJ(pvVar3)->bbox_pool[0].min.y;",
-      "type": "decompiler_intrinsic"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

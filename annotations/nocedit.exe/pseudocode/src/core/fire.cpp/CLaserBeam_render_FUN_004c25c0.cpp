@@ -31,13 +31,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
   float local_2f4;
   float local_2e8;
   float local_2e0;
-  SMRGLHeaderPrimitive local_2d8;
-  int local_2b8;
-  int local_2b0;
-  int local_2ac;
-  int local_2a4;
-  int local_2a0;
-  int local_294;
+  SMRGLPrimitiveQuad local_2d8;
   SMRGLPrimitiveQuad local_290;
   SMRGLPrimitiveQuadIndex local_248;
   CMatrix3x3f local_220;
@@ -128,7 +122,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
   local_1a4.y = (this_ptr->hit_position).y - (this_ptr->origin).y;
   local_1a4.z = (this_ptr->hit_position).z - (this_ptr->origin).z;
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_9c,&local_1a4);
-  fVar8 = SQRT(local_1a4.z * local_1a4.z + local_1a4.x * local_1a4.x + local_1a4.y * local_1a4.y);
+  depth = SQRT(local_1a4.z * local_1a4.z + local_1a4.x * local_1a4.x + local_1a4.y * local_1a4.y);
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_220,&local_9c);
   local_2e0 = this_ptr->beam_width;
   local_2f4 = this_ptr->reticle_intensity;
@@ -151,8 +145,8 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
     local_1dc = local_188;
     local_1d8 = local_184;
   }
-  fVar3 = local_118 * local_1d8 + local_120 * local_1e0 + local_11c * local_1dc;
-  if (0.0 < fVar3) {
+  fVar8 = local_118 * local_1d8 + local_120 * local_1e0 + local_11c * local_1dc;
+  if (0.0 < fVar8) {
     if (this_ptr->cone_angle <= 0.0) {
       engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
                 (g_CDemonRendererPtr2,&local_1d4);
@@ -166,20 +160,20 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
         local_1d4.y = pCVar7->y;
         local_1d4.z = pCVar7->z;
       }
-      fVar5 = ((local_1d4.z * (float)18) / 448.0) * (float)2;
-      fVar3 = local_1d4.x * local_1d4.x + local_1d4.y * local_1d4.y;
-      fVar5 = fVar5 * fVar5;
-      if (fVar3 < fVar5) {
-        local_2e8 = 1.0 - fVar3 / fVar5;
+      fVar3 = ((local_1d4.z * (float)18) / 448.0) * (float)2;
+      fVar8 = local_1d4.x * local_1d4.x + local_1d4.y * local_1d4.y;
+      fVar3 = fVar3 * fVar3;
+      if (fVar8 < fVar3) {
+        local_2e8 = 1.0 - fVar8 / fVar3;
       }
     }
     else {
       fVar10 = (float10)fcos((float10)this_ptr->cone_angle);
-      fVar3 = fVar3 / (SQRT(local_1d8 * local_1d8 + local_1e0 * local_1e0 + local_1dc * local_1dc) *
+      fVar8 = fVar8 / (SQRT(local_1d8 * local_1d8 + local_1e0 * local_1e0 + local_1dc * local_1dc) *
                       SQRT(local_118 * local_118 + local_120 * local_120 + local_11c * local_11c));
       fVar1 = (float)fVar10;
-      if (fVar1 < fVar3) {
-        local_2e8 = (fVar3 - fVar1) / (1.0 - fVar1);
+      if (fVar1 < fVar8) {
+        local_2e8 = (fVar8 - fVar1) / (1.0 - fVar1);
       }
       fVar12 = (float10)fptan((float10)this_ptr->cone_angle);
       local_44 = (float)fVar12;
@@ -187,22 +181,22 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
   }
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   if ((0.0 < local_2e8) && (g_CGamePtr->halo_mode != 0)) {
-    fVar3 = this_ptr->beam_width;
+    fVar8 = this_ptr->beam_width;
     fVar2 = 1.0 - local_2e8 * (float)2;
     local_2e0 = local_2e0 * fVar2;
     local_2f4 = fVar2 * local_2f4;
     iVar6 = 0;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     do {
-      fVar5 = (float)iVar6 * 0.04f * fVar8;
-      fVar6 = local_44;
+      fVar3 = (float)iVar6 * 0.04f * depth;
+      fVar5 = local_44;
       if (this_ptr->cone_angle <= 0.0) {
-        fVar6 = (float)18 / 448.0;
+        fVar5 = (float)18 / 448.0;
       }
-      fVar6 = fVar6 * fVar5;
-      local_150.x = (this_ptr->origin).x + local_220.m[0].z * fVar5;
-      local_150.y = (this_ptr->origin).y + local_220.m[1].z * fVar5;
-      local_150.z = (this_ptr->origin).z + local_220.m[2].z * fVar5;
+      fVar5 = fVar5 * fVar3;
+      local_150.x = (this_ptr->origin).x + local_220.m[0].z * fVar3;
+      local_150.y = (this_ptr->origin).y + local_220.m[1].z * fVar3;
+      local_150.z = (this_ptr->origin).z + local_220.m[2].z * fVar3;
       if (&local_168 != &local_150) {
         local_168.x = local_150.x;
         local_168.y = local_150.y;
@@ -215,18 +209,18 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       local_1f8.z = (int)((float)iVar6 + (float)local_1f8.z);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&local_1f8,(CVector3i *)0x0);
-      local_180.x = (int)ROUND(fVar6 * 256.0f);
-      local_180.y = (int)ROUND(fVar6 * 256.0f);
+      local_180.x = (int)ROUND(fVar5 * 256.0f);
+      local_180.y = (int)ROUND(fVar5 * 256.0f);
       local_180.z = (int)ROUND(256.0f * 0.0);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_180);
-      local_e4 = -fVar6;
+      local_e4 = -fVar5;
       local_c0.x = (int)ROUND(local_e4 * 256.0f);
-      local_c0.y = (int)ROUND(fVar6 * 256.0f);
+      local_c0.y = (int)ROUND(fVar5 * 256.0f);
       local_c0.z = (int)ROUND(256.0f * 0.0);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_c0);
-      local_e0 = -fVar6;
+      local_e0 = -fVar5;
       local_1bc.x = (int)ROUND(local_e4 * 256.0f);
       local_1bc.y = (int)ROUND(local_e0 * 256.0f);
       local_1bc.z = (int)ROUND(256.0f * 0.0);
@@ -247,7 +241,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       local_248.base.surface_normal.B = 0;
       local_248.base.surface_normal.A = 0;
       local_248.vertices[0] = 0;
-      iVar9 = (int)ROUND(ROUND(local_2e8 * fVar3 * (float)8192));
+      iVar9 = (int)ROUND(ROUND(local_2e8 * fVar8 * (float)8192));
       g_CDemonRendererPtr2->vertex_buffer_ptr->a = iVar9;
       pCVar3->vertex_buffer_ptr->r = (this_ptr->color).r;
       pCVar3->vertex_buffer_ptr->g = (this_ptr->color).g;
@@ -288,17 +282,19 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
               (g_CDemonRendererPtr2,&this_ptr->origin);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
               (g_CDemonRendererPtr2,(CVector3i *)&local_9c,(CVector3i *)0x0);
-    fVar3 = this_ptr->cone_angle;
+    fVar8 = this_ptr->cone_angle;
     local_54 = this_ptr->halo_spread;
     local_24 = 1.12104e-44;
-    if (0.0 < fVar3) {
-      fVar12 = (float10)fptan((float10)fVar3);
+    if (0.0 < fVar8) {
+      fVar12 = (float10)fptan((float10)fVar8);
       local_24 = 2.24208e-44;
-      local_54 = (float)(fVar12 * (float10)fVar8);
+      local_54 = (float)(fVar12 * (float10)depth);
     }
     fVar5 = core_fire_cpp_computeScreenSpaceSize_FUN_004c24d0(0.0,this_ptr->halo_spread);
-    fVar6 = core_fire_cpp_computeScreenSpaceSize_FUN_004c24d0(fVar8,local_54);
+    fVar6 = core_fire_cpp_computeScreenSpaceSize_FUN_004c24d0(depth,local_54);
     local_20 = 0;
+    fVar3 = (depth * 16777220.0f) / 30.0f;
+    local_30 = 0x100;
     do {
       pCVar4 = g_CDemonRendererPtr2;
       fVar12 = ((float10)local_20 / (float10)(int)local_24) * (float10)2 *
@@ -334,16 +330,36 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
                 (&pCVar4->vertex_buffer_ptr->projected_vertex,&local_a8);
       local_108.x = (int)ROUND((float)fVar12 * fVar6 * 256.0f);
       local_108.y = (int)ROUND((float)fVar11 * fVar6 * 256.0f);
-      local_108.z = (int)ROUND((fVar8 + (float)-0.10000000000000001) * 256.0f);
+      local_108.z = (int)ROUND((depth + (float)-0.10000000000000001) * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_108);
       pCVar4 = g_CDemonRendererPtr2;
       if (local_20 != 0) {
-        local_2d8.base.count = 4;
-        local_2d8.surface_normal.D = 0;
-        local_2d8.surface_normal.C = 0;
-        local_2d8.surface_normal.B = 0;
-        local_2d8.surface_normal.A = 0;
+        local_2d8.base.base.count = 4;
+        local_2d8.base.surface_normal.D = 0;
+        local_2d8.base.surface_normal.C = 0;
+        local_2d8.base.surface_normal.B = 0;
+        local_2d8.base.surface_normal.A = 0;
+        local_2d8.vertices[0].vertex_index = 0;
+        local_2d8.vertices[3].vertex_index = 3;
+        local_2d8.vertices[1].vertex_index = 1;
+        local_2d8.vertices[2].vertex_index = 2;
+        local_2d8.vertices[2].texture_u = (int)ROUND(ROUND(fVar3));
+        if (this_ptr->cone_angle <= 0.0) {
+          local_2d8.vertices[1].texture_v =
+               ((local_20 << 8) / (int)local_24 + g_TextureAnimCounter1) * 0x10000;
+          local_2d8.vertices[3].texture_u = 0;
+          local_2d8.vertices[3].texture_v =
+               (local_30 / (int)local_24 + g_TextureAnimCounter1) * 0x10000;
+          local_2d8.vertices[0].texture_u = 0;
+        }
+        else {
+          local_2d8.vertices[1].texture_v = 0x800000;
+          local_2d8.vertices[2].texture_u = 0x800000;
+          local_2d8.vertices[3].texture_u = 0x800000;
+          local_2d8.vertices[3].texture_v = 0x800000;
+          local_2d8.vertices[0].texture_u = 0x800000;
+        }
         g_CDemonRendererPtr2->vertex_buffer_ptr->r = (this_ptr->color).r;
         pCVar4->vertex_buffer_ptr->g = (this_ptr->color).g;
         pCVar4->vertex_buffer_ptr->b = (this_ptr->color).b;
@@ -356,29 +372,33 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
         pCVar4->vertex_buffer_ptr[3].r = (this_ptr->color).r;
         pCVar4->vertex_buffer_ptr[3].g = (this_ptr->color).g;
         pCVar4->vertex_buffer_ptr[3].b = (this_ptr->color).b;
+        local_2d8.vertices[0].texture_v = local_2d8.vertices[1].texture_v;
+        local_2d8.vertices[1].texture_u = local_2d8.vertices[2].texture_u;
+        local_2d8.vertices[2].texture_v = local_2d8.vertices[3].texture_v;
         engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(pCVar4,1);
         pCVar4 = g_CDemonRendererPtr2;
         iVar9 = (int)ROUND(ROUND(local_2e0 * (float)32767.5));
-        if (0.0 < fVar3) {
+        if (0.0 < fVar8) {
           g_CDemonRendererPtr2->vertex_buffer_ptr->a = iVar9;
           pCVar4->vertex_buffer_ptr[1].a = 0;
           pCVar4->vertex_buffer_ptr[2].a = 0;
           pCVar4->vertex_buffer_ptr[3].a = iVar9;
           engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
-                    (pCVar4,&local_2d8);
+                    (pCVar4,&local_2d8.base);
         }
         else {
           engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,iVar9);
           engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
-                    (g_CDemonRendererPtr2,&local_2d8);
+                    (g_CDemonRendererPtr2,&local_2d8.base);
         }
       }
+      local_30 = local_30 + 0x100;
       local_20 = local_20 + 1;
     } while (local_20 <= (int)local_24);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   }
   if (0.0 < local_2f4) {
-    fVar8 = 1.0 / fVar8;
+    fVar8 = 1.0 / depth;
     local_138 = local_1a4.x * fVar8;
     local_134 = local_1a4.y * fVar8;
     local_130 = local_1a4.z * fVar8;

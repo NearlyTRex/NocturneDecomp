@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 52,
+    "complexity_score": 17,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 3,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 86
   },
   "cross_references": [
@@ -181,30 +179,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((ABS(local_20.x) <= (pSVar1->extents).x) && (ABS(local_20.y) <= (pSVar1->extents).y)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((ABS(local_20.x) <= (pSVar1->extents).x) && (ABS(local_20.y) <= (pSVar1->extents).y)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS(local_20.z) <= (pSVar1->extents).z)) {",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

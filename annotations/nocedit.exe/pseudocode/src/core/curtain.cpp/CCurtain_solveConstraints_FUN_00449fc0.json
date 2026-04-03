@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 651,
-    "complexity_score": 364,
+    "complexity_score": 329,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 204,
-    "suspect_count": 15,
+    "suspect_count": 12,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 855
@@ -328,14 +327,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar12 * fVar12 + fVar11 * fVar11))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 69,
       "match": "(float *)((int)",
@@ -368,14 +359,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar12 = SQRT(fVar11 * fVar11 + fVar13 * fVar13);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 80,
       "match": "(float *)((int)",
@@ -406,14 +389,6 @@
       "severity": "mild",
       "text": "fVar17 = *(float *)((int)&CVector3f_ARRAY_008879c0[0].y + iVar11);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar10 = SQRT(local_d8 * local_d8 + local_e0 * local_e0 + local_dc * local_dc);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

@@ -25,15 +25,14 @@
   },
   "complexity": {
     "assembly_lines": 388,
-    "complexity_score": 594,
+    "complexity_score": 449,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 204,
-    "suspect_count": 37,
+    "suspect_count": 23,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field",
       "warning_inlined_function"
@@ -347,30 +346,6 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_20 = (int)ROUND(ROUND(SQRT(dVar6 * dVar6 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_20 = (int)ROUND(ROUND(SQRT(dVar6 * dVar6 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_20 = (int)ROUND(ROUND(SQRT(dVar6 * dVar6 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 86,
       "match": "(SColorQuantMapper *)((int)",
@@ -467,22 +442,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 153,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].red));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 153,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].red));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 155,
       "match": "._0_1_",
@@ -491,44 +450,12 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].green));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].green));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 157,
       "match": "._0_1_",
       "severity": "mild",
       "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].blue));",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 157,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].blue));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 157,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].blue));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -571,14 +498,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 178,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_15c,local_160)) < pSVar11->boxes[1].total_weighted_error) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 180,
       "match": "(uint *)((int)",
@@ -601,38 +520,6 @@
       "severity": "mild",
       "text": "pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[1] + 0x1c);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 190,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_red) break;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 195,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_green) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 199,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_blue) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 203,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_intensity)",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

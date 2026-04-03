@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 79,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 24,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "register_param",
       "special_math_intrinsic"
     ],
@@ -127,14 +126,6 @@
       "severity": "mild",
       "text": "if (in_AL != '\\a') {",
       "type": "register_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "fVar1 = ROUND((float10)1.4426950408889634 * x);",
-      "type": "decompiler_intrinsic"
     },
     {
       "address": "006068e2",

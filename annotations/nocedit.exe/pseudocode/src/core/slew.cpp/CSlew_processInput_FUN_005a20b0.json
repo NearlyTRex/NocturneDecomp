@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 338,
-    "complexity_score": 189,
+    "complexity_score": 104,
     "cross_reference_count": 14,
     "function_call_count": 0,
     "global_count": 11,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 104,
-    "suspect_count": 8,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 442
   },
   "cross_references": [
@@ -396,70 +394,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar5 = (float10)fcos((float10)this_ptr->yaw);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar6 = (float10)fsin((float10)this_ptr->yaw);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar5 = (float10)fcos((float10)this_ptr->yaw);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar4 = (float10)fsin((float10)this_ptr->yaw);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar7 = (float10)fsin((float10)this_ptr->yaw + (float10)-1.57079632675);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar5 = (float10)fcos((float10)this_ptr->yaw + (float10)-1.57079632675);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar5 = (float10)fsin((float10)this_ptr->yaw + (float10)1.57079632675);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar4 = (float10)fcos((float10)this_ptr->yaw + (float10)1.57079632675);",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

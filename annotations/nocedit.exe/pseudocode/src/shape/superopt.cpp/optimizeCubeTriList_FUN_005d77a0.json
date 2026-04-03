@@ -67,15 +67,14 @@
   },
   "complexity": {
     "assembly_lines": 522,
-    "complexity_score": 529,
+    "complexity_score": 514,
     "cross_reference_count": 1,
     "function_call_count": 27,
     "global_count": 51,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 204,
-    "suspect_count": 30,
+    "suspect_count": 29,
     "suspect_types": [
-      "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
       "stack_alignment_array",
@@ -966,14 +965,6 @@
       "severity": "mild",
       "text": "} while (local_18 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28 + -0x14));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 186,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar8 = (float10)fcos((float10)0.069813169999999994);",
-      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 1,

@@ -25,9 +25,7 @@ void __cdecl engine_font_cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont *t
   int iVar11;
   int iVar12;
   byte bVar13;
-  SMRGLHeaderPrimitive SStack_54;
-  int local_3c;
-  int local_38;
+  SMRGLPrimitiveTriangleIndex SStack_54;
   int local_30;
   int local_2c;
   int local_28;
@@ -172,11 +170,14 @@ LAB_004ce397:
     g_QuadVertex2.v = g_QuadVertex2.v + 0x8000;
     g_QuadVertex2.u = g_QuadVertex2.u + 0x8000;
   }
-  SStack_54.surface_normal.D = 0;
-  SStack_54.base.count = 4;
-  SStack_54.surface_normal.C = 0;
-  SStack_54.surface_normal.B = 0;
-  SStack_54.surface_normal.A = 0;
+  SStack_54.vertices[2] = 0x4e1e;
+  SStack_54.base.surface_normal.D = 0;
+  SStack_54.base.base.count = 4;
+  SStack_54.base.surface_normal.C = 0;
+  SStack_54.vertices[0] = 0x4e1c;
+  SStack_54.base.surface_normal.B = 0;
+  SStack_54.vertices[1] = 0x4e1d;
+  SStack_54.base.surface_normal.A = 0;
   g_QuadVertex1.u = g_QuadVertex2.u;
   g_QuadVertex1.v = g_QuadVertex0.v;
   g_QuadVertex3.u = g_QuadVertex0.u;
@@ -188,6 +189,6 @@ LAB_004ce397:
   else {
     iVar3 = 0x227;
   }
-  engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(&SStack_54,iVar3,0);
+  engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(&SStack_54.base,iVar3,0);
   return;
 }

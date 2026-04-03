@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 188,
+    "complexity_score": 153,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 13,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 88,
-    "suspect_count": 9,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 288
@@ -238,30 +237,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "pCVar4->x = (int)ROUND((pSVar5->local_position).x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "pCVar4->y = (int)ROUND((pSVar5->local_position).y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "pCVar4->z = (int)ROUND((pSVar5->local_position).z * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
     {
       "description": "Complex pointer cast",
       "line": 51,

@@ -13,15 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 117,
+    "complexity_score": 92,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 62,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "stack_ref",
       "warning_inlined_function"
     ],
@@ -224,22 +223,6 @@
       "severity": "moderate",
       "text": "(g_CDemonRendererPtr2,&local_20,(CVector3i *)&stack0xffffffd4);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(fVar1)) & 0xf);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(fVar1)) & 0xf);",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

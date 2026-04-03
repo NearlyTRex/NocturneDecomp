@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 96,
+    "complexity_score": 81,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 16,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "decompiler_intrinsic",
       "fnstsw_flag_artifact",
       "register_param",
       "special_crt_function"
@@ -180,14 +179,6 @@
       "severity": "severe",
       "text": "(in_DS,(void *)CONCAT22((short)(new_size >> 0x10),in_DS),(ulong)ptr,pExtraNeeded",
       "type": "fnstsw_flag_artifact"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "(in_DS,(void *)CONCAT22((short)(new_size >> 0x10),in_DS),(ulong)ptr,pExtraNeeded",
-      "type": "decompiler_intrinsic"
     },
     {
       "address": "00609974",

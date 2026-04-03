@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 628,
-    "complexity_score": 363,
+    "complexity_score": 338,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 20,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 308,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_type_propagation",
       "warning_unreachable"
     ],
@@ -483,22 +482,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 110,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (SQRT(fVar11 * fVar11 + fVar4 * fVar4 + fVar10 * fVar10) <",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 157,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar7 * fVar7 + fVar4 * fVar4 + fVar10 * fVar10) < 15.0f)) &&",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

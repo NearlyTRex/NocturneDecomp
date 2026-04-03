@@ -73,15 +73,14 @@
   },
   "complexity": {
     "assembly_lines": 364,
-    "complexity_score": 254,
+    "complexity_score": 209,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 20,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 104,
-    "suspect_count": 13,
+    "suspect_count": 9,
     "suspect_types": [
-      "decompiler_intrinsic",
       "sub84_truncation",
       "unknown_field",
       "warning_inlined_function"
@@ -436,22 +435,6 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(local_14 * 100.0f)),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(local_14 * 100.0f)),",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 71,
       "match": "._0_4_",
@@ -466,14 +449,6 @@
       "severity": "moderate",
       "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_20),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_20),0);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -506,14 +481,6 @@
       "severity": "moderate",
       "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_24),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_24),0);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",

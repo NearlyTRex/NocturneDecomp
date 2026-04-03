@@ -79,15 +79,14 @@
   },
   "complexity": {
     "assembly_lines": 576,
-    "complexity_score": 478,
+    "complexity_score": 453,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 273,
-    "suspect_count": 18,
+    "suspect_count": 16,
     "suspect_types": [
-      "decompiler_intrinsic",
       "fnstsw_flag_artifact",
       "nan_function_artifact",
       "pointer_cast",
@@ -578,28 +577,12 @@
       "type": "fnstsw_flag_artifact"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "CONCAT22((short)((uint)damage_info >> 0x10),",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "NAN() function call (FNSTSW comparison artifact)",
       "line": 66,
       "match": "NAN(",
       "severity": "severe",
       "text": "(ushort)(0.0 < (float)damage_info) << 8 | (ushort)NAN((float)damage_info) << 10",
       "type": "nan_function_artifact"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
-      "match": "NAN",
-      "severity": "mild",
-      "text": "(ushort)(0.0 < (float)damage_info) << 8 | (ushort)NAN((float)damage_info) << 10",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

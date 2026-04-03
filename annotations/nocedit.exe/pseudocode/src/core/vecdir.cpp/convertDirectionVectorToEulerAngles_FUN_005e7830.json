@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 106,
+    "complexity_score": 41,
     "cross_reference_count": 74,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_inlined_function"
     ],
     "total_lines": 93
@@ -698,54 +697,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "out_euler_angles->x = (float)__BITCAST_DOUBLE(CONCAT44(uStack_14,0x54411744));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar2 = (float10)fpatan((float10)in_direction_vector->x,(float10)in_direction_vector->z);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar1 = (float10)fpatan((float10)in_direction_vector->y,",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT((float10)in_direction_vector->x * (float10)in_direction_vector->x +",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

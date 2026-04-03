@@ -12,9 +12,7 @@
 ; int              Stack[0x18]:4   bottom_y
 ; int              Stack[0x1c]:4   color_mode
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x54]:24  SStack_54
-; int              Stack[-0x3c]:4  local_3c
-; int              Stack[-0x38]:4  local_38
+; SMRGLPrimitiveTriangleIndex Stack[-0x54]:36  SStack_54
 ; int              Stack[-0x30]:4  local_30
 ; int              Stack[-0x2c]:4  local_2c
 ; int              Stack[-0x28]:4  local_28

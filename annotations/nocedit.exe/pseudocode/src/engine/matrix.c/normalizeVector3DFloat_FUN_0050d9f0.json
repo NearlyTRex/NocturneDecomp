@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 102,
+    "complexity_score": 47,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "sub84_truncation"
     ],
     "total_lines": 141
@@ -150,52 +149,12 @@
   },
   "suspects": [
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar4 = SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 19,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_38 = SUB84(__BITCAST_UINT64(dVar4),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_38 = SUB84(__BITCAST_UINT64(dVar4),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "output_vector->x = (int)ROUND(local_30);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "output_vector->y = (int)ROUND(local_28);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "output_vector->z = (int)ROUND(local_20);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

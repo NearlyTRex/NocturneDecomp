@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 518,
-    "complexity_score": 331,
+    "complexity_score": 266,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 37,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 241,
-    "suspect_count": 8,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_inlined_function"
     ],
     "total_lines": 759
@@ -378,54 +377,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar20 = (float10)fpatan((float10)rotation_x,(float10)rotation_z);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar19 = (float10)fpatan((float10)rotation_y,(float10)rotation_z);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iVar11 = (int)ROUND(ROUND(-fVar19 * (float10)0.31830988619288902 * (float10)32768)",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iVar11 = (int)ROUND(ROUND(-fVar19 * (float10)0.31830988619288902 * (float10)32768)",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "angle = (int)ROUND(ROUND(fVar20 * (float10)0.31830988619288902 * (float10)32768));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "angle = (int)ROUND(ROUND(fVar20 * (float10)0.31830988619288902 * (float10)32768));",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

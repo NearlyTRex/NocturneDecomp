@@ -49,15 +49,14 @@
   },
   "complexity": {
     "assembly_lines": 391,
-    "complexity_score": 232,
+    "complexity_score": 207,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 19,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 152,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
       "unresolved_funcptr",
       "warning_inlined_function",
       "warning_max_restarts"
@@ -436,22 +435,6 @@
       "severity": "moderate",
       "text": "(**(code **)(*piStack_1c + 8))(piStack_1c);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(((float)g_StreamSampleRate * fStack_14) / (float)g_StreamBlockCount));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(((float)g_StreamSampleRate * fStack_14) / (float)g_StreamBlockCount));",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

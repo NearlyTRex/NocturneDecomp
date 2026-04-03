@@ -37,15 +37,14 @@
   },
   "complexity": {
     "assembly_lines": 2766,
-    "complexity_score": 1056,
+    "complexity_score": 1041,
     "cross_reference_count": 1,
     "function_call_count": 96,
     "global_count": 106,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 996,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
       "stack_ref"
     ],
     "total_lines": 3762
@@ -1786,14 +1785,6 @@
       "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
       "type": "stack_ref"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 413,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_40 = SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) * (float)0.25;",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

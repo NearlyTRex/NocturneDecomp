@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 290,
+    "complexity_score": 255,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 23,
+    "suspect_count": 20,
     "suspect_types": [
-      "decompiler_intrinsic",
       "fpu_register_input",
       "special_crt_function",
       "unaffected_reg",
@@ -245,30 +244,6 @@
       "severity": "mild",
       "text": "for (; -1 < (int)param_2; param_2 = param_2 * 2 + (uint)(bVar6 || CARRY4(uVar1,(uint)bVar5))) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
-      "match": "CARRY4",
-      "severity": "mild",
-      "text": "for (; -1 < (int)param_2; param_2 = param_2 * 2 + (uint)(bVar6 || CARRY4(uVar1,(uint)bVar5))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
-      "match": "CARRY4",
-      "severity": "mild",
-      "text": "bVar5 = CARRY4(uVar4,uVar4);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
-      "match": "CARRY4",
-      "severity": "mild",
-      "text": "bVar6 = CARRY4(uVar2,uVar2);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "FPU register input (calling convention issue)",

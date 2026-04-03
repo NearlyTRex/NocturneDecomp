@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 460,
-    "complexity_score": 245,
+    "complexity_score": 210,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 11,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 210,
-    "suspect_count": 3,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 670
   },
   "cross_references": [],
@@ -207,32 +205,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 181,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_18 = SQRT(fVar11 * fVar11 + fVar9 * fVar9 + fVar10 * fVar10);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 188,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_14 = SQRT(fVar15 * fVar15 + fVar13 * fVar13 + fVar14 * fVar14);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 191,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "(this_ptr->eat_distance < SQRT(fVar8 * fVar8 + fVar12 * fVar12 + fVar7 * fVar7))) &&",
-      "type": "decompiler_intrinsic"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

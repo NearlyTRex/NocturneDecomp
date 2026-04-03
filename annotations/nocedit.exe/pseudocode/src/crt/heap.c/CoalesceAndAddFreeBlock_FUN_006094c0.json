@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 176,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 96,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "decompiler_intrinsic",
       "param_count_too_many",
       "pointer_cast",
       "special_crt_function"
@@ -103,14 +102,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "iVar7 = CONCAT22(unaff_0000000e,segment);",
-      "type": "decompiler_intrinsic"
-    },
     {
       "description": "Complex pointer cast",
       "line": 19,

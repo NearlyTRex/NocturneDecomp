@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 52,
+    "complexity_score": 37,
     "cross_reference_count": 12,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 7,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "special_math_intrinsic",
       "warning_is_inlined"
     ],
@@ -139,14 +138,6 @@
       "severity": "mild",
       "text": "/* WARNING: This is an inlined function */",
       "type": "warning_is_inlined"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 9,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar1 = (float10)fpatan(y,x);",
-      "type": "decompiler_intrinsic"
     },
     {
       "address": "006013b1",

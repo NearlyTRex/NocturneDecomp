@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 1015,
-    "complexity_score": 530,
+    "complexity_score": 475,
     "cross_reference_count": 0,
     "function_call_count": 32,
     "global_count": 34,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 460,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_type_propagation"
     ],
     "total_lines": 1475
@@ -772,46 +771,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 157,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (SQRT(local_c8.z * local_c8.z + local_c8.x * local_c8.x + local_c8.y * local_c8.y) <",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 162,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 211,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_38 = SQRT(fVar9 * fVar9 + fVar7 * fVar7);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 223,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 342,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar10 * fVar10 + fVar7 * fVar7 + fVar9 * fVar9) < (float)5))",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

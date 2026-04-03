@@ -4,43 +4,42 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6914 ( 44.0%)
-  pointer_cast                    4404 ( 28.1%)
-  unknown_field                    862 (  5.5%)
-  special_crt_function             439 (  2.8%)
-  stack_param                      351 (  2.2%)
-  unnamed_param                    329 (  2.1%)
-  fpu_register_input               311 (  2.0%)
-  nonstandard_int                  267 (  1.7%)
-  warning_inlined_function         264 (  1.7%)
-  stack_ref                        250 (  1.6%)
-  unresolved_funcptr               141 (  0.9%)
-  warning_type_propagation         133 (  0.8%)
-  param_count_too_few              119 (  0.8%)
-  unaffected_reg                   106 (  0.7%)
-  sub84_truncation                 101 (  0.6%)
-  stack_alignment_array             95 (  0.6%)
-  negative_offset                   86 (  0.5%)
-  warning_unreachable               85 (  0.5%)
-  register_param                    69 (  0.4%)
-  param_count_too_many              41 (  0.3%)
-  unknown_type                      40 (  0.3%)
-  mmx_assembly                      34 (  0.2%)
-  suspect_float                     31 (  0.2%)
-  extra_output                      29 (  0.2%)
-  format_string_mismatch            24 (  0.2%)
-  undefined_ram                     24 (  0.2%)
-  undefined_data                    21 (  0.1%)
-  byvalue_struct_passing            21 (  0.1%)
-  undefined_type                    15 (  0.1%)
-  special_math_intrinsic            15 (  0.1%)
+  pointer_cast                    4407 ( 50.2%)
+  unknown_field                    862 (  9.8%)
+  special_crt_function             439 (  5.0%)
+  stack_param                      351 (  4.0%)
+  unnamed_param                    329 (  3.7%)
+  fpu_register_input               311 (  3.5%)
+  nonstandard_int                  267 (  3.0%)
+  warning_inlined_function         264 (  3.0%)
+  stack_ref                        250 (  2.8%)
+  unresolved_funcptr               141 (  1.6%)
+  warning_type_propagation         133 (  1.5%)
+  param_count_too_few              119 (  1.4%)
+  unaffected_reg                   106 (  1.2%)
+  sub84_truncation                 101 (  1.1%)
+  stack_alignment_array             95 (  1.1%)
+  negative_offset                   86 (  1.0%)
+  warning_unreachable               85 (  1.0%)
+  register_param                    69 (  0.8%)
+  param_count_too_many              41 (  0.5%)
+  unknown_type                      40 (  0.5%)
+  mmx_assembly                      34 (  0.4%)
+  suspect_float                     31 (  0.4%)
+  extra_output                      29 (  0.3%)
+  format_string_mismatch            24 (  0.3%)
+  undefined_ram                     24 (  0.3%)
+  undefined_data                    21 (  0.2%)
+  byvalue_struct_passing            21 (  0.2%)
+  undefined_type                    15 (  0.2%)
+  special_math_intrinsic            15 (  0.2%)
   nan_function_artifact              9 (  0.1%)
   warning_jumptable                  8 (  0.1%)
   warning_indirect_jump              8 (  0.1%)
   fnstsw_flag_artifact               8 (  0.1%)
-  unknown_param                      6 (  0.0%)
-  displaced_global_access            6 (  0.0%)
-  warning_deadcode_restart           5 (  0.0%)
+  unknown_param                      6 (  0.1%)
+  displaced_global_access            6 (  0.1%)
+  warning_deadcode_restart           5 (  0.1%)
   warning_noreturn                   4 (  0.0%)
   warning_max_restarts               4 (  0.0%)
   special_cpu_detection              4 (  0.0%)
@@ -54,54 +53,12 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (6914 occurrences)
-====================================================================================================
-
-Unique patterns:
-  2611x  ROUND
-  1557x  ADJ
-   427x  SQRT
-   421x  CONCAT44
-   323x  ABS
-   142x  CONCAT11
-   116x  CARRY4
-   106x  fcos
-   105x  fsin
-   101x  SUB84
-    95x  CONCAT12
-    88x  CONCAT22
-    82x  CONCAT14
-    66x  CONCAT21
-    64x  CONCAT13
-    63x  CONCAT26
-    63x  CONCAT24
-    55x  CONCAT25
-    53x  CONCAT41
-    50x  CONCAT34
-
-Example functions:
-  cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
-    g_DashLength = (int)ROUND(ROUND(fVar1));...
-  cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
-    iVar3 = (int)ROUND(ROUND(g_DashOffsetCounter));...
-  cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0
-    local_18 = (uint)ROUND(ROUND(g_DashAnimationOffset));...
-  cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
-    CONCAT22(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],...
-  cockpit_ckptutil.c_optimizedMemcpy_FUN_00431528
-    (longlong)ROUND((float10)*(longlong *)(iVar7 + -0x18 + (int)src_buffer));...
-  cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
-    local_30.u32[0] = (uint)(longlong)ROUND(ROUND(fVar3));...
-  cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
-    ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
-
-====================================================================================================
-TYPE: pointer_cast (4404 occurrences)
+TYPE: pointer_cast (4407 occurrences)
 ====================================================================================================
 
 Unique patterns:
   1383x  (uint *)((int)
-  1236x  (int *)((int)
+  1239x  (int *)((int)
    305x  (float *)((int)
    209x  (SRenderVertex *)((int)
    193x  (double *)((int)

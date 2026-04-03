@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 137,
+    "complexity_score": 72,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 9,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "param_count_too_many",
       "stack_alignment_array",
       "warning_inlined_function"
@@ -275,54 +274,6 @@
       "severity": "moderate",
       "text": "int aiStackY_1004 [1016];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "dVar1 = ROUND(dVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "output_voxel_coords->x = (int)ROUND(dVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "output_voxel_coords->y = (int)ROUND(ROUND(dVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "output_voxel_coords->y = (int)ROUND(ROUND(dVar2));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "output_voxel_coords->z = (int)ROUND(ROUND(dVar3));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "output_voxel_coords->z = (int)ROUND(ROUND(dVar3));",
-      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 7,

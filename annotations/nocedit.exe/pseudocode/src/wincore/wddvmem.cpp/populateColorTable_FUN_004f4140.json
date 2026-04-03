@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 56,
+    "complexity_score": 41,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 12,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 75
@@ -160,14 +159,6 @@
       "severity": "mild",
       "text": "*(uint *)((int)g_ColorTable32 + iVar3) = uVar2;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "return CONCAT44(0x400,iVar1);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

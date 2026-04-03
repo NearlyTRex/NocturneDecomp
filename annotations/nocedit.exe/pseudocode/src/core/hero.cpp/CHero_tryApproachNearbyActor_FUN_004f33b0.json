@@ -19,16 +19,14 @@
   },
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 112,
+    "complexity_score": 67,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 67,
-    "suspect_count": 4,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 244
   },
   "cross_references": [
@@ -281,38 +279,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((ABS((this_ptr_00->location).position.y - (this_ptr->base).base.location.position.y) <=",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(local_60.z * local_60.z + local_60.x * local_60.x) <= (float)10)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((ABS(fVar3) <= (float)1.04719755116667) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if ((SQRT(fVar2 * fVar2 + fVar1 * fVar1) <= (float)5) &&",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

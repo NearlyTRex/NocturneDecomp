@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 1024,
-    "complexity_score": 537,
+    "complexity_score": 472,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 20,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 457,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_type_propagation"
     ],
     "total_lines": 1481
@@ -619,54 +618,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar9 = SQRT(fVar10 * fVar10 + fVar9 * fVar9);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(local_c8.y - (pCVar5->base).location.position.y) <= (float)4) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 186,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (SQRT(fVar6 * fVar6 + fVar9 * fVar9 + fVar10 * fVar10) <= 12.0f) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 231,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar10 = SQRT(fVar6 * fVar6 + fVar10 * fVar10);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 247,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(fVar9) < (float)0.52359877558333301) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 307,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (12.0f <= SQRT(fVar6 * fVar6 + fVar9 * fVar9 + fVar10 * fVar10)) {",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

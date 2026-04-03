@@ -121,15 +121,14 @@
   },
   "complexity": {
     "assembly_lines": 3419,
-    "complexity_score": 1263,
+    "complexity_score": 1168,
     "cross_reference_count": 2,
     "function_call_count": 90,
     "global_count": 144,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1078,
-    "suspect_count": 16,
+    "suspect_count": 7,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref",
       "suspect_float",
@@ -2429,78 +2428,6 @@
       "severity": "mild",
       "text": "fVar9 = 3.57331e-43;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 543,
-      "match": "SUB42",
-      "severity": "mild",
-      "text": "uVar19 = SUB42(g_CEditorToolsPtr,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 551,
-      "match": "SUB42",
-      "severity": "mild",
-      "text": "uVar19 = SUB42(g_CEditorToolsPtr,0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 555,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "((CEditorTools *)CONCAT22(uVar20,uVar19),2.0,(int)fVar9);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 578,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_18 = (float)(int)ROUND(ROUND(fVar9));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 578,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_18 = (float)(int)ROUND(ROUND(fVar9));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 652,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (0.0 < SQRT(local_118.z * local_118.z +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 698,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "(0.0 < SQRT(local_13c.z * local_13c.z +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 792,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_38 = (float)(int)ROUND(ROUND(pSVar11->exit_forward_to_frame));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 792,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_38 = (float)(int)ROUND(ROUND(pSVar11->exit_forward_to_frame));",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

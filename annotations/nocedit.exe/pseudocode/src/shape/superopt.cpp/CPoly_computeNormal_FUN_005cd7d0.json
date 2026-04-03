@@ -19,15 +19,14 @@
   },
   "complexity": {
     "assembly_lines": 559,
-    "complexity_score": 439,
+    "complexity_score": 344,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 214,
-    "suspect_count": 21,
+    "suspect_count": 12,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field"
     ],
@@ -618,14 +617,6 @@
   },
   "suspects": [
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar1 = 1.0 / SQRT(local_148 * local_148 + local_158 * local_158 + local_150 * local_150);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 107,
       "match": "(double *)((int)",
@@ -640,14 +631,6 @@
       "severity": "mild",
       "text": "pdVar11 = (double *)((int)pdVar11 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 110,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar1 = 1.0 / SQRT(local_178 * local_178 + local_188 * local_188 + local_180 * local_180);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -674,14 +657,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar1 = 1.0 / SQRT(local_160 * local_160 + local_170 * local_170 + local_168 * local_168);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 149,
       "match": "(double *)((int)",
@@ -696,22 +671,6 @@
       "severity": "mild",
       "text": "pdVar11 = (double *)((int)pdVar11 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 152,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar1 = 1.0 / SQRT(local_1f0 * local_1f0 + local_200 * local_200 + local_1f8 * local_1f8);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 160,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (local_2e8 < __BITCAST_DOUBLE(CONCAT44(uStack_2ec,local_2f0))) {",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -738,14 +697,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 180,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar1 = 1.0 / SQRT(local_220 * local_220 + local_230 * local_230 + local_228 * local_228);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 191,
       "match": "(double *)((int)",
@@ -760,30 +711,6 @@
       "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 194,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar6 = 1.0 / SQRT(local_280 * local_280 + local_290 * local_290 + local_288 * local_288);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 202,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (local_2a8 < __BITCAST_DOUBLE(CONCAT44(uStack_2ec,local_2f0))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 210,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar6 = 1.0 / SQRT(dVar5 * dVar5 + dVar4 * dVar4 + dVar3 * dVar3);",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

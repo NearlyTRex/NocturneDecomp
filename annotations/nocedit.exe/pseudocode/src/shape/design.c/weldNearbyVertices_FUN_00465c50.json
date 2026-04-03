@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 56,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 21,
-    "suspect_count": 3,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 119
   },
   "cross_references": [
@@ -181,30 +179,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((ABS(g_LoadedVertices[uVar1].vertex.x - g_LoadedVertices[local_18].vertex.x) < tolerance)",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "&& (ABS(g_LoadedVertices[uVar1].vertex.y - g_LoadedVertices[local_18].vertex.y) <",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS(g_LoadedVertices[uVar1].vertex.z - g_LoadedVertices[local_18].vertex.z) < tolerance))",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

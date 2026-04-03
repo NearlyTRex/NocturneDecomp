@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 81,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 56,
-    "suspect_count": 2,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 208
   },
   "cross_references": [
@@ -181,22 +179,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((((pSVar1->exists == 0) || (pSVar2->exists != 0)) || (ABS(pSVar1->anim_progress) != 0.0)) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS(pSVar1->anim_speed) != 0.0)) {",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

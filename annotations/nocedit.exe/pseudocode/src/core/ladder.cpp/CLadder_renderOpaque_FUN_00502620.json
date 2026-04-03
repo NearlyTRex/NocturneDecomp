@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 404,
-    "complexity_score": 510,
+    "complexity_score": 435,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 290,
-    "suspect_count": 20,
+    "suspect_count": 13,
     "suspect_types": [
       "byvalue_struct_passing",
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref"
     ],
@@ -274,14 +273,6 @@
   },
   "suspects": [
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_74.a = (int)ROUND(256.0f * 0.0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 84,
       "match": "&stack0xffffff58",
@@ -344,54 +335,6 @@
       "severity": "mild",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 205,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_30.x = (int)ROUND(-(this_ptr->ladder_size).x * (float)0.5 *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 207,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_30.y = (int)ROUND((float)local_74.projected_vertex.transformed_y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 208,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_30.z = (int)ROUND(256.0f * 0.0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 211,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_74.r = (int)ROUND(fStack_24 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 212,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_74.g = (int)ROUND(fStack_20 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 213,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_74.b = (int)ROUND(fStack_1c * 256.0f);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",

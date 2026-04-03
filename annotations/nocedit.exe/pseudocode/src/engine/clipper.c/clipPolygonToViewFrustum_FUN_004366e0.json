@@ -121,15 +121,14 @@
   },
   "complexity": {
     "assembly_lines": 1036,
-    "complexity_score": 846,
+    "complexity_score": 751,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 68,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 581,
-    "suspect_count": 24,
+    "suspect_count": 15,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field",
       "warning_type_propagation",
@@ -980,38 +979,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar11->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar4);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar4) >> 0x20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 406,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar15->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 408,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar1) >> 0x20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 415,
       "match": "(int *)((int)",
@@ -1026,14 +993,6 @@
       "severity": "mild",
       "text": "iVar12 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 449,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*plVar20 = (longlong)ROUND((float10)lVar4);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -1068,22 +1027,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 483,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)(longlong)ROUND((float10)lVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 485,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 510,
       "match": "._0_4_",
@@ -1098,22 +1041,6 @@
       "severity": "mild",
       "text": "lVar3._4_4_ = (pSVar19->projected_vertex).transformed_y;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 514,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)(longlong)ROUND((float10)lVar3);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 516,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar3) >> 0x20);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

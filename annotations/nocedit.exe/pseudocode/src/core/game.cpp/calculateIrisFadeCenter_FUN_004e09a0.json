@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 128,
+    "complexity_score": 93,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 53,
-    "suspect_count": 6,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array"
     ],
@@ -106,30 +105,6 @@
       "severity": "moderate",
       "text": "int aiStackY_1018 [1000];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_54.x = (int)ROUND(CStack_48.x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_54.y = (int)ROUND(CStack_48.y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_54.z = (int)ROUND(CStack_48.z * 256.0f);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

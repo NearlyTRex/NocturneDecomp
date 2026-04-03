@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 258,
+    "complexity_score": 243,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 16,
+    "suspect_count": 15,
     "suspect_types": [
-      "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast",
       "special_crt_function",
@@ -276,14 +275,6 @@
       "severity": "mild",
       "text": "*(uint *)((int)plVar4 + -4) = uVar2;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*plVar4 = (longlong)ROUND((float10)(longlong)uVar1);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Jump table recovery failed",

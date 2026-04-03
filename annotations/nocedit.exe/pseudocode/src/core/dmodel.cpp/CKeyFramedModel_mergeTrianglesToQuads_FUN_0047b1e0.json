@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 811,
-    "complexity_score": 516,
+    "complexity_score": 441,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 336,
-    "suspect_count": 16,
+    "suspect_count": 9,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
       "sub84_truncation"
@@ -646,14 +645,6 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar23 = (float10)fcos((float10)angle_threshold_radians);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 127,
       "match": "(uchar *)((int)",
@@ -686,14 +677,6 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 213,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_108 = SUB84(__BITCAST_UINT64(dVar24),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 214,
       "match": "(int *)((int)",
@@ -702,52 +685,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 220,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar8 = SQRT(fVar9 * fVar9 + fVar6 * fVar6 + fVar7 * fVar7);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 235,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar8 = SQRT(fVar9 * fVar9 + fVar6 * fVar6 + fVar7 * fVar7);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 252,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "uStack_104 = SUB84(__BITCAST_UINT64(dVar24),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 252,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "uStack_104 = SUB84(__BITCAST_UINT64(dVar24),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 266,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar24 = __BITCAST_DOUBLE(CONCAT44(uStack_104,local_108)) +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 267,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_fc,local_100));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

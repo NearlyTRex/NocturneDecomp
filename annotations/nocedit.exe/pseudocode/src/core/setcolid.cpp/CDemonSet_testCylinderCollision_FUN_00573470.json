@@ -19,16 +19,14 @@
   },
   "complexity": {
     "assembly_lines": 670,
-    "complexity_score": 329,
+    "complexity_score": 254,
     "cross_reference_count": 4,
     "function_call_count": 13,
     "global_count": 8,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 254,
-    "suspect_count": 7,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 924
   },
   "cross_references": [
@@ -471,62 +469,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(dir_x) != 0.0) || (ABS(dir_z) != 0.0)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(dir_x) != 0.0) || (ABS(dir_z) != 0.0)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 135,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar8 = SQRT(fVar7 - fVar8);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(local_14c.dir_x) <= ABS(local_14c.dir_z)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(local_14c.dir_x) <= ABS(local_14c.dir_z)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dStack_278 = SQRT((double)fVar4) - (double)fVar6;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 235,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar8 = SQRT(local_14c.push_normal.z * local_14c.push_normal.z +",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

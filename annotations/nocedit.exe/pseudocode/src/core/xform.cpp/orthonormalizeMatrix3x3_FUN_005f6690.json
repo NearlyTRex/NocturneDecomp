@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 416,
-    "complexity_score": 187,
+    "complexity_score": 122,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 122,
-    "suspect_count": 6,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 538
   },
   "cross_references": [
@@ -286,54 +284,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_b0 = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_80 = (double)SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_88 = (double)SQRT(fVar9 * fVar9 + fVar8 * fVar8 + fVar7 * fVar7);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar6 = 1.0 / SQRT(dVar12 * dVar12 + dVar13 * dVar13 + dVar14 * dVar14);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar2 = 1.0 / SQRT(dVar11 * dVar11 + dVar15 * dVar15 + dVar1 * dVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar10 = 1.0 / SQRT(dVar3 * dVar3 + dVar4 * dVar4 + dVar5 * dVar5);",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 36,
+    "complexity_score": 11,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 2,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 34
   },
   "cross_references": [
@@ -125,24 +123,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 10,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->base.vtable._ub = &g_CTrashVTable;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "return ADJ(this_ptr_00);",
-      "type": "decompiler_intrinsic"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

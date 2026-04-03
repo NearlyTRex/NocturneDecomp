@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 143,
+    "complexity_score": 108,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 58,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast"
     ],
@@ -250,30 +249,6 @@
       "severity": "mild",
       "text": "pfVar1 = (float *)((int)pfVar1 + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*local_18 = (int)ROUND(local_30.x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_18[1] = (int)ROUND(local_30.y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_18[2] = (int)ROUND(local_30.z * 256.0f);",
-      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 1,

@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 40,
+    "complexity_score": 25,
     "cross_reference_count": 4,
     "function_call_count": 8,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 25,
-    "suspect_count": 1,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 89
   },
   "cross_references": [
@@ -248,14 +246,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "(this_ptr,SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) * (float)0.0001);",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

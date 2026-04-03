@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 177,
+    "complexity_score": 112,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 11,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 112,
-    "suspect_count": 6,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 406
   },
   "cross_references": [
@@ -367,54 +365,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((((float)20 < ABS(local_50.y)) || ((float)40 < ABS(local_50.x)))",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((((float)20 < ABS(local_50.y)) || ((float)40 < ABS(local_50.x)))",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "|| ((float)40 < ABS(local_50.z))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar2 = SQRT(local_50.z * local_50.z + local_50.x * local_50.x);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((float)0.17453292519444399 < ABS(this_ptr->turn_angle_accumulator)) goto LAB_0042c771;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(this_ptr->turn_angle_accumulator) < (float)0.034906585038888903) {",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

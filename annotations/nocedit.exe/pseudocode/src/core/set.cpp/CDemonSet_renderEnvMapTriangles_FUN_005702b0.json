@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 417,
+    "complexity_score": 332,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 142,
-    "suspect_count": 26,
+    "suspect_count": 18,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array"
     ],
@@ -403,70 +402,6 @@
       "severity": "mild",
       "text": "iVar6 = *(int *)((int)&SStack_118.vertices[0].vertex_index + local_28[3]);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(1.0 <= ABS(g_VertexNormalArray[iVar6].x))) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(1.0 <= ABS(g_VertexNormalArray[iVar6].y))) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(1.0 <= ABS(g_VertexNormalArray[iVar6].z))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_2c = (int)ROUND(g_VertexNormalArray[iVar6].x);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_28[0] = (int)ROUND(g_VertexNormalArray[iVar6].y);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_50.x = (int)ROUND(g_LightingReferencePosition.x * 256.0f) -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_50.y = (int)ROUND(g_LightingReferencePosition.y * 256.0f) -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_50.z = (int)ROUND(g_LightingReferencePosition.z * 256.0f) -",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

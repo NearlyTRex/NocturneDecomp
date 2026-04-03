@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 535,
-    "complexity_score": 466,
+    "complexity_score": 281,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 16,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 241,
-    "suspect_count": 21,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
@@ -399,102 +398,6 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 117,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iStack_d0 = (int)ROUND(ROUND((this_ptr->trigger_size).x * (float)0.10000000000000001 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 117,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iStack_d0 = (int)ROUND(ROUND((this_ptr->trigger_size).x * (float)0.10000000000000001 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 126,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->r = (int)ROUND(ROUND(fVar1 * 256.0f));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 126,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->r = (int)ROUND(ROUND(fVar1 * 256.0f));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 133,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_50.x = (int)ROUND(256.0f * 0.0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_50.y = (int)ROUND(fVar4 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 135,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_50.z = (int)ROUND(256.0f * 0.0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 152,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_74.x = (int)ROUND(256.0f * 0.0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 153,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_74.y = (int)ROUND(CStack_8c.max.y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 154,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_74.z = (int)ROUND(256.0f * 0.0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 165,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar9 = (float10)fsin(fVar11);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 166,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar12 = (float10)fcos(fVar11);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 169,
       "match": "(int *)((int)",
@@ -503,60 +406,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 182,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_5c.x = (int)ROUND((float)(fVar9 * fVar10) * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 183,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_5c.y = (int)ROUND(CStack_8c.min.y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 184,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_5c.z = (int)ROUND((float)(fVar12 * fVar10) * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 191,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar8 = (int *)((int)&(pSVar1->projected_vertex).transformed_x + iStack_1c);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 204,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "aCStack_44[0].x = (int)ROUND((float)(fVar9 * fVar10) * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 205,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "aCStack_44[0].y = (int)ROUND(CStack_8c.max.y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 206,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "aCStack_44[0].z = (int)ROUND((float)(fVar12 * fVar10) * 256.0f);",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

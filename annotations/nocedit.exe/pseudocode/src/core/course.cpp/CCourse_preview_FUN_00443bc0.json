@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 540,
-    "complexity_score": 405,
+    "complexity_score": 340,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 255,
-    "suspect_count": 13,
+    "suspect_count": 7,
     "suspect_types": [
       "byvalue_struct_passing",
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref"
     ],
@@ -522,54 +521,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 126,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_5c.x = (int)ROUND(local_8c.x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 127,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_5c.y = (int)ROUND(local_8c.y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 128,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_5c.z = (int)ROUND(local_8c.z * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 131,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_74.x = (int)ROUND(local_68.x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_74.y = (int)ROUND(local_68.y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 133,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_74.z = (int)ROUND(local_68.z * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
     {
       "description": "Direct stack address reference",
       "line": 150,

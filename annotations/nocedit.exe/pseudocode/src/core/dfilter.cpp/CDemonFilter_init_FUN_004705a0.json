@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 113,
+    "complexity_score": 78,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 48,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
@@ -233,36 +232,12 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_28 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) / (float)iVar3;",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "fVar3 = (float)*(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar5 + iVar4) *",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_1c = (byte)(int)ROUND(ROUND(fVar3));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_1c = (byte)(int)ROUND(ROUND(fVar3));",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

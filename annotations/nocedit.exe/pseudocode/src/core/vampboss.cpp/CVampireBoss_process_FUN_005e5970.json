@@ -121,15 +121,14 @@
   },
   "complexity": {
     "assembly_lines": 1467,
-    "complexity_score": 806,
+    "complexity_score": 671,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 37,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 626,
-    "suspect_count": 16,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function",
       "warning_type_propagation"
@@ -1000,116 +999,12 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 139,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar13 = SQRT(fVar13 * fVar13 + fVar14 * fVar14);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 143,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((float10)0 != ABS((float10)(int)local_18)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 188,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar18 = *(int *)((int)this_ptr + (4 - this_ptr->waypoint_index) * 4 + 0xce908);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 197,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar11 * fVar11 + fVar10 * fVar10) < (float)6)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 214,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar11 * fVar11 + fVar10 * fVar10) < (float)4)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 221,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar25 = (float10)fpatan((float10)fVar10,fVar17);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 223,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar24 = (float10)fpatan((float10)(local_b4 - (this_ptr->base).base.base.location.position.y),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 224,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar24 * fVar24 + (float10)(float)fVar17 * (float10)(float)fVar17)",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 236,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(fVar10) <= ABS((float)local_18)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 236,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(fVar10) <= ABS((float)local_18)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 261,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar18 = (float10)fsin(fVar24);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 263,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar20 = (float10)fsin(fVar19);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 264,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar24 = (float10)fcos(fVar24);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 265,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar25 = (float10)fcos(fVar19);",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

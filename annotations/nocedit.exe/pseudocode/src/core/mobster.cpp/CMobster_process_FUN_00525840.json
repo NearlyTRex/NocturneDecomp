@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 1369,
-    "complexity_score": 674,
+    "complexity_score": 609,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 26,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 594,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_type_propagation"
     ],
     "total_lines": 1963
@@ -733,54 +732,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 189,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if ((float)2 < SQRT(fVar19 * fVar19 + fVar24 * fVar24 + fVar25 * fVar25))",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 209,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_20 = SQRT(local_10c.z * local_10c.z +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 216,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(local_14) < (float)0.52359877558333301) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 303,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_30 = SQRT(fVar25 * fVar25 + fVar24 * fVar24);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 318,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 358,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(local_14) < (float)0.52359877558333301) &&",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 375,
+    "complexity_score": 320,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 115,
-    "suspect_count": 25,
+    "suspect_count": 20,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 314
@@ -373,30 +372,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_2c = (int)ROUND(g_VertexNormalArray[iVar3].x);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_28 = (int)ROUND(fVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_24 = (int)ROUND(g_VertexNormalArray[iVar3].z);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 68,
       "match": "(int *)((int)",
@@ -405,28 +380,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*(int *)((int)&local_6c + iVar4) = (int)ROUND(g_VertexNormalArray[iVar3].x) + 0x8000;",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 69,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&local_ac + iVar4) = 0x8000 - (int)ROUND(fVar2);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*(int *)((int)&local_ac + iVar4) = 0x8000 - (int)ROUND(fVar2);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

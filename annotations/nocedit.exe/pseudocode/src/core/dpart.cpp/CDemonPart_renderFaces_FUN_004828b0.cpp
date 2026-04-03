@@ -13,11 +13,7 @@ void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004828b0(CDemonPart *this
   int iVar2;
   SSurfacePlane *plane;
   uint uVar2;
-  SMRGLHeaderPrimitive local_58;
-  int local_40;
-  int local_34;
-  int local_28;
-  int local_1c;
+  SMRGLPrimitiveQuad local_58;
   
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,0);
@@ -36,18 +32,22 @@ void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004828b0(CDemonPart *this
       if (iVar2 != 0) {
         engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
                   (g_CDemonRendererPtr2,-((uVar2 & 0x7f) + 0x80));
-        local_58.surface_normal.A = (plane->plane).A;
-        local_58.surface_normal.B = (plane->plane).B;
-        local_58.surface_normal.C = (plane->plane).C;
-        local_58.surface_normal.D = (plane->plane).D;
+        local_58.base.surface_normal.A = (plane->plane).A;
+        local_58.base.surface_normal.B = (plane->plane).B;
+        local_58.base.surface_normal.C = (plane->plane).C;
+        local_58.base.surface_normal.D = (plane->plane).D;
+        local_58.vertices[0].vertex_index = plane->vertex_index_1;
+        local_58.vertices[1].vertex_index = plane->vertex_index_2;
+        local_58.vertices[2].vertex_index = plane->vertex_index_3;
         if (plane->vertex_index_4 == -1) {
-          local_58.base.count = 3;
+          local_58.base.base.count = 3;
         }
         else {
-          local_58.base.count = 4;
+          local_58.base.base.count = 4;
+          local_58.vertices[3].vertex_index = plane->vertex_index_4;
         }
         core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570960
-                  (g_CDemonSetPtr,&local_58,1);
+                  (g_CDemonSetPtr,&local_58.base,1);
       }
       uVar2 = uVar2 + 1;
       plane = plane + 1;

@@ -13,15 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 745,
-    "complexity_score": 453,
+    "complexity_score": 398,
     "cross_reference_count": 8,
     "function_call_count": 11,
     "global_count": 53,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 303,
-    "suspect_count": 13,
+    "suspect_count": 8,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_ref",
       "warning_inlined_function"
@@ -927,46 +926,6 @@
       "severity": "moderate",
       "text": "piVar2 = (int *)&stack0xfffffe8c;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "piVar2[3] = (int)ROUND(pCVar3->x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "piVar2[4] = (int)ROUND(pCVar3->y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "piVar2[5] = (int)ROUND(pCVar3->z * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 118,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iStack_5c = (int)ROUND(ROUND((float)(this_ptr->camera_count * 10) * g_CGamePtr->delta_time_float",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 118,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iStack_5c = (int)ROUND(ROUND((float)(this_ptr->camera_count * 10) * g_CGamePtr->delta_time_float",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

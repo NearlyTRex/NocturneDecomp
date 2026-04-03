@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 85,
+    "complexity_score": 70,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 55,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_type_propagation"
     ],
     "total_lines": 182
@@ -219,14 +218,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS((this_ptr_00->location).position.y - local_34.y) <= (float)2) &&",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

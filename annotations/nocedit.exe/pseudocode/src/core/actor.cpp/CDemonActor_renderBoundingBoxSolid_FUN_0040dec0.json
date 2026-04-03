@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 181,
+    "complexity_score": 146,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 81,
-    "suspect_count": 9,
+    "suspect_count": 6,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 271
@@ -319,30 +318,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_28.x = (int)ROUND(CStack_34.x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_28.y = (int)ROUND(CStack_34.y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_28.z = (int)ROUND(CStack_34.z * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
     {
       "description": "Complex pointer cast",
       "line": 30,

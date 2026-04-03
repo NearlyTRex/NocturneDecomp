@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 106,
+    "complexity_score": 71,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 71,
-    "suspect_count": 3,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 330
   },
   "cross_references": [
@@ -266,30 +264,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) < 1e-10) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if ((1e-10 < SQRT(dVar5 * dVar5 + dVar6 * dVar6 + dVar4 * dVar4)) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "1e-10 < SQRT(dVar5 * dVar5 + dVar6 * dVar6 + dVar4 * dVar4))) {",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

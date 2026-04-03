@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 439,
-    "complexity_score": 225,
+    "complexity_score": 200,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 185,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_type_propagation"
     ],
     "total_lines": 624
@@ -373,22 +372,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "(SQRT(local_48.z * local_48.z + local_48.x * local_48.x + local_48.y * local_48.y) <",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar2 = SQRT(local_48.z * local_48.z + local_48.x * local_48.x + local_48.y * local_48.y);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

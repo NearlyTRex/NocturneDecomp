@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 353,
-    "complexity_score": 192,
+    "complexity_score": 157,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 142,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "unknown_field"
     ],
     "total_lines": 495
@@ -436,36 +435,12 @@
   },
   "suspects": [
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_90 = SQRT(local_68.z * local_68.z + local_68.x * local_68.x + local_68.y * local_68.y);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 50,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar3 = 0.5f * 1.6018581507970269e-314._0_4_ * (float)0.5;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_90 = SQRT(local_68.z * local_68.z + local_68.x * local_68.x + local_68.y * local_68.y);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_90 = SQRT(local_68.z * local_68.z + local_68.x * local_68.x + local_68.y * local_68.y);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

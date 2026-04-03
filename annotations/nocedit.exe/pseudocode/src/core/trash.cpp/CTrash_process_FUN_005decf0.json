@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 312,
+    "complexity_score": 297,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 272,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 323
@@ -487,14 +486,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 190,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar18 = SQRT(fVar3 * fVar3 + pCVar4->x * pCVar4->x + fVar18 * fVar18) * (float)0.15915494309644401;",
-      "type": "decompiler_intrinsic"
-    },
     {
       "description": "Complex pointer cast",
       "line": 261,

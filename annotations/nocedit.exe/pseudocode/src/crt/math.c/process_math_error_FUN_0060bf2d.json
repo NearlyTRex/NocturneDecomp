@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 312,
+    "complexity_score": 297,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 67,
-    "suspect_count": 22,
+    "suspect_count": 21,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "special_crt_function",
       "unaffected_reg",
@@ -319,14 +318,6 @@
       "severity": "mild",
       "text": "local_3c.resultValue = __BITCAST_DOUBLE(CONCAT44(uVar1,local_3c.resultValue._0_4_));",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "local_3c.resultValue = __BITCAST_DOUBLE(CONCAT44(uVar1,local_3c.resultValue._0_4_));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",

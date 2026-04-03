@@ -79,15 +79,14 @@
   },
   "complexity": {
     "assembly_lines": 791,
-    "complexity_score": 390,
+    "complexity_score": 355,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 37,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 255,
-    "suspect_count": 12,
+    "suspect_count": 9,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "sub84_truncation"
     ],
@@ -821,14 +820,6 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 136,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "(local_340,\"%g,%g,%g\",SUB84(__BITCAST_UINT64((double)local_a8.x),0),",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 153,
       "match": "(uint *)((int)",
@@ -845,28 +836,12 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 156,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "(double)puVar2[4] * 0.00390625,SUB84(__BITCAST_UINT64((double)puVar2[7] * 0.00390625),0),",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 180,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)puVar6[7] * 0.00390625),0),",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 180,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "SUB84(__BITCAST_UINT64((double)puVar6[7] * 0.00390625),0),",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

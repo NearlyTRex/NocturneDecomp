@@ -121,15 +121,14 @@
   },
   "complexity": {
     "assembly_lines": 793,
-    "complexity_score": 1195,
+    "complexity_score": 990,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 53,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 490,
-    "suspect_count": 68,
+    "suspect_count": 48,
     "suspect_types": [
-      "decompiler_intrinsic",
       "extra_output",
       "pointer_cast",
       "unknown_field",
@@ -1020,22 +1019,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar5->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar1) >> 0x20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 100,
       "match": "(SRenderVertex *)((int)",
@@ -1060,22 +1043,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar7->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 125,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 163,
       "match": "._0_4_",
@@ -1090,22 +1057,6 @@
       "severity": "mild",
       "text": "lVar3._4_4_ = (pSVar7->projected_vertex).transformed_y;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 166,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar3);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 168,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar3) >> 0x20);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -1132,22 +1083,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 194,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar9->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar7);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 196,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar7) >> 0x20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 210,
       "match": "extraout_EAX_00",
@@ -1170,22 +1105,6 @@
       "severity": "mild",
       "text": "lVar4._4_4_ = (pSVar7->projected_vertex).transformed_y;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 243,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar4);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 245,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar4) >> 0x20);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -1212,22 +1131,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 271,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar21->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar8);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 273,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar8) >> 0x20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 288,
       "match": "extraout_EAX_02",
@@ -1250,22 +1153,6 @@
       "severity": "mild",
       "text": "lVar5._4_4_ = (pSVar7->projected_vertex).transformed_y;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 319,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar5);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 321,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar5) >> 0x20);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -1292,22 +1179,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 349,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar9);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 351,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar9) >> 0x20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 367,
       "match": "extraout_EAX_04",
@@ -1332,22 +1203,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 398,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar6);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 400,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar6) >> 0x20);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 419,
       "match": "extraout_EAX_05",
@@ -1370,22 +1225,6 @@
       "severity": "mild",
       "text": "lVar10._4_4_ = (pSVar20->projected_vertex).transformed_y;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 429,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(pSVar7->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar10);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 431,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar10) >> 0x20);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

@@ -7,7 +7,7 @@
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   gem_index
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0xa8]:24  SStack_a8
+; SMRGLPrimitiveQuad Stack[-0xa8]:72  SStack_a8
 ; CVector3i        Stack[-0x60]:12  local_60
 ; CVector3i        Stack[-0x54]:12  local_54
 ; float            Stack[-0x48]:4  local_48

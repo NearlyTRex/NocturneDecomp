@@ -25,15 +25,14 @@
   },
   "complexity": {
     "assembly_lines": 580,
-    "complexity_score": 330,
+    "complexity_score": 305,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 275,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "unresolved_funcptr",
       "warning_inlined_function"
     ],
@@ -450,22 +449,6 @@
       "severity": "moderate",
       "text": "(**(code **)((int)local_14 + 0x20))(this_ptr,pCVar4,EVar3);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 190,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_14 = (float)(int)ROUND(ROUND((double)local_b0.damage_amount * 0.20000000000000001));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 190,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_14 = (float)(int)ROUND(ROUND((double)local_b0.damage_amount * 0.20000000000000001));",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

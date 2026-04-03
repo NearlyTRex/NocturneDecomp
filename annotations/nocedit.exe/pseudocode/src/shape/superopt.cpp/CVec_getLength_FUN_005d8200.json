@@ -13,15 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 52,
+    "complexity_score": 27,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 12,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "sub84_truncation"
     ],
     "total_lines": 29
@@ -105,22 +104,6 @@
       "severity": "moderate",
       "text": "local_8 = SUB84(SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_8 = SUB84(SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_8 = SUB84(SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1),0);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

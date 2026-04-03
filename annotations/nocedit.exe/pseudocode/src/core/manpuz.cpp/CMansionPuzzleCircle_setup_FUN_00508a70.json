@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 327,
+    "complexity_score": 272,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 247,
-    "suspect_count": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 260
@@ -352,30 +351,6 @@
   },
   "suspects": [
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar17 = (float10)fcos((float10)0.5235988f * (float10)0.5);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) == 0.0) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 101,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (SQRT(fVar11 * fVar11 + fVar10 * fVar10 + fVar9 * fVar9) == 0.0) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 148,
       "match": "(CMatrix3x4f *)((int)",
@@ -390,22 +365,6 @@
       "severity": "mild",
       "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 197,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar20 = (float10)fcos((float10)0.5235988f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 198,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar18 = (float10)fsin((float10)0.5235988f);",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

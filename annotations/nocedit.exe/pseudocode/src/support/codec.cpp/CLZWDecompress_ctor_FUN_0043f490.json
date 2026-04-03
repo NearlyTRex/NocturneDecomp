@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 56,
+    "complexity_score": 11,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 4,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 29
   },
   "cross_references": [
@@ -147,38 +145,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 10,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(pCVar2)->base.vtable = &g_CLZWDecompressVTable;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(pCVar2)->buffer_size = buffer_size;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(pCVar2)->num_bits = initial_bits;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "return ADJ(pCVar2);",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

@@ -31,15 +31,14 @@
   },
   "complexity": {
     "assembly_lines": 637,
-    "complexity_score": 533,
+    "complexity_score": 428,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 333,
-    "suspect_count": 17,
+    "suspect_count": 7,
     "suspect_types": [
-      "decompiler_intrinsic",
       "stack_param",
       "stack_ref",
       "unknown_type",
@@ -679,92 +678,12 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 99,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar15 = (float10)fsin((float10)-0.52359877558333301);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
-      "match": "fptan",
-      "severity": "mild",
-      "text": "fVar16 = (float10)fptan((float10)0.52359877558333301);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "Var18 = fpatan((float10)local_ec,(float10)local_14 + fVar17);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 104,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar11 = SQRT(local_ec * local_ec + local_e4 * local_e4);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar17 = (float10)fcos((float10)-0.52359877558333301);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar13 = (float10)fsin(Var18);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar14 = (float10)fcos(Var18);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar11 = SQRT((fVar11 * (float)32 * fVar11) / (float)fVar16);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 168,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((float)0.39269908168750001 <= ABS(local_14)) || ((float)12 < fVar11)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 202,
       "match": "in_stack_fffffe18",
       "severity": "moderate",
       "text": "fVar11,in_stack_fffffe18);",
       "type": "stack_param"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 232,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(local_14) < (float)0.39269908168750001) {",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",

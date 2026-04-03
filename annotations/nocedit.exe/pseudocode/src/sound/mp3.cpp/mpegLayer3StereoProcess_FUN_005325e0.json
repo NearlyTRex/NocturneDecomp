@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 1031,
-    "complexity_score": 1281,
+    "complexity_score": 1166,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 20,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 541,
-    "suspect_count": 73,
+    "suspect_count": 62,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 1572
@@ -751,14 +750,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 128,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(pafVar12[0x20][iVar10]) != 0.0) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 142,
       "match": "(int *)((int)",
@@ -807,14 +798,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 164,
-      "match": "fptan",
-      "severity": "mild",
-      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar6 + 2) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 166,
       "match": "(float *)((int)",
@@ -829,14 +812,6 @@
       "severity": "mild",
       "text": "(*(int *)((int)&uStack_57a + iVar6) >> 0x10,",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(local_207c,local_2080)),iVar11,local_2078);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -911,14 +886,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 225,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(input_lr_samples->channels[1].samples[iVar12 / 0x12][iVar12 % 0x12]) != 0.0) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 239,
       "match": "(int *)((int)",
@@ -951,14 +918,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 251,
-      "match": "fptan",
-      "severity": "mild",
-      "text": "fVar14 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar6 + 2) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 253,
       "match": "(float *)((int)",
@@ -973,14 +932,6 @@
       "severity": "mild",
       "text": "(*(int *)((int)&uStack_57a + iVar6) >> 0x10,",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 258,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(local_207c,local_2080)),iVar11,local_2078);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -1071,14 +1022,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 317,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(input_lr_samples->channels[1].samples[iVar12 / 0x12][iVar12 % 0x12]) != 0.0) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 332,
       "match": "(int *)((int)",
@@ -1111,14 +1054,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 344,
-      "match": "fptan",
-      "severity": "mild",
-      "text": "fVar14 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar6 + 2) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 346,
       "match": "(float *)((int)",
@@ -1133,14 +1068,6 @@
       "severity": "mild",
       "text": "(*(int *)((int)&uStack_57a + iVar6) >> 0x10,",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 351,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(local_207c,local_2080)),iVar11,local_2078);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -1271,14 +1198,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 428,
-      "match": "fptan",
-      "severity": "mild",
-      "text": "fVar14 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar6 + 2) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 430,
       "match": "(float *)((int)",
@@ -1293,14 +1212,6 @@
       "severity": "mild",
       "text": "(*(int *)((int)&uStack_57a + iVar6) >> 0x10,",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 435,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(local_207c,local_2080)),iVar11,local_2078);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 43,
+    "complexity_score": 28,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 13,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "special_math_intrinsic"
     ],
     "total_lines": 49
@@ -101,14 +100,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 10,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar1 = SQRT(value);",
-      "type": "decompiler_intrinsic"
-    },
     {
       "address": "0060710c",
       "description": "Math library function with FPU stack or unusual patterns",

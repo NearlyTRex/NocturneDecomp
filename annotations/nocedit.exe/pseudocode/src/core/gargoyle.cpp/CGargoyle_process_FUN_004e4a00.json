@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 878,
-    "complexity_score": 482,
+    "complexity_score": 437,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 422,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_type_propagation"
     ],
     "total_lines": 1300
@@ -525,38 +524,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 125,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_1c = SQRT(local_a4.z * local_a4.z +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 212,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_24 = SQRT(fVar14 * fVar14 + fVar13 * fVar13);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 236,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

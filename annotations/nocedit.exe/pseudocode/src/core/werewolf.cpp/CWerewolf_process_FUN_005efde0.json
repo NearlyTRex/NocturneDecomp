@@ -49,15 +49,14 @@
   },
   "complexity": {
     "assembly_lines": 1402,
-    "complexity_score": 949,
+    "complexity_score": 834,
     "cross_reference_count": 0,
     "function_call_count": 31,
     "global_count": 37,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 714,
-    "suspect_count": 20,
+    "suspect_count": 9,
     "suspect_types": [
-      "decompiler_intrinsic",
       "format_string_mismatch",
       "stack_param",
       "stack_ref",
@@ -1033,22 +1032,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(fVar13 * (float)0.25)),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(fVar13 * (float)0.25)),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 216,
       "match": "&stack0xfffffce0",
@@ -1063,38 +1046,6 @@
       "severity": "moderate",
       "text": "pSVar22 = (SDamageInfo *)&stack0xfffffce0;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 259,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar13 = SQRT(fVar9 * fVar9 + fVar13 * fVar13 + fVar8 * fVar8),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 297,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (SQRT(fVar10 * fVar10 + fVar12 * fVar12 + fVar9 * fVar9) <",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 298,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar11 * fVar11 + fVar13 * fVar13 + fVar8 * fVar8)) goto LAB_005f0ae7;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 318,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (SQRT(fVar9 * fVar9 + fVar13 * fVar13 + fVar8 * fVar8) < (float)5) {",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -1127,46 +1078,6 @@
       "severity": "moderate",
       "text": "(CVector3f *)uVar18,SUB84(uVar18,4),in_stack_fffffcec);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 343,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "(CVector3f *)uVar18,SUB84(uVar18,4),in_stack_fffffcec);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 364,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar13 = SQRT(local_bc.z * local_bc.z +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 379,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(fVar13) < (float)0.39269908168750001) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 585,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar13 = SQRT(fVar9 * fVar9 + fVar13 * fVar13 + fVar8 * fVar8),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 636,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((this_ptr->base).base.turn_speed <= ABS((this_ptr->base).base.turn_angle_accumulator)) {",
-      "type": "decompiler_intrinsic"
     },
     {
       "actual_args": 0,

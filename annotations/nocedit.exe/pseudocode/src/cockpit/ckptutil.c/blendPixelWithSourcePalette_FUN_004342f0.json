@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 166,
+    "complexity_score": 101,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 15,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 61,
-    "suspect_count": 9,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
@@ -316,54 +315,6 @@
       "severity": "mild",
       "text": "uVar1 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3 + 1] * fVar2 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3 + 1] * fVar2 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3 + 2] * fVar2 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3 + 2] * fVar2 +",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

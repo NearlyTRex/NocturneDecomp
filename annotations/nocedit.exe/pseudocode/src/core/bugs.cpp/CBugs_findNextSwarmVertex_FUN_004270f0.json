@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 205,
-    "complexity_score": 128,
+    "complexity_score": 113,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 83,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array"
     ],
@@ -283,14 +282,6 @@
       "severity": "mild",
       "text": "*(int *)((int)local_68 + iVar3) = iVar2;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT((float)(iVar6 * iVar6 +",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

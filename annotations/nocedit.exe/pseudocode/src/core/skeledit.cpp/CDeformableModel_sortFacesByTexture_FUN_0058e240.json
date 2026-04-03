@@ -19,15 +19,14 @@
   },
   "complexity": {
     "assembly_lines": 211,
-    "complexity_score": 154,
+    "complexity_score": 139,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 94,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 305
@@ -300,14 +299,6 @@
       "severity": "mild",
       "text": "uVar1 = *(ushort *)((int)puVar13 + 10);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "puVar3[2] = CONCAT22(uVar1,uStack_44);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

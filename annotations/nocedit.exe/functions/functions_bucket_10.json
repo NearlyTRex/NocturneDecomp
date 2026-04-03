@@ -57991,6 +57991,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990",
     "ret":"void",
@@ -58064,17 +58065,17 @@
           "name":"SStack_60",
           "storage":{
             "offset":-96,
-            "size":24,
+            "size":72,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x60]",
                 "offset":-96,
-                "size":24
+                "size":72
               }
             ]
           },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuad"
         },
         {
           "name":"pCVar1",
@@ -95106,7 +95107,7 @@
     "vars":{
       "locals":[
         {
-          "name":"iStack_8",
+          "name":"local_8",
           "storage":{
             "offset":-8,
             "size":4,
@@ -95122,7 +95123,7 @@
           "type":"int"
         },
         {
-          "name":"iStack_c",
+          "name":"local_c",
           "storage":{
             "offset":-12,
             "size":4,
@@ -95138,7 +95139,7 @@
           "type":"int"
         },
         {
-          "name":"iStack_10",
+          "name":"local_10",
           "storage":{
             "offset":-16,
             "size":4,
@@ -95154,7 +95155,7 @@
           "type":"int"
         },
         {
-          "name":"iStack_14",
+          "name":"local_14",
           "storage":{
             "offset":-20,
             "size":4,
@@ -95170,7 +95171,7 @@
           "type":"int"
         },
         {
-          "name":"iStack_18",
+          "name":"local_18",
           "storage":{
             "offset":-24,
             "size":4,
@@ -95186,7 +95187,7 @@
           "type":"int"
         },
         {
-          "name":"iStack_1c",
+          "name":"local_1c",
           "storage":{
             "offset":-28,
             "size":4,
@@ -95202,7 +95203,7 @@
           "type":"int"
         },
         {
-          "name":"iStack_20",
+          "name":"local_20",
           "storage":{
             "offset":-32,
             "size":4,
@@ -95218,7 +95219,7 @@
           "type":"int"
         },
         {
-          "name":"iStack_24",
+          "name":"local_24",
           "storage":{
             "offset":-36,
             "size":4,
@@ -95234,7 +95235,7 @@
           "type":"int"
         },
         {
-          "name":"pUStack_28",
+          "name":"local_28",
           "storage":{
             "offset":-40,
             "size":4,
@@ -95250,7 +95251,7 @@
           "type":"UOrientationVector*"
         },
         {
-          "name":"pfStack_2c",
+          "name":"local_2c",
           "storage":{
             "offset":-44,
             "size":4,
@@ -95266,7 +95267,7 @@
           "type":"float*"
         },
         {
-          "name":"pcStack_30",
+          "name":"local_30",
           "storage":{
             "offset":-48,
             "size":4,
@@ -95282,7 +95283,7 @@
           "type":"char*"
         },
         {
-          "name":"iStack_3c",
+          "name":"local_3c",
           "storage":{
             "offset":-60,
             "size":4,
@@ -95298,7 +95299,7 @@
           "type":"int"
         },
         {
-          "name":"CStack_48",
+          "name":"local_48",
           "storage":{
             "offset":-72,
             "size":12,
@@ -95314,7 +95315,7 @@
           "type":"CVector3i"
         },
         {
-          "name":"iStack_4c",
+          "name":"local_4c",
           "storage":{
             "offset":-76,
             "size":4,
@@ -95330,7 +95331,7 @@
           "type":"int"
         },
         {
-          "name":"iStack_50",
+          "name":"local_50",
           "storage":{
             "offset":-80,
             "size":4,
@@ -95346,23 +95347,7 @@
           "type":"int"
         },
         {
-          "name":"auStack_60",
-          "storage":{
-            "offset":-96,
-            "size":16,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x60]",
-                "offset":-96,
-                "size":16
-              }
-            ]
-          },
-          "type":"undefined1[16]"
-        },
-        {
-          "name":"CStack_6c",
+          "name":"local_6c",
           "storage":{
             "offset":-108,
             "size":12,
@@ -95378,7 +95363,7 @@
           "type":"CVector3i"
         },
         {
-          "name":"CStack_78",
+          "name":"local_78",
           "storage":{
             "offset":-120,
             "size":12,
@@ -95394,7 +95379,7 @@
           "type":"CVector3i"
         },
         {
-          "name":"CStack_84",
+          "name":"local_84",
           "storage":{
             "offset":-132,
             "size":12,
@@ -95410,7 +95395,7 @@
           "type":"CVector3i"
         },
         {
-          "name":"fStack_88",
+          "name":"local_88",
           "storage":{
             "offset":-136,
             "size":4,
@@ -95426,7 +95411,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_8c",
+          "name":"local_8c",
           "storage":{
             "offset":-140,
             "size":4,
@@ -95442,7 +95427,7 @@
           "type":"float"
         },
         {
-          "name":"fStack_90",
+          "name":"local_90",
           "storage":{
             "offset":-144,
             "size":4,
@@ -95458,7 +95443,7 @@
           "type":"float"
         },
         {
-          "name":"CStack_9c",
+          "name":"local_9c",
           "storage":{
             "offset":-156,
             "size":12,
@@ -95490,52 +95475,20 @@
           "type":"CBoundingBox3D"
         },
         {
-          "name":"iStack_c0",
+          "name":"local_e4",
           "storage":{
-            "offset":-192,
-            "size":4,
+            "offset":-228,
+            "size":40,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[-0xc0]",
-                "offset":-192,
-                "size":4
+                "addr":"Stack[-0xe4]",
+                "offset":-228,
+                "size":40
               }
             ]
           },
-          "type":"int"
-        },
-        {
-          "name":"iStack_c4",
-          "storage":{
-            "offset":-196,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xc4]",
-                "offset":-196,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"SStack_dc",
-          "storage":{
-            "offset":-220,
-            "size":24,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xdc]",
-                "offset":-220,
-                "size":24
-              }
-            ]
-          },
-          "type":"SMRGLHeaderPrimitive"
+          "type":"SMRGLPrimitiveQuadIndex"
         }
       ],
       "params":[

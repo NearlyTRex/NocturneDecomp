@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 77,
+    "complexity_score": 62,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 27,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 71
@@ -174,14 +173,6 @@
       "severity": "mild",
       "text": "(float10)*(double *)((int)g_VirtualSpeakerZPositions + iVar2);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "pCVar1->distance_to_speakers[0] = (float)SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

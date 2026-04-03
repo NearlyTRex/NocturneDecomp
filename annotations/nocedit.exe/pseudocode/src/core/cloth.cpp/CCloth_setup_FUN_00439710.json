@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 716,
-    "complexity_score": 474,
+    "complexity_score": 439,
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 354,
-    "suspect_count": 11,
+    "suspect_count": 8,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 1070
@@ -732,30 +731,6 @@
       "severity": "mild",
       "text": "piVar12 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar10);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 202,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*piVar12 = (int)ROUND((pSVar18->position).x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 203,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "piVar12[1] = (int)ROUND((pSVar18->position).y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 204,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "piVar12[2] = (int)ROUND((pSVar18->position).z * 256.0f);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

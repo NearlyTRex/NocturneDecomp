@@ -73,15 +73,14 @@
   },
   "complexity": {
     "assembly_lines": 1087,
-    "complexity_score": 1483,
+    "complexity_score": 1188,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 448,
-    "suspect_count": 101,
+    "suspect_count": 72,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
       "sub84_truncation",
@@ -771,14 +770,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 140,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if ((pCVar10->position).x <= __BITCAST_DOUBLE(CONCAT44(uVar12,local_278))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 142,
       "match": "(uint *)((int)",
@@ -795,28 +786,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 156,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar9 = __BITCAST_DOUBLE(CONCAT44(uVar12,local_270)) + -0.0001;",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 166,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).y + 4),local_2b8))) {",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 166,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).y + 4),local_2b8))) {",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -835,28 +810,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 182,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar10 = __BITCAST_DOUBLE(CONCAT44(uVar12,local_250)) + -0.0001;",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 192,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).z + 4),local_288))) {",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 192,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).z + 4),local_288))) {",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -875,28 +834,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 208,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar11 = __BITCAST_DOUBLE(CONCAT44(uVar12,local_228)) + -0.0001;",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 217,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).x + 4),local_290)) <=",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 217,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).x + 4),local_290)) <=",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -915,28 +858,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 234,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar12 = __BITCAST_DOUBLE(CONCAT44(uVar12,local_260)) + 0.0001;",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 243,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).y + 4),local_2c8)) <=",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 243,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).y + 4),local_2c8)) <=",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -955,28 +882,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 260,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar13 = __BITCAST_DOUBLE(CONCAT44(uVar12,local_2b0)) + 0.0001;",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 269,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).z + 4),local_2a8)) <=",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 269,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(*(uint *)((int)&(pCVar15->position).z + 4),local_2a8)) <=",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -993,14 +904,6 @@
       "severity": "mild",
       "text": "uVar12 = *(uint *)((int)&(pCVar11->position).z + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 286,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar14 = __BITCAST_DOUBLE(CONCAT44(uVar12,local_268)) + 0.0001;",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -1267,38 +1170,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 391,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(uStack_128,local_12c)) -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 392,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_110,local_114));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 393,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar6 = __BITCAST_DOUBLE(CONCAT44(uStack_120,local_124)) -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 394,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_108,local_10c));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 395,
       "match": "(float *)((int)",
@@ -1307,108 +1178,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 396,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar5 = __BITCAST_DOUBLE(CONCAT44(uStack_118,local_11c)) -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 397,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_100,local_104));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 398,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)source->uv_coords + local_30 * 4 + -0xc) = uVar15;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 399,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar2 = local_fc.x - __BITCAST_DOUBLE(CONCAT44(uStack_110,local_114));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 400,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar3 = local_fc.y - __BITCAST_DOUBLE(CONCAT44(uStack_108,local_10c));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 401,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar4 = local_fc.z - __BITCAST_DOUBLE(CONCAT44(uStack_100,local_104));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 402,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar7 = __BITCAST_DOUBLE(CONCAT44(uStack_2bc,uVar12));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 403,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar9 = SQRT(dVar4 * dVar4 + dVar3 * dVar3 + dVar2 * dVar2) /",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 404,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(dVar5 * dVar5 + dVar6 * dVar6 + dVar1 * dVar1);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 405,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar10 = __BITCAST_DOUBLE(CONCAT44(uStack_234,local_238)) +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 406,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "(__BITCAST_DOUBLE(CONCAT44(uStack_22c,local_230)) -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 407,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_234,local_238))) * dVar9;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 408,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar9 = dVar7 + (__BITCAST_DOUBLE(CONCAT44(uVar13,local_248)) - dVar7) * dVar9;",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
@@ -1425,14 +1200,6 @@
       "severity": "moderate",
       "text": "local_9c._0_4_ = SUB84(__BITCAST_UINT64(dVar9),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 411,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_9c._0_4_ = SUB84(__BITCAST_UINT64(dVar9),0);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",

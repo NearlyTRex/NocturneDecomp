@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 67,
+    "complexity_score": 42,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "param_count_too_few",
       "warning_inlined_function"
     ],
@@ -149,22 +148,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_8 = (DWORD)(longlong)ROUND(ROUND(timeout_seconds * 1000));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_8 = (DWORD)(longlong)ROUND(ROUND(timeout_seconds * 1000));",
-      "type": "decompiler_intrinsic"
     },
     {
       "call_site_count": 1,

@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 350,
+    "complexity_score": 265,
     "cross_reference_count": 5,
     "function_call_count": 16,
     "global_count": 35,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 125,
-    "suspect_count": 20,
+    "suspect_count": 12,
     "suspect_types": [
-      "decompiler_intrinsic",
       "mmx_assembly",
       "pointer_cast",
       "suspect_float",
@@ -640,22 +639,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5))),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5))),",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(float *)((int)",
@@ -678,54 +661,6 @@
       "severity": "mild",
       "text": "local_5c.x = 7.588293e-39;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "g_CDemonSetPtr->ambient_base_quick = (int)ROUND(ROUND(dVar1));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "g_CDemonSetPtr->ambient_base_quick = (int)ROUND(ROUND(dVar1));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "uVar7 = paddusb(*puVar6,CONCAT44(g_Hardware32BitPalette",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 109,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "uVar7 = paddusb(uVar7,CONCAT44(g_Hardware32BitPalette",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 122,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_1c = (int)ROUND(ROUND(g_MoonAnimationTimer));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 122,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_1c = (int)ROUND(ROUND(g_MoonAnimationTimer));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "MMX/SIMD assembly - may not decompile to clean C code",

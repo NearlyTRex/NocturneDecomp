@@ -121,15 +121,14 @@
   },
   "complexity": {
     "assembly_lines": 3400,
-    "complexity_score": 2383,
+    "complexity_score": 2238,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 125,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 1443,
-    "suspect_count": 92,
+    "suspect_count": 78,
     "suspect_types": [
-      "decompiler_intrinsic",
       "negative_offset",
       "pointer_cast",
       "warning_inlined_function"
@@ -2545,44 +2544,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 447,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND((double)*(float *)(local_190 + iVar20 + -4) * dVar7));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 447,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND((double)*(float *)(local_190 + iVar20 + -4) * dVar7));",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 448,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pvVar17 + 0x1c) = local_18;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 449,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND((double)*(float *)(local_1fc + iVar20 + -4) * dVar7));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 449,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND((double)*(float *)(local_1fc + iVar20 + -4) * dVar7));",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -2657,30 +2624,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 525,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((((float)0.02 < ABS(local_224)) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 526,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "((float)0.02 < ABS(local_220))) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 527,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "((float)0.02 < ABS(local_21c))) break;",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 528,
       "match": "(void *)((int)",
@@ -2753,28 +2696,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 660,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar14 = SQRT(fVar8 * fVar8 + fVar15 * fVar15 + fVar16 * fVar16);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 679,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "pvVar35 = (void *)((int)pvVar35 + 0x3c);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 703,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar6 = SQRT(fVar8 * fVar8 + fVar15 * fVar15 + fVar16 * fVar16);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -2839,30 +2766,6 @@
       "severity": "mild",
       "text": "pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x18);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 794,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((((float)0.20000000000000001 < ABS(local_20c)) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 795,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "((float)0.20000000000000001 < ABS(local_208))) ||",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 796,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "((float)0.20000000000000001 < ABS(local_204))) break;",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -2961,14 +2864,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 945,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "puVar34[2] = CONCAT22(uVar1,uStack_2d8);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 1022,
       "match": "(short *)((int)",
@@ -2999,14 +2894,6 @@
       "severity": "mild",
       "text": "uVar1 = *(ushort *)((int)puVar23 + 10);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 1110,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "puVar34[2] = CONCAT22(uVar1,uStack_2ec);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

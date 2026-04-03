@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 103,
+    "complexity_score": 68,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 10,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 68,
-    "suspect_count": 3,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 232
   },
   "cross_references": [],
@@ -200,32 +198,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_14.x = (int)ROUND((this_ptr->base).location.position.x * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_14.y = (int)ROUND((this_ptr->base).location.position.y * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "CStack_14.z = (int)ROUND((this_ptr->base).location.position.z * 256.0f);",
-      "type": "decompiler_intrinsic"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

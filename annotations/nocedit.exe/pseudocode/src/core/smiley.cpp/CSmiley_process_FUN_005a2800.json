@@ -49,15 +49,14 @@
   },
   "complexity": {
     "assembly_lines": 847,
-    "complexity_score": 467,
+    "complexity_score": 432,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 392,
-    "suspect_count": 6,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
@@ -621,30 +620,6 @@
       "severity": "moderate",
       "text": "(**(code **)(iRam00000154 + 0x104))(0);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 167,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_20 = SQRT(local_58.z * local_58.z +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 174,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(local_14) < (float)0.52359877558333301) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 223,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar9 * fVar9 + fVar15 * fVar15 + fVar8 * fVar8) < local_1c + 1.0)) &&",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

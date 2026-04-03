@@ -13,16 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 640,
-    "complexity_score": 279,
+    "complexity_score": 254,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 68,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 254,
-    "suspect_count": 2,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 894
   },
   "cross_references": [
@@ -838,22 +836,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 71,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "(local_138 = SQRT(g_CWaterPtr->visible_area_sqft) * (float)0.027777777777777801 +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 192,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((float)510 < ABS(g_TrainNoiseArray[iVar6].position.z)) {",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }

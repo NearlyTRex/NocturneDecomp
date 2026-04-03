@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 97,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 42,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
@@ -210,22 +209,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(longlong)(int)ROUND(ROUND(morph_t * (float)65535 * (2.0f - morph_t)))",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(longlong)(int)ROUND(ROUND(morph_t * (float)65535 * (2.0f - morph_t)))",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

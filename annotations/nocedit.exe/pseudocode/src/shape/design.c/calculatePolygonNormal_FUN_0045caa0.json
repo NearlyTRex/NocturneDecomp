@@ -13,15 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 75,
+    "complexity_score": 60,
     "cross_reference_count": 10,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 45,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "unknown_field"
     ],
     "total_lines": 173
@@ -296,14 +295,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_28 = SQRT(dVar2 * dVar2 + dVar1 * dVar1 + dVar10 * dVar10);",
-      "type": "decompiler_intrinsic"
-    },
     {
       "description": "Unknown/mangled field access",
       "line": 35,

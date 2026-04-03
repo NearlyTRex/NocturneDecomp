@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 214,
+    "complexity_score": 199,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 114,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 375
@@ -368,14 +367,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar1 = 1.0 / SQRT(dVar4 * dVar4 + dVar3 * dVar3 + dVar2 * dVar2);",
-      "type": "decompiler_intrinsic"
-    },
     {
       "description": "Complex pointer cast",
       "line": 84,

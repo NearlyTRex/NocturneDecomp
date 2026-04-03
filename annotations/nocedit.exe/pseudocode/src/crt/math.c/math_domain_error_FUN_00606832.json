@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 137,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 7,
+    "suspect_count": 5,
     "suspect_types": [
-      "decompiler_intrinsic",
       "special_crt_function",
       "sub84_truncation",
       "unknown_field"
@@ -157,14 +156,6 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_10._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 45,
       "match": "._4_4_",
@@ -179,14 +170,6 @@
       "severity": "mild",
       "text": "local_14 = local_10._4_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "local_10 = __BITCAST_DOUBLE(CONCAT44(local_14,local_18));",
-      "type": "decompiler_intrinsic"
     },
     {
       "address": "00606832",

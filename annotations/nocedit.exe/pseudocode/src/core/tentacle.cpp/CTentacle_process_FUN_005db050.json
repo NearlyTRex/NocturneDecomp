@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 732,
-    "complexity_score": 308,
+    "complexity_score": 273,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 258,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_type_propagation"
     ],
     "total_lines": 990
@@ -539,30 +538,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(CStack_a0.y - (pCVar4->base).location.position.y) <= (float)6) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 209,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar5 = SQRT(fVar3 * fVar3 + fVar2 * fVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 211,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS((this_ptr->base).base.base.location.position.y -",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

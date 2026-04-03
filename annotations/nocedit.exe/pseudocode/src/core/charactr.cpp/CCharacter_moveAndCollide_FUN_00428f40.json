@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 663,
-    "complexity_score": 382,
+    "complexity_score": 347,
     "cross_reference_count": 36,
     "function_call_count": 7,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 292,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
       "unknown_field"
@@ -885,22 +884,6 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((((ABS(velocity->z) == 0.0) && (ABS(velocity->x) == 0.0)) && (velocity->y <= 0.0)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((((ABS(velocity->z) == 0.0) && (ABS(velocity->x) == 0.0)) && (velocity->y <= 0.0)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 102,
       "match": "._8_4_",
@@ -923,14 +906,6 @@
       "severity": "mild",
       "text": "if (-1 < (int)\"noCollision\"._8_4_) {",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 233,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar12 = SQRT(afStack_80[4] * afStack_80[4] + afStack_80[2] * afStack_80[2]);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

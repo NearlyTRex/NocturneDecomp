@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 541,
-    "complexity_score": 298,
+    "complexity_score": 263,
     "cross_reference_count": 4,
     "function_call_count": 12,
     "global_count": 44,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 228,
-    "suspect_count": 6,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "sub84_truncation"
     ],
     "total_lines": 769
@@ -695,14 +694,6 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 129,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_478 = SUB84(__BITCAST_UINT64((double)fVar1),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 154,
       "match": "SUB84(",
@@ -711,28 +702,12 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 154,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_470 = SUB84(__BITCAST_UINT64(dVar3),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 182,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_480 = SUB84(__BITCAST_UINT64((double)local_468),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 182,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_480 = SUB84(__BITCAST_UINT64((double)local_468),0);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

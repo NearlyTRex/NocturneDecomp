@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 60,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 20,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_inlined_function"
     ],
     "total_lines": 92
@@ -162,22 +161,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iVar1 = (int)ROUND(ROUND((float)((x2 - x1) + 1) * fill_percent));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iVar1 = (int)ROUND(ROUND((float)((x2 - x1) + 1) * fill_percent));",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

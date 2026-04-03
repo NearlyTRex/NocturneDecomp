@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 71,
+    "complexity_score": 56,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 25,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 41,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 134
@@ -242,14 +241,6 @@
       "severity": "mild",
       "text": "*(ushort *)((int)g_ColorTable16 + iVar7) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "return CONCAT44(g_GreenBitCount.dword,g_GreenBitCount.dword + g_BlueBitCount.dword);",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

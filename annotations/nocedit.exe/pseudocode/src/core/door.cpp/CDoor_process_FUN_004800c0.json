@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 573,
-    "complexity_score": 269,
+    "complexity_score": 224,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 194,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "unresolved_funcptr"
     ],
@@ -380,38 +379,6 @@
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x34))(iVar1,&SStack_d0);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 166,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar6 = SQRT(fVar5 - (local_a8.max.x - aCStack_6c[0].x) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 172,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar6 = SQRT(fVar5 - (local_a8.min.x - aCStack_6c[0].x) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 178,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar6 = SQRT(fVar5 - (local_a8.max.z - aCStack_6c[0].z) *",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 184,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar5 = SQRT(fVar5 - (local_a8.min.z - aCStack_6c[0].z) *",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

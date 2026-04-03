@@ -13,15 +13,14 @@
   },
   "complexity": {
     "assembly_lines": 854,
-    "complexity_score": 372,
+    "complexity_score": 337,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 307,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "warning_type_propagation"
     ],
@@ -439,30 +438,6 @@
       "severity": "mild",
       "text": "iVar3 = *(int *)((int)g_CDemonSetPtr->actors + iStack_24);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 284,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((float)10 < ABS(fStack_40)) || ((float)10 < ABS(fStack_38)))",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 284,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((float)10 < ABS(fStack_40)) || ((float)10 < ABS(fStack_38)))",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 295,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "(fVar2 = SQRT(fVar2), fVar2 <= 0.0)))) goto LAB_0054d4f3;",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

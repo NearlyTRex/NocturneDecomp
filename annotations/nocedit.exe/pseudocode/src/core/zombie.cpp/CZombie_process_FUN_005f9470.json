@@ -115,15 +115,14 @@
   },
   "complexity": {
     "assembly_lines": 2463,
-    "complexity_score": 1221,
+    "complexity_score": 1076,
     "cross_reference_count": 0,
     "function_call_count": 48,
     "global_count": 72,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1031,
-    "suspect_count": 17,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
       "warning_inlined_function",
       "warning_type_propagation",
       "warning_unreachable"
@@ -1901,118 +1900,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 205,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (SQRT(local_198 * local_198 + local_1a0 * local_1a0) <= 1.0) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 249,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if ((float)1.5 < SQRT(fVar26 * fVar26 + fVar25 * fVar25)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 271,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_80 = (int)ROUND(ROUND(local_98 * 2.5 * 0.25));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 271,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_80 = (int)ROUND(ROUND(local_98 * 2.5 * 0.25));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 347,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_2c = SQRT(local_1e8.z * local_1e8.z +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 587,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (SQRT(local_1a4 * local_1a4 + local_1ac * local_1ac + local_1a8 * local_1a8) <",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 594,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((ABS(pCVar11->y) < (float)0.261799387791667) && (-1 < iVar6)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 737,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(local_1b4) <= (float)10) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 739,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(local_1b0 * local_1b0 + local_1b8 * local_1b8) <=",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 766,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fVar26 * fVar26 + fVar25 * fVar25) <= (float)3)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 767,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS((this_ptr->base).base.base.location.position.y -",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 821,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar21 = (float10)fcos((float10)local_78);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 822,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar22 = (float10)fsin((float10)local_78);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 959,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (ABS(pCVar11->y) < (float)0.34906585038888899) {",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

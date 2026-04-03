@@ -7,7 +7,7 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   use_palette_coloring
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x60]:24  SStack_60
+; SMRGLPrimitiveQuad Stack[-0x60]:72  SStack_60
 ; int              Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;

@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 454,
-    "complexity_score": 763,
+    "complexity_score": 668,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 55,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 273,
-    "suspect_count": 48,
+    "suspect_count": 39,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast"
     ],
     "total_lines": 727
@@ -567,28 +566,12 @@
   },
   "suspects": [
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "*(double *)((int)g_Mp3WindowTables[0] + iVar16) = (double)fVar14;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar21 = (float10)fsin(((float10)iVar15 + fVar20) * fVar19);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -613,14 +596,6 @@
       "severity": "mild",
       "text": "*(uint *)((int)g_Mp3WindowTables[1] + iVar16) = 0;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar15 = (float10)fsin(((float10)iVar15 + fVar21 + fVar20) * fVar19);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -663,14 +638,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar22 = (float10)fsin(((float10)iVar15 + fVar21 + fVar20) * fVar19);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 109,
       "match": "(double *)((int)",
@@ -695,28 +662,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar21 = (float10)fsin(((float10)iVar15 + fVar20) * fVar19);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 126,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "*(double *)((int)g_Mp3WindowTables[3] + iVar16) = (double)fVar21;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar21 = (float10)fsin(((float10)iVar15 + fVar20) * fVar19);",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
@@ -743,14 +694,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 153,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar20 = (float10)fcos((float10)iVar8 * (float10)(iVar11 + 6) * fVar19);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 155,
       "match": "(double *)((int)",
@@ -759,28 +702,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 169,
-      "match": "fcos",
-      "severity": "mild",
-      "text": "fVar20 = (float10)fcos((float10)(iVar15 % 0x90) * fVar19);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 172,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "*(double *)((int)g_Mp3PolyCoefficients[0] + iVar16) = (double)fVar20;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 185,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((float)1.0000000000000001e-05 < ABS(input_samples[iVar16])) {",
-      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",

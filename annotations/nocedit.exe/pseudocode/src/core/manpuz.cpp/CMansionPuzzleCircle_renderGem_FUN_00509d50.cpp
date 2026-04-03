@@ -16,7 +16,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansio
   int iVar3;
   int iVar4;
   SGem *pSVar4;
-  SMRGLHeaderPrimitive SStack_a8;
+  SMRGLPrimitiveQuad SStack_a8;
   CVector3i local_60;
   CVector3i local_54;
   float local_48;
@@ -77,7 +77,19 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansio
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_30);
     this_ptr_00 = g_CDemonRendererPtr2;
-    SStack_a8.base.count = 4;
+    SStack_a8.base.base.count = 4;
+    SStack_a8.vertices[0].vertex_index = 0;
+    SStack_a8.vertices[0].texture_u = 0;
+    SStack_a8.vertices[0].texture_v = 0;
+    SStack_a8.vertices[1].vertex_index = 1;
+    SStack_a8.vertices[1].texture_v = 0;
+    SStack_a8.vertices[2].vertex_index = 2;
+    SStack_a8.vertices[3].texture_u = 0;
+    SStack_a8.vertices[1].texture_u = 0x1000000;
+    SStack_a8.vertices[2].texture_u = 0x1000000;
+    SStack_a8.vertices[2].texture_v = 0x1000000;
+    SStack_a8.vertices[3].texture_v = 0x1000000;
+    SStack_a8.vertices[3].vertex_index = 3;
     fVar1 = (pSVar4->hum_color).g * 256.0f;
     fVar2 = (pSVar4->hum_color).b * 256.0f;
     iVar4 = (int)ROUND(ROUND((pSVar4->hum_color).r * 256.0f));
@@ -104,7 +116,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansio
     engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,0);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0
-              (g_CDemonRendererPtr2,&SStack_a8);
+              (g_CDemonRendererPtr2,&SStack_a8.base);
     engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   }

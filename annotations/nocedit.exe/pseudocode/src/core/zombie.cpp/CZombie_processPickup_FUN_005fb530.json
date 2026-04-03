@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 606,
-    "complexity_score": 317,
+    "complexity_score": 292,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 262,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "warning_type_propagation"
     ],
@@ -399,28 +398,12 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar3 = SQRT(fStack_84 * fStack_84 + fStack_8c * fStack_8c + fStack_88 * fStack_88);",
-      "type": "decompiler_intrinsic"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 106,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)aiStack_138 + iVar10) = iStack_28;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 142,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fStack_168 = (float)5 - SQRT(fVar4 * fVar4 + fVar3 * fVar3) * (float)0.33333333333333298",
-      "type": "decompiler_intrinsic"
     }
   ]
 }

@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 651,
-    "complexity_score": 340,
+    "complexity_score": 315,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 285,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "unresolved_funcptr"
     ],
@@ -555,22 +554,6 @@
       "severity": "moderate",
       "text": "iVar7 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x34))(iVar2,pSVar11);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 147,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if ((float)0.10000000000000001 < SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar1 * fVar1)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "SQRT(fStack_b0 * fStack_b0 + fStack_b8 * fStack_b8 + fStack_b4 * fStack_b4)) {",
-      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

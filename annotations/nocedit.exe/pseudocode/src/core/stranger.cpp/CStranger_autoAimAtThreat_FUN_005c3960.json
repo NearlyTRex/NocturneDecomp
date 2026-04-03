@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 707,
-    "complexity_score": 314,
+    "complexity_score": 269,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 21,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 269,
-    "suspect_count": 4,
-    "suspect_types": [
-      "decompiler_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 976
   },
   "cross_references": [
@@ -594,38 +592,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 203,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((ABS(aCStack_f4[0].x) <= fStack_1a8) && (local_30 <= aCStack_f4[0].y)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 205,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "fVar3 = SQRT(CStack_b8.z * CStack_b8.z +",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 266,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS(local_24->target_yaw - fStack_38) < (float)0.01)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 267,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS(local_24->target_pitch - fStack_34) < (float)0.01)) {",
-      "type": "decompiler_intrinsic"
-    }
-  ]
+  "suspects": []
 }
