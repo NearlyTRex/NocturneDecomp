@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        207 ( 3.2%)
+  Functions with type issues:        206 ( 3.2%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          2
-    Undefined types in variables:      194
+    Undefined types in variables:      193
     Unresolved stack params:           15
 
-  Excluded (.keep / MMX / by-value):   32 functions
+  Excluded (.keep / MMX / by-value):   33 functions
     Wrong calling convention:          1
-    Undefined types in variables:      27
+    Undefined types in variables:      28
     Unresolved stack params:           6
 
 ====================================================================================================
@@ -179,7 +179,7 @@ Unresolved stack parameters (missing from signature) (15)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (194)
+Undefined types in variables (193)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -797,11 +797,6 @@ Undefined types in variables (194)
     Locals:  local_2b4 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  CGame_processFrame
-    Address: 0x004da100  File: core/game.cpp
-    Locals:  auStackY_107c (undefined4[646])
-    Suggested: Resolve undefined types to concrete types
-
   CGame_rollCredits
     Address: 0x004e4010  File: core/game.cpp
     Locals:  local_1134 (undefined4[1024])
@@ -1233,7 +1228,7 @@ Unresolved stack params - by-value struct passing (4)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (24)
+Undefined types - .keep overrides (25)
 --------------------------------------------------------------------------------
 
   closestPointOnSegment3D
@@ -1349,6 +1344,11 @@ Undefined types - .keep overrides (24)
   CKeyFramedModel_exportToS3D
     Address: 0x00479f30  File: core/dmodel.cpp
     Locals:  local_34 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CGame_processFrame
+    Address: 0x004da100  File: core/game.cpp
+    Locals:  auStackY_107c (undefined4[646])
     Suggested: Resolve undefined types to concrete types
 
   CDemonSet_showCameraEditor

@@ -304,7 +304,8 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
                          existing_replacements=None, stack_patterns=None, param_estimates=None,
                          vtable_info=None, existing_pcode_overrides=None, resolved_suspects=None,
                          is_ebp_frame=False, existing_proto_overrides=None,
-                         existing_decompiler_fixes=None, compilation_status=None):
+                         existing_decompiler_fixes=None, compilation_status=None,
+                         chunked=False):
     """Create function metadata JSON.
 
     Args:
@@ -331,6 +332,7 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
         existing_proto_overrides: Optional list of proto overrides to preserve
         existing_decompiler_fixes: Optional list of decompiler fixes to preserve
         compilation_status: Optional compilation verification status dict
+        chunked: Whether chunk transform is enabled for this function
 
     Returns:
         Dictionary for JSON serialization
@@ -390,6 +392,9 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
     # Include compilation verification status if available
     if compilation_status:
         function_json["compilation_status"] = compilation_status
+    # Preserve chunked flag if enabled
+    if chunked:
+        function_json["chunked"] = True
     return function_json
 
 
@@ -403,7 +408,9 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
                                      is_ebp_frame=False, existing_proto_overrides=None,
                                      existing_decompiler_fixes=None, compilation_status=None,
                                      mmx_decompiled_code=None,
-                                     byval_decompiled_code=None):
+                                     byval_decompiled_code=None,
+                                     chunked_decompiled_code=None,
+                                     chunked=False):
     """Generate file contents for a function without writing to disk.
 
     Args:
@@ -439,6 +446,10 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         byval_decompiled_code: Optional by-value struct passing inline asm version.
             When provided, generates an additional .byval.cpp/.byval.c file alongside
             the regular .cpp.
+        chunked_decompiled_code: Optional chunked version that splits the function
+            into a context struct + static helper functions. When provided, generates
+            an additional .chunked.cpp/.chunked.c file alongside the regular .cpp.
+        chunked: Whether chunk transform is enabled (preserved in JSON).
 
     Returns:
         Dictionary with paths and contents: {cpp_path, cpp_content, asm_path, asm_content,
@@ -465,6 +476,9 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
     # Determine .byval path if by-value struct passing content is provided
     byval_ext = '.byval.cpp' if source_filename.endswith('.cpp') else '.byval.c'
     byval_cpp_path = os.path.join(output_base_path, base_name + byval_ext) if byval_decompiled_code else None
+    # Determine .chunked path if chunked content is provided
+    chunked_ext = '.chunked.cpp' if source_filename.endswith('.cpp') else '.chunked.c'
+    chunked_cpp_path = os.path.join(output_base_path, base_name + chunked_ext) if chunked_decompiled_code else None
     result = {
         'cpp_path': cpp_path,
         'cpp_content': None,
@@ -477,7 +491,9 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         'mmx_cpp_path': mmx_cpp_path,
         'mmx_cpp_content': None,
         'byval_cpp_path': byval_cpp_path,
-        'byval_cpp_content': None
+        'byval_cpp_content': None,
+        'chunked_cpp_path': chunked_cpp_path,
+        'chunked_cpp_content': None
     }
 
     # Generate lean .cpp content
@@ -510,6 +526,16 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         except Exception as e:
             log_info("Failed to generate .byval.cpp content for %s: %s" % (source_filename, str(e)))
 
+    # Generate .chunked.cpp content if chunked version is provided
+    if chunked_decompiled_code:
+        try:
+            chunked_cpp_content = create_lean_cpp_content(
+                func_name, func_addr, func_addr_range, func_convention,
+                func_signature, chunked_decompiled_code)
+            result['chunked_cpp_content'] = chunked_cpp_content + "\n"
+        except Exception as e:
+            log_info("Failed to generate .chunked.cpp content for %s: %s" % (source_filename, str(e)))
+
     # Generate .asm content
     try:
         asm_content = create_asm_content(
@@ -527,7 +553,8 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
             func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
             existing_replacements, stack_patterns, param_estimates, vtable_info,
             existing_pcode_overrides, resolved_suspects, is_ebp_frame,
-            existing_proto_overrides, existing_decompiler_fixes, compilation_status)
+            existing_proto_overrides, existing_decompiler_fixes, compilation_status,
+            chunked=chunked)
         # Add P-code summary to JSON if available
         if pcode_data:
             function_json['pcode_summary'] = create_pcode_summary(pcode_data)

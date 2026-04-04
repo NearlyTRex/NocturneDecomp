@@ -420,6 +420,17 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
     if custom_replacements:
         decompiled_code = apply_custom_replacements(decompiled_code, custom_replacements)
 
+    # Generate chunked version if opt-in via JSON config (uses preloaded cache)
+    chunked_decompiled_code = None
+    is_chunked = False
+    try:
+        from ghidra_annotations.annotations.pseudocode.chunk_transform import is_chunked as check_chunked, generate_chunked_code
+        if check_chunked(existing_json_path):
+            is_chunked = True
+            chunked_decompiled_code = generate_chunked_code(decompiled_code, func_name)
+    except Exception as e:
+        log_info("Chunk transform failed for %s: %s" % (func_name, str(e)))
+
     # Load pcode overrides to preserve them in output
     pcode_overrides = pcode_overrides_cache.load_for_function(existing_json_path)
 
@@ -530,7 +541,9 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
         stack_patterns, result.param_estimates, result.vtable_info, result.pcode_data,
         pcode_overrides, resolved_suspects, result.is_ebp_frame, proto_overrides,
         decompiler_fixes, mmx_decompiled_code=mmx_decompiled_code,
-        byval_decompiled_code=byval_decompiled_code)
+        byval_decompiled_code=byval_decompiled_code,
+        chunked_decompiled_code=chunked_decompiled_code,
+        chunked=is_chunked)
     output_time = time.time() - output_start
 
     total_process_time = time.time() - process_start
@@ -610,6 +623,13 @@ def export_pseudocode(currentProgram, path, strict=False):
     timer.start_phase("Preload custom replacements")
     log_info("Pre-loading custom replacements from existing JSON files...")
     replacements_cache.preload_directory(pseudocode_src_dir)
+    timer.end_phase()
+
+    # Pre-load chunked flags BEFORE cleanup to preserve user opt-in
+    timer.start_phase("Preload chunked flags")
+    log_info("Pre-loading chunked flags from existing JSON files...")
+    from ghidra_annotations.annotations.pseudocode.chunk_transform import preload_chunked_flags
+    preload_chunked_flags(pseudocode_src_dir)
     timer.end_phase()
 
     # Clean up existing pseudocode files (now safe - all user data is cached)
@@ -1055,6 +1075,8 @@ def export_pseudocode(currentProgram, path, strict=False):
                         pending_writes.append((contents['mmx_cpp_path'], contents['mmx_cpp_content']))
                     if contents.get('byval_cpp_content'):
                         pending_writes.append((contents['byval_cpp_path'], contents['byval_cpp_content']))
+                    if contents.get('chunked_cpp_content'):
+                        pending_writes.append((contents['chunked_cpp_path'], contents['chunked_cpp_content']))
                     if contents.get('asm_content'):
                         pending_writes.append((contents['asm_path'], contents['asm_content']))
                     if contents.get('json_content'):
