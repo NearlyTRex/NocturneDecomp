@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        186 ( 2.9%)
+  Functions with type issues:        182 ( 2.8%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          2
-    Undefined types in variables:      174
+    Undefined types in variables:      170
     Unresolved stack params:           11
 
-  Excluded (.keep / MMX / by-value):   53 functions
+  Excluded (.keep / MMX / by-value):   57 functions
     Wrong calling convention:          1
-    Undefined types in variables:      47
+    Undefined types in variables:      51
     Unresolved stack params:           10
 
 ====================================================================================================
@@ -155,7 +155,7 @@ Unresolved stack parameters (missing from signature) (11)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (174)
+Undefined types in variables (170)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -216,11 +216,6 @@ Undefined types in variables (174)
   CComplexPolygon_splitByDimensions
     Address: 0x005c9500  File: shape/superopt.cpp
     Locals:  local_188 (undefined4[4]), local_178 (undefined4), uStack_174 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4[4]), local_d0 (undefined4), uStack_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_b8 (undefined4), local_b4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  C3DSLight_load
-    Address: 0x00586310  File: core/setutil.cpp
-    Locals:  local_148 (undefined1), local_48 (undefined4), local_44 (undefined1), local_40 (undefined1), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   createPolygonFromVertexList
@@ -466,11 +461,6 @@ Undefined types in variables (174)
   CDemonSet_evaluateVirtualDirector
     Address: 0x005751d0  File: core/setdir.cpp
     Locals:  auStack_e8 (undefined1[20]), auStack_98 (undefined1[16]), local_40 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDeformableModel_buildFromPosFile
-    Address: 0x0058c190  File: core/skeledit.cpp
-    Locals:  local_a228 (undefined4), local_6d04 (undefined1[18404]), local_20 (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
   CDeformableModel_calcRootOffsetScale
@@ -813,16 +803,6 @@ Undefined types in variables (174)
     Locals:  local_2c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  C3DSLight_import3DS
-    Address: 0x005874d0  File: core/setutil.cpp
-    Locals:  auStack_18 (undefined1[4])
-    Suggested: Resolve undefined types to concrete types
-
-  CBoneStructure_readBONheader
-    Address: 0x0058a4a0  File: core/skeledit.cpp
-    Locals:  local_b8 (undefined4[8])
-    Suggested: Resolve undefined types to concrete types
-
   CDeformableModel_extractBoneScales
     Address: 0x0058dde0  File: core/skeledit.cpp
     Locals:  local_24 (undefined4[6])
@@ -1133,7 +1113,7 @@ Unresolved stack params - by-value struct passing (4)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (44)
+Undefined types - .keep overrides (48)
 --------------------------------------------------------------------------------
 
   CZombie_process
@@ -1164,6 +1144,11 @@ Undefined types - .keep overrides (44)
   CGame_saveGame
     Address: 0x004e0cd0  File: core/game.cpp
     Locals:  local_568 (undefined8), local_558 (undefined1), local_557 (undefined1), local_454 (undefined1), local_350 (undefined1), local_24c (undefined1), local_14c (undefined1), local_108 (undefined1), local_e8 (undefined4), local_cc (undefined1), local_88 (undefined1), local_6c (undefined4), local_50 (undefined1), local_4c (undefined1), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  C3DSLight_load
+    Address: 0x00586310  File: core/setutil.cpp
+    Locals:  local_148 (undefined1), local_48 (undefined4), local_44 (undefined1), local_40 (undefined1), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CGabriella_processMotionEvents
@@ -1219,6 +1204,11 @@ Undefined types - .keep overrides (44)
   C3DSCamera_importS3D
     Address: 0x00585ff0  File: core/setutil.cpp
     Locals:  local_18 (undefined1[4]), local_14 (undefined1[4]), local_10 (undefined1[4])
+    Suggested: Resolve undefined types to concrete types
+
+  CDeformableModel_buildFromPosFile
+    Address: 0x0058c190  File: core/skeledit.cpp
+    Locals:  local_a228 (undefined4), local_6d04 (undefined1[18404]), local_20 (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
   CActorProperty_editInteractive
@@ -1349,6 +1339,16 @@ Undefined types - .keep overrides (44)
   C3DSCamera_import3DS
     Address: 0x00585c90  File: core/setutil.cpp
     Locals:  uStack_240 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  C3DSLight_import3DS
+    Address: 0x005874d0  File: core/setutil.cpp
+    Locals:  auStack_18 (undefined1[4])
+    Suggested: Resolve undefined types to concrete types
+
+  CBoneStructure_readBONheader
+    Address: 0x0058a4a0  File: core/skeledit.cpp
+    Locals:  local_b8 (undefined4[8])
     Suggested: Resolve undefined types to concrete types
 
   CWerewolf_process

@@ -45,7 +45,8 @@ typedef struct CDeformableModel_buildFromPosFile_Ctx {
     byte local_a228[88];
     float afStack_a1d0[3279];
     int aiStack_6e94[100];
-    byte local_6d04[18404];
+    CBoneStructure local_6d04;
+    CMatrix3x4f aCStack_37e0[100];
     CMatrix3x4f local_2520[100];
     CPickList local_1260;
     char local_eb8[400];
@@ -124,7 +125,7 @@ typedef struct CDeformableModel_buildFromPosFile_Ctx {
 #define GOTO_LAB_0058c613 2
 #define GOTO_LAB_0058d5ef 3
 
-// Chunk: branch_0 (lines 28-56 of original)
+// Chunk: branch_0 (lines 27-54 of original)
 static int CDeformableModel_buildFromPosFile_branch_0(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CDeformableModel *&this_ptr = ctx->this_ptr;
     CLodMeshPrecomputeEntry *&entry = ctx->entry;
@@ -132,7 +133,7 @@ static int CDeformableModel_buildFromPosFile_branch_0(CDeformableModel_buildFrom
     int &iVar5 = ctx->iVar5;
     char *&pcVar16 = ctx->pcVar16;
     auto &local_a228 = ctx->local_a228;
-    auto &local_6d04 = ctx->local_6d04;
+    CBoneStructure &local_6d04 = ctx->local_6d04;
     CPickList &local_1260 = ctx->local_1260;
     auto &local_418 = ctx->local_418;
 
@@ -155,8 +156,7 @@ static int CDeformableModel_buildFromPosFile_branch_0(CDeformableModel_buildFrom
                     ((CBoneStructure *)local_a228,entry->pos_filename);
         }
         if (iVar5 == 1) {
-          core_skeledit_cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0
-                    ((CBoneStructure *)local_6d04,pcVar16);
+          core_skeledit_cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0(&local_6d04,pcVar16);
         }
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1260,0);
@@ -165,7 +165,7 @@ static int CDeformableModel_buildFromPosFile_branch_0(CDeformableModel_buildFrom
     return 0;
 }
 
-// Chunk: check_0_1 (lines 94-116 of original)
+// Chunk: check_0_1 (lines 92-114 of original)
 static int CDeformableModel_buildFromPosFile_check_0_1(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     int &iVar5 = ctx->iVar5;
     auto &local_a228 = ctx->local_a228;
@@ -198,7 +198,7 @@ static int CDeformableModel_buildFromPosFile_check_0_1(CDeformableModel_buildFro
     return 0;
 }
 
-// Chunk: check_local_d28_2 (lines 125-200 of original)
+// Chunk: check_local_d28_2 (lines 123-198 of original)
 static int CDeformableModel_buildFromPosFile_check_local_d28_2(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CDeformableModel *&this_ptr = ctx->this_ptr;
     CLodMeshPrecomputeEntry *&entry = ctx->entry;
@@ -296,7 +296,7 @@ static int CDeformableModel_buildFromPosFile_check_local_d28_2(CDeformableModel_
     return 0;
 }
 
-// Chunk: else_3 (lines 221-247 of original)
+// Chunk: else_3 (lines 219-245 of original)
 static int CDeformableModel_buildFromPosFile_else_3(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CDeformableModel *&this_ptr = ctx->this_ptr;
     CLodMeshPrecomputeEntry *&entry = ctx->entry;
@@ -333,7 +333,7 @@ static int CDeformableModel_buildFromPosFile_else_3(CDeformableModel_buildFromPo
     return 0;
 }
 
-// Chunk: check_0_4 (lines 261-301 of original)
+// Chunk: check_0_4 (lines 259-299 of original)
 static int CDeformableModel_buildFromPosFile_check_0_4(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CDeformableModel *&this_ptr = ctx->this_ptr;
     int &iVar5 = ctx->iVar5;
@@ -394,7 +394,7 @@ LAB_0058c601:
     return 0;
 }
 
-// Chunk: check_0_5 (lines 303-344 of original)
+// Chunk: check_0_5 (lines 301-342 of original)
 static int CDeformableModel_buildFromPosFile_check_0_5(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CDeformableModel *&this_ptr = ctx->this_ptr;
     int &iVar5 = ctx->iVar5;
@@ -456,7 +456,7 @@ static int CDeformableModel_buildFromPosFile_check_0_5(CDeformableModel_buildFro
     return 0;
 }
 
-// Chunk: check_0_6 (lines 345-386 of original)
+// Chunk: check_0_6 (lines 343-384 of original)
 static int CDeformableModel_buildFromPosFile_check_0_6(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CDeformableModel *&this_ptr = ctx->this_ptr;
     float &fVar3 = ctx->fVar3;
@@ -518,7 +518,7 @@ static int CDeformableModel_buildFromPosFile_check_0_6(CDeformableModel_buildFro
     return 0;
 }
 
-// Chunk: branch_2 (lines 423-466 of original)
+// Chunk: branch_2 (lines 421-464 of original)
 static int CDeformableModel_buildFromPosFile_branch_2(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CLodMeshPrecomputeEntry *&entry = ctx->entry;
     int &iVar5 = ctx->iVar5;
@@ -572,7 +572,7 @@ static int CDeformableModel_buildFromPosFile_branch_2(CDeformableModel_buildFrom
     return 0;
 }
 
-// Chunk: chunk_8 (lines 468-604 of original)
+// Chunk: chunk_8 (lines 466-602 of original)
 static int CDeformableModel_buildFromPosFile_chunk_8(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CDeformableModel *&this_ptr = ctx->this_ptr;
     CLodMeshPrecomputeEntry *&entry = ctx->entry;
@@ -787,7 +787,8 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
     auto &local_a228 = ctx->local_a228;
     auto &afStack_a1d0 = ctx->afStack_a1d0;
     auto &aiStack_6e94 = ctx->aiStack_6e94;
-    auto &local_6d04 = ctx->local_6d04;
+    CBoneStructure &local_6d04 = ctx->local_6d04;
+    auto &aCStack_37e0 = ctx->aCStack_37e0;
     auto &local_2520 = ctx->local_2520;
     CPickList &local_1260 = ctx->local_1260;
     auto &local_eb8 = ctx->local_eb8;
@@ -885,10 +886,9 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10
             ((CBoneStructure *)local_a228,(_FILE *)pCVar4,0);
   skeleton = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(this_ptr);
-  core_skeledit_cpp_CBoneStructure_copyHierarchyFromSkeleton_FUN_0058b160
-            ((CBoneStructure *)local_6d04,skeleton);
+  core_skeledit_cpp_CBoneStructure_copyHierarchyFromSkeleton_FUN_0058b160(&local_6d04,skeleton);
   iVar5 = core_skeledit_cpp_CBoneStructure_doesHierarchyMatch_FUN_0058b200
-                    ((CBoneStructure *)local_a228,(CBoneStructure *)local_6d04);
+                    ((CBoneStructure *)local_a228,&local_6d04);
     if (iVar5 == 0) {
       CDeformableModel_buildFromPosFile_branch_0(ctx);
     }
@@ -926,7 +926,7 @@ LAB_0058c613:
   }
   core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60(this_ptr);
   core_skeledit_cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0
-            ((CBoneStructure *)local_a228,(CMatrix3x4f *)(local_6d04 + 0x3524));
+            ((CBoneStructure *)local_a228,aCStack_37e0);
   core_skeledit_cpp_CDeformableModel_extractBoneScales_FUN_0058dde0
             (this_ptr,(CBoneStructure *)local_a228);
   local_28 = 0;

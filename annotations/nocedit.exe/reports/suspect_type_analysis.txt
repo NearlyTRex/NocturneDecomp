@@ -4,8 +4,8 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    4407 ( 50.2%)
-  unknown_field                    862 (  9.8%)
+  pointer_cast                    4408 ( 50.2%)
+  unknown_field                    859 (  9.8%)
   special_crt_function             439 (  5.0%)
   stack_param                      351 (  4.0%)
   unnamed_param                    329 (  3.7%)
@@ -53,7 +53,7 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (4407 occurrences)
+TYPE: pointer_cast (4408 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -67,7 +67,7 @@ Unique patterns:
     86x  (ushort *)((int)
     69x  (char *)((int)
     61x  (short *)((int)
-    38x  (CMatrix3x4f *)((int)
+    39x  (CMatrix3x4f *)((int)
     34x  (SShapeEditorPolygon *)((int)
     21x  (SMRGLHeaderExtended *)((int)
     20x  (CVector3f *)((int)
@@ -89,7 +89,7 @@ Example functions:
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar9) <...
 
 ====================================================================================================
-TYPE: unknown_field (862 occurrences)
+TYPE: unknown_field (859 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -104,7 +104,6 @@ Unique patterns:
      7x  ._12_4_
      7x  ._4_8_
      4x  ._2_1_
-     3x  ._13604_4_
      2x  ._252_4_
      2x  ._12_8_
      1x  ._76_4_
@@ -113,6 +112,7 @@ Unique patterns:
      1x  ._18_2_
      1x  ._16_4_
      1x  ._20_4_
+     1x  ._24_4_
 
 Example functions:
   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690

@@ -1,5 +1,6 @@
 // Name: core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
 // Address: 0058c190
+// MANUAL RECONSTRUCTION
 // Address Range: [[0058c190, 0058d782] [03fc3ef0, 03fc3f62]]
 // Convention: __cdecl
 // Signature: int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDeformableModel *this_ptr,CLodMeshPrecomputeEntry *entry)
@@ -43,11 +44,9 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   char *pcVar21;
   byte bVar22;
   byte bVar23;
-  byte local_a228 [88];
-  float afStack_a1d0 [3279];
-  int aiStack_6e94 [100];
+  CBoneStructure local_a228;
   CBoneStructure local_6d04;
-  CMatrix3x4f aCStack_37e0 [100];
+  CMatrix3x4f local_6d04_inverse_matrices [100];
   CMatrix3x4f local_2520 [100];
   CPickList local_1260;
   char local_eb8 [400];
@@ -127,7 +126,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
                       0x60a);
   local_24 = pCVar5;
   if (pCVar5 == (CBoneStructure *)0x0) {
-    _sprintf(g_SkeleditStatusMessage,"Can't open %s",entry);
+    _sprintf(g_SkeleditStatusMessage,"Can't open %s",entry->pos_filename);
     return 0;
   }
   iVar12 = 1;
@@ -137,22 +136,23 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
     pCVar4 = local_24;
     if (iVar6 < 0) break;
   } while ((iVar6 != 10) || (iVar12 = iVar12 + -1, 0 < iVar12));
-  _fscanf((_FILE *)local_24,"%d\n",local_20);
+  _fscanf((_FILE *)local_24,"%d\n",(int *)local_20);
   core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-            ((CBoneStructure *)local_a228,(_FILE *)pCVar4,&local_b4);
+            (&local_a228,(_FILE *)pCVar4,&local_b4);
   core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10
-            ((CBoneStructure *)local_a228,(_FILE *)pCVar4,0);
+            (&local_a228,(_FILE *)pCVar4,0);
   skeleton = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(this_ptr);
-  core_skeledit_cpp_CBoneStructure_copyHierarchyFromSkeleton_FUN_0058b160(&local_6d04,skeleton);
+  core_skeledit_cpp_CBoneStructure_copyHierarchyFromSkeleton_FUN_0058b160
+            (&local_6d04,skeleton);
   iVar5 = core_skeledit_cpp_CBoneStructure_doesHierarchyMatch_FUN_0058b200
-                    ((CBoneStructure *)local_a228,&local_6d04);
+                    (&local_a228,&local_6d04);
   if (iVar5 == 0) {
     pcVar16 = this_ptr->model_name;
     _sprintf
-              (g_SkeleditStatusMessage,"Heirarchy in %s does not match that in skeleton %s",entry,pcVar16);
+              (g_SkeleditStatusMessage,"Heirarchy in %s does not match that in skeleton %s",entry->pos_filename,pcVar16);
     if (entry->skip_generation != 2) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1260);
-      _sprintf(local_418,"Display %s",entry);
+      _sprintf(local_418,"Display %s",entry->pos_filename);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1260.base,local_418);
       _sprintf(local_418,"Display %s",pcVar16);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1260.base,local_418);
@@ -163,10 +163,11 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
         if (iVar5 < 0) break;
         if (iVar5 == 0) {
           core_skeledit_cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0
-                    ((CBoneStructure *)local_a228,entry->pos_filename);
+                    (&local_a228,entry->pos_filename);
         }
         if (iVar5 == 1) {
-          core_skeledit_cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0(&local_6d04,pcVar16);
+          core_skeledit_cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0
+                    (&local_6d04,pcVar16);
         }
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1260,0);
@@ -181,7 +182,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   iVar5 = _fscanf((_FILE *)local_24,"%d,%d,%d\n",&local_b0,&local_ac,&local_a8);
   if (iVar5 != 3) {
 LAB_0058c613:
-    _sprintf(g_SkeleditStatusMessage,"%s is corrupt!",entry);
+    _sprintf(g_SkeleditStatusMessage,"%s is corrupt!",entry->pos_filename);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0((_FILE *)local_24,"..\\core\\skeledit.cpp",0x647);
     return 0;
   }
@@ -207,12 +208,12 @@ LAB_0058c613:
   }
   core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60(this_ptr);
   core_skeledit_cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0
-            ((CBoneStructure *)local_a228,aCStack_37e0);
+            (&local_a228,local_6d04_inverse_matrices);
   core_skeledit_cpp_CDeformableModel_extractBoneScales_FUN_0058dde0
-            (this_ptr,(CBoneStructure *)local_a228);
+            (this_ptr,&local_a228);
   local_28 = 0;
-  if (0 < (int)local_a228._0_4_) {
-    local_70 = afStack_a1d0;
+  if (0 < (int)local_a228.bone_count) {
+    local_70 = (float *)&local_a228.bones[0].world_matrix;
     iVar5 = 0;
     do {
       core_xform_cpp_inverse_FUN_005f6210((CMatrix3x4f *)local_70,&local_11c);
@@ -231,7 +232,7 @@ LAB_0058c613:
       local_28 = local_28 + 1;
       local_70 = local_70 + 0x21;
       iVar5 = iVar5 + 0x30;
-    } while (local_28 < (int)local_a228._0_4_);
+    } while (local_28 < (int)local_a228.bone_count);
   }
   splitpath
             (entry->pos_filename,local_14,local_718,(char *)0x0,(char *)0x0);
@@ -397,7 +398,7 @@ LAB_0058c4df:
         pcVar16 = pcVar19;
       } while (pcVar19 != pcVar21 + 400);
       iVar8 = _fscanf((_FILE *)local_24,"%d\n",&local_94);
-      if (((iVar8 != 1) || (local_94 < 1)) || ((int)local_a228._0_4_ < local_94)) {
+      if (((iVar8 != 1) || (local_94 < 1)) || ((int)local_a228.bone_count < local_94)) {
 LAB_0058c601:
         shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_1f4,0);
         goto LAB_0058c613;
@@ -407,7 +408,7 @@ LAB_0058c601:
         do {
           iVar7 = _fscanf((_FILE *)local_24,"%d,%f\n",&local_90,&local_8c);
           if (iVar7 != 2) goto LAB_0058c601;
-          local_90 = aiStack_6e94[local_90];
+          local_90 = local_a228.shuffled_bone_indices[local_90];
           iVar8 = iVar8 + 1;
           *(float *)(pcVar21 + (local_90 + 3) * 4) =
                *(float *)(pcVar21 + (local_90 + 3) * 4) + local_8c;
@@ -509,7 +510,7 @@ LAB_0058c601:
   local_1f4.attribute_enabled_flags[2] = 1;
   local_1f4.attribute_enabled_flags[3] = 0;
   local_1f4.active_attribute_count = 4;
-  local_1f4.extra_attribute_count = local_a228._0_4_;
+  local_1f4.extra_attribute_count = local_a228.bone_count;
   iVar5 = 0;
   pCVar15 = this_ptr;
   if (0 < this_ptr->num_textures) {
@@ -536,7 +537,7 @@ LAB_0058c601:
   local_350.attribute_enabled_flags[1] = 1;
   local_350.attribute_enabled_flags[0] = 0;
   local_350.attribute_enabled_flags[2] = 1;
-  local_350.extra_attribute_count = local_a228._0_4_;
+  local_350.extra_attribute_count = local_a228.bone_count;
   local_350.attribute_enabled_flags[3] = 0;
   g_EnableMidpointSampling = 1;
   g_LodReplayMode = 0;

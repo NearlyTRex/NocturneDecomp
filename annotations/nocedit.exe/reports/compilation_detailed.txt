@@ -5,33 +5,31 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6200 (96.1%)
-Failed: 254
+Successful: 6209 (96.2%)
+Failed: 245
 
 ERROR CATEGORIES
 --------------------------------------------------
-  format_error                     451
-  type_error                       364
-  incompatible_types               127
-  undeclared_identifier             69
+  format_error                     391
+  type_error                       358
+  incompatible_types               121
+  undeclared_identifier             67
   cast_error                        59
   syntax_error                      26
-  pointer_type                      24
+  pointer_type                      22
   other                             19
   missing_member                     8
   argument_error                     3
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: format_error (451 errors)
+CATEGORY: format_error (391 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     Line 96: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
     Line 413: format specifies type 'char *' but the argument has type 'CLightActor *' [-Werror,-Wformat]
-  core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
-    Line 129: format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
     Line 60: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
@@ -76,28 +74,16 @@ CATEGORY: format_error (451 errors)
     Line 43: format specifies type 'char *' but the argument has type 'void *' [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250
     Line 38: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
-  core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
-    Line 22: format specifies type 'float *' but the argument has type 'CMatrix3x4f *' [-Werror,-Wformat]
-  core_setutil.cpp_C3DSLight_load_FUN_00586310
-    Line 40: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
   shape_design.c_loadModelFile_FUN_00458ac0
     Line 157: format specifies type 'float *' but the argument has type 'SVertexData *' [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_importVerticesS3D_FUN_0058bc40
     Line 31: format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
-  core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0
-    Line 72: format specifies type 'int *' but the argument has type 'C3DSLight *' [-Werror,-Wformat]
-  core_setutil.cpp_C3DSLight_importS3D_FUN_00587710
-    Line 15: format specifies type 'int *' but the argument has type 'C3DSLight *' [-Werror,-Wformat]
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-    Line 78: format specifies type 'int *' but the argument has type 'CBoneStructure *' [-Werror,-Wformat]
   core_texlist.cpp_CTextureList_load_FUN_005dbe00
     Line 78: format specifies type 'int *' but the argument has type 'CTextureList *' [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
     Line 29: format specifies type 'int *' but the argument has type 'SIZE_T *' (aka 'unsigned long *') [-Werror,-Wformat]
   core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970
     Line 114: format specifies type 'int *' but the argument has type 'SLod *' [-Werror,-Wformat]
-  core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
-    Line 31: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_importGeometryS3D_FUN_0058b660
     Line 60: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   core_skeledit.cpp_CLodMeshPrecomputeEntry_load_FUN_00589fe0
@@ -136,10 +122,6 @@ CATEGORY: format_error (451 errors)
     Line 20: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
   shape_memdbg.cpp_debugRealloc_FUN_0050f540
     Line 24: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
-  core_setutil.cpp_C3DSLight_save_FUN_00587090
-    Line 18: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 436: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
     Line 279: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
@@ -204,7 +186,7 @@ CATEGORY: format_error (451 errors)
     Line 19: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
-CATEGORY: type_error (364 errors)
+CATEGORY: type_error (358 errors)
 ====================================================================================================
 
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -213,16 +195,12 @@ CATEGORY: type_error (364 errors)
     Line 20: invalid suffix '._0_4_' on floating constant
   shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
     Line 43: invalid suffix '._4_4_' on floating constant
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-    Line 412: member reference base type 'byte[13608]' (aka 'unsigned char[13608]') is not a structure or union
   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220
     Line 153: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
     Line 92: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
     Line 36: member reference base type 'byte[44]' (aka 'unsigned char[44]') is not a structure or union
-  core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
-    Line 215: member reference base type 'byte[88]' (aka 'unsigned char[88]') is not a structure or union
   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0
     Line 18: member reference base type 'char[16]' is not a structure or union
   engine_model.c_getMRGLBounds_FUN_00528140
@@ -339,7 +317,7 @@ CATEGORY: type_error (364 errors)
     Line 53: statement requires expression of integer type ('float' invalid)
 
 ====================================================================================================
-CATEGORY: incompatible_types (127 errors)
+CATEGORY: incompatible_types (121 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
@@ -424,8 +402,6 @@ CATEGORY: incompatible_types (127 errors)
     Line 89: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
   core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
     Line 196: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 550: invalid operands to binary expression ('CEditorTools *' and 'int')
   shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
     Line 59: invalid operands to binary expression ('double' and 'int')
   shape_superopt.cpp_CVec_dot_FUN_005d82e0
@@ -456,7 +432,7 @@ CATEGORY: incompatible_types (127 errors)
     Line 212: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (69 errors)
+CATEGORY: undeclared_identifier (67 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -513,8 +489,6 @@ CATEGORY: undeclared_identifier (69 errors)
     Line 60: use of undeclared identifier 'stack0x00000000'
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 41: use of undeclared identifier 'stack0x0000002c'
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 474: use of undeclared identifier 'stack0xffffcc64'
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     Line 112: use of undeclared identifier 'stack0xfffff964'
   core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150
@@ -633,7 +607,7 @@ CATEGORY: syntax_error (26 errors)
     Line 123: expected expression
 
 ====================================================================================================
-CATEGORY: pointer_type (24 errors)
+CATEGORY: pointer_type (22 errors)
 ====================================================================================================
 
   core_mmx.c_detectIntelProcessor_FUN_00524f4c
@@ -644,8 +618,6 @@ CATEGORY: pointer_type (24 errors)
     Line 91: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
   core_main.c_displayErrorAndQuit_FUN_00506f10
     Line 62: assigning to 'uint *' (aka 'unsigned int *') from 'int *' converts between pointers to integer types with different sign
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-    Line 148: assigning to 'uint *' (aka 'unsigned int *') from 'int *' converts between pointers to integer types with different sign
   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
     Line 29: cannot initialize a parameter of type 'LPDWORD' (aka 'unsigned long *') with an rvalue of type 'uint *' (aka 'unsigned int *')
   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50
