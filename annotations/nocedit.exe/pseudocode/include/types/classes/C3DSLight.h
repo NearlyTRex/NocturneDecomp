@@ -2,7 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "types/classes/CColor3f.h"
+#include "types/classes/CColor3i.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CRect.h"
 #include "types/classes/CVector2i.h"
@@ -21,7 +21,7 @@ typedef struct C3DSLight {
     char visible_flags[250]; // 0x128
     short dead; // 0x222
     CRect camera_light_bounds[250]; // 0x224
-    CColor3f color; // 0x11c4
+    CColor3i color; // 0x11c4
     float atten_start; // 0x11d0
     float atten_end; // 0x11d4
     float atten_end_squared; // 0x11d8

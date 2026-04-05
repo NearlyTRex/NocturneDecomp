@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        192 ( 3.0%)
+  Functions with type issues:        186 ( 2.9%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          2
-    Undefined types in variables:      180
+    Undefined types in variables:      174
     Unresolved stack params:           11
 
-  Excluded (.keep / MMX / by-value):   47 functions
+  Excluded (.keep / MMX / by-value):   53 functions
     Wrong calling convention:          1
-    Undefined types in variables:      41
+    Undefined types in variables:      47
     Unresolved stack params:           10
 
 ====================================================================================================
@@ -155,7 +155,7 @@ Unresolved stack parameters (missing from signature) (11)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (180)
+Undefined types in variables (174)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -343,11 +343,6 @@ Undefined types in variables (180)
     Locals:  local_98 (undefined4), uStack_94 (undefined4), uStack_84 (undefined4), local_80 (undefined4), local_68 (undefined4), uStack_5c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonSet_importS3D
-    Address: 0x00578d80  File: core/setedit.cpp
-    Locals:  local_a0 (undefined1[4]), local_9c (undefined1[4]), local_98 (undefined1[4]), local_94 (undefined1[4]), local_90 (undefined1[4]), local_8c (undefined1[4])
-    Suggested: Resolve undefined types to concrete types
-
   CDeformableModel_sortFacesByTexture
     Address: 0x0058e240  File: core/skeledit.cpp
     Locals:  auStack_201c (undefined2[1018]), auStack_1828 (undefined4[1528]), auStack_48 (undefined1[4]), uStack_44 (undefined4), local_40 (undefined4), auStack_3c (undefined2[2])
@@ -471,16 +466,6 @@ Undefined types in variables (180)
   CDemonSet_evaluateVirtualDirector
     Address: 0x005751d0  File: core/setdir.cpp
     Locals:  auStack_e8 (undefined1[20]), auStack_98 (undefined1[16]), local_40 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonSet_editCameraPosition
-    Address: 0x0057d660  File: core/setedit.cpp
-    Locals:  local_40 (undefined4), local_3c (undefined4), local_28 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  C3DSCamera_importS3D
-    Address: 0x00585ff0  File: core/setutil.cpp
-    Locals:  local_18 (undefined1[4]), local_14 (undefined1[4]), local_10 (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
   CDeformableModel_buildFromPosFile
@@ -823,24 +808,9 @@ Undefined types in variables (180)
     Locals:  uStack_20 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonSet_load
-    Address: 0x00569410  File: core/set.cpp
-    Locals:  local_48 (undefined1[4])
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonSet_precomputeLightVisibility
-    Address: 0x0056a470  File: core/set.cpp
-    Locals:  auStackY_1838 (undefined4[1443])
-    Suggested: Resolve undefined types to concrete types
-
   CDemonSet_showRoomEditor
     Address: 0x00581aa0  File: core/setedit.cpp
     Locals:  local_2c (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  C3DSCamera_import3DS
-    Address: 0x00585c90  File: core/setutil.cpp
-    Locals:  uStack_240 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   C3DSLight_import3DS
@@ -1163,7 +1133,7 @@ Unresolved stack params - by-value struct passing (4)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (38)
+Undefined types - .keep overrides (44)
 --------------------------------------------------------------------------------
 
   CZombie_process
@@ -1211,6 +1181,11 @@ Undefined types - .keep overrides (38)
     Locals:  local_7c (undefined1[4]), local_78 (undefined1[4]), local_70 (undefined1[4]), local_6c (undefined1[4]), local_64 (undefined1[4]), local_60 (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
+  CDemonSet_importS3D
+    Address: 0x00578d80  File: core/setedit.cpp
+    Locals:  local_a0 (undefined1[4]), local_9c (undefined1[4]), local_98 (undefined1[4]), local_94 (undefined1[4]), local_90 (undefined1[4]), local_8c (undefined1[4])
+    Suggested: Resolve undefined types to concrete types
+
   CSfxSample_parseConfigFile
     Address: 0x005a45c0  File: sound/sndmain.cpp
     Locals:  local_480 (undefined4), uStack_47c (undefined4), local_478 (undefined4), uStack_474 (undefined4), local_470 (undefined4), uStack_46c (undefined4)
@@ -1234,6 +1209,16 @@ Undefined types - .keep overrides (38)
   CDemonActor_doCheckForInvalidPointers
     Address: 0x0040ac80  File: core/actor.cpp
     Locals:  temp_z (undefined8), temp_y (undefined8), temp_x (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonSet_editCameraPosition
+    Address: 0x0057d660  File: core/setedit.cpp
+    Locals:  local_40 (undefined4), local_3c (undefined4), local_28 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  C3DSCamera_importS3D
+    Address: 0x00585ff0  File: core/setutil.cpp
+    Locals:  local_18 (undefined1[4]), local_14 (undefined1[4]), local_10 (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
   CActorProperty_editInteractive
@@ -1346,9 +1331,24 @@ Undefined types - .keep overrides (38)
     Locals:  local_3760 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
+  CDemonSet_load
+    Address: 0x00569410  File: core/set.cpp
+    Locals:  local_48 (undefined1[4])
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonSet_precomputeLightVisibility
+    Address: 0x0056a470  File: core/set.cpp
+    Locals:  auStackY_1838 (undefined4[1443])
+    Suggested: Resolve undefined types to concrete types
+
   CDemonSet_showCameraEditor
     Address: 0x0057e7c0  File: core/setedit.cpp
     Locals:  local_478c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  C3DSCamera_import3DS
+    Address: 0x00585c90  File: core/setutil.cpp
+    Locals:  uStack_240 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CWerewolf_process

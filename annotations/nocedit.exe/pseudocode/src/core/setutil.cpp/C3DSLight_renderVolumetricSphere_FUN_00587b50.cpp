@@ -64,12 +64,12 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
       *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar1) = 0x800000;
       *(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar1) = 0x800000;
       *(int *)((int)&this_ptr_00->vertex_buffer_ptr->r + iVar1) =
-           (int)ROUND(ROUND((this_ptr->color).r * 255.0f));
+           (int)ROUND(ROUND((float)(this_ptr->color).r * 255.0f));
       *(int *)((int)&this_ptr_00->vertex_buffer_ptr->g + iVar1) =
-           (int)ROUND(ROUND((this_ptr->color).g * 255.0f));
+           (int)ROUND(ROUND((float)(this_ptr->color).g * 255.0f));
       iVar3 = iVar3 + 1;
       *(int *)((int)&this_ptr_00->vertex_buffer_ptr->b + iVar1) =
-           (int)ROUND(ROUND((this_ptr->color).b * 255.0f));
+           (int)ROUND(ROUND((float)(this_ptr->color).b * 255.0f));
       iVar1 = iVar1 + 0x30;
     } while (iVar3 < 5);
     local_c = local_c + 1;

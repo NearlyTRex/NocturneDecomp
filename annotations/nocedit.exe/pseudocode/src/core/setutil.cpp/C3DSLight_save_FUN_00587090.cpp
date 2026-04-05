@@ -31,8 +31,9 @@ void __cdecl core_setutil_cpp_C3DSLight_save_FUN_00587090(C3DSLight *this_ptr,_F
   _fprintf(file_ptr,"type\n");
   _fprintf(file_ptr,"%d\n");
   _fprintf(file_ptr,"R,G,B, attenStart, attenEnd\n");
-  _fprintf(file_ptr,"%f,%f,%f,%f,%f\n",(double)(this_ptr->color).r,(double)(this_ptr->color).g,
-             (double)(this_ptr->color).b,(double)this_ptr->atten_start,(double)this_ptr->atten_end);
+  _fprintf(file_ptr,"%f,%f,%f,%f,%f\n",(double)(float)(this_ptr->color).r,
+             (double)(float)(this_ptr->color).g,(double)(float)(this_ptr->color).b,
+             (double)this_ptr->atten_start,(double)this_ptr->atten_end);
   _fprintf(file_ptr,"sizeX, sizeY\n");
   _fprintf(file_ptr,"%d,%d\n",(this_ptr->size).x);
   _fprintf(file_ptr,"filterCount\n");

@@ -5,17 +5,17 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6183 (95.8%)
-Failed: 271
+Successful: 6200 (96.1%)
+Failed: 254
 
 ERROR CATEGORIES
 --------------------------------------------------
-  format_error                     540
-  type_error                       366
+  format_error                     451
+  type_error                       364
   incompatible_types               127
-  undeclared_identifier             74
-  cast_error                        60
-  syntax_error                      27
+  undeclared_identifier             69
+  cast_error                        59
+  syntax_error                      26
   pointer_type                      24
   other                             19
   missing_member                     8
@@ -23,19 +23,11 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: format_error (540 errors)
+CATEGORY: format_error (451 errors)
 ====================================================================================================
 
-  core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
-    Line 125: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
-  core_setutil.cpp_C3DSCamera_importS3D_FUN_00585ff0
-    Line 19: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
-  core_setutil.cpp_C3DSCamera_load_FUN_00585420
-    Line 22: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     Line 96: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]
-  core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470
-    Line 214: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-Werror,-Wformat]
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
     Line 413: format specifies type 'char *' but the argument has type 'CLightActor *' [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
@@ -64,12 +56,8 @@ CATEGORY: format_error (540 errors)
     Line 93: format specifies type 'char *' but the argument has type 'STextureAtlasEntry *' [-Werror,-Wformat]
   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_005b0390
     Line 28: format specifies type 'char *' but the argument has type 'UINT' (aka 'unsigned int') [-Werror,-Wformat]
-  core_setedit.cpp_editGroundTypes_FUN_00578630
-    Line 49: format specifies type 'char *' but the argument has type 'char (*)[40]' [-Werror,-Wformat]
   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
     Line 60: format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror,-Wformat]
-  core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0
-    Line 98: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   shape_memdbg.cpp_closeFile_FUN_0050f9b0
     Line 40: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0
@@ -90,14 +78,10 @@ CATEGORY: format_error (540 errors)
     Line 38: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
     Line 22: format specifies type 'float *' but the argument has type 'CMatrix3x4f *' [-Werror,-Wformat]
-  core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
-    Line 74: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
   core_setutil.cpp_C3DSLight_load_FUN_00586310
     Line 40: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
   shape_design.c_loadModelFile_FUN_00458ac0
     Line 157: format specifies type 'float *' but the argument has type 'SVertexData *' [-Werror,-Wformat]
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
-    Line 387: format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_importVerticesS3D_FUN_0058bc40
     Line 31: format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
   core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0
@@ -112,8 +96,6 @@ CATEGORY: format_error (540 errors)
     Line 29: format specifies type 'int *' but the argument has type 'SIZE_T *' (aka 'unsigned long *') [-Werror,-Wformat]
   core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970
     Line 114: format specifies type 'int *' but the argument has type 'SLod *' [-Werror,-Wformat]
-  core_set.cpp_CDemonSet_load_FUN_00569410
-    Line 73: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
     Line 31: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_importGeometryS3D_FUN_0058b660
@@ -130,8 +112,6 @@ CATEGORY: format_error (540 errors)
     Line 25: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60
     Line 55: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0
-    Line 35: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0
     Line 38: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180
@@ -156,18 +136,6 @@ CATEGORY: format_error (540 errors)
     Line 20: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
   shape_memdbg.cpp_debugRealloc_FUN_0050f540
     Line 24: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
-  core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
-    Line 128: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_setedit.cpp_CDemonSet_save_FUN_0057a2a0
-    Line 45: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730
-    Line 63: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0
-    Line 58: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940
-    Line 108: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_setutil.cpp_C3DSCamera_save_FUN_00585a40
-    Line 13: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_setutil.cpp_C3DSLight_save_FUN_00587090
     Line 18: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
@@ -236,7 +204,7 @@ CATEGORY: format_error (540 errors)
     Line 19: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
-CATEGORY: type_error (366 errors)
+CATEGORY: type_error (364 errors)
 ====================================================================================================
 
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -257,8 +225,6 @@ CATEGORY: type_error (366 errors)
     Line 215: member reference base type 'byte[88]' (aka 'unsigned char[88]') is not a structure or union
   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0
     Line 18: member reference base type 'char[16]' is not a structure or union
-  core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940
-    Line 57: member reference base type 'char[256]' is not a structure or union
   engine_model.c_getMRGLBounds_FUN_00528140
     Line 181: member reference base type 'char[80]' is not a structure or union
   core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
@@ -490,7 +456,7 @@ CATEGORY: incompatible_types (127 errors)
     Line 212: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (74 errors)
+CATEGORY: undeclared_identifier (69 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -549,12 +515,8 @@ CATEGORY: undeclared_identifier (74 errors)
     Line 41: use of undeclared identifier 'stack0x0000002c'
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 474: use of undeclared identifier 'stack0xffffcc64'
-  core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
-    Line 157: use of undeclared identifier 'stack0xffffee80'
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     Line 112: use of undeclared identifier 'stack0xfffff964'
-  core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940
-    Line 94: use of undeclared identifier 'stack0xfffffae0'
   core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150
     Line 62: use of undeclared identifier 'stack0xfffffdd4'
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
@@ -587,11 +549,9 @@ CATEGORY: undeclared_identifier (74 errors)
     Line 85: use of undeclared identifier 'stack0xffffffdc'
   shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920
     Line 19: use of undeclared identifier 'stack0xffffffe0'
-  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
-    Line 93: use of undeclared identifier 'uint3'
 
 ====================================================================================================
-CATEGORY: cast_error (60 errors)
+CATEGORY: cast_error (59 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -610,8 +570,6 @@ CATEGORY: cast_error (60 errors)
     Line 312: C-style cast from 'CWeapon *' to 'float' is not allowed
   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004f33b0
     Line 59: C-style cast from 'struct CDemonActor *' to 'float' is not allowed
-  core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470
-    Line 180: C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
     Line 76: C-style cast from 'uint' (aka 'unsigned int') to 'uchar[4]' (aka 'unsigned char[4]') is not allowed
   core_xform.cpp_lerpMatrix3x4_FUN_005f7140
@@ -636,11 +594,9 @@ CATEGORY: cast_error (60 errors)
     Line 27: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'
 
 ====================================================================================================
-CATEGORY: syntax_error (27 errors)
+CATEGORY: syntax_error (26 errors)
 ====================================================================================================
 
-  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
-    Line 93: expected expression
   core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
     Line 96: expected expression
   engine_dosio.c_findFile_FUN_00481760
