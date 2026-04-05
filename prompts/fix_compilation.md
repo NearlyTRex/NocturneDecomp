@@ -191,6 +191,51 @@ int_ptr = (int *)uint_ptr;
 - Match the buffer size against known struct sizes in the project headers
 - Map `._offset_size_` accesses to struct field offsets to confirm the match
 
+### 13. Stack slot reuse — one variable used as multiple types (`(float)pCVar`, `(CVector3f *)float_expr`)
+
+**Cause:** The Watcom compiler aggressively reuses stack slots across different code paths. One 4-byte stack slot might hold a `float` in one branch and a `CVector3f *` in another. Ghidra assigns a single type to each variable, so it picks one type and inserts invalid casts for the other uses. Common symptoms:
+- `(float)pSomePointer` or `(CVector3f *)some_float_expr` — pointer↔float casts that don't compile
+- `(CVector3f *)(this_ptr->base).base.turn_speed` — a float struct field stored in a pointer variable
+- `(CVector3f *)normalizeAngleToPi(...)` — a float return value stored in a pointer variable
+- Variables that appear as both function pointer arguments and float arithmetic operands
+
+**Diagnosis:** Grep all uses of the variable. Group them by code path. If the uses split cleanly into "pointer in paths A/B" and "float in paths C/D" with no overlap, it's stack slot reuse.
+
+**Fix:** Split the variable into separate declarations matching each actual type:
+- Change the declaration to the most-used type (usually `float`)
+- For the other type's uses, either:
+  - **Inline the expression** if it's simple (e.g., replace `local_18 = &orient; cloth_process(..., local_18, ...)` with `cloth_process(..., &orient, ...)`)
+  - **Add a new variable** with a descriptive name if it's used multiple times (e.g., `float turn_speed` and `float clamped_angle` instead of reusing `pCVar22`/`pCVar23`)
+- Remove all the now-unnecessary `(float)` and `(CVector3f *)` casts
+- Remove `(CVector3f *)(uint)(bool_expr)` patterns — just use the bool/float expression directly
+
+This is distinct from the byte buffer pattern (#12) — here the variables have proper types, they're just the *wrong* type for some uses.
+
+### 14. `in_stack_XXXXXXXX` phantom variables and `stack0xXXXXXXXX` references
+
+**Cause:** When the decompiler loses track of the stack frame (often due to indirect calls, vtable dispatch, or complex calling conventions), it invents `in_stack_XXXXXXXX` variables as pseudo-parameters or creates raw `stack0xXXXXXXXX` references for stack locations it can't map to declared locals.
+
+**Symptoms:**
+- `in_stack_fffffc88`, `in_stack_fffffc8c`, etc. declared as `char *`, `CGore *`, or other pointer types
+- These variables are assigned code addresses (e.g., `= (char *)0x4e6aec`) — these are return address tracking artifacts and are dead stores
+- The same variable holds completely different types across code paths (pointer, float, integer, string literal)
+- `&stack0xfffffe10` used as a buffer for `_sprintf` — Ghidra couldn't map this stack location to any declared variable
+- `(float)in_stack_fffffc94` — a pointer variable used as a float argument
+
+**Fix:**
+- **Remove all dead stores** — assignments of code addresses (hex values that look like function addresses, e.g., `0x4e6aec`), intermediate values that are overwritten before being read, and return-address tracking artifacts
+- **Replace live uses with inline expressions:**
+  - Vtable calls: use the actual object pointer directly (e.g., `pCVar3` instead of `(CCharacter *)in_stack_fffffc88`)
+  - PathMap results: assign to an existing `CPathMap *` variable like `pCVar11`
+  - Motion controller: inline as `&(...).motion_controller`
+  - SDamageInfo pointers: inline as `&local_2d8`
+- **`&stack0xXXXXXXXX` sprintf buffers:** add a `char acStack_sprintf[64]` local (or use an existing char array if one is declared) and replace all `&stack0x...` references with it
+- **`(float)in_stack_...` in function args:** check the assembly to find the actual float value being passed and use that directly
+- **Remove the `in_stack_` declarations** once all references are replaced
+- Remove any other variables that become unused after cleanup
+
+**How to identify dead stores:** Assignments to code addresses like `= (char *)0x4e6aec` or `= (CGore *)0x4e6b5b` where the hex value falls within the function's address range are always dead — these are the decompiler tracking return addresses pushed by CALL instructions.
+
 ## Workflow
 
 1. **Check for a `.chunked.cpp` file** (same base name, `.chunked.cpp` extension). If one exists, read it first — it splits the function into a context struct and small static helper functions, making it much easier to understand and fix large functions. Use it as a reference to understand which chunk each error falls in, but the `.keep` file is still based on the original `.cpp`.

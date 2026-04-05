@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        199 ( 3.1%)
+  Functions with type issues:        194 ( 3.0%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,13 +22,13 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          2
-    Undefined types in variables:      186
-    Unresolved stack params:           15
+    Undefined types in variables:      181
+    Unresolved stack params:           12
 
-  Excluded (.keep / MMX / by-value):   40 functions
+  Excluded (.keep / MMX / by-value):   45 functions
     Wrong calling convention:          1
-    Undefined types in variables:      35
-    Unresolved stack params:           6
+    Undefined types in variables:      40
+    Unresolved stack params:           9
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -85,7 +85,7 @@ Wrong calling convention (unaffected register usage) (2)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (15)
+Unresolved stack parameters (missing from signature) (12)
 --------------------------------------------------------------------------------
 
   CWinFont_setColorAndDrawText
@@ -136,12 +136,6 @@ Unresolved stack parameters (missing from signature) (15)
     Signature: void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonMission *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CWerewolf_process
-    Address: 0x005efde0  File: core/werewolf.cpp
-    Evidence: in_stack_fffffcec, in_stack_fffffcec
-    Signature: void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
   CStranger_processFrame
     Address: 0x005bb960  File: core/stranger.cpp
     Evidence: in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14
@@ -154,22 +148,10 @@ Unresolved stack parameters (missing from signature) (15)
     Signature: int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CGhoul_process
-    Address: 0x004e6600  File: core/ghoul.cpp
-    Evidence: in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88
-    Signature: void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
   CWeapon_updateLighting
     Address: 0x005ee4a0  File: core/weapon.cpp
     Evidence: in_stack_ffffffc8, in_stack_ffffffc8
     Signature: void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CLarva_process
-    Address: 0x00503080  File: core/larva.cpp
-    Evidence: in_stack_fffffe18, in_stack_fffffe18
-    Signature: void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   dampControlAxis
@@ -179,22 +161,12 @@ Unresolved stack parameters (missing from signature) (15)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (186)
+Undefined types in variables (181)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
     Address: 0x00592690  File: core/skeledit.cpp
     Locals:  local_ded4 (undefined4), local_ded0 (undefined), local_decf (undefined1), local_a9b0 (undefined), local_748c (undefined4), local_7488 (undefined), local_7434 (undefined), local_7428 (undefined4), local_7418 (undefined4), local_7408 (undefined4), local_3f68 (undefined), local_2ca8 (undefined4), local_2540 (undefined), local_2360 (undefined), local_21d0 (undefined), local_21ca (undefined), local_21c8 (undefined), local_21c7 (undefined), local_20a4 (undefined), local_20a2 (undefined), local_20a1 (undefined), local_20a0 (undefined1), local_209e (undefined), local_209d (undefined1), local_209c (undefined1), local_209b (undefined), local_209a (undefined1), local_2099 (undefined1), local_2098 (undefined), local_2097 (undefined), local_2096 (undefined1), local_2095 (undefined1), local_2093 (undefined), local_2092 (undefined), local_2091 (undefined1), local_2090 (undefined1), local_1f78 (undefined), local_1f77 (undefined1), local_1e74 (undefined), local_1d70 (undefined), local_1c70 (undefined), local_1b70 (undefined), local_1a70 (undefined), local_1970 (undefined), local_1870 (undefined), local_1770 (undefined), local_1670 (undefined), local_1570 (undefined), local_1470 (undefined), local_1370 (undefined), local_1270 (undefined), local_1170 (undefined), local_1070 (undefined), local_f70 (undefined), local_e70 (undefined), local_d70 (undefined), local_c70 (undefined), local_b70 (undefined), local_aa8 (undefined), local_9e0 (undefined), local_918 (undefined), local_850 (undefined), local_84f (undefined), local_7ec (undefined), local_788 (undefined), local_724 (undefined), local_6c0 (undefined), local_65c (undefined), local_5f8 (undefined), local_594 (undefined), local_530 (undefined), local_4cc (undefined), local_468 (undefined), local_434 (undefined), local_404 (undefined), local_3d4 (undefined), local_3a4 (undefined), local_374 (undefined), local_344 (undefined), local_314 (undefined), local_2e4 (undefined), local_2b4 (undefined), local_28c (undefined), local_264 (undefined), local_244 (undefined), local_224 (undefined), local_214 (undefined), local_204 (undefined4), local_200 (undefined4), local_1fc (undefined4), local_1f8 (undefined4), local_1f4 (undefined4), local_1f0 (undefined4), local_1ec (undefined4), local_1e8 (undefined4), local_1e4 (undefined4), local_1e0 (undefined4), local_1dc (undefined4), local_1d8 (undefined4), local_1d4 (undefined4), local_1d0 (undefined4), local_1cc (undefined4), local_1c8 (undefined4), local_1c4 (undefined4), local_1c0 (undefined4), local_1bc (undefined4), local_1b8 (undefined4), local_1b4 (undefined4), local_1b0 (undefined), local_1a4 (undefined4), local_1a0 (undefined4), local_19c (undefined4), local_198 (undefined4), local_194 (undefined4), local_190 (undefined4), local_18c (undefined4), local_188 (undefined4), local_184 (undefined4), local_180 (undefined4), local_17c (undefined4), local_178 (undefined4), local_174 (undefined4), local_170 (undefined4), local_16c (undefined4), local_168 (undefined4), local_164 (undefined4), local_160 (undefined4), local_15c (undefined4), local_158 (undefined4), local_154 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined4), local_144 (undefined4), local_140 (undefined4), local_13c (undefined4), local_138 (undefined4), local_134 (undefined4), local_130 (undefined4), local_12c (undefined8), local_124 (undefined8), local_11c (undefined4), local_118 (undefined4), local_114 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_2c (undefined4), local_28 (undefined), local_24 (undefined), local_20 (undefined), local_1c (undefined), local_18 (undefined), local_14 (undefined)
-    Suggested: Resolve undefined types to concrete types
-
-  CZombie_process
-    Address: 0x005f9470  File: core/zombie.cpp
-    Locals:  local_3b0 (undefined4), local_3ac (undefined1), local_3a8 (undefined4), local_378 (undefined4), local_374 (undefined4), local_370 (undefined1), local_36c (undefined4), local_33c (undefined4), local_338 (undefined4), local_334 (undefined1), local_333 (undefined1), local_314 (undefined1), local_2fc (undefined1), local_2e4 (undefined1), local_2cc (undefined1), local_2b4 (undefined1), local_29c (undefined1), local_290 (undefined4), local_28c (undefined4), local_288 (undefined4), local_284 (undefined4), local_280 (undefined4), local_27c (undefined4), local_278 (undefined1), local_26c (undefined4), local_268 (undefined4), local_264 (undefined4), local_260 (undefined4), local_25c (undefined4), local_258 (undefined4), local_254 (undefined4), local_250 (undefined4), local_24c (undefined4), local_248 (undefined4), local_240 (undefined4), local_23c (undefined4), local_238 (undefined4), local_234 (undefined4), local_230 (undefined1), local_22c (undefined4), local_224 (undefined4), local_220 (undefined4), local_21c (undefined4), local_218 (undefined1), local_20c (undefined1), local_200 (undefined4), local_1fc (undefined4), local_1f8 (undefined4), local_1f4 (undefined4), local_1f0 (undefined4), local_1ec (undefined4), local_1e8 (undefined4), local_1e4 (undefined4), local_1e0 (undefined4), local_1dc (undefined4), local_1d8 (undefined4), local_1d4 (undefined4), local_1d0 (undefined1), local_1c4 (undefined1), local_1b8 (undefined4), local_1b4 (undefined4), local_1b0 (undefined4), local_1ac (undefined4), local_1a8 (undefined4), local_1a4 (undefined4), local_1a0 (undefined4), local_19c (undefined4), local_198 (undefined4), local_194 (undefined4), local_190 (undefined4), local_18c (undefined4), local_188 (undefined4), local_184 (undefined4), local_180 (undefined4), local_17c (undefined1), local_170 (undefined1), local_164 (undefined4), local_160 (undefined4), local_15c (undefined4), local_158 (undefined4), local_154 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined4), local_144 (undefined4), local_140 (undefined1), local_134 (undefined4), local_130 (undefined4), local_12c (undefined4), local_128 (undefined1), local_11c (undefined1), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined1), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined1), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined1), local_a4 (undefined1), local_98 (undefined8), local_88 (undefined8), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_68 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CGhoul_process
-    Address: 0x004e6600  File: core/ghoul.cpp
-    Locals:  local_380 (undefined4), local_37c (undefined4), local_378 (undefined1), local_314 (undefined1), local_310 (undefined4), local_2e0 (undefined4), local_2dc (undefined4), local_2d8 (undefined1), local_2d4 (undefined4), local_2a4 (undefined4), local_2a0 (undefined4), local_29c (undefined1), local_298 (undefined4), local_280 (undefined4), local_27c (undefined4), local_278 (undefined4), local_268 (undefined4), local_264 (undefined4), local_260 (undefined1), local_25f (undefined1), local_240 (undefined1), local_23c (undefined4), local_230 (undefined4), local_228 (undefined1), local_21c (undefined1), local_210 (undefined1), local_204 (undefined4), local_200 (undefined4), local_1fc (undefined4), local_1f8 (undefined4), local_1f4 (undefined4), local_1f0 (undefined4), local_1ec (undefined1), local_1e0 (undefined1), local_1d4 (undefined1), local_1c8 (undefined4), local_1c4 (undefined4), local_1c0 (undefined4), local_1bc (undefined1), local_1b0 (undefined1), local_1a4 (undefined1), local_198 (undefined1), local_18c (undefined4), local_188 (undefined4), local_184 (undefined4), local_180 (undefined4), local_17c (undefined4), local_178 (undefined4), local_174 (undefined4), local_170 (undefined4), local_16c (undefined4), local_168 (undefined4), local_164 (undefined4), local_160 (undefined4), local_15c (undefined1), local_150 (undefined1), local_144 (undefined1), local_138 (undefined4), local_134 (undefined4), local_130 (undefined4), local_12c (undefined1), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined1), local_108 (undefined1), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined1), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined8), local_ac (undefined8), local_a4 (undefined8), local_9c (undefined8), local_8c (undefined8), local_84 (undefined4), local_7c (undefined4), local_78 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CPoly_intersectPoly
@@ -592,11 +564,6 @@ Undefined types in variables (186)
     Locals:  local_1d0 (undefined4), local_74 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CTurret_process
-    Address: 0x005e2430  File: core/turret.cpp
-    Locals:  local_100 (undefined8), local_30 (undefined1[20])
-    Suggested: Resolve undefined types to concrete types
-
   CFileManager_extractPodFile
     Address: 0x004b6e10  File: engine/fileio.cpp
     Locals:  local_e80 (undefined1[2088]), local_30 (undefined1[16])
@@ -797,11 +764,6 @@ Undefined types in variables (186)
     Locals:  local_20 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CLarva_process
-    Address: 0x00503080  File: core/larva.cpp
-    Locals:  local_1f0 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
   configureGraphicsOptions
     Address: 0x00510c80  File: core/menu.cpp
     Locals:  local_144 (undefined4)
@@ -935,11 +897,6 @@ Undefined types in variables (186)
   convertDirectionVectorToEulerAngles
     Address: 0x005e7830  File: core/vecdir.cpp
     Locals:  uStack_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CWerewolf_process
-    Address: 0x005efde0  File: core/werewolf.cpp
-    Locals:  local_320 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   eulerToQuaternionIndirect
@@ -1143,13 +1100,31 @@ Wrong calling convention - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Unresolved stack params - .keep overrides (2)
+Unresolved stack params - .keep overrides (5)
 --------------------------------------------------------------------------------
 
   CDemonActor_processMeleeHit
     Address: 0x0040a210  File: core/actor.cpp
     Evidence: in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74
     Signature: int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,int hit_type)
+    Suggested: Signature is missing stack parameters entirely
+
+  CWerewolf_process
+    Address: 0x005efde0  File: core/werewolf.cpp
+    Evidence: in_stack_fffffcec, in_stack_fffffcec
+    Signature: void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_ptr,float delta_time)
+    Suggested: Signature is missing stack parameters entirely
+
+  CGhoul_process
+    Address: 0x004e6600  File: core/ghoul.cpp
+    Evidence: in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88
+    Signature: void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float delta_time)
+    Suggested: Signature is missing stack parameters entirely
+
+  CLarva_process
+    Address: 0x00503080  File: core/larva.cpp
+    Evidence: in_stack_fffffe18, in_stack_fffffe18
+    Signature: void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   CCharacter_updateCarriedObjects
@@ -1193,8 +1168,18 @@ Unresolved stack params - by-value struct passing (4)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (32)
+Undefined types - .keep overrides (37)
 --------------------------------------------------------------------------------
+
+  CZombie_process
+    Address: 0x005f9470  File: core/zombie.cpp
+    Locals:  local_3b0 (undefined4), local_3ac (undefined1), local_3a8 (undefined4), local_378 (undefined4), local_374 (undefined4), local_370 (undefined1), local_36c (undefined4), local_33c (undefined4), local_338 (undefined4), local_334 (undefined1), local_333 (undefined1), local_314 (undefined1), local_2fc (undefined1), local_2e4 (undefined1), local_2cc (undefined1), local_2b4 (undefined1), local_29c (undefined1), local_290 (undefined4), local_28c (undefined4), local_288 (undefined4), local_284 (undefined4), local_280 (undefined4), local_27c (undefined4), local_278 (undefined1), local_26c (undefined4), local_268 (undefined4), local_264 (undefined4), local_260 (undefined4), local_25c (undefined4), local_258 (undefined4), local_254 (undefined4), local_250 (undefined4), local_24c (undefined4), local_248 (undefined4), local_240 (undefined4), local_23c (undefined4), local_238 (undefined4), local_234 (undefined4), local_230 (undefined1), local_22c (undefined4), local_224 (undefined4), local_220 (undefined4), local_21c (undefined4), local_218 (undefined1), local_20c (undefined1), local_200 (undefined4), local_1fc (undefined4), local_1f8 (undefined4), local_1f4 (undefined4), local_1f0 (undefined4), local_1ec (undefined4), local_1e8 (undefined4), local_1e4 (undefined4), local_1e0 (undefined4), local_1dc (undefined4), local_1d8 (undefined4), local_1d4 (undefined4), local_1d0 (undefined1), local_1c4 (undefined1), local_1b8 (undefined4), local_1b4 (undefined4), local_1b0 (undefined4), local_1ac (undefined4), local_1a8 (undefined4), local_1a4 (undefined4), local_1a0 (undefined4), local_19c (undefined4), local_198 (undefined4), local_194 (undefined4), local_190 (undefined4), local_18c (undefined4), local_188 (undefined4), local_184 (undefined4), local_180 (undefined4), local_17c (undefined1), local_170 (undefined1), local_164 (undefined4), local_160 (undefined4), local_15c (undefined4), local_158 (undefined4), local_154 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined4), local_144 (undefined4), local_140 (undefined1), local_134 (undefined4), local_130 (undefined4), local_12c (undefined4), local_128 (undefined1), local_11c (undefined1), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined1), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined1), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined1), local_a4 (undefined1), local_98 (undefined8), local_88 (undefined8), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_68 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CGhoul_process
+    Address: 0x004e6600  File: core/ghoul.cpp
+    Locals:  local_380 (undefined4), local_37c (undefined4), local_378 (undefined1), local_314 (undefined1), local_310 (undefined4), local_2e0 (undefined4), local_2dc (undefined4), local_2d8 (undefined1), local_2d4 (undefined4), local_2a4 (undefined4), local_2a0 (undefined4), local_29c (undefined1), local_298 (undefined4), local_280 (undefined4), local_27c (undefined4), local_278 (undefined4), local_268 (undefined4), local_264 (undefined4), local_260 (undefined1), local_25f (undefined1), local_240 (undefined1), local_23c (undefined4), local_230 (undefined4), local_228 (undefined1), local_21c (undefined1), local_210 (undefined1), local_204 (undefined4), local_200 (undefined4), local_1fc (undefined4), local_1f8 (undefined4), local_1f4 (undefined4), local_1f0 (undefined4), local_1ec (undefined1), local_1e0 (undefined1), local_1d4 (undefined1), local_1c8 (undefined4), local_1c4 (undefined4), local_1c0 (undefined4), local_1bc (undefined1), local_1b0 (undefined1), local_1a4 (undefined1), local_198 (undefined1), local_18c (undefined4), local_188 (undefined4), local_184 (undefined4), local_180 (undefined4), local_17c (undefined4), local_178 (undefined4), local_174 (undefined4), local_170 (undefined4), local_16c (undefined4), local_168 (undefined4), local_164 (undefined4), local_160 (undefined4), local_15c (undefined1), local_150 (undefined1), local_144 (undefined1), local_138 (undefined4), local_134 (undefined4), local_130 (undefined4), local_12c (undefined1), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined1), local_108 (undefined1), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined1), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined8), local_ac (undefined8), local_a4 (undefined8), local_9c (undefined8), local_8c (undefined8), local_84 (undefined4), local_7c (undefined4), local_78 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
 
   closestPointOnSegment3D
     Address: 0x005d6020  File: shape/superopt.cpp
@@ -1281,6 +1266,11 @@ Undefined types - .keep overrides (32)
     Locals:  uStack_f8 (undefined4), uStack_f4 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CTurret_process
+    Address: 0x005e2430  File: core/turret.cpp
+    Locals:  local_100 (undefined8), local_30 (undefined1[20])
+    Suggested: Resolve undefined types to concrete types
+
   swapBuffers
     Address: 0x005eda20  File: wincore/wddvmem.cpp
     Locals:  local_20 (undefined8 *), local_18 (undefined8 *)
@@ -1351,9 +1341,19 @@ Undefined types - .keep overrides (32)
     Locals:  local_20 (undefined1 *)
     Suggested: Resolve undefined types to concrete types
 
+  CLarva_process
+    Address: 0x00503080  File: core/larva.cpp
+    Locals:  local_1f0 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
   CDemonSet_showCameraEditor
     Address: 0x0057e7c0  File: core/setedit.cpp
     Locals:  local_478c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CWerewolf_process
+    Address: 0x005efde0  File: core/werewolf.cpp
+    Locals:  local_320 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
 --------------------------------------------------------------------------------
