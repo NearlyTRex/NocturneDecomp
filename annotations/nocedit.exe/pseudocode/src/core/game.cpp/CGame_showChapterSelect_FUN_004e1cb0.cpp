@@ -44,9 +44,9 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xecf);
   }
   local_14 = (uint)(p_Var2 == (_FILE *)0x0);
-  this_ptr->damageable_enemy_count = 0.0;
-  this_ptr->game_state_flags = 0;
-  this_ptr->game_stat_1 = 0.0;
+  this_ptr->damageable_enemy_count = 0;
+  this_ptr->total_kill_count = 0;
+  this_ptr->total_game_time = 0.0;
   this_ptr->total_play_time = 0.0;
   this_ptr->is_loading = 0;
   local_1c = g_EditorFont;

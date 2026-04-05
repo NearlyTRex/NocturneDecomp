@@ -204,6 +204,7 @@ int_ptr = (int *)uint_ptr;
    ```
    scripts/Bash/test_compilation.sh path/to/file.keep.cpp
    ```
+8. **Suggest readability improvements** — after the `.keep` file compiles, review it for cases where the decompiler used wrong types that obscure the code's intent. Common examples: `CVector3i` fields holding float bit patterns (hex integers that are really IEEE 754 floats), `int` locals that are actually pointers, etc. If you spot these, **tell the user** what you found and what the correct types would be, but **do not apply the changes** unless the user approves. These are optional cleanups, not compilation fixes.
 
 ### Using `.chunked.cpp` for large functions
 

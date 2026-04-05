@@ -67,21 +67,21 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
     core_game_cpp_CGame_rollCredits_FUN_004e4010(this_ptr);
     return;
   }
-  this_ptr->game_stat_1 = this_ptr->total_play_time + this_ptr->game_stat_1;
-  this_ptr->game_state_flags = this_ptr->game_state_flags + (int)this_ptr->damageable_enemy_count;
+  this_ptr->total_game_time = this_ptr->total_play_time + this_ptr->total_game_time;
+  this_ptr->total_kill_count = this_ptr->total_kill_count + this_ptr->damageable_enemy_count;
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_4c);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_4c,"stats",0x280,0x1e0);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_4c,0,0,0xffff);
-  iVar8 = (int)ROUND(ROUND(this_ptr->game_stat_1 * (float)0.00027777777777777799));
-  fVar2 = this_ptr->game_stat_1 - (float)iVar8 * (float)3600;
-  this_ptr->game_stat_1 = fVar2;
+  iVar8 = (int)ROUND(ROUND(this_ptr->total_game_time * (float)0.00027777777777777799));
+  fVar2 = this_ptr->total_game_time - (float)iVar8 * (float)3600;
+  this_ptr->total_game_time = fVar2;
   fVar4 = (float)0.016666666666666701;
   fVar3 = fVar2 - (float)(int)ROUND(ROUND(fVar2 * fVar4)) * (float)60;
-  this_ptr->game_stat_1 = fVar3;
+  this_ptr->total_game_time = fVar3;
   iVar7 = (int)ROUND(ROUND(fVar3));
-  fVar3 = this_ptr->game_stat_1 - (float)iVar7;
-  this_ptr->game_stat_1 = fVar3;
+  fVar3 = this_ptr->total_game_time - (float)iVar7;
+  this_ptr->total_game_time = fVar3;
   fVar5 = (float)100;
   pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Mission time");
   pcVar9 = local_54c;
@@ -197,7 +197,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
     pcVar12[1] = cVar2;
     pcVar12 = pcVar12 + 2;
   } while (cVar2 != '\0');
-  _sprintf(local_14c,"%d\n\n",this_ptr->game_state_flags);
+  _sprintf(local_14c,"%d\n\n",this_ptr->total_kill_count);
   this_ptr_00 = g_ThemeFont;
   pcVar9 = local_14c;
   iVar8 = -1;

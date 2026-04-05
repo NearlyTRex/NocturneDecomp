@@ -42,7 +42,7 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *sav
   int local_30;
   int *local_2c;
   float *local_28;
-  float *local_24;
+  int *local_24;
   char *local_20;
   float *local_1c;
   long local_18;
@@ -76,9 +76,9 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *sav
     g_EditorFont = g_ThemeFont;
   }
   local_20 = this_ptr->chapter_reload_filename;
-  local_2c = &this_ptr->game_state_flags;
+  local_2c = &this_ptr->total_kill_count;
   local_24 = &this_ptr->damageable_enemy_count;
-  local_1c = &this_ptr->game_stat_1;
+  local_1c = &this_ptr->total_game_time;
   local_28 = &this_ptr->total_play_time;
   do {
     pcVar7 = save_filename;

@@ -49,7 +49,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   pcVar9 = local_548;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_48,0,0,0xffff);
-  this_ptr->game_stat_1 = this_ptr->total_play_time + this_ptr->game_stat_1;
+  this_ptr->total_game_time = this_ptr->total_play_time + this_ptr->total_game_time;
   iVar8 = (int)ROUND(ROUND(this_ptr->total_play_time * (float)0.00027777777777777799));
   fVar2 = this_ptr->total_play_time - (float)iVar8 * (float)3600;
   fVar5 = (float)0.016666666666666701;
@@ -59,7 +59,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   fVar4 = this_ptr->total_play_time - (float)iVar6;
   this_ptr->total_play_time = fVar4;
   fVar3 = (float)100;
-  this_ptr->game_state_flags = this_ptr->game_state_flags + (int)this_ptr->damageable_enemy_count;
+  this_ptr->total_kill_count = this_ptr->total_kill_count + this_ptr->damageable_enemy_count;
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Level time");
   do {
     cVar1 = *pcVar4;

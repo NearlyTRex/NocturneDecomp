@@ -60,10 +60,10 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr)
   this_ptr->block_auto_save = 0;
   this_ptr->auto_save_blocked = 0;
   this_ptr->player_hit_flag = 0;
-  this_ptr->game_stat_1 = 0.0;
+  this_ptr->total_game_time = 0.0;
   this_ptr->total_play_time = 0.0;
-  this_ptr->damageable_enemy_count = 0.0;
-  this_ptr->game_state_flags = 0;
+  this_ptr->damageable_enemy_count = 0;
+  this_ptr->total_kill_count = 0;
   this_ptr->act_completion_state = 0;
   g_CurrentSaveFile[0] = '\0';
   this_ptr->chapter_reload_filename[0] = '\0';

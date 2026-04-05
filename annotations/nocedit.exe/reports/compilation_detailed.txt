@@ -5,25 +5,25 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6124 (94.9%)
-Failed: 330
+Successful: 6135 (95.1%)
+Failed: 319
 
 ERROR CATEGORIES
 --------------------------------------------------
-  format_error                     699
-  type_error                       378
-  incompatible_types               134
-  cast_error                       115
-  undeclared_identifier            104
+  format_error                     672
+  type_error                       377
+  incompatible_types               132
+  cast_error                       104
+  undeclared_identifier             95
   syntax_error                      30
   pointer_type                      24
   other                             21
   missing_member                     8
-  argument_error                     4
+  argument_error                     3
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: format_error (699 errors)
+CATEGORY: format_error (672 errors)
 ====================================================================================================
 
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
@@ -46,8 +46,6 @@ CATEGORY: format_error (699 errors)
     Line 124: format specifies type 'char *' but the argument has type 'CEnemy *' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0
     Line 54: format specifies type 'char *' but the argument has type 'CEnemy *' [-Werror,-Wformat]
-  core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
-    Line 308: format specifies type 'char *' but the argument has type 'CGabriella *' [-Werror,-Wformat]
   core_haystack.cpp_CHaystack_process_FUN_004f0e40
     Line 179: format specifies type 'char *' but the argument has type 'CHaystack *' [-Werror,-Wformat]
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
@@ -214,8 +212,6 @@ CATEGORY: format_error (699 errors)
     Line 102: format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]
   engine_ini.cpp_getProfileInteger_FUN_004fb9a0
     Line 17: format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]
-  core_game.cpp_CGame_displayActStats_FUN_004e3800
-    Line 176: format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     Line 136: format specifies type 'int' but the argument has type 'time_t' (aka 'long') [-Werror,-Wformat]
   core_game.cpp_CGame_runGameSession_FUN_004daf80
@@ -228,10 +224,6 @@ CATEGORY: format_error (699 errors)
     Line 20: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
   shape_memdbg.cpp_debugRealloc_FUN_0050f540
     Line 24: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
-    Line 214: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_event.cpp_CEventList_executeCommand_FUN_004aacc0
-    Line 172: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910
     Line 59: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_gore.cpp_CBloodSplat_save_FUN_004ecb90
@@ -328,7 +320,7 @@ CATEGORY: format_error (699 errors)
     Line 19: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
-CATEGORY: type_error (378 errors)
+CATEGORY: type_error (377 errors)
 ====================================================================================================
 
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -429,8 +421,6 @@ CATEGORY: type_error (378 errors)
     Line 88: member reference base type 'longlong' (aka 'long long') is not a structure or union
   engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
     Line 109: member reference base type 'longlong' (aka 'long long') is not a structure or union
-  core_dskybox.cpp_renderSkyDome_FUN_004901f0
-    Line 180: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
   core_netgame.cpp_CNetGame_swapPlayerData_FUN_00543bb0
     Line 64: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
   engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90
@@ -475,7 +465,7 @@ CATEGORY: type_error (378 errors)
     Line 53: statement requires expression of integer type ('float' invalid)
 
 ====================================================================================================
-CATEGORY: incompatible_types (134 errors)
+CATEGORY: incompatible_types (132 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
@@ -492,8 +482,6 @@ CATEGORY: incompatible_types (134 errors)
     Line 117: assigning to 'SExpandedEdge *' from incompatible type 'void *'
   shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
     Line 54: assigning to 'SVertexData *' from incompatible type 'void *'
-  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
-    Line 239: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_haystack.cpp_CHaystack_process_FUN_004f0e40
     Line 269: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
@@ -570,8 +558,6 @@ CATEGORY: incompatible_types (134 errors)
     Line 89: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
   core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
     Line 196: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
-  core_frankgen.cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500
-    Line 17: invalid conversion specifier '.' [-Werror,-Wformat-invalid-specifier]
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 550: invalid operands to binary expression ('CEditorTools *' and 'int')
   shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
@@ -589,7 +575,7 @@ CATEGORY: incompatible_types (134 errors)
   core_script.cpp_CScript_processEditorInput_FUN_00565130
     Line 247: no matching function for call to 'core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20'
   core_game.cpp_CGame_saveGame_FUN_004e0cd0
-    Line 161: no matching function for call to 'crt_fstream_cpp_ostream_write_FUN_005ffcb3'
+    Line 162: no matching function for call to 'crt_fstream_cpp_ostream_write_FUN_005ffcb3'
   engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
     Line 101: no matching function for call to 'engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60'
   shape_design.c_embedCopyrightWatermark_FUN_0046b9a0
@@ -606,7 +592,7 @@ CATEGORY: incompatible_types (134 errors)
     Line 212: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: cast_error (115 errors)
+CATEGORY: cast_error (104 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -633,8 +619,6 @@ CATEGORY: cast_error (115 errors)
     Line 180: C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
     Line 76: C-style cast from 'uint' (aka 'unsigned int') to 'uchar[4]' (aka 'unsigned char[4]') is not allowed
-  core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
-    Line 329: cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'
   core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330
     Line 33: cannot cast from type 'float' to pointer type 'CDemonActor *'
   core_xform.cpp_lerpMatrix3x4_FUN_005f7140
@@ -663,7 +647,7 @@ CATEGORY: cast_error (115 errors)
     Line 27: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (104 errors)
+CATEGORY: undeclared_identifier (95 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -734,12 +718,8 @@ CATEGORY: undeclared_identifier (104 errors)
     Line 41: use of undeclared identifier 'stack0x0000002c'
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 474: use of undeclared identifier 'stack0xffffcc64'
-  core_event.cpp_CEventList_executeCommand_FUN_004aacc0
-    Line 382: use of undeclared identifier 'stack0xffffe9c4'
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
     Line 157: use of undeclared identifier 'stack0xffffee80'
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
-    Line 537: use of undeclared identifier 'stack0xfffff150'
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
     Line 106: use of undeclared identifier 'stack0xfffff300'
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
@@ -766,8 +746,6 @@ CATEGORY: undeclared_identifier (104 errors)
     Line 164: use of undeclared identifier 'stack0xffffff60'
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
     Line 111: use of undeclared identifier 'stack0xffffff78'
-  core_fire.cpp_CTrail_render_FUN_004c5e90
-    Line 81: use of undeclared identifier 'stack0xffffff88'
   core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0
     Line 61: use of undeclared identifier 'stack0xffffff88'
   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
@@ -778,10 +756,6 @@ CATEGORY: undeclared_identifier (104 errors)
     Line 65: use of undeclared identifier 'stack0xffffffc0'
   core_trash.cpp_CTrash_renderOpaque_FUN_005df550
     Line 19: use of undeclared identifier 'stack0xffffffc4'
-  core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70
-    Line 28: use of undeclared identifier 'stack0xffffffcc'
-  core_fire.cpp_CMuzzleFlash_render_FUN_004c1a30
-    Line 48: use of undeclared identifier 'stack0xffffffd0'
   core_vessel.cpp_CCryptVessel_renderTransparent_FUN_005e98b0
     Line 37: use of undeclared identifier 'stack0xffffffd4'
   core_manpuz.cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60
@@ -902,11 +876,9 @@ CATEGORY: missing_member (8 errors)
     Line 111: no member named '_18_2_' in 'tWAVEFORMATEX'
 
 ====================================================================================================
-CATEGORY: argument_error (4 errors)
+CATEGORY: argument_error (3 errors)
 ====================================================================================================
 
-  core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890
-    Line 78: too few arguments to function call, expected 4, have 3
   core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
     Line 88: too few arguments to function call, expected 4, have 3
   wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0

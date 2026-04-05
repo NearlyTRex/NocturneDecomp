@@ -95,10 +95,10 @@ typedef struct CGame {
     int is_processing; // 0x23c
     int block_auto_save; // 0x240
     int auto_save_blocked; // 0x244
-    float game_stat_1; // 0x248
-    float damageable_enemy_count; // 0x24c
+    float total_game_time; // 0x248
+    int damageable_enemy_count; // 0x24c
     float total_play_time; // 0x250
-    int game_state_flags; // 0x254
+    int total_kill_count; // 0x254
     int act_completion_state; // 0x258
     int clocktime; // 0x25c
     int delta_time_int; // 0x260

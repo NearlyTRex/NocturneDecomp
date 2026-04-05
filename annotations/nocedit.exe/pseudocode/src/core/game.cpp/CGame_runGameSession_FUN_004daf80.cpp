@@ -358,7 +358,7 @@ LAB_004db434:
   }
   fVar6 = (float)core_mission_cpp_CDemonMission_countDamageableEnemies_FUN_00524e00
                            (g_CDemonMissionPtr);
-  this_ptr->damageable_enemy_count = fVar6;
+  this_ptr->damageable_enemy_count = (int)fVar6;
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\game.cpp",0x683);
   engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,0);
   core_sound_cpp_CSound_shutdown_FUN_005b2f70(g_CSoundPtr);
