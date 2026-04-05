@@ -5,25 +5,25 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6157 (95.4%)
-Failed: 297
+Successful: 6183 (95.8%)
+Failed: 271
 
 ERROR CATEGORIES
 --------------------------------------------------
-  format_error                     639
-  type_error                       372
+  format_error                     540
+  type_error                       366
   incompatible_types               127
-  undeclared_identifier             82
-  cast_error                        61
+  undeclared_identifier             74
+  cast_error                        60
   syntax_error                      27
   pointer_type                      24
-  other                             21
+  other                             19
   missing_member                     8
   argument_error                     3
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: format_error (639 errors)
+CATEGORY: format_error (540 errors)
 ====================================================================================================
 
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
@@ -34,26 +34,12 @@ CATEGORY: format_error (639 errors)
     Line 22: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror...
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     Line 96: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Wer...
-  core_mission.cpp_CDemonMission_loadActor_FUN_00523990
-    Line 42: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werro...
-  core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030
-    Line 104: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werro...
-  core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
-    Line 104: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werro...
-  core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330
-    Line 36: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werro...
-  core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
-    Line 124: format specifies type 'char *' but the argument has type 'CEnemy *' [-Werror,-Wf...
-  core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0
-    Line 54: format specifies type 'char *' but the argument has type 'CEnemy *' [-Werror,-Wf...
   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470
     Line 214: format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-W...
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
     Line 413: format specifies type 'char *' but the argument has type 'CLightActor *' [-Werro...
   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
     Line 129: format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntr...
-  core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
-    Line 46: format specifies type 'char *' but the argument has type 'CMimic *' [-Werror,-Wf...
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
     Line 60: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror...
   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
@@ -72,25 +58,39 @@ CATEGORY: format_error (639 errors)
     Line 109: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-We...
   engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0
     Line 29: format specifies type 'char *' but the argument has type 'SMRGLHeaderExtended *'...
-  core_msnedit.cpp_drawMotionBar_FUN_00536e20
-    Line 48: format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-W...
   sound_sndmain.cpp_logSoundError_FUN_005adba0
     Line 58: format specifies type 'char *' but the argument has type 'SSoundDeviceInfo *' [-...
   shape_design.c_loadTextureData_FUN_0046b060
     Line 93: format specifies type 'char *' but the argument has type 'STextureAtlasEntry *' ...
   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_005b0390
     Line 28: format specifies type 'char *' but the argument has type 'UINT' (aka 'unsigned i...
-  core_motion.cpp_CMotionList_save_FUN_0052d170
-    Line 37: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror...
   core_setedit.cpp_editGroundTypes_FUN_00578630
     Line 49: format specifies type 'char *' but the argument has type 'char (*)[40]' [-Werror...
   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
     Line 60: format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror...
+  core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0
+    Line 98: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat...
+  shape_memdbg.cpp_closeFile_FUN_0050f9b0
+    Line 40: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat...
+  sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0
+    Line 32: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [...
+  sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0
+    Line 20: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [...
+  sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80
+    Line 24: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [...
+  engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
+    Line 113: format specifies type 'char *' but the argument has type 'uint *' (aka 'unsigned...
+  core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0
+    Line 29: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned i...
+  engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
+    Line 78: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned i...
+  engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
+    Line 43: format specifies type 'char *' but the argument has type 'void *' [-Werror,-Wfor...
 
-  ... and 100 more errors
+  ... and 74 more errors
 
 ====================================================================================================
-CATEGORY: type_error (372 errors)
+CATEGORY: type_error (366 errors)
 ====================================================================================================
 
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -117,8 +117,6 @@ CATEGORY: type_error (372 errors)
     Line 181: member reference base type 'char[80]' is not a structure or union...
   core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
     Line 41: member reference base type 'const char[13]' is not a structure or union...
-  core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0
-    Line 78: member reference base type 'double' is not a structure or union...
   shape_design.c_calculatePolygonNormal_FUN_0045caa0
     Line 42: member reference base type 'double' is not a structure or union...
   shape_design.c_generateOctant_FUN_00469420
@@ -153,8 +151,10 @@ CATEGORY: type_error (372 errors)
     Line 18: member reference base type 'double' is not a structure or union...
   core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
     Line 202: member reference base type 'float' is not a structure or union...
+  core_main.c_showDeveloperToolsMenu_FUN_005073a0
+    Line 153: member reference base type 'int' is not a structure or union...
 
-  ... and 37 more errors
+  ... and 36 more errors
 
 ====================================================================================================
 CATEGORY: incompatible_types (127 errors)
@@ -224,13 +224,11 @@ CATEGORY: incompatible_types (127 errors)
   ... and 26 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (82 errors)
+CATEGORY: undeclared_identifier (74 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
     Line 24: use of undeclared identifier 'DAT_80000010'...
-  core_script.cpp_CScript_step_FUN_0055a810
-    Line 1574: use of undeclared identifier 'SUB14'...
   core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
     Line 96: use of undeclared identifier 'code'...
   engine_dosio.c_findFile_FUN_00481760
@@ -267,8 +265,6 @@ CATEGORY: undeclared_identifier (82 errors)
     Line 123: use of undeclared identifier 'code'...
   core_mmx.c_detectIntelProcessor_FUN_00524f4c
     Line 63: use of undeclared identifier 'register0x0000000c'...
-  core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
-    Line 230: use of undeclared identifier 'stack0x00000000'...
   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990
     Line 49: use of undeclared identifier 'stack0x00000000'...
   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0
@@ -287,11 +283,15 @@ CATEGORY: undeclared_identifier (82 errors)
     Line 41: use of undeclared identifier 'stack0x0000002c'...
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 474: use of undeclared identifier 'stack0xffffcc64'...
+  core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
+    Line 157: use of undeclared identifier 'stack0xffffee80'...
+  engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
+    Line 112: use of undeclared identifier 'stack0xfffff964'...
 
-  ... and 21 more errors
+  ... and 18 more errors
 
 ====================================================================================================
-CATEGORY: cast_error (61 errors)
+CATEGORY: cast_error (60 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
@@ -314,8 +314,6 @@ CATEGORY: cast_error (61 errors)
     Line 180: C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed...
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
     Line 76: C-style cast from 'uint' (aka 'unsigned int') to 'uchar[4]' (aka 'unsigned char[...
-  core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330
-    Line 33: cannot cast from type 'float' to pointer type 'CDemonActor *'...
   core_xform.cpp_lerpMatrix3x4_FUN_005f7140
     Line 42: cannot cast from type 'float' to pointer type 'CMatrix3x3f *'...
   core_set.cpp_CDemonSet_processActors_FUN_0056b810
@@ -410,7 +408,7 @@ CATEGORY: pointer_type (24 errors)
     Line 31: comparison of distinct pointer types ('CPoly *' and 'int *')...
 
 ====================================================================================================
-CATEGORY: other (21 errors)
+CATEGORY: other (19 errors)
 ====================================================================================================
 
   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
@@ -419,10 +417,6 @@ CATEGORY: other (21 errors)
     Line 173: array type 'byte[4]' (aka 'unsigned char[4]') is not assignable...
   core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80
     Line 41: array type 'char[4]' is not assignable...
-  core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030
-    Line 56: assigning to 'byte *' (aka 'unsigned char *') from 'char *' converts between poi...
-  core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
-    Line 56: assigning to 'byte *' (aka 'unsigned char *') from 'char *' converts between poi...
   core_scat.cpp_CScat_updateWeaponState_FUN_00558060
     Line 57: conversion from 'double' to 'int' is not allowed in a converted constant express...
   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
@@ -463,8 +457,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 0.75
-Average suspects in failed compilations: 7.57
+Average suspects in successfully compiled functions: 0.76
+Average suspects in failed compilations: 8.15
 
-Functions that compile but have suspect patterns: 1141
+Functions that compile but have suspect patterns: 1152
 (These may have runtime issues even though syntax is valid)

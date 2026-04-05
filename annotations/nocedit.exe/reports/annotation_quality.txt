@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        194 ( 3.0%)
+  Functions with type issues:        192 ( 3.0%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,13 +22,13 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          2
-    Undefined types in variables:      181
-    Unresolved stack params:           12
+    Undefined types in variables:      180
+    Unresolved stack params:           11
 
-  Excluded (.keep / MMX / by-value):   45 functions
+  Excluded (.keep / MMX / by-value):   47 functions
     Wrong calling convention:          1
-    Undefined types in variables:      40
-    Unresolved stack params:           9
+    Undefined types in variables:      41
+    Unresolved stack params:           10
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -85,7 +85,7 @@ Wrong calling convention (unaffected register usage) (2)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (12)
+Unresolved stack parameters (missing from signature) (11)
 --------------------------------------------------------------------------------
 
   CWinFont_setColorAndDrawText
@@ -130,12 +130,6 @@ Unresolved stack parameters (missing from signature) (12)
     Signature: void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDemonSet *this_ptr,char *coverage_map,int exclude_camera_index)
     Suggested: Signature is missing stack parameters entirely
 
-  CDemonMission_enemyRandomizer
-    Address: 0x005379e0  File: core/msnedit.cpp
-    Evidence: in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc
-    Signature: void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonMission *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   CStranger_processFrame
     Address: 0x005bb960  File: core/stranger.cpp
     Evidence: in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14
@@ -161,7 +155,7 @@ Unresolved stack parameters (missing from signature) (12)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (181)
+Undefined types in variables (180)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -829,11 +823,6 @@ Undefined types in variables (181)
     Locals:  uStack_20 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  editParameterValue
-    Address: 0x00562920  File: core/script.cpp
-    Locals:  local_3760 (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
   CDemonSet_load
     Address: 0x00569410  File: core/set.cpp
     Locals:  local_48 (undefined1[4])
@@ -1100,13 +1089,19 @@ Wrong calling convention - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Unresolved stack params - .keep overrides (5)
+Unresolved stack params - .keep overrides (6)
 --------------------------------------------------------------------------------
 
   CDemonActor_processMeleeHit
     Address: 0x0040a210  File: core/actor.cpp
     Evidence: in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74
     Signature: int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,int hit_type)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDemonMission_enemyRandomizer
+    Address: 0x005379e0  File: core/msnedit.cpp
+    Evidence: in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc
+    Signature: void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonMission *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CWerewolf_process
@@ -1168,7 +1163,7 @@ Unresolved stack params - by-value struct passing (4)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (37)
+Undefined types - .keep overrides (38)
 --------------------------------------------------------------------------------
 
   CZombie_process
@@ -1344,6 +1339,11 @@ Undefined types - .keep overrides (37)
   CLarva_process
     Address: 0x00503080  File: core/larva.cpp
     Locals:  local_1f0 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  editParameterValue
+    Address: 0x00562920  File: core/script.cpp
+    Locals:  local_3760 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
   CDemonSet_showCameraEditor

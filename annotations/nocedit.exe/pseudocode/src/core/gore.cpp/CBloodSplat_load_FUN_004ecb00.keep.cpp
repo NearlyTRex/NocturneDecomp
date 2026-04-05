@@ -1,0 +1,26 @@
+// Name: core_gore.cpp_CBloodSplat_load_FUN_004ecb00
+// Address: 004ecb00
+// MANUAL RECONSTRUCTION
+// Address Range: [[004ecb00, 004ecb81]]
+// Convention: __cdecl
+// Signature: int __cdecl core_gore_cpp_CBloodSplat_load_FUN_004ecb00(CBloodSplat *this_ptr,_FILE *file_handle)
+
+#include "nocturne.h"
+
+int __cdecl core_gore_cpp_CBloodSplat_load_FUN_004ecb00(CBloodSplat *this_ptr,_FILE *file_handle)
+
+{
+  int iVar1;
+  
+  _fscanf(file_handle,"%f,%f,%f\n",&(this_ptr->position).x,&(this_ptr->position).y,
+             &(this_ptr->position).z);
+  _fscanf(file_handle,"%d,%d,%d\n",&this_ptr->is_wall_splat,&this_ptr->blood_type,
+             &this_ptr->expired);
+  _fscanf(file_handle,"%f,%f,%f\n",&(this_ptr->rotation).x,&(this_ptr->rotation).z,
+             &(this_ptr->rotation).y);
+  iVar1 = _fscanf(file_handle,"%d,%d,%d,%d,%d,%d,%d\n",&this_ptr->texture_variant,
+                     &(this_ptr->position_fixed).x,&(this_ptr->position_fixed).y,
+                     &(this_ptr->position_fixed).z,&(this_ptr->normal_fixed).x,
+                     &(this_ptr->normal_fixed).y,&(this_ptr->normal_fixed).z);
+  return iVar1;
+}
