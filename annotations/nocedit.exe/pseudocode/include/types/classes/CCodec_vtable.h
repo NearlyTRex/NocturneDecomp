@@ -2,6 +2,7 @@
 
 // Forward declarations
 struct CCodec;
+struct _ostream;
 
 // Dependencies
 #include "system/basetypes.h"

@@ -5,16 +5,16 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6135 (95.1%)
-Failed: 319
+Successful: 6144 (95.2%)
+Failed: 310
 
 ERROR CATEGORIES
 --------------------------------------------------
-  format_error                     672
-  type_error                       377
-  incompatible_types               132
+  format_error                     663
+  type_error                       376
+  incompatible_types               131
   cast_error                       104
-  undeclared_identifier             95
+  undeclared_identifier             94
   syntax_error                      30
   pointer_type                      24
   other                             21
@@ -23,7 +23,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: format_error (672 errors)
+CATEGORY: format_error (663 errors)
 ====================================================================================================
 
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
@@ -120,8 +120,6 @@ CATEGORY: format_error (672 errors)
     Line 24: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     Line 113: format specifies type 'char *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
-  core_game.cpp_CGame_saveGame_FUN_004e0cd0
-    Line 111: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   core_script.cpp_CScript_loadScript_FUN_00559f80
     Line 113: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0
@@ -130,16 +128,12 @@ CATEGORY: format_error (672 errors)
     Line 78: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
     Line 43: format specifies type 'char *' but the argument has type 'void *' [-Werror,-Wformat]
-  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
-    Line 335: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250
     Line 38: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   core_inv.cpp_CInventory_load_FUN_004ff400
     Line 45: format specifies type 'float *' but the argument has type 'CInventory *' [-Werror,-Wformat]
   core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
     Line 22: format specifies type 'float *' but the argument has type 'CMatrix3x4f *' [-Werror,-Wformat]
-  core_gore.cpp_CBloodPool_load_FUN_004ed160
-    Line 14: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
   core_gore.cpp_CBloodSplat_load_FUN_004ecb00
     Line 14: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
   core_script.cpp_CScript_step_FUN_0055a810
@@ -186,8 +180,6 @@ CATEGORY: format_error (672 errors)
     Line 25: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60
     Line 55: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  core_game.cpp_CGame_loadGame_FUN_004e12b0
-    Line 308: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
   core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0
     Line 35: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0
@@ -208,14 +200,10 @@ CATEGORY: format_error (672 errors)
     Line 591: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
   shape_memdbg.cpp_debugCalloc_FUN_0050f350
     Line 25: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
-  core_game.cpp_CGame_renderOverlay_FUN_004d8040
-    Line 102: format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]
   engine_ini.cpp_getProfileInteger_FUN_004fb9a0
     Line 17: format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     Line 136: format specifies type 'int' but the argument has type 'time_t' (aka 'long') [-Werror,-Wformat]
-  core_game.cpp_CGame_runGameSession_FUN_004daf80
-    Line 51: format specifies type 'unsigned int' but the argument has type 'CPickList *' [-Werror,-Wformat]
   shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020
     Line 27: format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]
   shape_memdbg.cpp_debugMalloc_FUN_0050f250
@@ -224,8 +212,6 @@ CATEGORY: format_error (672 errors)
     Line 20: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
   shape_memdbg.cpp_debugRealloc_FUN_0050f540
     Line 24: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
-  core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910
-    Line 59: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_gore.cpp_CBloodSplat_save_FUN_004ecb90
     Line 16: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_inv.cpp_CInventory_renderAllItems_FUN_00500690
@@ -320,7 +306,7 @@ CATEGORY: format_error (672 errors)
     Line 19: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
-CATEGORY: type_error (377 errors)
+CATEGORY: type_error (376 errors)
 ====================================================================================================
 
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -405,8 +391,6 @@ CATEGORY: type_error (377 errors)
     Line 20: member reference base type 'int' is not a structure or union
   shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
     Line 103: member reference base type 'int' is not a structure or union
-  support_codec.cpp_readBitsFromStream_FUN_0043e530
-    Line 59: member reference base type 'int' is not a structure or union
   core_xform.cpp_clipPolygonStage1_FUN_005f7ed0
     Line 50: member reference base type 'longlong' (aka 'long long') is not a structure or union
   core_xform.cpp_clipPolygonStage2_FUN_005f8040
@@ -465,7 +449,7 @@ CATEGORY: type_error (377 errors)
     Line 53: statement requires expression of integer type ('float' invalid)
 
 ====================================================================================================
-CATEGORY: incompatible_types (132 errors)
+CATEGORY: incompatible_types (131 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
@@ -574,8 +558,6 @@ CATEGORY: incompatible_types (132 errors)
     Line 170: no matching function for call to '_time'
   core_script.cpp_CScript_processEditorInput_FUN_00565130
     Line 247: no matching function for call to 'core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20'
-  core_game.cpp_CGame_saveGame_FUN_004e0cd0
-    Line 162: no matching function for call to 'crt_fstream_cpp_ostream_write_FUN_005ffcb3'
   engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
     Line 101: no matching function for call to 'engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60'
   shape_design.c_embedCopyrightWatermark_FUN_0046b9a0
@@ -647,13 +629,11 @@ CATEGORY: cast_error (104 errors)
     Line 27: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (95 errors)
+CATEGORY: undeclared_identifier (94 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
     Line 24: use of undeclared identifier 'DAT_80000010'
-  core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
-    Line 39: use of undeclared identifier 'INT_02d83398'
   core_scat.cpp_CScat_process_FUN_005571f0
     Line 150: use of undeclared identifier 'SUB14'
   core_script.cpp_CScript_step_FUN_0055a810

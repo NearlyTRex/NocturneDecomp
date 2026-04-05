@@ -1,10 +1,12 @@
 // Name: core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0
 // Address: 004529b0
+// MANUAL RECONSTRUCTION
 // Address Range: [[004529b0, 00453010]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
+#include "system/stream_compat.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
@@ -25,8 +27,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
   CVector3i *end_pos;
   int iVar9;
   char local_274 [256];
-  byte local_174 [68];
-  _ostream local_130;
   char local_f8 [100];
   CLZWCompress local_94;
   CVector3i local_5c;
@@ -63,19 +63,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
     return;
   }
   _sprintf(local_f8,"backdrop\\%s",local_274);
-  crt_fstream_cpp_ofstream_ctor_FUN_005ff710(local_174,0,local_f8,0x110,g_DefaultStreamBufferSize);
-  if (local_130._ios.__enabled_exceptions != 0) {
+  std::ofstream ofs(local_f8, std::ios::out | std::ios::binary);
+  if (ofs.fail()) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
     g_CurrentLineNumber = 0x12dc;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",local_f8);
   }
-  crt_fstream_cpp_ostream_write_FUN_005ffcb3(&local_130,&g_CameraFogGrid,0x1000);
+  ofs.write((char *)&g_CameraFogGrid, 0x1000);
   if (g_CameraFogGrid.density_multiplier != 0) {
-    local_50[0] = "EFD"[0];
-    local_50[1] = "EFD"[1];
-    local_50[2] = "EFD"[2];
-    local_50[3] = "EFD"[3];
-    crt_fstream_cpp_ostream_write_FUN_005ffcb3(&local_130,local_50,3);
+    ofs.write("EFD", 3);
     local_5c.x = (int)ROUND(ROUND((double)(this_ptr->base).position.f.x * 256)
                            );
     local_5c.y = (int)ROUND(ROUND((double)(this_ptr->base).position.f.y * 256)
@@ -175,7 +171,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
         }
         local_4c = 0x12c00;
         iVar4 = support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30
-                          (&local_94.base,(char *)&g_CameraPlaneWorkBuffer,&local_4c,&local_130);
+                          (&local_94.base,(char *)&g_CameraPlaneWorkBuffer,&local_4c,
+                           watcom_ostream_from(ofs));
         if (iVar4 == 0) {
           g_CurrentFilename = "..\\core\\dcamera.cpp";
           g_CurrentLineNumber = 0x1349;
@@ -187,7 +184,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
           core_main_c_displayErrorAndQuit_FUN_00506f10("Not all bytes consumed compressing %s",local_f8)
           ;
         }
-        if (local_130._ios.__enabled_exceptions != 0) {
+        if (ofs.fail()) {
           g_CurrentLineNumber = 0x134c;
           g_CurrentFilename = "..\\core\\dcamera.cpp";
           core_main_c_displayErrorAndQuit_FUN_00506f10("Error writing compressed file %s",local_f8)
@@ -198,10 +195,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
         local_18 = local_18 + 1;
       } while (local_18 < g_ImageBytesPerPixel);
     }
-    support_codec_cpp_CLZWCompress_finalize_FUN_0043f440(&local_94,&local_130);
+    support_codec_cpp_CLZWCompress_finalize_FUN_0043f440(&local_94,watcom_ostream_from(ofs));
     support_codec_cpp_CLZWDictionary_dtor_FUN_0043edf0(&local_94.dictionary,0);
     support_codec_cpp_CCodec_dtor_FUN_0043e9b0(&local_94.base,1);
   }
-  crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(local_174,0);
   return;
 }

@@ -5,45 +5,14 @@ FUNCTION COMPILATION ERRORS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6135 (95.1%)
-Failed: 319
-
-====================================================================================================
-core_game.cpp_CGame_loadGame_FUN_004e12b0 (1 error)
-====================================================================================================
-  Line 308 [format_error]: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-
-====================================================================================================
-core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (1 error)
-====================================================================================================
-  Line 335 [format_error]: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
+Successful: 6144 (95.2%)
+Failed: 310
 
 ====================================================================================================
 core_game.cpp_CGame_processHotkeys_FUN_004dcee0 (2 errors)
 ====================================================================================================
   Line 228 [undeclared_identifier]: use of undeclared identifier 'stack0xfffffe58'
   Line 229 [undeclared_identifier]: use of undeclared identifier 'stack0xfffffe58'
-
-====================================================================================================
-core_game.cpp_CGame_renderOverlay_FUN_004d8040 (1 error)
-====================================================================================================
-  Line 102 [format_error]: format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]
-
-====================================================================================================
-core_game.cpp_CGame_runGameSession_FUN_004daf80 (1 error)
-====================================================================================================
-  Line 51 [format_error]: format specifies type 'unsigned int' but the argument has type 'CPickList *' [-Werror,-Wformat]
-
-====================================================================================================
-core_game.cpp_CGame_saveGame_FUN_004e0cd0 (2 errors)
-====================================================================================================
-  Line 111 [format_error]: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
-  Line 162 [incompatible_types]: no matching function for call to 'crt_fstream_cpp_ostream_write_FUN_005ffcb3'
-
-====================================================================================================
-core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 (1 error)
-====================================================================================================
-  Line 59 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
 core_ghoul.cpp_CGhoul_process_FUN_004e6600 (19 errors)
@@ -67,18 +36,6 @@ core_ghoul.cpp_CGhoul_process_FUN_004e6600 (19 errors)
   Line 511 [cast_error]: C-style cast from 'SMotionTransition *' to 'float' is not allowed
   Line 511 [cast_error]: C-style cast from 'SMotionTransition *' to 'float' is not allowed
   Line 544 [cast_error]: C-style cast from 'CGhoul *' to 'float' is not allowed
-
-====================================================================================================
-core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0 (1 error)
-====================================================================================================
-  Line 39 [undeclared_identifier]: use of undeclared identifier 'INT_02d83398'
-
-====================================================================================================
-core_gore.cpp_CBloodPool_load_FUN_004ed160 (3 errors)
-====================================================================================================
-  Line 14 [format_error]: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
-  Line 16 [format_error]: format specifies type 'int *' but the argument has type 'CBloodPool *' [-Werror,-Wformat]
-  Line 18 [format_error]: format specifies type 'int *' but the argument has type 'CVector3i *' [-Werror,-Wformat]
 
 ====================================================================================================
 core_gore.cpp_CBloodSplat_load_FUN_004ecb00 (5 errors)
@@ -2731,11 +2688,6 @@ sound_sndwav.cpp_staticInit_FUN_005b0670 (2 errors)
 ====================================================================================================
   Line 12 [cast_error]: no matching conversion for C-style cast from 'CSoundDeviceBasic_vtable *' to 'CSoundDevice'
   Line 13 [cast_error]: no matching conversion for C-style cast from 'CSoundDeviceFull_vtable *' to 'CSoundDevice'
-
-====================================================================================================
-support_codec.cpp_readBitsFromStream_FUN_0043e530 (1 error)
-====================================================================================================
-  Line 59 [type_error]: member reference base type 'int' is not a structure or union
 
 ====================================================================================================
 wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0 (1 error)

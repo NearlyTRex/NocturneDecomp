@@ -394,7 +394,7 @@ section .text
     PUSH EAX                            ; 00452e7e
     MOV dword ptr [ESP + 0x238],EBP     ; 00452e7f
     CALL support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30 ; 00452e86
-        ;   XREF to: 0043eb30 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec * this_ptr, char * input, int * input_length, char * output)
+        ;   XREF to: 0043eb30 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec * this_ptr, char * input, int * input_length, _ostream * ostream)
     ADD ESP,0x10                        ; 00452e8b
     TEST EAX,EAX                        ; 00452e8e
     JZ 0x00452fb3                       ; 00452e90

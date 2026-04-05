@@ -160,7 +160,13 @@ int_ptr = (int *)uint_ptr;
 
 **Fix:** Check if it's a typo from the decompiler. If it's a real symbol, add an extern declaration at the top of the `.keep.cpp` (after the include). If it's a Ghidra artifact variable name like `in_stack_XXXXXXXX`, check the assembly to understand what it actually is (usually a function parameter the decompiler missed).
 
-### 11. Syntax errors from decompiler artifacts
+### 11. Hardcoded memory addresses for known globals
+
+**Cause:** The decompiler sometimes emits raw absolute addresses (e.g., `0x2d82d88`) instead of expressing them relative to a known global symbol. This happens when pointer arithmetic on a global array loses its symbolic reference — the decompiler falls back to the computed address.
+
+**Fix:** Identify which global the address belongs to by checking the `.asm` file for symbol annotations near that address. Replace the raw address with the correct symbolic expression (e.g., `0x2d82d88` → `&g_MasterLightStateSaveBuffer[1]` when the base is at `0x2d82d84`). Never leave magic address constants in a `.keep` file when the corresponding global is known.
+
+### 12. Syntax errors from decompiler artifacts
 
 **Cause:** Ghidra occasionally produces syntactically invalid C++ (unbalanced parens, stray tokens, etc.)
 

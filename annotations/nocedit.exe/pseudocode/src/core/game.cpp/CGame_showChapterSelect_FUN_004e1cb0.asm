@@ -259,7 +259,7 @@ section .text
     ADD ESP,0xc                         ; 004e1f75
     MOV EBX,dword ptr [EBP*0x4 + 0x67b854] ; 004e1f78 | g_ChapterMissionFiles[4][12] | g_ChapterDisplayTexts
     MOV ESI,dword ptr [ESP + EBP*0x4 + 0x6ac] ; 004e1f7f
-    MOV dword ptr [0x02d831a8],EBX      ; 004e1f86 | g_CurrentDisplayText
+    MOV dword ptr [0x02d831a8],EBX      ; 004e1f86 | g_ChapterDisplayNumber
     PUSH EDI                            ; 004e1f8c | g_ChapterDisplayName
     MOV AL,byte ptr [ESI]               ; 004e1f8d
         ;   Label: LAB_004e1f8d
@@ -1153,7 +1153,7 @@ section .text
         ;   XREF to: 004e208f (CONDITIONAL_JUMP)  ; LAB_004e208f
     XOR EAX,EAX                         ; 004e2866
     XOR EDX,EDX                         ; 004e2868
-    MOV [0x02d831a8],EAX                ; 004e286a | g_CurrentDisplayText
+    MOV [0x02d831a8],EAX                ; 004e286a | g_ChapterDisplayNumber
     XOR AH,AH                           ; 004e286f
     MOV dword ptr [0x02d831ac],EDX      ; 004e2871 | g_OverlayDisplayTimer
     MOV byte ptr [0x02d830a8],AH        ; 004e2877 | g_ChapterDisplayName

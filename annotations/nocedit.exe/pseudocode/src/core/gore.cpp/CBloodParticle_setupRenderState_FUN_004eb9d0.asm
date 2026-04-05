@@ -31,8 +31,8 @@
 ;   undefined4 g_GoreQuadPrimitive.vertices[1]
 ;   undefined4 g_GoreQuadPrimitive.vertices[2]
 ;   undefined4 g_GoreQuadPrimitive.vertices[3]
-;   int g_ParticleCameraRotation
-;   int INT_02d83394
+;   CVector3i g_ParticleCameraRotation
+;   undefined4 g_ParticleCameraRotation.y
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -72,7 +72,7 @@ section .text
     ADD ESP,0x4                         ; 004eba3a
     JMP 0x006108a8                      ; 004eba3d
         ;   XREF to: 006108a8 (UNCONDITIONAL_JUMP)  ; LAB_006108a8
-    MOV dword ptr [0x02d83394],ESI      ; 004eba42 | INT_02d83394
+    MOV dword ptr [0x02d83394],ESI      ; 004eba42 | g_ParticleCameraRotation.y
         ;   Label: LAB_004eba42
     MOV ESI,dword ptr [0x00823a74]      ; 004eba48 | g_CurrentSceneCamera
     JMP 0x03fc5333                      ; 004eba4e
@@ -98,10 +98,10 @@ section .text
     CALL crt_math.c_round_FUN_005fe6b0  ; 004eba91
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 004eba96
-    FISTP dword ptr [0x02d8339c]        ; 004eba98 | INT_02d8339c
+    FISTP dword ptr [0x02d8339c]        ; 004eba98 | CVector3i_02d8339c
     FXCH                                ; 004eba9e
-    FISTP dword ptr [0x02d833a0]        ; 004ebaa0 | INT_02d833a0
-    FISTP dword ptr [0x02d833a4]        ; 004ebaa6 | INT_02d833a4
+    FISTP dword ptr [0x02d833a0]        ; 004ebaa0 | CVector3i_02d8339c.y
+    FISTP dword ptr [0x02d833a4]        ; 004ebaa6 | CVector3i_02d8339c.z
     ADD ESP,0x5c                        ; 004ebaac
     POP EDI                             ; 004ebaaf
     POP ESI                             ; 004ebab0

@@ -8,6 +8,7 @@
 #include "types/classes/CGame.h"
 #include "types/classes/CGore.h"
 #include "types/classes/CPickList.h"
+#include "types/classes/CVector3i.h"
 #include "types/structs/SMRGLPrimitiveQuadIndex.h"
 
 // =============================================================================
@@ -35,12 +36,13 @@ extern CGore g_CGoreInstance;
 // CPickList
 extern CPickList g_CPickList;
 
+// CVector3i
+extern CVector3i g_ParticleCameraRotation;
+extern CVector3i CVector3i_02d8339c;
+
 // SMRGLPrimitiveQuadIndex
 extern SMRGLPrimitiveQuadIndex g_GoreQuadPrimitive;
 extern SMRGLPrimitiveQuadIndex g_FootstepPrimitive;
-
-// char*
-extern char* g_CurrentDisplayText;
 
 // char[20]
 extern char g_InputHistory[20];
@@ -63,6 +65,7 @@ extern int g_InputResetFlag;
 extern int g_StoredCameraValue;
 extern int g_CheatSystemEnabled;
 extern int g_HasSavedLightState;
+extern int g_ChapterDisplayNumber;
 extern int g_MovieRecordingArmed;
 extern int g_MovieRecordingActive;
 extern int g_MovieRecordingMaxFrames;
@@ -82,12 +85,6 @@ extern int INT_02d832b0;
 extern int INT_02d832b4;
 extern int INT_02d832b8;
 extern int INT_02d832bc;
-extern int g_ParticleCameraRotation;
-extern int INT_02d83394;
-extern int DAT_02D83398;
-extern int INT_02d8339c;
-extern int INT_02d833a0;
-extern int INT_02d833a4;
 extern int g_BloodParticleIndex;
 extern int g_BloodSplatIndex;
 extern int g_BloodSplatCount;

@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        204 ( 3.2%)
+  Functions with type issues:        199 ( 3.1%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          2
-    Undefined types in variables:      191
+    Undefined types in variables:      186
     Unresolved stack params:           15
 
-  Excluded (.keep / MMX / by-value):   35 functions
+  Excluded (.keep / MMX / by-value):   40 functions
     Wrong calling convention:          1
-    Undefined types in variables:      30
+    Undefined types in variables:      35
     Unresolved stack params:           6
 
 ====================================================================================================
@@ -179,7 +179,7 @@ Unresolved stack parameters (missing from signature) (15)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (191)
+Undefined types in variables (186)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -237,11 +237,6 @@ Undefined types in variables (191)
     Locals:  auStack_22c4 (undefined2[1018]), auStack_1ad0 (undefined4[953]), local_478 (undefined1[120]), local_400 (undefined4[30]), auStack_2f0 (undefined1[4]), uStack_2ec (undefined4), local_2e8 (undefined4), auStack_2e4 (undefined2[2]), local_2e0 (undefined4), auStack_2dc (undefined1[4]), uStack_2d8 (undefined4), local_2d4 (undefined4), auStack_2d0 (undefined2[2]), local_278 (undefined4), local_274 (undefined1[4]), local_270 (undefined1[4]), local_1fc (undefined1[8]), local_190 (undefined1[4]), local_18c (undefined1[4]), local_170 (undefined4 *), local_164 (undefined1[4]), local_13c (undefined4[2]), local_130 (undefined4), local_dc (undefined1[4]), local_94 (undefined1 *), local_90 (undefined4 *)
     Suggested: Resolve undefined types to concrete types
 
-  CGame_loadGame
-    Address: 0x004e12b0  File: core/game.cpp
-    Locals:  local_638 (undefined1), local_637 (undefined1), local_534 (undefined1), local_430 (undefined1), local_330 (undefined1), local_230 (undefined1), local_168 (undefined1), local_124 (undefined1), local_104 (undefined4), local_e8 (undefined1), local_a4 (undefined1), local_88 (undefined4), local_6c (undefined1), local_68 (undefined1), local_3c (undefined4), local_38 (undefined1), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   playSfxInternal
     Address: 0x005b1fd0  File: core/sound.cpp
     Locals:  local_180 (undefined4), local_17c (undefined4), local_178 (undefined1), local_177 (undefined1), local_114 (undefined1), local_113 (undefined1), local_b0 (undefined1), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined1), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
@@ -255,11 +250,6 @@ Undefined types in variables (191)
   CComplexPolygon_splitByDimensions
     Address: 0x005c9500  File: shape/superopt.cpp
     Locals:  local_188 (undefined4[4]), local_178 (undefined4), uStack_174 (undefined4), local_110 (undefined4), local_10c (undefined4), local_108 (undefined4), local_104 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4[4]), local_d0 (undefined4), uStack_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_b8 (undefined4), local_b4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CGame_saveGame
-    Address: 0x004e0cd0  File: core/game.cpp
-    Locals:  local_568 (undefined8), local_558 (undefined1), local_557 (undefined1), local_454 (undefined1), local_350 (undefined1), local_24c (undefined1), local_14c (undefined1), local_108 (undefined1), local_e8 (undefined4), local_cc (undefined1), local_88 (undefined1), local_6c (undefined4), local_50 (undefined1), local_4c (undefined1), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   C3DSLight_load
@@ -707,11 +697,6 @@ Undefined types in variables (191)
     Locals:  local_18 (undefined1[12])
     Suggested: Resolve undefined types to concrete types
 
-  CDemonCamera_saveBackdrop
-    Address: 0x004529b0  File: core/dcamera.cpp
-    Locals:  local_174 (undefined1[68])
-    Suggested: Resolve undefined types to concrete types
-
   CDemonCube_buildGeometryFromPolygonData
     Address: 0x00456ed0  File: core/dcube.cpp
     Locals:  local_18 (undefined1)
@@ -782,19 +767,9 @@ Undefined types in variables (191)
     Locals:  local_c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CGame_processCheatCodes
-    Address: 0x004ddaf0  File: core/game.cpp
-    Locals:  local_2b4 (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
   CGame_rollCredits
     Address: 0x004e4010  File: core/game.cpp
     Locals:  local_1134 (undefined4[1024])
-    Suggested: Resolve undefined types to concrete types
-
-  CGame_runGameSession
-    Address: 0x004daf80  File: core/game.cpp
-    Locals:  local_20 (undefined1 *)
     Suggested: Resolve undefined types to concrete types
 
   CGlass_renderOpaque
@@ -1218,7 +1193,7 @@ Unresolved stack params - by-value struct passing (4)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (27)
+Undefined types - .keep overrides (32)
 --------------------------------------------------------------------------------
 
   closestPointOnSegment3D
@@ -1226,9 +1201,19 @@ Undefined types - .keep overrides (27)
     Locals:  local_168 (undefined4), uStack_164 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined8), local_128 (undefined4[4]), local_118 (undefined4), uStack_114 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), uStack_f4 (undefined4), local_f0 (undefined4), uStack_ec (undefined4), local_e8 (undefined4), uStack_e4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4[6]), local_80 (undefined4[4]), local_70 (undefined4), uStack_6c (undefined4), local_68 (undefined4), uStack_64 (undefined4), local_60 (undefined4), uStack_5c (undefined4), local_58 (undefined4), uStack_54 (undefined4), local_40 (undefined4), uStack_3c (undefined4), local_38 (undefined4), uStack_34 (undefined4), local_30 (undefined4), uStack_2c (undefined4), local_28 (undefined4), uStack_24 (undefined4), local_20 (undefined4), uStack_1c (undefined4), local_18 (undefined4), uStack_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CGame_loadGame
+    Address: 0x004e12b0  File: core/game.cpp
+    Locals:  local_638 (undefined1), local_637 (undefined1), local_534 (undefined1), local_430 (undefined1), local_330 (undefined1), local_230 (undefined1), local_168 (undefined1), local_124 (undefined1), local_104 (undefined4), local_e8 (undefined1), local_a4 (undefined1), local_88 (undefined4), local_6c (undefined1), local_68 (undefined1), local_3c (undefined4), local_38 (undefined1), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CCloth_boneEditor
     Address: 0x0043c880  File: core/cloth.cpp
     Locals:  local_558 (undefined4), local_6c (undefined4), local_64 (undefined4), local_60 (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_18 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CGame_saveGame
+    Address: 0x004e0cd0  File: core/game.cpp
+    Locals:  local_568 (undefined8), local_558 (undefined1), local_557 (undefined1), local_454 (undefined1), local_350 (undefined1), local_24c (undefined1), local_14c (undefined1), local_108 (undefined1), local_e8 (undefined4), local_cc (undefined1), local_88 (undefined1), local_6c (undefined4), local_50 (undefined1), local_4c (undefined1), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CGabriella_processMotionEvents
@@ -1336,6 +1321,11 @@ Undefined types - .keep overrides (27)
     Locals:  local_1c (undefined4 *)
     Suggested: Resolve undefined types to concrete types
 
+  CDemonCamera_saveBackdrop
+    Address: 0x004529b0  File: core/dcamera.cpp
+    Locals:  local_174 (undefined1[68])
+    Suggested: Resolve undefined types to concrete types
+
   CKeyFramedModel_exportToS3D
     Address: 0x00479f30  File: core/dmodel.cpp
     Locals:  local_34 (undefined4)
@@ -1346,9 +1336,19 @@ Undefined types - .keep overrides (27)
     Locals:  local_1f8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CGame_processCheatCodes
+    Address: 0x004ddaf0  File: core/game.cpp
+    Locals:  local_2b4 (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
   CGame_processFrame
     Address: 0x004da100  File: core/game.cpp
     Locals:  auStackY_107c (undefined4[646])
+    Suggested: Resolve undefined types to concrete types
+
+  CGame_runGameSession
+    Address: 0x004daf80  File: core/game.cpp
+    Locals:  local_20 (undefined1 *)
     Suggested: Resolve undefined types to concrete types
 
   CDemonSet_showCameraEditor

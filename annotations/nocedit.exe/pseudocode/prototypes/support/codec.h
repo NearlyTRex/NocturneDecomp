@@ -53,7 +53,7 @@ int __cdecl CCodec::processToBuffer(CCodec *this_ptr,_istream *ifstream,int byte
 
 // Original: support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30
 // Address: 0043eb30
-int __cdecl CCodec::processFromBuffer(CCodec *this_ptr,char *input,int *input_length,char *output);
+int __cdecl CCodec::processFromBuffer(CCodec *this_ptr,char *input,int *input_length,_ostream *ostream);
 
 // Original: support_codec.cpp_CCodec_processBuffer_FUN_0043eba0
 // Address: 0043eba0

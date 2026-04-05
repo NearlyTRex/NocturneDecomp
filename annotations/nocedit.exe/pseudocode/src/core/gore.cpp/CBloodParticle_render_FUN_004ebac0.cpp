@@ -60,7 +60,7 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ebac0(CBloodParticle *th
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
-            (g_CDemonRendererPtr2,(CVector3i *)&g_ParticleCameraRotation,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,&g_ParticleCameraRotation,(CVector3i *)0x0);
   local_b8.x = (int)ROUND(256.0f * -0.1);
   local_b8.y = (int)ROUND(256.0f * -0.1);
   local_b8.z = (int)ROUND(256.0f * 0.0);
@@ -97,7 +97,7 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ebac0(CBloodParticle *th
   g_RenderVertexBuffer[3].u = g_RenderVertexBuffer[0].u;
   g_RenderVertexBuffer[3].v = g_RenderVertexBuffer[2].v;
   core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
-            (g_CDemonSetPtr,&local_88,(CVector3i *)&INT_02d8339c,0,4);
+            (g_CDemonSetPtr,&local_88,&CVector3i_02d8339c,0,4);
   uVar1 = this_ptr->blood_type;
   if (uVar1 != 0) {
     if (uVar1 < 2) {
@@ -153,7 +153,7 @@ LAB_004ebdb7:
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,(CVector3f *)&CStack_e8.y);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
-              (g_CDemonRendererPtr2,(CVector3i *)&g_ParticleCameraRotation,(CVector3i *)0x0);
+              (g_CDemonRendererPtr2,&g_ParticleCameraRotation,(CVector3i *)0x0);
     fVar4 = fStack_ec * (float)-0.10000000000000001;
     CStack_dc.y = (int)ROUND(fVar4 * 256.0f);
     CStack_dc.z = (int)ROUND(fVar4 * 256.0f);
@@ -183,7 +183,7 @@ LAB_004ebdb7:
     local_88.z = (int)ROUND(CStack_e8.z * 256.0f);
     local_7c.x = (int)ROUND((float)CStack_dc.x * 256.0f);
     core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
-              (g_CDemonSetPtr,(CVector3i *)&local_88.y,(CVector3i *)&INT_02d8339c,0,4);
+              (g_CDemonSetPtr,(CVector3i *)&local_88.y,&CVector3i_02d8339c,0,4);
     iVar6 = 0;
     do {
       *(uint *)((int)&g_RenderVertexBuffer[0].r + iVar6) = 0;

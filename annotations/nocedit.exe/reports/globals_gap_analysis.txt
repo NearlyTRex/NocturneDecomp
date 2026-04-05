@@ -2,20 +2,20 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19412
-  Named globals:             19153
+Total globals analyzed:      19409
+  Named globals:             19150
   DAT_ globals:              259
-Gaps found:                  1868
-  With exact size bounds:    1776
+Gaps found:                  1867
+  With exact size bounds:    1775
   With estimated bounds:     92
-Total gap bytes:             14,721,064
-  Exact gap bytes:           14,712,022
+Total gap bytes:             14,721,060
+  Exact gap bytes:           14,712,018
 Overlaps (size <= 0):        13288
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
-  1-4 bytes (likely padding/alignment)          490
+  1-4 bytes (likely padding/alignment)          489
   5-16 bytes (small vars)                       493
   17-64 bytes (structs/small arrays)            412
   65-256 bytes (medium data)                    179
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: switchdataD_0057bbb0                     void*                at 0x0057bbb0
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1776) - size bounds are known precisely
+ALL EXACT GAPS (1775) - size bounds are known precisely
 --------------------------------------------------------------------------------
    4,185,048 bytes  at 0x00002428  between DAT_00002424                   and IMAGE_DOS_HEADER_00400000
    3,350,789 bytes  at 0x00ff0103  between g_ColorMagenta                 and g_CoronaLightCache
@@ -488,7 +488,7 @@ ALL EXACT GAPS (1776) - size bounds are known precisely
          249 bytes  at 0x00684017  between s_d3d.dll_00684013             and g_SystemInitialized
          249 bytes  at 0x02d129bf  between g_CurrentFilenameBuffer+3      and g_CurrentFileTimestamp
          249 bytes  at 0x02d82c87  between g_CurrentSaveFile+3            and g_HasSavedLightState
-         249 bytes  at 0x02d830af  between g_ChapterDisplayName+3         and g_CurrentDisplayText
+         249 bytes  at 0x02d830af  between g_ChapterDisplayName+3         and g_ChapterDisplayNumber
          249 bytes  at 0x02f6818f  between g_CurrentMp3Filename+3         and g_HuffmanTables
          248 bytes  at 0x00681b68  between s__00681b64                    and g_DefaultDeviceName
          248 bytes  at 0x03f98ff8  between g_CommandLineBuffer+4          and g_ArgCount
@@ -1846,7 +1846,6 @@ ALL EXACT GAPS (1776) - size bounds are known precisely
            4 bytes  at 0x02d7c2ec  between FLOAT_02d7c2e8                 and g_ActStatsTextBuffer1
            4 bytes  at 0x02d8256c  between INT_02d82568                   and g_ScreenshotFilename
            4 bytes  at 0x02d82c7c  between g_CPickList                    and g_CurrentSaveFile
-           4 bytes  at 0x02d83398  between INT_02d83394                   and INT_02d8339c
            4 bytes  at 0x02dbaac4  between g_ItemDefinitionCount          and g_ItemDefinitionArray
            4 bytes  at 0x02f0d388  between g_InverseMatrix                and g_TransformMatrixCopy
            4 bytes  at 0x02f26cb0  between g_MenuLeftRightPressed         and g_AudioVisualizationCounter

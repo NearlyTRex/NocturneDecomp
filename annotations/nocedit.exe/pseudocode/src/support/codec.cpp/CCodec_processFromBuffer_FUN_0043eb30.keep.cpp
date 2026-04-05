@@ -1,20 +1,21 @@
 // Name: support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30
 // Address: 0043eb30
+// MANUAL RECONSTRUCTION
 // Address Range: [[0043eb30, 0043eb9b]]
 // Convention: __cdecl
 // Signature: int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,char *input,int *input_length,_ostream *ostream)
 
 #include "nocturne.h"
+#include "system/stream_compat.h"
+#include <strstream>
 
 int __cdecl support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec *this_ptr,char *input,int *input_length,_ostream *ostream)
 
 {
   int iVar1;
-  _istrstream local_90;
-  
-  crt_strstream_cpp_istrstream_ctor_FUN_005ff524(&local_90,0,input,*input_length);
+
+  std::istrstream iss(input, *input_length);
   iVar1 = (*this_ptr->vtable->process)
-                    (this_ptr,&local_90._istream_core.__last_read_length,input_length,ostream);
-  crt_strstream_cpp_istrstream_dtor_FUN_005ff5ca(&local_90,0);
+                    (this_ptr,watcom_istream_from(iss),input_length,ostream);
   return iVar1;
 }

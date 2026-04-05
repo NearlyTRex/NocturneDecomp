@@ -35,14 +35,17 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004eb9d0(CBloodPa
   g_GoreQuadPrimitive.vertices[3] = 3;
   engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
             (g_CDemonRendererPtr2,&local_18);
-  g_ParticleCameraRotation = local_18.x;
-  INT_02d83398 = local_18.z;
-  INT_02d83394 = 0;
-  INT_02d8339c = (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[0].z *
-                                  -65536));
-  INT_02d833a0 = (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[1].z *
-                                  -65536));
-  INT_02d833a4 = (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[2].z *
-                                  -65536));
+  g_ParticleCameraRotation.x = local_18.x;
+  g_ParticleCameraRotation.z = local_18.z;
+  g_ParticleCameraRotation.y = 0;
+  CVector3i_02d8339c.x =
+       (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[0].z *
+                        -65536));
+  CVector3i_02d8339c.y =
+       (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[1].z *
+                        -65536));
+  CVector3i_02d8339c.z =
+       (int)ROUND(ROUND((double)(g_CurrentSceneCamera->base).rotation_matrix.m[2].z *
+                        -65536));
   return;
 }

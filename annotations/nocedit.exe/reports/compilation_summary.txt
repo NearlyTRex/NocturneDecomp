@@ -5,16 +5,16 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6135 (95.1%)
-Failed: 319
+Successful: 6144 (95.2%)
+Failed: 310
 
 ERROR CATEGORIES
 --------------------------------------------------
-  format_error                     672
-  type_error                       377
-  incompatible_types               132
+  format_error                     663
+  type_error                       376
+  incompatible_types               131
   cast_error                       104
-  undeclared_identifier             95
+  undeclared_identifier             94
   syntax_error                      30
   pointer_type                      24
   other                             21
@@ -23,7 +23,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: format_error (672 errors)
+CATEGORY: format_error (663 errors)
 ====================================================================================================
 
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
@@ -87,10 +87,10 @@ CATEGORY: format_error (672 errors)
   engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0
     Line 29: format specifies type 'char *' but the argument has type 'SMRGLHeaderExtended *'...
 
-  ... and 116 more errors
+  ... and 109 more errors
 
 ====================================================================================================
-CATEGORY: type_error (377 errors)
+CATEGORY: type_error (376 errors)
 ====================================================================================================
 
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -154,10 +154,10 @@ CATEGORY: type_error (377 errors)
   sound_sndmain.cpp_startSoundThread_FUN_005abc00
     Line 18: member reference base type 'double' is not a structure or union...
 
-  ... and 40 more errors
+  ... and 39 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (132 errors)
+CATEGORY: incompatible_types (131 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
@@ -221,7 +221,7 @@ CATEGORY: incompatible_types (132 errors)
   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970
     Line 123: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'...
 
-  ... and 31 more errors
+  ... and 30 more errors
 
 ====================================================================================================
 CATEGORY: cast_error (104 errors)
@@ -279,13 +279,11 @@ CATEGORY: cast_error (104 errors)
     Line 27: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'...
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (95 errors)
+CATEGORY: undeclared_identifier (94 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
     Line 24: use of undeclared identifier 'DAT_80000010'...
-  core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
-    Line 39: use of undeclared identifier 'INT_02d83398'...
   core_scat.cpp_CScat_process_FUN_005571f0
     Line 150: use of undeclared identifier 'SUB14'...
   core_script.cpp_CScript_step_FUN_0055a810
@@ -342,8 +340,10 @@ CATEGORY: undeclared_identifier (95 errors)
     Line 51: use of undeclared identifier 'stack0x00000000'...
   core_sound.cpp_resetTrainSounds_FUN_005b26f0
     Line 12: use of undeclared identifier 'stack0x00000000'...
+  core_sound.cpp_updateListeners_FUN_005b1870
+    Line 202: use of undeclared identifier 'stack0x00000000'...
 
-  ... and 28 more errors
+  ... and 27 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (30 errors)
@@ -475,8 +475,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 0.73
-Average suspects in failed compilations: 7.43
+Average suspects in successfully compiled functions: 0.74
+Average suspects in failed compilations: 7.60
 
-Functions that compile but have suspect patterns: 1122
+Functions that compile but have suspect patterns: 1128
 (These may have runtime issues even though syntax is valid)

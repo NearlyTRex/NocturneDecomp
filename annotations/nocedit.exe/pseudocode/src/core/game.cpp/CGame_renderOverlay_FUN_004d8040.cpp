@@ -99,7 +99,7 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
     iVar8 = g_WindowHeight - iVar5;
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
     _sprintf
-              (local_164,"%d - %s",g_CurrentDisplayText,g_ChapterDisplayName);
+              (local_164,"%d - %s",g_ChapterDisplayNumber,g_ChapterDisplayName);
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (this_ptr_00,local_164,iVar4 * 2,(iVar8 - iVar3) - iVar4,0xf8,0);
   }

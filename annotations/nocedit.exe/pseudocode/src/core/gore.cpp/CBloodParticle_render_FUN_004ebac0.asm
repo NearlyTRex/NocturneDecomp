@@ -258,7 +258,7 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 004ebd65
     PUSH 0x4                            ; 004ebd68
     PUSH ESI                            ; 004ebd6a
-    PUSH 0x2d8339c                      ; 004ebd6b | INT_02d8339c
+    PUSH 0x2d8339c                      ; 004ebd6b | CVector3i_02d8339c
     LEA EAX,[ESP + 0x7c]                ; 004ebd70
     PUSH EAX                            ; 004ebd74
     MOV EDX,dword ptr [0x006810c8]      ; 004ebd75 | g_CDemonSetPtr | g_CDemonSetInstance

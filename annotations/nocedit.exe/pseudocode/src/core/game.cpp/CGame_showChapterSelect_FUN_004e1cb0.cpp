@@ -91,7 +91,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
       g_EditorFont = local_1c;
       return;
     }
-    g_CurrentDisplayText = (char *)0x0;
+    g_ChapterDisplayNumber = 0;
     g_OverlayDisplayTimer = 0.0;
     g_ChapterDisplayName[0] = '\0';
   }
@@ -376,7 +376,7 @@ LAB_004e2376:
     }
     pcVar9 = g_ChapterDisplayName;
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",0xf77);
-    g_CurrentDisplayText = g_ChapterDisplayTexts[iVar3];
+    g_ChapterDisplayNumber = (int)g_ChapterDisplayTexts[iVar3];
     pcVar8 = local_40[iVar3];
     do {
       cVar2 = *pcVar8;

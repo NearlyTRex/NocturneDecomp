@@ -25,12 +25,13 @@ CGore g_CGoreInstance = {};
 // CPickList
 CPickList g_CPickList = {};
 
+// CVector3i
+CVector3i g_ParticleCameraRotation = {};
+CVector3i CVector3i_02d8339c = {};
+
 // SMRGLPrimitiveQuadIndex
 SMRGLPrimitiveQuadIndex g_GoreQuadPrimitive = {};
 SMRGLPrimitiveQuadIndex g_FootstepPrimitive = {};
-
-// char*
-char* g_CurrentDisplayText = {};
 
 // char[20]
 char g_InputHistory[20] = {};
@@ -53,6 +54,7 @@ int g_InputResetFlag = {};
 int g_StoredCameraValue = {};
 int g_CheatSystemEnabled = {};
 int g_HasSavedLightState = {};
+int g_ChapterDisplayNumber = {};
 int g_MovieRecordingArmed = {};
 int g_MovieRecordingActive = {};
 int g_MovieRecordingMaxFrames = {};
@@ -72,12 +74,6 @@ int INT_02d832b0 = {};
 int INT_02d832b4 = {};
 int INT_02d832b8 = {};
 int INT_02d832bc = {};
-int g_ParticleCameraRotation = {};
-int INT_02d83394 = {};
-int DAT_02D83398 = {};
-int INT_02d8339c = {};
-int INT_02d833a0 = {};
-int INT_02d833a4 = {};
 int g_BloodParticleIndex = {};
 int g_BloodSplatIndex = {};
 int g_BloodSplatCount = {};
