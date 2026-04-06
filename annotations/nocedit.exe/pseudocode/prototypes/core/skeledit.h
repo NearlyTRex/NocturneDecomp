@@ -233,7 +233,7 @@ void __cdecl CDeformableModel::initSinglePart(CDeformableModel *this_ptr);
 
 // Original: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
 // Address: 0058f810
-int __cdecl CDeformableModel::determinePartsFromS3D(CDeformableModel *this_ptr,char *filename);
+int __cdecl CDeformableModel::determinePartsFromS3D(CDeformableModel *this_ptr,CLodMeshPrecomputeEntry *entry);
 
 // Original: core_skeledit.cpp_parseBoneParentToken_FUN_00592520
 // Address: 00592520

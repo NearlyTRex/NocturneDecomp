@@ -201,7 +201,7 @@ LAB_0058c613:
   }
   else {
     iVar5 = core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-                      (this_ptr,entry->pos_filename);
+                      (this_ptr,entry);
     if (iVar5 == 0) {
       return 0;
     }

@@ -696,7 +696,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x684]     ; 004badcc
     PUSH EDX                            ; 004badd3
     CALL engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0 ; 004badd4
-        ;   XREF to: 004b35a0 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem * this_ptr, void * unused_param)
+        ;   XREF to: 004b35a0 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004badd9
     JMP 0x004bad71                      ; 004baddc
         ;   XREF to: 004bad71 (UNCONDITIONAL_JUMP)  ; LAB_004bad71

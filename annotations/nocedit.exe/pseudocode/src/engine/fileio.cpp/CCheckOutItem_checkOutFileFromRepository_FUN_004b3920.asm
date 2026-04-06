@@ -587,7 +587,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x58c]     ; 004b3ebb
     PUSH EDX                            ; 004b3ec2
     CALL engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0 ; 004b3ec3
-        ;   XREF to: 004b35a0 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem * this_ptr, void * unused_param)
+        ;   XREF to: 004b35a0 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004b3ec8
     LEA EAX,[ESP + 0x35c]               ; 004b3ecb
         ;   Label: LAB_004b3ecb

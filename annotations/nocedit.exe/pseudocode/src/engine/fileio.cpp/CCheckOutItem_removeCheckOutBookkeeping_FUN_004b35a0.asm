@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem *this_ptr,void *unused_param)
+; int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CCheckOutItem *  Stack[0x4]:4   this_ptr
-; void *           Stack[0x8]:4   unused_param
+; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; char[260]        Stack[-0x224]:260  local_224
 ; char[256]        Stack[-0x120]:256  local_120

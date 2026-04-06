@@ -384,7 +384,7 @@ section .text
     PUSH EAX                            ; 004b456c
     PUSH EBX                            ; 004b456d
     CALL engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0 ; 004b456e
-        ;   XREF to: 004b35a0 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem * this_ptr, void * unused_param)
+        ;   XREF to: 004b35a0 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004b4573
     TEST EAX,EAX                        ; 004b4576
     JZ 0x004b45be                       ; 004b4578

@@ -90,7 +90,7 @@ int __cdecl engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90(char 
 int __cdecl engine_fileio_cpp_checkFileOverwriteCondition_FUN_004b3120(char *target_filename,char *source_directory);
 int __cdecl engine_fileio_cpp_copyFileTimestamp_FUN_004b31e0(char *source_file,char *dest_file);
 int __cdecl engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *base_directory,char *filename);
-int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem *this_ptr,void *unused_param);
+int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem *this_ptr,char *filename);
 int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920(CCheckOutItem *this_ptr,char *filename);
 int __cdecl engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem *this_ptr,char *preselected_filename,char *out_buffer, char *dialog_title,char *wildcard_pattern);
 void __cdecl engine_fileio_cpp_CCheckOutItem_revert_FUN_004b41c0(CCheckOutItem *this_ptr,char *output_buffer);

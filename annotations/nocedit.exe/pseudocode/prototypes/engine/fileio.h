@@ -105,7 +105,7 @@ int __cdecl getLatestFileFromRepository(char *base_directory,char *filename);
 
 // Original: engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
 // Address: 004b35a0
-int __cdecl CCheckOutItem::removeCheckOutBookkeeping(CCheckOutItem *this_ptr,void *unused_param);
+int __cdecl CCheckOutItem::removeCheckOutBookkeeping(CCheckOutItem *this_ptr,char *filename);
 
 // Original: engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920
 // Address: 004b3920

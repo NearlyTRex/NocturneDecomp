@@ -11,8 +11,8 @@
 ;   engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620 at 004076b6
 ;   engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0 at 00404bea
 ;   engine_3d.c_renderPolygonDepthWriteTexturedAdvanced_FUN_00405e20 at 00405e8a
+;   engine_3d.c_renderPolygonDepthWriteTexturedLit2_FUN_00406000 at 0040606a
 ;   engine_3d.c_renderPolygonDepthWriteTexturedLit_FUN_00405d80 at 00405dea
-;   engine_3d.c_renderPolygonDepthWriteTexturedLit_FUN_00406000 at 0040606a
 ;   engine_3d.c_renderPolygonDepthWriteTextured_FUN_00405960 at 004059ca
 ;   engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470 at 004075d0
 ;   ... and 47 more

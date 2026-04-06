@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void * __cdecl engine_3d_c_renderPolygonVertexLitNormalized_FUN_00405020(SMRGLHeaderPrimitive *prim)
+; void * __cdecl engine_3d_c_renderPolygonVertexLitNormalized2_FUN_00405020(SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
@@ -22,7 +22,7 @@
 section .text
 
     PUSH EBX                            ; 00405020
-        ;   Label: engine_3d.c_renderPolygonVertexLitNormalized_FUN_00405020
+        ;   Label: engine_3d.c_renderPolygonVertexLitNormalized2_FUN_00405020
     PUSH ESI                            ; 00405021
     PUSH EBP                            ; 00405022
     MOV EBX,dword ptr [ESP + 0x10]      ; 00405023

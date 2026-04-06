@@ -662,7 +662,7 @@ section .text
         ;   Label: LAB_0058c78b
     PUSH EBP                            ; 0058c78c
     CALL core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 ; 0058c78d
-        ;   XREF to: 0058f810 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel * this_ptr, char * filename)
+        ;   XREF to: 0058f810 (UNCONDITIONAL_CALL)  ; int core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel * this_ptr, CLodMeshPrecomputeEntry * entry)
     ADD ESP,0x8                         ; 0058c792
     TEST EAX,EAX                        ; 0058c795
     JNZ 0x0058c366                      ; 0058c797

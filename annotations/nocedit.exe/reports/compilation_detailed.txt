@@ -5,14 +5,14 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6209 (96.2%)
-Failed: 245
+Successful: 6226 (96.5%)
+Failed: 228
 
 ERROR CATEGORIES
 --------------------------------------------------
-  format_error                     391
   type_error                       358
-  incompatible_types               121
+  format_error                     267
+  incompatible_types               116
   undeclared_identifier             67
   cast_error                        59
   syntax_error                      26
@@ -21,169 +21,6 @@ ERROR CATEGORIES
   missing_member                     8
   argument_error                     3
   pointer_precision                  2
-
-====================================================================================================
-CATEGORY: format_error (391 errors)
-====================================================================================================
-
-  engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
-    Line 96: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]
-  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
-    Line 413: format specifies type 'char *' but the argument has type 'CLightActor *' [-Werror,-Wformat]
-  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
-    Line 60: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
-  sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
-    Line 22: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
-  sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
-    Line 25: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
-  sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0
-    Line 81: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
-  shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0
-    Line 32: format specifies type 'char *' but the argument has type 'FileTrackingEntry *' [-Werror,-Wformat]
-  core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0
-    Line 67: format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]
-  engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
-    Line 169: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
-  sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0
-    Line 109: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
-  engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0
-    Line 29: format specifies type 'char *' but the argument has type 'SMRGLHeaderExtended *' [-Werror,-Wformat]
-  sound_sndmain.cpp_logSoundError_FUN_005adba0
-    Line 58: format specifies type 'char *' but the argument has type 'SSoundDeviceInfo *' [-Werror,-Wformat]
-  shape_design.c_loadTextureData_FUN_0046b060
-    Line 93: format specifies type 'char *' but the argument has type 'STextureAtlasEntry *' [-Werror,-Wformat]
-  sound_snddx.cpp_enumerateDirectSoundDevice_FUN_005b0390
-    Line 28: format specifies type 'char *' but the argument has type 'UINT' (aka 'unsigned int') [-Werror,-Wformat]
-  engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
-    Line 60: format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror,-Wformat]
-  shape_memdbg.cpp_closeFile_FUN_0050f9b0
-    Line 40: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-  sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0
-    Line 32: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
-  sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0
-    Line 20: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
-  sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80
-    Line 24: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
-  engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
-    Line 113: format specifies type 'char *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
-  core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0
-    Line 29: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
-  engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
-    Line 78: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
-  engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
-    Line 43: format specifies type 'char *' but the argument has type 'void *' [-Werror,-Wformat]
-  shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250
-    Line 38: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
-  shape_design.c_loadModelFile_FUN_00458ac0
-    Line 157: format specifies type 'float *' but the argument has type 'SVertexData *' [-Werror,-Wformat]
-  core_skeledit.cpp_CDeformableModel_importVerticesS3D_FUN_0058bc40
-    Line 31: format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
-  core_texlist.cpp_CTextureList_load_FUN_005dbe00
-    Line 78: format specifies type 'int *' but the argument has type 'CTextureList *' [-Werror,-Wformat]
-  shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
-    Line 29: format specifies type 'int *' but the argument has type 'SIZE_T *' (aka 'unsigned long *') [-Werror,-Wformat]
-  core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970
-    Line 114: format specifies type 'int *' but the argument has type 'SLod *' [-Werror,-Wformat]
-  core_skeledit.cpp_CDeformableModel_importGeometryS3D_FUN_0058b660
-    Line 60: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  core_skeledit.cpp_CLodMeshPrecomputeEntry_load_FUN_00589fe0
-    Line 16: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  shape_design.c_createPolygonFromVertexList_FUN_0045cc80
-    Line 35: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  shape_design.c_createRotationalSweepGeometry_FUN_0045e070
-    Line 49: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  shape_design.c_loadS3DModelFile_FUN_004593a0
-    Line 74: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  shape_design.c_parseSpatialTreeFromFile_FUN_004580a0
-    Line 25: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60
-    Line 55: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0
-    Line 38: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180
-    Line 37: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0
-    Line 81: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0
-    Line 50: format specifies type 'int *' but the argument has type 'ushort *' (aka 'unsigned short *') [-Werror,-Wformat]
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
-    Line 591: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
-  shape_memdbg.cpp_debugCalloc_FUN_0050f350
-    Line 25: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
-  engine_ini.cpp_getProfileInteger_FUN_004fb9a0
-    Line 17: format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]
-  engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
-    Line 136: format specifies type 'int' but the argument has type 'time_t' (aka 'long') [-Werror,-Wformat]
-  shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020
-    Line 27: format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]
-  shape_memdbg.cpp_debugMalloc_FUN_0050f250
-    Line 41: format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]
-  shape_memdbg.cpp_debugFree_FUN_0050f460
-    Line 20: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
-  shape_memdbg.cpp_debugRealloc_FUN_0050f540
-    Line 24: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
-  core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-    Line 279: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
-    Line 69: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
-    Line 50: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-    Line 220: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
-    Line 30: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_sound.cpp_CSound_process_FUN_005b2fd0
-    Line 225: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_sound.cpp_playSfxInternal_FUN_005b1fd0
-    Line 55: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_sound.cpp_processTrainSounds_FUN_005b2770
-    Line 148: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb960
-    Line 178: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
-    Line 158: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0
-    Line 16: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_configureSinglePassPolygonReduction_FUN_00465560
-    Line 96: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_cramTextureList_FUN_0046bb80
-    Line 113: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_exportModelToMDL_FUN_00459e80
-    Line 39: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_exportVertexListFile_FUN_0045a610
-    Line 22: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_loadModelBinary_FUN_00458170
-    Line 64: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_optimizePolygonMesh_FUN_004658e0
-    Line 73: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0
-    Line 256: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_showPointEditor_FUN_0045c6c0
-    Line 48: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_vertexReducer_FUN_00467850
-    Line 193: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_writeBinaryTreeNode_FUN_00457fd0
-    Line 14: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_writePolygonModel_FUN_0045a320
-    Line 30: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-    Line 30: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300
-    Line 31: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0
-    Line 19: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100
-    Line 24: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0
-    Line 41: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
-    Line 46: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
-    Line 75: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
-    Line 41: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  sound_sndmain.cpp_formatSfxOptionsToString_FUN_005a8d00
-    Line 19: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
 CATEGORY: type_error (358 errors)
@@ -317,7 +154,138 @@ CATEGORY: type_error (358 errors)
     Line 53: statement requires expression of integer type ('float' invalid)
 
 ====================================================================================================
-CATEGORY: incompatible_types (121 errors)
+CATEGORY: format_error (267 errors)
+====================================================================================================
+
+  engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
+    Line 96: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]
+  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
+    Line 413: format specifies type 'char *' but the argument has type 'CLightActor *' [-Werror,-Wformat]
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
+    Line 60: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
+  sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
+    Line 22: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
+  sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
+    Line 25: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
+  sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0
+    Line 81: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
+  shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0
+    Line 32: format specifies type 'char *' but the argument has type 'FileTrackingEntry *' [-Werror,-Wformat]
+  engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
+    Line 169: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
+  sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0
+    Line 109: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
+  engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0
+    Line 29: format specifies type 'char *' but the argument has type 'SMRGLHeaderExtended *' [-Werror,-Wformat]
+  sound_sndmain.cpp_logSoundError_FUN_005adba0
+    Line 58: format specifies type 'char *' but the argument has type 'SSoundDeviceInfo *' [-Werror,-Wformat]
+  shape_design.c_loadTextureData_FUN_0046b060
+    Line 93: format specifies type 'char *' but the argument has type 'STextureAtlasEntry *' [-Werror,-Wformat]
+  sound_snddx.cpp_enumerateDirectSoundDevice_FUN_005b0390
+    Line 28: format specifies type 'char *' but the argument has type 'UINT' (aka 'unsigned int') [-Werror,-Wformat]
+  engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
+    Line 60: format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror,-Wformat]
+  shape_memdbg.cpp_closeFile_FUN_0050f9b0
+    Line 40: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
+  sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0
+    Line 32: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
+  sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0
+    Line 20: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
+  sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80
+    Line 24: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
+  engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
+    Line 113: format specifies type 'char *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
+  core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0
+    Line 29: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
+  engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
+    Line 78: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
+  shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250
+    Line 38: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
+  shape_design.c_loadModelFile_FUN_00458ac0
+    Line 157: format specifies type 'float *' but the argument has type 'SVertexData *' [-Werror,-Wformat]
+  shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
+    Line 29: format specifies type 'int *' but the argument has type 'SIZE_T *' (aka 'unsigned long *') [-Werror,-Wformat]
+  shape_design.c_createPolygonFromVertexList_FUN_0045cc80
+    Line 35: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
+  shape_design.c_createRotationalSweepGeometry_FUN_0045e070
+    Line 49: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
+  shape_design.c_loadS3DModelFile_FUN_004593a0
+    Line 74: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
+  shape_design.c_parseSpatialTreeFromFile_FUN_004580a0
+    Line 25: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
+  shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60
+    Line 55: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
+  shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0
+    Line 38: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
+  shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180
+    Line 37: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
+  shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0
+    Line 81: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
+    Line 591: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
+  shape_memdbg.cpp_debugCalloc_FUN_0050f350
+    Line 25: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
+  engine_ini.cpp_getProfileInteger_FUN_004fb9a0
+    Line 17: format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]
+  engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
+    Line 136: format specifies type 'int' but the argument has type 'time_t' (aka 'long') [-Werror,-Wformat]
+  shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020
+    Line 27: format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]
+  shape_memdbg.cpp_debugMalloc_FUN_0050f250
+    Line 41: format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]
+  shape_memdbg.cpp_debugFree_FUN_0050f460
+    Line 20: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
+  shape_memdbg.cpp_debugRealloc_FUN_0050f540
+    Line 24: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
+  core_stranger.cpp_CStranger_processFrame_FUN_005bb960
+    Line 178: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
+    Line 158: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0
+    Line 16: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_design.c_configureSinglePassPolygonReduction_FUN_00465560
+    Line 96: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_design.c_cramTextureList_FUN_0046bb80
+    Line 113: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_design.c_exportModelToMDL_FUN_00459e80
+    Line 39: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_design.c_exportVertexListFile_FUN_0045a610
+    Line 22: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_design.c_loadModelBinary_FUN_00458170
+    Line 64: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_design.c_optimizePolygonMesh_FUN_004658e0
+    Line 73: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0
+    Line 256: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_design.c_showPointEditor_FUN_0045c6c0
+    Line 48: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_design.c_vertexReducer_FUN_00467850
+    Line 193: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_design.c_writeBinaryTreeNode_FUN_00457fd0
+    Line 14: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_design.c_writePolygonModel_FUN_0045a320
+    Line 30: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
+    Line 30: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300
+    Line 31: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0
+    Line 19: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100
+    Line 24: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0
+    Line 41: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
+    Line 46: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
+    Line 75: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
+    Line 41: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  sound_sndmain.cpp_formatSfxOptionsToString_FUN_005a8d00
+    Line 19: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+
+====================================================================================================
+CATEGORY: incompatible_types (116 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
@@ -382,8 +350,6 @@ CATEGORY: incompatible_types (121 errors)
     Line 55: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
     Line 173: assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'
-  core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0
-    Line 39: incompatible integer to pointer conversion assigning to 'HANDLE' (aka 'void *') from 'long'
   engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
     Line 182: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
@@ -408,16 +374,12 @@ CATEGORY: incompatible_types (121 errors)
     Line 14: invalid operands to binary expression ('double' and 'int')
   shape_superopt.cpp_CVec_getLength_FUN_005d8200
     Line 20: invalid operands to binary expression ('double' and 'int')
-  core_sound.cpp_playSfxInternal_FUN_005b1fd0
-    Line 162: invalid operands to binary expression ('float' and 'int')
   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
     Line 47: no matching function for call to '_strnicmp'
   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
     Line 170: no matching function for call to '_time'
   core_script.cpp_CScript_processEditorInput_FUN_00565130
     Line 247: no matching function for call to 'core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20'
-  engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
-    Line 101: no matching function for call to 'engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60'
   shape_design.c_embedCopyrightWatermark_FUN_0046b9a0
     Line 20: no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'
   shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0

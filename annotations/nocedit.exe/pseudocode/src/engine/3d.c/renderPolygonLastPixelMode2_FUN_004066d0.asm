@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLastPixelMode_FUN_004066d0(SMRGLHeaderPrimitive *prim)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLastPixelMode2_FUN_004066d0(SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
@@ -27,7 +27,7 @@
 section .text
 
     PUSH EBX                            ; 004066d0
-        ;   Label: engine_3d.c_renderPolygonLastPixelMode_FUN_004066d0
+        ;   Label: engine_3d.c_renderPolygonLastPixelMode2_FUN_004066d0
     PUSH ESI                            ; 004066d1
     PUSH EBP                            ; 004066d2
     MOV EBX,dword ptr [ESP + 0x10]      ; 004066d3

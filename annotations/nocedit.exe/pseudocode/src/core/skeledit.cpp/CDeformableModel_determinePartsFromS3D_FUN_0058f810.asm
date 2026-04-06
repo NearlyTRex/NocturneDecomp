@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr,char *filename)
+; int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr,CLodMeshPrecomputeEntry *entry)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   filename
+; CLodMeshPrecomputeEntry * Stack[0x8]:4   entry
 ; Local Variables:
 ; float            Stack[-0xa1f0]:4  local_a1f0
 ; char[32552]      Stack[-0xa1ec]:32552  local_a1ec

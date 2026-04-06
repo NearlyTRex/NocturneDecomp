@@ -2,11 +2,11 @@
 // Address: 004b35a0
 // Address Range: [[004b35a0, 004b391c]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem *this_ptr,void *unused_param)
+// Signature: int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem *this_ptr,char *filename)
 
 #include "nocturne.h"
 
-int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem *this_ptr,void *unused_param)
+int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem *this_ptr,char *filename)
 
 {
   char cVar2;
@@ -40,7 +40,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35
     if (iVar2 == 0) goto LAB_004b36da;
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-            (g_CEditorToolsPtr,"Marking %s as no longer checked out",unused_param);
+            (g_CEditorToolsPtr,"Marking %s as no longer checked out",filename);
   if (g_VersionControlDirectory[0] == '\0') {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
     g_CurrentLineNumber = 0xdd;
@@ -98,7 +98,7 @@ LAB_004b36b4:
       engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_20);
     }
     else {
-      iVar3 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_20,unused_param);
+      iVar3 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_20,filename);
       if (iVar3 < 0) {
         if (local_18 != (_FILE *)0x0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0xc4);
@@ -106,7 +106,7 @@ LAB_004b36b4:
         }
         engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
         shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
-                  (g_CEditorToolsPtr,"Tried to undo checkout on %s, but you didn't have the file checked out!\nThis should never happen.\nPlease leave this on your screen and show this to Fletch.",unused_param);
+                  (g_CEditorToolsPtr,"Tried to undo checkout on %s, but you didn't have the file checked out!\nThis should never happen.\nPlease leave this on your screen and show this to Fletch.",filename);
         engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_20);
         return 1;
       }

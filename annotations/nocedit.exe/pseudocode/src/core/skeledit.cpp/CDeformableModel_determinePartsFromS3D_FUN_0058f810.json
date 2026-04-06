@@ -1,123 +1,8 @@
 {
   "chunked": true,
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 42,
-        "line": 279,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 54,
-        "line": 303,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 24,
-        "line": 311,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 73,
-        "line": 314,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 66,
-        "line": 322,
-        "message": "format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 77,
-        "line": 322,
-        "message": "format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
-        "line": 323,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 35,
-        "line": 323,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 51,
-        "line": 322,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 57,
-        "line": 329,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 53,
-        "line": 330,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 67,
-        "line": 346,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 56,
-        "line": 346,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 72,
-        "line": 350,
-        "message": "format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 60,
-        "line": 350,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 66,
-        "line": 358,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 56,
-        "line": 359,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 41,
-        "line": 375,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 39,
-        "line": 417,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -162,7 +47,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810",
-    "signature": "int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr,char *filename)"
+    "signature": "int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr,CLodMeshPrecomputeEntry *entry)"
   },
   "function_calls": [
     {
@@ -2479,10 +2364,10 @@
       },
       {
         "is_param": true,
-        "name": "filename",
+        "name": "entry",
         "offset": 8,
         "size": 4,
-        "type": "char *"
+        "type": "CLodMeshPrecomputeEntry *"
       }
     ]
   },

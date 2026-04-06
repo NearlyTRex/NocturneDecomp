@@ -1,12 +1,12 @@
-// Name: engine_3d.c_renderPolygonDepthWriteTexturedLit_FUN_00406000
-// Address: 00406000
-// Address Range: [[00406000, 00406096]]
+// Name: engine_3d.c_renderPolygonLastPixelMode2_FUN_004066d0
+// Address: 004066d0
+// Address Range: [[004066d0, 00406798]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWriteTexturedLit_FUN_00406000(SMRGLHeaderPrimitive *prim)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLastPixelMode2_FUN_004066d0(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWriteTexturedLit_FUN_00406000(SMRGLHeaderPrimitive *prim)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLastPixelMode2_FUN_004066d0(SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
@@ -27,8 +27,13 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWriteTexturedLit_FUN
     else {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlags.dword = RENDER_DEPTH_TEXTURED;
-    g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
+    g_RenderStateFlags.dword = RENDER_LASTPIXEL;
+    g_RenderStateFlag2 = PREPROCESS_NONE;
+    g_CurrentLightingValue =
+         engine_light_cpp_calculateLighting_FUN_00505780
+                   ((prim->surface_normal).A,(prim->surface_normal).B,(prim->surface_normal).C);
+    g_ActiveRenderColor =
+         engine_3d_c_makeGrayscaleColor_FUN_004039c0(g_CurrentPolygonColor,g_CurrentLightingValue);
     engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,(int *)(prim + 1));
   }
   return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);

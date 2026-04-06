@@ -2,13 +2,13 @@
 // Address: 0058f810
 // Address Range: [[0058f810, 0059251f] [00605656, 006056e1] [0060c98e, 0060ca21]]
 // Convention: __cdecl
-// Signature: int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr,char *filename)
+// Signature: int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr,CLodMeshPrecomputeEntry *entry)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr,char *filename)
+int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr,CLodMeshPrecomputeEntry *entry)
 
 {
   ushort uVar1;
@@ -286,7 +286,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
   local_170 = (uint *)0x0;
   local_f0 = (int *)0x0;
   local_ec = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                       (filename + 0x200,(char *)0x0,"rt","..\\core\\skeledit.cpp",
+                       (entry->s3d_filename,(char *)0x0,"rt","..\\core\\skeledit.cpp",
                         0xbde);
   if (local_ec == (_FILE *)0x0) {
     pcVar38 = "Can't open %s";
@@ -311,7 +311,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
     _fscanf(local_ec,"%d\n");
     if ((local_e8 < 0x65) || (0x67 < local_e8)) {
       _sprintf
-                (g_SkeleditStatusMessage,"%s has incorrect S3D version %d",filename + 0x200);
+                (g_SkeleditStatusMessage,"%s has incorrect S3D version %d",entry->s3d_filename);
       goto LAB_0058f8e7;
     }
     iVar31 = 1;
@@ -388,7 +388,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
           pcVar38 = pcVar38 + ((uint)bVar39 * -2 + 1) * 4;
           pcVar30 = pcVar30;
         }
-        if (*(int *)(filename + 0x308) == 0) {
+        if (entry->skip_generation == 0) {
           shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                     (g_CEditorToolsPtr,"Automap cap faces to texture (blank to leave map as-is) NO EXTENSION",local_388,100,1);
         }
@@ -968,7 +968,7 @@ LAB_005902c8:
             local_d8 = this_ptr->parts;
             do {
               _sprintf(local_540,"There are %d triangles I couldn't match.");
-              if (*(int *)(filename + 0x308) == 0) {
+              if (entry->skip_generation == 0) {
                 shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_bec);
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80
                           (&local_bec.base,"Get rid of them them, I never want to see them again");

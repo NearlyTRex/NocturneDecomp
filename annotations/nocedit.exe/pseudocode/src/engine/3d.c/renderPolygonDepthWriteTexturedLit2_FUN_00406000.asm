@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWriteTexturedLit_FUN_00406000(SMRGLHeaderPrimitive *prim)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWriteTexturedLit2_FUN_00406000(SMRGLHeaderPrimitive *prim)
 ;
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
@@ -22,7 +22,7 @@
 section .text
 
     PUSH EBX                            ; 00406000
-        ;   Label: engine_3d.c_renderPolygonDepthWriteTexturedLit_FUN_00406000
+        ;   Label: engine_3d.c_renderPolygonDepthWriteTexturedLit2_FUN_00406000
     PUSH ESI                            ; 00406001
     PUSH EBP                            ; 00406002
     MOV EBX,dword ptr [ESP + 0x10]      ; 00406003

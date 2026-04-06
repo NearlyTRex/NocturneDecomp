@@ -5,29 +5,29 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 75,
-    "complexity_score": 30,
+    "assembly_lines": 58,
+    "complexity_score": 25,
     "cross_reference_count": 0,
-    "function_call_count": 4,
-    "global_count": 8,
+    "function_call_count": 2,
+    "global_count": 5,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 25,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 105
+    "total_lines": 83
   },
   "cross_references": [],
   "function": {
-    "address": "004066d0",
+    "address": "00406000",
     "address_range": [
       [
-        "004066d0",
-        "00406798"
+        "00406000",
+        "00406096"
       ]
     ],
     "convention": "__cdecl",
-    "name": "engine_3d.c_renderPolygonLastPixelMode_FUN_004066d0",
-    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLastPixelMode_FUN_004066d0(SMRGLHeaderPrimitive *prim)"
+    "name": "engine_3d.c_renderPolygonDepthWriteTexturedLit2_FUN_00406000",
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDepthWriteTexturedLit2_FUN_00406000(SMRGLHeaderPrimitive *prim)"
   },
   "function_calls": [
     {
@@ -36,19 +36,9 @@
       "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
     },
     {
-      "addr": "004039c0",
-      "is_variadic": false,
-      "name": "engine_3d.c_makeGrayscaleColor_FUN_004039c0"
-    },
-    {
       "addr": "004371b0",
       "is_variadic": false,
       "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0"
-    },
-    {
-      "addr": "00505780",
-      "is_variadic": false,
-      "name": "engine_light.cpp_calculateLighting_FUN_00505780"
     }
   ],
   "globals": [
@@ -57,24 +47,6 @@
       "name": "g_BitsPerPixel",
       "type": "int",
       "value": "0x8"
-    },
-    {
-      "addr": "00772a5c",
-      "name": "g_CurrentPolygonColor",
-      "type": "int",
-      "value": null
-    },
-    {
-      "addr": "02d02570",
-      "name": "g_ActiveRenderColor",
-      "type": "int",
-      "value": null
-    },
-    {
-      "addr": "02d02574",
-      "name": "g_CurrentLightingValue",
-      "type": "int",
-      "value": null
     },
     {
       "addr": "02d0257c",
@@ -110,33 +82,33 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.155172413793103,
-    "instruction_count": 58,
+    "avg_pcode_per_instr": 4.395348837209302,
+    "instruction_count": 43,
     "opcode_distribution": {
       "BOOL_NEGATE": 8,
       "BRANCH": 3,
-      "CALL": 4,
+      "CALL": 2,
       "CBRANCH": 4,
-      "COPY": 47,
-      "INT_ADD": 19,
-      "INT_AND": 34,
-      "INT_CARRY": 5,
-      "INT_EQUAL": 23,
+      "COPY": 34,
+      "INT_ADD": 14,
+      "INT_AND": 30,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 19,
       "INT_LEFT": 2,
       "INT_LESS": 3,
       "INT_NOTEQUAL": 2,
       "INT_OR": 5,
       "INT_SBORROW": 3,
-      "INT_SCARRY": 5,
-      "INT_SLESS": 13,
-      "INT_SUB": 20,
-      "INT_XOR": 2,
-      "LOAD": 11,
-      "POPCOUNT": 11,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 11,
+      "INT_SUB": 13,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 9,
       "RETURN": 1,
-      "STORE": 16
+      "STORE": 9
     },
-    "pcode_op_count": 241
+    "pcode_op_count": 189
   },
   "stack_frame": {
     "frame_size": 8,
@@ -159,7 +131,7 @@
     "entries": [
       {
         "class_name": "Unknown",
-        "offset": 216,
+        "offset": 188,
         "vtable_addr": "0066df88"
       }
     ],

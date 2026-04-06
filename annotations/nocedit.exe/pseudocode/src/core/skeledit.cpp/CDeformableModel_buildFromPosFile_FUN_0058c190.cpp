@@ -199,8 +199,7 @@ LAB_0058c613:
     core_skeledit_cpp_CDeformableModel_initSinglePart_FUN_0058f790(this_ptr);
   }
   else {
-    iVar5 = core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-                      (this_ptr,entry->pos_filename);
+    iVar5 = core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(this_ptr,entry);
     if (iVar5 == 0) {
       return 0;
     }

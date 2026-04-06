@@ -1,12 +1,12 @@
-// Name: engine_3d.c_renderPolygonVertexLitNormalized_FUN_00405020
+// Name: engine_3d.c_renderPolygonVertexLitNormalized2_FUN_00405020
 // Address: 00405020
 // Address Range: [[00405020, 004050b6]]
 // Convention: __cdecl
-// Signature: void * __cdecl engine_3d_c_renderPolygonVertexLitNormalized_FUN_00405020(SMRGLHeaderPrimitive *prim)
+// Signature: void * __cdecl engine_3d_c_renderPolygonVertexLitNormalized2_FUN_00405020(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
-void * __cdecl engine_3d_c_renderPolygonVertexLitNormalized_FUN_00405020(SMRGLHeaderPrimitive *prim)
+void * __cdecl engine_3d_c_renderPolygonVertexLitNormalized2_FUN_00405020(SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
