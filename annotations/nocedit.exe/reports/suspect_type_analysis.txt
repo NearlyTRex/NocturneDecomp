@@ -17,7 +17,7 @@ SUSPECT TYPE COUNTS
   warning_type_propagation         133 (  1.5%)
   param_count_too_few              119 (  1.4%)
   unaffected_reg                   106 (  1.2%)
-  sub84_truncation                 101 (  1.1%)
+  sub84_truncation                 101 (  1.2%)
   stack_alignment_array             95 (  1.1%)
   negative_offset                   86 (  1.0%)
   warning_unreachable               85 (  1.0%)
@@ -33,10 +33,10 @@ SUSPECT TYPE COUNTS
   byvalue_struct_passing            21 (  0.2%)
   undefined_type                    15 (  0.2%)
   special_math_intrinsic            15 (  0.2%)
-  nan_function_artifact              9 (  0.1%)
   warning_jumptable                  8 (  0.1%)
   warning_indirect_jump              8 (  0.1%)
-  fnstsw_flag_artifact               8 (  0.1%)
+  nan_function_artifact              8 (  0.1%)
+  fnstsw_flag_artifact               7 (  0.1%)
   unknown_param                      6 (  0.1%)
   displaced_global_access            6 (  0.1%)
   warning_deadcode_restart           5 (  0.1%)
@@ -1482,23 +1482,6 @@ Example functions:
     Math intrinsic (pow) at 005ffd76...
 
 ====================================================================================================
-TYPE: nan_function_artifact (9 occurrences)
-====================================================================================================
-
-Unique patterns:
-     9x  NAN(
-
-Example functions:
-  crt_math.c_pow_FUN_005ffd76
-    exponent = (ushort)(base < fVar5) << 8 | (ushort)(NAN(base) || NAN(fVar5)) << 10...
-  crt_unknown.c_FUN_0060b190
-    uVar1._1_1_ = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4))...
-  core_set.cpp_CDemonSet_processActors_FUN_0056b810
-    (ushort)(0.0 < (float)damage_info) << 8 | (ushort)NAN((float)damage_info) << 10...
-  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
-    (ushort)(NAN(dVar9) || NAN(359.5)) << 10 |...
-
-====================================================================================================
 TYPE: warning_jumptable (8 occurrences)
 ====================================================================================================
 
@@ -1533,12 +1516,26 @@ Example functions:
     /* WARNING: Treating indirect jump as call */...
 
 ====================================================================================================
-TYPE: fnstsw_flag_artifact (8 occurrences)
+TYPE: nan_function_artifact (8 occurrences)
+====================================================================================================
+
+Unique patterns:
+     8x  NAN(
+
+Example functions:
+  crt_math.c_pow_FUN_005ffd76
+    exponent = (ushort)(base < fVar5) << 8 | (ushort)(NAN(base) || NAN(fVar5)) << 10...
+  crt_unknown.c_FUN_0060b190
+    uVar1._1_1_ = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4))...
+  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
+    (ushort)(NAN(dVar9) || NAN(359.5)) << 10 |...
+
+====================================================================================================
+TYPE: fnstsw_flag_artifact (7 occurrences)
 ====================================================================================================
 
 Unique patterns:
      1x  CONCAT22((short)(new_size >> 0x10
-     1x  CONCAT22((short)((uint)damage_info >> 0x10
      1x  CONCAT22((short)((uint)local_14 >> 0x10
      1x  CONCAT22((short)((ulonglong)dVar9 >> 0x10
      1x  CONCAT22((short)uVar8 * (short)(uVar39 >> 0x10
@@ -1549,8 +1546,6 @@ Unique patterns:
 Example functions:
   crt_heap.c_TryResizeInPlace_FUN_00609974
     (in_DS,(void *)CONCAT22((short)(new_size >> 0x10),in_DS),(ulong)ptr,pExtraNeeded...
-  core_set.cpp_CDemonSet_processActors_FUN_0056b810
-    CONCAT22((short)((uint)damage_info >> 0x10),...
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
     in_stack_fffffc88 = (char *)CONCAT22((short)((uint)local_14 >> 0x10),in_FPUContr...
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190

@@ -356,7 +356,7 @@ section .text
     MOV EDI,dword ptr [0x006810c8]      ; 004e356f | g_CDemonSetPtr
     PUSH EDI                            ; 004e3575 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_processActors_FUN_0056b810 ; 004e3576
-        ;   XREF to: 0056b810 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet * this_ptr)
+        ;   XREF to: 0056b810 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e357b | g_CGameInstance | g_CGamePtr
     MOV EBP,dword ptr [EAX + 0x20c]     ; 004e3580 | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 004e3586

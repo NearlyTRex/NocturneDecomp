@@ -57,7 +57,7 @@ void __cdecl CDemonSet::reinitCamera(CDemonSet *this_ptr,int clear_enabled,int i
 
 // Original: core_set.cpp_CDemonSet_processActors_FUN_0056b810
 // Address: 0056b810
-int __cdecl CDemonSet::processActors(CDemonSet *this_ptr);
+void __cdecl CDemonSet::processActors(CDemonSet *this_ptr);
 
 // Original: core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80
 // Address: 0056be80

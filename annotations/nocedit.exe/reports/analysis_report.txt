@@ -10,7 +10,7 @@ Total functions: 6454
 Clean functions: 5097 (79.0%)
 Functions with suspects: 1357 (21.0%)
 
-Total suspect patterns: 6876
+Total suspect patterns: 6874
 Average suspects per function: 1.07
 
 Virtual files: 214 total, 46 at 100%, 83 at 90%+
@@ -23,8 +23,8 @@ Average complexity score: 59.9
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6454
-Successful: 6226 (96.5%)
-Failed: 228
+Successful: 6247 (96.8%)
+Failed: 207
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
@@ -50,16 +50,16 @@ SUSPECT PATTERN BREAKDOWN
   byvalue_struct_passing    21
   extra_output              19
   unaffected_reg            13
-  fnstsw_flag_artifact      7
   displaced_global_access   6
+  fnstsw_flag_artifact      6
   warning_deadcode_restart  5
   unknown_type              4
   special_cpu_detection     4
   warning_max_restarts      3
-  nan_function_artifact     3
   warning_overlapping_globals 3
   undefined_type            3
   cpuid_intrinsic           2
+  nan_function_artifact     2
   undefined_data            1
   unresolved_register       1
   cpuid_assembly            1
@@ -418,19 +418,18 @@ FUNCTIONS BY SUSPECT TYPE
     005556f0: shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
 
-  fnstsw_flag_artifact (5 functions):
-    0056b810: core_set.cpp_CDemonSet_processActors_FUN_0056b810
-    004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600
-    00462190: shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
-    005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
-    005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
-
   displaced_global_access (5 functions):
     0056d090: core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090
     0056d110: core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110
     0056fbd0: core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
     0056d4a0: core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0
     005f2f30: wincore_winrun.cpp_enqueueInput_FUN_005f2f30
+
+  fnstsw_flag_artifact (4 functions):
+    004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600
+    00462190: shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
+    005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+    005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
 
   warning_deadcode_restart (5 functions):
     004ce2d0: engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0
@@ -456,10 +455,6 @@ FUNCTIONS BY SUSPECT TYPE
     005ae830: sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
     005b0120: sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120
 
-  nan_function_artifact (2 functions):
-    0056b810: core_set.cpp_CDemonSet_processActors_FUN_0056b810
-    00462190: shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
-
   warning_overlapping_globals (3 functions):
     00524f4c: core_mmx.c_detectIntelProcessor_FUN_00524f4c
     005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
@@ -472,6 +467,9 @@ FUNCTIONS BY SUSPECT TYPE
 
   cpuid_intrinsic (1 functions):
     00524f4c: core_mmx.c_detectIntelProcessor_FUN_00524f4c
+
+  nan_function_artifact (1 functions):
+    00462190: shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
 
   undefined_data (1 functions):
     0050cdc0: engine_matrix.c_projectTransformedPoint_FUN_0050cdc0

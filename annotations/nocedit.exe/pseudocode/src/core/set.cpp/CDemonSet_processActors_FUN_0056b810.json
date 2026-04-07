@@ -1,98 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "cast_error",
-        "column": 17,
-        "line": 69,
-        "message": "cannot cast from type 'float' to pointer type 'CPathMap *'"
-      },
-      {
-        "category": "cast_error",
-        "column": 36,
-        "line": 73,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 75,
-        "line": 73,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 32,
-        "line": 74,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 13,
-        "line": 75,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 19,
-        "line": 76,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 15,
-        "line": 87,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 53,
-        "line": 107,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 77,
-        "line": 164,
-        "message": "use of undeclared identifier 'stack0xffffff60'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 40,
-        "line": 170,
-        "message": "use of undeclared identifier 'stack0xffffff60'"
-      },
-      {
-        "category": "cast_error",
-        "column": 32,
-        "line": 258,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
-      },
-      {
-        "category": "cast_error",
-        "column": 26,
-        "line": 268,
-        "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 576,
-    "complexity_score": 453,
+    "complexity_score": 418,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
-    "max_suspect_severity": "severe",
-    "pseudocode_lines": 273,
-    "suspect_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 268,
+    "suspect_count": 14,
     "suspect_types": [
-      "fnstsw_flag_artifact",
-      "nan_function_artifact",
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 849
+    "total_lines": 844
   },
   "cross_references": [
     {
@@ -113,7 +38,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_set.cpp_CDemonSet_processActors_FUN_0056b810",
-    "signature": "int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_ptr)"
+    "signature": "void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_ptr)"
   },
   "function_calls": [
     {
@@ -569,24 +494,8 @@
   },
   "suspects": [
     {
-      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
-      "line": 65,
-      "match": "CONCAT22((short)((uint)damage_info >> 0x10",
-      "severity": "severe",
-      "text": "CONCAT22((short)((uint)damage_info >> 0x10),",
-      "type": "fnstsw_flag_artifact"
-    },
-    {
-      "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 66,
-      "match": "NAN(",
-      "severity": "severe",
-      "text": "(ushort)(0.0 < (float)damage_info) << 8 | (ushort)NAN((float)damage_info) << 10",
-      "type": "nan_function_artifact"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 99,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_ActorProfileTimes + iVar7) = iVar3 - local_3c;",
@@ -594,7 +503,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 157,
+      "line": 153,
       "match": "&stack0xffffff60",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);",
@@ -602,7 +511,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 163,
+      "line": 159,
       "match": "&stack0xffffff60",
       "severity": "moderate",
       "text": "damage_info = (CPathMap *)&stack0xffffff60;",
@@ -610,7 +519,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 219,
+      "line": 215,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar3 = *(int *)((int)g_ActorProfileTimes + local_2c);",
@@ -618,7 +527,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 220,
+      "line": 216,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (iVar3 < *(int *)((int)g_ActorProfileTimes + iVar2)) {",
@@ -626,7 +535,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 221,
+      "line": 217,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ActorProfileTimes + local_2c) =",
@@ -634,7 +543,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 222,
+      "line": 218,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ActorProfileTimes + iVar2);",
@@ -642,7 +551,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 223,
+      "line": 219,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_ActorProfileTimes + iVar2) = iVar3;",
@@ -650,7 +559,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 224,
+      "line": 220,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar4 = *(uint *)((int)g_ActorProfileActors + local_2c);",
@@ -658,7 +567,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 225,
+      "line": 221,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ActorProfileActors + local_2c) =",
@@ -666,7 +575,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 226,
+      "line": 222,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ActorProfileActors + iVar2);",
@@ -674,7 +583,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 227,
+      "line": 223,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ActorProfileActors + iVar2) = uVar4;",
@@ -682,7 +591,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 244,
+      "line": 240,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)g_ActorProfileTimes + iVar8);",
@@ -690,7 +599,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 245,
+      "line": 241,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar2 = (uint *)((int)g_ActorProfileActors + iVar8);",

@@ -2,11 +2,11 @@
 // Address: 0056b810
 // Address Range: [[0056b810, 0056be76]]
 // Convention: __cdecl
-// Signature: int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_ptr)
+// Signature: void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_ptr)
+void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_ptr)
 
 {
   CDemonActor *pCVar1;
@@ -68,10 +68,6 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
   g_DynamicLightCount = 0;
   damage_info = (CPathMap *)g_CGamePtr->delta_time_float;
   g_CoronaGlobeCount = 0;
-  pCVar6 = (CDemonSet *)
-           CONCAT22((short)((uint)damage_info >> 0x10),
-                    (ushort)(0.0 < (float)damage_info) << 8 | (ushort)NAN((float)damage_info) << 10
-                    | (ushort)((float)damage_info == 0.0) << 0xe);
   if (0.0 < (float)damage_info) {
     CStack_58.z = (float)damage_info;
     core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(this_ptr);
@@ -268,7 +264,6 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
                  (double)(float)damage_info);
     }
     iVar2 = 0;
-    pCVar6 = this_ptr;
     pCVar11 = this_ptr;
     if (0 < this_ptr->actor_count) {
       do {
@@ -279,5 +274,5 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
       } while (iVar2 < this_ptr->actor_count);
     }
   }
-  return (int)pCVar6;
+  return;
 }
