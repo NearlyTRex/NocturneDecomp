@@ -5,24 +5,23 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6247 (96.8%)
-Failed: 207
+Successful: 6280 (97.3%)
+Failed: 174
 
 ERROR CATEGORIES
 --------------------------------------------------
-  type_error                       327
-  format_error                     267
-  incompatible_types               101
-  undeclared_identifier             56
-  cast_error                        39
-  syntax_error                      26
-  other                             17
+  type_error                       311
+  format_error                     262
+  incompatible_types                91
+  undeclared_identifier             37
+  syntax_error                      25
+  other                             13
   pointer_type                      11
   missing_member                     8
-  argument_error                     3
+  cast_error                         6
 
 ====================================================================================================
-CATEGORY: type_error (327 errors)
+CATEGORY: type_error (311 errors)
 ====================================================================================================
 
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -87,14 +86,6 @@ CATEGORY: type_error (327 errors)
     Line 20: member reference base type 'int' is not a structure or union
   shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
     Line 103: member reference base type 'int' is not a structure or union
-  core_xform.cpp_clipPolygonStage1_FUN_005f7ed0
-    Line 50: member reference base type 'longlong' (aka 'long long') is not a structure or union
-  core_xform.cpp_clipPolygonStage2_FUN_005f8040
-    Line 50: member reference base type 'longlong' (aka 'long long') is not a structure or union
-  core_xform.cpp_clipPolygonStage3_FUN_005f81c0
-    Line 49: member reference base type 'longlong' (aka 'long long') is not a structure or union
-  core_xform.cpp_clipPolygonStage4_FUN_005f8330
-    Line 49: member reference base type 'longlong' (aka 'long long') is not a structure or union
   core_xform.cpp_transformAndClipGeometry_FUN_005f8550
     Line 91: member reference base type 'longlong' (aka 'long long') is not a structure or union
   engine_clipper.c_clipPolygonNearPlane_FUN_00436420
@@ -139,13 +130,11 @@ CATEGORY: type_error (327 errors)
     Line 32: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
 
 ====================================================================================================
-CATEGORY: format_error (267 errors)
+CATEGORY: format_error (262 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     Line 96: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]
-  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
-    Line 413: format specifies type 'char *' but the argument has type 'CLightActor *' [-Werror,-Wformat]
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
     Line 60: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
@@ -180,8 +169,6 @@ CATEGORY: format_error (267 errors)
     Line 24: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     Line 113: format specifies type 'char *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
-  core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0
-    Line 29: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
     Line 78: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250
@@ -222,8 +209,6 @@ CATEGORY: format_error (267 errors)
     Line 20: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
   shape_memdbg.cpp_debugRealloc_FUN_0050f540
     Line 24: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb960
-    Line 178: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
     Line 158: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0
@@ -270,15 +255,13 @@ CATEGORY: format_error (267 errors)
     Line 19: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
-CATEGORY: incompatible_types (101 errors)
+CATEGORY: incompatible_types (91 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 24: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
     Line 113: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
-  wincore_winrun.cpp_winMain_FUN_005f3680
-    Line 111: assigning to 'HBRUSH' (aka 'HBRUSH__ *') from incompatible type 'LPVOID' (aka 'void *')
   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
     Line 32: assigning to 'QSORT_COMPARATOR_FUNC *' (aka 'int (*)(void *, void *)') from incompatible type 'int (SFace **, SFace **)': type mismatch at 1st parameter ('void *' vs 'SFace **')
   engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0
@@ -287,8 +270,6 @@ CATEGORY: incompatible_types (101 errors)
     Line 117: assigning to 'SExpandedEdge *' from incompatible type 'void *'
   shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
     Line 54: assigning to 'SVertexData *' from incompatible type 'void *'
-  core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720
-    Line 38: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
     Line 46: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
   engine_pcx.c_writePCXScanline_FUN_00548c50
@@ -341,16 +322,10 @@ CATEGORY: incompatible_types (101 errors)
     Line 36: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'
   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
     Line 161: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'
-  core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240
-    Line 80: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'uint *' (aka 'unsigned int *'); dereference with *
   shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0
     Line 21: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
   shape_memdbg.cpp_openFile_FUN_0050f7a0
     Line 33: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
-  core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
-    Line 89: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
-  core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
-    Line 196: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
   shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
     Line 59: invalid operands to binary expression ('double' and 'int')
   shape_superopt.cpp_CVec_dot_FUN_005d82e0
@@ -373,13 +348,11 @@ CATEGORY: incompatible_types (101 errors)
     Line 212: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (56 errors)
+CATEGORY: undeclared_identifier (37 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
     Line 24: use of undeclared identifier 'DAT_80000010'
-  core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
-    Line 96: use of undeclared identifier 'code'
   engine_dosio.c_findFile_FUN_00481760
     Line 24: use of undeclared identifier 'code'
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
@@ -412,80 +385,23 @@ CATEGORY: undeclared_identifier (56 errors)
     Line 83: use of undeclared identifier 'code'
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
     Line 123: use of undeclared identifier 'code'
-  core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990
-    Line 49: use of undeclared identifier 'stack0x00000000'
-  core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0
-    Line 115: use of undeclared identifier 'stack0x00000000'
-  core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0
-    Line 75: use of undeclared identifier 'stack0x00000000'
-  core_sound.cpp_CSound_init_FUN_005b2dd0
-    Line 51: use of undeclared identifier 'stack0x00000000'
-  core_sound.cpp_resetTrainSounds_FUN_005b26f0
-    Line 12: use of undeclared identifier 'stack0x00000000'
-  core_sound.cpp_updateListeners_FUN_005b1870
-    Line 202: use of undeclared identifier 'stack0x00000000'
   shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     Line 60: use of undeclared identifier 'stack0x00000000'
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 41: use of undeclared identifier 'stack0x0000002c'
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     Line 112: use of undeclared identifier 'stack0xfffff964'
-  core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150
-    Line 62: use of undeclared identifier 'stack0xfffffdd4'
-  core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
-    Line 98: use of undeclared identifier 'stack0xfffffe8c'
-  core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50
-    Line 110: use of undeclared identifier 'stack0xfffffe90'
-  core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0
-    Line 61: use of undeclared identifier 'stack0xffffff88'
   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
     Line 85: use of undeclared identifier 'stack0xffffff94'; did you mean 'in_stack_ffffff94'?
-  core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00
-    Line 50: use of undeclared identifier 'stack0xffffffb0'; did you mean 'in_stack_ffffffb0'?
-  core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
-    Line 65: use of undeclared identifier 'stack0xffffffc0'
-  core_trash.cpp_CTrash_renderOpaque_FUN_005df550
-    Line 19: use of undeclared identifier 'stack0xffffffc4'
-  core_vessel.cpp_CCryptVessel_renderTransparent_FUN_005e98b0
-    Line 37: use of undeclared identifier 'stack0xffffffd4'
   shape_design.c_renderSinglePolygon_FUN_0045ce20
     Line 85: use of undeclared identifier 'stack0xffffffdc'
   shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920
     Line 19: use of undeclared identifier 'stack0xffffffe0'
 
 ====================================================================================================
-CATEGORY: cast_error (39 errors)
+CATEGORY: syntax_error (25 errors)
 ====================================================================================================
 
-  core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
-    Line 129: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb960
-    Line 370: C-style cast from 'CDeformableModelInstance *' to 'float' is not allowed
-  core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380
-    Line 40: C-style cast from 'CMatrix3x3f *' to 'float' is not allowed
-  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
-    Line 312: C-style cast from 'CWeapon *' to 'float' is not allowed
-  core_xform.cpp_lerpMatrix3x4_FUN_005f7140
-    Line 42: cannot cast from type 'float' to pointer type 'CMatrix3x3f *'
-  core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0
-    Line 45: cannot cast from type 'float' to pointer type 'CQuaternion4f *'
-  core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-    Line 95: cannot cast from type 'float' to pointer type 'CQuaternion4f *'
-  sound_sndwav.cpp_staticInit_FUN_005b0670
-    Line 12: no matching conversion for C-style cast from 'CSoundDeviceBasic_vtable *' to 'CSoundDevice'
-  sound_snddx.cpp_staticInit_FUN_005ade60
-    Line 12: no matching conversion for C-style cast from 'CSoundDeviceFull_vtable *' to 'CSoundDevice'
-  engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410
-    Line 42: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'
-  engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-    Line 27: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'
-
-====================================================================================================
-CATEGORY: syntax_error (26 errors)
-====================================================================================================
-
-  core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
-    Line 96: expected expression
   engine_dosio.c_findFile_FUN_00481760
     Line 24: expected expression
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
@@ -520,13 +436,9 @@ CATEGORY: syntax_error (26 errors)
     Line 123: expected expression
 
 ====================================================================================================
-CATEGORY: other (17 errors)
+CATEGORY: other (13 errors)
 ====================================================================================================
 
-  core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-    Line 119: array type 'byte[4]' (aka 'unsigned char[4]') is not assignable
-  core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
-    Line 173: array type 'byte[4]' (aka 'unsigned char[4]') is not assignable
   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
     Line 101: no matching literal operator for call to 'operator""_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template
   engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0
@@ -567,12 +479,16 @@ CATEGORY: missing_member (8 errors)
     Line 111: no member named '_18_2_' in 'tWAVEFORMATEX'
 
 ====================================================================================================
-CATEGORY: argument_error (3 errors)
+CATEGORY: cast_error (6 errors)
 ====================================================================================================
 
-  core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
-    Line 88: too few arguments to function call, expected 4, have 3
-  wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0
-    Line 28: too many arguments to function call, expected 0, have 2
-  wincore_windll.cpp_loadExternalRenderer_FUN_005b6750
-    Line 40: too many arguments to function call, expected 0, have 2
+  core_xform.cpp_lerpMatrix3x4_FUN_005f7140
+    Line 42: cannot cast from type 'float' to pointer type 'CMatrix3x3f *'
+  sound_sndwav.cpp_staticInit_FUN_005b0670
+    Line 12: no matching conversion for C-style cast from 'CSoundDeviceBasic_vtable *' to 'CSoundDevice'
+  sound_snddx.cpp_staticInit_FUN_005ade60
+    Line 12: no matching conversion for C-style cast from 'CSoundDeviceFull_vtable *' to 'CSoundDevice'
+  engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410
+    Line 42: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'
+  engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
+    Line 27: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'
