@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 20,
     "complexity_score": 11,
-    "cross_reference_count": 12,
+    "cross_reference_count": 14,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "clean",
@@ -33,6 +33,12 @@
       "addr": "00448f20",
       "from_addr": "00449087",
       "name": "core_crossbow.cpp_CCrossbow_fire_FUN_00448f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a7160",
+      "from_addr": "004a7378",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_004a7160",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -63,6 +69,12 @@
       "addr": "00558cf0",
       "from_addr": "00558f25",
       "name": "core_scat.cpp_CScat_scoreAimTarget_FUN_00558cf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588060",
+      "from_addr": "0058827b",
+      "name": "core_shotgun.cpp_CShotgun_fire_FUN_00588060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -136,7 +148,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 12,
+    "call_site_count": 14,
     "call_sites": [
       {
         "call_addr": "005c40a0",
@@ -227,9 +239,9 @@
         "stack_params": 2
       },
       {
-        "call_addr": "0042d91d",
+        "call_addr": "004a7378",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0",
+        "caller": "core_elephant.cpp_CElephantGun_fire_FUN_004a7160",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -238,9 +250,9 @@
         "stack_params": 2
       },
       {
-        "call_addr": "005c31e5",
+        "call_addr": "0042d91d",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150",
+        "caller": "core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

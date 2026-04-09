@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 137,
+    "assembly_lines": 189,
     "complexity_score": 77,
     "cross_reference_count": 0,
-    "function_call_count": 13,
-    "global_count": 3,
+    "function_call_count": 15,
+    "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 62,
     "suspect_count": 1,
     "suspect_types": [
       "warning_inlined_function"
     ],
-    "total_lines": 199
+    "total_lines": 251
   },
   "cross_references": [],
   "function": {
@@ -24,10 +24,6 @@
     "address_range": [
       [
         "005de360",
-        "005de3a3"
-      ],
-      [
-        "005de436",
         "005de595"
       ]
     ],
@@ -56,6 +52,11 @@
       "addr": "005fe6b0",
       "is_variadic": false,
       "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005a8480",
@@ -98,12 +99,23 @@
       "name": "sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0"
     },
     {
+      "addr": "005a9b40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40"
+    },
+    {
       "addr": "005abdc0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0"
     }
   ],
   "globals": [
+    {
+      "addr": "006554e9",
+      "name": "s_m_gun1_wav_2_3_f_006554e9",
+      "type": "TerminatedCString",
+      "value": null
+    },
     {
       "addr": "006554ff",
       "name": "s_m_gun_t_wav_006554ff",
@@ -132,43 +144,43 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.175438596491228,
-    "instruction_count": 114,
+    "avg_pcode_per_instr": 5.1,
+    "instruction_count": 160,
     "opcode_distribution": {
       "BOOL_NEGATE": 2,
       "BOOL_OR": 4,
-      "CALL": 14,
-      "CALLIND": 1,
-      "CBRANCH": 4,
-      "COPY": 205,
-      "FLOAT2FLOAT": 13,
+      "CALL": 18,
+      "CALLIND": 2,
+      "CBRANCH": 5,
+      "COPY": 278,
+      "FLOAT2FLOAT": 17,
       "FLOAT_EQUAL": 2,
       "FLOAT_LESS": 2,
       "FLOAT_MULT": 3,
       "FLOAT_NAN": 4,
       "FLOAT_SUB": 1,
       "INT2FLOAT": 4,
-      "INT_ADD": 57,
-      "INT_AND": 39,
-      "INT_CARRY": 9,
-      "INT_EQUAL": 26,
+      "INT_ADD": 86,
+      "INT_AND": 56,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 42,
       "INT_LEFT": 8,
-      "INT_LESS": 1,
+      "INT_LESS": 2,
       "INT_NOTEQUAL": 11,
       "INT_OR": 10,
-      "INT_SBORROW": 1,
-      "INT_SCARRY": 9,
-      "INT_SLESS": 13,
-      "INT_SUB": 38,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 21,
+      "INT_SUB": 52,
       "INT_ZEXT": 8,
-      "LOAD": 33,
-      "POPCOUNT": 13,
-      "RETURN": 2,
+      "LOAD": 51,
+      "POPCOUNT": 21,
+      "RETURN": 4,
       "ROUND": 1,
-      "STORE": 51,
+      "STORE": 68,
       "TRUNC": 1
     },
-    "pcode_op_count": 590
+    "pcode_op_count": 816
   },
   "stack_frame": {
     "frame_size": 488,
@@ -237,6 +249,28 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CTommyGun_process_FUN_005de360.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 30,
+          "line": 43,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 36,
+          "line": 43,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

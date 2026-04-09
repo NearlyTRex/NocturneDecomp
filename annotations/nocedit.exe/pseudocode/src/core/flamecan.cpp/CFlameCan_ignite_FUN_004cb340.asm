@@ -6,12 +6,14 @@
 ; Parameters:
 ; CFlameCan *      Stack[0x4]:4   this_ptr
 ;
-; XREF[7]:
+; XREF[9]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040aa8b
+;   core_elephant.cpp_CElephantGun_fire_FUN_004a7160 at 004a782f
 ;   core_fire.cpp_CGunFlame_init_FUN_004c4c00 at 004c4d3c
 ;   core_flamecan.cpp_CFlameCan_process_FUN_004cb390 at 004cb3c1
 ;   core_gun.cpp_CGun_fire_FUN_004f0350 at 004f0814
 ;   core_set.cpp_CDemonSet_processActors_FUN_0056b810 at 0056bc89
+;   core_shotgun.cpp_CShotgun_fire_FUN_00588060 at 00588731
 ;   core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30 at 005de014
 ;   core_turret.cpp_CTurret_fire_FUN_005e3750 at 005e3c1c
 ;

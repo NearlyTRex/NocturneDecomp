@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 162,
+    "assembly_lines": 189,
     "complexity_score": 65,
     "cross_reference_count": 1,
-    "function_call_count": 5,
+    "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 65,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 227
+    "total_lines": 254
   },
   "cross_references": [
     {
@@ -29,10 +29,6 @@
     "address_range": [
       [
         "004bfe90",
-        "004c00b4"
-      ],
-      [
-        "004c0111",
         "004c0136"
       ]
     ],
@@ -50,6 +46,11 @@
       "addr": "0041dd20",
       "is_variadic": false,
       "name": "core_box.cpp_CBox_setupCorners_FUN_0041dd20"
+    },
+    {
+      "addr": "00420180",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBox_setupVelocities_FUN_00420180"
     },
     {
       "addr": "00471d30",
@@ -102,34 +103,35 @@
     "estimated_params": 4
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.135135135135135,
-    "instruction_count": 148,
+    "avg_pcode_per_instr": 5.213872832369942,
+    "instruction_count": 173,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
       "BRANCH": 1,
-      "CALL": 5,
+      "CALL": 7,
       "CBRANCH": 3,
-      "COPY": 387,
-      "FLOAT2FLOAT": 40,
+      "COPY": 441,
+      "FLOAT2FLOAT": 44,
       "FLOAT_ADD": 2,
       "FLOAT_MULT": 7,
       "FLOAT_NEG": 3,
       "FLOAT_SUB": 6,
-      "INT_ADD": 93,
-      "INT_AND": 22,
-      "INT_CARRY": 6,
-      "INT_EQUAL": 22,
+      "INT_ADD": 110,
+      "INT_AND": 32,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 32,
       "INT_LESS": 4,
       "INT_SBORROW": 4,
-      "INT_SCARRY": 6,
-      "INT_SLESS": 11,
-      "INT_SUB": 25,
-      "INT_XOR": 1,
-      "LOAD": 47,
-      "POPCOUNT": 11,
-      "STORE": 53
+      "INT_SCARRY": 10,
+      "INT_SLESS": 16,
+      "INT_SUB": 32,
+      "INT_XOR": 2,
+      "LOAD": 53,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "STORE": 65
     },
-    "pcode_op_count": 760
+    "pcode_op_count": 902
   },
   "stack_frame": {
     "frame_size": 200,

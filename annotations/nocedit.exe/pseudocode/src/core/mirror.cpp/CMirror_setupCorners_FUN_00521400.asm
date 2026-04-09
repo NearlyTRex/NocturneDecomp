@@ -10,6 +10,9 @@
 ; CVector3f *      Stack[0x10]:4   corner3
 ; CVector3f *      Stack[0x14]:4   corner4
 ;
+; XREF[1]:
+;   core_glass.cpp_CGlass_setup_FUN_004e9180 at 004e9531
+;
 ; *****************************************************************************
 
 section .text

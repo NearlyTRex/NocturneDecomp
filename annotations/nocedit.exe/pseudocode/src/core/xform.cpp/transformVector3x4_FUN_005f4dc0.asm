@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   input_vector
 ; CMatrix3x4f *    Stack[0xc]:4   matrix
 ;
-; XREF[52]:
+; XREF[55]:
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 at 00413972
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 0041326b
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 0041579c
@@ -16,10 +16,10 @@
 ;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40 at 0041cb6c
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c67e
 ;   core_bride.cpp_CBride_getTargetPoint_FUN_00424aa0 at 00424af2
+;   core_bride.cpp_CBride_process_FUN_00423a30 at 00423f5f
 ;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_004268e0 at 00426ace
 ;   core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042fcc0 at 0042fcf8
-;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 at 0042bf07
-;   ... and 42 more
+;   ... and 45 more
 ;
 ; *****************************************************************************
 

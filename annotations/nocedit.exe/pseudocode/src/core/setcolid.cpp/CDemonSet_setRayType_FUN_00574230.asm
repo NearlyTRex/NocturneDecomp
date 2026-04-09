@@ -7,18 +7,18 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   ray_type
 ;
-; XREF[12]:
+; XREF[14]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a6ed
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 at 0042d91d
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 at 00449087
+;   core_elephant.cpp_CElephantGun_fire_FUN_004a7160 at 004a7378
 ;   core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 at 004d4619
 ;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004d6260 at 004d6495
 ;   core_gun.cpp_CGun_fire_FUN_004f0350 at 004f04cb
 ;   core_lightgun.cpp_CLightGun_fire_FUN_00505c70 at 00505e1c
 ;   core_scat.cpp_CScat_scoreAimTarget_FUN_00558cf0 at 00558f25
-;   core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960 at 005c40a0
-;   core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150 at 005c31e5
-;   ... and 2 more
+;   core_shotgun.cpp_CShotgun_fire_FUN_00588060 at 0058827b
+;   ... and 4 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_006463b9

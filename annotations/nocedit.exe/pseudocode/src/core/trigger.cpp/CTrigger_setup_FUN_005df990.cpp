@@ -1,6 +1,6 @@
 // Name: core_trigger.cpp_CTrigger_setup_FUN_005df990
 // Address: 005df990
-// Address Range: [[005df990, 005df99a]]
+// Address Range: [[005df990, 005dfa80]]
 // Convention: __cdecl
 // Signature: void __cdecl core_trigger_cpp_CTrigger_setup_FUN_005df990(CTrigger *this_ptr)
 

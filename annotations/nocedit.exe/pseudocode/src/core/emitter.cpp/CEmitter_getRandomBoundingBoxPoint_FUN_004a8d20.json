@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 16,
+    "assembly_lines": 48,
     "complexity_score": 18,
     "cross_reference_count": 1,
-    "function_call_count": 1,
+    "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 18,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 34
+    "total_lines": 66
   },
   "cross_references": [
     {
@@ -29,7 +29,7 @@
     "address_range": [
       [
         "004a8d20",
-        "004a8d49"
+        "004a8da7"
       ]
     ],
     "convention": "__cdecl",
@@ -37,6 +37,11 @@
     "signature": "CVector3f * __cdecl core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a8d20(CEmitter *this_ptr,CVector3f *out_point)"
   },
   "function_calls": [
+    {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
     {
       "addr": "0040cc10",
       "is_variadic": false,
@@ -65,26 +70,28 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.214285714285714,
-    "instruction_count": 14,
+    "avg_pcode_per_instr": 5.511627906976744,
+    "instruction_count": 43,
     "opcode_distribution": {
-      "CALL": 1,
+      "CALL": 4,
       "CALLIND": 1,
-      "COPY": 11,
-      "INT_ADD": 7,
-      "INT_AND": 4,
-      "INT_CARRY": 1,
-      "INT_EQUAL": 4,
+      "COPY": 81,
+      "FLOAT2FLOAT": 6,
+      "INT_ADD": 29,
+      "INT_AND": 14,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 14,
       "INT_LESS": 1,
       "INT_SBORROW": 1,
-      "INT_SCARRY": 1,
-      "INT_SLESS": 2,
-      "INT_SUB": 9,
-      "LOAD": 6,
-      "POPCOUNT": 2,
-      "STORE": 8
+      "INT_SCARRY": 6,
+      "INT_SLESS": 7,
+      "INT_SUB": 19,
+      "LOAD": 16,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 24
     },
-    "pcode_op_count": 59
+    "pcode_op_count": 237
   },
   "stack_frame": {
     "frame_size": 12,

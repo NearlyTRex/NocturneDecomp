@@ -257,4 +257,15 @@ section .text
     PUSH ECX                            ; 004c6144 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004c6145
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 004c614a
+    PUSH EBP                            ; 004c614d
+    MOV EBX,dword ptr [0x006703ec]      ; 004c614e | g_CDemonRendererPtr2
+    PUSH EBX                            ; 004c6154 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 ; 004c6155
+        ;   XREF to: 0048ca50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)
+    ADD ESP,0x8                         ; 004c615a
+    ADD ESP,0x70                        ; 004c615d
+    POP EBP                             ; 004c6160
+    POP EBX                             ; 004c6161
+    RET                                 ; 004c6162
 

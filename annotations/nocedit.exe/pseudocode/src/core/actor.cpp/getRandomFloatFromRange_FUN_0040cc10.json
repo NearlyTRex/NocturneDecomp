@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 32,
     "complexity_score": 15,
-    "cross_reference_count": 129,
+    "cross_reference_count": 131,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "clean",
@@ -27,6 +27,12 @@
       "addr": "00414a00",
       "from_addr": "00414bca",
       "name": "core_bat.cpp_CBat_process_FUN_00414a00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004148a0",
+      "from_addr": "004148f5",
+      "name": "core_bat.cpp_CBat_setup_FUN_004148a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -678,6 +684,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005debc0",
+      "from_addr": "005dec42",
+      "name": "core_trash.cpp_CTrash_setup_FUN_005debc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005decc0",
       "from_addr": "005deccd",
       "name": "core_trash.cpp_addRandomJitter_FUN_005decc0",
@@ -848,6 +860,125 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 50,
+    "call_sites": [
+      {
+        "call_addr": "00421c02",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_CBoxActor_process_FUN_004219e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047f40c",
+        "call_type": "direct",
+        "caller": "core_dog.cpp_CZombieDog_process_FUN_0047f140",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047f702",
+        "call_type": "direct",
+        "caller": "core_dog.cpp_CZombieDog_process_FUN_0047f140",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00480015",
+        "call_type": "direct",
+        "caller": "core_door.cpp_CDoor_reposition_FUN_0047fd20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048004f",
+        "call_type": "direct",
+        "caller": "core_door.cpp_CDoor_reposition_FUN_0047fd20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048e126",
+        "call_type": "direct",
+        "caller": "core_drip.cpp_CDrip_setup_FUN_0048e0e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048e47a",
+        "call_type": "direct",
+        "caller": "core_drip.cpp_CDrip_process_FUN_0048e2a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048e49e",
+        "call_type": "direct",
+        "caller": "core_drip.cpp_CDrip_process_FUN_0048e2a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048e4c2",
+        "call_type": "direct",
+        "caller": "core_drip.cpp_CDrip_process_FUN_0048e2a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048e52c",
+        "call_type": "direct",
+        "caller": "core_drip.cpp_CDrip_process_FUN_0048e2a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.2,
     "instruction_count": 25,

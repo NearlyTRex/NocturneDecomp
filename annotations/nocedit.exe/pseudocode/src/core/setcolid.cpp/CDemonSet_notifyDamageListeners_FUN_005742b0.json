@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 87,
     "complexity_score": 37,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -17,6 +17,12 @@
     "total_lines": 124
   },
   "cross_references": [
+    {
+      "addr": "00419be0",
+      "from_addr": "00419de6",
+      "name": "core_bodypart.cpp_CBodyPart_process_FUN_00419be0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004219e0",
       "from_addr": "00421def",
@@ -39,7 +45,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "00421def",
@@ -51,9 +57,20 @@
         "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
+      },
+      {
+        "call_addr": "00419de6",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_CBodyPart_process_FUN_00419be0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 4,
     "declared_stack_bytes": 16,
     "estimated_params": 4

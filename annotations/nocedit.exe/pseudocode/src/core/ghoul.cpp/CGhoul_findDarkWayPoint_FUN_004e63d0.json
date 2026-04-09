@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 31,
+    "assembly_lines": 166,
     "complexity_score": 66,
     "cross_reference_count": 1,
-    "function_call_count": 1,
-    "global_count": 0,
+    "function_call_count": 6,
+    "global_count": 15,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 66,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 97
+    "total_lines": 232
   },
   "cross_references": [
     {
@@ -29,7 +29,7 @@
     "address_range": [
       [
         "004e63d0",
-        "004e6413"
+        "004e657e"
       ]
     ],
     "convention": "__cdecl",
@@ -38,12 +38,128 @@
   },
   "function_calls": [
     {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
       "addr": "0040cc10",
       "is_variadic": false,
       "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00547d00",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00"
+    },
+    {
+      "addr": "00548500",
+      "is_variadic": false,
+      "name": "core_path.cpp_getPathMap_FUN_00548500"
+    },
+    {
+      "addr": "004a6e20",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "0062dc21",
+      "name": "s_core_ghoul_cpp_0062dc21",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062dc33",
+      "name": "s_CGhoul_findDarkWayPoint__0062dc33",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062df3e",
+      "name": "s_darkPoint_0062df3e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067b930",
+      "name": "g_GhoulWayPointTypes",
+      "type": "char*[1]",
+      "value": null
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02d832f8",
+      "name": "g_CGhoulClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "032613cc",
+      "name": "g_CDemonSetInstance.actor_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d0",
+      "name": "g_CDemonSetInstance.actors[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d4",
+      "name": "g_CDemonSetInstance.actors[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03265254",
+      "name": "g_CDemonSetInstance.enemy_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03265258",
+      "name": "g_CDemonSetInstance.enemies[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9591c",
+      "name": "g_CWayPointClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 1,
     "call_sites": [
@@ -65,39 +181,44 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.16,
-    "instruction_count": 25,
+    "avg_pcode_per_instr": 4.767441860465116,
+    "instruction_count": 129,
     "opcode_distribution": {
-      "BOOL_NEGATE": 2,
-      "BOOL_OR": 1,
-      "CALL": 1,
-      "CBRANCH": 2,
-      "COPY": 54,
-      "FLOAT2FLOAT": 3,
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 2,
+      "BRANCH": 5,
+      "CALL": 7,
+      "CALLIND": 1,
+      "CBRANCH": 13,
+      "COPY": 149,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_ADD": 1,
       "FLOAT_EQUAL": 1,
       "FLOAT_LESS": 1,
       "FLOAT_NAN": 2,
       "FLOAT_SUB": 1,
       "INT2FLOAT": 1,
-      "INT_ADD": 11,
-      "INT_AND": 11,
-      "INT_CARRY": 1,
-      "INT_EQUAL": 6,
+      "INT_ADD": 55,
+      "INT_AND": 73,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 63,
       "INT_LEFT": 4,
-      "INT_LESS": 2,
-      "INT_NOTEQUAL": 5,
+      "INT_LESS": 7,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 7,
       "INT_OR": 5,
-      "INT_SBORROW": 2,
-      "INT_SCARRY": 1,
-      "INT_SLESS": 3,
-      "INT_SUB": 9,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 31,
+      "INT_SUB": 35,
+      "INT_XOR": 4,
       "INT_ZEXT": 4,
-      "LOAD": 9,
-      "POPCOUNT": 3,
+      "LOAD": 25,
+      "POPCOUNT": 31,
       "RETURN": 1,
-      "STORE": 8
+      "STORE": 41
     },
-    "pcode_op_count": 154
+    "pcode_op_count": 615
   },
   "stack_frame": {
     "frame_size": 60,

@@ -8,7 +8,7 @@
 ; void *           Stack[0x8]:4   user_data
 ; char *           Stack[0xc]:4   sound_name
 ;
-; XREF[9]:
+; XREF[10]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ac5e0
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004df4a0
 ;   core_game.cpp_checkCheatAndGiveWeapon_FUN_004dd9d0 at 004dda6b
@@ -17,6 +17,7 @@
 ;   core_sound.cpp_CSound_init_FUN_005b2dd0 at 005b2ec5
 ;   core_sound.cpp_CSound_playAmbientSound_FUN_005b39b0 at 005b3a02
 ;   core_vampboss.cpp_CVampireBoss_processDamage_FUN_005e7030 at 005e7246
+;   core_weather.cpp_CWeather_createThunder_FUN_005ef140 at 005ef172
 ;   core_weather.cpp_CWeather_update_FUN_005eeaf0 at 005eee9b
 ;
 ; Called Functions:

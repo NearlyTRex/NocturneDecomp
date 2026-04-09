@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CShell_onCollision_FUN_004c6380
 // Address: 004c6380
-// Address Range: [[004c6380, 004c63c1]]
+// Address Range: [[004c6380, 004c64a3]]
 // Convention: __cdecl
 // Signature: int __cdecl core_fire_cpp_CShell_onCollision_FUN_004c6380(CShell *this_ptr,CVector3f *collision_normal)
 

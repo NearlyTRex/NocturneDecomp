@@ -47,6 +47,7 @@
 ;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310
+;   core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0
 ;   crt_memory.c_memset_FUN_005fde40
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
@@ -255,6 +256,56 @@ section .text
     MOV EBX,EAX                         ; 0057fefc
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 0057fefe
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 0057ff03
+    TEST EBX,EBX                        ; 0057ff06
+    JZ 0x0057fe54                       ; 0057ff08
+        ;   XREF to: 0057fe54 (CONDITIONAL_JUMP)  ; LAB_0057fe54
+    MOV ESI,dword ptr [EBP + -0x1c]     ; 0057ff0e
+    XOR EDI,EDI                         ; 0057ff11
+    MOV EAX,[0x03275a2c]                ; 0057ff13 | g_CDemonCameraInstance.framebuffer_height
+        ;   Label: LAB_0057ff13
+    CMP EDI,EAX                         ; 0057ff18
+    JGE 0x0057fe54                      ; 0057ff1a
+        ;   XREF to: 0057fe54 (CONDITIONAL_JUMP)  ; LAB_0057fe54
+    XOR EBX,EBX                         ; 0057ff20
+    MOV EAX,[0x03275a28]                ; 0057ff22 | g_ScreenHeightForFonts
+    CMP EBX,EAX                         ; 0057ff27
+    JL 0x0057ff2e                       ; 0057ff29
+        ;   XREF to: 0057ff2e (CONDITIONAL_JUMP)  ; LAB_0057ff2e
+    INC EDI                             ; 0057ff2b
+    JMP 0x0057ff13                      ; 0057ff2c
+        ;   XREF to: 0057ff13 (UNCONDITIONAL_JUMP)  ; LAB_0057ff13
+    CMP dword ptr [ESI],0x7fffffff      ; 0057ff2e
+        ;   Label: LAB_0057ff2e
+    JGE 0x0057ff5c                      ; 0057ff34
+        ;   XREF to: 0057ff5c (CONDITIONAL_JUMP)  ; LAB_0057ff5c
+    MOV EDX,dword ptr [EBP + -0x4]      ; 0057ff36
+    PUSH EDX                            ; 0057ff39
+    PUSH ESI                            ; 0057ff3a
+    MOV ECX,dword ptr [EBP + 0x14]      ; 0057ff3b
+    PUSH ECX                            ; 0057ff3e
+    CALL core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0 ; 0057ff3f
+        ;   XREF to: 005801b0 (UNCONDITIONAL_CALL)  ; int core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0(CDemonSet * this_ptr, CVector3i * point, int camera_index)
+    ADD ESP,0xc                         ; 0057ff44
+    TEST EAX,EAX                        ; 0057ff47
+    JZ 0x0057ff5c                       ; 0057ff49
+        ;   XREF to: 0057ff5c (CONDITIONAL_JUMP)  ; LAB_0057ff5c
+    MOV EAX,[0x00679394]                ; 0057ff4b | g_WindowWidth
+    IMUL EAX,EDI                        ; 0057ff50
+    MOV EDX,dword ptr [EBP + 0x18]      ; 0057ff53
+    ADD EAX,EBX                         ; 0057ff56
+    ADD EAX,EDX                         ; 0057ff58
+    INC byte ptr [EAX]                  ; 0057ff5a
+    INC EBX                             ; 0057ff5c
+        ;   Label: LAB_0057ff5c
+    ADD ESI,0xc                         ; 0057ff5d
+    MOV EAX,[0x03275a28]                ; 0057ff60 | g_ScreenHeightForFonts
+    CMP EBX,EAX                         ; 0057ff65
+    JL 0x0057ff2e                       ; 0057ff67
+        ;   XREF to: 0057ff2e (CONDITIONAL_JUMP)  ; LAB_0057ff2e
+    INC EDI                             ; 0057ff69
+    JMP 0x0057ff13                      ; 0057ff6a
+        ;   XREF to: 0057ff13 (UNCONDITIONAL_JUMP)  ; LAB_0057ff13
     ADD ESP,0x8                         ; 0060c41c
         ;   Label: LAB_0060c41c
     MOV ECX,dword ptr [ESI]             ; 0060c41f

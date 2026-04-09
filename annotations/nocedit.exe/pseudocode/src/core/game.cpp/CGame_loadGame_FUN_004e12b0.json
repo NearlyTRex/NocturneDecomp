@@ -1023,5 +1023,33 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CGame_loadGame_FUN_004e12b0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_name": "cert-err33-c",
+          "column": 3,
+          "line": 50,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 13,
+          "line": 56,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 9,
+          "line": 96,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

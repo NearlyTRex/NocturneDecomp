@@ -7,9 +7,10 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
-; XREF[6]:
+; XREF[7]:
 ;   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70 at 00497296
 ;   core_dtri.cpp_CDemonTriangle_render_FUN_0049cbd0 at 0049cd0d
+;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570960 at 005709c6
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 at 0059b381
 ;   core_water.cpp_CWater_render_FUN_005ea320 at 005ea7eb
 ;   shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990 at 0051ea5a

@@ -1043,6 +1043,88 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDraculaBride_process_FUN_00484410.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 12,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 129,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 27,
+          "line": 129,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 3,
+          "line": 231,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 16,
+          "line": 244,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 16,
+          "line": 446,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 16,
+          "line": 540,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 5,
+          "line": 606,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 21,
+          "line": 644,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 20,
+          "line": 646,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 19,
+          "line": 647,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 18,
+          "line": 648,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 736,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Decompiler inlined a function call",

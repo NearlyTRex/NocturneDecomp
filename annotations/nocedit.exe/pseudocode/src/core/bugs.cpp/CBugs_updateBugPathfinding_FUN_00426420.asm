@@ -131,6 +131,59 @@ section .text
     PUSH dword ptr [ESP + 0x7c]         ; 004264f3
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004264f7
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x84],EAX      ; 004264fc
+    FLD float ptr [ESP + 0x84]          ; 00426503
+    ADD ESP,0x8                         ; 0042650a
+    PUSH dword ptr [ESP + 0x50]         ; 0042650d
+    PUSH dword ptr [ESP + 0x7c]         ; 00426511
+    FSTP float ptr [EBX + 0x20]         ; 00426515
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00426518
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x84],EAX      ; 0042651d
+    FLD float ptr [ESP + 0x84]          ; 00426524
+    ADD ESP,0x8                         ; 0042652b
+    FSTP float ptr [EBX + 0x28]         ; 0042652e
+    PUSH dword ptr [EBX + 0x28]         ; 00426531
+    MOV ECX,dword ptr [EBP + 0x14]      ; 00426534
+    PUSH dword ptr [EBX + 0x20]         ; 00426537
+    PUSH ECX                            ; 0042653a
+    CALL core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00425b70 ; 0042653b
+        ;   XREF to: 00425b70 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00425b70(CBugs * this_ptr, float x, float z)
+    MOV dword ptr [ESP + 0x88],EAX      ; 00426540
+    MOV EAX,dword ptr [ESP + 0x88]      ; 00426547
+    MOV dword ptr [EBX + 0x24],EAX      ; 0042654e
+    FLD float ptr [ESI]                 ; 00426551
+    FSUB float ptr [EDI]                ; 00426553
+    ADD ESP,0xc                         ; 00426555
+    FSTP float ptr [ESP + 0x40]         ; 00426558
+    FLD float ptr [ESI + 0x4]           ; 0042655c
+    FSUB float ptr [EDI + 0x4]          ; 0042655f
+    LEA EAX,[ESP + 0x40]                ; 00426562
+    FSTP float ptr [ESP + 0x44]         ; 00426566
+    FLD float ptr [ESI + 0x8]           ; 0042656a
+    FSUB float ptr [EDI + 0x8]          ; 0042656d
+    LEA ESI,[ESP + 0x28]                ; 00426570
+    FSTP float ptr [ESP + 0x48]         ; 00426574
+    CMP ESI,EAX                         ; 00426578
+    JZ 0x00426594                       ; 0042657a
+        ;   XREF to: 00426594 (CONDITIONAL_JUMP)  ; LAB_00426594
+    MOV EAX,dword ptr [ESP + 0x40]      ; 0042657c
+    MOV dword ptr [ESP + 0x28],EAX      ; 00426580
+    MOV EAX,dword ptr [ESP + 0x44]      ; 00426584
+    MOV dword ptr [ESP + 0x2c],EAX      ; 00426588
+    MOV EAX,dword ptr [ESP + 0x48]      ; 0042658c
+    MOV dword ptr [ESP + 0x30],EAX      ; 00426590
+    FLD float ptr [ESP + 0x2c]          ; 00426594
+        ;   Label: LAB_00426594
+    FMUL ST0                            ; 00426598
+    FLD float ptr [ESP + 0x28]          ; 0042659a
+    FMUL ST0                            ; 0042659e
+    FADDP                               ; 004265a0
+    FLD float ptr [ESP + 0x30]          ; 004265a2
+    FMUL ST0                            ; 004265a6
+    FADDP                               ; 004265a8
+    FSQRT                               ; 004265aa
+    FSTP float ptr [ESP]                ; 004265ac
     LEA EAX,[ESP + 0x28]                ; 004265af
         ;   Label: LAB_004265af
     PUSH EAX                            ; 004265b3

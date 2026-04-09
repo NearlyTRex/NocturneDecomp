@@ -1,6 +1,6 @@
 // Name: core_dtri.cpp_buildClipTriangleFan_FUN_0049cb40
 // Address: 0049cb40
-// Address Range: [[0049cb40, 0049cb59]]
+// Address Range: [[0049cb40, 0049cba0]]
 // Convention: __cdecl
 // Signature: CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb40(void)
 

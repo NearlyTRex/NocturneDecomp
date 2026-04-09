@@ -7,7 +7,7 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   render_alpha
 ;
-; XREF[42]:
+; XREF[44]:
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413c21
 ;   core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740 at 0041979b
 ;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_0041d1b0 at 0041d222
@@ -18,7 +18,7 @@
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042af60 at 0042af8d
 ;   core_cloth.cpp_CCloth_render_FUN_0043bae0 at 0043bb28
 ;   core_curtain.cpp_CCurtain_renderMesh_FUN_0044b060 at 0044b0da
-;   ... and 32 more
+;   ... and 34 more
 ;
 ; Called Functions:
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80

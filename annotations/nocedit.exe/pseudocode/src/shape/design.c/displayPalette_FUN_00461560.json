@@ -6,17 +6,26 @@
   },
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 44,
-    "cross_reference_count": 0,
+    "complexity_score": 59,
+    "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 6,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 44,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
     "total_lines": 175
   },
-  "cross_references": [],
+  "cross_references": [
+    {
+      "addr": "0045f1d0",
+      "from_addr": "0046079f",
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
   "function": {
     "address": "00461560",
     "address_range": [
@@ -106,12 +115,24 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0046079f",
+        "call_type": "direct",
+        "caller": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 0
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.486238532110092,
@@ -207,5 +228,17 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
 }

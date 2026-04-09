@@ -21,10 +21,11 @@
 ; float            Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
-; XREF[3]:
+; XREF[4]:
 ;   core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 at 0054ebf0
 ;   core_platfrm.cpp_CPlatform_process_FUN_0054cc30 at 0054ce4d
 ;   core_platfrm.cpp_CPlatform_propertyActionStateCallback_FUN_0054e760 at 0054e796
+;   core_platfrm.cpp_CPlatform_setup_FUN_0054ca20 at 0054ca3b
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_evaluate_FUN_00442710

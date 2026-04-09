@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 392,
-    "complexity_score": 355,
+    "complexity_score": 370,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 165,
-    "suspect_count": 18,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array"
+      "stack_alignment_array",
+      "wrong_global"
     ],
     "total_lines": 557
   },
@@ -598,6 +599,14 @@
       "severity": "mild",
       "text": "*(int *)((int)g_CameraEdgeOffsetY + iVar6) * 0x140;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Global g_TempWorldPositions used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 68,
+      "match": "g_TempWorldPositions",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_TempWorldPositions[0][0].x + local_30) = local_54.x;",
+      "type": "wrong_global"
     }
   ]
 }

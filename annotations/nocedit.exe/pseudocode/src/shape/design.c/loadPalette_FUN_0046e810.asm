@@ -9,6 +9,9 @@
 ; char *           Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 00460771
+;
 ; Referenced Globals:
 ;   TerminatedCString s_s_1_Load_model_palette_0061df26
 ;   TerminatedCString s_s_2_Load_ACT_file_palett_0061df3e

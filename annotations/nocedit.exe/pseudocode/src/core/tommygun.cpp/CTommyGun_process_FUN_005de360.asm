@@ -13,6 +13,7 @@
 ; float            Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
+;   TerminatedCString s_m_gun1_wav_2_3_f_006554e9
 ;   TerminatedCString s_m_gun_t_wav_006554ff
 ;   float FLOAT_0065550d = 6
 ;   float FLOAT_00655511 = 0.1666667
@@ -22,6 +23,7 @@
 ;   core_weapon.cpp_CWeapon_process_FUN_005ee110
 ;   crt_math.c_floor_FUN_005feb90
 ;   crt_math.c_round_FUN_005fe6b0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
 ;   sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0
@@ -30,6 +32,7 @@
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 ;   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
+;   sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40
 ;   sound_sndmain.cpp_unlockSound_FUN_005abdc0
 ;
 ; *****************************************************************************
@@ -60,6 +63,58 @@ section .text
     MOV dword ptr [EBX + 0x578],EAX     ; 005de399
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005de39f
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x1e0],EAX     ; 005de3a4
+    FLD float ptr [ESP + 0x1e0]         ; 005de3ab
+    ADD ESP,0x8                         ; 005de3b2
+    MOV EDX,dword ptr [EBX + 0x57c]     ; 005de3b5
+    FSTP float ptr [ESP + 0xc]          ; 005de3bb
+    PUSH dword ptr [ESP + 0xc]          ; 005de3bf
+    PUSH EDX                            ; 005de3c3
+    CALL sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40 ; 005de3c4
+        ;   XREF to: 005a9b40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40(uint sfx_handle, float base_frequency)
+    ADD ESP,0x8                         ; 005de3c9
+    TEST EAX,EAX                        ; 005de3cc
+    JZ 0x005de3d7                       ; 005de3ce
+        ;   XREF to: 005de3d7 (CONDITIONAL_JUMP)  ; LAB_005de3d7
+    MOV ESP,EBP                         ; 005de3d0
+    POP EBP                             ; 005de3d2
+    POP EDI                             ; 005de3d3
+    POP ESI                             ; 005de3d4
+    POP EBX                             ; 005de3d5
+    RET                                 ; 005de3d6
+    MOV ECX,dword ptr [EBX + 0x57c]     ; 005de3d7
+        ;   Label: LAB_005de3d7
+    PUSH ECX                            ; 005de3dd
+    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 005de3de
+        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
+    ADD ESP,0x4                         ; 005de3e3
+    FLD float ptr [ESP + 0xc]           ; 005de3e6
+    SUB ESP,0x8                         ; 005de3ea
+    FSTP double ptr [ESP]               ; 005de3ed
+    PUSH 0x6554e9                       ; 005de3f0 | = "m-gun1.wav @ 2.3 * %f"
+    LEA EAX,[ESP + 0x170]               ; 005de3f5
+    PUSH EAX                            ; 005de3fc
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005de3fd
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    ADD ESP,0x10                        ; 005de402
+    MOV ESI,dword ptr [EBX + 0x580]     ; 005de405
+    PUSH ESI                            ; 005de40b
+    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 005de40c
+        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
+    ADD ESP,0x4                         ; 005de411
+    LEA EAX,[ESP + 0x164]               ; 005de414
+    PUSH EAX                            ; 005de41b
+    MOV EDX,dword ptr [EBX + 0x154]     ; 005de41c
+    PUSH EBX                            ; 005de422
+    CALL dword ptr [EDX + 0x28]         ; 005de423
+    ADD ESP,0x8                         ; 005de426
+    MOV dword ptr [EBX + 0x57c],EAX     ; 005de429
+    MOV ESP,EBP                         ; 005de42f
+    POP EBP                             ; 005de431
+    POP EDI                             ; 005de432
+    POP ESI                             ; 005de433
+    POP EBX                             ; 005de434
+    RET                                 ; 005de435
     PUSH 0x2                            ; 005de436
         ;   Label: LAB_005de436
     MOV ECX,dword ptr [EBX + 0x57c]     ; 005de438

@@ -1,6 +1,6 @@
 // Name: core_bodypart.cpp_CBodyPart_process_FUN_00419be0
 // Address: 00419be0
-// Address Range: [[00419be0, 00419db9]]
+// Address Range: [[00419be0, 00419e01]]
 // Convention: __cdecl
 // Signature: void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_ptr,float delta_time)
 

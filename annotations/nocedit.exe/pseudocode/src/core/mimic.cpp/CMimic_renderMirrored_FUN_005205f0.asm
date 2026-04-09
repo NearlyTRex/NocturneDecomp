@@ -247,6 +247,7 @@ section .text
     PUSH ESI                            ; 005207f9 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 005207fa
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 005207ff
     PUSH EBX                            ; 00520802
         ;   Label: LAB_00520802
     CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420 ; 00520803
@@ -279,6 +280,15 @@ section .text
     PUSH EDX                            ; 00520846 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00520847
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 0052084c
+    MOV ECX,dword ptr [EBP + 0x76]      ; 0052084f
+    PUSH ECX                            ; 00520852
+    MOV ESI,dword ptr [0x006703ec]      ; 00520853 | g_CDemonRendererPtr2
+    PUSH ESI                            ; 00520859 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10 ; 0052085a
+        ;   XREF to: 0048ce10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10(CDemonRenderer * this_ptr, int enabled)
+    JMP 0x00520663                      ; 0052085f
+        ;   XREF to: 00520663 (UNCONDITIONAL_JUMP)  ; LAB_00520663
     MOV ECX,0xc                         ; 03fc4298
         ;   Label: LAB_03fc4298
     PUSH EAX                            ; 03fc429d

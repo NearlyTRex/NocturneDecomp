@@ -23,10 +23,10 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   char*[30] g_MoonNocStrings
 ;   undefined4 PTR_s_noc00001_0067d75c
+;   int g_MoonBatsEnabled = 0x1
 ;   undefined4 g_CGameInstance.head_of_horror_cheat
 ;   CAlphaBitmap g_MoonCloudTexture
-;   CAlphaBitmap[30] g_MoonAnimTextures
-;   ... and 7 more
+;   ... and 16 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
@@ -70,6 +70,60 @@ section .text
     PUSH 0x0                            ; 00529b2b
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00529b2d
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x8],EAX       ; 00529b32
+    MOV EDX,dword ptr [0x02f385dc]      ; 00529b36 | g_MoonBatModel.frame_count
+    FLD float ptr [ESP + 0x8]           ; 00529b3c
+    ADD ESP,0x8                         ; 00529b40
+    MOV dword ptr [ESP],EDX             ; 00529b43
+    FCHS                                ; 00529b46
+    FILD dword ptr [ESP]                ; 00529b48
+    SUB ESP,0x4                         ; 00529b4b
+    FXCH                                ; 00529b4e
+    FSTP float ptr [EBX + 0x2f38210]    ; 00529b50 | g_MoonBats[0].course_position | g_MoonBats[1].course_position
+    FSTP float ptr [ESP]                ; 00529b56
+    PUSH 0x0                            ; 00529b59
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00529b5b
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x8],EAX       ; 00529b60
+    FLD float ptr [ESP + 0x8]           ; 00529b64
+    ADD ESP,0x8                         ; 00529b68
+    PUSH 0x40a00000                     ; 00529b6b
+    PUSH 0xc0a00000                     ; 00529b70
+    FSTP float ptr [EBX + 0x2f38214]    ; 00529b75 | g_MoonBats[0].animation_frame
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00529b7b
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x8],EAX       ; 00529b80
+    FLD float ptr [ESP + 0x8]           ; 00529b84
+    ADD ESP,0x8                         ; 00529b88
+    PUSH 0x40a00000                     ; 00529b8b
+    PUSH 0xc0a00000                     ; 00529b90
+    FSTP float ptr [EBX + 0x2f38218]    ; 00529b95 | g_MoonBats[0].random_offset.x
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00529b9b
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x8],EAX       ; 00529ba0
+    FLD float ptr [ESP + 0x8]           ; 00529ba4
+    ADD ESP,0x8                         ; 00529ba8
+    PUSH 0x40a00000                     ; 00529bab
+    PUSH 0xc0a00000                     ; 00529bb0
+    FSTP float ptr [EBX + 0x2f3821c]    ; 00529bb5 | g_MoonBats[0].random_offset.y
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00529bbb
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x8],EAX       ; 00529bc0
+    ADD EBX,0x18                        ; 00529bc4
+    MOV EAX,dword ptr [ESP + 0x8]       ; 00529bc7
+    MOV dword ptr [EBX + 0x2f38208],EAX ; 00529bcb | g_MoonBats[0].random_offset.z | g_MoonBatCourses[2].loop
+    ADD ESP,0x8                         ; 00529bd1
+    CMP EBX,0x2d0                       ; 00529bd4
+    JNZ 0x00529b02                      ; 00529bda
+        ;   XREF to: 00529b02 (CONDITIONAL_JUMP)  ; LAB_00529b02
+    XOR EDX,EDX                         ; 00529be0
+    MOV dword ptr [0x0067d7d0],EDX      ; 00529be2 | g_MoonBatsEnabled
+    ADD ESP,0x4                         ; 00529be8
+    POP EBP                             ; 00529beb
+    POP EDI                             ; 00529bec
+    POP ESI                             ; 00529bed
+    POP EBX                             ; 00529bee
+    RET                                 ; 00529bef
     MOV EDX,dword ptr [0x0067b654]      ; 00529bf0 | g_CGamePtr
         ;   Label: LAB_00529bf0
     MOV ECX,dword ptr [EDX + 0x214]     ; 00529bf6 | g_CGameInstance.head_of_horror_cheat

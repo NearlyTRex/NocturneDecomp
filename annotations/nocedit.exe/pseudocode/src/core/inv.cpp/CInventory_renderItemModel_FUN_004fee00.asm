@@ -40,7 +40,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   int g_GlobalDeltaTimeInt
 ;   int g_PerspectiveReciprocal
-;   ... and 8 more
+;   ... and 9 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -51,14 +51,14 @@
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
+;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
 ;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-;   engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0
-;   ... and 3 more
+;   ... and 4 more
 ;
 ; *****************************************************************************
 
@@ -383,6 +383,25 @@ section .text
     PUSH ESI                            ; 004ff17e | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004ff17f
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 004ff184
+    MOV EDI,dword ptr [0x006703ec]      ; 004ff187 | g_CDemonRendererPtr2
+    PUSH EDI                            ; 004ff18d | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004ff18e
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 004ff193
+    MOV EAX,[0x006703ec]                ; 004ff196 | g_CDemonRendererPtr2
+    PUSH EAX                            ; 004ff19b | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 ; 004ff19c
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0()
+    MOV EAX,[0x006810c8]                ; 004ff1a1 | g_CDemonSetPtr | g_CDemonSetInstance
+    ADD ESP,0x4                         ; 004ff1a6
+    MOV dword ptr [EAX + 0x15ae70],0x0  ; 004ff1a9 | g_CDemonSetInstance.rendering_mode
+    MOV ESP,EBP                         ; 004ff1b3
+    POP EBP                             ; 004ff1b5
+    POP EDI                             ; 004ff1b6
+    POP ESI                             ; 004ff1b7
+    POP EBX                             ; 004ff1b8
+    RET                                 ; 004ff1b9
     FLD float ptr [EBP + -0x54]         ; 004ff1ba
         ;   Label: LAB_004ff1ba
     FCOMP float ptr [EBP + -0x50]       ; 004ff1bd

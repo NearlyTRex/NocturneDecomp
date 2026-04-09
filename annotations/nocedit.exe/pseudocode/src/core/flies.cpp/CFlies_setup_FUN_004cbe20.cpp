@@ -1,6 +1,6 @@
 // Name: core_flies.cpp_CFlies_setup_FUN_004cbe20
 // Address: 004cbe20
-// Address Range: [[004cbe20, 004cbe2b]]
+// Address Range: [[004cbe20, 004cbe5c]]
 // Convention: __cdecl
 // Signature: void __cdecl core_flies_cpp_CFlies_setup_FUN_004cbe20(CFlies *this_ptr)
 

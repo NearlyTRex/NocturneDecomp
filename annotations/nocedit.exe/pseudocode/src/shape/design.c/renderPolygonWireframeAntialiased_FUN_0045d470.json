@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 94,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 79,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "wrong_global"
     ],
     "total_lines": 337
   },
@@ -185,6 +186,14 @@
       "severity": "mild",
       "text": "iVar1 = *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Global g_RenderVertexBuffer used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 18,
+      "match": "g_RenderVertexBuffer",
+      "severity": "moderate",
+      "text": "g_AALineVertex1[0] = g_RenderVertexBuffer[iVar1].projected_vertex.transformed_x;",
+      "type": "wrong_global"
     }
   ]
 }

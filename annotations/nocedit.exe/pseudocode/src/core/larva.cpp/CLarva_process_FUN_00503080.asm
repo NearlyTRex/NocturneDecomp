@@ -50,21 +50,21 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00002424
+;   TerminatedCString s_larva_blow1_wav_00630ee5
 ;   TerminatedCString s_s_confused_while_walking_00630ef5
 ;   TerminatedCString s_s_gave_up_chase_I_m_conf_00630f1f
+;   TerminatedCString s_slime_wav_f_f_00630f40
 ;   double DOUBLE_00630f53 = 0.392699081687500
 ;   double DOUBLE_00630f5b = 3
 ;   double DOUBLE_00630f63 = 12
 ;   double DOUBLE_00630f6b = -0.200000000000000
 ;   double DOUBLE_00630f73 = 32
 ;   float FLOAT_00630f7b = 2
+;   double DOUBLE_00630f83 = -0.523598775583333
+;   double DOUBLE_00630f8b = 0.523598775583333
 ;   float FLOAT_0066071c = 20
 ;   CConsole* g_CConsolePtr = 0083b1a4
-;   CGore* g_CGorePtr = 02d83364
-;   CDemonSet* g_CDemonSetPtr = 03114278
-;   CConsole g_CConsoleInstance
-;   int INT_02d7a7b8
-;   ... and 2 more
+;   ... and 8 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -78,11 +78,11 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0
+;   core_fire.cpp_CFireEffect_createFireball_FUN_004c7db0
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004ede30
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-;   ... and 7 more
+;   ... and 10 more
 ;
 ; *****************************************************************************
 
@@ -333,6 +333,136 @@ section .text
     FSTP float ptr [EBP + -0x5e]        ; 00503346
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00503349
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + 0x76],EAX      ; 0050334e
+    ADD ESP,0x8                         ; 00503351
+    FLD float ptr [EBP + 0x76]          ; 00503354
+    PUSH 0x40000000                     ; 00503357
+    FADD float ptr [EBP + -0x62]        ; 0050335c
+    PUSH 0xc0000000                     ; 0050335f
+    FSTP float ptr [EBP + -0x62]        ; 00503364
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00503367
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    FLD double ptr [0x00630f83]         ; 0050336c | DOUBLE_00630f83
+    FLD ST0                             ; 00503372
+    MOV dword ptr [EBP + 0x76],EAX      ; 00503374
+    FSIN                                ; 00503377
+    FLD double ptr [0x00630f8b]         ; 00503379 | DOUBLE_00630f8b
+    FPTAN                               ; 0050337f
+    FSTP ST0                            ; 00503381
+    FLD float ptr [EBP + 0x76]          ; 00503383
+    FADD float ptr [EBP + -0x5a]        ; 00503386
+    FST float ptr [EBP + -0x5a]         ; 00503389
+    FLD float ptr [EBP + -0x62]         ; 0050338c
+    CALL crt_math.c_atan2_FUN_006013b1  ; 0050338f
+        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
+    FLD float ptr [EBP + -0x5a]         ; 00503394
+    FMUL ST0                            ; 00503397
+    FLD float ptr [EBP + -0x62]         ; 00503399
+    FMUL ST0                            ; 0050339c
+    FADDP                               ; 0050339e
+    FSQRT                               ; 005033a0
+    FXCH ST4                            ; 005033a2
+    FCOS                                ; 005033a4
+    FLD ST1                             ; 005033a6
+    FSIN                                ; 005033a8
+    FXCH ST2                            ; 005033aa
+    FCOS                                ; 005033ac
+    FXCH ST5                            ; 005033ae
+    FSTP double ptr [EBP + 0x2a]        ; 005033b0
+    FXCH ST2                            ; 005033b3
+    FMUL double ptr [EBP + 0x2a]        ; 005033b5
+    FSUB float ptr [EBP + -0x5e]        ; 005033b8
+    FLD ST2                             ; 005033bb
+    FMUL float ptr [0x00630f7b]         ; 005033bd | FLOAT_00630f7b
+    FLD double ptr [EBP + 0x2a]         ; 005033c3
+    FMUL double ptr [0x00630f73]        ; 005033c6 | DOUBLE_00630f73
+    FXCH                                ; 005033cc
+    FMUL ST4                            ; 005033ce
+    FXCH                                ; 005033d0
+    FMUL double ptr [EBP + 0x2a]        ; 005033d2
+    FXCH                                ; 005033d5
+    FMULP ST2                           ; 005033d7
+    FXCH ST2                            ; 005033d9
+    FMUL ST3                            ; 005033db
+    ADD ESP,0x8                         ; 005033dd
+    FXCH ST5                            ; 005033e0
+    FMULP ST3                           ; 005033e2
+    FXCH                                ; 005033e4
+    FSTP float ptr [EBP + 0x66]         ; 005033e6
+    FXCH ST2                            ; 005033e9
+    FCHS                                ; 005033eb
+    FSTP float ptr [EBP + -0x22]        ; 005033ed
+    FXCH                                ; 005033f0
+    FST float ptr [EBP + 0x6a]          ; 005033f2
+    FLDZ                                ; 005033f5
+    FXCH ST3                            ; 005033f7
+    FSTP float ptr [EBP + -0x26]        ; 005033f9
+    FXCH                                ; 005033fc
+    FSTP float ptr [EBP + -0x1e]        ; 005033fe
+    FXCH                                ; 00503401
+    FCOMPP                              ; 00503403
+    FNSTSW AX                           ; 00503405
+    SAHF                                ; 00503407
+    JNC 0x005030dc                      ; 00503408
+        ;   XREF to: 005030dc (CONDITIONAL_JUMP)  ; LAB_005030dc
+    FLD float ptr [EBP + 0x66]          ; 0050340e
+    FDIV float ptr [EBP + 0x6a]         ; 00503411
+    FSQRT                               ; 00503414
+    FLD float ptr [EBP + -0x26]         ; 00503416
+    FXCH                                ; 00503419
+    FSTP float ptr [EBP + 0x6e]         ; 0050341b
+    FMUL float ptr [EBP + 0x6e]         ; 0050341e
+    FLD float ptr [EBP + -0x22]         ; 00503421
+    FMUL float ptr [EBP + 0x6e]         ; 00503424
+    FLD float ptr [EBP + -0x1e]         ; 00503427
+    FMUL float ptr [EBP + 0x6e]         ; 0050342a
+    LEA EDX,[EBP + -0x26]               ; 0050342d
+    LEA EAX,[EBP + -0x2]                ; 00503430
+    FXCH ST2                            ; 00503433
+    FSTP float ptr [EBP + -0x2]         ; 00503435
+    FSTP float ptr [EBP + 0x2]          ; 00503438
+    FSTP float ptr [EBP + 0x6]          ; 0050343b
+    CMP EDX,EAX                         ; 0050343e
+    JZ 0x00503454                       ; 00503440
+        ;   XREF to: 00503454 (CONDITIONAL_JUMP)  ; LAB_00503454
+    MOV EAX,dword ptr [EBP + -0x2]      ; 00503442
+    MOV dword ptr [EBP + -0x26],EAX     ; 00503445
+    MOV EAX,dword ptr [EBP + 0x2]       ; 00503448
+    MOV dword ptr [EBP + -0x22],EAX     ; 0050344b
+    MOV EAX,dword ptr [EBP + 0x6]       ; 0050344e
+    MOV dword ptr [EBP + -0x1e],EAX     ; 00503451
+    MOV dword ptr [EBP + 0xffffff76],0x3f800000 ; 00503454
+        ;   Label: LAB_00503454
+    LEA EAX,[EBP + 0xffffff6e]          ; 0050345e
+    PUSH EAX                            ; 00503464
+    LEA EAX,[EBP + 0x16]                ; 00503465
+    PUSH EAX                            ; 00503468
+    MOV ECX,0x3f000000                  ; 00503469
+    XOR EDX,EDX                         ; 0050346e
+    PUSH EBX                            ; 00503470
+    MOV dword ptr [EBP + 0xffffff6e],EDX ; 00503471
+    MOV dword ptr [EBP + 0xffffff72],ECX ; 00503477
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 0050347d
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
+    ADD ESP,0xc                         ; 00503482
+    PUSH 0x0                            ; 00503485
+    PUSH 0x2                            ; 00503487
+    LEA EAX,[EBP + -0x26]               ; 00503489
+    PUSH EAX                            ; 0050348c
+    LEA EAX,[EBP + 0x16]                ; 0050348d
+    PUSH EAX                            ; 00503490
+    MOV EDX,dword ptr [0x0067a3d0]      ; 00503491 | g_CFireEffectPtr | g_CFireEffectInstance
+    PUSH EDX                            ; 00503497 | g_CFireEffectInstance
+    CALL core_fire.cpp_CFireEffect_createFireball_FUN_004c7db0 ; 00503498
+        ;   XREF to: 004c7db0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createFireball_FUN_004c7db0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int lighting_active, ...)
+    ADD ESP,0x14                        ; 0050349d
+    PUSH 0x630ee5                       ; 005034a0 | = "larva-blow1.wav"
+    MOV EAX,dword ptr [EBX + 0x154]     ; 005034a5
+    PUSH EBX                            ; 005034ab
+    CALL dword ptr [EAX + 0x24]         ; 005034ac
+    ADD ESP,0x8                         ; 005034af
+    JMP 0x005030dc                      ; 005034b2
+        ;   XREF to: 005030dc (UNCONDITIONAL_JUMP)  ; LAB_005030dc
     LEA EAX,[EBP + 0x72]                ; 005034b7
         ;   Label: LAB_005034b7
     PUSH EAX                            ; 005034ba
@@ -499,6 +629,12 @@ section .text
     PUSH 0x41700000                     ; 0050366d
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00503672
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + 0x76],EAX      ; 00503677
+    ADD ESP,0x8                         ; 0050367a
+    MOV EAX,dword ptr [EBP + 0x76]      ; 0050367d
+    MOV dword ptr [EBX + 0xbe38],EAX    ; 00503680
+    JMP 0x00503184                      ; 00503686
+        ;   XREF to: 00503184 (UNCONDITIONAL_JUMP)  ; LAB_00503184
     PUSH 0x1                            ; 0050368b
         ;   Label: LAB_0050368b
     PUSH 0x1                            ; 0050368d
@@ -717,6 +853,30 @@ section .text
     FSTP double ptr [EBP + 0x22]        ; 005038e5
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005038e8
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + 0x76],EAX      ; 005038ed
+    ADD ESP,0x8                         ; 005038f0
+    FLD float ptr [EBP + 0x76]          ; 005038f3
+    FMUL double ptr [EBP + 0x22]        ; 005038f6
+    SUB ESP,0x8                         ; 005038f9
+    FSTP double ptr [ESP]               ; 005038fc
+    SUB ESP,0x8                         ; 005038ff
+    FLD float ptr [EBX + 0x261c]        ; 00503902
+    FSTP double ptr [ESP]               ; 00503908
+    PUSH 0x630f40                       ; 0050390b | = "slime.wav @%f *%f"
+    LEA EAX,[EBP + 0xfffffe9a]          ; 00503910
+    PUSH EAX                            ; 00503916
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00503917
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    ADD ESP,0x18                        ; 0050391c
+    LEA EAX,[EBP + 0xfffffe9a]          ; 0050391f
+    PUSH EAX                            ; 00503925
+    MOV EDX,dword ptr [EBX + 0x154]     ; 00503926
+    PUSH EBX                            ; 0050392c
+    CALL dword ptr [EDX + 0x28]         ; 0050392d
+    ADD ESP,0x8                         ; 00503930
+    MOV dword ptr [EBX + 0xbec4],EAX    ; 00503933
+    JMP 0x005031c6                      ; 00503939
+        ;   XREF to: 005031c6 (UNCONDITIONAL_JUMP)  ; LAB_005031c6
     MOV EAX,dword ptr [EBX + 0xbec4]    ; 0050393e
         ;   Label: LAB_0050393e
     PUSH EAX                            ; 00503944

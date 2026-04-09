@@ -444,6 +444,28 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CStranger_renderOpaque_FUN_005c3150.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 14,
+          "line": 160,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 14,
+          "line": 216,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Direct stack address reference",

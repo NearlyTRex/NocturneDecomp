@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 883,
     "complexity_score": 341,
-    "cross_reference_count": 7,
+    "cross_reference_count": 8,
     "function_call_count": 17,
     "global_count": 11,
     "max_suspect_severity": "clean",
@@ -57,6 +57,12 @@
       "addr": "005c2850",
       "from_addr": "005c2e86",
       "name": "core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005decf0",
+      "from_addr": "005df336",
+      "name": "core_trash.cpp_CTrash_process_FUN_005decf0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -228,7 +234,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 13,
     "call_sites": [
       {
         "call_addr": "0040c981",
@@ -309,6 +315,28 @@
       },
       {
         "call_addr": "004c4255",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CCrater_activate_FUN_004c4200",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c4455",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CCrater_activate_FUN_004c4200",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c447b",
         "call_type": "direct",
         "caller": "core_fire.cpp_CCrater_activate_FUN_004c4200",
         "estimated_params": 3,

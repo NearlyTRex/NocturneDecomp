@@ -10,9 +10,10 @@
 ; int              Stack[0x10]:4   enable_camera_shake
 ; float            Stack[0x14]:4   end_width
 ;
-; XREF[2]:
+; XREF[3]:
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 at 00413781
 ;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a85a6
+;   core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0 at 005ef07a
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278

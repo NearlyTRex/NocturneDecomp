@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CFireball_render_FUN_004c0e70
 // Address: 004c0e70
-// Address Range: [[004c0e70, 004c0f6d] [004c0f7c, 004c0fa4]]
+// Address Range: [[004c0e70, 004c1687]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
 

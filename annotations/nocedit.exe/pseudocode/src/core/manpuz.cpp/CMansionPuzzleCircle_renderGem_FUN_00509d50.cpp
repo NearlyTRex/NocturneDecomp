@@ -1,6 +1,6 @@
 // Name: core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50
 // Address: 00509d50
-// Address Range: [[00509d50, 0050a1b8] [0050a1c7, 0050a1ec]]
+// Address Range: [[00509d50, 0050a1ec]]
 // Convention: __cdecl
 // Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansionPuzzleCircle *this_ptr,int gem_index)
 

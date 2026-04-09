@@ -4,7 +4,8 @@
 ; int __cdecl sound_sndmain_cpp_isSoundBusy_FUN_005ab540(void)
 ;
 ;
-; XREF[8]:
+; XREF[9]:
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 at 004864f7
 ;   core_menu.cpp_configureSoundOptions_FUN_00511e50 at 0051251d
 ;   core_msnedit.cpp_CDemonMission_playSound_FUN_0053eb40 at 0053eb66
 ;   core_sound.cpp_CSound_init_FUN_005b2dd0 at 005b2e38

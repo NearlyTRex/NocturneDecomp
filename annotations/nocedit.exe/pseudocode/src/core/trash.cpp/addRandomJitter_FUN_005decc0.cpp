@@ -1,6 +1,6 @@
 // Name: core_trash.cpp_addRandomJitter_FUN_005decc0
 // Address: 005decc0
-// Address Range: [[005decc0, 005decd1]]
+// Address Range: [[005decc0, 005dece8]]
 // Convention: __cdecl
 // Signature: void __cdecl core_trash_cpp_addRandomJitter_FUN_005decc0(float *value)
 

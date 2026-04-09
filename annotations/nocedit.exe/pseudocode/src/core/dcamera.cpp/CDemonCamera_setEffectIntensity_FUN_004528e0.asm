@@ -7,11 +7,12 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   intensity
 ;
-; XREF[5]:
+; XREF[6]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004dfae4
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10 at 0056aad9
 ;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20 at 00570e4d
 ;   core_setutil.cpp_C3DSCamera_apply_FUN_00585870 at 005858e5
+;   core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0 at 005ef0fe
 ;   core_weather.cpp_CWeather_update_FUN_005eeaf0 at 005eed5c
 ;
 ; Referenced Globals:

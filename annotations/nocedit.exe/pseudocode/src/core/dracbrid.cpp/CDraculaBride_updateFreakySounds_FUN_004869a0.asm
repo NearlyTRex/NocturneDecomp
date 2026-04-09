@@ -195,6 +195,49 @@ section .text
     MOV dword ptr [ESP + 0x30],EAX      ; 00486afc
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00486b00
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x78],EAX      ; 00486b05
+    FLD float ptr [ESP + 0x78]          ; 00486b09
+    ADD ESP,0x8                         ; 00486b0d
+    PUSH 0x40000000                     ; 00486b10
+    FADD float ptr [ESP + 0x24]         ; 00486b15
+    PUSH 0xc0000000                     ; 00486b19
+    FSTP float ptr [ESP + 0x28]         ; 00486b1e
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00486b22
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x78],EAX      ; 00486b27
+    FLD float ptr [ESP + 0x78]          ; 00486b2b
+    ADD ESP,0x8                         ; 00486b2f
+    PUSH 0x40a00000                     ; 00486b32
+    FADD float ptr [ESP + 0x28]         ; 00486b37
+    PUSH 0xc0a00000                     ; 00486b3b
+    FSTP float ptr [ESP + 0x2c]         ; 00486b40
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00486b44
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x78],EAX      ; 00486b49
+    FLD float ptr [ESP + 0x78]          ; 00486b4d
+    ADD ESP,0x8                         ; 00486b51
+    MOV EAX,dword ptr [ESP + 0x20]      ; 00486b54
+    FADD float ptr [ESP + 0x28]         ; 00486b58
+    MOV dword ptr [ESP + 0x44],EAX      ; 00486b5c
+    MOV EAX,dword ptr [ESP + 0x58]      ; 00486b60
+    FSTP float ptr [ESP + 0x28]         ; 00486b64
+    MOV EAX,dword ptr [EAX]             ; 00486b68
+    MOV dword ptr [ESP + 0x48],EAX      ; 00486b6a
+    MOV EAX,dword ptr [ESP + 0x5c]      ; 00486b6e
+    MOV EAX,dword ptr [EAX]             ; 00486b72
+    MOV dword ptr [ESP + 0x4c],EAX      ; 00486b74
+    LEA EAX,[ESP + 0x44]                ; 00486b78
+    CMP EDI,EAX                         ; 00486b7c
+    JZ 0x00486a75                       ; 00486b7e
+        ;   XREF to: 00486a75 (CONDITIONAL_JUMP)  ; LAB_00486a75
+    MOV EAX,dword ptr [ESP + 0x44]      ; 00486b84
+    MOV dword ptr [EDI],EAX             ; 00486b88
+    MOV EAX,dword ptr [ESP + 0x48]      ; 00486b8a
+    MOV dword ptr [EDI + 0x4],EAX       ; 00486b8e
+    MOV EAX,dword ptr [ESP + 0x4c]      ; 00486b91
+    MOV dword ptr [EDI + 0x8],EAX       ; 00486b95
+    JMP 0x00486a75                      ; 00486b98
+        ;   XREF to: 00486a75 (UNCONDITIONAL_JUMP)  ; LAB_00486a75
     MOV EAX,dword ptr [ESP + 0x54]      ; 00486b9d
         ;   Label: LAB_00486b9d
     MOV dword ptr [EAX + 0x50],0x0      ; 00486ba1 | SFreaky_ARRAY_02c6d0c0[1].owner

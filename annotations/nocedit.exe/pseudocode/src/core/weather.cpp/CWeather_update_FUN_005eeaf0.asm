@@ -17,8 +17,10 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_noLightningFlash_00657b84
+;   TerminatedCString s_noLightningFlash_00657b95
 ;   TerminatedCString s_rain_wav_1_00657ba6
 ;   double DOUBLE_00657bb4 = 0.0000152590218966964
+;   double DOUBLE_00657bbc = 0.600000000000000
 ;   double DOUBLE_00657bc4 = 15
 ;   double DOUBLE_00657bcc = 0.100000000000000
 ;   float FLOAT_00657bd4 = 100
@@ -29,9 +31,7 @@
 ;   CEventList g_CEventListInstance
 ;   CFireEffect g_CFireEffectInstance
 ;   undefined4 g_CGameInstance.delta_time_float
-;   CDemonCamera g_CDemonCameraInstance
-;   undefined4 g_CDemonCameraInstance.corona_blend_factor
-;   ... and 10 more
+;   ... and 12 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
@@ -173,6 +173,20 @@ section .text
     PUSH 0x3dcccccd                     ; 005eec4d
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005eec52
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x2c],EAX      ; 005eec57
+    FLD float ptr [ESP + 0x2c]          ; 005eec5b
+    ADD ESP,0x8                         ; 005eec5f
+    PUSH 0x657b95                       ; 005eec62 | = "noLightningFlash"
+    MOV ESI,dword ptr [0x006793d0]      ; 005eec67 | g_CEventListPtr
+    MOV EAX,dword ptr [EBP + 0x14]      ; 005eec6d
+    PUSH ESI                            ; 005eec70 | g_CEventListInstance
+    FSTP float ptr [EAX + 0x2c]         ; 005eec71
+    CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0 ; 005eec74
+        ;   XREF to: 004adca0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList * this_ptr, char * condition_expression)
+    ADD ESP,0x8                         ; 005eec79
+    TEST EAX,EAX                        ; 005eec7c
+    JZ 0x005eede1                       ; 005eec7e
+        ;   XREF to: 005eede1 (CONDITIONAL_JUMP)  ; LAB_005eede1
     MOV EAX,dword ptr [EBP + 0x14]      ; 005eec84
         ;   Label: LAB_005eec84
     FLD float ptr [EAX + 0x34]          ; 005eec87
@@ -309,6 +323,53 @@ section .text
         ;   XREF to: 005ef140 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_createThunder_FUN_005ef140(CWeather * this_ptr)
     ADD ESP,0x4                         ; 005eedd9
     JMP 0x005eec84                      ; 005eeddc
+        ;   XREF to: 005eec84 (UNCONDITIONAL_JUMP)  ; LAB_005eec84
+    MOV EAX,dword ptr [EBP + 0x14]      ; 005eede1
+        ;   Label: LAB_005eede1
+    MOV dword ptr [EAX + 0x24],EBX      ; 005eede4
+    MOV EAX,[0x03276acc]                ; 005eede7 | g_CDemonCameraInstance.corona_blend_factor
+    MOV dword ptr [ESP + 0x24],EAX      ; 005eedec
+    FILD dword ptr [ESP + 0x24]         ; 005eedf0
+    FMUL double ptr [0x00657bb4]        ; 005eedf4 | DOUBLE_00657bb4
+    PUSH 0x3e99999a                     ; 005eedfa
+    MOV EDX,dword ptr [EBP + 0x14]      ; 005eedff
+    FSTP float ptr [ESP + 0x10]         ; 005eee02
+    MOV EAX,dword ptr [ESP + 0x10]      ; 005eee06
+    PUSH 0x3dcccccd                     ; 005eee0a
+    MOV dword ptr [EDX + 0x30],EAX      ; 005eee0f
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005eee12
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x2c],EAX      ; 005eee17
+    FLD float ptr [ESP + 0x2c]          ; 005eee1b
+    ADD ESP,0x8                         ; 005eee1f
+    FADD float ptr [ESP + 0xc]          ; 005eee22
+    FST float ptr [ESP + 0xc]           ; 005eee26
+    FLD1                                ; 005eee2a
+    FCOMPP                              ; 005eee2c
+    FNSTSW AX                           ; 005eee2e
+    SAHF                                ; 005eee30
+    JNC 0x005eee3b                      ; 005eee31
+        ;   XREF to: 005eee3b (CONDITIONAL_JUMP)  ; LAB_005eee3b
+    MOV dword ptr [ESP + 0xc],0x3f800000 ; 005eee33
+    FLD float ptr [ESP + 0xc]           ; 005eee3b
+        ;   Label: LAB_005eee3b
+    FMUL double ptr [0x00657bbc]        ; 005eee3f | DOUBLE_00657bbc
+    SUB ESP,0x4                         ; 005eee45
+    FSTP float ptr [ESP]                ; 005eee48
+    PUSH 0x3c23d70a                     ; 005eee4b
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005eee50
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x2c],EAX      ; 005eee55
+    FLD float ptr [ESP + 0x2c]          ; 005eee59
+    ADD ESP,0x8                         ; 005eee5d
+    PUSH dword ptr [ESP + 0xc]          ; 005eee60
+    MOV EAX,dword ptr [EBP + 0x14]      ; 005eee64
+    PUSH 0x32758e4                      ; 005eee67 | g_CDemonCameraInstance
+    FSTP float ptr [EAX + 0x28]         ; 005eee6c
+    CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0 ; 005eee6f
+        ;   XREF to: 004528e0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(CDemonCamera * this_ptr, float intensity)
+    ADD ESP,0x8                         ; 005eee74
+    JMP 0x005eec84                      ; 005eee77
         ;   XREF to: 005eec84 (UNCONDITIONAL_JUMP)  ; LAB_005eec84
     MOV EAX,dword ptr [EBP + 0x14]      ; 005eee7c
         ;   Label: LAB_005eee7c

@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 12,
+    "complexity_score": 57,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 12,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "wrong_global"
+    ],
     "total_lines": 21
   },
   "cross_references": [],
@@ -89,5 +91,38 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Global g_CKeyFramedModelInstanceInstance used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 8,
+      "match": "g_CKeyFramedModelInstanceInstance",
+      "severity": "moderate",
+      "text": "core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&g_CKeyFramedModelInstanceInstance);",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Global g_CBaronWeaponClassInfo used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 10,
+      "match": "g_CBaronWeaponClassInfo",
+      "severity": "moderate",
+      "text": "(&g_CBaronWeaponClassInfo,\"CBaronWeapon\",",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Global g_CBaronWeaponClassVersion used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 11,
+      "match": "g_CBaronWeaponClassVersion",
+      "severity": "moderate",
+      "text": "core_baron_cpp_factoryFuncBaronWeapon_FUN_00413d00,&g_CBaronWeaponClassVersion,1,",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Global g_CWeaponClassInfo used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 12,
+      "match": "g_CWeaponClassInfo",
+      "severity": "moderate",
+      "text": "&g_CWeaponClassInfo);",
+      "type": "wrong_global"
+    }
+  ]
 }

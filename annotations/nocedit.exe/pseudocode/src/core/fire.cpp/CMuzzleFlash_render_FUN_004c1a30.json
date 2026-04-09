@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 34,
+    "assembly_lines": 145,
     "complexity_score": 63,
     "cross_reference_count": 1,
-    "function_call_count": 3,
-    "global_count": 2,
+    "function_call_count": 8,
+    "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 48,
     "suspect_count": 1,
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 82
+    "total_lines": 193
   },
   "cross_references": [
     {
@@ -31,7 +31,7 @@
     "address_range": [
       [
         "004c1a30",
-        "004c1a79"
+        "004c1bd1"
       ]
     ],
     "convention": "__cdecl",
@@ -45,14 +45,39 @@
       "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10"
     },
     {
+      "addr": "00478d20",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20"
+    },
+    {
+      "addr": "005feb5c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    },
+    {
       "addr": "0048c4f0",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0"
     },
     {
+      "addr": "0048c640",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640"
+    },
+    {
       "addr": "0048c450",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    },
+    {
+      "addr": "0048ca50",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50"
+    },
+    {
+      "addr": "0048ca60",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60"
     }
   ],
   "globals": [
@@ -63,9 +88,27 @@
       "value": "02c6d578"
     },
     {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
       "addr": "02c6d578",
       "name": "g_CDemonRendererInstance",
       "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d133e4",
+      "name": "g_FireEffectGunFlashModel",
+      "type": "CKeyFramedModelInstance",
+      "value": null
+    },
+    {
+      "addr": "0326eef8",
+      "name": "g_CDemonSetInstance.lighting_quality_mode",
+      "type": "undefined4",
       "value": null
     }
   ],
@@ -90,27 +133,29 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.9285714285714284,
-    "instruction_count": 28,
+    "avg_pcode_per_instr": 4.064,
+    "instruction_count": 125,
     "opcode_distribution": {
-      "CALL": 3,
+      "CALL": 17,
       "CBRANCH": 1,
-      "COPY": 21,
-      "INT_ADD": 9,
-      "INT_AND": 10,
-      "INT_CARRY": 3,
-      "INT_EQUAL": 10,
+      "COPY": 110,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 48,
+      "INT_AND": 49,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 48,
       "INT_LESS": 2,
       "INT_SBORROW": 2,
-      "INT_SCARRY": 3,
-      "INT_SLESS": 5,
-      "INT_SUB": 16,
-      "LOAD": 5,
-      "POPCOUNT": 5,
-      "RETURN": 1,
-      "STORE": 14
+      "INT_SCARRY": 19,
+      "INT_SLESS": 24,
+      "INT_SUB": 58,
+      "INT_XOR": 2,
+      "LOAD": 12,
+      "POPCOUNT": 24,
+      "RETURN": 2,
+      "STORE": 69
     },
-    "pcode_op_count": 110
+    "pcode_op_count": 508
   },
   "stack_frame": {
     "frame_size": 48,
@@ -155,6 +200,22 @@
         "type": "CMuzzleFlash *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CMuzzleFlash_render_FUN_004c1a30.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "cert-msc30-c",
+          "column": 11,
+          "line": 35,
+          "message": "rand() has limited randomness; use C++11 random library instead"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

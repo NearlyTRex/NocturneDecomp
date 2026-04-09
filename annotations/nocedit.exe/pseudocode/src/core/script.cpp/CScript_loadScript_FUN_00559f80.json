@@ -448,6 +448,42 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CScript_loadScript_FUN_00559f80.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "cert-env33-c",
+          "column": 7,
+          "line": 153,
+          "message": "calling 'system' uses a command processor"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 15,
+          "line": 53,
+          "message": "Redundant assignment of 'pcVar12' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 15,
+          "line": 58,
+          "message": "Redundant assignment of 'pcVar12' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",

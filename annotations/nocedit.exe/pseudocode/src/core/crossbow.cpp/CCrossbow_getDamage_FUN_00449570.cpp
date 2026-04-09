@@ -1,6 +1,6 @@
 // Name: core_crossbow.cpp_CCrossbow_getDamage_FUN_00449570
 // Address: 00449570
-// Address Range: [[00449570, 00449581]]
+// Address Range: [[00449570, 00449596]]
 // Convention: __cdecl
 // Signature: float __cdecl core_crossbow_cpp_CCrossbow_getDamage_FUN_00449570(CCrossbow *this_ptr)
 

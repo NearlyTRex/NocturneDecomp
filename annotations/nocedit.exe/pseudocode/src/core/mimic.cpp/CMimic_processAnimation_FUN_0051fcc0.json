@@ -5,11 +5,11 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 698,
+    "assembly_lines": 749,
     "complexity_score": 426,
     "cross_reference_count": 1,
-    "function_call_count": 22,
-    "global_count": 25,
+    "function_call_count": 25,
+    "global_count": 26,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 321,
     "suspect_count": 9,
@@ -18,7 +18,7 @@
       "unknown_field",
       "warning_type_propagation"
     ],
-    "total_lines": 1019
+    "total_lines": 1070
   },
   "cross_references": [
     {
@@ -33,10 +33,6 @@
     "address_range": [
       [
         "0051fcc0",
-        "00520203"
-      ],
-      [
-        "0052029d",
         "005204f8"
       ]
     ],
@@ -82,9 +78,19 @@
       "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0"
     },
     {
+      "addr": "00427db0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0"
+    },
+    {
       "addr": "0043ab80",
       "is_variadic": false,
       "name": "core_cloth.cpp_CCloth_process_FUN_0043ab80"
+    },
+    {
+      "addr": "004a9880",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880"
     },
     {
       "addr": "004ede30",
@@ -132,6 +138,11 @@
       "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40"
     },
     {
+      "addr": "0059fb00",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00"
+    },
+    {
       "addr": "0059f820",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820"
@@ -167,6 +178,12 @@
     {
       "addr": "0063873c",
       "name": "s_gh_alrt_1_4_wav_0063873c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063874d",
+      "name": "s_gh_hits_1_4_wav_0063874d",
       "type": "TerminatedCString",
       "value": null
     },
@@ -330,17 +347,17 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.281739130434783,
-    "instruction_count": 575,
+    "avg_pcode_per_instr": 5.209677419354839,
+    "instruction_count": 620,
     "opcode_distribution": {
       "BOOL_NEGATE": 23,
       "BOOL_OR": 21,
-      "BRANCH": 17,
-      "CALL": 34,
-      "CALLIND": 6,
-      "CBRANCH": 42,
-      "COPY": 1153,
-      "FLOAT2FLOAT": 83,
+      "BRANCH": 18,
+      "CALL": 38,
+      "CALLIND": 7,
+      "CBRANCH": 43,
+      "COPY": 1204,
+      "FLOAT2FLOAT": 85,
       "FLOAT_ABS": 3,
       "FLOAT_ADD": 11,
       "FLOAT_DIV": 1,
@@ -352,27 +369,27 @@
       "FLOAT_SQRT": 2,
       "FLOAT_SUB": 6,
       "INT2FLOAT": 4,
-      "INT_ADD": 234,
-      "INT_AND": 221,
-      "INT_CARRY": 43,
-      "INT_EQUAL": 164,
+      "INT_ADD": 257,
+      "INT_AND": 238,
+      "INT_CARRY": 49,
+      "INT_EQUAL": 180,
       "INT_LEFT": 34,
       "INT_LESS": 22,
       "INT_MULT": 9,
       "INT_NOTEQUAL": 44,
       "INT_OR": 45,
       "INT_SBORROW": 22,
-      "INT_SCARRY": 43,
-      "INT_SLESS": 83,
-      "INT_SUB": 181,
-      "INT_XOR": 8,
+      "INT_SCARRY": 49,
+      "INT_SLESS": 91,
+      "INT_SUB": 199,
+      "INT_XOR": 9,
       "INT_ZEXT": 34,
-      "LOAD": 105,
-      "POPCOUNT": 81,
+      "LOAD": 111,
+      "POPCOUNT": 89,
       "RETURN": 1,
-      "STORE": 202
+      "STORE": 226
     },
-    "pcode_op_count": 3037
+    "pcode_op_count": 3230
   },
   "stack_frame": {
     "frame_size": 496,
@@ -634,6 +651,30 @@
         "type": "float"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CMimic_processAnimation_FUN_0051fcc0.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 20,
+          "line": 113,
+          "message": "Redundant assignment of 'pCVar9' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 21,
+          "line": 114,
+          "message": "Redundant assignment of 'pCVar10' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

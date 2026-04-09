@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 23,
-    "cross_reference_count": 4,
+    "complexity_score": 38,
+    "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 8,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few"
+      "param_count_too_few",
+      "wrong_global"
     ],
     "total_lines": 21
   },
@@ -23,6 +24,12 @@
       "addr": "0041bf90",
       "from_addr": "0041c5b0",
       "name": "core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004219e0",
+      "from_addr": "00421c1e",
+      "name": "core_boxactor.cpp_CBoxActor_process_FUN_004219e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -35,6 +42,12 @@
       "addr": "004b0f00",
       "from_addr": "004b0f46",
       "name": "core_event.cpp_CEventList_restartSfxEntries_FUN_004b0f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c9c00",
+      "from_addr": "004c9f6e",
+      "name": "core_flame.cpp_CFlame_process_FUN_004c9c00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -84,12 +97,23 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 4,
+    "call_site_count": 6,
     "call_sites": [
       {
         "call_addr": "004b0f46",
         "call_type": "direct",
         "caller": "core_event.cpp_CEventList_restartSfxEntries_FUN_004b0f00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00421c1e",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_CBoxActor_process_FUN_004219e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -123,6 +147,17 @@
         "call_addr": "0041c5b0",
         "call_type": "direct",
         "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c9f6e",
+        "call_type": "direct",
+        "caller": "core_flame.cpp_CFlame_process_FUN_004c9c00",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -185,7 +220,7 @@
   },
   "suspects": [
     {
-      "call_site_count": 4,
+      "call_site_count": 6,
       "declared_params": 2,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 3,
@@ -194,6 +229,14 @@
       "param_delta": 1,
       "text": "Function declares 2 params but call sites push 3 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "description": "Global g_SfxOptions used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 8,
+      "match": "g_SfxOptions",
+      "severity": "moderate",
+      "text": "g_SfxOptions[g_SfxLastSlot].trigger_time = trigger_time;",
+      "type": "wrong_global"
     }
   ]
 }

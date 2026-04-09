@@ -9,8 +9,9 @@
 ; Local Variables:
 ; CVector3f        Stack[-0x14]:12  local_14
 ;
-; XREF[1]:
+; XREF[2]:
 ;   core_chain.cpp_CChain_process_FUN_004300d0 at 004301d7
+;   core_chain.cpp_CChain_setup_FUN_0042fd20 at 0042fd97
 ;
 ; Referenced Globals:
 ;   UVector3 g_ZeroVector

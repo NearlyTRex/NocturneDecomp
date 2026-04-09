@@ -8,6 +8,9 @@
 ; int              Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 004607b7
+;
 ; Referenced Globals:
 ;   TerminatedCString s_Part_name_0061b4a2
 ;   SModelPartName[500] g_ModelPartNames

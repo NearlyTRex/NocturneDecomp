@@ -230,6 +230,13 @@ section .text
     PUSH 0x3f400000                     ; 005b8669
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005b866e
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x44],EAX      ; 005b8673
+    FLD float ptr [ESP + 0x44]          ; 005b8677
+    FMUL float ptr [EBX + 0x554]        ; 005b867b
+    ADD ESP,0x8                         ; 005b8681
+    FSTP float ptr [EBX + 0x488]        ; 005b8684
+    JMP 0x005b84db                      ; 005b868a
+        ;   XREF to: 005b84db (UNCONDITIONAL_JUMP)  ; LAB_005b84db
     CMP EDI,0x2                         ; 005b868f
         ;   Label: LAB_005b868f
     JNZ 0x005b86ad                      ; 005b8692

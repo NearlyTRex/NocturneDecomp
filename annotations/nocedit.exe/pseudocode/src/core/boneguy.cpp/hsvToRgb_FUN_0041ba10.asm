@@ -11,6 +11,9 @@
 ; float            Stack[-0x18]:4  local_18
 ; float            Stack[-0x10]:4  local_10
 ;
+; XREF[1]:
+;   core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0 at 0041bd44
+;
 ; Referenced Globals:
 ;   void* switchdataD_0041b9f4 = 0041ba74
 ;   double DOUBLE_00615f6d = 0.00392156862745098

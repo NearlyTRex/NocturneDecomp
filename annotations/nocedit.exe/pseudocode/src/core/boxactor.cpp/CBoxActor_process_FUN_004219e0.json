@@ -5,10 +5,10 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 305,
+    "assembly_lines": 324,
     "complexity_score": 149,
     "cross_reference_count": 1,
-    "function_call_count": 12,
+    "function_call_count": 14,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 134,
@@ -16,7 +16,7 @@
     "suspect_types": [
       "warning_inlined_function"
     ],
-    "total_lines": 439
+    "total_lines": 458
   },
   "cross_references": [
     {
@@ -31,10 +31,6 @@
     "address_range": [
       [
         "004219e0",
-        "00421c06"
-      ],
-      [
-        "00421c4a",
         "00421dfd"
       ]
     ],
@@ -100,9 +96,19 @@
       "name": "crt_math.c_round_FUN_005fe6b0"
     },
     {
+      "addr": "005a8cb0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0"
+    },
+    {
       "addr": "005a8c30",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
+    },
+    {
+      "addr": "005a8be0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0"
     }
   ],
   "globals": [
@@ -176,17 +182,17 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.095238095238095,
-    "instruction_count": 273,
+    "avg_pcode_per_instr": 6.0657439446366785,
+    "instruction_count": 289,
     "opcode_distribution": {
       "BOOL_NEGATE": 12,
       "BOOL_OR": 5,
-      "BRANCH": 1,
-      "CALL": 14,
-      "CALLIND": 1,
+      "BRANCH": 2,
+      "CALL": 16,
+      "CALLIND": 2,
       "CBRANCH": 8,
-      "COPY": 820,
-      "FLOAT2FLOAT": 75,
+      "COPY": 845,
+      "FLOAT2FLOAT": 77,
       "FLOAT_ADD": 13,
       "FLOAT_EQUAL": 3,
       "FLOAT_LESS": 3,
@@ -197,32 +203,32 @@
       "FLOAT_SUB": 1,
       "INT2FLOAT": 4,
       "INT_2COMP": 1,
-      "INT_ADD": 143,
-      "INT_AND": 89,
-      "INT_CARRY": 12,
-      "INT_EQUAL": 50,
+      "INT_ADD": 152,
+      "INT_AND": 97,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 58,
       "INT_LEFT": 14,
-      "INT_LESS": 5,
+      "INT_LESS": 6,
       "INT_NOTEQUAL": 23,
       "INT_OR": 25,
-      "INT_SBORROW": 6,
-      "INT_SCARRY": 12,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 15,
       "INT_SDIV": 2,
       "INT_SEXT": 2,
-      "INT_SLESS": 24,
+      "INT_SLESS": 28,
       "INT_SREM": 2,
       "INT_SRIGHT": 4,
-      "INT_SUB": 48,
+      "INT_SUB": 54,
       "INT_ZEXT": 16,
-      "LOAD": 76,
-      "POPCOUNT": 24,
+      "LOAD": 79,
+      "POPCOUNT": 28,
       "RETURN": 2,
       "ROUND": 1,
-      "STORE": 94,
+      "STORE": 102,
       "SUBPIECE": 4,
       "TRUNC": 1
     },
-    "pcode_op_count": 1664
+    "pcode_op_count": 1753
   },
   "stack_frame": {
     "frame_size": 216,

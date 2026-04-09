@@ -9,8 +9,10 @@
 ; CVector3f *      Stack[0xc]:4   velocity
 ; CKeyFramedModel * Stack[0x10]:4   model_ptr
 ;
-; XREF[1]:
+; XREF[3]:
+;   core_drip.cpp_CDrip_process_FUN_0048e2a0 at 0048e5de
 ;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a846f
+;   core_fire.cpp_CExplosion_activate_FUN_004c3970 at 004c3aa4
 ;
 ; Referenced Globals:
 ;   int g_RockAllocIndex

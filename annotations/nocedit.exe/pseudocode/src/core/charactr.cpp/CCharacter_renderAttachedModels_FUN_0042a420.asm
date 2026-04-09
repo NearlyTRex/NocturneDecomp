@@ -116,6 +116,9 @@ section .text
     PUSH EDI                            ; 0042a506 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 0042a507
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 0042a50c
+    JMP 0x0042a467                      ; 0042a50f
+        ;   XREF to: 0042a467 (UNCONDITIONAL_JUMP)  ; LAB_0042a467
     MOV ECX,0xc                         ; 03fc4665
         ;   Label: LAB_03fc4665
     PUSH EAX                            ; 03fc466a

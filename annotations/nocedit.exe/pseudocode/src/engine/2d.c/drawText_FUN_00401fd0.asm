@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   x
 ; int              Stack[0xc]:4   y
 ;
-; XREF[134]:
+; XREF[135]:
 ;   core_actor.cpp_CActorPropertyList_render_FUN_0040e850 at 0040e960
 ;   core_actor.cpp_drawTextLine_FUN_0040d240 at 0040d256
 ;   core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0 at 0040d222
@@ -19,7 +19,7 @@
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 00443083
 ;   core_course.cpp_renderCourseGizmo_FUN_00443760 at 00443b1a
 ;   core_curtain.cpp_CCurtain_showEditorHelp_FUN_0044b8d0 at 0044b94d
-;   ... and 124 more
+;   ... and 125 more
 ;
 ; Referenced Globals:
 ;   int g_TextWrapEnabled = 0x1

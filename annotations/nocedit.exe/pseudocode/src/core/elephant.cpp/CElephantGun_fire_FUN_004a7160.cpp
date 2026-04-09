@@ -1,6 +1,6 @@
 // Name: core_elephant.cpp_CElephantGun_fire_FUN_004a7160
 // Address: 004a7160
-// Address Range: [[004a7160, 004a71ff] [004a7406, 004a74a4]]
+// Address Range: [[004a7160, 004a7892]]
 // Convention: __cdecl
 // Signature: int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_ptr)
 

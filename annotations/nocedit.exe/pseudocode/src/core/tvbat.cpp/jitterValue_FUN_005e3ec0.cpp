@@ -1,6 +1,6 @@
 // Name: core_tvbat.cpp_jitterValue_FUN_005e3ec0
 // Address: 005e3ec0
-// Address Range: [[005e3ec0, 005e3ed1]]
+// Address Range: [[005e3ec0, 005e3eea]]
 // Convention: __cdecl
 // Signature: float __cdecl core_tvbat_cpp_jitterValue_FUN_005e3ec0(float value)
 

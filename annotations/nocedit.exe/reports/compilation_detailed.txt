@@ -5,15 +5,15 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6280 (97.3%)
-Failed: 174
+Successful: 6281 (97.3%)
+Failed: 173
 
 ERROR CATEGORIES
 --------------------------------------------------
-  type_error                       311
+  type_error                       304
   format_error                     262
   incompatible_types                91
-  undeclared_identifier             37
+  undeclared_identifier             36
   syntax_error                      25
   other                             13
   pointer_type                      11
@@ -21,7 +21,7 @@ ERROR CATEGORIES
   cast_error                         6
 
 ====================================================================================================
-CATEGORY: type_error (311 errors)
+CATEGORY: type_error (304 errors)
 ====================================================================================================
 
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -30,8 +30,6 @@ CATEGORY: type_error (311 errors)
     Line 20: invalid suffix '._0_4_' on floating constant
   shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
     Line 43: invalid suffix '._4_4_' on floating constant
-  sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
-    Line 92: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
     Line 36: member reference base type 'byte[44]' (aka 'unsigned char[44]') is not a structure or union
   engine_model.c_getMRGLBounds_FUN_00528140
@@ -348,7 +346,7 @@ CATEGORY: incompatible_types (91 errors)
     Line 212: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (37 errors)
+CATEGORY: undeclared_identifier (36 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
@@ -391,8 +389,6 @@ CATEGORY: undeclared_identifier (37 errors)
     Line 41: use of undeclared identifier 'stack0x0000002c'
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     Line 112: use of undeclared identifier 'stack0xfffff964'
-  sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
-    Line 85: use of undeclared identifier 'stack0xffffff94'; did you mean 'in_stack_ffffff94'?
   shape_design.c_renderSinglePolygon_FUN_0045ce20
     Line 85: use of undeclared identifier 'stack0xffffffdc'
   shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920

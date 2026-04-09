@@ -916,6 +916,80 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CCheckOutItem_processFiles_FUN_004b4220.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 5,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 139,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 3,
+          "line": 233,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 11,
+          "line": 334,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 32,
+          "line": 444,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 5,
+          "line": 492,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 12,
+          "line": 96,
+          "message": "Redundant assignment of 'pSVar8' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 12,
+          "line": 101,
+          "message": "Redundant assignment of 'pSVar8' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 13,
+          "line": 167,
+          "message": "Redundant assignment of 'pcVar11' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 13,
+          "line": 172,
+          "message": "Redundant assignment of 'pcVar11' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Unreachable code block removed",

@@ -7,9 +7,10 @@
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   output_vector
 ;
-; XREF[2]:
+; XREF[3]:
 ;   core_dskybox.cpp_renderSkyDome_FUN_004901f0 at 0049024b
 ;   core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70 at 005e9eed
+;   core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0 at 005eef2e
 ;
 ; *****************************************************************************
 

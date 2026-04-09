@@ -1,6 +1,6 @@
 // Name: core_lightgun.cpp_CLightGun_getDamage_FUN_00506670
 // Address: 00506670
-// Address Range: [[00506670, 0050669a]]
+// Address Range: [[00506670, 005066af]]
 // Convention: __cdecl
 // Signature: float __cdecl core_lightgun_cpp_CLightGun_getDamage_FUN_00506670(CLightGun *this_ptr)
 

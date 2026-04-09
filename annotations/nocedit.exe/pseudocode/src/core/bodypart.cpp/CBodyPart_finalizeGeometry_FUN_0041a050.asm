@@ -18,18 +18,18 @@
 ; float            Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  local_18
 ;
-; XREF[16]:
+; XREF[17]:
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 at 00415ff7
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_00417660 at 00417804
 ;   core_bodypart.cpp_CBodyPart_archive_FUN_00419880 at 00419bb1
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b4b6
+;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680 at 0041d7be
 ;   core_bride.cpp_CBride_processDismemberment_FUN_00424600 at 00424732
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0 at 0042bd1d
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_004448c0 at 00444a4c
 ;   core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20 at 00485b7c
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004e5530 at 004e56b6
-;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e8520 at 004e86bf
-;   ... and 6 more
+;   ... and 7 more
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00615e34 = 0.00390625
@@ -499,6 +499,32 @@ section .text
     PUSH 0xc0490fdb                     ; 0041a5a1
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041a5a6
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x90],EAX      ; 0041a5ab
+    FLD float ptr [ESP + 0x90]          ; 0041a5b2
+    ADD ESP,0x8                         ; 0041a5b9
+    PUSH 0x40490fdb                     ; 0041a5bc
+    PUSH 0xc0490fdb                     ; 0041a5c1
+    FSTP float ptr [EDI + 0xd3c]        ; 0041a5c6
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041a5cc
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x90],EAX      ; 0041a5d1
+    FLD float ptr [ESP + 0x90]          ; 0041a5d8
+    ADD ESP,0x8                         ; 0041a5df
+    PUSH 0x4116cbe4                     ; 0041a5e2
+    PUSH 0xc116cbe4                     ; 0041a5e7
+    FSTP float ptr [EDI + 0xd44]        ; 0041a5ec
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041a5f2
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x90],EAX      ; 0041a5f7
+    MOV EAX,dword ptr [ESP + 0x90]      ; 0041a5fe
+    MOV dword ptr [EDI + 0xd40],EAX     ; 0041a605
+    ADD ESP,0x8                         ; 0041a60b
+    MOV ESP,EBP                         ; 0041a60e
+    POP EBP                             ; 0041a610
+    POP EDI                             ; 0041a611
+    POP ESI                             ; 0041a612
+    POP EBX                             ; 0041a613
+    RET                                 ; 0041a614
     MOV dword ptr [EDX + 0x8],0x0       ; 0041a615
         ;   Label: LAB_0041a615
     MOV EAX,dword ptr [EDX + 0x8]       ; 0041a61c

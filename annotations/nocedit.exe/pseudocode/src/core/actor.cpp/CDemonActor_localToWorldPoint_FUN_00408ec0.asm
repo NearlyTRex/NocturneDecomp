@@ -10,7 +10,7 @@
 ; Local Variables:
 ; CVector3f        Stack[-0x10]:12  local_10
 ;
-; XREF[146]:
+; XREF[149]:
 ;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040c8f0 at 0040c903
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a28d
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 at 00413984
@@ -21,7 +21,7 @@
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416e28
 ;   core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50 at 0041aea0
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 at 0041a93b
-;   ... and 136 more
+;   ... and 139 more
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0

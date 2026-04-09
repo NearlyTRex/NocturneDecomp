@@ -200,6 +200,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
+;   core_actor.cpp_copyVector_FUN_00410360
 ;   core_actor.cpp_CVector_ctor_FUN_00410340
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
@@ -210,10 +211,9 @@
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
 ;   core_charactr.cpp_CCharacter_initGesture_FUN_0042d390
 ;   core_charactr.cpp_CCharacter_setLookAtTarget_FUN_0042ddd0
-;   core_enemy.cpp_CEnemy_setVictim_FUN_004a9ef0
-;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
-;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
-;   ... and 62 more
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+;   ... and 66 more
 ;
 ; *****************************************************************************
 
@@ -3261,6 +3261,50 @@ section .text
     FSTP float ptr [ESP]                ; 0055c9df
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0055c9e2
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x3f9c],EAX    ; 0055c9e7
+    FLD float ptr [ESP + 0x3f9c]        ; 0055c9ee
+    ADD ESP,0x8                         ; 0055c9f5
+    SUB ESP,0x4                         ; 0055c9f8
+    FSTP float ptr [ESP]                ; 0055c9fb
+    PUSH 0x0                            ; 0055c9fe
+    PUSH dword ptr [ESP + 0x30]         ; 0055ca00
+    FLD float ptr [ESP + 0x34]          ; 0055ca04
+    SUB ESP,0x4                         ; 0055ca08
+    FCHS                                ; 0055ca0b
+    FSTP float ptr [ESP]                ; 0055ca0d
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0055ca10
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x3fa4],EAX    ; 0055ca15
+    FLD float ptr [ESP + 0x3fa4]        ; 0055ca1c
+    ADD ESP,0x8                         ; 0055ca23
+    SUB ESP,0x4                         ; 0055ca26
+    LEA EAX,[ESP + 0x3e84]              ; 0055ca29
+    FSTP float ptr [ESP]                ; 0055ca30
+    PUSH EAX                            ; 0055ca33
+    CALL core_script.cpp_makeVector_FUN_00567d00 ; 0055ca34
+        ;   XREF to: 00567d00 (UNCONDITIONAL_CALL)  ; CVector3f * core_script.cpp_makeVector_FUN_00567d00(CVector3f * out, float x, float y, float z)
+    ADD ESP,0x10                        ; 0055ca39
+    PUSH EAX                            ; 0055ca3c
+    LEA EAX,[ESP + 0x3e24]              ; 0055ca3d
+    PUSH EAX                            ; 0055ca44
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 0055ca45
+        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    ADD ESP,0x8                         ; 0055ca4a
+    LEA EAX,[ESP + 0x3e54]              ; 0055ca4d
+    PUSH EAX                            ; 0055ca54
+    LEA EAX,[ESP + 0x3e70]              ; 0055ca55
+    PUSH EAX                            ; 0055ca5c
+    LEA EAX,[ESP + 0x3e28]              ; 0055ca5d
+    PUSH EAX                            ; 0055ca64
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 0055ca65
+        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
+    ADD ESP,0xc                         ; 0055ca6a
+    PUSH EAX                            ; 0055ca6d
+    LEA EAX,[ESP + 0x3e58]              ; 0055ca6e
+    PUSH EAX                            ; 0055ca75
+    CALL core_actor.cpp_copyVector_FUN_00410360 ; 0055ca76
+        ;   XREF to: 00410360 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_copyVector_FUN_00410360(CVector3f * dst_ptr, CVector3f * src_ptr)
+    ADD ESP,0x8                         ; 0055ca7b
     LEA EAX,[ESP + 0x3e54]              ; 0055ca7e
         ;   Label: LAB_0055ca7e
     JMP 0x0055c8b5                      ; 0055ca85

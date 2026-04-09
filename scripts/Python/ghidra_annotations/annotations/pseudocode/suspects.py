@@ -72,6 +72,7 @@ SUSPECT_SEVERITY = {
     'suspect_float': 'mild',
     'nonstandard_int': 'mild',
     'displaced_global_access': 'moderate',
+    'wrong_global': 'moderate',
 }
 
 
@@ -588,6 +589,86 @@ def identify_displaced_global_access(assembly_code, global_interval_map=None):
                 'scale': scale,
                 'instruction_address': instr_addr,
             })
+
+    return suspects
+
+
+def identify_wrong_global_suspects(decompiled_code, func_globals):
+    """Detect globals referenced in decompiled code but absent from function references.
+
+    The Watcom compiler uses 1-based array indexing which shifts the base address
+    down by one entry size. This causes Ghidra's decompiler to resolve memory
+    accesses to the wrong overlapping global, while Ghidra's reference analysis
+    (which uses exact address lookup) remains correct.
+
+    Globals in the pseudocode that don't appear in the function's reference list
+    (func_globals from Ghidra's reference manager) are flagged as potential wrong
+    resolutions.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string
+        func_globals: List of global reference dicts from Ghidra, each with
+                      'name', 'addr', 'type' keys
+
+    Returns:
+        List of suspect dicts
+    """
+    suspects = []
+    if not decompiled_code or not func_globals:
+        return suspects
+
+    # Build set of known global base names from Ghidra's reference analysis
+    known_globals = set()
+    for g in func_globals:
+        name = g.get('name', '')
+        if name:
+            # Strip field suffixes: g_Foo.bar -> g_Foo, g_Foo[0].x -> g_Foo
+            base = name.split('.')[0].split('[')[0]
+            known_globals.add(base)
+
+    if not known_globals:
+        return suspects
+
+    # Extract global names from decompiled code
+    cpp_global_re = re.compile(
+        r'\b(g_[A-Za-z_][A-Za-z0-9_.]*'
+        r'|DAT_[0-9a-fA-F]+'
+        r'|INT_[0-9a-fA-F]+'
+        r'|UINT_[0-9a-fA-F]+'
+        r'|BYTE_[0-9a-fA-F]+'
+        r'|SHORT_[0-9a-fA-F]+'
+        r'|LONG_[0-9a-fA-F]+'
+        r')\b'
+    )
+
+    seen_globals = set()
+    for line_no, line in enumerate(decompiled_code.split('\n'), 1):
+        # Skip comments and preprocessor directives
+        stripped = line.strip()
+        if stripped.startswith('//') or stripped.startswith('#') or stripped.startswith('/*'):
+            continue
+
+        for m in cpp_global_re.finditer(line):
+            name = m.group(1)
+            base_name = name.split('.')[0]
+
+            # Skip types that don't have base-shift issues
+            if base_name.startswith('s_'):
+                continue
+
+            if base_name not in known_globals and base_name not in seen_globals:
+                seen_globals.add(base_name)
+                suspects.append({
+                    'line': line_no,
+                    'type': 'wrong_global',
+                    'match': base_name,
+                    'text': stripped,
+                    'description': (
+                        'Global %s used in pseudocode but not in function reference '
+                        'list — possible Watcom 1-based indexing wrong resolution'
+                        % base_name),
+                    'severity': SUSPECT_SEVERITY.get('wrong_global', 'moderate'),
+                })
 
     return suspects
 

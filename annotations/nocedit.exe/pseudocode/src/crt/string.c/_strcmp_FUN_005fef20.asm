@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   str1
 ; char *           Stack[0x8]:4   str2
 ;
-; XREF[51]:
+; XREF[53]:
 ;   core_ammo.cpp_CAmmo_addFilesToExtract_FUN_004113e0 at 00411422
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0 at 00411087
 ;   core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0 at 0043e0f0
@@ -16,9 +16,9 @@
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10 at 0044de3a
 ;   core_dfilter.cpp_CFilterCache_findFilter_FUN_004701a0 at 004701b9
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060 at 00470079
+;   core_door.cpp_CDoor_setup_FUN_0047fc70 at 0047fc9a
 ;   core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0 at 004826cd
-;   core_emitter.cpp_CEmitter_process_FUN_004a8070 at 004a8094
-;   ... and 41 more
+;   ... and 43 more
 ;
 ; *****************************************************************************
 

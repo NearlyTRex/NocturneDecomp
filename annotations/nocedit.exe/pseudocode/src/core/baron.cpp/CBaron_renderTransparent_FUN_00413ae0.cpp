@@ -1,6 +1,6 @@
 // Name: core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0
 // Address: 00413ae0
-// Address Range: [[00413ae0, 00413bd3] [00413bd7, 00413ccf]]
+// Address Range: [[00413ae0, 00413ccf]]
 // Convention: __cdecl
 // Signature: int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_00413ae0(CBaron *this_ptr)
 

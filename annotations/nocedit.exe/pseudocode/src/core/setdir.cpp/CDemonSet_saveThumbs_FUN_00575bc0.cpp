@@ -1,6 +1,6 @@
 // Name: core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0
 // Address: 00575bc0
-// Address Range: [[00575bc0, 00575bff]]
+// Address Range: [[00575bc0, 00575dec]]
 // Convention: __cdecl
 // Signature: void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet *this_ptr,_FILE *file_handle)
 

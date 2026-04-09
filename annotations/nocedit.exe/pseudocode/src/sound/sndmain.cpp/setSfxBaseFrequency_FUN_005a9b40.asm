@@ -7,8 +7,9 @@
 ; uint             Stack[0x4]:4   sfx_handle
 ; float            Stack[0x8]:4   base_frequency
 ;
-; XREF[3]:
+; XREF[4]:
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 00506554
+;   core_tommygun.cpp_CTommyGun_process_FUN_005de360 at 005de3c4
 ;   core_turret.cpp_CTurret_process_FUN_005e2430 at 005e256f
 ;   core_vehicle.cpp_CVehicle_process_FUN_005e7e80 at 005e8327
 ;

@@ -191,4 +191,8 @@ section .text
     FXCH                                ; 00477ff9
     FISTP dword ptr [EDX]               ; 00477ffb
     FXCH                                ; 00477ffd
+    FISTP dword ptr [EDX + 0x4]         ; 00477fff
+    FISTP dword ptr [EDX + 0x8]         ; 00478002
+    JMP 0x00477f8a                      ; 00478005
+        ;   XREF to: 00477f8a (UNCONDITIONAL_JUMP)  ; LAB_00477f8a
 

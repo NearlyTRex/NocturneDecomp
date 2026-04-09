@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CBulletTrail_render_FUN_004c21f0
 // Address: 004c21f0
-// Address Range: [[004c21f0, 004c2400]]
+// Address Range: [[004c21f0, 004c2417]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_ptr)
 

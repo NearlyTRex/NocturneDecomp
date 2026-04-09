@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 120,
+    "assembly_lines": 157,
     "complexity_score": 64,
-    "cross_reference_count": 14,
+    "cross_reference_count": 15,
     "function_call_count": 7,
-    "global_count": 7,
+    "global_count": 8,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 64,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 184
+    "total_lines": 221
   },
   "cross_references": [
     {
@@ -27,6 +27,12 @@
       "addr": "00417660",
       "from_addr": "00417732",
       "name": "core_batman.cpp_CBatman_processDismemberment_FUN_00417660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041d680",
+      "from_addr": "0041d792",
+      "name": "core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -107,10 +113,6 @@
     "address_range": [
       [
         "00418e10",
-        "00418f34"
-      ],
-      [
-        "00418fa2",
         "00418fca"
       ]
     ],
@@ -175,6 +177,12 @@
       "value": null
     },
     {
+      "addr": "00615bc0",
+      "name": "FLOAT_00615bc0",
+      "type": "float",
+      "value": "10"
+    },
+    {
       "addr": "0067d550",
       "name": "g_CDemonMissionPtr",
       "type": "CDemonMission*",
@@ -200,7 +208,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 14,
+    "call_site_count": 15,
     "call_sites": [
       {
         "call_addr": "00415f25",
@@ -319,29 +327,32 @@
     "estimated_params": 7
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.5416666666666665,
-    "instruction_count": 96,
+    "avg_pcode_per_instr": 4.198473282442748,
+    "instruction_count": 131,
     "opcode_distribution": {
       "BOOL_NEGATE": 3,
-      "BRANCH": 2,
-      "CALL": 7,
+      "BRANCH": 3,
+      "CALL": 8,
+      "CALLOTHER": 4,
       "CBRANCH": 6,
-      "COPY": 80,
-      "INT_ADD": 44,
-      "INT_AND": 32,
-      "INT_CARRY": 7,
-      "INT_EQUAL": 28,
+      "COPY": 229,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_MULT": 5,
+      "INT_ADD": 55,
+      "INT_AND": 36,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 32,
       "INT_LESS": 3,
       "INT_SBORROW": 3,
-      "INT_SCARRY": 7,
-      "INT_SLESS": 14,
-      "INT_SUB": 26,
-      "LOAD": 24,
-      "POPCOUNT": 14,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 16,
+      "INT_SUB": 29,
+      "LOAD": 27,
+      "POPCOUNT": 16,
       "RETURN": 1,
-      "STORE": 39
+      "STORE": 48
     },
-    "pcode_op_count": 340
+    "pcode_op_count": 550
   },
   "stack_frame": {
     "frame_size": 32,

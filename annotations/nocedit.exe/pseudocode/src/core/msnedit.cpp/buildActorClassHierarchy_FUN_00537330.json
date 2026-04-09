@@ -242,5 +242,29 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "buildActorClassHierarchy_FUN_00537330.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 20,
+          "line": 44,
+          "message": "Redundant assignment of 'pcVar5' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 20,
+          "line": 49,
+          "message": "Redundant assignment of 'pcVar5' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

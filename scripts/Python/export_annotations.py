@@ -99,21 +99,24 @@ def get_export_categories():
         "pseudocode": export_pseudocode,
     }
 
-def export_selected_categories(currentProgram, folder, categories, export_categories, log_info, log_error, strict=False):
+def export_selected_categories(currentProgram, folder, categories, export_categories,
+                               log_info, log_error, strict=False, deep_analysis=False):
     for category in categories:
         category = category.strip().lower()
         if category in export_categories:
             log_info("Exporting category: %s" % category)
-            # Pass strict to pseudocode export
+            # Pass strict and deep_analysis to pseudocode export
             if category == "pseudocode":
-                export_categories[category](currentProgram, folder, strict=strict)
+                export_categories[category](currentProgram, folder, strict=strict,
+                                           deep_analysis=deep_analysis)
             else:
                 export_categories[category](currentProgram, folder)
         else:
             log_error("Unknown category: %s" % category)
             log_error("Available categories: %s" % ", ".join(sorted(export_categories.keys())))
 
-def run_export(currentProgram, output_folder, categories=None, strict=False):
+def run_export(currentProgram, output_folder, categories=None, strict=False,
+               deep_analysis=False):
     """Main export function that takes currentProgram and args.
 
     Args:
@@ -121,6 +124,7 @@ def run_export(currentProgram, output_folder, categories=None, strict=False):
         output_folder: Directory to export annotations to
         categories: List of category names to export, or None for all
         strict: If True, raise error on compilation failures
+        deep_analysis: If True, use deep static analysis mode
     """
 
     # Import after PyGhidra started
@@ -154,9 +158,11 @@ def run_export(currentProgram, output_folder, categories=None, strict=False):
     # Export annotations
     if categories:
         export_selected_categories(currentProgram, output_folder, categories, export_categories,
-                                   log_info, log_error, strict=strict)
+                                   log_info, log_error, strict=strict,
+                                   deep_analysis=deep_analysis)
     else:
-        export_annotations(currentProgram, output_folder, strict=strict)
+        export_annotations(currentProgram, output_folder, strict=strict,
+                          deep_analysis=deep_analysis)
 
     # Export complete
     log_info("=" * 60)
@@ -187,6 +193,8 @@ Available categories:
                         help="Comma-separated list of categories to export (default: all)")
     parser.add_argument("--strict", action="store_true",
                         help="Exit with error if compilation fails (for pseudocode export)")
+    parser.add_argument("--deep-analysis", action="store_true",
+                        help="Deep static analysis mode: longer timeouts, more thorough checks")
     args = parser.parse_args()
 
     # Import pyghidra
@@ -216,7 +224,7 @@ Available categories:
 
             # Run export
             run_export(currentProgram, args.output_folder, categories=categories,
-                       strict=args.strict)
+                       strict=args.strict, deep_analysis=args.deep_analysis)
         project.close()
     except Exception as e:
         print("ERROR: %s" % str(e))

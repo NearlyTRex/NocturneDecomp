@@ -8,9 +8,10 @@
 ; Local Variables:
 ; float            Stack[-0x20]:4  local_20
 ;
-; XREF[2]:
+; XREF[3]:
 ;   core_bat.cpp_CBat_processInEditor_FUN_00414f00 at 00414f96
 ;   core_bat.cpp_CBat_process_FUN_00414a00 at 00414a3f
+;   core_bat.cpp_CBat_setup_FUN_004148a0 at 004148d7
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_evaluate_FUN_00442710

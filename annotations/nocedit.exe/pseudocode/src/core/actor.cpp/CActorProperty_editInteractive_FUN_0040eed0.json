@@ -878,6 +878,62 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CActorProperty_editInteractive_FUN_0040eed0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 102,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 118,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "objectIndex",
+          "column": 13,
+          "line": 387,
+          "message": "The address of local variable 'local_ac' is accessed at non-zero index.",
+          "severity": "error"
+        },
+        {
+          "check_id": "objectIndex",
+          "column": 21,
+          "line": 406,
+          "message": "The address of local variable 'local_ac' is accessed at non-zero index.",
+          "severity": "error"
+        },
+        {
+          "check_id": "objectIndex",
+          "column": 13,
+          "line": 424,
+          "message": "The address of local variable 'local_110' is accessed at non-zero index.",
+          "severity": "error"
+        },
+        {
+          "check_id": "objectIndex",
+          "column": 21,
+          "line": 443,
+          "message": "The address of local variable 'local_110' is accessed at non-zero index.",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Unnamed function parameter",

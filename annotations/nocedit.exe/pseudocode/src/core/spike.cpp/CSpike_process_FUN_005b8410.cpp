@@ -1,6 +1,6 @@
 // Name: core_spike.cpp_CSpike_process_FUN_005b8410
 // Address: 005b8410
-// Address Range: [[005b8410, 005b8672] [005b868f, 005b8726]]
+// Address Range: [[005b8410, 005b8726]]
 // Convention: __cdecl
 // Signature: void __cdecl core_spike_cpp_CSpike_process_FUN_005b8410(CSpike *this_ptr,float delta_time)
 

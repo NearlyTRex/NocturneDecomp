@@ -1,6 +1,6 @@
 // Name: core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0
 // Address: 004869a0
-// Address Range: [[004869a0, 00486b04] [00486b9d, 00486c8e]]
+// Address Range: [[004869a0, 00486c8e]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dracbrid_cpp_CDraculaBride_updateFreakySounds_FUN_004869a0(CDraculaBride *this_ptr,float delta_time)
 

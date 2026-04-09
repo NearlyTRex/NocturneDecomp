@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 110,
+    "assembly_lines": 553,
     "complexity_score": 218,
     "cross_reference_count": 0,
-    "function_call_count": 7,
-    "global_count": 11,
+    "function_call_count": 22,
+    "global_count": 29,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 218,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 328
+    "total_lines": 771
   },
   "cross_references": [],
   "function": {
@@ -22,11 +22,7 @@
     "address_range": [
       [
         "00588060",
-        "005880fc"
-      ],
-      [
-        "0058830a",
-        "005883ba"
+        "00588794"
       ]
     ],
     "convention": "__cdecl",
@@ -36,9 +32,24 @@
   },
   "function_calls": [
     {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
       "addr": "00408ec0",
       "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "00408e80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80"
+    },
+    {
+      "addr": "00408f10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
     },
     {
       "addr": "0040cc10",
@@ -51,9 +62,44 @@
       "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
     },
     {
+      "addr": "00427db0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0"
+    },
+    {
+      "addr": "00448a70",
+      "is_variadic": false,
+      "name": "core_crate.cpp_CCrate_explode_FUN_00448a70"
+    },
+    {
+      "addr": "004c76a0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0"
+    },
+    {
       "addr": "004c7a60",
       "is_variadic": false,
       "name": "core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60"
+    },
+    {
+      "addr": "004cb340",
+      "is_variadic": false,
+      "name": "core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340"
+    },
+    {
+      "addr": "004eb3a0",
+      "is_variadic": false,
+      "name": "core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0"
+    },
+    {
+      "addr": "004eaef0",
+      "is_variadic": false,
+      "name": "core_glass.cpp_CGlass_shatter_FUN_004eaef0"
+    },
+    {
+      "addr": "005741b0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0"
     },
     {
       "addr": "00574180",
@@ -61,9 +107,34 @@
       "name": "core_setcolid.cpp_CDemonSet_init_FUN_00574180"
     },
     {
+      "addr": "00572530",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_raycast_FUN_00572530"
+    },
+    {
+      "addr": "00574230",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_setRayType_FUN_00574230"
+    },
+    {
       "addr": "005b3a40",
       "is_variadic": false,
       "name": "core_sound.cpp_CSound_playActorSound_FUN_005b3a40"
+    },
+    {
+      "addr": "005e0ac0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0"
+    },
+    {
+      "addr": "005e0b00",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_applyDamage_FUN_005e0b00"
+    },
+    {
+      "addr": "005e0aa0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_onProjectileHit_FUN_005e0aa0"
     },
     {
       "addr": "005ee6e0",
@@ -103,6 +174,18 @@
       "value": "-0.125"
     },
     {
+      "addr": "00649b3f",
+      "name": "DOUBLE_00649b3f",
+      "type": "double",
+      "value": "1.5"
+    },
+    {
+      "addr": "00649b47",
+      "name": "DOUBLE_00649b47",
+      "type": "double",
+      "value": "10"
+    },
+    {
       "addr": "0067a3d0",
       "name": "g_CFireEffectPtr",
       "type": "CFireEffect*",
@@ -121,9 +204,33 @@
       "value": "03f6af64"
     },
     {
+      "addr": "00823c4c",
+      "name": "g_CCharacterClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0088797c",
+      "name": "g_CCrateClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "02d12db0",
       "name": "g_CFireEffectInstance",
       "type": "CFireEffect",
+      "value": null
+    },
+    {
+      "addr": "02d7a738",
+      "name": "g_CFlameCanClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83360",
+      "name": "g_CGlassClassInfo.name_hash",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -133,9 +240,81 @@
       "value": null
     },
     {
+      "addr": "03261388",
+      "name": "g_CDemonSetInstance.ray_origin.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326138c",
+      "name": "g_CDemonSetInstance.ray_origin.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03261390",
+      "name": "g_CDemonSetInstance.ray_origin.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03261394",
+      "name": "g_CDemonSetInstance.ray_target.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03261398",
+      "name": "g_CDemonSetInstance.ray_target.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326139c",
+      "name": "g_CDemonSetInstance.ray_target.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613a0",
+      "name": "g_CDemonSetInstance.collision_normal.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613ac",
+      "name": "g_CDemonSetInstance.ground_type",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613b0",
+      "name": "g_CDemonSetInstance.collision_impact_position.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613bc",
+      "name": "g_CDemonSetInstance.collision_actor",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613c0",
+      "name": "g_CDemonSetInstance.collision_part_index",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "03f6af64",
       "name": "g_CSoundInstance",
       "type": "CSound",
+      "value": null
+    },
+    {
+      "addr": "03f87490",
+      "name": "g_CTriggerClassInfo.name_hash",
+      "type": "undefined4",
       "value": null
     }
   ],
@@ -148,36 +327,47 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.28125,
-    "instruction_count": 96,
+    "avg_pcode_per_instr": 4.938689217758985,
+    "instruction_count": 473,
     "opcode_distribution": {
-      "BOOL_OR": 1,
-      "CALL": 8,
-      "CALLIND": 1,
-      "CALLOTHER": 1,
-      "CBRANCH": 2,
-      "COPY": 136,
-      "FLOAT2FLOAT": 8,
-      "FLOAT_ADD": 1,
-      "FLOAT_MULT": 3,
-      "INT2FLOAT": 1,
-      "INT_ADD": 41,
-      "INT_AND": 31,
-      "INT_CARRY": 8,
-      "INT_EQUAL": 28,
-      "INT_LESS": 1,
-      "INT_NOTEQUAL": 1,
-      "INT_SBORROW": 1,
-      "INT_SCARRY": 8,
-      "INT_SLESS": 14,
-      "INT_SUB": 36,
-      "INT_XOR": 2,
-      "LOAD": 19,
-      "POPCOUNT": 14,
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 5,
+      "BRANCH": 7,
+      "CALL": 32,
+      "CALLIND": 6,
+      "CALLOTHER": 3,
+      "CBRANCH": 21,
+      "COPY": 930,
+      "FLOAT2FLOAT": 75,
+      "FLOAT_ADD": 6,
+      "FLOAT_DIV": 3,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 15,
+      "FLOAT_NAN": 4,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 7,
+      "INT2FLOAT": 5,
+      "INT_ADD": 223,
+      "INT_AND": 161,
+      "INT_CARRY": 41,
+      "INT_EQUAL": 136,
+      "INT_LEFT": 8,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 43,
+      "INT_SLESS": 68,
+      "INT_SUB": 124,
+      "INT_XOR": 4,
+      "INT_ZEXT": 8,
+      "LOAD": 106,
+      "POPCOUNT": 68,
       "RETURN": 2,
-      "STORE": 43
+      "STORE": 179
     },
-    "pcode_op_count": 411
+    "pcode_op_count": 2336
   },
   "stack_frame": {
     "frame_size": 292,

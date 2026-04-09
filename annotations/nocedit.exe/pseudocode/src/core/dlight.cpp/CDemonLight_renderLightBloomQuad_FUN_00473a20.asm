@@ -46,6 +46,7 @@
 ;   int g_PerspectiveReciprocal
 ;
 ; Called Functions:
+;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -418,6 +419,18 @@ section .text
     PUSH EDX                            ; 00473f50 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00473f51
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 00473f56
+    MOV ECX,dword ptr [EBP + 0x14]      ; 00473f59
+    PUSH ECX                            ; 00473f5c
+    CALL core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0 ; 00473f5d
+        ;   XREF to: 00474ad0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight * this_ptr)
+    ADD ESP,0x4                         ; 00473f62
+    MOV ESP,EBP                         ; 00473f65
+    POP EBP                             ; 00473f67
+    POP EDI                             ; 00473f68
+    POP ESI                             ; 00473f69
+    POP EBX                             ; 00473f6a
+    RET                                 ; 00473f6b
     XOR EDX,EDX                         ; 00473f6c
         ;   Label: LAB_00473f6c
     MOV dword ptr [ESP + 0x84],EDX      ; 00473f6e

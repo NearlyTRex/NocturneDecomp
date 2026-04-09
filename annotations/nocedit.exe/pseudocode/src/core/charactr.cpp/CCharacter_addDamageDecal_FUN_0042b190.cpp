@@ -1,6 +1,6 @@
 // Name: core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190
 // Address: 0042b190
-// Address Range: [[0042b190, 0042b2e8] [0042b566, 0042b5aa]]
+// Address Range: [[0042b190, 0042b5aa]]
 // Convention: __cdecl
 // Signature: void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042b190(CCharacter *this_ptr)
 

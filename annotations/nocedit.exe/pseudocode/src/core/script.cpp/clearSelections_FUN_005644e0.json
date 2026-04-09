@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 103,
+    "complexity_score": 148,
     "cross_reference_count": 8,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
-    "suspect_count": 8,
+    "suspect_count": 12,
     "suspect_types": [
-      "warning_unreachable"
+      "warning_unreachable",
+      "wrong_global"
     ],
     "total_lines": 22
   },
@@ -175,6 +176,38 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x00564531) */",
       "type": "warning_unreachable"
+    },
+    {
+      "description": "Global g_SelectionStartLine used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 14,
+      "match": "g_SelectionStartLine",
+      "severity": "moderate",
+      "text": "g_SelectionStartLine = -1;",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Global g_SelectionStartColumn used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 17,
+      "match": "g_SelectionStartColumn",
+      "severity": "moderate",
+      "text": "g_SelectionStartColumn = -1;",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Global g_SelectionEndLine used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 18,
+      "match": "g_SelectionEndLine",
+      "severity": "moderate",
+      "text": "g_SelectionEndLine = -1;",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Global g_SelectionEndColumn used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 19,
+      "match": "g_SelectionEndColumn",
+      "severity": "moderate",
+      "text": "g_SelectionEndColumn = -1;",
+      "type": "wrong_global"
     }
   ]
 }

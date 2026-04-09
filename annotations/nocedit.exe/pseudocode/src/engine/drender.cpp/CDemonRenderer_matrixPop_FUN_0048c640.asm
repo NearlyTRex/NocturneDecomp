@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
-; XREF[69]:
+; XREF[70]:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 at 00408b47
 ;   core_anvil.cpp_CAnvil_renderOpaque_FUN_00411ec0 at 00411f3d
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413bcf
@@ -17,7 +17,7 @@
 ;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_00421ef0 at 00421fc9
 ;   core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0 at 004252f3
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420 at 0042a507
-;   ... and 59 more
+;   ... and 60 more
 ;
 ; Called Functions:
 ;   engine_matrix.c_pop_FUN_0050d720
@@ -29,4 +29,5 @@ section .text
     CALL engine_matrix.c_pop_FUN_0050d720 ; 0048c640
         ;   XREF to: 0050d720 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0050d720()
         ;   Label: engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
+    RET                                 ; 0048c645
 

@@ -1,6 +1,6 @@
 // Name: core_trap.cpp_CTrap_renderOpaque_FUN_005de920
 // Address: 005de920
-// Address Range: [[005de920, 005de99d] [005de9ab, 005de9b0]]
+// Address Range: [[005de920, 005de9b0]]
 // Convention: __cdecl
 // Signature: int __cdecl core_trap_cpp_CTrap_renderOpaque_FUN_005de920(CTrap *this_ptr)
 

@@ -429,6 +429,37 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 60,
+          "message": "Uninitialized variable: local_10e",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 11,
+          "line": 96,
+          "message": "Uninitialized variable: local_68",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 17,
+          "line": 122,
+          "message": "Uninitialized variable: local_64",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",

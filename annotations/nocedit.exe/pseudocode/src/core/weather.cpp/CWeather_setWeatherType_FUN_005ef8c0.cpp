@@ -1,6 +1,6 @@
 // Name: core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0
 // Address: 005ef8c0
-// Address Range: [[005ef8c0, 005ef8e8] [005ef92c, 005ef934]]
+// Address Range: [[005ef8c0, 005ef934]]
 // Convention: __cdecl
 // Signature: void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather *this_ptr,EWeatherType type)
 

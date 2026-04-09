@@ -5,10 +5,10 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 77,
+    "assembly_lines": 179,
     "complexity_score": 151,
     "cross_reference_count": 2,
-    "function_call_count": 4,
+    "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 86,
@@ -18,7 +18,7 @@
       "stack_alignment_array",
       "warning_type_propagation"
     ],
-    "total_lines": 163
+    "total_lines": 265
   },
   "cross_references": [
     {
@@ -39,10 +39,6 @@
     "address_range": [
       [
         "0041d680",
-        "0041d72f"
-      ],
-      [
-        "0041d853",
         "0041d89c"
       ]
     ],
@@ -55,6 +51,21 @@
       "addr": "0040cc10",
       "is_variadic": false,
       "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10"
+    },
+    {
+      "addr": "0041a050",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050"
+    },
+    {
+      "addr": "00418e10",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00418e10"
+    },
+    {
+      "addr": "0042bd30",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30"
     },
     {
       "addr": "0042d060",
@@ -70,6 +81,11 @@
       "addr": "005a07a0",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    },
+    {
+      "addr": "005f7b20",
+      "is_variadic": false,
+      "name": "core_xform.cpp_eulerToQuaternion_FUN_005f7b20"
     }
   ],
   "globals": [
@@ -136,34 +152,39 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.276923076923077,
-    "instruction_count": 65,
+    "avg_pcode_per_instr": 4.685897435897436,
+    "instruction_count": 156,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 1,
       "BOOL_OR": 1,
       "BRANCH": 1,
-      "CALL": 4,
+      "CALL": 10,
       "CALLIND": 1,
-      "CBRANCH": 2,
-      "COPY": 52,
-      "INT_ADD": 39,
-      "INT_AND": 29,
-      "INT_CARRY": 10,
-      "INT_EQUAL": 29,
-      "INT_LESS": 2,
-      "INT_NOTEQUAL": 1,
-      "INT_SBORROW": 2,
-      "INT_SCARRY": 10,
-      "INT_SLESS": 14,
-      "INT_SUB": 18,
+      "CBRANCH": 5,
+      "COPY": 177,
+      "FLOAT2FLOAT": 6,
+      "INT_ADD": 98,
+      "INT_AND": 61,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 61,
+      "INT_LESS": 5,
+      "INT_MULT": 9,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 23,
+      "INT_SEXT": 3,
+      "INT_SLESS": 30,
+      "INT_SUB": 52,
       "INT_XOR": 1,
-      "LOAD": 20,
-      "POPCOUNT": 14,
+      "INT_ZEXT": 8,
+      "LOAD": 46,
+      "POPCOUNT": 30,
       "RETURN": 1,
-      "STORE": 25
+      "STORE": 68,
+      "SUBPIECE": 2
     },
-    "pcode_op_count": 278
+    "pcode_op_count": 731
   },
   "stack_frame": {
     "frame_size": 6188,
@@ -250,6 +271,23 @@
         "type": "CBoneGuy *"
       }
     ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0041d81d",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
   },
   "suspects": [
     {

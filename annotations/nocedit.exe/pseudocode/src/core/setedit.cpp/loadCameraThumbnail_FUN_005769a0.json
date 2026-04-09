@@ -508,6 +508,37 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "loadCameraThumbnail_FUN_005769a0.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 13,
+          "line": 146,
+          "message": "Redundant assignment of 'iVar2' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 73,
+          "line": 95,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 70,
+          "line": 96,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",

@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 13,
+    "assembly_lines": 45,
     "complexity_score": 24,
     "cross_reference_count": 0,
-    "function_call_count": 1,
-    "global_count": 0,
+    "function_call_count": 2,
+    "global_count": 6,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 24,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 37
+    "total_lines": 69
   },
   "cross_references": [],
   "function": {
@@ -22,7 +22,7 @@
     "address_range": [
       [
         "0049cb40",
-        "0049cb59"
+        "0049cba0"
       ]
     ],
     "convention": "__cdecl",
@@ -31,12 +31,54 @@
   },
   "function_calls": [
     {
+      "addr": "0049a790",
+      "is_variadic": false,
+      "name": "core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790"
+    },
+    {
       "addr": "0049cb30",
       "is_variadic": false,
       "name": "core_dtri.cpp_getClippedTriangleCount_FUN_0049cb30"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "02ceea68",
+      "name": "g_ClipOutputVertices",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "02ceea74",
+      "name": "g_ClipOutputVertices[1].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ceea80",
+      "name": "g_ClipOutputVertices[2].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ceea8c",
+      "name": "g_ClipOutputVertices[3].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ceeb28",
+      "name": "g_ClippedTriangleBuffer",
+      "type": "CDemonTriangle[8]",
+      "value": null
+    },
+    {
+      "addr": "02ceeb60",
+      "name": "g_ClippedTriangleBuffer[1].vertex1.x",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 0,
     "call_sites": [],
@@ -46,29 +88,30 @@
     "estimated_params": 0
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.3,
-    "instruction_count": 10,
+    "avg_pcode_per_instr": 4.894736842105263,
+    "instruction_count": 38,
     "opcode_distribution": {
       "BOOL_OR": 1,
-      "CALL": 1,
-      "CBRANCH": 1,
-      "COPY": 8,
-      "INT_ADD": 2,
-      "INT_AND": 9,
-      "INT_CARRY": 1,
-      "INT_EQUAL": 8,
-      "INT_LESS": 1,
-      "INT_NOTEQUAL": 1,
-      "INT_SBORROW": 1,
-      "INT_SCARRY": 1,
-      "INT_SLESS": 4,
-      "INT_SUB": 4,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 29,
+      "INT_ADD": 16,
+      "INT_AND": 27,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 26,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 13,
+      "INT_SUB": 13,
       "INT_XOR": 1,
-      "LOAD": 1,
-      "POPCOUNT": 4,
-      "STORE": 4
+      "LOAD": 7,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 12
     },
-    "pcode_op_count": 53
+    "pcode_op_count": 186
   },
   "stack_frame": {
     "frame_size": 4,

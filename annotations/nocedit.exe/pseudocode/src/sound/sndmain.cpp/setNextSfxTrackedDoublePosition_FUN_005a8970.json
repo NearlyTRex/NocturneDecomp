@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 8,
+    "complexity_score": 23,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 8,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "wrong_global"
+    ],
     "total_lines": 18
   },
   "cross_references": [
@@ -117,5 +119,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Global g_SfxOptions used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 8,
+      "match": "g_SfxOptions",
+      "severity": "moderate",
+      "text": "g_SfxOptions[g_SfxLastSlot].position_format = 2;",
+      "type": "wrong_global"
+    }
+  ]
 }

@@ -5,10 +5,10 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 7415,
+    "assembly_lines": 7459,
     "complexity_score": 3460,
     "cross_reference_count": 4,
-    "function_call_count": 77,
+    "function_call_count": 81,
     "global_count": 341,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 3415,
@@ -18,7 +18,7 @@
       "sub84_truncation",
       "warning_type_propagation"
     ],
-    "total_lines": 10830
+    "total_lines": 10874
   },
   "cross_references": [
     {
@@ -51,10 +51,6 @@
     "address_range": [
       [
         "0055a810",
-        "0055c9e6"
-      ],
-      [
-        "0055ca7e",
         "0055fef3"
       ]
     ],
@@ -73,6 +69,11 @@
       "addr": "00408c10",
       "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10"
+    },
+    {
+      "addr": "00410360",
+      "is_variadic": false,
+      "name": "core_actor.cpp_copyVector_FUN_00410360"
     },
     {
       "addr": "00410340",
@@ -123,6 +124,16 @@
       "addr": "0042ddd0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_setLookAtTarget_FUN_0042ddd0"
+    },
+    {
+      "addr": "00471d30",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30"
+    },
+    {
+      "addr": "00471fd0",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0"
     },
     {
       "addr": "004a9ef0",
@@ -303,6 +314,11 @@
       "addr": "005594e0",
       "is_variadic": false,
       "name": "core_script.cpp_getActor_FUN_005594e0"
+    },
+    {
+      "addr": "00567d00",
+      "is_variadic": false,
+      "name": "core_script.cpp_makeVector_FUN_00567d00"
     },
     {
       "addr": "005593f0",
@@ -2552,48 +2568,48 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.470068868091118,
-    "instruction_count": 5663,
+    "avg_pcode_per_instr": 4.4775517362329005,
+    "instruction_count": 5702,
     "opcode_distribution": {
       "BOOL_NEGATE": 320,
       "BOOL_OR": 35,
       "BRANCH": 225,
-      "CALL": 534,
+      "CALL": 539,
       "CALLIND": 7,
       "CBRANCH": 574,
-      "COPY": 4460,
-      "FLOAT2FLOAT": 40,
+      "COPY": 4533,
+      "FLOAT2FLOAT": 46,
       "FLOAT_EQUAL": 17,
       "FLOAT_LESS": 17,
       "FLOAT_MULT": 3,
       "FLOAT_NAN": 34,
-      "FLOAT_NEG": 1,
+      "FLOAT_NEG": 2,
       "INT2FLOAT": 15,
-      "INT_ADD": 2060,
-      "INT_AND": 3581,
-      "INT_CARRY": 711,
-      "INT_EQUAL": 3070,
+      "INT_ADD": 2078,
+      "INT_AND": 3599,
+      "INT_CARRY": 717,
+      "INT_EQUAL": 3088,
       "INT_LEFT": 68,
-      "INT_LESS": 216,
+      "INT_LESS": 219,
       "INT_MULT": 21,
       "INT_NEGATE": 1,
       "INT_NOTEQUAL": 125,
       "INT_OR": 90,
       "INT_RIGHT": 2,
-      "INT_SBORROW": 221,
-      "INT_SCARRY": 823,
+      "INT_SBORROW": 224,
+      "INT_SCARRY": 829,
       "INT_SEXT": 9,
-      "INT_SLESS": 1515,
-      "INT_SUB": 2099,
+      "INT_SLESS": 1524,
+      "INT_SUB": 2117,
       "INT_XOR": 13,
       "INT_ZEXT": 74,
-      "LOAD": 607,
-      "POPCOUNT": 1514,
+      "LOAD": 611,
+      "POPCOUNT": 1523,
       "RETURN": 5,
-      "STORE": 2201,
+      "STORE": 2221,
       "SUBPIECE": 6
     },
-    "pcode_op_count": 25314
+    "pcode_op_count": 25531
   },
   "stack_frame": {
     "frame_size": 16268,
@@ -3789,6 +3805,622 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CScript_step_FUN_0055a810.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 101,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 26,
+          "line": 313,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 25,
+          "line": 316,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 24,
+          "line": 319,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 26,
+          "line": 322,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 26,
+          "line": 325,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 25,
+          "line": 328,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 33,
+          "line": 330,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 31,
+          "line": 333,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 31,
+          "line": 336,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 32,
+          "line": 339,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 32,
+          "line": 342,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 36,
+          "line": 345,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 39,
+          "line": 348,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 35,
+          "line": 352,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 21,
+          "line": 356,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 22,
+          "line": 358,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 22,
+          "line": 360,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 32,
+          "line": 362,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 33,
+          "line": 365,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 35,
+          "line": 368,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 38,
+          "line": 372,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 34,
+          "line": 376,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 42,
+          "line": 379,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 54,
+          "line": 382,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 54,
+          "line": 387,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 53,
+          "line": 392,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 52,
+          "line": 397,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 13,
+          "line": 418,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 28,
+          "line": 430,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 15,
+          "line": 444,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 15,
+          "line": 444,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 23,
+          "line": 533,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 38,
+          "line": 548,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 39,
+          "line": 741,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 53,
+          "line": 788,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 41,
+          "line": 805,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 45,
+          "line": 879,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 47,
+          "line": 907,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 47,
+          "line": 907,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 1022,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 1085,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 51,
+          "line": 1085,
+          "message": "'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 1137,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 1265,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 1325,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 1364,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 1498,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 61,
+          "line": 1604,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 1638,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 1771,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 53,
+          "line": 1799,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 1844,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 51,
+          "line": 1844,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 1891,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 63,
+          "line": 1910,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 1945,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2042,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2095,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2129,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 66,
+          "line": 2150,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2170,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 51,
+          "line": 2170,
+          "message": "'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2228,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2274,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 65,
+          "line": 2300,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2319,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2385,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2451,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 51,
+          "line": 2451,
+          "message": "'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2489,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 51,
+          "line": 2489,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2565,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2639,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 51,
+          "line": 2639,
+          "message": "'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2671,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 53,
+          "line": 2687,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 53,
+          "line": 2687,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2814,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 51,
+          "line": 2814,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2839,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 53,
+          "line": 2861,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 65,
+          "line": 2879,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2911,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 63,
+          "line": 2931,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 2980,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 3064,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 53,
+          "line": 3097,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 53,
+          "line": 3097,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 3145,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 51,
+          "line": 3145,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 3187,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 66,
+          "line": 3208,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 3230,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 51,
+          "line": 3230,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 61,
+          "line": 3260,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 51,
+          "line": 3280,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 53,
+          "line": 3297,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 53,
+          "line": 3297,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 53,
+          "line": 3312,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 53,
+          "line": 3312,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 63,
+          "line": 3338,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

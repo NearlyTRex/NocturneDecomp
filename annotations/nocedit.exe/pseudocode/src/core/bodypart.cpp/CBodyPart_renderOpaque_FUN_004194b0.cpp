@@ -1,6 +1,6 @@
 // Name: core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0
 // Address: 004194b0
-// Address Range: [[004194b0, 004195a3] [004195c0, 004195cb] [004195ec, 00419607]]
+// Address Range: [[004194b0, 00419607]]
 // Convention: __cdecl
 // Signature: int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *this_ptr)
 

@@ -5,10 +5,10 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 377,
+    "assembly_lines": 389,
     "complexity_score": 171,
     "cross_reference_count": 1,
-    "function_call_count": 10,
+    "function_call_count": 11,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 141,
@@ -17,7 +17,7 @@
       "stack_alignment_array",
       "warning_inlined_function"
     ],
-    "total_lines": 518
+    "total_lines": 530
   },
   "cross_references": [
     {
@@ -32,10 +32,6 @@
     "address_range": [
       [
         "00473a20",
-        "00473f55"
-      ],
-      [
-        "00473f6c",
         "00473f87"
       ],
       [
@@ -49,6 +45,11 @@
     "signature": "void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemonLight *this_ptr)"
   },
   "function_calls": [
+    {
+      "addr": "00474ad0",
+      "is_variadic": false,
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0"
+    },
     {
       "addr": "005fe6b0",
       "is_variadic": false,
@@ -182,15 +183,15 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.066282420749279,
-    "instruction_count": 347,
+    "avg_pcode_per_instr": 5.0418994413407825,
+    "instruction_count": 358,
     "opcode_distribution": {
       "BOOL_NEGATE": 13,
       "BOOL_OR": 2,
       "BRANCH": 3,
-      "CALL": 14,
+      "CALL": 15,
       "CBRANCH": 4,
-      "COPY": 820,
+      "COPY": 831,
       "FLOAT2FLOAT": 62,
       "FLOAT_ADD": 4,
       "FLOAT_DIV": 1,
@@ -202,10 +203,10 @@
       "FLOAT_SQRT": 1,
       "FLOAT_SUB": 3,
       "INT2FLOAT": 6,
-      "INT_ADD": 172,
-      "INT_AND": 91,
-      "INT_CARRY": 17,
-      "INT_EQUAL": 58,
+      "INT_ADD": 180,
+      "INT_AND": 95,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 62,
       "INT_LEFT": 9,
       "INT_LESS": 5,
       "INT_MULT": 1,
@@ -213,22 +214,22 @@
       "INT_OR": 20,
       "INT_RIGHT": 2,
       "INT_SBORROW": 5,
-      "INT_SCARRY": 17,
+      "INT_SCARRY": 19,
       "INT_SEXT": 3,
-      "INT_SLESS": 30,
+      "INT_SLESS": 32,
       "INT_SRIGHT": 3,
-      "INT_SUB": 51,
+      "INT_SUB": 53,
       "INT_XOR": 3,
       "INT_ZEXT": 8,
-      "LOAD": 91,
-      "POPCOUNT": 28,
-      "RETURN": 1,
+      "LOAD": 97,
+      "POPCOUNT": 30,
+      "RETURN": 2,
       "ROUND": 13,
-      "STORE": 127,
+      "STORE": 129,
       "SUBPIECE": 2,
       "TRUNC": 13
     },
-    "pcode_op_count": 1758
+    "pcode_op_count": 1805
   },
   "stack_frame": {
     "frame_size": 4204,

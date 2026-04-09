@@ -1,6 +1,6 @@
 // Name: core_moon.cpp_CMoon_render_FUN_00529ed0
 // Address: 00529ed0
-// Address Range: [[00529ed0, 0052a0ca] [0052a11f, 0052a2ab]]
+// Address Range: [[00529ed0, 0052a2bf]]
 // Convention: __cdecl
 // Signature: void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
 
@@ -141,6 +141,27 @@ __asm {
         mov ECX,dword ptr [g_CDemonRendererPtr2]
         push ECX
         call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640
+        imul EAX,dword ptr [g_MoonBats + EBX],0xc
+        mov EAX,dword ptr [ESI + EAX*0x1]
+        mov dword ptr [EBP + -0x4],EAX
+        fild dword ptr [EBP + -0x4]
+        fdivr float ptr [EBX + 0x2f38210]
+        add ESP,0x4
+        fst float ptr [EBP + -0x8]
+        fst double ptr [EBP + -0x28]
+        fcomp double ptr [DOUBLE_00639fc1]
+        fnstsw AX
+        sahf
+        jnc LAB_0052a2ac
+        fld float ptr [EBP + -0x8]
+        fmul float ptr [FLOAT_00639fb1]
+        fsubr float ptr [FLOAT_00639fb5]
+    LAB_0052a108:
+        mov EDX,dword ptr [g_CDemonSetPtr]
+        call crt_math_c_round_FUN_005fe6b0
+        fistp dword ptr [EBP + -0x4]
+        mov EAX,dword ptr [EBP + -0x4]
+        mov dword ptr [EDX + 0x15ae80],EAX
     LAB_0052a11f:
         add EBX,0x18
         cmp EBX,0x2d0
@@ -245,5 +266,15 @@ __asm {
         call engine_3d_c_setBlendMode_FUN_00406dd0
         add ESP,0x4
         mov ESP,EBP
+        pop EBP
+        pop EDI
+        pop ESI
+        pop EBX
+        ret
+    LAB_0052a2ac:
+        fld double ptr [EBP + -0x28]
+        fadd double ptr [DOUBLE_00639f99]
+        fmul double ptr [DOUBLE_00639fa9]
+        jmp LAB_0052a108
 }
 }

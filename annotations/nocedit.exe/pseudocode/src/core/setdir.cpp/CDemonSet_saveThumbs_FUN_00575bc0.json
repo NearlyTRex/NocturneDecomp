@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 25,
+    "assembly_lines": 202,
     "complexity_score": 105,
     "cross_reference_count": 2,
-    "function_call_count": 1,
+    "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 105,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 130
+    "total_lines": 307
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     "address_range": [
       [
         "00575bc0",
-        "00575bff"
+        "00575dec"
       ]
     ],
     "convention": "__cdecl",
@@ -44,9 +44,19 @@
   },
   "function_calls": [
     {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
       "addr": "00575df0",
       "is_variadic": false,
       "name": "core_setdir.cpp_CDemonSet_freeThumbs_FUN_00575df0"
+    },
+    {
+      "addr": "00574910",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910"
     }
   ],
   "globals": [
@@ -57,39 +67,39 @@
       "value": "00575c00"
     },
     {
-      "addr": "00575c00",
-      "name": "caseD_0",
-      "type": "undefined4",
+      "addr": "006464f9",
+      "name": "s_core_setdir_cpp_006464f9",
+      "type": "TerminatedCString",
       "value": null
     },
     {
-      "addr": "00575ca4",
-      "name": "caseD_1",
-      "type": "undefined4",
+      "addr": "0064650c",
+      "name": "s_Hell_froze_0064650c",
+      "type": "TerminatedCString",
       "value": null
     },
     {
-      "addr": "00575cd2",
-      "name": "caseD_2",
-      "type": "undefined4",
+      "addr": "0064651e",
+      "name": "DOUBLE_0064651e",
+      "type": "double",
+      "value": "0.0555555555555556"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
       "value": null
     },
     {
-      "addr": "00575d00",
-      "name": "caseD_3",
-      "type": "undefined4",
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
       "value": null
     },
     {
-      "addr": "00575d2e",
-      "name": "caseD_4",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00575d65",
-      "name": "caseD_5",
-      "type": "undefined4",
+      "addr": "03347108",
+      "name": "g_CZThumbPool",
+      "type": "CZThumb[1500]",
       "value": null
     }
   ],
@@ -125,32 +135,40 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.578947368421052,
-    "instruction_count": 19,
+    "avg_pcode_per_instr": 5.317073170731708,
+    "instruction_count": 164,
     "opcode_distribution": {
+      "BOOL_NEGATE": 25,
+      "BOOL_OR": 1,
+      "BRANCH": 8,
       "BRANCHIND": 1,
-      "CALL": 1,
-      "CBRANCH": 2,
-      "COPY": 14,
-      "INT_ADD": 6,
-      "INT_AND": 14,
-      "INT_CARRY": 2,
-      "INT_EQUAL": 15,
-      "INT_LESS": 3,
-      "INT_MULT": 2,
-      "INT_NOTEQUAL": 1,
-      "INT_SBORROW": 3,
-      "INT_SCARRY": 2,
+      "CALL": 4,
+      "CBRANCH": 10,
+      "COPY": 158,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 72,
+      "INT_AND": 149,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 101,
+      "INT_LEFT": 10,
+      "INT_LESS": 14,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 25,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 14,
       "INT_SEXT": 3,
-      "INT_SLESS": 7,
-      "INT_SUB": 9,
-      "INT_XOR": 2,
-      "LOAD": 4,
-      "POPCOUNT": 7,
-      "STORE": 6,
+      "INT_SLESS": 57,
+      "INT_SUB": 42,
+      "INT_XOR": 19,
+      "LOAD": 14,
+      "POPCOUNT": 47,
+      "RETURN": 1,
+      "STORE": 52,
       "SUBPIECE": 2
     },
-    "pcode_op_count": 106
+    "pcode_op_count": 872
   },
   "stack_frame": {
     "frame_size": 104,

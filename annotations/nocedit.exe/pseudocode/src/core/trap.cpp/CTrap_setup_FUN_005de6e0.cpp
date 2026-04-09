@@ -1,6 +1,6 @@
 // Name: core_trap.cpp_CTrap_setup_FUN_005de6e0
 // Address: 005de6e0
-// Address Range: [[005de6e0, 005de6ea]]
+// Address Range: [[005de6e0, 005de708]]
 // Convention: __cdecl
 // Signature: void __cdecl core_trap_cpp_CTrap_setup_FUN_005de6e0(CTrap *this_ptr)
 

@@ -8,7 +8,8 @@
 ; char *           Stack[0x8]:4   out_result
 ; char *           Stack[0xc]:4   wildcard_pattern
 ;
-; XREF[1]:
+; XREF[2]:
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 at 0048696a
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0 at 005b2401
 ;
 ; Referenced Globals:

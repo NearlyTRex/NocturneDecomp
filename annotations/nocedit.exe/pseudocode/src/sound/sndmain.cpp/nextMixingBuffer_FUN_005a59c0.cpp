@@ -1,6 +1,6 @@
 // Name: sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
 // Address: 005a59c0
-// Address Range: [[005a59c0, 005a5a59] [005a5b49, 005a5b70]]
+// Address Range: [[005a59c0, 005a5b70]]
 // Convention: __cdecl
 // Signature: void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
 

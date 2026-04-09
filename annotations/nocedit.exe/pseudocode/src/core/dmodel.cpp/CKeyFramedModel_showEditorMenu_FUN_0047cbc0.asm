@@ -112,6 +112,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_No_model_00620667
 ;   TerminatedCString s_Model_not_crammed_00620672
+;   TerminatedCString s_d_00620686
+;   TerminatedCString s_Frame_d_of_d_00620689
 ;   TerminatedCString s_Nocturne_R_Keyframed_Mod_00620699
 ;   TerminatedCString s_s_1_Load_model_006206c0
 ;   TerminatedCString s_s_2_Save_model_006206cf
@@ -123,9 +125,7 @@
 ;   TerminatedCString s_s_8_Remove_Null_duplicat_00620753
 ;   TerminatedCString s_s_9_Export_S3D_00620774
 ;   TerminatedCString s_R_Recenter_bias_00620784
-;   TerminatedCString s_G_Ground_bias_00620796
-;   TerminatedCString s_B_Bias_model_using_manua_006207a6
-;   ... and 111 more
+;   ... and 113 more
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_ctor_FUN_004424c0
@@ -143,7 +143,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30
 ;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
 ;   core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10
-;   ... and 56 more
+;   ... and 57 more
 ;
 ; *****************************************************************************
 
@@ -334,6 +334,47 @@ section .text
     MOV EDI,dword ptr [EBP + 0x26]      ; 0047cdea
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 0047cded
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 0047cdf2
+    TEST EDI,EDI                        ; 0047cdf5
+    JZ 0x0047ce34                       ; 0047cdf7
+        ;   XREF to: 0047ce34 (CONDITIONAL_JUMP)  ; LAB_0047ce34
+    MOV EAX,dword ptr [EBP + 0x92]      ; 0047cdf9
+    MOV EDX,dword ptr [EAX + 0x104]     ; 0047cdff
+    XOR EBX,EBX                         ; 0047ce05
+    TEST EDX,EDX                        ; 0047ce07
+    JLE 0x0047ce34                      ; 0047ce09
+        ;   XREF to: 0047ce34 (CONDITIONAL_JUMP)  ; LAB_0047ce34
+    XOR ESI,ESI                         ; 0047ce0b
+    MOV EAX,[0x006703ec]                ; 0047ce0d | g_CDemonRendererPtr2
+        ;   Label: LAB_0047ce0d
+    MOV EAX,dword ptr [EAX]             ; 0047ce12 | g_CDemonRendererInstance
+    ADD EAX,ESI                         ; 0047ce14
+    TEST byte ptr [EAX + 0x13],0x80     ; 0047ce16
+    JZ 0x0047d1bc                       ; 0047ce1a
+        ;   XREF to: 0047d1bc (CONDITIONAL_JUMP)  ; LAB_0047d1bc
+    MOV EAX,dword ptr [EBP + 0x92]      ; 0047ce20
+        ;   Label: LAB_0047ce20
+    INC EBX                             ; 0047ce26
+    MOV EDI,dword ptr [EAX + 0x104]     ; 0047ce27
+    ADD ESI,0x30                        ; 0047ce2d
+    CMP EBX,EDI                         ; 0047ce30
+    JL 0x0047ce0d                       ; 0047ce32
+        ;   XREF to: 0047ce0d (CONDITIONAL_JUMP)  ; LAB_0047ce0d
+    CMP dword ptr [EBP + 0x22],0x0      ; 0047ce34
+        ;   Label: LAB_0047ce34
+    JZ 0x0047ce50                       ; 0047ce38
+        ;   XREF to: 0047ce50 (CONDITIONAL_JUMP)  ; LAB_0047ce50
+    PUSH 0x3                            ; 0047ce3a
+    MOV EDX,dword ptr [0x00678a60]      ; 0047ce3c | g_CEditorToolsPtr
+    PUSH 0x40800000                     ; 0047ce42
+    PUSH EDX                            ; 0047ce47 | g_CEditorToolsInstance
+    CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 ; 0047ce48
+        ;   XREF to: 004a1ca0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(CEditorTools * this_ptr, float scale_factor, int text_color)
+    ADD ESP,0xc                         ; 0047ce4d
+    CMP dword ptr [EBP + 0x2e],0x0      ; 0047ce50
+        ;   Label: LAB_0047ce50
+    JZ 0x0047d201                       ; 0047ce54
+        ;   XREF to: 0047d201 (CONDITIONAL_JUMP)  ; LAB_0047d201
     MOV ESI,dword ptr [EBP + 0x2e]      ; 0047ce5a
         ;   Label: LAB_0047ce5a
     TEST ESI,ESI                        ; 0047ce5d
@@ -663,6 +704,59 @@ section .text
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0047d1b4
     JMP 0x0047ce5a                      ; 0047d1b7
+        ;   XREF to: 0047ce5a (UNCONDITIONAL_JUMP)  ; LAB_0047ce5a
+    MOV EDI,dword ptr [EAX + 0x10]      ; 0047d1bc
+        ;   Label: LAB_0047d1bc
+    MOV EAX,dword ptr [EAX + 0x14]      ; 0047d1bf
+    SAR EAX,0x10                        ; 0047d1c2
+    SAR EDI,0x10                        ; 0047d1c5
+    MOV dword ptr [EBP + 0x42],EAX      ; 0047d1c8
+    TEST EDI,EDI                        ; 0047d1cb
+    JL 0x0047ce20                       ; 0047d1cd
+        ;   XREF to: 0047ce20 (CONDITIONAL_JUMP)  ; LAB_0047ce20
+    PUSH EBX                            ; 0047d1d3
+    PUSH 0x620686                       ; 0047d1d4 | = "%d"
+    LEA EAX,[EBP + 0xfffffdb2]          ; 0047d1d9
+    PUSH EAX                            ; 0047d1df
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047d1e0
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    ADD ESP,0xc                         ; 0047d1e5
+    MOV ECX,dword ptr [EBP + 0x42]      ; 0047d1e8
+    PUSH ECX                            ; 0047d1eb
+    PUSH EDI                            ; 0047d1ec
+    LEA EAX,[EBP + 0xfffffdb2]          ; 0047d1ed
+    PUSH EAX                            ; 0047d1f3
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0047d1f4
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
+    ADD ESP,0xc                         ; 0047d1f9
+    JMP 0x0047ce20                      ; 0047d1fc
+        ;   XREF to: 0047ce20 (UNCONDITIONAL_JUMP)  ; LAB_0047ce20
+    MOV EAX,dword ptr [EBP + 0x92]      ; 0047d201
+        ;   Label: LAB_0047d201
+    FLD float ptr [EBP + 0x1e]          ; 0047d207
+    MOV EAX,dword ptr [EAX + 0x100]     ; 0047d20a
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0047d210
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
+    PUSH EAX                            ; 0047d215
+    FISTP dword ptr [EBP + 0x72]        ; 0047d216
+    MOV EBX,dword ptr [EBP + 0x72]      ; 0047d219
+    PUSH EBX                            ; 0047d21c
+    PUSH 0x620689                       ; 0047d21d | = "Frame: %d of %d"
+    LEA EAX,[EBP + 0xfffffc86]          ; 0047d222
+    PUSH EAX                            ; 0047d228
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047d229
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    MOV EAX,[0x00679398]                ; 0047d22e | g_WindowHeight
+    ADD ESP,0x10                        ; 0047d233
+    SUB EAX,0x37                        ; 0047d236
+    PUSH EAX                            ; 0047d239
+    PUSH 0x0                            ; 0047d23a
+    LEA EAX,[EBP + 0xfffffc86]          ; 0047d23c
+    PUSH EAX                            ; 0047d242
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0047d243
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
+    ADD ESP,0xc                         ; 0047d248
+    JMP 0x0047ce5a                      ; 0047d24b
         ;   XREF to: 0047ce5a (UNCONDITIONAL_JUMP)  ; LAB_0047ce5a
     PUSH ESI                            ; 0047d250
         ;   Label: LAB_0047d250

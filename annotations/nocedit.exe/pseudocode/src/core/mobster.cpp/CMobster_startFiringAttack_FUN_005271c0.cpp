@@ -1,6 +1,6 @@
 // Name: core_mobster.cpp_CMobster_startFiringAttack_FUN_005271c0
 // Address: 005271c0
-// Address Range: [[005271c0, 005271ea]]
+// Address Range: [[005271c0, 0052722f]]
 // Convention: __cdecl
 // Signature: void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_005271c0(CMobster *this_ptr)
 

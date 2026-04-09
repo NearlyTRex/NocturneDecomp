@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 732,
+    "assembly_lines": 770,
     "complexity_score": 273,
     "cross_reference_count": 0,
-    "function_call_count": 21,
-    "global_count": 13,
+    "function_call_count": 22,
+    "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 258,
     "suspect_count": 1,
     "suspect_types": [
       "warning_type_propagation"
     ],
-    "total_lines": 990
+    "total_lines": 1028
   },
   "cross_references": [],
   "function": {
@@ -24,10 +24,6 @@
     "address_range": [
       [
         "005db050",
-        "005db3d8"
-      ],
-      [
-        "005db479",
         "005db83c"
       ],
       [
@@ -70,6 +66,11 @@
       "addr": "00429870",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_process_FUN_00429870"
+    },
+    {
+      "addr": "004edaa0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0"
     },
     {
       "addr": "004ee790",
@@ -225,6 +226,18 @@
       "name": "FLOAT_00664468",
       "type": "float",
       "value": "0.5"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -236,18 +249,18 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.269607843137255,
-    "instruction_count": 612,
+    "avg_pcode_per_instr": 5.282170542635659,
+    "instruction_count": 645,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 13,
       "BOOL_OR": 24,
-      "BRANCH": 21,
-      "CALL": 28,
+      "BRANCH": 22,
+      "CALL": 31,
       "CALLIND": 6,
-      "CBRANCH": 37,
-      "COPY": 1149,
-      "FLOAT2FLOAT": 90,
+      "CBRANCH": 38,
+      "COPY": 1220,
+      "FLOAT2FLOAT": 96,
       "FLOAT_ABS": 2,
       "FLOAT_ADD": 4,
       "FLOAT_DIV": 1,
@@ -259,26 +272,26 @@
       "FLOAT_SQRT": 1,
       "FLOAT_SUB": 15,
       "INT2FLOAT": 4,
-      "INT_ADD": 335,
-      "INT_AND": 245,
-      "INT_CARRY": 44,
-      "INT_EQUAL": 151,
+      "INT_ADD": 353,
+      "INT_AND": 257,
+      "INT_CARRY": 48,
+      "INT_EQUAL": 164,
       "INT_LEFT": 64,
-      "INT_LESS": 8,
+      "INT_LESS": 9,
       "INT_NOTEQUAL": 80,
       "INT_OR": 80,
-      "INT_SBORROW": 8,
-      "INT_SCARRY": 44,
-      "INT_SLESS": 75,
-      "INT_SUB": 106,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 49,
+      "INT_SLESS": 81,
+      "INT_SUB": 118,
       "INT_XOR": 8,
       "INT_ZEXT": 64,
-      "LOAD": 167,
-      "POPCOUNT": 75,
+      "LOAD": 172,
+      "POPCOUNT": 81,
       "RETURN": 1,
-      "STORE": 201
+      "STORE": 218
     },
-    "pcode_op_count": 3225
+    "pcode_op_count": 3407
   },
   "stack_frame": {
     "frame_size": 612,

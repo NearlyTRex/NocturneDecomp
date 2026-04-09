@@ -69,6 +69,9 @@ section .text
     PUSH EDX                            ; 004d6193 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004d6194
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 004d6199
+    JMP 0x004d6158                      ; 004d619c
+        ;   XREF to: 004d6158 (UNCONDITIONAL_JUMP)  ; LAB_004d6158
     PUSH EAX                            ; 004d619e
         ;   Label: LAB_004d619e
     MOV EDX,dword ptr [EAX + 0x154]     ; 004d619f

@@ -352,4 +352,6 @@ section .text
         ;   Label: LAB_00589a2d
     MOV byte ptr [EBX + -0x1],DL        ; 00589a2e | g_SkeleditLastTestSkeletonDir
     MOV byte ptr [EBX],0x0              ; 00589a31 | g_SkeleditLastTestSkeletonDir+1
+    JMP 0x005898ea                      ; 00589a34
+        ;   XREF to: 005898ea (UNCONDITIONAL_JUMP)  ; LAB_005898ea
 

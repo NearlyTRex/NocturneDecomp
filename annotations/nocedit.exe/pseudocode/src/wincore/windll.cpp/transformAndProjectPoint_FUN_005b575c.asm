@@ -7,7 +7,7 @@
 ; SProjectedVertex * Stack[0x4]:4   output
 ; CVector3i *      Stack[0x8]:4   input
 ;
-; XREF[84]:
+; XREF[85]:
 ;   core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0 at 0040df70
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 at 0040de61
 ;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409b90 at 00409c30
@@ -18,7 +18,7 @@
 ;   core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680 at 004206e3
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0 at 004205eb
 ;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425340 at 004253ef
-;   ... and 74 more
+;   ... and 75 more
 ;
 ; Referenced Globals:
 ;   int g_TempX = 0x0

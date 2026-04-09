@@ -8,10 +8,14 @@
 ; CVector3f *      Stack[0x8]:4   position
 ; CVector3f *      Stack[0xc]:4   velocity
 ;
-; XREF[3]:
+; XREF[4]:
+;   core_fire.cpp_CGlassParticle_init_FUN_004c1c00 at 004c1ed0
 ;   core_fire.cpp_CRock_setup_FUN_004c17c0 at 004c17d6
 ;   core_fire.cpp_CShell_setup_FUN_004c6170 at 004c6188
 ;   core_gore.cpp_CBloodParticle_setup_FUN_004eb9a0 at 004eb9c6
+;
+; Referenced Globals:
+;   float FLOAT_0063e724 = 10
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
@@ -67,4 +71,44 @@ section .text
     PUSH 0x3f490fdb                     ; 005456e2
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005456e7
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x2c],EAX      ; 005456ec
+    FLD float ptr [ESP + 0x2c]          ; 005456f0
+    ADD ESP,0x8                         ; 005456f4
+    PUSH 0x40c90fdb                     ; 005456f7
+    PUSH 0x0                            ; 005456fc
+    FSTP float ptr [ESP + 0x18]         ; 005456fe
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00545702
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x2c],EAX      ; 00545707
+    FLD float ptr [ESP + 0x2c]          ; 0054570b
+    ADD ESP,0x8                         ; 0054570f
+    FLD ST0                             ; 00545712
+    FCOS                                ; 00545714
+    FLD float ptr [ESP + 0x10]          ; 00545716
+    FLD ST0                             ; 0054571a
+    FCOS                                ; 0054571c
+    FXCH ST3                            ; 0054571e
+    FSIN                                ; 00545720
+    FXCH                                ; 00545722
+    FSIN                                ; 00545724
+    FXCH ST2                            ; 00545726
+    FLD float ptr [0x0063e724]          ; 00545728 | FLOAT_0063e724
+    FXCH                                ; 0054572e
+    FMUL ST1                            ; 00545730
+    FXCH ST2                            ; 00545732
+    FMUL ST1                            ; 00545734
+    FXCH ST3                            ; 00545736
+    FMULP                               ; 00545738
+    FXCH                                ; 0054573a
+    FMUL ST3                            ; 0054573c
+    FXCH ST2                            ; 0054573e
+    FMULP ST3                           ; 00545740
+    FSTP float ptr [EBX + 0x10]         ; 00545742
+    FSTP float ptr [EBX + 0xc]          ; 00545745
+    FSTP float ptr [EBX + 0x14]         ; 00545748
+    MOV dword ptr [EBX + 0x18],0x40a00000 ; 0054574b
+    MOV dword ptr [EBX + 0x30],0x0      ; 00545752
+    ADD ESP,0x28                        ; 00545759
+    POP EBX                             ; 0054575c
+    RET                                 ; 0054575d
 

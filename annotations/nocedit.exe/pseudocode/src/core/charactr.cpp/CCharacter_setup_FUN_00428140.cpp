@@ -1,6 +1,6 @@
 // Name: core_charactr.cpp_CCharacter_setup_FUN_00428140
 // Address: 00428140
-// Address Range: [[00428140, 00428150]]
+// Address Range: [[00428140, 0042839c]]
 // Convention: __cdecl
 // Signature: void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_ptr)
 

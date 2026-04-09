@@ -4,7 +4,7 @@
 ; void __cdecl engine_2d_c_clearInputAndWait_FUN_00403260(void)
 ;
 ;
-; XREF[99]:
+; XREF[100]:
 ;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043d407
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043dcb0
 ;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043df12
@@ -15,7 +15,7 @@
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be288
 ;   core_game.cpp_CGame_finishAct_FUN_004e3b90 at 004e3fe5
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e3306
-;   ... and 89 more
+;   ... and 90 more
 ;
 ; Referenced Globals:
 ;   char[512] g_KeyboardState

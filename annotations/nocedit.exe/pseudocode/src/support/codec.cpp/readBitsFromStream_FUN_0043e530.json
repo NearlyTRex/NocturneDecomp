@@ -161,6 +161,37 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "readBitsFromStream_FUN_0043e530.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "shiftNegativeLHS",
+          "column": 18,
+          "line": 25,
+          "message": "Shifting a negative value is technically undefined behaviour",
+          "severity": "portability"
+        },
+        {
+          "check_id": "shiftNegativeLHS",
+          "column": 18,
+          "line": 40,
+          "message": "Shifting a negative value is technically undefined behaviour",
+          "severity": "portability"
+        },
+        {
+          "check_id": "shiftNegativeLHS",
+          "column": 33,
+          "line": 61,
+          "message": "Shifting a negative value is technically undefined behaviour",
+          "severity": "portability"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Unknown/mangled field access",

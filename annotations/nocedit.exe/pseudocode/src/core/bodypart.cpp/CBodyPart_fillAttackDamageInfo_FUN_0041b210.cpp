@@ -1,6 +1,6 @@
 // Name: core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_0041b210
 // Address: 0041b210
-// Address Range: [[0041b210, 0041b23f]]
+// Address Range: [[0041b210, 0041b25a]]
 // Convention: __cdecl
 // Signature: void __cdecl core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_0041b210(CBodyPart *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 

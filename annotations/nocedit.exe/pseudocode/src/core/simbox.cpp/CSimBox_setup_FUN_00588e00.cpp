@@ -1,6 +1,6 @@
 // Name: core_simbox.cpp_CSimBox_setup_FUN_00588e00
 // Address: 00588e00
-// Address Range: [[00588e00, 00588e1d]]
+// Address Range: [[00588e00, 00588f1e]]
 // Convention: __cdecl
 // Signature: void __cdecl core_simbox_cpp_CSimBox_setup_FUN_00588e00(CSimBox *this_ptr)
 

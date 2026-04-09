@@ -8,18 +8,18 @@
 ; CVector3f *      Stack[0x8]:4   position
 ; CVector3f *      Stack[0xc]:4   euler_angles
 ;
-; XREF[35]:
+; XREF[38]:
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 at 0041a9ba
 ;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40 at 0041ca9b
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422be1
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0 at 004260cb
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190 at 0042b3ae
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 at 0042cede
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 at 0042d181
 ;   core_fire.cpp_CBulletHole_init_FUN_004bf7f0 at 004bf917
 ;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 at 004d722f
 ;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 at 004d5724
-;   core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550 at 004f6728
-;   ... and 25 more
+;   ... and 28 more
 ;
 ; *****************************************************************************
 

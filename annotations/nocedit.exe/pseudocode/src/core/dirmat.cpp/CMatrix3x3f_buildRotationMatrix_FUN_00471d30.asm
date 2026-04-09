@@ -7,7 +7,7 @@
 ; CMatrix3x3f *    Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   euler_angles
 ;
-; XREF[46]:
+; XREF[58]:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 at 00408c62
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 at 0041a651
 ;   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40 at 0041aac2
@@ -16,9 +16,9 @@
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422c51
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0 at 004262c8
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc0 at 00425e41
+;   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 at 0042bb97
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 at 0042efa5
-;   core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0 at 0043e1f8
-;   ... and 36 more
+;   ... and 48 more
 ;
 ; *****************************************************************************
 

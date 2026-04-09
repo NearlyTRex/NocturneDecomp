@@ -1,6 +1,6 @@
 // Name: shape_meshlod.cpp_computeDistanceSquaredToEdge_FUN_00515110
 // Address: 00515110
-// Address Range: [[00515110, 0051514f]]
+// Address Range: [[00515110, 0051515c]]
 // Convention: __cdecl
 // Signature: double __cdecl shape_meshlod_cpp_computeDistanceSquaredToEdge_FUN_00515110(CVector3f *query_point,CVector3f *edge_vertex_0,CVector3f *edge_vertex_1)
 

@@ -1,6 +1,6 @@
 // Name: core_gun.cpp_CGun_fire_FUN_004f0350
 // Address: 004f0350
-// Address Range: [[004f0350, 004f05f2] [004f06df, 004f0b16]]
+// Address Range: [[004f0350, 004f0b16]]
 // Convention: __cdecl
 // Signature: int __cdecl core_gun_cpp_CGun_fire_FUN_004f0350(CGun *this_ptr)
 

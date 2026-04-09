@@ -16,7 +16,8 @@
 ; float *          Stack[-0x14]:4  local_14
 ; float *          Stack[-0x10]:4  local_10
 ;
-; XREF[1]:
+; XREF[2]:
+;   core_bodypart.cpp_CBodyPart_process_FUN_00419be0 at 00419de6
 ;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 at 00421def
 ;
 ; *****************************************************************************

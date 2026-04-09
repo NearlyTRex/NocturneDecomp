@@ -1,6 +1,6 @@
 // Name: core_anvil.cpp_CAnvil_renderOpaque_FUN_00411ec0
 // Address: 00411ec0
-// Address Range: [[00411ec0, 00411f41]]
+// Address Range: [[00411ec0, 00411f4d]]
 // Convention: __cdecl
 // Signature: int __cdecl core_anvil_cpp_CAnvil_renderOpaque_FUN_00411ec0(CAnvil *this_ptr)
 

@@ -1,6 +1,6 @@
 // Name: core_battery.cpp_CBattery_renderOpaque_FUN_00417f80
 // Address: 00417f80
-// Address Range: [[00417f80, 00417fdb] [00417fe7, 00417ffb]]
+// Address Range: [[00417f80, 00417ffb]]
 // Convention: __cdecl
 // Signature: int __cdecl core_battery_cpp_CBattery_renderOpaque_FUN_00417f80(CBattery *this_ptr)
 

@@ -1,6 +1,6 @@
 // Name: core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 // Address: 004edbb0
-// Address Range: [[004edbb0, 004edce4] [004eddc2, 004eddd4]]
+// Address Range: [[004edbb0, 004eddd4]]
 // Convention: __cdecl
 // Signature: void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,int blood_type)
 

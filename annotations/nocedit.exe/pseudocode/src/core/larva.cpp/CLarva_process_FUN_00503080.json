@@ -5,11 +5,11 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 637,
+    "assembly_lines": 797,
     "complexity_score": 428,
     "cross_reference_count": 0,
-    "function_call_count": 22,
-    "global_count": 17,
+    "function_call_count": 25,
+    "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 333,
     "suspect_count": 7,
@@ -20,7 +20,7 @@
       "warning_inlined_function",
       "warning_unreachable"
     ],
-    "total_lines": 970
+    "total_lines": 1130
   },
   "cross_references": [],
   "function": {
@@ -28,18 +28,6 @@
     "address_range": [
       [
         "00503080",
-        "0050334d"
-      ],
-      [
-        "005034b7",
-        "00503676"
-      ],
-      [
-        "0050368b",
-        "005038ec"
-      ],
-      [
-        "0050393e",
         "00503951"
       ]
     ],
@@ -105,6 +93,11 @@
       "name": "core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0"
     },
     {
+      "addr": "004c7db0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createFireball_FUN_004c7db0"
+    },
+    {
       "addr": "004ede30",
       "is_variadic": false,
       "name": "core_gore.cpp_CGore_createBloodPool_FUN_004ede30"
@@ -145,6 +138,16 @@
       "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
     },
     {
+      "addr": "006013b1",
+      "is_variadic": false,
+      "name": "crt_math.c_atan2_FUN_006013b1"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
       "addr": "00441890",
       "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
@@ -168,6 +171,12 @@
       "value": null
     },
     {
+      "addr": "00630ee5",
+      "name": "s_larva_blow1_wav_00630ee5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
       "addr": "00630ef5",
       "name": "s_s_confused_while_walking_00630ef5",
       "type": "TerminatedCString",
@@ -176,6 +185,12 @@
     {
       "addr": "00630f1f",
       "name": "s_s_gave_up_chase_I_m_conf_00630f1f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630f40",
+      "name": "s_slime_wav_f_f_00630f40",
       "type": "TerminatedCString",
       "value": null
     },
@@ -216,6 +231,18 @@
       "value": "2"
     },
     {
+      "addr": "00630f83",
+      "name": "DOUBLE_00630f83",
+      "type": "double",
+      "value": "-0.523598775583333"
+    },
+    {
+      "addr": "00630f8b",
+      "name": "DOUBLE_00630f8b",
+      "type": "double",
+      "value": "0.523598775583333"
+    },
+    {
       "addr": "0066071c",
       "name": "FLOAT_0066071c",
       "type": "float",
@@ -226,6 +253,12 @@
       "name": "g_CConsolePtr",
       "type": "CConsole*",
       "value": "0083b1a4"
+    },
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
     },
     {
       "addr": "0067b9a0",
@@ -243,6 +276,12 @@
       "addr": "0083b1a4",
       "name": "g_CConsoleInstance",
       "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
       "value": null
     },
     {
@@ -273,48 +312,50 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.646946564885496,
-    "instruction_count": 524,
+    "avg_pcode_per_instr": 5.6775631500742945,
+    "instruction_count": 673,
     "opcode_distribution": {
-      "BOOL_NEGATE": 15,
-      "BOOL_OR": 11,
-      "BRANCH": 12,
-      "CALL": 37,
-      "CALLIND": 4,
-      "CALLOTHER": 2,
-      "CBRANCH": 34,
-      "COPY": 1207,
-      "FLOAT2FLOAT": 107,
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 12,
+      "BRANCH": 15,
+      "CALL": 42,
+      "CALLIND": 6,
+      "CALLOTHER": 7,
+      "CBRANCH": 36,
+      "COPY": 1680,
+      "FLOAT2FLOAT": 147,
       "FLOAT_ABS": 2,
-      "FLOAT_ADD": 12,
-      "FLOAT_DIV": 1,
-      "FLOAT_EQUAL": 8,
-      "FLOAT_LESS": 8,
-      "FLOAT_MULT": 18,
-      "FLOAT_NAN": 16,
-      "FLOAT_SUB": 14,
-      "INT2FLOAT": 5,
-      "INT_ADD": 239,
-      "INT_AND": 197,
-      "INT_CARRY": 40,
-      "INT_EQUAL": 142,
-      "INT_LEFT": 32,
-      "INT_LESS": 15,
-      "INT_NOTEQUAL": 43,
-      "INT_OR": 40,
-      "INT_SBORROW": 15,
-      "INT_SCARRY": 40,
-      "INT_SLESS": 71,
+      "FLOAT_ADD": 15,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 9,
+      "FLOAT_LESS": 9,
+      "FLOAT_MULT": 32,
+      "FLOAT_NAN": 18,
+      "FLOAT_NEG": 1,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 15,
+      "INT2FLOAT": 7,
+      "INT_ADD": 310,
+      "INT_AND": 228,
+      "INT_CARRY": 49,
+      "INT_EQUAL": 168,
+      "INT_LEFT": 36,
+      "INT_LESS": 18,
+      "INT_NOTEQUAL": 48,
+      "INT_OR": 45,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 49,
+      "INT_SLESS": 84,
       "INT_SRIGHT": 2,
-      "INT_SUB": 147,
-      "INT_XOR": 1,
-      "INT_ZEXT": 32,
-      "LOAD": 121,
-      "POPCOUNT": 71,
+      "INT_SUB": 173,
+      "INT_XOR": 2,
+      "INT_ZEXT": 36,
+      "LOAD": 151,
+      "POPCOUNT": 84,
       "RETURN": 1,
-      "STORE": 197
+      "STORE": 246
     },
-    "pcode_op_count": 2959
+    "pcode_op_count": 3821
   },
   "stack_frame": {
     "frame_size": 508,
@@ -618,6 +659,28 @@
         "type": "float"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CLarva_process_FUN_00503080.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 35,
+          "line": 93,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 16,
+          "line": 316,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

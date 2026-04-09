@@ -1,6 +1,6 @@
 // Name: core_flamecan.cpp_CFlameCan_renderOpaque_FUN_004cb4c0
 // Address: 004cb4c0
-// Address Range: [[004cb4c0, 004cb521] [004cb52d, 004cb541]]
+// Address Range: [[004cb4c0, 004cb541]]
 // Convention: __cdecl
 // Signature: int __cdecl core_flamecan_cpp_CFlameCan_renderOpaque_FUN_004cb4c0(CFlameCan *this_ptr)
 

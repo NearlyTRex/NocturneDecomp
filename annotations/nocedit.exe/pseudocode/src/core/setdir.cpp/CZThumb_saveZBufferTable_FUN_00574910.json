@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 197,
     "complexity_score": 121,
-    "cross_reference_count": 0,
+    "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 18,
     "max_suspect_severity": "mild",
@@ -18,7 +18,14 @@
     ],
     "total_lines": 273
   },
-  "cross_references": [],
+  "cross_references": [
+    {
+      "addr": "00575bc0",
+      "from_addr": "00575c65",
+      "name": "core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
   "function": {
     "address": "00574910",
     "address_range": [
@@ -204,9 +211,32 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00575c65",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "00575dd7",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "high",
     "declared_params": 7,
     "declared_stack_bytes": 28,
     "estimated_params": 7

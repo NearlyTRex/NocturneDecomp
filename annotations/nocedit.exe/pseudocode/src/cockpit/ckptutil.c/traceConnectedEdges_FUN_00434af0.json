@@ -658,6 +658,30 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "traceConnectedEdges_FUN_00434af0.keep.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 45,
+          "line": 170,
+          "message": "Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 45,
+          "line": 283,
+          "message": "Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",

@@ -1,6 +1,6 @@
 // Name: core_flamegun.cpp_CFlameThrower_getDamageAlt_FUN_004cbad1
 // Address: 004cbad1
-// Address Range: [[004cbad1, 004cbadf]]
+// Address Range: [[004cbad1, 004cbaf4]]
 // Convention: __cdecl
 // Signature: float __cdecl core_flamegun_cpp_CFlameThrower_getDamageAlt_FUN_004cbad1(CFlameThrower *this_ptr)
 

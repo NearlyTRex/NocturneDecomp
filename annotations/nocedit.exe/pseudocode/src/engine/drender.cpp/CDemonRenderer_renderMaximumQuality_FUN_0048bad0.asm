@@ -7,18 +7,18 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
-; XREF[15]:
+; XREF[16]:
 ;   core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0 at 0040e020
 ;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0 at 00471752
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20 at 00473f32
 ;   core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210 at 00475834
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0 at 004751d5
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_004760d0 at 00476590
+;   core_fire.cpp_CFireball_render_FUN_004c0e70 at 004c1267
 ;   core_fire.cpp_CGunFlame_render_FUN_004c50b0 at 004c55ca
 ;   core_fire.cpp_CLaserBeam_render_FUN_004c25c0 at 004c2d37
 ;   core_fire.cpp_CPopcorn_render_FUN_004c64c0 at 004c67f4
-;   core_fire.cpp_CRainDrop_render_FUN_004c6830 at 004c6b9e
-;   ... and 5 more
+;   ... and 6 more
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8

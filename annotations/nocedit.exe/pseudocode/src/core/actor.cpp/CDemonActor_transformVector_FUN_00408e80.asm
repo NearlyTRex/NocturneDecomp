@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   output
 ; CVector3f *      Stack[0xc]:4   input
 ;
-; XREF[49]:
+; XREF[54]:
 ;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270 at 004092c3
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a2cd
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 00409631
@@ -19,7 +19,7 @@
 ;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 at 00421d37
 ;   core_charactr.cpp_CCharacter_dropCarriedObject_FUN_0042cfe0 at 0042d013
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 at 00428f5c
-;   ... and 39 more
+;   ... and 44 more
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0

@@ -1,6 +1,6 @@
 // Name: core_vessel.cpp_CCryptVessel_renderOpaque_FUN_005e9750
 // Address: 005e9750
-// Address Range: [[005e9750, 005e97b3]]
+// Address Range: [[005e9750, 005e98a5]]
 // Convention: __cdecl
 // Signature: int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_005e9750(CCryptVessel *this_ptr)
 

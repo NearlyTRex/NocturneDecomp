@@ -48,6 +48,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_00002424
 ;   TerminatedCString s_gh_alrt_1_4_wav_0063873c
+;   TerminatedCString s_gh_hits_1_4_wav_0063874d
 ;   double DOUBLE_00638763 = 2
 ;   float FLOAT_0063876b = 4.242857
 ;   float FLOAT_0063876f = 12.22222
@@ -60,8 +61,7 @@
 ;   double DOUBLE_006387a3 = 3.14159265350000
 ;   double DOUBLE_006387ab = 32
 ;   float FLOAT_00661408 = 2.5
-;   CGame* g_CGamePtr = 02d81a9c
-;   ... and 10 more
+;   ... and 11 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -71,15 +71,15 @@
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
+;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_cloth.cpp_CCloth_process_FUN_0043ab80
+;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004ede30
 ;   core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   core_motion.cpp_CMotionController_frameToMarkerPosition_FUN_0052e2b0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
-;   ... and 7 more
+;   ... and 10 more
 ;
 ; *****************************************************************************
 
@@ -561,6 +561,57 @@ section .text
     PUSH 0x40e00000                     ; 005201fa
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005201ff
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    ADD ESP,0x8                         ; 00520204
+    MOV ESI,dword ptr [0x02f33398]      ; 00520207 | g_MimicIndices[8]
+    MOV dword ptr [EBP + 0x76],EAX      ; 0052020d
+    PUSH ESI                            ; 00520210
+    LEA EAX,[EBP + -0x22]               ; 00520211
+    MOV EDI,dword ptr [EBP + 0x72]      ; 00520214
+    PUSH EAX                            ; 00520217
+    FLD float ptr [EBP + 0x76]          ; 00520218
+    PUSH EDI                            ; 0052021b
+    FSTP float ptr [EBP + 0x66]         ; 0052021c
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 0052021f
+        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
+    MOV AH,byte ptr [EBP + -0x1f]       ; 00520224
+    XOR AH,0x80                         ; 00520227
+    ADD ESP,0xc                         ; 0052022a
+    MOV byte ptr [EBP + -0x1f],AH       ; 0052022d
+    LEA EAX,[EBP + 0xfffffea6]          ; 00520230
+    PUSH EAX                            ; 00520236
+    CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0 ; 00520237
+        ;   XREF to: 00427db0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo * this_ptr)
+    MOV EAX,dword ptr [EBP + 0x66]      ; 0052023c
+    ADD ESP,0x4                         ; 0052023f
+    MOV dword ptr [EBP + 0xfffffeaa],EAX ; 00520242
+    LEA EAX,[EBP + 0xfffffea6]          ; 00520248
+    PUSH EAX                            ; 0052024e
+    LEA EAX,[EBP + -0x22]               ; 0052024f
+    PUSH 0x3e4ccccd                     ; 00520252
+    PUSH EAX                            ; 00520257
+    LEA EAX,[EBP + 0xffffff5a]          ; 00520258
+    PUSH EAX                            ; 0052025e
+    PUSH EBX                            ; 0052025f
+    MOV dword ptr [EBP + 0xfffffeda],EBX ; 00520260
+    MOV dword ptr [EBP + 0xfffffede],EBX ; 00520266
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 0052026c
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
+    ADD ESP,0xc                         ; 00520271
+    PUSH EAX                            ; 00520274
+    PUSH EBX                            ; 00520275
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 00520276
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
+    ADD ESP,0x10                        ; 0052027b
+    TEST EAX,EAX                        ; 0052027e
+    JZ 0x0051fdb4                       ; 00520280
+        ;   XREF to: 0051fdb4 (CONDITIONAL_JUMP)  ; LAB_0051fdb4
+    PUSH 0x63874d                       ; 00520286 | = "gh-hits[1,4].wav"
+    MOV EAX,dword ptr [EBX + 0x154]     ; 0052028b
+    PUSH EBX                            ; 00520291
+    CALL dword ptr [EAX + 0x24]         ; 00520292
+    ADD ESP,0x8                         ; 00520295
+    JMP 0x0051fdb4                      ; 00520298
+        ;   XREF to: 0051fdb4 (UNCONDITIONAL_JUMP)  ; LAB_0051fdb4
     JBE 0x0051fd7d                      ; 0052029d
         ;   XREF to: 0051fd7d (CONDITIONAL_JUMP)  ; LAB_0051fd7d
         ;   Label: LAB_0052029d

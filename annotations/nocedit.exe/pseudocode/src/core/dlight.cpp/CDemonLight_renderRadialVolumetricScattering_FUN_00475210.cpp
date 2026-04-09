@@ -1,6 +1,6 @@
 // Name: core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210
 // Address: 00475210
-// Address Range: [[00475210, 00475878] [00475894, 004758c3]]
+// Address Range: [[00475210, 004758c3]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemonLight *this_ptr)
 

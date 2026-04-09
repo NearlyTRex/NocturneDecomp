@@ -5,7 +5,7 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 349,
+    "assembly_lines": 362,
     "complexity_score": 184,
     "cross_reference_count": 2,
     "function_call_count": 5,
@@ -18,7 +18,7 @@
       "stack_ref",
       "warning_inlined_function"
     ],
-    "total_lines": 488
+    "total_lines": 501
   },
   "cross_references": [
     {
@@ -39,7 +39,7 @@
     "address_range": [
       [
         "00452180",
-        "00452707"
+        "00452726"
       ]
     ],
     "convention": "__cdecl",
@@ -214,34 +214,35 @@
     "estimated_params": 5
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.741641337386018,
-    "instruction_count": 329,
+    "avg_pcode_per_instr": 4.733137829912024,
+    "instruction_count": 341,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
-      "CALL": 14,
+      "CALL": 15,
       "CBRANCH": 3,
-      "COPY": 770,
+      "COPY": 781,
       "FLOAT2FLOAT": 55,
       "FLOAT_MULT": 27,
       "FLOAT_SUB": 3,
-      "INT_ADD": 182,
-      "INT_AND": 53,
-      "INT_CARRY": 19,
-      "INT_EQUAL": 50,
+      "INT_ADD": 190,
+      "INT_AND": 59,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 56,
       "INT_LESS": 2,
       "INT_MULT": 1,
       "INT_SBORROW": 2,
-      "INT_SCARRY": 19,
-      "INT_SLESS": 25,
-      "INT_SUB": 41,
+      "INT_SCARRY": 22,
+      "INT_SLESS": 28,
+      "INT_SUB": 43,
       "INT_XOR": 1,
-      "LOAD": 102,
-      "POPCOUNT": 25,
+      "LOAD": 107,
+      "POPCOUNT": 28,
+      "RETURN": 1,
       "ROUND": 27,
-      "STORE": 111,
+      "STORE": 113,
       "TRUNC": 27
     },
-    "pcode_op_count": 1560
+    "pcode_op_count": 1614
   },
   "stack_frame": {
     "frame_size": 316,
@@ -671,6 +672,148 @@
         "type": "CVector3f *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CDemonCamera_isBoundingBoxVisible_FUN_00452180.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 22,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 22,
+          "line": 86,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 28,
+          "line": 86,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 22,
+          "line": 88,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 28,
+          "line": 88,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 22,
+          "line": 89,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 28,
+          "line": 89,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 93,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 94,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 99,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 100,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 105,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 106,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 107,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 22,
+          "line": 111,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 22,
+          "line": 112,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 119,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 120,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 125,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 126,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 131,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 132,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 133,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

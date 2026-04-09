@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
-; XREF[7]:
+; XREF[8]:
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413c5a
 ;   core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 at 0041753c
 ;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_0041d1b0 at 0041d249
@@ -14,6 +14,7 @@
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 at 004ff170
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_0052b160 at 0052b23f
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005971d9
+;   core_vessel.cpp_CCryptVessel_renderOpaque_FUN_005e9750 at 005e986d
 ;
 ; Referenced Globals:
 ;   int g_CaptureFaceCount

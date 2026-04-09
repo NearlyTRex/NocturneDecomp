@@ -52,6 +52,8 @@
 ;   double DOUBLE_00654e3c = 6
 ;   double DOUBLE_00654e44 = 16
 ;   float FLOAT_00664468 = 0.5
+;   CGore* g_CGorePtr = 02d83364
+;   CGore g_CGoreInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -60,6 +62,7 @@
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
 ;   core_charactr.cpp_CCharacter_process_FUN_00429870
+;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0
 ;   core_grave.cpp_CGrave_startAnimation_FUN_004ee790
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -68,8 +71,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
 ;   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
 ;   core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005db900
-;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-;   ... and 6 more
+;   ... and 7 more
 ;
 ; *****************************************************************************
 
@@ -340,6 +342,44 @@ section .text
     PUSH 0xc0e00000                     ; 005db3cf
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005db3d4
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x250],EAX     ; 005db3d9
+    FLD float ptr [ESP + 0x250]         ; 005db3e0
+    ADD ESP,0x8                         ; 005db3e7
+    PUSH 0x40e00000                     ; 005db3ea
+    PUSH 0xc0e00000                     ; 005db3ef
+    FSTP float ptr [ESP + 0x1ec]        ; 005db3f4
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005db3fb
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x250],EAX     ; 005db400
+    FLD float ptr [ESP + 0x250]         ; 005db407
+    ADD ESP,0x8                         ; 005db40e
+    PUSH 0x41700000                     ; 005db411
+    PUSH 0xbf800000                     ; 005db416
+    FSTP float ptr [ESP + 0x1f4]        ; 005db41b
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005db422
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x250],EAX     ; 005db427
+    FLD float ptr [ESP + 0x250]         ; 005db42e
+    ADD ESP,0x8                         ; 005db435
+    FSTP float ptr [ESP + 0x1e8]        ; 005db438
+    MOV EAX,dword ptr [EBX + 0xbe3c]    ; 005db43f
+    MOV EDI,dword ptr [EAX + 0x2610]    ; 005db445
+    PUSH EDI                            ; 005db44b
+    LEA EAX,[ESP + 0x1e8]               ; 005db44c
+    PUSH EAX                            ; 005db453
+    LEA EAX,[ESP + 0x1c8]               ; 005db454
+    PUSH EAX                            ; 005db45b
+    MOV EAX,[0x0067b9a0]                ; 005db45c | g_CGorePtr | g_CGoreInstance
+    PUSH EAX                            ; 005db461 | g_CGoreInstance
+    INC ESI                             ; 005db462
+    CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0 ; 005db463
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore * this_ptr, CVector3f * position, CVector3f * velocity, int blood_type)
+    ADD ESP,0x10                        ; 005db468
+    CMP ESI,0x46                        ; 005db46b
+    JGE 0x005db0b1                      ; 005db46e
+        ;   XREF to: 005db0b1 (CONDITIONAL_JUMP)  ; LAB_005db0b1
+    JMP 0x005db3ca                      ; 005db474
+        ;   XREF to: 005db3ca (UNCONDITIONAL_JUMP)  ; LAB_005db3ca
     MOV ESI,dword ptr [EBX + 0xbe3c]    ; 005db479
         ;   Label: LAB_005db479
     TEST ESI,ESI                        ; 005db47f

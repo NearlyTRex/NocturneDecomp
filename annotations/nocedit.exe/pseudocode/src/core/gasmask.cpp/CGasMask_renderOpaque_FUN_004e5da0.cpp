@@ -1,6 +1,6 @@
 // Name: core_gasmask.cpp_CGasMask_renderOpaque_FUN_004e5da0
 // Address: 004e5da0
-// Address Range: [[004e5da0, 004e5dfb] [004e5e07, 004e5e1b]]
+// Address Range: [[004e5da0, 004e5e1b]]
 // Convention: __cdecl
 // Signature: int __cdecl core_gasmask_cpp_CGasMask_renderOpaque_FUN_004e5da0(CGasMask *this_ptr)
 

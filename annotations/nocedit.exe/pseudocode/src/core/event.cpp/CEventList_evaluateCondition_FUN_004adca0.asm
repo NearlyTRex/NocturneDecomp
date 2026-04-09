@@ -7,7 +7,7 @@
 ; CEventList *     Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   condition_expression
 ;
-; XREF[48]:
+; XREF[49]:
 ;   core_anvil.cpp_CAnvil_process_FUN_00411d90 at 00411da6
 ;   core_armour.cpp_CArmour_process_FUN_00412260 at 0041233a
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 00412eae
@@ -18,7 +18,7 @@
 ;   core_bugs.cpp_CBugs_process_FUN_004250f0 at 00425149
 ;   core_conveyor.cpp_CConveyor_process_FUN_00441df0 at 00441e09
 ;   core_curtain.cpp_CCurtain_process_FUN_0044a920 at 0044a96e
-;   ... and 38 more
+;   ... and 39 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_006252ae

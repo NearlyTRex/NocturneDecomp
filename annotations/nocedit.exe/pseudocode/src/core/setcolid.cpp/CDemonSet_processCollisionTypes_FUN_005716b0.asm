@@ -48,7 +48,7 @@
 ; CDemonSet *      Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
 ;
-; XREF[7]:
+; XREF[8]:
 ;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0 at 00408e0f
 ;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040c8f0 at 0040c981
 ;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040c830 at 0040c8ab
@@ -56,6 +56,7 @@
 ;   core_gore.cpp_CBloodPool_init_FUN_004ed0d0 at 004ed0fb
 ;   core_msnedit.cpp_CDemonMission_dropActorToGround_FUN_0053c8d0 at 0053c8fe
 ;   core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850 at 005c2e86
+;   core_trash.cpp_CTrash_process_FUN_005decf0 at 005df336
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_006461b6

@@ -188,6 +188,13 @@ section .text
     ADD ESI,0x30                        ; 0059b7d1
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 0059b7d4
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    MOV ECX,dword ptr [EBP + 0x28558]   ; 0059b7d9
+    ADD ESP,0x4                         ; 0059b7df
+    CMP EBX,ECX                         ; 0059b7e2
+    JL 0x0059b77c                       ; 0059b7e4
+        ;   XREF to: 0059b77c (CONDITIONAL_JUMP)  ; LAB_0059b77c
+    LEA EAX,[EAX]                       ; 0059b7e6
+    LEA EDX,[EDX]                       ; 0059b7ec
     ADD ESP,0x3c                        ; 0059b7f0
         ;   Label: LAB_0059b7f0
     POP EBP                             ; 0059b7f3

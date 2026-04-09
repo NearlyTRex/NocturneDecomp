@@ -1,6 +1,6 @@
 // Name: core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
 // Address: 0041a050
-// Address Range: [[0041a050, 0041a5aa] [0041a615, 0041a628]]
+// Address Range: [[0041a050, 0041a628]]
 // Convention: __cdecl
 // Signature: void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart *this_ptr)
 

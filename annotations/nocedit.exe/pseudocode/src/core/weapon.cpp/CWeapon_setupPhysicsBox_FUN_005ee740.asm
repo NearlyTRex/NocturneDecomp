@@ -6,8 +6,9 @@
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr
 ;
-; XREF[1]:
+; XREF[2]:
 ;   core_weapon.cpp_CWeapon_onDropped_FUN_005ee3f0 at 005ee408
+;   core_weapon.cpp_CWeapon_setup_FUN_005edff0 at 005ee00e
 ;
 ; Referenced Globals:
 ;   float FLOAT_00657b2d = 0.5

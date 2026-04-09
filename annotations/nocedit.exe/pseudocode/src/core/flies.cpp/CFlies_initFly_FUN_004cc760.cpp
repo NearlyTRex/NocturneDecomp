@@ -1,6 +1,6 @@
 // Name: core_flies.cpp_CFlies_initFly_FUN_004cc760
 // Address: 004cc760
-// Address Range: [[004cc760, 004cc7ee] [004cc808, 004cc819]]
+// Address Range: [[004cc760, 004cc819]]
 // Convention: __cdecl
 // Signature: void __cdecl core_flies_cpp_CFlies_initFly_FUN_004cc760(CFlies *this_ptr,int fly_index)
 

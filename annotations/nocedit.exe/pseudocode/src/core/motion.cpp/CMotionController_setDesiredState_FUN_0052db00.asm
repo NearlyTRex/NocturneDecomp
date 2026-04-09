@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   desired_state_index
 ; int              Stack[0xc]:4   force_immediate
 ;
-; XREF[97]:
+; XREF[98]:
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_00413470 at 0041355b
 ;   core_baron.cpp_CBaron_detachFromOwner_FUN_004135a0 at 004135c4
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 00412ebf
@@ -19,7 +19,7 @@
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 0041694e
 ;   core_biggs.cpp_CBiggs_processDamage_FUN_00418b50 at 00418ba7
 ;   core_biggs.cpp_CBiggs_process_FUN_00418700 at 0041896a
-;   ... and 87 more
+;   ... and 88 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_0063aa47

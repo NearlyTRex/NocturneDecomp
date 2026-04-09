@@ -5,11 +5,11 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 166,
+    "assembly_lines": 297,
     "complexity_score": 143,
     "cross_reference_count": 0,
-    "function_call_count": 4,
-    "global_count": 9,
+    "function_call_count": 7,
+    "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 113,
     "suspect_count": 2,
@@ -17,7 +17,7 @@
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 279
+    "total_lines": 410
   },
   "cross_references": [],
   "function": {
@@ -25,14 +25,6 @@
     "address_range": [
       [
         "0048e2a0",
-        "0048e47e"
-      ],
-      [
-        "0048e5f0",
-        "0048e604"
-      ],
-      [
-        "0048e696",
         "0048e6aa"
       ]
     ],
@@ -52,9 +44,24 @@
       "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0"
     },
     {
+      "addr": "00478d80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    },
+    {
       "addr": "00495aa0",
       "is_variadic": false,
       "name": "core_dtrace.cpp_CDemonRaytrace_rayIntersection_FUN_00495aa0"
+    },
+    {
+      "addr": "004c7e60",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createRock_FUN_004c7e60"
+    },
+    {
+      "addr": "004c7b20",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20"
     },
     {
       "addr": "00570fa0",
@@ -82,10 +89,34 @@
       "value": "0.850000000000000"
     },
     {
+      "addr": "006222b7",
+      "name": "FLOAT_006222b7",
+      "type": "float",
+      "value": "20"
+    },
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
       "addr": "006810c8",
       "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "03114278"
+    },
+    {
+      "addr": "02c9b170",
+      "name": "CKeyFramedModelInstance_02c9b170",
+      "type": "CKeyFramedModelInstance",
+      "value": null
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
     },
     {
       "addr": "03114278",
@@ -127,45 +158,46 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.309352517985611,
-    "instruction_count": 139,
+    "avg_pcode_per_instr": 5.467181467181467,
+    "instruction_count": 259,
     "opcode_distribution": {
       "BOOL_NEGATE": 2,
       "BOOL_OR": 3,
-      "BRANCH": 2,
-      "CALL": 5,
+      "BRANCH": 3,
+      "CALL": 14,
       "CALLIND": 3,
-      "CBRANCH": 8,
-      "COPY": 266,
-      "FLOAT2FLOAT": 21,
-      "FLOAT_ADD": 2,
+      "CALLOTHER": 4,
+      "CBRANCH": 9,
+      "COPY": 601,
+      "FLOAT2FLOAT": 57,
+      "FLOAT_ADD": 7,
       "FLOAT_EQUAL": 2,
       "FLOAT_LESS": 2,
-      "FLOAT_MULT": 3,
+      "FLOAT_MULT": 10,
       "FLOAT_NAN": 4,
       "FLOAT_SUB": 4,
       "INT2FLOAT": 1,
-      "INT_ADD": 75,
-      "INT_AND": 52,
-      "INT_CARRY": 9,
-      "INT_EQUAL": 41,
+      "INT_ADD": 138,
+      "INT_AND": 78,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 67,
       "INT_LEFT": 8,
-      "INT_LESS": 5,
+      "INT_LESS": 6,
       "INT_MULT": 1,
-      "INT_NOTEQUAL": 10,
+      "INT_NOTEQUAL": 11,
       "INT_OR": 10,
-      "INT_SBORROW": 5,
-      "INT_SCARRY": 10,
-      "INT_SLESS": 20,
-      "INT_SUB": 39,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 22,
+      "INT_SLESS": 33,
+      "INT_SUB": 71,
       "INT_XOR": 3,
       "INT_ZEXT": 8,
-      "LOAD": 42,
-      "POPCOUNT": 20,
+      "LOAD": 67,
+      "POPCOUNT": 33,
       "RETURN": 2,
-      "STORE": 50
+      "STORE": 106
     },
-    "pcode_op_count": 738
+    "pcode_op_count": 1416
   },
   "stack_frame": {
     "frame_size": 192,
@@ -259,6 +291,28 @@
         "type": "float"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CDrip_process_FUN_0048e2a0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 18,
+          "line": 119,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 76,
+          "line": 119,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

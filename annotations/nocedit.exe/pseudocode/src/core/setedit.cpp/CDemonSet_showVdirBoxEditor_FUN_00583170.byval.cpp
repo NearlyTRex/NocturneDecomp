@@ -1,6 +1,6 @@
 // Name: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
 // Address: 00583170
-// Address Range: [[00583170, 00583633] [00583651, 00583aac] [00583ad6, 005848f1] [00603ef8, 0060477f]]
+// Address Range: [[00583170, 005848f1] [00603ef8, 0060477f]]
 // Convention: __cdecl
 // Signature: void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet *this_ptr)
 
@@ -354,6 +354,13 @@ __asm {
         mov EBX,dword ptr [EBP + 0x5a]
         inc ESI
         call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640
+        mov EAX,dword ptr [EBP + 0x92]
+        add EBX,0x44
+        add ESP,0x4
+        mov EDI,dword ptr [EAX + 0x15b410]
+        mov dword ptr [EBP + 0x5a],EBX
+        cmp ESI,EDI
+        jl LAB_0058346f
     LAB_00583651:
         xor EAX,EAX
         mov dword ptr [EBP + 0x5e],EAX
@@ -664,6 +671,17 @@ __asm {
         mov ESI,dword ptr [EBP + 0x6e]
         mov EDI,dword ptr [EBP + 0x5e]
         call engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640
+        add EBX,0x1a4
+        add ESI,0x1a4
+        inc EDI
+        mov EDX,dword ptr [EBP + 0x92]
+        add ESP,0x4
+        mov dword ptr [EBP + 0x62],EBX
+        mov dword ptr [EBP + 0x6e],ESI
+        mov ECX,dword ptr [EDX]
+        mov dword ptr [EBP + 0x5e],EDI
+        cmp EDI,ECX
+        jl LAB_0058367b
     LAB_00583ad6:
         push 0x0
         push 0x32758e4

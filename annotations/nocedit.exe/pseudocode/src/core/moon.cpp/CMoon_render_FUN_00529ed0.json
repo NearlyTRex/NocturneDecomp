@@ -5,11 +5,11 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 271,
+    "assembly_lines": 300,
     "complexity_score": 265,
     "cross_reference_count": 5,
     "function_call_count": 16,
-    "global_count": 35,
+    "global_count": 39,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 125,
     "suspect_count": 12,
@@ -19,7 +19,7 @@
       "suspect_float",
       "warning_inlined_function"
     ],
-    "total_lines": 396
+    "total_lines": 425
   },
   "cross_references": [
     {
@@ -58,11 +58,7 @@
     "address_range": [
       [
         "00529ed0",
-        "0052a0ca"
-      ],
-      [
-        "0052a11f",
-        "0052a2ab"
+        "0052a2bf"
       ]
     ],
     "convention": "__cdecl",
@@ -166,10 +162,34 @@
       "value": "48"
     },
     {
+      "addr": "00639fa9",
+      "name": "DOUBLE_00639fa9",
+      "type": "double",
+      "value": "8192"
+    },
+    {
+      "addr": "00639fb1",
+      "name": "FLOAT_00639fb1",
+      "type": "float",
+      "value": "16384"
+    },
+    {
+      "addr": "00639fb5",
+      "name": "FLOAT_00639fb5",
+      "type": "float",
+      "value": "8192"
+    },
+    {
       "addr": "00639fb9",
       "name": "FLOAT_00639fb9",
       "type": "float",
       "value": "1.570796"
+    },
+    {
+      "addr": "00639fc1",
+      "name": "DOUBLE_00639fc1",
+      "type": "double",
+      "value": "0.5"
     },
     {
       "addr": "006703ec",
@@ -429,49 +449,52 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.364406779661017,
-    "instruction_count": 236,
+    "avg_pcode_per_instr": 6.369230769230769,
+    "instruction_count": 260,
     "opcode_distribution": {
-      "BOOL_NEGATE": 47,
-      "BOOL_OR": 3,
-      "CALL": 20,
+      "BOOL_NEGATE": 48,
+      "BOOL_OR": 4,
+      "BRANCH": 1,
+      "CALL": 21,
       "CALLOTHER": 2,
-      "CBRANCH": 7,
-      "COPY": 387,
-      "FLOAT2FLOAT": 21,
-      "FLOAT_ADD": 6,
-      "FLOAT_EQUAL": 1,
-      "FLOAT_LESS": 1,
-      "FLOAT_MULT": 2,
-      "FLOAT_NAN": 2,
-      "INT2FLOAT": 1,
-      "INT_ADD": 103,
-      "INT_AND": 225,
-      "INT_CARRY": 28,
-      "INT_EQUAL": 120,
-      "INT_LEFT": 12,
+      "CBRANCH": 8,
+      "COPY": 448,
+      "FLOAT2FLOAT": 31,
+      "FLOAT_ADD": 7,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 116,
+      "INT_AND": 232,
+      "INT_CARRY": 29,
+      "INT_EQUAL": 122,
+      "INT_LEFT": 16,
       "INT_LESS": 6,
-      "INT_MULT": 8,
-      "INT_NOTEQUAL": 34,
-      "INT_OR": 50,
+      "INT_MULT": 10,
+      "INT_NOTEQUAL": 40,
+      "INT_OR": 55,
       "INT_RIGHT": 10,
       "INT_SBORROW": 6,
-      "INT_SCARRY": 29,
-      "INT_SEXT": 3,
-      "INT_SLESS": 65,
+      "INT_SCARRY": 30,
+      "INT_SEXT": 6,
+      "INT_SLESS": 66,
       "INT_SRIGHT": 4,
-      "INT_SUB": 76,
+      "INT_SUB": 77,
       "INT_XOR": 7,
-      "INT_ZEXT": 8,
-      "LOAD": 58,
-      "POPCOUNT": 55,
+      "INT_ZEXT": 12,
+      "LOAD": 65,
+      "POPCOUNT": 56,
       "RETURN": 1,
-      "ROUND": 2,
-      "STORE": 88,
-      "SUBPIECE": 2,
-      "TRUNC": 2
+      "ROUND": 3,
+      "STORE": 94,
+      "SUBPIECE": 4,
+      "TRUNC": 3
     },
-    "pcode_op_count": 1502
+    "pcode_op_count": 1656
   },
   "stack_frame": {
     "frame_size": 100,
@@ -664,7 +687,7 @@
     },
     {
       "description": "MMX/SIMD assembly - may not decompile to clean C code",
-      "line": 184,
+      "line": 207,
       "match": "EMMS, MOVD, MOVQ, PADDUSB, POR",
       "text": "Function uses MMX instructions",
       "type": "mmx_assembly"

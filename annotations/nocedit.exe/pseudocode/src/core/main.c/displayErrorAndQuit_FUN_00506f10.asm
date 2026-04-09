@@ -9,7 +9,7 @@
 ; va_list_t        Stack[-0x14]:4  local_14
 ; int              Stack[-0x10]:4  local_10
 ;
-; XREF[741]:
+; XREF[745]:
 ;   cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0 at 00432fcf
 ;   cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730 at 00435873
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0 at 00431bb5
@@ -20,7 +20,7 @@
 ;   cockpit_ckptutil.c_rotateBitmap_FUN_00434870 at 0043499c
 ;   cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480 at 004334de
 ;   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0 at 00434c1b
-;   ... and 731 more
+;   ... and 735 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_main_c_006315be

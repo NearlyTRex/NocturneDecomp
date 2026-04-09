@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 278,
+    "complexity_score": 293,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 21,
+    "suspect_count": 22,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "special_crt_function",
       "undefined_data",
-      "unnamed_param"
+      "unnamed_param",
+      "wrong_global"
     ],
     "total_lines": 153
   },
@@ -335,6 +336,14 @@
       "match": "crt_",
       "text": "CRT function (runtime support) at 00607858",
       "type": "special_crt_function"
+    },
+    {
+      "description": "Global g_PositiveInfinity used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 16,
+      "match": "g_PositiveInfinity",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)&g_PositiveInfinity + *(int *)(param_1 + 0x10) * 2 + 6);",
+      "type": "wrong_global"
     }
   ]
 }

@@ -44,7 +44,7 @@
 ;   TerminatedCString s_Current_part_s_0061b79b
 ;   TerminatedCString s_Polygons_0061b7ad
 ;   TerminatedCString s_Points_0061b7b6
-;   ... and 120 more
+;   ... and 128 more
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
@@ -55,14 +55,14 @@
 ;   engine_2d.c_getStringWidth_FUN_004018a0
 ;   engine_2d.c_getTextColor_FUN_00402830
 ;   engine_2d.c_plotPixel_FUN_00401140
+;   engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80
 ;   engine_2d.c_resetGraphicsSystem_FUN_00402a70
 ;   engine_2d.c_setTextColor_FUN_00402840
 ;   engine_3d.c_processCameraRelativePoint_FUN_004037e0
 ;   engine_light.cpp_setAmbientLightLevel_FUN_00505490
 ;   engine_light.cpp_setDirectionalLightVector_FUN_005054d0
 ;   engine_matrix.c_matrixPushAndTransform_FUN_0050cee0
-;   engine_matrix.c_pop_FUN_0050d720
-;   ... and 24 more
+;   ... and 45 more
 ;
 ; *****************************************************************************
 
@@ -1681,6 +1681,306 @@ section .text
     MOV [0x01e528b8],EAX                ; 0046071b | g_SelectedPolygonIndex
     CALL engine_matrix.c_pop_FUN_0050d720 ; 00460720
         ;   XREF to: 0050d720 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0050d720()
+    CALL wincore_winrun.cpp_doNothing1_FUN_005f2f80 ; 00460725
+        ;   XREF to: 005f2f80 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_doNothing1_FUN_005f2f80()
+    CALL wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0 ; 0046072a
+        ;   XREF to: 005f2fd0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0()
+    PUSH 0x0                            ; 0046072f
+    CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 00460731
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+    ADD ESP,0x4                         ; 00460736
+    CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630 ; 00460739
+        ;   XREF to: 005ed630 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0046073e
+        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
+    CALL shape_design.c_handleEditorHotkeys_FUN_0045b990 ; 00460743
+        ;   XREF to: 0045b990 (UNCONDITIONAL_CALL)  ; void shape_design.c_handleEditorHotkeys_FUN_0045b990()
+    CALL shape_design.c_checkVertexCountLimit_FUN_00460a10 ; 00460748
+        ;   XREF to: 00460a10 (UNCONDITIONAL_CALL)  ; int shape_design.c_checkVertexCountLimit_FUN_00460a10()
+    TEST EAX,EAX                        ; 0046074d
+    JZ 0x00460756                       ; 0046074f
+        ;   XREF to: 00460756 (CONDITIONAL_JUMP)  ; LAB_00460756
+    JMP 0x004609ea                      ; 00460751
+        ;   XREF to: 004609ea (UNCONDITIONAL_JUMP)  ; LAB_004609ea
+    CMP byte ptr [0x02d03eb1],0x0       ; 00460756 | CHAR_ARRAY_02d03eb1
+        ;   Label: LAB_00460756
+    JZ 0x00460768                       ; 0046075d
+        ;   XREF to: 00460768 (CONDITIONAL_JUMP)  ; LAB_00460768
+    CMP byte ptr [0x02d03eb5],0x0       ; 0046075f | CHAR_ARRAY_02d03eb5
+    JNZ 0x0046076a                      ; 00460766
+        ;   XREF to: 0046076a (CONDITIONAL_JUMP)  ; LAB_0046076a
+    JMP 0x00460776                      ; 00460768
+        ;   XREF to: 00460776 (UNCONDITIONAL_JUMP)  ; LAB_00460776
+        ;   Label: LAB_00460768
+    MOV byte ptr [0x02d03eb1],0x0       ; 0046076a | CHAR_ARRAY_02d03eb1
+        ;   Label: LAB_0046076a
+    CALL shape_design.c_loadPalette_FUN_0046e810 ; 00460771
+        ;   XREF to: 0046e810 (UNCONDITIONAL_CALL)  ; void shape_design.c_loadPalette_FUN_0046e810()
+    CMP byte ptr [0x02d03eb1],0x0       ; 00460776 | CHAR_ARRAY_02d03eb1
+        ;   Label: LAB_00460776
+    JZ 0x00460788                       ; 0046077d
+        ;   XREF to: 00460788 (CONDITIONAL_JUMP)  ; LAB_00460788
+    CMP byte ptr [0x02d03ec2],0x0       ; 0046077f | CHAR_ARRAY_02d03ec2
+    JNZ 0x0046078a                      ; 00460786
+        ;   XREF to: 0046078a (CONDITIONAL_JUMP)  ; LAB_0046078a
+    JMP 0x004607a7                      ; 00460788
+        ;   XREF to: 004607a7 (UNCONDITIONAL_JUMP)  ; LAB_004607a7
+        ;   Label: LAB_00460788
+    MOV byte ptr [0x02d03eb1],0x0       ; 0046078a | CHAR_ARRAY_02d03eb1
+        ;   Label: LAB_0046078a
+    MOV EAX,[0x01626404]                ; 00460791 | g_CurrentModelIndex
+    SHL EAX,0x2                         ; 00460796
+    PUSH dword ptr [EAX + 0x16263c0]    ; 00460799 | g_EditorBackgroundColors
+    CALL shape_design.c_displayPalette_FUN_00461560 ; 0046079f
+        ;   XREF to: 00461560 (UNCONDITIONAL_CALL)  ; void shape_design.c_displayPalette_FUN_00461560()
+    ADD ESP,0x4                         ; 004607a4
+    CMP byte ptr [0x02d03eb1],0x0       ; 004607a7 | CHAR_ARRAY_02d03eb1
+        ;   Label: LAB_004607a7
+    JZ 0x004607bc                       ; 004607ae
+        ;   XREF to: 004607bc (CONDITIONAL_JUMP)  ; LAB_004607bc
+    MOV byte ptr [0x02d03eb1],0x0       ; 004607b0 | CHAR_ARRAY_02d03eb1
+    CALL shape_design.c_selectModelPart_FUN_0045de80 ; 004607b7
+        ;   XREF to: 0045de80 (UNCONDITIONAL_CALL)  ; void shape_design.c_selectModelPart_FUN_0045de80()
+    CMP byte ptr [0x02d03ebe],0x0       ; 004607bc | CHAR_ARRAY_02d03ebe
+        ;   Label: LAB_004607bc
+    JZ 0x004607ce                       ; 004607c3
+        ;   XREF to: 004607ce (CONDITIONAL_JUMP)  ; LAB_004607ce
+    CMP byte ptr [0x02d03ec2],0x0       ; 004607c5 | CHAR_ARRAY_02d03ec2
+    JNZ 0x004607d0                      ; 004607cc
+        ;   XREF to: 004607d0 (CONDITIONAL_JUMP)  ; LAB_004607d0
+    JMP 0x004607dc                      ; 004607ce
+        ;   XREF to: 004607dc (UNCONDITIONAL_JUMP)  ; LAB_004607dc
+        ;   Label: LAB_004607ce
+    MOV byte ptr [0x02d03ebe],0x0       ; 004607d0 | CHAR_ARRAY_02d03ebe
+        ;   Label: LAB_004607d0
+    CALL shape_design.c_showModelPartsList_FUN_0045dbe0 ; 004607d7
+        ;   XREF to: 0045dbe0 (UNCONDITIONAL_CALL)  ; void shape_design.c_showModelPartsList_FUN_0045dbe0()
+    CMP byte ptr [0x02d03ebe],0x0       ; 004607dc | CHAR_ARRAY_02d03ebe
+        ;   Label: LAB_004607dc
+    JZ 0x004607ee                       ; 004607e3
+        ;   XREF to: 004607ee (CONDITIONAL_JUMP)  ; LAB_004607ee
+    CMP byte ptr [0x02d03ec2],0x0       ; 004607e5 | CHAR_ARRAY_02d03ec2
+    JZ 0x004607f0                       ; 004607ec
+        ;   XREF to: 004607f0 (CONDITIONAL_JUMP)  ; LAB_004607f0
+    JMP 0x004607fc                      ; 004607ee
+        ;   XREF to: 004607fc (UNCONDITIONAL_JUMP)  ; LAB_004607fc
+        ;   Label: LAB_004607ee
+    MOV byte ptr [0x02d03ebe],0x0       ; 004607f0 | CHAR_ARRAY_02d03ebe
+        ;   Label: LAB_004607f0
+    CALL shape_design.c_showPolygonDetailsList_FUN_0045d9c0 ; 004607f7
+        ;   XREF to: 0045d9c0 (UNCONDITIONAL_CALL)  ; void shape_design.c_showPolygonDetailsList_FUN_0045d9c0()
+    CMP byte ptr [0x02d03eb7],0x0       ; 004607fc | CHAR_ARRAY_02d03eb7
+        ;   Label: LAB_004607fc
+    JZ 0x0046080e                       ; 00460803
+        ;   XREF to: 0046080e (CONDITIONAL_JUMP)  ; LAB_0046080e
+    CMP byte ptr [0x02d03eb5],0x0       ; 00460805 | CHAR_ARRAY_02d03eb5
+    JZ 0x00460810                       ; 0046080c
+        ;   XREF to: 00460810 (CONDITIONAL_JUMP)  ; LAB_00460810
+    JMP 0x00460825                      ; 0046080e
+        ;   XREF to: 00460825 (UNCONDITIONAL_JUMP)  ; LAB_00460825
+        ;   Label: LAB_0046080e
+    MOV byte ptr [0x02d03eb7],0x0       ; 00460810 | CHAR_ARRAY_02d03eb7
+        ;   Label: LAB_00460810
+    CMP dword ptr [0x01e6614c],-0x1     ; 00460817 | g_CurrentPartIndex
+    JZ 0x00460825                       ; 0046081e
+        ;   XREF to: 00460825 (CONDITIONAL_JUMP)  ; LAB_00460825
+    CALL shape_design.c_createRotationalSweepGeometry_FUN_0045e070 ; 00460820
+        ;   XREF to: 0045e070 (UNCONDITIONAL_CALL)  ; void shape_design.c_createRotationalSweepGeometry_FUN_0045e070()
+    CMP byte ptr [0x02d03eb8],0x0       ; 00460825 | CHAR_ARRAY_02d03eb8
+        ;   Label: LAB_00460825
+    JZ 0x00460837                       ; 0046082c
+        ;   XREF to: 00460837 (CONDITIONAL_JUMP)  ; LAB_00460837
+    CMP byte ptr [0x02d03eb5],0x0       ; 0046082e | CHAR_ARRAY_02d03eb5
+    JNZ 0x00460839                      ; 00460835
+        ;   XREF to: 00460839 (CONDITIONAL_JUMP)  ; LAB_00460839
+    JMP 0x00460842                      ; 00460837
+        ;   XREF to: 00460842 (UNCONDITIONAL_JUMP)  ; LAB_00460842
+        ;   Label: LAB_00460837
+    CMP dword ptr [0x016e990c],0x0      ; 00460839 | g_PolygonCount
+        ;   Label: LAB_00460839
+    JG 0x00460844                       ; 00460840
+        ;   XREF to: 00460844 (CONDITIONAL_JUMP)  ; LAB_00460844
+    JMP 0x00460850                      ; 00460842
+        ;   XREF to: 00460850 (UNCONDITIONAL_JUMP)  ; LAB_00460850
+        ;   Label: LAB_00460842
+    MOV byte ptr [0x02d03eb8],0x0       ; 00460844 | CHAR_ARRAY_02d03eb8
+        ;   Label: LAB_00460844
+    CALL shape_design.c_deletePolygonRange_FUN_0045dd70 ; 0046084b
+        ;   XREF to: 0045dd70 (UNCONDITIONAL_CALL)  ; void shape_design.c_deletePolygonRange_FUN_0045dd70()
+    CMP byte ptr [0x02d03eb8],0x0       ; 00460850 | CHAR_ARRAY_02d03eb8
+        ;   Label: LAB_00460850
+    JZ 0x00460862                       ; 00460857
+        ;   XREF to: 00460862 (CONDITIONAL_JUMP)  ; LAB_00460862
+    CMP dword ptr [0x016e990c],0x0      ; 00460859 | g_PolygonCount
+    JG 0x00460864                       ; 00460860
+        ;   XREF to: 00460864 (CONDITIONAL_JUMP)  ; LAB_00460864
+    JMP 0x004608c2                      ; 00460862
+        ;   XREF to: 004608c2 (UNCONDITIONAL_JUMP)  ; LAB_004608c2
+        ;   Label: LAB_00460862
+    MOV byte ptr [0x02d03eb8],0x0       ; 00460864 | CHAR_ARRAY_02d03eb8
+        ;   Label: LAB_00460864
+    CMP dword ptr [0x01e528b8],-0x1     ; 0046086b | g_SelectedPolygonIndex
+    JNZ 0x0046087b                      ; 00460872
+        ;   XREF to: 0046087b (CONDITIONAL_JUMP)  ; LAB_0046087b
+    CALL shape_design.c_deleteSinglePolygon_FUN_0045dcc0 ; 00460874
+        ;   XREF to: 0045dcc0 (UNCONDITIONAL_CALL)  ; void shape_design.c_deleteSinglePolygon_FUN_0045dcc0()
+    JMP 0x004608c2                      ; 00460879
+        ;   XREF to: 004608c2 (UNCONDITIONAL_JUMP)  ; LAB_004608c2
+    MOV EAX,[0x01e528b8]                ; 0046087b | g_SelectedPolygonIndex
+        ;   Label: LAB_0046087b
+    MOV dword ptr [EBP + -0x34],EAX     ; 00460880
+    JMP 0x0046088b                      ; 00460883
+        ;   XREF to: 0046088b (UNCONDITIONAL_JUMP)  ; LAB_0046088b
+    MOV EAX,dword ptr [EBP + -0x34]     ; 00460885
+        ;   Label: LAB_00460885
+    INC dword ptr [EBP + -0x34]         ; 00460888
+    MOV EAX,[0x016e990c]                ; 0046088b | g_PolygonCount
+        ;   Label: LAB_0046088b
+    DEC EAX                             ; 00460890
+    CMP EAX,dword ptr [EBP + -0x34]     ; 00460891
+    JLE 0x004608bc                      ; 00460894
+        ;   XREF to: 004608bc (CONDITIONAL_JUMP)  ; LAB_004608bc
+    MOV EAX,dword ptr [EBP + -0x34]     ; 00460896
+    INC EAX                             ; 00460899
+    IMUL EAX,EAX,0x184                  ; 0046089a
+    IMUL ESI,dword ptr [EBP + -0x34],0x184 ; 004608a0
+    MOV ECX,0x61                        ; 004608a7
+    LEA EDI,[ESI + 0x16e9910]           ; 004608ac | g_ModelPolygonData
+    LEA ESI,[EAX + 0x16e9910]           ; 004608b2 | g_ModelPolygonData
+    MOVSD.REP ES:EDI,ESI                ; 004608b8 | g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
+    JMP 0x00460885                      ; 004608ba
+        ;   XREF to: 00460885 (UNCONDITIONAL_JUMP)  ; LAB_00460885
+    DEC dword ptr [0x016e990c]          ; 004608bc | g_PolygonCount
+        ;   Label: LAB_004608bc
+    CMP byte ptr [0x02d03eb9],0x0       ; 004608c2 | CHAR_ARRAY_02d03eb9
+        ;   Label: LAB_004608c2
+    JZ 0x004608d4                       ; 004608c9
+        ;   XREF to: 004608d4 (CONDITIONAL_JUMP)  ; LAB_004608d4
+    CMP byte ptr [0x02d03ec2],0x0       ; 004608cb | CHAR_ARRAY_02d03ec2
+    JZ 0x004608d6                       ; 004608d2
+        ;   XREF to: 004608d6 (CONDITIONAL_JUMP)  ; LAB_004608d6
+    JMP 0x004608eb                      ; 004608d4
+        ;   XREF to: 004608eb (UNCONDITIONAL_JUMP)  ; LAB_004608eb
+        ;   Label: LAB_004608d4
+    MOV byte ptr [0x02d03eb9],0x0       ; 004608d6 | CHAR_ARRAY_02d03eb9
+        ;   Label: LAB_004608d6
+    CMP dword ptr [0x01e6614c],-0x1     ; 004608dd | g_CurrentPartIndex
+    JZ 0x004608eb                       ; 004608e4
+        ;   XREF to: 004608eb (CONDITIONAL_JUMP)  ; LAB_004608eb
+    CALL shape_design.c_createPolygonFromVertexList_FUN_0045cc80 ; 004608e6
+        ;   XREF to: 0045cc80 (UNCONDITIONAL_CALL)  ; void shape_design.c_createPolygonFromVertexList_FUN_0045cc80()
+    CMP byte ptr [0x02d03eac],0x0       ; 004608eb | CHAR_ARRAY_02d03eac
+        ;   Label: LAB_004608eb
+    JZ 0x004608fd                       ; 004608f2
+        ;   XREF to: 004608fd (CONDITIONAL_JUMP)  ; LAB_004608fd
+    CMP byte ptr [0x02d03ec2],0x0       ; 004608f4 | CHAR_ARRAY_02d03ec2
+    JNZ 0x004608ff                      ; 004608fb
+        ;   XREF to: 004608ff (CONDITIONAL_JUMP)  ; LAB_004608ff
+    JMP 0x0046090b                      ; 004608fd
+        ;   XREF to: 0046090b (UNCONDITIONAL_JUMP)  ; LAB_0046090b
+        ;   Label: LAB_004608fd
+    MOV byte ptr [0x02d03eac],0x0       ; 004608ff | CHAR_ARRAY_02d03eac
+        ;   Label: LAB_004608ff
+    CALL shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90 ; 00460906
+        ;   XREF to: 0045ec90 (UNCONDITIONAL_CALL)  ; void shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90()
+    CMP byte ptr [0x02d03eac],0x0       ; 0046090b | CHAR_ARRAY_02d03eac
+        ;   Label: LAB_0046090b
+    JZ 0x00460920                       ; 00460912
+        ;   XREF to: 00460920 (CONDITIONAL_JUMP)  ; LAB_00460920
+    MOV byte ptr [0x02d03eac],0x0       ; 00460914 | CHAR_ARRAY_02d03eac
+    CALL shape_design.c_doNothing3_FUN_0045ce00 ; 0046091b
+        ;   XREF to: 0045ce00 (UNCONDITIONAL_CALL)  ; void shape_design.c_doNothing3_FUN_0045ce00()
+    CMP byte ptr [0x02d03ebb],0x0       ; 00460920 | CHAR_ARRAY_02d03ebb
+        ;   Label: LAB_00460920
+    JZ 0x00460935                       ; 00460927
+        ;   XREF to: 00460935 (CONDITIONAL_JUMP)  ; LAB_00460935
+    MOV byte ptr [0x02d03ebb],0x0       ; 00460929 | CHAR_ARRAY_02d03ebb
+    CALL shape_design.c_showFacetPartEditorHelp_FUN_00460ac0 ; 00460930
+        ;   XREF to: 00460ac0 (UNCONDITIONAL_CALL)  ; void shape_design.c_showFacetPartEditorHelp_FUN_00460ac0()
+    CMP byte ptr [0x02d03ec8],0x0       ; 00460935 | CHAR_ARRAY_02d03ec8
+        ;   Label: LAB_00460935
+    JZ 0x00460947                       ; 0046093c
+        ;   XREF to: 00460947 (CONDITIONAL_JUMP)  ; LAB_00460947
+    CMP byte ptr [0x02d03ec2],0x0       ; 0046093e | CHAR_ARRAY_02d03ec2
+    JNZ 0x00460949                      ; 00460945
+        ;   XREF to: 00460949 (CONDITIONAL_JUMP)  ; LAB_00460949
+    JMP 0x00460955                      ; 00460947
+        ;   XREF to: 00460955 (UNCONDITIONAL_JUMP)  ; LAB_00460955
+        ;   Label: LAB_00460947
+    MOV byte ptr [0x02d03ec8],0x0       ; 00460949 | CHAR_ARRAY_02d03ec8
+        ;   Label: LAB_00460949
+    CALL shape_design.c_centerVerticesAroundPoint_FUN_0045ea90 ; 00460950
+        ;   XREF to: 0045ea90 (UNCONDITIONAL_CALL)  ; void shape_design.c_centerVerticesAroundPoint_FUN_0045ea90()
+    CMP byte ptr [0x02d03ec8],0x0       ; 00460955 | CHAR_ARRAY_02d03ec8
+        ;   Label: LAB_00460955
+    JZ 0x00460967                       ; 0046095c
+        ;   XREF to: 00460967 (CONDITIONAL_JUMP)  ; LAB_00460967
+    CMP dword ptr [0x01e6614c],-0x1     ; 0046095e | g_CurrentPartIndex
+    JNZ 0x00460969                      ; 00460965
+        ;   XREF to: 00460969 (CONDITIONAL_JUMP)  ; LAB_00460969
+    JMP 0x00460972                      ; 00460967
+        ;   XREF to: 00460972 (UNCONDITIONAL_JUMP)  ; LAB_00460972
+        ;   Label: LAB_00460967
+    CMP byte ptr [0x02d03ec2],0x0       ; 00460969 | CHAR_ARRAY_02d03ec2
+        ;   Label: LAB_00460969
+    JZ 0x00460974                       ; 00460970
+        ;   XREF to: 00460974 (CONDITIONAL_JUMP)  ; LAB_00460974
+    JMP 0x00460980                      ; 00460972
+        ;   XREF to: 00460980 (UNCONDITIONAL_JUMP)  ; LAB_00460980
+        ;   Label: LAB_00460972
+    MOV byte ptr [0x02d03ec8],0x0       ; 00460974 | CHAR_ARRAY_02d03ec8
+        ;   Label: LAB_00460974
+    CALL shape_design.c_createBoxPrimitive_FUN_0045e520 ; 0046097b
+        ;   XREF to: 0045e520 (UNCONDITIONAL_CALL)  ; void shape_design.c_createBoxPrimitive_FUN_0045e520()
+    CMP byte ptr [0x02d03ec5],0x0       ; 00460980 | CHAR_ARRAY_02d03ec5
+        ;   Label: LAB_00460980
+    JZ 0x004609b7                       ; 00460987
+        ;   XREF to: 004609b7 (CONDITIONAL_JUMP)  ; LAB_004609b7
+    MOV byte ptr [0x02d03ec5],0x0       ; 00460989 | CHAR_ARRAY_02d03ec5
+    MOV EAX,dword ptr [EBP + -0x28]     ; 00460990
+    PUSH EAX                            ; 00460993
+    MOV EAX,dword ptr [EBP + -0x2c]     ; 00460994
+    PUSH EAX                            ; 00460997
+    MOV EAX,dword ptr [EBP + -0x48]     ; 00460998
+    PUSH EAX                            ; 0046099b
+    CALL shape_design.c_realignObject_FUN_0045ee70 ; 0046099c
+        ;   XREF to: 0045ee70 (UNCONDITIONAL_CALL)  ; void shape_design.c_realignObject_FUN_0045ee70(int rotation_x, int rotation_y, int rotation_z)
+    ADD ESP,0xc                         ; 004609a1
+    MOV dword ptr [EBP + -0x28],0x0     ; 004609a4
+    MOV EAX,dword ptr [EBP + -0x28]     ; 004609ab
+    MOV dword ptr [EBP + -0x2c],EAX     ; 004609ae
+    MOV EAX,dword ptr [EBP + -0x2c]     ; 004609b1
+    MOV dword ptr [EBP + -0x48],EAX     ; 004609b4
+    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 004609b7
+        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005f2dc0()
+        ;   Label: LAB_004609b7
+    MOV dword ptr [EBP + -0x34],EAX     ; 004609bc
+    MOV EDX,dword ptr [EBP + -0x34]     ; 004609bf
+    SUB EDX,dword ptr [EBP + -0x8]      ; 004609c2
+    MOV ECX,0x12                        ; 004609c5
+    MOV EAX,EDX                         ; 004609ca
+    SAR EDX,0x1f                        ; 004609cc
+    IDIV ECX                            ; 004609cf
+    MOV [0x02cf6a80],EAX                ; 004609d1 | g_GlobalDeltaTimeInt
+    MOV EAX,dword ptr [EBP + -0x34]     ; 004609d6
+    MOV dword ptr [EBP + -0x8],EAX      ; 004609d9
+    CMP byte ptr [0x02d03e99],0x0       ; 004609dc | CHAR_ARRAY_02d03e99
+    JNZ 0x004609ea                      ; 004609e3
+        ;   XREF to: 004609ea (CONDITIONAL_JUMP)  ; LAB_004609ea
+    JMP 0x0045f320                      ; 004609e5
+        ;   XREF to: 0045f320 (UNCONDITIONAL_JUMP)  ; LAB_0045f320
+    CALL engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80 ; 004609ea
+        ;   XREF to: 00402a80 (UNCONDITIONAL_CALL)  ; void engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80()
+        ;   Label: LAB_004609ea
+    CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 004609ef
+        ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
+    MOV EAX,dword ptr [EBP + -0x14]     ; 004609f4
+    MOV [0x006793c0],EAX                ; 004609f7 | g_ProjectionScale
+    MOV EAX,dword ptr [EBP + -0x24]     ; 004609fc
+    PUSH EAX                            ; 004609ff
+    CALL engine_2d.c_setTextColor_FUN_00402840 ; 00460a00
+        ;   XREF to: 00402840 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setTextColor_FUN_00402840(int color)
+    ADD ESP,0x4                         ; 00460a05
     MOV ESP,EBP                         ; 00460a08
         ;   Label: LAB_00460a08
     POP EBP                             ; 00460a0a

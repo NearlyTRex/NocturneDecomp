@@ -1113,6 +1113,144 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonSet_importS3D_FUN_00578d80.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 11,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 15,
+          "line": 101,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 103,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 13,
+          "line": 104,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 16,
+          "line": 106,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 15,
+          "line": 107,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 13,
+          "line": 123,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 13,
+          "line": 128,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 36,
+          "line": 427,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 52,
+          "line": 461,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 9,
+          "line": 662,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 9,
+          "line": 664,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 8,
+      "diagnostics": [
+        {
+          "check_id": "nullPointer",
+          "column": 14,
+          "line": 231,
+          "message": "Possible null pointer dereference: pcVar12",
+          "severity": "warning"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 50,
+          "line": 388,
+          "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 22,
+          "line": 528,
+          "message": "Redundant assignment of 'pacVar18' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 21,
+          "line": 536,
+          "message": "Redundant assignment of 'pfVar14' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 21,
+          "line": 537,
+          "message": "Redundant assignment of 'pfVar19' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 21,
+          "line": 545,
+          "message": "Redundant assignment of 'piVar20' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 22,
+          "line": 560,
+          "message": "Redundant assignment of 'ppCVar15' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 22,
+          "line": 561,
+          "message": "Redundant assignment of 'ppCVar21' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",

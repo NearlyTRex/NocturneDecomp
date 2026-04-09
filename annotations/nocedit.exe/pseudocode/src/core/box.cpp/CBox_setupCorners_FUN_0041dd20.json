@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 131,
     "complexity_score": 94,
-    "cross_reference_count": 6,
+    "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "clean",
@@ -48,6 +48,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00588e00",
+      "from_addr": "00588ea8",
+      "name": "core_simbox.cpp_CSimBox_setup_FUN_00588e00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005ee740",
       "from_addr": "005ee817",
       "name": "core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_005ee740",
@@ -82,7 +88,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 6,
+    "call_site_count": 7,
     "call_sites": [
       {
         "call_addr": "004219ca",
@@ -143,6 +149,17 @@
         "call_addr": "004c009e",
         "call_type": "direct",
         "caller": "core_fire.cpp_CStake_spawn_FUN_004bfe90",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00588ea8",
+        "call_type": "direct",
+        "caller": "core_simbox.cpp_CSimBox_setup_FUN_00588e00",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",

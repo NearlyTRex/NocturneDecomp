@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CExplosion_render_FUN_004c3b10
 // Address: 004c3b10
-// Address Range: [[004c3b10, 004c3e82]]
+// Address Range: [[004c3b10, 004c3e90]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
 

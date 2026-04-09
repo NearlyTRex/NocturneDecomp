@@ -7,7 +7,7 @@
 ; CDemonActor *    Stack[0x4]:4   actor_ptr
 ; uint             Stack[0x8]:4   class_name_hash
 ;
-; XREF[151]:
+; XREF[154]:
 ;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0 at 00408e35
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a7c2
 ;   core_ammo.cpp_CAmmo_propertyActionCallback_FUN_004112b0 at 004112bc
@@ -18,7 +18,7 @@
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_00413470 at 004134a1
 ;   core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0 at 00413667
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 004170f6
-;   ... and 141 more
+;   ... and 144 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClassHash_FUN_0040c760

@@ -19,8 +19,10 @@
 ; float            Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
-; XREF[3]:
+; XREF[5]:
+;   core_elephant.cpp_CElephantGun_fire_FUN_004a7160 at 004a7886
 ;   core_gun.cpp_CGun_fire_FUN_004f0350 at 004f0b0a
+;   core_shotgun.cpp_CShotgun_fire_FUN_00588060 at 00588788
 ;   core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30 at 005de323
 ;   core_turret.cpp_CTurret_fire_FUN_005e3750 at 005e3c5e
 ;

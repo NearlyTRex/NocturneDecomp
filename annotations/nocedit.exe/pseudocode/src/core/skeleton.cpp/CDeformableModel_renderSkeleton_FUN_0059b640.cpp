@@ -1,6 +1,6 @@
 // Name: core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640
 // Address: 0059b640
-// Address Range: [[0059b640, 0059b7d8] [0059b7f0, 0059b7f7] [0060dfc1, 0060e071]]
+// Address Range: [[0059b640, 0059b7f7] [0060dfc1, 0060e071]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDeformableModel *this_ptr,int color,CMatrix3x4f *bone_matrices,int render_flags)
 

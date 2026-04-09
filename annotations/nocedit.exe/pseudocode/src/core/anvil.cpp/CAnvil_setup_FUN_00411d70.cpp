@@ -1,6 +1,6 @@
 // Name: core_anvil.cpp_CAnvil_setup_FUN_00411d70
 // Address: 00411d70
-// Address Range: [[00411d70, 00411d79]]
+// Address Range: [[00411d70, 00411d8f]]
 // Convention: __cdecl
 // Signature: void __cdecl core_anvil_cpp_CAnvil_setup_FUN_00411d70(CAnvil *this_ptr)
 

@@ -318,5 +318,29 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CCheckOutItem_findFileToCheckOut_FUN_004b5030.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 12,
+          "line": 49,
+          "message": "Redundant assignment of 'pcVar6' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 12,
+          "line": 54,
+          "message": "Redundant assignment of 'pcVar6' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

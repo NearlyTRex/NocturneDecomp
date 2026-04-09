@@ -1,0 +1,62 @@
+====================================================================================================
+STATIC ANALYSIS SUMMARY
+====================================================================================================
+
+Results from running static analysis tools on decompiled pseudocode.
+Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
+
+----------------------------------------------------------------------------------------------------
+SUMMARY
+----------------------------------------------------------------------------------------------------
+
+  Functions with static analysis data: 176
+  Functions flagged by multiple tools: 48
+
+  Clang-Tidy (quick):
+    Files analyzed:      142
+    Files with findings: 142
+    Total diagnostics:   932
+
+  Cppcheck (quick):
+    Files analyzed:      82
+    Files with findings: 82
+    Total diagnostics:   262
+
+====================================================================================================
+TOP FINDINGS - Clang-Tidy (quick)
+====================================================================================================
+
+  bugprone-assignment-in-if-condition                       483  [likely decompiler artifact]
+  bugprone-incorrect-roundings                              192  [likely decompiler artifact]
+  cert-err33-c                                              132  [likely decompiler artifact]
+  cert-err34-c                                               63
+  bugprone-switch-missing-default-case                       43
+  cert-msc30-c                                                4
+  bugprone-branch-clone                                       4
+  cert-flp30-c                                                3
+  bugprone-multi-level-implicit-pointer-conversion            2
+  cert-env33-c                                                1
+  bugprone-chained-comparison                                 1
+  bugprone-swapped-arguments                                  1
+                                                              1
+  bugprone-integer-division                                   1
+  cert-dcl50-cpp                                              1
+
+====================================================================================================
+TOP FINDINGS - Cppcheck (quick)
+====================================================================================================
+
+  selfAssignment                                             90  [likely decompiler artifact]
+  invalidscanf                                               40
+  legacyUninitvar                                            36
+  uninitvar                                                  36
+  shiftTooManyBitsSigned                                     20
+  objectIndex                                                12
+  invalidPointerCast                                         11
+  nullPointer                                                 5
+  shiftNegativeLHS                                            3
+  nullPointerRedundantCheck                                   3
+  arrayIndexOutOfBounds                                       3
+  identicalInnerCondition                                     1
+  AssignmentIntegerToAddress                                  1
+  nullPointerArithmetic                                       1

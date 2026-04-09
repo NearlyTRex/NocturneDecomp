@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 144,
     "complexity_score": 45,
-    "cross_reference_count": 5,
+    "cross_reference_count": 8,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "clean",
@@ -42,9 +42,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0050bd60",
+      "from_addr": "0050bd7c",
+      "name": "core_marquee.cpp_CMarquee_setup_FUN_0050bd60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00529ae0",
       "from_addr": "00529c92",
       "name": "core_moon.cpp_CMoon_init_FUN_00529ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054ca20",
+      "from_addr": "0054ca7d",
+      "name": "core_platfrm.cpp_CPlatform_setup_FUN_0054ca20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e7b90",
+      "from_addr": "005e7e47",
+      "name": "core_vehicle.cpp_CVehicle_setup_FUN_005e7b90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -160,7 +178,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 7,
+    "call_site_count": 10,
     "call_sites": [
       {
         "call_addr": "004431b5",
@@ -177,6 +195,39 @@
         "call_addr": "0047e252",
         "call_type": "direct",
         "caller": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005e7e47",
+        "call_type": "direct",
+        "caller": "core_vehicle.cpp_CVehicle_setup_FUN_005e7b90",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054ca7d",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_CPlatform_setup_FUN_0054ca20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0050bd7c",
+        "call_type": "direct",
+        "caller": "core_marquee.cpp_CMarquee_setup_FUN_0050bd60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

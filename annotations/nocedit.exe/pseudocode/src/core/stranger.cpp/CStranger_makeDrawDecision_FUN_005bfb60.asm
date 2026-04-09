@@ -287,6 +287,19 @@ section .text
     MOV dword ptr [ESP + 0xf0],EAX      ; 005bfe11
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005bfe18
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0xf8],EAX      ; 005bfe1d
+    FLD float ptr [ESP + 0xf8]          ; 005bfe24
+    ADD ESP,0x8                         ; 005bfe2b
+    SUB ESP,0x4                         ; 005bfe2e
+    FSTP float ptr [ESP]                ; 005bfe31
+    PUSH EDI                            ; 005bfe34
+    PUSH ESI                            ; 005bfe35
+    CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0 ; 005bfe36
+        ;   XREF to: 0052e3a0 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0(CMotionController * this_ptr, int motion_index, float marker_position)
+    MOV dword ptr [ESP + 0xfc],EAX      ; 005bfe3b
+    FLD float ptr [ESP + 0xfc]          ; 005bfe42
+    ADD ESP,0xc                         ; 005bfe49
+    FSTP float ptr [ESP + 0xe4]         ; 005bfe4c
     PUSH 0x59ddb0                       ; 005bfe53
         ;   Label: LAB_005bfe53
     MOV ECX,dword ptr [0x03f6bb10]      ; 005bfe58 | g_StrangerIndices[17]

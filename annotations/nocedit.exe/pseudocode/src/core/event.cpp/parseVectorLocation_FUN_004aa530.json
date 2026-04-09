@@ -197,5 +197,46 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "parseVectorLocation_FUN_004aa530.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_name": "cert-err33-c",
+          "column": 3,
+          "line": 18,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 3,
+          "line": 18,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 3,
+          "line": 25,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "invalidscanf",
+          "column": 3,
+          "line": 25,
+          "message": "sscanf() without field width limits can crash with huge input data.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

@@ -1,6 +1,6 @@
 // Name: core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90
 // Address: 00473f90
-// Address Range: [[00473f90, 004746e3] [0060c868, 0060c884]]
+// Address Range: [[00473f90, 00474719] [0060c868, 0060c884]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDemonLight *this_ptr)
 

@@ -8,8 +8,9 @@
 ; char *           Stack[0x8]:4   target_string
 ; int              Stack[0xc]:4   case_sensitive
 ;
-; XREF[11]:
+; XREF[12]:
 ;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050 at 0042e14e
+;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0 at 004e648f
 ;   core_msnedit.cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df90 at 0053e13a
 ;   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 at 00537cdf
 ;   core_msnedit.cpp_CDemonMission_hideActorsMenu_FUN_0053dcf0 at 0053ded2
@@ -18,8 +19,7 @@
 ;   core_sound.cpp_filterSoundFilesByPattern_FUN_005b17d0 at 005b1802
 ;   core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0 at 005e0af0
 ;   core_trigger.cpp_CTrigger_process_FUN_005dfac0 at 005dfff3
-;   engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50 at 004b40db
-;   ... and 1 more
+;   ... and 2 more
 ;
 ; Called Functions:
 ;   crt_ctype.c_tolower_FUN_005feb30

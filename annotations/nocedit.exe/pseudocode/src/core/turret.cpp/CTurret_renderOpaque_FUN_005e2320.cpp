@@ -1,6 +1,6 @@
 // Name: core_turret.cpp_CTurret_renderOpaque_FUN_005e2320
 // Address: 005e2320
-// Address Range: [[005e2320, 005e240d]]
+// Address Range: [[005e2320, 005e241a]]
 // Convention: __cdecl
 // Signature: int __cdecl core_turret_cpp_CTurret_renderOpaque_FUN_005e2320(CTurret *this_ptr)
 

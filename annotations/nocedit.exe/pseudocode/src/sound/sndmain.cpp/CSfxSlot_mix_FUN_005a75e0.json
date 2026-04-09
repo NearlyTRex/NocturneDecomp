@@ -20,7 +20,7 @@
   "complexity": {
     "assembly_lines": 705,
     "complexity_score": 586,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 7,
     "max_suspect_severity": "mild",
@@ -34,6 +34,12 @@
     "total_lines": 1026
   },
   "cross_references": [
+    {
+      "addr": "005a59c0",
+      "from_addr": "005a5b10",
+      "name": "sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "005aca90",
       "from_addr": "005acc82",
@@ -141,7 +147,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "005acc82",
@@ -153,9 +159,20 @@
         "reg_params": [],
         "stack_bytes": 48,
         "stack_params": 12
+      },
+      {
+        "call_addr": "005a5b10",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0",
+        "estimated_params": 12,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 48,
+        "stack_params": 12
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 48,
     "estimated_params": 12
@@ -638,7 +655,7 @@
       "type": "pointer_cast"
     },
     {
-      "call_site_count": 1,
+      "call_site_count": 2,
       "declared_params": 2,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 12,

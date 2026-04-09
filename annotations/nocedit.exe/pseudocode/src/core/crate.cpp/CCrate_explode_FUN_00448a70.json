@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 65,
     "complexity_score": 24,
-    "cross_reference_count": 4,
+    "cross_reference_count": 6,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "clean",
@@ -24,9 +24,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004a7160",
+      "from_addr": "004a783a",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_004a7160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f0350",
       "from_addr": "004f0abe",
       "name": "core_gun.cpp_CGun_fire_FUN_004f0350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588060",
+      "from_addr": "0058873c",
+      "name": "core_shotgun.cpp_CShotgun_fire_FUN_00588060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -116,7 +128,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 4,
+    "call_site_count": 6,
     "call_sites": [
       {
         "call_addr": "0040abaa",
@@ -141,6 +153,17 @@
         "stack_params": 1
       },
       {
+        "call_addr": "004a783a",
+        "call_type": "direct",
+        "caller": "core_elephant.cpp_CElephantGun_fire_FUN_004a7160",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
         "call_addr": "005de2d7",
         "call_type": "direct",
         "caller": "core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30",
@@ -155,6 +178,17 @@
         "call_addr": "004f0abe",
         "call_type": "direct",
         "caller": "core_gun.cpp_CGun_fire_FUN_004f0350",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0058873c",
+        "call_type": "direct",
+        "caller": "core_shotgun.cpp_CShotgun_fire_FUN_00588060",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

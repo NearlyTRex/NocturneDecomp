@@ -1,6 +1,6 @@
 // Name: core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
 // Address: 005379e0
-// Address Range: [[005379e0, 00537cff] [00537d5f, 00537dc1]]
+// Address Range: [[005379e0, 00537dc1]]
 // Convention: __cdecl
 // Signature: void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonMission *this_ptr)
 

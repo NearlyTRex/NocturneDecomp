@@ -1,6 +1,6 @@
 // Name: core_dracbrid.cpp_CDraculaBride_explode_FUN_004858f0
 // Address: 004858f0
-// Address Range: [[004858f0, 00485a41] [00485aed, 00485b11]]
+// Address Range: [[004858f0, 00485b11]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_004858f0(CDraculaBride *this_ptr,CVector3f *direction,float spread_angle,int render_in_background)
 

@@ -7,7 +7,7 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   blend_mode
 ;
-; XREF[32]:
+; XREF[34]:
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413c0d
 ;   core_batman.cpp_CBatman_renderOpaque_FUN_004173b0 at 004174e2
 ;   core_chain.cpp_CChain_renderTransparent_FUN_004308f0 at 004309e9
@@ -18,7 +18,7 @@
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0 at 00474da9
 ;   core_dlight.cpp_renderConeLightGeometry_FUN_004760d0 at 00476144
 ;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0 at 00485d21
-;   ... and 22 more
+;   ... and 24 more
 ;
 ; Called Functions:
 ;   engine_3d.c_setBlendMode_FUN_00406dd0

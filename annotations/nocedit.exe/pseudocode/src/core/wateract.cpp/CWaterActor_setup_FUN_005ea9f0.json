@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 12,
+    "assembly_lines": 417,
     "complexity_score": 224,
     "cross_reference_count": 0,
-    "function_call_count": 1,
-    "global_count": 0,
+    "function_call_count": 3,
+    "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 209,
     "suspect_count": 1,
     "suspect_types": [
       "warning_inlined_function"
     ],
-    "total_lines": 221
+    "total_lines": 626
   },
   "cross_references": [],
   "function": {
@@ -24,7 +24,7 @@
     "address_range": [
       [
         "005ea9f0",
-        "005eaa04"
+        "005eaf98"
       ]
     ],
     "convention": "__cdecl",
@@ -37,9 +37,68 @@
       "addr": "00408bb0",
       "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0"
+    },
+    {
+      "addr": "005eafa0",
+      "is_variadic": false,
+      "name": "core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005eafa0"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "00657277",
+      "name": "DOUBLE_00657277",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0065727f",
+      "name": "DOUBLE_0065727f",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "00657287",
+      "name": "DOUBLE_00657287",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "0065728f",
+      "name": "DOUBLE_0065728f",
+      "type": "double",
+      "value": "0.707000000000000"
+    },
+    {
+      "addr": "00657297",
+      "name": "DOUBLE_00657297",
+      "type": "double",
+      "value": "128"
+    },
+    {
+      "addr": "0065729f",
+      "name": "DOUBLE_0065729f",
+      "type": "double",
+      "value": "65536"
+    },
+    {
+      "addr": "006572a7",
+      "name": "DOUBLE_006572a7",
+      "type": "double",
+      "value": "252"
+    },
+    {
+      "addr": "006572af",
+      "name": "DOUBLE_006572af",
+      "type": "double",
+      "value": "8388608"
+    }
+  ],
   "param_estimates": {
     "call_site_count": 0,
     "call_sites": [],
@@ -49,23 +108,51 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.0,
-    "instruction_count": 10,
+    "avg_pcode_per_instr": 6.522546419098143,
+    "instruction_count": 377,
     "opcode_distribution": {
-      "CALL": 1,
-      "COPY": 9,
-      "INT_ADD": 1,
-      "INT_AND": 5,
-      "INT_EQUAL": 4,
-      "INT_LESS": 1,
-      "INT_SBORROW": 1,
-      "INT_SLESS": 2,
-      "INT_SUB": 7,
-      "LOAD": 1,
-      "POPCOUNT": 2,
-      "STORE": 6
+      "BOOL_NEGATE": 76,
+      "BOOL_OR": 7,
+      "BRANCH": 2,
+      "CALL": 8,
+      "CALLOTHER": 2,
+      "CBRANCH": 14,
+      "COPY": 816,
+      "FLOAT2FLOAT": 48,
+      "FLOAT_ADD": 5,
+      "FLOAT_DIV": 8,
+      "FLOAT_MULT": 21,
+      "FLOAT_NEG": 2,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 6,
+      "INT_ADD": 243,
+      "INT_AND": 315,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 157,
+      "INT_LEFT": 27,
+      "INT_LESS": 8,
+      "INT_MULT": 18,
+      "INT_NOTEQUAL": 50,
+      "INT_OR": 75,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 32,
+      "INT_SDIV": 3,
+      "INT_SEXT": 15,
+      "INT_SLESS": 95,
+      "INT_SREM": 3,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 39,
+      "INT_XOR": 18,
+      "INT_ZEXT": 6,
+      "LOAD": 100,
+      "POPCOUNT": 71,
+      "RETURN": 1,
+      "ROUND": 6,
+      "STORE": 109,
+      "SUBPIECE": 14,
+      "TRUNC": 6
     },
-    "pcode_op_count": 40
+    "pcode_op_count": 2459
   },
   "stack_frame": {
     "frame_size": 60,

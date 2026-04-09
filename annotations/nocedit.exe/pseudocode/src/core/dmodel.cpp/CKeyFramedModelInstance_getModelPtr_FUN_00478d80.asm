@@ -6,7 +6,7 @@
 ; Parameters:
 ; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr
 ;
-; XREF[84]:
+; XREF[89]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 0040972a
 ;   core_ammo.cpp_CAmmo_getBoundingBox_FUN_00410ef0 at 00410eff
 ;   core_ammobox.cpp_CAmmoBox_getBoundingBox_FUN_004118b0 at 004118bf
@@ -17,7 +17,7 @@
 ;   core_backgnd.cpp_CBackgroundActor_getCollisionType_FUN_004129f0 at 00412a09
 ;   core_bat.cpp_CBat_getBoundingBox_FUN_00414c60 at 00414c81
 ;   core_bat.cpp_CBat_process_FUN_00414a00 at 00414ae8
-;   ... and 74 more
+;   ... and 79 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_0061f97b

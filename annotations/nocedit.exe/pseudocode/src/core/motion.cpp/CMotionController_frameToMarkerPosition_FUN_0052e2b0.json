@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 98,
     "complexity_score": 36,
-    "cross_reference_count": 7,
+    "cross_reference_count": 8,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -17,6 +17,12 @@
     "total_lines": 134
   },
   "cross_references": [
+    {
+      "addr": "00423a30",
+      "from_addr": "00423e94",
+      "name": "core_bride.cpp_CBride_process_FUN_00423a30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004d2ea0",
       "from_addr": "004d3525",
@@ -75,7 +81,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 10,
+    "call_site_count": 12,
     "call_sites": [
       {
         "call_addr": "004d3525",
@@ -122,6 +128,28 @@
         "stack_params": 1
       },
       {
+        "call_addr": "00423e94",
+        "call_type": "direct",
+        "caller": "core_bride.cpp_CBride_process_FUN_00423a30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004240ab",
+        "call_type": "direct",
+        "caller": "core_bride.cpp_CBride_process_FUN_00423a30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
         "call_addr": "004e7c72",
         "call_type": "direct",
         "caller": "core_ghoul.cpp_CGhoul_process_FUN_004e6600",
@@ -158,28 +186,6 @@
         "call_addr": "005201b9",
         "call_type": "direct",
         "caller": "core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "005bfcbd",
-        "call_type": "direct",
-        "caller": "core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "005fada1",
-        "call_type": "direct",
-        "caller": "core_zombie.cpp_CZombie_process_FUN_005f9470",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

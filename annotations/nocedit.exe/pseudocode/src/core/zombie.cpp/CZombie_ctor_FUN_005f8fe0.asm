@@ -15,14 +15,19 @@
 ;   undefined4 s_rue_00658495
 ;   undefined4 s_ue_00658496
 ;   undefined4 s_e_00658497
+;   TerminatedCString s_mine_geo_00658499
 ;   float FLOAT_006659cc = 50
 ;   float FLOAT_006659d0 = 100
 ;   CDemonActor_vtable g_CZombieVTable
+;   CDemonSet* g_CDemonSetPtr = 03114278
+;   undefined4 g_CDemonSetInstance.geometry_filename[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
+;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
+;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
@@ -78,4 +83,41 @@ section .text
     PUSH 0x3e99999a                     ; 005f907c
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005f9081
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x8],EAX       ; 005f9086
+    FLD float ptr [ESP + 0x8]           ; 005f908a
+    ADD ESP,0x8                         ; 005f908e
+    PUSH 0xff                           ; 005f9091
+    MOV dword ptr [EBX + 0xbed4],0x0    ; 005f9096
+    PUSH 0x0                            ; 005f90a0
+    FSTP float ptr [EBX + 0xbebc]       ; 005f90a2
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc70 ; 005f90a8
+        ;   XREF to: 0040cc70 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc70(int min_value, int max_value)
+    MOV dword ptr [EBX + 0xbec4],0x0    ; 005f90ad
+    MOV dword ptr [EBX + 0xbed8],0x0    ; 005f90b7
+    ADD ESP,0x8                         ; 005f90c1
+    MOV dword ptr [EBX + 0xbec0],EAX    ; 005f90c4
+    MOV EAX,[0x006810c8]                ; 005f90ca | g_CDemonSetPtr
+    PUSH 0x658499                       ; 005f90cf | = "mine.geo"
+    ADD EAX,0x14d0f0                    ; 005f90d4
+    MOV dword ptr [EBX + 0xbf40],0x0    ; 005f90d9
+    PUSH EAX                            ; 005f90e3 | g_CDemonSetInstance.geometry_filename[0]
+    MOV dword ptr [EBX + 0xbf94],0x0    ; 005f90e4
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005f90ee
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
+    ADD ESP,0x8                         ; 005f90f3
+    TEST EAX,EAX                        ; 005f90f6
+    SETZ AL                             ; 005f90f8
+    MOV dword ptr [EBX + 0xbf44],0x0    ; 005f90fb
+    MOV dword ptr [EBX + 0xbfa4],0x0    ; 005f9105
+    MOV dword ptr [EBX + 0xbfa8],0x0    ; 005f910f
+    AND EAX,0xff                        ; 005f9119
+    MOV dword ptr [EBX + 0xbeb8],0x0    ; 005f911e
+    MOV dword ptr [EBX + 0xbf40],EAX    ; 005f9128
+    MOV EAX,EBX                         ; 005f912e
+    ADD ESP,0x4                         ; 005f9130
+    POP EBP                             ; 005f9133
+    POP EDI                             ; 005f9134
+    POP ESI                             ; 005f9135
+    POP EBX                             ; 005f9136
+    RET                                 ; 005f9137
 

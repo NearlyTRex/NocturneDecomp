@@ -79,4 +79,5 @@ section .text
     POP EDI                             ; 00562756
     POP ESI                             ; 00562757
     POP EBX                             ; 00562758
+    RET                                 ; 00562759
 

@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
-; XREF[36]:
+; XREF[37]:
 ;   core_armour.cpp_CArmour_setup_FUN_00412240 at 00412257
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_00415150 at 00415167
 ;   core_batman.cpp_CBatman_setup_FUN_00416510 at 00416527
@@ -15,9 +15,9 @@
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b2e8
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_0041bd90 at 0041bd9e
 ;   core_bride.cpp_CBride_setup_FUN_00423810 at 00423821
+;   core_charactr.cpp_CCharacter_setup_FUN_00428140 at 004281c4
 ;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043dfaa
-;   core_cow.cpp_CZombieCow_setup_FUN_004441b0 at 004441be
-;   ... and 26 more
+;   ... and 27 more
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480

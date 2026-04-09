@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 670,
     "complexity_score": 254,
-    "cross_reference_count": 4,
+    "cross_reference_count": 5,
     "function_call_count": 13,
     "global_count": 8,
     "max_suspect_severity": "clean",
@@ -33,6 +33,12 @@
       "addr": "005c2850",
       "from_addr": "005c2e1e",
       "name": "core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005decf0",
+      "from_addr": "005df280",
+      "name": "core_trash.cpp_CTrash_process_FUN_005decf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -173,7 +179,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 4,
+    "call_site_count": 5,
     "call_sites": [
       {
         "call_addr": "004291bc",
@@ -201,6 +207,17 @@
         "call_addr": "004e7301",
         "call_type": "direct",
         "caller": "core_ghoul.cpp_CGhoul_process_FUN_004e6600",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "005df280",
+        "call_type": "direct",
+        "caller": "core_trash.cpp_CTrash_process_FUN_005decf0",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -455,6 +472,34 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CDemonSet_testCylinderCollision_FUN_00573470.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 39,
+          "line": 94,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 37,
+          "line": 95,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 30,
+          "line": 96,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

@@ -829,5 +829,39 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CSound_process_FUN_005b2fd0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 14,
+          "line": 77,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 79,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-msc30-c",
+          "column": 15,
+          "line": 219,
+          "message": "rand() has limited randomness; use C++11 random library instead"
+        },
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 7,
+          "line": 221,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

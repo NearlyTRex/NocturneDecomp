@@ -479,6 +479,40 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CSvetlana_process_FUN_005d8ba0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 13,
+          "line": 63,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 39,
+          "line": 64,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 5,
+          "line": 95,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 23,
+          "line": 140,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Type propagation did not converge",

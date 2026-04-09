@@ -5,7 +5,7 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 69,
+    "assembly_lines": 85,
     "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 4,
@@ -16,7 +16,7 @@
     "suspect_types": [
       "stack_ref"
     ],
-    "total_lines": 91
+    "total_lines": 107
   },
   "cross_references": [
     {
@@ -31,10 +31,6 @@
     "address_range": [
       [
         "00509c60",
-        "00509d12"
-      ],
-      [
-        "00509d3a",
         "00509d4c"
       ]
     ],
@@ -129,31 +125,32 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.7586206896551726,
-    "instruction_count": 58,
+    "avg_pcode_per_instr": 3.9305555555555554,
+    "instruction_count": 72,
     "opcode_distribution": {
       "BRANCH": 1,
-      "CALL": 6,
+      "CALL": 8,
       "CBRANCH": 1,
-      "COPY": 62,
+      "COPY": 72,
       "FLOAT2FLOAT": 2,
       "FLOAT_MULT": 1,
       "INT2FLOAT": 1,
-      "INT_ADD": 19,
-      "INT_AND": 16,
-      "INT_CARRY": 5,
-      "INT_EQUAL": 16,
+      "INT_ADD": 27,
+      "INT_AND": 24,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 24,
       "INT_LESS": 2,
       "INT_SBORROW": 2,
-      "INT_SCARRY": 5,
-      "INT_SLESS": 8,
-      "INT_SUB": 26,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 12,
+      "INT_SUB": 30,
       "INT_XOR": 1,
-      "LOAD": 5,
-      "POPCOUNT": 8,
-      "STORE": 31
+      "LOAD": 9,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 35
     },
-    "pcode_op_count": 218
+    "pcode_op_count": 283
   },
   "stack_frame": {
     "frame_size": 40,

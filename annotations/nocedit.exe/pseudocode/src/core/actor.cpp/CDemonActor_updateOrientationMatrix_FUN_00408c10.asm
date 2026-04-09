@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ;
-; XREF[45]:
+; XREF[46]:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004088b0 at 00408924
 ;   core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0 at 00409ffd
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408bb0 at 00408bd3
@@ -17,7 +17,7 @@
 ;   core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422640 at 0042267a
 ;   core_bride.cpp_CBride_process_FUN_00423a30 at 004243b1
 ;   core_bugs.cpp_CBugs_processInEditor_FUN_004278d0 at 00427916
-;   ... and 35 more
+;   ... and 36 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70

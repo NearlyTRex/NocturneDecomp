@@ -1,6 +1,6 @@
 // Name: core_boxactor.cpp_CBoxActor_renderTransparent_FUN_00421ef0
 // Address: 00421ef0
-// Address Range: [[00421ef0, 00421fcd]]
+// Address Range: [[00421ef0, 00421fda]]
 // Convention: __cdecl
 // Signature: int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_00421ef0(CBoxActor *this_ptr)
 

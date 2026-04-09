@@ -9,6 +9,9 @@
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x18]:4  local_18
 ;
+; XREF[1]:
+;   core_charactr.cpp_CCharacter_setup_FUN_00428140 at 004282c6
+;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460

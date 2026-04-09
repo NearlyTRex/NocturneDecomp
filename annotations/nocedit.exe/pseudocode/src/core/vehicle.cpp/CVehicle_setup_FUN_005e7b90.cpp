@@ -1,6 +1,6 @@
 // Name: core_vehicle.cpp_CVehicle_setup_FUN_005e7b90
 // Address: 005e7b90
-// Address Range: [[005e7b90, 005e7ba0]]
+// Address Range: [[005e7b90, 005e7e7e]]
 // Convention: __cdecl
 // Signature: void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_005e7b90(CVehicle *this_ptr)
 

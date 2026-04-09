@@ -80,7 +80,7 @@
   "complexity": {
     "assembly_lines": 464,
     "complexity_score": 251,
-    "cross_reference_count": 12,
+    "cross_reference_count": 13,
     "function_call_count": 8,
     "global_count": 33,
     "max_suspect_severity": "moderate",
@@ -98,6 +98,12 @@
       "addr": "005a97e0",
       "from_addr": "005a97fc",
       "name": "sound_sndmain.cpp_getSfxOptions_FUN_005a97e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a59c0",
+      "from_addr": "005a5ae2",
+      "name": "sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -423,7 +429,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 12,
+    "call_site_count": 13,
     "call_sites": [
       {
         "call_addr": "005a9b63",
@@ -514,9 +520,9 @@
         "stack_params": 2
       },
       {
-        "call_addr": "005a97fc",
+        "call_addr": "005a5ae2",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_getSfxOptions_FUN_005a97e0",
+        "caller": "sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -525,9 +531,9 @@
         "stack_params": 2
       },
       {
-        "call_addr": "005a993a",
+        "call_addr": "005a97fc",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_setSfxTrackedDoublePosition_FUN_005a9910",
+        "caller": "sound_sndmain.cpp_getSfxOptions_FUN_005a97e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -1,6 +1,6 @@
 // Name: core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
 // Address: 004ca110
-// Address Range: [[004ca110, 004ca626] [004ca64e, 004ca659] [004ca65d, 004ca70b] [004caa15, 004caa6f] [0060a604, 0060a648]]
+// Address Range: [[004ca110, 004caa6f] [0060a604, 0060a648]]
 // Convention: __cdecl
 // Signature: int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_ptr)
 

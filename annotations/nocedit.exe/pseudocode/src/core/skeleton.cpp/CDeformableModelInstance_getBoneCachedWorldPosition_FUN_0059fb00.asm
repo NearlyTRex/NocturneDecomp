@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   out_position
 ; int              Stack[0xc]:4   bone_index
 ;
-; XREF[44]:
+; XREF[46]:
 ;   core_batcreat.cpp_CBatCreature_getTargetPoints_FUN_00416240 at 00416264
 ;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030 at 00416084
 ;   core_batman.cpp_CBatman_getTargetPoints_FUN_00417bb0 at 00417c06
@@ -19,7 +19,7 @@
 ;   core_boneguy.cpp_CBoneGuy_getTargetPoints_FUN_0041d550 at 0041d583
 ;   core_bride.cpp_CBride_getTargetPoints_FUN_00424a10 at 00424a45
 ;   core_bride.cpp_CBride_processDamage_FUN_00424830 at 00424873
-;   ... and 34 more
+;   ... and 36 more
 ;
 ; *****************************************************************************
 

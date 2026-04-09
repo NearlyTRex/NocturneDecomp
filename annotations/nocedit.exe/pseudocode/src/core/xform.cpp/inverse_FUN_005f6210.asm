@@ -29,7 +29,8 @@
 ; double           Stack[-0x18]:8  local_18
 ; CMatrix3x4f *    Stack[-0x10]:4  local_10
 ;
-; XREF[13]:
+; XREF[14]:
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190 at 0042b4ee
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 at 0042cf63
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 at 0042d24b
 ;   core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0 at 0043a300
@@ -39,8 +40,7 @@
 ;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c3bf
 ;   core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 at 0058c010
 ;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 00595bfa
-;   core_tentacle.cpp_CTentacle_process_FUN_005db050 at 005db32e
-;   ... and 3 more
+;   ... and 4 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_xform_cpp_00658389

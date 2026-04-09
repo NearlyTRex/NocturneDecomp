@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 73,
     "complexity_score": 48,
-    "cross_reference_count": 6,
+    "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "mild",
@@ -29,6 +29,12 @@
       "addr": "0049cbd0",
       "from_addr": "0049cd0d",
       "name": "core_dtri.cpp_CDemonTriangle_render_FUN_0049cbd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00570960",
+      "from_addr": "005709c6",
+      "name": "core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -113,7 +119,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 11,
+    "call_site_count": 12,
     "call_sites": [
       {
         "call_addr": "0059b381",
@@ -152,6 +158,17 @@
         "call_addr": "0051ecbd",
         "call_type": "direct",
         "caller": "shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005709c6",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570960",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -205,17 +222,6 @@
       },
       {
         "call_addr": "0049732d",
-        "call_type": "direct",
-        "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "00497354",
         "call_type": "direct",
         "caller": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70",
         "estimated_params": 2,

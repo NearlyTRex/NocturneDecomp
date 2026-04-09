@@ -181,6 +181,119 @@
     ],
     "severity": "low"
   },
+  "static_analysis": {
+    "analyzed_file": "detectIntelProcessor_FUN_00524f4c.keep.c",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 46,
+          "line": 77,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 13,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 19,
+          "line": 41,
+          "message": "Uninitialized variable: local_9",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 50,
+          "line": 41,
+          "message": "Uninitialized variable: local_8",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 80,
+          "line": 41,
+          "message": "Uninitialized variable: local_7",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 21,
+          "line": 42,
+          "message": "Uninitialized variable: local_6",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 51,
+          "line": 42,
+          "message": "Uninitialized variable: local_5",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 80,
+          "line": 42,
+          "message": "Uninitialized variable: local_4",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 19,
+          "line": 43,
+          "message": "Uninitialized variable: local_3",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 48,
+          "line": 43,
+          "message": "Uninitialized variable: local_2",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 74,
+          "line": 43,
+          "message": "Uninitialized variable: local_1",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 19,
+          "line": 44,
+          "message": "Uninitialized variable: local_13",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 53,
+          "line": 44,
+          "message": "Uninitialized variable: local_12",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 19,
+          "line": 45,
+          "message": "Uninitialized variable: local_11",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 52,
+          "line": 45,
+          "message": "Uninitialized variable: local_10",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Unreachable code block removed",

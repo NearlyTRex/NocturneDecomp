@@ -1,6 +1,6 @@
 // Name: core_dracbrid.cpp_randomizePosition_FUN_00486430
 // Address: 00486430
-// Address Range: [[00486430, 0048644b]]
+// Address Range: [[00486430, 004864b6]]
 // Convention: __cdecl
 // Signature: CVector3f * __cdecl core_dracbrid_cpp_randomizePosition_FUN_00486430(CVector3f *dest,CVector3f *src)
 

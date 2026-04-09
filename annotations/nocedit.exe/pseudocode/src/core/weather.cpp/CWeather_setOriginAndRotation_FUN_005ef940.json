@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 55,
+    "assembly_lines": 177,
     "complexity_score": 84,
     "cross_reference_count": 1,
-    "function_call_count": 1,
-    "global_count": 1,
+    "function_call_count": 4,
+    "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 69,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 124
+    "total_lines": 246
   },
   "cross_references": [
     {
@@ -31,10 +31,6 @@
     "address_range": [
       [
         "005ef940",
-        "005ef99b"
-      ],
-      [
-        "005efb24",
         "005efb3f"
       ]
     ],
@@ -48,13 +44,76 @@
       "addr": "0040cc10",
       "is_variadic": false,
       "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10"
+    },
+    {
+      "addr": "00574210",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_disableIgnore_FUN_00574210"
+    },
+    {
+      "addr": "00574180",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_00574180"
+    },
+    {
+      "addr": "00572530",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_raycast_FUN_00572530"
     }
   ],
   "globals": [
     {
+      "addr": "00657c14",
+      "name": "DOUBLE_00657c14",
+      "type": "double",
+      "value": "100"
+    },
+    {
+      "addr": "00657c1c",
+      "name": "DOUBLE_00657c1c",
+      "type": "double",
+      "value": "0.785398163375000"
+    },
+    {
+      "addr": "00657c24",
+      "name": "DOUBLE_00657c24",
+      "type": "double",
+      "value": "-0.785398163375000"
+    },
+    {
+      "addr": "00657c2c",
+      "name": "FLOAT_00657c2c",
+      "type": "float",
+      "value": "50"
+    },
+    {
+      "addr": "00657c30",
+      "name": "FLOAT_00657c30",
+      "type": "float",
+      "value": "-50"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
       "addr": "03f95df8",
       "name": "g_WeatherParticlePositions",
       "type": "CVector3f[200]",
+      "value": null
+    },
+    {
+      "addr": "03f96758",
+      "name": "g_WeatherParticleGroundHeights",
+      "type": "float[200]",
       "value": null
     }
   ],
@@ -79,30 +138,35 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.8863636363636362,
-    "instruction_count": 44,
+    "avg_pcode_per_instr": 4.954545454545454,
+    "instruction_count": 154,
     "opcode_distribution": {
-      "BOOL_NEGATE": 1,
+      "BOOL_NEGATE": 2,
       "BRANCH": 1,
-      "CALL": 1,
-      "CBRANCH": 3,
-      "COPY": 41,
-      "INT_ADD": 20,
-      "INT_AND": 17,
-      "INT_CARRY": 2,
-      "INT_EQUAL": 16,
-      "INT_LESS": 4,
-      "INT_SBORROW": 4,
-      "INT_SCARRY": 2,
-      "INT_SLESS": 8,
-      "INT_SUB": 11,
+      "CALL": 6,
+      "CALLOTHER": 2,
+      "CBRANCH": 7,
+      "COPY": 324,
+      "FLOAT2FLOAT": 29,
+      "FLOAT_ADD": 8,
+      "FLOAT_MULT": 4,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 81,
+      "INT_AND": 45,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 44,
+      "INT_LESS": 10,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 22,
+      "INT_SUB": 29,
       "INT_XOR": 1,
-      "LOAD": 17,
-      "POPCOUNT": 8,
+      "LOAD": 43,
+      "POPCOUNT": 22,
       "RETURN": 1,
-      "STORE": 13
+      "STORE": 51
     },
-    "pcode_op_count": 171
+    "pcode_op_count": 763
   },
   "stack_frame": {
     "frame_size": 96,

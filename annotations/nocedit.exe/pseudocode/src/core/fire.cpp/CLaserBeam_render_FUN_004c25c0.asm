@@ -638,6 +638,16 @@ section .text
     INC ESI                             ; 004c2d46
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004c2d47
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 004c2d4c
+    CMP ESI,0x19                        ; 004c2d4f
+    JL 0x004c28a9                       ; 004c2d52
+        ;   XREF to: 004c28a9 (CONDITIONAL_JUMP)  ; LAB_004c28a9
+    PUSH 0x0                            ; 004c2d58
+    MOV ECX,dword ptr [0x006703ec]      ; 004c2d5a | g_CDemonRendererPtr2
+    PUSH ECX                            ; 004c2d60 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 ; 004c2d61
+        ;   XREF to: 0048ca50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)
+    ADD ESP,0x8                         ; 004c2d66
     FLD float ptr [ESP + 0x30]          ; 004c2d69
         ;   Label: LAB_004c2d69
     FLDZ                                ; 004c2d6d
@@ -826,6 +836,7 @@ section .text
     PUSH ESI                            ; 004c304a | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004c304b
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 004c3050
     FLD float ptr [ESP + 0x1c]          ; 004c3053
         ;   Label: LAB_004c3053
     FLDZ                                ; 004c3057
@@ -1382,6 +1393,9 @@ section .text
     PUSH EBX                            ; 004c3860 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004c3861
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 004c3866
+    JMP 0x004c3064                      ; 004c3869
+        ;   XREF to: 004c3064 (UNCONDITIONAL_JUMP)  ; LAB_004c3064
     MOV ECX,0xc                         ; 03fc55e4
         ;   Label: LAB_03fc55e4
     LEA EDI,[ESI + 0x90]                ; 03fc55e9

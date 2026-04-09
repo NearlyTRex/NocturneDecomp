@@ -29,4 +29,8 @@ section .text
     JNZ 0x005fe71c                      ; 005fe716
         ;   XREF to: 005fe71c (CONDITIONAL_JUMP)  ; LAB_005fe71c
     OR byte ptr [EBX + 0x10],0x2        ; 005fe718
+    MOV EAX,EDX                         ; 005fe71c
+        ;   Label: LAB_005fe71c
+    POP EBX                             ; 005fe71e
+    RET                                 ; 005fe71f
 

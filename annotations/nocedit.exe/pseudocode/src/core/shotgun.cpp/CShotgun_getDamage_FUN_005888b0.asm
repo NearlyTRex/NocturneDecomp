@@ -29,4 +29,11 @@ section .text
     PUSH 0x43160000                     ; 005888d1
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005888d6
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0xc],EAX       ; 005888db
+    FLD float ptr [ESP + 0xc]           ; 005888df
+    ADD ESP,0x8                         ; 005888e3
+    FSTP float ptr [ESP]                ; 005888e6
+    MOV EAX,dword ptr [ESP]             ; 005888e9
+    ADD ESP,0x8                         ; 005888ec
+    RET                                 ; 005888ef
 

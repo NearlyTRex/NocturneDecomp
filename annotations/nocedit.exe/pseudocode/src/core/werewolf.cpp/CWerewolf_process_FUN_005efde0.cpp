@@ -1,6 +1,6 @@
 // Name: core_werewolf.cpp_CWerewolf_process_FUN_005efde0
 // Address: 005efde0
-// Address Range: [[005efde0, 005efee6] [005eff1e, 005f02e4] [005f0456, 005f0535] [005f05a4, 005f05ff] [005f0704, 005f0721] [005f07c7, 005f1095] [005f10fe, 005f1195]]
+// Address Range: [[005efde0, 005f1195]]
 // Convention: __cdecl
 // Signature: void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_ptr,float delta_time)
 

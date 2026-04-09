@@ -1,6 +1,6 @@
 // Name: core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00
 // Address: 004a9b00
-// Address Range: [[004a9b00, 004a9c26]]
+// Address Range: [[004a9b00, 004a9eea]]
 // Convention: __cdecl
 // Signature: void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,float delta_time)
 

@@ -9,18 +9,18 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  uStack_14
 ;
-; XREF[74]:
+; XREF[75]:
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 at 00413705
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 004158a6
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 0041706a
 ;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426420 at 004265b9
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190 at 0042b395
 ;   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 at 0042bb25
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 at 0042d7df
 ;   core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0 at 0042c73f
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 at 0042ee91
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70 at 0042cbc8
-;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00428d80 at 00428da1
-;   ... and 64 more
+;   ... and 65 more
 ;
 ; Called Functions:
 ;   crt_math.c_atan2_FUN_006013b1

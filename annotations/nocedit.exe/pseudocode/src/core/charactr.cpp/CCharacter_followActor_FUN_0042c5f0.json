@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 294,
+    "assembly_lines": 324,
     "complexity_score": 112,
     "cross_reference_count": 3,
     "function_call_count": 5,
-    "global_count": 11,
+    "global_count": 12,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 112,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 406
+    "total_lines": 436
   },
   "cross_references": [
     {
@@ -41,10 +41,6 @@
     "address_range": [
       [
         "0042c5f0",
-        "0042c7fc"
-      ],
-      [
-        "0042c83e",
         "0042c917"
       ]
     ],
@@ -122,6 +118,12 @@
       "name": "DOUBLE_0061723a",
       "type": "double",
       "value": "0.0100000000000000"
+    },
+    {
+      "addr": "00617242",
+      "name": "DOUBLE_00617242",
+      "type": "double",
+      "value": "0.0349065850388889"
     },
     {
       "addr": "0061724a",
@@ -213,47 +215,47 @@
     "estimated_params": 5
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.959839357429719,
-    "instruction_count": 249,
+    "avg_pcode_per_instr": 6.0,
+    "instruction_count": 268,
     "opcode_distribution": {
-      "BOOL_NEGATE": 12,
-      "BOOL_OR": 17,
-      "BRANCH": 3,
+      "BOOL_NEGATE": 13,
+      "BOOL_OR": 20,
+      "BRANCH": 7,
       "CALL": 7,
       "CALLIND": 1,
-      "CBRANCH": 16,
-      "COPY": 650,
-      "FLOAT2FLOAT": 47,
+      "CBRANCH": 19,
+      "COPY": 685,
+      "FLOAT2FLOAT": 50,
       "FLOAT_ABS": 5,
       "FLOAT_ADD": 3,
-      "FLOAT_EQUAL": 10,
-      "FLOAT_LESS": 10,
+      "FLOAT_EQUAL": 12,
+      "FLOAT_LESS": 12,
       "FLOAT_MULT": 3,
-      "FLOAT_NAN": 20,
+      "FLOAT_NAN": 24,
       "FLOAT_NEG": 1,
       "FLOAT_SQRT": 1,
       "FLOAT_SUB": 5,
       "INT2FLOAT": 2,
-      "INT_ADD": 110,
-      "INT_AND": 91,
+      "INT_ADD": 115,
+      "INT_AND": 103,
       "INT_CARRY": 8,
-      "INT_EQUAL": 36,
-      "INT_LEFT": 40,
-      "INT_LESS": 3,
-      "INT_NOTEQUAL": 51,
-      "INT_OR": 50,
-      "INT_SBORROW": 3,
+      "INT_EQUAL": 38,
+      "INT_LEFT": 48,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 61,
+      "INT_OR": 60,
+      "INT_SBORROW": 4,
       "INT_SCARRY": 8,
-      "INT_SLESS": 18,
-      "INT_SUB": 39,
+      "INT_SLESS": 19,
+      "INT_SUB": 40,
       "INT_XOR": 2,
-      "INT_ZEXT": 40,
-      "LOAD": 81,
-      "POPCOUNT": 18,
+      "INT_ZEXT": 48,
+      "LOAD": 86,
+      "POPCOUNT": 19,
       "RETURN": 7,
-      "STORE": 66
+      "STORE": 68
     },
-    "pcode_op_count": 1484
+    "pcode_op_count": 1608
   },
   "stack_frame": {
     "frame_size": 104,
@@ -364,6 +366,22 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CCharacter_followActor_FUN_0042c5f0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 34,
+          "line": 114,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

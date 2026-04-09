@@ -1,6 +1,6 @@
 // Name: core_bat.cpp_CBat_process_FUN_00414a00
 // Address: 00414a00
-// Address Range: [[00414a00, 00414bce]]
+// Address Range: [[00414a00, 00414be5]]
 // Convention: __cdecl
 // Signature: void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr,float delta_time)
 

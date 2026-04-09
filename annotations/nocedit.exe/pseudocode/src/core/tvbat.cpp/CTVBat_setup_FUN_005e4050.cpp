@@ -1,6 +1,6 @@
 // Name: core_tvbat.cpp_CTVBat_setup_FUN_005e4050
 // Address: 005e4050
-// Address Range: [[005e4050, 005e409e]]
+// Address Range: [[005e4050, 005e40b4]]
 // Convention: __cdecl
 // Signature: void __cdecl core_tvbat_cpp_CTVBat_setup_FUN_005e4050(CTVBat *this_ptr)
 

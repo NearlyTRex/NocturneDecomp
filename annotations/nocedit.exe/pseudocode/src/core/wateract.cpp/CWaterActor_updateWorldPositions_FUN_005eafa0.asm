@@ -13,6 +13,9 @@
 ; SWaterVertex *   Stack[-0x18]:4  local_18
 ; CMatrix3x3f *    Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0 at 005eacc1
+;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;

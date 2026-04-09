@@ -1,6 +1,6 @@
 // Name: core_tommygun.cpp_CTommyGun_getDamage_FUN_005de330
 // Address: 005de330
-// Address Range: [[005de330, 005de341]]
+// Address Range: [[005de330, 005de356]]
 // Convention: __cdecl
 // Signature: float __cdecl core_tommygun_cpp_CTommyGun_getDamage_FUN_005de330(CTommyGun *this_ptr)
 

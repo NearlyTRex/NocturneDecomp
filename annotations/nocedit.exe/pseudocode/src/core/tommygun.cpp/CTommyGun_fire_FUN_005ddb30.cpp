@@ -1,6 +1,6 @@
 // Name: core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30
 // Address: 005ddb30
-// Address Range: [[005ddb30, 005ddded] [005ddebf, 005de32f]]
+// Address Range: [[005ddb30, 005de32f]]
 // Convention: __cdecl
 // Signature: int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_005ddb30(CTommyGun *this_ptr)
 

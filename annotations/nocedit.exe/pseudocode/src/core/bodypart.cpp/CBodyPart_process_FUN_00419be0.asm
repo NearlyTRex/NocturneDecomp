@@ -17,7 +17,9 @@
 ;   TerminatedCString s_disableBodyPartDamage_00615def
 ;   double DOUBLE_00615e0c = 3
 ;   CEventList* g_CEventListPtr = 02d05310
+;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CEventList g_CEventListInstance
+;   CDemonSet g_CDemonSetInstance
 ;   UVector3 g_ZeroVector
 ;   undefined4 g_ZeroVector+4
 ;   undefined4 g_ZeroVector+8
@@ -31,6 +33,7 @@
 ;   core_box.cpp_CBox_process_FUN_0041e2f0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
+;   core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
 ;
 ; *****************************************************************************
 
@@ -212,4 +215,31 @@ section .text
     PUSH 0x41200000                     ; 00419db0
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00419db5
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x54],EAX      ; 00419dba
+    FLD float ptr [ESP + 0x54]          ; 00419dbe
+    ADD ESP,0x8                         ; 00419dc2
+    LEA EAX,[ESP + 0x4]                 ; 00419dc5
+    MOV dword ptr [ESP + 0x38],EBX      ; 00419dc9
+    PUSH EAX                            ; 00419dcd
+    MOV dword ptr [ESP + 0x40],EBX      ; 00419dce
+    LEA EAX,[EBX + 0x20]                ; 00419dd2
+    PUSH EAX                            ; 00419dd5
+    LEA EAX,[ESP + 0x48]                ; 00419dd6
+    PUSH EAX                            ; 00419dda
+    MOV ESI,dword ptr [0x006810c8]      ; 00419ddb | g_CDemonSetPtr
+    PUSH ESI                            ; 00419de1 | g_CDemonSetInstance
+    FSTP float ptr [ESP + 0x18]         ; 00419de2
+    CALL core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0 ; 00419de6
+        ;   XREF to: 005742b0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet * this_ptr, CVector3f * position, CVector3f * actor_position, SDamageInfo * damage_info)
+    ADD ESP,0x10                        ; 00419deb
+    PUSH dword ptr [ESP + 0x60]         ; 00419dee
+    PUSH EBX                            ; 00419df2
+    CALL core_bodypart.cpp_CBodyPart_processFires_FUN_00419e10 ; 00419df3
+        ;   XREF to: 00419e10 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_processFires_FUN_00419e10(CBodyPart * this_ptr, float delta_time)
+    ADD ESP,0x8                         ; 00419df8
+    POP EDI                             ; 00419dfb
+    ADD ESP,0x4c                        ; 00419dfc
+    POP ESI                             ; 00419dff
+    POP EBX                             ; 00419e00
+    RET                                 ; 00419e01
 

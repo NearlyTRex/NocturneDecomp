@@ -18,6 +18,7 @@
 ;   undefined4 s_oneguydie_00615f8a
 ;   undefined4 s_neguydie_00615f8b
 ;   undefined4 s_eguydie_00615f8c
+;   float FLOAT_00615f95 = 256
 ;   float FLOAT_0065af60 = 50
 ;   float FLOAT_0065af64 = 100
 ;   CDemonActor_vtable g_CBoneGuyVTable
@@ -26,8 +27,10 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70
+;   core_boneguy.cpp_hsvToRgb_FUN_0041ba10
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
+;   crt_math.c_round_FUN_005fe6b0
 ;   crt_memory.c___arrinit_FUN_005fe667
 ;   crt_memory.c_memset_FUN_005fde40
 ;
@@ -113,4 +116,50 @@ section .text
     PUSH 0x0                            ; 0041bceb
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041bced
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x20],EAX      ; 0041bcf2
+    FLD float ptr [ESP + 0x20]          ; 0041bcf6
+    ADD ESP,0x8                         ; 0041bcfa
+    PUSH 0x42200000                     ; 0041bcfd
+    PUSH 0x0                            ; 0041bd02
+    FSTP float ptr [ESP + 0x14]         ; 0041bd04
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041bd08
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x20],EAX      ; 0041bd0d
+    FLD float ptr [ESP + 0x20]          ; 0041bd11
+    ADD ESP,0x8                         ; 0041bd15
+    PUSH 0x43800000                     ; 0041bd18
+    PUSH 0x42d40000                     ; 0041bd1d
+    FSTP float ptr [ESP + 0x18]         ; 0041bd22
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041bd26
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x20],EAX      ; 0041bd2b
+    FLD float ptr [ESP + 0x20]          ; 0041bd2f
+    ADD ESP,0x8                         ; 0041bd33
+    LEA EAX,[ESP + 0xc]                 ; 0041bd36
+    PUSH EAX                            ; 0041bd3a
+    LEA EAX,[ESP + 0x4]                 ; 0041bd3b
+    PUSH EAX                            ; 0041bd3f
+    FSTP float ptr [ESP + 0x1c]         ; 0041bd40
+    CALL core_boneguy.cpp_hsvToRgb_FUN_0041ba10 ; 0041bd44
+        ;   XREF to: 0041ba10 (UNCONDITIONAL_CALL)  ; CColor3f * core_boneguy.cpp_hsvToRgb_FUN_0041ba10(CColor3f * out_rgb, CColor3f * in_hsv)
+    ADD ESP,0x8                         ; 0041bd49
+    FLD float ptr [0x00615f95]          ; 0041bd4c | FLOAT_00615f95
+    FLD float ptr [ESP]                 ; 0041bd52
+    FMUL ST1                            ; 0041bd55
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0041bd57
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
+    FISTP dword ptr [EBX + 0x108]       ; 0041bd5c
+    FLD float ptr [ESP + 0x4]           ; 0041bd62
+    FMUL ST1                            ; 0041bd66
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0041bd68
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
+    FISTP dword ptr [EBX + 0x10c]       ; 0041bd6d
+    FMUL float ptr [ESP + 0x8]          ; 0041bd73
+    MOV EAX,EBX                         ; 0041bd77
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0041bd79
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
+    FISTP dword ptr [EBX + 0x110]       ; 0041bd7e
+    ADD ESP,0x1c                        ; 0041bd84
+    POP EBX                             ; 0041bd87
+    RET                                 ; 0041bd88
 

@@ -1,6 +1,6 @@
 // Name: core_barrier.cpp_CBarrier_setup_FUN_00414210
 // Address: 00414210
-// Address Range: [[00414210, 0041421a]]
+// Address Range: [[00414210, 00414237]]
 // Convention: __cdecl
 // Signature: void __cdecl core_barrier_cpp_CBarrier_setup_FUN_00414210(CBarrier *this_ptr)
 

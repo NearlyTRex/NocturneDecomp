@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CRock_render_FUN_004c1870
 // Address: 004c1870
-// Address Range: [[004c1870, 004c18f4] [004c18fe, 004c1936]]
+// Address Range: [[004c1870, 004c1936]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CRock_render_FUN_004c1870(CRock *this_ptr)
 

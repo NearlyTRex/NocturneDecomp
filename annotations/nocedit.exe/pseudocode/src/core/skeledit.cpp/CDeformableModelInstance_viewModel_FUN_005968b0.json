@@ -6,21 +6,22 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 3419,
-    "complexity_score": 1168,
+    "assembly_lines": 3423,
+    "complexity_score": 1183,
     "cross_reference_count": 2,
     "function_call_count": 90,
     "global_count": 144,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1078,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "stack_ref",
       "suspect_float",
-      "warning_inlined_function"
+      "warning_inlined_function",
+      "wrong_global"
     ],
-    "total_lines": 4497
+    "total_lines": 4501
   },
   "cross_references": [
     {
@@ -41,14 +42,6 @@
     "address_range": [
       [
         "005968b0",
-        "0059754b"
-      ],
-      [
-        "0059754f",
-        "0059796e"
-      ],
-      [
-        "00597977",
         "00598ed7"
       ],
       [
@@ -1414,13 +1407,13 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.833625218914186,
-    "instruction_count": 2855,
+    "avg_pcode_per_instr": 4.8351994401679494,
+    "instruction_count": 2858,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 69,
       "BOOL_OR": 21,
-      "BRANCH": 43,
+      "BRANCH": 44,
       "CALL": 241,
       "CALLIND": 52,
       "CBRANCH": 136,
@@ -1436,34 +1429,34 @@
       "FLOAT_SQRT": 2,
       "FLOAT_SUB": 8,
       "INT2FLOAT": 16,
-      "INT_ADD": 1153,
-      "INT_AND": 1380,
-      "INT_CARRY": 324,
-      "INT_EQUAL": 1172,
+      "INT_ADD": 1155,
+      "INT_AND": 1384,
+      "INT_CARRY": 326,
+      "INT_EQUAL": 1176,
       "INT_LEFT": 49,
       "INT_LESS": 106,
       "INT_MULT": 7,
       "INT_NOTEQUAL": 91,
       "INT_OR": 90,
       "INT_SBORROW": 113,
-      "INT_SCARRY": 339,
+      "INT_SCARRY": 341,
       "INT_SDIV": 1,
       "INT_SEXT": 19,
-      "INT_SLESS": 587,
+      "INT_SLESS": 589,
       "INT_SREM": 1,
       "INT_SRIGHT": 6,
       "INT_SUB": 1103,
       "INT_XOR": 32,
       "INT_ZEXT": 38,
       "LOAD": 546,
-      "POPCOUNT": 575,
+      "POPCOUNT": 577,
       "RETURN": 1,
       "ROUND": 2,
       "STORE": 1269,
       "SUBPIECE": 14,
       "TRUNC": 2
     },
-    "pcode_op_count": 13800
+    "pcode_op_count": 13819
   },
   "stack_frame": {
     "frame_size": 6408,
@@ -2258,6 +2251,159 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDeformableModelInstance_viewModel_FUN_005968b0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 10,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 28,
+          "line": 583,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 34,
+          "line": 583,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 16,
+          "line": 618,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-swapped-arguments",
+          "column": 7,
+          "line": 775,
+          "message": "argument with implicit conversion from 'int' to 'float' followed by argument converted from 'float' to 'int', potentially swapped arguments."
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 30,
+          "line": 806,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 36,
+          "line": 806,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 13,
+          "line": 939,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 13,
+          "line": 939,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 15,
+          "line": 983,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 13,
+          "line": 1081,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 11,
+      "diagnostics": [
+        {
+          "check_id": "invalidPointerCast",
+          "column": 81,
+          "line": 811,
+          "message": "Casting from float * to signed int * is not portable due to different binary data representations on different platforms.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 26,
+          "line": 761,
+          "message": "Uninitialized variable: local_1cc",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 50,
+          "line": 759,
+          "message": "Uninitialized variable: local_1c8",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 50,
+          "line": 760,
+          "message": "Uninitialized variable: local_1c4",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 44,
+          "line": 761,
+          "message": "Uninitialized variable: local_1c0",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 58,
+          "line": 953,
+          "message": "Uninitialized variable: local_1b8",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 76,
+          "line": 953,
+          "message": "Uninitialized variable: local_1b4",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 40,
+          "line": 954,
+          "message": "Uninitialized variable: local_1b0",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 58,
+          "line": 954,
+          "message": "Uninitialized variable: local_1ac",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 76,
+          "line": 954,
+          "message": "Uninitialized variable: local_1a8",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 49,
+          "line": 571,
+          "message": "Uninitialized variable: local_38",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Decompiler inlined a function call",
@@ -2314,6 +2460,14 @@
       "severity": "mild",
       "text": "fVar9 = 3.57331e-43;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Global g_ColorCubeLookup used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 535,
+      "match": "g_ColorCubeLookup",
+      "severity": "moderate",
+      "text": "(this_ptr,(uint)g_ColorCubeLookup[0x7c00],iVar16);",
+      "type": "wrong_global"
     }
   ]
 }

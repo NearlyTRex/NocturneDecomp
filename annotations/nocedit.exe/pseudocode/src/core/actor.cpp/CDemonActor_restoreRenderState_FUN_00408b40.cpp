@@ -1,6 +1,6 @@
 // Name: core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
 // Address: 00408b40
-// Address Range: [[00408b40, 00408b4b]]
+// Address Range: [[00408b40, 00408b4f]]
 // Convention: __cdecl
 // Signature: void __cdecl core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor *this_ptr)
 

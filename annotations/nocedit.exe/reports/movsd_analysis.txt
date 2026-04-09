@@ -10,30 +10,32 @@ SUMMARY
 --------------------------------------------------
 Already patched (cave):    781 sites (excluded from counts below)
 
-Consecutive MOVSD groups:  115
+Consecutive MOVSD groups:  122
   1x MOVSD ( 4 bytes):   98 sites
   2x MOVSD ( 8 bytes):   3 sites
-  3x MOVSD (12 bytes):   14 sites
-  Fixable (cave patch):   1
+  3x MOVSD (12 bytes):   20 sites
+  4x MOVSD (16 bytes):   1 sites
+  Fixable (cave patch):   8
   No artifacts (OK):      28
   Unfixable:              86
-  Est. cave space:        ~33 bytes
+  Est. cave space:        ~270 bytes
 
-REP MOVSD sites:           527
-  Fixable (struct copy):  20
+REP MOVSD sites:           539
+  Fixable (struct copy):  30
   No artifacts (OK):      33
-  Too large (buffer):     178
+  Too large (buffer):     179
   Dynamic count:          290
-  Pass-by-value:          6
+  Pass-by-value:          7
 
   REP MOVSD by copy size:
     unknown count:        291 sites
       4 dwords (  16 bytes): 2 sites
-      6 dwords (  24 bytes): 26 sites
+      6 dwords (  24 bytes): 27 sites
       7 dwords (  28 bytes): 1 sites
       8 dwords (  32 bytes): 3 sites
      10 dwords (  40 bytes): 3 sites
-     12 dwords (  48 bytes): 20 sites
+     11 dwords (  44 bytes): 1 sites
+     12 dwords (  48 bytes): 29 sites
      13 dwords (  52 bytes): 1 sites
      18 dwords (  72 bytes): 7 sites
      20 dwords (  80 bytes): 1 sites
@@ -58,7 +60,7 @@ REP MOVSD sites:           527
      82 dwords ( 328 bytes): 1 sites
      84 dwords ( 336 bytes): 2 sites
      90 dwords ( 360 bytes): 1 sites
-     97 dwords ( 388 bytes): 18 sites
+     97 dwords ( 388 bytes): 19 sites
     104 dwords ( 416 bytes): 2 sites
     128 dwords ( 512 bytes): 2 sites
     137 dwords ( 548 bytes): 1 sites
@@ -73,11 +75,24 @@ REP MOVSD sites:           527
     2122 dwords (8488 bytes): 1 sites
     3200 dwords (12800 bytes): 1 sites
 
-Total MOVSD sites:         642
+Total MOVSD sites:         661
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE 3x MOVSD SITES (12 bytes copy, 1 sites)
+FIXABLE 4x MOVSD SITES (16 bytes copy, 1 sites)
 ----------------------------------------------------------------------------------------------------
+  CBoneGuy_explode_FUN_0041d680                                            1 sites  ~39 bytes
+    0x0041d839  4x MOVSD (16 bytes copy, 8 bytes borrowable)
+
+----------------------------------------------------------------------------------------------------
+FIXABLE 3x MOVSD SITES (12 bytes copy, 7 sites)
+----------------------------------------------------------------------------------------------------
+  CCurtain_setup_FUN_00449810                                              6 sites  ~198 bytes
+    0x00449c9e  3x MOVSD (12 bytes copy, 6 bytes borrowable)
+    0x00449ca7  3x MOVSD (12 bytes copy, 6 bytes borrowable)
+    0x00449cb0  3x MOVSD (12 bytes copy, 10 bytes borrowable)
+    0x00449d5e  3x MOVSD (12 bytes copy, 6 bytes borrowable)
+    0x00449d67  3x MOVSD (12 bytes copy, 6 bytes borrowable)
+    0x00449d76  3x MOVSD (12 bytes copy, 6 bytes borrowable)
   buildFileInfoEnv_FUN_0060ffd0                                            1 sites  ~33 bytes
     0x0061002f  3x MOVSD (12 bytes copy, 6 bytes borrowable)
 
@@ -251,8 +266,16 @@ UNFIXABLE 1x MOVSD SITES (4 bytes copy, 86 sites)
     0x0048f94f  1x MOVSD (4 bytes copy)  only 1 bytes available (need 5)
 
 ----------------------------------------------------------------------------------------------------
-FIXABLE REP MOVSD STRUCT COPIES (20 sites)
+FIXABLE REP MOVSD STRUCT COPIES (30 sites)
 ----------------------------------------------------------------------------------------------------
+  CCharacter_addDamageDecal_FUN_0042b190                                   7 sites
+    0x0042b412  REP MOVSD 12 dwords (48 bytes)
+    0x0042b459  REP MOVSD 12 dwords (48 bytes)
+    0x0042b485  REP MOVSD 12 dwords (48 bytes)
+    0x0042b4ba  REP MOVSD 12 dwords (48 bytes)
+    0x0042b516  REP MOVSD 12 dwords (48 bytes)
+    0x0042b542  REP MOVSD 12 dwords (48 bytes)
+    0x0042b564  REP MOVSD 12 dwords (48 bytes)
   quantizeColors_FUN_004406c0                                              3 sites
     0x00440b01  REP MOVSD 8 dwords (32 bytes)
     0x00440b14  REP MOVSD 8 dwords (32 bytes)
@@ -269,14 +292,20 @@ FIXABLE REP MOVSD STRUCT COPIES (20 sites)
     0x005c87b9  REP MOVSD 6 dwords (24 bytes)
   CFireEffect_createBulletImpact_FUN_004c76a0                              1 sites
     0x004c780e  REP MOVSD 12 dwords (48 bytes)
+  CGlassParticle_init_FUN_004c1c00                                         1 sites
+    0x004c1df7  REP MOVSD 6 dwords (24 bytes)
   CLaserBeam_render_FUN_004c25c0                                           1 sites
     0x004c2f1d  REP MOVSD 12 dwords (48 bytes)
+  CMansionPuzzleCircle_setup_FUN_00508a70                                  1 sites
+    0x00508dbb  REP MOVSD 12 dwords (48 bytes)
   CBoneStructure_computeLocalMatrices_FUN_0058ac80                         1 sites
     0x0058acbf  REP MOVSD 12 dwords (48 bytes)
   CBoneStructure_computeWorldMatrices_FUN_0058ad30                         1 sites
     0x0058ad66  REP MOVSD 12 dwords (48 bytes)
   CBoneStructure_readBONheader_FUN_0058a4a0                                1 sites
     0x0058a746  REP MOVSD 7 dwords (28 bytes)
+  CTrash_process_FUN_005decf0                                              1 sites
+    0x005df4d0  REP MOVSD 12 dwords (48 bytes)
   inverseInPlace_FUN_005f6190                                              1 sites
     0x005f61af  REP MOVSD 12 dwords (48 bytes)
   getMRGLBounds_FUN_00528140                                               1 sites
@@ -350,7 +379,7 @@ REP MOVSD — NO ARTIFACTS (decompiler handles OK) (33 sites)
     0x005d6e7d  REP MOVSD 6 dwords (24 bytes)
 
 ----------------------------------------------------------------------------------------------------
-REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (178 sites)
+REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (179 sites)
 ----------------------------------------------------------------------------------------------------
   clipPolygonToViewFrustumAdvanced_FUN_00437ca0                           10 sites
     0x00437e20  REP MOVSD 48 dwords (192 bytes)
@@ -481,6 +510,9 @@ REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (178 sites)
   complexPolygonReduction_FUN_00463b30                                     2 sites
     0x00463b5a  REP MOVSD 20 dwords (80 bytes)
     0x004647f2  REP MOVSD 97 dwords (388 bytes)
+  showFacetPartEditor_FUN_0045f1d0                                         2 sites
+    0x00460623  REP MOVSD 97 dwords (388 bytes)
+    0x004608b8  REP MOVSD 97 dwords (388 bytes)
   startSfx_FUN_005a8e90                                                    2 sites
     0x005a8f19  REP MOVSD 28 dwords (112 bytes)
     0x005a8fb2  REP MOVSD 28 dwords (112 bytes)
@@ -590,8 +622,6 @@ REP MOVSD — TOO LARGE FOR STRUCT COPY (buffer/string) (178 sites)
     0x00463b0d  REP MOVSD 97 dwords (388 bytes)
   removeDuplicatePolygons_FUN_004651b0                                     1 sites
     0x004652ea  REP MOVSD 97 dwords (388 bytes)
-  showFacetPartEditor_FUN_0045f1d0                                         1 sites
-    0x00460623  REP MOVSD 97 dwords (388 bytes)
   triangulateDSE_FUN_0046e4d0                                              1 sites
     0x0046e58d  REP MOVSD 97 dwords (388 bytes)
   CDSEModel_load_FUN_0048f960                                              1 sites
@@ -1060,7 +1090,7 @@ REP MOVSD — DYNAMIC COUNT (ECX not immediate) (290 sites)
     0x005b7cab  REP MOVSD (dynamic count)
 
 ----------------------------------------------------------------------------------------------------
-REP MOVSD — PASS-BY-VALUE (6 sites)
+REP MOVSD — PASS-BY-VALUE (7 sites)
 ----------------------------------------------------------------------------------------------------
   writePBGHeader_FUN_0054b930                                              1 sites
     0x0054b94b  REP MOVSD 4 dwords (16 bytes)
@@ -1074,4 +1104,6 @@ REP MOVSD — PASS-BY-VALUE (6 sites)
     0x00407d12  REP MOVSD 12 dwords (48 bytes)
   drawLine3DFromIndices_FUN_00407ff0                                       1 sites
     0x00408012  REP MOVSD 12 dwords (48 bytes)
+  nextMixingBuffer_FUN_005a59c0                                            1 sites
+    0x005a5b0e  REP MOVSD 11 dwords (44 bytes)
 

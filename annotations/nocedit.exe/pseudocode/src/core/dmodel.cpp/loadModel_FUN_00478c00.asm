@@ -6,10 +6,14 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ;
-; XREF[3]:
+; XREF[7]:
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 00443328
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 at 00478d68
+;   core_elephant.cpp_CElephantGun_onFired_FUN_004a78a0 at 004a7963
 ;   core_fire.cpp_loadDynamiteAssets_FUN_004c41d0 at 004c41d5
+;   core_gun.cpp_CGun_fire_FUN_004f0350 at 004f06ab
+;   core_shotgun.cpp_CShotgun_onFired_FUN_005887a0 at 00588872
+;   core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30 at 005dde9a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_0061f924

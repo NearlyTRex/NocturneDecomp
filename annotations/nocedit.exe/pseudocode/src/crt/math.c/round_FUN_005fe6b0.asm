@@ -6,7 +6,7 @@
 ; Parameters:
 ; undefined        Stack[0x0]:1   local_res0
 ;
-; XREF[236]:
+; XREF[248]:
 ;   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 at 0043412c
 ;   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0 at 00434466
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0 at 004887cf
@@ -17,7 +17,7 @@
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413b50
 ;   core_bat.cpp_CBat_getBoundingBox_FUN_00414c60 at 00414c77
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 at 0041a702
-;   ... and 226 more
+;   ... and 238 more
 ;
 ; *****************************************************************************
 

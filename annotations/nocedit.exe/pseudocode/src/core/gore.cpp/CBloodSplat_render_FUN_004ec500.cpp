@@ -1,6 +1,6 @@
 // Name: core_gore.cpp_CBloodSplat_render_FUN_004ec500
 // Address: 004ec500
-// Address Range: [[004ec500, 004ecac1]]
+// Address Range: [[004ec500, 004ecacc]]
 // Convention: __cdecl
 // Signature: void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004ec500(CBloodSplat *this_ptr,int expire_flag)
 

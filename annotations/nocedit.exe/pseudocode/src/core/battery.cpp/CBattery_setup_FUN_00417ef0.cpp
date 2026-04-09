@@ -1,6 +1,6 @@
 // Name: core_battery.cpp_CBattery_setup_FUN_00417ef0
 // Address: 00417ef0
-// Address Range: [[00417ef0, 00417efa]]
+// Address Range: [[00417ef0, 00417f18]]
 // Convention: __cdecl
 // Signature: void __cdecl core_battery_cpp_CBattery_setup_FUN_00417ef0(CBattery *this_ptr)
 

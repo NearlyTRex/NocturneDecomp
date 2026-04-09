@@ -27,12 +27,12 @@
 ;   TerminatedCString s_Randomize_speed_for_spec_0063bb79
 ;   TerminatedCString s_Randomize_speed_for_all__0063bbb9
 ;   TerminatedCString s_Randomize_speeds_0063bbe3
+;   TerminatedCString s_s_7_3f_0063bbf4
 ;   TerminatedCString s_No_enemies_matched_crite_0063bbfd
 ;   TerminatedCString s_d_enemy_speeds_randomize_0063bc30
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   float FLOAT_006804b0 = 0.9000000
-;   float FLOAT_006804b4 = 1.100000
-;   ... and 5 more
+;   ... and 6 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -347,6 +347,33 @@ section .text
     PUSH dword ptr [0x006804b0]         ; 00537cf5 | FLOAT_006804b0
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00537cfb
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0xcf4],EAX     ; 00537d00
+    FLD float ptr [ESP + 0xcf4]         ; 00537d07
+    ADD ESP,0x8                         ; 00537d0e
+    MOV EAX,dword ptr [EBX + 0x154]     ; 00537d11
+    PUSH EBX                            ; 00537d17
+    FSTP float ptr [EBX + 0xbe24]       ; 00537d18
+    CALL dword ptr [EAX]                ; 00537d1e
+    ADD ESP,0x4                         ; 00537d20
+    SUB ESP,0x8                         ; 00537d23
+    FLD float ptr [EBX + 0xbe24]        ; 00537d26
+    FSTP double ptr [ESP]               ; 00537d2c
+    PUSH EBX                            ; 00537d2f
+    PUSH 0x63bbf4                       ; 00537d30 | = "%s\n%7.3f"
+    LEA EAX,[ESP + 0xb08]               ; 00537d35
+    PUSH EAX                            ; 00537d3c
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00537d3d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    ADD ESP,0x14                        ; 00537d42
+    LEA EAX,[ESP + 0xaf8]               ; 00537d45
+    PUSH EAX                            ; 00537d4c
+    LEA EAX,[ESP + 0x4]                 ; 00537d4d
+    PUSH EAX                            ; 00537d51
+    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 00537d52
+        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
+    ADD ESP,0x8                         ; 00537d57
+    JMP 0x00537c3c                      ; 00537d5a
+        ;   XREF to: 00537c3c (UNCONDITIONAL_JUMP)  ; LAB_00537c3c
     CMP dword ptr [EAX + 0xbe2c],0x0    ; 00537d5f
         ;   Label: LAB_00537d5f
     JNZ 0x00537cc1                      ; 00537d66

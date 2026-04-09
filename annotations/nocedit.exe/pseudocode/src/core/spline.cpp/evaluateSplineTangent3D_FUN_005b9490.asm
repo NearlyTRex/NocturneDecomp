@@ -11,7 +11,8 @@
 ; CVector3f *      Stack[0x14]:4   p2
 ; CVector3f *      Stack[0x18]:4   p3
 ;
-; XREF[1]:
+; XREF[2]:
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 at 0048690e
 ;   core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0 at 00486c63
 ;
 ; *****************************************************************************

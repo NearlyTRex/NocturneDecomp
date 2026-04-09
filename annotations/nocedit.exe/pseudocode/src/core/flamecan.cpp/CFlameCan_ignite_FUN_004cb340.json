@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 29,
     "complexity_score": 14,
-    "cross_reference_count": 7,
+    "cross_reference_count": 9,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "clean",
@@ -21,6 +21,12 @@
       "addr": "0040a210",
       "from_addr": "0040aa8b",
       "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a7160",
+      "from_addr": "004a782f",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_004a7160",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -45,6 +51,12 @@
       "addr": "0056b810",
       "from_addr": "0056bc89",
       "name": "core_set.cpp_CDemonSet_processActors_FUN_0056b810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588060",
+      "from_addr": "00588731",
+      "name": "core_shotgun.cpp_CShotgun_fire_FUN_00588060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -94,7 +106,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 7,
+    "call_site_count": 9,
     "call_sites": [
       {
         "call_addr": "004cb3c1",
@@ -152,6 +164,17 @@
         "stack_params": 1
       },
       {
+        "call_addr": "004a782f",
+        "call_type": "direct",
+        "caller": "core_elephant.cpp_CElephantGun_fire_FUN_004a7160",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
         "call_addr": "005de014",
         "call_type": "direct",
         "caller": "core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30",
@@ -166,6 +189,17 @@
         "call_addr": "004f0814",
         "call_type": "direct",
         "caller": "core_gun.cpp_CGun_fire_FUN_004f0350",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00588731",
+        "call_type": "direct",
+        "caller": "core_shotgun.cpp_CShotgun_fire_FUN_00588060",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -1,6 +1,6 @@
 // Name: core_bugs.cpp_CBugs_setup_FUN_00424e50
 // Address: 00424e50
-// Address Range: [[00424e50, 00424fdf] [00425083, 004250d2]]
+// Address Range: [[00424e50, 004250d2]]
 // Convention: __cdecl
 // Signature: void __cdecl core_bugs_cpp_CBugs_setup_FUN_00424e50(CBugs *this_ptr)
 

@@ -42,9 +42,11 @@
 ; Referenced Globals:
 ;   float FLOAT_00629ce3 = 3
 ;   float FLOAT_00629ce7 = 0.3333333
+;   double DOUBLE_00629ceb = 10
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
+;   core_particle.cpp_CParticle_setup_FUN_00545680
 ;
 ; *****************************************************************************
 
@@ -121,4 +123,158 @@ section .text
     MOV dword ptr [EBX + 0x74],EAX      ; 004c1cdb
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c1cde
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x9c],EAX      ; 004c1ce3
+    FLD float ptr [ESP + 0x9c]          ; 004c1cea
+    ADD ESP,0x8                         ; 004c1cf1
+    PUSH 0x40c90fdb                     ; 004c1cf4
+    MOV dword ptr [EBX + 0x5c],0x0      ; 004c1cf9
+    PUSH 0x0                            ; 004c1d00
+    FSTP float ptr [EBX + 0x54]         ; 004c1d02
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c1d05
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x9c],EAX      ; 004c1d0a
+    MOV EAX,dword ptr [ESP + 0x9c]      ; 004c1d11
+    MOV dword ptr [EBX + 0x58],EAX      ; 004c1d18
+    ADD ESP,0x8                         ; 004c1d1b
+    FLD float ptr [ESI]                 ; 004c1d1e
+    FSUB float ptr [ESP + 0x54]         ; 004c1d20
+    FSTP float ptr [ESP + 0x48]         ; 004c1d24
+    FLD float ptr [ESI + 0x4]           ; 004c1d28
+    FSUB float ptr [ESP + 0x58]         ; 004c1d2b
+    LEA EDX,[EBX + 0x78]                ; 004c1d2f
+    FSTP float ptr [ESP + 0x4c]         ; 004c1d32
+    FLD float ptr [ESI + 0x8]           ; 004c1d36
+    FSUB float ptr [ESP + 0x5c]         ; 004c1d39
+    LEA EAX,[ESP + 0x48]                ; 004c1d3d
+    FSTP float ptr [ESP + 0x50]         ; 004c1d41
+    CMP EDX,EAX                         ; 004c1d45
+    JZ 0x004c1d5d                       ; 004c1d47
+        ;   XREF to: 004c1d5d (CONDITIONAL_JUMP)  ; LAB_004c1d5d
+    MOV EAX,dword ptr [ESP + 0x48]      ; 004c1d49
+    MOV dword ptr [EDX],EAX             ; 004c1d4d
+    MOV EAX,dword ptr [ESP + 0x4c]      ; 004c1d4f
+    MOV dword ptr [EDX + 0x4],EAX       ; 004c1d53
+    MOV EAX,dword ptr [ESP + 0x50]      ; 004c1d56
+    MOV dword ptr [EDX + 0x8],EAX       ; 004c1d5a
+    LEA EAX,[ESI + 0xc]                 ; 004c1d5d
+        ;   Label: LAB_004c1d5d
+    FLD float ptr [EAX]                 ; 004c1d60
+    FSUB float ptr [ESP + 0x54]         ; 004c1d62
+    FSTP float ptr [ESP]                ; 004c1d66
+    FLD float ptr [EAX + 0x4]           ; 004c1d69
+    FSUB float ptr [ESP + 0x58]         ; 004c1d6c
+    LEA EDX,[EBX + 0x84]                ; 004c1d70
+    FSTP float ptr [ESP + 0x4]          ; 004c1d76
+    FLD float ptr [EAX + 0x8]           ; 004c1d7a
+    FSUB float ptr [ESP + 0x5c]         ; 004c1d7d
+    MOV EAX,ESP                         ; 004c1d81
+    FSTP float ptr [ESP + 0x8]          ; 004c1d83
+    CMP EDX,EAX                         ; 004c1d87
+    JZ 0x004c1d9e                       ; 004c1d89
+        ;   XREF to: 004c1d9e (CONDITIONAL_JUMP)  ; LAB_004c1d9e
+    MOV EAX,dword ptr [ESP]             ; 004c1d8b
+    MOV dword ptr [EDX],EAX             ; 004c1d8e
+    MOV EAX,dword ptr [ESP + 0x4]       ; 004c1d90
+    MOV dword ptr [EDX + 0x4],EAX       ; 004c1d94
+    MOV EAX,dword ptr [ESP + 0x8]       ; 004c1d97
+    MOV dword ptr [EDX + 0x8],EAX       ; 004c1d9b
+    FLD float ptr [ESI + 0x18]          ; 004c1d9e
+        ;   Label: LAB_004c1d9e
+    FSUB float ptr [ESP + 0x54]         ; 004c1da1
+    FSTP float ptr [ESP + 0xc]          ; 004c1da5
+    FLD float ptr [ESI + 0x1c]          ; 004c1da9
+    FSUB float ptr [ESP + 0x58]         ; 004c1dac
+    LEA EAX,[ESP + 0xc]                 ; 004c1db0
+    FSTP float ptr [ESP + 0x10]         ; 004c1db4
+    FLD float ptr [ESI + 0x20]          ; 004c1db8
+    FSUB float ptr [ESP + 0x5c]         ; 004c1dbb
+    LEA EDX,[EBX + 0x90]                ; 004c1dbf
+    FSTP float ptr [ESP + 0x14]         ; 004c1dc5
+    CMP EDX,EAX                         ; 004c1dc9
+    JZ 0x004c1de1                       ; 004c1dcb
+        ;   XREF to: 004c1de1 (CONDITIONAL_JUMP)  ; LAB_004c1de1
+    MOV EAX,dword ptr [ESP + 0xc]       ; 004c1dcd
+    MOV dword ptr [EDX],EAX             ; 004c1dd1
+    MOV EAX,dword ptr [ESP + 0x10]      ; 004c1dd3
+    MOV dword ptr [EDX + 0x4],EAX       ; 004c1dd7
+    MOV EAX,dword ptr [ESP + 0x14]      ; 004c1dda
+    MOV dword ptr [EDX + 0x8],EAX       ; 004c1dde
+    MOV ECX,0x6                         ; 004c1de1
+        ;   Label: LAB_004c1de1
+    MOV ESI,dword ptr [ESP + 0xb8]      ; 004c1de6
+    LEA EDI,[EBX + 0x3c]                ; 004c1ded
+    MOV EAX,dword ptr [ESP + 0xbc]      ; 004c1df0
+    MOVSD.REP ES:EDI,ESI                ; 004c1df7
+    MOV dword ptr [EBX + 0x38],EAX      ; 004c1df9
+    LEA EAX,[EBX + 0x90]                ; 004c1dfc
+    LEA EDX,[EBX + 0x78]                ; 004c1e02
+    FLD float ptr [EAX]                 ; 004c1e05
+    FSUB float ptr [EDX]                ; 004c1e07
+    FSTP float ptr [ESP + 0x18]         ; 004c1e09
+    FLD float ptr [EAX + 0x4]           ; 004c1e0d
+    FSUB float ptr [EDX + 0x4]          ; 004c1e10
+    FST float ptr [ESP + 0x1c]          ; 004c1e13
+    FMUL float ptr [ESP + 0x1c]         ; 004c1e17
+    FLD float ptr [ESP + 0x18]          ; 004c1e1b
+    FMUL ST0                            ; 004c1e1f
+    FLD float ptr [EAX + 0x8]           ; 004c1e21
+    FSUB float ptr [EDX + 0x8]          ; 004c1e24
+    FXCH                                ; 004c1e27
+    FADDP ST2,ST0                       ; 004c1e29
+    FST float ptr [ESP + 0x20]          ; 004c1e2b
+    FMUL float ptr [ESP + 0x20]         ; 004c1e2f
+    FADDP                               ; 004c1e33
+    FSQRT                               ; 004c1e35
+    FMUL double ptr [0x00629ceb]        ; 004c1e37 | DOUBLE_00629ceb
+    PUSH 0x3fc90fdb                     ; 004c1e3d
+    PUSH 0x3f490fdb                     ; 004c1e42
+    FSTP float ptr [ESP + 0x84]         ; 004c1e47
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c1e4e
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x9c],EAX      ; 004c1e53
+    FLD float ptr [ESP + 0x9c]          ; 004c1e5a
+    ADD ESP,0x8                         ; 004c1e61
+    PUSH 0x40c90fdb                     ; 004c1e64
+    PUSH 0x0                            ; 004c1e69
+    FSTP float ptr [ESP + 0x90]         ; 004c1e6b
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c1e72
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x9c],EAX      ; 004c1e77
+    FLD float ptr [ESP + 0x9c]          ; 004c1e7e
+    ADD ESP,0x8                         ; 004c1e85
+    FLD ST0                             ; 004c1e88
+    FCOS                                ; 004c1e8a
+    FLD float ptr [ESP + 0x88]          ; 004c1e8c
+    FLD ST0                             ; 004c1e93
+    FCOS                                ; 004c1e95
+    FXCH ST3                            ; 004c1e97
+    FSIN                                ; 004c1e99
+    FXCH                                ; 004c1e9b
+    FSIN                                ; 004c1e9d
+    FLD float ptr [ESP + 0x7c]          ; 004c1e9f
+    FMULP ST3                           ; 004c1ea3
+    FLD float ptr [ESP + 0x7c]          ; 004c1ea5
+    FMULP ST2                           ; 004c1ea9
+    FMUL float ptr [ESP + 0x7c]         ; 004c1eab
+    FXCH ST2                            ; 004c1eaf
+    FMUL ST3                            ; 004c1eb1
+    LEA EAX,[ESP + 0x3c]                ; 004c1eb3
+    FXCH                                ; 004c1eb7
+    FMULP ST3                           ; 004c1eb9
+    PUSH EAX                            ; 004c1ebb
+    LEA EAX,[ESP + 0x58]                ; 004c1ebc
+    FXCH                                ; 004c1ec0
+    FSTP float ptr [ESP + 0x44]         ; 004c1ec2
+    PUSH EAX                            ; 004c1ec6
+    FSTP float ptr [ESP + 0x44]         ; 004c1ec7
+    PUSH EBX                            ; 004c1ecb
+    FSTP float ptr [ESP + 0x50]         ; 004c1ecc
+    CALL core_particle.cpp_CParticle_setup_FUN_00545680 ; 004c1ed0
+        ;   XREF to: 00545680 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_setup_FUN_00545680(CParticle * this_ptr, CVector3f * position, CVector3f * velocity)
+    ADD ESP,0xc                         ; 004c1ed5
+    ADD ESP,0x98                        ; 004c1ed8
+    POP EDI                             ; 004c1ede
+    POP ESI                             ; 004c1edf
+    POP EBX                             ; 004c1ee0
+    RET                                 ; 004c1ee1
 

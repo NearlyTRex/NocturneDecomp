@@ -1,6 +1,6 @@
 // Name: core_keyactor.cpp_CKeyActor_setup_FUN_005016f0
 // Address: 005016f0
-// Address Range: [[005016f0, 0050170b]]
+// Address Range: [[005016f0, 0050170f]]
 // Convention: __cdecl
 // Signature: void __cdecl core_keyactor_cpp_CKeyActor_setup_FUN_005016f0(CKeyActor *this_ptr)
 

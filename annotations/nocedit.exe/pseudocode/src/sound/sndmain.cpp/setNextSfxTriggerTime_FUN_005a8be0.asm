@@ -7,10 +7,12 @@
 ; double           Stack[0x4]:8   trigger_time
 ; int              Stack[0xc]:4   trigger_id
 ;
-; XREF[4]:
+; XREF[6]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c5b0
+;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 at 00421c1e
 ;   core_drone.cpp_CDrone_process_FUN_0048ec70 at 0048f2ad
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004b0f00 at 004b0f46
+;   core_flame.cpp_CFlame_process_FUN_004c9c00 at 004c9f6e
 ;   core_tommygun.cpp_CTommyGun_process_FUN_005de360 at 005de540
 ;
 ; Referenced Globals:

@@ -6,18 +6,18 @@
 ; Parameters:
 ; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr
 ;
-; XREF[30]:
+; XREF[48]:
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_00410fd0 at 0041110c
 ;   core_ammo.cpp_CAmmo_setup_FUN_00410e50 at 00410e5a
+;   core_anvil.cpp_CAnvil_setup_FUN_00411d70 at 00411d87
 ;   core_backgnd.cpp_CBackgroundActor_setup_FUN_00412810 at 0041281c
 ;   core_baron.cpp_CBaron_setup_FUN_00412cb0 at 00412e5a
 ;   core_bat.cpp_CBat_setup_FUN_004148a0 at 004148af
+;   core_battery.cpp_CBattery_setup_FUN_00417ef0 at 00417f05
 ;   core_biggs.cpp_CBiggs_setup_FUN_00418680 at 004186a6
 ;   core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041add0 at 0041ae2e
-;   core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60 at 00422db7
-;   core_bugs.cpp_CBugs_setup_FUN_00424e50 at 004250bf
-;   core_dmodel.cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0 at 0047edd6
-;   ... and 20 more
+;   core_boxactor.cpp_CBoxActor_setup_FUN_00421830 at 00421849
+;   ... and 38 more
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_loadModel_FUN_00478c00

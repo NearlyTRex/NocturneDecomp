@@ -1,6 +1,6 @@
 // Name: core_bride.cpp_CBride_setup_FUN_00423810
 // Address: 00423810
-// Address Range: [[00423810, 00423a04]]
+// Address Range: [[00423810, 00423a2f]]
 // Convention: __cdecl
 // Signature: void __cdecl core_bride_cpp_CBride_setup_FUN_00423810(CBride *this_ptr)
 

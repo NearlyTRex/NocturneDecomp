@@ -1,6 +1,6 @@
 // Name: core_vessel.cpp_CCryptVessel_setup_FUN_005e8fc0
 // Address: 005e8fc0
-// Address Range: [[005e8fc0, 005e8fcd]]
+// Address Range: [[005e8fc0, 005e90fa]]
 // Convention: __cdecl
 // Signature: void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_005e8fc0(CCryptVessel *this_ptr)
 

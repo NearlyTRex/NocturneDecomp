@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CStake_spawn_FUN_004bfe90
 // Address: 004bfe90
-// Address Range: [[004bfe90, 004c00b4] [004c0111, 004c0136]]
+// Address Range: [[004bfe90, 004c0136]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CStake_spawn_FUN_004bfe90(CStake *this_ptr,CVector3f *spawn_position,CVector3f *orientation_angles,CVector3f *surface_normal)
 

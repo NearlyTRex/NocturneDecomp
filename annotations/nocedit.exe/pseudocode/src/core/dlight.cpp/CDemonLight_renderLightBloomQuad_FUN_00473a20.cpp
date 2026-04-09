@@ -1,6 +1,6 @@
 // Name: core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20
 // Address: 00473a20
-// Address Range: [[00473a20, 00473f55] [00473f6c, 00473f87] [0060c849, 0060c867]]
+// Address Range: [[00473a20, 00473f87] [0060c849, 0060c867]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemonLight *this_ptr)
 

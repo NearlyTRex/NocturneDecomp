@@ -31,6 +31,7 @@
 ;   double DOUBLE_0061722a = 40
 ;   double DOUBLE_00617232 = 0.100000000000000
 ;   double DOUBLE_0061723a = 0.0100000000000000
+;   double DOUBLE_00617242 = 0.0349065850388889
 ;   double DOUBLE_0061724a = 0.174532925194444
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CConsole g_CConsoleInstance
@@ -243,6 +244,36 @@ section .text
     FLD float ptr [ESI + 0x2418]        ; 0042c7f5
         ;   Label: LAB_0042c7f5
     FABS                                ; 0042c7fb
+    FCOMP double ptr [0x00617242]       ; 0042c7fd | DOUBLE_00617242
+    FNSTSW AX                           ; 0042c803
+    SAHF                                ; 0042c805
+    JNC 0x0042c771                      ; 0042c806
+        ;   XREF to: 0042c771 (CONDITIONAL_JUMP)  ; LAB_0042c771
+    MOV dword ptr [EBX],EDI             ; 0042c80c
+    MOV dword ptr [ESI + 0x2418],0x0    ; 0042c80e
+        ;   Label: LAB_0042c80e
+    JMP 0x0042c7cc                      ; 0042c818
+        ;   XREF to: 0042c7cc (UNCONDITIONAL_JUMP)  ; LAB_0042c7cc
+    CMP dword ptr [EBX],0x1             ; 0042c81a
+        ;   Label: LAB_0042c81a
+    JZ 0x0042c777                       ; 0042c81d
+        ;   XREF to: 0042c777 (CONDITIONAL_JUMP)  ; LAB_0042c777
+    JMP 0x0042c80e                      ; 0042c823
+        ;   XREF to: 0042c80e (UNCONDITIONAL_JUMP)  ; LAB_0042c80e
+    FLD float ptr [ESP + 0x34]          ; 0042c825
+        ;   Label: LAB_0042c825
+    FCOMP float ptr [ESP + 0x38]        ; 0042c829
+    FNSTSW AX                           ; 0042c82d
+    SAHF                                ; 0042c82f
+    JBE 0x0042c838                      ; 0042c830
+        ;   XREF to: 0042c838 (CONDITIONAL_JUMP)  ; LAB_0042c838
+    MOV EAX,dword ptr [ESP + 0x38]      ; 0042c832
+    JMP 0x0042c7be                      ; 0042c836
+        ;   XREF to: 0042c7be (UNCONDITIONAL_JUMP)  ; LAB_0042c7be
+    MOV EAX,dword ptr [ESP + 0x34]      ; 0042c838
+        ;   Label: LAB_0042c838
+    JMP 0x0042c7be                      ; 0042c83c
+        ;   XREF to: 0042c7be (UNCONDITIONAL_JUMP)  ; LAB_0042c7be
     PUSH EDI                            ; 0042c83e
         ;   Label: LAB_0042c83e
     PUSH ESI                            ; 0042c83f

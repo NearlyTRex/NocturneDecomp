@@ -14,7 +14,7 @@
 ; int              Stack[-0x18]:4  char_index
 ; CDemonActor *    Stack[-0x14]:4  current_ptr
 ;
-; XREF[50]:
+; XREF[51]:
 ;   core_actor.cpp_CDemonActor_allowBulletHoles_FUN_004098a0 at 004098af
 ;   core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409ec0 at 00409ed5
 ;   core_actor.cpp_CDemonActor_canLookAt_FUN_00409f20 at 00409f2f
@@ -25,7 +25,7 @@
 ;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0 at 00408dca
 ;   core_actor.cpp_CDemonActor_drop_FUN_00409080 at 0040908f
 ;   core_actor.cpp_CDemonActor_evaluateTriggerCondition_FUN_00409f40 at 00409f4f
-;   ... and 40 more
+;   ... and 41 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_00613ac2

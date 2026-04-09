@@ -8,17 +8,23 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ;
 ; Referenced Globals:
+;   TerminatedCString s_gb_die_1_6_wav_0062b0dd
+;   TerminatedCString s_gb_hit_1_6_wav_0062b0ed
+;   float FLOAT_0062b0fd = 50
 ;   float FLOAT_0065e7c4 = 0.5
 ;   CGame* g_CGamePtr = 02d81a9c
+;   CGore* g_CGorePtr = 02d83364
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.hero_number
 ;   undefined4 g_CGameInstance.god_mode_enabled
 ;   undefined4 g_CGameInstance.allow_damage_flag
+;   CGore g_CGoreInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0
 ;   core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0
+;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;
@@ -86,6 +92,50 @@ section .text
     MOV dword ptr [EBX + 0x2598],0x0    ; 004d6be1
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004d6beb
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + -0x4],EAX      ; 004d6bf0
+    ADD ESP,0x8                         ; 004d6bf3
+    FLD float ptr [EBP + -0x4]          ; 004d6bf6
+    FCOMP float ptr [0x0062b0fd]        ; 004d6bf9 | FLOAT_0062b0fd
+    FNSTSW AX                           ; 004d6bff
+    SAHF                                ; 004d6c01
+    SETBE AL                            ; 004d6c02
+    AND EAX,0xff                        ; 004d6c05
+    ADD EAX,0x9                         ; 004d6c0a
+    PUSH EAX                            ; 004d6c0d
+    LEA EAX,[EBX + 0x158]               ; 004d6c0e
+    PUSH EAX                            ; 004d6c14
+    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 004d6c15
+        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
+    MOV EAX,[0x0067b654]                ; 004d6c1a | g_CGamePtr | g_CGameInstance
+    MOV ECX,dword ptr [EAX + 0xc0]      ; 004d6c1f | g_CGameInstance.hero_number
+    ADD ESP,0xc                         ; 004d6c25
+    CMP ECX,0x2                         ; 004d6c28
+    JZ 0x004d6c5d                       ; 004d6c2b
+        ;   XREF to: 004d6c5d (CONDITIONAL_JUMP)  ; LAB_004d6c5d
+    PUSH 0x3ecccccd                     ; 004d6c2d
+    PUSH 0x3e800000                     ; 004d6c32
+    MOV EDI,dword ptr [EBX + 0x154]     ; 004d6c37
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004d6c3d
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    ADD ESP,0x8                         ; 004d6c42
+    MOV dword ptr [EBP + -0x4],EAX      ; 004d6c45
+    SUB ESP,0x4                         ; 004d6c48
+    MOV EAX,dword ptr [EBP + -0x4]      ; 004d6c4b
+    MOV dword ptr [ESP],EAX             ; 004d6c4e
+    PUSH 0x62b0dd                       ; 004d6c51 | = "gb-die[1,6].wav"
+    PUSH EBX                            ; 004d6c56
+    CALL dword ptr [EDI + 0x2c]         ; 004d6c57
+    ADD ESP,0xc                         ; 004d6c5a
+    PUSH 0x0                            ; 004d6c5d
+        ;   Label: LAB_004d6c5d
+    PUSH 0x42480000                     ; 004d6c5f
+    PUSH 0x32                           ; 004d6c64
+    PUSH EBX                            ; 004d6c66
+    MOV EDI,dword ptr [0x0067b9a0]      ; 004d6c67 | g_CGorePtr
+    PUSH EDI                            ; 004d6c6d | g_CGoreInstance
+    CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030 ; 004d6c6e
+        ;   XREF to: 004ee030 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030(CGore * this_ptr, CDemonActor * actor, int gather_count, float spawn_rate, ...)
+    ADD ESP,0x14                        ; 004d6c73
     FLD float ptr [ESI + 0x4]           ; 004d6c76
         ;   Label: LAB_004d6c76
     FLDZ                                ; 004d6c79
@@ -134,6 +184,17 @@ section .text
     MOV EDI,dword ptr [EBX + 0x154]     ; 004d6cd8
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004d6cde
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    ADD ESP,0x8                         ; 004d6ce3
+    MOV dword ptr [EBP + -0x4],EAX      ; 004d6ce6
+    SUB ESP,0x4                         ; 004d6ce9
+    MOV EAX,dword ptr [EBP + -0x4]      ; 004d6cec
+    MOV dword ptr [ESP],EAX             ; 004d6cef
+    PUSH 0x62b0ed                       ; 004d6cf2 | = "gb-hit[1,6].wav"
+    PUSH EBX                            ; 004d6cf7
+    CALL dword ptr [EDI + 0x2c]         ; 004d6cf8
+    ADD ESP,0xc                         ; 004d6cfb
+    JMP 0x004d6c76                      ; 004d6cfe
+        ;   XREF to: 004d6c76 (UNCONDITIONAL_JUMP)  ; LAB_004d6c76
     PUSH 0x1                            ; 004d6d03
         ;   Label: LAB_004d6d03
     PUSH 0x8                            ; 004d6d05

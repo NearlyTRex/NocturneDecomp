@@ -1,6 +1,6 @@
 // Name: core_emitter.cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a8d20
 // Address: 004a8d20
-// Address Range: [[004a8d20, 004a8d49]]
+// Address Range: [[004a8d20, 004a8da7]]
 // Convention: __cdecl
 // Signature: CVector3f * __cdecl core_emitter_cpp_CEmitter_getRandomBoundingBoxPoint_FUN_004a8d20(CEmitter *this_ptr,CVector3f *out_point)
 

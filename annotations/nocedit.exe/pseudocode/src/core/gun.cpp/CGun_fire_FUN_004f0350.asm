@@ -40,6 +40,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_45_dry_wav_0062e7a0
 ;   TerminatedCString s_s_45_wav_0062e7ad
+;   TerminatedCString s_gatbullet_kfm_0062e7b4
 ;   double DOUBLE_0062e7c3 = 1.5
 ;   float FLOAT_0062e7cb = -0.125
 ;   double DOUBLE_0062e7d3 = 10
@@ -52,8 +53,7 @@
 ;   undefined4 g_CFlameCanClassInfo.name_hash
 ;   undefined4 g_CGlassClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.ray_origin.x
-;   ... and 12 more
+;   ... and 13 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -63,15 +63,15 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_crate.cpp_CCrate_explode_FUN_00448a70
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+;   core_dmodel.cpp_loadModel_FUN_00478c00
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0
 ;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60
+;   core_fire.cpp_CFireEffect_createShell_FUN_004c91e0
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
-;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
-;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
-;   core_setcolid.cpp_CDemonSet_raycast_FUN_00572530
-;   ... and 6 more
+;   ... and 10 more
 ;
 ; *****************************************************************************
 
@@ -249,6 +249,78 @@ section .text
     MOV dword ptr [ESP + 0xd0],EDI      ; 004f05e7
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004f05ee
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x140],EAX     ; 004f05f3
+    FLD float ptr [ESP + 0x140]         ; 004f05fa
+    ADD ESP,0x8                         ; 004f0601
+    PUSH 0x3ec90fdb                     ; 004f0604
+    PUSH 0xbec90fdb                     ; 004f0609
+    FSTP float ptr [ESP + 0x80]         ; 004f060e
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004f0615
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x140],EAX     ; 004f061a
+    FLD float ptr [ESP + 0x140]         ; 004f0621
+    XOR EAX,EAX                         ; 004f0628
+    ADD ESP,0x8                         ; 004f062a
+    MOV dword ptr [ESP + 0x80],EAX      ; 004f062d
+    LEA EAX,[ESP + 0x78]                ; 004f0634
+    PUSH EAX                            ; 004f0638
+    LEA EAX,[ESP + 0x48]                ; 004f0639
+    PUSH EAX                            ; 004f063d
+    FSTP float ptr [ESP + 0x84]         ; 004f063e
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 004f0645
+        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    ADD ESP,0x8                         ; 004f064a
+    LEA EAX,[ESP + 0xc0]                ; 004f064d
+    PUSH EAX                            ; 004f0654
+    LEA EAX,[ESP + 0xd0]                ; 004f0655
+    PUSH EAX                            ; 004f065c
+    LEA EAX,[ESP + 0x4c]                ; 004f065d
+    PUSH EAX                            ; 004f0661
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 004f0662
+        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
+    ADD ESP,0xc                         ; 004f0667
+    PUSH EAX                            ; 004f066a
+    LEA EAX,[ESP + 0xdc]                ; 004f066b
+    PUSH EAX                            ; 004f0672
+    PUSH EBX                            ; 004f0673
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 004f0674
+        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
+    MOV ESI,EAX                         ; 004f0679
+    LEA EAX,[ESP + 0xcc]                ; 004f067b
+    ADD ESP,0xc                         ; 004f0682
+    CMP EAX,ESI                         ; 004f0685
+    JZ 0x004f06a6                       ; 004f0687
+        ;   XREF to: 004f06a6 (CONDITIONAL_JUMP)  ; LAB_004f06a6
+    MOV EAX,dword ptr [ESI]             ; 004f0689
+    MOV dword ptr [ESP + 0xc0],EAX      ; 004f068b
+    MOV EAX,dword ptr [ESI + 0x4]       ; 004f0692
+    MOV dword ptr [ESP + 0xc4],EAX      ; 004f0695
+    MOV EAX,dword ptr [ESI + 0x8]       ; 004f069c
+    MOV dword ptr [ESP + 0xc8],EAX      ; 004f069f
+    PUSH 0x62e7b4                       ; 004f06a6 | = "gatbullet.kfm"
+        ;   Label: LAB_004f06a6
+    CALL core_dmodel.cpp_loadModel_FUN_00478c00 ; 004f06ab
+        ;   XREF to: 00478c00 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_00478c00(char * filename)
+    ADD ESP,0x4                         ; 004f06b0
+    PUSH EAX                            ; 004f06b3
+    LEA EAX,[ESP + 0xc4]                ; 004f06b4
+    PUSH EAX                            ; 004f06bb
+    LEA EAX,[EBX + 0x30]                ; 004f06bc
+    PUSH EAX                            ; 004f06bf
+    ADD EBX,0x20                        ; 004f06c0
+    PUSH EBX                            ; 004f06c3
+    MOV EDX,dword ptr [0x0067a3d0]      ; 004f06c4 | g_CFireEffectPtr | g_CFireEffectInstance
+    PUSH EDX                            ; 004f06ca | g_CFireEffectInstance
+    CALL core_fire.cpp_CFireEffect_createShell_FUN_004c91e0 ; 004f06cb
+        ;   XREF to: 004c91e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createShell_FUN_004c91e0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)
+    MOV EAX,0x1                         ; 004f06d0
+    ADD ESP,0x14                        ; 004f06d5
+    MOV ESP,EBP                         ; 004f06d8
+    POP EBP                             ; 004f06da
+    POP EDI                             ; 004f06db
+    POP ESI                             ; 004f06dc
+    POP EBX                             ; 004f06dd
+    RET                                 ; 004f06de
     LEA EAX,[ESP + 0x90]                ; 004f06df
         ;   Label: LAB_004f06df
     PUSH EAX                            ; 004f06e6

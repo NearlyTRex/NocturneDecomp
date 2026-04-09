@@ -5,11 +5,11 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 580,
+    "assembly_lines": 644,
     "complexity_score": 305,
     "cross_reference_count": 1,
-    "function_call_count": 17,
-    "global_count": 18,
+    "function_call_count": 19,
+    "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 275,
     "suspect_count": 2,
@@ -17,7 +17,7 @@
       "unresolved_funcptr",
       "warning_inlined_function"
     ],
-    "total_lines": 855
+    "total_lines": 919
   },
   "cross_references": [
     {
@@ -32,10 +32,6 @@
     "address_range": [
       [
         "005bdd20",
-        "005be191"
-      ],
-      [
-        "005be262",
         "005be428"
       ]
     ],
@@ -74,6 +70,11 @@
       "addr": "00427db0",
       "is_variadic": false,
       "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0"
+    },
+    {
+      "addr": "004edbb0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0"
     },
     {
       "addr": "004f38d0",
@@ -126,6 +127,11 @@
       "name": "core_stranger.cpp_CStranger_processPickupComplete_FUN_005c1f00"
     },
     {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
       "addr": "0049e6f0",
       "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0"
@@ -163,6 +169,12 @@
       "value": null
     },
     {
+      "addr": "00653763",
+      "name": "s_kick1_wav_00653763",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
       "addr": "0065376d",
       "name": "s_hit_gh_4_7_wav_0065376d",
       "type": "TerminatedCString",
@@ -185,6 +197,12 @@
       "name": "s_doorToOpen_NULL_stranger_006537b0",
       "type": "TerminatedCString",
       "value": null
+    },
+    {
+      "addr": "006537dc",
+      "name": "DOUBLE_006537dc",
+      "type": "double",
+      "value": "0.200000000000000"
     },
     {
       "addr": "006537e4",
@@ -211,6 +229,12 @@
       "value": "02cf1cd4"
     },
     {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
       "addr": "02cf1cd4",
       "name": "g_CEditorToolsInstance",
       "type": "CEditorTools",
@@ -220,6 +244,12 @@
       "addr": "02cf2bf0",
       "name": "g_CEnemyClassInfo.name_hash",
       "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
       "value": null
     },
     {
@@ -262,40 +292,43 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.370283018867925,
-    "instruction_count": 424,
+    "avg_pcode_per_instr": 4.466804979253112,
+    "instruction_count": 482,
     "opcode_distribution": {
-      "BOOL_NEGATE": 24,
-      "BOOL_OR": 15,
+      "BOOL_NEGATE": 25,
+      "BOOL_OR": 16,
       "BRANCH": 29,
-      "CALL": 30,
-      "CALLIND": 12,
-      "CBRANCH": 49,
-      "COPY": 382,
-      "FLOAT2FLOAT": 8,
-      "FLOAT_EQUAL": 5,
-      "FLOAT_LESS": 5,
-      "FLOAT_NAN": 10,
-      "INT2FLOAT": 2,
-      "INT_ADD": 136,
-      "INT_AND": 194,
-      "INT_CARRY": 39,
-      "INT_EQUAL": 158,
-      "INT_LEFT": 20,
-      "INT_LESS": 29,
-      "INT_NOTEQUAL": 25,
-      "INT_OR": 25,
-      "INT_SBORROW": 29,
-      "INT_SCARRY": 39,
-      "INT_SLESS": 79,
-      "INT_SUB": 179,
-      "INT_ZEXT": 20,
-      "LOAD": 57,
-      "POPCOUNT": 79,
+      "CALL": 33,
+      "CALLIND": 14,
+      "CBRANCH": 51,
+      "COPY": 492,
+      "FLOAT2FLOAT": 15,
+      "FLOAT_EQUAL": 6,
+      "FLOAT_LESS": 6,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 12,
+      "INT2FLOAT": 3,
+      "INT_ADD": 166,
+      "INT_AND": 213,
+      "INT_CARRY": 44,
+      "INT_EQUAL": 172,
+      "INT_LEFT": 24,
+      "INT_LESS": 30,
+      "INT_NOTEQUAL": 30,
+      "INT_OR": 30,
+      "INT_SBORROW": 30,
+      "INT_SCARRY": 45,
+      "INT_SLESS": 86,
+      "INT_SUB": 197,
+      "INT_ZEXT": 24,
+      "LOAD": 71,
+      "POPCOUNT": 86,
       "RETURN": 1,
-      "STORE": 173
+      "ROUND": 1,
+      "STORE": 199,
+      "TRUNC": 1
     },
-    "pcode_op_count": 1853
+    "pcode_op_count": 2153
   },
   "stack_frame": {
     "frame_size": 188,
@@ -413,6 +446,40 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CStranger_processMotionEvents_FUN_005bdd20.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 25,
+          "line": 128,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 36,
+          "line": 198,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 42,
+          "line": 198,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 20,
+          "line": 214,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

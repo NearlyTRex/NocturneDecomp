@@ -1,6 +1,6 @@
 // Name: core_zombie.cpp_CZombie_processPickup_FUN_005fb530
 // Address: 005fb530
-// Address Range: [[005fb530, 005fb5c7] [005fb5e1, 005fbcf2]]
+// Address Range: [[005fb530, 005fbcf2]]
 // Convention: __cdecl
 // Signature: int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005fb530(CZombie *this_ptr,float delta_time)
 

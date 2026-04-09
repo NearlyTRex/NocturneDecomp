@@ -45,6 +45,8 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
@@ -189,6 +191,57 @@ section .text
     PUSH dword ptr [ESP + 0x94]         ; 0042bb3d
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0042bb44
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0xa0],EAX      ; 0042bb49
+    FLD float ptr [ESP + 0xa0]          ; 0042bb50
+    ADD ESP,0x8                         ; 0042bb57
+    PUSH dword ptr [ESP]                ; 0042bb5a
+    FADD float ptr [ESP + 0x7c]         ; 0042bb5d
+    PUSH dword ptr [ESP + 0x94]         ; 0042bb61
+    FSTP float ptr [ESP + 0x80]         ; 0042bb68
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0042bb6f
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0xa0],EAX      ; 0042bb74
+    FLD float ptr [ESP + 0xa0]          ; 0042bb7b
+    ADD ESP,0x8                         ; 0042bb82
+    LEA EAX,[ESP + 0x74]                ; 0042bb85
+    PUSH EAX                            ; 0042bb89
+    LEA EAX,[ESP + 0x8]                 ; 0042bb8a
+    FADD float ptr [ESP + 0x78]         ; 0042bb8e
+    PUSH EAX                            ; 0042bb92
+    FSTP float ptr [ESP + 0x7c]         ; 0042bb93
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 0042bb97
+        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    FLD float ptr [EBX + 0x4]           ; 0042bb9c
+    FMUL ST0                            ; 0042bb9f
+    FLD float ptr [EBX]                 ; 0042bba1
+    FMUL ST0                            ; 0042bba3
+    FADDP                               ; 0042bba5
+    FLD float ptr [EBX + 0x8]           ; 0042bba7
+    FMUL ST0                            ; 0042bbaa
+    FADDP                               ; 0042bbac
+    FSQRT                               ; 0042bbae
+    ADD ESP,0x8                         ; 0042bbb0
+    FSTP float ptr [ESP + 0x94]         ; 0042bbb3
+    MOV EAX,dword ptr [ESP + 0x94]      ; 0042bbba
+    MOV dword ptr [ESP + 0x4c],EAX      ; 0042bbc1
+    LEA EAX,[ESP + 0x44]                ; 0042bbc5
+    PUSH EAX                            ; 0042bbc9
+    LEA EAX,[ESP + 0x6c]                ; 0042bbca
+    PUSH EAX                            ; 0042bbce
+    LEA EAX,[ESP + 0xc]                 ; 0042bbcf
+    XOR ECX,ECX                         ; 0042bbd3
+    PUSH EAX                            ; 0042bbd5
+    MOV dword ptr [ESP + 0x50],ECX      ; 0042bbd6
+    MOV dword ptr [ESP + 0x54],ECX      ; 0042bbda
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 0042bbde
+        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
+    ADD ESP,0xc                         ; 0042bbe3
+    MOV EDX,dword ptr [EBP + 0x20]      ; 0042bbe6
+    PUSH EDX                            ; 0042bbe9
+    LEA EAX,[ESP + 0x6c]                ; 0042bbea
+    PUSH EAX                            ; 0042bbee
+    JMP 0x0042ba64                      ; 0042bbef
+        ;   XREF to: 0042ba64 (UNCONDITIONAL_JUMP)  ; LAB_0042ba64
     MOV EAX,dword ptr [EDI + 0x2610]    ; 0042bbf4
         ;   Label: LAB_0042bbf4
     PUSH EAX                            ; 0042bbfa

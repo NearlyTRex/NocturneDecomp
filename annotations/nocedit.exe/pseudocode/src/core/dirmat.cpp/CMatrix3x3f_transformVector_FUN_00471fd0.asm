@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   output
 ; CVector3f *      Stack[0xc]:4   input
 ;
-; XREF[44]:
+; XREF[55]:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 at 00408eda
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 at 00408e93
 ;   core_box.cpp_CBox_loadFromFile_FUN_0041fe90 at 0041ffe9
@@ -16,10 +16,10 @@
 ;   core_box.cpp_CBox_updateTransform_FUN_0041e0e0 at 0041e26c
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0 at 00426316
 ;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc0 at 00425e80
+;   core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 at 0042bbde
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 at 0042f26a
 ;   core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420 at 0043a9d3
-;   core_cloth.cpp_CCloth_step_FUN_0043abb0 at 0043ae36
-;   ... and 34 more
+;   ... and 45 more
 ;
 ; *****************************************************************************
 

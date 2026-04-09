@@ -55,6 +55,9 @@
 ; int              Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0 at 004739e4
+;
 ; Referenced Globals:
 ;   double DOUBLE_0061f24b = 0.100000000000000
 ;   double DOUBLE_0061f253 = 18

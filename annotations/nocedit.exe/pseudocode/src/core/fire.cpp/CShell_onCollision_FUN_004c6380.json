@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 28,
+    "assembly_lines": 128,
     "complexity_score": 67,
     "cross_reference_count": 0,
-    "function_call_count": 1,
-    "global_count": 1,
+    "function_call_count": 4,
+    "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 52,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 80
+    "total_lines": 180
   },
   "cross_references": [],
   "function": {
@@ -24,7 +24,7 @@
     "address_range": [
       [
         "004c6380",
-        "004c63c1"
+        "004c64a3"
       ]
     ],
     "convention": "__cdecl",
@@ -37,14 +37,83 @@
       "addr": "0040cc10",
       "is_variadic": false,
       "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10"
+    },
+    {
+      "addr": "005b3a40",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_005b3a40"
+    },
+    {
+      "addr": "005fe7f0",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005fe7f0"
+    },
+    {
+      "addr": "005a9660",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660"
     }
   ],
   "globals": [
+    {
+      "addr": "00629fcb",
+      "name": "s_shell_kfm_00629fcb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629fd5",
+      "name": "s_sh_sh_c_15_00629fd5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629fe3",
+      "name": "s_s_44_sh_c_2_00629fe3",
+      "type": "TerminatedCString",
+      "value": null
+    },
     {
       "addr": "00629ff3",
       "name": "DOUBLE_00629ff3",
       "type": "double",
       "value": "0.25"
+    },
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
+      "addr": "00681ef8",
+      "name": "g_CSoundPtr",
+      "type": "CSound*",
+      "value": "03f6af64"
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    },
+    {
+      "addr": "02d141dc",
+      "name": "g_ShellBounceSoundHandles",
+      "type": "uint[3]",
+      "value": null
+    },
+    {
+      "addr": "02d141e0",
+      "name": "g_ShellBounceSoundHandles[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6af64",
+      "name": "g_CSoundInstance",
+      "type": "CSound",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -56,36 +125,40 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.791666666666667,
-    "instruction_count": 24,
+    "avg_pcode_per_instr": 5.302752293577981,
+    "instruction_count": 109,
     "opcode_distribution": {
+      "BOOL_NEGATE": 8,
       "BOOL_OR": 2,
-      "CALL": 1,
-      "CBRANCH": 1,
-      "COPY": 52,
-      "FLOAT2FLOAT": 2,
+      "CALL": 6,
+      "CBRANCH": 6,
+      "COPY": 164,
+      "FLOAT2FLOAT": 8,
       "FLOAT_EQUAL": 1,
       "FLOAT_LESS": 1,
-      "FLOAT_MULT": 1,
+      "FLOAT_MULT": 3,
       "FLOAT_NAN": 2,
       "INT2FLOAT": 2,
-      "INT_ADD": 6,
-      "INT_AND": 11,
-      "INT_EQUAL": 6,
-      "INT_LEFT": 4,
-      "INT_LESS": 2,
-      "INT_NOTEQUAL": 5,
-      "INT_OR": 5,
-      "INT_SBORROW": 2,
-      "INT_SLESS": 3,
-      "INT_SUB": 9,
-      "INT_XOR": 1,
+      "INT_ADD": 51,
+      "INT_AND": 67,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 49,
+      "INT_LEFT": 6,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 10,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 26,
+      "INT_SUB": 30,
+      "INT_XOR": 6,
       "INT_ZEXT": 4,
-      "LOAD": 3,
-      "POPCOUNT": 3,
-      "STORE": 10
+      "LOAD": 28,
+      "POPCOUNT": 24,
+      "RETURN": 3,
+      "STORE": 37
     },
-    "pcode_op_count": 139
+    "pcode_op_count": 578
   },
   "stack_frame": {
     "frame_size": 36,

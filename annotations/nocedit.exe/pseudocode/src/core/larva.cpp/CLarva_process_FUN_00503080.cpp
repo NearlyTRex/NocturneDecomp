@@ -1,6 +1,6 @@
 // Name: core_larva.cpp_CLarva_process_FUN_00503080
 // Address: 00503080
-// Address Range: [[00503080, 0050334d] [005034b7, 00503676] [0050368b, 005038ec] [0050393e, 00503951]]
+// Address Range: [[00503080, 00503951]]
 // Convention: __cdecl
 // Signature: void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float delta_time)
 

@@ -1,6 +1,6 @@
 // Name: core_weather.cpp_CWeather_createThunder_FUN_005ef140
 // Address: 005ef140
-// Address Range: [[005ef140, 005ef156]]
+// Address Range: [[005ef140, 005ef18c]]
 // Convention: __cdecl
 // Signature: void __cdecl core_weather_cpp_CWeather_createThunder_FUN_005ef140(CWeather *this_ptr)
 

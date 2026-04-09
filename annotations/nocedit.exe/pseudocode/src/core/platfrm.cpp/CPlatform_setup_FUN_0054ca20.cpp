@@ -1,6 +1,6 @@
 // Name: core_platfrm.cpp_CPlatform_setup_FUN_0054ca20
 // Address: 0054ca20
-// Address Range: [[0054ca20, 0054ca2c]]
+// Address Range: [[0054ca20, 0054caac]]
 // Convention: __cdecl
 // Signature: void __cdecl core_platfrm_cpp_CPlatform_setup_FUN_0054ca20(CPlatform *this_ptr)
 

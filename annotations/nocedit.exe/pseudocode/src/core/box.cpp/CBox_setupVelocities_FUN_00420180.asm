@@ -10,9 +10,10 @@
 ; Local Variables:
 ; CVector3f        Stack[-0x14]:12  local_14
 ;
-; XREF[3]:
+; XREF[4]:
 ;   core_bodypart.cpp_CBodyPart_onDropped_FUN_00419fd0 at 0041a023
 ;   core_boxactor.cpp_CBoxActor_onDropped_FUN_004224f0 at 00422539
+;   core_fire.cpp_CStake_spawn_FUN_004bfe90 at 004c00ff
 ;   core_fire.cpp_CToss_create_FUN_004c3ee0 at 004c3fd1
 ;
 ; Called Functions:

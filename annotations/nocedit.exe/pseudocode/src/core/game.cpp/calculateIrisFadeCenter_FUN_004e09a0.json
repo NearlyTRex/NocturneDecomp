@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 93,
+    "complexity_score": 148,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 53,
-    "suspect_count": 3,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array"
+      "stack_alignment_array",
+      "wrong_global"
     ],
     "total_lines": 69
   },
@@ -121,6 +122,46 @@
       "severity": "mild",
       "text": "*(int *)((int)&CStack_24 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Global g_CDemonCameraInstance used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 36,
+      "match": "g_CDemonCameraInstance",
+      "severity": "moderate",
+      "text": "(&g_CDemonCameraInstance,&CStack_54,&CStack_24);",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Global g_IrisFadeCenterX used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 42,
+      "match": "g_IrisFadeCenterX",
+      "severity": "moderate",
+      "text": "g_IrisFadeCenterX =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Global g_IrisFadeCenterY used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 45,
+      "match": "g_IrisFadeCenterY",
+      "severity": "moderate",
+      "text": "g_IrisFadeCenterY =",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Global g_WindowHeight used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 48,
+      "match": "g_WindowHeight",
+      "severity": "moderate",
+      "text": "if (0x1e0 < g_WindowHeight) {",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Global g_WindowWidth used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 49,
+      "match": "g_WindowWidth",
+      "severity": "moderate",
+      "text": "g_IrisFadeCenterX = (g_IrisFadeCenterX * g_WindowWidth) / 0x280;",
+      "type": "wrong_global"
     }
   ]
 }

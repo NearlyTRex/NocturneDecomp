@@ -1,6 +1,6 @@
 // Name: core_particle.cpp_CParticle_setup_FUN_00545680
 // Address: 00545680
-// Address Range: [[00545680, 005456eb]]
+// Address Range: [[00545680, 0054575d]]
 // Convention: __cdecl
 // Signature: void __cdecl core_particle_cpp_CParticle_setup_FUN_00545680(CParticle *this_ptr,CVector3f *position,CVector3f *velocity)
 

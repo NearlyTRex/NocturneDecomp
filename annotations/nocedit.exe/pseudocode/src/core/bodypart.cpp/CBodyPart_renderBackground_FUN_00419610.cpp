@@ -1,6 +1,6 @@
 // Name: core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610
 // Address: 00419610
-// Address Range: [[00419610, 004196c6] [004196e0, 00419737]]
+// Address Range: [[00419610, 00419737]]
 // Convention: __cdecl
 // Signature: void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart *this_ptr,int layer_flag)
 

@@ -4,11 +4,12 @@
 ; void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0(void)
 ;
 ;
-; XREF[5]:
+; XREF[6]:
 ;   core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 at 0057b1ea
 ;   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 at 0057ea4c
 ;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 at 00580adb
 ;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057c992
+;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 0046072a
 ;   shape_design.c_showPointEditor_FUN_0045c6c0 at 0045ca7b
 ;
 ; Referenced Globals:

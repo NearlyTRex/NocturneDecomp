@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 70,
     "complexity_score": 38,
-    "cross_reference_count": 14,
+    "cross_reference_count": 17,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
@@ -35,6 +35,12 @@
       "addr": "0041bf90",
       "from_addr": "0041c696",
       "name": "core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00423a30",
+      "from_addr": "00423f77",
+      "name": "core_bride.cpp_CBride_process_FUN_00423a30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,6 +92,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0051fcc0",
+      "from_addr": "00520276",
+      "name": "core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00525840",
       "from_addr": "00525e4c",
       "name": "core_mobster.cpp_CMobster_process_FUN_00525840",
@@ -101,6 +113,12 @@
       "addr": "005a2800",
       "from_addr": "005a2c46",
       "name": "core_smiley.cpp_CSmiley_process_FUN_005a2800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005efde0",
+      "from_addr": "005f0352",
+      "name": "core_werewolf.cpp_CWerewolf_process_FUN_005efde0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -156,7 +174,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 23,
+    "call_site_count": 37,
     "call_sites": [
       {
         "call_addr": "0047f468",
@@ -247,9 +265,9 @@
         "stack_params": 4
       },
       {
-        "call_addr": "0044461d",
+        "call_addr": "00423f77",
         "call_type": "direct",
-        "caller": "core_cow.cpp_CZombieCow_process_FUN_00444310",
+        "caller": "core_bride.cpp_CBride_process_FUN_00423a30",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -258,9 +276,9 @@
         "stack_params": 4
       },
       {
-        "call_addr": "004e7d55",
+        "call_addr": "0042403d",
         "call_type": "direct",
-        "caller": "core_ghoul.cpp_CGhoul_process_FUN_004e6600",
+        "caller": "core_bride.cpp_CBride_process_FUN_00423a30",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",

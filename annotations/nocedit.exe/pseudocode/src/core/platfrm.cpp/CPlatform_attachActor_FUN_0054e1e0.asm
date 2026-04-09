@@ -11,7 +11,8 @@
 ; CMatrix3x4f      Stack[-0x70]:48  local_70
 ; CMatrix3x4f      Stack[-0x40]:48  local_40
 ;
-; XREF[1]:
+; XREF[2]:
+;   core_platfrm.cpp_CPlatform_setup_FUN_0054ca20 at 0054ca9a
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055c072
 ;
 ; Referenced Globals:

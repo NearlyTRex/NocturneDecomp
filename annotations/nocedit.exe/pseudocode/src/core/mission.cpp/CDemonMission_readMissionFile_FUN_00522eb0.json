@@ -517,5 +517,29 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonMission_readMissionFile_FUN_00522eb0.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 19,
+          "line": 104,
+          "message": "Redundant assignment of 'pcVar10' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 14,
+          "line": 161,
+          "message": "Redundant assignment of 'puVar8' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

@@ -11,8 +11,9 @@
 ; CVector3f        Stack[-0x24]:12  local_24
 ; SFly *           Stack[-0x18]:4  local_18
 ;
-; XREF[1]:
+; XREF[2]:
 ;   core_flies.cpp_CFlies_process_FUN_004cbf00 at 004cc147
+;   core_flies.cpp_CFlies_setup_FUN_004cbe20 at 004cbe3d
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
@@ -83,6 +84,17 @@ section .text
     PUSH 0x0                            ; 004cc7e8
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004cc7ea
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x24],EAX      ; 004cc7ef
+    FLD float ptr [ESP + 0x24]          ; 004cc7f3
+    ADD ESP,0x8                         ; 004cc7f7
+    MOV EAX,dword ptr [ESP + 0x18]      ; 004cc7fa
+    FSTP float ptr [EAX]                ; 004cc7fe
+    ADD ESP,0x20                        ; 004cc800
+    POP EBP                             ; 004cc803
+    POP EDI                             ; 004cc804
+    POP ESI                             ; 004cc805
+    POP EBX                             ; 004cc806
+    RET                                 ; 004cc807
     MOV EDX,dword ptr [EAX]             ; 004cc808
         ;   Label: LAB_004cc808
     MOV dword ptr [EBX],EDX             ; 004cc80a

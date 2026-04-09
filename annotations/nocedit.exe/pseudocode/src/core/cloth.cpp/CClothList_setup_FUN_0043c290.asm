@@ -9,7 +9,8 @@
 ; CVector3f *      Stack[0xc]:4   euler
 ; CDeformableModelInstance * Stack[0x10]:4   model_ptr
 ;
-; XREF[1]:
+; XREF[2]:
+;   core_charactr.cpp_CCharacter_setup_FUN_00428140 at 004282a3
 ;   core_succubus.cpp_CSuccubus_setup_FUN_005c6b60 at 005c6bec
 ;
 ; Called Functions:

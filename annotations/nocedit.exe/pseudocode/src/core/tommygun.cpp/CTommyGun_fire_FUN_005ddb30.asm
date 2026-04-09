@@ -39,6 +39,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_45_dry_wav_2_0_006554ad
+;   TerminatedCString s_bullet_kfm_006554bf
 ;   float FLOAT_006554cd = 0.1000000
 ;   double DOUBLE_006554d1 = 2.5
 ;   float FLOAT_006554d9 = -0.125
@@ -52,8 +53,7 @@
 ;   undefined4 g_CGlassClassInfo.name_hash
 ;   undefined4 g_CHeroClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.ray_origin.x
-;   ... and 11 more
+;   ... and 12 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -63,15 +63,15 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
 ;   core_crate.cpp_CCrate_explode_FUN_00448a70
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
+;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+;   core_dmodel.cpp_loadModel_FUN_00478c00
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0
 ;   core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60
+;   core_fire.cpp_CFireEffect_createShell_FUN_004c91e0
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004cb340
 ;   core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
-;   core_glass.cpp_CGlass_shatter_FUN_004eaef0
-;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
-;   core_setcolid.cpp_CDemonSet_init_FUN_00574180
-;   core_setcolid.cpp_CDemonSet_raycast_FUN_00572530
-;   ... and 6 more
+;   ... and 10 more
 ;
 ; *****************************************************************************
 
@@ -263,6 +263,71 @@ section .text
     MOV dword ptr [ESP + 0x7c],ECX      ; 005ddde5
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005ddde9
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x140],EAX     ; 005dddee
+    FLD float ptr [ESP + 0x140]         ; 005dddf5
+    ADD ESP,0x8                         ; 005dddfc
+    PUSH 0x3ec90fdb                     ; 005dddff
+    PUSH 0xbec90fdb                     ; 005dde04
+    FSTP float ptr [ESP + 0xc8]         ; 005dde09
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005dde10
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x140],EAX     ; 005dde15
+    FLD float ptr [ESP + 0x140]         ; 005dde1c
+    ADD ESP,0x8                         ; 005dde23
+    LEA EAX,[ESP + 0xc0]                ; 005dde26
+    PUSH EAX                            ; 005dde2d
+    LEA EAX,[ESP + 0x48]                ; 005dde2e
+    XOR ESI,ESI                         ; 005dde32
+    PUSH EAX                            ; 005dde34
+    FSTP float ptr [ESP + 0xcc]         ; 005dde35
+    MOV dword ptr [ESP + 0xd0],ESI      ; 005dde3c
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 005dde43
+        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    ADD ESP,0x8                         ; 005dde48
+    LEA EAX,[ESP + 0x6c]                ; 005dde4b
+    PUSH EAX                            ; 005dde4f
+    LEA EAX,[ESP + 0xa0]                ; 005dde50
+    PUSH EAX                            ; 005dde57
+    LEA EAX,[ESP + 0x4c]                ; 005dde58
+    PUSH EAX                            ; 005dde5c
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 005dde5d
+        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
+    ADD ESP,0xc                         ; 005dde62
+    PUSH EAX                            ; 005dde65
+    LEA EAX,[ESP + 0xac]                ; 005dde66
+    PUSH EAX                            ; 005dde6d
+    PUSH EBX                            ; 005dde6e
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 005dde6f
+        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
+    MOV ESI,EAX                         ; 005dde74
+    LEA EAX,[ESP + 0x78]                ; 005dde76
+    ADD ESP,0xc                         ; 005dde7a
+    CMP EAX,ESI                         ; 005dde7d
+    JZ 0x005dde95                       ; 005dde7f
+        ;   XREF to: 005dde95 (CONDITIONAL_JUMP)  ; LAB_005dde95
+    MOV EAX,dword ptr [ESI]             ; 005dde81
+    MOV dword ptr [ESP + 0x6c],EAX      ; 005dde83
+    MOV EAX,dword ptr [ESI + 0x4]       ; 005dde87
+    MOV dword ptr [ESP + 0x70],EAX      ; 005dde8a
+    MOV EAX,dword ptr [ESI + 0x8]       ; 005dde8e
+    MOV dword ptr [ESP + 0x74],EAX      ; 005dde91
+    PUSH 0x6554bf                       ; 005dde95 | = "bullet.kfm"
+        ;   Label: LAB_005dde95
+    CALL core_dmodel.cpp_loadModel_FUN_00478c00 ; 005dde9a
+        ;   XREF to: 00478c00 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_00478c00(char * filename)
+    ADD ESP,0x4                         ; 005dde9f
+    PUSH EAX                            ; 005ddea2
+    LEA EAX,[ESP + 0x70]                ; 005ddea3
+    PUSH EAX                            ; 005ddea7
+    LEA EAX,[EBX + 0x30]                ; 005ddea8
+    PUSH EAX                            ; 005ddeab
+    ADD EBX,0x20                        ; 005ddeac
+    PUSH EBX                            ; 005ddeaf
+    MOV EDI,dword ptr [0x0067a3d0]      ; 005ddeb0 | g_CFireEffectPtr
+    PUSH EDI                            ; 005ddeb6 | g_CFireEffectInstance
+    CALL core_fire.cpp_CFireEffect_createShell_FUN_004c91e0 ; 005ddeb7
+        ;   XREF to: 004c91e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createShell_FUN_004c91e0(CFireEffect * this_ptr, CVector3f * position, CVector3f * euler_angles, CVector3f * velocity, ...)
+    ADD ESP,0x14                        ; 005ddebc
     MOV EAX,0x1                         ; 005ddebf
         ;   Label: LAB_005ddebf
     MOV ESP,EBP                         ; 005ddec4

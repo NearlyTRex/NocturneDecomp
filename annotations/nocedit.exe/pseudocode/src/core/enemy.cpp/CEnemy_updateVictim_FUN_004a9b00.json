@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 96,
+    "assembly_lines": 335,
     "complexity_score": 183,
     "cross_reference_count": 0,
-    "function_call_count": 2,
-    "global_count": 8,
+    "function_call_count": 5,
+    "global_count": 21,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 148,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 244
+    "total_lines": 483
   },
   "cross_references": [],
   "function": {
@@ -24,7 +24,7 @@
     "address_range": [
       [
         "004a9b00",
-        "004a9c26"
+        "004a9eea"
       ]
     ],
     "convention": "__cdecl",
@@ -39,9 +39,24 @@
       "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10"
     },
     {
+      "addr": "004a9a50",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_canSeeTarget_FUN_004a9a50"
+    },
+    {
       "addr": "004adca0",
       "is_variadic": false,
       "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0"
+    },
+    {
+      "addr": "00547d00",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00"
+    },
+    {
+      "addr": "00441890",
+      "is_variadic": true,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
     }
   ],
   "globals": [
@@ -52,10 +67,28 @@
       "value": null
     },
     {
+      "addr": "006243c2",
+      "name": "s_s_can_see_hero_006243c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006243d6",
+      "name": "FLOAT_006243d6",
+      "type": "float",
+      "value": "3"
+    },
+    {
       "addr": "0065d7c8",
       "name": "FLOAT_0065d7c8",
       "type": "float",
       "value": "NaN"
+    },
+    {
+      "addr": "0066e8e0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "0083b1a4"
     },
     {
       "addr": "006793d0",
@@ -68,6 +101,54 @@
       "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "02d81a9c"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "0083b1a4",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "02cf2bf0",
+      "name": "g_CEnemyClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf2bf4",
+      "name": "g_EnemyVictimCandidates",
+      "type": "CDemonActor*[2000]",
+      "value": null
+    },
+    {
+      "addr": "02cf2bf8",
+      "name": "g_EnemyVictimCandidates[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf4b30",
+      "name": "g_EnemyVictimCandidates[1999]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf4b34",
+      "name": "g_EnemyVictimCandidateDistances",
+      "type": "float[2000]",
+      "value": null
+    },
+    {
+      "addr": "02cf4b38",
+      "name": "g_EnemyVictimCandidateDistances[1]",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "02d05310",
@@ -92,6 +173,18 @@
       "name": "g_CGameInstance.allow_enemy_attack_flag",
       "type": "undefined4",
       "value": null
+    },
+    {
+      "addr": "03263310",
+      "name": "g_CDemonSetInstance.character_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03263314",
+      "name": "g_CDemonSetInstance.characters[0]",
+      "type": "undefined4",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -103,41 +196,46 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.532467532467533,
-    "instruction_count": 77,
+    "avg_pcode_per_instr": 5.410909090909091,
+    "instruction_count": 275,
     "opcode_distribution": {
-      "BOOL_NEGATE": 5,
-      "BOOL_OR": 1,
-      "BRANCH": 1,
-      "CALL": 2,
-      "CALLIND": 1,
-      "CBRANCH": 8,
-      "COPY": 108,
-      "FLOAT2FLOAT": 3,
-      "FLOAT_EQUAL": 1,
-      "FLOAT_LESS": 1,
-      "FLOAT_NAN": 2,
-      "FLOAT_SUB": 1,
-      "INT2FLOAT": 1,
-      "INT_ADD": 39,
-      "INT_AND": 32,
-      "INT_CARRY": 2,
-      "INT_EQUAL": 22,
-      "INT_LEFT": 4,
-      "INT_LESS": 4,
-      "INT_NOTEQUAL": 5,
-      "INT_OR": 5,
-      "INT_SBORROW": 4,
-      "INT_SCARRY": 2,
-      "INT_SLESS": 11,
-      "INT_SUB": 16,
-      "INT_ZEXT": 4,
-      "LOAD": 25,
-      "POPCOUNT": 11,
-      "RETURN": 3,
-      "STORE": 25
+      "BOOL_NEGATE": 13,
+      "BOOL_OR": 8,
+      "BRANCH": 5,
+      "CALL": 5,
+      "CALLIND": 5,
+      "CBRANCH": 28,
+      "COPY": 512,
+      "FLOAT2FLOAT": 32,
+      "FLOAT_ABS": 1,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 6,
+      "FLOAT_LESS": 6,
+      "FLOAT_MULT": 6,
+      "FLOAT_NAN": 12,
+      "FLOAT_SUB": 4,
+      "INT2FLOAT": 2,
+      "INT_ADD": 149,
+      "INT_AND": 131,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 88,
+      "INT_LEFT": 24,
+      "INT_LESS": 11,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 34,
+      "INT_OR": 30,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 44,
+      "INT_SUB": 44,
+      "INT_XOR": 4,
+      "INT_ZEXT": 24,
+      "LOAD": 92,
+      "POPCOUNT": 44,
+      "RETURN": 5,
+      "STORE": 74
     },
-    "pcode_op_count": 349
+    "pcode_op_count": 1488
   },
   "stack_frame": {
     "frame_size": 84,
@@ -262,6 +360,58 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CEnemy_updateVictim_FUN_004a9b00.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 7,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 15,
+          "line": 49,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 20,
+          "line": 74,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 20,
+          "line": 76,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 21,
+          "line": 82,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 26,
+          "line": 122,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 19,
+          "line": 124,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 139,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

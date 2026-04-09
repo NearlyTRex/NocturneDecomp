@@ -95,4 +95,21 @@ section .text
     PUSH EDI                            ; 004bedb5 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004bedb6
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 004bedbb
+    MOV EBP,dword ptr [0x006703ec]      ; 004bedbe | g_CDemonRendererPtr2
+    PUSH EBP                            ; 004bedc4 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004bedc5
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 004bedca
+    POP EDI                             ; 004bedcd
+    PUSH EBX                            ; 004bedce
+    CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 004bedcf
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor * this_ptr)
+    ADD ESP,0x4                         ; 004bedd4
+    MOV EAX,ESI                         ; 004bedd7
+    ADD ESP,0x30                        ; 004bedd9
+    POP EBP                             ; 004beddc
+    POP ESI                             ; 004beddd
+    POP EBX                             ; 004bedde
+    RET                                 ; 004beddf
 

@@ -1,6 +1,6 @@
 // Name: core_skeledit.cpp_trimWhitespace_FUN_00589450
 // Address: 00589450
-// Address Range: [[00589450, 00589480]]
+// Address Range: [[00589450, 005894be]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeledit_cpp_trimWhitespace_FUN_00589450(char *str)
 

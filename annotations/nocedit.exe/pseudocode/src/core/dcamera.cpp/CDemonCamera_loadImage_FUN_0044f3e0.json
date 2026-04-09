@@ -1027,6 +1027,96 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonCamera_loadImage_FUN_0044f3e0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 14,
+          "line": 137,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 19,
+          "line": 194,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 16,
+          "line": 264,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 8,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 21,
+          "line": 302,
+          "message": "Redundant assignment of 'piVar27' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 17,
+          "line": 448,
+          "message": "Redundant assignment of 'puVar28' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 17,
+          "line": 460,
+          "message": "Redundant assignment of 'pSVar24' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 24,
+          "line": 484,
+          "message": "Redundant assignment of 'iVar16' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 57,
+          "line": 323,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 27,
+          "line": 422,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 40,
+          "line": 428,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 46,
+          "line": 475,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",

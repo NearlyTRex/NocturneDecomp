@@ -1,6 +1,6 @@
 // Name: core_manpuz.cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60
 // Address: 00509c60
-// Address Range: [[00509c60, 00509d12] [00509d3a, 00509d4c]]
+// Address Range: [[00509c60, 00509d4c]]
 // Convention: __cdecl
 // Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60(CMansionPuzzleCircle *this_ptr,int panel_index)
 

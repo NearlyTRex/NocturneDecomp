@@ -10,7 +10,7 @@
 ; Local Variables:
 ; void *           Stack[-0x14]:4  original_array_ptr
 ;
-; XREF[85]:
+; XREF[86]:
 ;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409b90 at 00409bc0
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 at 0041382c
 ;   core_bodypart.cpp_CBodyPart_ctor_FUN_00419010 at 0041902a
@@ -21,7 +21,7 @@
 ;   core_chain.cpp_CChain_ctor_FUN_0042fb80 at 0042fb9c
 ;   core_charactr.cpp_CCharacter_ctor_FUN_00427e20 at 00427e83
 ;   core_cloth.cpp_CCloth_ctor_FUN_00438ba0 at 00438bd2
-;   ... and 75 more
+;   ... and 76 more
 ;
 ; *****************************************************************************
 

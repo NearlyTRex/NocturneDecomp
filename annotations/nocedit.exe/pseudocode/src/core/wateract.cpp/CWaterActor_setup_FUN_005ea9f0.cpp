@@ -1,6 +1,6 @@
 // Name: core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
 // Address: 005ea9f0
-// Address Range: [[005ea9f0, 005eaa04]]
+// Address Range: [[005ea9f0, 005eaf98]]
 // Convention: __cdecl
 // Signature: void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005ea9f0(CWaterActor *this_ptr)
 

@@ -11,7 +11,11 @@
 # - param_mismatch_analysis.txt - Parameter count mismatch analysis
 # - pass_by_value_report.txt - Pass-by-value struct argument detection
 # - annotation_quality.txt - Annotation quality issues (unnamed funcs/params, type issues)
+# - wrong_global_resolution.txt - Watcom 1-based indexing wrong global detection
 # - vtable_union_mismatches.txt - Wrong vtable union member accesses in pseudocode
+# - static_analysis_summary.txt - Static analysis tool summary (clang-sa, cppcheck, clang-tidy)
+# - static_analysis_detailed.txt - All static analysis diagnostics by tool and check type
+# - static_analysis_by_function.txt - Static analysis diagnostics organized by function
 # - virtual_files.csv - CSV for graphing
 # - functions.csv - CSV for analysis
 # - completion_pie.svg - Overall completion pie chart
@@ -3159,6 +3163,258 @@ def generate_annotation_quality_report(functions, output_path):
 
 
 # =============================================================================
+# Wrong global symbol resolution report
+# =============================================================================
+
+
+def _extract_json_globals(json_path):
+    """Extract global symbol names from function JSON metadata.
+
+    Uses the 'globals' list from Ghidra's reference analysis, which is the
+    most complete source (not truncated like .asm headers, not limited to
+    3 comments per line like .asm EOL annotations).
+
+    Returns:
+        Set of global base names found in the JSON
+    """
+    import json as _json
+
+    globals_found = set()
+    if not os.path.isfile(json_path):
+        return globals_found
+
+    try:
+        with open(json_path) as f:
+            data = _json.load(f)
+        for g in data.get('globals', []):
+            name = g.get('name', '')
+            if name:
+                base = name.split('.')[0].split('[')[0]
+                globals_found.add(base)
+    except Exception:
+        pass
+
+    return globals_found
+
+
+def _extract_cpp_globals(cpp_path):
+    """Extract global variable names referenced in .cpp pseudocode.
+
+    Looks for identifiers matching common global naming patterns:
+    g_*, DAT_*, INT_*, FLOAT_*, DOUBLE_*, UINT_*, BYTE_*, SHORT_*, LONG_*
+
+    Returns:
+        Dict mapping global_name -> list of line numbers where used
+    """
+    import re
+
+    globals_found = {}
+    if not os.path.isfile(cpp_path):
+        return globals_found
+
+    # Match global name patterns used in this codebase
+    # Captures: g_Foo, DAT_addr, INT_addr, FLOAT_addr, DOUBLE_addr, etc.
+    global_re = re.compile(
+        r'\b(g_[A-Za-z_][A-Za-z0-9_.]*'
+        r'|DAT_[0-9a-fA-F]+'
+        r'|INT_[0-9a-fA-F]+'
+        r'|UINT_[0-9a-fA-F]+'
+        r'|FLOAT_[0-9a-fA-F]+'
+        r'|DOUBLE_[0-9a-fA-F]+'
+        r'|BYTE_[0-9a-fA-F]+'
+        r'|SHORT_[0-9a-fA-F]+'
+        r'|LONG_[0-9a-fA-F]+'
+        r')\b'
+    )
+
+    with open(cpp_path) as f:
+        for line_no, line in enumerate(f, 1):
+            # Skip header comments
+            if line.startswith('//') or line.startswith('#'):
+                continue
+            for m in global_re.finditer(line):
+                name = m.group(1)
+                # Strip field access suffixes for base name (g_Foo.bar -> g_Foo)
+                base_name = name.split('.')[0]
+                if base_name not in globals_found:
+                    globals_found[base_name] = []
+                globals_found[base_name].append(line_no)
+
+    return globals_found
+
+
+def generate_wrong_global_report(pseudocode_src_dir, output_path):
+    """Detect potential wrong global symbol resolution from Watcom 1-based indexing.
+
+    For each function, compares global variable names in the .cpp against
+    those annotated in the .asm. Globals that appear in .cpp but not in .asm
+    may indicate the decompiler resolved a memory access to the wrong
+    overlapping global due to Watcom's 1-based array indexing shifting the
+    base address.
+
+    The .asm annotations are reliable (Ghidra labels based on exact address),
+    while the decompiler may pick a different overlapping global.
+
+    Args:
+        pseudocode_src_dir: Directory containing pseudocode src/ tree
+        output_path: Directory to write the report
+    """
+    import glob as _glob
+
+    lines = []
+    lines.append("=" * 100)
+    lines.append("WRONG GLOBAL SYMBOL RESOLUTION REPORT")
+    lines.append("=" * 100)
+    lines.append("")
+    lines.append("Detects potential Watcom 1-based indexing bugs where the decompiler resolves")
+    lines.append("a memory access to the wrong overlapping global. Globals that appear in the")
+    lines.append(".cpp pseudocode but NOT in the function's JSON reference list are flagged as")
+    lines.append("suspicious, since the reference list uses exact address resolution.")
+    lines.append("")
+
+    # Find all function directories by looking for .json files
+    json_files = sorted(_glob.glob(
+        os.path.join(pseudocode_src_dir, '**', '*.json'), recursive=True
+    ))
+
+    all_issues = []
+    functions_checked = 0
+    functions_with_issues = 0
+
+    for json_path in json_files:
+        base_path = json_path[:-5]  # Remove .json
+
+        # Find the cpp file (prefer .keep.cpp)
+        cpp_path = None
+        for ext in ('.keep.cpp', '.keep.c', '.cpp', '.c'):
+            candidate = base_path + ext
+            if os.path.isfile(candidate):
+                cpp_path = candidate
+                break
+        if not cpp_path:
+            continue
+
+        # Skip .mmx and .byval variants
+        if '.mmx.' in cpp_path or '.byval.' in cpp_path:
+            continue
+
+        functions_checked += 1
+
+        # Extract globals from both sources
+        json_globals = _extract_json_globals(json_path)
+        cpp_globals = _extract_cpp_globals(cpp_path)
+
+        if not cpp_globals:
+            continue
+
+        # Find globals in .cpp that are NOT in the JSON reference list
+        # These are potential wrong resolutions
+        suspicious = {}
+        for global_name, line_nos in cpp_globals.items():
+            if global_name not in json_globals:
+                # Filter out common false positives:
+                # - String literals (s_*) won't have base-shift issues
+                # - Constants/doubles are resolved by value, not address
+                if global_name.startswith('s_'):
+                    continue
+                if global_name.startswith(('FLOAT_', 'DOUBLE_')):
+                    continue
+                suspicious[global_name] = line_nos
+
+        if suspicious:
+            functions_with_issues += 1
+            rel_path = os.path.relpath(cpp_path, pseudocode_src_dir)
+            vfile = os.path.dirname(rel_path)
+
+            # Load function name from JSON
+            func_name = os.path.basename(base_path)
+            try:
+                import json as _json
+                with open(json_path) as f:
+                    data = _json.load(f)
+                func_name = data.get('function', {}).get('name', func_name)
+            except Exception:
+                pass
+
+            all_issues.append({
+                'func_name': func_name,
+                'vfile': vfile,
+                'cpp_path': cpp_path,
+                'ref_globals': json_globals,
+                'suspicious': suspicious,
+                'is_keep': '.keep.' in cpp_path,
+            })
+
+    # Summary
+    lines.append("-" * 100)
+    lines.append("SUMMARY")
+    lines.append("-" * 100)
+    lines.append("")
+    lines.append("  Functions checked: %d" % functions_checked)
+    lines.append("  Functions with suspicious globals: %d" % functions_with_issues)
+    total_suspicious = sum(len(i['suspicious']) for i in all_issues)
+    lines.append("  Total suspicious global references: %d" % total_suspicious)
+    lines.append("")
+
+    if not all_issues:
+        lines.append("  No suspicious global resolutions detected.")
+        lines.append("")
+    else:
+        # Count by global name to find systematic issues
+        global_counts = defaultdict(int)
+        for issue in all_issues:
+            for g in issue['suspicious']:
+                global_counts[g] += 1
+
+        lines.append("  Most commonly misresolved globals:")
+        for g_name, count in sorted(global_counts.items(), key=lambda x: -x[1])[:20]:
+            lines.append("    %-50s %d functions" % (g_name, count))
+        lines.append("")
+
+        # Separate .keep and raw findings
+        keep_issues = [i for i in all_issues if i['is_keep']]
+        raw_issues = [i for i in all_issues if not i['is_keep']]
+
+        if keep_issues:
+            lines.append("  .keep files with issues: %d (these need manual review)" % len(keep_issues))
+        if raw_issues:
+            lines.append("  Raw .cpp files with issues: %d" % len(raw_issues))
+        lines.append("")
+
+        # Detailed findings
+        lines.append("=" * 100)
+        lines.append("DETAILED FINDINGS")
+        lines.append("=" * 100)
+        lines.append("")
+
+        # Sort: .keep files first (higher priority), then by number of suspicious globals
+        all_issues.sort(key=lambda i: (not i['is_keep'], -len(i['suspicious']), i['func_name']))
+
+        for issue in all_issues:
+            variant_tag = "[.keep]" if issue['is_keep'] else "[.cpp]"
+            lines.append("-" * 100)
+            lines.append("%s  %s  (%d suspicious globals)" % (
+                issue['func_name'], variant_tag, len(issue['suspicious'])))
+            lines.append("  File: %s" % issue['vfile'])
+            lines.append("")
+
+            for g_name, line_nos in sorted(issue['suspicious'].items()):
+                lines_str = ', '.join(str(ln) for ln in line_nos[:5])
+                if len(line_nos) > 5:
+                    lines_str += ', ...'
+                lines.append("  %s" % g_name)
+                lines.append("    Used at lines: %s" % lines_str)
+                lines.append("    NOT found in function reference list")
+                lines.append("")
+
+    report_text = '\n'.join(lines)
+    report_path = os.path.join(output_path, "wrong_global_resolution.txt")
+    with open(report_path, 'w') as f:
+        f.write(report_text)
+    log_info("Wrote wrong global resolution report: %s" % report_path)
+
+
+# =============================================================================
 # Vtable union mismatch report
 # =============================================================================
 
@@ -4227,8 +4483,12 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     generate_compilation_by_function_report(functions, output_path)
     generate_pass_by_value_report(functions, output_path)
     generate_annotation_quality_report(functions, output_path)
+    generate_wrong_global_report(pseudocode_src_dir, output_path)
     generate_vtable_union_mismatch_report(pseudocode_src_dir, output_path)
     generate_double_usage_report(functions, output_path)
+    generate_static_analysis_summary_report(functions, output_path)
+    generate_static_analysis_detailed_report(functions, output_path)
+    generate_static_analysis_by_function_report(functions, output_path)
     generate_csv_data(functions, files, output_path)
 
     # Generate struct quality report
@@ -4274,3 +4534,397 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     log_info("  Clean functions: %d (%.1f%%)" % (clean_funcs, clean_funcs*100.0/total_funcs if total_funcs else 0))
     log_info("  Files at 100%%: %d" % files_100)
     log_info("  Files at 90%%+: %d" % files_90)
+
+
+# =============================================================================
+# Static Analysis Reports
+# =============================================================================
+
+_TOOL_DISPLAY_NAMES = {
+    'clang_analyzer': 'Clang Static Analyzer',
+    'cppcheck': 'Cppcheck',
+    'clang_tidy': 'Clang-Tidy',
+}
+
+# All possible tool keys in static_analysis JSON (base_mode combinations)
+_TOOL_BASES = ['clang_analyzer', 'cppcheck', 'clang_tidy']
+_TOOL_MODES = ['quick', 'deep']
+
+
+def _get_all_tool_keys(sa_dict):
+    """Get all tool keys present in a static_analysis dict.
+
+    Handles both old-style bare keys (clang_analyzer) and new mode-suffixed
+    keys (clang_analyzer_quick, cppcheck_deep).
+    """
+    keys = []
+    for key in sa_dict:
+        if key in ('analyzed_file', 'file_variant'):
+            continue
+        keys.append(key)
+    return keys
+
+
+def _get_tool_base(tool_key):
+    """Get the base tool name from a possibly mode-suffixed key.
+
+    e.g. 'clang_analyzer_quick' -> 'clang_analyzer'
+         'cppcheck' -> 'cppcheck'
+    """
+    for base in _TOOL_BASES:
+        if tool_key == base or tool_key.startswith(base + '_'):
+            return base
+    return tool_key
+
+
+def _get_tool_display_name(tool_key):
+    """Get display name for a tool key, including mode suffix if present."""
+    base = _get_tool_base(tool_key)
+    display = _TOOL_DISPLAY_NAMES.get(base, base)
+    for mode in _TOOL_MODES:
+        if tool_key.endswith('_' + mode):
+            display += ' (%s)' % mode
+            break
+    return display
+
+
+def _get_tool_check_id(tool_name, diag):
+    """Extract the check/category identifier from a diagnostic entry."""
+    base = _get_tool_base(tool_name)
+    if base == 'clang_analyzer':
+        return diag.get('checker', 'unknown')
+    elif base == 'cppcheck':
+        return diag.get('check_id', 'unknown')
+    elif base == 'clang_tidy':
+        return diag.get('check_name', 'unknown')
+    return 'unknown'
+
+
+def generate_static_analysis_summary_report(functions, output_path):
+    """Generate summary report of static analysis findings across all tools.
+
+    Shows per-tool statistics, most common findings, and flags likely
+    decompiler artifact patterns.
+    """
+    lines = []
+    lines.append("=" * 100)
+    lines.append("STATIC ANALYSIS SUMMARY")
+    lines.append("=" * 100)
+    lines.append("")
+    lines.append("Results from running static analysis tools on decompiled pseudocode.")
+    lines.append("Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).")
+    lines.append("")
+
+    # Collect data from all functions
+    tool_stats = {}  # tool -> {files_analyzed, files_with_findings, total_diags, check_counts}
+    funcs_with_analysis = 0
+    multi_tool_flagged = 0
+
+    for func in functions:
+        sa = func.get('static_analysis')
+        if not sa:
+            continue
+        funcs_with_analysis += 1
+
+        func_total_diags = 0
+        func_tools_with_findings = 0
+
+        for tool_name in _get_all_tool_keys(sa):
+            tool_data = sa.get(tool_name)
+            if not tool_data:
+                continue
+
+            if tool_name not in tool_stats:
+                tool_stats[tool_name] = {
+                    'files_analyzed': 0,
+                    'files_with_findings': 0,
+                    'total_diags': 0,
+                    'check_counts': defaultdict(int),
+                    'errors': 0,
+                }
+
+            stats = tool_stats[tool_name]
+            stats['files_analyzed'] += 1
+
+            diags = tool_data.get('diagnostics', [])
+            diag_count = len(diags)
+
+            if tool_data.get('error'):
+                stats['errors'] += 1
+
+            if diag_count > 0:
+                stats['files_with_findings'] += 1
+                stats['total_diags'] += diag_count
+                func_total_diags += diag_count
+                func_tools_with_findings += 1
+
+                for diag in diags:
+                    check_id = _get_tool_check_id(tool_name, diag)
+                    stats['check_counts'][check_id] += 1
+
+        if func_tools_with_findings > 1:
+            multi_tool_flagged += 1
+
+    # Summary
+    lines.append("-" * 100)
+    lines.append("SUMMARY")
+    lines.append("-" * 100)
+    lines.append("")
+    lines.append("  Functions with static analysis data: %d" % funcs_with_analysis)
+    lines.append("  Functions flagged by multiple tools: %d" % multi_tool_flagged)
+    lines.append("")
+
+    if not tool_stats:
+        lines.append("  No static analysis results found.")
+        lines.append("  Run static analysis tools first (see static_analysis.py).")
+        lines.append("")
+        report_text = '\n'.join(lines)
+        report_path = os.path.join(output_path, "static_analysis_summary.txt")
+        with open(report_path, 'w') as f:
+            f.write(report_text)
+        log_info("Wrote static analysis summary report: %s" % report_path)
+        return
+
+    # Per-tool summary
+    for tool_name in sorted(tool_stats.keys()):
+        stats = tool_stats[tool_name]
+        display_name = _get_tool_display_name(tool_name)
+
+        lines.append("  %s:" % display_name)
+        lines.append("    Files analyzed:      %d" % stats['files_analyzed'])
+        lines.append("    Files with findings: %d" % stats['files_with_findings'])
+        lines.append("    Total diagnostics:   %d" % stats['total_diags'])
+        if stats['errors'] > 0:
+            lines.append("    Tool errors:         %d" % stats['errors'])
+        lines.append("")
+
+    # Top findings per tool
+    for tool_name in sorted(tool_stats.keys()):
+        stats = tool_stats[tool_name]
+        if not stats['check_counts']:
+            continue
+
+        display_name = _get_tool_display_name(tool_name)
+        lines.append("=" * 100)
+        lines.append("TOP FINDINGS - %s" % display_name)
+        lines.append("=" * 100)
+        lines.append("")
+
+        sorted_checks = sorted(stats['check_counts'].items(), key=lambda x: -x[1])
+        for check_id, count in sorted_checks[:15]:
+            # Flag likely decompiler artifacts
+            artifact_flag = ''
+            if stats['files_analyzed'] > 0:
+                pct = count * 100.0 / stats['files_analyzed']
+                if pct > 50:
+                    artifact_flag = '  [likely decompiler artifact]'
+            lines.append("  %-55s %5d%s" % (check_id, count, artifact_flag))
+        lines.append("")
+
+    report_text = '\n'.join(lines)
+    report_path = os.path.join(output_path, "static_analysis_summary.txt")
+    with open(report_path, 'w') as f:
+        f.write(report_text)
+    log_info("Wrote static analysis summary report: %s" % report_path)
+
+
+def generate_static_analysis_detailed_report(functions, output_path):
+    """Generate detailed report of all static analysis diagnostics.
+
+    Organized by tool -> check type -> function with full diagnostic messages.
+    """
+    lines = []
+    lines.append("=" * 100)
+    lines.append("STATIC ANALYSIS DETAILED REPORT")
+    lines.append("=" * 100)
+    lines.append("")
+    lines.append("All static analysis diagnostics grouped by tool and check type.")
+    lines.append("")
+
+    has_data = False
+
+    # Discover all tool keys across all functions
+    all_tool_keys = set()
+    for func in functions:
+        sa = func.get('static_analysis')
+        if sa:
+            all_tool_keys.update(_get_all_tool_keys(sa))
+
+    for tool_name in sorted(all_tool_keys):
+        display_name = _get_tool_display_name(tool_name)
+
+        # Collect all diagnostics for this tool grouped by check type
+        by_check = defaultdict(list)  # check_id -> [(func_name, vfile, line, message)]
+
+        for func in functions:
+            sa = func.get('static_analysis')
+            if not sa:
+                continue
+            tool_data = sa.get(tool_name)
+            if not tool_data:
+                continue
+
+            func_name = func.get('function', {}).get('name', 'unknown')
+            vfile = func.get('_virtual_file', 'unknown')
+
+            for diag in tool_data.get('diagnostics', []):
+                check_id = _get_tool_check_id(tool_name, diag)
+                by_check[check_id].append({
+                    'func_name': func_name,
+                    'vfile': vfile,
+                    'line': diag.get('line', 0),
+                    'message': diag.get('message', ''),
+                })
+
+        if not by_check:
+            continue
+
+        has_data = True
+        total_diags = sum(len(v) for v in by_check.values())
+
+        lines.append("=" * 100)
+        lines.append("%s (%d diagnostics)" % (display_name, total_diags))
+        lines.append("=" * 100)
+        lines.append("")
+
+        for check_id in sorted(by_check, key=lambda c: -len(by_check[c])):
+            findings = by_check[check_id]
+            lines.append("-" * 100)
+            lines.append("%s (%d)" % (check_id, len(findings)))
+            lines.append("-" * 100)
+            lines.append("")
+
+            # Sort by virtual file then function name
+            findings.sort(key=lambda f: (f['vfile'], f['func_name']))
+
+            for f in findings:
+                lines.append("  %-50s line %d" % (f['func_name'][:50], f['line']))
+                lines.append("    File: %s" % f['vfile'])
+                lines.append("    %s" % f['message'])
+                lines.append("")
+
+    if not has_data:
+        lines.append("  No static analysis results found.")
+        lines.append("")
+
+    report_text = '\n'.join(lines)
+    report_path = os.path.join(output_path, "static_analysis_detailed.txt")
+    with open(report_path, 'w') as f:
+        f.write(report_text)
+    log_info("Wrote static analysis detailed report: %s" % report_path)
+
+
+def generate_static_analysis_by_function_report(functions, output_path):
+    """Generate static analysis report organized by function.
+
+    Shows all diagnostics from all tools for each function, sorted by
+    total diagnostic count. Useful for prioritizing which functions to review.
+    """
+    lines = []
+    lines.append("=" * 100)
+    lines.append("STATIC ANALYSIS BY FUNCTION")
+    lines.append("=" * 100)
+    lines.append("")
+    lines.append("All static analysis findings organized by function, sorted by diagnostic count.")
+    lines.append("Functions with findings from multiple tools are likely to have real issues.")
+    lines.append("")
+
+    # Collect per-function data
+    func_data = []
+
+    for func in functions:
+        sa = func.get('static_analysis')
+        if not sa:
+            continue
+
+        func_name = func.get('function', {}).get('name', 'unknown')
+        vfile = func.get('_virtual_file', 'unknown')
+        file_variant = sa.get('file_variant', 'raw')
+
+        all_diags = []
+        tools_with_findings = []
+
+        for tool_name in _get_all_tool_keys(sa):
+            tool_data = sa.get(tool_name)
+            if not tool_data:
+                continue
+
+            diags = tool_data.get('diagnostics', [])
+            if diags:
+                tools_with_findings.append(tool_name)
+                for diag in diags:
+                    all_diags.append({
+                        'tool': tool_name,
+                        'line': diag.get('line', 0),
+                        'message': diag.get('message', ''),
+                        'check_id': _get_tool_check_id(tool_name, diag),
+                    })
+
+        if all_diags:
+            func_data.append({
+                'func_name': func_name,
+                'vfile': vfile,
+                'variant': file_variant,
+                'total_diags': len(all_diags),
+                'tools_with_findings': tools_with_findings,
+                'diagnostics': all_diags,
+            })
+
+    if not func_data:
+        lines.append("  No static analysis findings.")
+        lines.append("")
+        report_text = '\n'.join(lines)
+        report_path = os.path.join(output_path, "static_analysis_by_function.txt")
+        with open(report_path, 'w') as f:
+            f.write(report_text)
+        log_info("Wrote static analysis by-function report: %s" % report_path)
+        return
+
+    # Sort by total diagnostics descending
+    func_data.sort(key=lambda f: (-f['total_diags'], f['func_name']))
+
+    # Summary
+    lines.append("-" * 100)
+    lines.append("SUMMARY")
+    lines.append("-" * 100)
+    lines.append("")
+    lines.append("  Functions with findings: %d" % len(func_data))
+    lines.append("  Total diagnostics: %d" % sum(f['total_diags'] for f in func_data))
+
+    multi_tool = sum(1 for f in func_data if len(f['tools_with_findings']) > 1)
+    lines.append("  Functions flagged by multiple tools: %d" % multi_tool)
+
+    keep_count = sum(1 for f in func_data if f['variant'] == 'keep')
+    raw_count = sum(1 for f in func_data if f['variant'] == 'raw')
+    lines.append("  .keep.cpp files: %d, raw .cpp files: %d" % (keep_count, raw_count))
+    lines.append("")
+
+    # Detailed per-function
+    lines.append("=" * 100)
+    lines.append("DETAILED FINDINGS")
+    lines.append("=" * 100)
+    lines.append("")
+
+    for fd in func_data:
+        tools_str = ', '.join(_get_tool_display_name(t) for t in fd['tools_with_findings'])
+        variant_str = '.keep' if fd['variant'] == 'keep' else '.cpp'
+
+        lines.append("-" * 100)
+        lines.append("%s  [%s] [%s]" % (fd['func_name'], variant_str, tools_str))
+        lines.append("  File: %s  (%d diagnostics)" % (fd['vfile'], fd['total_diags']))
+        lines.append("")
+
+        # Sort diagnostics by line number
+        fd['diagnostics'].sort(key=lambda d: d['line'])
+
+        for diag in fd['diagnostics']:
+            tool_short = _get_tool_display_name(diag['tool'])
+            lines.append("  Line %4d: [%s] %s" % (diag['line'], diag['check_id'], diag['message']))
+
+        lines.append("")
+
+    report_text = '\n'.join(lines)
+    report_path = os.path.join(output_path, "static_analysis_by_function.txt")
+    with open(report_path, 'w') as f:
+        f.write(report_text)
+    log_info("Wrote static analysis by-function report: %s" % report_path)

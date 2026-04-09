@@ -1,6 +1,6 @@
 // Name: core_trash.cpp_CTrash_process_FUN_005decf0
 // Address: 005decf0
-// Address Range: [[005decf0, 005ded29] [005df4fe, 005df533]]
+// Address Range: [[005decf0, 005df540]]
 // Convention: __cdecl
 // Signature: void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float delta_time)
 

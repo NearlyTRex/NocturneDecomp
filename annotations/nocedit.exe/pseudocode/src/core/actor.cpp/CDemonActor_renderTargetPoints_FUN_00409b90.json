@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 286,
-    "complexity_score": 95,
+    "complexity_score": 110,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "wrong_global"
+    ],
     "total_lines": 381
   },
   "cross_references": [],
@@ -211,7 +213,16 @@
     ],
     "severity": "medium"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Global g_ColorCubeLookup used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 29,
+      "match": "g_ColorCubeLookup",
+      "severity": "moderate",
+      "text": "uVar4 = (uint)g_ColorCubeLookup[0x7c00];",
+      "type": "wrong_global"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

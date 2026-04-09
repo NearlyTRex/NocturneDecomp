@@ -7,6 +7,9 @@
 ; CMirror *        Stack[0x4]:4   this_ptr
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
+; XREF[1]:
+;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570960 at 0057099d
+;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance

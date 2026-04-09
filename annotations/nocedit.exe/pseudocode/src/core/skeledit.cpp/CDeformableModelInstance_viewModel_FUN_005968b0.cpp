@@ -1,6 +1,6 @@
 // Name: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
 // Address: 005968b0
-// Address Range: [[005968b0, 0059754b] [0059754f, 0059796e] [00597977, 00598ed7] [006107b1, 006107ce] [03fc4de5, 03fc4eb0]]
+// Address Range: [[005968b0, 00598ed7] [006107b1, 006107ce] [03fc4de5, 03fc4eb0]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(CDeformableModelInstance *this_ptr)
 

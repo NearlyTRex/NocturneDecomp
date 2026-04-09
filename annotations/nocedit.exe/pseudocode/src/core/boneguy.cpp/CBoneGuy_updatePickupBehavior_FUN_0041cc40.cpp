@@ -1,6 +1,6 @@
 // Name: core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40
 // Address: 0041cc40
-// Address Range: [[0041cc40, 0041ccd1] [0041ccf1, 0041d170]]
+// Address Range: [[0041cc40, 0041d170]]
 // Convention: __cdecl
 // Signature: int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40(CBoneGuy *this_ptr,float delta_time)
 

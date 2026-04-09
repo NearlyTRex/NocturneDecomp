@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CGunFlame_render_FUN_004c50b0
 // Address: 004c50b0
-// Address Range: [[004c50b0, 004c55ef]]
+// Address Range: [[004c50b0, 004c55f9]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
 

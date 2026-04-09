@@ -1,6 +1,6 @@
 // Name: wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005f3920
 // Address: 005f3920
-// Address Range: [[005f3920, 005f396c]]
+// Address Range: [[005f3920, 005f3970]]
 // Convention: __cdecl
 // Signature: void __cdecl wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(char *message)
 

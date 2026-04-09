@@ -4,10 +4,11 @@
 ; void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(void)
 ;
 ;
-; XREF[8]:
+; XREF[9]:
 ;   core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0 at 0044ce13
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80 at 0044cc17
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_00472d30 at 00472db2
+;   core_inv.cpp_CInventory_renderItemModel_FUN_004fee00 at 004ff19c
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160 at 00504599
 ;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052c344
 ;   core_setdir.cpp_CZThumb_popRenderingContext_FUN_00574ef0 at 00574ef7

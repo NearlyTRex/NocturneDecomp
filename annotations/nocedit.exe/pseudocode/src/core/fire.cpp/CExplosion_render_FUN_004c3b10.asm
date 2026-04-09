@@ -302,4 +302,11 @@ section .text
     PUSH ECX                            ; 004c3e7d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004c3e7e
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 004c3e83
+    POP EBX                             ; 004c3e86
+    POP EDI                             ; 004c3e87
+    ADD ESP,0x84                        ; 004c3e88
+    POP EBP                             ; 004c3e8e
+    POP ESI                             ; 004c3e8f
+    RET                                 ; 004c3e90
 

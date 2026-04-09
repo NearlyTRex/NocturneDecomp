@@ -26,6 +26,7 @@
 ;   core_vessel.cpp_CCryptVessel_process_FUN_005e91a0 at 005e94a3
 ;
 ; Referenced Globals:
+;   TerminatedCString s_torch_wav_f_0062a0ef
 ;   double DOUBLE_0062a0fe = 0.5
 ;   double DOUBLE_0062a106 = 16
 ;   float FLOAT_0062a10e = -8
@@ -40,8 +41,7 @@
 ;   CHero*[4] g_HeroActors
 ;   int g_LocalHeroIndex
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.enemy_count
-;   ... and 2 more
+;   ... and 3 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
@@ -54,6 +54,10 @@
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
 ;   core_sound.cpp_CSound_killSound_FUN_005b3b90
 ;   crt_math.c_round_FUN_005fe6b0
+;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
+;   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
+;   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
 ;
 ; *****************************************************************************
 
@@ -298,6 +302,43 @@ section .text
     PUSH 0x3f733333                     ; 004c9f11
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c9f16
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0xfc],EAX      ; 004c9f1b
+    FLD float ptr [ESP + 0xfc]          ; 004c9f22
+    ADD ESP,0x8                         ; 004c9f29
+    SUB ESP,0x8                         ; 004c9f2c
+    FSTP double ptr [ESP]               ; 004c9f2f
+    PUSH 0x62a0ef                       ; 004c9f32 | = "torch.wav * %f"
+    LEA EAX,[ESP + 0x1c]                ; 004c9f37
+    PUSH EAX                            ; 004c9f3b
+    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004c9f3c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    ADD ESP,0x10                        ; 004c9f41
+    CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30 ; 004c9f44
+        ;   XREF to: 005a8c30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30()
+    PUSH 0x2                            ; 004c9f49
+    PUSH 0x3f800000                     ; 004c9f4b
+    PUSH 0x0                            ; 004c9f50
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c9f52
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x100],EAX     ; 004c9f57
+    FLD float ptr [ESP + 0x100]         ; 004c9f5e
+    ADD ESP,0x8                         ; 004c9f65
+    SUB ESP,0x8                         ; 004c9f68
+    FSTP double ptr [ESP]               ; 004c9f6b
+    CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0 ; 004c9f6e
+        ;   XREF to: 005a8be0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)
+    ADD ESP,0xc                         ; 004c9f73
+    LEA EBX,[ESP + 0x10]                ; 004c9f76
+    PUSH EBX                            ; 004c9f7a
+    MOV EAX,dword ptr [ESI + 0x154]     ; 004c9f7b
+    PUSH ESI                            ; 004c9f81
+    CALL dword ptr [EAX + 0x24]         ; 004c9f82
+    ADD ESP,0x8                         ; 004c9f85
+    MOV dword ptr [ESI + 0x1b0],EAX     ; 004c9f88
+    CALL sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0 ; 004c9f8e
+        ;   XREF to: 005a8cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0()
+    JMP 0x004c9d9b                      ; 004c9f93
+        ;   XREF to: 004c9d9b (UNCONDITIONAL_JUMP)  ; LAB_004c9d9b
     MOV EBX,dword ptr [ESI + 0x1b0]     ; 004c9f98
         ;   Label: LAB_004c9f98
     TEST EBX,EBX                        ; 004c9f9e

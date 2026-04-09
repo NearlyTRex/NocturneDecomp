@@ -39,6 +39,7 @@
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_box.cpp_CBox_setupCorners_FUN_0041dd20
+;   core_box.cpp_CBox_setupVelocities_FUN_00420180
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
@@ -200,6 +201,33 @@ section .text
     PUSH 0xc116cbe4                     ; 004c00ab
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c00b0
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0xac],EAX      ; 004c00b5
+    FLD float ptr [ESP + 0xac]          ; 004c00bc
+    ADD ESP,0x8                         ; 004c00c3
+    XOR EDX,EDX                         ; 004c00c6
+    PUSH 0x4116cbe4                     ; 004c00c8
+    FSTP float ptr [ESP + 0x5c]         ; 004c00cd
+    PUSH 0xc116cbe4                     ; 004c00d1
+    MOV dword ptr [ESP + 0x68],EDX      ; 004c00d6
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004c00da
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0xac],EAX      ; 004c00df
+    FLD float ptr [ESP + 0xac]          ; 004c00e6
+    ADD ESP,0x8                         ; 004c00ed
+    LEA EAX,[ESP + 0x58]                ; 004c00f0
+    PUSH EAX                            ; 004c00f4
+    LEA EAX,[ESP + 0x74]                ; 004c00f5
+    PUSH EAX                            ; 004c00f9
+    PUSH EBX                            ; 004c00fa
+    FSTP float ptr [ESP + 0x68]         ; 004c00fb
+    CALL core_box.cpp_CBox_setupVelocities_FUN_00420180 ; 004c00ff
+        ;   XREF to: 00420180 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_setupVelocities_FUN_00420180(CBox * this_ptr, CVector3f * linear_velocity, CVector3f * angular_velocity)
+    ADD ESP,0xc                         ; 004c0104
+    ADD ESP,0xa8                        ; 004c0107
+    POP EBP                             ; 004c010d
+    POP EDI                             ; 004c010e
+    POP EBX                             ; 004c010f
+    RET                                 ; 004c0110
     MOV EAX,dword ptr [ESP + 0x94]      ; 004c0111
         ;   Label: LAB_004c0111
     MOV dword ptr [ESP + 0x70],EAX      ; 004c0118

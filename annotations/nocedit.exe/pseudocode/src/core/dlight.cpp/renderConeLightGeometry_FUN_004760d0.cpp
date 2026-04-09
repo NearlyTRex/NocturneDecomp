@@ -1,6 +1,6 @@
 // Name: core_dlight.cpp_renderConeLightGeometry_FUN_004760d0
 // Address: 004760d0
-// Address Range: [[004760d0, 004765b8]]
+// Address Range: [[004760d0, 004765d3]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *position,CVector3i *rotation,float fov,float falloff)
 

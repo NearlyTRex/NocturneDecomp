@@ -1,6 +1,6 @@
 // Name: core_turret.cpp_CTurret_getDamage_FUN_005e36f0
 // Address: 005e36f0
-// Address Range: [[005e36f0, 005e3701]]
+// Address Range: [[005e36f0, 005e3716]]
 // Convention: __cdecl
 // Signature: float __cdecl core_turret_cpp_CTurret_getDamage_FUN_005e36f0(CTurret *this_ptr)
 

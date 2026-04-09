@@ -1,6 +1,6 @@
 // Name: core_flame.cpp_CFlame_process_FUN_004c9c00
 // Address: 004c9c00
-// Address Range: [[004c9c00, 004c9f1a] [004c9f98, 004ca104]]
+// Address Range: [[004c9c00, 004ca104]]
 // Convention: __cdecl
 // Signature: void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float delta_time)
 

@@ -1,6 +1,6 @@
 // Name: core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
 // Address: 00585c90
-// Address Range: [[00585c90, 00585d2b]]
+// Address Range: [[00585c90, 00585fef]]
 // Convention: __cdecl
 // Signature: void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,_FILE *file_handle)
 

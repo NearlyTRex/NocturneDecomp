@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CMuzzleFlash_render_FUN_004c1a30
 // Address: 004c1a30
-// Address Range: [[004c1a30, 004c1a79]]
+// Address Range: [[004c1a30, 004c1bd1]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_004c1a30(CMuzzleFlash *this_ptr)
 

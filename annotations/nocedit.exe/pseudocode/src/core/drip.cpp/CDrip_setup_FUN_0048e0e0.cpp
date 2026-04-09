@@ -1,6 +1,6 @@
 // Name: core_drip.cpp_CDrip_setup_FUN_0048e0e0
 // Address: 0048e0e0
-// Address Range: [[0048e0e0, 0048e12a]]
+// Address Range: [[0048e0e0, 0048e169]]
 // Convention: __cdecl
 // Signature: void __cdecl core_drip_cpp_CDrip_setup_FUN_0048e0e0(CDrip *this_ptr)
 

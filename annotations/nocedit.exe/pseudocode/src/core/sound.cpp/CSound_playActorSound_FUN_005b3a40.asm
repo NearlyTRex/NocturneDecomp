@@ -9,15 +9,17 @@
 ; char *           Stack[0xc]:4   sound_name
 ; CVector3f *      Stack[0x10]:4   position
 ;
-; XREF[8]:
+; XREF[10]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10 at 0040cb45
 ;   core_actor.cpp_CDemonActor_playSound_FUN_00408f60 at 00408f76
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 at 00449193
 ;   core_elephant.cpp_CElephantGun_fire_FUN_004a7160 at 004a7461
 ;   core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10 at 004c8c6b
+;   core_fire.cpp_CShell_onCollision_FUN_004c6380 at 004c6454
 ;   core_gun.cpp_CGun_fire_FUN_004f0350 at 004f05b3
 ;   core_lightgun.cpp_CLightGun_fire_FUN_00505c70 at 00506406
 ;   core_shotgun.cpp_CShotgun_fire_FUN_00588060 at 0058837a
+;   core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0 at 005ef124
 ;
 ; Called Functions:
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0

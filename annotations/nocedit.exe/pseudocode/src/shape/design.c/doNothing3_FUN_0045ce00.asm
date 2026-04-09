@@ -4,6 +4,9 @@
 ; void __cdecl shape_design_c_doNothing3_FUN_0045ce00(void)
 ;
 ;
+; XREF[1]:
+;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 0046091b
+;
 ; *****************************************************************************
 
 section .text

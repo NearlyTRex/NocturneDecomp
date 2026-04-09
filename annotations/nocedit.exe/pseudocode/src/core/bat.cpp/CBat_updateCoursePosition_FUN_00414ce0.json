@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 78,
     "complexity_score": 26,
-    "cross_reference_count": 2,
+    "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -27,6 +27,12 @@
       "addr": "00414a00",
       "from_addr": "00414a3f",
       "name": "core_bat.cpp_CBat_process_FUN_00414a00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004148a0",
+      "from_addr": "004148d7",
+      "name": "core_bat.cpp_CBat_setup_FUN_004148a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -57,12 +63,23 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "00414f96",
         "call_type": "direct",
         "caller": "core_bat.cpp_CBat_processInEditor_FUN_00414f00",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004148d7",
+        "call_type": "direct",
+        "caller": "core_bat.cpp_CBat_setup_FUN_004148a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

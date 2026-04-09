@@ -12,8 +12,9 @@
 ; CVector3f        Stack[-0x1c]:12  local_1c
 ; int              Stack[-0x10]:4  local_10
 ;
-; XREF[2]:
+; XREF[3]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 at 0050924b
+;   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70 at 00508ca0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 at 0050ace6
 ;
 ; Referenced Globals:

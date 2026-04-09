@@ -1,6 +1,6 @@
 // Name: core_ladder.cpp_CLadder_setup_FUN_005025f0
 // Address: 005025f0
-// Address Range: [[005025f0, 005025f9]]
+// Address Range: [[005025f0, 0050260f]]
 // Convention: __cdecl
 // Signature: void __cdecl core_ladder_cpp_CLadder_setup_FUN_005025f0(CLadder *this_ptr)
 

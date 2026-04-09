@@ -13,7 +13,8 @@
 ; float            Stack[-0x10]:4  local_10
 ; float            Stack[-0xc]:4  local_c
 ;
-; XREF[2]:
+; XREF[3]:
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190 at 0042b43e
 ;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 at 004d5610
 ;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0 at 005c088e
 ;

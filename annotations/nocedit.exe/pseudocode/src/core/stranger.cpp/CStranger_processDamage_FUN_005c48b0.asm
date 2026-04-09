@@ -13,6 +13,7 @@
 ;   TerminatedCString s_hit_points_3_2f_00653d35
 ;   TerminatedCString s_stranger_die_wav_00653d48
 ;   TerminatedCString s_stranger_hit_wav_00653d5b
+;   float FLOAT_00653d70 = 50
 ;   float FLOAT_00663738 = 2
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CGame* g_CGamePtr = 02d81a9c
@@ -22,8 +23,7 @@
 ;   undefined4 g_CGameInstance.auto_use_health
 ;   undefined4 g_CGameInstance.god_mode_enabled
 ;   undefined4 g_CGameInstance.allow_damage_flag
-;   CGore g_CGoreInstance
-;   ... and 1 more
+;   ... and 2 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -283,6 +283,20 @@ section .text
     PUSH 0x0                            ; 005c4b4b
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005c4b4d
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + -0x4],EAX      ; 005c4b52
+    ADD ESP,0x8                         ; 005c4b55
+    FLD float ptr [EBP + -0x4]          ; 005c4b58
+    FCOMP float ptr [0x00653d70]        ; 005c4b5b | FLOAT_00653d70
+    FNSTSW AX                           ; 005c4b61
+    SAHF                                ; 005c4b63
+    SETBE AL                            ; 005c4b64
+    AND EAX,0xff                        ; 005c4b67
+    ADD EAX,0x25                        ; 005c4b6c
+    PUSH EAX                            ; 005c4b6f
+    LEA EAX,[EBX + 0x158]               ; 005c4b70
+    PUSH EAX                            ; 005c4b76
+    JMP 0x005c4a37                      ; 005c4b77
+        ;   XREF to: 005c4a37 (UNCONDITIONAL_JUMP)  ; LAB_005c4a37
     FLD float ptr [ESI + 0x4]           ; 005c4b7c
         ;   Label: LAB_005c4b7c
     FLDZ                                ; 005c4b7f

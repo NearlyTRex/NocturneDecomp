@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 18,
+    "complexity_score": 43,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "wrong_global"
+    ],
     "total_lines": 25
   },
   "cross_references": [
@@ -160,5 +162,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Global g_CSoundDevicePtr used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 12,
+      "match": "g_CSoundDevicePtr",
+      "severity": "moderate",
+      "text": "if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Global g_SoundBusyFlag used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 18,
+      "match": "g_SoundBusyFlag",
+      "severity": "moderate",
+      "text": "g_SoundBusyFlag = 0;",
+      "type": "wrong_global"
+    }
+  ]
 }

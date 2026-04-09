@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   velocity
 ; int              Stack[0x10]:4   blood_type
 ;
-; XREF[8]:
+; XREF[9]:
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_0041b1b0 at 0041b1dd
 ;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042b670 at 0042b749
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042b810 at 0042b890
@@ -18,6 +18,7 @@
 ;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f5093
 ;   core_melee.cpp_CMelee_process_FUN_0050ec10 at 0050ecb4
 ;   core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220 at 0053e6ce
+;   core_tentacle.cpp_CTentacle_process_FUN_005db050 at 005db463
 ;
 ; Referenced Globals:
 ;   int g_BloodParticleIndex

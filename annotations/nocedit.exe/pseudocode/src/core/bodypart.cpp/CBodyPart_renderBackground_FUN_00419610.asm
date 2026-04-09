@@ -16,6 +16,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   CConsole g_CConsoleInstance
 ;   CDemonRenderer g_CDemonRendererInstance
+;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.disable_directional_lighting
 ;
 ; Called Functions:
@@ -96,6 +97,11 @@ section .text
     PUSH EAX                            ; 004196c1 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004196c2
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    MOV EAX,[0x006810c8]                ; 004196c7 | g_CDemonSetPtr | g_CDemonSetInstance
+    MOV dword ptr [EAX + 0x15ac88],0x0  ; 004196cc | g_CDemonSetInstance.disable_directional_lighting
+    ADD ESP,0x4                         ; 004196d6
+    MOV dword ptr [EBX + 0xf2c],ESI     ; 004196d9
+    POP ESI                             ; 004196df
     ADD ESP,0x18                        ; 004196e0
         ;   Label: LAB_004196e0
     POP EBP                             ; 004196e3

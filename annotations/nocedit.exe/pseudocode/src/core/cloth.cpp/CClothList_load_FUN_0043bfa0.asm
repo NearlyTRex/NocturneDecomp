@@ -6,7 +6,8 @@
 ; Parameters:
 ; CClothList *     Stack[0x4]:4   this_ptr
 ;
-; XREF[1]:
+; XREF[2]:
+;   core_charactr.cpp_CCharacter_setup_FUN_00428140 at 00428287
 ;   core_succubus.cpp_CSuccubus_setup_FUN_005c6b60 at 005c6bd2
 ;
 ; Referenced Globals:

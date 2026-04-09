@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 36,
     "complexity_score": 14,
-    "cross_reference_count": 11,
+    "cross_reference_count": 12,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "clean",
@@ -39,6 +39,12 @@
       "addr": "00484410",
       "from_addr": "00484a51",
       "name": "core_dracbrid.cpp_CDraculaBride_process_FUN_00484410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048e2a0",
+      "from_addr": "0048e51a",
+      "name": "core_drip.cpp_CDrip_process_FUN_0048e2a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -118,7 +124,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 13,
+    "call_site_count": 14,
     "call_sites": [
       {
         "call_addr": "004c5047",
@@ -176,6 +182,17 @@
         "stack_params": 5
       },
       {
+        "call_addr": "0048e51a",
+        "call_type": "direct",
+        "caller": "core_drip.cpp_CDrip_process_FUN_0048e2a0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
         "call_addr": "004a83a2",
         "call_type": "direct",
         "caller": "core_emitter.cpp_CEmitter_process_FUN_004a8070",
@@ -212,17 +229,6 @@
         "call_addr": "00484c2d",
         "call_type": "direct",
         "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_00484410",
-        "estimated_params": 5,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 20,
-        "stack_params": 5
-      },
-      {
-        "call_addr": "00416bad",
-        "call_type": "direct",
-        "caller": "core_batman.cpp_CBatman_process_FUN_00416870",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",

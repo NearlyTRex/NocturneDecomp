@@ -328,6 +328,34 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonMission_changeActorType_FUN_0053d8b0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 25,
+          "line": 91,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 17,
+          "line": 93,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        },
+        {
+          "check_name": "bugprone-branch-clone",
+          "column": 17,
+          "line": 94,
+          "message": "switch has 2 consecutive identical branches"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",

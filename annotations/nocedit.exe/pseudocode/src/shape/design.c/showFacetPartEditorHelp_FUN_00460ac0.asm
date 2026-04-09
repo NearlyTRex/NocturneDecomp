@@ -4,6 +4,9 @@
 ; void __cdecl shape_design_c_showFacetPartEditorHelp_FUN_00460ac0(void)
 ;
 ;
+; XREF[1]:
+;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 00460930
+;
 ; Referenced Globals:
 ;   TerminatedCString s_Facet_Part_Editor_Keys_0061ba07
 ;   TerminatedCString s_Move_forward_0061ba1e

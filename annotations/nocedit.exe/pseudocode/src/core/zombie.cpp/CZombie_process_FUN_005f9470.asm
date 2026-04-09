@@ -150,6 +150,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_00002424
 ;   TerminatedCString s_CHASE_2_006585ad
+;   TerminatedCString s_ghoul_eat_wav_006585b5
 ;   TerminatedCString s_s_picked_up_s_using_hand_006585c5
 ;   TerminatedCString s_core_zombie_cpp_006585e4
 ;   TerminatedCString s_WTF_006585f7
@@ -162,8 +163,7 @@
 ;   TerminatedCString s_zombie_bang_door_wav_0065864a
 ;   TerminatedCString s_ghoul_eat_wav_00658660
 ;   undefined4 s_houl-eat-?.wav_00658661
-;   undefined4 s_oul-eat-?.wav_00658662
-;   ... and 57 more
+;   ... and 59 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -181,7 +181,7 @@
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_00429820
 ;   core_charactr.cpp_CCharacter_process_FUN_00429870
 ;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042b670
-;   ... and 33 more
+;   ... and 34 more
 ;
 ; *****************************************************************************
 
@@ -533,6 +533,71 @@ section .text
     PUSH 0x41700000                     ; 005f982f
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005f9834
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    LEA EDX,[EBP + 0xfffffcde]          ; 005f9839
+    MOV dword ptr [EBP + 0x76],EAX      ; 005f983f
+    ADD ESP,0x8                         ; 005f9842
+    MOV dword ptr [EBP + 0xfffffd12],EBX ; 005f9845
+    MOV dword ptr [EBP + 0xfffffd16],EBX ; 005f984b
+    FLD float ptr [EBP + 0x76]          ; 005f9851
+    PUSH EDX                            ; 005f9854
+    FSTP float ptr [EBP + 0xfffffce2]   ; 005f9855
+    MOV EAX,dword ptr [EBX + 0xbe3c]    ; 005f985b
+    PUSH EAX                            ; 005f9861
+    MOV ECX,dword ptr [EAX + 0x154]     ; 005f9862
+    CALL dword ptr [ECX + 0x11c]        ; 005f9868
+    FLD float ptr [EBP + 0xfffffce2]    ; 005f986e
+    FLDZ                                ; 005f9874
+    ADD ESP,0x8                         ; 005f9876
+    FXCH                                ; 005f9879
+    FSTP double ptr [EBP + -0xe]        ; 005f987b
+    FCOMP double ptr [EBP + -0xe]       ; 005f987e
+    FNSTSW AX                           ; 005f9881
+    SAHF                                ; 005f9883
+    JNC 0x005f98bb                      ; 005f9884
+        ;   XREF to: 005f98bb (CONDITIONAL_JUMP)  ; LAB_005f98bb
+    FLD double ptr [EBP + -0xe]         ; 005f9886
+    FMUL double ptr [0x006587cd]        ; 005f9889 | DOUBLE_006587cd
+    FMUL double ptr [0x006587d5]        ; 005f988f | DOUBLE_006587d5
+    PUSH 0x0                            ; 005f9895
+    CALL crt_math.c_round_FUN_005fe6b0  ; 005f9897
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
+    FISTP dword ptr [EBP + 0xa]         ; 005f989c
+    MOV ECX,dword ptr [EBP + 0xa]       ; 005f989f
+    PUSH ECX                            ; 005f98a2
+    PUSH 0x0                            ; 005f98a3
+    LEA EAX,[EBP + 0xfffffe42]          ; 005f98a5
+    PUSH EAX                            ; 005f98ab
+    MOV ESI,dword ptr [0x0067b9a0]      ; 005f98ac | g_CGorePtr
+    PUSH ESI                            ; 005f98b2 | g_CGoreInstance
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0 ; 005f98b3
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
+    ADD ESP,0x14                        ; 005f98b8
+    MOV EAX,dword ptr [EBX + 0xbe3c]    ; 005f98bb
+        ;   Label: LAB_005f98bb
+    PUSH EAX                            ; 005f98c1
+    MOV EDX,dword ptr [EAX + 0x154]     ; 005f98c2
+    CALL dword ptr [EDX + 0x120]        ; 005f98c8
+    ADD ESP,0x4                         ; 005f98ce
+    TEST EAX,EAX                        ; 005f98d1
+    JLE 0x005f98f4                      ; 005f98d3
+        ;   XREF to: 005f98f4 (CONDITIONAL_JUMP)  ; LAB_005f98f4
+    MOV EAX,dword ptr [EBX + 0xbe3c]    ; 005f98d5
+    PUSH EAX                            ; 005f98db
+    MOV EDX,dword ptr [EAX + 0x154]     ; 005f98dc
+    CALL dword ptr [EDX + 0x104]        ; 005f98e2
+    ADD ESP,0x4                         ; 005f98e8
+    PUSH EBX                            ; 005f98eb
+    CALL core_zombie.cpp_CZombie_resetChaseState_FUN_005fca10 ; 005f98ec
+        ;   XREF to: 005fca10 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_CZombie_resetChaseState_FUN_005fca10(CZombie * this_ptr)
+    ADD ESP,0x4                         ; 005f98f1
+    PUSH 0x6585b5                       ; 005f98f4 | = "ghoul-eat-?.wav"
+        ;   Label: LAB_005f98f4
+    MOV EAX,dword ptr [EBX + 0x154]     ; 005f98f9
+    PUSH EBX                            ; 005f98ff
+    CALL dword ptr [EAX + 0x24]         ; 005f9900
+    ADD ESP,0x8                         ; 005f9903
+    JMP 0x005f9504                      ; 005f9906
+        ;   XREF to: 005f9504 (UNCONDITIONAL_JUMP)  ; LAB_005f9504
     MOV EAX,dword ptr [EBX + 0xbecc]    ; 005f990b
         ;   Label: LAB_005f990b
     TEST EAX,EAX                        ; 005f9911

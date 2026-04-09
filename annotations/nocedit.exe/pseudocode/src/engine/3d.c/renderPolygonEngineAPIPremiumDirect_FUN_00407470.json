@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 118,
+    "complexity_score": 133,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 16,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 93,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "wrong_global"
     ],
     "total_lines": 262
   },
@@ -225,6 +226,14 @@
       "severity": "mild",
       "text": "return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Global g_RenderVertexBuffer used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 55,
+      "match": "g_RenderVertexBuffer",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[iVar3].projected_vertex.transformed_x;",
+      "type": "wrong_global"
     }
   ],
   "vtable_info": {

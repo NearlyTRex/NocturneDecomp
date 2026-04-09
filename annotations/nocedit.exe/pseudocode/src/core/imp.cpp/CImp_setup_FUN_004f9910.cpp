@@ -1,6 +1,6 @@
 // Name: core_imp.cpp_CImp_setup_FUN_004f9910
 // Address: 004f9910
-// Address Range: [[004f9910, 004f9bf0]]
+// Address Range: [[004f9910, 004f9c07]]
 // Convention: __cdecl
 // Signature: void __cdecl core_imp_cpp_CImp_setup_FUN_004f9910(CImp *this_ptr)
 

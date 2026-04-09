@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        158 ( 2.4%)
+  Functions with type issues:        157 ( 2.4%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -23,12 +23,12 @@ SUMMARY STATISTICS
     Missing register params:           0
     Wrong calling convention:          2
     Undefined types in variables:      148
-    Unresolved stack params:           8
+    Unresolved stack params:           7
 
-  Excluded (.keep / MMX / by-value):   81 functions
+  Excluded (.keep / MMX / by-value):   82 functions
     Wrong calling convention:          1
     Undefined types in variables:      73
-    Unresolved stack params:           13
+    Unresolved stack params:           14
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -85,7 +85,7 @@ Wrong calling convention (unaffected register usage) (2)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (8)
+Unresolved stack parameters (missing from signature) (7)
 --------------------------------------------------------------------------------
 
   CWinFont_setColorAndDrawText
@@ -104,12 +104,6 @@ Unresolved stack parameters (missing from signature) (8)
     Address: 0x005b0a30  File: sound/sndwav.cpp
     Evidence: in_stack_00000018, in_stack_00000018
     Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)
-    Suggested: Signature is missing stack parameters entirely
-
-  nextMixingBuffer
-    Address: 0x005a59c0  File: sound/sndmain.cpp
-    Evidence: in_stack_ffffff94, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94
-    Signature: void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
     Suggested: Signature is missing stack parameters entirely
 
   CBugs_renderOpaque
@@ -975,8 +969,14 @@ Unresolved stack params - MMX functions (0)
   (none)
 
 --------------------------------------------------------------------------------
-Unresolved stack params - by-value struct passing (4)
+Unresolved stack params - by-value struct passing (5)
 --------------------------------------------------------------------------------
+
+  nextMixingBuffer
+    Address: 0x005a59c0  File: sound/sndmain.cpp
+    Evidence: in_stack_ffffff94, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94
+    Signature: void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
+    Suggested: Signature is missing stack parameters entirely
 
   CDemonSet_showVdirBoxEditor
     Address: 0x00583170  File: core/setedit.cpp

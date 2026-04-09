@@ -11,6 +11,9 @@
 ; float            Stack[-0x14]:4  local_14
 ; int              Stack[-0x10]:4  local_10
 ;
+; XREF[1]:
+;   core_marquee.cpp_CMarquee_setup_FUN_0050bd60 at 0050bd85
+;
 ; Called Functions:
 ;   core_course.cpp_CCourse_evaluate_FUN_00442710
 ;

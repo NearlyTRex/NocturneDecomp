@@ -420,6 +420,12 @@ section .text
     PUSH 0x3f800000                     ; 0042d9f8
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0042d9fd
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0xf4],EAX      ; 0042da02
+    MOV EAX,dword ptr [ESP + 0xf4]      ; 0042da09
+    MOV dword ptr [ESI + 0x25e8],EAX    ; 0042da10
+    ADD ESP,0x8                         ; 0042da16
+    JMP 0x0042d5e1                      ; 0042da19
+        ;   XREF to: 0042d5e1 (UNCONDITIONAL_JUMP)  ; LAB_0042d5e1
     XOR EAX,EAX                         ; 0042da1e
         ;   Label: LAB_0042da1e
     MOV dword ptr [ESP + 0x38],EAX      ; 0042da20

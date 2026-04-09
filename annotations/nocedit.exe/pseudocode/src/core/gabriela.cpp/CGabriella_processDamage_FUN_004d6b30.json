@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 134,
+    "assembly_lines": 189,
     "complexity_score": 69,
     "cross_reference_count": 0,
-    "function_call_count": 5,
-    "global_count": 6,
+    "function_call_count": 6,
+    "global_count": 11,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 69,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 203
+    "total_lines": 258
   },
   "cross_references": [],
   "function": {
@@ -22,14 +22,6 @@
     "address_range": [
       [
         "004d6b30",
-        "004d6bef"
-      ],
-      [
-        "004d6c76",
-        "004d6ce2"
-      ],
-      [
-        "004d6d03",
         "004d6d30"
       ]
     ],
@@ -55,6 +47,11 @@
       "name": "core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004e0bd0"
     },
     {
+      "addr": "004ee030",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030"
+    },
+    {
       "addr": "0052dab0",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
@@ -67,6 +64,24 @@
   ],
   "globals": [
     {
+      "addr": "0062b0dd",
+      "name": "s_gb_die_1_6_wav_0062b0dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062b0ed",
+      "name": "s_gb_hit_1_6_wav_0062b0ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062b0fd",
+      "name": "FLOAT_0062b0fd",
+      "type": "float",
+      "value": "50"
+    },
+    {
       "addr": "0065e7c4",
       "name": "FLOAT_0065e7c4",
       "type": "float",
@@ -77,6 +92,12 @@
       "name": "g_CGamePtr",
       "type": "CGame*",
       "value": "02d81a9c"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
     },
     {
       "addr": "02d81a9c",
@@ -101,6 +122,12 @@
       "name": "g_CGameInstance.allow_damage_flag",
       "type": "undefined4",
       "value": null
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -112,40 +139,41 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.215686274509804,
-    "instruction_count": 102,
+    "avg_pcode_per_instr": 5.2052980132450335,
+    "instruction_count": 151,
     "opcode_distribution": {
       "BOOL_NEGATE": 2,
-      "BOOL_OR": 3,
-      "BRANCH": 3,
-      "CALL": 8,
-      "CBRANCH": 10,
-      "COPY": 175,
-      "FLOAT2FLOAT": 5,
-      "FLOAT_EQUAL": 3,
-      "FLOAT_LESS": 3,
-      "FLOAT_NAN": 6,
+      "BOOL_OR": 5,
+      "BRANCH": 4,
+      "CALL": 11,
+      "CALLIND": 2,
+      "CBRANCH": 11,
+      "COPY": 226,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_NAN": 8,
       "FLOAT_SUB": 1,
       "INT2FLOAT": 3,
-      "INT_ADD": 38,
-      "INT_AND": 45,
-      "INT_CARRY": 6,
-      "INT_EQUAL": 28,
-      "INT_LEFT": 12,
-      "INT_LESS": 6,
-      "INT_NOTEQUAL": 15,
-      "INT_OR": 15,
-      "INT_SBORROW": 6,
-      "INT_SCARRY": 6,
-      "INT_SLESS": 14,
-      "INT_SUB": 33,
-      "INT_ZEXT": 12,
-      "LOAD": 24,
-      "POPCOUNT": 14,
+      "INT_ADD": 57,
+      "INT_AND": 75,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 52,
+      "INT_LEFT": 16,
+      "INT_LESS": 9,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 20,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 26,
+      "INT_SUB": 54,
+      "INT_ZEXT": 16,
+      "LOAD": 31,
+      "POPCOUNT": 26,
       "RETURN": 2,
-      "STORE": 34
+      "STORE": 57
     },
-    "pcode_op_count": 532
+    "pcode_op_count": 786
   },
   "stack_frame": {
     "frame_size": 12,

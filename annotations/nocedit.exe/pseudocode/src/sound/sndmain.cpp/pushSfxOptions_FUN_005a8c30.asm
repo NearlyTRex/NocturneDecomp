@@ -4,18 +4,18 @@
 ; void __cdecl sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30(void)
 ;
 ;
-; XREF[32]:
+; XREF[34]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c58e
 ;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 at 00421bf4
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042a830 at 0042abaa
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 at 0048692a
 ;   core_drone.cpp_CDrone_process_FUN_0048ec70 at 0048f28b
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ac559
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004b0f00 at 004b0f31
 ;   core_fire.cpp_CFireball_onCollision_FUN_004c1690 at 004c170a
+;   core_flame.cpp_CFlame_process_FUN_004c9c00 at 004c9f44
 ;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 at 004d1f43
-;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e438a
-;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 00506613
-;   ... and 22 more
+;   ... and 24 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_0065089b

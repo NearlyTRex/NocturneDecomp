@@ -91,6 +91,22 @@ section .text
     PUSH EBP                            ; 00509d0d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00509d0e
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 00509d13
+    MOV EAX,[0x006703ec]                ; 00509d16 | g_CDemonRendererPtr2
+    PUSH EAX                            ; 00509d1b | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00509d1c
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 00509d21
+    MOV EDX,dword ptr [0x006703ec]      ; 00509d24 | g_CDemonRendererPtr2
+    PUSH EDX                            ; 00509d2a | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00509d2b
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 00509d30
+    ADD ESP,0x1c                        ; 00509d33
+    POP EBP                             ; 00509d36
+    POP EDI                             ; 00509d37
+    POP EBX                             ; 00509d38
+    RET                                 ; 00509d39
     PUSH ESI                            ; 00509d3a
         ;   Label: LAB_00509d3a
     MOV ESI,dword ptr [0x00678a60]      ; 00509d3b | g_CEditorToolsPtr

@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 544,
+    "assembly_lines": 609,
     "complexity_score": 233,
     "cross_reference_count": 0,
-    "function_call_count": 21,
-    "global_count": 26,
+    "function_call_count": 25,
+    "global_count": 27,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 233,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 777
+    "total_lines": 842
   },
   "cross_references": [],
   "function": {
@@ -22,10 +22,6 @@
     "address_range": [
       [
         "005ddb30",
-        "005ddded"
-      ],
-      [
-        "005ddebf",
         "005de32f"
       ]
     ],
@@ -71,6 +67,21 @@
       "name": "core_crate.cpp_CCrate_explode_FUN_00448a70"
     },
     {
+      "addr": "00471d30",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30"
+    },
+    {
+      "addr": "00471fd0",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0"
+    },
+    {
+      "addr": "00478c00",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_loadModel_FUN_00478c00"
+    },
+    {
       "addr": "004c76a0",
       "is_variadic": false,
       "name": "core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0"
@@ -79,6 +90,11 @@
       "addr": "004c7a60",
       "is_variadic": false,
       "name": "core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60"
+    },
+    {
+      "addr": "004c91e0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createShell_FUN_004c91e0"
     },
     {
       "addr": "004cb340",
@@ -145,6 +161,12 @@
     {
       "addr": "006554ad",
       "name": "s_s_45_dry_wav_2_0_006554ad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006554bf",
+      "name": "s_bullet_kfm_006554bf",
       "type": "TerminatedCString",
       "value": null
     },
@@ -308,17 +330,17 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.920258620689655,
-    "instruction_count": 464,
+    "avg_pcode_per_instr": 4.865642994241843,
+    "instruction_count": 521,
     "opcode_distribution": {
       "BOOL_NEGATE": 7,
       "BOOL_OR": 5,
       "BRANCH": 7,
-      "CALL": 31,
+      "CALL": 37,
       "CALLIND": 8,
-      "CBRANCH": 22,
-      "COPY": 857,
-      "FLOAT2FLOAT": 68,
+      "CBRANCH": 23,
+      "COPY": 932,
+      "FLOAT2FLOAT": 72,
       "FLOAT_ADD": 7,
       "FLOAT_DIV": 2,
       "FLOAT_EQUAL": 3,
@@ -328,26 +350,26 @@
       "FLOAT_SQRT": 1,
       "FLOAT_SUB": 6,
       "INT2FLOAT": 3,
-      "INT_ADD": 220,
-      "INT_AND": 173,
-      "INT_CARRY": 41,
-      "INT_EQUAL": 142,
+      "INT_ADD": 249,
+      "INT_AND": 193,
+      "INT_CARRY": 49,
+      "INT_EQUAL": 162,
       "INT_LEFT": 12,
-      "INT_LESS": 6,
+      "INT_LESS": 7,
       "INT_NOTEQUAL": 17,
       "INT_OR": 15,
-      "INT_SBORROW": 6,
-      "INT_SCARRY": 43,
-      "INT_SLESS": 71,
-      "INT_SUB": 119,
-      "INT_XOR": 6,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 51,
+      "INT_SLESS": 81,
+      "INT_SUB": 142,
+      "INT_XOR": 7,
       "INT_ZEXT": 12,
-      "LOAD": 111,
-      "POPCOUNT": 71,
+      "LOAD": 116,
+      "POPCOUNT": 81,
       "RETURN": 4,
-      "STORE": 169
+      "STORE": 199
     },
-    "pcode_op_count": 2283
+    "pcode_op_count": 2535
   },
   "stack_frame": {
     "frame_size": 336,

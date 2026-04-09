@@ -1,6 +1,6 @@
 // Name: shape_design.c_showFacetPartEditor_FUN_0045f1d0
 // Address: 0045f1d0
-// Address Range: [[0045f1d0, 00460724] [00460a08, 00460a0e]]
+// Address Range: [[0045f1d0, 00460a0e]]
 // Convention: __cdecl
 // Signature: void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
 

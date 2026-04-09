@@ -4,7 +4,8 @@
 ; void __cdecl shape_design_c_handleEditorHotkeys_FUN_0045b990(void)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 00460743
 ;   shape_design.c_showPointEditor_FUN_0045c6c0 at 0045ca53
 ;   shape_design.c_showShapeEditorMenu_FUN_0046f290 at 0046f874
 ;

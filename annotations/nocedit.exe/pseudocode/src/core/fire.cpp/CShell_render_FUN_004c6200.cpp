@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CShell_render_FUN_004c6200
 // Address: 004c6200
-// Address Range: [[004c6200, 004c62f0]]
+// Address Range: [[004c6200, 004c62fb]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CShell_render_FUN_004c6200(CShell *this_ptr)
 

@@ -1,6 +1,6 @@
 // Name: core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80
 // Address: 004a7e80
-// Address Range: [[004a7e80, 004a7ef6]]
+// Address Range: [[004a7e80, 004a8043]]
 // Convention: __cdecl
 // Signature: void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004a7e80(CEmitter *this_ptr)
 

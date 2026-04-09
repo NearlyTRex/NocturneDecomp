@@ -1047,6 +1047,72 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "editParameterValue_FUN_00562920.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 6,
+      "diagnostics": [
+        {
+          "check_name": "cert-err34-c",
+          "column": 13,
+          "line": 70,
+          "message": "'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 13,
+          "line": 79,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 18,
+          "line": 101,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 104,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 15,
+          "line": 113,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 15,
+          "line": 559,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 20,
+          "line": 696,
+          "message": "Redundant assignment of 'pcVar8' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 20,
+          "line": 701,
+          "message": "Redundant assignment of 'pcVar8' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

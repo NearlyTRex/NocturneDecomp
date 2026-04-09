@@ -5,7 +5,7 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 257,
+    "assembly_lines": 267,
     "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 20,
@@ -17,7 +17,7 @@
       "stack_ref",
       "warning_type_propagation"
     ],
-    "total_lines": 343
+    "total_lines": 353
   },
   "cross_references": [
     {
@@ -32,11 +32,7 @@
     "address_range": [
       [
         "005205f0",
-        "005207fe"
-      ],
-      [
-        "00520802",
-        "0052084b"
+        "00520863"
       ],
       [
         "03fc4298",
@@ -251,43 +247,43 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.187214611872146,
-    "instruction_count": 219,
+    "avg_pcode_per_instr": 4.180616740088106,
+    "instruction_count": 227,
     "opcode_distribution": {
       "BOOL_NEGATE": 7,
       "BOOL_OR": 2,
-      "BRANCH": 2,
-      "CALL": 21,
+      "BRANCH": 3,
+      "CALL": 22,
       "CALLIND": 1,
       "CBRANCH": 6,
-      "COPY": 205,
+      "COPY": 209,
       "FLOAT2FLOAT": 1,
       "FLOAT_EQUAL": 1,
       "FLOAT_LESS": 1,
       "FLOAT_NAN": 2,
       "INT2FLOAT": 1,
       "INT_2COMP": 5,
-      "INT_ADD": 96,
-      "INT_AND": 106,
-      "INT_CARRY": 23,
-      "INT_EQUAL": 85,
+      "INT_ADD": 99,
+      "INT_AND": 110,
+      "INT_CARRY": 25,
+      "INT_EQUAL": 89,
       "INT_LEFT": 6,
       "INT_LESS": 4,
       "INT_MULT": 2,
       "INT_NOTEQUAL": 12,
       "INT_OR": 10,
       "INT_SBORROW": 9,
-      "INT_SCARRY": 23,
-      "INT_SLESS": 44,
-      "INT_SUB": 71,
+      "INT_SCARRY": 25,
+      "INT_SLESS": 46,
+      "INT_SUB": 74,
       "INT_XOR": 4,
       "INT_ZEXT": 4,
-      "LOAD": 32,
-      "POPCOUNT": 42,
+      "LOAD": 33,
+      "POPCOUNT": 44,
       "RETURN": 2,
-      "STORE": 87
+      "STORE": 90
     },
-    "pcode_op_count": 917
+    "pcode_op_count": 949
   },
   "stack_frame": {
     "frame_size": 204,
@@ -374,6 +370,22 @@
         "type": "CMimic *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CMimic_renderMirrored_FUN_005205f0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 19,
+          "line": 79,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

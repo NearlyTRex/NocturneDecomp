@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 10,
+    "complexity_score": 25,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 10,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "wrong_global"
+    ],
     "total_lines": 25
   },
   "cross_references": [
@@ -237,5 +239,14 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Global g_VersionControlSession used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 5,
+      "match": "g_VersionControlSession",
+      "severity": "moderate",
+      "text": "if (g_VersionControlSession.session_handle == (HANDLE)0x0) {",
+      "type": "wrong_global"
+    }
+  ]
 }

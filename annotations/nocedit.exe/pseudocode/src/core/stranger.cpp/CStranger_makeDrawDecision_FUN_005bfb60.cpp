@@ -1,6 +1,6 @@
 // Name: core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
 // Address: 005bfb60
-// Address Range: [[005bfb60, 005bfe1c] [005bfe53, 005c02ae] [0060538d, 00605401] [0060f5af, 0060f63a] [0060fba0, 0060fbe7]]
+// Address Range: [[005bfb60, 005c02ae] [0060538d, 00605401] [0060f5af, 0060f63a] [0060fba0, 0060fbe7]]
 // Convention: __cdecl
 // Signature: void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_005bfb60(CStranger *this_ptr)
 

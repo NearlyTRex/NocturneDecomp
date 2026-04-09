@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 228,
     "complexity_score": 216,
-    "cross_reference_count": 50,
+    "cross_reference_count": 51,
     "function_call_count": 2,
     "global_count": 17,
     "max_suspect_severity": "mild",
@@ -258,6 +258,12 @@
       "addr": "0042bf90",
       "from_addr": "0042bfab",
       "name": "core_charactr.cpp_CCharacter_drop_FUN_0042bf90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00428140",
+      "from_addr": "004282f9",
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_00428140",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -673,6 +679,58 @@
         "type": "int"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CDemonActor_doCheckForInvalidPointers_FUN_0040ac80.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 6,
+      "diagnostics": [
+        {
+          "check_id": "nullPointerRedundantCheck",
+          "column": 24,
+          "line": 96,
+          "message": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "nullPointerRedundantCheck",
+          "column": 24,
+          "line": 97,
+          "message": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "nullPointerRedundantCheck",
+          "column": 24,
+          "line": 98,
+          "message": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 14,
+          "line": 83,
+          "message": "Redundant assignment of 'pCVar6' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 18,
+          "line": 114,
+          "message": "Redundant assignment of 'pCVar7' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 18,
+          "line": 115,
+          "message": "Redundant assignment of 'pcVar8' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

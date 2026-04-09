@@ -1,6 +1,6 @@
 // Name: core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
 // Address: 00452180
-// Address Range: [[00452180, 00452707]]
+// Address Range: [[00452180, 00452726]]
 // Convention: __cdecl
 // Signature: int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max)
 

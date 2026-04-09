@@ -1,6 +1,6 @@
 // Name: core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0
 // Address: 0042b9e0
-// Address Range: [[0042b9e0, 0042bb48] [0042bbf4, 0042bc1f]]
+// Address Range: [[0042b9e0, 0042bc1f]]
 // Convention: __cdecl
 // Signature: void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force,int render_in_background)
 

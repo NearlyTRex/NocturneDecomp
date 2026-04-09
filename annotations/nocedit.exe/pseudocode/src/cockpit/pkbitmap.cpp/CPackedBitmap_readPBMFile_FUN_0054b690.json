@@ -319,5 +319,83 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CPackedBitmap_readPBMFile_FUN_0054b690.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-multi-level-implicit-pointer-conversion",
+          "column": 24,
+          "line": 69,
+          "message": "multilevel pointer conversion from 'void **' to 'void *', please use explicit cast"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 8,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 14,
+          "line": 53,
+          "message": "Redundant assignment of 'pbVar5' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 14,
+          "line": 54,
+          "message": "Redundant assignment of 'pbVar6' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 27,
+          "line": 59,
+          "message": "Uninitialized variable: local_28",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 47,
+          "line": 59,
+          "message": "Uninitialized variable: local_24",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 13,
+          "line": 62,
+          "message": "Uninitialized variable: local_20",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 32,
+          "line": 62,
+          "message": "Uninitialized variable: local_1c",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 36,
+          "line": 63,
+          "message": "Uninitialized variable: local_18",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 74,
+          "line": 63,
+          "message": "Uninitialized variable: local_14",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

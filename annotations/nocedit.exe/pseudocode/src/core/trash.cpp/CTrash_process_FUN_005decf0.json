@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 51,
+    "assembly_lines": 586,
     "complexity_score": 297,
     "cross_reference_count": 0,
-    "function_call_count": 2,
-    "global_count": 0,
+    "function_call_count": 9,
+    "global_count": 14,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 272,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 323
+    "total_lines": 858
   },
   "cross_references": [],
   "function": {
@@ -24,11 +24,7 @@
     "address_range": [
       [
         "005decf0",
-        "005ded29"
-      ],
-      [
-        "005df4fe",
-        "005df533"
+        "005df540"
       ]
     ],
     "convention": "__cdecl",
@@ -38,6 +34,16 @@
   },
   "function_calls": [
     {
+      "addr": "00408ea0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0"
+    },
+    {
+      "addr": "00408c10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10"
+    },
+    {
       "addr": "0040cc10",
       "is_variadic": false,
       "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10"
@@ -46,9 +52,119 @@
       "addr": "004f2220",
       "is_variadic": false,
       "name": "core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220"
+    },
+    {
+      "addr": "005716b0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0"
+    },
+    {
+      "addr": "00573470",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470"
+    },
+    {
+      "addr": "005f54c0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0"
+    },
+    {
+      "addr": "005f5690",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_005f5690"
+    },
+    {
+      "addr": "005f4f10",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "0065559e",
+      "name": "FLOAT_0065559e",
+      "type": "float",
+      "value": "0.05000000"
+    },
+    {
+      "addr": "006555a2",
+      "name": "FLOAT_006555a2",
+      "type": "float",
+      "value": "0.07000000"
+    },
+    {
+      "addr": "006555a6",
+      "name": "FLOAT_006555a6",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "006555aa",
+      "name": "FLOAT_006555aa",
+      "type": "float",
+      "value": "0.8000000"
+    },
+    {
+      "addr": "006555ae",
+      "name": "DOUBLE_006555ae",
+      "type": "double",
+      "value": "0.159154943096444"
+    },
+    {
+      "addr": "006555b6",
+      "name": "DOUBLE_006555b6",
+      "type": "double",
+      "value": "0.900000000000000"
+    },
+    {
+      "addr": "006555be",
+      "name": "DOUBLE_006555be",
+      "type": "double",
+      "value": "1.5"
+    },
+    {
+      "addr": "006555c6",
+      "name": "FLOAT_006555c6",
+      "type": "float",
+      "value": "0.7000000"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "0326eed8",
+      "name": "g_CDemonSetInstance.active_fog.scroll.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326eedc",
+      "name": "g_CDemonSetInstance.active_fog.scroll.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326eee0",
+      "name": "g_CDemonSetInstance.active_fog.scroll.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f87558",
+      "name": "g_ZeroVector",
+      "type": "UVector3",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 0,
     "call_sites": [],
@@ -58,28 +174,47 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.883720930232558,
-    "instruction_count": 43,
+    "avg_pcode_per_instr": 6.365313653136531,
+    "instruction_count": 542,
     "opcode_distribution": {
-      "BOOL_NEGATE": 1,
-      "CALL": 3,
-      "CBRANCH": 2,
-      "COPY": 43,
-      "INT_ADD": 19,
-      "INT_AND": 17,
-      "INT_CARRY": 3,
-      "INT_EQUAL": 14,
-      "INT_LESS": 1,
-      "INT_SBORROW": 1,
-      "INT_SCARRY": 3,
-      "INT_SLESS": 7,
-      "INT_SUB": 14,
-      "LOAD": 14,
-      "POPCOUNT": 7,
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 9,
+      "BRANCH": 2,
+      "CALL": 17,
+      "CBRANCH": 14,
+      "COPY": 1980,
+      "FLOAT2FLOAT": 204,
+      "FLOAT_ADD": 25,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 6,
+      "FLOAT_LESS": 6,
+      "FLOAT_MULT": 42,
+      "FLOAT_NAN": 12,
+      "FLOAT_NEG": 1,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 13,
+      "INT2FLOAT": 6,
+      "INT_ADD": 285,
+      "INT_AND": 100,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 67,
+      "INT_LEFT": 24,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 30,
+      "INT_OR": 30,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 33,
+      "INT_SUB": 72,
+      "INT_XOR": 3,
+      "INT_ZEXT": 26,
+      "LOAD": 164,
+      "POPCOUNT": 33,
       "RETURN": 2,
-      "STORE": 16
+      "STORE": 182
     },
-    "pcode_op_count": 167
+    "pcode_op_count": 3450
   },
   "stack_frame": {
     "frame_size": 436,

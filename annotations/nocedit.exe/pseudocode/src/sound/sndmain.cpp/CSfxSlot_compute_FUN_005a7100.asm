@@ -11,8 +11,9 @@
 ; undefined4       Stack[-0x38]:4  local_38
 ; int              Stack[-0x18]:4  local_18
 ;
-; XREF[12]:
+; XREF[13]:
 ;   sound_sndmain.cpp_getSfxOptions_FUN_005a97e0 at 005a97fc
+;   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0 at 005a5ae2
 ;   sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0 at 005acdf6
 ;   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 at 005acc5a
 ;   sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40 at 005a9b63
@@ -21,8 +22,7 @@
 ;   sound_sndmain.cpp_setSfxTrackedDoubleVelocity_FUN_005a9a70 at 005a9aa0
 ;   sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0 at 005a98da
 ;   sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_005a9a00 at 005a9a30
-;   sound_sndmain.cpp_setSfxVelocity_FUN_005a9970 at 005a99ca
-;   ... and 2 more
+;   ... and 3 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_0065022e

@@ -10,6 +10,9 @@
 ; int              Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 0046084b
+;
 ; Referenced Globals:
 ;   TerminatedCString s_Polygon_range_s_to_delet_0061b45f
 ;   TerminatedCString s_d_d_0061b483

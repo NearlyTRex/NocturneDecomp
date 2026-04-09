@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CShell_setup_FUN_004c6170
 // Address: 004c6170
-// Address Range: [[004c6170, 004c61bc]]
+// Address Range: [[004c6170, 004c61fb]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CShell_setup_FUN_004c6170(CShell *this_ptr,CVector3f *position,CVector3f *euler_angles,CVector3f *velocity,CKeyFramedModel *model_ptr)
 

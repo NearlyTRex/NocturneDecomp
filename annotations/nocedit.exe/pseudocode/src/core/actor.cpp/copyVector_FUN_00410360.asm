@@ -7,7 +7,8 @@
 ; CVector3f *      Stack[0x4]:4   dst_ptr
 ; CVector3f *      Stack[0x8]:4   src_ptr
 ;
-; XREF[3]:
+; XREF[4]:
+;   core_script.cpp_CScript_step_FUN_0055a810 at 0055ca76
 ;   shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0 at 0051f033
 ;   shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 at 0051b6aa
 ;   shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30 at 0051bf37

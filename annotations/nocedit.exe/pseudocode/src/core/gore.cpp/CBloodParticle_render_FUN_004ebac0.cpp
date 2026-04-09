@@ -1,6 +1,6 @@
 // Name: core_gore.cpp_CBloodParticle_render_FUN_004ebac0
 // Address: 004ebac0
-// Address Range: [[004ebac0, 004ebe5c] [004ec23c, 004ec280]]
+// Address Range: [[004ebac0, 004ec280]]
 // Convention: __cdecl
 // Signature: void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ebac0(CBloodParticle *this_ptr)
 

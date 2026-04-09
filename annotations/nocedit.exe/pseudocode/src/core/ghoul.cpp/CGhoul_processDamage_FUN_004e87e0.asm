@@ -15,6 +15,7 @@
 ;   TerminatedCString s_ghoul_die_wav_1_6_0062de8e
 ;   TerminatedCString s_guul_flinch_d_0062dea5
 ;   TerminatedCString s_ghoul_mad_wav_0062deb3
+;   double DOUBLE_0062deca = 65536
 ;   CConsole* g_CConsolePtr = 0083b1a4
 ;   CConsole g_CConsoleInstance
 ;
@@ -29,6 +30,7 @@
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460
+;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   engine_console.cpp_CConsole_printf_FUN_00441890
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
@@ -170,6 +172,20 @@ section .text
     PUSH 0x40800000                     ; 004e8964
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004e8969
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + -0x4],EAX      ; 004e896e
+    FLD float ptr [EBP + -0x4]          ; 004e8971
+    FMUL double ptr [0x0062deca]        ; 004e8974 | DOUBLE_0062deca
+    ADD ESP,0x8                         ; 004e897a
+    MOV dword ptr [EBX + 0xbec8],0xa0000 ; 004e897d
+    PUSH 0x41c80000                     ; 004e8987
+    MOV EAX,dword ptr [EBX + 0x154]     ; 004e898c
+    PUSH 0x32                           ; 004e8992
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004e8994
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
+    PUSH EBX                            ; 004e8999
+    FISTP dword ptr [EBX + 0xbec4]      ; 004e899a
+    CALL dword ptr [EAX + 0xa0]         ; 004e89a0
+    ADD ESP,0xc                         ; 004e89a6
     PUSH EDI                            ; 004e89a9
         ;   Label: LAB_004e89a9
     PUSH EBX                            ; 004e89aa

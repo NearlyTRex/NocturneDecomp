@@ -7,18 +7,18 @@
 ; CMatrix3x4f *    Stack[0x4]:4   matrix_in
 ; CVector3f *      Stack[0x8]:4   vector_out
 ;
-; XREF[15]:
+; XREF[16]:
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 at 0042d1c4
 ;   core_fire.cpp_CBulletHole_init_FUN_004bf7f0 at 004bf96f
 ;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 at 004d56e4
+;   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70 at 00508dc1
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0 at 005207af
 ;   core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320 at 0054e3d1
 ;   core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 at 005590da
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 005978ca
 ;   core_skeleton.cpp_CDeformableModel_renderBones_FUN_0059b800 at 0059b83c
 ;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 at 0059b688
-;   core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150 at 005c34bc
-;   ... and 5 more
+;   ... and 6 more
 ;
 ; *****************************************************************************
 

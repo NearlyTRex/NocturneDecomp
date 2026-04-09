@@ -1,6 +1,6 @@
 // Name: core_spike.cpp_CSpike_setup_FUN_005b8360
 // Address: 005b8360
-// Address Range: [[005b8360, 005b837c]]
+// Address Range: [[005b8360, 005b840f]]
 // Convention: __cdecl
 // Signature: void __cdecl core_spike_cpp_CSpike_setup_FUN_005b8360(CSpike *this_ptr)
 

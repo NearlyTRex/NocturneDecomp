@@ -6,17 +6,25 @@
   },
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 29,
-    "cross_reference_count": 2,
+    "complexity_score": 44,
+    "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 6,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 29,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "wrong_global"
+    ],
     "total_lines": 120
   },
   "cross_references": [
+    {
+      "addr": "0045f1d0",
+      "from_addr": "00460743",
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0045c6c0",
       "from_addr": "0045ca53",
@@ -114,7 +122,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "0045ca53",
@@ -131,6 +139,17 @@
         "call_addr": "0046f874",
         "call_type": "direct",
         "caller": "shape_design.c_showShapeEditorMenu_FUN_0046f290",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00460743",
+        "call_type": "direct",
+        "caller": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -177,5 +196,14 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Global g_KeyboardState used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 7,
+      "match": "g_KeyboardState",
+      "severity": "moderate",
+      "text": "if ((g_KeyboardState[0x26] != '\\0') && (g_KeyboardState[0x1d] != '\\0')) {",
+      "type": "wrong_global"
+    }
+  ]
 }

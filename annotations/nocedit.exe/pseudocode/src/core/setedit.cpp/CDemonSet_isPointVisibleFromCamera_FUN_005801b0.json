@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 137,
     "complexity_score": 63,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
@@ -19,6 +19,12 @@
     "total_lines": 185
   },
   "cross_references": [
+    {
+      "addr": "0057fd00",
+      "from_addr": "0057ff3f",
+      "name": "core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "005800d0",
       "from_addr": "00580180",
@@ -54,7 +60,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "00580180",
@@ -66,9 +72,20 @@
         "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
+      },
+      {
+        "call_addr": "0057ff3f",
+        "call_type": "direct",
+        "caller": "core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 3,
     "declared_stack_bytes": 12,
     "estimated_params": 3

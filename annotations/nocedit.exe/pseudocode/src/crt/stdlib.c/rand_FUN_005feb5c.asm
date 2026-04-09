@@ -4,7 +4,7 @@
 ; int __cdecl crt_stdlib_c_rand_FUN_005feb5c(void)
 ;
 ;
-; XREF[41]:
+; XREF[43]:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 at 0040cc5b
 ;   core_actor.cpp_getRandomFloat_FUN_0040cbc0 at 0040cbee
 ;   core_actor.cpp_getRandomInt_FUN_0040cc70 at 0040cca5
@@ -15,7 +15,7 @@
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422b2a
 ;   core_bride.cpp_CBride_processDismemberment_FUN_00424600 at 00424623
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042af60 at 0042afca
-;   ... and 31 more
+;   ... and 33 more
 ;
 ; Called Functions:
 ;   crt_stdlib.c_GetRandomSeedPointer_FUN_005feb50

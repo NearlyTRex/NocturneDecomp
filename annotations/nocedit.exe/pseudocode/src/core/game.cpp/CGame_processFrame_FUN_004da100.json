@@ -6,17 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 1158,
-    "complexity_score": 547,
+    "complexity_score": 562,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 382,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "sub84_truncation",
-      "warning_type_propagation"
+      "warning_type_propagation",
+      "wrong_global"
     ],
     "total_lines": 1540
   },
@@ -1067,6 +1068,34 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CGame_processFrame_FUN_004da100.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 19,
+          "line": 153,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 154,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 19,
+          "line": 168,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Type propagation did not converge",
@@ -1187,6 +1216,14 @@
       "severity": "mild",
       "text": "piVar20 = (int *)((int)piVar20 + 2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Global g_ColorCubeLookup used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 352,
+      "match": "g_ColorCubeLookup",
+      "severity": "moderate",
+      "text": "(uint)g_ColorCubeLookup[0x7c00],0,(char *)&local_62c.taken);",
+      "type": "wrong_global"
     }
   ]
 }

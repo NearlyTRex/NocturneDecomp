@@ -30,9 +30,13 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050
+;   core_bodypart.cpp_createBodyPart_FUN_00418e10
+;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
 ;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_0042d060
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+;   core_xform.cpp_eulerToQuaternion_FUN_005f7b20
 ;
 ; *****************************************************************************
 
@@ -90,6 +94,108 @@ section .text
     PUSH 0xc0a00000                     ; 0041d726
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041d72b
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x3c],EAX      ; 0041d730
+    FLD float ptr [ESP + 0x3c]          ; 0041d734
+    ADD ESP,0x8                         ; 0041d738
+    PUSH 0x41200000                     ; 0041d73b
+    PUSH 0x0                            ; 0041d740
+    FSTP float ptr [ESP + 0x18]         ; 0041d742
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041d746
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x3c],EAX      ; 0041d74b
+    FLD float ptr [ESP + 0x3c]          ; 0041d74f
+    ADD ESP,0x8                         ; 0041d753
+    PUSH 0x40a00000                     ; 0041d756
+    PUSH 0xc0a00000                     ; 0041d75b
+    FSTP float ptr [ESP + 0x1c]         ; 0041d760
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041d764
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x3c],EAX      ; 0041d769
+    FLD float ptr [ESP + 0x3c]          ; 0041d76d
+    ADD ESP,0x8                         ; 0041d771
+    PUSH 0x2                            ; 0041d774
+    PUSH 0x1                            ; 0041d776
+    PUSH 0x1                            ; 0041d778
+    MOV EBX,dword ptr [ESP + 0x58]      ; 0041d77a
+    PUSH EBX                            ; 0041d77e
+    LEA EAX,[ESP + 0x20]                ; 0041d77f
+    PUSH EAX                            ; 0041d783
+    MOV ESI,dword ptr [ESP + 0x30]      ; 0041d784
+    PUSH ESI                            ; 0041d788
+    MOV EDI,dword ptr [ESP + 0x38]      ; 0041d789
+    PUSH EDI                            ; 0041d78d
+    FSTP float ptr [ESP + 0x34]         ; 0041d78e
+    CALL core_bodypart.cpp_createBodyPart_FUN_00418e10 ; 0041d792
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418e10(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
+    ADD ESP,0x1c                        ; 0041d797
+    MOV EBX,EAX                         ; 0041d79a
+    PUSH 0x0                            ; 0041d79c
+    MOV ESI,EAX                         ; 0041d79e
+    MOV EAX,dword ptr [ESP + 0x34]      ; 0041d7a0
+    PUSH EAX                            ; 0041d7a4
+    PUSH EBX                            ; 0041d7a5
+    MOV EDX,dword ptr [ESP + 0x58]      ; 0041d7a6
+    PUSH EDX                            ; 0041d7aa
+    CALL core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 ; 0041d7ab
+        ;   XREF to: 0042bd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCharacter * this_ptr, CBodyPart * body_part, int part_index, int render_in_background)
+    ADD ESP,0x10                        ; 0041d7b0
+    PUSH EBX                            ; 0041d7b3
+    MOV dword ptr [EBX + 0xcc4],0x1     ; 0041d7b4
+    CALL core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 ; 0041d7be
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart * this_ptr)
+    ADD ESP,0x4                         ; 0041d7c3
+    IMUL EAX,dword ptr [ESP + 0x30],0x48 ; 0041d7c6
+    MOV EDI,dword ptr [ESP + 0x2c]      ; 0041d7cb
+    MOV dword ptr [EDI + 0xbf80],EBX    ; 0041d7cf
+    MOV EDI,dword ptr [ESP + 0x28]      ; 0041d7d5
+    ADD EBX,0x20                        ; 0041d7d9
+    ADD EAX,EDI                         ; 0041d7dc
+    CMP EAX,EBX                         ; 0041d7de
+    JZ 0x0041d7f2                       ; 0041d7e0
+        ;   XREF to: 0041d7f2 (CONDITIONAL_JUMP)  ; LAB_0041d7f2
+    MOV EDX,dword ptr [EBX]             ; 0041d7e2
+    MOV dword ptr [EAX],EDX             ; 0041d7e4
+    MOV EDX,dword ptr [EBX + 0x4]       ; 0041d7e6
+    MOV dword ptr [EAX + 0x4],EDX       ; 0041d7e9
+    MOV EDX,dword ptr [EBX + 0x8]       ; 0041d7ec
+    MOV dword ptr [EAX + 0x8],EDX       ; 0041d7ef
+    LEA EAX,[ESI + 0x30]                ; 0041d7f2
+        ;   Label: LAB_0041d7f2
+    CMP EBP,EAX                         ; 0041d7f5
+    JZ 0x0041d80a                       ; 0041d7f7
+        ;   XREF to: 0041d80a (CONDITIONAL_JUMP)  ; LAB_0041d80a
+    MOV EDX,dword ptr [EAX]             ; 0041d7f9
+    MOV dword ptr [EBP],EDX             ; 0041d7fb
+    MOV EDX,dword ptr [EAX + 0x4]       ; 0041d7fe
+    MOV dword ptr [EBP + 0x4],EDX       ; 0041d801
+    MOV EDX,dword ptr [EAX + 0x8]       ; 0041d804
+    MOV dword ptr [EBP + 0x8],EDX       ; 0041d807
+    ADD ESI,0x30                        ; 0041d80a
+        ;   Label: LAB_0041d80a
+    PUSH ESI                            ; 0041d80d
+    LEA ESI,[ESP + 0x4]                 ; 0041d80e
+    ADD EBP,0x48                        ; 0041d812
+    CALL core_xform.cpp_eulerToQuaternion_FUN_005f7b20 ; 0041d815
+        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CVector3f * euler_angles, CQuaternion4f * quat_out)
+    ADD ESP,0x4                         ; 0041d81a
+    MOV ESI,ESP                         ; 0041d81d
+    MOV EDI,dword ptr [ESP + 0x2c]      ; 0041d81f
+    MOV EAX,dword ptr [ESP + 0x2c]      ; 0041d823
+    MOV EDX,dword ptr [ESP + 0x30]      ; 0041d827
+    MOV EBX,dword ptr [ESP + 0x24]      ; 0041d82b
+    LEA EDI,[EDI + 0xbf64]              ; 0041d82f
+    ADD EAX,0x48                        ; 0041d835
+    INC EDX                             ; 0041d838
+    MOVSD ES:EDI,ESI                    ; 0041d839
+    MOVSD ES:EDI,ESI                    ; 0041d83a
+    MOVSD ES:EDI,ESI                    ; 0041d83b
+    MOVSD ES:EDI,ESI                    ; 0041d83c
+    MOV dword ptr [ESP + 0x2c],EAX      ; 0041d83d
+    MOV ECX,dword ptr [EBX + 0x7140]    ; 0041d841
+    MOV dword ptr [ESP + 0x30],EDX      ; 0041d847
+    CMP EDX,ECX                         ; 0041d84b
+    JL 0x0041d721                       ; 0041d84d
+        ;   XREF to: 0041d721 (CONDITIONAL_JUMP)  ; LAB_0041d721
     PUSH 0x616342                       ; 0041d853 | = "boneguy-fallapart.wav"
         ;   Label: LAB_0041d853
     MOV EBP,dword ptr [ESP + 0x50]      ; 0041d858

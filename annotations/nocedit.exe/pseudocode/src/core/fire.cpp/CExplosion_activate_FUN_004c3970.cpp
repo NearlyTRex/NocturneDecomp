@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CExplosion_activate_FUN_004c3970
 // Address: 004c3970
-// Address Range: [[004c3970, 004c39eb]]
+// Address Range: [[004c3970, 004c3abc]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CExplosion_activate_FUN_004c3970(CExplosion *this_ptr,CVector3f *position,float scale,float gore_multiplier)
 

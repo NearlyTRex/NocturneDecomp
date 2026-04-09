@@ -1,6 +1,6 @@
 // Name: core_crate.cpp_CCrate_setup_FUN_00448530
 // Address: 00448530
-// Address Range: [[00448530, 0044853d]]
+// Address Range: [[00448530, 004485f8]]
 // Convention: __cdecl
 // Signature: void __cdecl core_crate_cpp_CCrate_setup_FUN_00448530(CCrate *this_ptr)
 

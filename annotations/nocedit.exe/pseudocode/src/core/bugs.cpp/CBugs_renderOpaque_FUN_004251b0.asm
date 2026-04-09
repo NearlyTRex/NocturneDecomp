@@ -151,6 +151,15 @@ section .text
     PUSH ECX                            ; 004252f2 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004252f3
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 004252f8
+    MOV EAX,dword ptr [ESP + 0x54]      ; 004252fb
+    ADD EBP,0x40                        ; 004252ff
+    INC ESI                             ; 00425302
+    MOV EDX,dword ptr [EAX + 0xbec0]    ; 00425303
+    ADD EBX,0x40                        ; 00425309
+    CMP ESI,EDX                         ; 0042530c
+    JL 0x00425245                       ; 0042530e
+        ;   XREF to: 00425245 (CONDITIONAL_JUMP)  ; LAB_00425245
     PUSH 0x0                            ; 00425314
         ;   Label: LAB_00425314
     MOV ECX,dword ptr [0x006810c8]      ; 00425316 | g_CDemonSetPtr | g_CDemonSetInstance

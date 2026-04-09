@@ -1,6 +1,6 @@
 // Name: core_box.cpp_CBox_processPhysics_FUN_0041e350
 // Address: 0041e350
-// Address Range: [[0041e350, 0041effe]]
+// Address Range: [[0041e350, 0041fe86]]
 // Convention: __cdecl
 // Signature: void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float delta_time)
 

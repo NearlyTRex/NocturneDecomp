@@ -8,7 +8,8 @@
 ; Local Variables:
 ; float            Stack[-0x1c]:4  local_1c
 ;
-; XREF[7]:
+; XREF[8]:
+;   core_bride.cpp_CBride_process_FUN_00423a30 at 00423e94
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d3525
 ;   core_ghoul.cpp_CGhoul_process_FUN_004e6600 at 004e7c72
 ;   core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0 at 005201b9

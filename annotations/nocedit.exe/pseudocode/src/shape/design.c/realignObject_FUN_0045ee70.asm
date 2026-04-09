@@ -10,8 +10,9 @@
 ; Local Variables:
 ; int              Stack[-0x4c]:4  local_4c
 ;
-; XREF[1]:
+; XREF[2]:
 ;   shape_design.c_generateOctant_FUN_00469420 at 00469674
+;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 0046099c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Realign_object_0061b6be

@@ -25,4 +25,6 @@ section .text
     PUSH EDX                            ; 004ee5b6
     CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 004ee5b7
         ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
+    ADD ESP,0x4                         ; 004ee5bc
+    RET                                 ; 004ee5bf
 

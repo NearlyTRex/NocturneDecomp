@@ -898,6 +898,30 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CDemonSet_load_FUN_00569410.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "nullPointer",
+          "column": 6,
+          "line": 410,
+          "message": "Possible null pointer dereference: pcVar5",
+          "severity": "warning"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 58,
+          "line": 80,
+          "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",

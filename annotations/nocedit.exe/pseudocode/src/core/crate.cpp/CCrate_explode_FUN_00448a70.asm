@@ -6,9 +6,11 @@
 ; Parameters:
 ; CCrate *         Stack[0x4]:4   this_ptr
 ;
-; XREF[4]:
+; XREF[6]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040abaa
+;   core_elephant.cpp_CElephantGun_fire_FUN_004a7160 at 004a783a
 ;   core_gun.cpp_CGun_fire_FUN_004f0350 at 004f0abe
+;   core_shotgun.cpp_CShotgun_fire_FUN_00588060 at 0058873c
 ;   core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30 at 005de2d7
 ;   core_turret.cpp_CTurret_fire_FUN_005e3750 at 005e3c2a
 ;

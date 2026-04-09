@@ -1,0 +1,2093 @@
+====================================================================================================
+STATIC ANALYSIS BY FUNCTION
+====================================================================================================
+
+All static analysis findings organized by function, sorted by diagnostic count.
+Functions with findings from multiple tools are likely to have real issues.
+
+----------------------------------------------------------------------------------------------------
+SUMMARY
+----------------------------------------------------------------------------------------------------
+
+  Functions with findings: 176
+  Total diagnostics: 1194
+  Functions flagged by multiple tools: 48
+  .keep.cpp files: 176, raw .cpp files: 0
+
+====================================================================================================
+DETAILED FINDINGS
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_CScript_step_FUN_0055a810  [.keep] [Clang-Tidy (quick)]
+  File: core/script.cpp  (101 diagnostics)
+
+  Line  313: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  316: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  319: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  322: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  325: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  328: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  330: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  333: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  336: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  339: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  342: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  345: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  348: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  352: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  356: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  358: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  360: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  362: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  365: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  368: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  372: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  376: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  379: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  382: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  387: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  392: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  397: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  418: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  430: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  444: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  444: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  533: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  548: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  741: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  788: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  805: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  879: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  907: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  907: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 1022: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1085: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1085: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line 1137: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1265: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1325: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1364: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1498: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1604: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 1638: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1771: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1799: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1844: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1844: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 1891: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1910: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 1945: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2042: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2095: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2129: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2150: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 2170: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2170: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line 2228: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2274: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2300: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 2319: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2385: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2451: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2451: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line 2489: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2489: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 2565: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2639: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2639: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line 2671: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2687: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2687: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 2814: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2814: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 2839: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2861: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2879: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 2911: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2931: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 2980: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 3064: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 3097: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 3097: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 3145: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 3145: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 3187: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 3208: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 3230: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 3230: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 3260: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 3280: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 3297: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 3297: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 3312: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 3312: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 3338: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_event.cpp_CEventList_executeCommand_FUN_004aacc0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/event.cpp  (78 diagnostics)
+
+  Line  135: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  256: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  256: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  263: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  263: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  266: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  316: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  316: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  383: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  383: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line  383: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  419: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  419: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  440: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  440: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  440: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  576: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  576: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  576: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  670: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  670: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  725: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  725: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  725: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  732: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  732: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  732: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  738: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  738: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  841: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  841: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  861: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  879: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  879: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  916: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  916: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  966: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  991: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  991: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1035: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1035: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1139: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1139: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 1139: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1207: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1207: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1244: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1244: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line 1283: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1283: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line 1319: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1319: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line 1319: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1371: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1371: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1479: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1479: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1589: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1589: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 1589: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1668: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1668: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1749: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1749: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 1783: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1783: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1912: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1912: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1938: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1938: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 1985: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1985: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 2063: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2063: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 2075: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2075: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 2088: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 2088: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+
+----------------------------------------------------------------------------------------------------
+core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/skeledit.cpp  (50 diagnostics)
+
+  Line  321: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  507: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  531: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  531: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  580: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  580: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  606: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  606: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  636: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  644: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  644: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  717: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  717: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  743: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  743: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  774: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  774: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  796: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  805: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  805: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  828: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  829: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  829: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  883: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line  883: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  922: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  981: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  981: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1055: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1055: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line 1110: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 1155: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1155: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 1181: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1181: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1185: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 1189: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 1228: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1228: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 1263: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line 1606: [bugprone-chained-comparison] chained comparison 'v0 != v1 < v2' may generate unintended results, use parentheses to specify order of evaluation or a logical operator to separate comparison expressions
+  Line 1692: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1692: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1717: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 1718: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 1743: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1780: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line 1780: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line 1790: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 1804: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/dmodel.cpp  (38 diagnostics)
+
+  Line  206: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  206: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  208: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  229: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  229: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  371: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  371: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  371: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  377: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  379: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  381: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  464: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  477: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  480: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  513: [selfAssignment] Redundant assignment of 'pCVar13' to itself.
+  Line  518: [selfAssignment] Redundant assignment of 'pCVar13' to itself.
+  Line  542: [uninitvar] Uninitialized variable: local_ca8
+  Line  695: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  695: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  696: [legacyUninitvar] Uninitialized variable: local_16c
+  Line  696: [legacyUninitvar] Uninitialized variable: local_160
+  Line  697: [legacyUninitvar] Uninitialized variable: local_170
+  Line  697: [legacyUninitvar] Uninitialized variable: local_164
+  Line  698: [legacyUninitvar] Uninitialized variable: local_174
+  Line  698: [legacyUninitvar] Uninitialized variable: local_168
+  Line  732: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  732: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  734: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  734: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  736: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  736: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  774: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  774: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  796: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  796: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  806: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  806: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  820: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_processHotkeys_FUN_004dcee0  [.keep] [Clang-Tidy (quick)]
+  File: core/game.cpp  (30 diagnostics)
+
+  Line   31: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   32: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   33: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   33: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   39: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   61: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   62: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   74: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   75: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   76: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   81: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   85: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   86: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   87: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   99: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  100: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  101: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  112: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  113: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  119: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  139: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  175: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  176: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  181: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  182: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  196: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  234: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  235: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  239: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  240: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_ghoul.cpp_CGhoul_process_FUN_004e6600  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/ghoul.cpp  (30 diagnostics)
+
+  Line  140: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  156: [uninitvar] Uninitialized variable: local_1c0
+  Line  159: [uninitvar] Uninitialized variable: local_1c4
+  Line  216: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  216: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  255: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  255: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  269: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  269: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  287: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  287: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  335: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  449: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  450: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  605: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  649: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  649: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  656: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  656: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  683: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  Line  684: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+  Line  739: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  739: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  770: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  817: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  817: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  886: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  934: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  935: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  935: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_zombie.cpp_CZombie_process_FUN_005f9470  [.keep] [Clang-Tidy (quick)]
+  File: core/zombie.cpp  (29 diagnostics)
+
+  Line  231: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  232: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  278: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  278: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  435: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  435: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  506: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  551: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  602: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  624: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  625: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  630: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  631: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  663: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  664: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  666: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  667: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  698: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  728: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  728: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  743: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  768: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  769: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  792: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  792: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  918: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  945: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  947: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 1032: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180  [.keep] [Clang-Tidy (quick)]
+  File: core/dcamera.cpp  (22 diagnostics)
+
+  Line   86: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   86: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   88: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   88: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   89: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   89: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   93: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   94: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   99: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  100: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  105: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  106: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  107: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  111: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  112: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  119: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  120: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  125: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  126: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  131: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  132: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  133: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_hostage.cpp_CHostage_process_FUN_004f4bd0  [.keep] [Clang-Tidy (quick)]
+  File: core/hostage.cpp  (21 diagnostics)
+
+  Line  107: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  182: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  218: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  233: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  235: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  241: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  255: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  257: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  268: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  270: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  365: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  547: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  614: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  615: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  616: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  630: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  654: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  655: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  668: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  682: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  686: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/skeledit.cpp  (21 diagnostics)
+
+  Line  571: [legacyUninitvar] Uninitialized variable: local_38
+  Line  583: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  583: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  618: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  759: [legacyUninitvar] Uninitialized variable: local_1c8
+  Line  760: [legacyUninitvar] Uninitialized variable: local_1c4
+  Line  761: [legacyUninitvar] Uninitialized variable: local_1cc
+  Line  761: [legacyUninitvar] Uninitialized variable: local_1c0
+  Line  775: [bugprone-swapped-arguments] argument with implicit conversion from 'int' to 'float' followed by argument converted from 'float' to 'int', potentially swapped arguments.
+  Line  806: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  806: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  811: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  Line  939: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  939: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  953: [legacyUninitvar] Uninitialized variable: local_1b8
+  Line  953: [legacyUninitvar] Uninitialized variable: local_1b4
+  Line  954: [legacyUninitvar] Uninitialized variable: local_1b0
+  Line  954: [legacyUninitvar] Uninitialized variable: local_1ac
+  Line  954: [legacyUninitvar] Uninitialized variable: local_1a8
+  Line  983: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 1081: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/setedit.cpp  (19 diagnostics)
+
+  Line  101: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  103: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  104: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  106: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  107: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  123: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  128: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  231: [nullPointer] Possible null pointer dereference: pcVar12
+  Line  388: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+  Line  427: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  461: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  528: [selfAssignment] Redundant assignment of 'pacVar18' to itself.
+  Line  536: [selfAssignment] Redundant assignment of 'pfVar14' to itself.
+  Line  537: [selfAssignment] Redundant assignment of 'pfVar19' to itself.
+  Line  545: [selfAssignment] Redundant assignment of 'piVar20' to itself.
+  Line  560: [selfAssignment] Redundant assignment of 'ppCVar15' to itself.
+  Line  561: [selfAssignment] Redundant assignment of 'ppCVar21' to itself.
+  Line  662: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  664: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+
+----------------------------------------------------------------------------------------------------
+core_werewolf.cpp_CWerewolf_process_FUN_005efde0  [.keep] [Clang-Tidy (quick)]
+  File: core/werewolf.cpp  (18 diagnostics)
+
+  Line  138: [bugprone-branch-clone] repeated branch body in conditional chain
+  Line  149: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  149: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  240: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  261: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  263: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  265: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  267: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  335: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  402: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  480: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  542: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  567: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  588: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  590: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  592: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  594: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  695: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_imp.cpp_CImp_process_FUN_004f9c30  [.keep] [Clang-Tidy (quick)]
+  File: core/imp.cpp  (17 diagnostics)
+
+  Line   76: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   99: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  101: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  102: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  104: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  105: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  118: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  119: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  149: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  149: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  181: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  287: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  288: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  303: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  342: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  366: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  426: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330  [.keep] [Clang-Tidy (quick)]
+  File: core/dmodel.cpp  (16 diagnostics)
+
+  Line  301: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  301: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  303: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  303: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  304: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  304: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  306: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  306: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  328: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  328: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  329: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  329: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  330: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  330: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  407: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  407: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_inv.cpp_CInventory_renderAllItems_FUN_00500690  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/inv.cpp  (16 diagnostics)
+
+  Line  108: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  108: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  174: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  174: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  191: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  208: [selfAssignment] Redundant assignment of 'pcVar10' to itself.
+  Line  213: [selfAssignment] Redundant assignment of 'pcVar10' to itself.
+  Line  314: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  314: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  328: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  328: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  344: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  344: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  354: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  354: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  368: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_inv.cpp_getItemModel_FUN_004fcda0  [.keep] [Clang-Tidy (quick)]
+  File: core/inv.cpp  (16 diagnostics)
+
+  Line   20: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   21: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   22: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   23: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   24: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   25: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   26: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   27: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   28: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   29: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   30: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   31: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   32: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   33: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   34: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   35: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0  [.keep] [Cppcheck (quick)]
+  File: core/skeleton.cpp  (15 diagnostics)
+
+  Line  128: [uninitvar] Uninitialized variable: auStack_248
+  Line  129: [uninitvar] Uninitialized variable: fStack_244
+  Line  130: [uninitvar] Uninitialized variable: fStack_240
+  Line  175: [legacyUninitvar] Uninitialized variable: afStack_c8[0]
+  Line  189: [legacyUninitvar] Uninitialized variable: afStack_1b8
+  Line  248: [legacyUninitvar] Uninitialized variable: afStack_168[0]
+  Line  262: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  263: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  264: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  265: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  270: [legacyUninitvar] Uninitialized variable: afStack_228
+  Line  283: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  284: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  285: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  286: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+
+----------------------------------------------------------------------------------------------------
+core_stranger.cpp_CStranger_processFrame_FUN_005bb960  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/stranger.cpp  (15 diagnostics)
+
+  Line  178: [uninitvar] Uninitialized variable: local_14
+  Line  214: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  216: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  229: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  231: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  303: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  337: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  401: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  402: [bugprone-branch-clone] switch has 2 consecutive identical branches
+  Line  608: [uninitvar] Uninitialized variable: local_25c
+  Line  611: [uninitvar] Uninitialized variable: local_260
+  Line  764: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 1009: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 1021: [bugprone-branch-clone] repeated branch body in conditional chain
+  Line 1080: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_mmx.c_detectIntelProcessor_FUN_00524f4c  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/mmx.c  (14 diagnostics)
+
+  Line   41: [uninitvar] Uninitialized variable: local_9
+  Line   41: [uninitvar] Uninitialized variable: local_8
+  Line   41: [uninitvar] Uninitialized variable: local_7
+  Line   42: [uninitvar] Uninitialized variable: local_6
+  Line   42: [uninitvar] Uninitialized variable: local_5
+  Line   42: [uninitvar] Uninitialized variable: local_4
+  Line   43: [uninitvar] Uninitialized variable: local_3
+  Line   43: [uninitvar] Uninitialized variable: local_2
+  Line   43: [uninitvar] Uninitialized variable: local_1
+  Line   44: [uninitvar] Uninitialized variable: local_13
+  Line   44: [uninitvar] Uninitialized variable: local_12
+  Line   45: [uninitvar] Uninitialized variable: local_11
+  Line   45: [uninitvar] Uninitialized variable: local_10
+  Line   77: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/msnedit.cpp  (14 diagnostics)
+
+  Line  113: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  195: [selfAssignment] Redundant assignment of 'pcVar12' to itself.
+  Line  381: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  382: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  383: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  383: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  385: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  385: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  506: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  681: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  699: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  711: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  718: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  854: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_dracbrid.cpp_CDraculaBride_process_FUN_00484410  [.keep] [Clang-Tidy (quick)]
+  File: core/dracbrid.cpp  (12 diagnostics)
+
+  Line  129: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  129: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  231: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  244: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  446: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  540: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  606: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  644: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  646: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  647: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  648: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  736: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_fire.cpp_CTrail_render_FUN_004c5e90  [.keep] [Clang-Tidy (quick)]
+  File: core/fire.cpp  (12 diagnostics)
+
+  Line   48: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   49: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   50: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   54: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   55: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   56: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   60: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   61: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   62: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   66: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   67: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   68: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/setedit.cpp  (12 diagnostics)
+
+  Line  151: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  164: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  190: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  230: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  248: [selfAssignment] Redundant assignment of 'pbVar16' to itself.
+  Line  253: [selfAssignment] Redundant assignment of 'pbVar16' to itself.
+  Line  343: [cert-err34-c] 'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line  382: [selfAssignment] Redundant assignment of 'pCVar18' to itself.
+  Line  528: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  596: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  597: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  598: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: engine/fileio.cpp  (12 diagnostics)
+
+  Line  145: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  181: [selfAssignment] Redundant assignment of 'pSVar10' to itself.
+  Line  186: [selfAssignment] Redundant assignment of 'pSVar10' to itself.
+  Line  224: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  254: [selfAssignment] Redundant assignment of 'pcVar12' to itself.
+  Line  259: [selfAssignment] Redundant assignment of 'pcVar12' to itself.
+  Line  320: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  426: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  538: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  576: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  589: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  641: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+
+----------------------------------------------------------------------------------------------------
+core_batman.cpp_CBatman_process_FUN_00416870  [.keep] [Clang-Tidy (quick)]
+  File: core/batman.cpp  (11 diagnostics)
+
+  Line  114: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  127: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  238: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  284: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  290: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  292: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  308: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  345: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  347: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  348: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  349: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_cloth.cpp_CCloth_boneEditor_FUN_0043c880  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/cloth.cpp  (11 diagnostics)
+
+  Line   94: [cert-flp30-c] loop induction expression should not have floating-point type
+  Line  129: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  130: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  131: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  176: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  177: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  178: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  187: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  242: [uninitvar] Uninitialized variable: fStack_550
+  Line  255: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  336: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/dcamera.cpp  (11 diagnostics)
+
+  Line  137: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  194: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  264: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  302: [selfAssignment] Redundant assignment of 'piVar27' to itself.
+  Line  323: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  422: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  428: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  448: [selfAssignment] Redundant assignment of 'puVar28' to itself.
+  Line  460: [selfAssignment] Redundant assignment of 'pSVar24' to itself.
+  Line  475: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  484: [selfAssignment] Redundant assignment of 'iVar16' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_vampboss.cpp_CVampireBoss_process_FUN_005e5970  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/vampboss.cpp  (11 diagnostics)
+
+  Line  167: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  167: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  204: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  205: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  205: [legacyUninitvar] Uninitialized variable: local_b0
+  Line  221: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  222: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  227: [legacyUninitvar] Uninitialized variable: local_b4
+  Line  485: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  521: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  576: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_lightgun.cpp_CLightGun_fire_FUN_00505c70  [.keep] [Clang-Tidy (quick)]
+  File: core/lightgun.cpp  (10 diagnostics)
+
+  Line   92: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  148: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  150: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  152: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  154: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  156: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  158: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  160: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  162: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  164: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_menu.cpp_configureCustomKeyBindings_FUN_005138e0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/menu.cpp  (10 diagnostics)
+
+  Line   71: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   94: [AssignmentIntegerToAddress] Assigning an integer to a pointer is not portable.
+  Line  816: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  816: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  852: [selfAssignment] Redundant assignment of 'pcVar35' to itself.
+  Line  857: [selfAssignment] Redundant assignment of 'pcVar35' to itself.
+  Line  882: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  882: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  900: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  900: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/skeledit.cpp  (10 diagnostics)
+
+  Line  392: [selfAssignment] Redundant assignment of 'pcVar30' to itself.
+  Line  457: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  457: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  459: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  459: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  816: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 1173: [selfAssignment] Redundant assignment of 'pSVar29' to itself.
+  Line 1174: [selfAssignment] Redundant assignment of 'pSVar34' to itself.
+  Line 1191: [selfAssignment] Redundant assignment of 'piVar35' to itself.
+  Line 1218: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: cockpit/pkbitmap.cpp  (9 diagnostics)
+
+  Line   53: [selfAssignment] Redundant assignment of 'pbVar5' to itself.
+  Line   54: [selfAssignment] Redundant assignment of 'pbVar6' to itself.
+  Line   59: [legacyUninitvar] Uninitialized variable: local_28
+  Line   59: [legacyUninitvar] Uninitialized variable: local_24
+  Line   62: [legacyUninitvar] Uninitialized variable: local_20
+  Line   62: [legacyUninitvar] Uninitialized variable: local_1c
+  Line   63: [legacyUninitvar] Uninitialized variable: local_18
+  Line   63: [legacyUninitvar] Uninitialized variable: local_14
+  Line   69: [bugprone-multi-level-implicit-pointer-conversion] multilevel pointer conversion from 'void **' to 'void *', please use explicit cast
+
+----------------------------------------------------------------------------------------------------
+core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/actor.cpp  (9 diagnostics)
+
+  Line   71: [uninitvar] Uninitialized variable: local_38
+  Line   90: [uninitvar] Uninitialized variable: local_34
+  Line  158: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  173: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  173: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  199: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  263: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  264: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  276: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
+core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/skeledit.cpp  (9 diagnostics)
+
+  Line  195: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  197: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  241: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  266: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  413: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line  414: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line  524: [selfAssignment] Redundant assignment of 'pSVar17' to itself.
+  Line  525: [selfAssignment] Redundant assignment of 'pSVar21' to itself.
+  Line  606: [selfAssignment] Redundant assignment of 'pCVar8' to itself.
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: engine/fileio.cpp  (9 diagnostics)
+
+  Line   96: [selfAssignment] Redundant assignment of 'pSVar8' to itself.
+  Line  101: [selfAssignment] Redundant assignment of 'pSVar8' to itself.
+  Line  139: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  167: [selfAssignment] Redundant assignment of 'pcVar11' to itself.
+  Line  172: [selfAssignment] Redundant assignment of 'pcVar11' to itself.
+  Line  233: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  334: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  444: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  492: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+
+----------------------------------------------------------------------------------------------------
+core_batcreat.cpp_CBatCreature_process_FUN_00415470  [.keep] [Clang-Tidy (quick)]
+  File: core/batcreat.cpp  (8 diagnostics)
+
+  Line   94: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  123: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  163: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  165: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  167: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  216: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  236: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  262: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_gabriela.cpp_CGabriella_process_FUN_004d2ea0  [.keep] [Clang-Tidy (quick)]
+  File: core/gabriela.cpp  (8 diagnostics)
+
+  Line  286: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  384: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  459: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  536: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  559: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  563: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  578: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  615: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_editParameterValue_FUN_00562920  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/script.cpp  (8 diagnostics)
+
+  Line   70: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line   79: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  101: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  104: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  113: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  559: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  696: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
+  Line  701: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0  [.keep] [Clang-Tidy (quick)]
+  File: core/setdir.cpp  (8 diagnostics)
+
+  Line  105: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  106: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  107: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  127: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  127: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  184: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  185: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  186: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/setedit.cpp  (8 diagnostics)
+
+  Line  120: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  137: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  186: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line  213: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  237: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  237: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  248: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  248: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680  [.keep] [Clang-Tidy (quick)]
+  File: core/stranger.cpp  (8 diagnostics)
+
+  Line   76: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   78: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   92: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  145: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  146: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  156: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  160: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  220: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_succubus.cpp_CSuccubus_process_FUN_005c6e90  [.keep] [Clang-Tidy (quick)]
+  File: core/succubus.cpp  (8 diagnostics)
+
+  Line  158: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  159: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  161: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  163: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  241: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  241: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  307: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  307: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_writeSpatialTree_FUN_0045a200  [.keep] [Clang-Tidy (quick)]
+  File: shape/design.c  (8 diagnostics)
+
+  Line   22: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   22: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   23: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   23: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   24: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   24: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   25: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   25: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00  [.keep] [Clang-Tidy (quick)]
+  File: core/enemy.cpp  (7 diagnostics)
+
+  Line   49: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   74: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   76: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   82: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  122: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  124: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  139: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_flame.cpp_CFlame_process_FUN_004c9c00  [.keep] [Clang-Tidy (quick)]
+  File: core/flame.cpp  (7 diagnostics)
+
+  Line   41: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   56: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   58: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  102: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  102: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  132: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  132: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/game.cpp  (7 diagnostics)
+
+  Line  245: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  271: [selfAssignment] Redundant assignment of 'iVar19' to itself.
+  Line  567: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  570: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  573: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 1040: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line 1719: [selfAssignment] Redundant assignment of 'pbVar21' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0  [.keep] [Clang-Tidy (quick)]
+  File: core/msnedit.cpp  (7 diagnostics)
+
+  Line   39: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  107: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  132: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  151: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  189: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  212: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  279: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+
+----------------------------------------------------------------------------------------------------
+core_sentinel.cpp_CSentinel_process_FUN_00568030  [.keep] [Clang-Tidy (quick)]
+  File: core/sentinel.cpp  (7 diagnostics)
+
+  Line   96: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   98: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   99: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  101: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  102: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  117: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  174: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+
+----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/set.cpp  (7 diagnostics)
+
+  Line  319: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  320: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  321: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  350: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  351: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  352: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  567: [selfAssignment] Redundant assignment of 'iVar13' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_smiley.cpp_CSmiley_process_FUN_005a2800  [.keep] [Clang-Tidy (quick)]
+  File: core/smiley.cpp  (7 diagnostics)
+
+  Line   78: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  161: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  224: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  225: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  227: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  229: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  374: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: sound/sndmain.cpp  (7 diagnostics)
+
+  Line   77: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  109: [nullPointer] Possible null pointer dereference: pcVar11
+  Line  125: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  147: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  166: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  168: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  194: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+----------------------------------------------------------------------------------------------------
+core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/actor.cpp  (6 diagnostics)
+
+  Line  102: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  118: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  387: [objectIndex] The address of local variable 'local_ac' is accessed at non-zero index.
+  Line  406: [objectIndex] The address of local variable 'local_ac' is accessed at non-zero index.
+  Line  424: [objectIndex] The address of local variable 'local_110' is accessed at non-zero index.
+  Line  443: [objectIndex] The address of local variable 'local_110' is accessed at non-zero index.
+
+----------------------------------------------------------------------------------------------------
+core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppcheck (quick)]
+  File: core/actor.cpp  (6 diagnostics)
+
+  Line   83: [selfAssignment] Redundant assignment of 'pCVar6' to itself.
+  Line   96: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+  Line   97: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+  Line   98: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+  Line  114: [selfAssignment] Redundant assignment of 'pCVar7' to itself.
+  Line  115: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0  [.keep] [Clang-Tidy (quick)]
+  File: core/dcamera.cpp  (6 diagnostics)
+
+  Line   75: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   75: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   77: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   77: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   79: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   79: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_dskybox.cpp_renderSkyDome_FUN_004901f0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/dskybox.cpp  (6 diagnostics)
+
+  Line   87: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   87: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   88: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   88: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  163: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  168: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0  [.keep] [Cppcheck (quick)]
+  File: core/dstrender.cpp  (6 diagnostics)
+
+  Line   64: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   67: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   78: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   81: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  172: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  175: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_mobster.cpp_CMobster_process_FUN_00525840  [.keep] [Clang-Tidy (quick)]
+  File: core/mobster.cpp  (6 diagnostics)
+
+  Line  116: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  117: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  143: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  179: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  242: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  554: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_processActors_FUN_0056b810  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/set.cpp  (6 diagnostics)
+
+  Line  112: [legacyUninitvar] Uninitialized variable: local_3c
+  Line  116: [legacyUninitvar] Uninitialized variable: iStack_18
+  Line  128: [uninitvar] Uninitialized variable: fStack_5c
+  Line  158: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  186: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  208: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/setedit.cpp  (6 diagnostics)
+
+  Line  183: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  183: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line  202: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  202: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  303: [selfAssignment] Redundant assignment of 'pcVar10' to itself.
+  Line  308: [selfAssignment] Redundant assignment of 'pcVar10' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/skeledit.cpp  (6 diagnostics)
+
+  Line   16: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line   16: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line   19: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line   19: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line   27: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line   27: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+----------------------------------------------------------------------------------------------------
+core_sound.cpp_playSfxInternal_FUN_005b1fd0  [.keep] [Clang-Tidy (quick)]
+  File: core/sound.cpp  (6 diagnostics)
+
+  Line   56: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line   56: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line  223: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  223: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line  236: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  236: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+
+----------------------------------------------------------------------------------------------------
+core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70  [.keep] [Clang-Tidy (quick)]
+  File: core/charactr.cpp  (5 diagnostics)
+
+  Line   40: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   40: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   64: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   68: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  113: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/dcamera.cpp  (5 diagnostics)
+
+  Line  115: [selfAssignment] Redundant assignment of 'pCVar3' to itself.
+  Line  147: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  147: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  149: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  150: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_motion.cpp_CMotionController_render_FUN_0052e700  [.keep] [Clang-Tidy (quick)]
+  File: core/motion.cpp  (5 diagnostics)
+
+  Line   31: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   34: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   35: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   36: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   45: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_platfrm.cpp_CPlatform_process_FUN_0054cc30  [.keep] [Clang-Tidy (quick)]
+  File: core/platfrm.cpp  (5 diagnostics)
+
+  Line   71: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  269: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  277: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  300: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  302: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/skeledit.cpp  (5 diagnostics)
+
+  Line  194: [selfAssignment] Redundant assignment of 'pSVar11' to itself.
+  Line  195: [selfAssignment] Redundant assignment of 'pSVar14' to itself.
+  Line  202: [selfAssignment] Redundant assignment of 'puVar12' to itself.
+  Line  243: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  243: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0  [.keep] [Cppcheck (quick)]
+  File: core/skeleton.cpp  (5 diagnostics)
+
+  Line   39: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  Line   40: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  Line   51: [uninitvar] Uninitialized variable: fStack_58
+  Line   52: [uninitvar] Uninitialized variable: fStack_54
+  Line   53: [uninitvar] Uninitialized variable: fStack_50
+
+----------------------------------------------------------------------------------------------------
+core_sound.cpp_updateListeners_FUN_005b1870  [.keep] [Cppcheck (quick)]
+  File: core/sound.cpp  (5 diagnostics)
+
+  Line   69: [uninitvar] Uninitialized variable: local_c4
+  Line   70: [uninitvar] Uninitialized variable: local_cc
+  Line   71: [uninitvar] Uninitialized variable: local_c8
+  Line  118: [legacyUninitvar] Uninitialized variable: local_c8
+  Line  118: [legacyUninitvar] Uninitialized variable: local_c4
+
+----------------------------------------------------------------------------------------------------
+core_zombie.cpp_CZombie_processPickup_FUN_005fb530  [.keep] [Clang-Tidy (quick)]
+  File: core/zombie.cpp  (5 diagnostics)
+
+  Line   94: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  102: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  104: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  160: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  162: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: engine/fileio.cpp  (5 diagnostics)
+
+  Line   41: [selfAssignment] Redundant assignment of 'pcVar6' to itself.
+  Line   46: [selfAssignment] Redundant assignment of 'pcVar6' to itself.
+  Line   76: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  102: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  143: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0  [.keep] [Clang-Tidy (quick)]
+  File: core/charactr.cpp  (4 diagnostics)
+
+  Line   81: [cert-flp30-c] loop induction expression should not have floating-point type
+  Line  117: [bugprone-integer-division] result of integer division used in a floating point context; possible loss of precision
+  Line  126: [cert-flp30-c] loop induction expression should not have floating-point type
+  Line  162: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_event.cpp_parseVectorLocation_FUN_004aa530  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/event.cpp  (4 diagnostics)
+
+  Line   18: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line   18: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+  Line   25: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line   25: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+core_icepick.cpp_CIcePick_process_FUN_004f80b0  [.keep] [Clang-Tidy (quick)]
+  File: core/icepick.cpp  (4 diagnostics)
+
+  Line  147: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  162: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  193: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  203: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_netgame.cpp_CNetGame_runLobby_FUN_00541390  [.keep] [Clang-Tidy (quick)]
+  File: core/netgame.cpp  (4 diagnostics)
+
+  Line   50: [cert-msc30-c] rand() has limited randomness; use C++11 random library instead
+  Line  116: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  116: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  282: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_scat.cpp_CScat_process_FUN_005571f0  [.keep] [Clang-Tidy (quick)]
+  File: core/scat.cpp  (4 diagnostics)
+
+  Line   91: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  129: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  130: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  308: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_CScript_processEditorInput_FUN_00565130  [.keep] [Clang-Tidy (quick)]
+  File: core/script.cpp  (4 diagnostics)
+
+  Line  150: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  166: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  283: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  283: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/set.cpp  (4 diagnostics)
+
+  Line   86: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   87: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   88: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  109: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50  [.keep] [Clang-Tidy (quick)]
+  File: core/set.cpp  (4 diagnostics)
+
+  Line  185: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  298: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  299: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  300: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50  [.keep] [Clang-Tidy (quick)]
+  File: core/setedit.cpp  (4 diagnostics)
+
+  Line   82: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   82: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  106: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  129: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0  [.keep] [Clang-Tidy (quick)]
+  File: core/skeledit.cpp  (4 diagnostics)
+
+  Line   80: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   80: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   82: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   82: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_sound.cpp_CSound_process_FUN_005b2fd0  [.keep] [Clang-Tidy (quick)]
+  File: core/sound.cpp  (4 diagnostics)
+
+  Line   77: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   79: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  219: [cert-msc30-c] rand() has limited randomness; use C++11 random library instead
+  Line  221: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+
+----------------------------------------------------------------------------------------------------
+core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20  [.keep] [Clang-Tidy (quick)]
+  File: core/stranger.cpp  (4 diagnostics)
+
+  Line  128: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  198: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  198: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  214: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0  [.keep] [Clang-Tidy (quick)]
+  File: core/svetlana.cpp  (4 diagnostics)
+
+  Line   63: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   64: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   95: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  140: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_showPolygonDetailsList_FUN_0045d9c0  [.keep] [Cppcheck (quick)]
+  File: shape/design.c  (4 diagnostics)
+
+  Line   55: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
+  Line   60: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
+  Line  103: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
+  Line  108: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610  [.keep] [Clang-Tidy (quick)]
+  File: core/bodypart.cpp  (3 diagnostics)
+
+  Line   23: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   24: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   41: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90  [.keep] [Clang-Tidy (quick)]
+  File: core/boneguy.cpp  (3 diagnostics)
+
+  Line  217: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  391: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  422: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/dmodel.cpp  (3 diagnostics)
+
+  Line  134: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  223: [arrayIndexOutOfBounds] Array 'local_f0[4]' accessed at index 6, which is out of bounds.
+  Line  224: [arrayIndexOutOfBounds] Array 'local_f0[4]' accessed at index 9, which is out of bounds.
+
+----------------------------------------------------------------------------------------------------
+core_drone.cpp_CDrone_process_FUN_0048ec70  [.keep] [Clang-Tidy (quick)]
+  File: core/drone.cpp  (3 diagnostics)
+
+  Line   90: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  233: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  257: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890  [.keep] [Clang-Tidy (quick)]
+  File: core/gabriela.cpp  (3 diagnostics)
+
+  Line  130: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  130: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  144: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_loadGame_FUN_004e12b0  [.keep] [Clang-Tidy (quick)]
+  File: core/game.cpp  (3 diagnostics)
+
+  Line   50: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line   56: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   96: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_processFrame_FUN_004da100  [.keep] [Clang-Tidy (quick)]
+  File: core/game.cpp  (3 diagnostics)
+
+  Line  153: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  154: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  168: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_saveGame_FUN_004e0cd0  [.keep] [Clang-Tidy (quick)]
+  File: core/game.cpp  (3 diagnostics)
+
+  Line   39: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line   44: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  166: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+
+----------------------------------------------------------------------------------------------------
+core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00  [.keep] [Clang-Tidy (quick)]
+  File: core/gargoyle.cpp  (3 diagnostics)
+
+  Line  100: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  296: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  296: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_haystack.cpp_CHaystack_process_FUN_004f0e40  [.keep] [Clang-Tidy (quick)]
+  File: core/haystack.cpp  (3 diagnostics)
+
+  Line   85: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  130: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  268: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004f33b0  [.keep] [Clang-Tidy (quick)]
+  File: core/hero.cpp  (3 diagnostics)
+
+  Line   46: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   54: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   67: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0  [.keep] [Clang-Tidy (quick)]
+  File: core/msnedit.cpp  (3 diagnostics)
+
+  Line   91: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   93: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line   94: [bugprone-branch-clone] switch has 2 consecutive identical branches
+
+----------------------------------------------------------------------------------------------------
+core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0  [.keep] [Clang-Tidy (quick)]
+  File: core/msnedit.cpp  (3 diagnostics)
+
+  Line   52: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   58: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   58: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_CScript_loadScript_FUN_00559f80  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/script.cpp  (3 diagnostics)
+
+  Line   53: [selfAssignment] Redundant assignment of 'pcVar12' to itself.
+  Line   58: [selfAssignment] Redundant assignment of 'pcVar12' to itself.
+  Line  153: [cert-env33-c] calling 'system' uses a command processor
+
+----------------------------------------------------------------------------------------------------
+core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470  [.keep] [Clang-Tidy (quick)]
+  File: core/setcolid.cpp  (3 diagnostics)
+
+  Line   94: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   95: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   96: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  [.keep] [Cppcheck (quick)]
+  File: core/setedit.cpp  (3 diagnostics)
+
+  Line   95: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   96: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  146: [selfAssignment] Redundant assignment of 'iVar2' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00  [.keep] [Cppcheck (quick)]
+  File: core/skeledit.cpp  (3 diagnostics)
+
+  Line   60: [uninitvar] Uninitialized variable: local_10e
+  Line   96: [uninitvar] Uninitialized variable: local_68
+  Line  122: [uninitvar] Uninitialized variable: local_64
+
+----------------------------------------------------------------------------------------------------
+support_codec.cpp_readBitsFromStream_FUN_0043e530  [.keep] [Cppcheck (quick)]
+  File: support/codec.cpp  (3 diagnostics)
+
+  Line   25: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
+  Line   40: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
+  Line   61: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0  [.keep] [Cppcheck (quick)]
+  File: cockpit/ckptutil.c  (2 diagnostics)
+
+  Line  170: [selfAssignment] Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
+  Line  283: [selfAssignment] Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
+
+----------------------------------------------------------------------------------------------------
+cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20  [.keep] [Cppcheck (quick)]
+  File: cockpit/pkbitmap.cpp  (2 diagnostics)
+
+  Line   28: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   40: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_baron.cpp_CBaron_process_FUN_00412e80  [.keep] [Clang-Tidy (quick)]
+  File: core/baron.cpp  (2 diagnostics)
+
+  Line   70: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  102: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+
+----------------------------------------------------------------------------------------------------
+core_biggs.cpp_CBiggs_process_FUN_00418700  [.keep] [Clang-Tidy (quick)]
+  File: core/biggs.cpp  (2 diagnostics)
+
+  Line  120: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  120: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc0  [.keep] [Clang-Tidy (quick)]
+  File: core/bugs.cpp  (2 diagnostics)
+
+  Line   45: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   61: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_colonel.cpp_CColonel_process_FUN_0043fa00  [.keep] [Clang-Tidy (quick)]
+  File: core/colonel.cpp  (2 diagnostics)
+
+  Line   86: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  121: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_cow.cpp_CZombieCow_process_FUN_00444310  [.keep] [Clang-Tidy (quick)]
+  File: core/cow.cpp  (2 diagnostics)
+
+  Line   80: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  208: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310  [.keep] [Cppcheck (quick)]
+  File: core/dcamera.cpp  (2 diagnostics)
+
+  Line   32: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   38: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_dog.cpp_CZombieDog_process_FUN_0047f140  [.keep] [Clang-Tidy (quick)]
+  File: core/dog.cpp  (2 diagnostics)
+
+  Line   90: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  264: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_door.cpp_CDoor_process_FUN_004800c0  [.keep] [Clang-Tidy (quick)]
+  File: core/door.cpp  (2 diagnostics)
+
+  Line   59: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line   95: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_drip.cpp_CDrip_process_FUN_0048e2a0  [.keep] [Clang-Tidy (quick)]
+  File: core/drip.cpp  (2 diagnostics)
+
+  Line  119: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  119: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_runGameSession_FUN_004daf80  [.keep] [Clang-Tidy (quick)]
+  File: core/game.cpp  (2 diagnostics)
+
+  Line  135: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  145: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910  [.keep] [Cppcheck (quick)]
+  File: core/game.cpp  (2 diagnostics)
+
+  Line   73: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
+  Line   78: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_larva.cpp_CLarva_process_FUN_00503080  [.keep] [Clang-Tidy (quick)]
+  File: core/larva.cpp  (2 diagnostics)
+
+  Line   93: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  316: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_main.c_displayErrorAndQuit_FUN_00506f10  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/main.c  (2 diagnostics)
+
+  Line   10: [cert-dcl50-cpp] do not define a C-style variadic function; consider using a function parameter pack or currying instead
+  Line   83: [nullPointerArithmetic] Pointer addition with NULL pointer.
+
+----------------------------------------------------------------------------------------------------
+core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0  [.keep] [Cppcheck (quick)]
+  File: core/mimic.cpp  (2 diagnostics)
+
+  Line  113: [selfAssignment] Redundant assignment of 'pCVar9' to itself.
+  Line  114: [selfAssignment] Redundant assignment of 'pCVar10' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_mimic.cpp_CMimic_setupCloth_FUN_00520500  [.keep] [Cppcheck (quick)]
+  File: core/mimic.cpp  (2 diagnostics)
+
+  Line   46: [selfAssignment] Redundant assignment of 'piVar4' to itself.
+  Line   47: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0  [.keep] [Cppcheck (quick)]
+  File: core/mission.cpp  (2 diagnostics)
+
+  Line  104: [selfAssignment] Redundant assignment of 'pcVar10' to itself.
+  Line  161: [selfAssignment] Redundant assignment of 'puVar8' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030  [.keep] [Clang-Tidy (quick)]
+  File: core/msnedit.cpp  (2 diagnostics)
+
+  Line   66: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  137: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510  [.keep] [Clang-Tidy (quick)]
+  File: core/msnedit.cpp  (2 diagnostics)
+
+  Line   66: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  137: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0  [.keep] [Clang-Tidy (quick)]
+  File: core/msnedit.cpp  (2 diagnostics)
+
+  Line  116: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  118: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/msnedit.cpp  (2 diagnostics)
+
+  Line   61: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line  143: [selfAssignment] Redundant assignment of 'pCVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330  [.keep] [Cppcheck (quick)]
+  File: core/msnedit.cpp  (2 diagnostics)
+
+  Line   44: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
+  Line   49: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_msnedit.cpp_drawMotionBar_FUN_00536e20  [.keep] [Clang-Tidy (quick)]
+  File: core/msnedit.cpp  (2 diagnostics)
+
+  Line   36: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  107: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_scat.cpp_CScat_updateWeaponState_FUN_00558060  [.keep] [Clang-Tidy (quick)]
+  File: core/scat.cpp  (2 diagnostics)
+
+  Line   27: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   96: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_parseBodyPartMask_FUN_00559730  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/script.cpp  (2 diagnostics)
+
+  Line   30: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line   30: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0  [.keep] [Cppcheck (quick)]
+  File: core/set.cpp  (2 diagnostics)
+
+  Line  122: [legacyUninitvar] Uninitialized variable: fStack_68
+  Line  147: [selfAssignment] Redundant assignment of 'pCVar12' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_load_FUN_00569410  [.keep] [Cppcheck (quick)]
+  File: core/set.cpp  (2 diagnostics)
+
+  Line   80: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+  Line  410: [nullPointer] Possible null pointer dereference: pcVar5
+
+----------------------------------------------------------------------------------------------------
+core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/setedit.cpp  (2 diagnostics)
+
+  Line  185: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  332: [nullPointer] Possible null pointer dereference: p_Stack_20
+
+----------------------------------------------------------------------------------------------------
+core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0  [.keep] [Clang-Tidy (quick)]
+  File: core/setedit.cpp  (2 diagnostics)
+
+  Line   30: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line   32: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+
+----------------------------------------------------------------------------------------------------
+core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0  [.keep] [Cppcheck (quick)]
+  File: core/setedit.cpp  (2 diagnostics)
+
+  Line  276: [selfAssignment] Redundant assignment of 'pcVar9' to itself.
+  Line  281: [selfAssignment] Redundant assignment of 'pcVar9' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90  [.keep] [Clang-Tidy (quick)]
+  File: core/setutil.cpp  (2 diagnostics)
+
+  Line   83: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   83: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_setutil.cpp_C3DSCamera_load_FUN_00585420  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/setutil.cpp  (2 diagnostics)
+
+  Line   23: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line   23: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+core_skeledit.cpp_CDeformableModel_importGeometryS3D_FUN_0058b660  [.keep] [Clang-Tidy (quick)]
+  File: core/skeledit.cpp  (2 diagnostics)
+
+  Line   87: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   89: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50  [.keep] [Cppcheck (quick)]
+  File: core/skeleton.cpp  (2 diagnostics)
+
+  Line  121: [legacyUninitvar] Uninitialized variable: afStack_120[0]
+  Line  135: [legacyUninitvar] Uninitialized variable: afStack_f0
+
+----------------------------------------------------------------------------------------------------
+core_sound.cpp_processTrainSounds_FUN_005b2770  [.keep] [Clang-Tidy (quick)]
+  File: core/sound.cpp  (2 diagnostics)
+
+  Line  143: [cert-msc30-c] rand() has limited randomness; use C++11 random library instead
+  Line  144: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+
+----------------------------------------------------------------------------------------------------
+core_stranger.cpp_CStranger_handleActionButton_FUN_005c5b90  [.keep] [Clang-Tidy (quick)]
+  File: core/stranger.cpp  (2 diagnostics)
+
+  Line   24: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  101: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150  [.keep] [Clang-Tidy (quick)]
+  File: core/stranger.cpp  (2 diagnostics)
+
+  Line  160: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  216: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_tommygun.cpp_CTommyGun_process_FUN_005de360  [.keep] [Clang-Tidy (quick)]
+  File: core/tommygun.cpp  (2 diagnostics)
+
+  Line   43: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   43: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/vehicle.cpp  (2 diagnostics)
+
+  Line   58: [uninitvar] Uninitialized variable: in_stack_0000000c
+  Line   69: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_vessel.cpp_CCryptVessel_renderTransparent_FUN_005e98b0  [.keep] [Clang-Tidy (quick)]
+  File: core/vessel.cpp  (2 diagnostics)
+
+  Line   46: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   46: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_xform.cpp_clipPolygonStage1_FUN_005f7ed0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/xform.cpp  (2 diagnostics)
+
+  Line   43: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line   75: [selfAssignment] Redundant assignment of 'iVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_xform.cpp_clipPolygonStage2_FUN_005f8040  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/xform.cpp  (2 diagnostics)
+
+  Line   43: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line   75: [selfAssignment] Redundant assignment of 'iVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_xform.cpp_clipPolygonStage3_FUN_005f81c0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/xform.cpp  (2 diagnostics)
+
+  Line   42: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line   75: [selfAssignment] Redundant assignment of 'iVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_xform.cpp_clipPolygonStage4_FUN_005f8330  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/xform.cpp  (2 diagnostics)
+
+  Line   42: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line   75: [selfAssignment] Redundant assignment of 'iVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920  [.keep] [Cppcheck (quick)]
+  File: engine/fileio.cpp  (2 diagnostics)
+
+  Line  104: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
+  Line  109: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030  [.keep] [Cppcheck (quick)]
+  File: engine/fileio.cpp  (2 diagnostics)
+
+  Line   49: [selfAssignment] Redundant assignment of 'pcVar6' to itself.
+  Line   54: [selfAssignment] Redundant assignment of 'pcVar6' to itself.
+
+----------------------------------------------------------------------------------------------------
+cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70  [.keep] [Cppcheck (quick)]
+  File: cockpit/pkbitmap.cpp  (1 diagnostics)
+
+  Line   61: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190  [.keep] [Cppcheck (quick)]
+  File: cockpit/pkbitmap.cpp  (1 diagnostics)
+
+  Line  110: [selfAssignment] Redundant assignment of 'puVar10' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_actor.cpp_CDemonActor_load_FUN_0040b050  [.keep] [Clang-Tidy (quick)]
+  File: core/actor.cpp  (1 diagnostics)
+
+  Line   63: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280  [.keep] [Cppcheck (quick)]
+  File: core/bodypart.cpp  (1 diagnostics)
+
+  Line   46: [selfAssignment] Redundant assignment of 'iVar3' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0  [.keep] [Clang-Tidy (quick)]
+  File: core/charactr.cpp  (1 diagnostics)
+
+  Line  114: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40  [.keep] [Cppcheck (quick)]
+  File: core/charactr.cpp  (1 diagnostics)
+
+  Line  118: [selfAssignment] Redundant assignment of 'pSVar12' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_charactr.cpp_CCharacter_setup_FUN_00428140  [.keep] [Cppcheck (quick)]
+  File: core/charactr.cpp  (1 diagnostics)
+
+  Line   92: [selfAssignment] Redundant assignment of 'pCVar4' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_curtain.cpp_CCurtain_process_FUN_0044a920  [.keep] [Clang-Tidy (quick)]
+  File: core/curtain.cpp  (1 diagnostics)
+
+  Line   70: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_fire.cpp_CMuzzleFlash_render_FUN_004c1a30  [.keep] [Clang-Tidy (quick)]
+  File: core/fire.cpp  (1 diagnostics)
+
+  Line   35: [cert-msc30-c] rand() has limited randomness; use C++11 random library instead
+
+----------------------------------------------------------------------------------------------------
+core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80  [.keep] [Clang-Tidy (quick)]
+  File: core/gabriela.cpp  (1 diagnostics)
+
+  Line  195: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20  [.keep] [Clang-Tidy (quick)]
+  File: core/hotdemon.cpp  (1 diagnostics)
+
+  Line  117: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+
+----------------------------------------------------------------------------------------------------
+core_inv.cpp_CInventory_load_FUN_004ff400  [.keep] [Cppcheck (quick)]
+  File: core/inv.cpp  (1 diagnostics)
+
+  Line   65: [selfAssignment] Redundant assignment of 'puVar8' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0  [.keep] [Clang-Tidy (quick)]
+  File: core/mimic.cpp  (1 diagnostics)
+
+  Line   79: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_mission.cpp_CDemonMission_loadActor_FUN_00523990  [.keep] [Cppcheck (quick)]
+  File: core/mission.cpp  (1 diagnostics)
+
+  Line   64: [legacyUninitvar] Uninitialized variable: local_e1
+
+----------------------------------------------------------------------------------------------------
+core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0  [.keep] [Clang-Tidy (quick)]
+  File: core/msnedit.cpp  (1 diagnostics)
+
+  Line   53: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_CScript_executeContextAction_FUN_00565d00  [.keep] [Clang-Tidy (quick)]
+  File: core/script.cpp  (1 diagnostics)
+
+  Line   30: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+
+----------------------------------------------------------------------------------------------------
+core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320  [.keep] [Clang-Tidy (quick)]
+  File: core/setedit.cpp  (1 diagnostics)
+
+  Line   28: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+
+----------------------------------------------------------------------------------------------------
+core_setedit.cpp_CDemonSet_save_FUN_0057a2a0  [.keep] [Cppcheck (quick)]
+  File: core/setedit.cpp  (1 diagnostics)
+
+  Line  185: [nullPointer] Possible null pointer dereference: pcVar4
+
+----------------------------------------------------------------------------------------------------
+core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0  [.keep] [Clang-Tidy (quick)]
+  File: core/setedit.cpp  (1 diagnostics)
+
+  Line  394: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240  [.keep] [Cppcheck (quick)]
+  File: core/skeledit.cpp  (1 diagnostics)
+
+  Line   58: [identicalInnerCondition] Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970  [.keep] [Cppcheck (quick)]
+  File: core/skeleton.cpp  (1 diagnostics)
+
+  Line  197: [arrayIndexOutOfBounds] Array 'local_78[2]' accessed at index 2, which is out of bounds.
+
+----------------------------------------------------------------------------------------------------
+core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0  [.keep] [Clang-Tidy (quick)]
+  File: core/texlist.cpp  (1 diagnostics)
+
+  Line   28: [] declaration uses identifier '_Stack_1e0', which is a reserved identifier [cert-dcl37-c,cert-dcl51-cpp]
+
+----------------------------------------------------------------------------------------------------
+core_texlist.cpp_CTextureList_load_FUN_005dbe00  [.keep] [Clang-Tidy (quick)]
+  File: core/texlist.cpp  (1 diagnostics)
+
+  Line  119: [cert-err34-c] 'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+----------------------------------------------------------------------------------------------------
+core_xform.cpp_slerpQuaternion_FUN_005f77e0  [.keep] [Clang-Tidy (quick)]
+  File: core/xform.cpp  (1 diagnostics)
+
+  Line   37: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60  [.keep] [Cppcheck (quick)]
+  File: engine/fileio.cpp  (1 diagnostics)
+
+  Line   52: [selfAssignment] Redundant assignment of 'pCVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0  [.keep] [Clang-Tidy (quick)]
+  File: shape/edittool.cpp  (1 diagnostics)
+
+  Line   39: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtod' instead
+
+----------------------------------------------------------------------------------------------------
+wincore_windll.cpp_loadExternalRenderer_FUN_005b6750  [.keep] [Clang-Tidy (quick)]
+  File: wincore/windll.cpp  (1 diagnostics)
+
+  Line   41: [bugprone-multi-level-implicit-pointer-conversion] multilevel pointer conversion from 'void **' to 'void *', please use explicit cast

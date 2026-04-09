@@ -1,6 +1,6 @@
 // Name: core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940
 // Address: 005ef940
-// Address Range: [[005ef940, 005ef99b] [005efb24, 005efb3f]]
+// Address Range: [[005ef940, 005efb3f]]
 // Convention: __cdecl
 // Signature: void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005ef940(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation)
 

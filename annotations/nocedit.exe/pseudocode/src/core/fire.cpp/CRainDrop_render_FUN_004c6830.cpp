@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CRainDrop_render_FUN_004c6830
 // Address: 004c6830
-// Address Range: [[004c6830, 004c6bc3] [00610920, 00610941]]
+// Address Range: [[004c6830, 004c6bd1] [00610920, 00610941]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
 

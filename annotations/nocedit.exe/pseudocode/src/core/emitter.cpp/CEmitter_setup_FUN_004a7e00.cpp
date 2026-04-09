@@ -1,6 +1,6 @@
 // Name: core_emitter.cpp_CEmitter_setup_FUN_004a7e00
 // Address: 004a7e00
-// Address Range: [[004a7e00, 004a7e0a]]
+// Address Range: [[004a7e00, 004a7e74]]
 // Convention: __cdecl
 // Signature: void __cdecl core_emitter_cpp_CEmitter_setup_FUN_004a7e00(CEmitter *this_ptr)
 

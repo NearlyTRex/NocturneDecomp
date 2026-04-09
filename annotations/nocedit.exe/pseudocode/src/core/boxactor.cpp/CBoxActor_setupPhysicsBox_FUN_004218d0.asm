@@ -6,11 +6,12 @@
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr
 ;
-; XREF[4]:
+; XREF[5]:
 ;   core_boxactor.cpp_CBoxActor_onDropped_FUN_004224f0 at 00422503
 ;   core_boxactor.cpp_CBoxActor_processInEditor_FUN_004228e0 at 004228f2
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422390 at 0042248f
 ;   core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422640 at 004226b7
+;   core_boxactor.cpp_CBoxActor_setup_FUN_00421830 at 004218b3
 ;
 ; Referenced Globals:
 ;   float FLOAT_0061663f = 0.5

@@ -28,13 +28,15 @@
 ; float            Stack[-0x20]:4  local_20
 ; CVector3f        Stack[-0x1c]:12  local_1c
 ;
-; XREF[8]:
+; XREF[10]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a6c3
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 at 004494e5
+;   core_elephant.cpp_CElephantGun_fire_FUN_004a7160 at 004a780e
 ;   core_glass.cpp_CGlass_process_FUN_004e98e0 at 004e9919
 ;   core_gun.cpp_CGun_fire_FUN_004f0350 at 004f0a57
 ;   core_hiram.cpp_CHiram_process_FUN_004f4550 at 004f4644
 ;   core_set.cpp_CDemonSet_processActors_FUN_0056b810 at 0056bbe7
+;   core_shotgun.cpp_CShotgun_fire_FUN_00588060 at 00588710
 ;   core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30 at 005de270
 ;   core_turret.cpp_CTurret_fire_FUN_005e3750 at 005e3c02
 ;

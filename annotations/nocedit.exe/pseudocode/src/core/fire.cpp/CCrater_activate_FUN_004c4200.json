@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 47,
+    "assembly_lines": 289,
     "complexity_score": 120,
     "cross_reference_count": 1,
     "function_call_count": 3,
-    "global_count": 2,
+    "global_count": 4,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 120,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 167
+    "total_lines": 409
   },
   "cross_references": [
     {
@@ -29,7 +29,7 @@
     "address_range": [
       [
         "004c4200",
-        "004c4287"
+        "004c454b"
       ]
     ],
     "convention": "__cdecl",
@@ -54,6 +54,18 @@
     }
   ],
   "globals": [
+    {
+      "addr": "00629e33",
+      "name": "DOUBLE_00629e33",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "00629e3b",
+      "name": "DOUBLE_00629e3b",
+      "type": "double",
+      "value": "0.150000000000000"
+    },
     {
       "addr": "006810c8",
       "name": "g_CDemonSetPtr",
@@ -88,28 +100,44 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.85,
-    "instruction_count": 40,
+    "avg_pcode_per_instr": 5.438461538461539,
+    "instruction_count": 260,
     "opcode_distribution": {
-      "CALL": 3,
-      "CBRANCH": 1,
-      "COPY": 49,
-      "FLOAT2FLOAT": 2,
-      "FLOAT_NEG": 1,
-      "INT_ADD": 20,
-      "INT_AND": 8,
-      "INT_CARRY": 2,
-      "INT_EQUAL": 8,
-      "INT_LESS": 2,
-      "INT_SBORROW": 2,
-      "INT_SCARRY": 2,
-      "INT_SLESS": 4,
-      "INT_SUB": 15,
-      "LOAD": 9,
-      "POPCOUNT": 4,
-      "STORE": 22
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 4,
+      "CALL": 8,
+      "CBRANCH": 10,
+      "COPY": 636,
+      "FLOAT2FLOAT": 58,
+      "FLOAT_ABS": 4,
+      "FLOAT_ADD": 14,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_MULT": 2,
+      "FLOAT_NAN": 8,
+      "FLOAT_NEG": 3,
+      "FLOAT_SUB": 4,
+      "INT2FLOAT": 4,
+      "INT_ADD": 164,
+      "INT_AND": 64,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 44,
+      "INT_LEFT": 16,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 20,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 22,
+      "INT_SUB": 39,
+      "INT_XOR": 4,
+      "INT_ZEXT": 16,
+      "LOAD": 82,
+      "POPCOUNT": 22,
+      "RETURN": 2,
+      "STORE": 96
     },
-    "pcode_op_count": 154
+    "pcode_op_count": 1414
   },
   "stack_frame": {
     "frame_size": 100,

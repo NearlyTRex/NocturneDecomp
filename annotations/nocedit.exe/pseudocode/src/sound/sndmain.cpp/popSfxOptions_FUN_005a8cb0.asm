@@ -4,18 +4,18 @@
 ; void __cdecl sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0(void)
 ;
 ;
-; XREF[31]:
+; XREF[34]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c5d0
+;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 at 00421c40
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042a830 at 0042abd3
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 at 0048697f
 ;   core_drone.cpp_CDrone_process_FUN_0048ec70 at 0048f2cd
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ac587
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004b0f00 at 004b0f64
 ;   core_fire.cpp_CFireball_onCollision_FUN_004c1690 at 004c173e
+;   core_flame.cpp_CFlame_process_FUN_004c9c00 at 004c9f8e
 ;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 at 004d1f67
-;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e43b7
-;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 0050664f
-;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0 at 0050ad0c
-;   ... and 21 more
+;   ... and 24 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_006508cc

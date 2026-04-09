@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 8,
+    "assembly_lines": 61,
     "complexity_score": 22,
     "cross_reference_count": 1,
-    "function_call_count": 1,
+    "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 22,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 30
+    "total_lines": 83
   },
   "cross_references": [
     {
@@ -29,7 +29,7 @@
     "address_range": [
       [
         "00421830",
-        "0042183e"
+        "004218ca"
       ]
     ],
     "convention": "__cdecl",
@@ -41,6 +41,21 @@
       "addr": "00408bb0",
       "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0"
+    },
+    {
+      "addr": "004218d0",
+      "is_variadic": false,
+      "name": "core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_004218d0"
+    },
+    {
+      "addr": "00478d80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    },
+    {
+      "addr": "00478d60",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60"
     }
   ],
   "globals": [],
@@ -65,23 +80,39 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.0,
-    "instruction_count": 6,
+    "avg_pcode_per_instr": 6.4375,
+    "instruction_count": 48,
     "opcode_distribution": {
-      "CALL": 1,
-      "COPY": 4,
-      "INT_ADD": 1,
-      "INT_AND": 2,
-      "INT_EQUAL": 2,
-      "INT_LESS": 1,
-      "INT_SBORROW": 1,
-      "INT_SLESS": 1,
-      "INT_SUB": 5,
-      "LOAD": 1,
-      "POPCOUNT": 1,
-      "STORE": 4
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 4,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 3,
+      "COPY": 97,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 3,
+      "INT_ADD": 22,
+      "INT_AND": 28,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 18,
+      "INT_LEFT": 8,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 9,
+      "INT_SUB": 13,
+      "INT_ZEXT": 8,
+      "LOAD": 13,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 16
     },
-    "pcode_op_count": 24
+    "pcode_op_count": 309
   },
   "stack_frame": {
     "frame_size": 8,

@@ -9,6 +9,9 @@
 ; float            Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 00460906
+;
 ; Referenced Globals:
 ;   TerminatedCString s_Enter_distance_or_locati_0061b633
 ;   TerminatedCString s_Press_Enter_or_enter_poi_0061b659

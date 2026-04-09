@@ -1,0 +1,773 @@
+====================================================================================================
+WRONG GLOBAL SYMBOL RESOLUTION REPORT
+====================================================================================================
+
+Detects potential Watcom 1-based indexing bugs where the decompiler resolves
+a memory access to the wrong overlapping global. Globals that appear in the
+.cpp pseudocode but NOT in the function's JSON reference list are flagged as
+suspicious, since the reference list uses exact address resolution.
+
+----------------------------------------------------------------------------------------------------
+SUMMARY
+----------------------------------------------------------------------------------------------------
+
+  Functions checked: 6908
+  Functions with suspicious globals: 68
+  Total suspicious global references: 114
+
+  Most commonly misresolved globals:
+    g_SfxOptions                                       12 functions
+    g_KeyboardState                                    9 functions
+    g_RenderVertexBuffer                               5 functions
+    g_ColorCubeLookup                                  4 functions
+    g_CDemonCameraInstance                             4 functions
+    g_WindowHeight                                     3 functions
+    g_GetLastErrorFunc                                 3 functions
+    g_WindowWidth                                      2 functions
+    g_FullscreenMode                                   2 functions
+    g_CMoonInstance                                    2 functions
+    g_CKeysPtr                                         2 functions
+    g_CommandTemplates                                 2 functions
+    g_PositiveInfinity                                 2 functions
+    g_QuadVertex3                                      2 functions
+    g_MMXSupported                                     1 functions
+    g_CKeyFramedModelInstanceInstance                  1 functions
+    g_CBaronWeaponClassInfo                            1 functions
+    g_CBaronWeaponClassVersion                         1 functions
+    g_CWeaponClassInfo                                 1 functions
+    g_SourcePaletteData                                1 functions
+
+  .keep files with issues: 5 (these need manual review)
+  Raw .cpp files with issues: 63
+
+====================================================================================================
+DETAILED FINDINGS
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840  [.keep]  (6 suspicious globals)
+  File: core/menu.cpp
+
+  g_CKeysPtr
+    Used at lines: 47, 47, 50, 50, 69, ...
+    NOT found in function reference list
+
+  g_CMoonInstance
+    Used at lines: 34, 56
+    NOT found in function reference list
+
+  g_JoyButtons
+    Used at lines: 42, 64
+    NOT found in function reference list
+
+  g_JoyXPos
+    Used at lines: 42, 52, 64, 82, 83, ...
+    NOT found in function reference list
+
+  g_JoyYPos
+    Used at lines: 42, 53, 64, 88, 89, ...
+    NOT found in function reference list
+
+  g_MediumFont
+    Used at lines: 37, 39, 41, 59, 61, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360  [.keep]  (1 suspicious globals)
+  File: core/dcamera.cpp
+
+  g_TempWorldPositions
+    Used at lines: 76, 77, 78
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00482fb0  [.keep]  (1 suspicious globals)
+  File: core/dpart.cpp
+
+  g_RenderStateFlags
+    Used at lines: 107
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (1 suspicious globals)
+  File: core/game.cpp
+
+  g_ColorCubeLookup
+    Used at lines: 358
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  [.keep]  (1 suspicious globals)
+  File: core/skeledit.cpp
+
+  g_ColorCubeLookup
+    Used at lines: 543
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_main.c_enterMainGameMenu_FUN_00507a50  [.cpp]  (14 suspicious globals)
+  File: core/main.c
+
+  g_CDemonFileManagerInstance
+    Used at lines: 182
+    NOT found in function reference list
+
+  g_CGamePtr
+    Used at lines: 23, 27, 28, 49, 51, ...
+    NOT found in function reference list
+
+  g_CKeysPtr
+    Used at lines: 115, 115, 117, 117, 118, ...
+    NOT found in function reference list
+
+  g_CMoonInstance
+    Used at lines: 47, 52, 53, 113, 132, ...
+    NOT found in function reference list
+
+  g_CSoundPtr
+    Used at lines: 114, 139, 145, 159, 174, ...
+    NOT found in function reference list
+
+  g_FullscreenMode
+    Used at lines: 27, 165, 173
+    NOT found in function reference list
+
+  g_MainMenuTextBuffers
+    Used at lines: 55, 66, 77, 87, 89
+    NOT found in function reference list
+
+  g_MenuBitmapFilenames
+    Used at lines: 35
+    NOT found in function reference list
+
+  g_MenuBitmaps
+    Used at lines: 31
+    NOT found in function reference list
+
+  g_MenuBlurLeft
+    Used at lines: 40
+    NOT found in function reference list
+
+  g_MenuBlurMiddle
+    Used at lines: 41
+    NOT found in function reference list
+
+  g_MenuBlurRight
+    Used at lines: 42
+    NOT found in function reference list
+
+  g_MenuTextPointers
+    Used at lines: 101, 105
+    NOT found in function reference list
+
+  g_WindowHeight
+    Used at lines: 24
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80  [.cpp]  (10 suspicious globals)
+  File: engine/2d.c
+
+  g_BitsPerPixel
+    Used at lines: 40
+    NOT found in function reference list
+
+  g_DirectDrawObject
+    Used at lines: 31, 32, 32, 33, 33, ...
+    NOT found in function reference list
+
+  g_DirectDrawSurface
+    Used at lines: 27, 28, 28, 29
+    NOT found in function reference list
+
+  g_DirectDrawUnknown
+    Used at lines: 19, 20, 20, 21
+    NOT found in function reference list
+
+  g_FullscreenMode
+    Used at lines: 15
+    NOT found in function reference list
+
+  g_GraphicsResetFlag
+    Used at lines: 14
+    NOT found in function reference list
+
+  g_MainWindowHandle
+    Used at lines: 38
+    NOT found in function reference list
+
+  g_SoftwareRenderSurface
+    Used at lines: 23, 24, 24, 25
+    NOT found in function reference list
+
+  g_WindowHeight
+    Used at lines: 40
+    NOT found in function reference list
+
+  g_WindowWidth
+    Used at lines: 40
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0  [.cpp]  (5 suspicious globals)
+  File: core/game.cpp
+
+  g_CDemonCameraInstance
+    Used at lines: 43
+    NOT found in function reference list
+
+  g_IrisFadeCenterX
+    Used at lines: 49, 56, 56
+    NOT found in function reference list
+
+  g_IrisFadeCenterY
+    Used at lines: 52, 57, 57
+    NOT found in function reference list
+
+  g_WindowHeight
+    Used at lines: 55, 57
+    NOT found in function reference list
+
+  g_WindowWidth
+    Used at lines: 56
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+entry  [.cpp]  (5 suspicious globals)
+  File: entry
+
+  g_CrtStackBuffer
+    Used at lines: 57
+    NOT found in function reference list
+
+  g_GetModuleHandleAFunc
+    Used at lines: 66
+    NOT found in function reference list
+
+  g_RuntimeBufferSize
+    Used at lines: 29, 30, 38
+    NOT found in function reference list
+
+  g_StackAllocSize
+    Used at lines: 43, 50, 57
+    NOT found in function reference list
+
+  g_WinMainCmdShow
+    Used at lines: 62
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_baron.cpp_staticInit_FUN_00412b20  [.cpp]  (4 suspicious globals)
+  File: core/baron.cpp
+
+  g_CBaronWeaponClassInfo
+    Used at lines: 17
+    NOT found in function reference list
+
+  g_CBaronWeaponClassVersion
+    Used at lines: 18
+    NOT found in function reference list
+
+  g_CKeyFramedModelInstanceInstance
+    Used at lines: 15
+    NOT found in function reference list
+
+  g_CWeaponClassInfo
+    Used at lines: 19
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_clearSelections_FUN_005644e0  [.cpp]  (4 suspicious globals)
+  File: core/script.cpp
+
+  g_SelectionEndColumn
+    Used at lines: 26
+    NOT found in function reference list
+
+  g_SelectionEndLine
+    Used at lines: 25
+    NOT found in function reference list
+
+  g_SelectionStartColumn
+    Used at lines: 24
+    NOT found in function reference list
+
+  g_SelectionStartLine
+    Used at lines: 21
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_keys.cpp_CKeys_clearKeypresses_FUN_00502450  [.cpp]  (3 suspicious globals)
+  File: engine/keys.cpp
+
+  g_InputCountOld
+    Used at lines: 14
+    NOT found in function reference list
+
+  g_InputReadIndex
+    Used at lines: 13
+    NOT found in function reference list
+
+  g_InputWriteIndex
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.cpp]  (2 suspicious globals)
+  File: core/game.cpp
+
+  g_CDemonCameraInstance
+    Used at lines: 47
+    NOT found in function reference list
+
+  g_CScriptPtr
+    Used at lines: 32, 42
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_3d.c_clipAndDrawLine2D_FUN_00407d70  [.cpp]  (2 suspicious globals)
+  File: engine/3d.c
+
+  g_QuadVertex2
+    Used at lines: 163, 164, 165, 166, 167, ...
+    NOT found in function reference list
+
+  g_QuadVertex3
+    Used at lines: 175, 176, 177, 178, 179, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0  [.cpp]  (2 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_CSoundDevicePtr
+    Used at lines: 19, 20, 20
+    NOT found in function reference list
+
+  g_SoundBusyFlag
+    Used at lines: 25
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760  [.cpp]  (1 suspicious globals)
+  File: cockpit/ckptutil.c
+
+  g_MMXSupported
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409b90  [.cpp]  (1 suspicious globals)
+  File: core/actor.cpp
+
+  g_ColorCubeLookup
+    Used at lines: 36
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_conveyor.cpp_CConveyor_renderTransparent_FUN_00441f60  [.cpp]  (1 suspicious globals)
+  File: core/conveyor.cpp
+
+  g_SourcePaletteData
+    Used at lines: 32, 33, 33
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_fire.cpp_CFireEffect_createRock_FUN_004c7e60  [.cpp]  (1 suspicious globals)
+  File: core/fire.cpp
+
+  g_RockPool
+    Used at lines: 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_fire.cpp_CFireEffect_createShell_FUN_004c91e0  [.cpp]  (1 suspicious globals)
+  File: core/fire.cpp
+
+  g_ShellPool
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_fire.cpp_CRainDrop_render_FUN_004c6830  [.cpp]  (1 suspicious globals)
+  File: core/fire.cpp
+
+  g_CameraLoadImageReadBuffer
+    Used at lines: 77, 81
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_finishAct_FUN_004e3b90  [.cpp]  (1 suspicious globals)
+  File: core/game.cpp
+
+  g_CDemonCameraInstance
+    Used at lines: 53
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_renderOverlay_FUN_004d8040  [.cpp]  (1 suspicious globals)
+  File: core/game.cpp
+
+  g_CDemonCameraInstance
+    Used at lines: 63, 68
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_CScript_drawEditor_FUN_005645d0  [.cpp]  (1 suspicious globals)
+  File: core/script.cpp
+
+  g_CursorBlinkTimer
+    Used at lines: 37
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_CScript_parseActionTemplate_FUN_00567490  [.cpp]  (1 suspicious globals)
+  File: core/script.cpp
+
+  g_CommandTemplates
+    Used at lines: 21
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_parseConditionExpression_FUN_00561a30  [.cpp]  (1 suspicious globals)
+  File: core/script.cpp
+
+  g_CommandTemplates
+    Used at lines: 116
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_setdir.cpp_CZThumb_render_FUN_00574f20  [.cpp]  (1 suspicious globals)
+  File: core/setdir.cpp
+
+  g_ColorCubeLookup
+    Used at lines: 54
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0  [.cpp]  (1 suspicious globals)
+  File: core/skeleton.cpp
+
+  g_CSlewInstance
+    Used at lines: 19
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520  [.cpp]  (1 suspicious globals)
+  File: core/stranger.cpp
+
+  g_TriListTextureNames
+    Used at lines: 455
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760  [.cpp]  (1 suspicious globals)
+  File: core/texlist.cpp
+
+  g_KeyboardState
+    Used at lines: 21, 21, 22, 26, 27, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+crt_io.c_chdir_FUN_006012a0  [.cpp]  (1 suspicious globals)
+  File: crt/io.c
+
+  g_GetLastErrorFunc
+    Used at lines: 20
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+crt_stdio.c_remove_FUN_00606600  [.cpp]  (1 suspicious globals)
+  File: crt/stdio.c
+
+  g_GetLastErrorFunc
+    Used at lines: 20
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+crt_time.c_determine_dst_status_FUN_006079b4  [.cpp]  (1 suspicious globals)
+  File: crt/time.c
+
+  g_PositiveInfinity
+    Used at lines: 42
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+crt_unknown.c_FUN_00607858  [.cpp]  (1 suspicious globals)
+  File: crt/unknown.c
+
+  g_PositiveInfinity
+    Used at lines: 23
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+crt_watcom.c__getcwd_FUN_00608d20  [.cpp]  (1 suspicious globals)
+  File: crt/watcom.c
+
+  g_GetCurrentDirectoryAFunc
+    Used at lines: 20
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+crt_watcom.c__mkdir_FUN_00600e10  [.cpp]  (1 suspicious globals)
+  File: crt/watcom.c
+
+  g_GetLastErrorFunc
+    Used at lines: 20
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_3d.c_clipAndDrawLine3D_FUN_00408070  [.cpp]  (1 suspicious globals)
+  File: engine/3d.c
+
+  g_QuadVertex3
+    Used at lines: 175, 176, 177, 178, 179, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_3d.c_drawLineStrip2D_FUN_00404570  [.cpp]  (1 suspicious globals)
+  File: engine/3d.c
+
+  g_RenderVertexBuffer
+    Used at lines: 55, 57, 59, 60, 61, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_3d.c_drawLineStrip3D_FUN_00404600  [.cpp]  (1 suspicious globals)
+  File: engine/3d.c
+
+  g_RenderVertexBuffer
+    Used at lines: 55, 57, 59, 60, 61, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470  [.cpp]  (1 suspicious globals)
+  File: engine/3d.c
+
+  g_RenderVertexBuffer
+    Used at lines: 62, 64, 66, 68, 70, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_logOffVersionControl_FUN_004b2830  [.cpp]  (1 suspicious globals)
+  File: engine/fileio.cpp
+
+  g_VersionControlSession
+    Used at lines: 12, 16, 17
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_matrix.c_projectTransformedPoint_FUN_0050cdc0  [.cpp]  (1 suspicious globals)
+  File: engine/matrix.c
+
+  DAT_80000010
+    Used at lines: 24
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_handleEditorHotkeys_FUN_0045b990  [.cpp]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 14, 14, 15, 22, 22, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_mouseWheelPolygonReducer_FUN_004648e0  [.cpp]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 37, 37, 38, 128, 129
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_polygonToolModeManager_FUN_00464c90  [.cpp]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 35, 35, 36, 40, 65, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0  [.cpp]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 28, 29, 33, 34, 37, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_renderPolygonVerticesWithLabels_FUN_0045c2f0  [.cpp]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 23, 23, 24
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470  [.cpp]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_RenderVertexBuffer
+    Used at lines: 25, 26, 27, 28, 29, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_renderPolygonWireframe_FUN_0045d300  [.cpp]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_RenderVertexBuffer
+    Used at lines: 63, 64, 65, 66, 67, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0  [.cpp]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 28, 28, 29
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.cpp]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 173, 174, 180, 181, 187, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_showPointEditor_FUN_0045c6c0  [.cpp]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 25, 26, 32, 33, 36, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060  [.cpp]  (1 suspicious globals)
+  File: shape/edittool.cpp
+
+  g_ConfirmationMessageBuffer
+    Used at lines: 18, 24
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005a8bb0  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxOptions
+    Used at lines: 12, 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_initializeRecordingDevice_FUN_005ab8d0  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_RecordingDevices
+    Used at lines: 20, 23
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_initializeSoundDevice_FUN_005ab5b0  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SoundDevices
+    Used at lines: 20, 23, 25, 28
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_005a8a80  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxOptions
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxOptions
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_setNextSfxFlagBits_FUN_005a8b90  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxOptions
+    Used at lines: 12, 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxOptions
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxOptions
+    Used at lines: 15, 16, 17, 18, 19
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_setNextSfxTrackedDoublePosition_FUN_005a8970  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxOptions
+    Used at lines: 15, 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxOptions
+    Used at lines: 15, 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_005a8a00  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxOptions
+    Used at lines: 15, 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_setNextSfxTrackedVelocity2_FUN_005a8a30  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxOptions
+    Used at lines: 15, 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxOptions
+    Used at lines: 15, 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60  [.cpp]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxOptions
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+wincore_wddvmem.cpp_initTextureCache_FUN_00403790  [.cpp]  (1 suspicious globals)
+  File: wincore/wddvmem.cpp
+
+  g_TextureCacheInstance
+    Used at lines: 17, 20, 21
+    NOT found in function reference list

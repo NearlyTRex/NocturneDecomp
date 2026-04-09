@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0
 // Address: 004bf4c0
-// Address Range: [[004bf4c0, 004bf7e2] [004bf7e6, 004bf7ed]]
+// Address Range: [[004bf4c0, 004bf7ed]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *this_ptr)
 

@@ -7,18 +7,18 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; SMRGLTextureBasic * Stack[0x8]:4   texture
 ;
-; XREF[71]:
+; XREF[77]:
 ;   core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0 at 0040dfd4
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00419340 at 00419464
+;   core_bodypart.cpp_CBodyPart_setup_FUN_00419810 at 0041983c
 ;   core_chain.cpp_CChain_renderTransparent_FUN_004308f0 at 00430979
 ;   core_charactr.cpp_CCharacter_renderBurn_FUN_0042ad00 at 0042ad2b
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40 at 00429ba8
 ;   core_curtain.cpp_CCurtain_renderMesh_FUN_0044b060 at 0044b0f1
+;   core_curtain.cpp_CCurtain_setup_FUN_00449810 at 00449836
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0 at 0044fa78
 ;   core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310 at 0044f381
-;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20 at 00473ec9
-;   core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90 at 00474571
-;   ... and 61 more
+;   ... and 67 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_006221bf

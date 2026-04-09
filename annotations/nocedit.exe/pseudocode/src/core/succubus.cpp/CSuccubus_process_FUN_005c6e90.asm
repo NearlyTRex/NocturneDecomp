@@ -34,13 +34,13 @@
 ;   undefined4 s_wing.cth_00654179
 ;   undefined4 s_ing.cth_0065417a
 ;   TerminatedCString s_succubusShutUp_00654182
+;   TerminatedCString s_succubus_horny_wav_00654191
 ;   double DOUBLE_006541a9 = 3.14159265350000
 ;   double DOUBLE_006541b1 = 32
 ;   float FLOAT_00663928 = 1.5
 ;   float FLOAT_00663934 = 15
 ;   float FLOAT_00663938 = 4
-;   CConsole* g_CConsolePtr = 0083b1a4
-;   ... and 5 more
+;   ... and 6 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
@@ -692,4 +692,20 @@ section .text
     PUSH 0x40a00000                     ; 005c7549
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005c754e
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    ADD ESP,0x8                         ; 005c7553
+    MOV dword ptr [EBP + -0x4],EAX      ; 005c7556
+    PUSH 0x654191                       ; 005c7559 | = "succubus-horny-?.wav"
+    FLD float ptr [EBP + -0x4]          ; 005c755e
+    MOV EAX,dword ptr [EBX + 0x154]     ; 005c7561
+    PUSH EBX                            ; 005c7567
+    FSTP float ptr [EBX + 0xe330]       ; 005c7568
+    CALL dword ptr [EAX + 0x24]         ; 005c756e
+    ADD ESP,0x8                         ; 005c7571
+    MOV dword ptr [EBX + 0xe32c],EAX    ; 005c7574
+    MOV ESP,EBP                         ; 005c757a
+    POP EBP                             ; 005c757c
+    POP EDI                             ; 005c757d
+    POP ESI                             ; 005c757e
+    POP EBX                             ; 005c757f
+    RET                                 ; 005c7580
 

@@ -15,7 +15,8 @@
 ; CSfxSample *     Stack[-0x18]:4  local_18
 ; CSfxSample *     Stack[-0x14]:4  local_14
 ;
-; XREF[23]:
+; XREF[24]:
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 at 00486975
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004b0f00 at 004b0f59
 ;   core_fire.cpp_CFireball_onCollision_FUN_004c1690 at 004c1736
 ;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004d1f20 at 004d1f5f
@@ -25,8 +26,7 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40 at 0050adba
 ;   core_manpuz.cpp_updateGemHumChannel_FUN_0050a4f0 at 0050a5e3
 ;   core_menu.cpp_configureSoundOptions_FUN_00511e50 at 00512877
-;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 at 00581131
-;   ... and 13 more
+;   ... and 14 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_0064f54e

@@ -6,11 +6,11 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 2463,
+    "assembly_lines": 2528,
     "complexity_score": 1076,
     "cross_reference_count": 0,
-    "function_call_count": 48,
-    "global_count": 72,
+    "function_call_count": 49,
+    "global_count": 74,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1031,
     "suspect_count": 3,
@@ -19,7 +19,7 @@
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 3494
+    "total_lines": 3559
   },
   "cross_references": [],
   "function": {
@@ -27,10 +27,6 @@
     "address_range": [
       [
         "005f9470",
-        "005f9838"
-      ],
-      [
-        "005f990b",
         "005fb1eb"
       ]
     ],
@@ -271,6 +267,11 @@
       "name": "core_zombie.cpp_CZombie_resetChaseState_FUN_005fca10"
     },
     {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
       "addr": "00441890",
       "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
@@ -291,6 +292,12 @@
     {
       "addr": "006585ad",
       "name": "s_CHASE_2_006585ad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006585b5",
+      "name": "s_ghoul_eat_wav_006585b5",
       "type": "TerminatedCString",
       "value": null
     },
@@ -535,6 +542,12 @@
       "value": "27"
     },
     {
+      "addr": "006587cd",
+      "name": "DOUBLE_006587cd",
+      "type": "double",
+      "value": "2.5"
+    },
+    {
       "addr": "006587d5",
       "name": "DOUBLE_006587d5",
       "type": "double",
@@ -724,53 +737,55 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.36768384192096,
-    "instruction_count": 1999,
+    "avg_pcode_per_instr": 5.374027237354086,
+    "instruction_count": 2056,
     "opcode_distribution": {
       "BOOL_AND": 2,
-      "BOOL_NEGATE": 107,
-      "BOOL_OR": 51,
-      "BRANCH": 59,
-      "CALL": 120,
-      "CALLIND": 38,
+      "BOOL_NEGATE": 108,
+      "BOOL_OR": 53,
+      "BRANCH": 60,
+      "CALL": 123,
+      "CALLIND": 42,
       "CALLOTHER": 2,
-      "CBRANCH": 166,
-      "COPY": 3562,
-      "FLOAT2FLOAT": 279,
+      "CBRANCH": 168,
+      "COPY": 3673,
+      "FLOAT2FLOAT": 287,
       "FLOAT_ABS": 4,
       "FLOAT_ADD": 36,
       "FLOAT_DIV": 1,
-      "FLOAT_EQUAL": 25,
-      "FLOAT_LESS": 25,
-      "FLOAT_MULT": 51,
-      "FLOAT_NAN": 50,
+      "FLOAT_EQUAL": 26,
+      "FLOAT_LESS": 26,
+      "FLOAT_MULT": 53,
+      "FLOAT_NAN": 52,
       "FLOAT_SQRT": 6,
       "FLOAT_SUB": 31,
-      "INT2FLOAT": 16,
-      "INT_ADD": 854,
-      "INT_AND": 994,
-      "INT_CARRY": 179,
-      "INT_EQUAL": 705,
-      "INT_LEFT": 120,
+      "INT2FLOAT": 17,
+      "INT_ADD": 885,
+      "INT_AND": 1016,
+      "INT_CARRY": 186,
+      "INT_EQUAL": 721,
+      "INT_LEFT": 124,
       "INT_LESS": 70,
       "INT_MULT": 20,
-      "INT_NOTEQUAL": 162,
-      "INT_OR": 175,
+      "INT_NOTEQUAL": 168,
+      "INT_OR": 180,
       "INT_SBORROW": 70,
-      "INT_SCARRY": 182,
+      "INT_SCARRY": 189,
       "INT_SEXT": 6,
-      "INT_SLESS": 365,
+      "INT_SLESS": 373,
       "INT_SRIGHT": 1,
-      "INT_SUB": 596,
+      "INT_SUB": 615,
       "INT_XOR": 24,
-      "INT_ZEXT": 100,
-      "LOAD": 423,
-      "POPCOUNT": 345,
+      "INT_ZEXT": 104,
+      "LOAD": 439,
+      "POPCOUNT": 353,
       "RETURN": 3,
-      "STORE": 701,
-      "SUBPIECE": 4
+      "ROUND": 1,
+      "STORE": 726,
+      "SUBPIECE": 4,
+      "TRUNC": 1
     },
-    "pcode_op_count": 10730
+    "pcode_op_count": 11049
   },
   "stack_frame": {
     "frame_size": 956,
@@ -1767,6 +1782,190 @@
         "type": "float"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CZombie_process_FUN_005f9470.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 29,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 24,
+          "line": 231,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 23,
+          "line": 232,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 27,
+          "line": 278,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 33,
+          "line": 278,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 15,
+          "line": 435,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 81,
+          "line": 435,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 20,
+          "line": 506,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 26,
+          "line": 551,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 27,
+          "line": 602,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 29,
+          "line": 624,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 29,
+          "line": 625,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 28,
+          "line": 630,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 27,
+          "line": 631,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 24,
+          "line": 663,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 23,
+          "line": 664,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 25,
+          "line": 666,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 25,
+          "line": 667,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 20,
+          "line": 698,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 24,
+          "line": 728,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 82,
+          "line": 728,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 33,
+          "line": 743,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 25,
+          "line": 768,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 24,
+          "line": 769,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 23,
+          "line": 792,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 85,
+          "line": 792,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 21,
+          "line": 918,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 25,
+          "line": 945,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 21,
+          "line": 947,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 15,
+          "line": 1032,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

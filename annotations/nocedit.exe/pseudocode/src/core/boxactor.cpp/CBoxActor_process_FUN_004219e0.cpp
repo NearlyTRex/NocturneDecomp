@@ -1,6 +1,6 @@
 // Name: core_boxactor.cpp_CBoxActor_process_FUN_004219e0
 // Address: 004219e0
-// Address Range: [[004219e0, 00421c06] [00421c4a, 00421dfd]]
+// Address Range: [[004219e0, 00421dfd]]
 // Convention: __cdecl
 // Signature: void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_ptr,float delta_time)
 

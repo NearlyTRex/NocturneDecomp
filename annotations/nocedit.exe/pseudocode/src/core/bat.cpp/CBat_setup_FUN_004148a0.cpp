@@ -1,6 +1,6 @@
 // Name: core_bat.cpp_CBat_setup_FUN_004148a0
 // Address: 004148a0
-// Address Range: [[004148a0, 004148d2]]
+// Address Range: [[004148a0, 0041490f]]
 // Convention: __cdecl
 // Signature: void __cdecl core_bat_cpp_CBat_setup_FUN_004148a0(CBat *this_ptr)
 

@@ -314,5 +314,34 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "C3DSCamera_load_FUN_00585420.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "cert-err33-c",
+          "column": 3,
+          "line": 23,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "invalidscanf",
+          "column": 3,
+          "line": 23,
+          "message": "sscanf() without field width limits can crash with huge input data.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": []
 }

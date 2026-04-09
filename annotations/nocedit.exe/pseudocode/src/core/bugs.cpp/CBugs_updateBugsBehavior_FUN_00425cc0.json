@@ -216,6 +216,28 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CBugs_updateBugsBehavior_FUN_00425cc0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 14,
+          "line": 45,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 14,
+          "line": 61,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Type propagation did not converge",

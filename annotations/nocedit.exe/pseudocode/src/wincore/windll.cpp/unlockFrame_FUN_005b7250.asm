@@ -6,18 +6,18 @@
 ; Parameters:
 ; int              Stack[0x4]:4   clear_lock_flag
 ;
-; XREF[11]:
+; XREF[12]:
 ;   core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0 at 00451233
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004dab10
 ;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2910 at 004e2aea
 ;   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 at 0057ac97
 ;   shape_design.c_mouseWheelPolygonReducer_FUN_004648e0 at 00464bdf
 ;   shape_design.c_polygonToolModeManager_FUN_00464c90 at 00464e7e
+;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 00460731
 ;   shape_edittool.cpp_CEditorTools_backupScreen_FUN_0049e410 at 0049e4af
 ;   shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0 at 0049e56f
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 at 004a0e6f
-;   wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30 at 005b7cd2
-;   ... and 1 more
+;   ... and 2 more
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8

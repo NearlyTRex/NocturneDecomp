@@ -39,6 +39,7 @@
 ;   core_dcamera.cpp_initializeCoronaBuffers_FUN_004502e0
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
@@ -312,6 +313,24 @@ section .text
     PUSH EDX                            ; 004739c7 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004739c8
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 004739cd
+    PUSH EDI                            ; 004739d0
+    MOV ECX,dword ptr [0x006703ec]      ; 004739d1 | g_CDemonRendererPtr2
+    PUSH ECX                            ; 004739d7 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00 ; 004739d8
+        ;   XREF to: 0048ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer * this_ptr, int state_flag)
+    ADD ESP,0x8                         ; 004739dd
+    MOV EBX,dword ptr [EBP + 0x14]      ; 004739e0
+    PUSH EBX                            ; 004739e3
+    CALL core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0 ; 004739e4
+        ;   XREF to: 004758d0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLight * this_ptr)
+    ADD ESP,0x4                         ; 004739e9
+    MOV ESP,EBP                         ; 004739ec
+    POP EBP                             ; 004739ee
+    POP EDI                             ; 004739ef
+    POP ESI                             ; 004739f0
+    POP EBX                             ; 004739f1
+    RET                                 ; 004739f2
     MOV EAX,dword ptr [EDX]             ; 004739f3
         ;   Label: LAB_004739f3
     MOV dword ptr [ESP + 0x74],EAX      ; 004739f5

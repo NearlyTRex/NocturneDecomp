@@ -1,6 +1,6 @@
 // Name: core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0
 // Address: 004864c0
-// Address Range: [[004864c0, 004864df]]
+// Address Range: [[004864c0, 00486991]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dracbrid_cpp_CDraculaBride_startFreakySound_FUN_004864c0(CDraculaBride *this_ptr,char *sound_name,float volume)
 

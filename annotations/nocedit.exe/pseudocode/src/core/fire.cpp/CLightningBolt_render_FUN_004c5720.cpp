@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CLightningBolt_render_FUN_004c5720
 // Address: 004c5720
-// Address Range: [[004c5720, 004c5a47] [004c5a4b, 004c5dd8]]
+// Address Range: [[004c5720, 004c5dd8]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *this_ptr)
 

@@ -1,6 +1,6 @@
 // Name: core_stranger.cpp_CStranger_processDamage_FUN_005c48b0
 // Address: 005c48b0
-// Address Range: [[005c48b0, 005c4b51] [005c4b7c, 005c4c15]]
+// Address Range: [[005c48b0, 005c4c15]]
 // Convention: __cdecl
 // Signature: void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *this_ptr,SDamageInfo *damage_info)
 

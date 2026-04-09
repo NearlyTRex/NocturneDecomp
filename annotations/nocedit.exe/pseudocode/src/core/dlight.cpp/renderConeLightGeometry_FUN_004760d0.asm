@@ -402,4 +402,17 @@ section .text
     PUSH EDX                            ; 004765b3 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004765b4
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 004765b9
+    PUSH 0x0                            ; 004765bc
+    MOV ECX,dword ptr [0x006703ec]      ; 004765be | g_CDemonRendererPtr2
+    PUSH ECX                            ; 004765c4 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 ; 004765c5
+        ;   XREF to: 0048ca50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)
+    ADD ESP,0x8                         ; 004765ca
+    MOV ESP,EBP                         ; 004765cd
+    POP EBP                             ; 004765cf
+    POP EDI                             ; 004765d0
+    POP ESI                             ; 004765d1
+    POP EBX                             ; 004765d2
+    RET                                 ; 004765d3
 

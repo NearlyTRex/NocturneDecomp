@@ -9,7 +9,7 @@
 ; Local Variables:
 ; undefined1 *     Stack[-0x8]:4  local_8
 ;
-; XREF[83]:
+; XREF[85]:
 ;   core_actor.cpp_CDemonActor_load_FUN_0040b050 at 0040b08e
 ;   core_actor.cpp_archiveClothList_FUN_0040be60 at 0040bea4
 ;   core_actor.cpp_archiveFloat_FUN_0040b770 at 0040b78c
@@ -20,7 +20,7 @@
 ;   core_actor.cpp_archiveQuaternion_FUN_0040b520 at 0040b548
 ;   core_actor.cpp_archiveRules_FUN_0040c000 at 0040c044
 ;   core_actor.cpp_archiveString_FUN_0040b5c0 at 0040b63f
-;   ... and 73 more
+;   ... and 75 more
 ;
 ; Called Functions:
 ;   crt_stdio.c_vfscanf_FUN_005fe738

@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 21,
+    "assembly_lines": 74,
     "complexity_score": 33,
     "cross_reference_count": 1,
-    "function_call_count": 3,
-    "global_count": 1,
+    "function_call_count": 4,
+    "global_count": 4,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 33,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 54
+    "total_lines": 107
   },
   "cross_references": [
     {
@@ -29,7 +29,7 @@
     "address_range": [
       [
         "005e3ef0",
-        "005e3f41"
+        "005e4049"
       ]
     ],
     "convention": "__cdecl",
@@ -48,12 +48,35 @@
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0"
     },
     {
+      "addr": "00478dd0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
       "addr": "004a9500",
       "is_variadic": false,
       "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500"
     }
   ],
   "globals": [
+    {
+      "addr": "0065689b",
+      "name": "s_bat_kfm_0065689b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006568a6",
+      "name": "FLOAT_006568a6",
+      "type": "float",
+      "value": "10"
+    },
+    {
+      "addr": "006568aa",
+      "name": "FLOAT_006568aa",
+      "type": "float",
+      "value": "2"
+    },
     {
       "addr": "00664cd4",
       "name": "g_CTVBatVTable",
@@ -82,25 +105,28 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.352941176470588,
-    "instruction_count": 17,
+    "avg_pcode_per_instr": 4.954545454545454,
+    "instruction_count": 66,
     "opcode_distribution": {
-      "CALL": 3,
-      "COPY": 10,
-      "INT_ADD": 8,
-      "INT_AND": 8,
-      "INT_CARRY": 3,
-      "INT_EQUAL": 8,
+      "CALL": 7,
+      "COPY": 113,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_MULT": 2,
+      "INT_ADD": 42,
+      "INT_AND": 20,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 20,
       "INT_LESS": 1,
       "INT_SBORROW": 1,
-      "INT_SCARRY": 3,
-      "INT_SLESS": 4,
-      "INT_SUB": 9,
-      "LOAD": 1,
-      "POPCOUNT": 4,
-      "STORE": 11
+      "INT_SCARRY": 9,
+      "INT_SLESS": 10,
+      "INT_SUB": 21,
+      "LOAD": 8,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 43
     },
-    "pcode_op_count": 74
+    "pcode_op_count": 327
   },
   "stack_frame": {
     "frame_size": 8,

@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 170,
     "complexity_score": 61,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "clean",
@@ -21,6 +21,12 @@
       "addr": "00469420",
       "from_addr": "00469674",
       "name": "shape_design.c_generateOctant_FUN_00469420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045f1d0",
+      "from_addr": "0046099c",
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -110,7 +116,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "00469674",
@@ -122,9 +128,20 @@
         "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
+      },
+      {
+        "call_addr": "0046099c",
+        "call_type": "direct",
+        "caller": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 3,
     "declared_stack_bytes": 12,
     "estimated_params": 3

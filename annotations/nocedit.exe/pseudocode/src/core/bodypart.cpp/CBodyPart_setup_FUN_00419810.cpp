@@ -1,6 +1,6 @@
 // Name: core_bodypart.cpp_CBodyPart_setup_FUN_00419810
 // Address: 00419810
-// Address Range: [[00419810, 0041981c]]
+// Address Range: [[00419810, 00419875]]
 // Convention: __cdecl
 // Signature: void __cdecl core_bodypart_cpp_CBodyPart_setup_FUN_00419810(CBodyPart *this_ptr)
 

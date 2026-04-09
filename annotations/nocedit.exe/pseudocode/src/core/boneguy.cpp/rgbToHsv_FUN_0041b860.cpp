@@ -1,6 +1,6 @@
 // Name: core_boneguy.cpp_rgbToHsv_FUN_0041b860
 // Address: 0041b860
-// Address Range: [[0041b860, 0041b8bd] [0041b9a3, 0041b9ab]]
+// Address Range: [[0041b860, 0041b9f0]]
 // Convention: __cdecl
 // Signature: CColor3f * __cdecl core_boneguy_cpp_rgbToHsv_FUN_0041b860(CColor3f *out_hsv,CColor3f *in_rgb)
 

@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 175,
     "complexity_score": 91,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "clean",
@@ -21,6 +21,12 @@
       "addr": "0041dd20",
       "from_addr": "0041df45",
       "name": "core_box.cpp_CBox_setupCorners_FUN_0041dd20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041df50",
+      "from_addr": "0041e0a0",
+      "name": "core_box.cpp_CBox_setupN_FUN_0041df50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -63,7 +69,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "0041df45",
@@ -75,9 +81,20 @@
         "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
+      },
+      {
+        "call_addr": "0041e0a0",
+        "call_type": "direct",
+        "caller": "core_box.cpp_CBox_setupN_FUN_0041df50",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 4,
     "declared_stack_bytes": 16,
     "estimated_params": 4

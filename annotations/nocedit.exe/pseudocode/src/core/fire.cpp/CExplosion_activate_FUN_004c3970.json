@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 45,
+    "assembly_lines": 118,
     "complexity_score": 50,
     "cross_reference_count": 1,
-    "function_call_count": 3,
-    "global_count": 2,
+    "function_call_count": 5,
+    "global_count": 6,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 50,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 95
+    "total_lines": 168
   },
   "cross_references": [
     {
@@ -29,7 +29,7 @@
     "address_range": [
       [
         "004c3970",
-        "004c39eb"
+        "004c3abc"
       ]
     ],
     "convention": "__cdecl",
@@ -48,6 +48,16 @@
       "name": "core_actor.cpp_randomChance_FUN_0040cd10"
     },
     {
+      "addr": "00478d80",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    },
+    {
+      "addr": "004c7e60",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createRock_FUN_004c7e60"
+    },
+    {
       "addr": "00570fa0",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0"
@@ -55,10 +65,34 @@
   ],
   "globals": [
     {
+      "addr": "00629da7",
+      "name": "FLOAT_00629da7",
+      "type": "float",
+      "value": "30"
+    },
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
       "addr": "006810c8",
       "name": "g_CDemonSetPtr",
       "type": "CDemonSet*",
       "value": "03114278"
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    },
+    {
+      "addr": "02d13568",
+      "name": "g_CFireEffectDebrisModels",
+      "type": "CKeyFramedModelInstance[5]",
+      "value": null
     },
     {
       "addr": "03114278",
@@ -88,27 +122,44 @@
     "estimated_params": 4
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.6052631578947367,
-    "instruction_count": 38,
+    "avg_pcode_per_instr": 4.878504672897196,
+    "instruction_count": 107,
     "opcode_distribution": {
-      "CALL": 3,
-      "CBRANCH": 1,
-      "COPY": 32,
-      "INT_ADD": 16,
-      "INT_AND": 10,
-      "INT_CARRY": 2,
-      "INT_EQUAL": 10,
-      "INT_LESS": 2,
-      "INT_SBORROW": 2,
-      "INT_SCARRY": 2,
-      "INT_SLESS": 5,
-      "INT_SUB": 17,
+      "BOOL_NEGATE": 5,
+      "CALL": 6,
+      "CALLOTHER": 4,
+      "CBRANCH": 2,
+      "COPY": 206,
+      "FLOAT2FLOAT": 12,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 5,
+      "INT2FLOAT": 1,
+      "INT_ADD": 43,
+      "INT_AND": 39,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 29,
+      "INT_LEFT": 1,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SDIV": 1,
+      "INT_SEXT": 4,
+      "INT_SLESS": 14,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 29,
       "INT_XOR": 1,
-      "LOAD": 7,
-      "POPCOUNT": 5,
-      "STORE": 22
+      "INT_ZEXT": 2,
+      "LOAD": 19,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 42,
+      "SUBPIECE": 4
     },
-    "pcode_op_count": 137
+    "pcode_op_count": 522
   },
   "stack_frame": {
     "frame_size": 100,

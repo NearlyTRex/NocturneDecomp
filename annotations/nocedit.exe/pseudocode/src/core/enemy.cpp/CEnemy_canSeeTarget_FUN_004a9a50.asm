@@ -14,7 +14,8 @@
 ; CVector3f        Stack[-0x20]:12  CStack_20
 ; CVector3f        Stack[-0x14]:12  CStack_14
 ;
-; XREF[1]:
+; XREF[2]:
+;   core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00 at 004a9cee
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 at 005267da
 ;
 ; Referenced Globals:

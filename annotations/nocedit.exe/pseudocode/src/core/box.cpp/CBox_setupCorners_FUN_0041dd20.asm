@@ -10,12 +10,13 @@
 ; CVector3f *      Stack[0x10]:4   extents
 ; float            Stack[0x14]:4   volume
 ;
-; XREF[6]:
+; XREF[7]:
 ;   core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041b070 at 0041b19d
 ;   core_box.cpp_CBox_loadFromFile_FUN_0041fe90 at 0041ff8b
 ;   core_boxactor.cpp_CBoxActor_setupPhysicsBox_FUN_004218d0 at 004219ca
 ;   core_fire.cpp_CStake_spawn_FUN_004bfe90 at 004c009e
 ;   core_fire.cpp_CToss_create_FUN_004c3ee0 at 004c3fab
+;   core_simbox.cpp_CSimBox_setup_FUN_00588e00 at 00588ea8
 ;   core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_005ee740 at 005ee817
 ;
 ; Referenced Globals:

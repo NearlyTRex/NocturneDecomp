@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 40,
     "complexity_score": 14,
-    "cross_reference_count": 2,
+    "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -21,6 +21,12 @@
       "addr": "005098f0",
       "from_addr": "00509ab6",
       "name": "core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00508a70",
+      "from_addr": "00508ccc",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -45,7 +51,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "0050a6f5",
@@ -65,6 +71,17 @@
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00508ccc",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70",
+        "estimated_params": 5,
+        "instructions_analyzed": 16,
+        "method": "push_count",
         "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5

@@ -1,6 +1,6 @@
 // Name: core_door.cpp_CDoor_setup_FUN_0047fc70
 // Address: 0047fc70
-// Address Range: [[0047fc70, 0047fc8a]]
+// Address Range: [[0047fc70, 0047fce1]]
 // Convention: __cdecl
 // Signature: void __cdecl core_door_cpp_CDoor_setup_FUN_0047fc70(CDoor *this_ptr)
 

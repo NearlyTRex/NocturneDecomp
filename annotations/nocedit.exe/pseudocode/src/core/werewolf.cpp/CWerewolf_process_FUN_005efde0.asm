@@ -87,9 +87,9 @@
 ;   double DOUBLE_00657d64 = 5
 ;   float FLOAT_00657d6c = 2
 ;   double DOUBLE_00657d74 = 0.392699081687500
+;   double DOUBLE_00657d7c = 0.25
 ;   float FLOAT_00657d84 = 0.2617994
-;   float FLOAT_00657d88 = -0.2617994
-;   ... and 22 more
+;   ... and 24 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -107,7 +107,7 @@
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
-;   ... and 16 more
+;   ... and 20 more
 ;
 ; *****************************************************************************
 
@@ -214,6 +214,26 @@ section .text
     PUSH 0x41000000                     ; 005efedd
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005efee2
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + 0x76],EAX      ; 005efee7
+    ADD ESP,0x8                         ; 005efeea
+    FLD float ptr [EBP + 0x76]          ; 005efeed
+    FMUL double ptr [0x00657d7c]        ; 005efef0 | DOUBLE_00657d7c
+    PUSH 0x0                            ; 005efef6
+    CALL crt_math.c_round_FUN_005fe6b0  ; 005efef8
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
+    FISTP dword ptr [EBP + 0x56]        ; 005efefd
+    MOV EDX,dword ptr [EBP + 0x56]      ; 005eff00
+    PUSH EDX                            ; 005eff03
+    PUSH 0x0                            ; 005eff04
+    LEA EAX,[EBP + -0xe]                ; 005eff06
+    PUSH EAX                            ; 005eff09
+    MOV ECX,dword ptr [0x0067b9a0]      ; 005eff0a | g_CGorePtr | g_CGoreInstance
+    PUSH ECX                            ; 005eff10 | g_CGoreInstance
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0 ; 005eff11
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
+    ADD ESP,0x14                        ; 005eff16
+    JMP 0x005efe3e                      ; 005eff19
+        ;   XREF to: 005efe3e (UNCONDITIONAL_JUMP)  ; LAB_005efe3e
     PUSH 0x1                            ; 005eff1e
         ;   Label: LAB_005eff1e
     PUSH EBX                            ; 005eff20
@@ -554,6 +574,120 @@ section .text
     PUSH 0x40e00000                     ; 005f02db
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005f02e0
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + 0x76],EAX      ; 005f02e5
+    ADD ESP,0x8                         ; 005f02e8
+    MOV dword ptr [EBP + 0xfffffe16],EBX ; 005f02eb
+    MOV dword ptr [EBP + 0xfffffe1a],EBX ; 005f02f1
+    LEA EAX,[EBP + 0xfffffde2]          ; 005f02f7
+    FLD float ptr [EBP + 0x76]          ; 005f02fd
+    PUSH EAX                            ; 005f0300
+    FSTP float ptr [EBP + 0xfffffde6]   ; 005f0301
+    SUB ESP,0x4                         ; 005f0307
+    MOV EAX,dword ptr [EBX + 0x261c]    ; 005f030a
+    MOV dword ptr [ESP],EAX             ; 005f0310
+    MOV ESI,dword ptr [EBX + 0xbecc]    ; 005f0313
+    LEA EAX,[ESI*0x4 + 0x0]             ; 005f0319
+    SUB EAX,ESI                         ; 005f0320
+    SHL EAX,0x4                         ; 005f0322
+    LEA ESI,[EBX + 0xfd8]               ; 005f0325
+    ADD EAX,ESI                         ; 005f032b
+    PUSH EAX                            ; 005f032d
+    PUSH 0x3f87558                      ; 005f032e | g_ZeroVector
+    LEA EAX,[EBP + -0x56]               ; 005f0333
+    PUSH EAX                            ; 005f0336
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 005f0337
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
+    ADD ESP,0xc                         ; 005f033c
+    PUSH EAX                            ; 005f033f
+    LEA EAX,[EBP + 0xffffff4a]          ; 005f0340
+    PUSH EAX                            ; 005f0346
+    PUSH EBX                            ; 005f0347
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005f0348
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
+    ADD ESP,0xc                         ; 005f034d
+    PUSH EAX                            ; 005f0350
+    PUSH EBX                            ; 005f0351
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 005f0352
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
+    ADD ESP,0x10                        ; 005f0357
+    PUSH 0x41700000                     ; 005f035a
+    PUSH 0x40e00000                     ; 005f035f
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005f0364
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + 0x76],EAX      ; 005f0369
+    ADD ESP,0x8                         ; 005f036c
+    MOV dword ptr [EBP + 0xfffffe16],EBX ; 005f036f
+    MOV dword ptr [EBP + 0xfffffe1a],EBX ; 005f0375
+    LEA EAX,[EBP + 0xfffffde2]          ; 005f037b
+    FLD float ptr [EBP + 0x76]          ; 005f0381
+    PUSH EAX                            ; 005f0384
+    FSTP float ptr [EBP + 0xfffffde6]   ; 005f0385
+    SUB ESP,0x4                         ; 005f038b
+    MOV EAX,dword ptr [EBX + 0x261c]    ; 005f038e
+    MOV dword ptr [ESP],EAX             ; 005f0394
+    MOV EDI,dword ptr [EBX + 0xbec8]    ; 005f0397
+    LEA EAX,[EDI*0x4 + 0x0]             ; 005f039d
+    SUB EAX,EDI                         ; 005f03a4
+    SHL EAX,0x4                         ; 005f03a6
+    ADD EAX,ESI                         ; 005f03a9
+    PUSH EAX                            ; 005f03ab
+    PUSH 0x3f87558                      ; 005f03ac | g_ZeroVector
+    LEA EAX,[EBP + -0x4a]               ; 005f03b1
+    PUSH EAX                            ; 005f03b4
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 005f03b5
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
+    ADD ESP,0xc                         ; 005f03ba
+    PUSH EAX                            ; 005f03bd
+    LEA EAX,[EBP + 0xffffff02]          ; 005f03be
+    PUSH EAX                            ; 005f03c4
+    PUSH EBX                            ; 005f03c5
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005f03c6
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
+    ADD ESP,0xc                         ; 005f03cb
+    PUSH EAX                            ; 005f03ce
+    PUSH EBX                            ; 005f03cf
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 005f03d0
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
+    ADD ESP,0x10                        ; 005f03d5
+    PUSH 0x41700000                     ; 005f03d8
+    PUSH 0x40e00000                     ; 005f03dd
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005f03e2
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + 0x76],EAX      ; 005f03e7
+    ADD ESP,0x8                         ; 005f03ea
+    MOV EAX,dword ptr [EBP + 0x76]      ; 005f03ed
+    MOV dword ptr [EBP + 0xfffffde6],EAX ; 005f03f0
+    LEA EAX,[EBP + 0xfffffde2]          ; 005f03f6
+    PUSH EAX                            ; 005f03fc
+    MOV dword ptr [EBP + 0xfffffe16],EBX ; 005f03fd
+    MOV dword ptr [EBP + 0xfffffe1a],EBX ; 005f0403
+    SUB ESP,0x4                         ; 005f0409
+    MOV EAX,dword ptr [EBX + 0x261c]    ; 005f040c
+    MOV dword ptr [ESP],EAX             ; 005f0412
+    MOV EDI,dword ptr [EBX + 0xbec4]    ; 005f0415
+    LEA EAX,[EDI*0x4 + 0x0]             ; 005f041b
+    SUB EAX,EDI                         ; 005f0422
+    SHL EAX,0x4                         ; 005f0424
+    ADD EAX,ESI                         ; 005f0427
+    PUSH EAX                            ; 005f0429
+    PUSH 0x3f87558                      ; 005f042a | g_ZeroVector
+    LEA EAX,[EBP + 0xffffff0e]          ; 005f042f
+    PUSH EAX                            ; 005f0435
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 005f0436
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
+    ADD ESP,0xc                         ; 005f043b
+    PUSH EAX                            ; 005f043e
+    LEA EAX,[EBP + -0x1a]               ; 005f043f
+    PUSH EAX                            ; 005f0442
+    PUSH EBX                            ; 005f0443
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005f0444
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
+    ADD ESP,0xc                         ; 005f0449
+    PUSH EAX                            ; 005f044c
+    PUSH EBX                            ; 005f044d
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 005f044e
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
+    ADD ESP,0x10                        ; 005f0453
     MOV EDX,dword ptr [EBP + 0x72]      ; 005f0456
         ;   Label: LAB_005f0456
     MOV EAX,[0x02db87d0]                ; 005f0459 | g_LocalHeroIndex
@@ -629,6 +763,40 @@ section .text
     PUSH 0x40e00000                     ; 005f052c
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005f0531
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + 0x76],EAX      ; 005f0536
+    MOV dword ptr [EBP + 0xfffffdda],EBX ; 005f0539
+    MOV dword ptr [EBP + 0xfffffdde],EBX ; 005f053f
+    ADD ESP,0x8                         ; 005f0545
+    MOV EAX,dword ptr [EBP + 0x76]      ; 005f0548
+    MOV dword ptr [EBP + 0xfffffdaa],EAX ; 005f054b
+    MOV ESI,dword ptr [EBX + 0xbecc]    ; 005f0551
+    LEA EAX,[EBP + 0xfffffda6]          ; 005f0557
+    LEA EDX,[ESI*0x4 + 0x0]             ; 005f055d
+    PUSH EAX                            ; 005f0564
+    SUB EDX,ESI                         ; 005f0565
+    LEA EAX,[EBX + 0xfd8]               ; 005f0567
+    SHL EDX,0x4                         ; 005f056d
+    ADD EAX,EDX                         ; 005f0570
+    PUSH 0x3ecccccd                     ; 005f0572
+    PUSH EAX                            ; 005f0577
+    PUSH 0x3f87558                      ; 005f0578 | g_ZeroVector
+    LEA EAX,[EBP + 0xfffffe96]          ; 005f057d
+    PUSH EAX                            ; 005f0583
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 005f0584
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
+    ADD ESP,0xc                         ; 005f0589
+    PUSH EAX                            ; 005f058c
+    LEA EAX,[EBP + 0x3a]                ; 005f058d
+    PUSH EAX                            ; 005f0590
+    PUSH EBX                            ; 005f0591
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005f0592
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
+    ADD ESP,0xc                         ; 005f0597
+    PUSH EAX                            ; 005f059a
+    PUSH EBX                            ; 005f059b
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 005f059c
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
+    ADD ESP,0x10                        ; 005f05a1
     MOV EAX,dword ptr [EBX + 0xbe3c]    ; 005f05a4
         ;   Label: LAB_005f05a4
     TEST EAX,EAX                        ; 005f05aa
@@ -660,6 +828,95 @@ section .text
     PUSH 0x40e00000                     ; 005f05f6
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005f05fb
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + 0x76],EAX      ; 005f0600
+    MOV dword ptr [EBP + 0xfffffe8e],EBX ; 005f0603
+    MOV dword ptr [EBP + 0xfffffe92],EBX ; 005f0609
+    ADD ESP,0x8                         ; 005f060f
+    FLD float ptr [EBP + 0x76]          ; 005f0612
+    LEA EAX,[EBP + 0xfffffe5a]          ; 005f0615
+    FSTP float ptr [EBP + 0xfffffe5e]   ; 005f061b
+    MOV EDI,dword ptr [EBX + 0xbecc]    ; 005f0621
+    PUSH EAX                            ; 005f0627
+    LEA EAX,[EDI*0x4 + 0x0]             ; 005f0628
+    SUB EAX,EDI                         ; 005f062f
+    SHL EAX,0x4                         ; 005f0631
+    ADD EAX,ESI                         ; 005f0634
+    PUSH 0x3f800000                     ; 005f0636
+    PUSH EAX                            ; 005f063b
+    PUSH 0x3f87558                      ; 005f063c | g_ZeroVector
+    LEA EAX,[EBP + 0xfffffeba]          ; 005f0641
+    PUSH EAX                            ; 005f0647
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 005f0648
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
+    ADD ESP,0xc                         ; 005f064d
+    PUSH EAX                            ; 005f0650
+    LEA EAX,[EBP + -0x2]                ; 005f0651
+    PUSH EAX                            ; 005f0654
+    PUSH EBX                            ; 005f0655
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005f0656
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
+    ADD ESP,0xc                         ; 005f065b
+    PUSH EAX                            ; 005f065e
+    PUSH EBX                            ; 005f065f
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 005f0660
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
+    ADD ESP,0x10                        ; 005f0665
+    LEA EAX,[EBP + 0xfffffe5a]          ; 005f0668
+    MOV EDI,dword ptr [EBX + 0xbec8]    ; 005f066e
+    PUSH EAX                            ; 005f0674
+    LEA EAX,[EDI*0x4 + 0x0]             ; 005f0675
+    SUB EAX,EDI                         ; 005f067c
+    SHL EAX,0x4                         ; 005f067e
+    ADD EAX,ESI                         ; 005f0681
+    PUSH 0x3f800000                     ; 005f0683
+    PUSH EAX                            ; 005f0688
+    PUSH 0x3f87558                      ; 005f0689 | g_ZeroVector
+    LEA EAX,[EBP + 0x22]                ; 005f068e
+    PUSH EAX                            ; 005f0691
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 005f0692
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
+    ADD ESP,0xc                         ; 005f0697
+    PUSH EAX                            ; 005f069a
+    LEA EAX,[EBP + 0x2e]                ; 005f069b
+    PUSH EAX                            ; 005f069e
+    PUSH EBX                            ; 005f069f
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005f06a0
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
+    ADD ESP,0xc                         ; 005f06a5
+    PUSH EAX                            ; 005f06a8
+    PUSH EBX                            ; 005f06a9
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 005f06aa
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
+    ADD ESP,0x10                        ; 005f06af
+    LEA EAX,[EBP + 0xfffffe5a]          ; 005f06b2
+    MOV EDX,dword ptr [EBX + 0xbec4]    ; 005f06b8
+    PUSH EAX                            ; 005f06be
+    LEA EAX,[EDX*0x4 + 0x0]             ; 005f06bf
+    SUB EAX,EDX                         ; 005f06c6
+    SHL EAX,0x4                         ; 005f06c8
+    ADD EAX,ESI                         ; 005f06cb
+    PUSH 0x3f800000                     ; 005f06cd
+    PUSH EAX                            ; 005f06d2
+    PUSH 0x3f87558                      ; 005f06d3 | g_ZeroVector
+    LEA EAX,[EBP + 0xfffffeea]          ; 005f06d8
+    PUSH EAX                            ; 005f06de
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 005f06df
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
+    ADD ESP,0xc                         ; 005f06e4
+    PUSH EAX                            ; 005f06e7
+    LEA EAX,[EBP + -0x3e]               ; 005f06e8
+    PUSH EAX                            ; 005f06eb
+    PUSH EBX                            ; 005f06ec
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005f06ed
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
+    ADD ESP,0xc                         ; 005f06f2
+    PUSH EAX                            ; 005f06f5
+    PUSH EBX                            ; 005f06f6
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 005f06f7
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
+    ADD ESP,0x10                        ; 005f06fc
+    JMP 0x005f04ce                      ; 005f06ff
+        ;   XREF to: 005f04ce (UNCONDITIONAL_JUMP)  ; LAB_005f04ce
     LEA EAX,[EBP + 0xfffffe1e]          ; 005f0704
         ;   Label: LAB_005f0704
     PUSH EAX                            ; 005f070a
@@ -670,6 +927,59 @@ section .text
     PUSH 0x40e00000                     ; 005f0718
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005f071d
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + 0x76],EAX      ; 005f0722
+    MOV dword ptr [EBP + 0xfffffe52],EBX ; 005f0725
+    MOV dword ptr [EBP + 0xfffffe56],EBX ; 005f072b
+    ADD ESP,0x8                         ; 005f0731
+    FLD float ptr [EBP + 0x76]          ; 005f0734
+    LEA EAX,[EBP + 0xfffffe1e]          ; 005f0737
+    FSTP float ptr [EBP + 0xfffffe22]   ; 005f073d
+    MOV EDX,dword ptr [EBX + 0xbec8]    ; 005f0743
+    PUSH EAX                            ; 005f0749
+    LEA EAX,[EDX*0x4 + 0x0]             ; 005f074a
+    SUB EAX,EDX                         ; 005f0751
+    SHL EAX,0x4                         ; 005f0753
+    ADD EAX,ESI                         ; 005f0756
+    PUSH 0x3ecccccd                     ; 005f0758
+    PUSH EAX                            ; 005f075d
+    PUSH 0x3f87558                      ; 005f075e | g_ZeroVector
+    LEA EAX,[EBP + 0xffffff6e]          ; 005f0763
+    PUSH EAX                            ; 005f0769
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 005f076a
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
+    ADD ESP,0xc                         ; 005f076f
+    PUSH EAX                            ; 005f0772
+    LEA EAX,[EBP + 0xffffff26]          ; 005f0773
+    PUSH EAX                            ; 005f0779
+    PUSH EBX                            ; 005f077a
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005f077b
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
+    ADD ESP,0xc                         ; 005f0780
+    PUSH EAX                            ; 005f0783
+    PUSH EBX                            ; 005f0784
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 005f0785
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
+    MOV EDX,dword ptr [EBX + 0xbe3c]    ; 005f078a
+    ADD ESP,0x10                        ; 005f0790
+    TEST EDX,EDX                        ; 005f0793
+    JZ 0x005f0010                       ; 005f0795
+        ;   XREF to: 005f0010 (CONDITIONAL_JUMP)  ; LAB_005f0010
+    MOV EAX,EDX                         ; 005f079b
+    PUSH EAX                            ; 005f079d
+    MOV EDX,dword ptr [EDX + 0x154]     ; 005f079e
+    CALL dword ptr [EDX + 0x120]        ; 005f07a4
+    ADD ESP,0x4                         ; 005f07aa
+    TEST EAX,EAX                        ; 005f07ad
+    JZ 0x005f0010                       ; 005f07af
+        ;   XREF to: 005f0010 (CONDITIONAL_JUMP)  ; LAB_005f0010
+    PUSH 0x1                            ; 005f07b5
+    PUSH 0x7                            ; 005f07b7
+    PUSH EDI                            ; 005f07b9
+    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 005f07ba
+        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
+    ADD ESP,0xc                         ; 005f07bf
+    JMP 0x005f0010                      ; 005f07c2
+        ;   XREF to: 005f0010 (UNCONDITIONAL_JUMP)  ; LAB_005f0010
     MOV EAX,dword ptr [EBX + 0xbe28]    ; 005f07c7
         ;   Label: LAB_005f07c7
     TEST EAX,EAX                        ; 005f07cd
@@ -1463,6 +1773,39 @@ section .text
     PUSH 0x40e00000                     ; 005f108c
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005f1091
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + 0x76],EAX      ; 005f1096
+    MOV dword ptr [EBP + 0xfffffd9e],EBX ; 005f1099
+    MOV dword ptr [EBP + 0xfffffda2],EBX ; 005f109f
+    ADD ESP,0x8                         ; 005f10a5
+    FLD float ptr [EBP + 0x76]          ; 005f10a8
+    LEA EAX,[EBP + 0xfffffd6a]          ; 005f10ab
+    FSTP float ptr [EBP + 0xfffffd6e]   ; 005f10b1
+    MOV EDX,dword ptr [EBX + 0xbec4]    ; 005f10b7
+    PUSH EAX                            ; 005f10bd
+    LEA EAX,[EDX*0x4 + 0x0]             ; 005f10be
+    SUB EAX,EDX                         ; 005f10c5
+    SHL EAX,0x4                         ; 005f10c7
+    ADD EAX,ESI                         ; 005f10ca
+    PUSH 0x3ecccccd                     ; 005f10cc
+    PUSH EAX                            ; 005f10d1
+    PUSH 0x3f87558                      ; 005f10d2 | g_ZeroVector
+    LEA EAX,[EBP + 0x16]                ; 005f10d7
+    PUSH EAX                            ; 005f10da
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 005f10db
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
+    ADD ESP,0xc                         ; 005f10e0
+    PUSH EAX                            ; 005f10e3
+    LEA EAX,[EBP + 0xffffff3e]          ; 005f10e4
+    PUSH EAX                            ; 005f10ea
+    PUSH EBX                            ; 005f10eb
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005f10ec
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
+    ADD ESP,0xc                         ; 005f10f1
+    PUSH EAX                            ; 005f10f4
+    PUSH EBX                            ; 005f10f5
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880 ; 005f10f6
+        ;   XREF to: 004a9880 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
+    ADD ESP,0x10                        ; 005f10fb
     MOV ESI,dword ptr [EBX + 0xbe3c]    ; 005f10fe
         ;   Label: LAB_005f10fe
     TEST ESI,ESI                        ; 005f1104

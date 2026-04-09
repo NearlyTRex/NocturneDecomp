@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CGlassParticle_render_FUN_004c1ef0
 // Address: 004c1ef0
-// Address Range: [[004c1ef0, 004c20e0]]
+// Address Range: [[004c1ef0, 004c20eb]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *this_ptr)
 

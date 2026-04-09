@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
-; XREF[76]:
+; XREF[77]:
 ;   core_baron.cpp_CBaron_setup_FUN_00412cb0 at 00412cc6
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_00415150 at 00415170
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416b57
@@ -17,7 +17,7 @@
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042a830 at 0042a846
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 at 0042ecc9
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042ea40 at 0042eac6
-;   ... and 66 more
+;   ... and 67 more
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810

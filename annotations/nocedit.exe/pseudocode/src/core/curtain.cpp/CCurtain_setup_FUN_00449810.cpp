@@ -1,6 +1,6 @@
 // Name: core_curtain.cpp_CCurtain_setup_FUN_00449810
 // Address: 00449810
-// Address Range: [[00449810, 00449824]]
+// Address Range: [[00449810, 00449e34]]
 // Convention: __cdecl
 // Signature: void __cdecl core_curtain_cpp_CCurtain_setup_FUN_00449810(CCurtain *this_ptr)
 

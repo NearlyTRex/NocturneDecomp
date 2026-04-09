@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 81,
     "complexity_score": 30,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "clean",
@@ -21,6 +21,12 @@
       "addr": "005ee3f0",
       "from_addr": "005ee408",
       "name": "core_weapon.cpp_CWeapon_onDropped_FUN_005ee3f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005edff0",
+      "from_addr": "005ee00e",
+      "name": "core_weapon.cpp_CWeapon_setup_FUN_005edff0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -63,7 +69,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "005ee408",
@@ -75,9 +81,20 @@
         "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
+      },
+      {
+        "call_addr": "005ee00e",
+        "call_type": "direct",
+        "caller": "core_weapon.cpp_CWeapon_setup_FUN_005edff0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
     "estimated_params": 1

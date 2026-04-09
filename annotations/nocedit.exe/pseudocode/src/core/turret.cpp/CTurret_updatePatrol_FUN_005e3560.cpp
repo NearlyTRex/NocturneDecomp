@@ -1,6 +1,6 @@
 // Name: core_turret.cpp_CTurret_updatePatrol_FUN_005e3560
 // Address: 005e3560
-// Address Range: [[005e3560, 005e3610]]
+// Address Range: [[005e3560, 005e36ea]]
 // Convention: __cdecl
 // Signature: void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_005e3560(CTurret *this_ptr,float delta_time)
 

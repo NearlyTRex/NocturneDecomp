@@ -6,21 +6,35 @@
   },
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 13,
-    "cross_reference_count": 1,
+    "complexity_score": 28,
+    "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 13,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "wrong_global"
+    ],
     "total_lines": 46
   },
   "cross_references": [
     {
+      "addr": "0048e2a0",
+      "from_addr": "0048e5de",
+      "name": "core_drip.cpp_CDrip_process_FUN_0048e2a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004a8070",
       "from_addr": "004a846f",
       "name": "core_emitter.cpp_CEmitter_process_FUN_004a8070",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c3970",
+      "from_addr": "004c3aa4",
+      "name": "core_fire.cpp_CExplosion_activate_FUN_004c3970",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -52,8 +66,19 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 3,
     "call_sites": [
+      {
+        "call_addr": "0048e5de",
+        "call_type": "direct",
+        "caller": "core_drip.cpp_CDrip_process_FUN_0048e2a0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
       {
         "call_addr": "004a846f",
         "call_type": "direct",
@@ -64,9 +89,20 @@
         "reg_params": [],
         "stack_bytes": 16,
         "stack_params": 4
+      },
+      {
+        "call_addr": "004c3aa4",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CExplosion_activate_FUN_004c3970",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 4,
     "declared_stack_bytes": 16,
     "estimated_params": 4
@@ -137,5 +173,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Global g_RockPool used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 9,
+      "match": "g_RockPool",
+      "severity": "moderate",
+      "text": "this_ptr_00 = g_RockPool + g_RockAllocIndex;",
+      "type": "wrong_global"
+    }
+  ]
 }

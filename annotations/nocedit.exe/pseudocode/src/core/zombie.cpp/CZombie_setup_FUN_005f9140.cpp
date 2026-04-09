@@ -1,6 +1,6 @@
 // Name: core_zombie.cpp_CZombie_setup_FUN_005f9140
 // Address: 005f9140
-// Address Range: [[005f9140, 005f93b1]]
+// Address Range: [[005f9140, 005f9462]]
 // Convention: __cdecl
 // Signature: void __cdecl core_zombie_cpp_CZombie_setup_FUN_005f9140(CZombie *this_ptr)
 

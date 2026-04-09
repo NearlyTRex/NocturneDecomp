@@ -1,6 +1,6 @@
 // Name: core_icepick.cpp_CIcePick_performMeleeAttack_FUN_004f9490
 // Address: 004f9490
-// Address Range: [[004f9490, 004f9508] [004f9564, 004f958c]]
+// Address Range: [[004f9490, 004f958c]]
 // Convention: __cdecl
 // Signature: void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004f9490(CIcePick *this_ptr,int bone_index)
 

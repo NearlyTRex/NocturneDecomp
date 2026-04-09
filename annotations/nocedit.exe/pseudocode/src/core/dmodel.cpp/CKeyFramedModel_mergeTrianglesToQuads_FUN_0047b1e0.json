@@ -635,6 +635,42 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 31,
+          "line": 134,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 63,
+          "line": 223,
+          "message": "Array 'local_f0[4]' accessed at index 6, which is out of bounds.",
+          "severity": "error"
+        },
+        {
+          "check_id": "arrayIndexOutOfBounds",
+          "column": 63,
+          "line": 224,
+          "message": "Array 'local_f0[4]' accessed at index 9, which is out of bounds.",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",

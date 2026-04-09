@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CGunFlame_activate_FUN_004c4db0
 // Address: 004c4db0
-// Address Range: [[004c4db0, 004c4de6]]
+// Address Range: [[004c4db0, 004c4f51]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CGunFlame_activate_FUN_004c4db0(CGunFlame *this_ptr,CVector3f *position,CVector3f *euler_angles,int flame_type)
 

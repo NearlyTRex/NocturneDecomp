@@ -8,7 +8,7 @@
 ; void *           Stack[0x8]:4   src
 ; SIZE_T           Stack[0xc]:4   n
 ;
-; XREF[79]:
+; XREF[80]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0 at 00488f3a
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040ff10
 ;   core_actor.cpp_trimActorName_FUN_004087b0 at 0040880b
@@ -19,7 +19,7 @@
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330 at 004b0448
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 at 004ae520
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ad900
-;   ... and 69 more
+;   ... and 70 more
 ;
 ; *****************************************************************************
 

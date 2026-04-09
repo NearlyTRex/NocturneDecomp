@@ -1,6 +1,6 @@
 // Name: core_werewolf.cpp_CWerewolf_setup_FUN_005efcc0
 // Address: 005efcc0
-// Address Range: [[005efcc0, 005efd71]]
+// Address Range: [[005efcc0, 005efdda]]
 // Convention: __cdecl
 // Signature: void __cdecl core_werewolf_cpp_CWerewolf_setup_FUN_005efcc0(CWerewolf *this_ptr)
 

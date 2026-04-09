@@ -1,6 +1,6 @@
 // Name: core_box.cpp_CBox_setupN_FUN_0041df50
 // Address: 0041df50
-// Address Range: [[0041df50, 0041df99] [0041e0b0, 0041e0d7]]
+// Address Range: [[0041df50, 0041e0d7]]
 // Convention: __cdecl
 // Signature: void __cdecl core_box_cpp_CBox_setupN_FUN_0041df50(CBox *this_ptr,CVector3f *position,CVector3f *orientation,int point_count,CVector3f *point_array,float volume)
 

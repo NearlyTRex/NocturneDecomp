@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 90,
     "complexity_score": 35,
-    "cross_reference_count": 4,
+    "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "clean",
@@ -39,6 +39,12 @@
       "addr": "00422640",
       "from_addr": "004226b7",
       "name": "core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422640",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00421830",
+      "from_addr": "004218b3",
+      "name": "core_boxactor.cpp_CBoxActor_setup_FUN_00421830",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -81,7 +87,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 4,
+    "call_site_count": 5,
     "call_sites": [
       {
         "call_addr": "00422503",
@@ -120,6 +126,17 @@
         "call_addr": "004226b7",
         "call_type": "direct",
         "caller": "core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422640",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004218b3",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_CBoxActor_setup_FUN_00421830",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -1,6 +1,6 @@
 // Name: core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0
 // Address: 005eeeb0
-// Address Range: [[005eeeb0, 005eeecf]]
+// Address Range: [[005eeeb0, 005ef131]]
 // Convention: __cdecl
 // Signature: void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float flash_timer,int play_sound)
 

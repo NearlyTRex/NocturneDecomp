@@ -1,6 +1,6 @@
 // Name: core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90
 // Address: 00526d90
-// Address Range: [[00526d90, 00526e9b] [00526ebb, 005271b7]]
+// Address Range: [[00526d90, 005271b7]]
 // Convention: __cdecl
 // Signature: int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_00526d90(CMobster *this_ptr,float delta_time)
 

@@ -512,6 +512,30 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CGame_showFullscreenBitmap_FUN_004e2910.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 12,
+          "line": 73,
+          "message": "Redundant assignment of 'pcVar8' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 12,
+          "line": 78,
+          "message": "Redundant assignment of 'pcVar8' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",

@@ -50,6 +50,9 @@ from ghidra_annotations.annotations.pseudocode.header_compile import (
 from ghidra_annotations.annotations.pseudocode.function_compile import (
     compile_functions_after_export
 )
+from ghidra_annotations.annotations.pseudocode.static_analysis import (
+    run_static_analysis_after_export
+)
 from ghidra_annotations.annotations.pseudocode.compiler_config import DEFAULT_COMPILER
 
 # Python-heavy processing imports (for main thread)
@@ -66,7 +69,7 @@ from ghidra_annotations.annotations.pseudocode.suspects import (
     identify_format_string_mismatch, identify_stack_align_anchor,
     identify_direct_call_esp_uncertainty, identify_lea_esp_stack_addr,
     identify_special_functions, identify_displaced_global_access,
-    build_global_interval_map
+    identify_wrong_global_suspects, build_global_interval_map
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
@@ -512,6 +515,10 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
     displaced_suspects = identify_displaced_global_access(result.assembly_code, global_interval_map)
     suspects.extend(displaced_suspects)
 
+    # Identify wrong global resolution (Watcom 1-based indexing base shift)
+    wrong_global_suspects = identify_wrong_global_suspects(decompiled_code, result.func_globals)
+    suspects.extend(wrong_global_suspects)
+
     # Filter out suspect types that are no longer useful
     suspects = [s for s in suspects if s.get('type') not in OMIT_SUSPECT_TYPES]
     resolved_suspects = [s for s in resolved_suspects if s.get('type') not in OMIT_SUSPECT_TYPES]
@@ -565,7 +572,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
     }
 
 
-def export_pseudocode(currentProgram, path, strict=False):
+def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
     """Export pseudocode for all functions in the program.
 
     Args:
@@ -573,6 +580,7 @@ def export_pseudocode(currentProgram, path, strict=False):
         path: Base directory for output files
         strict: If True, raise RuntimeError when compilation fails.
                 If False (default), errors are logged to reports but export continues.
+        deep_analysis: If True, use deep static analysis mode (longer timeouts).
     """
     # Initialize profiling timer
     timer = PhaseTimer()
@@ -1214,6 +1222,23 @@ def export_pseudocode(currentProgram, path, strict=False):
             compile_result['successful'],
             compile_result['total'],
             compile_result['success_rate']
+        ))
+    timer.end_phase()
+
+    # Run static analysis (after compilation, before report generation)
+    timer.start_phase("Static analysis")
+    log_info("Running static analysis...")
+    sa_result = run_static_analysis_after_export(
+        pseudocode_dir,
+        num_threads=num_threads,
+        reports_dir=reports_dir,
+        repo_dir=repo_dir,
+        deep=deep_analysis
+    )
+    if sa_result:
+        log_info("Static analysis: %d files analyzed, %d findings" % (
+            sa_result['total_files'],
+            sa_result['total_diagnostics']
         ))
     timer.end_phase()
 

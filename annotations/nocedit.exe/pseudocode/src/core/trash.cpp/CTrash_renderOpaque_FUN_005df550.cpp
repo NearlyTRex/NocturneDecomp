@@ -1,6 +1,6 @@
 // Name: core_trash.cpp_CTrash_renderOpaque_FUN_005df550
 // Address: 005df550
-// Address Range: [[005df550, 005df5f3]]
+// Address Range: [[005df550, 005df609]]
 // Convention: __cdecl
 // Signature: int __cdecl core_trash_cpp_CTrash_renderOpaque_FUN_005df550(CTrash *this_ptr)
 

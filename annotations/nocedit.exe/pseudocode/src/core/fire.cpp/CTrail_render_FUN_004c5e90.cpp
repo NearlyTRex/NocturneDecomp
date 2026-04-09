@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CTrail_render_FUN_004c5e90
 // Address: 004c5e90
-// Address Range: [[004c5e90, 004c6149]]
+// Address Range: [[004c5e90, 004c6162]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
 

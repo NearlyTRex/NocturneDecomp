@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 28,
+    "assembly_lines": 90,
     "complexity_score": 35,
     "cross_reference_count": 1,
     "function_call_count": 1,
-    "global_count": 3,
+    "global_count": 7,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 35,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 63
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -29,7 +29,7 @@
     "address_range": [
       [
         "004bf390",
-        "004bf3e9"
+        "004bf4bb"
       ]
     ],
     "convention": "__cdecl",
@@ -57,8 +57,32 @@
       "value": "02d81a9c"
     },
     {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
       "addr": "02d81d00",
       "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326eed8",
+      "name": "g_CDemonSetInstance.active_fog.scroll.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326eedc",
+      "name": "g_CDemonSetInstance.active_fog.scroll.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326eee0",
+      "name": "g_CDemonSetInstance.active_fog.scroll.z",
       "type": "undefined4",
       "value": null
     }
@@ -84,31 +108,31 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.583333333333333,
-    "instruction_count": 24,
+    "avg_pcode_per_instr": 7.211764705882353,
+    "instruction_count": 85,
     "opcode_distribution": {
-      "CALL": 1,
+      "CALL": 2,
       "CBRANCH": 1,
-      "COPY": 52,
-      "FLOAT2FLOAT": 9,
-      "FLOAT_ADD": 2,
-      "FLOAT_MULT": 3,
-      "INT_ADD": 15,
-      "INT_AND": 6,
-      "INT_CARRY": 1,
-      "INT_EQUAL": 6,
+      "COPY": 345,
+      "FLOAT2FLOAT": 53,
+      "FLOAT_ADD": 10,
+      "FLOAT_MULT": 11,
+      "INT_ADD": 61,
+      "INT_AND": 12,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 12,
       "INT_LESS": 2,
       "INT_NOTEQUAL": 1,
       "INT_SBORROW": 2,
-      "INT_SCARRY": 1,
-      "INT_SLESS": 3,
-      "INT_SUB": 6,
-      "LOAD": 11,
-      "POPCOUNT": 3,
-      "RETURN": 1,
-      "STORE": 8
+      "INT_SCARRY": 4,
+      "INT_SLESS": 6,
+      "INT_SUB": 9,
+      "LOAD": 43,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 27
     },
-    "pcode_op_count": 134
+    "pcode_op_count": 613
   },
   "stack_frame": {
     "frame_size": 8,

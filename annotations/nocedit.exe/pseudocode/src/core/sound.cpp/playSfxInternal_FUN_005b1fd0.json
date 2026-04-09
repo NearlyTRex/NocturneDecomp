@@ -802,6 +802,52 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "playSfxInternal_FUN_005b1fd0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 6,
+      "diagnostics": [
+        {
+          "check_name": "cert-err33-c",
+          "column": 9,
+          "line": 56,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 9,
+          "line": 56,
+          "message": "'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 11,
+          "line": 223,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 11,
+          "line": 223,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err33-c",
+          "column": 11,
+          "line": 236,
+          "message": "the value returned by this function should not be disregarded; neglecting it may lead to errors"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 11,
+          "line": 236,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "actual_args": 0,

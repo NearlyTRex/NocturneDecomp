@@ -1,6 +1,6 @@
 // Name: core_dracbrid.cpp_CDraculaBride_setup_FUN_004840b0
 // Address: 004840b0
-// Address Range: [[004840b0, 004842f2] [00484329, 00484390]]
+// Address Range: [[004840b0, 00484390]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dracbrid_cpp_CDraculaBride_setup_FUN_004840b0(CDraculaBride *this_ptr)
 

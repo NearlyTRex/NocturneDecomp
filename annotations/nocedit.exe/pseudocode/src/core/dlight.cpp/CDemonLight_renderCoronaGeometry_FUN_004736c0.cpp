@@ -1,6 +1,6 @@
 // Name: core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0
 // Address: 004736c0
-// Address Range: [[004736c0, 004739cc] [004739f3, 00473a1d]]
+// Address Range: [[004736c0, 00473a1d]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemonLight *this_ptr)
 

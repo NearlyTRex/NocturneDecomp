@@ -10,8 +10,10 @@
 ; int              Stack[0x10]:4   lighting_active
 ; uint             Stack[0x14]:4   sfx_handle
 ;
-; XREF[1]:
+; XREF[3]:
+;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80 at 004a8037
 ;   core_fire.cpp_CFireball_onCollision_FUN_004c1690 at 004c16be
+;   core_larva.cpp_CLarva_process_FUN_00503080 at 00503498
 ;
 ; Referenced Globals:
 ;   int g_FireballAllocIndex

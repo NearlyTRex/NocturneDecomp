@@ -1,6 +1,6 @@
 // Name: core_boxactor.cpp_CLightActor_process_FUN_00422a50
 // Address: 00422a50
-// Address Range: [[00422a50, 00422afa] [00422b17, 00422c73] [03fc4849, 03fc48aa]]
+// Address Range: [[00422a50, 00422c73] [03fc4849, 03fc48aa]]
 // Convention: __cdecl
 // Signature: void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *this_ptr,float delta_time)
 

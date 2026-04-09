@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 68,
+    "assembly_lines": 294,
     "complexity_score": 179,
     "cross_reference_count": 0,
-    "function_call_count": 1,
-    "global_count": 0,
+    "function_call_count": 11,
+    "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 154,
     "suspect_count": 2,
     "suspect_types": [
       "warning_inlined_function"
     ],
-    "total_lines": 222
+    "total_lines": 448
   },
   "cross_references": [],
   "function": {
@@ -24,7 +24,7 @@
     "address_range": [
       [
         "00585c90",
-        "00585d2b"
+        "00585fef"
       ]
     ],
     "convention": "__cdecl",
@@ -34,12 +34,111 @@
   },
   "function_calls": [
     {
+      "addr": "00471d30",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30"
+    },
+    {
+      "addr": "006013b1",
+      "is_variadic": false,
+      "name": "crt_math.c_atan2_FUN_006013b1"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+    },
+    {
       "addr": "005fefd0",
       "is_variadic": false,
       "name": "crt_stdio.c_fgets_FUN_005fefd0"
+    },
+    {
+      "addr": "005fe7c0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    },
+    {
+      "addr": "00403260",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
+    },
+    {
+      "addr": "00401fd0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "00502460",
+      "is_variadic": false,
+      "name": "engine_keys.cpp_CKeys_getInputKey_FUN_00502460"
+    },
+    {
+      "addr": "005eda20",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3e70",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "00649406",
+      "name": "s_f_f_f_00649406",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649410",
+      "name": "s_f_f_f_00649410",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064941a",
+      "name": "s_f_0064941a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064941e",
+      "name": "s_f_0064941e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649422",
+      "name": "s_f_00649422",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649426",
+      "name": "s_Warning_Camera_s_has_unk_00649426",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067cf44",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "02dcd7d4"
+    },
+    {
+      "addr": "02dcd7d4",
+      "name": "g_CKeysInstance",
+      "type": "CKeys",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 0,
     "call_sites": [],
@@ -49,33 +148,44 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.466666666666667,
-    "instruction_count": 60,
+    "avg_pcode_per_instr": 4.699115044247788,
+    "instruction_count": 226,
     "opcode_distribution": {
-      "BOOL_NEGATE": 3,
-      "BOOL_OR": 1,
-      "CALL": 1,
-      "CBRANCH": 7,
-      "COPY": 46,
-      "INT_ADD": 26,
-      "INT_AND": 48,
-      "INT_CARRY": 6,
-      "INT_EQUAL": 48,
-      "INT_LESS": 7,
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 8,
+      "BRANCH": 13,
+      "CALL": 15,
+      "CALLOTHER": 1,
+      "CBRANCH": 25,
+      "COPY": 304,
+      "FLOAT2FLOAT": 19,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 2,
+      "FLOAT_NEG": 1,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 95,
+      "INT_AND": 92,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 92,
+      "INT_LESS": 19,
       "INT_MULT": 4,
       "INT_NEGATE": 2,
       "INT_NOTEQUAL": 1,
-      "INT_SBORROW": 11,
-      "INT_SCARRY": 6,
-      "INT_SLESS": 23,
-      "INT_SUB": 27,
+      "INT_SBORROW": 23,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 45,
+      "INT_SUB": 78,
       "INT_XOR": 4,
       "INT_ZEXT": 2,
-      "LOAD": 15,
-      "POPCOUNT": 23,
-      "STORE": 17
+      "LOAD": 50,
+      "POPCOUNT": 45,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 75,
+      "TRUNC": 1
     },
-    "pcode_op_count": 328
+    "pcode_op_count": 1062
   },
   "stack_frame": {
     "frame_size": 588,
@@ -200,6 +310,28 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "C3DSCamera_import3DS_FUN_00585c90.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 21,
+          "line": 83,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 27,
+          "line": 83,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

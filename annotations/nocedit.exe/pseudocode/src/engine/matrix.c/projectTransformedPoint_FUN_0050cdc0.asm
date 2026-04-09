@@ -6,7 +6,8 @@
 ; Parameters:
 ; SProjectedVertex * Stack[0x4]:4   point
 ;
-; XREF[2]:
+; XREF[3]:
+;   core_flame.cpp_CFlame_renderTransparent_FUN_004ca110 at 004ca8e8
 ;   core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 at 00574cd3
 ;   engine_matrix.c_projectCachedPoint_FUN_0050cda0 at 0050cdb6
 ;

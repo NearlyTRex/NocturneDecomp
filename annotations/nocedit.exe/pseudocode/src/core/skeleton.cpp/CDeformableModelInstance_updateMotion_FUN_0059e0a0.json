@@ -772,6 +772,121 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CDeformableModelInstance_updateMotion_FUN_0059e0a0.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 15,
+      "diagnostics": [
+        {
+          "check_id": "objectIndex",
+          "column": 20,
+          "line": 262,
+          "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "objectIndex",
+          "column": 20,
+          "line": 263,
+          "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "objectIndex",
+          "column": 20,
+          "line": 264,
+          "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "objectIndex",
+          "column": 20,
+          "line": 265,
+          "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "objectIndex",
+          "column": 38,
+          "line": 283,
+          "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "objectIndex",
+          "column": 38,
+          "line": 284,
+          "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "objectIndex",
+          "column": 38,
+          "line": 285,
+          "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "objectIndex",
+          "column": 38,
+          "line": 286,
+          "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 68,
+          "line": 128,
+          "message": "Uninitialized variable: auStack_248",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 68,
+          "line": 129,
+          "message": "Uninitialized variable: fStack_244",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 68,
+          "line": 130,
+          "message": "Uninitialized variable: fStack_240",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 54,
+          "line": 270,
+          "message": "Uninitialized variable: afStack_228",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 29,
+          "line": 189,
+          "message": "Uninitialized variable: afStack_1b8",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 69,
+          "line": 248,
+          "message": "Uninitialized variable: afStack_168[0]",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 65,
+          "line": 175,
+          "message": "Uninitialized variable: afStack_c8[0]",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",

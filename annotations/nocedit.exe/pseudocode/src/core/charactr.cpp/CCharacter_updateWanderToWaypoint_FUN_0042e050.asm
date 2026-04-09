@@ -161,6 +161,10 @@ section .text
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0042e1f0
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
         ;   Label: LAB_0042e1f0
+    MOV dword ptr [ESP + 0x1f74],EAX    ; 0042e1f5
+    MOV EAX,dword ptr [ESP + 0x1f74]    ; 0042e1fc
+    MOV dword ptr [EDI + 0x25f4],EAX    ; 0042e203
+    ADD ESP,0x8                         ; 0042e209
     MOV EBX,dword ptr [EDI + 0x25f0]    ; 0042e20c
         ;   Label: LAB_0042e20c
     TEST EBX,EBX                        ; 0042e212

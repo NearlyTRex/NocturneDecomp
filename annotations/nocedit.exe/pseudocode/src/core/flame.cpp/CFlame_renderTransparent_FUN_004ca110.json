@@ -5,11 +5,11 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 473,
+    "assembly_lines": 683,
     "complexity_score": 286,
     "cross_reference_count": 4,
-    "function_call_count": 17,
-    "global_count": 39,
+    "function_call_count": 19,
+    "global_count": 40,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 256,
     "suspect_count": 2,
@@ -17,7 +17,7 @@
       "suspect_float",
       "warning_inlined_function"
     ],
-    "total_lines": 729
+    "total_lines": 939
   },
   "cross_references": [
     {
@@ -50,18 +50,6 @@
     "address_range": [
       [
         "004ca110",
-        "004ca626"
-      ],
-      [
-        "004ca64e",
-        "004ca659"
-      ],
-      [
-        "004ca65d",
-        "004ca70b"
-      ],
-      [
-        "004caa15",
         "004caa6f"
       ],
       [
@@ -150,9 +138,19 @@
       "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0"
     },
     {
+      "addr": "0048ae10",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10"
+    },
+    {
       "addr": "0048ca50",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50"
+    },
+    {
+      "addr": "0050cdc0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_projectTransformedPoint_FUN_0050cdc0"
     },
     {
       "addr": "005b575c",
@@ -190,6 +188,12 @@
       "name": "g_CDemonRendererPtr2",
       "type": "CDemonRenderer*",
       "value": "02c6d578"
+    },
+    {
+      "addr": "0067b0c8",
+      "name": "SMRGLTextureBasic_0067b0c8",
+      "type": "SMRGLTextureBasic",
+      "value": null
     },
     {
       "addr": "0067b100",
@@ -450,52 +454,52 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.8606965174129355,
-    "instruction_count": 402,
+    "avg_pcode_per_instr": 4.8458961474036855,
+    "instruction_count": 597,
     "opcode_distribution": {
-      "BOOL_NEGATE": 30,
-      "BOOL_OR": 3,
+      "BOOL_NEGATE": 31,
+      "BOOL_OR": 4,
       "BRANCH": 6,
-      "CALL": 24,
+      "CALL": 34,
       "CALLIND": 2,
-      "CBRANCH": 19,
-      "COPY": 651,
-      "FLOAT2FLOAT": 38,
+      "CBRANCH": 22,
+      "COPY": 1022,
+      "FLOAT2FLOAT": 65,
       "FLOAT_ADD": 2,
       "FLOAT_EQUAL": 1,
       "FLOAT_LESS": 1,
-      "FLOAT_MULT": 19,
+      "FLOAT_MULT": 32,
       "FLOAT_NAN": 2,
       "FLOAT_SQRT": 1,
       "INT2FLOAT": 1,
-      "INT_ADD": 158,
-      "INT_AND": 195,
-      "INT_CARRY": 33,
-      "INT_EQUAL": 144,
-      "INT_LEFT": 6,
-      "INT_LESS": 18,
-      "INT_MULT": 2,
-      "INT_NOTEQUAL": 24,
-      "INT_OR": 23,
-      "INT_SBORROW": 18,
-      "INT_SCARRY": 33,
-      "INT_SDIV": 2,
-      "INT_SEXT": 8,
-      "INT_SLESS": 70,
-      "INT_SREM": 2,
+      "INT_ADD": 253,
+      "INT_AND": 249,
+      "INT_CARRY": 52,
+      "INT_EQUAL": 198,
+      "INT_LEFT": 8,
+      "INT_LESS": 21,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 28,
+      "INT_OR": 25,
+      "INT_SBORROW": 21,
+      "INT_SCARRY": 53,
+      "INT_SDIV": 4,
+      "INT_SEXT": 16,
+      "INT_SLESS": 97,
+      "INT_SREM": 4,
       "INT_SRIGHT": 10,
-      "INT_SUB": 97,
-      "INT_XOR": 9,
-      "INT_ZEXT": 8,
-      "LOAD": 66,
-      "POPCOUNT": 70,
+      "INT_SUB": 129,
+      "INT_XOR": 13,
+      "INT_ZEXT": 12,
+      "LOAD": 108,
+      "POPCOUNT": 97,
       "RETURN": 2,
-      "ROUND": 13,
-      "STORE": 122,
-      "SUBPIECE": 8,
-      "TRUNC": 13
+      "ROUND": 25,
+      "STORE": 197,
+      "SUBPIECE": 16,
+      "TRUNC": 25
     },
-    "pcode_op_count": 1954
+    "pcode_op_count": 2893
   },
   "stack_frame": {
     "frame_size": 332,

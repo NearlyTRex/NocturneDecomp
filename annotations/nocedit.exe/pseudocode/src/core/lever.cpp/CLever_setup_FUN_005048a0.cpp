@@ -1,6 +1,6 @@
 // Name: core_lever.cpp_CLever_setup_FUN_005048a0
 // Address: 005048a0
-// Address Range: [[005048a0, 005048bd]]
+// Address Range: [[005048a0, 00504911]]
 // Convention: __cdecl
 // Signature: void __cdecl core_lever_cpp_CLever_setup_FUN_005048a0(CLever *this_ptr)
 

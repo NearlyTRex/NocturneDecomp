@@ -6,11 +6,11 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 2429,
+    "assembly_lines": 2523,
     "complexity_score": 1095,
     "cross_reference_count": 2,
-    "function_call_count": 71,
-    "global_count": 126,
+    "function_call_count": 72,
+    "global_count": 128,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 855,
     "suspect_count": 22,
@@ -20,7 +20,7 @@
       "stack_ref",
       "warning_inlined_function"
     ],
-    "total_lines": 3284
+    "total_lines": 3378
   },
   "cross_references": [
     {
@@ -41,14 +41,6 @@
     "address_range": [
       [
         "0047cbc0",
-        "0047cdf1"
-      ],
-      [
-        "0047ce5a",
-        "0047d1bb"
-      ],
-      [
-        "0047d250",
         "0047e805"
       ]
     ],
@@ -334,6 +326,11 @@
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
     },
     {
+      "addr": "004a1ca0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0"
+    },
+    {
       "addr": "004a00f0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0"
@@ -424,6 +421,18 @@
     {
       "addr": "00620672",
       "name": "s_Model_not_crammed_00620672",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620686",
+      "name": "s_d_00620686",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620689",
+      "name": "s_Frame_d_of_d_00620689",
       "type": "TerminatedCString",
       "value": null
     },
@@ -1204,18 +1213,18 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.725539387857501,
-    "instruction_count": 1993,
+    "avg_pcode_per_instr": 4.750726040658277,
+    "instruction_count": 2066,
     "opcode_distribution": {
       "BOOL_AND": 1,
-      "BOOL_NEGATE": 30,
-      "BOOL_OR": 35,
-      "BRANCH": 56,
-      "CALL": 147,
+      "BOOL_NEGATE": 40,
+      "BOOL_OR": 36,
+      "BRANCH": 58,
+      "CALL": 153,
       "CALLIND": 26,
-      "CBRANCH": 126,
-      "COPY": 2987,
-      "FLOAT2FLOAT": 203,
+      "CBRANCH": 133,
+      "COPY": 3057,
+      "FLOAT2FLOAT": 204,
       "FLOAT_ADD": 21,
       "FLOAT_EQUAL": 6,
       "FLOAT_LESS": 6,
@@ -1224,32 +1233,32 @@
       "FLOAT_NEG": 1,
       "FLOAT_SUB": 11,
       "INT2FLOAT": 9,
-      "INT_ADD": 766,
-      "INT_AND": 862,
-      "INT_CARRY": 168,
-      "INT_EQUAL": 738,
+      "INT_ADD": 795,
+      "INT_AND": 930,
+      "INT_CARRY": 176,
+      "INT_EQUAL": 782,
       "INT_LEFT": 26,
-      "INT_LESS": 78,
+      "INT_LESS": 82,
       "INT_MULT": 22,
-      "INT_NOTEQUAL": 58,
-      "INT_OR": 45,
-      "INT_SBORROW": 83,
-      "INT_SCARRY": 173,
+      "INT_NOTEQUAL": 67,
+      "INT_OR": 53,
+      "INT_SBORROW": 87,
+      "INT_SCARRY": 182,
       "INT_SEXT": 6,
-      "INT_SLESS": 366,
-      "INT_SRIGHT": 6,
-      "INT_SUB": 694,
-      "INT_XOR": 33,
+      "INT_SLESS": 387,
+      "INT_SRIGHT": 10,
+      "INT_SUB": 722,
+      "INT_XOR": 35,
       "INT_ZEXT": 27,
-      "LOAD": 368,
-      "POPCOUNT": 364,
+      "LOAD": 383,
+      "POPCOUNT": 385,
       "RETURN": 1,
-      "ROUND": 12,
-      "STORE": 805,
+      "ROUND": 13,
+      "STORE": 829,
       "SUBPIECE": 4,
-      "TRUNC": 12
+      "TRUNC": 13
     },
-    "pcode_op_count": 9418
+    "pcode_op_count": 9815
   },
   "stack_frame": {
     "frame_size": 3248,
@@ -1952,6 +1961,259 @@
         "type": "CKeyFramedModel *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CKeyFramedModel_showEditorMenu_FUN_0047cbc0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 29,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 32,
+          "line": 206,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 38,
+          "line": 206,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 30,
+          "line": 208,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 53,
+          "line": 229,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 59,
+          "line": 229,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 17,
+          "line": 371,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 43,
+          "line": 371,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 70,
+          "line": 371,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 36,
+          "line": 377,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 58,
+          "line": 379,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 58,
+          "line": 381,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 26,
+          "line": 464,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 32,
+          "line": 477,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 31,
+          "line": 480,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 27,
+          "line": 695,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 33,
+          "line": 695,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 27,
+          "line": 732,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 33,
+          "line": 732,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 27,
+          "line": 734,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 33,
+          "line": 734,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 27,
+          "line": 736,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 33,
+          "line": 736,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 40,
+          "line": 774,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 46,
+          "line": 774,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 42,
+          "line": 796,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 48,
+          "line": 796,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 29,
+          "line": 806,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 35,
+          "line": 806,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 26,
+          "line": 820,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 9,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 27,
+          "line": 513,
+          "message": "Redundant assignment of 'pCVar13' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 27,
+          "line": 518,
+          "message": "Redundant assignment of 'pCVar13' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 39,
+          "line": 542,
+          "message": "Uninitialized variable: local_ca8",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 48,
+          "line": 698,
+          "message": "Uninitialized variable: local_174",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 48,
+          "line": 697,
+          "message": "Uninitialized variable: local_170",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 48,
+          "line": 696,
+          "message": "Uninitialized variable: local_16c",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 30,
+          "line": 698,
+          "message": "Uninitialized variable: local_168",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 30,
+          "line": 697,
+          "message": "Uninitialized variable: local_164",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 30,
+          "line": 696,
+          "message": "Uninitialized variable: local_160",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

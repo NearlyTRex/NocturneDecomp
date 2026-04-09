@@ -1,6 +1,6 @@
 // Name: core_larva.cpp_CLarva_setup_FUN_00503020
 // Address: 00503020
-// Address Range: [[00503020, 0050305f]]
+// Address Range: [[00503020, 00503076]]
 // Convention: __cdecl
 // Signature: void __cdecl core_larva_cpp_CLarva_setup_FUN_00503020(CLarva *this_ptr)
 

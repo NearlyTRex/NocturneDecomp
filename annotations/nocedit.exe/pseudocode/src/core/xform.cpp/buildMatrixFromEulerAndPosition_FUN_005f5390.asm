@@ -8,9 +8,10 @@
 ; CVector3f *      Stack[0x8]:4   position
 ; CVector3f *      Stack[0xc]:4   euler_angles
 ;
-; XREF[17]:
+; XREF[18]:
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 at 0041a87b
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0 at 004260e0
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190 at 0042b4bc
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 at 0042cec0
 ;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110 at 0043a20a
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047e27f
@@ -18,8 +19,7 @@
 ;   core_ladder.cpp_CLadder_cacheRelativePosition_FUN_00502b80 at 00502bcb
 ;   core_mimic.cpp_CMimic_updatePose_FUN_0051f930 at 0051faca
 ;   core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0 at 0054e268
-;   core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 at 0054ee11
-;   ... and 7 more
+;   ... and 8 more
 ;
 ; *****************************************************************************
 

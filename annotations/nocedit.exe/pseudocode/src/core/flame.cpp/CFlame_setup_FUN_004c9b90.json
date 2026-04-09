@@ -5,22 +5,28 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 11,
+    "assembly_lines": 43,
     "complexity_score": 22,
-    "cross_reference_count": 1,
-    "function_call_count": 1,
-    "global_count": 1,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 3,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 22,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 33
+    "total_lines": 65
   },
   "cross_references": [
     {
       "addr": "0041ae50",
       "from_addr": "0041aebf",
       "name": "core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005e8fc0",
+      "from_addr": "005e90e4",
+      "name": "core_vessel.cpp_CCryptVessel_setup_FUN_005e8fc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -29,7 +35,7 @@
     "address_range": [
       [
         "004c9b90",
-        "004c9ba4"
+        "004c9bf5"
       ]
     ],
     "convention": "__cdecl",
@@ -41,19 +47,52 @@
       "addr": "00408bb0",
       "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0"
+    },
+    {
+      "addr": "005feb5c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    },
+    {
+      "addr": "0048db80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
     }
   ],
   "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
     {
       "addr": "0067b100",
       "name": "SMRGLTextureBasic_ARRAY_0067b100",
       "type": "SMRGLTextureBasic[40]",
       "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
     }
   ],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
+      {
+        "call_addr": "005e90e4",
+        "call_type": "direct",
+        "caller": "core_vessel.cpp_CCryptVessel_setup_FUN_005e8fc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
       {
         "call_addr": "0041aebf",
         "call_type": "direct",
@@ -66,28 +105,39 @@
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.4444444444444446,
-    "instruction_count": 9,
+    "avg_pcode_per_instr": 4.942857142857143,
+    "instruction_count": 35,
     "opcode_distribution": {
-      "CALL": 1,
-      "COPY": 9,
-      "INT_ADD": 1,
-      "INT_AND": 2,
-      "INT_EQUAL": 2,
-      "INT_SLESS": 1,
-      "INT_SUB": 6,
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 28,
+      "INT_ADD": 15,
+      "INT_AND": 23,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 22,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 3,
+      "INT_SLESS": 11,
+      "INT_SUB": 12,
       "INT_XOR": 1,
-      "LOAD": 1,
-      "POPCOUNT": 1,
-      "STORE": 6
+      "LOAD": 7,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 11,
+      "SUBPIECE": 2
     },
-    "pcode_op_count": 31
+    "pcode_op_count": 173
   },
   "stack_frame": {
     "frame_size": 8,

@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 87,
+    "complexity_score": 102,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 23,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 72,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "warning_inlined_function"
+      "warning_inlined_function",
+      "wrong_global"
     ],
     "total_lines": 371
   },
@@ -366,6 +367,14 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Global g_KeyboardState used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 21,
+      "match": "g_KeyboardState",
+      "severity": "moderate",
+      "text": "if ((g_KeyboardState[0x2f] != '\\0') && (g_KeyboardState[0x1d] == '\\0')) {",
+      "type": "wrong_global"
     }
   ]
 }

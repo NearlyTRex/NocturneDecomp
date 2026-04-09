@@ -11,7 +11,8 @@
 ; float            Stack[-0xc]:4  local_c
 ; float            Stack[-0x8]:4  local_8
 ;
-; XREF[3]:
+; XREF[4]:
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190 at 0042b3eb
 ;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 at 004d74b0
 ;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 at 004d563d
 ;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0 at 005c0f09

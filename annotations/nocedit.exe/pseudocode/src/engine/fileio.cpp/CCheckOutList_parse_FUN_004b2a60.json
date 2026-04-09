@@ -328,6 +328,23 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CCheckOutList_parse_FUN_004b2a60.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 16,
+          "line": 52,
+          "message": "Redundant assignment of 'pCVar5' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",

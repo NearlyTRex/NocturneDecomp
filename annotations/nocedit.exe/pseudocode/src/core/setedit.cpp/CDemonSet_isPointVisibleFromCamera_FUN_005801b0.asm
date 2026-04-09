@@ -8,7 +8,8 @@
 ; CVector3i *      Stack[0x8]:4   point
 ; int              Stack[0xc]:4   camera_index
 ;
-; XREF[1]:
+; XREF[2]:
+;   core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00 at 0057ff3f
 ;   core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0 at 00580180
 ;
 ; Referenced Globals:

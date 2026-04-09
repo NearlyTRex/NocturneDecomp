@@ -1,6 +1,6 @@
 // Name: core_weather.cpp_CWeather_update_FUN_005eeaf0
 // Address: 005eeaf0
-// Address Range: [[005eeaf0, 005eec56] [005eec84, 005eede0] [005eee7c, 005eeeae]]
+// Address Range: [[005eeaf0, 005eeeae]]
 // Convention: __cdecl
 // Signature: void __cdecl core_weather_cpp_CWeather_update_FUN_005eeaf0(CWeather *this_ptr)
 

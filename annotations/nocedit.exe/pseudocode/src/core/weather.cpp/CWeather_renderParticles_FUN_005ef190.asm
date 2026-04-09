@@ -386,6 +386,7 @@ section .text
     PUSH EDX                            ; 005ef5eb | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 005ef5ec
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 005ef5f1
     INC EDI                             ; 005ef5f4
         ;   Label: LAB_005ef5f4
     ADD ESI,0xc                         ; 005ef5f5
@@ -592,4 +593,7 @@ section .text
     PUSH EBX                            ; 005ef8b1 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 005ef8b2
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 005ef8b7
+    JMP 0x005ef690                      ; 005ef8ba
+        ;   XREF to: 005ef690 (UNCONDITIONAL_JUMP)  ; LAB_005ef690
 

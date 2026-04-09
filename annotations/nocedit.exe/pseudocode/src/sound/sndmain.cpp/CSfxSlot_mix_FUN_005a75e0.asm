@@ -36,7 +36,8 @@
 ; float            Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
+;   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0 at 005a5b10
 ;   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 at 005acc82
 ;
 ; Referenced Globals:

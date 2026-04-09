@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 100,
+    "assembly_lines": 154,
     "complexity_score": 133,
     "cross_reference_count": 2,
     "function_call_count": 5,
-    "global_count": 22,
+    "global_count": 31,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 58,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 158
+    "total_lines": 212
   },
   "cross_references": [
     {
@@ -37,10 +37,6 @@
     "address_range": [
       [
         "00529ae0",
-        "00529b31"
-      ],
-      [
-        "00529bf0",
         "00529cd5"
       ]
     ],
@@ -149,6 +145,12 @@
       "value": null
     },
     {
+      "addr": "0067d7d0",
+      "name": "g_MoonBatsEnabled",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
       "addr": "02d81cb0",
       "name": "g_CGameInstance.head_of_horror_cheat",
       "type": "undefined4",
@@ -191,9 +193,45 @@
       "value": null
     },
     {
+      "addr": "02f38208",
+      "name": "g_MoonBatCourses[2].loop",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "02f3820c",
       "name": "g_MoonBats",
       "type": "SBat[30]",
+      "value": null
+    },
+    {
+      "addr": "02f38210",
+      "name": "g_MoonBats[0].course_position",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f38214",
+      "name": "g_MoonBats[0].animation_frame",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f38218",
+      "name": "g_MoonBats[0].random_offset.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f3821c",
+      "name": "g_MoonBats[0].random_offset.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f38220",
+      "name": "g_MoonBats[0].random_offset.z",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -203,9 +241,21 @@
       "value": null
     },
     {
+      "addr": "02f38228",
+      "name": "g_MoonBats[1].course_position",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "02f384dc",
       "name": "g_MoonBatModel",
       "type": "CKeyFramedModel",
+      "value": null
+    },
+    {
+      "addr": "02f385dc",
+      "name": "g_MoonBatModel.frame_count",
+      "type": "undefined4",
       "value": null
     }
   ],
@@ -263,41 +313,43 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.897435897435898,
-    "instruction_count": 78,
+    "avg_pcode_per_instr": 5.322834645669292,
+    "instruction_count": 127,
     "opcode_distribution": {
-      "BOOL_NEGATE": 7,
+      "BOOL_NEGATE": 8,
       "BRANCH": 2,
-      "CALL": 10,
-      "CBRANCH": 3,
-      "COPY": 67,
-      "FLOAT2FLOAT": 1,
-      "INT2FLOAT": 1,
-      "INT_ADD": 18,
-      "INT_AND": 49,
-      "INT_CARRY": 11,
-      "INT_EQUAL": 39,
+      "CALL": 14,
+      "CBRANCH": 4,
+      "COPY": 190,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_NEG": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 45,
+      "INT_AND": 69,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 59,
       "INT_LEFT": 1,
-      "INT_LESS": 5,
+      "INT_LESS": 7,
       "INT_MULT": 1,
       "INT_NOTEQUAL": 4,
       "INT_OR": 5,
-      "INT_SBORROW": 5,
-      "INT_SCARRY": 11,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 18,
       "INT_SDIV": 1,
       "INT_SEXT": 4,
-      "INT_SLESS": 19,
+      "INT_SLESS": 29,
       "INT_SREM": 1,
       "INT_SRIGHT": 2,
-      "INT_SUB": 41,
-      "INT_XOR": 2,
+      "INT_SUB": 54,
+      "INT_XOR": 3,
       "INT_ZEXT": 2,
-      "LOAD": 6,
-      "POPCOUNT": 19,
-      "STORE": 41,
+      "LOAD": 17,
+      "POPCOUNT": 29,
+      "RETURN": 1,
+      "STORE": 64,
       "SUBPIECE": 4
     },
-    "pcode_op_count": 382
+    "pcode_op_count": 676
   },
   "stack_frame": {
     "frame_size": 8,

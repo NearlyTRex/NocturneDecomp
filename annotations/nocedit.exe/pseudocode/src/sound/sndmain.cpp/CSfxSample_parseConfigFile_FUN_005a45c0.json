@@ -684,6 +684,65 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CSfxSample_parseConfigFile_FUN_005a45c0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 6,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 16,
+          "line": 77,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 15,
+          "line": 125,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 17,
+          "line": 147,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 19,
+          "line": 166,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 21,
+          "line": 168,
+          "message": "'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead"
+        },
+        {
+          "check_name": "cert-err34-c",
+          "column": 23,
+          "line": 194,
+          "message": "'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "nullPointer",
+          "column": 52,
+          "line": 109,
+          "message": "Possible null pointer dereference: pcVar11",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",

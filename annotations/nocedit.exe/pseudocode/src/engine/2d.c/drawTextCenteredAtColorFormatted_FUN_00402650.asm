@@ -48,4 +48,5 @@ section .text
     ADD ESP,0x1004                      ; 004026a9
     POP ESI                             ; 004026af
     POP EBX                             ; 004026b0
+    RET                                 ; 004026b1
 

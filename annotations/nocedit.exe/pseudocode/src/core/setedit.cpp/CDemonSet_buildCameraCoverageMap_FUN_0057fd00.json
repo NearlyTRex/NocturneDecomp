@@ -5,10 +5,10 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 221,
+    "assembly_lines": 271,
     "complexity_score": 142,
     "cross_reference_count": 2,
-    "function_call_count": 13,
+    "function_call_count": 14,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 102,
@@ -17,7 +17,7 @@
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 323
+    "total_lines": 373
   },
   "cross_references": [
     {
@@ -38,7 +38,7 @@
     "address_range": [
       [
         "0057fd00",
-        "0057ff02"
+        "0057ff6b"
       ],
       [
         "0060c41c",
@@ -89,6 +89,11 @@
       "addr": "00580310",
       "is_variadic": false,
       "name": "core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310"
+    },
+    {
+      "addr": "005801b0",
+      "is_variadic": false,
+      "name": "core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0"
     },
     {
       "addr": "005fde40",
@@ -245,37 +250,37 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.209039548022599,
-    "instruction_count": 177,
+    "avg_pcode_per_instr": 4.432558139534883,
+    "instruction_count": 215,
     "opcode_distribution": {
       "BOOL_NEGATE": 6,
       "BOOL_OR": 2,
-      "BRANCH": 8,
-      "CALL": 13,
-      "CBRANCH": 7,
-      "COPY": 129,
-      "INT_ADD": 81,
-      "INT_AND": 91,
-      "INT_CARRY": 23,
-      "INT_EQUAL": 80,
+      "BRANCH": 10,
+      "CALL": 14,
+      "CBRANCH": 13,
+      "COPY": 153,
+      "INT_ADD": 94,
+      "INT_AND": 127,
+      "INT_CARRY": 28,
+      "INT_EQUAL": 116,
       "INT_LEFT": 2,
-      "INT_LESS": 7,
-      "INT_MULT": 3,
-      "INT_NOTEQUAL": 8,
+      "INT_LESS": 11,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 11,
       "INT_OR": 5,
-      "INT_SBORROW": 7,
-      "INT_SCARRY": 26,
-      "INT_SEXT": 6,
-      "INT_SLESS": 41,
-      "INT_SUB": 50,
-      "INT_XOR": 4,
-      "LOAD": 40,
-      "POPCOUNT": 39,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 35,
+      "INT_SEXT": 9,
+      "INT_SLESS": 58,
+      "INT_SUB": 58,
+      "INT_XOR": 6,
+      "LOAD": 50,
+      "POPCOUNT": 56,
       "RETURN": 1,
-      "STORE": 62,
-      "SUBPIECE": 4
+      "STORE": 67,
+      "SUBPIECE": 6
     },
-    "pcode_op_count": 745
+    "pcode_op_count": 953
   },
   "stack_frame": {
     "frame_size": 84,

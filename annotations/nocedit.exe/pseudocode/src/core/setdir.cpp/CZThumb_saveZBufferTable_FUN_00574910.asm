@@ -12,6 +12,9 @@
 ; float            Stack[0x18]:4   projection_scale
 ; _FILE *          Stack[0x1c]:4   file_handle
 ;
+; XREF[1]:
+;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0 at 00575c65
+;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setdir_cpp_006463fe
 ;   TerminatedCString s_saveZBufferTable_already_00646411

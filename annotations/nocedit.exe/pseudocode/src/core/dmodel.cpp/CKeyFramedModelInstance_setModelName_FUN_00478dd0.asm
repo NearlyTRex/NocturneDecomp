@@ -7,7 +7,7 @@
 ; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ;
-; XREF[66]:
+; XREF[69]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f373
 ;   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b8f0 at 0040b921
 ;   core_ammo.cpp_CAmmo_ctor_FUN_00410dc0 at 00410dfa
@@ -18,7 +18,7 @@
 ;   core_baron.cpp_CBaron_ctor_FUN_00412bc0 at 00412c8a
 ;   core_bat.cpp_CBat_ctor_FUN_004147d0 at 0041486d
 ;   core_battery.cpp_CBattery_ctor_FUN_00417e90 at 00417ec8
-;   ... and 56 more
+;   ... and 59 more
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_00478d00

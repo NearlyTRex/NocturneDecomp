@@ -1,6 +1,6 @@
 // Name: core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0
 // Address: 005205f0
-// Address Range: [[005205f0, 005207fe] [00520802, 0052084b] [03fc4298, 03fc42f7]]
+// Address Range: [[005205f0, 00520863] [03fc4298, 03fc42f7]]
 // Convention: __cdecl
 // Signature: int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
 

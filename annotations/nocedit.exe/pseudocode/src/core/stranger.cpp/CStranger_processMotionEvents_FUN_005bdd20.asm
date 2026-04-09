@@ -28,17 +28,17 @@
 ;   TerminatedCString s_Object_to_pick_up_is_now_006536e0
 ;   TerminatedCString s_actionPending_d_stranger_00653713
 ;   TerminatedCString s_actionPending_d_stranger_0065373b
+;   TerminatedCString s_kick1_wav_00653763
 ;   TerminatedCString s_hit_gh_4_7_wav_0065376d
 ;   TerminatedCString s_fall_1_wav_0065377d
 ;   TerminatedCString s_actionPending_d_stranger_00653788
 ;   TerminatedCString s_doorToOpen_NULL_stranger_006537b0
+;   double DOUBLE_006537dc = 0.200000000000000
 ;   double DOUBLE_006537e4 = 0.400000000000000
 ;   float FLOAT_00663750 = 10
 ;   float FLOAT_00663758 = 8
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   CEditorTools g_CEditorToolsInstance
-;   undefined4 g_CEnemyClassInfo.name_hash
-;   ... and 3 more
+;   ... and 7 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -47,6 +47,7 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004f38d0
 ;   core_hero.cpp_CHero_executeLeverPull_FUN_004f30f0
 ;   core_hero.cpp_CHero_executeObjectPickup_FUN_004f3890
@@ -55,8 +56,7 @@
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-;   core_stranger.cpp_CStranger_dropRightHandObject_FUN_005c1f80
-;   ... and 2 more
+;   ... and 4 more
 ;
 ; *****************************************************************************
 
@@ -458,6 +458,70 @@ section .text
     PUSH 0x41200000                     ; 005be188
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005be18d
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0xac],EAX      ; 005be192
+    FLD float ptr [ESP + 0xac]          ; 005be199
+    ADD ESP,0x8                         ; 005be1a0
+    LEA EAX,[ESP + 0x80]                ; 005be1a3
+    PUSH EAX                            ; 005be1aa
+    LEA EAX,[ESP + 0x6c]                ; 005be1ab
+    PUSH EAX                            ; 005be1af
+    PUSH EDI                            ; 005be1b0
+    FSTP float ptr [ESP + 0x18]         ; 005be1b1
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10 ; 005be1b5
+        ;   XREF to: 00408f10 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
+    LEA EDX,[ESP + 0x30]                ; 005be1ba
+    ADD ESP,0xc                         ; 005be1be
+    MOV EDI,EAX                         ; 005be1c1
+    CMP EDX,EAX                         ; 005be1c3
+    JZ 0x005be1db                       ; 005be1c5
+        ;   XREF to: 005be1db (CONDITIONAL_JUMP)  ; LAB_005be1db
+    MOV EAX,dword ptr [EAX]             ; 005be1c7
+    MOV dword ptr [ESP + 0x24],EAX      ; 005be1c9
+    MOV EAX,dword ptr [EDI + 0x4]       ; 005be1cd
+    MOV dword ptr [ESP + 0x28],EAX      ; 005be1d0
+    MOV EAX,dword ptr [EDI + 0x8]       ; 005be1d4
+    MOV dword ptr [ESP + 0x2c],EAX      ; 005be1d7
+    MOV EAX,dword ptr [ESP + 0xa0]      ; 005be1db
+        ;   Label: LAB_005be1db
+    LEA EDX,[ESP + 0x8]                 ; 005be1e2
+    MOV dword ptr [ESP + 0x3c],EBX      ; 005be1e6
+    MOV dword ptr [ESP + 0x40],EBX      ; 005be1ea
+    PUSH EDX                            ; 005be1ee
+    MOV ECX,dword ptr [ESP + 0xa4]      ; 005be1ef
+    MOV EAX,dword ptr [EAX + 0x154]     ; 005be1f6
+    PUSH ECX                            ; 005be1fc
+    CALL dword ptr [EAX + 0x11c]        ; 005be1fd
+    ADD ESP,0x8                         ; 005be203
+    FLDZ                                ; 005be206
+    FLD float ptr [ESP + 0xc]           ; 005be208
+    FSTP double ptr [ESP]               ; 005be20c
+    FCOMP double ptr [ESP]              ; 005be20f
+    FNSTSW AX                           ; 005be212
+    SAHF                                ; 005be214
+    JNC 0x005be262                      ; 005be215
+        ;   XREF to: 005be262 (CONDITIONAL_JUMP)  ; LAB_005be262
+    FLD double ptr [ESP]                ; 005be217
+    FMUL double ptr [0x006537dc]        ; 005be21a | DOUBLE_006537dc
+    CALL crt_math.c_round_FUN_005fe6b0  ; 005be220
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
+    FISTP dword ptr [ESP + 0xa4]        ; 005be225
+    MOV EAX,dword ptr [ESP + 0xa4]      ; 005be22c
+    PUSH 0x0                            ; 005be233
+    INC EAX                             ; 005be235
+    PUSH EAX                            ; 005be236
+    PUSH 0x0                            ; 005be237
+    LEA EAX,[ESP + 0x8c]                ; 005be239
+    PUSH EAX                            ; 005be240
+    MOV EDI,dword ptr [0x0067b9a0]      ; 005be241 | g_CGorePtr
+    PUSH EDI                            ; 005be247 | g_CGoreInstance
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0 ; 005be248
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
+    ADD ESP,0x14                        ; 005be24d
+    PUSH 0x653763                       ; 005be250 | = "kick1.wav"
+    MOV EAX,dword ptr [EBX + 0x154]     ; 005be255
+    PUSH EBX                            ; 005be25b
+    CALL dword ptr [EAX + 0x24]         ; 005be25c
+    ADD ESP,0x8                         ; 005be25f
     MOV dword ptr [EBX + 0x2598],0x0    ; 005be262
         ;   Label: LAB_005be262
     JMP 0x005bddf2                      ; 005be26c

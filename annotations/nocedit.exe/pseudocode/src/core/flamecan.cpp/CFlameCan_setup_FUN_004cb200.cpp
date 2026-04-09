@@ -1,6 +1,6 @@
 // Name: core_flamecan.cpp_CFlameCan_setup_FUN_004cb200
 // Address: 004cb200
-// Address Range: [[004cb200, 004cb212]]
+// Address Range: [[004cb200, 004cb33c]]
 // Convention: __cdecl
 // Signature: void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_004cb200(CFlameCan *this_ptr)
 

@@ -13,6 +13,9 @@
 ; SCurtainVertex * Stack[-0x18]:4  local_18
 ; CMatrix3x3f *    Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   core_curtain.cpp_CCurtain_setup_FUN_00449810 at 00449dae
+;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0
 ;

@@ -1,6 +1,6 @@
 // Name: core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426420
 // Address: 00426420
-// Address Range: [[00426420, 004264fb] [004265af, 004268d4]]
+// Address Range: [[00426420, 004268d4]]
 // Convention: __cdecl
 // Signature: int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426420(CBugs *this_ptr,SBug *bug_data,float delta_time,CVector3f *dest_vertex)
 

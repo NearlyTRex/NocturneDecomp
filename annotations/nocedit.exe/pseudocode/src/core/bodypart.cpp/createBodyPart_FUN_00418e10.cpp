@@ -1,6 +1,6 @@
 // Name: core_bodypart.cpp_createBodyPart_FUN_00418e10
 // Address: 00418e10
-// Address Range: [[00418e10, 00418f34] [00418fa2, 00418fca]]
+// Address Range: [[00418e10, 00418fca]]
 // Convention: __cdecl
 // Signature: CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,int blood_type)
 

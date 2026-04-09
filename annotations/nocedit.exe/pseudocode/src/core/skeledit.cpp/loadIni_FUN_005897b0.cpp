@@ -1,6 +1,6 @@
 // Name: core_skeledit.cpp_loadIni_FUN_005897b0
 // Address: 005897b0
-// Address Range: [[005897b0, 00589a33]]
+// Address Range: [[005897b0, 00589a38]]
 // Convention: __cdecl
 // Signature: void __cdecl core_skeledit_cpp_loadIni_FUN_005897b0(void)
 

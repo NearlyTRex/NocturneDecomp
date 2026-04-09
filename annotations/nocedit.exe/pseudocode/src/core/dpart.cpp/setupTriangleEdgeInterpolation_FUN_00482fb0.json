@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 229,
-    "complexity_score": 142,
+    "complexity_score": 157,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 23,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 117,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "unknown_field"
+      "unknown_field",
+      "wrong_global"
     ],
     "total_lines": 346
   },
@@ -256,6 +257,14 @@
       "severity": "mild",
       "text": "uVar8._0_2_ = (ushort)uVar8 ^ 0xffff;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Global g_RenderStateFlags used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 101,
+      "match": "g_RenderStateFlags",
+      "severity": "moderate",
+      "text": "if ((g_RenderStateFlags.bytes[1] & 2) != 0) {",
+      "type": "wrong_global"
     }
   ]
 }

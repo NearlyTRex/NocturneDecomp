@@ -19,15 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 306,
-    "complexity_score": 333,
+    "complexity_score": 348,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 39,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 168,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "wrong_global"
     ],
     "total_lines": 474
   },
@@ -555,6 +556,14 @@
       "severity": "mild",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Global g_KeyboardState used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 30,
+      "match": "g_KeyboardState",
+      "severity": "moderate",
+      "text": "if ((g_KeyboardState[0x11] != '\\0') && (g_KeyboardState[0x2a] != '\\0')) {",
+      "type": "wrong_global"
     }
   ]
 }

@@ -5,10 +5,10 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 138,
+    "assembly_lines": 209,
     "complexity_score": 101,
-    "cross_reference_count": 15,
-    "function_call_count": 3,
+    "cross_reference_count": 17,
+    "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 86,
@@ -16,7 +16,7 @@
     "suspect_types": [
       "warning_inlined_function"
     ],
-    "total_lines": 224
+    "total_lines": 295
   },
   "cross_references": [
     {
@@ -92,6 +92,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005bdd20",
+      "from_addr": "005be248",
+      "name": "core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005e5130",
       "from_addr": "005e517c",
       "name": "core_tvbat.cpp_CTVBat_processDamage_FUN_005e5130",
@@ -101,6 +107,12 @@
       "addr": "005e4210",
       "from_addr": "005e46d0",
       "name": "core_tvbat.cpp_CTVBat_process_FUN_005e4210",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005efde0",
+      "from_addr": "005eff11",
+      "name": "core_werewolf.cpp_CWerewolf_process_FUN_005efde0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -115,10 +127,6 @@
     "address_range": [
       [
         "004edbb0",
-        "004edce4"
-      ],
-      [
-        "004eddc2",
         "004eddd4"
       ]
     ],
@@ -134,6 +142,11 @@
       "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10"
     },
     {
+      "addr": "00471d30",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30"
+    },
+    {
       "addr": "004edaa0",
       "is_variadic": false,
       "name": "core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0"
@@ -146,7 +159,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 18,
+    "call_site_count": 21,
     "call_sites": [
       {
         "call_addr": "00549a84",
@@ -265,46 +278,46 @@
     "estimated_params": 5
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.8655462184873945,
-    "instruction_count": 119,
+    "avg_pcode_per_instr": 5.686813186813187,
+    "instruction_count": 182,
     "opcode_distribution": {
       "BOOL_NEGATE": 2,
       "BOOL_OR": 3,
-      "BRANCH": 1,
-      "CALL": 3,
+      "BRANCH": 2,
+      "CALL": 7,
       "CALLOTHER": 1,
-      "CBRANCH": 7,
-      "COPY": 377,
-      "FLOAT2FLOAT": 22,
-      "FLOAT_ADD": 5,
+      "CBRANCH": 9,
+      "COPY": 526,
+      "FLOAT2FLOAT": 35,
+      "FLOAT_ADD": 7,
       "FLOAT_DIV": 1,
       "FLOAT_EQUAL": 1,
       "FLOAT_LESS": 1,
-      "FLOAT_MULT": 11,
+      "FLOAT_MULT": 14,
       "FLOAT_NAN": 2,
       "FLOAT_NEG": 1,
       "FLOAT_SQRT": 3,
       "INT2FLOAT": 2,
-      "INT_ADD": 47,
-      "INT_AND": 37,
-      "INT_CARRY": 1,
-      "INT_EQUAL": 28,
+      "INT_ADD": 87,
+      "INT_AND": 53,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 45,
       "INT_LEFT": 4,
-      "INT_LESS": 4,
+      "INT_LESS": 6,
       "INT_NOTEQUAL": 8,
       "INT_OR": 5,
-      "INT_SBORROW": 4,
-      "INT_SCARRY": 2,
-      "INT_SLESS": 14,
-      "INT_SUB": 17,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 22,
+      "INT_SUB": 33,
       "INT_XOR": 4,
       "INT_ZEXT": 4,
-      "LOAD": 31,
-      "POPCOUNT": 14,
+      "LOAD": 47,
+      "POPCOUNT": 22,
       "RETURN": 1,
-      "STORE": 30
+      "STORE": 57
     },
-    "pcode_op_count": 698
+    "pcode_op_count": 1035
   },
   "stack_frame": {
     "frame_size": 140,

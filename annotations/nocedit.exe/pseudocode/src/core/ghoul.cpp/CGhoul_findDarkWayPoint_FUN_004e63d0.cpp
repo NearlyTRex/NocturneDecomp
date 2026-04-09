@@ -1,6 +1,6 @@
 // Name: core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0
 // Address: 004e63d0
-// Address Range: [[004e63d0, 004e6413]]
+// Address Range: [[004e63d0, 004e657e]]
 // Convention: __cdecl
 // Signature: void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_ptr,float delta_time)
 

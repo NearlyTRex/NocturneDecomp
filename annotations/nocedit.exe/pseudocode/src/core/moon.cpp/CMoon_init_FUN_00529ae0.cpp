@@ -1,6 +1,6 @@
 // Name: core_moon.cpp_CMoon_init_FUN_00529ae0
 // Address: 00529ae0
-// Address Range: [[00529ae0, 00529b31] [00529bf0, 00529cd5]]
+// Address Range: [[00529ae0, 00529cd5]]
 // Convention: __cdecl
 // Signature: void __cdecl core_moon_cpp_CMoon_init_FUN_00529ae0(CMoon *this_ptr)
 

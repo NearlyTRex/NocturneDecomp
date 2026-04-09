@@ -1,6 +1,6 @@
 // Name: core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570960
 // Address: 00570960
-// Address Range: [[00570960, 0057096f]]
+// Address Range: [[00570960, 005709d9]]
 // Convention: __cdecl
 // Signature: void __cdecl core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00570960(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prim,int count)
 

@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 10,
+    "assembly_lines": 222,
     "complexity_score": 129,
     "cross_reference_count": 3,
-    "function_call_count": 1,
-    "global_count": 0,
+    "function_call_count": 15,
+    "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 114,
     "suspect_count": 1,
     "suspect_types": [
       "suspect_float"
     ],
-    "total_lines": 124
+    "total_lines": 336
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     "address_range": [
       [
         "00428140",
-        "00428150"
+        "0042839c"
       ]
     ],
     "convention": "__cdecl",
@@ -52,12 +52,137 @@
   },
   "function_calls": [
     {
+      "addr": "0040ac80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80"
+    },
+    {
+      "addr": "00408b90",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90"
+    },
+    {
       "addr": "00408bb0",
       "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0"
+    },
+    {
+      "addr": "0042e670",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042e670"
+    },
+    {
+      "addr": "0042d530",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530"
+    },
+    {
+      "addr": "0042a520",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520"
+    },
+    {
+      "addr": "0043bfa0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CClothList_load_FUN_0043bfa0"
+    },
+    {
+      "addr": "0043c2d0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CClothList_process_FUN_0043c2d0"
+    },
+    {
+      "addr": "0043c290",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CClothList_setup_FUN_0043c290"
+    },
+    {
+      "addr": "00478d60",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60"
+    },
+    {
+      "addr": "00478dd0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005a0820",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820"
+    },
+    {
+      "addr": "005a0450",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450"
+    },
+    {
+      "addr": "00599fc0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "00616ed2",
+      "name": "s_stake_b_kfm_00616ed2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616ede",
+      "name": "s_core_charactr_cpp_00616ede",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616ef3",
+      "name": "s_core_charactr_cpp_00616ef3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616f08",
+      "name": "s_s_is_carrying_s_but_s_th_00616f08",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616f43",
+      "name": "s_bip01_head_00616f43",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065b834",
+      "name": "FLOAT_0065b834",
+      "type": "float",
+      "value": "9999"
+    },
+    {
+      "addr": "00823a98",
+      "name": "CKeyFramedModelInstance_00823a98",
+      "type": "CKeyFramedModelInstance",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 3,
     "call_sites": [
@@ -101,23 +226,34 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.75,
-    "instruction_count": 8,
+    "avg_pcode_per_instr": 4.438202247191011,
+    "instruction_count": 178,
     "opcode_distribution": {
-      "CALL": 1,
-      "COPY": 6,
-      "INT_ADD": 1,
-      "INT_AND": 2,
-      "INT_EQUAL": 2,
-      "INT_LESS": 1,
-      "INT_SBORROW": 1,
-      "INT_SLESS": 1,
-      "INT_SUB": 7,
-      "LOAD": 1,
-      "POPCOUNT": 1,
-      "STORE": 6
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 16,
+      "CALLIND": 2,
+      "CBRANCH": 13,
+      "COPY": 163,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 74,
+      "INT_AND": 92,
+      "INT_CARRY": 25,
+      "INT_EQUAL": 86,
+      "INT_LESS": 8,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 27,
+      "INT_SLESS": 43,
+      "INT_SUB": 69,
+      "INT_XOR": 2,
+      "LOAD": 29,
+      "POPCOUNT": 43,
+      "RETURN": 2,
+      "STORE": 73
     },
-    "pcode_op_count": 30
+    "pcode_op_count": 790
   },
   "stack_frame": {
     "frame_size": 8,
@@ -134,6 +270,23 @@
         "type": "CCharacter *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CCharacter_setup_FUN_00428140.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 16,
+          "line": 92,
+          "message": "Redundant assignment of 'pCVar4' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

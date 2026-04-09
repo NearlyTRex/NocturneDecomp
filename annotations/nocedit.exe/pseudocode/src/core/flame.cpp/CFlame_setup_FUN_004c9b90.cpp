@@ -1,6 +1,6 @@
 // Name: core_flame.cpp_CFlame_setup_FUN_004c9b90
 // Address: 004c9b90
-// Address Range: [[004c9b90, 004c9ba4]]
+// Address Range: [[004c9b90, 004c9bf5]]
 // Convention: __cdecl
 // Signature: void __cdecl core_flame_cpp_CFlame_setup_FUN_004c9b90(CFlame *this_ptr)
 

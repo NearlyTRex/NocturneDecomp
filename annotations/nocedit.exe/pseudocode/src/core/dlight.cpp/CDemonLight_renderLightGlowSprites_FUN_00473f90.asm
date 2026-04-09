@@ -580,6 +580,26 @@ section .text
     PUSH EBX                            ; 004746de | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 004746df
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD ESP,0x4                         ; 004746e4
+    MOV ESI,dword ptr [ESP + 0x130]     ; 004746e7
+    INC ESI                             ; 004746ee
+    ADD EDI,0x30                        ; 004746ef
+    MOV dword ptr [ESP + 0x130],ESI     ; 004746f2
+    CMP ESI,0x9                         ; 004746f9
+    JL 0x004742a9                       ; 004746fc
+        ;   XREF to: 004742a9 (CONDITIONAL_JUMP)  ; LAB_004742a9
+    PUSH 0x0                            ; 00474702
+    MOV EDX,dword ptr [0x006703ec]      ; 00474704 | g_CDemonRendererPtr2
+    PUSH EDX                            ; 0047470a | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50 ; 0047470b
+        ;   XREF to: 0048ca50 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer * this_ptr, int blend_mode)
+    ADD ESP,0x8                         ; 00474710
+    MOV ESP,EBP                         ; 00474713
+    POP EBP                             ; 00474715
+    POP EDI                             ; 00474716
+    POP ESI                             ; 00474717
+    POP EBX                             ; 00474718
+    RET                                 ; 00474719
     MOV ECX,dword ptr [ESI]             ; 0060c868
         ;   Label: LAB_0060c868
     MOV dword ptr [EDI],ECX             ; 0060c86a

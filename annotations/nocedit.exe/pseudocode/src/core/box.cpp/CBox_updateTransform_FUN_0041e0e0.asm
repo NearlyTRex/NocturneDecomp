@@ -15,8 +15,9 @@
 ; float            Stack[-0x18]:4  local_18
 ; SScrape *        Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
 ;   core_box.cpp_CBox_setupCorners_FUN_0041dd20 at 0041df45
+;   core_box.cpp_CBox_setupN_FUN_0041df50 at 0041e0a0
 ;
 ; Referenced Globals:
 ;   double g_BoxDensityScale = 0.03125

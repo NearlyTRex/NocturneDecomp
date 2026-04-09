@@ -1,6 +1,6 @@
 // Name: core_moon.cpp_CMoon_render_FUN_00529ed0
 // Address: 00529ed0
-// Address Range: [[00529ed0, 0052a0ca] [0052a11f, 0052a2ab]]
+// Address Range: [[00529ed0, 0052a2bf]]
 // Convention: __cdecl
 // Signature: void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
 

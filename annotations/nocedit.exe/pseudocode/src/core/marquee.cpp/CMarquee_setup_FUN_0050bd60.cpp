@@ -1,6 +1,6 @@
 // Name: core_marquee.cpp_CMarquee_setup_FUN_0050bd60
 // Address: 0050bd60
-// Address Range: [[0050bd60, 0050bd6a]]
+// Address Range: [[0050bd60, 0050bd98]]
 // Convention: __cdecl
 // Signature: void __cdecl core_marquee_cpp_CMarquee_setup_FUN_0050bd60(CMarquee *this_ptr)
 

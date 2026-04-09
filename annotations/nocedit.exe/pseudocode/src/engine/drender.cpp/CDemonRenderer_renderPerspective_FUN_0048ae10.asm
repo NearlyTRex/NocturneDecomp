@@ -8,17 +8,18 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ; int              Stack[0xc]:4   render_flags
 ;
-; XREF[10]:
+; XREF[11]:
 ;   core_box.cpp_CBoundingBox3D_render_FUN_004210b0 at 00421463
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40 at 00429e6a
 ;   core_fire.cpp_CExplosion_render_FUN_004c3b10 at 004c3e5d
+;   core_flame.cpp_CFlame_renderTransparent_FUN_004ca110 at 004ca9ed
 ;   core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004ef970 at 004ef981
 ;   core_inv.cpp_drawItemIconBackground_FUN_005001e0 at 00500318
 ;   core_inv.cpp_drawWeaponIconBackground_FUN_00500050 at 00500188
 ;   core_level.cpp_CLevelLoader_update_FUN_00504160 at 00504558
 ;   core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0 at 0050c037
 ;   core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70 at 0050ffc7
-;   core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0 at 005e050d
+;   ... and 1 more
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8

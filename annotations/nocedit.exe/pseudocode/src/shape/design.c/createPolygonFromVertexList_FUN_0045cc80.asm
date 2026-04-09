@@ -24,6 +24,9 @@
 ; uint             Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 004608e6
+;
 ; Referenced Globals:
 ;   TerminatedCString s_Enter_in_point_list_goin_0061b391
 ;   TerminatedCString s_d_d_d_d_d_d_d_d_d_d_d_d__0061b3b8

@@ -1,6 +1,6 @@
 // Name: core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_004bed00
 // Address: 004bed00
-// Address Range: [[004bed00, 004bedba]]
+// Address Range: [[004bed00, 004beddf]]
 // Convention: __cdecl
 // Signature: int __cdecl core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004bed00(CFilmProjector *this_ptr)
 

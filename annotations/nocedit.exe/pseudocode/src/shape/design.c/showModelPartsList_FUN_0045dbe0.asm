@@ -9,6 +9,9 @@
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ;
+; XREF[1]:
+;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 004607d7
+;
 ; Referenced Globals:
 ;   TerminatedCString s_Part_d_s_0061b43b
 ;   int g_WindowHeight = 0xc8

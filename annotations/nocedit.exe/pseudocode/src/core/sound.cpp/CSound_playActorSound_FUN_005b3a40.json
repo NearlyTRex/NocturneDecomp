@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 15,
     "complexity_score": 7,
-    "cross_reference_count": 8,
+    "cross_reference_count": 10,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -48,6 +48,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004c6380",
+      "from_addr": "004c6454",
+      "name": "core_fire.cpp_CShell_onCollision_FUN_004c6380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f0350",
       "from_addr": "004f05b3",
       "name": "core_gun.cpp_CGun_fire_FUN_004f0350",
@@ -63,6 +69,12 @@
       "addr": "00588060",
       "from_addr": "0058837a",
       "name": "core_shotgun.cpp_CShotgun_fire_FUN_00588060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005eeeb0",
+      "from_addr": "005ef124",
+      "name": "core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -87,7 +99,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 11,
+    "call_site_count": 14,
     "call_sites": [
       {
         "call_addr": "0040cb45",
@@ -167,9 +179,9 @@
         "stack_params": 4
       },
       {
-        "call_addr": "004f05b3",
+        "call_addr": "004c6454",
         "call_type": "direct",
-        "caller": "core_gun.cpp_CGun_fire_FUN_004f0350",
+        "caller": "core_fire.cpp_CShell_onCollision_FUN_004c6380",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -178,9 +190,9 @@
         "stack_params": 4
       },
       {
-        "call_addr": "004f06f4",
+        "call_addr": "004c6486",
         "call_type": "direct",
-        "caller": "core_gun.cpp_CGun_fire_FUN_004f0350",
+        "caller": "core_fire.cpp_CShell_onCollision_FUN_004c6380",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -189,9 +201,9 @@
         "stack_params": 4
       },
       {
-        "call_addr": "0058837a",
+        "call_addr": "005ef124",
         "call_type": "direct",
-        "caller": "core_shotgun.cpp_CShotgun_fire_FUN_00588060",
+        "caller": "core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -6,11 +6,11 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 1402,
+    "assembly_lines": 1745,
     "complexity_score": 834,
     "cross_reference_count": 0,
-    "function_call_count": 31,
-    "global_count": 37,
+    "function_call_count": 35,
+    "global_count": 39,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 714,
     "suspect_count": 9,
@@ -22,7 +22,7 @@
       "unknown_field",
       "warning_inlined_function"
     ],
-    "total_lines": 2116
+    "total_lines": 2459
   },
   "cross_references": [],
   "function": {
@@ -30,30 +30,6 @@
     "address_range": [
       [
         "005efde0",
-        "005efee6"
-      ],
-      [
-        "005eff1e",
-        "005f02e4"
-      ],
-      [
-        "005f0456",
-        "005f0535"
-      ],
-      [
-        "005f05a4",
-        "005f05ff"
-      ],
-      [
-        "005f0704",
-        "005f0721"
-      ],
-      [
-        "005f07c7",
-        "005f1095"
-      ],
-      [
-        "005f10fe",
         "005f1195"
       ]
     ],
@@ -139,6 +115,11 @@
       "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0"
     },
     {
+      "addr": "004a9880",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880"
+    },
+    {
       "addr": "004a9fd0",
       "is_variadic": false,
       "name": "core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0"
@@ -147,6 +128,11 @@
       "addr": "004ede30",
       "is_variadic": false,
       "name": "core_gore.cpp_CGore_createBloodPool_FUN_004ede30"
+    },
+    {
+      "addr": "004edbb0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0"
     },
     {
       "addr": "00506f10",
@@ -202,6 +188,16 @@
       "addr": "005f1e40",
       "is_variadic": false,
       "name": "core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_005f1e40"
+    },
+    {
+      "addr": "005f4dc0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_transformVector3x4_FUN_005f4dc0"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
     },
     {
       "addr": "00441890",
@@ -297,6 +293,12 @@
       "name": "DOUBLE_00657d74",
       "type": "double",
       "value": "0.392699081687500"
+    },
+    {
+      "addr": "00657d7c",
+      "name": "DOUBLE_00657d7c",
+      "type": "double",
+      "value": "0.25"
     },
     {
       "addr": "00657d84",
@@ -437,6 +439,12 @@
       "value": null
     },
     {
+      "addr": "03f87558",
+      "name": "g_ZeroVector",
+      "type": "UVector3",
+      "value": null
+    },
+    {
       "addr": "03f96b94",
       "name": "g_CWerewolfClassInfo.name_hash",
       "type": "undefined4",
@@ -452,47 +460,49 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.483811285846438,
-    "instruction_count": 1081,
+    "avg_pcode_per_instr": 5.467195385724586,
+    "instruction_count": 1387,
     "opcode_distribution": {
-      "BOOL_NEGATE": 53,
+      "BOOL_NEGATE": 98,
       "BOOL_OR": 40,
-      "BRANCH": 37,
-      "CALL": 75,
-      "CALLIND": 9,
-      "CBRANCH": 117,
-      "COPY": 2041,
-      "FLOAT2FLOAT": 167,
+      "BRANCH": 40,
+      "CALL": 107,
+      "CALLIND": 10,
+      "CBRANCH": 119,
+      "COPY": 2349,
+      "FLOAT2FLOAT": 179,
       "FLOAT_ABS": 2,
       "FLOAT_ADD": 21,
       "FLOAT_EQUAL": 18,
       "FLOAT_LESS": 18,
-      "FLOAT_MULT": 30,
+      "FLOAT_MULT": 31,
       "FLOAT_NAN": 36,
       "FLOAT_SQRT": 6,
       "FLOAT_SUB": 23,
       "INT2FLOAT": 8,
-      "INT_ADD": 433,
-      "INT_AND": 495,
-      "INT_CARRY": 82,
-      "INT_EQUAL": 368,
-      "INT_LEFT": 74,
-      "INT_LESS": 67,
-      "INT_MULT": 3,
-      "INT_NOTEQUAL": 96,
-      "INT_OR": 95,
-      "INT_SBORROW": 67,
-      "INT_SCARRY": 84,
-      "INT_SLESS": 185,
-      "INT_SUB": 337,
-      "INT_XOR": 4,
+      "INT_ADD": 573,
+      "INT_AND": 736,
+      "INT_CARRY": 129,
+      "INT_EQUAL": 517,
+      "INT_LEFT": 92,
+      "INT_LESS": 79,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 114,
+      "INT_OR": 140,
+      "INT_SBORROW": 79,
+      "INT_SCARRY": 131,
+      "INT_SLESS": 273,
+      "INT_SUB": 491,
+      "INT_XOR": 13,
       "INT_ZEXT": 72,
-      "LOAD": 228,
-      "POPCOUNT": 183,
+      "LOAD": 252,
+      "POPCOUNT": 253,
       "RETURN": 2,
-      "STORE": 352
+      "ROUND": 1,
+      "STORE": 518,
+      "TRUNC": 1
     },
-    "pcode_op_count": 5928
+    "pcode_op_count": 7583
   },
   "stack_frame": {
     "frame_size": 812,
@@ -971,6 +981,124 @@
         "type": "float"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CWerewolf_process_FUN_005efde0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 18,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-branch-clone",
+          "column": 21,
+          "line": 138,
+          "message": "repeated branch body in conditional chain"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 23,
+          "line": 149,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 29,
+          "line": 149,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 22,
+          "line": 240,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 19,
+          "line": 261,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 263,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 265,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 18,
+          "line": 267,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 71,
+          "line": 335,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 31,
+          "line": 402,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 20,
+          "line": 480,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 20,
+          "line": 542,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 20,
+          "line": 567,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 21,
+          "line": 588,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 19,
+          "line": 590,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 19,
+          "line": 592,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 20,
+          "line": 594,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 695,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

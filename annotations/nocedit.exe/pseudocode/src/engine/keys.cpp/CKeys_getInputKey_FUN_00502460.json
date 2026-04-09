@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 5,
     "complexity_score": 6,
-    "cross_reference_count": 10,
+    "cross_reference_count": 11,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -60,6 +60,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00585c90",
+      "from_addr": "00585fe3",
+      "name": "core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005968b0",
       "from_addr": "00598de0",
       "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
@@ -99,7 +105,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 11,
+    "call_site_count": 12,
     "call_sites": [
       {
         "call_addr": "0057b260",
@@ -179,6 +185,17 @@
         "stack_params": 1
       },
       {
+        "call_addr": "00585fe3",
+        "call_type": "direct",
+        "caller": "core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
         "call_addr": "005817bc",
         "call_type": "direct",
         "caller": "core_setedit.cpp_showRoomEditorHelp_FUN_00581590",
@@ -193,17 +210,6 @@
         "call_addr": "00582479",
         "call_type": "direct",
         "caller": "core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "00583f4b",
-        "call_type": "direct",
-        "caller": "core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

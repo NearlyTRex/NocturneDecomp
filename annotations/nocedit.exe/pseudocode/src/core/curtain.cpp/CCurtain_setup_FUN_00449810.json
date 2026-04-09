@@ -5,11 +5,11 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 12,
+    "assembly_lines": 518,
     "complexity_score": 411,
     "cross_reference_count": 0,
-    "function_call_count": 1,
-    "global_count": 0,
+    "function_call_count": 4,
+    "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 271,
     "suspect_count": 13,
@@ -17,7 +17,7 @@
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 283
+    "total_lines": 789
   },
   "cross_references": [],
   "function": {
@@ -25,7 +25,7 @@
     "address_range": [
       [
         "00449810",
-        "00449824"
+        "00449e34"
       ]
     ],
     "convention": "__cdecl",
@@ -38,9 +38,61 @@
       "addr": "00408bb0",
       "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0"
+    },
+    {
+      "addr": "00449e40",
+      "is_variadic": false,
+      "name": "core_curtain.cpp_CCurtain_updateWorldPositions_FUN_00449e40"
+    },
+    {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0048db80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "00619bea",
+      "name": "DOUBLE_00619bea",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "00619bf2",
+      "name": "DOUBLE_00619bf2",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "00619bfa",
+      "name": "DOUBLE_00619bfa",
+      "type": "double",
+      "value": "252"
+    },
+    {
+      "addr": "00619c02",
+      "name": "DOUBLE_00619c02",
+      "type": "double",
+      "value": "65536"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr2",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 0,
     "call_sites": [],
@@ -50,23 +102,48 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.0,
-    "instruction_count": 10,
+    "avg_pcode_per_instr": 5.62979683972912,
+    "instruction_count": 443,
     "opcode_distribution": {
-      "CALL": 1,
-      "COPY": 9,
-      "INT_ADD": 1,
-      "INT_AND": 5,
-      "INT_EQUAL": 4,
-      "INT_LESS": 1,
-      "INT_SBORROW": 1,
-      "INT_SLESS": 2,
-      "INT_SUB": 7,
-      "LOAD": 1,
-      "POPCOUNT": 2,
-      "STORE": 6
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 10,
+      "BRANCH": 2,
+      "CALL": 7,
+      "CBRANCH": 35,
+      "COPY": 751,
+      "FLOAT2FLOAT": 39,
+      "FLOAT_ADD": 4,
+      "FLOAT_DIV": 5,
+      "FLOAT_MULT": 12,
+      "FLOAT_NEG": 1,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 5,
+      "INT2FLOAT": 4,
+      "INT_2COMP": 1,
+      "INT_ADD": 338,
+      "INT_AND": 201,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 186,
+      "INT_LESS": 22,
+      "INT_MULT": 63,
+      "INT_NOTEQUAL": 30,
+      "INT_SBORROW": 26,
+      "INT_SCARRY": 41,
+      "INT_SEXT": 36,
+      "INT_SLESS": 92,
+      "INT_SUB": 76,
+      "INT_XOR": 8,
+      "INT_ZEXT": 36,
+      "LOAD": 155,
+      "POPCOUNT": 92,
+      "RETURN": 1,
+      "ROUND": 4,
+      "STORE": 143,
+      "SUBPIECE": 24,
+      "TRUNC": 4
     },
-    "pcode_op_count": 40
+    "pcode_op_count": 2494
   },
   "stack_frame": {
     "frame_size": 116,

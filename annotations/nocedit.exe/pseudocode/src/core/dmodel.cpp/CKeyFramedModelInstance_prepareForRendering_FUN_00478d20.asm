@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   animation_frame
 ; int              Stack[0xc]:4   render_flags
 ;
-; XREF[52]:
+; XREF[54]:
 ;   core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80 at 00410ecd
 ;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_00411820 at 00411892
 ;   core_anvil.cpp_CAnvil_renderOpaque_FUN_00411ec0 at 00411f2e
@@ -19,7 +19,7 @@
 ;   core_battery.cpp_CBattery_renderOpaque_FUN_00417f80 at 00417ff2
 ;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0 at 00419583
 ;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_00421e00 at 00421ea8
-;   ... and 42 more
+;   ... and 44 more
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850

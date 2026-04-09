@@ -1,6 +1,6 @@
 // Name: core_shotgun.cpp_CShotgun_getDamage_FUN_005888b0
 // Address: 005888b0
-// Address Range: [[005888b0, 005888da]]
+// Address Range: [[005888b0, 005888ef]]
 // Convention: __cdecl
 // Signature: float __cdecl core_shotgun_cpp_CShotgun_getDamage_FUN_005888b0(CShotgun *this_ptr)
 

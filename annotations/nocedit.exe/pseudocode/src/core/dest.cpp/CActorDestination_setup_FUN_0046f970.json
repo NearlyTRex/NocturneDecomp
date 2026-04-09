@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 6,
+    "assembly_lines": 15,
     "complexity_score": 13,
     "cross_reference_count": 1,
     "function_call_count": 1,
-    "global_count": 0,
+    "global_count": 2,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 19
+    "total_lines": 28
   },
   "cross_references": [
     {
@@ -29,7 +29,7 @@
     "address_range": [
       [
         "0046f970",
-        "0046f97a"
+        "0046f9ab"
       ]
     ],
     "convention": "__cdecl",
@@ -43,7 +43,20 @@
       "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "02f33744",
+      "name": "g_CDemonMissionInstance.is_in_editor",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 1,
     "call_sites": [
@@ -65,17 +78,24 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.0,
-    "instruction_count": 4,
+    "avg_pcode_per_instr": 3.3846153846153846,
+    "instruction_count": 13,
     "opcode_distribution": {
       "CALL": 1,
-      "COPY": 3,
-      "INT_ADD": 1,
+      "COPY": 11,
+      "INT_ADD": 9,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
       "INT_SUB": 3,
-      "LOAD": 1,
-      "STORE": 3
+      "LOAD": 4,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 7
     },
-    "pcode_op_count": 12
+    "pcode_op_count": 44
   },
   "stack_frame": {
     "frame_size": 8,

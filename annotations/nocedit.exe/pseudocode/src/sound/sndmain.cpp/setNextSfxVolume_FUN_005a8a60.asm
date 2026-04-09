@@ -6,8 +6,9 @@
 ; Parameters:
 ; float            Stack[0x4]:4   volume
 ;
-; XREF[8]:
+; XREF[9]:
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042a830 at 0042abb3
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 at 0048694e
 ;   core_fire.cpp_CFireball_onCollision_FUN_004c1690 at 004c17a6
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 00506628
 ;   core_manpuz.cpp_updateGemHumChannel_FUN_0050a4f0 at 0050a5b5

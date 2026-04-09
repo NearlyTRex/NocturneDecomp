@@ -1,6 +1,6 @@
 // Name: core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0
 // Address: 004251b0
-// Address Range: [[004251b0, 004252f7] [00425314, 0042533d]]
+// Address Range: [[004251b0, 0042533d]]
 // Convention: __cdecl
 // Signature: int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
 

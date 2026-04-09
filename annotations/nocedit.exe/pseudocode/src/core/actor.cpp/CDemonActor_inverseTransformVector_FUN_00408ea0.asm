@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   output_vector
 ; CVector3f *      Stack[0xc]:4   input_vector
 ;
-; XREF[17]:
+; XREF[18]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 0040956a
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422390 at 004223ba
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 at 0042d777
@@ -19,7 +19,7 @@
 ;   core_flies.cpp_CFlies_process_FUN_004cbf00 at 004cc014
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d35c1
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004f2c40 at 004f2d12
-;   ... and 7 more
+;   ... and 8 more
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030

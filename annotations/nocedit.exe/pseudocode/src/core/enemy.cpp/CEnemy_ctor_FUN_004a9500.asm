@@ -20,10 +20,15 @@
 ;   ... and 17 more
 ;
 ; Referenced Globals:
+;   TerminatedCString s_ene_00624309
+;   undefined4 DAT_0062430a
+;   undefined4 DAT_0062430b
+;   undefined4 s__00624309+3
 ;   CDemonActor_vtable g_CEnemyVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
+;   core_actor.cpp_getRandomInt_FUN_0040cc70
 ;   core_charactr.cpp_CCharacter_ctor_FUN_00427e20
 ;
 ; *****************************************************************************
@@ -46,4 +51,66 @@ section .text
     MOV dword ptr [EAX + 0x154],0x65d7d4 ; 004a951f | g_CEnemyVTable
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004a9529
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBX + 0xbe28],0x0    ; 004a952e
+    MOV dword ptr [EBX + 0xbeac],0x0    ; 004a9538
+    MOV dword ptr [EBX + 0xbe3c],0x0    ; 004a9542
+    MOV dword ptr [EBX + 0xbe40],0x0    ; 004a954c
+    MOV dword ptr [EBX + 0xbe44],0x42480000 ; 004a9556
+    MOV dword ptr [EBX + 0xbe2c],0x1    ; 004a9560
+    MOV dword ptr [EBX + 0xbeb4],0x0    ; 004a956a
+    MOV dword ptr [EBX + 0xbe30],0x0    ; 004a9574
+    MOV byte ptr [EBX + 0xbe48],0x0     ; 004a957e
+    MOV dword ptr [EBX + 0xbe34],0x42c80000 ; 004a9585
+    MOV dword ptr [ESP + 0x8],EAX       ; 004a958f
+    MOV dword ptr [EBX + 0xbe38],0x0    ; 004a9593
+    FLD float ptr [ESP + 0x8]           ; 004a959d
+    ADD ESP,0x8                         ; 004a95a1
+    MOV dword ptr [EBX + 0xbeb0],0x40c00000 ; 004a95a4
+    PUSH 0x1fff                         ; 004a95ae
+    MOV dword ptr [EBX + 0xbeb8],0x1    ; 004a95b3
+    PUSH 0xffffe001                     ; 004a95bd
+    FSTP float ptr [EBX + 0xbe24]       ; 004a95c2
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc70 ; 004a95c8
+        ;   XREF to: 0040cc70 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc70(int min_value, int max_value)
+    ADD ESP,0x8                         ; 004a95cd
+    PUSH 0x1fff                         ; 004a95d0
+    ADD EAX,0x10000                     ; 004a95d5
+    PUSH 0xffffe001                     ; 004a95da
+    MOV dword ptr [EBX + 0x108],EAX     ; 004a95df
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc70 ; 004a95e5
+        ;   XREF to: 0040cc70 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc70(int min_value, int max_value)
+    ADD ESP,0x8                         ; 004a95ea
+    PUSH 0x1fff                         ; 004a95ed
+    ADD EAX,0x10000                     ; 004a95f2
+    PUSH 0xffffe001                     ; 004a95f7
+    MOV ESI,0x624309                    ; 004a95fc | = "ene"
+    MOV dword ptr [EBX + 0x10c],EAX     ; 004a9601
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc70 ; 004a9607
+        ;   XREF to: 0040cc70 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc70(int min_value, int max_value)
+    ADD ESP,0x8                         ; 004a960c
+    ADD EAX,0x10000                     ; 004a960f
+    LEA EDI,[EBX + 0x11c]               ; 004a9614
+    MOV dword ptr [EBX + 0x110],EAX     ; 004a961a
+    PUSH EDI                            ; 004a9620
+    MOV AL,byte ptr [ESI]               ; 004a9621 | = "ene" | DAT_0062430b
+        ;   Label: LAB_004a9621
+    MOV byte ptr [EDI],AL               ; 004a9623
+    CMP AL,0x0                          ; 004a9625
+    JZ 0x004a9639                       ; 004a9627
+        ;   XREF to: 004a9639 (CONDITIONAL_JUMP)  ; LAB_004a9639
+    MOV AL,byte ptr [ESI + 0x1]         ; 004a9629 | DAT_0062430a | s__00624309+3
+    ADD ESI,0x2                         ; 004a962c
+    MOV byte ptr [EDI + 0x1],AL         ; 004a962f
+    ADD EDI,0x2                         ; 004a9632
+    CMP AL,0x0                          ; 004a9635
+    JNZ 0x004a9621                      ; 004a9637
+        ;   XREF to: 004a9621 (CONDITIONAL_JUMP)  ; LAB_004a9621
+    POP EDI                             ; 004a9639
+        ;   Label: LAB_004a9639
+    MOV EAX,EBX                         ; 004a963a
+    ADD ESP,0x4                         ; 004a963c
+    POP EDI                             ; 004a963f
+    POP ESI                             ; 004a9640
+    POP EBX                             ; 004a9641
+    RET                                 ; 004a9642
 

@@ -1,74 +1,26 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 85,
-        "message": "use of undeclared identifier 'stack0xffffff94'; did you mean 'in_stack_ffffff94'?"
-      },
-      {
-        "category": "type_error",
-        "column": 63,
-        "line": 92,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 63,
-        "line": 93,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 63,
-        "line": 94,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 63,
-        "line": 95,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 63,
-        "line": 96,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 63,
-        "line": 97,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 63,
-        "line": 98,
-        "message": "member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 63,
-    "complexity_score": 339,
+    "assembly_lines": 146,
+    "complexity_score": 354,
     "cross_reference_count": 0,
-    "function_call_count": 2,
-    "global_count": 13,
+    "function_call_count": 5,
+    "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 99,
-    "suspect_count": 22,
+    "suspect_count": 23,
     "suspect_types": [
+      "byvalue_struct_passing",
       "pointer_cast",
       "stack_param",
       "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 162
+    "total_lines": 245
   },
   "cross_references": [],
   "function": {
@@ -76,10 +28,6 @@
     "address_range": [
       [
         "005a59c0",
-        "005a5a59"
-      ],
-      [
-        "005a5b49",
         "005a5b70"
       ]
     ],
@@ -94,9 +42,24 @@
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
+      "addr": "005fde40",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
       "addr": "005fe5e0",
       "is_variadic": false,
       "name": "crt_string.c_memmove_FUN_005fe5e0"
+    },
+    {
+      "addr": "005a7100",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100"
+    },
+    {
+      "addr": "005a75e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0"
     }
   ],
   "globals": [
@@ -131,6 +94,12 @@
       "value": "0x2"
     },
     {
+      "addr": "00681b1c",
+      "name": "g_AudioSampleRate",
+      "type": "int",
+      "value": "0x5622"
+    },
+    {
       "addr": "02f0ca48",
       "name": "g_CurrentFilename",
       "type": "char*",
@@ -143,8 +112,32 @@
       "value": null
     },
     {
+      "addr": "03f5daa4",
+      "name": "g_SfxSlots",
+      "type": "CSfxSlot[64]",
+      "value": null
+    },
+    {
+      "addr": "03f5dbcc",
+      "name": "g_SfxSlots[1].status",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f624a4",
+      "name": "g_SfxLastSlot",
+      "type": "int",
+      "value": null
+    },
+    {
       "addr": "03f69278",
       "name": "g_MixBufferReadIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6927c",
+      "name": "g_MixBufferWriteIndex",
       "type": "int",
       "value": null
     },
@@ -173,6 +166,12 @@
       "value": null
     },
     {
+      "addr": "03f69320",
+      "name": "g_MixBufferCount",
+      "type": "int",
+      "value": null
+    },
+    {
       "addr": "03f6940c",
       "name": "g_SoundLockCount",
       "type": "int",
@@ -188,36 +187,41 @@
     "estimated_params": 0
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.352941176470588,
-    "instruction_count": 51,
+    "avg_pcode_per_instr": 5.308333333333334,
+    "instruction_count": 120,
     "opcode_distribution": {
-      "BOOL_NEGATE": 10,
-      "BOOL_OR": 3,
-      "BRANCH": 1,
-      "CALL": 3,
-      "CBRANCH": 3,
-      "COPY": 40,
-      "INT_ADD": 7,
-      "INT_AND": 51,
-      "INT_CARRY": 4,
-      "INT_EQUAL": 30,
-      "INT_LEFT": 4,
-      "INT_LESS": 3,
-      "INT_MULT": 3,
-      "INT_NOTEQUAL": 9,
-      "INT_OR": 10,
-      "INT_SBORROW": 5,
-      "INT_SCARRY": 4,
+      "BOOL_NEGATE": 17,
+      "BOOL_OR": 4,
+      "BRANCH": 2,
+      "CALL": 6,
+      "CBRANCH": 9,
+      "COPY": 127,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_DIV": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 37,
+      "INT_AND": 103,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 72,
+      "INT_LEFT": 6,
+      "INT_LESS": 8,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 15,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 15,
       "INT_SEXT": 6,
-      "INT_SLESS": 18,
-      "INT_SUB": 21,
-      "INT_XOR": 4,
-      "LOAD": 2,
-      "POPCOUNT": 14,
-      "STORE": 14,
+      "INT_SLESS": 40,
+      "INT_SUB": 37,
+      "INT_XOR": 7,
+      "INT_ZEXT": 2,
+      "LOAD": 11,
+      "POPCOUNT": 34,
+      "RETURN": 1,
+      "STORE": 27,
       "SUBPIECE": 4
     },
-    "pcode_op_count": 273
+    "pcode_op_count": 637
   },
   "stack_frame": {
     "frame_size": 4,
@@ -226,6 +230,23 @@
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "005a5b02",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
   },
   "suspects": [
     {
@@ -403,6 +424,13 @@
       "severity": "mild",
       "text": "mix_buffer.channel_buffers[6] = (float *)in_stack_ffffff94._24_4_;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Calls CSfxSlot_mix - decompiler cannot recognize by-value pattern",
+      "line": 1,
+      "match": "CSfxSlot_mix",
+      "text": "Function calls by-value struct passing functions",
+      "type": "byvalue_struct_passing"
     }
   ]
 }

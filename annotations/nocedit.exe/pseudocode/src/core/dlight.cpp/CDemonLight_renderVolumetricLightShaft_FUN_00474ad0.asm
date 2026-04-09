@@ -45,6 +45,9 @@
 ; float            Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20 at 00473f5d
+;
 ; Referenced Globals:
 ;   double DOUBLE_0061f1eb = 18
 ;   double DOUBLE_0061f1f3 = 2

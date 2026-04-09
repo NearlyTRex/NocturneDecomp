@@ -12,7 +12,11 @@
 ; Referenced Globals:
 ;   float FLOAT_00629c0b = 30
 ;   CGame* g_CGamePtr = 02d81a9c
+;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CGameInstance.delta_time_float
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.x
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.y
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.z
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
@@ -49,4 +53,66 @@ section .text
     FSTP float ptr [EBX + 0x8]          ; 004bf3e2
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004bf3e5
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x24],EAX      ; 004bf3ea
+    FLD float ptr [ESP + 0x24]          ; 004bf3ee
+    ADD ESP,0x8                         ; 004bf3f2
+    FMUL float ptr [ESP + 0x18]         ; 004bf3f5
+    PUSH 0x3f800000                     ; 004bf3f9
+    FADD float ptr [EBX + 0x4]          ; 004bf3fe
+    PUSH 0xbf800000                     ; 004bf401
+    FSTP float ptr [EBX + 0x4]          ; 004bf406
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004bf409
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x24],EAX      ; 004bf40e
+    FLD float ptr [ESP + 0x24]          ; 004bf412
+    ADD ESP,0x8                         ; 004bf416
+    FMUL float ptr [ESP + 0x18]         ; 004bf419
+    FADD float ptr [EBX + 0xc]          ; 004bf41d
+    LEA EAX,[EBX + 0x1c]                ; 004bf420
+    FSTP float ptr [EBX + 0xc]          ; 004bf423
+    FLD float ptr [EAX]                 ; 004bf426
+    FMUL float ptr [ESP + 0x18]         ; 004bf428
+    FSTP float ptr [ESP + 0xc]          ; 004bf42c
+    FLD float ptr [EAX + 0x4]           ; 004bf430
+    FMUL float ptr [ESP + 0x18]         ; 004bf433
+    FSTP float ptr [ESP + 0x10]         ; 004bf437
+    FLD float ptr [EAX + 0x8]           ; 004bf43b
+    FMUL float ptr [ESP + 0x18]         ; 004bf43e
+    LEA EAX,[EBX + 0x4]                 ; 004bf442
+    FSTP float ptr [ESP + 0x14]         ; 004bf445
+    FLD float ptr [EAX]                 ; 004bf449
+    FADD float ptr [ESP + 0xc]          ; 004bf44b
+    FLD float ptr [EAX + 0x4]           ; 004bf44f
+    FXCH                                ; 004bf452
+    FSTP float ptr [EAX]                ; 004bf454
+    FADD float ptr [ESP + 0x10]         ; 004bf456
+    FLD float ptr [EAX + 0x8]           ; 004bf45a
+    FXCH                                ; 004bf45d
+    FSTP float ptr [EAX + 0x4]          ; 004bf45f
+    FADD float ptr [ESP + 0x14]         ; 004bf462
+    MOV EBX,dword ptr [0x006810c8]      ; 004bf466 | g_CDemonSetPtr
+    FSTP float ptr [EAX + 0x8]          ; 004bf46c
+    FLD float ptr [EBX + 0x15ac60]      ; 004bf46f | g_CDemonSetInstance.active_fog.scroll.x
+    FMUL float ptr [ESP + 0x18]         ; 004bf475
+    FSTP float ptr [ESP]                ; 004bf479
+    FLD float ptr [EBX + 0x15ac64]      ; 004bf47c | g_CDemonSetInstance.active_fog.scroll.y
+    FMUL float ptr [ESP + 0x18]         ; 004bf482
+    FSTP float ptr [ESP + 0x4]          ; 004bf486
+    FLD float ptr [EBX + 0x15ac68]      ; 004bf48a | g_CDemonSetInstance.active_fog.scroll.z
+    FMUL float ptr [ESP + 0x18]         ; 004bf490
+    FSTP float ptr [ESP + 0x8]          ; 004bf494
+    FLD float ptr [EAX]                 ; 004bf498
+    FADD float ptr [ESP]                ; 004bf49a
+    FLD float ptr [EAX + 0x4]           ; 004bf49d
+    FXCH                                ; 004bf4a0
+    FSTP float ptr [EAX]                ; 004bf4a2
+    FADD float ptr [ESP + 0x4]          ; 004bf4a4
+    FLD float ptr [EAX + 0x8]           ; 004bf4a8
+    FXCH                                ; 004bf4ab
+    FSTP float ptr [EAX + 0x4]          ; 004bf4ad
+    FADD float ptr [ESP + 0x8]          ; 004bf4b0
+    FSTP float ptr [EAX + 0x8]          ; 004bf4b4
+    ADD ESP,0x20                        ; 004bf4b7
+    POP EBX                             ; 004bf4ba
+    RET                                 ; 004bf4bb
 

@@ -27,9 +27,10 @@
 ; int              Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
-; XREF[2]:
+; XREF[3]:
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 at 0042b64c
 ;   core_charactr.cpp_CCharacter_processFire_FUN_0042a830 at 0042acb3
+;   core_charactr.cpp_CCharacter_setup_FUN_00428140 at 0042822d
 ;
 ; Referenced Globals:
 ;   double DOUBLE_006170c2 = 0.5

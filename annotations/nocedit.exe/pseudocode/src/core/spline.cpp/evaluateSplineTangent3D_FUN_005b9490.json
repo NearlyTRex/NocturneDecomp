@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 94,
     "complexity_score": 47,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -17,6 +17,12 @@
     "total_lines": 141
   },
   "cross_references": [
+    {
+      "addr": "004864c0",
+      "from_addr": "0048690e",
+      "name": "core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004869a0",
       "from_addr": "00486c63",
@@ -39,8 +45,19 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
+      {
+        "call_addr": "0048690e",
+        "call_type": "direct",
+        "caller": "core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
       {
         "call_addr": "00486c63",
         "call_type": "direct",
@@ -53,7 +70,7 @@
         "stack_params": 6
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 6,
     "declared_stack_bytes": 24,
     "estimated_params": 6

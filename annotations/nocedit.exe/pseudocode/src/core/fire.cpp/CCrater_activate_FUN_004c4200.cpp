@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CCrater_activate_FUN_004c4200
 // Address: 004c4200
-// Address Range: [[004c4200, 004c4287]]
+// Address Range: [[004c4200, 004c454b]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CCrater_activate_FUN_004c4200(CCrater *this_ptr,CVector3f *center_position,float radius)
 

@@ -1,6 +1,6 @@
 // Name: core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
 // Address: 004e87e0
-// Address Range: [[004e87e0, 004e896d] [004e89a9, 004e8ba1]]
+// Address Range: [[004e87e0, 004e8ba1]]
 // Convention: __cdecl
 // Signature: void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004e87e0(CGhoul *this_ptr,SDamageInfo *damage_info)
 

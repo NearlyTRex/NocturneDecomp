@@ -21,7 +21,7 @@
 ; float            Stack[-0x20]:4  local_20
 ; float            Stack[-0x18]:4  local_18
 ;
-; XREF[26]:
+; XREF[28]:
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 at 0041a9eb
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422c34
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 at 0042beb6
@@ -32,7 +32,7 @@
 ;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 at 004d743f
 ;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 at 004d5790
 ;   core_ladder.cpp_CLadder_cacheRelativePosition_FUN_00502b80 at 00502c60
-;   ... and 16 more
+;   ... and 18 more
 ;
 ; Referenced Globals:
 ;   double g_MatrixToEulerNegativeOne = -1

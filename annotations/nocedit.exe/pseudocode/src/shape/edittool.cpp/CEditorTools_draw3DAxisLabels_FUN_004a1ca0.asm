@@ -12,8 +12,9 @@
 ; CVector3i        Stack[-0x20]:12  local_20
 ; int              Stack[-0x14]:4  local_14
 ;
-; XREF[8]:
+; XREF[9]:
 ;   core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0 at 0043b9e0
+;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047ce48
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60 at 00509cff
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50 at 00509de2
 ;   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0 at 00581d79

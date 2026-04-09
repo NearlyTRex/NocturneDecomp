@@ -238,6 +238,21 @@ section .text
     MOV dword ptr [EBX + 0xbf64],0x0    ; 004842e4
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 004842ee
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x8],EAX       ; 004842f3
+    FLD float ptr [ESP + 0x8]           ; 004842f7
+    ADD ESP,0x8                         ; 004842fb
+    PUSH 0x41a00000                     ; 004842fe
+    PUSH 0x40000000                     ; 00484303
+    FSTP float ptr [EBX + 0xbf50]       ; 00484308
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0048430e
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x8],EAX       ; 00484313
+    MOV EAX,dword ptr [ESP + 0x8]       ; 00484317
+    MOV dword ptr [EBX + 0xbf54],EAX    ; 0048431b
+    ADD ESP,0x8                         ; 00484321
+    ADD ESP,0x4                         ; 00484324
+    POP EBX                             ; 00484327
+    RET                                 ; 00484328
     PUSH 0x621875                       ; 00484329 | = "nbride2.dfm"
         ;   Label: LAB_00484329
     PUSH EAX                            ; 0048432e

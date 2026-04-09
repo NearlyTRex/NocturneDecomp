@@ -4,8 +4,8 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    4408 ( 50.2%)
-  unknown_field                    859 (  9.8%)
+  pointer_cast                    4408 ( 49.7%)
+  unknown_field                    859 (  9.7%)
   special_crt_function             439 (  5.0%)
   stack_param                      351 (  4.0%)
   unnamed_param                    329 (  3.7%)
@@ -15,22 +15,23 @@ SUSPECT TYPE COUNTS
   stack_ref                        250 (  2.8%)
   unresolved_funcptr               141 (  1.6%)
   warning_type_propagation         133 (  1.5%)
-  param_count_too_few              119 (  1.4%)
+  param_count_too_few              120 (  1.4%)
   unaffected_reg                   106 (  1.2%)
-  sub84_truncation                 101 (  1.2%)
+  sub84_truncation                 101 (  1.1%)
   stack_alignment_array             95 (  1.1%)
   negative_offset                   86 (  1.0%)
   warning_unreachable               85 (  1.0%)
+  wrong_global                      82 (  0.9%)
   register_param                    69 (  0.8%)
   param_count_too_many              41 (  0.5%)
   unknown_type                      40 (  0.5%)
   mmx_assembly                      34 (  0.4%)
-  suspect_float                     31 (  0.4%)
+  suspect_float                     31 (  0.3%)
   extra_output                      29 (  0.3%)
   format_string_mismatch            24 (  0.3%)
   undefined_ram                     24 (  0.3%)
+  byvalue_struct_passing            22 (  0.2%)
   undefined_data                    21 (  0.2%)
-  byvalue_struct_passing            21 (  0.2%)
   undefined_type                    15 (  0.2%)
   special_math_intrinsic            15 (  0.2%)
   warning_jumptable                  8 (  0.1%)
@@ -563,16 +564,16 @@ Example functions:
     /* WARNING: Type propagation algorithm not settling */...
 
 ====================================================================================================
-TYPE: param_count_too_few (119 occurrences)
+TYPE: param_count_too_few (120 occurrences)
 ====================================================================================================
 
 Unique patterns:
     21x  declared:1 vs estimated:2
     12x  declared:2 vs estimated:3
     11x  declared:0 vs estimated:4
+     9x  declared:0 vs estimated:1
      8x  declared:4 vs estimated:5
      8x  declared:0 vs estimated:2
-     8x  declared:0 vs estimated:1
      6x  declared:0 vs estimated:3
      5x  declared:3 vs estimated:6
      3x  declared:4 vs estimated:7
@@ -919,6 +920,90 @@ Example functions:
     /* WARNING: Removing unreachable block (ram,0x0048e859) */...
   core_inv.cpp_CInventory_clear_FUN_004fd0e0
     /* WARNING: Removing unreachable block (ram,0x004fd155) */...
+
+====================================================================================================
+TYPE: wrong_global (82 occurrences)
+====================================================================================================
+
+Unique patterns:
+    12x  g_SfxOptions
+     9x  g_KeyboardState
+     4x  g_ColorCubeLookup
+     4x  g_CDemonCameraInstance
+     3x  g_GetLastErrorFunc
+     2x  g_PositiveInfinity
+     2x  g_QuadVertex3
+     2x  g_RenderVertexBuffer
+     2x  g_CommandTemplates
+     2x  g_DeformableModelPool
+     1x  g_MMXSupported
+     1x  DAT_80000010
+     1x  g_QuadVertex2
+     1x  g_VersionControlSession
+     1x  g_SoundDevices
+     1x  g_RecordingDevices
+     1x  g_CSoundDevicePtr
+     1x  g_SoundBusyFlag
+     1x  g_TempWorldPositions
+     1x  g_RenderStateFlags
+
+Example functions:
+  cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760
+    if (g_MMXSupported != 0) {...
+  crt_io.c_chdir_FUN_006012a0
+    windows_error = (*g_GetLastErrorFunc)();...
+  crt_watcom.c__mkdir_FUN_00600e10
+    windows_error = (*g_GetLastErrorFunc)();...
+  crt_time.c_determine_dst_status_FUN_006079b4
+    iVar1 = *(int *)((int)&g_PositiveInfinity + iVar9 * 2 + 6);...
+  crt_unknown.c_FUN_00607858
+    iVar2 = *(int *)((int)&g_PositiveInfinity + *(int *)(param_1 + 0x10) * 2 + 6);...
+  crt_stdio.c_remove_FUN_00606600
+    windows_error = (*g_GetLastErrorFunc)();...
+  engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
+    point->screen_x = (int)&DAT_80000010;...
+  engine_3d.c_clipAndDrawLine2D_FUN_00407d70
+    g_QuadVertex2.projected_vertex.transformed_x = vertex1.projected_vertex.transfor...
+  engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
+    g_RenderVertexBuffer[iVar3].projected_vertex.transformed_x;...
+  engine_3d.c_clipAndDrawLine3D_FUN_00408070
+    g_QuadVertex3.projected_vertex.transformed_x = vertex2.projected_vertex.transfor...
+  engine_fileio.cpp_logOffVersionControl_FUN_004b2830
+    if (g_VersionControlSession.session_handle == (HANDLE)0x0) {...
+  sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
+    g_SfxOptions[g_SfxLastSlot].trigger_time = trigger_time;...
+  sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
+    g_SfxOptions[g_SfxLastSlot].position_format = 1;...
+  sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005a8bb0
+    g_SfxOptions[g_SfxLastSlot].flags = g_SfxOptions[g_SfxLastSlot].flags & ~flag_ma...
+  sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40
+    g_SfxOptions[g_SfxLastSlot].delay_remaining = delay_seconds;...
+  sound_sndmain.cpp_initializeSoundDevice_FUN_005ab5b0
+    if (g_SoundDevices[g_CurrentSoundDevice].api_type == 0) {...
+  sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60
+    g_SfxOptions[g_SfxLastSlot].current_volume = volume;...
+  sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_005a8a80
+    g_SfxOptions[g_SfxLastSlot].base_frequency = base_frequency;...
+  sound_sndmain.cpp_setNextSfxFlagBits_FUN_005a8b90
+    g_SfxOptions[g_SfxLastSlot].flags = g_SfxOptions[g_SfxLastSlot].flags | flag_mas...
+  sound_sndmain.cpp_setNextSfxTrackedVelocity2_FUN_005a8a30
+    g_SfxOptions[g_SfxLastSlot].velocity_format = 2;...
+  sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
+    g_SfxOptions[g_SfxLastSlot].position.x = pos_x;...
+  sound_sndmain.cpp_initializeRecordingDevice_FUN_005ab8d0
+    if (g_RecordingDevices[g_CurrentRecordingDevice].api_type == 0) {...
+  sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_005a8a00
+    g_SfxOptions[g_SfxLastSlot].velocity_format = 1;...
+  sound_sndmain.cpp_setNextSfxTrackedDoublePosition_FUN_005a8970
+    g_SfxOptions[g_SfxLastSlot].position_format = 2;...
+  sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70
+    g_SfxOptions[g_SfxLastSlot].flags = flags;...
+  sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0
+    if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {...
+  core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
+    *(int *)((int)&g_TempWorldPositions[0][0].x + local_30) = local_54.x;...
+  core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00482fb0
+    if ((g_RenderStateFlags.bytes[1] & 2) != 0) {...
 
 ====================================================================================================
 TYPE: register_param (69 occurrences)
@@ -1293,6 +1378,62 @@ Example functions:
     uVar38 = ((CONCAT44(uRam00682694,uVar8) & 0xffffffff0000ffff) << 0x10 |...
 
 ====================================================================================================
+TYPE: byvalue_struct_passing (22 occurrences)
+====================================================================================================
+
+Unique patterns:
+    17x  clipAndDrawLine2D
+     2x  clipAndDrawLine3D
+     2x  CSfxSlot_mix
+     1x  calculateMainDataSize
+
+Example functions:
+  engine_3d.c_drawLineStrip3D_FUN_00404600
+    Function calls by-value struct passing functions...
+  engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
+    Function calls by-value struct passing functions...
+  engine_3d.c_drawLineStrip2D_FUN_00404570
+    Function calls by-value struct passing functions...
+  engine_3d.c_drawLine3DFromIndices_FUN_00407ff0
+    Function calls by-value struct passing functions...
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
+    Function calls by-value struct passing functions...
+  sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
+    Function calls by-value struct passing functions...
+  sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
+    Function calls by-value struct passing functions...
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930
+    Function calls by-value struct passing functions...
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
+    Function calls by-value struct passing functions...
+  core_actor.cpp_draw3DLineSegment_FUN_0040d330
+    Function calls by-value struct passing functions...
+  core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
+    Function calls by-value struct passing functions...
+  core_actor.cpp_drawBoundingBox_FUN_0040d470
+    Function calls by-value struct passing functions...
+  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620
+    Function calls by-value struct passing functions...
+  core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640
+    Function calls by-value struct passing functions...
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10
+    Function calls by-value struct passing functions...
+  core_course.cpp_CCourse_preview_FUN_00443bc0
+    Function calls by-value struct passing functions...
+  shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770
+    Function calls by-value struct passing functions...
+  shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
+    Function calls by-value struct passing functions...
+  shape_design.c_renderPolygonWireframe_FUN_0045d300
+    Function calls by-value struct passing functions...
+  shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
+    Function calls by-value struct passing functions...
+  shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40
+    Function calls by-value struct passing functions...
+  shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
+    Function calls by-value struct passing functions...
+
+====================================================================================================
 TYPE: undefined_data (21 occurrences)
 ====================================================================================================
 
@@ -1334,60 +1475,6 @@ Example functions:
     if ((DAT_0068528c != (code *)0x0) &&...
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
     point->screen_x = (int)&DAT_80000010;...
-
-====================================================================================================
-TYPE: byvalue_struct_passing (21 occurrences)
-====================================================================================================
-
-Unique patterns:
-    17x  clipAndDrawLine2D
-     2x  clipAndDrawLine3D
-     1x  calculateMainDataSize
-     1x  CSfxSlot_mix
-
-Example functions:
-  engine_3d.c_drawLineStrip3D_FUN_00404600
-    Function calls by-value struct passing functions...
-  engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
-    Function calls by-value struct passing functions...
-  engine_3d.c_drawLineStrip2D_FUN_00404570
-    Function calls by-value struct passing functions...
-  engine_3d.c_drawLine3DFromIndices_FUN_00407ff0
-    Function calls by-value struct passing functions...
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
-    Function calls by-value struct passing functions...
-  sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
-    Function calls by-value struct passing functions...
-  core_setedit.cpp_drawCameraFrustum_FUN_00582930
-    Function calls by-value struct passing functions...
-  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
-    Function calls by-value struct passing functions...
-  core_actor.cpp_draw3DLineSegment_FUN_0040d330
-    Function calls by-value struct passing functions...
-  core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
-    Function calls by-value struct passing functions...
-  core_actor.cpp_drawBoundingBox_FUN_0040d470
-    Function calls by-value struct passing functions...
-  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620
-    Function calls by-value struct passing functions...
-  core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640
-    Function calls by-value struct passing functions...
-  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10
-    Function calls by-value struct passing functions...
-  core_course.cpp_CCourse_preview_FUN_00443bc0
-    Function calls by-value struct passing functions...
-  shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770
-    Function calls by-value struct passing functions...
-  shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
-    Function calls by-value struct passing functions...
-  shape_design.c_renderPolygonWireframe_FUN_0045d300
-    Function calls by-value struct passing functions...
-  shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
-    Function calls by-value struct passing functions...
-  shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40
-    Function calls by-value struct passing functions...
-  shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
-    Function calls by-value struct passing functions...
 
 ====================================================================================================
 TYPE: undefined_type (15 occurrences)

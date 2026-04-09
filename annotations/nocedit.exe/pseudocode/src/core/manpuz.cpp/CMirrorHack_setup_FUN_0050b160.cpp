@@ -1,6 +1,6 @@
 // Name: core_manpuz.cpp_CMirrorHack_setup_FUN_0050b160
 // Address: 0050b160
-// Address Range: [[0050b160, 0050b169]]
+// Address Range: [[0050b160, 0050b17f]]
 // Convention: __cdecl
 // Signature: void __cdecl core_manpuz_cpp_CMirrorHack_setup_FUN_0050b160(CMirrorHack *this_ptr)
 

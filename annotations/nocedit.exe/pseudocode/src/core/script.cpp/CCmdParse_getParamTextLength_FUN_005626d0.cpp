@@ -1,6 +1,6 @@
 // Name: core_script.cpp_CCmdParse_getParamTextLength_FUN_005626d0
 // Address: 005626d0
-// Address Range: [[005626d0, 00562758]]
+// Address Range: [[005626d0, 00562759]]
 // Convention: __cdecl
 // Signature: int __cdecl core_script_cpp_CCmdParse_getParamTextLength_FUN_005626d0(CCmdParse *this_ptr,int param_count)
 

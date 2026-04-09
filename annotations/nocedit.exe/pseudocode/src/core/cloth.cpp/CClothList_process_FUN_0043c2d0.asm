@@ -11,8 +11,9 @@
 ; float            Stack[0x14]:4   floor_y
 ; CDeformableModelInstance * Stack[0x18]:4   model_ptr
 ;
-; XREF[3]:
+; XREF[4]:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 at 0042e03d
+;   core_charactr.cpp_CCharacter_setup_FUN_00428140 at 004282bd
 ;   core_succubus.cpp_CSuccubus_process_FUN_005c6e90 at 005c7291
 ;   core_succubus.cpp_CSuccubus_setup_FUN_005c6b60 at 005c6c11
 ;

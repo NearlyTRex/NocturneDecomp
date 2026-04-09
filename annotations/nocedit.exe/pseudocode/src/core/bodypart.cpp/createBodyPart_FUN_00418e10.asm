@@ -12,9 +12,10 @@
 ; int              Stack[0x18]:4   is_transparent
 ; int              Stack[0x1c]:4   blood_type
 ;
-; XREF[14]:
+; XREF[15]:
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 at 00415f25
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_00417660 at 00417732
+;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041d680 at 0041d792
 ;   core_bride.cpp_CBride_processDismemberment_FUN_00424600 at 004246c2
 ;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0 at 0042bcfe
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_004448c0 at 00444969
@@ -22,13 +23,13 @@
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004e5530 at 004e55f2
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e8520 at 004e85ed
 ;   core_imp.cpp_CImp_processDismemberment_FUN_004fab60 at 004fac32
-;   core_mobster.cpp_CMobster_processDismemberment_FUN_00527380 at 0052748b
-;   ... and 4 more
+;   ... and 5 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_bodypart_cpp_00615b7c
 ;   TerminatedCString s_core_bodypart_cpp_00615b91
 ;   TerminatedCString s_Can_t_create_body_part_00615ba6
+;   float FLOAT_00615bc0 = 10
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -158,6 +159,43 @@ section .text
     PUSH 0x3f490fdb                     ; 00418f2b
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00418f30
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x2c],EAX      ; 00418f35
+    FLD float ptr [ESP + 0x2c]          ; 00418f39
+    ADD ESP,0x8                         ; 00418f3d
+    PUSH 0x40c90fdb                     ; 00418f40
+    PUSH 0x0                            ; 00418f45
+    FSTP float ptr [ESP + 0x18]         ; 00418f47
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 00418f4b
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x2c],EAX      ; 00418f50
+    FLD float ptr [ESP + 0x2c]          ; 00418f54
+    ADD ESP,0x8                         ; 00418f58
+    FLD ST0                             ; 00418f5b
+    FCOS                                ; 00418f5d
+    FLD float ptr [ESP + 0x10]          ; 00418f5f
+    FLD ST0                             ; 00418f63
+    FCOS                                ; 00418f65
+    FXCH ST3                            ; 00418f67
+    FSIN                                ; 00418f69
+    FXCH                                ; 00418f6b
+    FSIN                                ; 00418f6d
+    FXCH ST2                            ; 00418f6f
+    FLD float ptr [0x00615bc0]          ; 00418f71 | FLOAT_00615bc0
+    FXCH                                ; 00418f77
+    FMUL ST1                            ; 00418f79
+    FXCH ST2                            ; 00418f7b
+    FMUL ST1                            ; 00418f7d
+    FXCH ST3                            ; 00418f7f
+    FMULP                               ; 00418f81
+    FXCH                                ; 00418f83
+    FMUL ST3                            ; 00418f85
+    FXCH ST2                            ; 00418f87
+    FMULP ST3                           ; 00418f89
+    FSTP float ptr [EBX + 0x284]        ; 00418f8b
+    FSTP float ptr [EBX + 0x280]        ; 00418f91
+    FSTP float ptr [EBX + 0x288]        ; 00418f97
+    JMP 0x00418ec2                      ; 00418f9d
+        ;   XREF to: 00418ec2 (UNCONDITIONAL_JUMP)  ; LAB_00418ec2
     MOV EAX,dword ptr [EDI + 0x108]     ; 00418fa2
         ;   Label: LAB_00418fa2
     MOV dword ptr [EBX + 0x108],EAX     ; 00418fa8

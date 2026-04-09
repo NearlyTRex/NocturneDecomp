@@ -122,6 +122,13 @@ from ghidra_annotations.annotations.pseudocode.function_compile import (
     compile_all_functions,
     compile_functions_after_export
 )
+from ghidra_annotations.annotations.pseudocode.static_analysis import (
+    run_static_analysis_after_export,
+    analyze_all_functions as analyze_all_functions_static,
+    run_clang_analyzer,
+    run_cppcheck,
+    run_clang_tidy,
+)
 from ghidra_annotations.annotations.pseudocode.transforms import (
     UNDEFINED_TYPE_REPLACEMENTS,
     UNDEFINED_PTR_CAST_REPLACEMENTS,

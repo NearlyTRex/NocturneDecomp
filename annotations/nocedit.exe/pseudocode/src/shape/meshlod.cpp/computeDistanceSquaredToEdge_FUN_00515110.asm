@@ -44,4 +44,9 @@ section .text
     FMUL ST0                            ; 00515148
     FADDP                               ; 0051514a
     FSTP double ptr [ESP + 0xc]         ; 0051514c
+    MOV EAX,dword ptr [ESP + 0xc]       ; 00515150
+    MOV EDX,dword ptr [ESP + 0x10]      ; 00515154
+    ADD ESP,0x20                        ; 00515158
+    POP EBX                             ; 0051515b
+    RET                                 ; 0051515c
 

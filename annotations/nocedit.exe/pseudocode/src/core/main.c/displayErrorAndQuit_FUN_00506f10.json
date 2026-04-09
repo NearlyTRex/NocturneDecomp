@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 198,
     "complexity_score": 91,
-    "cross_reference_count": 741,
+    "cross_reference_count": 745,
     "function_call_count": 14,
     "global_count": 20,
     "max_suspect_severity": "mild",
@@ -395,6 +395,12 @@
       "addr": "0042cdb0",
       "from_addr": "0042cde4",
       "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00428140",
+      "from_addr": "0042833c",
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_00428140",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1118,9 +1124,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004e63d0",
+      "from_addr": "004e64f8",
+      "name": "core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004eb690",
       "from_addr": "004eb7d0",
       "name": "core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e9180",
+      "from_addr": "004e928d",
+      "name": "core_glass.cpp_CGlass_setup_FUN_004e9180",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -1913,6 +1931,12 @@
       "addr": "005751d0",
       "from_addr": "00575527",
       "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575bc0",
+      "from_addr": "00575c92",
+      "name": "core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -4849,6 +4873,35 @@
         "type": "char *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "displayErrorAndQuit_FUN_00506f10.keep.c",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "cert-dcl50-cpp",
+          "column": 14,
+          "line": 10,
+          "message": "do not define a C-style variadic function; consider using a function parameter pack or currying instead"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "nullPointerArithmetic",
+          "column": 23,
+          "line": 83,
+          "message": "Pointer addition with NULL pointer.",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

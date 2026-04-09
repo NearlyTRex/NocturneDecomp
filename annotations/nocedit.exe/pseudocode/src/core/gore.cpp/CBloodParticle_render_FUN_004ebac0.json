@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 280,
+    "assembly_lines": 547,
     "complexity_score": 305,
     "cross_reference_count": 0,
     "function_call_count": 9,
-    "global_count": 25,
+    "global_count": 28,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 200,
     "suspect_count": 10,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 480
+    "total_lines": 747
   },
   "cross_references": [],
   "function": {
@@ -24,10 +24,6 @@
     "address_range": [
       [
         "004ebac0",
-        "004ebe5c"
-      ],
-      [
-        "004ec23c",
         "004ec280"
       ]
     ],
@@ -84,6 +80,24 @@
     }
   ],
   "globals": [
+    {
+      "addr": "0062e2ea",
+      "name": "DOUBLE_0062e2ea",
+      "type": "double",
+      "value": "0.700000000000000"
+    },
+    {
+      "addr": "0062e2f2",
+      "name": "DOUBLE_0062e2f2",
+      "type": "double",
+      "value": "-0.100000000000000"
+    },
+    {
+      "addr": "0062e2fa",
+      "name": "DOUBLE_0062e2fa",
+      "type": "double",
+      "value": "0.100000000000000"
+    },
     {
       "addr": "0065f024",
       "name": "FLOAT_0065f024",
@@ -244,44 +258,45 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.601593625498008,
-    "instruction_count": 251,
+    "avg_pcode_per_instr": 5.763419483101392,
+    "instruction_count": 503,
     "opcode_distribution": {
-      "BOOL_NEGATE": 32,
+      "BOOL_NEGATE": 48,
       "BOOL_OR": 1,
-      "BRANCH": 3,
-      "CALL": 12,
-      "CALLIND": 1,
-      "CBRANCH": 5,
-      "COPY": 511,
-      "FLOAT2FLOAT": 36,
-      "FLOAT_MULT": 18,
-      "INT_ADD": 102,
-      "INT_AND": 149,
-      "INT_CARRY": 18,
-      "INT_EQUAL": 82,
-      "INT_LEFT": 7,
-      "INT_LESS": 5,
-      "INT_MULT": 3,
-      "INT_NOTEQUAL": 19,
-      "INT_OR": 32,
-      "INT_RIGHT": 6,
-      "INT_SBORROW": 5,
-      "INT_SCARRY": 18,
-      "INT_SEXT": 9,
-      "INT_SLESS": 48,
+      "BRANCH": 4,
+      "CALL": 22,
+      "CALLIND": 2,
+      "CBRANCH": 7,
+      "COPY": 1216,
+      "FLOAT2FLOAT": 99,
+      "FLOAT_MULT": 41,
+      "FLOAT_SUB": 4,
+      "INT_ADD": 225,
+      "INT_AND": 243,
+      "INT_CARRY": 34,
+      "INT_EQUAL": 144,
+      "INT_LEFT": 10,
+      "INT_LESS": 8,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 31,
+      "INT_OR": 50,
+      "INT_RIGHT": 12,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 35,
+      "INT_SEXT": 18,
+      "INT_SLESS": 83,
       "INT_SRIGHT": 2,
-      "INT_SUB": 61,
-      "INT_XOR": 10,
-      "LOAD": 41,
-      "POPCOUNT": 38,
+      "INT_SUB": 107,
+      "INT_XOR": 19,
+      "LOAD": 98,
+      "POPCOUNT": 67,
       "RETURN": 1,
-      "ROUND": 18,
-      "STORE": 89,
-      "SUBPIECE": 6,
-      "TRUNC": 18
+      "ROUND": 33,
+      "STORE": 176,
+      "SUBPIECE": 12,
+      "TRUNC": 33
     },
-    "pcode_op_count": 1406
+    "pcode_op_count": 2899
   },
   "stack_frame": {
     "frame_size": 248,

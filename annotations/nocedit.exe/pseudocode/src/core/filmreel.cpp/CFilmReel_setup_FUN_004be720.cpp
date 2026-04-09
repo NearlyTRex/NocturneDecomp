@@ -1,6 +1,6 @@
 // Name: core_filmreel.cpp_CFilmReel_setup_FUN_004be720
 // Address: 004be720
-// Address Range: [[004be720, 004be72d]]
+// Address Range: [[004be720, 004be7a2]]
 // Convention: __cdecl
 // Signature: void __cdecl core_filmreel_cpp_CFilmReel_setup_FUN_004be720(CFilmReel *this_ptr)
 

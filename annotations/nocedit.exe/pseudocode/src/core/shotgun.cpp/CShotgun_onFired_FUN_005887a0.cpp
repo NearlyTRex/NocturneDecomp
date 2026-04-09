@@ -1,6 +1,6 @@
 // Name: core_shotgun.cpp_CShotgun_onFired_FUN_005887a0
 // Address: 005887a0
-// Address Range: [[005887a0, 005887e3]]
+// Address Range: [[005887a0, 005888af]]
 // Convention: __cdecl
 // Signature: void __cdecl core_shotgun_cpp_CShotgun_onFired_FUN_005887a0(CShotgun *this_ptr)
 

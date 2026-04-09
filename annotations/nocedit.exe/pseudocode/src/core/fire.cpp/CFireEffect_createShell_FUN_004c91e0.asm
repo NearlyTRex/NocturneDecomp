@@ -10,6 +10,12 @@
 ; CVector3f *      Stack[0x10]:4   velocity
 ; CKeyFramedModel * Stack[0x14]:4   model_ptr
 ;
+; XREF[4]:
+;   core_elephant.cpp_CElephantGun_onFired_FUN_004a78a0 at 004a7980
+;   core_gun.cpp_CGun_fire_FUN_004f0350 at 004f06cb
+;   core_shotgun.cpp_CShotgun_onFired_FUN_005887a0 at 0058888e
+;   core_tommygun.cpp_CTommyGun_fire_FUN_005ddb30 at 005ddeb7
+;
 ; Referenced Globals:
 ;   int g_ShellAllocIndex
 ;

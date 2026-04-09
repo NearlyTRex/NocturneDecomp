@@ -10,7 +10,7 @@
 ; Local Variables:
 ; CVector3f        Stack[-0x10]:12  local_10
 ;
-; XREF[76]:
+; XREF[78]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a645
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 00409558
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 at 004136ed
@@ -21,7 +21,7 @@
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 at 0042ee7f
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70 at 0042cbba
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40 at 00429c84
-;   ... and 66 more
+;   ... and 68 more
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030

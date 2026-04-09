@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 110,
+    "assembly_lines": 579,
     "complexity_score": 216,
     "cross_reference_count": 0,
-    "function_call_count": 7,
-    "global_count": 8,
+    "function_call_count": 12,
+    "global_count": 42,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 216,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 326
+    "total_lines": 795
   },
   "cross_references": [],
   "function": {
@@ -22,11 +22,7 @@
     "address_range": [
       [
         "004c0e70",
-        "004c0f6d"
-      ],
-      [
-        "004c0f7c",
-        "004c0fa4"
+        "004c1687"
       ]
     ],
     "convention": "__cdecl",
@@ -61,6 +57,16 @@
       "name": "engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0"
     },
     {
+      "addr": "0048db80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048cae0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
       "addr": "0048c640",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640"
@@ -69,14 +75,59 @@
       "addr": "0048c450",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    },
+    {
+      "addr": "0048bad0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0"
+    },
+    {
+      "addr": "0048ca50",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50"
+    },
+    {
+      "addr": "005b575c",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
     }
   ],
   "globals": [
+    {
+      "addr": "00629cab",
+      "name": "DOUBLE_00629cab",
+      "type": "double",
+      "value": "0.700000000000000"
+    },
+    {
+      "addr": "0065dca8",
+      "name": "FLOAT_0065dca8",
+      "type": "float",
+      "value": "256"
+    },
     {
       "addr": "006703ec",
       "name": "g_CDemonRendererPtr2",
       "type": "CDemonRenderer*",
       "value": "02c6d578"
+    },
+    {
+      "addr": "0067a7ac",
+      "name": "g_FireEffectSparkTexture",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "0067a7dc",
+      "name": "g_FireEffectGreenSparkTexture",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "0067a7f4",
+      "name": "g_FireEffectRedSparkTexture",
+      "type": "SMRGLTextureBasic",
+      "value": null
     },
     {
       "addr": "006810c8",
@@ -85,9 +136,183 @@
       "value": "03114278"
     },
     {
+      "addr": "0068802c",
+      "name": "g_RenderVertexBuffer[0].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688030",
+      "name": "g_RenderVertexBuffer[0].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688034",
+      "name": "g_RenderVertexBuffer[0].r",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688038",
+      "name": "g_RenderVertexBuffer[0].g",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068803c",
+      "name": "g_RenderVertexBuffer[0].b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688040",
+      "name": "g_RenderVertexBuffer[0].a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068805c",
+      "name": "g_RenderVertexBuffer[1].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688060",
+      "name": "g_RenderVertexBuffer[1].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688064",
+      "name": "g_RenderVertexBuffer[1].r",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688068",
+      "name": "g_RenderVertexBuffer[1].g",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068806c",
+      "name": "g_RenderVertexBuffer[1].b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688070",
+      "name": "g_RenderVertexBuffer[1].a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068808c",
+      "name": "g_RenderVertexBuffer[2].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688090",
+      "name": "g_RenderVertexBuffer[2].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688094",
+      "name": "g_RenderVertexBuffer[2].r",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688098",
+      "name": "g_RenderVertexBuffer[2].g",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068809c",
+      "name": "g_RenderVertexBuffer[2].b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880a0",
+      "name": "g_RenderVertexBuffer[2].a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880bc",
+      "name": "g_RenderVertexBuffer[3].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880c0",
+      "name": "g_RenderVertexBuffer[3].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880c4",
+      "name": "g_RenderVertexBuffer[3].r",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880c8",
+      "name": "g_RenderVertexBuffer[3].g",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880cc",
+      "name": "g_RenderVertexBuffer[3].b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880d0",
+      "name": "g_RenderVertexBuffer[3].a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00823a74",
+      "name": "g_CurrentSceneCamera",
+      "type": "CDemonCamera*",
+      "value": null
+    },
+    {
+      "addr": "00f80000",
+      "name": "g_LightBufferPool[11][183800]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "02c6d578",
       "name": "g_CDemonRendererInstance",
       "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d051f4",
+      "name": "g_PerspectiveReciprocal",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d12db4",
+      "name": "g_BillboardCameraRight",
+      "type": "CVector3i",
+      "value": null
+    },
+    {
+      "addr": "02d12dcc",
+      "name": "g_BillboardPrimitive",
+      "type": "SMRGLPrimitiveQuadIndex",
       "value": null
     },
     {
@@ -130,28 +355,44 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.4827586206896552,
-    "instruction_count": 87,
+    "avg_pcode_per_instr": 4.745664739884393,
+    "instruction_count": 519,
     "opcode_distribution": {
-      "BOOL_NEGATE": 3,
-      "BRANCH": 3,
-      "CALL": 7,
-      "CBRANCH": 5,
-      "COPY": 68,
-      "INT_ADD": 30,
-      "INT_AND": 32,
-      "INT_CARRY": 7,
-      "INT_EQUAL": 28,
-      "INT_LESS": 3,
-      "INT_SBORROW": 3,
-      "INT_SCARRY": 7,
-      "INT_SLESS": 14,
-      "INT_SUB": 31,
-      "LOAD": 11,
-      "POPCOUNT": 14,
-      "STORE": 37
+      "BOOL_NEGATE": 17,
+      "BRANCH": 6,
+      "CALL": 28,
+      "CALLIND": 1,
+      "CBRANCH": 12,
+      "COPY": 1088,
+      "FLOAT2FLOAT": 82,
+      "FLOAT_MULT": 32,
+      "FLOAT_NEG": 2,
+      "FLOAT_SUB": 4,
+      "INT_ADD": 206,
+      "INT_AND": 156,
+      "INT_CARRY": 36,
+      "INT_EQUAL": 129,
+      "INT_LEFT": 2,
+      "INT_LESS": 10,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 12,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 37,
+      "INT_SEXT": 6,
+      "INT_SLESS": 67,
+      "INT_SUB": 112,
+      "INT_XOR": 10,
+      "LOAD": 93,
+      "POPCOUNT": 63,
+      "RETURN": 1,
+      "ROUND": 24,
+      "STORE": 175,
+      "SUBPIECE": 4,
+      "TRUNC": 24
     },
-    "pcode_op_count": 303
+    "pcode_op_count": 2463
   },
   "stack_frame": {
     "frame_size": 232,

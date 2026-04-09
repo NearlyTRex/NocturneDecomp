@@ -102,19 +102,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 1620,
-    "complexity_score": 694,
+    "assembly_lines": 1920,
+    "complexity_score": 709,
     "cross_reference_count": 1,
-    "function_call_count": 39,
-    "global_count": 135,
-    "max_suspect_severity": "mild",
+    "function_call_count": 60,
+    "global_count": 143,
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 604,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
-      "warning_inlined_function"
+      "warning_inlined_function",
+      "wrong_global"
     ],
-    "total_lines": 2224
+    "total_lines": 2524
   },
   "cross_references": [
     {
@@ -129,10 +130,6 @@
     "address_range": [
       [
         "0045f1d0",
-        "00460724"
-      ],
-      [
-        "00460a08",
         "00460a0e"
       ]
     ],
@@ -181,6 +178,11 @@
       "addr": "00401140",
       "is_variadic": false,
       "name": "engine_2d.c_plotPixel_FUN_00401140"
+    },
+    {
+      "addr": "00402a80",
+      "is_variadic": false,
+      "name": "engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80"
     },
     {
       "addr": "00402a70",
@@ -243,6 +245,11 @@
       "name": "shape_design.c_calculateVertexNormals_FUN_0045be40"
     },
     {
+      "addr": "0045ea90",
+      "is_variadic": false,
+      "name": "shape_design.c_centerVerticesAroundPoint_FUN_0045ea90"
+    },
+    {
       "addr": "00460a10",
       "is_variadic": false,
       "name": "shape_design.c_checkVertexCountLimit_FUN_00460a10"
@@ -251,6 +258,51 @@
       "addr": "0045f080",
       "is_variadic": false,
       "name": "shape_design.c_clampAndTransformUVCoordinates_FUN_0045f080"
+    },
+    {
+      "addr": "0045e520",
+      "is_variadic": false,
+      "name": "shape_design.c_createBoxPrimitive_FUN_0045e520"
+    },
+    {
+      "addr": "0045cc80",
+      "is_variadic": false,
+      "name": "shape_design.c_createPolygonFromVertexList_FUN_0045cc80"
+    },
+    {
+      "addr": "0045e070",
+      "is_variadic": false,
+      "name": "shape_design.c_createRotationalSweepGeometry_FUN_0045e070"
+    },
+    {
+      "addr": "0045dd70",
+      "is_variadic": false,
+      "name": "shape_design.c_deletePolygonRange_FUN_0045dd70"
+    },
+    {
+      "addr": "0045dcc0",
+      "is_variadic": false,
+      "name": "shape_design.c_deleteSinglePolygon_FUN_0045dcc0"
+    },
+    {
+      "addr": "00461560",
+      "is_variadic": false,
+      "name": "shape_design.c_displayPalette_FUN_00461560"
+    },
+    {
+      "addr": "0045ce00",
+      "is_variadic": false,
+      "name": "shape_design.c_doNothing3_FUN_0045ce00"
+    },
+    {
+      "addr": "0045b990",
+      "is_variadic": false,
+      "name": "shape_design.c_handleEditorHotkeys_FUN_0045b990"
+    },
+    {
+      "addr": "0046e810",
+      "is_variadic": false,
+      "name": "shape_design.c_loadPalette_FUN_0046e810"
     },
     {
       "addr": "004648e0",
@@ -268,6 +320,11 @@
       "name": "shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0"
     },
     {
+      "addr": "0045ee70",
+      "is_variadic": false,
+      "name": "shape_design.c_realignObject_FUN_0045ee70"
+    },
+    {
       "addr": "0045d920",
       "is_variadic": false,
       "name": "shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920"
@@ -281,6 +338,36 @@
       "addr": "0045bff0",
       "is_variadic": false,
       "name": "shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0"
+    },
+    {
+      "addr": "0045de80",
+      "is_variadic": false,
+      "name": "shape_design.c_selectModelPart_FUN_0045de80"
+    },
+    {
+      "addr": "00460ac0",
+      "is_variadic": false,
+      "name": "shape_design.c_showFacetPartEditorHelp_FUN_00460ac0"
+    },
+    {
+      "addr": "0045dbe0",
+      "is_variadic": false,
+      "name": "shape_design.c_showModelPartsList_FUN_0045dbe0"
+    },
+    {
+      "addr": "0045d9c0",
+      "is_variadic": false,
+      "name": "shape_design.c_showPolygonDetailsList_FUN_0045d9c0"
+    },
+    {
+      "addr": "0045ec90",
+      "is_variadic": false,
+      "name": "shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90"
+    },
+    {
+      "addr": "005ed630",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630"
     },
     {
       "addr": "005ed580",
@@ -328,9 +415,24 @@
       "name": "wincore_windll.cpp_lockFrame_FUN_005b7210"
     },
     {
+      "addr": "005b7250",
+      "is_variadic": false,
+      "name": "wincore_windll.cpp_unlockFrame_FUN_005b7250"
+    },
+    {
       "addr": "005f2e70",
       "is_variadic": false,
       "name": "wincore_winrun.cpp_clearKeypresses_FUN_005f2e70"
+    },
+    {
+      "addr": "005f2f80",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_doNothing1_FUN_005f2f80"
+    },
+    {
+      "addr": "005f2fd0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0"
     },
     {
       "addr": "005f2dc0",
@@ -970,6 +1072,12 @@
       "value": null
     },
     {
+      "addr": "02d03e99",
+      "name": "CHAR_ARRAY_02d03e99",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "02d03ea4",
       "name": "CHAR_ARRAY_02d03ea4",
       "type": "undefined4",
@@ -1018,6 +1126,12 @@
       "value": null
     },
     {
+      "addr": "02d03eb1",
+      "name": "CHAR_ARRAY_02d03eb1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "02d03eb5",
       "name": "CHAR_ARRAY_02d03eb5",
       "type": "undefined4",
@@ -1030,8 +1144,32 @@
       "value": null
     },
     {
+      "addr": "02d03eb7",
+      "name": "CHAR_ARRAY_02d03eb7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03eb8",
+      "name": "CHAR_ARRAY_02d03eb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "02d03eb9",
       "name": "CHAR_ARRAY_02d03eb9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03ebb",
+      "name": "CHAR_ARRAY_02d03ebb",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03ebe",
+      "name": "CHAR_ARRAY_02d03ebe",
       "type": "undefined4",
       "value": null
     },
@@ -1042,8 +1180,20 @@
       "value": null
     },
     {
+      "addr": "02d03ec5",
+      "name": "CHAR_ARRAY_02d03ec5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "02d03ec6",
       "name": "CHAR_ARRAY_02d03ec6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03ec8",
+      "name": "CHAR_ARRAY_02d03ec8",
       "type": "undefined4",
       "value": null
     },
@@ -1171,50 +1321,51 @@
     "estimated_params": 0
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.795592705167174,
-    "instruction_count": 1316,
+    "avg_pcode_per_instr": 6.527162977867203,
+    "instruction_count": 1491,
     "opcode_distribution": {
-      "BOOL_NEGATE": 409,
-      "BOOL_OR": 10,
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 430,
+      "BOOL_OR": 11,
       "BOOL_XOR": 7,
-      "BRANCH": 37,
-      "CALL": 93,
+      "BRANCH": 56,
+      "CALL": 119,
       "CALLOTHER": 2,
-      "CBRANCH": 75,
-      "COPY": 1368,
+      "CBRANCH": 110,
+      "COPY": 1458,
       "FLOAT2FLOAT": 60,
       "FLOAT_DIV": 5,
       "FLOAT_MULT": 17,
       "INT2FLOAT": 10,
-      "INT_ADD": 394,
-      "INT_AND": 1674,
-      "INT_CARRY": 129,
-      "INT_EQUAL": 878,
-      "INT_LEFT": 76,
-      "INT_LESS": 155,
-      "INT_MULT": 57,
-      "INT_NOTEQUAL": 280,
-      "INT_OR": 366,
+      "INT_ADD": 426,
+      "INT_AND": 1787,
+      "INT_CARRY": 133,
+      "INT_EQUAL": 973,
+      "INT_LEFT": 79,
+      "INT_LESS": 189,
+      "INT_MULT": 61,
+      "INT_NOTEQUAL": 288,
+      "INT_OR": 376,
       "INT_RIGHT": 12,
-      "INT_SBORROW": 161,
-      "INT_SCARRY": 141,
-      "INT_SDIV": 14,
-      "INT_SEXT": 170,
-      "INT_SLESS": 463,
-      "INT_SREM": 14,
-      "INT_SRIGHT": 104,
-      "INT_SUB": 536,
-      "INT_XOR": 36,
-      "INT_ZEXT": 37,
-      "LOAD": 243,
-      "POPCOUNT": 395,
+      "INT_SBORROW": 197,
+      "INT_SCARRY": 147,
+      "INT_SDIV": 15,
+      "INT_SEXT": 177,
+      "INT_SLESS": 510,
+      "INT_SREM": 15,
+      "INT_SRIGHT": 106,
+      "INT_SUB": 609,
+      "INT_XOR": 37,
+      "INT_ZEXT": 41,
+      "LOAD": 266,
+      "POPCOUNT": 440,
       "RETURN": 1,
       "ROUND": 2,
-      "STORE": 378,
-      "SUBPIECE": 132,
+      "STORE": 418,
+      "SUBPIECE": 138,
       "TRUNC": 2
     },
-    "pcode_op_count": 8943
+    "pcode_op_count": 9732
   },
   "stack_frame": {
     "frame_size": 188,
@@ -1429,6 +1580,14 @@
       "severity": "mild",
       "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Global g_KeyboardState used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
+      "line": 166,
+      "match": "g_KeyboardState",
+      "severity": "moderate",
+      "text": "if (g_KeyboardState[0xd] != '\\0') {",
+      "type": "wrong_global"
     }
   ]
 }

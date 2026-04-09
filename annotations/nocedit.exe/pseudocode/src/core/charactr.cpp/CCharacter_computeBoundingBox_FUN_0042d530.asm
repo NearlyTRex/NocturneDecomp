@@ -6,9 +6,10 @@
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
-; XREF[3]:
+; XREF[4]:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 at 0042dfe7
 ;   core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800 at 0042f82e
+;   core_charactr.cpp_CCharacter_setup_FUN_00428140 at 004281ec
 ;   core_mimic.cpp_CMimic_process_FUN_0051f780 at 0051f8e4
 ;
 ; Called Functions:

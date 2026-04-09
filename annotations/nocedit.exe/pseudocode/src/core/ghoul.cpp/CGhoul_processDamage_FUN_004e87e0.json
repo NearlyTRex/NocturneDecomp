@@ -5,11 +5,11 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 331,
+    "assembly_lines": 345,
     "complexity_score": 194,
     "cross_reference_count": 0,
-    "function_call_count": 14,
-    "global_count": 6,
+    "function_call_count": 15,
+    "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 149,
     "suspect_count": 3,
@@ -18,7 +18,7 @@
       "warning_inlined_function",
       "warning_type_propagation"
     ],
-    "total_lines": 480
+    "total_lines": 494
   },
   "cross_references": [],
   "function": {
@@ -26,10 +26,6 @@
     "address_range": [
       [
         "004e87e0",
-        "004e896d"
-      ],
-      [
-        "004e89a9",
         "004e8ba1"
       ]
     ],
@@ -90,6 +86,11 @@
       "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460"
     },
     {
+      "addr": "005fe6b0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
       "addr": "005fdbd0",
       "is_variadic": true,
       "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
@@ -136,6 +137,12 @@
       "value": null
     },
     {
+      "addr": "0062deca",
+      "name": "DOUBLE_0062deca",
+      "type": "double",
+      "value": "65536"
+    },
+    {
       "addr": "0066e8e0",
       "name": "g_CConsolePtr",
       "type": "CConsole*",
@@ -157,43 +164,46 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.515873015873016,
-    "instruction_count": 252,
+    "avg_pcode_per_instr": 4.569811320754717,
+    "instruction_count": 265,
     "opcode_distribution": {
       "BOOL_NEGATE": 14,
       "BOOL_OR": 3,
       "BRANCH": 6,
-      "CALL": 22,
-      "CALLIND": 4,
+      "CALL": 23,
+      "CALLIND": 5,
       "CBRANCH": 26,
-      "COPY": 242,
-      "FLOAT2FLOAT": 4,
+      "COPY": 268,
+      "FLOAT2FLOAT": 6,
       "FLOAT_EQUAL": 1,
       "FLOAT_LESS": 1,
+      "FLOAT_MULT": 1,
       "FLOAT_NAN": 2,
       "FLOAT_SUB": 1,
       "INT2FLOAT": 1,
-      "INT_ADD": 105,
-      "INT_AND": 137,
-      "INT_CARRY": 27,
-      "INT_EQUAL": 116,
+      "INT_ADD": 113,
+      "INT_AND": 141,
+      "INT_CARRY": 29,
+      "INT_EQUAL": 120,
       "INT_LEFT": 4,
       "INT_LESS": 11,
       "INT_MULT": 2,
       "INT_NOTEQUAL": 8,
       "INT_OR": 5,
       "INT_SBORROW": 12,
-      "INT_SCARRY": 28,
-      "INT_SLESS": 58,
-      "INT_SUB": 85,
+      "INT_SCARRY": 30,
+      "INT_SLESS": 60,
+      "INT_SUB": 90,
       "INT_XOR": 2,
       "INT_ZEXT": 4,
-      "LOAD": 56,
-      "POPCOUNT": 58,
+      "LOAD": 59,
+      "POPCOUNT": 60,
       "RETURN": 3,
-      "STORE": 90
+      "ROUND": 1,
+      "STORE": 98,
+      "TRUNC": 1
     },
-    "pcode_op_count": 1138
+    "pcode_op_count": 1211
   },
   "stack_frame": {
     "frame_size": 132,

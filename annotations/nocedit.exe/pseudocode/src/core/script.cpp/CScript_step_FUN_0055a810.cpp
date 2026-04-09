@@ -1,6 +1,6 @@
 // Name: core_script.cpp_CScript_step_FUN_0055a810
 // Address: 0055a810
-// Address Range: [[0055a810, 0055c9e6] [0055ca7e, 0055fef3]]
+// Address Range: [[0055a810, 0055fef3]]
 // Convention: __cdecl
 // Signature: int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *time_remaining)
 

@@ -6,7 +6,7 @@
 ; Parameters:
 ; SDamageInfo *    Stack[0x4]:4   this_ptr
 ;
-; XREF[46]:
+; XREF[50]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040aaa0
 ;   core_anvil.cpp_CAnvil_process_FUN_00411d90 at 00411e75
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 at 004137ab
@@ -15,9 +15,9 @@
 ;   core_bodypart.cpp_CBodyPart_process_FUN_00419be0 at 00419da3
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c61c
 ;   core_boxactor.cpp_CBoxActor_process_FUN_004219e0 at 00421dbb
+;   core_bride.cpp_CBride_process_FUN_00423a30 at 00423efd
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0 at 0042607d
-;   core_charactr.cpp_CCharacter_applyDamage_FUN_00428ee0 at 00428f04
-;   ... and 36 more
+;   ... and 40 more
 ;
 ; *****************************************************************************
 

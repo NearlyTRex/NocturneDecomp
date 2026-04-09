@@ -1,6 +1,6 @@
 // Name: core_elephant.cpp_CElephantGun_getDamage_FUN_004a79b0
 // Address: 004a79b0
-// Address Range: [[004a79b0, 004a79da]]
+// Address Range: [[004a79b0, 004a79ef]]
 // Convention: __cdecl
 // Signature: float __cdecl core_elephant_cpp_CElephantGun_getDamage_FUN_004a79b0(CElephantGun *this_ptr)
 

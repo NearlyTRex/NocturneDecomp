@@ -1,6 +1,6 @@
 // Name: core_fire.cpp_CToss_render_FUN_004c4160
 // Address: 004c4160
-// Address Range: [[004c4160, 004c41bf]]
+// Address Range: [[004c4160, 004c41c4]]
 // Convention: __cdecl
 // Signature: void __cdecl core_fire_cpp_CToss_render_FUN_004c4160(CToss *this_ptr)
 

@@ -565,6 +565,30 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CDeformableModelInstance_blendMotion_FUN_0059eb50.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "legacyUninitvar",
+          "column": 70,
+          "line": 121,
+          "message": "Uninitialized variable: afStack_120[0]",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 30,
+          "line": 135,
+          "message": "Uninitialized variable: afStack_f0",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",

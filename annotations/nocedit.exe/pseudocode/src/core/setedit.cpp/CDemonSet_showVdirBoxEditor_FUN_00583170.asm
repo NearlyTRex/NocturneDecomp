@@ -548,6 +548,14 @@ section .text
     INC ESI                             ; 0058362e
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 0058362f
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    MOV EAX,dword ptr [EBP + 0x92]      ; 00583634
+    ADD EBX,0x44                        ; 0058363a
+    ADD ESP,0x4                         ; 0058363d
+    MOV EDI,dword ptr [EAX + 0x15b410]  ; 00583640
+    MOV dword ptr [EBP + 0x5a],EBX      ; 00583646
+    CMP ESI,EDI                         ; 00583649
+    JL 0x0058346f                       ; 0058364b
+        ;   XREF to: 0058346f (CONDITIONAL_JUMP)  ; LAB_0058346f
     XOR EAX,EAX                         ; 00583651
         ;   Label: LAB_00583651
     MOV dword ptr [EBP + 0x5e],EAX      ; 00583653
@@ -888,6 +896,18 @@ section .text
     MOV EDI,dword ptr [EBP + 0x5e]      ; 00583aa5
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640 ; 00583aa8
         ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640(CDemonRenderer * this_ptr)
+    ADD EBX,0x1a4                       ; 00583aad
+    ADD ESI,0x1a4                       ; 00583ab3
+    INC EDI                             ; 00583ab9
+    MOV EDX,dword ptr [EBP + 0x92]      ; 00583aba
+    ADD ESP,0x4                         ; 00583ac0
+    MOV dword ptr [EBP + 0x62],EBX      ; 00583ac3
+    MOV dword ptr [EBP + 0x6e],ESI      ; 00583ac6
+    MOV ECX,dword ptr [EDX]             ; 00583ac9
+    MOV dword ptr [EBP + 0x5e],EDI      ; 00583acb
+    CMP EDI,ECX                         ; 00583ace
+    JL 0x0058367b                       ; 00583ad0
+        ;   XREF to: 0058367b (CONDITIONAL_JUMP)  ; LAB_0058367b
     PUSH 0x0                            ; 00583ad6
         ;   Label: LAB_00583ad6
     PUSH 0x32758e4                      ; 00583ad8 | g_CDemonCameraInstance

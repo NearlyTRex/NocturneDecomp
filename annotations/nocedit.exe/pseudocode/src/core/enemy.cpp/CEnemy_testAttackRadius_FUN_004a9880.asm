@@ -9,18 +9,18 @@
 ; float            Stack[0xc]:4   radius
 ; SDamageInfo *    Stack[0x10]:4   damage_info
 ;
-; XREF[14]:
+; XREF[17]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 004157b4
 ;   core_batman.cpp_CBatman_process_FUN_00416870 at 00416fb6
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c696
+;   core_bride.cpp_CBride_process_FUN_00423a30 at 00423f77
 ;   core_cow.cpp_CZombieCow_process_FUN_00444310 at 0044461d
 ;   core_dog.cpp_CZombieDog_process_FUN_0047f140 at 0047f468
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 at 00484dc8
 ;   core_drone.cpp_CDrone_process_FUN_0048ec70 at 0048f014
 ;   core_gargoyle.cpp_CGargoyle_process_FUN_004e4a00 at 004e4dd2
 ;   core_ghoul.cpp_CGhoul_process_FUN_004e6600 at 004e7d55
-;   core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20 at 004f725a
-;   ... and 4 more
+;   ... and 7 more
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062438a = 1.20000000000000

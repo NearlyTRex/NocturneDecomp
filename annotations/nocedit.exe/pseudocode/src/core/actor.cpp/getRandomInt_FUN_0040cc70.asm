@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   min_value
 ; int              Stack[0x8]:4   max_value
 ;
-; XREF[36]:
+; XREF[39]:
 ;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030 at 004160e4
 ;   core_batman.cpp_CBatman_processDamage_FUN_004179a0 at 00417a54
 ;   core_biggs.cpp_CBiggs_processDamage_FUN_00418b50 at 00418b7d
@@ -18,7 +18,7 @@
 ;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400 at 0042763b
 ;   core_bugs.cpp_CBugs_setup_FUN_00424e50 at 00424faf
 ;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042e050 at 0042e2a5
-;   ... and 26 more
+;   ... and 29 more
 ;
 ; Referenced Globals:
 ;   double DOUBLE_006142f8 = 0.999990000000000

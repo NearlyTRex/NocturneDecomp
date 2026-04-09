@@ -1,6 +1,6 @@
 // Name: core_chain.cpp_CChain_setup_FUN_0042fd20
 // Address: 0042fd20
-// Address Range: [[0042fd20, 0042fd30]]
+// Address Range: [[0042fd20, 0042fec5]]
 // Convention: __cdecl
 // Signature: void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr)
 

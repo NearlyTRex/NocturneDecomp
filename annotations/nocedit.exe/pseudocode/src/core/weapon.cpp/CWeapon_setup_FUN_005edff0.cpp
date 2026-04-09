@@ -1,6 +1,6 @@
 // Name: core_weapon.cpp_CWeapon_setup_FUN_005edff0
 // Address: 005edff0
-// Address Range: [[005edff0, 005edffa]]
+// Address Range: [[005edff0, 005ee021]]
 // Convention: __cdecl
 // Signature: void __cdecl core_weapon_cpp_CWeapon_setup_FUN_005edff0(CWeapon *this_ptr)
 

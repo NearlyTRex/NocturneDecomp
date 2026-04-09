@@ -22,7 +22,7 @@
 ;   TerminatedCString s_l4arm01_00658543
 ;   TerminatedCString s_rarm01_0065854b
 ;   TerminatedCString s_r4arm01_00658552
-;   ... and 4 more
+;   ... and 8 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
@@ -237,4 +237,64 @@ section .text
     MOV dword ptr [EBX + 0xfc],EAX      ; 005f93a7
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005f93ad
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [EBP + -0x4],EAX      ; 005f93b2
+    ADD ESP,0x8                         ; 005f93b5
+    MOV ESI,dword ptr [EBX + 0xbf88]    ; 005f93b8
+    MOV EAX,dword ptr [EBP + -0x4]      ; 005f93be
+    MOV dword ptr [EBX + 0xbfa4],EAX    ; 005f93c1
+    TEST ESI,ESI                        ; 005f93c7
+    JL 0x005f93ec                       ; 005f93c9
+        ;   XREF to: 005f93ec (CONDITIONAL_JUMP)  ; LAB_005f93ec
+    FLD float ptr [EBX + 0x2df0]        ; 005f93cb
+    FLDZ                                ; 005f93d1
+    FCOMPP                              ; 005f93d3
+    FNSTSW AX                           ; 005f93d5
+    SAHF                                ; 005f93d7
+    JBE 0x005f93ec                      ; 005f93d8
+        ;   XREF to: 005f93ec (CONDITIONAL_JUMP)  ; LAB_005f93ec
+    FLD float ptr [EBX + 0x23a0]        ; 005f93da
+    FADD double ptr [0x006585a5]        ; 005f93e0 | DOUBLE_006585a5
+    FSTP float ptr [EBX + 0x2df0]       ; 005f93e6
+    PUSH 0x65857e                       ; 005f93ec | = "newzchik.dfm"
+        ;   Label: LAB_005f93ec
+    LEA ESI,[EBX + 0x23b8]              ; 005f93f1
+    MOV dword ptr [EBX + 0xbf98],0x0    ; 005f93f7
+    PUSH ESI                            ; 005f9401
+    MOV dword ptr [EBX + 0xbf48],0x0    ; 005f9402
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005f940c
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
+    ADD ESP,0x8                         ; 005f9411
+    TEST EAX,EAX                        ; 005f9414
+    JZ 0x005f942a                       ; 005f9416
+        ;   XREF to: 005f942a (CONDITIONAL_JUMP)  ; LAB_005f942a
+    PUSH 0x65858b                       ; 005f9418 | = "zombho1.dfm"
+    PUSH ESI                            ; 005f941d
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005f941e
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
+    ADD ESP,0x8                         ; 005f9423
+    TEST EAX,EAX                        ; 005f9426
+    JNZ 0x005f944f                      ; 005f9428
+        ;   XREF to: 005f944f (CONDITIONAL_JUMP)  ; LAB_005f944f
+    MOV dword ptr [EBX + 0xbf48],0x1    ; 005f942a
+        ;   Label: LAB_005f942a
+    MOV dword ptr [EBX + 0xbfa0],0x0    ; 005f9434
+        ;   Label: LAB_005f9434
+    MOV dword ptr [EBX + 0xbf9c],0x0    ; 005f943e
+    MOV ESP,EBP                         ; 005f9448
+    POP EBP                             ; 005f944a
+    POP EDI                             ; 005f944b
+    POP ESI                             ; 005f944c
+    POP EBX                             ; 005f944d
+    RET                                 ; 005f944e
+    PUSH 0x658597                       ; 005f944f | = "zombho2.dfm"
+        ;   Label: LAB_005f944f
+    PUSH ESI                            ; 005f9454
+    CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005f9455
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
+    ADD ESP,0x8                         ; 005f945a
+    TEST EAX,EAX                        ; 005f945d
+    JZ 0x005f942a                       ; 005f945f
+        ;   XREF to: 005f942a (CONDITIONAL_JUMP)  ; LAB_005f942a
+    JMP 0x005f9434                      ; 005f9461
+        ;   XREF to: 005f9434 (UNCONDITIONAL_JUMP)  ; LAB_005f9434
 

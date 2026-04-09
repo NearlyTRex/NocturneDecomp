@@ -1355,6 +1355,115 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CStranger_processFrame_FUN_005bb960.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 12,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 16,
+          "line": 214,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 15,
+          "line": 216,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 15,
+          "line": 229,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 15,
+          "line": 231,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 15,
+          "line": 303,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 17,
+          "line": 337,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        },
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 23,
+          "line": 401,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        },
+        {
+          "check_name": "bugprone-branch-clone",
+          "column": 23,
+          "line": 402,
+          "message": "switch has 2 consecutive identical branches"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 16,
+          "line": 764,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 18,
+          "line": 1009,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-branch-clone",
+          "column": 34,
+          "line": 1021,
+          "message": "repeated branch body in conditional chain"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 1080,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 9,
+          "line": 178,
+          "message": "Uninitialized variable: local_14",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 29,
+          "line": 608,
+          "message": "Uninitialized variable: local_25c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 15,
+          "line": 611,
+          "message": "Uninitialized variable: local_260",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Unresolved stack parameter",

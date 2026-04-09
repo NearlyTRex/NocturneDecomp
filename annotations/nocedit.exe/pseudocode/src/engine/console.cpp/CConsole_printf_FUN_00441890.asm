@@ -10,7 +10,7 @@
 ; char[4096]       Stack[-0x1014]:4096  local_1014
 ; va_list_t        Stack[-0x14]:4  local_14
 ;
-; XREF[79]:
+; XREF[80]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a5e1
 ;   core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690 at 004116b5
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 0041321d
@@ -21,7 +21,7 @@
 ;   core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610 at 00419712
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c5f7
 ;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40 at 0041cee9
-;   ... and 69 more
+;   ... and 70 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_console_cpp_00618de9

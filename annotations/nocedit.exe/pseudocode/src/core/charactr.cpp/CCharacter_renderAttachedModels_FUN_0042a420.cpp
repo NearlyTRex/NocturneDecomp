@@ -1,6 +1,6 @@
 // Name: core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420
 // Address: 0042a420
-// Address Range: [[0042a420, 0042a50b] [03fc4665, 03fc46c6]]
+// Address Range: [[0042a420, 0042a513] [03fc4665, 03fc46c6]]
 // Convention: __cdecl
 // Signature: void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCharacter *this_ptr)
 

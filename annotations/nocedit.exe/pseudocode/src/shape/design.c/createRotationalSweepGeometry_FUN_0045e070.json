@@ -44,7 +44,7 @@
   "complexity": {
     "assembly_lines": 433,
     "complexity_score": 120,
-    "cross_reference_count": 0,
+    "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 12,
     "max_suspect_severity": "clean",
@@ -53,7 +53,14 @@
     "suspect_types": [],
     "total_lines": 553
   },
-  "cross_references": [],
+  "cross_references": [
+    {
+      "addr": "0045f1d0",
+      "from_addr": "00460820",
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
   "function": {
     "address": "0045e070",
     "address_range": [
@@ -193,14 +200,6 @@
       "value": null
     }
   ],
-  "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.0194986072423395,
     "instruction_count": 359,

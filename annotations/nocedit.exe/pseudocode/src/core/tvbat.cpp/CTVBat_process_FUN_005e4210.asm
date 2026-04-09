@@ -872,4 +872,14 @@ section .text
     PUSH dword ptr [EBX + 0xc0e0]       ; 005e4d3c
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 005e4d42
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0x168],EAX     ; 005e4d47
+    MOV EAX,dword ptr [ESP + 0x168]     ; 005e4d4e
+    MOV dword ptr [EBX + 0xc0ec],EAX    ; 005e4d55
+    ADD ESP,0x8                         ; 005e4d5b
+    MOV ESP,EBP                         ; 005e4d5e
+    POP EBP                             ; 005e4d60
+    POP EDI                             ; 005e4d61
+    POP ESI                             ; 005e4d62
+    POP EBX                             ; 005e4d63
+    RET                                 ; 005e4d64
 

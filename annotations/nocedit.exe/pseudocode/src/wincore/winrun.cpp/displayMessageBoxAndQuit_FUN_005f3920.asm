@@ -52,4 +52,8 @@ section .text
     CALL dword ptr CS:[0x6114c4]        ; 005f395d | g_MessageBoxAFunc
     PUSH 0x1                            ; 005f3964
     CALL dword ptr CS:[0x611534]        ; 005f3966 | g_ExitProcessFunc
+    POP EDI                             ; 005f396d
+    POP ESI                             ; 005f396e
+    POP EBX                             ; 005f396f
+    RET                                 ; 005f3970
 

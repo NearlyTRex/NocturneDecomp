@@ -1,6 +1,6 @@
 // Name: core_boxactor.cpp_CBoxActor_setup_FUN_00421830
 // Address: 00421830
-// Address Range: [[00421830, 0042183e]]
+// Address Range: [[00421830, 004218ca]]
 // Convention: __cdecl
 // Signature: void __cdecl core_boxactor_cpp_CBoxActor_setup_FUN_00421830(CBoxActor *this_ptr)
 

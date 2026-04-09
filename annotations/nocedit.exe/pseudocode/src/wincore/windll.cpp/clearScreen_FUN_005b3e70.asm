@@ -4,7 +4,7 @@
 ; void __cdecl wincore_windll_cpp_clearScreen_FUN_005b3e70(void)
 ;
 ;
-; XREF[116]:
+; XREF[117]:
 ;   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 at 0043c454
 ;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043ca7b
 ;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043de1a
@@ -15,7 +15,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 at 0047c5ff
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be283
 ;   core_game.cpp_CGame_displayActStats_FUN_004e3800 at 004e3839
-;   ... and 106 more
+;   ... and 107 more
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

@@ -1,6 +1,6 @@
 // Name: core_pendulum.cpp_CPendulum_setup_FUN_005494a0
 // Address: 005494a0
-// Address Range: [[005494a0, 005494bc]]
+// Address Range: [[005494a0, 005495b9]]
 // Convention: __cdecl
 // Signature: void __cdecl core_pendulum_cpp_CPendulum_setup_FUN_005494a0(CPendulum *this_ptr)
 

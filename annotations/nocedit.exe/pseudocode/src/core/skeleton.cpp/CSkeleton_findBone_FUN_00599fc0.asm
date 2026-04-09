@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   bone_name
 ; int              Stack[0xc]:4   assert_if_not_found
 ;
-; XREF[39]:
+; XREF[40]:
 ;   core_baron.cpp_CBaron_setup_FUN_00412cb0 at 00412d80
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_00415150 at 00415200
 ;   core_batman.cpp_CBatman_setup_FUN_00416510 at 004165c0
@@ -16,10 +16,10 @@
 ;   core_bride.cpp_CBride_setup_FUN_00423810 at 0042383c
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40 at 0042ec83
 ;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042ea40 at 0042ebc4
+;   core_charactr.cpp_CCharacter_setup_FUN_00428140 at 004281dd
 ;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110 at 0043a156
 ;   core_colonel.cpp_CColonel_setup_FUN_0043f850 at 0043f920
-;   core_cow.cpp_CZombieCow_setup_FUN_004441b0 at 004441ef
-;   ... and 29 more
+;   ... and 30 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_0064e482

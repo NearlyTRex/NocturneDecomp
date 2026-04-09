@@ -1,6 +1,6 @@
 // Name: core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0
 // Address: 0043b7e0
-// Address Range: [[0043b7e0, 0043b96b] [0043b976, 0043b9ec]]
+// Address Range: [[0043b7e0, 0043b9ec]]
 // Convention: __cdecl
 // Signature: void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_0043b7e0(CCloth *this_ptr,int bone_index,int show_labels)
 

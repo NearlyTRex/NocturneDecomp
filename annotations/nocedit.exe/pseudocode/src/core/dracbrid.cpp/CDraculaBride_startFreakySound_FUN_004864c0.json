@@ -5,16 +5,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 11,
+    "assembly_lines": 339,
     "complexity_score": 143,
     "cross_reference_count": 2,
-    "function_call_count": 1,
-    "global_count": 0,
+    "function_call_count": 15,
+    "global_count": 28,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 143,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 154
+    "total_lines": 482
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     "address_range": [
       [
         "004864c0",
-        "004864df"
+        "00486991"
       ]
     ],
     "convention": "__cdecl",
@@ -44,12 +44,251 @@
   },
   "function_calls": [
     {
+      "addr": "00408ec0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
       "addr": "0040cc10",
       "is_variadic": false,
       "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10"
+    },
+    {
+      "addr": "0059fb00",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00"
+    },
+    {
+      "addr": "005b1ed0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_findRandomSoundFile_FUN_005b1ed0"
+    },
+    {
+      "addr": "005b90a0",
+      "is_variadic": false,
+      "name": "core_spline.cpp_computeSplineBasis_FUN_005b90a0"
+    },
+    {
+      "addr": "005b92d0",
+      "is_variadic": false,
+      "name": "core_spline.cpp_evaluateSplinePoint3D_FUN_005b92d0"
+    },
+    {
+      "addr": "005b9490",
+      "is_variadic": false,
+      "name": "core_spline.cpp_evaluateSplineTangent3D_FUN_005b9490"
+    },
+    {
+      "addr": "005a9660",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660"
+    },
+    {
+      "addr": "005ab540",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_005ab540"
+    },
+    {
+      "addr": "005a8cb0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0"
+    },
+    {
+      "addr": "005a8c30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
+    },
+    {
+      "addr": "005a8940",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940"
+    },
+    {
+      "addr": "005a8a00",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_005a8a00"
+    },
+    {
+      "addr": "005a8a60",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60"
+    },
+    {
+      "addr": "005a8e90",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "00681ef8",
+      "name": "g_CSoundPtr",
+      "type": "CSound*",
+      "value": "03f6af64"
+    },
+    {
+      "addr": "02c6d0a0",
+      "name": "g_DraculaBrideIndices",
+      "type": "int[8]",
+      "value": null
+    },
+    {
+      "addr": "02c6d0c0",
+      "name": "SFreaky_ARRAY_02c6d0c0",
+      "type": "SFreaky[6]",
+      "value": null
+    },
+    {
+      "addr": "02c6d0c4",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].position.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d0c8",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].position.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d0cc",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].position.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d0d0",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].tangent.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d0d4",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].tangent.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d0d8",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].tangent.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d0dc",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].t",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d0e0",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].control_points[0].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d0e4",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].control_points[0].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d0e8",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].control_points[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d0ec",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].control_points[1].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d0f0",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].control_points[1].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d0f4",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].control_points[1].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d0f8",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].control_points[2].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d0fc",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].control_points[2].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d100",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].control_points[2].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d104",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].control_points[3].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d108",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].control_points[3].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d10c",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].control_points[3].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d110",
+      "name": "SFreaky_ARRAY_02c6d0c0[0].owner",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d114",
+      "name": "SFreaky_ARRAY_02c6d0c0[1].sfx_handle",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032758e8",
+      "name": "g_CDemonCameraInstance.base.position",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032758ec",
+      "name": "g_CDemonCameraInstance.base.position+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032758f0",
+      "name": "g_CDemonCameraInstance.base.position+8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6af64",
+      "name": "g_CSoundInstance",
+      "type": "CSound",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 9,
     "call_sites": [
@@ -159,23 +398,31 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 3.6666666666666665,
-    "instruction_count": 9,
+    "avg_pcode_per_instr": 4.179054054054054,
+    "instruction_count": 296,
     "opcode_distribution": {
-      "CALL": 1,
-      "COPY": 7,
-      "INT_ADD": 1,
-      "INT_AND": 2,
-      "INT_EQUAL": 2,
-      "INT_LESS": 1,
-      "INT_SBORROW": 1,
-      "INT_SLESS": 1,
-      "INT_SUB": 8,
-      "LOAD": 1,
-      "POPCOUNT": 1,
-      "STORE": 7
+      "CALL": 24,
+      "CBRANCH": 9,
+      "COPY": 405,
+      "FLOAT2FLOAT": 29,
+      "FLOAT_ADD": 9,
+      "INT_ADD": 176,
+      "INT_AND": 76,
+      "INT_CARRY": 25,
+      "INT_EQUAL": 74,
+      "INT_LESS": 8,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 26,
+      "INT_SLESS": 37,
+      "INT_SUB": 85,
+      "INT_XOR": 1,
+      "LOAD": 69,
+      "POPCOUNT": 37,
+      "RETURN": 2,
+      "STORE": 136
     },
-    "pcode_op_count": 33
+    "pcode_op_count": 1237
   },
   "stack_frame": {
     "frame_size": 388,

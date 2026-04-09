@@ -9,8 +9,9 @@
 ; Local Variables:
 ; float[7]         Stack[-0x1c]:28  local_1c
 ;
-; XREF[1]:
+; XREF[2]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 at 0050925d
+;   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70 at 0050904c
 ;
 ; *****************************************************************************
 

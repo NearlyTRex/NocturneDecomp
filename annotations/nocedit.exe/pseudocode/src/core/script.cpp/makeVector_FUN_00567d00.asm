@@ -9,6 +9,9 @@
 ; float            Stack[0xc]:4   y
 ; float            Stack[0x10]:4   z
 ;
+; XREF[1]:
+;   core_script.cpp_CScript_step_FUN_0055a810 at 0055ca34
+;
 ; Called Functions:
 ;   core_actor.cpp_CVector_ctor_FUN_00410340
 ;

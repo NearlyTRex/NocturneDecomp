@@ -8,7 +8,8 @@
 ; float            Stack[0x8]:4   t
 ; float            Stack[0xc]:4   tension
 ;
-; XREF[2]:
+; XREF[3]:
+;   core_dracbrid.cpp_CDraculaBride_startFreakySound_FUN_004864c0 at 004868a4
 ;   core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0 at 00486bbb
 ;   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300 at 004cc3ad
 ;

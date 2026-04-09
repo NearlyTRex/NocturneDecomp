@@ -1,6 +1,6 @@
 // Name: core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00
 // Address: 0057fd00
-// Address Range: [[0057fd00, 0057ff02] [0060c41c, 0060c439] [0060c692, 0060c6af]]
+// Address Range: [[0057fd00, 0057ff6b] [0060c41c, 0060c439] [0060c692, 0060c6af]]
 // Convention: __cdecl
 // Signature: void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDemonSet *this_ptr,char *coverage_map,int exclude_camera_index)
 

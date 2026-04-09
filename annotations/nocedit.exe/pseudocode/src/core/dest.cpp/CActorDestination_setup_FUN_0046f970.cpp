@@ -1,6 +1,6 @@
 // Name: core_dest.cpp_CActorDestination_setup_FUN_0046f970
 // Address: 0046f970
-// Address Range: [[0046f970, 0046f97a]]
+// Address Range: [[0046f970, 0046f9ab]]
 // Convention: __cdecl
 // Signature: void __cdecl core_dest_cpp_CActorDestination_setup_FUN_0046f970(CActorDestination *this_ptr)
 

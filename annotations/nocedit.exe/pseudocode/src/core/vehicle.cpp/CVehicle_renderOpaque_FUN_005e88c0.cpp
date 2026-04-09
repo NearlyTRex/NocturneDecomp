@@ -1,6 +1,6 @@
 // Name: core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0
 // Address: 005e88c0
-// Address Range: [[005e88c0, 005e8a11] [005e8a57, 005e8b2a]]
+// Address Range: [[005e88c0, 005e8b2a]]
 // Convention: __cdecl
 // Signature: int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_ptr)
 

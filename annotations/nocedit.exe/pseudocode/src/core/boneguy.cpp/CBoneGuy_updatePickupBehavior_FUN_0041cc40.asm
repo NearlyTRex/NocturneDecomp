@@ -122,6 +122,13 @@ section .text
     MOV dword ptr [EAX + 0xbebc],EDX    ; 0041ccc7
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10 ; 0041cccd
         ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10(float min_value, float max_value)
+    MOV dword ptr [ESP + 0xd0],EAX      ; 0041ccd2
+    FLD float ptr [ESP + 0xd0]          ; 0041ccd9
+    ADD ESP,0x8                         ; 0041cce0
+    MOV EAX,dword ptr [EBP + 0x14]      ; 0041cce3
+    FSTP float ptr [EAX + 0xbec0]       ; 0041cce6
+    JMP 0x0041cc6a                      ; 0041ccec
+        ;   XREF to: 0041cc6a (UNCONDITIONAL_JUMP)  ; LAB_0041cc6a
     MOV EAX,dword ptr [EBP + 0x14]      ; 0041ccf1
         ;   Label: LAB_0041ccf1
     MOV EDI,dword ptr [EBP + 0x14]      ; 0041ccf4
