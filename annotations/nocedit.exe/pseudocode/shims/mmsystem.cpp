@@ -59,22 +59,10 @@ static MMRESULT shim_joyGetPos(unsigned int uJoyID, LPJOYINFO pji) {
     return 1; // JOYERR_UNPLUGGED
 }
 
-static BOOL shim_mciGetErrorStringA(DWORD mcierr, char* pszText,
-                                     unsigned int cchText) {
-    if (pszText && cchText > 0) {
-        pszText[0] = '\0';
-    }
-    return 1;
-}
-
-static DWORD shim_mciSendStringA(LPCSTR lpstrCommand, char* lpstrReturnString,
-                                   unsigned int uReturnLength,
-                                   HWND hwndCallback) {
-    if (lpstrReturnString && uReturnLength > 0) {
-        lpstrReturnString[0] = '\0';
-    }
-    return 0;
-}
+// MCI functions are implemented in mci_video.cpp (libav-backed AVI playback)
+extern MCIERROR shim_mciSendStringA(LPCSTR lpstrCommand, LPSTR lpstrReturnString,
+                                     UINT uReturnLength, HWND hwndCallback);
+extern BOOL shim_mciGetErrorStringA(MCIERROR mcierr, LPSTR pszText, UINT cchText);
 
 static MMRESULT shim_timeBeginPeriod(unsigned int uPeriod) {
     return TIMERR_NOERROR;

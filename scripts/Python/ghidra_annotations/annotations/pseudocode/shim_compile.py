@@ -25,11 +25,37 @@ SHIM_COMPILE_FLAGS = [
 
 
 def get_sdl2_flags():
-    """Get SDL2 compiler flags via sdl2-config or pkg-config.
+    """Get SDL2, SDL2_ttf, and libav compiler flags via pkg-config.
 
     Returns:
         List of compiler flags, or empty list if SDL2 is not found.
     """
+    # Packages to try: SDL2 core + optional extras
+    # SDL2 is required; SDL2_ttf and libav are optional (shims degrade gracefully)
+    packages = ['sdl2']
+    for optional in ['SDL2_ttf', 'libavformat', 'libavcodec', 'libavutil', 'libswscale']:
+        try:
+            result = subprocess.run(
+                ['pkg-config', '--exists', optional],
+                capture_output=True, timeout=5
+            )
+            if result.returncode == 0:
+                packages.append(optional)
+        except (FileNotFoundError, subprocess.TimeoutExpired):
+            pass
+
+    # Get combined cflags
+    try:
+        result = subprocess.run(
+            ['pkg-config', '--cflags'] + packages,
+            capture_output=True, text=True, timeout=5
+        )
+        if result.returncode == 0:
+            return result.stdout.strip().split()
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        pass
+
+    # Fall back to sdl2-config (SDL2 only)
     for cmd in [
         ['sdl2-config', '--cflags'],
         ['pkg-config', '--cflags', 'sdl2'],
