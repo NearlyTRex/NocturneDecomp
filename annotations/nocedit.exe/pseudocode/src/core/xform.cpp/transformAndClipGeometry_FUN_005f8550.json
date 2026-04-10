@@ -1,122 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "type_error",
-        "column": 16,
-        "line": 91,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 16,
-        "line": 92,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 16,
-        "line": 127,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 16,
-        "line": 128,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 9,
-        "line": 164,
-        "message": "statement requires expression of integer type ('SRenderVertex *' invalid)"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 165,
-        "message": "value of type 'SRenderVertex *' is not implicitly convertible to 'int'"
-      },
-      {
-        "category": "type_error",
-        "column": 18,
-        "line": 170,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 18,
-        "line": 171,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 187,
-        "message": "value of type 'SRenderVertex *' is not implicitly convertible to 'int'"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 193,
-        "message": "value of type 'SRenderVertex *' is not implicitly convertible to 'int'"
-      },
-      {
-        "category": "type_error",
-        "column": 18,
-        "line": 198,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 18,
-        "line": 199,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 11,
-        "line": 241,
-        "message": "statement requires expression of integer type ('SRenderVertex *' invalid)"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 242,
-        "message": "value of type 'SRenderVertex *' is not implicitly convertible to 'int'"
-      },
-      {
-        "category": "type_error",
-        "column": 20,
-        "line": 247,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 20,
-        "line": 248,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 264,
-        "message": "value of type 'SRenderVertex *' is not implicitly convertible to 'int'"
-      },
-      {
-        "category": "other",
-        "column": 16,
-        "line": 270,
-        "message": "value of type 'SRenderVertex *' is not implicitly convertible to 'int'"
-      },
-      {
-        "category": "type_error",
-        "column": 20,
-        "line": 275,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -848,6 +733,102 @@
         "type": "int *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "transformAndClipGeometry_FUN_005f8550.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 9,
+          "line": 119,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        },
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 11,
+          "line": 160,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        },
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 13,
+          "line": 199,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        },
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 15,
+          "line": 240,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 8,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 22,
+          "line": 128,
+          "message": "Uninitialized variable: extraout_EAX",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 22,
+          "line": 136,
+          "message": "Uninitialized variable: extraout_EAX_00",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 24,
+          "line": 169,
+          "message": "Uninitialized variable: extraout_EAX_01",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 24,
+          "line": 177,
+          "message": "Uninitialized variable: extraout_EAX_02",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 26,
+          "line": 209,
+          "message": "Uninitialized variable: extraout_EAX_03",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 26,
+          "line": 218,
+          "message": "Uninitialized variable: extraout_EAX_04",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 28,
+          "line": 250,
+          "message": "Uninitialized variable: extraout_EAX_05",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 28,
+          "line": 259,
+          "message": "Uninitialized variable: extraout_EAX_06",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

@@ -9,28 +9,28 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 176
-  Functions flagged by multiple tools: 48
+  Functions with static analysis data: 178
+  Functions flagged by multiple tools: 49
 
   Clang-Tidy (quick):
-    Files analyzed:      142
-    Files with findings: 142
-    Total diagnostics:   932
+    Files analyzed:      144
+    Files with findings: 144
+    Total diagnostics:   937
 
   Cppcheck (quick):
-    Files analyzed:      82
-    Files with findings: 82
-    Total diagnostics:   262
+    Files analyzed:      83
+    Files with findings: 83
+    Total diagnostics:   270
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
 ====================================================================================================
 
-  bugprone-assignment-in-if-condition                       483  [likely decompiler artifact]
+  bugprone-assignment-in-if-condition                       484  [likely decompiler artifact]
   bugprone-incorrect-roundings                              192  [likely decompiler artifact]
   cert-err33-c                                              132  [likely decompiler artifact]
   cert-err34-c                                               63
-  bugprone-switch-missing-default-case                       43
+  bugprone-switch-missing-default-case                       47
   cert-msc30-c                                                4
   bugprone-branch-clone                                       4
   cert-flp30-c                                                3
@@ -47,9 +47,9 @@ TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
   selfAssignment                                             90  [likely decompiler artifact]
+  uninitvar                                                  44  [likely decompiler artifact]
   invalidscanf                                               40
   legacyUninitvar                                            36
-  uninitvar                                                  36
   shiftTooManyBitsSigned                                     20
   objectIndex                                                12
   invalidPointerCast                                         11

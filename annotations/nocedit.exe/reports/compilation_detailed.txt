@@ -5,23 +5,23 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6281 (97.3%)
-Failed: 173
+Successful: 6283 (97.4%)
+Failed: 171
 
 ERROR CATEGORIES
 --------------------------------------------------
-  type_error                       304
+  type_error                       291
   format_error                     262
   incompatible_types                91
   undeclared_identifier             36
   syntax_error                      25
-  other                             13
   pointer_type                      11
   missing_member                     8
-  cast_error                         6
+  other                              7
+  cast_error                         5
 
 ====================================================================================================
-CATEGORY: type_error (304 errors)
+CATEGORY: type_error (291 errors)
 ====================================================================================================
 
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -84,8 +84,6 @@ CATEGORY: type_error (304 errors)
     Line 20: member reference base type 'int' is not a structure or union
   shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
     Line 103: member reference base type 'int' is not a structure or union
-  core_xform.cpp_transformAndClipGeometry_FUN_005f8550
-    Line 91: member reference base type 'longlong' (aka 'long long') is not a structure or union
   engine_clipper.c_clipPolygonNearPlane_FUN_00436420
     Line 88: member reference base type 'longlong' (aka 'long long') is not a structure or union
   engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
@@ -432,17 +430,6 @@ CATEGORY: syntax_error (25 errors)
     Line 123: expected expression
 
 ====================================================================================================
-CATEGORY: other (13 errors)
-====================================================================================================
-
-  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
-    Line 101: no matching literal operator for call to 'operator""_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template
-  engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0
-    Line 14: unknown type name 'code'
-  core_xform.cpp_transformAndClipGeometry_FUN_005f8550
-    Line 165: value of type 'SRenderVertex *' is not implicitly convertible to 'int'
-
-====================================================================================================
 CATEGORY: pointer_type (11 errors)
 ====================================================================================================
 
@@ -475,11 +462,18 @@ CATEGORY: missing_member (8 errors)
     Line 111: no member named '_18_2_' in 'tWAVEFORMATEX'
 
 ====================================================================================================
-CATEGORY: cast_error (6 errors)
+CATEGORY: other (7 errors)
 ====================================================================================================
 
-  core_xform.cpp_lerpMatrix3x4_FUN_005f7140
-    Line 42: cannot cast from type 'float' to pointer type 'CMatrix3x3f *'
+  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
+    Line 101: no matching literal operator for call to 'operator""_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template
+  engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0
+    Line 14: unknown type name 'code'
+
+====================================================================================================
+CATEGORY: cast_error (5 errors)
+====================================================================================================
+
   sound_sndwav.cpp_staticInit_FUN_005b0670
     Line 12: no matching conversion for C-style cast from 'CSoundDeviceBasic_vtable *' to 'CSoundDevice'
   sound_snddx.cpp_staticInit_FUN_005ade60

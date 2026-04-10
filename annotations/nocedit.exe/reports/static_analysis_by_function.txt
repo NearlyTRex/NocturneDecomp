@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 176
-  Total diagnostics: 1194
-  Functions flagged by multiple tools: 48
-  .keep.cpp files: 176, raw .cpp files: 0
+  Functions with findings: 178
+  Total diagnostics: 1207
+  Functions flagged by multiple tools: 49
+  .keep.cpp files: 178, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -748,6 +748,23 @@ core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0  [.keep] [Clang-Tidy (q
   Line  596: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
   Line  597: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
   Line  598: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_xform.cpp_transformAndClipGeometry_FUN_005f8550  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/xform.cpp  (12 diagnostics)
+
+  Line  119: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  128: [uninitvar] Uninitialized variable: extraout_EAX
+  Line  136: [uninitvar] Uninitialized variable: extraout_EAX_00
+  Line  160: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  169: [uninitvar] Uninitialized variable: extraout_EAX_01
+  Line  177: [uninitvar] Uninitialized variable: extraout_EAX_02
+  Line  199: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  209: [uninitvar] Uninitialized variable: extraout_EAX_03
+  Line  218: [uninitvar] Uninitialized variable: extraout_EAX_04
+  Line  240: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  250: [uninitvar] Uninitialized variable: extraout_EAX_05
+  Line  259: [uninitvar] Uninitialized variable: extraout_EAX_06
 
 ----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
@@ -2067,6 +2084,12 @@ core_texlist.cpp_CTextureList_load_FUN_005dbe00  [.keep] [Clang-Tidy (quick)]
   File: core/texlist.cpp  (1 diagnostics)
 
   Line  119: [cert-err34-c] 'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+----------------------------------------------------------------------------------------------------
+core_xform.cpp_lerpMatrix3x4_FUN_005f7140  [.keep] [Clang-Tidy (quick)]
+  File: core/xform.cpp  (1 diagnostics)
+
+  Line   41: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
 core_xform.cpp_slerpQuaternion_FUN_005f77e0  [.keep] [Clang-Tidy (quick)]

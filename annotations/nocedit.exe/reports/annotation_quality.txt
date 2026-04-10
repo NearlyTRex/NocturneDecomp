@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        157 ( 2.4%)
+  Functions with type issues:        156 ( 2.4%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          2
-    Undefined types in variables:      148
+    Undefined types in variables:      147
     Unresolved stack params:           7
 
-  Excluded (.keep / MMX / by-value):   82 functions
+  Excluded (.keep / MMX / by-value):   83 functions
     Wrong calling convention:          1
-    Undefined types in variables:      73
+    Undefined types in variables:      74
     Unresolved stack params:           14
 
 ====================================================================================================
@@ -131,7 +131,7 @@ Unresolved stack parameters (missing from signature) (7)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (148)
+Undefined types in variables (147)
 --------------------------------------------------------------------------------
 
   CPoly_intersectPoly
@@ -714,11 +714,6 @@ Undefined types in variables (148)
     Locals:  auStackY_1804 (undefined4[1512])
     Suggested: Resolve undefined types to concrete types
 
-  lerpMatrix3x4
-    Address: 0x005f7140  File: core/xform.cpp
-    Locals:  auStackY_184c (undefined4[1498])
-    Suggested: Resolve undefined types to concrete types
-
   modelStructNotSupported4
     Address: 0x0041dbe0  File: engine/boss.c
     Locals:  local_3c (undefined4[13])
@@ -1003,7 +998,7 @@ Unresolved stack params - by-value struct passing (5)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (70)
+Undefined types - .keep overrides (71)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1354,6 +1349,11 @@ Undefined types - .keep overrides (70)
   CWerewolf_process
     Address: 0x005efde0  File: core/werewolf.cpp
     Locals:  local_320 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  lerpMatrix3x4
+    Address: 0x005f7140  File: core/xform.cpp
+    Locals:  auStackY_184c (undefined4[1498])
     Suggested: Resolve undefined types to concrete types
 
 --------------------------------------------------------------------------------

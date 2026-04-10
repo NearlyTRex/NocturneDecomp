@@ -93,7 +93,7 @@ IS_SPECIAL_DEVICE_FUNC* g_IsSpecialDeviceFuncPtr = nullptr;
 
 // RUNTIME_HANDLER_FUNC*
 RUNTIME_HANDLER_FUNC* g_FirstInitHandler = (RUNTIME_HANDLER_FUNC*)core_actor_cpp_staticInit_FUN_00408320;
-RUNTIME_HANDLER_FUNC* g_FirstExitHandler = (RUNTIME_HANDLER_FUNC*)0x005FDE93; // DAT_005fde93
+RUNTIME_HANDLER_FUNC* g_FirstExitHandler = nullptr; // DAT_005fde93
 
 // RuntimeHandlerEntry
 RuntimeHandlerEntry g_ExitHandlerTableEnd = {};

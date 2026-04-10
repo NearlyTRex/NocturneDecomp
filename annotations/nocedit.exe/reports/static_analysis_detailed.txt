@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang-Tidy (quick) (932 diagnostics)
+Clang-Tidy (quick) (937 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-bugprone-assignment-in-if-condition (483)
+bugprone-assignment-in-if-condition (484)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_ line 102
@@ -1772,6 +1772,10 @@ bugprone-assignment-in-if-condition (483)
     File: core/werewolf.cpp
     an assignment within an 'if' condition is bug-prone
 
+  core_xform.cpp_lerpMatrix3x4_FUN_005f7140          line 41
+    File: core/xform.cpp
+    an assignment within an 'if' condition is bug-prone
+
   core_xform.cpp_slerpQuaternion_FUN_005f77e0        line 37
     File: core/xform.cpp
     an assignment within an 'if' condition is bug-prone
@@ -3505,7 +3509,7 @@ cert-err34-c (63)
     'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
 
 ----------------------------------------------------------------------------------------------------
-bugprone-switch-missing-default-case (43)
+bugprone-switch-missing-default-case (47)
 ----------------------------------------------------------------------------------------------------
 
   core_baron.cpp_CBaron_process_FUN_00412e80         line 102
@@ -3680,6 +3684,22 @@ bugprone-switch-missing-default-case (43)
     File: core/xform.cpp
     switching on non-enum value without default case may not cover all cases
 
+  core_xform.cpp_transformAndClipGeometry_FUN_005f85 line 119
+    File: core/xform.cpp
+    switching on non-enum value without default case may not cover all cases
+
+  core_xform.cpp_transformAndClipGeometry_FUN_005f85 line 160
+    File: core/xform.cpp
+    switching on non-enum value without default case may not cover all cases
+
+  core_xform.cpp_transformAndClipGeometry_FUN_005f85 line 199
+    File: core/xform.cpp
+    switching on non-enum value without default case may not cover all cases
+
+  core_xform.cpp_transformAndClipGeometry_FUN_005f85 line 240
+    File: core/xform.cpp
+    switching on non-enum value without default case may not cover all cases
+
 ----------------------------------------------------------------------------------------------------
 cert-msc30-c (4)
 ----------------------------------------------------------------------------------------------------
@@ -3797,7 +3817,7 @@ cert-dcl50-cpp (1)
     do not define a C-style variadic function; consider using a function parameter pack or currying instead
 
 ====================================================================================================
-Cppcheck (quick) (262 diagnostics)
+Cppcheck (quick) (270 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -4165,6 +4185,186 @@ selfAssignment (90)
     Redundant assignment of 'pcVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
+uninitvar (44)
+----------------------------------------------------------------------------------------------------
+
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 71
+    File: core/actor.cpp
+    Uninitialized variable: local_38
+
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 90
+    File: core/actor.cpp
+    Uninitialized variable: local_34
+
+  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880      line 242
+    File: core/cloth.cpp
+    Uninitialized variable: fStack_550
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 542
+    File: core/dmodel.cpp
+    Uninitialized variable: local_ca8
+
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 156
+    File: core/ghoul.cpp
+    Uninitialized variable: local_1c0
+
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 159
+    File: core/ghoul.cpp
+    Uninitialized variable: local_1c4
+
+  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 41
+    File: core/mmx.c
+    Uninitialized variable: local_9
+
+  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 41
+    File: core/mmx.c
+    Uninitialized variable: local_8
+
+  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 41
+    File: core/mmx.c
+    Uninitialized variable: local_7
+
+  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 42
+    File: core/mmx.c
+    Uninitialized variable: local_6
+
+  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 42
+    File: core/mmx.c
+    Uninitialized variable: local_5
+
+  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 42
+    File: core/mmx.c
+    Uninitialized variable: local_4
+
+  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 43
+    File: core/mmx.c
+    Uninitialized variable: local_3
+
+  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 43
+    File: core/mmx.c
+    Uninitialized variable: local_2
+
+  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 43
+    File: core/mmx.c
+    Uninitialized variable: local_1
+
+  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 44
+    File: core/mmx.c
+    Uninitialized variable: local_13
+
+  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 44
+    File: core/mmx.c
+    Uninitialized variable: local_12
+
+  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 45
+    File: core/mmx.c
+    Uninitialized variable: local_11
+
+  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 45
+    File: core/mmx.c
+    Uninitialized variable: local_10
+
+  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 128
+    File: core/set.cpp
+    Uninitialized variable: fStack_5c
+
+  core_skeledit.cpp_CDeformableModel_importVertexAss line 60
+    File: core/skeledit.cpp
+    Uninitialized variable: local_10e
+
+  core_skeledit.cpp_CDeformableModel_importVertexAss line 96
+    File: core/skeledit.cpp
+    Uninitialized variable: local_68
+
+  core_skeledit.cpp_CDeformableModel_importVertexAss line 122
+    File: core/skeledit.cpp
+    Uninitialized variable: local_64
+
+  core_skeleton.cpp_CDeformableModelInstance_compute line 51
+    File: core/skeleton.cpp
+    Uninitialized variable: fStack_58
+
+  core_skeleton.cpp_CDeformableModelInstance_compute line 52
+    File: core/skeleton.cpp
+    Uninitialized variable: fStack_54
+
+  core_skeleton.cpp_CDeformableModelInstance_compute line 53
+    File: core/skeleton.cpp
+    Uninitialized variable: fStack_50
+
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 128
+    File: core/skeleton.cpp
+    Uninitialized variable: auStack_248
+
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 129
+    File: core/skeleton.cpp
+    Uninitialized variable: fStack_244
+
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 130
+    File: core/skeleton.cpp
+    Uninitialized variable: fStack_240
+
+  core_sound.cpp_updateListeners_FUN_005b1870        line 69
+    File: core/sound.cpp
+    Uninitialized variable: local_c4
+
+  core_sound.cpp_updateListeners_FUN_005b1870        line 70
+    File: core/sound.cpp
+    Uninitialized variable: local_cc
+
+  core_sound.cpp_updateListeners_FUN_005b1870        line 71
+    File: core/sound.cpp
+    Uninitialized variable: local_c8
+
+  core_stranger.cpp_CStranger_processFrame_FUN_005bb line 178
+    File: core/stranger.cpp
+    Uninitialized variable: local_14
+
+  core_stranger.cpp_CStranger_processFrame_FUN_005bb line 608
+    File: core/stranger.cpp
+    Uninitialized variable: local_25c
+
+  core_stranger.cpp_CStranger_processFrame_FUN_005bb line 611
+    File: core/stranger.cpp
+    Uninitialized variable: local_260
+
+  core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c line 58
+    File: core/vehicle.cpp
+    Uninitialized variable: in_stack_0000000c
+
+  core_xform.cpp_transformAndClipGeometry_FUN_005f85 line 128
+    File: core/xform.cpp
+    Uninitialized variable: extraout_EAX
+
+  core_xform.cpp_transformAndClipGeometry_FUN_005f85 line 136
+    File: core/xform.cpp
+    Uninitialized variable: extraout_EAX_00
+
+  core_xform.cpp_transformAndClipGeometry_FUN_005f85 line 169
+    File: core/xform.cpp
+    Uninitialized variable: extraout_EAX_01
+
+  core_xform.cpp_transformAndClipGeometry_FUN_005f85 line 177
+    File: core/xform.cpp
+    Uninitialized variable: extraout_EAX_02
+
+  core_xform.cpp_transformAndClipGeometry_FUN_005f85 line 209
+    File: core/xform.cpp
+    Uninitialized variable: extraout_EAX_03
+
+  core_xform.cpp_transformAndClipGeometry_FUN_005f85 line 218
+    File: core/xform.cpp
+    Uninitialized variable: extraout_EAX_04
+
+  core_xform.cpp_transformAndClipGeometry_FUN_005f85 line 250
+    File: core/xform.cpp
+    Uninitialized variable: extraout_EAX_05
+
+  core_xform.cpp_transformAndClipGeometry_FUN_005f85 line 259
+    File: core/xform.cpp
+    Uninitialized variable: extraout_EAX_06
+
+----------------------------------------------------------------------------------------------------
 invalidscanf (40)
 ----------------------------------------------------------------------------------------------------
 
@@ -4475,154 +4675,6 @@ legacyUninitvar (36)
   core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 205
     File: core/vampboss.cpp
     Uninitialized variable: local_b0
-
-----------------------------------------------------------------------------------------------------
-uninitvar (36)
-----------------------------------------------------------------------------------------------------
-
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 71
-    File: core/actor.cpp
-    Uninitialized variable: local_38
-
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 90
-    File: core/actor.cpp
-    Uninitialized variable: local_34
-
-  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880      line 242
-    File: core/cloth.cpp
-    Uninitialized variable: fStack_550
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 542
-    File: core/dmodel.cpp
-    Uninitialized variable: local_ca8
-
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 156
-    File: core/ghoul.cpp
-    Uninitialized variable: local_1c0
-
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 159
-    File: core/ghoul.cpp
-    Uninitialized variable: local_1c4
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 41
-    File: core/mmx.c
-    Uninitialized variable: local_9
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 41
-    File: core/mmx.c
-    Uninitialized variable: local_8
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 41
-    File: core/mmx.c
-    Uninitialized variable: local_7
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 42
-    File: core/mmx.c
-    Uninitialized variable: local_6
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 42
-    File: core/mmx.c
-    Uninitialized variable: local_5
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 42
-    File: core/mmx.c
-    Uninitialized variable: local_4
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 43
-    File: core/mmx.c
-    Uninitialized variable: local_3
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 43
-    File: core/mmx.c
-    Uninitialized variable: local_2
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 43
-    File: core/mmx.c
-    Uninitialized variable: local_1
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 44
-    File: core/mmx.c
-    Uninitialized variable: local_13
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 44
-    File: core/mmx.c
-    Uninitialized variable: local_12
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 45
-    File: core/mmx.c
-    Uninitialized variable: local_11
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 45
-    File: core/mmx.c
-    Uninitialized variable: local_10
-
-  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 128
-    File: core/set.cpp
-    Uninitialized variable: fStack_5c
-
-  core_skeledit.cpp_CDeformableModel_importVertexAss line 60
-    File: core/skeledit.cpp
-    Uninitialized variable: local_10e
-
-  core_skeledit.cpp_CDeformableModel_importVertexAss line 96
-    File: core/skeledit.cpp
-    Uninitialized variable: local_68
-
-  core_skeledit.cpp_CDeformableModel_importVertexAss line 122
-    File: core/skeledit.cpp
-    Uninitialized variable: local_64
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 51
-    File: core/skeleton.cpp
-    Uninitialized variable: fStack_58
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 52
-    File: core/skeleton.cpp
-    Uninitialized variable: fStack_54
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 53
-    File: core/skeleton.cpp
-    Uninitialized variable: fStack_50
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 128
-    File: core/skeleton.cpp
-    Uninitialized variable: auStack_248
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 129
-    File: core/skeleton.cpp
-    Uninitialized variable: fStack_244
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 130
-    File: core/skeleton.cpp
-    Uninitialized variable: fStack_240
-
-  core_sound.cpp_updateListeners_FUN_005b1870        line 69
-    File: core/sound.cpp
-    Uninitialized variable: local_c4
-
-  core_sound.cpp_updateListeners_FUN_005b1870        line 70
-    File: core/sound.cpp
-    Uninitialized variable: local_cc
-
-  core_sound.cpp_updateListeners_FUN_005b1870        line 71
-    File: core/sound.cpp
-    Uninitialized variable: local_c8
-
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb line 178
-    File: core/stranger.cpp
-    Uninitialized variable: local_14
-
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb line 608
-    File: core/stranger.cpp
-    Uninitialized variable: local_25c
-
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb line 611
-    File: core/stranger.cpp
-    Uninitialized variable: local_260
-
-  core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c line 58
-    File: core/vehicle.cpp
-    Uninitialized variable: in_stack_0000000c
 
 ----------------------------------------------------------------------------------------------------
 shiftTooManyBitsSigned (20)
