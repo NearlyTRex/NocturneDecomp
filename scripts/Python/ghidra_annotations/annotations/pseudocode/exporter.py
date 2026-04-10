@@ -53,6 +53,9 @@ from ghidra_annotations.annotations.pseudocode.function_compile import (
 from ghidra_annotations.annotations.pseudocode.static_analysis import (
     run_static_analysis_after_export
 )
+from ghidra_annotations.annotations.pseudocode.shim_compile import (
+    verify_shims_after_export
+)
 from ghidra_annotations.annotations.pseudocode.compiler_config import DEFAULT_COMPILER
 
 # Python-heavy processing imports (for main thread)
@@ -1012,6 +1015,13 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
         log_info("ERROR: Globals compilation failed")
         if strict:
             raise RuntimeError("Globals compilation failed. See reports/globals_compilation.txt for details.")
+
+    # Verify shim source files compile
+    timer.start_phase("Verify shims compile")
+    shims_ok = verify_shims_after_export(pseudocode_dir, reports_dir=reports_dir, repo_dir=repo_dir)
+    timer.end_phase()
+    if not shims_ok:
+        log_info("WARNING: Shim compilation had failures (non-blocking)")
 
     # Build constants map for inline replacement of constant values
     timer.start_phase("Build constants map")

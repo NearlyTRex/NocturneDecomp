@@ -10,6 +10,9 @@
 // WATCOM - System Header
 // =============================================================================
 
+// Forward declarations
+struct ExceptionFrame;
+
 // Structure: ExceptionFrame
 typedef struct ExceptionFrame {
     struct ExceptionFrame* prev;
@@ -150,7 +153,7 @@ typedef struct _heapinfo {
 } _heapinfo;
 
 // =============================================================================
-// WATCOM C++ RUNTIME INLINE FUNCTIONS
+// WATCOM C++ RUNTIME FUNCTIONS
 // =============================================================================
 //
 // Internal Watcom C++ runtime functions for array new/delete.
@@ -161,51 +164,20 @@ typedef struct _heapinfo {
 // Destruction hierarchy:
 //   __vec_delete -> __arrfini -> __arrdtor
 //
+// Implementations are in shims/watcom.cpp.
+//
 // =============================================================================
 
 // ---------------------------------------------------------------------------
 // Array Construction Functions
 // ---------------------------------------------------------------------------
 
-// __arrinit - Low-level array constructor loop (default ctor)
-inline void* __arrinit(void* array_start, int count, WatcomTypeInfo* ti) {
-    char* p = (char*)array_start;
-    for (int i = 0; i < count; i++, p += ti->instance_size)
-        if (ti->ctor) (*ti->ctor)(p);
-    return array_start;
-}
-
-// __arrinit_ - Low-level array constructor loop (flagged types)
-inline void* __arrinit_(void* array_start, int count, WatcomTypeInfo* ti) {
-    return __arrinit(array_start, count, ti);
-}
-
-// __arrinit_dispatch - Selects flagged vs default ctor based on type_flags
-inline void* __arrinit_dispatch(void* array_ptr, int count, WatcomTypeInfo* ti) {
-    if (!array_ptr) return 0;
-    return __arrinit(array_ptr, count, ti);
-}
-
-// __vec_new_ - Internal: stores count at dest[0], dispatches construction
-inline void* __vec_new_(void* dest, int count, WatcomTypeInfo* ti) {
-    if (!dest) return 0;
-    *(int*)dest = count;
-    return __arrinit_dispatch((char*)dest + 4, count, ti);
-}
-
-// __vec_new - new[] entry point wrapper
-inline void* __vec_new(void* dest, int count, WatcomTypeInfo* ti) {
-    return __vec_new_(dest, count, ti);
-}
-
-// __arrcopy - Array copy-construction loop
-inline void* __arrcopy(void* dest, void* src, int count, WatcomTypeInfo* ti) {
-    char* d = (char*)dest;
-    char* s = (char*)src;
-    for (int i = 0; i < count; i++, d += ti->instance_size, s += ti->instance_size)
-        if (ti->copy) (*ti->copy)(d, s);
-    return dest;
-}
+extern void* __arrinit(void* array_start, int count, WatcomTypeInfo* ti);
+extern void* __arrinit_(void* array_start, int count, WatcomTypeInfo* ti);
+extern void* __arrinit_dispatch(void* array_ptr, int count, WatcomTypeInfo* ti);
+extern void* __vec_new_(void* dest, int count, WatcomTypeInfo* ti);
+extern void* __vec_new(void* dest, int count, WatcomTypeInfo* ti);
+extern void* __arrcopy(void* dest, void* src, int count, WatcomTypeInfo* ti);
 
 // __arr_op - Generic array operation with function pointer
 // Templated to accept any function pointer type (callers pass typed copy funcs)
@@ -223,66 +195,29 @@ inline void* __arr_op(void* dest, void* src, int count, int size, CopyFunc copy_
 // Array Destruction Functions
 // ---------------------------------------------------------------------------
 
-// __arrdtor - Low-level array destructor loop (reverse order)
-inline void* __arrdtor(WatcomTypeArrayInfo* info) {
-    char* p = (char*)info->obj_array + (info->obj_count - 1) * info->type_info->instance_size;
-    for (int i = info->obj_count - 1; i >= 0; i--, p -= info->type_info->instance_size)
-        if (info->type_info->dtor) (*info->type_info->dtor)(p, 0);
-    return info->obj_array;
-}
-
-// __arrfini - Array destructor wrapper (packs params, calls __arrdtor)
-inline void* __arrfini(void* obj_array, int count, WatcomTypeInfo* ti) {
-    WatcomTypeArrayInfo info;
-    info.obj_count = count;
-    info.type_info = ti;
-    info.obj_array = (void**)obj_array;
-    __arrdtor(&info);
-    return obj_array;
-}
-
-// __vec_delete - delete[] implementation (reads count from ptr-4)
-inline void* __vec_delete(void* ptr, WatcomTypeInfo* ti) {
-    if (!ptr) return 0;
-    int* base = ((int*)ptr) - 1;
-    __arrfini(ptr, *base, ti);
-    return base;
-}
+extern void* __arrdtor(WatcomTypeArrayInfo* info);
+extern void* __arrfini(void* obj_array, int count, WatcomTypeInfo* ti);
+extern void* __vec_delete(void* ptr, WatcomTypeInfo* ti);
 
 // ---------------------------------------------------------------------------
 // Watcom Memory Helper Functions
 // ---------------------------------------------------------------------------
 
-// __memfill - Optimized memory fill (handles alignment)
-inline void __memfill(void* dest, unsigned int value, unsigned int count) {
-    unsigned char* p = (unsigned char*)dest;
-    for (unsigned int i = 0; i < count; i++) *p++ = (unsigned char)value;
-}
+extern void __memfill(void* dest, unsigned int value, unsigned int count);
 
 // ---------------------------------------------------------------------------
 // Watcom CRT Internal Functions
 // ---------------------------------------------------------------------------
 
-// notifyAbnormalTermination - Called by error handlers before abort
-void notifyAbnormalTermination();
-
-// __stosd - Bulk DWORD store (unrolled for performance)
-inline void __stosd(void* dest, unsigned int value, unsigned int dword_count) {
-    unsigned int* p = (unsigned int*)dest;
-    for (unsigned int i = 0; i < dword_count; i++) *p++ = value;
-}
+extern void notifyAbnormalTermination();
+extern void __stosd(void* dest, unsigned int value, unsigned int dword_count);
 
 // ---------------------------------------------------------------------------
 // Stack Probe (Watcom compiler intrinsic)
 // ---------------------------------------------------------------------------
 
-// __STK - Stack probe function (ensures stack pages are committed)
-// Watcom emits this with no args or with an explicit size argument.
-inline void __STK() {}
-inline void __STK(size_t size) {
-    volatile char* p = (volatile char*)&size;
-    while (size > 4096) { p -= 4096; (void)*p; size -= 4096; }
-}
+extern void __STK();
+extern void __STK(size_t size);
 #define stack_probe __STK
 
 // ---------------------------------------------------------------------------
@@ -296,19 +231,10 @@ inline void __STK(size_t size) {
 #include <unistd.h>
 #endif
 
-// Watcom __fastcall CRT wrappers (underscore-prefixed variants)
-inline void* _memcpy(void* dest, const void* src, size_t count) { return memcpy(dest, src, count); }
-inline void* _memset(void* dest, int value, size_t count) { return memset(dest, value, count); }
-
-// tell() - get current file position
-#ifndef _MSC_VER
-inline long tell(int fd) { return lseek(fd, 0, SEEK_CUR); }
-#endif
-
-// chsize() - change file size
-#ifndef _MSC_VER
-inline int chsize(int fd, long size) { return ftruncate(fd, size); }
-#endif
+extern void* _memcpy(void* dest, const void* src, size_t count);
+extern void* _memset(void* dest, int value, size_t count);
+extern long tell(int fd);
+extern int chsize(int fd, long size);
 
 // access() mode flags
 #ifndef F_OK
@@ -317,51 +243,26 @@ inline int chsize(int fd, long size) { return ftruncate(fd, size); }
 #define R_OK 4
 #endif
 
-// _fullpath() - get absolute path
-#ifndef _MSC_VER
 #ifndef PATH_MAX
 #define PATH_MAX 4096
 #endif
-inline char* _fullpath(char* buffer, const char* path, size_t maxlen) {
-    if (buffer == 0) buffer = (char*)malloc(maxlen ? maxlen : PATH_MAX);
-    if (buffer == 0) return 0;
-    if (realpath(path, buffer) == 0) { strcpy(buffer, path); }
-    return buffer;
-}
-#endif
-
-// _getcwd() - get current working directory
-#ifndef _MSC_VER
-inline char* _getcwd(char* buffer, int size) { return getcwd(buffer, size); }
-#endif
+extern char* _fullpath(char* buffer, const char* path, size_t maxlen);
+extern char* _getcwd(char* buffer, int size);
 
 // ---------------------------------------------------------------------------
 // File Find Functions (Watcom io.h)
 // ---------------------------------------------------------------------------
 // Note: _find_t struct is defined in system/dos.h (from Ghidra)
 
-#ifndef _MSC_VER
-inline long _findfirst(const char* filespec, void* fileinfo) {
-    (void)filespec; (void)fileinfo; return -1;
-}
-inline int _findnext(long handle, void* fileinfo) {
-    (void)handle; (void)fileinfo; return -1;
-}
-inline int _findclose(long handle) {
-    (void)handle; return 0;
-}
-#endif
+extern long _findfirst(const char* filespec, void* fileinfo);
+extern int _findnext(long handle, void* fileinfo);
+extern int _findclose(long handle);
 
 // ---------------------------------------------------------------------------
 // Watcom Directory Functions (direct.h)
 // ---------------------------------------------------------------------------
 
-#ifndef _MSC_VER
-#include <sys/stat.h>
-inline int _mkdir(const char* path) {
-    return mkdir(path, 0755);
-}
-#endif
+extern int _mkdir(const char* path);
 
 // ---------------------------------------------------------------------------
 // Watcom Heap Functions (malloc.h)
@@ -385,46 +286,18 @@ inline int _mkdir(const char* path) {
 // _heapinfo - forward declaration (full definition from Ghidra types)
 struct _heapinfo;
 
-// _heapchk - Check heap consistency
-inline int _heapchk(void) {
-    return _HEAPOK;  // Always report OK for compilation
-}
-
-// _heapwalk - Walk through heap entries
-inline int _heapwalk(struct _heapinfo* entry) {
-    (void)entry;
-    return _HEAPEND;  // Signal end of heap walk
-}
-
-// _memmax - Return largest available memory block
-inline size_t _memmax(void) {
-    return 0x7FFFFFFF;  // Return large value for compilation
-}
-
-// memavl - Return total available memory
-inline size_t memavl(void) {
-    return 0x7FFFFFFF;  // Return large value for compilation
-}
+extern int _heapchk(void);
+extern int _heapwalk(struct _heapinfo* entry);
+extern size_t _memmax(void);
+extern size_t memavl(void);
 
 // ---------------------------------------------------------------------------
 // Watcom Internal CRT Functions
 // ---------------------------------------------------------------------------
 
-// __getfileattr - Internal file attribute getter (uses FindFirstFile)
-inline unsigned long __getfileattr(const char* filename) {
-    (void)filename;
-    return 0;  // Return normal file attributes
-}
-
-// __set_errno - Get last Windows error and convert to errno
-inline unsigned long __set_errno(void) {
-    return 0;  // No error
-}
-
-// _errno - Return pointer to errno value (Watcom errno.h)
-inline int* _errno(void) {
-    return &errno;
-}
+extern unsigned long __getfileattr(const char* filename);
+extern unsigned long __set_errno(void);
+extern int* _errno(void);
 
 // ---------------------------------------------------------------------------
 // Watcom Static Destructor Registration
@@ -432,8 +305,4 @@ inline int* _errno(void) {
 
 struct WatcomStaticDestructorNode;  // Forward declaration
 
-// _atexit - Register static destructor node
-inline void _atexit(WatcomStaticDestructorNode* node) {
-    (void)node;  // No-op stub
-}
-
+extern void _atexit(WatcomStaticDestructorNode* node);
