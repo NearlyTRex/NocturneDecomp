@@ -845,3 +845,13 @@ HRESULT DirectDrawCreate(GUID* lpGUID, LPDIRECTDRAW* lplpDD, IUnknown* pUnkOuter
     *lplpDD = reinterpret_cast<IDirectDraw*>(shim);
     return DD_OK;
 }
+
+// =============================================================================
+// Shim Init - Wire up global function pointer
+// =============================================================================
+
+#include "globals/globals_610000.h"
+
+void shims_init_ddraw() {
+    g_DirectDrawCreateFunc = (DIRECT_DRAW_CREATE_FUNC*)DirectDrawCreate;
+}

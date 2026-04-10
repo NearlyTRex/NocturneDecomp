@@ -10,9 +10,6 @@
 // WATCOM - System Header
 // =============================================================================
 
-// Forward declarations
-struct ExceptionFrame;
-
 // Structure: ExceptionFrame
 typedef struct ExceptionFrame {
     struct ExceptionFrame* prev;
@@ -306,3 +303,4 @@ extern int* _errno(void);
 struct WatcomStaticDestructorNode;  // Forward declaration
 
 extern void _atexit(WatcomStaticDestructorNode* node);
+

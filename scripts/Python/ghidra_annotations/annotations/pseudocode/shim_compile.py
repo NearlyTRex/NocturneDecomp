@@ -44,38 +44,44 @@ def get_sdl2_flags():
 
 
 def find_shim_files(shims_dir):
-    """Find all .cpp files in the shims directory.
+    """Find all .cpp and .c files in the shims directory.
 
     Args:
         shims_dir: Path to shims directory
 
     Returns:
-        Sorted list of .cpp file paths
+        Sorted list of source file paths
     """
     if not os.path.isdir(shims_dir):
         return []
     return sorted([
         os.path.join(shims_dir, f)
         for f in os.listdir(shims_dir)
-        if f.endswith('.cpp')
+        if f.endswith('.cpp') or f.endswith('.c')
     ])
 
 
-def compile_shim_file(cpp_path, include_dir, compiler, extra_flags):
+def compile_shim_file(src_path, include_dir, compiler, extra_flags):
     """Compile a single shim source file for syntax verification.
 
     Args:
-        cpp_path: Path to the .cpp file
+        src_path: Path to the .cpp or .c file
         include_dir: Include directory for -I flag
-        compiler: Compiler to use
+        compiler: Compiler to use (for .cpp files; .c files use C compiler)
         extra_flags: Additional flags (e.g., SDL2 include flags)
 
     Returns:
         Tuple of (success, error_message)
     """
     try:
-        cmd = ([compiler] + SHIM_COMPILE_FLAGS + extra_flags +
-               ['-I', include_dir, cpp_path])
+        if src_path.endswith('.c'):
+            # Plain C files: use C compiler, C standard, no project includes
+            # (these are POSIX wrappers that don't need our headers)
+            c_compiler = compiler.replace('clang++', 'clang').replace('g++', 'gcc')
+            cmd = [c_compiler, '-fsyntax-only', '-std=c11', '-Wno-everything', src_path]
+        else:
+            cmd = ([compiler] + SHIM_COMPILE_FLAGS + extra_flags +
+                   ['-I', include_dir, src_path])
         result = subprocess.run(
             cmd,
             capture_output=True,

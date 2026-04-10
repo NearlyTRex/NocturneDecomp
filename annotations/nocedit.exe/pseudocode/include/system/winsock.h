@@ -142,16 +142,14 @@ typedef int SET_SOCK_OPT_FUNC(_SOCKET s, int level, int optname, char* optval, i
 typedef int SHUTDOWN_FUNC(_SOCKET s, int how);
 
 // =============================================================================
-// WINSOCK FUNCTION STUBS
+// WINSOCK FUNCTIONS
 // =============================================================================
 //
-// Inline function stubs for Winsock functions.
+// Winsock function declarations.
 // The CRT transform in transforms.py converts crt_wsock32_c_* calls to
 // standard winsock function names (e.g., crt_wsock32_c_recv_FUN_XXXX -> recv).
-// These stubs provide declarations so the code compiles.
 //
-// Note: These are stub implementations that return error values.
-// For actual runtime execution, link against ws2_32.lib or equivalent.
+// Implementations are in shims/winsock.cpp (POSIX BSD sockets).
 //
 // =============================================================================
 
@@ -159,137 +157,48 @@ typedef int SHUTDOWN_FUNC(_SOCKET s, int how);
 // Byte Order Conversion
 // ---------------------------------------------------------------------------
 
-inline ushort htons(ushort hostshort) {
-    return (ushort)(((hostshort & 0xFF) << 8) | ((hostshort >> 8) & 0xFF));
-}
-
-inline ulong htonl(ulong hostlong) {
-    return ((hostlong & 0xFF) << 24) |
-           ((hostlong & 0xFF00) << 8) |
-           ((hostlong >> 8) & 0xFF00) |
-           ((hostlong >> 24) & 0xFF);
-}
-
-inline ushort ntohs(ushort netshort) {
-    return htons(netshort);
-}
-
-inline ulong ntohl(ulong netlong) {
-    return htonl(netlong);
-}
+extern ushort htons(ushort hostshort);
+extern ulong htonl(ulong hostlong);
+extern ushort ntohs(ushort netshort);
+extern ulong ntohl(ulong netlong);
 
 // ---------------------------------------------------------------------------
 // Winsock Initialization
 // ---------------------------------------------------------------------------
 
-inline int WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData) {
-    (void)wVersionRequested; (void)lpWSAData;
-    return 0;  // Success
-}
-
-inline int WSACleanup(void) {
-    return 0;  // Success
-}
+extern int WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData);
+extern int WSACleanup(void);
 
 // ---------------------------------------------------------------------------
 // Socket Operations
 // ---------------------------------------------------------------------------
 
-inline _SOCKET accept(_SOCKET s, struct SOCKADDR* addr, int* addrlen) {
-    (void)s; (void)addr; (void)addrlen;
-    return (_SOCKET)-1;  // INVALID_SOCKET
-}
-
-inline int bind(_SOCKET s, const struct SOCKADDR* addr, int namelen) {
-    (void)s; (void)addr; (void)namelen;
-    return -1;  // SOCKET_ERROR
-}
-
-inline int closesocket(_SOCKET s) {
-    (void)s;
-    return 0;
-}
-
-inline int connect(_SOCKET s, const struct SOCKADDR* name, int namelen) {
-    (void)s; (void)name; (void)namelen;
-    return -1;  // SOCKET_ERROR
-}
-
-inline int getsockname(_SOCKET s, struct SOCKADDR* name, int* namelen) {
-    (void)s; (void)name; (void)namelen;
-    return -1;  // SOCKET_ERROR
-}
-
-inline int ioctlsocket(_SOCKET s, long cmd, uint* argp) {
-    (void)s; (void)cmd; (void)argp;
-    return -1;  // SOCKET_ERROR
-}
-
-inline int listen(_SOCKET s, int backlog) {
-    (void)s; (void)backlog;
-    return -1;  // SOCKET_ERROR
-}
-
-inline int recv(_SOCKET s, char* buf, int len, int flags) {
-    (void)s; (void)buf; (void)len; (void)flags;
-    return -1;  // SOCKET_ERROR
-}
-
-inline int recvfrom(_SOCKET s, char* buf, int len, int flags, struct SOCKADDR* from, int* fromlen) {
-    (void)s; (void)buf; (void)len; (void)flags; (void)from; (void)fromlen;
-    return -1;  // SOCKET_ERROR
-}
-
-inline int send(_SOCKET s, const char* buf, int len, int flags) {
-    (void)s; (void)buf; (void)len; (void)flags;
-    return -1;  // SOCKET_ERROR
-}
-
-inline int sendto(_SOCKET s, const char* buf, int len, int flags, const struct SOCKADDR* to, int tolen) {
-    (void)s; (void)buf; (void)len; (void)flags; (void)to; (void)tolen;
-    return -1;  // SOCKET_ERROR
-}
-
-inline int setsockopt(_SOCKET s, int level, int optname, const char* optval, int optlen) {
-    (void)s; (void)level; (void)optname; (void)optval; (void)optlen;
-    return -1;  // SOCKET_ERROR
-}
-
-inline int shutdown(_SOCKET s, int how) {
-    (void)s; (void)how;
-    return 0;
-}
+extern _SOCKET accept(_SOCKET s, struct SOCKADDR* addr, int* addrlen);
+extern int bind(_SOCKET s, const struct SOCKADDR* addr, int namelen);
+extern int closesocket(_SOCKET s);
+extern int connect(_SOCKET s, const struct SOCKADDR* name, int namelen);
+extern int getsockname(_SOCKET s, struct SOCKADDR* name, int* namelen);
+extern int ioctlsocket(_SOCKET s, long cmd, uint* argp);
+extern int listen(_SOCKET s, int backlog);
+extern int recv(_SOCKET s, char* buf, int len, int flags);
+extern int recvfrom(_SOCKET s, char* buf, int len, int flags, struct SOCKADDR* from, int* fromlen);
+extern int send(_SOCKET s, const char* buf, int len, int flags);
+extern int sendto(_SOCKET s, const char* buf, int len, int flags, const struct SOCKADDR* to, int tolen);
+extern int setsockopt(_SOCKET s, int level, int optname, const char* optval, int optlen);
+extern int shutdown(_SOCKET s, int how);
 
 // ---------------------------------------------------------------------------
 // Name Resolution
 // ---------------------------------------------------------------------------
 
-inline struct HOSTENT* gethostbyname(const char* name) {
-    (void)name;
-    return (struct HOSTENT*)0;
-}
-
-inline ulong inet_addr(const char* cp) {
-    (void)cp;
-    return 0xFFFFFFFF;  // INADDR_NONE
-}
-
-inline int gethostname(char* name, int namelen) {
-    (void)name; (void)namelen;
-    return -1;  // SOCKET_ERROR
-}
-
-inline struct SERVENT* getservbyport(int port, const char* proto) {
-    (void)port; (void)proto;
-    return (struct SERVENT*)0;
-}
+extern struct HOSTENT* gethostbyname(const char* name);
+extern ulong inet_addr(const char* cp);
+extern int gethostname(char* name, int namelen);
+extern struct SERVENT* getservbyport(int port, const char* proto);
 
 // ---------------------------------------------------------------------------
-// Socket Creation (if socket() is called)
+// Socket Creation
 // ---------------------------------------------------------------------------
 
-inline _SOCKET socket(int af, int type, int protocol) {
-    (void)af; (void)type; (void)protocol;
-    return (_SOCKET)-1;  // INVALID_SOCKET
-}
+extern _SOCKET socket(int af, int type, int protocol);
 

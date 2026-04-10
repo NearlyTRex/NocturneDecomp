@@ -24,7 +24,6 @@
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
-
 // ---------------------------------------------------------------------------
 // String Comparison
 // ---------------------------------------------------------------------------
@@ -96,7 +95,9 @@ extern int _fsetpos(_FILE* f, const fpos_t* pos);
 extern int _fgetpos(_FILE* f, fpos_t* pos);
 extern int _setvbuf(_FILE* f, char* buf, int mode, size_t size);
 extern void _setbuf(_FILE* f, char* buf);
+__attribute__((format(printf, 2, 3)))
 extern int _fprintf(_FILE* f, const char* format, ...);
+__attribute__((format(scanf, 2, 3)))
 extern int _fscanf(_FILE* f, const char* format, ...);
 extern _FILE* _freopen(const char* filename, const char* mode, _FILE* stream);
 
@@ -112,6 +113,7 @@ extern _FILE* _freopen(const char* filename, const char* mode, _FILE* stream);
 #include "system/stdarg.h"  // For va_list_t
 
 extern int _vsprintf(char* buffer, const char* format, va_list_t args);
+__attribute__((format(printf, 2, 3)))
 extern int _sprintf(void* buffer, const char* format, ...);
 
 // ---------------------------------------------------------------------------
@@ -156,3 +158,4 @@ inline void _qsort(void* base, size_t num, size_t size, CompFunc compar) {
 
 extern int getFileStat(const char* path, struct _stat* buf);
 extern int _utime(const char* path, void* times);
+

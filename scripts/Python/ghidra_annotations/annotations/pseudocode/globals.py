@@ -2144,7 +2144,17 @@ def generate_globals_cpp_file(globals_list, range_key=""):
         for global_var in type_groups[type_name]:
             # Format the declaration correctly (handles array types)
             base_type, full_var_name = format_variable_declaration(global_var['type'], global_var['name'])
-            if global_var['is_initialized'] and global_var['initializer']:
+
+            # DLL import function pointers: initialize to nullptr instead of
+            # raw import table addresses. These are wired up at runtime by
+            # shim_init (shims/shim_init.cpp).
+            if _is_import_function_pointer(base_type, global_var.get('initializer', '')):
+                comment = global_var.get('comment', '')
+                line = "%s %s = nullptr;" % (base_type, full_var_name)
+                if comment:
+                    line += " // %s" % comment
+                content.append(line)
+            elif global_var['is_initialized'] and global_var['initializer']:
                 initializer = global_var['initializer']
                 # For char arrays initialized with string literals, omit array size
                 # to let compiler determine correct size (including null terminator)
@@ -2163,6 +2173,34 @@ def generate_globals_cpp_file(globals_list, range_key=""):
                 content.append("%s %s = {};" % (base_type, full_var_name))
         content.append("")  # Blank line after each type group
     return "\n".join(content)
+
+
+def _is_import_function_pointer(base_type, initializer):
+    """Check if a global variable is a DLL import function pointer.
+
+    These are function pointer globals from the binary's import table,
+    initialized to raw addresses like (SLEEP_FUNC*)0x00212228.
+    They should be nullptr-initialized and wired up by shim_init at runtime.
+
+    Args:
+        base_type: The formatted base type (e.g., "SLEEP_FUNC*")
+        initializer: The initializer string (e.g., "(SLEEP_FUNC*)0x00212228")
+
+    Returns:
+        True if this is a DLL import function pointer
+    """
+    if not base_type or not initializer:
+        return False
+    # Match types ending in _FUNC* (the naming convention for all DLL import
+    # function pointer typedefs: SLEEP_FUNC*, CREATE_FILE_A_FUNC*,
+    # GET_TEXT_EXTENT_POINT32_A_FUNC*, etc.)
+    if not base_type.rstrip().endswith('_FUNC*'):
+        return False
+    # Verify the initializer is a raw address cast, not a real symbol reference
+    # Import table addresses look like (TYPE*)0xADDRESS
+    if ')0x' in initializer or ')0X' in initializer:
+        return True
+    return False
 
 
 def extract_all_function_prototypes(currentProgram):
@@ -2775,7 +2813,9 @@ def generate_crt_header(functions_to_process):
     lines.append("extern int _fgetpos(_FILE* f, fpos_t* pos);")
     lines.append("extern int _setvbuf(_FILE* f, char* buf, int mode, size_t size);")
     lines.append("extern void _setbuf(_FILE* f, char* buf);")
+    lines.append("__attribute__((format(printf, 2, 3)))")
     lines.append("extern int _fprintf(_FILE* f, const char* format, ...);")
+    lines.append("__attribute__((format(scanf, 2, 3)))")
     lines.append("extern int _fscanf(_FILE* f, const char* format, ...);")
     lines.append("extern _FILE* _freopen(const char* filename, const char* mode, _FILE* stream);")
     lines.append("")
@@ -2791,6 +2831,7 @@ def generate_crt_header(functions_to_process):
     lines.append('#include "system/stdarg.h"  // For va_list_t')
     lines.append("")
     lines.append("extern int _vsprintf(char* buffer, const char* format, va_list_t args);")
+    lines.append("__attribute__((format(printf, 2, 3)))")
     lines.append("extern int _sprintf(void* buffer, const char* format, ...);")
     lines.append("")
     lines.append("// ---------------------------------------------------------------------------")

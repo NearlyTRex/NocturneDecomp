@@ -989,3 +989,14 @@ HRESULT DirectSoundEnumerateA(LPDSENUMCALLBACKA lpDSEnumCallback, LPVOID lpConte
 
     return DS_OK;
 }
+
+// =============================================================================
+// Shim Init - Wire up global function pointers
+// =============================================================================
+
+#include "globals/globals_610000.h"
+
+void shims_init_dsound() {
+    g_DirectSoundCreateFunc = (DIRECT_SOUND_CREATE_FUNC*)DirectSoundCreate;
+    g_DirectSoundEnumerateAFunc = (DIRECT_SOUND_ENUMERATE_A_FUNC*)DirectSoundEnumerateA;
+}
