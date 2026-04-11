@@ -15,9 +15,9 @@
 ;   TerminatedCString s_Closed_00621340
 ;   undefined4 s_losed_00621341
 ;   TerminatedCString s_Open_00621347
-;   undefined4 DAT_00621348
-;   undefined4 DAT_00621349
-;   undefined4 DAT_0062134a
+;   undefined4 s_pen_00621347+1
+;   undefined4 s_en_00621347+2
+;   undefined4 s_n_00621347+3
 ;   TerminatedCString s_Unknown_0062134c
 ;   undefined4 s_nknown_0062134d
 ;   undefined4 g_CDoorClassInfo.name_hash
@@ -50,13 +50,13 @@ section .text
     MOV ESI,0x621347                    ; 00481279 | = "Open"
     PUSH EDI                            ; 0048127e
         ;   Label: LAB_0048127e
-    MOV AL,byte ptr [ESI]               ; 0048127f | = "Closed" | s_Open_00621347 | DAT_00621349
+    MOV AL,byte ptr [ESI]               ; 0048127f | = "Closed" | s_Open_00621347 | s_en_00621347+2
         ;   Label: LAB_0048127f
     MOV byte ptr [EDI],AL               ; 00481281
     CMP AL,0x0                          ; 00481283
     JZ 0x00481297                       ; 00481285
         ;   XREF to: 00481297 (CONDITIONAL_JUMP)  ; LAB_00481297
-    MOV AL,byte ptr [ESI + 0x1]         ; 00481287 | s_losed_00621341 | DAT_00621348 | DAT_0062134a
+    MOV AL,byte ptr [ESI + 0x1]         ; 00481287 | s_losed_00621341 | s_pen_00621347+1 | s_n_00621347+3
     ADD ESI,0x2                         ; 0048128a
     MOV byte ptr [EDI + 0x1],AL         ; 0048128d
     ADD EDI,0x2                         ; 00481290

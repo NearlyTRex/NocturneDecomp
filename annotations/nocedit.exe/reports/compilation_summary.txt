@@ -5,14 +5,14 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6336 (98.2%)
-Failed: 118
+Successful: 6339 (98.2%)
+Failed: 115
 
 ERROR CATEGORIES
 --------------------------------------------------
   type_error                       236
   format_error                     174
-  incompatible_types                49
+  incompatible_types                41
   undeclared_identifier             31
   syntax_error                      24
   pointer_type                      10
@@ -153,7 +153,7 @@ CATEGORY: format_error (174 errors)
   ... and 10 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (49 errors)
+CATEGORY: incompatible_types (41 errors)
 ====================================================================================================
 
   shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500
@@ -169,11 +169,7 @@ CATEGORY: incompatible_types (49 errors)
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
     Line 182: assigning to 'char *' from incompatible type 'void *'...
   sound_sndmain.cpp_allocMixBuffers_FUN_005a5730
-    Line 35: assigning to 'float *' from incompatible type 'void *'...
-  sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
-    Line 71: assigning to 'float *' from incompatible type 'void *'...
-  sound_sndmain.cpp_getChannelLevels_FUN_005ac990
-    Line 26: assigning to 'float *' from incompatible type 'void *'...
+    Line 31: assigning to 'float *' from incompatible type 'void *'...
   shape_superopt.cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20
     Line 23: assigning to 'int *' from incompatible type 'void *'...
   shape_superopt.cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280
@@ -216,8 +212,6 @@ CATEGORY: incompatible_types (49 errors)
     Line 14: invalid operands to binary expression ('double' and 'int')...
   shape_superopt.cpp_CVec_getLength_FUN_005d8200
     Line 20: invalid operands to binary expression ('double' and 'int')...
-
-  ... and 2 more errors
 
 ====================================================================================================
 CATEGORY: undeclared_identifier (31 errors)
@@ -346,7 +340,7 @@ COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
 Average suspects in successfully compiled functions: 0.87
-Average suspects in failed compilations: 11.77
+Average suspects in failed compilations: 12.03
 
-Functions that compile but have suspect patterns: 1302
+Functions that compile but have suspect patterns: 1303
 (These may have runtime issues even though syntax is valid)

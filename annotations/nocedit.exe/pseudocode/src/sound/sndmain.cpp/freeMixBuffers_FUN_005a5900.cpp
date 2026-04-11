@@ -12,9 +12,9 @@ void __cdecl sound_sndmain_cpp_freeMixBuffers_FUN_005a5900(void)
   int iVar1;
   int iVar2;
   
-  if (g_PrimaryMixBuffer != (void *)0x0) {
+  if (g_PrimaryMixBuffer != (float *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460(g_PrimaryMixBuffer,"..\\sound\\sndmain.cpp",0x4bc);
-    g_PrimaryMixBuffer = (void *)0x0;
+    g_PrimaryMixBuffer = (float *)0x0;
   }
   if (g_SecondaryMixBuffer != (float *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460(g_SecondaryMixBuffer,"..\\sound\\sndmain.cpp",0x4c0)

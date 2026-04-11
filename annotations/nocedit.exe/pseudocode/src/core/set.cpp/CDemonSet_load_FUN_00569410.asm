@@ -915,13 +915,13 @@ section .text
     MOV ESI,0x645ac0                    ; 00569dd5 | = ".zth"
         ;   Label: LAB_00569dd5
     PUSH EDI                            ; 00569dda
-    MOV AL,byte ptr [ESI]               ; 00569ddb | = ".zth" | DAT_00645ac2
+    MOV AL,byte ptr [ESI]               ; 00569ddb | = ".zth" | s_zth_00645ac0+2
         ;   Label: LAB_00569ddb
     MOV byte ptr [EDI],AL               ; 00569ddd
     CMP AL,0x0                          ; 00569ddf
     JZ 0x00569df3                       ; 00569de1
         ;   XREF to: 00569df3 (CONDITIONAL_JUMP)  ; LAB_00569df3
-    MOV AL,byte ptr [ESI + 0x1]         ; 00569de3 | DAT_00645ac1 | DAT_00645ac3
+    MOV AL,byte ptr [ESI + 0x1]         ; 00569de3 | s_zth_00645ac0+1 | s_zth_00645ac0+3
     ADD ESI,0x2                         ; 00569de6
     MOV byte ptr [EDI + 0x1],AL         ; 00569de9
     ADD EDI,0x2                         ; 00569dec
@@ -1042,13 +1042,13 @@ section .text
         ;   Label: LAB_00569f1c
     MOV dword ptr [EBP + 0x15ae4c],0x0  ; 00569f21
     PUSH EDI                            ; 00569f2b
-    MOV AL,byte ptr [ESI]               ; 00569f2c | = "none" | DAT_006459a3
+    MOV AL,byte ptr [ESI]               ; 00569f2c | = "none" | s_ne_006459a1+2
         ;   Label: LAB_00569f2c
     MOV byte ptr [EDI],AL               ; 00569f2e
     CMP AL,0x0                          ; 00569f30
     JZ 0x00569f44                       ; 00569f32
         ;   XREF to: 00569f44 (CONDITIONAL_JUMP)  ; LAB_00569f44
-    MOV AL,byte ptr [ESI + 0x1]         ; 00569f34 | DAT_006459a2 | DAT_006459a4
+    MOV AL,byte ptr [ESI + 0x1]         ; 00569f34 | s_one_006459a1+1 | s_e_006459a1+3
     ADD ESI,0x2                         ; 00569f37
     MOV byte ptr [EDI + 0x1],AL         ; 00569f3a
     ADD EDI,0x2                         ; 00569f3d

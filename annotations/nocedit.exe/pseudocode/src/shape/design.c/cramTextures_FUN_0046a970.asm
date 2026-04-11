@@ -22,9 +22,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_TGA_0061d253
-;   undefined4 DAT_0061d254
-;   undefined4 DAT_0061d255
-;   undefined4 DAT_0061d256
+;   undefined4 s_TGA_0061d253+1
+;   undefined4 s_TGA_0061d253+2
+;   undefined4 s_TGA_0061d253+3
 ;   TerminatedCString s_Too_many_textures_to_cra_0061d258
 ;   TerminatedCString s_shape_design_c_0061d27d
 ;   int g_TextureProcessedCount
@@ -125,13 +125,13 @@ section .text
         ;   Label: LAB_0046a9ee
     MOV EDI,dword ptr [EBP + -0x8]      ; 0046a9f3
     PUSH EDI                            ; 0046a9f6
-    MOV AL,byte ptr [ESI]               ; 0046a9f7 | = ".TGA" | DAT_0061d255
+    MOV AL,byte ptr [ESI]               ; 0046a9f7 | = ".TGA" | s_TGA_0061d253+2
         ;   Label: LAB_0046a9f7
     MOV byte ptr [EDI],AL               ; 0046a9f9
     CMP AL,0x0                          ; 0046a9fb
     JZ 0x0046aa0f                       ; 0046a9fd
         ;   XREF to: 0046aa0f (CONDITIONAL_JUMP)  ; LAB_0046aa0f
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046a9ff | DAT_0061d254 | DAT_0061d256
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046a9ff | s_TGA_0061d253+1 | s_TGA_0061d253+3
     ADD ESI,0x2                         ; 0046aa02
     MOV byte ptr [EDI + 0x1],AL         ; 0046aa05
     ADD EDI,0x2                         ; 0046aa08

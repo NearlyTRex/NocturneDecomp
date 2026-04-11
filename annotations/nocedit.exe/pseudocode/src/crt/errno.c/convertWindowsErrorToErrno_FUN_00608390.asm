@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 g_LookupTableStruct
-;   undefined4 DAT_00685210
+;   int INT_00685210 = -0xfef7fa
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00602790
@@ -65,7 +65,7 @@ section .text
     JBE 0x006083e3                      ; 006083dc
         ;   XREF to: 006083e3 (CONDITIONAL_JUMP)  ; LAB_006083e3
     MOV EBX,0x13                        ; 006083de
-    MOV EBX,dword ptr [EBX + 0x6851fd]  ; 006083e3 | g_LookupTableStruct | DAT_00685210
+    MOV EBX,dword ptr [EBX + 0x6851fd]  ; 006083e3 | g_LookupTableStruct | INT_00685210
         ;   Label: LAB_006083e3
     SAR EBX,0x18                        ; 006083e9
     PUSH EBX                            ; 006083ec

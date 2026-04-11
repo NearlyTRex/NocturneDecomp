@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 497,
+    "complexity_score": 442,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 77,
-    "suspect_count": 39,
+    "suspect_count": 34,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function",
-      "undefined_data",
       "unresolved_funcptr",
       "warning_indirect_jump",
       "warning_jumptable"
@@ -88,9 +87,9 @@
     },
     {
       "addr": "00679d94",
-      "name": "DAT_00679d94",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_00679d94",
+      "type": "int",
+      "value": "0x4b1b14"
     }
   ],
   "pcode_summary": {
@@ -193,16 +192,8 @@
       "line": 27,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
+      "text": "(*(code *)(&INT_00679d94)[uVar2])();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_00679d94",
-      "severity": "mild",
-      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -257,16 +248,8 @@
       "line": 38,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
+      "text": "(*(code *)(&INT_00679d94)[uVar2])();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_00679d94",
-      "severity": "mild",
-      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -321,16 +304,8 @@
       "line": 48,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
+      "text": "(*(code *)(&INT_00679d94)[uVar2])();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_00679d94",
-      "severity": "mild",
-      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -401,16 +376,8 @@
       "line": 61,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
+      "text": "(*(code *)(&INT_00679d94)[uVar2])();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_00679d94",
-      "severity": "mild",
-      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
-      "type": "undefined_data"
     },
     {
       "description": "Jump table recovery failed",
@@ -433,16 +400,8 @@
       "line": 78,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
+      "text": "(*(code *)(&INT_00679d94)[uVar2])();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_00679d94",
-      "severity": "mild",
-      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
-      "type": "undefined_data"
     },
     {
       "address": "004b1a78",

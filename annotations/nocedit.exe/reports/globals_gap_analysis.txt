@@ -2,27 +2,27 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19625
-  Named globals:             19364
-  DAT_ globals:              261
-Gaps found:                  1846
-  With exact size bounds:    1754
+Total globals analyzed:      19614
+  Named globals:             19599
+  DAT_ globals:              15
+Gaps found:                  1834
+  With exact size bounds:    1742
   With estimated bounds:     92
-Total gap bytes:             14,704,035
-  Exact gap bytes:           14,694,989
-Overlaps (size <= 0):        13386
+Total gap bytes:             13,420,199
+  Exact gap bytes:           13,411,153
+Overlaps (size <= 0):        13380
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
-  1-4 bytes (likely padding/alignment)          499
-  5-16 bytes (small vars)                       490
-  17-64 bytes (structs/small arrays)            390
+  1-4 bytes (likely padding/alignment)          494
+  5-16 bytes (small vars)                       488
+  17-64 bytes (structs/small arrays)            389
   65-256 bytes (medium data)                    174
   257-1024 bytes (large structs/arrays)         91
-  1-4 KB                                        74
+  1-4 KB                                        72
   4-64 KB                                       109
-  64+ KB                                        19
+  64+ KB                                        17
 
 --------------------------------------------------------------------------------
 LARGEST GAPS (top 50)
@@ -33,14 +33,11 @@ LARGEST GAPS (top 50)
    3,350,789 bytes  at 0x00ff0103
     after: g_ColorMagenta                           undefined4           at 0x00ff00ff  size=4
     before: g_CoronaLightCache                       SCoronaLightCache    at 0x01322208
-     917,756 bytes  at 0x009e6c78
-    after: DAT_009e6c74                             undefined4           at 0x009e6c74  size=4
-    before: g_PrecomputedSurfaceNormals              CVector3f[241][320]  at 0x00ac6d74
      739,452 bytes  at 0x009305f8
     after: g_PrecomputedWorldPositions              CVector3i[15499]     at 0x00902f74  size=185,988
     before: g_TempWorldPositions                     CVector3i[241][320]  at 0x009e4e74
      522,521 bytes  at 0x006e6f67
-    after: DAT_006e6f63                             undefined4           at 0x006e6f63  size=4
+    after: INT_006e6f63                             int                  at 0x006e6f63  size=4
     before: DAT_00766880                             undefined4           at 0x00766880
      483,033 bytes  at 0x0078a127
     after: g_ActorMagicNumber                       int                  at 0x0078a123  size=4
@@ -48,15 +45,12 @@ LARGEST GAPS (top 50)
      399,991 bytes  at 0x01626415
     after: g_LoadedVertices[0].vertex.y+1           undefined4           at 0x01626411  size=4
     before: g_VertexNormals                          SVertexData[20000]   at 0x01687e8c
-     359,900 bytes  at 0x02c14d94
-    after: DAT_02c14d90                             undefined4           at 0x02c14d90  size=4
-    before: g_RenderTriangleEdgeCount                int                  at 0x02c6cb70
      305,276 bytes  at 0x0151c72c
     after: g_CameraIndexedImageData+0x780           undefined4           at 0x0151c728  size=4
     before: g_CameraTextureWorkBuffer                uint[16384]          at 0x01566fa8
      290,663 bytes  at 0x0069fffc
     after: g_AALineVertex2[5]                       undefined4           at 0x0069fff8  size=4
-    before: DAT_006e6f63                             undefined4           at 0x006e6f63
+    before: INT_006e6f63                             int                  at 0x006e6f63
      144,064 bytes  at 0x03f9c17c
     after: g_TempProjectedCoord                     CVector3i            at 0x03f9c170  size=12
     before: Rsrc_GroupIcon_65_0                      GroupIconResource    at 0x03fbf43c
@@ -177,20 +171,24 @@ LARGEST GAPS (top 50)
       24,188 bytes  at 0x004e8e24
     after: switchdataD_004e8e20                     void*                at 0x004e8e20  size=4
     before: switchdataD_004eeca0                     void*                at 0x004eeca0
+      24,099 bytes  at 0x00784300
+    after: g_RenderBufferPool                       SRenderBufferEntry[2 at 0x00772b00  size=71,680
+    before: g_ActorMagicNumber                       int                  at 0x0078a123
+      23,872 bytes  at 0x005bb91c
+    after: switchdataD_005bb918                     void*                at 0x005bb918  size=4
+    before: switchdataD_005c165c                     void*                at 0x005c165c
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1754) - size bounds are known precisely
+ALL EXACT GAPS (1742) - size bounds are known precisely
 --------------------------------------------------------------------------------
    4,185,048 bytes  at 0x00002428  between DAT_00002424                   and IMAGE_DOS_HEADER_00400000
    3,350,789 bytes  at 0x00ff0103  between g_ColorMagenta                 and g_CoronaLightCache
-     917,756 bytes  at 0x009e6c78  between DAT_009e6c74                   and g_PrecomputedSurfaceNormals
      739,452 bytes  at 0x009305f8  between g_PrecomputedWorldPositions    and g_TempWorldPositions
-     522,521 bytes  at 0x006e6f67  between DAT_006e6f63                   and DAT_00766880
+     522,521 bytes  at 0x006e6f67  between INT_006e6f63                   and DAT_00766880
      483,033 bytes  at 0x0078a127  between g_ActorMagicNumber             and DAT_00800000
      399,991 bytes  at 0x01626415  between g_LoadedVertices[0].vertex.y+1 and g_VertexNormals
-     359,900 bytes  at 0x02c14d94  between DAT_02c14d90                   and g_RenderTriangleEdgeCount
      305,276 bytes  at 0x0151c72c  between g_CameraIndexedImageData+0x780 and g_CameraTextureWorkBuffer
-     290,663 bytes  at 0x0069fffc  between g_AALineVertex2[5]             and DAT_006e6f63
+     290,663 bytes  at 0x0069fffc  between g_AALineVertex2[5]             and INT_006e6f63
      144,064 bytes  at 0x03f9c17c  between g_TempProjectedCoord           and Rsrc_GroupIcon_65_0
      121,180 bytes  at 0x00800004  between DAT_00800000                   and g_RenderBufferSortArray
       98,105 bytes  at 0x0068808b  between g_RenderVertexBuffer[2].projec and g_AALineVertex1[4]
@@ -315,8 +313,7 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
        3,932 bytes  at 0x005524ec  between switchdataD_005524e8           and switchdataD_00553448
        3,900 bytes  at 0x004f9c0c  between switchdataD_004f9c08           and switchdataD_004fab48
        3,832 bytes  at 0x00511e24  between switchdataD_00511e20           and switchdataD_00512d1c
-       3,824 bytes  at 0x009e5d84  between DAT_009e5d80                   and DAT_009e6c74
-       3,796 bytes  at 0x02cf0dfc  between DAT_02cf0df8                   and g_EditorFont
+       3,796 bytes  at 0x02cf0dfc  between g_TextWrapBuffer+0xc8          and g_EditorFont
        3,644 bytes  at 0x004f3d54  between switchdataD_004f3d50           and switchdataD_004f4b90
        3,584 bytes  at 0x0041683c  between switchdataD_00416838           and switchdataD_0041763c
        3,420 bytes  at 0x00546598  between switchdataD_00546594           and switchdataD_005472f4
@@ -341,7 +338,6 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
        2,396 bytes  at 0x005fcb5c  between switchdataD_005fcb58           and switchdataD_005fd4b8
        2,381 bytes  at 0x02cf1d1b  between g_WindowStack[0].saved_viewpor and g_FontCharacterHeight
        2,332 bytes  at 0x005c5250  between switchdataD_005c524c           and switchdataD_005c5b6c
-       2,300 bytes  at 0x02d7b9e4  between DAT_02d7b9e0                   and DOUBLE_02d7c2e0
        2,240 bytes  at 0x004d25cc  between switchdataD_004d25c8           and switchdataD_004d2e8c
        2,228 bytes  at 0x00527d38  between switchdataD_00527d34           and switchdataD_005285ec
        2,184 bytes  at 0x004f9380  between switchdataD_004f937c           and switchdataD_004f9c08
@@ -611,7 +607,7 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
           84 bytes  at 0x00685218  between g_MaxHandleCount               and g_IOControlBlock
           84 bytes  at 0x02f46848  between g_Mp3WindowTables[1][19]+4     and g_Mp3WindowTables[1][30]+4
           84 bytes  at 0x02f469f8  between g_Mp3WindowTables[3][1]+4      and g_Mp3WindowTables[3][12]+4
-          81 bytes  at 0x006855dc  between DAT_006855d8                   and g_ShiftJIS_TrailByteTable
+          81 bytes  at 0x006855dc  between INT_006855d8                   and g_ShiftJIS_TrailByteTable
           80 bytes  at 0x006625e8  between g_CScatTypeInfo                and g_ScriptSentinelActor
           80 bytes  at 0x00662e48  between FLOAT_00662e44                 and FLOAT_00662e98
           80 bytes  at 0x00665b90  between PTR_FUN_00665b8c               and g_IstrstreamLayoutInfo
@@ -639,7 +635,7 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
           68 bytes  at 0x00665c0c  between PTR_FUN_00665c04               and g_DefaultStreamBufferSize
           68 bytes  at 0x00665c7c  between g_IFStream_IOSDestructor       and g_OFStream_VirtualBaseLayout
           68 bytes  at 0x0067e188  between g_Layer3Pretab[4]              and g_Mp3AntiAliasInitialized
-          68 bytes  at 0x00685594  between PTR_crt_math.c_check_error_con and DAT_006855d8
+          68 bytes  at 0x00685594  between PTR_crt_math.c_check_error_con and INT_006855d8
           64 bytes  at 0x00662f28  between g_CSkeletonTypeInfo            and FLOAT_00662f68
           64 bytes  at 0x006652d0  between FLOAT_006652cc                 and FLOAT_00665310
           64 bytes  at 0x00665d78  between g_StrStreamBase_IOSDestructor  and g_OStream_InheritanceLayout
@@ -651,7 +647,7 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
           60 bytes  at 0x00665704  between FLOAT_00665700                 and FLOAT_00665740
           60 bytes  at 0x0066e60c  between g_CLightActorClassVersion      and g_CBrideClassVersion
           60 bytes  at 0x00679d14  between switchdataD_00679d10           and DAT_00679d50
-          60 bytes  at 0x00679d58  between switchdataD_00679d54           and DAT_00679d94
+          60 bytes  at 0x00679d58  between switchdataD_00679d54           and INT_00679d94
           60 bytes  at 0x0068262c  between g_ClearColor                   and g_TempX
           57 bytes  at 0x03f8736b  between g_CurrentTextureInfo.texture_n and g_CTommyGunClassInfo
           56 bytes  at 0x0065d2d4  between g_VertexCoordinateScaleFactor  and FLOAT_0065d30c
@@ -943,7 +939,6 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
           24 bytes  at 0x00663168  between FLOAT_00663164                 and g_SfxSlotTypeInfo
           24 bytes  at 0x00665744  between FLOAT_00665740                 and FLOAT_0066575c
           24 bytes  at 0x0066e444  between g_CBackgroundActorClassVersion and g_CBaronClassVersion
-          24 bytes  at 0x0066efa4  between DAT_0066efa0                   and g_PlayerFilters
           24 bytes  at 0x00678a38  between g_CDynamiteClassVersion        and g_CEditorToolsDestructorNode
           24 bytes  at 0x0067b4e0  between g_CFlameThrowerClassVersion    and g_CFlashlightClassVersion
           24 bytes  at 0x0067b5a8  between g_CGabriellaClassVersion       and g_CDemonLightDestructorNode
@@ -1017,7 +1012,7 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
           20 bytes  at 0x006848a0  between g_CWayPointClassVersion        and g_WeaponStateTypePairs
           20 bytes  at 0x00684f0c  between PTR_crt_sync.c_ExitCriticalSec and PTR_crt_sync.c_CriticalSection
           18 bytes  at 0x0062530f  between s_xpected_end_of_string_006253 and s_Matching_is_missing_00625321
-          18 bytes  at 0x00665f3e  between DAT_00665f3a                   and DAT_00665f50
+          18 bytes  at 0x00665f3e  between DAT_00665f3a                   and SHORT_00665f50
           17 bytes  at 0x00624453  between s_t_specify_actor_name_0062444 and s_anon_00624464
           17 bytes  at 0x00625328  between s_ching_')'_is_missing_0062532 and s_Syntax_error_00625339
           17 bytes  at 0x0064156d  between s_t_specify_actor_name_0064156 and s_Actor_variable_s_not_def_006
@@ -1102,7 +1097,7 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
           15 bytes  at 0x006436fc  between s_ActorVariable_006436f8       and s_ActorVariable_0064370b
           15 bytes  at 0x006437a4  between s_ControlButton_006437a0       and s_ControlButton_006437b3
           15 bytes  at 0x006438a8  between s_LetterBoxMode_006438a4       and s_LetterBoxMode_006438b7
-          15 bytes  at 0x00685201  between g_LookupTableStruct            and DAT_00685210
+          15 bytes  at 0x00685201  between g_LookupTableStruct            and INT_00685210
           15 bytes  at 0x03f9c131  between g_LeadByteTable                and g_BufferedCharacter
           14 bytes  at 0x0062dcbc  between s_ghoul_dig_wav_1_3_0062dcb5+3 and s_s_confused_while_walking_006
           14 bytes  at 0x00631092  between s_lever_metal_wav_0063108b+3   and DOUBLE_006310a0
@@ -1211,7 +1206,7 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
           11 bytes  at 0x00644116  between s_tor_referenced_00644112      and s_Sfx_set_00644121
           11 bytes  at 0x0064416c  between s_file_variable_00644168       and s_anon_00644177
           11 bytes  at 0x00658675  between s_houl-dig-?.wav_00658671      and s_fall_wav_00658680
-          11 bytes  at 0x006852d0  between PTR_DAT_006852cc               and DAT_006852db
+          11 bytes  at 0x006852d0  between PTR_DAT_006852cc               and CHAR_00h_006852db
           11 bytes  at 0x00685409  between g_HexLookupTable               and g_AlphaNumericCharacters1
           11 bytes  at 0x03f9b855  between CHAR_ARRAY_03f9b850+1          and g_EnvironStringArea
           10 bytes  at 0x006210bb  between s_aultDoorClose_006210b7       and s_door_locked_wav_006210c5
@@ -1401,14 +1396,12 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
            8 bytes  at 0x00665e48  between g_StrStreamBaseTypeInfo        and g_IOSTypeInfo
            8 bytes  at 0x00666038  between g_FilebufTypeInfo              and g_FontTable
            8 bytes  at 0x0066ef30  between g_OctantRotationAngles         and s_II_0066ef38
-           8 bytes  at 0x0066efc4  between DAT_0066efc0                   and g_CFilterCachePtr
-           8 bytes  at 0x00679d98  between DAT_00679d94                   and g_PodFileActionNames
+           8 bytes  at 0x00679d98  between INT_00679d94                   and g_PodFileActionNames
            8 bytes  at 0x006813dc  between g_LightDebugScreenY            and g_EnvMapTexture
            8 bytes  at 0x00684cc8  between g_StaticFilePoolStart          and INT_00684cd0
            8 bytes  at 0x00684fec  between g_DllFileNameW                 and g_HeapBound
            8 bytes  at 0x00685270  between g_IOControlBlock               and g_PureVirtualCallFlag
            8 bytes  at 0x00772630  between g_SoftwareZBuffer              and g_PaletteLuminanceCache
-           8 bytes  at 0x009e5d78  between DAT_009e5d74                   and DAT_009e5d80
            8 bytes  at 0x015c48bc  between g_PolygonToolMode              and g_PolygonScreenCache
            8 bytes  at 0x02c6d59c  between g_CDemonRendererInstance       and g_RenderPixelCounter
            8 bytes  at 0x02d03ed4  between CHAR_ARRAY_02d03ed0            and CHAR_ARRAY_02d03edc
@@ -1481,7 +1474,7 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
            5 bytes  at 0x00645995  between s_ESKY.RAW_00645991            and s_d_s_0064599a
            5 bytes  at 0x0064b4c6  between s_TheOnlyPart_0064b4bf+3       and s_core_skeledit_cpp_0064b4cb
            5 bytes  at 0x00655607  between s_monActor_00655603            and s_none_0065560c
-           5 bytes  at 0x006597ab  between DAT_006597a7                   and FLOAT_006597b0
+           5 bytes  at 0x006597ab  between g_ProcessFileInfoStr+7         and FLOAT_006597b0
            4 bytes  at 0x00435f0c  between PTR_caseD_1_00435f08           and PTR_caseD_3_00435f10
            4 bytes  at 0x00436050  between PTR_caseD_1_0043604c           and PTR_caseD_3_00436054
            4 bytes  at 0x00436194  between PTR_caseD_1_00436190           and PTR_caseD_3_00436198
@@ -1760,7 +1753,6 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
            4 bytes  at 0x00665e70  between WatcomInheritanceLayout_00665e and WatcomThunkedDestructor_00665e
            4 bytes  at 0x00665ed0  between g_FStreamBase_VirtualBaseLayou and g_FStreamBase_Destructor
            4 bytes  at 0x00665ed8  between g_FStreamBase_Destructor       and g_FStreamBase_IOSDestructor
-           4 bytes  at 0x00665f2c  between DAT_00665f28                   and g_PositiveInfinity
            4 bytes  at 0x00665fc8  between g_StrStreamBufTypeInfo         and g_FilebufVTable
            4 bytes  at 0x0066df7c  between g_CurrentTextColor             and INT_0066df80
            4 bytes  at 0x0066e774  between g_CCharacterClassVersion       and s_noCollision_0066e778
@@ -1794,7 +1786,7 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
            4 bytes  at 0x00684ee0  between INT_00684edc                   and PTR_crt_thread.c_GetTLS_FUN_00
            4 bytes  at 0x00684f04  between PTR_crt_sync.c_EnterCriticalSe and PTR_crt_sync.c_ExitCriticalSec
            4 bytes  at 0x00684f28  between PTR_crt_sync.c_CriticalSection and g_SpecialExitHandler
-           4 bytes  at 0x006850ac  between DAT_006850a8                   and DAT_006850b0
+           4 bytes  at 0x006850ac  between INT_006850a8                   and INT_006850b0
            4 bytes  at 0x006852b4  between g_SpecialDeviceWriteFuncPtr    and g_SpecialConsoleInputHandler
            4 bytes  at 0x006852bc  between g_SpecialConsoleInputHandler   and g_SpecialConsoleOutputHandler
            4 bytes  at 0x00685438  between g_AlphaNumericCharacters1      and g_AlphaNumericCharacters2
@@ -1887,10 +1879,6 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
            3 bytes  at 0x00649c75  between s_nknown_00649c71              and s_Model_file_kfm_00649c78
            3 bytes  at 0x00652749  between s_p?.wav_00652745              and s_s_g_0065274c
            3 bytes  at 0x00657274  between s_e_00657270                   and DOUBLE_00657277
-           3 bytes  at 0x00658bf5  between DAT_00658bf4                   and s_I_M_S_p_00658bf8
-           3 bytes  at 0x00658c05  between DAT_00658c04                   and DAT_00658c08
-           3 bytes  at 0x00658c09  between DAT_00658c08                   and DAT_00658c0c
-           3 bytes  at 0x00658c0d  between DAT_00658c0c                   and s_a_b_d_Y_00658c10
            3 bytes  at 0x006590a5  between DAT_006590a4                   and DAT_006590a8
            3 bytes  at 0x00684cc1  between g_WeekdayThirdInitial          and g_StaticFilePoolStart
            3 bytes  at 0x00685061  between g_UseSoftwareMath              and g_ExpUnderflowLimit
@@ -1937,7 +1925,7 @@ ALL EXACT GAPS (1754) - size bounds are known precisely
            1 bytes  at 0x0068572d  between g_ShiftJIS_TrailByteTable      and g_InitHandlerStatusStart
 
 --------------------------------------------------------------------------------
-OVERLAPS (13386) - next global starts inside previous
+OVERLAPS (13380) - next global starts inside previous
 --------------------------------------------------------------------------------
   241 bytes overlap ~
     s_engine_2d_c_00613004                   TerminatedCString    at 0x00613004  size=256
@@ -2181,24 +2169,24 @@ OVERLAPS (13386) - next global starts inside previous
     s_none_00613578                          TerminatedCString    at 0x00613578
   255 bytes overlap ~
     s_none_00613578                          TerminatedCString    at 0x00613578  size=256
-    DAT_00613579                             undefined4           at 0x00613579
+    s_none_00613578+1                        undefined4           at 0x00613579
   3 bytes overlap
-    DAT_00613579                             undefined4           at 0x00613579  size=4
-    DAT_0061357a                             undefined4           at 0x0061357a
+    s_none_00613578+1                        undefined4           at 0x00613579  size=4
+    s_none_00613578+2                        undefined4           at 0x0061357a
   3 bytes overlap
-    DAT_0061357a                             undefined4           at 0x0061357a  size=4
+    s_none_00613578+2                        undefined4           at 0x0061357a  size=4
     s_e_0061357b                             undefined4           at 0x0061357b
   2 bytes overlap
     s_e_0061357b                             undefined4           at 0x0061357b  size=4
     s_str_0061357d                           TerminatedCString    at 0x0061357d
   255 bytes overlap ~
     s_str_0061357d                           TerminatedCString    at 0x0061357d  size=256
-    DAT_0061357e                             undefined4           at 0x0061357e
+    s_str_0061357d+1                         undefined4           at 0x0061357e
   3 bytes overlap
-    DAT_0061357e                             undefined4           at 0x0061357e  size=4
-    DAT_0061357f                             undefined4           at 0x0061357f
+    s_str_0061357d+1                         undefined4           at 0x0061357e  size=4
+    s_str_0061357d+2                         undefined4           at 0x0061357f
   3 bytes overlap
-    DAT_0061357f                             undefined4           at 0x0061357f  size=4
+    s_str_0061357d+2                         undefined4           at 0x0061357f  size=4
     s__00613580                              undefined4           at 0x00613580
   3 bytes overlap
     s__00613580                              undefined4           at 0x00613580  size=4
@@ -2793,33 +2781,33 @@ OVERLAPS (13386) - next global starts inside previous
     s_TRUE_006144d1                          TerminatedCString    at 0x006144d1
   255 bytes overlap ~
     s_TRUE_006144d1                          TerminatedCString    at 0x006144d1  size=256
-    DAT_006144d2                             undefined4           at 0x006144d2
+    s_RUE_006144d1+1                         undefined4           at 0x006144d2
   3 bytes overlap
-    DAT_006144d2                             undefined4           at 0x006144d2  size=4
-    DAT_006144d3                             undefined4           at 0x006144d3
+    s_RUE_006144d1+1                         undefined4           at 0x006144d2  size=4
+    s_UE_006144d1+2                          undefined4           at 0x006144d3
   3 bytes overlap
-    DAT_006144d3                             undefined4           at 0x006144d3  size=4
-    DAT_006144d4                             undefined4           at 0x006144d4
+    s_UE_006144d1+2                          undefined4           at 0x006144d3  size=4
+    s_E_006144d1+3                           undefined4           at 0x006144d4
   2 bytes overlap
-    DAT_006144d4                             undefined4           at 0x006144d4  size=4
+    s_E_006144d1+3                           undefined4           at 0x006144d4  size=4
     s_FALSE_006144d6                         string               at 0x006144d6
   255 bytes overlap ~
     s_none_006144dc                          TerminatedCString    at 0x006144dc  size=256
-    DAT_006144dd                             undefined4           at 0x006144dd
+    s_none_006144dc+1                        undefined4           at 0x006144dd
   3 bytes overlap
-    DAT_006144dd                             undefined4           at 0x006144dd  size=4
-    DAT_006144de                             undefined4           at 0x006144de
+    s_none_006144dc+1                        undefined4           at 0x006144dd  size=4
+    s_none_006144dc+2                        undefined4           at 0x006144de
   3 bytes overlap
-    DAT_006144de                             undefined4           at 0x006144de  size=4
+    s_none_006144dc+2                        undefined4           at 0x006144de  size=4
     s_ne)_006144df                           undefined4           at 0x006144df
   255 bytes overlap ~
     s_none_006144e3                          TerminatedCString    at 0x006144e3  size=256
-    DAT_006144e4                             undefined4           at 0x006144e4
+    s_none_006144e3+1                        undefined4           at 0x006144e4
   3 bytes overlap
-    DAT_006144e4                             undefined4           at 0x006144e4  size=4
-    DAT_006144e5                             undefined4           at 0x006144e5
+    s_none_006144e3+1                        undefined4           at 0x006144e4  size=4
+    s_none_006144e3+2                        undefined4           at 0x006144e5
   3 bytes overlap
-    DAT_006144e5                             undefined4           at 0x006144e5  size=4
+    s_none_006144e3+2                        undefined4           at 0x006144e5  size=4
     s_ne)_006144e6                           undefined4           at 0x006144e6
   248 bytes overlap ~
     s_s_s_006144ea                           TerminatedCString    at 0x006144ea  size=256
@@ -2850,12 +2838,12 @@ OVERLAPS (13386) - next global starts inside previous
     s_?????_0061451b                         undefined4           at 0x0061451b
   255 bytes overlap ~
     s_none_00614521                          TerminatedCString    at 0x00614521  size=256
-    DAT_00614522                             undefined4           at 0x00614522
+    s_none_00614521+1                        undefined4           at 0x00614522
   3 bytes overlap
-    DAT_00614522                             undefined4           at 0x00614522  size=4
-    DAT_00614523                             undefined4           at 0x00614523
+    s_none_00614521+1                        undefined4           at 0x00614522  size=4
+    s_none_00614521+2                        undefined4           at 0x00614523
   3 bytes overlap
-    DAT_00614523                             undefined4           at 0x00614523  size=4
+    s_none_00614521+2                        undefined4           at 0x00614523  size=4
     s_ne)_00614524                           undefined4           at 0x00614524
   253 bytes overlap ~
     s_anon_00614528                          TerminatedCString    at 0x00614528  size=256
@@ -3051,15 +3039,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_CGun_0061493f                          TerminatedCString    at 0x0061493f
   255 bytes overlap ~
     s_CGun_0061493f                          TerminatedCString    at 0x0061493f  size=256
-    DAT_00614940                             undefined4           at 0x00614940
+    s_Gun_0061493f+1                         undefined4           at 0x00614940
   3 bytes overlap
-    DAT_00614940                             undefined4           at 0x00614940  size=4
-    DAT_00614941                             undefined4           at 0x00614941
+    s_Gun_0061493f+1                         undefined4           at 0x00614940  size=4
+    s_un_0061493f+2                          undefined4           at 0x00614941
   3 bytes overlap
-    DAT_00614941                             undefined4           at 0x00614941  size=4
-    DAT_00614942                             undefined4           at 0x00614942
+    s_un_0061493f+2                          undefined4           at 0x00614941  size=4
+    s_n_0061493f+3                           undefined4           at 0x00614942
   2 bytes overlap
-    DAT_00614942                             undefined4           at 0x00614942  size=4
+    s_n_0061493f+3                           undefined4           at 0x00614942  size=4
     s_modelName_00614944                     TerminatedCString    at 0x00614944
   246 bytes overlap ~
     s_modelName_00614944                     TerminatedCString    at 0x00614944  size=256
@@ -4728,9 +4716,9 @@ OVERLAPS (13386) - next global starts inside previous
     s_anon_006169af                          TerminatedCString    at 0x006169af
   255 bytes overlap ~
     s_anon_006169af                          TerminatedCString    at 0x006169af  size=256
-    DAT_006169b0                             undefined4           at 0x006169b0
+    s_anon_006169af+1                        undefined4           at 0x006169b0
   1 bytes overlap
-    DAT_006169b0                             undefined4           at 0x006169b0  size=4
+    s_anon_006169af+1                        undefined4           at 0x006169b0  size=4
     s_Select_light_type_for_CL_006169b3      TerminatedCString    at 0x006169b3
   219 bytes overlap ~
     s_Select_light_type_for_CL_006169b3      TerminatedCString    at 0x006169b3  size=256
@@ -5163,13 +5151,13 @@ OVERLAPS (13386) - next global starts inside previous
     DOUBLE_00617662                          double               at 0x00617662
   255 bytes overlap ~
     s_none_006176ae                          TerminatedCString    at 0x006176ae  size=256
-    DAT_006176af                             undefined4           at 0x006176af
+    s_none_006176ae+1                        undefined4           at 0x006176af
   3 bytes overlap
-    DAT_006176af                             undefined4           at 0x006176af  size=4
-    DAT_006176b0                             undefined4           at 0x006176b0
+    s_none_006176ae+1                        undefined4           at 0x006176af  size=4
+    s_none_006176ae+2                        undefined4           at 0x006176b0
   3 bytes overlap
-    DAT_006176b0                             undefined4           at 0x006176b0  size=4
-    DAT_006176b1                             undefined4           at 0x006176b1
+    s_none_006176ae+2                        undefined4           at 0x006176b0  size=4
+    s_none_006176ae+3                        undefined4           at 0x006176b1
   253 bytes overlap ~
     s_anon_006176b5                          TerminatedCString    at 0x006176b5  size=256
     s_s_006176b8                             TerminatedCString    at 0x006176b8
@@ -5964,9 +5952,9 @@ OVERLAPS (13386) - next global starts inside previous
     s_cth_00618ac4+2                         undefined4           at 0x00618ac6
   3 bytes overlap
     s_cth_00618ac4+2                         undefined4           at 0x00618ac6  size=4
-    DAT_00618ac7                             undefined4           at 0x00618ac7
+    s_cth_00618ac4+3                         undefined4           at 0x00618ac7
   2 bytes overlap
-    DAT_00618ac7                             undefined4           at 0x00618ac7  size=4
+    s_cth_00618ac4+3                         undefined4           at 0x00618ac7  size=4
     s_models_s_00618ac9                      TerminatedCString    at 0x00618ac9
   245 bytes overlap ~
     s_models_s_00618ac9                      TerminatedCString    at 0x00618ac9  size=256
@@ -6324,15 +6312,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_pth_0061930b                           TerminatedCString    at 0x0061930b
   255 bytes overlap ~
     s_pth_0061930b                           TerminatedCString    at 0x0061930b  size=256
-    DAT_0061930c                             undefined4           at 0x0061930c
+    s_pth_0061930b+1                         undefined4           at 0x0061930c
   3 bytes overlap
-    DAT_0061930c                             undefined4           at 0x0061930c  size=4
-    DAT_0061930d                             undefined4           at 0x0061930d
+    s_pth_0061930b+1                         undefined4           at 0x0061930c  size=4
+    s_pth_0061930b+2                         undefined4           at 0x0061930d
   3 bytes overlap
-    DAT_0061930d                             undefined4           at 0x0061930d  size=4
-    DAT_0061930e                             undefined4           at 0x0061930e
+    s_pth_0061930b+2                         undefined4           at 0x0061930d  size=4
+    s_pth_0061930b+3                         undefined4           at 0x0061930e
   2 bytes overlap
-    DAT_0061930e                             undefined4           at 0x0061930e  size=4
+    s_pth_0061930b+3                         undefined4           at 0x0061930e  size=4
     s_bon_00619310                           TerminatedCString    at 0x00619310
   250 bytes overlap ~
     s_bon_00619310                           TerminatedCString    at 0x00619310  size=256
@@ -6342,15 +6330,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_pth_00619327                           TerminatedCString    at 0x00619327
   255 bytes overlap ~
     s_pth_00619327                           TerminatedCString    at 0x00619327  size=256
-    DAT_00619328                             undefined4           at 0x00619328
+    s_pth_00619327+1                         undefined4           at 0x00619328
   3 bytes overlap
-    DAT_00619328                             undefined4           at 0x00619328  size=4
-    DAT_00619329                             undefined4           at 0x00619329
+    s_pth_00619327+1                         undefined4           at 0x00619328  size=4
+    s_pth_00619327+2                         undefined4           at 0x00619329
   3 bytes overlap
-    DAT_00619329                             undefined4           at 0x00619329  size=4
-    DAT_0061932a                             undefined4           at 0x0061932a
+    s_pth_00619327+2                         undefined4           at 0x00619329  size=4
+    s_pth_00619327+3                         undefined4           at 0x0061932a
   2 bytes overlap
-    DAT_0061932a                             undefined4           at 0x0061932a  size=4
+    s_pth_00619327+3                         undefined4           at 0x0061932a  size=4
     s_No_course_to_view_0061932c             TerminatedCString    at 0x0061932c
   237 bytes overlap ~
     s_No_course_to_view_0061932c             TerminatedCString    at 0x0061932c  size=256
@@ -6831,15 +6819,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_ACT_00619ecd                           TerminatedCString    at 0x00619ecd
   255 bytes overlap ~
     s_ACT_00619ecd                           TerminatedCString    at 0x00619ecd  size=256
-    DAT_00619ece                             undefined4           at 0x00619ece
+    s_ACT_00619ecd+1                         undefined4           at 0x00619ece
   3 bytes overlap
-    DAT_00619ece                             undefined4           at 0x00619ece  size=4
-    DAT_00619ecf                             undefined4           at 0x00619ecf
+    s_ACT_00619ecd+1                         undefined4           at 0x00619ece  size=4
+    s_ACT_00619ecd+2                         undefined4           at 0x00619ecf
   3 bytes overlap
-    DAT_00619ecf                             undefined4           at 0x00619ecf  size=4
-    DAT_00619ed0                             undefined4           at 0x00619ed0
+    s_ACT_00619ecd+2                         undefined4           at 0x00619ecf  size=4
+    s_ACT_00619ecd+3                         undefined4           at 0x00619ed0
   2 bytes overlap
-    DAT_00619ed0                             undefined4           at 0x00619ed0  size=4
+    s_ACT_00619ecd+3                         undefined4           at 0x00619ed0  size=4
     s_ART_s_00619ed2                         TerminatedCString    at 0x00619ed2
   248 bytes overlap ~
     s_ART_s_00619ed2                         TerminatedCString    at 0x00619ed2  size=256
@@ -6912,15 +6900,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_ACT_0061a165                           TerminatedCString    at 0x0061a165
   255 bytes overlap ~
     s_ACT_0061a165                           TerminatedCString    at 0x0061a165  size=256
-    DAT_0061a166                             undefined4           at 0x0061a166
+    s_ACT_0061a165+1                         undefined4           at 0x0061a166
   3 bytes overlap
-    DAT_0061a166                             undefined4           at 0x0061a166  size=4
-    DAT_0061a167                             undefined4           at 0x0061a167
+    s_ACT_0061a165+1                         undefined4           at 0x0061a166  size=4
+    s_ACT_0061a165+2                         undefined4           at 0x0061a167
   3 bytes overlap
-    DAT_0061a167                             undefined4           at 0x0061a167  size=4
-    DAT_0061a168                             undefined4           at 0x0061a168
+    s_ACT_0061a165+2                         undefined4           at 0x0061a167  size=4
+    s_ACT_0061a165+3                         undefined4           at 0x0061a168
   2 bytes overlap
-    DAT_0061a168                             undefined4           at 0x0061a168  size=4
+    s_ACT_0061a165+3                         undefined4           at 0x0061a168  size=4
     s_rb_0061a16a                            TerminatedCString    at 0x0061a16a
   253 bytes overlap ~
     s_rb_0061a16a                            TerminatedCString    at 0x0061a16a  size=256
@@ -6942,15 +6930,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_fog_0061a1c6                           TerminatedCString    at 0x0061a1c6
   255 bytes overlap ~
     s_fog_0061a1c6                           TerminatedCString    at 0x0061a1c6  size=256
-    DAT_0061a1c7                             undefined4           at 0x0061a1c7
+    s_fog_0061a1c6+1                         undefined4           at 0x0061a1c7
   3 bytes overlap
-    DAT_0061a1c7                             undefined4           at 0x0061a1c7  size=4
-    DAT_0061a1c8                             undefined4           at 0x0061a1c8
+    s_fog_0061a1c6+1                         undefined4           at 0x0061a1c7  size=4
+    s_fog_0061a1c6+2                         undefined4           at 0x0061a1c8
   3 bytes overlap
-    DAT_0061a1c8                             undefined4           at 0x0061a1c8  size=4
-    DAT_0061a1c9                             undefined4           at 0x0061a1c9
+    s_fog_0061a1c6+2                         undefined4           at 0x0061a1c8  size=4
+    s_fog_0061a1c6+3                         undefined4           at 0x0061a1c9
   2 bytes overlap
-    DAT_0061a1c9                             undefined4           at 0x0061a1c9  size=4
+    s_fog_0061a1c6+3                         undefined4           at 0x0061a1c9  size=4
     s_rb_0061a1cb                            TerminatedCString    at 0x0061a1cb
   253 bytes overlap ~
     s_rb_0061a1cb                            TerminatedCString    at 0x0061a1cb  size=256
@@ -7239,15 +7227,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_MDL_0061a9cc                           TerminatedCString    at 0x0061a9cc
   255 bytes overlap ~
     s_MDL_0061a9cc                           TerminatedCString    at 0x0061a9cc  size=256
-    DAT_0061a9cd                             undefined4           at 0x0061a9cd
+    s_MDL_0061a9cc+1                         undefined4           at 0x0061a9cd
   3 bytes overlap
-    DAT_0061a9cd                             undefined4           at 0x0061a9cd  size=4
-    DAT_0061a9ce                             undefined4           at 0x0061a9ce
+    s_MDL_0061a9cc+1                         undefined4           at 0x0061a9cd  size=4
+    s_MDL_0061a9cc+2                         undefined4           at 0x0061a9ce
   3 bytes overlap
-    DAT_0061a9ce                             undefined4           at 0x0061a9ce  size=4
-    DAT_0061a9cf                             undefined4           at 0x0061a9cf
+    s_MDL_0061a9cc+2                         undefined4           at 0x0061a9ce  size=4
+    s_MDL_0061a9cc+3                         undefined4           at 0x0061a9cf
   2 bytes overlap
-    DAT_0061a9cf                             undefined4           at 0x0061a9cf  size=4
+    s_MDL_0061a9cc+3                         undefined4           at 0x0061a9cf  size=4
     s_Loading_model_0061a9d1                 TerminatedCString    at 0x0061a9d1
   239 bytes overlap ~
     s_Loading_model_0061a9d1                 TerminatedCString    at 0x0061a9d1  size=256
@@ -7320,15 +7308,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_BODY_0061aaea                          TerminatedCString    at 0x0061aaea
   255 bytes overlap ~
     s_BODY_0061aaea                          TerminatedCString    at 0x0061aaea  size=256
-    DAT_0061aaeb                             undefined4           at 0x0061aaeb
+    s_ODY_0061aaea+1                         undefined4           at 0x0061aaeb
   3 bytes overlap
-    DAT_0061aaeb                             undefined4           at 0x0061aaeb  size=4
-    DAT_0061aaec                             undefined4           at 0x0061aaec
+    s_ODY_0061aaea+1                         undefined4           at 0x0061aaeb  size=4
+    s_DY_0061aaea+2                          undefined4           at 0x0061aaec
   3 bytes overlap
-    DAT_0061aaec                             undefined4           at 0x0061aaec  size=4
-    DAT_0061aaed                             undefined4           at 0x0061aaed
+    s_DY_0061aaea+2                          undefined4           at 0x0061aaec  size=4
+    s_Y_0061aaea+3                           undefined4           at 0x0061aaed
   2 bytes overlap
-    DAT_0061aaed                             undefined4           at 0x0061aaed  size=4
+    s_Y_0061aaea+3                           undefined4           at 0x0061aaed  size=4
     s_d_0061aaef                             TerminatedCString    at 0x0061aaef
   252 bytes overlap ~
     s_d_0061aaef                             TerminatedCString    at 0x0061aaef  size=256
@@ -7386,12 +7374,12 @@ OVERLAPS (13386) - next global starts inside previous
     s_raw_0061ac73                           TerminatedCString    at 0x0061ac73
   255 bytes overlap ~
     s_raw_0061ac73                           TerminatedCString    at 0x0061ac73  size=256
-    DAT_0061ac74                             undefined4           at 0x0061ac74
+    s_raw_0061ac73+1                         undefined4           at 0x0061ac74
   3 bytes overlap
-    DAT_0061ac74                             undefined4           at 0x0061ac74  size=4
-    DAT_0061ac75                             undefined4           at 0x0061ac75
+    s_raw_0061ac73+1                         undefined4           at 0x0061ac74  size=4
+    s_raw_0061ac73+2                         undefined4           at 0x0061ac75
   3 bytes overlap
-    DAT_0061ac75                             undefined4           at 0x0061ac75  size=4
+    s_raw_0061ac73+2                         undefined4           at 0x0061ac75  size=4
     s_w_0061ac76                             undefined4           at 0x0061ac76
   2 bytes overlap
     s_w_0061ac76                             undefined4           at 0x0061ac76  size=4
@@ -7413,12 +7401,12 @@ OVERLAPS (13386) - next global starts inside previous
     s_TGA_0061acdf                           TerminatedCString    at 0x0061acdf
   255 bytes overlap ~
     s_TGA_0061acdf                           TerminatedCString    at 0x0061acdf  size=256
-    DAT_0061ace0                             undefined4           at 0x0061ace0
+    s_TGA_0061acdf+1                         undefined4           at 0x0061ace0
   3 bytes overlap
-    DAT_0061ace0                             undefined4           at 0x0061ace0  size=4
-    DAT_0061ace1                             undefined4           at 0x0061ace1
+    s_TGA_0061acdf+1                         undefined4           at 0x0061ace0  size=4
+    s_TGA_0061acdf+2                         undefined4           at 0x0061ace1
   3 bytes overlap
-    DAT_0061ace1                             undefined4           at 0x0061ace1  size=4
+    s_TGA_0061acdf+2                         undefined4           at 0x0061ace1  size=4
     s_A_0061ace2                             undefined4           at 0x0061ace2
   2 bytes overlap
     s_A_0061ace2                             undefined4           at 0x0061ace2  size=4
@@ -7443,15 +7431,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_MDL_0061ad96                           TerminatedCString    at 0x0061ad96
   255 bytes overlap ~
     s_MDL_0061ad96                           TerminatedCString    at 0x0061ad96  size=256
-    DAT_0061ad97                             undefined4           at 0x0061ad97
+    s_MDL_0061ad96+1                         undefined4           at 0x0061ad97
   3 bytes overlap
-    DAT_0061ad97                             undefined4           at 0x0061ad97  size=4
-    DAT_0061ad98                             undefined4           at 0x0061ad98
+    s_MDL_0061ad96+1                         undefined4           at 0x0061ad97  size=4
+    s_MDL_0061ad96+2                         undefined4           at 0x0061ad98
   3 bytes overlap
-    DAT_0061ad98                             undefined4           at 0x0061ad98  size=4
-    DAT_0061ad99                             undefined4           at 0x0061ad99
+    s_MDL_0061ad96+2                         undefined4           at 0x0061ad98  size=4
+    s_MDL_0061ad96+3                         undefined4           at 0x0061ad99
   2 bytes overlap
-    DAT_0061ad99                             undefined4           at 0x0061ad99  size=4
+    s_MDL_0061ad96+3                         undefined4           at 0x0061ad99  size=4
     s_wt_0061ad9b                            TerminatedCString    at 0x0061ad9b
   253 bytes overlap ~
     s_wt_0061ad9b                            TerminatedCString    at 0x0061ad9b  size=256
@@ -7578,27 +7566,27 @@ OVERLAPS (13386) - next global starts inside previous
     s_ASM_0061af5a                           TerminatedCString    at 0x0061af5a
   255 bytes overlap ~
     s_ASM_0061af5a                           TerminatedCString    at 0x0061af5a  size=256
-    DAT_0061af5b                             undefined4           at 0x0061af5b
+    s_ASM_0061af5a+1                         undefined4           at 0x0061af5b
   3 bytes overlap
-    DAT_0061af5b                             undefined4           at 0x0061af5b  size=4
-    DAT_0061af5c                             undefined4           at 0x0061af5c
+    s_ASM_0061af5a+1                         undefined4           at 0x0061af5b  size=4
+    s_ASM_0061af5a+2                         undefined4           at 0x0061af5c
   3 bytes overlap
-    DAT_0061af5c                             undefined4           at 0x0061af5c  size=4
-    DAT_0061af5d                             undefined4           at 0x0061af5d
+    s_ASM_0061af5a+2                         undefined4           at 0x0061af5c  size=4
+    s_ASM_0061af5a+3                         undefined4           at 0x0061af5d
   2 bytes overlap
-    DAT_0061af5d                             undefined4           at 0x0061af5d  size=4
+    s_ASM_0061af5a+3                         undefined4           at 0x0061af5d  size=4
     s_BIN_0061af5f                           TerminatedCString    at 0x0061af5f
   255 bytes overlap ~
     s_BIN_0061af5f                           TerminatedCString    at 0x0061af5f  size=256
-    DAT_0061af60                             undefined4           at 0x0061af60
+    s_BIN_0061af5f+1                         undefined4           at 0x0061af60
   3 bytes overlap
-    DAT_0061af60                             undefined4           at 0x0061af60  size=4
-    DAT_0061af61                             undefined4           at 0x0061af61
+    s_BIN_0061af5f+1                         undefined4           at 0x0061af60  size=4
+    s_BIN_0061af5f+2                         undefined4           at 0x0061af61
   3 bytes overlap
-    DAT_0061af61                             undefined4           at 0x0061af61  size=4
-    DAT_0061af62                             undefined4           at 0x0061af62
+    s_BIN_0061af5f+2                         undefined4           at 0x0061af61  size=4
+    s_BIN_0061af5f+3                         undefined4           at 0x0061af62
   2 bytes overlap
-    DAT_0061af62                             undefined4           at 0x0061af62  size=4
+    s_BIN_0061af5f+3                         undefined4           at 0x0061af62  size=4
     s_N_No_reset_depth_0061af64              TerminatedCString    at 0x0061af64
   238 bytes overlap ~
     s_N_No_reset_depth_0061af64              TerminatedCString    at 0x0061af64  size=256
@@ -8838,9 +8826,9 @@ OVERLAPS (13386) - next global starts inside previous
     s_anon_0061d194                          TerminatedCString    at 0x0061d194
   255 bytes overlap ~
     s_anon_0061d194                          TerminatedCString    at 0x0061d194  size=256
-    DAT_0061d195                             undefined4           at 0x0061d195
+    s_anon_0061d194+1                        undefined4           at 0x0061d195
   3 bytes overlap
-    DAT_0061d195                             undefined4           at 0x0061d195  size=4
+    s_anon_0061d194+1                        undefined4           at 0x0061d195  size=4
     s_art_0061d196                           TerminatedCString    at 0x0061d196
   255 bytes overlap ~
     s_art_0061d196                           TerminatedCString    at 0x0061d196  size=256
@@ -8862,54 +8850,54 @@ OVERLAPS (13386) - next global starts inside previous
     s_MDL_0061d229                           TerminatedCString    at 0x0061d229
   255 bytes overlap ~
     s_MDL_0061d229                           TerminatedCString    at 0x0061d229  size=256
-    DAT_0061d22a                             undefined4           at 0x0061d22a
+    s_MDL_0061d229+1                         undefined4           at 0x0061d22a
   3 bytes overlap
-    DAT_0061d22a                             undefined4           at 0x0061d22a  size=4
-    DAT_0061d22b                             undefined4           at 0x0061d22b
+    s_MDL_0061d229+1                         undefined4           at 0x0061d22a  size=4
+    s_MDL_0061d229+2                         undefined4           at 0x0061d22b
   3 bytes overlap
-    DAT_0061d22b                             undefined4           at 0x0061d22b  size=4
-    DAT_0061d22c                             undefined4           at 0x0061d22c
+    s_MDL_0061d229+2                         undefined4           at 0x0061d22b  size=4
+    s_MDL_0061d229+3                         undefined4           at 0x0061d22c
   2 bytes overlap
-    DAT_0061d22c                             undefined4           at 0x0061d22c  size=4
+    s_MDL_0061d229+3                         undefined4           at 0x0061d22c  size=4
     s_Model_name_to_save_s_0061d22e          TerminatedCString    at 0x0061d22e
   229 bytes overlap ~
     s_Model_name_to_save_s_0061d22e          TerminatedCString    at 0x0061d22e  size=256
     s_MDL_0061d249                           TerminatedCString    at 0x0061d249
   255 bytes overlap ~
     s_MDL_0061d249                           TerminatedCString    at 0x0061d249  size=256
-    DAT_0061d24a                             undefined4           at 0x0061d24a
+    s_MDL_0061d249+1                         undefined4           at 0x0061d24a
   3 bytes overlap
-    DAT_0061d24a                             undefined4           at 0x0061d24a  size=4
-    DAT_0061d24b                             undefined4           at 0x0061d24b
+    s_MDL_0061d249+1                         undefined4           at 0x0061d24a  size=4
+    s_MDL_0061d249+2                         undefined4           at 0x0061d24b
   3 bytes overlap
-    DAT_0061d24b                             undefined4           at 0x0061d24b  size=4
-    DAT_0061d24c                             undefined4           at 0x0061d24c
+    s_MDL_0061d249+2                         undefined4           at 0x0061d24b  size=4
+    s_MDL_0061d249+3                         undefined4           at 0x0061d24c
   2 bytes overlap
-    DAT_0061d24c                             undefined4           at 0x0061d24c  size=4
+    s_MDL_0061d249+3                         undefined4           at 0x0061d24c  size=4
     s_MDL_0061d24e                           TerminatedCString    at 0x0061d24e
   255 bytes overlap ~
     s_MDL_0061d24e                           TerminatedCString    at 0x0061d24e  size=256
-    DAT_0061d24f                             undefined4           at 0x0061d24f
+    s_MDL_0061d24e+1                         undefined4           at 0x0061d24f
   3 bytes overlap
-    DAT_0061d24f                             undefined4           at 0x0061d24f  size=4
-    DAT_0061d250                             undefined4           at 0x0061d250
+    s_MDL_0061d24e+1                         undefined4           at 0x0061d24f  size=4
+    s_MDL_0061d24e+2                         undefined4           at 0x0061d250
   3 bytes overlap
-    DAT_0061d250                             undefined4           at 0x0061d250  size=4
-    DAT_0061d251                             undefined4           at 0x0061d251
+    s_MDL_0061d24e+2                         undefined4           at 0x0061d250  size=4
+    s_MDL_0061d24e+3                         undefined4           at 0x0061d251
   2 bytes overlap
-    DAT_0061d251                             undefined4           at 0x0061d251  size=4
+    s_MDL_0061d24e+3                         undefined4           at 0x0061d251  size=4
     s_TGA_0061d253                           TerminatedCString    at 0x0061d253
   255 bytes overlap ~
     s_TGA_0061d253                           TerminatedCString    at 0x0061d253  size=256
-    DAT_0061d254                             undefined4           at 0x0061d254
+    s_TGA_0061d253+1                         undefined4           at 0x0061d254
   3 bytes overlap
-    DAT_0061d254                             undefined4           at 0x0061d254  size=4
-    DAT_0061d255                             undefined4           at 0x0061d255
+    s_TGA_0061d253+1                         undefined4           at 0x0061d254  size=4
+    s_TGA_0061d253+2                         undefined4           at 0x0061d255
   3 bytes overlap
-    DAT_0061d255                             undefined4           at 0x0061d255  size=4
-    DAT_0061d256                             undefined4           at 0x0061d256
+    s_TGA_0061d253+2                         undefined4           at 0x0061d255  size=4
+    s_TGA_0061d253+3                         undefined4           at 0x0061d256
   2 bytes overlap
-    DAT_0061d256                             undefined4           at 0x0061d256  size=4
+    s_TGA_0061d253+3                         undefined4           at 0x0061d256  size=4
     s_Too_many_textures_to_cra_0061d258      TerminatedCString    at 0x0061d258
   219 bytes overlap ~
     s_Too_many_textures_to_cra_0061d258      TerminatedCString    at 0x0061d258  size=256
@@ -9177,18 +9165,18 @@ OVERLAPS (13386) - next global starts inside previous
     s_these_maps_acceptable?_[y]_:_0061da18  undefined4           at 0x0061da18
   255 bytes overlap ~
     s_s_0061da37                             TerminatedCString    at 0x0061da37  size=256
-    DAT_0061da38                             undefined4           at 0x0061da38
+    s__0061da37+1                            undefined4           at 0x0061da38
   3 bytes overlap
-    DAT_0061da38                             undefined4           at 0x0061da38  size=4
+    s__0061da37+1                            undefined4           at 0x0061da38  size=4
     s_Map_s_not_created_Hit_a__0061da39      TerminatedCString    at 0x0061da39
   223 bytes overlap ~
     s_Map_s_not_created_Hit_a__0061da39      TerminatedCString    at 0x0061da39  size=256
     s_s_0061da5a                             TerminatedCString    at 0x0061da5a
   255 bytes overlap ~
     s_s_0061da5a                             TerminatedCString    at 0x0061da5a  size=256
-    DAT_0061da5b                             undefined4           at 0x0061da5b
+    s__0061da5a+1                            undefined4           at 0x0061da5b
   3 bytes overlap
-    DAT_0061da5b                             undefined4           at 0x0061da5b  size=4
+    s__0061da5a+1                            undefined4           at 0x0061da5b  size=4
     s_Map_s_created_Hit_a_key_0061da5c       TerminatedCString    at 0x0061da5c
   227 bytes overlap ~
     s_Map_s_created_Hit_a_key_0061da5c       TerminatedCString    at 0x0061da5c  size=256
@@ -9207,27 +9195,27 @@ OVERLAPS (13386) - next global starts inside previous
     s_RAW_0061daef                           TerminatedCString    at 0x0061daef
   255 bytes overlap ~
     s_RAW_0061daef                           TerminatedCString    at 0x0061daef  size=256
-    DAT_0061daf0                             undefined4           at 0x0061daf0
+    s_RAW_0061daef+1                         undefined4           at 0x0061daf0
   3 bytes overlap
-    DAT_0061daf0                             undefined4           at 0x0061daf0  size=4
-    DAT_0061daf1                             undefined4           at 0x0061daf1
+    s_RAW_0061daef+1                         undefined4           at 0x0061daf0  size=4
+    s_RAW_0061daef+2                         undefined4           at 0x0061daf1
   3 bytes overlap
-    DAT_0061daf1                             undefined4           at 0x0061daf1  size=4
-    DAT_0061daf2                             undefined4           at 0x0061daf2
+    s_RAW_0061daef+2                         undefined4           at 0x0061daf1  size=4
+    s_RAW_0061daef+3                         undefined4           at 0x0061daf2
   2 bytes overlap
-    DAT_0061daf2                             undefined4           at 0x0061daf2  size=4
+    s_RAW_0061daef+3                         undefined4           at 0x0061daf2  size=4
     s_RAW_0061daf4                           TerminatedCString    at 0x0061daf4
   255 bytes overlap ~
     s_RAW_0061daf4                           TerminatedCString    at 0x0061daf4  size=256
-    DAT_0061daf5                             undefined4           at 0x0061daf5
+    s_RAW_0061daf4+1                         undefined4           at 0x0061daf5
   3 bytes overlap
-    DAT_0061daf5                             undefined4           at 0x0061daf5  size=4
-    DAT_0061daf6                             undefined4           at 0x0061daf6
+    s_RAW_0061daf4+1                         undefined4           at 0x0061daf5  size=4
+    s_RAW_0061daf4+2                         undefined4           at 0x0061daf6
   3 bytes overlap
-    DAT_0061daf6                             undefined4           at 0x0061daf6  size=4
-    DAT_0061daf7                             undefined4           at 0x0061daf7
+    s_RAW_0061daf4+2                         undefined4           at 0x0061daf6  size=4
+    s_RAW_0061daf4+3                         undefined4           at 0x0061daf7
   2 bytes overlap
-    DAT_0061daf7                             undefined4           at 0x0061daf7  size=4
+    s_RAW_0061daf4+3                         undefined4           at 0x0061daf7  size=4
     s_s_X_RAW_0061daf9                       TerminatedCString    at 0x0061daf9
   246 bytes overlap ~
     s_s_X_RAW_0061daf9                       TerminatedCString    at 0x0061daf9  size=256
@@ -9282,15 +9270,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_ACT_0061dc3b                           TerminatedCString    at 0x0061dc3b
   255 bytes overlap ~
     s_ACT_0061dc3b                           TerminatedCString    at 0x0061dc3b  size=256
-    DAT_0061dc3c                             undefined4           at 0x0061dc3c
+    s_ACT_0061dc3b+1                         undefined4           at 0x0061dc3c
   3 bytes overlap
-    DAT_0061dc3c                             undefined4           at 0x0061dc3c  size=4
-    DAT_0061dc3d                             undefined4           at 0x0061dc3d
+    s_ACT_0061dc3b+1                         undefined4           at 0x0061dc3c  size=4
+    s_ACT_0061dc3b+2                         undefined4           at 0x0061dc3d
   3 bytes overlap
-    DAT_0061dc3d                             undefined4           at 0x0061dc3d  size=4
-    DAT_0061dc3e                             undefined4           at 0x0061dc3e
+    s_ACT_0061dc3b+2                         undefined4           at 0x0061dc3d  size=4
+    s_ACT_0061dc3b+3                         undefined4           at 0x0061dc3e
   2 bytes overlap
-    DAT_0061dc3e                             undefined4           at 0x0061dc3e  size=4
+    s_ACT_0061dc3b+3                         undefined4           at 0x0061dc3e  size=4
     s_wb_0061dc40                            TerminatedCString    at 0x0061dc40
   253 bytes overlap ~
     s_wb_0061dc40                            TerminatedCString    at 0x0061dc40  size=256
@@ -9312,15 +9300,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_OPA_0061dcad                           TerminatedCString    at 0x0061dcad
   255 bytes overlap ~
     s_OPA_0061dcad                           TerminatedCString    at 0x0061dcad  size=256
-    DAT_0061dcae                             undefined4           at 0x0061dcae
+    s_OPA_0061dcad+1                         undefined4           at 0x0061dcae
   3 bytes overlap
-    DAT_0061dcae                             undefined4           at 0x0061dcae  size=4
-    DAT_0061dcaf                             undefined4           at 0x0061dcaf
+    s_OPA_0061dcad+1                         undefined4           at 0x0061dcae  size=4
+    s_OPA_0061dcad+2                         undefined4           at 0x0061dcaf
   3 bytes overlap
-    DAT_0061dcaf                             undefined4           at 0x0061dcaf  size=4
-    DAT_0061dcb0                             undefined4           at 0x0061dcb0
+    s_OPA_0061dcad+2                         undefined4           at 0x0061dcaf  size=4
+    s_OPA_0061dcad+3                         undefined4           at 0x0061dcb0
   2 bytes overlap
-    DAT_0061dcb0                             undefined4           at 0x0061dcb0  size=4
+    s_OPA_0061dcad+3                         undefined4           at 0x0061dcb0  size=4
     s_wb_0061dcb2                            TerminatedCString    at 0x0061dcb2
   253 bytes overlap ~
     s_wb_0061dcb2                            TerminatedCString    at 0x0061dcb2  size=256
@@ -9423,24 +9411,24 @@ OVERLAPS (13386) - next global starts inside previous
     s_ACT_0061dfae                           TerminatedCString    at 0x0061dfae
   255 bytes overlap ~
     s_ACT_0061dfae                           TerminatedCString    at 0x0061dfae  size=256
-    DAT_0061dfaf                             undefined4           at 0x0061dfaf
+    s_ACT_0061dfae+1                         undefined4           at 0x0061dfaf
   3 bytes overlap
-    DAT_0061dfaf                             undefined4           at 0x0061dfaf  size=4
-    DAT_0061dfb0                             undefined4           at 0x0061dfb0
+    s_ACT_0061dfae+1                         undefined4           at 0x0061dfaf  size=4
+    s_ACT_0061dfae+2                         undefined4           at 0x0061dfb0
   3 bytes overlap
-    DAT_0061dfb0                             undefined4           at 0x0061dfb0  size=4
+    s_ACT_0061dfae+2                         undefined4           at 0x0061dfb0  size=4
     s_ACT_0061dfae+3                         undefined4           at 0x0061dfb1
   2 bytes overlap
     s_ACT_0061dfae+3                         undefined4           at 0x0061dfb1  size=4
     s_ACT_0061dfb3                           TerminatedCString    at 0x0061dfb3
   255 bytes overlap ~
     s_ACT_0061dfb3                           TerminatedCString    at 0x0061dfb3  size=256
-    DAT_0061dfb4                             undefined4           at 0x0061dfb4
+    s_ACT_0061dfb3+1                         undefined4           at 0x0061dfb4
   3 bytes overlap
-    DAT_0061dfb4                             undefined4           at 0x0061dfb4  size=4
-    DAT_0061dfb5                             undefined4           at 0x0061dfb5
+    s_ACT_0061dfb3+1                         undefined4           at 0x0061dfb4  size=4
+    s_ACT_0061dfb3+2                         undefined4           at 0x0061dfb5
   3 bytes overlap
-    DAT_0061dfb5                             undefined4           at 0x0061dfb5  size=4
+    s_ACT_0061dfb3+2                         undefined4           at 0x0061dfb5  size=4
     s_ACT_0061dfb3+3                         undefined4           at 0x0061dfb6
   2 bytes overlap
     s_ACT_0061dfb3+3                         undefined4           at 0x0061dfb6  size=4
@@ -9456,24 +9444,24 @@ OVERLAPS (13386) - next global starts inside previous
     s_ACT_0061dff1                           TerminatedCString    at 0x0061dff1
   255 bytes overlap ~
     s_ACT_0061dff1                           TerminatedCString    at 0x0061dff1  size=256
-    DAT_0061dff2                             undefined4           at 0x0061dff2
+    s_ACT_0061dff1+1                         undefined4           at 0x0061dff2
   3 bytes overlap
-    DAT_0061dff2                             undefined4           at 0x0061dff2  size=4
-    DAT_0061dff3                             undefined4           at 0x0061dff3
+    s_ACT_0061dff1+1                         undefined4           at 0x0061dff2  size=4
+    s_ACT_0061dff1+2                         undefined4           at 0x0061dff3
   3 bytes overlap
-    DAT_0061dff3                             undefined4           at 0x0061dff3  size=4
+    s_ACT_0061dff1+2                         undefined4           at 0x0061dff3  size=4
     s_ACT_0061dff1+3                         undefined4           at 0x0061dff4
   2 bytes overlap
     s_ACT_0061dff1+3                         undefined4           at 0x0061dff4  size=4
     s_ACT_0061dff6                           TerminatedCString    at 0x0061dff6
   255 bytes overlap ~
     s_ACT_0061dff6                           TerminatedCString    at 0x0061dff6  size=256
-    DAT_0061dff7                             undefined4           at 0x0061dff7
+    s_ACT_0061dff6+1                         undefined4           at 0x0061dff7
   3 bytes overlap
-    DAT_0061dff7                             undefined4           at 0x0061dff7  size=4
-    DAT_0061dff8                             undefined4           at 0x0061dff8
+    s_ACT_0061dff6+1                         undefined4           at 0x0061dff7  size=4
+    s_ACT_0061dff6+2                         undefined4           at 0x0061dff8
   3 bytes overlap
-    DAT_0061dff8                             undefined4           at 0x0061dff8  size=4
+    s_ACT_0061dff6+2                         undefined4           at 0x0061dff8  size=4
     s_ACT_0061dff6+3                         undefined4           at 0x0061dff9
   2 bytes overlap
     s_ACT_0061dff6+3                         undefined4           at 0x0061dff9  size=4
@@ -10887,9 +10875,9 @@ OVERLAPS (13386) - next global starts inside previous
     s_kfm_006209bd                           TerminatedCString    at 0x006209bd
   255 bytes overlap ~
     s_kfm_006209bd                           TerminatedCString    at 0x006209bd  size=256
-    DAT_006209be                             undefined4           at 0x006209be
+    s_kfm_006209bd+1                         undefined4           at 0x006209be
   3 bytes overlap
-    DAT_006209be                             undefined4           at 0x006209be  size=4
+    s_kfm_006209bd+1                         undefined4           at 0x006209be  size=4
     s_fm_006209bf                            undefined4           at 0x006209bf
   3 bytes overlap
     s_fm_006209bf                            undefined4           at 0x006209bf  size=4
@@ -11211,15 +11199,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_true_0062124f                          TerminatedCString    at 0x0062124f
   255 bytes overlap ~
     s_true_0062124f                          TerminatedCString    at 0x0062124f  size=256
-    DAT_00621250                             undefined4           at 0x00621250
+    s_rue_0062124f+1                         undefined4           at 0x00621250
   3 bytes overlap
-    DAT_00621250                             undefined4           at 0x00621250  size=4
-    DAT_00621251                             undefined4           at 0x00621251
+    s_rue_0062124f+1                         undefined4           at 0x00621250  size=4
+    s_ue_0062124f+2                          undefined4           at 0x00621251
   3 bytes overlap
-    DAT_00621251                             undefined4           at 0x00621251  size=4
-    DAT_00621252                             undefined4           at 0x00621252
+    s_ue_0062124f+2                          undefined4           at 0x00621251  size=4
+    s_e_0062124f+3                           undefined4           at 0x00621252
   2 bytes overlap
-    DAT_00621252                             undefined4           at 0x00621252  size=4
+    s_e_0062124f+3                           undefined4           at 0x00621252  size=4
     s_blockVirtualDirectorFlag_00621254      TerminatedCString    at 0x00621254
   231 bytes overlap ~
     s_blockVirtualDirectorFlag_00621254      TerminatedCString    at 0x00621254  size=256
@@ -11256,15 +11244,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_losed_00621341                         undefined4           at 0x00621341
   255 bytes overlap ~
     s_Open_00621347                          TerminatedCString    at 0x00621347  size=256
-    DAT_00621348                             undefined4           at 0x00621348
+    s_pen_00621347+1                         undefined4           at 0x00621348
   3 bytes overlap
-    DAT_00621348                             undefined4           at 0x00621348  size=4
-    DAT_00621349                             undefined4           at 0x00621349
+    s_pen_00621347+1                         undefined4           at 0x00621348  size=4
+    s_en_00621347+2                          undefined4           at 0x00621349
   3 bytes overlap
-    DAT_00621349                             undefined4           at 0x00621349  size=4
-    DAT_0062134a                             undefined4           at 0x0062134a
+    s_en_00621347+2                          undefined4           at 0x00621349  size=4
+    s_n_00621347+3                           undefined4           at 0x0062134a
   2 bytes overlap
-    DAT_0062134a                             undefined4           at 0x0062134a  size=4
+    s_n_00621347+3                           undefined4           at 0x0062134a  size=4
     s_Unknown_0062134c                       TerminatedCString    at 0x0062134c
   255 bytes overlap ~
     s_Unknown_0062134c                       TerminatedCString    at 0x0062134c  size=256
@@ -11373,9 +11361,9 @@ OVERLAPS (13386) - next global starts inside previous
     s_anon_00621654                          TerminatedCString    at 0x00621654
   255 bytes overlap ~
     s_anon_00621654                          TerminatedCString    at 0x00621654  size=256
-    DAT_00621655                             undefined4           at 0x00621655
+    s_anon_00621654+1                        undefined4           at 0x00621655
   3 bytes overlap
-    DAT_00621655                             undefined4           at 0x00621655  size=4
+    s_anon_00621654+1                        undefined4           at 0x00621655  size=4
     s_core_dpart_cpp_00621656                TerminatedCString    at 0x00621656
   255 bytes overlap ~
     s_core_dpart_cpp_00621656                TerminatedCString    at 0x00621656  size=256
@@ -11922,15 +11910,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_Lava_006222c1                          TerminatedCString    at 0x006222c1
   255 bytes overlap ~
     s_Lava_006222c1                          TerminatedCString    at 0x006222c1  size=256
-    DAT_006222c2                             undefined4           at 0x006222c2
+    s_ava_006222c1+1                         undefined4           at 0x006222c2
   3 bytes overlap
-    DAT_006222c2                             undefined4           at 0x006222c2  size=4
-    DAT_006222c3                             undefined4           at 0x006222c3
+    s_ava_006222c1+1                         undefined4           at 0x006222c2  size=4
+    s_va_006222c1+2                          undefined4           at 0x006222c3
   3 bytes overlap
-    DAT_006222c3                             undefined4           at 0x006222c3  size=4
-    DAT_006222c4                             undefined4           at 0x006222c4
+    s_va_006222c1+2                          undefined4           at 0x006222c3  size=4
+    s_a_006222c1+3                           undefined4           at 0x006222c4
   2 bytes overlap
-    DAT_006222c4                             undefined4           at 0x006222c4  size=4
+    s_a_006222c1+3                           undefined4           at 0x006222c4  size=4
     s_Stalagwhatever_006222c6                TerminatedCString    at 0x006222c6
   255 bytes overlap ~
     s_Stalagwhatever_006222c6                TerminatedCString    at 0x006222c6  size=256
@@ -12435,15 +12423,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_anon_006231af                          TerminatedCString    at 0x006231af
   255 bytes overlap ~
     s_anon_006231af                          TerminatedCString    at 0x006231af  size=256
-    DAT_006231b0                             undefined4           at 0x006231b0
+    s_anon_006231af+1                        undefined4           at 0x006231b0
   3 bytes overlap
-    DAT_006231b0                             undefined4           at 0x006231b0  size=4
+    s_anon_006231af+1                        undefined4           at 0x006231b0  size=4
     s_d_006231b1                             TerminatedCString    at 0x006231b1
   255 bytes overlap ~
     s_d_006231b1                             TerminatedCString    at 0x006231b1  size=256
-    DAT_006231b2                             undefined4           at 0x006231b2
+    s_d_006231b1+1                           undefined4           at 0x006231b2
   2 bytes overlap
-    DAT_006231b2                             undefined4           at 0x006231b2  size=4
+    s_d_006231b1+1                           undefined4           at 0x006231b2  size=4
     s_d_006231b4                             TerminatedCString    at 0x006231b4
   253 bytes overlap ~
     s_d_006231b4                             TerminatedCString    at 0x006231b4  size=256
@@ -12558,9 +12546,9 @@ OVERLAPS (13386) - next global starts inside previous
     g_AxisLabelChars                         TerminatedCString    at 0x006235ab
   255 bytes overlap ~
     g_AxisLabelChars                         TerminatedCString    at 0x006235ab  size=256
-    DAT_006235ac                             undefined4           at 0x006235ac
+    g_AxisLabelChars+1                       undefined4           at 0x006235ac
   1 bytes overlap
-    DAT_006235ac                             undefined4           at 0x006235ac  size=4
+    g_AxisLabelChars+1                       undefined4           at 0x006235ac  size=4
     s_c_006235af                             TerminatedCString    at 0x006235af
   249 bytes overlap ~
     s_c_006235af                             TerminatedCString    at 0x006235af  size=256
@@ -13020,12 +13008,12 @@ OVERLAPS (13386) - next global starts inside previous
     s_ene_00624309                           TerminatedCString    at 0x00624309
   255 bytes overlap ~
     s_ene_00624309                           TerminatedCString    at 0x00624309  size=256
-    DAT_0062430a                             undefined4           at 0x0062430a
+    s_ne_00624309+1                          undefined4           at 0x0062430a
   3 bytes overlap
-    DAT_0062430a                             undefined4           at 0x0062430a  size=4
-    DAT_0062430b                             undefined4           at 0x0062430b
+    s_ne_00624309+1                          undefined4           at 0x0062430a  size=4
+    s_e_00624309+2                           undefined4           at 0x0062430b
   3 bytes overlap
-    DAT_0062430b                             undefined4           at 0x0062430b  size=4
+    s_e_00624309+2                           undefined4           at 0x0062430b  size=4
     s__00624309+3                            undefined4           at 0x0062430c
   3 bytes overlap
     s__00624309+3                            undefined4           at 0x0062430c  size=4
@@ -15645,9 +15633,9 @@ OVERLAPS (13386) - next global starts inside previous
     s_DefaultWildcard_0062920f               TerminatedCString    at 0x0062920f
   255 bytes overlap ~
     s_DefaultWildcard_0062920f               TerminatedCString    at 0x0062920f  size=256
-    DAT_00629210                             undefined4           at 0x00629210
+    s_DefaultWildcard_0062920f+1             undefined4           at 0x00629210
   3 bytes overlap
-    DAT_00629210                             undefined4           at 0x00629210  size=4
+    s_DefaultWildcard_0062920f+1             undefined4           at 0x00629210  size=4
     s_Enter_filename_wildcard_00629211       TerminatedCString    at 0x00629211
   232 bytes overlap ~
     s_Enter_filename_wildcard_00629211       TerminatedCString    at 0x00629211  size=256
@@ -15810,15 +15798,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_file_00629644                          TerminatedCString    at 0x00629644
   255 bytes overlap ~
     s_file_00629644                          TerminatedCString    at 0x00629644  size=256
-    DAT_00629645                             undefined4           at 0x00629645
+    s_ile_00629644+1                         undefined4           at 0x00629645
   3 bytes overlap
-    DAT_00629645                             undefined4           at 0x00629645  size=4
-    DAT_00629646                             undefined4           at 0x00629646
+    s_ile_00629644+1                         undefined4           at 0x00629645  size=4
+    s_le_00629644+2                          undefined4           at 0x00629646
   3 bytes overlap
-    DAT_00629646                             undefined4           at 0x00629646  size=4
-    DAT_00629647                             undefined4           at 0x00629647
+    s_le_00629644+2                          undefined4           at 0x00629646  size=4
+    s_e_00629644+3                           undefined4           at 0x00629647
   2 bytes overlap
-    DAT_00629647                             undefined4           at 0x00629647  size=4
+    s_e_00629644+3                           undefined4           at 0x00629647  size=4
     s_sounds_00629649                        TerminatedCString    at 0x00629649
   249 bytes overlap ~
     s_sounds_00629649                        TerminatedCString    at 0x00629649  size=256
@@ -15840,15 +15828,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_scr_00629672                           TerminatedCString    at 0x00629672
   255 bytes overlap ~
     s_scr_00629672                           TerminatedCString    at 0x00629672  size=256
-    DAT_00629673                             undefined4           at 0x00629673
+    s_scr_00629672+1                         undefined4           at 0x00629673
   3 bytes overlap
-    DAT_00629673                             undefined4           at 0x00629673  size=4
-    DAT_00629674                             undefined4           at 0x00629674
+    s_scr_00629672+1                         undefined4           at 0x00629673  size=4
+    s_scr_00629672+2                         undefined4           at 0x00629674
   3 bytes overlap
-    DAT_00629674                             undefined4           at 0x00629674  size=4
-    DAT_00629675                             undefined4           at 0x00629675
+    s_scr_00629672+2                         undefined4           at 0x00629674  size=4
+    s_scr_00629672+3                         undefined4           at 0x00629675
   2 bytes overlap
-    DAT_00629675                             undefined4           at 0x00629675  size=4
+    s_scr_00629672+3                         undefined4           at 0x00629675  size=4
     s_world_00629677                         TerminatedCString    at 0x00629677
   250 bytes overlap ~
     s_world_00629677                         TerminatedCString    at 0x00629677  size=256
@@ -15858,15 +15846,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_txt_00629687                           TerminatedCString    at 0x00629687
   255 bytes overlap ~
     s_txt_00629687                           TerminatedCString    at 0x00629687  size=256
-    DAT_00629688                             undefined4           at 0x00629688
+    s_txt_00629687+1                         undefined4           at 0x00629688
   3 bytes overlap
-    DAT_00629688                             undefined4           at 0x00629688  size=4
-    DAT_00629689                             undefined4           at 0x00629689
+    s_txt_00629687+1                         undefined4           at 0x00629688  size=4
+    s_txt_00629687+2                         undefined4           at 0x00629689
   3 bytes overlap
-    DAT_00629689                             undefined4           at 0x00629689  size=4
-    DAT_0062968a                             undefined4           at 0x0062968a
+    s_txt_00629687+2                         undefined4           at 0x00629689  size=4
+    s_txt_00629687+3                         undefined4           at 0x0062968a
   2 bytes overlap
-    DAT_0062968a                             undefined4           at 0x0062968a  size=4
+    s_txt_00629687+3                         undefined4           at 0x0062968a  size=4
     s_world_0062968c                         TerminatedCString    at 0x0062968c
   250 bytes overlap ~
     s_world_0062968c                         TerminatedCString    at 0x0062968c  size=256
@@ -17634,9 +17622,9 @@ OVERLAPS (13386) - next global starts inside previous
     s_LZW_0062cab8                           TerminatedCString    at 0x0062cab8
   255 bytes overlap ~
     s_LZW_0062cab8                           TerminatedCString    at 0x0062cab8  size=256
-    DAT_0062cab9                             undefined4           at 0x0062cab9
+    s_ZW_0062cab8+1                          undefined4           at 0x0062cab9
   1 bytes overlap
-    DAT_0062cab9                             undefined4           at 0x0062cab9  size=4
+    s_ZW_0062cab8+1                          undefined4           at 0x0062cab9  size=4
     s_core_game_cpp_0062cabc                 TerminatedCString    at 0x0062cabc
   239 bytes overlap ~
     s_core_game_cpp_0062cabc                 TerminatedCString    at 0x0062cabc  size=256
@@ -17937,15 +17925,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_act_0062d2df                           TerminatedCString    at 0x0062d2df
   255 bytes overlap ~
     s_act_0062d2df                           TerminatedCString    at 0x0062d2df  size=256
-    DAT_0062d2e0                             undefined4           at 0x0062d2e0
+    s_act_0062d2df+1                         undefined4           at 0x0062d2e0
   3 bytes overlap
-    DAT_0062d2e0                             undefined4           at 0x0062d2e0  size=4
-    DAT_0062d2e1                             undefined4           at 0x0062d2e1
+    s_act_0062d2df+1                         undefined4           at 0x0062d2e0  size=4
+    s_act_0062d2df+2                         undefined4           at 0x0062d2e1
   3 bytes overlap
-    DAT_0062d2e1                             undefined4           at 0x0062d2e1  size=4
-    DAT_0062d2e2                             undefined4           at 0x0062d2e2
+    s_act_0062d2df+2                         undefined4           at 0x0062d2e1  size=4
+    s_act_0062d2df+3                         undefined4           at 0x0062d2e2
   2 bytes overlap
-    DAT_0062d2e2                             undefined4           at 0x0062d2e2  size=4
+    s_act_0062d2df+3                         undefined4           at 0x0062d2e2  size=4
     s_rb_0062d2e4                            TerminatedCString    at 0x0062d2e4
   253 bytes overlap ~
     s_rb_0062d2e4                            TerminatedCString    at 0x0062d2e4  size=256
@@ -18051,12 +18039,12 @@ OVERLAPS (13386) - next global starts inside previous
     s_anon_0062d4fe                          TerminatedCString    at 0x0062d4fe
   255 bytes overlap ~
     s_anon_0062d4fe                          TerminatedCString    at 0x0062d4fe  size=256
-    DAT_0062d4ff                             undefined4           at 0x0062d4ff
+    s_anon_0062d4fe+1                        undefined4           at 0x0062d4ff
   3 bytes overlap
-    DAT_0062d4ff                             undefined4           at 0x0062d4ff  size=4
-    DAT_0062d500                             undefined4           at 0x0062d500
+    s_anon_0062d4fe+1                        undefined4           at 0x0062d4ff  size=4
+    s_anon_0062d4fe+2                        undefined4           at 0x0062d500
   3 bytes overlap
-    DAT_0062d500                             undefined4           at 0x0062d500  size=4
+    s_anon_0062d4fe+2                        undefined4           at 0x0062d500  size=4
     s_s_2d_2d_2d_2d_0062d501                 TerminatedCString    at 0x0062d501
   238 bytes overlap ~
     s_s_2d_2d_2d_2d_0062d501                 TerminatedCString    at 0x0062d501  size=256
@@ -18066,12 +18054,12 @@ OVERLAPS (13386) - next global starts inside previous
     s_anon_0062d51e                          TerminatedCString    at 0x0062d51e
   255 bytes overlap ~
     s_anon_0062d51e                          TerminatedCString    at 0x0062d51e  size=256
-    DAT_0062d51f                             undefined4           at 0x0062d51f
+    s_anon_0062d51e+1                        undefined4           at 0x0062d51f
   3 bytes overlap
-    DAT_0062d51f                             undefined4           at 0x0062d51f  size=4
-    DAT_0062d520                             undefined4           at 0x0062d520
+    s_anon_0062d51e+1                        undefined4           at 0x0062d51f  size=4
+    s_anon_0062d51e+2                        undefined4           at 0x0062d520
   3 bytes overlap
-    DAT_0062d520                             undefined4           at 0x0062d520  size=4
+    s_anon_0062d51e+2                        undefined4           at 0x0062d520  size=4
     s_d_0062d521                             TerminatedCString    at 0x0062d521
   244 bytes overlap ~
     s_d_0062d521                             TerminatedCString    at 0x0062d521  size=256
@@ -18087,12 +18075,12 @@ OVERLAPS (13386) - next global starts inside previous
     s_anon_0062d57b                          TerminatedCString    at 0x0062d57b
   255 bytes overlap ~
     s_anon_0062d57b                          TerminatedCString    at 0x0062d57b  size=256
-    DAT_0062d57c                             undefined4           at 0x0062d57c
+    s_anon_0062d57b+1                        undefined4           at 0x0062d57c
   3 bytes overlap
-    DAT_0062d57c                             undefined4           at 0x0062d57c  size=4
-    DAT_0062d57d                             undefined4           at 0x0062d57d
+    s_anon_0062d57b+1                        undefined4           at 0x0062d57c  size=4
+    s_anon_0062d57b+2                        undefined4           at 0x0062d57d
   3 bytes overlap
-    DAT_0062d57d                             undefined4           at 0x0062d57d  size=4
+    s_anon_0062d57b+2                        undefined4           at 0x0062d57d  size=4
     s_s_2d_2d_2d_2d_0062d57e                 TerminatedCString    at 0x0062d57e
   238 bytes overlap ~
     s_s_2d_2d_2d_2d_0062d57e                 TerminatedCString    at 0x0062d57e  size=256
@@ -18102,12 +18090,12 @@ OVERLAPS (13386) - next global starts inside previous
     s_anon_0062d5a1                          TerminatedCString    at 0x0062d5a1
   255 bytes overlap ~
     s_anon_0062d5a1                          TerminatedCString    at 0x0062d5a1  size=256
-    DAT_0062d5a2                             undefined4           at 0x0062d5a2
+    s_anon_0062d5a1+1                        undefined4           at 0x0062d5a2
   3 bytes overlap
-    DAT_0062d5a2                             undefined4           at 0x0062d5a2  size=4
-    DAT_0062d5a3                             undefined4           at 0x0062d5a3
+    s_anon_0062d5a1+1                        undefined4           at 0x0062d5a2  size=4
+    s_anon_0062d5a1+2                        undefined4           at 0x0062d5a3
   3 bytes overlap
-    DAT_0062d5a3                             undefined4           at 0x0062d5a3  size=4
+    s_anon_0062d5a1+2                        undefined4           at 0x0062d5a3  size=4
     s_d_0062d5a4                             TerminatedCString    at 0x0062d5a4
   247 bytes overlap ~
     s_d_0062d5a4                             TerminatedCString    at 0x0062d5a4  size=256
@@ -18693,15 +18681,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_ACT_0062e28a                           TerminatedCString    at 0x0062e28a
   255 bytes overlap ~
     s_ACT_0062e28a                           TerminatedCString    at 0x0062e28a  size=256
-    DAT_0062e28b                             undefined4           at 0x0062e28b
+    s_ACT_0062e28a+1                         undefined4           at 0x0062e28b
   3 bytes overlap
-    DAT_0062e28b                             undefined4           at 0x0062e28b  size=4
-    DAT_0062e28c                             undefined4           at 0x0062e28c
+    s_ACT_0062e28a+1                         undefined4           at 0x0062e28b  size=4
+    s_ACT_0062e28a+2                         undefined4           at 0x0062e28c
   3 bytes overlap
-    DAT_0062e28c                             undefined4           at 0x0062e28c  size=4
-    DAT_0062e28d                             undefined4           at 0x0062e28d
+    s_ACT_0062e28a+2                         undefined4           at 0x0062e28c  size=4
+    s_ACT_0062e28a+3                         undefined4           at 0x0062e28d
   2 bytes overlap
-    DAT_0062e28d                             undefined4           at 0x0062e28d  size=4
+    s_ACT_0062e28a+3                         undefined4           at 0x0062e28d  size=4
     s_ART_s_0062e28f                         TerminatedCString    at 0x0062e28f
   248 bytes overlap ~
     s_ART_s_0062e28f                         TerminatedCString    at 0x0062e28f  size=256
@@ -18717,15 +18705,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_ACT_0062e2d5                           TerminatedCString    at 0x0062e2d5
   255 bytes overlap ~
     s_ACT_0062e2d5                           TerminatedCString    at 0x0062e2d5  size=256
-    DAT_0062e2d6                             undefined4           at 0x0062e2d6
+    s_ACT_0062e2d5+1                         undefined4           at 0x0062e2d6
   3 bytes overlap
-    DAT_0062e2d6                             undefined4           at 0x0062e2d6  size=4
-    DAT_0062e2d7                             undefined4           at 0x0062e2d7
+    s_ACT_0062e2d5+1                         undefined4           at 0x0062e2d6  size=4
+    s_ACT_0062e2d5+2                         undefined4           at 0x0062e2d7
   3 bytes overlap
-    DAT_0062e2d7                             undefined4           at 0x0062e2d7  size=4
-    DAT_0062e2d8                             undefined4           at 0x0062e2d8
+    s_ACT_0062e2d5+2                         undefined4           at 0x0062e2d7  size=4
+    s_ACT_0062e2d5+3                         undefined4           at 0x0062e2d8
   2 bytes overlap
-    DAT_0062e2d8                             undefined4           at 0x0062e2d8  size=4
+    s_ACT_0062e2d5+3                         undefined4           at 0x0062e2d8  size=4
     s_ART_s_0062e2da                         TerminatedCString    at 0x0062e2da
   248 bytes overlap ~
     s_ART_s_0062e2da                         TerminatedCString    at 0x0062e2da  size=256
@@ -18933,15 +18921,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_raw_0062e748                           TerminatedCString    at 0x0062e748
   255 bytes overlap ~
     s_raw_0062e748                           TerminatedCString    at 0x0062e748  size=256
-    DAT_0062e749                             undefined4           at 0x0062e749
+    s_aw_0062e748+1                          undefined4           at 0x0062e749
   3 bytes overlap
-    DAT_0062e749                             undefined4           at 0x0062e749  size=4
-    DAT_0062e74a                             undefined4           at 0x0062e74a
+    s_aw_0062e748+1                          undefined4           at 0x0062e749  size=4
+    s_w_0062e748+2                           undefined4           at 0x0062e74a
   3 bytes overlap
-    DAT_0062e74a                             undefined4           at 0x0062e74a  size=4
-    DAT_0062e74b                             undefined4           at 0x0062e74b
+    s_w_0062e748+2                           undefined4           at 0x0062e74a  size=4
+    s__0062e748+3                            undefined4           at 0x0062e74b
   3 bytes overlap
-    DAT_0062e74b                             undefined4           at 0x0062e74b  size=4
+    s__0062e748+3                            undefined4           at 0x0062e74b  size=4
     s_data_0062e74c                          TerminatedCString    at 0x0062e74c
   251 bytes overlap ~
     s_data_0062e74c                          TerminatedCString    at 0x0062e74c  size=256
@@ -18954,15 +18942,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_clr_0062e767                           TerminatedCString    at 0x0062e767
   255 bytes overlap ~
     s_clr_0062e767                           TerminatedCString    at 0x0062e767  size=256
-    DAT_0062e768                             undefined4           at 0x0062e768
+    s_lr_0062e767+1                          undefined4           at 0x0062e768
   3 bytes overlap
-    DAT_0062e768                             undefined4           at 0x0062e768  size=4
-    DAT_0062e769                             undefined4           at 0x0062e769
+    s_lr_0062e767+1                          undefined4           at 0x0062e768  size=4
+    s_r_0062e767+2                           undefined4           at 0x0062e769
   3 bytes overlap
-    DAT_0062e769                             undefined4           at 0x0062e769  size=4
-    DAT_0062e76a                             undefined4           at 0x0062e76a
+    s_r_0062e767+2                           undefined4           at 0x0062e769  size=4
+    s__0062e767+3                            undefined4           at 0x0062e76a
   3 bytes overlap
-    DAT_0062e76a                             undefined4           at 0x0062e76a  size=4
+    s__0062e767+3                            undefined4           at 0x0062e76a  size=4
     s_data_0062e76b                          TerminatedCString    at 0x0062e76b
   251 bytes overlap ~
     s_data_0062e76b                          TerminatedCString    at 0x0062e76b  size=256
@@ -21042,21 +21030,21 @@ OVERLAPS (13386) - next global starts inside previous
     s_nknown_00631171                        undefined4           at 0x00631171
   255 bytes overlap ~
     s_Off_00631178                           TerminatedCString    at 0x00631178  size=256
-    DAT_00631179                             undefined4           at 0x00631179
+    s_ff_00631178+1                          undefined4           at 0x00631179
   3 bytes overlap
-    DAT_00631179                             undefined4           at 0x00631179  size=4
-    DAT_0063117a                             undefined4           at 0x0063117a
+    s_ff_00631178+1                          undefined4           at 0x00631179  size=4
+    s_f_00631178+2                           undefined4           at 0x0063117a
   3 bytes overlap
-    DAT_0063117a                             undefined4           at 0x0063117a  size=4
-    DAT_0063117b                             undefined4           at 0x0063117b
+    s_f_00631178+2                           undefined4           at 0x0063117a  size=4
+    s__00631178+3                            undefined4           at 0x0063117b
   3 bytes overlap
-    DAT_0063117b                             undefined4           at 0x0063117b  size=4
+    s__00631178+3                            undefined4           at 0x0063117b  size=4
     s_On_0063117c                            TerminatedCString    at 0x0063117c
   255 bytes overlap ~
     s_On_0063117c                            TerminatedCString    at 0x0063117c  size=256
-    DAT_0063117d                             undefined4           at 0x0063117d
+    s_n_0063117c+1                           undefined4           at 0x0063117d
   1 bytes overlap
-    DAT_0063117d                             undefined4           at 0x0063117d  size=4
+    s_n_0063117c+1                           undefined4           at 0x0063117d  size=4
     DOUBLE_00631180                          double               at 0x00631180
   238 bytes overlap ~
     s_Model_file_kfm_00631188                TerminatedCString    at 0x00631188  size=256
@@ -21417,36 +21405,36 @@ OVERLAPS (13386) - next global starts inside previous
     s_anon_00635428                          TerminatedCString    at 0x00635428
   255 bytes overlap ~
     s_anon_00635428                          TerminatedCString    at 0x00635428  size=256
-    DAT_00635429                             undefined4           at 0x00635429
+    s_anon_00635428+1                        undefined4           at 0x00635429
   3 bytes overlap
-    DAT_00635429                             undefined4           at 0x00635429  size=4
+    s_anon_00635428+1                        undefined4           at 0x00635429  size=4
     s_Nocturne_requires_at_lea_0063542a      TerminatedCString    at 0x0063542a
   255 bytes overlap ~
     s_Nocturne_requires_at_lea_0063542a      TerminatedCString    at 0x0063542a  size=256
     s_octurne_requires_at_least_64MB_o_00635 undefined4           at 0x0063542b
   255 bytes overlap ~
     s_anon_00635459                          TerminatedCString    at 0x00635459  size=256
-    DAT_0063545a                             undefined4           at 0x0063545a
+    s_anon_00635459+1                        undefined4           at 0x0063545a
   3 bytes overlap
-    DAT_0063545a                             undefined4           at 0x0063545a  size=4
+    s_anon_00635459+1                        undefined4           at 0x0063545a  size=4
     s_If_you_think_you_have_at_0063545b      TerminatedCString    at 0x0063545b
   255 bytes overlap ~
     s_If_you_think_you_have_at_0063545b      TerminatedCString    at 0x0063545b  size=256
     s_f_you_think_you_have_at_least_64_00635 undefined4           at 0x0063545c
   255 bytes overlap ~
     s_anon_0063548d                          TerminatedCString    at 0x0063548d  size=256
-    DAT_0063548e                             undefined4           at 0x0063548e
+    s_anon_0063548d+1                        undefined4           at 0x0063548e
   3 bytes overlap
-    DAT_0063548e                             undefined4           at 0x0063548e  size=4
+    s_anon_0063548d+1                        undefined4           at 0x0063548e  size=4
     s_then_ignore_this_message_0063548f      TerminatedCString    at 0x0063548f
   255 bytes overlap ~
     s_then_ignore_this_message_0063548f      TerminatedCString    at 0x0063548f  size=256
     s_hen_ignore_this_message._00635490      undefined4           at 0x00635490
   255 bytes overlap ~
     s_anon_006354a9                          TerminatedCString    at 0x006354a9  size=256
-    DAT_006354aa                             undefined4           at 0x006354aa
+    s_anon_006354a9+1                        undefined4           at 0x006354aa
   3 bytes overlap
-    DAT_006354aa                             undefined4           at 0x006354aa  size=4
+    s_anon_006354a9+1                        undefined4           at 0x006354aa  size=4
     s_See_README_TXT_for_more__006354ab      TerminatedCString    at 0x006354ab
   255 bytes overlap ~
     s_See_README_TXT_for_more__006354ab      TerminatedCString    at 0x006354ab  size=256
@@ -21462,18 +21450,18 @@ OVERLAPS (13386) - next global starts inside previous
     s_anon_00635507                          TerminatedCString    at 0x00635507
   255 bytes overlap ~
     s_anon_00635507                          TerminatedCString    at 0x00635507  size=256
-    DAT_00635508                             undefined4           at 0x00635508
+    s_anon_00635507+1                        undefined4           at 0x00635508
   3 bytes overlap
-    DAT_00635508                             undefined4           at 0x00635508  size=4
+    s_anon_00635507+1                        undefined4           at 0x00635508  size=4
     s_Nocturne_runs_best_with__00635509      TerminatedCString    at 0x00635509
   255 bytes overlap ~
     s_Nocturne_runs_best_with__00635509      TerminatedCString    at 0x00635509  size=256
     s_octurne_runs_best_with_at_least_2_0063 undefined4           at 0x0063550a
   255 bytes overlap ~
     s_anon_00635536                          TerminatedCString    at 0x00635536  size=256
-    DAT_00635537                             undefined4           at 0x00635537
+    s_anon_00635536+1                        undefined4           at 0x00635537
   3 bytes overlap
-    DAT_00635537                             undefined4           at 0x00635537  size=4
+    s_anon_00635536+1                        undefined4           at 0x00635537  size=4
     s_See_README_TXT_for_more__00635538      TerminatedCString    at 0x00635538
   255 bytes overlap ~
     s_See_README_TXT_for_more__00635538      TerminatedCString    at 0x00635538  size=256
@@ -22071,9 +22059,9 @@ OVERLAPS (13386) - next global starts inside previous
     s_tri3dfx_dll_006367ab                   TerminatedCString    at 0x006367ab
   255 bytes overlap ~
     s_tri3dfx_dll_006367ab                   TerminatedCString    at 0x006367ab  size=256
-    DAT_006367ac                             undefined4           at 0x006367ac
+    s_tri3dfx_dll_006367ab+1                 undefined4           at 0x006367ac
   3 bytes overlap
-    DAT_006367ac                             undefined4           at 0x006367ac  size=4
+    s_tri3dfx_dll_006367ab+1                 undefined4           at 0x006367ac  size=4
     s_i3dfx_dll_006367ad                     undefined4           at 0x006367ad
   3 bytes overlap
     s_i3dfx_dll_006367ad                     undefined4           at 0x006367ad  size=4
@@ -23877,15 +23865,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_none_006396d7                          TerminatedCString    at 0x006396d7
   255 bytes overlap ~
     s_none_006396d7                          TerminatedCString    at 0x006396d7  size=256
-    DAT_006396d8                             undefined4           at 0x006396d8
+    s_one_006396d7+1                         undefined4           at 0x006396d8
   3 bytes overlap
-    DAT_006396d8                             undefined4           at 0x006396d8  size=4
-    DAT_006396d9                             undefined4           at 0x006396d9
+    s_one_006396d7+1                         undefined4           at 0x006396d8  size=4
+    s_ne_006396d7+2                          undefined4           at 0x006396d9
   3 bytes overlap
-    DAT_006396d9                             undefined4           at 0x006396d9  size=4
-    DAT_006396da                             undefined4           at 0x006396da
+    s_ne_006396d7+2                          undefined4           at 0x006396d9  size=4
+    s_e_006396d7+3                           undefined4           at 0x006396da
   2 bytes overlap
-    DAT_006396da                             undefined4           at 0x006396da  size=4
+    s_e_006396d7+3                           undefined4           at 0x006396da  size=4
     s_Bip01_Head_006396dc                    TerminatedCString    at 0x006396dc
   245 bytes overlap ~
     s_Bip01_Head_006396dc                    TerminatedCString    at 0x006396dc  size=256
@@ -26751,15 +26739,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_RAW_0063eb1d                           TerminatedCString    at 0x0063eb1d
   255 bytes overlap ~
     s_RAW_0063eb1d                           TerminatedCString    at 0x0063eb1d  size=256
-    DAT_0063eb1e                             undefined4           at 0x0063eb1e
+    s_RAW_0063eb1d+1                         undefined4           at 0x0063eb1e
   3 bytes overlap
-    DAT_0063eb1e                             undefined4           at 0x0063eb1e  size=4
-    DAT_0063eb1f                             undefined4           at 0x0063eb1f
+    s_RAW_0063eb1d+1                         undefined4           at 0x0063eb1e  size=4
+    s_RAW_0063eb1d+2                         undefined4           at 0x0063eb1f
   3 bytes overlap
-    DAT_0063eb1f                             undefined4           at 0x0063eb1f  size=4
-    DAT_0063eb20                             undefined4           at 0x0063eb20
+    s_RAW_0063eb1d+2                         undefined4           at 0x0063eb1f  size=4
+    s_RAW_0063eb1d+3                         undefined4           at 0x0063eb20
   2 bytes overlap
-    DAT_0063eb20                             undefined4           at 0x0063eb20  size=4
+    s_RAW_0063eb1d+3                         undefined4           at 0x0063eb20  size=4
     s_engine_pcx_c_0063eb22                  TerminatedCString    at 0x0063eb22
   240 bytes overlap ~
     s_engine_pcx_c_0063eb22                  TerminatedCString    at 0x0063eb22  size=256
@@ -26784,15 +26772,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_RAW_0063ebac                           TerminatedCString    at 0x0063ebac
   255 bytes overlap ~
     s_RAW_0063ebac                           TerminatedCString    at 0x0063ebac  size=256
-    DAT_0063ebad                             undefined4           at 0x0063ebad
+    s_RAW_0063ebac+1                         undefined4           at 0x0063ebad
   3 bytes overlap
-    DAT_0063ebad                             undefined4           at 0x0063ebad  size=4
-    DAT_0063ebae                             undefined4           at 0x0063ebae
+    s_RAW_0063ebac+1                         undefined4           at 0x0063ebad  size=4
+    s_RAW_0063ebac+2                         undefined4           at 0x0063ebae
   3 bytes overlap
-    DAT_0063ebae                             undefined4           at 0x0063ebae  size=4
-    DAT_0063ebaf                             undefined4           at 0x0063ebaf
+    s_RAW_0063ebac+2                         undefined4           at 0x0063ebae  size=4
+    s_RAW_0063ebac+3                         undefined4           at 0x0063ebaf
   2 bytes overlap
-    DAT_0063ebaf                             undefined4           at 0x0063ebaf  size=4
+    s_RAW_0063ebac+3                         undefined4           at 0x0063ebaf  size=4
     s_engine_pcx_c_0063ebb1                  TerminatedCString    at 0x0063ebb1
   240 bytes overlap ~
     s_engine_pcx_c_0063ebb1                  TerminatedCString    at 0x0063ebb1  size=256
@@ -27402,9 +27390,9 @@ OVERLAPS (13386) - next global starts inside previous
     s_end_0063faae                           undefined4           at 0x0063faae
   255 bytes overlap ~
     s_WTF_0063fab2                           TerminatedCString    at 0x0063fab2  size=256
-    DAT_0063fab3                             undefined4           at 0x0063fab3
+    s_TF_0063fab2+1                          undefined4           at 0x0063fab3
   1 bytes overlap
-    DAT_0063fab3                             undefined4           at 0x0063fab3  size=4
+    s_TF_0063fab2+1                          undefined4           at 0x0063fab3  size=4
     s_Model_file_kfm_0063fab6                TerminatedCString    at 0x0063fab6
   238 bytes overlap ~
     s_Model_file_kfm_0063fab6                TerminatedCString    at 0x0063fab6  size=256
@@ -28266,15 +28254,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_txt_006417b5                           TerminatedCString    at 0x006417b5
   255 bytes overlap ~
     s_txt_006417b5                           TerminatedCString    at 0x006417b5  size=256
-    DAT_006417b6                             undefined4           at 0x006417b6
+    s_txt_006417b5+1                         undefined4           at 0x006417b6
   3 bytes overlap
-    DAT_006417b6                             undefined4           at 0x006417b6  size=4
-    DAT_006417b7                             undefined4           at 0x006417b7
+    s_txt_006417b5+1                         undefined4           at 0x006417b6  size=4
+    s_txt_006417b5+2                         undefined4           at 0x006417b7
   3 bytes overlap
-    DAT_006417b7                             undefined4           at 0x006417b7  size=4
-    DAT_006417b8                             undefined4           at 0x006417b8
+    s_txt_006417b5+2                         undefined4           at 0x006417b7  size=4
+    s_txt_006417b5+3                         undefined4           at 0x006417b8
   2 bytes overlap
-    DAT_006417b8                             undefined4           at 0x006417b8  size=4
+    s_txt_006417b5+3                         undefined4           at 0x006417b8  size=4
     s_rt_006417ba                            TerminatedCString    at 0x006417ba
   253 bytes overlap ~
     s_rt_006417ba                            TerminatedCString    at 0x006417ba  size=256
@@ -28347,45 +28335,45 @@ OVERLAPS (13386) - next global starts inside previous
     s_wav_00641a75                           TerminatedCString    at 0x00641a75
   255 bytes overlap ~
     s_wav_00641a75                           TerminatedCString    at 0x00641a75  size=256
-    DAT_00641a76                             undefined4           at 0x00641a76
+    s_wav_00641a75+1                         undefined4           at 0x00641a76
   3 bytes overlap
-    DAT_00641a76                             undefined4           at 0x00641a76  size=4
-    DAT_00641a77                             undefined4           at 0x00641a77
+    s_wav_00641a75+1                         undefined4           at 0x00641a76  size=4
+    s_wav_00641a75+2                         undefined4           at 0x00641a77
   3 bytes overlap
-    DAT_00641a77                             undefined4           at 0x00641a77  size=4
-    DAT_00641a78                             undefined4           at 0x00641a78
+    s_wav_00641a75+2                         undefined4           at 0x00641a77  size=4
+    s_wav_00641a75+3                         undefined4           at 0x00641a78
   2 bytes overlap
-    DAT_00641a78                             undefined4           at 0x00641a78  size=4
+    s_wav_00641a75+3                         undefined4           at 0x00641a78  size=4
     s_smill_wav_00641a7a                     TerminatedCString    at 0x00641a7a
   246 bytes overlap ~
     s_smill_wav_00641a7a                     TerminatedCString    at 0x00641a7a  size=256
     s_s_0_85_00641a84                        TerminatedCString    at 0x00641a84
   255 bytes overlap ~
     s_s_0_85_00641a84                        TerminatedCString    at 0x00641a84  size=256
-    DAT_00641a85                             undefined4           at 0x00641a85
+    s_s_0_85_00641a84+1                      undefined4           at 0x00641a85
   3 bytes overlap
-    DAT_00641a85                             undefined4           at 0x00641a85  size=4
-    DAT_00641a86                             undefined4           at 0x00641a86
+    s_s_0_85_00641a84+1                      undefined4           at 0x00641a85  size=4
+    s_s_0_85_00641a84+2                      undefined4           at 0x00641a86
   3 bytes overlap
-    DAT_00641a86                             undefined4           at 0x00641a86  size=4
-    DAT_00641a87                             undefined4           at 0x00641a87
+    s_s_0_85_00641a84+2                      undefined4           at 0x00641a86  size=4
+    s_s_0_85_00641a84+3                      undefined4           at 0x00641a87
   1 bytes overlap
-    DAT_00641a87                             undefined4           at 0x00641a87  size=4
+    s_s_0_85_00641a84+3                      undefined4           at 0x00641a87  size=4
     s_town_wav_00641a8a                      TerminatedCString    at 0x00641a8a
   247 bytes overlap ~
     s_town_wav_00641a8a                      TerminatedCString    at 0x00641a8a  size=256
     s_s_0_85_00641a93                        TerminatedCString    at 0x00641a93
   255 bytes overlap ~
     s_s_0_85_00641a93                        TerminatedCString    at 0x00641a93  size=256
-    DAT_00641a94                             undefined4           at 0x00641a94
+    s_s_0_85_00641a93+1                      undefined4           at 0x00641a94
   3 bytes overlap
-    DAT_00641a94                             undefined4           at 0x00641a94  size=4
-    DAT_00641a95                             undefined4           at 0x00641a95
+    s_s_0_85_00641a93+1                      undefined4           at 0x00641a94  size=4
+    s_s_0_85_00641a93+2                      undefined4           at 0x00641a95
   3 bytes overlap
-    DAT_00641a95                             undefined4           at 0x00641a95  size=4
-    DAT_00641a96                             undefined4           at 0x00641a96
+    s_s_0_85_00641a93+2                      undefined4           at 0x00641a95  size=4
+    s_s_0_85_00641a93+3                      undefined4           at 0x00641a96
   1 bytes overlap
-    DAT_00641a96                             undefined4           at 0x00641a96  size=4
+    s_s_0_85_00641a93+3                      undefined4           at 0x00641a96  size=4
     s_initSection_00641a99                   TerminatedCString    at 0x00641a99
   244 bytes overlap ~
     s_initSection_00641a99                   TerminatedCString    at 0x00641a99  size=256
@@ -29124,9 +29112,9 @@ OVERLAPS (13386) - next global starts inside previous
     s_anon_00642f52                          TerminatedCString    at 0x00642f52
   255 bytes overlap ~
     s_anon_00642f52                          TerminatedCString    at 0x00642f52  size=256
-    DAT_00642f53                             undefined4           at 0x00642f53
+    s_anon_00642f52+1                        undefined4           at 0x00642f53
   3 bytes overlap
-    DAT_00642f53                             undefined4           at 0x00642f53  size=4
+    s_anon_00642f52+1                        undefined4           at 0x00642f53  size=4
     s_n_00642f54                             TerminatedCString    at 0x00642f54
   255 bytes overlap ~
     s_n_00642f54                             TerminatedCString    at 0x00642f54  size=256
@@ -29268,9 +29256,9 @@ OVERLAPS (13386) - next global starts inside previous
     s_anon_00643338                          TerminatedCString    at 0x00643338
   255 bytes overlap ~
     s_anon_00643338                          TerminatedCString    at 0x00643338  size=256
-    DAT_00643339                             undefined4           at 0x00643339
+    s_anon_00643338+1                        undefined4           at 0x00643339
   3 bytes overlap
-    DAT_00643339                             undefined4           at 0x00643339  size=4
+    s_anon_00643338+1                        undefined4           at 0x00643339  size=4
     s_Warning_Duplicate_wav_st_0064333a      TerminatedCString    at 0x0064333a
   255 bytes overlap ~
     s_Warning_Duplicate_wav_st_0064333a      TerminatedCString    at 0x0064333a  size=256
@@ -29946,7 +29934,7 @@ OVERLAPS (13386) - next global starts inside previous
     s_file_variable_00644168                 undefined4           at 0x00644168
   255 bytes overlap ~
     s_anon_00644177                          TerminatedCString    at 0x00644177  size=256
-    DAT_00644178                             undefined4           at 0x00644178
+    s_anon_00644177+1                        undefined4           at 0x00644178
   243 bytes overlap ~
     s_Script_Ln_d_0064417c                   TerminatedCString    at 0x0064417c  size=256
     s_s_s_00644189                           TerminatedCString    at 0x00644189
@@ -30153,15 +30141,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_none_006459a1                          TerminatedCString    at 0x006459a1
   255 bytes overlap ~
     s_none_006459a1                          TerminatedCString    at 0x006459a1  size=256
-    DAT_006459a2                             undefined4           at 0x006459a2
+    s_one_006459a1+1                         undefined4           at 0x006459a2
   3 bytes overlap
-    DAT_006459a2                             undefined4           at 0x006459a2  size=4
-    DAT_006459a3                             undefined4           at 0x006459a3
+    s_one_006459a1+1                         undefined4           at 0x006459a2  size=4
+    s_ne_006459a1+2                          undefined4           at 0x006459a3
   3 bytes overlap
-    DAT_006459a3                             undefined4           at 0x006459a3  size=4
-    DAT_006459a4                             undefined4           at 0x006459a4
+    s_ne_006459a1+2                          undefined4           at 0x006459a3  size=4
+    s_e_006459a1+3                           undefined4           at 0x006459a4
   2 bytes overlap
-    DAT_006459a4                             undefined4           at 0x006459a4  size=4
+    s_e_006459a1+3                           undefined4           at 0x006459a4  size=4
     s_d_006459a6                             TerminatedCString    at 0x006459a6
   252 bytes overlap ~
     s_d_006459a6                             TerminatedCString    at 0x006459a6  size=256
@@ -30267,15 +30255,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_zth_00645ac0                           TerminatedCString    at 0x00645ac0
   255 bytes overlap ~
     s_zth_00645ac0                           TerminatedCString    at 0x00645ac0  size=256
-    DAT_00645ac1                             undefined4           at 0x00645ac1
+    s_zth_00645ac0+1                         undefined4           at 0x00645ac1
   3 bytes overlap
-    DAT_00645ac1                             undefined4           at 0x00645ac1  size=4
-    DAT_00645ac2                             undefined4           at 0x00645ac2
+    s_zth_00645ac0+1                         undefined4           at 0x00645ac1  size=4
+    s_zth_00645ac0+2                         undefined4           at 0x00645ac2
   3 bytes overlap
-    DAT_00645ac2                             undefined4           at 0x00645ac2  size=4
-    DAT_00645ac3                             undefined4           at 0x00645ac3
+    s_zth_00645ac0+2                         undefined4           at 0x00645ac2  size=4
+    s_zth_00645ac0+3                         undefined4           at 0x00645ac3
   2 bytes overlap
-    DAT_00645ac3                             undefined4           at 0x00645ac3  size=4
+    s_zth_00645ac0+3                         undefined4           at 0x00645ac3  size=4
     s_Camera_box_7_2f_7_2f_7_2_00645ac5      TerminatedCString    at 0x00645ac5
   199 bytes overlap ~
     s_Camera_box_7_2f_7_2f_7_2_00645ac5      TerminatedCString    at 0x00645ac5  size=256
@@ -30645,15 +30633,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_thm_006466e3                           TerminatedCString    at 0x006466e3
   255 bytes overlap ~
     s_thm_006466e3                           TerminatedCString    at 0x006466e3  size=256
-    DAT_006466e4                             undefined4           at 0x006466e4
+    s_thm_006466e3+1                         undefined4           at 0x006466e4
   3 bytes overlap
-    DAT_006466e4                             undefined4           at 0x006466e4  size=4
-    DAT_006466e5                             undefined4           at 0x006466e5
+    s_thm_006466e3+1                         undefined4           at 0x006466e4  size=4
+    s_thm_006466e3+2                         undefined4           at 0x006466e5
   3 bytes overlap
-    DAT_006466e5                             undefined4           at 0x006466e5  size=4
-    DAT_006466e6                             undefined4           at 0x006466e6
+    s_thm_006466e3+2                         undefined4           at 0x006466e5  size=4
+    s_thm_006466e3+3                         undefined4           at 0x006466e6
   2 bytes overlap
-    DAT_006466e6                             undefined4           at 0x006466e6  size=4
+    s_thm_006466e3+3                         undefined4           at 0x006466e6  size=4
     s_rb_006466e8                            TerminatedCString    at 0x006466e8
   253 bytes overlap ~
     s_rb_006466e8                            TerminatedCString    at 0x006466e8  size=256
@@ -31257,15 +31245,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_zth_00647624                           TerminatedCString    at 0x00647624
   255 bytes overlap ~
     s_zth_00647624                           TerminatedCString    at 0x00647624  size=256
-    DAT_00647625                             undefined4           at 0x00647625
+    s_zth_00647624+1                         undefined4           at 0x00647625
   3 bytes overlap
-    DAT_00647625                             undefined4           at 0x00647625  size=4
-    DAT_00647626                             undefined4           at 0x00647626
+    s_zth_00647624+1                         undefined4           at 0x00647625  size=4
+    s_zth_00647624+2                         undefined4           at 0x00647626
   3 bytes overlap
-    DAT_00647626                             undefined4           at 0x00647626  size=4
-    DAT_00647627                             undefined4           at 0x00647627
+    s_zth_00647624+2                         undefined4           at 0x00647626  size=4
+    s_zth_00647624+3                         undefined4           at 0x00647627
   2 bytes overlap
-    DAT_00647627                             undefined4           at 0x00647627  size=4
+    s_zth_00647624+3                         undefined4           at 0x00647627  size=4
     s_core_setedit_cpp_00647629              TerminatedCString    at 0x00647629
   236 bytes overlap ~
     s_core_setedit_cpp_00647629              TerminatedCString    at 0x00647629  size=256
@@ -31479,15 +31467,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_set_00647c8a                           TerminatedCString    at 0x00647c8a
   255 bytes overlap ~
     s_set_00647c8a                           TerminatedCString    at 0x00647c8a  size=256
-    DAT_00647c8b                             undefined4           at 0x00647c8b
+    s_set_00647c8a+1                         undefined4           at 0x00647c8b
   3 bytes overlap
-    DAT_00647c8b                             undefined4           at 0x00647c8b  size=4
-    DAT_00647c8c                             undefined4           at 0x00647c8c
+    s_set_00647c8a+1                         undefined4           at 0x00647c8b  size=4
+    s_set_00647c8a+2                         undefined4           at 0x00647c8c
   3 bytes overlap
-    DAT_00647c8c                             undefined4           at 0x00647c8c  size=4
-    DAT_00647c8d                             undefined4           at 0x00647c8d
+    s_set_00647c8a+2                         undefined4           at 0x00647c8c  size=4
+    s_set_00647c8a+3                         undefined4           at 0x00647c8d
   2 bytes overlap
-    DAT_00647c8d                             undefined4           at 0x00647c8d  size=4
+    s_set_00647c8a+3                         undefined4           at 0x00647c8d  size=4
     s_set_00647c8f                           TerminatedCString    at 0x00647c8f
   252 bytes overlap ~
     s_set_00647c8f                           TerminatedCString    at 0x00647c8f  size=256
@@ -31713,15 +31701,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_set_006481cc                           TerminatedCString    at 0x006481cc
   255 bytes overlap ~
     s_set_006481cc                           TerminatedCString    at 0x006481cc  size=256
-    DAT_006481cd                             undefined4           at 0x006481cd
+    s_set_006481cc+1                         undefined4           at 0x006481cd
   3 bytes overlap
-    DAT_006481cd                             undefined4           at 0x006481cd  size=4
-    DAT_006481ce                             undefined4           at 0x006481ce
+    s_set_006481cc+1                         undefined4           at 0x006481cd  size=4
+    s_set_006481cc+2                         undefined4           at 0x006481ce
   3 bytes overlap
-    DAT_006481ce                             undefined4           at 0x006481ce  size=4
-    DAT_006481cf                             undefined4           at 0x006481cf
+    s_set_006481cc+2                         undefined4           at 0x006481ce  size=4
+    s_set_006481cc+3                         undefined4           at 0x006481cf
   2 bytes overlap
-    DAT_006481cf                             undefined4           at 0x006481cf  size=4
+    s_set_006481cc+3                         undefined4           at 0x006481cf  size=4
     s_set_006481d1                           TerminatedCString    at 0x006481d1
   252 bytes overlap ~
     s_set_006481d1                           TerminatedCString    at 0x006481d1  size=256
@@ -32049,15 +32037,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_set_00648887                           TerminatedCString    at 0x00648887
   255 bytes overlap ~
     s_set_00648887                           TerminatedCString    at 0x00648887  size=256
-    DAT_00648888                             undefined4           at 0x00648888
+    s_set_00648887+1                         undefined4           at 0x00648888
   3 bytes overlap
-    DAT_00648888                             undefined4           at 0x00648888  size=4
-    DAT_00648889                             undefined4           at 0x00648889
+    s_set_00648887+1                         undefined4           at 0x00648888  size=4
+    s_set_00648887+2                         undefined4           at 0x00648889
   3 bytes overlap
-    DAT_00648889                             undefined4           at 0x00648889  size=4
-    DAT_0064888a                             undefined4           at 0x0064888a
+    s_set_00648887+2                         undefined4           at 0x00648889  size=4
+    s_set_00648887+3                         undefined4           at 0x0064888a
   2 bytes overlap
-    DAT_0064888a                             undefined4           at 0x0064888a  size=4
+    s_set_00648887+3                         undefined4           at 0x0064888a  size=4
     s_set_0064888c                           TerminatedCString    at 0x0064888c
   252 bytes overlap ~
     s_set_0064888c                           TerminatedCString    at 0x0064888c  size=256
@@ -32340,15 +32328,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_set_00648f9e                           TerminatedCString    at 0x00648f9e
   255 bytes overlap ~
     s_set_00648f9e                           TerminatedCString    at 0x00648f9e  size=256
-    DAT_00648f9f                             undefined4           at 0x00648f9f
+    s_set_00648f9e+1                         undefined4           at 0x00648f9f
   3 bytes overlap
-    DAT_00648f9f                             undefined4           at 0x00648f9f  size=4
-    DAT_00648fa0                             undefined4           at 0x00648fa0
+    s_set_00648f9e+1                         undefined4           at 0x00648f9f  size=4
+    s_set_00648f9e+2                         undefined4           at 0x00648fa0
   3 bytes overlap
-    DAT_00648fa0                             undefined4           at 0x00648fa0  size=4
-    DAT_00648fa1                             undefined4           at 0x00648fa1
+    s_set_00648f9e+2                         undefined4           at 0x00648fa0  size=4
+    s_set_00648f9e+3                         undefined4           at 0x00648fa1
   2 bytes overlap
-    DAT_00648fa1                             undefined4           at 0x00648fa1  size=4
+    s_set_00648f9e+3                         undefined4           at 0x00648fa1  size=4
     s_set_00648fa3                           TerminatedCString    at 0x00648fa3
   252 bytes overlap ~
     s_set_00648fa3                           TerminatedCString    at 0x00648fa3  size=256
@@ -32442,15 +32430,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_art_00649151                           TerminatedCString    at 0x00649151
   255 bytes overlap ~
     s_art_00649151                           TerminatedCString    at 0x00649151  size=256
-    DAT_00649152                             undefined4           at 0x00649152
+    s_rt_00649151+1                          undefined4           at 0x00649152
   3 bytes overlap
-    DAT_00649152                             undefined4           at 0x00649152  size=4
-    DAT_00649153                             undefined4           at 0x00649153
+    s_rt_00649151+1                          undefined4           at 0x00649152  size=4
+    s_t_00649151+2                           undefined4           at 0x00649153
   3 bytes overlap
-    DAT_00649153                             undefined4           at 0x00649153  size=4
-    DAT_00649154                             undefined4           at 0x00649154
+    s_t_00649151+2                           undefined4           at 0x00649153  size=4
+    s__00649151+3                            undefined4           at 0x00649154
   3 bytes overlap
-    DAT_00649154                             undefined4           at 0x00649154  size=4
+    s__00649151+3                            undefined4           at 0x00649154  size=4
     s_backdrop_00649155                      TerminatedCString    at 0x00649155
   255 bytes overlap ~
     s_backdrop_00649155                      TerminatedCString    at 0x00649155  size=256
@@ -37065,15 +37053,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_wav_00652591                           TerminatedCString    at 0x00652591
   255 bytes overlap ~
     s_wav_00652591                           TerminatedCString    at 0x00652591  size=256
-    DAT_00652592                             undefined4           at 0x00652592
+    s_wav_00652591+1                         undefined4           at 0x00652592
   3 bytes overlap
-    DAT_00652592                             undefined4           at 0x00652592  size=4
-    DAT_00652593                             undefined4           at 0x00652593
+    s_wav_00652591+1                         undefined4           at 0x00652592  size=4
+    s_wav_00652591+2                         undefined4           at 0x00652593
   3 bytes overlap
-    DAT_00652593                             undefined4           at 0x00652593  size=4
-    DAT_00652594                             undefined4           at 0x00652594
+    s_wav_00652591+2                         undefined4           at 0x00652593  size=4
+    s_wav_00652591+3                         undefined4           at 0x00652594
   2 bytes overlap
-    DAT_00652594                             undefined4           at 0x00652594  size=4
+    s_wav_00652591+3                         undefined4           at 0x00652594  size=4
     s_Can_t_find_wav_s_00652596              TerminatedCString    at 0x00652596
   236 bytes overlap ~
     s_Can_t_find_wav_s_00652596              TerminatedCString    at 0x00652596  size=256
@@ -38538,15 +38526,15 @@ OVERLAPS (13386) - next global starts inside previous
     s_tex_00654ef4                           TerminatedCString    at 0x00654ef4
   255 bytes overlap ~
     s_tex_00654ef4                           TerminatedCString    at 0x00654ef4  size=256
-    DAT_00654ef5                             undefined4           at 0x00654ef5
+    s_tex_00654ef4+1                         undefined4           at 0x00654ef5
   3 bytes overlap
-    DAT_00654ef5                             undefined4           at 0x00654ef5  size=4
-    DAT_00654ef6                             undefined4           at 0x00654ef6
+    s_tex_00654ef4+1                         undefined4           at 0x00654ef5  size=4
+    s_tex_00654ef4+2                         undefined4           at 0x00654ef6
   3 bytes overlap
-    DAT_00654ef6                             undefined4           at 0x00654ef6  size=4
-    DAT_00654ef7                             undefined4           at 0x00654ef7
+    s_tex_00654ef4+2                         undefined4           at 0x00654ef6  size=4
+    s_tex_00654ef4+3                         undefined4           at 0x00654ef7
   2 bytes overlap
-    DAT_00654ef7                             undefined4           at 0x00654ef7  size=4
+    s_tex_00654ef4+3                         undefined4           at 0x00654ef7  size=4
     s_rt_00654ef9                            TerminatedCString    at 0x00654ef9
   253 bytes overlap ~
     s_rt_00654ef9                            TerminatedCString    at 0x00654ef9  size=256
@@ -40938,10 +40926,10 @@ OVERLAPS (13386) - next global starts inside previous
     s_m_d_y_00658be8                         TerminatedCString    at 0x00658be8
   244 bytes overlap ~
     s_m_d_y_00658be8                         TerminatedCString    at 0x00658be8  size=256
-    DAT_00658bf4                             undefined1           at 0x00658bf4
+    INT_00658bf4                             int                  at 0x00658bf4
   244 bytes overlap ~
     s_I_M_S_p_00658bf8                       TerminatedCString    at 0x00658bf8  size=256
-    DAT_00658c04                             undefined1           at 0x00658c04
+    INT_00658c04                             int                  at 0x00658c04
   240 bytes overlap ~
     s_a_b_d_Y_00658c10                       TerminatedCString    at 0x00658c10  size=256
     s_H_M_S_00658c20                         TerminatedCString    at 0x00658c20
@@ -41061,25 +41049,25 @@ OVERLAPS (13386) - next global starts inside previous
     s_LE_INFO=_00659794                      undefined4           at 0x00659794
   7 bytes overlap
     g_ProcessFileInfoStr                     char[8]              at 0x006597a0  size=8
-    DAT_006597a1                             undefined4           at 0x006597a1
+    g_ProcessFileInfoStr+1                   undefined4           at 0x006597a1
   3 bytes overlap
-    DAT_006597a1                             undefined4           at 0x006597a1  size=4
-    DAT_006597a2                             undefined4           at 0x006597a2
+    g_ProcessFileInfoStr+1                   undefined4           at 0x006597a1  size=4
+    g_ProcessFileInfoStr+2                   undefined4           at 0x006597a2
   3 bytes overlap
-    DAT_006597a2                             undefined4           at 0x006597a2  size=4
-    DAT_006597a3                             undefined4           at 0x006597a3
+    g_ProcessFileInfoStr+2                   undefined4           at 0x006597a2  size=4
+    g_ProcessFileInfoStr+3                   undefined4           at 0x006597a3
   3 bytes overlap
-    DAT_006597a3                             undefined4           at 0x006597a3  size=4
+    g_ProcessFileInfoStr+3                   undefined4           at 0x006597a3  size=4
     g_ProcessFileInfoStr+4                   undefined4           at 0x006597a4
   3 bytes overlap
     g_ProcessFileInfoStr+4                   undefined4           at 0x006597a4  size=4
-    DAT_006597a5                             undefined4           at 0x006597a5
+    g_ProcessFileInfoStr+5                   undefined4           at 0x006597a5
   3 bytes overlap
-    DAT_006597a5                             undefined4           at 0x006597a5  size=4
-    DAT_006597a6                             undefined4           at 0x006597a6
+    g_ProcessFileInfoStr+5                   undefined4           at 0x006597a5  size=4
+    g_ProcessFileInfoStr+6                   undefined4           at 0x006597a6
   3 bytes overlap
-    DAT_006597a6                             undefined4           at 0x006597a6  size=4
-    DAT_006597a7                             undefined4           at 0x006597a7
+    g_ProcessFileInfoStr+6                   undefined4           at 0x006597a6  size=4
+    g_ProcessFileInfoStr+7                   undefined4           at 0x006597a7
   4 bytes overlap
     g_InfiniteCollapseCost                   double               at 0x00661388  size=8
     g_InfiniteCollapseCost+4                 undefined4           at 0x0066138c
@@ -41095,9 +41083,6 @@ OVERLAPS (13386) - next global starts inside previous
   2 bytes overlap
     g_PositiveInfinity+6                     undefined4           at 0x00665f36  size=4
     g_DaysInMonth_Normal                     short                at 0x00665f38
-  2 bytes overlap
-    DAT_00665f50                             undefined4           at 0x00665f50  size=4
-    g_DaysInMonth_Leap                       short                at 0x00665f52
   1 bytes overlap
     g_PropertyNamePrefixMinusTwo             char[2]              at 0x0066e176  size=2
     g_PropertyNamePrefixMinusTwo+1           undefined4           at 0x0066e177
@@ -41152,12 +41137,6 @@ OVERLAPS (13386) - next global starts inside previous
   2 bytes overlap
     s__0066ef3a                              undefined4           at 0x0066ef3a  size=4
     g_CActorDestinationClassVersion          int                  at 0x0066ef3c
-  28 bytes overlap ~
-    g_GlobalFilters                          CDemonFilter*[8]     at 0x0066ef9c  size=32
-    DAT_0066efa0                             undefined4           at 0x0066efa0
-  12 bytes overlap ~
-    g_PlayerFilters                          CDemonFilter*[4]     at 0x0066efbc  size=16
-    DAT_0066efc0                             undefined4           at 0x0066efc0
   24 bytes overlap ~
     g_LightBitMaskLookup                     uchar[8]             at 0x0066fed0  size=32
     g_LightTextures                          SMRGLTextureBasic[20 at 0x0066fed8
@@ -41232,9 +41211,9 @@ OVERLAPS (13386) - next global starts inside previous
     s_EFD_0067b684                           TerminatedCString    at 0x0067b684
   255 bytes overlap ~
     s_EFD_0067b684                           TerminatedCString    at 0x0067b684  size=256
-    DAT_0067b685                             undefined4           at 0x0067b685
+    s_FD_0067b684+1                          undefined4           at 0x0067b685
   1 bytes overlap
-    DAT_0067b685                             undefined4           at 0x0067b685  size=4
+    s_FD_0067b684+1                          undefined4           at 0x0067b685  size=4
     s_file_corrupt_0067b688                  TerminatedCString    at 0x0067b688
   252 bytes overlap ~
     s_file_corrupt_0067b688                  TerminatedCString    at 0x0067b688  size=256
@@ -41391,9 +41370,9 @@ OVERLAPS (13386) - next global starts inside previous
     g_TrainSoundFilenameTemplate+4           undefined4           at 0x0068211c
   255 bytes overlap ~
     g_RendererDllName                        TerminatedCString    at 0x00684010  size=256
-    DAT_00684011                             undefined4           at 0x00684011
+    g_RendererDllName+1                      undefined4           at 0x00684011
   3 bytes overlap
-    DAT_00684011                             undefined4           at 0x00684011  size=4
+    g_RendererDllName+1                      undefined4           at 0x00684011  size=4
     s_id3d_dll_00684012                      undefined4           at 0x00684012
   3 bytes overlap
     s_id3d_dll_00684012                      undefined4           at 0x00684012  size=4
@@ -41473,9 +41452,6 @@ OVERLAPS (13386) - next global starts inside previous
   12144 bytes overlap
     g_CameraLoadImageReadBuffer              char[500000]         at 0x00888e50  size=500,000
     g_CameraLoadImageReadBuffer+0x771b0      undefined4           at 0x00900000
-  921600 bytes overlap
-    g_TempWorldPositions                     CVector3i[241][320]  at 0x009e4e74  size=925,440
-    DAT_009e5d74                             undefined4           at 0x009e5d74
   3350793 bytes overlap
     g_LightBufferPool                        char[24][307200]     at 0x00c1a208  size=7,372,800
     g_ColorMagenta                           undefined4           at 0x00ff00ff
@@ -41569,9 +41545,6 @@ OVERLAPS (13386) - next global starts inside previous
   4795 bytes overlap
     g_SavedScreenBufferArray                 void*[1200]          at 0x026a5814  size=4,800
     g_SavedScreenBufferArray[1]+1            undefined4           at 0x026a5819
-  359920 bytes overlap
-    g_FaceConversionBuffer                   SMRGLPrimitiveQuad[5 at 0x02c14d30  size=360,000
-    DAT_02c14d80                             undefined4           at 0x02c14d80
   8 bytes overlap
     g_FloorRayDirection                      CVector3f            at 0x02cee5bc  size=12
     g_FloorCacheHeight                       undefined4           at 0x02cee5c0
@@ -41583,7 +41556,7 @@ OVERLAPS (13386) - next global starts inside previous
     g_ConfirmationMessageBuffer+0x400        undefined4           at 0x02cf0130
   3800 bytes overlap
     g_TextWrapBuffer                         char[4000]           at 0x02cf0d30  size=4,000
-    DAT_02cf0df8                             undefined4           at 0x02cf0df8
+    g_TextWrapBuffer+0xc8                    undefined4           at 0x02cf0df8
   2385 bytes overlap
     g_WindowStack                            SWindow[5]           at 0x02cf1ce0  size=2,440
     g_WindowStack[0].saved_viewport_height+3 undefined4           at 0x02cf1d17
@@ -41815,9 +41788,6 @@ OVERLAPS (13386) - next global starts inside previous
   8 bytes overlap
     UNION_UVector3_02d7b82c                  UVector3             at 0x02d7b82c  size=12
     UNION_UVector3_02d7b82c+4                undefined4           at 0x02d7b830
-  2304 bytes overlap
-    g_WrappedTextBuffer                      char[10][256]        at 0x02d7b8e0  size=2,560
-    DAT_02d7b9e0                             undefined4           at 0x02d7b9e0
   4 bytes overlap
     DOUBLE_02d7c2e0                          double               at 0x02d7c2e0  size=8
     DOUBLE_02d7c2e0+4                        undefined4           at 0x02d7c2e4

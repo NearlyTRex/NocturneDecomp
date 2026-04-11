@@ -45,7 +45,7 @@
 ;   CBitFont* g_ThemeFont
 ;   CBitFont* g_SmallEditorFont
 ;   char[10][256] g_WrappedTextBuffer
-;   undefined4 DAT_02d7b9e0
+;   undefined4 g_WrappedTextBuffer[1][0]
 ;   char[256] g_ChapterDisplayName
 ;   int g_ChapterDisplayNumber
 ;   ... and 3 more
@@ -430,7 +430,7 @@ section .text
         ;   XREF to: 004d8090 (CONDITIONAL_JUMP)  ; LAB_004d8090
     MOV EBX,0x2d7b8e0                   ; 004d850d | g_WrappedTextBuffer
     MOV dword ptr [ESP + 0x124],EAX     ; 004d8512
-    PUSH EBX                            ; 004d8519 | g_WrappedTextBuffer | DAT_02d7b9e0
+    PUSH EBX                            ; 004d8519 | g_WrappedTextBuffer | g_WrappedTextBuffer[1][0]
         ;   Label: LAB_004d8519
     MOV EAX,dword ptr [ESP + 0x13c]     ; 004d851a
     PUSH EAX                            ; 004d8521

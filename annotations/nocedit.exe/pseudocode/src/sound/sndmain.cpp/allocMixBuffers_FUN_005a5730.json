@@ -4,6 +4,12 @@
       {
         "category": "incompatible_types",
         "column": 8,
+        "line": 31,
+        "message": "assigning to 'float *' from incompatible type 'void *'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 8,
         "line": 35,
         "message": "assigning to 'float *' from incompatible type 'void *'"
       },
@@ -19,13 +25,13 @@
   },
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 104,
+    "complexity_score": 94,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 22,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 59,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -157,13 +163,13 @@
     {
       "addr": "03f692ac",
       "name": "g_PrimaryMixBuffer",
-      "type": "void*",
+      "type": "float*",
       "value": null
     },
     {
       "addr": "03f692b0",
       "name": "g_ChannelPrimaryBuffers",
-      "type": "void*[8]",
+      "type": "float*[8]",
       "value": null
     },
     {
@@ -274,14 +280,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(void *)((int)",
-      "severity": "mild",
-      "text": "(void *)((int)g_PrimaryMixBuffer + g_MixBufferSize * iVar4 * g_NumMixBuffers * 4);",
-      "type": "pointer_cast"
-    },
     {
       "description": "Complex pointer cast",
       "line": 50,

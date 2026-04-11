@@ -792,13 +792,13 @@ section .text
     MOV ESI,0x61aaea                    ; 00459289 | = "BODY"
     MOV EDI,0x1e50190                   ; 0045928e | g_ModelPartNames
     PUSH EDI                            ; 00459293 | g_ModelPartNames
-    MOV AL,byte ptr [ESI]               ; 00459294 | = "BODY" | DAT_0061aaec
+    MOV AL,byte ptr [ESI]               ; 00459294 | = "BODY" | s_DY_0061aaea+2
         ;   Label: LAB_00459294
     MOV byte ptr [EDI],AL               ; 00459296 | g_ModelPartNames | g_ModelPartNames[0].name[2]
     CMP AL,0x0                          ; 00459298
     JZ 0x004592ac                       ; 0045929a
         ;   XREF to: 004592ac (CONDITIONAL_JUMP)  ; LAB_004592ac
-    MOV AL,byte ptr [ESI + 0x1]         ; 0045929c | DAT_0061aaeb | DAT_0061aaed
+    MOV AL,byte ptr [ESI + 0x1]         ; 0045929c | s_ODY_0061aaea+1 | s_Y_0061aaea+3
     ADD ESI,0x2                         ; 0045929f
     MOV byte ptr [EDI + 0x1],AL         ; 004592a2 | g_ModelPartNames[0].name[1] | g_ModelPartNames[0].name[3]
     ADD EDI,0x2                         ; 004592a5

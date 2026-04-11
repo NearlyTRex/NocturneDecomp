@@ -19,12 +19,12 @@
 ;   TerminatedCString s_Enter_option_1_0061df7b
 ;   TerminatedCString s_No_model_loaded_Hit_a_ke_0061df8f
 ;   TerminatedCString s_ACT_0061dfae
-;   undefined4 DAT_0061dfaf
-;   undefined4 DAT_0061dfb0
+;   undefined4 s_ACT_0061dfae+1
+;   undefined4 s_ACT_0061dfae+2
 ;   undefined4 s_ACT_0061dfae+3
 ;   TerminatedCString s_ACT_0061dfb3
-;   undefined4 DAT_0061dfb4
-;   undefined4 DAT_0061dfb5
+;   undefined4 s_ACT_0061dfb3+1
+;   undefined4 s_ACT_0061dfb3+2
 ;   undefined4 s_ACT_0061dfb3+3
 ;   TerminatedCString s_art_0061dfb8
 ;   TerminatedCString s_File_not_found_Hit_a_key_0061dfbc
@@ -184,13 +184,13 @@ section .text
     MOV ESI,0x61dfae                    ; 0046e932 | = ".ACT"
     MOV EDI,dword ptr [EBP + -0x8]      ; 0046e937
     PUSH EDI                            ; 0046e93a
-    MOV AL,byte ptr [ESI]               ; 0046e93b | = ".ACT" | DAT_0061dfb0
+    MOV AL,byte ptr [ESI]               ; 0046e93b | = ".ACT" | s_ACT_0061dfae+2
         ;   Label: LAB_0046e93b
     MOV byte ptr [EDI],AL               ; 0046e93d
     CMP AL,0x0                          ; 0046e93f
     JZ 0x0046e953                       ; 0046e941
         ;   XREF to: 0046e953 (CONDITIONAL_JUMP)  ; LAB_0046e953
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046e943 | DAT_0061dfaf | s_ACT_0061dfae+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046e943 | s_ACT_0061dfae+1 | s_ACT_0061dfae+3
     ADD ESI,0x2                         ; 0046e946
     MOV byte ptr [EDI + 0x1],AL         ; 0046e949
     ADD EDI,0x2                         ; 0046e94c
@@ -220,13 +220,13 @@ section .text
     MOV AL,0x0                          ; 0046e974
     SCASB.REPNE ES:EDI                  ; 0046e976
     DEC EDI                             ; 0046e978
-    MOV AL,byte ptr [ESI]               ; 0046e979 | = ".ACT" | DAT_0061dfb5
+    MOV AL,byte ptr [ESI]               ; 0046e979 | = ".ACT" | s_ACT_0061dfb3+2
         ;   Label: LAB_0046e979
     MOV byte ptr [EDI],AL               ; 0046e97b
     CMP AL,0x0                          ; 0046e97d
     JZ 0x0046e991                       ; 0046e97f
         ;   XREF to: 0046e991 (CONDITIONAL_JUMP)  ; LAB_0046e991
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046e981 | DAT_0061dfb4 | s_ACT_0061dfb3+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046e981 | s_ACT_0061dfb3+1 | s_ACT_0061dfb3+3
     ADD ESI,0x2                         ; 0046e984
     MOV byte ptr [EDI + 0x1],AL         ; 0046e987
     ADD EDI,0x2                         ; 0046e98a
@@ -327,13 +327,13 @@ section .text
     MOV ESI,0x61dff1                    ; 0046ea4f | = ".ACT"
     MOV EDI,dword ptr [EBP + -0x8]      ; 0046ea54
     PUSH EDI                            ; 0046ea57
-    MOV AL,byte ptr [ESI]               ; 0046ea58 | = ".ACT" | DAT_0061dff3
+    MOV AL,byte ptr [ESI]               ; 0046ea58 | = ".ACT" | s_ACT_0061dff1+2
         ;   Label: LAB_0046ea58
     MOV byte ptr [EDI],AL               ; 0046ea5a
     CMP AL,0x0                          ; 0046ea5c
     JZ 0x0046ea70                       ; 0046ea5e
         ;   XREF to: 0046ea70 (CONDITIONAL_JUMP)  ; LAB_0046ea70
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046ea60 | DAT_0061dff2 | s_ACT_0061dff1+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046ea60 | s_ACT_0061dff1+1 | s_ACT_0061dff1+3
     ADD ESI,0x2                         ; 0046ea63
     MOV byte ptr [EDI + 0x1],AL         ; 0046ea66
     ADD EDI,0x2                         ; 0046ea69
@@ -363,13 +363,13 @@ section .text
     MOV AL,0x0                          ; 0046ea91
     SCASB.REPNE ES:EDI                  ; 0046ea93
     DEC EDI                             ; 0046ea95
-    MOV AL,byte ptr [ESI]               ; 0046ea96 | = ".ACT" | DAT_0061dff8
+    MOV AL,byte ptr [ESI]               ; 0046ea96 | = ".ACT" | s_ACT_0061dff6+2
         ;   Label: LAB_0046ea96
     MOV byte ptr [EDI],AL               ; 0046ea98
     CMP AL,0x0                          ; 0046ea9a
     JZ 0x0046eaae                       ; 0046ea9c
         ;   XREF to: 0046eaae (CONDITIONAL_JUMP)  ; LAB_0046eaae
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046ea9e | DAT_0061dff7 | s_ACT_0061dff6+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046ea9e | s_ACT_0061dff6+1 | s_ACT_0061dff6+3
     ADD ESI,0x2                         ; 0046eaa1
     MOV byte ptr [EDI + 0x1],AL         ; 0046eaa4
     ADD EDI,0x2                         ; 0046eaa7

@@ -19,7 +19,8 @@ void FUN_00607080(void *param_1,byte *param_2)
   do {
     param_2 = param_2 + 1;
     *(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) =
-         *(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) | (&DAT_00665f28)[bVar1 & 7];
+         *(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) |
+         *(byte *)((int)&DOUBLE_00665f28 + (uint)(bVar1 & 7));
     bVar1 = *param_2;
   } while (bVar1 != 0);
   return;

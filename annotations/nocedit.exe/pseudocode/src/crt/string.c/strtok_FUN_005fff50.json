@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 147,
+    "complexity_score": 148,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 42,
+    "pseudocode_lines": 43,
     "suspect_count": 9,
     "suspect_types": [
+      "pointer_cast",
       "special_crt_function",
-      "undefined_data",
       "unknown_param"
     ],
-    "total_lines": 128
+    "total_lines": 129
   },
   "cross_references": [
     {
@@ -50,9 +50,9 @@
   "globals": [
     {
       "addr": "00665f28",
-      "name": "DAT_00665f28",
-      "type": "undefined4",
-      "value": null
+      "name": "DOUBLE_00665f28",
+      "type": "double",
+      "value": "-1.79399301312127E-307"
     },
     {
       "addr": "00684ee4",
@@ -185,24 +185,24 @@
       "type": "unknown_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_00665f28",
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVar1 & 7]) != 0))) {",
-      "type": "undefined_data"
+      "text": "((local_28[bVar1 >> 3] & *(byte *)((int)&DOUBLE_00665f28 + (bVar1 & 7))) != 0))) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_00665f28",
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "if ((local_28[bVar2 >> 3] & (&DAT_00665f28)[bVar2 & 7]) != 0) {",
-      "type": "undefined_data"
+      "text": "if ((local_28[bVar2 >> 3] & *(byte *)((int)&DOUBLE_00665f28 + (bVar2 & 7))) != 0) {",
+      "type": "pointer_cast"
     },
     {
       "description": "Parameter/variable named unknown (needs investigation)",
-      "line": 32,
+      "line": 33,
       "match": "unknown_10",
       "severity": "mild",
       "text": "*(byte **)pTVar3->unknown_10 = pbVar4 + 1;",
@@ -210,7 +210,7 @@
     },
     {
       "description": "Parameter/variable named unknown (needs investigation)",
-      "line": 38,
+      "line": 39,
       "match": "unknown_10",
       "severity": "mild",
       "text": "pTVar3->unknown_10[0] = '\\0';",
@@ -218,7 +218,7 @@
     },
     {
       "description": "Parameter/variable named unknown (needs investigation)",
-      "line": 39,
+      "line": 40,
       "match": "unknown_10",
       "severity": "mild",
       "text": "pTVar3->unknown_10[1] = '\\0';",
@@ -226,7 +226,7 @@
     },
     {
       "description": "Parameter/variable named unknown (needs investigation)",
-      "line": 40,
+      "line": 41,
       "match": "unknown_10",
       "severity": "mild",
       "text": "pTVar3->unknown_10[2] = '\\0';",
@@ -234,7 +234,7 @@
     },
     {
       "description": "Parameter/variable named unknown (needs investigation)",
-      "line": 41,
+      "line": 42,
       "match": "unknown_10",
       "severity": "mild",
       "text": "pTVar3->unknown_10[3] = '\\0';",

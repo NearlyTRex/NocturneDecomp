@@ -2458,10 +2458,6 @@ static float FLOAT_0065fcd4 = 100.0f;
 static float FLOAT_0065fcd8 = 10.0f;
 
 // undefined1 constants
-static undefined1 DAT_00658bf4 = 0x0A;
-static undefined1 DAT_00658c04 = 0x41;
-static undefined1 DAT_00658c08 = 0x50;
-static undefined1 DAT_00658c0c = 0x09;
 static undefined1 DAT_006590a4 = 0x54;
 static undefined1 DAT_006590a8 = 0x54;
 

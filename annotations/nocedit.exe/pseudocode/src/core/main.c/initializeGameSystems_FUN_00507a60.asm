@@ -290,7 +290,7 @@ section .text
     CMP AL,0x0                          ; 00507d0a
     JZ 0x00507d1e                       ; 00507d0c
         ;   XREF to: 00507d1e (CONDITIONAL_JUMP)  ; LAB_00507d1e
-    MOV AL,byte ptr [ESI + 0x1]         ; 00507d0e | DAT_00635429 | s_octurne_requires_at_least_64MB_o_0063542b
+    MOV AL,byte ptr [ESI + 0x1]         ; 00507d0e | s_anon_00635428+1 | s_octurne_requires_at_least_64MB_o_0063542b
     ADD ESI,0x2                         ; 00507d11
     MOV byte ptr [EDI + 0x1],AL         ; 00507d14
     ADD EDI,0x2                         ; 00507d17
@@ -340,7 +340,7 @@ section .text
     CMP AL,0x0                          ; 00507d70
     JZ 0x00507d84                       ; 00507d72
         ;   XREF to: 00507d84 (CONDITIONAL_JUMP)  ; LAB_00507d84
-    MOV AL,byte ptr [ESI + 0x1]         ; 00507d74 | DAT_0063545a | s_f_you_think_you_have_at_least_64_0063545c
+    MOV AL,byte ptr [ESI + 0x1]         ; 00507d74 | s_anon_00635459+1 | s_f_you_think_you_have_at_least_64_0063545c
     ADD ESI,0x2                         ; 00507d77
     MOV byte ptr [EDI + 0x1],AL         ; 00507d7a
     ADD EDI,0x2                         ; 00507d7d
@@ -390,7 +390,7 @@ section .text
     CMP AL,0x0                          ; 00507dd6
     JZ 0x00507dea                       ; 00507dd8
         ;   XREF to: 00507dea (CONDITIONAL_JUMP)  ; LAB_00507dea
-    MOV AL,byte ptr [ESI + 0x1]         ; 00507dda | DAT_0063548e | s_hen_ignore_this_message._00635490
+    MOV AL,byte ptr [ESI + 0x1]         ; 00507dda | s_anon_0063548d+1 | s_hen_ignore_this_message._00635490
     ADD ESI,0x2                         ; 00507ddd
     MOV byte ptr [EDI + 0x1],AL         ; 00507de0
     ADD EDI,0x2                         ; 00507de3
@@ -440,7 +440,7 @@ section .text
     CMP AL,0x0                          ; 00507e3c
     JZ 0x00507e50                       ; 00507e3e
         ;   XREF to: 00507e50 (CONDITIONAL_JUMP)  ; LAB_00507e50
-    MOV AL,byte ptr [ESI + 0x1]         ; 00507e40 | DAT_006354aa | s_ee_README.TXT_for_more_informati_006354ac
+    MOV AL,byte ptr [ESI + 0x1]         ; 00507e40 | s_anon_006354a9+1 | s_ee_README.TXT_for_more_informati_006354ac
     ADD ESI,0x2                         ; 00507e43
     MOV byte ptr [EDI + 0x1],AL         ; 00507e46
     ADD EDI,0x2                         ; 00507e49
@@ -583,7 +583,7 @@ section .text
     CMP AL,0x0                          ; 00507f74
     JZ 0x00507f88                       ; 00507f76
         ;   XREF to: 00507f88 (CONDITIONAL_JUMP)  ; LAB_00507f88
-    MOV AL,byte ptr [ESI + 0x1]         ; 00507f78 | DAT_00635508 | s_octurne_runs_best_with_at_least_2_0063550a
+    MOV AL,byte ptr [ESI + 0x1]         ; 00507f78 | s_anon_00635507+1 | s_octurne_runs_best_with_at_least_2_0063550a
     ADD ESI,0x2                         ; 00507f7b
     MOV byte ptr [EDI + 0x1],AL         ; 00507f7e
     ADD EDI,0x2                         ; 00507f81
@@ -633,7 +633,7 @@ section .text
     CMP AL,0x0                          ; 00507fd0
     JZ 0x00507fe4                       ; 00507fd2
         ;   XREF to: 00507fe4 (CONDITIONAL_JUMP)  ; LAB_00507fe4
-    MOV AL,byte ptr [ESI + 0x1]         ; 00507fd4 | DAT_00635537 | s_ee_README.TXT_for_more_informati_00635539
+    MOV AL,byte ptr [ESI + 0x1]         ; 00507fd4 | s_anon_00635536+1 | s_ee_README.TXT_for_more_informati_00635539
     ADD ESI,0x2                         ; 00507fd7
     MOV byte ptr [EDI + 0x1],AL         ; 00507fda
     ADD EDI,0x2                         ; 00507fdd
@@ -772,7 +772,7 @@ section .text
     FADD double ptr [0x006355d6]        ; 0050813d | DOUBLE_006355d6
     SUB ESP,0x4                         ; 00508143
     FSTP float ptr [ESP]                ; 00508146
-    MOV EDI,dword ptr [ESI + 0x66ef9c]  ; 00508149 | g_GlobalFilters | DAT_0066efa0
+    MOV EDI,dword ptr [ESI + 0x66ef9c]  ; 00508149 | g_GlobalFilters | g_GlobalFilters[1]
     PUSH EDI                            ; 0050814f | CDemonFilter_ARRAY_020a4878 | CDemonFilter_ARRAY_020a4878[1].size
     ADD ESI,0x4                         ; 00508150
     INC EBX                             ; 00508153
@@ -787,11 +787,11 @@ section .text
     XOR EBX,EBX                         ; 00508168
     MOV dword ptr [ESP + 0x714],ESI     ; 0050816a
         ;   Label: LAB_0050816a
-    MOV EAX,dword ptr [EBX + 0x66efbc]  ; 00508171 | g_PlayerFilters | DAT_0066efc0
+    MOV EAX,dword ptr [EBX + 0x66efbc]  ; 00508171 | g_PlayerFilters | g_PlayerFilters[1]
     FILD dword ptr [ESP + 0x714]        ; 00508177
     MOV dword ptr [EAX],EDI             ; 0050817e | CDemonFilter_ARRAY_020a4878 | CDemonFilter_ARRAY_020a4878[1].size
     FMUL double ptr [0x006355de]        ; 00508180 | DOUBLE_006355de
-    MOV EAX,dword ptr [EBX + 0x66efbc]  ; 00508186 | g_PlayerFilters | DAT_0066efc0
+    MOV EAX,dword ptr [EBX + 0x66efbc]  ; 00508186 | g_PlayerFilters | g_PlayerFilters[1]
     PUSH 0x0                            ; 0050818c
     MOV dword ptr [EAX + 0x4],EDI       ; 0050818e | CDemonFilter_ARRAY_020a4878[0].count | CDemonFilter_ARRAY_020a4878[1].count
     FADD double ptr [0x006355de]        ; 00508191 | DOUBLE_006355de

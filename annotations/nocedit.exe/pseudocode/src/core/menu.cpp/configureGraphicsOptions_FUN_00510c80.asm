@@ -17,7 +17,7 @@
 ;   void* switchdataD_00510c50 = 0051115d
 ;   TerminatedCString s_tri3dfx_dll_0063679f
 ;   TerminatedCString s_tri3dfx_dll_006367ab
-;   undefined4 DAT_006367ac
+;   undefined4 s_tri3dfx_dll_006367ab+1
 ;   undefined4 s_i3dfx_dll_006367ad
 ;   undefined4 s_3dfx.dll_006367ae
 ;   TerminatedCString s_tri3dfx_dll_006367b7
@@ -159,9 +159,9 @@ section .text
     CMP AL,0x0                          ; 00510dee
     JZ 0x00510e02                       ; 00510df0
         ;   XREF to: 00510e02 (CONDITIONAL_JUMP)  ; LAB_00510e02
-    MOV AL,byte ptr [ESI + 0x1]         ; 00510df2 | DAT_006367ac | s_3dfx.dll_006367ae
+    MOV AL,byte ptr [ESI + 0x1]         ; 00510df2 | s_tri3dfx_dll_006367ab+1 | s_3dfx.dll_006367ae
     ADD ESI,0x2                         ; 00510df5
-    MOV byte ptr [EDI + 0x1],AL         ; 00510df8 | DAT_00684011 | s_d3d.dll_00684013
+    MOV byte ptr [EDI + 0x1],AL         ; 00510df8 | g_RendererDllName+1 | s_d3d.dll_00684013
     ADD EDI,0x2                         ; 00510dfb
     CMP AL,0x0                          ; 00510dfe
     JNZ 0x00510dea                      ; 00510e00
@@ -536,7 +536,7 @@ section .text
         ;   XREF to: 0051123e (CONDITIONAL_JUMP)  ; LAB_0051123e
     MOV AL,byte ptr [ESI + 0x1]         ; 0051122e | s_ridx6.dll_006367c4 | s_dx6.dll_006367c6
     ADD ESI,0x2                         ; 00511231
-    MOV byte ptr [EDI + 0x1],AL         ; 00511234 | DAT_00684011 | s_d3d.dll_00684013
+    MOV byte ptr [EDI + 0x1],AL         ; 00511234 | g_RendererDllName+1 | s_d3d.dll_00684013
     ADD EDI,0x2                         ; 00511237
     CMP AL,0x0                          ; 0051123a
     JNZ 0x00511226                      ; 0051123c
@@ -998,7 +998,7 @@ section .text
         ;   XREF to: 005116de (CONDITIONAL_JUMP)  ; LAB_005116de
     MOV AL,byte ptr [ESI + 0x1]         ; 005116ce | s_ridx6.dll_00636a39 | s_dx6.dll_00636a3b | s_ridx7.dll_00636a4f
     ADD ESI,0x2                         ; 005116d1
-    MOV byte ptr [EDI + 0x1],AL         ; 005116d4 | DAT_00684011 | s_d3d.dll_00684013
+    MOV byte ptr [EDI + 0x1],AL         ; 005116d4 | g_RendererDllName+1 | s_d3d.dll_00684013
     ADD EDI,0x2                         ; 005116d7
     CMP AL,0x0                          ; 005116da
     JNZ 0x005116c6                      ; 005116dc

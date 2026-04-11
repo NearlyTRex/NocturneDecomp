@@ -674,13 +674,13 @@ section .text
     MOV AL,0x0                          ; 00580e8f
     SCASB.REPNE ES:EDI                  ; 00580e91
     DEC EDI                             ; 00580e93
-    MOV AL,byte ptr [ESI]               ; 00580e94 | = ".set" | DAT_00648889
+    MOV AL,byte ptr [ESI]               ; 00580e94 | = ".set" | s_set_00648887+2
         ;   Label: LAB_00580e94
     MOV byte ptr [EDI],AL               ; 00580e96
     CMP AL,0x0                          ; 00580e98
     JZ 0x00580eac                       ; 00580e9a
         ;   XREF to: 00580eac (CONDITIONAL_JUMP)  ; LAB_00580eac
-    MOV AL,byte ptr [ESI + 0x1]         ; 00580e9c | DAT_00648888 | DAT_0064888a
+    MOV AL,byte ptr [ESI + 0x1]         ; 00580e9c | s_set_00648887+1 | s_set_00648887+3
     ADD ESI,0x2                         ; 00580e9f
     MOV byte ptr [EDI + 0x1],AL         ; 00580ea2
     ADD EDI,0x2                         ; 00580ea5

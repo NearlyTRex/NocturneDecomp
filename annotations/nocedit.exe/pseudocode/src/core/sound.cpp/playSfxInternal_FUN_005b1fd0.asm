@@ -49,9 +49,9 @@
 ;   TerminatedCString s_anon_0065258d
 ;   TerminatedCString s_anon_0065258f
 ;   TerminatedCString s_wav_00652591
-;   undefined4 DAT_00652592
-;   undefined4 DAT_00652593
-;   undefined4 DAT_00652594
+;   undefined4 s_wav_00652591+1
+;   undefined4 s_wav_00652591+2
+;   undefined4 s_wav_00652591+3
 ;   TerminatedCString s_Can_t_find_wav_s_00652596
 ;   TerminatedCString s_core_sound_cpp_006525aa
 ;   TerminatedCString s_at_006525bc
@@ -152,13 +152,13 @@ section .text
     MOV AL,0x0                          ; 005b2063
     SCASB.REPNE ES:EDI                  ; 005b2065
     DEC EDI                             ; 005b2067
-    MOV AL,byte ptr [ESI]               ; 005b2068 | = ".wav" | DAT_00652593
+    MOV AL,byte ptr [ESI]               ; 005b2068 | = ".wav" | s_wav_00652591+2
         ;   Label: LAB_005b2068
     MOV byte ptr [EDI],AL               ; 005b206a
     CMP AL,0x0                          ; 005b206c
     JZ 0x005b2080                       ; 005b206e
         ;   XREF to: 005b2080 (CONDITIONAL_JUMP)  ; LAB_005b2080
-    MOV AL,byte ptr [ESI + 0x1]         ; 005b2070 | DAT_00652592 | DAT_00652594
+    MOV AL,byte ptr [ESI + 0x1]         ; 005b2070 | s_wav_00652591+1 | s_wav_00652591+3
     ADD ESI,0x2                         ; 005b2073
     MOV byte ptr [EDI + 0x1],AL         ; 005b2076
     ADD EDI,0x2                         ; 005b2079

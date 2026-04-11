@@ -545,6 +545,7 @@ extern int g_CameraEdgeOffsetY[8];
 
 // short
 extern short g_DaysInMonth_Normal;
+extern short SHORT_00665f50;
 extern short g_DaysInMonth_Leap;
 
 // streambuf_vtable

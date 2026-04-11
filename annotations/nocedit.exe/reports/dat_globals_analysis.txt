@@ -2,16 +2,15 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 261
-Filtered out (inside named data): 237
+Total DAT_ globals found: 15
+Filtered out (inside named data): 4
 Immediate constants (not real globals): 1
-Real globals remaining: 23
+Real globals remaining: 10
 
 Current type breakdown:
-  undefined4                     22
-  undefined1                     1
+  undefined4                     10
 
-DAT_ globals with type hints: 5 / 23
+DAT_ globals with type hints: 3 / 10
 
 --------------------------------------------------------------------------------
 HIGH CONFIDENCE INFERENCES (3)
@@ -23,36 +22,21 @@ HIGH CONFIDENCE INFERENCES (3)
     nearby: g_InputHistory (char[20]) at offset -1
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE INFERENCES (2)
+MEDIUM CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
-  DAT_00665f28                    addr=00665f28    current=undefined4      likely=byte            refs=2
-    nearby: g_PositiveInfinity (double) at offset -8
-  DAT_006852db                    addr=006852db    current=undefined1      likely=byte            refs=1
-    nearby: g_TempDirectoryBuffer (char[260]) at offset -1
 
 --------------------------------------------------------------------------------
 LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (18)
+NO TYPE HINTS (7)
 --------------------------------------------------------------------------------
   DAT_00412b41                    addr=00412b41    type=undefined4      refs=1
   DAT_0051a3f4                    addr=0051a3f4    type=undefined4      refs=1  nearby: PTR_caseD_5_0051a3ec at +8
   DAT_00665f3a                    addr=00665f3a    type=undefined4      refs=1  nearby: g_DaysInMonth_Normal at +2
-  DAT_00665f50                    addr=00665f50    type=undefined4      refs=2  nearby: g_DaysInMonth_Leap at -2
   DAT_00679d50                    addr=00679d50    type=undefined4      refs=1  nearby: switchdataD_00679d54 at -4
-  DAT_00679d94                    addr=00679d94    type=undefined4      refs=1  nearby: g_PodFileActionNames at -12
   DAT_0067b718                    addr=0067b718    type=undefined4      refs=1  nearby: g_ChapterMissionFiles at -56
-  DAT_00685094                    addr=00685094    type=undefined4      refs=1  nearby: g_DstStartRule.rule_type at +4
-  DAT_006850a4                    addr=006850a4    type=undefined4      refs=1  nearby: g_DstTransitionHour at +4
-  DAT_006850a8                    addr=006850a8    type=undefined4      refs=1  nearby: g_DstTransitionHour at +8
-  DAT_006850b0                    addr=006850b0    type=undefined4      refs=1  nearby: s_EST_006850bc at -12
-  DAT_006850b4                    addr=006850b4    type=undefined4      refs=1  nearby: s_EST_006850bc at -8
-  DAT_006850b8                    addr=006850b8    type=undefined4      refs=1  nearby: s_EST_006850bc at -4
-  DAT_00685210                    addr=00685210    type=undefined4      refs=1  nearby: g_MaxHandleCount at -4
-  DAT_006855d8                    addr=006855d8    type=undefined4      refs=1  nearby: PTR_crt_math.c_check_error_context_FUN_0060fa8b_00685590 at +72
-  DAT_006e6f63                    addr=006e6f63    type=undefined4      refs=1
   DAT_00800000                    addr=00800000    type=undefined4      refs=12
   DAT_03f5d97c                    addr=03f5d97c    type=undefined4      refs=1  nearby: g_SoundTestErrorBuffer at +220
 
@@ -62,23 +46,10 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_00002424                    addr=00002424    refs=21    type=undefined4      likely=float
   DAT_00800000                    addr=00800000    refs=12    type=undefined4    
   DAT_02d831d6                    addr=02d831d6    refs=3     type=undefined4      likely=byte  nearby: g_InputHistory(-1)
-  DAT_00665f28                    addr=00665f28    refs=2     type=undefined4      likely=byte  nearby: g_PositiveInfinity(-8)
-  DAT_00665f50                    addr=00665f50    refs=2     type=undefined4      nearby: g_DaysInMonth_Leap(-2)
   DAT_00412b41                    addr=00412b41    refs=1     type=undefined4    
   DAT_0067b718                    addr=0067b718    refs=1     type=undefined4      nearby: g_ChapterMissionFiles(-56)
-  DAT_00685210                    addr=00685210    refs=1     type=undefined4      nearby: g_MaxHandleCount(-4)
-  DAT_006852db                    addr=006852db    refs=1     type=undefined1      likely=byte  nearby: g_TempDirectoryBuffer(-1)
   DAT_0068528c                    addr=0068528c    refs=1     type=undefined4      likely=function_ptr  nearby: g_SpecialDeviceCleanupFunc(+4)
-  DAT_006e6f63                    addr=006e6f63    refs=1     type=undefined4    
-  DAT_006855d8                    addr=006855d8    refs=1     type=undefined4      nearby: PTR_crt_math.c_check_error_context_FUN_0060fa8b_00685590(+72)
   DAT_00665f3a                    addr=00665f3a    refs=1     type=undefined4      nearby: g_DaysInMonth_Normal(+2)
-  DAT_00685094                    addr=00685094    refs=1     type=undefined4      nearby: g_DstStartRule.rule_type(+4)
-  DAT_006850a4                    addr=006850a4    refs=1     type=undefined4      nearby: g_DstTransitionHour(+4)
-  DAT_006850a8                    addr=006850a8    refs=1     type=undefined4      nearby: g_DstTransitionHour(+8)
-  DAT_006850b0                    addr=006850b0    refs=1     type=undefined4      nearby: s_EST_006850bc(-12)
-  DAT_006850b4                    addr=006850b4    refs=1     type=undefined4      nearby: s_EST_006850bc(-8)
-  DAT_006850b8                    addr=006850b8    refs=1     type=undefined4      nearby: s_EST_006850bc(-4)
-  DAT_00679d94                    addr=00679d94    refs=1     type=undefined4      nearby: g_PodFileActionNames(-12)
   DAT_00679d50                    addr=00679d50    refs=1     type=undefined4      nearby: switchdataD_00679d54(-4)
   DAT_0051a3f4                    addr=0051a3f4    refs=1     type=undefined4      nearby: PTR_caseD_5_0051a3ec(+8)
   DAT_03f5d97c                    addr=03f5d97c    refs=1     type=undefined4      nearby: g_SoundTestErrorBuffer(+220)
@@ -92,246 +63,13 @@ They appear only as inline constant values.
   DAT_00766880                    value=0x766880        refs=1
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (237)
+FILTERED OUT - INSIDE NAMED DATA (4)
 --------------------------------------------------------------------------------
 These DAT_ globals fall within the address range of a named
 string, array, or struct and are not standalone globals.
 
-  DAT_00613579                    inside s_none_00613578
-  DAT_0061357a                    inside s_none_00613578
-  DAT_0061357e                    inside s_str_0061357d
-  DAT_0061357f                    inside s_str_0061357d
-  DAT_006144d2                    inside s_TRUE_006144d1
-  DAT_006144d3                    inside s_TRUE_006144d1
-  DAT_006144d4                    inside s_TRUE_006144d1
-  DAT_006144dd                    inside s_none_006144dc
-  DAT_006144de                    inside s_none_006144dc
-  DAT_006144e4                    inside s_none_006144e3
-  DAT_006144e5                    inside s_none_006144e3
-  DAT_00614522                    inside s_none_00614521
-  DAT_00614523                    inside s_none_00614521
-  DAT_00614940                    inside s_CGun_0061493f
-  DAT_00614941                    inside s_CGun_0061493f
-  DAT_00614942                    inside s_CGun_0061493f
-  DAT_006169b0                    inside s_anon_006169af
-  DAT_006176af                    inside s_none_006176ae
-  DAT_006176b0                    inside s_none_006176ae
-  DAT_006176b1                    inside s_none_006176ae
-  DAT_00618ac7                    inside s_cth_00618ac4+2
-  DAT_0061930c                    inside s_pth_0061930b
-  DAT_0061930d                    inside s_pth_0061930b
-  DAT_0061930e                    inside s_pth_0061930b
-  DAT_00619328                    inside s_pth_00619327
-  DAT_00619329                    inside s_pth_00619327
-  DAT_0061932a                    inside s_pth_00619327
-  DAT_00619ece                    inside s_ACT_00619ecd
-  DAT_00619ecf                    inside s_ACT_00619ecd
-  DAT_00619ed0                    inside s_ACT_00619ecd
-  DAT_0061a166                    inside s_ACT_0061a165
-  DAT_0061a167                    inside s_ACT_0061a165
-  DAT_0061a168                    inside s_ACT_0061a165
-  DAT_0061a1c7                    inside s_fog_0061a1c6
-  DAT_0061a1c8                    inside s_fog_0061a1c6
-  DAT_0061a1c9                    inside s_fog_0061a1c6
-  DAT_0061a9cd                    inside s_MDL_0061a9cc
-  DAT_0061a9ce                    inside s_MDL_0061a9cc
-  DAT_0061a9cf                    inside s_MDL_0061a9cc
-  DAT_0061aaeb                    inside s_BODY_0061aaea
-  DAT_0061aaec                    inside s_BODY_0061aaea
-  DAT_0061aaed                    inside s_BODY_0061aaea
-  DAT_0061ac74                    inside s_raw_0061ac73
-  DAT_0061ac75                    inside s_raw_0061ac73
-  DAT_0061ace0                    inside s_TGA_0061acdf
-  DAT_0061ace1                    inside s_TGA_0061acdf
-  DAT_0061ad97                    inside s_MDL_0061ad96
-  DAT_0061ad98                    inside s_MDL_0061ad96
-  DAT_0061ad99                    inside s_MDL_0061ad96
-  DAT_0061af5b                    inside s_ASM_0061af5a
-  DAT_0061af5c                    inside s_ASM_0061af5a
-  DAT_0061af5d                    inside s_ASM_0061af5a
-  DAT_0061af60                    inside s_BIN_0061af5f
-  DAT_0061af61                    inside s_BIN_0061af5f
-  DAT_0061af62                    inside s_BIN_0061af5f
-  DAT_0061d195                    inside s_anon_0061d194
-  DAT_0061d22a                    inside s_MDL_0061d229
-  DAT_0061d22b                    inside s_MDL_0061d229
-  DAT_0061d22c                    inside s_MDL_0061d229
-  DAT_0061d24a                    inside s_MDL_0061d249
-  DAT_0061d24b                    inside s_MDL_0061d249
-  DAT_0061d24c                    inside s_MDL_0061d249
-  DAT_0061d24f                    inside s_MDL_0061d24e
-  DAT_0061d250                    inside s_MDL_0061d24e
-  DAT_0061d251                    inside s_MDL_0061d24e
-  DAT_0061d254                    inside s_TGA_0061d253
-  DAT_0061d255                    inside s_TGA_0061d253
-  DAT_0061d256                    inside s_TGA_0061d253
-  DAT_0061da38                    inside s_s_0061da37
-  DAT_0061da5b                    inside s_s_0061da5a
-  DAT_0061daf0                    inside s_RAW_0061daef
-  DAT_0061daf1                    inside s_RAW_0061daef
-  DAT_0061daf2                    inside s_RAW_0061daef
-  DAT_0061daf5                    inside s_RAW_0061daf4
-  DAT_0061daf6                    inside s_RAW_0061daf4
-  DAT_0061daf7                    inside s_RAW_0061daf4
-  DAT_0061dc3c                    inside s_ACT_0061dc3b
-  DAT_0061dc3d                    inside s_ACT_0061dc3b
-  DAT_0061dc3e                    inside s_ACT_0061dc3b
-  DAT_0061dcae                    inside s_OPA_0061dcad
-  DAT_0061dcaf                    inside s_OPA_0061dcad
-  DAT_0061dcb0                    inside s_OPA_0061dcad
-  DAT_0061dfaf                    inside s_ACT_0061dfae
-  DAT_0061dfb0                    inside s_ACT_0061dfae
-  DAT_0061dfb4                    inside s_ACT_0061dfb3
-  DAT_0061dfb5                    inside s_ACT_0061dfb3
-  DAT_0061dff2                    inside s_ACT_0061dff1
-  DAT_0061dff3                    inside s_ACT_0061dff1
-  DAT_0061dff7                    inside s_ACT_0061dff6
-  DAT_0061dff8                    inside s_ACT_0061dff6
-  DAT_006209be                    inside s_kfm_006209bd
-  DAT_00621250                    inside s_true_0062124f
-  DAT_00621251                    inside s_true_0062124f
-  DAT_00621252                    inside s_true_0062124f
-  DAT_00621348                    inside s_Open_00621347
-  DAT_00621349                    inside s_Open_00621347
-  DAT_0062134a                    inside s_Open_00621347
-  DAT_00621655                    inside s_anon_00621654
-  DAT_006222c2                    inside s_Lava_006222c1
-  DAT_006222c3                    inside s_Lava_006222c1
-  DAT_006222c4                    inside s_Lava_006222c1
-  DAT_006231b0                    inside s_anon_006231af
-  DAT_006231b2                    inside s_d_006231b1
-  DAT_006235ac                    inside g_AxisLabelChars
-  DAT_0062430a                    inside s_ene_00624309
-  DAT_0062430b                    inside s_ene_00624309
-  DAT_00629210                    inside s_DefaultWildcard_0062920f
-  DAT_00629645                    inside s_file_00629644
-  DAT_00629646                    inside s_file_00629644
-  DAT_00629647                    inside s_file_00629644
-  DAT_00629673                    inside s_scr_00629672
-  DAT_00629674                    inside s_scr_00629672
-  DAT_00629675                    inside s_scr_00629672
-  DAT_00629688                    inside s_txt_00629687
-  DAT_00629689                    inside s_txt_00629687
-  DAT_0062968a                    inside s_txt_00629687
-  DAT_0062cab9                    inside s_LZW_0062cab8
-  DAT_0062d2e0                    inside s_act_0062d2df
-  DAT_0062d2e1                    inside s_act_0062d2df
-  DAT_0062d2e2                    inside s_act_0062d2df
-  DAT_0062d4ff                    inside s_anon_0062d4fe
-  DAT_0062d500                    inside s_anon_0062d4fe
-  DAT_0062d51f                    inside s_anon_0062d51e
-  DAT_0062d520                    inside s_anon_0062d51e
-  DAT_0062d57c                    inside s_anon_0062d57b
-  DAT_0062d57d                    inside s_anon_0062d57b
-  DAT_0062d5a2                    inside s_anon_0062d5a1
-  DAT_0062d5a3                    inside s_anon_0062d5a1
-  DAT_0062e28b                    inside s_ACT_0062e28a
-  DAT_0062e28c                    inside s_ACT_0062e28a
-  DAT_0062e28d                    inside s_ACT_0062e28a
-  DAT_0062e2d6                    inside s_ACT_0062e2d5
-  DAT_0062e2d7                    inside s_ACT_0062e2d5
-  DAT_0062e2d8                    inside s_ACT_0062e2d5
-  DAT_0062e749                    inside s_raw_0062e748
-  DAT_0062e74a                    inside s_raw_0062e748
-  DAT_0062e74b                    inside s_raw_0062e748
-  DAT_0062e768                    inside s_clr_0062e767
-  DAT_0062e769                    inside s_clr_0062e767
-  DAT_0062e76a                    inside s_clr_0062e767
-  DAT_00631179                    inside s_Off_00631178
-  DAT_0063117a                    inside s_Off_00631178
-  DAT_0063117b                    inside s_Off_00631178
-  DAT_0063117d                    inside s_On_0063117c
-  DAT_00635429                    inside s_anon_00635428
-  DAT_0063545a                    inside s_anon_00635459
-  DAT_0063548e                    inside s_anon_0063548d
-  DAT_006354aa                    inside s_anon_006354a9
-  DAT_00635508                    inside s_anon_00635507
-  DAT_00635537                    inside s_anon_00635536
-  DAT_006367ac                    inside s_tri3dfx_dll_006367ab
-  DAT_006396d8                    inside s_none_006396d7
-  DAT_006396d9                    inside s_none_006396d7
-  DAT_006396da                    inside s_none_006396d7
-  DAT_0063eb1e                    inside s_RAW_0063eb1d
-  DAT_0063eb1f                    inside s_RAW_0063eb1d
-  DAT_0063eb20                    inside s_RAW_0063eb1d
-  DAT_0063ebad                    inside s_RAW_0063ebac
-  DAT_0063ebae                    inside s_RAW_0063ebac
-  DAT_0063ebaf                    inside s_RAW_0063ebac
-  DAT_0063fab3                    inside s_WTF_0063fab2
-  DAT_006417b6                    inside s_txt_006417b5
-  DAT_006417b7                    inside s_txt_006417b5
-  DAT_006417b8                    inside s_txt_006417b5
-  DAT_00641a76                    inside s_wav_00641a75
-  DAT_00641a77                    inside s_wav_00641a75
-  DAT_00641a78                    inside s_wav_00641a75
-  DAT_00641a85                    inside s_s_0_85_00641a84
-  DAT_00641a86                    inside s_s_0_85_00641a84
-  DAT_00641a87                    inside s_s_0_85_00641a84
-  DAT_00641a94                    inside s_s_0_85_00641a93
-  DAT_00641a95                    inside s_s_0_85_00641a93
-  DAT_00641a96                    inside s_s_0_85_00641a93
-  DAT_00642f53                    inside s_anon_00642f52
-  DAT_00643339                    inside s_anon_00643338
-  DAT_00644178                    inside s_anon_00644177
-  DAT_006459a2                    inside s_none_006459a1
-  DAT_006459a3                    inside s_none_006459a1
-  DAT_006459a4                    inside s_none_006459a1
-  DAT_00645ac1                    inside s_zth_00645ac0
-  DAT_00645ac2                    inside s_zth_00645ac0
-  DAT_00645ac3                    inside s_zth_00645ac0
-  DAT_006466e4                    inside s_thm_006466e3
-  DAT_006466e5                    inside s_thm_006466e3
-  DAT_006466e6                    inside s_thm_006466e3
-  DAT_00647625                    inside s_zth_00647624
-  DAT_00647626                    inside s_zth_00647624
-  DAT_00647627                    inside s_zth_00647624
-  DAT_00647c8b                    inside s_set_00647c8a
-  DAT_00647c8c                    inside s_set_00647c8a
-  DAT_00647c8d                    inside s_set_00647c8a
-  DAT_006481cd                    inside s_set_006481cc
-  DAT_006481ce                    inside s_set_006481cc
-  DAT_006481cf                    inside s_set_006481cc
-  DAT_00648888                    inside s_set_00648887
-  DAT_00648889                    inside s_set_00648887
-  DAT_0064888a                    inside s_set_00648887
-  DAT_00648f9f                    inside s_set_00648f9e
-  DAT_00648fa0                    inside s_set_00648f9e
-  DAT_00648fa1                    inside s_set_00648f9e
-  DAT_00649152                    inside s_art_00649151
-  DAT_00649153                    inside s_art_00649151
-  DAT_00649154                    inside s_art_00649151
-  DAT_00652592                    inside s_wav_00652591
-  DAT_00652593                    inside s_wav_00652591
-  DAT_00652594                    inside s_wav_00652591
-  DAT_00654ef5                    inside s_tex_00654ef4
-  DAT_00654ef6                    inside s_tex_00654ef4
-  DAT_00654ef7                    inside s_tex_00654ef4
-  DAT_00658bf4                    inside s_m_d_y_00658be8
-  DAT_00658c04                    inside s_I_M_S_p_00658bf8
-  DAT_00658c08                    inside s_I_M_S_p_00658bf8
-  DAT_00658c0c                    inside s_I_M_S_p_00658bf8
   DAT_006590a4                    inside s_con_006590a0
   DAT_006590a8                    inside s_con_006590a0
-  DAT_006597a1                    inside g_ProcessFileInfoStr
-  DAT_006597a2                    inside g_ProcessFileInfoStr
-  DAT_006597a3                    inside g_ProcessFileInfoStr
-  DAT_006597a5                    inside g_ProcessFileInfoStr+4
-  DAT_006597a6                    inside g_ProcessFileInfoStr+4
-  DAT_006597a7                    inside g_ProcessFileInfoStr+4
-  DAT_0066efa0                    inside g_GlobalFilters
-  DAT_0066efc0                    inside g_PlayerFilters
-  DAT_0067b685                    inside s_EFD_0067b684
-  DAT_00684011                    inside g_RendererDllName
   DAT_0068513c                    inside s_EST_006850bc
   DAT_006851bd                    inside s_EDT_0068513d
-  DAT_009e5d74                    inside g_TempWorldPositions
-  DAT_009e5d80                    inside g_TempWorldPositions
-  DAT_009e6c74                    inside g_TempWorldPositions
-  DAT_02c14d80                    inside g_FaceConversionBuffer
-  DAT_02c14d84                    inside g_FaceConversionBuffer
-  DAT_02c14d88                    inside g_FaceConversionBuffer
-  DAT_02c14d8c                    inside g_FaceConversionBuffer
-  DAT_02c14d90                    inside g_FaceConversionBuffer
-  DAT_02cf0df8                    inside g_TextWrapBuffer
-  DAT_02d7b9e0                    inside g_WrappedTextBuffer
 

@@ -34,7 +34,7 @@
 ;   TerminatedCString s_anon_00629637
 ;   TerminatedCString s_s_0062963a
 ;   TerminatedCString s_file_00629644
-;   undefined4 DAT_00629645
+;   undefined4 s_ile_00629644+1
 ;   ... and 33 more
 ;
 ; Called Functions:
@@ -241,13 +241,13 @@ section .text
     MOV ESI,0x629644                    ; 004bdbf4 | = "file"
     LEA EDI,[ESP + 0x4f4]               ; 004bdbf9
     PUSH EDI                            ; 004bdc00
-    MOV AL,byte ptr [ESI]               ; 004bdc01 | = "file" | DAT_00629646
+    MOV AL,byte ptr [ESI]               ; 004bdc01 | = "file" | s_le_00629644+2
         ;   Label: LAB_004bdc01
     MOV byte ptr [EDI],AL               ; 004bdc03
     CMP AL,0x0                          ; 004bdc05
     JZ 0x004bdc19                       ; 004bdc07
         ;   XREF to: 004bdc19 (CONDITIONAL_JUMP)  ; LAB_004bdc19
-    MOV AL,byte ptr [ESI + 0x1]         ; 004bdc09 | DAT_00629645 | DAT_00629647
+    MOV AL,byte ptr [ESI + 0x1]         ; 004bdc09 | s_ile_00629644+1 | s_e_00629644+3
     ADD ESI,0x2                         ; 004bdc0c
     MOV byte ptr [EDI + 0x1],AL         ; 004bdc0f
     ADD EDI,0x2                         ; 004bdc12
@@ -475,13 +475,13 @@ section .text
     MOV AL,0x0                          ; 004bde34
     SCASB.REPNE ES:EDI                  ; 004bde36
     DEC EDI                             ; 004bde38
-    MOV AL,byte ptr [ESI]               ; 004bde39 | = ".scr" | DAT_00629674
+    MOV AL,byte ptr [ESI]               ; 004bde39 | = ".scr" | s_scr_00629672+2
         ;   Label: LAB_004bde39
     MOV byte ptr [EDI],AL               ; 004bde3b
     CMP AL,0x0                          ; 004bde3d
     JZ 0x004bde51                       ; 004bde3f
         ;   XREF to: 004bde51 (CONDITIONAL_JUMP)  ; LAB_004bde51
-    MOV AL,byte ptr [ESI + 0x1]         ; 004bde41 | DAT_00629673 | DAT_00629675
+    MOV AL,byte ptr [ESI + 0x1]         ; 004bde41 | s_scr_00629672+1 | s_scr_00629672+3
     ADD ESI,0x2                         ; 004bde44
     MOV byte ptr [EDI + 0x1],AL         ; 004bde47
     ADD EDI,0x2                         ; 004bde4a
@@ -526,13 +526,13 @@ section .text
     MOV AL,0x0                          ; 004bdeb2
     SCASB.REPNE ES:EDI                  ; 004bdeb4
     DEC EDI                             ; 004bdeb6
-    MOV AL,byte ptr [ESI]               ; 004bdeb7 | = ".txt" | DAT_00629689
+    MOV AL,byte ptr [ESI]               ; 004bdeb7 | = ".txt" | s_txt_00629687+2
         ;   Label: LAB_004bdeb7
     MOV byte ptr [EDI],AL               ; 004bdeb9
     CMP AL,0x0                          ; 004bdebb
     JZ 0x004bdecf                       ; 004bdebd
         ;   XREF to: 004bdecf (CONDITIONAL_JUMP)  ; LAB_004bdecf
-    MOV AL,byte ptr [ESI + 0x1]         ; 004bdebf | DAT_00629688 | DAT_0062968a
+    MOV AL,byte ptr [ESI + 0x1]         ; 004bdebf | s_txt_00629687+1 | s_txt_00629687+3
     ADD ESI,0x2                         ; 004bdec2
     MOV byte ptr [EDI + 0x1],AL         ; 004bdec5
     ADD EDI,0x2                         ; 004bdec8

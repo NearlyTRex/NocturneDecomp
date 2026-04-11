@@ -298,13 +298,13 @@ section .text
     MOV AL,0x0                          ; 004432af
     SCASB.REPNE ES:EDI                  ; 004432b1
     DEC EDI                             ; 004432b3
-    MOV AL,byte ptr [ESI]               ; 004432b4 | = ".pth" | DAT_0061930d
+    MOV AL,byte ptr [ESI]               ; 004432b4 | = ".pth" | s_pth_0061930b+2
         ;   Label: LAB_004432b4
     MOV byte ptr [EDI],AL               ; 004432b6
     CMP AL,0x0                          ; 004432b8
     JZ 0x004432cc                       ; 004432ba
         ;   XREF to: 004432cc (CONDITIONAL_JUMP)  ; LAB_004432cc
-    MOV AL,byte ptr [ESI + 0x1]         ; 004432bc | DAT_0061930c | DAT_0061930e
+    MOV AL,byte ptr [ESI + 0x1]         ; 004432bc | s_pth_0061930b+1 | s_pth_0061930b+3
     ADD ESI,0x2                         ; 004432bf
     MOV byte ptr [EDI + 0x1],AL         ; 004432c2
     ADD EDI,0x2                         ; 004432c5
@@ -646,13 +646,13 @@ section .text
     MOV AL,0x0                          ; 004436a6
     SCASB.REPNE ES:EDI                  ; 004436a8
     DEC EDI                             ; 004436aa
-    MOV AL,byte ptr [ESI]               ; 004436ab | = ".pth" | DAT_00619329
+    MOV AL,byte ptr [ESI]               ; 004436ab | = ".pth" | s_pth_00619327+2
         ;   Label: LAB_004436ab
     MOV byte ptr [EDI],AL               ; 004436ad
     CMP AL,0x0                          ; 004436af
     JZ 0x004436c3                       ; 004436b1
         ;   XREF to: 004436c3 (CONDITIONAL_JUMP)  ; LAB_004436c3
-    MOV AL,byte ptr [ESI + 0x1]         ; 004436b3 | DAT_00619328 | DAT_0061932a
+    MOV AL,byte ptr [ESI + 0x1]         ; 004436b3 | s_pth_00619327+1 | s_pth_00619327+3
     ADD ESI,0x2                         ; 004436b6
     MOV byte ptr [EDI + 0x1],AL         ; 004436b9
     ADD EDI,0x2                         ; 004436bc

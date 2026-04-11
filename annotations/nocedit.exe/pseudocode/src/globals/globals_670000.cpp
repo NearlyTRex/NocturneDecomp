@@ -2015,6 +2015,7 @@ int g_JoystickNumButtons = 0x4;
 int g_CurrentAlphaValue = 0xff;
 int g_RenderingQuality = 0x1;
 int g_ProjectionScale = 0x10000;
+int INT_00679d94 = 0x4b1b14;
 int g_CFilmReelClassVersion = 0x2;
 int g_CFilmProjectorClassVersion = 0x2;
 int g_CFlameClassVersion = 0x7;
@@ -2191,9 +2192,6 @@ ulonglong g_ByteFillTable[256] = {
     0xF0F0F0F0F0F0F0F0, 0xF1F1F1F1F1F1F1F1, 0xF2F2F2F2F2F2F2F2, 0xF3F3F3F3F3F3F3F3, 0xF4F4F4F4F4F4F4F4, 0xF5F5F5F5F5F5F5F5, 0xF6F6F6F6F6F6F6F6, 0xF7F7F7F7F7F7F7F7,
     0xF8F8F8F8F8F8F8F8, 0xF9F9F9F9F9F9F9F9, 0xFAFAFAFAFAFAFAFA, 0xFBFBFBFBFBFBFBFB, 0xFCFCFCFCFCFCFCFC, 0xFDFDFDFDFDFDFDFD, 0xFEFEFEFEFEFEFEFE, 0xFFFFFFFFFFFFFFFF
 };
-
-// undefined4
-undefined4 DAT_0067b718 = 0;
 
 // ushort[384]
 ushort g_LightmapData[384] = {

@@ -32,7 +32,7 @@
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
 ;   char[4000] g_TextWrapBuffer
-;   undefined4 DAT_02cf0df8
+;   undefined4 g_TextWrapBuffer+0xc8
 ;   CBitFont* g_EditorFont
 ;   ... and 37 more
 ;
@@ -164,7 +164,7 @@ section .text
     JLE 0x004a0af0                      ; 004a0ac5
         ;   XREF to: 004a0af0 (CONDITIONAL_JUMP)  ; LAB_004a0af0
     MOV EDI,0x2cf0d30                   ; 004a0ac7 | g_TextWrapBuffer
-    PUSH EDI                            ; 004a0acc | g_TextWrapBuffer | DAT_02cf0df8
+    PUSH EDI                            ; 004a0acc | g_TextWrapBuffer | g_TextWrapBuffer+0xc8
         ;   Label: LAB_004a0acc
     PUSH 0x6233cf                       ; 004a0acd | = "%s\n"
     PUSH EBP                            ; 004a0ad2

@@ -27,7 +27,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_00621654
-;   undefined4 DAT_00621655
+;   undefined4 s_anon_00621654+1
 ;   TerminatedCString s_core_dpart_cpp_00621656
 ;   undefined4 s_.\\core\\dpart.cpp_00621657
 ;
@@ -105,7 +105,7 @@ section .text
     CMP AL,0x0                          ; 00482012
     JZ 0x00482026                       ; 00482014
         ;   XREF to: 00482026 (CONDITIONAL_JUMP)  ; LAB_00482026
-    MOV AL,byte ptr [ESI + 0x1]         ; 00482016 | DAT_00621655 | s_.\core\dpart.cpp_00621657
+    MOV AL,byte ptr [ESI + 0x1]         ; 00482016 | s_anon_00621654+1 | s_.\core\dpart.cpp_00621657
     ADD ESI,0x2                         ; 00482019
     MOV byte ptr [EDI + 0x1],AL         ; 0048201c
     ADD EDI,0x2                         ; 0048201f

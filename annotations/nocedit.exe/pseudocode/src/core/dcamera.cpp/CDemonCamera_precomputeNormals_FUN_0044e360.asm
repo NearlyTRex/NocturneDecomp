@@ -39,7 +39,7 @@
 ;   int[8] g_CameraEdgeOffsetY
 ;   undefined4 g_CameraEdgeOffsetY[1]
 ;   undefined4 g_PrecomputedWorldPositions[321].x
-;   undefined4 DAT_009e5d80
+;   undefined4 g_TempWorldPositions[1][1].x
 ;   undefined4 g_PrecomputedSurfaceNormals[1][1].x
 ;   undefined4 g_PrecomputedSurfaceNormals[1][1].y
 ;   undefined4 g_PrecomputedSurfaceNormals[1][1].z
@@ -145,7 +145,7 @@ section .text
         ;   XREF to: 0060a0bf (UNCONDITIONAL_JUMP)  ; LAB_0060a0bf
     LEA ESI,[ESP + 0x34]                ; 0044e462
         ;   Label: LAB_0044e462
-    LEA EDI,[EDI + 0x9e4e74]            ; 0044e466 | DAT_009e5d80
+    LEA EDI,[EDI + 0x9e4e74]            ; 0044e466 | g_TempWorldPositions[1][1].x
     MOV EAX,dword ptr [ESP + 0x64]      ; 0044e46c
     JMP 0x0060a0de                      ; 0044e470
         ;   XREF to: 0060a0de (UNCONDITIONAL_JUMP)  ; LAB_0060a0de

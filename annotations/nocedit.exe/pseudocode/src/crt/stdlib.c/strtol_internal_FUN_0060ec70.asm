@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   uchar[257] g_CharacterClassificationTable
-;   undefined4 DAT_006855d8
+;   int INT_006855d8 = 0xfffffff
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00602790
@@ -139,7 +139,7 @@ section .text
     CMP EAX,EDI                         ; 0060ed35
     JGE 0x0060ed59                      ; 0060ed37
         ;   XREF to: 0060ed59 (CONDITIONAL_JUMP)  ; LAB_0060ed59
-    CMP ESI,dword ptr [EBP + 0x685598]  ; 0060ed39 | DAT_006855d8
+    CMP ESI,dword ptr [EBP + 0x685598]  ; 0060ed39 | INT_006855d8
     JBE 0x0060ed46                      ; 0060ed3f
         ;   XREF to: 0060ed46 (CONDITIONAL_JUMP)  ; LAB_0060ed46
     MOV byte ptr [ESP + 0x4],0x1        ; 0060ed41

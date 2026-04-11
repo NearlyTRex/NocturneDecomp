@@ -23,7 +23,7 @@
 ;   int g_AudioSampleRate = 0x5622
 ;   int[8] g_ChannelFFTTimestamps
 ;   int g_MixBufferSize
-;   void*[8] g_ChannelPrimaryBuffers
+;   float*[8] g_ChannelPrimaryBuffers
 ;   float*[8] g_ChannelSecondaryBuffersA
 ;   float*[8] g_ChannelSecondaryBuffersB
 ;

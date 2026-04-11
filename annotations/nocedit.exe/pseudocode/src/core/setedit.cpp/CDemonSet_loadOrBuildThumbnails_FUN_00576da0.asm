@@ -22,9 +22,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_thm_006466e3
-;   undefined4 DAT_006466e4
-;   undefined4 DAT_006466e5
-;   undefined4 DAT_006466e6
+;   undefined4 s_thm_006466e3+1
+;   undefined4 s_thm_006466e3+2
+;   undefined4 s_thm_006466e3+3
 ;   TerminatedCString s_rb_006466e8
 ;   TerminatedCString s_data_006466eb
 ;   TerminatedCString s_core_setedit_cpp_006466f0
@@ -143,13 +143,13 @@ section .text
         ;   Label: LAB_00576e23
     MOV ECX,dword ptr [ESP + 0x120]     ; 00576e28
     PUSH EDI                            ; 00576e2f
-    MOV AL,byte ptr [ESI]               ; 00576e30 | = ".thm" | DAT_006466e5
+    MOV AL,byte ptr [ESI]               ; 00576e30 | = ".thm" | s_thm_006466e3+2
         ;   Label: LAB_00576e30
     MOV byte ptr [EDI],AL               ; 00576e32
     CMP AL,0x0                          ; 00576e34
     JZ 0x00576e48                       ; 00576e36
         ;   XREF to: 00576e48 (CONDITIONAL_JUMP)  ; LAB_00576e48
-    MOV AL,byte ptr [ESI + 0x1]         ; 00576e38 | DAT_006466e4 | DAT_006466e6
+    MOV AL,byte ptr [ESI + 0x1]         ; 00576e38 | s_thm_006466e3+1 | s_thm_006466e3+3
     ADD ESI,0x2                         ; 00576e3b
     MOV byte ptr [EDI + 0x1],AL         ; 00576e3e
     ADD EDI,0x2                         ; 00576e41

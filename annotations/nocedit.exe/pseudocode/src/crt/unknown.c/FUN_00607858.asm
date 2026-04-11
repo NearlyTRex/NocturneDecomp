@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   undefined4 g_PositiveInfinity+6
 ;   short g_DaysInMonth_Normal = 0x0
-;   undefined4 DAT_00665f50
+;   short SHORT_00665f50 = 0x16d
 ;   short g_DaysInMonth_Leap = 0x0
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
         ;   XREF to: 00607898 (CONDITIONAL_JUMP)  ; LAB_00607898
     MOV EAX,dword ptr [EBX + 0x10]      ; 00607885
     MOV ESI,dword ptr [EAX*0x2 + 0x665f52] ; 00607888 | g_DaysInMonth_Leap
-    MOV EAX,dword ptr [EAX*0x2 + 0x665f50] ; 0060788f | DAT_00665f50
+    MOV EAX,dword ptr [EAX*0x2 + 0x665f50] ; 0060788f | SHORT_00665f50
     JMP 0x006078a9                      ; 00607896
         ;   XREF to: 006078a9 (UNCONDITIONAL_JUMP)  ; LAB_006078a9
     MOV EAX,dword ptr [EBX + 0x10]      ; 00607898

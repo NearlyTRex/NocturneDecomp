@@ -15,19 +15,19 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wav_00641a75
-;   undefined4 DAT_00641a76
-;   undefined4 DAT_00641a77
-;   undefined4 DAT_00641a78
+;   undefined4 s_wav_00641a75+1
+;   undefined4 s_wav_00641a75+2
+;   undefined4 s_wav_00641a75+3
 ;   TerminatedCString s_smill_wav_00641a7a
 ;   TerminatedCString s_s_0_85_00641a84
-;   undefined4 DAT_00641a85
-;   undefined4 DAT_00641a86
-;   undefined4 DAT_00641a87
+;   undefined4 s_s_0_85_00641a84+1
+;   undefined4 s_s_0_85_00641a84+2
+;   undefined4 s_s_0_85_00641a84+3
 ;   TerminatedCString s_town_wav_00641a8a
 ;   TerminatedCString s_s_0_85_00641a93
-;   undefined4 DAT_00641a94
-;   undefined4 DAT_00641a95
-;   undefined4 DAT_00641a96
+;   undefined4 s_s_0_85_00641a93+1
+;   undefined4 s_s_0_85_00641a93+2
+;   undefined4 s_s_0_85_00641a93+3
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   ... and 11 more
 ;
@@ -86,13 +86,13 @@ section .text
     MOV AL,0x0                          ; 0055a5f6
     SCASB.REPNE ES:EDI                  ; 0055a5f8
     DEC EDI                             ; 0055a5fa
-    MOV AL,byte ptr [ESI]               ; 0055a5fb | = ".wav" | DAT_00641a77
+    MOV AL,byte ptr [ESI]               ; 0055a5fb | = ".wav" | s_wav_00641a75+2
         ;   Label: LAB_0055a5fb
     MOV byte ptr [EDI],AL               ; 0055a5fd
     CMP AL,0x0                          ; 0055a5ff
     JZ 0x0055a613                       ; 0055a601
         ;   XREF to: 0055a613 (CONDITIONAL_JUMP)  ; LAB_0055a613
-    MOV AL,byte ptr [ESI + 0x1]         ; 0055a603 | DAT_00641a76 | DAT_00641a78
+    MOV AL,byte ptr [ESI + 0x1]         ; 0055a603 | s_wav_00641a75+1 | s_wav_00641a75+3
     ADD ESI,0x2                         ; 0055a606
     MOV byte ptr [EDI + 0x1],AL         ; 0055a609
     ADD EDI,0x2                         ; 0055a60c
@@ -118,13 +118,13 @@ section .text
     MOV AL,0x0                          ; 0055a635
     SCASB.REPNE ES:EDI                  ; 0055a637
     DEC EDI                             ; 0055a639
-    MOV AL,byte ptr [ESI]               ; 0055a63a | = "@0.85" | DAT_00641a86
+    MOV AL,byte ptr [ESI]               ; 0055a63a | = "@0.85" | s_s_0_85_00641a84+2
         ;   Label: LAB_0055a63a
     MOV byte ptr [EDI],AL               ; 0055a63c
     CMP AL,0x0                          ; 0055a63e
     JZ 0x0055a652                       ; 0055a640
         ;   XREF to: 0055a652 (CONDITIONAL_JUMP)  ; LAB_0055a652
-    MOV AL,byte ptr [ESI + 0x1]         ; 0055a642 | DAT_00641a85 | DAT_00641a87
+    MOV AL,byte ptr [ESI + 0x1]         ; 0055a642 | s_s_0_85_00641a84+1 | s_s_0_85_00641a84+3
     ADD ESI,0x2                         ; 0055a645
     MOV byte ptr [EDI + 0x1],AL         ; 0055a648
     ADD EDI,0x2                         ; 0055a64b
@@ -166,13 +166,13 @@ section .text
     MOV AL,0x0                          ; 0055a694
     SCASB.REPNE ES:EDI                  ; 0055a696
     DEC EDI                             ; 0055a698
-    MOV AL,byte ptr [ESI]               ; 0055a699 | = "@0.85" | DAT_00641a95
+    MOV AL,byte ptr [ESI]               ; 0055a699 | = "@0.85" | s_s_0_85_00641a93+2
         ;   Label: LAB_0055a699
     MOV byte ptr [EDI],AL               ; 0055a69b
     CMP AL,0x0                          ; 0055a69d
     JZ 0x0055a6b1                       ; 0055a69f
         ;   XREF to: 0055a6b1 (CONDITIONAL_JUMP)  ; LAB_0055a6b1
-    MOV AL,byte ptr [ESI + 0x1]         ; 0055a6a1 | DAT_00641a94 | DAT_00641a96
+    MOV AL,byte ptr [ESI + 0x1]         ; 0055a6a1 | s_s_0_85_00641a93+1 | s_s_0_85_00641a93+3
     ADD ESI,0x2                         ; 0055a6a4
     MOV byte ptr [EDI + 0x1],AL         ; 0055a6a7
     ADD EDI,0x2                         ; 0055a6aa

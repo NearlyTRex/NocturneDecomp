@@ -13,9 +13,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_mobster1_dfm_006396ca
 ;   TerminatedCString s_none_006396d7
-;   undefined4 DAT_006396d8
-;   undefined4 DAT_006396d9
-;   undefined4 DAT_006396da
+;   undefined4 s_one_006396d7+1
+;   undefined4 s_ne_006396d7+2
+;   undefined4 s_e_006396d7+3
 ;   float FLOAT_00661780 = 50
 ;   float FLOAT_00661784 = 100
 ;   CDemonActor_vtable g_CMobsterVTable
@@ -81,13 +81,13 @@ section .text
     LEA EDI,[EBX + 0xbeec]              ; 00525302
     MOV byte ptr [EBX + 0xbed0],AL      ; 00525308
     PUSH EDI                            ; 0052530e
-    MOV AL,byte ptr [ESI]               ; 0052530f | = "none" | DAT_006396d9
+    MOV AL,byte ptr [ESI]               ; 0052530f | = "none" | s_ne_006396d7+2
         ;   Label: LAB_0052530f
     MOV byte ptr [EDI],AL               ; 00525311
     CMP AL,0x0                          ; 00525313
     JZ 0x00525327                       ; 00525315
         ;   XREF to: 00525327 (CONDITIONAL_JUMP)  ; LAB_00525327
-    MOV AL,byte ptr [ESI + 0x1]         ; 00525317 | DAT_006396d8 | DAT_006396da
+    MOV AL,byte ptr [ESI + 0x1]         ; 00525317 | s_one_006396d7+1 | s_e_006396d7+3
     ADD ESI,0x2                         ; 0052531a
     MOV byte ptr [EDI + 0x1],AL         ; 0052531d
     ADD EDI,0x2                         ; 00525320

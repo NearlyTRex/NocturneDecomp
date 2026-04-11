@@ -593,13 +593,13 @@ section .text
         ;   Label: LAB_0057a87e
     MOV EBX,dword ptr [EBP + 0x14]      ; 0057a883
     PUSH EDI                            ; 0057a886
-    MOV AL,byte ptr [ESI]               ; 0057a887 | = ".zth" | DAT_00647626
+    MOV AL,byte ptr [ESI]               ; 0057a887 | = ".zth" | s_zth_00647624+2
         ;   Label: LAB_0057a887
     MOV byte ptr [EDI],AL               ; 0057a889
     CMP AL,0x0                          ; 0057a88b
     JZ 0x0057a89f                       ; 0057a88d
         ;   XREF to: 0057a89f (CONDITIONAL_JUMP)  ; LAB_0057a89f
-    MOV AL,byte ptr [ESI + 0x1]         ; 0057a88f | DAT_00647625 | DAT_00647627
+    MOV AL,byte ptr [ESI + 0x1]         ; 0057a88f | s_zth_00647624+1 | s_zth_00647624+3
     ADD ESI,0x2                         ; 0057a892
     MOV byte ptr [EDI + 0x1],AL         ; 0057a895
     ADD EDI,0x2                         ; 0057a898

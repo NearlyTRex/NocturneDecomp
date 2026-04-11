@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString g_RendererDllName
-;   undefined4 DAT_00684011
+;   undefined4 g_RendererDllName+1
 ;   undefined4 s_id3d_dll_00684012
 ;   undefined4 s_d3d.dll_00684013
 ;   int g_RendererHandle
@@ -44,7 +44,7 @@ section .text
         ;   XREF to: 005b8172 (CONDITIONAL_JUMP)  ; LAB_005b8172
     MOV AL,byte ptr [ESI + 0x1]         ; 005b8162
     ADD ESI,0x2                         ; 005b8165
-    MOV byte ptr [EDI + 0x1],AL         ; 005b8168 | DAT_00684011 | s_d3d.dll_00684013
+    MOV byte ptr [EDI + 0x1],AL         ; 005b8168 | g_RendererDllName+1 | s_d3d.dll_00684013
     ADD EDI,0x2                         ; 005b816b
     CMP AL,0x0                          ; 005b816e
     JNZ 0x005b815a                      ; 005b8170

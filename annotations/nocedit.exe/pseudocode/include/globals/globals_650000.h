@@ -348,5 +348,9 @@ extern WatcomTypeInfo g_CHighPriestOfGardathTypeInfo;
 extern char g_SpaceCharacter;
 
 // int
+extern int INT_00658bf4;
+extern int INT_00658c04;
+extern int INT_00658c08;
+extern int INT_00658c0c;
 extern int g_CramInvalidMarker;
 

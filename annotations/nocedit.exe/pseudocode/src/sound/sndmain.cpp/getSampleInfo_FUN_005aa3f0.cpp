@@ -19,7 +19,7 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
   byte bVar6;
   char local_114;
   byte local_113 [255];
-  long local_14;
+  int local_14;
   char cVar1;
   
   bVar6 = 0;

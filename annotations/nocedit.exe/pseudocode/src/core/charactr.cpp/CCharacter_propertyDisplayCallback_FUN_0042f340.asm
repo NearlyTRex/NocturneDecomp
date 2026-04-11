@@ -13,9 +13,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_006176ae
-;   undefined4 DAT_006176af
-;   undefined4 DAT_006176b0
-;   undefined4 DAT_006176b1
+;   undefined4 s_none_006176ae+1
+;   undefined4 s_none_006176ae+2
+;   undefined4 s_none_006176ae+3
 ;   TerminatedCString s_anon_006176b5
 ;   TerminatedCString s_s_006176b8
 ;   undefined4 g_CCharacterClassInfo.name_hash
@@ -46,13 +46,13 @@ section .text
     MOV EBX,EBP                         ; 0042f363
     MOV EDX,EAX                         ; 0042f365
     PUSH EDI                            ; 0042f367
-    MOV AL,byte ptr [ESI]               ; 0042f368 | = "(none)" | DAT_006176b0
+    MOV AL,byte ptr [ESI]               ; 0042f368 | = "(none)" | s_none_006176ae+2
         ;   Label: LAB_0042f368
     MOV byte ptr [EDI],AL               ; 0042f36a
     CMP AL,0x0                          ; 0042f36c
     JZ 0x0042f380                       ; 0042f36e
         ;   XREF to: 0042f380 (CONDITIONAL_JUMP)  ; LAB_0042f380
-    MOV AL,byte ptr [ESI + 0x1]         ; 0042f370 | DAT_006176af | DAT_006176b1
+    MOV AL,byte ptr [ESI + 0x1]         ; 0042f370 | s_none_006176ae+1 | s_none_006176ae+3
     ADD ESI,0x2                         ; 0042f373
     MOV byte ptr [EDI + 0x1],AL         ; 0042f376
     ADD EDI,0x2                         ; 0042f379

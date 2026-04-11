@@ -301,6 +301,9 @@ extern byte g_ConsoleHandlerRegistered;
 // byte[16]
 extern byte g_IEEE754ExponentClassTable[16];
 
+// char
+extern char CHAR_00h_006852db;
+
 // char*
 extern char* g_CurrentTrainMode;
 extern char* g_PreviousTrainMode;
@@ -452,12 +455,20 @@ extern int g_SpecialExitHandler;
 extern int DAT_00684F30;
 extern int INT_00684fd0;
 extern int g_ConsoleInitializationFlag;
+extern int INT_00685038;
+extern int INT_00685094;
 extern int g_DstTransitionSecond;
 extern int g_DstTransitionMinute;
 extern int g_DstTransitionHour;
+extern int INT_006850a4;
+extern int INT_006850a8;
+extern int INT_006850b0;
+extern int INT_006850b4;
+extern int INT_006850b8;
 extern int g_TimezoneOffset;
 extern int g_DaylightSavingActive;
 extern int g_DaylightSavingOffset;
+extern int INT_00685210;
 extern int g_CurrentHandleCount;
 extern int g_FakeHandleCounter;
 extern int INT_00685280;
@@ -466,6 +477,7 @@ extern int g_ConsoleInputState;
 extern int INT_006854ec;
 extern int INT_006854f0;
 extern int g_HeapFlags;
+extern int INT_006855d8;
 
 // int*
 extern int* g_CurrentScreenPtr;
@@ -496,14 +508,7 @@ extern uint g_CodePage;
 // uint*
 extern uint* g_HeapBound;
 
-// undefined1
-extern undefined1 DAT_006852db;
-
 // undefined4
-extern undefined4 DAT_00685094;
-extern undefined4 DAT_006850b0;
-extern undefined4 DAT_006850b4;
-extern undefined4 DAT_006850b8;
 extern undefined4 DAT_0068528c;
 
 // void*

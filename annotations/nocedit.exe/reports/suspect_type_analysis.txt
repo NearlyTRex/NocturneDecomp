@@ -4,8 +4,8 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    4363 ( 49.5%)
-  unknown_field                    859 (  9.7%)
+  pointer_cast                    4362 ( 49.5%)
+  unknown_field                    859 (  9.8%)
   special_crt_function             439 (  5.0%)
   stack_param                      351 (  4.0%)
   unnamed_param                    329 (  3.7%)
@@ -21,7 +21,7 @@ SUSPECT TYPE COUNTS
   stack_alignment_array             95 (  1.1%)
   warning_unreachable               86 (  1.0%)
   negative_offset                   86 (  1.0%)
-  wrong_global                      82 (  0.9%)
+  wrong_global                      81 (  0.9%)
   register_param                    69 (  0.8%)
   param_count_too_many              41 (  0.5%)
   unknown_type                      40 (  0.5%)
@@ -31,15 +31,15 @@ SUSPECT TYPE COUNTS
   format_string_mismatch            24 (  0.3%)
   undefined_ram                     24 (  0.3%)
   byvalue_struct_passing            22 (  0.2%)
-  undefined_data                    21 (  0.2%)
   undefined_type                    15 (  0.2%)
   special_math_intrinsic            15 (  0.2%)
   warning_jumptable                  8 (  0.1%)
   warning_indirect_jump              8 (  0.1%)
   nan_function_artifact              8 (  0.1%)
+  displaced_global_access            7 (  0.1%)
   fnstsw_flag_artifact               7 (  0.1%)
+  undefined_data                     6 (  0.1%)
   unknown_param                      6 (  0.1%)
-  displaced_global_access            6 (  0.1%)
   warning_deadcode_restart           5 (  0.1%)
   warning_noreturn                   4 (  0.0%)
   warning_max_restarts               4 (  0.0%)
@@ -54,7 +54,7 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (4363 occurrences)
+TYPE: pointer_cast (4362 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -63,7 +63,7 @@ Unique patterns:
    305x  (float *)((int)
    209x  (SRenderVertex *)((int)
    193x  (double *)((int)
-   188x  (void *)((int)
+   187x  (void *)((int)
    169x  (byte *)((int)
     86x  (ushort *)((int)
     58x  (short *)((int)
@@ -472,7 +472,7 @@ Example functions:
   crt_watcom.c__memset_FUN_004b19d0
     (**(code **)(&DAT_00679d50 + uVar3 * 4))();...
   crt_watcom.c__memcpy_FUN_004b1a78
-    (**(code **)(&DAT_00679d94 + uVar2 * 4))();...
+    (*(code *)(&INT_00679d94)[uVar2])();...
   crt_math.c_FUN_00606d47
     code *pcVar1;...
   crt_math.c_FUN_00606e8f
@@ -922,7 +922,7 @@ Example functions:
     ((_istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
 
 ====================================================================================================
-TYPE: wrong_global (82 occurrences)
+TYPE: wrong_global (81 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -944,8 +944,8 @@ Unique patterns:
      1x  g_RecordingDevices
      1x  g_CSoundDevicePtr
      1x  g_SoundBusyFlag
-     1x  g_TempWorldPositions
      1x  g_RenderStateFlags
+     1x  g_CKeyFramedModelInstanceInstance
 
 Example functions:
   cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760
@@ -1000,10 +1000,10 @@ Example functions:
     g_SfxOptions[g_SfxLastSlot].flags = flags;...
   sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0
     if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {...
-  core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
-    *(int *)((int)&g_TempWorldPositions[0][0].x + local_30) = local_54.x;...
   core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00482fb0
     if ((g_RenderStateFlags.bytes[1] & 2) != 0) {...
+  core_baron.cpp_staticInit_FUN_00412b20
+    core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&g_CKeyFramedModelInst...
 
 ====================================================================================================
 TYPE: register_param (69 occurrences)
@@ -1434,49 +1434,6 @@ Example functions:
     Function calls by-value struct passing functions...
 
 ====================================================================================================
-TYPE: undefined_data (21 occurrences)
-====================================================================================================
-
-Unique patterns:
-     5x  DAT_00679d94
-     3x  DAT_00665f28
-     2x  DAT_00665f50
-     2x  DAT_0068528c
-     1x  DAT_006852db
-     1x  DAT_00679d50
-     1x  DAT_0068513c
-     1x  DAT_006851bd
-     1x  DAT_00658bf4
-     1x  DAT_00658c04
-     1x  DAT_00658c08
-     1x  DAT_00658c0c
-     1x  DAT_80000010
-
-Example functions:
-  crt_io.c_getTempDirectory_FUN_00609afc
-    (&DAT_006852db)[uVar3] = 0x5c;...
-  crt_watcom.c__memset_FUN_004b19d0
-    (**(code **)(&DAT_00679d50 + uVar3 * 4))();...
-  crt_watcom.c__memcpy_FUN_004b1a78
-    (**(code **)(&DAT_00679d94 + uVar2 * 4))();...
-  crt_time.c_tzset_FUN_006072f8
-    DAT_0068513c = 0;...
-  crt_time.c__strftime_FUN_006002d4
-    pacVar6 = (char (*) [4])&DAT_00658bf4;...
-  crt_time.c_determine_dst_status_FUN_006079b4
-    iVar1 = *(int *)(&DAT_00665f50 + iVar9 * 2);...
-  crt_unknown.c_FUN_00607858
-    iVar2 = *(int *)(&DAT_00665f50 + *(int *)(param_1 + 0x10) * 2);...
-  crt_unknown.c_FUN_00607080
-    *(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) | (&DAT_00665f28)[bVar1 & 7];...
-  crt_string.c_strtok_FUN_005fff50
-    while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVa...
-  crt_stdio.c_CreateFileImpl_FUN_006090a0
-    if ((DAT_0068528c != (code *)0x0) &&...
-  engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
-    point->screen_x = (int)&DAT_80000010;...
-
-====================================================================================================
 TYPE: undefined_type (15 occurrences)
 ====================================================================================================
 
@@ -1618,6 +1575,33 @@ Example functions:
     (ushort)(NAN(dVar9) || NAN(359.5)) << 10 |...
 
 ====================================================================================================
+TYPE: displaced_global_access (7 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  0x665f50
+     1x  0x32776b4
+     1x  0x32776c8
+     1x  0x3342b48
+     1x  0x3342b4c
+     1x  0x32c17ac
+     1x  0x3f96bc4
+
+Example functions:
+  crt_unknown.c_FUN_00607858
+    // 0060788f: MOV EAX,dword ptr [EAX*0x2 + 0x665f50]  ; SHORT_00665f50...
+  core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090
+    // 0056d0d3: MOV dword ptr [ESI*0x4 + 0x32776b4],EBX  ; g_DynamicLightCount...
+  core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110
+    // 0056d130: MOV dword ptr [EDX*0x4 + 0x32776c8],ECX  ; g_CoronaGlobeCount...
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
+    // 0056fe49: MOV dword ptr [EAX*0x8 + 0x3342b48],EBX  ; g_SetDisplayListSortBuff...
+  core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0
+    // 0056d820: MOV dword ptr [EDX*0x4 + 0x32c17ac],EAX  ; g_GlobeLights[1]...
+  wincore_winrun.cpp_enqueueInput_FUN_005f2f30
+    // 005f2f42: MOV dword ptr [EDX*0x4 + 0x3f96bc4],EBX  ; g_UseMultimediaTimer...
+
+====================================================================================================
 TYPE: fnstsw_flag_artifact (7 occurrences)
 ====================================================================================================
 
@@ -1643,6 +1627,27 @@ Example functions:
     CONCAT22((short)uVar7 * (short)(uVar38 >> 0x10)...
 
 ====================================================================================================
+TYPE: undefined_data (6 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  DAT_0068528c
+     1x  DAT_00679d50
+     1x  DAT_0068513c
+     1x  DAT_006851bd
+     1x  DAT_80000010
+
+Example functions:
+  crt_watcom.c__memset_FUN_004b19d0
+    (**(code **)(&DAT_00679d50 + uVar3 * 4))();...
+  crt_time.c_tzset_FUN_006072f8
+    DAT_0068513c = 0;...
+  crt_stdio.c_CreateFileImpl_FUN_006090a0
+    if ((DAT_0068528c != (code *)0x0) &&...
+  engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
+    point->screen_x = (int)&DAT_80000010;...
+
+====================================================================================================
 TYPE: unknown_param (6 occurrences)
 ====================================================================================================
 
@@ -1652,30 +1657,6 @@ Unique patterns:
 Example functions:
   crt_string.c_strtok_FUN_005fff50
     str = *(char **)pTVar2->unknown_10;...
-
-====================================================================================================
-TYPE: displaced_global_access (6 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  0x32776b4
-     1x  0x32776c8
-     1x  0x3342b48
-     1x  0x3342b4c
-     1x  0x32c17ac
-     1x  0x3f96bc4
-
-Example functions:
-  core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090
-    // 0056d0d3: MOV dword ptr [ESI*0x4 + 0x32776b4],EBX  ; g_DynamicLightCount...
-  core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110
-    // 0056d130: MOV dword ptr [EDX*0x4 + 0x32776c8],ECX  ; g_CoronaGlobeCount...
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
-    // 0056fe49: MOV dword ptr [EAX*0x8 + 0x3342b48],EBX  ; g_SetDisplayListSortBuff...
-  core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0
-    // 0056d820: MOV dword ptr [EDX*0x4 + 0x32c17ac],EAX  ; g_GlobeLights[1]...
-  wincore_winrun.cpp_enqueueInput_FUN_005f2f30
-    // 005f2f42: MOV dword ptr [EDX*0x4 + 0x3f96bc4],EBX  ; g_UseMultimediaTimer...
 
 ====================================================================================================
 TYPE: warning_deadcode_restart (5 occurrences)

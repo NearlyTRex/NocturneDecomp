@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   int g_MixBufferSize
-;   void*[8] g_ChannelPrimaryBuffers
+;   float*[8] g_ChannelPrimaryBuffers
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_lockSound_FUN_005abd30

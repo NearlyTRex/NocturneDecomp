@@ -113,6 +113,7 @@
 #include "globals/globals_670000.h"
 #include "globals/globals_680000.h"
 #include "globals/globals_690000.h"
+#include "globals/globals_6E0000.h"
 #include "globals/globals_770000.h"
 #include "globals/globals_780000.h"
 #include "globals/globals_810000.h"

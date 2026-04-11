@@ -22,7 +22,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_art_0061d190
 ;   TerminatedCString s_anon_0061d194
-;   undefined4 DAT_0061d195
+;   undefined4 s_anon_0061d194+1
 ;   TerminatedCString s_art_0061d196
 ;   undefined4 s_rt_0061d197
 ;   TerminatedCString s_WARNING_Only_valid_textu_0061d19a
@@ -31,9 +31,9 @@
 ;   TerminatedCString s_ERROR_No_valid_textures__0061d1ee
 ;   TerminatedCString s_Hit_a_key_0061d21c
 ;   TerminatedCString s_MDL_0061d229
-;   undefined4 DAT_0061d22a
-;   undefined4 DAT_0061d22b
-;   undefined4 DAT_0061d22c
+;   undefined4 s_MDL_0061d229+1
+;   undefined4 s_MDL_0061d229+2
+;   undefined4 s_MDL_0061d229+3
 ;   TerminatedCString s_Model_name_to_save_s_0061d22e
 ;   ... and 34 more
 ;
@@ -101,7 +101,7 @@ section .text
     CMP AL,0x0                          ; 0046a1cc
     JZ 0x0046a1e0                       ; 0046a1ce
         ;   XREF to: 0046a1e0 (CONDITIONAL_JUMP)  ; LAB_0046a1e0
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046a1d0 | DAT_0061d195 | s_rt_0061d197
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046a1d0 | s_anon_0061d194+1 | s_rt_0061d197
     ADD ESI,0x2                         ; 0046a1d3
     MOV byte ptr [EDI + 0x1],AL         ; 0046a1d6 | g_LoadedModelName+1 | g_LoadedModelName+3
     ADD EDI,0x2                         ; 0046a1d9
@@ -487,13 +487,13 @@ section .text
     MOV AL,0x0                          ; 0046a63d
     SCASB.REPNE ES:EDI                  ; 0046a63f | g_LoadedModelName | g_LoadedModelName+1
     DEC EDI                             ; 0046a641
-    MOV AL,byte ptr [ESI]               ; 0046a642 | = ".MDL" | DAT_0061d22b
+    MOV AL,byte ptr [ESI]               ; 0046a642 | = ".MDL" | s_MDL_0061d229+2
         ;   Label: LAB_0046a642
     MOV byte ptr [EDI],AL               ; 0046a644 | g_LoadedModelName | g_LoadedModelName+1 | g_LoadedModelName+2
     CMP AL,0x0                          ; 0046a646
     JZ 0x0046a65a                       ; 0046a648
         ;   XREF to: 0046a65a (CONDITIONAL_JUMP)  ; LAB_0046a65a
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046a64a | DAT_0061d22a | DAT_0061d22c
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046a64a | s_MDL_0061d229+1 | s_MDL_0061d229+3
     ADD ESI,0x2                         ; 0046a64d
     MOV byte ptr [EDI + 0x1],AL         ; 0046a650 | g_LoadedModelName+1 | g_LoadedModelName+2 | g_LoadedModelName+3
     ADD EDI,0x2                         ; 0046a653
@@ -652,13 +652,13 @@ section .text
     MOV AL,0x0                          ; 0046a787
     SCASB.REPNE ES:EDI                  ; 0046a789 | g_LoadedModelName | g_LoadedModelName+1
     DEC EDI                             ; 0046a78b
-    MOV AL,byte ptr [ESI]               ; 0046a78c | = ".MDL" | DAT_0061d24b
+    MOV AL,byte ptr [ESI]               ; 0046a78c | = ".MDL" | s_MDL_0061d249+2
         ;   Label: LAB_0046a78c
     MOV byte ptr [EDI],AL               ; 0046a78e | g_LoadedModelName | g_LoadedModelName+1 | g_LoadedModelName+2
     CMP AL,0x0                          ; 0046a790
     JZ 0x0046a7a4                       ; 0046a792
         ;   XREF to: 0046a7a4 (CONDITIONAL_JUMP)  ; LAB_0046a7a4
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046a794 | DAT_0061d24a | DAT_0061d24c
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046a794 | s_MDL_0061d249+1 | s_MDL_0061d249+3
     ADD ESI,0x2                         ; 0046a797
     MOV byte ptr [EDI + 0x1],AL         ; 0046a79a | g_LoadedModelName+1 | g_LoadedModelName+2 | g_LoadedModelName+3
     ADD EDI,0x2                         ; 0046a79d
@@ -741,13 +741,13 @@ section .text
     MOV AL,0x0                          ; 0046a827
     SCASB.REPNE ES:EDI                  ; 0046a829 | g_LoadedModelName | g_LoadedModelName+1
     DEC EDI                             ; 0046a82b
-    MOV AL,byte ptr [ESI]               ; 0046a82c | = ".MDL" | DAT_0061d250
+    MOV AL,byte ptr [ESI]               ; 0046a82c | = ".MDL" | s_MDL_0061d24e+2
         ;   Label: LAB_0046a82c
     MOV byte ptr [EDI],AL               ; 0046a82e | g_LoadedModelName | g_LoadedModelName+1 | g_LoadedModelName+2
     CMP AL,0x0                          ; 0046a830
     JZ 0x0046a844                       ; 0046a832
         ;   XREF to: 0046a844 (CONDITIONAL_JUMP)  ; LAB_0046a844
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046a834 | DAT_0061d24f | DAT_0061d251
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046a834 | s_MDL_0061d24e+1 | s_MDL_0061d24e+3
     ADD ESI,0x2                         ; 0046a837
     MOV byte ptr [EDI + 0x1],AL         ; 0046a83a | g_LoadedModelName+1 | g_LoadedModelName+2 | g_LoadedModelName+3
     ADD EDI,0x2                         ; 0046a83d

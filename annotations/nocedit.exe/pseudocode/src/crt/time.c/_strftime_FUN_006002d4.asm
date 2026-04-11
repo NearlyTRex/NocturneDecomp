@@ -26,11 +26,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_a_b_d_H_M_S_Y_00658bd0
 ;   TerminatedCString s_m_d_y_00658be8
-;   undefined1 DAT_00658bf4
+;   int INT_00658bf4 = 0xa
 ;   TerminatedCString s_I_M_S_p_00658bf8
-;   undefined1 DAT_00658c04
-;   undefined1 DAT_00658c08
-;   undefined1 DAT_00658c0c
+;   int INT_00658c04 = 0x4d41
+;   int INT_00658c08 = 0x4d50
+;   int INT_00658c0c = 0x9
 ;   TerminatedCString s_a_b_d_Y_00658c10
 ;   TerminatedCString s_H_M_S_00658c20
 ;   char[7][4] g_WeekdayNamesShort
@@ -334,7 +334,7 @@ section .text
     ADD ESP,0x8                         ; 00600569
     JMP 0x006006c0                      ; 0060056c
         ;   XREF to: 006006c0 (UNCONDITIONAL_JUMP)  ; LAB_006006c0
-    MOV ESI,0x658bf4                    ; 00600571 | DAT_00658bf4
+    MOV ESI,0x658bf4                    ; 00600571 | INT_00658bf4
         ;   Label: LAB_00600571
     JMP 0x006006c0                      ; 00600576
         ;   XREF to: 006006c0 (UNCONDITIONAL_JUMP)  ; LAB_006006c0
@@ -347,10 +347,10 @@ section .text
         ;   Label: LAB_0060058c
     JGE 0x0060059c                      ; 00600590
         ;   XREF to: 0060059c (CONDITIONAL_JUMP)  ; LAB_0060059c
-    MOV ESI,0x658c04                    ; 00600592 | DAT_00658c04
+    MOV ESI,0x658c04                    ; 00600592 | INT_00658c04
     JMP 0x006006c0                      ; 00600597
         ;   XREF to: 006006c0 (UNCONDITIONAL_JUMP)  ; LAB_006006c0
-    MOV ESI,0x658c08                    ; 0060059c | DAT_00658c08
+    MOV ESI,0x658c08                    ; 0060059c | INT_00658c08
         ;   Label: LAB_0060059c
     JMP 0x006006c0                      ; 006005a1
         ;   XREF to: 006006c0 (UNCONDITIONAL_JUMP)  ; LAB_006006c0
@@ -364,7 +364,7 @@ section .text
     ADD ESP,0x8                         ; 006005b3
     JMP 0x006006c0                      ; 006005b6
         ;   XREF to: 006006c0 (UNCONDITIONAL_JUMP)  ; LAB_006006c0
-    MOV ESI,0x658c0c                    ; 006005bb | DAT_00658c0c
+    MOV ESI,0x658c0c                    ; 006005bb | INT_00658c0c
         ;   Label: LAB_006005bb
     JMP 0x006006c0                      ; 006005c0
         ;   XREF to: 006006c0 (UNCONDITIONAL_JUMP)  ; LAB_006006c0
@@ -477,7 +477,7 @@ section .text
     SUB ECX,ECX                         ; 006006c8
     DEC ECX                             ; 006006ca
     XOR EAX,EAX                         ; 006006cb
-    SCASB.REPNE ES:EDI                  ; 006006cd | DAT_00658bf4 | DAT_00658c04 | DAT_00658c08
+    SCASB.REPNE ES:EDI                  ; 006006cd | INT_00658bf4 | INT_00658c04 | INT_00658c08
     NOT ECX                             ; 006006cf
     DEC ECX                             ; 006006d1
     POP ES                              ; 006006d2

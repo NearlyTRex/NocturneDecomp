@@ -25,8 +25,8 @@
 ;   undefined4 g_FaceConversionBuffer[0].vertices[1].vertex_index
 ;   undefined4 g_FaceConversionBuffer[0].vertices[2].vertex_index
 ;   undefined4 g_FaceConversionBuffer[0].vertices[3].vertex_index
-;   undefined4 DAT_02c14d80
-;   undefined4 DAT_02c14d84
+;   undefined4 g_FaceConversionBuffer[1].base.surface_normal.A
+;   undefined4 g_FaceConversionBuffer[1].base.surface_normal.B
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -189,20 +189,20 @@ section .text
     MOV ESI,dword ptr [EBX + 0x34]      ; 00482702
         ;   Label: LAB_00482702
     LEA ECX,[ESI + EAX*0x1]             ; 00482705
-    MOV ESI,dword ptr [EDX + 0x2c14d38] ; 00482708 | g_FaceConversionBuffer[0].base.surface_normal.A | DAT_02c14d80
+    MOV ESI,dword ptr [EDX + 0x2c14d38] ; 00482708 | g_FaceConversionBuffer[0].base.surface_normal.A | g_FaceConversionBuffer[1].base.surface_normal.A
     MOV dword ptr [ECX],ESI             ; 0048270e
     MOV ESI,dword ptr [EBX + 0x34]      ; 00482710
     LEA ECX,[ESI + EAX*0x1]             ; 00482713
-    MOV ESI,dword ptr [EDX + 0x2c14d3c] ; 00482716 | g_FaceConversionBuffer[0].base.surface_normal.B | DAT_02c14d84
+    MOV ESI,dword ptr [EDX + 0x2c14d3c] ; 00482716 | g_FaceConversionBuffer[0].base.surface_normal.B | g_FaceConversionBuffer[1].base.surface_normal.B
     MOV dword ptr [ECX + 0x4],ESI       ; 0048271c
     MOV ECX,dword ptr [EBX + 0x34]      ; 0048271f
-    MOV ESI,dword ptr [EDX + 0x2c14d40] ; 00482722 | g_FaceConversionBuffer[0].base.surface_normal.C | DAT_02c14d88
+    MOV ESI,dword ptr [EDX + 0x2c14d40] ; 00482722 | g_FaceConversionBuffer[0].base.surface_normal.C | g_FaceConversionBuffer[1].base.surface_normal.C
     MOV dword ptr [ECX + EAX*0x1 + 0x8],ESI ; 00482728
     MOV ECX,dword ptr [EBX + 0x34]      ; 0048272c
-    MOV ESI,dword ptr [EDX + 0x2c14d44] ; 0048272f | g_FaceConversionBuffer[0].base.surface_normal.D | DAT_02c14d8c
+    MOV ESI,dword ptr [EDX + 0x2c14d44] ; 0048272f | g_FaceConversionBuffer[0].base.surface_normal.D | g_FaceConversionBuffer[1].base.surface_normal.D
     MOV dword ptr [ECX + EAX*0x1 + 0xc],ESI ; 00482735
     MOV ECX,dword ptr [EBX + 0x34]      ; 00482739
-    MOV ESI,dword ptr [EDX + 0x2c14d48] ; 0048273c | g_FaceConversionBuffer[0].vertices[0].vertex_index | DAT_02c14d90
+    MOV ESI,dword ptr [EDX + 0x2c14d48] ; 0048273c | g_FaceConversionBuffer[0].vertices[0].vertex_index | g_FaceConversionBuffer[1].vertices[0].vertex_index
     MOV dword ptr [ECX + EAX*0x1 + 0x10],ESI ; 00482742
     MOV ECX,dword ptr [EBX + 0x34]      ; 00482746
     MOV ESI,dword ptr [EDX + 0x2c14d54] ; 00482749 | g_FaceConversionBuffer[0].vertices[1].vertex_index

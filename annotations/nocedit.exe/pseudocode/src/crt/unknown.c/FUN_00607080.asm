@@ -8,7 +8,7 @@
 ;   crt_string.c_strtok_FUN_005fff50 at 005fff7b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00665f28
+;   double DOUBLE_00665f28 = -1.79399301312127E-307
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005fde40
@@ -41,7 +41,7 @@ section .text
     SAR EDX,0x3                         ; 006070a4
     AND AL,0x7                          ; 006070a7
     AND EAX,0xff                        ; 006070a9
-    MOV AL,byte ptr [EAX + 0x665f28]    ; 006070ae | DAT_00665f28
+    MOV AL,byte ptr [EAX + 0x665f28]    ; 006070ae | DOUBLE_00665f28
     MOV AH,byte ptr [EDX + ESI*0x1]     ; 006070b4
     OR AH,AL                            ; 006070b7
     INC EBX                             ; 006070b9

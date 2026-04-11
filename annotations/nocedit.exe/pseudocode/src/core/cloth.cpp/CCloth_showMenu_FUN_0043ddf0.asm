@@ -285,7 +285,7 @@ section .text
     CMP AL,0x0                          ; 0043e070
     JZ 0x0043e084                       ; 0043e072
         ;   XREF to: 0043e084 (CONDITIONAL_JUMP)  ; LAB_0043e084
-    MOV AL,byte ptr [ESI + 0x1]         ; 0043e074 | s_cth_00618ac4+1 | DAT_00618ac7
+    MOV AL,byte ptr [ESI + 0x1]         ; 0043e074 | s_cth_00618ac4+1 | s_cth_00618ac4+3
     ADD ESI,0x2                         ; 0043e077
     MOV byte ptr [EDI + 0x1],AL         ; 0043e07a
     ADD EDI,0x2                         ; 0043e07d

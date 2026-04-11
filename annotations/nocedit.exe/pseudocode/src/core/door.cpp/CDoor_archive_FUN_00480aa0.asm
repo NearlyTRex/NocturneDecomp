@@ -260,13 +260,13 @@ section .text
     MOV ESI,0x62124f                    ; 00480d43 | = "true"
     LEA EDI,[EBX + 0x47c]               ; 00480d48
     PUSH EDI                            ; 00480d4e
-    MOV AL,byte ptr [ESI]               ; 00480d4f | = "true" | DAT_00621251
+    MOV AL,byte ptr [ESI]               ; 00480d4f | = "true" | s_ue_0062124f+2
         ;   Label: LAB_00480d4f
     MOV byte ptr [EDI],AL               ; 00480d51
     CMP AL,0x0                          ; 00480d53
     JZ 0x00480d67                       ; 00480d55
         ;   XREF to: 00480d67 (CONDITIONAL_JUMP)  ; LAB_00480d67
-    MOV AL,byte ptr [ESI + 0x1]         ; 00480d57 | DAT_00621250 | DAT_00621252
+    MOV AL,byte ptr [ESI + 0x1]         ; 00480d57 | s_rue_0062124f+1 | s_e_0062124f+3
     ADD ESI,0x2                         ; 00480d5a
     MOV byte ptr [EDI + 0x1],AL         ; 00480d5d
     ADD EDI,0x2                         ; 00480d60

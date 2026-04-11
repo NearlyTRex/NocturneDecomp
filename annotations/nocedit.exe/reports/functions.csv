@@ -219,7 +219,7 @@ crt_io.c__findclose_FUN_00602380,00602380,crt/io.c,6,1,special_crt_function,21
 crt_io.c__utime_FUN_00608160,00608160,crt/io.c,59,1,special_crt_function,74
 crt_io.c_getFileStat_FUN_00607e64,00607e64,crt/io.c,107,1,special_crt_function,122
 crt_io.c_write_FUN_006084ec,006084ec,crt/io.c,168,20,pointer_cast|special_crt_function|stack_ref|warning_noreturn,388
-crt_io.c_getTempDirectory_FUN_00609afc,00609afc,crt/io.c,56,2,special_crt_function|undefined_data,86
+crt_io.c_getTempDirectory_FUN_00609afc,00609afc,crt/io.c,56,1,special_crt_function,71
 crt_io.c_register_handler_wrapper_FUN_00602438,00602438,crt/io.c,6,1,special_crt_function,21
 crt_io.c__utime_00600c1e,00600c1e,crt/io.c/utime,6,1,special_crt_function,21
 crt_windows.c_has_active_window_FUN_0060a710,0060a710,crt/windows.c,16,3,param_count_too_few|special_crt_function|warning_max_restarts,61
@@ -311,7 +311,7 @@ crt_watcom.c__mkdir_FUN_00600e10,00600e10,crt/watcom.c,13,2,special_crt_function
 crt_watcom.c__memmax_FUN_00600940,00600940,crt/watcom.c,20,1,special_crt_function,35
 crt_watcom.c__heapchk_FUN_00600ad0,00600ad0,crt/watcom.c,42,2,param_count_too_few|special_crt_function,72
 crt_watcom.c__memset_FUN_004b19d0,004b19d0,crt/watcom.c,58,15,param_count_too_few|pointer_cast|special_crt_function|undefined_data|unresolved_funcptr|warning_indirect_jump|warning_jumptable,243
-crt_watcom.c__memcpy_FUN_004b1a78,004b1a78,crt/watcom.c,77,39,pointer_cast|special_crt_function|undefined_data|unresolved_funcptr|warning_indirect_jump|warning_jumptable,497
+crt_watcom.c__memcpy_FUN_004b1a78,004b1a78,crt/watcom.c,77,34,pointer_cast|special_crt_function|unresolved_funcptr|warning_indirect_jump|warning_jumptable,442
 crt_watcom.c__getcwd_FUN_00608d20,0060128c,crt/watcom.c,45,1,special_crt_function,60
 crt_watcom.c_memavl_FUN_006008f0,006008f0,crt/watcom.c,16,2,param_count_too_few|special_crt_function,46
 crt_watcom.c_getcwd_FUN_00608d20,00608d20,crt/watcom.c,45,1,special_crt_function,60
@@ -447,16 +447,16 @@ crt_time.c_gmtime_r_FUN_00607690,00607690,crt/time.c,47,11,special_crt_function|
 crt_time.c__localtime_FUN_00600288,00600288,crt/time.c,8,1,special_crt_function,23
 crt_time.c_parse_dst_rule_FUN_00607464,00607464,crt/time.c,51,1,special_crt_function,66
 crt_time.c_is_leap_year_FUN_00607820,00607820,crt/time.c,12,1,special_crt_function,27
-crt_time.c__strftime_FUN_006002d4,006002d4,crt/time.c,238,5,special_crt_function|undefined_data,298
+crt_time.c__strftime_FUN_006002d4,006002d4,crt/time.c,238,1,special_crt_function,253
 crt_time.c_localtime_r_FUN_00600230,00600230,crt/time.c,13,1,special_crt_function,28
-crt_time.c_determine_dst_status_FUN_006079b4,006079b4,crt/time.c,125,6,pointer_cast|special_crt_function|undefined_data|wrong_global,205
+crt_time.c_determine_dst_status_FUN_006079b4,006079b4,crt/time.c,125,5,pointer_cast|special_crt_function|wrong_global,190
 crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0,0060c1e0,crt/time.c,14,1,special_crt_function,29
 crt_time.c__time_FUN_006001f0,006001f0,crt/time.c,15,1,special_crt_function,30
 crt_time.c_asctimeFormat_FUN_00601678,00601678,crt/time.c,36,1,special_crt_function,51
 crt_unknown.c_FUN_0060ced8,0060ced8,crt/unknown.c,9,6,special_crt_function|unnamed_param,79
 crt_unknown.c_FUN_00600990,00600990,crt/unknown.c,58,5,param_count_too_few|pointer_cast|special_crt_function|unnamed_param,128
 crt_unknown.c_FUN_00600a64,00600a64,crt/unknown.c,21,9,param_count_too_few|special_crt_function|unnamed_param|warning_unreachable,131
-crt_unknown.c_FUN_00607858,00607858,crt/unknown.c,43,22,param_count_too_few|pointer_cast|special_crt_function|undefined_data|unnamed_param|wrong_global,293
+crt_unknown.c_FUN_00607858,00607858,crt/unknown.c,43,22,displaced_global_access|param_count_too_few|pointer_cast|special_crt_function|unnamed_param|wrong_global,293
 crt_unknown.c_FUN_0060d480,0060d480,crt/unknown.c,6,3,param_count_too_few|pointer_cast|special_crt_function,51
 crt_unknown.c_FUN_0060b133,0060b133,crt/unknown.c,5,2,param_count_too_few|special_crt_function,35
 crt_unknown.c_FUN_00610970,00610970,crt/unknown.c,7,8,param_count_too_few|special_crt_function|unnamed_param,102
@@ -473,7 +473,7 @@ crt_unknown.c_FUN_0060b07a,0060b07a,crt/unknown.c,16,8,special_crt_function|unna
 crt_unknown.c_FUN_0060cf80,0060cf80,crt/unknown.c,11,1,special_crt_function,26
 crt_unknown.c_FUN_0060b190,0060b190,crt/unknown.c,18,6,nan_function_artifact|special_crt_function|unknown_field,93
 crt_unknown.c_FUN_0060d576,0060d576,crt/unknown.c,32,13,param_count_too_few|pointer_cast|special_crt_function|unnamed_param|unresolved_funcptr,187
-crt_unknown.c_FUN_00607080,00607080,crt/unknown.c,16,12,param_count_too_few|special_crt_function|undefined_data|unnamed_param,156
+crt_unknown.c_FUN_00607080,00607080,crt/unknown.c,17,12,param_count_too_few|pointer_cast|special_crt_function|unnamed_param,157
 crt_unknown.c_FUN_0060b586,0060b586,crt/unknown.c,51,17,extra_output|param_count_too_many|register_param|special_crt_function|unnamed_param,246
 crt_unknown.c_BaseStart_FUN_00401000,00401000,crt/unknown.c,7,3,special_crt_function|unresolved_funcptr,47
 crt_unknown.c_FUN_0060d48c,0060d48c,crt/unknown.c,32,23,param_count_too_few|special_crt_function|stack_param|unnamed_param,282
@@ -485,7 +485,7 @@ crt_string.c__stricmp_FUN_005fe7f0,006020fc,crt/string.c,6,1,special_crt_functio
 crt_string.c_mbstrncpy_core_FUN_0060b670,0060b6d7,crt/string.c,11,1,special_crt_function,26
 crt_string.c_mb_get_last_char_FUN_00605aa0,00605aa0,crt/string.c,19,1,special_crt_function,34
 crt_string.c_mbstrnlen_FUN_00605e50,00605e50,crt/string.c,17,1,special_crt_function,32
-crt_string.c_strtok_FUN_005fff50,005fff50,crt/string.c,42,9,special_crt_function|undefined_data|unknown_param,147
+crt_string.c_strtok_FUN_005fff50,005fff50,crt/string.c,43,9,pointer_cast|special_crt_function|unknown_param,148
 crt_string.c__strtod_FUN_005ff0f3,005ff0f3,crt/string.c,6,1,special_crt_function,21
 crt_string.c_mbtowc_peek_FUN_006059e0,006059e0,crt/string.c,7,1,special_crt_function,22
 crt_string.c_mbstrncpy_FUN_00605e90,00605e90,crt/string.c,7,1,special_crt_function,22
@@ -1531,7 +1531,7 @@ sound_sndmain.cpp_startSfxAtStaticPosition_FUN_005a9580,005a9580,sound/sndmain.c
 sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400,005ac400,sound/sndmain.cpp,174,2,warning_inlined_function|warning_unreachable,204
 sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0,005a96b0,sound/sndmain.cpp,4,0,,4
 sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0,005a8be0,sound/sndmain.cpp,8,2,param_count_too_few|wrong_global,38
-sound_sndmain.cpp_allocMixBuffers_FUN_005a5730,005a5730,sound/sndmain.cpp,59,4,pointer_cast,104
+sound_sndmain.cpp_allocMixBuffers_FUN_005a5730,005a5730,sound/sndmain.cpp,59,3,pointer_cast,94
 sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0,005a7fe0,sound/sndmain.cpp,52,0,,52
 sound_sndmain.cpp_writeIni_FUN_005ac220,005ac220,sound/sndmain.cpp,65,0,,65
 sound_sndmain.cpp_startSfx_FUN_005a8e90,005a8e90,sound/sndmain.cpp,278,6,pointer_cast|warning_inlined_function,348
@@ -1931,7 +1931,7 @@ core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090,00451090,cor
 core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0,00453fc0,core/dcamera.cpp,20,1,warning_inlined_function,35
 core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790,0044e790,core/dcamera.cpp,211,5,pointer_cast,266
 core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0,0044dbd0,core/dcamera.cpp,75,1,stack_alignment_array,90
-core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360,0044e360,core/dcamera.cpp,165,19,pointer_cast|stack_alignment_array|wrong_global,370
+core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360,0044e360,core/dcamera.cpp,165,18,pointer_cast|stack_alignment_array,355
 core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_00453950,00453950,core/dcamera.cpp,32,0,,32
 core_dcamera.cpp_log2Custom_FUN_00450a90,00450a90,core/dcamera.cpp,4,0,,4
 core_dcamera.cpp_CDemonCamera_allocLight_FUN_0044dde0,0044dde0,core/dcamera.cpp,10,0,,10
@@ -6401,7 +6401,7 @@ shape_design.c_createQuadPolygon_FUN_0045df60,0045df60,shape/design.c,15,0,,15
 shape_design.c_turnModelInsideOut_FUN_004671e0,004671e0,shape/design.c,25,0,,25
 shape_design.c_smoothMesh_FUN_0046ed00,0046ed00,shape/design.c,9,0,,9
 shape_design.c_multicramTextures_FUN_0046eb80,0046eb80,shape/design.c,5,0,,5
-shape_design.c_embedCopyrightWatermark_FUN_0046b9a0,0046b9a0,shape/design.c,48,3,pointer_cast,83
+shape_design.c_embedCopyrightWatermark_FUN_0046b9a0,0046b9a0,shape/design.c,48,0,,48
 shape_design.c_groundCenterObject_FUN_00466a30,00466a30,shape/design.c,59,1,sub84_truncation,74
 shape_design.c_showModelPartsList_FUN_0045dbe0,0045dbe0,shape/design.c,24,0,,24
 shape_design.c_polygonMergerSelectAndProcess_FUN_00465160,00465160,shape/design.c,12,0,,12

@@ -27,7 +27,7 @@
 ;   TerminatedCString s_shape_edittool_cpp_00622eae
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_00622ec4
 ;   TerminatedCString g_AxisLabelChars
-;   undefined4 DAT_006235ac
+;   undefined4 g_AxisLabelChars+1
 ;   TerminatedCString s_c_006235af
 ;   double g_AxisScaleMultiplier = 256
 ;   SRenderVertex[16] g_RenderVertexBuffer
@@ -187,7 +187,7 @@ section .text
         ;   XREF to: 004a1cb4 (UNCONDITIONAL_JUMP)  ; LAB_004a1cb4
     XOR EAX,EAX                         ; 004a1e37
         ;   Label: LAB_004a1e37
-    MOV AL,byte ptr [ESI + 0x6235ab]    ; 004a1e39 | = "XYZ" | DAT_006235ac
+    MOV AL,byte ptr [ESI + 0x6235ab]    ; 004a1e39 | = "XYZ" | g_AxisLabelChars+1
     PUSH EAX                            ; 004a1e3f
     PUSH 0x6235af                       ; 004a1e40 | = "%c"
     LEA EAX,[ESP + 0x8]                 ; 004a1e45

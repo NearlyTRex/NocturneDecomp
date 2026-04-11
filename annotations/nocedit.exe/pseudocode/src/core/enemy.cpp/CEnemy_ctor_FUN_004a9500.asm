@@ -21,8 +21,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ene_00624309
-;   undefined4 DAT_0062430a
-;   undefined4 DAT_0062430b
+;   undefined4 s_ne_00624309+1
+;   undefined4 s_e_00624309+2
 ;   undefined4 s__00624309+3
 ;   CDemonActor_vtable g_CEnemyVTable
 ;
@@ -92,13 +92,13 @@ section .text
     LEA EDI,[EBX + 0x11c]               ; 004a9614
     MOV dword ptr [EBX + 0x110],EAX     ; 004a961a
     PUSH EDI                            ; 004a9620
-    MOV AL,byte ptr [ESI]               ; 004a9621 | = "ene" | DAT_0062430b
+    MOV AL,byte ptr [ESI]               ; 004a9621 | = "ene" | s_e_00624309+2
         ;   Label: LAB_004a9621
     MOV byte ptr [EDI],AL               ; 004a9623
     CMP AL,0x0                          ; 004a9625
     JZ 0x004a9639                       ; 004a9627
         ;   XREF to: 004a9639 (CONDITIONAL_JUMP)  ; LAB_004a9639
-    MOV AL,byte ptr [ESI + 0x1]         ; 004a9629 | DAT_0062430a | s__00624309+3
+    MOV AL,byte ptr [ESI + 0x1]         ; 004a9629 | s_ne_00624309+1 | s__00624309+3
     ADD ESI,0x2                         ; 004a962c
     MOV byte ptr [EDI + 0x1],AL         ; 004a962f
     ADD EDI,0x2                         ; 004a9632

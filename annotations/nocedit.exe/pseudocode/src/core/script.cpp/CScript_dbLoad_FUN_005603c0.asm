@@ -29,7 +29,7 @@
 ;   TerminatedCString s_SCScipt_dbLoad_error_par_00643302
 ;   TerminatedCString s_stranger_0064332f
 ;   TerminatedCString s_anon_00643338
-;   undefined4 DAT_00643339
+;   undefined4 s_anon_00643338+1
 ;   TerminatedCString s_Warning_Duplicate_wav_st_0064333a
 ;   undefined4 s_arning!_Duplicate_wav_string_%s_d_0064333b
 ;   TerminatedCString s_s_wav_0064336a
@@ -167,7 +167,7 @@ section .text
     CMP AL,0x0                          ; 00560507
     JZ 0x0056051b                       ; 00560509
         ;   XREF to: 0056051b (CONDITIONAL_JUMP)  ; LAB_0056051b
-    MOV AL,byte ptr [ESI + 0x1]         ; 0056050b | DAT_00643339 | s_arning!_Duplicate_wav_string_%s_d_0064333b
+    MOV AL,byte ptr [ESI + 0x1]         ; 0056050b | s_anon_00643338+1 | s_arning!_Duplicate_wav_string_%s_d_0064333b
     ADD ESI,0x2                         ; 0056050e
     MOV byte ptr [EDI + 0x1],AL         ; 00560511
     ADD EDI,0x2                         ; 00560514

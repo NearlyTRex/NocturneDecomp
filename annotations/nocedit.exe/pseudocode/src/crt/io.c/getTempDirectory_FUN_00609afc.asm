@@ -12,7 +12,7 @@
 ;   undefined1 DAT_006590a8
 ;   char** g_TempEnvVarNames = 006590a4
 ;   void* PTR_DAT_006852cc = 006590a8
-;   undefined1 DAT_006852db
+;   char CHAR_00h_006852db = \x00
 ;   char[260] g_TempDirectoryBuffer
 ;   undefined4 g_TempDirectoryBuffer+1
 ;   undefined4 g_TempDirectoryBuffer+2
@@ -116,7 +116,7 @@ section .text
     POP ES                              ; 00609ba5
     LEA EDX,[ECX + -0x1]                ; 00609ba6
     ADD EDX,0x6852dc                    ; 00609ba9 | g_TempDirectoryBuffer
-    MOV AL,byte ptr [EDX]               ; 00609baf | DAT_006852db | g_TempDirectoryBuffer
+    MOV AL,byte ptr [EDX]               ; 00609baf | CHAR_00h_006852db | g_TempDirectoryBuffer
     CMP AL,0x5c                         ; 00609bb1
     JZ 0x00609bc1                       ; 00609bb3
         ;   XREF to: 00609bc1 (CONDITIONAL_JUMP)  ; LAB_00609bc1

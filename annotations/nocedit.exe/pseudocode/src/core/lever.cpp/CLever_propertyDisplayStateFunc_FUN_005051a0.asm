@@ -13,11 +13,11 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Off_00631178
-;   undefined4 DAT_00631179
-;   undefined4 DAT_0063117a
-;   undefined4 DAT_0063117b
+;   undefined4 s_ff_00631178+1
+;   undefined4 s_f_00631178+2
+;   undefined4 s__00631178+3
 ;   TerminatedCString s_On_0063117c
-;   undefined4 DAT_0063117d
+;   undefined4 s_n_0063117c+1
 ;   double DOUBLE_00631180 = 0.5
 ;   undefined4 g_CLeverClassInfo.name_hash
 ;
@@ -55,13 +55,13 @@ section .text
     MOV ESI,0x631178                    ; 005051d8 | = "Off"
     PUSH EDI                            ; 005051dd
         ;   Label: LAB_005051dd
-    MOV AL,byte ptr [ESI]               ; 005051de | = "Off" | DAT_0063117a | s_On_0063117c
+    MOV AL,byte ptr [ESI]               ; 005051de | = "Off" | s_f_00631178+2 | s_On_0063117c
         ;   Label: LAB_005051de
     MOV byte ptr [EDI],AL               ; 005051e0
     CMP AL,0x0                          ; 005051e2
     JZ 0x005051f6                       ; 005051e4
         ;   XREF to: 005051f6 (CONDITIONAL_JUMP)  ; LAB_005051f6
-    MOV AL,byte ptr [ESI + 0x1]         ; 005051e6 | DAT_00631179 | DAT_0063117b | DAT_0063117d
+    MOV AL,byte ptr [ESI + 0x1]         ; 005051e6 | s_ff_00631178+1 | s__00631178+3 | s_n_0063117c+1
     ADD ESI,0x2                         ; 005051e9
     MOV byte ptr [EDI + 0x1],AL         ; 005051ec
     ADD EDI,0x2                         ; 005051ef

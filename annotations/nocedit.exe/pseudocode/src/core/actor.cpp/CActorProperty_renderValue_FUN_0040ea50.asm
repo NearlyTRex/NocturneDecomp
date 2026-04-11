@@ -22,14 +22,14 @@
 ;   TerminatedCString s_g_006144c5
 ;   TerminatedCString s_g_g_g_006144c8
 ;   TerminatedCString s_TRUE_006144d1
-;   undefined4 DAT_006144d2
-;   undefined4 DAT_006144d3
-;   undefined4 DAT_006144d4
+;   undefined4 s_RUE_006144d1+1
+;   undefined4 s_UE_006144d1+2
+;   undefined4 s_E_006144d1+3
 ;   string s_FALSE_006144d6
 ;   undefined4 s_ALSE_006144d7
 ;   TerminatedCString s_none_006144dc
-;   undefined4 DAT_006144dd
-;   undefined4 DAT_006144de
+;   undefined4 s_none_006144dc+1
+;   undefined4 s_none_006144dc+2
 ;   undefined4 s_ne)_006144df
 ;   TerminatedCString s_none_006144e3
 ;   ... and 29 more
@@ -119,13 +119,13 @@ section .text
     MOV EDI,EBP                         ; 0040eae3
         ;   Label: LAB_0040eae3
     PUSH EDI                            ; 0040eae5
-    MOV AL,byte ptr [ESI]               ; 0040eae6 | = "TRUE" | DAT_006144d3 | s_FALSE_006144d6
+    MOV AL,byte ptr [ESI]               ; 0040eae6 | = "TRUE" | s_UE_006144d1+2 | s_FALSE_006144d6
         ;   Label: LAB_0040eae6
     MOV byte ptr [EDI],AL               ; 0040eae8
     CMP AL,0x0                          ; 0040eaea
     JZ 0x0040eafe                       ; 0040eaec
         ;   XREF to: 0040eafe (CONDITIONAL_JUMP)  ; LAB_0040eafe
-    MOV AL,byte ptr [ESI + 0x1]         ; 0040eaee | DAT_006144d2 | DAT_006144d4 | s_ALSE_006144d7
+    MOV AL,byte ptr [ESI + 0x1]         ; 0040eaee | s_RUE_006144d1+1 | s_E_006144d1+3 | s_ALSE_006144d7
     ADD ESI,0x2                         ; 0040eaf1
     MOV byte ptr [EDI + 0x1],AL         ; 0040eaf4
     ADD EDI,0x2                         ; 0040eaf7
@@ -176,13 +176,13 @@ section .text
     MOV EDI,EBP                         ; 0040eb3c
         ;   Label: LAB_0040eb3c
     PUSH EDI                            ; 0040eb3e
-    MOV AL,byte ptr [ESI]               ; 0040eb3f | = "(none)" | DAT_006144de
+    MOV AL,byte ptr [ESI]               ; 0040eb3f | = "(none)" | s_none_006144dc+2
         ;   Label: LAB_0040eb3f
     MOV byte ptr [EDI],AL               ; 0040eb41
     CMP AL,0x0                          ; 0040eb43
     JZ 0x0040eb57                       ; 0040eb45
         ;   XREF to: 0040eb57 (CONDITIONAL_JUMP)  ; LAB_0040eb57
-    MOV AL,byte ptr [ESI + 0x1]         ; 0040eb47 | DAT_006144dd | s_ne)_006144df
+    MOV AL,byte ptr [ESI + 0x1]         ; 0040eb47 | s_none_006144dc+1 | s_ne)_006144df
     ADD ESI,0x2                         ; 0040eb4a
     MOV byte ptr [EDI + 0x1],AL         ; 0040eb4d
     ADD EDI,0x2                         ; 0040eb50
@@ -205,13 +205,13 @@ section .text
     MOV ESI,0x6144e3                    ; 0040eb66 | = "(none)"
     MOV EDI,EBP                         ; 0040eb6b
     PUSH EDI                            ; 0040eb6d
-    MOV AL,byte ptr [ESI]               ; 0040eb6e | = "(none)" | DAT_006144e5
+    MOV AL,byte ptr [ESI]               ; 0040eb6e | = "(none)" | s_none_006144e3+2
         ;   Label: LAB_0040eb6e
     MOV byte ptr [EDI],AL               ; 0040eb70
     CMP AL,0x0                          ; 0040eb72
     JZ 0x0040eb86                       ; 0040eb74
         ;   XREF to: 0040eb86 (CONDITIONAL_JUMP)  ; LAB_0040eb86
-    MOV AL,byte ptr [ESI + 0x1]         ; 0040eb76 | DAT_006144e4 | s_ne)_006144e6
+    MOV AL,byte ptr [ESI + 0x1]         ; 0040eb76 | s_none_006144e3+1 | s_ne)_006144e6
     ADD ESI,0x2                         ; 0040eb79
     MOV byte ptr [EDI + 0x1],AL         ; 0040eb7c
     ADD EDI,0x2                         ; 0040eb7f
@@ -524,13 +524,13 @@ section .text
         ;   Label: caseD_12
     MOV EDI,EBP                         ; 0040ed89
     PUSH EDI                            ; 0040ed8b
-    MOV AL,byte ptr [ESI]               ; 0040ed8c | = "(none)" | DAT_00614523
+    MOV AL,byte ptr [ESI]               ; 0040ed8c | = "(none)" | s_none_00614521+2
         ;   Label: LAB_0040ed8c
     MOV byte ptr [EDI],AL               ; 0040ed8e
     CMP AL,0x0                          ; 0040ed90
     JZ 0x0040eda4                       ; 0040ed92
         ;   XREF to: 0040eda4 (CONDITIONAL_JUMP)  ; LAB_0040eda4
-    MOV AL,byte ptr [ESI + 0x1]         ; 0040ed94 | DAT_00614522 | s_ne)_00614524
+    MOV AL,byte ptr [ESI + 0x1]         ; 0040ed94 | s_none_00614521+1 | s_ne)_00614524
     ADD ESI,0x2                         ; 0040ed97
     MOV byte ptr [EDI + 0x1],AL         ; 0040ed9a
     ADD EDI,0x2                         ; 0040ed9d

@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   GET_FULL_PATH_NAME_A_FUNC* g_GetFullPathNameAFunc = 00211f0e
 ;   TerminatedCString s_con_00658c2c
-;   undefined4 DAT_006e6f63
+;   int INT_006e6f63
 ;
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_006083fc
@@ -109,7 +109,7 @@ section .text
     RET                                 ; 006011cc
     MOV EAX,[0x00658c2c]                ; 006011cd | = "con"
         ;   Label: LAB_006011cd
-    MOV dword ptr [EBX],EAX             ; 006011d2 | DAT_006e6f63
+    MOV dword ptr [EBX],EAX             ; 006011d2 | INT_006e6f63
     JMP 0x006011f6                      ; 006011d4
         ;   XREF to: 006011f6 (UNCONDITIONAL_JUMP)  ; LAB_006011f6
     MOV EAX,ESP                         ; 006011d6

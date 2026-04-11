@@ -12,9 +12,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Model_name_to_save_0061ad80
 ;   TerminatedCString s_MDL_0061ad96
-;   undefined4 DAT_0061ad97
-;   undefined4 DAT_0061ad98
-;   undefined4 DAT_0061ad99
+;   undefined4 s_MDL_0061ad96+1
+;   undefined4 s_MDL_0061ad96+2
+;   undefined4 s_MDL_0061ad96+3
 ;
 ; Called Functions:
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
@@ -91,13 +91,13 @@ section .text
     MOV AL,0x0                          ; 00459e4d
     SCASB.REPNE ES:EDI                  ; 00459e4f
     DEC EDI                             ; 00459e51
-    MOV AL,byte ptr [ESI]               ; 00459e52 | = ".MDL" | DAT_0061ad98
+    MOV AL,byte ptr [ESI]               ; 00459e52 | = ".MDL" | s_MDL_0061ad96+2
         ;   Label: LAB_00459e52
     MOV byte ptr [EDI],AL               ; 00459e54
     CMP AL,0x0                          ; 00459e56
     JZ 0x00459e6a                       ; 00459e58
         ;   XREF to: 00459e6a (CONDITIONAL_JUMP)  ; LAB_00459e6a
-    MOV AL,byte ptr [ESI + 0x1]         ; 00459e5a | DAT_0061ad97 | DAT_0061ad99
+    MOV AL,byte ptr [ESI + 0x1]         ; 00459e5a | s_MDL_0061ad96+1 | s_MDL_0061ad96+3
     ADD ESI,0x2                         ; 00459e5d
     MOV byte ptr [EDI + 0x1],AL         ; 00459e60
     ADD EDI,0x2                         ; 00459e63

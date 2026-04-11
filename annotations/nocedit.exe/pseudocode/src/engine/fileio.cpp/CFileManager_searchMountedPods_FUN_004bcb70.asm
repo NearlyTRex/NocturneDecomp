@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DefaultWildcard_0062920f
-;   undefined4 DAT_00629210
+;   undefined4 s_DefaultWildcard_0062920f+1
 ;   TerminatedCString s_Enter_filename_wildcard_00629211
 ;   TerminatedCString s_s_s_00629229
 ;   TerminatedCString s_No_files_found_matching__0062922f
@@ -59,7 +59,7 @@ section .text
     CMP AL,0x0                          ; 004bcb8f
     JZ 0x004bcba3                       ; 004bcb91
         ;   XREF to: 004bcba3 (CONDITIONAL_JUMP)  ; LAB_004bcba3
-    MOV AL,byte ptr [ESI + 0x1]         ; 004bcb93 | DAT_00629210
+    MOV AL,byte ptr [ESI + 0x1]         ; 004bcb93 | s_DefaultWildcard_0062920f+1
     ADD ESI,0x2                         ; 004bcb96
     MOV byte ptr [EDI + 0x1],AL         ; 004bcb99
     ADD EDI,0x2                         ; 004bcb9c

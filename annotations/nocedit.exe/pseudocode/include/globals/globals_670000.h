@@ -287,6 +287,7 @@ extern int g_JoystickNumButtons;
 extern int g_CurrentAlphaValue;
 extern int g_RenderingQuality;
 extern int g_ProjectionScale;
+extern int INT_00679d94;
 extern int g_CFilmReelClassVersion;
 extern int g_CFilmProjectorClassVersion;
 extern int g_CFlameClassVersion;
@@ -401,9 +402,6 @@ extern uint g_MpegBitMaskTableSingleBit[8];
 
 // ulonglong[256]
 extern ulonglong g_ByteFillTable[256];
-
-// undefined4
-extern undefined4 DAT_0067b718;
 
 // ushort[384]
 extern ushort g_LightmapData[384];

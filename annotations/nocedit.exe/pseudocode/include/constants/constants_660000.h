@@ -93,6 +93,7 @@ static double DOUBLE_00663138 = -1;
 static double DOUBLE_00663140 = 1116.4000000000001;
 static double DOUBLE_00663148 = 4;
 static double DOUBLE_00663150 = 20;
+static double DOUBLE_00665f28 = -1.79399301312127e-307;
 static double g_PositiveInfinity = INFINITY;
 
 // float constants
@@ -258,5 +259,5 @@ static void* DAT_00665B88 = (void*)0x00665BA0; // DAT_00665ba0
 static void* DAT_00665CD0 = (void*)0x00665CE8; // DAT_00665ce8
 static void* DAT_00665CE0 = (void*)0x00665CF8; // DAT_00665cf8
 static void* DAT_00665D68 = (void*)0x00665D78; // DAT_00665d78
-static void* DAT_00665FA4 = (void*)0x00685038; // DAT_00685038
+static void* DAT_00665FA4 = (void*)&INT_00685038;
 

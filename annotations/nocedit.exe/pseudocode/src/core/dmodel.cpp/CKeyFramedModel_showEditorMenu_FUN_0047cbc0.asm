@@ -1426,7 +1426,7 @@ section .text
     CMP AL,0x0                          ; 0047d94d
     JZ 0x0047d961                       ; 0047d94f
         ;   XREF to: 0047d961 (CONDITIONAL_JUMP)  ; LAB_0047d961
-    MOV AL,byte ptr [ESI + 0x1]         ; 0047d951 | DAT_006209be | s_m_006209c0
+    MOV AL,byte ptr [ESI + 0x1]         ; 0047d951 | s_kfm_006209bd+1 | s_m_006209c0
     ADD ESI,0x2                         ; 0047d954
     MOV byte ptr [EDI + 0x1],AL         ; 0047d957
     ADD EDI,0x2                         ; 0047d95a

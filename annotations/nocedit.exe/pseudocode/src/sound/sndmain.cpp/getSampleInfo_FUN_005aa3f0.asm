@@ -8,7 +8,7 @@
 ; Local Variables:
 ; char             Stack[-0x114]:1  local_114
 ; undefined1[255]  Stack[-0x113]:255  local_113
-; long             Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_sound.cpp_CSound_getSoundDuration_FUN_005b3ba0 at 005b3bd5

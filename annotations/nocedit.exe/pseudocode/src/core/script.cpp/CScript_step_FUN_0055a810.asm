@@ -7063,7 +7063,7 @@ section .text
     CMP AL,0x0                          ; 0055f796
     JZ 0x0055f7aa                       ; 0055f798
         ;   XREF to: 0055f7aa (CONDITIONAL_JUMP)  ; LAB_0055f7aa
-    MOV AL,byte ptr [ESI + 0x1]         ; 0055f79a | DAT_00642f53 | s_[^,],%n_00642f55
+    MOV AL,byte ptr [ESI + 0x1]         ; 0055f79a | s_anon_00642f52+1 | s_[^,],%n_00642f55
     ADD ESI,0x2                         ; 0055f79d
     MOV byte ptr [EDI + 0x1],AL         ; 0055f7a0
     ADD EDI,0x2                         ; 0055f7a3

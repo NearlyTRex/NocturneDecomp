@@ -323,10 +323,12 @@ float FLOAT_03f6ba20 = {};
 
 // float*
 float* g_TertiaryMixBuffer = {};
+float* g_PrimaryMixBuffer = {};
 float* g_SecondaryMixBuffer = {};
 
 // float*[8]
 float* g_ChannelTertiaryBuffers[8] = {};
+float* g_ChannelPrimaryBuffers[8] = {};
 float* g_ChannelSecondaryBuffersA[8] = {};
 float* g_ChannelSecondaryBuffersB[8] = {};
 
@@ -420,9 +422,5 @@ uint g_TrainRailNoiseHandle = {};
 uint g_TrainExteriorAmbientHandle = {};
 
 // void*
-void* g_PrimaryMixBuffer = {};
 void* g_FrameBufferPtr = {};
-
-// void*[8]
-void* g_ChannelPrimaryBuffers[8] = {};
 

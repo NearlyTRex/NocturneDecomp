@@ -3778,6 +3778,9 @@ byte g_ConsoleHandlerRegistered = 0x0;
 // byte[16]
 byte g_IEEE754ExponentClassTable[16] = {0x00, 0x01, 0x00, 0x00, 0x04, 0x00, 0x00, 0x07, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x0D, 0x00, 0x00};
 
+// char
+char CHAR_00h_006852db = '\0';
+
 // char*
 char* g_CurrentTrainMode = (char*)s_int_00652706;
 char* g_PreviousTrainMode = (char*)s_x_0065270a;
@@ -3938,12 +3941,20 @@ int g_SpecialExitHandler = 0x0;
 int DAT_00684F30 = 0x0;
 int INT_00684fd0 = 0x0;
 int g_ConsoleInitializationFlag = 0x0;
+int INT_00685038 = 0x0;
+int INT_00685094 = 0x0;
 int g_DstTransitionSecond = 0x0;
 int g_DstTransitionMinute = 0x0;
 int g_DstTransitionHour = 0x1;
+int INT_006850a4 = 0x5;
+int INT_006850a8 = 0x9;
+int INT_006850b0 = 0x0;
+int INT_006850b4 = 0x0;
+int INT_006850b8 = 0x0;
 int g_TimezoneOffset = 0x4650;
 int g_DaylightSavingActive = 0x1;
 int g_DaylightSavingOffset = 0xe10;
+int INT_00685210 = 0x2D;
 int g_CurrentHandleCount = 0x0;
 int g_FakeHandleCounter = 0x2D;
 int INT_00685280 = 0x0;
@@ -3952,6 +3963,7 @@ int g_ConsoleInputState = 0x0;
 int INT_006854ec = 0x0;
 int INT_006854f0 = 0x1;
 int g_HeapFlags = 0x10000;
+int INT_006855d8 = 0xfffffff;
 
 // int*
 int* g_CurrentScreenPtr = nullptr;
@@ -4017,14 +4029,7 @@ uint g_CodePage = 0x1;
 // uint*
 uint* g_HeapBound = nullptr;
 
-// undefined1
-undefined1 DAT_006852db = 0;
-
 // undefined4
-undefined4 DAT_00685094 = 0;
-undefined4 DAT_006850b0 = 0;
-undefined4 DAT_006850b4 = 0;
-undefined4 DAT_006850b8 = 0;
 undefined4 DAT_0068528c = 0;
 
 // void*

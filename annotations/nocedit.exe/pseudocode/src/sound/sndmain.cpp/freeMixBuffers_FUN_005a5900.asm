@@ -18,8 +18,8 @@
 ;   float* g_TertiaryMixBuffer
 ;   float*[8] g_ChannelTertiaryBuffers
 ;   undefined4 g_ChannelTertiaryBuffers[1]
-;   void* g_PrimaryMixBuffer
-;   void*[8] g_ChannelPrimaryBuffers
+;   float* g_PrimaryMixBuffer
+;   float*[8] g_ChannelPrimaryBuffers
 ;   undefined4 g_ChannelPrimaryBuffers[1]
 ;   float* g_SecondaryMixBuffer
 ;   float*[8] g_ChannelSecondaryBuffersA

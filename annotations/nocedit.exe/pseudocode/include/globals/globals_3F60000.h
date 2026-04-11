@@ -395,10 +395,12 @@ extern float FLOAT_03f6ba20;
 
 // float*
 extern float* g_TertiaryMixBuffer;
+extern float* g_PrimaryMixBuffer;
 extern float* g_SecondaryMixBuffer;
 
 // float*[8]
 extern float* g_ChannelTertiaryBuffers[8];
+extern float* g_ChannelPrimaryBuffers[8];
 extern float* g_ChannelSecondaryBuffersA[8];
 extern float* g_ChannelSecondaryBuffersB[8];
 
@@ -492,9 +494,5 @@ extern uint g_TrainRailNoiseHandle;
 extern uint g_TrainExteriorAmbientHandle;
 
 // void*
-extern void* g_PrimaryMixBuffer;
 extern void* g_FrameBufferPtr;
-
-// void*[8]
-extern void* g_ChannelPrimaryBuffers[8];
 

@@ -21,12 +21,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_00613578
-;   undefined4 DAT_00613579
-;   undefined4 DAT_0061357a
+;   undefined4 s_none_00613578+1
+;   undefined4 s_none_00613578+2
 ;   undefined4 s_e_0061357b
 ;   TerminatedCString s_str_0061357d
-;   undefined4 DAT_0061357e
-;   undefined4 DAT_0061357f
+;   undefined4 s_str_0061357d+1
+;   undefined4 s_str_0061357d+2
 ;   undefined4 s__00613580
 ;   CDemonActor_vtable g_CDemonActorVTable
 ;   int g_ActorMagicNumber
@@ -75,13 +75,13 @@ section .text
     LEA EDI,[EBX + 0x78]                ; 0040892c
     MOV dword ptr [EBX + 0x74],0x3f800000 ; 0040892f
     PUSH EDI                            ; 00408936
-    MOV AL,byte ptr [ESI]               ; 00408937 | = "none" | DAT_0061357a
+    MOV AL,byte ptr [ESI]               ; 00408937 | = "none" | s_none_00613578+2
         ;   Label: LAB_00408937
     MOV byte ptr [EDI],AL               ; 00408939
     CMP AL,0x0                          ; 0040893b
     JZ 0x0040894f                       ; 0040893d
         ;   XREF to: 0040894f (CONDITIONAL_JUMP)  ; LAB_0040894f
-    MOV AL,byte ptr [ESI + 0x1]         ; 0040893f | DAT_00613579 | s_e_0061357b
+    MOV AL,byte ptr [ESI + 0x1]         ; 0040893f | s_none_00613578+1 | s_e_0061357b
     ADD ESI,0x2                         ; 00408942
     MOV byte ptr [EDI + 0x1],AL         ; 00408945
     ADD EDI,0x2                         ; 00408948
@@ -118,13 +118,13 @@ section .text
     LEA EDI,[EBX + 0x11c]               ; 004089f7
     MOV dword ptr [EBX + 0x68],0x78a123 ; 004089fd | g_ActorMagicNumber
     PUSH EDI                            ; 00408a04
-    MOV AL,byte ptr [ESI]               ; 00408a05 | = "str" | DAT_0061357f
+    MOV AL,byte ptr [ESI]               ; 00408a05 | = "str" | s_str_0061357d+2
         ;   Label: LAB_00408a05
     MOV byte ptr [EDI],AL               ; 00408a07
     CMP AL,0x0                          ; 00408a09
     JZ 0x00408a1d                       ; 00408a0b
         ;   XREF to: 00408a1d (CONDITIONAL_JUMP)  ; LAB_00408a1d
-    MOV AL,byte ptr [ESI + 0x1]         ; 00408a0d | DAT_0061357e | s__00613580
+    MOV AL,byte ptr [ESI + 0x1]         ; 00408a0d | s_str_0061357d+1 | s__00613580
     ADD ESI,0x2                         ; 00408a10
     MOV byte ptr [EDI + 0x1],AL         ; 00408a13
     ADD EDI,0x2                         ; 00408a16

@@ -13,7 +13,7 @@
 ;   shape_design.c_loadModelFile_FUN_00458ac0 at 00458f4a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00665f28
+;   double DOUBLE_00665f28 = -1.79399301312127E-307
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;
 ; Called Functions:
@@ -57,7 +57,7 @@ section .text
     MOV BL,byte ptr [ESP + EDX*0x1]     ; 005fff8c
     MOV EDX,EAX                         ; 005fff8f
     AND EDX,0x7                         ; 005fff91
-    MOV DL,byte ptr [EDX + 0x665f28]    ; 005fff94 | DAT_00665f28
+    MOV DL,byte ptr [EDX + 0x665f28]    ; 005fff94 | DOUBLE_00665f28
     AND EDX,0xff                        ; 005fff9a
     TEST EBX,EDX                        ; 005fffa0
     JZ 0x005fffad                       ; 005fffa2
@@ -82,7 +82,7 @@ section .text
     MOV DL,byte ptr [ESP + EDX*0x1]     ; 005fffba
     AND EAX,0x7                         ; 005fffbd
     AND EDX,0xff                        ; 005fffc0
-    MOV AL,byte ptr [EAX + 0x665f28]    ; 005fffc6 | DAT_00665f28
+    MOV AL,byte ptr [EAX + 0x665f28]    ; 005fffc6 | DOUBLE_00665f28
     AND EAX,0xff                        ; 005fffcc
     TEST EDX,EAX                        ; 005fffd1
     JZ 0x005fffe4                       ; 005fffd3

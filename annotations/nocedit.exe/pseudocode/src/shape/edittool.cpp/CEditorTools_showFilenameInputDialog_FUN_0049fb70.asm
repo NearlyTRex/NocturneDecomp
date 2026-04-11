@@ -37,9 +37,9 @@
 ;   TerminatedCString s_Filename_00623199
 ;   TerminatedCString s_Filename_006231a4
 ;   TerminatedCString s_anon_006231af
-;   undefined4 DAT_006231b0
+;   undefined4 s_anon_006231af+1
 ;   TerminatedCString s_d_006231b1
-;   undefined4 DAT_006231b2
+;   undefined4 s_d_006231b1+1
 ;   int g_InputKeyMask = 0x7f
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   uchar[257] g_CharacterClassificationTable
@@ -387,7 +387,7 @@ section .text
     CMP AL,0x0                          ; 0049fecd
     JZ 0x0049fee1                       ; 0049fecf
         ;   XREF to: 0049fee1 (CONDITIONAL_JUMP)  ; LAB_0049fee1
-    MOV AL,byte ptr [ESI + 0x1]         ; 0049fed1 | DAT_006231b0 | DAT_006231b2
+    MOV AL,byte ptr [ESI + 0x1]         ; 0049fed1 | s_anon_006231af+1 | s_d_006231b1+1
     ADD ESI,0x2                         ; 0049fed4
     MOV byte ptr [EDI + 0x1],AL         ; 0049fed7
     ADD EDI,0x2                         ; 0049feda

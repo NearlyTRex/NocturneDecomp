@@ -22,9 +22,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_world_006417af
 ;   TerminatedCString s_txt_006417b5
-;   undefined4 DAT_006417b6
-;   undefined4 DAT_006417b7
-;   undefined4 DAT_006417b8
+;   undefined4 s_txt_006417b5+1
+;   undefined4 s_txt_006417b5+2
+;   undefined4 s_txt_006417b5+3
 ;   TerminatedCString s_rt_006417ba
 ;   TerminatedCString s_world_006417bd
 ;   TerminatedCString s_core_script_cpp_006417c3
@@ -111,13 +111,13 @@ section .text
     MOV AL,0x0                          ; 00559fff
     SCASB.REPNE ES:EDI                  ; 0055a001
     DEC EDI                             ; 0055a003
-    MOV AL,byte ptr [ESI]               ; 0055a004 | = ".txt" | DAT_006417b7
+    MOV AL,byte ptr [ESI]               ; 0055a004 | = ".txt" | s_txt_006417b5+2
         ;   Label: LAB_0055a004
     MOV byte ptr [EDI],AL               ; 0055a006
     CMP AL,0x0                          ; 0055a008
     JZ 0x0055a01c                       ; 0055a00a
         ;   XREF to: 0055a01c (CONDITIONAL_JUMP)  ; LAB_0055a01c
-    MOV AL,byte ptr [ESI + 0x1]         ; 0055a00c | DAT_006417b6 | DAT_006417b8
+    MOV AL,byte ptr [ESI + 0x1]         ; 0055a00c | s_txt_006417b5+1 | s_txt_006417b5+3
     ADD ESI,0x2                         ; 0055a00f
     MOV byte ptr [EDI + 0x1],AL         ; 0055a012
     ADD EDI,0x2                         ; 0055a015

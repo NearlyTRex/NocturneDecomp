@@ -1606,7 +1606,7 @@ section .text
     MOV EAX,0x61da37                    ; 0046cc92 | = "s"
         ;   Label: LAB_0046cc92
     ADD EAX,dword ptr [EBP + 0xfffff5e4] ; 0046cc97
-    PUSH EAX                            ; 0046cc9d | DAT_0061da38
+    PUSH EAX                            ; 0046cc9d | s__0061da37+1
     MOV EAX,0x61da39                    ; 0046cc9e | = "Map%s not created.  Hit a key..."
     PUSH EAX                            ; 0046cca3 | = "Map%s not created.  Hit a key..."
     LEA EAX,[EBP + 0xfffff5ec]          ; 0046cca4
@@ -1645,7 +1645,7 @@ section .text
     MOV EAX,0x61da5a                    ; 0046cd05 | = "s"
         ;   Label: LAB_0046cd05
     ADD EAX,dword ptr [EBP + 0xfffff5e0] ; 0046cd0a
-    PUSH EAX                            ; 0046cd10 | DAT_0061da5b
+    PUSH EAX                            ; 0046cd10 | s__0061da5a+1
     MOV EAX,0x61da5c                    ; 0046cd11 | = "Map%s created.  Hit a key..."
     PUSH EAX                            ; 0046cd16 | = "Map%s created.  Hit a key..."
     LEA EAX,[EBP + 0xfffff5ec]          ; 0046cd17
@@ -2015,13 +2015,13 @@ section .text
     MOV AL,0x0                          ; 0046d032
     SCASB.REPNE ES:EDI                  ; 0046d034
     DEC EDI                             ; 0046d036
-    MOV AL,byte ptr [ESI]               ; 0046d037 | = ".RAW" | DAT_0061daf1
+    MOV AL,byte ptr [ESI]               ; 0046d037 | = ".RAW" | s_RAW_0061daef+2
         ;   Label: LAB_0046d037
     MOV byte ptr [EDI],AL               ; 0046d039
     CMP AL,0x0                          ; 0046d03b
     JZ 0x0046d04f                       ; 0046d03d
         ;   XREF to: 0046d04f (CONDITIONAL_JUMP)  ; LAB_0046d04f
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046d03f | DAT_0061daf0 | DAT_0061daf2
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046d03f | s_RAW_0061daef+1 | s_RAW_0061daef+3
     ADD ESI,0x2                         ; 0046d042
     MOV byte ptr [EDI + 0x1],AL         ; 0046d045
     ADD EDI,0x2                         ; 0046d048
@@ -2037,13 +2037,13 @@ section .text
     LEA EDI,[EBP + 0xfffffdb8]          ; 0046d057
     ADD EDI,dword ptr [EBP + 0xfffff5dc] ; 0046d05d
     PUSH EDI                            ; 0046d063
-    MOV AL,byte ptr [ESI]               ; 0046d064 | = ".RAW" | DAT_0061daf6
+    MOV AL,byte ptr [ESI]               ; 0046d064 | = ".RAW" | s_RAW_0061daf4+2
         ;   Label: LAB_0046d064
     MOV byte ptr [EDI],AL               ; 0046d066
     CMP AL,0x0                          ; 0046d068
     JZ 0x0046d07c                       ; 0046d06a
         ;   XREF to: 0046d07c (CONDITIONAL_JUMP)  ; LAB_0046d07c
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046d06c | DAT_0061daf5 | DAT_0061daf7
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046d06c | s_RAW_0061daf4+1 | s_RAW_0061daf4+3
     ADD ESI,0x2                         ; 0046d06f
     MOV byte ptr [EDI + 0x1],AL         ; 0046d072
     ADD EDI,0x2                         ; 0046d075
@@ -2925,7 +2925,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x14]     ; 0046dab1
     PUSH EAX                            ; 0046dab4
     CALL shape_design.c_embedCopyrightWatermark_FUN_0046b9a0 ; 0046dab5
-        ;   XREF to: 0046b9a0 (UNCONDITIONAL_CALL)  ; void shape_design.c_embedCopyrightWatermark_FUN_0046b9a0(void * image_buffer, char * palette_data, int texture_size)
+        ;   XREF to: 0046b9a0 (UNCONDITIONAL_CALL)  ; void shape_design.c_embedCopyrightWatermark_FUN_0046b9a0(byte * image_buffer, char * palette_data, int texture_size)
     ADD ESP,0xc                         ; 0046daba
     MOV EAX,0x61dbc8                    ; 0046dabd | = "wb"
     PUSH EAX                            ; 0046dac2 | = "wb"
@@ -3030,13 +3030,13 @@ section .text
     MOV ESI,0x61dc3b                    ; 0046dbc8 | = ".ACT"
     MOV EDI,dword ptr [EBP + -0x5c]     ; 0046dbcd
     PUSH EDI                            ; 0046dbd0
-    MOV AL,byte ptr [ESI]               ; 0046dbd1 | = ".ACT" | DAT_0061dc3d
+    MOV AL,byte ptr [ESI]               ; 0046dbd1 | = ".ACT" | s_ACT_0061dc3b+2
         ;   Label: LAB_0046dbd1
     MOV byte ptr [EDI],AL               ; 0046dbd3
     CMP AL,0x0                          ; 0046dbd5
     JZ 0x0046dbe9                       ; 0046dbd7
         ;   XREF to: 0046dbe9 (CONDITIONAL_JUMP)  ; LAB_0046dbe9
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046dbd9 | DAT_0061dc3c | DAT_0061dc3e
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046dbd9 | s_ACT_0061dc3b+1 | s_ACT_0061dc3b+3
     ADD ESI,0x2                         ; 0046dbdc
     MOV byte ptr [EDI + 0x1],AL         ; 0046dbdf
     ADD EDI,0x2                         ; 0046dbe2
@@ -3186,13 +3186,13 @@ section .text
     MOV ESI,0x61dcad                    ; 0046dd52 | = ".OPA"
     MOV EDI,dword ptr [EBP + -0x5c]     ; 0046dd57
     PUSH EDI                            ; 0046dd5a
-    MOV AL,byte ptr [ESI]               ; 0046dd5b | = ".OPA" | DAT_0061dcaf
+    MOV AL,byte ptr [ESI]               ; 0046dd5b | = ".OPA" | s_OPA_0061dcad+2
         ;   Label: LAB_0046dd5b
     MOV byte ptr [EDI],AL               ; 0046dd5d
     CMP AL,0x0                          ; 0046dd5f
     JZ 0x0046dd73                       ; 0046dd61
         ;   XREF to: 0046dd73 (CONDITIONAL_JUMP)  ; LAB_0046dd73
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046dd63 | DAT_0061dcae | DAT_0061dcb0
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046dd63 | s_OPA_0061dcad+1 | s_OPA_0061dcad+3
     ADD ESI,0x2                         ; 0046dd66
     MOV byte ptr [EDI + 0x1],AL         ; 0046dd69
     ADD EDI,0x2                         ; 0046dd6c

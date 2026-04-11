@@ -27,9 +27,9 @@
 ;   TerminatedCString s_Can_t_open_s_0062d2a1
 ;   TerminatedCString s_s_is_d_bytes_but_expecte_0062d2af
 ;   TerminatedCString s_act_0062d2df
-;   undefined4 DAT_0062d2e0
-;   undefined4 DAT_0062d2e1
-;   undefined4 DAT_0062d2e2
+;   undefined4 s_act_0062d2df+1
+;   undefined4 s_act_0062d2df+2
+;   undefined4 s_act_0062d2df+3
 ;   TerminatedCString s_rb_0062d2e4
 ;   TerminatedCString s_art_0062d2e7
 ;   TerminatedCString s_Can_t_open_s_0062d2eb
@@ -115,13 +115,13 @@ section .text
     MOV AL,0x0                          ; 004e29a9
     SCASB.REPNE ES:EDI                  ; 004e29ab
     DEC EDI                             ; 004e29ad
-    MOV AL,byte ptr [ESI]               ; 004e29ae | = ".act" | DAT_0062d2e1
+    MOV AL,byte ptr [ESI]               ; 004e29ae | = ".act" | s_act_0062d2df+2
         ;   Label: LAB_004e29ae
     MOV byte ptr [EDI],AL               ; 004e29b0
     CMP AL,0x0                          ; 004e29b2
     JZ 0x004e29c6                       ; 004e29b4
         ;   XREF to: 004e29c6 (CONDITIONAL_JUMP)  ; LAB_004e29c6
-    MOV AL,byte ptr [ESI + 0x1]         ; 004e29b6 | DAT_0062d2e0 | DAT_0062d2e2
+    MOV AL,byte ptr [ESI + 0x1]         ; 004e29b6 | s_act_0062d2df+1 | s_act_0062d2df+3
     ADD ESI,0x2                         ; 004e29b9
     MOV byte ptr [EDI + 0x1],AL         ; 004e29bc
     ADD EDI,0x2                         ; 004e29bf

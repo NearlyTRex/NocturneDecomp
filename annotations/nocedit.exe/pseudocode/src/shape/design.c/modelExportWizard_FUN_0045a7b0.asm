@@ -17,13 +17,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Binary_filename_to_write_0061af3e
 ;   TerminatedCString s_ASM_0061af5a
-;   undefined4 DAT_0061af5b
-;   undefined4 DAT_0061af5c
-;   undefined4 DAT_0061af5d
+;   undefined4 s_ASM_0061af5a+1
+;   undefined4 s_ASM_0061af5a+2
+;   undefined4 s_ASM_0061af5a+3
 ;   TerminatedCString s_BIN_0061af5f
-;   undefined4 DAT_0061af60
-;   undefined4 DAT_0061af61
-;   undefined4 DAT_0061af62
+;   undefined4 s_BIN_0061af5f+1
+;   undefined4 s_BIN_0061af5f+2
+;   undefined4 s_BIN_0061af5f+3
 ;   TerminatedCString s_N_No_reset_depth_0061af64
 ;   TerminatedCString s_T_Transparent_0061af76
 ;   TerminatedCString s_Y_Reset_depth_0061af85
@@ -130,13 +130,13 @@ section .text
     MOV AL,0x0                          ; 0045a83e
     SCASB.REPNE ES:EDI                  ; 0045a840
     DEC EDI                             ; 0045a842
-    MOV AL,byte ptr [ESI]               ; 0045a843 | = ".ASM" | DAT_0061af5c
+    MOV AL,byte ptr [ESI]               ; 0045a843 | = ".ASM" | s_ASM_0061af5a+2
         ;   Label: LAB_0045a843
     MOV byte ptr [EDI],AL               ; 0045a845
     CMP AL,0x0                          ; 0045a847
     JZ 0x0045a85b                       ; 0045a849
         ;   XREF to: 0045a85b (CONDITIONAL_JUMP)  ; LAB_0045a85b
-    MOV AL,byte ptr [ESI + 0x1]         ; 0045a84b | DAT_0061af5b | DAT_0061af5d
+    MOV AL,byte ptr [ESI + 0x1]         ; 0045a84b | s_ASM_0061af5a+1 | s_ASM_0061af5a+3
     ADD ESI,0x2                         ; 0045a84e
     MOV byte ptr [EDI + 0x1],AL         ; 0045a851
     ADD EDI,0x2                         ; 0045a854
@@ -159,13 +159,13 @@ section .text
     MOV AL,0x0                          ; 0045a870
     SCASB.REPNE ES:EDI                  ; 0045a872
     DEC EDI                             ; 0045a874
-    MOV AL,byte ptr [ESI]               ; 0045a875 | = ".BIN" | DAT_0061af61
+    MOV AL,byte ptr [ESI]               ; 0045a875 | = ".BIN" | s_BIN_0061af5f+2
         ;   Label: LAB_0045a875
     MOV byte ptr [EDI],AL               ; 0045a877
     CMP AL,0x0                          ; 0045a879
     JZ 0x0045a88d                       ; 0045a87b
         ;   XREF to: 0045a88d (CONDITIONAL_JUMP)  ; LAB_0045a88d
-    MOV AL,byte ptr [ESI + 0x1]         ; 0045a87d | DAT_0061af60 | DAT_0061af62
+    MOV AL,byte ptr [ESI + 0x1]         ; 0045a87d | s_BIN_0061af5f+1 | s_BIN_0061af5f+3
     ADD ESI,0x2                         ; 0045a880
     MOV byte ptr [EDI + 0x1],AL         ; 0045a883
     ADD EDI,0x2                         ; 0045a886

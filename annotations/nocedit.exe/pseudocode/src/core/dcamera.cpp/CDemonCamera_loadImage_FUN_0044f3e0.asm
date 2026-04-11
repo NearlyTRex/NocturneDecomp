@@ -54,9 +54,9 @@
 ;   undefined4 s_ore\\dcamera.cpp_0061a12e
 ;   TerminatedCString s_CDemonCamera_loadImage_n_0061a13e
 ;   TerminatedCString s_ACT_0061a165
-;   undefined4 DAT_0061a166
-;   undefined4 DAT_0061a167
-;   undefined4 DAT_0061a168
+;   undefined4 s_ACT_0061a165+1
+;   undefined4 s_ACT_0061a165+2
+;   undefined4 s_ACT_0061a165+3
 ;   TerminatedCString s_rb_0061a16a
 ;   string s_backdrop_0061a16d
 ;   TerminatedCString s_rb_0061a176
@@ -147,13 +147,13 @@ section .text
     MOV ESI,0x61a165                    ; 0044f452 | = ".ACT"
         ;   Label: LAB_0044f452
     PUSH EDI                            ; 0044f457
-    MOV AL,byte ptr [ESI]               ; 0044f458 | = ".ACT" | DAT_0061a167
+    MOV AL,byte ptr [ESI]               ; 0044f458 | = ".ACT" | s_ACT_0061a165+2
         ;   Label: LAB_0044f458
     MOV byte ptr [EDI],AL               ; 0044f45a
     CMP AL,0x0                          ; 0044f45c
     JZ 0x0044f470                       ; 0044f45e
         ;   XREF to: 0044f470 (CONDITIONAL_JUMP)  ; LAB_0044f470
-    MOV AL,byte ptr [ESI + 0x1]         ; 0044f460 | DAT_0061a166 | DAT_0061a168
+    MOV AL,byte ptr [ESI + 0x1]         ; 0044f460 | s_ACT_0061a165+1 | s_ACT_0061a165+3
     ADD ESI,0x2                         ; 0044f463
     MOV byte ptr [EDI + 0x1],AL         ; 0044f466
     ADD EDI,0x2                         ; 0044f469
@@ -242,13 +242,13 @@ section .text
     MOV ESI,0x61a1c6                    ; 0044f526 | = ".fog"
         ;   Label: LAB_0044f526
     PUSH EDI                            ; 0044f52b
-    MOV AL,byte ptr [ESI]               ; 0044f52c | = ".fog" | DAT_0061a1c8
+    MOV AL,byte ptr [ESI]               ; 0044f52c | = ".fog" | s_fog_0061a1c6+2
         ;   Label: LAB_0044f52c
     MOV byte ptr [EDI],AL               ; 0044f52e
     CMP AL,0x0                          ; 0044f530
     JZ 0x0044f544                       ; 0044f532
         ;   XREF to: 0044f544 (CONDITIONAL_JUMP)  ; LAB_0044f544
-    MOV AL,byte ptr [ESI + 0x1]         ; 0044f534 | DAT_0061a1c7 | DAT_0061a1c9
+    MOV AL,byte ptr [ESI + 0x1]         ; 0044f534 | s_fog_0061a1c6+1 | s_fog_0061a1c6+3
     ADD ESI,0x2                         ; 0044f537
     MOV byte ptr [EDI + 0x1],AL         ; 0044f53a
     ADD EDI,0x2                         ; 0044f53d

@@ -7828,6 +7828,7 @@ int g_CameraEdgeOffsetY[8] = {-1, -1, 0x00000000, 0x00000001, 0x00000001, 0x0000
 
 // short
 short g_DaysInMonth_Normal = 0x0;
+short SHORT_00665f50 = 0x16d;
 short g_DaysInMonth_Leap = 0x0;
 
 // streambuf_vtable

@@ -15,9 +15,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_bullet_kfm_00614934
 ;   TerminatedCString s_CGun_0061493f
-;   undefined4 DAT_00614940
-;   undefined4 DAT_00614941
-;   undefined4 DAT_00614942
+;   undefined4 s_Gun_0061493f+1
+;   undefined4 s_un_0061493f+2
+;   undefined4 s_n_0061493f+3
 ;   CDemonActor_vtable g_CAmmoVTable
 ;
 ; Called Functions:
@@ -54,13 +54,13 @@ section .text
     MOV ESI,0x61493f                    ; 00410e02 | = "CGun"
     LEA EDI,[EBX + 0x2d4]               ; 00410e07
     PUSH EDI                            ; 00410e0d
-    MOV AL,byte ptr [ESI]               ; 00410e0e | = "CGun" | DAT_00614941
+    MOV AL,byte ptr [ESI]               ; 00410e0e | = "CGun" | s_un_0061493f+2
         ;   Label: LAB_00410e0e
     MOV byte ptr [EDI],AL               ; 00410e10
     CMP AL,0x0                          ; 00410e12
     JZ 0x00410e26                       ; 00410e14
         ;   XREF to: 00410e26 (CONDITIONAL_JUMP)  ; LAB_00410e26
-    MOV AL,byte ptr [ESI + 0x1]         ; 00410e16 | DAT_00614940 | DAT_00614942
+    MOV AL,byte ptr [ESI + 0x1]         ; 00410e16 | s_Gun_0061493f+1 | s_n_0061493f+3
     ADD ESI,0x2                         ; 00410e19
     MOV byte ptr [EDI + 0x1],AL         ; 00410e1c
     ADD EDI,0x2                         ; 00410e1f

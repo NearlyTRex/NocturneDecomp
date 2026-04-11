@@ -48,7 +48,7 @@
 ;   TerminatedCString s_rt_0062cab0
 ;   TerminatedCString s_save_0062cab3
 ;   TerminatedCString s_LZW_0062cab8
-;   undefined4 DAT_0062cab9
+;   undefined4 s_ZW_0062cab8+1
 ;   TerminatedCString s_core_game_cpp_0062cabc
 ;   TerminatedCString s_save_0062cacd
 ;   TerminatedCString s_save_0062cad2
@@ -264,7 +264,7 @@ section .text
     LEA ESI,[ESP + 0x600]               ; 004e14b6
     MOV ECX,0x4                         ; 004e14bd
     XOR EAX,EAX                         ; 004e14c2
-    CMPSB.REPE ES:EDI,ESI               ; 004e14c4 | = "EFD" | DAT_0067b685
+    CMPSB.REPE ES:EDI,ESI               ; 004e14c4 | = "EFD" | s_FD_0067b684+1
     JZ 0x004e14cd                       ; 004e14c6
         ;   XREF to: 004e14cd (CONDITIONAL_JUMP)  ; LAB_004e14cd
     SBB EAX,EAX                         ; 004e14c8
@@ -277,7 +277,7 @@ section .text
     MOV EDI,0x62cab8                    ; 004e14d6 | = "LZW"
     LEA ESI,[ESP + 0x600]               ; 004e14db
     XOR EAX,EAX                         ; 004e14e2
-    CMPSB.REPE ES:EDI,ESI               ; 004e14e4 | = "LZW" | DAT_0062cab9
+    CMPSB.REPE ES:EDI,ESI               ; 004e14e4 | = "LZW" | s_ZW_0062cab8+1
     JZ 0x004e14ed                       ; 004e14e6
         ;   XREF to: 004e14ed (CONDITIONAL_JUMP)  ; LAB_004e14ed
     SBB EAX,EAX                         ; 004e14e8

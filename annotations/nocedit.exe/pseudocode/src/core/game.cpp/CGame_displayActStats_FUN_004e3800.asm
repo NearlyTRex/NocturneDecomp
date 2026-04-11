@@ -24,13 +24,13 @@
 ;   TerminatedCString s_stats_0062d4ed
 ;   TerminatedCString s_Level_time_0062d4f3
 ;   TerminatedCString s_anon_0062d4fe
-;   undefined4 DAT_0062d4ff
-;   undefined4 DAT_0062d500
+;   undefined4 s_anon_0062d4fe+1
+;   undefined4 s_anon_0062d4fe+2
 ;   TerminatedCString s_s_2d_2d_2d_2d_0062d501
 ;   TerminatedCString s_Body_count_0062d513
 ;   TerminatedCString s_anon_0062d51e
-;   undefined4 DAT_0062d51f
-;   undefined4 DAT_0062d520
+;   undefined4 s_anon_0062d51e+1
+;   undefined4 s_anon_0062d51e+2
 ;   TerminatedCString s_d_0062d521
 ;   double DOUBLE_0062d52d = 0.000277777777777778
 ;   double DOUBLE_0062d535 = 3600
@@ -158,13 +158,13 @@ section .text
     MOV AL,0x0                          ; 004e396e
     SCASB.REPNE ES:EDI                  ; 004e3970
     DEC EDI                             ; 004e3972
-    MOV AL,byte ptr [ESI]               ; 004e3973 | = "\n\n" | DAT_0062d500
+    MOV AL,byte ptr [ESI]               ; 004e3973 | = "\n\n" | s_anon_0062d4fe+2
         ;   Label: LAB_004e3973
     MOV byte ptr [EDI],AL               ; 004e3975
     CMP AL,0x0                          ; 004e3977
     JZ 0x004e398b                       ; 004e3979
         ;   XREF to: 004e398b (CONDITIONAL_JUMP)  ; LAB_004e398b
-    MOV AL,byte ptr [ESI + 0x1]         ; 004e397b | DAT_0062d4ff | = "%2d:%2d:%2d.%2d\n\n"
+    MOV AL,byte ptr [ESI + 0x1]         ; 004e397b | s_anon_0062d4fe+1 | = "%2d:%2d:%2d.%2d\n\n"
     ADD ESI,0x2                         ; 004e397e
     MOV byte ptr [EDI + 0x1],AL         ; 004e3981
     ADD EDI,0x2                         ; 004e3984
@@ -270,13 +270,13 @@ section .text
     MOV AL,0x0                          ; 004e3a59
     SCASB.REPNE ES:EDI                  ; 004e3a5b
     DEC EDI                             ; 004e3a5d
-    MOV AL,byte ptr [ESI]               ; 004e3a5e | = "\n\n" | DAT_0062d520
+    MOV AL,byte ptr [ESI]               ; 004e3a5e | = "\n\n" | s_anon_0062d51e+2
         ;   Label: LAB_004e3a5e
     MOV byte ptr [EDI],AL               ; 004e3a60
     CMP AL,0x0                          ; 004e3a62
     JZ 0x004e3a76                       ; 004e3a64
         ;   XREF to: 004e3a76 (CONDITIONAL_JUMP)  ; LAB_004e3a76
-    MOV AL,byte ptr [ESI + 0x1]         ; 004e3a66 | DAT_0062d51f | = "%d\n\n"
+    MOV AL,byte ptr [ESI + 0x1]         ; 004e3a66 | s_anon_0062d51e+1 | = "%d\n\n"
     ADD ESI,0x2                         ; 004e3a69
     MOV byte ptr [EDI + 0x1],AL         ; 004e3a6c
     ADD EDI,0x2                         ; 004e3a6f

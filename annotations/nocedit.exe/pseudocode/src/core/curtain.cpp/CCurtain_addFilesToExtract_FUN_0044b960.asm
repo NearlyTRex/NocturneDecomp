@@ -14,9 +14,9 @@
 ;   TerminatedCString s_core_curtain_cpp_00619e93
 ;   TerminatedCString s_Cannot_find_curtain_text_00619ea7
 ;   TerminatedCString s_ACT_00619ecd
-;   undefined4 DAT_00619ece
-;   undefined4 DAT_00619ecf
-;   undefined4 DAT_00619ed0
+;   undefined4 s_ACT_00619ecd+1
+;   undefined4 s_ACT_00619ecd+2
+;   undefined4 s_ACT_00619ecd+3
 ;   TerminatedCString s_ART_s_00619ed2
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -88,13 +88,13 @@ section .text
     MOV ESI,0x619ecd                    ; 0044b9c9 | = ".ACT"
         ;   Label: LAB_0044b9c9
     PUSH EDI                            ; 0044b9ce
-    MOV AL,byte ptr [ESI]               ; 0044b9cf | = ".ACT" | DAT_00619ecf
+    MOV AL,byte ptr [ESI]               ; 0044b9cf | = ".ACT" | s_ACT_00619ecd+2
         ;   Label: LAB_0044b9cf
     MOV byte ptr [EDI],AL               ; 0044b9d1
     CMP AL,0x0                          ; 0044b9d3
     JZ 0x0044b9e7                       ; 0044b9d5
         ;   XREF to: 0044b9e7 (CONDITIONAL_JUMP)  ; LAB_0044b9e7
-    MOV AL,byte ptr [ESI + 0x1]         ; 0044b9d7 | DAT_00619ece | DAT_00619ed0
+    MOV AL,byte ptr [ESI + 0x1]         ; 0044b9d7 | s_ACT_00619ecd+1 | s_ACT_00619ecd+3
     ADD ESI,0x2                         ; 0044b9da
     MOV byte ptr [EDI + 0x1],AL         ; 0044b9dd
     ADD EDI,0x2                         ; 0044b9e0

@@ -429,15 +429,6 @@ static uchar g_CharacterClassificationTable[257] = {
     0x00
 };
 
-// undefined2 constants
-static undefined2 DAT_0068546c = 0x127F;
-
-// undefined4 constants
-static undefined4 DAT_006850a4 = 0x00000005;
-static undefined4 DAT_006850a8 = 0x00000009;
-static undefined4 DAT_00685210 = 0xFF010806;
-static undefined4 DAT_006855d8 = 0x0FFFFFFF;
-
 // void* constants
 static void* DAT_006817E8 = (void*)s_Off_00649199;
 static void* DAT_006817EC = (void*)s_On_0064919d;

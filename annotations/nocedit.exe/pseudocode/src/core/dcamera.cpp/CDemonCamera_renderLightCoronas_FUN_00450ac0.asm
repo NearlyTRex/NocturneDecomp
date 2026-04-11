@@ -31,8 +31,8 @@
 ;   double g_FixedPointScale256 = 256
 ;   double g_LogarithmicConstant210 = 3.32192809489000
 ;   CVector3i[241][320] g_TempWorldPositions
-;   undefined4 DAT_009e5d74
-;   undefined4 DAT_009e6c74
+;   undefined4 g_TempWorldPositions[1][0].x
+;   undefined4 g_TempWorldPositions[2][0].x
 ;   CVector3f[241][320] g_PrecomputedSurfaceNormals
 ;   undefined4 g_PrecomputedSurfaceNormals[1][0].x
 ;   undefined4 g_PrecomputedSurfaceNormals[1][0].y
@@ -165,7 +165,7 @@ section .text
     INC ECX                             ; 00450c15
     MOV dword ptr [ESP + 0x34],EBX      ; 00450c16
     MOV dword ptr [ESP + 0x28],ESI      ; 00450c1a | g_PrecomputedSurfaceNormals[1][0].x | g_PrecomputedSurfaceNormals[2][0].x
-    MOV dword ptr [ESP + 0x2c],EDX      ; 00450c1e | DAT_009e5d74 | DAT_009e6c74
+    MOV dword ptr [ESP + 0x2c],EDX      ; 00450c1e | g_TempWorldPositions[1][0].x | g_TempWorldPositions[2][0].x
     MOV EDX,dword ptr [EBP + 0x14]      ; 00450c22
     MOV dword ptr [ESP + 0x24],EDI      ; 00450c25 | g_CoronaDepthBuffer[1][0] | g_CoronaDepthBuffer[2][0]
     MOV dword ptr [ESP + 0x20],EAX      ; 00450c29 | g_CoronaBlurOutputBuffer[1][0]

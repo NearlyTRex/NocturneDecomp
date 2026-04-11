@@ -184,13 +184,13 @@ section .text
     MOV ESI,0x649151                    ; 00584fee | = "art"
     MOV EDI,ESP                         ; 00584ff3
     PUSH EDI                            ; 00584ff5
-    MOV AL,byte ptr [ESI]               ; 00584ff6 | = "art" | DAT_00649153
+    MOV AL,byte ptr [ESI]               ; 00584ff6 | = "art" | s_t_00649151+2
         ;   Label: LAB_00584ff6
     MOV byte ptr [EDI],AL               ; 00584ff8
     CMP AL,0x0                          ; 00584ffa
     JZ 0x0058500e                       ; 00584ffc
         ;   XREF to: 0058500e (CONDITIONAL_JUMP)  ; LAB_0058500e
-    MOV AL,byte ptr [ESI + 0x1]         ; 00584ffe | DAT_00649152 | DAT_00649154
+    MOV AL,byte ptr [ESI + 0x1]         ; 00584ffe | s_rt_00649151+1 | s__00649151+3
     ADD ESI,0x2                         ; 00585001
     MOV byte ptr [EDI + 0x1],AL         ; 00585004
     ADD EDI,0x2                         ; 00585007

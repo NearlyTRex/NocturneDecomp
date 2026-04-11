@@ -26,14 +26,15 @@ char * __cdecl strtok(char *str,char *delimiters)
     }
   }
   FUN_00607080(local_28,delimiters);
-  while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVar1 & 7]) != 0))) {
+  while ((bVar1 = *str, bVar1 != 0 &&
+         ((local_28[bVar1 >> 3] & *(byte *)((int)&DOUBLE_00665f28 + (bVar1 & 7))) != 0))) {
     str = str + 1;
   }
   pbVar3 = (byte *)0x0;
   pbVar4 = (byte *)str;
   if (bVar1 != 0) {
     for (; bVar2 = *pbVar4, bVar2 != 0; pbVar4 = pbVar4 + 1) {
-      if ((local_28[bVar2 >> 3] & (&DAT_00665f28)[bVar2 & 7]) != 0) {
+      if ((local_28[bVar2 >> 3] & *(byte *)((int)&DOUBLE_00665f28 + (bVar2 & 7))) != 0) {
         *pbVar4 = 0;
         pTVar3 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
         *(byte **)pTVar3->unknown_10 = pbVar4 + 1;

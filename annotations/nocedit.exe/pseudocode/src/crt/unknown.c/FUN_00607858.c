@@ -24,7 +24,7 @@ int FUN_00607858(int param_1,int param_2)
     }
     else {
       iVar5 = *(int *)(&g_DaysInMonth_Leap + *(int *)(param_1 + 0x10));
-      iVar2 = *(int *)(&DAT_00665f50 + *(int *)(param_1 + 0x10) * 2);
+      iVar2 = *(int *)(&SHORT_00665f50 + *(int *)(param_1 + 0x10));
     }
     local_34.tm_sec = 0;
     local_34.tm_min = 0;

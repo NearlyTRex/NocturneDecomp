@@ -15,7 +15,7 @@ void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_005ac990(int channel,float *
   float local_1c;
   float fVar1;
   
-  if ((g_ChannelPrimaryBuffers[channel] == (void *)0x0) || (g_MixBufferSize < 1)) {
+  if ((g_ChannelPrimaryBuffers[channel] == (float *)0x0) || (g_MixBufferSize < 1)) {
     if (out_peak != (float *)0x0) {
       *out_peak = 0.0;
     }

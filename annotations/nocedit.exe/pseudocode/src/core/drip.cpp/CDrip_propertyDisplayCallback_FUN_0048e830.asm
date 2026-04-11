@@ -17,9 +17,9 @@
 ;   undefined4 s_ter_006222bd
 ;   undefined4 s_er_006222be
 ;   TerminatedCString s_Lava_006222c1
-;   undefined4 DAT_006222c2
-;   undefined4 DAT_006222c3
-;   undefined4 DAT_006222c4
+;   undefined4 s_ava_006222c1+1
+;   undefined4 s_va_006222c1+2
+;   undefined4 s_a_006222c1+3
 ;   TerminatedCString s_Stalagwhatever_006222c6
 ;   undefined4 s_talagwhatever_006222c7
 ;   undefined4 s_alagwhatever_006222c8
@@ -78,13 +78,13 @@ section .text
     MOV ESI,0x6222c1                    ; 0048e87e | = "Lava"
         ;   Label: LAB_0048e87e
     PUSH EDI                            ; 0048e883
-    MOV AL,byte ptr [ESI]               ; 0048e884 | = "Lava" | DAT_006222c3
+    MOV AL,byte ptr [ESI]               ; 0048e884 | = "Lava" | s_va_006222c1+2
         ;   Label: LAB_0048e884
     MOV byte ptr [EDI],AL               ; 0048e886
     CMP AL,0x0                          ; 0048e888
     JZ 0x0048e89c                       ; 0048e88a
         ;   XREF to: 0048e89c (CONDITIONAL_JUMP)  ; LAB_0048e89c
-    MOV AL,byte ptr [ESI + 0x1]         ; 0048e88c | DAT_006222c2 | DAT_006222c4
+    MOV AL,byte ptr [ESI + 0x1]         ; 0048e88c | s_ava_006222c1+1 | s_a_006222c1+3
     ADD ESI,0x2                         ; 0048e88f
     MOV byte ptr [EDI + 0x1],AL         ; 0048e892
     ADD EDI,0x2                         ; 0048e895

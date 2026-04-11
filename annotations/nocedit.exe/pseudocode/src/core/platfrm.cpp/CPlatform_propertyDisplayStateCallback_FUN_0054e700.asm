@@ -19,7 +19,7 @@
 ;   undefined4 s_end_0063faad
 ;   undefined4 s_end_0063faae
 ;   TerminatedCString s_WTF_0063fab2
-;   undefined4 DAT_0063fab3
+;   undefined4 s_TF_0063fab2+1
 ;   undefined4 g_CPlatformClassInfo.name_hash
 ;
 ; Called Functions:

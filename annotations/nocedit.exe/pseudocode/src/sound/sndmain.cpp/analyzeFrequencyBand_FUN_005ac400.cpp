@@ -58,7 +58,7 @@ float __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int channel,fl
   double dVar9;
   float fVar2;
   
-  if ((((g_ChannelPrimaryBuffers[channel] == (void *)0x0) ||
+  if ((((g_ChannelPrimaryBuffers[channel] == (float *)0x0) ||
        (g_ChannelSecondaryBuffersA[channel] == (float *)0x0)) ||
       (g_ChannelSecondaryBuffersB[channel] == (float *)0x0)) || (g_MixBufferSize < 1)) {
     return 0.0;

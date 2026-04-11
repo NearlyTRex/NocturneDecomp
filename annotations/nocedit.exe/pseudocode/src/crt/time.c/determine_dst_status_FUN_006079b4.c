@@ -43,7 +43,7 @@ int __cdecl determine_dst_status(_tm *timeptr)
   }
   else {
     iVar8 = *(int *)(&g_DaysInMonth_Leap + iVar9);
-    iVar1 = *(int *)(&DAT_00665f50 + iVar9 * 2);
+    iVar1 = *(int *)(&SHORT_00665f50 + iVar9);
   }
   iVar8 = (iVar8 >> 0x10) - (iVar1 >> 0x10);
   if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 0) {

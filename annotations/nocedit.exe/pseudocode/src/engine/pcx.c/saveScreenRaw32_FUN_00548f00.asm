@@ -18,9 +18,9 @@
 ;   TerminatedCString s_engine_pcx_c_0063eb7d
 ;   TerminatedCString s_saveScreenRaw32_No_ext_f_0063eb8d
 ;   TerminatedCString s_RAW_0063ebac
-;   undefined4 DAT_0063ebad
-;   undefined4 DAT_0063ebae
-;   undefined4 DAT_0063ebaf
+;   undefined4 s_RAW_0063ebac+1
+;   undefined4 s_RAW_0063ebac+2
+;   undefined4 s_RAW_0063ebac+3
 ;   TerminatedCString s_engine_pcx_c_0063ebb1
 ;   TerminatedCString s_wb_0063ebc1
 ;   TerminatedCString s_engine_pcx_c_0063ebc4
@@ -95,13 +95,13 @@ section .text
     MOV ESI,0x63ebac                    ; 00548f4d | = ".RAW"
         ;   Label: LAB_00548f4d
     PUSH EDI                            ; 00548f52
-    MOV AL,byte ptr [ESI]               ; 00548f53 | = ".RAW" | DAT_0063ebae
+    MOV AL,byte ptr [ESI]               ; 00548f53 | = ".RAW" | s_RAW_0063ebac+2
         ;   Label: LAB_00548f53
     MOV byte ptr [EDI],AL               ; 00548f55
     CMP AL,0x0                          ; 00548f57
     JZ 0x00548f6b                       ; 00548f59
         ;   XREF to: 00548f6b (CONDITIONAL_JUMP)  ; LAB_00548f6b
-    MOV AL,byte ptr [ESI + 0x1]         ; 00548f5b | DAT_0063ebad | DAT_0063ebaf
+    MOV AL,byte ptr [ESI + 0x1]         ; 00548f5b | s_RAW_0063ebac+1 | s_RAW_0063ebac+3
     ADD ESI,0x2                         ; 00548f5e
     MOV byte ptr [EDI + 0x1],AL         ; 00548f61
     ADD EDI,0x2                         ; 00548f64

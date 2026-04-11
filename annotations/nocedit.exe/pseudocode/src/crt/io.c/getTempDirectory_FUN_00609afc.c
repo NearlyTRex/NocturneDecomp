@@ -58,7 +58,7 @@ char * __cdecl getTempDirectory(void)
     } while (cVar1 != '\0');
     uVar3 = ~uVar3;
     if ((*(char *)(uVar3 + 0x6852da) != '\\') && (*(char *)(uVar3 + 0x6852da) != '/')) {
-      (&DAT_006852db)[uVar3] = 0x5c;
+      (&CHAR_00h_006852db)[uVar3] = '\\';
       g_TempDirectoryBuffer[uVar3] = '\0';
     }
   }

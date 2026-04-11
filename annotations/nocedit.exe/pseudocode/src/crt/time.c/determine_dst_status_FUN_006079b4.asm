@@ -16,18 +16,18 @@
 ;   undefined4 g_PositiveInfinity+6
 ;   short g_DaysInMonth_Normal = 0x0
 ;   undefined4 DAT_00665f3a
-;   undefined4 DAT_00665f50
+;   short SHORT_00665f50 = 0x16d
 ;   short g_DaysInMonth_Leap = 0x0
 ;   dst_rule g_DstStartRule
 ;   undefined4 g_DstStartRule.day
 ;   undefined4 g_DstStartRule.month
 ;   undefined4 g_DstStartRule.day_of_year
 ;   undefined4 g_DstStartRule.rule_type
-;   undefined4 DAT_00685094
+;   int INT_00685094 = 0x0
 ;   int g_DstTransitionSecond = 0x0
-;   undefined4 DAT_006850a4
-;   undefined4 DAT_006850a8
-;   undefined4 DAT_006850b0
+;   int INT_006850a4 = 0x5
+;   int INT_006850a8 = 0x9
+;   int INT_006850b0 = 0x0
 ;   ... and 4 more
 ;
 ; Called Functions:
@@ -86,7 +86,7 @@ section .text
     JZ 0x00607a36                       ; 00607a26
         ;   XREF to: 00607a36 (CONDITIONAL_JUMP)  ; LAB_00607a36
     MOV EDX,dword ptr [EAX + 0x665f52]  ; 00607a28 | g_DaysInMonth_Leap
-    MOV EAX,dword ptr [EAX + 0x665f50]  ; 00607a2e | DAT_00665f50
+    MOV EAX,dword ptr [EAX + 0x665f50]  ; 00607a2e | SHORT_00665f50
     JMP 0x00607a42                      ; 00607a34
         ;   XREF to: 00607a42 (UNCONDITIONAL_JUMP)  ; LAB_00607a42
     MOV EDX,dword ptr [EAX + 0x665f38]  ; 00607a36 | g_DaysInMonth_Normal
@@ -98,13 +98,13 @@ section .text
     SUB EDX,EAX                         ; 00607a48
     MOV dword ptr [ESP + 0xc],EDX       ; 00607a4a
     XOR ECX,ECX                         ; 00607a4e
-    MOV EAX,dword ptr [EBP + 0x20]      ; 00607a50 | DAT_006850b8
+    MOV EAX,dword ptr [EBP + 0x20]      ; 00607a50 | INT_006850b8
     MOV dword ptr [ESP + 0x4],ECX       ; 00607a53
     TEST EAX,EAX                        ; 00607a57
     JNZ 0x00607afd                      ; 00607a59
         ;   XREF to: 00607afd (CONDITIONAL_JUMP)  ; LAB_00607afd
     MOV EAX,dword ptr [ESP + 0x14]      ; 00607a5f
-    MOV ECX,dword ptr [EBP + 0x10]      ; 00607a63 | DAT_006850a8
+    MOV ECX,dword ptr [EBP + 0x10]      ; 00607a63 | INT_006850a8
     CMP EAX,ECX                         ; 00607a66
     JLE 0x00607a74                      ; 00607a68
         ;   XREF to: 00607a74 (CONDITIONAL_JUMP)  ; LAB_00607a74
@@ -115,7 +115,7 @@ section .text
         ;   XREF to: 00607b4e (CONDITIONAL_JUMP)  ; LAB_00607b4e
         ;   Label: LAB_00607a74
     MOV EDX,dword ptr [EBX + 0x18]      ; 00607a7a
-    MOV ECX,dword ptr [EBP + 0x18]      ; 00607a7d | DAT_006850b0
+    MOV ECX,dword ptr [EBP + 0x18]      ; 00607a7d | INT_006850b0
     ADD EDX,0x7                         ; 00607a80
     SUB EDX,ECX                         ; 00607a83
     MOV ECX,0x7                         ; 00607a85
@@ -127,7 +127,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x18]      ; 00607a96
     MOV dword ptr [ESP + 0x8],EAX       ; 00607a99
     ADD EDX,0x6                         ; 00607a9d
-    MOV EAX,dword ptr [EBP + 0x18]      ; 00607aa0 | DAT_006850b0
+    MOV EAX,dword ptr [EBP + 0x18]      ; 00607aa0 | INT_006850b0
     SUB EDX,EAX                         ; 00607aa3
     MOV EAX,EDX                         ; 00607aa5
     SAR EDX,0x1f                        ; 00607aa7
@@ -135,7 +135,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0xc]       ; 00607aac
     DEC ECX                             ; 00607aaf
     SUB ECX,EDX                         ; 00607ab0
-    MOV EDX,dword ptr [EBP + 0xc]       ; 00607ab2 | DAT_006850a4
+    MOV EDX,dword ptr [EBP + 0xc]       ; 00607ab2 | INT_006850a4
     CMP EDX,0x5                         ; 00607ab5
     JNZ 0x00607adf                      ; 00607ab8
         ;   XREF to: 00607adf (CONDITIONAL_JUMP)  ; LAB_00607adf
@@ -166,9 +166,9 @@ section .text
         ;   XREF to: 00607b4e (CONDITIONAL_JUMP)  ; LAB_00607b4e
     JMP 0x00607b55                      ; 00607afb
         ;   XREF to: 00607b55 (UNCONDITIONAL_JUMP)  ; LAB_00607b55
-    MOV EAX,dword ptr [EBP + 0x1c]      ; 00607afd | DAT_006850b4
+    MOV EAX,dword ptr [EBP + 0x1c]      ; 00607afd | INT_006850b4
         ;   Label: LAB_00607afd
-    MOV EDX,dword ptr [EBP + 0x20]      ; 00607b00 | DAT_006850b8
+    MOV EDX,dword ptr [EBP + 0x20]      ; 00607b00 | INT_006850b8
     MOV dword ptr [ESP + 0x18],EAX      ; 00607b03
     CMP EDX,0x1                         ; 00607b07
     JNZ 0x00607b3c                      ; 00607b0a
@@ -228,7 +228,7 @@ section .text
         ;   XREF to: 00607c7b (UNCONDITIONAL_JUMP)  ; LAB_00607c7b
     XOR EBP,EBP                         ; 00607b83
         ;   Label: LAB_00607b83
-    MOV EAX,dword ptr [EDI + 0x20]      ; 00607b85 | DAT_00685094
+    MOV EAX,dword ptr [EDI + 0x20]      ; 00607b85 | INT_00685094
     MOV dword ptr [ESP],EBP             ; 00607b88
     TEST EAX,EAX                        ; 00607b8b
     JNZ 0x00607c25                      ; 00607b8d

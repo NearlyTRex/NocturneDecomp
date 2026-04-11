@@ -28,14 +28,14 @@
 ;   undefined4 s_cpp_0062e72e
 ;   TerminatedCString s_rb_0062e745
 ;   TerminatedCString s_raw_0062e748
-;   undefined4 DAT_0062e749
-;   undefined4 DAT_0062e74a
-;   undefined4 DAT_0062e74b
+;   undefined4 s_aw_0062e748+1
+;   undefined4 s_w_0062e748+2
+;   undefined4 s__0062e748+3
 ;   TerminatedCString s_data_0062e74c
 ;   TerminatedCString s_core_ground_cpp_0062e751
 ;   TerminatedCString s_rb_0062e764
 ;   TerminatedCString s_clr_0062e767
-;   undefined4 DAT_0062e768
+;   undefined4 s_lr_0062e767+1
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -111,13 +111,13 @@ section .text
     MOV ESI,EBP                         ; 004ef0a8
     MOV EDX,dword ptr [ESP + 0xac]      ; 004ef0aa | = "rb"
     PUSH EDI                            ; 004ef0b1
-    MOV AL,byte ptr [ESI]               ; 004ef0b2 | = "raw" | DAT_0062e74a
+    MOV AL,byte ptr [ESI]               ; 004ef0b2 | = "raw" | s_w_0062e748+2
         ;   Label: LAB_004ef0b2
     MOV byte ptr [EDI],AL               ; 004ef0b4
     CMP AL,0x0                          ; 004ef0b6
     JZ 0x004ef0ca                       ; 004ef0b8
         ;   XREF to: 004ef0ca (CONDITIONAL_JUMP)  ; LAB_004ef0ca
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ef0ba | DAT_0062e749 | DAT_0062e74b
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ef0ba | s_aw_0062e748+1 | s__0062e748+3
     ADD ESI,0x2                         ; 004ef0bd
     MOV byte ptr [EDI + 0x1],AL         ; 004ef0c0
     ADD EDI,0x2                         ; 004ef0c3
@@ -265,13 +265,13 @@ section .text
         ;   Label: LAB_004ef21a
     MOV ESI,EBP                         ; 004ef21b
     PUSH EDI                            ; 004ef21d
-    MOV AL,byte ptr [ESI]               ; 004ef21e | = "clr" | DAT_0062e769
+    MOV AL,byte ptr [ESI]               ; 004ef21e | = "clr" | s_r_0062e767+2
         ;   Label: LAB_004ef21e
     MOV byte ptr [EDI],AL               ; 004ef220
     CMP AL,0x0                          ; 004ef222
     JZ 0x004ef236                       ; 004ef224
         ;   XREF to: 004ef236 (CONDITIONAL_JUMP)  ; LAB_004ef236
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ef226 | DAT_0062e768 | DAT_0062e76a
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ef226 | s_lr_0062e767+1 | s__0062e767+3
     ADD ESI,0x2                         ; 004ef229
     MOV byte ptr [EDI + 0x1],AL         ; 004ef22c
     ADD EDI,0x2                         ; 004ef22f
