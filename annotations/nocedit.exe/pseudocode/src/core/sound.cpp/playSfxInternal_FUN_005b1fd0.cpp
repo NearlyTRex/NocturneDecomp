@@ -32,7 +32,7 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_005b1fd0(void *user_data,char *s
   int local_34;
   int local_30;
   int local_2c;
-  int local_28;
+  time_t local_28;
   int local_24;
   int local_20;
   float local_1c;

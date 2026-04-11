@@ -30,7 +30,7 @@ int __cdecl crt_stdio_c_vsscanf_FUN_00600100(char *str,char *format,va_list_t ar
 int __cdecl crt_stdio_c_sscanf_FUN_0060013c(char *str,char *format,...) __attribute__((format(scanf, 2, 3)));
 double __fpustack_safe crt_math_c_acos_FUN_00600162(double x);
 double __crtmath crt_math_c_ceil_FUN_006001b2(double value);
-time_t __cdecl crt_time_c__time_FUN_006001f0(int *time);
+time_t __cdecl crt_time_c__time_FUN_006001f0(time_t *time);
 _tm * __cdecl crt_time_c_localtime_r_FUN_00600230(time_t *timer,_tm *result);
 _tm * __cdecl crt_time_c__localtime_FUN_00600288(time_t *timer);
 void __cdecl crt_stdio_c_formatTwoDigits_FUN_006002a0(char *buffer,int value);

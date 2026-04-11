@@ -4,7 +4,7 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    4408 ( 49.7%)
+  pointer_cast                    4360 ( 49.4%)
   unknown_field                    859 (  9.7%)
   special_crt_function             439 (  5.0%)
   stack_param                      351 (  4.0%)
@@ -19,14 +19,14 @@ SUSPECT TYPE COUNTS
   unaffected_reg                   106 (  1.2%)
   sub84_truncation                 101 (  1.1%)
   stack_alignment_array             95 (  1.1%)
+  warning_unreachable               86 (  1.0%)
   negative_offset                   86 (  1.0%)
-  warning_unreachable               85 (  1.0%)
   wrong_global                      82 (  0.9%)
   register_param                    69 (  0.8%)
   param_count_too_many              41 (  0.5%)
   unknown_type                      40 (  0.5%)
   mmx_assembly                      34 (  0.4%)
-  suspect_float                     31 (  0.3%)
+  suspect_float                     31 (  0.4%)
   extra_output                      29 (  0.3%)
   format_string_mismatch            24 (  0.3%)
   undefined_ram                     24 (  0.3%)
@@ -54,20 +54,20 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (4408 occurrences)
+TYPE: pointer_cast (4360 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1383x  (uint *)((int)
-  1239x  (int *)((int)
+  1379x  (uint *)((int)
+  1215x  (int *)((int)
    305x  (float *)((int)
    209x  (SRenderVertex *)((int)
    193x  (double *)((int)
-   189x  (void *)((int)
+   188x  (void *)((int)
    170x  (byte *)((int)
     86x  (ushort *)((int)
-    69x  (char *)((int)
     61x  (short *)((int)
+    50x  (char *)((int)
     39x  (CMatrix3x4f *)((int)
     34x  (SShapeEditorPolygon *)((int)
     21x  (SMRGLHeaderExtended *)((int)
@@ -803,6 +803,63 @@ Example functions:
     float afStackY_185c [1519];...
 
 ====================================================================================================
+TYPE: warning_unreachable (86 occurrences)
+====================================================================================================
+
+Unique patterns:
+    86x  WARNING: Removing unreachable block
+
+Example functions:
+  cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
+    /* WARNING: Removing unreachable block (ram,0x004871be) */...
+  cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220
+    /* WARNING: Removing unreachable block (ram,0x00487331) */...
+  cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
+    /* WARNING: Removing unreachable block (ram,0x00431c6d) */...
+  crt_stdlib.c__qsort_FUN_005fdf38
+    /* WARNING: Removing unreachable block (ram,0x005fe232) */...
+  crt_math.c_udivmod64_FUN_0060d3ed
+    /* WARNING: Removing unreachable block (ram,0x0060d441) */...
+  crt_math.c_asin_FUN_00600b94
+    /* WARNING: Removing unreachable block (ram,0x00600ba7) */...
+  crt_math.c_acos_FUN_00600162
+    /* WARNING: Removing unreachable block (ram,0x0060018d) */...
+  crt_math.c_pow_FUN_005ffd76
+    /* WARNING: Removing unreachable block (ram,0x005ffe9d) */...
+  crt_unknown.c_FUN_00600a64
+    /* WARNING: Removing unreachable block (ram,0x00600ac1) */...
+  crt_exception.c_ExceptionHandler_FUN_0060a9d8
+    /* WARNING: Removing unreachable block (ram,0x0060aa79) */...
+  crt_stdio.c_fseek_FUN_005ffacc
+    /* WARNING: Removing unreachable block (ram,0x005ffb98) */...
+  engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
+    /* WARNING: Removing unreachable block (ram,0x005dd2de) */...
+  engine_font.cpp_setShadowColor_FUN_004ce0f0
+    /* WARNING: Removing unreachable block (ram,0x004ce1d7) */...
+  engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0
+    /* WARNING: Removing unreachable block (ram,0x004d0425) */...
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
+    /* WARNING: Removing unreachable block (ram,0x0043711f) */...
+  engine_clipper.c_clipPolygonNearPlane_FUN_00436420
+    /* WARNING: Removing unreachable block (ram,0x004365c2) */...
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+    /* WARNING: Removing unreachable block (ram,0x004bbc51) */...
+  engine_fileio.cpp_CCheckOutList_load_FUN_004b2890
+    /* WARNING: Removing unreachable block (ram,0x004b29c8) */...
+  engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
+    /* WARNING: Removing unreachable block (ram,0x004b9ea1) */...
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
+    /* WARNING: Removing unreachable block (ram,0x004b4aea) */...
+  sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
+    /* WARNING: Removing unreachable block (ram,0x005ac957) */...
+  sound_sndmain.cpp_computeFFT_FUN_005a3c90
+    /* WARNING: Removing unreachable block (ram,0x005a3fc6) */...
+  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
+    /* WARNING: Removing unreachable block (ram,0x0054104d) */...
+  core_drip.cpp_CDrip_propertyDisplayCallback_FUN_0048e830
+    /* WARNING: Removing unreachable block (ram,0x0048e859) */...
+
+====================================================================================================
 TYPE: negative_offset (86 occurrences)
 ====================================================================================================
 
@@ -863,63 +920,6 @@ Example functions:
     ppHVar1 = &in_stack_00000008[-1].next_heap_block;...
   crt_iostream.cpp_istream_destructor_thunk_from_ios_FUN_006063c9
     ((_istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
-
-====================================================================================================
-TYPE: warning_unreachable (85 occurrences)
-====================================================================================================
-
-Unique patterns:
-    85x  WARNING: Removing unreachable block
-
-Example functions:
-  cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
-    /* WARNING: Removing unreachable block (ram,0x004871be) */...
-  cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220
-    /* WARNING: Removing unreachable block (ram,0x00487331) */...
-  cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
-    /* WARNING: Removing unreachable block (ram,0x00431c6d) */...
-  crt_stdlib.c__qsort_FUN_005fdf38
-    /* WARNING: Removing unreachable block (ram,0x005fe232) */...
-  crt_math.c_udivmod64_FUN_0060d3ed
-    /* WARNING: Removing unreachable block (ram,0x0060d441) */...
-  crt_math.c_asin_FUN_00600b94
-    /* WARNING: Removing unreachable block (ram,0x00600ba7) */...
-  crt_math.c_acos_FUN_00600162
-    /* WARNING: Removing unreachable block (ram,0x0060018d) */...
-  crt_math.c_pow_FUN_005ffd76
-    /* WARNING: Removing unreachable block (ram,0x005ffe9d) */...
-  crt_unknown.c_FUN_00600a64
-    /* WARNING: Removing unreachable block (ram,0x00600ac1) */...
-  crt_exception.c_ExceptionHandler_FUN_0060a9d8
-    /* WARNING: Removing unreachable block (ram,0x0060aa79) */...
-  crt_stdio.c_fseek_FUN_005ffacc
-    /* WARNING: Removing unreachable block (ram,0x005ffb98) */...
-  engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
-    /* WARNING: Removing unreachable block (ram,0x005dd2de) */...
-  engine_font.cpp_setShadowColor_FUN_004ce0f0
-    /* WARNING: Removing unreachable block (ram,0x004ce1d7) */...
-  engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0
-    /* WARNING: Removing unreachable block (ram,0x004d0425) */...
-  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
-    /* WARNING: Removing unreachable block (ram,0x0043711f) */...
-  engine_clipper.c_clipPolygonNearPlane_FUN_00436420
-    /* WARNING: Removing unreachable block (ram,0x004365c2) */...
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-    /* WARNING: Removing unreachable block (ram,0x004bbc51) */...
-  engine_fileio.cpp_CCheckOutList_load_FUN_004b2890
-    /* WARNING: Removing unreachable block (ram,0x004b29c8) */...
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-    /* WARNING: Removing unreachable block (ram,0x004b4aea) */...
-  sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
-    /* WARNING: Removing unreachable block (ram,0x005ac957) */...
-  sound_sndmain.cpp_computeFFT_FUN_005a3c90
-    /* WARNING: Removing unreachable block (ram,0x005a3fc6) */...
-  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
-    /* WARNING: Removing unreachable block (ram,0x0054104d) */...
-  core_drip.cpp_CDrip_propertyDisplayCallback_FUN_0048e830
-    /* WARNING: Removing unreachable block (ram,0x0048e859) */...
-  core_inv.cpp_CInventory_clear_FUN_004fd0e0
-    /* WARNING: Removing unreachable block (ram,0x004fd155) */...
 
 ====================================================================================================
 TYPE: wrong_global (82 occurrences)

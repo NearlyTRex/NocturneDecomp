@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 52,
-        "line": 29,
-        "message": "format specifies type 'char *' but the argument has type 'SMRGLHeaderExtended *' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -160,6 +153,22 @@
         "type": "SMRGLHeaderExtended *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CFileManager_processMRGLNode_FUN_004b54e0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 35,
+          "line": 39,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

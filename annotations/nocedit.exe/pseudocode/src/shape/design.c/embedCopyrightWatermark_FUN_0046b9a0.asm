@@ -198,7 +198,7 @@ section .text
         ;   Label: LAB_0046baf4
     PUSH EAX                            ; 0046baf7
     CALL crt_time.c__time_FUN_006001f0  ; 0046baf8
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(int * time)
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * time)
     ADD ESP,0x4                         ; 0046bafd
     LEA EAX,[EBP + -0x4]                ; 0046bb00
     PUSH EAX                            ; 0046bb03

@@ -1,44 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 70,
-        "line": 96,
-        "message": "format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 72,
-        "line": 100,
-        "message": "format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 112,
-        "message": "use of undeclared identifier 'stack0xfffff964'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 25,
-        "line": 114,
-        "message": "use of undeclared identifier 'stack0xfffff964'"
-      },
-      {
-        "category": "format_error",
-        "column": 76,
-        "line": 255,
-        "message": "format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 78,
-        "line": 260,
-        "message": "format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -635,6 +598,42 @@
         "type": "_FILE *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CFileManager_checkOutAndExtractPod_FUN_004ba740.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 26,
+          "line": 235,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 17,
+          "line": 133,
+          "message": "Redundant assignment of 'pcVar10' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 17,
+          "line": 138,
+          "message": "Redundant assignment of 'pcVar10' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

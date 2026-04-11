@@ -4517,6 +4517,10 @@
       "type":"struct"
     },
     {
+      "name":"SPodManageRecord",
+      "type":"struct"
+    },
+    {
       "name":"SPoint2i",
       "type":"struct"
     },
@@ -58575,6 +58579,114 @@
       "importable":true,
       "len":44,
       "name":"SPlayerInput",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":256,
+          "name":"base_name",
+          "offset":0,
+          "type":"char[256]"
+        },
+        {
+          "len":260,
+          "name":"pod_name",
+          "offset":256,
+          "type":"char[260]"
+        },
+        {
+          "len":260,
+          "name":"network_path",
+          "offset":516,
+          "type":"char[260]"
+        },
+        {
+          "len":100,
+          "name":"checked_out_by",
+          "offset":776,
+          "type":"char[100]"
+        },
+        {
+          "len":4,
+          "name":"status_description",
+          "offset":876,
+          "type":"char*"
+        },
+        {
+          "len":4,
+          "name":"comparison_result",
+          "offset":880,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"is_mounted",
+          "offset":884,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"action_index",
+          "offset":888,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"count_newer_local",
+          "offset":892,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"count_older_local",
+          "offset":896,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"count_missing_local",
+          "offset":900,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"count_different",
+          "offset":904,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"count_in_sync",
+          "offset":908,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"total_file_count",
+          "offset":912,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"timestamp",
+          "offset":916,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"file_size",
+          "offset":920,
+          "type":"uint"
+        }
+      ],
+      "importable":true,
+      "len":924,
+      "name":"SPodManageRecord",
       "pack":false,
       "type":"struct"
     },

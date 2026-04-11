@@ -5,7 +5,7 @@
 
 // Original: crt_time.c__time_FUN_006001f0
 // Address: 006001f0
-time_t __cdecl ::time(int *time);
+time_t __cdecl ::time(time_t *time);
 
 // Original: crt_time.c_localtime_r_FUN_00600230
 // Address: 00600230

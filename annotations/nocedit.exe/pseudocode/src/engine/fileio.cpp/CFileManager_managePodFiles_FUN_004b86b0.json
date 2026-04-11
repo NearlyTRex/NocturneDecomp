@@ -5,116 +5,20 @@
       {
         "category": "format_error",
         "column": 61,
-        "line": 169,
+        "line": 168,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 75,
-        "line": 224,
+        "line": 208,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 46,
-        "line": 480,
-        "message": "format specifies type 'char *' but the argument has type 'void *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 54,
-        "line": 480,
-        "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 54,
-        "line": 495,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 62,
-        "line": 513,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 519,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 67,
-        "line": 519,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 524,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 67,
-        "line": 524,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 529,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 67,
-        "line": 529,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 534,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 67,
-        "line": 534,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 539,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 544,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 67,
-        "line": 544,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 559,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 34,
-        "line": 763,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
+        "line": 412,
+        "message": "format specifies type 'char *' but the argument has type 'SPodManageRecord *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -122,17 +26,18 @@
   },
   "complexity": {
     "assembly_lines": 2078,
-    "complexity_score": 1406,
+    "complexity_score": 858,
     "cross_reference_count": 0,
     "function_call_count": 51,
     "global_count": 109,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 911,
-    "suspect_count": 49,
+    "pseudocode_lines": 828,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "warning_unreachable"
     ],
-    "total_lines": 2989
+    "total_lines": 2906
   },
   "cross_references": [],
   "function": {
@@ -1118,386 +1023,281 @@
         "is_param": false,
         "name": "local_2338",
         "offset": -9016,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_2337",
-        "offset": -9015,
-        "size": 1,
-        "type": "undefined1"
+        "size": 2048,
+        "type": "char[2048]"
       },
       {
         "is_param": false,
         "name": "local_1b38",
         "offset": -6968,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_1728",
-        "offset": -5928,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1724",
-        "offset": -5924,
-        "size": 4,
-        "type": "undefined4"
+        "size": 1068,
+        "type": "CPodFile"
       },
       {
         "is_param": false,
         "name": "local_170c",
         "offset": -5900,
-        "size": 4,
-        "type": "undefined4"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_1364",
         "offset": -4964,
-        "size": 1,
-        "type": "undefined"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_fbc",
         "offset": -4028,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_fbb",
-        "offset": -4027,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_db8",
-        "offset": -3512,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_db0",
-        "offset": -3504,
-        "size": 4,
-        "type": "undefined4"
+        "size": 532,
+        "type": "SFoundFileInfo"
       },
       {
         "is_param": false,
         "name": "local_da8",
         "offset": -3496,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_da7",
-        "offset": -3495,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_ba4",
-        "offset": -2980,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_b9c",
-        "offset": -2972,
-        "size": 4,
-        "type": "undefined4"
+        "size": 532,
+        "type": "SFoundFileInfo"
       },
       {
         "is_param": false,
         "name": "local_b94",
         "offset": -2964,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_b93",
-        "offset": -2963,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_990",
-        "offset": -2448,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_988",
-        "offset": -2440,
-        "size": 4,
-        "type": "undefined4"
+        "size": 532,
+        "type": "SFoundFileInfo"
       },
       {
         "is_param": false,
         "name": "local_980",
         "offset": -2432,
-        "size": 1,
-        "type": "undefined"
+        "size": 500,
+        "type": "char[500]"
       },
       {
         "is_param": false,
         "name": "local_78c",
         "offset": -1932,
-        "size": 1,
-        "type": "undefined"
+        "size": 500,
+        "type": "char[500]"
       },
       {
         "is_param": false,
         "name": "local_598",
         "offset": -1432,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_597",
-        "offset": -1431,
-        "size": 1,
-        "type": "undefined1"
+        "size": 260,
+        "type": "char[260]"
       },
       {
         "is_param": false,
         "name": "local_494",
         "offset": -1172,
-        "size": 1,
-        "type": "undefined"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_394",
         "offset": -916,
-        "size": 1,
-        "type": "undefined"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_294",
         "offset": -660,
-        "size": 1,
-        "type": "undefined"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_194",
         "offset": -404,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_193",
-        "offset": -403,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_94",
         "offset": -148,
-        "size": 4,
-        "type": "undefined4"
+        "size": 16,
+        "type": "CStrList"
       },
       {
         "is_param": false,
         "name": "local_84",
         "offset": -132,
-        "size": 4,
-        "type": "undefined4"
+        "size": 16,
+        "type": "CStrList"
       },
       {
         "is_param": false,
         "name": "local_74",
         "offset": -116,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_70",
-        "offset": -112,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "CCheckOutList"
       },
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_68",
         "offset": -104,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_64",
         "offset": -100,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "SPodManageRecord *"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "char[4]"
       },
       {
         "is_param": true,
@@ -1517,395 +1317,19 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 124,
-      "match": "(char *)((int)",
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
       "severity": "mild",
-      "text": "local_34 = (char *)((int)local_44 + 0x100);",
-      "type": "pointer_cast"
+      "text": "/* WARNING: Removing unreachable block (ram,0x004b9ea1) */",
+      "type": "warning_unreachable"
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "local_30 = (char *)((int)local_44 + 0x204);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 246,
+      "line": 215,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar11 = (uint *)((int)&(local_1b38.directory_entries)->name + local_68);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 396,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "pcVar12 = (char *)((int)local_44 + 0x100);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 415,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "pcVar3 = (char *)((int)local_44 + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 473,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "(local_2338,\"%s\\t%s\\t%s\",pvVar10,*(uint *)((int)pvVar10 + 0x36c),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 474,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "g_PodFileActionNames[*(int *)((int)pvVar10 + 0x378)]);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 475,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "if (*(char *)((int)pvVar10 + 0x308) != '\\0') {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 492,
-      "match": "(void *)((int)",
-      "severity": "mild",
-      "text": "pvVar10 = (void *)((int)pvVar10 + 0x39c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 508,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "switch(*(uint *)((int)pvVar10 + iVar2 * 0x39c + 0x370)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 547,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 551,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pvVar10 + iVar2 * 0x39c + 0x390),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 553,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 900);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 560,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 0x37c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 566,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 0x380);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 572,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 0x388);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 578,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar9 = *(int *)((int)pvVar10 + iVar2 * 0x39c + 0x38c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 586,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "if (*(char *)((int)pvVar10 + iVar2 * 0x39c + 0x308) != '\\0') {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 587,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "pcVar13 = (char *)((int)pvVar10 + iVar2 * 0x39c + 0x308);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 600,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x374) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 610,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 613,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if ((*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x374) == 0) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 614,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "(*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 617,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 620,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) == 5) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 623,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) == 5) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 626,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x370) != 5) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 632,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "g_PodFileActionNames[*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x378)]);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 644,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "(this_ptr,(char *)((int)pvVar10 + iVar2 * 0x39c + 0x204));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 654,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "local_24 = (char *)((int)local_44 + 0x100);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 659,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)((int)local_44 + local_20 * 0x39c + 0x378);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 661,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (((*(int *)((int)local_44 + local_20 * 0x39c + 0x370) == 3) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 662,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "(*(int *)((int)local_44 + local_20 * 0x39c + 0x37c) == 0)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 663,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "((*(int *)((int)local_44 + local_20 * 0x39c + 0x374) != 0 &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 682,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)((int)pvVar10 + iVar9 * 0x39c + 0x378);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 684,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "pcVar12 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x100);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 697,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "pcVar12 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x100);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 709,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "pcVar13 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x308);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 734,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "((char *)((int)pvVar10 + iVar9 * 0x39c + 0x100),0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 745,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "pcVar12 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x100);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 759,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)((int)pvVar10 + iVar9 * 0x39c + 0x398);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 773,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "pcVar12 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x100);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 783,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "((char *)((int)pvVar10 + iVar9 * 0x39c + 0x308),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 786,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "pcVar12 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x100);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 794,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)pvVar10 + iVar9 * 0x39c + 0x378) != 3) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 795,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "pcVar12 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x100);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 803,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uVar5 = *(uint *)((int)pvVar10 + iVar9 * 0x39c + 0x378);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 805,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "pcVar12 = (char *)((int)pvVar10 + iVar9 * 0x39c + 0x100);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 906,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)pvVar10 + iVar2 * 0x39c + 0x378) = iVar6;",
       "type": "pointer_cast"
     }
   ]

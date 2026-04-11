@@ -7,61 +7,46 @@
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   pod_directory_path
 ; Local Variables:
-; undefined        Stack[-0x2338]:1  local_2338
-; undefined1       Stack[-0x2337]:1  local_2337
-; undefined        Stack[-0x1b38]:1  local_1b38
-; undefined4       Stack[-0x1728]:4  local_1728
-; undefined4       Stack[-0x1724]:4  local_1724
-; undefined4       Stack[-0x170c]:4  local_170c
-; undefined        Stack[-0x1364]:1  local_1364
-; undefined        Stack[-0xfbc]:1  local_fbc
-; undefined1       Stack[-0xfbb]:1  local_fbb
-; undefined4       Stack[-0xdb8]:4  local_db8
-; undefined4       Stack[-0xdb0]:4  local_db0
-; undefined        Stack[-0xda8]:1  local_da8
-; undefined1       Stack[-0xda7]:1  local_da7
-; undefined4       Stack[-0xba4]:4  local_ba4
-; undefined4       Stack[-0xb9c]:4  local_b9c
-; undefined        Stack[-0xb94]:1  local_b94
-; undefined1       Stack[-0xb93]:1  local_b93
-; undefined4       Stack[-0x990]:4  local_990
-; undefined4       Stack[-0x988]:4  local_988
-; undefined        Stack[-0x980]:1  local_980
-; undefined        Stack[-0x78c]:1  local_78c
-; undefined        Stack[-0x598]:1  local_598
-; undefined1       Stack[-0x597]:1  local_597
-; undefined        Stack[-0x494]:1  local_494
-; undefined        Stack[-0x394]:1  local_394
-; undefined        Stack[-0x294]:1  local_294
-; undefined        Stack[-0x194]:1  local_194
-; undefined1       Stack[-0x193]:1  local_193
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined        Stack[-0x14]:1  local_14
+; char[2048]       Stack[-0x2338]:2048  local_2338
+; CPodFile         Stack[-0x1b38]:1068  local_1b38
+; CPickList        Stack[-0x170c]:936  local_170c
+; CPickList        Stack[-0x1364]:936  local_1364
+; SFoundFileInfo   Stack[-0xfbc]:532  local_fbc
+; SFoundFileInfo   Stack[-0xda8]:532  local_da8
+; SFoundFileInfo   Stack[-0xb94]:532  local_b94
+; char[500]        Stack[-0x980]:500  local_980
+; char[500]        Stack[-0x78c]:500  local_78c
+; char[260]        Stack[-0x598]:260  local_598
+; char[256]        Stack[-0x494]:256  local_494
+; char[256]        Stack[-0x394]:256  local_394
+; char[256]        Stack[-0x294]:256  local_294
+; char[256]        Stack[-0x194]:256  local_194
+; CStrList         Stack[-0x94]:16  local_94
+; CStrList         Stack[-0x84]:16  local_84
+; CCheckOutList    Stack[-0x74]:8  local_74
+; uint             Stack[-0x6c]:4  local_6c
+; int              Stack[-0x68]:4  local_68
+; int              Stack[-0x64]:4  local_64
+; int              Stack[-0x60]:4  local_60
+; int              Stack[-0x5c]:4  local_5c
+; int              Stack[-0x58]:4  local_58
+; int              Stack[-0x54]:4  local_54
+; int              Stack[-0x50]:4  local_50
+; int              Stack[-0x4c]:4  local_4c
+; int              Stack[-0x48]:4  local_48
+; SPodManageRecord * Stack[-0x44]:4  local_44
+; int              Stack[-0x40]:4  local_40
+; char *           Stack[-0x3c]:4  local_3c
+; uint             Stack[-0x38]:4  local_38
+; char *           Stack[-0x34]:4  local_34
+; char *           Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; char *           Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; char[4]          Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004b868c = 004b97f9

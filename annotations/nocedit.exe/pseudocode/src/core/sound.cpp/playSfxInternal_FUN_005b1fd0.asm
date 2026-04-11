@@ -562,7 +562,7 @@ section .text
     LEA EAX,[ESP + 0x158]               ; 005b24be
     PUSH EAX                            ; 005b24c5
     CALL crt_time.c__time_FUN_006001f0  ; 005b24c6
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(int * time)
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c__time_FUN_006001f0(time_t * time)
     ADD ESP,0x4                         ; 005b24cb
     LEA EAX,[ESP + 0x6c]                ; 005b24ce
     PUSH EAX                            ; 005b24d2

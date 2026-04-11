@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        156 ( 2.4%)
+  Functions with type issues:        150 ( 2.3%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          2
-    Undefined types in variables:      147
+    Undefined types in variables:      141
     Unresolved stack params:           7
 
-  Excluded (.keep / MMX / by-value):   83 functions
+  Excluded (.keep / MMX / by-value):   88 functions
     Wrong calling convention:          1
-    Undefined types in variables:      74
+    Undefined types in variables:      79
     Unresolved stack params:           14
 
 ====================================================================================================
@@ -131,7 +131,7 @@ Unresolved stack parameters (missing from signature) (7)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (147)
+Undefined types in variables (141)
 --------------------------------------------------------------------------------
 
   CPoly_intersectPoly
@@ -147,11 +147,6 @@ Undefined types in variables (147)
   CComplexPolygon_closeSplitBoundary
     Address: 0x005ca590  File: shape/superopt.cpp
     Locals:  local_318 (undefined4), uStack_314 (undefined4), local_310 (undefined4), uStack_30c (undefined4), local_308 (undefined4), uStack_304 (undefined4), local_2c0 (undefined4), uStack_2bc (undefined4), local_2b8 (undefined4), uStack_2b4 (undefined4), local_2b0 (undefined4), local_260 (undefined4), uStack_25c (undefined4), local_258 (undefined4), uStack_254 (undefined4), local_250 (undefined4), uStack_24c (undefined4), local_248 (undefined4), uStack_244 (undefined4), local_240 (undefined4), uStack_23c (undefined4), local_238 (undefined4), uStack_234 (undefined4), local_1e8 (undefined4), uStack_1e4 (undefined4), local_1e0 (undefined4), uStack_1dc (undefined4), local_1d8 (undefined4), uStack_1d4 (undefined4), local_1d0 (undefined4), uStack_1cc (undefined4), local_1c8 (undefined4), uStack_1c4 (undefined4), local_1c0 (undefined4), uStack_1bc (undefined4), local_1b8 (undefined4), uStack_1b4 (undefined4), local_1b0 (undefined4), uStack_1ac (undefined4), local_1a8 (undefined4), uStack_1a4 (undefined4), local_170 (undefined4), uStack_16c (undefined4), local_168 (undefined4), uStack_164 (undefined4), local_160 (undefined4), uStack_15c (undefined4), local_158 (undefined4), uStack_154 (undefined4), local_150 (undefined4), uStack_14c (undefined4), local_148 (undefined4), uStack_144 (undefined4), local_f8 (undefined4), uStack_f4 (undefined4), local_f0 (undefined4), uStack_ec (undefined4), local_e8 (undefined4), uStack_e4 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CFileManager_managePodFiles
-    Address: 0x004b86b0  File: engine/fileio.cpp
-    Locals:  local_2338 (undefined), local_2337 (undefined1), local_1b38 (undefined), local_1728 (undefined4), local_1724 (undefined4), local_170c (undefined4), local_1364 (undefined), local_fbc (undefined), local_fbb (undefined1), local_db8 (undefined4), local_db0 (undefined4), local_da8 (undefined), local_da7 (undefined1), local_ba4 (undefined4), local_b9c (undefined4), local_b94 (undefined), local_b93 (undefined1), local_990 (undefined4), local_988 (undefined4), local_980 (undefined), local_78c (undefined), local_598 (undefined), local_597 (undefined1), local_494 (undefined), local_394 (undefined), local_294 (undefined), local_194 (undefined), local_193 (undefined1), local_94 (undefined4), local_84 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined)
     Suggested: Resolve undefined types to concrete types
 
   CPathMap_findPathToDestination
@@ -274,11 +269,6 @@ Undefined types in variables (147)
     Locals:  local_98 (undefined4), uStack_94 (undefined4), uStack_84 (undefined4), local_80 (undefined4), local_68 (undefined4), uStack_5c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  clipPolygonToViewFrustum
-    Address: 0x004366e0  File: engine/clipper.c
-    Locals:  auStack_150 (undefined4[32]), uStack_d0 (undefined4), local_cc (undefined1[128]), local_24 (undefined4 *), local_20 (undefined4 *), local_1c (undefined4 *)
-    Suggested: Resolve undefined types to concrete types
-
   createRotationalSweepGeometry
     Address: 0x0045e070  File: shape/design.c
     Locals:  local_6c (undefined1[4]), local_68 (undefined1[4]), local_64 (undefined1[4]), local_60 (undefined1[4]), local_5c (undefined1[4]), local_58 (undefined1[4])
@@ -297,11 +287,6 @@ Undefined types in variables (147)
   CDemonCube_loadGeometryFromTriangleList
     Address: 0x004570a0  File: core/dcube.cpp
     Locals:  local_120 (undefined1), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  quantizeColors
-    Address: 0x004406c0  File: engine/colquant.c
-    Locals:  local_160 (undefined4), uStack_15c (undefined4), local_158 (undefined4), uStack_154 (undefined4), local_50 (undefined4[11])
     Suggested: Resolve undefined types to concrete types
 
   CLodMesh_computeEdgeCollapseCost
@@ -427,11 +412,6 @@ Undefined types in variables (147)
   renderBackdropImage
     Address: 0x0057ce80  File: core/setedit.cpp
     Locals:  local_2670 (undefined4[1200]), auStack_13b0 (undefined4[1200])
-    Suggested: Resolve undefined types to concrete types
-
-  CFileManager_extractPodFile
-    Address: 0x004b6e10  File: engine/fileio.cpp
-    Locals:  local_e80 (undefined1[2088]), local_30 (undefined1[16])
     Suggested: Resolve undefined types to concrete types
 
   cramTextureList
@@ -719,19 +699,9 @@ Undefined types in variables (147)
     Locals:  local_3c (undefined4[13])
     Suggested: Resolve undefined types to concrete types
 
-  computeBoxStatistics
-    Address: 0x00441260  File: engine/colquant.c
-    Locals:  local_30 (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
   CFileManager_catalogPodFile
     Address: 0x004b7460  File: engine/fileio.cpp
     Locals:  local_32b (undefined1[255])
-    Suggested: Resolve undefined types to concrete types
-
-  CFileManager_checkOutAndExtractPod
-    Address: 0x004ba740  File: engine/fileio.cpp
-    Locals:  auStack_30 (undefined1[8])
     Suggested: Resolve undefined types to concrete types
 
   CFileManager_viewPodAuditTrail
@@ -998,7 +968,7 @@ Unresolved stack params - by-value struct passing (5)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (71)
+Undefined types - .keep overrides (76)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1101,6 +1071,11 @@ Undefined types - .keep overrides (71)
     Locals:  auStack_201c (undefined2[1018]), auStack_1828 (undefined4[1528]), auStack_48 (undefined1[4]), uStack_44 (undefined4), local_40 (undefined4), auStack_3c (undefined2[2])
     Suggested: Resolve undefined types to concrete types
 
+  clipPolygonToViewFrustum
+    Address: 0x004366e0  File: engine/clipper.c
+    Locals:  auStack_150 (undefined4[32]), uStack_d0 (undefined4), local_cc (undefined1[128]), local_24 (undefined4 *), local_20 (undefined4 *), local_1c (undefined4 *)
+    Suggested: Resolve undefined types to concrete types
+
   CSfxSample_parseConfigFile
     Address: 0x005a45c0  File: sound/sndmain.cpp
     Locals:  local_480 (undefined4), uStack_47c (undefined4), local_478 (undefined4), uStack_474 (undefined4), local_470 (undefined4), uStack_46c (undefined4)
@@ -1109,6 +1084,11 @@ Undefined types - .keep overrides (71)
   CZombie_processPickup
     Address: 0x005fb530  File: core/zombie.cpp
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  quantizeColors
+    Address: 0x004406c0  File: engine/colquant.c
+    Locals:  local_160 (undefined4), uStack_15c (undefined4), local_158 (undefined4), uStack_154 (undefined4), local_50 (undefined4[11])
     Suggested: Resolve undefined types to concrete types
 
   CDemonSet_positionLight
@@ -1204,6 +1184,11 @@ Undefined types - .keep overrides (71)
   CTurret_process
     Address: 0x005e2430  File: core/turret.cpp
     Locals:  local_100 (undefined8), local_30 (undefined1[20])
+    Suggested: Resolve undefined types to concrete types
+
+  CFileManager_extractPodFile
+    Address: 0x004b6e10  File: engine/fileio.cpp
+    Locals:  local_e80 (undefined1[2088]), local_30 (undefined1[16])
     Suggested: Resolve undefined types to concrete types
 
   swapBuffers
@@ -1354,6 +1339,16 @@ Undefined types - .keep overrides (71)
   lerpMatrix3x4
     Address: 0x005f7140  File: core/xform.cpp
     Locals:  auStackY_184c (undefined4[1498])
+    Suggested: Resolve undefined types to concrete types
+
+  computeBoxStatistics
+    Address: 0x00441260  File: engine/colquant.c
+    Locals:  local_30 (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
+  CFileManager_checkOutAndExtractPod
+    Address: 0x004ba740  File: engine/fileio.cpp
+    Locals:  auStack_30 (undefined1[8])
     Suggested: Resolve undefined types to concrete types
 
 --------------------------------------------------------------------------------

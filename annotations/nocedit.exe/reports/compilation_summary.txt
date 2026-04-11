@@ -5,23 +5,23 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6283 (97.4%)
-Failed: 171
+Successful: 6304 (97.7%)
+Failed: 150
 
 ERROR CATEGORIES
 --------------------------------------------------
-  type_error                       291
-  format_error                     262
-  incompatible_types                91
-  undeclared_identifier             36
-  syntax_error                      25
+  type_error                       254
+  format_error                     236
+  incompatible_types                69
+  undeclared_identifier             32
+  syntax_error                      24
   pointer_type                      11
   missing_member                     8
-  other                              7
-  cast_error                         5
+  other                              6
+  cast_error                         3
 
 ====================================================================================================
-CATEGORY: type_error (291 errors)
+CATEGORY: type_error (254 errors)
 ====================================================================================================
 
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
@@ -66,33 +66,31 @@ CATEGORY: type_error (291 errors)
     Line 38: member reference base type 'double' is not a structure or union...
   sound_sndmain.cpp_startSoundThread_FUN_005abc00
     Line 18: member reference base type 'double' is not a structure or union...
-  engine_colquant.c_computeBoxStatistics_FUN_00441260
-    Line 94: member reference base type 'int' is not a structure or union...
-  engine_colquant.c_computeWeightedColorDistance_FUN_00441040
-    Line 22: member reference base type 'int' is not a structure or union...
-  engine_colquant.c_partitionByBlue_FUN_00440dc0
-    Line 22: member reference base type 'int' is not a structure or union...
-  engine_colquant.c_partitionByGreen_FUN_00440c80
-    Line 22: member reference base type 'int' is not a structure or union...
-  engine_colquant.c_partitionByIntensity_FUN_00440f00
-    Line 22: member reference base type 'int' is not a structure or union...
-  engine_colquant.c_quantizeColors_FUN_004406c0
-    Line 160: member reference base type 'int' is not a structure or union...
   shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
     Line 89: member reference base type 'int' is not a structure or union...
   shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0
     Line 20: member reference base type 'int' is not a structure or union...
   shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
     Line 103: member reference base type 'int' is not a structure or union...
+  engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10
+    Line 176: member reference base type 'uint' (aka 'unsigned int') is not a structure or uni...
+  engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
+    Line 117: member reference base type 'uint' (aka 'unsigned int') is not a structure or uni...
+  engine_prim.c_renderPolygonSoftware_FUN_00552510
+    Line 146: member reference base type 'uint' (aka 'unsigned int') is not a structure or uni...
+  engine_prim.c_renderScanlinePolygon_FUN_00553470
+    Line 144: member reference base type 'uint' (aka 'unsigned int') is not a structure or uni...
+  engine_prim.c_setupAdvancedSoftwareEdge_FUN_00552f70
+    Line 52: member reference base type 'uint' (aka 'unsigned int') is not a structure or uni...
+  engine_prim.c_setupBasicSoftwareEdge_FUN_00551ba0
+    Line 52: member reference base type 'uint' (aka 'unsigned int') is not a structure or uni...
 
-  ... and 20 more errors
+  ... and 10 more errors
 
 ====================================================================================================
-CATEGORY: format_error (262 errors)
+CATEGORY: format_error (236 errors)
 ====================================================================================================
 
-  engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
-    Line 96: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Wer...
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
     Line 60: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror...
   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
@@ -104,11 +102,9 @@ CATEGORY: format_error (262 errors)
   shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0
     Line 32: format specifies type 'char *' but the argument has type 'FileTrackingEntry *' [...
   engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
-    Line 169: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-We...
+    Line 168: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-We...
   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0
     Line 109: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-We...
-  engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0
-    Line 29: format specifies type 'char *' but the argument has type 'SMRGLHeaderExtended *'...
   sound_sndmain.cpp_logSoundError_FUN_005adba0
     Line 58: format specifies type 'char *' but the argument has type 'SSoundDeviceInfo *' [-...
   shape_design.c_loadTextureData_FUN_0046b060
@@ -127,8 +123,6 @@ CATEGORY: format_error (262 errors)
     Line 24: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [...
   engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     Line 113: format specifies type 'char *' but the argument has type 'uint *' (aka 'unsigned...
-  engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
-    Line 78: format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned i...
   shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250
     Line 38: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned i...
   shape_design.c_loadModelFile_FUN_00458ac0
@@ -151,21 +145,21 @@ CATEGORY: format_error (262 errors)
     Line 37: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]...
   shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0
     Line 81: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]...
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
+    Line 591: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned lo...
+  shape_memdbg.cpp_debugCalloc_FUN_0050f350
+    Line 25: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned lo...
+  engine_ini.cpp_getProfileInteger_FUN_004fb9a0
+    Line 17: format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat...
 
-  ... and 30 more errors
+  ... and 26 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (91 errors)
+CATEGORY: incompatible_types (69 errors)
 ====================================================================================================
 
-  engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
-    Line 24: assigning to 'CPodAuditRecord *' from incompatible type 'void *'...
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
     Line 113: assigning to 'CPodAuditRecord *' from incompatible type 'void *'...
-  engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
-    Line 32: assigning to 'QSORT_COMPARATOR_FUNC *' (aka 'int (*)(void *, void *)') from inco...
-  engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0
-    Line 61: assigning to 'RenderScanlineFunc *' (aka 'void (*)(struct SHardwareEdge *, struc...
   shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500
     Line 117: assigning to 'SExpandedEdge *' from incompatible type 'void *'...
   shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
@@ -200,8 +194,6 @@ CATEGORY: incompatible_types (91 errors)
     Line 50: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'...
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
     Line 79: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'...
-  engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
-    Line 36: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'...
   engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590
     Line 43: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'...
   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970
@@ -214,21 +206,27 @@ CATEGORY: incompatible_types (91 errors)
     Line 146: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'...
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
     Line 55: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'...
-  engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
-    Line 182: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned in...
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
     Line 36: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned in...
+  shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
+    Line 36: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned in...
+  shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
+    Line 161: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned in...
+  shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0
+    Line 21: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *...
+  shape_memdbg.cpp_openFile_FUN_0050f7a0
+    Line 33: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *...
+  shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
+    Line 59: invalid operands to binary expression ('double' and 'int')...
 
-  ... and 14 more errors
+  ... and 9 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (36 errors)
+CATEGORY: undeclared_identifier (32 errors)
 ====================================================================================================
 
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
     Line 24: use of undeclared identifier 'DAT_80000010'...
-  engine_dosio.c_findFile_FUN_00481760
-    Line 24: use of undeclared identifier 'code'...
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
     Line 47: use of undeclared identifier 'code'...
   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
@@ -261,21 +259,15 @@ CATEGORY: undeclared_identifier (36 errors)
     Line 123: use of undeclared identifier 'code'...
   shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     Line 60: use of undeclared identifier 'stack0x00000000'...
-  engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
-    Line 41: use of undeclared identifier 'stack0x0000002c'...
-  engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
-    Line 112: use of undeclared identifier 'stack0xfffff964'...
   shape_design.c_renderSinglePolygon_FUN_0045ce20
     Line 85: use of undeclared identifier 'stack0xffffffdc'...
   shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920
     Line 19: use of undeclared identifier 'stack0xffffffe0'...
 
 ====================================================================================================
-CATEGORY: syntax_error (25 errors)
+CATEGORY: syntax_error (24 errors)
 ====================================================================================================
 
-  engine_dosio.c_findFile_FUN_00481760
-    Line 24: expected expression...
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
     Line 47: expected expression...
   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
@@ -340,33 +332,27 @@ CATEGORY: missing_member (8 errors)
     Line 111: no member named '_18_2_' in 'tWAVEFORMATEX'...
 
 ====================================================================================================
-CATEGORY: other (7 errors)
+CATEGORY: other (6 errors)
 ====================================================================================================
 
   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
     Line 101: no matching literal operator for call to 'operator""_4_4_' with argument of type...
-  engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0
-    Line 14: unknown type name 'code'...
 
 ====================================================================================================
-CATEGORY: cast_error (5 errors)
+CATEGORY: cast_error (3 errors)
 ====================================================================================================
 
   sound_sndwav.cpp_staticInit_FUN_005b0670
     Line 12: no matching conversion for C-style cast from 'CSoundDeviceBasic_vtable *' to 'CS...
   sound_snddx.cpp_staticInit_FUN_005ade60
     Line 12: no matching conversion for C-style cast from 'CSoundDeviceFull_vtable *' to 'CSo...
-  engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410
-    Line 42: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'...
-  engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-    Line 27: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'...
 
 ====================================================================================================
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 0.85
-Average suspects in failed compilations: 9.41
+Average suspects in successfully compiled functions: 0.86
+Average suspects in failed compilations: 9.74
 
-Functions that compile but have suspect patterns: 1259
+Functions that compile but have suspect patterns: 1278
 (These may have runtime issues even though syntax is valid)

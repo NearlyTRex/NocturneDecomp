@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 178
-  Total diagnostics: 1207
-  Functions flagged by multiple tools: 49
-  .keep.cpp files: 178, raw .cpp files: 0
+  Functions with findings: 191
+  Total diagnostics: 1249
+  Functions flagged by multiple tools: 53
+  .keep.cpp files: 191, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -767,6 +767,23 @@ core_xform.cpp_transformAndClipGeometry_FUN_005f8550  [.keep] [Clang-Tidy (quick
   Line  259: [uninitvar] Uninitialized variable: extraout_EAX_06
 
 ----------------------------------------------------------------------------------------------------
+engine_colquant.c_computeBoxStatistics_FUN_00441260  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: engine/colquant.c  (12 diagnostics)
+
+  Line   63: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   63: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   64: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   64: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   65: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   65: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   80: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   80: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   86: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   89: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   92: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   95: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
   File: engine/fileio.cpp  (12 diagnostics)
 
@@ -846,6 +863,22 @@ core_vampboss.cpp_CVampireBoss_process_FUN_005e5970  [.keep] [Clang-Tidy (quick)
   Line  485: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
   Line  521: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
   Line  576: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+engine_colquant.c_quantizeColors_FUN_004406c0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: engine/colquant.c  (11 diagnostics)
+
+  Line   68: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   68: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  136: [selfAssignment] Redundant assignment of 'pSVar14' to itself.
+  Line  137: [selfAssignment] Redundant assignment of 'pSVar16' to itself.
+  Line  144: [selfAssignment] Redundant assignment of 'puVar15' to itself.
+  Line  161: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  161: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  162: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  162: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  163: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  163: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
 ----------------------------------------------------------------------------------------------------
 core_lightgun.cpp_CLightGun_fire_FUN_00505c70  [.keep] [Clang-Tidy (quick)]
@@ -1259,6 +1292,17 @@ core_sound.cpp_playSfxInternal_FUN_005b1fd0  [.keep] [Clang-Tidy (quick)]
   Line  236: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
 
 ----------------------------------------------------------------------------------------------------
+engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: engine/clipper.c  (6 diagnostics)
+
+  Line  165: [arrayIndexOutOfBoundsCond] Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.
+  Line  176: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  230: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  283: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  336: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  414: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+
+----------------------------------------------------------------------------------------------------
 core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70  [.keep] [Clang-Tidy (quick)]
   File: core/charactr.cpp  (5 diagnostics)
 
@@ -1611,6 +1655,14 @@ core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00  [.ke
   Line  122: [uninitvar] Uninitialized variable: local_64
 
 ----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: engine/fileio.cpp  (3 diagnostics)
+
+  Line  133: [selfAssignment] Redundant assignment of 'pcVar10' to itself.
+  Line  138: [selfAssignment] Redundant assignment of 'pcVar10' to itself.
+  Line  235: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
 support_codec.cpp_readBitsFromStream_FUN_0043e530  [.keep] [Cppcheck (quick)]
   File: support/codec.cpp  (3 diagnostics)
 
@@ -1934,6 +1986,13 @@ core_xform.cpp_clipPolygonStage4_FUN_005f8330  [.keep] [Clang-Tidy (quick), Cppc
   Line   75: [selfAssignment] Redundant assignment of 'iVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
+engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410  [.keep] [Clang-Tidy (quick)]
+  File: engine/drender.cpp  (2 diagnostics)
+
+  Line   97: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   98: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920  [.keep] [Cppcheck (quick)]
   File: engine/fileio.cpp  (2 diagnostics)
 
@@ -2098,10 +2157,58 @@ core_xform.cpp_slerpQuaternion_FUN_005f77e0  [.keep] [Clang-Tidy (quick)]
   Line   37: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
+engine_clipper.c_clipPolygonNearPlane_FUN_00436420  [.keep] [Clang-Tidy (quick)]
+  File: engine/clipper.c  (1 diagnostics)
+
+  Line   53: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+
+----------------------------------------------------------------------------------------------------
+engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80  [.keep] [Clang-Tidy (quick)]
+  File: engine/drender.cpp  (1 diagnostics)
+
+  Line   38: [bugprone-multi-level-implicit-pointer-conversion] multilevel pointer conversion from 'SFace **' to 'void *', please use explicit cast
+
+----------------------------------------------------------------------------------------------------
+engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90  [.keep] [Clang-Tidy (quick)]
+  File: engine/drender.cpp  (1 diagnostics)
+
+  Line   16: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10  [.keep] [Clang-Tidy (quick)]
+  File: engine/drender.cpp  (1 diagnostics)
+
+  Line   19: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+engine_drender.cpp_renderTriangleTextured_FUN_00483370  [.keep] [Clang-Tidy (quick)]
+  File: engine/drender.cpp  (1 diagnostics)
+
+  Line   41: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60  [.keep] [Cppcheck (quick)]
   File: engine/fileio.cpp  (1 diagnostics)
 
   Line   52: [selfAssignment] Redundant assignment of 'pCVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0  [.keep] [Clang-Tidy (quick)]
+  File: engine/fileio.cpp  (1 diagnostics)
+
+  Line  122: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10  [.keep] [Clang-Tidy (quick)]
+  File: engine/fileio.cpp  (1 diagnostics)
+
+  Line  189: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0  [.keep] [Clang-Tidy (quick)]
+  File: engine/fileio.cpp  (1 diagnostics)
+
+  Line   39: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0  [.keep] [Clang-Tidy (quick)]

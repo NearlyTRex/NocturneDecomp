@@ -9,32 +9,32 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 178
-  Functions flagged by multiple tools: 49
+  Functions with static analysis data: 191
+  Functions flagged by multiple tools: 53
 
   Clang-Tidy (quick):
-    Files analyzed:      144
-    Files with findings: 144
-    Total diagnostics:   937
+    Files analyzed:      157
+    Files with findings: 157
+    Total diagnostics:   969
 
   Cppcheck (quick):
-    Files analyzed:      83
-    Files with findings: 83
-    Total diagnostics:   270
+    Files analyzed:      87
+    Files with findings: 87
+    Total diagnostics:   280
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
 ====================================================================================================
 
-  bugprone-assignment-in-if-condition                       484  [likely decompiler artifact]
-  bugprone-incorrect-roundings                              192  [likely decompiler artifact]
+  bugprone-assignment-in-if-condition                       493  [likely decompiler artifact]
+  bugprone-incorrect-roundings                              208  [likely decompiler artifact]
   cert-err33-c                                              132  [likely decompiler artifact]
   cert-err34-c                                               63
-  bugprone-switch-missing-default-case                       47
+  bugprone-switch-missing-default-case                       53
   cert-msc30-c                                                4
   bugprone-branch-clone                                       4
+  bugprone-multi-level-implicit-pointer-conversion            3
   cert-flp30-c                                                3
-  bugprone-multi-level-implicit-pointer-conversion            2
   cert-env33-c                                                1
   bugprone-chained-comparison                                 1
   bugprone-swapped-arguments                                  1
@@ -46,17 +46,18 @@ TOP FINDINGS - Clang-Tidy (quick)
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  selfAssignment                                             90  [likely decompiler artifact]
+  selfAssignment                                             95  [likely decompiler artifact]
   uninitvar                                                  44  [likely decompiler artifact]
   invalidscanf                                               40
   legacyUninitvar                                            36
-  shiftTooManyBitsSigned                                     20
+  shiftTooManyBitsSigned                                     24
   objectIndex                                                12
   invalidPointerCast                                         11
   nullPointer                                                 5
   shiftNegativeLHS                                            3
   nullPointerRedundantCheck                                   3
   arrayIndexOutOfBounds                                       3
+  arrayIndexOutOfBoundsCond                                   1
   identicalInnerCondition                                     1
   AssignmentIntegerToAddress                                  1
   nullPointerArithmetic                                       1

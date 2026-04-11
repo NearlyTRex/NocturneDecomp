@@ -33,7 +33,7 @@ int __cdecl _utime(char *filename,_utimbuf *timestamps)
       return DVar1;
     }
     if (timestamps == (_utimbuf *)0x0) {
-      _Stack_1c.actime = _time((int *)0x0);
+      _Stack_1c.actime = _time((time_t *)0x0);
       timestamps = &_Stack_1c;
       _Stack_1c.modtime = _Stack_1c.actime;
     }

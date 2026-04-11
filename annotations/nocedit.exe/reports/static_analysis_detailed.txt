@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang-Tidy (quick) (937 diagnostics)
+Clang-Tidy (quick) (969 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-bugprone-assignment-in-if-condition (484)
+bugprone-assignment-in-if-condition (493)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_ line 102
@@ -1908,6 +1908,26 @@ bugprone-assignment-in-if-condition (484)
     File: core/zombie.cpp
     an assignment within an 'if' condition is bug-prone
 
+  engine_drender.cpp_CDemonRenderer_renderGeometryBa line 97
+    File: engine/drender.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  engine_drender.cpp_CDemonRenderer_renderGeometryBa line 98
+    File: engine/drender.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  engine_drender.cpp_CDemonRenderer_renderPerspectiv line 16
+    File: engine/drender.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  engine_drender.cpp_CDemonRenderer_renderPerspectiv line 19
+    File: engine/drender.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  engine_drender.cpp_renderTriangleTextured_FUN_0048 line 41
+    File: engine/drender.cpp
+    an assignment within an 'if' condition is bug-prone
+
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 139
     File: engine/fileio.cpp
     an assignment within an 'if' condition is bug-prone
@@ -1936,6 +1956,22 @@ bugprone-assignment-in-if-condition (484)
     File: engine/fileio.cpp
     an assignment within an 'if' condition is bug-prone
 
+  engine_fileio.cpp_CFileManager_checkOutAndExtractP line 235
+    File: engine/fileio.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  engine_fileio.cpp_CFileManager_extractFilesToDirec line 122
+    File: engine/fileio.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  engine_fileio.cpp_CFileManager_extractPodFile_FUN_ line 189
+    File: engine/fileio.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  engine_fileio.cpp_CFileManager_processMRGLNode_FUN line 39
+    File: engine/fileio.cpp
+    an assignment within an 'if' condition is bug-prone
+
   engine_fileio.cpp_getLatestFileFromRepository_FUN_ line 76
     File: engine/fileio.cpp
     an assignment within an 'if' condition is bug-prone
@@ -1949,7 +1985,7 @@ bugprone-assignment-in-if-condition (484)
     an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
-bugprone-incorrect-roundings (192)
+bugprone-incorrect-roundings (208)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 173
@@ -2686,6 +2722,70 @@ bugprone-incorrect-roundings (192)
 
   core_zombie.cpp_CZombie_process_FUN_005f9470       line 278
     File: core/zombie.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 63
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 63
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 64
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 64
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 65
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 65
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 80
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 80
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_quantizeColors_FUN_004406c0      line 68
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_quantizeColors_FUN_004406c0      line 68
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_quantizeColors_FUN_004406c0      line 161
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_quantizeColors_FUN_004406c0      line 161
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_quantizeColors_FUN_004406c0      line 162
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_quantizeColors_FUN_004406c0      line 162
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_quantizeColors_FUN_004406c0      line 163
+    File: engine/colquant.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_colquant.c_quantizeColors_FUN_004406c0      line 163
+    File: engine/colquant.c
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
   shape_design.c_writeSpatialTree_FUN_0045a200       line 22
@@ -3509,7 +3609,7 @@ cert-err34-c (63)
     'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
 
 ----------------------------------------------------------------------------------------------------
-bugprone-switch-missing-default-case (47)
+bugprone-switch-missing-default-case (53)
 ----------------------------------------------------------------------------------------------------
 
   core_baron.cpp_CBaron_process_FUN_00412e80         line 102
@@ -3700,6 +3800,30 @@ bugprone-switch-missing-default-case (47)
     File: core/xform.cpp
     switching on non-enum value without default case may not cover all cases
 
+  engine_clipper.c_clipPolygonNearPlane_FUN_00436420 line 53
+    File: engine/clipper.c
+    switching on non-enum value without default case may not cover all cases
+
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 176
+    File: engine/clipper.c
+    switching on non-enum value without default case may not cover all cases
+
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 230
+    File: engine/clipper.c
+    switching on non-enum value without default case may not cover all cases
+
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 283
+    File: engine/clipper.c
+    switching on non-enum value without default case may not cover all cases
+
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 336
+    File: engine/clipper.c
+    switching on non-enum value without default case may not cover all cases
+
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 414
+    File: engine/clipper.c
+    switching on non-enum value without default case may not cover all cases
+
 ----------------------------------------------------------------------------------------------------
 cert-msc30-c (4)
 ----------------------------------------------------------------------------------------------------
@@ -3741,6 +3865,22 @@ bugprone-branch-clone (4)
     repeated branch body in conditional chain
 
 ----------------------------------------------------------------------------------------------------
+bugprone-multi-level-implicit-pointer-conversion (3)
+----------------------------------------------------------------------------------------------------
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 69
+    File: cockpit/pkbitmap.cpp
+    multilevel pointer conversion from 'void **' to 'void *', please use explicit cast
+
+  engine_drender.cpp_CDemonRenderer_processCapturedF line 38
+    File: engine/drender.cpp
+    multilevel pointer conversion from 'SFace **' to 'void *', please use explicit cast
+
+  wincore_windll.cpp_loadExternalRenderer_FUN_005b67 line 41
+    File: wincore/windll.cpp
+    multilevel pointer conversion from 'void **' to 'void *', please use explicit cast
+
+----------------------------------------------------------------------------------------------------
 cert-flp30-c (3)
 ----------------------------------------------------------------------------------------------------
 
@@ -3755,18 +3895,6 @@ cert-flp30-c (3)
   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880      line 94
     File: core/cloth.cpp
     loop induction expression should not have floating-point type
-
-----------------------------------------------------------------------------------------------------
-bugprone-multi-level-implicit-pointer-conversion (2)
-----------------------------------------------------------------------------------------------------
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 69
-    File: cockpit/pkbitmap.cpp
-    multilevel pointer conversion from 'void **' to 'void *', please use explicit cast
-
-  wincore_windll.cpp_loadExternalRenderer_FUN_005b67 line 41
-    File: wincore/windll.cpp
-    multilevel pointer conversion from 'void **' to 'void *', please use explicit cast
 
 ----------------------------------------------------------------------------------------------------
 cert-env33-c (1)
@@ -3817,11 +3945,11 @@ cert-dcl50-cpp (1)
     do not define a C-style variadic function; consider using a function parameter pack or currying instead
 
 ====================================================================================================
-Cppcheck (quick) (270 diagnostics)
+Cppcheck (quick) (280 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (90)
+selfAssignment (95)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 170
@@ -4108,6 +4236,18 @@ selfAssignment (90)
     File: core/xform.cpp
     Redundant assignment of 'iVar5' to itself.
 
+  engine_colquant.c_quantizeColors_FUN_004406c0      line 136
+    File: engine/colquant.c
+    Redundant assignment of 'pSVar14' to itself.
+
+  engine_colquant.c_quantizeColors_FUN_004406c0      line 137
+    File: engine/colquant.c
+    Redundant assignment of 'pSVar16' to itself.
+
+  engine_colquant.c_quantizeColors_FUN_004406c0      line 144
+    File: engine/colquant.c
+    Redundant assignment of 'puVar15' to itself.
+
   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRe line 104
     File: engine/fileio.cpp
     Redundant assignment of 'pcVar8' to itself.
@@ -4159,6 +4299,14 @@ selfAssignment (90)
   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 259
     File: engine/fileio.cpp
     Redundant assignment of 'pcVar12' to itself.
+
+  engine_fileio.cpp_CFileManager_checkOutAndExtractP line 133
+    File: engine/fileio.cpp
+    Redundant assignment of 'pcVar10' to itself.
+
+  engine_fileio.cpp_CFileManager_checkOutAndExtractP line 138
+    File: engine/fileio.cpp
+    Redundant assignment of 'pcVar10' to itself.
 
   engine_fileio.cpp_getLatestFileFromRepository_FUN_ line 41
     File: engine/fileio.cpp
@@ -4677,7 +4825,7 @@ legacyUninitvar (36)
     Uninitialized variable: local_b0
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (20)
+shiftTooManyBitsSigned (24)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_ line 61
@@ -4758,6 +4906,22 @@ shiftTooManyBitsSigned (20)
 
   core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 96
     File: core/setedit.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 86
+    File: engine/colquant.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 89
+    File: engine/colquant.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 92
+    File: engine/colquant.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 95
+    File: engine/colquant.c
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
@@ -4931,6 +5095,14 @@ arrayIndexOutOfBounds (3)
   core_skeleton.cpp_CDeformableModel_loadStream_FUN_ line 197
     File: core/skeleton.cpp
     Array 'local_78[2]' accessed at index 2, which is out of bounds.
+
+----------------------------------------------------------------------------------------------------
+arrayIndexOutOfBoundsCond (1)
+----------------------------------------------------------------------------------------------------
+
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 165
+    File: engine/clipper.c
+    Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 identicalInnerCondition (1)

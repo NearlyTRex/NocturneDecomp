@@ -1,122 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "type_error",
-        "column": 20,
-        "line": 109,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 20,
-        "line": 110,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 51,
-        "line": 182,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 35,
-        "line": 261,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 35,
-        "line": 272,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 39,
-        "line": 276,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 35,
-        "line": 285,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 37,
-        "line": 314,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 37,
-        "line": 325,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 41,
-        "line": 329,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 37,
-        "line": 338,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 39,
-        "line": 367,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 39,
-        "line": 378,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 43,
-        "line": 382,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 39,
-        "line": 391,
-        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'SRenderVertex *'"
-      },
-      {
-        "category": "type_error",
-        "column": 30,
-        "line": 486,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 30,
-        "line": 487,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 30,
-        "line": 517,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 30,
-        "line": 518,
-        "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -920,6 +805,59 @@
         "type": "int *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "clipPolygonToViewFrustum_FUN_004366e0.keep.c",
+    "clang_tidy_quick": {
+      "diagnostic_count": 5,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 9,
+          "line": 176,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        },
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 11,
+          "line": 230,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        },
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 13,
+          "line": 283,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        },
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 15,
+          "line": 336,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        },
+        {
+          "check_name": "bugprone-switch-missing-default-case",
+          "column": 21,
+          "line": 414,
+          "message": "switching on non-enum value without default case may not cover all cases"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "arrayIndexOutOfBoundsCond",
+          "column": 45,
+          "line": 165,
+          "message": "Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {
