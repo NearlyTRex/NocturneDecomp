@@ -107,14 +107,14 @@ LAB_0046186a:
         pSVar3->left_child = (STreeNode *)0x0;
         pSVar3->right_child = (STreeNode *)0x0;
         pSVar3->node_type = 0;
-        pSVar3->data1 = local_18;
+        (pSVar3->data1)._f = local_18;
         node->left_child = pSVar4;
         node->right_child = pSVar3;
         node->node_type = 1;
-        node->data1 = local_40;
-        node->data2 = local_3c;
-        node->data3 = local_38;
-        node->data4 = local_34;
+        (node->data1)._f = local_40;
+        (node->data2)._f = local_3c;
+        (node->data3)._f = local_38;
+        (node->data4)._f = local_34;
       }
       return;
     }

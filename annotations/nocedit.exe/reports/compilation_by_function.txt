@@ -5,27 +5,18 @@ FUNCTION COMPILATION ERRORS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6386 (98.9%)
-Failed: 68
+Successful: 6408 (99.3%)
+Failed: 46
 
 ====================================================================================================
 shape_design.c_normalizeVertex_FUN_00461e60 (1 error)
 ====================================================================================================
-  Line 17 [type_error]: member reference base type 'double' is not a structure or union
+  Line 15 [type_error]: member reference base type 'double' is not a structure or union
 
 ====================================================================================================
-shape_design.c_showPointEditor_FUN_0045c6c0 (5 errors)
+shape_design.c_parseSpatialTreeFromFile_FUN_004580a0 (1 error)
 ====================================================================================================
-  Line 48 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 69 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 71 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 73 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 75 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-
-====================================================================================================
-shape_design.c_vertexReducer_FUN_00467850 (1 error)
-====================================================================================================
-  Line 193 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  Line 25 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
 
 ====================================================================================================
 shape_design.c_writeBinaryTreeNode_FUN_00457fd0 (1 error)
@@ -33,174 +24,9 @@ shape_design.c_writeBinaryTreeNode_FUN_00457fd0 (1 error)
   Line 14 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
-shape_design.c_writePolygonModel_FUN_0045a320 (6 errors)
+shape_design.c_writeSpatialTree_FUN_0045a200 (1 error)
 ====================================================================================================
-  Line 30 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 33 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 37 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 56 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 58 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 62 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-
-====================================================================================================
-shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970 (1 error)
-====================================================================================================
-  Line 123 [incompatible_types]: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-
-====================================================================================================
-shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30 (2 errors)
-====================================================================================================
-  Line 23 [incompatible_types]: assigning to 'char *' from incompatible type 'HANDLE' (aka 'void *')
-  Line 35 [incompatible_types]: assigning to 'char *' from incompatible type 'void *'
-
-====================================================================================================
-shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 (1 error)
-====================================================================================================
-  Line 30 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-
-====================================================================================================
-shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300 (1 error)
-====================================================================================================
-  Line 31 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-
-====================================================================================================
-shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0 (2 errors)
-====================================================================================================
-  Line 38 [incompatible_types]: assigning to 'char *' from incompatible type 'LPVOID' (aka 'void *')
-  Line 61 [incompatible_types]: assigning to 'char *' from incompatible type 'void *'
-
-====================================================================================================
-shape_edittool.cpp_paintWindowBackground_FUN_0049e590 (1 error)
-====================================================================================================
-  Line 33 [incompatible_types]: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-
-====================================================================================================
-shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0 (7 errors)
-====================================================================================================
-  Line 21 [incompatible_types]: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
-  Line 32 [format_error]: format specifies type 'char *' but the argument has type 'SFileTrackingEntry *' [-Werror,-Wformat]
-  Line 32 [format_error]: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 36 [format_error]: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 37 [format_error]: format specifies type 'char *' but the argument has type 'SFileTrackingEntry *' [-Werror,-Wformat]
-  Line 37 [format_error]: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 51 [incompatible_types]: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
-
-====================================================================================================
-shape_memdbg.cpp_closeFile_FUN_0050f9b0 (5 errors)
-====================================================================================================
-  Line 40 [format_error]: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 40 [format_error]: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 45 [format_error]: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 46 [format_error]: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 47 [format_error]: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-
-====================================================================================================
-shape_memdbg.cpp_openFile_FUN_0050f7a0 (1 error)
-====================================================================================================
-  Line 33 [incompatible_types]: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (1 error)
-====================================================================================================
-  Line 376 [type_error]: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (4 errors)
-====================================================================================================
-  Line 60 [undeclared_identifier]: use of undeclared identifier 'stack0x00000000'
-  Line 65 [undeclared_identifier]: use of undeclared identifier 'stack0x00000000'
-  Line 127 [undeclared_identifier]: use of undeclared identifier 'stack0x00000000'
-  Line 132 [undeclared_identifier]: use of undeclared identifier 'stack0x00000000'
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0 (8 errors)
-====================================================================================================
-  Line 29 [format_error]: format specifies type 'int *' but the argument has type 'SIZE_T *' (aka 'unsigned long *') [-Werror,-Wformat]
-  Line 43 [type_error]: invalid suffix '._4_4_' on floating constant
-  Line 43 [type_error]: invalid suffix '._0_4_' on floating constant
-  Line 50 [format_error]: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 50 [format_error]: format specifies type 'double *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 50 [format_error]: format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 60 [type_error]: invalid suffix '._0_4_' on floating constant
-  Line 61 [type_error]: invalid suffix '._4_4_' on floating constant
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0 (3 errors)
-====================================================================================================
-  Line 19 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 30 [format_error]: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
-  Line 30 [format_error]: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100 (7 errors)
-====================================================================================================
-  Line 24 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 27 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 29 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 45 [format_error]: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
-  Line 47 [format_error]: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
-  Line 67 [format_error]: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
-  Line 68 [format_error]: format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680 (2 errors)
-====================================================================================================
-  Line 20 [type_error]: invalid suffix '._0_4_' on floating constant
-  Line 22 [type_error]: invalid suffix '._4_4_' on floating constant
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0 (1 error)
-====================================================================================================
-  Line 41 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0 (2 errors)
-====================================================================================================
-  Line 38 [format_error]: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 53 [format_error]: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180 (4 errors)
-====================================================================================================
-  Line 37 [format_error]: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 37 [format_error]: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 37 [format_error]: format specifies type 'double *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 37 [format_error]: format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0 (13 errors)
-====================================================================================================
-  Line 81 [format_error]: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 81 [format_error]: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 81 [format_error]: format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 82 [format_error]: format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 82 [format_error]: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 82 [format_error]: format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 82 [format_error]: format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 82 [format_error]: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 82 [format_error]: format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 83 [format_error]: format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 98 [format_error]: format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]
-  Line 98 [format_error]: format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]
-  Line 98 [format_error]: format specifies type 'float *' but the argument has type 'char *' [-Werror,-Wformat]
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60 (8 errors)
-====================================================================================================
-  Line 55 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 55 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 55 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 85 [format_error]: format specifies type 'int *' but the argument has type 'CLodFace *' [-Werror,-Wformat]
-  Line 86 [format_error]: format specifies type 'float *' but the argument has type 'float (*)[2]' [-Werror,-Wformat]
-  Line 87 [format_error]: format specifies type 'float *' but the argument has type 'float (*)[2]' [-Werror,-Wformat]
-  Line 88 [format_error]: format specifies type 'float *' but the argument has type 'float (*)[2]' [-Werror,-Wformat]
-  Line 106 [format_error]: format specifies type 'float *' but the argument has type 'CLodVert *' [-Werror,-Wformat]
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250 (2 errors)
-====================================================================================================
-  Line 38 [format_error]: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
-  Line 39 [format_error]: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
+  Line 17 [format_error]: format specifies type 'char *' but the argument has type 'SModelPartName *' [-Werror,-Wformat]
 
 ====================================================================================================
 shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (3 errors)

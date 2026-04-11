@@ -4,7 +4,7 @@
       {
         "category": "type_error",
         "column": 69,
-        "line": 17,
+        "line": 15,
         "message": "member reference base type 'double' is not a structure or union"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 29,
+    "complexity_score": 27,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
+    "pseudocode_lines": 12,
     "suspect_count": 1,
     "suspect_types": [
       "unknown_field"
     ],
-    "total_lines": 61
+    "total_lines": 59
   },
   "cross_references": [
     {
@@ -50,7 +50,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_normalizeVertex_FUN_00461e60",
-    "signature": "void __cdecl shape_design_c_normalizeVertex_FUN_00461e60(CVector3f *vertex)"
+    "signature": "void __cdecl shape_design_c_normalizeVertex_FUN_00461e60(CVector3d *vertex)"
   },
   "function_calls": [],
   "globals": [],
@@ -152,14 +152,14 @@
         "name": "vertex",
         "offset": 4,
         "size": 4,
-        "type": "CVector3f *"
+        "type": "CVector3d *"
       }
     ]
   },
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 10,
+      "line": 8,
       "match": "._0_4_",
       "severity": "mild",
       "text": "if ((((ulonglong)local_18 & 0x7fffffff00000000) == 0) && (local_18._0_4_ == 0)) {",

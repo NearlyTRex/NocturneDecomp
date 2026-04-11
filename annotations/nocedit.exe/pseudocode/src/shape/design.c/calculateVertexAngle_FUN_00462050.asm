@@ -8,12 +8,8 @@
 ; int              Stack[0x8]:4   vertex2_index
 ; int              Stack[0xc]:4   vertex3_index
 ; Local Variables:
-; double           Stack[-0x84]:8  local_84
-; double           Stack[-0x7c]:8  local_7c
-; double           Stack[-0x74]:8  local_74
-; double           Stack[-0x6c]:8  local_6c
-; double           Stack[-0x64]:8  local_64
-; double           Stack[-0x5c]:8  local_5c
+; CVector3d        Stack[-0x84]:24  local_84
+; CVector3d        Stack[-0x6c]:24  local_6c
 ; float            Stack[-0x54]:4  local_54
 ; float            Stack[-0x50]:4  local_50
 ; float            Stack[-0x4c]:4  local_4c
@@ -92,12 +88,12 @@ section .text
     LEA ESI,[EBP + -0x74]               ; 004620c8
     PUSH ESI                            ; 004620cb
     CALL shape_design.c_normalizeVertex_FUN_00461e60 ; 004620cc
-        ;   XREF to: 00461e60 (UNCONDITIONAL_CALL)  ; void shape_design.c_normalizeVertex_FUN_00461e60(CVector3f * vertex)
+        ;   XREF to: 00461e60 (UNCONDITIONAL_CALL)  ; void shape_design.c_normalizeVertex_FUN_00461e60(CVector3d * vertex)
     ADD ESP,0x4                         ; 004620d1
     LEA ESI,[EBP + -0x5c]               ; 004620d4
     PUSH ESI                            ; 004620d7
     CALL shape_design.c_normalizeVertex_FUN_00461e60 ; 004620d8
-        ;   XREF to: 00461e60 (UNCONDITIONAL_CALL)  ; void shape_design.c_normalizeVertex_FUN_00461e60(CVector3f * vertex)
+        ;   XREF to: 00461e60 (UNCONDITIONAL_CALL)  ; void shape_design.c_normalizeVertex_FUN_00461e60(CVector3d * vertex)
     ADD ESP,0x4                         ; 004620dd
     FLD double ptr [EBP + -0x6c]        ; 004620e0
     FMUL double ptr [EBP + -0x54]       ; 004620e3

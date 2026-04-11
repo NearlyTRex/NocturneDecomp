@@ -4841,10 +4841,6 @@
       "type":"struct"
     },
     {
-      "name":"STreeNode",
-      "type":"struct"
-    },
-    {
       "name":"STrianglePackedIndices",
       "type":"struct"
     },
@@ -5683,6 +5679,14 @@
     {
       "name":"UPDATE_WINDOW_FUNC",
       "type":"function_definition"
+    },
+    {
+      "name":"UTreeNodeData",
+      "type":"union"
+    },
+    {
+      "name":"STreeNode",
+      "type":"struct"
     },
     {
       "name":"UVector3",
@@ -60530,25 +60534,25 @@
           "len":4,
           "name":"data1",
           "offset":12,
-          "type":"float"
+          "type":"UTreeNodeData"
         },
         {
           "len":4,
           "name":"data2",
           "offset":16,
-          "type":"float"
+          "type":"UTreeNodeData"
         },
         {
           "len":4,
           "name":"data3",
           "offset":20,
-          "type":"float"
+          "type":"UTreeNodeData"
         },
         {
           "len":4,
           "name":"data4",
           "offset":24,
-          "type":"float"
+          "type":"UTreeNodeData"
         }
       ],
       "importable":true,
@@ -67925,6 +67929,30 @@
       "importable":true,
       "len":12,
       "name":"UOrientationVector",
+      "pack":false,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"_f",
+          "offset":0,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"_i",
+          "offset":0,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "name":"UTreeNodeData",
       "pack":false,
       "type":"union"
     },

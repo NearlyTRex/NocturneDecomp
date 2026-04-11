@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 37,
-        "line": 123,
-        "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -531,6 +524,44 @@
         "type": "uint"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CEditorTools_createModalWindow_FUN_004a0970.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 19,
+          "line": 143,
+          "message": "Redundant assignment of 'puVar12' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 19,
+          "line": 144,
+          "message": "Redundant assignment of 'puVar14' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 19,
+          "line": 111,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 23,
+          "line": 129,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

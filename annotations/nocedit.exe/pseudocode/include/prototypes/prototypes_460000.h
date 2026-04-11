@@ -9,7 +9,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CFilterCache.h"
-#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3d.h"
 #include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
@@ -40,7 +40,7 @@ double __cdecl shape_design_c_calculateAngleBetweenPolygonNormals_FUN_00461cb0(S
 int __cdecl shape_design_c_isAngleBelowThreshold_FUN_00461d30(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double angle_threshold);
 int __cdecl shape_design_c_validatePolygonNormals_FUN_00461d80(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double cos_tolerance);
 int __cdecl shape_design_c_isNormalDotProductBelowThreshold_FUN_00461df0(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double threshold);
-void __cdecl shape_design_c_normalizeVertex_FUN_00461e60(CVector3f *vertex);
+void __cdecl shape_design_c_normalizeVertex_FUN_00461e60(CVector3d *vertex);
 double __cdecl shape_design_c_calculatePolygonAngularArea_FUN_00461ee0(SShapeEditorPolygon *polygon_ptr);
 double __cdecl shape_design_c_calculateVertexAngle_FUN_00462050(int vertex1_index,int vertex2_index,int vertex3_index);
 void __cdecl shape_design_c_swapDWords_FUN_00462130(uint *value1_ptr,uint *value2_ptr);

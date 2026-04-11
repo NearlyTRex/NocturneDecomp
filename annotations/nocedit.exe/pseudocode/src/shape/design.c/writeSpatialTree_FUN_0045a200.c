@@ -14,14 +14,14 @@ void __cdecl shape_design_c_writeSpatialTree_FUN_0045a200(STreeNode *node,_FILE 
   if (node != (STreeNode *)0x0) {
     _fprintf(output_file,"MODEL%d:\n",node_index);
     if (node->node_type == 0) {
-      _fprintf(output_file,"\tJUMP\t%s\n\n",g_ModelPartNames + (int)node->data1);
+      _fprintf(output_file,"\tJUMP\t%s\n\n",g_ModelPartNames + (node->data1)._i);
     }
     else {
       _fprintf(output_file,"\tORDER\t%d,%d,%d,%d,MODEL%d,MODEL%d\n\n",
-                 (int)ROUND(ROUND(node->data1 * 65535.0f)),
-                 (int)ROUND(ROUND(node->data2 * 65535.0f)),
-                 (int)ROUND(ROUND(node->data3 * 65535.0f)),
-                 (int)ROUND(ROUND(node->data4 * 65535.0f)),node_index * 2 + 1,
+                 (int)ROUND(ROUND((node->data1)._f * 65535.0f)),
+                 (int)ROUND(ROUND((node->data2)._f * 65535.0f)),
+                 (int)ROUND(ROUND((node->data3)._f * 65535.0f)),
+                 (int)ROUND(ROUND((node->data4)._f * 65535.0f)),node_index * 2 + 1,
                  node_index * 2);
       shape_design_c_writeSpatialTree_FUN_0045a200(node->left_child,output_file,node_index * 2);
       shape_design_c_writeSpatialTree_FUN_0045a200(node->right_child,output_file,node_index * 2 + 1)

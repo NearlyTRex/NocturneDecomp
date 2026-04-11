@@ -37,8 +37,8 @@ SUMMARY
     g_CWeaponClassInfo                                 1 functions
     g_SourcePaletteData                                1 functions
 
-  .keep files with issues: 6 (these need manual review)
-  Raw .cpp files with issues: 60
+  .keep files with issues: 7 (these need manual review)
+  Raw .cpp files with issues: 59
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -110,6 +110,14 @@ shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.keep]  (1 suspicious globals)
 
   g_KeyboardState
     Used at lines: 174, 175, 181, 182, 188, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_showPointEditor_FUN_0045c6c0  [.keep]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 29, 30, 36, 37, 40, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -618,14 +626,6 @@ shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0  [.cpp]  (1 suspicious 
 
   g_KeyboardState
     Used at lines: 28, 28, 29
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_showPointEditor_FUN_0045c6c0  [.cpp]  (1 suspicious globals)
-  File: shape/design.c
-
-  g_KeyboardState
-    Used at lines: 25, 26, 32, 33, 36, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

@@ -5,28 +5,24 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6386 (98.9%)
-Failed: 68
+Successful: 6408 (99.3%)
+Failed: 46
 
 ERROR CATEGORIES
 --------------------------------------------------
-  type_error                       200
-  format_error                      72
-  incompatible_types                32
-  undeclared_identifier             20
+  type_error                       193
+  incompatible_types                23
+  undeclared_identifier             16
   syntax_error                      16
+  format_error                       6
   pointer_type                       1
 
 ====================================================================================================
-CATEGORY: type_error (200 errors)
+CATEGORY: type_error (193 errors)
 ====================================================================================================
 
-  shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680
-    Line 20: invalid suffix '._0_4_' on floating constant
-  shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
-    Line 43: invalid suffix '._4_4_' on floating constant
   shape_design.c_normalizeVertex_FUN_00461e60
-    Line 17: member reference base type 'double' is not a structure or union
+    Line 15: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0
     Line 51: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
@@ -55,8 +51,6 @@ CATEGORY: type_error (200 errors)
     Line 20: member reference base type 'int' is not a structure or union
   shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
     Line 103: member reference base type 'int' is not a structure or union
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    Line 376: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   shape_superopt.cpp_CComplexPolygon_computeWindingNormal_FUN_005cbb40
     Line 91: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
@@ -65,58 +59,13 @@ CATEGORY: type_error (200 errors)
     Line 309: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
 
 ====================================================================================================
-CATEGORY: format_error (72 errors)
-====================================================================================================
-
-  shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0
-    Line 32: format specifies type 'char *' but the argument has type 'SFileTrackingEntry *' [-Werror,-Wformat]
-  shape_memdbg.cpp_closeFile_FUN_0050f9b0
-    Line 40: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-  shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250
-    Line 38: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
-  shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
-    Line 29: format specifies type 'int *' but the argument has type 'SIZE_T *' (aka 'unsigned long *') [-Werror,-Wformat]
-  shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60
-    Line 55: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0
-    Line 38: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180
-    Line 37: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0
-    Line 81: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  shape_design.c_showPointEditor_FUN_0045c6c0
-    Line 48: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_vertexReducer_FUN_00467850
-    Line 193: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_writeBinaryTreeNode_FUN_00457fd0
-    Line 14: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_writePolygonModel_FUN_0045a320
-    Line 30: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-    Line 30: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300
-    Line 31: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0
-    Line 19: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100
-    Line 24: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0
-    Line 41: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
-    Line 46: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-
-====================================================================================================
-CATEGORY: incompatible_types (32 errors)
+CATEGORY: incompatible_types (23 errors)
 ====================================================================================================
 
   shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500
     Line 117: assigning to 'SExpandedEdge *' from incompatible type 'void *'
   shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0
     Line 72: assigning to 'SExpandedEdge *' from incompatible type 'void *'
-  shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30
-    Line 23: assigning to 'char *' from incompatible type 'HANDLE' (aka 'void *')
-  shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
-    Line 38: assigning to 'char *' from incompatible type 'LPVOID' (aka 'void *')
   shape_superopt.cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20
     Line 23: assigning to 'int *' from incompatible type 'void *'
   shape_superopt.cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280
@@ -129,10 +78,6 @@ CATEGORY: incompatible_types (32 errors)
     Line 50: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
     Line 79: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
-  shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970
-    Line 123: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  shape_edittool.cpp_paintWindowBackground_FUN_0049e590
-    Line 33: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
   shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
     Line 68: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
   shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
@@ -145,10 +90,6 @@ CATEGORY: incompatible_types (32 errors)
     Line 36: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'
   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
     Line 161: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'
-  shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0
-    Line 21: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
-  shape_memdbg.cpp_openFile_FUN_0050f7a0
-    Line 33: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
   shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
     Line 59: invalid operands to binary expression ('double' and 'int')
   shape_superopt.cpp_CVec_dot_FUN_005d82e0
@@ -157,7 +98,7 @@ CATEGORY: incompatible_types (32 errors)
     Line 20: invalid operands to binary expression ('double' and 'int')
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (20 errors)
+CATEGORY: undeclared_identifier (16 errors)
 ====================================================================================================
 
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
@@ -182,8 +123,6 @@ CATEGORY: undeclared_identifier (20 errors)
     Line 23: use of undeclared identifier 'code'
   shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
     Line 43: use of undeclared identifier 'code'
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-    Line 60: use of undeclared identifier 'stack0x00000000'
 
 ====================================================================================================
 CATEGORY: syntax_error (16 errors)
@@ -211,6 +150,19 @@ CATEGORY: syntax_error (16 errors)
     Line 23: expected expression
   shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
     Line 43: expected expression
+
+====================================================================================================
+CATEGORY: format_error (6 errors)
+====================================================================================================
+
+  shape_design.c_writeSpatialTree_FUN_0045a200
+    Line 17: format specifies type 'char *' but the argument has type 'SModelPartName *' [-Werror,-Wformat]
+  shape_design.c_parseSpatialTreeFromFile_FUN_004580a0
+    Line 25: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
+  shape_design.c_writeBinaryTreeNode_FUN_00457fd0
+    Line 14: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
+    Line 46: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
 CATEGORY: pointer_type (1 errors)

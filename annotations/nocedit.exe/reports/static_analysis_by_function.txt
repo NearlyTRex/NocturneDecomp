@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 233
-  Total diagnostics: 1433
-  Functions flagged by multiple tools: 65
-  .keep.cpp files: 233, raw .cpp files: 0
+  Functions with findings: 240
+  Total diagnostics: 1469
+  Functions flagged by multiple tools: 66
+  .keep.cpp files: 240, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -408,6 +408,35 @@ core_zombie.cpp_CZombie_process_FUN_005f9470  [.keep] [Clang-Tidy (quick)]
   Line  945: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
   Line  947: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
   Line 1032: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: shape/meshlod.cpp  (24 diagnostics)
+
+  Line   83: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   83: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   84: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   84: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   86: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   86: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  149: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  149: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  151: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  158: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  158: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  159: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  164: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  164: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  166: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  171: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  171: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  173: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  179: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  179: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  180: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  185: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  185: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  187: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180  [.keep] [Clang-Tidy (quick)]
@@ -1160,17 +1189,17 @@ shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.keep] [Clang-Tidy (quick), Cp
   Line  586: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
-shape_design.c_writeSpatialTree_FUN_0045a200  [.keep] [Clang-Tidy (quick)]
+shape_design.c_writePolygonModel_FUN_0045a320  [.keep] [Clang-Tidy (quick)]
   File: shape/design.c  (8 diagnostics)
 
-  Line   22: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
-  Line   22: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
-  Line   23: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
-  Line   23: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
-  Line   24: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
-  Line   24: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
-  Line   25: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
-  Line   25: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   27: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   27: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   28: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   28: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   29: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   29: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   30: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   30: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
 ----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
@@ -1746,6 +1775,24 @@ shape_design.c_showPolygonDetailsList_FUN_0045d9c0  [.keep] [Cppcheck (quick)]
   Line  108: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970  [.keep] [Cppcheck (quick)]
+  File: shape/edittool.cpp  (4 diagnostics)
+
+  Line  111: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  129: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  143: [selfAssignment] Redundant assignment of 'puVar12' to itself.
+  Line  144: [selfAssignment] Redundant assignment of 'puVar14' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_paintWindowBackground_FUN_0049e590  [.keep] [Cppcheck (quick)]
+  File: shape/edittool.cpp  (4 diagnostics)
+
+  Line   37: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   43: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   57: [selfAssignment] Redundant assignment of 'puVar8' to itself.
+  Line   58: [selfAssignment] Redundant assignment of 'puVar9' to itself.
+
+----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10  [.keep] [Clang-Tidy (quick)]
   File: sound/sndmain.cpp  (4 diagnostics)
 
@@ -2319,11 +2366,11 @@ shape_design.c_mergeTrianglesIntoQuad_FUN_00462190  [.keep] [Cppcheck (quick)]
   Line  206: [selfAssignment] Redundant assignment of 'pSVar6' to itself.
 
 ----------------------------------------------------------------------------------------------------
-shape_design.c_parseSpatialTreeFromFile_FUN_004580a0  [.keep] [Clang-Tidy (quick)]
+shape_design.c_vertexReducer_FUN_00467850  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (2 diagnostics)
 
-  Line   35: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
-  Line   35: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  202: [selfAssignment] Redundant assignment of 'pbVar5' to itself.
+  Line  207: [selfAssignment] Redundant assignment of 'pbVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_005af410  [.keep] [Clang-Tidy (quick)]
@@ -2573,6 +2620,30 @@ shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0  [.keep] [Clan
   File: shape/edittool.cpp  (1 diagnostics)
 
   Line   39: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtod' instead
+
+----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0  [.keep] [Clang-Tidy (quick)]
+  File: shape/edittool.cpp  (1 diagnostics)
+
+  Line   31: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+
+----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300  [.keep] [Clang-Tidy (quick)]
+  File: shape/edittool.cpp  (1 diagnostics)
+
+  Line   32: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+
+----------------------------------------------------------------------------------------------------
+shape_memdbg.cpp_openFile_FUN_0050f7a0  [.keep] [Cppcheck (quick)]
+  File: shape/memdbg.cpp  (1 diagnostics)
+
+  Line   43: [resourceLeak] Resource leak: p_Var3
+
+----------------------------------------------------------------------------------------------------
+shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910  [.keep] [Cppcheck (quick)]
+  File: shape/meshlod.cpp  (1 diagnostics)
+
+  Line  336: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60  [.keep] [Clang-Tidy (quick)]

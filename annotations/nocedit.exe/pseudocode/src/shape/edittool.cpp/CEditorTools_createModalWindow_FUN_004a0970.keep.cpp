@@ -1,0 +1,171 @@
+// Name: shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970
+// Address: 004a0970
+// MANUAL RECONSTRUCTION
+// Address Range: [[004a0970, 004a0dc2]]
+// Convention: __cdecl
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,uint window_flags)
+
+#include "nocturne.h"
+
+void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,uint window_flags)
+
+{
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  int iVar6;
+  int iVar1;
+  uint uVar7;
+  void *pvVar8;
+  uint uVar9;
+  uint uVar2;
+  int iVar7;
+  int iVar8;
+  SWindow *pSVar10;
+  char *buffer;
+  int iVar11;
+  uint *puVar12;
+  char *pcVar13;
+  uint *puVar14;
+  byte bVar15;
+  int local_24;
+  uint *local_14;
+  SWindow *pSVar1;
+  CBitFont *this_ptr_00;
+  int iVar2;
+  
+  bVar15 = 0;
+  if (g_EditorFont == (CBitFont *)0x0) {
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 0x8d;
+    core_main_c_displayErrorAndQuit_FUN_00506f10("gEdFont must be set by the application.");
+  }
+  g_FontCharacterHeight = g_EditorFont->max_char_width;
+  g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
+  if (4 < g_WindowStackCount) {
+    g_CurrentFilename = "..\\shape\\edittool.cpp";
+    g_CurrentLineNumber = 0x7b8;
+    core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open another window!");
+  }
+  iVar2 = g_WindowStackCount;
+  pSVar10 = g_WindowStack + g_WindowStackCount;
+  iVar3 = (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x80) -
+               (uint)((g_WindowWidth >> 0x1f) << 6 < 0)) >> 7;
+  iVar4 = g_WindowHeight / 0x60;
+  left = left - iVar3;
+  top = top - iVar4;
+  right = right + iVar3;
+  bottom = bottom + iVar4;
+  if (left < 0) {
+    left = 0;
+  }
+  if (g_WindowWidth < right) {
+    right = g_WindowWidth;
+  }
+  pSVar1 = g_WindowStack + g_WindowStackCount;
+  g_WindowStackCount = g_WindowStackCount + 1;
+  pSVar1->text_buffer[0] = '\0';
+  local_24 = 0;
+  if (text_content != (char *)0x0) {
+    buffer = g_WindowStack[iVar2].text_buffer;
+    iVar5 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
+                      (g_EditorFont,text_content,g_TextWrapBuffer,0x14,200,
+                       (right - left) + iVar3 * -2);
+    iVar11 = 0;
+    if (0 < iVar5) {
+      pcVar13 = g_TextWrapBuffer;
+      do {
+        iVar11 = iVar11 + 1;
+        iVar6 = _sprintf(buffer,"%s\n",pcVar13);
+        buffer = buffer + iVar6;
+        pcVar13 = pcVar13 + 200;
+      } while (iVar11 < iVar5);
+    }
+    this_ptr_00 = g_EditorFont;
+    if (0 < iVar5) {
+      buffer[-1] = 0;
+      iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40
+                        (this_ptr_00,g_WindowStack[iVar2].text_buffer);
+      local_24 = g_FontCharacterWidth + iVar1;
+      iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,"j");
+      if (local_24 < iVar1 + g_FontCharacterWidth) {
+        local_24 = iVar1 + g_FontCharacterWidth;
+      }
+      bottom = bottom + local_24 / 2;
+      top = top - local_24 / 2;
+    }
+  }
+  if (top < 0) {
+    top = 0;
+  }
+  if (g_WindowHeight < bottom) {
+    bottom = g_WindowHeight;
+  }
+  if ((window_flags & 1) == 0) {
+    if (g_WindowStackCount == 1) {
+      shape_edittool_cpp_CEditorTools_backupScreen_FUN_0049e410(this_ptr);
+    }
+    g_WindowStack[iVar2].backup_width = g_WindowWidth;
+    iVar1 = g_WindowStack[iVar2].backup_width * g_BitsPerPixel;
+    g_WindowStack[iVar2].backup_height = g_WindowHeight;
+    iVar7 = iVar1 >> 0x1f;
+    uVar7 = (int)((iVar1 + iVar7 * -8) - (uint)(iVar7 << 2 < 0)) >> 3;
+    iVar1 = g_WindowStack[iVar2].backup_height;
+    g_WindowStack[iVar2].backup_x_offset = 0;
+    g_WindowStack[iVar2].backup_y_offset = 0;
+    pvVar8 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+                       (iVar1 * uVar7,"..\\shape\\edittool.cpp",0x807);
+    g_WindowStack[iVar2].screen_backup_buffer = pvVar8;
+    if (pvVar8 == (void *)0x0) {
+      g_CurrentFilename = "..\\shape\\edittool.cpp";
+      g_CurrentLineNumber = 0x809;
+      core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory to open editor window.");
+    }
+    local_14 = (uint *)g_WindowStack[iVar2].screen_backup_buffer;
+    iVar1 = 0;
+    if (0 < g_WindowStack[iVar2].backup_height) {
+      do {
+        iVar7 = g_WindowStack[iVar2].backup_x_offset * g_BitsPerPixel;
+        iVar8 = iVar7 >> 0x1f;
+        puVar12 = (uint *)
+                  ((int)g_ScreenBufferArray[g_WindowStack[iVar2].backup_y_offset + iVar1] +
+                  ((int)((iVar7 + iVar8 * -8) - (uint)(iVar8 << 2 < 0)) >> 3));
+        puVar14 = local_14;
+        for (uVar9 = uVar7 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
+          *puVar14 = *puVar12;
+          puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
+          puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
+        }
+        for (uVar2 = uVar7 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
+          puVar14 = (uint *)((int)puVar14 + (uint)bVar15 * -2 + 1);
+          puVar12 = (uint *)((int)puVar12 + (uint)bVar15 * -2 + 1);
+          *(byte *)puVar14 = *(byte *)puVar12;
+          puVar12 = puVar12;
+          puVar14 = puVar14;
+        }
+        local_14 = (uint *)((int)local_14 + uVar7);
+        iVar1 = iVar1 + 1;
+      } while (iVar1 < g_WindowStack[iVar2].backup_height);
+    }
+  }
+  else {
+    g_WindowStack[iVar2].screen_backup_buffer = (void *)0x0;
+  }
+  g_WindowStack[iVar2].saved_clip_left = g_ClipLeft;
+  g_WindowStack[iVar2].saved_clip_top = g_ClipTop;
+  g_WindowStack[iVar2].saved_clip_right = g_ClipRight;
+  g_WindowStack[iVar2].saved_clip_bottom = g_ClipBottom;
+  g_WindowStack[iVar2].saved_viewport_center_x = g_ViewportCenterXFixed;
+  g_WindowStack[iVar2].saved_viewport_center_y = g_ViewportCenterYFixed;
+  g_WindowStack[iVar2].saved_viewport_right = g_ViewportRightFixed;
+  g_WindowStack[iVar2].saved_viewport_bottom = g_ViewportBottomFixed;
+  g_WindowStack[iVar2].saved_viewport_width = g_ViewportWidth;
+  g_WindowStack[iVar2].saved_viewport_height = g_ViewportHeight;
+  pSVar10->left = left;
+  g_WindowStack[iVar2].top = top;
+  g_WindowStack[iVar2].right = right;
+  g_WindowStack[iVar2].bottom = bottom;
+  engine_2d_c_setupViewportAndClipping_FUN_00401800
+            (left + iVar3,top + iVar4 + local_24,(right - iVar3) + -1,(bottom - iVar4) + -1);
+  return;
+}

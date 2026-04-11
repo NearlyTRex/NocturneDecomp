@@ -277,7 +277,7 @@ int __cdecl isNormalDotProductBelowThreshold(SShapeEditorPolygon *polygon1,SShap
 
 // Original: shape_design.c_normalizeVertex_FUN_00461e60
 // Address: 00461e60
-void __cdecl normalizeVertex(CVector3f *vertex);
+void __cdecl normalizeVertex(CVector3d *vertex);
 
 // Original: shape_design.c_calculatePolygonAngularArea_FUN_00461ee0
 // Address: 00461ee0

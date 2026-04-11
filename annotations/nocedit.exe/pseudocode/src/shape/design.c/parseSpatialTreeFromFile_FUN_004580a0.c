@@ -31,13 +31,13 @@ STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(_FILE *
     local_34 = shape_design_c_allocateSpatialTreeNode_FUN_00457ed0();
     local_34->node_type = local_28;
     if (local_24 == 3) {
-      local_34->data1 = (float)(int)ROUND(ROUND(local_20));
+      (local_34->data1)._i = (int)ROUND(ROUND(local_20));
     }
     else {
-      local_34->data1 = local_20;
-      local_34->data2 = local_1c;
-      local_34->data3 = local_18;
-      local_34->data4 = local_14;
+      (local_34->data1)._f = local_20;
+      (local_34->data2)._f = local_1c;
+      (local_34->data3)._f = local_18;
+      (local_34->data4)._f = local_14;
       pSVar1 = shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(file);
       local_34->left_child = pSVar1;
       pSVar2 = shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(file);

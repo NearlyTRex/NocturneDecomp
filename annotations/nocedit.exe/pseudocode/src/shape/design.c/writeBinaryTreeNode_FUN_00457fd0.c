@@ -14,8 +14,8 @@ void __cdecl shape_design_c_writeBinaryTreeNode_FUN_00457fd0(STreeNode *node,_FI
       _fprintf(file,"%d,%d,%d\n");
     }
     else {
-      _fprintf(file,"%d,%d,%f,%f,%f,%f\n",depth,node->node_type,(double)node->data1,
-                 (double)node->data2,(double)node->data3,(double)node->data4);
+      _fprintf(file,"%d,%d,%f,%f,%f,%f\n",depth,node->node_type,(double)(node->data1)._f,
+                 (double)(node->data2)._f,(double)(node->data3)._f,(double)(node->data4)._f);
       shape_design_c_writeBinaryTreeNode_FUN_00457fd0(node->left_child,file,depth * 2);
       shape_design_c_writeBinaryTreeNode_FUN_00457fd0(node->right_child,file,depth * 2 + 1);
     }

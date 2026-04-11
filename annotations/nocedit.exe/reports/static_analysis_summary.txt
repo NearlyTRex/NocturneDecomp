@@ -9,27 +9,27 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 233
-  Functions flagged by multiple tools: 65
+  Functions with static analysis data: 240
+  Functions flagged by multiple tools: 66
 
   Clang-Tidy (quick):
-    Files analyzed:      190
-    Files with findings: 190
-    Total diagnostics:   1098
+    Files analyzed:      192
+    Files with findings: 192
+    Total diagnostics:   1116
 
   Cppcheck (quick):
-    Files analyzed:      108
-    Files with findings: 108
-    Total diagnostics:   335
+    Files analyzed:      114
+    Files with findings: 114
+    Total diagnostics:   353
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
 ====================================================================================================
 
   bugprone-assignment-in-if-condition                       526  [likely decompiler artifact]
-  bugprone-incorrect-roundings                              280  [likely decompiler artifact]
+  bugprone-incorrect-roundings                              296  [likely decompiler artifact]
   cert-err33-c                                              134  [likely decompiler artifact]
-  cert-err34-c                                               78
+  cert-err34-c                                               80
   bugprone-switch-missing-default-case                       56
   cert-msc30-c                                                4
   bugprone-branch-clone                                       4
@@ -46,18 +46,18 @@ TOP FINDINGS - Clang-Tidy (quick)
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  selfAssignment                                            123  [likely decompiler artifact]
-  uninitvar                                                  55  [likely decompiler artifact]
+  selfAssignment                                            129  [likely decompiler artifact]
+  uninitvar                                                  55
   legacyUninitvar                                            41
+  shiftTooManyBitsSigned                                     40
   invalidscanf                                               40
-  shiftTooManyBitsSigned                                     30
   objectIndex                                                12
   invalidPointerCast                                         11
   nullPointerRedundantCheck                                   6
   nullPointer                                                 6
   shiftNegativeLHS                                            3
+  identicalInnerCondition                                     3
   arrayIndexOutOfBounds                                       3
-  identicalInnerCondition                                     2
   arrayIndexOutOfBoundsCond                                   1
   AssignmentIntegerToAddress                                  1
   nullPointerArithmetic                                       1

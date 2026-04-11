@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        132 ( 2.0%)
+  Functions with type issues:        129 ( 2.0%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          2
-    Undefined types in variables:      124
+    Undefined types in variables:      121
     Unresolved stack params:           6
 
-  Excluded (.keep / MMX / by-value):   105 functions
+  Excluded (.keep / MMX / by-value):   108 functions
     Wrong calling convention:          1
-    Undefined types in variables:      95
+    Undefined types in variables:      98
     Unresolved stack params:           15
 
 ====================================================================================================
@@ -125,7 +125,7 @@ Unresolved stack parameters (missing from signature) (6)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (124)
+Undefined types in variables (121)
 --------------------------------------------------------------------------------
 
   CPoly_intersectPoly
@@ -263,11 +263,6 @@ Undefined types in variables (124)
     Locals:  local_120 (undefined1), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CLodMesh_computeEdgeCollapseCost
-    Address: 0x00518910  File: shape/meshlod.cpp
-    Locals:  local_118 (undefined4), uStack_114 (undefined4), local_110 (undefined8), local_108 (undefined4), uStack_104 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CMobster_processWeaponPickup
     Address: 0x00526d90  File: core/mobster.cpp
     Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_14 (undefined4)
@@ -338,11 +333,6 @@ Undefined types in variables (124)
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CLodMesh_parseS3DFile
-    Address: 0x0051aa60  File: shape/meshlod.cpp
-    Locals:  local_28 (undefined1[4]), local_20 (undefined1[4]), local_1c (undefined1[4])
-    Suggested: Resolve undefined types to concrete types
-
   CComplexPolygon_computeWindingNormal
     Address: 0x005cbb40  File: shape/superopt.cpp
     Locals:  local_110 (undefined8), local_100 (undefined4), uStack_fc (undefined4)
@@ -386,11 +376,6 @@ Undefined types in variables (124)
   CLodMesh_findClosestFaceToSamplePoint
     Address: 0x00518300  File: shape/meshlod.cpp
     Locals:  local_28 (undefined4), uStack_24 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CLodMesh_findMinimumCostEdge
-    Address: 0x00519680  File: shape/meshlod.cpp
-    Locals:  local_20 (undefined4), uStack_1c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CLodMesh_processGridCell
@@ -688,9 +673,9 @@ Undefined types in variables (124)
     Locals:  local_18 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  CEditorTools_createModalWindow
-    Address: 0x004a0970  File: shape/edittool.cpp
-    Locals:  local_14 (undefined4 *)
+  parseSpatialTreeFromFile
+    Address: 0x004580a0  File: shape/design.c
+    Locals:  local_2c (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
   CStrList_insertSortedFileRecord
@@ -883,7 +868,7 @@ Unresolved stack params - by-value struct passing (5)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (92)
+Undefined types - .keep overrides (95)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1026,6 +1011,11 @@ Undefined types - .keep overrides (92)
     Locals:  local_160 (undefined4), uStack_15c (undefined4), local_158 (undefined4), uStack_154 (undefined4), local_50 (undefined4[11])
     Suggested: Resolve undefined types to concrete types
 
+  CLodMesh_computeEdgeCollapseCost
+    Address: 0x00518910  File: shape/meshlod.cpp
+    Locals:  local_118 (undefined4), uStack_114 (undefined4), local_110 (undefined8), local_108 (undefined4), uStack_104 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CDemonSet_positionLight
     Address: 0x0057ae50  File: core/setedit.cpp
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
@@ -1096,6 +1086,11 @@ Undefined types - .keep overrides (92)
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CLodMesh_parseS3DFile
+    Address: 0x0051aa60  File: shape/meshlod.cpp
+    Locals:  local_28 (undefined1[4]), local_20 (undefined1[4]), local_1c (undefined1[4])
+    Suggested: Resolve undefined types to concrete types
+
   CActorProperty_editInteractive
     Address: 0x0040eed0  File: core/actor.cpp
     Locals:  local_10f (undefined1[99]), local_ab (undefined1[99])
@@ -1139,6 +1134,11 @@ Undefined types - .keep overrides (92)
   cramTextureList
     Address: 0x0046bb80  File: shape/design.c
     Locals:  auStackY_1074 (undefined2[630]), uStack_88 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CLodMesh_findMinimumCostEdge
+    Address: 0x00519680  File: shape/meshlod.cpp
+    Locals:  local_20 (undefined4), uStack_1c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CSfxSlot_compute
@@ -1306,9 +1306,9 @@ Undefined types - .keep overrides (92)
     Locals:  auStack_30 (undefined1[8])
     Suggested: Resolve undefined types to concrete types
 
-  parseSpatialTreeFromFile
-    Address: 0x004580a0  File: shape/design.c
-    Locals:  local_2c (undefined1[4])
+  CEditorTools_createModalWindow
+    Address: 0x004a0970  File: shape/edittool.cpp
+    Locals:  local_14 (undefined4 *)
     Suggested: Resolve undefined types to concrete types
 
   CDirectSoundDevice_initPropertySet

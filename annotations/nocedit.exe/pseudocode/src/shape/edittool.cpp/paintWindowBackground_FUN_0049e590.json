@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 33,
-        "line": 33,
-        "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -213,6 +206,44 @@
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "paintWindowBackground_FUN_0049e590.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 18,
+          "line": 57,
+          "message": "Redundant assignment of 'puVar8' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 18,
+          "line": 58,
+          "message": "Redundant assignment of 'puVar9' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 19,
+          "line": 37,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 23,
+          "line": 43,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_design_c_normalizeVertex_FUN_00461e60(CVector3f *vertex)
+; void __cdecl shape_design_c_normalizeVertex_FUN_00461e60(CVector3d *vertex)
 ;
 ; Parameters:
-; CVector3f *      Stack[0x4]:4   vertex
+; CVector3d *      Stack[0x4]:4   vertex
 ; Local Variables:
 ; double           Stack[-0x18]:8  local_18
 ;
