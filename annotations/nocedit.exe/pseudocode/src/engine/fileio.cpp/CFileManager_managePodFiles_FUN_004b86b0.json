@@ -1,27 +1,8 @@
 {
   "chunked": true,
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 61,
-        "line": 168,
-        "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 75,
-        "line": 208,
-        "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 46,
-        "line": 412,
-        "message": "format specifies type 'char *' but the argument has type 'SPodManageRecord *' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -1314,6 +1295,46 @@
         "type": "char *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CFileManager_managePodFiles_FUN_004b86b0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 5,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 16,
+          "line": 105,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 21,
+          "line": 276,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 26,
+          "line": 598,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 29,
+          "line": 643,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 33,
+          "line": 713,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

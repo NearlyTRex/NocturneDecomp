@@ -58,7 +58,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CCo
     local_24 = 0;
     local_14 = &this_ptr->normal;
     do {
-      iVar2 = local_24 + (int)this_ptr->expanded_edges;
+      iVar2 = (int)this_ptr->expanded_edges->start_uv + local_24 + -0x40;
       local_18 = iVar2;
       puVar3 = (uint *)(iVar2 + 0x10);
       pCVar5 = &local_6c;

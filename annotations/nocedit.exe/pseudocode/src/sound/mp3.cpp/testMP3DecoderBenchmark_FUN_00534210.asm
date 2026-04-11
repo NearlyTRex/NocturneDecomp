@@ -4,8 +4,8 @@
 ; void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
 ;
 ; Local Variables:
-; int              Stack[-0x38]:4  local_38
-; int              Stack[-0x34]:4  local_34
+; time_t           Stack[-0x38]:4  local_38
+; time_t           Stack[-0x34]:4  local_34
 ; _FILE *          Stack[-0x30]:4  local_30
 ; CMP3Decoder *    Stack[-0x2c]:4  local_2c
 ; _FILE *          Stack[-0x28]:4  local_28

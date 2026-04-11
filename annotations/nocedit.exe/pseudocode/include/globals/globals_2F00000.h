@@ -2,11 +2,11 @@
 
 // Type dependencies
 #include "system/basetypes.h"
-#include "system/stdio.h"
 #include "system/windef.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CMatrix3x3i.h"
+#include "types/structs/SFileTrackingEntry.h"
 #include "types/structs/SMemHead.h"
 
 // =============================================================================
@@ -34,11 +34,11 @@ extern CDemonActorType g_CMeleeClassInfo;
 extern CMatrix3x3i g_InverseMatrix;
 extern CMatrix3x3i g_TransformMatrixCopy;
 
-// FileTrackingEntry[100]
-extern FileTrackingEntry g_FileRegistry[100];
-
 // HANDLE
 extern HANDLE g_FileMutex;
+
+// SFileTrackingEntry[100]
+extern SFileTrackingEntry g_FileRegistry[100];
 
 // SMemHead*
 extern SMemHead* g_MemoryListHead;

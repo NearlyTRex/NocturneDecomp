@@ -2,11 +2,11 @@
 // Address: 00550590
 // Address Range: [[00550590, 005506ba]]
 // Convention: __stack2_esi
-// Signature: void * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile *this_ptr,int record_index,void *output_buffer)
+// Signature: CPodAuditRecord * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile *this_ptr,int record_index,CPodAuditRecord *out_record)
 
 #include "nocturne.h"
 
-void * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile *this_ptr,int record_index,void *output_buffer)
+CPodAuditRecord * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile *this_ptr,int record_index,CPodAuditRecord *out_record)
 
 {
   _FILE *file;
@@ -40,7 +40,7 @@ void * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pod.cpp",800);
   puVar2 = local_144;
-  puVar3 = output_buffer;
+  puVar3 = (uint *)out_record;
   for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
@@ -48,5 +48,5 @@ void * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile
     puVar2 = puVar2;
     puVar3 = puVar3;
   }
-  return output_buffer;
+  return out_record;
 }

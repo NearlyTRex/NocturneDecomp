@@ -1,37 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 24,
-        "line": 214,
-        "message": "no matching function for call to 'sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 245,
-        "message": "no matching function for call to 'sound_sndmain_cpp_mixResampleMonoToStereo_FUN_005a5e70'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 705,
-    "complexity_score": 586,
+    "complexity_score": 544,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 321,
-    "suspect_count": 25,
+    "pseudocode_lines": 319,
+    "suspect_count": 21,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 1026
+    "total_lines": 1024
   },
   "cross_references": [
     {
@@ -472,14 +459,6 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 162,
-      "match": "(byte *)((int)",
-      "severity": "mild",
-      "text": "local_7c[2] = (float)(int)(*(byte *)((int)this_ptr->sample->sample_data +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 164,
       "match": "(byte *)((int)",
       "severity": "mild",
@@ -528,23 +507,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 215,
-      "match": "(short *)((int)",
-      "severity": "mild",
-      "text": "local_7c[0] = (float)*(short *)((int)this_ptr->sample->sample_data +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 217,
-      "match": "(short *)((int)",
-      "severity": "mild",
-      "text": "local_7c[1] = (float)*(short *)((int)this_ptr->sample->sample_data +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 226,
+      "line": 225,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)*ppfVar1 + local_24) =",
@@ -552,7 +515,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 228,
+      "line": 227,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)*ppfVar1 + local_24);",
@@ -560,15 +523,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 246,
-      "match": "(short *)((int)",
-      "severity": "mild",
-      "text": "sVar2 = *(short *)((int)this_ptr->sample->sample_data + (int)ROUND(ROUND(local_c0)) * 2)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 254,
+      "line": 252,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)*ppfVar1 + iVar12) =",
@@ -576,7 +531,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 255,
+      "line": 253,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(float)sVar2 * pCVar13->channel_volumes[0] + *(float *)((int)*ppfVar1 + iVar12)",
@@ -584,7 +539,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 287,
+      "line": 285,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar2 = (int *)((int)mix_buffer.channel_buffers + iVar12);",
@@ -592,7 +547,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 300,
+      "line": 298,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)aiStack_a4 + local_4c) != 0) {",
@@ -600,7 +555,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 302,
+      "line": 300,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar14 = (iVar10 + *(int *)((int)this_ptr->channel_target_buffer_offsets + local_4c)) -",
@@ -608,7 +563,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 303,
+      "line": 301,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)this_ptr->channel_current_buffer_offsets + local_4c);",
@@ -616,7 +571,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 308,
+      "line": 306,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "pfVar1 = (float *)(*(int *)((int)aiStack_a4 + local_4c) + iVar11);",
@@ -624,7 +579,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 310,
+      "line": 308,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(float *)(*(int *)((int)aiStack_a4 + local_4c) + -4 + iVar11) =",
@@ -632,7 +587,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 311,
+      "line": 309,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(float *)(*(int *)((int)g_ChannelTertiaryBuffers + local_4c) +",
@@ -640,7 +595,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 316,
+      "line": 314,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)this_ptr->channel_current_buffer_offsets + local_4c) =",
@@ -648,7 +603,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 317,
+      "line": 315,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)this_ptr->channel_target_buffer_offsets + local_4c);",

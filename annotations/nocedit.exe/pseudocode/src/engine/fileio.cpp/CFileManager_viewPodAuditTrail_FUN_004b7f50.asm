@@ -10,11 +10,8 @@
 ; CPodFile         Stack[-0xcdc]:1068  local_cdc
 ; CPickList        Stack[-0x8b0]:936  local_8b0
 ; char[512]        Stack[-0x508]:512  local_508
-; undefined4       Stack[-0x308]:4  local_308
-; int              Stack[-0x2e8]:4  local_2e8
-; uint             Stack[-0x2e4]:4  local_2e4
-; char[272]        Stack[-0x2e0]:272  local_2e0
-; int[78]          Stack[-0x1d0]:312  local_1d0
+; CPodAuditRecord  Stack[-0x308]:312  local_308
+; CPodAuditRecord  Stack[-0x1d0]:312  local_1d0
 ; char[100]        Stack[-0x98]:100  local_98
 ; char[32]         Stack[-0x34]:32  local_34
 ; int              Stack[-0x14]:4  local_14
@@ -162,7 +159,7 @@ section .text
     LEA ESI,[ESP + 0xb18]               ; 004b805a
     LEA EDI,[ESP + 0x9e0]               ; 004b8061
     CALL engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590 ; 004b8068
-        ;   XREF to: 00550590 (UNCONDITIONAL_CALL)  ; void * engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile * this_ptr, int record_index, void * output_buffer)
+        ;   XREF to: 00550590 (UNCONDITIONAL_CALL)  ; CPodAuditRecord * engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile * this_ptr, int record_index, CPodAuditRecord * out_record)
     MOV ECX,0x4e                        ; 004b806d
     ADD ESP,0x8                         ; 004b8072
     LEA EAX,[ESP + 0x9f8]               ; 004b8075

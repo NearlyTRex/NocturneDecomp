@@ -5,196 +5,23 @@ FUNCTION COMPILATION ERRORS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6304 (97.7%)
-Failed: 150
+Successful: 6336 (98.2%)
+Failed: 118
 
 ====================================================================================================
-engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (3 errors)
+engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50 (1 error)
 ====================================================================================================
-  Line 168 [format_error]: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
-  Line 208 [format_error]: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
-  Line 412 [format_error]: format specifies type 'char *' but the argument has type 'SPodManageRecord *' [-Werror,-Wformat]
-
-====================================================================================================
-engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (7 errors)
-====================================================================================================
-  Line 170 [incompatible_types]: no matching function for call to '_time'
-  Line 188 [incompatible_types]: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
-  Line 279 [incompatible_types]: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
-  Line 482 [incompatible_types]: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
-  Line 525 [incompatible_types]: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
-  Line 591 [format_error]: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
-  Line 591 [format_error]: format specifies type 'int' but the argument has type 'long' [-Werror,-Wformat]
-
-====================================================================================================
-engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 (2 errors)
-====================================================================================================
-  Line 113 [incompatible_types]: assigning to 'CPodAuditRecord *' from incompatible type 'void *'
-  Line 158 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-
-====================================================================================================
-engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50 (2 errors)
-====================================================================================================
-  Line 91 [pointer_type]: assigning to 'int *' from 'uint *' (aka 'unsigned int *') converts between pointers to integer types with different sign
-  Line 113 [format_error]: format specifies type 'char *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
-
-====================================================================================================
-engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550 (4 errors)
-====================================================================================================
-  Line 46 [incompatible_types]: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
-  Line 60 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror,-Wformat]
-  Line 66 [incompatible_types]: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
-  Line 122 [format_error]: format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror,-Wformat]
-
-====================================================================================================
-engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0 (1 error)
-====================================================================================================
-  Line 16 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-
-====================================================================================================
-engine_ini.cpp_getProfileInteger_FUN_004fb9a0 (1 error)
-====================================================================================================
-  Line 17 [format_error]: format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]
-
-====================================================================================================
-engine_matrix.c_projectTransformedPoint_FUN_0050cdc0 (1 error)
-====================================================================================================
-  Line 24 [undeclared_identifier]: use of undeclared identifier 'DAT_80000010'
-
-====================================================================================================
-engine_model.c_getMRGLBounds_FUN_00528140 (1 error)
-====================================================================================================
-  Line 181 [type_error]: member reference base type 'char[80]' is not a structure or union
-
-====================================================================================================
-engine_pcx.c_writePCXScanline_FUN_00548c50 (1 error)
-====================================================================================================
-  Line 18 [incompatible_types]: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'
-
-====================================================================================================
-engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590 (1 error)
-====================================================================================================
-  Line 43 [incompatible_types]: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-
-====================================================================================================
-engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10 (2 errors)
-====================================================================================================
-  Line 176 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-  Line 177 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-
-====================================================================================================
-engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40 (2 errors)
-====================================================================================================
-  Line 117 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-  Line 118 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-
-====================================================================================================
-engine_prim.c_renderPolygonSoftware_FUN_00552510 (2 errors)
-====================================================================================================
-  Line 146 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-  Line 147 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-
-====================================================================================================
-engine_prim.c_renderScanlinePolygon_FUN_00553470 (2 errors)
-====================================================================================================
-  Line 144 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-  Line 145 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-
-====================================================================================================
-engine_prim.c_setupAdvancedSoftwareEdge_FUN_00552f70 (2 errors)
-====================================================================================================
-  Line 52 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-  Line 53 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-
-====================================================================================================
-engine_prim.c_setupBasicSoftwareEdge_FUN_00551ba0 (2 errors)
-====================================================================================================
-  Line 52 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-  Line 53 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-
-====================================================================================================
-engine_prim.c_setupColoredSoftwareEdge_FUN_00553190 (2 errors)
-====================================================================================================
-  Line 54 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-  Line 55 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-
-====================================================================================================
-engine_prim.c_setupSoftwareEdgeWithZMode_FUN_00551d60 (2 errors)
-====================================================================================================
-  Line 53 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-  Line 54 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-
-====================================================================================================
-shape_design.c_calculatePolygonNormal_FUN_0045caa0 (1 error)
-====================================================================================================
-  Line 42 [type_error]: member reference base type 'double' is not a structure or union
-
-====================================================================================================
-shape_design.c_configureSinglePassPolygonReduction_FUN_00465560 (1 error)
-====================================================================================================
-  Line 96 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-
-====================================================================================================
-shape_design.c_cramTextureList_FUN_0046bb80 (19 errors)
-====================================================================================================
-  Line 113 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 123 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 131 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 139 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 147 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 293 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 376 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 392 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 434 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 438 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 459 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 479 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 484 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 540 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 547 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 580 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 746 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 749 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  Line 754 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-
-====================================================================================================
-shape_design.c_createPolygonFromVertexList_FUN_0045cc80 (15 errors)
-====================================================================================================
-  Line 35 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 35 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 36 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 36 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 36 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 36 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 36 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 36 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 36 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 36 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 37 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 37 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 37 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 37 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 37 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-
-====================================================================================================
-shape_design.c_createRotationalSweepGeometry_FUN_0045e070 (6 errors)
-====================================================================================================
-  Line 49 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 49 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 50 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 50 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 50 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  Line 50 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
+  Line 110 [format_error]: format specifies type 'char *' but the argument has type 'CPodAuditRecord *' [-Werror,-Wformat]
 
 ====================================================================================================
 shape_design.c_embedCopyrightWatermark_FUN_0046b9a0 (6 errors)
 ====================================================================================================
   Line 20 [incompatible_types]: no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'
-  Line 23 [incompatible_types]: no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'
+  Line 22 [incompatible_types]: no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'
+  Line 30 [incompatible_types]: no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'
   Line 32 [incompatible_types]: no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'
-  Line 35 [incompatible_types]: no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'
-  Line 44 [incompatible_types]: no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'
-  Line 47 [incompatible_types]: no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'
+  Line 40 [incompatible_types]: no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'
+  Line 43 [incompatible_types]: no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'
 
 ====================================================================================================
 shape_design.c_exportModelToMDL_FUN_00459e80 (11 errors)
@@ -390,19 +217,12 @@ shape_edittool.cpp_paintWindowBackground_FUN_0049e590 (1 error)
 shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0 (7 errors)
 ====================================================================================================
   Line 21 [incompatible_types]: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
-  Line 32 [format_error]: format specifies type 'char *' but the argument has type 'FileTrackingEntry *' [-Werror,-Wformat]
+  Line 32 [format_error]: format specifies type 'char *' but the argument has type 'SFileTrackingEntry *' [-Werror,-Wformat]
   Line 32 [format_error]: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   Line 36 [format_error]: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-  Line 37 [format_error]: format specifies type 'char *' but the argument has type 'FileTrackingEntry *' [-Werror,-Wformat]
+  Line 37 [format_error]: format specifies type 'char *' but the argument has type 'SFileTrackingEntry *' [-Werror,-Wformat]
   Line 37 [format_error]: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   Line 51 [incompatible_types]: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
-
-====================================================================================================
-shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020 (3 errors)
-====================================================================================================
-  Line 27 [format_error]: format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]
-  Line 34 [format_error]: format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]
-  Line 46 [format_error]: format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]
 
 ====================================================================================================
 shape_memdbg.cpp_closeFile_FUN_0050f9b0 (5 errors)
@@ -412,29 +232,6 @@ shape_memdbg.cpp_closeFile_FUN_0050f9b0 (5 errors)
   Line 45 [format_error]: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   Line 46 [format_error]: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   Line 47 [format_error]: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-
-====================================================================================================
-shape_memdbg.cpp_debugCalloc_FUN_0050f350 (3 errors)
-====================================================================================================
-  Line 25 [format_error]: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
-  Line 25 [format_error]: format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]
-  Line 45 [format_error]: format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]
-
-====================================================================================================
-shape_memdbg.cpp_debugFree_FUN_0050f460 (1 error)
-====================================================================================================
-  Line 20 [format_error]: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
-
-====================================================================================================
-shape_memdbg.cpp_debugMalloc_FUN_0050f250 (1 error)
-====================================================================================================
-  Line 41 [format_error]: format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]
-
-====================================================================================================
-shape_memdbg.cpp_debugRealloc_FUN_0050f540 (2 errors)
-====================================================================================================
-  Line 24 [format_error]: format specifies type 'unsigned int' but the argument has type 'void *' [-Werror,-Wformat]
-  Line 52 [format_error]: format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]
 
 ====================================================================================================
 shape_memdbg.cpp_openFile_FUN_0050f7a0 (1 error)
@@ -594,10 +391,9 @@ shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (3 errors)
   Line 149 [incompatible_types]: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
 
 ====================================================================================================
-shape_superopt.cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20 (2 errors)
+shape_superopt.cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20 (1 error)
 ====================================================================================================
   Line 23 [incompatible_types]: assigning to 'int *' from incompatible type 'void *'
-  Line 102 [incompatible_types]: no matching function for call to 'shape_superopt_cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280'
 
 ====================================================================================================
 shape_superopt.cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0 (12 errors)
@@ -654,11 +450,6 @@ shape_superopt.cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280 (1 error)
   Line 26 [incompatible_types]: assigning to 'int *' from incompatible type 'void *'
 
 ====================================================================================================
-shape_superopt.cpp_CComplexPolygon_removedSharedEdges_FUN_005c8160 (1 error)
-====================================================================================================
-  Line 24 [incompatible_types]: assigning to 'int *' from incompatible type 'void *'
-
-====================================================================================================
 shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500 (19 errors)
 ====================================================================================================
   Line 117 [incompatible_types]: assigning to 'SExpandedEdge *' from incompatible type 'void *'
@@ -698,15 +489,10 @@ shape_superopt.cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0 (12 errors)
   Line 384 [type_error]: member reference base type 'double' is not a structure or union
 
 ====================================================================================================
-shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0 (7 errors)
+shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0 (2 errors)
 ====================================================================================================
-  Line 66 [incompatible_types]: no matching function for call to 'shape_superopt_cpp_CComplexPolygon_processEdgeSubLoops_FUN_005c91e0'
   Line 72 [incompatible_types]: assigning to 'SExpandedEdge *' from incompatible type 'void *'
   Line 77 [incompatible_types]: assigning to 'SExpandedEdge *' from incompatible type 'void *'
-  Line 149 [incompatible_types]: assigning to 'int *' from incompatible type 'void *'
-  Line 164 [incompatible_types]: assigning to 'int *' from incompatible type 'void *'
-  Line 234 [incompatible_types]: assigning to 'int *' from incompatible type 'void *'
-  Line 253 [incompatible_types]: assigning to 'int *' from incompatible type 'void *'
 
 ====================================================================================================
 shape_superopt.cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20 (1 error)
@@ -1058,6 +844,11 @@ sound_snddx.cpp_staticInit_FUN_005ade60 (1 error)
   Line 12 [cast_error]: no matching conversion for C-style cast from 'CSoundDeviceFull_vtable *' to 'CSoundDevice'
 
 ====================================================================================================
+sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170 (1 error)
+====================================================================================================
+  Line 39 [incompatible_types]: assigning to 'short *' from incompatible type 'void *'
+
+====================================================================================================
 sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730 (5 errors)
 ====================================================================================================
   Line 60 [format_error]: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
@@ -1097,12 +888,6 @@ sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60 (3 errors)
   Line 54 [format_error]: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
 
 ====================================================================================================
-sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (2 errors)
-====================================================================================================
-  Line 214 [incompatible_types]: no matching function for call to 'sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0'
-  Line 245 [incompatible_types]: no matching function for call to 'sound_sndmain_cpp_mixResampleMonoToStereo_FUN_005a5e70'
-
-====================================================================================================
 sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0 (2 errors)
 ====================================================================================================
   Line 32 [format_error]: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
@@ -1138,11 +923,6 @@ sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10 (2 errors)
   Line 25 [type_error]: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
 
 ====================================================================================================
-sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80 (1 error)
-====================================================================================================
-  Line 24 [format_error]: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
-
-====================================================================================================
 sound_sndmain.cpp_formatSfxOptionsToString_FUN_005a8d00 (13 errors)
 ====================================================================================================
   Line 19 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
@@ -1165,21 +945,16 @@ sound_sndmain.cpp_getChannelLevels_FUN_005ac990 (1 error)
   Line 26 [incompatible_types]: assigning to 'float *' from incompatible type 'void *'
 
 ====================================================================================================
-sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0 (2 errors)
+sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0 (3 errors)
 ====================================================================================================
   Line 81 [format_error]: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
   Line 89 [format_error]: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
+  Line 99 [incompatible_types]: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (2 errors)
+sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (1 error)
 ====================================================================================================
-  Line 109 [incompatible_types]: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
   Line 172 [incompatible_types]: assigning to 'short *' from incompatible type 'void *'
-
-====================================================================================================
-sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200 (1 error)
-====================================================================================================
-  Line 113 [incompatible_types]: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
 sound_sndmain.cpp_logSoundError_FUN_005adba0 (1 error)
@@ -1211,11 +986,6 @@ sound_sndmain.cpp_parseWavFile_FUN_005a3fe0 (6 errors)
   Line 78 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
   Line 116 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
   Line 119 [type_error]: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
-
-====================================================================================================
-sound_sndmain.cpp_startSfx_FUN_005a8e90 (1 error)
-====================================================================================================
-  Line 212 [incompatible_types]: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
 sound_sndmain.cpp_startSoundThread_FUN_005abc00 (6 errors)

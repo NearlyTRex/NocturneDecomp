@@ -28,18 +28,18 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
   char (*pacVar9) [128];
   SIZE_T *pSVar10;
   SVersionControlSession *pSVar11;
+  CPodAuditRecord *pCVar11;
   char (*pacVar12) [128];
-  char (*pacVar11) [128];
+  char (*pacVar13) [128];
   uint *puVar13;
-  uint *puVar12;
+  uint *puVar14;
   char *pcVar14;
-  char *pcVar13;
+  char *pcVar15;
   uint *puVar15;
   char *pcVar16;
-  char *pcVar15;
+  char *pcVar17;
   SFoundFileInfo *pSVar17;
   CPodAuditRecord *pCVar18;
-  CPodAuditRecord *pCVar16;
   byte bVar19;
   CPodFile local_1838;
   CPickList local_140c;
@@ -52,7 +52,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
   char local_748 [272];
   uint local_638 [10];
   char local_610 [272];
-  uint local_500 [78];
+  CPodAuditRecord local_500;
   uint local_3c8 [10];
   char local_3a0 [272];
   char local_290 [256];
@@ -112,15 +112,15 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
       }
     }
     else {
-      pcVar13 = local_290;
+      pcVar15 = local_290;
       do {
         cVar2 = *pod_filename;
-        *pcVar13 = cVar2;
+        *pcVar15 = cVar2;
         if (cVar2 == '\0') break;
         cVar2 = pod_filename[1];
         pod_filename = pod_filename + 2;
-        pcVar13[1] = cVar2;
-        pcVar13 = pcVar13 + 2;
+        pcVar15[1] = cVar2;
+        pcVar15 = pcVar15 + 2;
       } while (cVar2 != '\0');
     }
     uVar3 = engine_dosio_c_getFileSizeWithFinder_FUN_00481960((char *)0x0,local_290);
@@ -157,15 +157,15 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
     iVar3 = engine_fileio_cpp_establishUserIdentity_FUN_004b1c00();
     if (iVar3 != 0) {
       pSVar11 = &g_VersionControlSession;
-      pcVar13 = g_WorkingDirectoryPath;
+      pcVar15 = g_WorkingDirectoryPath;
       do {
         cVar2 = pSVar11->primary_username[0];
-        *pcVar13 = cVar2;
+        *pcVar15 = cVar2;
         if (cVar2 == '\0') break;
         cVar2 = pSVar11->primary_username[1];
         pSVar11 = (SVersionControlSession *)(pSVar11->primary_username + 2);
-        pcVar13[1] = cVar2;
-        pcVar13 = pcVar13 + 2;
+        pcVar15[1] = cVar2;
+        pcVar15 = pcVar15 + 2;
       } while (cVar2 != '\0');
       _time(&g_PodCreationTime);
       engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0(&local_1838);
@@ -174,14 +174,14 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
         iVar3 = 0;
         if (0 < local_1838.audit_count) {
           do {
-            engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(&local_1838,iVar3,local_500);
+            engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(&local_1838,iVar3,&local_500);
             g_AuditRecordCount = g_AuditRecordCount + 1;
-            puVar12 = local_500;
+            pCVar11 = &local_500;
             puVar15 = local_3c8;
             for (iVar8 = 0x4e; iVar8 != 0; iVar8 = iVar8 + -1) {
               puVar15 = puVar15 + (uint)bVar19 * -2 + 1;
-              *puVar15 = *puVar12;
-              puVar12 = puVar12 + (uint)bVar19 * -2 + 1;
+              *puVar15 = *(uint *)pCVar11->user_path;
+              pCVar11 = (CPodAuditRecord *)((int)pCVar11 + ((uint)bVar19 * -2 + 1) * 4);
               puVar15 = puVar15;
             }
             g_AuditRecordsArray =
@@ -194,23 +194,23 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
               core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for pod audit list.");
             }
             pCVar4 = g_AuditRecordsArray + g_AuditRecordCount + -1;
-            puVar12 = local_3c8;
-            pCVar16 = pCVar4;
+            puVar14 = local_3c8;
+            pCVar11 = pCVar4;
             for (iVar7 = 0x4e; iVar7 != 0; iVar7 = iVar7 + -1) {
-              *(uint *)pCVar16->user_path = *puVar12;
-              puVar12 = puVar12 + (uint)bVar19 * -2 + 1;
-              pCVar16 = (CPodAuditRecord *)((int)pCVar16 + (uint)bVar19 * -8 + 4);
+              *(uint *)pCVar11->user_path = *puVar14;
+              puVar14 = puVar14 + (uint)bVar19 * -2 + 1;
+              pCVar11 = (CPodAuditRecord *)((int)pCVar11 + (uint)bVar19 * -8 + 4);
             }
             memset(pCVar4->filename,0,0x100);
-            pcVar13 = local_3a0;
+            pcVar15 = local_3a0;
             pcVar16 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename;
             iVar3 = iVar3 + 1;
             do {
-              cVar2 = *pcVar13;
+              cVar2 = *pcVar15;
               *pcVar16 = cVar2;
               if (cVar2 == '\0') break;
-              cVar2 = pcVar13[1];
-              pcVar13 = pcVar13 + 2;
+              cVar2 = pcVar15[1];
+              pcVar15 = pcVar15 + 2;
               pcVar16[1] = cVar2;
               pcVar16 = pcVar16 + 2;
             } while (cVar2 != '\0');
@@ -249,30 +249,30 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
               } while (iVar3 < this_ptr->tracked_file_count);
             }
             if (this_ptr->tracked_file_count <= iVar3) {
-              pcVar15 = g_CurrentFilenameBuffer;
+              pcVar17 = g_CurrentFilenameBuffer;
               iVar3 = 0x4e;
-              pcVar13 = *(char **)((int)&(local_1838.directory_entries)->name + local_2c);
+              pcVar15 = *(char **)((int)&(local_1838.directory_entries)->name + local_2c);
               g_AuditOperationType = 1;
               do {
-                cVar2 = *pcVar13;
-                *pcVar15 = cVar2;
+                cVar2 = *pcVar15;
+                *pcVar17 = cVar2;
                 if (cVar2 == '\0') break;
-                cVar2 = pcVar13[1];
-                pcVar13 = pcVar13 + 2;
-                pcVar15[1] = cVar2;
+                cVar2 = pcVar15[1];
                 pcVar15 = pcVar15 + 2;
+                pcVar17[1] = cVar2;
+                pcVar17 = pcVar17 + 2;
               } while (cVar2 != '\0');
               g_CurrentFileOffset = 0;
               g_CurrentFileCompressedSize = 0;
               g_CurrentFileTimestamp =
                    *(int *)((int)&(local_1838.directory_entries)->timestamp + local_2c);
               g_CurrentFileSize = *(int *)((int)&(local_1838.directory_entries)->size + local_2c);
-              pcVar13 = g_WorkingDirectoryPath;
-              puVar12 = local_8a8;
+              pcVar15 = g_WorkingDirectoryPath;
+              puVar14 = local_8a8;
               for (; iVar3 != 0; iVar3 = iVar3 + -1) {
-                *puVar12 = *(uint *)pcVar13;
-                pcVar13 = pcVar13 + ((uint)bVar19 * -2 + 1) * 4;
-                puVar12 = puVar12 + (uint)bVar19 * -2 + 1;
+                *puVar14 = *(uint *)pcVar15;
+                pcVar15 = pcVar15 + ((uint)bVar19 * -2 + 1) * 4;
+                puVar14 = puVar14 + (uint)bVar19 * -2 + 1;
               }
               g_AuditRecordCount = g_AuditRecordCount + 1;
               g_AuditRecordsArray =
@@ -285,25 +285,25 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                 core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for pod audit list.");
               }
               pCVar5 = g_AuditRecordsArray + g_AuditRecordCount + -1;
-              puVar12 = local_8a8;
-              pCVar16 = pCVar5;
+              puVar14 = local_8a8;
+              pCVar11 = pCVar5;
               for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
-                *(uint *)pCVar16->user_path = *puVar12;
-                puVar12 = puVar12 + (uint)bVar19 * -2 + 1;
-                pCVar16 = (CPodAuditRecord *)((int)pCVar16 + (uint)bVar19 * -8 + 4);
+                *(uint *)pCVar11->user_path = *puVar14;
+                puVar14 = puVar14 + (uint)bVar19 * -2 + 1;
+                pCVar11 = (CPodAuditRecord *)((int)pCVar11 + (uint)bVar19 * -8 + 4);
               }
               memset(pCVar5->filename,0,0x100);
-              pcVar13 = local_880;
+              pcVar15 = local_880;
               local_4c = local_4c + 1;
-              pcVar15 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename;
+              pcVar17 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename;
               do {
-                cVar2 = *pcVar13;
-                *pcVar15 = cVar2;
+                cVar2 = *pcVar15;
+                *pcVar17 = cVar2;
                 if (cVar2 == '\0') break;
-                cVar2 = pcVar13[1];
-                pcVar13 = pcVar13 + 2;
-                pcVar15[1] = cVar2;
+                cVar2 = pcVar15[1];
                 pcVar15 = pcVar15 + 2;
+                pcVar17[1] = cVar2;
+                pcVar17 = pcVar17 + 2;
               } while (cVar2 != '\0');
             }
             local_2c = local_2c + 0x14;
@@ -324,13 +324,13 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
         pacVar10 = this_ptr->file_entries;
         do {
           uVar4 = 0xffffffff;
-          pacVar11 = pacVar10;
+          pacVar13 = pacVar10;
           do {
             if (uVar4 == 0) break;
             uVar4 = uVar4 - 1;
-            pcVar13 = *pacVar11;
-            pacVar11 = (char (*) [128])((int)pacVar11 + (uint)bVar19 * -2 + 1);
-          } while (*pcVar13 != '\0');
+            pcVar15 = *pacVar13;
+            pacVar13 = (char (*) [128])((int)pacVar13 + (uint)bVar19 * -2 + 1);
+          } while (*pcVar15 != '\0');
           iVar3 = iVar3 + 1;
           pacVar10 = pacVar10 + 1;
           local_44 = local_44 + ~uVar4;
@@ -355,13 +355,13 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
         pSVar10 = ptr;
         do {
           pSVar17 = &local_cbc;
-          pcVar13 = *pacVar9;
+          pcVar15 = *pacVar9;
           do {
-            cVar2 = *pcVar13;
+            cVar2 = *pcVar15;
             pSVar17->found_path[0] = cVar2;
             if (cVar2 == '\0') break;
-            cVar2 = pcVar13[1];
-            pcVar13 = pcVar13 + 2;
+            cVar2 = pcVar15[1];
+            pcVar15 = pcVar15 + 2;
             pSVar17->found_path[1] = cVar2;
             pSVar17 = (SFoundFileInfo *)(pSVar17->found_path + 2);
           } while (cVar2 != '\0');
@@ -374,16 +374,16 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
             pSVar10[2] = local_38;
             pSVar10[1] = local_cbc.file_size;
             pSVar10[3] = local_cbc.timestamp;
-            pcVar13 = (char *)((int)ptr_00 + local_30);
+            pcVar15 = (char *)((int)ptr_00 + local_30);
             pacVar12 = pacVar9;
             do {
               cVar2 = (*pacVar12)[0];
-              *pcVar13 = cVar2;
+              *pcVar15 = cVar2;
               if (cVar2 == '\0') break;
               cVar2 = (*pacVar12)[1];
               pacVar12 = (char (*) [128])(*pacVar12 + 2);
-              pcVar13[1] = cVar2;
-              pcVar13 = pcVar13 + 2;
+              pcVar15[1] = cVar2;
+              pcVar15 = pcVar15 + 2;
             } while (cVar2 != '\0');
             local_38 = local_38 + local_cbc.file_size;
             uVar4 = 0xffffffff;
@@ -391,9 +391,9 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
             do {
               if (uVar4 == 0) break;
               uVar4 = uVar4 - 1;
-              pcVar13 = *pacVar10;
+              pcVar15 = *pacVar10;
               pacVar10 = (char (*) [128])((int)pacVar10 + (uint)bVar19 * -2 + 1);
-            } while (*pcVar13 != '\0');
+            } while (*pcVar15 != '\0');
             local_30 = local_30 + ~uVar4;
           }
           pacVar9 = pacVar9 + 1;
@@ -429,7 +429,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                                    (*local_5c,(char *)0x0,"rb","..\\engine\\fileio.cpp"
                                     ,0x876);
               if (local_18 == (_FILE *)0x0) {
-                pcVar13 = "Can't open %s";
+                pcVar15 = "Can't open %s";
                 goto LAB_004b629d;
               }
               local_28[4] = 0xffffffff;
@@ -437,7 +437,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                   ; iVar3 = iVar3 + 1) {
                 iVar7 = _fgetc(local_18);
                 if (iVar7 == -1) {
-                  pcVar13 = "Error reading %s";
+                  pcVar15 = "Error reading %s";
                   local_5c = pacVar10;
                   goto LAB_004b629d;
                 }
@@ -445,22 +445,22 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                 local_28[4] = uVar4;
                 iVar6 = _fputc(iVar7,local_20);
                 if (iVar6 != iVar7) {
-                  pcVar13 = "Error writing %s";
+                  pcVar15 = "Error writing %s";
                   local_5c = (char (*) [128])local_290;
                   goto LAB_004b629d;
                 }
               }
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0x88e);
-              pcVar13 = g_CurrentFilenameBuffer;
-              pacVar11 = pacVar10;
+              pcVar15 = g_CurrentFilenameBuffer;
+              pacVar13 = pacVar10;
               do {
-                cVar2 = (*pacVar11)[0];
-                *pcVar13 = cVar2;
+                cVar2 = (*pacVar13)[0];
+                *pcVar15 = cVar2;
                 if (cVar2 == '\0') break;
-                cVar2 = (*pacVar11)[1];
-                pacVar11 = (char (*) [128])(*pacVar11 + 2);
-                pcVar13[1] = cVar2;
-                pcVar13 = pcVar13 + 2;
+                cVar2 = (*pacVar13)[1];
+                pacVar13 = (char (*) [128])(*pacVar13 + 2);
+                pcVar15[1] = cVar2;
+                pcVar15 = pcVar15 + 2;
               } while (cVar2 != '\0');
               g_CurrentFileOffset = local_28[3];
               g_CurrentFileCompressedSize = local_28[1];
@@ -470,12 +470,12 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                 g_AuditOperationType = 0;
                 g_CurrentFileTimestamp = 0;
                 g_CurrentFileSize = 0;
-                pcVar13 = g_WorkingDirectoryPath;
-                puVar12 = local_638;
+                pcVar15 = g_WorkingDirectoryPath;
+                puVar14 = local_638;
                 for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
-                  *puVar12 = *(uint *)pcVar13;
-                  pcVar13 = pcVar13 + ((uint)bVar19 * -2 + 1) * 4;
-                  puVar12 = puVar12 + (uint)bVar19 * -2 + 1;
+                  *puVar14 = *(uint *)pcVar15;
+                  pcVar15 = pcVar15 + ((uint)bVar19 * -2 + 1) * 4;
+                  puVar14 = puVar14 + (uint)bVar19 * -2 + 1;
                 }
                 g_AuditRecordCount = iVar7;
                 g_AuditRecordsArray =
@@ -488,37 +488,37 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                   core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for pod audit list.");
                 }
                 pCVar5 = g_AuditRecordsArray + g_AuditRecordCount + -1;
-                puVar12 = local_638;
-                pCVar16 = pCVar5;
+                puVar14 = local_638;
+                pCVar11 = pCVar5;
                 for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
-                  *(uint *)pCVar16->user_path = *puVar12;
-                  puVar12 = puVar12 + (uint)bVar19 * -2 + 1;
-                  pCVar16 = (CPodAuditRecord *)((int)pCVar16 + (uint)bVar19 * -8 + 4);
+                  *(uint *)pCVar11->user_path = *puVar14;
+                  puVar14 = puVar14 + (uint)bVar19 * -2 + 1;
+                  pCVar11 = (CPodAuditRecord *)((int)pCVar11 + (uint)bVar19 * -8 + 4);
                 }
                 memset(pCVar5->filename,0,0x100);
-                pcVar15 = local_610;
+                pcVar17 = local_610;
                 local_50 = local_50 + 1;
-                pcVar13 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename;
+                pcVar15 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename;
                 do {
-                  cVar2 = *pcVar15;
-                  *pcVar13 = cVar2;
+                  cVar2 = *pcVar17;
+                  *pcVar15 = cVar2;
                   if (cVar2 == '\0') break;
-                  cVar2 = pcVar15[1];
+                  cVar2 = pcVar17[1];
+                  pcVar17 = pcVar17 + 2;
+                  pcVar15[1] = cVar2;
                   pcVar15 = pcVar15 + 2;
-                  pcVar13[1] = cVar2;
-                  pcVar13 = pcVar13 + 2;
                 } while (cVar2 != '\0');
               }
               else if (local_28[4] != local_1838.directory_entries[iVar3].checksum) {
                 g_CurrentFileTimestamp = local_1838.directory_entries[iVar3].timestamp;
                 g_CurrentFileSize = local_1838.directory_entries[iVar3].size;
                 g_AuditOperationType = 2;
-                pcVar13 = g_WorkingDirectoryPath;
-                puVar12 = local_770;
+                pcVar15 = g_WorkingDirectoryPath;
+                puVar14 = local_770;
                 for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
-                  *puVar12 = *(uint *)pcVar13;
-                  pcVar13 = pcVar13 + ((uint)bVar19 * -2 + 1) * 4;
-                  puVar12 = puVar12 + (uint)bVar19 * -2 + 1;
+                  *puVar14 = *(uint *)pcVar15;
+                  pcVar15 = pcVar15 + ((uint)bVar19 * -2 + 1) * 4;
+                  puVar14 = puVar14 + (uint)bVar19 * -2 + 1;
                 }
                 g_AuditRecordCount = iVar7;
                 g_AuditRecordsArray =
@@ -530,9 +530,9 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                   g_CurrentLineNumber = 0x7a2;
                   core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for pod audit list.");
                 }
-                pCVar16 = g_AuditRecordsArray + g_AuditRecordCount + -1;
+                pCVar11 = g_AuditRecordsArray + g_AuditRecordCount + -1;
                 puVar13 = local_770;
-                pCVar18 = pCVar16;
+                pCVar18 = pCVar11;
                 for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
                   pCVar18 = (CPodAuditRecord *)((int)pCVar18 + (uint)bVar19 * -8 + 4);
                   puVar13 = puVar13 + (uint)bVar19 * -2 + 1;
@@ -540,18 +540,18 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                   puVar13 = puVar13;
                   pCVar18 = pCVar18;
                 }
-                memset(pCVar16->filename,0,0x100);
-                pcVar15 = local_748;
+                memset(pCVar11->filename,0,0x100);
+                pcVar17 = local_748;
                 local_48 = local_48 + 1;
-                pcVar13 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename;
+                pcVar15 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename;
                 do {
-                  cVar2 = *pcVar15;
-                  *pcVar13 = cVar2;
+                  cVar2 = *pcVar17;
+                  *pcVar15 = cVar2;
                   if (cVar2 == '\0') break;
-                  cVar2 = pcVar15[1];
+                  cVar2 = pcVar17[1];
+                  pcVar17 = pcVar17 + 2;
+                  pcVar15[1] = cVar2;
                   pcVar15 = pcVar15 + 2;
-                  pcVar13[1] = cVar2;
-                  pcVar13 = pcVar13 + 2;
                 } while (cVar2 != '\0');
               }
               local_5c = local_5c + 1;
@@ -618,10 +618,10 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1064,0);
           } while( true );
         }
-        pcVar13 = "Can't create %s";
+        pcVar15 = "Can't create %s";
         local_5c = (char (*) [128])local_290;
 LAB_004b629d:
-        shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar13,local_5c);
+        shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar15,local_5c);
       }
       else {
         _sprintf(local_190,"Couldn't build %s because the following files don't exist on the hard disk",local_290);

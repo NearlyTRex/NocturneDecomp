@@ -15,8 +15,8 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
   SIZE_T samples_requested;
   SIZE_T size;
   int iVar2;
-  int local_38;
-  int local_34;
+  time_t local_38;
+  time_t local_34;
   _FILE *local_30;
   CMP3Decoder *local_2c;
   _FILE *local_28;

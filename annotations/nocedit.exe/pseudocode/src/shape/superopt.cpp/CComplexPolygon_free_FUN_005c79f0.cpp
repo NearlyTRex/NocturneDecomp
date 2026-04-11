@@ -35,6 +35,6 @@ void __cdecl shape_superopt_cpp_CComplexPolygon_free_FUN_005c79f0(CComplexPolygo
   this_ptr->edge_array = (void *)0x0;
   this_ptr->expanded_edge_count = 0;
   shape_memdbg_cpp_free_FUN_005fe659(this_ptr->expanded_edges);
-  this_ptr->expanded_edges = (void *)0x0;
+  this_ptr->expanded_edges = (SExpandedEdge *)0x0;
   return;
 }

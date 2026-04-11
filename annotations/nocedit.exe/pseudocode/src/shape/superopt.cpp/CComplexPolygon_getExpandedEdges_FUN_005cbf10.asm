@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void * __cdecl shape_superopt_cpp_CComplexPolygon_getExpandedEdges_FUN_005cbf10(CComplexPolygon *this_ptr)
+; SExpandedEdge * __cdecl shape_superopt_cpp_CComplexPolygon_getExpandedEdges_FUN_005cbf10(CComplexPolygon *this_ptr)
 ;
 ; Parameters:
 ; CComplexPolygon * Stack[0x4]:4   this_ptr

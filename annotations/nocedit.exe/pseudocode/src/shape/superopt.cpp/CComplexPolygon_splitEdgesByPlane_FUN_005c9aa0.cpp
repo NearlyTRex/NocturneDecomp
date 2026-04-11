@@ -88,7 +88,7 @@ void __cdecl shape_superopt_cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0(C
   if (this_ptr->expanded_edge_count != 0) {
     local_1c = 0;
     do {
-      piVar5 = (int *)((int)this_ptr->expanded_edges + local_1c);
+      piVar5 = (int *)((int)this_ptr->expanded_edges->start_uv + local_1c + -0x40);
       local_1a0 = plane_normal->x * plane_point->x;
       local_198 = plane_normal->y * plane_point->y;
       local_190 = plane_normal->z * plane_point->z;

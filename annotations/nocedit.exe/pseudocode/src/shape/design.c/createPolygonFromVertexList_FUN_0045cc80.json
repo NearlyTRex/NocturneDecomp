@@ -1,98 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 94,
-        "line": 35,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 103,
-        "line": 35,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
-        "line": 36,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 34,
-        "line": 36,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 43,
-        "line": 36,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 52,
-        "line": 36,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 61,
-        "line": 36,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 70,
-        "line": 36,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 79,
-        "line": 36,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 88,
-        "line": 36,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 25,
-        "line": 37,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 34,
-        "line": 37,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 43,
-        "line": 37,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 52,
-        "line": 37,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 61,
-        "line": 37,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -398,6 +307,22 @@
         "type": "int"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "createPolygonFromVertexList_FUN_0045cc80.keep.c",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "cert-err34-c",
+          "column": 14,
+          "line": 35,
+          "message": "'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

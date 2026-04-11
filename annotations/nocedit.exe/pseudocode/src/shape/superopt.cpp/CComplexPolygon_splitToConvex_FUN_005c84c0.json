@@ -3,12 +3,6 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 13,
-        "line": 66,
-        "message": "no matching function for call to 'shape_superopt_cpp_CComplexPolygon_processEdgeSubLoops_FUN_005c91e0'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 16,
         "line": 72,
         "message": "assigning to 'SExpandedEdge *' from incompatible type 'void *'"
@@ -18,30 +12,6 @@
         "column": 18,
         "line": 77,
         "message": "assigning to 'SExpandedEdge *' from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 31,
-        "line": 149,
-        "message": "assigning to 'int *' from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 31,
-        "line": 164,
-        "message": "assigning to 'int *' from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 31,
-        "line": 234,
-        "message": "assigning to 'int *' from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 30,
-        "line": 253,
-        "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
     "success": false,
@@ -49,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 662,
-    "complexity_score": 441,
+    "complexity_score": 482,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 276,
-    "suspect_count": 16,
+    "pseudocode_lines": 277,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 938
+    "total_lines": 939
   },
   "cross_references": [
     {
@@ -427,6 +397,14 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 146,
+      "match": "(SExpandedEdge *)((int)",
+      "severity": "mild",
+      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 150,
       "match": "(SExpandedEdge *)((int)",
       "severity": "mild",
@@ -436,9 +414,9 @@
     {
       "description": "Complex pointer cast",
       "line": 151,
-      "match": "(int *)((int)",
+      "match": "(SExpandedEdge *)((int)",
       "severity": "mild",
-      "text": "piVar13 = (int *)((int)piVar13 + (uint)bVar10 * -2 + 1);",
+      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -447,6 +425,14 @@
       "match": "(SExpandedEdge *)((int)",
       "severity": "mild",
       "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 161,
+      "match": "(SExpandedEdge *)((int)",
+      "severity": "mild",
+      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -460,9 +446,9 @@
     {
       "description": "Complex pointer cast",
       "line": 166,
-      "match": "(int *)((int)",
+      "match": "(SExpandedEdge *)((int)",
       "severity": "mild",
-      "text": "piVar13 = (int *)((int)piVar13 + (uint)bVar10 * -2 + 1);",
+      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -491,6 +477,14 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 231,
+      "match": "(SExpandedEdge *)((int)",
+      "severity": "mild",
+      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 235,
       "match": "(SExpandedEdge *)((int)",
       "severity": "mild",
@@ -500,14 +494,14 @@
     {
       "description": "Complex pointer cast",
       "line": 236,
-      "match": "(int *)((int)",
+      "match": "(SExpandedEdge *)((int)",
       "severity": "mild",
-      "text": "piVar13 = (int *)((int)piVar13 + (uint)bVar10 * -2 + 1);",
+      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 249,
+      "line": 250,
       "match": "(SExpandedEdge *)((int)",
       "severity": "mild",
       "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -8 + 4);",
@@ -515,7 +509,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 253,
+      "line": 251,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar9 = (int *)((int)piVar9 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 254,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar9 = (int *)((int)piVar9 + (uint)bVar10 * -2 + 1);",
@@ -523,7 +525,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 255,
+      "line": 256,
       "match": "(SExpandedEdge *)((int)",
       "severity": "mild",
       "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -2 + 1);",

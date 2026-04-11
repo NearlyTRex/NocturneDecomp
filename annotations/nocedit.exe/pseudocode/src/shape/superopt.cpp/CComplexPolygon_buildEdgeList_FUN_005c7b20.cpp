@@ -21,7 +21,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20(CCompl
   if ((this_ptr->polygon_count != 0) && (this_ptr->polygon_list != (CPoly **)0x0)) {
     this_ptr->expanded_edge_count = this_ptr->polygon_count * 3;
     piVar3 = shape_memdbg_cpp_malloc_FUN_006021da(this_ptr->polygon_count * 0x120);
-    this_ptr->expanded_edges = piVar3;
+    this_ptr->expanded_edges = (SExpandedEdge *)piVar3;
     if (piVar3 != (int *)0x0) {
       local_14 = 0;
       pCVar1 = (*this_ptr->polygon_list)->parent_obj->vertex_data;

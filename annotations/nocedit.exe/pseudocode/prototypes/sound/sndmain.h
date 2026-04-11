@@ -17,7 +17,7 @@ void __cdecl computeFFT(float *input,int size,float *output_real,float *output_i
 
 // Original: sound_sndmain.cpp_parseWavFile_FUN_005a3fe0
 // Address: 005a3fe0
-int __cdecl parseWavFile(_FILE *file_handle,long *file_offset_ptr,CSfxSample *sfx_sample);
+int __cdecl parseWavFile(_FILE *file_handle,int *file_offset_ptr,CSfxSample *sfx_sample);
 
 // Original: sound_sndmain.cpp_getActiveSfxCount_FUN_005a43a0
 // Address: 005a43a0

@@ -117,8 +117,8 @@ double __cdecl shape_design_c_calculateSamplingWeight_FUN_0046adc0(double curren
 void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20(void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,double coord_x1 ,double coord_y1,double coord_x2,double coord_y2,uchar *red_out,uchar *green_out, uchar *blue_out,uchar *alpha_out);
 void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *entry,uchar *rgb_buffer,uchar *alpha_buffer,int pixel_depth, int atlas_total_width,int atlas_total_height);
 void __cdecl shape_design_c_initializeCram_FUN_0046b6e0(SCram *cram);
-void __cdecl shape_design_c_quantizePaletteColors_FUN_0046b770(byte *image_data,int pixel_count,int stride,byte *palette_data,int mode_flag, char *bit_mask);
-void __cdecl shape_design_c_embedCopyrightWatermark_FUN_0046b9a0(void *image_buffer,char *output_filename,int texture_size);
+void __cdecl shape_design_c_quantizePaletteColors_FUN_0046b770(byte *image_data,int pixel_count,int stride,int row_step,char *palette_data, char *bit_mask);
+void __cdecl shape_design_c_embedCopyrightWatermark_FUN_0046b9a0(void *image_buffer,char *palette_data,int texture_size);
 int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCram *cram);
 int __cdecl shape_design_c_findTextureByFilename_FUN_0046dfc0(char *filename);
 int __cdecl shape_design_c_getAtlasMapIndex_FUN_0046e030(int texture_entry_index);

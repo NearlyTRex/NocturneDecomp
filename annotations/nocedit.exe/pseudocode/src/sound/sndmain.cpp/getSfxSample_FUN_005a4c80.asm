@@ -225,7 +225,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x108]     ; 005a4e40
     PUSH EDX                            ; 005a4e47
     CALL sound_sndmain.cpp_parseWavFile_FUN_005a3fe0 ; 005a4e48
-        ;   XREF to: 005a3fe0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_parseWavFile_FUN_005a3fe0(_FILE * file_handle, long * file_offset_ptr, CSfxSample * sfx_sample)
+        ;   XREF to: 005a3fe0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_parseWavFile_FUN_005a3fe0(_FILE * file_handle, int * file_offset_ptr, CSfxSample * sfx_sample)
     ADD ESP,0xc                         ; 005a4e4d
     TEST EAX,EAX                        ; 005a4e50
     JZ 0x005a4ef8                       ; 005a4e52

@@ -17,7 +17,7 @@ void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFil
   int iVar5;
   int record_index;
   _FILE *file;
-  uint *puVar6;
+  CPodAuditRecord *pCVar6;
   uint *puVar5;
   char *pcVar6;
   char *pcVar7;
@@ -32,7 +32,7 @@ void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFil
   uint local_58c;
   uint local_474 [10];
   char local_44c [272];
-  uint local_33c [78];
+  CPodAuditRecord local_33c;
   char local_204 [256];
   char local_104 [100];
   byte local_a0 [92];
@@ -88,24 +88,24 @@ LAB_004bd3c3:
     record_index = 0;
     if (0 < local_9d8.audit_count) {
       do {
-        engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(&local_9d8,record_index,local_33c);
-        puVar6 = local_33c;
+        engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(&local_9d8,record_index,&local_33c);
+        pCVar6 = &local_33c;
         puVar9 = local_5ac;
         for (iVar4 = 0x4e; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *puVar9 = *puVar6;
-          puVar6 = puVar6 + (uint)bVar10 * -2 + 1;
+          *puVar9 = *(uint *)pCVar6->user_path;
+          pCVar6 = (CPodAuditRecord *)((int)pCVar6 + ((uint)bVar10 * -2 + 1) * 4);
           puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
         }
         if (local_58c < (uint)cutoff_timestamp) {
           iVar3 = iVar3 + 1;
         }
         else {
-          puVar6 = local_33c;
+          pCVar6 = &local_33c;
           puVar7 = local_474;
           for (iVar5 = 0x4e; iVar5 != 0; iVar5 = iVar5 + -1) {
             puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
-            *puVar7 = *puVar6;
-            puVar6 = puVar6 + (uint)bVar10 * -2 + 1;
+            *puVar7 = *(uint *)pCVar6->user_path;
+            pCVar6 = (CPodAuditRecord *)((int)pCVar6 + ((uint)bVar10 * -2 + 1) * 4);
             puVar7 = puVar7;
           }
           g_AuditRecordCount = g_AuditRecordCount + 1;

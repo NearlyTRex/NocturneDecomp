@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_ini_cpp_getProfileInteger_FUN_004fb9a0(char *section,char *key,char *default_value,char *filename)
+; int __cdecl engine_ini_cpp_getProfileInteger_FUN_004fb9a0(char *section,char *key,int default_value,char *filename)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   section
 ; char *           Stack[0x8]:4   key
-; char *           Stack[0xc]:4   default_value
+; int              Stack[0xc]:4   default_value
 ; char *           Stack[0x10]:4   filename
 ; Local Variables:
 ; char[256]        Stack[-0x20c]:256  local_20c

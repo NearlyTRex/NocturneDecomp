@@ -292,7 +292,7 @@ section .text
     PUSH EAX                            ; 004b5c36
     LEA ESI,[ESP + 0x1340]              ; 004b5c37
     CALL engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590 ; 004b5c3e
-        ;   XREF to: 00550590 (UNCONDITIONAL_CALL)  ; void * engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile * this_ptr, int record_index, void * output_buffer)
+        ;   XREF to: 00550590 (UNCONDITIONAL_CALL)  ; CPodAuditRecord * engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile * this_ptr, int record_index, CPodAuditRecord * out_record)
     MOV EBP,dword ptr [0x02d12d30]      ; 004b5c43 | g_AuditRecordCount
     INC EBP                             ; 004b5c49
     MOV dword ptr [0x02d12d30],EBP      ; 004b5c4a | g_AuditRecordCount

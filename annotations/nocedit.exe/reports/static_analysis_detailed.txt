@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang-Tidy (quick) (969 diagnostics)
+Clang-Tidy (quick) (1018 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-bugprone-assignment-in-if-condition (493)
+bugprone-assignment-in-if-condition (512)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_ line 102
@@ -1968,6 +1968,26 @@ bugprone-assignment-in-if-condition (493)
     File: engine/fileio.cpp
     an assignment within an 'if' condition is bug-prone
 
+  engine_fileio.cpp_CFileManager_managePodFiles_FUN_ line 105
+    File: engine/fileio.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  engine_fileio.cpp_CFileManager_managePodFiles_FUN_ line 276
+    File: engine/fileio.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  engine_fileio.cpp_CFileManager_managePodFiles_FUN_ line 598
+    File: engine/fileio.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  engine_fileio.cpp_CFileManager_managePodFiles_FUN_ line 643
+    File: engine/fileio.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  engine_fileio.cpp_CFileManager_managePodFiles_FUN_ line 713
+    File: engine/fileio.cpp
+    an assignment within an 'if' condition is bug-prone
+
   engine_fileio.cpp_CFileManager_processMRGLNode_FUN line 39
     File: engine/fileio.cpp
     an assignment within an 'if' condition is bug-prone
@@ -1980,12 +2000,68 @@ bugprone-assignment-in-if-condition (493)
     File: engine/fileio.cpp
     an assignment within an 'if' condition is bug-prone
 
+  engine_prim.c_renderIndexedPolygonSoftware_FUN_005 line 190
+    File: engine/prim.c
+    an assignment within an 'if' condition is bug-prone
+
+  engine_prim.c_renderIndexedPolygonSoftware_FUN_005 line 191
+    File: engine/prim.c
+    an assignment within an 'if' condition is bug-prone
+
+  engine_prim.c_renderPolygonSoftware_FUN_00552510   line 37
+    File: engine/prim.c
+    an assignment within an 'if' condition is bug-prone
+
+  engine_prim.c_renderPolygonSoftware_FUN_00552510   line 37
+    File: engine/prim.c
+    an assignment within an 'if' condition is bug-prone
+
+  engine_prim.c_renderPolygonSoftware_FUN_00552510   line 199
+    File: engine/prim.c
+    an assignment within an 'if' condition is bug-prone
+
+  engine_prim.c_renderPolygonSoftware_FUN_00552510   line 200
+    File: engine/prim.c
+    an assignment within an 'if' condition is bug-prone
+
+  engine_prim.c_renderScanlinePolygon_FUN_00553470   line 36
+    File: engine/prim.c
+    an assignment within an 'if' condition is bug-prone
+
+  engine_prim.c_renderScanlinePolygon_FUN_00553470   line 36
+    File: engine/prim.c
+    an assignment within an 'if' condition is bug-prone
+
+  shape_design.c_configureSinglePassPolygonReduction line 77
+    File: shape/design.c
+    an assignment within an 'if' condition is bug-prone
+
+  shape_design.c_configureSinglePassPolygonReduction line 80
+    File: shape/design.c
+    an assignment within an 'if' condition is bug-prone
+
+  shape_design.c_configureSinglePassPolygonReduction line 83
+    File: shape/design.c
+    an assignment within an 'if' condition is bug-prone
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 262
+    File: shape/design.c
+    an assignment within an 'if' condition is bug-prone
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 541
+    File: shape/design.c
+    an assignment within an 'if' condition is bug-prone
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 660
+    File: shape/design.c
+    an assignment within an 'if' condition is bug-prone
+
   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0 line 77
     File: sound/sndmain.cpp
     an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
-bugprone-incorrect-roundings (208)
+bugprone-incorrect-roundings (220)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 173
@@ -2788,6 +2864,54 @@ bugprone-incorrect-roundings (208)
     File: engine/colquant.c
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
+  engine_model.c_getMRGLBounds_FUN_00528140          line 148
+    File: engine/model.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 148
+    File: engine/model.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 150
+    File: engine/model.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 150
+    File: engine/model.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 152
+    File: engine/model.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 152
+    File: engine/model.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 170
+    File: engine/model.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 170
+    File: engine/model.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 178
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 178
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 183
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 183
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
   shape_design.c_writeSpatialTree_FUN_0045a200       line 22
     File: shape/design.c
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
@@ -2821,7 +2945,7 @@ bugprone-incorrect-roundings (208)
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
 ----------------------------------------------------------------------------------------------------
-cert-err33-c (132)
+cert-err33-c (134)
 ----------------------------------------------------------------------------------------------------
 
   core_event.cpp_CEventList_executeCommand_FUN_004aa line 256
@@ -3352,8 +3476,16 @@ cert-err33-c (132)
     File: engine/fileio.cpp
     the value returned by this function should not be disregarded; neglecting it may lead to errors
 
+  engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0      line 17
+    File: engine/ini.cpp
+    the value returned by this function should not be disregarded; neglecting it may lead to errors
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 1013
+    File: shape/design.c
+    the value returned by this function should not be disregarded; neglecting it may lead to errors
+
 ----------------------------------------------------------------------------------------------------
-cert-err34-c (63)
+cert-err34-c (74)
 ----------------------------------------------------------------------------------------------------
 
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 820
@@ -3584,6 +3716,50 @@ cert-err34-c (63)
     File: core/texlist.cpp
     'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
 
+  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 211
+    File: engine/fileio.cpp
+    'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+  engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0      line 17
+    File: engine/ini.cpp
+    'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 213
+    File: shape/design.c
+    'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 256
+    File: shape/design.c
+    'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 282
+    File: shape/design.c
+    'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 307
+    File: shape/design.c
+    'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 354
+    File: shape/design.c
+    'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 369
+    File: shape/design.c
+    'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+  shape_design.c_createPolygonFromVertexList_FUN_004 line 35
+    File: shape/design.c
+    'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+  shape_design.c_createRotationalSweepGeometry_FUN_0 line 43
+    File: shape/design.c
+    'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+  shape_design.c_createRotationalSweepGeometry_FUN_0 line 47
+    File: shape/design.c
+    'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
   shape_edittool.cpp_CEditorTools_promptForValidDoub line 39
     File: shape/edittool.cpp
     'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtod' instead
@@ -3609,7 +3785,7 @@ cert-err34-c (63)
     'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
 
 ----------------------------------------------------------------------------------------------------
-bugprone-switch-missing-default-case (53)
+bugprone-switch-missing-default-case (56)
 ----------------------------------------------------------------------------------------------------
 
   core_baron.cpp_CBaron_process_FUN_00412e80         line 102
@@ -3824,6 +4000,18 @@ bugprone-switch-missing-default-case (53)
     File: engine/clipper.c
     switching on non-enum value without default case may not cover all cases
 
+  engine_prim.c_renderIndexedPolygonAdvanced_FUN_005 line 76
+    File: engine/prim.c
+    switching on non-enum value without default case may not cover all cases
+
+  engine_prim.c_renderPolygonSoftware_FUN_00552510   line 91
+    File: engine/prim.c
+    switching on non-enum value without default case may not cover all cases
+
+  engine_prim.c_renderScanlinePolygon_FUN_00553470   line 89
+    File: engine/prim.c
+    switching on non-enum value without default case may not cover all cases
+
 ----------------------------------------------------------------------------------------------------
 cert-msc30-c (4)
 ----------------------------------------------------------------------------------------------------
@@ -3881,6 +4069,22 @@ bugprone-multi-level-implicit-pointer-conversion (3)
     multilevel pointer conversion from 'void **' to 'void *', please use explicit cast
 
 ----------------------------------------------------------------------------------------------------
+bugprone-chained-comparison (3)
+----------------------------------------------------------------------------------------------------
+
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1606
+    File: core/skeledit.cpp
+    chained comparison 'v0 != v1 < v2' may generate unintended results, use parentheses to specify order of evaluation or a logical operator to separate comparison expressions
+
+  engine_prim.c_renderIndexedPolygonSoftware_FUN_005 line 194
+    File: engine/prim.c
+    chained comparison 'v0 != v1 < v2' may generate unintended results, use parentheses to specify order of evaluation or a logical operator to separate comparison expressions
+
+  engine_prim.c_renderPolygonSoftware_FUN_00552510   line 203
+    File: engine/prim.c
+    chained comparison 'v0 != v1 < v2' may generate unintended results, use parentheses to specify order of evaluation or a logical operator to separate comparison expressions
+
+----------------------------------------------------------------------------------------------------
 cert-flp30-c (3)
 ----------------------------------------------------------------------------------------------------
 
@@ -3903,14 +4107,6 @@ cert-env33-c (1)
   core_script.cpp_CScript_loadScript_FUN_00559f80    line 153
     File: core/script.cpp
     calling 'system' uses a command processor
-
-----------------------------------------------------------------------------------------------------
-bugprone-chained-comparison (1)
-----------------------------------------------------------------------------------------------------
-
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1606
-    File: core/skeledit.cpp
-    chained comparison 'v0 != v1 < v2' may generate unintended results, use parentheses to specify order of evaluation or a logical operator to separate comparison expressions
 
 ----------------------------------------------------------------------------------------------------
 bugprone-swapped-arguments (1)
@@ -3945,11 +4141,11 @@ cert-dcl50-cpp (1)
     do not define a C-style variadic function; consider using a function parameter pack or currying instead
 
 ====================================================================================================
-Cppcheck (quick) (280 diagnostics)
+Cppcheck (quick) (302 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (95)
+selfAssignment (106)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 170
@@ -4308,6 +4504,30 @@ selfAssignment (95)
     File: engine/fileio.cpp
     Redundant assignment of 'pcVar10' to itself.
 
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 186
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar15' to itself.
+
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 541
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar13' to itself.
+
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 542
+    File: engine/fileio.cpp
+    Redundant assignment of 'pCVar18' to itself.
+
+  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 110
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar7' to itself.
+
+  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 129
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar5' to itself.
+
+  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 130
+    File: engine/fileio.cpp
+    Redundant assignment of 'pCVar8' to itself.
+
   engine_fileio.cpp_getLatestFileFromRepository_FUN_ line 41
     File: engine/fileio.cpp
     Redundant assignment of 'pcVar6' to itself.
@@ -4315,6 +4535,26 @@ selfAssignment (95)
   engine_fileio.cpp_getLatestFileFromRepository_FUN_ line 46
     File: engine/fileio.cpp
     Redundant assignment of 'pcVar6' to itself.
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 179
+    File: engine/model.c
+    Redundant assignment of 'puVar11' to itself.
+
+  shape_design.c_configureSinglePassPolygonReduction line 103
+    File: shape/design.c
+    Redundant assignment of 'pbVar4' to itself.
+
+  shape_design.c_configureSinglePassPolygonReduction line 108
+    File: shape/design.c
+    Redundant assignment of 'pbVar4' to itself.
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 710
+    File: shape/design.c
+    Redundant assignment of 'pcVar10' to itself.
+
+  shape_design.c_cramTextureList_FUN_0046bb80        line 715
+    File: shape/design.c
+    Redundant assignment of 'pcVar10' to itself.
 
   shape_design.c_showPolygonDetailsList_FUN_0045d9c0 line 55
     File: shape/design.c
@@ -4333,7 +4573,7 @@ selfAssignment (95)
     Redundant assignment of 'pcVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (44)
+uninitvar (48)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 71
@@ -4511,6 +4751,22 @@ uninitvar (44)
   core_xform.cpp_transformAndClipGeometry_FUN_005f85 line 259
     File: core/xform.cpp
     Uninitialized variable: extraout_EAX_06
+
+  engine_font.cpp_CBitFont_parseCharacterMetrics_FUN line 99
+    File: engine/font.cpp
+    Uninitialized variable: local_28
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 178
+    File: engine/model.c
+    Uninitialized variable: *puVar11
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 182
+    File: engine/model.c
+    Uninitialized variable: local_34
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 182
+    File: engine/model.c
+    Uninitialized variable: local_110
 
 ----------------------------------------------------------------------------------------------------
 invalidscanf (40)
@@ -4825,7 +5081,7 @@ legacyUninitvar (36)
     Uninitialized variable: local_b0
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (24)
+shiftTooManyBitsSigned (30)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_ line 61
@@ -4922,6 +5178,30 @@ shiftTooManyBitsSigned (24)
 
   engine_colquant.c_computeBoxStatistics_FUN_0044126 line 95
     File: engine/colquant.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 154
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 155
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 159
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 160
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 164
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 165
+    File: engine/model.c
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
@@ -5049,6 +5329,26 @@ nullPointer (5)
     Possible null pointer dereference: pcVar11
 
 ----------------------------------------------------------------------------------------------------
+nullPointerRedundantCheck (4)
+----------------------------------------------------------------------------------------------------
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 96
+    File: core/actor.cpp
+    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 97
+    File: core/actor.cpp
+    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 98
+    File: core/actor.cpp
+    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  engine_prim.c_renderScanlinePolygon_FUN_00553470   line 259
+    File: engine/prim.c
+    Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
+
+----------------------------------------------------------------------------------------------------
 shiftNegativeLHS (3)
 ----------------------------------------------------------------------------------------------------
 
@@ -5063,22 +5363,6 @@ shiftNegativeLHS (3)
   support_codec.cpp_readBitsFromStream_FUN_0043e530  line 61
     File: support/codec.cpp
     Shifting a negative value is technically undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-nullPointerRedundantCheck (3)
-----------------------------------------------------------------------------------------------------
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 96
-    File: core/actor.cpp
-    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 97
-    File: core/actor.cpp
-    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 98
-    File: core/actor.cpp
-    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
 ----------------------------------------------------------------------------------------------------
 arrayIndexOutOfBounds (3)

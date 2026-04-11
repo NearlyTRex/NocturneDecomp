@@ -2,6 +2,7 @@
 
 // Forward declarations
 struct CPoly;
+struct SExpandedEdge;
 
 // Dependencies
 #include "system/basetypes.h"
@@ -17,6 +18,6 @@ typedef struct CComplexPolygon {
     int material_id; // 0x10
     CVector3d normal; // 0x14
     int expanded_edge_count; // 0x2c
-    void* expanded_edges; // 0x30
+    struct SExpandedEdge* expanded_edges; // 0x30
 } CComplexPolygon;
 

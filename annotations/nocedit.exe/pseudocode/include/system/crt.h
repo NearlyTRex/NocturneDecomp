@@ -130,7 +130,7 @@ struct _tm;  // Forward declaration
 
 extern time_t _mktime(_tm* t);
 extern _tm* _localtime(const void* timer);
-extern time_t _time(int* timer);
+extern time_t _time(time_t* timer);
 extern char* _asctime(_tm* timeptr);
 extern size_t _strftime(char* dest_buffer, size_t buffer_size, const char* format_string, _tm* time_ptr);
 

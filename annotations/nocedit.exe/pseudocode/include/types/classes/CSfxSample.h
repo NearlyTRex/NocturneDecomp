@@ -12,7 +12,7 @@ struct _FILE;
 // Ghidra size: 0x180 (384 bytes)
 typedef struct CSfxSample {
     CSampleInfo sample_info; // 0x0
-    void* sample_data; // 0x120
+    short* sample_data; // 0x120
     int loop_marker_count; // 0x124
     int loop_endpoints[5]; // 0x128
     int loop_destinations[5]; // 0x13c

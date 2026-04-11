@@ -25,11 +25,11 @@ CDemonActorType g_CMeleeClassInfo = {};
 CMatrix3x3i g_InverseMatrix = {};
 CMatrix3x3i g_TransformMatrixCopy = {};
 
-// FileTrackingEntry[100]
-FileTrackingEntry g_FileRegistry[100] = {};
-
 // HANDLE
 HANDLE g_FileMutex = {};
+
+// SFileTrackingEntry[100]
+SFileTrackingEntry g_FileRegistry[100] = {};
 
 // SMemHead*
 SMemHead* g_MemoryListHead = {};

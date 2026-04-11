@@ -166,8 +166,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
             if (0 < local_a8) {
               local_20 = 0;
               do {
-                local_7c[2] = (float)(int)(*(byte *)((int)this_ptr->sample->sample_data +
-                                                    (int)ROUND(ROUND(local_c0)) * 2) - 0x80);
+                local_7c[2] = (float)(int)(*(byte *)(this_ptr->sample->sample_data +
+                                                    (int)ROUND(ROUND(local_c0))) - 0x80);
                 local_7c[3] = (float)(int)(*(byte *)((int)this_ptr->sample->sample_data +
                                                     (int)ROUND(ROUND(local_c0)) * 2 + 1) - 0x80);
                 uVar11 = 0;
@@ -219,10 +219,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
           else if (0 < local_a8) {
             local_24 = 0;
             do {
-              local_7c[0] = (float)*(short *)((int)this_ptr->sample->sample_data +
-                                             (int)ROUND(ROUND(local_c0)) * 4);
-              local_7c[1] = (float)*(short *)((int)this_ptr->sample->sample_data +
-                                             (int)ROUND(ROUND(local_c0)) * 4 + 2);
+              local_7c[0] = (float)this_ptr->sample->sample_data[(int)ROUND(ROUND(local_c0)) * 2];
+              local_7c[1] = (float)this_ptr->sample->sample_data
+                                   [(int)ROUND(ROUND(local_c0)) * 2 + 1];
               uVar11 = 0;
               pCVar13 = this_ptr;
               if (0 < mix_buffer.num_channels) {
@@ -250,8 +249,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot *this_ptr,SMix
         else if (0 < local_a8) {
           iVar12 = 0;
           do {
-            sVar2 = *(short *)((int)this_ptr->sample->sample_data + (int)ROUND(ROUND(local_c0)) * 2)
-            ;
+            sVar2 = this_ptr->sample->sample_data[(int)ROUND(ROUND(local_c0))];
             iVar14 = 0;
             pCVar13 = this_ptr;
             if (0 < mix_buffer.num_channels) {

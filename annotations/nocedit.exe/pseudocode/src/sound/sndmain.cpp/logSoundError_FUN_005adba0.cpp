@@ -18,7 +18,7 @@ void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
   char local_528 [1024];
   SSoundDeviceInfo local_128;
   va_list_t local_10;
-  int local_c;
+  time_t local_c;
   SSoundDeviceInfo *device_info;
   
   VA_START_T(local_10, format);

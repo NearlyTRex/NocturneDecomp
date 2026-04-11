@@ -1,32 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 46,
-        "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'"
-      },
-      {
-        "category": "format_error",
-        "column": 74,
-        "line": 60,
-        "message": "format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror,-Wformat]"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 66,
-        "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'"
-      },
-      {
-        "category": "format_error",
-        "column": 24,
-        "line": 122,
-        "message": "format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -351,6 +326,23 @@
         "type": "int"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CBitFont_parseCharacterMetrics_FUN_004cd550.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 39,
+          "line": 99,
+          "message": "Uninitialized variable: local_28",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

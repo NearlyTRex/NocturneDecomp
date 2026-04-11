@@ -10,7 +10,7 @@ void * __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_p
 
 {
   int iVar1;
-  void *pvVar2;
+  short *psVar2;
   
   if (this_ptr->locked_length != 0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -23,24 +23,24 @@ void * __cdecl sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(CSfxSample *this_p
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::lock - invalid region");
   }
   if (this_ptr->buffer_id == 0) {
-    if (this_ptr->sample_data == (void *)0x0) {
+    if (this_ptr->sample_data == (short *)0x0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x75f;
       core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::lock - nothing allocated!");
     }
     iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
-    pvVar2 = (void *)(iVar1 * lock_offset + (int)this_ptr->sample_data);
+    psVar2 = (short *)(iVar1 * lock_offset + (int)this_ptr->sample_data);
   }
   else {
     if (g_CSoundDevicePtr == (CSoundDevice *)0x0) {
       return (void *)0x0;
     }
-    pvVar2 = (void *)(*g_CSoundDevicePtr->vtable->lockSample)
-                               (g_CSoundDevicePtr,this_ptr->buffer_id,lock_offset,lock_length);
+    psVar2 = (short *)(*g_CSoundDevicePtr->vtable->lockSample)
+                                (g_CSoundDevicePtr,this_ptr->buffer_id,lock_offset,lock_length);
   }
-  if (pvVar2 != (void *)0x0) {
+  if (psVar2 != (short *)0x0) {
     this_ptr->locked_length = lock_length;
     this_ptr->locked_offset = lock_offset;
   }
-  return pvVar2;
+  return psVar2;
 }

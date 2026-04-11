@@ -109,7 +109,7 @@ int __cdecl CComplexPolygon::getMaterialId(CComplexPolygon *this_ptr);
 
 // Original: shape_superopt.cpp_CComplexPolygon_getExpandedEdges_FUN_005cbf10
 // Address: 005cbf10
-void * __cdecl CComplexPolygon::getExpandedEdges(CComplexPolygon *this_ptr);
+SExpandedEdge * __cdecl CComplexPolygon::getExpandedEdges(CComplexPolygon *this_ptr);
 
 // Original: shape_superopt.cpp_CComplexPolygon_isEdgeChainClosed_FUN_005cbf20
 // Address: 005cbf20

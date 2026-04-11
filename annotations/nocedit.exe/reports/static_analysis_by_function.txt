@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 191
-  Total diagnostics: 1249
-  Functions flagged by multiple tools: 53
-  .keep.cpp files: 191, raw .cpp files: 0
+  Functions with findings: 205
+  Total diagnostics: 1320
+  Functions flagged by multiple tools: 58
+  .keep.cpp files: 205, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -536,6 +536,29 @@ core_werewolf.cpp_CWerewolf_process_FUN_005efde0  [.keep] [Clang-Tidy (quick)]
   Line  695: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
+engine_model.c_getMRGLBounds_FUN_00528140  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: engine/model.c  (18 diagnostics)
+
+  Line  148: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  148: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  150: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  150: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  152: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  152: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  154: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  155: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  159: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  160: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  164: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  165: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  170: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  170: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  178: [uninitvar] Uninitialized variable: *puVar11
+  Line  179: [selfAssignment] Redundant assignment of 'puVar11' to itself.
+  Line  182: [uninitvar] Uninitialized variable: local_34
+  Line  182: [uninitvar] Uninitialized variable: local_110
+
+----------------------------------------------------------------------------------------------------
 core_imp.cpp_CImp_process_FUN_004f9c30  [.keep] [Clang-Tidy (quick)]
   File: core/imp.cpp  (17 diagnostics)
 
@@ -619,6 +642,27 @@ core_inv.cpp_getItemModel_FUN_004fcda0  [.keep] [Clang-Tidy (quick)]
   Line   33: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
   Line   34: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
   Line   35: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_cramTextureList_FUN_0046bb80  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: shape/design.c  (16 diagnostics)
+
+  Line  178: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  178: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  183: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  183: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  213: [cert-err34-c] 'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line  256: [cert-err34-c] 'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line  262: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  282: [cert-err34-c] 'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line  307: [cert-err34-c] 'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line  354: [cert-err34-c] 'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line  369: [cert-err34-c] 'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line  541: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  660: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  710: [selfAssignment] Redundant assignment of 'pcVar10' to itself.
+  Line  715: [selfAssignment] Redundant assignment of 'pcVar10' to itself.
+  Line 1013: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
 
 ----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0  [.keep] [Cppcheck (quick)]
@@ -1303,6 +1347,17 @@ engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0  [.keep] [Clang-Tidy (qui
   Line  414: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
 
 ----------------------------------------------------------------------------------------------------
+engine_prim.c_renderPolygonSoftware_FUN_00552510  [.keep] [Clang-Tidy (quick)]
+  File: engine/prim.c  (6 diagnostics)
+
+  Line   37: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   37: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   91: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  199: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  200: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  203: [bugprone-chained-comparison] chained comparison 'v0 != v1 < v2' may generate unintended results, use parentheses to specify order of evaluation or a logical operator to separate comparison expressions
+
+----------------------------------------------------------------------------------------------------
 core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70  [.keep] [Clang-Tidy (quick)]
   File: core/charactr.cpp  (5 diagnostics)
 
@@ -1383,6 +1438,16 @@ core_zombie.cpp_CZombie_processPickup_FUN_005fb530  [.keep] [Clang-Tidy (quick)]
   Line  162: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0  [.keep] [Clang-Tidy (quick)]
+  File: engine/fileio.cpp  (5 diagnostics)
+
+  Line  105: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  276: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  598: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  643: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  713: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
   File: engine/fileio.cpp  (5 diagnostics)
 
@@ -1391,6 +1456,16 @@ engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220  [.keep] [Clang-Tidy 
   Line   76: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
   Line  102: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
   Line  143: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_configureSinglePassPolygonReduction_FUN_00465560  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: shape/design.c  (5 diagnostics)
+
+  Line   77: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   80: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   83: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  103: [selfAssignment] Redundant assignment of 'pbVar4' to itself.
+  Line  108: [selfAssignment] Redundant assignment of 'pbVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0  [.keep] [Clang-Tidy (quick)]
@@ -1508,6 +1583,24 @@ core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0  [.keep] [Clang-Tidy (quick)]
   Line   64: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
   Line   95: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
   Line  140: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: engine/fileio.cpp  (4 diagnostics)
+
+  Line  110: [selfAssignment] Redundant assignment of 'puVar7' to itself.
+  Line  129: [selfAssignment] Redundant assignment of 'puVar5' to itself.
+  Line  130: [selfAssignment] Redundant assignment of 'pCVar8' to itself.
+  Line  211: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+----------------------------------------------------------------------------------------------------
+engine_prim.c_renderScanlinePolygon_FUN_00553470  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: engine/prim.c  (4 diagnostics)
+
+  Line   36: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   36: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   89: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+  Line  259: [nullPointerRedundantCheck] Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_showPolygonDetailsList_FUN_0045d9c0  [.keep] [Cppcheck (quick)]
@@ -1661,6 +1754,22 @@ engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740  [.keep] [Clan
   Line  133: [selfAssignment] Redundant assignment of 'pcVar10' to itself.
   Line  138: [selfAssignment] Redundant assignment of 'pcVar10' to itself.
   Line  235: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50  [.keep] [Cppcheck (quick)]
+  File: engine/fileio.cpp  (3 diagnostics)
+
+  Line  186: [selfAssignment] Redundant assignment of 'puVar15' to itself.
+  Line  541: [selfAssignment] Redundant assignment of 'puVar13' to itself.
+  Line  542: [selfAssignment] Redundant assignment of 'pCVar18' to itself.
+
+----------------------------------------------------------------------------------------------------
+engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40  [.keep] [Clang-Tidy (quick)]
+  File: engine/prim.c  (3 diagnostics)
+
+  Line  190: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  191: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  194: [bugprone-chained-comparison] chained comparison 'v0 != v1 < v2' may generate unintended results, use parentheses to specify order of evaluation or a logical operator to separate comparison expressions
 
 ----------------------------------------------------------------------------------------------------
 support_codec.cpp_readBitsFromStream_FUN_0043e530  [.keep] [Cppcheck (quick)]
@@ -2007,6 +2116,20 @@ engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030  [.keep] [Cppche
   Line   54: [selfAssignment] Redundant assignment of 'pcVar6' to itself.
 
 ----------------------------------------------------------------------------------------------------
+engine_ini.cpp_CIniFile_getFloat_FUN_004fbcd0  [.keep] [Clang-Tidy (quick)]
+  File: engine/ini.cpp  (2 diagnostics)
+
+  Line   17: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+  Line   17: [cert-err34-c] 'sscanf' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtof' instead
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_createRotationalSweepGeometry_FUN_0045e070  [.keep] [Clang-Tidy (quick)]
+  File: shape/design.c  (2 diagnostics)
+
+  Line   43: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+  Line   47: [cert-err34-c] 'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+----------------------------------------------------------------------------------------------------
 cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70  [.keep] [Cppcheck (quick)]
   File: cockpit/pkbitmap.cpp  (1 diagnostics)
 
@@ -2209,6 +2332,24 @@ engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0  [.keep] [Clang-Tidy
   File: engine/fileio.cpp  (1 diagnostics)
 
   Line   39: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550  [.keep] [Cppcheck (quick)]
+  File: engine/font.cpp  (1 diagnostics)
+
+  Line   99: [uninitvar] Uninitialized variable: local_28
+
+----------------------------------------------------------------------------------------------------
+engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10  [.keep] [Clang-Tidy (quick)]
+  File: engine/prim.c  (1 diagnostics)
+
+  Line   76: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_createPolygonFromVertexList_FUN_0045cc80  [.keep] [Clang-Tidy (quick)]
+  File: shape/design.c  (1 diagnostics)
+
+  Line   35: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
 
 ----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0  [.keep] [Clang-Tidy (quick)]

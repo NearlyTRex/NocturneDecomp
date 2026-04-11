@@ -275,7 +275,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x174]     ; 005a5482
     PUSH EDI                            ; 005a5488
     CALL sound_sndmain.cpp_parseWavFile_FUN_005a3fe0 ; 005a5489
-        ;   XREF to: 005a3fe0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_parseWavFile_FUN_005a3fe0(_FILE * file_handle, long * file_offset_ptr, CSfxSample * sfx_sample)
+        ;   XREF to: 005a3fe0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_parseWavFile_FUN_005a3fe0(_FILE * file_handle, int * file_offset_ptr, CSfxSample * sfx_sample)
     ADD ESP,0xc                         ; 005a548e
     TEST EAX,EAX                        ; 005a5491
     JZ 0x005a5505                       ; 005a5493

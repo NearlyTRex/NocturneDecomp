@@ -9,7 +9,7 @@
 ; char[1024]       Stack[-0x528]:1024  local_528
 ; SSoundDeviceInfo Stack[-0x128]:280  local_128
 ; va_list_t        Stack[-0x10]:4  local_10
-; int              Stack[-0xc]:4  local_c
+; time_t           Stack[-0xc]:4  local_c
 ;
 ; XREF[39]:
 ;   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40 at 005af112

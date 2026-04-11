@@ -11,6 +11,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonPod.h"
 #include "types/classes/CPod.h"
+#include "types/classes/CPodAuditRecord.h"
 #include "types/classes/CPodDependencyRecord.h"
 #include "types/classes/CPodFile.h"
 #include "types/classes/CPodSearchContext.h"
@@ -34,7 +35,7 @@ void __cdecl engine_pod_cpp_CPodFile_cleanup_FUN_00550090(CPodFile *this_ptr);
 int __cdecl engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140(CPodFile *this_ptr,char *filename);
 void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_005501b0(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
 int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile *this_ptr);
-void * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590 (CPodFile *this_ptr,int record_index,void *output_buffer);
+CPodAuditRecord * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590 (CPodFile *this_ptr,int record_index,CPodAuditRecord *out_record);
 CPodDependencyRecord * __stack2_esi engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0 (CPodFile *this_ptr,int dependency_index,CPodDependencyRecord *output_record);
 uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_005507f0(CPodFile *this_ptr,int file_index);
 CPod * __cdecl engine_pod_cpp_CPod_ctor_FUN_00550980(CPod *this_ptr);

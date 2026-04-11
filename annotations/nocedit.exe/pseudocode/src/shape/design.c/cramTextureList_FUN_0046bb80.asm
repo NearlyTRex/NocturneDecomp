@@ -2925,7 +2925,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x14]     ; 0046dab1
     PUSH EAX                            ; 0046dab4
     CALL shape_design.c_embedCopyrightWatermark_FUN_0046b9a0 ; 0046dab5
-        ;   XREF to: 0046b9a0 (UNCONDITIONAL_CALL)  ; void shape_design.c_embedCopyrightWatermark_FUN_0046b9a0(void * image_buffer, char * output_filename, int texture_size)
+        ;   XREF to: 0046b9a0 (UNCONDITIONAL_CALL)  ; void shape_design.c_embedCopyrightWatermark_FUN_0046b9a0(void * image_buffer, char * palette_data, int texture_size)
     ADD ESP,0xc                         ; 0046daba
     MOV EAX,0x61dbc8                    ; 0046dabd | = "wb"
     PUSH EAX                            ; 0046dac2 | = "wb"

@@ -2850,7 +2850,7 @@ def generate_crt_header(functions_to_process):
     lines.append("")
     lines.append("extern time_t _mktime(_tm* t);")
     lines.append("extern _tm* _localtime(const void* timer);")
-    lines.append("extern time_t _time(int* timer);")
+    lines.append("extern time_t _time(time_t* timer);")
     lines.append("extern char* _asctime(_tm* timeptr);")
     lines.append("extern size_t _strftime(char* dest_buffer, size_t buffer_size, const char* format_string, _tm* time_ptr);")
     lines.append("")

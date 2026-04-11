@@ -104,16 +104,6 @@ typedef struct FileListNode {
     char reserved[17];
 } FileListNode;
 
-// Structure: FileTrackingEntry
-typedef struct FileTrackingEntry {
-    char filename[260];
-    char directory[260];
-    char mode[20];
-    char source_file[260];
-    int line_number;
-    struct _FILE* file_ptr;
-} FileTrackingEntry;
-
 // Structure: FormatSpec
 typedef struct FormatSpec {
     char unknown_0x00[4];

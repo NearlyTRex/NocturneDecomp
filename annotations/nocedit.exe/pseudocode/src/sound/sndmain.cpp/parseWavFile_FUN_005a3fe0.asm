@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl sound_sndmain_cpp_parseWavFile_FUN_005a3fe0(_FILE *file_handle,long *file_offset_ptr,CSfxSample *sfx_sample)
+; int __cdecl sound_sndmain_cpp_parseWavFile_FUN_005a3fe0(_FILE *file_handle,int *file_offset_ptr,CSfxSample *sfx_sample)
 ;
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file_handle
-; long *           Stack[0x8]:4   file_offset_ptr
+; int *            Stack[0x8]:4   file_offset_ptr
 ; CSfxSample *     Stack[0xc]:4   sfx_sample
 ; Local Variables:
 ; char             Stack[-0x88]:1  local_88

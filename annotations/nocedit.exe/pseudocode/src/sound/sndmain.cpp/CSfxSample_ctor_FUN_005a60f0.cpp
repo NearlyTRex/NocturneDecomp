@@ -12,7 +12,7 @@ CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_ctor_FUN_005a60f0(CSfxSample *
   CSfxSample *pCVar1;
   
   pCVar1 = sound_sndmain_cpp_CSfxSample_init_FUN_005a8480(this_ptr);
-  pCVar1->sample_data = (void *)0x0;
+  pCVar1->sample_data = (short *)0x0;
   pCVar1->ref_count = 0;
   pCVar1->buffer_id = 0;
   pCVar1->taken = 0;

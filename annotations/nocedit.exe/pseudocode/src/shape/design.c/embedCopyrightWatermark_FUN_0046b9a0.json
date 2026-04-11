@@ -10,7 +10,13 @@
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 23,
+        "line": 22,
+        "message": "no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 7,
+        "line": 30,
         "message": "no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'"
       },
       {
@@ -21,20 +27,14 @@
       },
       {
         "category": "incompatible_types",
-        "column": 7,
-        "line": 35,
+        "column": 5,
+        "line": 40,
         "message": "no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 44,
-        "message": "no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 47,
+        "line": 43,
         "message": "no matching function for call to 'shape_design_c_quantizePaletteColors_FUN_0046b770'"
       }
     ],
@@ -43,17 +43,17 @@
   },
   "complexity": {
     "assembly_lines": 209,
-    "complexity_score": 87,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 48,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 261
+    "total_lines": 257
   },
   "cross_references": [
     {
@@ -74,7 +74,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_design.c_embedCopyrightWatermark_FUN_0046b9a0",
-    "signature": "void __cdecl shape_design_c_embedCopyrightWatermark_FUN_0046b9a0(void *image_buffer,char *output_filename,int texture_size)"
+    "signature": "void __cdecl shape_design_c_embedCopyrightWatermark_FUN_0046b9a0(void *image_buffer,char *palette_data,int texture_size)"
   },
   "function_calls": [
     {
@@ -252,7 +252,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "int"
+        "type": "time_t"
       },
       {
         "is_param": true,
@@ -263,7 +263,7 @@
       },
       {
         "is_param": true,
-        "name": "output_filename",
+        "name": "palette_data",
         "offset": 8,
         "size": 4,
         "type": "char *"
@@ -280,26 +280,26 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 18,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
+      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,-1,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 28,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
+      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,-1,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 40,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
+      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,-1,",
       "type": "pointer_cast"
     }
   ]

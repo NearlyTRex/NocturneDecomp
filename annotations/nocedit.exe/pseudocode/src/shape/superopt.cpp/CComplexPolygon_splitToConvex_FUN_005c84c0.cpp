@@ -28,7 +28,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_splitToConvex_FUN_005c84c0(CCompl
   CVector3d *pCVar12;
   CVector3d *pCVar8;
   int *piVar9;
-  int *piVar13;
+  SExpandedEdge *pSVar13;
   byte bVar10;
   CVector3d local_12c;
   CVector3d local_114;
@@ -146,31 +146,31 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_splitToConvex_FUN_005c84c0(CCompl
         }
         if (local_18 == 0) {
           pSVar11 = local_24;
-          piVar13 = this_ptr->expanded_edges;
+          pSVar13 = this_ptr->expanded_edges;
           for (uVar8 = (uint)(local_14 * 0x60) >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-            *piVar13 = pSVar11->start_vertex_index;
+            pSVar13->start_vertex_index = pSVar11->start_vertex_index;
             pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -8 + 4);
-            piVar13 = piVar13 + (uint)bVar10 * -2 + 1;
+            pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);
           }
           for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *(char *)piVar13 = (char)pSVar11->start_vertex_index;
+            *(char *)&pSVar13->start_vertex_index = (char)pSVar11->start_vertex_index;
             pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -2 + 1);
-            piVar13 = (int *)((int)piVar13 + (uint)bVar10 * -2 + 1);
+            pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);
           }
           this_ptr->expanded_edge_count = local_14;
         }
         else {
           pSVar11 = local_20;
-          piVar13 = this_ptr->expanded_edges;
+          pSVar13 = this_ptr->expanded_edges;
           for (uVar5 = (uint)(local_18 * 0x60) >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-            *piVar13 = pSVar11->start_vertex_index;
+            pSVar13->start_vertex_index = pSVar11->start_vertex_index;
             pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -8 + 4);
-            piVar13 = piVar13 + (uint)bVar10 * -2 + 1;
+            pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);
           }
           for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *(char *)piVar13 = (char)pSVar11->start_vertex_index;
+            *(char *)&pSVar13->start_vertex_index = (char)pSVar11->start_vertex_index;
             pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -2 + 1);
-            piVar13 = (int *)((int)piVar13 + (uint)bVar10 * -2 + 1);
+            pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);
           }
           this_ptr->expanded_edge_count = local_18;
         }
@@ -231,16 +231,16 @@ LAB_005c8a6e:
           }
           if ((local_28 == 0) || (local_2c == 0)) goto LAB_005c8a2a;
           pSVar11 = local_20;
-          piVar13 = this_ptr->expanded_edges;
+          pSVar13 = this_ptr->expanded_edges;
           for (uVar8 = (uint)(local_28 * 0x60) >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-            *piVar13 = pSVar11->start_vertex_index;
+            pSVar13->start_vertex_index = pSVar11->start_vertex_index;
             pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -8 + 4);
-            piVar13 = piVar13 + (uint)bVar10 * -2 + 1;
+            pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);
           }
           for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *(char *)piVar13 = (char)pSVar11->start_vertex_index;
+            *(char *)&pSVar13->start_vertex_index = (char)pSVar11->start_vertex_index;
             pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -2 + 1);
-            piVar13 = (int *)((int)piVar13 + (uint)bVar10 * -2 + 1);
+            pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);
           }
           this_ptr->expanded_edge_count = local_28;
           iVar6 = shape_superopt_cpp_CComplexPolygon_splitToConvex_FUN_005c84c0(this_ptr);
@@ -249,12 +249,13 @@ LAB_005c8a6e:
             shape_memdbg_cpp_free_FUN_005fe659(local_24);
             return 0;
           }
+          uVar8 = (uint)(local_2c * 0x60) >> 2;
           pSVar11 = local_24;
-          piVar9 = this_ptr->expanded_edges;
-          for (uVar8 = (uint)(local_2c * 0x60) >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-            *piVar9 = pSVar11->start_vertex_index;
+          piVar9 = &this_ptr->expanded_edges->start_vertex_index;
+          for (; uVar8 != 0; uVar8 = uVar8 - 1) {
+            ((SExpandedEdge *)piVar9)->start_vertex_index = pSVar11->start_vertex_index;
             pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -8 + 4);
-            piVar9 = piVar9 + (uint)bVar10 * -2 + 1;
+            piVar9 = (int *)((int)piVar9 + (uint)bVar10 * -8 + 4);
           }
           for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
             piVar9 = (int *)((int)piVar9 + (uint)bVar10 * -2 + 1);

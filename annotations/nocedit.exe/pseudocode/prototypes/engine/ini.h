@@ -25,7 +25,7 @@ void __cdecl getProfileString(char *section,char *key,char *default_value,char *
 
 // Original: engine_ini.cpp_getProfileInteger_FUN_004fb9a0
 // Address: 004fb9a0
-int __cdecl getProfileInteger(char *section,char *key,char *default_value,char *filename);
+int __cdecl getProfileInteger(char *section,char *key,int default_value,char *filename);
 
 // Original: engine_ini.cpp_writeProfileString_FUN_004fba40
 // Address: 004fba40

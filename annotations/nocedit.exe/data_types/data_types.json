@@ -1341,10 +1341,6 @@
       "type":"struct"
     },
     {
-      "name":"CPodAuditRecord",
-      "type":"struct"
-    },
-    {
       "name":"CPodDependencyRecord",
       "type":"struct"
     },
@@ -1765,10 +1761,6 @@
       "type":"struct"
     },
     {
-      "name":"CComplexPolygon",
-      "type":"struct"
-    },
-    {
       "name":"CMatrix3x3d",
       "type":"struct"
     },
@@ -1998,10 +1990,6 @@
     },
     {
       "name":"CObj",
-      "type":"struct"
-    },
-    {
-      "name":"COptimize",
       "type":"struct"
     },
     {
@@ -3878,6 +3866,14 @@
     },
     {
       "name":"SExpandedEdge",
+      "type":"struct"
+    },
+    {
+      "name":"CComplexPolygon",
+      "type":"struct"
+    },
+    {
+      "name":"COptimize",
       "type":"struct"
     },
     {
@@ -6689,7 +6685,7 @@
       "type":"struct"
     },
     {
-      "name":"FileTrackingEntry",
+      "name":"SFileTrackingEntry",
       "type":"struct"
     },
     {
@@ -7027,6 +7023,10 @@
     {
       "name":"time_t",
       "type":"typedef"
+    },
+    {
+      "name":"CPodAuditRecord",
+      "type":"struct"
     },
     {
       "name":"_find_t",
@@ -29994,7 +29994,7 @@
           "len":4,
           "name":"expanded_edges",
           "offset":48,
-          "type":"void*"
+          "type":"SExpandedEdge*"
         }
       ],
       "importable":true,
@@ -42874,7 +42874,7 @@
           "len":4,
           "name":"timestamp",
           "offset":32,
-          "type":"uint"
+          "type":"time_t"
         },
         {
           "len":4,
@@ -44134,7 +44134,7 @@
           "len":4,
           "name":"sample_data",
           "offset":288,
-          "type":"void*"
+          "type":"short*"
         },
         {
           "len":4,
@@ -49558,54 +49558,6 @@
       "importable":true,
       "len":33,
       "name":"FileListNode",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":4,
-      "cat":"/Nocturne/Struct/System/stdio.h",
-      "desc":"",
-      "fields":[
-        {
-          "len":260,
-          "name":"filename",
-          "offset":0,
-          "type":"char[260]"
-        },
-        {
-          "len":260,
-          "name":"directory",
-          "offset":260,
-          "type":"char[260]"
-        },
-        {
-          "len":20,
-          "name":"mode",
-          "offset":520,
-          "type":"char[20]"
-        },
-        {
-          "len":260,
-          "name":"source_file",
-          "offset":540,
-          "type":"char[260]"
-        },
-        {
-          "len":4,
-          "name":"line_number",
-          "offset":800,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"file_ptr",
-          "offset":804,
-          "type":"_FILE*"
-        }
-      ],
-      "importable":true,
-      "len":808,
-      "name":"FileTrackingEntry",
       "pack":false,
       "type":"struct"
     },
@@ -55231,6 +55183,54 @@
       "importable":true,
       "len":32,
       "name":"SFace",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":4,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":260,
+          "name":"filename",
+          "offset":0,
+          "type":"char[260]"
+        },
+        {
+          "len":260,
+          "name":"directory",
+          "offset":260,
+          "type":"char[260]"
+        },
+        {
+          "len":20,
+          "name":"mode",
+          "offset":520,
+          "type":"char[20]"
+        },
+        {
+          "len":260,
+          "name":"source_file",
+          "offset":540,
+          "type":"char[260]"
+        },
+        {
+          "len":4,
+          "name":"line_number",
+          "offset":800,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"file_ptr",
+          "offset":804,
+          "type":"_FILE*"
+        }
+      ],
+      "importable":true,
+      "len":808,
+      "name":"SFileTrackingEntry",
       "pack":false,
       "type":"struct"
     },

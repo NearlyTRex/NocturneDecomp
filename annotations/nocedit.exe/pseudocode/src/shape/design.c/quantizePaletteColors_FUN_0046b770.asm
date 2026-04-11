@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_design_c_quantizePaletteColors_FUN_0046b770(byte *image_data,int pixel_count,int stride,byte *palette_data,int mode_flag,char *bit_mask)
+; void __cdecl shape_design_c_quantizePaletteColors_FUN_0046b770(byte *image_data,int pixel_count,int stride,int row_step,char *palette_data,char *bit_mask)
 ;
 ; Parameters:
 ; byte *           Stack[0x4]:4   image_data
 ; int              Stack[0x8]:4   pixel_count
 ; int              Stack[0xc]:4   stride
-; byte *           Stack[0x10]:4   palette_data
-; int              Stack[0x14]:4   mode_flag
+; int              Stack[0x10]:4   row_step
+; char *           Stack[0x14]:4   palette_data
 ; char *           Stack[0x18]:4   bit_mask
 ; Local Variables:
 ; float            Stack[-0x34]:4  local_34

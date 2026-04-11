@@ -36,7 +36,7 @@ LAB_005a4473:
       if (0x3f < iVar2) {
         iVar2 = 0;
       }
-      if ((((g_SfxSamples[iVar2].sample_data != (void *)0x0) &&
+      if ((((g_SfxSamples[iVar2].sample_data != (short *)0x0) &&
            (0 < g_SfxSamples[iVar2].streaming_buffer_size)) && (g_SfxSamples[iVar2].ref_count == 0))
          && (g_SfxSamples[iVar2].taken == 0)) {
         iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(g_SfxSamples + iVar2);

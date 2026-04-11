@@ -585,11 +585,11 @@ void __cdecl initializeCram(SCram *cram);
 
 // Original: shape_design.c_quantizePaletteColors_FUN_0046b770
 // Address: 0046b770
-void __cdecl quantizePaletteColors(byte *image_data,int pixel_count,int stride,byte *palette_data,int mode_flag,char *bit_mask);
+void __cdecl quantizePaletteColors(byte *image_data,int pixel_count,int stride,int row_step,char *palette_data,char *bit_mask);
 
 // Original: shape_design.c_embedCopyrightWatermark_FUN_0046b9a0
 // Address: 0046b9a0
-void __cdecl embedCopyrightWatermark(void *image_buffer,char *output_filename,int texture_size);
+void __cdecl embedCopyrightWatermark(void *image_buffer,char *palette_data,int texture_size);
 
 // Original: shape_design.c_cramTextureList_FUN_0046bb80
 // Address: 0046bb80

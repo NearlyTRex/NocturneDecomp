@@ -12,7 +12,7 @@ _FILE * __cdecl shape_memdbg_cpp_openFile_FUN_0050f7a0(char *filename,char *dire
   char cVar1;
   int iVar2;
   _FILE *p_Var3;
-  FileTrackingEntry *pFVar4;
+  SFileTrackingEntry *pSVar4;
   char *pcVar5;
   _FILE *opened_file;
   
@@ -47,16 +47,16 @@ _FILE * __cdecl shape_memdbg_cpp_openFile_FUN_0050f7a0(char *filename,char *dire
               ("Too many open files trying to open %s, %s line %d",filename,source_file,line_number);
   }
   iVar2 = g_OpenFileCount;
-  pFVar4 = g_FileRegistry + g_OpenFileCount;
+  pSVar4 = g_FileRegistry + g_OpenFileCount;
   g_OpenFileCount = g_OpenFileCount + 1;
   do {
     cVar1 = *filename;
-    pFVar4->filename[0] = cVar1;
+    pSVar4->filename[0] = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = filename[1];
     filename = filename + 2;
-    pFVar4->filename[1] = cVar1;
-    pFVar4 = (FileTrackingEntry *)(pFVar4->filename + 2);
+    pSVar4->filename[1] = cVar1;
+    pSVar4 = (SFileTrackingEntry *)(pSVar4->filename + 2);
   } while (cVar1 != '\0');
   pcVar5 = g_FileRegistry[iVar2].mode;
   do {

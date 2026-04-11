@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 27,
-        "line": 17,
-        "message": "format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -34,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_ini.cpp_getProfileInteger_FUN_004fb9a0",
-    "signature": "int __cdecl engine_ini_cpp_getProfileInteger_FUN_004fb9a0(char *section,char *key,char *default_value,char *filename)"
+    "signature": "int __cdecl engine_ini_cpp_getProfileInteger_FUN_004fb9a0(char *section,char *key,int default_value,char *filename)"
   },
   "function_calls": [
     {
@@ -168,7 +161,7 @@
         "name": "default_value",
         "offset": 12,
         "size": 4,
-        "type": "char *"
+        "type": "int"
       },
       {
         "is_param": true,

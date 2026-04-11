@@ -36,7 +36,7 @@
 ;   BOOL g_RecursiveCallFlag
 ;   HANDLE g_FileMutex
 ;   int g_OpenFileCount
-;   FileTrackingEntry[100] g_FileRegistry
+;   SFileTrackingEntry[100] g_FileRegistry
 ;   undefined4 g_FileRegistry[0].filename[1]
 ;   undefined4 g_FileRegistry[0].filename[2]
 ;   undefined4 g_FileRegistry[0].filename[3]

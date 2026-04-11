@@ -9,10 +9,10 @@
 void __cdecl sound_sndmain_cpp_CSfxSample_freeSampleData_FUN_005a6400(CSfxSample *this_ptr)
 
 {
-  if (this_ptr->sample_data == (void *)0x0) {
+  if (this_ptr->sample_data == (short *)0x0) {
     return;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->sample_data,"..\\sound\\sndmain.cpp",0x744);
-  this_ptr->sample_data = (void *)0x0;
+  this_ptr->sample_data = (short *)0x0;
   return;
 }

@@ -1,61 +1,18 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 7,
-        "line": 170,
-        "message": "no matching function for call to '_time'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 18,
-        "line": 188,
-        "message": "assigning to 'CPodAuditRecord *' from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 20,
-        "line": 279,
-        "message": "assigning to 'CPodAuditRecord *' from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 482,
-        "message": "assigning to 'CPodAuditRecord *' from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 22,
-        "line": 525,
-        "message": "assigning to 'CPodAuditRecord *' from incompatible type 'void *'"
-      },
-      {
-        "category": "format_error",
-        "column": 51,
-        "line": 591,
-        "message": "format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 95,
-        "line": 591,
-        "message": "format specifies type 'int' but the argument has type 'long' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 1448,
-    "complexity_score": 727,
+    "complexity_score": 737,
     "cross_reference_count": 4,
     "function_call_count": 43,
     "global_count": 73,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 642,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -1192,13 +1149,52 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CFileManager_rebuildLastPod_FUN_004b5a50.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 23,
+          "line": 186,
+          "message": "Redundant assignment of 'puVar15' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 27,
+          "line": 541,
+          "message": "Redundant assignment of 'puVar13' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 27,
+          "line": 542,
+          "message": "Redundant assignment of 'pCVar18' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 177,
+      "match": "(CPodAuditRecord *)((int)",
+      "severity": "mild",
+      "text": "pCVar11 = (CPodAuditRecord *)((int)pCVar11 + ((uint)bVar19 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "line": 195,
       "match": "(CPodAuditRecord *)((int)",
       "severity": "mild",
-      "text": "pCVar16 = (CPodAuditRecord *)((int)pCVar16 + (uint)bVar19 * -8 + 4);",
+      "text": "pCVar11 = (CPodAuditRecord *)((int)pCVar11 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1230,7 +1226,7 @@
       "line": 286,
       "match": "(CPodAuditRecord *)((int)",
       "severity": "mild",
-      "text": "pCVar16 = (CPodAuditRecord *)((int)pCVar16 + (uint)bVar19 * -8 + 4);",
+      "text": "pCVar11 = (CPodAuditRecord *)((int)pCVar11 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1238,7 +1234,7 @@
       "line": 370,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "pcVar13 = (char *)((int)ptr_00 + local_30);",
+      "text": "pcVar15 = (char *)((int)ptr_00 + local_30);",
       "type": "pointer_cast"
     },
     {
@@ -1246,7 +1242,7 @@
       "line": 489,
       "match": "(CPodAuditRecord *)((int)",
       "severity": "mild",
-      "text": "pCVar16 = (CPodAuditRecord *)((int)pCVar16 + (uint)bVar19 * -8 + 4);",
+      "text": "pCVar11 = (CPodAuditRecord *)((int)pCVar11 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
     {

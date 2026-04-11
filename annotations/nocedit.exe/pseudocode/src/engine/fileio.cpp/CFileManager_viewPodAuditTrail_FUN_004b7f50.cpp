@@ -26,11 +26,8 @@ void __cdecl engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50(CFile
   CPodFile local_cdc;
   CPickList local_8b0;
   char local_508 [512];
-  uint local_308;
-  int local_2e8;
-  uint local_2e4;
-  char local_2e0 [272];
-  int local_1d0 [78];
+  CPodAuditRecord local_308;
+  CPodAuditRecord local_1d0;
   char local_98 [100];
   char local_34 [32];
   int local_14;
@@ -86,9 +83,9 @@ void __cdecl engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50(CFile
   }
   if (0 < local_cdc.audit_count) {
     do {
-      engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(&local_cdc,record_index,local_1d0);
-      piVar5 = local_1d0;
-      piVar7 = &local_308;
+      engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(&local_cdc,record_index,&local_1d0);
+      piVar5 = (int *)&local_1d0;
+      piVar7 = (int *)&local_308;
       for (iVar4 = 0x4e; iVar4 != 0; iVar4 = iVar4 + -1) {
         piVar7 = piVar7 + (uint)bVar9 * -2 + 1;
         piVar5 = piVar5 + (uint)bVar9 * -2 + 1;
@@ -96,36 +93,36 @@ void __cdecl engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50(CFile
         piVar5 = piVar5;
         piVar7 = piVar7;
       }
-      time_ptr = _localtime(&local_2e8);
+      time_ptr = _localtime(&local_308.timestamp);
       _strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
       pcVar4 = "???";
-      if (local_2e4 == 0) {
+      if (local_308.operation_type == 0) {
         pcVar4 = "Add";
       }
-      else if (local_2e4 < 2) {
+      else if ((uint)local_308.operation_type < 2) {
         pcVar4 = "Remove";
       }
-      else if (local_2e4 == 2) {
+      else if (local_308.operation_type == 2) {
         pcVar4 = "Change";
       }
-      if ((local_2e8 != local_10) ||
-         (iVar4 = _stricmp((char *)&local_308,local_98), iVar4 != 0)) {
+      if ((local_308.timestamp != local_10) ||
+         (iVar4 = _stricmp(local_308.user_path,local_98), iVar4 != 0)) {
         _sprintf(local_508,"--\t%s\t%s",&local_308,local_34);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8b0.base,local_508);
-        pcVar6 = (char *)&local_308;
+        pcVar6 = local_308.user_path;
         pcVar8 = local_98;
-        local_10 = local_2e8;
+        local_10 = local_308.timestamp;
         do {
-          cVar1 = *pcVar6;
+          cVar1 = ((CPodAuditRecord *)pcVar6)->user_path[0];
           *pcVar8 = cVar1;
           if (cVar1 == '\0') break;
-          cVar2 = pcVar6[1];
-          pcVar6 = pcVar6 + 2;
+          cVar2 = ((CPodAuditRecord *)pcVar6)->user_path[1];
+          pcVar6 = ((CPodAuditRecord *)pcVar6)->user_path + 2;
           pcVar8[1] = cVar2;
           pcVar8 = pcVar8 + 2;
         } while (cVar2 != '\0');
       }
-      _sprintf(local_508,"\t%s\t%s",pcVar4,local_2e0);
+      _sprintf(local_508,"\t%s\t%s",pcVar4,local_308.filename);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8b0.base,local_508);
       record_index = record_index + 1;
     } while (record_index < local_cdc.audit_count);

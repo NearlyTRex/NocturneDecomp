@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   format
 ; Local Variables:
 ; va_list_t        Stack[-0x14]:4  local_14
-; int              Stack[-0x10]:4  local_10
+; time_t           Stack[-0x10]:4  local_10
 ;
 ; XREF[745]:
 ;   cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0 at 00432fcf

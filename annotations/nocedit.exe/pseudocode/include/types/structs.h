@@ -55,6 +55,7 @@
 #include "types/structs/SEventNameBlock.h"
 #include "types/structs/SExpandedEdge.h"
 #include "types/structs/SFace.h"
+#include "types/structs/SFileTrackingEntry.h"
 #include "types/structs/SFire.h"
 #include "types/structs/SFly.h"
 #include "types/structs/SFog.h"

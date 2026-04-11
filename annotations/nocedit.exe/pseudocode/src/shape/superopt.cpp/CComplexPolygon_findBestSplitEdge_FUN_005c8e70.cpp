@@ -58,7 +58,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CC
     local_28 = 0;
     local_1c = &this_ptr->normal;
     do {
-      iVar2 = local_28 + (int)this_ptr->expanded_edges;
+      iVar2 = (int)this_ptr->expanded_edges->start_uv + local_28 + -0x40;
       puVar3 = (uint *)(iVar2 + 0x10);
       pCVar5 = &local_6c;
       for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {

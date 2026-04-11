@@ -189,7 +189,7 @@ section .text
     PUSH EAX                            ; 005aa51b
     PUSH EBX                            ; 005aa51c
     CALL sound_sndmain.cpp_parseWavFile_FUN_005a3fe0 ; 005aa51d
-        ;   XREF to: 005a3fe0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_parseWavFile_FUN_005a3fe0(_FILE * file_handle, long * file_offset_ptr, CSfxSample * sfx_sample)
+        ;   XREF to: 005a3fe0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_parseWavFile_FUN_005a3fe0(_FILE * file_handle, int * file_offset_ptr, CSfxSample * sfx_sample)
     ADD ESP,0xc                         ; 005aa522
     TEST EAX,EAX                        ; 005aa525
     JZ 0x005aa4db                       ; 005aa527

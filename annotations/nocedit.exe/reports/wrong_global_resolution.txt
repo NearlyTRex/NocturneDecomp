@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 68
-  Total suspicious global references: 114
+  Functions with suspicious globals: 67
+  Total suspicious global references: 113
 
   Most commonly misresolved globals:
     g_SfxOptions                                       12 functions
@@ -38,7 +38,7 @@ SUMMARY
     g_SourcePaletteData                                1 functions
 
   .keep files with issues: 5 (these need manual review)
-  Raw .cpp files with issues: 63
+  Raw .cpp files with issues: 62
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -554,14 +554,6 @@ engine_fileio.cpp_logOffVersionControl_FUN_004b2830  [.cpp]  (1 suspicious globa
 
   g_VersionControlSession
     Used at lines: 12, 16, 17
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-engine_matrix.c_projectTransformedPoint_FUN_0050cdc0  [.cpp]  (1 suspicious globals)
-  File: engine/matrix.c
-
-  DAT_80000010
-    Used at lines: 24
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
