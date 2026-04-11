@@ -93,7 +93,7 @@ int __cdecl CComplexPolygon::storeEdgeSubChain(CComplexPolygon *this_ptr,SExpand
 
 // Original: shape_superopt.cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0
 // Address: 005cbec0
-void * __cdecl CComplexPolygon::getConvexSubChains(CComplexPolygon *this_ptr,int *out_count);
+SEdgeChainEntry * __cdecl CComplexPolygon::getConvexSubChains(CComplexPolygon *this_ptr,int *out_count);
 
 // Original: shape_superopt.cpp_CComplexPolygon_getExpandedEdgeCount_FUN_005cbee0
 // Address: 005cbee0

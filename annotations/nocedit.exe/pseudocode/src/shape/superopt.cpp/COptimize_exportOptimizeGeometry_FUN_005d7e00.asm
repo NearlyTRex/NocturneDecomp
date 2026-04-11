@@ -89,7 +89,7 @@ section .text
     PUSH EAX                            ; 005d7e66
     PUSH EBX                            ; 005d7e67
     CALL shape_superopt.cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0 ; 005d7e68
-        ;   XREF to: 005cbec0 (UNCONDITIONAL_CALL)  ; void * shape_superopt.cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0(CComplexPolygon * this_ptr, int * out_count)
+        ;   XREF to: 005cbec0 (UNCONDITIONAL_CALL)  ; SEdgeChainEntry * shape_superopt.cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0(CComplexPolygon * this_ptr, int * out_count)
     ADD ESP,0x8                         ; 005d7e6d
     PUSH EBX                            ; 005d7e70
     MOV ESI,EAX                         ; 005d7e71

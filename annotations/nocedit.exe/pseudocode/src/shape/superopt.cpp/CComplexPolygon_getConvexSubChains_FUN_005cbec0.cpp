@@ -2,11 +2,11 @@
 // Address: 005cbec0
 // Address Range: [[005cbec0, 005cbed0]]
 // Convention: __cdecl
-// Signature: void * __cdecl shape_superopt_cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0(CComplexPolygon *this_ptr,int *out_count)
+// Signature: SEdgeChainEntry * __cdecl shape_superopt_cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0(CComplexPolygon *this_ptr,int *out_count)
 
 #include "nocturne.h"
 
-void * __cdecl shape_superopt_cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0(CComplexPolygon *this_ptr,int *out_count)
+SEdgeChainEntry * __cdecl shape_superopt_cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0(CComplexPolygon *this_ptr,int *out_count)
 
 {
   *out_count = this_ptr->edge_count;

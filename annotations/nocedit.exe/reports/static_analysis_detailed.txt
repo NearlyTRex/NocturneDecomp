@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang-Tidy (quick) (1116 diagnostics)
+Clang-Tidy (quick) (1126 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -2117,7 +2117,7 @@ bugprone-assignment-in-if-condition (526)
     an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
-bugprone-incorrect-roundings (296)
+bugprone-incorrect-roundings (306)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 173
@@ -3000,6 +3000,14 @@ bugprone-incorrect-roundings (296)
     File: shape/design.c
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
+  shape_design.c_parseSpatialTreeFromFile_FUN_004580 line 35
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_parseSpatialTreeFromFile_FUN_004580 line 35
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
   shape_design.c_renderSinglePolygon_FUN_0045ce20    line 35
     File: shape/design.c
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
@@ -3093,6 +3101,38 @@ bugprone-incorrect-roundings (296)
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
   shape_design.c_writePolygonModel_FUN_0045a320      line 30
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_writeSpatialTree_FUN_0045a200       line 22
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_writeSpatialTree_FUN_0045a200       line 22
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_writeSpatialTree_FUN_0045a200       line 23
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_writeSpatialTree_FUN_0045a200       line 23
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_writeSpatialTree_FUN_0045a200       line 24
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_writeSpatialTree_FUN_0045a200       line 24
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_writeSpatialTree_FUN_0045a200       line 25
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_writeSpatialTree_FUN_0045a200       line 25
     File: shape/design.c
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
@@ -4533,7 +4573,7 @@ bugprone-swapped-arguments (1)
     declaration uses identifier '_Stack_1e0', which is a reserved identifier [cert-dcl37-c,cert-dcl51-cpp]
 
 ====================================================================================================
-Cppcheck (quick) (353 diagnostics)
+Cppcheck (quick) (356 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -5933,6 +5973,30 @@ nullPointer (6)
     Possible null pointer dereference: pcVar11
 
 ----------------------------------------------------------------------------------------------------
+identicalInnerCondition (5)
+----------------------------------------------------------------------------------------------------
+
+  core_skeledit.cpp_CDeformableModel_sortFacesByText line 58
+    File: core/skeledit.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 336
+    File: shape/meshlod.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 241
+    File: shape/superopt.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_00 line 65
+    File: shape/superopt.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 59
+    File: sound/snddx.cpp
+    Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
 shiftNegativeLHS (3)
 ----------------------------------------------------------------------------------------------------
 
@@ -5947,22 +6011,6 @@ shiftNegativeLHS (3)
   support_codec.cpp_readBitsFromStream_FUN_0043e530  line 61
     File: support/codec.cpp
     Shifting a negative value is technically undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-identicalInnerCondition (3)
-----------------------------------------------------------------------------------------------------
-
-  core_skeledit.cpp_CDeformableModel_sortFacesByText line 58
-    File: core/skeledit.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 336
-    File: shape/meshlod.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 59
-    File: sound/snddx.cpp
-    Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 arrayIndexOutOfBounds (3)
@@ -6011,3 +6059,11 @@ resourceLeak (1)
   shape_memdbg.cpp_openFile_FUN_0050f7a0             line 43
     File: shape/memdbg.cpp
     Resource leak: p_Var3
+
+----------------------------------------------------------------------------------------------------
+invalidTestForOverflow (1)
+----------------------------------------------------------------------------------------------------
+
+  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 158
+    File: shape/superopt.cpp
+    Invalid test for overflow 'local_1c<local_1c+local_28'; pointer overflow is undefined behavior. Some mainstream compilers removes handling of overflows when optimising the code and change the code to 'local_28>0'.

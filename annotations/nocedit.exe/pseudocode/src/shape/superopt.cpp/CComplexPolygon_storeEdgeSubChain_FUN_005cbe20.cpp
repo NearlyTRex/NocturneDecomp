@@ -9,32 +9,33 @@
 int __cdecl shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count)
 
 {
-  void *pvVar1;
-  int *piVar2;
-  int iVar3;
-  int *piVar4;
+  int iVar1;
+  SEdgeChainEntry *pSVar2;
+  SExpandedEdge *pSVar3;
+  int iVar4;
   byte bVar5;
   
   bVar5 = 0;
   shape_superopt_cpp_CComplexPolygon_isEdgeChainClosed_FUN_005cbf20(this_ptr,edges,edge_count);
-  pvVar1 = realloc(this_ptr->edge_array,(this_ptr->edge_count + 1) * 8);
-  if (pvVar1 != (void *)0x0) {
-    this_ptr->edge_array = pvVar1;
-    piVar4 = (int *)((int)this_ptr->edge_array + this_ptr->edge_count * 8);
-    piVar2 = shape_memdbg_cpp_malloc_FUN_006021da(edge_count * 0x60);
-    piVar4[1] = (int)piVar2;
-    if (piVar2 != (int *)0x0) {
-      for (iVar3 = (edge_count * 3 & 0x7ffffffU) << 3; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *piVar2 = edges->start_vertex_index;
+  pSVar2 = (SEdgeChainEntry *)realloc(this_ptr->edge_array,(this_ptr->edge_count + 1) * 8);
+  if (pSVar2 != (SEdgeChainEntry *)0x0) {
+    this_ptr->edge_array = pSVar2;
+    iVar1 = this_ptr->edge_count;
+    pSVar2 = this_ptr->edge_array;
+    pSVar3 = shape_memdbg_cpp_malloc_FUN_006021da(edge_count * 0x60);
+    pSVar2[iVar1].edges = pSVar3;
+    if (pSVar3 != (SExpandedEdge *)0x0) {
+      for (iVar4 = (edge_count * 3 & 0x7ffffffU) << 3; iVar4 != 0; iVar4 = iVar4 + -1) {
+        pSVar3->start_vertex_index = edges->start_vertex_index;
         edges = (SExpandedEdge *)((int)edges + (uint)bVar5 * -8 + 4);
-        piVar2 = piVar2 + (uint)bVar5 * -2 + 1;
+        pSVar3 = (SExpandedEdge *)((int)pSVar3 + (uint)bVar5 * -8 + 4);
       }
-      for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *(char *)piVar2 = (char)edges->start_vertex_index;
+      for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
+        *(char *)&pSVar3->start_vertex_index = (char)edges->start_vertex_index;
         edges = (SExpandedEdge *)((int)edges + (uint)bVar5 * -2 + 1);
-        piVar2 = (int *)((int)piVar2 + (uint)bVar5 * -2 + 1);
+        pSVar3 = (SExpandedEdge *)((int)pSVar3 + (uint)bVar5 * -2 + 1);
       }
-      *piVar4 = edge_count;
+      pSVar2[iVar1].edge_count = edge_count;
       this_ptr->edge_count = this_ptr->edge_count + 1;
       return 1;
     }

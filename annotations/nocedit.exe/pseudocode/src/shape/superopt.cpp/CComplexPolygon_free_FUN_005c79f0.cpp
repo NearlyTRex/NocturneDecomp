@@ -9,7 +9,7 @@
 void __cdecl shape_superopt_cpp_CComplexPolygon_free_FUN_005c79f0(CComplexPolygon *this_ptr)
 
 {
-  int iVar1;
+  uint *puVar1;
   uint uVar2;
   int iVar3;
   
@@ -22,17 +22,17 @@ void __cdecl shape_superopt_cpp_CComplexPolygon_free_FUN_005c79f0(CComplexPolygo
   if (this_ptr->edge_count != 0) {
     iVar3 = 0;
     do {
-      iVar1 = iVar3 + 4;
+      puVar1 = (uint *)((int)&this_ptr->edge_array->edges + iVar3);
       iVar3 = iVar3 + 8;
       uVar2 = uVar2 + 1;
-      shape_memdbg_cpp_free_FUN_005fe659(*(void **)(iVar1 + (int)this_ptr->edge_array));
+      shape_memdbg_cpp_free_FUN_005fe659((void *)*puVar1);
     } while (uVar2 < (uint)this_ptr->edge_count);
   }
   this_ptr->edge_count = 0;
-  if (this_ptr->edge_array != (void *)0x0) {
+  if (this_ptr->edge_array != (SEdgeChainEntry *)0x0) {
     free(this_ptr->edge_array);
   }
-  this_ptr->edge_array = (void *)0x0;
+  this_ptr->edge_array = (SEdgeChainEntry *)0x0;
   this_ptr->expanded_edge_count = 0;
   shape_memdbg_cpp_free_FUN_005fe659(this_ptr->expanded_edges);
   this_ptr->expanded_edges = (SExpandedEdge *)0x0;

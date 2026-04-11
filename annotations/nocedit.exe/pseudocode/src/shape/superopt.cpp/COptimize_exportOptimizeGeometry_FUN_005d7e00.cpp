@@ -52,8 +52,8 @@ void __cdecl shape_superopt_cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00(CO
     local_38 = 0;
     do {
       this_ptr_00 = *(CComplexPolygon **)((int)this_ptr->complex_polygons + local_38);
-      puVar5 = shape_superopt_cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0
-                         (this_ptr_00,(int *)&local_3c);
+      puVar5 = (uint *)shape_superopt_cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0
+                                 (this_ptr_00,(int *)&local_3c);
       iVar6 = shape_superopt_cpp_CComplexPolygon_getMaterialId_FUN_005cbf00(this_ptr_00);
       local_24 = g_TriListTextureNames[iVar6];
       local_30 = 0;

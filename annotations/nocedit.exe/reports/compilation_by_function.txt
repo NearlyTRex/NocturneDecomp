@@ -5,28 +5,8 @@ FUNCTION COMPILATION ERRORS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6408 (99.3%)
-Failed: 46
-
-====================================================================================================
-shape_design.c_normalizeVertex_FUN_00461e60 (1 error)
-====================================================================================================
-  Line 15 [type_error]: member reference base type 'double' is not a structure or union
-
-====================================================================================================
-shape_design.c_parseSpatialTreeFromFile_FUN_004580a0 (1 error)
-====================================================================================================
-  Line 25 [format_error]: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-
-====================================================================================================
-shape_design.c_writeBinaryTreeNode_FUN_00457fd0 (1 error)
-====================================================================================================
-  Line 14 [format_error]: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-
-====================================================================================================
-shape_design.c_writeSpatialTree_FUN_0045a200 (1 error)
-====================================================================================================
-  Line 17 [format_error]: format specifies type 'char *' but the argument has type 'SModelPartName *' [-Werror,-Wformat]
+Successful: 6422 (99.5%)
+Failed: 32
 
 ====================================================================================================
 shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (3 errors)
@@ -78,113 +58,9 @@ shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (3 errors)
   Line 149 [incompatible_types]: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
 
 ====================================================================================================
-shape_superopt.cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20 (1 error)
-====================================================================================================
-  Line 23 [incompatible_types]: assigning to 'int *' from incompatible type 'void *'
-
-====================================================================================================
-shape_superopt.cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0 (12 errors)
-====================================================================================================
-  Line 51 [type_error]: member reference base type 'double' is not a structure or union
-  Line 52 [type_error]: member reference base type 'double' is not a structure or union
-  Line 53 [type_error]: member reference base type 'double' is not a structure or union
-  Line 54 [type_error]: member reference base type 'double' is not a structure or union
-  Line 55 [type_error]: member reference base type 'double' is not a structure or union
-  Line 56 [type_error]: member reference base type 'double' is not a structure or union
-  Line 67 [type_error]: member reference base type 'double' is not a structure or union
-  Line 68 [type_error]: member reference base type 'double' is not a structure or union
-  Line 69 [type_error]: member reference base type 'double' is not a structure or union
-  Line 70 [type_error]: member reference base type 'double' is not a structure or union
-  Line 71 [type_error]: member reference base type 'double' is not a structure or union
-  Line 72 [type_error]: member reference base type 'double' is not a structure or union
-
-====================================================================================================
-shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (1 error)
-====================================================================================================
-  Line 146 [incompatible_types]: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-
-====================================================================================================
-shape_superopt.cpp_CComplexPolygon_computeWindingNormal_FUN_005cbb40 (1 error)
-====================================================================================================
-  Line 91 [type_error]: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
-
-====================================================================================================
-shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0 (19 errors)
-====================================================================================================
-  Line 75 [type_error]: member reference base type 'double' is not a structure or union
-  Line 76 [type_error]: member reference base type 'double' is not a structure or union
-  Line 77 [type_error]: member reference base type 'double' is not a structure or union
-  Line 78 [type_error]: member reference base type 'double' is not a structure or union
-  Line 79 [type_error]: member reference base type 'double' is not a structure or union
-  Line 80 [type_error]: member reference base type 'double' is not a structure or union
-  Line 81 [type_error]: member reference base type 'double' is not a structure or union
-  Line 82 [type_error]: member reference base type 'double' is not a structure or union
-  Line 85 [type_error]: member reference base type 'double' is not a structure or union
-  Line 86 [type_error]: member reference base type 'double' is not a structure or union
-  Line 87 [type_error]: member reference base type 'double' is not a structure or union
-  Line 88 [type_error]: member reference base type 'double' is not a structure or union
-  Line 89 [type_error]: member reference base type 'double' is not a structure or union
-  Line 90 [type_error]: member reference base type 'double' is not a structure or union
-  Line 91 [type_error]: member reference base type 'double' is not a structure or union
-  Line 92 [type_error]: member reference base type 'double' is not a structure or union
-  Line 95 [type_error]: member reference base type 'double' is not a structure or union
-  Line 96 [type_error]: member reference base type 'double' is not a structure or union
-  Line 97 [type_error]: member reference base type 'double' is not a structure or union
-
-====================================================================================================
-shape_superopt.cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280 (1 error)
-====================================================================================================
-  Line 26 [incompatible_types]: assigning to 'int *' from incompatible type 'void *'
-
-====================================================================================================
-shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500 (19 errors)
-====================================================================================================
-  Line 117 [incompatible_types]: assigning to 'SExpandedEdge *' from incompatible type 'void *'
-  Line 121 [incompatible_types]: assigning to 'SExpandedEdge *' from incompatible type 'void *'
-  Line 145 [type_error]: member reference base type 'double' is not a structure or union
-  Line 147 [type_error]: member reference base type 'double' is not a structure or union
-  Line 149 [type_error]: member reference base type 'double' is not a structure or union
-  Line 150 [type_error]: member reference base type 'double' is not a structure or union
-  Line 151 [type_error]: member reference base type 'double' is not a structure or union
-  Line 152 [type_error]: member reference base type 'double' is not a structure or union
-  Line 171 [type_error]: member reference base type 'double' is not a structure or union
-  Line 173 [type_error]: member reference base type 'double' is not a structure or union
-  Line 175 [type_error]: member reference base type 'double' is not a structure or union
-  Line 176 [type_error]: member reference base type 'double' is not a structure or union
-  Line 177 [type_error]: member reference base type 'double' is not a structure or union
-  Line 178 [type_error]: member reference base type 'double' is not a structure or union
-  Line 204 [type_error]: member reference base type 'double' is not a structure or union
-  Line 206 [type_error]: member reference base type 'double' is not a structure or union
-  Line 207 [type_error]: member reference base type 'double' is not a structure or union
-  Line 208 [type_error]: member reference base type 'double' is not a structure or union
-  Line 209 [type_error]: member reference base type 'double' is not a structure or union
-
-====================================================================================================
-shape_superopt.cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0 (12 errors)
-====================================================================================================
-  Line 132 [type_error]: member reference base type 'double' is not a structure or union
-  Line 133 [type_error]: member reference base type 'double' is not a structure or union
-  Line 134 [type_error]: member reference base type 'double' is not a structure or union
-  Line 143 [type_error]: member reference base type 'double' is not a structure or union
-  Line 195 [type_error]: member reference base type 'double' is not a structure or union
-  Line 196 [type_error]: member reference base type 'double' is not a structure or union
-  Line 197 [type_error]: member reference base type 'double' is not a structure or union
-  Line 200 [type_error]: member reference base type 'double' is not a structure or union
-  Line 381 [type_error]: member reference base type 'double' is not a structure or union
-  Line 382 [type_error]: member reference base type 'double' is not a structure or union
-  Line 383 [type_error]: member reference base type 'double' is not a structure or union
-  Line 384 [type_error]: member reference base type 'double' is not a structure or union
-
-====================================================================================================
-shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0 (2 errors)
-====================================================================================================
-  Line 72 [incompatible_types]: assigning to 'SExpandedEdge *' from incompatible type 'void *'
-  Line 77 [incompatible_types]: assigning to 'SExpandedEdge *' from incompatible type 'void *'
-
-====================================================================================================
 shape_superopt.cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20 (1 error)
 ====================================================================================================
-  Line 24 [incompatible_types]: assigning to 'int *' from incompatible type 'void *'
+  Line 25 [incompatible_types]: assigning to 'SExpandedEdge *' from incompatible type 'void *'
 
 ====================================================================================================
 shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90 (19 errors)
@@ -310,11 +186,6 @@ shape_superopt.cpp_CObj_updatePolyFlagsFromVerts_FUN_005d36b0 (1 error)
 shape_superopt.cpp_CObj_weldVertices_FUN_005d4160 (1 error)
 ====================================================================================================
   Line 59 [incompatible_types]: invalid operands to binary expression ('double' and 'int')
-
-====================================================================================================
-shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00 (1 error)
-====================================================================================================
-  Line 55 [incompatible_types]: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
 
 ====================================================================================================
 shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460 (12 errors)

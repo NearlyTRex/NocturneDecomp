@@ -9,25 +9,25 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 240
+  Functions with static analysis data: 244
   Functions flagged by multiple tools: 66
 
   Clang-Tidy (quick):
-    Files analyzed:      192
-    Files with findings: 192
-    Total diagnostics:   1116
+    Files analyzed:      194
+    Files with findings: 194
+    Total diagnostics:   1126
 
   Cppcheck (quick):
-    Files analyzed:      114
-    Files with findings: 114
-    Total diagnostics:   353
+    Files analyzed:      116
+    Files with findings: 116
+    Total diagnostics:   356
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
 ====================================================================================================
 
   bugprone-assignment-in-if-condition                       526  [likely decompiler artifact]
-  bugprone-incorrect-roundings                              296  [likely decompiler artifact]
+  bugprone-incorrect-roundings                              306  [likely decompiler artifact]
   cert-err33-c                                              134  [likely decompiler artifact]
   cert-err34-c                                               80
   bugprone-switch-missing-default-case                       56
@@ -55,8 +55,8 @@ TOP FINDINGS - Cppcheck (quick)
   invalidPointerCast                                         11
   nullPointerRedundantCheck                                   6
   nullPointer                                                 6
+  identicalInnerCondition                                     5
   shiftNegativeLHS                                            3
-  identicalInnerCondition                                     3
   arrayIndexOutOfBounds                                       3
   arrayIndexOutOfBoundsCond                                   1
   AssignmentIntegerToAddress                                  1

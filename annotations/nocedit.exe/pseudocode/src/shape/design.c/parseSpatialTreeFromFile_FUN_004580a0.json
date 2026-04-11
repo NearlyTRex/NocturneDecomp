@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 49,
-        "line": 25,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -190,6 +183,28 @@
         "type": "_FILE *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "parseSpatialTreeFromFile_FUN_004580a0.keep.c",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 35,
+          "line": 35,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 41,
+          "line": 35,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

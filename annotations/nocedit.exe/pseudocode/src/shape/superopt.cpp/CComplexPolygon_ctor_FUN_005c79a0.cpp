@@ -11,7 +11,7 @@ CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_ctor_FUN_005c79a0(C
 {
   this_ptr->polygon_list = (CPoly **)0x0;
   this_ptr->edge_count = 0;
-  this_ptr->edge_array = (void *)0x0;
+  this_ptr->edge_array = (SEdgeChainEntry *)0x0;
   this_ptr->expanded_edge_count = 0;
   this_ptr->expanded_edges = (SExpandedEdge *)0x0;
   this_ptr->polygon_count = 0;

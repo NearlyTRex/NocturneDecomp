@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 240
-  Total diagnostics: 1469
+  Functions with findings: 244
+  Total diagnostics: 1482
   Functions flagged by multiple tools: 66
-  .keep.cpp files: 240, raw .cpp files: 0
+  .keep.cpp files: 244, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -1202,6 +1202,19 @@ shape_design.c_writePolygonModel_FUN_0045a320  [.keep] [Clang-Tidy (quick)]
   Line   30: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
 ----------------------------------------------------------------------------------------------------
+shape_design.c_writeSpatialTree_FUN_0045a200  [.keep] [Clang-Tidy (quick)]
+  File: shape/design.c  (8 diagnostics)
+
+  Line   22: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   22: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   23: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   23: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   24: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   24: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   25: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   25: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
   File: sound/sndmain.cpp  (8 diagnostics)
 
@@ -2366,11 +2379,25 @@ shape_design.c_mergeTrianglesIntoQuad_FUN_00462190  [.keep] [Cppcheck (quick)]
   Line  206: [selfAssignment] Redundant assignment of 'pSVar6' to itself.
 
 ----------------------------------------------------------------------------------------------------
+shape_design.c_parseSpatialTreeFromFile_FUN_004580a0  [.keep] [Clang-Tidy (quick)]
+  File: shape/design.c  (2 diagnostics)
+
+  Line   35: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   35: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
 shape_design.c_vertexReducer_FUN_00467850  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (2 diagnostics)
 
   Line  202: [selfAssignment] Redundant assignment of 'pbVar5' to itself.
   Line  207: [selfAssignment] Redundant assignment of 'pbVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590  [.keep] [Cppcheck (quick)]
+  File: shape/superopt.cpp  (2 diagnostics)
+
+  Line  158: [invalidTestForOverflow] Invalid test for overflow 'local_1c<local_1c+local_28'; pointer overflow is undefined behavior. Some mainstream compilers removes handling of overflows when optimising the code and change the code to 'local_28>0'.
+  Line  241: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_005af410  [.keep] [Clang-Tidy (quick)]
@@ -2644,6 +2671,12 @@ shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910  [.keep] [Cppche
   File: shape/meshlod.cpp  (1 diagnostics)
 
   Line  336: [identicalInnerCondition] Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
+shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0  [.keep] [Cppcheck (quick)]
+  File: shape/superopt.cpp  (1 diagnostics)
+
+  Line   65: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60  [.keep] [Clang-Tidy (quick)]

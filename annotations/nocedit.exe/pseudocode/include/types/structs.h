@@ -49,6 +49,7 @@
 #include "types/structs/SDirectSoundDeviceInfo.h"
 #include "types/structs/SDisplayListSortEntry.h"
 #include "types/structs/SEdge.h"
+#include "types/structs/SEdgeChainEntry.h"
 #include "types/structs/SEdgeList.h"
 #include "types/structs/SEdgeTableEntry.h"
 #include "types/structs/SEnumPair.h"
