@@ -1,68 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 38,
-        "line": 74,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 47,
-        "line": 74,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 56,
-        "line": 74,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 57,
-        "line": 93,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 67,
-        "line": 93,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 77,
-        "line": 93,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 49,
-        "line": 94,
-        "message": "format specifies type 'char *' but the argument has type 'SModelPartName *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 43,
-        "line": 214,
-        "message": "format specifies type 'float *' but the argument has type 'SVertexData *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 28,
-        "line": 215,
-        "message": "format specifies type 'float *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 56,
-        "line": 215,
-        "message": "format specifies type 'float *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -70,7 +9,7 @@
     "complexity_score": 237,
     "cross_reference_count": 1,
     "function_call_count": 15,
-    "global_count": 65,
+    "global_count": 64,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 237,
     "suspect_count": 0,
@@ -353,12 +292,6 @@
     {
       "addr": "0066edab",
       "name": "g_LoadedModelName+3",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00766880",
-      "name": "DAT_00766880",
       "type": "undefined4",
       "value": null
     },
@@ -734,6 +667,37 @@
         "type": "char *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "loadS3DModelFile_FUN_004593a0.keep.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "nullPointer",
+          "column": 14,
+          "line": 133,
+          "message": "Possible null pointer dereference: pcVar7",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 20,
+          "line": 142,
+          "message": "Redundant assignment of 'pcVar5' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 20,
+          "line": 147,
+          "message": "Redundant assignment of 'pcVar5' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

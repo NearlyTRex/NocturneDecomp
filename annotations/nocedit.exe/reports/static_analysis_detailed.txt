@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang-Tidy (quick) (1018 diagnostics)
+Clang-Tidy (quick) (1098 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-bugprone-assignment-in-if-condition (512)
+bugprone-assignment-in-if-condition (526)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_ line 102
@@ -1992,6 +1992,10 @@ bugprone-assignment-in-if-condition (512)
     File: engine/fileio.cpp
     an assignment within an 'if' condition is bug-prone
 
+  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 110
+    File: engine/fileio.cpp
+    an assignment within an 'if' condition is bug-prone
+
   engine_fileio.cpp_getLatestFileFromRepository_FUN_ line 76
     File: engine/fileio.cpp
     an assignment within an 'if' condition is bug-prone
@@ -2056,12 +2060,64 @@ bugprone-assignment-in-if-condition (512)
     File: shape/design.c
     an assignment within an 'if' condition is bug-prone
 
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 85
+    File: shape/design.c
+    an assignment within an 'if' condition is bug-prone
+
+  shape_design.c_optimizePolygonMesh_FUN_004658e0    line 50
+    File: shape/design.c
+    an assignment within an 'if' condition is bug-prone
+
+  shape_design.c_optimizePolygonMesh_FUN_004658e0    line 53
+    File: shape/design.c
+    an assignment within an 'if' condition is bug-prone
+
+  shape_design.c_optimizePolygonMesh_FUN_004658e0    line 57
+    File: shape/design.c
+    an assignment within an 'if' condition is bug-prone
+
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 556
+    File: shape/design.c
+    an assignment within an 'if' condition is bug-prone
+
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 586
+    File: shape/design.c
+    an assignment within an 'if' condition is bug-prone
+
+  sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN line 51
+    File: sound/snddx.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN line 102
+    File: sound/snddx.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0 line 124
+    File: sound/snddx.cpp
+    an assignment within an 'if' condition is bug-prone
+
   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0 line 77
     File: sound/sndmain.cpp
     an assignment within an 'if' condition is bug-prone
 
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a67 line 126
+    File: sound/sndmain.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100    line 123
+    File: sound/sndmain.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100    line 123
+    File: sound/sndmain.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0      line 59
+    File: sound/sndmain.cpp
+    an assignment within an 'if' condition is bug-prone
+
 ----------------------------------------------------------------------------------------------------
-bugprone-incorrect-roundings (220)
+bugprone-incorrect-roundings (280)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 173
@@ -2912,6 +2968,110 @@ bugprone-incorrect-roundings (220)
     File: shape/design.c
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
+  shape_design.c_loadTextureData_FUN_0046b060        line 110
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_loadTextureData_FUN_0046b060        line 110
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_loadTextureData_FUN_0046b060        line 112
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_loadTextureData_FUN_0046b060        line 112
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_loadTextureData_FUN_0046b060        line 116
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_loadTextureData_FUN_0046b060        line 116
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_loadTextureData_FUN_0046b060        line 118
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_loadTextureData_FUN_0046b060        line 118
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_parseSpatialTreeFromFile_FUN_004580 line 35
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_parseSpatialTreeFromFile_FUN_004580 line 35
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_renderSinglePolygon_FUN_0045ce20    line 35
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_renderSinglePolygon_FUN_0045ce20    line 35
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_renderSinglePolygon_FUN_0045ce20    line 37
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_renderSinglePolygon_FUN_0045ce20    line 37
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_renderSinglePolygon_FUN_0045ce20    line 39
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_renderSinglePolygon_FUN_0045ce20    line 39
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_renderSinglePolygon_FUN_0045ce20    line 41
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_renderSinglePolygon_FUN_0045ce20    line 41
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_renderSinglePolygon_FUN_0045ce20    line 67
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_renderSinglePolygon_FUN_0045ce20    line 67
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_renderSinglePolygon_FUN_0045ce20    line 70
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_renderSinglePolygon_FUN_0045ce20    line 70
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 140
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 140
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 141
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 141
+    File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
   shape_design.c_writeSpatialTree_FUN_0045a200       line 22
     File: shape/design.c
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
@@ -2942,6 +3102,142 @@ bugprone-incorrect-roundings (220)
 
   shape_design.c_writeSpatialTree_FUN_0045a200       line 25
     File: shape/design.c
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 113
+    File: sound/snddx.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 113
+    File: sound/snddx.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0 line 99
+    File: sound/snddx.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0 line 99
+    File: sound/snddx.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0 line 127
+    File: sound/snddx.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0 line 127
+    File: sound/snddx.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a67 line 74
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a67 line 74
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a67 line 78
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a67 line 78
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a67 line 90
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a67 line 90
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0     line 27
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0     line 27
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e1 line 19
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e1 line 19
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e1 line 21
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e1 line 21
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a line 30
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a line 30
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a line 31
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a line 31
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a line 32
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a line 32
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a line 33
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a line 33
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00 line 30
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00 line 30
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00 line 31
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00 line 31
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00 line 32
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00 line 32
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00 line 33
+    File: sound/sndmain.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00 line 33
+    File: sound/sndmain.cpp
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
 ----------------------------------------------------------------------------------------------------
@@ -3485,7 +3781,7 @@ cert-err33-c (134)
     the value returned by this function should not be disregarded; neglecting it may lead to errors
 
 ----------------------------------------------------------------------------------------------------
-cert-err34-c (74)
+cert-err34-c (78)
 ----------------------------------------------------------------------------------------------------
 
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 820
@@ -3757,6 +4053,22 @@ cert-err34-c (74)
     'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
 
   shape_design.c_createRotationalSweepGeometry_FUN_0 line 47
+    File: shape/design.c
+    'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+  shape_design.c_generateOctant_FUN_00469420         line 58
+    File: shape/design.c
+    'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+  shape_design.c_generateOctant_FUN_00469420         line 72
+    File: shape/design.c
+    'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+  shape_design.c_loadModelFile_FUN_00458ac0          line 167
+    File: shape/design.c
+    'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+  shape_design.c_loadModelFile_FUN_00458ac0          line 170
     File: shape/design.c
     'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
 
@@ -4101,6 +4413,30 @@ cert-flp30-c (3)
     loop induction expression should not have floating-point type
 
 ----------------------------------------------------------------------------------------------------
+bugprone-integer-division (2)
+----------------------------------------------------------------------------------------------------
+
+  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_ line 117
+    File: core/charactr.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackP line 40
+    File: sound/snddx.cpp
+    result of integer division used in a floating point context; possible loss of precision
+
+----------------------------------------------------------------------------------------------------
+cert-dcl50-cpp (2)
+----------------------------------------------------------------------------------------------------
+
+  core_main.c_displayErrorAndQuit_FUN_00506f10       line 10
+    File: core/main.c
+    do not define a C-style variadic function; consider using a function parameter pack or currying instead
+
+  sound_sndmain.cpp_logSoundError_FUN_005adba0       line 10
+    File: sound/sndmain.cpp
+    do not define a C-style variadic function; consider using a function parameter pack or currying instead
+
+----------------------------------------------------------------------------------------------------
 cert-env33-c (1)
 ----------------------------------------------------------------------------------------------------
 
@@ -4124,28 +4460,12 @@ bugprone-swapped-arguments (1)
     File: core/texlist.cpp
     declaration uses identifier '_Stack_1e0', which is a reserved identifier [cert-dcl37-c,cert-dcl51-cpp]
 
-----------------------------------------------------------------------------------------------------
-bugprone-integer-division (1)
-----------------------------------------------------------------------------------------------------
-
-  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_ line 117
-    File: core/charactr.cpp
-    result of integer division used in a floating point context; possible loss of precision
-
-----------------------------------------------------------------------------------------------------
-cert-dcl50-cpp (1)
-----------------------------------------------------------------------------------------------------
-
-  core_main.c_displayErrorAndQuit_FUN_00506f10       line 10
-    File: core/main.c
-    do not define a C-style variadic function; consider using a function parameter pack or currying instead
-
 ====================================================================================================
-Cppcheck (quick) (302 diagnostics)
+Cppcheck (quick) (335 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (106)
+selfAssignment (123)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 170
@@ -4528,6 +4848,14 @@ selfAssignment (106)
     File: engine/fileio.cpp
     Redundant assignment of 'pCVar8' to itself.
 
+  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 94
+    File: engine/fileio.cpp
+    Redundant assignment of 'piVar5' to itself.
+
+  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 95
+    File: engine/fileio.cpp
+    Redundant assignment of 'piVar7' to itself.
+
   engine_fileio.cpp_getLatestFileFromRepository_FUN_ line 41
     File: engine/fileio.cpp
     Redundant assignment of 'pcVar6' to itself.
@@ -4556,6 +4884,58 @@ selfAssignment (106)
     File: shape/design.c
     Redundant assignment of 'pcVar10' to itself.
 
+  shape_design.c_generateOctant_FUN_00469420         line 83
+    File: shape/design.c
+    Redundant assignment of 'pcVar4' to itself.
+
+  shape_design.c_loadS3DModelFile_FUN_004593a0       line 142
+    File: shape/design.c
+    Redundant assignment of 'pcVar5' to itself.
+
+  shape_design.c_loadS3DModelFile_FUN_004593a0       line 147
+    File: shape/design.c
+    Redundant assignment of 'pcVar5' to itself.
+
+  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 205
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 206
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 142
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 143
+    File: shape/design.c
+    Redundant assignment of 'pSVar8' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 156
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 157
+    File: shape/design.c
+    Redundant assignment of 'pSVar9' to itself.
+
+  shape_design.c_optimizePolygonMesh_FUN_004658e0    line 80
+    File: shape/design.c
+    Redundant assignment of 'pcVar5' to itself.
+
+  shape_design.c_optimizePolygonMesh_FUN_004658e0    line 85
+    File: shape/design.c
+    Redundant assignment of 'pcVar5' to itself.
+
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 578
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 579
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
+
   shape_design.c_showPolygonDetailsList_FUN_0045d9c0 line 55
     File: shape/design.c
     Redundant assignment of 'pcVar4' to itself.
@@ -4572,8 +4952,16 @@ selfAssignment (106)
     File: shape/design.c
     Redundant assignment of 'pcVar5' to itself.
 
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a67 line 199
+    File: sound/sndmain.cpp
+    Redundant assignment of 'pcVar10' to itself.
+
+  sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0       line 37
+    File: sound/sndmain.cpp
+    Redundant assignment of 'pcVar5' to itself.
+
 ----------------------------------------------------------------------------------------------------
-uninitvar (48)
+uninitvar (55)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 71
@@ -4768,6 +5156,202 @@ uninitvar (48)
     File: engine/model.c
     Uninitialized variable: local_110
 
+  shape_design.c_loadModelBinary_FUN_00458170        line 159
+    File: shape/design.c
+    Uninitialized variable: local_44
+
+  sound_sndmain.cpp_parseWavFile_FUN_005a3fe0        line 38
+    File: sound/sndmain.cpp
+    Uninitialized variable: local_17
+
+  sound_sndmain.cpp_parseWavFile_FUN_005a3fe0        line 38
+    File: sound/sndmain.cpp
+    Uninitialized variable: local_16
+
+  sound_sndmain.cpp_parseWavFile_FUN_005a3fe0        line 38
+    File: sound/sndmain.cpp
+    Uninitialized variable: local_15
+
+  sound_sndmain.cpp_parseWavFile_FUN_005a3fe0        line 42
+    File: sound/sndmain.cpp
+    Uninitialized variable: local_87
+
+  sound_sndmain.cpp_parseWavFile_FUN_005a3fe0        line 42
+    File: sound/sndmain.cpp
+    Uninitialized variable: local_86
+
+  sound_sndmain.cpp_parseWavFile_FUN_005a3fe0        line 42
+    File: sound/sndmain.cpp
+    Uninitialized variable: local_85
+
+----------------------------------------------------------------------------------------------------
+legacyUninitvar (41)
+----------------------------------------------------------------------------------------------------
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: local_28
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: local_24
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 62
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: local_20
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 62
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: local_1c
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 63
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: local_18
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 63
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: local_14
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 698
+    File: core/dmodel.cpp
+    Uninitialized variable: local_174
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 697
+    File: core/dmodel.cpp
+    Uninitialized variable: local_170
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 696
+    File: core/dmodel.cpp
+    Uninitialized variable: local_16c
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 698
+    File: core/dmodel.cpp
+    Uninitialized variable: local_168
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 697
+    File: core/dmodel.cpp
+    Uninitialized variable: local_164
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 696
+    File: core/dmodel.cpp
+    Uninitialized variable: local_160
+
+  core_mission.cpp_CDemonMission_loadActor_FUN_00523 line 64
+    File: core/mission.cpp
+    Uninitialized variable: local_e1
+
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb line 122
+    File: core/set.cpp
+    Uninitialized variable: fStack_68
+
+  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 112
+    File: core/set.cpp
+    Uninitialized variable: local_3c
+
+  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 116
+    File: core/set.cpp
+    Uninitialized variable: iStack_18
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 761
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1cc
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 759
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1c8
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 760
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1c4
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 761
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1c0
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 953
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1b8
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 953
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1b4
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 954
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1b0
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 954
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1ac
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 954
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1a8
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 571
+    File: core/skeledit.cpp
+    Uninitialized variable: local_38
+
+  core_skeleton.cpp_CDeformableModelInstance_blendMo line 121
+    File: core/skeleton.cpp
+    Uninitialized variable: afStack_120[0]
+
+  core_skeleton.cpp_CDeformableModelInstance_blendMo line 135
+    File: core/skeleton.cpp
+    Uninitialized variable: afStack_f0
+
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 270
+    File: core/skeleton.cpp
+    Uninitialized variable: afStack_228
+
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 189
+    File: core/skeleton.cpp
+    Uninitialized variable: afStack_1b8
+
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 248
+    File: core/skeleton.cpp
+    Uninitialized variable: afStack_168[0]
+
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 175
+    File: core/skeleton.cpp
+    Uninitialized variable: afStack_c8[0]
+
+  core_sound.cpp_updateListeners_FUN_005b1870        line 118
+    File: core/sound.cpp
+    Uninitialized variable: local_c8
+
+  core_sound.cpp_updateListeners_FUN_005b1870        line 118
+    File: core/sound.cpp
+    Uninitialized variable: local_c4
+
+  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 227
+    File: core/vampboss.cpp
+    Uninitialized variable: local_b4
+
+  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 205
+    File: core/vampboss.cpp
+    Uninitialized variable: local_b0
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 110
+    File: shape/design.c
+    Uninitialized variable: local_a4
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 88
+    File: shape/design.c
+    Uninitialized variable: local_74
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 90
+    File: shape/design.c
+    Uninitialized variable: local_70
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 128
+    File: shape/design.c
+    Uninitialized variable: local_68
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 82
+    File: shape/design.c
+    Uninitialized variable: local_64
+
 ----------------------------------------------------------------------------------------------------
 invalidscanf (40)
 ----------------------------------------------------------------------------------------------------
@@ -4931,154 +5515,6 @@ invalidscanf (40)
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1804
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-legacyUninitvar (36)
-----------------------------------------------------------------------------------------------------
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_28
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_24
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 62
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_20
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 62
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_1c
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 63
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_18
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 63
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_14
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 698
-    File: core/dmodel.cpp
-    Uninitialized variable: local_174
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 697
-    File: core/dmodel.cpp
-    Uninitialized variable: local_170
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 696
-    File: core/dmodel.cpp
-    Uninitialized variable: local_16c
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 698
-    File: core/dmodel.cpp
-    Uninitialized variable: local_168
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 697
-    File: core/dmodel.cpp
-    Uninitialized variable: local_164
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 696
-    File: core/dmodel.cpp
-    Uninitialized variable: local_160
-
-  core_mission.cpp_CDemonMission_loadActor_FUN_00523 line 64
-    File: core/mission.cpp
-    Uninitialized variable: local_e1
-
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb line 122
-    File: core/set.cpp
-    Uninitialized variable: fStack_68
-
-  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 112
-    File: core/set.cpp
-    Uninitialized variable: local_3c
-
-  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 116
-    File: core/set.cpp
-    Uninitialized variable: iStack_18
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 761
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1cc
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 759
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1c8
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 760
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1c4
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 761
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1c0
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 953
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1b8
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 953
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1b4
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 954
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1b0
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 954
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1ac
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 954
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1a8
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 571
-    File: core/skeledit.cpp
-    Uninitialized variable: local_38
-
-  core_skeleton.cpp_CDeformableModelInstance_blendMo line 121
-    File: core/skeleton.cpp
-    Uninitialized variable: afStack_120[0]
-
-  core_skeleton.cpp_CDeformableModelInstance_blendMo line 135
-    File: core/skeleton.cpp
-    Uninitialized variable: afStack_f0
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 270
-    File: core/skeleton.cpp
-    Uninitialized variable: afStack_228
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 189
-    File: core/skeleton.cpp
-    Uninitialized variable: afStack_1b8
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 248
-    File: core/skeleton.cpp
-    Uninitialized variable: afStack_168[0]
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 175
-    File: core/skeleton.cpp
-    Uninitialized variable: afStack_c8[0]
-
-  core_sound.cpp_updateListeners_FUN_005b1870        line 118
-    File: core/sound.cpp
-    Uninitialized variable: local_c8
-
-  core_sound.cpp_updateListeners_FUN_005b1870        line 118
-    File: core/sound.cpp
-    Uninitialized variable: local_c4
-
-  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 227
-    File: core/vampboss.cpp
-    Uninitialized variable: local_b4
-
-  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 205
-    File: core/vampboss.cpp
-    Uninitialized variable: local_b0
 
 ----------------------------------------------------------------------------------------------------
 shiftTooManyBitsSigned (30)
@@ -5305,7 +5741,35 @@ invalidPointerCast (11)
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
 ----------------------------------------------------------------------------------------------------
-nullPointer (5)
+nullPointerRedundantCheck (6)
+----------------------------------------------------------------------------------------------------
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 96
+    File: core/actor.cpp
+    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 97
+    File: core/actor.cpp
+    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 98
+    File: core/actor.cpp
+    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  engine_prim.c_renderScanlinePolygon_FUN_00553470   line 259
+    File: engine/prim.c
+    Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
+
+  sound_snddx.cpp_CDirectSoundDevice_initPropertySet line 44
+    File: sound/snddx.cpp
+    Either the condition 'local_18!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: local_18.
+
+  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 74
+    File: sound/snddx.cpp
+    Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
+
+----------------------------------------------------------------------------------------------------
+nullPointer (6)
 ----------------------------------------------------------------------------------------------------
 
   core_set.cpp_CDemonSet_load_FUN_00569410           line 410
@@ -5324,29 +5788,13 @@ nullPointer (5)
     File: core/setedit.cpp
     Possible null pointer dereference: pcVar4
 
+  shape_design.c_loadS3DModelFile_FUN_004593a0       line 133
+    File: shape/design.c
+    Possible null pointer dereference: pcVar7
+
   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0 line 109
     File: sound/sndmain.cpp
     Possible null pointer dereference: pcVar11
-
-----------------------------------------------------------------------------------------------------
-nullPointerRedundantCheck (4)
-----------------------------------------------------------------------------------------------------
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 96
-    File: core/actor.cpp
-    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 97
-    File: core/actor.cpp
-    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 98
-    File: core/actor.cpp
-    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-
-  engine_prim.c_renderScanlinePolygon_FUN_00553470   line 259
-    File: engine/prim.c
-    Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
 
 ----------------------------------------------------------------------------------------------------
 shiftNegativeLHS (3)
@@ -5381,20 +5829,24 @@ arrayIndexOutOfBounds (3)
     Array 'local_78[2]' accessed at index 2, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
+identicalInnerCondition (2)
+----------------------------------------------------------------------------------------------------
+
+  core_skeledit.cpp_CDeformableModel_sortFacesByText line 58
+    File: core/skeledit.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 59
+    File: sound/snddx.cpp
+    Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
 arrayIndexOutOfBoundsCond (1)
 ----------------------------------------------------------------------------------------------------
 
   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 165
     File: engine/clipper.c
     Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.
-
-----------------------------------------------------------------------------------------------------
-identicalInnerCondition (1)
-----------------------------------------------------------------------------------------------------
-
-  core_skeledit.cpp_CDeformableModel_sortFacesByText line 58
-    File: core/skeledit.cpp
-    Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 AssignmentIntegerToAddress (1)

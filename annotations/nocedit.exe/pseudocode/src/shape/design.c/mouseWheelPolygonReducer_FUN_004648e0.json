@@ -1,20 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 54,
-        "message": "assigning to 'SVertexData *' from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 12,
-        "line": 62,
-        "message": "assigning to 'SShapeEditorPolygon *' from incompatible type 'void *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -427,6 +414,56 @@
         "type": "int"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "mouseWheelPolygonReducer_FUN_004648e0.keep.c",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 85,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 20,
+          "line": 142,
+          "message": "Redundant assignment of 'pSVar5' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 20,
+          "line": 143,
+          "message": "Redundant assignment of 'pSVar8' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 20,
+          "line": 156,
+          "message": "Redundant assignment of 'pSVar6' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 20,
+          "line": 157,
+          "message": "Redundant assignment of 'pSVar9' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

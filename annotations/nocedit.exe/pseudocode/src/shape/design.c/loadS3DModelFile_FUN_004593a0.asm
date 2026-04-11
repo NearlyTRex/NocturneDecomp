@@ -40,7 +40,7 @@
 ;   TerminatedCString s_Too_many_polygons_d_max__0061abbb
 ;   TerminatedCString s_Too_many_vertices_d_max__0061abdc
 ;   TerminatedCString s_Too_many_parts_d_max_is__0061abfd
-;   ... and 50 more
+;   ... and 49 more
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005fde40
@@ -507,7 +507,7 @@ section .text
     CALL shape_design.c_skipLines_FUN_00459360 ; 004597ef
         ;   XREF to: 00459360 (UNCONDITIONAL_CALL)  ; void shape_design.c_skipLines_FUN_00459360(_FILE * file, int line_count)
     ADD ESP,0x8                         ; 004597f4
-    PUSH 0x766880                       ; 004597f7 | DAT_00766880
+    PUSH 0x766880                       ; 004597f7
     PUSH 0x0                            ; 004597fc
     MOV EAX,0x16e9910                   ; 004597fe | g_ModelPolygonData
     PUSH EAX                            ; 00459803 | g_ModelPolygonData

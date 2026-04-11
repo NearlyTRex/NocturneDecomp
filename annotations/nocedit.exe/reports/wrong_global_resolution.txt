@@ -37,8 +37,8 @@ SUMMARY
     g_CWeaponClassInfo                                 1 functions
     g_SourcePaletteData                                1 functions
 
-  .keep files with issues: 4 (these need manual review)
-  Raw .cpp files with issues: 62
+  .keep files with issues: 6 (these need manual review)
+  Raw .cpp files with issues: 60
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -94,6 +94,22 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  [.keep]  (1 s
 
   g_ColorCubeLookup
     Used at lines: 543
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_mouseWheelPolygonReducer_FUN_004648e0  [.keep]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 38, 38, 39, 129, 130
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.keep]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 174, 175, 181, 182, 188, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -557,14 +573,6 @@ shape_design.c_handleEditorHotkeys_FUN_0045b990  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-shape_design.c_mouseWheelPolygonReducer_FUN_004648e0  [.cpp]  (1 suspicious globals)
-  File: shape/design.c
-
-  g_KeyboardState
-    Used at lines: 37, 37, 38, 128, 129
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 shape_design.c_polygonToolModeManager_FUN_00464c90  [.cpp]  (1 suspicious globals)
   File: shape/design.c
 
@@ -610,14 +618,6 @@ shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0  [.cpp]  (1 suspicious 
 
   g_KeyboardState
     Used at lines: 28, 28, 29
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.cpp]  (1 suspicious globals)
-  File: shape/design.c
-
-  g_KeyboardState
-    Used at lines: 173, 174, 180, 181, 187, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

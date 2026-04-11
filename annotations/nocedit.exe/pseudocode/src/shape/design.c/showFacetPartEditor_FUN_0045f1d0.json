@@ -1,104 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 47,
-        "line": 256,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 38,
-        "line": 262,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 44,
-        "line": 298,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 304,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 308,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 312,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 18,
-        "line": 316,
-        "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 29,
-        "line": 388,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 30,
-        "line": 400,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 48,
-        "line": 406,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 59,
-        "line": 419,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 49,
-        "line": 438,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 41,
-        "line": 443,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 51,
-        "line": 447,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 47,
-        "line": 447,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 35,
-        "line": 476,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -731,8 +634,8 @@
     },
     {
       "addr": "0066ee08",
-      "name": "s_Texture_map_0066ee08",
-      "type": "TerminatedCString",
+      "name": "g_EditorTextureModeNames",
+      "type": "char[5][32]",
       "value": null
     },
     {
@@ -1515,6 +1418,72 @@
         "type": "float"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "showFacetPartEditor_FUN_0045f1d0.keep.c",
+    "clang_tidy_quick": {
+      "diagnostic_count": 6,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 23,
+          "line": 140,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 29,
+          "line": 140,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 22,
+          "line": 141,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 28,
+          "line": 141,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 33,
+          "line": 556,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 33,
+          "line": 586,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 22,
+          "line": 578,
+          "message": "Redundant assignment of 'pSVar5' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 22,
+          "line": 579,
+          "message": "Redundant assignment of 'pSVar6' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

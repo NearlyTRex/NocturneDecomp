@@ -5,35 +5,26 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6339 (98.2%)
-Failed: 115
+Successful: 6386 (98.9%)
+Failed: 68
 
 ERROR CATEGORIES
 --------------------------------------------------
-  type_error                       236
-  format_error                     174
-  incompatible_types                41
-  undeclared_identifier             31
-  syntax_error                      24
-  pointer_type                      10
-  missing_member                     8
-  other                              6
-  cast_error                         3
+  type_error                       200
+  format_error                      72
+  incompatible_types                32
+  undeclared_identifier             20
+  syntax_error                      16
+  pointer_type                       1
 
 ====================================================================================================
-CATEGORY: type_error (236 errors)
+CATEGORY: type_error (200 errors)
 ====================================================================================================
 
-  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
-    Line 72: called object type 'float' is not a function or function pointer
   shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680
     Line 20: invalid suffix '._0_4_' on floating constant
   shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
     Line 43: invalid suffix '._4_4_' on floating constant
-  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
-    Line 36: member reference base type 'byte[44]' (aka 'unsigned char[44]') is not a structure or union
-  shape_design.c_generateOctant_FUN_00469420
-    Line 54: member reference base type 'double' is not a structure or union
   shape_design.c_normalizeVertex_FUN_00461e60
     Line 17: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0
@@ -58,18 +49,12 @@ CATEGORY: type_error (236 errors)
     Line 115: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
     Line 168: member reference base type 'double' is not a structure or union
-  sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
-    Line 38: member reference base type 'double' is not a structure or union
-  sound_sndmain.cpp_startSoundThread_FUN_005abc00
-    Line 18: member reference base type 'double' is not a structure or union
   shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
     Line 89: member reference base type 'int' is not a structure or union
   shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0
     Line 20: member reference base type 'int' is not a structure or union
   shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
     Line 103: member reference base type 'int' is not a structure or union
-  sound_sndmain.cpp_parseWavFile_FUN_005a3fe0
-    Line 71: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
     Line 376: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   shape_superopt.cpp_CComplexPolygon_computeWindingNormal_FUN_005cbb40
@@ -78,53 +63,19 @@ CATEGORY: type_error (236 errors)
     Line 127: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
     Line 309: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
-  sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10
-    Line 20: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
-  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
-    Line 32: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
-  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
-    Line 32: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
 
 ====================================================================================================
-CATEGORY: format_error (174 errors)
+CATEGORY: format_error (72 errors)
 ====================================================================================================
 
-  engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
-    Line 110: format specifies type 'char *' but the argument has type 'CPodAuditRecord *' [-Werror,-Wformat]
-  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
-    Line 60: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
-  sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0
-    Line 22: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
-  sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60
-    Line 25: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
-  sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0
-    Line 81: format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]
   shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0
     Line 32: format specifies type 'char *' but the argument has type 'SFileTrackingEntry *' [-Werror,-Wformat]
-  sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0
-    Line 109: format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]
-  sound_sndmain.cpp_logSoundError_FUN_005adba0
-    Line 58: format specifies type 'char *' but the argument has type 'SSoundDeviceInfo *' [-Werror,-Wformat]
-  shape_design.c_loadTextureData_FUN_0046b060
-    Line 93: format specifies type 'char *' but the argument has type 'STextureAtlasEntry *' [-Werror,-Wformat]
-  sound_snddx.cpp_enumerateDirectSoundDevice_FUN_005b0390
-    Line 28: format specifies type 'char *' but the argument has type 'UINT' (aka 'unsigned int') [-Werror,-Wformat]
   shape_memdbg.cpp_closeFile_FUN_0050f9b0
     Line 40: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
-  sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0
-    Line 32: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
-  sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0
-    Line 20: format specifies type 'char *' but the argument has type 'struct CSfxSample *' [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250
     Line 38: format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]
-  shape_design.c_loadModelFile_FUN_00458ac0
-    Line 157: format specifies type 'float *' but the argument has type 'SVertexData *' [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
     Line 29: format specifies type 'int *' but the argument has type 'SIZE_T *' (aka 'unsigned long *') [-Werror,-Wformat]
-  shape_design.c_loadS3DModelFile_FUN_004593a0
-    Line 74: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
-  shape_design.c_parseSpatialTreeFromFile_FUN_004580a0
-    Line 25: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60
     Line 55: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0
@@ -133,16 +84,6 @@ CATEGORY: format_error (174 errors)
     Line 37: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0
     Line 81: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
-  shape_design.c_exportModelToMDL_FUN_00459e80
-    Line 39: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_exportVertexListFile_FUN_0045a610
-    Line 22: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_loadModelBinary_FUN_00458170
-    Line 64: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_optimizePolygonMesh_FUN_004658e0
-    Line 73: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0
-    Line 256: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_design.c_showPointEditor_FUN_0045c6c0
     Line 48: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_design.c_vertexReducer_FUN_00467850
@@ -163,31 +104,19 @@ CATEGORY: format_error (174 errors)
     Line 41: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
     Line 46: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
-    Line 75: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
-    Line 41: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-  sound_sndmain.cpp_formatSfxOptionsToString_FUN_005a8d00
-    Line 19: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
 
 ====================================================================================================
-CATEGORY: incompatible_types (41 errors)
+CATEGORY: incompatible_types (32 errors)
 ====================================================================================================
 
   shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500
     Line 117: assigning to 'SExpandedEdge *' from incompatible type 'void *'
   shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0
     Line 72: assigning to 'SExpandedEdge *' from incompatible type 'void *'
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648e0
-    Line 54: assigning to 'SVertexData *' from incompatible type 'void *'
   shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30
     Line 23: assigning to 'char *' from incompatible type 'HANDLE' (aka 'void *')
   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
     Line 38: assigning to 'char *' from incompatible type 'LPVOID' (aka 'void *')
-  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
-    Line 182: assigning to 'char *' from incompatible type 'void *'
-  sound_sndmain.cpp_allocMixBuffers_FUN_005a5730
-    Line 31: assigning to 'float *' from incompatible type 'void *'
   shape_superopt.cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20
     Line 23: assigning to 'int *' from incompatible type 'void *'
   shape_superopt.cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280
@@ -196,10 +125,6 @@ CATEGORY: incompatible_types (41 errors)
     Line 24: assigning to 'int *' from incompatible type 'void *'
   shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0
     Line 33: assigning to 'int *' from incompatible type 'void *'
-  sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170
-    Line 39: assigning to 'short *' from incompatible type 'void *'
-  sound_sndmain.cpp_getSfxSample_FUN_005a4c80
-    Line 172: assigning to 'short *' from incompatible type 'void *'
   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
     Line 50: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
@@ -232,7 +157,7 @@ CATEGORY: incompatible_types (41 errors)
     Line 20: invalid operands to binary expression ('double' and 'int')
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (31 errors)
+CATEGORY: undeclared_identifier (20 errors)
 ====================================================================================================
 
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
@@ -257,23 +182,11 @@ CATEGORY: undeclared_identifier (31 errors)
     Line 23: use of undeclared identifier 'code'
   shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
     Line 43: use of undeclared identifier 'code'
-  sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
-    Line 46: use of undeclared identifier 'code'
-  sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae4b0
-    Line 68: use of undeclared identifier 'code'
-  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
-    Line 83: use of undeclared identifier 'code'
-  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
-    Line 123: use of undeclared identifier 'code'
   shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     Line 60: use of undeclared identifier 'stack0x00000000'
-  shape_design.c_renderSinglePolygon_FUN_0045ce20
-    Line 85: use of undeclared identifier 'stack0xffffffdc'
-  shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920
-    Line 19: use of undeclared identifier 'stack0xffffffe0'
 
 ====================================================================================================
-CATEGORY: syntax_error (24 errors)
+CATEGORY: syntax_error (16 errors)
 ====================================================================================================
 
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
@@ -298,57 +211,10 @@ CATEGORY: syntax_error (24 errors)
     Line 23: expected expression
   shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
     Line 43: expected expression
-  sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
-    Line 46: expected expression
-  sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae4b0
-    Line 68: expected expression
-  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
-    Line 83: expected expression
-  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
-    Line 123: expected expression
 
 ====================================================================================================
-CATEGORY: pointer_type (10 errors)
+CATEGORY: pointer_type (1 errors)
 ====================================================================================================
 
-  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
-    Line 29: cannot initialize a parameter of type 'LPDWORD' (aka 'unsigned long *') with an rvalue of type 'uint *' (aka 'unsigned int *')
-  sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50
-    Line 24: cannot initialize a parameter of type 'LPDWORD' (aka 'unsigned long *') with an rvalue of type 'uint *' (aka 'unsigned int *')
-  sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
-    Line 43: cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'IDirectSoundBuffer *'
-  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
-    Line 75: cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'IDirectSoundBuffer *'
-  sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120
-    Line 59: cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'LPDIRECTSOUND' (aka 'IDirectSound *')
-  sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_005af410
-    Line 80: cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectSound3DBuffer **'
-  sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440
-    Line 65: cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectSound3DListener **'
   shape_superopt.cpp_CObj_updatePolyFlagsFromVerts_FUN_005d36b0
     Line 31: comparison of distinct pointer types ('CPoly *' and 'int *')
-
-====================================================================================================
-CATEGORY: missing_member (8 errors)
-====================================================================================================
-
-  sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
-    Line 44: no member named '_12_4_' in 'tWAVEFORMATEX'
-  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
-    Line 111: no member named '_18_2_' in 'tWAVEFORMATEX'
-
-====================================================================================================
-CATEGORY: other (6 errors)
-====================================================================================================
-
-  sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100
-    Line 101: no matching literal operator for call to 'operator""_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template
-
-====================================================================================================
-CATEGORY: cast_error (3 errors)
-====================================================================================================
-
-  sound_sndwav.cpp_staticInit_FUN_005b0670
-    Line 12: no matching conversion for C-style cast from 'CSoundDeviceBasic_vtable *' to 'CSoundDevice'
-  sound_snddx.cpp_staticInit_FUN_005ade60
-    Line 12: no matching conversion for C-style cast from 'CSoundDeviceFull_vtable *' to 'CSoundDevice'

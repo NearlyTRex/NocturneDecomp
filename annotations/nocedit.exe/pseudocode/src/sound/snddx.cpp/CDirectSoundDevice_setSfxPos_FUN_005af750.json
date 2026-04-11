@@ -1,56 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 59,
-        "line": 75,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 59,
-        "line": 89,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 59,
-        "line": 121,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 57,
-        "line": 135,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 59,
-        "line": 148,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 59,
-        "line": 163,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 59,
-        "line": 172,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 59,
-        "line": 187,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -448,6 +399,46 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CDirectSoundDevice_setSfxPos_FUN_005af750.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 5,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 27,
+          "line": 99,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 33,
+          "line": 99,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 13,
+          "line": 124,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 33,
+          "line": 127,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 39,
+          "line": 127,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

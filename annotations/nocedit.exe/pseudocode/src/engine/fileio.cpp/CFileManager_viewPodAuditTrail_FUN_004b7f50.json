@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 41,
-        "line": 110,
-        "message": "format specifies type 'char *' but the argument has type 'CPodAuditRecord *' [-Werror,-Wformat]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -345,6 +338,42 @@
         "type": "char *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CFileManager_viewPodAuditTrail_FUN_004b7f50.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 17,
+          "line": 110,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 16,
+          "line": 94,
+          "message": "Redundant assignment of 'piVar5' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 16,
+          "line": 95,
+          "message": "Redundant assignment of 'piVar7' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

@@ -552,7 +552,7 @@ section .text
     MOV EAX,[0x01e528c8]                ; 0045f872 | g_EditorTextureMode
         ;   Label: LAB_0045f872
     SHL EAX,0x5                         ; 0045f877
-    MOV EDX,0x66ee08                    ; 0045f87a | = "Texture map"
+    MOV EDX,0x66ee08                    ; 0045f87a | g_EditorTextureModeNames
     ADD EAX,EDX                         ; 0045f87f
     PUSH EAX                            ; 0045f881
     MOV EAX,0x61b743                    ; 0045f882 | = "Renderer : %s"

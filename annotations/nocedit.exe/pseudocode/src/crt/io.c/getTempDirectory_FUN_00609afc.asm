@@ -8,11 +8,11 @@
 ;   crt_io.c__tempnam_FUN_00601f1c at 00601f32
 ;
 ; Referenced Globals:
-;   undefined1 DAT_006590a4
-;   undefined1 DAT_006590a8
-;   char** g_TempEnvVarNames = 006590a4
-;   void* PTR_DAT_006852cc = 006590a8
-;   char CHAR_00h_006852db = \x00
+;   TerminatedCString s_TMP_006590a4
+;   TerminatedCString s_T_006590a8
+;   char*[4] g_TempEnvVarNames
+;   undefined4 g_TempEnvVarNames[1]
+;   undefined4 DAT_006852db
 ;   char[260] g_TempDirectoryBuffer
 ;   undefined4 g_TempDirectoryBuffer+1
 ;   undefined4 g_TempDirectoryBuffer+2
@@ -37,7 +37,7 @@ section .text
     MOV EBX,0x6852c8                    ; 00609b0c | g_TempEnvVarNames
     JMP 0x00609b54                      ; 00609b11
         ;   XREF to: 00609b54 (UNCONDITIONAL_JUMP)  ; LAB_00609b54
-    PUSH EDX                            ; 00609b13 | DAT_006590a4
+    PUSH EDX                            ; 00609b13 | = "TMP"
         ;   Label: LAB_00609b13
     CALL crt_env.c_getenv_FUN_006013f0  ; 00609b14
         ;   XREF to: 006013f0 (UNCONDITIONAL_CALL)  ; char * crt_env.c_getenv_FUN_006013f0(char * name)
@@ -70,9 +70,9 @@ section .text
         ;   XREF to: 00609b5b (UNCONDITIONAL_JUMP)  ; LAB_00609b5b
     ADD EBX,0x4                         ; 00609b51
         ;   Label: LAB_00609b51
-    MOV EDX,dword ptr [EBX]             ; 00609b54 | DAT_006590a4 | g_TempEnvVarNames | PTR_DAT_006852cc
+    MOV EDX,dword ptr [EBX]             ; 00609b54 | = "TMP" | g_TempEnvVarNames | g_TempEnvVarNames[1]
         ;   Label: LAB_00609b54
-    CMP byte ptr [EDX],0x0              ; 00609b56 | DAT_006590a4 | DAT_006590a8
+    CMP byte ptr [EDX],0x0              ; 00609b56 | = "TMP" | s_T_006590a8
     JNZ 0x00609b13                      ; 00609b59
         ;   XREF to: 00609b13 (CONDITIONAL_JUMP)  ; LAB_00609b13
     CMP byte ptr [0x006852dc],0x0       ; 00609b5b | g_TempDirectoryBuffer
@@ -116,7 +116,7 @@ section .text
     POP ES                              ; 00609ba5
     LEA EDX,[ECX + -0x1]                ; 00609ba6
     ADD EDX,0x6852dc                    ; 00609ba9 | g_TempDirectoryBuffer
-    MOV AL,byte ptr [EDX]               ; 00609baf | CHAR_00h_006852db | g_TempDirectoryBuffer
+    MOV AL,byte ptr [EDX]               ; 00609baf | DAT_006852db | g_TempDirectoryBuffer
     CMP AL,0x5c                         ; 00609bb1
     JZ 0x00609bc1                       ; 00609bb3
         ;   XREF to: 00609bc1 (CONDITIONAL_JUMP)  ; LAB_00609bc1

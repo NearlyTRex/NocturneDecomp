@@ -40,7 +40,7 @@
 ;   TerminatedCString s_system_nocturne_ini_0062ccdc
 ;   TerminatedCString s_Act1Code_0062ccf0
 ;   TerminatedCString s_Act2Code_0062ccf9
-;   ... and 82 more
+;   ... and 81 more
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_resetGameFlags_FUN_004b0460
@@ -221,7 +221,7 @@ section .text
     SHL EAX,0x2                         ; 004e1f09
     SHL EDI,0x2                         ; 004e1f0c
     ADD EAX,EBP                         ; 004e1f0f
-    MOV ESI,dword ptr [EDI + EAX*0x4 + 0x67b750] ; 004e1f11 | DAT_0067b718
+    MOV ESI,dword ptr [EDI + EAX*0x4 + 0x67b750] ; 004e1f11
     LEA EDI,[ESP + 0x5a8]               ; 004e1f18
     PUSH EDI                            ; 004e1f1f
     MOV AL,byte ptr [ESI]               ; 004e1f20

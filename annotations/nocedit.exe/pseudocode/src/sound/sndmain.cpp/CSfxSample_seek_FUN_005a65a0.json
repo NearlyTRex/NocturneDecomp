@@ -1,26 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 91,
-        "line": 22,
-        "message": "format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 110,
-        "line": 41,
-        "message": "format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 68,
-        "line": 53,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -285,6 +266,28 @@
         "type": "int"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CSfxSample_seek_FUN_005a65a0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 41,
+          "line": 27,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 47,
+          "line": 27,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

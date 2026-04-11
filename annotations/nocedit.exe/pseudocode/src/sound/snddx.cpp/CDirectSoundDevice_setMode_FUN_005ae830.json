@@ -1,50 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_type",
-        "column": 49,
-        "line": 75,
-        "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'IDirectSoundBuffer *'"
-      },
-      {
-        "category": "pointer_type",
-        "column": 46,
-        "line": 78,
-        "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'IDirectSoundBuffer *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 83,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 24,
-        "line": 83,
-        "message": "expected expression"
-      },
-      {
-        "category": "pointer_type",
-        "column": 46,
-        "line": 85,
-        "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'IDirectSoundBuffer *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 89,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 26,
-        "line": 89,
-        "message": "expected expression"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -402,6 +359,41 @@
         "type": "int *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CDirectSoundDevice_setMode_FUN_005ae830.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 19,
+          "line": 113,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 25,
+          "line": 113,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "nullPointerRedundantCheck",
+          "column": 13,
+          "line": 74,
+          "message": "Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

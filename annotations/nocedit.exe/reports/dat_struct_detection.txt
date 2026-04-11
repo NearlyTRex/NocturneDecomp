@@ -2,45 +2,43 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 11
-Filtered out (inside named data): 4
-Immediate constants (not real globals): 1
-Real globals remaining: 10
-Clusters detected: 0
-DAT_ globals in clusters: 0
+Total DAT_ globals found: 9
+Filtered out (inside named data): 2
+Immediate constants (not real globals): 0
+Real globals remaining: 9
+Clusters detected: 1
+DAT_ globals in clusters: 2
 
 Classification summary:
+  unknown              1 clusters
 
 --------------------------------------------------------------------------------
-LIKELY IMMEDIATE CONSTANTS (1)
+LOW CONFIDENCE (1 clusters)
 --------------------------------------------------------------------------------
-These DAT_ globals are never dereferenced as memory addresses.
-They appear only as inline constant values (e.g. MOV EDX,0xf80000).
-Consider removing the Ghidra label and leaving the raw number.
 
-  DAT_00766880  value=0x766880 (7760000)  refs=1
-    loadS3DModelFile
-      PUSH 0x766880                       ; 004597f7 | DAT_00766880
+  0x0068528c - 0x006852db  (2 items, 79 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=79 bytes
+    Referenced by: 2 functions
+     near: g_SpecialDeviceCleanupFunc (SPECIAL_DEVICE_CLEANUP_FUNC*) at +4
+      0x0068528c  DAT_0068528c  undefined4
+      0x006852db  DAT_006852db  undefined4 [byte]
 
 --------------------------------------------------------------------------------
-ISOLATED DAT_ GLOBALS (10 - not part of any cluster)
+ISOLATED DAT_ GLOBALS (7 - not part of any cluster)
 --------------------------------------------------------------------------------
   DAT_00002424                    addr=00002424    type=undefined4      refs=21 [likely float]
   DAT_00800000                    addr=00800000    type=undefined4      refs=12
   DAT_02d831d6                    addr=02d831d6    type=undefined4      refs=3 [likely byte]  near: g_InputHistory(-1)
   DAT_00412b41                    addr=00412b41    type=undefined4      refs=1
-  DAT_0067b718                    addr=0067b718    type=undefined4      refs=1  near: g_ChapterMissionFiles(-56)
-  DAT_0068528c                    addr=0068528c    type=undefined4      refs=1  near: g_SpecialDeviceCleanupFunc(+4)
   DAT_00665f3a                    addr=00665f3a    type=undefined4      refs=1  near: g_DaysInMonth_Normal(+2)
   DAT_00679d50                    addr=00679d50    type=undefined4      refs=1  near: switchdataD_00679d54(-4)
   DAT_0051a3f4                    addr=0051a3f4    type=undefined4      refs=1  near: PTR_caseD_5_0051a3ec(+8)
-  DAT_03f5d97c                    addr=03f5d97c    type=undefined4      refs=1  near: g_SoundTestErrorBuffer(+220)
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (4)
+FILTERED OUT - INSIDE NAMED DATA (2)
 --------------------------------------------------------------------------------
-  DAT_006590a4                    inside s_con_006590a0
-  DAT_006590a8                    inside s_con_006590a0
   DAT_0068513c                    inside s_EST_006850bc
   DAT_006851bd                    inside s_EDT_0068513d
 

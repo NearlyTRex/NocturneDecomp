@@ -44,7 +44,7 @@
 ;   TerminatedCString s_sound_0064faad
 ;   TerminatedCString s_startSfx_can_t_get_sampl_0065098e
 ;   float FLOAT_00663164 = 2
-;   ... and 34 more
+;   ... and 32 more
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -178,7 +178,7 @@ section .text
     LEA ESI,[ESP + 0x304]               ; 005a8fa4
     MOV EDI,EBP                         ; 005a8fab
     PUSH 0x64fa53                       ; 005a8fad | = "sound"
-    MOVSD.REP ES:EDI,ESI                ; 005a8fb2 | DAT_03f5d97c | g_SfxSlots[1].status | g_SfxSlots[1].sample_data
+    MOVSD.REP ES:EDI,ESI                ; 005a8fb2
     CALL engine_dosio.c_getFileSize_FUN_00481880 ; 005a8fb4
         ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 005a8fb9

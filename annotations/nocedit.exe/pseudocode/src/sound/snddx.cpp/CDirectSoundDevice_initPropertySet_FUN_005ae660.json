@@ -1,98 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_type",
-        "column": 41,
-        "line": 43,
-        "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'IDirectSoundBuffer *'"
-      },
-      {
-        "category": "missing_member",
-        "column": 18,
-        "line": 44,
-        "message": "no member named '_12_4_' in 'tWAVEFORMATEX'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 46,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 46,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 10,
-        "line": 50,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 16,
-        "line": 50,
-        "message": "expected expression"
-      },
-      {
-        "category": "missing_member",
-        "column": 37,
-        "line": 50,
-        "message": "no member named '_12_4_' in 'tWAVEFORMATEX'"
-      },
-      {
-        "category": "missing_member",
-        "column": 27,
-        "line": 51,
-        "message": "no member named '_12_4_' in 'tWAVEFORMATEX'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 53,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 53,
-        "message": "expected expression"
-      },
-      {
-        "category": "missing_member",
-        "column": 20,
-        "line": 56,
-        "message": "no member named '_0_4_' in 'tWAVEFORMATEX'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 57,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 20,
-        "line": 57,
-        "message": "expected expression"
-      },
-      {
-        "category": "missing_member",
-        "column": 39,
-        "line": 57,
-        "message": "no member named '_0_4_' in 'tWAVEFORMATEX'"
-      },
-      {
-        "category": "missing_member",
-        "column": 60,
-        "line": 57,
-        "message": "no member named '_0_4_' in 'tWAVEFORMATEX'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -269,6 +178,23 @@
         "type": "CDirectSoundDevice *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CDirectSoundDevice_initPropertySet_FUN_005ae660.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "nullPointerRedundantCheck",
+          "column": 7,
+          "line": 44,
+          "message": "Either the condition 'local_18!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: local_18.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

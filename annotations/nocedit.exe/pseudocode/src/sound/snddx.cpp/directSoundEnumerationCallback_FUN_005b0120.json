@@ -1,14 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "pointer_type",
-        "column": 36,
-        "line": 59,
-        "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'LPDIRECTSOUND' (aka 'IDirectSound *')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -261,6 +254,23 @@
         "type": "LPVOID"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "directSoundEnumerationCallback_FUN_005b0120.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 18,
+          "line": 59,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

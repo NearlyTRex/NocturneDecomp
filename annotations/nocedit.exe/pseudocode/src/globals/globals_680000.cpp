@@ -3778,9 +3778,6 @@ byte g_ConsoleHandlerRegistered = 0x0;
 // byte[16]
 byte g_IEEE754ExponentClassTable[16] = {0x00, 0x01, 0x00, 0x00, 0x04, 0x00, 0x00, 0x07, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x0D, 0x00, 0x00};
 
-// char
-char CHAR_00h_006852db = '\0';
-
 // char*
 char* g_CurrentTrainMode = (char*)s_int_00652706;
 char* g_PreviousTrainMode = (char*)s_x_0065270a;
@@ -3789,9 +3786,6 @@ char* g_ApplicationTimerTitle = (char*)s_Nocturne_Editor_006581b7;
 char* g_ExeFileNameA = nullptr;
 char* g_DllFileNameA = nullptr;
 char* g_EnvironmentStrings = nullptr;
-
-// char**
-char** g_TempEnvVarNames = (char**)0x006590A4; // DAT_006590a4
 
 // char[104]
 char g_MsnEditHideByTypeBuffer[] = "";

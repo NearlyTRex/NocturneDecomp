@@ -2,15 +2,15 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 15
-Filtered out (inside named data): 4
-Immediate constants (not real globals): 1
-Real globals remaining: 10
+Total DAT_ globals found: 11
+Filtered out (inside named data): 2
+Immediate constants (not real globals): 0
+Real globals remaining: 9
 
 Current type breakdown:
-  undefined4                     10
+  undefined4                     9
 
-DAT_ globals with type hints: 3 / 10
+DAT_ globals with type hints: 4 / 9
 
 --------------------------------------------------------------------------------
 HIGH CONFIDENCE INFERENCES (3)
@@ -22,23 +22,23 @@ HIGH CONFIDENCE INFERENCES (3)
     nearby: g_InputHistory (char[20]) at offset -1
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE INFERENCES (0)
+MEDIUM CONFIDENCE INFERENCES (1)
 --------------------------------------------------------------------------------
+  DAT_006852db                    addr=006852db    current=undefined4      likely=byte            refs=1
+    nearby: g_TempDirectoryBuffer (char[260]) at offset -1
 
 --------------------------------------------------------------------------------
 LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (7)
+NO TYPE HINTS (5)
 --------------------------------------------------------------------------------
   DAT_00412b41                    addr=00412b41    type=undefined4      refs=1
   DAT_0051a3f4                    addr=0051a3f4    type=undefined4      refs=1  nearby: PTR_caseD_5_0051a3ec at +8
   DAT_00665f3a                    addr=00665f3a    type=undefined4      refs=1  nearby: g_DaysInMonth_Normal at +2
   DAT_00679d50                    addr=00679d50    type=undefined4      refs=1  nearby: switchdataD_00679d54 at -4
-  DAT_0067b718                    addr=0067b718    type=undefined4      refs=1  nearby: g_ChapterMissionFiles at -56
   DAT_00800000                    addr=00800000    type=undefined4      refs=12
-  DAT_03f5d97c                    addr=03f5d97c    type=undefined4      refs=1  nearby: g_SoundTestErrorBuffer at +220
 
 --------------------------------------------------------------------------------
 MOST REFERENCED DAT_ GLOBALS (top 50)
@@ -47,29 +47,18 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_00800000                    addr=00800000    refs=12    type=undefined4    
   DAT_02d831d6                    addr=02d831d6    refs=3     type=undefined4      likely=byte  nearby: g_InputHistory(-1)
   DAT_00412b41                    addr=00412b41    refs=1     type=undefined4    
-  DAT_0067b718                    addr=0067b718    refs=1     type=undefined4      nearby: g_ChapterMissionFiles(-56)
+  DAT_006852db                    addr=006852db    refs=1     type=undefined4      likely=byte  nearby: g_TempDirectoryBuffer(-1)
   DAT_0068528c                    addr=0068528c    refs=1     type=undefined4      likely=function_ptr  nearby: g_SpecialDeviceCleanupFunc(+4)
   DAT_00665f3a                    addr=00665f3a    refs=1     type=undefined4      nearby: g_DaysInMonth_Normal(+2)
   DAT_00679d50                    addr=00679d50    refs=1     type=undefined4      nearby: switchdataD_00679d54(-4)
   DAT_0051a3f4                    addr=0051a3f4    refs=1     type=undefined4      nearby: PTR_caseD_5_0051a3ec(+8)
-  DAT_03f5d97c                    addr=03f5d97c    refs=1     type=undefined4      nearby: g_SoundTestErrorBuffer(+220)
 
 --------------------------------------------------------------------------------
-IMMEDIATE CONSTANTS - NOT REAL GLOBALS (1)
---------------------------------------------------------------------------------
-These DAT_ globals are never dereferenced as memory addresses.
-They appear only as inline constant values.
-
-  DAT_00766880                    value=0x766880        refs=1
-
---------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (4)
+FILTERED OUT - INSIDE NAMED DATA (2)
 --------------------------------------------------------------------------------
 These DAT_ globals fall within the address range of a named
 string, array, or struct and are not standalone globals.
 
-  DAT_006590a4                    inside s_con_006590a0
-  DAT_006590a8                    inside s_con_006590a0
   DAT_0068513c                    inside s_EST_006850bc
   DAT_006851bd                    inside s_EDT_0068513d
 

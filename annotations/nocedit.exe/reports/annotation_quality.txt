@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        144 ( 2.2%)
+  Functions with type issues:        132 ( 2.0%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,13 +22,13 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          2
-    Undefined types in variables:      135
-    Unresolved stack params:           7
+    Undefined types in variables:      124
+    Unresolved stack params:           6
 
-  Excluded (.keep / MMX / by-value):   93 functions
+  Excluded (.keep / MMX / by-value):   105 functions
     Wrong calling convention:          1
-    Undefined types in variables:      84
-    Unresolved stack params:           14
+    Undefined types in variables:      95
+    Unresolved stack params:           15
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -85,19 +85,13 @@ Wrong calling convention (unaffected register usage) (2)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (7)
+Unresolved stack parameters (missing from signature) (6)
 --------------------------------------------------------------------------------
 
   CWinFont_setColorAndDrawText
     Address: 0x005f2440  File: engine/winfont.cpp
     Evidence: in_stack_0000002c, in_stack_0000002c
     Signature: void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,char *text_string,int x_position,int y_position,int foreground_color,int background_color)
-    Suggested: Signature is missing stack parameters entirely
-
-  CWavInDevice_setMode
-    Address: 0x005b0f70  File: sound/sndwav.cpp
-    Evidence: in_stack_00000018, in_stack_00000018
-    Signature: int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int stereo_flag)
     Suggested: Signature is missing stack parameters entirely
 
   CWavOutDevice_setMode
@@ -131,7 +125,7 @@ Unresolved stack parameters (missing from signature) (7)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (135)
+Undefined types in variables (124)
 --------------------------------------------------------------------------------
 
   CPoly_intersectPoly
@@ -259,11 +253,6 @@ Undefined types in variables (135)
     Locals:  local_98 (undefined4), uStack_94 (undefined4), uStack_84 (undefined4), local_80 (undefined4), local_68 (undefined4), uStack_5c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  loadModelBinary
-    Address: 0x00458170  File: shape/design.c
-    Locals:  local_a8 (undefined1[4]), local_90 (undefined1[8]), local_6c (undefined1[4]), local_54 (undefined1[12]), local_48 (undefined1[4]), local_40 (undefined1[4])
-    Suggested: Resolve undefined types to concrete types
-
   CComplexPolygon_canMergeEdges
     Address: 0x005c7fb0  File: shape/superopt.cpp
     Locals:  local_58 (undefined4[4]), local_48 (undefined4), uStack_44 (undefined4), local_28 (undefined4[4]), local_18 (undefined4), uStack_14 (undefined4)
@@ -297,11 +286,6 @@ Undefined types in variables (135)
   groundCenterObject
     Address: 0x00466a30  File: shape/design.c
     Locals:  local_44 (undefined4), uStack_40 (undefined4), local_2c (undefined4), uStack_28 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  loadS3DModelFile
-    Address: 0x004593a0  File: shape/design.c
-    Locals:  local_8dc (undefined1[4]), local_24 (undefined1[4]), local_20 (undefined1[4]), local_1c (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
   CDSEModel_centerModel
@@ -442,11 +426,6 @@ Undefined types in variables (135)
   requantizeLayer3SamplesSimple
     Address: 0x0052fee0  File: sound/mp3.cpp
     Locals:  local_34 (undefined4 *), local_24 (undefined4 *)
-    Suggested: Resolve undefined types to concrete types
-
-  CSfxSlot_compute
-    Address: 0x005a7100  File: sound/sndmain.cpp
-    Locals:  local_60 (undefined8), local_38 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   normalizeAngleToPi
@@ -709,11 +688,6 @@ Undefined types in variables (135)
     Locals:  local_18 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
-  parseSpatialTreeFromFile
-    Address: 0x004580a0  File: shape/design.c
-    Locals:  local_2c (undefined1[4])
-    Suggested: Resolve undefined types to concrete types
-
   CEditorTools_createModalWindow
     Address: 0x004a0970  File: shape/edittool.cpp
     Locals:  local_14 (undefined4 *)
@@ -749,44 +723,9 @@ Undefined types in variables (135)
     Locals:  local_10 (undefined4[4])
     Suggested: Resolve undefined types to concrete types
 
-  CDirectSoundDevice_initPropertySet
-    Address: 0x005ae660  File: sound/snddx.cpp
-    Locals:  local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDirectSoundDevice_setMode
-    Address: 0x005ae830  File: sound/snddx.cpp
-    Locals:  uStack_18 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CSfxSlot_updatePlaybackPos
-    Address: 0x005a8170  File: sound/sndmain.cpp
-    Locals:  local_28 (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
-  convertDoubleToFixed
-    Address: 0x005a5e10  File: sound/sndmain.cpp
-    Locals:  local_c (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
   convertMixBufToOutput
     Address: 0x005a5b80  File: sound/sndmain.cpp
     Locals:  local_28 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  getSampleInfo
-    Address: 0x005aa3f0  File: sound/sndmain.cpp
-    Locals:  local_113 (undefined1[255])
-    Suggested: Resolve undefined types to concrete types
-
-  getSfxSample
-    Address: 0x005a4c80  File: sound/sndmain.cpp
-    Locals:  local_113 (undefined1[255])
-    Suggested: Resolve undefined types to concrete types
-
-  parseWavFile
-    Address: 0x005a3fe0  File: sound/sndmain.cpp
-    Locals:  local_24 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   resampleAndConvertAudio
@@ -840,8 +779,14 @@ Wrong calling convention - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Unresolved stack params - .keep overrides (9)
+Unresolved stack params - .keep overrides (10)
 --------------------------------------------------------------------------------
+
+  CWavInDevice_setMode
+    Address: 0x005b0f70  File: sound/sndwav.cpp
+    Evidence: in_stack_00000018, in_stack_00000018
+    Signature: int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int stereo_flag)
+    Suggested: Signature is missing stack parameters entirely
 
   CVehicle_renderOpaque
     Address: 0x005e88c0  File: core/vehicle.cpp
@@ -938,7 +883,7 @@ Unresolved stack params - by-value struct passing (5)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (81)
+Undefined types - .keep overrides (92)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1061,6 +1006,11 @@ Undefined types - .keep overrides (81)
     Locals:  local_6c (undefined1[4]), local_68 (undefined1[4]), local_64 (undefined1[4]), local_60 (undefined1[4]), local_5c (undefined1[4]), local_58 (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
+  loadModelBinary
+    Address: 0x00458170  File: shape/design.c
+    Locals:  local_a8 (undefined1[4]), local_90 (undefined1[8]), local_6c (undefined1[4]), local_54 (undefined1[12]), local_48 (undefined1[4]), local_40 (undefined1[4])
+    Suggested: Resolve undefined types to concrete types
+
   CSfxSample_parseConfigFile
     Address: 0x005a45c0  File: sound/sndmain.cpp
     Locals:  local_480 (undefined4), uStack_47c (undefined4), local_478 (undefined4), uStack_474 (undefined4), local_470 (undefined4), uStack_46c (undefined4)
@@ -1094,6 +1044,11 @@ Undefined types - .keep overrides (81)
   CFileManager_removeAuditRecords
     Address: 0x004bd190  File: engine/fileio.cpp
     Locals:  local_5ac (undefined4[8]), local_474 (undefined4[10]), local_33c (undefined4[78]), local_a0 (undefined1[92])
+    Suggested: Resolve undefined types to concrete types
+
+  loadS3DModelFile
+    Address: 0x004593a0  File: shape/design.c
+    Locals:  local_8dc (undefined1[4]), local_24 (undefined1[4]), local_20 (undefined1[4]), local_1c (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
   CEditorTools_promptForValidDouble
@@ -1184,6 +1139,11 @@ Undefined types - .keep overrides (81)
   cramTextureList
     Address: 0x0046bb80  File: shape/design.c
     Locals:  auStackY_1074 (undefined2[630]), uStack_88 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CSfxSlot_compute
+    Address: 0x005a7100  File: sound/sndmain.cpp
+    Locals:  local_60 (undefined8), local_38 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   swapBuffers
@@ -1344,6 +1304,46 @@ Undefined types - .keep overrides (81)
   CFileManager_checkOutAndExtractPod
     Address: 0x004ba740  File: engine/fileio.cpp
     Locals:  auStack_30 (undefined1[8])
+    Suggested: Resolve undefined types to concrete types
+
+  parseSpatialTreeFromFile
+    Address: 0x004580a0  File: shape/design.c
+    Locals:  local_2c (undefined1[4])
+    Suggested: Resolve undefined types to concrete types
+
+  CDirectSoundDevice_initPropertySet
+    Address: 0x005ae660  File: sound/snddx.cpp
+    Locals:  local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CDirectSoundDevice_setMode
+    Address: 0x005ae830  File: sound/snddx.cpp
+    Locals:  uStack_18 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CSfxSlot_updatePlaybackPos
+    Address: 0x005a8170  File: sound/sndmain.cpp
+    Locals:  local_28 (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
+  convertDoubleToFixed
+    Address: 0x005a5e10  File: sound/sndmain.cpp
+    Locals:  local_c (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
+  getSampleInfo
+    Address: 0x005aa3f0  File: sound/sndmain.cpp
+    Locals:  local_113 (undefined1[255])
+    Suggested: Resolve undefined types to concrete types
+
+  getSfxSample
+    Address: 0x005a4c80  File: sound/sndmain.cpp
+    Locals:  local_113 (undefined1[255])
+    Suggested: Resolve undefined types to concrete types
+
+  parseWavFile
+    Address: 0x005a3fe0  File: sound/sndmain.cpp
+    Locals:  local_24 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
 --------------------------------------------------------------------------------

@@ -301,9 +301,6 @@ extern byte g_ConsoleHandlerRegistered;
 // byte[16]
 extern byte g_IEEE754ExponentClassTable[16];
 
-// char
-extern char CHAR_00h_006852db;
-
 // char*
 extern char* g_CurrentTrainMode;
 extern char* g_PreviousTrainMode;
@@ -312,9 +309,6 @@ extern char* g_ApplicationTimerTitle;
 extern char* g_ExeFileNameA;
 extern char* g_DllFileNameA;
 extern char* g_EnvironmentStrings;
-
-// char**
-extern char** g_TempEnvVarNames;
 
 // char[104]
 extern char g_MsnEditHideByTypeBuffer[104];

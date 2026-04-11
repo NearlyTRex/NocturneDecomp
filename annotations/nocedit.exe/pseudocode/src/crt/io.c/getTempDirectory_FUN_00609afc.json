@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 71,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 56,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "special_crt_function"
+      "special_crt_function",
+      "undefined_data"
     ],
     "total_lines": 162
   },
@@ -53,33 +54,33 @@
   "globals": [
     {
       "addr": "006590a4",
-      "name": "DAT_006590a4",
-      "type": "undefined1",
+      "name": "s_TMP_006590a4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "006590a8",
-      "name": "DAT_006590a8",
-      "type": "undefined1",
+      "name": "s_T_006590a8",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "006852c8",
       "name": "g_TempEnvVarNames",
-      "type": "char**",
-      "value": "006590a4"
+      "type": "char*[4]",
+      "value": null
     },
     {
       "addr": "006852cc",
-      "name": "PTR_DAT_006852cc",
-      "type": "void*",
-      "value": "006590a8"
+      "name": "g_TempEnvVarNames[1]",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "006852db",
-      "name": "CHAR_00h_006852db",
-      "type": "char",
-      "value": "\u0000"
+      "name": "DAT_006852db",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "006852dc",
@@ -165,6 +166,14 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_006852db",
+      "severity": "mild",
+      "text": "(&DAT_006852db)[uVar3] = 0x5c;",
+      "type": "undefined_data"
+    },
     {
       "address": "00609afc",
       "crt_type": "runtime support",

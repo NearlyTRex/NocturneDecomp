@@ -36,9 +36,9 @@ SUSPECT TYPE COUNTS
   warning_jumptable                  8 (  0.1%)
   warning_indirect_jump              8 (  0.1%)
   nan_function_artifact              8 (  0.1%)
+  undefined_data                     7 (  0.1%)
   displaced_global_access            7 (  0.1%)
   fnstsw_flag_artifact               7 (  0.1%)
-  undefined_data                     6 (  0.1%)
   unknown_param                      6 (  0.1%)
   warning_deadcode_restart           5 (  0.1%)
   warning_noreturn                   4 (  0.0%)
@@ -1575,6 +1575,30 @@ Example functions:
     (ushort)(NAN(dVar9) || NAN(359.5)) << 10 |...
 
 ====================================================================================================
+TYPE: undefined_data (7 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  DAT_0068528c
+     1x  DAT_006852db
+     1x  DAT_00679d50
+     1x  DAT_0068513c
+     1x  DAT_006851bd
+     1x  DAT_80000010
+
+Example functions:
+  crt_io.c_getTempDirectory_FUN_00609afc
+    (&DAT_006852db)[uVar3] = 0x5c;...
+  crt_watcom.c__memset_FUN_004b19d0
+    (**(code **)(&DAT_00679d50 + uVar3 * 4))();...
+  crt_time.c_tzset_FUN_006072f8
+    DAT_0068513c = 0;...
+  crt_stdio.c_CreateFileImpl_FUN_006090a0
+    if ((DAT_0068528c != (code *)0x0) &&...
+  engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
+    point->screen_x = (int)&DAT_80000010;...
+
+====================================================================================================
 TYPE: displaced_global_access (7 occurrences)
 ====================================================================================================
 
@@ -1625,27 +1649,6 @@ Example functions:
     CONCAT22((short)uVar8 * (short)(uVar39 >> 0x10)...
   wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
     CONCAT22((short)uVar7 * (short)(uVar38 >> 0x10)...
-
-====================================================================================================
-TYPE: undefined_data (6 occurrences)
-====================================================================================================
-
-Unique patterns:
-     2x  DAT_0068528c
-     1x  DAT_00679d50
-     1x  DAT_0068513c
-     1x  DAT_006851bd
-     1x  DAT_80000010
-
-Example functions:
-  crt_watcom.c__memset_FUN_004b19d0
-    (**(code **)(&DAT_00679d50 + uVar3 * 4))();...
-  crt_time.c_tzset_FUN_006072f8
-    DAT_0068513c = 0;...
-  crt_stdio.c_CreateFileImpl_FUN_006090a0
-    if ((DAT_0068528c != (code *)0x0) &&...
-  engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
-    point->screen_x = (int)&DAT_80000010;...
 
 ====================================================================================================
 TYPE: unknown_param (6 occurrences)

@@ -1,80 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "format_error",
-        "column": 86,
-        "line": 41,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "format_error",
-        "column": 18,
-        "line": 70,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 59,
-        "line": 85,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 56,
-        "line": 99,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 49,
-        "line": 101,
-        "message": "no matching literal operator for call to 'operator\"\"_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
-      },
-      {
-        "category": "other",
-        "column": 57,
-        "line": 101,
-        "message": "no matching literal operator for call to 'operator\"\"_0_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
-      },
-      {
-        "category": "other",
-        "column": 39,
-        "line": 105,
-        "message": "no matching literal operator for call to 'operator\"\"_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
-      },
-      {
-        "category": "other",
-        "column": 47,
-        "line": 105,
-        "message": "no matching literal operator for call to 'operator\"\"_0_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 106,
-        "message": "no matching literal operator for call to 'operator\"\"_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
-      },
-      {
-        "category": "other",
-        "column": 56,
-        "line": 106,
-        "message": "no matching literal operator for call to 'operator\"\"_0_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
-      },
-      {
-        "category": "format_error",
-        "column": 66,
-        "line": 110,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 75,
-        "line": 152,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -649,6 +576,28 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CSfxSlot_compute_FUN_005a7100.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 47,
+          "line": 123,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 60,
+          "line": 123,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

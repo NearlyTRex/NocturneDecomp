@@ -210,6 +210,7 @@ static char* g_ErrorMessageTable[41] = {
 
 // char*[4] constants
 static char* g_VehicleWheelLocationNames[4] = {"Left front", "Right front", "Left rear", "Right rear"};
+static char* g_TempEnvVarNames[4] = {"TMP", "TEMP", "TMPDIR", "TEMPDIR"};
 
 // char*[7] constants
 static char* g_WeekdayNamesLong[7] = {

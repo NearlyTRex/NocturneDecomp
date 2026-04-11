@@ -12,14 +12,14 @@ char * __cdecl getTempDirectory(void)
   char cVar1;
   char *pcVar2;
   uint uVar3;
-  char ***pppcVar4;
+  char **ppcVar4;
   char *pcVar5;
   byte bVar6;
   
   bVar6 = 0;
   if (g_TempDirectoryBuffer[0] == '\0') {
-    for (pppcVar4 = &g_TempEnvVarNames; *(char *)*pppcVar4 != '\0'; pppcVar4 = pppcVar4 + 1) {
-      pcVar2 = getenv((char *)*pppcVar4);
+    for (ppcVar4 = g_TempEnvVarNames; **ppcVar4 != '\0'; ppcVar4 = ppcVar4 + 1) {
+      pcVar2 = getenv(*ppcVar4);
       if (pcVar2 != (char *)0x0) {
         uVar3 = 0xffffffff;
         pcVar5 = pcVar2;
@@ -58,7 +58,7 @@ char * __cdecl getTempDirectory(void)
     } while (cVar1 != '\0');
     uVar3 = ~uVar3;
     if ((*(char *)(uVar3 + 0x6852da) != '\\') && (*(char *)(uVar3 + 0x6852da) != '/')) {
-      (&CHAR_00h_006852db)[uVar3] = '\\';
+      (&DAT_006852db)[uVar3] = 0x5c;
       g_TempDirectoryBuffer[uVar3] = '\0';
     }
   }

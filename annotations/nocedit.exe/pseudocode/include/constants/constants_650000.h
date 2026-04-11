@@ -1737,7 +1737,8 @@ static TerminatedCString s_EXE_00659068 = "EXE";
 static TerminatedCString s_anon_0065906c = "*?";
 static TerminatedCString s_Not_enough_memory_to_all_00659070 = "Not enough memory to allocate file structures\r\n";
 static TerminatedCString s_con_006590a0 = "con";
-static TerminatedCString s_EMP_006590a9 = "EMP";
+static TerminatedCString s_TMP_006590a4 = "TMP";
+static TerminatedCString s_T_006590a8 = "TEMP";
 static TerminatedCString s_TMPDIR_006590b0 = "TMPDIR";
 static TerminatedCString s_TEMPDIR_006590b8 = "TEMPDIR";
 static TerminatedCString s_wb_006590c4 = "wb+";
@@ -2456,8 +2457,4 @@ static float FLOAT_0065fccc = 2.0f;
 static float FLOAT_0065fcd0 = 50.0f;
 static float FLOAT_0065fcd4 = 100.0f;
 static float FLOAT_0065fcd8 = 10.0f;
-
-// undefined1 constants
-static undefined1 DAT_006590a4 = 0x54;
-static undefined1 DAT_006590a8 = 0x54;
 
