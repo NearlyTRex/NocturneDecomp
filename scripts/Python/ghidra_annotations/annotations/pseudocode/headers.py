@@ -1837,7 +1837,11 @@ def generate_basetypes_header(pseudocode_dir):
     content.append("typedef unsigned char UCHAR;")
     content.append("typedef float FLOAT;")
     content.append("typedef double DOUBLE;")
-    content.append("typedef wchar_t WCHAR;")
+    # WCHAR is 2 bytes on the Win32 ABI the binary was compiled against.
+    # Linux clang's wchar_t is 4 bytes, so using it here doubles the size of
+    # every WCHAR[N] field (e.g. TIME_ZONE_INFORMATION.StandardName would be
+    # 128 bytes instead of 64). Use a fixed 16-bit integer to match the ABI.
+    content.append("typedef unsigned short WCHAR;")
     content.append("typedef long long LONGLONG;")
     content.append("typedef unsigned long long ULONGLONG;")
     content.append("typedef unsigned long long QWORD;")

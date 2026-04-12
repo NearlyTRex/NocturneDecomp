@@ -120,7 +120,7 @@ typedef unsigned long ULONG;
 typedef unsigned char UCHAR;
 typedef float FLOAT;
 typedef double DOUBLE;
-typedef wchar_t WCHAR;
+typedef unsigned short WCHAR;
 typedef long long LONGLONG;
 typedef unsigned long long ULONGLONG;
 typedef unsigned long long QWORD;
