@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang-Tidy (quick) (1144 diagnostics)
+Clang-Tidy (quick) (1155 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-bugprone-assignment-in-if-condition (543)
+bugprone-assignment-in-if-condition (544)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_ line 102
@@ -2084,6 +2084,10 @@ bugprone-assignment-in-if-condition (543)
     File: shape/design.c
     an assignment within an 'if' condition is bug-prone
 
+  shape_quantize.cpp_CColorQuantizer_reduceColors_FU line 47
+    File: shape/quantize.cpp
+    an assignment within an 'if' condition is bug-prone
+
   shape_superopt.cpp_CObj_appendTo_FUN_005d2720      line 23
     File: shape/superopt.cpp
     an assignment within an 'if' condition is bug-prone
@@ -2185,7 +2189,7 @@ bugprone-assignment-in-if-condition (543)
     an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
-bugprone-incorrect-roundings (306)
+bugprone-incorrect-roundings (316)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 173
@@ -3274,6 +3278,46 @@ bugprone-incorrect-roundings (306)
 
   shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 185
     File: shape/meshlod.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 68
+    File: shape/quantize.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 68
+    File: shape/quantize.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 70
+    File: shape/quantize.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 70
+    File: shape/quantize.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 72
+    File: shape/quantize.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 72
+    File: shape/quantize.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 83
+    File: shape/quantize.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 83
+    File: shape/quantize.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_quantize.cpp_CColorQuantizer_importBitmap_FU line 88
+    File: shape/quantize.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_quantize.cpp_CColorQuantizer_importBitmap_FU line 88
+    File: shape/quantize.cpp
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 113
@@ -4645,11 +4689,11 @@ bugprone-swapped-arguments (1)
     declaration uses identifier '_Stack_1e0', which is a reserved identifier [cert-dcl37-c,cert-dcl51-cpp]
 
 ====================================================================================================
-Cppcheck (quick) (366 diagnostics)
+Cppcheck (quick) (378 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (129)
+selfAssignment (132)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 170
@@ -5160,6 +5204,18 @@ selfAssignment (129)
     File: shape/edittool.cpp
     Redundant assignment of 'puVar9' to itself.
 
+  shape_quantize.cpp_CColorQuantizer_importBitmap_FU line 79
+    File: shape/quantize.cpp
+    Redundant assignment of 'puVar9' to itself.
+
+  shape_quantize.cpp_CColorQuantizer_importBitmap_FU line 80
+    File: shape/quantize.cpp
+    Redundant assignment of 'puVar12' to itself.
+
+  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 161
+    File: shape/quantize.cpp
+    Redundant assignment of 'puVar8' to itself.
+
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a67 line 199
     File: sound/sndmain.cpp
     Redundant assignment of 'pcVar10' to itself.
@@ -5433,6 +5489,186 @@ uninitvar (65)
     Uninitialized variable: local_85
 
 ----------------------------------------------------------------------------------------------------
+shiftTooManyBitsSigned (44)
+----------------------------------------------------------------------------------------------------
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_ line 61
+    File: cockpit/pkbitmap.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenB line 28
+    File: cockpit/pkbitmap.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenB line 40
+    File: cockpit/pkbitmap.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 323
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 422
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 428
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 475
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_uploadBackdropTextur line 32
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_uploadBackdropTextur line 38
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 163
+    File: core/dskybox.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 168
+    File: core/dskybox.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dstrender.cpp_renderPerspectiveCorrectTexture line 64
+    File: core/dstrender.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dstrender.cpp_renderPerspectiveCorrectTexture line 67
+    File: core/dstrender.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dstrender.cpp_renderPerspectiveCorrectTexture line 78
+    File: core/dstrender.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dstrender.cpp_renderPerspectiveCorrectTexture line 81
+    File: core/dstrender.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dstrender.cpp_renderPerspectiveCorrectTexture line 172
+    File: core/dstrender.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dstrender.cpp_renderPerspectiveCorrectTexture line 175
+    File: core/dstrender.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_ line 109
+    File: core/set.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 95
+    File: core/setedit.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 96
+    File: core/setedit.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 86
+    File: engine/colquant.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 89
+    File: engine/colquant.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 92
+    File: engine/colquant.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 95
+    File: engine/colquant.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 154
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 155
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 159
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 160
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 164
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_model.c_getMRGLBounds_FUN_00528140          line 165
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_edittool.cpp_CEditorTools_createModalWindow_ line 111
+    File: shape/edittool.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_edittool.cpp_CEditorTools_createModalWindow_ line 129
+    File: shape/edittool.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_edittool.cpp_paintWindowBackground_FUN_0049e line 37
+    File: shape/edittool.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_edittool.cpp_paintWindowBackground_FUN_0049e line 43
+    File: shape/edittool.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 151
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 159
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 166
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 173
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 180
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 187
+    File: shape/meshlod.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 88
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 92
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 96
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  shape_quantize.cpp_CColorQuantizer_computeBoxStati line 100
+    File: shape/quantize.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
 legacyUninitvar (41)
 ----------------------------------------------------------------------------------------------------
 
@@ -5599,170 +5835,6 @@ legacyUninitvar (41)
   shape_design.c_loadModelBinary_FUN_00458170        line 82
     File: shape/design.c
     Uninitialized variable: local_64
-
-----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (40)
-----------------------------------------------------------------------------------------------------
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_ line 61
-    File: cockpit/pkbitmap.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenB line 28
-    File: cockpit/pkbitmap.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenB line 40
-    File: cockpit/pkbitmap.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 323
-    File: core/dcamera.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 422
-    File: core/dcamera.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 428
-    File: core/dcamera.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 475
-    File: core/dcamera.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dcamera.cpp_CDemonCamera_uploadBackdropTextur line 32
-    File: core/dcamera.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dcamera.cpp_CDemonCamera_uploadBackdropTextur line 38
-    File: core/dcamera.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 163
-    File: core/dskybox.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 168
-    File: core/dskybox.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dstrender.cpp_renderPerspectiveCorrectTexture line 64
-    File: core/dstrender.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dstrender.cpp_renderPerspectiveCorrectTexture line 67
-    File: core/dstrender.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dstrender.cpp_renderPerspectiveCorrectTexture line 78
-    File: core/dstrender.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dstrender.cpp_renderPerspectiveCorrectTexture line 81
-    File: core/dstrender.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dstrender.cpp_renderPerspectiveCorrectTexture line 172
-    File: core/dstrender.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_dstrender.cpp_renderPerspectiveCorrectTexture line 175
-    File: core/dstrender.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_ line 109
-    File: core/set.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 95
-    File: core/setedit.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 96
-    File: core/setedit.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 86
-    File: engine/colquant.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 89
-    File: engine/colquant.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 92
-    File: engine/colquant.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 95
-    File: engine/colquant.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 154
-    File: engine/model.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 155
-    File: engine/model.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 159
-    File: engine/model.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 160
-    File: engine/model.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 164
-    File: engine/model.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 165
-    File: engine/model.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_edittool.cpp_CEditorTools_createModalWindow_ line 111
-    File: shape/edittool.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_edittool.cpp_CEditorTools_createModalWindow_ line 129
-    File: shape/edittool.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_edittool.cpp_paintWindowBackground_FUN_0049e line 37
-    File: shape/edittool.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_edittool.cpp_paintWindowBackground_FUN_0049e line 43
-    File: shape/edittool.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 151
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 159
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 166
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 173
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 180
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 187
-    File: shape/meshlod.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 invalidscanf (40)
@@ -6029,7 +6101,7 @@ invalidPointerCast (11)
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
 ----------------------------------------------------------------------------------------------------
-nullPointerRedundantCheck (6)
+nullPointerRedundantCheck (10)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 96
@@ -6048,6 +6120,22 @@ nullPointerRedundantCheck (6)
     File: engine/prim.c
     Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
 
+  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 45
+    File: shape/quantize.cpp
+    Either the condition 'pCVar6!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: pCVar6.
+
+  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 47
+    File: shape/quantize.cpp
+    Either the condition 'pCVar6!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: pCVar6.
+
+  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 131
+    File: shape/quantize.cpp
+    Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.
+
+  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 150
+    File: shape/quantize.cpp
+    Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.
+
   sound_snddx.cpp_CDirectSoundDevice_initPropertySet line 44
     File: sound/snddx.cpp
     Either the condition 'local_18!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: local_18.
@@ -6057,7 +6145,7 @@ nullPointerRedundantCheck (6)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
-nullPointer (6)
+nullPointer (7)
 ----------------------------------------------------------------------------------------------------
 
   core_set.cpp_CDemonSet_load_FUN_00569410           line 410
@@ -6079,6 +6167,10 @@ nullPointer (6)
   shape_design.c_loadS3DModelFile_FUN_004593a0       line 133
     File: shape/design.c
     Possible null pointer dereference: pcVar7
+
+  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 42
+    File: shape/quantize.cpp
+    Possible null pointer dereference: local_20
 
   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0 line 109
     File: sound/sndmain.cpp

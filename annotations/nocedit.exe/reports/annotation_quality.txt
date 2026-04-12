@@ -14,20 +14,20 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        117 ( 1.8%)
+  Functions with type issues:        112 ( 1.7%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
-    Wrong calling convention:          2
-    Undefined types in variables:      109
+    Wrong calling convention:          1
+    Undefined types in variables:      105
     Unresolved stack params:           6
 
-  Excluded (.keep / MMX / by-value):   120 functions
-    Wrong calling convention:          1
-    Undefined types in variables:      110
+  Excluded (.keep / MMX / by-value):   125 functions
+    Wrong calling convention:          2
+    Undefined types in variables:      114
     Unresolved stack params:           15
 
 ====================================================================================================
@@ -69,19 +69,13 @@ Missing register parameters (likely wrong calling convention) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (2)
+Wrong calling convention (unaffected register usage) (1)
 --------------------------------------------------------------------------------
 
   CColorQuantizer_mapScanlineToPalette
     Address: 0x005556f0  File: shape/quantize.cpp
     Evidence: unaff_EBX, unaff_EBX, unaff_EBX
     Signature: void __cdecl shape_quantize_cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0(CColorQuantizer *this_ptr,uchar *src_pixels,uchar *dest_indices,short start_x,short end_x,short num_palette_entries)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  quantizeRawPixelData
-    Address: 0x00556490  File: shape/quantize.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,int width,int height ,uint bit_depth,int line_number,int show_progress)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
@@ -125,13 +119,8 @@ Unresolved stack parameters (missing from signature) (6)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (109)
+Undefined types in variables (105)
 --------------------------------------------------------------------------------
-
-  CPoly_intersectPoly
-    Address: 0x005ce580  File: shape/superopt.cpp
-    Locals:  uStack_5e0 (undefined8), uStack_5d8 (undefined8), uStack_5d0 (undefined8), uStack_5c8 (undefined4), uStack_5c4 (undefined4), uStack_5c0 (undefined4), uStack_5bc (undefined4), uStack_5b8 (undefined4), uStack_5b4 (undefined4), uStack_5b0 (undefined4), uStack_5ac (undefined4), uStack_5a8 (undefined4), uStack_5a4 (undefined4), uStack_5a0 (undefined4), uStack_59c (undefined4), uStack_568 (undefined8), uStack_560 (undefined8), uStack_558 (undefined4), uStack_554 (undefined4), uStack_550 (undefined4), uStack_54c (undefined4), uStack_548 (undefined4), uStack_544 (undefined4), uStack_540 (undefined4), uStack_53c (undefined4), uStack_440 (undefined4), uStack_43c (undefined4), uStack_438 (undefined4), uStack_434 (undefined4), uStack_430 (undefined4), uStack_42c (undefined4), uStack_3e0 (undefined4), uStack_3dc (undefined4), uStack_3d8 (undefined4), uStack_3d4 (undefined4), uStack_3d0 (undefined4), uStack_3cc (undefined4), uStack_350 (undefined4), uStack_34c (undefined4), uStack_348 (undefined4), uStack_344 (undefined4), uStack_340 (undefined4), uStack_33c (undefined4), uStack_218 (undefined4), uStack_214 (undefined4), uStack_210 (undefined4), uStack_20c (undefined4), uStack_208 (undefined4), uStack_204 (undefined4), uStack_1e8 (undefined8), uStack_1d8 (undefined8), uStack_1c8 (undefined4), uStack_1c4 (undefined4), uStack_1b8 (undefined4), uStack_1b4 (undefined4), uStack_1a8 (undefined4), uStack_1a4 (undefined4), uStack_198 (undefined4), uStack_194 (undefined4), uStack_188 (undefined8), uStack_178 (undefined4), uStack_174 (undefined4), uStack_168 (undefined8), uStack_158 (undefined8), uStack_148 (undefined8), uStack_138 (undefined4), auStack_134 (undefined4[4]), uStack_124 (undefined4), uStack_120 (undefined4), uStack_11c (undefined4), uStack_118 (undefined8), uStack_108 (undefined4), uStack_104 (undefined4), uStack_f8 (undefined8), uStack_e8 (undefined8), uStack_d8 (undefined4)
-    Suggested: Resolve undefined types to concrete types
 
   CLodMesh_collapseEdge
     Address: 0x00517630  File: shape/meshlod.cpp
@@ -141,11 +130,6 @@ Undefined types in variables (109)
   CPathMap_findPathToDestination
     Address: 0x00547320  File: core/path.cpp
     Locals:  local_118 (undefined4), local_10c (undefined1), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined1), local_e8 (undefined1), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined1), local_c4 (undefined1), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined1), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined1), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined1), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined1), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CObj_removeTJunctions
-    Address: 0x005d47b0  File: shape/superopt.cpp
-    Locals:  local_2c8 (undefined4), uStack_2bc (undefined4), local_2b8 (undefined4), local_2b0 (undefined4), local_2a8 (undefined4), local_2a0 (undefined4), local_298 (undefined4), local_290 (undefined4), local_288 (undefined4), local_278 (undefined4), local_270 (undefined4), local_268 (undefined4), local_260 (undefined4), local_258 (undefined4), local_250 (undefined4), local_248 (undefined4), local_238 (undefined4), uStack_234 (undefined4), local_230 (undefined4), uStack_22c (undefined4), local_228 (undefined4), local_200 (undefined4), local_1f8 (undefined4), local_1e0 (undefined4), local_12c (undefined4), uStack_128 (undefined4), local_124 (undefined4), uStack_120 (undefined4), local_11c (undefined4), uStack_118 (undefined4), local_114 (undefined4), uStack_110 (undefined4), local_10c (undefined4), uStack_108 (undefined4), local_104 (undefined4), uStack_100 (undefined4), local_e4 (undefined8), local_d4 (undefined4), local_b4 (undefined4), uStack_b0 (undefined4), local_a4 (undefined8), uStack_94 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
   CPoly_scale
@@ -261,11 +245,6 @@ Undefined types in variables (109)
   CLodMesh_computeMeshCRC32
     Address: 0x0051c6f0  File: shape/meshlod.cpp
     Locals:  local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CColorQuantizer_applyQuantization
-    Address: 0x00556180  File: shape/quantize.cpp
-    Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   mpegLayer3StereoProcess
@@ -638,11 +617,6 @@ Undefined types in variables (109)
     Locals:  local_30f (undefined1[255])
     Suggested: Resolve undefined types to concrete types
 
-  CColorQuantizer_importBitmap
-    Address: 0x00554a50  File: shape/quantize.cpp
-    Locals:  local_28 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
   CDirectSoundDevice_commitDeferredSettings
     Address: 0x005b0340  File: sound/snddx.cpp
     Locals:  local_10 (undefined4[4])
@@ -682,13 +656,19 @@ manual .keep.cpp files, MMX inline assembly transforms, or by-value struct
 passing patterns. Issues here are expected and not actionable.
 
 --------------------------------------------------------------------------------
-Wrong calling convention - .keep overrides (1)
+Wrong calling convention - .keep overrides (2)
 --------------------------------------------------------------------------------
 
   CCharacter_updateCarriedObjects
     Address: 0x0042d090  File: core/charactr.cpp
     Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
     Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter *this_ptr,float delta_time)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  quantizeRawPixelData
+    Address: 0x00556490  File: shape/quantize.cpp
+    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
+    Signature: int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixel_data,uchar **out_pixel_data,uchar **out_palette,int width,int height ,uint bit_depth,int line_number,int show_progress)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
@@ -808,7 +788,7 @@ Unresolved stack params - by-value struct passing (5)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (107)
+Undefined types - .keep overrides (111)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -826,6 +806,11 @@ Undefined types - .keep overrides (107)
     Locals:  local_380 (undefined4), local_37c (undefined4), local_378 (undefined1), local_314 (undefined1), local_310 (undefined4), local_2e0 (undefined4), local_2dc (undefined4), local_2d8 (undefined1), local_2d4 (undefined4), local_2a4 (undefined4), local_2a0 (undefined4), local_29c (undefined1), local_298 (undefined4), local_280 (undefined4), local_27c (undefined4), local_278 (undefined4), local_268 (undefined4), local_264 (undefined4), local_260 (undefined1), local_25f (undefined1), local_240 (undefined1), local_23c (undefined4), local_230 (undefined4), local_228 (undefined1), local_21c (undefined1), local_210 (undefined1), local_204 (undefined4), local_200 (undefined4), local_1fc (undefined4), local_1f8 (undefined4), local_1f4 (undefined4), local_1f0 (undefined4), local_1ec (undefined1), local_1e0 (undefined1), local_1d4 (undefined1), local_1c8 (undefined4), local_1c4 (undefined4), local_1c0 (undefined4), local_1bc (undefined1), local_1b0 (undefined1), local_1a4 (undefined1), local_198 (undefined1), local_18c (undefined4), local_188 (undefined4), local_184 (undefined4), local_180 (undefined4), local_17c (undefined4), local_178 (undefined4), local_174 (undefined4), local_170 (undefined4), local_16c (undefined4), local_168 (undefined4), local_164 (undefined4), local_160 (undefined4), local_15c (undefined1), local_150 (undefined1), local_144 (undefined1), local_138 (undefined4), local_134 (undefined4), local_130 (undefined4), local_12c (undefined1), local_120 (undefined4), local_11c (undefined4), local_118 (undefined4), local_114 (undefined1), local_108 (undefined1), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined1), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined8), local_ac (undefined8), local_a4 (undefined8), local_9c (undefined8), local_8c (undefined8), local_84 (undefined4), local_7c (undefined4), local_78 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CPoly_intersectPoly
+    Address: 0x005ce580  File: shape/superopt.cpp
+    Locals:  uStack_5e0 (undefined8), uStack_5d8 (undefined8), uStack_5d0 (undefined8), uStack_5c8 (undefined4), uStack_5c4 (undefined4), uStack_5c0 (undefined4), uStack_5bc (undefined4), uStack_5b8 (undefined4), uStack_5b4 (undefined4), uStack_5b0 (undefined4), uStack_5ac (undefined4), uStack_5a8 (undefined4), uStack_5a4 (undefined4), uStack_5a0 (undefined4), uStack_59c (undefined4), uStack_568 (undefined8), uStack_560 (undefined8), uStack_558 (undefined4), uStack_554 (undefined4), uStack_550 (undefined4), uStack_54c (undefined4), uStack_548 (undefined4), uStack_544 (undefined4), uStack_540 (undefined4), uStack_53c (undefined4), uStack_440 (undefined4), uStack_43c (undefined4), uStack_438 (undefined4), uStack_434 (undefined4), uStack_430 (undefined4), uStack_42c (undefined4), uStack_3e0 (undefined4), uStack_3dc (undefined4), uStack_3d8 (undefined4), uStack_3d4 (undefined4), uStack_3d0 (undefined4), uStack_3cc (undefined4), uStack_350 (undefined4), uStack_34c (undefined4), uStack_348 (undefined4), uStack_344 (undefined4), uStack_340 (undefined4), uStack_33c (undefined4), uStack_218 (undefined4), uStack_214 (undefined4), uStack_210 (undefined4), uStack_20c (undefined4), uStack_208 (undefined4), uStack_204 (undefined4), uStack_1e8 (undefined8), uStack_1d8 (undefined8), uStack_1c8 (undefined4), uStack_1c4 (undefined4), uStack_1b8 (undefined4), uStack_1b4 (undefined4), uStack_1a8 (undefined4), uStack_1a4 (undefined4), uStack_198 (undefined4), uStack_194 (undefined4), uStack_188 (undefined8), uStack_178 (undefined4), uStack_174 (undefined4), uStack_168 (undefined8), uStack_158 (undefined8), uStack_148 (undefined8), uStack_138 (undefined4), auStack_134 (undefined4[4]), uStack_124 (undefined4), uStack_120 (undefined4), uStack_11c (undefined4), uStack_118 (undefined8), uStack_108 (undefined4), uStack_104 (undefined4), uStack_f8 (undefined8), uStack_e8 (undefined8), uStack_d8 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CComplexPolygon_closeSplitBoundary
     Address: 0x005ca590  File: shape/superopt.cpp
     Locals:  local_318 (undefined4), uStack_314 (undefined4), local_310 (undefined4), uStack_30c (undefined4), local_308 (undefined4), uStack_304 (undefined4), local_2c0 (undefined4), uStack_2bc (undefined4), local_2b8 (undefined4), uStack_2b4 (undefined4), local_2b0 (undefined4), local_260 (undefined4), uStack_25c (undefined4), local_258 (undefined4), uStack_254 (undefined4), local_250 (undefined4), uStack_24c (undefined4), local_248 (undefined4), uStack_244 (undefined4), local_240 (undefined4), uStack_23c (undefined4), local_238 (undefined4), uStack_234 (undefined4), local_1e8 (undefined4), uStack_1e4 (undefined4), local_1e0 (undefined4), uStack_1dc (undefined4), local_1d8 (undefined4), uStack_1d4 (undefined4), local_1d0 (undefined4), uStack_1cc (undefined4), local_1c8 (undefined4), uStack_1c4 (undefined4), local_1c0 (undefined4), uStack_1bc (undefined4), local_1b8 (undefined4), uStack_1b4 (undefined4), local_1b0 (undefined4), uStack_1ac (undefined4), local_1a8 (undefined4), uStack_1a4 (undefined4), local_170 (undefined4), uStack_16c (undefined4), local_168 (undefined4), uStack_164 (undefined4), local_160 (undefined4), uStack_15c (undefined4), local_158 (undefined4), uStack_154 (undefined4), local_150 (undefined4), uStack_14c (undefined4), local_148 (undefined4), uStack_144 (undefined4), local_f8 (undefined4), uStack_f4 (undefined4), local_f0 (undefined4), uStack_ec (undefined4), local_e8 (undefined4), uStack_e4 (undefined4)
@@ -834,6 +819,11 @@ Undefined types - .keep overrides (107)
   closestPointOnSegment3D
     Address: 0x005d6020  File: shape/superopt.cpp
     Locals:  local_168 (undefined4), uStack_164 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined8), local_128 (undefined4[4]), local_118 (undefined4), uStack_114 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), uStack_f4 (undefined4), local_f0 (undefined4), uStack_ec (undefined4), local_e8 (undefined4), uStack_e4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4[6]), local_80 (undefined4[4]), local_70 (undefined4), uStack_6c (undefined4), local_68 (undefined4), uStack_64 (undefined4), local_60 (undefined4), uStack_5c (undefined4), local_58 (undefined4), uStack_54 (undefined4), local_40 (undefined4), uStack_3c (undefined4), local_38 (undefined4), uStack_34 (undefined4), local_30 (undefined4), uStack_2c (undefined4), local_28 (undefined4), uStack_24 (undefined4), local_20 (undefined4), uStack_1c (undefined4), local_18 (undefined4), uStack_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CObj_removeTJunctions
+    Address: 0x005d47b0  File: shape/superopt.cpp
+    Locals:  local_2c8 (undefined4), uStack_2bc (undefined4), local_2b8 (undefined4), local_2b0 (undefined4), local_2a8 (undefined4), local_2a0 (undefined4), local_298 (undefined4), local_290 (undefined4), local_288 (undefined4), local_278 (undefined4), local_270 (undefined4), local_268 (undefined4), local_260 (undefined4), local_258 (undefined4), local_250 (undefined4), local_248 (undefined4), local_238 (undefined4), uStack_234 (undefined4), local_230 (undefined4), uStack_22c (undefined4), local_228 (undefined4), local_200 (undefined4), local_1f8 (undefined4), local_1e0 (undefined4), local_12c (undefined4), uStack_128 (undefined4), local_124 (undefined4), uStack_120 (undefined4), local_11c (undefined4), uStack_118 (undefined4), local_114 (undefined4), uStack_110 (undefined4), local_10c (undefined4), uStack_108 (undefined4), local_104 (undefined4), uStack_100 (undefined4), local_e4 (undefined8), local_d4 (undefined4), local_b4 (undefined4), uStack_b0 (undefined4), local_a4 (undefined8), uStack_94 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
   CDeformableModel_determinePartsFromS3D
@@ -1014,6 +1004,11 @@ Undefined types - .keep overrides (107)
   CEditorTools_promptForValidDouble
     Address: 0x004a01f0  File: shape/edittool.cpp
     Locals:  local_48 (undefined4), uStack_44 (undefined4), local_40 (undefined8), local_38 (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
+  CColorQuantizer_applyQuantization
+    Address: 0x00556180  File: shape/quantize.cpp
+    Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CPoly_computeNormal
@@ -1304,6 +1299,11 @@ Undefined types - .keep overrides (107)
   CEditorTools_createModalWindow
     Address: 0x004a0970  File: shape/edittool.cpp
     Locals:  local_14 (undefined4 *)
+    Suggested: Resolve undefined types to concrete types
+
+  CColorQuantizer_importBitmap
+    Address: 0x00554a50  File: shape/quantize.cpp
+    Locals:  local_28 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   CPoly_hasEdgeIntersection
