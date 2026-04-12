@@ -156,103 +156,15 @@ typedef long HRESULT;
 typedef WORD ATOM;
 
 // =============================================================================
-// Windows PE Header Structures (Ghidra built-ins)
+// Windows PE Resource Placeholders (not recorded by Ghidra)
 // =============================================================================
+//
+// These resource types are referenced by decompiled winMain but Ghidra
+// does not track their actual layout \u2014 variable-size BYTE blobs. Kept
+// as hand-written placeholders. All other PE/DOS structs (IMAGE_*,
+// VS_VERSION_INFO, etc.) are auto-generated from data_types.json into
+// system/pe.h and system/dos.h.
 
-typedef struct IMAGE_FILE_HEADER {
-    WORD Machine;
-    WORD NumberOfSections;
-    DWORD TimeDateStamp;
-    DWORD PointerToSymbolTable;
-    DWORD NumberOfSymbols;
-    WORD SizeOfOptionalHeader;
-    WORD Characteristics;
-} IMAGE_FILE_HEADER;
-
-typedef struct IMAGE_DATA_DIRECTORY {
-    DWORD VirtualAddress;
-    DWORD Size;
-} IMAGE_DATA_DIRECTORY;
-
-typedef struct IMAGE_OPTIONAL_HEADER32 {
-    WORD Magic;
-    BYTE MajorLinkerVersion;
-    BYTE MinorLinkerVersion;
-    DWORD SizeOfCode;
-    DWORD SizeOfInitializedData;
-    DWORD SizeOfUninitializedData;
-    DWORD AddressOfEntryPoint;
-    DWORD BaseOfCode;
-    DWORD BaseOfData;
-    void* ImageBase;
-    DWORD SectionAlignment;
-    DWORD FileAlignment;
-    WORD MajorOperatingSystemVersion;
-    WORD MinorOperatingSystemVersion;
-    WORD MajorImageVersion;
-    WORD MinorImageVersion;
-    WORD MajorSubsystemVersion;
-    WORD MinorSubsystemVersion;
-    DWORD Win32VersionValue;
-    DWORD SizeOfImage;
-    DWORD SizeOfHeaders;
-    DWORD CheckSum;
-    WORD Subsystem;
-    WORD DllCharacteristics;
-    DWORD SizeOfStackReserve;
-    DWORD SizeOfStackCommit;
-    DWORD SizeOfHeapReserve;
-    DWORD SizeOfHeapCommit;
-    DWORD LoaderFlags;
-    DWORD NumberOfRvaAndSizes;
-    IMAGE_DATA_DIRECTORY DataDirectory[16];
-} IMAGE_OPTIONAL_HEADER32;
-
-typedef struct IMAGE_NT_HEADERS32 {
-    char Signature[4]; // "PE\0\0"
-    IMAGE_FILE_HEADER FileHeader;
-    IMAGE_OPTIONAL_HEADER32 OptionalHeader;
-} IMAGE_NT_HEADERS32;
-
-typedef struct IMAGE_SECTION_HEADER {
-    char Name[8];
-    DWORD Misc; // Union: PhysicalAddress or VirtualSize
-    DWORD VirtualAddress;
-    DWORD SizeOfRawData;
-    DWORD PointerToRawData;
-    DWORD PointerToRelocations;
-    DWORD PointerToLinenumbers;
-    WORD NumberOfRelocations;
-    WORD NumberOfLinenumbers;
-    DWORD Characteristics;
-} IMAGE_SECTION_HEADER;
-
-typedef struct IMAGE_RESOURCE_DIRECTORY {
-    DWORD Characteristics;
-    DWORD TimeDateStamp;
-    WORD MajorVersion;
-    WORD MinorVersion;
-    WORD NumberOfNamedEntries;
-    WORD NumberOfIdEntries;
-} IMAGE_RESOURCE_DIRECTORY;
-
-typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY {
-    DWORD Name;
-    DWORD OffsetToData;
-} IMAGE_RESOURCE_DIRECTORY_ENTRY;
-
-typedef struct IMAGE_RESOURCE_DATA_ENTRY {
-    DWORD OffsetToData;
-    DWORD Size;
-    DWORD CodePage;
-    DWORD Reserved;
-} IMAGE_RESOURCE_DATA_ENTRY;
-
-// =============================================================================
-// Windows PE Resource Types (Ghidra built-ins)
-// =============================================================================
-
-// Placeholder types for PE resources - actual structure varies by resource
 typedef struct IconResource {
     BYTE data[1]; // Variable size icon data
 } IconResource;
@@ -265,65 +177,9 @@ typedef struct GroupIconResource {
     BYTE data[1]; // Variable size group icon data
 } GroupIconResource;
 
-typedef struct VS_VERSION_INFO {
-    WORD StructLength;
-    WORD ValueLength;
-    WORD StructType;
-    WCHAR Info[16]; // "VS_VERSION_INFO" key
-    BYTE Padding[2];
-    DWORD Signature;
-    WORD StructVersion[2];
-    WORD FileVersion[4];
-    WORD ProductVersion[4];
-    DWORD FileFlagsMask[2];
-    DWORD FileFlags;
-    DWORD FileOS;
-    DWORD FileType;
-    DWORD FileSubtype;
-    DWORD FileTimestamp;
-} VS_VERSION_INFO;
-
-typedef struct StringFileInfo {
-    WORD wLength;
-    WORD wValueLength;
-    WORD wType;
-} StringFileInfo;
-
-typedef struct StringInfo {
-    WORD wLength;
-    WORD wValueLength;
-    WORD wType;
-} StringInfo;
-
-typedef struct StringTable {
-    WORD wLength;
-    WORD wValueLength;
-    WORD wType;
-} StringTable;
-
-typedef struct Var {
-    WORD wLength;
-    WORD wValueLength;
-    WORD wType;
-} Var;
-
-typedef struct VarFileInfo {
-    WORD wLength;
-    WORD wValueLength;
-    WORD wType;
-} VarFileInfo;
-
-// PE resource directory entry (extended types)
-typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct {
-    dword OffsetToDirectory;
-    dword DataIsDirectory;
-} IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
-
-typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion {
-    dword OffsetToData;
-    IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct _IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
-} IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion;
-
-// 32-bit Image Base Offset Relative Pointer
-typedef void* ImageBaseOffset32;
+// 32-bit Image Base Offset Relative Pointer (Ghidra typedef).
+// Ghidra records the base type as void*, but these fields are
+// initialized with integer RVAs in the decompiled globals, so we
+// emit it as a 32-bit integer to allow direct literal initialization.
+typedef dword ImageBaseOffset32;
 

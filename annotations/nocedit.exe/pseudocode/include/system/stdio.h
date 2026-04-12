@@ -96,6 +96,7 @@ typedef struct FileEmbeddedData {
 } FileEmbeddedData;
 
 // Structure: FileListNode
+#pragma pack(push, 1)
 typedef struct FileListNode {
     struct FileListNode* next;
     struct _FILE* file_struct;
@@ -103,6 +104,7 @@ typedef struct FileListNode {
     uint flags;
     char reserved[17];
 } FileListNode;
+#pragma pack(pop)
 
 // Structure: FormatSpec
 typedef struct FormatSpec {
@@ -157,6 +159,7 @@ typedef struct StringOutputContext {
 } StringOutputContext;
 
 // Structure: _FILE
+#pragma pack(push, 1)
 typedef struct _FILE {
     char* _ptr;
     int _cnt;
@@ -166,6 +169,7 @@ typedef struct _FILE {
     uint _bufsize;
     ushort _ungotten;
 } _FILE;
+#pragma pack(pop)
 
 // Structure: scanf_state_t
 typedef struct scanf_state_t {

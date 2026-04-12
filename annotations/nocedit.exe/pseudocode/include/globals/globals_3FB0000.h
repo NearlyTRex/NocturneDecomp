@@ -2,6 +2,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/pe.h"
 #include "system/windef.h"
 
 // =============================================================================

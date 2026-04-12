@@ -159,6 +159,24 @@ def resolve_data_type_name_for_headers(currentProgram, type_obj, seen=None, pres
     return type_name
 
 
+def resolve_field_type_for_component(currentProgram, comp):
+    """Resolve a struct/union field's type, handling Ghidra string types.
+
+    Ghidra represents fields declared as `unicode` or `string` with a fixed
+    byte length as a single non-Array string instance. In C those need to
+    become byte arrays to preserve the layout.
+    """
+    resolved = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
+    if resolved in ('unicode', 'string') and hasattr(comp, 'getLength'):
+        try:
+            length = int(comp.getLength())
+        except Exception:
+            length = 0
+        if length > 0:
+            return 'char[%d]' % length
+    return resolved
+
+
 def is_function_definition_type(data_type):
     """Check if a data type is a function definition type.
 
@@ -226,6 +244,27 @@ def get_new_export_path(original_path, data_type):
     if original_path.endswith("/System"):
         return ("system/misc", False)
 
+    # Ghidra's built-in Windows categories — route each to a dedicated
+    # system/<name>.h so consumers can include a single file per subsystem.
+    builtin_path_to_header = {
+        "/PE":    "system/pe",
+        "/DOS":   "system/dos",
+        "/VxD":   "system/vxd",
+        "/WinNT": "system/winnt",
+    }
+    if original_path in builtin_path_to_header:
+        return (builtin_path_to_header[original_path], False)
+
+    # Ghidra parks a few built-in composite types at root "/" that we can't
+    # reassign in the UI. Route them by name prefix to their logical header.
+    if original_path == "/":
+        dt_name = data_type.getName() if data_type is not None else ""
+        if dt_name.startswith("IMAGE_DOS_"):
+            return ("system/dos", False)
+        if dt_name.startswith("IMAGE_"):
+            return ("system/pe", False)
+        return ("system/misc", False)
+
     # Non-Nocturne paths - route to system/misc
     if not original_path.startswith("/Nocturne"):
         return ("system/misc", False)
@@ -244,25 +283,18 @@ def format_field_declaration(field_type, field_name):
     Returns:
         Formatted declaration string
     """
-    # Extract base type name (strip pointers and array dimensions)
-    base_type_name = field_type
-    if '[' in base_type_name:
-        base_type_name = base_type_name[:base_type_name.index('[')]
-    base_type_name = base_type_name.rstrip('*').strip()
-
-    # In C++, a field name cannot match its type name (shadows the type)
-    # Add underscore prefix if they match
-    actual_field_name = field_name
-    if field_name == base_type_name:
-        actual_field_name = "_%s" % field_name
-
+    # C++ allows a struct member to share a name with its type (name lookup
+    # disambiguates by context), so we emit the Ghidra-recorded field name
+    # verbatim. Keeping this lets Ghidra stay the source of truth and lets
+    # the globals exporter use `.FieldName = ...` designated initializers
+    # without a separate rename.
     array_match = re.match(r'^(.+?)(\[.+\])$', field_type)
     if array_match:
         base_type = array_match.group(1)
         array_dims = array_match.group(2)
-        return "%s %s%s" % (base_type, actual_field_name, array_dims)
+        return "%s %s%s" % (base_type, field_name, array_dims)
     else:
-        return "%s %s" % (field_type, actual_field_name)
+        return "%s %s" % (field_type, field_name)
 
 
 def type_uses_basetypes(currentProgram, data_type, visited=None):
@@ -630,7 +662,7 @@ def generate_individual_struct_header(currentProgram, struct, type_to_path_map=N
         content.append("#pragma pack(push, %d)" % pack_value)
     content.append("typedef struct %s {" % struct.getName())
     for field_index, comp in enumerate(struct.getComponents()):
-        field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
+        field_type = resolve_field_type_for_component(currentProgram, comp)
         # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
         # This matches what the decompiler outputs for unnamed struct fields
         field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
@@ -723,7 +755,7 @@ def generate_individual_union_header(currentProgram, union, type_to_path_map=Non
         content.append("#pragma pack(push, %d)" % pack_value)
     content.append("typedef union %s {" % union.getName())
     for field_index, comp in enumerate(union.getComponents()):
-        field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
+        field_type = resolve_field_type_for_component(currentProgram, comp)
         # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
         field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
         comment = " // %s" % comp.getComment() if comp.getComment() else ""
@@ -1004,7 +1036,7 @@ def generate_structs_header(currentProgram, structs):
             content.append("#pragma pack(push, %d)" % pack_value)
         content.append("typedef struct %s {" % struct.getName())
         for field_index, comp in enumerate(struct.getComponents()):
-            field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
+            field_type = resolve_field_type_for_component(currentProgram, comp)
             # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
             field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
@@ -1042,7 +1074,7 @@ def generate_unions_header(currentProgram, unions):
             content.append("#pragma pack(push, %d)" % pack_value)
         content.append("typedef union %s {" % union.getName())
         for field_index, comp in enumerate(union.getComponents()):
-            field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
+            field_type = resolve_field_type_for_component(currentProgram, comp)
             # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
             field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
@@ -1616,7 +1648,7 @@ def generate_type_definition(currentProgram, dt):
             lines.append("#pragma pack(push, %d)" % pack_value)
         lines.append("typedef union %s {" % dt_name)
         for field_index, comp in enumerate(dt.getComponents()):
-            field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
+            field_type = resolve_field_type_for_component(currentProgram, comp)
             # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
             field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
@@ -1639,7 +1671,7 @@ def generate_type_definition(currentProgram, dt):
             lines.append("#pragma pack(push, %d)" % pack_value)
         lines.append("typedef struct %s {" % dt_name)
         for field_index, comp in enumerate(dt.getComponents()):
-            field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
+            field_type = resolve_field_type_for_component(currentProgram, comp)
             # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
             field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
@@ -1841,103 +1873,15 @@ def generate_basetypes_header(pseudocode_dir):
     content.append("typedef WORD ATOM;")
     content.append("")
     content.append("// =============================================================================")
-    content.append("// Windows PE Header Structures (Ghidra built-ins)")
+    content.append("// Windows PE Resource Placeholders (not recorded by Ghidra)")
     content.append("// =============================================================================")
+    content.append("//")
+    content.append("// These resource types are referenced by decompiled winMain but Ghidra")
+    content.append("// does not track their actual layout — variable-size BYTE blobs. Kept")
+    content.append("// as hand-written placeholders. All other PE/DOS structs (IMAGE_*,")
+    content.append("// VS_VERSION_INFO, etc.) are auto-generated from data_types.json into")
+    content.append("// system/pe.h and system/dos.h.")
     content.append("")
-    content.append("typedef struct IMAGE_FILE_HEADER {")
-    content.append("    WORD Machine;")
-    content.append("    WORD NumberOfSections;")
-    content.append("    DWORD TimeDateStamp;")
-    content.append("    DWORD PointerToSymbolTable;")
-    content.append("    DWORD NumberOfSymbols;")
-    content.append("    WORD SizeOfOptionalHeader;")
-    content.append("    WORD Characteristics;")
-    content.append("} IMAGE_FILE_HEADER;")
-    content.append("")
-    content.append("typedef struct IMAGE_DATA_DIRECTORY {")
-    content.append("    DWORD VirtualAddress;")
-    content.append("    DWORD Size;")
-    content.append("} IMAGE_DATA_DIRECTORY;")
-    content.append("")
-    content.append("typedef struct IMAGE_OPTIONAL_HEADER32 {")
-    content.append("    WORD Magic;")
-    content.append("    BYTE MajorLinkerVersion;")
-    content.append("    BYTE MinorLinkerVersion;")
-    content.append("    DWORD SizeOfCode;")
-    content.append("    DWORD SizeOfInitializedData;")
-    content.append("    DWORD SizeOfUninitializedData;")
-    content.append("    DWORD AddressOfEntryPoint;")
-    content.append("    DWORD BaseOfCode;")
-    content.append("    DWORD BaseOfData;")
-    content.append("    void* ImageBase;")
-    content.append("    DWORD SectionAlignment;")
-    content.append("    DWORD FileAlignment;")
-    content.append("    WORD MajorOperatingSystemVersion;")
-    content.append("    WORD MinorOperatingSystemVersion;")
-    content.append("    WORD MajorImageVersion;")
-    content.append("    WORD MinorImageVersion;")
-    content.append("    WORD MajorSubsystemVersion;")
-    content.append("    WORD MinorSubsystemVersion;")
-    content.append("    DWORD Win32VersionValue;")
-    content.append("    DWORD SizeOfImage;")
-    content.append("    DWORD SizeOfHeaders;")
-    content.append("    DWORD CheckSum;")
-    content.append("    WORD Subsystem;")
-    content.append("    WORD DllCharacteristics;")
-    content.append("    DWORD SizeOfStackReserve;")
-    content.append("    DWORD SizeOfStackCommit;")
-    content.append("    DWORD SizeOfHeapReserve;")
-    content.append("    DWORD SizeOfHeapCommit;")
-    content.append("    DWORD LoaderFlags;")
-    content.append("    DWORD NumberOfRvaAndSizes;")
-    content.append("    IMAGE_DATA_DIRECTORY DataDirectory[16];")
-    content.append("} IMAGE_OPTIONAL_HEADER32;")
-    content.append("")
-    content.append("typedef struct IMAGE_NT_HEADERS32 {")
-    content.append("    char Signature[4]; // \"PE\\0\\0\"")
-    content.append("    IMAGE_FILE_HEADER FileHeader;")
-    content.append("    IMAGE_OPTIONAL_HEADER32 OptionalHeader;")
-    content.append("} IMAGE_NT_HEADERS32;")
-    content.append("")
-    content.append("typedef struct IMAGE_SECTION_HEADER {")
-    content.append("    char Name[8];")
-    content.append("    DWORD Misc; // Union: PhysicalAddress or VirtualSize")
-    content.append("    DWORD VirtualAddress;")
-    content.append("    DWORD SizeOfRawData;")
-    content.append("    DWORD PointerToRawData;")
-    content.append("    DWORD PointerToRelocations;")
-    content.append("    DWORD PointerToLinenumbers;")
-    content.append("    WORD NumberOfRelocations;")
-    content.append("    WORD NumberOfLinenumbers;")
-    content.append("    DWORD Characteristics;")
-    content.append("} IMAGE_SECTION_HEADER;")
-    content.append("")
-    content.append("typedef struct IMAGE_RESOURCE_DIRECTORY {")
-    content.append("    DWORD Characteristics;")
-    content.append("    DWORD TimeDateStamp;")
-    content.append("    WORD MajorVersion;")
-    content.append("    WORD MinorVersion;")
-    content.append("    WORD NumberOfNamedEntries;")
-    content.append("    WORD NumberOfIdEntries;")
-    content.append("} IMAGE_RESOURCE_DIRECTORY;")
-    content.append("")
-    content.append("typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY {")
-    content.append("    DWORD Name;")
-    content.append("    DWORD OffsetToData;")
-    content.append("} IMAGE_RESOURCE_DIRECTORY_ENTRY;")
-    content.append("")
-    content.append("typedef struct IMAGE_RESOURCE_DATA_ENTRY {")
-    content.append("    DWORD OffsetToData;")
-    content.append("    DWORD Size;")
-    content.append("    DWORD CodePage;")
-    content.append("    DWORD Reserved;")
-    content.append("} IMAGE_RESOURCE_DATA_ENTRY;")
-    content.append("")
-    content.append("// =============================================================================")
-    content.append("// Windows PE Resource Types (Ghidra built-ins)")
-    content.append("// =============================================================================")
-    content.append("")
-    content.append("// Placeholder types for PE resources - actual structure varies by resource")
     content.append("typedef struct IconResource {")
     content.append("    BYTE data[1]; // Variable size icon data")
     content.append("} IconResource;")
@@ -1950,67 +1894,11 @@ def generate_basetypes_header(pseudocode_dir):
     content.append("    BYTE data[1]; // Variable size group icon data")
     content.append("} GroupIconResource;")
     content.append("")
-    content.append("typedef struct VS_VERSION_INFO {")
-    content.append("    WORD StructLength;")
-    content.append("    WORD ValueLength;")
-    content.append("    WORD StructType;")
-    content.append("    WCHAR Info[16]; // \"VS_VERSION_INFO\" key")
-    content.append("    BYTE Padding[2];")
-    content.append("    DWORD Signature;")
-    content.append("    WORD StructVersion[2];")
-    content.append("    WORD FileVersion[4];")
-    content.append("    WORD ProductVersion[4];")
-    content.append("    DWORD FileFlagsMask[2];")
-    content.append("    DWORD FileFlags;")
-    content.append("    DWORD FileOS;")
-    content.append("    DWORD FileType;")
-    content.append("    DWORD FileSubtype;")
-    content.append("    DWORD FileTimestamp;")
-    content.append("} VS_VERSION_INFO;")
-    content.append("")
-    content.append("typedef struct StringFileInfo {")
-    content.append("    WORD wLength;")
-    content.append("    WORD wValueLength;")
-    content.append("    WORD wType;")
-    content.append("} StringFileInfo;")
-    content.append("")
-    content.append("typedef struct StringInfo {")
-    content.append("    WORD wLength;")
-    content.append("    WORD wValueLength;")
-    content.append("    WORD wType;")
-    content.append("} StringInfo;")
-    content.append("")
-    content.append("typedef struct StringTable {")
-    content.append("    WORD wLength;")
-    content.append("    WORD wValueLength;")
-    content.append("    WORD wType;")
-    content.append("} StringTable;")
-    content.append("")
-    content.append("typedef struct Var {")
-    content.append("    WORD wLength;")
-    content.append("    WORD wValueLength;")
-    content.append("    WORD wType;")
-    content.append("} Var;")
-    content.append("")
-    content.append("typedef struct VarFileInfo {")
-    content.append("    WORD wLength;")
-    content.append("    WORD wValueLength;")
-    content.append("    WORD wType;")
-    content.append("} VarFileInfo;")
-    content.append("")
-    content.append("// PE resource directory entry (extended types)")
-    content.append("typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct {")
-    content.append("    dword OffsetToDirectory;")
-    content.append("    dword DataIsDirectory;")
-    content.append("} IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;")
-    content.append("")
-    content.append("typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion {")
-    content.append("    dword OffsetToData;")
-    content.append("    IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct _IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;")
-    content.append("} IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion;")
-    content.append("")
-    content.append("// 32-bit Image Base Offset Relative Pointer")
-    content.append("typedef void* ImageBaseOffset32;")
+    content.append("// 32-bit Image Base Offset Relative Pointer (Ghidra typedef).")
+    content.append("// Ghidra records the base type as void*, but these fields are")
+    content.append("// initialized with integer RVAs in the decompiled globals, so we")
+    content.append("// emit it as a 32-bit integer to allow direct literal initialization.")
+    content.append("typedef dword ImageBaseOffset32;")
     content.append("")
 
     header_path = os.path.join(system_dir, "basetypes.h")
@@ -2809,8 +2697,17 @@ def export_header_files(currentProgram, pseudocode_dir):
         # Get the original category path
         original_cat_path = dt.getCategoryPath().getPath()
 
-        # Skip standard Ghidra categories (including root "/")
-        if is_standard_ghidra_category(original_cat_path):
+        # Skip standard Ghidra categories (including root "/") — except for
+        # composite types (Structure/Union) sitting at root. Ghidra parks a
+        # few built-ins like IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion at
+        # "/" and won't let them be moved. Those still need to reach
+        # consumers that reference them (e.g. IMAGE_RESOURCE_DIRECTORY_ENTRY
+        # in /PE), so we let Structure/Union at root pass and route them by
+        # name in get_new_export_path below.
+        is_root_composite = (
+            original_cat_path == "/" and isinstance(dt, (Structure, Union))
+        )
+        if not is_root_composite and is_standard_ghidra_category(original_cat_path):
             continue
 
         # Skip duplicate types (same name in multiple categories)

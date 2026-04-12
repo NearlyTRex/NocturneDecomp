@@ -730,8 +730,14 @@ def collect_type_dependencies_with_context(currentProgram, type_obj, seen_direct
     return (seen_direct, seen_pointer)
 
 def is_standard_ghidra_category(path):
+    # Only the root "/" and single-level /foo.h paths are filtered — those
+    # hold Ghidra primitives. /PE, /DOS, /VxD, /WinNT used to be filtered
+    # too, but the types in them (IMAGE_DOS_HEADER, VS_VERSION_INFO, the
+    # IMAGE_* family) are used by the binary and need to be exported.
+    # Letting them flow through the normal individual-header pipeline keeps
+    # those headers in sync with Ghidra (source of truth) instead of drifting
+    # from a hand-written fallback block.
     return (
         path == "/" or
-        re.match(r"^/[^/]+\.h$", path) or
-        path in {"/PE", "/DOS", "/VxD", "/WinNT"}
+        re.match(r"^/[^/]+\.h$", path)
     )

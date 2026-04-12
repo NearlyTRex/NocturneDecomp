@@ -2,6 +2,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/pe.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x400000

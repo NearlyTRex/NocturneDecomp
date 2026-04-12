@@ -32,18 +32,15 @@ def get_all_basetypes():
         'LPSTR', 'LPCSTR', 'LPWSTR', 'LPCWSTR', 'LPBYTE', 'LPDWORD',
         # Common typedefs
         'COLORREF', 'WPARAM', 'LPARAM', 'LRESULT', 'HRESULT', 'ATOM',
-        # PE structures (defined in basetypes.h)
-        'IMAGE_FILE_HEADER', 'IMAGE_DATA_DIRECTORY', 'IMAGE_OPTIONAL_HEADER32',
-        'IMAGE_NT_HEADERS32', 'IMAGE_SECTION_HEADER',
-        'IMAGE_RESOURCE_DIRECTORY', 'IMAGE_RESOURCE_DIRECTORY_ENTRY',
-        'IMAGE_RESOURCE_DATA_ENTRY',
-        # PE resource types
-        'IconResource', 'MenuResource', 'GroupIconResource', 'VS_VERSION_INFO',
-        'StringFileInfo', 'StringInfo', 'StringTable', 'Var', 'VarFileInfo',
-        # PE resource directory entry types (from Ghidra /System)
-        'IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct',
-        'IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion',
+        # PE resource placeholders (Ghidra has no layout — kept hand-written
+        # in basetypes.h because decompiled winMain references them as opaque
+        # variable-size BYTE blobs).
+        'IconResource', 'MenuResource', 'GroupIconResource',
+        # 32-bit Image Base Offset typedef (Ghidra built-in, hand-written)
         'ImageBaseOffset32',
+        # NOTE: IMAGE_FILE_HEADER, VS_VERSION_INFO, StringFileInfo, etc. used
+        # to live here but now flow through Ghidra's /PE category into
+        # system/pe.h — they are no longer basetypes.
     }
 
 

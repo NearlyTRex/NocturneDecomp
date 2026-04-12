@@ -21,6 +21,7 @@
 #include "system/math.h"
 #include "system/misc.h"
 #include "system/mmsystem.h"
+#include "system/pe.h"
 #include "system/signal.h"
 #include "system/stat.h"
 #include "system/stdarg.h"

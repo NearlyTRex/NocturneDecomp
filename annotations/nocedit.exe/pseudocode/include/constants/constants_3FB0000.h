@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/pe.h"
 
 // =============================================================================
 // CONSTANTS
