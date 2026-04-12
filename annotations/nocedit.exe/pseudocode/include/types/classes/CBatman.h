@@ -7,6 +7,7 @@
 
 // Structure: CBatman
 // Ghidra size: 0xbf78 (49016 bytes)
+#pragma pack(push, 1)
 typedef struct CBatman {
     CEnemy base; // 0x0
     char fall_event[100]; // 0xbebc
@@ -16,4 +17,5 @@ typedef struct CBatman {
     CVector3f new_pos; // 0xbf60
     uint sfx_handles[3]; // 0xbf6c
 } CBatman;
+#pragma pack(pop)
 

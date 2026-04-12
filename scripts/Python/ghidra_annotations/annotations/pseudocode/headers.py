@@ -617,7 +617,17 @@ def generate_individual_struct_header(currentProgram, struct, type_to_path_map=N
     except:
         pass
 
-    # Write struct
+    # Mirror Ghidra's packing + alignment exactly so struct layouts match the
+    # original Watcom binary. Order of precedence:
+    #   * Packing enabled with explicit value  -> #pragma pack(push, N)
+    #   * Packing enabled without explicit val -> #pragma pack(push, 1)
+    #   * Not packed but minimum alignment < 4 -> #pragma pack(push, alignment)
+    # Additionally, if the struct's own alignment differs from the pack value
+    # (Windows SDK case: packed members, but struct must be 4-byte aligned),
+    # emit __attribute__((aligned(N))) on the closing brace.
+    pack_value, align_attr = _packing_and_alignment(struct)
+    if pack_value is not None:
+        content.append("#pragma pack(push, %d)" % pack_value)
     content.append("typedef struct %s {" % struct.getName())
     for field_index, comp in enumerate(struct.getComponents()):
         field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
@@ -632,9 +642,54 @@ def generate_individual_struct_header(currentProgram, struct, type_to_path_map=N
         comment = " // %s" % ", ".join(comment_parts)
         field_decl = format_field_declaration(field_type, field_name)
         content.append("    %s;%s" % (field_decl, comment))
-    content.append("} %s;" % struct.getName())
+    if align_attr is not None:
+        content.append("} %s %s;" % (align_attr, struct.getName()))
+    else:
+        content.append("} %s;" % struct.getName())
+    if pack_value is not None:
+        content.append("#pragma pack(pop)")
     content.append("")
     return "\n".join(content)
+
+
+def _packing_and_alignment(dt):
+    """Return (pack_value, align_attr_str) for a Structure or Union.
+
+    pack_value: int to use as argument to #pragma pack(push, N), or None.
+    align_attr_str: e.g. '__attribute__((aligned(4)))', or None if the
+                    struct's alignment matches what pack_value naturally
+                    produces (no extra attribute needed).
+    """
+    pack_value = None
+    alignment = None
+    is_packed = False
+    try:
+        is_packed = bool(dt.isPackingEnabled())
+    except Exception:
+        pass
+    try:
+        a = dt.getAlignment()
+        if a and a > 0:
+            alignment = a
+    except Exception:
+        pass
+    if is_packed:
+        explicit_pv = None
+        try:
+            pv = dt.getExplicitPackingValue()
+            if pv and pv > 0:
+                explicit_pv = int(pv)
+        except Exception:
+            pass
+        pack_value = explicit_pv if explicit_pv is not None else 1
+    elif alignment is not None and alignment < 4:
+        pack_value = alignment
+
+    align_attr = None
+    if alignment is not None and pack_value is not None and alignment != pack_value:
+        align_attr = "__attribute__((aligned(%d)))" % alignment
+
+    return pack_value, align_attr
 
 
 def generate_individual_union_header(currentProgram, union, type_to_path_map=None):
@@ -663,6 +718,9 @@ def generate_individual_union_header(currentProgram, union, type_to_path_map=Non
     content.append("// Union: %s" % union.getName())
     if union.getDescription():
         content.append("// %s" % union.getDescription())
+    pack_value, align_attr = _packing_and_alignment(union)
+    if pack_value is not None:
+        content.append("#pragma pack(push, %d)" % pack_value)
     content.append("typedef union %s {" % union.getName())
     for field_index, comp in enumerate(union.getComponents()):
         field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
@@ -671,7 +729,12 @@ def generate_individual_union_header(currentProgram, union, type_to_path_map=Non
         comment = " // %s" % comp.getComment() if comp.getComment() else ""
         field_decl = format_field_declaration(field_type, field_name)
         content.append("    %s;%s" % (field_decl, comment))
-    content.append("} %s;" % union.getName())
+    if align_attr is not None:
+        content.append("} %s %s;" % (align_attr, union.getName()))
+    else:
+        content.append("} %s;" % union.getName())
+    if pack_value is not None:
+        content.append("#pragma pack(pop)")
     content.append("")
     return "\n".join(content)
 
@@ -936,6 +999,9 @@ def generate_structs_header(currentProgram, structs):
         content.append("// Structure: %s" % struct.getName())
         if struct.getDescription():
             content.append("// %s" % struct.getDescription())
+        pack_value, align_attr = _packing_and_alignment(struct)
+        if pack_value is not None:
+            content.append("#pragma pack(push, %d)" % pack_value)
         content.append("typedef struct %s {" % struct.getName())
         for field_index, comp in enumerate(struct.getComponents()):
             field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
@@ -944,7 +1010,12 @@ def generate_structs_header(currentProgram, structs):
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
             field_decl = format_field_declaration(field_type, field_name)
             content.append("    %s;%s" % (field_decl, comment))
-        content.append("} %s;" % struct.getName())
+        if align_attr is not None:
+            content.append("} %s %s;" % (align_attr, struct.getName()))
+        else:
+            content.append("} %s;" % struct.getName())
+        if pack_value is not None:
+            content.append("#pragma pack(pop)")
         content.append("")
     return "\n".join(content)
 
@@ -966,6 +1037,9 @@ def generate_unions_header(currentProgram, unions):
         content.append("// Union: %s" % union.getName())
         if union.getDescription():
             content.append("// %s" % union.getDescription())
+        pack_value, align_attr = _packing_and_alignment(union)
+        if pack_value is not None:
+            content.append("#pragma pack(push, %d)" % pack_value)
         content.append("typedef union %s {" % union.getName())
         for field_index, comp in enumerate(union.getComponents()):
             field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
@@ -974,7 +1048,12 @@ def generate_unions_header(currentProgram, unions):
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
             field_decl = format_field_declaration(field_type, field_name)
             content.append("    %s;%s" % (field_decl, comment))
-        content.append("} %s;" % union.getName())
+        if align_attr is not None:
+            content.append("} %s %s;" % (align_attr, union.getName()))
+        else:
+            content.append("} %s;" % union.getName())
+        if pack_value is not None:
+            content.append("#pragma pack(pop)")
         content.append("")
     return "\n".join(content)
 
@@ -1532,6 +1611,9 @@ def generate_type_definition(currentProgram, dt):
         lines.append("// Union: %s" % dt_name)
         if dt.getDescription():
             lines.append("// %s" % dt.getDescription())
+        pack_value, align_attr = _packing_and_alignment(dt)
+        if pack_value is not None:
+            lines.append("#pragma pack(push, %d)" % pack_value)
         lines.append("typedef union %s {" % dt_name)
         for field_index, comp in enumerate(dt.getComponents()):
             field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
@@ -1540,13 +1622,21 @@ def generate_type_definition(currentProgram, dt):
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
             field_decl = format_field_declaration(field_type, field_name)
             lines.append("    %s;%s" % (field_decl, comment))
-        lines.append("} %s;" % dt_name)
+        if align_attr is not None:
+            lines.append("} %s %s;" % (align_attr, dt_name))
+        else:
+            lines.append("} %s;" % dt_name)
+        if pack_value is not None:
+            lines.append("#pragma pack(pop)")
 
     elif isinstance(dt, Structure):
         lines.append("")
         lines.append("// Structure: %s" % dt_name)
         if dt.getDescription():
             lines.append("// %s" % dt.getDescription())
+        pack_value, align_attr = _packing_and_alignment(dt)
+        if pack_value is not None:
+            lines.append("#pragma pack(push, %d)" % pack_value)
         lines.append("typedef struct %s {" % dt_name)
         for field_index, comp in enumerate(dt.getComponents()):
             field_type = resolve_data_type_name_for_headers(currentProgram, comp.getDataType())
@@ -1555,7 +1645,12 @@ def generate_type_definition(currentProgram, dt):
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
             field_decl = format_field_declaration(field_type, field_name)
             lines.append("    %s;%s" % (field_decl, comment))
-        lines.append("} %s;" % dt_name)
+        if align_attr is not None:
+            lines.append("} %s %s;" % (align_attr, dt_name))
+        else:
+            lines.append("} %s;" % dt_name)
+        if pack_value is not None:
+            lines.append("#pragma pack(pop)")
 
     elif is_function_definition_type(dt):
         lines.append("")

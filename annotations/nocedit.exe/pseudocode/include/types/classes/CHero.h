@@ -21,6 +21,7 @@ struct CLever;
 
 // Structure: CHero
 // Ghidra size: 0x1fbd4 (130004 bytes)
+#pragma pack(push, 1)
 typedef struct CHero {
     CCharacter base; // 0x0
     float invincibility_timer; // 0xbe24
@@ -41,4 +42,5 @@ typedef struct CHero {
     UOrientationVector target_orientation; // 0x1fbc4
     EHeroTask ai_task; // 0x1fbd0
 } CHero;
+#pragma pack(pop)
 

@@ -7,6 +7,7 @@
 
 // Structure: CWeather
 // Ghidra size: 0x38 (56 bytes)
+#pragma pack(push, 1)
 typedef struct CWeather {
     EWeatherType weather_type; // 0x0
     float particle_speed; // 0x4
@@ -19,4 +20,5 @@ typedef struct CWeather {
     float base_ambient; // 0x30
     float max_flash_interval; // 0x34
 } CWeather;
+#pragma pack(pop)
 

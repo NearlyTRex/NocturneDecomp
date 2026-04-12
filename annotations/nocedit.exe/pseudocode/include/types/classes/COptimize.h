@@ -10,6 +10,7 @@ struct COptimize_vtable;
 
 // Structure: COptimize
 // Ghidra size: 0x44 (68 bytes)
+#pragma pack(push, 1)
 typedef struct COptimize {
     CObj base; // 0x0
     double weld_threshold; // 0x1c
@@ -20,4 +21,5 @@ typedef struct COptimize {
     struct CComplexPolygon** complex_polygons; // 0x3c
     struct COptimize_vtable* vtable; // 0x40
 } COptimize;
+#pragma pack(pop)
 

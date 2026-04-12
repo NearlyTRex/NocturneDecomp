@@ -10,6 +10,7 @@ struct CCameraView_vtable;
 
 // Structure: CCameraView
 // Ghidra size: 0x40 (64 bytes)
+#pragma pack(push, 1)
 typedef struct CCameraView {
     float fixed_point_scale; // 0x0
     UVector3 position; // 0x4
@@ -18,4 +19,5 @@ typedef struct CCameraView {
     float focal_length; // 0x38
     struct CCameraView_vtable* vtable; // 0x3c
 } CCameraView;
+#pragma pack(pop)
 

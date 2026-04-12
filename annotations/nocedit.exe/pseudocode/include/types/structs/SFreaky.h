@@ -9,6 +9,7 @@ struct CDraculaBride;
 
 // Structure: SFreaky
 // Ghidra size: 0x54 (84 bytes)
+#pragma pack(push, 1)
 typedef struct SFreaky {
     uint sfx_handle; // 0x0
     CVector3f position; // 0x4
@@ -17,4 +18,5 @@ typedef struct SFreaky {
     CVector3f control_points[4]; // 0x20
     struct CDraculaBride* owner; // 0x50
 } SFreaky;
+#pragma pack(pop)
 

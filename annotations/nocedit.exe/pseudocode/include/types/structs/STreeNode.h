@@ -6,6 +6,7 @@
 
 // Structure: STreeNode
 // Ghidra size: 0x1c (28 bytes)
+#pragma pack(push, 1)
 typedef struct STreeNode {
     struct STreeNode* left_child; // 0x0
     struct STreeNode* right_child; // 0x4
@@ -15,4 +16,5 @@ typedef struct STreeNode {
     UTreeNodeData data3; // 0x14
     UTreeNodeData data4; // 0x18
 } STreeNode;
+#pragma pack(pop)
 

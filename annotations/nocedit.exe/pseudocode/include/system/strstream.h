@@ -10,6 +10,7 @@
 // =============================================================================
 
 // Structure: strstreambuf
+#pragma pack(push, 1)
 typedef struct strstreambuf {
     streambuf _streambuf;
     struct strstreambuf_vtable* __vtable;
@@ -20,6 +21,7 @@ typedef struct strstreambuf {
     uchar __bit_flags;
     char padding;
 } strstreambuf;
+#pragma pack(pop)
 
 // Structure: strstreambase_core
 typedef struct strstreambase_core {

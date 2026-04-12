@@ -7,6 +7,7 @@
 
 // Structure: SRoom
 // Ghidra size: 0x44 (68 bytes)
+#pragma pack(push, 1)
 typedef struct SRoom {
     CVector3f position; // 0x0
     CVector3f extents; // 0xc
@@ -14,4 +15,5 @@ typedef struct SRoom {
     int dead; // 0x3c
     int reverb_size; // 0x40
 } SRoom;
+#pragma pack(pop)
 

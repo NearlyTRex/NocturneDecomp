@@ -94,10 +94,12 @@ typedef PTOP_LEVEL_EXCEPTION_FILTER LPTOP_LEVEL_EXCEPTION_FILTER;
 typedef ulong* PULONG;
 
 // Structure: _FILETIME
+#pragma pack(push, 1)
 typedef struct _FILETIME {
     DWORD dwLowDateTime;
     DWORD dwHighDateTime;
-} _FILETIME;
+} __attribute__((aligned(4))) _FILETIME;
+#pragma pack(pop)
 
 // Typedef: FILETIME
 typedef _FILETIME FILETIME;
@@ -107,6 +109,7 @@ typedef _FILETIME FILETIME;
 typedef FILETIME* PFILETIME;
 
 // Structure: _MEMORYSTATUS
+#pragma pack(push, 1)
 typedef struct _MEMORYSTATUS {
     DWORD dwLength;
     DWORD dwMemoryLoad;
@@ -116,9 +119,11 @@ typedef struct _MEMORYSTATUS {
     SIZE_T dwAvailPageFile;
     SIZE_T dwTotalVirtual;
     SIZE_T dwAvailVirtual;
-} _MEMORYSTATUS;
+} __attribute__((aligned(4))) _MEMORYSTATUS;
+#pragma pack(pop)
 
 // Structure: _MEMORY_BASIC_INFORMATION
+#pragma pack(push, 1)
 typedef struct _MEMORY_BASIC_INFORMATION {
     PVOID BaseAddress;
     PVOID AllocationBase;
@@ -127,32 +132,40 @@ typedef struct _MEMORY_BASIC_INFORMATION {
     DWORD State;
     DWORD Protect;
     DWORD Type;
-} _MEMORY_BASIC_INFORMATION;
+} __attribute__((aligned(4))) _MEMORY_BASIC_INFORMATION;
+#pragma pack(pop)
 
 // Structure: _OVERLAPPED
+#pragma pack(push, 1)
 typedef struct _OVERLAPPED {
     ULONG_PTR Internal;
     ULONG_PTR InternalHigh;
     _union_518 u;
     HANDLE hEvent;
-} _OVERLAPPED;
+} __attribute__((aligned(4))) _OVERLAPPED;
+#pragma pack(pop)
 
 // Structure: _PROCESS_INFORMATION
+#pragma pack(push, 1)
 typedef struct _PROCESS_INFORMATION {
     HANDLE hProcess;
     HANDLE hThread;
     DWORD dwProcessId;
     DWORD dwThreadId;
-} _PROCESS_INFORMATION;
+} __attribute__((aligned(4))) _PROCESS_INFORMATION;
+#pragma pack(pop)
 
 // Structure: _SECURITY_ATTRIBUTES
+#pragma pack(push, 1)
 typedef struct _SECURITY_ATTRIBUTES {
     DWORD nLength;
     LPVOID lpSecurityDescriptor;
     BOOL bInheritHandle;
-} _SECURITY_ATTRIBUTES;
+} __attribute__((aligned(4))) _SECURITY_ATTRIBUTES;
+#pragma pack(pop)
 
 // Structure: _STARTUPINFOA
+#pragma pack(push, 1)
 typedef struct _STARTUPINFOA {
     DWORD cb;
     LPSTR lpReserved;
@@ -172,9 +185,11 @@ typedef struct _STARTUPINFOA {
     HANDLE hStdInput;
     HANDLE hStdOutput;
     HANDLE hStdError;
-} _STARTUPINFOA;
+} __attribute__((aligned(4))) _STARTUPINFOA;
+#pragma pack(pop)
 
 // Structure: _SYSTEMTIME
+#pragma pack(push, 1)
 typedef struct _SYSTEMTIME {
     WORD wYear;
     WORD wMonth;
@@ -184,12 +199,14 @@ typedef struct _SYSTEMTIME {
     WORD wMinute;
     WORD wSecond;
     WORD wMilliseconds;
-} _SYSTEMTIME;
+} __attribute__((aligned(2))) _SYSTEMTIME;
+#pragma pack(pop)
 
 // Typedef: SYSTEMTIME
 typedef _SYSTEMTIME SYSTEMTIME;
 
 // Structure: _TIME_ZONE_INFORMATION
+#pragma pack(push, 1)
 typedef struct _TIME_ZONE_INFORMATION {
     LONG Bias;
     WCHAR StandardName[32];
@@ -198,9 +215,11 @@ typedef struct _TIME_ZONE_INFORMATION {
     WCHAR DaylightName[32];
     SYSTEMTIME DaylightDate;
     LONG DaylightBias;
-} _TIME_ZONE_INFORMATION;
+} __attribute__((aligned(4))) _TIME_ZONE_INFORMATION;
+#pragma pack(pop)
 
 // Structure: _WIN32_FIND_DATAA
+#pragma pack(push, 1)
 typedef struct _WIN32_FIND_DATAA {
     DWORD dwFileAttributes;
     FILETIME ftCreationTime;
@@ -212,7 +231,8 @@ typedef struct _WIN32_FIND_DATAA {
     DWORD dwReserved1;
     CHAR cFileName[260];
     CHAR cAlternateFileName[14];
-} _WIN32_FIND_DATAA;
+} __attribute__((aligned(4))) _WIN32_FIND_DATAA;
+#pragma pack(pop)
 
 // Typedef: WIN32_FIND_DATAA
 typedef _WIN32_FIND_DATAA WIN32_FIND_DATAA;

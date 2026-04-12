@@ -10,6 +10,7 @@ struct CDemonActor;
 
 // Structure: CMobster
 // Ghidra size: 0xbf94 (49044 bytes)
+#pragma pack(push, 1)
 typedef struct CMobster {
     CEnemy base; // 0x0
     int ai_idle_counter; // 0xbebc
@@ -32,4 +33,5 @@ typedef struct CMobster {
     float firing_blend; // 0xbf8c
     float firing_cooldown; // 0xbf90
 } CMobster;
+#pragma pack(pop)
 

@@ -7,6 +7,7 @@
 
 // Structure: SLaserInfo
 // Ghidra size: 0x54 (84 bytes)
+#pragma pack(push, 1)
 typedef struct SLaserInfo {
     float intensity; // 0x0
     float beam_width; // 0x4
@@ -22,4 +23,5 @@ typedef struct SLaserInfo {
     float stored_angle; // 0x4c
     float transparency; // 0x50
 } SLaserInfo;
+#pragma pack(pop)
 

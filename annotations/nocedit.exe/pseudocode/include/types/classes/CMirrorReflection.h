@@ -9,6 +9,7 @@
 
 // Structure: CMirrorReflection
 // Ghidra size: 0x94 (148 bytes)
+#pragma pack(push, 1)
 typedef struct CMirrorReflection {
     CVector3f corner1; // 0x0
     CVector3f corner2; // 0xc
@@ -19,4 +20,5 @@ typedef struct CMirrorReflection {
     float projection_scale; // 0x6c
     CMatrix3x3f reflection_matrix; // 0x70
 } CMirrorReflection;
+#pragma pack(pop)
 

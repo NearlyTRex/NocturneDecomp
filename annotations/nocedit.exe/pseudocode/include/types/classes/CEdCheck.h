@@ -5,6 +5,7 @@
 
 // Structure: CEdCheck
 // Ghidra size: 0xec (236 bytes)
+#pragma pack(push, 1)
 typedef struct CEdCheck {
     int checkbox_mode; // 0x0, 0=binary,1=tri-state
     int checked_state; // 0x4
@@ -17,4 +18,5 @@ typedef struct CEdCheck {
     int border_style_flag; // 0x20
     char checkbox_text[200]; // 0x24
 } CEdCheck;
+#pragma pack(pop)
 

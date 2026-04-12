@@ -5,6 +5,7 @@
 
 // Structure: CEdButton
 // Ghidra size: 0xe4 (228 bytes)
+#pragma pack(push, 1)
 typedef struct CEdButton {
     int enabled; // 0x0
     int shortcut_key; // 0x4
@@ -15,4 +16,5 @@ typedef struct CEdButton {
     int button_state; // 0x18
     char button_text[200]; // 0x1c
 } CEdButton;
+#pragma pack(pop)
 

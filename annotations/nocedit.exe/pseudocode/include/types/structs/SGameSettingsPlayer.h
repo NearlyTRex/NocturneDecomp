@@ -7,6 +7,7 @@
 
 // Structure: SGameSettingsPlayer
 // Ghidra size: 0x28 (40 bytes)
+#pragma pack(push, 1)
 typedef struct SGameSettingsPlayer {
     char name[20]; // 0x0
     SNetworkAddr addr; // 0x14
@@ -14,4 +15,5 @@ typedef struct SGameSettingsPlayer {
     uint aim_mode; // 0x20
     int ready_flag; // 0x24
 } SGameSettingsPlayer;
+#pragma pack(pop)
 

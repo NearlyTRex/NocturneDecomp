@@ -7,6 +7,7 @@
 
 // Structure: CBloodSplat
 // Ghidra size: 0x44 (68 bytes)
+#pragma pack(push, 1)
 typedef struct CBloodSplat {
     int expired; // 0x0
     CVector3f position; // 0x4
@@ -18,4 +19,5 @@ typedef struct CBloodSplat {
     CVector3i position_fixed; // 0x2c
     CVector3i normal_fixed; // 0x38
 } CBloodSplat;
+#pragma pack(pop)
 

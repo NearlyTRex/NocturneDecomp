@@ -5,6 +5,7 @@
 
 // Structure: SMpegFrameHeader
 // Ghidra size: 0x30 (48 bytes)
+#pragma pack(push, 1)
 typedef struct SMpegFrameHeader {
     int mpeg_version; // 0x0
     int layer; // 0x4
@@ -19,4 +20,5 @@ typedef struct SMpegFrameHeader {
     int original; // 0x28
     int emphasis; // 0x2c
 } SMpegFrameHeader;
+#pragma pack(pop)
 

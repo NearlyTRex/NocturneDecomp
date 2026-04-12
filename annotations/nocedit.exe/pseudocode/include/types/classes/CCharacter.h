@@ -19,6 +19,7 @@ struct CWayPoint;
 
 // Structure: CCharacter
 // Ghidra size: 0xbe24 (48676 bytes)
+#pragma pack(push, 1)
 typedef struct CCharacter {
     CDemonActor base; // 0x0
     CDeformableModelInstance model; // 0x158
@@ -98,4 +99,5 @@ typedef struct CCharacter {
     float stagger_amount; // 0xb7e0
     float motion_transition_costs[20][20]; // 0xb7e4
 } CCharacter;
+#pragma pack(pop)
 

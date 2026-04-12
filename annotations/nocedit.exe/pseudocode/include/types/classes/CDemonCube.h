@@ -10,6 +10,7 @@ struct SVoxelGrid;
 
 // Structure: CDemonCube
 // Ghidra size: 0x34 (52 bytes)
+#pragma pack(push, 1)
 typedef struct CDemonCube {
     struct SVoxelGrid* voxel_buffer1; // 0x0
     struct SVoxelGrid* voxel_buffer2; // 0x4
@@ -21,4 +22,5 @@ typedef struct CDemonCube {
     struct CDemonCubeTriangle* triangle_buffer; // 0x2c
     void* ground_type_memory; // 0x30
 } CDemonCube;
+#pragma pack(pop)
 

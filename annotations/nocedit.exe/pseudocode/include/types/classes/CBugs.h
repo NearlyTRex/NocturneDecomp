@@ -15,6 +15,7 @@ struct CDemonActor;
 
 // Structure: CBugs
 // Ghidra size: 0x199f8 (104952 bytes)
+#pragma pack(push, 1)
 typedef struct CBugs {
     CEnemy base; // 0x0
     EBugsState state; // 0xbebc
@@ -41,4 +42,5 @@ typedef struct CBugs {
     float grid_origin_z; // 0x199f0
     float damage_timer; // 0x199f4
 } CBugs;
+#pragma pack(pop)
 

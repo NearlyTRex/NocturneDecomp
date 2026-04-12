@@ -10,6 +10,7 @@ struct CDemonActor;
 
 // Structure: CBoneGuy
 // Ghidra size: 0xc4e4 (50404 bytes)
+#pragma pack(push, 1)
 typedef struct CBoneGuy {
     CEnemy base; // 0x0
     int pickup_attempt_count; // 0xbebc
@@ -24,4 +25,5 @@ typedef struct CBoneGuy {
     int blown_up; // 0xc4dc
     float recombine_interpolation; // 0xc4e0
 } CBoneGuy;
+#pragma pack(pop)
 

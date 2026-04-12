@@ -9,6 +9,7 @@
 
 // Structure: CLadder
 // Ghidra size: 0x300 (768 bytes)
+#pragma pack(push, 1)
 typedef struct CLadder {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -18,4 +19,5 @@ typedef struct CLadder {
     CVector3f cached_euler_angles; // 0x2f0
     EGroundType ground_type; // 0x2fc
 } CLadder;
+#pragma pack(pop)
 

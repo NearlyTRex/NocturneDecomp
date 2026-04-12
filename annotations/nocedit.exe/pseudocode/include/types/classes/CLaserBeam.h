@@ -7,6 +7,7 @@
 
 // Structure: CLaserBeam
 // Ghidra size: 0x40 (64 bytes)
+#pragma pack(push, 1)
 typedef struct CLaserBeam {
     CVector3f origin; // 0x0
     CVector3f hit_position; // 0xc
@@ -17,4 +18,5 @@ typedef struct CLaserBeam {
     float halo_spread; // 0x38
     float cone_angle; // 0x3c
 } CLaserBeam;
+#pragma pack(pop)
 

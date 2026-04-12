@@ -5,6 +5,7 @@
 
 // Structure: SMpegLayer3GranuleInfo
 // Ghidra size: 0x48 (72 bytes)
+#pragma pack(push, 1)
 typedef struct SMpegLayer3GranuleInfo {
     int part_2_3_length; // 0x0
     int big_value_pair_count; // 0x4
@@ -21,4 +22,5 @@ typedef struct SMpegLayer3GranuleInfo {
     int scalefac_scale; // 0x40
     int count_1_table_select; // 0x44
 } SMpegLayer3GranuleInfo;
+#pragma pack(pop)
 

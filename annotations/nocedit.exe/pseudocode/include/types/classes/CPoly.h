@@ -11,6 +11,7 @@ struct CPoly_vtable;
 
 // Structure: CPoly
 // Ghidra size: 0x68 (104 bytes)
+#pragma pack(push, 1)
 typedef struct CPoly {
     struct CObj* parent_obj; // 0x0
     int vertex_idx_0; // 0x4
@@ -23,4 +24,5 @@ typedef struct CPoly {
     uint flags; // 0x60
     struct CPoly_vtable* vtable; // 0x64
 } CPoly;
+#pragma pack(pop)
 

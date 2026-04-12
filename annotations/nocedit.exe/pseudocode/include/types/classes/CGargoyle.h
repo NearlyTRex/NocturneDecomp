@@ -10,6 +10,7 @@ struct CDemonActor;
 
 // Structure: CGargoyle
 // Ghidra size: 0xbf18 (48920 bytes)
+#pragma pack(push, 1)
 typedef struct CGargoyle {
     CEnemy base; // 0x0
     int part_indices[12]; // 0xbebc
@@ -22,4 +23,5 @@ typedef struct CGargoyle {
     int returning_home; // 0xbf10
     float petrify_timer; // 0xbf14
 } CGargoyle;
+#pragma pack(pop)
 

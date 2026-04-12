@@ -5,6 +5,7 @@
 
 // Structure: CTextureCache
 // Ghidra size: 0x1400c (81932 bytes)
+#pragma pack(push, 1)
 typedef struct CTextureCache {
     int wrap_indicator; // 0x0
     int max_texture_count; // 0x4
@@ -15,4 +16,5 @@ typedef struct CTextureCache {
     byte* texture_palette_ptrs[1024]; // 0x13008
     int current_texture_count; // 0x14008
 } CTextureCache;
+#pragma pack(pop)
 

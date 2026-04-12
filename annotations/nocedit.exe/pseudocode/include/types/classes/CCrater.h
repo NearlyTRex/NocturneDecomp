@@ -6,6 +6,7 @@
 
 // Structure: CCrater
 // Ghidra size: 0x70 (112 bytes)
+#pragma pack(push, 1)
 typedef struct CCrater {
     int active; // 0x0
     int has_smoke; // 0x4
@@ -15,4 +16,5 @@ typedef struct CCrater {
     CVector3f smoke_positions[3]; // 0x1c
     CVector3f corner_positions[4]; // 0x40
 } CCrater;
+#pragma pack(pop)
 

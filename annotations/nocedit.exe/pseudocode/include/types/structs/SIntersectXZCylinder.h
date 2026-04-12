@@ -6,6 +6,7 @@
 
 // Structure: SIntersectXZCylinder
 // Ghidra size: 0x5c (92 bytes)
+#pragma pack(push, 1)
 typedef struct SIntersectXZCylinder {
     float closest_t; // 0x0
     CVector3f push_normal; // 0x4
@@ -29,4 +30,5 @@ typedef struct SIntersectXZCylinder {
     float intersect_x; // 0x54
     float intersect_z; // 0x58
 } SIntersectXZCylinder;
+#pragma pack(pop)
 

@@ -5,6 +5,7 @@
 
 // Structure: SHardwareEdge
 // Ghidra size: 0x38 (56 bytes)
+#pragma pack(push, 1)
 typedef struct SHardwareEdge {
     int y_min; // 0x0
     int y_max; // 0x4
@@ -21,4 +22,5 @@ typedef struct SHardwareEdge {
     int fog_current; // 0x30
     int fog_gradient; // 0x34
 } SHardwareEdge;
+#pragma pack(pop)
 

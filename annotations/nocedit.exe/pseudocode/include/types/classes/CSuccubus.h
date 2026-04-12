@@ -9,6 +9,7 @@
 
 // Structure: CSuccubus
 // Ghidra size: 0xef68 (61288 bytes)
+#pragma pack(push, 1)
 typedef struct CSuccubus {
     CEnemy base; // 0x0
     CDeformableModelInstance hotdemon_model; // 0xbebc
@@ -19,4 +20,5 @@ typedef struct CSuccubus {
     float morph_timer; // 0xe338
     CMorph morph; // 0xe33c
 } CSuccubus;
+#pragma pack(pop)
 

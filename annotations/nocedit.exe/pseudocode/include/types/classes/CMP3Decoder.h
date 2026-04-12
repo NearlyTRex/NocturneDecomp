@@ -7,6 +7,7 @@
 
 // Structure: CMP3Decoder
 // Ghidra size: 0x8630 (34352 bytes)
+#pragma pack(push, 1)
 typedef struct CMP3Decoder {
     char filename[256]; // 0x0
     int sample_rate; // 0x100
@@ -22,4 +23,5 @@ typedef struct CMP3Decoder {
     int layer3_scalefactors[54]; // 0x7358
     float synthesis_history[2][32][18]; // 0x7430
 } CMP3Decoder;
+#pragma pack(pop)
 

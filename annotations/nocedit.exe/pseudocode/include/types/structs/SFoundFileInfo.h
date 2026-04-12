@@ -5,6 +5,7 @@
 
 // Structure: SFoundFileInfo
 // Ghidra size: 0x214 (532 bytes)
+#pragma pack(push, 1)
 typedef struct SFoundFileInfo {
     char found_path[256]; // 0x0
     char target_path[256]; // 0x100
@@ -14,4 +15,5 @@ typedef struct SFoundFileInfo {
     uint timestamp; // 0x20c
     uint container_timestamp; // 0x210
 } SFoundFileInfo;
+#pragma pack(pop)
 

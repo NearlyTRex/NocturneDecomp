@@ -6,6 +6,7 @@
 
 // Structure: CFootstep
 // Ghidra size: 0x40 (64 bytes)
+#pragma pack(push, 1)
 typedef struct CFootstep {
     int expired; // 0x0
     int blood_type; // 0x4
@@ -13,4 +14,5 @@ typedef struct CFootstep {
     int alpha; // 0x38
     int is_bloody; // 0x3c
 } CFootstep;
+#pragma pack(pop)
 

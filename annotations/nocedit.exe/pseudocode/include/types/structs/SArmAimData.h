@@ -8,6 +8,7 @@ struct CDemonActor;
 
 // Structure: SArmAimData
 // Ghidra size: 0x20 (32 bytes)
+#pragma pack(push, 1)
 typedef struct SArmAimData {
     float aim_pitch; // 0x0
     float aim_yaw; // 0x4
@@ -18,4 +19,5 @@ typedef struct SArmAimData {
     struct CDemonActor* aim_target; // 0x18
     int aim_lock_state; // 0x1c
 } SArmAimData;
+#pragma pack(pop)
 

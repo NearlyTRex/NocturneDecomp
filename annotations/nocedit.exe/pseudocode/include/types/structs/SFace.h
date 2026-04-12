@@ -6,6 +6,7 @@
 
 // Structure: SFace
 // Ghidra size: 0x20 (32 bytes)
+#pragma pack(push, 1)
 typedef struct SFace {
     int texture_index; // 0x0
     int render_flags; // 0x4
@@ -13,4 +14,5 @@ typedef struct SFace {
     SInputFace face_data; // 0xc
     short dead; // 0x1e
 } SFace;
+#pragma pack(pop)
 

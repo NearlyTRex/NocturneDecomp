@@ -8,8 +8,10 @@ struct CDemonActor;
 
 // Structure: SDisplayListSortEntry
 // Ghidra size: 0x8 (8 bytes)
+#pragma pack(push, 1)
 typedef struct SDisplayListSortEntry {
     struct CDemonActor* actor; // 0x0
     float distance_sq; // 0x4
 } SDisplayListSortEntry;
+#pragma pack(pop)
 

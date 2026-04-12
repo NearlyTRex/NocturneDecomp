@@ -5,6 +5,7 @@
 
 // Structure: SHuffmanTableSource
 // Ghidra size: 0x18 (24 bytes)
+#pragma pack(push, 1)
 typedef struct SHuffmanTableSource {
     int table_size; // 0x0
     int xlen; // 0x4
@@ -13,4 +14,5 @@ typedef struct SHuffmanTableSource {
     int reference_index; // 0x10
     char* huffman_data_ptr; // 0x14
 } SHuffmanTableSource;
+#pragma pack(pop)
 

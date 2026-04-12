@@ -7,6 +7,7 @@
 
 // Structure: SMotion
 // Ghidra size: 0x54c (1356 bytes)
+#pragma pack(push, 1)
 typedef struct SMotion {
     char motion_name[32]; // 0x0
     float fps; // 0x20
@@ -31,4 +32,5 @@ typedef struct SMotion {
     int marker_count; // 0x520
     int markers[10]; // 0x524
 } SMotion;
+#pragma pack(pop)
 

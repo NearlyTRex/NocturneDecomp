@@ -10,6 +10,7 @@ struct CKeyFramedModelInstance;
 
 // Structure: SCollisionInfo
 // Ghidra size: 0x28 (40 bytes)
+#pragma pack(push, 1)
 typedef struct SCollisionInfo {
     int ray_type; // 0x0
     int laser_type; // 0x4
@@ -20,4 +21,5 @@ typedef struct SCollisionInfo {
     struct CDeformableModelInstance* deformable_model; // 0x20
     struct CKeyFramedModelInstance* keyframed_model; // 0x24
 } SCollisionInfo;
+#pragma pack(pop)
 

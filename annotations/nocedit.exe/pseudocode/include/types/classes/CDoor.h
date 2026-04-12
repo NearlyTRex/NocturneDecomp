@@ -12,6 +12,7 @@
 
 // Structure: CDoor
 // Ghidra size: 0x9e0 (2528 bytes)
+#pragma pack(push, 1)
 typedef struct CDoor {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -43,4 +44,5 @@ typedef struct CDoor {
     int allowed_sides; // 0x9d8
     int allow_bullet_holes; // 0x9dc
 } CDoor;
+#pragma pack(pop)
 

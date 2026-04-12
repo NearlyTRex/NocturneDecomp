@@ -9,6 +9,7 @@ struct CDemonActor;
 
 // Structure: CActorPropertyList
 // Ghidra size: 0x2504 (9476 bytes)
+#pragma pack(push, 1)
 typedef struct CActorPropertyList {
     struct CDemonActor* owner; // 0x0
     int count; // 0x4
@@ -21,4 +22,5 @@ typedef struct CActorPropertyList {
     int right_x; // 0x24fc
     int top_y; // 0x2500
 } CActorPropertyList;
+#pragma pack(pop)
 

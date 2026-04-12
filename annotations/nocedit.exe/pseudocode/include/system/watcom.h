@@ -78,6 +78,7 @@ typedef struct WatcomDestructorCall {
 } WatcomDestructorCall;
 
 // Structure: WatcomDestructorFlags
+#pragma pack(push, 1)
 typedef struct WatcomDestructorFlags {
     byte field0_0x0[38];
     undefined1 field1_0x26;
@@ -91,6 +92,7 @@ typedef struct WatcomDestructorFlags {
     undefined1 field9_0x2e;
     undefined1 field10_0x2f;
 } WatcomDestructorFlags;
+#pragma pack(pop)
 
 // Structure: WatcomInheritanceLayout
 typedef struct WatcomInheritanceLayout {
@@ -113,10 +115,12 @@ typedef struct WatcomThunkedDestructor {
 } WatcomThunkedDestructor;
 
 // Structure: WatcomThunkedDestructorDirect
+#pragma pack(push, 1)
 typedef struct WatcomThunkedDestructorDirect {
     void* destructor_func;
     int this_adjustment;
 } WatcomThunkedDestructorDirect;
+#pragma pack(pop)
 
 // Structure: WatcomTypeArrayInfo
 typedef struct WatcomTypeArrayInfo {
@@ -136,18 +140,22 @@ typedef struct WatcomTypeInfo {
 } WatcomTypeInfo;
 
 // Structure: WatcomVirtualBaseDescriptor
+#pragma pack(push, 1)
 typedef struct WatcomVirtualBaseDescriptor {
     int flags;
     int offset_to_vbase;
 } WatcomVirtualBaseDescriptor;
+#pragma pack(pop)
 
 // Structure: _heapinfo
+#pragma pack(push, 1)
 typedef struct _heapinfo {
     void* _pentry;
     ushort _segment;
     SIZE_T _size;
     int _useflag;
 } _heapinfo;
+#pragma pack(pop)
 
 // =============================================================================
 // WATCOM C++ RUNTIME FUNCTIONS

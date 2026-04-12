@@ -6,6 +6,7 @@
 
 // Structure: SExpandedEdge
 // Ghidra size: 0x60 (96 bytes)
+#pragma pack(push, 1)
 typedef struct SExpandedEdge {
     int start_vertex_index; // 0x0
     int end_vertex_index; // 0x4
@@ -16,4 +17,5 @@ typedef struct SExpandedEdge {
     double start_uv[2]; // 0x40
     double end_uv[2]; // 0x50
 } SExpandedEdge;
+#pragma pack(pop)
 

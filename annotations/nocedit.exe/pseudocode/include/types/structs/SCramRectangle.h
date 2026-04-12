@@ -5,6 +5,7 @@
 
 // Structure: SCramRectangle
 // Ghidra size: 0x28 (40 bytes)
+#pragma pack(push, 1)
 typedef struct SCramRectangle {
     int map_id; // 0x0
     int start_x; // 0x4
@@ -17,4 +18,5 @@ typedef struct SCramRectangle {
     int candidate_end_y; // 0x20
     int active_flag; // 0x24
 } SCramRectangle;
+#pragma pack(pop)
 

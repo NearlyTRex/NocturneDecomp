@@ -58,6 +58,24 @@ def is_valid_c_ident(s):
     return bool(s) and bool(re.match(r'^[A-Za-z_][A-Za-z0-9_]*$', s))
 
 
+def resolve_field_name(raw_name, field_index, field_offset):
+    """Return the field name the emitted C header will actually use.
+
+    headers.py (Ghidra exporter) names unnamed fields `field<index>_0x<offset>`,
+    but data_types.py records them in JSON as `field_<offset>`. When we see
+    the JSON fallback form, translate to the header form so the static_assert
+    references resolve.
+    """
+    if raw_name and re.match(r'^field_\d+$', raw_name):
+        try:
+            tail = int(raw_name[len('field_'):])
+        except ValueError:
+            tail = None
+        if tail == field_offset:
+            return 'field%d_0x%x' % (field_index, field_offset)
+    return raw_name
+
+
 def emit_file(out_path, leaf, structs):
     """Write a single layout check .cpp file."""
     lines = []
@@ -78,10 +96,12 @@ def emit_file(out_path, leaf, structs):
         lines.append('// ---- %s (%d bytes) ----' % (name, total))
         lines.append('static_assert(sizeof(%s) == %d,' % (name, total))
         lines.append('              "sizeof(%s) != %d");' % (name, total))
-        for f in s.get('fields', []):
-            fname = f.get('name', '')
+        for field_index, f in enumerate(s.get('fields', [])):
             foff  = f.get('offset', None)
-            if foff is None or not is_valid_c_ident(fname):
+            if foff is None:
+                continue
+            fname = resolve_field_name(f.get('name', ''), field_index, foff)
+            if not is_valid_c_ident(fname):
                 continue
             lines.append(
                 'static_assert(__builtin_offsetof(%s, %s) == %d,' % (name, fname, foff))

@@ -69,6 +69,7 @@ struct CVert;
 
 // Structure: CObj_vtable
 // Ghidra size: 0xdc (220 bytes)
+#pragma pack(push, 1)
 typedef struct CObj_vtable {
     CObj_reset* reset; // 0x0
     CObj_isValid* isValid; // 0x4
@@ -126,4 +127,5 @@ typedef struct CObj_vtable {
     CObj_removeTJunctions* removeTJunctions; // 0xd4
     CObj_findCoplanarPolygon* findCoplanarPolygon; // 0xd8
 } CObj_vtable;
+#pragma pack(pop)
 

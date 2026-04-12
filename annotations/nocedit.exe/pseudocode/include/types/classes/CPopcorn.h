@@ -6,7 +6,9 @@
 
 // Structure: CPopcorn
 // Ghidra size: 0x38 (56 bytes)
+#pragma pack(push, 1)
 typedef struct CPopcorn {
     CParticle base; // 0x0
 } CPopcorn;
+#pragma pack(pop)
 

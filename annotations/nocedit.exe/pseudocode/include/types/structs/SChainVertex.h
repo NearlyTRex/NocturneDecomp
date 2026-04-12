@@ -6,9 +6,11 @@
 
 // Structure: SChainVertex
 // Ghidra size: 0x24 (36 bytes)
+#pragma pack(push, 1)
 typedef struct SChainVertex {
     CVector3f position; // 0x0
     CVector3f velocity; // 0xc
     CVector3f prev_position; // 0x18
 } SChainVertex;
+#pragma pack(pop)
 

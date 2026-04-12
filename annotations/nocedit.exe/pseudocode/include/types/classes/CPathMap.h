@@ -7,6 +7,7 @@
 
 // Structure: CPathMap
 // Ghidra size: 0x138dc (80092 bytes)
+#pragma pack(push, 1)
 typedef struct CPathMap {
     CVector3f current_position; // 0x0
     CVector3i voxel_coords; // 0xc
@@ -20,4 +21,5 @@ typedef struct CPathMap {
     CVector3f path_heading; // 0x138cc
     int update_timer; // 0x138d8
 } CPathMap;
+#pragma pack(pop)
 

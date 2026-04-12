@@ -11,6 +11,7 @@
 
 // Structure: CLightActor
 // Ghidra size: 0x3678 (13944 bytes)
+#pragma pack(push, 1)
 typedef struct CLightActor {
     CBoxActor base; // 0x0
     ELightActorType light_actor_type; // 0x66c
@@ -20,4 +21,5 @@ typedef struct CLightActor {
     float flicker_timer; // 0x3634
     CDemonGlobe globe; // 0x3638
 } CLightActor;
+#pragma pack(pop)
 

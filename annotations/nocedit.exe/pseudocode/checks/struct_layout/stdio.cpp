@@ -61,12 +61,12 @@ static_assert(__builtin_offsetof(FileDescriptor, extended_flags) == 3,
 // ---- FileEmbeddedData (24 bytes) ----
 static_assert(sizeof(FileEmbeddedData) == 24,
               "sizeof(FileEmbeddedData) != 24");
-static_assert(__builtin_offsetof(FileEmbeddedData, field_0) == 0,
-              "offsetof(FileEmbeddedData, field_0) != 0");
+static_assert(__builtin_offsetof(FileEmbeddedData, field0_0x0) == 0,
+              "offsetof(FileEmbeddedData, field0_0x0) != 0");
 static_assert(__builtin_offsetof(FileEmbeddedData, stream) == 4,
               "offsetof(FileEmbeddedData, stream) != 4");
-static_assert(__builtin_offsetof(FileEmbeddedData, field_8) == 8,
-              "offsetof(FileEmbeddedData, field_8) != 8");
+static_assert(__builtin_offsetof(FileEmbeddedData, field2_0x8) == 8,
+              "offsetof(FileEmbeddedData, field2_0x8) != 8");
 static_assert(__builtin_offsetof(FileEmbeddedData, field_c) == 12,
               "offsetof(FileEmbeddedData, field_c) != 12");
 static_assert(__builtin_offsetof(FileEmbeddedData, state_field) == 16,

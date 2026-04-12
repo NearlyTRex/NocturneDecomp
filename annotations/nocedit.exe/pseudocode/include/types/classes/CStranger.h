@@ -14,6 +14,7 @@ struct CWeapon;
 
 // Structure: CStranger
 // Ghidra size: 0x1fe70 (130672 bytes)
+#pragma pack(push, 1)
 typedef struct CStranger {
     CHero base; // 0x0
     int guns_drawn; // 0x1fbd4
@@ -55,4 +56,5 @@ typedef struct CStranger {
     uint sfx_handle; // 0x1fe68
     float fall_velocity_snapshot; // 0x1fe6c
 } CStranger;
+#pragma pack(pop)
 

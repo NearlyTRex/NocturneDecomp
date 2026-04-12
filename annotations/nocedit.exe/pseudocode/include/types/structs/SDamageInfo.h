@@ -11,6 +11,7 @@ struct CDemonActor;
 
 // Structure: SDamageInfo
 // Ghidra size: 0x3c (60 bytes)
+#pragma pack(push, 1)
 typedef struct SDamageInfo {
     int hit_part_index; // 0x0
     float damage_amount; // 0x4
@@ -24,4 +25,5 @@ typedef struct SDamageInfo {
     struct CDemonActor* attacker; // 0x34
     struct CDemonActor* wielder; // 0x38
 } SDamageInfo;
+#pragma pack(pop)
 

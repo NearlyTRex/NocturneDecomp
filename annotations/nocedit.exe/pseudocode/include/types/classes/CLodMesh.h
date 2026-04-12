@@ -15,6 +15,7 @@ struct _FILE;
 
 // Structure: CLodMesh
 // Ghidra size: 0x74 (116 bytes)
+#pragma pack(push, 1)
 typedef struct CLodMesh {
     int vertex_count; // 0x0
     struct CLodVert* vertex_data; // 0x4
@@ -41,4 +42,5 @@ typedef struct CLodMesh {
     CVector3f center_offset; // 0x64
     float scale_factor; // 0x70
 } CLodMesh;
+#pragma pack(pop)
 

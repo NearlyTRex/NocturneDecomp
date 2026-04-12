@@ -6,6 +6,7 @@
 
 // Structure: SMRGLAnimatedTexture
 // Ghidra size: 0x1c (28 bytes)
+#pragma pack(push, 1)
 typedef struct SMRGLAnimatedTexture {
     SMRGLHeaderBasic base; // 0x0
     int frame_count; // 0x8
@@ -14,4 +15,5 @@ typedef struct SMRGLAnimatedTexture {
     int accumulated_time; // 0x14
     int dirty_flag; // 0x18
 } SMRGLAnimatedTexture;
+#pragma pack(pop)
 

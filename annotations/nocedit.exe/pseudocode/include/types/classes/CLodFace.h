@@ -6,6 +6,7 @@
 
 // Structure: CLodFace
 // Ghidra size: 0x8c (140 bytes)
+#pragma pack(push, 1)
 typedef struct CLodFace {
     int attribute_indices[3]; // 0x0
     int submesh_id; // 0xc
@@ -24,4 +25,5 @@ typedef struct CLodFace {
     int visited_stamp; // 0x84
     int affected_by_edge_stamp; // 0x88
 } CLodFace;
+#pragma pack(pop)
 

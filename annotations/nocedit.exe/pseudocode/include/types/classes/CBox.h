@@ -8,6 +8,7 @@
 
 // Structure: CBox
 // Ghidra size: 0x258 (600 bytes)
+#pragma pack(push, 1)
 typedef struct CBox {
     CVector3f position; // 0x0
     CVector3f orientation; // 0xc
@@ -27,4 +28,5 @@ typedef struct CBox {
     SScrape scrape_points[8]; // 0xb4
     int is_valid; // 0x254
 } CBox;
+#pragma pack(pop)
 

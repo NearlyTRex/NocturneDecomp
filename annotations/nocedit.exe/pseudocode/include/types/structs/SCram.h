@@ -5,6 +5,7 @@
 
 // Structure: SCram
 // Ghidra size: 0x74 (116 bytes)
+#pragma pack(push, 1)
 typedef struct SCram {
     char filename[80]; // 0x0
     int atlas_dimension; // 0x50
@@ -17,4 +18,5 @@ typedef struct SCram {
     int paint_borders; // 0x6c
     int max_iterations; // 0x70
 } SCram;
+#pragma pack(pop)
 

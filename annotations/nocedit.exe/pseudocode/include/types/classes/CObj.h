@@ -10,6 +10,7 @@ struct CVert;
 
 // Structure: CObj
 // Ghidra size: 0x1c (28 bytes)
+#pragma pack(push, 1)
 typedef struct CObj {
     int vertex_count; // 0x0
     struct CVert* vertex_data; // 0x4
@@ -19,4 +20,5 @@ typedef struct CObj {
     int is_valid; // 0x14
     struct CObj_vtable* vtable; // 0x18
 } CObj;
+#pragma pack(pop)
 

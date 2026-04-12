@@ -10,10 +10,12 @@ struct CWerewolf;
 
 // Structure: CTrap
 // Ghidra size: 0x2dc (732 bytes)
+#pragma pack(push, 1)
 typedef struct CTrap {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
     struct CDemonActor* carrier; // 0x2d4
     struct CWerewolf* wolf_in_trap; // 0x2d8
 } CTrap;
+#pragma pack(pop)
 

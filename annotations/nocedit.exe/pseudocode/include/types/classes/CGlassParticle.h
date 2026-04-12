@@ -9,6 +9,7 @@
 
 // Structure: CGlassParticle
 // Ghidra size: 0x9c (156 bytes)
+#pragma pack(push, 1)
 typedef struct CGlassParticle {
     CParticle base; // 0x0
     int lifetime; // 0x38
@@ -18,4 +19,5 @@ typedef struct CGlassParticle {
     CVector3f uv_v_per_vertex; // 0x6c
     STriangleVertices triangle_delta; // 0x78
 } CGlassParticle;
+#pragma pack(pop)
 

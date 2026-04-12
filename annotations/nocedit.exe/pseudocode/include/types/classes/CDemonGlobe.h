@@ -8,6 +8,7 @@
 
 // Structure: CDemonGlobe
 // Ghidra size: 0x40 (64 bytes)
+#pragma pack(push, 1)
 typedef struct CDemonGlobe {
     CVector3i position_scaled; // 0x0
     int linear_radius_scaled; // 0xc
@@ -22,4 +23,5 @@ typedef struct CDemonGlobe {
     float inverse_radius_squared; // 0x38
     int intensity_multiplier; // 0x3c
 } CDemonGlobe;
+#pragma pack(pop)
 

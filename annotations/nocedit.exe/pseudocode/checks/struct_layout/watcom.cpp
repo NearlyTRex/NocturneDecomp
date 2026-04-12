@@ -103,8 +103,8 @@ static_assert(__builtin_offsetof(WatcomDestructorCall, object_instance) == 8,
 // ---- WatcomDestructorFlags (48 bytes) ----
 static_assert(sizeof(WatcomDestructorFlags) == 48,
               "sizeof(WatcomDestructorFlags) != 48");
-static_assert(__builtin_offsetof(WatcomDestructorFlags, field_0) == 0,
-              "offsetof(WatcomDestructorFlags, field_0) != 0");
+static_assert(__builtin_offsetof(WatcomDestructorFlags, field0_0x0) == 0,
+              "offsetof(WatcomDestructorFlags, field0_0x0) != 0");
 
 // ---- WatcomInheritanceLayout (8 bytes) ----
 static_assert(sizeof(WatcomInheritanceLayout) == 8,

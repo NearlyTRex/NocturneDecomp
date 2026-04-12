@@ -6,6 +6,7 @@
 
 // Structure: SCurtainVertex
 // Ghidra size: 0x74 (116 bytes)
+#pragma pack(push, 1)
 typedef struct SCurtainVertex {
     CVector3f local_position; // 0x0
     CVector3f initial_position; // 0xc
@@ -21,4 +22,5 @@ typedef struct SCurtainVertex {
     int has_collision; // 0x6c
     int is_corner; // 0x70
 } SCurtainVertex;
+#pragma pack(pop)
 

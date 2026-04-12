@@ -19,6 +19,7 @@ struct CVector3f;
 #include "types/unions/UActorPropertyCallback.h"
 
 // Union: UActorPropertyData
+#pragma pack(push, 1)
 typedef union UActorPropertyData {
     int* v_int_ptr;
     float* v_float_ptr;
@@ -37,4 +38,5 @@ typedef union UActorPropertyData {
     CActorPropertyFilterFunc* v_filter_func_ptr;
     void* v_ptr;
 } UActorPropertyData;
+#pragma pack(pop)
 

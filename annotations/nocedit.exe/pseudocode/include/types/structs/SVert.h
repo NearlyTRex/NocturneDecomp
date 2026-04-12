@@ -6,6 +6,7 @@
 
 // Structure: SVert
 // Ghidra size: 0x34 (52 bytes)
+#pragma pack(push, 1)
 typedef struct SVert {
     uchar num_bone_influences; // 0x0
     uchar bone_indices[3]; // 0x1
@@ -14,4 +15,5 @@ typedef struct SVert {
     CVector3f normal; // 0x1c
     CVector3f tangent; // 0x28
 } SVert;
+#pragma pack(pop)
 

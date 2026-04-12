@@ -7,8 +7,10 @@
 
 // Structure: CCourseFrame
 // Ghidra size: 0x1c (28 bytes)
+#pragma pack(push, 1)
 typedef struct CCourseFrame {
     CVector3f pos; // 0x0
     CQuaternion4f orient; // 0xc
 } CCourseFrame;
+#pragma pack(pop)
 

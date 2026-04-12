@@ -8,6 +8,7 @@
 
 // Structure: CPickList
 // Ghidra size: 0x3a8 (936 bytes)
+#pragma pack(push, 1)
 typedef struct CPickList {
     CStrList base; // 0x0
     int tab_column_widths[10]; // 0x10
@@ -36,4 +37,5 @@ typedef struct CPickList {
     CEdButton cancel_button; // 0x2c0
     int selection_state; // 0x3a4
 } CPickList;
+#pragma pack(pop)
 

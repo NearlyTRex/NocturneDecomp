@@ -5,6 +5,7 @@
 
 // Structure: STextureAtlasEntry
 // Ghidra size: 0x250 (592 bytes)
+#pragma pack(push, 1)
 typedef struct STextureAtlasEntry {
     char tga_filename[256]; // 0x0
     char original_filename[256]; // 0x100
@@ -29,4 +30,5 @@ typedef struct STextureAtlasEntry {
     int max_u; // 0x248
     int max_v; // 0x24c
 } STextureAtlasEntry;
+#pragma pack(pop)
 

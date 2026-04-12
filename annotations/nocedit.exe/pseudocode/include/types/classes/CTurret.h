@@ -13,6 +13,7 @@ struct CDemonActor;
 
 // Structure: CTurret
 // Ghidra size: 0x8bc (2236 bytes)
+#pragma pack(push, 1)
 typedef struct CTurret {
     CWeapon base; // 0x0
     UOrientationVector home_orient; // 0x578
@@ -36,4 +37,5 @@ typedef struct CTurret {
     int fire_sound_frames; // 0x8b0
     uint sfx_handles[2]; // 0x8b4
 } CTurret;
+#pragma pack(pop)
 

@@ -6,6 +6,7 @@
 
 // Structure: CZThumb
 // Ghidra size: 0x28 (40 bytes)
+#pragma pack(push, 1)
 typedef struct CZThumb {
     int width; // 0x0
     int height; // 0x4
@@ -14,4 +15,5 @@ typedef struct CZThumb {
     float projection_scale; // 0x20
     void* zbuffer_data; // 0x24
 } CZThumb;
+#pragma pack(pop)
 

@@ -6,6 +6,7 @@
 
 // Structure: CEnemy
 // Ghidra size: 0xbebc (48828 bytes)
+#pragma pack(push, 1)
 typedef struct CEnemy {
     CCharacter base; // 0x0
     float speed; // 0xbe24
@@ -23,4 +24,5 @@ typedef struct CEnemy {
     struct CCharacter* script_victim; // 0xbeb4
     int allow_pathfind_to_new_targets; // 0xbeb8
 } CEnemy;
+#pragma pack(pop)
 

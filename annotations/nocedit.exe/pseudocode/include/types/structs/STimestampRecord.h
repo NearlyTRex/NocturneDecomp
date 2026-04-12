@@ -5,6 +5,7 @@
 
 // Structure: STimestampRecord
 // Ghidra size: 0x148 (328 bytes)
+#pragma pack(push, 1)
 typedef struct STimestampRecord {
     char filename[256]; // 0x0
     uint record_number; // 0x100
@@ -17,4 +18,5 @@ typedef struct STimestampRecord {
     char dead[12]; // 0x11c
     char username[32]; // 0x128
 } STimestampRecord;
+#pragma pack(pop)
 

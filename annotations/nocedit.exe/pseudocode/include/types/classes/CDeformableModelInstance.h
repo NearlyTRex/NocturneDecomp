@@ -14,6 +14,7 @@ struct CVector3i;
 
 // Structure: CDeformableModelInstance
 // Ghidra size: 0x22b4 (8884 bytes)
+#pragma pack(push, 1)
 typedef struct CDeformableModelInstance {
     CMotionController motion_controller; // 0x0
     float scale_factor; // 0x54
@@ -30,4 +31,5 @@ typedef struct CDeformableModelInstance {
     char model_name[80]; // 0x2260
     struct CDeformableModel* model_ptr; // 0x22b0
 } CDeformableModelInstance;
+#pragma pack(pop)
 

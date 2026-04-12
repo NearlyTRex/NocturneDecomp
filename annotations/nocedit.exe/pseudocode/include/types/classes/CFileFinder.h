@@ -6,6 +6,7 @@
 
 // Structure: CFileFinder
 // Ghidra size: 0x114 (276 bytes)
+#pragma pack(push, 1)
 typedef struct CFileFinder {
     char filename[256]; // 0x0
     uint file_size; // 0x100
@@ -14,4 +15,5 @@ typedef struct CFileFinder {
     int has_results; // 0x10c
     HANDLE search_handle; // 0x110
 } CFileFinder;
+#pragma pack(pop)
 

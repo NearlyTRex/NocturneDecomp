@@ -8,6 +8,7 @@
 
 // Structure: CStairs
 // Ghidra size: 0xa34 (2612 bytes)
+#pragma pack(push, 1)
 typedef struct CStairs {
     CDemonActor base; // 0x0
     float rise; // 0x158
@@ -19,4 +20,5 @@ typedef struct CStairs {
     CDemonTriangle collision_triangles[40]; // 0x170
     EGroundType ground_type; // 0xa30
 } CStairs;
+#pragma pack(pop)
 

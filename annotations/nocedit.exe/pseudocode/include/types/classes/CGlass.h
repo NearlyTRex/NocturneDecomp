@@ -11,6 +11,7 @@
 
 // Structure: CGlass
 // Ghidra size: 0xb40 (2880 bytes)
+#pragma pack(push, 1)
 typedef struct CGlass {
     CDemonActor base; // 0x0
     CVector3f glass_size; // 0x158
@@ -34,4 +35,5 @@ typedef struct CGlass {
     int broken_polygon_count; // 0xb38
     int pending_background_render; // 0xb3c
 } CGlass;
+#pragma pack(pop)
 

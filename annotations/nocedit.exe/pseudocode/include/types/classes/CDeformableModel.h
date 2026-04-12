@@ -15,6 +15,7 @@ struct CSkeleton;
 
 // Structure: CDeformableModel
 // Ghidra size: 0x9000 (36864 bytes)
+#pragma pack(push, 1)
 typedef struct CDeformableModel {
     int num_lods; // 0x0
     SLod lod_info[5]; // 0x4
@@ -41,4 +42,5 @@ typedef struct CDeformableModel {
     struct CSkeleton* skeleton_ptr; // 0x8fac
     char model_filename[80]; // 0x8fb0
 } CDeformableModel;
+#pragma pack(pop)
 

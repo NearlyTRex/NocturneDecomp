@@ -22,6 +22,7 @@ struct CMirror;
 
 // Structure: CDemonSet
 // Ghidra size: 0x16166c (1447532 bytes)
+#pragma pack(push, 1)
 typedef struct CDemonSet {
     int camera_count; // 0x0
     C3DSCamera cameras[250]; // 0x4
@@ -117,4 +118,5 @@ typedef struct CDemonSet {
     int mirror_cached_fog; // 0x161664
     EWeatherType weather_type; // 0x161668
 } CDemonSet;
+#pragma pack(pop)
 

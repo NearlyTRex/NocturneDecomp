@@ -14,6 +14,7 @@ struct SMRGLPrimitiveQuad;
 
 // Structure: CKeyFramedModel
 // Ghidra size: 0x56d8 (22232 bytes)
+#pragma pack(push, 1)
 typedef struct CKeyFramedModel {
     char model_filename[256]; // 0x0
     int frame_count; // 0x100
@@ -39,4 +40,5 @@ typedef struct CKeyFramedModel {
     CMatrix3x3f rotation_matrix_workspace; // 0x56b0
     int dead; // 0x56d4
 } CKeyFramedModel;
+#pragma pack(pop)
 

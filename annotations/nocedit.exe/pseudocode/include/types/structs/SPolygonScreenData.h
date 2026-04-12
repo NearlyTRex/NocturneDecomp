@@ -5,6 +5,7 @@
 
 // Structure: SPolygonScreenData
 // Ghidra size: 0x14 (20 bytes)
+#pragma pack(push, 1)
 typedef struct SPolygonScreenData {
     int center_x; // 0x0
     int center_y; // 0x4
@@ -12,4 +13,5 @@ typedef struct SPolygonScreenData {
     int dead; // 0xc
     int view_mode; // 0x10
 } SPolygonScreenData;
+#pragma pack(pop)
 

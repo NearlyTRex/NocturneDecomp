@@ -8,6 +8,7 @@
 
 // Structure: SRaytraceState
 // Ghidra size: 0xa0 (160 bytes)
+#pragma pack(push, 1)
 typedef struct SRaytraceState {
     int ray_type; // 0x0
     int laser_type; // 0x4
@@ -29,4 +30,5 @@ typedef struct SRaytraceState {
     int saved_collision_part_index; // 0x98
     int saved_collision_triangle_index; // 0x9c
 } SRaytraceState;
+#pragma pack(pop)
 

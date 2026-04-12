@@ -10,6 +10,7 @@ struct CBodyPart;
 
 // Structure: SBoneGuyBox
 // Ghidra size: 0x48 (72 bytes)
+#pragma pack(push, 1)
 typedef struct SBoneGuyBox {
     CVector3f pos; // 0x0
     CVector3f orient; // 0xc
@@ -18,4 +19,5 @@ typedef struct SBoneGuyBox {
     CVector3f source_pos; // 0x38
     struct CBodyPart* body_part; // 0x44
 } SBoneGuyBox;
+#pragma pack(pop)
 

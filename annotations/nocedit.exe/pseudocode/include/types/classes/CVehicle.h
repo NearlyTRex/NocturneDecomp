@@ -10,6 +10,7 @@
 
 // Structure: CVehicle
 // Ghidra size: 0x1078 (4216 bytes)
+#pragma pack(push, 1)
 typedef struct CVehicle {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -38,4 +39,5 @@ typedef struct CVehicle {
     struct CDemonActor* last_mobster_left; // 0x1070
     struct CDemonActor* last_mobster_right; // 0x1074
 } CVehicle;
+#pragma pack(pop)
 

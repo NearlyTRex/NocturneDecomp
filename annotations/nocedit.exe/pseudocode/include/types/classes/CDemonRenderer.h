@@ -8,6 +8,7 @@ struct SRenderVertex;
 
 // Structure: CDemonRenderer
 // Ghidra size: 0x24 (36 bytes)
+#pragma pack(push, 1)
 typedef struct CDemonRenderer {
     struct SRenderVertex* vertex_buffer_ptr; // 0x0
     int face_count; // 0x4
@@ -19,4 +20,5 @@ typedef struct CDemonRenderer {
     int texture_capture_enabled; // 0x1c
     int skip_uv_extraction; // 0x20
 } CDemonRenderer;
+#pragma pack(pop)
 

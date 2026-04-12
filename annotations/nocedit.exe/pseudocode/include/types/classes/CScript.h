@@ -12,6 +12,7 @@ struct SScriptXRef;
 
 // Structure: CScript
 // Ghidra size: 0x480 (1152 bytes)
+#pragma pack(push, 1)
 typedef struct CScript {
     int script_pause_flag; // 0x0
     struct CDemonActor* who_is_speaking; // 0x4
@@ -37,4 +38,5 @@ typedef struct CScript {
     int call_stack_count; // 0x45c
     int call_stack[8]; // 0x460
 } CScript;
+#pragma pack(pop)
 

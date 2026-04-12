@@ -14,6 +14,7 @@
 
 // Structure: CPlatform
 // Ghidra size: 0x72c (1836 bytes)
+#pragma pack(push, 1)
 typedef struct CPlatform {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -49,4 +50,5 @@ typedef struct CPlatform {
     EPlatformType platform_type; // 0x724
     int rendered_in_background; // 0x728
 } CPlatform;
+#pragma pack(pop)
 

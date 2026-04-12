@@ -11,6 +11,7 @@ struct CDemonActor;
 
 // Structure: CMimic
 // Ghidra size: 0x4ca58 (313944 bytes)
+#pragma pack(push, 1)
 typedef struct CMimic {
     CEnemy base; // 0x0
     char mirror_condition[100]; // 0xbebc
@@ -23,4 +24,5 @@ typedef struct CMimic {
     float morph_blend; // 0x4ca50
     struct CDemonActor* morph_target_actor; // 0x4ca54
 } CMimic;
+#pragma pack(pop)
 

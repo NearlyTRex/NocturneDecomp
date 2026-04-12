@@ -9,6 +9,7 @@
 
 // Structure: CCloth
 // Ghidra size: 0x3fe70 (261744 bytes)
+#pragma pack(push, 1)
 typedef struct CCloth {
     CKeyFramedModel model; // 0x0
     SClothVertex vertices[800]; // 0x56d8
@@ -35,4 +36,5 @@ typedef struct CCloth {
     int version_num; // 0x3fe60
     CVector3f wind_velocity; // 0x3fe64
 } CCloth;
+#pragma pack(pop)
 

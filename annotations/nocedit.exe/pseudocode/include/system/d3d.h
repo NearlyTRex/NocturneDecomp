@@ -12,11 +12,13 @@
 typedef float D3DVALUE;
 
 // Structure: D3DVECTOR
+#pragma pack(push, 1)
 typedef struct D3DVECTOR {
     D3DVALUE x;
     D3DVALUE y;
     D3DVALUE z;
 } D3DVECTOR;
+#pragma pack(pop)
 
 // Typedef: LPD3DVECTOR
 // pointer to D3DVECTOR

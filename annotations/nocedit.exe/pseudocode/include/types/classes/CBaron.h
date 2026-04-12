@@ -10,6 +10,7 @@ struct CDemonActor;
 
 // Structure: CBaron
 // Ghidra size: 0x1fcd4 (130260 bytes)
+#pragma pack(push, 1)
 typedef struct CBaron {
     CHero base; // 0x0
     char summon_event[100]; // 0x1fbd4
@@ -23,4 +24,5 @@ typedef struct CBaron {
     int summoned; // 0x1fccc
     int shell_visible; // 0x1fcd0
 } CBaron;
+#pragma pack(pop)
 

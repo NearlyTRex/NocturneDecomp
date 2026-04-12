@@ -10,6 +10,7 @@
 
 // Structure: CDemonCamera
 // Ghidra size: 0x14c8 (5320 bytes)
+#pragma pack(push, 1)
 typedef struct CDemonCamera {
     CCameraView base; // 0x0
     char camera_name[256]; // 0x40
@@ -37,4 +38,5 @@ typedef struct CDemonCamera {
     int alpha_transform_matrices[18][8]; // 0x124c
     CCameraTransformState transform_state; // 0x148c
 } CDemonCamera;
+#pragma pack(pop)
 

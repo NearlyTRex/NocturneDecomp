@@ -9,6 +9,7 @@
 
 // Structure: CPendulum
 // Ghidra size: 0x444 (1092 bytes)
+#pragma pack(push, 1)
 typedef struct CPendulum {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -32,4 +33,5 @@ typedef struct CPendulum {
     int one_shot; // 0x43c
     int is_stopped; // 0x440
 } CPendulum;
+#pragma pack(pop)
 

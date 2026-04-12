@@ -6,6 +6,7 @@
 
 // Structure: SMotionTransition
 // Ghidra size: 0x18 (24 bytes)
+#pragma pack(push, 1)
 typedef struct SMotionTransition {
     int desired_state; // 0x0
     EMotionTransitionCmd cmd; // 0x4
@@ -14,4 +15,5 @@ typedef struct SMotionTransition {
     float tween_time; // 0x10
     int set_new_state_as_desired; // 0x14
 } SMotionTransition;
+#pragma pack(pop)
 

@@ -31,6 +31,8 @@ set(NOCTURNE_SKIP_LIST "${CMAKE_SOURCE_DIR}/cmake/skip_list.txt"
 set(NOCTURNE_SRC_ROOT     "${NOCTURNE_PSEUDOCODE_DIR}/src")
 set(NOCTURNE_INCLUDE_DIR  "${NOCTURNE_PSEUDOCODE_DIR}/include")
 set(NOCTURNE_SHIMS_DIR    "${NOCTURNE_PSEUDOCODE_DIR}/shims")
+set(NOCTURNE_MAIN_DIR     "${NOCTURNE_PSEUDOCODE_DIR}/main")
+set(NOCTURNE_CHECKS_DIR   "${NOCTURNE_PSEUDOCODE_DIR}/checks")
 
 find_package(Python3 REQUIRED COMPONENTS Interpreter)
 
@@ -42,7 +44,7 @@ find_package(Python3 REQUIRED COMPONENTS Interpreter)
 set(NOCTURNE_GEN_DIR "${CMAKE_BINARY_DIR}/generated")
 file(MAKE_DIRECTORY "${NOCTURNE_GEN_DIR}")
 
-# Entry/ is always replaced by src/main/main.cpp.
+# Entry/ is always replaced by the hand-written pseudocode/main/ module.
 # Crt/ is excluded — we link against a modern C/C++ runtime.
 set(_collect_excludes --exclude-module entry --exclude-module crt)
 
@@ -51,6 +53,8 @@ execute_process(
     COMMAND "${Python3_EXECUTABLE}"
             "${CMAKE_SOURCE_DIR}/cmake/collect_sources.py"
             --src-root   "${NOCTURNE_SRC_ROOT}"
+            --module     "${NOCTURNE_MAIN_DIR}"
+            --module     "${NOCTURNE_CHECKS_DIR}"
             --out-dir    "${NOCTURNE_GEN_DIR}"
             --skip-list  "${NOCTURNE_SKIP_LIST}"
             --modules-file "${NOCTURNE_GEN_DIR}/modules.txt"
@@ -109,7 +113,9 @@ if(NOCTURNE_BUILD_CHECK)
     foreach(_module IN LISTS NOCTURNE_MODULES)
         file(STRINGS "${NOCTURNE_GEN_DIR}/sources_${_module}.txt" _sources)
         foreach(_src IN LISTS _sources)
-            file(RELATIVE_PATH _rel "${NOCTURNE_SRC_ROOT}" "${_src}")
+            # Relative path from pseudocode/ so modules outside src/ (main,
+            # checks) produce stable stamp names too.
+            file(RELATIVE_PATH _rel "${NOCTURNE_PSEUDOCODE_DIR}" "${_src}")
             string(REPLACE "/" "_" _stamp_name "${_rel}")
             string(REPLACE "." "_" _stamp_name "${_stamp_name}")
             set(_stamp "${_stamp_dir}/${_stamp_name}.stamp")

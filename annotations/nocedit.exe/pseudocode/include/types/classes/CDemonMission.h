@@ -8,6 +8,7 @@
 
 // Structure: CDemonMission
 // Ghidra size: 0x27d0 (10192 bytes)
+#pragma pack(push, 1)
 typedef struct CDemonMission {
     int current_set_index; // 0x0
     int is_in_editor; // 0x4
@@ -37,4 +38,5 @@ typedef struct CDemonMission {
     int actor_lookup_count; // 0x88c
     struct CDemonActor* actor_lookup_table[2000]; // 0x890
 } CDemonMission;
+#pragma pack(pop)
 

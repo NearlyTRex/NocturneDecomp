@@ -9,6 +9,7 @@
 
 // Structure: CLever
 // Ghidra size: 0x814 (2068 bytes)
+#pragma pack(push, 1)
 typedef struct CLever {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -27,4 +28,5 @@ typedef struct CLever {
     int allowed_sides; // 0x80c
     int enable_collision; // 0x810
 } CLever;
+#pragma pack(pop)
 

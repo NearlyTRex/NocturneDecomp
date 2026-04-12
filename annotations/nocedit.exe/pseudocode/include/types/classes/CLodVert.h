@@ -6,6 +6,7 @@
 
 // Structure: CLodVert
 // Ghidra size: 0x4c4 (1220 bytes)
+#pragma pack(push, 1)
 typedef struct CLodVert {
     CVector3f position; // 0x0
     int material_id; // 0xc
@@ -16,4 +17,5 @@ typedef struct CLodVert {
     int adjacent_edge_count; // 0x3f8
     int adjacent_edge_indices[50]; // 0x3fc
 } CLodVert;
+#pragma pack(pop)
 

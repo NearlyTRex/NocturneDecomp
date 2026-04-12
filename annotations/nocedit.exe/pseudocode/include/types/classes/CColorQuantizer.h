@@ -8,6 +8,7 @@
 
 // Structure: CColorQuantizer
 // Ghidra size: 0x4b44 (19268 bytes)
+#pragma pack(push, 1)
 typedef struct CColorQuantizer {
     CColorQuantizer_ProgressCallback* progress_callback; // 0x0
     void* pixel_data; // 0x4
@@ -31,4 +32,5 @@ typedef struct CColorQuantizer {
     int current_pixel_index; // 0x4b3c
     int num_colors; // 0x4b40
 } CColorQuantizer;
+#pragma pack(pop)
 

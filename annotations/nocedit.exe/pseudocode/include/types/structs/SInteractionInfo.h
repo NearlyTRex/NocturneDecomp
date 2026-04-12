@@ -8,6 +8,7 @@ struct CDemonActor;
 
 // Structure: SInteractionInfo
 // Ghidra size: 0x20 (32 bytes)
+#pragma pack(push, 1)
 typedef struct SInteractionInfo {
     int can_interact; // 0x0
     struct CDemonActor* interacting_actor; // 0x4
@@ -18,4 +19,5 @@ typedef struct SInteractionInfo {
     float pitch_max; // 0x18
     float pitch_min; // 0x1c
 } SInteractionInfo;
+#pragma pack(pop)
 

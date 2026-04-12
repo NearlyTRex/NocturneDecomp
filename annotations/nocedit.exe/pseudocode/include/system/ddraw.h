@@ -316,6 +316,7 @@ typedef HRESULT IDirectDraw_SetDisplayMode(struct IDirectDraw* this_ptr, DWORD w
 typedef HRESULT IDirectDraw_WaitForVerticalBlank(struct IDirectDraw* this_ptr, DWORD flags, HANDLE event);
 
 // Structure: IDirectDraw_vtable
+#pragma pack(push, 1)
 typedef struct IDirectDraw_vtable {
     IUnknown_QueryInterface* QueryInterface;
     IUnknown_AddRef* AddRef;
@@ -341,6 +342,7 @@ typedef struct IDirectDraw_vtable {
     IDirectDraw_SetDisplayMode* SetDisplayMode;
     IDirectDraw_WaitForVerticalBlank* WaitForVerticalBlank;
 } IDirectDraw_vtable;
+#pragma pack(pop)
 
 // Typedef: LPDIRECTDRAW
 // pointer to IDirectDraw
@@ -358,11 +360,13 @@ typedef struct PALETTEENTRY {
 } PALETTEENTRY;
 
 // Structure: RGB_ENTRY
+#pragma pack(push, 1)
 typedef struct RGB_ENTRY {
     BYTE red;
     BYTE green;
     BYTE blue;
 } RGB_ENTRY;
+#pragma pack(pop)
 
 // =============================================================================
 // DIRECTDRAW API FUNCTIONS

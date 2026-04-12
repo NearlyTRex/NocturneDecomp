@@ -9461,8 +9461,8 @@ static_assert(__builtin_offsetof(SPoint2i, y) == 4,
 // ---- SPolyDataFileRecord (8 bytes) ----
 static_assert(sizeof(SPolyDataFileRecord) == 8,
               "sizeof(SPolyDataFileRecord) != 8");
-static_assert(__builtin_offsetof(SPolyDataFileRecord, field_0) == 0,
-              "offsetof(SPolyDataFileRecord, field_0) != 0");
+static_assert(__builtin_offsetof(SPolyDataFileRecord, field0_0x0) == 0,
+              "offsetof(SPolyDataFileRecord, field0_0x0) != 0");
 static_assert(__builtin_offsetof(SPolyDataFileRecord, vertex_count) == 4,
               "offsetof(SPolyDataFileRecord, vertex_count) != 4");
 

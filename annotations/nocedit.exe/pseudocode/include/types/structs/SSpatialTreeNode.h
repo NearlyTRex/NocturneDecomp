@@ -5,6 +5,7 @@
 
 // Structure: SSpatialTreeNode
 // Ghidra size: 0x20 (32 bytes)
+#pragma pack(push, 1)
 typedef struct SSpatialTreeNode {
     struct SSpatialTreeNode* child1; // 0x0
     struct SSpatialTreeNode* child2; // 0x4
@@ -15,4 +16,5 @@ typedef struct SSpatialTreeNode {
     float plane_normal_z; // 0x18
     float plane_distance; // 0x1c
 } SSpatialTreeNode;
+#pragma pack(pop)
 

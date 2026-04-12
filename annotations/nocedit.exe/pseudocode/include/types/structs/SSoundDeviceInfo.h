@@ -5,6 +5,7 @@
 
 // Structure: SSoundDeviceInfo
 // Ghidra size: 0x118 (280 bytes)
+#pragma pack(push, 1)
 typedef struct SSoundDeviceInfo {
     char device_name[256]; // 0x0
     int api_type; // 0x100
@@ -14,4 +15,5 @@ typedef struct SSoundDeviceInfo {
     DWORD is_primary_device; // 0x110
     DWORD is_emulated; // 0x114
 } SSoundDeviceInfo;
+#pragma pack(pop)
 

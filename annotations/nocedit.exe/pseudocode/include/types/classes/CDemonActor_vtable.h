@@ -83,6 +83,7 @@ union UOrientationVector;
 
 // Structure: CDemonActor_vtable
 // Ghidra size: 0xec (236 bytes)
+#pragma pack(push, 1)
 typedef struct CDemonActor_vtable {
     CDemonActor_setup* setup; // 0x0
     CDemonActor_process* process; // 0x4
@@ -144,4 +145,5 @@ typedef struct CDemonActor_vtable {
     CDemonActor_dtor* dtor; // 0xe4
     CDemonActor_archive* archive; // 0xe8
 } CDemonActor_vtable;
+#pragma pack(pop)
 

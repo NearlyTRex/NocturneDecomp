@@ -8,6 +8,7 @@
 
 // Structure: SClothBone
 // Ghidra size: 0xac (172 bytes)
+#pragma pack(push, 1)
 typedef struct SClothBone {
     char name[20]; // 0x0
     float radius1; // 0x14
@@ -24,4 +25,5 @@ typedef struct SClothBone {
     int dead; // 0x9c
     CVector3f position_offset; // 0xa0
 } SClothBone;
+#pragma pack(pop)
 

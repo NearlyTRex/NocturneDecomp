@@ -5,6 +5,7 @@
 
 // Structure: CDrawSurface
 // Ghidra size: 0x20 (32 bytes)
+#pragma pack(push, 1)
 typedef struct CDrawSurface {
     int width; // 0x0
     int height; // 0x4
@@ -15,4 +16,5 @@ typedef struct CDrawSurface {
     int clip_right; // 0x18
     int clip_bottom; // 0x1c
 } CDrawSurface;
+#pragma pack(pop)
 

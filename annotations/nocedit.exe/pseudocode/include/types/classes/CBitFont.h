@@ -8,6 +8,7 @@ struct CWinFont;
 
 // Structure: CBitFont
 // Ghidra size: 0x3198 (12696 bytes)
+#pragma pack(push, 1)
 typedef struct CBitFont {
     int bitmap_count; // 0x0
     char bitmap_files[4][80]; // 0x4
@@ -34,4 +35,5 @@ typedef struct CBitFont {
     int win_font_enabled; // 0x3190
     struct CWinFont* win_font_helper; // 0x3194
 } CBitFont;
+#pragma pack(pop)
 

@@ -6,9 +6,11 @@
 
 // Structure: CBloodParticle
 // Ghidra size: 0x40 (64 bytes)
+#pragma pack(push, 1)
 typedef struct CBloodParticle {
     CParticle base; // 0x0
     int blood_type; // 0x38
     int texture_index; // 0x3c
 } CBloodParticle;
+#pragma pack(pop)
 

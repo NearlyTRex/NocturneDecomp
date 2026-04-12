@@ -8,6 +8,7 @@
 
 // Structure: CFlameCan
 // Ghidra size: 0x5e8 (1512 bytes)
+#pragma pack(push, 1)
 typedef struct CFlameCan {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -17,4 +18,5 @@ typedef struct CFlameCan {
     CFlame flame; // 0x340
     int is_visible; // 0x5e4
 } CFlameCan;
+#pragma pack(pop)
 

@@ -5,6 +5,7 @@
 
 // Structure: SBitAllocationTable
 // Ghidra size: 0x1c (28 bytes)
+#pragma pack(push, 1)
 typedef struct SBitAllocationTable {
     int table_version; // 0x0
     int num_lines; // 0x4
@@ -14,4 +15,5 @@ typedef struct SBitAllocationTable {
     int num_allocation_groups; // 0x14
     int num_granules; // 0x18
 } SBitAllocationTable;
+#pragma pack(pop)
 

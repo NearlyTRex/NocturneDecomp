@@ -7,6 +7,7 @@
 
 // Structure: CFilmReel
 // Ghidra size: 0x31c (796 bytes)
+#pragma pack(push, 1)
 typedef struct CFilmReel {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -15,4 +16,5 @@ typedef struct CFilmReel {
     float pickup_radius; // 0x2f8
     char dead[32]; // 0x2fc
 } CFilmReel;
+#pragma pack(pop)
 

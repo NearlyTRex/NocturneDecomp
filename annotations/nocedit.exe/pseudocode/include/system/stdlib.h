@@ -11,11 +11,13 @@
 typedef void ATEXIT_FUNC(void);
 
 // Structure: Heap
+#pragma pack(push, 1)
 typedef struct Heap {
     int heap_size;
     void* heap_base;
     struct Heap* next_heap_block;
 } Heap;
+#pragma pack(pop)
 
 // Structure: HeapBlock
 typedef struct HeapBlock {
@@ -32,12 +34,14 @@ typedef struct HeapBlock {
 } HeapBlock;
 
 // Structure: HeapState
+#pragma pack(push, 1)
 typedef struct HeapState {
     void* current_block_ptr;
     short segment_selector;
     int block_size;
     int allocation_status;
 } HeapState;
+#pragma pack(pop)
 
 // Function Definition: QSORT_COMPARATOR_FUNC
 typedef int QSORT_COMPARATOR_FUNC(void* a, void* b);
@@ -50,11 +54,13 @@ typedef QSORT_COMPARATOR_FUNC* QSORT_COMPARATOR;
 typedef void RUNTIME_HANDLER_FUNC(void);
 
 // Structure: RuntimeHandlerEntry
+#pragma pack(push, 1)
 typedef struct RuntimeHandlerEntry {
     BYTE status;
     BYTE priority;
     RUNTIME_HANDLER_FUNC* func;
 } RuntimeHandlerEntry;
+#pragma pack(pop)
 
 // Function Definition: STRTOD_FUNC
 typedef double STRTOD_FUNC(double* result, char* str);

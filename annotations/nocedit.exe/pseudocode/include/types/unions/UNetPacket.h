@@ -13,6 +13,7 @@
 #include "types/structs/SNetPacket_Simple.h"
 
 // Union: UNetPacket
+#pragma pack(push, 1)
 typedef union UNetPacket {
     SNetPacketHeader header;
     SNetPacket_PlayerAnnounce player_announce;
@@ -25,4 +26,5 @@ typedef union UNetPacket {
     SNetPacket_PlayerInput player_input;
     char raw[1032];
 } UNetPacket;
+#pragma pack(pop)
 

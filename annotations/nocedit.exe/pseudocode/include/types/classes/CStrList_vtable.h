@@ -15,6 +15,7 @@ struct CStrList;
 
 // Structure: CStrList_vtable
 // Ghidra size: 0x1c (28 bytes)
+#pragma pack(push, 1)
 typedef struct CStrList_vtable {
     CStrList_dtor* dtor; // 0x0
     CStrList_remove* remove; // 0x4
@@ -24,4 +25,5 @@ typedef struct CStrList_vtable {
     CStrList_clear* clear; // 0x14
     CStrList_handleInput* handleInput; // 0x18
 } CStrList_vtable;
+#pragma pack(pop)
 

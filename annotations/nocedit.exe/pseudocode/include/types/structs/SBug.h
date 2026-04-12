@@ -6,6 +6,7 @@
 
 // Structure: SBug
 // Ghidra size: 0x40 (64 bytes)
+#pragma pack(push, 1)
 typedef struct SBug {
     int state; // 0x0
     int model_index; // 0x4
@@ -18,4 +19,5 @@ typedef struct SBug {
     float crawl_duration; // 0x38
     int downward_bias; // 0x3c
 } SBug;
+#pragma pack(pop)
 

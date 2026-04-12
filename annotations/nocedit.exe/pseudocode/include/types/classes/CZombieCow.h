@@ -6,6 +6,7 @@
 
 // Structure: CZombieCow
 // Ghidra size: 0xbef0 (48880 bytes)
+#pragma pack(push, 1)
 typedef struct CZombieCow {
     CEnemy base; // 0x0
     int bone_spine; // 0xbebc
@@ -13,4 +14,5 @@ typedef struct CZombieCow {
     uint sfx_handle; // 0xbec4
     int part_indices[10]; // 0xbec8
 } CZombieCow;
+#pragma pack(pop)
 

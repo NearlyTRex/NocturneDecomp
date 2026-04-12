@@ -5,6 +5,7 @@
 
 // Structure: SPodManageRecord
 // Ghidra size: 0x39c (924 bytes)
+#pragma pack(push, 1)
 typedef struct SPodManageRecord {
     char base_name[256]; // 0x0
     char pod_name[260]; // 0x100
@@ -23,4 +24,5 @@ typedef struct SPodManageRecord {
     uint timestamp; // 0x394
     uint file_size; // 0x398
 } SPodManageRecord;
+#pragma pack(pop)
 

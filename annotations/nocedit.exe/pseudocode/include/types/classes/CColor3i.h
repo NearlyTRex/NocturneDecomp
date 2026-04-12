@@ -5,9 +5,11 @@
 
 // Structure: CColor3i
 // Ghidra size: 0xc (12 bytes)
+#pragma pack(push, 1)
 typedef struct CColor3i {
     int r; // 0x0
     int g; // 0x4
     int b; // 0x8
 } CColor3i;
+#pragma pack(pop)
 

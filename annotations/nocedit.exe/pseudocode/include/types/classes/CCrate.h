@@ -9,6 +9,7 @@
 
 // Structure: CCrate
 // Ghidra size: 0x2fc (764 bytes)
+#pragma pack(push, 1)
 typedef struct CCrate {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -19,4 +20,5 @@ typedef struct CCrate {
     UOrientationVector cached_orientation; // 0x2ec
     float cached_ground_height; // 0x2f8
 } CCrate;
+#pragma pack(pop)
 

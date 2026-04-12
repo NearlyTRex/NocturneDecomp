@@ -6,6 +6,7 @@
 
 // Structure: CSpark
 // Ghidra size: 0x4c (76 bytes)
+#pragma pack(push, 1)
 typedef struct CSpark {
     CParticle base; // 0x0
     int intensity_current; // 0x38
@@ -14,4 +15,5 @@ typedef struct CSpark {
     int spark_type; // 0x44
     int fade_rate; // 0x48
 } CSpark;
+#pragma pack(pop)
 

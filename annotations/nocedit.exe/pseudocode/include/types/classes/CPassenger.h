@@ -10,6 +10,7 @@ struct CWerewolf;
 
 // Structure: CPassenger
 // Ghidra size: 0x20448 (132168 bytes)
+#pragma pack(push, 1)
 typedef struct CPassenger {
     CNPC base; // 0x0
     char transform_event[100]; // 0x1f708
@@ -21,4 +22,5 @@ typedef struct CPassenger {
     float morph_time; // 0x20440
     float wolf_size; // 0x20444
 } CPassenger;
+#pragma pack(pop)
 

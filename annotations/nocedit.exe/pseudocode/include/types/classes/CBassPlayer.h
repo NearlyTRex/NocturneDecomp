@@ -6,8 +6,10 @@
 
 // Structure: CBassPlayer
 // Ghidra size: 0x1f710 (128784 bytes)
+#pragma pack(push, 1)
 typedef struct CBassPlayer {
     CNPC base; // 0x0
     int bone_indices[2]; // 0x1f708
 } CBassPlayer;
+#pragma pack(pop)
 

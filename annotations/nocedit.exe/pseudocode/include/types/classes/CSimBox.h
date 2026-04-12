@@ -9,6 +9,7 @@
 
 // Structure: CSimBox
 // Ghidra size: 0x5cc (1484 bytes)
+#pragma pack(push, 1)
 typedef struct CSimBox {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -22,4 +23,5 @@ typedef struct CSimBox {
     CVector3f spawn_position; // 0x5b4
     CVector3f spawn_orientation; // 0x5c0
 } CSimBox;
+#pragma pack(pop)
 

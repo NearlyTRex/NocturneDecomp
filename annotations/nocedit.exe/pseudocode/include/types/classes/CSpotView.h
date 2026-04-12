@@ -6,6 +6,7 @@
 
 // Structure: CSpotView
 // Ghidra size: 0x3c (60 bytes)
+#pragma pack(push, 1)
 typedef struct CSpotView {
     float default_distance; // 0x0
     float default_zoom; // 0x4
@@ -21,4 +22,5 @@ typedef struct CSpotView {
     float pan_y; // 0x34
     float zoom; // 0x38
 } CSpotView;
+#pragma pack(pop)
 

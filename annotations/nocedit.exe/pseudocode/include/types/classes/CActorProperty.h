@@ -9,6 +9,7 @@
 
 // Structure: CActorProperty
 // Ghidra size: 0xec (236 bytes)
+#pragma pack(push, 1)
 typedef struct CActorProperty {
     EActorPropertyType type; // 0x0
     char name[80]; // 0x4
@@ -23,4 +24,5 @@ typedef struct CActorProperty {
     char string2[100]; // 0x84, choices, extension
     UActorPropertyCallback callback; // 0xe8
 } CActorProperty;
+#pragma pack(pop)
 

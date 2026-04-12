@@ -19,9 +19,11 @@ typedef LPVOID GET_STOCK_OBJECT_FUNC(int i);
 typedef struct HDC__* HDC;
 
 // Structure: HDC__
+#pragma pack(push, 1)
 typedef struct HDC__ {
     int unused;
-} HDC__;
+} __attribute__((aligned(4))) HDC__;
+#pragma pack(pop)
 
 // Function Definition: CREATE_COMPATIBLE_DC_FUNC
 typedef HDC CREATE_COMPATIBLE_DC_FUNC(HDC hdc);
@@ -67,6 +69,7 @@ typedef COLORREF SET_TEXT_COLOR_FUNC(HDC hdc, COLORREF color);
 typedef BOOL TEXT_OUT_A_FUNC(HDC hdc, int x, int y, LPCSTR lpString, int c);
 
 // Structure: tagBITMAPINFOHEADER
+#pragma pack(push, 1)
 typedef struct tagBITMAPINFOHEADER {
     DWORD biSize;
     LONG biWidth;
@@ -79,17 +82,20 @@ typedef struct tagBITMAPINFOHEADER {
     LONG biYPelsPerMeter;
     DWORD biClrUsed;
     DWORD biClrImportant;
-} tagBITMAPINFOHEADER;
+} __attribute__((aligned(4))) tagBITMAPINFOHEADER;
+#pragma pack(pop)
 
 // Typedef: BITMAPINFOHEADER
 typedef tagBITMAPINFOHEADER BITMAPINFOHEADER;
 
 // Structure: tagLOGBRUSH
+#pragma pack(push, 1)
 typedef struct tagLOGBRUSH {
     UINT lbStyle;
     COLORREF lbColor;
     ULONG_PTR lbHatch;
-} tagLOGBRUSH;
+} __attribute__((aligned(4))) tagLOGBRUSH;
+#pragma pack(pop)
 
 // Typedef: LOGBRUSH
 typedef tagLOGBRUSH LOGBRUSH;
@@ -98,32 +104,38 @@ typedef tagLOGBRUSH LOGBRUSH;
 typedef HBRUSH CREATE_BRUSH_INDIRECT_FUNC(LOGBRUSH* plbrush);
 
 // Structure: tagRECT
+#pragma pack(push, 1)
 typedef struct tagRECT {
     LONG left;
     LONG top;
     LONG right;
     LONG bottom;
-} tagRECT;
+} __attribute__((aligned(4))) tagRECT;
+#pragma pack(pop)
 
 // Typedef: RECT
 typedef tagRECT RECT;
 
 // Structure: tagRGBQUAD
+#pragma pack(push, 1)
 typedef struct tagRGBQUAD {
     BYTE rgbBlue;
     BYTE rgbGreen;
     BYTE rgbRed;
     BYTE rgbReserved;
 } tagRGBQUAD;
+#pragma pack(pop)
 
 // Typedef: RGBQUAD
 typedef tagRGBQUAD RGBQUAD;
 
 // Structure: tagBITMAPINFO
+#pragma pack(push, 1)
 typedef struct tagBITMAPINFO {
     BITMAPINFOHEADER bmiHeader;
     RGBQUAD bmiColors[1];
-} tagBITMAPINFO;
+} __attribute__((aligned(4))) tagBITMAPINFO;
+#pragma pack(pop)
 
 // Typedef: BITMAPINFO
 typedef tagBITMAPINFO BITMAPINFO;
@@ -132,10 +144,12 @@ typedef tagBITMAPINFO BITMAPINFO;
 typedef HBITMAP CREATE_DIB_SECTION_FUNC(HDC hdc, BITMAPINFO* pbmi, UINT usage, void** ppvBits, HANDLE hSection, DWORD offset);
 
 // Structure: tagSIZE
+#pragma pack(push, 1)
 typedef struct tagSIZE {
     LONG cx;
     LONG cy;
-} tagSIZE;
+} __attribute__((aligned(4))) tagSIZE;
+#pragma pack(pop)
 
 // Function Definition: GET_TEXT_EXTENT_POINT32_A_FUNC
 typedef BOOL GET_TEXT_EXTENT_POINT32_A_FUNC(HDC hdc, LPCSTR lpString, int c, LPSIZE psizl);

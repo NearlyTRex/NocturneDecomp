@@ -9,6 +9,7 @@
 
 // Structure: CFrankenstienMachine
 // Ghidra size: 0x49c (1180 bytes)
+#pragma pack(push, 1)
 typedef struct CFrankenstienMachine {
     CDemonActor base; // 0x0
     int which_part; // 0x158
@@ -22,4 +23,5 @@ typedef struct CFrankenstienMachine {
     float particle_accumulator; // 0x48c
     CVector3f anchor_world_position; // 0x490
 } CFrankenstienMachine;
+#pragma pack(pop)
 

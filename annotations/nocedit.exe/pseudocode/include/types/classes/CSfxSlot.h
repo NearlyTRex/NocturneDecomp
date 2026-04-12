@@ -9,6 +9,7 @@ struct CSfxSample;
 
 // Structure: CSfxSlot
 // Ghidra size: 0x128 (296 bytes)
+#pragma pack(push, 1)
 typedef struct CSfxSlot {
     CSfxOptions options; // 0x0
     int hardware_buffer_handle; // 0x70
@@ -29,4 +30,5 @@ typedef struct CSfxSlot {
     double prev_hardware_playback_pos; // 0x11c
     int loop_marker_index; // 0x124
 } CSfxSlot;
+#pragma pack(pop)
 

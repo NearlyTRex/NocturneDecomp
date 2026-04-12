@@ -10,6 +10,7 @@
 
 // Structure: CBoxActor
 // Ghidra size: 0x66c (1644 bytes)
+#pragma pack(push, 1)
 typedef struct CBoxActor {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -37,4 +38,5 @@ typedef struct CBoxActor {
     int allowed_melee_attack_types; // 0x664
     int block_virtual_director_flag; // 0x668
 } CBoxActor;
+#pragma pack(pop)
 

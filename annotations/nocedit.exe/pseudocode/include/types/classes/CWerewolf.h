@@ -10,6 +10,7 @@ struct CDemonActor;
 
 // Structure: CWerewolf
 // Ghidra size: 0xbf04 (48900 bytes)
+#pragma pack(push, 1)
 typedef struct CWerewolf {
     CEnemy base; // 0x0
     EWerewolfType type; // 0xbebc
@@ -26,4 +27,5 @@ typedef struct CWerewolf {
     float phase_timer; // 0xbefc
     float eye_glow_phase; // 0xbf00
 } CWerewolf;
+#pragma pack(pop)
 

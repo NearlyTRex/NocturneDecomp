@@ -14,6 +14,7 @@ struct SFoundFileInfo;
 
 // Structure: CDemonPod_vtable
 // Ghidra size: 0x18 (24 bytes)
+#pragma pack(push, 1)
 typedef struct CDemonPod_vtable {
     void* dtor; // 0x0
     CPod_load* load; // 0x4
@@ -22,4 +23,5 @@ typedef struct CDemonPod_vtable {
     CPod_dismount* dismount; // 0x10
     CPod_remount* remount; // 0x14
 } CDemonPod_vtable;
+#pragma pack(pop)
 

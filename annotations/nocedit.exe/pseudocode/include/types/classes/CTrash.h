@@ -8,6 +8,7 @@
 
 // Structure: CTrash
 // Ghidra size: 0x328 (808 bytes)
+#pragma pack(push, 1)
 typedef struct CTrash {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -23,4 +24,5 @@ typedef struct CTrash {
     CVector3f drift_target; // 0x318
     float gravity; // 0x324
 } CTrash;
+#pragma pack(pop)
 

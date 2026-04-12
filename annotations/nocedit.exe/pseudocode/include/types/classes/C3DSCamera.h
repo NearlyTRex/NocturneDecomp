@@ -8,6 +8,7 @@
 
 // Structure: C3DSCamera
 // Ghidra size: 0x1a4 (420 bytes)
+#pragma pack(push, 1)
 typedef struct C3DSCamera {
     char name[256]; // 0x0
     CVector3f position; // 0x100
@@ -28,4 +29,5 @@ typedef struct C3DSCamera {
     int vdir_zone; // 0x19c
     int enabled; // 0x1a0
 } C3DSCamera;
+#pragma pack(pop)
 

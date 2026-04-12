@@ -5,6 +5,7 @@
 
 // Structure: SPart
 // Ghidra size: 0x60 (96 bytes)
+#pragma pack(push, 1)
 typedef struct SPart {
     char part_name[32]; // 0x0
     int tri_counts[5]; // 0x20
@@ -13,4 +14,5 @@ typedef struct SPart {
     int adj_part_list[4]; // 0x4c
     int dominant_bone; // 0x5c
 } SPart;
+#pragma pack(pop)
 

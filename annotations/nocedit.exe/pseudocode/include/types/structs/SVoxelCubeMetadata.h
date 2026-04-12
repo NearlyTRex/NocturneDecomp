@@ -9,6 +9,7 @@ struct CDemonTriangle;
 
 // Structure: SVoxelCubeMetadata
 // Ghidra size: 0x58 (88 bytes)
+#pragma pack(push, 1)
 typedef struct SVoxelCubeMetadata {
     int triangle_count; // 0x0
     struct CDemonTriangle* triangle_list; // 0x4
@@ -18,4 +19,5 @@ typedef struct SVoxelCubeMetadata {
     uint voxel_data[16]; // 0x14
     uchar* triangle_flags; // 0x54
 } SVoxelCubeMetadata;
+#pragma pack(pop)
 

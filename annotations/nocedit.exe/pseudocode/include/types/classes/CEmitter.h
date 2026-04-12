@@ -10,6 +10,7 @@
 
 // Structure: CEmitter
 // Ghidra size: 0x494 (1172 bytes)
+#pragma pack(push, 1)
 typedef struct CEmitter {
     CDemonActor base; // 0x0
     int emitter_type; // 0x158
@@ -35,4 +36,5 @@ typedef struct CEmitter {
     int was_active; // 0x48c
     int prev_emitter_state; // 0x490
 } CEmitter;
+#pragma pack(pop)
 

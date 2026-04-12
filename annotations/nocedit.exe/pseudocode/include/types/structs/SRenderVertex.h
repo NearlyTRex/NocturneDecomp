@@ -6,6 +6,7 @@
 
 // Structure: SRenderVertex
 // Ghidra size: 0x30 (48 bytes)
+#pragma pack(push, 1)
 typedef struct SRenderVertex {
     SProjectedVertex projected_vertex; // 0x0
     int u; // 0x18
@@ -15,4 +16,5 @@ typedef struct SRenderVertex {
     int b; // 0x28
     int a; // 0x2c
 } SRenderVertex;
+#pragma pack(pop)
 

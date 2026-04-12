@@ -10,6 +10,7 @@ struct CDemonActor;
 
 // Structure: CIcePick
 // Ghidra size: 0x1fc04 (130052 bytes)
+#pragma pack(push, 1)
 typedef struct CIcePick {
     CHero base; // 0x0
     int guns_drawn; // 0x1fbd4
@@ -22,4 +23,5 @@ typedef struct CIcePick {
     float shoot_blend_weight; // 0x1fbfc
     float aim_pitch; // 0x1fc00
 } CIcePick;
+#pragma pack(pop)
 

@@ -7,6 +7,7 @@
 
 // Structure: SMRGLKeyframeModel
 // Ghidra size: 0x158 (344 bytes)
+#pragma pack(push, 1)
 typedef struct SMRGLKeyframeModel {
     SMRGLHeaderExtended header; // 0x0
     int cycle_length; // 0xc
@@ -15,4 +16,5 @@ typedef struct SMRGLKeyframeModel {
     char filenames[16][16]; // 0x18
     struct SMRGLKeyframe* loaded_frames[16]; // 0x118
 } SMRGLKeyframeModel;
+#pragma pack(pop)
 

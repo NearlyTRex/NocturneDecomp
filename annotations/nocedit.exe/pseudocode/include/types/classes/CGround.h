@@ -8,6 +8,7 @@ struct CTextureList;
 
 // Structure: CGround
 // Ghidra size: 0x5c (92 bytes)
+#pragma pack(push, 1)
 typedef struct CGround {
     int width; // 0x0
     int height; // 0x4
@@ -30,4 +31,5 @@ typedef struct CGround {
     int visible_max_y; // 0x48
     int vertex_indices[4]; // 0x4c
 } CGround;
+#pragma pack(pop)
 

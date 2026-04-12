@@ -8,6 +8,7 @@
 
 // Structure: CSpike
 // Ghidra size: 0x560 (1376 bytes)
+#pragma pack(push, 1)
 typedef struct CSpike {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -29,4 +30,5 @@ typedef struct CSpike {
     float damage_strength; // 0x558
     float param; // 0x55c
 } CSpike;
+#pragma pack(pop)
 

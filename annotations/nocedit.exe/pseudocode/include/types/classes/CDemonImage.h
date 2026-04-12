@@ -6,6 +6,7 @@
 
 // Structure: CDemonImage
 // Ghidra size: 0x60c (1548 bytes)
+#pragma pack(push, 1)
 typedef struct CDemonImage {
     uchar color_cube_lookup[256]; // 0x0
     ushort color_values[256]; // 0x100
@@ -14,4 +15,5 @@ typedef struct CDemonImage {
     int height; // 0x308
     SRGBColorPalette palette; // 0x30c
 } CDemonImage;
+#pragma pack(pop)
 

@@ -7,6 +7,7 @@
 
 // Structure: CTire
 // Ghidra size: 0x1b4 (436 bytes)
+#pragma pack(push, 1)
 typedef struct CTire {
     CVector3f static_bpos; // 0x0
     float radius; // 0xc
@@ -16,4 +17,5 @@ typedef struct CTire {
     CVector3f runtime_position; // 0x19c
     CVector3f runtime_rotation; // 0x1a8
 } CTire;
+#pragma pack(pop)
 

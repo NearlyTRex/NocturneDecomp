@@ -6,6 +6,7 @@
 
 // Structure: SMRGLModelBounds
 // Ghidra size: 0x34 (52 bytes)
+#pragma pack(push, 1)
 typedef struct SMRGLModelBounds {
     CVector3i min_scaled; // 0x0
     CVector3i max_scaled; // 0xc
@@ -13,4 +14,5 @@ typedef struct SMRGLModelBounds {
     int radius_scaled; // 0x24
     CVector3i extent; // 0x28
 } SMRGLModelBounds;
+#pragma pack(pop)
 

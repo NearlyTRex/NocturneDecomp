@@ -10,6 +10,7 @@ struct CDoor;
 
 // Structure: CZombie
 // Ghidra size: 0xbfac (49068 bytes)
+#pragma pack(push, 1)
 typedef struct CZombie {
     CEnemy base; // 0x0
     float pickup_range_factor; // 0xbebc
@@ -32,4 +33,5 @@ typedef struct CZombie {
     float rise_delay; // 0xbfa4
     float buried_timer; // 0xbfa8
 } CZombie;
+#pragma pack(pop)
 

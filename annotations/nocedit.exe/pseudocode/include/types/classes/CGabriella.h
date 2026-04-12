@@ -10,6 +10,7 @@ struct CDemonActor;
 
 // Structure: CGabriella
 // Ghidra size: 0x5fa88 (391816 bytes)
+#pragma pack(push, 1)
 typedef struct CGabriella {
     CHero base; // 0x0
     int weapon_state_flags; // 0x1fbd4
@@ -31,4 +32,5 @@ typedef struct CGabriella {
     CCloth coat_cloth; // 0x1fc14
     float dynamite_charge_power; // 0x5fa84
 } CGabriella;
+#pragma pack(pop)
 

@@ -8,6 +8,7 @@
 
 // Structure: CBat
 // Ghidra size: 0x388 (904 bytes)
+#pragma pack(push, 1)
 typedef struct CBat {
     CDemonActor base; // 0x0
     char course_filename[32]; // 0x158
@@ -24,4 +25,5 @@ typedef struct CBat {
     uint sfx_handle; // 0x380
     float sound_timer; // 0x384
 } CBat;
+#pragma pack(pop)
 

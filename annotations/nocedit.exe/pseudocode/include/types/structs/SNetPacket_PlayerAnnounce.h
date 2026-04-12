@@ -8,6 +8,7 @@
 
 // Structure: SNetPacket_PlayerAnnounce
 // Ghidra size: 0x29 (41 bytes)
+#pragma pack(push, 1)
 typedef struct SNetPacket_PlayerAnnounce {
     SNetPacketHeader header; // 0x0
     SNetworkAddr addr; // 0x5
@@ -15,4 +16,5 @@ typedef struct SNetPacket_PlayerAnnounce {
     EHeroType hero_number; // 0x21
     int aim_mode; // 0x25
 } SNetPacket_PlayerAnnounce;
+#pragma pack(pop)
 

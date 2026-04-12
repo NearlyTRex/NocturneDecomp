@@ -6,6 +6,7 @@
 
 // Structure: CSmokeParticle
 // Ghidra size: 0x2c (44 bytes)
+#pragma pack(push, 1)
 typedef struct CSmokeParticle {
     int active; // 0x0
     CVector3f position; // 0x4
@@ -15,4 +16,5 @@ typedef struct CSmokeParticle {
     CVector3f wind_influence; // 0x1c
     int alpha_value; // 0x28
 } CSmokeParticle;
+#pragma pack(pop)
 

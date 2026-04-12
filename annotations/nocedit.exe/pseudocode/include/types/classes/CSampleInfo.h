@@ -5,6 +5,7 @@
 
 // Structure: CSampleInfo
 // Ghidra size: 0x120 (288 bytes)
+#pragma pack(push, 1)
 typedef struct CSampleInfo {
     char name[256]; // 0x0
     int streaming_flag; // 0x100
@@ -16,4 +17,5 @@ typedef struct CSampleInfo {
     float reference_volume_distance; // 0x118
     float max_distance; // 0x11c
 } CSampleInfo;
+#pragma pack(pop)
 

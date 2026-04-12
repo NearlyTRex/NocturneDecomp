@@ -10,6 +10,7 @@
 
 // Structure: C3DSLight
 // Ghidra size: 0x1898 (6296 bytes)
+#pragma pack(push, 1)
 typedef struct C3DSLight {
     int light_type; // 0x0
     char name[256]; // 0x4
@@ -42,4 +43,5 @@ typedef struct C3DSLight {
     int current_filter_frame; // 0x1890
     float filter_frame_elapsed; // 0x1894
 } C3DSLight;
+#pragma pack(pop)
 

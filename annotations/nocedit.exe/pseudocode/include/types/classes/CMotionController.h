@@ -11,6 +11,7 @@ struct SMotionTransition;
 
 // Structure: CMotionController
 // Ghidra size: 0x54 (84 bytes)
+#pragma pack(push, 1)
 typedef struct CMotionController {
     struct CMotionList* motion_list_ptr; // 0x0
     int current_motion_index; // 0x4
@@ -27,4 +28,5 @@ typedef struct CMotionController {
     char current_motion_name[32]; // 0x30
     struct CMotionController_vtable* vtable; // 0x50
 } CMotionController;
+#pragma pack(pop)
 

@@ -74,12 +74,14 @@ typedef struct SOCKADDR {
 } SOCKADDR;
 
 // Structure: SOCKADDR_IN
+#pragma pack(push, 1)
 typedef struct SOCKADDR_IN {
     ushort sin_family;
     ushort sin_port;
     uint sin_addr;
     char padding_0x08[8];
 } SOCKADDR_IN;
+#pragma pack(pop)
 
 // Structure: WSADATA
 typedef struct WSADATA {

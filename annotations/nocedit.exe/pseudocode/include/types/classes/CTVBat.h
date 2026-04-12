@@ -11,6 +11,7 @@ struct CDemonActor;
 
 // Structure: CTVBat
 // Ghidra size: 0xc0f4 (49396 bytes)
+#pragma pack(push, 1)
 typedef struct CTVBat {
     CEnemy base; // 0x0
     float anim_frame; // 0xbebc
@@ -34,4 +35,5 @@ typedef struct CTVBat {
     float periodic_sound_timer; // 0xc0ec
     struct CDemonActor* boss_actor; // 0xc0f0
 } CTVBat;
+#pragma pack(pop)
 

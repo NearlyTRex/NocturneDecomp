@@ -5,6 +5,7 @@
 
 // Structure: CEdScrollBar
 // Ghidra size: 0x34 (52 bytes)
+#pragma pack(push, 1)
 typedef struct CEdScrollBar {
     int scroll_position; // 0x0
     int current_value; // 0x4
@@ -20,4 +21,5 @@ typedef struct CEdScrollBar {
     int thumb_start; // 0x2c
     int thumb_end; // 0x30
 } CEdScrollBar;
+#pragma pack(pop)
 

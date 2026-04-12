@@ -8,6 +8,7 @@
 
 // Structure: SGem
 // Ghidra size: 0xb8 (184 bytes)
+#pragma pack(push, 1)
 typedef struct SGem {
     CColor3f color; // 0x0
     CColor3f hum_color; // 0xc
@@ -18,4 +19,5 @@ typedef struct SGem {
     CDemonTriangle collision_tri_b; // 0x74
     uint sfx_handles[3]; // 0xac
 } SGem;
+#pragma pack(pop)
 

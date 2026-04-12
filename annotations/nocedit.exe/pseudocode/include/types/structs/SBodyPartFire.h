@@ -7,8 +7,10 @@
 
 // Structure: SBodyPartFire
 // Ghidra size: 0x2b0 (688 bytes)
+#pragma pack(push, 1)
 typedef struct SBodyPartFire {
     CVector3f local_position; // 0x0
     CFlame flame; // 0xc
 } SBodyPartFire;
+#pragma pack(pop)
 

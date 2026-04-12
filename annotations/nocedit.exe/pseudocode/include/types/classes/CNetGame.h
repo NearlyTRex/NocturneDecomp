@@ -9,6 +9,7 @@
 
 // Structure: CNetGame
 // Ghidra size: 0x174 (372 bytes)
+#pragma pack(push, 1)
 typedef struct CNetGame {
     EConnectionType connection_type; // 0x0, 0=none,1=server,2=client
     ENetworkMode network_mode; // 0x4, 0=disconnected,1=lobby,2=syncing,3=in-game
@@ -22,4 +23,5 @@ typedef struct CNetGame {
     uint random_seed; // 0x16c
     _SOCKET socket; // 0x170
 } CNetGame;
+#pragma pack(pop)
 

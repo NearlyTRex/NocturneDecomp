@@ -7,6 +7,7 @@
 
 // Structure: CBloodPool
 // Ghidra size: 0x28 (40 bytes)
+#pragma pack(push, 1)
 typedef struct CBloodPool {
     int expired; // 0x0
     CVector3f position; // 0x4
@@ -15,4 +16,5 @@ typedef struct CBloodPool {
     float age; // 0x18
     CVector3i position_fixed; // 0x1c
 } CBloodPool;
+#pragma pack(pop)
 

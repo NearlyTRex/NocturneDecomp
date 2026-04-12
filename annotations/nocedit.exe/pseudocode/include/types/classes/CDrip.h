@@ -9,6 +9,7 @@
 
 // Structure: CDrip
 // Ghidra size: 0x33c (828 bytes)
+#pragma pack(push, 1)
 typedef struct CDrip {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -28,4 +29,5 @@ typedef struct CDrip {
     int no_rock_flag; // 0x334
     int is_visible; // 0x338
 } CDrip;
+#pragma pack(pop)
 

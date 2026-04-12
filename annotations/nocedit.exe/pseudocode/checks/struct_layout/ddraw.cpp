@@ -25,16 +25,16 @@ static_assert(__builtin_offsetof(DDPIXELFORMAT, dwFlags) == 4,
               "offsetof(DDPIXELFORMAT, dwFlags) != 4");
 static_assert(__builtin_offsetof(DDPIXELFORMAT, dwFourCC) == 8,
               "offsetof(DDPIXELFORMAT, dwFourCC) != 8");
-static_assert(__builtin_offsetof(DDPIXELFORMAT, field_12) == 12,
-              "offsetof(DDPIXELFORMAT, field_12) != 12");
-static_assert(__builtin_offsetof(DDPIXELFORMAT, field_16) == 16,
-              "offsetof(DDPIXELFORMAT, field_16) != 16");
-static_assert(__builtin_offsetof(DDPIXELFORMAT, field_20) == 20,
-              "offsetof(DDPIXELFORMAT, field_20) != 20");
-static_assert(__builtin_offsetof(DDPIXELFORMAT, field_24) == 24,
-              "offsetof(DDPIXELFORMAT, field_24) != 24");
-static_assert(__builtin_offsetof(DDPIXELFORMAT, field_28) == 28,
-              "offsetof(DDPIXELFORMAT, field_28) != 28");
+static_assert(__builtin_offsetof(DDPIXELFORMAT, field3_0xc) == 12,
+              "offsetof(DDPIXELFORMAT, field3_0xc) != 12");
+static_assert(__builtin_offsetof(DDPIXELFORMAT, field4_0x10) == 16,
+              "offsetof(DDPIXELFORMAT, field4_0x10) != 16");
+static_assert(__builtin_offsetof(DDPIXELFORMAT, field5_0x14) == 20,
+              "offsetof(DDPIXELFORMAT, field5_0x14) != 20");
+static_assert(__builtin_offsetof(DDPIXELFORMAT, field6_0x18) == 24,
+              "offsetof(DDPIXELFORMAT, field6_0x18) != 24");
+static_assert(__builtin_offsetof(DDPIXELFORMAT, field7_0x1c) == 28,
+              "offsetof(DDPIXELFORMAT, field7_0x1c) != 28");
 
 // ---- DDSCAPS (4 bytes) ----
 static_assert(sizeof(DDSCAPS) == 4,
@@ -53,12 +53,12 @@ static_assert(__builtin_offsetof(DDSURFACEDESC, dwHeight) == 8,
               "offsetof(DDSURFACEDESC, dwHeight) != 8");
 static_assert(__builtin_offsetof(DDSURFACEDESC, dwWidth) == 12,
               "offsetof(DDSURFACEDESC, dwWidth) != 12");
-static_assert(__builtin_offsetof(DDSURFACEDESC, field_16) == 16,
-              "offsetof(DDSURFACEDESC, field_16) != 16");
+static_assert(__builtin_offsetof(DDSURFACEDESC, field4_0x10) == 16,
+              "offsetof(DDSURFACEDESC, field4_0x10) != 16");
 static_assert(__builtin_offsetof(DDSURFACEDESC, dwBackBufferCount) == 20,
               "offsetof(DDSURFACEDESC, dwBackBufferCount) != 20");
-static_assert(__builtin_offsetof(DDSURFACEDESC, field_24) == 24,
-              "offsetof(DDSURFACEDESC, field_24) != 24");
+static_assert(__builtin_offsetof(DDSURFACEDESC, field6_0x18) == 24,
+              "offsetof(DDSURFACEDESC, field6_0x18) != 24");
 static_assert(__builtin_offsetof(DDSURFACEDESC, dwAlphaBitDepth) == 28,
               "offsetof(DDSURFACEDESC, dwAlphaBitDepth) != 28");
 static_assert(__builtin_offsetof(DDSURFACEDESC, dwReserved) == 32,
@@ -93,8 +93,8 @@ static_assert(__builtin_offsetof(IDirectDrawClipper, vtable) == 0,
 // ---- IDirectDrawPalette (4 bytes) ----
 static_assert(sizeof(IDirectDrawPalette) == 4,
               "sizeof(IDirectDrawPalette) != 4");
-static_assert(__builtin_offsetof(IDirectDrawPalette, field_0) == 0,
-              "offsetof(IDirectDrawPalette, field_0) != 0");
+static_assert(__builtin_offsetof(IDirectDrawPalette, field0_0x0) == 0,
+              "offsetof(IDirectDrawPalette, field0_0x0) != 0");
 
 // ---- IDirectDrawSurface (4 bytes) ----
 static_assert(sizeof(IDirectDrawSurface) == 4,

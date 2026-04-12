@@ -8,6 +8,7 @@
 
 // Structure: CBiggs
 // Ghidra size: 0xccd0 (52432 bytes)
+#pragma pack(push, 1)
 typedef struct CBiggs {
     CEnemy base; // 0x0
     CKeyFramedModelInstance model; // 0xbebc
@@ -16,4 +17,5 @@ typedef struct CBiggs {
     CMorph morph; // 0xc040
     char morph_event[100]; // 0xcc6c
 } CBiggs;
+#pragma pack(pop)
 

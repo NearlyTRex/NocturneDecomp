@@ -5,6 +5,7 @@
 
 // Structure: SWindow
 // Ghidra size: 0x1e8 (488 bytes)
+#pragma pack(push, 1)
 typedef struct SWindow {
     int left; // 0x0
     int top; // 0x4
@@ -30,4 +31,5 @@ typedef struct SWindow {
     int progress_percentage; // 0x1e0
     int progress_timestamp; // 0x1e4
 } SWindow;
+#pragma pack(pop)
 

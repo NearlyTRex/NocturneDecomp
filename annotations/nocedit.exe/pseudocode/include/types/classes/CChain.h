@@ -7,6 +7,7 @@
 
 // Structure: CChain
 // Ghidra size: 0x578 (1400 bytes)
+#pragma pack(push, 1)
 typedef struct CChain {
     CDemonActor base; // 0x0
     int vertex_count; // 0x158
@@ -32,4 +33,5 @@ typedef struct CChain {
     float inv_delta_time; // 0x570
     int is_visible; // 0x574
 } CChain;
+#pragma pack(pop)
 

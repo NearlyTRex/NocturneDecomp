@@ -18,9 +18,9 @@ def delete_pseudocode(currentProgram, path):
         log_info("No pseudocode directory found - nothing to delete")
         return
 
-    # Paths (relative to pseudocode/) to skip during cleanup — hand-written,
-    # not auto-generated. May be nested (e.g. 'src/main').
-    protected_paths = {'shims', 'src/main', 'src/checks'}
+    # Paths (relative to pseudocode/) to skip during cleanup — hand-written
+    # or generated outside the exporter pipeline. May be nested.
+    protected_paths = {'shims', 'main', 'checks'}
 
     def _is_protected(rel):
         rel = rel.replace(os.sep, '/')

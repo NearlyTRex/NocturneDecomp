@@ -8,6 +8,7 @@ struct CPodDirectoryEntry;
 
 // Structure: CPodFile
 // Ghidra size: 0x42c (1068 bytes)
+#pragma pack(push, 1)
 typedef struct CPodFile {
     int pod_format_version; // 0x0
     char filename[256]; // 0x4
@@ -25,4 +26,5 @@ typedef struct CPodFile {
     int dependency_count; // 0x424
     uint dependency_records_offset; // 0x428
 } CPodFile;
+#pragma pack(pop)
 

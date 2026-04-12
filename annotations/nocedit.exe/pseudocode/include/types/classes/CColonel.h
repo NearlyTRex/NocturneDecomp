@@ -7,6 +7,7 @@
 
 // Structure: CColonel
 // Ghidra size: 0x1fbec (130028 bytes)
+#pragma pack(push, 1)
 typedef struct CColonel {
     CHero base; // 0x0
     int guns_drawn; // 0x1fbd4
@@ -14,4 +15,5 @@ typedef struct CColonel {
     CVector3f head_look_euler; // 0x1fbdc
     float head_look_blend_weight; // 0x1fbe8
 } CColonel;
+#pragma pack(pop)
 

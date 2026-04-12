@@ -6,6 +6,7 @@
 
 // Structure: SCameraViewportState
 // Ghidra size: 0x90 (144 bytes)
+#pragma pack(push, 1)
 typedef struct SCameraViewportState {
     int viewport_center_x; // 0x0
     int viewport_center_y; // 0x4
@@ -28,4 +29,5 @@ typedef struct SCameraViewportState {
     CMatrix3x3i inverse_matrix; // 0x68
     int projection_scale; // 0x8c
 } SCameraViewportState;
+#pragma pack(pop)
 

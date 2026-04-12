@@ -5,6 +5,7 @@
 
 // Structure: SColorBox
 // Ghidra size: 0x28 (40 bytes)
+#pragma pack(push, 1)
 typedef struct SColorBox {
     short avg_red; // 0x0
     short avg_green; // 0x2
@@ -19,4 +20,5 @@ typedef struct SColorBox {
     int start_index; // 0x20
     int pixel_count; // 0x24
 } SColorBox;
+#pragma pack(pop)
 

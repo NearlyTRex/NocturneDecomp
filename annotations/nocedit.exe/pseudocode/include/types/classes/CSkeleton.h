@@ -11,6 +11,7 @@ struct CQuaternion4f;
 
 // Structure: CSkeleton
 // Ghidra size: 0x2982c (170028 bytes)
+#pragma pack(push, 1)
 typedef struct CSkeleton {
     CMotionList motion_list; // 0x0
     char loaded_filename[80]; // 0x28508
@@ -22,4 +23,5 @@ typedef struct CSkeleton {
     struct CVector3f* frame_positions_2; // 0x29378
     CVector3f bone_scales[100]; // 0x2937c
 } CSkeleton;
+#pragma pack(pop)
 

@@ -7,6 +7,7 @@
 
 // Structure: CToss
 // Ghidra size: 0x3e4 (996 bytes)
+#pragma pack(push, 1)
 typedef struct CToss {
     int toss_type; // 0x0
     CKeyFramedModelInstance model; // 0x4
@@ -15,4 +16,5 @@ typedef struct CToss {
     float fuse_timer; // 0x3dc
     uint sfx_handle; // 0x3e0
 } CToss;
+#pragma pack(pop)
 

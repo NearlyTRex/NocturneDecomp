@@ -10,6 +10,7 @@ struct CDemonActor;
 
 // Structure: CGhoul
 // Ghidra size: 0xbf38 (48952 bytes)
+#pragma pack(push, 1)
 typedef struct CGhoul {
     CEnemy base; // 0x0
     uint sfx_handle; // 0xbebc
@@ -30,4 +31,5 @@ typedef struct CGhoul {
     float stuck_timer; // 0xbf28
     CVector3f prev_position; // 0xbf2c
 } CGhoul;
+#pragma pack(pop)
 

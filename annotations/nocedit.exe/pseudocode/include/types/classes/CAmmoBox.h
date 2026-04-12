@@ -8,6 +8,7 @@
 
 // Structure: CAmmoBox
 // Ghidra size: 0x34c (844 bytes)
+#pragma pack(push, 1)
 typedef struct CAmmoBox {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -20,4 +21,5 @@ typedef struct CAmmoBox {
     char open_sound[32]; // 0x328
     int is_sound_playing; // 0x348
 } CAmmoBox;
+#pragma pack(pop)
 

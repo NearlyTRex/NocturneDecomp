@@ -16,6 +16,7 @@ struct SMRGLPrimitiveTriangle;
 
 // Structure: CBodyPart
 // Ghidra size: 0xf30 (3888 bytes)
+#pragma pack(push, 1)
 typedef struct CBodyPart {
     CDemonActor base; // 0x0
     int render_in_background; // 0x158
@@ -45,4 +46,5 @@ typedef struct CBodyPart {
     struct CDemonActor* carried_by_actor; // 0xf28
     int is_visible; // 0xf2c
 } CBodyPart;
+#pragma pack(pop)
 

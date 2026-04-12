@@ -5,6 +5,7 @@
 
 // Structure: CPackedBitmap
 // Ghidra size: 0x24 (36 bytes)
+#pragma pack(push, 1)
 typedef struct CPackedBitmap {
     char filename[20]; // 0x0
     ushort* packed_data; // 0x14
@@ -12,4 +13,5 @@ typedef struct CPackedBitmap {
     int height; // 0x1c
     void** row_pointers; // 0x20
 } CPackedBitmap;
+#pragma pack(pop)
 

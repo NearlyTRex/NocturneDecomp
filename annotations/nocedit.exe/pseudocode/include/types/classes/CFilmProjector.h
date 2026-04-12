@@ -10,6 +10,7 @@ struct CDemonActor;
 
 // Structure: CFilmProjector
 // Ghidra size: 0x3e4 (996 bytes)
+#pragma pack(push, 1)
 typedef struct CFilmProjector {
     CActorDestination base; // 0x0
     CKeyFramedModelInstance model; // 0x1f4
@@ -19,4 +20,5 @@ typedef struct CFilmProjector {
     int prev_dest_state; // 0x3dc
     uint sfx_handle; // 0x3e0
 } CFilmProjector;
+#pragma pack(pop)
 

@@ -26,6 +26,7 @@ struct CPoly;
 
 // Structure: COptimize_vtable
 // Ghidra size: 0x3c (60 bytes)
+#pragma pack(push, 1)
 typedef struct COptimize_vtable {
     COptimize_cleanup* cleanup; // 0x0
     COptimize_setWeldThreshold* setWeldThreshold; // 0x4
@@ -43,4 +44,5 @@ typedef struct COptimize_vtable {
     COptimize_splitToConvex* splitToConvex; // 0x34
     COptimize_addComplexPolygon* addComplexPolygon; // 0x38
 } COptimize_vtable;
+#pragma pack(pop)
 

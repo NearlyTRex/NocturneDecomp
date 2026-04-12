@@ -49,6 +49,7 @@ struct CVector3d;
 
 // Structure: CPoly_vtable
 // Ghidra size: 0x8c (140 bytes)
+#pragma pack(push, 1)
 typedef struct CPoly_vtable {
     CPoly_init* init; // 0x0
     CPoly_copyFrom* copyFrom; // 0x4
@@ -86,4 +87,5 @@ typedef struct CPoly_vtable {
     CPoly_computePlaneDistance* computePlaneDistance; // 0x84
     CPoly_isValid* isValid; // 0x88
 } CPoly_vtable;
+#pragma pack(pop)
 

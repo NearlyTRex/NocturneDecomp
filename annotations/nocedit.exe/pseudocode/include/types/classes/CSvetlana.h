@@ -8,6 +8,7 @@
 
 // Structure: CSvetlana
 // Ghidra size: 0x9f8d8 (653528 bytes)
+#pragma pack(push, 1)
 typedef struct CSvetlana {
     CHero base; // 0x0
     int blades_drawn; // 0x1fbd4
@@ -19,4 +20,5 @@ typedef struct CSvetlana {
     float head_blend_weight; // 0x9f8cc
     int part_indices[2]; // 0x9f8d0
 } CSvetlana;
+#pragma pack(pop)
 

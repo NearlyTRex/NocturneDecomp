@@ -6,6 +6,7 @@
 
 // Structure: SClothVertex
 // Ghidra size: 0x11c (284 bytes)
+#pragma pack(push, 1)
 typedef struct SClothVertex {
     CVector3f position; // 0x0
     CVector3f force; // 0xc
@@ -25,4 +26,5 @@ typedef struct SClothVertex {
     CVector3f bone_positions[3]; // 0xec
     float bone_weights[3]; // 0x110
 } SClothVertex;
+#pragma pack(pop)
 

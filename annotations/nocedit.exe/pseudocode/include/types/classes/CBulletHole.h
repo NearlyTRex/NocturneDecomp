@@ -9,6 +9,7 @@ struct CDemonActor;
 
 // Structure: CBulletHole
 // Ghidra size: 0x3c (60 bytes)
+#pragma pack(push, 1)
 typedef struct CBulletHole {
     CVector3f position; // 0x0
     int active; // 0xc
@@ -18,4 +19,5 @@ typedef struct CBulletHole {
     CVector3f transformed_pos; // 0x24
     CVector3f actor_local_space; // 0x30
 } CBulletHole;
+#pragma pack(pop)
 

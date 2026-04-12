@@ -5,10 +5,12 @@
 
 // Structure: CRect
 // Ghidra size: 0x10 (16 bytes)
+#pragma pack(push, 1)
 typedef struct CRect {
     int left; // 0x0
     int top; // 0x4
     int right; // 0x8
     int bottom; // 0xc
 } CRect;
+#pragma pack(pop)
 

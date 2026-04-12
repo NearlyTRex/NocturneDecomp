@@ -8,6 +8,7 @@ struct STextureAtlasEntry;
 
 // Structure: CCramTex
 // Ghidra size: 0x4c (76 bytes)
+#pragma pack(push, 1)
 typedef struct CCramTex {
     int width; // 0x0
     int height; // 0x4
@@ -29,4 +30,5 @@ typedef struct CCramTex {
     int rotation_applied; // 0x44
     struct STextureAtlasEntry* source_entry_ptr; // 0x48
 } CCramTex;
+#pragma pack(pop)
 

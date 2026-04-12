@@ -12,10 +12,12 @@ struct CDemonActor;
 #include "types/funcdefs/CActorPropertyValidatorFunc.h"
 
 // Union: UActorPropertyCallback
+#pragma pack(push, 1)
 typedef union UActorPropertyCallback {
     CActorPropertyActionFunc* v_action_func;
     CActorPropertyDisplayFunc* v_display_func;
     CActorPropertyValidatorFunc* v_validator_func;
     CActorPropertyFilterFunc* v_filter_func;
 } UActorPropertyCallback;
+#pragma pack(pop)
 

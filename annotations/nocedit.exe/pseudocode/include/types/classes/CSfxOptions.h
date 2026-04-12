@@ -6,6 +6,7 @@
 
 // Structure: CSfxOptions
 // Ghidra size: 0x70 (112 bytes)
+#pragma pack(push, 1)
 typedef struct CSfxOptions {
     int channel_index; // 0x0
     CVector3d position; // 0x4
@@ -23,4 +24,5 @@ typedef struct CSfxOptions {
     int trigger_id; // 0x68
     int dead; // 0x6c
 } CSfxOptions;
+#pragma pack(pop)
 

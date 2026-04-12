@@ -9,6 +9,7 @@ struct CKeyFramedModel;
 
 // Structure: CBulletTrail
 // Ghidra size: 0x24 (36 bytes)
+#pragma pack(push, 1)
 typedef struct CBulletTrail {
     CVector3f start_position; // 0x0
     CVector3f end_position; // 0xc
@@ -16,4 +17,5 @@ typedef struct CBulletTrail {
     float segment_length; // 0x1c
     int frames_remaining; // 0x20
 } CBulletTrail;
+#pragma pack(pop)
 

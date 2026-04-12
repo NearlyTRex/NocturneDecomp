@@ -9,8 +9,10 @@ struct CDemonActor;
 
 // Structure: SPlatformAttachment
 // Ghidra size: 0x34 (52 bytes)
+#pragma pack(push, 1)
 typedef struct SPlatformAttachment {
     struct CDemonActor* actor; // 0x0
     CMatrix3x4f matrix; // 0x4
 } SPlatformAttachment;
+#pragma pack(pop)
 

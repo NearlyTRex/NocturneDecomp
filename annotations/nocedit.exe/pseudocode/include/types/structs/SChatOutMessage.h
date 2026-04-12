@@ -6,6 +6,7 @@
 
 // Structure: SChatOutMessage
 // Ghidra size: 0x114 (276 bytes)
+#pragma pack(push, 1)
 typedef struct SChatOutMessage {
     uint timestamp; // 0x0
     uint sequence_number; // 0x4
@@ -13,4 +14,5 @@ typedef struct SChatOutMessage {
     uint player_timestamps[2]; // 0xc
     char message[256]; // 0x14
 } SChatOutMessage;
+#pragma pack(pop)
 

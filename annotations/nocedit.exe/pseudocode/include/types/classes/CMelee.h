@@ -6,6 +6,7 @@
 
 // Structure: CMelee
 // Ghidra size: 0x6cc (1740 bytes)
+#pragma pack(push, 1)
 typedef struct CMelee {
     CWeapon base; // 0x0
     int allowed_attack_types; // 0x578
@@ -22,4 +23,5 @@ typedef struct CMelee {
     char swing_hit_character_sound[100]; // 0x604
     char hit_other_sound[100]; // 0x668
 } CMelee;
+#pragma pack(pop)
 

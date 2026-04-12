@@ -6,6 +6,7 @@
 
 // Structure: CExternalRenderer
 // Ghidra size: 0x1de8 (7656 bytes)
+#pragma pack(push, 1)
 typedef struct CExternalRenderer {
     void* buffer_ptr; // 0x0
     char dead1[252]; // 0x4
@@ -19,4 +20,5 @@ typedef struct CExternalRenderer {
     char dead3[7032]; // 0x250
     char renderer_dll_name[32]; // 0x1dc8
 } CExternalRenderer;
+#pragma pack(pop)
 

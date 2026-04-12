@@ -7,6 +7,7 @@
 
 // Structure: CConveyor
 // Ghidra size: 0x860 (2144 bytes)
+#pragma pack(push, 1)
 typedef struct CConveyor {
     CPlatform base; // 0x0
     CVector3f size; // 0x72c
@@ -16,4 +17,5 @@ typedef struct CConveyor {
     int state; // 0x80c
     char actor_class[80]; // 0x810
 } CConveyor;
+#pragma pack(pop)
 

@@ -8,6 +8,7 @@
 
 // Structure: CTrigger
 // Ghidra size: 0x370 (880 bytes)
+#pragma pack(push, 1)
 typedef struct CTrigger {
     CDemonActor base; // 0x0
     float test_radius; // 0x158
@@ -33,4 +34,5 @@ typedef struct CTrigger {
     struct CDemonActor* cached_actor; // 0x368
     float damage_cooldown; // 0x36c
 } CTrigger;
+#pragma pack(pop)
 

@@ -10,6 +10,7 @@ struct CDemonActor;
 
 // Structure: CTentacle
 // Ghidra size: 0xbf2c (48940 bytes)
+#pragma pack(push, 1)
 typedef struct CTentacle {
     CEnemy base; // 0x0
     float wait_timer; // 0xbebc
@@ -19,4 +20,5 @@ typedef struct CTentacle {
     CMatrix3x4f target_matrix; // 0xbecc
     CMatrix3x4f prev_target_matrix; // 0xbefc
 } CTentacle;
+#pragma pack(pop)
 

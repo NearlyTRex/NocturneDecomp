@@ -11,6 +11,7 @@ struct CWeapon_full_vtable;
 #include "system/basetypes.h"
 
 // Union: UActorVTable
+#pragma pack(push, 1)
 typedef union UActorVTable {
     struct CDemonActor_vtable* _ub;
     struct CCharacter_full_vtable* _uc;
@@ -18,4 +19,5 @@ typedef union UActorVTable {
     struct CHero_full_vtable* _uh;
     struct CWeapon_full_vtable* _uw;
 } UActorVTable;
+#pragma pack(pop)
 

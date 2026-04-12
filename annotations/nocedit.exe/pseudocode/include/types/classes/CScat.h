@@ -11,6 +11,7 @@ struct CWeapon;
 
 // Structure: CScat
 // Ghidra size: 0x1fc00 (130048 bytes)
+#pragma pack(push, 1)
 typedef struct CScat {
     CHero base; // 0x0
     int guns_drawn; // 0x1fbd4
@@ -23,4 +24,5 @@ typedef struct CScat {
     struct CDemonActor* aim_target; // 0x1fbf8
     int aim_converged; // 0x1fbfc
 } CScat;
+#pragma pack(pop)
 

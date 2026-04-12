@@ -6,6 +6,7 @@
 
 // Structure: SCurtainMeshData
 // Ghidra size: 0x493ec (300012 bytes)
+#pragma pack(push, 1)
 typedef struct SCurtainMeshData {
     float inv_delta_time; // 0x0
     int grid_cols; // 0x4
@@ -14,4 +15,5 @@ typedef struct SCurtainMeshData {
     SMRGLPrimitiveQuad front_faces[2000]; // 0x2eec
     SMRGLPrimitiveQuad back_faces[2000]; // 0x2616c
 } SCurtainMeshData;
+#pragma pack(pop)
 

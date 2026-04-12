@@ -7,8 +7,10 @@
 
 // Structure: SMRGLPrimitiveQuad
 // Ghidra size: 0x48 (72 bytes)
+#pragma pack(push, 1)
 typedef struct SMRGLPrimitiveQuad {
     SMRGLHeaderPrimitive base; // 0x0
     SMRGLVertex vertices[4]; // 0x18
 } SMRGLPrimitiveQuad;
+#pragma pack(pop)
 

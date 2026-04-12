@@ -12,6 +12,7 @@ struct CDemonActor;
 
 // Structure: CVampireBoss
 // Ghidra size: 0xce920 (846112 bytes)
+#pragma pack(push, 1)
 typedef struct CVampireBoss {
     CEnemy base; // 0x0
     CDeformableModelInstance model; // 0xbebc
@@ -33,4 +34,5 @@ typedef struct CVampireBoss {
     struct CDemonActor* way_point_3; // 0xce918
     int follow_result; // 0xce91c
 } CVampireBoss;
+#pragma pack(pop)
 

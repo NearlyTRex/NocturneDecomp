@@ -17,6 +17,7 @@ struct CPlatform;
 
 // Structure: CDemonActor
 // Ghidra size: 0x158 (344 bytes)
+#pragma pack(push, 1)
 typedef struct CDemonActor {
     char actor_name[32]; // 0x0
     CLocation location; // 0x20
@@ -49,4 +50,5 @@ typedef struct CDemonActor {
     struct CDemonActor* prev_actor; // 0x150
     UActorVTable vtable; // 0x154
 } CDemonActor;
+#pragma pack(pop)
 

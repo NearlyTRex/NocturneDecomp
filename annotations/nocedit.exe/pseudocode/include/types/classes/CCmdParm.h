@@ -6,6 +6,7 @@
 
 // Structure: CCmdParm
 // Ghidra size: 0x328 (808 bytes)
+#pragma pack(push, 1)
 typedef struct CCmdParm {
     char prefix_text[100]; // 0x0
     char parsed_value[400]; // 0x64
@@ -14,4 +15,5 @@ typedef struct CCmdParm {
     char modifier_string[100]; // 0x25c
     char default_value[104]; // 0x2c0
 } CCmdParm;
+#pragma pack(pop)
 

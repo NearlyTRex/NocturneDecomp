@@ -6,6 +6,7 @@
 
 // Structure: SSoftwareEdge
 // Ghidra size: 0x48 (72 bytes)
+#pragma pack(push, 1)
 typedef struct SSoftwareEdge {
     SHardwareEdge base; // 0x0
     int color_current; // 0x38
@@ -13,4 +14,5 @@ typedef struct SSoftwareEdge {
     int alpha_current; // 0x40
     int alpha_gradient; // 0x44
 } SSoftwareEdge;
+#pragma pack(pop)
 

@@ -7,6 +7,7 @@
 
 // Structure: SRenderBufferEntry
 // Ghidra size: 0x118 (280 bytes)
+#pragma pack(push, 1)
 typedef struct SRenderBufferEntry {
     int vertex_count; // 0x0
     SRenderVertex vertices[4]; // 0x4
@@ -15,4 +16,5 @@ typedef struct SRenderBufferEntry {
     int blend_mode; // 0x110
     int min_z_value; // 0x114
 } SRenderBufferEntry;
+#pragma pack(pop)
 

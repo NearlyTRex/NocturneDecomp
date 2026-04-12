@@ -8,6 +8,7 @@ struct _FILE;
 
 // Structure: CFileBitStream
 // Ghidra size: 0x2c (44 bytes)
+#pragma pack(push, 1)
 typedef struct CFileBitStream {
     struct _FILE* file_handle; // 0x0
     char* buffer; // 0x4
@@ -21,4 +22,5 @@ typedef struct CFileBitStream {
     int stream_length; // 0x24
     int bytes_remaining; // 0x28
 } CFileBitStream;
+#pragma pack(pop)
 

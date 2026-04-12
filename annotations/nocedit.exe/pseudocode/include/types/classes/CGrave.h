@@ -7,6 +7,7 @@
 
 // Structure: CGrave
 // Ghidra size: 0x3b0 (944 bytes)
+#pragma pack(push, 1)
 typedef struct CGrave {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -18,4 +19,5 @@ typedef struct CGrave {
     char start_condition[100]; // 0x2e8
     char start_sound[100]; // 0x34c
 } CGrave;
+#pragma pack(pop)
 

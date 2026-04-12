@@ -14,6 +14,7 @@
 
 // Structure: CMansionPuzzleCircle
 // Ghidra size: 0x1514 (5396 bytes)
+#pragma pack(push, 1)
 typedef struct CMansionPuzzleCircle {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance panel_model; // 0x158
@@ -34,4 +35,5 @@ typedef struct CMansionPuzzleCircle {
     float panel_radius; // 0x150c
     float bbox_height; // 0x1510
 } CMansionPuzzleCircle;
+#pragma pack(pop)
 

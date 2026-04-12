@@ -9,6 +9,7 @@ struct CDemonActor;
 
 // Structure: CHostage
 // Ghidra size: 0x1faf0 (129776 bytes)
+#pragma pack(push, 1)
 typedef struct CHostage {
     CNPC base; // 0x0
     float rescue_distance; // 0x1f708
@@ -36,4 +37,5 @@ typedef struct CHostage {
     struct CDemonActor* grabber; // 0x1fae8
     float grabber_flee_timer; // 0x1faec
 } CHostage;
+#pragma pack(pop)
 

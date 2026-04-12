@@ -7,6 +7,7 @@
 
 // Structure: CAnvil
 // Ghidra size: 0x344 (836 bytes)
+#pragma pack(push, 1)
 typedef struct CAnvil {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -15,4 +16,5 @@ typedef struct CAnvil {
     int triggered; // 0x33c
     float yvel; // 0x340
 } CAnvil;
+#pragma pack(pop)
 

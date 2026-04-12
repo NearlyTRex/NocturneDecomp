@@ -6,6 +6,7 @@
 
 // Structure: CDemonLight
 // Ghidra size: 0x2fac (12204 bytes)
+#pragma pack(push, 1)
 typedef struct CDemonLight {
     CDemonCamera base; // 0x0
     int left_extent[240]; // 0x14c8
@@ -38,4 +39,5 @@ typedef struct CDemonLight {
     int transform_scale_factor; // 0x2fa4, fixed point
     float volumetric_intensity; // 0x2fa8
 } CDemonLight;
+#pragma pack(pop)
 

@@ -7,6 +7,7 @@
 
 // Structure: CFireball
 // Ghidra size: 0x9c (156 bytes)
+#pragma pack(push, 1)
 typedef struct CFireball {
     CParticle base; // 0x0
     int timer; // 0x38
@@ -20,4 +21,5 @@ typedef struct CFireball {
     uint sfx_handle; // 0x58
     CDemonGlobe light_globe; // 0x5c
 } CFireball;
+#pragma pack(pop)
 

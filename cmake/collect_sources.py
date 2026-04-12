@@ -134,10 +134,23 @@ def collect_module(module_dir, src_root, rules):
     return sorted(winners)
 
 
+def _write_module(out_dir, name, winners, modules):
+    out_path = os.path.join(out_dir, 'sources_%s.txt' % name)
+    with open(out_path, 'w') as f:
+        for p in winners:
+            f.write(p + '\n')
+    modules.append(name)
+    print('  %-12s %5d files  -> %s' % (name, len(winners), out_path))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--src-root', required=True,
-                    help='pseudocode/src directory')
+                    help='pseudocode/src directory (auto-generated modules)')
+    ap.add_argument('--module', action='append', default=[],
+                    help='standalone module directory outside src/ '
+                         '(e.g. pseudocode/main, pseudocode/checks). '
+                         'Module name = basename of the given path. Repeatable.')
     ap.add_argument('--out-dir', required=True,
                     help='where to write sources_<module>.txt files')
     ap.add_argument('--skip-list', default=None,
@@ -158,6 +171,8 @@ def main():
     excluded = set(args.exclude_module)
 
     modules = []
+
+    # Auto-generated modules under src/
     for name in sorted(os.listdir(src_root)):
         if name in excluded:
             continue
@@ -165,12 +180,22 @@ def main():
         if not os.path.isdir(full):
             continue
         winners = collect_module(full, src_root, rules)
-        out_path = os.path.join(args.out_dir, 'sources_%s.txt' % name)
-        with open(out_path, 'w') as f:
-            for p in winners:
-                f.write(p + '\n')
-        modules.append(name)
-        print('  %-12s %5d files  -> %s' % (name, len(winners), out_path))
+        _write_module(args.out_dir, name, winners, modules)
+
+    # Standalone modules passed explicitly — name = basename of the dir.
+    for raw in args.module:
+        full = os.path.abspath(raw)
+        name = os.path.basename(full.rstrip('/'))
+        if not name or name in excluded:
+            continue
+        if not os.path.isdir(full):
+            print('  %-12s SKIPPED (not found: %s)' % (name, full))
+            continue
+        if name in modules:
+            print('error: duplicate module name %r' % name, file=sys.stderr)
+            return 2
+        winners = collect_module(full, os.path.dirname(full), rules)
+        _write_module(args.out_dir, name, winners, modules)
 
     if args.modules_file:
         with open(args.modules_file, 'w') as f:

@@ -18,6 +18,7 @@ struct _ostream;
 
 // Structure: CCodec_vtable
 // Ghidra size: 0x24 (36 bytes)
+#pragma pack(push, 1)
 typedef struct CCodec_vtable {
     CCodec_dtor* dtor; // 0x0
     CCodec_init* init; // 0x4
@@ -29,4 +30,5 @@ typedef struct CCodec_vtable {
     CCodec_processFiles* processFiles; // 0x1c
     CCodec_finalizeBuffer* finalizeBuffer; // 0x20
 } CCodec_vtable;
+#pragma pack(pop)
 

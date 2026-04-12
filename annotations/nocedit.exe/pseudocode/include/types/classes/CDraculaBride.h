@@ -8,6 +8,7 @@
 
 // Structure: CDraculaBride
 // Ghidra size: 0xbfec (49132 bytes)
+#pragma pack(push, 1)
 typedef struct CDraculaBride {
     CEnemy base; // 0x0
     int part_indices[9]; // 0xbebc
@@ -24,4 +25,5 @@ typedef struct CDraculaBride {
     int exploded; // 0xbfe4
     float fade_timer; // 0xbfe8
 } CDraculaBride;
+#pragma pack(pop)
 

@@ -8,6 +8,7 @@
 
 // Structure: SNetPlayer
 // Ghidra size: 0x78 (120 bytes)
+#pragma pack(push, 1)
 typedef struct SNetPlayer {
     char name[20]; // 0x0
     EHeroType hero_number; // 0x14
@@ -25,4 +26,5 @@ typedef struct SNetPlayer {
     int sim_frame_index; // 0x48
     SPlayerInput player_input; // 0x4c
 } SNetPlayer;
+#pragma pack(pop)
 

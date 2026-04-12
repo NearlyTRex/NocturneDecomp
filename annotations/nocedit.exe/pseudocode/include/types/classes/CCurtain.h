@@ -10,6 +10,7 @@
 
 // Structure: CCurtain
 // Ghidra size: 0x65b38 (416568 bytes)
+#pragma pack(push, 1)
 typedef struct CCurtain {
     CDemonActor base; // 0x0
     CVector3f curtain_size; // 0x158
@@ -37,4 +38,5 @@ typedef struct CCurtain {
     int is_visible; // 0x65b30
     int needs_update; // 0x65b34
 } CCurtain;
+#pragma pack(pop)
 

@@ -8,6 +8,7 @@
 
 // Structure: CMarquee
 // Ghidra size: 0x1bc (444 bytes)
+#pragma pack(push, 1)
 typedef struct CMarquee {
     CDemonActor base; // 0x0
     char course_name[32]; // 0x158
@@ -20,4 +21,5 @@ typedef struct CMarquee {
     CCourse course; // 0x1a4
     char dead[12]; // 0x1b0
 } CMarquee;
+#pragma pack(pop)
 

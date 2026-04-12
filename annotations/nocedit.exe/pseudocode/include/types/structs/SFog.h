@@ -7,6 +7,7 @@
 
 // Structure: SFog
 // Ghidra size: 0x24 (36 bytes)
+#pragma pack(push, 1)
 typedef struct SFog {
     CColor3i color_index; // 0x0
     CVector3f scroll; // 0xc
@@ -14,4 +15,5 @@ typedef struct SFog {
     float density_multiplier; // 0x1c
     float temperature; // 0x20
 } SFog;
+#pragma pack(pop)
 

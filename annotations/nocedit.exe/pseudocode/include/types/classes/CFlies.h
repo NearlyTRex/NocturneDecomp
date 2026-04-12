@@ -8,6 +8,7 @@
 
 // Structure: CFlies
 // Ghidra size: 0x2a20 (10784 bytes)
+#pragma pack(push, 1)
 typedef struct CFlies {
     CDemonActor base; // 0x0
     CVector3f box_size; // 0x158
@@ -20,4 +21,5 @@ typedef struct CFlies {
     int dead; // 0x2a18
     int is_visible; // 0x2a1c
 } CFlies;
+#pragma pack(pop)
 

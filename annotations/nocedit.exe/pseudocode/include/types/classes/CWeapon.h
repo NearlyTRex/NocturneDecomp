@@ -9,6 +9,7 @@
 
 // Structure: CWeapon
 // Ghidra size: 0x578 (1400 bytes)
+#pragma pack(push, 1)
 typedef struct CWeapon {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -31,4 +32,5 @@ typedef struct CWeapon {
     float sim_timer; // 0x570
     int is_rendered; // 0x574
 } CWeapon;
+#pragma pack(pop)
 

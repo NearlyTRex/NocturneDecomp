@@ -10,6 +10,7 @@ struct _FILE;
 
 // Structure: CSfxSample
 // Ghidra size: 0x180 (384 bytes)
+#pragma pack(push, 1)
 typedef struct CSfxSample {
     CSampleInfo sample_info; // 0x0
     short* sample_data; // 0x120
@@ -29,4 +30,5 @@ typedef struct CSfxSample {
     int locked_offset; // 0x178
     int locked_length; // 0x17c
 } CSfxSample;
+#pragma pack(pop)
 

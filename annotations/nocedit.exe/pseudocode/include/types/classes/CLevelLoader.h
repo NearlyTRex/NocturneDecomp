@@ -6,6 +6,7 @@
 
 // Structure: CLevelLoader
 // Ghidra size: 0x130 (304 bytes)
+#pragma pack(push, 1)
 typedef struct CLevelLoader {
     int current_frame; // 0x0
     int total_frames; // 0x4
@@ -19,4 +20,5 @@ typedef struct CLevelLoader {
     int viewport_height; // 0x120
     CColor3i color; // 0x124
 } CLevelLoader;
+#pragma pack(pop)
 

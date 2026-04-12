@@ -8,6 +8,7 @@
 
 // Structure: CMoloch
 // Ghidra size: 0x22b98 (142232 bytes)
+#pragma pack(push, 1)
 typedef struct CMoloch {
     CHero base; // 0x0
     CDeformableModelInstance model; // 0x1fbd4
@@ -22,4 +23,5 @@ typedef struct CMoloch {
     int dead2; // 0x22b90
     int dead3; // 0x22b94
 } CMoloch;
+#pragma pack(pop)
 

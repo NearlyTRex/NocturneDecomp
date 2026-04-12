@@ -7,6 +7,7 @@
 
 // Structure: SColorQuantMapper
 // Ghidra size: 0x8308 (33544 bytes)
+#pragma pack(push, 1)
 typedef struct SColorQuantMapper {
     int num_palette_entries; // 0x0
     double sort_keys[256][4]; // 0x4
@@ -15,4 +16,5 @@ typedef struct SColorQuantMapper {
     SColorQuantBox boxes[256]; // 0x4008
     char output_palette[768]; // 0x8008
 } SColorQuantMapper;
+#pragma pack(pop)
 

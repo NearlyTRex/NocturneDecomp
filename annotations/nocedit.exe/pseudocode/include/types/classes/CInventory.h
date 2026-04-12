@@ -11,6 +11,7 @@ struct CWeapon;
 
 // Structure: CInventory
 // Ghidra size: 0x460 (1120 bytes)
+#pragma pack(push, 1)
 typedef struct CInventory {
     float battery_charge; // 0x0
     struct CDemonActor* owner; // 0x4
@@ -32,4 +33,5 @@ typedef struct CInventory {
     struct CAmmo* ammo_ptr; // 0x458
     int cached_ammo_count; // 0x45c
 } CInventory;
+#pragma pack(pop)
 

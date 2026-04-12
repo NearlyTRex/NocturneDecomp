@@ -5,6 +5,7 @@
 
 // Structure: CProceduralTexture
 // Ghidra size: 0x10608 (67080 bytes)
+#pragma pack(push, 1)
 typedef struct CProceduralTexture {
     int width; // 0x0
     int height; // 0x4
@@ -13,4 +14,5 @@ typedef struct CProceduralTexture {
     float wave_y[128]; // 0x10208
     float wave_radius[128]; // 0x10408
 } CProceduralTexture;
+#pragma pack(pop)
 

@@ -6,6 +6,7 @@
 
 // Structure: SShapeEditorPolygon
 // Ghidra size: 0x184 (388 bytes)
+#pragma pack(push, 1)
 typedef struct SShapeEditorPolygon {
     uint polygon_type; // 0x0
     char texture_name[80]; // 0x4
@@ -20,4 +21,5 @@ typedef struct SShapeEditorPolygon {
     uint material_id; // 0x17c
     uint material_id_backup; // 0x180
 } SShapeEditorPolygon;
+#pragma pack(pop)
 

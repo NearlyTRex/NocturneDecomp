@@ -11,6 +11,7 @@ struct SExpandedEdge;
 
 // Structure: CComplexPolygon
 // Ghidra size: 0x34 (52 bytes)
+#pragma pack(push, 1)
 typedef struct CComplexPolygon {
     int polygon_count; // 0x0
     struct CPoly** polygon_list; // 0x4
@@ -21,4 +22,5 @@ typedef struct CComplexPolygon {
     int expanded_edge_count; // 0x2c
     struct SExpandedEdge* expanded_edges; // 0x30
 } CComplexPolygon;
+#pragma pack(pop)
 

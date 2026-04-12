@@ -8,6 +8,7 @@
 
 // Structure: CLZWCompress
 // Ghidra size: 0x38 (56 bytes)
+#pragma pack(push, 1)
 typedef struct CLZWCompress {
     CCodec base; // 0x0
     CLZWDictionary dictionary; // 0x4
@@ -18,4 +19,5 @@ typedef struct CLZWCompress {
     int current_code; // 0x30
     int prev_code; // 0x34
 } CLZWCompress;
+#pragma pack(pop)
 

@@ -9,6 +9,7 @@
 // =============================================================================
 
 // Structure: _stat
+#pragma pack(push, 1)
 typedef struct _stat {
     int _st_dev;
     uint _st_ino;
@@ -29,4 +30,5 @@ typedef struct _stat {
     uchar _st_originatingNameSpace;
     uchar _st_name[13];
 } _stat;
+#pragma pack(pop)
 

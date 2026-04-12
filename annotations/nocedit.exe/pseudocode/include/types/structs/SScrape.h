@@ -6,6 +6,7 @@
 
 // Structure: SScrape
 // Ghidra size: 0x34 (52 bytes)
+#pragma pack(push, 1)
 typedef struct SScrape {
     CVector3f local_position; // 0x0
     CVector3f transformed_position; // 0xc
@@ -13,4 +14,5 @@ typedef struct SScrape {
     float raytrace_intersection; // 0x24
     CVector3f raytrace_normal; // 0x28
 } SScrape;
+#pragma pack(pop)
 

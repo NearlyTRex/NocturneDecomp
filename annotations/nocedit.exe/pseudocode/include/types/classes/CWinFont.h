@@ -8,6 +8,7 @@
 
 // Structure: CWinFont
 // Ghidra size: 0x13c (316 bytes)
+#pragma pack(push, 1)
 typedef struct CWinFont {
     CFont base; // 0x0
     HDC device_context_handle; // 0x4
@@ -26,4 +27,5 @@ typedef struct CWinFont {
     int y_offset1; // 0x134
     int y_offset2; // 0x138
 } CWinFont;
+#pragma pack(pop)
 

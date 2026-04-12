@@ -10,6 +10,7 @@
 
 // Structure: CEventList
 // Ghidra size: 0x514c (20812 bytes)
+#pragma pack(push, 1)
 typedef struct CEventList {
     SEventNameBlock events; // 0x0
     SEventNameBlock current_events; // 0xc84
@@ -20,4 +21,5 @@ typedef struct CEventList {
     SActorVarBlock actor_vars; // 0x34e8
     SSfxBlock sfx_handles; // 0x3ac8
 } CEventList;
+#pragma pack(pop)
 

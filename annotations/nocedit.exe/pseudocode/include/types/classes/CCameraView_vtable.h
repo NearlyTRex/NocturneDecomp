@@ -17,6 +17,7 @@ struct SProjectedVertex;
 
 // Structure: CCameraView_vtable
 // Ghidra size: 0x14 (20 bytes)
+#pragma pack(push, 1)
 typedef struct CCameraView_vtable {
     CCameraView_dtor* dtor; // 0x0
     CCameraView_setupPerspectiveAndFog* setupPerspectiveAndFog; // 0x4
@@ -24,4 +25,5 @@ typedef struct CCameraView_vtable {
     CCameraView_testVisibility* testVisibility; // 0xc
     CCameraView_saveAlphaTransform* saveAlphaTransform; // 0x10
 } CCameraView_vtable;
+#pragma pack(pop)
 

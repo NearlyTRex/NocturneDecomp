@@ -7,6 +7,7 @@
 
 // Structure: SNetPacket_PlayerState
 // Ghidra size: 0x29 (41 bytes)
+#pragma pack(push, 1)
 typedef struct SNetPacket_PlayerState {
     SNetPacketHeader header; // 0x0
     int timestamp; // 0x5
@@ -15,4 +16,5 @@ typedef struct SNetPacket_PlayerState {
     EHeroType hero_number; // 0x21
     int aim_mode; // 0x25
 } SNetPacket_PlayerState;
+#pragma pack(pop)
 

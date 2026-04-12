@@ -11,6 +11,7 @@ struct CActorDestination;
 
 // Structure: CCryptVessel
 // Ghidra size: 0x7f4 (2036 bytes)
+#pragma pack(push, 1)
 typedef struct CCryptVessel {
     CDemonActor base; // 0x0
     CKeyFramedModelInstance model; // 0x158
@@ -33,4 +34,5 @@ typedef struct CCryptVessel {
     float water_anim_timer; // 0x7ec
     int puzzle_complete; // 0x7f0
 } CCryptVessel;
+#pragma pack(pop)
 

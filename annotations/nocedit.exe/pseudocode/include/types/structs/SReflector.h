@@ -7,6 +7,7 @@
 
 // Structure: SReflector
 // Ghidra size: 0x60 (96 bytes)
+#pragma pack(push, 1)
 typedef struct SReflector {
     CVector3f start_position; // 0x0
     CVector3f target_position; // 0xc
@@ -17,4 +18,5 @@ typedef struct SReflector {
     int dead; // 0x58
     int panel_index; // 0x5c
 } SReflector;
+#pragma pack(pop)
 

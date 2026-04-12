@@ -5,6 +5,7 @@
 
 // Structure: CLodEdge
 // Ghidra size: 0xf0 (240 bytes)
+#pragma pack(push, 1)
 typedef struct CLodEdge {
     int vertex_idx_1; // 0x0
     int vertex_idx_2; // 0x4
@@ -17,4 +18,5 @@ typedef struct CLodEdge {
     int adjacent_tri_count; // 0x24
     int adjacent_tri_indices[50]; // 0x28
 } CLodEdge;
+#pragma pack(pop)
 

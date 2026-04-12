@@ -8,6 +8,7 @@
 
 // Structure: CFlame
 // Ghidra size: 0x2a4 (676 bytes)
+#pragma pack(push, 1)
 typedef struct CFlame {
     CDemonActor base; // 0x0
     CVector3f flame_size; // 0x158
@@ -29,4 +30,5 @@ typedef struct CFlame {
     int enemy_burn_index; // 0x29c
     int render_corona; // 0x2a0
 } CFlame;
+#pragma pack(pop)
 

@@ -12,6 +12,7 @@ struct SVoxelCubeMetadata;
 
 // Structure: CDemonRaytrace
 // Ghidra size: 0x6c (108 bytes)
+#pragma pack(push, 1)
 typedef struct CDemonRaytrace {
     int rendering_mode; // 0x0
     int triangle_count; // 0x4
@@ -27,4 +28,5 @@ typedef struct CDemonRaytrace {
     CVector3i grid_bounds_min; // 0x54
     CVector3i grid_bounds_max; // 0x60
 } CDemonRaytrace;
+#pragma pack(pop)
 

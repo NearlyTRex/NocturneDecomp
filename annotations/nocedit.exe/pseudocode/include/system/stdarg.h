@@ -8,9 +8,11 @@
 // =============================================================================
 
 // Structure: va_list_t
+#pragma pack(push, 1)
 typedef struct va_list_t {
     char* value[1];
 } va_list_t;
+#pragma pack(pop)
 
 // Variadic argument macros for va_list_t
 // Ghidra produces uncompilable va_list_t initialization patterns in variadic

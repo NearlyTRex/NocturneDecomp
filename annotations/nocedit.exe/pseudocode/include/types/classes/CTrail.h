@@ -9,6 +9,7 @@ struct SMRGLTextureBasic;
 
 // Structure: CTrail
 // Ghidra size: 0x24 (36 bytes)
+#pragma pack(push, 1)
 typedef struct CTrail {
     CVector3f position; // 0x0
     float size; // 0xc
@@ -18,4 +19,5 @@ typedef struct CTrail {
     float initial_alpha; // 0x1c
     struct SMRGLTextureBasic* texture_ptr; // 0x20
 } CTrail;
+#pragma pack(pop)
 

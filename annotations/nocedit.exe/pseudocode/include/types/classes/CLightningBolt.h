@@ -6,6 +6,7 @@
 
 // Structure: CLightningBolt
 // Ghidra size: 0x2c (44 bytes)
+#pragma pack(push, 1)
 typedef struct CLightningBolt {
     int mode; // 0x0
     CVector3f start_position; // 0x4
@@ -15,4 +16,5 @@ typedef struct CLightningBolt {
     CVector3f end_position; // 0x1c
     float end_spread; // 0x28
 } CLightningBolt;
+#pragma pack(pop)
 

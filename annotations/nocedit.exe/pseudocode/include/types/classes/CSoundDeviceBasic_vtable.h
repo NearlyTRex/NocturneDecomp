@@ -13,6 +13,7 @@ struct CSoundDevice;
 
 // Structure: CSoundDeviceBasic_vtable
 // Ghidra size: 0x14 (20 bytes)
+#pragma pack(push, 1)
 typedef struct CSoundDeviceBasic_vtable {
     CSoundDevice_close* close; // 0x0
     CSoundDevice_start* start; // 0x4
@@ -20,4 +21,5 @@ typedef struct CSoundDeviceBasic_vtable {
     CSoundDevice_setMode* setMode; // 0xc
     CSoundDevice_poll* poll; // 0x10
 } CSoundDeviceBasic_vtable;
+#pragma pack(pop)
 

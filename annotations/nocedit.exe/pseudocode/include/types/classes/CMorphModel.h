@@ -11,6 +11,7 @@ struct SMorphPoint;
 
 // Structure: CMorphModel
 // Ghidra size: 0x608 (1544 bytes)
+#pragma pack(push, 1)
 typedef struct CMorphModel {
     int part_count; // 0x0
     SMorphPart parts[5]; // 0x4
@@ -21,4 +22,5 @@ typedef struct CMorphModel {
     int num_textures; // 0x64
     SMRGLTextureLod textures[20]; // 0x68
 } CMorphModel;
+#pragma pack(pop)
 

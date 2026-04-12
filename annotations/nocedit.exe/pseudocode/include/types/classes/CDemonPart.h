@@ -10,6 +10,7 @@ struct SSurfacePlane;
 
 // Structure: CDemonPart
 // Ghidra size: 0x388 (904 bytes)
+#pragma pack(push, 1)
 typedef struct CDemonPart {
     char format[32]; // 0x0
     int vertex_count; // 0x20
@@ -28,4 +29,5 @@ typedef struct CDemonPart {
     CVector3f bbox2_float; // 0x378
     int current_vertex_group; // 0x384
 } CDemonPart;
+#pragma pack(pop)
 

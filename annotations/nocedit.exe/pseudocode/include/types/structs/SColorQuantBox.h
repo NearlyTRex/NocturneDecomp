@@ -5,6 +5,7 @@
 
 // Structure: SColorQuantBox
 // Ghidra size: 0x40 (64 bytes)
+#pragma pack(push, 1)
 typedef struct SColorQuantBox {
     short avg_red; // 0x0
     short avg_green; // 0x2
@@ -19,4 +20,5 @@ typedef struct SColorQuantBox {
     int start_index; // 0x38
     int count; // 0x3c
 } SColorQuantBox;
+#pragma pack(pop)
 

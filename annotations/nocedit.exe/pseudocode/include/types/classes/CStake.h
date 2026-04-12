@@ -6,9 +6,11 @@
 
 // Structure: CStake
 // Ghidra size: 0x260 (608 bytes)
+#pragma pack(push, 1)
 typedef struct CStake {
     int active; // 0x0
     CBox physics_box; // 0x4
     float ground_height; // 0x25c
 } CStake;
+#pragma pack(pop)
 

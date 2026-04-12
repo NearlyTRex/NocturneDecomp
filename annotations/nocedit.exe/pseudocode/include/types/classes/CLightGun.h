@@ -6,6 +6,7 @@
 
 // Structure: CLightGun
 // Ghidra size: 0x590 (1424 bytes)
+#pragma pack(push, 1)
 typedef struct CLightGun {
     CWeapon base; // 0x0
     int fire_flash_pending; // 0x578
@@ -15,4 +16,5 @@ typedef struct CLightGun {
     int hit_enemy; // 0x588
     float beam_length; // 0x58c
 } CLightGun;
+#pragma pack(pop)
 

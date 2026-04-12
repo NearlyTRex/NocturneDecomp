@@ -10,6 +10,7 @@
 
 // Structure: CWaterActor
 // Ghidra size: 0x2b238 (176696 bytes)
+#pragma pack(push, 1)
 typedef struct CWaterActor {
     CDemonActor base; // 0x0
     CVector3f size; // 0x158
@@ -37,4 +38,5 @@ typedef struct CWaterActor {
     float base_y; // 0x2b230
     int primitive_count; // 0x2b234
 } CWaterActor;
+#pragma pack(pop)
 
