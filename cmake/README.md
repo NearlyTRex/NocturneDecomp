@@ -1,0 +1,55 @@
+# CMake Build
+
+Two top-level targets drive the build:
+
+| Target            | What it does                                         | Use case                    |
+|-------------------|------------------------------------------------------|-----------------------------|
+| `nocturne_check`  | `clang++ -fsyntax-only` on every resolved source     | CI, reproduces 100% status  |
+| `nocturne`        | Full codegen, links into the game executable        | Running the reconstructed game |
+
+## Quick start
+
+```sh
+# Syntax-only (reproduces the clang++ verification milestone)
+cmake --preset check-linux
+cmake --build --preset check-linux
+
+# Full executable (32-bit Linux ELF, links against modern libc/libstdc++)
+cmake --preset exe-linux
+cmake --build --preset exe-linux
+```
+
+## Source priority
+
+Per-function directories under `annotations/nocedit.exe/pseudocode/src/<module>/<file>.{c,cpp}/`
+may contain multiple variants for the same function. `cmake/collect_sources.py`
+picks exactly one, with this priority (highest first):
+
+1. `*.keep.cpp` / `*.keep.c` — hand-written overrides
+2. `*.mmx.cpp`  / `*.mmx.c`  — inline-assembly MMX rewrites
+3. `*.byval.cpp`/ `*.byval.c`— pass-by-value variants
+4. `*.cpp`     / `*.c`       — raw decompiler output
+
+Companion files (currently `*.chunked.{cpp,c}`) are analysis artifacts and
+are never compiled.
+
+## Excluded modules
+
+`entry/` and `crt/` are skipped:
+
+- `entry/entry.c` is replaced by the hand-written `src/main/main.cpp`.
+- `crt/*` is the decompiled Watcom C runtime, unsuitable for a modern target.
+  Linking uses system libc and libstdc++ instead, bridged via `shims/crt.cpp`.
+
+## Excluding individual files
+
+Edit `cmake/skip_list.txt`. See the comment block at the top of that file for
+rule formats. Changes trigger a reconfigure automatically.
+
+## Toolchains
+
+- `cmake/toolchains/linux-i686.cmake` — clang/clang++ with `-m32 -mmmx -fasm-blocks`.
+  Flags mirror `scripts/Python/ghidra_annotations/annotations/pseudocode/compiler_config.py`.
+
+Adding a new platform (e.g. MinGW PE, macOS) means adding another toolchain
+file here. Nothing in the top-level `CMakeLists.txt` is Linux-specific.

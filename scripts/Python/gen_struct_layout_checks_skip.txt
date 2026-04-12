@@ -1,0 +1,7 @@
+# Struct names to skip when generating src/checks/struct_layout/*.cpp.
+#
+# Use this for structs whose C++ definition either doesn't exist in our
+# headers (system types pulled in from the OS SDK at build time) or
+# intentionally differs from the recorded Watcom layout.
+#
+# One struct name per line. Blanks and lines starting with '#' are ignored.

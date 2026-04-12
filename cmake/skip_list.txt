@@ -1,0 +1,11 @@
+# Nocturne build skip list — excludes files from both syntax-check and exe builds.
+#
+# Rule formats:
+#   FUN_<hex>           match any function whose filename contains this token
+#                       e.g.  FUN_00409abc
+#   <relative-path>     exact relative path under pseudocode/src/
+#                       e.g.  core/actor.cpp/someFunc_FUN_00401000.cpp
+#   glob:<pattern>      fnmatch glob against the relative path under src/
+#                       e.g.  glob:core/*/broken_*.cpp
+#
+# Blank lines and lines starting with '#' are ignored.

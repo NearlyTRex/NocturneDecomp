@@ -66,6 +66,29 @@ Python automation scripts for Ghidra (PyGhidra headless):
 ### `/spec`
 Custom Ghidra processor specifications for the x86 Watcom compiler. Includes language definitions (.ldefs), calling convention specifications (.cspec), and pattern matching for Watcom C++ compiled code.
 
+## Building
+
+The repository ships a CMake project that drives two pipelines from the exported
+pseudocode — see [`cmake/README.md`](cmake/README.md) for the full reference.
+
+**Prerequisites:** `cmake ≥ 3.20`, `clang`/`clang++` with 32-bit support, `python3`, `ninja`.
+
+```sh
+# Syntax-only verification (reproduces the 100% clang++ milestone)
+cmake --preset check-linux
+cmake --build --preset check-linux
+
+# Full executable build (32-bit Linux ELF)
+cmake --preset exe-linux
+cmake --build --preset exe-linux
+```
+
+Per-function source selection priority:
+`.keep.{cpp,c}` > `.mmx.{cpp,c}` / `.byval.{cpp,c}` > raw `.cpp`/`.c`.
+The decompiled `entry/` and `crt/` directories are excluded from the exe build —
+`src/main/main.cpp` provides the entry point and linking uses the system
+C/C++ runtime bridged through `shims/`.
+
 ## Contributing
 
 This is a research project. If you're interested in contributing or have insights about the Nocturne engine, contributions and documentation improvements are welcome.

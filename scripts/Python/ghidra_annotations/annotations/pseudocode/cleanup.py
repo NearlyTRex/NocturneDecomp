@@ -18,21 +18,34 @@ def delete_pseudocode(currentProgram, path):
         log_info("No pseudocode directory found - nothing to delete")
         return
 
-    # Directories to skip during cleanup (hand-written, not auto-generated)
-    protected_dirs = {'shims'}
+    # Paths (relative to pseudocode/) to skip during cleanup — hand-written,
+    # not auto-generated. May be nested (e.g. 'src/main').
+    protected_paths = {'shims', 'src/main', 'src/checks'}
+
+    def _is_protected(rel):
+        rel = rel.replace(os.sep, '/')
+        if rel == '.':
+            return False
+        for p in protected_paths:
+            if rel == p or rel.startswith(p + '/'):
+                return True
+        return False
 
     # Delete all pseudocode files
     deleted_count = 0
     log_info("Deleting all pseudocode files")
     for root, dirs, files in os.walk(pseudocode_dir):
-        # Skip protected directories
         rel_root = os.path.relpath(root, pseudocode_dir)
-        root_parts = rel_root.split(os.sep)
-        if root_parts[0] in protected_dirs:
+        if _is_protected(rel_root):
+            dirs[:] = []
             continue
 
-        # Prevent os.walk from descending into protected dirs
-        dirs[:] = [d for d in dirs if d not in protected_dirs]
+        # Prevent os.walk from descending into protected children
+        rel_norm = '' if rel_root == '.' else rel_root.replace(os.sep, '/')
+        dirs[:] = [
+            d for d in dirs
+            if not _is_protected(d if not rel_norm else rel_norm + '/' + d)
+        ]
 
         for file in files:
             if file.lower().endswith(('.c', '.cpp', '.h', '.asm', '.json', '.pcode')):
@@ -47,16 +60,17 @@ def delete_pseudocode(currentProgram, path):
                 except Exception as e:
                     log_info("Failed to delete file %s: %s" % (file, str(e)))
 
-    # Remove empty directories (skip protected dirs)
+    # Remove empty directories (skip protected paths)
     for root, dirs, files in os.walk(pseudocode_dir, topdown=False):
         for dir_name in dirs:
-            if dir_name in protected_dirs:
-                continue
             dir_path = os.path.join(root, dir_name)
+            rel_dir = os.path.relpath(dir_path, pseudocode_dir)
+            if _is_protected(rel_dir):
+                continue
             try:
                 if not os.listdir(dir_path):
                     os.rmdir(dir_path)
-                    log_info("Removed empty directory: %s" % os.path.relpath(dir_path, pseudocode_dir))
+                    log_info("Removed empty directory: %s" % rel_dir)
             except Exception as e:
                 pass
     log_info("Deleted %d files" % deleted_count)

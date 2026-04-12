@@ -1,0 +1,34 @@
+{
+  "version": 4,
+  "cmakeMinimumRequired": { "major": 3, "minor": 20, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "check-linux",
+      "displayName": "Syntax check (Linux 32-bit)",
+      "description": "Per-file -fsyntax-only verification, matches compiler_config.py.",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/check-linux",
+      "toolchainFile": "${sourceDir}/cmake/toolchains/linux-i686.cmake",
+      "cacheVariables": {
+        "NOCTURNE_BUILD_CHECK": "ON",
+        "NOCTURNE_BUILD_EXE":   "OFF"
+      }
+    },
+    {
+      "name": "exe-linux",
+      "displayName": "Full exe (Linux 32-bit)",
+      "description": "Compile and link nocturne executable.",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/exe-linux",
+      "toolchainFile": "${sourceDir}/cmake/toolchains/linux-i686.cmake",
+      "cacheVariables": {
+        "NOCTURNE_BUILD_CHECK": "OFF",
+        "NOCTURNE_BUILD_EXE":   "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "check-linux", "configurePreset": "check-linux", "targets": ["nocturne_check"] },
+    { "name": "exe-linux",   "configurePreset": "exe-linux",   "targets": ["nocturne"] }
+  ]
+}

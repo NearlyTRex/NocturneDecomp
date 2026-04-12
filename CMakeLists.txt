@@ -1,0 +1,183 @@
+cmake_minimum_required(VERSION 3.20)
+
+# -----------------------------------------------------------------------------
+# NocturneDecomp build
+#
+# Two top-level targets:
+#   nocturne_check   Per-file -fsyntax-only pass. Reproduces the 100%
+#                    compilation milestone. Fast, no codegen, no link.
+#   nocturne         Full codegen + link into the game executable.
+#                    Entry point comes from src/main/main.cpp; the decompiled
+#                    src/entry/entry.c and src/crt/* are NOT included (we
+#                    link against a modern C/C++ runtime via the shims).
+#
+# Pick one or both:
+#   cmake -B build -DNOCTURNE_BUILD_CHECK=ON -DNOCTURNE_BUILD_EXE=ON \
+#         --toolchain cmake/toolchains/linux-i686.cmake
+#   cmake --build build --target nocturne_check
+#   cmake --build build --target nocturne
+# -----------------------------------------------------------------------------
+
+project(NocturneDecomp LANGUAGES C CXX)
+
+option(NOCTURNE_BUILD_CHECK "Build syntax-only verification target" ON)
+option(NOCTURNE_BUILD_EXE   "Build full linked executable"          OFF)
+
+set(NOCTURNE_PSEUDOCODE_DIR "${CMAKE_SOURCE_DIR}/annotations/nocedit.exe/pseudocode"
+    CACHE PATH "Root of the exported pseudocode tree")
+set(NOCTURNE_SKIP_LIST "${CMAKE_SOURCE_DIR}/cmake/skip_list.txt"
+    CACHE FILEPATH "Skip list consumed by cmake/collect_sources.py")
+
+set(NOCTURNE_SRC_ROOT     "${NOCTURNE_PSEUDOCODE_DIR}/src")
+set(NOCTURNE_INCLUDE_DIR  "${NOCTURNE_PSEUDOCODE_DIR}/include")
+set(NOCTURNE_SHIMS_DIR    "${NOCTURNE_PSEUDOCODE_DIR}/shims")
+
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+
+# -----------------------------------------------------------------------------
+# Per-module source lists (priority-resolved) generated at configure time.
+# Re-running cmake regenerates the lists; adding a new .keep/.mmx/.byval
+# variant requires a reconfigure.
+# -----------------------------------------------------------------------------
+set(NOCTURNE_GEN_DIR "${CMAKE_BINARY_DIR}/generated")
+file(MAKE_DIRECTORY "${NOCTURNE_GEN_DIR}")
+
+# Entry/ is always replaced by src/main/main.cpp.
+# Crt/ is excluded — we link against a modern C/C++ runtime.
+set(_collect_excludes --exclude-module entry --exclude-module crt)
+
+message(STATUS "Collecting Nocturne sources (priority: .keep > .mmx/.byval > .cpp/.c)")
+execute_process(
+    COMMAND "${Python3_EXECUTABLE}"
+            "${CMAKE_SOURCE_DIR}/cmake/collect_sources.py"
+            --src-root   "${NOCTURNE_SRC_ROOT}"
+            --out-dir    "${NOCTURNE_GEN_DIR}"
+            --skip-list  "${NOCTURNE_SKIP_LIST}"
+            --modules-file "${NOCTURNE_GEN_DIR}/modules.txt"
+            ${_collect_excludes}
+    RESULT_VARIABLE _collect_rc
+    OUTPUT_VARIABLE _collect_out
+    ERROR_VARIABLE  _collect_err
+)
+if(NOT _collect_rc EQUAL 0)
+    message(FATAL_ERROR "collect_sources.py failed:\n${_collect_out}${_collect_err}")
+endif()
+message(STATUS "${_collect_out}")
+
+file(STRINGS "${NOCTURNE_GEN_DIR}/modules.txt" NOCTURNE_MODULES)
+
+# Re-run cmake if the skip list changes.
+set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS
+    "${NOCTURNE_SKIP_LIST}"
+    "${CMAKE_SOURCE_DIR}/cmake/collect_sources.py"
+)
+
+# -----------------------------------------------------------------------------
+# Warning set — mirrors compiler_config.py so the two pipelines agree on
+# what counts as an error.
+# -----------------------------------------------------------------------------
+set(NOCTURNE_COMMON_WARNINGS
+    -Wno-everything
+    -Warray-bounds
+    -Wformat
+    -Wformat-overflow
+    -Werror=format
+    -Werror=format-overflow
+    -Wno-format-security
+    -Wno-format-extra-args
+    -Wincompatible-pointer-types
+    -Wint-conversion
+    -Wreturn-type
+    -Wtautological-compare
+)
+
+set(NOCTURNE_INCLUDE_FLAGS
+    -I "${NOCTURNE_INCLUDE_DIR}"
+    -I "${NOCTURNE_SHIMS_DIR}"
+)
+
+# -----------------------------------------------------------------------------
+# Target: nocturne_check  (per-file -fsyntax-only)
+# Produces a stamp per successfully checked file so incremental re-runs only
+# touch changed files. This is the drop-in for the existing verification path.
+# -----------------------------------------------------------------------------
+if(NOCTURNE_BUILD_CHECK)
+    set(_stamp_dir "${CMAKE_BINARY_DIR}/check_stamps")
+    file(MAKE_DIRECTORY "${_stamp_dir}")
+    set(_all_stamps "")
+
+    foreach(_module IN LISTS NOCTURNE_MODULES)
+        file(STRINGS "${NOCTURNE_GEN_DIR}/sources_${_module}.txt" _sources)
+        foreach(_src IN LISTS _sources)
+            file(RELATIVE_PATH _rel "${NOCTURNE_SRC_ROOT}" "${_src}")
+            string(REPLACE "/" "_" _stamp_name "${_rel}")
+            string(REPLACE "." "_" _stamp_name "${_stamp_name}")
+            set(_stamp "${_stamp_dir}/${_stamp_name}.stamp")
+
+            # Always use clang++ / -std=gnu++11 — matches compiler_config.py
+            # (the decompiled .c files include C++ headers like <cctype>).
+            add_custom_command(
+                OUTPUT  "${_stamp}"
+                COMMAND "${CMAKE_CXX_COMPILER}"
+                        -m32 -mmmx -fasm-blocks -fsyntax-only -std=gnu++11
+                        -x c++
+                        ${NOCTURNE_COMMON_WARNINGS}
+                        ${NOCTURNE_INCLUDE_FLAGS}
+                        "${_src}"
+                COMMAND "${CMAKE_COMMAND}" -E touch "${_stamp}"
+                DEPENDS "${_src}"
+                COMMENT "syntax ${_rel}"
+                VERBATIM
+            )
+            list(APPEND _all_stamps "${_stamp}")
+        endforeach()
+    endforeach()
+
+    add_custom_target(nocturne_check DEPENDS ${_all_stamps})
+    message(STATUS "nocturne_check: ${_module} modules, "
+                   "${CMAKE_BINARY_DIR}/check_stamps/")
+endif()
+
+# -----------------------------------------------------------------------------
+# Target: nocturne  (full linked executable)
+# One OBJECT library per module plus the shims and our main.cpp.
+# -----------------------------------------------------------------------------
+if(NOCTURNE_BUILD_EXE)
+    set(_module_libs "")
+    foreach(_module IN LISTS NOCTURNE_MODULES)
+        file(STRINGS "${NOCTURNE_GEN_DIR}/sources_${_module}.txt" _sources)
+        if(_sources)
+            add_library(nocturne_${_module} OBJECT ${_sources})
+            target_include_directories(nocturne_${_module} PRIVATE
+                "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}")
+            target_compile_options(nocturne_${_module} PRIVATE
+                -m32 -mmmx -fasm-blocks ${NOCTURNE_COMMON_WARNINGS})
+            target_compile_features(nocturne_${_module} PRIVATE cxx_std_17)
+            list(APPEND _module_libs nocturne_${_module})
+        endif()
+    endforeach()
+
+    file(GLOB _shim_sources CONFIGURE_DEPENDS
+        "${NOCTURNE_SHIMS_DIR}/*.cpp"
+        "${NOCTURNE_SHIMS_DIR}/*.c"
+    )
+    add_library(nocturne_shims OBJECT ${_shim_sources})
+    target_include_directories(nocturne_shims PRIVATE
+        "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}")
+    target_compile_options(nocturne_shims PRIVATE
+        -m32 -mmmx -fasm-blocks ${NOCTURNE_COMMON_WARNINGS})
+    target_compile_features(nocturne_shims PRIVATE cxx_std_17)
+
+    add_executable(nocturne)
+    target_compile_features(nocturne PRIVATE cxx_std_17)
+    target_include_directories(nocturne PRIVATE
+        "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}")
+    target_compile_options(nocturne PRIVATE
+        -m32 -mmmx -fasm-blocks ${NOCTURNE_COMMON_WARNINGS})
+    target_link_options(nocturne PRIVATE -m32)
+
+    foreach(_lib IN LISTS _module_libs)
+        target_link_libraries(nocturne PRIVATE ${_lib})
+    endforeach()
+    target_link_libraries(nocturne PRIVATE nocturne_shims)
+endif()
