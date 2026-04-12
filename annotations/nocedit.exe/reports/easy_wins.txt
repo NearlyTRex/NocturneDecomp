@@ -594,13 +594,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_dosio.c_findFile_FUN_00481760                                   ( 23 lines)
     shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070                  ( 36 lines)
 
-  [sub84_truncation] - 5 functions
-    shape_superopt.cpp_CVec_dot_FUN_005d82e0                               (  7 lines)
-    shape_superopt.cpp_CVec_getLength_FUN_005d8200                         ( 12 lines)
-    sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720                  ( 31 lines)
-    engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0                    ( 32 lines)
-    core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0            ( 32 lines)
-
   [stack_ref] - 5 functions
     shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920              ( 19 lines)
     cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30                ( 22 lines)
@@ -634,6 +627,11 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     shape_design.c_normalizeVertex_FUN_00461e60                            ( 12 lines)
     engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90 ( 20 lines)
     shape_design.c_calculatePolygonNormal_FUN_0045caa0                     ( 45 lines)
+
+  [sub84_truncation] - 3 functions
+    sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720                  ( 31 lines)
+    engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0                    ( 32 lines)
+    core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0            ( 32 lines)
 
   [mmx_assembly] - 2 functions
     core_dstrender.cpp_saveMMXRegisters_FUN_004906b0                       ( 12 lines)
@@ -981,7 +979,7 @@ ALL REMAINING FILES
   engine/drender.cpp                                            60.2%  (53/88 clean, 35 remaining)
   engine/matrix.c                                               60.0%  (18/30 clean, 12 remaining)
   core/dlight.cpp                                               58.8%  (20/34 clean, 14 remaining)
-  shape/superopt.cpp                                            57.5%  (107/186 clean, 79 remaining)
+  shape/superopt.cpp                                            58.6%  (109/186 clean, 77 remaining)
   core/setedit.cpp                                              55.2%  (32/58 clean, 26 remaining)
   core/course.cpp                                               53.3%  (8/15 clean, 7 remaining)
   engine/model.c                                                50.0%  (4/8 clean, 4 remaining)

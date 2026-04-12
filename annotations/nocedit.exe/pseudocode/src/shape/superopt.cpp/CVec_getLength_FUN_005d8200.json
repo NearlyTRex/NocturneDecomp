@@ -1,29 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 20,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 27,
+    "complexity_score": 11,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 12,
-    "suspect_count": 1,
-    "suspect_types": [
-      "sub84_truncation"
-    ],
-    "total_lines": 29
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
   },
   "cross_references": [],
   "function": {
@@ -36,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_superopt.cpp_CVec_getLength_FUN_005d8200",
-    "signature": "int __cdecl shape_superopt_cpp_CVec_getLength_FUN_005d8200(CVec *this_ptr)"
+    "signature": "double __cdecl shape_superopt_cpp_CVec_getLength_FUN_005d8200(CVec *this_ptr)"
   },
   "function_calls": [],
   "globals": [],
@@ -96,14 +87,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 13,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_8 = SUB84(SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1),0);",
-      "type": "sub84_truncation"
-    }
-  ]
+  "suspects": []
 }

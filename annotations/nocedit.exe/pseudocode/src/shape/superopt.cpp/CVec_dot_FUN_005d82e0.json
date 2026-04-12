@@ -1,29 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 13,
-        "line": 14,
-        "message": "invalid operands to binary expression ('double' and 'int')"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 22,
+    "complexity_score": 6,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 7,
-    "suspect_count": 1,
-    "suspect_types": [
-      "sub84_truncation"
-    ],
-    "total_lines": 24
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 23
   },
   "cross_references": [],
   "function": {
@@ -36,7 +27,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_superopt.cpp_CVec_dot_FUN_005d82e0",
-    "signature": "int __cdecl shape_superopt_cpp_CVec_dot_FUN_005d82e0(CVec *this_ptr,CVec *other)"
+    "signature": "double __cdecl shape_superopt_cpp_CVec_dot_FUN_005d82e0(CVec *this_ptr,CVec *other)"
   },
   "function_calls": [],
   "globals": [],
@@ -102,14 +93,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 7,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_8 = SUB84((this_ptr->impl).z * (other->impl).z +",
-      "type": "sub84_truncation"
-    }
-  ]
+  "suspects": []
 }

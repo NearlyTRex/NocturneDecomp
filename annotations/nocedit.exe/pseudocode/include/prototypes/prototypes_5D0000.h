@@ -114,7 +114,7 @@ int __cdecl shape_superopt_cpp_CObj_removeInvalidPolygons_FUN_005d46f0(CObj *thi
 int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr,int validate_first);
 int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_ptr,double coplanar_threshold,CPoly *search_polygon);
 int __cdecl shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d *point_a,CVector2d *point_b,CVector2d *point_c,CVector2d *point_d);
-int __cdecl shape_superopt_cpp_segmentIntersectsPolygon2D_FUN_005d5de0(CVector2d *polyVerts,uint vertCount,CVector2d *segStart,CVector2d *segEnd, CVector2d *segStart2);
+int __cdecl shape_superopt_cpp_segmentIntersectsPolygon2D_FUN_005d5de0(CVector2d *poly_verts,uint vert_count,CVector2d *seg_start,CVector2d *seg_end, CVector2d *seg_start2);
 int __cdecl shape_superopt_cpp_pointInPolygon2D_FUN_005d5e60(CVector2d *vertices,uint vertex_count,CVector2d *test_point);
 CVector2d * __stack3_esi shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020 (CVector3d *segment_start,CVector3d *segment_end,CVector3d *query_point, CVector2d *out_point);
 CVector3d * __stack3_esi shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0 (CVector3d *point,CVector3d *plane_point,CVector3d *plane_normal,CVector3d *out_point);
@@ -150,11 +150,11 @@ CVec * __cdecl shape_superopt_cpp_CVec_dtor_FUN_005d8150(CVec *this_ptr,uint fla
 CVec * __cdecl shape_superopt_cpp_CVec_copy1_FUN_005d8160(CVec *this_ptr,CVec *other);
 CVec * __cdecl shape_superopt_cpp_CVec_copy2_FUN_005d8190(CVec *this_ptr,CVec *other);
 void __cdecl shape_superopt_cpp_CVec_normalize_FUN_005d81c0(CVec *this_ptr);
-int __cdecl shape_superopt_cpp_CVec_getLength_FUN_005d8200(CVec *this_ptr);
+double __cdecl shape_superopt_cpp_CVec_getLength_FUN_005d8200(CVec *this_ptr);
 void __cdecl shape_superopt_cpp_CVec_setLength_FUN_005d8230(CVec *this_ptr,double length);
 CVec * __cdecl shape_superopt_cpp_CVec_cross_FUN_005d8270(CVec *this_ptr,CVec *a,CVec *b);
 void __cdecl shape_superopt_cpp_CVec_copy3_FUN_005d82b0(CVec *this_ptr,CVec *other);
-int __cdecl shape_superopt_cpp_CVec_dot_FUN_005d82e0(CVec *this_ptr,CVec *other);
+double __cdecl shape_superopt_cpp_CVec_dot_FUN_005d82e0(CVec *this_ptr,CVec *other);
 void __cdecl shape_superopt_cpp_CP2D_set_FUN_005d8310(CP2D *this_ptr,double x,double y);
 CP2D * __cdecl shape_superopt_cpp_CP2D_copy_FUN_005d8330(CP2D *dst,CP2D *src);
 CP2D * __stack2_esi shape_superopt_cpp_CP2D_subtract_FUN_005d8350(CP2D *this_ptr,CP2D *a,CP2D *b);

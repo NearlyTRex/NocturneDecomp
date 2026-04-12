@@ -501,7 +501,7 @@ int __cdecl segmentsIntersect2D(CVector2d *point_a,CVector2d *point_b,CVector2d 
 
 // Original: shape_superopt.cpp_segmentIntersectsPolygon2D_FUN_005d5de0
 // Address: 005d5de0
-int __cdecl segmentIntersectsPolygon2D(CVector2d *polyVerts,uint vertCount,CVector2d *segStart,CVector2d *segEnd,CVector2d *segStart2);
+int __cdecl segmentIntersectsPolygon2D(CVector2d *poly_verts,uint vert_count,CVector2d *seg_start,CVector2d *seg_end,CVector2d *seg_start2);
 
 // Original: shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 // Address: 005d5e60
@@ -645,7 +645,7 @@ void __cdecl CVec::normalize(CVec *this_ptr);
 
 // Original: shape_superopt.cpp_CVec_getLength_FUN_005d8200
 // Address: 005d8200
-int __cdecl CVec::getLength(CVec *this_ptr);
+double __cdecl CVec::getLength(CVec *this_ptr);
 
 // Original: shape_superopt.cpp_CVec_setLength_FUN_005d8230
 // Address: 005d8230
@@ -661,7 +661,7 @@ void __cdecl CVec::copy3(CVec *this_ptr,CVec *other);
 
 // Original: shape_superopt.cpp_CVec_dot_FUN_005d82e0
 // Address: 005d82e0
-int __cdecl CVec::dot(CVec *this_ptr,CVec *other);
+double __cdecl CVec::dot(CVec *this_ptr,CVec *other);
 
 // Original: shape_superopt.cpp_CP2D_set_FUN_005d8310
 // Address: 005d8310

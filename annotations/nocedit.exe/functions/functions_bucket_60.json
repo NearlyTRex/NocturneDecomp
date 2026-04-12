@@ -83070,7 +83070,7 @@
     "vars":{
       "params":[
         {
-          "name":"polyVerts",
+          "name":"poly_verts",
           "storage":{
             "offset":4,
             "size":4,
@@ -83086,7 +83086,7 @@
           "type":"CVector2d*"
         },
         {
-          "name":"vertCount",
+          "name":"vert_count",
           "storage":{
             "offset":8,
             "size":4,
@@ -83102,7 +83102,7 @@
           "type":"uint"
         },
         {
-          "name":"segStart",
+          "name":"seg_start",
           "storage":{
             "offset":12,
             "size":4,
@@ -83118,7 +83118,7 @@
           "type":"CVector2d*"
         },
         {
-          "name":"segEnd",
+          "name":"seg_end",
           "storage":{
             "offset":16,
             "size":4,
@@ -83134,7 +83134,7 @@
           "type":"CVector2d*"
         },
         {
-          "name":"segStart2",
+          "name":"seg_start2",
           "storage":{
             "offset":20,
             "size":4,
@@ -84365,7 +84365,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"shape_superopt.cpp_CVec_dot_FUN_005d82e0",
-    "ret":"int",
+    "ret":"double",
     "vars":{
       "locals":[
         {
@@ -84420,9 +84420,14 @@
         }
       ],
       "ret_storage":{
-        "reg":"EAX",
-        "size":4,
+        "compound":true,
+        "size":8,
         "varnodes":[
+          {
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
           {
             "addr":"register:00000000",
             "size":4

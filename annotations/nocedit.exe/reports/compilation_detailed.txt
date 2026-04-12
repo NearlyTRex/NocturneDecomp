@@ -5,29 +5,20 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6440 (99.8%)
-Failed: 14
+Successful: 6446 (99.9%)
+Failed: 8
 
 ERROR CATEGORIES
 --------------------------------------------------
-  type_error                       104
-  incompatible_types                10
-  format_error                       3
+  type_error                        48
+  incompatible_types                 7
 
 ====================================================================================================
-CATEGORY: type_error (104 errors)
+CATEGORY: type_error (48 errors)
 ====================================================================================================
 
   shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
     Line 418: member reference base type 'double' is not a structure or union
-  shape_superopt.cpp_CPoly_containsPoint_FUN_005d0340
-    Line 50: member reference base type 'double' is not a structure or union
-  shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390
-    Line 86: member reference base type 'double' is not a structure or union
-  shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10
-    Line 115: member reference base type 'double' is not a structure or union
-  shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
-    Line 168: member reference base type 'double' is not a structure or union
   shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
     Line 89: member reference base type 'int' is not a structure or union
   shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0
@@ -38,7 +29,7 @@ CATEGORY: type_error (104 errors)
     Line 309: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
 
 ====================================================================================================
-CATEGORY: incompatible_types (10 errors)
+CATEGORY: incompatible_types (7 errors)
 ====================================================================================================
 
   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
@@ -47,16 +38,3 @@ CATEGORY: incompatible_types (10 errors)
     Line 79: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
     Line 68: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
-    Line 161: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'
-  shape_superopt.cpp_CVec_dot_FUN_005d82e0
-    Line 14: invalid operands to binary expression ('double' and 'int')
-  shape_superopt.cpp_CVec_getLength_FUN_005d8200
-    Line 20: invalid operands to binary expression ('double' and 'int')
-
-====================================================================================================
-CATEGORY: format_error (3 errors)
-====================================================================================================
-
-  shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
-    Line 46: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]

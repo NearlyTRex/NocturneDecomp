@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang-Tidy (quick) (1134 diagnostics)
+Clang-Tidy (quick) (1144 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-bugprone-assignment-in-if-condition (534)
+bugprone-assignment-in-if-condition (543)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_ line 102
@@ -2116,6 +2116,42 @@ bugprone-assignment-in-if-condition (534)
     File: shape/superopt.cpp
     an assignment within an 'if' condition is bug-prone
 
+  shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_0 line 111
+    File: shape/superopt.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_0 line 121
+    File: shape/superopt.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_0 line 131
+    File: shape/superopt.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_0 line 142
+    File: shape/superopt.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_0 line 153
+    File: shape/superopt.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_0 line 164
+    File: shape/superopt.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_0 line 175
+    File: shape/superopt.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_0 line 186
+    File: shape/superopt.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_0 line 195
+    File: shape/superopt.cpp
+    an assignment within an 'if' condition is bug-prone
+
   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN line 51
     File: sound/snddx.cpp
     an assignment within an 'if' condition is bug-prone
@@ -3377,7 +3413,7 @@ bugprone-incorrect-roundings (306)
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
 ----------------------------------------------------------------------------------------------------
-cert-err33-c (134)
+cert-err33-c (135)
 ----------------------------------------------------------------------------------------------------
 
   core_event.cpp_CEventList_executeCommand_FUN_004aa line 256
@@ -3914,6 +3950,10 @@ cert-err33-c (134)
 
   shape_design.c_cramTextureList_FUN_0046bb80        line 1013
     File: shape/design.c
+    the value returned by this function should not be disregarded; neglecting it may lead to errors
+
+  shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a line 170
+    File: shape/superopt.cpp
     the value returned by this function should not be disregarded; neglecting it may lead to errors
 
 ----------------------------------------------------------------------------------------------------

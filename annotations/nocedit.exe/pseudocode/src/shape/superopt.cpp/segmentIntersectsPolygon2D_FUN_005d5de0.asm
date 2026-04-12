@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_superopt_cpp_segmentIntersectsPolygon2D_FUN_005d5de0(CVector2d *polyVerts,uint vertCount,CVector2d *segStart,CVector2d *segEnd,CVector2d *segStart2)
+; int __cdecl shape_superopt_cpp_segmentIntersectsPolygon2D_FUN_005d5de0(CVector2d *poly_verts,uint vert_count,CVector2d *seg_start,CVector2d *seg_end,CVector2d *seg_start2)
 ;
 ; Parameters:
-; CVector2d *      Stack[0x4]:4   polyVerts
-; uint             Stack[0x8]:4   vertCount
-; CVector2d *      Stack[0xc]:4   segStart
-; CVector2d *      Stack[0x10]:4   segEnd
-; CVector2d *      Stack[0x14]:4   segStart2
+; CVector2d *      Stack[0x4]:4   poly_verts
+; uint             Stack[0x8]:4   vert_count
+; CVector2d *      Stack[0xc]:4   seg_start
+; CVector2d *      Stack[0x10]:4   seg_end
+; CVector2d *      Stack[0x14]:4   seg_start2
 ;
 ; Called Functions:
 ;   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60

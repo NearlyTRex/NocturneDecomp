@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 249
-  Total diagnostics: 1500
+  Functions with findings: 251
+  Total diagnostics: 1510
   Functions flagged by multiple tools: 66
-  .keep.cpp files: 249, raw .cpp files: 0
+  .keep.cpp files: 251, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -1085,6 +1085,20 @@ engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220  [.keep] [Clang-Tidy (
   Line  334: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
   Line  444: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
   Line  492: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
+
+----------------------------------------------------------------------------------------------------
+shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390  [.keep] [Clang-Tidy (quick)]
+  File: shape/superopt.cpp  (9 diagnostics)
+
+  Line  111: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  121: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  131: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  142: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  153: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  164: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  175: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  186: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  195: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
 core_batcreat.cpp_CBatCreature_process_FUN_00415470  [.keep] [Clang-Tidy (quick)]
@@ -2720,6 +2734,12 @@ shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070  [.keep] [Clang-Tidy (quic
   File: shape/superopt.cpp  (1 diagnostics)
 
   Line   27: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0  [.keep] [Clang-Tidy (quick)]
+  File: shape/superopt.cpp  (1 diagnostics)
+
+  Line  170: [cert-err33-c] the value returned by this function should not be disregarded; neglecting it may lead to errors
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60  [.keep] [Clang-Tidy (quick)]
