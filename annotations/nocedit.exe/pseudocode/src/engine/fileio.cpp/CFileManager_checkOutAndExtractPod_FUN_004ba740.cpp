@@ -294,7 +294,7 @@ LAB_004baa7f:
   }
   this_ptr->batch_mode = 1;
   (*this_ptr->vtable->extractPodFile)(this_ptr,local_340);
-  optional_pod_file[0xb292]._bufsize = 0;
+  *(uint *)((int)&optional_pod_file[0xc04f]._cnt + 2) = 0;
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)auStack_30);
   engine_fileio_cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0
             ((CFileManager *)optional_pod_file,(CStrList *)auStack_30);

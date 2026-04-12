@@ -288,7 +288,7 @@ LAB_0057db4e:
           do {
             piVar1 = (int *)((int)auStack_96c + iVar13);
             iVar13 = iVar13 + 4;
-            engine_2d_c_drawTextXY_FUN_00402130(0,y,(char *)(p_Stack_20 + *piVar1 * 0xf));
+            engine_2d_c_drawTextXY_FUN_00402130(0,y,(char *)(*piVar1 * 0x1a4 + (int)p_Stack_20));
             y = y + 0xb;
           } while (iVar13 < iVar20 * 4);
         }
@@ -323,7 +323,7 @@ LAB_0057db4e:
       do {
         uVar11 = 0;
         iVar20 = 0;
-        puVar14 = (uint *)p_Stack_20[0x19b185]._handle;
+        puVar14 = (uint *)p_Stack_20[0x1bab7c]._cnt;
         pbVar18 = pbVar17;
         do {
           pbVar17 = pbVar18 + 1;

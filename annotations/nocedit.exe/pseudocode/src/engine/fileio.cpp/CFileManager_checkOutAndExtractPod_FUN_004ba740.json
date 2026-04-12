@@ -6,13 +6,13 @@
   },
   "complexity": {
     "assembly_lines": 730,
-    "complexity_score": 356,
+    "complexity_score": 366,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 40,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 306,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "stack_ref"
@@ -667,6 +667,14 @@
       "severity": "moderate",
       "text": "(&stack0xfffff964,&g_VersionControlSession.overwrite_writeable_choice);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 290,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&optional_pod_file[0xc04f]._cnt + 2) = 0;",
+      "type": "pointer_cast"
     }
   ]
 }
