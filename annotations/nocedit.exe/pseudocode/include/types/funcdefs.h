@@ -262,7 +262,7 @@
 #include "types/funcdefs/CPoly_clearVertexStateFlags.h"
 #include "types/funcdefs/CPoly_computeNormal.h"
 #include "types/funcdefs/CPoly_computePlaneDistance.h"
-#include "types/funcdefs/CPoly_containsPoint2D.h"
+#include "types/funcdefs/CPoly_containsPoint.h"
 #include "types/funcdefs/CPoly_copyFrom.h"
 #include "types/funcdefs/CPoly_flipNormal.h"
 #include "types/funcdefs/CPoly_getBounds.h"

@@ -15,7 +15,7 @@ struct CVector3d;
 #include "types/funcdefs/CPoly_clearVertexStateFlags.h"
 #include "types/funcdefs/CPoly_computeNormal.h"
 #include "types/funcdefs/CPoly_computePlaneDistance.h"
-#include "types/funcdefs/CPoly_containsPoint2D.h"
+#include "types/funcdefs/CPoly_containsPoint.h"
 #include "types/funcdefs/CPoly_copyFrom.h"
 #include "types/funcdefs/CPoly_flipNormal.h"
 #include "types/funcdefs/CPoly_getBounds.h"
@@ -75,7 +75,7 @@ typedef struct CPoly_vtable {
     CPoly_getBounds* getBounds; // 0x58
     CPoly_intersectPoly* intersectPoly; // 0x5c
     CPoly_rayIntersect* rayIntersect; // 0x60
-    CPoly_containsPoint2D* containsPoint2D; // 0x64
+    CPoly_containsPoint* containsPoint; // 0x64
     CPoly_rayPlaneIntersect* rayPlaneIntersect; // 0x68
     CPoly_getCentroid* getCentroid; // 0x6c
     CPoly_hasSharedEdge* hasSharedEdge; // 0x70

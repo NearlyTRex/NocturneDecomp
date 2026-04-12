@@ -9,24 +9,24 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 244
+  Functions with static analysis data: 249
   Functions flagged by multiple tools: 66
 
   Clang-Tidy (quick):
-    Files analyzed:      194
-    Files with findings: 194
-    Total diagnostics:   1126
+    Files analyzed:      198
+    Files with findings: 198
+    Total diagnostics:   1134
 
   Cppcheck (quick):
-    Files analyzed:      116
-    Files with findings: 116
-    Total diagnostics:   356
+    Files analyzed:      117
+    Files with findings: 117
+    Total diagnostics:   366
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
 ====================================================================================================
 
-  bugprone-assignment-in-if-condition                       526  [likely decompiler artifact]
+  bugprone-assignment-in-if-condition                       534  [likely decompiler artifact]
   bugprone-incorrect-roundings                              306  [likely decompiler artifact]
   cert-err33-c                                              134  [likely decompiler artifact]
   cert-err34-c                                               80
@@ -47,7 +47,7 @@ TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
   selfAssignment                                            129  [likely decompiler artifact]
-  uninitvar                                                  55
+  uninitvar                                                  65  [likely decompiler artifact]
   legacyUninitvar                                            41
   shiftTooManyBitsSigned                                     40
   invalidscanf                                               40

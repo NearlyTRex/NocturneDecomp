@@ -5,29 +5,22 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6422 (99.5%)
-Failed: 32
+Successful: 6440 (99.8%)
+Failed: 14
 
 ERROR CATEGORIES
 --------------------------------------------------
-  type_error                       131
-  undeclared_identifier             16
-  syntax_error                      16
-  incompatible_types                15
+  type_error                       104
+  incompatible_types                10
   format_error                       3
-  pointer_type                       1
 
 ====================================================================================================
-CATEGORY: type_error (131 errors)
+CATEGORY: type_error (104 errors)
 ====================================================================================================
 
-  shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
-    Line 79: member reference base type 'double' is not a structure or union
-  shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
-    Line 75: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
     Line 418: member reference base type 'double' is not a structure or union
-  shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
+  shape_superopt.cpp_CPoly_containsPoint_FUN_005d0340
     Line 50: member reference base type 'double' is not a structure or union
   shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390
     Line 86: member reference base type 'double' is not a structure or union
@@ -41,87 +34,21 @@ CATEGORY: type_error (131 errors)
     Line 20: member reference base type 'int' is not a structure or union
   shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
     Line 103: member reference base type 'int' is not a structure or union
-  shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
-    Line 127: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
   shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
     Line 309: member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (16 errors)
+CATEGORY: incompatible_types (10 errors)
 ====================================================================================================
 
-  shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
-    Line 47: use of undeclared identifier 'code'
-  shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
-    Line 47: use of undeclared identifier 'code'
-  shape_superopt.cpp_CObj_appendTo_FUN_005d2720
-    Line 57: use of undeclared identifier 'code'
-  shape_superopt.cpp_CObj_copyFrom_FUN_005d2650
-    Line 48: use of undeclared identifier 'code'
-  shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_005d4110
-    Line 21: use of undeclared identifier 'code'
-  shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070
-    Line 30: use of undeclared identifier 'code'
-  shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40
-    Line 23: use of undeclared identifier 'code'
-  shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0
-    Line 28: use of undeclared identifier 'code'
-  shape_superopt.cpp_CObj_saveVertexPositionsWithFlag_FUN_005d37b0
-    Line 28: use of undeclared identifier 'code'
-  shape_superopt.cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0
-    Line 23: use of undeclared identifier 'code'
-  shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
-    Line 43: use of undeclared identifier 'code'
-
-====================================================================================================
-CATEGORY: syntax_error (16 errors)
-====================================================================================================
-
-  shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
-    Line 47: expected expression
-  shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
-    Line 47: expected expression
-  shape_superopt.cpp_CObj_appendTo_FUN_005d2720
-    Line 57: expected expression
-  shape_superopt.cpp_CObj_copyFrom_FUN_005d2650
-    Line 48: expected expression
-  shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_005d4110
-    Line 21: expected expression
-  shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070
-    Line 30: expected expression
-  shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40
-    Line 23: expected expression
-  shape_superopt.cpp_CObj_restoreVertexPositionsWithFlag_FUN_005d38b0
-    Line 28: expected expression
-  shape_superopt.cpp_CObj_saveVertexPositionsWithFlag_FUN_005d37b0
-    Line 28: expected expression
-  shape_superopt.cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0
-    Line 23: expected expression
-  shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
-    Line 43: expected expression
-
-====================================================================================================
-CATEGORY: incompatible_types (15 errors)
-====================================================================================================
-
-  shape_superopt.cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20
-    Line 25: assigning to 'SExpandedEdge *' from incompatible type 'void *'
-  shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0
-    Line 33: assigning to 'int *' from incompatible type 'void *'
   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
     Line 50: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
     Line 79: assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'
   shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
     Line 68: assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'
-  shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
-    Line 36: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'
-  shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
-    Line 36: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'
   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
     Line 161: incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'
-  shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
-    Line 59: invalid operands to binary expression ('double' and 'int')
   shape_superopt.cpp_CVec_dot_FUN_005d82e0
     Line 14: invalid operands to binary expression ('double' and 'int')
   shape_superopt.cpp_CVec_getLength_FUN_005d8200
@@ -133,10 +60,3 @@ CATEGORY: format_error (3 errors)
 
   shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0
     Line 46: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
-
-====================================================================================================
-CATEGORY: pointer_type (1 errors)
-====================================================================================================
-
-  shape_superopt.cpp_CObj_updatePolyFlagsFromVerts_FUN_005d36b0
-    Line 31: comparison of distinct pointer types ('CPoly *' and 'int *')

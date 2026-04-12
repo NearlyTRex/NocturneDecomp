@@ -46,7 +46,7 @@
 // =============================================================================
 
 int __cdecl shape_superopt_cpp_CPoly_rayIntersect_FUN_005d0010(CPoly *this_ptr,CVector3d *ray_origin,CVector3d *ray_end,CVector3d *out_hit_point);
-int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_ptr,CVector2d *point);
+int __cdecl shape_superopt_cpp_CPoly_containsPoint_FUN_005d0340(CPoly *this_ptr,CVector3d *point);
 double __cdecl shape_superopt_cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0(CPoly *this_ptr,CVec *ray_origin,CVec *ray_dir);
 CVector3d * __stack_esi shape_superopt_cpp_CPoly_getCentroid_FUN_005d0d30(CPoly *this_ptr,CVector3d *out_centroid);
 int __cdecl shape_superopt_cpp_CPoly_hasSharedEdge_FUN_005d0e20(CPoly *this_ptr,CPoly *other);

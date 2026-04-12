@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_ptr,CVector2d *point)
+; int __cdecl shape_superopt_cpp_CPoly_containsPoint_FUN_005d0340(CPoly *this_ptr,CVector3d *point)
 ;
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr
-; CVector2d *      Stack[0x8]:4   point
+; CVector3d *      Stack[0x8]:4   point
 ; Local Variables:
 ; double           Stack[-0x1d8]:8  local_1d8
 ; double           Stack[-0x1d0]:8  local_1d0
@@ -24,7 +24,7 @@
 section .text
 
     PUSH EBX                            ; 005d0340
-        ;   Label: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
+        ;   Label: shape_superopt.cpp_CPoly_containsPoint_FUN_005d0340
     PUSH ESI                            ; 005d0341
     PUSH EBP                            ; 005d0342
     MOV EBP,ESP                         ; 005d0343

@@ -145,8 +145,8 @@
     ],
     "convention": "__cdecl",
     "is_ebp_frame": true,
-    "name": "shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340",
-    "signature": "int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_ptr,CVector2d *point)"
+    "name": "shape_superopt.cpp_CPoly_containsPoint_FUN_005d0340",
+    "signature": "int __cdecl shape_superopt_cpp_CPoly_containsPoint_FUN_005d0340(CPoly *this_ptr,CVector3d *point)"
   },
   "function_calls": [
     {
@@ -203,7 +203,7 @@
     "pcode_op_count": 3750
   },
   "possible_indirect_callers": {
-    "method_name": "containsPoint2D",
+    "method_name": "containsPoint",
     "param_analysis": {
       "call_site_count": 1,
       "caller_details": [
@@ -297,7 +297,7 @@
         "name": "point",
         "offset": 8,
         "size": 4,
-        "type": "CVector2d *"
+        "type": "CVector3d *"
       }
     ]
   },
@@ -972,7 +972,7 @@
       "line": 117,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_188.y._0_4_ = *(uint *)&point[1].x;",
+      "text": "local_188.y._0_4_ = *(uint *)&point->z;",
       "type": "unknown_field"
     },
     {
@@ -980,7 +980,7 @@
       "line": 118,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "local_188.y._4_4_ = *(uint *)((int)&point[1].x + 4);",
+      "text": "local_188.y._4_4_ = *(uint *)((int)&point->z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -988,7 +988,7 @@
       "line": 118,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "local_188.y._4_4_ = *(uint *)((int)&point[1].x + 4);",
+      "text": "local_188.y._4_4_ = *(uint *)((int)&point->z + 4);",
       "type": "unknown_field"
     },
     {
@@ -1308,7 +1308,7 @@
       "line": 158,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_188.y._0_4_ = *(uint *)&point[1].x;",
+      "text": "local_188.y._0_4_ = *(uint *)&point->z;",
       "type": "unknown_field"
     },
     {
@@ -1316,7 +1316,7 @@
       "line": 159,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "local_188.y._4_4_ = *(uint *)((int)&point[1].x + 4);",
+      "text": "local_188.y._4_4_ = *(uint *)((int)&point->z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1324,7 +1324,7 @@
       "line": 159,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "local_188.y._4_4_ = *(uint *)((int)&point[1].x + 4);",
+      "text": "local_188.y._4_4_ = *(uint *)((int)&point->z + 4);",
       "type": "unknown_field"
     }
   ],

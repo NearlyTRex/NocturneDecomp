@@ -9,8 +9,8 @@
 ; Local Variables:
 ; CVector3d        Stack[-0x74]:24  local_74
 ; CVector3d        Stack[-0x5c]:24  CStack_5c
-; CVector2d        Stack[-0x44]:16  local_44
-; CVector2d        Stack[-0x2c]:16  CStack_2c
+; CVector3d        Stack[-0x44]:24  local_44
+; CVector3d        Stack[-0x2c]:24  CStack_2c
 ; CPoly_vtable *   Stack[-0x14]:4  local_14
 ;
 ; *****************************************************************************

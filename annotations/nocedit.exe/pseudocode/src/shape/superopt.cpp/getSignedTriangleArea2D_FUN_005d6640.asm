@@ -13,7 +13,7 @@
 ; XREF[3]:
 ;   shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0 at 005cb90e
 ;   shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90 at 005cc2dc
-;   shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340 at 005d0c65
+;   shape_superopt.cpp_CPoly_containsPoint_FUN_005d0340 at 005d0c65
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00654552 = 1.00000000000000E-10

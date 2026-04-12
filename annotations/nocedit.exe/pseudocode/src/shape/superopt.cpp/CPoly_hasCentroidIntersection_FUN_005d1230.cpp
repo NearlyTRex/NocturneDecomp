@@ -17,18 +17,18 @@ int __cdecl shape_superopt_cpp_CPoly_hasCentroidIntersection_FUN_005d1230(CPoly 
   byte bVar5;
   CVector3d local_74;
   CVector3d CStack_5c;
-  CVector2d local_44;
-  CVector2d CStack_2c;
+  CVector3d local_44;
+  CVector3d CStack_2c;
   CPoly_vtable *local_14;
   CPoly_vtable *pCVar1;
   
   pCVar2 = this_ptr->vtable;
   (*other->vtable->getCentroid)(other,&local_74);
-  iVar3 = (*pCVar2->containsPoint2D)(this_ptr,&local_44);
+  iVar3 = (*pCVar2->containsPoint)(this_ptr,&local_44);
   if (iVar3 == 0) {
     pCVar2 = other->vtable;
     (*this_ptr->vtable->getCentroid)(this_ptr,&CStack_5c);
-    iVar3 = (*pCVar2->containsPoint2D)(other,&CStack_2c);
+    iVar3 = (*pCVar2->containsPoint)(other,&CStack_2c);
     if (iVar3 == 0) {
       return 0;
     }

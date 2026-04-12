@@ -117,7 +117,7 @@ int __cdecl shape_superopt_cpp_CPoly_rayIntersect_FUN_005d0010(CPoly *this_ptr,C
     *(uint *)((int)&out_hit_point->y + 4) = local_c8[3];
     *(uint *)&out_hit_point->z = local_b8;
     *(uint *)((int)&out_hit_point->z + 4) = local_b4;
-    iVar5 = (*this_ptr->vtable->containsPoint2D)(this_ptr,(CVector2d *)out_hit_point);
+    iVar5 = (*this_ptr->vtable->containsPoint)(this_ptr,out_hit_point);
     return iVar5;
   }
   return 0;

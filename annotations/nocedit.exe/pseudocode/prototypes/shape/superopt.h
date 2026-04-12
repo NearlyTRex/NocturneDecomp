@@ -227,9 +227,9 @@ int __cdecl CPoly::intersectPoly(CPoly *this_ptr,CPoly *other_poly,CPolyIntersec
 // Address: 005d0010
 int __cdecl CPoly::rayIntersect(CPoly *this_ptr,CVector3d *ray_origin,CVector3d *ray_end,CVector3d *out_hit_point);
 
-// Original: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
+// Original: shape_superopt.cpp_CPoly_containsPoint_FUN_005d0340
 // Address: 005d0340
-int __cdecl CPoly::containsPoint2D(CPoly *this_ptr,CVector2d *point);
+int __cdecl CPoly::containsPoint(CPoly *this_ptr,CVector3d *point);
 
 // Original: shape_superopt.cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0
 // Address: 005d0ce0

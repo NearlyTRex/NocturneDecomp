@@ -1,12 +1,12 @@
-// Name: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
+// Name: shape_superopt.cpp_CPoly_containsPoint_FUN_005d0340
 // Address: 005d0340
 // Address Range: [[005d0340, 005d0cd2]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_ptr,CVector2d *point)
+// Signature: int __cdecl shape_superopt_cpp_CPoly_containsPoint_FUN_005d0340(CPoly *this_ptr,CVector3d *point)
 
 #include "nocturne.h"
 
-int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_ptr,CVector2d *point)
+int __cdecl shape_superopt_cpp_CPoly_containsPoint_FUN_005d0340(CPoly *this_ptr,CVector3d *point)
 
 {
   int iVar2;
@@ -121,8 +121,8 @@ int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_pt
       }
       local_188.x._0_4_ = *(uint *)&point->x;
       local_188.x._4_4_ = *(uint *)((int)&point->x + 4);
-      local_188.y._0_4_ = *(uint *)&point[1].x;
-      local_188.y._4_4_ = *(uint *)((int)&point[1].x + 4);
+      local_188.y._0_4_ = *(uint *)&point->z;
+      local_188.y._4_4_ = *(uint *)((int)&point->z + 4);
     }
   }
   else {
@@ -162,8 +162,8 @@ int __cdecl shape_superopt_cpp_CPoly_containsPoint2D_FUN_005d0340(CPoly *this_pt
     }
     local_188.x._0_4_ = *(uint *)&point->y;
     local_188.x._4_4_ = *(uint *)((int)&point->y + 4);
-    local_188.y._0_4_ = *(uint *)&point[1].x;
-    local_188.y._4_4_ = *(uint *)((int)&point[1].x + 4);
+    local_188.y._0_4_ = *(uint *)&point->z;
+    local_188.y._4_4_ = *(uint *)((int)&point->z + 4);
   }
   dVar4 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640(&local_198,&local_178,&local_188);
   if (dVar4 <= 0.0) {
